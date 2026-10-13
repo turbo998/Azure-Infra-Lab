@@ -1,0 +1,56 @@
+{
+  "language": "zh-CN",
+  "disclaimer": "教学模拟价格，非 Azure 报价",
+  "assessmentDate": "2027-02-01",
+  "commercialNoChangeUSD": 4145.83,
+  "cases": [
+    {
+      "id": "demo-web",
+      "name": "案例 A · 电商前端",
+      "sku": "Standard_D8s_v3",
+      "noChange": 1306.37,
+      "firstCandidate": "Standard_D4s_v5",
+      "conditionalDifference": 870.91
+    },
+    {
+      "id": "demo-db",
+      "name": "案例 B · 状态型数据库",
+      "sku": "Standard_E8s_v3",
+      "noChange": 571.46,
+      "firstCandidate": "Standard_E16ds_v5",
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-legacy",
+      "name": "案例 C · 旧代际应用",
+      "sku": "Standard_DS3_v2",
+      "noChange": 648,
+      "firstCandidate": "Standard_D4s_v7",
+      "conditionalDifference": 259.2
+    },
+    {
+      "id": "demo-china",
+      "name": "案例 D · 中国区隔离",
+      "sku": "Standard_D4s_v3",
+      "noChange": null,
+      "firstCandidate": "Standard_D4s_v5",
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-hpc",
+      "name": "案例 E · HPC 专项",
+      "sku": "Standard_HC44rs",
+      "noChange": 1620,
+      "firstCandidate": null,
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-missing",
+      "name": "案例 F · 仅清单/缺少指标",
+      "sku": "Standard_D8s_v3",
+      "noChange": null,
+      "firstCandidate": "Standard_D8s_v5",
+      "conditionalDifference": null
+    }
+  ]
+}

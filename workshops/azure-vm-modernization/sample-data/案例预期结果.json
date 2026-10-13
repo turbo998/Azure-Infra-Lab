@@ -1,0 +1,228 @@
+{
+  "version": "1.0 · 核验 2026-10-12",
+  "notice": "所有单价与客户名称均为教学模拟，非官方报价",
+  "options": {
+    "mode": "scenario",
+    "date": "2027-02-01",
+    "legacyPercent": 25,
+    "cpuTarget": 40,
+    "memoryTarget": 60,
+    "batchTarget": 80,
+    "minDays": 30,
+    "title": "Azure VM 现代化评估",
+    "redact": true
+  },
+  "results": [
+    {
+      "case": "案例 A · 电商前端",
+      "sku": "Standard_D8s_v3",
+      "lifecycle": {
+        "stage": "End of Life",
+        "date": "2029-11-15",
+        "note": "公开已宣布退役；在对应期限前完成过渡，不等于现在停机。"
+      },
+      "baseline": 1209.6,
+      "noChange": 1306.37,
+      "storage": 259.2,
+      "candidates": [
+        {
+          "sku": "Standard_D4s_v5",
+          "cost": 435.46,
+          "difference": 870.91,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证"
+          ]
+        },
+        {
+          "sku": "Standard_D4s_v6",
+          "cost": 497.66,
+          "difference": 808.71,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证"
+          ]
+        },
+        {
+          "sku": "Standard_D4s_v7",
+          "cost": 518.4,
+          "difference": 787.97,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "案例 B · 状态型数据库",
+      "sku": "Standard_E8s_v3",
+      "lifecycle": {
+        "stage": "End of Life",
+        "date": "2029-11-15",
+        "note": "公开已宣布退役；在对应期限前完成过渡，不等于现在停机。"
+      },
+      "baseline": 550.08,
+      "noChange": 571.46,
+      "storage": null,
+      "candidates": [
+        {
+          "sku": "Standard_E16ds_v5",
+          "cost": 1632.38,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "剩余承诺成本未知，不能输出可兑现差额"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "案例 C · 旧代际应用",
+      "sku": "Standard_DS3_v2",
+      "lifecycle": {
+        "stage": "End of Life",
+        "date": "2028-05-01",
+        "note": "公开已宣布退役；在对应期限前完成过渡，不等于现在停机。"
+      },
+      "baseline": 604.8,
+      "noChange": 648,
+      "storage": null,
+      "candidates": [
+        {
+          "sku": "Standard_D4s_v7",
+          "cost": 388.8,
+          "difference": 259.2,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证"
+          ]
+        },
+        {
+          "sku": "Standard_D4s_v5",
+          "cost": null,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "目标 SKU 的 EA 价格上限/合同价需单独提供，不能沿用源 SKU 上限。"
+          ]
+        },
+        {
+          "sku": "Standard_D4s_v6",
+          "cost": null,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "目标 SKU 的 EA 价格上限/合同价需单独提供，不能沿用源 SKU 上限。"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "案例 D · 中国区隔离",
+      "sku": "Standard_D4s_v3",
+      "lifecycle": {
+        "stage": "公告排除",
+        "note": "该 v3 退役公告明确排除此云；不代表其他生命周期或价格公告也不适用。"
+      },
+      "baseline": null,
+      "noChange": null,
+      "storage": null,
+      "candidates": [
+        {
+          "sku": "Standard_D4s_v5",
+          "cost": null,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。"
+          ]
+        },
+        {
+          "sku": "Standard_D4s_v6",
+          "cost": null,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。"
+          ]
+        },
+        {
+          "sku": "Standard_D4s_v7",
+          "cost": null,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "案例 E · HPC 专项",
+      "sku": "Standard_HC44rs",
+      "lifecycle": {
+        "stage": "End of Life",
+        "date": "2027-05-31",
+        "note": "公开已宣布退役；在对应期限前完成过渡，不等于现在停机。"
+      },
+      "baseline": 1296,
+      "noChange": 1620,
+      "storage": null,
+      "candidates": []
+    },
+    {
+      "case": "案例 F · 仅清单/缺少指标",
+      "sku": "Standard_D8s_v3",
+      "lifecycle": {
+        "stage": "End of Life",
+        "date": "2029-11-15",
+        "note": "公开已宣布退役；在对应期限前完成过渡，不等于现在停机。"
+      },
+      "baseline": null,
+      "noChange": null,
+      "storage": null,
+      "candidates": [
+        {
+          "sku": "Standard_D8s_v5",
+          "cost": 217.73,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "指标/峰值不足，未执行缩容",
+            "网卡和网络指标待补齐"
+          ]
+        },
+        {
+          "sku": "Standard_D8s_v6",
+          "cost": 248.83,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "指标/峰值不足，未执行缩容",
+            "网卡和网络指标待补齐"
+          ]
+        },
+        {
+          "sku": "Standard_D8s_v7",
+          "cost": 259.2,
+          "difference": null,
+          "blockers": [
+            "区域/可用区、配额与容量待核验",
+            "实际应用性能基线、备份和回退演练待验证",
+            "指标/峰值不足，未执行缩容",
+            "网卡和网络指标待补齐"
+          ]
+        }
+      ]
+    }
+  ]
+}

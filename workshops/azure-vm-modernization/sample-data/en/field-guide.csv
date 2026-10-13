@@ -1,0 +1,56 @@
+﻿key,label,group,required,hint
+id,Unique resource ID,Required,yes,
+sku,ARM SKU,Required,yes,Must be Standard_…; do not infer it from the meter name.
+region,Deployment region,Required,yes,
+count,Instance count,Required,yes,Enter 1 for a single-VM record; billing Quantity is not instance count.
+name,VM/Group name,Deploy,no,
+subscription,Subscription ID,Deploy,no,
+cloud,Cloud environment,Deploy,no,Commercial / China / Government / Sovereign / Unknown
+os,Operating system,Deploy,no,Linux / Windows; other names do not automatically match prices.
+hoursTotal,Total instance-hours,Usage,no,Total hours across all instances; do not multiply by instance count again.
+hoursPerVM,Running hours per instance,Usage,no,Mutually exclusive with total instance-hours.
+usageUnit,Usage unit,Usage,no,"1 Hour; other units, such as per-core hours, are not accepted."
+periodStart,Source period start,Usage,no,"YYYY-MM-DD, inclusive of this date."
+periodEnd,Source period end,Usage,no,"YYYY-MM-DD, exclusive of this date."
+vcpus,Source vCPU count,Performance,no,
+memoryGiB,Source memory GiB,Performance,no,
+cpuP95,CPU P95 %,Performance,no,Enter 0–100; this is not average CPU.
+memoryP99,Memory P99 %,Performance,no,Enter 0–100; no definitive downsizing recommendation is made without memory data.
+networkP95Mbps,Network P95 Mbps,Performance,no,"Outbound network bandwidth, not a percentage or MB/s."
+observationDays,Observation window in days,Performance,no,
+peakCovered,Business peaks covered,Performance,no,yes / no / Leave blank if unknown
+workload,Workload type,Performance,no,user-facing / batch / unknown
+tempGiB,Required temporary disk GiB,Compatibility,no,Enter 0 only if no temporary-disk dependency is confirmed; leave blank if unknown.
+dataDisks,Required data disk count,Compatibility,no,
+nics,Required NIC count,Compatibility,no,
+diskIOPS,Required remote disk IOPS,Compatibility,no,
+diskMBps,Required remote disk MB/s,Compatibility,no,
+architecture,CPU architecture,Compatibility,no,x64; Arm and other architectures require specialized assessment.
+bootGeneration,Boot generation,Compatibility,no,1 / 2
+accelNetworking,Accelerated Networking ready,Compatibility,no,
+nvmeReady,NVMe image ready,Compatibility,no,
+manaReady,MANA driver ready,Compatibility,no,
+specialRequirements,Specialized requirements,Compatibility,no,"none / manual; enter manual for certification, managed compute, or special licensing."
+licenseReady,Licensing verification complete,Compatibility,no,
+agreement,Agreement type,Commercial,no,EA / MCA / Unknown
+purchase,Purchase option,Commercial,no,PAYG / RI / SavingsPlan / Mixed / Unknown
+riCoverage,RI coverage %,Commercial,no,
+riEnd,RI expiration date,Commercial,no,
+riRate,RI covered hourly rate,Commercial,no,
+eaRenewal,EA enrollment renewal date,Commercial,no,
+eaCapRate,EA PAYG hourly price cap,Commercial,no,
+residualCommitmentCost,Remaining commitment cost after migration,Commercial,no,Must match this fixed-usage comparison period; not an annual commitment charge.
+currentRate,Source PAYG/effective hourly rate,Price,no,"In RI baseline mode, enter the PAYG base rate in this column."
+currentCost,Source compute cost,Price,no,"VM compute only; exclude disks, taxes, licensing, and other charges."
+currency,Currency,Price,no,
+costBasis,Cost basis,Price,no,Actual / Amortized
+rateBasis,Rate basis,Price,no,baseline is the pre-scenario baseline; effective is the rate already in effect.
+rateFrom,Rate effective date,Price,no,
+rateTo,Rate end date,Price,no,Exclusive of this date.
+priceIncludesUpdate,Price includes this adjustment,Price,no,
+priceSource,Price evidence,Price,no,
+priceKind,Price source type,Price,no,customer / retail / demo
+storageProduct,Associated storage product/meter,Storage,no,
+storageCost,Source associated storage cost,Storage,no,
+futureStorageCost,Customer's effective associated storage cost,Storage,no,Customer-substantiated value for the same usage on the assessment date.
+storagePriceIncludesUpdate,Storage cost includes the adjustment,Storage,no,

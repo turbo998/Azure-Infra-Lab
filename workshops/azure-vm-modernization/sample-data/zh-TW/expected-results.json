@@ -1,0 +1,56 @@
+{
+  "language": "zh-TW",
+  "disclaimer": "教學模擬價格，非 Azure 報價",
+  "assessmentDate": "2027-02-01",
+  "commercialNoChangeUSD": 4145.83,
+  "cases": [
+    {
+      "id": "demo-web",
+      "name": "案例 A · 電商前端",
+      "sku": "Standard_D8s_v3",
+      "noChange": 1306.37,
+      "firstCandidate": "Standard_D4s_v5",
+      "conditionalDifference": 870.91
+    },
+    {
+      "id": "demo-db",
+      "name": "案例 B · 狀態型資料庫",
+      "sku": "Standard_E8s_v3",
+      "noChange": 571.46,
+      "firstCandidate": "Standard_E16ds_v5",
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-legacy",
+      "name": "案例 C · 舊代際應用",
+      "sku": "Standard_DS3_v2",
+      "noChange": 648,
+      "firstCandidate": "Standard_D4s_v7",
+      "conditionalDifference": 259.2
+    },
+    {
+      "id": "demo-china",
+      "name": "案例 D · 中國區隔離",
+      "sku": "Standard_D4s_v3",
+      "noChange": null,
+      "firstCandidate": "Standard_D4s_v5",
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-hpc",
+      "name": "案例 E · HPC 專項",
+      "sku": "Standard_HC44rs",
+      "noChange": 1620,
+      "firstCandidate": null,
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-missing",
+      "name": "案例 F · 僅清單/缺少指標",
+      "sku": "Standard_D8s_v3",
+      "noChange": null,
+      "firstCandidate": "Standard_D8s_v5",
+      "conditionalDifference": null
+    }
+  ]
+}

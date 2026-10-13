@@ -1,0 +1,56 @@
+{
+  "language": "en",
+  "disclaimer": "Simulated training prices, not an Azure quote",
+  "assessmentDate": "2027-02-01",
+  "commercialNoChangeUSD": 4145.83,
+  "cases": [
+    {
+      "id": "demo-web",
+      "name": "Case A · E-commerce frontend",
+      "sku": "Standard_D8s_v3",
+      "noChange": 1306.37,
+      "firstCandidate": "Standard_D4s_v5",
+      "conditionalDifference": 870.91
+    },
+    {
+      "id": "demo-db",
+      "name": "Case B · Stateful database",
+      "sku": "Standard_E8s_v3",
+      "noChange": 571.46,
+      "firstCandidate": "Standard_E16ds_v5",
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-legacy",
+      "name": "Case C · Older-generation application",
+      "sku": "Standard_DS3_v2",
+      "noChange": 648,
+      "firstCandidate": "Standard_D4s_v7",
+      "conditionalDifference": 259.2
+    },
+    {
+      "id": "demo-china",
+      "name": "Case D · China cloud scope isolation",
+      "sku": "Standard_D4s_v3",
+      "noChange": null,
+      "firstCandidate": "Standard_D4s_v5",
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-hpc",
+      "name": "Case E · Specialized HPC assessment",
+      "sku": "Standard_HC44rs",
+      "noChange": 1620,
+      "firstCandidate": null,
+      "conditionalDifference": null
+    },
+    {
+      "id": "demo-missing",
+      "name": "Case F · Inventory only / Missing metrics",
+      "sku": "Standard_D8s_v3",
+      "noChange": null,
+      "firstCandidate": "Standard_D8s_v5",
+      "conditionalDifference": null
+    }
+  ]
+}

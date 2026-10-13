@@ -1,0 +1,56 @@
+﻿key,label,group,required,hint
+id,資源唯一標識,必填,yes,
+sku,ARM SKU,必填,yes,必須為 Standard_…，不從計量項名稱猜測。
+region,部署區域,必填,yes,
+count,執行個體數,必填,yes,逐臺記錄填 1；賬單 Quantity 不是執行個體數。
+name,VM/組名稱,部署,no,
+subscription,訂閱標識,部署,no,
+cloud,雲環境,部署,no,Commercial / China / Government / Sovereign / Unknown
+os,作業系統,部署,no,Linux / Windows；其他名稱不自動匹配價格。
+hoursTotal,執行個體小時總量,用量,no,所有執行個體的總小時，不能再乘執行個體數。
+hoursPerVM,每執行個體執行小時,用量,no,與執行個體小時總量互斥。
+usageUnit,用量單位,用量,no,1 Hour；不接受每核小時等其他單位。
+periodStart,源期間開始,用量,no,YYYY-MM-DD，包含當日。
+periodEnd,源期間結束,用量,no,YYYY-MM-DD，不包含當日。
+vcpus,源 vCPU 數,效能,no,
+memoryGiB,源記憶體 GiB,效能,no,
+cpuP95,CPU P95 %,效能,no,填 0–100；不是平均 CPU。
+memoryP99,記憶體 P99 %,效能,no,填 0–100；缺少記憶體時不做確定性縮容。
+networkP95Mbps,網路 P95 Mbps,效能,no,傳送網路頻寬，不是百分比或 MB/s。
+observationDays,觀察視窗天數,效能,no,
+peakCovered,已覆蓋業務峰值,效能,no,yes / no / 留空未知
+workload,工作負載型別,效能,no,user-facing / batch / unknown
+tempGiB,所需暫存磁碟 GiB,相容,no,明確不依賴暫存磁碟填 0；留空未知。
+dataDisks,所需資料盤數,相容,no,
+nics,所需網絡卡數,相容,no,
+diskIOPS,所需遠端盤 IOPS,相容,no,
+diskMBps,所需遠端盤 MB/s,相容,no,
+architecture,CPU 架構,相容,no,x64；Arm 等需專項評估。
+bootGeneration,啟動代次,相容,no,1 / 2
+accelNetworking,加速網路就緒,相容,no,
+nvmeReady,NVMe 映象就緒,相容,no,
+manaReady,MANA 驅動就緒,相容,no,
+specialRequirements,專用要求,相容,no,none / manual；認證、託管計算、特殊許可填 manual。
+licenseReady,許可核驗完成,相容,no,
+agreement,協議型別,商務,no,EA / MCA / Unknown
+purchase,購買方式,商務,no,PAYG / RI / SavingsPlan / Mixed / Unknown
+riCoverage,RI 覆蓋比例 %,商務,no,
+riEnd,RI 到期日,商務,no,
+riRate,RI 已覆蓋小時費率,商務,no,
+eaRenewal,EA enrollment 續約日,商務,no,
+eaCapRate,EA PAYG 小時價格上限,商務,no,
+residualCommitmentCost,遷移後剩餘承諾成本,商務,no,與本次固定用量比較期間一致；不是承諾年費。
+currentRate,源 PAYG/有效小時費率,價格,no,RI 基準模式此列填 PAYG 基礎費率。
+currentCost,源計算成本,價格,no,僅 VM 計算；不能含磁碟、稅費、許可等。
+currency,幣種,價格,no,
+costBasis,成本口徑,價格,no,Actual / Amortized
+rateBasis,費率基準,價格,no,baseline 為情景前基準；effective 為已生效費率。
+rateFrom,費率生效日,價格,no,
+rateTo,費率失效日,價格,no,不包含當日。
+priceIncludesUpdate,價格已含此次調整,價格,no,
+priceSource,價格依據,價格,no,
+priceKind,價格來源型別,價格,no,customer / retail / demo
+storageProduct,關聯儲存產品/計量項,儲存,no,
+storageCost,源關聯儲存成本,儲存,no,
+futureStorageCost,客戶有效關聯儲存成本,儲存,no,評估日對應相同用量的客戶依據值。
+storagePriceIncludesUpdate,儲存成本已含調整,儲存,no,

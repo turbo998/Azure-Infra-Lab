@@ -1,0 +1,377 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>(()=>{const p=new URLSearchParams(window.location.search).get("scoutTheme");document.documentElement.setAttribute("data-theme",p||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));})();</script>
+<title>脱敏 Azure VM 现代化评估</title><style>:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; background: var(--cp-bg); color: var(--cp-text); font: 15px/1.65 "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+button, input, select, textarea { font: inherit; }
+button, .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); padding: 10px 16px; border-radius: .625rem; text-decoration: none; cursor: pointer; min-height: 44px; }
+button:hover, .button:hover { border-color: var(--cp-accent); color: var(--cp-accent); }
+button:disabled { cursor: not-allowed; opacity: .5; }
+.primary { background: var(--cp-accent); color: var(--cp-accent-fg); border-color: var(--cp-accent); }
+.primary:hover { color: var(--cp-accent-fg); background: var(--cp-accent-hover); }
+.quiet { background: transparent; border-color: transparent; padding: 8px; }
+a { color: var(--cp-link); text-underline-offset: 4px; }
+a:hover { color: var(--cp-accent); }
+:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+input:not([type=checkbox]):not([type=radio]), select, textarea { width: 100%; min-height: 44px; background: var(--cp-surface); color: var(--cp-text); border: 1px solid var(--cp-border-strong); border-radius: .625rem; padding: 8px 12px; }
+input[type=checkbox], input[type=radio] { accent-color: var(--cp-accent); width: 18px; height: 18px; vertical-align: middle; }
+input[type=file] { padding: 12px!important; }
+label { display: block; font-size: 14px; }
+label > input, label > select { margin-top: 6px; }
+.check { display: flex; align-items: center; gap: 8px; }
+.check input { flex: 0 0 auto; }
+h1,h2,h3,h4,p { margin: 0 0 16px; }
+h1 { font-size: clamp(36px, 4.5vw, 60px); font-weight: 650; line-height: 1.16; letter-spacing: -1.5px; }
+h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.3; font-weight: 650; letter-spacing: -.6px; }
+h3 { font-size: 19px; line-height: 1.45; font-weight: 650; }
+h4 { font-size: 16px; }
+small,.muted { color: var(--cp-text-muted); }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--cp-accent); margin-bottom: 16px; }
+.lead { font-size: 18px; line-height: 1.8; color: var(--cp-text-muted); max-width: 670px; }
+.mono,code { font-family: Consolas, "Courier New", Courier, monospace; overflow-wrap: anywhere; }
+.accent { color: var(--cp-accent); }
+.topbar { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--cp-border); background: var(--cp-bg-elevated); }
+.topbar-inner { max-width: 1440px; padding: 16px 32px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 650; text-decoration: none; color: var(--cp-text); }
+.brand-mark { display: grid; place-items: center; background: var(--cp-accent); color: var(--cp-accent-fg); width: 36px; height: 36px; border-radius: 8px; }
+.brand small { display: block; font-size: 11px; letter-spacing: 1px; font-weight: 400; }
+.top-actions,.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.top-actions a.current { color: var(--cp-accent); background: var(--cp-accent-soft); }
+.language-switch { display: flex; gap: 4px; padding: 4px; background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: .625rem; }
+.language-switch button { min-height: 36px; padding: 4px 10px; font-size: 12px; background: transparent; border-color: transparent; }
+.language-switch button.current { color: var(--cp-accent); border-color: var(--cp-accent); background: var(--cp-accent-soft); }
+html[lang="en"] .hero h1 { font-size: clamp(32px, 3.2vw, 48px); letter-spacing: -1px; }
+html[lang="en"] h1, html[lang="en"] h2 { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .topbar-inner { flex-wrap: wrap; }
+  .top-actions { width: 100%; }
+  .language-switch { margin-left: auto; }
+  .brand small { display: none; }
+}
+.layout { display: grid; grid-template-columns: 220px minmax(0,1fr); max-width: 1440px; margin: auto; }
+.sidebar { position: sticky; top: 86px; align-self: start; padding: 32px 20px 32px 32px; max-height: calc(100vh - 86px); overflow-y: auto; }
+.sidebar a { display: flex; gap: 10px; padding: 10px 12px; font-size: 13px; color: var(--cp-text-muted); text-decoration: none; border-radius: .625rem; }
+.sidebar a:hover,.sidebar a.active { color: var(--cp-accent); background: var(--cp-accent-soft); }
+.sidebar small { display: block; margin: 20px 12px; }
+.content { min-width: 0; padding: 0 48px 64px 32px; }
+.workspace { max-width: 1280px; margin: auto; padding: 40px 32px 64px; }
+.hero { padding: 64px 0 40px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; }
+.hero-visual { border: 1px solid var(--cp-border); background: var(--cp-bg-elevated); border-radius: 16px; padding: 24px; }
+.hero-visual .flow-node { display: flex; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--cp-border); }
+.hero-visual .flow-node:last-child { border-bottom: none; }
+.flow-number { width: 32px; height: 32px; border-radius: 8px; background: var(--cp-accent-soft); color: var(--cp-accent); display: grid; place-items: center; font-weight: 700; flex: 0 0 auto; }
+.hero-visual small { display: block; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 6px; margin: 0 6px 6px 0; color: var(--cp-text-muted); }
+.badge.accent { background: var(--cp-accent-soft); color: var(--cp-accent); border-color: var(--cp-accent); }
+.badge.danger { color: var(--cp-danger); }
+.badge.success { color: var(--cp-success); }
+.section { padding: 36px 0; border-top: 1px solid var(--cp-border); }
+.section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.section-heading h2 { margin: 4px 0 8px; }
+.section-heading p { margin: 0; color: var(--cp-text-muted); }
+.section-index { font-size: 12px; letter-spacing: 2px; color: var(--cp-accent); font-weight: 700; }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.grid.three { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.grid.four { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.card { padding: 24px; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface); box-shadow: 0 1px 2px var(--cp-border); }
+.card p:last-child { margin-bottom: 0; }
+.card.featured { border-color: var(--cp-accent); background: var(--cp-bg-elevated); }
+.card .card-index { font-family: Consolas,monospace; font-size: 12px; letter-spacing: 1px; color: var(--cp-accent); margin-bottom: 12px; }
+.notice { padding: 16px 20px; border: 1px solid var(--cp-border); border-left: 4px solid var(--cp-accent); border-radius: .625rem; background: var(--cp-bg-elevated); margin: 16px 0; }
+.notice.error { border-left-color: var(--cp-danger); }
+.notice p:last-child { margin: 0; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.callout { background: var(--cp-accent-soft); padding: 24px; border-radius: 16px; }
+ul,ol { padding-left: 20px; margin: 8px 0 16px; }
+li { margin: 7px 0; }
+details { border: 1px solid var(--cp-border); border-radius: .625rem; background: var(--cp-surface); margin: 12px 0; }
+summary { cursor: pointer; padding: 14px 18px; font-weight: 600; }
+details > .detail-body { padding: 0 18px 18px; }
+.table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--cp-border); border-radius: .625rem; background: var(--cp-surface); margin: 16px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { text-align: left; background: var(--cp-surface-soft); font-size: 12px; color: var(--cp-text-muted); font-weight: 600; white-space: nowrap; }
+th,td { padding: 13px 16px; border-bottom: 1px solid var(--cp-border); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td small { display: block; margin-top: 4px; }
+.timeline { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.timeline-item { padding: 16px 0 16px 16px; border-left: 2px solid var(--cp-accent); }
+.timeline-item strong { display: block; font-size: 17px; }
+.quiz { border: 1px solid var(--cp-border); border-radius: 16px; margin: 16px 0; padding: 20px; background: var(--cp-surface); }
+.quiz legend { font-weight: 600; padding: 0 8px; }
+.quiz label { display: flex; gap: 12px; padding: 8px; align-items: flex-start; }
+.quiz label input { margin-top: 4px; flex: 0 0 auto; }
+.answer { padding: 12px; border-radius: .625rem; background: var(--cp-surface-soft); margin-top: 12px; }
+.answer.good { border-left: 3px solid var(--cp-success); }
+.answer.bad { border-left: 3px solid var(--cp-danger); }
+.progress-row { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; margin-bottom: 8px; }
+progress { width: 100%; height: 6px; accent-color: var(--cp-accent); }
+.footer { padding: 24px 0 0; border-top: 1px solid var(--cp-border); font-size: 12px; color: var(--cp-text-muted); }
+.presenter .content { font-size: 18px; }
+.presenter .sidebar { font-size: 14px; }
+.presenter .instructor { border-color: var(--cp-accent); }
+.page-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.page-heading h1 { font-size: clamp(32px,4vw,44px); }
+.page-heading p { color: var(--cp-text-muted); margin-bottom: 0; }
+.stepbar { display: flex; border: 1px solid var(--cp-border); border-radius: .625rem; background: var(--cp-surface); padding: 12px 20px; gap: 28px; margin: 24px 0; font-size: 13px; flex-wrap: wrap; }
+.stepbar strong { color: var(--cp-accent); }
+.dropzone { border: 1px dashed var(--cp-border-strong); border-radius: 16px; padding: 28px; text-align: center; background: var(--cp-bg-elevated); }
+.dropzone .upload-icon { font-size: 32px; color: var(--cp-accent); }
+.dropzone input { max-width: 480px; margin: 16px auto; }
+.form-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.form-grid.two { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.form-grid small { display: block; margin-top: 4px; }
+.metric { padding: 20px 24px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; }
+.metric .value { font-size: 32px; font-weight: 600; line-height: 1.3; margin: 8px 0; }
+.metric small { font-size: 12px; }
+.results-header { display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap; align-items: center; margin: 28px 0 12px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills button { padding: 6px 12px; min-height: 36px; font-size: 12px; }
+.pills .selected { border-color: var(--cp-accent); color: var(--cp-accent); background: var(--cp-accent-soft); }
+.analysis-detail { margin-bottom: 24px; }
+.analysis-detail > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.candidate { padding: 20px; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-bg-elevated); }
+.candidate h4 { word-break: break-all; font-family: Consolas,monospace; font-size: 16px; }
+.candidate ul { font-size: 12px; color: var(--cp-text-muted); }
+.candidate .price { font-size: 22px; font-weight: 650; margin: 16px 0 0; }
+.bar-row { display: grid; grid-template-columns: minmax(90px,160px) 1fr 40px; gap: 12px; align-items: center; font-size: 12px; margin: 12px 0; }
+.bar-track { height: 7px; background: var(--cp-surface-soft); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--cp-accent); min-width: 2px; }
+.error-list { max-height: 240px; overflow: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.report { max-width: 1150px; margin: auto; padding: 40px; }
+.report .report-row { padding: 24px 0; border-top: 1px solid var(--cp-border); break-inside: avoid; }
+.report .report-row h3 { font-size: 21px; }
+.report .print-toolbar { display: flex; justify-content: space-between; margin-bottom: 24px; }
+.report .candidate { break-inside: avoid; }
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 190px minmax(0,1fr); }
+  .content { padding-right: 24px; padding-left: 16px; }
+  .grid.four { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .grid.three { grid-template-columns: 1fr; }
+  .hero { gap: 20px; grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .topbar-inner { padding: 12px 16px; align-items: flex-start; }
+  .brand small { display: none; }
+  .brand { font-size: 13px; gap: 8px; }
+  .top-actions { gap: 4px; justify-content: flex-end; }
+  .top-actions .button,.top-actions button { padding: 6px 8px; min-height: 36px; font-size: 12px; }
+  .layout { display: block; }
+  .sidebar { position: static; max-height: none; padding: 16px; display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--cp-border); }
+  .sidebar .sidebar-progress,.sidebar small { display: none; }
+  .sidebar a { padding: 6px 8px; font-size: 12px; }
+  .content { padding: 0 20px 40px; }
+  .workspace { padding: 28px 20px 40px; }
+  .hero { padding: 40px 0 28px; }
+  .grid,.grid.three,.split,.form-grid,.form-grid.two { grid-template-columns: 1fr; }
+  .grid.four { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .timeline { grid-template-columns: 1fr; }
+  .page-heading { display: block; }
+  .page-heading .actions { margin-top: 16px; }
+  .section-heading { flex-direction: column; }
+  .card { padding: 20px; }
+  .stepbar { gap: 10px; }
+  .metric { padding: 16px; }
+  .metric .value { font-size: 26px; }
+  .report { padding: 20px; }
+}
+@media print {
+  :root,html[data-theme="dark"] { color-scheme: light; --cp-bg: #ffffff; --cp-bg-elevated: #ffffff; --cp-surface: #ffffff; --cp-text: #242424; --cp-text-muted: #5c5c5c; --cp-border: #dedede; --cp-accent: #b11f4b; --cp-accent-soft: #f5f5f5; }
+  body { background: var(--cp-surface); font-size: 10pt; }
+  .topbar,.sidebar,.no-print,.print-toolbar,button,input[type=file] { display: none!important; }
+  .layout { display: block; }
+  .content,.workspace,.report { padding: 0; max-width: none; }
+  .hero { padding-top: 0; }
+  .section { break-before: auto; }
+  .card,.quiz,.timeline-item,.candidate { box-shadow: none; break-inside: avoid; }
+  details { border: 0; }
+  details > .detail-body { display: block!important; }
+  .table-wrap { overflow: visible; }
+  th,td { padding: 6px; }
+  a { color: var(--cp-text); }
+  .grid.three { grid-template-columns: 1fr; }
+  .report-row { break-inside: auto!important; }
+  h1 { font-size: 26pt; }
+  h2 { font-size: 20pt; }
+  @page { size: A4; margin: 14mm; }
+}
+</style></head><body><main class="report">
+<div class="print-toolbar"><span class="eyebrow">AZURE VM / LOCAL ASSESSMENT REPORT</span><button onclick="window.print()">打印 / 保存 PDF</button></div>
+<h1>脱敏 Azure VM 现代化评估</h1><p class="lead">从适用范围到迁移前提，保留每一项依据与不确定性。</p>
+<p><span class="badge accent">培训情景 · 非官方报价</span><span class="badge">评估日 2027-02-01</span><span class="badge">1.0 · 核验 2026-10-12</span></p>
+<div class="notice"><strong>计算口径：</strong>采用源用量固定不变、评估日有效费率的 run-rate 对比，不模拟跨月真实账单。仅包含有依据的计算资源费和明确列出的存储；未输入的许可、网络、税费等不在范围内。价格与配额/容量不是实时数据，任何候选都需性能验证和部署前核验。邮件具体涨幅、商业处理和 v4 限制解除细节尚未充分公开核验，情景不是已确认政策。</div>
+<p><strong>本次参数：</strong>用户型 CPU/网络目标 40%、内存目标 60%；批处理目标 80%；最短观察窗 30 天且须覆盖业务峰值。旧代际情景 25%，七区域比例与精确排除规则按版本化清单。</p>
+<div class="grid four"><div class="metric"><small>分析有效记录</small><div class="value">6</div><small>总导入 6；未分析 0</small></div><div class="metric"><small>已知实例数</small><div class="value">12</div><small>不是账单行数</small></div><div class="metric"><small>显式输入核心数</small><div class="value">116</div><small>记录覆盖 6/6；未知不视为零</small></div><div class="metric"><small>生命周期期限记录</small><div class="value">5</div><small>按精确系列/云范围判断</small></div></div>
+<section class="section"><h2>数据质量与金额覆盖</h2><p>输入：本地导入（文件标识已省略）。导入错误 0 项，提示 0 项。未知金额未当作零计入。</p>
+<div class="table-wrap"><table><thead><tr><th>云 / 币种 / 成本口径</th><th>有依据的不调整计算费</th><th>金额覆盖</th><th>可比较条件差额</th><th>差额覆盖</th></tr></thead><tbody><tr><td>Commercial / USD / Amortized</td><td>USD 4145.83</td><td>4/5 记录</td><td>USD 1130.11</td><td>2/5；仅首候选</td></tr><tr><td>China / USD / Amortized</td><td>未知</td><td>0/1 记录</td><td>未知</td><td>0/1；仅首候选</td></tr></tbody></table></div>
+<p class="muted">各分组独立，不进行自动汇率转换；有依据的子集不能代表全量账单。差额可能为负，且不是可兑现总账单节省。</p>
+</section>
+<section class="section"><h2>实例分布</h2><div class="grid"><div class="card"><h3>区域</h3><div class="bar-row"><span>southeastasia</span><div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%"></div></div><span>5</span></div><div class="bar-row"><span>westeurope</span><div class="bar-track"><div class="bar-fill" style="width:16.666666666666664%"></div></div><span>2</span></div><div class="bar-row"><span>northeurope</span><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><span>3</span></div><div class="bar-row"><span>chinaeast2</span><div class="bar-track"><div class="bar-fill" style="width:8.333333333333332%"></div></div><span>1</span></div><div class="bar-row"><span>eastus</span><div class="bar-track"><div class="bar-fill" style="width:8.333333333333332%"></div></div><span>1</span></div></div><div class="card"><h3>识别系列</h3><div class="bar-row"><span>Dsv3</span><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span>6</span></div><div class="bar-row"><span>Esv3</span><div class="bar-track"><div class="bar-fill" style="width:16.666666666666664%"></div></div><span>2</span></div><div class="bar-row"><span>Dsv2</span><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><span>3</span></div><div class="bar-row"><span>HC</span><div class="bar-track"><div class="bar-fill" style="width:8.333333333333332%"></div></div><span>1</span></div></div></div></section>
+<section class="section"><h2>逐记录建议与影响矩阵</h2><article class="report-row"><span class="badge">波次 1 · 退役期限与业务风险优先</span><h3>VM-001</h3>
+<p class="mono">Standard_D8s_v3 · Commercial / southeastasia · 4 实例</p>
+
+<p>源期间：2026-09-01 至 2026-10-01（结束日不包含）；每实例 720 小时 × 4。</p>
+<p>性能依据：源 8 vCPU / 32 GiB；CPU P95 18%，内存 P99 24%，发送网络 P95 160 Mbps；观察 30 天，峰值覆盖 已确认；类型 user-facing。</p>
+<p>商务依据：MCA / PAYG；RI 覆盖 未知%，到期 未提供；EA enrollment 续约 未提供。源/目标不自动继承承诺折扣。</p>
+<p><strong>End of Life 2029-11-15</strong> · 公开已宣布退役；在对应期限前完成过渡，不等于现在停机。</p>
+<p>规则 REGIONAL-VM：区域培训情景 +8%；适用计量项仍需通知核对。<br>存储规则 STORAGE-INCLUDED：存储培训情景 +8%；仅限所识别产品，非所有存储。</p>
+<div class="table-wrap"><table><thead><tr><th>源基准计算费</th><th>不调整计算费</th><th>关联存储情景/有效成本</th><th>价格依据</th></tr></thead><tbody><tr><td>USD 1209.60</td><td>USD 1306.37</td><td>USD 259.20</td><td>demo；原始标题已省略，需回查源资料。</td></tr></tbody></table></div>
+<div class="grid three"><div class="candidate"><span class="badge">默认首候选 / v5</span><h4>Standard_D4s_v5</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 3.60 核、内存 ≥ 12.80 GiB；不假设跨代 CPU 加速。</li><li>远程盘 8 个 / 6400 IOPS / 145 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v5：Extended，低扰动过渡路径；resize 仍可能需要停机/释放。</li></ul>
+<p>计算费：<strong>USD 435.46</strong><br>含已提供剩余承诺：USD 435.46<br>条件差额：<strong>USD 870.91</strong></p>
+<p>资源余量投影筛选出的缩容候选，不是安全保证。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv5-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v6</span><h4>Standard_D4s_v6</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 3.60 核、内存 ≥ 12.80 GiB；不假设跨代 CPU 加速。</li><li>远程盘 12 个 / 6400 IOPS / 212 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v6：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>USD 497.66</strong><br>含已提供剩余承诺：USD 497.66<br>条件差额：<strong>USD 808.71</strong></p>
+<p>资源余量投影筛选出的缩容候选，不是安全保证。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv6-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v7</span><h4>Standard_D4s_v7</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 3.60 核、内存 ≥ 12.80 GiB；不假设跨代 CPU 加速。</li><li>远程盘 12 个 / 8000 IOPS / 230 MB/s；网络 25000 Mbps（上限非保证）。</li><li>v7：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>USD 518.40</strong><br>含已提供剩余承诺：USD 518.40<br>条件差额：<strong>USD 787.97</strong></p>
+<p>资源余量投影筛选出的缩容候选，不是安全保证。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv7-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div></div>
+<ul><li>区域/可用区、订阅配额和实时容量：部署前待核验。</li></ul></article><article class="report-row"><span class="badge">波次 1 · 退役期限与业务风险优先</span><h3>VM-002</h3>
+<p class="mono">Standard_E8s_v3 · Commercial / westeurope · 2 实例</p>
+
+<p>源期间：2026-09-01 至 2026-10-01（结束日不包含）；每实例 720 小时 × 2。</p>
+<p>性能依据：源 8 vCPU / 64 GiB；CPU P95 42%，内存 P99 73%，发送网络 P95 400 Mbps；观察 30 天，峰值覆盖 已确认；类型 user-facing。</p>
+<p>商务依据：MCA / RI；RI 覆盖 70%，到期 2027-09-01；EA enrollment 续约 未提供。源/目标不自动继承承诺折扣。</p>
+<p><strong>End of Life 2029-11-15</strong> · 公开已宣布退役；在对应期限前完成过渡，不等于现在停机。</p>
+<p>规则 REGIONAL-VM：区域培训情景 +9%；适用计量项仍需通知核对。<br>存储规则 STORAGE-MISSING：未提供存储产品/计量项。</p>
+<div class="table-wrap"><table><thead><tr><th>源基准计算费</th><th>不调整计算费</th><th>关联存储情景/有效成本</th><th>价格依据</th></tr></thead><tbody><tr><td>USD 550.08</td><td>USD 571.46</td><td>未知 / 待补依据</td><td>demo；原始标题已省略，需回查源资料。</td></tr></tbody></table></div>
+<div class="grid three"><div class="candidate"><span class="badge">默认首候选 / v5</span><h4>Standard_E16ds_v5</h4><ul><li>16 vCPU / 128 GiB；600 GiB 临时盘</li><li>投影约束：CPU ≥ 8.40 核、内存 ≥ 77.87 GiB；不假设跨代 CPU 加速。</li><li>远程盘 32 个 / 25600 IOPS / 600 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v5：Extended，低扰动过渡路径；resize 仍可能需要停机/释放。</li></ul>
+<p>计算费：<strong>USD 1632.38</strong><br>含已提供剩余承诺：未知 / 待补依据<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>剩余承诺成本未知，不能输出可兑现差额</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv5-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div></div>
+<ul><li>区域/可用区、订阅配额和实时容量：部署前待核验。</li><li>购买承诺不能随配置自动消失；跨系列 RI 适用性、SP 重新消耗和剩余承诺需单独核验。</li></ul></article><article class="report-row"><span class="badge">波次 1 · 退役期限与业务风险优先</span><h3>VM-003</h3>
+<p class="mono">Standard_DS3_v2 · Commercial / northeurope · 3 实例</p>
+
+<p>源期间：2026-09-01 至 2026-10-01（结束日不包含）；每实例 720 小时 × 3。</p>
+<p>性能依据：源 4 vCPU / 14 GiB；CPU P95 35%，内存 P99 46%，发送网络 P95 180 Mbps；观察 30 天，峰值覆盖 已确认；类型 user-facing。</p>
+<p>商务依据：EA / PAYG；RI 覆盖 未知%，到期 未提供；EA enrollment 续约 2028-01-01。源/目标不自动继承承诺折扣。</p>
+<p><strong>End of Life 2028-05-01</strong> · 公开已宣布退役；在对应期限前完成过渡，不等于现在停机。</p>
+<p>规则 LEGACY-BASE：旧代际培训情景 +25%；排除区域 VM 调价，不叠加。<br>存储规则 STORAGE-MISSING：未提供存储产品/计量项。</p>
+<div class="table-wrap"><table><thead><tr><th>源基准计算费</th><th>不调整计算费</th><th>关联存储情景/有效成本</th><th>价格依据</th></tr></thead><tbody><tr><td>USD 604.80</td><td>USD 648.00</td><td>未知 / 待补依据</td><td>demo；原始标题已省略，需回查源资料。</td></tr></tbody></table></div>
+<div class="grid three"><div class="candidate"><span class="badge">默认首候选 / v7</span><h4>Standard_D4s_v7</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 3.50 核、内存 ≥ 10.73 GiB；不假设跨代 CPU 加速。</li><li>远程盘 12 个 / 8000 IOPS / 230 MB/s；网络 25000 Mbps（上限非保证）。</li><li>v7：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>USD 388.80</strong><br>含已提供剩余承诺：USD 388.80<br>条件差额：<strong>USD 259.20</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv7-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v5</span><h4>Standard_D4s_v5</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 3.50 核、内存 ≥ 10.73 GiB；不假设跨代 CPU 加速。</li><li>远程盘 8 个 / 6400 IOPS / 145 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v5：Extended，低扰动过渡路径；resize 仍可能需要停机/释放。</li></ul>
+<p>计算费：<strong>未知 / 待补依据</strong><br>含已提供剩余承诺：未知 / 待补依据<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>目标 SKU 的 EA 价格上限/合同价需单独提供，不能沿用源 SKU 上限。</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv5-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v6</span><h4>Standard_D4s_v6</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 3.50 核、内存 ≥ 10.73 GiB；不假设跨代 CPU 加速。</li><li>远程盘 12 个 / 6400 IOPS / 212 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v6：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>未知 / 待补依据</strong><br>含已提供剩余承诺：未知 / 待补依据<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>目标 SKU 的 EA 价格上限/合同价需单独提供，不能沿用源 SKU 上限。</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv6-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div></div>
+<ul><li>区域/可用区、订阅配额和实时容量：部署前待核验。</li></ul></article><article class="report-row"><span class="badge">波次 2 · 小范围验证与持续优化</span><h3>VM-004</h3>
+<p class="mono">Standard_D4s_v3 · China / chinaeast2 · 1 实例</p>
+
+<p>源期间：2026-09-01 至 2026-10-01（结束日不包含）；每实例 720 小时 × 1。</p>
+<p>性能依据：源 4 vCPU / 16 GiB；CPU P95 25%，内存 P99 40%，发送网络 P95 120 Mbps；观察 30 天，峰值覆盖 已确认；类型 user-facing。</p>
+<p>商务依据：MCA / PAYG；RI 覆盖 未知%，到期 未提供；EA enrollment 续约 未提供。源/目标不自动继承承诺折扣。</p>
+<p><strong>公告排除 </strong> · 该 v3 退役公告明确排除此云；不代表其他生命周期或价格公告也不适用。</p>
+<p>规则 REGION-CLOUD-REVIEW：未独立核验此云的区域价格政策，需适用通知。<br>存储规则 STORAGE-MISSING：未提供存储产品/计量项。</p>
+<div class="table-wrap"><table><thead><tr><th>源基准计算费</th><th>不调整计算费</th><th>关联存储情景/有效成本</th><th>价格依据</th></tr></thead><tbody><tr><td>未知 / 待补依据</td><td>未知 / 待补依据</td><td>未知 / 待补依据</td><td>未提供；原始标题已省略，需回查源资料。</td></tr></tbody></table></div>
+<div class="grid three"><div class="candidate"><span class="badge">默认首候选 / v5</span><h4>Standard_D4s_v5</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 2.50 核、内存 ≥ 10.67 GiB；不假设跨代 CPU 加速。</li><li>远程盘 8 个 / 6400 IOPS / 145 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v5：Extended，低扰动过渡路径；resize 仍可能需要停机/释放。</li></ul>
+<p>计算费：<strong>未知 / 待补依据</strong><br>含已提供剩余承诺：未知 / 待补依据<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv5-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v6</span><h4>Standard_D4s_v6</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 2.50 核、内存 ≥ 10.67 GiB；不假设跨代 CPU 加速。</li><li>远程盘 12 个 / 6400 IOPS / 212 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v6：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>未知 / 待补依据</strong><br>含已提供剩余承诺：未知 / 待补依据<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv6-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v7</span><h4>Standard_D4s_v7</h4><ul><li>4 vCPU / 16 GiB；无临时盘</li><li>投影约束：CPU ≥ 2.50 核、内存 ≥ 10.67 GiB；不假设跨代 CPU 加速。</li><li>远程盘 12 个 / 8000 IOPS / 230 MB/s；网络 25000 Mbps（上限非保证）。</li><li>v7：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>未知 / 待补依据</strong><br>含已提供剩余承诺：未知 / 待补依据<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv7-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div></div>
+<ul><li>区域/可用区、订阅配额和实时容量：部署前待核验。</li><li>缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。</li></ul></article><article class="report-row"><span class="badge">准备队列 · 补数据/专项评估</span><h3>VM-005</h3>
+<p class="mono">Standard_HC44rs · Commercial / eastus · 1 实例</p>
+
+<p>源期间：2026-09-01 至 2026-10-01（结束日不包含）；每实例 720 小时 × 1。</p>
+<p>性能依据：源 44 vCPU / 352 GiB；CPU P95 80%，内存 P99 70%，发送网络 P95 6000 Mbps；观察 30 天，峰值覆盖 已确认；类型 batch。</p>
+<p>商务依据：MCA / PAYG；RI 覆盖 未知%，到期 未提供；EA enrollment 续约 未提供。源/目标不自动继承承诺折扣。</p>
+<p><strong>End of Life 2027-05-31</strong> · 公开已宣布退役；在对应期限前完成过渡，不等于现在停机。</p>
+<p>规则 LEGACY-BASE：旧代际培训情景 +25%；排除区域 VM 调价，不叠加。<br>存储规则 STORAGE-MISSING：未提供存储产品/计量项。</p>
+<div class="table-wrap"><table><thead><tr><th>源基准计算费</th><th>不调整计算费</th><th>关联存储情景/有效成本</th><th>价格依据</th></tr></thead><tbody><tr><td>USD 1296.00</td><td>USD 1620.00</td><td>未知 / 待补依据</td><td>demo；原始标题已省略，需回查源资料。</td></tr></tbody></table></div>
+<div class="notice">无具体通用候选：补齐源配置、指标或转专项评估，不能强行放宽约束。</div>
+<ul><li>区域/可用区、订阅配额和实时容量：部署前待核验。</li><li>性能/峰值/兼容依据不完整：只筛选不降低源 CPU/内存容量的现代化候选，不给确定缩容结论。</li><li>未给通用替代 SKU：特殊计算、未支持系列、源 CPU/内存缺失或专项认证要求需人工评估。</li></ul></article><article class="report-row"><span class="badge">准备队列 · 补数据/专项评估</span><h3>VM-006</h3>
+<p class="mono">Standard_D8s_v3 · Commercial / southeastasia · 1 实例</p>
+
+<p>源期间：2026-09-01 至 2026-10-01（结束日不包含）；每实例 720 小时 × 1。</p>
+<p>性能依据：源 8 vCPU / 32 GiB；CPU P95 8%，内存 P99 未知%，发送网络 P95 未知 Mbps；观察 30 天，峰值覆盖 未知；类型 user-facing。</p>
+<p>商务依据：MCA / PAYG；RI 覆盖 未知%，到期 未提供；EA enrollment 续约 未提供。源/目标不自动继承承诺折扣。</p>
+<p><strong>End of Life 2029-11-15</strong> · 公开已宣布退役；在对应期限前完成过渡，不等于现在停机。</p>
+<p>规则 REGIONAL-VM：区域培训情景 +8%；适用计量项仍需通知核对。<br>存储规则 STORAGE-MISSING：未提供存储产品/计量项。</p>
+<div class="table-wrap"><table><thead><tr><th>源基准计算费</th><th>不调整计算费</th><th>关联存储情景/有效成本</th><th>价格依据</th></tr></thead><tbody><tr><td>未知 / 待补依据</td><td>未知 / 待补依据</td><td>未知 / 待补依据</td><td>未提供；原始标题已省略，需回查源资料。</td></tr></tbody></table></div>
+<div class="grid three"><div class="candidate"><span class="badge">默认首候选 / v5</span><h4>Standard_D8s_v5</h4><ul><li>8 vCPU / 32 GiB；无临时盘</li><li>保留不低于源 8 核 / 32 GiB 的容量。</li><li>远程盘 16 个 / 12800 IOPS / 290 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v5：Extended，低扰动过渡路径；resize 仍可能需要停机/释放。</li></ul>
+<p>计算费：<strong>USD 217.73</strong><br>含已提供剩余承诺：USD 217.73<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>指标/峰值不足，未执行缩容</li><li>网卡和网络指标待补齐</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv5-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v6</span><h4>Standard_D8s_v6</h4><ul><li>8 vCPU / 32 GiB；无临时盘</li><li>保留不低于源 8 核 / 32 GiB 的容量。</li><li>远程盘 24 个 / 12800 IOPS / 424 MB/s；网络 12500 Mbps（上限非保证）。</li><li>v6：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>USD 248.83</strong><br>含已提供剩余承诺：USD 248.83<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>指标/峰值不足，未执行缩容</li><li>网卡和网络指标待补齐</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv6-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div><div class="candidate"><span class="badge">替代路径 / v7</span><h4>Standard_D8s_v7</h4><ul><li>8 vCPU / 32 GiB；无临时盘</li><li>保留不低于源 8 核 / 32 GiB 的容量。</li><li>远程盘 26 个 / 16000 IOPS / 460 MB/s；网络 25000 Mbps（上限非保证）。</li><li>v7：Current，按 Gen2/NVMe/MANA 现代化路径验证。</li></ul>
+<p>计算费：<strong>USD 259.20</strong><br>含已提供剩余承诺：USD 259.20<br>条件差额：<strong>未知 / 待补依据</strong></p>
+<p>不低于源 CPU/内存容量的现代化候选。</p>
+<p class="muted">本地价格快照；原始依据标题已省略。</p>
+<h4>阻断 / 待验证</h4><ul><li>区域/可用区、配额与容量待核验</li><li>实际应用性能基线、备份和回退演练待验证</li><li>指标/峰值不足，未执行缩容</li><li>网卡和网络指标待补齐</li></ul><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv7-series" target="_blank" rel="noreferrer">官方 SKU 规格（需联网）</a></div></div>
+<ul><li>区域/可用区、订阅配额和实时容量：部署前待核验。</li><li>缺少匹配云/区域/SKU/OS/币种/购买方式/有效日的可信小时价格。</li><li>性能/峰值/兼容依据不完整：只筛选不降低源 CPU/内存容量的现代化候选，不给确定缩容结论。</li></ul></article></section>
+<section class="section"><h2>实施与回退检查清单</h2><ul><li>确认业务负责人、关键性和停机窗口；状态型系统先设计同步与角色切换。</li><li>核对源/目标镜像、启动代次、NVMe/MANA、临时盘、网络、磁盘与许可。</li><li>在客户订阅核验目标区域/可用区、系列配额和实际容量；不能以配额推断容量。</li><li>确认 RI/SP 系列覆盖、到期/续约、剩余承诺及有效合同价，重新分配承诺前先测算。</li><li>建立应用性能、数据一致性、备份和监控基线，先验证代表性低风险实例。</li><li>定义停止扩展、回切、数据恢复和业务验收条件，再按风险推进受控波次。</li></ul></section>
+<section class="section"><h2>来源与免责声明</h2><p>1.0 · 核验 2026-10-12。公开核验的生命周期与规格，与未充分公开核验的培训价格情景分开使用。报告不执行配置更改，不替代 Azure 公告、客户账单或供应商认证。</p><ul><li>生命周期阶段：https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/lifecycle-overview</li><li>退役与容量限制：https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirements-and-capacity-restrictions</li><li>v5 现代化路径：https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/sizes-v5-modernization-overview</li><li>v6/v7 平台准备：https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/sizes-v6-v7-modernization-overview</li><li>Advisor 优化依据与限制：https://learn.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations</li><li>零售价格 API 与商业云范围：https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices</li></ul><p>报告仅由本地数据生成。已省略名称、资源、订阅及价格依据原始标题；SKU、区域和数量仍会披露，请自行审查再外发。</p></section>
+<footer class="footer">LOCAL FIRST · 离线独立报告 · 生成 2026-10-12T06:42:48.138Z</footer></main></body></html>

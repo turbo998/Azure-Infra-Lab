@@ -1,0 +1,33 @@
+{
+  "name": "azure-vm-partner-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "npm run check && vite build --mode workshop && vite build --mode calculator && vite build --mode demo && node scripts/finalize.mjs",
+    "fixtures": "node scripts/fixtures.mjs",
+    "browser-test": "node scripts/browser-test.mjs",
+    "demo-test": "node scripts/demo-test.mjs",
+    "locale-keys": "node scripts/locale-keys.mjs"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "opencc-js": "^1.0.5",
+    "papaparse": "^5.5.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/papaparse": "^5.3.16",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "playwright": "^1.56.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0",
+    "vite-plugin-singlefile": "^2.3.0",
+    "vitest": "^3.2.0"
+  }
+}

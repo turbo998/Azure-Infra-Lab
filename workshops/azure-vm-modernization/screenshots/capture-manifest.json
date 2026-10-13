@@ -1,0 +1,29 @@
+{
+  "capturedAt": "2026-10-12T14:00:33.389Z",
+  "browser": "Microsoft Edge / Playwright",
+  "mode": "file://, offline",
+  "languages": [
+    "zh-CN",
+    "zh-TW",
+    "en"
+  ],
+  "desktop": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844
+  },
+  "scenarios": [
+    "same-page language switching",
+    "preserved progress/quiz/data/results",
+    "automatic six-case demo",
+    "HTML/PDF exports",
+    "all sample XLSX imports",
+    "rejected synthetic customer prices"
+  ],
+  "syntheticData": true,
+  "httpRequests": 0,
+  "runtimeErrors": 0
+}

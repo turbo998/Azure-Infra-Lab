@@ -1,0 +1,56 @@
+﻿key,中文,分组,必填,说明
+id,资源唯一标识,必填,yes,
+sku,ARM SKU,必填,yes,必须为 Standard_…，不从计量项名称猜测。
+region,部署区域,必填,yes,
+count,实例数,必填,yes,逐台记录填 1；账单 Quantity 不是实例数。
+name,VM/组名称,部署,no,
+subscription,订阅标识,部署,no,
+cloud,云环境,部署,no,Commercial / China / Government / Sovereign / Unknown
+os,操作系统,部署,no,Linux / Windows；其他名称不自动匹配价格。
+hoursTotal,实例小时总量,用量,no,所有实例的总小时，不能再乘实例数。
+hoursPerVM,每实例运行小时,用量,no,与实例小时总量互斥。
+usageUnit,用量单位,用量,no,1 Hour；不接受每核小时等其他单位。
+periodStart,源期间开始,用量,no,YYYY-MM-DD，包含当日。
+periodEnd,源期间结束,用量,no,YYYY-MM-DD，不包含当日。
+vcpus,源 vCPU 数,性能,no,
+memoryGiB,源内存 GiB,性能,no,
+cpuP95,CPU P95 %,性能,no,填 0–100；不是平均 CPU。
+memoryP99,内存 P99 %,性能,no,填 0–100；缺少内存时不做确定性缩容。
+networkP95Mbps,网络 P95 Mbps,性能,no,发送网络带宽，不是百分比或 MB/s。
+observationDays,观察窗口天数,性能,no,
+peakCovered,已覆盖业务峰值,性能,no,yes / no / 留空未知
+workload,工作负载类型,性能,no,user-facing / batch / unknown
+tempGiB,所需临时盘 GiB,兼容,no,明确不依赖临时盘填 0；留空未知。
+dataDisks,所需数据盘数,兼容,no,
+nics,所需网卡数,兼容,no,
+diskIOPS,所需远程盘 IOPS,兼容,no,
+diskMBps,所需远程盘 MB/s,兼容,no,
+architecture,CPU 架构,兼容,no,x64；Arm 等需专项评估。
+bootGeneration,启动代次,兼容,no,1 / 2
+accelNetworking,加速网络就绪,兼容,no,
+nvmeReady,NVMe 镜像就绪,兼容,no,
+manaReady,MANA 驱动就绪,兼容,no,
+specialRequirements,专用要求,兼容,no,none / manual；认证、托管计算、特殊许可填 manual。
+licenseReady,许可核验完成,兼容,no,
+agreement,协议类型,商务,no,EA / MCA / Unknown
+purchase,购买方式,商务,no,PAYG / RI / SavingsPlan / Mixed / Unknown
+riCoverage,RI 覆盖比例 %,商务,no,
+riEnd,RI 到期日,商务,no,
+riRate,RI 已覆盖小时费率,商务,no,
+eaRenewal,EA enrollment 续约日,商务,no,
+eaCapRate,EA PAYG 小时价格上限,商务,no,
+residualCommitmentCost,迁移后剩余承诺成本,商务,no,与本次固定用量比较期间一致；不是承诺年费。
+currentRate,源 PAYG/有效小时费率,价格,no,RI 基准模式此列填 PAYG 基础费率。
+currentCost,源计算成本,价格,no,仅 VM 计算；不能含磁盘、税费、许可等。
+currency,币种,价格,no,
+costBasis,成本口径,价格,no,Actual / Amortized
+rateBasis,费率基准,价格,no,baseline 为情景前基准；effective 为已生效费率。
+rateFrom,费率生效日,价格,no,
+rateTo,费率失效日,价格,no,不包含当日。
+priceIncludesUpdate,价格已含此次调整,价格,no,
+priceSource,价格依据,价格,no,
+priceKind,价格来源类型,价格,no,customer / retail / demo
+storageProduct,关联存储产品/计量项,存储,no,
+storageCost,源关联存储成本,存储,no,
+futureStorageCost,客户有效关联存储成本,存储,no,评估日对应相同用量的客户依据值。
+storagePriceIncludesUpdate,存储成本已含调整,存储,no,
