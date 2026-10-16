@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/workshops/azure-vm-modernization/source"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
