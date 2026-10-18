@@ -1059,6 +1059,53 @@
         "upperdir_quota_gib": 0.0,
         "supply_chain_protected": false
       }
+    ],
+    "swarm_fanout_governance_profiles": [
+      {
+        "fanout_width": 16,
+        "governance_mode": "hierarchical_budget_intent_prewarm_ast_lease",
+        "max_depth": 2,
+        "max_fanout_per_node": 16,
+        "token_amplification_factor": 1.0,
+        "fork_bomb_incident_rate_pct": 0.0,
+        "redundant_token_savings_pct": 63.8,
+        "prewarm_lead_time_ms": 800.0,
+        "warm_pool_hit_rate_pct": 99.4,
+        "subagent_spawn_p95_ms": 185.0,
+        "deadlock_detection_latency_ms": 2.2,
+        "merge_conflict_rollback_rate_pct": 0.4,
+        "swarm_governed": true
+      },
+      {
+        "fanout_width": 32,
+        "governance_mode": "hierarchical_budget_intent_prewarm_ast_lease",
+        "max_depth": 2,
+        "max_fanout_per_node": 16,
+        "token_amplification_factor": 1.0,
+        "fork_bomb_incident_rate_pct": 0.0,
+        "redundant_token_savings_pct": 63.8,
+        "prewarm_lead_time_ms": 800.0,
+        "warm_pool_hit_rate_pct": 99.4,
+        "subagent_spawn_p95_ms": 185.0,
+        "deadlock_detection_latency_ms": 2.2,
+        "merge_conflict_rollback_rate_pct": 0.4,
+        "swarm_governed": true
+      },
+      {
+        "fanout_width": 32,
+        "governance_mode": "unbounded_recursive_keda_reactive",
+        "max_depth": 99,
+        "max_fanout_per_node": 32,
+        "token_amplification_factor": 14.6,
+        "fork_bomb_incident_rate_pct": 100.0,
+        "redundant_token_savings_pct": 0.0,
+        "prewarm_lead_time_ms": 0.0,
+        "warm_pool_hit_rate_pct": 32.0,
+        "subagent_spawn_p95_ms": 18400.0,
+        "deadlock_detection_latency_ms": 0.0,
+        "merge_conflict_rollback_rate_pct": 29.4,
+        "swarm_governed": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -1662,5 +1709,52 @@
       "supply_chain_protected": false
     }
   },
-  "trace_sha256": "9016f09109ffbaed5a31c9376994926e9ce83c2077c958154fd110347a890b43"
+  "demo_14_swarm_fanout_governance": {
+    "governed_16way": {
+      "fanout_width": 16,
+      "governance_mode": "hierarchical_budget_intent_prewarm_ast_lease",
+      "max_depth": 2,
+      "max_fanout_per_node": 16,
+      "token_amplification_factor": 1.0,
+      "fork_bomb_incident_rate_pct": 0.0,
+      "redundant_token_savings_pct": 63.8,
+      "prewarm_lead_time_ms": 800.0,
+      "warm_pool_hit_rate_pct": 99.4,
+      "subagent_spawn_p95_ms": 185.0,
+      "deadlock_detection_latency_ms": 2.2,
+      "merge_conflict_rollback_rate_pct": 0.4,
+      "swarm_governed": true
+    },
+    "governed_32way": {
+      "fanout_width": 32,
+      "governance_mode": "hierarchical_budget_intent_prewarm_ast_lease",
+      "max_depth": 2,
+      "max_fanout_per_node": 16,
+      "token_amplification_factor": 1.0,
+      "fork_bomb_incident_rate_pct": 0.0,
+      "redundant_token_savings_pct": 63.8,
+      "prewarm_lead_time_ms": 800.0,
+      "warm_pool_hit_rate_pct": 99.4,
+      "subagent_spawn_p95_ms": 185.0,
+      "deadlock_detection_latency_ms": 2.2,
+      "merge_conflict_rollback_rate_pct": 0.4,
+      "swarm_governed": true
+    },
+    "unbounded_reactive_32way": {
+      "fanout_width": 32,
+      "governance_mode": "unbounded_recursive_keda_reactive",
+      "max_depth": 99,
+      "max_fanout_per_node": 32,
+      "token_amplification_factor": 14.6,
+      "fork_bomb_incident_rate_pct": 100.0,
+      "redundant_token_savings_pct": 0.0,
+      "prewarm_lead_time_ms": 0.0,
+      "warm_pool_hit_rate_pct": 32.0,
+      "subagent_spawn_p95_ms": 18400.0,
+      "deadlock_detection_latency_ms": 0.0,
+      "merge_conflict_rollback_rate_pct": 29.4,
+      "swarm_governed": false
+    }
+  },
+  "trace_sha256": "1f266002509bc397a422d715d24f12cac3959d2069454bc7011995f44d8f6f50"
 }

@@ -26,6 +26,7 @@ from agent_infra_sizer import (
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
 )
@@ -302,6 +303,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_dependency_cache_virtiofs_dax(100, 3.2, "cold_pip_full_oci_pull"),
     ]
 
+    swarm_fanout_governance_profiles: List[Dict[str, object]] = [
+        simulate_multi_agent_swarm_fanout_governance(16, "hierarchical_budget_intent_prewarm_ast_lease"),
+        simulate_multi_agent_swarm_fanout_governance(32, "hierarchical_budget_intent_prewarm_ast_lease"),
+        simulate_multi_agent_swarm_fanout_governance(32, "unbounded_recursive_keda_reactive"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -315,6 +322,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "durable_workflow_saga_profiles": durable_workflow_saga_profiles,
         "cua_browser_sandbox_profiles": cua_browser_sandbox_profiles,
         "dependency_acceleration_profiles": dependency_acceleration_profiles,
+        "swarm_fanout_governance_profiles": swarm_fanout_governance_profiles,
     }
 
 

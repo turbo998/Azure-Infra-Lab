@@ -33,6 +33,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
 )
@@ -265,6 +266,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "virtiofs_dax_100sbx": simulate_dependency_cache_virtiofs_dax(100, 3.2, "virtiofs_dax_overlaybd_osv"),
             "virtiofs_dax_250sbx": simulate_dependency_cache_virtiofs_dax(250, 3.2, "virtiofs_dax_overlaybd_osv"),
             "cold_pip_full_oci_100sbx": simulate_dependency_cache_virtiofs_dax(100, 3.2, "cold_pip_full_oci_pull"),
+        },
+        "demo_14_swarm_fanout_governance": {
+            "governed_16way": simulate_multi_agent_swarm_fanout_governance(16, "hierarchical_budget_intent_prewarm_ast_lease"),
+            "governed_32way": simulate_multi_agent_swarm_fanout_governance(32, "hierarchical_budget_intent_prewarm_ast_lease"),
+            "unbounded_reactive_32way": simulate_multi_agent_swarm_fanout_governance(32, "unbounded_recursive_keda_reactive"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

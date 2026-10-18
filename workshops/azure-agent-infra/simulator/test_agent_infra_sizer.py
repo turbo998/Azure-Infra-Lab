@@ -20,6 +20,7 @@ from agent_infra_sizer import (
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
 )
@@ -333,6 +334,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(dax["malicious_hook_block_rate_pct"], 100.0)
         self.assertTrue(dax["supply_chain_protected"])
         self.assertFalse(cold["supply_chain_protected"])
+
+    def test_multi_agent_swarm_fanout_governance(self) -> None:
+        gov = simulate_multi_agent_swarm_fanout_governance(32, "hierarchical_budget_intent_prewarm_ast_lease")
+        unb = simulate_multi_agent_swarm_fanout_governance(32, "unbounded_recursive_keda_reactive")
+        self.assertEqual(gov["max_depth"], 2)
+        self.assertEqual(gov["max_fanout_per_node"], 16)
+        self.assertAlmostEqual(gov["redundant_token_savings_pct"], 63.8)
+        self.assertAlmostEqual(gov["prewarm_lead_time_ms"], 800.0)
+        self.assertAlmostEqual(gov["warm_pool_hit_rate_pct"], 99.4)
+        self.assertAlmostEqual(gov["subagent_spawn_p95_ms"], 185.0)
+        self.assertLess(gov["deadlock_detection_latency_ms"], 2.5)
+        self.assertAlmostEqual(gov["merge_conflict_rollback_rate_pct"], 0.4)
+        self.assertTrue(gov["swarm_governed"])
+        self.assertAlmostEqual(unb["token_amplification_factor"], 14.6)
+        self.assertAlmostEqual(unb["warm_pool_hit_rate_pct"], 32.0)
+        self.assertAlmostEqual(unb["merge_conflict_rollback_rate_pct"], 29.4)
+        self.assertFalse(unb["swarm_governed"])
 
 
 if __name__ == "__main__":
