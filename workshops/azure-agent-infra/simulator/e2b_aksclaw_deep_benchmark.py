@@ -32,6 +32,7 @@ from agent_infra_sizer import (
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
 
@@ -341,6 +342,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_agentic_memory_diskann_graphrag_tiering(100, "in_memory_hnsw_untiered_no_rls"),
     ]
 
+    webrtc_media_sandbox_profiles: List[Dict[str, object]] = [
+        simulate_webrtc_voice_video_media_sandbox(1_000, "ebpf_xdp_sockmap_vad_acs_turn"),
+        simulate_webrtc_voice_video_media_sandbox(5_000, "ebpf_xdp_sockmap_vad_acs_turn"),
+        simulate_webrtc_voice_video_media_sandbox(25_000, "ebpf_xdp_sockmap_vad_acs_turn"),
+        simulate_webrtc_voice_video_media_sandbox(5_000, "userspace_nat_chained_http_rest"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -359,6 +367,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "canary_live_migration_profiles": canary_live_migration_profiles,
         "model_routing_kv_affinity_profiles": model_routing_kv_affinity_profiles,
         "memory_diskann_graphrag_profiles": memory_diskann_graphrag_profiles,
+        "webrtc_media_sandbox_profiles": webrtc_media_sandbox_profiles,
     }
 
 

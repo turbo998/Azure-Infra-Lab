@@ -890,7 +890,33 @@ sequenceDiagram
 
 ---
 
-## 24. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 24. 多模态实时音视频 WebRTC Agent 沙箱 —— 内核 eBPF `XDP/sockmap` RTP 媒体旁路、`< 300ms` 端到端语音交互预算与 Barge-In 打断取消物理模型（Multimodal Realtime Voice/Video WebRTC Agent Sandbox — Kernel eBPF `XDP/sockmap` RTP Media Bypass, Sub-300ms Mouth-to-Ear Budget & Barge-In Cancellation Physics）
+
+> 本章由确定性实时多模态 WebRTC 沙箱仿真模型 [`simulate_webrtc_voice_video_media_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-webrtc-turn-acs-ebpf-media-pool.bicep`](blueprints/aksclaw-webrtc-turn-acs-ebpf-media-pool.bicep) 驱动，面向 `1,000–25,000` 并发全双工语音/视频交互 Agent（`Opus 48kHz + 720p AV1` 实时流，如实时客服、AI 面试官、远程桌面结对编程助手）的三大媒体面瓶颈：**传统 Kubernetes `kube-proxy` 用户态 NAT 转发导致的 UDP RTP 抖动与 CPU 耗尽、HTTP 串行 ASR->LLM->TTS 导致的秒级交互卡顿，以及人类插话打断（Barge-In）时无法即时停止在途推理与语音合成缓冲导致的抢话与 Token 浪费**。
+
+### 24.1 实时多模态 WebRTC 沙箱基础设施三大支柱
+
+1. **Pillar 1：内核态 eBPF `XDP` + `sockmap` 零拷贝 UDP RTP 媒体直通 vs 用户态 `kube-proxy` 折返**：
+   - 在 `5,000` 并发全双工 WebRTC 会话下，传统 `iptables / kube-proxy` 用户态转发引入 **`48.0 ms` RTP 转发尾延迟（p99）** 并消耗宿主机 **`34.0%` 网络软中断 CPU**；
+   - 通过 Cilium eBPF `XDP`（网卡驱动层早筛）+ `sockmap` 将 UDP RTP 套接字直接拼接至沙箱 `vhost-net` 环，将媒体转发延迟压降至 **`3.2 ms`（`-93.3%`）**，宿主机网络 CPU 开销降至 **`4.8%`**。
+2. **Pillar 2：`242.5 ms`（`<= 300 ms` SLO）端到端 Mouth-to-Ear 延迟预算分解与 `14.0 ms` 边缘 Silero-VAD 打断取消**：
+   - 全双工流式管线逐段延迟分解：`20.0 ms` Opus 音频帧封装 + `18.0 ms` 自适应抖动缓冲（Jitter Buffer）+ `6.5 ms` 沙箱内 ONNX Silero-VAD 语音活动检测 + `62.0 ms` 流式音频 Token 化 + `98.0 ms` 热 KV-Cache 首字推理 + `38.0 ms` 流式 TTS 首包输出 = **`242.5 ms`（p95）**，较传统串行 HTTP REST 管线（`1,180.0 ms`）提速 **`79.4%`**；
+   - 当人类用户在 Agent 说话中途开口插话（Barge-In）时，沙箱边缘 Silero-VAD 在 **`14.0 ms`** 内向 RTP 发送队列与在途 LLM 流发出原子 `Cancel` 信号并清空缓冲区，平均节省 **`38.2%` 被打断废弃的语音输出 Token**。
+3. **Pillar 3：Azure Communication Services (ACS) 全球 Anycast TURN 中继 + 硬件 AES-GCM SRTP 卸载**：
+   - 为企业防火墙/对称型 NAT 后的客户端提供就近 Anycast TURN UDP/TLS 接入，将跨国 ICE 握手建连延迟从 `1,650.0 ms` 降至 **`195.0 ms`（`-88.2%`）**，NAT 穿透建连成功率达 **`99.95%`**。
+
+### 24.2 eBPF `XDP/sockmap` 实时 WebRTC 沙箱 vs 传统用户态 NAT + 串行 HTTP 管线定量对比表
+
+| 并发全双工会话与媒体管线架构 | 媒体节点数 (`D32s_v6`) | **RTP 转发延迟 `p99`** | 宿主机网络 CPU | **Mouth-to-Ear `p95` (<=300ms SLO)** | **Barge-In 打断响应** | 打断省 Token 比 | **ICE 握手建连延迟** | 对称 NAT 穿透率 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`1,000` 并发 · eBPF `XDP/sockmap` + 流式 VAD + ACS Anycast TURN** | `4` | **`3.2 ms` (`-93.3%`)** | `4.8%` | **`242.5 ms` (✅ 达标)** | **`14.0 ms`** | `38.2%` | **`195.0 ms` (`-88.2%`)** | **`99.95%`** |
+| **`5,000` 并发 · eBPF `XDP/sockmap` + 流式 VAD + ACS Anycast TURN (推荐)** | `20` | **`3.2 ms` (`-93.3%`)** | **`4.8%`** | **`242.5 ms` (`-79.4%` ✅)** | **`14.0 ms`** | **`38.2%`** | **`195.0 ms` (`-88.2%`)** | **`99.95%`** |
+| **`25,000` 并发 · eBPF `XDP/sockmap` + 流式 VAD + ACS Anycast TURN** | `100` | **`3.2 ms` (`-93.3%`)** | `4.8%` | **`242.5 ms` (✅ 达标)** | **`14.0 ms`** | `38.2%` | **`195.0 ms` (`-88.2%`)** | **`99.95%`** |
+| `5,000` 并发 · 传统 `kube-proxy` 用户态 NAT + 串行 HTTP REST (反模式) | `20` | `48.0 ms` (`0.0%`) | `34.0%` (❌ 软中断瓶颈) | `1,180.0 ms` (❌ 违约) | `420.0 ms` (抢话严重) | `0.0%` | `1,650.0 ms` (`0.0%`) | `84.50%` |
+
+---
+
+## 25. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -903,10 +929,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级 + 混合级联路由与 KV 亲和预取 + DiskANN/GraphRAG 多租户记忆分层）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级 + 混合级联路由与 KV 亲和预取 + DiskANN/GraphRAG 多租户记忆分层 + WebRTC 实时音视频 eBPF 沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 27 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层及链接完整性）
+# 3. 运行全部 28 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱及链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

@@ -39,6 +39,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
 from e2b_aksclaw_deep_benchmark import (  # noqa: E402
@@ -299,6 +300,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "diskann_100m": simulate_agentic_memory_diskann_graphrag_tiering(100, "diskann_graphrag_3tier_rls"),
             "diskann_250m": simulate_agentic_memory_diskann_graphrag_tiering(250, "diskann_graphrag_3tier_rls"),
             "hnsw_in_memory_100m": simulate_agentic_memory_diskann_graphrag_tiering(100, "in_memory_hnsw_untiered_no_rls"),
+        },
+        "demo_19_webrtc_media_sandbox": {
+            "ebpf_webrtc_1k": simulate_webrtc_voice_video_media_sandbox(1_000, "ebpf_xdp_sockmap_vad_acs_turn"),
+            "ebpf_webrtc_5k": simulate_webrtc_voice_video_media_sandbox(5_000, "ebpf_xdp_sockmap_vad_acs_turn"),
+            "ebpf_webrtc_25k": simulate_webrtc_voice_video_media_sandbox(25_000, "ebpf_xdp_sockmap_vad_acs_turn"),
+            "userspace_rest_5k": simulate_webrtc_voice_video_media_sandbox(5_000, "userspace_nat_chained_http_rest"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

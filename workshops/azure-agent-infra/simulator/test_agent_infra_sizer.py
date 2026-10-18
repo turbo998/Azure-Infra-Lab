@@ -26,6 +26,7 @@ from agent_infra_sizer import (
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
 from e2b_aksclaw_deep_benchmark import (
@@ -430,6 +431,25 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(hnsw["index_ram_gib"], 840.0)
         self.assertAlmostEqual(hnsw["monthly_index_cost_usd"], 6840.0)
         self.assertFalse(hnsw["memory_tier_governed"])
+
+    def test_webrtc_voice_video_media_sandbox(self) -> None:
+        rtc = simulate_webrtc_voice_video_media_sandbox(5_000, "ebpf_xdp_sockmap_vad_acs_turn")
+        rest = simulate_webrtc_voice_video_media_sandbox(5_000, "userspace_nat_chained_http_rest")
+        self.assertAlmostEqual(rtc["rtp_forwarding_p99_ms"], 3.2)
+        self.assertAlmostEqual(rtc["rtp_latency_reduction_pct"], 93.3)
+        self.assertAlmostEqual(rtc["host_network_cpu_pct"], 4.8)
+        self.assertAlmostEqual(rtc["mouth_to_ear_p95_ms"], 242.5)
+        self.assertLessEqual(rtc["mouth_to_ear_p95_ms"], 300.0)
+        self.assertAlmostEqual(rtc["mouth_to_ear_reduction_pct"], 79.4)
+        self.assertAlmostEqual(rtc["barge_in_cancel_latency_ms"], 14.0)
+        self.assertAlmostEqual(rtc["wasted_audio_token_savings_pct"], 38.2)
+        self.assertAlmostEqual(rtc["ice_handshake_latency_ms"], 195.0)
+        self.assertAlmostEqual(rtc["ice_handshake_reduction_pct"], 88.2)
+        self.assertAlmostEqual(rtc["nat_traversal_success_pct"], 99.95)
+        self.assertTrue(rtc["realtime_slo_met"])
+        self.assertAlmostEqual(rest["rtp_forwarding_p99_ms"], 48.0)
+        self.assertAlmostEqual(rest["mouth_to_ear_p95_ms"], 1180.0)
+        self.assertFalse(rest["realtime_slo_met"])
 
 
 if __name__ == "__main__":
