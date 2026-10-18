@@ -27,6 +27,7 @@ from agent_infra_sizer import (  # noqa: E402
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_agentic_memory_diskann_graphrag_tiering,
+    simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -306,6 +307,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ebpf_webrtc_5k": simulate_webrtc_voice_video_media_sandbox(5_000, "ebpf_xdp_sockmap_vad_acs_turn"),
             "ebpf_webrtc_25k": simulate_webrtc_voice_video_media_sandbox(25_000, "ebpf_xdp_sockmap_vad_acs_turn"),
             "userspace_rest_5k": simulate_webrtc_voice_video_media_sandbox(5_000, "userspace_nat_chained_http_rest"),
+        },
+        "demo_20_cicd_buildkit_bazel_sandbox": {
+            "buildkit_cas_250": simulate_autonomous_cicd_buildkit_bazel_sandbox(250, "microvm_rootless_buildkit_cas_tia"),
+            "buildkit_cas_1k": simulate_autonomous_cicd_buildkit_bazel_sandbox(1_000, "microvm_rootless_buildkit_cas_tia"),
+            "buildkit_cas_5k": simulate_autonomous_cicd_buildkit_bazel_sandbox(5_000, "microvm_rootless_buildkit_cas_tia"),
+            "privileged_dind_1k": simulate_autonomous_cicd_buildkit_bazel_sandbox(1_000, "privileged_dind_cold_compile_full_test"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

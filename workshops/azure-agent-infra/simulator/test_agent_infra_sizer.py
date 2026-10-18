@@ -14,6 +14,7 @@ from agent_infra_sizer import (
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_agentic_memory_diskann_graphrag_tiering,
+    simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -450,6 +451,25 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(rest["rtp_forwarding_p99_ms"], 48.0)
         self.assertAlmostEqual(rest["mouth_to_ear_p95_ms"], 1180.0)
         self.assertFalse(rest["realtime_slo_met"])
+
+    def test_autonomous_cicd_buildkit_bazel_sandbox(self) -> None:
+        ci = simulate_autonomous_cicd_buildkit_bazel_sandbox(1_000, "microvm_rootless_buildkit_cas_tia")
+        dind = simulate_autonomous_cicd_buildkit_bazel_sandbox(1_000, "privileged_dind_cold_compile_full_test")
+        self.assertEqual(ci["host_privilege_escalation_surface_pct"], 0.0)
+        self.assertAlmostEqual(ci["native_nvme_throughput_pct"], 96.4)
+        self.assertAlmostEqual(ci["container_build_latency_sec"], 14.2)
+        self.assertAlmostEqual(ci["container_build_reduction_pct"], 76.2)
+        self.assertAlmostEqual(ci["cas_object_hit_rate_pct"], 93.6)
+        self.assertAlmostEqual(ci["compile_link_latency_sec"], 18.4)
+        self.assertAlmostEqual(ci["compile_link_reduction_pct"], 94.1)
+        self.assertAlmostEqual(ci["vcpu_hours_saved_pct"], 78.5)
+        self.assertEqual(ci["cas_poisoning_rate_pct"], 0.0)
+        self.assertAlmostEqual(ci["tia_test_wallclock_reduction_pct"], 82.0)
+        self.assertAlmostEqual(ci["flaky_retry_elimination_pct"], 99.1)
+        self.assertTrue(ci["hermetic_cicd_governed"])
+        self.assertEqual(dind["host_privilege_escalation_surface_pct"], 100.0)
+        self.assertAlmostEqual(dind["compile_link_latency_sec"], 310.0)
+        self.assertFalse(dind["hermetic_cicd_governed"])
 
 
 if __name__ == "__main__":
