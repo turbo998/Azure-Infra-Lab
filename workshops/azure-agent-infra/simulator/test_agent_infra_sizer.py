@@ -23,6 +23,7 @@ from agent_infra_sizer import (
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
+    simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
@@ -470,6 +471,22 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(dind["host_privilege_escalation_surface_pct"], 100.0)
         self.assertAlmostEqual(dind["compile_link_latency_sec"], 310.0)
         self.assertFalse(dind["hermetic_cicd_governed"])
+
+    def test_lakehouse_duckdb_onelake_sandbox(self) -> None:
+        lh = simulate_lakehouse_duckdb_onelake_sandbox(1_000, "ephemeral_duckdb_onelake_pushdown_ast_guard")
+        sp = simulate_lakehouse_duckdb_onelake_sandbox(1_000, "cold_spark_cluster_unbounded_sql")
+        self.assertAlmostEqual(lh["query_latency_p95_sec"], 1.85)
+        self.assertAlmostEqual(lh["query_latency_reduction_pct"], 96.2)
+        self.assertAlmostEqual(lh["cost_per_1k_sessions_usd"], 19.60)
+        self.assertAlmostEqual(lh["cost_reduction_pct"], 89.3)
+        self.assertAlmostEqual(lh["ast_cost_guard_overhead_ms"], 0.9)
+        self.assertAlmostEqual(lh["runaway_scan_bill_reduction_pct"], 99.6)
+        self.assertAlmostEqual(lh["hallucinated_column_retry_reduction_pct"], 74.0)
+        self.assertEqual(lh["unauthorized_column_exposure_pct"], 0.0)
+        self.assertTrue(lh["lakehouse_slo_governed"])
+        self.assertAlmostEqual(sp["query_latency_p95_sec"], 48.50)
+        self.assertAlmostEqual(sp["cost_per_1k_sessions_usd"], 184.00)
+        self.assertFalse(sp["lakehouse_slo_governed"])
 
 
 if __name__ == "__main__":

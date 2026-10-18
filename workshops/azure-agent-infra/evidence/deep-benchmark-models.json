@@ -1368,5 +1368,71 @@
       "flaky_retry_elimination_pct": 0.0,
       "hermetic_cicd_governed": false
     }
+  ],
+  "lakehouse_duckdb_onelake_profiles": [
+    {
+      "concurrent_analytics_sandboxes": 250,
+      "lakehouse_execution_mode": "ephemeral_duckdb_onelake_pushdown_ast_guard",
+      "memory_optimized_nodes": 8,
+      "baseline_spark_query_p95_sec": 48.5,
+      "query_latency_p95_sec": 1.85,
+      "query_latency_reduction_pct": 96.2,
+      "baseline_cost_per_1k_sessions_usd": 184.0,
+      "cost_per_1k_sessions_usd": 19.6,
+      "cost_reduction_pct": 89.3,
+      "ast_cost_guard_overhead_ms": 0.9,
+      "runaway_scan_bill_reduction_pct": 99.6,
+      "hallucinated_column_retry_reduction_pct": 74.0,
+      "unauthorized_column_exposure_pct": 0.0,
+      "lakehouse_slo_governed": true
+    },
+    {
+      "concurrent_analytics_sandboxes": 1000,
+      "lakehouse_execution_mode": "ephemeral_duckdb_onelake_pushdown_ast_guard",
+      "memory_optimized_nodes": 32,
+      "baseline_spark_query_p95_sec": 48.5,
+      "query_latency_p95_sec": 1.85,
+      "query_latency_reduction_pct": 96.2,
+      "baseline_cost_per_1k_sessions_usd": 184.0,
+      "cost_per_1k_sessions_usd": 19.6,
+      "cost_reduction_pct": 89.3,
+      "ast_cost_guard_overhead_ms": 0.9,
+      "runaway_scan_bill_reduction_pct": 99.6,
+      "hallucinated_column_retry_reduction_pct": 74.0,
+      "unauthorized_column_exposure_pct": 0.0,
+      "lakehouse_slo_governed": true
+    },
+    {
+      "concurrent_analytics_sandboxes": 5000,
+      "lakehouse_execution_mode": "ephemeral_duckdb_onelake_pushdown_ast_guard",
+      "memory_optimized_nodes": 157,
+      "baseline_spark_query_p95_sec": 48.5,
+      "query_latency_p95_sec": 1.85,
+      "query_latency_reduction_pct": 96.2,
+      "baseline_cost_per_1k_sessions_usd": 184.0,
+      "cost_per_1k_sessions_usd": 19.6,
+      "cost_reduction_pct": 89.3,
+      "ast_cost_guard_overhead_ms": 0.9,
+      "runaway_scan_bill_reduction_pct": 99.6,
+      "hallucinated_column_retry_reduction_pct": 74.0,
+      "unauthorized_column_exposure_pct": 0.0,
+      "lakehouse_slo_governed": true
+    },
+    {
+      "concurrent_analytics_sandboxes": 1000,
+      "lakehouse_execution_mode": "cold_spark_cluster_unbounded_sql",
+      "memory_optimized_nodes": 32,
+      "baseline_spark_query_p95_sec": 48.5,
+      "query_latency_p95_sec": 48.5,
+      "query_latency_reduction_pct": 0.0,
+      "baseline_cost_per_1k_sessions_usd": 184.0,
+      "cost_per_1k_sessions_usd": 184.0,
+      "cost_reduction_pct": 0.0,
+      "ast_cost_guard_overhead_ms": 0.0,
+      "runaway_scan_bill_reduction_pct": 0.0,
+      "hallucinated_column_retry_reduction_pct": 0.0,
+      "unauthorized_column_exposure_pct": 18.5,
+      "lakehouse_slo_governed": false
+    }
   ]
 }

@@ -29,6 +29,7 @@ from agent_infra_sizer import (
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
+    simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
@@ -357,6 +358,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_autonomous_cicd_buildkit_bazel_sandbox(1_000, "privileged_dind_cold_compile_full_test"),
     ]
 
+    lakehouse_duckdb_onelake_profiles: List[Dict[str, object]] = [
+        simulate_lakehouse_duckdb_onelake_sandbox(250, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
+        simulate_lakehouse_duckdb_onelake_sandbox(1_000, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
+        simulate_lakehouse_duckdb_onelake_sandbox(5_000, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
+        simulate_lakehouse_duckdb_onelake_sandbox(1_000, "cold_spark_cluster_unbounded_sql"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -377,6 +385,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "memory_diskann_graphrag_profiles": memory_diskann_graphrag_profiles,
         "webrtc_media_sandbox_profiles": webrtc_media_sandbox_profiles,
         "cicd_buildkit_bazel_profiles": cicd_buildkit_bazel_profiles,
+        "lakehouse_duckdb_onelake_profiles": lakehouse_duckdb_onelake_profiles,
     }
 
 

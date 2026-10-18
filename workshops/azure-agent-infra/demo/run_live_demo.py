@@ -36,6 +36,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
+    simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
@@ -313,6 +314,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "buildkit_cas_1k": simulate_autonomous_cicd_buildkit_bazel_sandbox(1_000, "microvm_rootless_buildkit_cas_tia"),
             "buildkit_cas_5k": simulate_autonomous_cicd_buildkit_bazel_sandbox(5_000, "microvm_rootless_buildkit_cas_tia"),
             "privileged_dind_1k": simulate_autonomous_cicd_buildkit_bazel_sandbox(1_000, "privileged_dind_cold_compile_full_test"),
+        },
+        "demo_21_lakehouse_duckdb_onelake_sandbox": {
+            "duckdb_onelake_250": simulate_lakehouse_duckdb_onelake_sandbox(250, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
+            "duckdb_onelake_1k": simulate_lakehouse_duckdb_onelake_sandbox(1_000, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
+            "duckdb_onelake_5k": simulate_lakehouse_duckdb_onelake_sandbox(5_000, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
+            "cold_spark_1k": simulate_lakehouse_duckdb_onelake_sandbox(1_000, "cold_spark_cluster_unbounded_sql"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
