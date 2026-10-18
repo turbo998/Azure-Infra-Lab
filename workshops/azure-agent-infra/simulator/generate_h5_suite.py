@@ -1082,6 +1082,46 @@ def build_selector_html() -> str:
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
 
+  <!-- Tool 4: AKSClaw Kata Density & HorizonDB WAL Calculator -->
+  <div class="grid-2">
+    <section class="card">
+      <span class="pill pill-amber">TOOL 4A · AKSCLAW KATA VM NODE DENSITY CALCULATOR</span>
+      <h2>AKSClaw 多租户节点沙箱密度测算 (Kata VM vs runc)</h2>
+      <div class="sub">量化 <code>kata-vm-isolation</code> (+144 MiB Guest Kernel/VMM 开销) 与 Kubelet 系统预留对单节点沙箱密度的影响：</div>
+      <div class="form-row">
+        <label>AKS 工作节点 SKU</label>
+        <select id="sel_aks_sku" onchange="runDeepLab()">
+          <option value="16_64">Standard_D16s_v6 (16 vCPU / 64 GiB)</option>
+          <option value="32_128">Standard_D32s_v6 (32 vCPU / 128 GiB)</option>
+          <option value="64_256" selected>Standard_D64s_v6 (64 vCPU / 256 GiB · 推荐主力)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>容器隔离运行时 (RuntimeClass)</label>
+        <select id="sel_aks_rt" onchange="runDeepLab()">
+          <option value="kata" selected>kata-vm-isolation (独立 Cloud Hypervisor / Guest Kernel +144 MiB)</option>
+          <option value="runc">runc (共享宿主机内核 · 无硬件虚拟化边界)</option>
+        </select>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="aksDensityOut"></div>
+    </section>
+
+    <section class="card">
+      <span class="pill pill-teal">TOOL 4B · HORIZONDB + PGBOUNCER CHECKPOINT &amp; WAL SIZER</span>
+      <h2>HorizonDB 连接复用倍率与 128 TB 存储留存测算</h2>
+      <div class="sub">测算大规模 LangGraph / MAF 并发线程下的 PgBouncer 连接收敛比、P95 延迟与 30 天 ZSTD 热留存容量：</div>
+      <div class="form-row">
+        <label>并发活跃 Agent 会话线程数: <strong id="lbl_hdb_threads" style="color:var(--blue)">10,000</strong></label>
+        <input type="range" id="rng_hdb_threads" min="1000" max="50000" step="1000" value="10000" oninput="runDeepLab()">
+      </div>
+      <div class="form-row">
+        <label>PgBouncer 后端连接池大小 (Server Connections): <strong id="lbl_hdb_pool" style="color:var(--blue)">200</strong></label>
+        <input type="range" id="rng_hdb_pool" min="50" max="500" step="50" value="200" oninput="runDeepLab()">
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="hdbOut"></div>
+    </section>
+  </div>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -1316,9 +1356,61 @@ function showBlueprint(idx) {{
   document.getElementById('blueprintBox').textContent = BLUEPRINTS[idx];
 }}
 
+function runDeepLab() {{
+  const skuParts = document.getElementById('sel_aks_sku').value.split('_');
+  const vcpu = parseInt(skuParts[0], 10);
+  const ramGib = parseInt(skuParts[1], 10);
+  const isKata = document.getElementById('sel_aks_rt').value === 'kata';
+
+  const totalMib = ramGib * 1024;
+  const sysReserved = Math.floor(totalMib * 0.08) + 1536;
+  const usableMib = totalMib - sysReserved;
+  const overhead = isKata ? 144 : 0;
+  const podMib = 2048 + overhead;
+  const maxByRam = Math.floor(usableMib / podMib);
+  const maxByCpu = Math.floor((vcpu - 1.5) / 0.5);
+  const effPods = Math.min(maxByRam, maxByCpu, 250);
+  const memEff = ((effPods * 2048) / totalMib * 100).toFixed(1);
+
+  document.getElementById('aksDensityOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{isKata ? 'pill-teal' : 'pill-amber'}}">${{isKata ? '🛡️ 硬件级内核隔离 (Kata Pod VM)' : '⚠️ 共享内核 (不建议用于不可信代码)'}}</span>
+      <strong style="color:var(--blue);font-size:1.1rem;">${{effPods}} 个沙箱 / 节点</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • 扣减系统预留后可用内存：<strong>${{(usableMib/1024).toFixed(1)}} GiB</strong> · 单 Pod 实际占用：<strong>${{podMib}} MiB</strong><br>
+      • 有效业务内存利用率：<strong>${{memEff}}%</strong> (在 D64s_v6 上开启 Kata 仅牺牲约 6.8% 密度即可换取独立 Guest 内核安全边界)
+    </p>
+  `;
+
+  const threads = parseInt(document.getElementById('rng_hdb_threads').value, 10);
+  const pool = parseInt(document.getElementById('rng_hdb_pool').value, 10);
+  document.getElementById('lbl_hdb_threads').textContent = threads.toLocaleString();
+  document.getElementById('lbl_hdb_pool').textContent = pool;
+
+  const qps = (threads * 6.0 / 60.0).toFixed(0);
+  const ratio = (threads / pool).toFixed(1);
+  const p95 = (5.0 + 4.2 + Math.min(8.0, (qps / 500.0) * 1.1)).toFixed(2);
+  const dailyGib = (qps * 86400 * 16 / (1024 * 1024)).toFixed(1);
+  const annualRawTib = (dailyGib * 365 / 1024).toFixed(1);
+  const retained30dTib = (dailyGib * 30 * 0.35 / 1024).toFixed(2);
+
+  document.getElementById('hdbOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill pill-teal">连接收敛比 ${{ratio}}x · P95 ${{p95}} ms</span>
+      <strong style="color:#34d399;font-size:1.05rem;">吞吐：${{Number(qps).toLocaleString()}} QPS</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • 未压缩年化累积量：<strong>${{annualRawTib}} TiB/yr</strong> ${{annualRawTib > 128 ? '<span style="color:#fda4af;">(❌ 超过 128 TB 上限)</span>' : '(✅ 低于 128 TB)'}}<br>
+      • 开启 <strong>30天热留存 + TOAST ZSTD (0.35x) + Blob 冷归档</strong> 后热库体积：<strong>${{retained30dTib}} TiB</strong> (✅ 安全低于 128 TB 上限)
+    </p>
+  `;
+}}
+
 runDecision();
 runSizer();
 showBlueprint(0);
+runDeepLab();
 </script>
 </body>
 </html>

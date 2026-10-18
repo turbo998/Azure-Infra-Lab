@@ -11,7 +11,7 @@
 - **交互式资产与评测套件**：
   - 📊 [7 页 4:5 视觉评测卡片报告（Markdown 版）](test-report.md) · [自包含 CSP 锁定 HTML 卡片版](test-report-cards.html) · [结构化评测数据 `report.json`](report.json)
   - 🧮 [确定性架构选型与容量测算器 `simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [单元测试 `simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
-  - 🌐 交互式 H5 Playbook & Demo 工作台：[全景 Playbook H5 (`index.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html) · [实时仿真 Demo (`demo.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html) · [选型决策与 10万沙箱计算器 (`selector.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) · [7-Card 4:5 基准报告 (`cards.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html)
+  - 🌐 交互式 H5 Playbook & Demo 工作台（同步归档于 `turbo998/Azure-Infra-Lab/workshops/azure-agent-infra/`）
 
 ---
 
@@ -464,12 +464,55 @@ flowchart LR
 
 ---
 
-## 9. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 9. 深度定量建模：Firecracker 缺页分解、AKSClaw Kata 密度与 HorizonDB 留存模型
+
+> 本章由确定性工程仿真模块 [`simulator/e2b_aksclaw_deep_benchmark.py`](simulator/e2b_aksclaw_deep_benchmark.py) 与输出台账 [`evidence/deep-benchmark-models.json`](evidence/deep-benchmark-models.json) 驱动，解答架构评审中最常被追问的三个定量边界问题。
+
+### 9.1 E2B Firecracker MicroVM 恢复延迟四段式分解（1x 单发 vs 50x 并发突发）
+
+为什么 `Standard_D96as_v7` 能在挂载 `2 GiB` Guest RAM 与 `Code-Interpreter` 根文件系统的前提下实现 **`108 ms` 单发 / `132 ms` 50 倍并发突发恢复**？核心在于启动瞬间**仅通过 UFFD 按需缺页拉取约 `64 MiB`（占 `2048 MiB` 的 `3.12%`）的热工作集页**，而非全量复制 `2 GiB` 内存快照：
+
+| Azure 宿主机机型 | 并发度 | 总恢复耗时 (`ms`) | ① VMM/KVM 套接字初始化 (`21%`) | ② UFFD 热工作集缺页拉取 (`44%`) | ③ NBD RootFS 块元数据挂载 (`22%`) | ④ TAP + iptables SNAT 命名空间 (`13%`) | 热工作集占比 (`64/2048 MiB`) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`Standard_D96as_v7` (Turin v7 推荐)** | **1x** | **`108.0 ms`** | `22.68 ms` | `47.52 ms` | `23.76 ms` | `14.04 ms` | `3.12%` |
+| **`Standard_D96as_v7` (Turin v7 推荐)** | **50x** | **`132.0 ms`** | `27.72 ms` | `58.08 ms` | `29.04 ms` | `17.16 ms` | `3.12%` |
+| `Standard_D64as_v7` | 1x / 50x | `112.0` / `154.0 ms` | `23.52` / `32.34 ms` | `49.28` / `67.76 ms` | `24.64` / `33.88 ms` | `14.56` / `20.02 ms` | `3.12%` |
+| `Standard_D32as_v7` | 1x / 50x | `126.0` / `247.0 ms` | `26.46` / `51.87 ms` | `55.44` / `108.68 ms` | `27.72` / `54.34 ms` | `16.38` / `32.11 ms` | `3.12%` |
+| `Standard_D96s_v6` (Intel Emerald Rapids) | 1x / 50x | `141.0` / `158.0 ms` | `29.61` / `33.18 ms` | `62.04` / `69.52 ms` | `31.02` / `34.76 ms` | `18.33` / `20.54 ms` | `3.12%` |
+| `Standard_D64s_v6` | 1x / 50x | `122.0` / `148.0 ms` | `25.62` / `31.08 ms` | `53.68` / `65.12 ms` | `26.84` / `32.56 ms` | `15.86` / `19.24 ms` | `3.12%` |
+| `Standard_D32s_v6` | 1x / 50x | `125.0` / `221.0 ms` | `26.25` / `46.41 ms` | `55.00` / `97.24 ms` | `27.50` / `48.62 ms` | `16.25` / `28.73 ms` | `3.12%` |
+
+### 9.2 AKSClaw 多租户节点沙箱密度对比（`kata-vm-isolation` vs `runc`）
+
+在 AKS 宿主机上开启 `runtimeClassName: kata-vm-isolation`（Cloud Hypervisor 独立 Guest Kernel）会为每个沙箱 Pod 引入约 **`144 MiB`** 的 VMM + Guest 内核常驻内存开销，并扣除宿主机 `8% + 1.5 GiB` 的 Kubelet/Cilium/Tetragon 系统预留（单沙箱配额按 `0.5 vCPU / 2048 MiB` 测算）：
+
+| AKS 工作节点 SKU | 规格 (vCPU / GiB) | 隔离运行时 (`RuntimeClass`) | 单 Pod Kata VMM 开销 | 扣减预留后可用内存 | 内存上限 Pod 数 | CPU 上限 Pod 数 | 实际可承载沙箱数/节点 | 有效业务内存利用率 |
+|---|---|---|---|---:|---:|---:|---:|---:|---:|
+| `Standard_D16s_v6` | 16 vCPU / 64 GiB | `kata-vm-isolation` | `+144 MiB` | `58,752 MiB` | 26 | 29 | **26 个** | `81.25%` |
+| `Standard_D32s_v6` | 32 vCPU / 128 GiB | `kata-vm-isolation` | `+144 MiB` | `119,040 MiB` | 54 | 61 | **54 个** | `84.38%` |
+| **`Standard_D64s_v6` (推荐)** | **64 vCPU / 256 GiB** | **`kata-vm-isolation`** | **`+144 MiB`** | **`239,616 MiB`** | **109** | **125** | **109 个** | **`85.16%`** |
+| `Standard_D64s_v6` (对比基线) | 64 vCPU / 256 GiB | `runc` (共享内核，无硬件隔离) | `0 MiB` | `239,616 MiB` | 117 | 125 | **117 个** | `91.41%` |
+
+> **架构师结论**：在 `Standard_D64s_v6` 节点上启用 `kata-vm-isolation` 仅牺牲约 **`6.8%` 的单节点沙箱密度（109 vs 117）**，却换取了每个租户独立的硬件虚拟化内核边界，性价比极高。
+
+### 9.3 Azure HorizonDB + PgBouncer 连接池复用与 128 TB 存储留存边界
+
+当大规模 LangGraph / MAF / Durable 舰队以每分钟 `4~6` 次的频率写入 `16 KiB` 状态 Checkpoint 时，如果不做连接池复用与热数据 TTL 压缩归档，将直接触发两道硬瓶颈：
+
+| 并发活跃 Agent 线程数 | 总写入吞吐 (`QPS`) | 直连所需 PG 连接数 | PgBouncer 后端连接数 | 连接收敛倍率 | 端到端 Checkpoint P95 (`ms`) | 每日原始写入量 (`GiB/day`) | 未压缩年化累积量 (`TiB/yr`) | 30天热留存 + ZSTD 压缩 (`TiB`) | 是否满足 HorizonDB `128 TB` 上限 |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| `1,000` | `100.0 QPS` | 1,000 | `100` | **`10x`** | `9.42 ms` | `131.84 GiB` | `47.01 TiB` | `1.35 TiB` | ✅ 满足 |
+| **`10,000` (主力规模)** | **`1,000.0 QPS`** | **10,000 (超直连上限)** | **`200`** | **`50x`** | **`11.40 ms`** | **`1,318.36 GiB`** | **`470.05 TiB` (❌ 超限)** | **`13.52 TiB`** | **✅ 开启 30天热留存后满足** |
+| `50,000` (超大规模) | `3,333.33 QPS` | 50,000 (超直连上限) | `400` | **`125x`** | `16.53 ms` | `4,394.53 GiB` | `1,566.85 TiB` (❌ 超限) | `45.06 TiB` | **✅ 开启 30天热留存后满足** |
+
+---
+
+## 10. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
 - 📄 **7 页 4:5 视觉评测报告**：[Markdown 完整版 (`test-report.md`)](test-report.md) · [CSP 锁定自包含 HTML 卡片版 (`test-report-cards.html`)](test-report-cards.html)
-- 🗂️ **证据台账与审校记录**：[`evidence.json`](evidence.json) · [`review.md`](review.md)
+- 🗂️ **证据台账与审校记录**：[`evidence.json`](evidence.json) · [`review.md`](review.md) · [`evidence/deep-benchmark-models.json`](evidence/deep-benchmark-models.json)
 
 ### 本地一键复现与校验命令
 
@@ -477,9 +520,13 @@ flowchart LR
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行全部单元测试（验证 6 大运行时契约、v6/v7 延迟基准与决策树防错门禁）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存模型）
+python simulator/e2b_aksclaw_deep_benchmark.py
+
+# 3. 运行全部 12 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、决策树门禁与链接完整性）
 python -m unittest discover -s simulator -p "test_*.py" -v
 
-# 3. 重新生成并校验全部 8 张 SVG 架构图与 7-Card 评测报告
+# 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
 python simulator/generate_visual_assets.py
+python simulator/generate_h5_suite.py
 ```
