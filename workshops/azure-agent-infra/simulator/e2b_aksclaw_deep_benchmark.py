@@ -26,6 +26,7 @@ from agent_infra_sizer import (
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
@@ -325,6 +326,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_zero_downtime_canary_live_migration(10_000, "naive_kubectl_drain_in_place"),
     ]
 
+    model_routing_kv_affinity_profiles: List[Dict[str, object]] = [
+        simulate_hybrid_model_routing_kv_cache_affinity(0.50, "kv_affinity_cascade_speculative_prefetch"),
+        simulate_hybrid_model_routing_kv_cache_affinity(0.68, "kv_affinity_cascade_speculative_prefetch"),
+        simulate_hybrid_model_routing_kv_cache_affinity(0.80, "kv_affinity_cascade_speculative_prefetch"),
+        simulate_hybrid_model_routing_kv_cache_affinity(0.00, "round_robin_single_frontier_no_prefetch"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -341,6 +349,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "swarm_fanout_governance_profiles": swarm_fanout_governance_profiles,
         "sovereign_residency_profiles": sovereign_residency_profiles,
         "canary_live_migration_profiles": canary_live_migration_profiles,
+        "model_routing_kv_affinity_profiles": model_routing_kv_affinity_profiles,
     }
 
 

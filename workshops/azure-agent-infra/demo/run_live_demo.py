@@ -33,6 +33,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
@@ -285,6 +286,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "surge_mana_canary_10k": simulate_zero_downtime_canary_live_migration(10_000, "surge_nvme_mana_live_canary"),
             "surge_mana_canary_50k": simulate_zero_downtime_canary_live_migration(50_000, "surge_nvme_mana_live_canary"),
             "naive_drain_10k": simulate_zero_downtime_canary_live_migration(10_000, "naive_kubectl_drain_in_place"),
+        },
+        "demo_17_model_routing_kv_affinity": {
+            "cascade_kv_50pct": simulate_hybrid_model_routing_kv_cache_affinity(0.50, "kv_affinity_cascade_speculative_prefetch"),
+            "cascade_kv_68pct": simulate_hybrid_model_routing_kv_cache_affinity(0.68, "kv_affinity_cascade_speculative_prefetch"),
+            "cascade_kv_80pct": simulate_hybrid_model_routing_kv_cache_affinity(0.80, "kv_affinity_cascade_speculative_prefetch"),
+            "round_robin_frontier": simulate_hybrid_model_routing_kv_cache_affinity(0.00, "round_robin_single_frontier_no_prefetch"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

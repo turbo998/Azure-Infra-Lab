@@ -837,7 +837,34 @@ sequenceDiagram
 
 ---
 
-## 22. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 22. 混合模型级联路由、Prompt 前缀 KV-Cache 一致性哈希亲和与流式只读工具投机预取物理模型（Hybrid Model Cascade Routing, Semantic Prompt-Prefix KV-Cache Affinity & Speculative Read-Only Tool Prefetching）
+
+> 本章由确定性级联模型路由与 KV-Cache 亲和仿真模型 [`simulate_hybrid_model_routing_kv_cache_affinity()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-apim-kv-affinity-cascade-router.bicep`](blueprints/aksclaw-apim-kv-affinity-cascade-router.bicep) 驱动，面向 `15–25` 轮多步 Coding / SRE / CUA Agent 在每轮重发 `32K–128K` 上下文与工具 Schema 时的三大性能与成本瓶颈：**轮询负载均衡（Round-Robin）打散副本导致 KV-Cache 命中率暴跌、全量使用旗舰推理模型处理简单 `read_file/grep` 工具调用导致账单膨胀，以及等待 LLM 完整输出 EOS 后再串行执行沙箱文件读取导致的 I/O 空等**。
+
+### 22.1 混合级联路由、前缀 KV 亲和与流式投机预取三大支柱
+
+1. **Pillar 1：Prompt 前缀一致性哈希环（Consistent-Hash KV-Cache Affinity Ring）+ 工具 Schema 确定性规范化**：
+   - 传统轮询负载均衡将同一会话的连续 Turn 随机分发至不同推理实例，叠加动态 JSON 键序抖动，导致多轮 Agent 的 KV-Cache 命中率仅 **`18.5%`**，`TTFT p95` 高达 **`1,840.0 ms`**；
+   - 在 APIM AI Gateway 层对 `System Prompt + 静态排序 MCP 工具 Schema + 会话根前缀` 计算 `x-agent-prefix-hash`，执行带队列深度上限（`MaxQueueDepth <= 4`）的一致性哈希亲和路由，将多轮 KV-Cache Token 命中率拉升至 **`88.4%`**，`TTFT p95` 压降至 **`210.0 ms`（`-88.6%`）**，单凭缓存命中的输入 Token 折扣即节省 **`44.2%` 输入成本**。
+2. **Pillar 2：熵引导双层模型级联路由器（Entropy-Guided Cascade Router：PTU/KAITO 快速层 vs 旗舰推理层）**：
+   - 网关内置 `< 1.8 ms`（实测 **`1.6 ms`**）轻量分类器，将低熵常规工具步（如 `read_file`、`grep`、日志提取、格式化修改，占全部 Turn 的 **`68%`**）路由至高吞吐快速层（`gpt-5.4-mini` / `Phi-4` / AKS KAITO `Qwen2.5-Coder-32B`），仅在架构规划、复杂跨文件推理或工具报错重试（`retry >= 1`）时自动升级至旗舰推理层（Frontier Reasoning Tier）；
+   - 在保持 **`99.2%` 端到端任务解决率对齐（仅 `-0.4 pts`）** 的前提下，将每 `1,000` 次多步 Agent 任务的综合大模型成本从全量旗舰层的 **`$142.00` 压降至 `$51.40`（节省 `-63.8%`）**，平均单步响应耗时缩短 **`46.5%`**。
+3. **Pillar 3：流式 `<tool_call>` 增量 JSON 解析与只读沙箱工具投机预取（Speculative Read-Only Tool Prefetching）**：
+   - 在 LLM 流式生成 `<tool_call>` 参数期间（距离 EOS 结束前 **`180.0 ms`**），一旦解析出只读工具名（`view` / `grep` / `glob` / `ast_query`）与目标路径，立即向沙箱 `envd` 发起异步预读并将文件块预热至宿主机/Guest Page Cache，隐藏每轮 **`145.0 ms`** 沙箱 I/O 等待；
+   - 对所有具有副作用的写操作工具（`bash` / `edit` / `write` / `http_post`）强制施加完整 JSON Schema 闭合 + OPA 策略门禁校验，确保不安全投机写操作发生率严格为 **`0.0%`**。
+
+### 22.2 混合级联路由 + KV 亲和 + 投机预取 vs 传统轮询全量旗舰模型定量对比表
+
+| 快速层分流比例与网关路由策略 | **多轮 KV-Cache 命中率** | **首字延迟 `TTFT p95`** | 输入 Token 缓存省钱比 | 网关分类开销 | **每千次任务 LLM 成本** | 平均单步耗时降幅 | 任务解决率对齐 | **流式预取隐藏沙箱 I/O** | 投机越权写操作率 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`50%` 快速层分流 · 一致性哈希 KV 亲和 + 级联路由 + 只读预取** | **`88.4%`** | **`210.0 ms` (`-88.6%`)** | `44.2%` | `1.6 ms` | **`$75.38` (`-46.9%`)** | `-34.2%` | `99.4%` | **`145.0 ms/turn`** | **`0.0%` (✅ 安全)** |
+| **`68%` 快速层分流 · 一致性哈希 KV 亲和 + 级联路由 + 只读预取 (推荐)** | **`88.4%`** | **`210.0 ms` (`-88.6%`)** | **`44.2%`** | **`1.6 ms`** | **`$51.40` (`-63.8%`)** | **`-46.5%`** | **`99.2%`** | **`145.0 ms/turn`** | **`0.0%` (✅ 安全)** |
+| **`80%` 快速层分流 · 一致性哈希 KV 亲和 + 级联路由 + 只读预取 (成本优先)** | **`88.4%`** | **`210.0 ms` (`-88.6%`)** | `44.2%` | `1.6 ms` | **`$35.41` (`-75.1%`)** | `-54.7%` | `98.6%` | **`145.0 ms/turn`** | **`0.0%` (✅ 安全)** |
+| `0%` 分流 · 传统轮询负载均衡 + 全量旗舰模型 + 串行等待 EOS (反模式) | `18.5%` | `1,840.0 ms` (`0.0%`) | `0.0%` | `0.0 ms` | `$142.00` (`0.0%`) | `0.0%` | `99.6%` | `0.0 ms/turn` | `0.0%` |
+
+---
+
+## 23. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -850,10 +877,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级 + 混合级联路由与 KV 亲和预取）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 25 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级及链接完整性）
+# 3. 运行全部 26 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取及链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

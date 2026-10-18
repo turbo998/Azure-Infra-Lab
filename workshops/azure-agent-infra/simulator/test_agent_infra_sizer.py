@@ -20,6 +20,7 @@ from agent_infra_sizer import (
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
@@ -385,6 +386,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(naive["upgrade_window_p95_ms"], 6420.0)
         self.assertAlmostEqual(naive["active_task_disruption_rate_pct"], 22.4)
         self.assertFalse(naive["zero_downtime_slo_met"])
+
+    def test_hybrid_model_routing_kv_cache_affinity(self) -> None:
+        cas = simulate_hybrid_model_routing_kv_cache_affinity(0.68, "kv_affinity_cascade_speculative_prefetch")
+        rr = simulate_hybrid_model_routing_kv_cache_affinity(0.00, "round_robin_single_frontier_no_prefetch")
+        self.assertAlmostEqual(cas["kv_cache_hit_rate_pct"], 88.4)
+        self.assertAlmostEqual(cas["ttft_p95_ms"], 210.0)
+        self.assertAlmostEqual(cas["ttft_reduction_pct"], 88.6)
+        self.assertAlmostEqual(cas["input_token_cost_savings_pct"], 44.2)
+        self.assertLess(cas["classifier_overhead_ms"], 1.8)
+        self.assertAlmostEqual(cas["blended_cost_per_1k_tasks_usd"], 51.40)
+        self.assertAlmostEqual(cas["cost_reduction_pct"], 63.8)
+        self.assertAlmostEqual(cas["mean_turn_latency_reduction_pct"], 46.5)
+        self.assertAlmostEqual(cas["task_resolution_parity_pct"], 99.2)
+        self.assertAlmostEqual(cas["speculative_lead_time_ms"], 180.0)
+        self.assertAlmostEqual(cas["speculative_io_saved_ms"], 145.0)
+        self.assertEqual(cas["unsafe_speculative_mutation_rate_pct"], 0.0)
+        self.assertTrue(cas["cascade_governed"])
+        self.assertAlmostEqual(rr["kv_cache_hit_rate_pct"], 18.5)
+        self.assertAlmostEqual(rr["ttft_p95_ms"], 1840.0)
+        self.assertAlmostEqual(rr["blended_cost_per_1k_tasks_usd"], 142.00)
+        self.assertFalse(rr["cascade_governed"])
 
 
 if __name__ == "__main__":

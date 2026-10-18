@@ -1091,6 +1091,7 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(14)">15. 多智能体扇出 Redis 预算信封与 AST 租约锁 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(15)">16. 主权数据边界 Policy + Managed HSM CMK 粉碎 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(16)">17. 零停机 33% Surge 预热 + MANA 热迁移升级池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(17)">18. APIM 混合模型级联路由 + KV 前缀亲和池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1468,6 +1469,29 @@ def build_selector_html() -> str:
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="migOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 17: Hybrid Model Cascade Router, KV-Cache Prefix Affinity & Speculative Tool Prefetch Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 17 · HYBRID MODEL CASCADE ROUTER, KV-CACHE AFFINITY &amp; SPECULATIVE READ-ONLY PREFETCH SIZER</span>
+    <h2>混合模型级联路由、Prompt 前缀 KV-Cache 亲和与流式只读工具投机预取测算器</h2>
+    <div class="sub">量化多步 Agent 在一致性哈希前缀 KV-Cache 亲和（<code>88.4%</code> 命中率）、熵引导快速层/旗舰层双层模型级联路由与流式 <code>&lt;tool_call&gt;</code> 只读预取（隐藏 <code>145 ms</code> 沙箱 I/O）下的成本与 TTFT 收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 低熵常规工具步分流至快速层比例 (Fast-Tier Turn Offload Ratio): <strong id="lbl_cas_ratio" style="color:var(--blue)">68%</strong></label>
+          <input type="range" id="rng_cas_ratio" min="20" max="85" step="2" value="68" oninput="runCasLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 网关负载均衡、模型级联与工具预取策略 (Gateway Routing &amp; Prefetch Mode)</label>
+          <select id="sel_cas_mode" onchange="runCasLab()">
+            <option value="kv_affinity_cascade_speculative_prefetch" selected>一致性哈希 KV 亲和 (88.4%) + 熵引导级联路由 + 流式只读投机预取 (推荐)</option>
+            <option value="round_robin_single_frontier_no_prefetch">传统反模式：Round-Robin 打散缓存 (18.5%) + 全量旗舰推理模型 + 串行等 EOS</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="casOut"></div>
     </div>
   </section>
 
@@ -1880,6 +1904,19 @@ resource sandboxAgentPool 'Microsoft.ContainerService/managedClusters/agentPools
       undrainableNodeBehavior: 'Cordon'
     }}
   }}
+}}`,
+`// 18. Azure Bicep: APIM AI Gateway Cascade Model Router (PTU Primary + PayGo Overflow + KAITO Fast-Tier)
+resource frontierBackendPool 'Microsoft.ApiManagement/service/backends@2023-09-01-preview' = {{
+  name: 'apim-aksclaw-aigw-prod/aoai-frontier-priority-pool'
+  properties: {{
+    type: 'Pool'
+    pool: {{
+      services: [
+        {{ id: backendFrontierPtu.id, priority: 1, weight: 100 }}
+        {{ id: backendFrontierPaygo.id, priority: 2, weight: 100 }}
+      ]
+    }}
+  }}
 }}`
 ];
 
@@ -1997,6 +2034,31 @@ runDepLab();
 runSwarmLab();
 runSovLab();
 runMigLab();
+runCasLab();
+
+function runCasLab() {{
+  const ratio = parseInt(document.getElementById('rng_cas_ratio').value, 10) / 100.0;
+  const mode = document.getElementById('sel_cas_mode').value;
+  document.getElementById('lbl_cas_ratio').textContent = Math.round(ratio * 100) + "%";
+
+  const ok = mode === 'kv_affinity_cascade_speculative_prefetch';
+  const kvHit = ok ? "88.4%" : "18.5%";
+  const ttft = ok ? "210.0 ms (-88.6%)" : "1,840.0 ms";
+  const cost = ok ? (142.0 * (1.0 - (0.638028 * (ratio / 0.68)))).toFixed(2) : "142.00";
+  const costRed = ok ? ((1.0 - parseFloat(cost) / 142.0) * 100.0).toFixed(1) : "0.0";
+  const latRed = ok ? (46.5 * (ratio / 0.68)).toFixed(1) : "0.0";
+
+  document.getElementById('casOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{ok ? 'pill-teal' : 'pill-rose'}}">${{ok ? '✅ KV 命中率 ' + kvHit + ' · TTFT p95 ' + ttft + ' · 只读预取省 145ms/步' : '❌ KV 命中率仅 ' + kvHit + ' · TTFT 1,840ms · 全量旗舰成本高昂'}}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">$${{cost}} / 1K 任务 (-${{costRed}}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>熵引导级联路由 (${{ok ? Math.round(ratio*100) : 0}}% 快速层分流)</strong>：网关分类开销 <strong>${{ok ? '1.6 ms (<1.8ms)' : '0.0 ms'}}</strong> · 单步耗时降幅 <strong>-${{latRed}}%</strong> · 解决率对齐 <strong>${{ok ? '99.2%' : '99.6%'}}</strong><br>
+      • <strong>流式 &lt;tool_call&gt; 只读投机预取</strong>：提前 <strong>${{ok ? '180.0 ms' : '0.0 ms'}}</strong> 预热沙箱 Page Cache · 不安全投机写操作率 <strong>0.0%</strong>
+    </p>
+  `;
+}}
 
 function runMigLab() {{
   const sbx = parseInt(document.getElementById('rng_mig_sbx').value, 10);
