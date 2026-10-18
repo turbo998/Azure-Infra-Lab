@@ -29,6 +29,7 @@ from agent_infra_sizer import (
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
+    simulate_sovereign_data_residency_crypto_shredding,
 )
 
 
@@ -309,6 +310,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_multi_agent_swarm_fanout_governance(32, "unbounded_recursive_keda_reactive"),
     ]
 
+    sovereign_residency_profiles: List[Dict[str, object]] = [
+        simulate_sovereign_data_residency_crypto_shredding("EU_DATA_BOUNDARY", "geofenced_fpe_hsm_cryptoshred"),
+        simulate_sovereign_data_residency_crypto_shredding("US_SOVEREIGN", "geofenced_fpe_hsm_cryptoshred"),
+        simulate_sovereign_data_residency_crypto_shredding("APAC_REGULATED", "geofenced_fpe_hsm_cryptoshred"),
+        simulate_sovereign_data_residency_crypto_shredding("EU_DATA_BOUNDARY", "global_unpinned_row_delete"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -323,6 +331,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cua_browser_sandbox_profiles": cua_browser_sandbox_profiles,
         "dependency_acceleration_profiles": dependency_acceleration_profiles,
         "swarm_fanout_governance_profiles": swarm_fanout_governance_profiles,
+        "sovereign_residency_profiles": sovereign_residency_profiles,
     }
 
 

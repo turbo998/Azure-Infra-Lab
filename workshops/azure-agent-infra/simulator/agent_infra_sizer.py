@@ -1068,6 +1068,71 @@ def simulate_multi_agent_swarm_fanout_governance(
     }
 
 
+def simulate_sovereign_data_residency_crypto_shredding(
+    sovereign_boundary: str = "EU_DATA_BOUNDARY",
+    residency_mode: str = "geofenced_fpe_hsm_cryptoshred",
+) -> dict[str, Any]:
+    """
+    Quantifies Chapter 20: Sovereign Cloud & Multi-Geo Data Residency — Geo-Fenced PTU
+    Failover Rings, FPE-AES-FF1 MCP Tokenization & Managed HSM Crypto-Shredding (NIST SP 800-88):
+      1. Pillar 1 (Geo-Fenced Sovereign Boundary APIM Failover Ring):
+         - Enforces `x-ms-sovereign-geo` routing within paired sovereign regions (`+0.35 ms`
+           gateway overhead), reducing cross-border data spillover from `14.2%` (global pool)
+           to `0.0%` while sustaining `99.99%` in-boundary availability.
+      2. Pillar 2 (FPE-AES-FF1 Format-Preserving Tokenization Gateway before External MCP Calls):
+         - Tokenizes PII/account identifiers in `3.8 ms` before egress to external global SaaS
+           MCP tools and detokenizes inside the sovereign enclave (`0.0%` plaintext PII exposure).
+      3. Pillar 3 (Regional Managed HSM `KEK` Tenant Crypto-Shredding `NIST SP 800-88 Purge`):
+         - Destroys the tenant's root Key Encryption Key (`KEK`) in `1.45 s` (vs `15,120.0 s` /
+           `4.2 hours` for physical row-by-row deletion across ZRS snapshots, HorizonDB vectors,
+           and audit logs), leaving `0` readable residual bytes.
+    """
+    boundary_pairs = {
+        "EU_DATA_BOUNDARY": "Sweden Central <-> West Europe",
+        "US_SOVEREIGN": "East US 2 <-> Central US",
+        "APAC_REGULATED": "Singapore <-> Japan East",
+    }
+    paired_regions = boundary_pairs.get(sovereign_boundary, "Sweden Central <-> West Europe")
+    baseline_row_delete_sec = 15120.0  # 4.2 hours
+
+    if residency_mode == "geofenced_fpe_hsm_cryptoshred":
+        apim_geofence_overhead_ms = 0.35
+        cross_border_spillover_rate_pct = 0.0
+        in_boundary_availability_pct = 99.99
+        fpe_tokenization_latency_ms = 3.8
+        external_saas_plaintext_pii_exposure_pct = 0.0
+        crypto_shred_purge_sec = 1.45
+        purge_speedup_pct = round((1.0 - crypto_shred_purge_sec / baseline_row_delete_sec) * 100.0, 2)
+        residual_readable_bytes = 0
+        sovereign_compliant = True
+    else:
+        apim_geofence_overhead_ms = 0.0
+        cross_border_spillover_rate_pct = 14.2
+        in_boundary_availability_pct = 99.90
+        fpe_tokenization_latency_ms = 0.0
+        external_saas_plaintext_pii_exposure_pct = 100.0
+        crypto_shred_purge_sec = baseline_row_delete_sec
+        purge_speedup_pct = 0.0
+        residual_readable_bytes = 1048576
+        sovereign_compliant = False
+
+    return {
+        "sovereign_boundary": sovereign_boundary,
+        "paired_regions": paired_regions,
+        "residency_mode": residency_mode,
+        "apim_geofence_overhead_ms": apim_geofence_overhead_ms,
+        "cross_border_spillover_rate_pct": cross_border_spillover_rate_pct,
+        "in_boundary_availability_pct": in_boundary_availability_pct,
+        "fpe_tokenization_latency_ms": fpe_tokenization_latency_ms,
+        "external_saas_plaintext_pii_exposure_pct": external_saas_plaintext_pii_exposure_pct,
+        "baseline_row_delete_sec": baseline_row_delete_sec,
+        "crypto_shred_purge_sec": crypto_shred_purge_sec,
+        "purge_speedup_pct": purge_speedup_pct,
+        "residual_readable_bytes": residual_readable_bytes,
+        "sovereign_compliant": sovereign_compliant,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

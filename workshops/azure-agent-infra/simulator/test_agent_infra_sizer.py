@@ -23,6 +23,7 @@ from agent_infra_sizer import (
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
+    simulate_sovereign_data_residency_crypto_shredding,
 )
 from e2b_aksclaw_deep_benchmark import (
     decompose_e2b_firecracker_resume,
@@ -351,6 +352,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(unb["warm_pool_hit_rate_pct"], 32.0)
         self.assertAlmostEqual(unb["merge_conflict_rollback_rate_pct"], 29.4)
         self.assertFalse(unb["swarm_governed"])
+
+    def test_sovereign_data_residency_crypto_shredding(self) -> None:
+        sov = simulate_sovereign_data_residency_crypto_shredding("EU_DATA_BOUNDARY", "geofenced_fpe_hsm_cryptoshred")
+        unp = simulate_sovereign_data_residency_crypto_shredding("EU_DATA_BOUNDARY", "global_unpinned_row_delete")
+        self.assertAlmostEqual(sov["apim_geofence_overhead_ms"], 0.35)
+        self.assertAlmostEqual(sov["cross_border_spillover_rate_pct"], 0.0)
+        self.assertAlmostEqual(sov["in_boundary_availability_pct"], 99.99)
+        self.assertAlmostEqual(sov["fpe_tokenization_latency_ms"], 3.8)
+        self.assertAlmostEqual(sov["external_saas_plaintext_pii_exposure_pct"], 0.0)
+        self.assertAlmostEqual(sov["crypto_shred_purge_sec"], 1.45)
+        self.assertEqual(sov["residual_readable_bytes"], 0)
+        self.assertTrue(sov["sovereign_compliant"])
+        self.assertAlmostEqual(unp["cross_border_spillover_rate_pct"], 14.2)
+        self.assertAlmostEqual(unp["baseline_row_delete_sec"], 15120.0)
+        self.assertFalse(unp["sovereign_compliant"])
 
 
 if __name__ == "__main__":

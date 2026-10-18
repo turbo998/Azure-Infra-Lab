@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **15 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) · [`aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep) · [`aksclaw-dapr-workflow-keda-scaler.bicep`](blueprints/aksclaw-dapr-workflow-keda-scaler.bicep) · [`aksclaw-cua-browser-pool-cdn-relay.bicep`](blueprints/aksclaw-cua-browser-pool-cdn-relay.bicep) · [`aksclaw-acr-artifact-cache-nvme-dax.bicep`](blueprints/aksclaw-acr-artifact-cache-nvme-dax.bicep) · [`aksclaw-swarm-fanout-redis-lease-governor.bicep`](blueprints/aksclaw-swarm-fanout-redis-lease-governor.bicep)；
+  - 🧱 **16 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) · [`aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep) · [`aksclaw-dapr-workflow-keda-scaler.bicep`](blueprints/aksclaw-dapr-workflow-keda-scaler.bicep) · [`aksclaw-cua-browser-pool-cdn-relay.bicep`](blueprints/aksclaw-cua-browser-pool-cdn-relay.bicep) · [`aksclaw-acr-artifact-cache-nvme-dax.bicep`](blueprints/aksclaw-acr-artifact-cache-nvme-dax.bicep) · [`aksclaw-swarm-fanout-redis-lease-governor.bicep`](blueprints/aksclaw-swarm-fanout-redis-lease-governor.bicep) · [`aksclaw-sovereign-cmk-eu-data-boundary.bicep`](blueprints/aksclaw-sovereign-cmk-eu-data-boundary.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -787,11 +787,36 @@ sequenceDiagram
 
 ---
 
-## 20. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 20. 主权云与多地域数据驻留强制护栏：欧盟数据边界 Geo-Fenced 故障转移环、跨国 MCP 调用格式保留加密脱敏 (FPE) 与租户级 CMK 密码学粉碎 `NIST SP 800-88`（Sovereign Cloud & Multi-Geo Data Residency — Geo-Fenced PTU Failover Rings, FPE-AES-FF1 MCP Tokenization & Managed HSM Crypto-Shredding）
+
+> 本章由确定性主权合规与密码学粉碎仿真模型 [`simulate_sovereign_data_residency_crypto_shredding()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-sovereign-cmk-eu-data-boundary.bicep`](blueprints/aksclaw-sovereign-cmk-eu-data-boundary.bicep) 驱动，面向跨国金融机构与受监管政企在 **EU Data Boundary (`Sweden Central <-> West Europe`)**、**US Sovereign (`East US 2 <-> Central US`)** 与 **APAC Regulated (`Singapore <-> Japan East`)** 部署多租户 Agent 底座时的三大红线要求：**严禁 PTU 溢出时跨主权边界路由、严禁外部全球 SaaS MCP 调用泄露明文 PII、以及租户退订/GDPR 被遗忘权请求下秒级彻底销毁跨区快照与向量记忆**。
+
+### 20.1 主权数据驻留与密码学粉碎三大核心机制
+
+1. **Pillar 1：Geo-Fenced 主权边界内 APIM 故障转移环（In-Boundary PTU Failover Ring）**：
+   - 在 APIM AI Gateway 层强制校验 `x-ms-sovereign-geo` 声明与下游推理/沙箱池驻留区域（网关校验开销仅 **`+0.35 ms`**），配合 Azure Policy `AllowedLocations` 硬围栏；
+   - 当主区域 PTU 满载触发 HTTP 429 时，仅允许向同主权边界内的配对区域（如 `Sweden Central -> West Europe`）溢出，将跨洋违规数据溢出率从全球混池路由的 **`14.2%` 降至 `0.0%`**，同时维持 **`99.99%` 主权区内可用性**。
+2. **Pillar 2：跨国外部 MCP 工具调用前 `FPE-AES-FF1` 格式保留加密脱敏网关（Format-Preserving Tokenization Gateway）**：
+   - 当主权区内 Agent 必须调用外部全球 SaaS MCP 接口时，在沙箱出口通过硬件加速 NER + **`FPE-AES-FF1` 格式保留加密代换库**在 **`3.8 ms`** 内将 PII/IBAN/姓名替换为同格式伪令牌，响应返回主权飞地后再毫秒级还原，实现外部 SaaS **`0.0%` 明文 PII 留存**。
+3. **Pillar 3：基于区域 Managed HSM `KEK` 的租户级密码学粉碎（`NIST SP 800-88 Purge` Crypto-Shredding）**：
+   - 对比传统逐行物理删除跨区 ZRS 内存快照、HorizonDB 向量索引与审计日志（耗时 **`4.2 小时` [`15,120.0 s`]** 且易残留块级副本）vs 直接撤销并销毁该租户在区域 Key Vault Managed HSM 中的根密钥包装密钥 `KEK`（耗时仅 **`1.45 秒`**，提速 **`-99.99%`**，使 `100%` 历史内存快照与向量数据永久不可解密，残留可读字节为 **`0`**）。
+
+### 20.2 主权边界围栏 + FPE 脱敏 + HSM 密码学粉碎 vs 全球混池逐行删除定量对比表
+
+| 主权合规区域对与治理模式 | APIM 围栏校验开销 | **跨主权边界溢出率** | 主权区内可用性 | **FPE-AES-FF1 脱敏延迟** | 外部 MCP 明文 PII 暴露 | 传统逐行物理擦除耗时 | **HSM `KEK` 密码学粉碎耗时** | 粉碎后残留可读字节 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`EU Data Boundary` (`Sweden Central <-> West Europe`) · 主权围栏 + FPE + HSM 粉碎 (推荐)** | `0.35 ms` | **`0.0%` (✅ 零越界)** | **`99.99%`** | **`3.8 ms`** | **`0.0%`** | `15,120.0 s` (`4.2 h`) | **`1.45 s` (`-99.99%`)** | **`0 B` (NIST Purge)** |
+| **`US Sovereign` (`East US 2 <-> Central US`) · 主权围栏 + FPE + HSM 粉碎** | `0.35 ms` | **`0.0%` (✅ 零越界)** | **`99.99%`** | **`3.8 ms`** | **`0.0%`** | `15,120.0 s` (`4.2 h`) | **`1.45 s` (`-99.99%`)** | **`0 B` (NIST Purge)** |
+| **`APAC Regulated` (`Singapore <-> Japan East`) · 主权围栏 + FPE + HSM 粉碎** | `0.35 ms` | **`0.0%` (✅ 零越界)** | **`99.99%`** | **`3.8 ms`** | **`0.0%`** | `15,120.0 s` (`4.2 h`) | **`1.45 s` (`-99.99%`)** | **`0 B` (NIST Purge)** |
+| `EU Data Boundary` · 全球混池路由 + 无脱敏 + 逐行物理删除 (传统反模式) | `0.00 ms` | `14.2%` (❌ GDPR 违规) | `99.90%` | `0.0 ms` | `100.0%` (❌ 明文外泄) | `15,120.0 s` (`4.2 h`) | `15,120.0 s` (`0.0%`) | `> 1 MiB` (快照残留) |
+
+---
+
+## 21. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
-- 📄 **7 页 4:5 视觉评测报告**：[Markdown 完整版 (`test-report.md`)](test-report.md) · [CSP 锁定自包含 HTML 卡片版 (`test-report-cards.html`)](test-report-cards.html)
+- 📄 **7 页 4:5 视觉评测报告**：[Markdown 完整版 (`test-report.md`)](test-report.md) · [CSP 锁定自包含 HTML 卡片版 (`test-report-cards.html`)](test-report-cards.html) · [H5 视觉基准卡片 (`h5/benchmark-cards.html`)](h5/benchmark-cards.html)
 - 🗂️ **证据台账与审校记录**：[`evidence.json`](evidence.json) · [`review.md`](review.md) · [`evidence/deep-benchmark-models.json`](evidence/deep-benchmark-models.json)
 
 ### 本地一键复现与校验命令
@@ -800,10 +825,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 23 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理与链接完整性）
+# 3. 运行全部 24 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎及链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

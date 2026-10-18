@@ -1106,6 +1106,68 @@
         "merge_conflict_rollback_rate_pct": 29.4,
         "swarm_governed": false
       }
+    ],
+    "sovereign_residency_profiles": [
+      {
+        "sovereign_boundary": "EU_DATA_BOUNDARY",
+        "paired_regions": "Sweden Central <-> West Europe",
+        "residency_mode": "geofenced_fpe_hsm_cryptoshred",
+        "apim_geofence_overhead_ms": 0.35,
+        "cross_border_spillover_rate_pct": 0.0,
+        "in_boundary_availability_pct": 99.99,
+        "fpe_tokenization_latency_ms": 3.8,
+        "external_saas_plaintext_pii_exposure_pct": 0.0,
+        "baseline_row_delete_sec": 15120.0,
+        "crypto_shred_purge_sec": 1.45,
+        "purge_speedup_pct": 99.99,
+        "residual_readable_bytes": 0,
+        "sovereign_compliant": true
+      },
+      {
+        "sovereign_boundary": "US_SOVEREIGN",
+        "paired_regions": "East US 2 <-> Central US",
+        "residency_mode": "geofenced_fpe_hsm_cryptoshred",
+        "apim_geofence_overhead_ms": 0.35,
+        "cross_border_spillover_rate_pct": 0.0,
+        "in_boundary_availability_pct": 99.99,
+        "fpe_tokenization_latency_ms": 3.8,
+        "external_saas_plaintext_pii_exposure_pct": 0.0,
+        "baseline_row_delete_sec": 15120.0,
+        "crypto_shred_purge_sec": 1.45,
+        "purge_speedup_pct": 99.99,
+        "residual_readable_bytes": 0,
+        "sovereign_compliant": true
+      },
+      {
+        "sovereign_boundary": "APAC_REGULATED",
+        "paired_regions": "Singapore <-> Japan East",
+        "residency_mode": "geofenced_fpe_hsm_cryptoshred",
+        "apim_geofence_overhead_ms": 0.35,
+        "cross_border_spillover_rate_pct": 0.0,
+        "in_boundary_availability_pct": 99.99,
+        "fpe_tokenization_latency_ms": 3.8,
+        "external_saas_plaintext_pii_exposure_pct": 0.0,
+        "baseline_row_delete_sec": 15120.0,
+        "crypto_shred_purge_sec": 1.45,
+        "purge_speedup_pct": 99.99,
+        "residual_readable_bytes": 0,
+        "sovereign_compliant": true
+      },
+      {
+        "sovereign_boundary": "EU_DATA_BOUNDARY",
+        "paired_regions": "Sweden Central <-> West Europe",
+        "residency_mode": "global_unpinned_row_delete",
+        "apim_geofence_overhead_ms": 0.0,
+        "cross_border_spillover_rate_pct": 14.2,
+        "in_boundary_availability_pct": 99.9,
+        "fpe_tokenization_latency_ms": 0.0,
+        "external_saas_plaintext_pii_exposure_pct": 100.0,
+        "baseline_row_delete_sec": 15120.0,
+        "crypto_shred_purge_sec": 15120.0,
+        "purge_speedup_pct": 0.0,
+        "residual_readable_bytes": 1048576,
+        "sovereign_compliant": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -1756,5 +1818,67 @@
       "swarm_governed": false
     }
   },
-  "trace_sha256": "1f266002509bc397a422d715d24f12cac3959d2069454bc7011995f44d8f6f50"
+  "demo_15_sovereign_residency_crypto_shredding": {
+    "eu_boundary_governed": {
+      "sovereign_boundary": "EU_DATA_BOUNDARY",
+      "paired_regions": "Sweden Central <-> West Europe",
+      "residency_mode": "geofenced_fpe_hsm_cryptoshred",
+      "apim_geofence_overhead_ms": 0.35,
+      "cross_border_spillover_rate_pct": 0.0,
+      "in_boundary_availability_pct": 99.99,
+      "fpe_tokenization_latency_ms": 3.8,
+      "external_saas_plaintext_pii_exposure_pct": 0.0,
+      "baseline_row_delete_sec": 15120.0,
+      "crypto_shred_purge_sec": 1.45,
+      "purge_speedup_pct": 99.99,
+      "residual_readable_bytes": 0,
+      "sovereign_compliant": true
+    },
+    "us_sovereign_governed": {
+      "sovereign_boundary": "US_SOVEREIGN",
+      "paired_regions": "East US 2 <-> Central US",
+      "residency_mode": "geofenced_fpe_hsm_cryptoshred",
+      "apim_geofence_overhead_ms": 0.35,
+      "cross_border_spillover_rate_pct": 0.0,
+      "in_boundary_availability_pct": 99.99,
+      "fpe_tokenization_latency_ms": 3.8,
+      "external_saas_plaintext_pii_exposure_pct": 0.0,
+      "baseline_row_delete_sec": 15120.0,
+      "crypto_shred_purge_sec": 1.45,
+      "purge_speedup_pct": 99.99,
+      "residual_readable_bytes": 0,
+      "sovereign_compliant": true
+    },
+    "apac_regulated_governed": {
+      "sovereign_boundary": "APAC_REGULATED",
+      "paired_regions": "Singapore <-> Japan East",
+      "residency_mode": "geofenced_fpe_hsm_cryptoshred",
+      "apim_geofence_overhead_ms": 0.35,
+      "cross_border_spillover_rate_pct": 0.0,
+      "in_boundary_availability_pct": 99.99,
+      "fpe_tokenization_latency_ms": 3.8,
+      "external_saas_plaintext_pii_exposure_pct": 0.0,
+      "baseline_row_delete_sec": 15120.0,
+      "crypto_shred_purge_sec": 1.45,
+      "purge_speedup_pct": 99.99,
+      "residual_readable_bytes": 0,
+      "sovereign_compliant": true
+    },
+    "eu_unpinned_row_delete": {
+      "sovereign_boundary": "EU_DATA_BOUNDARY",
+      "paired_regions": "Sweden Central <-> West Europe",
+      "residency_mode": "global_unpinned_row_delete",
+      "apim_geofence_overhead_ms": 0.0,
+      "cross_border_spillover_rate_pct": 14.2,
+      "in_boundary_availability_pct": 99.9,
+      "fpe_tokenization_latency_ms": 0.0,
+      "external_saas_plaintext_pii_exposure_pct": 100.0,
+      "baseline_row_delete_sec": 15120.0,
+      "crypto_shred_purge_sec": 15120.0,
+      "purge_speedup_pct": 0.0,
+      "residual_readable_bytes": 1048576,
+      "sovereign_compliant": false
+    }
+  },
+  "trace_sha256": "9450076040734c45fda75cd207c63f5b3cfccc66bc0179c3e2219693168ff79b"
 }

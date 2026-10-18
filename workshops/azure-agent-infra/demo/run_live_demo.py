@@ -36,6 +36,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
+    simulate_sovereign_data_residency_crypto_shredding,
 )
 from e2b_aksclaw_deep_benchmark import (  # noqa: E402
     generate_deep_benchmark_summary,
@@ -271,6 +272,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_16way": simulate_multi_agent_swarm_fanout_governance(16, "hierarchical_budget_intent_prewarm_ast_lease"),
             "governed_32way": simulate_multi_agent_swarm_fanout_governance(32, "hierarchical_budget_intent_prewarm_ast_lease"),
             "unbounded_reactive_32way": simulate_multi_agent_swarm_fanout_governance(32, "unbounded_recursive_keda_reactive"),
+        },
+        "demo_15_sovereign_residency_crypto_shredding": {
+            "eu_boundary_governed": simulate_sovereign_data_residency_crypto_shredding("EU_DATA_BOUNDARY", "geofenced_fpe_hsm_cryptoshred"),
+            "us_sovereign_governed": simulate_sovereign_data_residency_crypto_shredding("US_SOVEREIGN", "geofenced_fpe_hsm_cryptoshred"),
+            "apac_regulated_governed": simulate_sovereign_data_residency_crypto_shredding("APAC_REGULATED", "geofenced_fpe_hsm_cryptoshred"),
+            "eu_unpinned_row_delete": simulate_sovereign_data_residency_crypto_shredding("EU_DATA_BOUNDARY", "global_unpinned_row_delete"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
