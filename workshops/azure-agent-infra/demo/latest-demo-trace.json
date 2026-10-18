@@ -882,6 +882,56 @@
         "cost_reduction_pct": 0.0,
         "security_alert_p95_sec": 14.5
       }
+    ],
+    "durable_workflow_saga_profiles": [
+      {
+        "concurrent_workflows": 5000,
+        "external_wait_minutes": 15.0,
+        "execution_mode": "suspend_on_wait_outbox_gc",
+        "workflow_steps": 40,
+        "pinned_idle_waste_pct": 94.2,
+        "pinned_daily_cost_usd": 1420.0,
+        "effective_daily_cost_usd": 146.2,
+        "ram_residency_reduction_pct": 89.7,
+        "cost_savings_pct": 89.7,
+        "rehydration_latency_ms": 188.0,
+        "duplicate_side_effect_pct": 0.0,
+        "exactly_once_guaranteed": true,
+        "zombie_reap_latency_sec": 4.5,
+        "zombie_ram_leak_pct": 0.0
+      },
+      {
+        "concurrent_workflows": 25000,
+        "external_wait_minutes": 30.0,
+        "execution_mode": "suspend_on_wait_outbox_gc",
+        "workflow_steps": 120,
+        "pinned_idle_waste_pct": 97.0,
+        "pinned_daily_cost_usd": 14200.0,
+        "effective_daily_cost_usd": 1462.0,
+        "ram_residency_reduction_pct": 89.7,
+        "cost_savings_pct": 89.7,
+        "rehydration_latency_ms": 188.0,
+        "duplicate_side_effect_pct": 0.0,
+        "exactly_once_guaranteed": true,
+        "zombie_reap_latency_sec": 4.5,
+        "zombie_ram_leak_pct": 0.0
+      },
+      {
+        "concurrent_workflows": 5000,
+        "external_wait_minutes": 15.0,
+        "execution_mode": "pinned_memory_naive_retry",
+        "workflow_steps": 40,
+        "pinned_idle_waste_pct": 94.2,
+        "pinned_daily_cost_usd": 1420.0,
+        "effective_daily_cost_usd": 1420.0,
+        "ram_residency_reduction_pct": 0.0,
+        "cost_savings_pct": 0.0,
+        "rehydration_latency_ms": 0.0,
+        "duplicate_side_effect_pct": 4.8,
+        "exactly_once_guaranteed": false,
+        "zombie_reap_latency_sec": 3600.0,
+        "zombie_ram_leak_pct": 18.0
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -1308,5 +1358,55 @@
       "security_alert_p95_sec": 14.5
     }
   },
-  "trace_sha256": "68b613d1f40151f913397e95d43f247505184e40a3831d6b8368e20004cbe80d"
+  "demo_11_durable_workflow_saga_gc": {
+    "suspend_on_wait_5k_15m": {
+      "concurrent_workflows": 5000,
+      "external_wait_minutes": 15.0,
+      "execution_mode": "suspend_on_wait_outbox_gc",
+      "workflow_steps": 40,
+      "pinned_idle_waste_pct": 94.2,
+      "pinned_daily_cost_usd": 1420.0,
+      "effective_daily_cost_usd": 146.2,
+      "ram_residency_reduction_pct": 89.7,
+      "cost_savings_pct": 89.7,
+      "rehydration_latency_ms": 188.0,
+      "duplicate_side_effect_pct": 0.0,
+      "exactly_once_guaranteed": true,
+      "zombie_reap_latency_sec": 4.5,
+      "zombie_ram_leak_pct": 0.0
+    },
+    "suspend_on_wait_25k_30m": {
+      "concurrent_workflows": 25000,
+      "external_wait_minutes": 30.0,
+      "execution_mode": "suspend_on_wait_outbox_gc",
+      "workflow_steps": 120,
+      "pinned_idle_waste_pct": 97.0,
+      "pinned_daily_cost_usd": 14200.0,
+      "effective_daily_cost_usd": 1462.0,
+      "ram_residency_reduction_pct": 89.7,
+      "cost_savings_pct": 89.7,
+      "rehydration_latency_ms": 188.0,
+      "duplicate_side_effect_pct": 0.0,
+      "exactly_once_guaranteed": true,
+      "zombie_reap_latency_sec": 4.5,
+      "zombie_ram_leak_pct": 0.0
+    },
+    "pinned_naive_5k_15m": {
+      "concurrent_workflows": 5000,
+      "external_wait_minutes": 15.0,
+      "execution_mode": "pinned_memory_naive_retry",
+      "workflow_steps": 40,
+      "pinned_idle_waste_pct": 94.2,
+      "pinned_daily_cost_usd": 1420.0,
+      "effective_daily_cost_usd": 1420.0,
+      "ram_residency_reduction_pct": 0.0,
+      "cost_savings_pct": 0.0,
+      "rehydration_latency_ms": 0.0,
+      "duplicate_side_effect_pct": 4.8,
+      "exactly_once_guaranteed": false,
+      "zombie_reap_latency_sec": 3600.0,
+      "zombie_ram_leak_pct": 18.0
+    }
+  },
+  "trace_sha256": "886cc316ae555ce1587be24489458b3c3c15f6e8cdf6740e2cb9117a3a4c7f22"
 }

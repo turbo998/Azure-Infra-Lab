@@ -14,6 +14,7 @@ from agent_infra_sizer import (
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
+    simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
@@ -283,6 +284,22 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(raw["cost_per_1k_tasks_usd"], 3.62)
         self.assertAlmostEqual(hybrid["cost_reduction_pct"], 88.4)
         self.assertAlmostEqual(hybrid["security_alert_p95_sec"], 1.8)
+
+    def test_durable_agent_workflow_saga_gc(self) -> None:
+        opt = simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "suspend_on_wait_outbox_gc", 40)
+        naive = simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "pinned_memory_naive_retry", 40)
+        self.assertAlmostEqual(opt["pinned_idle_waste_pct"], 94.2)
+        self.assertAlmostEqual(opt["pinned_daily_cost_usd"], 1420.0)
+        self.assertAlmostEqual(opt["effective_daily_cost_usd"], 146.2)
+        self.assertAlmostEqual(opt["ram_residency_reduction_pct"], 89.7)
+        self.assertAlmostEqual(opt["cost_savings_pct"], 89.7)
+        self.assertAlmostEqual(opt["rehydration_latency_ms"], 188.0)
+        self.assertTrue(opt["exactly_once_guaranteed"])
+        self.assertFalse(naive["exactly_once_guaranteed"])
+        self.assertEqual(opt["duplicate_side_effect_pct"], 0.0)
+        self.assertAlmostEqual(naive["duplicate_side_effect_pct"], 4.8)
+        self.assertAlmostEqual(opt["zombie_reap_latency_sec"], 4.5)
+        self.assertAlmostEqual(naive["zombie_ram_leak_pct"], 18.0)
 
 
 if __name__ == "__main__":

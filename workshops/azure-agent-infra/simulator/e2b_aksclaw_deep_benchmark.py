@@ -20,6 +20,7 @@ from typing import Dict, List
 
 from agent_infra_sizer import (
     simulate_confidential_sandbox_attestation,
+    simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
@@ -280,6 +281,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_otel_ebpf_observability_pipeline(100_000, "unsampled_raw_law", 1.0),
     ]
 
+    durable_workflow_saga_profiles: List[Dict[str, object]] = [
+        simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "suspend_on_wait_outbox_gc", 40),
+        simulate_durable_agent_workflow_saga_gc(25_000, 30.0, "suspend_on_wait_outbox_gc", 120),
+        simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "pinned_memory_naive_retry", 40),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -290,6 +297,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "egress_security_profiles": egress_security_profiles,
         "gpu_heterogeneous_profiles": gpu_heterogeneous_profiles,
         "observability_pipeline_profiles": observability_pipeline_profiles,
+        "durable_workflow_saga_profiles": durable_workflow_saga_profiles,
     }
 
 

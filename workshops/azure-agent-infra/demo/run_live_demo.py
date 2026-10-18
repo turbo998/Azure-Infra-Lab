@@ -27,6 +27,7 @@ from agent_infra_sizer import (  # noqa: E402
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
+    simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
@@ -246,6 +247,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hybrid_25k": simulate_otel_ebpf_observability_pipeline(25_000, "hybrid_3tier_tail_adx", 0.05),
             "hybrid_100k": simulate_otel_ebpf_observability_pipeline(100_000, "hybrid_3tier_tail_adx", 0.05),
             "unsampled_100k": simulate_otel_ebpf_observability_pipeline(100_000, "unsampled_raw_law", 1.0),
+        },
+        "demo_11_durable_workflow_saga_gc": {
+            "suspend_on_wait_5k_15m": simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "suspend_on_wait_outbox_gc", 40),
+            "suspend_on_wait_25k_30m": simulate_durable_agent_workflow_saga_gc(25_000, 30.0, "suspend_on_wait_outbox_gc", 120),
+            "pinned_naive_5k_15m": simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "pinned_memory_naive_retry", 40),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
