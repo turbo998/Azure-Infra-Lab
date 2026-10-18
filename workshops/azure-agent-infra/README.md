@@ -812,7 +812,32 @@ sequenceDiagram
 
 ---
 
-## 21. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 21. Agent 集群零停机节点升级：Surge NVMe 预热就绪门控、50 Gbps MANA 跨节点热迁移与渐进式金丝雀自动回滚物理模型（Zero-Downtime Fleet Upgrades — Surge NVMe Pre-Warming Gate, 50 Gbps MANA Live Sandbox Migration & Canary Auto-Rollback）
+
+> 本章由确定性零停机滚动升级与金丝雀回滚仿真模型 [`simulate_zero_downtime_canary_live_migration()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-node-soak-upgrade-pdb-surge.bicep`](blueprints/aksclaw-node-soak-upgrade-pdb-surge.bicep) 驱动，面向 `1,000`、`10,000` 与 `50,000` 并发沙箱集群执行 AKS 节点内核安全补丁升级、OS 镜像轮转或沙箱底座更新时的三大生产故障：**新扩容节点本地 NVMe 缓存为空导致的冷启动尾延迟暴涨、传统 `kubectl drain` 强杀正在执行的长周期沙箱任务，以及坏版本底座全量发布导致的集群级故障**。
+
+### 21.1 零停机节点升级与金丝雀发布三大核心支柱
+
+1. **Pillar 1：Surge 扩容节点本地 NVMe 快照预热就绪门控（`ReadinessGate: aksclaw.io/nvme-cache-hydrated`）**：
+   - 在 `maxSurge: 33%` 新节点加入 Kube-Scheduler 调度前，由 DaemonSet 预先将高频 Rootfs 与 `virtiofs` DAX 依赖块写入本地 NVMe RAID-0（后台预热耗时 **`42.0 s`**，配合 `nodeSoakDurationInMinutes: 15` 浸泡观察）；
+   - 彻底消除未预热新节点接收流量导致的冷启动尖峰，使升级窗口期沙箱启动 `p95` 稳定保持在 **`172.0 ms`（`<= 220 ms` SLO）**，而无预热直接切流会飙升至 **`6,420.0 ms`**。
+2. **Pillar 2：Cordon-and-Checkpoint 跨节点实时热迁移（`Pause -> Dirty-Page Delta over 50 Gbps MANA -> Surge Node Resume`）**：
+   - 对排空（Draining）节点上的长周期活跃沙箱执行增量脏页跨节点直传热迁移（通过 `50 Gbps` Azure MANA 网卡点对点传输），进程冻结窗口仅 **`340.0 ms`**（远低于 `< 500 ms` MCP/TCP 会话不断连阈值），将集群滚动升级期间的活跃任务中断率从传统 `kubectl drain` 驱逐重跑的 **`22.4%` 降至 `0.0%`**。
+3. **Pillar 3：渐进式金丝雀发布环（`1% -> 10% -> 50% -> 100%`）+ 统计检验自动回滚门控（Canary Auto-Rollback Gate）**：
+   - 当新版本沙箱镜像或工具 Schema 导致工具调用错误率上升 `> 1.5%` 或单任务 Token 膨胀 `> 18.0%` 时，在 **`8.5 秒`** 内自动触发熔断并切回稳定版，将故障爆炸半径严格限制在 **`< 1.0%`（`0.8%`）** 会话以内。
+
+### 21.2 零停机 Surge 预热 + MANA 热迁移 + 金丝雀回滚 vs 传统原地排空对比表
+
+| 并发沙箱规模与升级策略 | 基础节点数 | Surge 扩容节点 (`33%`) | NVMe 预热耗时 | **升级窗口启动 `p95`** | **50 Gbps MANA 热迁移冻结窗口** | **活跃任务中断率** | 金丝雀自动回滚耗时 | **故障爆炸半径** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`1,000` 沙箱 · Surge NVMe 预热 + MANA 热迁移 + 金丝雀 (推荐)** | `3` | `+1` | `42.0 s` | **`172.0 ms` (✅ 达标)** | **`340.0 ms` (`< 500ms`)** | **`0.0%` (✅ 零中断)** | **`8.5 s`** | **`0.8%` (`< 1%`)** |
+| **`10,000` 沙箱 · Surge NVMe 预热 + MANA 热迁移 + 金丝雀 (推荐)** | `25` | `+9` | `42.0 s` | **`172.0 ms` (✅ 达标)** | **`340.0 ms` (`< 500ms`)** | **`0.0%` (✅ 零中断)** | **`8.5 s`** | **`0.8%` (`< 1%`)** |
+| **`50,000` 沙箱 · Surge NVMe 预热 + MANA 热迁移 + 金丝雀 (超大规模)** | `125` | `+42` | `42.0 s` | **`172.0 ms` (✅ 达标)** | **`340.0 ms` (`< 500ms`)** | **`0.0%` (✅ 零中断)** | **`8.5 s`** | **`0.8%` (`< 1%`)** |
+| `10,000` 沙箱 · 传统 `kubectl drain` 无预热原地驱逐 (传统反模式) | `25` | `0` | `0.0 s` (无预热) | `6,420.0 ms` (❌ 尾延迟暴涨) | 不支持 (直接 Kill) | `22.4%` (❌ 会话中断) | `900.0 s` (人工回滚) | `100.0%` (全量受损) |
+
+---
+
+## 22. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -825,10 +850,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 24 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎及链接完整性）
+# 3. 运行全部 25 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级及链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

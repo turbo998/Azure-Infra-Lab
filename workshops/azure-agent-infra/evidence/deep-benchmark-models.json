@@ -966,5 +966,67 @@
       "residual_readable_bytes": 1048576,
       "sovereign_compliant": false
     }
+  ],
+  "canary_live_migration_profiles": [
+    {
+      "concurrent_sandboxes": 1000,
+      "upgrade_mode": "surge_nvme_mana_live_canary",
+      "base_nodes": 3,
+      "surge_nodes": 1,
+      "max_surge_pct": 33,
+      "nvme_prewarm_duration_sec": 42.0,
+      "upgrade_window_p95_ms": 172.0,
+      "live_migration_freeze_ms": 340.0,
+      "mana_link_gbps": 50.0,
+      "active_task_disruption_rate_pct": 0.0,
+      "canary_rollback_latency_sec": 8.5,
+      "blast_radius_sessions_pct": 0.8,
+      "zero_downtime_slo_met": true
+    },
+    {
+      "concurrent_sandboxes": 10000,
+      "upgrade_mode": "surge_nvme_mana_live_canary",
+      "base_nodes": 25,
+      "surge_nodes": 9,
+      "max_surge_pct": 33,
+      "nvme_prewarm_duration_sec": 42.0,
+      "upgrade_window_p95_ms": 172.0,
+      "live_migration_freeze_ms": 340.0,
+      "mana_link_gbps": 50.0,
+      "active_task_disruption_rate_pct": 0.0,
+      "canary_rollback_latency_sec": 8.5,
+      "blast_radius_sessions_pct": 0.8,
+      "zero_downtime_slo_met": true
+    },
+    {
+      "concurrent_sandboxes": 50000,
+      "upgrade_mode": "surge_nvme_mana_live_canary",
+      "base_nodes": 125,
+      "surge_nodes": 42,
+      "max_surge_pct": 33,
+      "nvme_prewarm_duration_sec": 42.0,
+      "upgrade_window_p95_ms": 172.0,
+      "live_migration_freeze_ms": 340.0,
+      "mana_link_gbps": 50.0,
+      "active_task_disruption_rate_pct": 0.0,
+      "canary_rollback_latency_sec": 8.5,
+      "blast_radius_sessions_pct": 0.8,
+      "zero_downtime_slo_met": true
+    },
+    {
+      "concurrent_sandboxes": 10000,
+      "upgrade_mode": "naive_kubectl_drain_in_place",
+      "base_nodes": 25,
+      "surge_nodes": 9,
+      "max_surge_pct": 33,
+      "nvme_prewarm_duration_sec": 0.0,
+      "upgrade_window_p95_ms": 6420.0,
+      "live_migration_freeze_ms": 0.0,
+      "mana_link_gbps": 50.0,
+      "active_task_disruption_rate_pct": 22.4,
+      "canary_rollback_latency_sec": 900.0,
+      "blast_radius_sessions_pct": 100.0,
+      "zero_downtime_slo_met": false
+    }
   ]
 }

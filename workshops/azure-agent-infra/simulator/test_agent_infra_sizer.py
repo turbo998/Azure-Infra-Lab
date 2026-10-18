@@ -24,6 +24,7 @@ from agent_infra_sizer import (
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_zero_downtime_canary_live_migration,
 )
 from e2b_aksclaw_deep_benchmark import (
     decompose_e2b_firecracker_resume,
@@ -367,6 +368,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(unp["cross_border_spillover_rate_pct"], 14.2)
         self.assertAlmostEqual(unp["baseline_row_delete_sec"], 15120.0)
         self.assertFalse(unp["sovereign_compliant"])
+
+    def test_zero_downtime_canary_live_migration(self) -> None:
+        can = simulate_zero_downtime_canary_live_migration(10_000, "surge_nvme_mana_live_canary")
+        naive = simulate_zero_downtime_canary_live_migration(10_000, "naive_kubectl_drain_in_place")
+        self.assertEqual(can["max_surge_pct"], 33)
+        self.assertAlmostEqual(can["nvme_prewarm_duration_sec"], 42.0)
+        self.assertAlmostEqual(can["upgrade_window_p95_ms"], 172.0)
+        self.assertLessEqual(can["upgrade_window_p95_ms"], 220.0)
+        self.assertAlmostEqual(can["live_migration_freeze_ms"], 340.0)
+        self.assertLess(can["live_migration_freeze_ms"], 500.0)
+        self.assertAlmostEqual(can["active_task_disruption_rate_pct"], 0.0)
+        self.assertAlmostEqual(can["canary_rollback_latency_sec"], 8.5)
+        self.assertLess(can["blast_radius_sessions_pct"], 1.0)
+        self.assertTrue(can["zero_downtime_slo_met"])
+        self.assertAlmostEqual(naive["upgrade_window_p95_ms"], 6420.0)
+        self.assertAlmostEqual(naive["active_task_disruption_rate_pct"], 22.4)
+        self.assertFalse(naive["zero_downtime_slo_met"])
 
 
 if __name__ == "__main__":

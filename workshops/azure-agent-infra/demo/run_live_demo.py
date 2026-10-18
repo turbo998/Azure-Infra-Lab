@@ -37,6 +37,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_zero_downtime_canary_live_migration,
 )
 from e2b_aksclaw_deep_benchmark import (  # noqa: E402
     generate_deep_benchmark_summary,
@@ -278,6 +279,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "us_sovereign_governed": simulate_sovereign_data_residency_crypto_shredding("US_SOVEREIGN", "geofenced_fpe_hsm_cryptoshred"),
             "apac_regulated_governed": simulate_sovereign_data_residency_crypto_shredding("APAC_REGULATED", "geofenced_fpe_hsm_cryptoshred"),
             "eu_unpinned_row_delete": simulate_sovereign_data_residency_crypto_shredding("EU_DATA_BOUNDARY", "global_unpinned_row_delete"),
+        },
+        "demo_16_canary_live_migration": {
+            "surge_mana_canary_1k": simulate_zero_downtime_canary_live_migration(1_000, "surge_nvme_mana_live_canary"),
+            "surge_mana_canary_10k": simulate_zero_downtime_canary_live_migration(10_000, "surge_nvme_mana_live_canary"),
+            "surge_mana_canary_50k": simulate_zero_downtime_canary_live_migration(50_000, "surge_nvme_mana_live_canary"),
+            "naive_drain_10k": simulate_zero_downtime_canary_live_migration(10_000, "naive_kubectl_drain_in_place"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

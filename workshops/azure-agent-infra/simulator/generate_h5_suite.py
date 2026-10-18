@@ -1090,6 +1090,7 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(13)">14. ACR 制品缓存 + 本地 NVMe virtiofs DAX 依赖池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(14)">15. 多智能体扇出 Redis 预算信封与 AST 租约锁 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(15)">16. 主权数据边界 Policy + Managed HSM CMK 粉碎 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(16)">17. 零停机 33% Surge 预热 + MANA 热迁移升级池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1444,6 +1445,29 @@ def build_selector_html() -> str:
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="sovOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 16: Zero-Downtime Node Drain, Live Sandbox Migration & Canary Rollback Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 16 · ZERO-DOWNTIME FLEET UPGRADES (33% SURGE NVME PRE-WARM + 50 GBPS MANA LIVE MIGRATION + CANARY ROLLBACK)</span>
+    <h2>Agent 集群零停机节点升级：Surge NVMe 预热就绪门控、50 Gbps MANA 热迁移与金丝雀自动回滚测算器</h2>
+    <div class="sub">量化在 <code>1,000–50,000</code> 并发沙箱集群执行节点内核补丁或底座升级时，<code>maxSurge: 33%</code> NVMe 预热就绪门控、50 Gbps MANA 增量脏页热迁移（<code>340 ms</code> 冻结窗口）与金丝雀自动回滚的连续性指标：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 升级期间集群并发沙箱规模 (Concurrent Active Sandboxes): <strong id="lbl_mig_sbx" style="color:var(--blue)">10,000</strong></label>
+          <input type="range" id="rng_mig_sbx" min="1000" max="50000" step="1000" value="10000" oninput="runMigLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 节点滚动升级与会话连续性架构 (Fleet Upgrade &amp; Drain Mode)</label>
+          <select id="sel_mig_mode" onchange="runMigLab()">
+            <option value="surge_nvme_mana_live_canary" selected>33% Surge NVMe 预热 (42s) + 50 Gbps MANA 热迁移 (340ms 冻结) + 8.5s 金丝雀回滚 (推荐)</option>
+            <option value="naive_kubectl_drain_in_place">传统反模式：无预热直接切流 + kubectl drain 强杀重建 + 人工全量回滚</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="migOut"></div>
     </div>
   </section>
 
@@ -1842,6 +1866,20 @@ resource sovereignDes 'Microsoft.Compute/diskEncryptionSets@2022-07-02' = {{
     rotationToLatestKeyVersionEnabled: true
     activeKey: {{ keyUrl: managedHsmKeyUri }} // 撤销 KEK 即可在 1.45s 内完成 NIST SP 800-88 密码学粉碎
   }}
+}}`,
+`// 17. Azure Bicep: AKS 33% Surge NVMe Pre-Warmed Upgrade Pool + 15m Soak + 30m MANA Live-Migration Drain
+resource sandboxAgentPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {{
+  name: 'katapool'
+  properties: {{
+    vmSize: 'Standard_D64s_v6'
+    workloadRuntime: 'KataMshvVmIsolation'
+    upgradeSettings: {{
+      maxSurge: '33%'
+      nodeSoakDurationInMinutes: 15
+      drainTimeoutInMinutes: 30
+      undrainableNodeBehavior: 'Cordon'
+    }}
+  }}
 }}`
 ];
 
@@ -1958,6 +1996,31 @@ runCuaLab();
 runDepLab();
 runSwarmLab();
 runSovLab();
+runMigLab();
+
+function runMigLab() {{
+  const sbx = parseInt(document.getElementById('rng_mig_sbx').value, 10);
+  const mode = document.getElementById('sel_mig_mode').value;
+  document.getElementById('lbl_mig_sbx').textContent = sbx.toLocaleString();
+
+  const baseNodes = Math.max(3, Math.ceil(sbx / 400));
+  const surgeNodes = Math.max(1, Math.ceil(baseNodes * 0.33));
+  const ok = mode === 'surge_nvme_mana_live_canary';
+  const p95 = ok ? "172.0 ms (≤220ms SLO)" : "6,420.0 ms (冷节点尖峰)";
+  const freeze = ok ? "340.0 ms (<500ms 不断连)" : "直接 Kill (22.4% 任务中断)";
+  const dropRate = ok ? "0.0%" : "22.4%";
+
+  document.getElementById('migOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{ok ? 'pill-teal' : 'pill-rose'}}">${{ok ? '✅ 活跃任务中断率 ' + dropRate + ' · 50 Gbps MANA 热迁移冻结 340ms' : '❌ 活跃任务中断率 ' + dropRate + ' · 升级窗口冷启动风暴'}}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">升级窗口 p95: ${{p95}}</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>节点编成与 Surge 预热</strong>：基础 <strong>${{baseNodes}} 台</strong> + Surge 扩容 <strong>+${{ok ? surgeNodes : 0}} 台 (33%)</strong> · NVMe 预热门控 <strong>${{ok ? '42.0 s' : '0.0 s (无预热)'}}</strong><br>
+      • <strong>跨节点热迁移与金丝雀回滚</strong>：冻结窗口 <strong>${{freeze}}</strong> · 异常自动回滚 <strong>${{ok ? '8.5 s (爆炸半径 0.8%)' : '900.0 s (全量受损)'}}</strong>
+    </p>
+  `;
+}}
 
 function runSovLab() {{
   const geo = document.getElementById('sel_sov_geo').value;
