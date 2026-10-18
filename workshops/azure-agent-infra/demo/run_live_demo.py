@@ -26,6 +26,7 @@ from agent_infra_sizer import (  # noqa: E402
     RUNTIMES,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_multiregion_dr_failover,
 )
 from e2b_aksclaw_deep_benchmark import (  # noqa: E402
     generate_deep_benchmark_summary,
@@ -208,6 +209,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
         "demo_2_e2b_vmss": run_e2b_100k_sandbox_demo(),
         "demo_3_multi_agent": run_multi_agent_horizondb_demo(),
         "demo_4_deep_models": generate_deep_benchmark_summary(),
+        "demo_5_multiregion_dr": {
+            "eastus2_centralus_warm_25pct": simulate_multiregion_dr_failover("eastus2_centralus", 10_000, 32.0, 15, 0.25),
+            "swedencentral_westeurope_warm_25pct": simulate_multiregion_dr_failover("swedencentral_westeurope", 10_000, 32.0, 15, 0.25),
+            "southeastasia_eastasia_warm_25pct": simulate_multiregion_dr_failover("southeastasia_eastasia", 10_000, 32.0, 15, 0.25),
+            "eastus2_centralus_cold_5pct": simulate_multiregion_dr_failover("eastus2_centralus", 10_000, 32.0, 15, 0.05),
+        },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
     payload["trace_sha256"] = hashlib.sha256(canonical).hexdigest()

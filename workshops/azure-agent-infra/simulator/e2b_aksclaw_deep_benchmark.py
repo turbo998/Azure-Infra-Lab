@@ -18,6 +18,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Dict, List
 
+from agent_infra_sizer import simulate_multiregion_dr_failover
+
 
 @dataclass(frozen=True)
 class FirecrackerResumeBreakdown:
@@ -232,10 +234,18 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         asdict(evaluate_horizondb_checkpoint_slo(50000, 4.0, 400)),
     ]
 
+    dr_profiles: List[Dict[str, object]] = [
+        simulate_multiregion_dr_failover("eastus2_centralus", 10000, 32.0, 15, 0.25),
+        simulate_multiregion_dr_failover("swedencentral_westeurope", 10000, 32.0, 15, 0.25),
+        simulate_multiregion_dr_failover("southeastasia_eastasia", 10000, 32.0, 15, 0.25),
+        simulate_multiregion_dr_failover("eastus2_centralus", 10000, 32.0, 15, 0.05),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
-        "aksclaw_node_density_comparison":aksclaw_matrix,
+        "aksclaw_node_density_comparison": aksclaw_matrix,
         "horizondb_pgbouncer_checkpoint_profiles": horizondb_profiles,
+        "multiregion_dr_failover_profiles": dr_profiles,
     }
 
 

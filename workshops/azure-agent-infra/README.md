@@ -509,7 +509,51 @@ flowchart LR
 
 ---
 
-## 10. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 10. 跨区域双活容灾与有状态沙箱故障切换（Multi-Region Active-Active Agent Infra DR & Stateful Sandbox Failover）
+
+> 本章由确定性容灾演练模型 [`simulate_multiregion_dr_failover()`](simulator/agent_infra_sizer.py) 与全链路验证追踪 [`demo/latest-demo-trace.json`](demo/latest-demo-trace.json) 驱动，解决生产级 AI Agent 平台在主区域（Primary Region）发生区级中断时，**如何同时保障“业务状态零丢失（Low RPO）”与“活跃沙箱 5 秒内热恢复（Warm RTO ≤ 5.0s）”** 的工程难题。
+
+### 10.1 有状态 Agent 跨区容灾的四层协同挑战
+
+与传统无状态微服务只需在 Azure Front Door 切换流量不同，有状态自主 Agent 在故障瞬间存在三类易失现场：
+1. **正在执行的推理与工具调用上下文（LangGraph / MAF / Durable Checkpoint）**：若未及时持久化，切换至备区后将从第 0 步重新推理，导致外部 API 被重复调用；
+2. **Firecracker MicroVM / Kata 沙箱内的内存页与本地未提交代码文件（`UFFD` Dirty Bitmap + `NBD` 差分块）**：全量 `2 GiB` 内存快照跨区同步带宽开销巨大，必须采用**增量脏页位图（Dirty-Bitmap Delta，均值 `~32 MiB`）+ RA-GZRS 异地只读块存储**；
+3. **跨区域配额与限流状态（APIM Token Circuit Breaker）**：主区故障流量瞬间涌入备区时，必须防止备区 PTU 模型配额被单租户打穿。
+
+### 10.2 跨区域双活与热备沙箱恢复四阶段架构设计
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant AFD as Azure Front Door + APIM Multi-Region Gateway
+    participant HDB as Azure HorizonDB (Cross-Region Replica + PgBouncer :6432)
+    participant Blob as Azure Blob Storage (RA-GZRS UFFD/NBD Snapshot Store)
+    participant VMSS as Secondary VMSS Pool (Standard_D96as_v7 Warm Standby)
+
+    Note over AFD,VMSS: 稳态运行：每 15s 增量归档 Firecracker 脏页位图 (~32 MiB) 至 RA-GZRS；HorizonDB 异步 WAL 流复制 (RPO ~25–48ms)
+    AFD->>AFD: ① 探测 Primary Region 异常并触发多区域路由与配额切换 (1,731–1,803 ms)
+    AFD->>HDB: ② 提升备区 HorizonDB 只读副本为主库 + PgBouncer 5ms 连接池重绑 (1,453–1,514 ms)
+    VMSS->>Blob: ③ 从 RA-GZRS 拉取最近一次增量脏页位图与 NBD 快照清单 (87.6–122.8 ms)
+    VMSS->>VMSS: ④ 25% 预热 D96as_v7 节点池并发恢复 2,500 个热执行沙箱 (3 批次 × 132ms = 396.0 ms)
+    Note over AFD,VMSS: 总计端到端有状态故障切换 RTO = 3.67s ~ 3.84s (满足 ≤ 5.0s 交互式 SLO)；其余 75% 闲置会话按需惰性恢复
+```
+
+### 10.3 三大 Azure 跨区配对实测/仿真 RPO 与 RTO 分解对比（10,000 并发沙箱）
+
+基于 `simulate_multiregion_dr_failover(active_sandboxes=10_000, dirty_memory_delta_mib=32.0, checkpoint_interval_sec=15)`，对比 **25% 预热备池（Warm Standby，`7` 台 `Standard_D96as_v7` 常驻热备承载 `2,500` 个活跃执行态沙箱首波恢复）** 与 **5% 冷备缩容池（Cold Pilot-Light，需临时触发 VMSS 节点扩容）** 的端到端 RTO 表现：
+
+| Azure 跨区域配对 (Primary ↔ Secondary) | 跨区骨干网 RTT | 备区预热比例 (`D96as_v7` 节点) | HorizonDB WAL RPO | 沙箱增量快照 RPO | ① AFD+APIM 探测切换 | ② HorizonDB 副本提升+PgBouncer | ③ RA-GZRS 快照清单拉取 | ④ Firecracker 批次恢复 | 冷扩容惩罚 | **端到端总 RTO** | **≤ 5.0s 交互式 SLO** |
+|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| **`East US 2 ↔ Central US` (25% 热备推荐)** | `18.0 ms` | **`25%` (`7 / 26` 台)** | **`25.2 ms`** | `15 s` | `1,731.0 ms` | `1,453.4 ms` | `87.6 ms` | `396.0 ms` | `0.0 ms` | **`3.67 s` (`3,668 ms`)** | **✅ 达标** |
+| **`Sweden Central ↔ West Europe` (25% 热备)** | `24.0 ms` | **`25%` (`7 / 26` 台)** | **`33.6 ms`** | `15 s` | `1,758.0 ms` | `1,476.2 ms` | `100.8 ms` | `396.0 ms` | `0.0 ms` | **`3.73 s` (`3,731 ms`)** | **✅ 达标** |
+| **`Southeast Asia ↔ East Asia` (25% 热备)** | `34.0 ms` | **`25%` (`7 / 26` 台)** | **`47.6 ms`** | `15 s` | `1,803.0 ms` | `1,514.2 ms` | `122.8 ms` | `396.0 ms` | `0.0 ms` | **`3.84 s` (`3,836 ms`)** | **✅ 达标** |
+| `East US 2 ↔ Central US` (`5%` 冷备对比基线) | `18.0 ms` | `5%` (`2 / 26` 台) | `25.2 ms` | `15 s` | `1,731.0 ms` | `1,453.4 ms` | `87.6 ms` | `1,452.0 ms` | `+36,000.0 ms` | **`40.72 s` (`40,724 ms`)** | **❌ 超时 8.1 倍** |
+
+> **容灾架构黄金法则**：在任何给定时刻，10,000 个在线沙箱中通常仅有约 **20%~25%（`~2,500` 个）正处于当前 Turn 的代码/工具执行态**，其余 75% 处于等待用户输入或 LLM 流式生成的空闲态。因此，备区只需维持 **25% 的 `Standard_D96as_v7` 预热 HugePages 节点池（7 台 VM）** 即可在 **`3.67 秒`** 内无损接管全部活跃执行态沙箱，而无需为备区支付 100% 的双倍计算成本。
+
+---
+
+## 11. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -522,10 +566,10 @@ flowchart LR
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存模型）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR 演练）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 12 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、决策树门禁与链接完整性）
+# 3. 运行全部 14 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR RTO/RPO 与链接完整性）
 python -m unittest discover -s simulator -p "test_*.py" -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

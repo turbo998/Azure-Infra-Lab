@@ -13,6 +13,7 @@ from agent_infra_sizer import (
     build_report_payload,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_multiregion_dr_failover,
 )
 from e2b_aksclaw_deep_benchmark import (
     decompose_e2b_firecracker_resume,
@@ -192,9 +193,26 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertIn("DEMO VERIFICATION", proc.stdout)
         trace_path = bundle_dir / "demo" / "latest-demo-trace.json"
         trace = json.loads(trace_path.read_text(encoding="utf-8"))
-        for key in ("demo_1_aksclaw", "demo_2_e2b_vmss", "demo_3_multi_agent", "demo_4_deep_models", "trace_sha256"):
+        for key in (
+            "demo_1_aksclaw",
+            "demo_2_e2b_vmss",
+            "demo_3_multi_agent",
+            "demo_4_deep_models",
+            "demo_5_multiregion_dr",
+            "trace_sha256",
+        ):
             self.assertIn(key, trace)
         self.assertEqual(len(trace["demo_4_deep_models"]["e2b_firecracker_resume_decomposition"]), 12)
+
+    def test_multiregion_dr_failover_warm_vs_cold(self) -> None:
+        warm = simulate_multiregion_dr_failover("eastus2_centralus", 10_000, 32.0, 15, 0.25)
+        cold = simulate_multiregion_dr_failover("eastus2_centralus", 10_000, 32.0, 15, 0.05)
+        eu = simulate_multiregion_dr_failover("swedencentral_westeurope", 10_000, 32.0, 15, 0.25)
+        self.assertTrue(warm["meets_5s_warm_dr_slo"])
+        self.assertLess(warm["total_failover_rto_sec"], 5.0)
+        self.assertFalse(cold["meets_5s_warm_dr_slo"])
+        self.assertGreater(cold["total_failover_rto_sec"], 30.0)
+        self.assertGreater(eu["inter_region_rtt_ms"], warm["inter_region_rtt_ms"])
 
 
 if __name__ == "__main__":

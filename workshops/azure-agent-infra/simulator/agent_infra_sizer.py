@@ -17,6 +17,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
@@ -325,6 +326,106 @@ def calculate_e2b_vmss_cluster_sizing(
         "total_cluster_nodes": client_nodes_required + api_pool_nodes + server_nomad_consul_nodes,
         "vmss_flexible_single_scaleset_limit": 1000,
         "fits_single_vmss_flexible": client_nodes_required <= 1000,
+    }
+
+
+AZURE_REGION_PAIRS: dict[str, dict[str, Any]] = {
+    "eastus2_centralus": {
+        "primary_region": "East US 2",
+        "secondary_region": "Central US",
+        "inter_region_rtt_ms": 18.0,
+        "backbone_bandwidth_gbps": 200.0,
+    },
+    "swedencentral_westeurope": {
+        "primary_region": "Sweden Central",
+        "secondary_region": "West Europe",
+        "inter_region_rtt_ms": 24.0,
+        "backbone_bandwidth_gbps": 160.0,
+    },
+    "southeastasia_eastasia": {
+        "primary_region": "Southeast Asia (Singapore)",
+        "secondary_region": "East Asia (Hong Kong)",
+        "inter_region_rtt_ms": 34.0,
+        "backbone_bandwidth_gbps": 120.0,
+    },
+}
+
+
+def simulate_multiregion_dr_failover(
+    region_pair: str = "eastus2_centralus",
+    active_sandboxes: int = 10_000,
+    dirty_memory_delta_mib: float = 32.0,
+    checkpoint_interval_sec: int = 15,
+    warm_standby_ratio: float = 0.25,
+) -> dict[str, Any]:
+    """
+    Quantifies Multi-Region Active-Active Agent Infra DR & Stateful Sandbox Failover:
+      1. Firecracker incremental dirty-bitmap + NBD snapshot replication over Azure RA-GZRS
+      2. Azure HorizonDB cross-region read-replica promotion + PgBouncer (:6432) rebind
+      3. APIM Unified AI Gateway + Azure Front Door multi-region token circuit-breaker failover
+      4. Warm-Standby VMSS (`Standard_D96as_v7`) wave resume vs Cold VMSS scale-out fallback
+    """
+    if region_pair not in AZURE_REGION_PAIRS:
+        raise ValueError(f"Unsupported region_pair: {region_pair}")
+    pair = AZURE_REGION_PAIRS[region_pair]
+    rtt = float(pair["inter_region_rtt_ms"])
+
+    primary_sizing = calculate_e2b_vmss_cluster_sizing(active_sandboxes)
+    warm_standby_nodes = max(1, int(math.ceil(primary_sizing["client_pool_vmss_nodes"] * warm_standby_ratio)))
+
+    # Only ~25% of connected sandboxes are actively executing a tool/code turn at the exact fault instant;
+    # the remaining 75% (idle between turns) lazy-resume on their next user/orchestrator turn.
+    immediate_wave_sandboxes = max(1, int(math.ceil(active_sandboxes * 0.25)))
+
+    # 1. Edge & AI Gateway health detection + routing flip
+    afd_apim_detect_ms = round(1650.0 + rtt * 4.5, 1)
+
+    # 2. HorizonDB cross-region replica promotion + PgBouncer pool rebind (5ms handoff)
+    horizondb_promote_ms = round(1380.0 + rtt * 3.8 + 5.0, 1)
+    rpo_horizondb_wal_ms = round(rtt * 1.4, 1)
+
+    # 3. Blob RA-GZRS dirty-bitmap & NBD snapshot manifest fetch
+    blob_manifest_fetch_ms = round(35.0 + rtt * 2.2 + (dirty_memory_delta_mib / 16.0) * 6.5, 1)
+
+    # 4. Firecracker MicroVM wave resume on secondary D96as_v7 warm pool (120 parallel restores/wave/node @ 132ms)
+    sandboxes_per_warm_node = max(1, int(math.ceil(immediate_wave_sandboxes / warm_standby_nodes)))
+    batches = max(1, int(math.ceil(sandboxes_per_warm_node / 120.0)))
+    firecracker_wave_resume_ms = round(132.0 * batches, 1)
+
+    # Penalty if warm standby ratio is below 20% (requires cold VMSS node provisioning + HugePages init)
+    cold_scaleout_penalty_ms = 0.0 if warm_standby_ratio >= 0.20 else round((0.20 - warm_standby_ratio) * 240_000.0, 1)
+
+    total_rto_ms = round(
+        afd_apim_detect_ms
+        + horizondb_promote_ms
+        + blob_manifest_fetch_ms
+        + firecracker_wave_resume_ms
+        + cold_scaleout_penalty_ms,
+        1,
+    )
+    total_rto_sec = round(total_rto_ms / 1000.0, 2)
+
+    return {
+        "region_pair": region_pair,
+        "primary_region": pair["primary_region"],
+        "secondary_region": pair["secondary_region"],
+        "inter_region_rtt_ms": rtt,
+        "active_sandboxes": active_sandboxes,
+        "immediate_wave_sandboxes": immediate_wave_sandboxes,
+        "warm_standby_ratio": warm_standby_ratio,
+        "primary_vmss_nodes": primary_sizing["client_pool_vmss_nodes"],
+        "secondary_warm_vmss_nodes": warm_standby_nodes,
+        "dirty_memory_delta_mib": dirty_memory_delta_mib,
+        "rpo_sandbox_snapshot_sec": checkpoint_interval_sec,
+        "rpo_horizondb_wal_ms": rpo_horizondb_wal_ms,
+        "stage_1_afd_apim_failover_ms": afd_apim_detect_ms,
+        "stage_2_horizondb_pgbouncer_promote_ms": horizondb_promote_ms,
+        "stage_3_ra_gzrs_manifest_fetch_ms": blob_manifest_fetch_ms,
+        "stage_4_firecracker_wave_resume_ms": firecracker_wave_resume_ms,
+        "cold_vmss_scaleout_penalty_ms": cold_scaleout_penalty_ms,
+        "total_failover_rto_ms": total_rto_ms,
+        "total_failover_rto_sec": total_rto_sec,
+        "meets_5s_warm_dr_slo": total_rto_sec <= 5.0,
     }
 
 

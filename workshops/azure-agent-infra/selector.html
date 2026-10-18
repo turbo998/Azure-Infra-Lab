@@ -447,6 +447,34 @@ pre.code-box {
     </section>
   </div>
 
+  <!-- Tool 5: Multi-Region Active-Active DR & Stateful Sandbox Failover Calculator -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 5 · MULTI-REGION ACTIVE-ACTIVE DR &amp; STATEFUL SANDBOX FAILOVER SIZER</span>
+    <h2>跨区域双活容灾与有状态沙箱故障切换 (RPO / RTO) 演练计算器</h2>
+    <div class="sub">量化主区域中断时，Azure Front Door + APIM 路由切换、HorizonDB 跨区副本提升 + PgBouncer 重绑、RA-GZRS 增量脏页拉取与 <code>Standard_D96as_v7</code> 预热池恢复的端到端 RTO：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. Azure 跨区域容灾配对 (Region Pair &amp; Backbone RTT)</label>
+          <select id="sel_dr_pair" onchange="runDrLab()">
+            <option value="eastus2_centralus" selected>East US 2 ↔ Central US (18.0 ms RTT · 北美主力配对)</option>
+            <option value="swedencentral_westeurope">Sweden Central ↔ West Europe (24.0 ms RTT · 欧洲主力配对)</option>
+            <option value="southeastasia_eastasia">Southeast Asia (SG) ↔ East Asia (HK) (34.0 ms RTT · 亚太主力配对)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. 主区域在线沙箱总数 (其中 25% 处于当前 Turn 活跃执行态): <strong id="lbl_dr_sbx" style="color:var(--blue)">10,000</strong></label>
+          <input type="range" id="rng_dr_sbx" min="2000" max="100000" step="2000" value="10000" oninput="runDrLab()">
+        </div>
+        <div class="form-row">
+          <label>3. 备区 D96as_v7 预热节点池比例 (Warm Standby Ratio): <strong id="lbl_dr_warm" style="color:var(--blue)">25%</strong></label>
+          <input type="range" id="rng_dr_warm" min="5" max="50" step="5" value="25" oninput="runDrLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="drOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -768,10 +796,52 @@ function runDeepLab() {
   `;
 }
 
+function runDrLab() {
+  const pairKey = document.getElementById('sel_dr_pair').value;
+  const activeSbx = parseInt(document.getElementById('rng_dr_sbx').value, 10);
+  const warmPct = parseInt(document.getElementById('rng_dr_warm').value, 10) / 100.0;
+
+  document.getElementById('lbl_dr_sbx').textContent = activeSbx.toLocaleString();
+  document.getElementById('lbl_dr_warm').textContent = Math.round(warmPct * 100) + "%";
+
+  const rttMap = { eastus2_centralus: 18.0, swedencentral_westeurope: 24.0, southeastasia_eastasia: 34.0 };
+  const rtt = rttMap[pairKey] || 18.0;
+
+  const primaryNodes = Math.max(2, Math.ceil(activeSbx / 391));
+  const warmNodes = Math.max(1, Math.ceil(primaryNodes * warmPct));
+  const immediateWave = Math.max(1, Math.ceil(activeSbx * 0.25));
+
+  const s1 = 1650.0 + rtt * 4.5;
+  const s2 = 1380.0 + rtt * 3.8 + 5.0;
+  const s3 = 35.0 + rtt * 2.2 + (32.0 / 16.0) * 6.5;
+  const perWarmNode = Math.max(1, Math.ceil(immediateWave / warmNodes));
+  const batches = Math.max(1, Math.ceil(perWarmNode / 120.0));
+  const s4 = 132.0 * batches;
+  const coldPenalty = warmPct >= 0.20 ? 0.0 : (0.20 - warmPct) * 240000.0;
+
+  const totalMs = s1 + s2 + s3 + s4 + coldPenalty;
+  const totalSec = (totalMs / 1000.0).toFixed(2);
+  const walRpoMs = (rtt * 1.4).toFixed(1);
+  const ok = totalMs <= 5000.0;
+
+  document.getElementById('drOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 满足 ≤ 5.0s 交互式热容灾 SLO' : '❌ 超出 5.0s SLO (需触发 VMSS 冷扩容)'}</span>
+      <strong style="color:${ok ? '#34d399' : '#fda4af'};font-size:1.15rem;">总 RTO：${totalSec} s (${totalMs.toFixed(0)} ms)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>节点配比</strong>：主区 <strong>${primaryNodes} 台</strong> D96as_v7 → 备区常驻热备 <strong>${warmNodes} 台</strong> (首波并发恢复 <strong>${immediateWave.toLocaleString()}</strong> 个执行态沙箱)<br>
+      • <strong>RPO 指标</strong>：HorizonDB 跨区异步 WAL <strong>${walRpoMs} ms</strong> · 沙箱增量脏页快照 (RA-GZRS) <strong>15 s</strong><br>
+      • <strong>RTO 四段分解</strong>：① AFD+APIM 切换 <strong>${s1.toFixed(0)}ms</strong> + ② HorizonDB 提升 <strong>${s2.toFixed(0)}ms</strong> + ③ RA-GZRS 拉取 <strong>${s3.toFixed(0)}ms</strong> + ④ Firecracker 恢复 <strong>${s4.toFixed(0)}ms</strong>${coldPenalty > 0 ? ' + <span style="color:#fda4af;">冷扩容惩罚 ' + (coldPenalty/1000).toFixed(1) + 's</span>' : ''}
+    </p>
+  `;
+}
+
 runDecision();
 runSizer();
 showBlueprint(0);
 runDeepLab();
+runDrLab();
 </script>
 </body>
 </html>
