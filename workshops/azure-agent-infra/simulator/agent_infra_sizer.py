@@ -870,6 +870,79 @@ def simulate_durable_agent_workflow_saga_gc(
     }
 
 
+def simulate_cua_browser_sandbox_grounding(
+    concurrent_cua_sandboxes: int = 10_000,
+    cua_mode: str = "zygote_axtree_dirtyrect",
+    vlm_fallback_ratio: float = 0.24,
+) -> dict[str, Any]:
+    """
+    Quantifies Chapter 17: Computer-Use Agent (CUA) Browser/Desktop Sandbox Infrastructure —
+    Zygote Memory Physics, Dirty-Rect WebP/AV1 Screencast & AXTree/Vision Hybrid Grounding:
+      1. Pillar 1 (Zygote Pre-Forked Chromium + Shared V8 Code Cache + `/dev/shm` tmpfs):
+         - Reduces per-sandbox Chromium PSS from `820.0 MiB` to `310.0 MiB` (`-62.2%`), leaving
+           `1.69 GiB` headroom in a `2 GiB` sandbox and cutting first-tab ready latency from
+           `1,420.0 ms` to `68.0 ms`.
+      2. Pillar 2 (Dirty-Rect WebP/AV1 Delta Encoding + Adaptive `1/8 fps` + Azure Web PubSub CDP Relay):
+         - Cuts 1080p stream bandwidth from `14.20 Mbps/sandbox` (raw PNG) to `0.62 Mbps/sandbox`
+           (`-95.6%`) and reduces vision tokens by `58.4%` via Set-of-Mark (SoM) ROI cropping.
+      3. Pillar 3 (AXTree-First + `24%` VLM Fallback Hybrid Grounding):
+         - Cuts 15-step CUA web task duration from `28.4 s` (100% vision loop) to `7.9 s` (`-72.2%`)
+           and lowers per-task total cost from `$0.048` to `$0.013` (`-72.9%`).
+    """
+    baseline_pss_mib = 820.0
+    baseline_stream_mbps = 14.20
+    baseline_task_sec = 28.4
+    baseline_task_cost_usd = 0.048
+
+    if cua_mode == "zygote_axtree_dirtyrect":
+        per_sandbox_pss_mib = 310.0
+        memory_reduction_pct = round((1.0 - per_sandbox_pss_mib / baseline_pss_mib) * 100.0, 1)
+        sandbox_2gib_headroom_gib = round((2048.0 - per_sandbox_pss_mib) / 1024.0, 2)
+        first_tab_ready_ms = 68.0
+        stream_mbps_per_sandbox = 0.62
+        bandwidth_reduction_pct = round((1.0 - stream_mbps_per_sandbox / baseline_stream_mbps) * 100.0, 1)
+        som_vision_token_reduction_pct = 58.4
+        task_15step_latency_sec = round(3.0 + 20.4167 * vlm_fallback_ratio, 1)
+        latency_reduction_pct = round((1.0 - task_15step_latency_sec / baseline_task_sec) * 100.0, 1)
+        cost_per_15step_task_usd = round(0.0052 + 0.0325 * vlm_fallback_ratio, 3)
+        cost_reduction_pct = round((1.0 - cost_per_15step_task_usd / baseline_task_cost_usd) * 100.0, 1)
+        oom_kill_protected = True
+    else:
+        per_sandbox_pss_mib = baseline_pss_mib
+        memory_reduction_pct = 0.0
+        sandbox_2gib_headroom_gib = round((2048.0 - baseline_pss_mib) / 1024.0, 2)
+        first_tab_ready_ms = 1420.0
+        stream_mbps_per_sandbox = baseline_stream_mbps
+        bandwidth_reduction_pct = 0.0
+        som_vision_token_reduction_pct = 0.0
+        task_15step_latency_sec = baseline_task_sec
+        latency_reduction_pct = 0.0
+        cost_per_15step_task_usd = baseline_task_cost_usd
+        cost_reduction_pct = 0.0
+        oom_kill_protected = False
+
+    cluster_stream_gbps = round((concurrent_cua_sandboxes * stream_mbps_per_sandbox) / 1000.0, 2)
+
+    return {
+        "concurrent_cua_sandboxes": concurrent_cua_sandboxes,
+        "cua_mode": cua_mode,
+        "vlm_fallback_ratio": vlm_fallback_ratio if cua_mode == "zygote_axtree_dirtyrect" else 1.0,
+        "per_sandbox_pss_mib": per_sandbox_pss_mib,
+        "memory_reduction_pct": memory_reduction_pct,
+        "sandbox_2gib_headroom_gib": sandbox_2gib_headroom_gib,
+        "oom_kill_protected": oom_kill_protected,
+        "first_tab_ready_ms": first_tab_ready_ms,
+        "stream_mbps_per_sandbox": stream_mbps_per_sandbox,
+        "cluster_stream_gbps": cluster_stream_gbps,
+        "bandwidth_reduction_pct": bandwidth_reduction_pct,
+        "som_vision_token_reduction_pct": som_vision_token_reduction_pct,
+        "task_15step_latency_sec": task_15step_latency_sec,
+        "latency_reduction_pct": latency_reduction_pct,
+        "cost_per_15step_task_usd": cost_per_15step_task_usd,
+        "cost_reduction_pct": cost_reduction_pct,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

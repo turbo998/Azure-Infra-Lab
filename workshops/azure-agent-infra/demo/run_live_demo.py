@@ -27,6 +27,7 @@ from agent_infra_sizer import (  # noqa: E402
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
+    simulate_cua_browser_sandbox_grounding,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
@@ -252,6 +253,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "suspend_on_wait_5k_15m": simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "suspend_on_wait_outbox_gc", 40),
             "suspend_on_wait_25k_30m": simulate_durable_agent_workflow_saga_gc(25_000, 30.0, "suspend_on_wait_outbox_gc", 120),
             "pinned_naive_5k_15m": simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "pinned_memory_naive_retry", 40),
+        },
+        "demo_12_cua_browser_sandbox_grounding": {
+            "zygote_axtree_1k": simulate_cua_browser_sandbox_grounding(1_000, "zygote_axtree_dirtyrect", 0.24),
+            "zygote_axtree_10k": simulate_cua_browser_sandbox_grounding(10_000, "zygote_axtree_dirtyrect", 0.24),
+            "zygote_axtree_50k": simulate_cua_browser_sandbox_grounding(50_000, "zygote_axtree_dirtyrect", 0.24),
+            "cold_pure_vision_10k": simulate_cua_browser_sandbox_grounding(10_000, "cold_chromium_pure_vision", 1.0),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

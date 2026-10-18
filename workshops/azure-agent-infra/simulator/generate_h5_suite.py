@@ -1086,6 +1086,7 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(9)">10. H100 MIG 硬件切分节点池 + KAITO 前缀缓存 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(10)">11. OTel GenAI + Tetragon eBPF + ADX 可观测性集群 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(11)">12. Dapr Workflow + Service Bus 幂等 Outbox + KEDA (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(12)">13. CUA 浏览器沙箱池 + Web PubSub CDP 接管网关 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1336,6 +1337,33 @@ def build_selector_html() -> str:
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="wfOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 12: CUA Browser Pool, AXTree/Vision Hybrid Grounding & Screencast Bandwidth Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 12 · COMPUTER-USE AGENT (CUA) BROWSER SANDBOX POOL (ZYGOTE + AXTREE/VLM + CDP RELAY SIZER)</span>
+    <h2>Computer-Use Agent (CUA) 浏览器沙箱池：Zygote 内存共享、AXTree/视觉混合 Grounding 与流控测算器</h2>
+    <div class="sub">量化大规模 Headless Chromium 沙箱池在 Zygote 预派生 + V8 字节码共享、Dirty-Rect WebP/AV1 增量画面流以及 AXTree 优先 + VLM 视觉回退混合路由下的内存、带宽与 15 步网页任务成本：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发活跃 CUA 浏览器沙箱数 (Concurrent CUA Browser Sandboxes): <strong id="lbl_cua_sbx" style="color:var(--blue)">10,000</strong></label>
+          <input type="range" id="rng_cua_sbx" min="1000" max="50000" step="1000" value="10000" oninput="runCuaLab()">
+        </div>
+        <div class="form-row">
+          <label>2. CUA 浏览器沙箱与 Grounding 架构 (Browser Pool &amp; Grounding Mode)</label>
+          <select id="sel_cua_mode" onchange="runCuaLab()">
+            <option value="zygote_axtree_dirtyrect" selected>Zygote 预派生 + AXTree 优先混合 Grounding + Dirty-Rect WebP/AV1 (推荐)</option>
+            <option value="cold_chromium_pure_vision">传统反模式：冷启动 Chromium + 原始 PNG 截图流 + 100% 纯视觉 VLM 循环</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. 复杂 Canvas / 验证码回退多模态 VLM 比例 (VLM Fallback Ratio): <strong id="lbl_cua_vlm" style="color:var(--blue)">24%</strong></label>
+          <input type="range" id="rng_cua_vlm" min="5" max="100" step="1" value="24" oninput="runCuaLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cuaOut"></div>
     </div>
   </section>
 
@@ -1694,6 +1722,16 @@ resource wakeupQueue 'Microsoft.ServiceBus/namespaces/queues@2022-10-01-preview'
     requiresSession: true
     deadLetteringOnMessageExpiration: true
   }}
+}}`,
+`// 13. Azure Bicep: Azure Web PubSub Premium (CDP Screencast & Human Takeover Relay) + Replay Tiering
+resource cuaWebPubSub 'Microsoft.SignalRService/webPubSub@2024-03-01' = {{
+  name: 'aksclaw-cua-wps-relay'
+  location: resourceGroup().location
+  sku: {{ name: 'Premium_P1', tier: 'Premium', capacity: 2 }}
+  properties: {{
+    publicNetworkAccess: 'Disabled' // 全私网承载 0.62 Mbps/沙箱 Dirty-Rect WebP/AV1 实时接管流
+    disableLocalAuth: true
+  }}
 }}`
 ];
 
@@ -1806,6 +1844,36 @@ runEgressLab();
 runGpuLab();
 runObsLab();
 runWfLab();
+runCuaLab();
+
+function runCuaLab() {{
+  const sbx = parseInt(document.getElementById('rng_cua_sbx').value, 10);
+  const mode = document.getElementById('sel_cua_mode').value;
+  const vlmRatio = parseInt(document.getElementById('rng_cua_vlm').value, 10) / 100.0;
+  document.getElementById('lbl_cua_sbx').textContent = sbx.toLocaleString();
+  document.getElementById('lbl_cua_vlm').textContent = Math.round(vlmRatio * 100) + "%";
+
+  let pss = 820.0, memRed = "0.0", tabMs = 1420.0, mbps = 14.20, bwRed = "0.0", taskSec = "28.4", latRed = "0.0", cost = "0.048", costRed = "0.0", ok = false;
+  if (mode === 'zygote_axtree_dirtyrect') {{
+    pss = 310.0; memRed = "62.2"; tabMs = 68.0; mbps = 0.62; bwRed = "95.6"; ok = true;
+    taskSec = (3.0 + 20.4167 * vlmRatio).toFixed(1);
+    latRed = ((1.0 - parseFloat(taskSec) / 28.4) * 100.0).toFixed(1);
+    cost = (0.0052 + 0.0325 * vlmRatio).toFixed(3);
+    costRed = ((1.0 - parseFloat(cost) / 0.048) * 100.0).toFixed(1);
+  }}
+  const clusterGbps = ((sbx * mbps) / 1000.0).toFixed(2);
+
+  document.getElementById('cuaOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{ok ? 'pill-teal' : 'pill-rose'}}">${{ok ? '✅ Zygote PSS ' + pss + ' MiB (-' + memRed + '%) · 68ms 极速就绪' : '❌ 冷启动 PSS 820 MiB (易 OOMKill) · 1,420ms 就绪'}}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">${{taskSec}} s / 15步 (-${{latRed}}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>实时画面流带宽</strong>：单沙箱 <strong>${{mbps}} Mbps (-${{bwRed}}%)</strong> · 集群总流带宽 <strong>${{clusterGbps}} Gbps</strong><br>
+      • <strong>15 步网页任务综合成本</strong>：<strong>$${{cost}} / 任务 (-${{costRed}}%)</strong> (AXTree 优先 + ${{ok ? Math.round(vlmRatio*100) : 100}}% VLM 视觉回退)
+    </p>
+  `;
+}}
 
 function runWfLab() {{
   const cnt = parseInt(document.getElementById('rng_wf_cnt').value, 10);

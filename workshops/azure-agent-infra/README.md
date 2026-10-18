@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **12 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) · [`aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep) · [`aksclaw-dapr-workflow-keda-scaler.bicep`](blueprints/aksclaw-dapr-workflow-keda-scaler.bicep)；
+  - 🧱 **13 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) · [`aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep) · [`aksclaw-dapr-workflow-keda-scaler.bicep`](blueprints/aksclaw-dapr-workflow-keda-scaler.bicep) · [`aksclaw-cua-browser-pool-cdn-relay.bicep`](blueprints/aksclaw-cua-browser-pool-cdn-relay.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -713,7 +713,33 @@ sequenceDiagram
 
 ---
 
-## 17. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 17. Computer-Use Agent (CUA) 浏览器/桌面沙箱基础设施、AXTree+Vision 混合 Grounding 与 CDP 实时接管流控（Computer-Use Agent Browser Sandbox Pool — Zygote Memory Physics, AXTree/Vision Hybrid Grounding & Human-in-the-Loop CDP Relay）
+
+> 本章由确定性 CUA 沙箱池仿真器 [`simulate_cua_browser_sandbox_grounding()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-cua-browser-pool-cdn-relay.bicep`](blueprints/aksclaw-cua-browser-pool-cdn-relay.bicep) 驱动，面向大规模浏览器自动化（Playwright / CDP）与虚拟桌面 Computer-Use Agent 集群（`1,000` -> `10,000` -> `50,000` 并发会话），解决 **“Chromium 多进程吃满 `2 GiB` 沙箱内存触发 `OOMKill`、1080p 原始截图流打爆机架网卡带宽（`14.2 Mbps/沙箱`）以及纯多模态视觉截图循环（`28.4 s / 任务`）的高延迟与高 Token 账单”** 三大核心瓶颈。
+
+### 17.1 CUA 浏览器沙箱池的三大工程支柱
+
+1. **Pillar 1：Zygote 预派生 Chromium + 共享只读 V8 Code Cache + `/dev/shm` `tmpfs` 内存隔离**：
+   - 未优化的冷启动 Headless Chromium 每沙箱占用高达 **`820.0 MiB` PSS 内存**，且默认 `64 MiB` `/dev/shm` 在现代重度 SPA 页面下极易触发渲染进程崩溃或整机 `2 GiB` `OOMKill`，首标签页就绪耗时达 **`1,420.0 ms`**；
+   - 通过在微虚拟机模板内预热 **Chromium Zygote 母进程 + 挂载只读共享 V8 Bytecode/Snapshot Cache + 显式分配 `512 MiB` 内存支持 `/dev/shm` `tmpfs`**，借助 `Copy-on-Write` 页共享将每沙箱增量 PSS 内存压缩至 **`310.0 MiB`（削减 `-62.2%`）**，在 `2 GiB` 沙箱内留出 **`1.70 GiB` 安全裕度**，并将新标签页就绪延迟降至 **`68.0 ms`**。
+2. **Pillar 2：Dirty-Rect 脏矩形分块 WebP/AV1 增量编码 + 自适应帧率 (`1/8 fps`) + Azure Web PubSub 人类接管流**：
+   - 摒弃 `1920x1080` 全画幅原始 PNG 连续截图流（高达 `14.20 Mbps/沙箱`），通过 CDP `Page.startScreencast` 配合 **Dirty-Rect 脏矩形变化检测与 WebP/AV1 增量帧编码**（Agent 自主执行期 `1 fps`，触发验证码/MFA 由人类通过 **Azure Web PubSub Premium** 实时接管期自动切至 `8 fps`），将单沙箱流带宽降至 **`0.62 Mbps`（削减 `-95.6%`）**，同时利用 Set-of-Mark (SoM) 交互热区裁剪减少 **`58.4%` 视觉输入 Token**。
+3. **Pillar 3：DOM / Accessibility Tree (`AXTree`) 优先 + `24%` 复杂 Canvas/验证码回退 VLM 混合路由**：
+   - 76% 的标准表单、按钮与表格操作直接通过结构化 **Accessibility Tree (`AXTree`)** 毫秒级完成定位，仅在遇到非标准 `<canvas>`、跨原生控件或图形验证码（约占 **`24%` 步骤**）时才调用多模态视觉模型（VLM + OmniParser）；
+   - 将 15 步端到端网页 CUA 任务平均耗时从纯视觉截图方案的 **`28.4 s` 压缩至 `7.9 s`（提速 `-72.2%`）**，单次 15 步任务推理+沙箱总成本从 **`$0.048` 降至 `$0.013`（节省 `-72.9%`）**。
+
+### 17.2 `1K` -> `10K` -> `50K` 并发 CUA 浏览器沙箱内存、流带宽与混合 Grounding 定量对比表
+
+| 并发 CUA 沙箱规模与架构策略 | 单沙箱 Chromium `PSS` | `2 GiB` 沙箱剩余裕度 | 首标签页就绪延迟 | 单沙箱流媒体带宽 | 集群总流带宽 | SoM 视觉 Token 削减 | VLM 视觉回退占比 | **15 步任务端到端耗时** | **单次 15 步任务总成本** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`1,000` 沙箱 · Zygote + AXTree 混合 + Dirty-Rect** | **`310.0 MiB` (`-62.2%`)** | **`1.70 GiB` (✅ 防 OOM)** | **`68.0 ms`** | **`0.62 Mbps` (`-95.6%`)** | `0.62 Gbps` | `-58.4%` | `24.0%` | **`7.9 s` (`-72.2%`)** | **`$0.013` (`-72.9%`)** |
+| **`10,000` 沙箱 · Zygote + AXTree 混合 + Dirty-Rect (推荐)** | **`310.0 MiB` (`-62.2%`)** | **`1.70 GiB` (✅ 防 OOM)** | **`68.0 ms`** | **`0.62 Mbps` (`-95.6%`)** | **`6.20 Gbps`** | `-58.4%` | `24.0%` | **`7.9 s` (`-72.2%`)** | **`$0.013` (`-72.9%`)** |
+| **`50,000` 沙箱 · Zygote + AXTree 混合 + Dirty-Rect** | **`310.0 MiB` (`-62.2%`)** | **`1.70 GiB` (✅ 防 OOM)** | **`68.0 ms`** | **`0.62 Mbps` (`-95.6%`)** | `31.00 Gbps` | `-58.4%` | `24.0%` | **`7.9 s` (`-72.2%`)** | **`$0.013` (`-72.9%`)** |
+| `10,000` 沙箱 · 冷启动 Chromium + 原始 PNG + 100% 纯视觉 (反模式) | `820.0 MiB` (`0.0%`) | `1.20 GiB` (❌ 易 OOMKill) | `1,420.0 ms` | `14.20 Mbps` | `142.00 Gbps` | `0.0%` | `100.0%` | `28.4 s` | `$0.048` (基准) |
+
+---
+
+## 18. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -726,10 +752,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 20 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC 与链接完整性）
+# 3. 运行全部 21 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池与链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

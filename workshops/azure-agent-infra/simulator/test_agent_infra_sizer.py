@@ -14,6 +14,7 @@ from agent_infra_sizer import (
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
+    simulate_cua_browser_sandbox_grounding,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
@@ -300,6 +301,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(naive["duplicate_side_effect_pct"], 4.8)
         self.assertAlmostEqual(opt["zombie_reap_latency_sec"], 4.5)
         self.assertAlmostEqual(naive["zombie_ram_leak_pct"], 18.0)
+
+    def test_cua_browser_sandbox_grounding(self) -> None:
+        opt = simulate_cua_browser_sandbox_grounding(10_000, "zygote_axtree_dirtyrect", 0.24)
+        cold = simulate_cua_browser_sandbox_grounding(10_000, "cold_chromium_pure_vision", 1.0)
+        self.assertAlmostEqual(opt["per_sandbox_pss_mib"], 310.0)
+        self.assertAlmostEqual(opt["memory_reduction_pct"], 62.2)
+        self.assertAlmostEqual(opt["sandbox_2gib_headroom_gib"], 1.7)
+        self.assertAlmostEqual(opt["first_tab_ready_ms"], 68.0)
+        self.assertAlmostEqual(opt["stream_mbps_per_sandbox"], 0.62)
+        self.assertAlmostEqual(opt["bandwidth_reduction_pct"], 95.6)
+        self.assertAlmostEqual(opt["som_vision_token_reduction_pct"], 58.4)
+        self.assertAlmostEqual(opt["task_15step_latency_sec"], 7.9)
+        self.assertAlmostEqual(opt["latency_reduction_pct"], 72.2)
+        self.assertAlmostEqual(opt["cost_per_15step_task_usd"], 0.013)
+        self.assertAlmostEqual(opt["cost_reduction_pct"], 72.9)
+        self.assertTrue(opt["oom_kill_protected"])
+        self.assertFalse(cold["oom_kill_protected"])
 
 
 if __name__ == "__main__":

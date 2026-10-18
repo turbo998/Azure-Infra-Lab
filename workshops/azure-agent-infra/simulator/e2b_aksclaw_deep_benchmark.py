@@ -20,6 +20,7 @@ from typing import Dict, List
 
 from agent_infra_sizer import (
     simulate_confidential_sandbox_attestation,
+    simulate_cua_browser_sandbox_grounding,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
@@ -287,6 +288,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_durable_agent_workflow_saga_gc(5_000, 15.0, "pinned_memory_naive_retry", 40),
     ]
 
+    cua_browser_sandbox_profiles: List[Dict[str, object]] = [
+        simulate_cua_browser_sandbox_grounding(1_000, "zygote_axtree_dirtyrect", 0.24),
+        simulate_cua_browser_sandbox_grounding(10_000, "zygote_axtree_dirtyrect", 0.24),
+        simulate_cua_browser_sandbox_grounding(50_000, "zygote_axtree_dirtyrect", 0.24),
+        simulate_cua_browser_sandbox_grounding(10_000, "cold_chromium_pure_vision", 1.0),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -298,6 +306,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "gpu_heterogeneous_profiles": gpu_heterogeneous_profiles,
         "observability_pipeline_profiles": observability_pipeline_profiles,
         "durable_workflow_saga_profiles": durable_workflow_saga_profiles,
+        "cua_browser_sandbox_profiles": cua_browser_sandbox_profiles,
     }
 
 
