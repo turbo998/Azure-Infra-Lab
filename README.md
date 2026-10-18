@@ -1,8 +1,32 @@
 # Azure Infra Lab
 
-面向伙伴与技术团队的公开 Azure 基础设施 Workshop。当前内容聚焦 **Compute / Azure VM Modernization & FinOps**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
+面向伙伴、架构师与技术团队的公开 Azure 基础设施实战 Workshop 与技术手册。当前收录两大核心专题：
+1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)](workshops/azure-agent-infra/README.md)**：从四层全栈架构（Build · Run · Ground · Govern）、六大计算运行时光谱到 AKS 多租户 Kata 隔离与 10 万+ 并发 Firecracker MicroVM 云端沙箱底座。
+2. **[Compute / Azure VM Modernization & FinOps](workshops/azure-vm-modernization/README.md)**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
 
-Public Azure infrastructure workshops for partners and technical teams. The current lab covers **Compute / Azure VM Modernization & FinOps**, with a trilingual course, six synthetic cases, a browser-local calculator, and standalone reports.
+Public Azure infrastructure workshops and architectural playbooks for partners, architects, and technical teams:
+1. **AI Agent Infrastructure on Azure (`AKSClaw × E2B on Azure`)** — Four-layer reference architecture, 6-tier runtime spectrum, interactive live simulator, 100K sandbox VMSS sizer, and 7-card 4:5 benchmark deck.
+2. **Compute / Azure VM Modernization & FinOps** — Trilingual course, six synthetic cases, browser-local calculator, and standalone reports.
+
+---
+
+## 专题一：AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)
+
+- **[全景 Playbook H5 / Interactive Playbook](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html)** · **[实时仿真 Demo / Live Simulator (AKSClaw × E2B)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html)** · **[架构选型与 10万沙箱计算器 / Decision & Sizer](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html)** · **[7-Card 4:5 基准报告 / 7-Card Deck](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html)** · **[完整技术手册 / Markdown Playbook](workshops/azure-agent-infra/README.md)** · **[源码与测试 / Simulator & Tests](workshops/azure-agent-infra/simulator)**
+
+围绕 **“计算与状态解耦（Compute-State Decoupling）”** 与 **“平台级零信任硬边界（Never Trust the Prompt）”** 两大核心公理，系统拆解在 Azure 上构建生产级 AI Agent 的全栈方案设计、代际实测基准与现场五步落地法：
+
+| 模块 / Module | 核心内容与技术资产 / Capabilities & Assets |
+| --- | --- |
+| **1. 四层全栈架构 & 8 张高清 SVG 图谱** | 覆盖 **Build**（MAF / Copilot SDK / LangGraph / OpenClaw / MCP & A2A）、**Run**（6 级运行时光谱）、**Ground**（HorizonDB Preview + Cosmos DB + `UFFD/NBD` 沙箱快照）、**Govern**（Entra Agent ID + Unified AI Gateway APIM）；内嵌 8 张通过 XML 严格校验的高清矢量架构图与工作流图（[`workshops/azure-agent-infra/assets/`](workshops/azure-agent-infra/assets)） |
+| **2. 实时仿真 Demo (`AKSClaw × E2B`)** | 浏览器本地双轨状态机仿真：支持一键自动回放与单步推进 **AKSClaw 多租户 K8s Agent**（Entra Agent ID 签发 → Kata Pod VM 280ms 隔离 → APIM 零密钥注入与 IMDS `169.254.169.254` 阻断 → HorizonDB 11ms Checkpoint）与 **Manus × E2B 10万并发云端电脑**（`Standard_D96as_v7` + `UFFD` 缺页流式恢复 108ms → `NBD` 增量块快照 → L1/L2 热冷分层回收） |
+| **3. 双阶段架构选型决策器 & 10万沙箱计算器** | 覆盖 6 大企业与原生场景预设（知识助手、跨天审批、不可信代码池、Coding/Browser 沙箱、AKSClaw 多租户舰队、10万并发云端电脑）；实时联动 Azure `D96as_v7`（AMD Turin，`108ms` Base / `132ms` Code-Interpreter，`$4.608/hr`）vs `D96as_v6` vs `D96s_v6` 实测数据，动态测算 `85% HugePages` 与 `60% CPU` 水位下的 VMSS 节点数与月度 TCO（10万并发 = **261 台 `D96as_v7`**） |
+| **4. 7-Card 4:5 基准评测卡片 (`cards.html`)** | 严格遵循 7-Card 4:5 视觉报告规范，自包含 CSP 锁定（`default-src 'none'; style-src 'unsafe-inline'`），呈现 8 场景路由准确率（`8/8 = 100%`）、协议/评分机理、翻转与扰动鲁棒性检验、代际启动延迟对比与适用边界（同步提供 [Markdown 版](workshops/azure-agent-infra/test-report.md) 与 [`report.json`](workshops/azure-agent-infra/report.json)） |
+| **5. 现场五步落地法 (Field Playbook)** | 完整的四大技术底座（14 个 Azure 服务家族）资质筛查评分卡、`$10,000` 模型消费信号门禁，以及 **Screening → Discovery → Define → Validate → Implement** 五步交付清单与 Bicep/YAML 生产模板 |
+
+---
+
+## 专题二：Compute / Azure VM Modernization & FinOps
 
 **[立即体验 / Live Demo](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/demo.html)** · **[课程 / Course](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/workshop.html)** · **[计算器 / Calculator](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/calculator.html)** · **[下载离线包 / Download ZIP](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/Azure-VM-Partner-Workshop.zip)** · **[源码 / Source](workshops/azure-vm-modernization/source)**
 

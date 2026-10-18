@@ -1,0 +1,69 @@
+{
+  "topic": "azure-agent-infra",
+  "title": "Azure AI Agent Infrastructure Playbook：从四层全栈架构、六大计算运行时到 AKSClaw 与 E2B on Azure 生产实践",
+  "category": "Infra",
+  "generated_at": "2026-10-18",
+  "methodology": "primary_field_asset_synthesis_and_deterministic_capacity_verifier",
+  "privacy_and_anonymization_audit": "strictly_enforced_zero_customer_pii",
+  "visual_assets": [
+    "assets/01-azure-agent-infra-4layer-panorama.svg",
+    "assets/02-runtime-spectrum-6tier-matrix.svg",
+    "assets/03-scenario-decision-tree-and-routing.svg",
+    "assets/04-aksclaw-multi-tenant-k8s-architecture.svg",
+    "assets/05-e2b-on-azure-vmss-reference-architecture.svg",
+    "assets/06-e2b-microvm-internals-and-vm-benchmark.svg",
+    "assets/07-multi-agent-workflow-and-state-checkpoint.svg",
+    "assets/08-field-playbook-5step-execution-flow.svg"
+  ],
+  "sources": [
+    {
+      "id": "azure-agent-runtime-customer-pitch-v1",
+      "title": "Agent Runtime Customer Pitch - ZH-CN v1.pptx (在 Azure 上构建、运行和扩展生产级 AI Agent)",
+      "type": "primary_architecture_deck",
+      "slides_count": 19,
+      "verified_at": "2026-10-18",
+      "status": "read",
+      "read_method": "direct_xml_and_powerpoint_com_extraction",
+      "excerpt_summary": "Defines the 4-layer Agent Infrastructure stack (Build, Run, Ground, Control & Govern), the 6-tier runtime spectrum (Foundry Hosted Agents, Azure Functions + Durable Functions, ACA Dynamic Sessions, ACA Sandboxes Preview, AKS, Azure VMs), Azure HorizonDB (Preview) vs Cosmos DB vs Sandbox Snapshot state persistence, Microsoft Agent Framework (MAF) + GitHub Copilot SDK integration, Commerzbank Ava production metrics (30,000+ monthly sessions, ~75% autonomous resolution), and Microsoft Entra Agent ID governance."
+    },
+    {
+      "id": "aksclaw-multi-tenant-kubernetes-08",
+      "title": "08 AKSClaw-Multi-Tenant-Kubernetes.pptx (AKSClaw: 面向开发与运维团队的 Kubernetes 多租户 Agent 运行时)",
+      "type": "primary_architecture_deck",
+      "slides_count": 19,
+      "verified_at": "2026-10-18",
+      "status": "read",
+      "read_method": "powerpoint_com_export_and_winrt_ocr",
+      "excerpt_summary": "Details the 6 core pillars of AKSClaw on AKS: (1) Team Skill Marketplace with Git PR review and shared read-only volume mounts, (2) Per-instance Kata Containers Pod VM sandboxing with isolated read-write state volumes and BYO Agent Harness (OpenClaw, Hermes, GitHub Copilot, Claude Code), (3) Event-driven triage (IcM/GitHub/Monitoring) and Follow-the-Sun cross-timezone continuity, (4) 5 non-bypassable platform hard security boundaries (169.254.169.254 IMDS block, egress lockdown, credential injection proxy, Entra Agent ID workload identity, mandatory audit), (5) Unified AI Gateway (zero LLM keys in pod, prefix-cache affinity routing, OTel GenAI tracing, User/Team/Agent token & budget hard stops), and (6) Fleet lifecycle governance."
+    },
+    {
+      "id": "azure-agent-infra-field-playbook",
+      "title": "Agent_Infra_Playbook.pptx (Modernization & AI Platform Infrastructure for Agents Field Playbook)",
+      "type": "primary_field_playbook",
+      "slides_count": 19,
+      "verified_at": "2026-10-18",
+      "status": "read",
+      "read_method": "powerpoint_com_text_and_speaker_notes_extraction",
+      "excerpt_summary": "Establishes the complementary positioning of Foundry and Modernization PaaS/VM, the 6 priority use case archetypes (Customer-Facing Agent, Enterprise Agent Platform, Digital-Native AI Product, Agent Factory, Multi-Agent Workflow, Regulated Industry Agent), the To-B vs To-C decision tree with the dedicated dev team delivery gate, the 4-foundation propensity screening logic, and the 5-step execution flow (Initial Screening, Discovery, Define, Validate via Hands-on Workshop + Whiteboard, Implement)."
+    },
+    {
+      "id": "e2b-on-azure-solution-and-checkride-v2",
+      "title": "Microsoft - E2B on Azure Solution - v1.pdf & E2B_CheckRide_Reordered_v2.pdf & e2b infra deep dive v0.2.pptx",
+      "type": "primary_engineering_deep_dive",
+      "pages_count": 65,
+      "verified_at": "2026-10-18",
+      "status": "read",
+      "read_method": "pypdf_and_python_pptx_extraction",
+      "excerpt_summary": "Documents the production architecture of E2B on Azure (Manus x E2B archetype): dual-frontend Application Gateway WAF v2 (Public TLS + Private callback) + Azure API Management rate-limit-by-key per dynamic Host header for 100,000+ concurrent sandbox sessions with WebSocket passthrough; Nomad + Consul control plane; Firecracker MicroVM internals (virtio-net ns-N SNAT/DNAT, virtio-blk NBD + dirty bitmap, UFFD lazy page-fault memory restore, envd :49982, Jupyter :8888, XFCE/x11vnc/noVNC :6080); measured East US 2 / Central US startup latency across Standard_D96s_v6 (116ms Base / 159ms Code-Interpreter, $4.838/hr), Standard_D96as_v6 (239ms / 255ms), and Standard_D96as_v7 AMD EPYC Turin + Azure Boost (108ms Base / 132ms Code-Interpreter); VMSS 60% CPU scale-out vs HugePages scale-in rules; OpenAI PostgreSQL scale lessons (50 read replicas, 1M+ QPS, PgBouncer, cache lease lock); and 3 open-source E2B production weaknesses."
+    },
+    {
+      "id": "agent-runtime-selection-logic-methodology",
+      "title": "Selection Logic & Summary Methodology (Anonymized 4-Foundation Propensity Qualification Rules)",
+      "type": "methodology_specification",
+      "verified_at": "2026-10-18",
+      "status": "read",
+      "read_method": "excel_com_methodology_sheet_only_extraction",
+      "excerpt_summary": "Specifies the 4 technical foundations across 14 Azure service families, the 5-month observation window, the non-model persistence gate (>=3 of 5 months including the latest 2 consecutive months), the $10,000/month Jun-Aug Foundry Models signal gate with strict Signal-vs-Amount separation, the dual Strong ACR qualification routes (Specific Anchor vs General + >=3 foundations), and the 5 Potential Gates. All customer account rows and financial figures were excluded."
+    }
+  ]
+}

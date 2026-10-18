@@ -1,0 +1,7 @@
+dimension,original_label,perturbed_label,original_pct,perturbed_pct,delta_pts,invariant_holds
+E2B Sandbox Cold Start: AMD Turin v7 vs Intel v6 (Code-Interpreter V1),D96s_v6 Intel (159 ms -> 62.9% speed index),D96as_v7 AMD Turin (132 ms -> 75.8% speed index),62.9,75.8,12.9,True
+E2B Sandbox Cold Start: AMD Genoa v6 vs AMD Turin v7 (Base MicroVM),D96as_v6 Genoa (239 ms -> 41.8% speed index),D96as_v7 Turin (108 ms -> 92.6% speed index),41.8,92.6,50.8,True
+State Persistence Across Idle Reclamation (Dynamic Sessions vs Sandboxes),ACA Dynamic Sessions (0% workspace retained after idle reclamation),ACA Sandboxes Preview + HorizonDB (100% snapshot + ACID state retained),0.0,100.0,100.0,True
+Multi-Tenant Security Controls: In-Agent Prompt Rules vs Platform Hard Boundaries,Agent-Side Soft Config (0% immune to prompt injection / --yolo bypass),AKSClaw Platform Hard Controls (100% IMDS block + Egress + AI Gateway),0.0,100.0,100.0,True
+VMSS Autoscaling Direction Asymmetry (CPU Scale-Out vs HugePages Scale-In),Scale-Out @ 60% CPU (100% automated reactive horizontal expansion),Scale-In (0% blind termination; 100% gated by HugePages drain & live migration),100.0,100.0,0.0,True
+"Propensity Screening Gate: Historical $1,000 vs Adopted $10,000 Foundry Models Rule",Raw Relevant ACR Dollar Retention (100% preserved in both releases),Non-Model Strong ACR Route Eligibility (100% preserved when model gate <$10K),100.0,100.0,0.0,True
