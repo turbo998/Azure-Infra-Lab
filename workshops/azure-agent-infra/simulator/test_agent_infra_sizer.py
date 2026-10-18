@@ -14,6 +14,11 @@ from agent_infra_sizer import (
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
 )
+from e2b_aksclaw_deep_benchmark import (
+    decompose_e2b_firecracker_resume,
+    evaluate_aksclaw_node_density,
+    evaluate_horizondb_checkpoint_slo,
+)
 
 
 class TestAgentInfraSizer(unittest.TestCase):
@@ -103,6 +108,54 @@ class TestAgentInfraSizer(unittest.TestCase):
             self.assertGreater(p.stat().st_size, 20_000)
         for doc_name in ("README.md", "test-report.md", "test-report-cards.html", "report.json", "evidence.json", "review.md"):
             self.assertTrue((bundle_dir / doc_name).exists(), f"Missing {doc_name}")
+
+    def test_e2b_firecracker_resume_decomposition(self) -> None:
+        d96_single = decompose_e2b_firecracker_resume("Standard_D96as_v7", 1)
+        d96_burst = decompose_e2b_firecracker_resume("Standard_D96as_v7", 50)
+        d32_burst = decompose_e2b_firecracker_resume("Standard_D32s_v6", 50)
+        self.assertEqual(d96_single.total_latency_ms, 108.0)
+        self.assertEqual(d96_burst.total_latency_ms, 132.0)
+        self.assertLess(d96_burst.total_latency_ms, d32_burst.total_latency_ms)
+        self.assertAlmostEqual(
+            d96_single.vmm_socket_init_ms
+            + d96_single.uffd_hot_pages_ms
+            + d96_single.nbd_rootfs_meta_ms
+            + d96_single.network_tap_nat_ms,
+            108.0,
+            places=2,
+        )
+
+    def test_aksclaw_node_density_kata_vs_runc(self) -> None:
+        kata = evaluate_aksclaw_node_density("Standard_D64s_v6", 64, 256, "kata-vm-isolation")
+        runc = evaluate_aksclaw_node_density("Standard_D64s_v6", 64, 256, "runc-shared-kernel")
+        self.assertEqual(kata.kata_vmm_overhead_mib, 144)
+        self.assertEqual(runc.kata_vmm_overhead_mib, 0)
+        self.assertGreaterEqual(runc.max_sandboxes_by_ram, kata.max_sandboxes_by_ram)
+
+    def test_horizondb_pgbouncer_checkpoint_slo(self) -> None:
+        profile = evaluate_horizondb_checkpoint_slo(10000, 6.0, 200)
+        self.assertEqual(profile.total_qps, 1000.0)
+        self.assertEqual(profile.connection_reduction_ratio, 50.0)
+        self.assertTrue(profile.fits_128tb_with_30d_retention)
+        self.assertTrue(profile.exceeds_128tb_without_compaction)
+        self.assertLess(profile.end_to_end_checkpoint_p95_ms, 20.0)
+
+    def test_markdown_relative_links_resolve(self) -> None:
+        import re
+        import urllib.parse
+
+        bundle_dir = Path(__file__).resolve().parent.parent
+        for md_file in bundle_dir.rglob("*.md"):
+            text = md_file.read_text(encoding="utf-8")
+            text = re.sub(r"```.*?```", "", text, flags=re.S)
+            for link in re.findall(r"\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)", text):
+                parsed = urllib.parse.urlsplit(link)
+                if not parsed.scheme and not parsed.netloc and parsed.path:
+                    target = (md_file.parent / urllib.parse.unquote(parsed.path)).resolve()
+                    self.assertTrue(
+                        target.exists(),
+                        f"Broken relative link in {md_file.relative_to(bundle_dir)}: {link}",
+                    )
 
 
 if __name__ == "__main__":
