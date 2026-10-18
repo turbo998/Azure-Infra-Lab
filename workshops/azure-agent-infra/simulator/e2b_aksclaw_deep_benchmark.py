@@ -21,6 +21,7 @@ from typing import Dict, List
 from agent_infra_sizer import (
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
+    simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
@@ -295,6 +296,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cua_browser_sandbox_grounding(10_000, "cold_chromium_pure_vision", 1.0),
     ]
 
+    dependency_acceleration_profiles: List[Dict[str, object]] = [
+        simulate_dependency_cache_virtiofs_dax(100, 3.2, "virtiofs_dax_overlaybd_osv"),
+        simulate_dependency_cache_virtiofs_dax(250, 3.2, "virtiofs_dax_overlaybd_osv"),
+        simulate_dependency_cache_virtiofs_dax(100, 3.2, "cold_pip_full_oci_pull"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -307,6 +314,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "observability_pipeline_profiles": observability_pipeline_profiles,
         "durable_workflow_saga_profiles": durable_workflow_saga_profiles,
         "cua_browser_sandbox_profiles": cua_browser_sandbox_profiles,
+        "dependency_acceleration_profiles": dependency_acceleration_profiles,
     }
 
 

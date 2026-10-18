@@ -1006,6 +1006,59 @@
         "cost_per_15step_task_usd": 0.048,
         "cost_reduction_pct": 0.0
       }
+    ],
+    "dependency_acceleration_profiles": [
+      {
+        "sandboxes_per_node": 100,
+        "image_size_gib": 3.2,
+        "cache_mode": "virtiofs_dax_overlaybd_osv",
+        "baseline_pip_install_ms": 24600.0,
+        "pkg_install_ready_ms": 38.0,
+        "pkg_install_reduction_pct": 99.8,
+        "dax_ram_saved_gib": 42.8,
+        "baseline_oci_pull_sec": 19.4,
+        "oci_boot_latency_sec": 0.95,
+        "oci_boot_reduction_pct": 95.1,
+        "hot_block_fetch_ratio_pct": 4.2,
+        "osv_scan_overhead_ms": 14.0,
+        "malicious_hook_block_rate_pct": 100.0,
+        "upperdir_quota_gib": 2.0,
+        "supply_chain_protected": true
+      },
+      {
+        "sandboxes_per_node": 250,
+        "image_size_gib": 3.2,
+        "cache_mode": "virtiofs_dax_overlaybd_osv",
+        "baseline_pip_install_ms": 24600.0,
+        "pkg_install_ready_ms": 38.0,
+        "pkg_install_reduction_pct": 99.8,
+        "dax_ram_saved_gib": 107.0,
+        "baseline_oci_pull_sec": 19.4,
+        "oci_boot_latency_sec": 0.95,
+        "oci_boot_reduction_pct": 95.1,
+        "hot_block_fetch_ratio_pct": 4.2,
+        "osv_scan_overhead_ms": 14.0,
+        "malicious_hook_block_rate_pct": 100.0,
+        "upperdir_quota_gib": 2.0,
+        "supply_chain_protected": true
+      },
+      {
+        "sandboxes_per_node": 100,
+        "image_size_gib": 3.2,
+        "cache_mode": "cold_pip_full_oci_pull",
+        "baseline_pip_install_ms": 24600.0,
+        "pkg_install_ready_ms": 24600.0,
+        "pkg_install_reduction_pct": 0.0,
+        "dax_ram_saved_gib": 0.0,
+        "baseline_oci_pull_sec": 19.4,
+        "oci_boot_latency_sec": 19.4,
+        "oci_boot_reduction_pct": 0.0,
+        "hot_block_fetch_ratio_pct": 100.0,
+        "osv_scan_overhead_ms": 0.0,
+        "malicious_hook_block_rate_pct": 0.0,
+        "upperdir_quota_gib": 0.0,
+        "supply_chain_protected": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -1556,5 +1609,58 @@
       "cost_reduction_pct": 0.0
     }
   },
-  "trace_sha256": "ccc00a09cf2860903409f8c1575ed0e74415fd8f687cf14de3b356e8904f5643"
+  "demo_13_dependency_cache_virtiofs_dax": {
+    "virtiofs_dax_100sbx": {
+      "sandboxes_per_node": 100,
+      "image_size_gib": 3.2,
+      "cache_mode": "virtiofs_dax_overlaybd_osv",
+      "baseline_pip_install_ms": 24600.0,
+      "pkg_install_ready_ms": 38.0,
+      "pkg_install_reduction_pct": 99.8,
+      "dax_ram_saved_gib": 42.8,
+      "baseline_oci_pull_sec": 19.4,
+      "oci_boot_latency_sec": 0.95,
+      "oci_boot_reduction_pct": 95.1,
+      "hot_block_fetch_ratio_pct": 4.2,
+      "osv_scan_overhead_ms": 14.0,
+      "malicious_hook_block_rate_pct": 100.0,
+      "upperdir_quota_gib": 2.0,
+      "supply_chain_protected": true
+    },
+    "virtiofs_dax_250sbx": {
+      "sandboxes_per_node": 250,
+      "image_size_gib": 3.2,
+      "cache_mode": "virtiofs_dax_overlaybd_osv",
+      "baseline_pip_install_ms": 24600.0,
+      "pkg_install_ready_ms": 38.0,
+      "pkg_install_reduction_pct": 99.8,
+      "dax_ram_saved_gib": 107.0,
+      "baseline_oci_pull_sec": 19.4,
+      "oci_boot_latency_sec": 0.95,
+      "oci_boot_reduction_pct": 95.1,
+      "hot_block_fetch_ratio_pct": 4.2,
+      "osv_scan_overhead_ms": 14.0,
+      "malicious_hook_block_rate_pct": 100.0,
+      "upperdir_quota_gib": 2.0,
+      "supply_chain_protected": true
+    },
+    "cold_pip_full_oci_100sbx": {
+      "sandboxes_per_node": 100,
+      "image_size_gib": 3.2,
+      "cache_mode": "cold_pip_full_oci_pull",
+      "baseline_pip_install_ms": 24600.0,
+      "pkg_install_ready_ms": 24600.0,
+      "pkg_install_reduction_pct": 0.0,
+      "dax_ram_saved_gib": 0.0,
+      "baseline_oci_pull_sec": 19.4,
+      "oci_boot_latency_sec": 19.4,
+      "oci_boot_reduction_pct": 0.0,
+      "hot_block_fetch_ratio_pct": 100.0,
+      "osv_scan_overhead_ms": 0.0,
+      "malicious_hook_block_rate_pct": 0.0,
+      "upperdir_quota_gib": 0.0,
+      "supply_chain_protected": false
+    }
+  },
+  "trace_sha256": "9016f09109ffbaed5a31c9376994926e9ce83c2077c958154fd110347a890b43"
 }

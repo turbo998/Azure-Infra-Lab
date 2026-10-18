@@ -15,6 +15,7 @@ from agent_infra_sizer import (
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
+    simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
@@ -318,6 +319,20 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(opt["cost_reduction_pct"], 72.9)
         self.assertTrue(opt["oom_kill_protected"])
         self.assertFalse(cold["oom_kill_protected"])
+
+    def test_dependency_cache_virtiofs_dax(self) -> None:
+        dax = simulate_dependency_cache_virtiofs_dax(100, 3.2, "virtiofs_dax_overlaybd_osv")
+        cold = simulate_dependency_cache_virtiofs_dax(100, 3.2, "cold_pip_full_oci_pull")
+        self.assertAlmostEqual(dax["pkg_install_ready_ms"], 38.0)
+        self.assertAlmostEqual(dax["pkg_install_reduction_pct"], 99.8)
+        self.assertAlmostEqual(dax["dax_ram_saved_gib"], 42.8)
+        self.assertAlmostEqual(dax["oci_boot_latency_sec"], 0.95)
+        self.assertAlmostEqual(dax["oci_boot_reduction_pct"], 95.1)
+        self.assertAlmostEqual(dax["hot_block_fetch_ratio_pct"], 4.2)
+        self.assertAlmostEqual(dax["osv_scan_overhead_ms"], 14.0)
+        self.assertEqual(dax["malicious_hook_block_rate_pct"], 100.0)
+        self.assertTrue(dax["supply_chain_protected"])
+        self.assertFalse(cold["supply_chain_protected"])
 
 
 if __name__ == "__main__":

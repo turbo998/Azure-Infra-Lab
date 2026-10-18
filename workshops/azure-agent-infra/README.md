@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **13 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) · [`aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep) · [`aksclaw-dapr-workflow-keda-scaler.bicep`](blueprints/aksclaw-dapr-workflow-keda-scaler.bicep) · [`aksclaw-cua-browser-pool-cdn-relay.bicep`](blueprints/aksclaw-cua-browser-pool-cdn-relay.bicep)；
+  - 🧱 **14 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) · [`aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep) · [`aksclaw-dapr-workflow-keda-scaler.bicep`](blueprints/aksclaw-dapr-workflow-keda-scaler.bicep) · [`aksclaw-cua-browser-pool-cdn-relay.bicep`](blueprints/aksclaw-cua-browser-pool-cdn-relay.bicep) · [`aksclaw-acr-artifact-cache-nvme-dax.bicep`](blueprints/aksclaw-acr-artifact-cache-nvme-dax.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -739,7 +739,31 @@ sequenceDiagram
 
 ---
 
-## 18. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 18. Agent 代码沙箱瞬态依赖加速：`virtiofs` DAX 内容寻址包缓存、OverlayBD 按需块级拉取与跨沙箱 Page-Cache 去重（Ephemeral Dependency Acceleration — `virtiofs` DAX Content-Addressable Store, OverlayBD Lazy Pulling & Cross-Sandbox Page-Cache Deduplication）
+
+> 本章由确定性依赖加速仿真模型 [`simulate_dependency_cache_virtiofs_dax()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-acr-artifact-cache-nvme-dax.bicep`](blueprints/aksclaw-acr-artifact-cache-nvme-dax.bicep) 驱动，面向 Coding Agent 与 Data-Science Agent 在微虚拟机内执行动态依赖安装（`pip install torch pandas scipy` / `npm install`）与加载大体积自定义镜像时的核心矛盾：**“微虚拟机虽然 `108 ms` 恢复就绪，但随后执行 `pip install` 耗时 `24.6 s`、拉取 `3.2 GiB` 容器镜像耗时 `19.4 s`，且 100 个沙箱在各自 Guest 内核重复缓存同一份 `.so` 动态库浪费数十 GiB 宿主机内存”**。
+
+### 18.1 瞬态依赖加速与供应链防护三层架构
+
+1. **Layer 1：宿主机本地 NVMe RAID-0 内容寻址包存储 (`uv` Reflink/Hardlink + Nix Store) + `virtiofs` DAX 直通映射**：
+   - 将 Top 2,500 Python/Node 科学计算与 Web 依赖包的预解压 Wheel/Tree 存储在宿主机本地 NVMe RAID-0 的只读内容寻址池（CAS）中，并通过 **`virtiofs` DAX (Direct Access) 映射窗口**暴露给所有 Kata/Firecracker 微虚拟机；
+   - **双重收益**：沙箱内执行 `uv pip install` 仅需建立瞬态符号链接/目录树，就绪耗时从冷 `pip install` 的 **`24,600.0 ms` 骤降至 `38.0 ms`（提速 `-99.8%`）**；同时 `virtiofs` DAX 绕过 Guest 内核 Page Cache 直接映射宿主机物理页，在单节点 `100` 并发沙箱下节省 **`42.8 GiB` 宿主机内存**（`250` 沙箱下节省 **`107.0 GiB`**）。
+2. **Layer 2：eStargz / OverlayBD 块级按需容器镜像延迟拉取（Block-Level Lazy Pulling）**：
+   - 配合 **Azure Container Registry (ACR) Premium + Artifact Cache / Connected Cache**，将 `3.2 GiB` 自定义运行时镜像转换为 eStargz / OverlayBD 格式，沙箱启动期仅按需拉取 **`4.2%` 热数据块**，使自定义镜像沙箱冷启动从全量 OCI 拉取解压的 **`19.40 s` 压缩至 `0.95 s`（提速 `-95.1%`）**。
+3. **Layer 3：长尾未命中包 ACR 供应链防火墙 + OSV 恶意钩子隔离 + `2 GiB` `upperdir` 配额**：
+   - 对未命中只读底座的 `8%` 长尾外部包，强制路由至内部 Artifact Proxy 执行 OSV 漏洞库与签名校验（仅增加 **`14.0 ms`** 开销），**`100.0%` 阻断 typosquatting 与恶意 `setup.py` / `postinstall` 脚本执行**，并限制每沙箱可写层 `OverlayFS upperdir <= 2.0 GiB` 防止磁盘写爆。
+
+### 18.2 `virtiofs` DAX + OverlayBD vs 传统冷拉取与冷安装定量对比表
+
+| 单节点并发沙箱与依赖加速策略 | 科学计算包就绪耗时 | 包安装加速率 | **单节点 DAX 节省内存** | `3.2 GiB` 镜像启动耗时 | 启动拉取热块占比 | OSV 供应链扫描开销 | 恶意安装钩子拦截率 | 每沙箱可写层配额 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`100` 沙箱/节点 · `virtiofs` DAX + OverlayBD + OSV 防火墙 (推荐)** | **`38.0 ms`** | **`-99.8%`** | **`42.8 GiB`** | **`0.95 s` (`-95.1%`)** | **`4.2%`** | `14.0 ms` | **`100.0%` (✅ 零投毒)** | `2.0 GiB` |
+| **`250` 沙箱/节点 · `virtiofs` DAX + OverlayBD + OSV 防火墙** | **`38.0 ms`** | **`-99.8%`** | **`107.0 GiB`** | **`0.95 s` (`-95.1%`)** | **`4.2%`** | `14.0 ms` | **`100.0%` (✅ 零投毒)** | `2.0 GiB` |
+| `100` 沙箱/节点 · 冷 `pip install` + 全量 OCI 拉取 (传统反模式) | `24,600.0 ms` | `0.0%` | `0.0 GiB` (重复缓存) | `19.40 s` (`0.0%`) | `100.0%` | `0.0 ms` (❌ 无校验) | `0.0%` (❌ 裸连公网) | 无限制 (易写爆) |
+
+---
+
+## 19. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -752,10 +776,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 21 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池与链接完整性）
+# 3. 运行全部 22 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速与链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

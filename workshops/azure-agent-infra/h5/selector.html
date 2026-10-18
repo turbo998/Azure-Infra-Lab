@@ -410,6 +410,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(10)">11. OTel GenAI + Tetragon eBPF + ADX 可观测性集群 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(11)">12. Dapr Workflow + Service Bus 幂等 Outbox + KEDA (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(12)">13. CUA 浏览器沙箱池 + Web PubSub CDP 接管网关 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(13)">14. ACR 制品缓存 + 本地 NVMe virtiofs DAX 依赖池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -687,6 +688,33 @@ pre.code-box {
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="cuaOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 13: virtiofs DAX Package Store, OverlayBD Lazy Pull & Page-Cache Deduplication Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 13 · EPHEMERAL DEPENDENCY ACCELERATION (VIRTIOFS DAX + OVERLAYBD LAZY PULL + OSV FIREWALL)</span>
+    <h2>Agent 代码沙箱瞬态依赖加速：<code>virtiofs</code> DAX 内容寻址池、OverlayBD 按需拉取与内存去重测算器</h2>
+    <div class="sub">量化 Coding / Data-Science Agent 在微虚拟机内执行 <code>pip/npm install</code> 与加载自定义大镜像时，本地 NVMe <code>uv</code> Reflink + <code>virtiofs</code> DAX 直通映射与 OverlayBD 块级延迟拉取的提速及跨沙箱内存节省：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 单节点并发沙箱密度 (Concurrent Sandboxes per Host Node): <strong id="lbl_dep_sbx" style="color:var(--blue)">100</strong></label>
+          <input type="range" id="rng_dep_sbx" min="20" max="300" step="10" value="100" oninput="runDepLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 自定义容器镜像体积 (Custom Runtime Image Size): <strong id="lbl_dep_img" style="color:var(--blue)">3.2 GiB</strong></label>
+          <input type="range" id="rng_dep_img" min="1.0" max="10.0" step="0.2" value="3.2" oninput="runDepLab()">
+        </div>
+        <div class="form-row">
+          <label>3. 依赖安装与镜像分发架构 (Dependency &amp; Image Delivery Mode)</label>
+          <select id="sel_dep_mode" onchange="runDepLab()">
+            <option value="virtiofs_dax_overlaybd_osv" selected>NVMe uv Reflink + virtiofs DAX 共享 + OverlayBD 按需拉取 + OSV 防火墙 (推荐)</option>
+            <option value="cold_pip_full_oci_pull">传统反模式：沙箱内冷 pip/npm install + 全量 OCI 镜像拉取解压</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="depOut"></div>
     </div>
   </section>
 
@@ -1055,6 +1083,17 @@ resource cuaWebPubSub 'Microsoft.SignalRService/webPubSub@2024-03-01' = {
     publicNetworkAccess: 'Disabled' // 全私网承载 0.62 Mbps/沙箱 Dirty-Rect WebP/AV1 实时接管流
     disableLocalAuth: true
   }
+}`,
+`// 14. Azure Bicep: ACR Premium Artifact Cache + Connected Cache + Host NVMe virtiofs DAX Store
+resource acrRegistry 'Microsoft.ContainerRegistry/registries@2023-07-01' = {
+  name: 'aksclawdepacrprem'
+  location: resourceGroup().location
+  sku: { name: 'Premium' }
+  properties: {
+    publicNetworkAccess: 'Disabled'
+    zoneRedundancy: 'Enabled'
+    policies: { trustPolicy: { type: 'Notary', status: 'enabled' } }
+  }
 }`
 ];
 
@@ -1168,6 +1207,36 @@ runGpuLab();
 runObsLab();
 runWfLab();
 runCuaLab();
+runDepLab();
+
+function runDepLab() {
+  const sbx = parseInt(document.getElementById('rng_dep_sbx').value, 10);
+  const imgGib = parseFloat(document.getElementById('rng_dep_img').value);
+  const mode = document.getElementById('sel_dep_mode').value;
+  document.getElementById('lbl_dep_sbx').textContent = sbx;
+  document.getElementById('lbl_dep_img').textContent = imgGib.toFixed(1) + " GiB";
+
+  const baseOciSec = (19.40 * (imgGib / 3.2)).toFixed(2);
+  let pipMs = "24,600.0 ms", pipRed = "0.0", ramSaved = "0.0", ociSec = baseOciSec, ociRed = "0.0", ok = false;
+  if (mode === 'virtiofs_dax_overlaybd_osv') {
+    pipMs = "38.0 ms"; pipRed = "99.8";
+    ramSaved = (sbx * 0.428).toFixed(1);
+    ociSec = (0.95 * (imgGib / 3.2)).toFixed(2);
+    ociRed = "95.1";
+    ok = true;
+  }
+
+  document.getElementById('depOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ virtiofs DAX 节省 ' + ramSaved + ' GiB 节点内存 · OSV 100% 拦截恶意钩子' : '❌ Guest 重复缓存浪费内存 · 裸连公网无供应链防护'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">包就绪 ${pipMs} (-${pipRed}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>镜像启动耗时 (OverlayBD 按需块拉取)</strong>：基线全量拉取 <strong>${baseOciSec} s</strong> → 当前 <strong>${ociSec} s (-${ociRed}%，启动仅拉取 ${ok ? '4.2%' : '100%'} 热块)</strong><br>
+      • <strong>跨沙箱 Page-Cache 物理页共享</strong>：单节点 ${sbx} 沙箱共节省 <strong>${ramSaved} GiB RAM</strong> · 可写层配额 <strong>${ok ? '2.0 GiB upperdir' : '无限制'}</strong>
+    </p>
+  `;
+}
 
 function runCuaLab() {
   const sbx = parseInt(document.getElementById('rng_cua_sbx').value, 10);

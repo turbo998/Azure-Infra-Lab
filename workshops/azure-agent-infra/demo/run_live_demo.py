@@ -28,6 +28,7 @@ from agent_infra_sizer import (  # noqa: E402
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
+    simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
@@ -259,6 +260,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "zygote_axtree_10k": simulate_cua_browser_sandbox_grounding(10_000, "zygote_axtree_dirtyrect", 0.24),
             "zygote_axtree_50k": simulate_cua_browser_sandbox_grounding(50_000, "zygote_axtree_dirtyrect", 0.24),
             "cold_pure_vision_10k": simulate_cua_browser_sandbox_grounding(10_000, "cold_chromium_pure_vision", 1.0),
+        },
+        "demo_13_dependency_cache_virtiofs_dax": {
+            "virtiofs_dax_100sbx": simulate_dependency_cache_virtiofs_dax(100, 3.2, "virtiofs_dax_overlaybd_osv"),
+            "virtiofs_dax_250sbx": simulate_dependency_cache_virtiofs_dax(250, 3.2, "virtiofs_dax_overlaybd_osv"),
+            "cold_pip_full_oci_100sbx": simulate_dependency_cache_virtiofs_dax(100, 3.2, "cold_pip_full_oci_pull"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
