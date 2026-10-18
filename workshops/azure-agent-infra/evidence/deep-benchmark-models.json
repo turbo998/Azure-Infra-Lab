@@ -473,5 +473,64 @@
       "meets_220ms_confidential_slo": true,
       "host_root_memory_dump_blocked": false
     }
+  ],
+  "egress_security_profiles": [
+    {
+      "concurrent_sandboxes": 25000,
+      "datapath_mode": "cilium_ebpf_fw_pls",
+      "nat_public_ip_count": 8,
+      "mcp_verification_mode": "cached_slsa_cosign",
+      "l1_policy_latency_ms": 0.06,
+      "imds_wireserver_blocked": true,
+      "l2_fw_tls_idps_latency_ms": 2.4,
+      "dns_tunnel_block_rate_pct": 99.94,
+      "raw_outbound_conns": 150000,
+      "active_public_snat_ports": 33000,
+      "total_snat_port_capacity": 512000,
+      "snat_utilization_pct": 6.4,
+      "snat_exhaustion_safe": true,
+      "private_link_rtt_delta_ms": -3.8,
+      "net_egress_rtt_delta_ms": -1.34,
+      "l4_mcp_admission_ms": 4.6,
+      "unsigned_mcp_blocked": true
+    },
+    {
+      "concurrent_sandboxes": 100000,
+      "datapath_mode": "cilium_ebpf_fw_pls",
+      "nat_public_ip_count": 8,
+      "mcp_verification_mode": "cached_slsa_cosign",
+      "l1_policy_latency_ms": 0.06,
+      "imds_wireserver_blocked": true,
+      "l2_fw_tls_idps_latency_ms": 2.4,
+      "dns_tunnel_block_rate_pct": 99.94,
+      "raw_outbound_conns": 600000,
+      "active_public_snat_ports": 132000,
+      "total_snat_port_capacity": 512000,
+      "snat_utilization_pct": 25.8,
+      "snat_exhaustion_safe": true,
+      "private_link_rtt_delta_ms": -3.8,
+      "net_egress_rtt_delta_ms": -1.34,
+      "l4_mcp_admission_ms": 4.6,
+      "unsigned_mcp_blocked": true
+    },
+    {
+      "concurrent_sandboxes": 25000,
+      "datapath_mode": "legacy_iptables_public_nat",
+      "nat_public_ip_count": 2,
+      "mcp_verification_mode": "unverified",
+      "l1_policy_latency_ms": 1.9,
+      "imds_wireserver_blocked": true,
+      "l2_fw_tls_idps_latency_ms": 0.0,
+      "dns_tunnel_block_rate_pct": 0.0,
+      "raw_outbound_conns": 150000,
+      "active_public_snat_ports": 150000,
+      "total_snat_port_capacity": 128000,
+      "snat_utilization_pct": 117.2,
+      "snat_exhaustion_safe": false,
+      "private_link_rtt_delta_ms": 0.0,
+      "net_egress_rtt_delta_ms": 1.9,
+      "l4_mcp_admission_ms": 0.0,
+      "unsigned_mcp_blocked": false
+    }
   ]
 }

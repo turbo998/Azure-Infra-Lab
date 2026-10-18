@@ -20,6 +20,7 @@ from typing import Dict, List
 
 from agent_infra_sizer import (
     simulate_confidential_sandbox_attestation,
+    simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_multiregion_dr_failover,
 )
@@ -257,6 +258,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_confidential_sandbox_attestation("Standard_D64s_v6", "none", "standard_overlay"),
     ]
 
+    egress_security_profiles: List[Dict[str, object]] = [
+        simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "cilium_ebpf_fw_pls", 8, "cached_slsa_cosign"),
+        simulate_egress_exfiltration_and_mcp_supply_chain(100_000, "cilium_ebpf_fw_pls", 8, "cached_slsa_cosign"),
+        simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "legacy_iptables_public_nat", 2, "unverified"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -264,6 +271,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "multiregion_dr_failover_profiles": dr_profiles,
         "finops_spot_eviction_profiles": finops_profiles,
         "confidential_sandbox_profiles": confidential_profiles,
+        "egress_security_profiles": egress_security_profiles,
     }
 
 

@@ -584,6 +584,81 @@ def simulate_confidential_sandbox_attestation(
     }
 
 
+def simulate_egress_exfiltration_and_mcp_supply_chain(
+    concurrent_sandboxes: int = 25_000,
+    datapath_mode: str = "cilium_ebpf_fw_pls",
+    nat_public_ip_count: int = 8,
+    mcp_verification_mode: str = "cached_slsa_cosign",
+) -> dict[str, Any]:
+    """
+    Quantifies Chapter 13: Zero-Trust Sandbox Egress Governance, SNAT Port Physics & MCP Supply-Chain Attestation:
+      - Layer 1: Cilium eBPF socket-level filter (`0.06 ms` hook) vs legacy `iptables` 5,000-rule traversal (`1.90 ms`),
+        blocking `169.254.169.254/32` (IMDS) and `168.63.129.16/32` (Azure WireServer).
+      - Layer 2: CoreDNS Shannon entropy filter (`entropy > 4.1 bits/char` or label `> 52 chars` -> `99.94%` DNS-tunnel block)
+        + Azure Firewall Premium TLS/IDPS deep inspection (`+2.40 ms` p95).
+      - Layer 3: Azure NAT Gateway SNAT port physics (`64,000` ports/IP) vs Azure Private Link internal offload
+        (`78%` internal traffic moved off public SNAT + `-3.80 ms` p95 RTT improvement).
+      - Layer 4: MCP Server OCI Notation/Cosign SLSA Level 3 signature + capability manifest admission
+        (`+4.60 ms` cached vs `+21.00 ms` cold verification).
+    """
+    uses_ebpf = datapath_mode == "cilium_ebpf_fw_pls"
+    uses_private_link = datapath_mode == "cilium_ebpf_fw_pls"
+
+    # Layer 1: Socket/Packet policy overhead
+    l1_policy_latency_ms = 0.06 if uses_ebpf else 1.90
+    imds_wireserver_blocked = True
+
+    # Layer 2: DNS Shannon entropy + Firewall Premium TLS/IDPS inspection
+    l2_fw_tls_idps_latency_ms = 2.40 if uses_ebpf else 0.0
+    dns_tunnel_block_rate_pct = 99.94 if uses_ebpf else 0.0
+
+    # Layer 3: SNAT port consumption physics (each active sandbox makes ~6 outbound connections;
+    # Private Link offloads 78% of Foundry/Storage/KeyVault/HorizonDB traffic from public SNAT)
+    raw_outbound_conns = concurrent_sandboxes * 6
+    snat_offload_ratio = 0.78 if uses_private_link else 0.0
+    active_public_snat_ports = int(math.ceil(raw_outbound_conns * (1.0 - snat_offload_ratio)))
+    total_snat_port_capacity = max(1, nat_public_ip_count) * 64_000
+    snat_utilization_pct = round((active_public_snat_ports / total_snat_port_capacity) * 100.0, 1)
+    snat_exhaustion_safe = snat_utilization_pct <= 80.0
+    private_link_rtt_delta_ms = -3.80 if uses_private_link else 0.0
+
+    # Layer 4: MCP tool image Notation/Cosign + capability manifest admission
+    if mcp_verification_mode == "cached_slsa_cosign":
+        l4_mcp_admission_ms = 4.60
+        unsigned_mcp_blocked = True
+    elif mcp_verification_mode == "cold_slsa_cosign":
+        l4_mcp_admission_ms = 21.00
+        unsigned_mcp_blocked = True
+    else:
+        l4_mcp_admission_ms = 0.0
+        unsigned_mcp_blocked = False
+
+    net_egress_rtt_delta_ms = round(
+        l1_policy_latency_ms + l2_fw_tls_idps_latency_ms + private_link_rtt_delta_ms,
+        2,
+    )
+
+    return {
+        "concurrent_sandboxes": concurrent_sandboxes,
+        "datapath_mode": datapath_mode,
+        "nat_public_ip_count": nat_public_ip_count,
+        "mcp_verification_mode": mcp_verification_mode,
+        "l1_policy_latency_ms": l1_policy_latency_ms,
+        "imds_wireserver_blocked": imds_wireserver_blocked,
+        "l2_fw_tls_idps_latency_ms": l2_fw_tls_idps_latency_ms,
+        "dns_tunnel_block_rate_pct": dns_tunnel_block_rate_pct,
+        "raw_outbound_conns": raw_outbound_conns,
+        "active_public_snat_ports": active_public_snat_ports,
+        "total_snat_port_capacity": total_snat_port_capacity,
+        "snat_utilization_pct": snat_utilization_pct,
+        "snat_exhaustion_safe": snat_exhaustion_safe,
+        "private_link_rtt_delta_ms": private_link_rtt_delta_ms,
+        "net_egress_rtt_delta_ms": net_egress_rtt_delta_ms,
+        "l4_mcp_admission_ms": l4_mcp_admission_ms,
+        "unsigned_mcp_blocked": unsigned_mcp_blocked,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

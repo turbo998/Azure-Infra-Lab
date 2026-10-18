@@ -1082,6 +1082,7 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(5)">6. AI Gateway + Entra Agent ID 双重归属 (XML)</button>
       <button class="tab-btn" onclick="showBlueprint(6)">7. FinOps 预算与 KQL 异常突增熔断告警 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(7)">8. AKSClaw SEV-SNP 机密沙箱节点池 + SKR (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(8)">9. 零信任出网防火墙 + Private Link + 防 SNAT 耗尽 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1212,6 +1213,40 @@ def build_selector_html() -> str:
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="ccOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 8: Zero-Trust Egress Firewall, SNAT Port Physics & MCP Supply-Chain Attestation Sizer -->
+  <section class="card">
+    <span class="pill pill-rose">TOOL 8 · ZERO-TRUST EGRESS FIREWALL, SNAT PORT PHYSICS &amp; MCP SUPPLY-CHAIN SIZER</span>
+    <h2>零信任出向网络治理、SNAT 端口耗尽物理学与 MCP 供应链签名准入测算器</h2>
+    <div class="sub">量化 Cilium eBPF 套接字过滤、CoreDNS 香农熵防 DNS 隧道、Azure Firewall Premium + Private Link 私网卸载对 NAT Gateway SNAT 端口利用率的改善，以及 Notation/Cosign MCP 镜像签名准入开销：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发活跃沙箱规模 (Concurrent Sandboxes): <strong id="lbl_eg_sbx" style="color:var(--blue)">25,000</strong></label>
+          <input type="range" id="rng_eg_sbx" min="5000" max="100000" step="5000" value="25000" oninput="runEgressLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 数据面过滤与私网卸载架构 (Datapath &amp; Egress Architecture)</label>
+          <select id="sel_eg_mode" onchange="runEgressLab()">
+            <option value="cilium_ebpf_fw_pls" selected>Cilium eBPF (0.06ms) + Firewall Premium + Private Link 卸载 78% 流量 (推荐)</option>
+            <option value="legacy_iptables_public_nat">传统 iptables (1.90ms) + 全量走公网 NAT Gateway (无 Private Link 反模式)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. Azure NAT Gateway 挂载公网 IP 数量 (每个 IP 提供 64,000 SNAT 端口): <strong id="lbl_eg_ips" style="color:var(--blue)">8 IPs (512,000 端口)</strong></label>
+          <input type="range" id="rng_eg_ips" min="1" max="16" step="1" value="8" oninput="runEgressLab()">
+        </div>
+        <div class="form-row">
+          <label>4. MCP 工具镜像 Notation/Cosign (SLSA L3) 签名与能力清单准入模式</label>
+          <select id="sel_eg_mcp" onchange="runEgressLab()">
+            <option value="cached_slsa_cosign" selected>强制 SLSA L3 签名校验 + 能力沙箱准入 (本地缓存命中 +4.6ms)</option>
+            <option value="cold_slsa_cosign">强制 SLSA L3 签名校验 (冷拉取透明日志与证书链 +21.0ms)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="egressOut"></div>
     </div>
   </section>
 
@@ -1517,7 +1552,25 @@ resource confidentialAgentPool 'Microsoft.ContainerService/managedClusters/agent
     }}
   }}
 }}
-// 配合 Microsoft Azure Attestation (MAA) 验证 x-ms-attestation-type == 'sevsnpvm' 后由 Managed HSM 释放密钥`
+// 配合 Microsoft Azure Attestation (MAA) 验证 x-ms-attestation-type == 'sevsnpvm' 后由 Managed HSM 释放密钥`,
+`// 9. Azure Bicep: Zero-Trust Egress (Azure Firewall Premium TLS/IDPS + /29 NAT Gateway 512K SNAT Ports)
+resource natPipPrefix 'Microsoft.Network/publicIPPrefixes@2023-11-01' = {{
+  name: 'pippre-agent-egress-nat'
+  location: resourceGroup().location
+  sku: {{ name: 'Standard', tier: 'Regional' }}
+  properties: {{ prefixLength: 29, publicIPAddressVersion: 'IPv4' }} // 8 IPs = 512,000 SNAT Ports
+}}
+
+resource fwPolicy 'Microsoft.Network/firewallPolicies@2023-11-01' = {{
+  name: 'fwpol-agent-zero-trust-premium'
+  location: resourceGroup().location
+  properties: {{
+    sku: {{ tier: 'Premium' }}
+    threatIntelMode: 'Deny'
+    intrusionDetection: {{ mode: 'Deny' }} // 阻断 DNS 隧道与 C2 外连特征
+    dnsSettings: {{ enableProxy: true }}
+  }}
+}}`
 ];
 
 function showBlueprint(idx) {{
@@ -1625,6 +1678,42 @@ runDeepLab();
 runDrLab();
 runFinopsLab();
 runCcLab();
+runEgressLab();
+
+function runEgressLab() {{
+  const sbx = parseInt(document.getElementById('rng_eg_sbx').value, 10);
+  const mode = document.getElementById('sel_eg_mode').value;
+  const ips = parseInt(document.getElementById('rng_eg_ips').value, 10);
+  const mcp = document.getElementById('sel_eg_mcp').value;
+
+  const isZt = mode === 'cilium_ebpf_fw_pls';
+  const capPorts = ips * 64000;
+  document.getElementById('lbl_eg_sbx').textContent = sbx.toLocaleString();
+  document.getElementById('lbl_eg_ips').textContent = ips + " IPs (" + capPorts.toLocaleString() + " 端口)";
+
+  const rawConns = sbx * 6;
+  const offload = isZt ? 0.78 : 0.0;
+  const pubPorts = Math.ceil(rawConns * (1.0 - offload));
+  const utilPct = ((pubPorts / capPorts) * 100.0).toFixed(1);
+  const snatSafe = parseFloat(utilPct) <= 80.0;
+
+  const l1Ms = isZt ? 0.06 : 1.90;
+  const l2Ms = isZt ? 2.40 : 0.00;
+  const plsDelta = isZt ? -3.80 : 0.00;
+  const netRtt = (l1Ms + l2Ms + plsDelta).toFixed(2);
+  const mcpMs = mcp === 'cached_slsa_cosign' ? 4.6 : 21.0;
+
+  document.getElementById('egressOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{snatSafe && isZt ? 'pill-teal' : 'pill-rose'}}">${{snatSafe ? (isZt ? '✅ SNAT 充裕 &amp; DNS 隧道 99.94% 阻断' : '⚠️ 缺乏 DNS 隧道与 Private Link 保护') : '❌ SNAT 端口耗尽风险 (&gt;80% 水位)'}}</span>
+      <strong style="color:${{snatSafe ? '#34d399' : '#fda4af'}};font-size:1.1rem;">SNAT 利用率：${{utilPct}}% (${{pubPorts.toLocaleString()}} / ${{capPorts.toLocaleString()}})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>四层延迟分解</strong>：L1 ${{isZt ? 'Cilium eBPF' : 'iptables'}} <strong>${{l1Ms}}ms</strong> + L2 Firewall TLS/IDPS <strong>${{l2Ms}}ms</strong> + L3 Private Link 卸载 <strong>${{plsDelta}}ms</strong> = <strong>净 RTT ${{netRtt}} ms</strong><br>
+      • <strong>供应链与防渗漏</strong>：169.254.169.254/WireServer <strong>内核级阻断</strong> · CoreDNS 香农熵拦截 <strong>${{isZt ? '99.94%' : '0%'}}</strong> · L4 MCP SLSA 签名准入 <strong>+${{mcpMs}} ms</strong>
+    </p>
+  `;
+}}
 
 function runCcLab() {{
   const sku = document.getElementById('sel_cc_sku').value;

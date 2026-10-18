@@ -27,6 +27,7 @@ from agent_infra_sizer import (  # noqa: E402
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
+    simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_multiregion_dr_failover,
 )
@@ -226,6 +227,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "dc64as_v5_cold_skr": simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cold_skr_handshake", "dm_verity_crypt"),
             "dc64as_v5_cached_jwt": simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cached_jwt", "dm_verity_crypt"),
             "d64s_v6_standard_kata": simulate_confidential_sandbox_attestation("Standard_D64s_v6", "none", "standard_overlay"),
+        },
+        "demo_8_zero_trust_egress_and_mcp_attestation": {
+            "ebpf_fw_pls_25k": simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "cilium_ebpf_fw_pls", 8, "cached_slsa_cosign"),
+            "ebpf_fw_pls_100k": simulate_egress_exfiltration_and_mcp_supply_chain(100_000, "cilium_ebpf_fw_pls", 8, "cached_slsa_cosign"),
+            "legacy_iptables_2ip_exhausted": simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "legacy_iptables_public_nat", 2, "unverified"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

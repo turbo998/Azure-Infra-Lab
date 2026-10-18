@@ -14,6 +14,7 @@ from agent_infra_sizer import (
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_confidential_sandbox_attestation,
+    simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
     simulate_multiregion_dr_failover,
 )
@@ -203,6 +204,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "demo_5_multiregion_dr",
             "demo_6_finops_spot_drain",
             "demo_7_confidential_attestation",
+            "demo_8_zero_trust_egress_and_mcp_attestation",
             "trace_sha256",
         ):
             self.assertIn(key, trace)
@@ -239,6 +241,18 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(std["effective_sandboxes_per_node"], 109)
         self.assertLess(cached["end_to_end_boot_ms"], cold["end_to_end_boot_ms"])
         self.assertTrue(cold["meets_220ms_confidential_slo"])
+
+    def test_egress_exfiltration_and_mcp_supply_chain(self) -> None:
+        zt = simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "cilium_ebpf_fw_pls", 8, "cached_slsa_cosign")
+        legacy = simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "legacy_iptables_public_nat", 2, "unverified")
+        self.assertLess(zt["l1_policy_latency_ms"], 0.08)
+        self.assertGreater(legacy["l1_policy_latency_ms"], 1.5)
+        self.assertAlmostEqual(zt["dns_tunnel_block_rate_pct"], 99.94)
+        self.assertTrue(zt["snat_exhaustion_safe"])
+        self.assertFalse(legacy["snat_exhaustion_safe"])
+        self.assertTrue(zt["unsigned_mcp_blocked"])
+        self.assertFalse(legacy["unsigned_mcp_blocked"])
+        self.assertLess(zt["net_egress_rtt_delta_ms"], 0.0)
 
 
 if __name__ == "__main__":
