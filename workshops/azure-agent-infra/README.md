@@ -864,7 +864,33 @@ sequenceDiagram
 
 ---
 
-## 23. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 23. 多租户 Agent 记忆分层架构 —— HorizonDB `pg_diskann` 向量索引、GraphRAG 社区摘要缓存与热/温/冷情景记忆生命周期物理模型（Multi-Tenant Agentic Memory Tiering — HorizonDB `pg_diskann`, GraphRAG Community Cache & Hot/Warm/Cold Episodic Lifecycle Physics）
+
+> 本章由确定性多租户记忆分层仿真模型 [`simulate_agentic_memory_diskann_graphrag_tiering()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-horizondb-diskann-graphrag-memory.bicep`](blueprints/aksclaw-horizondb-diskann-graphrag-memory.bicep) 驱动，面向海量长寿面 Agent 在跨周/跨月积累 **1 亿（`100M`）至 2.5 亿（`250M`）条情景记忆与代码语义块（`1536-d` float32 向量）** 时的三大存储与检索瓶颈：**纯内存 HNSW 向量索引导致的百 GiB 级昂贵内存膨胀、多跳知识图谱遍历导致的数秒级延迟与上下文 Token 爆炸，以及高频重复对话导致的冗余向量写入与跨租户召回越权风险**。
+
+### 23.1 多租户 Agent 记忆分层架构三大支柱
+
+1. **Pillar 1：HorizonDB `pg_diskann` 乘积量化（64-Byte PQ）+ NVMe SSD 磁盘图索引 vs 纯内存 HNSW**：
+   - 在 `100M` 条 `1536-d` float32 向量规模下（原始向量体积 `614.4 GB`），传统纯内存 `pgvector HNSW` 索引需常驻 **`840.0 GiB` RAM**（月均成本高达 **`$6,840/mo`**）；
+   - 采用微软自研 `pg_diskann`（Vamana 图 + 64 字节 PQ 压缩向量常驻内存 + 完整向量与邻接表落盘 PremiumV2 NVMe SSD），仅需 **`48.0 GiB` RAM（削减 `-94.3%` 内存）**，月成本降至 **`$580/mo`（节省 `-91.5%`）**，同时保持 **`96.8%` `Recall@10`** 与 **`p95 = 6.4 ms`** 的毫秒级检索延迟。
+2. **Pillar 2：分层 GraphRAG Leiden 社区摘要缓存（`L0` Azure Managed Redis）+ 增量实体差分合并**：
+   - 将跨代码仓/跨文档的知识图谱预聚合成层级化 Leiden 社区摘要并缓存在 `L0` Redis，使跨仓架构级查询延迟从实时多跳图遍历的 **`3,420.0 ms` 降至 `42.0 ms`（`-98.8%`）**，注入 Prompt 的上下文 Token 数从 `28,500` 降至 **`3,880`（节省 `-86.4%`）**。
+3. **Pillar 3：`L0/L1/L2` 三级情景记忆生命周期（`L0 Redis -> L1 HorizonDB DiskANN -> L2 Blob ZRS Parquet`）+ 余弦去重门控与强制 `tenant_id` RLS**：
+   - 写入前执行 `cosine >= 0.94` 语义去重与时间戳合并，消除 **`61.5%` 冗余情景记忆写入**；超过 `90 天` 的非活跃情景记忆自动归档至 Azure Blob ZRS Parquet 冷存；
+   - 在 HorizonDB 执行强制 `tenant_id` 行级安全策略（RLS）预过滤，确保多租户向量召回越权泄漏率严格为 **`0.0%`**（无 RLS 共享索引因近似最近邻后过滤缺陷存在 `3.2%` 租户召回串扰/空集失真风险）。
+
+### 23.2 HorizonDB `pg_diskann` + GraphRAG 缓存 + 三级记忆分层 vs 传统纯内存 HNSW 定量对比表
+
+| 向量规模与多租户记忆索引架构 | 原始向量体积 | **索引常驻内存 (RAM)** | **向量索引月成本** | `Recall@10` 召回率 | 向量检索 `p95` | **GraphRAG 架构查询耗时** | **注入上下文 Token** | 冗余写入削减率 | **跨租户泄漏率** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`25M` 向量 · `pg_diskann` + GraphRAG Redis 缓存 + 三级分层 RLS** | `153.6 GB` | **`12.0 GiB` (`-94.3%`)** | **`$145/mo` (`-91.5%`)** | `96.8%` | `6.4 ms` | **`42.0 ms` (`-98.8%`)** | **`3,880` (`-86.4%`)** | `61.5%` | **`0.0%` (✅ RLS 强隔离)** |
+| **`100M` 向量 · `pg_diskann` + GraphRAG Redis 缓存 + 三级分层 RLS (推荐)** | `614.4 GB` | **`48.0 GiB` (`-94.3%`)** | **`$580/mo` (`-91.5%`)** | **`96.8%`** | **`6.4 ms`** | **`42.0 ms` (`-98.8%`)** | **`3,880` (`-86.4%`)** | **`61.5%`** | **`0.0%` (✅ RLS 强隔离)** |
+| **`250M` 向量 · `pg_diskann` + GraphRAG Redis 缓存 + 三级分层 RLS** | `1,536.0 GB` | **`120.0 GiB` (`-94.3%`)** | **`$1,450/mo` (`-91.5%`)** | `96.8%` | `6.4 ms` | **`42.0 ms` (`-98.8%`)** | **`3,880` (`-86.4%`)** | `61.5%` | **`0.0%` (✅ RLS 强隔离)** |
+| `100M` 向量 · 传统纯内存 HNSW + 实时多跳图遍历 + 无去重/无 RLS (反模式) | `614.4 GB` | `840.0 GiB` (`0.0%`) | `$6,840/mo` (`0.0%`) | `97.2%` | `4.8 ms` | `3,420.0 ms` (`0.0%`) | `28,500` (`0.0%`) | `0.0%` | `3.2%` (❌ 后过滤风险) |
+
+---
+
+## 24. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -877,10 +903,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级 + 混合级联路由与 KV 亲和预取）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级 + 混合级联路由与 KV 亲和预取 + DiskANN/GraphRAG 多租户记忆分层）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 26 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取及链接完整性）
+# 3. 运行全部 27 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层及链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

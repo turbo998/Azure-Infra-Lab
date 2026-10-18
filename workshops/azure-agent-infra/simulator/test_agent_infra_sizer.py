@@ -13,6 +13,7 @@ from agent_infra_sizer import (
     build_report_payload,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -407,6 +408,28 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(rr["ttft_p95_ms"], 1840.0)
         self.assertAlmostEqual(rr["blended_cost_per_1k_tasks_usd"], 142.00)
         self.assertFalse(rr["cascade_governed"])
+
+    def test_agentic_memory_diskann_graphrag_tiering(self) -> None:
+        mem = simulate_agentic_memory_diskann_graphrag_tiering(100, "diskann_graphrag_3tier_rls")
+        hnsw = simulate_agentic_memory_diskann_graphrag_tiering(100, "in_memory_hnsw_untiered_no_rls")
+        self.assertAlmostEqual(mem["raw_vector_storage_gb"], 614.4)
+        self.assertAlmostEqual(mem["hnsw_baseline_ram_gib"], 840.0)
+        self.assertAlmostEqual(mem["index_ram_gib"], 48.0)
+        self.assertAlmostEqual(mem["ram_reduction_pct"], 94.3)
+        self.assertAlmostEqual(mem["monthly_index_cost_usd"], 580.0)
+        self.assertAlmostEqual(mem["cost_reduction_pct"], 91.5)
+        self.assertAlmostEqual(mem["recall_at_10_pct"], 96.8)
+        self.assertAlmostEqual(mem["vector_query_p95_ms"], 6.4)
+        self.assertAlmostEqual(mem["graphrag_query_latency_ms"], 42.0)
+        self.assertAlmostEqual(mem["graphrag_latency_reduction_pct"], 98.8)
+        self.assertEqual(mem["graphrag_injected_tokens"], 3880)
+        self.assertAlmostEqual(mem["graphrag_token_reduction_pct"], 86.4)
+        self.assertAlmostEqual(mem["redundant_write_elimination_pct"], 61.5)
+        self.assertEqual(mem["cross_tenant_leakage_rate_pct"], 0.0)
+        self.assertTrue(mem["memory_tier_governed"])
+        self.assertAlmostEqual(hnsw["index_ram_gib"], 840.0)
+        self.assertAlmostEqual(hnsw["monthly_index_cost_usd"], 6840.0)
+        self.assertFalse(hnsw["memory_tier_governed"])
 
 
 if __name__ == "__main__":

@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Dict, List
 
 from agent_infra_sizer import (
+    simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -333,6 +334,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hybrid_model_routing_kv_cache_affinity(0.00, "round_robin_single_frontier_no_prefetch"),
     ]
 
+    memory_diskann_graphrag_profiles: List[Dict[str, object]] = [
+        simulate_agentic_memory_diskann_graphrag_tiering(25, "diskann_graphrag_3tier_rls"),
+        simulate_agentic_memory_diskann_graphrag_tiering(100, "diskann_graphrag_3tier_rls"),
+        simulate_agentic_memory_diskann_graphrag_tiering(250, "diskann_graphrag_3tier_rls"),
+        simulate_agentic_memory_diskann_graphrag_tiering(100, "in_memory_hnsw_untiered_no_rls"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -350,6 +358,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "sovereign_residency_profiles": sovereign_residency_profiles,
         "canary_live_migration_profiles": canary_live_migration_profiles,
         "model_routing_kv_affinity_profiles": model_routing_kv_affinity_profiles,
+        "memory_diskann_graphrag_profiles": memory_diskann_graphrag_profiles,
     }
 
 

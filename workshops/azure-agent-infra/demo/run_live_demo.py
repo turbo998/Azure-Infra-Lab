@@ -26,6 +26,7 @@ from agent_infra_sizer import (  # noqa: E402
     RUNTIMES,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -292,6 +293,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "cascade_kv_68pct": simulate_hybrid_model_routing_kv_cache_affinity(0.68, "kv_affinity_cascade_speculative_prefetch"),
             "cascade_kv_80pct": simulate_hybrid_model_routing_kv_cache_affinity(0.80, "kv_affinity_cascade_speculative_prefetch"),
             "round_robin_frontier": simulate_hybrid_model_routing_kv_cache_affinity(0.00, "round_robin_single_frontier_no_prefetch"),
+        },
+        "demo_18_memory_diskann_graphrag_tiering": {
+            "diskann_25m": simulate_agentic_memory_diskann_graphrag_tiering(25, "diskann_graphrag_3tier_rls"),
+            "diskann_100m": simulate_agentic_memory_diskann_graphrag_tiering(100, "diskann_graphrag_3tier_rls"),
+            "diskann_250m": simulate_agentic_memory_diskann_graphrag_tiering(250, "diskann_graphrag_3tier_rls"),
+            "hnsw_in_memory_100m": simulate_agentic_memory_diskann_graphrag_tiering(100, "in_memory_hnsw_untiered_no_rls"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
