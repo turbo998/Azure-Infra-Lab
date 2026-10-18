@@ -31,6 +31,7 @@ from agent_infra_sizer import (
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
+    simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
@@ -365,6 +366,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_lakehouse_duckdb_onelake_sandbox(1_000, "cold_spark_cluster_unbounded_sql"),
     ]
 
+    multicloud_cleanroom_profiles: List[Dict[str, object]] = [
+        simulate_multicloud_confidential_cleanroom_federation(250, "oidc_federation_wireguard_sev_snp_cleanroom"),
+        simulate_multicloud_confidential_cleanroom_federation(1_000, "oidc_federation_wireguard_sev_snp_cleanroom"),
+        simulate_multicloud_confidential_cleanroom_federation(5_000, "oidc_federation_wireguard_sev_snp_cleanroom"),
+        simulate_multicloud_confidential_cleanroom_federation(1_000, "static_aksk_userspace_mtls_shared_vm"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -386,6 +394,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "webrtc_media_sandbox_profiles": webrtc_media_sandbox_profiles,
         "cicd_buildkit_bazel_profiles": cicd_buildkit_bazel_profiles,
         "lakehouse_duckdb_onelake_profiles": lakehouse_duckdb_onelake_profiles,
+        "multicloud_cleanroom_profiles": multicloud_cleanroom_profiles,
     }
 
 

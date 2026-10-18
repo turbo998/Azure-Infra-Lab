@@ -1434,5 +1434,71 @@
       "unauthorized_column_exposure_pct": 18.5,
       "lakehouse_slo_governed": false
     }
+  ],
+  "multicloud_cleanroom_profiles": [
+    {
+      "concurrent_federated_sandboxes": 250,
+      "federation_cleanroom_mode": "oidc_federation_wireguard_sev_snp_cleanroom",
+      "cleanroom_nodes": 8,
+      "static_secret_exposure_pct": 0.0,
+      "baseline_uncached_sts_ms": 185.0,
+      "oidc_sts_exchange_p95_ms": 3.4,
+      "oidc_sts_latency_reduction_pct": 98.2,
+      "baseline_userspace_mtls_gbps": 9.2,
+      "cross_cloud_throughput_gbps": 38.4,
+      "wireguard_crypto_overhead_ms": 1.15,
+      "crypto_latency_reduction_pct": 90.3,
+      "cross_party_ip_leakage_pct": 0.0,
+      "bilateral_attestation_verified_pct": 100.0,
+      "cleanroom_federation_governed": true
+    },
+    {
+      "concurrent_federated_sandboxes": 1000,
+      "federation_cleanroom_mode": "oidc_federation_wireguard_sev_snp_cleanroom",
+      "cleanroom_nodes": 32,
+      "static_secret_exposure_pct": 0.0,
+      "baseline_uncached_sts_ms": 185.0,
+      "oidc_sts_exchange_p95_ms": 3.4,
+      "oidc_sts_latency_reduction_pct": 98.2,
+      "baseline_userspace_mtls_gbps": 9.2,
+      "cross_cloud_throughput_gbps": 38.4,
+      "wireguard_crypto_overhead_ms": 1.15,
+      "crypto_latency_reduction_pct": 90.3,
+      "cross_party_ip_leakage_pct": 0.0,
+      "bilateral_attestation_verified_pct": 100.0,
+      "cleanroom_federation_governed": true
+    },
+    {
+      "concurrent_federated_sandboxes": 5000,
+      "federation_cleanroom_mode": "oidc_federation_wireguard_sev_snp_cleanroom",
+      "cleanroom_nodes": 157,
+      "static_secret_exposure_pct": 0.0,
+      "baseline_uncached_sts_ms": 185.0,
+      "oidc_sts_exchange_p95_ms": 3.4,
+      "oidc_sts_latency_reduction_pct": 98.2,
+      "baseline_userspace_mtls_gbps": 9.2,
+      "cross_cloud_throughput_gbps": 38.4,
+      "wireguard_crypto_overhead_ms": 1.15,
+      "crypto_latency_reduction_pct": 90.3,
+      "cross_party_ip_leakage_pct": 0.0,
+      "bilateral_attestation_verified_pct": 100.0,
+      "cleanroom_federation_governed": true
+    },
+    {
+      "concurrent_federated_sandboxes": 1000,
+      "federation_cleanroom_mode": "static_aksk_userspace_mtls_shared_vm",
+      "cleanroom_nodes": 32,
+      "static_secret_exposure_pct": 100.0,
+      "baseline_uncached_sts_ms": 185.0,
+      "oidc_sts_exchange_p95_ms": 185.0,
+      "oidc_sts_latency_reduction_pct": 0.0,
+      "baseline_userspace_mtls_gbps": 9.2,
+      "cross_cloud_throughput_gbps": 9.2,
+      "wireguard_crypto_overhead_ms": 11.8,
+      "crypto_latency_reduction_pct": 0.0,
+      "cross_party_ip_leakage_pct": 24.5,
+      "bilateral_attestation_verified_pct": 0.0,
+      "cleanroom_federation_governed": false
+    }
   ]
 }

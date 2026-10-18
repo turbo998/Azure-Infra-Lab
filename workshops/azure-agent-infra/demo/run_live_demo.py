@@ -38,6 +38,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
+    simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
@@ -320,6 +321,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "duckdb_onelake_1k": simulate_lakehouse_duckdb_onelake_sandbox(1_000, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
             "duckdb_onelake_5k": simulate_lakehouse_duckdb_onelake_sandbox(5_000, "ephemeral_duckdb_onelake_pushdown_ast_guard"),
             "cold_spark_1k": simulate_lakehouse_duckdb_onelake_sandbox(1_000, "cold_spark_cluster_unbounded_sql"),
+        },
+        "demo_22_multicloud_cleanroom_federation": {
+            "oidc_cleanroom_250": simulate_multicloud_confidential_cleanroom_federation(250, "oidc_federation_wireguard_sev_snp_cleanroom"),
+            "oidc_cleanroom_1k": simulate_multicloud_confidential_cleanroom_federation(1_000, "oidc_federation_wireguard_sev_snp_cleanroom"),
+            "oidc_cleanroom_5k": simulate_multicloud_confidential_cleanroom_federation(5_000, "oidc_federation_wireguard_sev_snp_cleanroom"),
+            "static_aksk_1k": simulate_multicloud_confidential_cleanroom_federation(1_000, "static_aksk_userspace_mtls_shared_vm"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

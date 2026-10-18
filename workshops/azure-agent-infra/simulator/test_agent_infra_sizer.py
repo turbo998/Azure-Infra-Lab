@@ -25,6 +25,7 @@ from agent_infra_sizer import (
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
+    simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
@@ -487,6 +488,22 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(sp["query_latency_p95_sec"], 48.50)
         self.assertAlmostEqual(sp["cost_per_1k_sessions_usd"], 184.00)
         self.assertFalse(sp["lakehouse_slo_governed"])
+
+    def test_multicloud_confidential_cleanroom_federation(self) -> None:
+        cr = simulate_multicloud_confidential_cleanroom_federation(1_000, "oidc_federation_wireguard_sev_snp_cleanroom")
+        ak = simulate_multicloud_confidential_cleanroom_federation(1_000, "static_aksk_userspace_mtls_shared_vm")
+        self.assertEqual(cr["static_secret_exposure_pct"], 0.0)
+        self.assertAlmostEqual(cr["oidc_sts_exchange_p95_ms"], 3.4)
+        self.assertAlmostEqual(cr["oidc_sts_latency_reduction_pct"], 98.2)
+        self.assertAlmostEqual(cr["cross_cloud_throughput_gbps"], 38.4)
+        self.assertAlmostEqual(cr["wireguard_crypto_overhead_ms"], 1.15)
+        self.assertAlmostEqual(cr["crypto_latency_reduction_pct"], 90.3)
+        self.assertEqual(cr["cross_party_ip_leakage_pct"], 0.0)
+        self.assertAlmostEqual(cr["bilateral_attestation_verified_pct"], 100.0)
+        self.assertTrue(cr["cleanroom_federation_governed"])
+        self.assertEqual(ak["static_secret_exposure_pct"], 100.0)
+        self.assertAlmostEqual(ak["oidc_sts_exchange_p95_ms"], 185.0)
+        self.assertFalse(ak["cleanroom_federation_governed"])
 
 
 if __name__ == "__main__":

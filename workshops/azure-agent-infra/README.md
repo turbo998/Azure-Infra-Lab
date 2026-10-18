@@ -967,7 +967,33 @@ sequenceDiagram
 
 ---
 
-## 27. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 27. 跨云工作负载身份联邦与机密洁净室多方智能体协作 —— 无密钥 OIDC 联邦交换、内核态 WireGuard 加密网格与 AMD SEV-SNP 双向证明洁净室物理模型（Sovereign Multi-Cloud & Confidential Clean-Room Federation — Cross-Cloud Workload Identity Federation, WireGuard Kernel Mesh & Confidential Clean-Room Collaborative Agent Physics）
+
+> 本章由确定性跨云身份联邦与机密洁净室仿真模型 [`simulate_multicloud_confidential_cleanroom_federation()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-multicloud-oidc-cleanroom-federation.bicep`](blueprints/aksclaw-multicloud-oidc-cleanroom-federation.bicep) 驱动，面向跨国企业、联合风控与医药研发联盟在跨云（`Azure AKSClaw <-> AWS EKS / S3 / Bedrock <-> GCP Vertex / BigQuery`）及多参与方联合运行 Agent 时的三大核心挑战：**跨云静态 `AK/SK` 长期密钥散落沙箱环境变量导致的凭据泄露面、用户态代理跨云 mTLS 转发导致的吞吐折损与高尾延迟，以及多机构联合建模/推理时私有数据与专有 Agent 权重互相泄露的信任死锁**。
+
+### 27.1 跨云身份联邦与机密洁净室三大支柱
+
+1. **Pillar 1：跨云无密钥工作负载身份联邦（`Entra Workload Identity Federation <-> AWS IAM OIDC / GCP STS`）+ 节点级令牌代理缓存**：
+   - 彻底废除跨云长期静态 `AWS_SECRET_ACCESS_KEY` / GCP JSON 密钥文件，使静态长期凭据暴露面从 `100.0%` 归零至 **`0.0%`**；
+   - 宿主机侧本地 OIDC Token Broker 对短期联邦 STS 凭证执行内存级预刷新与进程间投递，将跨云令牌交换 p95 延迟从每次远端跨洋 STS 握手的 **`185.0 ms` 压降至 `3.4 ms`（`-98.2%`）**。
+2. **Pillar 2：内核态 Cilium `WireGuard`（UDP `51820`）跨云加密网格 vs 用户态 Envoy/Nginx mTLS 代理**：
+   - 利用 Linux 内核态 `WireGuard` `ChaCha20-Poly1305` SIMD 向量化流水线与 Azure Boost MANA 硬件卸载直连跨云对等网关，单网关对跨云加密吞吐高达 **`38.4 Gbps`**（较用户态 mTLS 代理的 `9.2 Gbps` 提升 **`+317.4%`**），加解密附加延迟从 `11.80 ms` 压降至 **`1.15 ms`（`-90.3%`）**。
+3. **Pillar 3：基于 `AMD SEV-SNP` 与 Azure Attestation (`MAA`) 的多方机密洁净室（Confidential Clean-Room）双向硬件证明**：
+   - 数据提供方（Party A）的数据解密密钥 `DEK_Data` 与模型/算子提供方（Party B）的专有权重密钥 `DEK_Model` 分别托管于各自独立的 Managed HSM 中，并配置相同的 MAA 硬件证明策略（绑定洁净室容器镜像哈希与 `MRTD / HOST_DATA` 启动度量值）；
+   - 仅当沙箱运行在经硬件签名验证的 `Standard_DC32as_v5` SEV-SNP 加密内存飞地内时，双方 KMS 才向飞地内存释放密钥，确保跨参与方原始数据或专有权重泄露率严格为 **`0.0%`**（双向知识产权保护达成率 **`100.0%`**）。
+
+### 27.2 跨云无密钥 OIDC 联邦 + 内核态 WireGuard + SEV-SNP 机密洁净室 vs 传统静态 AK/SK + 用户态 mTLS 定量对比表
+
+| 并发跨云联邦沙箱与洁净室协作架构 | SEV-SNP 洁净室节点 (`DC32as_v5`) | **静态 AK/SK 暴露面** | **跨云 STS 令牌交换 (`p95`)** | **跨云加密网格吞吐** | 隧道加解密附加延迟 | **双向硬件证明率** | **跨方数据/权重泄露率** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`250` 沙箱 · 无密钥 OIDC 联邦 + 内核 WireGuard + SEV-SNP 机密洁净室** | `8` | **`0.0%` (✅ 无静态密钥)** | **`3.4 ms` (`-98.2%`)** | `38.4 Gbps` | **`1.15 ms` (`-90.3%`)** | `100.0%` | **`0.0%` (✅ 双向防泄露)** |
+| **`1,000` 沙箱 · 无密钥 OIDC 联邦 + 内核 WireGuard + SEV-SNP 机密洁净室 (推荐)** | `32` | **`0.0%` (✅ 无静态密钥)** | **`3.4 ms` (`-98.2%`)** | **`38.4 Gbps`** | **`1.15 ms` (`-90.3%`)** | **`100.0%`** | **`0.0%` (✅ 双向防泄露)** |
+| **`5,000` 沙箱 · 无密钥 OIDC 联邦 + 内核 WireGuard + SEV-SNP 机密洁净室** | `157` | **`0.0%` (✅ 无静态密钥)** | **`3.4 ms` (`-98.2%`)** | `38.4 Gbps` | **`1.15 ms` (`-90.3%`)** | `100.0%` | **`0.0%` (✅ 双向防泄露)** |
+| `1,000` 沙箱 · 传统静态 AK/SK 环境变量 + 用户态 mTLS 代理 + 普通共享 VM (反模式) | `32` | `100.0%` (❌ 凭据外泄高危) | `185.0 ms` (`0.0%`) | `9.2 Gbps` | `11.80 ms` (`0.0%`) | `0.0%` | `24.5%` (❌ 内存转储窃取) |
+
+---
+
+## 28. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -980,10 +1006,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 21 项物理仿真器：Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX + 长周期休眠/Saga/GC + CUA 浏览器沙箱池 + virtiofs DAX 依赖加速 + 多智能体并发扇出治理 + 主权云驻留与密码学粉碎 + 零停机热迁移与金丝雀升级 + 混合级联路由与 KV 亲和预取 + DiskANN/GraphRAG 多租户记忆分层 + WebRTC 实时音视频 eBPF 沙箱 + SWE-Agent BuildKit/Bazel CAS 验证沙箱 + OneLake/DuckDB 数据湖仓分析沙箱）
+# 2. 运行深度定量模型（全部 22 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 30 项单元测试（100% 覆盖 6 大运行时契约、21 大深度物理模型、22 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 31 项单元测试（100% 覆盖 6 大运行时契约、22 大深度物理模型、23 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
