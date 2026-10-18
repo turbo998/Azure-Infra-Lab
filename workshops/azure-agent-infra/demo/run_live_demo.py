@@ -27,6 +27,9 @@ from agent_infra_sizer import (  # noqa: E402
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
 )
+from e2b_aksclaw_deep_benchmark import (  # noqa: E402
+    generate_deep_benchmark_summary,
+)
 
 
 def evaluate_playbook_propensity(
@@ -204,6 +207,7 @@ def build_full_demo_bundle() -> Dict[str, Any]:
         "demo_1_aksclaw": run_aksclaw_fleet_demo(),
         "demo_2_e2b_vmss": run_e2b_100k_sandbox_demo(),
         "demo_3_multi_agent": run_multi_agent_horizondb_demo(),
+        "demo_4_deep_models": generate_deep_benchmark_summary(),
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
     payload["trace_sha256"] = hashlib.sha256(canonical).hexdigest()

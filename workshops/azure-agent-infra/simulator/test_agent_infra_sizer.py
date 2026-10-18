@@ -176,6 +176,26 @@ class TestAgentInfraSizer(unittest.TestCase):
                         f"Broken relative link in {md_file.relative_to(bundle_dir)}: {link}",
                     )
 
+    def test_live_demo_self_test_and_trace_integrity(self) -> None:
+        import json
+        import subprocess
+        import sys
+
+        bundle_dir = Path(__file__).resolve().parent.parent
+        demo_script = bundle_dir / "demo" / "run_live_demo.py"
+        proc = subprocess.run(
+            [sys.executable, str(demo_script), "--self-test"],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        self.assertIn("DEMO VERIFICATION", proc.stdout)
+        trace_path = bundle_dir / "demo" / "latest-demo-trace.json"
+        trace = json.loads(trace_path.read_text(encoding="utf-8"))
+        for key in ("demo_1_aksclaw", "demo_2_e2b_vmss", "demo_3_multi_agent", "demo_4_deep_models", "trace_sha256"):
+            self.assertIn(key, trace)
+        self.assertEqual(len(trace["demo_4_deep_models"]["e2b_firecracker_resume_decomposition"]), 12)
+
 
 if __name__ == "__main__":
     unittest.main()
