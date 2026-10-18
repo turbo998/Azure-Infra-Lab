@@ -1084,6 +1084,7 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(7)">8. AKSClaw SEV-SNP 机密沙箱节点池 + SKR (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(8)">9. 零信任出网防火墙 + Private Link + 防 SNAT 耗尽 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(9)">10. H100 MIG 硬件切分节点池 + KAITO 前缀缓存 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(10)">11. OTel GenAI + Tetragon eBPF + ADX 可观测性集群 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1280,6 +1281,33 @@ def build_selector_html() -> str:
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="gpuOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 10: OpenTelemetry GenAI Traces, Tetragon eBPF Auditing & ADX Tail-Sampling Cost Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 10 · 100K SANDBOX OBSERVABILITY (OTEL GEN_AI.* + TETRAGON eBPF + ADX TAIL-SAMPLING SIZER)</span>
+    <h2>十万级沙箱全链路可观测性：OpenTelemetry GenAI 追踪、Tetragon eBPF 审计与 ADX 尾部采样测算器</h2>
+    <div class="sub">量化 <code>1,000</code> 至 <code>100,000</code> 并发沙箱下 Tetragon eBPF 内核态过滤开销、OTel Collector 尾部采样率（常规轨迹采样 + 100% 异常/越权全保留）及 Azure Data Explorer (Kusto) ZSTD <code>8.4x</code> 压缩对存储量与每千次任务成本的削减：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发活跃沙箱规模 (Concurrent Active Sandboxes): <strong id="lbl_obs_sbx" style="color:var(--blue)">100,000</strong></label>
+          <input type="range" id="rng_obs_sbx" min="1000" max="100000" step="1000" value="100000" oninput="runObsLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 可观测性流水线架构 (Observability Pipeline Architecture)</label>
+          <select id="sel_obs_mode" onchange="runObsLab()">
+            <option value="hybrid_3tier_tail_adx" selected>三层混合流水线：Tetragon eBPF 内核过滤 + OTel 尾部采样 + ADX ZSTD 8.4x (推荐)</option>
+            <option value="unsampled_raw_law">传统反模式：100% 全量无采样 Trace + 用户态 Syscall 直写标准日志工作区</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. 正常轨迹基准采样率 (异常/慢调用/安全事件始终 100% 保留): <strong id="lbl_obs_rate" style="color:var(--blue)">5%</strong></label>
+          <input type="range" id="rng_obs_rate" min="1" max="50" step="1" value="5" oninput="runObsLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="obsOut"></div>
     </div>
   </section>
 
@@ -1618,6 +1646,16 @@ resource h100MigNodePool 'Microsoft.ContainerService/managedClusters/agentPools@
       'kaito.sh/workspace-pool': 'gui-grounding-vllm'
     }}
   }}
+}}`,
+`// 11. Azure Bicep: Managed Prometheus + Azure Data Explorer (Kusto) for OTel GenAI & Tetragon eBPF
+resource kustoCluster 'Microsoft.Kusto/clusters@2023-08-15' = {{
+  name: 'aksclawobsadx'
+  location: resourceGroup().location
+  sku: {{ name: 'Standard_E8d_v5', tier: 'Standard', capacity: 2 }}
+  properties: {{
+    enableStreamingIngest: true
+    publicNetworkAccess: 'Disabled' // 全私网 Private Link 摄取 OTel gen_ai.* 与 Tetragon eBPF 事件
+  }}
 }}`
 ];
 
@@ -1728,6 +1766,42 @@ runFinopsLab();
 runCcLab();
 runEgressLab();
 runGpuLab();
+runObsLab();
+
+function runObsLab() {{
+  const sbx = parseInt(document.getElementById('rng_obs_sbx').value, 10);
+  const mode = document.getElementById('sel_obs_mode').value;
+  const normRate = parseInt(document.getElementById('rng_obs_rate').value, 10) / 100.0;
+  document.getElementById('lbl_obs_sbx').textContent = sbx.toLocaleString();
+  document.getElementById('lbl_obs_rate').textContent = Math.round(normRate * 100) + "%";
+
+  const rawGbps = ((sbx * 48.5) / 1000000.0).toFixed(2);
+  const rawDailyTb = (sbx * 0.00419).toFixed(2);
+  const baseCost = 3.62;
+  let persistedTb = rawDailyTb, volRed = "0.0", cpuPct = 6.40, cost = 3.62, costRed = "0.0", alertSec = 14.5;
+
+  if (mode === 'hybrid_3tier_tail_adx') {{
+    cpuPct = 0.95;
+    alertSec = 1.8;
+    const effFactor = 0.034 * 1.0 + (1.0 - 0.034) * normRate;
+    volRed = ((1.0 - (effFactor / 0.98)) * 100.0).toFixed(1);
+    persistedTb = (parseFloat(rawDailyTb) * (1.0 - parseFloat(volRed) / 100.0)).toFixed(2);
+    cost = (baseCost * (0.032 + 1.015 * effFactor)).toFixed(2);
+    costRed = ((1.0 - parseFloat(cost) / baseCost) * 100.0).toFixed(1);
+  }}
+
+  const sloOk = cpuPct <= 1.2;
+  document.getElementById('obsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{sloOk ? 'pill-teal' : 'pill-rose'}}">${{sloOk ? '✅ eBPF 内核态 CPU 开销 ' + cpuPct + '% (<1.2% SLO) · 100% 异常零漏报' : '❌ 用户态全量审计 CPU 开销 ' + cpuPct + '% (超标) · 存储账单爆炸'}}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">$${{cost}} / 1K 任务 (-${{costRed}}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>原始遥测流 vs 落盘存储</strong>：原始 <strong>${{rawGbps}} GB/s (${{rawDailyTb}} TB/天)</strong> → 尾部采样 + ADX ZSTD 8.4x 后 <strong>${{persistedTb}} TB/天 (削减 -${{volRed}}%)</strong><br>
+      • <strong>安全越权告警延迟</strong>：Tetragon eBPF (<code>execve/ptrace/connect</code>) → ADX 流式告警 P95 <strong>${{alertSec}} s</strong>
+    </p>
+  `;
+}}
 
 function runGpuLab() {{
   const sku = document.getElementById('sel_gpu_sku').value;

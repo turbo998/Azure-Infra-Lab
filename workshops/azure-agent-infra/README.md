@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **10 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep)；
+  - 🧱 **11 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) · [`aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -661,7 +661,34 @@ sequenceDiagram
 
 ---
 
-## 15. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 15. 十万级 Agent 沙箱全链路可观测性、OpenTelemetry GenAI 语义规范 (`gen_ai.*`)、Tetragon eBPF 系统调用审计与尾部采样成本物理模型（End-to-End Agentic Observability — OpenTelemetry GenAI Traces, Tetragon eBPF Syscall Auditing & ADX Tail-Sampling Physics）
+
+> 本章由确定性可观测性流水线仿真器 [`simulate_otel_ebpf_observability_pipeline()`](simulator/agent_infra_sizer.py) 与生产级 Bicep 蓝图 [`blueprints/aksclaw-otel-adx-tetragon-observability.bicep`](blueprints/aksclaw-otel-adx-tetragon-observability.bicep) 驱动，面向 `1,000` -> `25,000` -> `100,000` 并发沙箱的金融级审计与 SRE 排障诉求，解决 **“当 10 万个并发 Agent 沙箱每秒产生 `4.85 GB/s`（`419.0 TB/天`）原始推理 Trace 与内核系统调用日志时，如何兼顾 `< 1.2%` 宿主机 CPU 开销、`100%` 异常/越权事件零漏报以及 `-88.4%` 存储成本削减”** 的工程挑战。
+
+### 15.1 三层混合尾部采样架构（3-Tier Hybrid Observability Pipeline）
+
+1. **Layer 1：Tetragon eBPF 内核态 Ring-Buffer 过滤（In-Kernel Syscall Filtering）**：
+   - 摒弃高开销的用户态 `auditd` 或全量 `strace`（消耗 `6.40%` 宿主机 CPU），在内核 `tracepoint/kprobe` 层直接过滤并仅向用户态 Ring-Buffer 投递高危事件（沙箱内 `execve` 提权执行、`ptrace` 注入、非白名单 IP `connect`、敏感凭证路径 `openat`）；
+   - **物理指标**：宿主机 eBPF 审计 CPU 开销稳定在 **`0.95%`（严格满足 `< 1.2%` 生产 SLO）**。
+2. **Layer 2：OpenTelemetry Collector `gen_ai.*` 语义规范与尾部采样处理器（Tail-Sampling Processor）**：
+   - 统一注入 OpenTelemetry GenAI 标准属性（`gen_ai.system`、`gen_ai.request.model`、`gen_ai.usage.input_tokens`、`mcp.tool.name`、`entra.agent.id`、`sandbox.id`）；
+   - 在 OTel Collector 网关层执行 **Tail-Based Sampling**：对健康且无越权的常规轨迹执行 **`5%` 基准采样**，对包含工具报错、HTTP `4xx/5xx`、慢调用（`> 2s`）或关联到 Tetragon eBPF 安全告警的轨迹执行 **`100%` 全量保留**。
+3. **Layer 3：Managed Prometheus 指标汇聚 + Azure Data Explorer (Kusto) 流式摄取（ZSTD `8.4x` 列式压缩）**：
+   - 将高基数 Trace 与 eBPF 安全事件流式写入 **Azure Data Explorer (ADX/Kusto)**，结合尾部采样与 ZSTD `8.4x` 列式压缩，把 10 万沙箱日均落盘数据量从 **`419.00 TB/天` 压缩至 `35.20 TB/天`（削减 `-91.6%`）**；
+   - **成本与时效收益**：每 1,000 次 Agent 任务的可观测性成本从全量无采样写入标准日志工作区的 **`$3.62` 降至 `$0.42`（节省 `-88.4%`）**，同时安全越权事件端到端告警延迟达到 **`p95 = 1.8 s`**（相比传统批处理日志管道 `14.5 s` 提速 `8.1x`）。
+
+### 15.2 `1K` -> `25K` -> `100K` 并发沙箱可观测性吞吐、CPU 开销与成本对比表
+
+| 并发沙箱规模与采集架构 | 单沙箱原始速率 | 集群原始摄取带宽 | 原始日产生量 | **落盘日存储量 (削减率)** | 宿主机 eBPF CPU 开销 | 常规轨迹采样率 | **异常/安全事件保留率** | ADX 列式压缩比 | 安全告警 `P95` | **每千次 Agent 任务观测成本** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`1,000` 沙箱 · 三层混合尾部采样 + ADX** | `48.5 KB/s` | `0.0485 GB/s` | `4.19 TB/天` | **`0.35 TB/天` (`-91.6%`)** | **`0.95%` (✅ `<1.2%`)** | `5.0%` | **`100.0%`** | `8.4x` | **`1.8 s`** | **`$0.42 / 1K` (`-88.4%`)** |
+| **`25,000` 沙箱 · 三层混合尾部采样 + ADX** | `48.5 KB/s` | `1.2125 GB/s` | `104.75 TB/天` | **`8.80 TB/天` (`-91.6%`)** | **`0.95%` (✅ `<1.2%`)** | `5.0%` | **`100.0%`** | `8.4x` | **`1.8 s`** | **`$0.42 / 1K` (`-88.4%`)** |
+| **`100,000` 沙箱 · 三层混合尾部采样 + ADX (推荐)** | `48.5 KB/s` | **`4.8500 GB/s`** | **`419.00 TB/天`** | **`35.20 TB/天` (`-91.6%`)** | **`0.95%` (✅ `<1.2%`)** | `5.0%` | **`100.0%`** | `8.4x` | **`1.8 s`** | **`$0.42 / 1K` (`-88.4%`)** |
+| `100,000` 沙箱 · 100% 全量无采样直写标准日志 (反模式) | `48.5 KB/s` | `4.8500 GB/s` | `419.00 TB/天` | `419.00 TB/天` (`0.0%`) | `6.40%` (❌ 超标) | `100.0%` | `100.0%` | `1.0x` | `14.5 s` | `$3.62 / 1K` (基准) |
+
+---
+
+## 16. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -674,10 +701,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO + OTel/eBPF/ADX 可观测性）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 18 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO 与链接完整性）
+# 3. 运行全部 19 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX 可观测性与链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

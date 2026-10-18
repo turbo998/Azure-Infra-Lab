@@ -24,6 +24,7 @@ from agent_infra_sizer import (
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_multiregion_dr_failover,
+    simulate_otel_ebpf_observability_pipeline,
 )
 
 
@@ -272,6 +273,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC40ads_H100_v5", "default_timeslicing", 32, 0.0),
     ]
 
+    observability_pipeline_profiles: List[Dict[str, object]] = [
+        simulate_otel_ebpf_observability_pipeline(1_000, "hybrid_3tier_tail_adx", 0.05),
+        simulate_otel_ebpf_observability_pipeline(25_000, "hybrid_3tier_tail_adx", 0.05),
+        simulate_otel_ebpf_observability_pipeline(100_000, "hybrid_3tier_tail_adx", 0.05),
+        simulate_otel_ebpf_observability_pipeline(100_000, "unsampled_raw_law", 1.0),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -281,6 +289,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "confidential_sandbox_profiles": confidential_profiles,
         "egress_security_profiles": egress_security_profiles,
         "gpu_heterogeneous_profiles": gpu_heterogeneous_profiles,
+        "observability_pipeline_profiles": observability_pipeline_profiles,
     }
 
 

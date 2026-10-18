@@ -18,6 +18,7 @@ from agent_infra_sizer import (
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_multiregion_dr_failover,
+    simulate_otel_ebpf_observability_pipeline,
 )
 from e2b_aksclaw_deep_benchmark import (
     decompose_e2b_firecracker_resume,
@@ -268,6 +269,20 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(mig["effective_ttft_ms"], 42.0)
         self.assertAlmostEqual(mig["ttft_reduction_pct"], 77.3)
         self.assertLess(mig["total_cost_per_10k_trajectories_usd"], ts["total_cost_per_10k_trajectories_usd"])
+
+    def test_otel_ebpf_observability_pipeline(self) -> None:
+        hybrid = simulate_otel_ebpf_observability_pipeline(100_000, "hybrid_3tier_tail_adx", 0.05)
+        raw = simulate_otel_ebpf_observability_pipeline(100_000, "unsampled_raw_law", 1.0)
+        self.assertAlmostEqual(hybrid["raw_ingest_gbps"], 4.85)
+        self.assertAlmostEqual(hybrid["raw_daily_tb"], 419.0)
+        self.assertTrue(hybrid["cpu_overhead_within_slo"])
+        self.assertFalse(raw["cpu_overhead_within_slo"])
+        self.assertAlmostEqual(hybrid["host_ebpf_cpu_overhead_pct"], 0.95)
+        self.assertAlmostEqual(hybrid["volume_reduction_pct"], 91.6)
+        self.assertAlmostEqual(hybrid["cost_per_1k_tasks_usd"], 0.42)
+        self.assertAlmostEqual(raw["cost_per_1k_tasks_usd"], 3.62)
+        self.assertAlmostEqual(hybrid["cost_reduction_pct"], 88.4)
+        self.assertAlmostEqual(hybrid["security_alert_p95_sec"], 1.8)
 
 
 if __name__ == "__main__":

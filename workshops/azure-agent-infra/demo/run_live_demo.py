@@ -31,6 +31,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_multiregion_dr_failover,
+    simulate_otel_ebpf_observability_pipeline,
 )
 from e2b_aksclaw_deep_benchmark import (  # noqa: E402
     generate_deep_benchmark_summary,
@@ -239,6 +240,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "h100_cuda_mps": simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC80adis_H100_v5", "cuda_mps_shared_sm", 32, 0.78),
             "h200_mig_1g_18gb": simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_ND96isr_H200_v5", "mig_1g_10gb", 64, 0.78),
             "h100_timeslicing_nocache": simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC40ads_H100_v5", "default_timeslicing", 32, 0.0),
+        },
+        "demo_10_otel_ebpf_observability_sizing": {
+            "hybrid_1k": simulate_otel_ebpf_observability_pipeline(1_000, "hybrid_3tier_tail_adx", 0.05),
+            "hybrid_25k": simulate_otel_ebpf_observability_pipeline(25_000, "hybrid_3tier_tail_adx", 0.05),
+            "hybrid_100k": simulate_otel_ebpf_observability_pipeline(100_000, "hybrid_3tier_tail_adx", 0.05),
+            "unsampled_100k": simulate_otel_ebpf_observability_pipeline(100_000, "unsampled_raw_law", 1.0),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
