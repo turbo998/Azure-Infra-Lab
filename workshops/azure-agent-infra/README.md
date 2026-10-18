@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **7 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep)；
+  - 🧱 **8 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -578,7 +578,35 @@ sequenceDiagram
 
 ---
 
-## 12. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 12. 机密计算沙箱与硬件级零信任远程证明（Confidential Agent Sandboxes — AMD SEV-SNP / Kata-CC + MAA + Key Vault Managed HSM SKR）
+
+> 本章由确定性机密计算仿真模型 [`simulate_confidential_sandbox_attestation()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) 驱动，面向金融核心交易、医疗隐私数据（PHI）及主权云强监管场景，解决 **“当 Agent 沙箱内正在处理高敏明文数据或解密专有模型权重时，如何从硬件层面防止宿主机 Root 管理员或云平台侧通过内存转储（Memory Dump）窃取数据”** 的零信任命题。
+
+### 12.1 为什么常规 Kata Pod VM 仍不足以抵御宿主机内存窥探？
+
+在常规 `Standard_D64s_v6` 上运行 `kata-vm-isolation` 可以阻止**容器向宿主机逃逸（Guest → Host Escape）**，但无法阻止**拥有宿主机 Root 权限的攻击者向容器内窥探（Host → Guest Inspection）**（例如通过 `/dev/mem` 或 Hypervisor 内存转储直接读取沙箱内的明文 Prompt、客户财报与私钥）。
+
+在 **Azure Confidential VMs (`Standard_DC64as_v5` / `EC64as_v5` · AMD EPYC SEV-SNP)** 上启用 **`KataCcIsolation` (`kata-cc`)** 构建了完整的硬件可信执行环境（Hardware TEE）：
+
+1. **AMD SEV-SNP 硬件内存加密与反向映射表（RMP）完整性保护**：每个 Kata-CC 沙箱 Pod VM 拥有由 AMD 安全处理器（PSP）生成的独立 AES-128 内存加密密钥，且通过硬件 RMP 表防止 Hypervisor 重放或篡改物理内存页；
+2. **Microsoft Azure Attestation (MAA) + Key Vault Managed HSM 安全密钥释放（SKR）**：沙箱内的 `Attestation Agent (AA)` 与 `Confidential Data Hub (CDH)` 将 AMD PSP 签名的 SNP 硬件报告提交至 **MAA** 验证（确认 `x-ms-attestation-type == sevsnpvm` 且 `is-debuggable == false`），换取 MAA 签发的 JWT 后向 **Key Vault Managed HSM** 请求释放客户托管密钥（CMK），实现**“密钥仅在经硬件证明的 TEE 沙箱内存内解封”**；
+3. **`dm-verity` + `dm-crypt` 根文件系统完整性校验**：防止宿主机篡改 Agent 容器镜像层或注入恶意二进制后门。
+
+### 12.2 机密计算沙箱 (`Standard_DC64as_v5` Kata-CC) vs 常规沙箱 (`Standard_D64s_v6` Kata) 定量性能与密度对比
+
+基于 `simulate_confidential_sandbox_attestation()`，对 64 vCPU / 256 GiB 规格下开启 AMD SEV-SNP 硬件内存加密、MAA+SKR 远程证明握手及 `dm-verity` 校验的开销分解如下：
+
+| 宿主机 SKU 与隔离层级 | 远程证明与密钥释放模式 | 单 Pod VMM+TEE 开销 | 单节点可承载沙箱数 | ① 基础 Kata 热恢复 | ② SEV-SNP RMP 内存初始化 | ③ MAA+HSM SKR 密钥释放 | ④ `dm-verity` 挂载校验 | **端到端启动延迟** | **CPU 内存加密开销 / 块 I/O 开销** | **抵御宿主机 Root 内存转储** |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| **`Standard_DC64as_v5` (`kata-cc` SEV-SNP)** | **冷启动完整 MAA + HSM SKR 握手** | `+192 MiB` | **`106 个`** | `165.0 ms` | `+14.2 ms` | **`+18.5 ms`** | `+10.6 ms` | **`208.3 ms`** (✅ `≤220ms`) | `+5.8% CPU` / `+6.4% I/O` | **✅ 硬件级阻断** |
+| **`Standard_DC64as_v5` (`kata-cc` SEV-SNP)** | **MAA 证明令牌缓存复用 (`cached_jwt`)** | `+192 MiB` | **`106 个`** | `165.0 ms` | `+14.2 ms` | **`+1.2 ms`** | `+10.6 ms` | **`191.0 ms`** (✅ `≤220ms`) | `+5.8% CPU` / `+6.4% I/O` | **✅ 硬件级阻断** |
+| `Standard_D64s_v6` (`kata-vm` 常规隔离) | 无硬件 TEE 证明 (`none`) | `+144 MiB` | `109 个` | `165.0 ms` | `0.0 ms` | `0.0 ms` | `0.0 ms` | **`165.0 ms`** | `0.0%` / `0.0%` | ❌ 宿主机 Root 可读内存 |
+
+> **机密沙箱选型结论**：在 `Standard_DC64as_v5` 上启用 AMD SEV-SNP `kata-cc` 仅使单节点沙箱密度从 `109` 微降至 **`106`（仅损失 `2.8%`）**，端到端热恢复延迟保持在 **`191.0 ms ~ 208.3 ms`**（严格满足 `≤ 220 ms` 交互式 SLO），即可为金融与医疗核心 Agent 提供硬件级内存加密与零信任密钥释放保障。
+
+---
+
+## 13. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -591,11 +619,11 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 15 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空与链接完整性）
-python -m unittest discover -s simulator -p "test_*.py" -v
+# 3. 运行全部 16 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱与链接完整性）
+python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
 python simulator/generate_visual_assets.py

@@ -18,7 +18,11 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Dict, List
 
-from agent_infra_sizer import simulate_finops_spot_eviction_drain, simulate_multiregion_dr_failover
+from agent_infra_sizer import (
+    simulate_confidential_sandbox_attestation,
+    simulate_finops_spot_eviction_drain,
+    simulate_multiregion_dr_failover,
+)
 
 
 @dataclass(frozen=True)
@@ -247,12 +251,19 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_finops_spot_eviction_drain(100_000, 0.60, 32.0, False, 30.0, 0.0),
     ]
 
+    confidential_profiles: List[Dict[str, object]] = [
+        simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cold_skr_handshake", "dm_verity_crypt"),
+        simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cached_jwt", "dm_verity_crypt"),
+        simulate_confidential_sandbox_attestation("Standard_D64s_v6", "none", "standard_overlay"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
         "horizondb_pgbouncer_checkpoint_profiles": horizondb_profiles,
         "multiregion_dr_failover_profiles": dr_profiles,
         "finops_spot_eviction_profiles": finops_profiles,
+        "confidential_sandbox_profiles": confidential_profiles,
     }
 
 

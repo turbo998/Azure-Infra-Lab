@@ -1081,6 +1081,7 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(4)">5. ACA Dynamic Sessions 预热池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(5)">6. AI Gateway + Entra Agent ID 双重归属 (XML)</button>
       <button class="tab-btn" onclick="showBlueprint(6)">7. FinOps 预算与 KQL 异常突增熔断告警 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(7)">8. AKSClaw SEV-SNP 机密沙箱节点池 + SKR (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1177,6 +1178,40 @@ def build_selector_html() -> str:
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="finopsOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 7: Confidential Computing SEV-SNP & SKR Attestation Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 7 · CONFIDENTIAL COMPUTING SEV-SNP &amp; SKR ATTESTATION SIZER</span>
+    <h2>机密计算沙箱 (AMD SEV-SNP / Kata-CC + MAA + Key Vault Managed HSM SKR) 测算器</h2>
+    <div class="sub">量化面向金融/医疗强监管场景的 <code>Standard_DC64as_v5</code> 机密节点池硬件内存加密开销、MAA 远程证明 + HSM 安全密钥释放 (SKR) 握手延迟及单节点沙箱密度：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 宿主机机型与硬件隔离栈 (Host SKU &amp; TEE Isolation)</label>
+          <select id="sel_cc_sku" onchange="runCcLab()">
+            <option value="Standard_DC64as_v5" selected>Standard_DC64as_v5 (AMD EPYC SEV-SNP + Kata-CC 硬件 TEE)</option>
+            <option value="Standard_EC64as_v5">Standard_EC64as_v5 (AMD SEV-SNP 大内存机密节点 + Kata-CC)</option>
+            <option value="Standard_D64s_v6">Standard_D64s_v6 (常规 Kata Pod VM · 无宿主机内存加密对比基线)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. MAA 远程证明与 Managed HSM SKR 密钥释放模式</label>
+          <select id="sel_cc_att" onchange="runCcLab()">
+            <option value="cold_skr_handshake" selected>完整冷握手 (AMD PSP 硬件报告 → MAA 验证 → HSM SKR 释放 +18.5ms)</option>
+            <option value="cached_jwt">预验证 MAA 令牌缓存复用 (Cached Attestation JWT +1.2ms)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. 根文件系统完整性保护 (RootFS Integrity)</label>
+          <select id="sel_cc_fs" onchange="runCcLab()">
+            <option value="dm_verity_crypt" selected>启用 dm-verity 哈希树校验 + dm-crypt 加密卷 (+10.6ms)</option>
+            <option value="standard_overlay">标准只读 Overlay 挂载 (0ms 额外挂载开销)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="ccOut"></div>
     </div>
   </section>
 
@@ -1465,7 +1500,24 @@ resource agentTokenAndSandboxAnomalyRule 'Microsoft.Insights/scheduledQueryRules
       }}]
     }}
   }}
-}}`
+}}`,
+`// 8. Azure Bicep: AKSClaw Confidential Agent Node Pool (AMD SEV-SNP Standard_DC64as_v5 + MAA SKR)
+resource confidentialAgentPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {{
+  name: 'ccnpd64v5'
+  properties: {{
+    vmSize: 'Standard_DC64as_v5'      // 64 vCPU / 256 GiB · AMD SEV-SNP 硬件内存加密
+    osSKU: 'AzureLinux'
+    workloadRuntime: 'KataCcIsolation' // Kata Confidential Containers (Guest TEE + AA/CDH)
+    enableAutoScaling: true
+    minCount: 2
+    maxCount: 24
+    nodeLabels: {{
+      'aksclaw.azure.com/isolation-tier': 'confidential-sev-snp'
+      'kubernetes.azure.com/kata-cc-isolation': 'true'
+    }}
+  }}
+}}
+// 配合 Microsoft Azure Attestation (MAA) 验证 x-ms-attestation-type == 'sevsnpvm' 后由 Managed HSM 释放密钥`
 ];
 
 function showBlueprint(idx) {{
@@ -1572,6 +1624,35 @@ showBlueprint(0);
 runDeepLab();
 runDrLab();
 runFinopsLab();
+runCcLab();
+
+function runCcLab() {{
+  const sku = document.getElementById('sel_cc_sku').value;
+  const att = document.getElementById('sel_cc_att').value;
+  const fs = document.getElementById('sel_cc_fs').value;
+
+  const isCc = sku.startsWith('Standard_DC') || sku.startsWith('Standard_EC');
+  const vmmMib = isCc ? 192 : 144;
+  const effPods = isCc ? 106 : 109;
+  const baseMs = 165.0;
+  const snpMs = isCc ? 14.2 : 0.0;
+  const skrMs = !isCc ? 0.0 : (att === 'cached_jwt' ? 1.2 : 18.5);
+  const fsMs = (isCc && fs === 'dm_verity_crypt') ? 10.6 : 0.0;
+  const totalMs = (baseMs + snpMs + skrMs + fsMs).toFixed(1);
+  const cpuPct = isCc ? 5.8 : 0.0;
+  const ioPct = (isCc && fs === 'dm_verity_crypt') ? 6.4 : 0.0;
+
+  document.getElementById('ccOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{isCc ? 'pill-teal' : 'pill-amber'}}">${{isCc ? '🔒 硬件级 SEV-SNP 内存加密 (宿主机 Root 不可读)' : '⚠️ 常规 Kata VM (宿主机 Root 可通过 /dev/mem 转储)'}}</span>
+      <strong style="color:#38bdf8;font-size:1.12rem;">启动：${{totalMs}} ms · ${{effPods}} 沙箱/节点</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>启动耗时四段分解</strong>：基础 Kata <strong>${{baseMs}}ms</strong> + SEV-SNP RMP 初始化 <strong>${{snpMs}}ms</strong> + MAA/HSM SKR 密钥释放 <strong>${{skrMs}}ms</strong> + dm-verity 挂载 <strong>${{fsMs}}ms</strong><br>
+      • <strong>资源与吞吐代价</strong>：单 Pod VMM+AA/CDH 开销 <strong>+${{vmmMib}} MiB</strong> · 内存加密 CPU 损耗 <strong>+${{cpuPct}}%</strong> · 加密块 I/O 损耗 <strong>+${{ioPct}}%</strong>
+    </p>
+  `;
+}}
 
 function runFinopsLab() {{
   const spotPct = parseInt(document.getElementById('rng_fin_spot').value, 10) / 100.0;

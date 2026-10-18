@@ -26,6 +26,7 @@ from agent_infra_sizer import (  # noqa: E402
     RUNTIMES,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_confidential_sandbox_attestation,
     simulate_finops_spot_eviction_drain,
     simulate_multiregion_dr_failover,
 )
@@ -220,6 +221,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "blended_60pct_spot_incremental_zstd": simulate_finops_spot_eviction_drain(100_000, 0.60, 32.0, True, 30.0, 0.65),
             "blended_70pct_spot_incremental_zstd": simulate_finops_spot_eviction_drain(100_000, 0.70, 32.0, True, 30.0, 0.75),
             "uncompacted_full_ram_eviction_failure": simulate_finops_spot_eviction_drain(100_000, 0.60, 32.0, False, 30.0, 0.0),
+        },
+        "demo_7_confidential_attestation": {
+            "dc64as_v5_cold_skr": simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cold_skr_handshake", "dm_verity_crypt"),
+            "dc64as_v5_cached_jwt": simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cached_jwt", "dm_verity_crypt"),
+            "d64s_v6_standard_kata": simulate_confidential_sandbox_attestation("Standard_D64s_v6", "none", "standard_overlay"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

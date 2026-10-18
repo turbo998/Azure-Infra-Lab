@@ -13,6 +13,7 @@ from agent_infra_sizer import (
     build_report_payload,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_confidential_sandbox_attestation,
     simulate_finops_spot_eviction_drain,
     simulate_multiregion_dr_failover,
 )
@@ -201,6 +202,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "demo_4_deep_models",
             "demo_5_multiregion_dr",
             "demo_6_finops_spot_drain",
+            "demo_7_confidential_attestation",
             "trace_sha256",
         ):
             self.assertIn(key, trace)
@@ -225,6 +227,18 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["total_node_drain_sec"], 30.0)
         self.assertGreater(inc["net_compute_savings_pct"], 40.0)
         self.assertLess(inc["total_cost_per_1k_tasks_usd"], raw["total_cost_per_1k_tasks_usd"])
+
+    def test_confidential_sandbox_attestation_skr(self) -> None:
+        cold = simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cold_skr_handshake", "dm_verity_crypt")
+        cached = simulate_confidential_sandbox_attestation("Standard_DC64as_v5", "cached_jwt", "dm_verity_crypt")
+        std = simulate_confidential_sandbox_attestation("Standard_D64s_v6", "none", "standard_overlay")
+        self.assertTrue(cold["is_confidential_sev_snp"])
+        self.assertTrue(cold["host_root_memory_dump_blocked"])
+        self.assertFalse(std["host_root_memory_dump_blocked"])
+        self.assertEqual(cold["effective_sandboxes_per_node"], 106)
+        self.assertEqual(std["effective_sandboxes_per_node"], 109)
+        self.assertLess(cached["end_to_end_boot_ms"], cold["end_to_end_boot_ms"])
+        self.assertTrue(cold["meets_220ms_confidential_slo"])
 
 
 if __name__ == "__main__":

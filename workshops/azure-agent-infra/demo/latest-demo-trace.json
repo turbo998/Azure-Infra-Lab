@@ -622,6 +622,59 @@
         "sandbox_cost_per_1k_tasks_usd": 0.97,
         "total_cost_per_1k_tasks_usd": 19.37
       }
+    ],
+    "confidential_sandbox_profiles": [
+      {
+        "sku": "Standard_DC64as_v5",
+        "is_confidential_sev_snp": true,
+        "attestation_mode": "cold_skr_handshake",
+        "rootfs_integrity_mode": "dm_verity_crypt",
+        "per_pod_vmm_overhead_mib": 192,
+        "effective_sandboxes_per_node": 106,
+        "base_kata_warm_boot_ms": 165.0,
+        "snp_rmp_memory_init_ms": 14.2,
+        "maa_skr_handshake_ms": 18.5,
+        "dm_verity_mount_ms": 10.6,
+        "end_to_end_boot_ms": 208.3,
+        "memory_encryption_cpu_overhead_pct": 5.8,
+        "storage_io_overhead_pct": 6.4,
+        "meets_220ms_confidential_slo": true,
+        "host_root_memory_dump_blocked": true
+      },
+      {
+        "sku": "Standard_DC64as_v5",
+        "is_confidential_sev_snp": true,
+        "attestation_mode": "cached_jwt",
+        "rootfs_integrity_mode": "dm_verity_crypt",
+        "per_pod_vmm_overhead_mib": 192,
+        "effective_sandboxes_per_node": 106,
+        "base_kata_warm_boot_ms": 165.0,
+        "snp_rmp_memory_init_ms": 14.2,
+        "maa_skr_handshake_ms": 1.2,
+        "dm_verity_mount_ms": 10.6,
+        "end_to_end_boot_ms": 191.0,
+        "memory_encryption_cpu_overhead_pct": 5.8,
+        "storage_io_overhead_pct": 6.4,
+        "meets_220ms_confidential_slo": true,
+        "host_root_memory_dump_blocked": true
+      },
+      {
+        "sku": "Standard_D64s_v6",
+        "is_confidential_sev_snp": false,
+        "attestation_mode": "none",
+        "rootfs_integrity_mode": "standard_overlay",
+        "per_pod_vmm_overhead_mib": 144,
+        "effective_sandboxes_per_node": 109,
+        "base_kata_warm_boot_ms": 165.0,
+        "snp_rmp_memory_init_ms": 0.0,
+        "maa_skr_handshake_ms": 0.0,
+        "dm_verity_mount_ms": 0.0,
+        "end_to_end_boot_ms": 165.0,
+        "memory_encryption_cpu_overhead_pct": 0.0,
+        "storage_io_overhead_pct": 0.0,
+        "meets_220ms_confidential_slo": true,
+        "host_root_memory_dump_blocked": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -788,5 +841,58 @@
       "total_cost_per_1k_tasks_usd": 19.37
     }
   },
-  "trace_sha256": "f519d0c04c424ee3f4bb39bc52225176b9937b536b7edf7c665941cc789b13f3"
+  "demo_7_confidential_attestation": {
+    "dc64as_v5_cold_skr": {
+      "sku": "Standard_DC64as_v5",
+      "is_confidential_sev_snp": true,
+      "attestation_mode": "cold_skr_handshake",
+      "rootfs_integrity_mode": "dm_verity_crypt",
+      "per_pod_vmm_overhead_mib": 192,
+      "effective_sandboxes_per_node": 106,
+      "base_kata_warm_boot_ms": 165.0,
+      "snp_rmp_memory_init_ms": 14.2,
+      "maa_skr_handshake_ms": 18.5,
+      "dm_verity_mount_ms": 10.6,
+      "end_to_end_boot_ms": 208.3,
+      "memory_encryption_cpu_overhead_pct": 5.8,
+      "storage_io_overhead_pct": 6.4,
+      "meets_220ms_confidential_slo": true,
+      "host_root_memory_dump_blocked": true
+    },
+    "dc64as_v5_cached_jwt": {
+      "sku": "Standard_DC64as_v5",
+      "is_confidential_sev_snp": true,
+      "attestation_mode": "cached_jwt",
+      "rootfs_integrity_mode": "dm_verity_crypt",
+      "per_pod_vmm_overhead_mib": 192,
+      "effective_sandboxes_per_node": 106,
+      "base_kata_warm_boot_ms": 165.0,
+      "snp_rmp_memory_init_ms": 14.2,
+      "maa_skr_handshake_ms": 1.2,
+      "dm_verity_mount_ms": 10.6,
+      "end_to_end_boot_ms": 191.0,
+      "memory_encryption_cpu_overhead_pct": 5.8,
+      "storage_io_overhead_pct": 6.4,
+      "meets_220ms_confidential_slo": true,
+      "host_root_memory_dump_blocked": true
+    },
+    "d64s_v6_standard_kata": {
+      "sku": "Standard_D64s_v6",
+      "is_confidential_sev_snp": false,
+      "attestation_mode": "none",
+      "rootfs_integrity_mode": "standard_overlay",
+      "per_pod_vmm_overhead_mib": 144,
+      "effective_sandboxes_per_node": 109,
+      "base_kata_warm_boot_ms": 165.0,
+      "snp_rmp_memory_init_ms": 0.0,
+      "maa_skr_handshake_ms": 0.0,
+      "dm_verity_mount_ms": 0.0,
+      "end_to_end_boot_ms": 165.0,
+      "memory_encryption_cpu_overhead_pct": 0.0,
+      "storage_io_overhead_pct": 0.0,
+      "meets_220ms_confidential_slo": true,
+      "host_root_memory_dump_blocked": false
+    }
+  },
+  "trace_sha256": "260017aef9b9335d649394732d895ea990dab907bc97367702f348c1fc2b62bd"
 }

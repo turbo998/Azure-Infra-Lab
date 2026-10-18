@@ -520,6 +520,70 @@ def simulate_finops_spot_eviction_drain(
     }
 
 
+def simulate_confidential_sandbox_attestation(
+    sku: str = "Standard_DC64as_v5",
+    attestation_mode: str = "cold_skr_handshake",
+    rootfs_integrity_mode: str = "dm_verity_crypt",
+) -> dict[str, Any]:
+    """
+    Quantifies Chapter 12: Confidential Agent Sandboxes (AMD SEV-SNP / Kata-CC + MAA + Managed HSM SKR):
+      1. Hardware memory encryption (AES-128-XTS + RMP table check) CPU & density impact on `Standard_DC64as_v5`.
+      2. Remote Attestation & Secure Key Release (SKR) latency breakdown:
+         - AMD PSP SNP hardware report -> Microsoft Azure Attestation (MAA) -> Managed HSM SKR unwrap
+           (`+18.5 ms` cold vs `+1.2 ms` cached MAA JWT).
+      3. `dm-verity` + `dm-crypt` rootfs integrity overhead (`+10.6 ms` mount, `+6.4%` block I/O).
+    """
+    is_confidential = sku.startswith("Standard_DC") or sku.startswith("Standard_EC")
+    vcpu = 64
+    ram_gib = 256
+    total_mib = ram_gib * 1024
+    sys_reserved_mib = int(total_mib * 0.08) + 1536
+    usable_mib = total_mib - sys_reserved_mib
+
+    # kata-cc adds Attestation Agent (aa) + Confidential Data Hub (cdh) inside Guest TEE (+192 MiB vs +144 MiB)
+    per_pod_vmm_overhead_mib = 192 if is_confidential else 144
+    pod_total_mib = 2048 + per_pod_vmm_overhead_mib
+    max_pods_by_ram = usable_mib // pod_total_mib
+    max_pods_by_cpu = int((vcpu - 1.5) / 0.5)
+    effective_sandboxes_per_node = min(max_pods_by_ram, max_pods_by_cpu)
+
+    base_kata_warm_boot_ms = 165.0
+    snp_rmp_memory_init_ms = 14.2 if is_confidential else 0.0
+    if not is_confidential:
+        maa_skr_handshake_ms = 0.0
+    elif attestation_mode == "cached_jwt":
+        maa_skr_handshake_ms = 1.2
+    else:
+        maa_skr_handshake_ms = 18.5
+
+    dm_verity_mount_ms = 10.6 if (is_confidential and rootfs_integrity_mode == "dm_verity_crypt") else 0.0
+    end_to_end_boot_ms = round(
+        base_kata_warm_boot_ms + snp_rmp_memory_init_ms + maa_skr_handshake_ms + dm_verity_mount_ms,
+        1,
+    )
+
+    memory_encryption_cpu_overhead_pct = 5.8 if is_confidential else 0.0
+    storage_io_overhead_pct = 6.4 if (is_confidential and rootfs_integrity_mode == "dm_verity_crypt") else 0.0
+
+    return {
+        "sku": sku,
+        "is_confidential_sev_snp": is_confidential,
+        "attestation_mode": attestation_mode,
+        "rootfs_integrity_mode": rootfs_integrity_mode,
+        "per_pod_vmm_overhead_mib": per_pod_vmm_overhead_mib,
+        "effective_sandboxes_per_node": effective_sandboxes_per_node,
+        "base_kata_warm_boot_ms": base_kata_warm_boot_ms,
+        "snp_rmp_memory_init_ms": snp_rmp_memory_init_ms,
+        "maa_skr_handshake_ms": maa_skr_handshake_ms,
+        "dm_verity_mount_ms": dm_verity_mount_ms,
+        "end_to_end_boot_ms": end_to_end_boot_ms,
+        "memory_encryption_cpu_overhead_pct": memory_encryption_cpu_overhead_pct,
+        "storage_io_overhead_pct": storage_io_overhead_pct,
+        "meets_220ms_confidential_slo": end_to_end_boot_ms <= 220.0,
+        "host_root_memory_dump_blocked": is_confidential,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
