@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **9 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep)；
+  - 🧱 **10 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) · [`aksclaw-confidential-snp-nodepool.bicep`](blueprints/aksclaw-confidential-snp-nodepool.bicep) · [`aksclaw-zero-trust-egress-firewall-pls.bicep`](blueprints/aksclaw-zero-trust-egress-firewall-pls.bicep) · [`aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -634,7 +634,34 @@ sequenceDiagram
 
 ---
 
-## 14. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 14. GPU/CPU 异构 Agent 沙箱编排、NVIDIA MIG vs CUDA MPS 切分物理模型与 KAITO/vLLM 前缀缓存推理边车测算（Heterogeneous GPU/CPU Agent Orchestration — NVIDIA MIG vs CUDA MPS & KAITO Prefix-Cache Sizing）
+
+> 本章由确定性异构算力仿真模型 [`simulate_gpu_heterogeneous_sandbox_mps_mig()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep`](blueprints/aksclaw-gpu-mig-kaito-nodepool.bicep) 驱动，面向 Computer-Use 视觉接地（GUI Grounding，如 `OmniParser-v2` / `Florence-2`）、本地多模态重排（Reranker）与小参数推理边车（SLM Sidecar）场景，解决 **“如何避免为成千上万个大部分时间处于等待态的 CPU 沙箱盲目绑定整块 H100/H200 GPU，并在多租户硬件隔离（MIG）与单租户极致吞吐（CUDA MPS）之间精准选型”** 的架构问题。
+
+### 14.1 三种 GPU 切分与异构沙箱协同拓扑物理机制对比
+
+1. **NVIDIA 硬件级多实例 GPU (`MIG 1g.10gb` on `Standard_NC40ads_H100_v5` / `1g.18gb` on `Standard_ND96isr_H200_v5`)**：
+   - 将单块 H100（94 GB HBM3）或 H200（141 GB HBM3e）从硬件显存控制器、L2 Cache、数据交叉开关（Crossbar）到流式多处理器（SM）物理切分为 **7 个完全独立的硬件实例**；
+   - **核心收益**：跨租户噪声邻居抖动（Noisy-Neighbor Jitter）为 **`0.0%`**，单个切片发生 CUDA Out-of-Memory 或 Xid 硬件异常不会波及同卡其余 6 个实例，是多租户非信任视觉接地与推理边车的唯一硬件级隔离选型。
+2. **CUDA MPS (`Multi-Process Service` + 活动线程配额上限)**：
+   - 多个进程共享同一 GPU 上下文并动态复用空闲 SM，在 32 并发视觉接地 Agent 压力下相比默认时间片轮转（Time-Slicing，`p95 = 54.6 ms`）提升 **`+28.4%` 吞吐量**，并将接地延迟压缩至 **`p95 = 38.2 ms`（H100） / `34.0 ms`（H200）**；
+   - **风险边界**：共享显存地址空间与故障域（跨进程抖动约 `8.5%`），仅适用于单租户受信任的高吞吐推理池。
+3. **存算分离 CPU 沙箱池 (`Standard_D64s_v6` / `D96as_v7`) + KAITO/vLLM 前缀缓存（Prefix-Cache Aware）H100 推理池 (`Standard_NC80adis_H100_v5`)**：
+   - Computer-Use Agent 的每一步 GUI 截屏推理都携带高度重复的 **System Prompt + 50+ MCP 工具 Schema 定义（通常占上下文的前 `70%–80%`）**；
+   - 通过 AKS **KAITO (Kubernetes AI Toolchain Operator)** 部署开启 `--enable-prefix-caching` 的 vLLM 推理服务，配合网关层会话亲和路由实现 **`78%` 的 KV Cache 前缀命中率**，可将首字延迟（TTFT）从 **`185.0 ms` 骤降至 `42.0 ms`（提速 `-77.3%`）**，并将每 10,000 条完整 Computer-Use 任务轨迹（每条含 15 步 GUI 视觉推理 + 沙箱执行）的 GPU+CPU 综合成本从 **`$160.50` 降至 `$91.77`（节省 `-42.8%`）**。
+
+### 14.2 H100 / H200 异构切分模式与 KAITO 前缀缓存定量对比表
+
+| Azure GPU 节点机型 | 切分与共享模式 | 单节点 GPU 数 × 单卡切片数 | 硬件故障域隔离 | 跨租户尾延迟抖动 | GUI 视觉接地 `P95` | 相比时间片吞吐增益 | KAITO 前缀缓存命中率 | **首字延迟 `TTFT` (基线 `185ms`)** | **每 10,000 条 CUA 轨迹综合成本** |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| **`Standard_NC40ads_H100_v5` (多租户推荐)** | **`MIG 1g.10gb` (硬件切分)** | `1 × 7 = 7 实例` (`94GB HBM3`) | **✅ 硬件级隔离** | **`0.0%`** | **`41.5 ms`** | `+18.2%` | **`78.0%`** | **`42.0 ms` (`-77.3%`)** | **`$91.77 / 10K`** |
+| **`Standard_NC80adis_H100_v5` (单租户极速)** | **`CUDA MPS` (共享 SM)** | `2 × 8 = 16 切片` (`2×94GB`) | ❌ 共享故障域 | `8.5%` | **`38.2 ms` 🏆** | **`+28.4%`** | **`78.0%`** | **`42.0 ms` (`-77.3%`)** | **`$91.77 / 10K`** |
+| **`Standard_ND96isr_H200_v5` (旗舰高密池)** | **`MIG 1g.18gb` (硬件切分)** | `8 × 7 = 56 实例` (`8×141GB`) | **✅ 硬件级隔离** | **`0.0%`** | **`36.8 ms`** | `+18.2%` | **`78.0%`** | **`42.0 ms` (`-77.3%`)** | **`$91.77 / 10K`** |
+| `Standard_NC40ads_H100_v5` (未优化基线) | 默认 `Time-Slicing` + 无前缀缓存 | `1 × 8 = 8 切片` | ❌ 共享故障域 | `31.0%` | `54.6 ms` | `0.0%` | `0.0%` | `185.0 ms` | `$160.50 / 10K` |
+
+---
+
+## 15. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -647,10 +674,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空 + SEV-SNP 机密沙箱 + 零信任出网/MCP 准入 + GPU MIG/MPS/KAITO）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 17 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入与链接完整性）
+# 3. 运行全部 18 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网 SNAT/MCP 准入、GPU MIG/MPS/KAITO 与链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

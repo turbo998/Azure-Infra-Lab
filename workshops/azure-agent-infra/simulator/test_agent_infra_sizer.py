@@ -16,6 +16,7 @@ from agent_infra_sizer import (
     simulate_confidential_sandbox_attestation,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
+    simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_multiregion_dr_failover,
 )
 from e2b_aksclaw_deep_benchmark import (
@@ -205,6 +206,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "demo_6_finops_spot_drain",
             "demo_7_confidential_attestation",
             "demo_8_zero_trust_egress_and_mcp_attestation",
+            "demo_9_gpu_mig_mps_kaito_sizing",
             "trace_sha256",
         ):
             self.assertIn(key, trace)
@@ -253,6 +255,19 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(zt["unsigned_mcp_blocked"])
         self.assertFalse(legacy["unsigned_mcp_blocked"])
         self.assertLess(zt["net_egress_rtt_delta_ms"], 0.0)
+
+    def test_gpu_heterogeneous_sandbox_mps_mig(self) -> None:
+        mig = simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC40ads_H100_v5", "mig_1g_10gb", 32, 0.78)
+        mps = simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC80adis_H100_v5", "cuda_mps_shared_sm", 32, 0.78)
+        ts = simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC40ads_H100_v5", "default_timeslicing", 32, 0.0)
+        self.assertTrue(mig["hardware_fault_isolated"])
+        self.assertEqual(mig["cross_tenant_jitter_pct"], 0.0)
+        self.assertEqual(mig["slices_per_gpu"], 7)
+        self.assertAlmostEqual(mps["throughput_gain_vs_timeslicing_pct"], 28.4)
+        self.assertLess(mps["grounding_p95_ms"], ts["grounding_p95_ms"])
+        self.assertAlmostEqual(mig["effective_ttft_ms"], 42.0)
+        self.assertAlmostEqual(mig["ttft_reduction_pct"], 77.3)
+        self.assertLess(mig["total_cost_per_10k_trajectories_usd"], ts["total_cost_per_10k_trajectories_usd"])
 
 
 if __name__ == "__main__":

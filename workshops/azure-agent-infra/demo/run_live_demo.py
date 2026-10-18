@@ -29,6 +29,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_confidential_sandbox_attestation,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_finops_spot_eviction_drain,
+    simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_multiregion_dr_failover,
 )
 from e2b_aksclaw_deep_benchmark import (  # noqa: E402
@@ -232,6 +233,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ebpf_fw_pls_25k": simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "cilium_ebpf_fw_pls", 8, "cached_slsa_cosign"),
             "ebpf_fw_pls_100k": simulate_egress_exfiltration_and_mcp_supply_chain(100_000, "cilium_ebpf_fw_pls", 8, "cached_slsa_cosign"),
             "legacy_iptables_2ip_exhausted": simulate_egress_exfiltration_and_mcp_supply_chain(25_000, "legacy_iptables_public_nat", 2, "unverified"),
+        },
+        "demo_9_gpu_mig_mps_kaito_sizing": {
+            "h100_mig_1g_10gb": simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC40ads_H100_v5", "mig_1g_10gb", 32, 0.78),
+            "h100_cuda_mps": simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC80adis_H100_v5", "cuda_mps_shared_sm", 32, 0.78),
+            "h200_mig_1g_18gb": simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_ND96isr_H200_v5", "mig_1g_10gb", 64, 0.78),
+            "h100_timeslicing_nocache": simulate_gpu_heterogeneous_sandbox_mps_mig("Standard_NC40ads_H100_v5", "default_timeslicing", 32, 0.0),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

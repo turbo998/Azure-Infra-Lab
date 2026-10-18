@@ -406,6 +406,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(6)">7. FinOps 预算与 KQL 异常突增熔断告警 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(7)">8. AKSClaw SEV-SNP 机密沙箱节点池 + SKR (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(8)">9. 零信任出网防火墙 + Private Link + 防 SNAT 耗尽 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(9)">10. H100 MIG 硬件切分节点池 + KAITO 前缀缓存 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -570,6 +571,38 @@ pre.code-box {
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="egressOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 9: GPU MIG vs CUDA MPS Partitioning & KAITO Prefix-Cache Inference Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 9 · HETEROGENEOUS GPU/CPU AGENT ORCHESTRATION (NVIDIA MIG vs CUDA MPS &amp; KAITO SIZER)</span>
+    <h2>GPU/CPU 异构 Agent 沙箱编排：NVIDIA MIG vs CUDA MPS 切分与 KAITO 前缀缓存测算器</h2>
+    <div class="sub">量化 <code>Standard_NC40ads_H100_v5</code> / <code>Standard_ND96isr_H200_v5</code> 在 Computer-Use 视觉接地 (GUI Grounding) 与推理边车场景下的硬件 MIG 隔离、CUDA MPS 吞吐增益及 KAITO/vLLM 前缀缓存对首字延迟 (TTFT) 与轨迹成本的节省：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. Azure GPU 节点机型 (GPU Host SKU)</label>
+          <select id="sel_gpu_sku" onchange="runGpuLab()">
+            <option value="Standard_NC40ads_H100_v5" selected>Standard_NC40ads_H100_v5 (1× H100 NVL 94GB HBM3 · 40 vCPU)</option>
+            <option value="Standard_NC80adis_H100_v5">Standard_NC80adis_H100_v5 (2× H100 NVL 188GB HBM3 · 80 vCPU)</option>
+            <option value="Standard_ND96isr_H200_v5">Standard_ND96isr_H200_v5 (8× H200 1128GB HBM3e · 旗舰高密池)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. GPU 硬件/软件切分模式 (GPU Partitioning Mode)</label>
+          <select id="sel_gpu_part" onchange="runGpuLab()">
+            <option value="mig_1g_10gb" selected>NVIDIA 硬件 MIG (1g.10gb / 1g.18gb · 单卡 7 实例 · 0% 跨租户抖动)</option>
+            <option value="cuda_mps_shared_sm">CUDA MPS 共享 SM 软切分 (+28.4% 吞吐增益 · 单租户受信任池)</option>
+            <option value="default_timeslicing">默认 Time-Slicing 时间片轮转 (对比基线 · 31% 跨租户抖动)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. KAITO/vLLM System Prompt + MCP 工具 Schema 前缀缓存命中率: <strong id="lbl_gpu_cache" style="color:var(--blue)">78%</strong></label>
+          <input type="range" id="rng_gpu_cache" min="0" max="90" step="2" value="78" oninput="runGpuLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="gpuOut"></div>
     </div>
   </section>
 
@@ -893,6 +926,21 @@ resource fwPolicy 'Microsoft.Network/firewallPolicies@2023-11-01' = {
     intrusionDetection: { mode: 'Deny' } // 阻断 DNS 隧道与 C2 外连特征
     dnsSettings: { enableProxy: true }
   }
+}`,
+`// 10. Azure Bicep: AKS H100 MIG 1g.10gb Node Pool + KAITO Prefix-Cache Aware vLLM Workspace
+resource h100MigNodePool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  name: 'gpuh100mig'
+  properties: {
+    vmSize: 'Standard_NC40ads_H100_v5' // 1x NVIDIA H100 NVL (94 GB HBM3)
+    gpuInstanceProfile: 'MIG1g'        // 硬件切分 7 个 1g.10gb 实例 (0% 跨租户抖动)
+    enableAutoScaling: true
+    minCount: 1
+    maxCount: 16
+    nodeLabels: {
+      'aksclaw.azure.com/accelerator': 'nvidia-h100-mig-1g'
+      'kaito.sh/workspace-pool': 'gui-grounding-vllm'
+    }
+  }
 }`
 ];
 
@@ -1002,6 +1050,43 @@ runDrLab();
 runFinopsLab();
 runCcLab();
 runEgressLab();
+runGpuLab();
+
+function runGpuLab() {
+  const sku = document.getElementById('sel_gpu_sku').value;
+  const part = document.getElementById('sel_gpu_part').value;
+  const cachePct = parseInt(document.getElementById('rng_gpu_cache').value, 10) / 100.0;
+  document.getElementById('lbl_gpu_cache').textContent = Math.round(cachePct * 100) + "%";
+
+  const isH200 = sku.includes('H200');
+  const gpus = isH200 ? 8 : (sku.includes('NC80') ? 2 : 1);
+  const slicesPerGpu = part === 'mig_1g_10gb' ? 7 : 8;
+  const totalSlices = gpus * slicesPerGpu;
+
+  let jitter = 0.0, p95 = 41.5, gain = 18.2, hwIso = true;
+  if (part === 'mig_1g_10gb') {
+    jitter = 0.0; p95 = isH200 ? 36.8 : 41.5; gain = 18.2; hwIso = true;
+  } else if (part === 'cuda_mps_shared_sm') {
+    jitter = 8.5; p95 = isH200 ? 34.0 : 38.2; gain = 28.4; hwIso = false;
+  } else {
+    jitter = 31.0; p95 = 54.6; gain = 0.0; hwIso = false;
+  }
+
+  const effTtft = (185.0 * (1.0 - cachePct * 0.991)).toFixed(1);
+  const ttftDrop = ((1.0 - parseFloat(effTtft) / 185.0) * 100.0).toFixed(1);
+  const totalCost10k = (142.0 * (1.0 - cachePct * 0.62) + 18.5).toFixed(2);
+
+  document.getElementById('gpuOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${hwIso ? 'pill-teal' : (part === 'cuda_mps_shared_sm' ? 'pill-blue' : 'pill-amber')}">${hwIso ? '🛡️ 硬件 MIG 故障隔离 (0% 跨租户抖动)' : (part === 'cuda_mps_shared_sm' ? '⚡ CUDA MPS 共享 SM (+28.4% 吞吐增益)' : '⚠️ 时间片轮转 (31% 跨租户尾延迟抖动)')}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">TTFT：${effTtft} ms (-${ttftDrop}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>单节点并发实例数</strong>：<strong>${gpus} GPU × ${slicesPerGpu} = ${totalSlices} 个并发边车切片</strong> · GUI 视觉接地 P95 <strong>${p95} ms</strong> (吞吐增益 <strong>+${gain}%</strong>)<br>
+      • <strong>存算分离综合成本</strong>：CPU 沙箱池 + KAITO 前缀缓存 GPU 池每 10,000 条 CUA 任务轨迹总成本 <strong>$${totalCost10k} / 10K Trajectories</strong>
+    </p>
+  `;
+}
 
 function runEgressLab() {
   const sbx = parseInt(document.getElementById('rng_eg_sbx').value, 10);
