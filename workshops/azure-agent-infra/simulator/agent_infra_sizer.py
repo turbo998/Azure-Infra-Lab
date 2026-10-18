@@ -429,6 +429,97 @@ def simulate_multiregion_dr_failover(
     }
 
 
+def simulate_finops_spot_eviction_drain(
+    total_sandboxes: int = 100_000,
+    spot_ratio: float = 0.60,
+    dirty_memory_delta_mib: float = 32.0,
+    use_incremental_zstd: bool = True,
+    eviction_notice_window_sec: float = 30.0,
+    prefix_cache_hit_rate: float = 0.65,
+) -> dict[str, Any]:
+    """
+    Quantifies Chapter 11: Multi-Tenant FinOps Chargeback & Spot Preemption Checkpoint Drain:
+      1. Azure Spot VMSS (`Standard_D96as_v7`) 30s `ScheduledEvents` Preempt notification drain physics:
+         - Incremental dirty-bitmap (`32 MiB`) + ZSTD (`0.42x`) over Azure Boost 32 Gbps sustained egress
+           vs uncompacted full-RAM (`2048 MiB`) snapshot shipping.
+      2. Blended Spot (72% discount) + On-Demand/Reserved base fleet TCO savings (net of 2.5% buffer).
+      3. Dual-attribution (`Entra Agent ID azp` + `Sponsor User oid`) unit economics per 1,000 agent tasks.
+    """
+    sizing = calculate_e2b_vmss_cluster_sizing(total_sandboxes)
+    total_client_nodes = sizing["client_pool_vmss_nodes"]
+    sandboxes_per_node = sizing["scale_out_threshold_sandboxes_per_node"]
+
+    spot_nodes = int(round(total_client_nodes * spot_ratio))
+    ondemand_nodes = total_client_nodes - spot_nodes
+    # Extra 3% warm buffer nodes to absorb simultaneous Spot eviction waves without queueing
+    eviction_buffer_nodes = max(1, int(math.ceil(spot_nodes * 0.04))) if spot_ratio > 0 else 0
+
+    # Per-node eviction drain payload & latency when Azure ScheduledEvents fires (30s deadline)
+    per_sandbox_payload_mib = (dirty_memory_delta_mib * 0.42) if use_incremental_zstd else 2048.0
+    total_node_drain_mib = round(sandboxes_per_node * per_sandbox_payload_mib, 1)
+    total_node_drain_gb_bits = (total_node_drain_mib / 1024.0) * 8.0
+
+    # D96as_v7 Azure Boost sustained storage/network flush throughput (~32 Gbps effective)
+    sustained_egress_gbps = 32.0 if use_incremental_zstd else 18.0
+    snapshot_flush_ms = round((total_node_drain_gb_bits / sustained_egress_gbps) * 1000.0 + 380.0, 1)
+    horizondb_checkpoint_barrier_ms = 210.0
+    warm_pool_rehydrate_ms = round(132.0 * math.ceil(sandboxes_per_node / 120.0), 1)
+
+    total_drain_sec = round(
+        (snapshot_flush_ms + horizondb_checkpoint_barrier_ms + warm_pool_rehydrate_ms) / 1000.0,
+        2,
+    )
+    survives_30s_spot_notice = total_drain_sec <= (eviction_notice_window_sec - 3.0)
+
+    # FinOps monthly compute cost model (anchored on $3,532/mo 96-vCPU reference rate; Spot @ 72% discount = $989/mo)
+    payg_node_monthly_usd = 3532.0
+    spot_node_monthly_usd = round(payg_node_monthly_usd * (1.0 - 0.72), 2)
+    pure_ondemand_monthly_usd = round(total_client_nodes * payg_node_monthly_usd, 2)
+    blended_monthly_usd = round(
+        (ondemand_nodes + eviction_buffer_nodes) * payg_node_monthly_usd + spot_nodes * spot_node_monthly_usd,
+        2,
+    )
+    net_compute_savings_pct = round(
+        (1.0 - blended_monthly_usd / pure_ondemand_monthly_usd) * 100.0,
+        1,
+    )
+
+    # Dual-attribution Chargeback unit cost per 1,000 Agent Tasks (LLM Tokens + Sandbox Compute + HorizonDB)
+    # Prefix-cache affinity at APIM reduces prompt token cost by 75% on cached hits
+    raw_llm_cost_per_1k_tasks_usd = 18.40
+    effective_llm_cost_per_1k_tasks_usd = round(
+        raw_llm_cost_per_1k_tasks_usd * (1.0 - prefix_cache_hit_rate * 0.75),
+        2,
+    )
+    sandbox_cost_per_1k_tasks_usd = round((blended_monthly_usd / max(1, total_sandboxes)) * 0.18, 2)
+    total_cost_per_1k_tasks_usd = round(effective_llm_cost_per_1k_tasks_usd + sandbox_cost_per_1k_tasks_usd, 2)
+
+    return {
+        "total_sandboxes": total_sandboxes,
+        "spot_ratio": spot_ratio,
+        "use_incremental_zstd": use_incremental_zstd,
+        "total_client_nodes": total_client_nodes,
+        "ondemand_base_nodes": ondemand_nodes,
+        "spot_nodes": spot_nodes,
+        "eviction_buffer_nodes": eviction_buffer_nodes,
+        "sandboxes_per_evicted_node": sandboxes_per_node,
+        "node_drain_payload_mib": total_node_drain_mib,
+        "snapshot_flush_ms": snapshot_flush_ms,
+        "horizondb_checkpoint_barrier_ms": horizondb_checkpoint_barrier_ms,
+        "warm_pool_rehydrate_ms": warm_pool_rehydrate_ms,
+        "total_node_drain_sec": total_drain_sec,
+        "eviction_notice_window_sec": eviction_notice_window_sec,
+        "survives_30s_spot_notice": survives_30s_spot_notice,
+        "pure_ondemand_monthly_usd": pure_ondemand_monthly_usd,
+        "blended_spot_monthly_usd": blended_monthly_usd,
+        "net_compute_savings_pct": net_compute_savings_pct,
+        "prefix_cache_hit_rate": prefix_cache_hit_rate,
+        "effective_llm_cost_per_1k_tasks_usd": effective_llm_cost_per_1k_tasks_usd,
+        "sandbox_cost_per_1k_tasks_usd": sandbox_cost_per_1k_tasks_usd,
+        "total_cost_per_1k_tasks_usd": total_cost_per_1k_tasks_usd,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

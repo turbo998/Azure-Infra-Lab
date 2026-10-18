@@ -13,6 +13,7 @@ from agent_infra_sizer import (
     build_report_payload,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_finops_spot_eviction_drain,
     simulate_multiregion_dr_failover,
 )
 from e2b_aksclaw_deep_benchmark import (
@@ -199,6 +200,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "demo_3_multi_agent",
             "demo_4_deep_models",
             "demo_5_multiregion_dr",
+            "demo_6_finops_spot_drain",
             "trace_sha256",
         ):
             self.assertIn(key, trace)
@@ -213,6 +215,16 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertFalse(cold["meets_5s_warm_dr_slo"])
         self.assertGreater(cold["total_failover_rto_sec"], 30.0)
         self.assertGreater(eu["inter_region_rtt_ms"], warm["inter_region_rtt_ms"])
+
+    def test_finops_spot_eviction_drain_and_chargeback(self) -> None:
+        inc = simulate_finops_spot_eviction_drain(100_000, 0.60, 32.0, True, 30.0, 0.65)
+        raw = simulate_finops_spot_eviction_drain(100_000, 0.60, 32.0, False, 30.0, 0.0)
+        self.assertTrue(inc["survives_30s_spot_notice"])
+        self.assertLess(inc["total_node_drain_sec"], 5.0)
+        self.assertFalse(raw["survives_30s_spot_notice"])
+        self.assertGreater(raw["total_node_drain_sec"], 30.0)
+        self.assertGreater(inc["net_compute_savings_pct"], 40.0)
+        self.assertLess(inc["total_cost_per_1k_tasks_usd"], raw["total_cost_per_1k_tasks_usd"])
 
 
 if __name__ == "__main__":

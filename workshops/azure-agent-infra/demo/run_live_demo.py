@@ -26,6 +26,7 @@ from agent_infra_sizer import (  # noqa: E402
     RUNTIMES,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_finops_spot_eviction_drain,
     simulate_multiregion_dr_failover,
 )
 from e2b_aksclaw_deep_benchmark import (  # noqa: E402
@@ -214,6 +215,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "swedencentral_westeurope_warm_25pct": simulate_multiregion_dr_failover("swedencentral_westeurope", 10_000, 32.0, 15, 0.25),
             "southeastasia_eastasia_warm_25pct": simulate_multiregion_dr_failover("southeastasia_eastasia", 10_000, 32.0, 15, 0.25),
             "eastus2_centralus_cold_5pct": simulate_multiregion_dr_failover("eastus2_centralus", 10_000, 32.0, 15, 0.05),
+        },
+        "demo_6_finops_spot_drain": {
+            "blended_60pct_spot_incremental_zstd": simulate_finops_spot_eviction_drain(100_000, 0.60, 32.0, True, 30.0, 0.65),
+            "blended_70pct_spot_incremental_zstd": simulate_finops_spot_eviction_drain(100_000, 0.70, 32.0, True, 30.0, 0.75),
+            "uncompacted_full_ram_eviction_failure": simulate_finops_spot_eviction_drain(100_000, 0.60, 32.0, False, 30.0, 0.0),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -460,7 +460,7 @@ flowchart LR
 
 - **Step 04 Validate（1/2 Day Hands-on Workshop + Architecture Design Session）是整个漏斗的决定性转化点**：
   - 📋 **配套现场执行手册**：详见 [`workshop-runbook.md`（Step 04 半日/一日客户动手工坊与白板推演手册）](workshop-runbook.md)，内含分钟级议程、三大实验赛道（Track A `ACA Dynamic Sessions` / Track B `AKSClaw Kata` / Track C `E2B on VMSS D96as_v7`）及 6 项上线门禁检查表；
-  - 🧱 **6 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py)；
+  - 🧱 **7 套生产级 IaC 与网关策略蓝图**：[`aksclaw-kata-fleet.yaml`](blueprints/aksclaw-kata-fleet.yaml) · [`e2b-vmss-d96as-v7.bicep`](blueprints/e2b-vmss-d96as-v7.bicep) · [`e2b-apim-per-host-policy.xml`](blueprints/e2b-apim-per-host-policy.xml) · [`aca-dynamic-sessions-pool.bicep`](blueprints/aca-dynamic-sessions-pool.bicep) · [`entra-agent-id-ai-gateway-policy.xml`](blueprints/entra-agent-id-ai-gateway-policy.xml) · [`horizondb-langgraph-checkpointer.py`](blueprints/horizondb-langgraph-checkpointer.py) · [`agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep)；
   - 上午通过 **Hands-on Workshop** 让客户研发团队亲手在 Azure 上跑通 `ACA Dynamic Sessions / Sandboxes` 或 `AKS Kata + MAF + HorizonDB` 的端到端 Demo；
   - 下午通过 **Whiteboard Architecture Session** 对齐并发容量、网络隔离（VNet/Private Endpoint/AppGW+APIM）、身份边界（Entra Agent ID）与故障恢复链路，当场产出经双方架构师确认的 **Target Architecture Diagram** 与上线倒排计划。
 
@@ -553,7 +553,32 @@ sequenceDiagram
 
 ---
 
-## 11. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 11. Agentic FinOps 多租户成本归因与 Spot 抢占优雅排空护栏（Multi-Tenant FinOps Chargeback & Spot Preemption Checkpoint Drain）
+
+> 本章由确定性 FinOps 仿真模型 [`simulate_finops_spot_eviction_drain()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) 驱动，解决大规模 AI Agent 舰队上生产后的两大核心成本治理命题：**① 如何安全利用 Azure Spot VMSS（最高 `72%` 折扣）而不丢失任何有状态沙箱会话？② 如何将 LLM Token 与沙箱算力秒级分摊到具体责任人与业务部门？**
+
+### 11.1 Azure Spot VMSS `30s ScheduledEvents` 抢占通知下的优雅排空物理学
+
+当承载 `391` 个并发 Firecracker 沙箱的 `Standard_D96as_v7` Spot 节点收到 Azure Metadata `ScheduledEvents`（`http://169.254.169.254/metadata/scheduledevents?api-version=2020-07-01`）下发的 **`30 秒 Preempt 抢占倒计时`** 时，为什么传统全量内存转储必败，而 **增量脏页位图（Dirty-Bitmap Delta）+ ZSTD 流式压缩** 能在 **`2.40 秒`** 内无损排空？
+
+| 排空策略与集群配比 (100,000 并发沙箱 · 256 台 `D96as_v7`) | On-Demand 基座 / Spot 节点 / 缓冲池 | 单节点待排空载荷 (`391` 沙箱) | ① 快照刷盘耗时 (Azure Boost 32Gbps) | ② HorizonDB Checkpoint 屏障 | ③ 保底热池批次恢复 (`4 × 132ms`) | **单节点总排空耗时** | **30s 抢占窗口安全性** | **月度算力总成本 (`USD/mo`)** | **净算力节省率** |
+|---|---|---|---|---:|---:|---:|---:|---:|---:|
+| **`60% Spot + 40% On-Demand` (增量脏页 + ZSTD 推荐)** | `102` 按需 + `154` Spot + `7` 缓冲 | **`5,255.0 MiB` (`13.4 MiB/sbx`)** | `1,663.0 ms` | `210.0 ms` | `528.0 ms` | **`2.40 s`** | **✅ 安全 (`余量 27.6s`)** | **`$537,288 / mo`** | **`-40.6%`** |
+| **`70% Spot + 30% On-Demand` (激进弹性挡)** | `77` 按需 + `179` Spot + `8` 缓冲 | **`5,255.0 MiB` (`13.4 MiB/sbx`)** | `1,663.0 ms` | `210.0 ms` | `528.0 ms` | **`2.40 s`** | **✅ 安全 (`余量 27.6s`)** | **`$477,244 / mo`** | **`-47.2%`** |
+| `100% Pure On-Demand` (纯按需基线) | `256` 按需 + `0` Spot + `0` 缓冲 | — | — | — | — | `0.00 s` | ✅ 无抢占 | `$904,192 / mo` | `0.0%` |
+| `60% Spot` 但**未开启增量脏页 (全量 `2 GiB` RAM 转储反模式)** | `102` 按需 + `154` Spot + `7` 缓冲 | `800,768.0 MiB` (`2,048 MiB/sbx`) | `347,935.6 ms` | `210.0 ms` | `528.0 ms` | **`348.67 s`** | **❌ 超时 11.6 倍 (会话丢失)** | `$537,288 / mo` | 不可用 |
+
+### 11.2 基于 `Entra Agent ID + Sponsor OID` 的双重身份计费分摊（Dual-Attribution Chargeback）与异常熔断
+
+在多租户企业平台（`AKSClaw` / `Foundry + ACA`）中，单次 Agent 任务的总成本由 **LLM Token 消耗（占 `~88%–91%`）** 与 **沙箱执行时长（占 `~9%–12%`）** 共同构成。我们在 [`blueprints/agent-finops-cost-anomaly-alert.bicep`](blueprints/agent-finops-cost-anomaly-alert.bicep) 中落地了三层 FinOps 护栏：
+
+1. **双重身份归因标签（`entra.agent.azp` + `entra.sponsor.oid`）**：Unified AI Gateway (APIM) 在每次调用与沙箱分配时，强制从 JWT 提取 `AgentBlueprintId` 与人类责任人 `SponsorUserOid` 写入 OpenTelemetry `CustomDimensions`；
+2. **APIM Prefix-Cache 会话亲和路由降本**：通过将同一 `x-session-id` 路由至相同后端模型副本，Prompt 缓存命中率可达 `65%~75%`，将每 1,000 次复杂 Agent 任务的端到端总成本（含 Token + 沙箱）从 **`$19.37`** 压降至 **`$8.91 ~ $10.40`（降幅最高达 `54.0%`）**；
+3. **15 分钟滑动窗口 KQL 异常检测与自动熔断**：通过 `Microsoft.Insights/scheduledQueryRules` 每 5 分钟聚合各 `AgentBlueprintId` 的 `Tokens15m` 与 `SandboxHours15m`，一旦单实例 15 分钟消耗突破 `450,000 Tokens` 或 `$25`，立即触发 Action Group 回调 APIM 将该实例降级为只读或熔断。
+
+---
+
+## 12. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -566,10 +591,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR 演练）
+# 2. 运行深度定量模型（Firecracker 缺页分解 + AKSClaw Kata 密度 + HorizonDB 留存 + 跨区 DR + FinOps Spot 排空）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 14 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR RTO/RPO 与链接完整性）
+# 3. 运行全部 15 项单元测试（验证 6 大运行时契约、v6/v7 延迟基准、跨区 DR、FinOps Spot 排空与链接完整性）
 python -m unittest discover -s simulator -p "test_*.py" -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

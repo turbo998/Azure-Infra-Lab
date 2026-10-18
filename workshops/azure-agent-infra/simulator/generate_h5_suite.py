@@ -1080,6 +1080,7 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(3)">4. HorizonDB + PgBouncer + LangGraph Checkpoint (Python)</button>
       <button class="tab-btn" onclick="showBlueprint(4)">5. ACA Dynamic Sessions 预热池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(5)">6. AI Gateway + Entra Agent ID 双重归属 (XML)</button>
+      <button class="tab-btn" onclick="showBlueprint(6)">7. FinOps 预算与 KQL 异常突增熔断告警 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1149,6 +1150,33 @@ def build_selector_html() -> str:
         </div>
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="drOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 6: Multi-Tenant FinOps Chargeback & Spot Preemption Drain Calculator -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 6 · AGENTIC FINOPS CHARGEBACK &amp; SPOT PREEMPTION DRAIN SIZER</span>
+    <h2>Agentic FinOps 多租户成本归因与 Spot 抢占优雅排空测算器</h2>
+    <div class="sub">量化 Azure Spot VMSS 收到 <code>30s ScheduledEvents</code> 抢占通知后的增量脏页排空耗时、混合实例净节省率，以及 APIM Prefix-Cache 亲和路由下的每千次 Agent 任务综合单价：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. Spot 节点混部比例 (Spot Fleet Ratio): <strong id="lbl_fin_spot" style="color:var(--blue)">60%</strong></label>
+          <input type="range" id="rng_fin_spot" min="0" max="80" step="10" value="60" oninput="runFinopsLab()">
+        </div>
+        <div class="form-row">
+          <label>2. APIM Prefix-Cache 会话亲和命中率: <strong id="lbl_fin_cache" style="color:var(--blue)">65%</strong></label>
+          <input type="range" id="rng_fin_cache" min="0" max="85" step="5" value="65" oninput="runFinopsLab()">
+        </div>
+        <div class="form-row">
+          <label>3. 抢占排空快照模式 (Preemption Snapshot Mode)</label>
+          <select id="sel_fin_mode" onchange="runFinopsLab()">
+            <option value="inc" selected>增量脏页位图 (32 MiB) + ZSTD (0.42x) + Azure Boost 32Gbps (推荐)</option>
+            <option value="raw">未压缩全量 2 GiB RAM 镜像转储 (反模式 · 触发 30s 超时丢状态)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="finopsOut"></div>
     </div>
   </section>
 
@@ -1413,7 +1441,31 @@ resource dynamicSessionPool 'Microsoft.App/sessionPools@2024-02-02-preview' = {{
                      token-quota-period="Daily"
                      estimate-prompt-tokens="true" />
   </inbound>
-</policies>`
+</policies>`,
+`// 7. Azure Bicep: Multi-Tenant Agentic FinOps Budget & 15-Min KQL Cost Spike Circuit Breaker
+resource agentTokenAndSandboxAnomalyRule 'Microsoft.Insights/scheduledQueryRules@2023-03-15-preview' = {{
+  name: 'sq-agent-finops-dual-attribution-spike'
+  location: resourceGroup().location
+  properties: {{
+    severity: 1
+    evaluationFrequency: 'PT5M'
+    windowSize: 'PT15M'
+    criteria: {{
+      allOf: [{{
+        query: '''
+          AppRequests
+          | extend AgentBlueprintId = tostring(CustomDimensions["entra.agent.azp"])
+          | extend SponsorUserOid   = tostring(CustomDimensions["entra.sponsor.oid"])
+          | summarize Tokens15m = sum(toint(CustomMeasurements["gen_ai.usage.total_tokens"]))
+            by AgentBlueprintId, SponsorUserOid, bin(TimeGenerated, 15m)
+          | where Tokens15m > 450000
+        '''
+        operator: 'GreaterThan'
+        threshold: 0
+      }}]
+    }}
+  }}
+}}`
 ];
 
 function showBlueprint(idx) {{
@@ -1519,6 +1571,49 @@ runSizer();
 showBlueprint(0);
 runDeepLab();
 runDrLab();
+runFinopsLab();
+
+function runFinopsLab() {{
+  const spotPct = parseInt(document.getElementById('rng_fin_spot').value, 10) / 100.0;
+  const cachePct = parseInt(document.getElementById('rng_fin_cache').value, 10) / 100.0;
+  const isInc = document.getElementById('sel_fin_mode').value === 'inc';
+
+  document.getElementById('lbl_fin_spot').textContent = Math.round(spotPct * 100) + "%";
+  document.getElementById('lbl_fin_cache').textContent = Math.round(cachePct * 100) + "%";
+
+  const totalNodes = 256;
+  const spotNodes = Math.round(totalNodes * spotPct);
+  const ondemandNodes = totalNodes - spotNodes;
+  const bufferNodes = spotPct > 0 ? Math.max(1, Math.ceil(spotNodes * 0.04)) : 0;
+
+  const perSbxMib = isInc ? (32.0 * 0.42) : 2048.0;
+  const nodeDrainMib = 391 * perSbxMib;
+  const nodeDrainGbBits = (nodeDrainMib / 1024.0) * 8.0;
+  const egressGbps = isInc ? 32.0 : 18.0;
+  const flushMs = (nodeDrainGbBits / egressGbps) * 1000.0 + 380.0;
+  const totalDrainSec = ((flushMs + 210.0 + 528.0) / 1000.0).toFixed(2);
+  const safe = parseFloat(totalDrainSec) <= 27.0;
+
+  const paygMo = totalNodes * 3532.0;
+  const blendedMo = (ondemandNodes + bufferNodes) * 3532.0 + spotNodes * (3532.0 * 0.28);
+  const savingsPct = ((1.0 - blendedMo / paygMo) * 100.0).toFixed(1);
+
+  const llm1k = (18.40 * (1.0 - cachePct * 0.75)).toFixed(2);
+  const sbx1k = ((blendedMo / 100000.0) * 0.18).toFixed(2);
+  const total1k = (parseFloat(llm1k) + parseFloat(sbx1k)).toFixed(2);
+
+  document.getElementById('finopsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${{safe ? 'pill-teal' : 'pill-rose'}}">${{safe ? '✅ 2.40s 优雅排空 (安全早于 30s Spot 抢占时限)' : '❌ 348.7s 排空超时 (违反 30s Spot 抢占窗口)'}}</span>
+      <strong style="color:#34d399;font-size:1.12rem;">净节省：${{savingsPct}}% ($${{Math.round(blendedMo).toLocaleString()}}/mo)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>节点编成 (10万沙箱)</strong>：按需基座 <strong>${{ondemandNodes}} 台</strong> + Spot 弹性池 <strong>${{spotNodes}} 台</strong> + 抢占热缓冲 <strong>${{bufferNodes}} 台</strong><br>
+      • <strong>单节点排空耗时</strong>：待刷盘载荷 <strong>${{(nodeDrainMib/1024).toFixed(2)}} GiB</strong> → 总排空 <strong>${{totalDrainSec}} s</strong> (对比 30s 通知窗口)<br>
+      • <strong>双重身份分摊单价 (每 1,000 次 Agent 任务)</strong>：LLM Token <strong>$${{llm1k}}</strong> + 沙箱算力 <strong>$${{sbx1k}}</strong> = <strong>$${{total1k}} / 1K Tasks</strong>
+    </p>
+  `;
+}}
 </script>
 </body>
 </html>
