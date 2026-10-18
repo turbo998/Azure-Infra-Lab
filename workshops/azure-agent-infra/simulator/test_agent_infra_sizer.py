@@ -106,8 +106,27 @@ class TestAgentInfraSizer(unittest.TestCase):
             p = bundle_dir / "h5" / h5_name
             self.assertTrue(p.exists(), f"Missing H5 file {h5_name}")
             self.assertGreater(p.stat().st_size, 20_000)
-        for doc_name in ("README.md", "test-report.md", "test-report-cards.html", "report.json", "evidence.json", "review.md"):
+        for doc_name in (
+            "README.md",
+            "workshop-runbook.md",
+            "test-report.md",
+            "test-report-cards.html",
+            "report.json",
+            "evidence.json",
+            "review.md",
+        ):
             self.assertTrue((bundle_dir / doc_name).exists(), f"Missing {doc_name}")
+        for bp_name in (
+            "aksclaw-kata-fleet.yaml",
+            "e2b-apim-per-host-policy.xml",
+            "e2b-vmss-d96as-v7.bicep",
+            "horizondb-langgraph-checkpointer.py",
+            "aca-dynamic-sessions-pool.bicep",
+            "entra-agent-id-ai-gateway-policy.xml",
+        ):
+            bp_path = bundle_dir / "blueprints" / bp_name
+            self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
+            self.assertGreater(bp_path.stat().st_size, 500)
 
     def test_e2b_firecracker_resume_decomposition(self) -> None:
         d96_single = decompose_e2b_firecracker_resume("Standard_D96as_v7", 1)

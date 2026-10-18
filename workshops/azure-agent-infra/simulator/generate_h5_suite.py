@@ -1078,6 +1078,8 @@ def build_selector_html() -> str:
       <button class="tab-btn" onclick="showBlueprint(1)">2. AKSClaw Kata Pod VM + 硬边界清单 (YAML)</button>
       <button class="tab-btn" onclick="showBlueprint(2)">3. E2B on Azure VMSS Flexible (D96as_v7 Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(3)">4. HorizonDB + PgBouncer + LangGraph Checkpoint (Python)</button>
+      <button class="tab-btn" onclick="showBlueprint(4)">5. ACA Dynamic Sessions 预热池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(5)">6. AI Gateway + Entra Agent ID 双重归属 (XML)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1347,7 +1349,43 @@ pool = ConnectionPool(
 
 with pool.connection() as conn:
     checkpointer = PostgresSaver(conn)
-    checkpointer.setup() # 单库统一承载 ACID 事务 + JSONB 消息树 + DiskANN 向量记忆`
+    checkpointer.setup() # 单库统一承载 ACID 事务 + JSONB 消息树 + DiskANN 向量记忆`,
+`// 5. Azure Bicep: ACA Dynamic Sessions Hyper-V Pre-Warmed Pool (~210ms Ready Pool + EgressDisabled)
+resource dynamicSessionPool 'Microsoft.App/sessionPools@2024-02-02-preview' = {{
+  name: 'sp-agent-code-interpreter-prod'
+  location: resourceGroup().location
+  properties: {{
+    poolManagementType: 'Dynamic'
+    containerType: 'PythonLTS'
+    scaleConfiguration: {{
+      maxConcurrentSessions: 500
+      readySessionInstances: 25 // 25 个预热 Hyper-V 实例确保 ~210ms 极速分配
+    }}
+    dynamicPoolConfiguration: {{
+      executionType: 'Timed'
+      cooldownPeriodInSeconds: 300
+    }}
+    sessionNetworkConfiguration: {{
+      status: 'EgressDisabled' // 强制禁用不可信代码直连外网
+    }}
+  }}
+}}`,
+`<!-- 6. Unified AI Gateway (APIM): Entra Agent ID + Dual Attribution + Token Circuit Breaker -->
+<policies>
+  <inbound>
+    <base />
+    <validate-azure-ad-token tenant-id="{{{{entra-tenant-id}}}}" header-name="Authorization" output-token-variable-name="agentJwt">
+      <audiences><audience>api://azure-unified-ai-gateway</audience></audiences>
+    </validate-azure-ad-token>
+    <set-variable name="actingAgentId" value="@(((Jwt)context.Variables[&quot;agentJwt&quot;]).Claims.GetValueOrDefault(&quot;azp&quot;, &quot;unknown&quot;))" />
+    <!-- 硬边界 ④：单 Agent 实例每分钟 60K Tokens / 每日 1.5M Tokens 硬熔断防死循环 -->
+    <llm-token-limit counter-key="@((string)context.Variables[&quot;actingAgentId&quot;])"
+                     tokens-per-minute="60000"
+                     token-quota="1500000"
+                     token-quota-period="Daily"
+                     estimate-prompt-tokens="true" />
+  </inbound>
+</policies>`
 ];
 
 function showBlueprint(idx) {{

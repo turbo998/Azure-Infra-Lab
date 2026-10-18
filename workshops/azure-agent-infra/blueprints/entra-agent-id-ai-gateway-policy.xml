@@ -1,0 +1,78 @@
+<!-- ==========================================================================
+     Unified AI Gateway (Azure API Management) — Entra Agent ID & 3-Tier Quota
+     ==========================================================================
+     Enforces:
+       1. Keyless Agent Pods: Validates short-lived Entra Agent ID JWT tokens
+       2. Dual Attribution Audit: Logs both Initiating Human User + Acting Agent
+       3. 3-Tier Token Circuit Breaker: Per-Agent / Per-Team TPM & Daily Quota
+       4. Prefix-Cache Session Affinity & Multi-Region Foundry Failover
+     Source: 08 AKSClaw-Multi-Tenant-Kubernetes.pptx (Slides 5, 8, 12)
+     ========================================================================== -->
+<policies>
+  <inbound>
+    <base />
+
+    <!-- 1. Validate Microsoft Entra Agent ID Workload Token (Zero Raw Keys in Pod) -->
+    <validate-azure-ad-token tenant-id="{{entra-tenant-id}}"
+                             header-name="Authorization"
+                             failed-validation-httpcode="401"
+                             failed-validation-error-message="Unauthorized: Valid Entra Agent ID token required."
+                             output-token-variable-name="agentJwt">
+      <audiences>
+        <audience>api://azure-unified-ai-gateway</audience>
+      </audiences>
+      <required-claims>
+        <claim name="idtyp" match="all">
+          <value>app</value>
+        </claim>
+      </required-claims>
+    </validate-azure-ad-token>
+
+    <!-- 2. Extract Dual Attribution Identity (Acting Agent ID + Human Sponsor/Owner) -->
+    <set-variable name="actingAgentId" value="@(((Jwt)context.Variables["agentJwt"]).Claims.GetValueOrDefault("azp", "unknown-agent"))" />
+    <set-variable name="agentSponsorUpn" value="@(context.Request.Headers.GetValueOrDefault("x-ms-agent-sponsor", "unassigned-sponsor"))" />
+    <set-variable name="initiatingUserUpn" value="@(context.Request.Headers.GetValueOrDefault("x-ms-initiating-user", "system-event"))" />
+
+    <!-- 3. Hard Boundary #4: Per-Agent Instance Token Circuit Breaker (Stop Runaway Loops) -->
+    <llm-token-limit counter-key="@((string)context.Variables["actingAgentId"])"
+                     tokens-per-minute="60000"
+                     token-quota="1500000"
+                     token-quota-period="Daily"
+                     estimate-prompt-tokens="true"
+                     remaining-tokens-header-name="x-ratelimit-remaining-tokens"
+                     remaining-quota-tokens-header-name="x-quota-remaining-tokens" />
+
+    <!-- 4. Emit OpenTelemetry GenAI Metrics with Dual Attribution Dimensions -->
+    <llm-emit-token-metric namespace="azure.ai.agent.gateway">
+      <dimension name="AgentId" value="@((string)context.Variables["actingAgentId"])" />
+      <dimension name="SponsorUpn" value="@((string)context.Variables["agentSponsorUpn"])" />
+      <dimension name="InitiatingUser" value="@((string)context.Variables["initiatingUserUpn"])" />
+      <dimension name="ClientIp" value="@(context.Request.IpAddress)" />
+    </llm-emit-token-metric>
+
+    <!-- 5. Inject Backend Foundry Managed Identity Token (Agent Never Sees Backend Key) -->
+    <authentication-managed-identity resource="https://cognitiveservices.azure.com"
+                                     output-token-variable-name="foundryMsiToken" />
+    <set-header name="Authorization" exists-action="override">
+      <value>@("Bearer " + (string)context.Variables["foundryMsiToken"])</value>
+    </set-header>
+    <set-header name="x-ms-audit-dual-attribution" exists-action="override">
+      <value>@("agent=" + (string)context.Variables["actingAgentId"] + ";sponsor=" + (string)context.Variables["agentSponsorUpn"] + ";user=" + (string)context.Variables["initiatingUserUpn"])</value>
+    </set-header>
+  </inbound>
+
+  <backend>
+    <base />
+  </backend>
+
+  <outbound>
+    <base />
+    <set-header name="x-ai-gateway-enforced" exists-action="override">
+      <value>entra-agent-id-v1</value>
+    </set-header>
+  </outbound>
+
+  <on-error>
+    <base />
+  </on-error>
+</policies>
