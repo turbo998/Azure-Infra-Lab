@@ -31,6 +31,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_biopharma_alphafold_wetlab_sila2_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
@@ -467,6 +468,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "eda_rtl_1000_jobs": simulate_semiconductor_eda_rtl_gdsii_sandbox(1_000, "verilator_ast_cache_symbiyosys_lec_flexnet_lease"),
             "eda_rtl_4000_jobs": simulate_semiconductor_eda_rtl_gdsii_sandbox(4_000, "verilator_ast_cache_symbiyosys_lec_flexnet_lease"),
             "cold_eda_1000_jobs": simulate_semiconductor_eda_rtl_gdsii_sandbox(1_000, "cold_compile_testbench_only_unmanaged_lmgrd"),
+        },
+        "demo_43_biopharma_alphafold_wetlab_sila2_sandbox": {
+            "biopharma_500_ligands": simulate_biopharma_alphafold_wetlab_sila2_sandbox(500, "mmseqs2_gpu_msa_fep_sila2_securedna_guard"),
+            "biopharma_2000_ligands": simulate_biopharma_alphafold_wetlab_sila2_sandbox(2_000, "mmseqs2_gpu_msa_fep_sila2_securedna_guard"),
+            "biopharma_8000_ligands": simulate_biopharma_alphafold_wetlab_sila2_sandbox(8_000, "mmseqs2_gpu_msa_fep_sila2_securedna_guard"),
+            "raw_wetlab_2000_ligands": simulate_biopharma_alphafold_wetlab_sila2_sandbox(2_000, "cpu_jackhmmer_unchecked_pipette_unscreened_seq"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

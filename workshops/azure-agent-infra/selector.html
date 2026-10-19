@@ -440,6 +440,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(40)">41. 影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环 + OpenUSD/3DGS 校验与 C2PA 2.1 HSM 签名池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(41)">42. 智能网联汽车 V2X MQTT-over-QUIC 遥测 + CARLA/OpenSCENARIO RSS 闭环仿真与 UNECE R155 Uptane OTA 池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(42)">43. 半导体 EDA 芯片 RTL-to-GDSII ANF Ultra + Standard_FX48mds 4.0GHz 形式化验证与 FlexNet 许可证池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(43)">44. 生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对 + SiLA-2 湿实验机械臂互锁与 SecureDNA 筛查池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1418,6 +1419,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 43: Autonomous Biopharma Drug Discovery, AlphaFold3/FEP+ & SiLA-2 Wet-Lab Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 43 · BIOPHARMA ALPHAFOLD3/FEP+ DOCKING, SILA-2 WET-LAB ROBOT INTERLOCK &amp; SECUREDNA BIOSECURITY SIZER</span>
+    <h2>生物医药与湿实验云实验室：MMseqs2-GPU 序列比对、SiLA-2 移液防碰撞互锁与 SecureDNA 生物安全筛查测算器</h2>
+    <div class="sub">量化在 <code>500 – 8,000</code> 并发候选配体/蛋白质序列筛查规模下，启用 <code>Managed Lustre + MMseqs2-GPU</code> 多序列比对缓存与 <code>Standard_ND96isr_H100_v5 AlphaFold3 / OpenMM FEP+</code> 自由能微扰池（MSA 从 <code>420.0 s</code> 降至 <code>4.8 s</code>，批次耗时从 <code>380.0 min</code> 降至 <code>14.5 min</code>）、<code>SiLA-2 / OPC-UA</code> 移液工作站数字孪生防碰撞与化学相容性互锁（<code>0.0%</code> 撞针毁板与放热事故，节省 <code>78.4%</code> 试剂）及 <code>SecureDNA / IBBIS</code> 盲化生物安全序列筛查（<code>18.0 ms</code> <code>100.0%</code> 拦截受控毒素/病原体合成）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发候选配体与多肽序列数 (Concurrent Ligand / Sequence Candidates): <strong id="lbl_bio_lig" style="color:var(--blue)">2,000</strong></label>
+          <input type="range" id="rng_bio_lig" min="500" max="8000" step="500" value="2000" oninput="runBioLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 分子模拟加速、湿实验机械臂互锁与生物安全筛查模式 (Biopharma &amp; Wet-Lab Mode)</label>
+          <select id="sel_bio_mode" onchange="runBioLab()">
+            <option value="mmseqs2_gpu_msa_fep_sila2_securedna_guard" selected>MMseqs2-GPU + FEP+ (4.8s/14.5m) + SiLA-2 防碰撞互锁 (0% 事故) + SecureDNA 筛查 (推荐)</option>
+            <option value="cpu_jackhmmer_unchecked_pipette_unscreened_seq">传统反模式：CPU Jackhmmer (420s/380m) + 裸发移液指令 (7.6% 撞针/放热) + 无序列筛查 (4.2% 逃逸)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="bioOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2205,6 +2229,22 @@ resource edaRtlGdsiiPool 'Microsoft.ContainerService/managedClusters/agentPools@
       'aksclaw.io/flexnet-license-guard': 'dag-prelease-3s-zombie-reaper'
     }
   }
+}`,
+`// 44. Biopharma Drug Discovery, AlphaFold3/FEP+ & SiLA-2 Wet-Lab Pool (blueprints/aksclaw-biopharma-alphafold-wetlab-sila2-pool.bicep)
+resource biopharmaGpuPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'bioaf3p'
+  properties: {
+    count: 8
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'biopharma-af3-fep-wetlab-agent'
+      'aksclaw.io/mmseqs2-msa-cache': 'lustre-nvme-gpu-msa-4.8s'
+      'aksclaw.io/sila2-robot-interlock': 'deck-collision-reagent-compat-0pct'
+      'aksclaw.io/biosecurity-screen-gate': 'securedna-ibbis-select-agent-block'
+    }
+  }
 }`
 ];
 
@@ -2348,6 +2388,29 @@ runScmLab();
 runMediaUsdLab();
 runSdvLab();
 runEdaLab();
+runBioLab();
+
+function runBioLab() {
+  const lig = parseInt(document.getElementById('rng_bio_lig').value, 10);
+  const mode = document.getElementById('sel_bio_mode').value;
+  document.getElementById('lbl_bio_lig').textContent = lig.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(lig / 250));
+  const ok = mode === 'mmseqs2_gpu_msa_fep_sila2_securedna_guard';
+  const afStr = ok ? "MSA 4.8 s (-98.9%) · FEP+ 批次 14.5 min (-96.2%)" : "CPU Jackhmmer 420.0 s · 批次 380.0 min";
+  const silaStr = ok ? "0.0% 移液甲板碰撞或化学不相容 · 78.4% 昂贵试剂节省" : "7.6% 撞针毁板与放热风险 · 0.0% 试剂节省";
+  const secStr = ok ? "18.0 ms SecureDNA/IBBIS 盲化筛查 · 0.0% 受控毒素/病原体合成逃逸" : "无生物安全筛查门控 · 4.2% 高危序列逃逸风险";
+
+  document.getElementById('bioOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + afStr : '❌ 420s MSA 阻塞 · 7.6% 湿实验撞针/不相容风险'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 ND96isr_H100_v5 节点 (${silaStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>SecureDNA / IBBIS 生物安全序列筛查与 GLP 21 CFR Part 58 护栏</strong>：<strong>${secStr}</strong>
+    </p>
+  `;
+}
 
 function runEdaLab() {
   const jobs = parseInt(document.getElementById('rng_eda_jobs').value, 10);

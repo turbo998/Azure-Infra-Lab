@@ -2624,5 +2624,55 @@
       "zombie_seat_reclaim_sec": 900.0,
       "semiconductor_eda_slo_met": false
     }
+  ],
+  "biopharma_alphafold_wetlab_profiles": [
+    {
+      "ligand_candidates": 500,
+      "biopharma_agent_mode": "mmseqs2_gpu_msa_fep_sila2_securedna_guard",
+      "biopharma_gpu_nodes": 2,
+      "msa_alignment_latency_sec": 4.8,
+      "af3_fep_batch_wallclock_min": 14.5,
+      "wetlab_deck_collision_or_incompat_pct": 0.0,
+      "reagent_waste_reduction_pct": 78.4,
+      "regulated_toxin_synthesis_escape_pct": 0.0,
+      "securedna_screen_latency_ms": 18.0,
+      "biopharma_wetlab_slo_met": true
+    },
+    {
+      "ligand_candidates": 2000,
+      "biopharma_agent_mode": "mmseqs2_gpu_msa_fep_sila2_securedna_guard",
+      "biopharma_gpu_nodes": 8,
+      "msa_alignment_latency_sec": 4.8,
+      "af3_fep_batch_wallclock_min": 14.5,
+      "wetlab_deck_collision_or_incompat_pct": 0.0,
+      "reagent_waste_reduction_pct": 78.4,
+      "regulated_toxin_synthesis_escape_pct": 0.0,
+      "securedna_screen_latency_ms": 18.0,
+      "biopharma_wetlab_slo_met": true
+    },
+    {
+      "ligand_candidates": 8000,
+      "biopharma_agent_mode": "mmseqs2_gpu_msa_fep_sila2_securedna_guard",
+      "biopharma_gpu_nodes": 32,
+      "msa_alignment_latency_sec": 4.8,
+      "af3_fep_batch_wallclock_min": 14.5,
+      "wetlab_deck_collision_or_incompat_pct": 0.0,
+      "reagent_waste_reduction_pct": 78.4,
+      "regulated_toxin_synthesis_escape_pct": 0.0,
+      "securedna_screen_latency_ms": 18.0,
+      "biopharma_wetlab_slo_met": true
+    },
+    {
+      "ligand_candidates": 2000,
+      "biopharma_agent_mode": "cpu_jackhmmer_unchecked_pipette_unscreened_seq",
+      "biopharma_gpu_nodes": 8,
+      "msa_alignment_latency_sec": 420.0,
+      "af3_fep_batch_wallclock_min": 380.0,
+      "wetlab_deck_collision_or_incompat_pct": 7.6,
+      "reagent_waste_reduction_pct": 0.0,
+      "regulated_toxin_synthesis_escape_pct": 4.2,
+      "securedna_screen_latency_ms": 0.0,
+      "biopharma_wetlab_slo_met": false
+    }
   ]
 }

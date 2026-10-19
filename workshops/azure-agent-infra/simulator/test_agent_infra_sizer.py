@@ -18,6 +18,7 @@ from agent_infra_sizer import (
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_biopharma_alphafold_wetlab_sila2_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
@@ -817,6 +818,20 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(eda["semiconductor_eda_slo_met"])
         self.assertAlmostEqual(raw["flexnet_license_deadlock_pct"], 19.5)
         self.assertFalse(raw["semiconductor_eda_slo_met"])
+
+    def test_biopharma_alphafold_wetlab_sila2_sandbox(self) -> None:
+        bio = simulate_biopharma_alphafold_wetlab_sila2_sandbox(2_000, "mmseqs2_gpu_msa_fep_sila2_securedna_guard")
+        raw = simulate_biopharma_alphafold_wetlab_sila2_sandbox(2_000, "cpu_jackhmmer_unchecked_pipette_unscreened_seq")
+        self.assertEqual(bio["biopharma_gpu_nodes"], 8)
+        self.assertAlmostEqual(bio["msa_alignment_latency_sec"], 4.8)
+        self.assertAlmostEqual(bio["af3_fep_batch_wallclock_min"], 14.5)
+        self.assertEqual(bio["wetlab_deck_collision_or_incompat_pct"], 0.0)
+        self.assertAlmostEqual(bio["reagent_waste_reduction_pct"], 78.4)
+        self.assertEqual(bio["regulated_toxin_synthesis_escape_pct"], 0.0)
+        self.assertAlmostEqual(bio["securedna_screen_latency_ms"], 18.0)
+        self.assertTrue(bio["biopharma_wetlab_slo_met"])
+        self.assertAlmostEqual(raw["wetlab_deck_collision_or_incompat_pct"], 7.6)
+        self.assertFalse(raw["biopharma_wetlab_slo_met"])
 
 
 if __name__ == "__main__":
