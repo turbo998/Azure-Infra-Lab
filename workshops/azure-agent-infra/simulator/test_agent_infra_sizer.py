@@ -18,6 +18,7 @@ from agent_infra_sizer import (
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_aviation_irops_swim_do178c_sandbox,
     simulate_biopharma_alphafold_wetlab_sila2_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -864,6 +865,20 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(ret["retail_edge_slo_met"])
         self.assertAlmostEqual(raw["shelf_pos_price_mismatch_pct"], 4.8)
         self.assertFalse(raw["retail_edge_slo_met"])
+
+    def test_aviation_irops_swim_do178c_sandbox(self) -> None:
+        avn = simulate_aviation_irops_swim_do178c_sandbox(1_000, "swim_cuopt_part117_mel_do178c_rvsm")
+        raw = simulate_aviation_irops_swim_do178c_sandbox(1_000, "batch_milp_unchecked_part117_raw_cpdlc")
+        self.assertEqual(avn["irops_solver_nodes"], 4)
+        self.assertAlmostEqual(avn["irops_recovery_solve_sec"], 14.2)
+        self.assertAlmostEqual(avn["passenger_delay_reduction_pct"], 41.8)
+        self.assertAlmostEqual(avn["part117_mel_legality_gate_ms"], 4.5)
+        self.assertEqual(avn["illegal_crew_or_mel_dispatch_pct"], 0.0)
+        self.assertAlmostEqual(avn["rvsm_separation_check_ms"], 2.1)
+        self.assertEqual(avn["loss_of_separation_advisory_pct"], 0.0)
+        self.assertTrue(avn["aviation_irops_slo_met"])
+        self.assertAlmostEqual(raw["illegal_crew_or_mel_dispatch_pct"], 6.4)
+        self.assertFalse(raw["aviation_irops_slo_met"])
 
 
 if __name__ == "__main__":

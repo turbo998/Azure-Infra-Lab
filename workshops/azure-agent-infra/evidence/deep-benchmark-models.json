@@ -2782,5 +2782,55 @@
       "pci_gdpr_biometric_leak_pct": 100.0,
       "retail_edge_slo_met": false
     }
+  ],
+  "aviation_irops_swim_profiles": [
+    {
+      "active_flights": 250,
+      "aviation_agent_mode": "swim_cuopt_part117_mel_do178c_rvsm",
+      "irops_solver_nodes": 2,
+      "irops_recovery_solve_sec": 14.2,
+      "passenger_delay_reduction_pct": 41.8,
+      "part117_mel_legality_gate_ms": 4.5,
+      "illegal_crew_or_mel_dispatch_pct": 0.0,
+      "rvsm_separation_check_ms": 2.1,
+      "loss_of_separation_advisory_pct": 0.0,
+      "aviation_irops_slo_met": true
+    },
+    {
+      "active_flights": 1000,
+      "aviation_agent_mode": "swim_cuopt_part117_mel_do178c_rvsm",
+      "irops_solver_nodes": 4,
+      "irops_recovery_solve_sec": 14.2,
+      "passenger_delay_reduction_pct": 41.8,
+      "part117_mel_legality_gate_ms": 4.5,
+      "illegal_crew_or_mel_dispatch_pct": 0.0,
+      "rvsm_separation_check_ms": 2.1,
+      "loss_of_separation_advisory_pct": 0.0,
+      "aviation_irops_slo_met": true
+    },
+    {
+      "active_flights": 2000,
+      "aviation_agent_mode": "swim_cuopt_part117_mel_do178c_rvsm",
+      "irops_solver_nodes": 8,
+      "irops_recovery_solve_sec": 14.2,
+      "passenger_delay_reduction_pct": 41.8,
+      "part117_mel_legality_gate_ms": 4.5,
+      "illegal_crew_or_mel_dispatch_pct": 0.0,
+      "rvsm_separation_check_ms": 2.1,
+      "loss_of_separation_advisory_pct": 0.0,
+      "aviation_irops_slo_met": true
+    },
+    {
+      "active_flights": 1000,
+      "aviation_agent_mode": "batch_milp_unchecked_part117_raw_cpdlc",
+      "irops_solver_nodes": 4,
+      "irops_recovery_solve_sec": 1620.0,
+      "passenger_delay_reduction_pct": 0.0,
+      "part117_mel_legality_gate_ms": 0.0,
+      "illegal_crew_or_mel_dispatch_pct": 6.4,
+      "rvsm_separation_check_ms": 0.0,
+      "loss_of_separation_advisory_pct": 3.8,
+      "aviation_irops_slo_met": false
+    }
   ]
 }

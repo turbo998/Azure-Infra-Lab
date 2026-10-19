@@ -24,6 +24,7 @@ from agent_infra_sizer import (
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_aviation_irops_swim_do178c_sandbox,
     simulate_biopharma_alphafold_wetlab_sila2_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -557,6 +558,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_retail_pos_esl_vision_edge_sandbox(500, "cloud_rtsp_backhaul_unicast_esl_raw_video"),
     ]
 
+    aviation_irops_swim_profiles: List[Dict[str, object]] = [
+        simulate_aviation_irops_swim_do178c_sandbox(250, "swim_cuopt_part117_mel_do178c_rvsm"),
+        simulate_aviation_irops_swim_do178c_sandbox(1_000, "swim_cuopt_part117_mel_do178c_rvsm"),
+        simulate_aviation_irops_swim_do178c_sandbox(2_000, "swim_cuopt_part117_mel_do178c_rvsm"),
+        simulate_aviation_irops_swim_do178c_sandbox(1_000, "batch_milp_unchecked_part117_raw_cpdlc"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -602,6 +610,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "biopharma_alphafold_wetlab_profiles": biopharma_alphafold_wetlab_profiles,
         "quant_trading_fix_afxdp_profiles": quant_trading_fix_afxdp_profiles,
         "retail_pos_esl_vision_profiles": retail_pos_esl_vision_profiles,
+        "aviation_irops_swim_profiles": aviation_irops_swim_profiles,
     }
 
 

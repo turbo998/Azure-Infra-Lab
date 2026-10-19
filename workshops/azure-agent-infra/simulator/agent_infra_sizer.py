@@ -2807,6 +2807,51 @@ def simulate_retail_pos_esl_vision_edge_sandbox(
     }
 
 
+def simulate_aviation_irops_swim_do178c_sandbox(
+    active_flights: int = 1_000,
+    aviation_agent_mode: str = "swim_cuopt_part117_mel_do178c_rvsm",
+) -> dict[str, Any]:
+    """
+    Chapter 51: Autonomous Aviation, Air Traffic Management (ATM) & Airline Irregular
+    Operations (IROPS) Recovery Agent Infrastructure Physics.
+      - Pillar 1: FAA/EUROCONTROL SWIM (FIXM/AIXM/WXXM) Event Streaming + NVIDIA cuOpt
+        Column-Generation Tail-Swap & Crew Recovery Solver vs Sequential Batch MILP
+      - Pillar 2: FAA 14 CFR Part 117 Flight-Duty-Period (FDP) Crew Legality & Part 121
+        MEL/ETOPS Airworthiness Deterministic Gate
+      - Pillar 3: RTCA DO-178C / RVSM 4D Trajectory Separation Assurance Simplex Barrier
+    """
+    irops_solver_nodes = max(2, math.ceil(active_flights / 250))
+    if aviation_agent_mode == "swim_cuopt_part117_mel_do178c_rvsm":
+        irops_recovery_solve_sec = 14.2
+        passenger_delay_reduction_pct = 41.8
+        part117_mel_legality_gate_ms = 4.5
+        illegal_crew_or_mel_dispatch_pct = 0.0
+        rvsm_separation_check_ms = 2.1
+        loss_of_separation_advisory_pct = 0.0
+        aviation_irops_slo_met = True
+    else:
+        irops_recovery_solve_sec = 1_620.0
+        passenger_delay_reduction_pct = 0.0
+        part117_mel_legality_gate_ms = 0.0
+        illegal_crew_or_mel_dispatch_pct = 6.4
+        rvsm_separation_check_ms = 0.0
+        loss_of_separation_advisory_pct = 3.8
+        aviation_irops_slo_met = False
+
+    return {
+        "active_flights": active_flights,
+        "aviation_agent_mode": aviation_agent_mode,
+        "irops_solver_nodes": irops_solver_nodes,
+        "irops_recovery_solve_sec": irops_recovery_solve_sec,
+        "passenger_delay_reduction_pct": passenger_delay_reduction_pct,
+        "part117_mel_legality_gate_ms": part117_mel_legality_gate_ms,
+        "illegal_crew_or_mel_dispatch_pct": illegal_crew_or_mel_dispatch_pct,
+        "rvsm_separation_check_ms": rvsm_separation_check_ms,
+        "loss_of_separation_advisory_pct": loss_of_separation_advisory_pct,
+        "aviation_irops_slo_met": aviation_irops_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -31,6 +31,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_aviation_irops_swim_do178c_sandbox,
     simulate_biopharma_alphafold_wetlab_sila2_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -488,6 +489,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "retail_500_stores": simulate_retail_pos_esl_vision_edge_sandbox(500, "arc_edge_trt_pawr_esl_pci_blur"),
             "retail_2000_stores": simulate_retail_pos_esl_vision_edge_sandbox(2_000, "arc_edge_trt_pawr_esl_pci_blur"),
             "raw_cloud_500_stores": simulate_retail_pos_esl_vision_edge_sandbox(500, "cloud_rtsp_backhaul_unicast_esl_raw_video"),
+        },
+        "demo_46_aviation_irops_swim_do178c_sandbox": {
+            "aviation_250_flights": simulate_aviation_irops_swim_do178c_sandbox(250, "swim_cuopt_part117_mel_do178c_rvsm"),
+            "aviation_1000_flights": simulate_aviation_irops_swim_do178c_sandbox(1_000, "swim_cuopt_part117_mel_do178c_rvsm"),
+            "aviation_2000_flights": simulate_aviation_irops_swim_do178c_sandbox(2_000, "swim_cuopt_part117_mel_do178c_rvsm"),
+            "raw_milp_1000_flights": simulate_aviation_irops_swim_do178c_sandbox(1_000, "batch_milp_unchecked_part117_raw_cpdlc"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
