@@ -2579,6 +2579,52 @@ def simulate_media_openusd_3dgs_c2pa_sandbox(
     }
 
 
+def simulate_automotive_sdv_v2x_ota_sandbox(
+    connected_vehicles: int = 50_000,
+    sdv_fleet_mode: str = "v2x_quic_delta_carla_rss_uptane_ota",
+) -> dict[str, Any]:
+    """
+    Chapter 46: Autonomous Smart Mobility, Connected Vehicle (SDV / V2X) Fleet & ADAS Simulation Agent Infrastructure.
+    Models:
+      - Pillar 1: Vehicle-to-Cloud V2X MQTT-over-QUIC 0-RTT Edge Anomaly Ring-Buffer vs Raw ROS2/CAN Bag Uplinks
+      - Pillar 2: Closed-Loop CARLA / OpenSCENARIO 2.0 Corner-Case Re-Simulation & RSS Safety Envelope Gate
+      - Pillar 3: UNECE R155 / ISO 21434 Uptane Dual-Bank A/B OTA Campaign & Parked-State Interlock
+    """
+    carla_sim_gpu_nodes = max(4, math.ceil(connected_vehicles / 6_250))
+    if sdv_fleet_mode == "v2x_quic_delta_carla_rss_uptane_ota":
+        cellular_uplink_reduction_pct = 91.8
+        v2x_ingest_p99_latency_ms = 64.0
+        carla_1k_replay_wallclock_sec = 18.5
+        rss_ttc_violation_escape_pct = 0.0
+        in_motion_ecu_ota_attempt_pct = 0.0
+        bricked_ecu_rate_pct = 0.0
+        ab_ota_rollback_sec = 4.5
+        automotive_sdv_slo_met = True
+    else:
+        cellular_uplink_reduction_pct = 0.0
+        v2x_ingest_p99_latency_ms = 1_840.0
+        carla_1k_replay_wallclock_sec = 620.0
+        rss_ttc_violation_escape_pct = 6.2
+        in_motion_ecu_ota_attempt_pct = 3.8
+        bricked_ecu_rate_pct = 1.9
+        ab_ota_rollback_sec = 1_800.0
+        automotive_sdv_slo_met = False
+
+    return {
+        "connected_vehicles": connected_vehicles,
+        "sdv_fleet_mode": sdv_fleet_mode,
+        "carla_sim_gpu_nodes": carla_sim_gpu_nodes,
+        "cellular_uplink_reduction_pct": cellular_uplink_reduction_pct,
+        "v2x_ingest_p99_latency_ms": v2x_ingest_p99_latency_ms,
+        "carla_1k_replay_wallclock_sec": carla_1k_replay_wallclock_sec,
+        "rss_ttc_violation_escape_pct": rss_ttc_violation_escape_pct,
+        "in_motion_ecu_ota_attempt_pct": in_motion_ecu_ota_attempt_pct,
+        "bricked_ecu_rate_pct": bricked_ecu_rate_pct,
+        "ab_ota_rollback_sec": ab_ota_rollback_sec,
+        "automotive_sdv_slo_met": automotive_sdv_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

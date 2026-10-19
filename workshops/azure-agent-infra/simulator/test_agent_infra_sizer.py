@@ -16,6 +16,7 @@ from agent_infra_sizer import (
     simulate_a2a_verified_id_quic_federation_mesh,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_agentic_payment_confidential_ledger_guardrail,
+    simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -785,6 +786,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(med["media_production_slo_met"])
         self.assertAlmostEqual(raw["gpu_render_node_crash_rate_pct"], 9.4)
         self.assertFalse(raw["media_production_slo_met"])
+
+    def test_automotive_sdv_v2x_ota_sandbox(self) -> None:
+        sdv = simulate_automotive_sdv_v2x_ota_sandbox(50_000, "v2x_quic_delta_carla_rss_uptane_ota")
+        raw = simulate_automotive_sdv_v2x_ota_sandbox(50_000, "raw_rosbag_tcp_unverified_ota")
+        self.assertEqual(sdv["carla_sim_gpu_nodes"], 8)
+        self.assertAlmostEqual(sdv["cellular_uplink_reduction_pct"], 91.8)
+        self.assertAlmostEqual(sdv["v2x_ingest_p99_latency_ms"], 64.0)
+        self.assertAlmostEqual(sdv["carla_1k_replay_wallclock_sec"], 18.5)
+        self.assertEqual(sdv["rss_ttc_violation_escape_pct"], 0.0)
+        self.assertEqual(sdv["in_motion_ecu_ota_attempt_pct"], 0.0)
+        self.assertEqual(sdv["bricked_ecu_rate_pct"], 0.0)
+        self.assertAlmostEqual(sdv["ab_ota_rollback_sec"], 4.5)
+        self.assertTrue(sdv["automotive_sdv_slo_met"])
+        self.assertAlmostEqual(raw["rss_ttc_violation_escape_pct"], 6.2)
+        self.assertFalse(raw["automotive_sdv_slo_met"])
 
 
 if __name__ == "__main__":

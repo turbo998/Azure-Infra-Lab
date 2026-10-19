@@ -22,6 +22,7 @@ from agent_infra_sizer import (
     simulate_a2a_verified_id_quic_federation_mesh,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_agentic_payment_confidential_ledger_guardrail,
+    simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -517,6 +518,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_media_openusd_3dgs_c2pa_sandbox(32, "cpu_ffmpeg_unverified_bpy_unsigned_media"),
     ]
 
+    automotive_sdv_v2x_profiles: List[Dict[str, object]] = [
+        simulate_automotive_sdv_v2x_ota_sandbox(10_000, "v2x_quic_delta_carla_rss_uptane_ota"),
+        simulate_automotive_sdv_v2x_ota_sandbox(50_000, "v2x_quic_delta_carla_rss_uptane_ota"),
+        simulate_automotive_sdv_v2x_ota_sandbox(250_000, "v2x_quic_delta_carla_rss_uptane_ota"),
+        simulate_automotive_sdv_v2x_ota_sandbox(50_000, "raw_rosbag_tcp_unverified_ota"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -557,6 +565,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "smart_grid_iec61850_profiles": smart_grid_iec61850_profiles,
         "supplychain_amr_mapf_profiles": supplychain_amr_mapf_profiles,
         "media_openusd_c2pa_profiles": media_openusd_c2pa_profiles,
+        "automotive_sdv_v2x_profiles": automotive_sdv_v2x_profiles,
     }
 
 

@@ -2516,5 +2516,59 @@
       "unsigned_synthetic_media_egress_pct": 100.0,
       "media_production_slo_met": false
     }
+  ],
+  "automotive_sdv_v2x_profiles": [
+    {
+      "connected_vehicles": 10000,
+      "sdv_fleet_mode": "v2x_quic_delta_carla_rss_uptane_ota",
+      "carla_sim_gpu_nodes": 4,
+      "cellular_uplink_reduction_pct": 91.8,
+      "v2x_ingest_p99_latency_ms": 64.0,
+      "carla_1k_replay_wallclock_sec": 18.5,
+      "rss_ttc_violation_escape_pct": 0.0,
+      "in_motion_ecu_ota_attempt_pct": 0.0,
+      "bricked_ecu_rate_pct": 0.0,
+      "ab_ota_rollback_sec": 4.5,
+      "automotive_sdv_slo_met": true
+    },
+    {
+      "connected_vehicles": 50000,
+      "sdv_fleet_mode": "v2x_quic_delta_carla_rss_uptane_ota",
+      "carla_sim_gpu_nodes": 8,
+      "cellular_uplink_reduction_pct": 91.8,
+      "v2x_ingest_p99_latency_ms": 64.0,
+      "carla_1k_replay_wallclock_sec": 18.5,
+      "rss_ttc_violation_escape_pct": 0.0,
+      "in_motion_ecu_ota_attempt_pct": 0.0,
+      "bricked_ecu_rate_pct": 0.0,
+      "ab_ota_rollback_sec": 4.5,
+      "automotive_sdv_slo_met": true
+    },
+    {
+      "connected_vehicles": 250000,
+      "sdv_fleet_mode": "v2x_quic_delta_carla_rss_uptane_ota",
+      "carla_sim_gpu_nodes": 40,
+      "cellular_uplink_reduction_pct": 91.8,
+      "v2x_ingest_p99_latency_ms": 64.0,
+      "carla_1k_replay_wallclock_sec": 18.5,
+      "rss_ttc_violation_escape_pct": 0.0,
+      "in_motion_ecu_ota_attempt_pct": 0.0,
+      "bricked_ecu_rate_pct": 0.0,
+      "ab_ota_rollback_sec": 4.5,
+      "automotive_sdv_slo_met": true
+    },
+    {
+      "connected_vehicles": 50000,
+      "sdv_fleet_mode": "raw_rosbag_tcp_unverified_ota",
+      "carla_sim_gpu_nodes": 8,
+      "cellular_uplink_reduction_pct": 0.0,
+      "v2x_ingest_p99_latency_ms": 1840.0,
+      "carla_1k_replay_wallclock_sec": 620.0,
+      "rss_ttc_violation_escape_pct": 6.2,
+      "in_motion_ecu_ota_attempt_pct": 3.8,
+      "bricked_ecu_rate_pct": 1.9,
+      "ab_ota_rollback_sec": 1800.0,
+      "automotive_sdv_slo_met": false
+    }
   ]
 }

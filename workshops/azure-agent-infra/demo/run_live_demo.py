@@ -29,6 +29,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_a2a_verified_id_quic_federation_mesh,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_agentic_payment_confidential_ledger_guardrail,
+    simulate_automotive_sdv_v2x_ota_sandbox,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -453,6 +454,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "media_openusd_32streams": simulate_media_openusd_3dgs_c2pa_sandbox(32, "nvdec_dma_openusd_verifier_c2pa_hsm"),
             "media_openusd_128streams": simulate_media_openusd_3dgs_c2pa_sandbox(128, "nvdec_dma_openusd_verifier_c2pa_hsm"),
             "raw_ffmpeg_32streams": simulate_media_openusd_3dgs_c2pa_sandbox(32, "cpu_ffmpeg_unverified_bpy_unsigned_media"),
+        },
+        "demo_41_automotive_sdv_v2x_ota_sandbox": {
+            "sdv_v2x_10k_vehicles": simulate_automotive_sdv_v2x_ota_sandbox(10_000, "v2x_quic_delta_carla_rss_uptane_ota"),
+            "sdv_v2x_50k_vehicles": simulate_automotive_sdv_v2x_ota_sandbox(50_000, "v2x_quic_delta_carla_rss_uptane_ota"),
+            "sdv_v2x_250k_vehicles": simulate_automotive_sdv_v2x_ota_sandbox(250_000, "v2x_quic_delta_carla_rss_uptane_ota"),
+            "raw_rosbag_50k_vehicles": simulate_automotive_sdv_v2x_ota_sandbox(50_000, "raw_rosbag_tcp_unverified_ota"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

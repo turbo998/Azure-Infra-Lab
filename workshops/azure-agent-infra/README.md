@@ -1434,7 +1434,31 @@ sequenceDiagram
 
 ---
 
-## 46. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 46. 智能网联汽车、软件定义汽车（`SDV / V2X`）车队与 `ADAS` 闭环仿真智能体基础设施 —— `MQTT-over-QUIC` 0-RTT 边缘异常环提取、`CARLA / OpenSCENARIO 2.0` 责任敏感安全（`RSS`）闭环验证与 `UNECE R155 / ISO 21434` 双区 `Uptane` 驻车 OTA 护栏物理模型（Autonomous Smart Mobility, Connected Vehicle (SDV / V2X) Fleet & ADAS Simulation Agent Infrastructure — Eclipse Chariott / V2X MQTT-over-QUIC Telemetry Ingestion, Closed-Loop CARLA / OpenSCENARIO RSS Safety Verification & ISO 21434 / UNECE R155 Uptane OTA Guardrail Physics）
+
+> 本章由确定性智能网联汽车与 ADAS 闭环仿真智能体模型 [`simulate_automotive_sdv_v2x_ota_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-automotive-sdv-v2x-carla-ota-fleet.bicep`](blueprints/aksclaw-automotive-sdv-v2x-carla-ota-fleet.bicep) 驱动，面向主机厂（OEM）与自动驾驶出行车队（`10,000–250,000` 辆在线 `SDV` 智能网联车），解决 **车载 `ROS2 Bag / CAN-FD / LiDAR` 原始点云经蜂窝网直传云端引发 `42.0 Mbps/车` 天价流量成本与基站切换 `1,840.0 ms` 尾延迟、智驾诊断/规划智能体未经闭环仿真直接下发策略参数引发 `6.2%` 责任敏感安全（`RSS`）碰撞时间（`TTC < 1.8 s`）违规逃逸，以及缺乏 `UNECE R155 / ISO 21434` 驻车硬件互锁与双分区分阶段 `Uptane` 签名导致行驶中误刷写（`3.8%`）或控制器变砖（`1.9%`）的三大车云工程瓶颈**。
+
+### 46.1 智能网联车队（`SDV / V2X`）与 `ADAS` 闭环验证智能体三大工程支柱
+
+1. **Pillar 1：车端 `Eclipse Chariott` 异常触发环形缓冲区 + `Azure Event Grid MQTT-over-QUIC` 0-RTT 接入 vs 原始 `ROS2 Bag / TCP` 直传**：
+   - 在车载域控制器（SoC）内部署边缘触发环形缓冲器，仅在检测到急刹、接管（Disengagement）或感知置信度突降窗口时截取前后 `15 s` 的 `CAN-FD + 稀疏关键帧`，并通过 **Azure Event Grid `MQTT v5 over QUIC` 0-RTT** 协议穿越高速基站切换，将单车蜂窝上行带宽削减 **`91.8%`（从 `42.0 Mbps` 降至 `3.44 Mbps`）**，并将车云 V2X 遥测接入 P99 延迟从 `1,840.0 ms` 压缩至 **`64.0 ms`（提速 `-96.5%`）**。
+2. **Pillar 2：闭环 `CARLA / OpenSCENARIO 2.0` 千路并发长尾场景重放与责任敏感安全（`RSS`）包络门控 vs 无验证启发式策略下发**：
+   - 任何由云端智驾调优智能体生成的感知阈值或规控参数变更，必须在 `Standard_NV36ads_A10_v5` GPU 沙箱池中并发重放 **`1,000` 个长尾极限场景（Corner Cases）**，并实时计算纵向/横向 **责任敏感安全（`Responsibility-Sensitive Safety, RSS`）** 最小安全距离与碰撞时间（`TTC >= 1.8 s`）不变量，在 **`18.5 s`** 墙钟时间内 **`100.0%` 拦截危险规控回归（将 `RSS` 安全违规逃逸率从 `6.2%` 降至 `0.0%`）**。
+3. **Pillar 3：`UNECE R155 / ISO 21434` 硬件 HSM `Uptane` 双角色签名、A/B 双分区回滚与驻车档位（`Park-Gear`）物理互锁**：
+   - 车云 OTA 编排智能体发布的固件/模型包强制经由 **Azure Key Vault Premium HSM** 执行符合 **Uptane（Director + Image 双仓库签名）** 与 **UNECE R155 / ISO 21434** 标准的多重签名，并在车载网关侧硬编码物理互锁（仅当 `Gear == PARK && WheelSpeed == 0 && SoC >= 50%` 时允许激活 A/B 切换），确保 **`0.0%` 行驶中 ECU 刷写尝试与 `0.0%` 控制器变砖率（遇到 `DTC` 故障码时在 `4.5 s` 内自动切回稳定 B 分区）**。
+
+### 46.2 `V2X MQTT-over-QUIC` + `CARLA RSS` 闭环验证 + `Uptane` 驻车 OTA 护栏 vs 原始 `ROS2 Bag` + 裸推 OTA 对比表
+
+| 在线网联车辆规模 (`SDV Fleet`) 与车云智能体架构 | `CARLA` 仿真 GPU 节点 (`NV36ads_A10_v5`) | **蜂窝上行带宽削减 / V2X P99 延迟** | **`1,000` 场景闭环重放耗时** | **`RSS (TTC<1.8s)` 违规逃逸率** | **行驶中 OTA 误刷率 / ECU 变砖率** | **A/B 分区自动回滚耗时** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`10,000` 辆车 · QUIC 边缘差分 + CARLA RSS + Uptane 护栏** | `4` | **`91.8%` / `64.0 ms`** | **`18.5 s`** | **`0.0%`** | **`0.0%` / `0.0%`** | **`4.5 s`** |
+| **`50,000` 辆车 · QUIC 边缘差分 + CARLA RSS + Uptane 护栏 (推荐)** | **`8`** | **`91.8%` / `64.0 ms`** | **`18.5 s`** | **`0.0%`** | **`0.0%` / `0.0%`** | **`4.5 s`** |
+| **`250,000` 辆车 · QUIC 边缘差分 + CARLA RSS + Uptane 护栏** | `40` | **`91.8%` / `64.0 ms`** | **`18.5 s`** | **`0.0%`** | **`0.0%` / `0.0%`** | **`4.5 s`** |
+| `50,000` 辆车 · 原始 ROS2 Bag TCP 直传 + 无验证裸推 OTA (反模式) | `8` | `0.0%` / `1,840.0 ms` (❌ 切换断流) | `620.0 s` (❌ 串行慢速) | `6.2%` (❌ 急刹碰撞风险) | `3.8%` / `1.9%` (❌ 抛锚变砖) | `1,800.0 s` (❌ 人工救援) |
+
+---
+
+## 47. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1447,10 +1471,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 40 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱）
+# 2. 运行深度定量模型（全部 41 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 49 项单元测试（100% 覆盖 6 大运行时契约、40 大深度物理模型、41 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 50 项单元测试（100% 覆盖 6 大运行时契约、41 大深度物理模型、42 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

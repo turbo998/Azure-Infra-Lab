@@ -438,6 +438,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(38)">39. 智能电网变电站 IEC 61850 / IEEE C37.118 PMU 专网与 AC-OPF 潮流验证池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(39)">40. 智慧仓储 AMR 舰队 Azure Digital Twins + MAPF-CBS 无死锁轨迹与冷链护栏池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(40)">41. 影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环 + OpenUSD/3DGS 校验与 C2PA 2.1 HSM 签名池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(41)">42. 智能网联汽车 V2X MQTT-over-QUIC 遥测 + CARLA/OpenSCENARIO RSS 闭环仿真与 UNECE R155 Uptane OTA 池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1370,6 +1371,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 41: Autonomous Smart Mobility, Connected Vehicle (SDV / V2X) Fleet & ADAS Simulation Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 41 · SMART MOBILITY SDV/V2X FLEET, CARLA/OPENSCENARIO RSS VERIFIER &amp; UNECE R155 UPTANE OTA SIZER</span>
+    <h2>智能网联汽车与 ADAS 闭环仿真：V2X MQTT-over-QUIC 边缘差分、CARLA RSS 安全包络验证与 UNECE R155 驻车 OTA 测算器</h2>
+    <div class="sub">量化在 <code>10,000 – 250,000</code> 辆智能网联汽车（<code>SDV</code>）车队规模下，启用车端异常触发环形缓冲 + <code>Event Grid MQTT-over-QUIC 0-RTT</code>（蜂窝上行带宽削减 <code>91.8%</code>，V2X 接入 P99 从 <code>1,840.0 ms</code> 降至 <code>64.0 ms</code>）、<code>CARLA / OpenSCENARIO 2.0</code> 千路并发重放与责任敏感安全（<code>RSS TTC &gt;= 1.8 s</code>）包络门控（<code>18.5 s</code> 拦截 <code>100.0%</code> 碰撞违规 vs 裸推策略 <code>6.2%</code> 逃逸）及 <code>UNECE R155 / ISO 21434 Uptane</code> 驻车双分区 OTA 护栏（<code>0.0%</code> 行驶中误刷与控制器变砖，异常 <code>4.5 s</code> 自动回滚）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在线智能网联车队规模 (Connected SDV Vehicles): <strong id="lbl_sdv_veh" style="color:var(--blue)">50,000</strong></label>
+          <input type="range" id="rng_sdv_veh" min="10000" max="250000" step="10000" value="50000" oninput="runSdvLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 车云 V2X 遥测、CARLA RSS 闭环验证与 Uptane OTA 护栏模式 (SDV &amp; ADAS Fleet Mode)</label>
+          <select id="sel_sdv_mode" onchange="runSdvLab()">
+            <option value="v2x_quic_delta_carla_rss_uptane_ota" selected>MQTT-over-QUIC 边缘差分 (64ms) + CARLA RSS 闭环校验 (0% 违规) + Uptane 驻车 OTA (推荐)</option>
+            <option value="raw_rosbag_tcp_unverified_ota">传统反模式：原始 ROS2 Bag TCP 直传 (1,840ms) + 无仿真裸推策略 (6.2% 碰撞风险) + 无驻车锁</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="sdvOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2125,6 +2149,22 @@ resource mediaRenderPool 'Microsoft.ContainerService/managedClusters/agentPools@
       'aksclaw.io/c2pa-provenance-gate': 'hsm-c2pa-2.1-mandatory'
     }
   }
+}`,
+`// 42. Smart Mobility SDV/V2X Fleet, CARLA RSS Verifier & UNECE R155 Uptane OTA Pool (blueprints/aksclaw-automotive-sdv-v2x-carla-ota-fleet.bicep)
+resource carlaAdasVerifyPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'carlarss'
+  properties: {
+    count: 8
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'automotive-sdv-carla-rss-verifier'
+      'aksclaw.io/v2x-ingest': 'mqtt-quic-0rtt-64ms-ring-delta'
+      'aksclaw.io/adas-safety-gate': 'openscenario2-rss-ttc-1.8s-barrier'
+      'aksclaw.io/ota-guardrail': 'unece-r155-iso21434-uptane-parked-interlock'
+    }
+  }
 }`
 ];
 
@@ -2266,6 +2306,29 @@ runOrbLab();
 runGridLab();
 runScmLab();
 runMediaUsdLab();
+runSdvLab();
+
+function runSdvLab() {
+  const veh = parseInt(document.getElementById('rng_sdv_veh').value, 10);
+  const mode = document.getElementById('sel_sdv_mode').value;
+  document.getElementById('lbl_sdv_veh').textContent = veh.toLocaleString();
+
+  const nodes = Math.max(4, Math.ceil(veh / 6250));
+  const ok = mode === 'v2x_quic_delta_carla_rss_uptane_ota';
+  const v2xStr = ok ? "蜂窝带宽削减 91.8% · V2X P99 64.0 ms (-96.5%)" : "42 Mbps/车原始上传 · 基站切换 P99 1,840.0 ms";
+  const rssStr = ok ? "18.5 s 完成 1,000 场景 CARLA 重放 · 0.0% RSS (TTC<1.8s) 碰撞违规逃逸" : "620.0 s 串行重放 · 6.2% 危险规控边界逃逸";
+  const otaStr = ok ? "0.0% 行驶中误刷与 ECU 变砖 · 4.5 s A/B 分区硬件自愈回滚" : "3.8% 行驶中误刷风险 · 1.9% 控制器变砖抛锚";
+
+  document.getElementById('sdvOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + v2xStr : '❌ 1,840ms 切换断流 · 6.2% RSS 安全边界违规'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 仿真节点 (${rssStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>UNECE R155 / ISO 21434 Uptane 驻车物理互锁与双区 OTA 护栏</strong>：<strong>${otaStr}</strong>
+    </p>
+  `;
+}
 
 function runMediaUsdLab() {
   const streams = parseInt(document.getElementById('rng_usd_streams').value, 10);
