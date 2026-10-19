@@ -2610,6 +2610,60 @@
         "goose_hardware_trip_ms": 42.0,
         "smart_grid_slo_met": false
       }
+    ],
+    "supplychain_amr_mapf_profiles": [
+      {
+        "amr_robots": 500,
+        "fulfillment_control_mode": "edge_rfid_fusion_mapf_cbs_arrhenius_guard",
+        "mapf_solver_nodes": 3,
+        "wan_egress_reduction_pct": 98.1,
+        "sku_inventory_accuracy_pct": 99.94,
+        "mapf_cbs_solve_latency_ms": 11.4,
+        "amr_deadlock_collision_rate_pct": 0.0,
+        "picks_per_hour_gain_pct": 34.8,
+        "cold_chain_spoilage_rate_pct": 0.0,
+        "duplicate_edi_order_mutation_pct": 0.0,
+        "supplychain_slo_met": true
+      },
+      {
+        "amr_robots": 2000,
+        "fulfillment_control_mode": "edge_rfid_fusion_mapf_cbs_arrhenius_guard",
+        "mapf_solver_nodes": 8,
+        "wan_egress_reduction_pct": 98.1,
+        "sku_inventory_accuracy_pct": 99.94,
+        "mapf_cbs_solve_latency_ms": 11.4,
+        "amr_deadlock_collision_rate_pct": 0.0,
+        "picks_per_hour_gain_pct": 34.8,
+        "cold_chain_spoilage_rate_pct": 0.0,
+        "duplicate_edi_order_mutation_pct": 0.0,
+        "supplychain_slo_met": true
+      },
+      {
+        "amr_robots": 8000,
+        "fulfillment_control_mode": "edge_rfid_fusion_mapf_cbs_arrhenius_guard",
+        "mapf_solver_nodes": 32,
+        "wan_egress_reduction_pct": 98.1,
+        "sku_inventory_accuracy_pct": 99.94,
+        "mapf_cbs_solve_latency_ms": 11.4,
+        "amr_deadlock_collision_rate_pct": 0.0,
+        "picks_per_hour_gain_pct": 34.8,
+        "cold_chain_spoilage_rate_pct": 0.0,
+        "duplicate_edi_order_mutation_pct": 0.0,
+        "supplychain_slo_met": true
+      },
+      {
+        "amr_robots": 2000,
+        "fulfillment_control_mode": "raw_cloud_video_greedy_routing_reactive_alarm",
+        "mapf_solver_nodes": 8,
+        "wan_egress_reduction_pct": 0.0,
+        "sku_inventory_accuracy_pct": 93.8,
+        "mapf_cbs_solve_latency_ms": 420.0,
+        "amr_deadlock_collision_rate_pct": 8.6,
+        "picks_per_hour_gain_pct": 0.0,
+        "cold_chain_spoilage_rate_pct": 4.2,
+        "duplicate_edi_order_mutation_pct": 5.4,
+        "supplychain_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -4764,5 +4818,59 @@
       "smart_grid_slo_met": false
     }
   },
-  "trace_sha256": "decf65a830dfba0672196b7ef33cb572c5f570c0267fd5606964071c35576ccd"
+  "demo_39_supplychain_amr_mapf_coldchain_sandbox": {
+    "scm_mapf_500amr": {
+      "amr_robots": 500,
+      "fulfillment_control_mode": "edge_rfid_fusion_mapf_cbs_arrhenius_guard",
+      "mapf_solver_nodes": 3,
+      "wan_egress_reduction_pct": 98.1,
+      "sku_inventory_accuracy_pct": 99.94,
+      "mapf_cbs_solve_latency_ms": 11.4,
+      "amr_deadlock_collision_rate_pct": 0.0,
+      "picks_per_hour_gain_pct": 34.8,
+      "cold_chain_spoilage_rate_pct": 0.0,
+      "duplicate_edi_order_mutation_pct": 0.0,
+      "supplychain_slo_met": true
+    },
+    "scm_mapf_2000amr": {
+      "amr_robots": 2000,
+      "fulfillment_control_mode": "edge_rfid_fusion_mapf_cbs_arrhenius_guard",
+      "mapf_solver_nodes": 8,
+      "wan_egress_reduction_pct": 98.1,
+      "sku_inventory_accuracy_pct": 99.94,
+      "mapf_cbs_solve_latency_ms": 11.4,
+      "amr_deadlock_collision_rate_pct": 0.0,
+      "picks_per_hour_gain_pct": 34.8,
+      "cold_chain_spoilage_rate_pct": 0.0,
+      "duplicate_edi_order_mutation_pct": 0.0,
+      "supplychain_slo_met": true
+    },
+    "scm_mapf_8000amr": {
+      "amr_robots": 8000,
+      "fulfillment_control_mode": "edge_rfid_fusion_mapf_cbs_arrhenius_guard",
+      "mapf_solver_nodes": 32,
+      "wan_egress_reduction_pct": 98.1,
+      "sku_inventory_accuracy_pct": 99.94,
+      "mapf_cbs_solve_latency_ms": 11.4,
+      "amr_deadlock_collision_rate_pct": 0.0,
+      "picks_per_hour_gain_pct": 34.8,
+      "cold_chain_spoilage_rate_pct": 0.0,
+      "duplicate_edi_order_mutation_pct": 0.0,
+      "supplychain_slo_met": true
+    },
+    "raw_greedy_2000amr": {
+      "amr_robots": 2000,
+      "fulfillment_control_mode": "raw_cloud_video_greedy_routing_reactive_alarm",
+      "mapf_solver_nodes": 8,
+      "wan_egress_reduction_pct": 0.0,
+      "sku_inventory_accuracy_pct": 93.8,
+      "mapf_cbs_solve_latency_ms": 420.0,
+      "amr_deadlock_collision_rate_pct": 8.6,
+      "picks_per_hour_gain_pct": 0.0,
+      "cold_chain_spoilage_rate_pct": 4.2,
+      "duplicate_edi_order_mutation_pct": 5.4,
+      "supplychain_slo_met": false
+    }
+  },
+  "trace_sha256": "dc40a6fe1e3bff4f8b0967afa3d80668c898ce5218ad859d23f56ceb6188ce9c"
 }

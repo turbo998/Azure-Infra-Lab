@@ -57,6 +57,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
+    simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -439,6 +440,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "smart_grid_governed_500bays": simulate_smart_grid_iec61850_pmu_sandbox(500, "pmu_edge_fft_acopf_barrier_goose_interlock"),
             "smart_grid_governed_2000bays": simulate_smart_grid_iec61850_pmu_sandbox(2_000, "pmu_edge_fft_acopf_barrier_goose_interlock"),
             "raw_wan_scada_500bays": simulate_smart_grid_iec61850_pmu_sandbox(500, "raw_wan_pmu_unverified_llm_scada_write"),
+        },
+        "demo_39_supplychain_amr_mapf_coldchain_sandbox": {
+            "scm_mapf_500amr": simulate_supplychain_amr_mapf_coldchain_sandbox(500, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
+            "scm_mapf_2000amr": simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
+            "scm_mapf_8000amr": simulate_supplychain_amr_mapf_coldchain_sandbox(8_000, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
+            "raw_greedy_2000amr": simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "raw_cloud_video_greedy_routing_reactive_alarm"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

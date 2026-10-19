@@ -44,6 +44,7 @@ from agent_infra_sizer import (
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
+    simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -753,6 +754,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(grid["smart_grid_slo_met"])
         self.assertAlmostEqual(raw["n1_thermal_overload_rate_pct"], 11.8)
         self.assertFalse(raw["smart_grid_slo_met"])
+
+    def test_supplychain_amr_mapf_coldchain_sandbox(self) -> None:
+        scm = simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "edge_rfid_fusion_mapf_cbs_arrhenius_guard")
+        raw = simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "raw_cloud_video_greedy_routing_reactive_alarm")
+        self.assertEqual(scm["mapf_solver_nodes"], 8)
+        self.assertAlmostEqual(scm["wan_egress_reduction_pct"], 98.1)
+        self.assertAlmostEqual(scm["sku_inventory_accuracy_pct"], 99.94)
+        self.assertAlmostEqual(scm["mapf_cbs_solve_latency_ms"], 11.4)
+        self.assertEqual(scm["amr_deadlock_collision_rate_pct"], 0.0)
+        self.assertAlmostEqual(scm["picks_per_hour_gain_pct"], 34.8)
+        self.assertEqual(scm["cold_chain_spoilage_rate_pct"], 0.0)
+        self.assertEqual(scm["duplicate_edi_order_mutation_pct"], 0.0)
+        self.assertTrue(scm["supplychain_slo_met"])
+        self.assertAlmostEqual(raw["amr_deadlock_collision_rate_pct"], 8.6)
+        self.assertFalse(raw["supplychain_slo_met"])
 
 
 if __name__ == "__main__":

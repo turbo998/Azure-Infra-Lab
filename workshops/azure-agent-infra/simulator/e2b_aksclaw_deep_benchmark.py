@@ -50,6 +50,7 @@ from agent_infra_sizer import (
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
+    simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -501,6 +502,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_smart_grid_iec61850_pmu_sandbox(500, "raw_wan_pmu_unverified_llm_scada_write"),
     ]
 
+    supplychain_amr_mapf_profiles: List[Dict[str, object]] = [
+        simulate_supplychain_amr_mapf_coldchain_sandbox(500, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
+        simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
+        simulate_supplychain_amr_mapf_coldchain_sandbox(8_000, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
+        simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "raw_cloud_video_greedy_routing_reactive_alarm"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -539,6 +547,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "telco_oran_slicing_profiles": telco_oran_slicing_profiles,
         "space_orbital_satellite_profiles": space_orbital_satellite_profiles,
         "smart_grid_iec61850_profiles": smart_grid_iec61850_profiles,
+        "supplychain_amr_mapf_profiles": supplychain_amr_mapf_profiles,
     }
 
 
