@@ -34,6 +34,7 @@ from agent_infra_sizer import (
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
+    simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
@@ -381,6 +382,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_embodied_robotics_digital_twin_sandbox(1_000, "bridge_udp_cold_usd_unfiltered_vla"),
     ]
 
+    online_rft_verifier_profiles: List[Dict[str, object]] = [
+        simulate_online_rft_verifier_selfplay_sandbox(250, "tree_cow_fork_hermetic_verifier_parquet_stream"),
+        simulate_online_rft_verifier_selfplay_sandbox(1_000, "tree_cow_fork_hermetic_verifier_parquet_stream"),
+        simulate_online_rft_verifier_selfplay_sandbox(2_500, "tree_cow_fork_hermetic_verifier_parquet_stream"),
+        simulate_online_rft_verifier_selfplay_sandbox(1_000, "full_replay_shared_ns_jsonl_sync"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -404,6 +412,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "lakehouse_duckdb_onelake_profiles": lakehouse_duckdb_onelake_profiles,
         "multicloud_cleanroom_profiles": multicloud_cleanroom_profiles,
         "embodied_robotics_digital_twin_profiles": embodied_robotics_digital_twin_profiles,
+        "online_rft_verifier_profiles": online_rft_verifier_profiles,
     }
 
 

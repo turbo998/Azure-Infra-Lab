@@ -1570,5 +1570,75 @@
       "wan_blackout_safe_stop_pct": 0.0,
       "embodied_safety_governed": false
     }
+  ],
+  "online_rft_verifier_profiles": [
+    {
+      "concurrent_prompt_groups": 250,
+      "group_size_g": 16,
+      "total_rollout_branches": 4000,
+      "rft_rollout_mode": "tree_cow_fork_hermetic_verifier_parquet_stream",
+      "rollout_nodes": 13,
+      "tree_fork_latency_ms": 68.0,
+      "baseline_group_wallclock_sec": 44.0,
+      "group_rollout_wallclock_sec": 9.2,
+      "wallclock_reduction_pct": 79.1,
+      "vcpu_cost_savings_pct": 74.8,
+      "verifier_mount_overhead_ms": 18.5,
+      "reward_hacking_leakage_pct": 0.0,
+      "trajectory_storage_reduction_pct": 83.4,
+      "gpu_trainer_stall_pct": 0.8,
+      "rft_pipeline_governed": true
+    },
+    {
+      "concurrent_prompt_groups": 1000,
+      "group_size_g": 16,
+      "total_rollout_branches": 16000,
+      "rft_rollout_mode": "tree_cow_fork_hermetic_verifier_parquet_stream",
+      "rollout_nodes": 50,
+      "tree_fork_latency_ms": 68.0,
+      "baseline_group_wallclock_sec": 44.0,
+      "group_rollout_wallclock_sec": 9.2,
+      "wallclock_reduction_pct": 79.1,
+      "vcpu_cost_savings_pct": 74.8,
+      "verifier_mount_overhead_ms": 18.5,
+      "reward_hacking_leakage_pct": 0.0,
+      "trajectory_storage_reduction_pct": 83.4,
+      "gpu_trainer_stall_pct": 0.8,
+      "rft_pipeline_governed": true
+    },
+    {
+      "concurrent_prompt_groups": 2500,
+      "group_size_g": 16,
+      "total_rollout_branches": 40000,
+      "rft_rollout_mode": "tree_cow_fork_hermetic_verifier_parquet_stream",
+      "rollout_nodes": 125,
+      "tree_fork_latency_ms": 68.0,
+      "baseline_group_wallclock_sec": 44.0,
+      "group_rollout_wallclock_sec": 9.2,
+      "wallclock_reduction_pct": 79.1,
+      "vcpu_cost_savings_pct": 74.8,
+      "verifier_mount_overhead_ms": 18.5,
+      "reward_hacking_leakage_pct": 0.0,
+      "trajectory_storage_reduction_pct": 83.4,
+      "gpu_trainer_stall_pct": 0.8,
+      "rft_pipeline_governed": true
+    },
+    {
+      "concurrent_prompt_groups": 1000,
+      "group_size_g": 16,
+      "total_rollout_branches": 16000,
+      "rft_rollout_mode": "full_replay_shared_ns_jsonl_sync",
+      "rollout_nodes": 50,
+      "tree_fork_latency_ms": 0.0,
+      "baseline_group_wallclock_sec": 44.0,
+      "group_rollout_wallclock_sec": 44.0,
+      "wallclock_reduction_pct": 0.0,
+      "vcpu_cost_savings_pct": 0.0,
+      "verifier_mount_overhead_ms": 0.0,
+      "reward_hacking_leakage_pct": 4.6,
+      "trajectory_storage_reduction_pct": 0.0,
+      "gpu_trainer_stall_pct": 29.5,
+      "rft_pipeline_governed": false
+    }
   ]
 }

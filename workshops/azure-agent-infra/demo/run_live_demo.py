@@ -41,6 +41,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
+    simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
@@ -334,6 +335,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "iceoryx_usd_cbf_1k": simulate_embodied_robotics_digital_twin_sandbox(1_000, "iceoryx_usd_prewarm_cbf_safety_shield"),
             "iceoryx_usd_cbf_5k": simulate_embodied_robotics_digital_twin_sandbox(5_000, "iceoryx_usd_prewarm_cbf_safety_shield"),
             "bridge_udp_cold_1k": simulate_embodied_robotics_digital_twin_sandbox(1_000, "bridge_udp_cold_usd_unfiltered_vla"),
+        },
+        "demo_24_online_rft_verifier_selfplay": {
+            "tree_fork_rft_250": simulate_online_rft_verifier_selfplay_sandbox(250, "tree_cow_fork_hermetic_verifier_parquet_stream"),
+            "tree_fork_rft_1k": simulate_online_rft_verifier_selfplay_sandbox(1_000, "tree_cow_fork_hermetic_verifier_parquet_stream"),
+            "tree_fork_rft_2500": simulate_online_rft_verifier_selfplay_sandbox(2_500, "tree_cow_fork_hermetic_verifier_parquet_stream"),
+            "full_replay_rft_1k": simulate_online_rft_verifier_selfplay_sandbox(1_000, "full_replay_shared_ns_jsonl_sync"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

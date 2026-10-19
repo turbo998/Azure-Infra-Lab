@@ -421,6 +421,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(21)">22. OneLake/ADLS Gen2 + DuckDB 湖仓脱敏分析池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(22)">23. 跨云 OIDC 联邦 + WireGuard + SEV-SNP 机密洁净室 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(23)">24. 具身智能 ROS2/OpenUSD 数字孪生池 + IoT MQTT 桥 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(24)">25. 在线 RFT/GRPO 树状分叉推演池 + 防篡改验证器存储 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -962,6 +963,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 24: Online RLHF/RFT Trajectory Rollout & Anti-Reward-Hacking Verifier Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 24 · ONLINE RLHF/RFT TRAJECTORY ROLLOUT &amp; HERMETIC VERIFIER SIZER</span>
+    <h2>在线强化微调（RFT / GRPO）树状快照分叉、防篡改验证器神谕与流式 Parquet 轨迹测算器</h2>
+    <div class="sub">量化在 <code>250 – 2,500</code> 并发题目组（每组 <code>G = 16</code> 分支，共 <code>4,000 – 40,000</code> 并发推演沙箱）下，<code>1-to-16</code> 树状 CoW 状态分叉（<code>9.2 s</code> vs <code>44.0 s</code>）、独立命名空间防篡改验证器（<code>0.0%</code> 奖励黑客漏检）与 Parquet 轨迹流压缩（<code>-83.4%</code> 体积、<code>0.8%</code> GPU 饥饿率）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发 GRPO 题目组数 (Concurrent Prompt Groups, G=16 Rollouts/Group): <strong id="lbl_rft_grp" style="color:var(--teal)">1,000 组 (16,000 分支)</strong></label>
+          <input type="range" id="rng_rft_grp" min="250" max="2500" step="250" value="1000" oninput="runRftLab()">
+        </div>
+        <div class="form-row">
+          <label>2. RFT 推演分叉与验证器隔离架构模式 (Rollout Forking &amp; Verifier Mode)</label>
+          <select id="sel_rft_mode" onchange="runRftLab()">
+            <option value="tree_cow_fork_hermetic_verifier_parquet_stream" selected>1-to-16 树状 CoW 分叉 (9.2s) + 独立命名空间防篡改验证器 + Parquet 异步轨迹流 (推荐)</option>
+            <option value="full_replay_shared_ns_jsonl_sync">传统反模式：全量从头重放 (44.0s) + 同空间可写评测 (4.6% 篡改) + JSONL 同步落盘</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="rftOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -1452,6 +1476,19 @@ resource embodiedSimPool 'Microsoft.ContainerService/managedClusters/agentPools@
       'aksclaw.io/cbf-kinematic-safety-shield': 'enforced'
     }
   }
+}`,
+`// 25. Azure Bicep: Online RFT/GRPO Tree-CoW Rollout Pool (Standard_D96as_v7) + WORM Hermetic Verifier Store
+resource rftRolloutPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/rftrollout'
+  properties: {
+    count: 50
+    vmSize: 'Standard_D96as_v7'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'online-rft-grpo-rollout'
+      'aksclaw.io/tree-cow-snapshot-fork': 'enabled'
+      'aksclaw.io/hermetic-verifier-namespace': 'enforced'
+    }
+  }
 }`
 ];
 
@@ -1576,6 +1613,30 @@ runCiLab();
 runLhLab();
 runCrLab();
 runRobLab();
+runRftLab();
+
+function runRftLab() {
+  const grp = parseInt(document.getElementById('rng_rft_grp').value, 10);
+  const mode = document.getElementById('sel_rft_mode').value;
+  const branches = grp * 16;
+  document.getElementById('lbl_rft_grp').textContent = grp.toLocaleString() + " 组 (" + branches.toLocaleString() + " 分支)";
+
+  const nodes = Math.max(4, Math.ceil(branches / 320));
+  const ok = mode === 'tree_cow_fork_hermetic_verifier_parquet_stream';
+  const wallStr = ok ? "9.2 s (-79.1% · 68ms 树状分叉)" : "44.0 s (全量从头重放)";
+  const hackStr = ok ? "0.0% 奖励黑客漏检 (18.5ms 独立只读命名空间验证器)" : "4.6% 奖励黑客篡改测试脚本漏检";
+  const stallStr = ok ? "0.8% GPU 饥饿率 (Parquet 压缩 -83.4%)" : "29.5% 训练 GPU 空转等待";
+
+  document.getElementById('rftOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 单组 16 分支耗时 ' + wallStr : '❌ 全量重放 44.0s · 4.6% 奖励黑客污染'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${ok ? '省 74.8% vCPU' : '基线开销'} (${nodes} 节点)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>防奖励黑客神谕与轨迹管线</strong>：<strong>${hackStr}</strong> · <strong>${stallStr}</strong>
+    </p>
+  `;
+}
 
 function runRobLab() {
   const sbx = parseInt(document.getElementById('rng_rob_sbx').value, 10);

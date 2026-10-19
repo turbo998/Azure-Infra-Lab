@@ -28,6 +28,7 @@ from agent_infra_sizer import (
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
+    simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
@@ -523,6 +524,24 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(raw["usd_episode_init_sec"], 38.50)
         self.assertAlmostEqual(raw["kinematic_collision_violation_pct"], 6.8)
         self.assertFalse(raw["embodied_safety_governed"])
+
+    def test_online_rft_verifier_selfplay_sandbox(self) -> None:
+        rft = simulate_online_rft_verifier_selfplay_sandbox(1_000, "tree_cow_fork_hermetic_verifier_parquet_stream")
+        naive = simulate_online_rft_verifier_selfplay_sandbox(1_000, "full_replay_shared_ns_jsonl_sync")
+        self.assertEqual(rft["total_rollout_branches"], 16_000)
+        self.assertAlmostEqual(rft["tree_fork_latency_ms"], 68.0)
+        self.assertAlmostEqual(rft["group_rollout_wallclock_sec"], 9.2)
+        self.assertAlmostEqual(rft["wallclock_reduction_pct"], 79.1)
+        self.assertAlmostEqual(rft["vcpu_cost_savings_pct"], 74.8)
+        self.assertAlmostEqual(rft["verifier_mount_overhead_ms"], 18.5)
+        self.assertEqual(rft["reward_hacking_leakage_pct"], 0.0)
+        self.assertAlmostEqual(rft["trajectory_storage_reduction_pct"], 83.4)
+        self.assertAlmostEqual(rft["gpu_trainer_stall_pct"], 0.8)
+        self.assertTrue(rft["rft_pipeline_governed"])
+        self.assertAlmostEqual(naive["group_rollout_wallclock_sec"], 44.0)
+        self.assertAlmostEqual(naive["reward_hacking_leakage_pct"], 4.6)
+        self.assertAlmostEqual(naive["gpu_trainer_stall_pct"], 29.5)
+        self.assertFalse(naive["rft_pipeline_governed"])
 
 
 if __name__ == "__main__":

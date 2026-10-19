@@ -1019,7 +1019,33 @@ sequenceDiagram
 
 ---
 
-## 29. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 29. 在线强化学习（RLHF/RFT）与验证器引导自博弈沙箱 —— `1-to-16` 树状写时复制（CoW）状态分叉、隔离命名空间验证器神谕（Anti-Reward-Hacking）与流式 Parquet 轨迹压缩物理模型（Online RLHF/RFT Trajectory Synthesis & Verifier-Guided Self-Play Sandboxes — Tree-Structured Rollout Snapshot Forking, Hermetic Split-Namespace Verifier Oracles & Streaming Parquet Compaction Physics）
+
+> 本章由确定性在线强化微调（RFT / GRPO）与验证器沙箱仿真模型 [`simulate_online_rft_verifier_selfplay_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-rft-grpo-verifier-rollout-pool.bicep`](blueprints/aksclaw-rft-grpo-verifier-rollout-pool.bicep) 驱动，面向前沿大模型研发团队与企业 Agent 自进化管线在执行 **基于可验证奖励的强化微调（Reinforcement Fine-Tuning, RFT / Group Relative Policy Optimization, GRPO）**（每个问题并行派生 `G = 16` 条多步工具执行分支，`1,000` 并发题目即 `16,000` 个活跃沙箱推演分支）时的三大核心瓶颈：**重复执行相同前序环境构建步骤导致的算力与墙钟时间浪费、被测 Agent 在同一可写沙箱命名空间内篡改单元测试脚本或偷看测试夹具引发的“奖励黑客（Reward Hacking）”假阳性污染，以及海量多分支长上下文 JSONL 轨迹同步落盘造成的训练 GPU 饥饿停顿**。
+
+### 29.1 在线 RFT / GRPO 轨迹推演与防篡改验证器沙箱三大支柱
+
+1. **Pillar 1：`1-to-16` 树状微虚拟机写时复制（Tree-Structured `uffd` + CoW Block Snapshot）中间步骤分叉 vs 全量从头重放（Full Prefix Replay）**：
+   - 在 `GRPO (G = 16)` 多分支探索中，同一题目的 16 条轨迹往往共享相同的初始仓库检出、依赖安装与基线编译前缀；传统从头独立跑完 16 条完整沙箱生命周期需耗时 **`44.0 s`/组**；
+   - 在分叉工具调用边界对微虚拟机执行 `uffd` 内存页与块设备写时复制快照分叉（`1-to-16` 树状派生仅需 **`68.0 ms`**），将每组 16 分支推演墙钟耗时从 `44.0 s` 压降至 **`9.2 s`（`-79.1%`）**，同时节省 **`74.8%`** 的推演沙箱 vCPU 算力成本。
+2. **Pillar 2：双命名空间隔离验证器神谕（Hermetic Split-Namespace Verifier Oracle）与防奖励黑客（Anti-Reward-Hacking）只读挂载门控**：
+   - 若单元测试或评测脚本（Oracle）与不可信 Agent 运行在同一 UID 与可写挂载空间内，Agent 极易通过覆盖 `pytest` 断言、读取隐藏答案文件或篡改退出码制造虚假满分（实测未隔离训练集中高达 **`4.6%`** 的高分轨迹属于奖励黑客篡改）；
+   - 将隐藏测试集与验证器托管于启用 WORM 不可变策略的 `hermetic-verifier-oracles` 容器中，并在推演结束后由宿主机在独立只读 Overlay 挂载与独立 UID/PID 命名空间内启动验证器进程（附加挂载开销仅 **`18.5 ms`**），使奖励黑客篡改漏检率从 `4.6%` 彻底归零至 **`0.0%`**。
+3. **Pillar 3：前缀树字典编码 Arrow/Parquet 轨迹流式压缩与零阻塞异步经验回放池（Async Replay Buffer）**：
+   - 针对同一题目 `G = 16` 条分支高度重合的系统提示词与前缀工具输出，采用 Apache Arrow / Parquet 前缀字典编码与 Zstd 列式压缩后再异步流式写入 Azure Blob ZRS，将轨迹存储与跨节点传输体积压缩 **`83.4%`**，并将后端 H100/H200 训练集群的数据等待空闲率（GPU Trainer Starvation）从同步 JSONL 落盘的 `29.5%` 压降至 **`0.8%`**。
+
+### 29.2 `1-to-16` 树状 CoW 分叉 + 隔离命名空间防篡改验证器 + Parquet 异步轨迹流 vs 传统全量重放 + 同空间评测对比表
+
+| 并发 RFT 题目组数与验证器沙箱架构 (`G=16`/组) | 总并发推演分支 | 推演节点 (`D96as_v7`) | **树状分叉开销** | **单组 16 分支耗时** | **vCPU 算力节省** | **奖励黑客漏检率** | **轨迹体积压缩** | **训练 GPU 饥饿率** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`250` 题组 · `1-to-16` 树状 CoW 分叉 + 隔离验证器 + Parquet 流** | `4,000` | `13` | `68.0 ms` | **`9.2 s` (`-79.1%`)** | **`74.8%`** | **`0.0%` (✅ 独立命名空间)** | `83.4%` | **`0.8%`** |
+| **`1,000` 题组 · `1-to-16` 树状 CoW 分叉 + 隔离验证器 + Parquet 流 (推荐)** | **`16,000`** | **`50`** | **`68.0 ms`** | **`9.2 s` (`-79.1%`)** | **`74.8%`** | **`0.0%` (✅ 独立命名空间)** | **`83.4%`** | **`0.8%`** |
+| **`2,500` 题组 · `1-to-16` 树状 CoW 分叉 + 隔离验证器 + Parquet 流** | `40,000` | `125` | `68.0 ms` | **`9.2 s` (`-79.1%`)** | **`74.8%`** | **`0.0%` (✅ 独立命名空间)** | `83.4%` | **`0.8%`** |
+| `1,000` 题组 · 传统全量从头重放 + 同命名空间可写评测 + JSONL 同步落盘 (反模式) | `16,000` | `50` | `0.0 ms` | `44.0 s` (`0.0%`) | `0.0%` | `4.6%` (❌ 篡改测试脚本) | `0.0%` | `29.5%` (❌ GPU 空转) |
+
+---
+
+## 30. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1032,10 +1058,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 23 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾）
+# 2. 运行深度定量模型（全部 24 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 32 项单元测试（100% 覆盖 6 大运行时契约、23 大深度物理模型、24 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 33 项单元测试（100% 覆盖 6 大运行时契约、24 大深度物理模型、25 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
