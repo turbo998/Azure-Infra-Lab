@@ -47,6 +47,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -369,6 +370,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "chaos_fenced_10k": simulate_chaos_byzantine_fault_injection_gameday(10_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
             "chaos_fenced_50k": simulate_chaos_byzantine_fault_injection_gameday(50_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
             "unverified_10k": simulate_chaos_byzantine_fault_injection_gameday(10_000, "unverified_runbook_no_fencing_unbounded_retry"),
+        },
+        "demo_29_scientific_hpc_lustre_sandbox": {
+            "lustre_ib_250": simulate_scientific_hpc_lustre_mpi_sandbox(250, "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt"),
+            "lustre_ib_1k": simulate_scientific_hpc_lustre_mpi_sandbox(1_000, "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt"),
+            "lustre_ib_4k": simulate_scientific_hpc_lustre_mpi_sandbox(4_000, "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt"),
+            "nfs_default_1k": simulate_scientific_hpc_lustre_mpi_sandbox(1_000, "nfs_default_scheduler_sync_ckpt"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

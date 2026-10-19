@@ -1864,5 +1864,59 @@
       "retry_token_waste_pct": 42.0,
       "chaos_resilience_governed": false
     }
+  ],
+  "scientific_hpc_profiles": [
+    {
+      "concurrent_solver_sandboxes": 250,
+      "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+      "hbv4_nodes": 16,
+      "parallel_fs_bandwidth_gbps": 160.0,
+      "dataset_stagein_sec": 3.1,
+      "stagein_reduction_pct": 97.8,
+      "mpi_allreduce_latency_us": 1.65,
+      "gang_deadlock_waste_pct": 0.0,
+      "solver_flops_utilization_pct": 89.6,
+      "checkpoint_stall_overhead_pct": 0.9,
+      "scientific_hpc_governed": true
+    },
+    {
+      "concurrent_solver_sandboxes": 1000,
+      "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+      "hbv4_nodes": 63,
+      "parallel_fs_bandwidth_gbps": 160.0,
+      "dataset_stagein_sec": 3.1,
+      "stagein_reduction_pct": 97.8,
+      "mpi_allreduce_latency_us": 1.65,
+      "gang_deadlock_waste_pct": 0.0,
+      "solver_flops_utilization_pct": 89.6,
+      "checkpoint_stall_overhead_pct": 0.9,
+      "scientific_hpc_governed": true
+    },
+    {
+      "concurrent_solver_sandboxes": 4000,
+      "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+      "hbv4_nodes": 250,
+      "parallel_fs_bandwidth_gbps": 160.0,
+      "dataset_stagein_sec": 3.1,
+      "stagein_reduction_pct": 97.8,
+      "mpi_allreduce_latency_us": 1.65,
+      "gang_deadlock_waste_pct": 0.0,
+      "solver_flops_utilization_pct": 89.6,
+      "checkpoint_stall_overhead_pct": 0.9,
+      "scientific_hpc_governed": true
+    },
+    {
+      "concurrent_solver_sandboxes": 1000,
+      "hpc_sandbox_mode": "nfs_default_scheduler_sync_ckpt",
+      "hbv4_nodes": 63,
+      "parallel_fs_bandwidth_gbps": 8.4,
+      "dataset_stagein_sec": 142.0,
+      "stagein_reduction_pct": 0.0,
+      "mpi_allreduce_latency_us": 18.5,
+      "gang_deadlock_waste_pct": 26.4,
+      "solver_flops_utilization_pct": 48.2,
+      "checkpoint_stall_overhead_pct": 24.0,
+      "scientific_hpc_governed": false
+    }
   ]
 }

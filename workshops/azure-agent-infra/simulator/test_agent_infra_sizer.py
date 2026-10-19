@@ -34,6 +34,7 @@ from agent_infra_sizer import (
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -611,6 +612,22 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(unv["split_brain_corruption_pct"], 4.8)
         self.assertAlmostEqual(unv["retry_token_waste_pct"], 42.0)
         self.assertFalse(unv["chaos_resilience_governed"])
+
+    def test_scientific_hpc_lustre_mpi_sandbox(self) -> None:
+        hpc = simulate_scientific_hpc_lustre_mpi_sandbox(1_000, "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt")
+        nfs = simulate_scientific_hpc_lustre_mpi_sandbox(1_000, "nfs_default_scheduler_sync_ckpt")
+        self.assertAlmostEqual(hpc["parallel_fs_bandwidth_gbps"], 160.0)
+        self.assertAlmostEqual(hpc["dataset_stagein_sec"], 3.1)
+        self.assertAlmostEqual(hpc["stagein_reduction_pct"], 97.8)
+        self.assertAlmostEqual(hpc["mpi_allreduce_latency_us"], 1.65)
+        self.assertEqual(hpc["gang_deadlock_waste_pct"], 0.0)
+        self.assertAlmostEqual(hpc["solver_flops_utilization_pct"], 89.6)
+        self.assertAlmostEqual(hpc["checkpoint_stall_overhead_pct"], 0.9)
+        self.assertTrue(hpc["scientific_hpc_governed"])
+        self.assertAlmostEqual(nfs["parallel_fs_bandwidth_gbps"], 8.4)
+        self.assertAlmostEqual(nfs["dataset_stagein_sec"], 142.0)
+        self.assertAlmostEqual(nfs["gang_deadlock_waste_pct"], 26.4)
+        self.assertFalse(nfs["scientific_hpc_governed"])
 
 
 if __name__ == "__main__":

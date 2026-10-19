@@ -1145,7 +1145,31 @@ sequenceDiagram
 
 ---
 
-## 34. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 34. 科学计算与 AI-for-Science 智能体沙箱 —— Azure Managed Lustre 并行文件系统挂载、HBv4/NDv5 InfiniBand 拓扑成组调度（Gang Scheduling）与异步检查点物理模型（Scientific HPC & AI-for-Science Agent Sandboxes — Azure Managed Lustre, HBv4 NDR InfiniBand Gang Co-Scheduling & VELOC Async Checkpointing）
+
+> 本章由确定性科学计算与 AI-for-Science 沙箱仿真模型 [`simulate_scientific_hpc_lustre_mpi_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-amlfs-lustre-hbv4-scientific-hpc.bicep`](blueprints/aksclaw-amlfs-lustre-hbv4-scientific-hpc.bicep) 驱动，面向材料发现、分子动力学、CFD 流体仿真与 PDE 求解智能体集群（Microsoft Discovery / MatterGen / BioEmu / GROMACS / OpenFOAM，`250–4,000` 并发求解沙箱）解决 **千级沙箱并发读写 50GB 分子轨迹/网格张量时的 NFS/BlobFuse 元数据锁拥塞、Kubernetes 默认调度器逐 Pod 分配 MPI 作业导致的资源死锁，以及同步检查点刷盘吞噬计算窗口的三大工程瓶颈**。
+
+### 34.1 AI-for-Science 智能体沙箱三大工程支柱
+
+1. **Pillar 1：Azure Managed Lustre (`AMLFS`) LNet RDMA 并行 POSIX 条带化挂载（`160.0 GB/s` vs `8.4 GB/s` 标准 NFSv4）**：
+   - 通过 `AMLFS-Durable-Premium-250` 配合 `16 OST` 条带化（Striping）与 LNet RDMA 客户端直连，在 `1,000` 个并发科学计算沙箱同时加载/写回 `50 GB` 波函数与分子动力学轨迹时提供 **`160.0 GB/s` 聚合 POSIX 带宽（提速 `19.0x`）**，将数据集预热（Stage-In）耗时从 NFSv4 的 `142.0 s` 压缩至 **`3.1 s`（`-97.8%`）**。
+2. **Pillar 2：`Standard_HB176rs_v4`（AMD Genoa-X 3D V-Cache + `400 Gb/s` NDR InfiniBand）Kueue 拓扑感知全有或全无成组调度（Gang Co-Scheduling）**：
+   - 针对多节点耦合 MPI + PyTorch 代理模型求解任务，Kueue 强制执行同葉交换机/同 InfiniBand PKey 域的 All-or-Nothing 成组分配，将默认 K8s 调度器因碎片化等待造成的 **`26.4%` 半分配死锁算力浪费清零（`0.0%`）**，并将跨节点 MPI AllReduce 通信延迟从 `18.50 us` 压降至 **`1.65 us`（`-91.1%`）**，使有效科学计算 FLOPs 利用率从 `48.2%` 跃升至 **`89.6%`**。
+3. **Pillar 3：VELOC 本地 NVMe 写时复制（CoW）突发快照 + 异步 Managed Lustre 检查点刷盘**：
+   - 求解器每 15 分钟先以 **`0.48 s`** 将内存态 PDE/DFT 波函数快照写入宿主机本地 NVMe，随后后台异步流式刷入 Azure Managed Lustre 与 Blob 归档层，将检查点停顿（Stall Overhead）占总计算时长的比例从同步写盘的 `24.0%` 压降至 **`0.9%`（`-96.2%`）**。
+
+### 34.2 Azure Managed Lustre + HBv4 NDR InfiniBand 成组调度 vs 传统 NFS + 默认调度器对比表
+
+| 并发科学计算沙箱规模与 HPC 底座架构 | 所需 `HB176rs_v4` 节点 | **并行存储带宽** | **`50 GB` 轨迹加载耗时** | **MPI AllReduce 延迟** | **成组死锁浪费率** | **有效算力利用率** | **检查点停顿开销** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`250` 求解沙箱 · Managed Lustre + Kueue IB Gang + VELOC 异步检查点** | `16` | **`160.0 GB/s`** | **`3.1 s` (`-97.8%`)** | **`1.65 us` (`-91.1%`)** | **`0.0%`** | **`89.6%`** | **`0.9%` (`-96.2%`)** |
+| **`1,000` 求解沙箱 · Managed Lustre + Kueue IB Gang + VELOC 异步检查点 (推荐)** | **`63`** | **`160.0 GB/s`** | **`3.1 s` (`-97.8%`)** | **`1.65 us` (`-91.1%`)** | **`0.0%`** | **`89.6%`** | **`0.9%` (`-96.2%`)** |
+| **`4,000` 求解沙箱 · Managed Lustre + Kueue IB Gang + VELOC 异步检查点** | `250` | **`160.0 GB/s`** | **`3.1 s` (`-97.8%`)** | **`1.65 us` (`-91.1%`)** | **`0.0%`** | **`89.6%`** | **`0.9%` (`-96.2%`)** |
+| `1,000` 求解沙箱 · 标准 NFSv4 + K8s 默认调度器 + 同步写盘检查点 (反模式) | `63` | `8.4 GB/s` | `142.0 s` (`0.0%`) | `18.50 us` | `26.4%` (❌ 死锁等待) | `48.2%` | `24.0%` |
+
+---
+
+## 35. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1158,10 +1182,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 28 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂）
+# 2. 运行深度定量模型（全部 29 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算与 AI-for-Science 沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 37 项单元测试（100% 覆盖 6 大运行时契约、28 大深度物理模型、29 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 38 项单元测试（100% 覆盖 6 大运行时契约、29 大深度物理模型、30 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

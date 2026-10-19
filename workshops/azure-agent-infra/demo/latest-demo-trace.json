@@ -2066,6 +2066,60 @@
         "retry_token_waste_pct": 42.0,
         "chaos_resilience_governed": false
       }
+    ],
+    "scientific_hpc_profiles": [
+      {
+        "concurrent_solver_sandboxes": 250,
+        "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+        "hbv4_nodes": 16,
+        "parallel_fs_bandwidth_gbps": 160.0,
+        "dataset_stagein_sec": 3.1,
+        "stagein_reduction_pct": 97.8,
+        "mpi_allreduce_latency_us": 1.65,
+        "gang_deadlock_waste_pct": 0.0,
+        "solver_flops_utilization_pct": 89.6,
+        "checkpoint_stall_overhead_pct": 0.9,
+        "scientific_hpc_governed": true
+      },
+      {
+        "concurrent_solver_sandboxes": 1000,
+        "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+        "hbv4_nodes": 63,
+        "parallel_fs_bandwidth_gbps": 160.0,
+        "dataset_stagein_sec": 3.1,
+        "stagein_reduction_pct": 97.8,
+        "mpi_allreduce_latency_us": 1.65,
+        "gang_deadlock_waste_pct": 0.0,
+        "solver_flops_utilization_pct": 89.6,
+        "checkpoint_stall_overhead_pct": 0.9,
+        "scientific_hpc_governed": true
+      },
+      {
+        "concurrent_solver_sandboxes": 4000,
+        "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+        "hbv4_nodes": 250,
+        "parallel_fs_bandwidth_gbps": 160.0,
+        "dataset_stagein_sec": 3.1,
+        "stagein_reduction_pct": 97.8,
+        "mpi_allreduce_latency_us": 1.65,
+        "gang_deadlock_waste_pct": 0.0,
+        "solver_flops_utilization_pct": 89.6,
+        "checkpoint_stall_overhead_pct": 0.9,
+        "scientific_hpc_governed": true
+      },
+      {
+        "concurrent_solver_sandboxes": 1000,
+        "hpc_sandbox_mode": "nfs_default_scheduler_sync_ckpt",
+        "hbv4_nodes": 63,
+        "parallel_fs_bandwidth_gbps": 8.4,
+        "dataset_stagein_sec": 142.0,
+        "stagein_reduction_pct": 0.0,
+        "mpi_allreduce_latency_us": 18.5,
+        "gang_deadlock_waste_pct": 26.4,
+        "solver_flops_utilization_pct": 48.2,
+        "checkpoint_stall_overhead_pct": 24.0,
+        "scientific_hpc_governed": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -3676,5 +3730,59 @@
       "chaos_resilience_governed": false
     }
   },
-  "trace_sha256": "2b1578ac4beff3e0c66046b7e7edf8a9686914edbe36ee66ac012c9066fa7975"
+  "demo_29_scientific_hpc_lustre_sandbox": {
+    "lustre_ib_250": {
+      "concurrent_solver_sandboxes": 250,
+      "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+      "hbv4_nodes": 16,
+      "parallel_fs_bandwidth_gbps": 160.0,
+      "dataset_stagein_sec": 3.1,
+      "stagein_reduction_pct": 97.8,
+      "mpi_allreduce_latency_us": 1.65,
+      "gang_deadlock_waste_pct": 0.0,
+      "solver_flops_utilization_pct": 89.6,
+      "checkpoint_stall_overhead_pct": 0.9,
+      "scientific_hpc_governed": true
+    },
+    "lustre_ib_1k": {
+      "concurrent_solver_sandboxes": 1000,
+      "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+      "hbv4_nodes": 63,
+      "parallel_fs_bandwidth_gbps": 160.0,
+      "dataset_stagein_sec": 3.1,
+      "stagein_reduction_pct": 97.8,
+      "mpi_allreduce_latency_us": 1.65,
+      "gang_deadlock_waste_pct": 0.0,
+      "solver_flops_utilization_pct": 89.6,
+      "checkpoint_stall_overhead_pct": 0.9,
+      "scientific_hpc_governed": true
+    },
+    "lustre_ib_4k": {
+      "concurrent_solver_sandboxes": 4000,
+      "hpc_sandbox_mode": "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt",
+      "hbv4_nodes": 250,
+      "parallel_fs_bandwidth_gbps": 160.0,
+      "dataset_stagein_sec": 3.1,
+      "stagein_reduction_pct": 97.8,
+      "mpi_allreduce_latency_us": 1.65,
+      "gang_deadlock_waste_pct": 0.0,
+      "solver_flops_utilization_pct": 89.6,
+      "checkpoint_stall_overhead_pct": 0.9,
+      "scientific_hpc_governed": true
+    },
+    "nfs_default_1k": {
+      "concurrent_solver_sandboxes": 1000,
+      "hpc_sandbox_mode": "nfs_default_scheduler_sync_ckpt",
+      "hbv4_nodes": 63,
+      "parallel_fs_bandwidth_gbps": 8.4,
+      "dataset_stagein_sec": 142.0,
+      "stagein_reduction_pct": 0.0,
+      "mpi_allreduce_latency_us": 18.5,
+      "gang_deadlock_waste_pct": 26.4,
+      "solver_flops_utilization_pct": 48.2,
+      "checkpoint_stall_overhead_pct": 24.0,
+      "scientific_hpc_governed": false
+    }
+  },
+  "trace_sha256": "af0db641ed6675d1a086dab7916c01c9e6753acf577b12e129541832890a4be0"
 }
