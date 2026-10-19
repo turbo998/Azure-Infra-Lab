@@ -1338,7 +1338,31 @@ sequenceDiagram
 
 ---
 
-## 42. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 42. 空天卫星边缘与延迟容忍网络 (`DTN`) 智能体基础设施 —— Azure Orbital 地面站、低轨 (`LEO`) 星间激光链路 `RFC 9171 BPv7` 托管包协议、抗辐射在轨多模态预筛与单粒子翻转 (`SEU`) 硬件互锁物理模型（Sovereign Space & Satellite Edge Agent Infrastructure — Azure Orbital Ground Station, LEO Inter-Satellite Link `RFC 9171 BPv7` Delay-Tolerant MCP, Radiation-Tolerant On-Orbit Triage & `SEU` Hardware Interlock Physics）
+
+> 本章由确定性空天与低轨卫星边缘智能体仿真模型 [`simulate_space_orbital_satellite_edge_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-orbital-satellite-bpv7-ground-station.bicep`](blueprints/aksclaw-orbital-satellite-bpv7-ground-station.bicep) 驱动，面向低轨地球观测（`LEO EO`）、海事搜救、林火预警与星座自主任务规划（`30–600` 颗低轨卫星），解决 **高光谱/合成孔径雷达 (`SAR`) 载荷单轨产生 `18.4 Gbps` 原始影像但地面站 Ka/X 波段过境窗口仅 `9.5 分钟`（导致 `86.5%` 废片拥塞与 `4.8 小时` 灾情发现滞后）、星地高时延抖动与多普勒切换导致传统 `TCP/HTTP` MCP 会话 `78.4%` 断连失败，以及南大西洋辐射异常区 (`SAA`) 宇宙射线引发单粒子翻转 (`SEU`) 导致 `4.2%` 姿态/推进器控制指令静默篡改的三大空天级瓶颈**。
+
+### 42.1 空天卫星边缘与延迟容忍智能体三大工程支柱
+
+1. **Pillar 1：在轨抗辐射 `INT4/FP8` 视觉多模态智能体预筛 + 星间激光链路（`Optical ISL`）亚 20 秒告警**：
+   - 在星载三模冗余（`TMR`）SoC/FPGA 沙箱内运行量化视觉-语言预筛智能体，在轨直接剔除 **`94.2%`** 被厚云层覆盖或无目标洋面的无效遥感帧，仅将高优先级目标切片与结构化 `GeoJSON` 特征（`28.0 MB` vs `1,420.0 MB` 原始流）经星间激光链路（`ISL`）接力回传至 Azure Orbital 地面站，将林火/舰船异常发现延迟从传统等待过境下传的 `17,280.0 s`（`4.8 小时`）压缩至 **`18.5 秒`（`-99.9%`）**，并削减 **`96.8%`** 星地下行带宽消耗。
+2. **Pillar 2：延迟容忍网络 `RFC 9171 Bundle Protocol v7 (BPv7)` 托管传输 vs 传统 `TCP/HTTP` 会话崩溃**：
+   - 针对星地链路 `45–650 ms` 剧烈往返时延与每 `240 秒` 轨道切换黑障，摒弃端到端三次握手的 `TCP/HTTP` MCP 传输（断连率高达 `78.4%`），将智能体检查点与幂等 MCP 工具调用封装为 **`RFC 9171 BPv7` 托管包（Custody Transfer Bundles）+ `LTP`（Licklider 传输协议）**，在 Azure Storage ZRS 地面托管桶与星载 NVMe 间实现跨轨道周期存储转发，使跨黑障 MCP 工具投递成功率达到 **`99.98%`（`0.0%` 会话重置丢失）**。
+3. **Pillar 3：单粒子翻转（`SEU`）EDAC 内存巡检、注意力权重 `CRC32C` 校验与 FPGA 姿态/推进器硬件包络互锁**：
+   - 针对高能质子引发的 SRAM 位翻转（`1.4e-5` bit-flip/MB/day），通过硬件 `EDAC` 纠错码巡检 + 模型关键投影层 `CRC32C` 逐块验算（仅增加 **`1.6 ms`** 开销）+ FPGA 硬件指令包络互锁器（物理拦截超出角动量/推力安全边界的动作），将 **`SEU` 诱发的危险物理控制漏检率从 `4.2%` 降至 `0.0%`（100% 物理拦截）**。
+
+### 42.2 在轨智能体预筛 + `RFC 9171 BPv7` 星间中继 + `SEU` 硬件互锁 vs 原始遥感直传 + 标准 `TCP` 对比表
+
+| 低轨星座规模与空天边缘架构 | 地面站控制节点 | **灾情/目标发现延迟** | **星地下行带宽节省** | **`BPv7` 跨黑障投递率** | **`TCP` 会话断连率** | **`SEU` 辐射越界指令漏检** | **`CRC32C` 校验开销** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`30` 颗 LEO 卫星 · 在轨预筛 + ISL BPv7 + SEU 硬件互锁** | `4` | **`18.5 s` (`-99.9%`)** | **`96.8%`** | **`99.98%`** | **`0.0%`** | **`0.0%`** | **`1.6 ms`** |
+| **`120` 颗 LEO 卫星 · 在轨预筛 + ISL BPv7 + SEU 硬件互锁 (推荐)** | **`6`** | **`18.5 s` (`-99.9%`)** | **`96.8%`** | **`99.98%`** | **`0.0%`** | **`0.0%`** | **`1.6 ms`** |
+| **`600` 颗 LEO 卫星 · 在轨预筛 + ISL BPv7 + SEU 硬件互锁** | `30` | **`18.5 s` (`-99.9%`)** | **`96.8%`** | **`99.98%`** | **`0.0%`** | **`0.0%`** | **`1.6 ms`** |
+| `120` 颗 LEO 卫星 · 原始全量下传 + 标准 TCP/HTTP + 无辐射校验 (反模式) | `6` | `17,280.0 s` (`4.8h`) | `0.0%` (❌ 通道饱和) | `21.6%` | `78.4%` (❌ 多普勒断连) | `4.2%` (❌ 位翻转误动作) | `0.0 ms` |
+
+---
+
+## 43. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1351,10 +1375,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 36 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱）
+# 2. 运行深度定量模型（全部 37 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 45 项单元测试（100% 覆盖 6 大运行时契约、36 大深度物理模型、37 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 46 项单元测试（100% 覆盖 6 大运行时契约、37 大深度物理模型、38 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

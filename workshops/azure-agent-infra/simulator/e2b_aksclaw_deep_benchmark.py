@@ -48,6 +48,7 @@ from agent_infra_sizer import (
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_space_orbital_satellite_edge_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -485,6 +486,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_telco_oran_network_slicing_sandbox(5_000, "kernel_veth_remote_llm_unverified_slice_mutation"),
     ]
 
+    space_orbital_satellite_profiles: List[Dict[str, object]] = [
+        simulate_space_orbital_satellite_edge_sandbox(30, "orbital_isl_bpv7_rad_triage_seu_interlock"),
+        simulate_space_orbital_satellite_edge_sandbox(120, "orbital_isl_bpv7_rad_triage_seu_interlock"),
+        simulate_space_orbital_satellite_edge_sandbox(600, "orbital_isl_bpv7_rad_triage_seu_interlock"),
+        simulate_space_orbital_satellite_edge_sandbox(120, "raw_downlink_tcp_http_unshielded_ram"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -521,6 +529,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "healthcare_fhir_cfr11_profiles": healthcare_fhir_cfr11_profiles,
         "quantum_hybrid_qir_profiles": quantum_hybrid_qir_profiles,
         "telco_oran_slicing_profiles": telco_oran_slicing_profiles,
+        "space_orbital_satellite_profiles": space_orbital_satellite_profiles,
     }
 
 

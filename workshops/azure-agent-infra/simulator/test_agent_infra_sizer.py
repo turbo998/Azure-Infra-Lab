@@ -42,6 +42,7 @@ from agent_infra_sizer import (
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_space_orbital_satellite_edge_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -725,6 +726,18 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(oran["telco_oran_slo_met"])
         self.assertAlmostEqual(leg["urllc_sla_violation_rate_pct"], 16.4)
         self.assertFalse(leg["telco_oran_slo_met"])
+
+    def test_space_orbital_satellite_edge_sandbox(self) -> None:
+        orb = simulate_space_orbital_satellite_edge_sandbox(120, "orbital_isl_bpv7_rad_triage_seu_interlock")
+        raw = simulate_space_orbital_satellite_edge_sandbox(120, "raw_downlink_tcp_http_unshielded_ram")
+        self.assertAlmostEqual(orb["anomaly_detection_latency_sec"], 18.5)
+        self.assertAlmostEqual(orb["downlink_bandwidth_reduction_pct"], 96.8)
+        self.assertAlmostEqual(orb["bpv7_tool_delivery_rate_pct"], 99.98)
+        self.assertEqual(orb["tcp_session_reset_failure_pct"], 0.0)
+        self.assertEqual(orb["seu_unsafe_actuation_leak_pct"], 0.0)
+        self.assertTrue(orb["orbital_edge_governed"])
+        self.assertAlmostEqual(raw["tcp_session_reset_failure_pct"], 78.4)
+        self.assertFalse(raw["orbital_edge_governed"])
 
 
 if __name__ == "__main__":

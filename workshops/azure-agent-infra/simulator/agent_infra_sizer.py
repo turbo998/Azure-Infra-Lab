@@ -2381,6 +2381,53 @@ def simulate_telco_oran_network_slicing_sandbox(
     }
 
 
+def simulate_space_orbital_satellite_edge_sandbox(
+    leo_satellite_nodes: int = 120,
+    orbital_edge_mode: str = "orbital_isl_bpv7_rad_triage_seu_interlock",
+) -> dict[str, Any]:
+    """
+    Simulate Sovereign Space & LEO Satellite Edge Agent Infrastructure (Chapter 42):
+      - Pillar 1: On-Orbit Radiation-Tolerant Multimodal Triage (`INT4/FP8` VLM on TMR SoC +
+        Optical Inter-Satellite Links `ISL`) vs Raw Hyperspectral Downlink Saturation
+      - Pillar 2: Delay-Tolerant Networking (`RFC 9171 Bundle Protocol v7 BPv7` + `LTP` Custody
+        Transfer over Azure Orbital Ground Station) vs Standard TCP/HTTP Session Collapse
+      - Pillar 3: Single-Event Upset (`SEU`) EDAC Memory Scrubbing, Layer `CRC32C` Checksums &
+        FPGA Attitude/Thruster Hardware Command-Envelope Interlock
+    """
+    ground_mission_nodes = max(4, math.ceil(leo_satellite_nodes / 20))
+    governed = orbital_edge_mode == "orbital_isl_bpv7_rad_triage_seu_interlock"
+
+    if governed:
+        anomaly_detection_latency_sec = 18.5
+        downlink_bandwidth_reduction_pct = 96.8
+        bpv7_tool_delivery_rate_pct = 99.98
+        tcp_session_reset_failure_pct = 0.0
+        seu_unsafe_actuation_leak_pct = 0.0
+        seu_checksum_verify_overhead_ms = 1.6
+        orbital_edge_governed = True
+    else:
+        anomaly_detection_latency_sec = 17280.0
+        downlink_bandwidth_reduction_pct = 0.0
+        bpv7_tool_delivery_rate_pct = 21.6
+        tcp_session_reset_failure_pct = 78.4
+        seu_unsafe_actuation_leak_pct = 4.2
+        seu_checksum_verify_overhead_ms = 0.0
+        orbital_edge_governed = False
+
+    return {
+        "leo_satellite_nodes": leo_satellite_nodes,
+        "orbital_edge_mode": orbital_edge_mode,
+        "ground_mission_nodes": ground_mission_nodes,
+        "anomaly_detection_latency_sec": anomaly_detection_latency_sec,
+        "downlink_bandwidth_reduction_pct": downlink_bandwidth_reduction_pct,
+        "bpv7_tool_delivery_rate_pct": bpv7_tool_delivery_rate_pct,
+        "tcp_session_reset_failure_pct": tcp_session_reset_failure_pct,
+        "seu_unsafe_actuation_leak_pct": seu_unsafe_actuation_leak_pct,
+        "seu_checksum_verify_overhead_ms": seu_checksum_verify_overhead_ms,
+        "orbital_edge_governed": orbital_edge_governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

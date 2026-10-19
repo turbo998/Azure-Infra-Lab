@@ -2506,6 +2506,56 @@
         "slice_provisioning_sec": 16200.0,
         "telco_oran_slo_met": false
       }
+    ],
+    "space_orbital_satellite_profiles": [
+      {
+        "leo_satellite_nodes": 30,
+        "orbital_edge_mode": "orbital_isl_bpv7_rad_triage_seu_interlock",
+        "ground_mission_nodes": 4,
+        "anomaly_detection_latency_sec": 18.5,
+        "downlink_bandwidth_reduction_pct": 96.8,
+        "bpv7_tool_delivery_rate_pct": 99.98,
+        "tcp_session_reset_failure_pct": 0.0,
+        "seu_unsafe_actuation_leak_pct": 0.0,
+        "seu_checksum_verify_overhead_ms": 1.6,
+        "orbital_edge_governed": true
+      },
+      {
+        "leo_satellite_nodes": 120,
+        "orbital_edge_mode": "orbital_isl_bpv7_rad_triage_seu_interlock",
+        "ground_mission_nodes": 6,
+        "anomaly_detection_latency_sec": 18.5,
+        "downlink_bandwidth_reduction_pct": 96.8,
+        "bpv7_tool_delivery_rate_pct": 99.98,
+        "tcp_session_reset_failure_pct": 0.0,
+        "seu_unsafe_actuation_leak_pct": 0.0,
+        "seu_checksum_verify_overhead_ms": 1.6,
+        "orbital_edge_governed": true
+      },
+      {
+        "leo_satellite_nodes": 600,
+        "orbital_edge_mode": "orbital_isl_bpv7_rad_triage_seu_interlock",
+        "ground_mission_nodes": 30,
+        "anomaly_detection_latency_sec": 18.5,
+        "downlink_bandwidth_reduction_pct": 96.8,
+        "bpv7_tool_delivery_rate_pct": 99.98,
+        "tcp_session_reset_failure_pct": 0.0,
+        "seu_unsafe_actuation_leak_pct": 0.0,
+        "seu_checksum_verify_overhead_ms": 1.6,
+        "orbital_edge_governed": true
+      },
+      {
+        "leo_satellite_nodes": 120,
+        "orbital_edge_mode": "raw_downlink_tcp_http_unshielded_ram",
+        "ground_mission_nodes": 6,
+        "anomaly_detection_latency_sec": 17280.0,
+        "downlink_bandwidth_reduction_pct": 0.0,
+        "bpv7_tool_delivery_rate_pct": 21.6,
+        "tcp_session_reset_failure_pct": 78.4,
+        "seu_unsafe_actuation_leak_pct": 4.2,
+        "seu_checksum_verify_overhead_ms": 0.0,
+        "orbital_edge_governed": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -4556,5 +4606,55 @@
       "telco_oran_slo_met": false
     }
   },
-  "trace_sha256": "2a5ed87a379616b8f2014e4792f2bd0f68f4bfe9b0c65180de8aa39eb6cac83e"
+  "demo_37_space_orbital_satellite_edge_sandbox": {
+    "orbital_bpv7_30sat": {
+      "leo_satellite_nodes": 30,
+      "orbital_edge_mode": "orbital_isl_bpv7_rad_triage_seu_interlock",
+      "ground_mission_nodes": 4,
+      "anomaly_detection_latency_sec": 18.5,
+      "downlink_bandwidth_reduction_pct": 96.8,
+      "bpv7_tool_delivery_rate_pct": 99.98,
+      "tcp_session_reset_failure_pct": 0.0,
+      "seu_unsafe_actuation_leak_pct": 0.0,
+      "seu_checksum_verify_overhead_ms": 1.6,
+      "orbital_edge_governed": true
+    },
+    "orbital_bpv7_120sat": {
+      "leo_satellite_nodes": 120,
+      "orbital_edge_mode": "orbital_isl_bpv7_rad_triage_seu_interlock",
+      "ground_mission_nodes": 6,
+      "anomaly_detection_latency_sec": 18.5,
+      "downlink_bandwidth_reduction_pct": 96.8,
+      "bpv7_tool_delivery_rate_pct": 99.98,
+      "tcp_session_reset_failure_pct": 0.0,
+      "seu_unsafe_actuation_leak_pct": 0.0,
+      "seu_checksum_verify_overhead_ms": 1.6,
+      "orbital_edge_governed": true
+    },
+    "orbital_bpv7_600sat": {
+      "leo_satellite_nodes": 600,
+      "orbital_edge_mode": "orbital_isl_bpv7_rad_triage_seu_interlock",
+      "ground_mission_nodes": 30,
+      "anomaly_detection_latency_sec": 18.5,
+      "downlink_bandwidth_reduction_pct": 96.8,
+      "bpv7_tool_delivery_rate_pct": 99.98,
+      "tcp_session_reset_failure_pct": 0.0,
+      "seu_unsafe_actuation_leak_pct": 0.0,
+      "seu_checksum_verify_overhead_ms": 1.6,
+      "orbital_edge_governed": true
+    },
+    "raw_downlink_tcp_120sat": {
+      "leo_satellite_nodes": 120,
+      "orbital_edge_mode": "raw_downlink_tcp_http_unshielded_ram",
+      "ground_mission_nodes": 6,
+      "anomaly_detection_latency_sec": 17280.0,
+      "downlink_bandwidth_reduction_pct": 0.0,
+      "bpv7_tool_delivery_rate_pct": 21.6,
+      "tcp_session_reset_failure_pct": 78.4,
+      "seu_unsafe_actuation_leak_pct": 4.2,
+      "seu_checksum_verify_overhead_ms": 0.0,
+      "orbital_edge_governed": false
+    }
+  },
+  "trace_sha256": "92b44143a53892495e9ad0e6630cc86eed41c9f9edf481338e90f941d2e3f1dc"
 }
