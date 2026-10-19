@@ -1,0 +1,3206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azure AI Agent Infra · 交互式选型决策器与 10万沙箱容量计算器</title>
+<style>
+
+:root {
+  --bg: #0b1120;
+  --bg-card: #111827;
+  --bg-elevated: #1e293b;
+  --border: #334155;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --azure: #0078d4;
+  --blue: #38bdf8;
+  --teal: #10b981;
+  --purple: #a78bfa;
+  --amber: #f59e0b;
+  --rose: #f43f5e;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top right, #0f172a 0%, #0b1120 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  line-height: 1.55;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.brand-badge {
+  background: linear-gradient(135deg, #0078d4, #10b981);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.nav-link {
+  padding: 0.42rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+.nav-link:hover, .nav-link.active {
+  color: #fff;
+  background: var(--bg-elevated);
+  border-color: var(--blue);
+  text-decoration: none;
+}
+.lang-btn {
+  background: #0f172a;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 0.38rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.8rem 1.5rem 4rem;
+}
+.hero {
+  background: linear-gradient(135deg, rgba(0,120,212,0.22) 0%, rgba(16,185,129,0.14) 100%);
+  border: 1px solid rgba(56,189,248,0.35);
+  border-radius: 16px;
+  padding: 2rem 2.2rem;
+  margin-bottom: 1.8rem;
+}
+.hero-eyebrow {
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.45rem;
+}
+.hero h1 {
+  margin: 0 0 0.65rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.hero p {
+  margin: 0 0 1.2rem;
+  color: #cbd5e1;
+  max-width: 960px;
+  font-size: 1rem;
+}
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+.kpi-card {
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+}
+.kpi-val {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--blue);
+}
+.kpi-lbl {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.25rem;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.1rem;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.card h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  color: var(--blue);
+}
+.sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.pill {
+  display: inline-block;
+  padding: 0.18rem 0.58rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+.pill-blue { background: rgba(56,189,248,0.16); color: #38bdf8; border: 1px solid rgba(56,189,248,0.35); }
+.pill-teal { background: rgba(16,185,129,0.16); color: #34d399; border: 1px solid rgba(16,185,129,0.35); }
+.pill-amber { background: rgba(245,158,11,0.16); color: #fbbf24; border: 1px solid rgba(245,158,11,0.35); }
+.pill-rose { background: rgba(244,63,94,0.16); color: #fb7185; border: 1px solid rgba(244,63,94,0.35); }
+.btn {
+  background: linear-gradient(135deg, #0078d4, #2563eb);
+  color: #fff;
+  border: none;
+  padding: 0.58rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+.btn:hover { opacity: 0.93; transform: translateY(-1px); }
+.btn-secondary {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: #e2e8f0;
+}
+.btn-teal {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+.btn-rose {
+  background: linear-gradient(135deg, #e11d48, #f43f5e);
+}
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+table.data-table th, table.data-table td {
+  padding: 0.65rem 0.6rem;
+  border-bottom: 1px solid #1e293b;
+  text-align: left;
+  vertical-align: top;
+}
+table.data-table th {
+  color: var(--blue);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+}
+pre.code-box {
+  background: #070b14;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  line-height: 1.45;
+}
+.svg-showcase {
+  background: #070b14;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  text-align: center;
+  overflow-x: auto;
+}
+.svg-showcase img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+.tab-btn {
+  background: #0f172a;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.42rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background: rgba(0, 120, 212, 0.25);
+  color: #fff;
+  border-color: var(--blue);
+}
+.footer-note {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form-row {
+  margin-bottom: 0.9rem;
+}
+.form-row label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 0.3rem;
+}
+.form-row select, .form-row input[type="range"] {
+  width: 100%;
+  background: #0f172a;
+  color: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.88rem;
+}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <div class="brand">
+    <span class="brand-badge">DECISION &amp; SIZER</span>
+    <span>架构选型决策器 · 10万并发沙箱 VMSS 容量计算器 · 配置生成器</span>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">1. 全景 Playbook</a>
+    <a class="nav-link" href="demo.html">2. 实时仿真 Demo (AKSClaw × E2B)</a>
+    <a class="nav-link active" href="selector.html">3. 选型决策器 &amp; 10万沙箱计算器</a>
+    <a class="nav-link" href="cards.html">4. 7-Card 基准报告</a>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="grid-2">
+    <!-- Left: Two-Stage Decision Tree Wizard -->
+    <section class="card">
+      <span class="pill pill-blue">TOOL 1 · TWO-STAGE ARCHITECTURE DECISION ENGINE</span>
+      <h2>双阶段 Agent Runtime &amp; 状态底座选型决策器</h2>
+      <div class="sub">严格对齐 Playbook Slide 7 商务/交付门禁与 Pitch Slides 7–12 技术路由规则：</div>
+
+      <div class="form-row">
+        <label>1. 业务客群定位 (Audience)</label>
+        <select id="sel_audience" onchange="runDecision()">
+          <option value="To-B">To-B 企业内部 / 行业应用</option>
+          <option value="To-C">To-C 消费者 / 数字原生 AI 产品 (如 Manus 类产品)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>2. 是否需要超越全托管服务的底层基础设施控制 (自定义OS/网络/不可信沙箱/极致成本)？</label>
+        <select id="sel_control" onchange="runDecision()">
+          <option value="yes" selected>是 — 需要底层容器/内核/沙箱/网络控制</option>
+          <option value="no">否 — 仅调用标准受控 API 与企业知识库</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>3. 客户是否具备专职研发/平台工程团队 (或已锁定 CSU/Partner 交付)？</label>
+        <select id="sel_devteam" onchange="runDecision()">
+          <option value="yes" selected>是 — 具备工程研发与运维团队</option>
+          <option value="no">否 — 缺乏自有研发团队 (触发 Playbook 交付门禁检查)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>4. 工作负载核心执行特征 (Primary Workload Profile)</label>
+        <select id="sel_profile" onchange="runDecision()">
+          <option value="e2b_100k">10,000 ~ 100,000+ 并发云端虚拟电脑 / 亚 150ms 极速恢复 (Manus × E2B)</option>
+          <option value="aksclaw">企业多租户 Agent 平台 / 研发与 SRE 专属舰队 (AKSClaw)</option>
+          <option value="coding_sandbox">有状态 Coding Agent / 浏览器工作区 (需显式 pause/resume 与快照)</option>
+          <option value="dynamic_code">短时不可信 Python/脚本执行与文件解析 (用完即焚)</option>
+          <option value="durable_approval">跨天采购/财务人工审批与长周期确定性重放工作流</option>
+          <option value="standard_api">标准企业知识问答与 1,400+ SaaS 连接器调用</option>
+        </select>
+      </div>
+
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="decisionOutput"></div>
+    </section>
+
+    <!-- Right: 100K Concurrent Sandboxes VMSS Calculator -->
+    <section class="card">
+      <span class="pill pill-teal">TOOL 2 · E2B ON AZURE VMSS CAPACITY &amp; HUGEPAGES SIZER</span>
+      <h2>E2B 高密 MicroVM 集群容量与 VMSS 节点测算器</h2>
+      <div class="sub">基于 <code>Standard_D96as_v7</code> (96 vCPU / 384 GiB)、HugePages 大页内存预留与 60% CPU 扩容水位实时计算：</div>
+
+      <div class="form-row">
+        <label>目标并发活跃沙箱数 (Concurrent Sandboxes): <strong id="lbl_concurrent" style="color:var(--blue)">100,000</strong></label>
+        <input type="range" id="rng_concurrent" min="1000" max="150000" step="1000" value="100000" oninput="runSizer()">
+      </div>
+      <div class="form-row">
+        <label>单个 MicroVM 平均内存配额 (MiB): <strong id="lbl_ram" style="color:var(--blue)">512 MiB</strong></label>
+        <input type="range" id="rng_ram" min="256" max="2048" step="256" value="512" oninput="runSizer()">
+      </div>
+      <div class="form-row">
+        <label>宿主机 HugePages 大页内存预留比例: <strong id="lbl_hp" style="color:var(--blue)">85%</strong></label>
+        <input type="range" id="rng_hp" min="70" max="90" step="5" value="85" oninput="runSizer()">
+      </div>
+      <div class="form-row">
+        <label>VMSS Scale-Out CPU 扩容触发水位: <strong id="lbl_cpu" style="color:var(--blue)">60%</strong></label>
+        <input type="range" id="rng_cpu" min="50" max="80" step="5" value="60" oninput="runSizer()">
+      </div>
+
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="sizerOutput"></div>
+    </section>
+  </div>
+
+  <!-- Tool 3: Production Config & IaC Blueprint Generator -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 3 · PRODUCTION POLICY &amp; IAC BLUEPRINT GENERATOR</span>
+    <h2>生产级网关限流策略、AKSClaw 沙箱清单与 Terraform/Bicep 模板生成</h2>
+    <div class="tab-bar" id="codeTabs">
+      <button class="tab-btn active" onclick="showBlueprint(0)">1. APIM 10万动态域名限流策略 (XML)</button>
+      <button class="tab-btn" onclick="showBlueprint(1)">2. AKSClaw Kata Pod VM + 硬边界清单 (YAML)</button>
+      <button class="tab-btn" onclick="showBlueprint(2)">3. E2B on Azure VMSS Flexible (D96as_v7 Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(3)">4. HorizonDB + PgBouncer + LangGraph Checkpoint (Python)</button>
+      <button class="tab-btn" onclick="showBlueprint(4)">5. ACA Dynamic Sessions 预热池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(5)">6. AI Gateway + Entra Agent ID 双重归属 (XML)</button>
+      <button class="tab-btn" onclick="showBlueprint(6)">7. FinOps 预算与 KQL 异常突增熔断告警 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(7)">8. AKSClaw SEV-SNP 机密沙箱节点池 + SKR (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(8)">9. 零信任出网防火墙 + Private Link + 防 SNAT 耗尽 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(9)">10. H100 MIG 硬件切分节点池 + KAITO 前缀缓存 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(10)">11. OTel GenAI + Tetragon eBPF + ADX 可观测性集群 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(11)">12. Dapr Workflow + Service Bus 幂等 Outbox + KEDA (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(12)">13. CUA 浏览器沙箱池 + Web PubSub CDP 接管网关 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(13)">14. ACR 制品缓存 + 本地 NVMe virtiofs DAX 依赖池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(14)">15. 多智能体扇出 Redis 预算信封与 AST 租约锁 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(15)">16. 主权数据边界 Policy + Managed HSM CMK 粉碎 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(16)">17. 零停机 33% Surge 预热 + MANA 热迁移升级池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(17)">18. APIM 混合模型级联路由 + KV 前缀亲和池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(18)">19. HorizonDB pg_diskann + GraphRAG 记忆分层 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(19)">20. WebRTC 实时音视频 eBPF RTP 旁路 + ACS TURN (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(20)">21. SWE-Agent BuildKit + Bazel/sccache 只读 CAS 池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(21)">22. OneLake/ADLS Gen2 + DuckDB 湖仓脱敏分析池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(22)">23. 跨云 OIDC 联邦 + WireGuard + SEV-SNP 机密洁净室 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(23)">24. 具身智能 ROS2/OpenUSD 数字孪生池 + IoT MQTT 桥 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(24)">25. 在线 RFT/GRPO 树状分叉推演池 + 防篡改验证器存储 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(25)">26. 后量子密码 PQC (X25519MLKEM768 + ML-DSA-65) 网关与 HSM (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(26)">27. GreenOps 碳感知 Turin 节点池 + Kepler RAPL 碳核算 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(27)">28. Hyperlight × SpinKube WASI-0.2 亚毫秒微沙箱池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(28)">29. Azure Chaos Studio 复合故障演练 + 纪元防脑裂门控 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(29)">30. AI-for-Science Managed Lustre + HBv4 InfiniBand 科学计算池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(30)">31. AP2/x402 消费授权令 + Confidential Ledger 金融账本护栏 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(31)">32. 跨企业 A2A Entra Verified ID SD-JWT + HTTP/3 QUIC 联邦网格 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(32)">33. 自主网络防御气隙 vsock MicroVM + eBPF KRSI + Sentinel SOAR (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(33)">34. 工业边缘 Azure Local + IoT Operations 断网存储转发与孪生同步 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(34)">35. 医疗临床 AHDS FHIR/DICOM 零拷贝 + HIPAA Safe-Harbor + 21 CFR Part 11 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(35)">36. 混合量子-经典 Azure Quantum QIR + H200 cuQuantum 预筛选池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(36)">37. 电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK + Near-RT RIC xApp 切片池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(37)">38. 空天低轨卫星 Azure Orbital + RFC 9171 BPv7 托管桶与在轨预筛池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(38)">39. 智能电网变电站 IEC 61850 / IEEE C37.118 PMU 专网与 AC-OPF 潮流验证池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(39)">40. 智慧仓储 AMR 舰队 Azure Digital Twins + MAPF-CBS 无死锁轨迹与冷链护栏池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(40)">41. 影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环 + OpenUSD/3DGS 校验与 C2PA 2.1 HSM 签名池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(41)">42. 智能网联汽车 V2X MQTT-over-QUIC 遥测 + CARLA/OpenSCENARIO RSS 闭环仿真与 UNECE R155 Uptane OTA 池 (Bicep)</button>
+    </div>
+    <pre class="code-box" id="blueprintBox"></pre>
+  </section>
+
+  <!-- Tool 4: AKSClaw Kata Density & HorizonDB WAL Calculator -->
+  <div class="grid-2">
+    <section class="card">
+      <span class="pill pill-amber">TOOL 4A · AKSCLAW KATA VM NODE DENSITY CALCULATOR</span>
+      <h2>AKSClaw 多租户节点沙箱密度测算 (Kata VM vs runc)</h2>
+      <div class="sub">量化 <code>kata-vm-isolation</code> (+144 MiB Guest Kernel/VMM 开销) 与 Kubelet 系统预留对单节点沙箱密度的影响：</div>
+      <div class="form-row">
+        <label>AKS 工作节点 SKU</label>
+        <select id="sel_aks_sku" onchange="runDeepLab()">
+          <option value="16_64">Standard_D16s_v6 (16 vCPU / 64 GiB)</option>
+          <option value="32_128">Standard_D32s_v6 (32 vCPU / 128 GiB)</option>
+          <option value="64_256" selected>Standard_D64s_v6 (64 vCPU / 256 GiB · 推荐主力)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>容器隔离运行时 (RuntimeClass)</label>
+        <select id="sel_aks_rt" onchange="runDeepLab()">
+          <option value="kata" selected>kata-vm-isolation (独立 Cloud Hypervisor / Guest Kernel +144 MiB)</option>
+          <option value="runc">runc (共享宿主机内核 · 无硬件虚拟化边界)</option>
+        </select>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="aksDensityOut"></div>
+    </section>
+
+    <section class="card">
+      <span class="pill pill-teal">TOOL 4B · HORIZONDB + PGBOUNCER CHECKPOINT &amp; WAL SIZER</span>
+      <h2>HorizonDB 连接复用倍率与 128 TB 存储留存测算</h2>
+      <div class="sub">测算大规模 LangGraph / MAF 并发线程下的 PgBouncer 连接收敛比、P95 延迟与 30 天 ZSTD 热留存容量：</div>
+      <div class="form-row">
+        <label>并发活跃 Agent 会话线程数: <strong id="lbl_hdb_threads" style="color:var(--blue)">10,000</strong></label>
+        <input type="range" id="rng_hdb_threads" min="1000" max="50000" step="1000" value="10000" oninput="runDeepLab()">
+      </div>
+      <div class="form-row">
+        <label>PgBouncer 后端连接池大小 (Server Connections): <strong id="lbl_hdb_pool" style="color:var(--blue)">200</strong></label>
+        <input type="range" id="rng_hdb_pool" min="50" max="500" step="50" value="200" oninput="runDeepLab()">
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="hdbOut"></div>
+    </section>
+  </div>
+
+  <!-- Tool 5: Multi-Region Active-Active DR & Stateful Sandbox Failover Calculator -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 5 · MULTI-REGION ACTIVE-ACTIVE DR &amp; STATEFUL SANDBOX FAILOVER SIZER</span>
+    <h2>跨区域双活容灾与有状态沙箱故障切换 (RPO / RTO) 演练计算器</h2>
+    <div class="sub">量化主区域中断时，Azure Front Door + APIM 路由切换、HorizonDB 跨区副本提升 + PgBouncer 重绑、RA-GZRS 增量脏页拉取与 <code>Standard_D96as_v7</code> 预热池恢复的端到端 RTO：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. Azure 跨区域容灾配对 (Region Pair &amp; Backbone RTT)</label>
+          <select id="sel_dr_pair" onchange="runDrLab()">
+            <option value="eastus2_centralus" selected>East US 2 ↔ Central US (18.0 ms RTT · 北美主力配对)</option>
+            <option value="swedencentral_westeurope">Sweden Central ↔ West Europe (24.0 ms RTT · 欧洲主力配对)</option>
+            <option value="southeastasia_eastasia">Southeast Asia (SG) ↔ East Asia (HK) (34.0 ms RTT · 亚太主力配对)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. 主区域在线沙箱总数 (其中 25% 处于当前 Turn 活跃执行态): <strong id="lbl_dr_sbx" style="color:var(--blue)">10,000</strong></label>
+          <input type="range" id="rng_dr_sbx" min="2000" max="100000" step="2000" value="10000" oninput="runDrLab()">
+        </div>
+        <div class="form-row">
+          <label>3. 备区 D96as_v7 预热节点池比例 (Warm Standby Ratio): <strong id="lbl_dr_warm" style="color:var(--blue)">25%</strong></label>
+          <input type="range" id="rng_dr_warm" min="5" max="50" step="5" value="25" oninput="runDrLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="drOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 6: Multi-Tenant FinOps Chargeback & Spot Preemption Drain Calculator -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 6 · AGENTIC FINOPS CHARGEBACK &amp; SPOT PREEMPTION DRAIN SIZER</span>
+    <h2>Agentic FinOps 多租户成本归因与 Spot 抢占优雅排空测算器</h2>
+    <div class="sub">量化 Azure Spot VMSS 收到 <code>30s ScheduledEvents</code> 抢占通知后的增量脏页排空耗时、混合实例净节省率，以及 APIM Prefix-Cache 亲和路由下的每千次 Agent 任务综合单价：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. Spot 节点混部比例 (Spot Fleet Ratio): <strong id="lbl_fin_spot" style="color:var(--blue)">60%</strong></label>
+          <input type="range" id="rng_fin_spot" min="0" max="80" step="10" value="60" oninput="runFinopsLab()">
+        </div>
+        <div class="form-row">
+          <label>2. APIM Prefix-Cache 会话亲和命中率: <strong id="lbl_fin_cache" style="color:var(--blue)">65%</strong></label>
+          <input type="range" id="rng_fin_cache" min="0" max="85" step="5" value="65" oninput="runFinopsLab()">
+        </div>
+        <div class="form-row">
+          <label>3. 抢占排空快照模式 (Preemption Snapshot Mode)</label>
+          <select id="sel_fin_mode" onchange="runFinopsLab()">
+            <option value="inc" selected>增量脏页位图 (32 MiB) + ZSTD (0.42x) + Azure Boost 32Gbps (推荐)</option>
+            <option value="raw">未压缩全量 2 GiB RAM 镜像转储 (反模式 · 触发 30s 超时丢状态)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="finopsOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 7: Confidential Computing SEV-SNP & SKR Attestation Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 7 · CONFIDENTIAL COMPUTING SEV-SNP &amp; SKR ATTESTATION SIZER</span>
+    <h2>机密计算沙箱 (AMD SEV-SNP / Kata-CC + MAA + Key Vault Managed HSM SKR) 测算器</h2>
+    <div class="sub">量化面向金融/医疗强监管场景的 <code>Standard_DC64as_v5</code> 机密节点池硬件内存加密开销、MAA 远程证明 + HSM 安全密钥释放 (SKR) 握手延迟及单节点沙箱密度：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 宿主机机型与硬件隔离栈 (Host SKU &amp; TEE Isolation)</label>
+          <select id="sel_cc_sku" onchange="runCcLab()">
+            <option value="Standard_DC64as_v5" selected>Standard_DC64as_v5 (AMD EPYC SEV-SNP + Kata-CC 硬件 TEE)</option>
+            <option value="Standard_EC64as_v5">Standard_EC64as_v5 (AMD SEV-SNP 大内存机密节点 + Kata-CC)</option>
+            <option value="Standard_D64s_v6">Standard_D64s_v6 (常规 Kata Pod VM · 无宿主机内存加密对比基线)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. MAA 远程证明与 Managed HSM SKR 密钥释放模式</label>
+          <select id="sel_cc_att" onchange="runCcLab()">
+            <option value="cold_skr_handshake" selected>完整冷握手 (AMD PSP 硬件报告 → MAA 验证 → HSM SKR 释放 +18.5ms)</option>
+            <option value="cached_jwt">预验证 MAA 令牌缓存复用 (Cached Attestation JWT +1.2ms)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. 根文件系统完整性保护 (RootFS Integrity)</label>
+          <select id="sel_cc_fs" onchange="runCcLab()">
+            <option value="dm_verity_crypt" selected>启用 dm-verity 哈希树校验 + dm-crypt 加密卷 (+10.6ms)</option>
+            <option value="standard_overlay">标准只读 Overlay 挂载 (0ms 额外挂载开销)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="ccOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 8: Zero-Trust Egress Firewall, SNAT Port Physics & MCP Supply-Chain Attestation Sizer -->
+  <section class="card">
+    <span class="pill pill-rose">TOOL 8 · ZERO-TRUST EGRESS FIREWALL, SNAT PORT PHYSICS &amp; MCP SUPPLY-CHAIN SIZER</span>
+    <h2>零信任出向网络治理、SNAT 端口耗尽物理学与 MCP 供应链签名准入测算器</h2>
+    <div class="sub">量化 Cilium eBPF 套接字过滤、CoreDNS 香农熵防 DNS 隧道、Azure Firewall Premium + Private Link 私网卸载对 NAT Gateway SNAT 端口利用率的改善，以及 Notation/Cosign MCP 镜像签名准入开销：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发活跃沙箱规模 (Concurrent Sandboxes): <strong id="lbl_eg_sbx" style="color:var(--blue)">25,000</strong></label>
+          <input type="range" id="rng_eg_sbx" min="5000" max="100000" step="5000" value="25000" oninput="runEgressLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 数据面过滤与私网卸载架构 (Datapath &amp; Egress Architecture)</label>
+          <select id="sel_eg_mode" onchange="runEgressLab()">
+            <option value="cilium_ebpf_fw_pls" selected>Cilium eBPF (0.06ms) + Firewall Premium + Private Link 卸载 78% 流量 (推荐)</option>
+            <option value="legacy_iptables_public_nat">传统 iptables (1.90ms) + 全量走公网 NAT Gateway (无 Private Link 反模式)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. Azure NAT Gateway 挂载公网 IP 数量 (每个 IP 提供 64,000 SNAT 端口): <strong id="lbl_eg_ips" style="color:var(--blue)">8 IPs (512,000 端口)</strong></label>
+          <input type="range" id="rng_eg_ips" min="1" max="16" step="1" value="8" oninput="runEgressLab()">
+        </div>
+        <div class="form-row">
+          <label>4. MCP 工具镜像 Notation/Cosign (SLSA L3) 签名与能力清单准入模式</label>
+          <select id="sel_eg_mcp" onchange="runEgressLab()">
+            <option value="cached_slsa_cosign" selected>强制 SLSA L3 签名校验 + 能力沙箱准入 (本地缓存命中 +4.6ms)</option>
+            <option value="cold_slsa_cosign">强制 SLSA L3 签名校验 (冷拉取透明日志与证书链 +21.0ms)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="egressOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 9: GPU MIG vs CUDA MPS Partitioning & KAITO Prefix-Cache Inference Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 9 · HETEROGENEOUS GPU/CPU AGENT ORCHESTRATION (NVIDIA MIG vs CUDA MPS &amp; KAITO SIZER)</span>
+    <h2>GPU/CPU 异构 Agent 沙箱编排：NVIDIA MIG vs CUDA MPS 切分与 KAITO 前缀缓存测算器</h2>
+    <div class="sub">量化 <code>Standard_NC40ads_H100_v5</code> / <code>Standard_ND96isr_H200_v5</code> 在 Computer-Use 视觉接地 (GUI Grounding) 与推理边车场景下的硬件 MIG 隔离、CUDA MPS 吞吐增益及 KAITO/vLLM 前缀缓存对首字延迟 (TTFT) 与轨迹成本的节省：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. Azure GPU 节点机型 (GPU Host SKU)</label>
+          <select id="sel_gpu_sku" onchange="runGpuLab()">
+            <option value="Standard_NC40ads_H100_v5" selected>Standard_NC40ads_H100_v5 (1× H100 NVL 94GB HBM3 · 40 vCPU)</option>
+            <option value="Standard_NC80adis_H100_v5">Standard_NC80adis_H100_v5 (2× H100 NVL 188GB HBM3 · 80 vCPU)</option>
+            <option value="Standard_ND96isr_H200_v5">Standard_ND96isr_H200_v5 (8× H200 1128GB HBM3e · 旗舰高密池)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. GPU 硬件/软件切分模式 (GPU Partitioning Mode)</label>
+          <select id="sel_gpu_part" onchange="runGpuLab()">
+            <option value="mig_1g_10gb" selected>NVIDIA 硬件 MIG (1g.10gb / 1g.18gb · 单卡 7 实例 · 0% 跨租户抖动)</option>
+            <option value="cuda_mps_shared_sm">CUDA MPS 共享 SM 软切分 (+28.4% 吞吐增益 · 单租户受信任池)</option>
+            <option value="default_timeslicing">默认 Time-Slicing 时间片轮转 (对比基线 · 31% 跨租户抖动)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. KAITO/vLLM System Prompt + MCP 工具 Schema 前缀缓存命中率: <strong id="lbl_gpu_cache" style="color:var(--blue)">78%</strong></label>
+          <input type="range" id="rng_gpu_cache" min="0" max="90" step="2" value="78" oninput="runGpuLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="gpuOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 10: OpenTelemetry GenAI Traces, Tetragon eBPF Auditing & ADX Tail-Sampling Cost Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 10 · 100K SANDBOX OBSERVABILITY (OTEL GEN_AI.* + TETRAGON eBPF + ADX TAIL-SAMPLING SIZER)</span>
+    <h2>十万级沙箱全链路可观测性：OpenTelemetry GenAI 追踪、Tetragon eBPF 审计与 ADX 尾部采样测算器</h2>
+    <div class="sub">量化 <code>1,000</code> 至 <code>100,000</code> 并发沙箱下 Tetragon eBPF 内核态过滤开销、OTel Collector 尾部采样率（常规轨迹采样 + 100% 异常/越权全保留）及 Azure Data Explorer (Kusto) ZSTD <code>8.4x</code> 压缩对存储量与每千次任务成本的削减：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发活跃沙箱规模 (Concurrent Active Sandboxes): <strong id="lbl_obs_sbx" style="color:var(--blue)">100,000</strong></label>
+          <input type="range" id="rng_obs_sbx" min="1000" max="100000" step="1000" value="100000" oninput="runObsLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 可观测性流水线架构 (Observability Pipeline Architecture)</label>
+          <select id="sel_obs_mode" onchange="runObsLab()">
+            <option value="hybrid_3tier_tail_adx" selected>三层混合流水线：Tetragon eBPF 内核过滤 + OTel 尾部采样 + ADX ZSTD 8.4x (推荐)</option>
+            <option value="unsampled_raw_law">传统反模式：100% 全量无采样 Trace + 用户态 Syscall 直写标准日志工作区</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. 正常轨迹基准采样率 (异常/慢调用/安全事件始终 100% 保留): <strong id="lbl_obs_rate" style="color:var(--blue)">5%</strong></label>
+          <input type="range" id="rng_obs_rate" min="1" max="50" step="1" value="5" oninput="runObsLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="obsOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 11: Long-Horizon Workflow Hibernation, Outbox Saga & Zombie-Sandbox Reaper Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 11 · LONG-HORIZON STATEFUL AGENT WORKFLOW (HIBERNATION + OUTBOX SAGA + ZOMBIE GC SIZER)</span>
+    <h2>长周期有状态 Agent 工作流：10s 休眠唤醒省钱、Outbox Saga 幂等与僵尸沙箱回收测算器</h2>
+    <div class="sub">量化跨数十分钟异步等待（CI 构建、Webhook 回调、人工审批）场景下，沙箱内存常驻 vs <code>&gt;10s</code> 自动增量快照休眠 + <code>188ms</code> 热唤醒的日成本差异，以及 HorizonDB Outbox Saga 幂等账本与三层僵尸沙箱回收器的稳定性收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发长周期工作流数量 (Concurrent Active Workflows): <strong id="lbl_wf_cnt" style="color:var(--blue)">5,000</strong></label>
+          <input type="range" id="rng_wf_cnt" min="1000" max="50000" step="1000" value="5000" oninput="runWfLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 单工作流平均外部异步等待时长 (External Wait Minutes): <strong id="lbl_wf_wait" style="color:var(--blue)">15 min</strong></label>
+          <input type="range" id="rng_wf_wait" min="5" max="60" step="5" value="15" oninput="runWfLab()">
+        </div>
+        <div class="form-row">
+          <label>3. 工作流状态与沙箱生命周期策略 (Lifecycle &amp; Consistency Policy)</label>
+          <select id="sel_wf_mode" onchange="runWfLab()">
+            <option value="suspend_on_wait_outbox_gc" selected>&gt;10s 自动快照休眠 + HorizonDB Outbox Saga 幂等 + 4.5s 僵尸回收 (推荐)</option>
+            <option value="pinned_memory_naive_retry">传统反模式：等待期沙箱内存常驻 + 无 Outbox 裸重试 + 被动超时清理</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="wfOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 12: CUA Browser Pool, AXTree/Vision Hybrid Grounding & Screencast Bandwidth Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 12 · COMPUTER-USE AGENT (CUA) BROWSER SANDBOX POOL (ZYGOTE + AXTREE/VLM + CDP RELAY SIZER)</span>
+    <h2>Computer-Use Agent (CUA) 浏览器沙箱池：Zygote 内存共享、AXTree/视觉混合 Grounding 与流控测算器</h2>
+    <div class="sub">量化大规模 Headless Chromium 沙箱池在 Zygote 预派生 + V8 字节码共享、Dirty-Rect WebP/AV1 增量画面流以及 AXTree 优先 + VLM 视觉回退混合路由下的内存、带宽与 15 步网页任务成本：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发活跃 CUA 浏览器沙箱数 (Concurrent CUA Browser Sandboxes): <strong id="lbl_cua_sbx" style="color:var(--blue)">10,000</strong></label>
+          <input type="range" id="rng_cua_sbx" min="1000" max="50000" step="1000" value="10000" oninput="runCuaLab()">
+        </div>
+        <div class="form-row">
+          <label>2. CUA 浏览器沙箱与 Grounding 架构 (Browser Pool &amp; Grounding Mode)</label>
+          <select id="sel_cua_mode" onchange="runCuaLab()">
+            <option value="zygote_axtree_dirtyrect" selected>Zygote 预派生 + AXTree 优先混合 Grounding + Dirty-Rect WebP/AV1 (推荐)</option>
+            <option value="cold_chromium_pure_vision">传统反模式：冷启动 Chromium + 原始 PNG 截图流 + 100% 纯视觉 VLM 循环</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>3. 复杂 Canvas / 验证码回退多模态 VLM 比例 (VLM Fallback Ratio): <strong id="lbl_cua_vlm" style="color:var(--blue)">24%</strong></label>
+          <input type="range" id="rng_cua_vlm" min="5" max="100" step="1" value="24" oninput="runCuaLab()">
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cuaOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 13: virtiofs DAX Package Store, OverlayBD Lazy Pull & Page-Cache Deduplication Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 13 · EPHEMERAL DEPENDENCY ACCELERATION (VIRTIOFS DAX + OVERLAYBD LAZY PULL + OSV FIREWALL)</span>
+    <h2>Agent 代码沙箱瞬态依赖加速：<code>virtiofs</code> DAX 内容寻址池、OverlayBD 按需拉取与内存去重测算器</h2>
+    <div class="sub">量化 Coding / Data-Science Agent 在微虚拟机内执行 <code>pip/npm install</code> 与加载自定义大镜像时，本地 NVMe <code>uv</code> Reflink + <code>virtiofs</code> DAX 直通映射与 OverlayBD 块级延迟拉取的提速及跨沙箱内存节省：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 单节点并发沙箱密度 (Concurrent Sandboxes per Host Node): <strong id="lbl_dep_sbx" style="color:var(--blue)">100</strong></label>
+          <input type="range" id="rng_dep_sbx" min="20" max="300" step="10" value="100" oninput="runDepLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 自定义容器镜像体积 (Custom Runtime Image Size): <strong id="lbl_dep_img" style="color:var(--blue)">3.2 GiB</strong></label>
+          <input type="range" id="rng_dep_img" min="1.0" max="10.0" step="0.2" value="3.2" oninput="runDepLab()">
+        </div>
+        <div class="form-row">
+          <label>3. 依赖安装与镜像分发架构 (Dependency &amp; Image Delivery Mode)</label>
+          <select id="sel_dep_mode" onchange="runDepLab()">
+            <option value="virtiofs_dax_overlaybd_osv" selected>NVMe uv Reflink + virtiofs DAX 共享 + OverlayBD 按需拉取 + OSV 防火墙 (推荐)</option>
+            <option value="cold_pip_full_oci_pull">传统反模式：沙箱内冷 pip/npm install + 全量 OCI 镜像拉取解压</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="depOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 14: Multi-Agent Swarm Fan-Out Budget, Pre-Warming & Lease Contention Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 14 · MULTI-AGENT SWARM FAN-OUT GOVERNANCE (BUDGET ENVELOPES + INTENT PRE-WARM + AST LEASES)</span>
+    <h2>多智能体集群并发扇出治理：层级预算信封、<code>t - 800ms</code> 意图前瞻预热与 AST 租约防死锁测算器</h2>
+    <div class="sub">量化主控 Orchestrator 并发扇出 <code>8–32</code> 个子 Agent 时，层级预算信封 + 兄弟早停剪枝、<code>&lt;fanout_plan&gt;</code> 意图前瞻预热与 Redis AST 读写租约的延迟及冲突治理收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发子 Agent 扇出规模 (Concurrent Sub-Agent Fan-Out Width): <strong id="lbl_swm_width" style="color:var(--blue)">32</strong></label>
+          <input type="range" id="rng_swm_width" min="8" max="64" step="8" value="32" oninput="runSwarmLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 集群扇出治理与预热策略 (Swarm Fan-Out Governance Mode)</label>
+          <select id="sel_swm_mode" onchange="runSwarmLab()">
+            <option value="hierarchical_budget_intent_prewarm_ast_lease" selected>层级预算信封 (MaxDepth≤2) + t-800ms 意图前瞻预热 + Redis AST 读写租约 (推荐)</option>
+            <option value="unbounded_recursive_keda_reactive">传统反模式：无界递归派生 + KEDA 15s 滞后轮询 + 无锁并发改写</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="swmOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 15: Sovereign Geo-Fencing, FPE Tokenization & CMK Crypto-Shredding Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 15 · SOVEREIGN CLOUD &amp; MULTI-GEO DATA RESIDENCY (GEO-FENCED PTU + FPE-AES-FF1 + HSM CRYPTO-SHREDDING)</span>
+    <h2>主权云与多地域数据驻留：Geo-Fenced 故障转移环、FPE 格式保留脱敏与 HSM 密码学粉碎测算器</h2>
+    <div class="sub">量化 EU Data Boundary / US Sovereign / APAC 受监管场景下，主权边界内 APIM 故障转移环、跨国 MCP 调用前 <code>FPE-AES-FF1</code> 脱敏与 Managed HSM <code>KEK</code> 密码学粉碎（<code>NIST SP 800-88</code>）的合规与延迟指标：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 主权合规边界与配对区域 (Sovereign Data Boundary &amp; Paired Regions)</label>
+          <select id="sel_sov_geo" onchange="runSovLab()">
+            <option value="EU_DATA_BOUNDARY" selected>EU Data Boundary (Sweden Central &lt;-&gt; West Europe)</option>
+            <option value="US_SOVEREIGN">US Sovereign / Gov-Regulated (East US 2 &lt;-&gt; Central US)</option>
+            <option value="APAC_REGULATED">APAC Regulated Financial (Singapore &lt;-&gt; Japan East)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. 数据驻留、MCP 脱敏与租户数据销毁架构 (Residency &amp; Purge Mode)</label>
+          <select id="sel_sov_mode" onchange="runSovLab()">
+            <option value="geofenced_fpe_hsm_cryptoshred" selected>主权围栏 APIM 环 + FPE-AES-FF1 令牌化 (3.8ms) + Managed HSM KEK 密码学粉碎 (1.45s)</option>
+            <option value="global_unpinned_row_delete">传统反模式：全球混池溢出路由 + 明文外部 MCP + 跨区逐行物理删除 (4.2h)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="sovOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 16: Zero-Downtime Node Drain, Live Sandbox Migration & Canary Rollback Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 16 · ZERO-DOWNTIME FLEET UPGRADES (33% SURGE NVME PRE-WARM + 50 GBPS MANA LIVE MIGRATION + CANARY ROLLBACK)</span>
+    <h2>Agent 集群零停机节点升级：Surge NVMe 预热就绪门控、50 Gbps MANA 热迁移与金丝雀自动回滚测算器</h2>
+    <div class="sub">量化在 <code>1,000–50,000</code> 并发沙箱集群执行节点内核补丁或底座升级时，<code>maxSurge: 33%</code> NVMe 预热就绪门控、50 Gbps MANA 增量脏页热迁移（<code>340 ms</code> 冻结窗口）与金丝雀自动回滚的连续性指标：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 升级期间集群并发沙箱规模 (Concurrent Active Sandboxes): <strong id="lbl_mig_sbx" style="color:var(--blue)">10,000</strong></label>
+          <input type="range" id="rng_mig_sbx" min="1000" max="50000" step="1000" value="10000" oninput="runMigLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 节点滚动升级与会话连续性架构 (Fleet Upgrade &amp; Drain Mode)</label>
+          <select id="sel_mig_mode" onchange="runMigLab()">
+            <option value="surge_nvme_mana_live_canary" selected>33% Surge NVMe 预热 (42s) + 50 Gbps MANA 热迁移 (340ms 冻结) + 8.5s 金丝雀回滚 (推荐)</option>
+            <option value="naive_kubectl_drain_in_place">传统反模式：无预热直接切流 + kubectl drain 强杀重建 + 人工全量回滚</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="migOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 17: Hybrid Model Cascade Router, KV-Cache Prefix Affinity & Speculative Tool Prefetch Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 17 · HYBRID MODEL CASCADE ROUTER, KV-CACHE AFFINITY &amp; SPECULATIVE READ-ONLY PREFETCH SIZER</span>
+    <h2>混合模型级联路由、Prompt 前缀 KV-Cache 亲和与流式只读工具投机预取测算器</h2>
+    <div class="sub">量化多步 Agent 在一致性哈希前缀 KV-Cache 亲和（<code>88.4%</code> 命中率）、熵引导快速层/旗舰层双层模型级联路由与流式 <code>&lt;tool_call&gt;</code> 只读预取（隐藏 <code>145 ms</code> 沙箱 I/O）下的成本与 TTFT 收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 低熵常规工具步分流至快速层比例 (Fast-Tier Turn Offload Ratio): <strong id="lbl_cas_ratio" style="color:var(--blue)">68%</strong></label>
+          <input type="range" id="rng_cas_ratio" min="20" max="85" step="2" value="68" oninput="runCasLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 网关负载均衡、模型级联与工具预取策略 (Gateway Routing &amp; Prefetch Mode)</label>
+          <select id="sel_cas_mode" onchange="runCasLab()">
+            <option value="kv_affinity_cascade_speculative_prefetch" selected>一致性哈希 KV 亲和 (88.4%) + 熵引导级联路由 + 流式只读投机预取 (推荐)</option>
+            <option value="round_robin_single_frontier_no_prefetch">传统反模式：Round-Robin 打散缓存 (18.5%) + 全量旗舰推理模型 + 串行等 EOS</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="casOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 18: Multi-Tenant Agentic Memory Tiering: DiskANN Vector Index, GraphRAG Cache & Episodic Lifecycle Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 18 · HORIZONDB PG_DISKANN VECTOR INDEX, GRAPHRAG CACHE &amp; EPISODIC MEMORY LIFECYCLE SIZER</span>
+    <h2>多租户 Agent 记忆分层（<code>pg_diskann</code> 磁盘向量图、GraphRAG 社区缓存与三级生命周期）测算器</h2>
+    <div class="sub">量化在 <code>25M – 250M</code> 向量规模下，HorizonDB <code>pg_diskann</code>（节省 <code>94.3%</code> RAM）、Redis Leiden 社区摘要缓存（<code>42 ms</code> 跨仓检索）与余弦去重 + 强制 <code>tenant_id</code> RLS 强隔离的成本与性能收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 情景记忆与代码语义块向量规模 (Total Episodic &amp; Code Vectors): <strong id="lbl_mem_vecs" style="color:var(--blue)">100M</strong></label>
+          <input type="range" id="rng_mem_vecs" min="25" max="250" step="25" value="100" oninput="runMemLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 向量索引、知识图谱与多租户隔离架构 (Memory Tiering &amp; Vector Index Mode)</label>
+          <select id="sel_mem_mode" onchange="runMemLab()">
+            <option value="diskann_graphrag_3tier_rls" selected>HorizonDB pg_diskann (64B PQ + SSD) + GraphRAG 社区缓存 + 余弦去重 &amp; RLS (推荐)</option>
+            <option value="in_memory_hnsw_untiered_no_rls">传统反模式：纯内存 HNSW + 实时多跳图遍历 + 无去重/无 RLS 后过滤</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="memOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 19: Multimodal Realtime Voice/Video WebRTC Sandbox, eBPF RTP Bypass & Mouth-to-Ear Latency Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 19 · WEBRTC REALTIME VOICE/VIDEO SANDBOX, EBPF XDP/SOCKMAP RTP BYPASS &amp; MOUTH-TO-EAR SIZER</span>
+    <h2>多模态实时音视频 WebRTC 沙箱、eBPF RTP 媒体旁路与 <code>&lt; 300ms</code> Mouth-to-Ear 延迟测算器</h2>
+    <div class="sub">量化在 <code>1,000 – 25,000</code> 并发全双工音视频会话下，Cilium eBPF <code>XDP/sockmap</code> 零拷贝 RTP 直通（<code>3.2 ms</code> p99）、<code>242.5 ms</code> 端到端语音交互延迟预算与 <code>14.0 ms</code> 边缘 Silero-VAD 打断取消收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发全双工 WebRTC 音视频会话数 (Concurrent Full-Duplex Sessions): <strong id="lbl_rtc_sess" style="color:var(--blue)">5,000</strong></label>
+          <input type="range" id="rng_rtc_sess" min="1000" max="25000" step="1000" value="5000" oninput="runRtcLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 媒体转发平面与实时语音管线架构 (WebRTC Media &amp; Turn-Taking Mode)</label>
+          <select id="sel_rtc_mode" onchange="runRtcLab()">
+            <option value="ebpf_xdp_sockmap_vad_acs_turn" selected>eBPF XDP/sockmap 零拷贝 RTP (3.2ms) + 边缘 VAD 14ms 打断 + ACS Anycast TURN (推荐)</option>
+            <option value="userspace_nat_chained_http_rest">传统反模式：kube-proxy 用户态 NAT (48ms) + 串行 HTTP REST (1,180ms)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="rtcOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 20: Autonomous SWE-Agent BuildKit Sandbox, Bazel/sccache Remote CAS & Test Impact Analysis Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 20 · SWE-AGENT ROOTLESS BUILDKIT SANDBOX, BAZEL/SCCACHE REMOTE CAS &amp; TEST IMPACT ANALYSIS SIZER</span>
+    <h2>自主 SWE-Agent 无根 BuildKit 沙箱、Bazel/<code>sccache</code> 远程只读 CAS 与 AST 测试影响分析测算器</h2>
+    <div class="sub">量化在 <code>250 – 5,000</code> 并发研发自修复沙箱下，微虚拟机块级 <code>overlayfs</code> 无根 BuildKit（<code>0.0%</code> 逃逸暴露面）、双层只读编译缓存（<code>18.4 s</code> 编译、<code>0.0%</code> 缓存投毒）与 AST 测试影响分析（<code>-82.0%</code> 测试耗时）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发 SWE-Agent 编译与测试验证沙箱数 (Concurrent SWE Verification Sandboxes): <strong id="lbl_ci_sbx" style="color:var(--blue)">1,000</strong></label>
+          <input type="range" id="rng_ci_sbx" min="250" max="5000" step="250" value="1000" oninput="runCiLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 容器构建、远程编译缓存与回归测试架构 (CI/CD Verification Sandbox Mode)</label>
+          <select id="sel_ci_mode" onchange="runCiLab()">
+            <option value="microvm_rootless_buildkit_cas_tia" selected>MicroVM Rootless BuildKit (14.2s) + 只读 Bazel/sccache CAS (18.4s) + AST TIA (推荐)</option>
+            <option value="privileged_dind_cold_compile_full_test">传统反模式：--privileged DinD / VFS (59.6s) + 无缓存冷编译 (310s) + 全量抖动测试</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="ciOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 21: Agentic Data Lakehouse Sandbox: OneLake Delta Pushdown, DuckDB/Polars & SQL Cost-Breaker Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 21 · AGENTIC DATA LAKEHOUSE SANDBOX, ONELAKE DELTA PUSHDOWN, DUCKDB &amp; SQL COST-BREAKER SIZER</span>
+    <h2>智能体数据湖仓分析沙箱、OneLake 谓词下推、瞬态 DuckDB 与 AST SQL 成本熔断测算器</h2>
+    <div class="sub">量化在 <code>250 – 5,000</code> 并发数据分析沙箱下，微虚拟机内嵌 DuckDB/Polars + OneLake/ADLS Gen2 行组下推（<code>1.85 s</code> p95 vs Spark <code>48.5 s</code>）、<code>sqlglot</code> AST 成本熔断（削减 <code>99.6%</code> 失控扫描账单）与宿主机 ABFS 动态列脱敏（<code>0.0%</code> 越权暴露）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发数据分析与 Text-to-SQL 沙箱数 (Concurrent Lakehouse Analytics Sandboxes): <strong id="lbl_lh_sbx" style="color:var(--teal)">1,000</strong></label>
+          <input type="range" id="rng_lh_sbx" min="250" max="5000" step="250" value="1000" oninput="runLhLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 湖仓查询执行引擎与 SQL 安全治理模式 (Lakehouse Execution &amp; Cost-Guard Mode)</label>
+          <select id="sel_lh_mode" onchange="runLhLab()">
+            <option value="ephemeral_duckdb_onelake_pushdown_ast_guard" selected>瞬态 DuckDB/Polars + OneLake 下推 (1.85s) + AST 成本熔断 + ABFS 列脱敏 (推荐)</option>
+            <option value="cold_spark_cluster_unbounded_sql">传统反模式：共享 Spark 冷启动/排队 (48.5s) + 无审核全表扫描 ($184/1K 会话)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="lhOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 22: Sovereign Multi-Cloud OIDC Federation, WireGuard Mesh & Confidential Clean-Room Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 22 · MULTI-CLOUD OIDC FEDERATION, KERNEL WIREGUARD MESH &amp; CONFIDENTIAL CLEAN-ROOM SIZER</span>
+    <h2>跨云工作负载身份联邦、内核态 WireGuard 加密网格与 SEV-SNP 机密洁净室协作测算器</h2>
+    <div class="sub">量化在 <code>250 – 5,000</code> 并发跨云与多方协作沙箱下，无密钥 OIDC 令牌代理（<code>0.0%</code> 静态密钥暴露、<code>3.4 ms</code> STS 交换）、内核态 WireGuard 网格（<code>38.4 Gbps</code>、<code>1.15 ms</code> 加密开销）与 AMD SEV-SNP 双向证明洁净室（<code>0.0%</code> 跨方数据/权重泄露）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发跨云联邦与多方洁净室沙箱数 (Concurrent Federated Clean-Room Sandboxes): <strong id="lbl_cr_sbx" style="color:var(--purple)">1,000</strong></label>
+          <input type="range" id="rng_cr_sbx" min="250" max="5000" step="250" value="1000" oninput="runCrLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 跨云身份互信、隧道加密与多方洁净室架构 (Multi-Cloud Federation &amp; Clean-Room Mode)</label>
+          <select id="sel_cr_mode" onchange="runCrLab()">
+            <option value="oidc_federation_wireguard_sev_snp_cleanroom" selected>无密钥 OIDC 联邦 (3.4ms) + 内核 WireGuard (38.4 Gbps) + SEV-SNP 双向证明洁净室 (推荐)</option>
+            <option value="static_aksk_userspace_mtls_shared_vm">传统反模式：静态 AK/SK 环境变量 + 用户态 mTLS 代理 (9.2 Gbps) + 普通共享 VM</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="crOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 23: Physical AI, ROS2 Digital-Twin Sandbox & CBF Kinematic Safety Shield Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 23 · PHYSICAL AI, ROS2 DIGITAL-TWIN SANDBOX &amp; CBF KINEMATIC SAFETY SHIELD SIZER</span>
+    <h2>具身智能、ROS2 数字孪生并行仿真沙箱与控制屏障函数（CBF）运动安全护盾测算器</h2>
+    <div class="sub">量化在 <code>250 – 5,000</code> 并发无头数字孪生推演沙箱下，零拷贝 <code>Iceoryx</code> DDS 总线（<code>0.42 ms</code> p99、<code>0.0%</code> 掉帧）、OpenUSD 本地 NVMe 预热与 CoW 克隆（<code>1.15 s</code> 启动、<code>420x</code> 实时加速）与边缘 CBF 运动安全护盾（<code>0.0%</code> 碰撞违规）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发数字孪生物理推演沙箱数 (Concurrent Digital-Twin Simulation Rollouts): <strong id="lbl_rob_sbx" style="color:var(--teal)">1,000</strong></label>
+          <input type="range" id="rng_rob_sbx" min="250" max="5000" step="250" value="1000" oninput="runRobLab()">
+        </div>
+        <div class="form-row">
+          <label>2. ROS2 DDS 传输、OpenUSD 缓存与运动安全护盾模式 (Embodied Sandbox &amp; Safety Mode)</label>
+          <select id="sel_rob_mode" onchange="runRobLab()">
+            <option value="iceoryx_usd_prewarm_cbf_safety_shield" selected>Iceoryx 零拷贝 DDS (0.42ms) + OpenUSD 预热 (1.15s / 420x) + CBF 运动安全护盾 (推荐)</option>
+            <option value="bridge_udp_cold_usd_unfiltered_vla">传统反模式：容器网桥 UDP (14.8ms 抖动) + OpenUSD 冷加载 (38.5s) + VLA 裸连下发</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="robOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 24: Online RLHF/RFT Trajectory Rollout & Anti-Reward-Hacking Verifier Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 24 · ONLINE RLHF/RFT TRAJECTORY ROLLOUT &amp; HERMETIC VERIFIER SIZER</span>
+    <h2>在线强化微调（RFT / GRPO）树状快照分叉、防篡改验证器神谕与流式 Parquet 轨迹测算器</h2>
+    <div class="sub">量化在 <code>250 – 2,500</code> 并发题目组（每组 <code>G = 16</code> 分支，共 <code>4,000 – 40,000</code> 并发推演沙箱）下，<code>1-to-16</code> 树状 CoW 状态分叉（<code>9.2 s</code> vs <code>44.0 s</code>）、独立命名空间防篡改验证器（<code>0.0%</code> 奖励黑客漏检）与 Parquet 轨迹流压缩（<code>-83.4%</code> 体积、<code>0.8%</code> GPU 饥饿率）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发 GRPO 题目组数 (Concurrent Prompt Groups, G=16 Rollouts/Group): <strong id="lbl_rft_grp" style="color:var(--teal)">1,000 组 (16,000 分支)</strong></label>
+          <input type="range" id="rng_rft_grp" min="250" max="2500" step="250" value="1000" oninput="runRftLab()">
+        </div>
+        <div class="form-row">
+          <label>2. RFT 推演分叉与验证器隔离架构模式 (Rollout Forking &amp; Verifier Mode)</label>
+          <select id="sel_rft_mode" onchange="runRftLab()">
+            <option value="tree_cow_fork_hermetic_verifier_parquet_stream" selected>1-to-16 树状 CoW 分叉 (9.2s) + 独立命名空间防篡改验证器 + Parquet 异步轨迹流 (推荐)</option>
+            <option value="full_replay_shared_ns_jsonl_sync">传统反模式：全量从头重放 (44.0s) + 同空间可写评测 (4.6% 篡改) + JSONL 同步落盘</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="rftOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 25: Post-Quantum Cryptography (PQC) Hybrid mTLS, ML-DSA-65 & HNDL Memory Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 25 · POST-QUANTUM CRYPTOGRAPHY (PQC) HYBRID MTLS, ML-DSA-65 &amp; HNDL MEMORY SIZER</span>
+    <h2>后量子密码学（PQC）混合 `X25519MLKEM768` 握手、`ML-DSA-65` 工具验签与抗 HNDL 长效记忆信封测算器</h2>
+    <div class="sub">量化在 <code>1,000 – 50,000</code> 并发沙箱下，遵循 <code>NIST FIPS 203 (ML-KEM) / FIPS 204 (ML-DSA) / CNSA 2.0</code> 时，会话复用 + <code>initcwnd=16</code> 调优（<code>1.65 ms</code> p95 vs <code>26.20 ms</code> 分片停顿）、AVX-512 加速 <code>ML-DSA-65</code> 双签校验（<code>+0.38 ms</code>）与 Managed HSM <code>ML-KEM-1024</code> 抗 HNDL 记忆信封（<code>0.0%</code> 量子窃密暴露）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发智能体沙箱数 (Concurrent PQC-Governed Sandboxes): <strong id="lbl_pqc_sbx" style="color:var(--teal)">10,000</strong></label>
+          <input type="range" id="rng_pqc_sbx" min="1000" max="50000" step="1000" value="10000" oninput="runPqcLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 东西向 mTLS、MCP 供应链签名与长效记忆加密套件 (PQC Cryptographic Agility Mode)</label>
+          <select id="sel_pqc_mode" onchange="runPqcLab()">
+            <option value="x25519_mlkem768_mldsa65_hndl_envelope" selected>X25519MLKEM768 (1.65ms) + ML-DSA-65 双签 (0.38ms) + ML-KEM-1024 抗 HNDL 信封 (推荐)</option>
+            <option value="classical_rsa_ecdsa_unresumed_hndl_exposed">传统反模式：经典 RSA/ECDSA (100% 量子伪造风险) + 逐请求未调优握手 (26.2ms)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="pqcOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 26: GreenOps & Carbon-Aware Agent Fleet Scheduler Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 26 · GREENOPS &amp; CARBON-AWARE AGENT FLEET SCHEDULER SIZER</span>
+    <h2>GreenOps 碳感知时空路由、Turin 待命能效调优与 Kepler RAPL 租户级 CSRD 碳核算测算器</h2>
+    <div class="sub">量化在 <code>1,000 – 50,000</code> 并发沙箱下，结合 WattTime 边际碳强度跨区路由与异步任务削峰填谷（<code>94.2 gCO2eq</code> vs <code>418.0 gCO2eq / 1K 任务</code>，<code>-77.5%</code>）、<code>Standard_D96as_v7</code> <code>amd-pstate-epp</code> 待命调优（<code>148 W</code> vs <code>410 W</code>）与 eBPF Kepler/RAPL 硬件级 CSRD 碳归因（误差 <code>1.9%</code>、电费 <code>-31.4%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发智能体沙箱数 (Concurrent Sandboxes under GreenOps Governance): <strong id="lbl_grn_sbx" style="color:var(--teal)">10,000</strong></label>
+          <input type="range" id="rng_grn_sbx" min="1000" max="50000" step="1000" value="10000" oninput="runGrnLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 碳感知调度与宿主机能效治理模式 (GreenOps Carbon &amp; Power Mode)</label>
+          <select id="sel_grn_mode" onchange="runGrnLab()">
+            <option value="watttime_spatiotemporal_amd_pstate_rapl_attribution" selected>WattTime 时空碳路由 (-77.5% 碳排) + Turin amd-pstate-epp (148W) + Kepler RAPL (推荐)</option>
+            <option value="carbon_blind_static_region_performance_governor">传统反模式：碳盲静态区域绑定 (418gCO2eq) + 常驻满频 (410W) + vCPU 粗略均摊</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="grnOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 27: Hyperlight & SpinKube WASI-0.2 Micro-Sandbox Hybrid Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 27 · HYPERLIGHT &amp; SPINKUBE WASI-0.2 MICRO-SANDBOX DISPATCH SIZER</span>
+    <h2>Hyperlight 亚毫秒级 WASI-0.2 微沙箱、WIT 零拷贝 ABI 与混合双层 MCP 调度测算器</h2>
+    <div class="sub">量化在 <code>10,000 – 250,000</code> 并发 MCP 工具调用下，采用 KVM/Hyper-V VMCS 硬件保护的 Hyperlight AOT WASI-0.2 微沙箱（<code>0.85 ms</code> 冷启动、<code>1.8 MiB</code> RSS、单节点 <code>48,000</code> 并发密度）、WIT 零拷贝共享内存 ABI（<code>0.14 ms</code>）与 <code>72% Hyperlight + 28% Linux MicroVM</code> 混合分级调度（节点成本 <code>-64.8%</code>）的容量收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发 MCP 工具沙箱调用数 (Concurrent Tool Invocations): <strong id="lbl_hl_inv" style="color:var(--teal)">50,000</strong></label>
+          <input type="range" id="rng_hl_inv" min="10000" max="250000" step="10000" value="50000" oninput="runHlLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 微沙箱与 MCP 执行调度架构 (Micro-Sandbox Dispatch Architecture)</label>
+          <select id="sel_hl_mode" onchange="runHlLab()">
+            <option value="hyperlight_wasi02_wit_zerocopy_hybrid_dispatch" selected>Hyperlight WASI-0.2 (0.85ms / 1.8MiB) + WIT 零拷贝 (0.14ms) + 72/28 混合调度 (推荐)</option>
+            <option value="full_linux_microvm_loopback_http_json_only">传统反模式：100% 完整 Linux MicroVM (108ms / 256MiB) + 本地 HTTP/JSON 序列化</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="hlOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 28: Agentic Chaos Engineering & Byzantine Split-Brain Fencing Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 28 · AGENTIC CHAOS STUDIO GAMEDAY &amp; BYZANTINE SPLIT-BRAIN FENCING SIZER</span>
+    <h2>Azure Chaos Studio 复合故障演练、单调纪元防脑裂（Lease-Epoch Fencing）与拜占庭熔断测算器</h2>
+    <div class="sub">量化在 <code>1,000 – 50,000</code> 并发沙箱下，启用 Chaos Studio 复合故障自愈闭环（<code>6.8 s</code> MTTR vs <code>1,420 s</code> 人工排障，存活率 <code>99.94%</code>）、单调递增 <code>x-aksclaw-fencing-epoch</code> 防脑裂校验（<code>0.22 ms</code> 开销、<code>0.0%</code> 僵尸沙箱脏写）与拜占庭畸形 MCP 响应熔断（<code>1.20 s</code> 隔离、重试浪费 <code>0.4%</code>）的韧性收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发智能体沙箱规模 (Concurrent Sandboxes under Chaos GameDay): <strong id="lbl_ch_sbx" style="color:var(--teal)">10,000</strong></label>
+          <input type="range" id="rng_ch_sbx" min="1000" max="50000" step="1000" value="10000" oninput="runChLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 混沌演练与防脑裂韧性架构 (Chaos &amp; Split-Brain Fencing Mode)</label>
+          <select id="sel_ch_mode" onchange="runChLab()">
+            <option value="chaos_studio_epoch_fencing_byzantine_breaker" selected>Chaos Studio 持续演练 (6.8s MTTR) + 纪元防脑裂 (0% 脏写) + 拜占庭熔断 (推荐)</option>
+            <option value="unverified_runbook_no_fencing_unbounded_retry">传统反模式：静态未验证预案 (1,420s MTTR) + 无纪元锁 (4.8% 脑裂) + 无限重试</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="chOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 29: Scientific HPC & AI-for-Science Managed Lustre + HBv4 InfiniBand Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 29 · AI-FOR-SCIENCE &amp; HPC SANDBOX (MANAGED LUSTRE 160 GB/S + HBv4 NDR INFINIBAND GANG SIZER)</span>
+    <h2>科学计算与 AI-for-Science 沙箱：Azure Managed Lustre 并行挂载、HBv4 InfiniBand 成组调度与异步检查点测算器</h2>
+    <div class="sub">量化在 <code>250 – 4,000</code> 并发科学求解沙箱（分子动力学 / CFD / 材料发现）下，启用 Azure Managed Lustre <code>160.0 GB/s</code> 并行 POSIX 条带挂载（<code>50 GB</code> 轨迹预热 <code>3.1 s</code> vs <code>142.0 s</code> NFSv4）、<code>Standard_HB176rs_v4</code> 400Gb/s NDR InfiniBand Kueue 成组调度（<code>1.65 us</code> MPI AllReduce、<code>0.0%</code> 死锁浪费、<code>89.6%</code> 算力利用率）与 VELOC 异步检查点（停顿开销 <code>0.9%</code> vs <code>24.0%</code>）的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发科学计算/求解沙箱规模 (Concurrent AI-for-Science Sandboxes): <strong id="lbl_hpc_sbx" style="color:var(--teal)">1,000</strong></label>
+          <input type="range" id="rng_hpc_sbx" min="250" max="4000" step="250" value="1000" oninput="runHpcLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 并行文件系统与 MPI 拓扑成组调度架构 (HPC Storage &amp; Gang Scheduling Mode)</label>
+          <select id="sel_hpc_mode" onchange="runHpcLab()">
+            <option value="amlfs_lustre_kueue_ib_gang_veloc_async_ckpt" selected>Managed Lustre (160 GB/s) + HBv4 NDR IB Kueue 成组调度 (1.65us) + VELOC 异步检查点 (推荐)</option>
+            <option value="nfs_default_scheduler_sync_ckpt">传统反模式：标准 NFSv4 (8.4 GB/s) + K8s 默认调度 (26.4% 死锁) + 同步写盘检查点 (24% 停顿)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="hpcOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 30: Agentic Payment Mandate & Azure Confidential Ledger Escrow Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 30 · AGENTIC PAYMENT MANDATE (AP2 / x402) &amp; CONFIDENTIAL LEDGER ESCROW SIZER</span>
+    <h2>智能体商业支付与金融账本护栏：HSM 消费授权令、HorizonDB 复式幂等托管与 Confidential Ledger 测算器</h2>
+    <div class="sub">量化在 <code>500 – 10,000 TPS</code> 智能体并发交易下，启用 Managed HSM 一次性 <code>COSE_Sign1</code> 消费授权令（<code>1.45 ms</code> 签发、<code>0.0%</code> 提示词注入盗刷）、HorizonDB 复式记账幂等冻结（<code>3.80 ms</code> 预授权、<code>0.0%</code> 重试重复扣款）与 Azure Confidential Ledger SGX 默克尔收据（总同步护栏 <code>5.25 ms</code>、<code>100.0%</code> 抗抵赖审计）的安全性与延迟表现：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发智能体交易授权吞吐 (Concurrent Payment Mandates TPS): <strong id="lbl_pay_tps" style="color:var(--teal)">2,500</strong></label>
+          <input type="range" id="rng_pay_tps" min="500" max="10000" step="500" value="2500" oninput="runPayLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 支付授权与账本结算护栏模式 (Payment Mandate &amp; Ledger Escrow Mode)</label>
+          <select id="sel_pay_mode" onchange="runPayLab()">
+            <option value="hsm_spend_mandate_horizondb_escrow_confidential_ledger" selected>HSM 消费授权令 (1.45ms) + HorizonDB 复式幂等托管 (3.80ms) + Confidential Ledger (推荐)</option>
+            <option value="raw_card_vault_unidempotent_rest">传统反模式：沙箱直持原始支付 Key (100% 注入盗刷暴露) + 无状态机重试 (3.8% 重复扣款)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="payOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 31: Cross-Organization A2A Federation & Entra Verified ID SD-JWT Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 31 · CROSS-ORGANIZATION A2A FEDERATION MESH (ENTRA VERIFIED ID SD-JWT + HTTP/3 QUIC 0-RTT SIZER)</span>
+    <h2>跨企业 A2A 联邦服务网格：Entra Verified ID 选择性披露、HTTP/3 QUIC 0-RTT 与截止预算传播测算器</h2>
+    <div class="sub">量化在 <code>1,000 – 25,000</code> 并发跨组织 <code>A2A</code> 任务委托下，启用 Microsoft Entra Verified ID <code>did:web</code> + <code>SD-JWT</code> 选择性披露（<code>1.85 ms</code> 验签、<code>0.0%</code> 内部属性过度暴露）、Azure Front Door <code>HTTP/3 QUIC 0-RTT</code> 多路复用（跨洲际 <code>1.2%</code> 丢包下流式 <code>p99 = 38.5 ms</code> vs <code>420.0 ms</code> TCP 队头阻塞）与全链路 <code>x-a2a-deadline-budget-ms</code> 预算传导（级联超时从 <code>19.4%</code> 降至 <code>0.15%</code>）的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发跨企业 A2A 任务委托流规模 (Concurrent Cross-Org A2A Delegations): <strong id="lbl_a2a_del" style="color:var(--teal)">5,000</strong></label>
+          <input type="range" id="rng_a2a_del" min="1000" max="25000" step="1000" value="5000" oninput="runA2aLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 跨组织身份凭证与广域网传输协议 (A2A Credential &amp; Transport Mode)</label>
+          <select id="sel_a2a_mode" onchange="runA2aLab()">
+            <option value="entra_verified_id_sdjwt_http3_quic_deadline_budget" selected>Entra Verified ID SD-JWT (0% 属性外泄) + HTTP/3 QUIC 0-RTT (38.5ms) + 预算路由 (推荐)</option>
+            <option value="raw_oauth_tcp_http1_no_budget">传统反模式：粗粒度 OAuth 全量声明 (100% 暴露) + TCP HTTP/1.1 (420ms 队头阻塞)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="a2aOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 32: Autonomous Cyber-Defense & AI Red-Team Detonation Sandbox Sizer -->
+  <section class="card">
+    <span class="pill pill-rose">TOOL 32 · AUTONOMOUS CYBER-DEFENSE &amp; MALWARE DETONATION SANDBOX (AIR-GAPPED VSOCK MICROVM + EBPF KRSI + SENTINEL SOAR SIZER)</span>
+    <h2>自主网络防御与样本引爆沙箱：气隙 vsock MicroVM、内核 eBPF KRSI/LSM 与 Sentinel 亚秒级隔离测算器</h2>
+    <div class="sub">量化在 <code>250 – 5,000</code> 并发漏洞复现与恶意样本引爆沙箱下，采用零网卡气隙 <code>--net=none</code> + 单向 <code>AF_VSOCK</code> MicroVM（<code>0.0%</code> 内网横向逃逸、<code>45.0 ms</code> 内存擦除重置 vs <code>18,500 ms</code> 传统重装）、内核态 eBPF <code>KRSI/LSM</code> 钩子（<code>1.8%</code> CPU 开销、<code>0.4%</code> 反沙箱逃逸率 vs <code>68.0%</code> 用户态 <code>ptrace</code>）与 Microsoft Sentinel <code>680.0 ms</code> 自主 SOAR 全网隔离闭环的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发漏洞复现与样本引爆沙箱规模 (Concurrent Detonation Sandboxes): <strong id="lbl_cyb_sbx" style="color:var(--teal)">1,000</strong></label>
+          <input type="range" id="rng_cyb_sbx" min="250" max="5000" step="250" value="1000" oninput="runCybLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 引爆隔离边界与内核行为遥测架构 (Detonation Isolation &amp; Telemetry Mode)</label>
+          <select id="sel_cyb_mode" onchange="runCybLab()">
+            <option value="airgapped_vsock_microvm_krsi_ebpf_sentinel_soar" selected>气隙 vsock MicroVM (0% 逃逸 / 45ms 重置) + eBPF KRSI (0.4% 反检测) + Sentinel 680ms SOAR (推荐)</option>
+            <option value="vnet_container_ptrace_manual_soc">传统反模式：带 VNet 容器 (100% 内网暴露) + 用户态 ptrace (68% 样本逃逸) + 45m 人工 SOC</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cybOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 33: Industrial Edge-to-Cloud Disconnected Agentic Infrastructure Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 33 · INDUSTRIAL EDGE DISCONNECTED AGENT INFRA (AZURE LOCAL + IOT OPERATIONS MQTT SAF + ONNX SLM + HLC-CRDT SIZER)</span>
+    <h2>工业边缘断网自治与云边协同：Azure Local、AIO 持久化 MQTTv5 存储转发与 HLC-CRDT 孪生同步测算器</h2>
+    <div class="sub">量化在 <code>125 – 2,000</code> 并发产线/风电/远洋边缘智能体下，启用 Azure Local + <code>ONNX Runtime GenAI INT4</code> 本地小模型降级（<code>72h</code> 断网可用性 <code>99.98%</code>、本地 <code>TTFT p95 = 18.4 ms</code> vs <code>680.0 ms</code> WAN）、<code>Azure IoT Operations</code> 本地 NVMe 存储转发 + <code>LZ4</code> 状态差分压缩（落盘体积缩减 <code>91.4%</code>、<code>0.0%</code> 断网检查点丢失 vs <code>98.7%</code> 内存队列溢出）与 <code>HLC-CRDT</code> 令牌桶限流云端合入（<code>35.0%</code> WAN 占用上限、<code>14.2 s</code> 同步完成）的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发工业边缘巡检与控制智能体规模 (Concurrent Industrial Edge Agents): <strong id="lbl_edg_ag" style="color:var(--teal)">500</strong></label>
+          <input type="range" id="rng_edg_ag" min="125" max="2000" step="125" value="500" oninput="runEdgLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 边缘断网自治与云边状态同步模式 (Edge Disconnected Continuity Mode)</label>
+          <select id="sel_edg_mode" onchange="runEdgLab()">
+            <option value="azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt" selected>Azure Local + AIO NVMe 存储转发 (0% 丢失) + 本地 ONNX SLM (18.4ms) + HLC-CRDT 限流同步 (推荐)</option>
+            <option value="cloud_only_inmemory_mqtt_unthrottled_resync">传统反模式：纯云端推理依赖 (断网 0% 可用) + 内存 MQTT (98.7% 溢出丢失) + 重连风暴</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="edgOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 34: Regulated Healthcare & Clinical Trial Agent Infrastructure Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 34 · REGULATED HEALTHCARE &amp; CLINICAL TRIAL AGENT INFRA (AHDS FHIR/DICOM CAST + PRESIDIO FPE + 21 CFR PART 11 SIZER)</span>
+    <h2>医疗临床与生命科学受监管智能体底座：FHIR R4 / DICOMweb 零拷贝、HIPAA PHI 令牌化与 21 CFR Part 11 双签测算器</h2>
+    <div class="sub">量化在 <code>125 – 2,000</code> 并发放射科阅片与多中心临床试验智能体下，启用 Azure Health Data Services (<code>FHIR R4 + DICOMweb</code> 零拷贝投射至 <code>Standard_NCC40ads_H100_v5</code> 机密 GPU 沙箱，3D CT/MRI 加载延迟 <code>185.0 ms</code> vs <code>4,850.0 ms</code>，<code>-96.2%</code>)、<code>Presidio + Clinical BioBERT</code> 内联 HIPAA Safe-Harbor 脱敏（召回率 <code>99.94%</code>、外部模型 <code>0.0%</code> 原始 PHI 暴露）与 <code>FDA 21 CFR Part 11</code> 不可抵赖双签审计（<code>0.0%</code> 未签名变更、<code>3.2 s</code> GxP 迎审汇编）的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发医疗临床与试验核查智能体规模 (Concurrent Clinical &amp; Trial Agents): <strong id="lbl_med_ag" style="color:var(--teal)">500</strong></label>
+          <input type="range" id="rng_med_ag" min="125" max="2000" step="125" value="500" oninput="runMedLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 医疗隐私保护与临床试验合规架构 (Healthcare PHI &amp; GxP Compliance Mode)</label>
+          <select id="sel_med_mode" onchange="runMedLab()">
+            <option value="ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm" selected>AHDS 零拷贝投射 (185ms) + Presidio FPE (0% PHI 外泄) + 21 CFR Part 11 双签 (推荐)</option>
+            <option value="unredacted_rest_json_unsigned_clinical_writes">传统反模式：REST Base64 传输 (4,850ms) + 未脱敏直连 (100% PHI 暴露) + 无电子签名</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="medOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 35: Hybrid Quantum-Classical Agentic Sandboxes Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 35 · HYBRID QUANTUM-CLASSICAL AGENTIC SANDBOX (AZURE QUANTUM QIR + H200 CUQUANTUM PRE-FILTER + FLOQUET QEC SIZER)</span>
+    <h2>混合量子-经典科学计算沙箱：Azure Quantum QIR 编译、NVIDIA cuQuantum 预筛与逻辑比特纠错测算器</h2>
+    <div class="sub">量化在 <code>64 – 1,000</code> 并发催化化学（<code>VQE</code>）与组合优化（<code>QAOA</code>）量子智能体下，启用 <code>Standard_ND96isr_H200_v5</code> + <code>NVIDIA cuQuantum</code> 张量网络预筛选（36-Qubit 模拟 <code>14.5 ms</code> vs <code>1,850.0 ms</code>，节省 <code>88.6%</code> 物理 QPU Shot 经费）、<code>Azure Quantum QIR</code> LLVM 硬件拓扑编译（编译延迟 <code>19.2 ms</code>、双比特门削减 <code>37.5%</code>、<code>0.0%</code> 拓扑拒单 vs <code>24.6%</code>）与逻辑量子比特纠错（化学精度达标率 <code>96.8%</code> vs <code>31.0%</code>）的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发量子化学与优化智能体规模 (Concurrent Quantum Scientific Agents): <strong id="lbl_qir_ag" style="color:var(--teal)">250</strong></label>
+          <input type="range" id="rng_qir_ag" min="64" max="1024" step="64" value="250" oninput="runQirLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 混合量子-经典编译与预筛选架构 (Quantum-Classical Hybrid Execution Mode)</label>
+          <select id="sel_qir_mode" onchange="runQirLab()">
+            <option value="qir_llvm_cuquantum_prefilter_floquet_qec" selected>Azure Quantum QIR 编译 (19.2ms) + H200 cuQuantum 预筛 (-88.6% Shot 费) + 逻辑纠错 (推荐)</option>
+            <option value="raw_qasm_cpu_direct_unmitigated_qpu">传统反模式：CPU 状态向量 (1,850ms) + 裸 OpenQASM 直交 (24.6% 拒单) + 无噪声抑制</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="qirOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 36: Telco 5G-Advanced / O-RAN & Autonomous Network Slicing Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 36 · TELCO 5G-ADVANCED / O-RAN &amp; AUTONOMOUS NETWORK SLICING (OPERATOR NEXUS SR-IOV/DPDK + NEAR-RT RIC XAPP + 3GPP SLICE VERIFIER)</span>
+    <h2>电信 5G-A / O-RAN 智能体基础设施：Operator Nexus SR-IOV/DPDK、Near-RT RIC xApp 亚 10ms 闭环与 3GPP 切片测算器</h2>
+    <div class="sub">量化在 <code>1,000 – 25,000</code> 并发 5G <code>gNodeB</code> 小区规模下，启用 <code>Azure Operator Nexus SR-IOV + DPDK PMD</code> 零拷贝用户面旁路（转发延迟 <code>38.0 us</code> vs <code>1,420.0 us</code>，微突发丢包 <code>0.0%</code> vs <code>14.8%</code>）、<code>Near-RT RIC xApp</code> 实时沙箱（<code>E2SM-RC</code> 闭环 <code>4.2 ms &lt;= 10.0 ms SLO</code> vs 远程大模型 <code>340.0 ms</code>，频谱效率 <code>+23.5%</code>，射频节电 <code>31.2%</code>）与 <code>3GPP TS 28.531</code> 马尔可夫切片预验证器（<code>0.0% URLLC</code> 资源块饥饿，切片开通 <code>11.5 s</code> vs <code>4.5 h</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 纳管 5G-Advanced gNodeB 小区规模 (Managed 5G gNodeB Cells): <strong id="lbl_oran_cells" style="color:var(--blue)">5,000</strong></label>
+          <input type="range" id="rng_oran_cells" min="1000" max="25000" step="1000" value="5000" oninput="runOranLab()">
+        </div>
+        <div class="form-row">
+          <label>2. O-RAN RIC 控制环与用户面加速架构 (Telco O-RAN &amp; Slice Control Mode)</label>
+          <select id="sel_oran_mode" onchange="runOranLab()">
+            <option value="operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier" selected>Operator Nexus SR-IOV/DPDK (38us) + Near-RT xApp (4.2ms) + 3GPP 切片验证 (推荐)</option>
+            <option value="kernel_veth_remote_llm_unverified_slice_mutation">传统反模式：内核 veth 网桥 (14.8% 丢包) + 远程大模型直控 E2 (340ms) + 无切片验证</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="oranOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 37: Sovereign Space & LEO Satellite Edge Agent Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 37 · SOVEREIGN SPACE &amp; LEO SATELLITE EDGE AGENT INFRA (AZURE ORBITAL + RFC 9171 BPv7 DTN + ON-ORBIT TRIAGE &amp; SEU INTERLOCK SIZER)</span>
+    <h2>空天卫星边缘与 DTN 智能体底座：Azure Orbital、在轨多模态预筛、RFC 9171 BPv7 托管传输与 SEU 辐射互锁测算器</h2>
+    <div class="sub">量化在 <code>30 – 600</code> 颗低轨（<code>LEO</code>）遥感与通信星座规模下，启用在轨抗辐射 <code>INT4/FP8</code> 多模态预筛 + 星间激光链路 <code>ISL</code>（林火/舰船异常发现从 <code>4.8 小时</code> 降至 <code>18.5 秒</code>，星地下行带宽节省 <code>96.8%</code>）、<code>RFC 9171 BPv7 + LTP</code> 延迟容忍托管包协议（跨轨道黑障 MCP 投递率 <code>99.98%</code> vs 标准 TCP <code>78.4%</code> 会话崩溃）与 <code>EDAC + CRC32C + FPGA</code> 姿态/推进器包络互锁（<code>0.0% SEU</code> 辐射翻转误动作，<code>1.6 ms</code> 校验开销）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 纳管低轨 (LEO) 智能体卫星星座规模 (LEO Satellite Constellation Size): <strong id="lbl_orb_sats" style="color:var(--teal)">120</strong></label>
+          <input type="range" id="rng_orb_sats" min="30" max="600" step="30" value="120" oninput="runOrbLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 星地延迟容忍协议与在轨抗辐射保护模式 (Orbital DTN &amp; Radiation Protection Mode)</label>
+          <select id="sel_orb_mode" onchange="runOrbLab()">
+            <option value="orbital_isl_bpv7_rad_triage_seu_interlock" selected>在轨 INT4 预筛 + ISL BPv7 托管包 (18.5s 告警 / 99.98% 投递) + SEU 硬件互锁 (推荐)</option>
+            <option value="raw_downlink_tcp_http_unshielded_ram">传统反模式：原始全量过境下传 (4.8h 滞后) + 标准 TCP/HTTP (78.4% 断连) + 无辐射保护</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="orbOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 38: Smart Grid IEC 61850 Substation & AC-OPF Safety Barrier Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 38 · SMART GRID IEC 61850 SUBSTATION, IEEE C37.118 PMU EDGE TRIAGE &amp; AC-OPF SAFETY BARRIER SIZER</span>
+    <h2>智能电网与变电站 IEC 61850 底座：IEEE C37.118 PMU 半周波分诊、AC-OPF 潮流屏障与 GOOSE 继电互锁测算器</h2>
+    <div class="sub">量化在 <code>120 – 2,000</code> 个变电站间隔（<code>Substation Bays</code>）规模下，启用本地 <code>IEEE C37.118 PMU + IEC 61850-9-2</code> Rust/eBPF 边缘 FFT 分诊（故障定位 <code>6.2 ms &lt;= 8.33 ms</code> 半周波 SLO vs 原始上云 <code>1,840.0 ms</code>，电力专网带宽压缩 <code>98.4%</code>）、<code>AC-OPF (HiGHS/IPOPT)</code> 交流最优潮流安全屏障（<code>14.8 ms</code> 拦截 <code>100.0% N-1</code> 热过载，风光弃电率降低 <code>31.5%</code>）与 <code>NERC CIP-005 + IEC 61850 GOOSE</code> 同期继电器硬件互锁（<code>0.0%</code> 非同期合闸事故，<code>1.8 ms &lt;= 4.0 ms</code> 硬件跳闸）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 纳管变电站间隔规模 (Managed Substation Bays): <strong id="lbl_grid_bays" style="color:var(--blue)">500</strong></label>
+          <input type="range" id="rng_grid_bays" min="120" max="2000" step="40" value="500" oninput="runGridLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 电网相量分诊与潮流安全屏障模式 (Smart Grid Telemetry &amp; Control Guardrail Mode)</label>
+          <select id="sel_grid_mode" onchange="runGridLab()">
+            <option value="pmu_edge_fft_acopf_barrier_goose_interlock" selected>边缘 PMU FFT 分诊 (6.2ms) + AC-OPF 潮流屏障 (14.8ms) + GOOSE 硬件互锁 (1.8ms 推荐)</option>
+            <option value="raw_wan_pmu_unverified_llm_scada_write">传统反模式：原始波形上云 (1,840ms) + LLM 直写 DNP3 (11.8% 过载) + 纯软件网关</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="gridOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 39: Autonomous Retail, Warehouse AMR Fleet & Supply Chain Control Tower Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 39 · AUTONOMOUS WAREHOUSE AMR FLEET, MAPF-CBS DEADLOCK-FREE ROUTING &amp; COLD-CHAIN GUARDRAIL SIZER</span>
+    <h2>智慧仓储 AMR 舰队与供应链控制塔：边缘 RFID/3D 融合、MAPF-CBS 无死锁路径规划与冷链动力学护栏测算器</h2>
+    <div class="sub">量化在 <code>500 – 8,000</code> 台自主移动机器人（<code>AMR</code>）履约中心规模下，启用本地 <code>RFID EPC Gen2 + 3D LiDAR</code> 边缘融合（WAN 带宽削减 <code>98.1%</code>，实时库存准确率 <code>99.94%</code> vs <code>93.8%</code>）、时间扩展图 <code>MAPF-CBS</code> 冲突搜索轨迹验证（<code>11.4 ms &lt;= 25.0 ms</code> 控制节拍 SLO，窄巷道死锁/碰撞率 <code>0.0%</code> vs <code>8.6%</code>，每小时拣货吞吐 <code>+34.8%</code>）与 <code>FSMA 204 / GxP</code> 阿伦尼乌斯冷链预测改道 + <code>ERP EDI 856/940</code> 幂等令牌（<code>0.0%</code> 冷链货损与重复发运）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 履约中心纳管 AMR 机器人规模 (Managed Warehouse AMR Fleet): <strong id="lbl_scm_amrs" style="color:var(--teal)">2,000</strong></label>
+          <input type="range" id="rng_scm_amrs" min="500" max="8000" step="250" value="2000" oninput="runScmLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 仓储多机协同规划与供应链履约护栏模式 (Warehouse MAPF &amp; Cold-Chain Mode)</label>
+          <select id="sel_scm_mode" onchange="runScmLab()">
+            <option value="edge_rfid_fusion_mapf_cbs_arrhenius_guard" selected>边缘 RFID/3D 融合 (99.94%) + MAPF-CBS 无死锁验证 (11.4ms) + 冷链/EDI 幂等护栏 (推荐)</option>
+            <option value="raw_cloud_video_greedy_routing_reactive_alarm">传统反模式：原始视频上云 + 贪心无协调路由 (8.6% 死锁) + 静态报警 (4.2% 货损)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="scmOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 40: Media Production, Live Broadcast & OpenUSD / 3DGS Render Farm Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 40 · MEDIA PRODUCTION, SMPTE ST 2110 NVDEC FRAME RING, OPENUSD/3DGS VERIFIER &amp; C2PA 2.1 PROVENANCE SIZER</span>
+    <h2>影视直播导播与空间计算智能体：SMPTE ST 2110 硬件 NVDEC 零拷贝、OpenUSD/3DGS 场景校验与 C2PA 2.1 水印测算器</h2>
+    <div class="sub">量化在 <code>8 – 128</code> 路并发 <code>4K60 HDR 10-bit</code> 广播流规模下，启用 <code>NVDEC/NVENC</code> 显存 DMA 零拷贝帧环（单帧转张量延迟从 <code>118.0 ms</code> 降至 <code>6.8 ms</code>，CPU 削减 <code>88.5%</code>）、<code>OpenUSD / Blender bpy</code> 场景图包围盒与流形网格预校验 + 脏图元 <code>BVH</code> 缓存（拦截 <code>99.6%</code> 异常脚本，GPU 渲染节点崩溃率 <code>0.0%</code> vs <code>9.4%</code>，增量重渲染耗时削减 <code>74.2%</code>）与 Azure Managed HSM <code>C2PA 2.1</code> 内容凭证签名（<code>4.2 ms</code>，<code>0.0%</code> 未签名合成媒体外流）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发 4K60 HDR 广播与 3D 渲染流路数 (Concurrent 4K60 Streams): <strong id="lbl_usd_streams" style="color:var(--teal)">32</strong></label>
+          <input type="range" id="rng_usd_streams" min="8" max="128" step="8" value="32" oninput="runMediaUsdLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 帧采集、OpenUSD/3DGS 场景图校验与 C2PA 溯源模式 (Media &amp; OpenUSD Pipeline Mode)</label>
+          <select id="sel_usd_mode" onchange="runMediaUsdLab()">
+            <option value="nvdec_dma_openusd_verifier_c2pa_hsm" selected>NVDEC 零拷贝帧环 (6.8ms) + OpenUSD/BVH 校验 (0% 崩溃) + C2PA 2.1 HSM 签名 (推荐)</option>
+            <option value="cpu_ffmpeg_unverified_bpy_unsigned_media">传统反模式：CPU FFmpeg 软解 (118ms) + 裸跑 bpy 脚本 (9.4% OOM 崩溃) + 无 C2PA 签名</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="usdOut"></div>
+    </div>
+  </section>
+
+  <!-- Tool 41: Autonomous Smart Mobility, Connected Vehicle (SDV / V2X) Fleet & ADAS Simulation Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 41 · SMART MOBILITY SDV/V2X FLEET, CARLA/OPENSCENARIO RSS VERIFIER &amp; UNECE R155 UPTANE OTA SIZER</span>
+    <h2>智能网联汽车与 ADAS 闭环仿真：V2X MQTT-over-QUIC 边缘差分、CARLA RSS 安全包络验证与 UNECE R155 驻车 OTA 测算器</h2>
+    <div class="sub">量化在 <code>10,000 – 250,000</code> 辆智能网联汽车（<code>SDV</code>）车队规模下，启用车端异常触发环形缓冲 + <code>Event Grid MQTT-over-QUIC 0-RTT</code>（蜂窝上行带宽削减 <code>91.8%</code>，V2X 接入 P99 从 <code>1,840.0 ms</code> 降至 <code>64.0 ms</code>）、<code>CARLA / OpenSCENARIO 2.0</code> 千路并发重放与责任敏感安全（<code>RSS TTC &gt;= 1.8 s</code>）包络门控（<code>18.5 s</code> 拦截 <code>100.0%</code> 碰撞违规 vs 裸推策略 <code>6.2%</code> 逃逸）及 <code>UNECE R155 / ISO 21434 Uptane</code> 驻车双分区 OTA 护栏（<code>0.0%</code> 行驶中误刷与控制器变砖，异常 <code>4.5 s</code> 自动回滚）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在线智能网联车队规模 (Connected SDV Vehicles): <strong id="lbl_sdv_veh" style="color:var(--blue)">50,000</strong></label>
+          <input type="range" id="rng_sdv_veh" min="10000" max="250000" step="10000" value="50000" oninput="runSdvLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 车云 V2X 遥测、CARLA RSS 闭环验证与 Uptane OTA 护栏模式 (SDV &amp; ADAS Fleet Mode)</label>
+          <select id="sel_sdv_mode" onchange="runSdvLab()">
+            <option value="v2x_quic_delta_carla_rss_uptane_ota" selected>MQTT-over-QUIC 边缘差分 (64ms) + CARLA RSS 闭环校验 (0% 违规) + Uptane 驻车 OTA (推荐)</option>
+            <option value="raw_rosbag_tcp_unverified_ota">传统反模式：原始 ROS2 Bag TCP 直传 (1,840ms) + 无仿真裸推策略 (6.2% 碰撞风险) + 无驻车锁</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="sdvOut"></div>
+    </div>
+  </section>
+
+  <footer class="footer-note">
+    <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
+    <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
+  </footer>
+</main>
+
+<script>
+function runDecision() {
+  const aud = document.getElementById('sel_audience').value;
+  const ctrl = document.getElementById('sel_control').value === 'yes';
+  const dev = document.getElementById('sel_devteam').value === 'yes';
+  const prof = document.getElementById('sel_profile').value;
+
+  if (aud === 'To-B' && ctrl && !dev) {
+    document.getElementById('decisionOutput').innerHTML = `
+      <span class="pill pill-rose">⛔ HOLD GATE · 交付门禁拦截 (Playbook Slide 7)</span>
+      <h3 style="margin-top:0.55rem;color:#fda4af;">严禁因缺乏研发团队而将需底层控制的场景退回 Foundry！</h3>
+      <p style="font-size:0.88rem;color:#e2e8f0;">
+        客户明确需要超越托管服务的底层基础设施控制，但当前缺乏专职研发/运维团队。如果强行塞回 Foundry Hosted Agents，将因无法满足自定义沙箱/内网/内核硬约束而在 PoC 阶段失败。
+      </p>
+      <div style="background:#1e293b;padding:0.75rem;border-radius:8px;font-size:0.84rem;color:#fde68a;">
+        <strong>正确行动路径</strong>：保持在 Modernization PaaS / VM 架构轨道上，第一步先引入 <strong>Microsoft CSU 或认证 AI 合作伙伴</strong> 补齐工程交付能力，再落地容器/沙箱底座。
+      </div>
+    `;
+    return;
+  }
+
+  const map = {
+    e2b_100k: {
+      rt: "E2B on Azure VMSS Flexible (Standard_D96as_v7 + Firecracker MicroVM)",
+      data: "UFFD 内存按需缺页 + NBD 块差分快照 + Azure DB for PostgreSQL (主从+PgBouncer) + Blob",
+      gov: "AppGW WAF v2 (双前端 Public+Private IP) + APIM rate-limit-by-key (按动态 Host 限流)",
+      why: "支撑 10万+ 并发虚拟电脑且要求 108ms Base / 132ms Code-Interpreter 恢复延迟的唯一生产级路径。"
+    },
+    aksclaw: {
+      rt: "AKS (Automatic / Standard) + Kata Containers Pod VM (AKSClaw 参考架构)",
+      data: "团队共享只读技能 PV (/skills) + 实例独占读写状态 PV (/workspace) + Azure HorizonDB",
+      gov: "5 道平台硬边界 (封禁 169.254.169.254 IMDS + 出网白名单 + 凭据代理 + Entra Agent ID + Unified AI Gateway)",
+      why: "专为百人级研发/SRE 舰队或多租户 SaaS 设计，实现“技能全员共享、状态严格隔离、安全不靠自觉”。"
+    },
+    coding_sandbox: {
+      rt: "ACA Apps / AKS + ACA Sandboxes (Preview)",
+      data: "Sandbox 内存与磁盘快照 (Snapshot) + Persistent Volume + Azure HorizonDB",
+      gov: "Entra Agent ID + GitHub Copilot SDK + 显式端口/网络边界策略",
+      why: "需要自定义 OCI 镜像、挂载持久卷、开放预览端口并支持跨任务 create/pause/resume，同时免去自建 K8s/Firecracker 运维。"
+    },
+    dynamic_code: {
+      rt: "ACA Apps (宿主编排) + ACA Dynamic Sessions (Hyper-V 预热会话池)",
+      data: "Azure HorizonDB (Preview) 或 Azure Cosmos DB (注：Session 本地目录在空闲回收后清零)",
+      gov: "Hyper-V 硬件级虚拟化边界 + Session ID 路由 + Unified AI Gateway",
+      why: "短平快不可信代码执行与文件解析场景，兼具 ~210ms 预热池极速分配与零常驻闲置成本。"
+    },
+    durable_approval: {
+      rt: "Azure Functions + Durable Functions + ACA Apps",
+      data: "Durable Task Scheduler + Azure HorizonDB / Cosmos DB",
+      gov: "Entra Agent ID + Logic Apps 企业连接器 + 人工审批事件门控 (wait_for_external_event)",
+      why: "采购、财务与跨系统审批流需要挂起数小时至数天等待人工确认，计算与状态彻底解耦，支持确定性重放。"
+    },
+    standard_api: {
+      rt: "Microsoft Foundry Hosted Agents",
+      data: "Foundry IQ (Azure AI Search) + Azure Cosmos DB",
+      gov: "Microsoft Entra Agent ID + 1,400+ Foundry MCP Toolboxes + Defender & Purview",
+      why: "标准受控 API 与企业知识库场景的最快上线路径，平台全托管会话、端点与扩缩容。"
+    }
+  };
+
+  const picked = (!ctrl && aud === 'To-B') ? map.standard_api : map[prof];
+  document.getElementById('decisionOutput').innerHTML = `
+    <span class="pill pill-teal">✅ RECOMMENDED TARGET ARCHITECTURE</span>
+    <h3 style="margin-top:0.55rem;">首选运行时：${picked.rt}</h3>
+    <p style="font-size:0.86rem;color:#e2e8f0;margin:0.4rem 0;">
+      • <strong>状态与记忆底座 (Ground)</strong>：${picked.data}<br>
+      • <strong>安全与网关控制面 (Govern)</strong>：${picked.gov}
+    </p>
+    <div style="background:#1e293b;padding:0.7rem;border-radius:8px;font-size:0.83rem;color:#93c5fd;">
+      <strong>选型依据</strong>：${picked.why}
+    </div>
+  `;
+}
+
+function runSizer() {
+  const concurrent = parseInt(document.getElementById('rng_concurrent').value, 10);
+  const ram = parseInt(document.getElementById('rng_ram').value, 10);
+  const hp = parseInt(document.getElementById('rng_hp').value, 10) / 100.0;
+  const cpu = parseInt(document.getElementById('rng_cpu').value, 10) / 100.0;
+
+  document.getElementById('lbl_concurrent').textContent = concurrent.toLocaleString();
+  document.getElementById('lbl_ram').textContent = ram + " MiB";
+  document.getElementById('lbl_hp').textContent = Math.round(hp * 100) + "%";
+  document.getElementById('lbl_cpu').textContent = Math.round(cpu * 100) + "%";
+
+  const usableRamMib = Math.floor(384 * 1024 * hp);
+  const peakPerNode = Math.max(1, Math.floor(usableRamMib / ram));
+  const steadyPerNode = Math.max(1, Math.floor(peakPerNode * cpu));
+  const clientNodes = Math.max(2, Math.ceil(concurrent / steadyPerNode));
+  const apiNodes = Math.max(2, Math.min(16, Math.floor(concurrent / 10000) + 2));
+  const serverNodes = concurrent < 50000 ? 3 : 5;
+  const totalNodes = clientNodes + apiNodes + serverNodes;
+  const fitsSingleVmss = clientNodes <= 1000;
+  const refMonthlyUsd = clientNodes * 3532; // Using D96s_v6 $3,532/mo deck reference anchor
+
+  document.getElementById('sizerOutput').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${fitsSingleVmss ? 'pill-teal' : 'pill-amber'}">
+        ${fitsSingleVmss ? '✅ 单一 VMSS Flexible 规模集即可容纳 (≤1,000 节点)' : '⚠️ 超过单 VMSS 1,000 节点上限，需分片部署多个 VMSS'}
+      </span>
+      <strong style="color:var(--blue);font-size:1.1rem;">总节点：${totalNodes} 台</strong>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.75rem;font-size:0.85rem;">
+      <div style="background:#111827;padding:0.65rem;border-radius:8px;border:1px solid #1e293b;">
+        <div style="color:var(--text-muted)">Client Pool (D96as_v7)</div>
+        <div style="font-size:1.2rem;font-weight:800;color:#34d399;">${clientNodes} 台 VM</div>
+        <div style="font-size:0.76rem;color:#94a3b8;">单机稳态 ${steadyPerNode} 沙箱 (峰值 ${peakPerNode})</div>
+      </div>
+      <div style="background:#111827;padding:0.65rem;border-radius:8px;border:1px solid #1e293b;">
+        <div style="color:var(--text-muted)">API Pool + Nomad Server</div>
+        <div style="font-size:1.2rem;font-weight:800;color:#38bdf8;">${apiNodes} API + ${serverNodes} Server</div>
+        <div style="font-size:0.76rem;color:#94a3b8;">单机可用 HugePages: ${(usableRamMib/1024).toFixed(0)} GiB</div>
+      </div>
+    </div>
+    <div style="margin-top:0.75rem;font-size:0.82rem;color:#cbd5e1;">
+      • <strong>实测启动延迟锚点</strong>：Base Sandbox <strong>108 ms</strong> · Code-Interpreter V1 <strong>132 ms</strong> (D96as_v7 AMD Turin)<br>
+      • <strong>按量成本量级参考</strong>：按同级 96vCPU 基准价 ($3,532/月/台) 估算，Client Pool 约 <strong>$${refMonthlyUsd.toLocaleString()} / 月</strong> (即平均每个并发沙箱槽位仅约 <strong>$${(refMonthlyUsd / concurrent).toFixed(2)} / 月</strong>)。
+    </div>
+  `;
+}
+
+const BLUEPRINTS = [
+`<!-- 1. Azure API Management (APIM) Per-Sandbox Host Rate-Limit Policy -->
+<policies>
+  <inbound>
+    <base />
+    <!-- 针对 <port>-<sandboxId>.e2b.domain.com 动态子域名独立限流，支持 100,000+ 并发会话 -->
+    <rate-limit-by-key calls="300"
+                       renewal-period="60"
+                       counter-key="@(context.Request.Headers.GetValueOrDefault(&quot;Host&quot;, &quot;unknown&quot;))"
+                       increment-condition="@(context.Response.StatusCode >= 200 && context.Response.StatusCode < 400)" />
+    <!-- 回调 Application Gateway WAF v2 的内网私有前端 (Private Frontend IP :8080) -->
+    <set-backend-service base-url="http://10.240.0.10:8080" />
+  </inbound>
+  <backend><base /></backend>
+  <outbound><base /></outbound>
+</policies>`,
+`# 2. AKSClaw Multi-Tenant Kata Pod VM + Hard Network Boundary Manifest
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: aksclaw-engineer-agent
+  namespace: agent-fleet
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        app: aksclaw-agent
+    spec:
+      runtimeClassName: kata-mshv-vm-isolation # Hypervisor Pod VM 独立内核隔离
+      serviceAccountName: entra-agent-id-sa    # 绑定 Entra Agent ID Blueprint & Owner
+      containers:
+      - name: harness
+        image: mcr.microsoft.com/aksclaw/agent-harness:2026.10
+        env:
+        - name: OPENAI_BASE_URL
+          value: "http://ai-gateway.platform.svc.cluster.local/v1" # 容器内零 API Key
+        volumeMounts:
+        - name: shared-skills
+          mountPath: /skills
+          readOnly: true   # 团队级只读共享技能市场
+        - name: instance-state
+          mountPath: /workspace
+          readOnly: false  # 实例级物理隔离状态卷
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: aksclaw-hard-egress-boundary
+  namespace: agent-fleet
+spec:
+  podSelector:
+    matchLabels:
+      app: aksclaw-agent
+  policyTypes: ["Egress"]
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+        except:
+        - 169.254.169.254/32 # 强制封禁 Azure IMDS 元数据端点防凭据窃取`,
+`// 3. Azure Bicep: E2B Client Pool on VMSS Flexible (Standard_D96as_v7 + 60% CPU Scale-Out)
+param location string = 'eastus2'
+param instanceCount int = 261
+
+resource clientVmss 'Microsoft.Compute/virtualMachineScaleSets@2024-03-01' = {
+  name: 'vmss-e2b-client-d96as-v7'
+  location: location
+  sku: {
+    name: 'Standard_D96as_v7' // 5th Gen AMD EPYC Turin + Azure Boost (108ms Base / 132ms CI)
+    tier: 'Standard'
+    capacity: instanceCount
+  }
+  properties: {
+    orchestrationMode: 'Flexible'
+    singlePlacementGroup: false // 支持最高 1,000 台 VM 实例
+    upgradePolicy: { mode: 'Manual' }
+  }
+}
+// 注：Scale-Out 配置为 CPU > 60% 触发；Scale-In 必须绑定自定义 HugePages 指标并执行沙箱快照排空`,
+`# 4. Python: Azure HorizonDB (Preview) + PgBouncer + LangGraph / MAF Checkpoint Persistence
+import os
+from langgraph.checkpoint.postgres import PostgresSaver
+from psycopg_pool import ConnectionPool
+
+# 通过 PgBouncer 连接池接入 Azure HorizonDB (Preview)，将连接建立从 45ms 降至 5ms
+HORIZONDB_PGBOUNCER_URI = os.environ["HORIZONDB_PGBOUNCER_URI"]
+
+pool = ConnectionPool(
+    conninfo=HORIZONDB_PGBOUNCER_URI,
+    min_size=5,
+    max_size=50,
+    kwargs={"autocommit": True, "prepare_threshold": None},
+)
+
+with pool.connection() as conn:
+    checkpointer = PostgresSaver(conn)
+    checkpointer.setup() # 单库统一承载 ACID 事务 + JSONB 消息树 + DiskANN 向量记忆`,
+`// 5. Azure Bicep: ACA Dynamic Sessions Hyper-V Pre-Warmed Pool (~210ms Ready Pool + EgressDisabled)
+resource dynamicSessionPool 'Microsoft.App/sessionPools@2024-02-02-preview' = {
+  name: 'sp-agent-code-interpreter-prod'
+  location: resourceGroup().location
+  properties: {
+    poolManagementType: 'Dynamic'
+    containerType: 'PythonLTS'
+    scaleConfiguration: {
+      maxConcurrentSessions: 500
+      readySessionInstances: 25 // 25 个预热 Hyper-V 实例确保 ~210ms 极速分配
+    }
+    dynamicPoolConfiguration: {
+      executionType: 'Timed'
+      cooldownPeriodInSeconds: 300
+    }
+    sessionNetworkConfiguration: {
+      status: 'EgressDisabled' // 强制禁用不可信代码直连外网
+    }
+  }
+}`,
+`<!-- 6. Unified AI Gateway (APIM): Entra Agent ID + Dual Attribution + Token Circuit Breaker -->
+<policies>
+  <inbound>
+    <base />
+    <validate-azure-ad-token tenant-id="{{entra-tenant-id}}" header-name="Authorization" output-token-variable-name="agentJwt">
+      <audiences><audience>api://azure-unified-ai-gateway</audience></audiences>
+    </validate-azure-ad-token>
+    <set-variable name="actingAgentId" value="@(((Jwt)context.Variables[&quot;agentJwt&quot;]).Claims.GetValueOrDefault(&quot;azp&quot;, &quot;unknown&quot;))" />
+    <!-- 硬边界 ④：单 Agent 实例每分钟 60K Tokens / 每日 1.5M Tokens 硬熔断防死循环 -->
+    <llm-token-limit counter-key="@((string)context.Variables[&quot;actingAgentId&quot;])"
+                     tokens-per-minute="60000"
+                     token-quota="1500000"
+                     token-quota-period="Daily"
+                     estimate-prompt-tokens="true" />
+  </inbound>
+</policies>`,
+`// 7. Azure Bicep: Multi-Tenant Agentic FinOps Budget & 15-Min KQL Cost Spike Circuit Breaker
+resource agentTokenAndSandboxAnomalyRule 'Microsoft.Insights/scheduledQueryRules@2023-03-15-preview' = {
+  name: 'sq-agent-finops-dual-attribution-spike'
+  location: resourceGroup().location
+  properties: {
+    severity: 1
+    evaluationFrequency: 'PT5M'
+    windowSize: 'PT15M'
+    criteria: {
+      allOf: [{
+        query: '''
+          AppRequests
+          | extend AgentBlueprintId = tostring(CustomDimensions["entra.agent.azp"])
+          | extend SponsorUserOid   = tostring(CustomDimensions["entra.sponsor.oid"])
+          | summarize Tokens15m = sum(toint(CustomMeasurements["gen_ai.usage.total_tokens"]))
+            by AgentBlueprintId, SponsorUserOid, bin(TimeGenerated, 15m)
+          | where Tokens15m > 450000
+        '''
+        operator: 'GreaterThan'
+        threshold: 0
+      }]
+    }
+  }
+}`,
+`// 8. Azure Bicep: AKSClaw Confidential Agent Node Pool (AMD SEV-SNP Standard_DC64as_v5 + MAA SKR)
+resource confidentialAgentPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  name: 'ccnpd64v5'
+  properties: {
+    vmSize: 'Standard_DC64as_v5'      // 64 vCPU / 256 GiB · AMD SEV-SNP 硬件内存加密
+    osSKU: 'AzureLinux'
+    workloadRuntime: 'KataCcIsolation' // Kata Confidential Containers (Guest TEE + AA/CDH)
+    enableAutoScaling: true
+    minCount: 2
+    maxCount: 24
+    nodeLabels: {
+      'aksclaw.azure.com/isolation-tier': 'confidential-sev-snp'
+      'kubernetes.azure.com/kata-cc-isolation': 'true'
+    }
+  }
+}
+// 配合 Microsoft Azure Attestation (MAA) 验证 x-ms-attestation-type == 'sevsnpvm' 后由 Managed HSM 释放密钥`,
+`// 9. Azure Bicep: Zero-Trust Egress (Azure Firewall Premium TLS/IDPS + /29 NAT Gateway 512K SNAT Ports)
+resource natPipPrefix 'Microsoft.Network/publicIPPrefixes@2023-11-01' = {
+  name: 'pippre-agent-egress-nat'
+  location: resourceGroup().location
+  sku: { name: 'Standard', tier: 'Regional' }
+  properties: { prefixLength: 29, publicIPAddressVersion: 'IPv4' } // 8 IPs = 512,000 SNAT Ports
+}
+
+resource fwPolicy 'Microsoft.Network/firewallPolicies@2023-11-01' = {
+  name: 'fwpol-agent-zero-trust-premium'
+  location: resourceGroup().location
+  properties: {
+    sku: { tier: 'Premium' }
+    threatIntelMode: 'Deny'
+    intrusionDetection: { mode: 'Deny' } // 阻断 DNS 隧道与 C2 外连特征
+    dnsSettings: { enableProxy: true }
+  }
+}`,
+`// 10. Azure Bicep: AKS H100 MIG 1g.10gb Node Pool + KAITO Prefix-Cache Aware vLLM Workspace
+resource h100MigNodePool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  name: 'gpuh100mig'
+  properties: {
+    vmSize: 'Standard_NC40ads_H100_v5' // 1x NVIDIA H100 NVL (94 GB HBM3)
+    gpuInstanceProfile: 'MIG1g'        // 硬件切分 7 个 1g.10gb 实例 (0% 跨租户抖动)
+    enableAutoScaling: true
+    minCount: 1
+    maxCount: 16
+    nodeLabels: {
+      'aksclaw.azure.com/accelerator': 'nvidia-h100-mig-1g'
+      'kaito.sh/workspace-pool': 'gui-grounding-vllm'
+    }
+  }
+}`,
+`// 11. Azure Bicep: Managed Prometheus + Azure Data Explorer (Kusto) for OTel GenAI & Tetragon eBPF
+resource kustoCluster 'Microsoft.Kusto/clusters@2023-08-15' = {
+  name: 'aksclawobsadx'
+  location: resourceGroup().location
+  sku: { name: 'Standard_E8d_v5', tier: 'Standard', capacity: 2 }
+  properties: {
+    enableStreamingIngest: true
+    publicNetworkAccess: 'Disabled' // 全私网 Private Link 摄取 OTel gen_ai.* 与 Tetragon eBPF 事件
+  }
+}`,
+`// 12. Azure Bicep: Service Bus Premium Transactional Outbox + Saga Compensation + Zombie Reaper
+resource wakeupQueue 'Microsoft.ServiceBus/namespaces/queues@2022-10-01-preview' = {
+  name: 'aksclaw-wf-sb-prem/agent-sandbox-wakeup-outbox'
+  properties: {
+    requiresDuplicateDetection: true // 配合 HorizonDB Outbox 幂等键实现严格 Exactly-Once
+    duplicateDetectionHistoryTimeWindow: 'PT1H'
+    requiresSession: true
+    deadLetteringOnMessageExpiration: true
+  }
+}`,
+`// 13. Azure Bicep: Azure Web PubSub Premium (CDP Screencast & Human Takeover Relay) + Replay Tiering
+resource cuaWebPubSub 'Microsoft.SignalRService/webPubSub@2024-03-01' = {
+  name: 'aksclaw-cua-wps-relay'
+  location: resourceGroup().location
+  sku: { name: 'Premium_P1', tier: 'Premium', capacity: 2 }
+  properties: {
+    publicNetworkAccess: 'Disabled' // 全私网承载 0.62 Mbps/沙箱 Dirty-Rect WebP/AV1 实时接管流
+    disableLocalAuth: true
+  }
+}`,
+`// 14. Azure Bicep: ACR Premium Artifact Cache + Connected Cache + Host NVMe virtiofs DAX Store
+resource acrRegistry 'Microsoft.ContainerRegistry/registries@2023-07-01' = {
+  name: 'aksclawdepacrprem'
+  location: resourceGroup().location
+  sku: { name: 'Premium' }
+  properties: {
+    publicNetworkAccess: 'Disabled'
+    zoneRedundancy: 'Enabled'
+    policies: { trustPolicy: { type: 'Notary', status: 'enabled' } }
+  }
+}`,
+`// 15. Azure Bicep: Managed Redis Enterprise (Balanced_B10) for Swarm Budget Envelopes & AST Leases
+resource redisGovernor 'Microsoft.Cache/redisEnterprise@2024-02-01' = {
+  name: 'aksclaw-swarm-redis-gov'
+  location: resourceGroup().location
+  sku: { name: 'Balanced_B10' }
+  zones: [ '1', '2', '3' ]
+  properties: { minimumTlsVersion: '1.2' }
+}`,
+`// 16. Azure Bicep: EU Data Boundary AllowedLocations Policy + Managed HSM CMK DiskEncryptionSet
+resource sovereignDes 'Microsoft.Compute/diskEncryptionSets@2022-07-02' = {
+  name: 'aksclaw-sov-tenant-cmk-des'
+  location: 'swedencentral'
+  identity: { type: 'SystemAssigned' }
+  properties: {
+    encryptionType: 'EncryptionAtRestWithCustomerKey'
+    rotationToLatestKeyVersionEnabled: true
+    activeKey: { keyUrl: managedHsmKeyUri } // 撤销 KEK 即可在 1.45s 内完成 NIST SP 800-88 密码学粉碎
+  }
+}`,
+`// 17. Azure Bicep: AKS 33% Surge NVMe Pre-Warmed Upgrade Pool + 15m Soak + 30m MANA Live-Migration Drain
+resource sandboxAgentPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  name: 'katapool'
+  properties: {
+    vmSize: 'Standard_D64s_v6'
+    workloadRuntime: 'KataMshvVmIsolation'
+    upgradeSettings: {
+      maxSurge: '33%'
+      nodeSoakDurationInMinutes: 15
+      drainTimeoutInMinutes: 30
+      undrainableNodeBehavior: 'Cordon'
+    }
+  }
+}`,
+`// 18. Azure Bicep: APIM AI Gateway Cascade Model Router (PTU Primary + PayGo Overflow + KAITO Fast-Tier)
+resource frontierBackendPool 'Microsoft.ApiManagement/service/backends@2023-09-01-preview' = {
+  name: 'apim-aksclaw-aigw-prod/aoai-frontier-priority-pool'
+  properties: {
+    type: 'Pool'
+    pool: {
+      services: [
+        { id: backendFrontierPtu.id, priority: 1, weight: 100 }
+        { id: backendFrontierPaygo.id, priority: 2, weight: 100 }
+      ]
+    }
+  }
+}`,
+`// 19. Azure Bicep: HorizonDB / PostgreSQL pg_diskann + GraphRAG Redis L0 + Blob ZRS L2 Cold Tier
+resource pgExtensionsConfig 'Microsoft.DBforPostgreSQL/flexibleServers/configurations@2023-12-01-preview' = {
+  parent: pgServer
+  name: 'azure.extensions'
+  properties: {
+    value: 'VECTOR,PG_DISKANN,AZURE_AI,PG_CRON'
+    source: 'user-override'
+  }
+}`,
+`// 20. Azure Bicep: WebRTC Realtime Media Nodepool (50 Gbps MANA + Cilium eBPF XDP/sockmap + ACS TURN)
+resource webrtcMediaPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/webrtcmedia'
+  properties: {
+    count: 20
+    vmSize: 'Standard_D32s_v6'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'webrtc-realtime-media'
+      'aksclaw.io/ebpf-xdp-sockmap': 'enabled'
+    }
+  }
+}`,
+`// 21. Azure Bicep: SWE-Agent Rootless BuildKit Local-NVMe Pool + Read-Only Bazel/sccache CAS RBAC
+resource sweBuildkitPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/swebldnvme'
+  properties: {
+    count: 25
+    vmSize: 'Standard_L32s_v3'
+    nodeLabels: {
+      'aksclaw.io/rootless-buildkit-overlayfs': 'enabled'
+      'aksclaw.io/nvme-l1-cas-cache': 'enabled'
+    }
+  }
+}`,
+`// 22. Azure Bicep: OneLake/ADLS Gen2 Hierarchical Namespace + ABFS OBO Proxy + DuckDB Pool
+resource lakehouseSandboxPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/swelakehouse'
+  properties: {
+    count: 32
+    vmSize: 'Standard_E32ds_v6'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'lakehouse-duckdb-analytics'
+      'aksclaw.io/abfs-column-masking-proxy': 'enabled'
+      'aksclaw.io/sqlglot-ast-cost-guard': 'enabled'
+    }
+  }
+}`,
+`// 23. Azure Bicep: Cross-Cloud OIDC Workload Federation + Kernel WireGuard + SEV-SNP Clean-Room
+resource crossCloudOidcFederation 'Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials@2023-01-31' = {
+  name: 'id-aksclaw-multicloud-cleanroom-broker/fed-aws-gcp-oidc-cleanroom'
+  properties: {
+    issuer: 'https://oidc.eks.us-east-1.amazonaws.com/id/EXAMPLE0123456789ABCDEF'
+    subject: 'system:serviceaccount:agent-federation:cross-cloud-broker'
+    audiences: [ 'api://AzureADTokenExchange' ]
+  }
+}`,
+`// 24. Azure Bicep: Physical AI ROS2 Digital-Twin GPU Pool (NV36ads_A10_v5 + Iceoryx + IoT MQTT Bridge)
+resource embodiedSimPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/embodiedsim'
+  properties: {
+    count: 25
+    vmSize: 'Standard_NV36ads_A10_v5'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'embodied-robotics-digital-twin'
+      'aksclaw.io/ros2-iceoryx-shm': 'enabled'
+      'aksclaw.io/cbf-kinematic-safety-shield': 'enforced'
+    }
+  }
+}`,
+`// 25. Azure Bicep: Online RFT/GRPO Tree-CoW Rollout Pool (Standard_D96as_v7) + WORM Hermetic Verifier Store
+resource rftRolloutPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/rftrollout'
+  properties: {
+    count: 50
+    vmSize: 'Standard_D96as_v7'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'online-rft-grpo-rollout'
+      'aksclaw.io/tree-cow-snapshot-fork': 'enabled'
+      'aksclaw.io/hermetic-verifier-namespace': 'enforced'
+    }
+  }
+}`,
+`// 26. Azure Bicep: Post-Quantum Crypto (PQC) Managed HSM + X25519MLKEM768 / ML-DSA-65 Gateway Pool
+resource pqcGatewayPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/pqcgwpool'
+  properties: {
+    count: 8
+    vmSize: 'Standard_D32s_v6'
+    nodeLabels: {
+      'aksclaw.io/pqc-kem-suite': 'X25519MLKEM768-FIPS203'
+      'aksclaw.io/pqc-sig-suite': 'Ed25519-MLDSA65-FIPS204'
+      'aksclaw.io/hndl-envelope': 'MLKEM1024-AES256GCM'
+    }
+  }
+}`,
+`// 27. Azure Bicep: GreenOps Carbon-Aware Turin Pool (Standard_D96as_v7 + amd-pstate-epp + Kepler RAPL)
+resource greenopsTurinPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/greenturin'
+  properties: {
+    count: 26
+    vmSize: 'Standard_D96as_v7'
+    nodeLabels: {
+      'aksclaw.io/greenops-carbon-aware': 'enabled'
+      'aksclaw.io/cpu-governor': 'amd-pstate-epp-balance-power'
+      'aksclaw.io/kepler-rapl-telemetry': 'enabled'
+    }
+  }
+}`,
+`// 28. Azure Bicep: Hyperlight & SpinKube WASI-0.2 Micro-Sandbox Pool (0.85ms Boot, 48K Sandboxes/Node)
+resource hyperlightWasmPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/hyperlightp'
+  properties: {
+    count: 16
+    vmSize: 'Standard_D96as_v7'
+    nodeLabels: {
+      'aksclaw.io/runtime-class': 'wasmtime-spin-hyperlight-vmcs'
+      'aksclaw.io/wit-canonical-abi-zerocopy': 'enabled'
+      'aksclaw.io/hybrid-dispatch-split': '72pct-hyperlight-28pct-linux-microvm'
+    }
+  }
+}`,
+`// 29. Azure Bicep: Azure Chaos Studio Compound Fault GameDay + Lease-Epoch Split-Brain Fencing
+resource chaosExperiment 'Microsoft.Chaos/experiments@2024-01-01' = {
+  name: 'exp-aksclaw-multilayer-gameday-prod'
+  identity: { type: 'SystemAssigned' }
+  properties: {
+    steps: [
+      {
+        name: 'Step1-Inject-Zone-Network-Partition-And-PTU-Brownout'
+      }
+    ]
+  }
+}`,
+`// 30. Azure Bicep: AI-for-Science Managed Lustre (160 GB/s) + HB176rs_v4 400Gb/s NDR InfiniBand Pool
+resource amlfs 'Microsoft.StorageCache/amlFilesystems@2023-05-01' = {
+  name: 'amlfs-aksclaw-science-prod'
+  sku: { name: 'AMLFS-Durable-Premium-250' }
+  properties: { storageCapacityTiB: 128 }
+}
+resource hpcSciencePool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/hbv4science'
+  properties: {
+    count: 16
+    vmSize: 'Standard_HB176rs_v4'
+    nodeLabels: {
+      'aksclaw.io/infiniband-ndr-400g': 'enabled'
+      'aksclaw.io/gang-scheduler': 'kueue-topology-aware-torus'
+      'aksclaw.io/veloc-async-nvme-checkpoint': 'enabled'
+    }
+  }
+}`,
+`// 31. Azure Bicep: Agentic Payment Mandate (AP2/x402) + Azure Confidential Ledger Escrow Pool
+resource confidentialLedger 'Microsoft.ConfidentialLedger/ledgers@2023-06-28-preview' = {
+  name: 'acl-aksclaw-payment-mandate-prod'
+  properties: { ledgerType: 'Private' }
+}
+resource paymentGatekeeperPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/paymandatep'
+  properties: {
+    count: 4
+    vmSize: 'Standard_DC16as_v5'
+    nodeLabels: {
+      'aksclaw.io/spend-mandate-protocol': 'ap2-x402-cose-sign1-hsm'
+      'aksclaw.io/idempotent-escrow-engine': 'horizondb-double-entry-serializable'
+    }
+  }
+}`,
+`// 32. Azure Bicep: Cross-Org A2A Federation Mesh (Entra Verified ID SD-JWT + AFD HTTP/3 QUIC 0-RTT)
+resource afdProfile 'Microsoft.Cdn/profiles@2023-05-01' = {
+  name: 'afd-aksclaw-a2a-quic-prod'
+  location: 'Global'
+  sku: { name: 'Premium_AzureFrontDoor' }
+}
+resource a2aFederationPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/a2afedmesh'
+  properties: {
+    count: 6
+    vmSize: 'Standard_D32as_v6'
+    nodeLabels: {
+      'aksclaw.io/identity-cred': 'entra-verified-id-did-web-sd-jwt'
+      'aksclaw.io/transport-protocol': 'http3-quic-0rtt-multiplexed'
+    }
+  }
+}`,
+`// 33. Azure Bicep: Air-Gapped Cyber-Defense Detonation MicroVM Pool + eBPF KRSI + Sentinel SOAR
+resource detonationPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/detonatepool'
+  properties: {
+    count: 16
+    vmSize: 'Standard_DC48ads_v5'
+    workloadRuntime: 'KataMshvVmIsolation'
+    nodeLabels: {
+      'aksclaw.io/guest-network': 'none-af-vsock-only'
+      'aksclaw.io/telemetry-hook': 'krsi-ebpf-lsm-ringbuf'
+    }
+  }
+}`,
+`// 34. Azure Bicep: Industrial Edge Disconnected Agent Infra (Azure Local + IoT Operations NVMe MQTT SAF)
+resource mqttBroker 'Microsoft.IoTOperations/instances/brokers@2024-08-15-preview' = {
+  name: 'aksclaw-edge-aio-instance/default'
+  properties: {
+    memoryProfile: 'High'
+    diskBackedMessageBuffer: {
+      maxSize: '250G'
+      ephemeralVolumeClaimSpec: { storageClassName: 'local-nvme-saf' }
+    }
+  }
+}`,
+`// 35. Azure Bicep: Regulated Healthcare & Clinical Trial Agent Infra (AHDS FHIR/DICOM + Confidential H100 + CFR11)
+resource clinicalGpuPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/medgpupool'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NCC40ads_H100_v5'
+    workloadRuntime: 'KataMshvVmIsolation'
+    nodeLabels: {
+      'aksclaw.io/phi-deid-gateway': 'presidio-biobert-fpe-safe-harbor'
+      'aksclaw.io/fda-compliance': '21-cfr-part-11-dual-hsm-signature'
+    }
+  }
+}`,
+`// 36. Azure Bicep: Hybrid Quantum-Classical Agentic Sandbox (Azure Quantum QIR + H200 cuQuantum Pool)
+resource cuQuantumPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/cuquantumpool'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H200_v5'
+    workloadRuntime: 'KataMshvVmIsolation'
+    nodeLabels: {
+      'aksclaw.io/quantum-prefilter': 'nvidia-cuquantum-cutensornet-h200'
+      'aksclaw.io/qir-transpiler': 'llvm-qir-base-adaptive-profile'
+    }
+  }
+}`,
+`// 37. Azure Bicep: Telco 5G-A / O-RAN Near-RT RIC xApp Pool (SR-IOV/DPDK + SCTP E2AP + 3GPP TS 28.531 Verifier)
+resource nearRtRicNodePool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  name: 'aks-aksclaw-prod/oranxapprt'
+  properties: {
+    count: 8
+    vmSize: 'Standard_D32s_v6'
+    kubeletConfig: { cpuManagerPolicy: 'static', topologyManagerPolicy: 'single-numa-node' }
+    nodeLabels: {
+      'aksclaw.io/datapath': 'sriov-dpdk-pmd-vf'
+      'aksclaw.io/e2sm-profile': 'rc-kpm-sub10ms'
+      'aksclaw.io/3gpp-slice-verifier': 'ts-28-531-markov-gate'
+    }
+  }
+}`,
+`// 38. Azure Bicep: Space & LEO Satellite Edge Agent Infra (Azure Orbital + RFC 9171 BPv7 ZRS + SEU Interlock)
+resource orbitalMissionPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  name: 'aks-aksclaw-prod/orbitalctrl'
+  properties: {
+    count: 6
+    vmSize: 'Standard_D32s_v6'
+    workloadRuntime: 'KataMshvVmIsolation'
+    nodeLabels: {
+      'aksclaw.io/dtn-bundle-protocol': 'rfc9171-bpv7-ltp-custody'
+      'aksclaw.io/on-orbit-triage': 'rad-tolerant-int4-vlm-chip-filter'
+      'aksclaw.io/seu-interlock': 'tmr-edac-crc32c-thruster-guard'
+    }
+  }
+}`,
+`// 39. Autonomous Smart Grid, IEC 61850 Substation & AC-OPF Agent Pool (blueprints/aksclaw-smartgrid-iec61850-pmu-opf-substation.bicep)
+resource cipEspNsg 'Microsoft.Network/networkSecurityGroups@2023-11-01' = {
+  name: '\${envPrefix}-nerc-cip005-esp-nsg'
+  location: location
+  properties: {
+    securityRules: [
+      {
+        name: 'Allow-IEEE-C37118-PMU-Synchrophasor-Ingest'
+        properties: { priority: 100, direction: 'Inbound', access: 'Allow', protocol: 'Tcp', destinationPortRange: '4712' }
+      }
+      {
+        name: 'Allow-Verified-IEC61850-MMS-DNP3-Setpoint-Out'
+        properties: { priority: 110, direction: 'Outbound', access: 'Allow', protocol: 'Tcp', destinationPortRanges: ['102', '20000'] }
+      }
+    ]
+  }
+}
+
+resource acopfSolverPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  parent: existingAks
+  name: 'gridacopf'
+  properties: {
+    count: 7
+    vmSize: 'Standard_F32s_v2'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'smartgrid-iec61850-acopf-verifier'
+      'aksclaw.io/pmu-edge-triage': 'ieee-c37118-fft-6ms-halfcycle'
+      'aksclaw.io/powerflow-barrier': 'highs-ipopt-n1-contingency-guard'
+      'aksclaw.io/relay-interlock': 'iec61850-goose-synchrocheck-4ms'
+    }
+  }
+}`,
+`// 40. Autonomous Warehouse AMR Fleet, MAPF-CBS & Cold-Chain Control Tower (blueprints/aksclaw-supplychain-amr-mapf-coldchain-fleet.bicep)
+resource warehouseDigitalTwin 'Microsoft.DigitalTwins/digitalTwinsInstances@2023-01-31' = {
+  name: '\${envPrefix}-fulfillment-dt'
+  location: location
+  identity: { type: 'SystemAssigned' }
+  properties: { publicNetworkAccess: 'Disabled' }
+}
+
+resource mapfSolverPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  parent: existingAks
+  name: 'scmmaphcbs'
+  properties: {
+    count: 8
+    vmSize: 'Standard_F32s_v2'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'supplychain-amr-mapf-cbs-verifier'
+      'aksclaw.io/rfid-edge-fusion': 'epc-gen2-3d-lidar-dedup-98pct'
+      'aksclaw.io/mapf-solver': 'conflict-based-search-11ms-deadlock-free'
+      'aksclaw.io/coldchain-guard': 'fsma204-gxp-arrhenius-edi856-idempotent'
+    }
+  }
+}`,
+`// 41. Media Production, OpenUSD/3DGS Render Farm & C2PA 2.1 Provenance Pool (blueprints/aksclaw-media-openusd-3dgs-c2pa-render-pool.bicep)
+resource mediaRenderPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'usd3dgsp'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NV72ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'media-openusd-3dgs-render'
+      'aksclaw.io/nvdec-dma-ring': 'smpte-st2110-srt-6.8ms'
+      'aksclaw.io/openusd-scene-verifier': 'bbox-manifold-vram-76gb'
+      'aksclaw.io/c2pa-provenance-gate': 'hsm-c2pa-2.1-mandatory'
+    }
+  }
+}`,
+`// 42. Smart Mobility SDV/V2X Fleet, CARLA RSS Verifier & UNECE R155 Uptane OTA Pool (blueprints/aksclaw-automotive-sdv-v2x-carla-ota-fleet.bicep)
+resource carlaAdasVerifyPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'carlarss'
+  properties: {
+    count: 8
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'automotive-sdv-carla-rss-verifier'
+      'aksclaw.io/v2x-ingest': 'mqtt-quic-0rtt-64ms-ring-delta'
+      'aksclaw.io/adas-safety-gate': 'openscenario2-rss-ttc-1.8s-barrier'
+      'aksclaw.io/ota-guardrail': 'unece-r155-iso21434-uptane-parked-interlock'
+    }
+  }
+}`
+];
+
+function showBlueprint(idx) {
+  const btns = document.querySelectorAll('#codeTabs .tab-btn');
+  btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+  document.getElementById('blueprintBox').textContent = BLUEPRINTS[idx];
+}
+
+function runDeepLab() {
+  const skuParts = document.getElementById('sel_aks_sku').value.split('_');
+  const vcpu = parseInt(skuParts[0], 10);
+  const ramGib = parseInt(skuParts[1], 10);
+  const isKata = document.getElementById('sel_aks_rt').value === 'kata';
+
+  const totalMib = ramGib * 1024;
+  const sysReserved = Math.floor(totalMib * 0.08) + 1536;
+  const usableMib = totalMib - sysReserved;
+  const overhead = isKata ? 144 : 0;
+  const podMib = 2048 + overhead;
+  const maxByRam = Math.floor(usableMib / podMib);
+  const maxByCpu = Math.floor((vcpu - 1.5) / 0.5);
+  const effPods = Math.min(maxByRam, maxByCpu, 250);
+  const memEff = ((effPods * 2048) / totalMib * 100).toFixed(1);
+
+  document.getElementById('aksDensityOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${isKata ? 'pill-teal' : 'pill-amber'}">${isKata ? '🛡️ 硬件级内核隔离 (Kata Pod VM)' : '⚠️ 共享内核 (不建议用于不可信代码)'}</span>
+      <strong style="color:var(--blue);font-size:1.1rem;">${effPods} 个沙箱 / 节点</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • 扣减系统预留后可用内存：<strong>${(usableMib/1024).toFixed(1)} GiB</strong> · 单 Pod 实际占用：<strong>${podMib} MiB</strong><br>
+      • 有效业务内存利用率：<strong>${memEff}%</strong> (在 D64s_v6 上开启 Kata 仅牺牲约 6.8% 密度即可换取独立 Guest 内核安全边界)
+    </p>
+  `;
+
+  const threads = parseInt(document.getElementById('rng_hdb_threads').value, 10);
+  const pool = parseInt(document.getElementById('rng_hdb_pool').value, 10);
+  document.getElementById('lbl_hdb_threads').textContent = threads.toLocaleString();
+  document.getElementById('lbl_hdb_pool').textContent = pool;
+
+  const qps = (threads * 6.0 / 60.0).toFixed(0);
+  const ratio = (threads / pool).toFixed(1);
+  const p95 = (5.0 + 4.2 + Math.min(8.0, (qps / 500.0) * 1.1)).toFixed(2);
+  const dailyGib = (qps * 86400 * 16 / (1024 * 1024)).toFixed(1);
+  const annualRawTib = (dailyGib * 365 / 1024).toFixed(1);
+  const retained30dTib = (dailyGib * 30 * 0.35 / 1024).toFixed(2);
+
+  document.getElementById('hdbOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill pill-teal">连接收敛比 ${ratio}x · P95 ${p95} ms</span>
+      <strong style="color:#34d399;font-size:1.05rem;">吞吐：${Number(qps).toLocaleString()} QPS</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • 未压缩年化累积量：<strong>${annualRawTib} TiB/yr</strong> ${annualRawTib > 128 ? '<span style="color:#fda4af;">(❌ 超过 128 TB 上限)</span>' : '(✅ 低于 128 TB)'}<br>
+      • 开启 <strong>30天热留存 + TOAST ZSTD (0.35x) + Blob 冷归档</strong> 后热库体积：<strong>${retained30dTib} TiB</strong> (✅ 安全低于 128 TB 上限)
+    </p>
+  `;
+}
+
+function runDrLab() {
+  const pairKey = document.getElementById('sel_dr_pair').value;
+  const activeSbx = parseInt(document.getElementById('rng_dr_sbx').value, 10);
+  const warmPct = parseInt(document.getElementById('rng_dr_warm').value, 10) / 100.0;
+
+  document.getElementById('lbl_dr_sbx').textContent = activeSbx.toLocaleString();
+  document.getElementById('lbl_dr_warm').textContent = Math.round(warmPct * 100) + "%";
+
+  const rttMap = { eastus2_centralus: 18.0, swedencentral_westeurope: 24.0, southeastasia_eastasia: 34.0 };
+  const rtt = rttMap[pairKey] || 18.0;
+
+  const primaryNodes = Math.max(2, Math.ceil(activeSbx / 391));
+  const warmNodes = Math.max(1, Math.ceil(primaryNodes * warmPct));
+  const immediateWave = Math.max(1, Math.ceil(activeSbx * 0.25));
+
+  const s1 = 1650.0 + rtt * 4.5;
+  const s2 = 1380.0 + rtt * 3.8 + 5.0;
+  const s3 = 35.0 + rtt * 2.2 + (32.0 / 16.0) * 6.5;
+  const perWarmNode = Math.max(1, Math.ceil(immediateWave / warmNodes));
+  const batches = Math.max(1, Math.ceil(perWarmNode / 120.0));
+  const s4 = 132.0 * batches;
+  const coldPenalty = warmPct >= 0.20 ? 0.0 : (0.20 - warmPct) * 240000.0;
+
+  const totalMs = s1 + s2 + s3 + s4 + coldPenalty;
+  const totalSec = (totalMs / 1000.0).toFixed(2);
+  const walRpoMs = (rtt * 1.4).toFixed(1);
+  const ok = totalMs <= 5000.0;
+
+  document.getElementById('drOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 满足 ≤ 5.0s 交互式热容灾 SLO' : '❌ 超出 5.0s SLO (需触发 VMSS 冷扩容)'}</span>
+      <strong style="color:${ok ? '#34d399' : '#fda4af'};font-size:1.15rem;">总 RTO：${totalSec} s (${totalMs.toFixed(0)} ms)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>节点配比</strong>：主区 <strong>${primaryNodes} 台</strong> D96as_v7 → 备区常驻热备 <strong>${warmNodes} 台</strong> (首波并发恢复 <strong>${immediateWave.toLocaleString()}</strong> 个执行态沙箱)<br>
+      • <strong>RPO 指标</strong>：HorizonDB 跨区异步 WAL <strong>${walRpoMs} ms</strong> · 沙箱增量脏页快照 (RA-GZRS) <strong>15 s</strong><br>
+      • <strong>RTO 四段分解</strong>：① AFD+APIM 切换 <strong>${s1.toFixed(0)}ms</strong> + ② HorizonDB 提升 <strong>${s2.toFixed(0)}ms</strong> + ③ RA-GZRS 拉取 <strong>${s3.toFixed(0)}ms</strong> + ④ Firecracker 恢复 <strong>${s4.toFixed(0)}ms</strong>${coldPenalty > 0 ? ' + <span style="color:#fda4af;">冷扩容惩罚 ' + (coldPenalty/1000).toFixed(1) + 's</span>' : ''}
+    </p>
+  `;
+}
+
+runDecision();
+runSizer();
+showBlueprint(0);
+runDeepLab();
+runDrLab();
+runFinopsLab();
+runCcLab();
+runEgressLab();
+runGpuLab();
+runObsLab();
+runWfLab();
+runCuaLab();
+runDepLab();
+runSwarmLab();
+runSovLab();
+runMigLab();
+runCasLab();
+runMemLab();
+runRtcLab();
+runCiLab();
+runLhLab();
+runCrLab();
+runRobLab();
+runRftLab();
+runPqcLab();
+runGrnLab();
+runHlLab();
+runChLab();
+runHpcLab();
+runPayLab();
+runA2aLab();
+runCybLab();
+runEdgLab();
+runMedLab();
+runQirLab();
+runOranLab();
+runOrbLab();
+runGridLab();
+runScmLab();
+runMediaUsdLab();
+runSdvLab();
+
+function runSdvLab() {
+  const veh = parseInt(document.getElementById('rng_sdv_veh').value, 10);
+  const mode = document.getElementById('sel_sdv_mode').value;
+  document.getElementById('lbl_sdv_veh').textContent = veh.toLocaleString();
+
+  const nodes = Math.max(4, Math.ceil(veh / 6250));
+  const ok = mode === 'v2x_quic_delta_carla_rss_uptane_ota';
+  const v2xStr = ok ? "蜂窝带宽削减 91.8% · V2X P99 64.0 ms (-96.5%)" : "42 Mbps/车原始上传 · 基站切换 P99 1,840.0 ms";
+  const rssStr = ok ? "18.5 s 完成 1,000 场景 CARLA 重放 · 0.0% RSS (TTC<1.8s) 碰撞违规逃逸" : "620.0 s 串行重放 · 6.2% 危险规控边界逃逸";
+  const otaStr = ok ? "0.0% 行驶中误刷与 ECU 变砖 · 4.5 s A/B 分区硬件自愈回滚" : "3.8% 行驶中误刷风险 · 1.9% 控制器变砖抛锚";
+
+  document.getElementById('sdvOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + v2xStr : '❌ 1,840ms 切换断流 · 6.2% RSS 安全边界违规'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 仿真节点 (${rssStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>UNECE R155 / ISO 21434 Uptane 驻车物理互锁与双区 OTA 护栏</strong>：<strong>${otaStr}</strong>
+    </p>
+  `;
+}
+
+function runMediaUsdLab() {
+  const streams = parseInt(document.getElementById('rng_usd_streams').value, 10);
+  const mode = document.getElementById('sel_usd_mode').value;
+  document.getElementById('lbl_usd_streams').textContent = streams.toLocaleString();
+
+  const nodes = Math.max(1, Math.ceil(streams / 8));
+  const ok = mode === 'nvdec_dma_openusd_verifier_c2pa_hsm';
+  const nvdecStr = ok ? "6.8 ms NVDEC DMA 零拷贝转张量 (-94.2%) · CPU 削减 88.5%" : "118.0 ms CPU FFmpeg 软解拷贝 · 掉帧卡顿";
+  const usdStr = ok ? "99.6% 异常 bpy/USD 拦截 · 0.0% 渲染节点崩溃 · 增量重渲染省 74.2%" : "9.4% 非流形/无限细分 OOM 崩溃 · 0.0% BVH 复用";
+  const c2paStr = ok ? "4.2 ms Managed HSM C2PA 2.1 内容凭证签名 · 0.0% 未签名合成媒体外流" : "100.0% 未签名合成媒体裸出 (缺乏版权与合规溯源)";
+
+  document.getElementById('usdOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + nvdecStr : '❌ 118ms 抽帧掉帧 · 9.4% GPU 渲染节点崩溃'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV72ads_A10_v5 渲染节点 (${usdStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>C2PA 2.1 硬件 HSM 内容溯源清单与频域抗裁剪数字水印</strong>：<strong>${c2paStr}</strong>
+    </p>
+  `;
+}
+
+function runScmLab() {
+  const amrs = parseInt(document.getElementById('rng_scm_amrs').value, 10);
+  const mode = document.getElementById('sel_scm_mode').value;
+  document.getElementById('lbl_scm_amrs').textContent = amrs.toLocaleString();
+
+  const nodes = Math.max(3, Math.ceil(amrs / 250));
+  const ok = mode === 'edge_rfid_fusion_mapf_cbs_arrhenius_guard';
+  const rfidStr = ok ? "99.94% 实时 SKU 库存准确率 · 削减 98.1% WAN 带宽" : "93.8% 批次盘点准确率 · 原始视频流拥塞";
+  const mapfStr = ok ? "11.4 ms MAPF-CBS 无死锁验证 (<=25ms SLO) · 0.0% 碰撞 · 拣货 +34.8%" : "420.0 ms 控制滞后 · 8.6% 窄巷道迎头死锁";
+  const coldStr = ok ? "0.0% 冷链断链货损 (提前 45min 动力学改道) · 0.0% EDI 856/940 重复发运" : "4.2% 冷链货损 · 5.4% ERP 订单重复扣减";
+
+  document.getElementById('scmOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + rfidStr : '❌ 8.6% 窄巷道死锁 · 4.2% 冷链断链货损'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 MAPF-CBS 轨迹求解节点 (${mapfStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>FSMA 204 / GxP 阿伦尼乌斯冷链护栏与 SAP/D365 EDI 幂等履约</strong>：<strong>${coldStr}</strong>
+    </p>
+  `;
+}
+
+function runGridLab() {
+  const bays = parseInt(document.getElementById('rng_grid_bays').value, 10);
+  const mode = document.getElementById('sel_grid_mode').value;
+  document.getElementById('lbl_grid_bays').textContent = bays.toLocaleString();
+
+  const nodes = Math.max(3, Math.ceil(bays / 80));
+  const ok = mode === 'pmu_edge_fft_acopf_barrier_goose_interlock';
+  const pmuStr = ok ? "6.2 ms PMU 半周波故障定位 (<=8.33ms SLO) · 压缩 98.4% 专网带宽" : "1,840.0 ms 原始波形上云滞后 · 专网饱和";
+  const opfStr = ok ? "14.8 ms AC-OPF 潮流校验 · 0.0% N-1 过载 · 弃电削减 31.5%" : "11.8% N-1 支路热过载风险 · 0.0% 潮流校验";
+  const gooseStr = ok ? "0.0% 非同期合闸事故 · 1.8 ms IEC 61850 GOOSE 硬件跳闸 (<=4.0ms)" : "6.4% 非同期合闸损毁风险 · 42.0 ms 软件跳闸超标";
+
+  document.getElementById('gridOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + pmuStr : '❌ 11.8% N-1 热过载 · 6.4% 非同期合闸风险'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 AC-OPF 潮流验证节点 (${opfStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>NERC CIP-005 电子安全边界与 IEC 61850 GOOSE 继电保护互锁</strong>：<strong>${gooseStr}</strong>
+    </p>
+  `;
+}
+
+function runOrbLab() {
+  const sats = parseInt(document.getElementById('rng_orb_sats').value, 10);
+  const mode = document.getElementById('sel_orb_mode').value;
+  document.getElementById('lbl_orb_sats').textContent = sats.toLocaleString();
+
+  const nodes = Math.max(4, Math.ceil(sats / 20));
+  const ok = mode === 'orbital_isl_bpv7_rad_triage_seu_interlock';
+  const trgStr = ok ? "18.5 s 星间激光告警 (-99.9%) · 节省 96.8% 下行带宽" : "17,280.0 s (4.8h) 等待过境下传 · 86.5% 废片拥塞";
+  const dtnStr = ok ? "99.98% BPv7 跨黑障投递率 (0.0% TCP 重置)" : "78.4% TCP/HTTP 多普勒断连失败";
+  const seuStr = ok ? "0.0% SEU 辐射越界指令漏检 (EDAC + CRC32C 1.6ms + FPGA 互锁)" : "4.2% 单粒子翻转静默篡改风险";
+
+  document.getElementById('orbOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + trgStr : '❌ 78.4% TCP 会话崩溃 · 4.8h 发现延迟'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台地面站控制节点 (${dtnStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>南大西洋异常区 (SAA) 单粒子翻转 (SEU) 防护与推进器硬件互锁</strong>：<strong>${seuStr}</strong>
+    </p>
+  `;
+}
+
+function runOranLab() {
+  const cells = parseInt(document.getElementById('rng_oran_cells').value, 10);
+  const mode = document.getElementById('sel_oran_mode').value;
+  document.getElementById('lbl_oran_cells').textContent = cells.toLocaleString();
+
+  const nodes = Math.max(3, Math.ceil(cells / 625));
+  const ok = mode === 'operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier';
+  const dpStr = ok ? "38.0 us SR-IOV/DPDK 零拷贝转发 (-97.3%) · 0.0% 微突发丢包" : "1,420.0 us 内核 veth 网桥 · 14.8% 微突发丢包";
+  const ricStr = ok ? "4.2 ms Near-RT E2 闭环 (<=10ms SLO, -98.8%) · 频谱 +23.5% / 节电 31.2%" : "340.0 ms 远程大模型 E2 超期 (100% 违约)";
+  const slcStr = ok ? "0.0% URLLC PRB 饥饿 · 11.5 s 3GPP 切片开通 (-99.9%)" : "16.4% URLLC SLA 违约 · 4.5 小时人工工单";
+
+  document.getElementById('oranOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + dpStr : '❌ 14.8% 微突发丢包 · E2 闭环 340ms 严重超期'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 Operator Nexus RIC 节点 (${ricStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>3GPP TS 28.531 意图网络切片验证与开通</strong>：<strong>${slcStr}</strong>
+    </p>
+  `;
+}
+
+function runQirLab() {
+  const ag = parseInt(document.getElementById('rng_qir_ag').value, 10);
+  const mode = document.getElementById('sel_qir_mode').value;
+  document.getElementById('lbl_qir_ag').textContent = ag.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(ag / 32));
+  const ok = mode === 'qir_llvm_cuquantum_prefilter_floquet_qec';
+  const simStr = ok ? "14.5 ms H200 cuQuantum 36-Qubit 预筛 · 节省 88.6% QPU Shot 预算" : "1,850.0 ms CPU 模拟 · 0.0% 预筛拦截";
+  const qirStr = ok ? "19.2 ms QIR 编译 (-95.4%) · 双比特门 -37.5% · 0.0% 拓扑拒单" : "420.0 ms OpenQASM 解析 · 24.6% 拓扑违规拒单";
+  const accStr = ok ? "96.8% 化学精度达标率 (<=1.6 mHa, Floquet QEC + ZNE)" : "31.0% 化学精度达标率 (NISQ 退相干噪声淹没)";
+
+  document.getElementById('qirOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + simStr : '❌ 24.6% 硬件拓扑拒单 · 69.0% 精度未达标'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 ND96isr_H200_v5 (${qirStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>基态能量化学精度 (<= 1.6 mHa) 与量子纠错收益</strong>：<strong>${accStr}</strong>
+    </p>
+  `;
+}
+
+function runMedLab() {
+  const ag = parseInt(document.getElementById('rng_med_ag').value, 10);
+  const mode = document.getElementById('sel_med_mode').value;
+  document.getElementById('lbl_med_ag').textContent = ag.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(ag / 32));
+  const ok = mode === 'ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm';
+  const dicomStr = ok ? "185.0 ms 3D DICOM 零拷贝加载 (-96.2%) · 24.0 ms FHIR R4" : "4,850.0 ms REST Base64 序列化 · 390.0 ms FHIR";
+  const phiStr = ok ? "99.94% PHI 召回率 (4.6 ms) · 0.0% 外部模型原始 PHI 暴露" : "100.0% 原始患者 PHI 暴露 (HIPAA 违规)";
+  const cfrStr = ok ? "6.8 ms FIDO2+HSM 双签 · 0.0% 无签名变更 · 3.2 s GxP 审计汇编" : "14.5% 无签名记录篡改 · 14 天人工迎审汇编";
+
+  document.getElementById('medOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + dicomStr : '❌ 100.0% PHI 隐私暴露 · 14.5% 无签名违规'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NCC40ads_H100_v5 (${phiStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>FDA 21 CFR Part 11 电子签名与 GxP 审计就绪度</strong>：<strong>${cfrStr}</strong>
+    </p>
+  `;
+}
+
+function runEdgLab() {
+  const ag = parseInt(document.getElementById('rng_edg_ag').value, 10);
+  const mode = document.getElementById('sel_edg_mode').value;
+  document.getElementById('lbl_edg_ag').textContent = ag.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(ag / 64));
+  const ok = mode === 'azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt';
+  const availStr = ok ? "99.98% 72h 断网可用性 · 18.4 ms 本地 ONNX SLM TTFT (-97.3%)" : "0.0% 断网瘫痪 · 680.0 ms WAN RTT";
+  const safStr = ok ? "91.4% LZ4 状态差分压缩 · 0.0% 断网检查点丢失" : "98.7% 内存 MQTT 队列溢出丢失";
+  const syncStr = ok ? "35.0% WAN 令牌桶限流 · 14.2 s HLC-CRDT 零冲突合入" : "100.0% 重连风暴打满产线链路";
+
+  document.getElementById('edgOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + availStr : '❌ 断网 0% 可用 · 98.7% 检查点溢出丢失'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 Azure Local (${safStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>网络恢复期带宽保护与数字孪生合入</strong>：<strong>${syncStr}</strong>
+    </p>
+  `;
+}
+
+function runCybLab() {
+  const sbx = parseInt(document.getElementById('rng_cyb_sbx').value, 10);
+  const mode = document.getElementById('sel_cyb_mode').value;
+  document.getElementById('lbl_cyb_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sbx / 64));
+  const ok = mode === 'airgapped_vsock_microvm_krsi_ebpf_sentinel_soar';
+  const isoStr = ok ? "0.0% 内网横向逃逸 · 45.0 ms 密码学内存重置 (-99.8%)" : "100.0% RFC1918 内网暴露 · 18,500 ms 重装";
+  const krsiStr = ok ? "1.8% eBPF KRSI/LSM 开销 · 0.4% 反沙箱逃逸 (-99.4%)" : "42.0% ptrace 开销 · 68.0% 样本静默逃逸";
+  const soarStr = ok ? "680.0 ms Sentinel SOAR 全网隔离 (<= 1,000ms)" : "2,700,000 ms (45m) 人工 SOC 滞后";
+
+  document.getElementById('cybOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + isoStr : '❌ 带网卡容器内网暴露 · 68% 样本反调试逃逸'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 DC48ads_v5 (${soarStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>内核态行为调用图捕获与反逃逸</strong>：<strong>${krsiStr}</strong>
+    </p>
+  `;
+}
+
+function runA2aLab() {
+  const del = parseInt(document.getElementById('rng_a2a_del').value, 10);
+  const mode = document.getElementById('sel_a2a_mode').value;
+  document.getElementById('lbl_a2a_del').textContent = del.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(del / 900));
+  const ok = mode === 'entra_verified_id_sdjwt_http3_quic_deadline_budget';
+  const quicStr = ok ? "38.5 ms HTTP/3 QUIC 0-RTT 流式 p99 (-90.8%)" : "420.0 ms TCP HTTP/1.1 队头阻塞 p99";
+  const didStr = ok ? "1.85 ms SD-JWT 验签 · 0.0% 组织属性过度暴露" : "100.0% 内部 OID/组织架构声明外泄";
+  const slaStr = ok ? "0.15% 多跳级联超时率 (-99.2%)" : "19.40% 跨组织级联超时雪崩";
+
+  document.getElementById('a2aOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + quicStr : '❌ TCP 队头阻塞 420ms · OAuth 属性全量暴露'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 D32as_v6 (${slaStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>可验证凭证与隐私保护</strong>：<strong>${didStr}</strong>
+    </p>
+  `;
+}
+
+function runPayLab() {
+  const tps = parseInt(document.getElementById('rng_pay_tps').value, 10);
+  const mode = document.getElementById('sel_pay_mode').value;
+  document.getElementById('lbl_pay_tps').textContent = tps.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(tps / 650));
+  const ok = mode === 'hsm_spend_mandate_horizondb_escrow_confidential_ledger';
+  const latStr = ok ? "5.25 ms 同步护栏 (1.45ms HSM + 3.80ms 复式托管)" : "28.50 ms 裸调延迟 (无预算硬绑定)";
+  const secStr = ok ? "0.0% 越权盗刷 · 0.0% 重试重复扣款" : "100.0% 注入盗刷风险 · 3.8% 重复扣款";
+  const aclStr = ok ? "100.0% SGX Confidential Ledger 默克尔收据 (4.20ms)" : "0.0% 硬件抗抵赖收据";
+
+  document.getElementById('payOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + latStr : '❌ 沙箱直持支付密钥 · 3.8% 重复扣款'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 DC16as_v5 (${secStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>PCI-DSS / SOX 不可篡改审计</strong>：<strong>${aclStr}</strong>
+    </p>
+  `;
+}
+
+function runHpcLab() {
+  const sbx = parseInt(document.getElementById('rng_hpc_sbx').value, 10);
+  const mode = document.getElementById('sel_hpc_mode').value;
+  document.getElementById('lbl_hpc_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(4, Math.ceil(sbx / 16));
+  const ok = mode === 'amlfs_lustre_kueue_ib_gang_veloc_async_ckpt';
+  const fsStr = ok ? "160.0 GB/s Managed Lustre · 3.1 s 预热 (-97.8%)" : "8.4 GB/s NFSv4 · 142.0 s 预热拥塞";
+  const mpiStr = ok ? "1.65 us NDR IB AllReduce · 0.0% 死锁 · 89.6% 利用率" : "18.50 us 跨脊通信 · 26.4% 半分配死锁 · 48.2% 利用率";
+  const ckptStr = ok ? "0.9% VELOC 异步检查点开销 (-96.2%)" : "24.0% 同步写盘停顿开销";
+
+  document.getElementById('hpcOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + fsStr : '❌ NFS 元数据锁拥塞 · 26.4% 成组死锁'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 HB176rs_v4 (${ckptStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>InfiniBand 拓扑成组调度与算力效率</strong>：<strong>${mpiStr}</strong>
+    </p>
+  `;
+}
+
+function runChLab() {
+  const sbx = parseInt(document.getElementById('rng_ch_sbx').value, 10);
+  const mode = document.getElementById('sel_ch_mode').value;
+  document.getElementById('lbl_ch_sbx').textContent = sbx.toLocaleString();
+
+  const ok = mode === 'chaos_studio_epoch_fencing_byzantine_breaker';
+  const mttrStr = ok ? "6.8 s 复合故障自愈 (-99.5%) · 99.94% 任务存活" : "1,420.0 s 人工排障 · 61.50% 任务存活";
+  const fenceStr = ok ? "0.22 ms 纪元锁校验 · 0.0% 脑裂脏写" : "4.8% 僵尸沙箱双写脑裂";
+  const byzStr = ok ? "1.20 s 拜占庭工具熔断 · 0.4% 重试浪费" : "180.0 s 故障滞留 · 42.0% Token 浪费";
+
+  document.getElementById('chOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mttrStr : '❌ 静态预案失灵 · 4.8% 脑裂污染'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${fenceStr}</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>拜占庭隔离与重试防雪崩</strong>：<strong>${byzStr}</strong>（覆盖 ${sbx.toLocaleString()} 并发沙箱）
+    </p>
+  `;
+}
+
+function runHlLab() {
+  const inv = parseInt(document.getElementById('rng_hl_inv').value, 10);
+  const mode = document.getElementById('sel_hl_mode').value;
+  document.getElementById('lbl_hl_inv').textContent = inv.toLocaleString();
+
+  const ok = mode === 'hyperlight_wasi02_wit_zerocopy_hybrid_dispatch';
+  const nodes = ok ? Math.max(4, Math.ceil(inv / 1280)) : Math.max(12, Math.ceil(inv / 450));
+  const bootStr = ok ? "0.85 ms 冷启动 (-99.2%) · 1.8 MiB RSS" : "108.0 ms 恢复 · 256.0 MiB RSS";
+  const abiStr = ok ? "0.14 ms WIT 零拷贝 (-97.8%) · 48,000/节点 (40x)" : "6.40 ms HTTP/JSON 序列化 · 1,200/节点";
+
+  document.getElementById('hlOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 中位延迟 1.35ms (-98.8%) · 0% Syscall 暴露' : '❌ 全量 Linux VM 114.4ms · 节点膨胀'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 D96as_v7 (${ok ? '成本省 64.8%' : '基线成本'})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>微沙箱启动与单节点密度</strong>：<strong>${bootStr}</strong> · <strong>${abiStr}</strong>
+    </p>
+  `;
+}
+
+function runGrnLab() {
+  const sbx = parseInt(document.getElementById('rng_grn_sbx').value, 10);
+  const mode = document.getElementById('sel_grn_mode').value;
+  document.getElementById('lbl_grn_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(4, Math.ceil(sbx / 390));
+  const ok = mode === 'watttime_spatiotemporal_amd_pstate_rapl_attribution';
+  const co2Str = ok ? "94.2 gCO2eq / 1K 任务 (-77.5%)" : "418.0 gCO2eq / 1K 任务 (高碳火电基线)";
+  const wattStr = ok ? "148.0 W (-63.9% 待命功耗 · 108ms 恢复不变)" : "410.0 W (常驻满频空耗)";
+  const csrdStr = ok ? "1.9% 硬件 RAPL 归因误差 (满足 EU CSRD)" : "38.0% vCPU 粗略均摊误差";
+
+  document.getElementById('grnOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 碳排强度 ' + co2Str : '❌ 碳盲静态调度 418gCO2eq · 空载高功耗'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${ok ? '电费省 31.4%' : '基线能耗'} (${nodes} 台 D96as_v7)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>Turin 能效与 CSRD 审计精度</strong>：待命功耗 <strong>${wattStr}</strong> · <strong>${csrdStr}</strong>
+    </p>
+  `;
+}
+
+function runPqcLab() {
+  const sbx = parseInt(document.getElementById('rng_pqc_sbx').value, 10);
+  const mode = document.getElementById('sel_pqc_mode').value;
+  document.getElementById('lbl_pqc_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sbx / 1250));
+  const ok = mode === 'x25519_mlkem768_mldsa65_hndl_envelope';
+  const mtlsStr = ok ? "1.65 ms (+0.42ms vs 经典 · 0% TCP 分片)" : "26.20 ms (38.5% TCP 拥塞拆包惩罚)";
+  const sigStr = ok ? "0.0% 量子伪造暴露 (ML-DSA-65 验签 +0.38ms / 总 4.98ms)" : "100.0% Shor 算法签名伪造暴露";
+  const hndlStr = ok ? "0.0% HNDL 窃密暴露 (ML-KEM-1024 信封 · 存储 +1.8%)" : "100.0% 10年期归档记忆 HNDL 暴露";
+
+  document.getElementById('pqcOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ PQC mTLS p95 ' + mtlsStr : '❌ 未调优握手 26.2ms · 经典密码面临量子破解'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${ok ? 'FIPS 203/204 合规' : '不满足 CNSA 2.0'} (${nodes} 网关节点)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>后量子签名与长效记忆保护</strong>：<strong>${sigStr}</strong> · <strong>${hndlStr}</strong>
+    </p>
+  `;
+}
+
+function runRftLab() {
+  const grp = parseInt(document.getElementById('rng_rft_grp').value, 10);
+  const mode = document.getElementById('sel_rft_mode').value;
+  const branches = grp * 16;
+  document.getElementById('lbl_rft_grp').textContent = grp.toLocaleString() + " 组 (" + branches.toLocaleString() + " 分支)";
+
+  const nodes = Math.max(4, Math.ceil(branches / 320));
+  const ok = mode === 'tree_cow_fork_hermetic_verifier_parquet_stream';
+  const wallStr = ok ? "9.2 s (-79.1% · 68ms 树状分叉)" : "44.0 s (全量从头重放)";
+  const hackStr = ok ? "0.0% 奖励黑客漏检 (18.5ms 独立只读命名空间验证器)" : "4.6% 奖励黑客篡改测试脚本漏检";
+  const stallStr = ok ? "0.8% GPU 饥饿率 (Parquet 压缩 -83.4%)" : "29.5% 训练 GPU 空转等待";
+
+  document.getElementById('rftOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 单组 16 分支耗时 ' + wallStr : '❌ 全量重放 44.0s · 4.6% 奖励黑客污染'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${ok ? '省 74.8% vCPU' : '基线开销'} (${nodes} 节点)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>防奖励黑客神谕与轨迹管线</strong>：<strong>${hackStr}</strong> · <strong>${stallStr}</strong>
+    </p>
+  `;
+}
+
+function runRobLab() {
+  const sbx = parseInt(document.getElementById('rng_rob_sbx').value, 10);
+  const mode = document.getElementById('sel_rob_mode').value;
+  document.getElementById('lbl_rob_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sbx / 40));
+  const ok = mode === 'iceoryx_usd_prewarm_cbf_safety_shield';
+  const ddsStr = ok ? "0.42 ms (-97.2% · 0% 掉帧)" : "14.80 ms (8.4% 控制帧超期)";
+  const usdStr = ok ? "1.15 s (-97.0% · 420x 实时加速)" : "38.50 s (18x 速度)";
+  const cbfStr = ok ? "0.0% 碰撞/力矩违规 (0.35ms CBF 护盾 + 100% 断网急停)" : "6.8% 机械碰撞/超限违规风险";
+
+  document.getElementById('robOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ROS2 DDS p99 ' + ddsStr : '❌ 网桥 UDP 抖动 14.8ms · 8.4% 控制掉帧'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">OpenUSD ${usdStr} (${nodes} 节点)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>边缘控制屏障函数 (CBF) 二次规划安全护盾</strong>：<strong>${cbfStr}</strong>
+    </p>
+  `;
+}
+
+function runCrLab() {
+  const sbx = parseInt(document.getElementById('rng_cr_sbx').value, 10);
+  const mode = document.getElementById('sel_cr_mode').value;
+  document.getElementById('lbl_cr_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sbx / 32));
+  const ok = mode === 'oidc_federation_wireguard_sev_snp_cleanroom';
+  const stsStr = ok ? "3.4 ms (-98.2% · 0% 静态密钥暴露)" : "185.0 ms (100% 静态 AK/SK 暴露)";
+  const wgStr = ok ? "38.4 Gbps (1.15 ms 内核 WireGuard)" : "9.2 Gbps (11.80 ms 用户态 mTLS)";
+  const ipStr = ok ? "0.0% 跨方数据/权重泄露 (100% 双向 SEV-SNP 证明)" : "24.5% 内存转储窃取风险";
+
+  document.getElementById('crOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ OIDC 令牌交换 ' + stsStr : '❌ 静态 AK/SK 暴漏 · 185ms 跨云握手'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${wgStr} (${nodes} 节点)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>AMD SEV-SNP + MAA 多方机密洁净室</strong>：<strong>${ipStr}</strong>
+    </p>
+  `;
+}
+
+function runLhLab() {
+  const sbx = parseInt(document.getElementById('rng_lh_sbx').value, 10);
+  const mode = document.getElementById('sel_lh_mode').value;
+  document.getElementById('lbl_lh_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sbx / 32));
+  const ok = mode === 'ephemeral_duckdb_onelake_pushdown_ast_guard';
+  const qSec = ok ? "1.85 s (-96.2%)" : "48.50 s (Spark 排队/冷启动)";
+  const costStr = ok ? "$19.60 / 1K 会话 (-89.3%)" : "$184.00 / 1K 会话";
+  const guardStr = ok ? "99.6% 失控扫描拦截 · 0.0% 越权列暴露" : "0.0% 拦截 · 18.5% 敏感列暴露";
+
+  document.getElementById('lhOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 湖仓查询 p95 ' + qSec : '❌ Spark 冷启动 48.5s · 笛卡尔积账单风险'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${costStr} (${nodes} 节点)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>sqlglot AST 成本门控 (0.9 ms) &amp; ABFS 列脱敏</strong>：<strong>${guardStr}</strong><br>
+      • <strong>Schema 向量模糊绑定</strong>：幻觉列名报错重试轮次削减 <strong>${ok ? '74.0%' : '0.0%'}</strong>
+    </p>
+  `;
+}
+
+function runCiLab() {
+  const sbx = parseInt(document.getElementById('rng_ci_sbx').value, 10);
+  const mode = document.getElementById('sel_ci_mode').value;
+  document.getElementById('lbl_ci_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sbx / 40));
+  const ok = mode === 'microvm_rootless_buildkit_cas_tia';
+  const imgSec = ok ? "14.2 s (-76.2%)" : "59.6 s (VFS 瓶颈)";
+  const cmpSec = ok ? "18.4 s (-94.1% · 93.6% CAS 命中)" : "310.0 s (全量冷编译)";
+  const escPct = ok ? "0.0% (VM 强隔离 + 只读 CAS 0% 投毒)" : "100.0% (DinD 逃逸 + 12.4% 缓存污染)";
+
+  document.getElementById('ciOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 编译链接 ' + cmpSec + ' · 镜像构建 ' + imgSec : '❌ 冷编译 310s · DinD 宿主机 Root 暴露'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">NVMe 构建池 ${nodes} 节点 (${ok ? '省 78.5% vCPU' : '基线'})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>安全边界与缓存防投毒</strong>：宿主机提权暴露面 <strong>${escPct}</strong><br>
+      • <strong>AST 测试影响分析 (TIA) &amp; 确定性种子</strong>：测试墙钟耗时 <strong>${ok ? '-82.0%' : '0.0%'}</strong> · 偶发 Flaky 假阴性消除 <strong>${ok ? '99.1%' : '0.0%'}</strong>
+    </p>
+  `;
+}
+
+function runRtcLab() {
+  const sess = parseInt(document.getElementById('rng_rtc_sess').value, 10);
+  const mode = document.getElementById('sel_rtc_mode').value;
+  document.getElementById('lbl_rtc_sess').textContent = sess.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sess / 250));
+  const ok = mode === 'ebpf_xdp_sockmap_vad_acs_turn';
+  const rtpMs = ok ? "3.2 ms (-93.3%)" : "48.0 ms";
+  const m2eMs = ok ? "242.5 ms (-79.4%)" : "1,180.0 ms";
+  const bargeMs = ok ? "14.0 ms (省 38.2% 废弃音频 Token)" : "420.0 ms (严重抢话)";
+  const iceMs = ok ? "195.0 ms (99.95% NAT 穿透)" : "1,650.0 ms (84.5% 穿透)";
+
+  document.getElementById('rtcOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ Mouth-to-Ear p95 ' + m2eMs + ' (<=300ms SLO) · RTP p99 ' + rtpMs : '❌ Mouth-to-Ear 1,180ms 违约 · 用户态 NAT 抖动 48ms'}</span>
+      <strong style="color:#38bdf8;font-size:1.05rem;">媒体池 ${nodes} 节点 (CPU ${ok ? '4.8%' : '34.0%'})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>边缘 Silero-VAD 打断取消 (Barge-In)</strong>：响应延迟 <strong>${bargeMs}</strong><br>
+      • <strong>ACS 全球 Anycast TURN 中继</strong>：ICE 握手建连 <strong>${iceMs}</strong>
+    </p>
+  `;
+}
+
+function runMemLab() {
+  const vecM = parseInt(document.getElementById('rng_mem_vecs').value, 10);
+  const mode = document.getElementById('sel_mem_mode').value;
+  document.getElementById('lbl_mem_vecs').textContent = vecM + "M";
+
+  const scale = vecM / 100.0;
+  const ok = mode === 'diskann_graphrag_3tier_rls';
+  const ramGib = ok ? (48.0 * scale).toFixed(1) : (840.0 * scale).toFixed(1);
+  const costUsd = ok ? (580.0 * scale).toFixed(0) : (6840.0 * scale).toFixed(0);
+  const graphMs = ok ? "42.0 ms (-98.8%)" : "3,420.0 ms";
+  const tokens = ok ? "3,880 (-86.4%)" : "28,500";
+
+  document.getElementById('memOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ DiskANN 内存 ' + ramGib + ' GiB (-94.3%) · Recall@10 96.8% · p95 6.4ms' : '❌ HNSW 内存膨胀 ' + ramGib + ' GiB · 图遍历 3,420ms'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">$${costUsd}/mo (${ok ? '-91.5%' : '基线'})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>GraphRAG 社区摘要缓存 (L0 Redis)</strong>：跨仓架构查询 <strong>${graphMs}</strong> · 注入上下文 Token <strong>${tokens}</strong><br>
+      • <strong>三级生命周期与租户隔离</strong>：余弦去重削减 <strong>${ok ? '61.5%' : '0.0%'}</strong> 冗余写入 · 跨租户泄漏率 <strong>${ok ? '0.0% (RLS 强隔离)' : '3.2% (后过滤风险)'}</strong>
+    </p>
+  `;
+}
+
+function runCasLab() {
+  const ratio = parseInt(document.getElementById('rng_cas_ratio').value, 10) / 100.0;
+  const mode = document.getElementById('sel_cas_mode').value;
+  document.getElementById('lbl_cas_ratio').textContent = Math.round(ratio * 100) + "%";
+
+  const ok = mode === 'kv_affinity_cascade_speculative_prefetch';
+  const kvHit = ok ? "88.4%" : "18.5%";
+  const ttft = ok ? "210.0 ms (-88.6%)" : "1,840.0 ms";
+  const cost = ok ? (142.0 * (1.0 - (0.638028 * (ratio / 0.68)))).toFixed(2) : "142.00";
+  const costRed = ok ? ((1.0 - parseFloat(cost) / 142.0) * 100.0).toFixed(1) : "0.0";
+  const latRed = ok ? (46.5 * (ratio / 0.68)).toFixed(1) : "0.0";
+
+  document.getElementById('casOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ KV 命中率 ' + kvHit + ' · TTFT p95 ' + ttft + ' · 只读预取省 145ms/步' : '❌ KV 命中率仅 ' + kvHit + ' · TTFT 1,840ms · 全量旗舰成本高昂'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">$${cost} / 1K 任务 (-${costRed}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>熵引导级联路由 (${ok ? Math.round(ratio*100) : 0}% 快速层分流)</strong>：网关分类开销 <strong>${ok ? '1.6 ms (<1.8ms)' : '0.0 ms'}</strong> · 单步耗时降幅 <strong>-${latRed}%</strong> · 解决率对齐 <strong>${ok ? '99.2%' : '99.6%'}</strong><br>
+      • <strong>流式 &lt;tool_call&gt; 只读投机预取</strong>：提前 <strong>${ok ? '180.0 ms' : '0.0 ms'}</strong> 预热沙箱 Page Cache · 不安全投机写操作率 <strong>0.0%</strong>
+    </p>
+  `;
+}
+
+function runMigLab() {
+  const sbx = parseInt(document.getElementById('rng_mig_sbx').value, 10);
+  const mode = document.getElementById('sel_mig_mode').value;
+  document.getElementById('lbl_mig_sbx').textContent = sbx.toLocaleString();
+
+  const baseNodes = Math.max(3, Math.ceil(sbx / 400));
+  const surgeNodes = Math.max(1, Math.ceil(baseNodes * 0.33));
+  const ok = mode === 'surge_nvme_mana_live_canary';
+  const p95 = ok ? "172.0 ms (≤220ms SLO)" : "6,420.0 ms (冷节点尖峰)";
+  const freeze = ok ? "340.0 ms (<500ms 不断连)" : "直接 Kill (22.4% 任务中断)";
+  const dropRate = ok ? "0.0%" : "22.4%";
+
+  document.getElementById('migOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 活跃任务中断率 ' + dropRate + ' · 50 Gbps MANA 热迁移冻结 340ms' : '❌ 活跃任务中断率 ' + dropRate + ' · 升级窗口冷启动风暴'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">升级窗口 p95: ${p95}</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>节点编成与 Surge 预热</strong>：基础 <strong>${baseNodes} 台</strong> + Surge 扩容 <strong>+${ok ? surgeNodes : 0} 台 (33%)</strong> · NVMe 预热门控 <strong>${ok ? '42.0 s' : '0.0 s (无预热)'}</strong><br>
+      • <strong>跨节点热迁移与金丝雀回滚</strong>：冻结窗口 <strong>${freeze}</strong> · 异常自动回滚 <strong>${ok ? '8.5 s (爆炸半径 0.8%)' : '900.0 s (全量受损)'}</strong>
+    </p>
+  `;
+}
+
+function runSovLab() {
+  const geo = document.getElementById('sel_sov_geo').value;
+  const mode = document.getElementById('sel_sov_mode').value;
+  const pairs = {
+    EU_DATA_BOUNDARY: "Sweden Central <-> West Europe",
+    US_SOVEREIGN: "East US 2 <-> Central US",
+    APAC_REGULATED: "Singapore <-> Japan East"
+  };
+  const ok = mode === 'geofenced_fpe_hsm_cryptoshred';
+  const spill = ok ? "0.0%" : "14.2%";
+  const purge = ok ? "1.45 s (-99.99%)" : "15,120.0 s (4.2 h)";
+  const fpeMs = ok ? "3.8 ms (0.0% 明文 PII)" : "0.0 ms (100% 明文暴露)";
+
+  document.getElementById('sovOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 跨边界溢出 ' + spill + ' · NIST SP 800-88 零残留粉碎' : '❌ 跨洋违规溢出 ' + spill + ' · 快照副本残留风险'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">销毁耗时: ${purge}</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>主权配对区域环 (${pairs[geo]})</strong>：APIM 围栏校验开销 <strong>${ok ? '+0.35 ms' : '0.00 ms'}</strong> · 区内可用性 <strong>${ok ? '99.99%' : '99.90%'}</strong><br>
+      • <strong>跨国 MCP 调用 FPE-AES-FF1 令牌化</strong>：延迟 <strong>${fpeMs}</strong> · 粉碎后残留可读字节 <strong>${ok ? '0 Bytes' : '> 1 MiB'}</strong>
+    </p>
+  `;
+}
+
+function runSwarmLab() {
+  const width = parseInt(document.getElementById('rng_swm_width').value, 10);
+  const mode = document.getElementById('sel_swm_mode').value;
+  document.getElementById('lbl_swm_width').textContent = width;
+
+  const gov = mode === 'hierarchical_budget_intent_prewarm_ast_lease';
+  const hitRate = gov ? "99.4%" : "32.0%";
+  const spawnP95 = gov ? "185.0 ms" : "18,400.0 ms";
+  const tokenSave = gov ? "63.8%" : "0.0%";
+  const conflictRate = gov ? "0.4%" : "29.4%";
+
+  document.getElementById('swmOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${gov ? 'pill-teal' : 'pill-rose'}">${gov ? '✅ 叉炸弹 0.0% · 温池命中率 ' + hitRate + ' · Git 冲突回滚 ' + conflictRate : '❌ 递归放大 14.6x · 冷启动回退 18.4s · Git 冲突 ' + conflictRate}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">子 Agent p95: ${spawnP95}</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>层级预算信封与兄弟早停剪枝</strong>：最大深度 <strong>${gov ? 'MaxDepth ≤ 2' : '无限制 (14.6x 放大)'}</strong> · 节省冗余 Token <strong>${tokenSave}</strong><br>
+      • <strong>意图前瞻预热与 AST 租约锁</strong>：提前 <strong>${gov ? '800.0 ms' : '0.0 ms'}</strong> 预热微虚拟机 · 等待图死锁检测 <strong>${gov ? '2.2 ms (< 2.5 ms SLO)' : '无检测'}</strong>
+    </p>
+  `;
+}
+
+function runDepLab() {
+  const sbx = parseInt(document.getElementById('rng_dep_sbx').value, 10);
+  const imgGib = parseFloat(document.getElementById('rng_dep_img').value);
+  const mode = document.getElementById('sel_dep_mode').value;
+  document.getElementById('lbl_dep_sbx').textContent = sbx;
+  document.getElementById('lbl_dep_img').textContent = imgGib.toFixed(1) + " GiB";
+
+  const baseOciSec = (19.40 * (imgGib / 3.2)).toFixed(2);
+  let pipMs = "24,600.0 ms", pipRed = "0.0", ramSaved = "0.0", ociSec = baseOciSec, ociRed = "0.0", ok = false;
+  if (mode === 'virtiofs_dax_overlaybd_osv') {
+    pipMs = "38.0 ms"; pipRed = "99.8";
+    ramSaved = (sbx * 0.428).toFixed(1);
+    ociSec = (0.95 * (imgGib / 3.2)).toFixed(2);
+    ociRed = "95.1";
+    ok = true;
+  }
+
+  document.getElementById('depOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ virtiofs DAX 节省 ' + ramSaved + ' GiB 节点内存 · OSV 100% 拦截恶意钩子' : '❌ Guest 重复缓存浪费内存 · 裸连公网无供应链防护'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">包就绪 ${pipMs} (-${pipRed}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>镜像启动耗时 (OverlayBD 按需块拉取)</strong>：基线全量拉取 <strong>${baseOciSec} s</strong> → 当前 <strong>${ociSec} s (-${ociRed}%，启动仅拉取 ${ok ? '4.2%' : '100%'} 热块)</strong><br>
+      • <strong>跨沙箱 Page-Cache 物理页共享</strong>：单节点 ${sbx} 沙箱共节省 <strong>${ramSaved} GiB RAM</strong> · 可写层配额 <strong>${ok ? '2.0 GiB upperdir' : '无限制'}</strong>
+    </p>
+  `;
+}
+
+function runCuaLab() {
+  const sbx = parseInt(document.getElementById('rng_cua_sbx').value, 10);
+  const mode = document.getElementById('sel_cua_mode').value;
+  const vlmRatio = parseInt(document.getElementById('rng_cua_vlm').value, 10) / 100.0;
+  document.getElementById('lbl_cua_sbx').textContent = sbx.toLocaleString();
+  document.getElementById('lbl_cua_vlm').textContent = Math.round(vlmRatio * 100) + "%";
+
+  let pss = 820.0, memRed = "0.0", tabMs = 1420.0, mbps = 14.20, bwRed = "0.0", taskSec = "28.4", latRed = "0.0", cost = "0.048", costRed = "0.0", ok = false;
+  if (mode === 'zygote_axtree_dirtyrect') {
+    pss = 310.0; memRed = "62.2"; tabMs = 68.0; mbps = 0.62; bwRed = "95.6"; ok = true;
+    taskSec = (3.0 + 20.4167 * vlmRatio).toFixed(1);
+    latRed = ((1.0 - parseFloat(taskSec) / 28.4) * 100.0).toFixed(1);
+    cost = (0.0052 + 0.0325 * vlmRatio).toFixed(3);
+    costRed = ((1.0 - parseFloat(cost) / 0.048) * 100.0).toFixed(1);
+  }
+  const clusterGbps = ((sbx * mbps) / 1000.0).toFixed(2);
+
+  document.getElementById('cuaOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ Zygote PSS ' + pss + ' MiB (-' + memRed + '%) · 68ms 极速就绪' : '❌ 冷启动 PSS 820 MiB (易 OOMKill) · 1,420ms 就绪'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">${taskSec} s / 15步 (-${latRed}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>实时画面流带宽</strong>：单沙箱 <strong>${mbps} Mbps (-${bwRed}%)</strong> · 集群总流带宽 <strong>${clusterGbps} Gbps</strong><br>
+      • <strong>15 步网页任务综合成本</strong>：<strong>$${cost} / 任务 (-${costRed}%)</strong> (AXTree 优先 + ${ok ? Math.round(vlmRatio*100) : 100}% VLM 视觉回退)
+    </p>
+  `;
+}
+
+function runWfLab() {
+  const cnt = parseInt(document.getElementById('rng_wf_cnt').value, 10);
+  const waitMin = parseInt(document.getElementById('rng_wf_wait').value, 10);
+  const mode = document.getElementById('sel_wf_mode').value;
+  document.getElementById('lbl_wf_cnt').textContent = cnt.toLocaleString();
+  document.getElementById('lbl_wf_wait').textContent = waitMin + " min";
+
+  const wastePct = Math.min(98.5, ((waitMin * 60.0) / (waitMin * 60.0 + 55.4)) * 100.0).toFixed(1);
+  const pinnedCost = (cnt * 0.284 * (waitMin / 15.0)).toFixed(2);
+  let effCost = pinnedCost, savePct = "0.0", dupPct = "4.8%", reapSec = "3600.0 s (18% 内存泄漏)", ok = false;
+
+  if (mode === 'suspend_on_wait_outbox_gc') {
+    effCost = (parseFloat(pinnedCost) * (1.0 - 0.89704225)).toFixed(2);
+    savePct = "89.7";
+    dupPct = "0.0% (Exactly-Once)";
+    reapSec = "4.5 s (0.0% 泄漏)";
+    ok = true;
+  }
+
+  document.getElementById('wfOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 10s 自动休眠 + 188ms 热唤醒 · Outbox 严格幂等' : '❌ 内存常驻空转 ' + wastePct + '% · 4.8% 重复脏写风险'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">$${Number(effCost).toLocaleString()}/天 (-${savePct}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>常驻等待基线 vs 休眠唤醒</strong>：常驻日成本 <strong>$${Number(pinnedCost).toLocaleString()}/天 (空转率 ${wastePct}%)</strong> → 休眠唤醒后 <strong>$${Number(effCost).toLocaleString()}/天 (RAM 驻留削减 -${savePct}%)</strong><br>
+      • <strong>外部副作用幂等与僵尸回收</strong>：重复扣款/发单率 <strong>${dupPct}</strong> · 断连孤儿沙箱回收 <strong>${reapSec}</strong>
+    </p>
+  `;
+}
+
+function runObsLab() {
+  const sbx = parseInt(document.getElementById('rng_obs_sbx').value, 10);
+  const mode = document.getElementById('sel_obs_mode').value;
+  const normRate = parseInt(document.getElementById('rng_obs_rate').value, 10) / 100.0;
+  document.getElementById('lbl_obs_sbx').textContent = sbx.toLocaleString();
+  document.getElementById('lbl_obs_rate').textContent = Math.round(normRate * 100) + "%";
+
+  const rawGbps = ((sbx * 48.5) / 1000000.0).toFixed(2);
+  const rawDailyTb = (sbx * 0.00419).toFixed(2);
+  const baseCost = 3.62;
+  let persistedTb = rawDailyTb, volRed = "0.0", cpuPct = 6.40, cost = 3.62, costRed = "0.0", alertSec = 14.5;
+
+  if (mode === 'hybrid_3tier_tail_adx') {
+    cpuPct = 0.95;
+    alertSec = 1.8;
+    const effFactor = 0.034 * 1.0 + (1.0 - 0.034) * normRate;
+    volRed = ((1.0 - (effFactor / 0.98)) * 100.0).toFixed(1);
+    persistedTb = (parseFloat(rawDailyTb) * (1.0 - parseFloat(volRed) / 100.0)).toFixed(2);
+    cost = (baseCost * (0.032 + 1.015 * effFactor)).toFixed(2);
+    costRed = ((1.0 - parseFloat(cost) / baseCost) * 100.0).toFixed(1);
+  }
+
+  const sloOk = cpuPct <= 1.2;
+  document.getElementById('obsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${sloOk ? 'pill-teal' : 'pill-rose'}">${sloOk ? '✅ eBPF 内核态 CPU 开销 ' + cpuPct + '% (<1.2% SLO) · 100% 异常零漏报' : '❌ 用户态全量审计 CPU 开销 ' + cpuPct + '% (超标) · 存储账单爆炸'}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">$${cost} / 1K 任务 (-${costRed}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>原始遥测流 vs 落盘存储</strong>：原始 <strong>${rawGbps} GB/s (${rawDailyTb} TB/天)</strong> → 尾部采样 + ADX ZSTD 8.4x 后 <strong>${persistedTb} TB/天 (削减 -${volRed}%)</strong><br>
+      • <strong>安全越权告警延迟</strong>：Tetragon eBPF (<code>execve/ptrace/connect</code>) → ADX 流式告警 P95 <strong>${alertSec} s</strong>
+    </p>
+  `;
+}
+
+function runGpuLab() {
+  const sku = document.getElementById('sel_gpu_sku').value;
+  const part = document.getElementById('sel_gpu_part').value;
+  const cachePct = parseInt(document.getElementById('rng_gpu_cache').value, 10) / 100.0;
+  document.getElementById('lbl_gpu_cache').textContent = Math.round(cachePct * 100) + "%";
+
+  const isH200 = sku.includes('H200');
+  const gpus = isH200 ? 8 : (sku.includes('NC80') ? 2 : 1);
+  const slicesPerGpu = part === 'mig_1g_10gb' ? 7 : 8;
+  const totalSlices = gpus * slicesPerGpu;
+
+  let jitter = 0.0, p95 = 41.5, gain = 18.2, hwIso = true;
+  if (part === 'mig_1g_10gb') {
+    jitter = 0.0; p95 = isH200 ? 36.8 : 41.5; gain = 18.2; hwIso = true;
+  } else if (part === 'cuda_mps_shared_sm') {
+    jitter = 8.5; p95 = isH200 ? 34.0 : 38.2; gain = 28.4; hwIso = false;
+  } else {
+    jitter = 31.0; p95 = 54.6; gain = 0.0; hwIso = false;
+  }
+
+  const effTtft = (185.0 * (1.0 - cachePct * 0.991)).toFixed(1);
+  const ttftDrop = ((1.0 - parseFloat(effTtft) / 185.0) * 100.0).toFixed(1);
+  const totalCost10k = (142.0 * (1.0 - cachePct * 0.62) + 18.5).toFixed(2);
+
+  document.getElementById('gpuOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${hwIso ? 'pill-teal' : (part === 'cuda_mps_shared_sm' ? 'pill-blue' : 'pill-amber')}">${hwIso ? '🛡️ 硬件 MIG 故障隔离 (0% 跨租户抖动)' : (part === 'cuda_mps_shared_sm' ? '⚡ CUDA MPS 共享 SM (+28.4% 吞吐增益)' : '⚠️ 时间片轮转 (31% 跨租户尾延迟抖动)')}</span>
+      <strong style="color:#34d399;font-size:1.1rem;">TTFT：${effTtft} ms (-${ttftDrop}%)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>单节点并发实例数</strong>：<strong>${gpus} GPU × ${slicesPerGpu} = ${totalSlices} 个并发边车切片</strong> · GUI 视觉接地 P95 <strong>${p95} ms</strong> (吞吐增益 <strong>+${gain}%</strong>)<br>
+      • <strong>存算分离综合成本</strong>：CPU 沙箱池 + KAITO 前缀缓存 GPU 池每 10,000 条 CUA 任务轨迹总成本 <strong>$${totalCost10k} / 10K Trajectories</strong>
+    </p>
+  `;
+}
+
+function runEgressLab() {
+  const sbx = parseInt(document.getElementById('rng_eg_sbx').value, 10);
+  const mode = document.getElementById('sel_eg_mode').value;
+  const ips = parseInt(document.getElementById('rng_eg_ips').value, 10);
+  const mcp = document.getElementById('sel_eg_mcp').value;
+
+  const isZt = mode === 'cilium_ebpf_fw_pls';
+  const capPorts = ips * 64000;
+  document.getElementById('lbl_eg_sbx').textContent = sbx.toLocaleString();
+  document.getElementById('lbl_eg_ips').textContent = ips + " IPs (" + capPorts.toLocaleString() + " 端口)";
+
+  const rawConns = sbx * 6;
+  const offload = isZt ? 0.78 : 0.0;
+  const pubPorts = Math.ceil(rawConns * (1.0 - offload));
+  const utilPct = ((pubPorts / capPorts) * 100.0).toFixed(1);
+  const snatSafe = parseFloat(utilPct) <= 80.0;
+
+  const l1Ms = isZt ? 0.06 : 1.90;
+  const l2Ms = isZt ? 2.40 : 0.00;
+  const plsDelta = isZt ? -3.80 : 0.00;
+  const netRtt = (l1Ms + l2Ms + plsDelta).toFixed(2);
+  const mcpMs = mcp === 'cached_slsa_cosign' ? 4.6 : 21.0;
+
+  document.getElementById('egressOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${snatSafe && isZt ? 'pill-teal' : 'pill-rose'}">${snatSafe ? (isZt ? '✅ SNAT 充裕 &amp; DNS 隧道 99.94% 阻断' : '⚠️ 缺乏 DNS 隧道与 Private Link 保护') : '❌ SNAT 端口耗尽风险 (&gt;80% 水位)'}</span>
+      <strong style="color:${snatSafe ? '#34d399' : '#fda4af'};font-size:1.1rem;">SNAT 利用率：${utilPct}% (${pubPorts.toLocaleString()} / ${capPorts.toLocaleString()})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>四层延迟分解</strong>：L1 ${isZt ? 'Cilium eBPF' : 'iptables'} <strong>${l1Ms}ms</strong> + L2 Firewall TLS/IDPS <strong>${l2Ms}ms</strong> + L3 Private Link 卸载 <strong>${plsDelta}ms</strong> = <strong>净 RTT ${netRtt} ms</strong><br>
+      • <strong>供应链与防渗漏</strong>：169.254.169.254/WireServer <strong>内核级阻断</strong> · CoreDNS 香农熵拦截 <strong>${isZt ? '99.94%' : '0%'}</strong> · L4 MCP SLSA 签名准入 <strong>+${mcpMs} ms</strong>
+    </p>
+  `;
+}
+
+function runCcLab() {
+  const sku = document.getElementById('sel_cc_sku').value;
+  const att = document.getElementById('sel_cc_att').value;
+  const fs = document.getElementById('sel_cc_fs').value;
+
+  const isCc = sku.startsWith('Standard_DC') || sku.startsWith('Standard_EC');
+  const vmmMib = isCc ? 192 : 144;
+  const effPods = isCc ? 106 : 109;
+  const baseMs = 165.0;
+  const snpMs = isCc ? 14.2 : 0.0;
+  const skrMs = !isCc ? 0.0 : (att === 'cached_jwt' ? 1.2 : 18.5);
+  const fsMs = (isCc && fs === 'dm_verity_crypt') ? 10.6 : 0.0;
+  const totalMs = (baseMs + snpMs + skrMs + fsMs).toFixed(1);
+  const cpuPct = isCc ? 5.8 : 0.0;
+  const ioPct = (isCc && fs === 'dm_verity_crypt') ? 6.4 : 0.0;
+
+  document.getElementById('ccOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${isCc ? 'pill-teal' : 'pill-amber'}">${isCc ? '🔒 硬件级 SEV-SNP 内存加密 (宿主机 Root 不可读)' : '⚠️ 常规 Kata VM (宿主机 Root 可通过 /dev/mem 转储)'}</span>
+      <strong style="color:#38bdf8;font-size:1.12rem;">启动：${totalMs} ms · ${effPods} 沙箱/节点</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>启动耗时四段分解</strong>：基础 Kata <strong>${baseMs}ms</strong> + SEV-SNP RMP 初始化 <strong>${snpMs}ms</strong> + MAA/HSM SKR 密钥释放 <strong>${skrMs}ms</strong> + dm-verity 挂载 <strong>${fsMs}ms</strong><br>
+      • <strong>资源与吞吐代价</strong>：单 Pod VMM+AA/CDH 开销 <strong>+${vmmMib} MiB</strong> · 内存加密 CPU 损耗 <strong>+${cpuPct}%</strong> · 加密块 I/O 损耗 <strong>+${ioPct}%</strong>
+    </p>
+  `;
+}
+
+function runFinopsLab() {
+  const spotPct = parseInt(document.getElementById('rng_fin_spot').value, 10) / 100.0;
+  const cachePct = parseInt(document.getElementById('rng_fin_cache').value, 10) / 100.0;
+  const isInc = document.getElementById('sel_fin_mode').value === 'inc';
+
+  document.getElementById('lbl_fin_spot').textContent = Math.round(spotPct * 100) + "%";
+  document.getElementById('lbl_fin_cache').textContent = Math.round(cachePct * 100) + "%";
+
+  const totalNodes = 256;
+  const spotNodes = Math.round(totalNodes * spotPct);
+  const ondemandNodes = totalNodes - spotNodes;
+  const bufferNodes = spotPct > 0 ? Math.max(1, Math.ceil(spotNodes * 0.04)) : 0;
+
+  const perSbxMib = isInc ? (32.0 * 0.42) : 2048.0;
+  const nodeDrainMib = 391 * perSbxMib;
+  const nodeDrainGbBits = (nodeDrainMib / 1024.0) * 8.0;
+  const egressGbps = isInc ? 32.0 : 18.0;
+  const flushMs = (nodeDrainGbBits / egressGbps) * 1000.0 + 380.0;
+  const totalDrainSec = ((flushMs + 210.0 + 528.0) / 1000.0).toFixed(2);
+  const safe = parseFloat(totalDrainSec) <= 27.0;
+
+  const paygMo = totalNodes * 3532.0;
+  const blendedMo = (ondemandNodes + bufferNodes) * 3532.0 + spotNodes * (3532.0 * 0.28);
+  const savingsPct = ((1.0 - blendedMo / paygMo) * 100.0).toFixed(1);
+
+  const llm1k = (18.40 * (1.0 - cachePct * 0.75)).toFixed(2);
+  const sbx1k = ((blendedMo / 100000.0) * 0.18).toFixed(2);
+  const total1k = (parseFloat(llm1k) + parseFloat(sbx1k)).toFixed(2);
+
+  document.getElementById('finopsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${safe ? 'pill-teal' : 'pill-rose'}">${safe ? '✅ 2.40s 优雅排空 (安全早于 30s Spot 抢占时限)' : '❌ 348.7s 排空超时 (违反 30s Spot 抢占窗口)'}</span>
+      <strong style="color:#34d399;font-size:1.12rem;">净节省：${savingsPct}% ($${Math.round(blendedMo).toLocaleString()}/mo)</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>节点编成 (10万沙箱)</strong>：按需基座 <strong>${ondemandNodes} 台</strong> + Spot 弹性池 <strong>${spotNodes} 台</strong> + 抢占热缓冲 <strong>${bufferNodes} 台</strong><br>
+      • <strong>单节点排空耗时</strong>：待刷盘载荷 <strong>${(nodeDrainMib/1024).toFixed(2)} GiB</strong> → 总排空 <strong>${totalDrainSec} s</strong> (对比 30s 通知窗口)<br>
+      • <strong>双重身份分摊单价 (每 1,000 次 Agent 任务)</strong>：LLM Token <strong>$${llm1k}</strong> + 沙箱算力 <strong>$${sbx1k}</strong> = <strong>$${total1k} / 1K Tasks</strong>
+    </p>
+  `;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>Azure AI Agent Infrastructure Playbook · 7-Card Benchmark Report</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:2rem 1rem;background:#e2e8f0;color:#0f172a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Microsoft YaHei',sans-serif}
+.deck-wrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:2.2rem}
+.report-card{background:#f8fafc;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(15,23,42,.12);border:1px solid #cbd5e1;min-height:1125px;display:flex;flex-direction:column}
+.card-accent-bar{height:10px;background:linear-gradient(90deg,#0078d4 0%,#2563eb 55%,#10b981 100%)}
+.card-inner{padding:2.3rem 2.6rem 1.8rem;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.card-eyebrow{font-size:.82rem;font-weight:700;letter-spacing:.12em;color:#0078d4;text-transform:uppercase;margin-bottom:.55rem}
+.card-headline{font-size:2.25rem;line-height:1.14;font-weight:800;margin:0 0 .65rem;letter-spacing:-.02em;color:#0f172a}
+.grad-text{background:linear-gradient(90deg,#0078d4,#10b981);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card-subtitle{font-size:1.04rem;line-height:1.45;color:#475569;margin:0 0 1.15rem}
+.card-canvas{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1rem}
+.quote-box,.callout-box{background:#eef2f6;border-radius:12px;padding:1rem 1.25rem;font-size:.95rem;line-height:1.48;color:#1e293b}
+.stack-list{display:flex;flex-direction:column;gap:.85rem}
+.decision-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:.92rem 1.12rem}
+.decision-head{display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem}
+.field-name{font-weight:700;font-size:.98rem}
+.type-pill{background:#e2e8f0;color:#475569;font-size:.74rem;padding:.12rem .45rem;border-radius:6px;font-weight:600}
+.question-sub{font-size:.83rem;color:#64748b;margin-top:.15rem}
+.action-pill{font-size:.75rem;font-weight:700;padding:.22rem .6rem;border-radius:999px;white-space:nowrap}
+.pill-auto{background:#dcfce7;color:#15803d}
+.pill-confirm{background:#fef3c7;color:#b45309}
+.pill-human{background:#fee2e2;color:#b91c1c}
+.decision-main{font-size:1.12rem;margin:.42rem 0 .52rem}
+.conf-muted{font-size:.85rem;color:#64748b;font-weight:600}
+.dist-row{display:grid;grid-template-columns:195px 1fr 56px;align-items:center;gap:.6rem;font-size:.82rem;margin:.24rem 0}
+.dist-track{background:#e2e8f0;height:9px;border-radius:999px;overflow:hidden}
+.dist-fill{background:linear-gradient(90deg,#0078d4,#10b981);height:100%;border-radius:999px}
+.dist-pct{text-align:right;font-variant-numeric:tabular-nums;color:#334155}
+.clean-table{width:100%;border-collapse:collapse;font-size:.88rem;background:transparent}
+.clean-table th{font-size:.73rem;letter-spacing:.08em;color:#64748b;text-align:left;padding:.5rem .4rem;border-bottom:1px solid #cbd5e1}
+.clean-table td{padding:.56rem .4rem;border-bottom:1px solid #e2e8f0;vertical-align:top}
+.sc-col{font-weight:600;color:#1e293b;white-space:nowrap}
+.act-col,.num-col{text-align:right;font-variant-numeric:tabular-nums}
+.act-auto{color:#15803d;font-weight:700}
+.act-confirm{color:#b45309;font-weight:700}
+.act-human{color:#b91c1c;font-weight:700}
+.miss-mark{color:#dc2626;font-weight:800}
+.code-dark{background:#0f172a;color:#e2e8f0;padding:1.05rem 1.25rem;border-radius:12px;font-size:.82rem;line-height:1.45;overflow-x:auto;margin:0;font-family:ui-monospace,Consolas,monospace}
+.code-transition{color:#0078d4;font-weight:700;font-size:.92rem;padding:.15rem 0}
+.hl-answer{color:#fbbf24;font-weight:700}
+.rob-main{font-weight:600;color:#0f172a}
+.rob-sub{font-size:.78rem;color:#64748b}
+.lat-list{display:flex;flex-direction:column;gap:.85rem}
+.lat-title{font-weight:700;font-size:.95rem;margin-bottom:.28rem}
+.lat-row{display:flex;align-items:center;gap:.65rem;margin:.22rem 0}
+.lat-tag{width:85px;font-size:.82rem;color:#64748b}
+.lat-bar{height:20px;border-radius:6px}
+.lat-blue{background:#2563eb}
+.lat-gray{background:#cbd5e1}
+.lat-val{font-size:.86rem;font-variant-numeric:tabular-nums}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.fit-card{border-radius:14px;padding:1.2rem 1.35rem;font-size:.95rem;line-height:1.58}
+.fit-good{background:#ecfdf5;border:1px solid #a7f3d0}
+.fit-bad{background:#fff1f2;border:1px solid #fecdd3}
+.fit-head{font-weight:800;font-size:1.1rem;margin-bottom:.5rem}
+.dark-footer-box{background:#0f172a;color:#f8fafc;border-radius:14px;padding:1.2rem 1.45rem;font-size:.95rem;line-height:1.5}
+.dark-repo{color:#38bdf8;font-family:ui-monospace,Consolas,monospace;margin-bottom:0}
+.workbench-shell{background:#fff;border:1px solid #cbd5e1;border-radius:14px;overflow:hidden}
+.wb-topbar{background:linear-gradient(90deg,#0078d4,#2563eb);color:#fff;padding:.75rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.wb-sub{font-size:.75rem;opacity:.92}
+.wb-status{background:rgba(15,23,42,.28);font-size:.73rem;padding:.25rem .6rem;border-radius:999px;white-space:nowrap}
+.wb-grid{display:grid;grid-template-columns:225px 1fr;gap:.85rem;padding:.9rem}
+.wb-col-title{font-size:.76rem;font-weight:700;color:#475569;text-transform:uppercase;margin-bottom:.4rem}
+.wb-item{font-size:.78rem;padding:.38rem .5rem;border-radius:6px;background:#f8fafc;border:1px solid #e2e8f0;margin-bottom:.32rem}
+.wb-note{font-size:.72rem;color:#64748b;margin-top:.5rem;line-height:1.38}
+.wb-metrics{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.55rem}
+.wb-metric{font-size:.73rem;background:#f1f5f9;padding:.2rem .5rem;border-radius:6px;color:#334155;font-weight:600}
+.card-footer{border-top:1px solid #cbd5e1;padding-top:.85rem;margin-top:1.1rem;display:flex;justify-content:space-between;font-size:.82rem;color:#64748b}
+@media print{body{background:#fff;padding:0}.deck-wrap{gap:0}.report-card{box-shadow:none;page-break-after:always;border:none}}
+</style>
+</head>
+<body>
+<main class="deck-wrap">
+
+<!-- CARD 1 -->
+<article class="report-card" id="card-1">
+  <div class="card-accent-bar"></div>
+  <div class="card-inner">
+    <header class="card-header">
+      <div class="card-eyebrow">HANDS-ON · AZURE AI AGENT INFRASTRUCTURE BENCHMARK</div>
+      <h2 class="card-headline">6 Azure Agent Runtimes, <span class="grad-text">108ms MicroVM restore</span></h2>
+      <p class="card-subtitle">Architecture &amp; benchmark evaluation across 6 Azure Agent Runtimes (Foundry Hosted, Durable Functions, ACA Dynamic Sessions, ACA Sandboxes, AKS Kata/AKSClaw, and E2B on VMSS D96as_v7) and 12 production scenarios.</p>
+    </header>
+    <div class="card-canvas">
+      <div class="workbench-shell">
+        <div class="wb-topbar">
+          <div>
+            <strong>Azure AI Agent Infra Selection &amp; Sizing Workbench (2026 Playbook)</strong>
+            <div class="wb-sub">4-Layer Stack (Build · Run · Ground · Govern) · Calibrated routing gates · Zero fabricated coordinates</div>
+          </div>
+          <span class="wb-status">6 Runtimes · 12 Scenarios · D96as_v7 108ms/132ms</span>
+        </div>
+        <div class="wb-grid">
+          <div class="wb-col-left">
+            <div class="wb-col-title">Runtime Spectrum</div>
+            <div class="wb-item">1. Foundry Hosted Agents (1,400+ MCP)</div>
+            <div class="wb-item">2. Durable Functions (Approval Wait)</div>
+            <div class="wb-item">3. ACA Dynamic Sessions (Hyper-V Pool)</div>
+            <div class="wb-item">4. ACA Sandboxes Preview (Snapshot)</div>
+            <div class="wb-item">5. AKS + Kata Pod VM (AKSClaw Fleet)</div>
+            <div class="wb-item">6. E2B on Azure VMSS (D96as_v7 108ms)</div>
+            <div class="wb-note">Action gating: Auto (8/12 = 66.7%) for production-ready patterns; Confirm (3/12 = 25.0%) for Preview or refactoring gates; Human (1/12 = 8.3%) when dev team ownership is missing.</div>
+          </div>
+          <div class="wb-col-right">
+            <div class="wb-metrics">
+              <span class="wb-metric">6 Runtimes</span>
+              <span class="wb-metric">108ms Base / 132ms Code-Interpreter</span>
+              <span class="wb-metric">100K+ APIM Host Sessions</span>
+              <span class="wb-metric">5 AKSClaw Hard Boundaries</span>
+            </div>
+            <div class="decision-card">
+              <div class="decision-head">
+                <div>
+                  <span class="field-name">e2b_turin_v7_speedup</span> <span class="type-pill">choice</span>
+                  <div class="question-sub">Does Azure D96as_v7 (5th Gen EPYC Turin + Azure Boost) beat Intel D96s_v6 &amp; AMD D96as_v6 on E2B startup?</div>
+                </div>
+                <span class="action-pill pill-auto">Act automatically</span>
+              </div>
+              <div class="decision-main"><strong>108 ms Base / 132 ms Code-Interpreter V1</strong><span class="conf-muted"> · -54.8% vs AMD v6 (239ms) · -17.0% vs Intel v6 (159ms)</span></div>
+              <div class="dist-list">
+                <div class="dist-row"><span class="dist-label">D96as_v7 Base Speed Index</span><div class="dist-track"><div class="dist-fill" style="width:92.6%"></div></div><span class="dist-pct">92.6%</span></div>
+                <div class="dist-row"><span class="dist-label">D96s_v6 Intel Speed Index</span><div class="dist-track"><div class="dist-fill" style="width:86.2%"></div></div><span class="dist-pct">86.2%</span></div>
+                <div class="dist-row"><span class="dist-label">D96as_v6 Genoa Speed Index</span><div class="dist-track"><div class="dist-fill" style="width:41.8%"></div></div><span class="dist-pct">41.8%</span></div>
+              </div>
+            </div>
+            <div class="decision-card">
+              <div class="decision-head">
+                <div>
+                  <span class="field-name">aksclaw_security_enforcement</span> <span class="type-pill">choice</span>
+                  <div class="question-sub">How many multi-tenant security boundaries are enforced by the platform vs left to agent prompt rules?</div>
+                </div>
+                <span class="action-pill pill-auto">Act automatically</span>
+              </div>
+              <div class="decision-main"><strong>5 / 5 platform hard boundaries (100.0%)</strong><span class="conf-muted"> · IMDS block · Egress · Credential proxy · Entra Agent ID · AI Gateway</span></div>
+              <div class="dist-list">
+                <div class="dist-row"><span class="dist-label">platform_enforced_hard_controls</span><div class="dist-track"><div class="dist-fill" style="width:100.0%"></div></div><span class="dist-pct">100.0%</span></div>
+                <div class="dist-row"><span class="dist-label">raw_llm_keys_in_agent_pod</span><div class="dist-track"><div class="dist-fill" style="width:1.5%"></div></div><span class="dist-pct">0.0%</span></div>
+              </div>
+            </div>
+            <div class="decision-card">
+              <div class="decision-head">
+                <div>
+                  <span class="field-name">playbook_delivery_gate</span> <span class="type-pill">score</span>
+                  <div class="question-sub">Can an enterprise needing deep infra control without a dev team be routed back to Foundry Hosted Agents?</div>
+                </div>
+                <span class="action-pill pill-human">Send to a human</span>
+              </div>
+              <div class="decision-main"><strong>0% shortcut allowed (Hold for CSU / Partner)</strong><span class="conf-muted"> · Playbook Slide 7 explicitly blocks misrouting unmet control needs</span></div>
+              <div class="dist-list">
+                <div class="dist-row"><span class="dist-label">valid_architecture_paths (9/12)</span><div class="dist-track"><div class="dist-fill" style="width:75.0%"></div></div><span class="dist-pct">75.0%</span></div>
+                <div class="dist-row"><span class="dist-label">caught_anti_patterns (3/12)</span><div class="dist-track"><div class="dist-fill" style="width:25.0%"></div></div><span class="dist-pct">25.0%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="callout-box"><strong>Managed AI (Foundry) and Composable Substrate (ACA / AKS / Functions / VMSS) are complements, not mutually exclusive.</strong> Standard business APIs run on Foundry Hosted Agents, while untrusted code, stateful coding workspaces, and 100K+ virtual computers route to ACA Dynamic Sessions, ACA Sandboxes, AKS Kata, or E2B on VMSS.</div>
+    </div>
+    <footer class="card-footer">
+      <span><strong>Azure AI Agent Infrastructure Playbook</strong> · anonymized_reported + deterministic sizer verified</span>
+      <span>1 / 7</span>
+    </footer>
+  </div>
+</article>
+
+<!-- CARD 2 -->
+<article class="report-card" id="card-2">
+  <div class="card-accent-bar"></div>
+  <div class="card-inner">
+    <header class="card-header">
+      <div class="card-eyebrow">SCENARIO: MANUS × E2B 100K+ VIRTUAL COMPUTERS &amp; AKSCLAW FLEET</div>
+      <h2 class="card-headline">261 D96as_v7 nodes serve 100K sandboxes at 108ms</h2>
+      <p class="card-subtitle">Deep dive into ultra-high-density Firecracker MicroVM sandboxes on Azure VMSS Flexible and multi-tenant Kubernetes Agent governance (AKSClaw).</p>
+    </header>
+    <div class="card-canvas">
+      <div class="quote-box">"Every AI agent session gets a dedicated isolated computer (filesystem, terminal, browser/VNC desktop, and Jupyter kernel) that boots in ~108–132ms via UFFD lazy page-fault streaming and NBD block overlays, rate-limited per dynamic Host header across 100,000+ concurrent sessions."</div>
+      <div class="stack-list">
+        <div class="decision-card">
+          <div class="decision-head">
+            <div>
+              <span class="field-name">vmss_100k_capacity_fit</span> <span class="type-pill">choice</span>
+              <div class="question-sub">Does a 100,000-concurrent-sandbox E2B pool fit within a single Azure VMSS Flexible scale set (1,000-VM limit)?</div>
+            </div>
+            <span class="action-pill pill-auto">Act automatically</span>
+          </div>
+          <div class="decision-main"><strong>Yes · 261 Client Nodes (26.1% of 1,000-VM limit)</strong><span class="conf-muted"> · 384 GiB RAM × 85% HugePages × 60% scale-out threshold = 384 sandboxes/node</span></div>
+          <div class="dist-list">
+            <div class="dist-row"><span class="dist-label">hugepages_reserved_ram (326 GiB)</span><div class="dist-track"><div class="dist-fill" style="width:85.0%"></div></div><span class="dist-pct">85.0%</span></div>
+            <div class="dist-row"><span class="dist-label">cpu_scale_out_trigger_watermark</span><div class="dist-track"><div class="dist-fill" style="width:60.0%"></div></div><span class="dist-pct">60.0%</span></div>
+            <div class="dist-row"><span class="dist-label">single_vmss_headroom_used (261/1000)</span><div class="dist-track"><div class="dist-fill" style="width:26.1%"></div></div><span class="dist-pct">26.1%</span></div>
+          </div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div>
+              <span class="field-name">apim_appgw_dual_hop_isolation</span> <span class="type-pill">noul</span>
+              <div class="question-sub">Does AppGW WAF v2 (Public + Private IP) + APIM rate-limit-by-key isolate 100K+ dynamic sandbox subdomains?</div>
+            </div>
+            <span class="action-pill pill-auto">Act automatically</span>
+          </div>
+          <div class="decision-main"><strong>Yes (100% per-Host counter isolation + WebSocket passthrough)</strong><span class="conf-muted"> · counter-key="@(context.Request.Headers.GetValueOrDefault(&quot;Host&quot;))" · P(true) = 1.0</span></div>
+          <div class="dist-list">
+            <div class="dist-row"><span class="dist-label">per_sandbox_host_rate_limit</span><div class="dist-track"><div class="dist-fill" style="width:100.0%"></div></div><span class="dist-pct">100.0%</span></div>
+            <div class="dist-row"><span class="dist-label">noisy_neighbor_cross_impact</span><div class="dist-track"><div class="dist-fill" style="width:1.5%"></div></div><span class="dist-pct">0.0%</span></div>
+          </div>
+        </div>
+        <div class="decision-card">
+          <div class="decision-head">
+            <div>
+              <span class="field-name">upstream_e2b_production_readiness</span> <span class="type-pill">score</span>
+              <div class="question-sub">Can unmodified open-source E2B API servers run multi-node HA without Azure control-plane refactoring?</div>
+            </div>
+            <span class="action-pill pill-confirm">Confirm</span>
+          </div>
+          <div class="decision-main"><strong>1 / 4 HA criteria met out-of-the-box (25.0%)</strong><span class="conf-muted"> · Single-process in-memory node state &amp; no VM-reboot sandbox GC require external PG/Redis state</span></div>
+          <div class="dist-list">
+            <div class="dist-row"><span class="dist-label">azure_refactored_ha_control_plane</span><div class="dist-track"><div class="dist-fill" style="width:100.0%"></div></div><span class="dist-pct">100.0%</span></div>
+            <div class="dist-row"><span class="dist-label">stock_oss_e2b_api_multi_node_ha</span><div class="dist-track"><div class="dist-fill" style="width:25.0%"></div></div><span class="dist-pct">25.0%</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="callout-box"><strong>Why Dual-Hop AppGW + APIM?</strong> AppGW WAF v2 terminates wildcard TLS and blocks OWASP attacks on its Public IP, forwards to APIM for per-Host rate limiting, and receives APIM callbacks on its Private IP (`:8080`) to load-balance across the dynamic API VMSS pool.</div>
+    </div>
+    <footer class="card-footer">
+      <span><strong>Azure AI Agent Infrastructure Playbook</strong> · E2B CheckRide v2 &amp; AKSClaw Deep Dive</span>
+      <span>2 / 7</span>
+    </footer>
+  </div>
+</article>
+
+<!-- CARD 3 -->
+<article class="report-card" id="card-3">
+  <div class="card-accent-bar"></div>
+  <div class="card-inner">
+    <header class="card-header">
+      <div class="card-eyebrow">WHAT I TESTED</div>
+      <h2 class="card-headline">6 use-case tracks, 12 architecture contract checks</h2>
+      <p class="card-subtitle">Evaluation of 12 enterprise &amp; AI-native workload scenarios against the Playbook routing rules, isolation boundaries, and operational prerequisites. Misses (✕) flag architectural anti-patterns caught by the evaluator.</p>
+    </header>
+    <div class="card-canvas">
+      <table class="clean-table">
+        <thead>
+          <tr><th>SCENARIO</th><th>WORKLOAD &amp; ARCHITECTURAL QUESTION</th><th>EVALUATOR'S ANSWER</th><th class="act-col">ACTION</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sc-col">S01 · Customer-Facing Agent</td><td>30K+ monthly sessions, ~75% autonomous resolution over approved banking APIs with shared context</td><td><strong>Foundry + ACA/AKS + Cosmos DB (100%)</strong></td><td class="act-col act-auto">Auto</td></tr><tr><td class="sc-col">S02 · Customer-Facing Agent</td><td>Executes untrusted LLM-generated Python scripts and file parsing with low wait time</td><td><strong>ACA Apps + Dynamic Sessions (100%)</strong></td><td class="act-col act-auto">Auto</td></tr><tr><td class="sc-col">S03 · Digital-Native AI Product</td><td>Requires custom OCI image, persistent workspace files, and explicit pause/resume across user tasks</td><td><strong>ACA Sandboxes Preview + HorizonDB (92%)</strong></td><td class="act-col act-confirm">Confirm</td></tr><tr><td class="sc-col">S04 · Digital-Native AI Product</td><td>Requires <150ms Firecracker MicroVM restore, per-Host session rate limiting, and WebSocket desktop/terminal streaming</td><td><strong>E2B on VMSS D96as_v7 108ms/132ms (100%)</strong></td><td class="act-col act-auto">Auto</td></tr><tr><td class="sc-col">S05 · Enterprise Agent Platform</td><td>Per-engineer persistent agent, BYO Harness (Copilot/Hermes/OpenClaw), IcM auto-triage, Follow-the-Sun handoff</td><td><strong>AKSClaw 5-Boundary Runtime on AKS (100%)</strong></td><td class="act-col act-auto">Auto</td></tr><tr><td class="sc-col">S06 · Multi-Agent Workflow</td><td>Multi-agent review + mandatory human approval wait + deterministic retry/recovery independent of compute pod lifecycle</td><td><strong>Durable Functions + ACA Apps + DB (100%)</strong></td><td class="act-col act-auto">Auto</td></tr><tr><td class="sc-col">S07 · Multi-Agent Workflow</td><td>LangGraph Triage Agent -> GH Copilot SDK Coding Agent (Shell/MCP) -> Foundry Compliance Agent</td><td><strong>MAF + GH Copilot SDK + Foundry (100%)</strong></td><td class="act-col act-auto">Auto</td></tr><tr><td class="sc-col">S08 · Agent Factory</td><td>To-B standard internal agents needing SAP/Salesforce/Slack/M365 integration with minimal infra management</td><td><strong>Foundry Hosted Agents + MCP Toolboxes (100%)</strong></td><td class="act-col act-auto">Auto</td></tr><tr><td class="sc-col">S09 · Regulated Industry Agent</td><td>Customer demands deep infra control beyond managed hosting, but has NO dedicated development/ops team</td><td><strong>Direct Foundry fallback rejected; CSU/Partner gate triggered (0% shortcut)</strong> <span class="miss-mark">✕</span></td><td class="act-col act-human">Human</td></tr><tr><td class="sc-col">S10 · Enterprise Agent Platform</td><td>Can stock open-source E2B API process scale horizontally across nodes without state loss on reboot?</td><td><strong>Single-process in-memory node state lost on reboot (25%)</strong> <span class="miss-mark">✕</span></td><td class="act-col act-confirm">Confirm</td></tr><tr><td class="sc-col">S11 · Regulated Industry Agent</td><td>Does deploying an Agent container to ACA/AKS automatically enable full Entra Agent ID governance & block user token inheritance?</td><td><strong>Not automatic; requires explicit Agent ID + Gateway key custody (33%)</strong> <span class="miss-mark">✕</span></td><td class="act-col act-confirm">Confirm</td></tr><tr><td class="sc-col">S12 · Agent Factory</td><td>Does failing the $10,000/mo Jun-Aug Foundry Models gate automatically disqualify an account from Strong ACR / P1?</td><td><strong>No; non-model Specific or General+3 Foundations still qualify (100%)</strong></td><td class="act-col act-auto">Auto</td></tr>
+        </tbody>
+      </table>
+      <div class="callout-box"><strong>3 architectural anti-patterns caught (`✕`):</strong> (S09) Routing an unmet infrastructure-control workload back to Foundry when the customer lacks a dev team; (S10) Running unmodified open-source E2B API in multi-node production without externalizing in-memory node state; (S11) Assuming ACA/AKS deployment alone enables Entra Agent ID &amp; zero-key custody without explicit Blueprint + AI Gateway binding.</div>
+    </div>
+    <footer class="card-footer">
+      <span><strong>Azure AI Agent Infrastructure Playbook</strong> · 12-scenario matrix verified by agent_infra_sizer.py</span>
+      <span>3 / 7</span>
+    </footer>
+  </div>
+</article>
+
+<!-- CARD 4 -->
+<article class="report-card" id="card-4">
+  <div class="card-accent-bar"></div>
+  <div class="card-inner">
+    <header class="card-header">
+      <div class="card-eyebrow">UNDER THE HOOD</div>
+      <h2 class="card-headline">APIM per-Host isolation &amp; AKSClaw 5-boundary enforcement</h2>
+      <p class="card-subtitle">How Azure isolates 100K+ concurrent dynamic E2B sandbox subdomains at the gateway layer while enforcing zero-key, non-bypassable identity and network boundaries inside AKS.</p>
+    </header>
+    <div class="card-canvas">
+      <pre class="code-dark">&lt;!-- 1. E2B on Azure: APIM Per-Sandbox Dynamic Subdomain Rate Limit (&lt;port&gt;-&lt;sandboxId&gt;.domain.com) --&gt;
+&lt;inbound&gt;
+  &lt;base /&gt;
+  &lt;rate-limit-by-key calls="300" renewal-period="60"
+    counter-key="@(context.Request.Headers.GetValueOrDefault(&amp;quot;Host&amp;quot;, &amp;quot;unknown&amp;quot;))"
+    increment-condition="@(context.Response.StatusCode &amp;gt;= 200 &amp;amp;&amp;amp; context.Response.StatusCode &amp;lt; 400)" /&gt;
+  &lt;set-backend-service base-url="http://10.240.0.10:8080" /&gt; &lt;!-- Callback to AppGW Private Frontend --&gt;
+&lt;/inbound&gt;</pre>
+      <div class="code-transition">↓ Combined with AKSClaw Pod VM Hard Boundaries + Entra Agent ID + Unified AI Gateway ↓</div>
+      <pre class="code-dark"># 2. AKSClaw Kata Pod VM + NetworkPolicy + AI Gateway Contract (Zero LLM API Key in Agent Pod)
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: aksclaw-agent-alice
+spec:
+  template:
+    spec:
+      runtimeClassName: kata-mshv-vm-isolation   # Dedicated Hypervisor Guest Kernel per Agent
+      serviceAccountName: entra-agent-id-alice   # Blueprint + Sponsor dual-identity attribution
+      containers:
+      - name: agent-harness
+        env:
+        - name: OPENAI_BASE_URL
+          value: "http://ai-gateway.platform.svc.cluster.local/v1" # Prefix-cache affinity + RPM/TPM hard stop
+        # NO OPENAI_API_KEY in env! Injected upstream by AI Gateway after Entra Agent ID token check
+        volumeMounts:
+        - { name: team-skills, mountPath: /skills, readOnly: true }      # Shared Read-Only Marketplace
+        - { name: agent-state, mountPath: /workspace, readOnly: false } # Isolated Per-Instance State
+# NetworkPolicy blocks 169.254.169.254 (IMDS) + restricts egress to AI Gateway &amp; approved MCP proxies -&gt; <span class="hl-answer">&lt;answer&gt;</span></pre>
+      <div class="callout-box"><strong>Security does not rely on Agent prompt obedience.</strong> Even if an agent runs with `--yolo` or suffers prompt injection, `kata-mshv-vm-isolation` isolates the kernel, NetworkPolicy blocks `169.254.169.254`, the pod holds zero raw LLM keys, and the AI Gateway enforces hard token budget circuit breakers.</div>
+    </div>
+    <footer class="card-footer">
+      <span><strong>Azure AI Agent Infrastructure Playbook</strong> · Protocol &amp; policy mechanics</span>
+      <span>4 / 7</span>
+    </footer>
+  </div>
+</article>
+
+<!-- CARD 5 -->
+<article class="report-card" id="card-5">
+  <div class="card-accent-bar"></div>
+  <div class="card-inner">
+    <header class="card-header">
+      <div class="card-eyebrow">ROBUSTNESS CHECK</div>
+      <h2 class="card-headline">+50.8 pts startup speed gain on AMD Turin v7; 100% hard-boundary retention</h2>
+      <p class="card-subtitle">Paired sensitivity analysis across VM CPU generations (v6 vs v7), idle session reclamation, prompt-injection bypass attempts, VMSS scaling direction, and $10K propensity screening gates.</p>
+    </header>
+    <div class="card-canvas">
+      <table class="clean-table">
+        <thead>
+          <tr><th>PERTURBATION DIMENSION</th><th class="num-col">BASELINE</th><th class="num-col">PERTURBED / UPGRADED</th><th class="num-col">CHANGE (PTS)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><div class="rob-main">E2B Sandbox Cold Start: AMD Turin v7 vs Intel v6 (Code-Interpreter V1)</div><div class="rob-sub">D96s_v6 Intel (159 ms -> 62.9% speed index) vs D96as_v7 AMD Turin (132 ms -> 75.8% speed index)</div></td><td class="num-col">62.9%</td><td class="num-col">75.8%</td><td class="num-col"><strong>+12.9 pts</strong></td></tr><tr><td><div class="rob-main">E2B Sandbox Cold Start: AMD Genoa v6 vs AMD Turin v7 (Base MicroVM)</div><div class="rob-sub">D96as_v6 Genoa (239 ms -> 41.8% speed index) vs D96as_v7 Turin (108 ms -> 92.6% speed index)</div></td><td class="num-col">41.8%</td><td class="num-col">92.6%</td><td class="num-col"><strong>+50.8 pts</strong></td></tr><tr><td><div class="rob-main">State Persistence Across Idle Reclamation (Dynamic Sessions vs Sandboxes)</div><div class="rob-sub">ACA Dynamic Sessions (0% workspace retained after idle reclamation) vs ACA Sandboxes Preview + HorizonDB (100% snapshot + ACID state retained)</div></td><td class="num-col">0.0%</td><td class="num-col">100.0%</td><td class="num-col"><strong>+100.0 pts</strong></td></tr><tr><td><div class="rob-main">Multi-Tenant Security Controls: In-Agent Prompt Rules vs Platform Hard Boundaries</div><div class="rob-sub">Agent-Side Soft Config (0% immune to prompt injection / --yolo bypass) vs AKSClaw Platform Hard Controls (100% IMDS block + Egress + AI Gateway)</div></td><td class="num-col">0.0%</td><td class="num-col">100.0%</td><td class="num-col"><strong>+100.0 pts</strong></td></tr><tr><td><div class="rob-main">VMSS Autoscaling Direction Asymmetry (CPU Scale-Out vs HugePages Scale-In)</div><div class="rob-sub">Scale-Out @ 60% CPU (100% automated reactive horizontal expansion) vs Scale-In (0% blind termination; 100% gated by HugePages drain & live migration)</div></td><td class="num-col">100.0%</td><td class="num-col">100.0%</td><td class="num-col"><strong>0.0 pts</strong></td></tr><tr><td><div class="rob-main">Propensity Screening Gate: Historical $1,000 vs Adopted $10,000 Foundry Models Rule</div><div class="rob-sub">Raw Relevant ACR Dollar Retention (100% preserved in both releases) vs Non-Model Strong ACR Route Eligibility (100% preserved when model gate <$10K)</div></td><td class="num-col">100.0%</td><td class="num-col">100.0%</td><td class="num-col"><strong>0.0 pts</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="callout-box"><strong>Key Invariant:</strong> Upgrading from `Standard_D96as_v6` (Genoa) to `Standard_D96as_v7` (Turin + Azure Boost) cuts Base MicroVM startup from `239 ms` to `108 ms` (`+50.8 pts` speed index), while switching from ephemeral Dynamic Sessions to ACA Sandboxes + HorizonDB raises post-reclamation workspace continuity from `0%` to `100%`.</div>
+    </div>
+    <footer class="card-footer">
+      <span><strong>Azure AI Agent Infrastructure Playbook</strong> · 6 paired architectural robustness checks</span>
+      <span>5 / 7</span>
+    </footer>
+  </div>
+</article>
+
+<!-- CARD 6 -->
+<article class="report-card" id="card-6">
+  <div class="card-accent-bar"></div>
+  <div class="card-inner">
+    <header class="card-header">
+      <div class="card-eyebrow">LATENCY &amp; STARTUP SCALING</div>
+      <h2 class="card-headline">108ms Base &amp; 132ms Code-Interpreter on Azure D96as_v7</h2>
+      <p class="card-subtitle">Comparison of optimized sandbox restore paths (`#2563EB`) against baseline VM generations and cold container initialization (`#CBD5E1`). Lower latency means faster interactive agent tool execution.</p>
+    </header>
+    <div class="card-canvas">
+      <div class="lat-list">
+        <div class="lat-item"><div class="lat-title">E2B Base Sandbox Restore (D96as_v7 Turin vs D96as_v6 Genoa)</div><div class="lat-row"><span class="lat-tag">Optimized</span><div class="lat-bar lat-blue" style="width:4.0%"></div><strong class="lat-val">108 ms (AMD v7 Turin + UFFD)</strong></div><div class="lat-row"><span class="lat-tag">Baseline</span><div class="lat-bar lat-gray" style="width:7.8%"></div><span class="lat-val">239 ms (AMD v6 Genoa)</span></div></div><div class="lat-item"><div class="lat-title">E2B Base Sandbox Restore (D96as_v7 Turin vs D96s_v6 Intel)</div><div class="lat-row"><span class="lat-tag">Optimized</span><div class="lat-bar lat-blue" style="width:4.0%"></div><strong class="lat-val">108 ms (AMD v7 Turin)</strong></div><div class="lat-row"><span class="lat-tag">Baseline</span><div class="lat-bar lat-gray" style="width:4.0%"></div><span class="lat-val">116 ms (Intel v6 Emerald Rapids)</span></div></div><div class="lat-item"><div class="lat-title">E2B Code-Interpreter V1 Startup (D96as_v7 Turin vs D96as_v6 Genoa)</div><div class="lat-row"><span class="lat-tag">Optimized</span><div class="lat-bar lat-blue" style="width:4.3%"></div><strong class="lat-val">132 ms (AMD v7 Turin + Jupyter/envd)</strong></div><div class="lat-row"><span class="lat-tag">Baseline</span><div class="lat-bar lat-gray" style="width:8.3%"></div><span class="lat-val">255 ms (AMD v6 Genoa)</span></div></div><div class="lat-item"><div class="lat-title">E2B Code-Interpreter V1 Startup (D96as_v7 Turin vs D96s_v6 Intel)</div><div class="lat-row"><span class="lat-tag">Optimized</span><div class="lat-bar lat-blue" style="width:4.3%"></div><strong class="lat-val">132 ms (AMD v7 Turin)</strong></div><div class="lat-row"><span class="lat-tag">Baseline</span><div class="lat-bar lat-gray" style="width:5.2%"></div><span class="lat-val">159 ms (Intel v6 Emerald Rapids)</span></div></div><div class="lat-item"><div class="lat-title">ACA Dynamic Sessions Allocation (Pre-Warmed Pool vs Cold Container)</div><div class="lat-row"><span class="lat-tag">Optimized</span><div class="lat-bar lat-blue" style="width:6.9%"></div><strong class="lat-val">~210 ms (Pre-Warmed Hyper-V Pool)</strong></div><div class="lat-row"><span class="lat-tag">Baseline</span><div class="lat-bar lat-gray" style="width:72.0%"></div><span class="lat-val">~2,200 ms (Unwarmed Container Cold Start)</span></div></div><div class="lat-item"><div class="lat-title">ACA Sandboxes Workspace Recovery (Memory/Disk Snapshot vs Full Rebuild)</div><div class="lat-row"><span class="lat-tag">Optimized</span><div class="lat-bar lat-blue" style="width:10.5%"></div><strong class="lat-val">~320 ms (Snapshot Resume)</strong></div><div class="lat-row"><span class="lat-tag">Baseline</span><div class="lat-bar lat-gray" style="width:54.0%"></div><span class="lat-val">~1,650 ms (Cold OCI + Volume Init)</span></div></div>
+      </div>
+      <div class="callout-box"><strong>Measured Hardware Insight:</strong> `Standard_D96as_v7` (5th Gen AMD EPYC Turin up to 4.5GHz + Azure Boost) achieves **`108 ms`** Base Sandbox restore and **`132 ms`** Code-Interpreter V1 startup in East US 2 / Central US — outperforming both `Standard_D96s_v6` Intel (`116 ms` / `159 ms`) and `Standard_D96as_v6` Genoa (`239 ms` / `255 ms`).</div>
+    </div>
+    <footer class="card-footer">
+      <span><strong>Azure AI Agent Infrastructure Playbook</strong> · Measured East US 2 / Central US latency &amp; reference models</span>
+      <span>6 / 7</span>
+    </footer>
+  </div>
+</article>
+
+<!-- CARD 7 -->
+<article class="report-card" id="card-7">
+  <div class="card-accent-bar"></div>
+  <div class="card-inner">
+    <header class="card-header">
+      <div class="card-eyebrow">MY TAKE</div>
+      <h2 class="card-headline">Match the runtime to the isolation boundary — never force-fit</h2>
+      <p class="card-subtitle">Architectural synthesis on when to use Foundry Hosted Agents vs ACA Dynamic Sessions/Sandboxes vs AKS Kata (AKSClaw) vs E2B on Azure VMSS.</p>
+    </header>
+    <div class="card-canvas">
+      <div class="fit-grid">
+        <div class="fit-card fit-good">
+          <div class="fit-head">✅ Good fit</div>
+          <ul>
+            <li><strong>Foundry Hosted Agents:</strong> To-B business agents using approved APIs &amp; 1,400+ MCP connectors with minimal infra ops.</li>
+            <li><strong>Durable Functions + ACA Apps:</strong> Long-running procurement/finance/approval flows needing external event wait &amp; deterministic replay.</li>
+            <li><strong>ACA Dynamic Sessions / Sandboxes:</strong> Ephemeral Hyper-V code execution (`~210ms`) or stateful coding/browser workspaces with pause/resume snapshots.</li>
+            <li><strong>AKS + Kata (`AKSClaw`):</strong> Multi-tenant engineering/SRE fleets needing BYO harnesses, shared Skill Marketplace, and 5 hard platform boundaries.</li>
+            <li><strong>E2B on VMSS (`D96as_v7`):</strong> AI-native products needing 100K+ concurrent virtual computers at `108ms–132ms` startup.</li>
+          </ul>
+        </div>
+        <div class="fit-card fit-bad">
+          <div class="fit-head">⛔ Not for</div>
+          <ul>
+            <li><strong>Routing unmet control needs to Foundry:</strong> Never push a customer who needs custom OS/network/sandbox control into Foundry Hosted Agents just because they lack a dev team (engage CSU/Partner instead).</li>
+            <li><strong>Storing durable state only in Dynamic Sessions:</strong> Session local storage is wiped on idle reclamation; always persist checkpoints in <strong>Azure HorizonDB</strong> or <strong>Cosmos DB</strong>.</li>
+            <li><strong>Blind CPU scale-in on E2B VMSS:</strong> Firecracker consumes HugePages; scaling in without HugePages drain &amp; live migration kills active sandboxes.</li>
+            <li><strong>In-pod LLM keys or inherited user tokens:</strong> Never mount static API keys in agent containers or let agents inherit full user tokens.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dark-footer-box">
+        <div><strong>Playbook Readiness &amp; Provenance (47 Chapters · 41 Simulators · 42 Blueprints · 50/50 Tests):</strong> Synthesized from 5 primary Azure AI Infra field assets (`Agent Runtime Customer Pitch`, `AKSClaw Multi-Tenant Kubernetes`, `Agent Infra Playbook`, `E2B on Azure Solution / CheckRide v2 / Deep Dive v0.2`, and anonymized `Selection Logic`), extended with 41 deterministic physics models (including `64.0ms` Connected Vehicle `V2X MQTT-over-QUIC` 0-RTT Edge Delta, `18.5s` `CARLA / OpenSCENARIO` 1K-Scenario `RSS` Safety Verifier &amp; `UNECE R155` Uptane Parked-State OTA Guardrail, `6.8ms` SMPTE ST 2110 `NVDEC` DMA Frame Ring &amp; `OpenUSD/3DGS` Scene-Graph Verifier with `C2PA 2.1` HSM Provenance, `11.4ms` Warehouse AMR `MAPF-CBS` Deadlock-Free Trajectory Verification). Zero customer PII included.</div>
+        <p class="dark-repo">Repositories: turbo998/ai-infra-lab · turbo998/Azure-Infra-Lab · turbo998/ai-research-public · turbo998/ai-research-lab · turbo998/Kee-Tech-Assets</p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <span><strong>Azure AI Agent Infrastructure Playbook</strong> · 7-Card 4:5 Benchmark &amp; Decision Deck</span>
+      <span>7 / 7</span>
+    </footer>
+  </div>
+</article>
+
+</main>
+</body>
+</html>
