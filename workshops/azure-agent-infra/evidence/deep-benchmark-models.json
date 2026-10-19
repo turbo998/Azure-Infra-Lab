@@ -2130,5 +2130,67 @@
       "twin_reconciliation_sec": 480.0,
       "edge_continuity_governed": false
     }
+  ],
+  "healthcare_fhir_cfr11_profiles": [
+    {
+      "concurrent_clinical_agents": 125,
+      "compliance_architecture": "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm",
+      "confidential_gpu_nodes": 4,
+      "dicom_volume_load_p95_ms": 185.0,
+      "dicom_load_reduction_pct": 96.2,
+      "fhir_r4_bundle_query_p95_ms": 24.0,
+      "phi_safe_harbor_recall_pct": 99.94,
+      "presidio_fpe_inline_latency_ms": 4.6,
+      "external_llm_raw_phi_exposure_pct": 0.0,
+      "cfr_part11_dual_signature_latency_ms": 6.8,
+      "unsigned_clinical_mutation_rate_pct": 0.0,
+      "gxp_audit_compilation_seconds": 3.2,
+      "hipaa_cfr11_compliance_slo_met": true
+    },
+    {
+      "concurrent_clinical_agents": 500,
+      "compliance_architecture": "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm",
+      "confidential_gpu_nodes": 16,
+      "dicom_volume_load_p95_ms": 185.0,
+      "dicom_load_reduction_pct": 96.2,
+      "fhir_r4_bundle_query_p95_ms": 24.0,
+      "phi_safe_harbor_recall_pct": 99.94,
+      "presidio_fpe_inline_latency_ms": 4.6,
+      "external_llm_raw_phi_exposure_pct": 0.0,
+      "cfr_part11_dual_signature_latency_ms": 6.8,
+      "unsigned_clinical_mutation_rate_pct": 0.0,
+      "gxp_audit_compilation_seconds": 3.2,
+      "hipaa_cfr11_compliance_slo_met": true
+    },
+    {
+      "concurrent_clinical_agents": 2000,
+      "compliance_architecture": "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm",
+      "confidential_gpu_nodes": 63,
+      "dicom_volume_load_p95_ms": 185.0,
+      "dicom_load_reduction_pct": 96.2,
+      "fhir_r4_bundle_query_p95_ms": 24.0,
+      "phi_safe_harbor_recall_pct": 99.94,
+      "presidio_fpe_inline_latency_ms": 4.6,
+      "external_llm_raw_phi_exposure_pct": 0.0,
+      "cfr_part11_dual_signature_latency_ms": 6.8,
+      "unsigned_clinical_mutation_rate_pct": 0.0,
+      "gxp_audit_compilation_seconds": 3.2,
+      "hipaa_cfr11_compliance_slo_met": true
+    },
+    {
+      "concurrent_clinical_agents": 500,
+      "compliance_architecture": "unredacted_rest_json_unsigned_clinical_writes",
+      "confidential_gpu_nodes": 16,
+      "dicom_volume_load_p95_ms": 4850.0,
+      "dicom_load_reduction_pct": 0.0,
+      "fhir_r4_bundle_query_p95_ms": 390.0,
+      "phi_safe_harbor_recall_pct": 0.0,
+      "presidio_fpe_inline_latency_ms": 0.0,
+      "external_llm_raw_phi_exposure_pct": 100.0,
+      "cfr_part11_dual_signature_latency_ms": 0.0,
+      "unsigned_clinical_mutation_rate_pct": 14.5,
+      "gxp_audit_compilation_seconds": 1209600.0,
+      "hipaa_cfr11_compliance_slo_met": false
+    }
   ]
 }

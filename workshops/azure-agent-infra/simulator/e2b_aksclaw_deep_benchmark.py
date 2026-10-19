@@ -35,6 +35,7 @@ from agent_infra_sizer import (
     simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_healthcare_fhir_dicom_cfr11_sandbox,
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
@@ -461,6 +462,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_edge_disconnected_iot_operations_sandbox(500, "cloud_only_inmemory_mqtt_unthrottled_resync"),
     ]
 
+    healthcare_fhir_cfr11_profiles: List[Dict[str, object]] = [
+        simulate_healthcare_fhir_dicom_cfr11_sandbox(125, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
+        simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
+        simulate_healthcare_fhir_dicom_cfr11_sandbox(2_000, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
+        simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "unredacted_rest_json_unsigned_clinical_writes"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -494,6 +502,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "a2a_federation_profiles": a2a_federation_profiles,
         "cyber_detonation_profiles": cyber_detonation_profiles,
         "edge_disconnected_profiles": edge_disconnected_profiles,
+        "healthcare_fhir_cfr11_profiles": healthcare_fhir_cfr11_profiles,
     }
 
 

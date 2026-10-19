@@ -29,6 +29,7 @@ from agent_infra_sizer import (
     simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_healthcare_fhir_dicom_cfr11_sandbox,
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
@@ -685,6 +686,18 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(leg["disconnected_availability_pct"], 0.0)
         self.assertAlmostEqual(leg["outage_checkpoint_loss_pct"], 98.7)
         self.assertFalse(leg["edge_continuity_governed"])
+
+    def test_healthcare_fhir_dicom_cfr11_sandbox(self) -> None:
+        reg = simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm")
+        unr = simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "unredacted_rest_json_unsigned_clinical_writes")
+        self.assertAlmostEqual(reg["dicom_volume_load_p95_ms"], 185.0)
+        self.assertAlmostEqual(reg["dicom_load_reduction_pct"], 96.2)
+        self.assertAlmostEqual(reg["phi_safe_harbor_recall_pct"], 99.94)
+        self.assertEqual(reg["external_llm_raw_phi_exposure_pct"], 0.0)
+        self.assertEqual(reg["unsigned_clinical_mutation_rate_pct"], 0.0)
+        self.assertTrue(reg["hipaa_cfr11_compliance_slo_met"])
+        self.assertEqual(unr["external_llm_raw_phi_exposure_pct"], 100.0)
+        self.assertFalse(unr["hipaa_cfr11_compliance_slo_met"])
 
 
 if __name__ == "__main__":

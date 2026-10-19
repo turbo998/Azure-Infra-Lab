@@ -42,6 +42,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
+    simulate_healthcare_fhir_dicom_cfr11_sandbox,
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
@@ -404,6 +405,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "azure_local_aio_500": simulate_edge_disconnected_iot_operations_sandbox(500, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
             "azure_local_aio_2k": simulate_edge_disconnected_iot_operations_sandbox(2_000, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
             "cloud_only_500": simulate_edge_disconnected_iot_operations_sandbox(500, "cloud_only_inmemory_mqtt_unthrottled_resync"),
+        },
+        "demo_34_healthcare_fhir_dicom_cfr11_sandbox": {
+            "regulated_ahds_cfr11_125": simulate_healthcare_fhir_dicom_cfr11_sandbox(125, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
+            "regulated_ahds_cfr11_500": simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
+            "regulated_ahds_cfr11_2k": simulate_healthcare_fhir_dicom_cfr11_sandbox(2_000, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
+            "unredacted_clinical_500": simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "unredacted_rest_json_unsigned_clinical_writes"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

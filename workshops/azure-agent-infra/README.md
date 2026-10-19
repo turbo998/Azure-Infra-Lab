@@ -1265,7 +1265,31 @@ sequenceDiagram
 
 ---
 
-## 39. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 39. 医疗临床与生命科学受监管智能体底座 —— Azure Health Data Services (`FHIR R4 / DICOMweb`) 零拷贝医疗影像投射、HIPAA Safe-Harbor 18 项 `PHI` 格式保留令牌化与 `FDA 21 CFR Part 11` 双签电子审计物理模型（Regulated Healthcare & Clinical Trial Agent Infrastructure — `AHDS` FHIR/DICOM Cast, Presidio `PHI` Safe-Harbor Tokenization & `21 CFR Part 11` Cryptographic Electronic Signature Physics）
+
+> 本章由确定性医疗临床与新药试验合规智能体仿真模型 [`simulate_healthcare_fhir_dicom_cfr11_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-healthcare-fhir-dicom-cfr11-enclave.bicep`](blueprints/aksclaw-healthcare-fhir-dicom-cfr11-enclave.bicep) 驱动，面向放射科辅助阅片、多中心 III 期临床试验自动电子病例报告表（`eCRF`）核查与电子病历（`EHR`）副驾驶（`125–2,000` 并发医疗智能体）解决 **512 层高分辨率 CT/MRI 序列经 REST JSON Base64 传输耗时高达 `4.85 秒`、原始患者隐私标识（`PHI`）直接发往外部前沿模型触发 HIPAA 违规，以及自主修改临床试验记录缺乏 `FDA 21 CFR Part 11` 不可抵赖双人/双因子电子签名的三大工程瓶颈**。
+
+### 39.1 医疗临床与生命科学受监管智能体三大工程支柱
+
+1. **Pillar 1：Azure Health Data Services (`FHIR R4` + `DICOMweb` Cast) 与机密 GPU 沙箱（`Standard_NCC40ads_H100_v5`）零拷贝 `NIfTI/DICOM` 共享内存流式投射**：
+   - 摒弃传统将 512 层 DICOM 序列编码为 JSON Base64 的高开销路径，通过 Private Link 直接将 `DICOMweb` 多帧像素块零拷贝映射至 `Standard_NCC40ads_H100_v5` 机密 GPU 沙箱（`MONAI` 医疗视觉分割引擎），将单套 3D 影像体加载延迟 `p95` 从 `4,850.0 ms` 压缩至 **`185.0 ms`（`-96.2%`）**，同时将 `FHIR R4` 患者全周期 Bundle 检索延迟 `p95` 降至 **`24.0 ms`**。
+2. **Pillar 2：MCP 网关内联 `Microsoft Presidio + Clinical BioBERT NER` HIPAA Safe-Harbor 18 类 `PHI` 实体脱敏与可逆 FPE 令牌金库**：
+   - 在临床文本离开医院租户边界进入前沿大模型前，以 **`4.6 ms`** 内联延迟完成 HIPAA Safe-Harbor 全部 18 类受保护健康信息（姓名、MRN 病历号、精确就诊日期、地理邮编等）的识别（召回率 **`99.94%`**）与格式保留加密（`FPE`）伪名化，确保外部大模型侧 **原始 `PHI` 暴露率严格为 `0.0%`**（而未脱敏直连的暴露率为 `100.0%`）。
+3. **Pillar 3：`FDA 21 CFR Part 11` 与 `EMA Annex 11` 双重硬件证明电子签名链（临床研究者 `Entra FIDO2 Passkey` + 机密沙箱 `HSM Co-Signature` 锚定 Azure Confidential Ledger）**：
+   - 任何写入 `FHIR R4` 或临床试验 `eCRF` 的操作均强制携带研究者 FIDO2 授权令与机密飞地 HSM 协签名（签名校验延迟 **`6.8 ms`**），将未授权/无签名的临床记录变更率从 `14.5%` 降至 **`0.0%`**，并将 GxP 监管迎审证据链汇编耗时从人工 `14 天` 缩短至 **`3.2 秒`**。
+
+### 39.2 `AHDS` FHIR/DICOM 零拷贝 + Presidio FPE + `21 CFR Part 11` 双签 vs 传统未脱敏直连架构对比表
+
+| 并发医疗智能体规模与合规架构 | 机密 H100 节点数 | **3D DICOM 加载 `p95`** | **`FHIR R4` 查询 `p95`** | **HIPAA `PHI` 识别召回率** | **外部模型原始 `PHI` 暴露率** | **`21 CFR Part 11` 无签名变更率** | **GxP 监管审计汇编耗时** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`125` 医疗 Agent · AHDS 零拷贝 + Presidio FPE + CFR11 双签** | `4` | **`185.0 ms` (`-96.2%`)** | **`24.0 ms`** | **`99.94%` (`4.6 ms`)** | **`0.0%` (HIPAA 合规)** | **`0.0%` (`6.8 ms` 双签)** | **`3.2 s`** |
+| **`500` 医疗 Agent · AHDS 零拷贝 + Presidio FPE + CFR11 双签 (推荐)** | **`16`** | **`185.0 ms` (`-96.2%`)** | **`24.0 ms`** | **`99.94%` (`4.6 ms`)** | **`0.0%` (HIPAA 合规)** | **`0.0%` (`6.8 ms` 双签)** | **`3.2 s`** |
+| **`2,000` 医疗 Agent · AHDS 零拷贝 + Presidio FPE + CFR11 双签** | `63` | **`185.0 ms` (`-96.2%`)** | **`24.0 ms`** | **`99.94%` (`4.6 ms`)** | **`0.0%` (HIPAA 合规)** | **`0.0%` (`6.8 ms` 双签)** | **`3.2 s`** |
+| `500` 医疗 Agent · REST Base64 传输 + 未脱敏直连 + 无电子签名 (反模式) | `16` | `4,850.0 ms` (`0.0%`) | `390.0 ms` | `0.00%` | `100.0%` (❌ 隐私泄露) | `14.5%` (❌ GxP 违规) | `1,209,600.0 s` (`14d`) |
+
+---
+
+## 40. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1278,10 +1302,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 33 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步）
+# 2. 运行深度定量模型（全部 34 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 42 项单元测试（100% 覆盖 6 大运行时契约、33 大深度物理模型、34 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 43 项单元测试（100% 覆盖 6 大运行时契约、34 大深度物理模型、35 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
