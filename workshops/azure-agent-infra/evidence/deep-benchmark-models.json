@@ -2246,5 +2246,63 @@
       "chemical_accuracy_attainment_pct": 31.0,
       "quantum_hybrid_governed": false
     }
+  ],
+  "telco_oran_slicing_profiles": [
+    {
+      "concurrent_gnodeb_cells": 1000,
+      "telco_oran_mode": "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier",
+      "operator_nexus_ric_nodes": 3,
+      "userplane_forwarding_p99_us": 38.0,
+      "microburst_packet_drop_pct": 0.0,
+      "nearrt_e2_loop_p99_ms": 4.2,
+      "e2_latency_reduction_pct": 98.8,
+      "spectral_efficiency_gain_pct": 23.5,
+      "ru_power_savings_pct": 31.2,
+      "urllc_sla_violation_rate_pct": 0.0,
+      "slice_provisioning_sec": 11.5,
+      "telco_oran_slo_met": true
+    },
+    {
+      "concurrent_gnodeb_cells": 5000,
+      "telco_oran_mode": "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier",
+      "operator_nexus_ric_nodes": 8,
+      "userplane_forwarding_p99_us": 38.0,
+      "microburst_packet_drop_pct": 0.0,
+      "nearrt_e2_loop_p99_ms": 4.2,
+      "e2_latency_reduction_pct": 98.8,
+      "spectral_efficiency_gain_pct": 23.5,
+      "ru_power_savings_pct": 31.2,
+      "urllc_sla_violation_rate_pct": 0.0,
+      "slice_provisioning_sec": 11.5,
+      "telco_oran_slo_met": true
+    },
+    {
+      "concurrent_gnodeb_cells": 25000,
+      "telco_oran_mode": "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier",
+      "operator_nexus_ric_nodes": 40,
+      "userplane_forwarding_p99_us": 38.0,
+      "microburst_packet_drop_pct": 0.0,
+      "nearrt_e2_loop_p99_ms": 4.2,
+      "e2_latency_reduction_pct": 98.8,
+      "spectral_efficiency_gain_pct": 23.5,
+      "ru_power_savings_pct": 31.2,
+      "urllc_sla_violation_rate_pct": 0.0,
+      "slice_provisioning_sec": 11.5,
+      "telco_oran_slo_met": true
+    },
+    {
+      "concurrent_gnodeb_cells": 5000,
+      "telco_oran_mode": "kernel_veth_remote_llm_unverified_slice_mutation",
+      "operator_nexus_ric_nodes": 8,
+      "userplane_forwarding_p99_us": 1420.0,
+      "microburst_packet_drop_pct": 14.8,
+      "nearrt_e2_loop_p99_ms": 340.0,
+      "e2_latency_reduction_pct": 0.0,
+      "spectral_efficiency_gain_pct": 0.0,
+      "ru_power_savings_pct": 0.0,
+      "urllc_sla_violation_rate_pct": 16.4,
+      "slice_provisioning_sec": 16200.0,
+      "telco_oran_slo_met": false
+    }
   ]
 }

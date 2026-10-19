@@ -48,6 +48,7 @@ from agent_infra_sizer import (
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -477,6 +478,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_quantum_classical_hybrid_qir_sandbox(250, "raw_qasm_cpu_direct_unmitigated_qpu"),
     ]
 
+    telco_oran_slicing_profiles: List[Dict[str, object]] = [
+        simulate_telco_oran_network_slicing_sandbox(1_000, "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier"),
+        simulate_telco_oran_network_slicing_sandbox(5_000, "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier"),
+        simulate_telco_oran_network_slicing_sandbox(25_000, "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier"),
+        simulate_telco_oran_network_slicing_sandbox(5_000, "kernel_veth_remote_llm_unverified_slice_mutation"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -512,6 +520,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "edge_disconnected_profiles": edge_disconnected_profiles,
         "healthcare_fhir_cfr11_profiles": healthcare_fhir_cfr11_profiles,
         "quantum_hybrid_qir_profiles": quantum_hybrid_qir_profiles,
+        "telco_oran_slicing_profiles": telco_oran_slicing_profiles,
     }
 
 

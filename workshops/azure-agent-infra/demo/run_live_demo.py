@@ -55,6 +55,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -418,6 +419,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "qir_cuquantum_250": simulate_quantum_classical_hybrid_qir_sandbox(250, "qir_llvm_cuquantum_prefilter_floquet_qec"),
             "qir_cuquantum_1k": simulate_quantum_classical_hybrid_qir_sandbox(1_000, "qir_llvm_cuquantum_prefilter_floquet_qec"),
             "raw_qasm_250": simulate_quantum_classical_hybrid_qir_sandbox(250, "raw_qasm_cpu_direct_unmitigated_qpu"),
+        },
+        "demo_36_telco_oran_network_slicing_sandbox": {
+            "operator_nexus_oran_1k": simulate_telco_oran_network_slicing_sandbox(1_000, "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier"),
+            "operator_nexus_oran_5k": simulate_telco_oran_network_slicing_sandbox(5_000, "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier"),
+            "operator_nexus_oran_25k": simulate_telco_oran_network_slicing_sandbox(25_000, "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier"),
+            "kernel_veth_unverified_5k": simulate_telco_oran_network_slicing_sandbox(5_000, "kernel_veth_remote_llm_unverified_slice_mutation"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

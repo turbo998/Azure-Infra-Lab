@@ -42,6 +42,7 @@ from agent_infra_sizer import (
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -711,6 +712,19 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(qir["quantum_hybrid_governed"])
         self.assertAlmostEqual(raw["invalid_topology_rejection_pct"], 24.6)
         self.assertFalse(raw["quantum_hybrid_governed"])
+
+    def test_telco_oran_network_slicing_sandbox(self) -> None:
+        oran = simulate_telco_oran_network_slicing_sandbox(5_000, "operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier")
+        leg = simulate_telco_oran_network_slicing_sandbox(5_000, "kernel_veth_remote_llm_unverified_slice_mutation")
+        self.assertAlmostEqual(oran["userplane_forwarding_p99_us"], 38.0)
+        self.assertEqual(oran["microburst_packet_drop_pct"], 0.0)
+        self.assertAlmostEqual(oran["nearrt_e2_loop_p99_ms"], 4.2)
+        self.assertAlmostEqual(oran["e2_latency_reduction_pct"], 98.8)
+        self.assertEqual(oran["urllc_sla_violation_rate_pct"], 0.0)
+        self.assertAlmostEqual(oran["slice_provisioning_sec"], 11.5)
+        self.assertTrue(oran["telco_oran_slo_met"])
+        self.assertAlmostEqual(leg["urllc_sla_violation_rate_pct"], 16.4)
+        self.assertFalse(leg["telco_oran_slo_met"])
 
 
 if __name__ == "__main__":

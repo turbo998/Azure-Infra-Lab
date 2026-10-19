@@ -433,6 +433,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(33)">34. 工业边缘 Azure Local + IoT Operations 断网存储转发与孪生同步 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(34)">35. 医疗临床 AHDS FHIR/DICOM 零拷贝 + HIPAA Safe-Harbor + 21 CFR Part 11 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(35)">36. 混合量子-经典 Azure Quantum QIR + H200 cuQuantum 预筛选池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(36)">37. 电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK + Near-RT RIC xApp 切片池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1250,6 +1251,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 36: Telco 5G-Advanced / O-RAN & Autonomous Network Slicing Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 36 · TELCO 5G-ADVANCED / O-RAN &amp; AUTONOMOUS NETWORK SLICING (OPERATOR NEXUS SR-IOV/DPDK + NEAR-RT RIC XAPP + 3GPP SLICE VERIFIER)</span>
+    <h2>电信 5G-A / O-RAN 智能体基础设施：Operator Nexus SR-IOV/DPDK、Near-RT RIC xApp 亚 10ms 闭环与 3GPP 切片测算器</h2>
+    <div class="sub">量化在 <code>1,000 – 25,000</code> 并发 5G <code>gNodeB</code> 小区规模下，启用 <code>Azure Operator Nexus SR-IOV + DPDK PMD</code> 零拷贝用户面旁路（转发延迟 <code>38.0 us</code> vs <code>1,420.0 us</code>，微突发丢包 <code>0.0%</code> vs <code>14.8%</code>）、<code>Near-RT RIC xApp</code> 实时沙箱（<code>E2SM-RC</code> 闭环 <code>4.2 ms &lt;= 10.0 ms SLO</code> vs 远程大模型 <code>340.0 ms</code>，频谱效率 <code>+23.5%</code>，射频节电 <code>31.2%</code>）与 <code>3GPP TS 28.531</code> 马尔可夫切片预验证器（<code>0.0% URLLC</code> 资源块饥饿，切片开通 <code>11.5 s</code> vs <code>4.5 h</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 纳管 5G-Advanced gNodeB 小区规模 (Managed 5G gNodeB Cells): <strong id="lbl_oran_cells" style="color:var(--blue)">5,000</strong></label>
+          <input type="range" id="rng_oran_cells" min="1000" max="25000" step="1000" value="5000" oninput="runOranLab()">
+        </div>
+        <div class="form-row">
+          <label>2. O-RAN RIC 控制环与用户面加速架构 (Telco O-RAN &amp; Slice Control Mode)</label>
+          <select id="sel_oran_mode" onchange="runOranLab()">
+            <option value="operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier" selected>Operator Nexus SR-IOV/DPDK (38us) + Near-RT xApp (4.2ms) + 3GPP 切片验证 (推荐)</option>
+            <option value="kernel_veth_remote_llm_unverified_slice_mutation">传统反模式：内核 veth 网桥 (14.8% 丢包) + 远程大模型直控 E2 (340ms) + 无切片验证</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="oranOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -1905,6 +1929,20 @@ resource cuQuantumPool 'Microsoft.ContainerService/managedClusters/agentPools@20
       'aksclaw.io/qir-transpiler': 'llvm-qir-base-adaptive-profile'
     }
   }
+}`,
+`// 37. Azure Bicep: Telco 5G-A / O-RAN Near-RT RIC xApp Pool (SR-IOV/DPDK + SCTP E2AP + 3GPP TS 28.531 Verifier)
+resource nearRtRicNodePool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  name: 'aks-aksclaw-prod/oranxapprt'
+  properties: {
+    count: 8
+    vmSize: 'Standard_D32s_v6'
+    kubeletConfig: { cpuManagerPolicy: 'static', topologyManagerPolicy: 'single-numa-node' }
+    nodeLabels: {
+      'aksclaw.io/datapath': 'sriov-dpdk-pmd-vf'
+      'aksclaw.io/e2sm-profile': 'rc-kpm-sub10ms'
+      'aksclaw.io/3gpp-slice-verifier': 'ts-28-531-markov-gate'
+    }
+  }
 }`
 ];
 
@@ -2041,6 +2079,29 @@ runCybLab();
 runEdgLab();
 runMedLab();
 runQirLab();
+runOranLab();
+
+function runOranLab() {
+  const cells = parseInt(document.getElementById('rng_oran_cells').value, 10);
+  const mode = document.getElementById('sel_oran_mode').value;
+  document.getElementById('lbl_oran_cells').textContent = cells.toLocaleString();
+
+  const nodes = Math.max(3, Math.ceil(cells / 625));
+  const ok = mode === 'operator_nexus_sriov_dpdk_nearrt_xapp_3gpp_verifier';
+  const dpStr = ok ? "38.0 us SR-IOV/DPDK 零拷贝转发 (-97.3%) · 0.0% 微突发丢包" : "1,420.0 us 内核 veth 网桥 · 14.8% 微突发丢包";
+  const ricStr = ok ? "4.2 ms Near-RT E2 闭环 (<=10ms SLO, -98.8%) · 频谱 +23.5% / 节电 31.2%" : "340.0 ms 远程大模型 E2 超期 (100% 违约)";
+  const slcStr = ok ? "0.0% URLLC PRB 饥饿 · 11.5 s 3GPP 切片开通 (-99.9%)" : "16.4% URLLC SLA 违约 · 4.5 小时人工工单";
+
+  document.getElementById('oranOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + dpStr : '❌ 14.8% 微突发丢包 · E2 闭环 340ms 严重超期'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 Operator Nexus RIC 节点 (${ricStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>3GPP TS 28.531 意图网络切片验证与开通</strong>：<strong>${slcStr}</strong>
+    </p>
+  `;
+}
 
 function runQirLab() {
   const ag = parseInt(document.getElementById('rng_qir_ag').value, 10);
