@@ -1756,5 +1756,63 @@
       "interactive_slo_breach_pct": 0.0,
       "csrd_greenops_governed": false
     }
+  ],
+  "hyperlight_wasm_profiles": [
+    {
+      "concurrent_tool_invocations": 10000,
+      "sandbox_dispatch_mode": "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch",
+      "wasi_cold_start_ms": 0.85,
+      "per_sandbox_rss_mib": 1.8,
+      "sandboxes_per_d96_node": 48000,
+      "wit_abi_serialization_ms": 0.14,
+      "serialization_reduction_pct": 97.8,
+      "median_mcp_tool_latency_ms": 1.35,
+      "fleet_compute_cost_savings_pct": 64.8,
+      "host_syscall_attack_surface_pct": 0.0,
+      "d96_nodes_required": 8,
+      "hyperlight_hybrid_governed": true
+    },
+    {
+      "concurrent_tool_invocations": 50000,
+      "sandbox_dispatch_mode": "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch",
+      "wasi_cold_start_ms": 0.85,
+      "per_sandbox_rss_mib": 1.8,
+      "sandboxes_per_d96_node": 48000,
+      "wit_abi_serialization_ms": 0.14,
+      "serialization_reduction_pct": 97.8,
+      "median_mcp_tool_latency_ms": 1.35,
+      "fleet_compute_cost_savings_pct": 64.8,
+      "host_syscall_attack_surface_pct": 0.0,
+      "d96_nodes_required": 40,
+      "hyperlight_hybrid_governed": true
+    },
+    {
+      "concurrent_tool_invocations": 250000,
+      "sandbox_dispatch_mode": "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch",
+      "wasi_cold_start_ms": 0.85,
+      "per_sandbox_rss_mib": 1.8,
+      "sandboxes_per_d96_node": 48000,
+      "wit_abi_serialization_ms": 0.14,
+      "serialization_reduction_pct": 97.8,
+      "median_mcp_tool_latency_ms": 1.35,
+      "fleet_compute_cost_savings_pct": 64.8,
+      "host_syscall_attack_surface_pct": 0.0,
+      "d96_nodes_required": 196,
+      "hyperlight_hybrid_governed": true
+    },
+    {
+      "concurrent_tool_invocations": 50000,
+      "sandbox_dispatch_mode": "full_linux_microvm_loopback_http_json_only",
+      "wasi_cold_start_ms": 108.0,
+      "per_sandbox_rss_mib": 256.0,
+      "sandboxes_per_d96_node": 1200,
+      "wit_abi_serialization_ms": 6.4,
+      "serialization_reduction_pct": 0.0,
+      "median_mcp_tool_latency_ms": 114.4,
+      "fleet_compute_cost_savings_pct": 0.0,
+      "host_syscall_attack_surface_pct": 0.0,
+      "d96_nodes_required": 112,
+      "hyperlight_hybrid_governed": false
+    }
   ]
 }

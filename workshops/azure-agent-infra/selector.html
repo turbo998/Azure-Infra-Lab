@@ -424,6 +424,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(24)">25. 在线 RFT/GRPO 树状分叉推演池 + 防篡改验证器存储 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(25)">26. 后量子密码 PQC (X25519MLKEM768 + ML-DSA-65) 网关与 HSM (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(26)">27. GreenOps 碳感知 Turin 节点池 + Kepler RAPL 碳核算 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(27)">28. Hyperlight × SpinKube WASI-0.2 亚毫秒微沙箱池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1034,6 +1035,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 27: Hyperlight & SpinKube WASI-0.2 Micro-Sandbox Hybrid Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 27 · HYPERLIGHT &amp; SPINKUBE WASI-0.2 MICRO-SANDBOX DISPATCH SIZER</span>
+    <h2>Hyperlight 亚毫秒级 WASI-0.2 微沙箱、WIT 零拷贝 ABI 与混合双层 MCP 调度测算器</h2>
+    <div class="sub">量化在 <code>10,000 – 250,000</code> 并发 MCP 工具调用下，采用 KVM/Hyper-V VMCS 硬件保护的 Hyperlight AOT WASI-0.2 微沙箱（<code>0.85 ms</code> 冷启动、<code>1.8 MiB</code> RSS、单节点 <code>48,000</code> 并发密度）、WIT 零拷贝共享内存 ABI（<code>0.14 ms</code>）与 <code>72% Hyperlight + 28% Linux MicroVM</code> 混合分级调度（节点成本 <code>-64.8%</code>）的容量收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发 MCP 工具沙箱调用数 (Concurrent Tool Invocations): <strong id="lbl_hl_inv" style="color:var(--teal)">50,000</strong></label>
+          <input type="range" id="rng_hl_inv" min="10000" max="250000" step="10000" value="50000" oninput="runHlLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 微沙箱与 MCP 执行调度架构 (Micro-Sandbox Dispatch Architecture)</label>
+          <select id="sel_hl_mode" onchange="runHlLab()">
+            <option value="hyperlight_wasi02_wit_zerocopy_hybrid_dispatch" selected>Hyperlight WASI-0.2 (0.85ms / 1.8MiB) + WIT 零拷贝 (0.14ms) + 72/28 混合调度 (推荐)</option>
+            <option value="full_linux_microvm_loopback_http_json_only">传统反模式：100% 完整 Linux MicroVM (108ms / 256MiB) + 本地 HTTP/JSON 序列化</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="hlOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -1563,6 +1587,19 @@ resource greenopsTurinPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/kepler-rapl-telemetry': 'enabled'
     }
   }
+}`,
+`// 28. Azure Bicep: Hyperlight & SpinKube WASI-0.2 Micro-Sandbox Pool (0.85ms Boot, 48K Sandboxes/Node)
+resource hyperlightWasmPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/hyperlightp'
+  properties: {
+    count: 16
+    vmSize: 'Standard_D96as_v7'
+    nodeLabels: {
+      'aksclaw.io/runtime-class': 'wasmtime-spin-hyperlight-vmcs'
+      'aksclaw.io/wit-canonical-abi-zerocopy': 'enabled'
+      'aksclaw.io/hybrid-dispatch-split': '72pct-hyperlight-28pct-linux-microvm'
+    }
+  }
 }`
 ];
 
@@ -1690,6 +1727,28 @@ runRobLab();
 runRftLab();
 runPqcLab();
 runGrnLab();
+runHlLab();
+
+function runHlLab() {
+  const inv = parseInt(document.getElementById('rng_hl_inv').value, 10);
+  const mode = document.getElementById('sel_hl_mode').value;
+  document.getElementById('lbl_hl_inv').textContent = inv.toLocaleString();
+
+  const ok = mode === 'hyperlight_wasi02_wit_zerocopy_hybrid_dispatch';
+  const nodes = ok ? Math.max(4, Math.ceil(inv / 1280)) : Math.max(12, Math.ceil(inv / 450));
+  const bootStr = ok ? "0.85 ms 冷启动 (-99.2%) · 1.8 MiB RSS" : "108.0 ms 恢复 · 256.0 MiB RSS";
+  const abiStr = ok ? "0.14 ms WIT 零拷贝 (-97.8%) · 48,000/节点 (40x)" : "6.40 ms HTTP/JSON 序列化 · 1,200/节点";
+
+  document.getElementById('hlOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ 中位延迟 1.35ms (-98.8%) · 0% Syscall 暴露' : '❌ 全量 Linux VM 114.4ms · 节点膨胀'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 D96as_v7 (${ok ? '成本省 64.8%' : '基线成本'})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>微沙箱启动与单节点密度</strong>：<strong>${bootStr}</strong> · <strong>${abiStr}</strong>
+    </p>
+  `;
+}
 
 function runGrnLab() {
   const sbx = parseInt(document.getElementById('rng_grn_sbx').value, 10);

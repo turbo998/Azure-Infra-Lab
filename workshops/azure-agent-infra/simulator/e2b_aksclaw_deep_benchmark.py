@@ -31,6 +31,7 @@ from agent_infra_sizer import (
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
+    simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
@@ -405,6 +406,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_carbon_aware_greenops_fleet_scheduler(10_000, "carbon_blind_static_region_performance_governor"),
     ]
 
+    hyperlight_wasm_profiles: List[Dict[str, object]] = [
+        simulate_hyperlight_wasm_microsandbox_dispatch(10_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
+        simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
+        simulate_hyperlight_wasm_microsandbox_dispatch(250_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
+        simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "full_linux_microvm_loopback_http_json_only"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -431,6 +439,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "online_rft_verifier_profiles": online_rft_verifier_profiles,
         "pqc_crypto_agility_profiles": pqc_crypto_agility_profiles,
         "greenops_carbon_profiles": greenops_carbon_profiles,
+        "hyperlight_wasm_profiles": hyperlight_wasm_profiles,
     }
 
 

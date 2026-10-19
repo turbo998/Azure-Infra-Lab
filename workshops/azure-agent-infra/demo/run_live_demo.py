@@ -38,6 +38,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
+    simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
@@ -355,6 +356,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "greenops_10k": simulate_carbon_aware_greenops_fleet_scheduler(10_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
             "greenops_50k": simulate_carbon_aware_greenops_fleet_scheduler(50_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
             "carbon_blind_10k": simulate_carbon_aware_greenops_fleet_scheduler(10_000, "carbon_blind_static_region_performance_governor"),
+        },
+        "demo_27_hyperlight_wasm_microsandbox": {
+            "hyperlight_10k": simulate_hyperlight_wasm_microsandbox_dispatch(10_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
+            "hyperlight_50k": simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
+            "hyperlight_250k": simulate_hyperlight_wasm_microsandbox_dispatch(250_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
+            "linux_vm_only_50k": simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "full_linux_microvm_loopback_http_json_only"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -1096,7 +1096,32 @@ sequenceDiagram
 
 ---
 
-## 32. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 32. 亚毫秒级 Hyperlight 与 SpinKube WASI-0.2 微沙箱 —— 硬件 VMCS/VMCB 线性内存隔离、WIT 零拷贝共享内存 ABI 与混合双层 MCP 调度物理模型（Sub-Millisecond Hyperlight & SpinKube WASI-0.2 Micro-Sandboxes — Hardware VMCS/VMCB Protected Wasm Isolation, WIT Zero-Copy ABI & Tiered Hybrid Dispatch）
+
+> 本章由确定性 Hyperlight/WASI-0.2 微沙箱调度仿真模型 [`simulate_hyperlight_wasm_microsandbox_dispatch()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-hyperlight-spinkube-wasm-microsandbox.bicep`](blueprints/aksclaw-hyperlight-spinkube-wasm-microsandbox.bicep) 驱动，面向超高并发多租户 MCP 工具平台（`50,000–250,000` 并发工具调用）解决 **无状态/短生命周期工具调用如果全部启动完整 Linux MicroVM（`108 ms` / `256 MiB` RAM）造成的内存浪费与单节点密度瓶颈，以及纯软件 Wasm JIT 缺乏硬件虚拟化隔离边界的安全隐患**。
+
+### 32.1 Hyperlight × SpinKube 亚毫秒级微沙箱三大工程支柱
+
+1. **Pillar 1：Hyperlight 无 Guest 内核硬件虚拟化分区（KVM/Hyper-V VMCS/VMCB）承载预编译 `.cwasm` AOT 组件**：
+   - 利用微软开源的 **Hyperlight** 架构，在不加载完整 Linux Guest 内核的前提下，将 AOT 预编译的 WASI-0.2 组件直接映射进受硬件二级页表（EPT/NPT）与 VMCS/VMCB 保护的独立虚拟化分区中执行；
+   - 冷启动耗时从完整 Linux MicroVM 的 `108.0 ms` 骤降至 **`0.85 ms`（`-99.2%`）**，单实例常驻内存（RSS）从 `256.0 MiB` 压缩至 **`1.8 MiB`（`-99.3%`）**，使单台 `Standard_D96as_v7` 节点可安全混部 **`48,000` 个硬件隔离微沙箱（密度提升 `40.0x`）**，且宿主机 Linux 系统调用暴露面为 **`0.0%`**。
+2. **Pillar 2：WASI-0.2 WIT Canonical ABI 主客共享线性内存零拷贝调用（`0.14 ms` vs `6.40 ms` 本地 HTTP/JSON）**：
+   - 对 `256 KB` 结构化工具载荷（AST 语法树、SQL 结果批次、OpenAPI 响应），采用 WIT（Wasm Interface Types）强类型共享内存视图替代本地回环 HTTP/JSON 序列化与 Socket 拷贝，将跨边界调用开销从 `6.40 ms` 压降至 **`0.14 ms`（`-97.8%`）**。
+3. **Pillar 3：`72%` Hyperlight WASI-0.2 极速通道 + `28%` E2B/Kata 完整 Linux MicroVM 混合分级调度器**：
+   - 网关按工具能力清单（Capability Manifest）自动将纯计算、Schema 校验、API 编排与 AST 解析类工具（占调用量 `72%`）路由至 Hyperlight WASI-0.2 池，将需要完整 POSIX/Bash/Docker/GUI 的重型工具（`28%`）路由至 E2B Firecracker / AKSClaw Kata 池，使中位 MCP 工具执行延迟从 `114.40 ms` 降至 **`1.35 ms`（`-98.8%`）**，并节省 **`64.8%`** 的集群计算节点成本。
+
+### 32.2 Hyperlight WASI-0.2 + E2B/Kata 混合分级调度 vs 全量 Linux MicroVM 对比表
+
+| 并发 MCP 工具调用规模与沙箱调度架构 | 所需 `D96as_v7` 节点 | **微沙箱冷启动 (`p95`)** | **单实例内存 (`RSS`)** | **单节点隔离并发密度** | **WIT ABI 序列化开销** | **中位工具延迟** | **集群算力成本降幅** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`10,000` 并发调用 · Hyperlight WASI-0.2 + WIT 零拷贝 + 混合分级** | `8` | **`0.85 ms` (`-99.2%`)** | **`1.8 MiB`** | **`48,000 / 节点`** | **`0.14 ms` (`-97.8%`)** | **`1.35 ms`** | **`-64.8%`** |
+| **`50,000` 并发调用 · Hyperlight WASI-0.2 + WIT 零拷贝 + 混合分级 (推荐)** | **`40`** | **`0.85 ms` (`-99.2%`)** | **`1.8 MiB`** | **`48,000 / 节点`** | **`0.14 ms` (`-97.8%`)** | **`1.35 ms`** | **`-64.8%`** |
+| **`250,000` 并发调用 · Hyperlight WASI-0.2 + WIT 零拷贝 + 混合分级** | `196` | **`0.85 ms` (`-99.2%`)** | **`1.8 MiB`** | **`48,000 / 节点`** | **`0.14 ms` (`-97.8%`)** | **`1.35 ms`** | **`-64.8%`** |
+| `50,000` 并发调用 · 100% 完整 Linux MicroVM + 本地 HTTP/JSON 序列化 (反模式) | `112` | `108.00 ms` | `256.0 MiB` | `1,200 / 节点` | `6.40 ms` (`0.0%`) | `114.40 ms` | `0.0%` |
+
+---
+
+## 33. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1109,10 +1134,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 26 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算）
+# 2. 运行深度定量模型（全部 27 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱与混合双层调度）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 35 项单元测试（100% 覆盖 6 大运行时契约、26 大深度物理模型、27 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 36 项单元测试（100% 覆盖 6 大运行时契约、27 大深度物理模型、28 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

@@ -25,6 +25,7 @@ from agent_infra_sizer import (
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
+    simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
@@ -575,6 +576,24 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(blind["standby_host_watts"], 410.0)
         self.assertAlmostEqual(blind["csrd_attribution_error_pct"], 38.0)
         self.assertFalse(blind["csrd_greenops_governed"])
+
+    def test_hyperlight_wasm_microsandbox_dispatch(self) -> None:
+        hl = simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch")
+        vm_only = simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "full_linux_microvm_loopback_http_json_only")
+        self.assertAlmostEqual(hl["wasi_cold_start_ms"], 0.85)
+        self.assertAlmostEqual(hl["per_sandbox_rss_mib"], 1.8)
+        self.assertEqual(hl["sandboxes_per_d96_node"], 48_000)
+        self.assertAlmostEqual(hl["wit_abi_serialization_ms"], 0.14)
+        self.assertAlmostEqual(hl["serialization_reduction_pct"], 97.8)
+        self.assertAlmostEqual(hl["median_mcp_tool_latency_ms"], 1.35)
+        self.assertAlmostEqual(hl["fleet_compute_cost_savings_pct"], 64.8)
+        self.assertEqual(hl["host_syscall_attack_surface_pct"], 0.0)
+        self.assertTrue(hl["hyperlight_hybrid_governed"])
+        self.assertAlmostEqual(vm_only["wasi_cold_start_ms"], 108.0)
+        self.assertAlmostEqual(vm_only["per_sandbox_rss_mib"], 256.0)
+        self.assertEqual(vm_only["sandboxes_per_d96_node"], 1_200)
+        self.assertAlmostEqual(vm_only["median_mcp_tool_latency_ms"], 114.40)
+        self.assertFalse(vm_only["hyperlight_hybrid_governed"])
 
 
 if __name__ == "__main__":
