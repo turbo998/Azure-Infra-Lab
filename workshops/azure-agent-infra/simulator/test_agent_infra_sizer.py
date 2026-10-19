@@ -39,6 +39,7 @@ from agent_infra_sizer import (
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
@@ -698,6 +699,18 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(reg["hipaa_cfr11_compliance_slo_met"])
         self.assertEqual(unr["external_llm_raw_phi_exposure_pct"], 100.0)
         self.assertFalse(unr["hipaa_cfr11_compliance_slo_met"])
+
+    def test_quantum_classical_hybrid_qir_sandbox(self) -> None:
+        qir = simulate_quantum_classical_hybrid_qir_sandbox(250, "qir_llvm_cuquantum_prefilter_floquet_qec")
+        raw = simulate_quantum_classical_hybrid_qir_sandbox(250, "raw_qasm_cpu_direct_unmitigated_qpu")
+        self.assertAlmostEqual(qir["cuquantum_36q_sim_ms"], 14.5)
+        self.assertAlmostEqual(qir["qpu_shot_spend_reduction_pct"], 88.6)
+        self.assertAlmostEqual(qir["qir_transpile_latency_ms"], 19.2)
+        self.assertEqual(qir["invalid_topology_rejection_pct"], 0.0)
+        self.assertAlmostEqual(qir["chemical_accuracy_attainment_pct"], 96.8)
+        self.assertTrue(qir["quantum_hybrid_governed"])
+        self.assertAlmostEqual(raw["invalid_topology_rejection_pct"], 24.6)
+        self.assertFalse(raw["quantum_hybrid_governed"])
 
 
 if __name__ == "__main__":

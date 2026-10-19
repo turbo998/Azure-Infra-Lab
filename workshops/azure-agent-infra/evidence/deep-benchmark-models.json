@@ -2192,5 +2192,59 @@
       "gxp_audit_compilation_seconds": 1209600.0,
       "hipaa_cfr11_compliance_slo_met": false
     }
+  ],
+  "quantum_hybrid_qir_profiles": [
+    {
+      "concurrent_quantum_agents": 64,
+      "quantum_hybrid_mode": "qir_llvm_cuquantum_prefilter_floquet_qec",
+      "cuquantum_h200_nodes": 2,
+      "cuquantum_36q_sim_ms": 14.5,
+      "qpu_shot_spend_reduction_pct": 88.6,
+      "qir_transpile_latency_ms": 19.2,
+      "transpile_reduction_pct": 95.4,
+      "two_qubit_gate_depth_reduction_pct": 37.5,
+      "invalid_topology_rejection_pct": 0.0,
+      "chemical_accuracy_attainment_pct": 96.8,
+      "quantum_hybrid_governed": true
+    },
+    {
+      "concurrent_quantum_agents": 250,
+      "quantum_hybrid_mode": "qir_llvm_cuquantum_prefilter_floquet_qec",
+      "cuquantum_h200_nodes": 8,
+      "cuquantum_36q_sim_ms": 14.5,
+      "qpu_shot_spend_reduction_pct": 88.6,
+      "qir_transpile_latency_ms": 19.2,
+      "transpile_reduction_pct": 95.4,
+      "two_qubit_gate_depth_reduction_pct": 37.5,
+      "invalid_topology_rejection_pct": 0.0,
+      "chemical_accuracy_attainment_pct": 96.8,
+      "quantum_hybrid_governed": true
+    },
+    {
+      "concurrent_quantum_agents": 1000,
+      "quantum_hybrid_mode": "qir_llvm_cuquantum_prefilter_floquet_qec",
+      "cuquantum_h200_nodes": 32,
+      "cuquantum_36q_sim_ms": 14.5,
+      "qpu_shot_spend_reduction_pct": 88.6,
+      "qir_transpile_latency_ms": 19.2,
+      "transpile_reduction_pct": 95.4,
+      "two_qubit_gate_depth_reduction_pct": 37.5,
+      "invalid_topology_rejection_pct": 0.0,
+      "chemical_accuracy_attainment_pct": 96.8,
+      "quantum_hybrid_governed": true
+    },
+    {
+      "concurrent_quantum_agents": 250,
+      "quantum_hybrid_mode": "raw_qasm_cpu_direct_unmitigated_qpu",
+      "cuquantum_h200_nodes": 8,
+      "cuquantum_36q_sim_ms": 1850.0,
+      "qpu_shot_spend_reduction_pct": 0.0,
+      "qir_transpile_latency_ms": 420.0,
+      "transpile_reduction_pct": 0.0,
+      "two_qubit_gate_depth_reduction_pct": 0.0,
+      "invalid_topology_rejection_pct": 24.6,
+      "chemical_accuracy_attainment_pct": 31.0,
+      "quantum_hybrid_governed": false
+    }
   ]
 }

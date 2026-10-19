@@ -52,6 +52,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
@@ -411,6 +412,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "regulated_ahds_cfr11_500": simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
             "regulated_ahds_cfr11_2k": simulate_healthcare_fhir_dicom_cfr11_sandbox(2_000, "ahds_fhir_dicom_cast_presidio_fpe_cfr11_hsm"),
             "unredacted_clinical_500": simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "unredacted_rest_json_unsigned_clinical_writes"),
+        },
+        "demo_35_quantum_classical_hybrid_qir_sandbox": {
+            "qir_cuquantum_64": simulate_quantum_classical_hybrid_qir_sandbox(64, "qir_llvm_cuquantum_prefilter_floquet_qec"),
+            "qir_cuquantum_250": simulate_quantum_classical_hybrid_qir_sandbox(250, "qir_llvm_cuquantum_prefilter_floquet_qec"),
+            "qir_cuquantum_1k": simulate_quantum_classical_hybrid_qir_sandbox(1_000, "qir_llvm_cuquantum_prefilter_floquet_qec"),
+            "raw_qasm_250": simulate_quantum_classical_hybrid_qir_sandbox(250, "raw_qasm_cpu_direct_unmitigated_qpu"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

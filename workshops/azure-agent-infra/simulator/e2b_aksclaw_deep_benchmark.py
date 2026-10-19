@@ -45,6 +45,7 @@ from agent_infra_sizer import (
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
@@ -469,6 +470,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_healthcare_fhir_dicom_cfr11_sandbox(500, "unredacted_rest_json_unsigned_clinical_writes"),
     ]
 
+    quantum_hybrid_qir_profiles: List[Dict[str, object]] = [
+        simulate_quantum_classical_hybrid_qir_sandbox(64, "qir_llvm_cuquantum_prefilter_floquet_qec"),
+        simulate_quantum_classical_hybrid_qir_sandbox(250, "qir_llvm_cuquantum_prefilter_floquet_qec"),
+        simulate_quantum_classical_hybrid_qir_sandbox(1_000, "qir_llvm_cuquantum_prefilter_floquet_qec"),
+        simulate_quantum_classical_hybrid_qir_sandbox(250, "raw_qasm_cpu_direct_unmitigated_qpu"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -503,6 +511,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cyber_detonation_profiles": cyber_detonation_profiles,
         "edge_disconnected_profiles": edge_disconnected_profiles,
         "healthcare_fhir_cfr11_profiles": healthcare_fhir_cfr11_profiles,
+        "quantum_hybrid_qir_profiles": quantum_hybrid_qir_profiles,
     }
 
 
