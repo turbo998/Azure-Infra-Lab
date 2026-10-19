@@ -14,6 +14,7 @@ from agent_infra_sizer import (
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_agentic_memory_diskann_graphrag_tiering,
+    simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -628,6 +629,20 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(nfs["dataset_stagein_sec"], 142.0)
         self.assertAlmostEqual(nfs["gang_deadlock_waste_pct"], 26.4)
         self.assertFalse(nfs["scientific_hpc_governed"])
+
+    def test_agentic_payment_confidential_ledger_guardrail(self) -> None:
+        gov = simulate_agentic_payment_confidential_ledger_guardrail(2_500, "hsm_spend_mandate_horizondb_escrow_confidential_ledger")
+        raw = simulate_agentic_payment_confidential_ledger_guardrail(2_500, "raw_card_vault_unidempotent_rest")
+        self.assertAlmostEqual(gov["mandate_sign_latency_ms"], 1.45)
+        self.assertAlmostEqual(gov["escrow_reservation_latency_ms"], 3.80)
+        self.assertAlmostEqual(gov["sync_guardrail_p95_ms"], 5.25)
+        self.assertEqual(gov["unauthorized_spend_exposure_pct"], 0.0)
+        self.assertEqual(gov["duplicate_charge_rate_pct"], 0.0)
+        self.assertEqual(gov["merkle_non_repudiation_pct"], 100.0)
+        self.assertTrue(gov["payment_ledger_governed"])
+        self.assertEqual(raw["unauthorized_spend_exposure_pct"], 100.0)
+        self.assertAlmostEqual(raw["duplicate_charge_rate_pct"], 3.8)
+        self.assertFalse(raw["payment_ledger_governed"])
 
 
 if __name__ == "__main__":

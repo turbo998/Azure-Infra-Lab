@@ -27,6 +27,7 @@ from agent_infra_sizer import (  # noqa: E402
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
     simulate_agentic_memory_diskann_graphrag_tiering,
+    simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -376,6 +377,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "lustre_ib_1k": simulate_scientific_hpc_lustre_mpi_sandbox(1_000, "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt"),
             "lustre_ib_4k": simulate_scientific_hpc_lustre_mpi_sandbox(4_000, "amlfs_lustre_kueue_ib_gang_veloc_async_ckpt"),
             "nfs_default_1k": simulate_scientific_hpc_lustre_mpi_sandbox(1_000, "nfs_default_scheduler_sync_ckpt"),
+        },
+        "demo_30_payment_confidential_ledger": {
+            "mandate_escrow_500": simulate_agentic_payment_confidential_ledger_guardrail(500, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
+            "mandate_escrow_2500": simulate_agentic_payment_confidential_ledger_guardrail(2_500, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
+            "mandate_escrow_10k": simulate_agentic_payment_confidential_ledger_guardrail(10_000, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
+            "raw_vault_2500": simulate_agentic_payment_confidential_ledger_guardrail(2_500, "raw_card_vault_unidempotent_rest"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -1918,5 +1918,59 @@
       "checkpoint_stall_overhead_pct": 24.0,
       "scientific_hpc_governed": false
     }
+  ],
+  "payment_ledger_profiles": [
+    {
+      "concurrent_tx_per_sec": 500,
+      "payment_guardrail_mode": "hsm_spend_mandate_horizondb_escrow_confidential_ledger",
+      "gatekeeper_nodes": 2,
+      "mandate_sign_latency_ms": 1.45,
+      "escrow_reservation_latency_ms": 3.8,
+      "sync_guardrail_p95_ms": 5.25,
+      "async_merkle_seal_ms": 4.2,
+      "unauthorized_spend_exposure_pct": 0.0,
+      "duplicate_charge_rate_pct": 0.0,
+      "merkle_non_repudiation_pct": 100.0,
+      "payment_ledger_governed": true
+    },
+    {
+      "concurrent_tx_per_sec": 2500,
+      "payment_guardrail_mode": "hsm_spend_mandate_horizondb_escrow_confidential_ledger",
+      "gatekeeper_nodes": 4,
+      "mandate_sign_latency_ms": 1.45,
+      "escrow_reservation_latency_ms": 3.8,
+      "sync_guardrail_p95_ms": 5.25,
+      "async_merkle_seal_ms": 4.2,
+      "unauthorized_spend_exposure_pct": 0.0,
+      "duplicate_charge_rate_pct": 0.0,
+      "merkle_non_repudiation_pct": 100.0,
+      "payment_ledger_governed": true
+    },
+    {
+      "concurrent_tx_per_sec": 10000,
+      "payment_guardrail_mode": "hsm_spend_mandate_horizondb_escrow_confidential_ledger",
+      "gatekeeper_nodes": 16,
+      "mandate_sign_latency_ms": 1.45,
+      "escrow_reservation_latency_ms": 3.8,
+      "sync_guardrail_p95_ms": 5.25,
+      "async_merkle_seal_ms": 4.2,
+      "unauthorized_spend_exposure_pct": 0.0,
+      "duplicate_charge_rate_pct": 0.0,
+      "merkle_non_repudiation_pct": 100.0,
+      "payment_ledger_governed": true
+    },
+    {
+      "concurrent_tx_per_sec": 2500,
+      "payment_guardrail_mode": "raw_card_vault_unidempotent_rest",
+      "gatekeeper_nodes": 4,
+      "mandate_sign_latency_ms": 0.0,
+      "escrow_reservation_latency_ms": 28.5,
+      "sync_guardrail_p95_ms": 28.5,
+      "async_merkle_seal_ms": 0.0,
+      "unauthorized_spend_exposure_pct": 100.0,
+      "duplicate_charge_rate_pct": 3.8,
+      "merkle_non_repudiation_pct": 0.0,
+      "payment_ledger_governed": false
+    }
   ]
 }

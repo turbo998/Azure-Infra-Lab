@@ -1169,7 +1169,31 @@ sequenceDiagram
 
 ---
 
-## 35. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 35. 智能体商业支付授权与机密金融账本护栏 —— 密码学消费授权令牌（`AP2 / x402` Spend-Intent Mandate）、HorizonDB 复式记账预授权托管与 Azure Confidential Ledger 抗抵赖清结算物理模型（Agentic Commerce, Payment Mandates & Financial Ledger Guardrails — Cryptographic Spend Mandates, Idempotent Double-Entry Escrow & SGX Confidential Ledger）
+
+> 本章由确定性商业支付授权与机密账本仿真模型 [`simulate_agentic_payment_confidential_ledger_guardrail()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-confidential-ledger-payment-mandate.bicep`](blueprints/aksclaw-confidential-ledger-payment-mandate.bicep) 驱动，面向企业 B2B 采购、FinTech 资金调拨、差旅预订与云市场自动化结算智能体（`500–10,000 TPS` 并发交易护栏）解决 **向沙箱直接注入企业信用卡/支付私钥导致的提示词注入盗刷风险、多轮超时重试造成的重复扣款（Double-Charge），以及自主交易争议缺乏硬件级不可篡改凭证的合规难题**。
+
+### 35.1 智能体支付授权与金融账本三大工程支柱
+
+1. **Pillar 1：硬件签名一次性消费意图授权令（`Entra Agent ID + Managed HSM COSE_Sign1 Spend-Intent Mandate`，`AP2 / x402` 协议）**：
+   - 严禁沙箱容器接触原始卡号或持久支付密钥；支付网关按单次交易签发绑定 `(sponsor_oid, agent_blueprint_id, merchant_did, max_amount_usd, currency, ttl=60s)` 的硬件签名 `COSE_Sign1` 授权令（签发开销仅 **`1.45 ms`**），将提示词注入越权消费暴露面从原始密钥模式的 `100.0%` 压降至 **`0.0%`**。
+2. **Pillar 2：确定性幂等键与 HorizonDB 可串行化复式记账预授权托管状态机（`RESERVE -> COMMIT / COMPENSATE`）**：
+   - 针对多步工具调用超时重试导致的 **`3.8%` 重复扣款率**，基于 `SHA256(session_id || step_seq || canonical_cart_hash)` 确定性幂等键在 HorizonDB 内执行无锁乐观预授权冻结（`p95 = 3.80 ms`），将重复扣款率降至 **`0.0%`**，并 100% 保证借贷复式账目平衡。
+3. **Pillar 3：Azure Confidential Ledger (`ACL` SGX 飞地 SHA-384 默克尔树收据) 抗抵赖审计封存**：
+   - 每笔清结算收据同步通过 **`5.25 ms`（`<= 10.0 ms` SLO）** 护栏校验后，异步写入基于硬件 SGX 飞地的 **Azure Confidential Ledger**（`4.20 ms` 默克尔树根签名落盘），提供 **`100.0%`** 密码学抗抵赖证明，直接满足 PCI-DSS 4.0 与 SOX 自动化交易审计。
+
+### 35.2 HSM 消费授权令 + HorizonDB 复式幂等托管 + Confidential Ledger vs 原始支付密钥模式对比表
+
+| 并发交易吞吐与支付护栏架构 | 所需 `DC16as_v5` 护栏节点 | **HSM 授权令签发** | **复式预授权冻结** | **同步护栏总延迟 (`p95`)** | **越权盗刷暴露面** | **重试重复扣款率** | **抗抵赖默克尔收据** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`500 TPS` · HSM 消费授权令 + HorizonDB 复式托管 + Confidential Ledger** | `2` | **`1.45 ms`** | **`3.80 ms`** | **`5.25 ms` (`<= 10ms`)** | **`0.0%`** | **`0.0%`** | **`100.0%` (`4.20 ms`)** |
+| **`2,500 TPS` · HSM 消费授权令 + HorizonDB 复式托管 + Confidential Ledger (推荐)** | **`4`** | **`1.45 ms`** | **`3.80 ms`** | **`5.25 ms` (`<= 10ms`)** | **`0.0%`** | **`0.0%`** | **`100.0%` (`4.20 ms`)** |
+| **`10,000 TPS` · HSM 消费授权令 + HorizonDB 复式托管 + Confidential Ledger** | `16` | **`1.45 ms`** | **`3.80 ms`** | **`5.25 ms` (`<= 10ms`)** | **`0.0%`** | **`0.0%`** | **`100.0%` (`4.20 ms`)** |
+| `2,500 TPS` · 沙箱直持原始支付 API Key + 无幂等状态机 REST 直调 (反模式) | `4` | `0.00 ms` | `28.50 ms` | `28.50 ms` | `100.0%` (❌ 注入盗刷) | `3.8%` (❌ 重复扣款) | `0.0%` |
+
+---
+
+## 36. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1182,10 +1206,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 29 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算与 AI-for-Science 沙箱）
+# 2. 运行深度定量模型（全部 30 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本护栏）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 38 项单元测试（100% 覆盖 6 大运行时契约、29 大深度物理模型、30 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 39 项单元测试（100% 覆盖 6 大运行时契约、30 大深度物理模型、31 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

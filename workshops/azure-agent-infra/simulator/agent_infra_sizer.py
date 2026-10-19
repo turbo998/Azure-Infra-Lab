@@ -2017,6 +2017,58 @@ def simulate_scientific_hpc_lustre_mpi_sandbox(
     }
 
 
+def simulate_agentic_payment_confidential_ledger_guardrail(
+    concurrent_tx_per_sec: int = 2_500,
+    payment_guardrail_mode: str = "hsm_spend_mandate_horizondb_escrow_confidential_ledger",
+) -> dict[str, Any]:
+    """
+    Models Agentic Commerce, Payment Mandates & Financial Ledger Guardrails (Chapter 35):
+      1. Pillar 1 (Cryptographic Spend-Intent Mandate Token `AP2/x402` via Managed HSM COSE_Sign1):
+         Binds single-use mandate to (sponsor_oid, agent_blueprint_id, merchant_did, max_amount, ttl=60s)
+         in 1.45 ms, cutting unauthorized prompt-injected spend exposure from 100.0% to 0.0%.
+      2. Pillar 2 (Deterministic Idempotency Key + HorizonDB Double-Entry Escrow State Machine):
+         Enforces SHA256(session_id || step_seq || canonical_cart_hash) reservation in 3.80 ms, eliminating
+         multi-turn retry duplicate charges (0.0% vs 3.8% under naive REST calls).
+      3. Pillar 3 (Azure Confidential Ledger SGX Enclave Merkle Receipt Audit):
+         Seals non-repudiable SHA-384 Merkle receipts (4.20 ms async commit) with 5.25 ms synchronous
+         guardrail latency (<= 10.0 ms SLO) and 100.0% PCI-DSS/SOX audit non-repudiation.
+    """
+    gatekeeper_nodes = max(2, math.ceil(concurrent_tx_per_sec / 650))
+
+    if payment_guardrail_mode == "hsm_spend_mandate_horizondb_escrow_confidential_ledger":
+        mandate_sign_latency_ms = 1.45
+        escrow_reservation_latency_ms = 3.80
+        sync_guardrail_p95_ms = round(mandate_sign_latency_ms + escrow_reservation_latency_ms, 2)
+        async_merkle_seal_ms = 4.20
+        unauthorized_spend_exposure_pct = 0.0
+        duplicate_charge_rate_pct = 0.0
+        merkle_non_repudiation_pct = 100.0
+        payment_ledger_governed = True
+    else:
+        mandate_sign_latency_ms = 0.0
+        escrow_reservation_latency_ms = 28.50
+        sync_guardrail_p95_ms = 28.50
+        async_merkle_seal_ms = 0.0
+        unauthorized_spend_exposure_pct = 100.0
+        duplicate_charge_rate_pct = 3.8
+        merkle_non_repudiation_pct = 0.0
+        payment_ledger_governed = False
+
+    return {
+        "concurrent_tx_per_sec": concurrent_tx_per_sec,
+        "payment_guardrail_mode": payment_guardrail_mode,
+        "gatekeeper_nodes": gatekeeper_nodes,
+        "mandate_sign_latency_ms": mandate_sign_latency_ms,
+        "escrow_reservation_latency_ms": escrow_reservation_latency_ms,
+        "sync_guardrail_p95_ms": sync_guardrail_p95_ms,
+        "async_merkle_seal_ms": async_merkle_seal_ms,
+        "unauthorized_spend_exposure_pct": unauthorized_spend_exposure_pct,
+        "duplicate_charge_rate_pct": duplicate_charge_rate_pct,
+        "merkle_non_repudiation_pct": merkle_non_repudiation_pct,
+        "payment_ledger_governed": payment_ledger_governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

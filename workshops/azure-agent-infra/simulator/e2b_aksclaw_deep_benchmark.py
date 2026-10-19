@@ -20,6 +20,7 @@ from typing import Dict, List
 
 from agent_infra_sizer import (
     simulate_agentic_memory_diskann_graphrag_tiering,
+    simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_chaos_byzantine_fault_injection_gameday,
@@ -429,6 +430,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_scientific_hpc_lustre_mpi_sandbox(1_000, "nfs_default_scheduler_sync_ckpt"),
     ]
 
+    payment_ledger_profiles: List[Dict[str, object]] = [
+        simulate_agentic_payment_confidential_ledger_guardrail(500, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
+        simulate_agentic_payment_confidential_ledger_guardrail(2_500, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
+        simulate_agentic_payment_confidential_ledger_guardrail(10_000, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
+        simulate_agentic_payment_confidential_ledger_guardrail(2_500, "raw_card_vault_unidempotent_rest"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -458,6 +466,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hyperlight_wasm_profiles": hyperlight_wasm_profiles,
         "chaos_byzantine_profiles": chaos_byzantine_profiles,
         "scientific_hpc_profiles": scientific_hpc_profiles,
+        "payment_ledger_profiles": payment_ledger_profiles,
     }
 
 
