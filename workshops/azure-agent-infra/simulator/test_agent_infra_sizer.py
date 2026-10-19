@@ -30,6 +30,7 @@ from agent_infra_sizer import (
     simulate_multiregion_dr_failover,
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
+    simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -542,6 +543,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(naive["reward_hacking_leakage_pct"], 4.6)
         self.assertAlmostEqual(naive["gpu_trainer_stall_pct"], 29.5)
         self.assertFalse(naive["rft_pipeline_governed"])
+
+    def test_pqc_hybrid_mtls_agent_crypto_agility(self) -> None:
+        pqc = simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "x25519_mlkem768_mldsa65_hndl_envelope")
+        legacy = simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "classical_rsa_ecdsa_unresumed_hndl_exposed")
+        self.assertAlmostEqual(pqc["mtls_handshake_p95_ms"], 1.65)
+        self.assertEqual(pqc["tcp_extra_rtt_split_pct"], 0.0)
+        self.assertAlmostEqual(pqc["mldsa65_verify_overhead_ms"], 0.38)
+        self.assertAlmostEqual(pqc["total_mcp_admission_ms"], 4.98)
+        self.assertEqual(pqc["quantum_forgery_exposure_pct"], 0.0)
+        self.assertEqual(pqc["hndl_archive_exposure_pct"], 0.0)
+        self.assertTrue(pqc["cnsa2_pqc_compliant"])
+        self.assertAlmostEqual(legacy["mtls_handshake_p95_ms"], 26.20)
+        self.assertAlmostEqual(legacy["quantum_forgery_exposure_pct"], 100.0)
+        self.assertAlmostEqual(legacy["hndl_archive_exposure_pct"], 100.0)
+        self.assertFalse(legacy["cnsa2_pqc_compliant"])
 
 
 if __name__ == "__main__":

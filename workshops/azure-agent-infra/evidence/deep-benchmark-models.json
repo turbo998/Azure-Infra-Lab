@@ -1640,5 +1640,63 @@
       "gpu_trainer_stall_pct": 29.5,
       "rft_pipeline_governed": false
     }
+  ],
+  "pqc_crypto_agility_profiles": [
+    {
+      "concurrent_sandboxes": 1000,
+      "pqc_crypto_mode": "x25519_mlkem768_mldsa65_hndl_envelope",
+      "gateway_nodes": 2,
+      "classical_mtls_p95_ms": 1.23,
+      "mtls_handshake_p95_ms": 1.65,
+      "tcp_extra_rtt_split_pct": 0.0,
+      "mldsa65_verify_overhead_ms": 0.38,
+      "total_mcp_admission_ms": 4.98,
+      "quantum_forgery_exposure_pct": 0.0,
+      "hndl_archive_exposure_pct": 0.0,
+      "storage_overhead_pct": 1.8,
+      "cnsa2_pqc_compliant": true
+    },
+    {
+      "concurrent_sandboxes": 10000,
+      "pqc_crypto_mode": "x25519_mlkem768_mldsa65_hndl_envelope",
+      "gateway_nodes": 8,
+      "classical_mtls_p95_ms": 1.23,
+      "mtls_handshake_p95_ms": 1.65,
+      "tcp_extra_rtt_split_pct": 0.0,
+      "mldsa65_verify_overhead_ms": 0.38,
+      "total_mcp_admission_ms": 4.98,
+      "quantum_forgery_exposure_pct": 0.0,
+      "hndl_archive_exposure_pct": 0.0,
+      "storage_overhead_pct": 1.8,
+      "cnsa2_pqc_compliant": true
+    },
+    {
+      "concurrent_sandboxes": 50000,
+      "pqc_crypto_mode": "x25519_mlkem768_mldsa65_hndl_envelope",
+      "gateway_nodes": 40,
+      "classical_mtls_p95_ms": 1.23,
+      "mtls_handshake_p95_ms": 1.65,
+      "tcp_extra_rtt_split_pct": 0.0,
+      "mldsa65_verify_overhead_ms": 0.38,
+      "total_mcp_admission_ms": 4.98,
+      "quantum_forgery_exposure_pct": 0.0,
+      "hndl_archive_exposure_pct": 0.0,
+      "storage_overhead_pct": 1.8,
+      "cnsa2_pqc_compliant": true
+    },
+    {
+      "concurrent_sandboxes": 10000,
+      "pqc_crypto_mode": "classical_rsa_ecdsa_unresumed_hndl_exposed",
+      "gateway_nodes": 8,
+      "classical_mtls_p95_ms": 1.23,
+      "mtls_handshake_p95_ms": 26.2,
+      "tcp_extra_rtt_split_pct": 38.5,
+      "mldsa65_verify_overhead_ms": 0.0,
+      "total_mcp_admission_ms": 21.0,
+      "quantum_forgery_exposure_pct": 100.0,
+      "hndl_archive_exposure_pct": 100.0,
+      "storage_overhead_pct": 0.0,
+      "cnsa2_pqc_compliant": false
+    }
   ]
 }

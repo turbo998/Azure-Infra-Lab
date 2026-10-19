@@ -1045,7 +1045,33 @@ sequenceDiagram
 
 ---
 
-## 30. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 30. 后量子密码学（PQC）与智能体舰队密码敏捷性 —— 混合 `X25519MLKEM768` mTLS 握手物理模型、`ML-DSA-65` 工具签名认证与长周期记忆抗“先窃取后解密（HNDL）”信封加密（Post-Quantum Cryptography & Cryptographic Agility for Agent Fleets — Hybrid `X25519MLKEM768` mTLS, `ML-DSA-65` MCP Attestation & HNDL-Resistant Memory Envelopes）
+
+> 本章由确定性后量子密码敏捷性仿真模型 [`simulate_pqc_hybrid_mtls_agent_crypto_agility()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-pqc-mlkem-mldsa-crypto-agility.bicep`](blueprints/aksclaw-pqc-mlkem-mldsa-crypto-agility.bicep) 驱动，面向金融、政务、国防与长周期高机密研发场景在遵循 **NSA CNSA 2.0 / NIST FIPS 203 (`ML-KEM`) 与 FIPS 204 (`ML-DSA`)** 后量子迁移路线图时的三大核心挑战：**混合后量子密钥交换（`X25519MLKEM768`）因公钥与密文膨胀（`+2.3 KB`）冲破传统 TCP 初始拥塞窗口（`initcwnd`）引发的额外 RTT 分片停顿、经典 RSA/ECDSA MCP 工具镜像与快照签名在量子 Shor 算法下的伪造暴露风险，以及跨区域复制的 HorizonDB WAL 日志与 10 年期归档记忆面临的“先截获存储、待量子计算机成熟后解密（Harvest-Now-Decrypt-Later, HNDL）”威胁**。
+
+### 30.1 后量子密码学（PQC）与智能体密码敏捷性三大支柱
+
+1. **Pillar 1：混合 `X25519MLKEM768`（NIST FIPS 203）东西向 mTLS + TLS 1.3 会话票据复用与内核 `initcwnd = 16` 调优 vs 传统逐请求 PQC 握手**：
+   - `X25519MLKEM768` 的客户端 KeyShare 与服务端密文载荷较经典 `X25519` 增加约 `2.3 KB`；在默认小初始拥塞窗口且未开启会话复用时，`38.5%` 的跨节点工具握手会触发额外 TCP 往返分片，使 mTLS 握手 p95 延迟飙升至 **`26.20 ms`**；
+   - 通过内核 `initcwnd = 16` 调优配合 Cilium/Envoy 连接池及 TLS 1.3 `0-RTT/PSK` 会话复用（`98.5%` 命中率），额外 TCP RTT 分片率归零至 **`0.0%`**，分摊后 PQC mTLS 握手 p95 延迟仅为 **`1.65 ms`**（较经典 `X25519` 的 `1.23 ms` 仅增加 **`+0.42 ms`**）。
+2. **Pillar 2：双算法复合签名（`Ed25519 + ML-DSA-65`，NIST FIPS 204）MCP 工具包与微虚拟机快照准入校验**：
+   - 对所有进入集群的 MCP Server OCI 镜像与 Firecracker/Kata 黄金快照强制实行经典 `Ed25519` 与后量子格密码 `ML-DSA-65` 双重签名校验；
+   - 借助宿主机 AVX-512 数论变换（NTT）向量化指令加速，`ML-DSA-65` 验签附加延迟仅 **`0.38 ms`**（总准入耗时 **`4.98 ms`**），将量子算力下的供应链签名伪造暴露面从 `100.0%` 彻底归零至 **`0.0%`**。
+3. **Pillar 3：基于 Managed HSM `ML-KEM-1024 + AES-256-GCM` 的跨区 WAL 与 10 年期长效记忆抗 HNDL 信封加密**：
+   - 使用 Azure Key Vault Managed HSM（FIPS 140-3 Level 3）托管的 `ML-KEM-1024` 混合密钥封装机制保护每个租户的数据加密密钥（DEK），仅增加 **`+1.8%`** 的密文元数据体积开销，即可将跨区域复制流量与 10 年期 Parquet 情景记忆归档的 HNDL（先窃取后量子解密）暴露风险从 `100.0%` 压降至 **`0.0%`**。
+
+### 30.2 混合 `X25519MLKEM768` + `ML-DSA-65` + `ML-KEM-1024` 抗 HNDL 信封 vs 传统经典密码/未调优握手定量对比表
+
+| 并发沙箱规模与后量子密码敏捷架构 | PQC 网关节点 (`D32s_v6`) | **mTLS 握手延迟 (`p95`)** | **TCP 额外 RTT 分片率** | **`ML-DSA-65` 验签开销** | **量子签名伪造暴露率** | **10年期记忆 HNDL 暴露率** | **CNSA 2.0 / FIPS 合规** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`1,000` 沙箱 · `X25519MLKEM768` + `ML-DSA-65` + `ML-KEM-1024` 信封** | `2` | **`1.65 ms` (`+0.42 ms`)** | **`0.0%` (`initcwnd=16`)** | `0.38 ms` (总 `4.98 ms`) | **`0.0%`** | **`0.0%` (存储 `+1.8%`)** | **`✅ FIPS 203/204 合规`** |
+| **`10,000` 沙箱 · `X25519MLKEM768` + `ML-DSA-65` + `ML-KEM-1024` 信封 (推荐)** | **`8`** | **`1.65 ms` (`+0.42 ms`)** | **`0.0%` (`initcwnd=16`)** | **`0.38 ms` (总 `4.98 ms`)** | **`0.0%`** | **`0.0%` (存储 `+1.8%`)** | **`✅ FIPS 203/204 合规`** |
+| **`50,000` 沙箱 · `X25519MLKEM768` + `ML-DSA-65` + `ML-KEM-1024` 信封** | `40` | **`1.65 ms` (`+0.42 ms`)** | **`0.0%` (`initcwnd=16`)** | `0.38 ms` (总 `4.98 ms`) | **`0.0%`** | **`0.0%` (存储 `+1.8%`)** | **`✅ FIPS 203/204 合规`** |
+| `10,000` 沙箱 · 传统 RSA/ECDSA 经典签名 + 无连接池逐请求握手 (反模式) | `8` | `26.20 ms` (分片惩罚) | `38.5%` (❌ 拥塞拆包) | `0.00 ms` (总 `21.00 ms`) | `100.0%` (❌ Shor 破解) | `100.0%` (❌ HNDL 窃密) | `❌ 不满足后量子合规` |
+
+---
+
+## 31. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1058,10 +1084,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 24 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱）
+# 2. 运行深度定量模型（全部 25 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 33 项单元测试（100% 覆盖 6 大运行时契约、24 大深度物理模型、25 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 34 项单元测试（100% 覆盖 6 大运行时契约、25 大深度物理模型、26 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

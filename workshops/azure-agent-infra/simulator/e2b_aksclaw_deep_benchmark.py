@@ -36,6 +36,7 @@ from agent_infra_sizer import (
     simulate_multiregion_dr_failover,
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
+    simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -389,6 +390,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_online_rft_verifier_selfplay_sandbox(1_000, "full_replay_shared_ns_jsonl_sync"),
     ]
 
+    pqc_crypto_agility_profiles: List[Dict[str, object]] = [
+        simulate_pqc_hybrid_mtls_agent_crypto_agility(1_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
+        simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
+        simulate_pqc_hybrid_mtls_agent_crypto_agility(50_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
+        simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "classical_rsa_ecdsa_unresumed_hndl_exposed"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -413,6 +421,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "multicloud_cleanroom_profiles": multicloud_cleanroom_profiles,
         "embodied_robotics_digital_twin_profiles": embodied_robotics_digital_twin_profiles,
         "online_rft_verifier_profiles": online_rft_verifier_profiles,
+        "pqc_crypto_agility_profiles": pqc_crypto_agility_profiles,
     }
 
 

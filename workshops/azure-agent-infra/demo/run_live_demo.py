@@ -43,6 +43,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_multiregion_dr_failover,
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
+    simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
@@ -341,6 +342,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "tree_fork_rft_1k": simulate_online_rft_verifier_selfplay_sandbox(1_000, "tree_cow_fork_hermetic_verifier_parquet_stream"),
             "tree_fork_rft_2500": simulate_online_rft_verifier_selfplay_sandbox(2_500, "tree_cow_fork_hermetic_verifier_parquet_stream"),
             "full_replay_rft_1k": simulate_online_rft_verifier_selfplay_sandbox(1_000, "full_replay_shared_ns_jsonl_sync"),
+        },
+        "demo_25_pqc_hybrid_mtls_crypto_agility": {
+            "pqc_hybrid_1k": simulate_pqc_hybrid_mtls_agent_crypto_agility(1_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
+            "pqc_hybrid_10k": simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
+            "pqc_hybrid_50k": simulate_pqc_hybrid_mtls_agent_crypto_agility(50_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
+            "classical_exposed_10k": simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "classical_rsa_ecdsa_unresumed_hndl_exposed"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
