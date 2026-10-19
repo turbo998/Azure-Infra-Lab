@@ -15,6 +15,7 @@ from agent_infra_sizer import (
     recommend_runtime,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -205,7 +206,7 @@ class TestAgentInfraSizer(unittest.TestCase):
         bundle_dir = Path(__file__).resolve().parent.parent
         demo_script = bundle_dir / "demo" / "run_live_demo.py"
         proc = subprocess.run(
-            [sys.executable, str(demo_script), "--self-test"],
+            [sys.executable, "-B", str(demo_script), "--self-test"],
             capture_output=True,
             text=True,
             check=True,
@@ -558,6 +559,22 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertAlmostEqual(legacy["quantum_forgery_exposure_pct"], 100.0)
         self.assertAlmostEqual(legacy["hndl_archive_exposure_pct"], 100.0)
         self.assertFalse(legacy["cnsa2_pqc_compliant"])
+
+    def test_carbon_aware_greenops_fleet_scheduler(self) -> None:
+        green = simulate_carbon_aware_greenops_fleet_scheduler(10_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution")
+        blind = simulate_carbon_aware_greenops_fleet_scheduler(10_000, "carbon_blind_static_region_performance_governor")
+        self.assertAlmostEqual(green["gco2eq_per_1k_tasks"], 94.2)
+        self.assertAlmostEqual(green["carbon_reduction_pct"], 77.5)
+        self.assertAlmostEqual(green["standby_host_watts"], 148.0)
+        self.assertAlmostEqual(green["idle_power_savings_pct"], 63.9)
+        self.assertAlmostEqual(green["energy_cost_savings_pct"], 31.4)
+        self.assertAlmostEqual(green["csrd_attribution_error_pct"], 1.9)
+        self.assertEqual(green["interactive_slo_breach_pct"], 0.0)
+        self.assertTrue(green["csrd_greenops_governed"])
+        self.assertAlmostEqual(blind["gco2eq_per_1k_tasks"], 418.0)
+        self.assertAlmostEqual(blind["standby_host_watts"], 410.0)
+        self.assertAlmostEqual(blind["csrd_attribution_error_pct"], 38.0)
+        self.assertFalse(blind["csrd_greenops_governed"])
 
 
 if __name__ == "__main__":

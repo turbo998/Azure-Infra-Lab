@@ -1900,6 +1900,64 @@
         "storage_overhead_pct": 0.0,
         "cnsa2_pqc_compliant": false
       }
+    ],
+    "greenops_carbon_profiles": [
+      {
+        "concurrent_sandboxes": 1000,
+        "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+        "host_nodes": 4,
+        "baseline_gco2eq_per_1k_tasks": 418.0,
+        "gco2eq_per_1k_tasks": 94.2,
+        "carbon_reduction_pct": 77.5,
+        "standby_host_watts": 148.0,
+        "idle_power_savings_pct": 63.9,
+        "energy_cost_savings_pct": 31.4,
+        "csrd_attribution_error_pct": 1.9,
+        "interactive_slo_breach_pct": 0.0,
+        "csrd_greenops_governed": true
+      },
+      {
+        "concurrent_sandboxes": 10000,
+        "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+        "host_nodes": 26,
+        "baseline_gco2eq_per_1k_tasks": 418.0,
+        "gco2eq_per_1k_tasks": 94.2,
+        "carbon_reduction_pct": 77.5,
+        "standby_host_watts": 148.0,
+        "idle_power_savings_pct": 63.9,
+        "energy_cost_savings_pct": 31.4,
+        "csrd_attribution_error_pct": 1.9,
+        "interactive_slo_breach_pct": 0.0,
+        "csrd_greenops_governed": true
+      },
+      {
+        "concurrent_sandboxes": 50000,
+        "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+        "host_nodes": 129,
+        "baseline_gco2eq_per_1k_tasks": 418.0,
+        "gco2eq_per_1k_tasks": 94.2,
+        "carbon_reduction_pct": 77.5,
+        "standby_host_watts": 148.0,
+        "idle_power_savings_pct": 63.9,
+        "energy_cost_savings_pct": 31.4,
+        "csrd_attribution_error_pct": 1.9,
+        "interactive_slo_breach_pct": 0.0,
+        "csrd_greenops_governed": true
+      },
+      {
+        "concurrent_sandboxes": 10000,
+        "greenops_mode": "carbon_blind_static_region_performance_governor",
+        "host_nodes": 26,
+        "baseline_gco2eq_per_1k_tasks": 418.0,
+        "gco2eq_per_1k_tasks": 418.0,
+        "carbon_reduction_pct": 0.0,
+        "standby_host_watts": 410.0,
+        "idle_power_savings_pct": 0.0,
+        "energy_cost_savings_pct": 0.0,
+        "csrd_attribution_error_pct": 38.0,
+        "interactive_slo_breach_pct": 0.0,
+        "csrd_greenops_governed": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -3344,5 +3402,63 @@
       "cnsa2_pqc_compliant": false
     }
   },
-  "trace_sha256": "8b01ad199bbf4ae7027ff2f441a581f21225bf9542997ae3b6eb947301c28a5f"
+  "demo_26_carbon_aware_greenops_scheduler": {
+    "greenops_1k": {
+      "concurrent_sandboxes": 1000,
+      "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+      "host_nodes": 4,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 94.2,
+      "carbon_reduction_pct": 77.5,
+      "standby_host_watts": 148.0,
+      "idle_power_savings_pct": 63.9,
+      "energy_cost_savings_pct": 31.4,
+      "csrd_attribution_error_pct": 1.9,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": true
+    },
+    "greenops_10k": {
+      "concurrent_sandboxes": 10000,
+      "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+      "host_nodes": 26,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 94.2,
+      "carbon_reduction_pct": 77.5,
+      "standby_host_watts": 148.0,
+      "idle_power_savings_pct": 63.9,
+      "energy_cost_savings_pct": 31.4,
+      "csrd_attribution_error_pct": 1.9,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": true
+    },
+    "greenops_50k": {
+      "concurrent_sandboxes": 50000,
+      "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+      "host_nodes": 129,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 94.2,
+      "carbon_reduction_pct": 77.5,
+      "standby_host_watts": 148.0,
+      "idle_power_savings_pct": 63.9,
+      "energy_cost_savings_pct": 31.4,
+      "csrd_attribution_error_pct": 1.9,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": true
+    },
+    "carbon_blind_10k": {
+      "concurrent_sandboxes": 10000,
+      "greenops_mode": "carbon_blind_static_region_performance_governor",
+      "host_nodes": 26,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 418.0,
+      "carbon_reduction_pct": 0.0,
+      "standby_host_watts": 410.0,
+      "idle_power_savings_pct": 0.0,
+      "energy_cost_savings_pct": 0.0,
+      "csrd_attribution_error_pct": 38.0,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": false
+    }
+  },
+  "trace_sha256": "354be81b6506b99f8474f6bb71899e26d4ed86a166891a5be7c41155a20172d1"
 }

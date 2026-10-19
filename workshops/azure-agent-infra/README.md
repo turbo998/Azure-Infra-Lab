@@ -1071,7 +1071,32 @@ sequenceDiagram
 
 ---
 
-## 31. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 31. GreenOps 与碳感知智能体舰队协同调度 —— WattTime 边际碳排时空路由、`Standard_D96as_v7` 动态能效调优与 eBPF RAPL 租户级 CSRD 碳核算物理模型（GreenOps & Carbon/Grid-Aware Agent Fleet Orchestration — Spatio-Temporal Carbon Routing, Turin P-State Tuning & eBPF RAPL Per-Tenant CSRD Accounting）
+
+> 本章由确定性碳感知 GreenOps 舰队调度仿真模型 [`simulate_carbon_aware_greenops_fleet_scheduler()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-greenops-carbon-aware-keda-scaler.bicep`](blueprints/aksclaw-greenops-carbon-aware-keda-scaler.bicep) 驱动，面向跨国金融机构、欧洲 CSRD（企业可持续发展报告指令）合规企业及超大规模研发舰队（`10,000–50,000` 并发沙箱）在平衡 **交互式 SLO、算力电费成本与 Scope 2 / Scope 3 碳排放预算** 时的三大核心痛点：**全天候静态绑定高碳火电区域导致的单任务高碳排、热备沙箱池宿主机常驻满频 `performance` 模式造成的空载功耗浪费，以及按 vCPU 小时粗略均摊无法满足欧盟 CSRD / GHG Protocol 租户级审计精度要求**。
+
+### 31.1 碳感知 GreenOps 与智能体能效治理三大支柱
+
+1. **Pillar 1：受延迟约束的跨区边际碳强度（WattTime MOER）空间路由与异步批任务削峰填谷时间平移**：
+   - 在 `< 180 ms` 区域 RTT 约束内，通过 Azure Front Door 将在线请求动态优先导向水电/核电/风电低碳配对区（如 `Sweden Central ~12 gCO2eq/kWh` 或 `West US 2 ~42 gCO2eq/kWh`）；
+   - 同时由 KEDA Carbon-Intensity Scaler 将占集群算力 `45%` 的延迟容忍型异步 Agent 负载（夜间全仓安全扫描、RFT 轨迹合成、GraphRAG 社区重索引）平移至可再生能源弃风/弃光低谷期执行，使每 1,000 次 Agent 任务碳排放从 **`418.0 gCO2eq` 降至 `94.2 gCO2eq`（`-77.5%`）**，且交互式 SLO 违约率保持 **`0.0%`**。
+2. **Pillar 2：第五代 AMD EPYC Turin (`Standard_D96as_v7`) `amd-pstate-epp` 热备池智能降频与深睡眠 C-State 调优**：
+   - 对承载预热快照的待命微虚拟机核心启用硬件级 `amd-pstate-epp = balance_power` 能效自适配，仅在触发 `uffd` 缺页恢复瞬间执行微秒级 CPPC 硬件睿频唤醒，在完整保留 **`108.0 ms`** 极速恢复能力的同时，将宿主机待命空载功耗从 `410.0 W` 压降至 **`148.0 W`（`-63.9%` 空载功耗节省）**。
+3. **Pillar 3：内核态 eBPF Kepler + 硬件 RAPL 焦耳计数器驱动的租户级 CSRD Scope 2/3 精准碳账单**：
+   - 采集 CPU/DRAM RAPL（Running Average Power Limit）硬件能效寄存器与 GPU NVML 实时功率，并按 `entra_agent_id` 与 `sponsor_oid` 双重身份实时归集每焦耳能耗与区域实时碳因子，将租户级碳核算误差从传统 vCPU 均摊法的 `38.0%` 压缩至 **`1.9%`**，同时带动集群整体电力与冷却 TCO 下降 **`31.4%`**。
+
+### 31.2 WattTime 时空碳路由 + Turin `amd-pstate-epp` + Kepler RAPL 核算 vs 传统静态区域/满频运行对比表
+
+| 并发沙箱规模与 GreenOps 碳感知调度架构 | 宿主机节点 (`D96as_v7`) | **每千次任务碳排 (`gCO2eq`)** | **待命宿主机功耗** | **整体电力成本降幅** | **CSRD 碳核算误差** | **交互式 SLO 违约率** | **EU CSRD 合规状态** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`1,000` 沙箱 · WattTime 时空路由 + Turin `pstate` + Kepler RAPL** | `4` | **`94.2 gCO2eq` (`-77.5%`)** | **`148.0 W` (`-63.9%`)** | **`-31.4%`** | **`1.9%`** | `0.0%` | **`✅ CSRD / GHG 审计就绪`** |
+| **`10,000` 沙箱 · WattTime 时空路由 + Turin `pstate` + Kepler RAPL (推荐)** | **`26`** | **`94.2 gCO2eq` (`-77.5%`)** | **`148.0 W` (`-63.9%`)** | **`-31.4%`** | **`1.9%`** | **`0.0%`** | **`✅ CSRD / GHG 审计就绪`** |
+| **`50,000` 沙箱 · WattTime 时空路由 + Turin `pstate` + Kepler RAPL** | `129` | **`94.2 gCO2eq` (`-77.5%`)** | **`148.0 W` (`-63.9%`)** | **`-31.4%`** | **`1.9%`** | `0.0%` | **`✅ CSRD / GHG 审计就绪`** |
+| `10,000` 沙箱 · 传统碳盲静态区域绑定 + 全核常驻满频 + vCPU 粗略均摊 (反模式) | `26` | `418.0 gCO2eq` (`0.0%`) | `410.0 W` (`0.0%`) | `0.0%` | `38.0%` (❌ 审计失真) | `0.0%` | `❌ 缺乏硬件级碳归因` |
+
+---
+
+## 32. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1084,10 +1109,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 25 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封）
+# 2. 运行深度定量模型（全部 26 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 34 项单元测试（100% 覆盖 6 大运行时契约、25 大深度物理模型、26 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 35 项单元测试（100% 覆盖 6 大运行时契约、26 大深度物理模型、27 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

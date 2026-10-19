@@ -21,6 +21,7 @@ from typing import Dict, List
 from agent_infra_sizer import (
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -397,6 +398,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "classical_rsa_ecdsa_unresumed_hndl_exposed"),
     ]
 
+    greenops_carbon_profiles: List[Dict[str, object]] = [
+        simulate_carbon_aware_greenops_fleet_scheduler(1_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
+        simulate_carbon_aware_greenops_fleet_scheduler(10_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
+        simulate_carbon_aware_greenops_fleet_scheduler(50_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
+        simulate_carbon_aware_greenops_fleet_scheduler(10_000, "carbon_blind_static_region_performance_governor"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -422,6 +430,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "embodied_robotics_digital_twin_profiles": embodied_robotics_digital_twin_profiles,
         "online_rft_verifier_profiles": online_rft_verifier_profiles,
         "pqc_crypto_agility_profiles": pqc_crypto_agility_profiles,
+        "greenops_carbon_profiles": greenops_carbon_profiles,
     }
 
 

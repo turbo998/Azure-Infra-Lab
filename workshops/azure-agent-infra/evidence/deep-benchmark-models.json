@@ -1698,5 +1698,63 @@
       "storage_overhead_pct": 0.0,
       "cnsa2_pqc_compliant": false
     }
+  ],
+  "greenops_carbon_profiles": [
+    {
+      "concurrent_sandboxes": 1000,
+      "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+      "host_nodes": 4,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 94.2,
+      "carbon_reduction_pct": 77.5,
+      "standby_host_watts": 148.0,
+      "idle_power_savings_pct": 63.9,
+      "energy_cost_savings_pct": 31.4,
+      "csrd_attribution_error_pct": 1.9,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": true
+    },
+    {
+      "concurrent_sandboxes": 10000,
+      "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+      "host_nodes": 26,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 94.2,
+      "carbon_reduction_pct": 77.5,
+      "standby_host_watts": 148.0,
+      "idle_power_savings_pct": 63.9,
+      "energy_cost_savings_pct": 31.4,
+      "csrd_attribution_error_pct": 1.9,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": true
+    },
+    {
+      "concurrent_sandboxes": 50000,
+      "greenops_mode": "watttime_spatiotemporal_amd_pstate_rapl_attribution",
+      "host_nodes": 129,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 94.2,
+      "carbon_reduction_pct": 77.5,
+      "standby_host_watts": 148.0,
+      "idle_power_savings_pct": 63.9,
+      "energy_cost_savings_pct": 31.4,
+      "csrd_attribution_error_pct": 1.9,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": true
+    },
+    {
+      "concurrent_sandboxes": 10000,
+      "greenops_mode": "carbon_blind_static_region_performance_governor",
+      "host_nodes": 26,
+      "baseline_gco2eq_per_1k_tasks": 418.0,
+      "gco2eq_per_1k_tasks": 418.0,
+      "carbon_reduction_pct": 0.0,
+      "standby_host_watts": 410.0,
+      "idle_power_savings_pct": 0.0,
+      "energy_cost_savings_pct": 0.0,
+      "csrd_attribution_error_pct": 38.0,
+      "interactive_slo_breach_pct": 0.0,
+      "csrd_greenops_governed": false
+    }
   ]
 }

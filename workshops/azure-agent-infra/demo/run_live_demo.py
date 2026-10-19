@@ -28,6 +28,7 @@ from agent_infra_sizer import (  # noqa: E402
     recommend_runtime,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
+    simulate_carbon_aware_greenops_fleet_scheduler,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -348,6 +349,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "pqc_hybrid_10k": simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
             "pqc_hybrid_50k": simulate_pqc_hybrid_mtls_agent_crypto_agility(50_000, "x25519_mlkem768_mldsa65_hndl_envelope"),
             "classical_exposed_10k": simulate_pqc_hybrid_mtls_agent_crypto_agility(10_000, "classical_rsa_ecdsa_unresumed_hndl_exposed"),
+        },
+        "demo_26_carbon_aware_greenops_scheduler": {
+            "greenops_1k": simulate_carbon_aware_greenops_fleet_scheduler(1_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
+            "greenops_10k": simulate_carbon_aware_greenops_fleet_scheduler(10_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
+            "greenops_50k": simulate_carbon_aware_greenops_fleet_scheduler(50_000, "watttime_spatiotemporal_amd_pstate_rapl_attribution"),
+            "carbon_blind_10k": simulate_carbon_aware_greenops_fleet_scheduler(10_000, "carbon_blind_static_region_performance_governor"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
