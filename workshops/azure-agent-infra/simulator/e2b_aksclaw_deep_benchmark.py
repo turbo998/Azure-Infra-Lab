@@ -48,6 +48,7 @@ from agent_infra_sizer import (
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
@@ -493,6 +494,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_space_orbital_satellite_edge_sandbox(120, "raw_downlink_tcp_http_unshielded_ram"),
     ]
 
+    smart_grid_iec61850_profiles: List[Dict[str, object]] = [
+        simulate_smart_grid_iec61850_pmu_sandbox(120, "pmu_edge_fft_acopf_barrier_goose_interlock"),
+        simulate_smart_grid_iec61850_pmu_sandbox(500, "pmu_edge_fft_acopf_barrier_goose_interlock"),
+        simulate_smart_grid_iec61850_pmu_sandbox(2_000, "pmu_edge_fft_acopf_barrier_goose_interlock"),
+        simulate_smart_grid_iec61850_pmu_sandbox(500, "raw_wan_pmu_unverified_llm_scada_write"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -530,6 +538,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "quantum_hybrid_qir_profiles": quantum_hybrid_qir_profiles,
         "telco_oran_slicing_profiles": telco_oran_slicing_profiles,
         "space_orbital_satellite_profiles": space_orbital_satellite_profiles,
+        "smart_grid_iec61850_profiles": smart_grid_iec61850_profiles,
     }
 
 

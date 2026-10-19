@@ -55,6 +55,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
@@ -432,6 +433,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "orbital_bpv7_120sat": simulate_space_orbital_satellite_edge_sandbox(120, "orbital_isl_bpv7_rad_triage_seu_interlock"),
             "orbital_bpv7_600sat": simulate_space_orbital_satellite_edge_sandbox(600, "orbital_isl_bpv7_rad_triage_seu_interlock"),
             "raw_downlink_tcp_120sat": simulate_space_orbital_satellite_edge_sandbox(120, "raw_downlink_tcp_http_unshielded_ram"),
+        },
+        "demo_38_smart_grid_iec61850_pmu_sandbox": {
+            "smart_grid_governed_120bays": simulate_smart_grid_iec61850_pmu_sandbox(120, "pmu_edge_fft_acopf_barrier_goose_interlock"),
+            "smart_grid_governed_500bays": simulate_smart_grid_iec61850_pmu_sandbox(500, "pmu_edge_fft_acopf_barrier_goose_interlock"),
+            "smart_grid_governed_2000bays": simulate_smart_grid_iec61850_pmu_sandbox(2_000, "pmu_edge_fft_acopf_barrier_goose_interlock"),
+            "raw_wan_scada_500bays": simulate_smart_grid_iec61850_pmu_sandbox(500, "raw_wan_pmu_unverified_llm_scada_write"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

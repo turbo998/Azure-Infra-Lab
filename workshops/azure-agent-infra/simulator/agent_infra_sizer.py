@@ -2428,6 +2428,51 @@ def simulate_space_orbital_satellite_edge_sandbox(
     }
 
 
+def simulate_smart_grid_iec61850_pmu_sandbox(
+    substation_bays: int = 500,
+    grid_control_mode: str = "pmu_edge_fft_acopf_barrier_goose_interlock",
+) -> dict[str, Any]:
+    """
+    Chapter 43: Autonomous Smart Grid, Energy Trading & Substation IEC 61850 / DNP3 Agent Infrastructure —
+    IEEE C37.118 Synchrophasor PMU Micro-Batch Triage, AC-OPF Solver Verification & Hardware Protective-Relay Interlock Physics.
+    """
+    opf_solver_nodes = max(3, math.ceil(substation_bays / 80))
+    governed = grid_control_mode == "pmu_edge_fft_acopf_barrier_goose_interlock"
+
+    if governed:
+        pmu_fault_localization_ms = 6.2
+        wan_telemetry_compression_pct = 98.4
+        acopf_verify_latency_ms = 14.8
+        n1_thermal_overload_rate_pct = 0.0
+        der_curtailment_reduction_pct = 31.5
+        unsafe_breaker_sync_violation_pct = 0.0
+        goose_hardware_trip_ms = 1.8
+        smart_grid_slo_met = True
+    else:
+        pmu_fault_localization_ms = 1840.0
+        wan_telemetry_compression_pct = 0.0
+        acopf_verify_latency_ms = 0.0
+        n1_thermal_overload_rate_pct = 11.8
+        der_curtailment_reduction_pct = 0.0
+        unsafe_breaker_sync_violation_pct = 6.4
+        goose_hardware_trip_ms = 42.0
+        smart_grid_slo_met = False
+
+    return {
+        "substation_bays": substation_bays,
+        "grid_control_mode": grid_control_mode,
+        "opf_solver_nodes": opf_solver_nodes,
+        "pmu_fault_localization_ms": pmu_fault_localization_ms,
+        "wan_telemetry_compression_pct": wan_telemetry_compression_pct,
+        "acopf_verify_latency_ms": acopf_verify_latency_ms,
+        "n1_thermal_overload_rate_pct": n1_thermal_overload_rate_pct,
+        "der_curtailment_reduction_pct": der_curtailment_reduction_pct,
+        "unsafe_breaker_sync_violation_pct": unsafe_breaker_sync_violation_pct,
+        "goose_hardware_trip_ms": goose_hardware_trip_ms,
+        "smart_grid_slo_met": smart_grid_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

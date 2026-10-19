@@ -2354,5 +2354,59 @@
       "seu_checksum_verify_overhead_ms": 0.0,
       "orbital_edge_governed": false
     }
+  ],
+  "smart_grid_iec61850_profiles": [
+    {
+      "substation_bays": 120,
+      "grid_control_mode": "pmu_edge_fft_acopf_barrier_goose_interlock",
+      "opf_solver_nodes": 3,
+      "pmu_fault_localization_ms": 6.2,
+      "wan_telemetry_compression_pct": 98.4,
+      "acopf_verify_latency_ms": 14.8,
+      "n1_thermal_overload_rate_pct": 0.0,
+      "der_curtailment_reduction_pct": 31.5,
+      "unsafe_breaker_sync_violation_pct": 0.0,
+      "goose_hardware_trip_ms": 1.8,
+      "smart_grid_slo_met": true
+    },
+    {
+      "substation_bays": 500,
+      "grid_control_mode": "pmu_edge_fft_acopf_barrier_goose_interlock",
+      "opf_solver_nodes": 7,
+      "pmu_fault_localization_ms": 6.2,
+      "wan_telemetry_compression_pct": 98.4,
+      "acopf_verify_latency_ms": 14.8,
+      "n1_thermal_overload_rate_pct": 0.0,
+      "der_curtailment_reduction_pct": 31.5,
+      "unsafe_breaker_sync_violation_pct": 0.0,
+      "goose_hardware_trip_ms": 1.8,
+      "smart_grid_slo_met": true
+    },
+    {
+      "substation_bays": 2000,
+      "grid_control_mode": "pmu_edge_fft_acopf_barrier_goose_interlock",
+      "opf_solver_nodes": 25,
+      "pmu_fault_localization_ms": 6.2,
+      "wan_telemetry_compression_pct": 98.4,
+      "acopf_verify_latency_ms": 14.8,
+      "n1_thermal_overload_rate_pct": 0.0,
+      "der_curtailment_reduction_pct": 31.5,
+      "unsafe_breaker_sync_violation_pct": 0.0,
+      "goose_hardware_trip_ms": 1.8,
+      "smart_grid_slo_met": true
+    },
+    {
+      "substation_bays": 500,
+      "grid_control_mode": "raw_wan_pmu_unverified_llm_scada_write",
+      "opf_solver_nodes": 7,
+      "pmu_fault_localization_ms": 1840.0,
+      "wan_telemetry_compression_pct": 0.0,
+      "acopf_verify_latency_ms": 0.0,
+      "n1_thermal_overload_rate_pct": 11.8,
+      "der_curtailment_reduction_pct": 0.0,
+      "unsafe_breaker_sync_violation_pct": 6.4,
+      "goose_hardware_trip_ms": 42.0,
+      "smart_grid_slo_met": false
+    }
   ]
 }

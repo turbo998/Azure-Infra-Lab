@@ -42,6 +42,7 @@ from agent_infra_sizer import (
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
+    simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
@@ -738,6 +739,20 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(orb["orbital_edge_governed"])
         self.assertAlmostEqual(raw["tcp_session_reset_failure_pct"], 78.4)
         self.assertFalse(raw["orbital_edge_governed"])
+
+    def test_smart_grid_iec61850_pmu_sandbox(self) -> None:
+        grid = simulate_smart_grid_iec61850_pmu_sandbox(500, "pmu_edge_fft_acopf_barrier_goose_interlock")
+        raw = simulate_smart_grid_iec61850_pmu_sandbox(500, "raw_wan_pmu_unverified_llm_scada_write")
+        self.assertAlmostEqual(grid["pmu_fault_localization_ms"], 6.2)
+        self.assertAlmostEqual(grid["wan_telemetry_compression_pct"], 98.4)
+        self.assertAlmostEqual(grid["acopf_verify_latency_ms"], 14.8)
+        self.assertEqual(grid["n1_thermal_overload_rate_pct"], 0.0)
+        self.assertAlmostEqual(grid["der_curtailment_reduction_pct"], 31.5)
+        self.assertEqual(grid["unsafe_breaker_sync_violation_pct"], 0.0)
+        self.assertAlmostEqual(grid["goose_hardware_trip_ms"], 1.8)
+        self.assertTrue(grid["smart_grid_slo_met"])
+        self.assertAlmostEqual(raw["n1_thermal_overload_rate_pct"], 11.8)
+        self.assertFalse(raw["smart_grid_slo_met"])
 
 
 if __name__ == "__main__":
