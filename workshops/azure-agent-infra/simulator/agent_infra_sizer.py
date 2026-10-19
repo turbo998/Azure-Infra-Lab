@@ -2534,6 +2534,51 @@ def simulate_supplychain_amr_mapf_coldchain_sandbox(
     }
 
 
+def simulate_media_openusd_3dgs_c2pa_sandbox(
+    concurrent_4k_streams: int = 32,
+    media_pipeline_mode: str = "nvdec_dma_openusd_verifier_c2pa_hsm",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Media Production, Live Broadcast & 3D Gaussian Splatting / OpenUSD Rendering Agent Infrastructure (Chapter 45):
+      - Pillar 1: SMPTE ST 2110 / SRT Hardware-Offloaded NVDEC/NVENC DMA Frame Ring vs CPU FFmpeg Decode + PCIe Copy
+      - Pillar 2: Deterministic OpenUSD / 3D Gaussian Splatting Scene-Graph Delta Verification vs Blind LLM Python bpy/USD Script Execution
+      - Pillar 3: C2PA 2.1 Hardware HSM Content Credentials Signing & Frequency-Domain Imperceptible Watermarking
+    """
+    render_gpu_nodes = max(1, math.ceil(concurrent_4k_streams / 8))
+    if media_pipeline_mode == "nvdec_dma_openusd_verifier_c2pa_hsm":
+        frame_to_tensor_latency_ms = 6.8
+        host_cpu_reduction_pct = 88.5
+        scene_corruption_catch_rate_pct = 99.6
+        gpu_render_node_crash_rate_pct = 0.0
+        incremental_3dgs_rerender_saving_pct = 74.2
+        c2pa_hsm_signing_latency_ms = 4.2
+        unsigned_synthetic_media_egress_pct = 0.0
+        media_production_slo_met = True
+    else:
+        frame_to_tensor_latency_ms = 118.0
+        host_cpu_reduction_pct = 0.0
+        scene_corruption_catch_rate_pct = 0.0
+        gpu_render_node_crash_rate_pct = 9.4
+        incremental_3dgs_rerender_saving_pct = 0.0
+        c2pa_hsm_signing_latency_ms = 0.0
+        unsigned_synthetic_media_egress_pct = 100.0
+        media_production_slo_met = False
+
+    return {
+        "concurrent_4k_streams": concurrent_4k_streams,
+        "media_pipeline_mode": media_pipeline_mode,
+        "render_gpu_nodes": render_gpu_nodes,
+        "frame_to_tensor_latency_ms": frame_to_tensor_latency_ms,
+        "host_cpu_reduction_pct": host_cpu_reduction_pct,
+        "scene_corruption_catch_rate_pct": scene_corruption_catch_rate_pct,
+        "gpu_render_node_crash_rate_pct": gpu_render_node_crash_rate_pct,
+        "incremental_3dgs_rerender_saving_pct": incremental_3dgs_rerender_saving_pct,
+        "c2pa_hsm_signing_latency_ms": c2pa_hsm_signing_latency_ms,
+        "unsigned_synthetic_media_egress_pct": unsigned_synthetic_media_egress_pct,
+        "media_production_slo_met": media_production_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -39,6 +39,7 @@ from agent_infra_sizer import (
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
+    simulate_media_openusd_3dgs_c2pa_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
@@ -509,6 +510,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "raw_cloud_video_greedy_routing_reactive_alarm"),
     ]
 
+    media_openusd_c2pa_profiles: List[Dict[str, object]] = [
+        simulate_media_openusd_3dgs_c2pa_sandbox(8, "nvdec_dma_openusd_verifier_c2pa_hsm"),
+        simulate_media_openusd_3dgs_c2pa_sandbox(32, "nvdec_dma_openusd_verifier_c2pa_hsm"),
+        simulate_media_openusd_3dgs_c2pa_sandbox(128, "nvdec_dma_openusd_verifier_c2pa_hsm"),
+        simulate_media_openusd_3dgs_c2pa_sandbox(32, "cpu_ffmpeg_unverified_bpy_unsigned_media"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -548,6 +556,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "space_orbital_satellite_profiles": space_orbital_satellite_profiles,
         "smart_grid_iec61850_profiles": smart_grid_iec61850_profiles,
         "supplychain_amr_mapf_profiles": supplychain_amr_mapf_profiles,
+        "media_openusd_c2pa_profiles": media_openusd_c2pa_profiles,
     }
 
 

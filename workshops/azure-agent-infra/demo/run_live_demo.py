@@ -46,6 +46,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
+    simulate_media_openusd_3dgs_c2pa_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
@@ -446,6 +447,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "scm_mapf_2000amr": simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
             "scm_mapf_8000amr": simulate_supplychain_amr_mapf_coldchain_sandbox(8_000, "edge_rfid_fusion_mapf_cbs_arrhenius_guard"),
             "raw_greedy_2000amr": simulate_supplychain_amr_mapf_coldchain_sandbox(2_000, "raw_cloud_video_greedy_routing_reactive_alarm"),
+        },
+        "demo_40_media_openusd_3dgs_c2pa_sandbox": {
+            "media_openusd_8streams": simulate_media_openusd_3dgs_c2pa_sandbox(8, "nvdec_dma_openusd_verifier_c2pa_hsm"),
+            "media_openusd_32streams": simulate_media_openusd_3dgs_c2pa_sandbox(32, "nvdec_dma_openusd_verifier_c2pa_hsm"),
+            "media_openusd_128streams": simulate_media_openusd_3dgs_c2pa_sandbox(128, "nvdec_dma_openusd_verifier_c2pa_hsm"),
+            "raw_ffmpeg_32streams": simulate_media_openusd_3dgs_c2pa_sandbox(32, "cpu_ffmpeg_unverified_bpy_unsigned_media"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

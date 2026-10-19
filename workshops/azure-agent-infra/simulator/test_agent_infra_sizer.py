@@ -33,6 +33,7 @@ from agent_infra_sizer import (
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
+    simulate_media_openusd_3dgs_c2pa_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
@@ -769,6 +770,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(scm["supplychain_slo_met"])
         self.assertAlmostEqual(raw["amr_deadlock_collision_rate_pct"], 8.6)
         self.assertFalse(raw["supplychain_slo_met"])
+
+    def test_media_openusd_3dgs_c2pa_sandbox(self) -> None:
+        med = simulate_media_openusd_3dgs_c2pa_sandbox(32, "nvdec_dma_openusd_verifier_c2pa_hsm")
+        raw = simulate_media_openusd_3dgs_c2pa_sandbox(32, "cpu_ffmpeg_unverified_bpy_unsigned_media")
+        self.assertEqual(med["render_gpu_nodes"], 4)
+        self.assertAlmostEqual(med["frame_to_tensor_latency_ms"], 6.8)
+        self.assertAlmostEqual(med["host_cpu_reduction_pct"], 88.5)
+        self.assertAlmostEqual(med["scene_corruption_catch_rate_pct"], 99.6)
+        self.assertEqual(med["gpu_render_node_crash_rate_pct"], 0.0)
+        self.assertAlmostEqual(med["incremental_3dgs_rerender_saving_pct"], 74.2)
+        self.assertAlmostEqual(med["c2pa_hsm_signing_latency_ms"], 4.2)
+        self.assertEqual(med["unsigned_synthetic_media_egress_pct"], 0.0)
+        self.assertTrue(med["media_production_slo_met"])
+        self.assertAlmostEqual(raw["gpu_render_node_crash_rate_pct"], 9.4)
+        self.assertFalse(raw["media_production_slo_met"])
 
 
 if __name__ == "__main__":

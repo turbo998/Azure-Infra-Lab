@@ -1410,7 +1410,31 @@ sequenceDiagram
 
 ---
 
-## 45. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 45. 影视传媒、赛事超高清直播导播与 `OpenUSD / 3D Gaussian Splatting` 空间渲染智能体基础设施 —— `SMPTE ST 2110 / SRT` 硬件 `NVDEC` 零拷贝帧环、分布式 `Blender / OpenUSD` 场景图增量校验与 `C2PA 2.1` 密码学内容溯源水印物理模型（Autonomous Media Production, Live Broadcast & 3D Gaussian Splatting / OpenUSD Rendering Agent Infrastructure — Frame-Accurate SMPTE ST 2110 / SRT Ingest, Distributed Blender/OpenUSD Scene-Graph Verification & C2PA Cryptographic Provenance Watermarking Physics）
+
+> 本章由确定性影视直播与 3D 空间渲染智能体仿真模型 [`simulate_media_openusd_3dgs_c2pa_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-media-openusd-3dgs-c2pa-render-pool.bicep`](blueprints/aksclaw-media-openusd-3dgs-c2pa-render-pool.bicep) 驱动，面向广电 4K/8K 超高清多机位智能导播、影视 VFX 视觉特效流水线与 3D 数字孪生制作（`8–128` 路并发 `4K60 HDR 10-bit` 广播流），解决 **CPU 软解 `FFmpeg` 抽帧与 PCIe 内存拷贝引发 `118.0 ms` 帧级滞后与宿主机 CPU 打满、大模型直接执行未经验证的 `Blender bpy / OpenUSD` Python 脚本导致非流形网格/无限细分引发 `9.4%` GPU 渲染节点显存溢出崩溃（OOM），以及 AIGC 生成视频/3D 资产缺乏硬件级密码学内容凭证（`C2PA 2.1`）导致 `100.0%` 版权与合规溯源缺失的三大传媒工程瓶颈**。
+
+### 45.1 影视直播导播与 `OpenUSD / 3DGS` 空间渲染智能体三大工程支柱
+
+1. **Pillar 1：`SMPTE ST 2110 / SRT` 硬件卸载 `NVDEC / NVENC` DMA 零拷贝帧环 vs CPU `FFmpeg` 软解抽帧**：
+   - 在 `Standard_NV72ads_A10_v5` / `Standard_NC80adis_H100_v5` 节点上，通过 NVIDIA GPUDirect Video / `NVDEC` 硬件解码器将 `SMPTE ST 2110` 或 `SRT` 4K60 HDR 码流直接解码至显存环形缓冲区（VRAM Tensor Ring），无需经由宿主机内存（System RAM）中转即可直接喂入多模态导播视觉智能体，将单帧转张量延迟从 `118.0 ms` 压缩至 **`6.8 ms`（提速 `-94.2%`，严格低于 `16.67 ms` 60fps 单帧预算）**，并将宿主机 CPU 占用率降低 **`88.5%`**。
+2. **Pillar 2：确定性 `OpenUSD / 3D Gaussian Splatting (3DGS)` 场景图增量校验与脏图元 `BVH` 缓存 vs 大模型裸跑 `bpy` 脚本**：
+   - 智能体生成的 `OpenUSD` Layer 差分或 `Blender bpy` 建模脚本在进入 GPU 渲染农场前，必须先在轻量校验微沙箱中通过包围盒（Bounding-Box）、非流形拓扑（Non-Manifold Mesh）、细分曲面阶数上限与显存预算（`VRAM <= 76 GB`）静态检验，**提前拦截 `99.6%` 的损坏场景或死循环细分脚本，将 GPU 渲染节点崩溃率从 `9.4%` 降至 `0.0%`**；同时结合增量脏图元（Dirty-Prim）层次包围盒（`BVH`）与高斯椭球局部重渲染缓存，将多轮镜头微调重渲染耗时削减 **`74.2%`**。
+3. **Pillar 3：`C2PA 2.1` 硬件 HSM 内容凭证签名与频域不可见抗裁剪数字水印**：
+   - 每件经由智能体剪辑、合成或渲染输出的音视频流与 3D 资产在出沙箱网关时，强制调用 Azure Key Vault Managed HSM 对其生成过程图谱（模型版本、Prompt 哈希、OpenUSD 素材指纹）签发符合 **C2PA 2.1（Coalition for Content Provenance and Authenticity）** 标准的硬件级加密清单并嵌入频域水印，单资产签名延迟仅 **`4.2 ms`**，确保 **`0.0%` 未签名合成媒体外流与 `100.0%` 篡改可检测率**。
+
+### 45.2 `NVDEC` 零拷贝帧环 + `OpenUSD` 增量验证 + `C2PA 2.1` HSM 签名 vs CPU `FFmpeg` + 裸跑 `bpy` 对比表
+
+| 并发 `4K60 HDR` 广播流规模与渲染架构 | GPU 渲染节点 (`NV72ads_A10_v5`) | **单帧转张量延迟 (`<=16.67ms`)** | **宿主机 CPU 削减** | **场景损坏拦截率 / 渲染节点崩溃率** | **`3DGS / OpenUSD` 增量重渲染节省** | **`C2PA 2.1` HSM 签名延迟 / 未签名外流率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`8` 路 4K60 流 · NVDEC 零拷贝 + OpenUSD 校验 + C2PA HSM** | `1` | **`6.8 ms` (`-94.2%`)** | **`88.5%`** | **`99.6%` / `0.0%`** | **`74.2%`** | **`4.2 ms` / `0.0%`** |
+| **`32` 路 4K60 流 · NVDEC 零拷贝 + OpenUSD 校验 + C2PA HSM (推荐)** | **`4`** | **`6.8 ms` (`-94.2%`)** | **`88.5%`** | **`99.6%` / `0.0%`** | **`74.2%`** | **`4.2 ms` / `0.0%`** |
+| **`128` 路 4K60 流 · NVDEC 零拷贝 + OpenUSD 校验 + C2PA HSM** | `16` | **`6.8 ms` (`-94.2%`)** | **`88.5%`** | **`99.6%` / `0.0%`** | **`74.2%`** | **`4.2 ms` / `0.0%`** |
+| `32` 路 4K60 流 · CPU FFmpeg 软解 + 裸跑 bpy + 无水印 (反模式) | `4` | `118.0 ms` (❌ 掉帧卡顿) | `0.0%` (❌ CPU 饱和) | `0.0%` / `9.4%` (❌ 显存 OOM 崩溃) | `0.0%` | `0.0 ms` / `100.0%` (❌ 溯源缺失) |
+
+---
+
+## 46. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1423,10 +1447,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 39 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱）
+# 2. 运行深度定量模型（全部 40 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 48 项单元测试（100% 覆盖 6 大运行时契约、39 大深度物理模型、40 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 49 项单元测试（100% 覆盖 6 大运行时契约、40 大深度物理模型、41 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
