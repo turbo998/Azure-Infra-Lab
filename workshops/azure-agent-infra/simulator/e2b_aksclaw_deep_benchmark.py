@@ -50,6 +50,7 @@ from agent_infra_sizer import (
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
+    simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
@@ -549,6 +550,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_quant_trading_fix_afxdp_risk_sandbox(200, "kernel_tcp_json_unfiltered_ntp_clock"),
     ]
 
+    retail_pos_esl_vision_profiles: List[Dict[str, object]] = [
+        simulate_retail_pos_esl_vision_edge_sandbox(100, "arc_edge_trt_pawr_esl_pci_blur"),
+        simulate_retail_pos_esl_vision_edge_sandbox(500, "arc_edge_trt_pawr_esl_pci_blur"),
+        simulate_retail_pos_esl_vision_edge_sandbox(2_000, "arc_edge_trt_pawr_esl_pci_blur"),
+        simulate_retail_pos_esl_vision_edge_sandbox(500, "cloud_rtsp_backhaul_unicast_esl_raw_video"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -593,6 +601,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "semiconductor_eda_rtl_profiles": semiconductor_eda_rtl_profiles,
         "biopharma_alphafold_wetlab_profiles": biopharma_alphafold_wetlab_profiles,
         "quant_trading_fix_afxdp_profiles": quant_trading_fix_afxdp_profiles,
+        "retail_pos_esl_vision_profiles": retail_pos_esl_vision_profiles,
     }
 
 

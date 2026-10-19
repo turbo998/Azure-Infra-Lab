@@ -2930,6 +2930,60 @@
         "cat_mifid_audit_completeness_pct": 62.0,
         "quant_trading_slo_met": false
       }
+    ],
+    "retail_pos_esl_vision_profiles": [
+      {
+        "store_locations": 100,
+        "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+        "store_edge_appliances": 100,
+        "total_esl_tags": 5000000,
+        "checkout_sku_swap_latency_ms": 28.0,
+        "wan_bandwidth_reduction_pct": 97.8,
+        "esl_50k_sync_latency_sec": 18.5,
+        "shelf_pos_price_mismatch_pct": 0.0,
+        "inline_privacy_blur_latency_ms": 1.4,
+        "pci_gdpr_biometric_leak_pct": 0.0,
+        "retail_edge_slo_met": true
+      },
+      {
+        "store_locations": 500,
+        "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+        "store_edge_appliances": 500,
+        "total_esl_tags": 25000000,
+        "checkout_sku_swap_latency_ms": 28.0,
+        "wan_bandwidth_reduction_pct": 97.8,
+        "esl_50k_sync_latency_sec": 18.5,
+        "shelf_pos_price_mismatch_pct": 0.0,
+        "inline_privacy_blur_latency_ms": 1.4,
+        "pci_gdpr_biometric_leak_pct": 0.0,
+        "retail_edge_slo_met": true
+      },
+      {
+        "store_locations": 2000,
+        "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+        "store_edge_appliances": 2000,
+        "total_esl_tags": 100000000,
+        "checkout_sku_swap_latency_ms": 28.0,
+        "wan_bandwidth_reduction_pct": 97.8,
+        "esl_50k_sync_latency_sec": 18.5,
+        "shelf_pos_price_mismatch_pct": 0.0,
+        "inline_privacy_blur_latency_ms": 1.4,
+        "pci_gdpr_biometric_leak_pct": 0.0,
+        "retail_edge_slo_met": true
+      },
+      {
+        "store_locations": 500,
+        "retail_edge_mode": "cloud_rtsp_backhaul_unicast_esl_raw_video",
+        "store_edge_appliances": 500,
+        "total_esl_tags": 25000000,
+        "checkout_sku_swap_latency_ms": 680.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "esl_50k_sync_latency_sec": 1850.0,
+        "shelf_pos_price_mismatch_pct": 4.8,
+        "inline_privacy_blur_latency_ms": 0.0,
+        "pci_gdpr_biometric_leak_pct": 100.0,
+        "retail_edge_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -5404,5 +5458,59 @@
       "quant_trading_slo_met": false
     }
   },
-  "trace_sha256": "73b40ad8f3ed421ac7b5c43707fcd7704d3e1b47ec7a95097b1f8514c10948c4"
+  "demo_45_retail_pos_esl_vision_edge_sandbox": {
+    "retail_100_stores": {
+      "store_locations": 100,
+      "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+      "store_edge_appliances": 100,
+      "total_esl_tags": 5000000,
+      "checkout_sku_swap_latency_ms": 28.0,
+      "wan_bandwidth_reduction_pct": 97.8,
+      "esl_50k_sync_latency_sec": 18.5,
+      "shelf_pos_price_mismatch_pct": 0.0,
+      "inline_privacy_blur_latency_ms": 1.4,
+      "pci_gdpr_biometric_leak_pct": 0.0,
+      "retail_edge_slo_met": true
+    },
+    "retail_500_stores": {
+      "store_locations": 500,
+      "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+      "store_edge_appliances": 500,
+      "total_esl_tags": 25000000,
+      "checkout_sku_swap_latency_ms": 28.0,
+      "wan_bandwidth_reduction_pct": 97.8,
+      "esl_50k_sync_latency_sec": 18.5,
+      "shelf_pos_price_mismatch_pct": 0.0,
+      "inline_privacy_blur_latency_ms": 1.4,
+      "pci_gdpr_biometric_leak_pct": 0.0,
+      "retail_edge_slo_met": true
+    },
+    "retail_2000_stores": {
+      "store_locations": 2000,
+      "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+      "store_edge_appliances": 2000,
+      "total_esl_tags": 100000000,
+      "checkout_sku_swap_latency_ms": 28.0,
+      "wan_bandwidth_reduction_pct": 97.8,
+      "esl_50k_sync_latency_sec": 18.5,
+      "shelf_pos_price_mismatch_pct": 0.0,
+      "inline_privacy_blur_latency_ms": 1.4,
+      "pci_gdpr_biometric_leak_pct": 0.0,
+      "retail_edge_slo_met": true
+    },
+    "raw_cloud_500_stores": {
+      "store_locations": 500,
+      "retail_edge_mode": "cloud_rtsp_backhaul_unicast_esl_raw_video",
+      "store_edge_appliances": 500,
+      "total_esl_tags": 25000000,
+      "checkout_sku_swap_latency_ms": 680.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "esl_50k_sync_latency_sec": 1850.0,
+      "shelf_pos_price_mismatch_pct": 4.8,
+      "inline_privacy_blur_latency_ms": 0.0,
+      "pci_gdpr_biometric_leak_pct": 100.0,
+      "retail_edge_slo_met": false
+    }
+  },
+  "trace_sha256": "7016784d6b04576e6a2144d26c6286e8eabb3b7e2691eeb08a6f1c814f43ddd2"
 }

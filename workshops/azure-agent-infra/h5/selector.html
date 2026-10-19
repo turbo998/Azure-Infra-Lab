@@ -442,6 +442,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(42)">43. 半导体 EDA 芯片 RTL-to-GDSII ANF Ultra + Standard_FX48mds 4.0GHz 形式化验证与 FlexNet 许可证池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(43)">44. 生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对 + SiLA-2 湿实验机械臂互锁与 SecureDNA 筛查池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(44)">45. 量化交易 Standard_FX48mds PPG + AF_XDP 零拷贝订单簿 + SEC 15c3-5 盘前风控与 PTP 纳秒审计池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(45)">46. 智慧零售 Arc 门店边缘视觉防损 + BLE 5.4 PAwR 电子价签原子锁价与 PCI-DSS v4.0 内联脱敏池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1466,6 +1467,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 45: Autonomous Retail POS Edge, BLE 5.4 PAwR ESL Dynamic Pricing & PCI-DSS v4.0 Privacy-Blurred Loss Prevention -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 45 · RETAIL POS EDGE VISION LOSS-PREVENTION, BLE 5.4 PAWR ESL ATOMIC PRICE-LATCH &amp; PCI-DSS V4.0 PRIVACY BLUR SIZER</span>
+    <h2>智慧零售门店边缘防损、BLE 5.4 PAwR 电子价签（ESL）两阶段原子锁价与 PCI-DSS v4.0 内联隐私脱敏测算器 (Chapter 50)</h2>
+    <div class="sub">量化在 <code>100 – 2,000</code> 家大型商超门店规模下（单店 <code>50,000</code> 枚电子价签），启用 <code>Azure Stack Edge Pro 2 / Arc K8s</code> 本地 <code>TensorRT-LLM + YOLOv10</code> 自助收银换标检测（延迟从 <code>680.0 ms</code> 降至 <code>28.0 ms</code>，削减 <code>97.8%</code> 门店 WAN 带宽）、<code>BLE 5.4 PAwR</code> 双向广播 + 两阶段 POS 原子价格一致性锁（单店 <code>50,000</code> 价签变价耗时从 <code>1,850.0 s</code> 降至 <code>18.5 s</code>，货架-POS 价格不一致率从 <code>4.8%</code> 降至 <code>0.0%</code>）与 GPU DMA 内联人脸/银行卡号脱敏（<code>1.4 ms</code> 开销，<code>0.0%</code> 生物特征与 PAN 泄露）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 连锁商超门店边缘节点规模 (Connected Retail Store Locations): <strong id="lbl_ret_stores" style="color:var(--teal)">500</strong></label>
+          <input type="range" id="rng_ret_stores" min="100" max="2000" step="100" value="500" oninput="runRetailLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 门店视觉防损、电子价签变价协议与收银台隐私脱敏模式 (Retail Store-Edge Architecture Mode)</label>
+          <select id="sel_ret_mode" onchange="runRetailLab()">
+            <option value="arc_edge_trt_pawr_esl_pci_blur" selected>Arc 本地防损推理 (28ms/-97.8% WAN) + BLE 5.4 PAwR 原子锁价 (18.5s/0% 错价) + 内联脱敏 (推荐)</option>
+            <option value="cloud_rtsp_backhaul_unicast_esl_raw_video">传统反模式：云端 RTSP 视频回传 (680ms) + 单播 ESL 轮询 (1,850s/4.8% 错价) + 原始画面落盘</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="retOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2285,6 +2309,22 @@ resource quantTradingPool 'Microsoft.ContainerService/managedClusters/agentPools
       'aksclaw.io/ptp-clock-sync': 'hyperv-phc-1588v2-180ns-worm-audit'
     }
   }
+}`,
+`// 46. Retail POS Edge Vision Loss-Prevention, BLE 5.4 PAwR ESL Atomic Price-Latch & PCI-DSS v4.0 Pool (blueprints/aksclaw-retail-pos-esl-vision-edge-pool.bicep)
+resource retailEdgePool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'retailedge'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'retail-pos-esl-vision-edge'
+      'aksclaw.io/ble54-pawr-esl-mesh': 'enabled-18.5s-50k-tags'
+      'aksclaw.io/pos-atomic-price-latch': 'min-old-new-until-eink-ack-0pct-mismatch'
+      'aksclaw.io/inline-gpu-privacy-blur': 'pci-dss-v4-gdpr-1.4ms-enforced'
+    }
+  }
 }`
 ];
 
@@ -2430,6 +2470,29 @@ runSdvLab();
 runEdaLab();
 runBioLab();
 runQuantLab();
+runRetailLab();
+
+function runRetailLab() {
+  const stores = parseInt(document.getElementById('rng_ret_stores').value, 10);
+  const mode = document.getElementById('sel_ret_mode').value;
+  document.getElementById('lbl_ret_stores').textContent = stores.toLocaleString();
+
+  const tags = (stores * 50000).toLocaleString();
+  const ok = mode === 'arc_edge_trt_pawr_esl_pci_blur';
+  const posStr = ok ? "自助收银换标检测 28.0 ms (-95.9%) · WAN 带宽削减 97.8%" : "云端 RTSP 视频回传 680.0 ms · WAN 带宽削减 0.0%";
+  const eslStr = ok ? "BLE 5.4 PAwR 5万价签 18.5 s 同步 · 0.0% 货架-POS 错价" : "单播轮询 1,850.0 s (30.8 min) · 4.8% 结账高收错价违例";
+  const pciStr = ok ? "1.4 ms GPU DMA 内联人脸/PAN 脱敏 · 0.0% PCI-DSS v4.0 / GDPR 画面泄露" : "原始收银画面裸存 · 100.0% 顾客生物特征与银行卡号暴露风险";
+
+  document.getElementById('retOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + posStr : '❌ 680ms 视频回传拥塞 · 4.8% 货架-POS 价格不一致'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${stores.toLocaleString()} 家门店 / ${tags} 枚 ESL (${eslStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>GPU 内联隐私脱敏与 EU Omnibus / FTC 价格一致性合规护栏</strong>：<strong>${pciStr}</strong>
+    </p>
+  `;
+}
 
 function runQuantLab() {
   const strats = parseInt(document.getElementById('rng_qnt_strats').value, 10);

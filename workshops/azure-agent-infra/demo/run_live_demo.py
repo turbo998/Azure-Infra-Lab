@@ -57,6 +57,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
+    simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
@@ -481,6 +482,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "quant_200_strategies": simulate_quant_trading_fix_afxdp_risk_sandbox(200, "afxdp_itch_fpga_15c35_ptp_audit"),
             "quant_800_strategies": simulate_quant_trading_fix_afxdp_risk_sandbox(800, "afxdp_itch_fpga_15c35_ptp_audit"),
             "raw_tcp_200_strategies": simulate_quant_trading_fix_afxdp_risk_sandbox(200, "kernel_tcp_json_unfiltered_ntp_clock"),
+        },
+        "demo_45_retail_pos_esl_vision_edge_sandbox": {
+            "retail_100_stores": simulate_retail_pos_esl_vision_edge_sandbox(100, "arc_edge_trt_pawr_esl_pci_blur"),
+            "retail_500_stores": simulate_retail_pos_esl_vision_edge_sandbox(500, "arc_edge_trt_pawr_esl_pci_blur"),
+            "retail_2000_stores": simulate_retail_pos_esl_vision_edge_sandbox(2_000, "arc_edge_trt_pawr_esl_pci_blur"),
+            "raw_cloud_500_stores": simulate_retail_pos_esl_vision_edge_sandbox(500, "cloud_rtsp_backhaul_unicast_esl_raw_video"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

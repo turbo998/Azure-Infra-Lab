@@ -2728,5 +2728,59 @@
       "cat_mifid_audit_completeness_pct": 62.0,
       "quant_trading_slo_met": false
     }
+  ],
+  "retail_pos_esl_vision_profiles": [
+    {
+      "store_locations": 100,
+      "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+      "store_edge_appliances": 100,
+      "total_esl_tags": 5000000,
+      "checkout_sku_swap_latency_ms": 28.0,
+      "wan_bandwidth_reduction_pct": 97.8,
+      "esl_50k_sync_latency_sec": 18.5,
+      "shelf_pos_price_mismatch_pct": 0.0,
+      "inline_privacy_blur_latency_ms": 1.4,
+      "pci_gdpr_biometric_leak_pct": 0.0,
+      "retail_edge_slo_met": true
+    },
+    {
+      "store_locations": 500,
+      "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+      "store_edge_appliances": 500,
+      "total_esl_tags": 25000000,
+      "checkout_sku_swap_latency_ms": 28.0,
+      "wan_bandwidth_reduction_pct": 97.8,
+      "esl_50k_sync_latency_sec": 18.5,
+      "shelf_pos_price_mismatch_pct": 0.0,
+      "inline_privacy_blur_latency_ms": 1.4,
+      "pci_gdpr_biometric_leak_pct": 0.0,
+      "retail_edge_slo_met": true
+    },
+    {
+      "store_locations": 2000,
+      "retail_edge_mode": "arc_edge_trt_pawr_esl_pci_blur",
+      "store_edge_appliances": 2000,
+      "total_esl_tags": 100000000,
+      "checkout_sku_swap_latency_ms": 28.0,
+      "wan_bandwidth_reduction_pct": 97.8,
+      "esl_50k_sync_latency_sec": 18.5,
+      "shelf_pos_price_mismatch_pct": 0.0,
+      "inline_privacy_blur_latency_ms": 1.4,
+      "pci_gdpr_biometric_leak_pct": 0.0,
+      "retail_edge_slo_met": true
+    },
+    {
+      "store_locations": 500,
+      "retail_edge_mode": "cloud_rtsp_backhaul_unicast_esl_raw_video",
+      "store_edge_appliances": 500,
+      "total_esl_tags": 25000000,
+      "checkout_sku_swap_latency_ms": 680.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "esl_50k_sync_latency_sec": 1850.0,
+      "shelf_pos_price_mismatch_pct": 4.8,
+      "inline_privacy_blur_latency_ms": 0.0,
+      "pci_gdpr_biometric_leak_pct": 100.0,
+      "retail_edge_slo_met": false
+    }
   ]
 }

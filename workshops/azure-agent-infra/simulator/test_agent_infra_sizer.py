@@ -44,6 +44,7 @@ from agent_infra_sizer import (
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
+    simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
@@ -848,6 +849,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(qnt["quant_trading_slo_met"])
         self.assertAlmostEqual(raw["rogue_fat_finger_escape_pct"], 5.4)
         self.assertFalse(raw["quant_trading_slo_met"])
+
+    def test_retail_pos_esl_vision_edge_sandbox(self) -> None:
+        ret = simulate_retail_pos_esl_vision_edge_sandbox(500, "arc_edge_trt_pawr_esl_pci_blur")
+        raw = simulate_retail_pos_esl_vision_edge_sandbox(500, "cloud_rtsp_backhaul_unicast_esl_raw_video")
+        self.assertEqual(ret["store_edge_appliances"], 500)
+        self.assertEqual(ret["total_esl_tags"], 25_000_000)
+        self.assertAlmostEqual(ret["checkout_sku_swap_latency_ms"], 28.0)
+        self.assertAlmostEqual(ret["wan_bandwidth_reduction_pct"], 97.8)
+        self.assertAlmostEqual(ret["esl_50k_sync_latency_sec"], 18.5)
+        self.assertEqual(ret["shelf_pos_price_mismatch_pct"], 0.0)
+        self.assertAlmostEqual(ret["inline_privacy_blur_latency_ms"], 1.4)
+        self.assertEqual(ret["pci_gdpr_biometric_leak_pct"], 0.0)
+        self.assertTrue(ret["retail_edge_slo_met"])
+        self.assertAlmostEqual(raw["shelf_pos_price_mismatch_pct"], 4.8)
+        self.assertFalse(raw["retail_edge_slo_met"])
 
 
 if __name__ == "__main__":

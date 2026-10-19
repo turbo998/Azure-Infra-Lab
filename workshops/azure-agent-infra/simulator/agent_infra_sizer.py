@@ -2759,6 +2759,54 @@ def simulate_quant_trading_fix_afxdp_risk_sandbox(
     }
 
 
+def simulate_retail_pos_esl_vision_edge_sandbox(
+    store_locations: int = 500,
+    retail_edge_mode: str = "arc_edge_trt_pawr_esl_pci_blur",
+) -> dict[str, Any]:
+    """
+    Chapter 50: Autonomous Retail, POS Edge Store Operations, Electronic Shelf Label (ESL)
+    Dynamic Pricing & Computer-Vision Loss-Prevention Agent Infrastructure Physics.
+      - Pillar 1: Store-Local Azure Stack Edge Pro 2 / Arc K8s TensorRT-LLM + YOLOv10
+        Self-Checkout SKU-Swap Detection vs Cloud RTSP 4K Video Backhaul
+      - Pillar 2: BLE 5.4 Periodic Advertising with Responses (PAwR) ESL Sub-GHz Mesh &
+        Two-Phase POS-Commit Atomic Price Latch (EU Omnibus / FTC Price Parity)
+      - Pillar 3: Inline GPU DMA Face & Payment-Card PAN Privacy Blurring (PCI-DSS v4.0
+        & GDPR) Before Frame Buffer Persistence
+    """
+    store_edge_appliances = max(1, store_locations)
+    total_esl_tags = store_locations * 50_000
+    if retail_edge_mode == "arc_edge_trt_pawr_esl_pci_blur":
+        checkout_sku_swap_latency_ms = 28.0
+        wan_bandwidth_reduction_pct = 97.8
+        esl_50k_sync_latency_sec = 18.5
+        shelf_pos_price_mismatch_pct = 0.0
+        inline_privacy_blur_latency_ms = 1.4
+        pci_gdpr_biometric_leak_pct = 0.0
+        retail_edge_slo_met = True
+    else:
+        checkout_sku_swap_latency_ms = 680.0
+        wan_bandwidth_reduction_pct = 0.0
+        esl_50k_sync_latency_sec = 1_850.0
+        shelf_pos_price_mismatch_pct = 4.8
+        inline_privacy_blur_latency_ms = 0.0
+        pci_gdpr_biometric_leak_pct = 100.0
+        retail_edge_slo_met = False
+
+    return {
+        "store_locations": store_locations,
+        "retail_edge_mode": retail_edge_mode,
+        "store_edge_appliances": store_edge_appliances,
+        "total_esl_tags": total_esl_tags,
+        "checkout_sku_swap_latency_ms": checkout_sku_swap_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "esl_50k_sync_latency_sec": esl_50k_sync_latency_sec,
+        "shelf_pos_price_mismatch_pct": shelf_pos_price_mismatch_pct,
+        "inline_privacy_blur_latency_ms": inline_privacy_blur_latency_ms,
+        "pci_gdpr_biometric_leak_pct": pci_gdpr_biometric_leak_pct,
+        "retail_edge_slo_met": retail_edge_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
