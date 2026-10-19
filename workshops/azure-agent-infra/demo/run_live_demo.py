@@ -50,6 +50,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
+    simulate_maritime_port_crane_colregs_sandbox,
     simulate_media_openusd_3dgs_c2pa_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
@@ -502,6 +503,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "dc_cooling_100mw": simulate_datacenter_cooling_bacnet_pue_sandbox(100, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
             "dc_cooling_400mw": simulate_datacenter_cooling_bacnet_pue_sandbox(400, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
             "raw_pid_100mw": simulate_datacenter_cooling_bacnet_pue_sandbox(100, "reactive_pid_unchecked_dewpoint_slow_bms"),
+        },
+        "demo_48_maritime_port_crane_colregs_sandbox": {
+            "port_12500_teu": simulate_maritime_port_crane_colregs_sandbox(12_500, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
+            "port_50000_teu": simulate_maritime_port_crane_colregs_sandbox(50_000, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
+            "port_200000_teu": simulate_maritime_port_crane_colregs_sandbox(200_000, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
+            "raw_port_50000_teu": simulate_maritime_port_crane_colregs_sandbox(50_000, "batch_heuristic_unchecked_gm_raw_vts"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

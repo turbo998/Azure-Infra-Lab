@@ -2886,5 +2886,59 @@
       "server_blade_liquid_damage_pct": 100.0,
       "datacenter_cooling_slo_met": false
     }
+  ],
+  "maritime_port_colregs_profiles": [
+    {
+      "daily_teu_throughput": 12500,
+      "maritime_agent_mode": "ais_cuopt_stowage_imo_gm_colregs_barrier",
+      "port_solver_nodes": 2,
+      "stowage_crane_solve_sec": 8.6,
+      "berth_turnaround_reduction_pct": 28.4,
+      "yard_rehandle_elimination_pct": 94.5,
+      "imo_gm_stability_gate_ms": 3.2,
+      "unsafe_vessel_stability_or_stack_pct": 0.0,
+      "colregs_cpa_barrier_ms": 1.9,
+      "colregs_or_crane_collision_escape_pct": 0.0,
+      "maritime_port_slo_met": true
+    },
+    {
+      "daily_teu_throughput": 50000,
+      "maritime_agent_mode": "ais_cuopt_stowage_imo_gm_colregs_barrier",
+      "port_solver_nodes": 4,
+      "stowage_crane_solve_sec": 8.6,
+      "berth_turnaround_reduction_pct": 28.4,
+      "yard_rehandle_elimination_pct": 94.5,
+      "imo_gm_stability_gate_ms": 3.2,
+      "unsafe_vessel_stability_or_stack_pct": 0.0,
+      "colregs_cpa_barrier_ms": 1.9,
+      "colregs_or_crane_collision_escape_pct": 0.0,
+      "maritime_port_slo_met": true
+    },
+    {
+      "daily_teu_throughput": 200000,
+      "maritime_agent_mode": "ais_cuopt_stowage_imo_gm_colregs_barrier",
+      "port_solver_nodes": 16,
+      "stowage_crane_solve_sec": 8.6,
+      "berth_turnaround_reduction_pct": 28.4,
+      "yard_rehandle_elimination_pct": 94.5,
+      "imo_gm_stability_gate_ms": 3.2,
+      "unsafe_vessel_stability_or_stack_pct": 0.0,
+      "colregs_cpa_barrier_ms": 1.9,
+      "colregs_or_crane_collision_escape_pct": 0.0,
+      "maritime_port_slo_met": true
+    },
+    {
+      "daily_teu_throughput": 50000,
+      "maritime_agent_mode": "batch_heuristic_unchecked_gm_raw_vts",
+      "port_solver_nodes": 4,
+      "stowage_crane_solve_sec": 940.0,
+      "berth_turnaround_reduction_pct": 0.0,
+      "yard_rehandle_elimination_pct": 0.0,
+      "imo_gm_stability_gate_ms": 0.0,
+      "unsafe_vessel_stability_or_stack_pct": 4.6,
+      "colregs_cpa_barrier_ms": 0.0,
+      "colregs_or_crane_collision_escape_pct": 3.5,
+      "maritime_port_slo_met": false
+    }
   ]
 }

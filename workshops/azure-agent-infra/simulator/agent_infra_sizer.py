@@ -2901,6 +2901,55 @@ def simulate_datacenter_cooling_bacnet_pue_sandbox(
     }
 
 
+def simulate_maritime_port_crane_colregs_sandbox(
+    daily_teu_throughput: int = 50_000,
+    maritime_agent_mode: str = "ais_cuopt_stowage_imo_gm_colregs_barrier",
+) -> dict[str, Any]:
+    """
+    Chapter 53: Autonomous Maritime Port, Container Terminal Cranes (STS/ARMG) & IMO COLREGs
+    Vessel Traffic Agent Infrastructure Physics.
+      - Pillar 1: AIS/VTS NMEA-2000 Stream + NVIDIA cuOpt STS Quay-Crane & ARMG Yard Stowage
+        Solver vs Batch Heuristic Planning
+      - Pillar 2: Deterministic IMO Intact Stability (IS) Code Metacentric Height (GM >= 0.80 m)
+        & Hull Bending-Moment / Stack-Weight Gate
+      - Pillar 3: IMO COLREGs Rules 13-17 CPA/TCPA Velocity-Obstacle Barrier & Spreader LiDAR
+        Anti-Sway Interlock
+    """
+    port_solver_nodes = max(2, math.ceil(daily_teu_throughput / 12_500))
+    if maritime_agent_mode == "ais_cuopt_stowage_imo_gm_colregs_barrier":
+        stowage_crane_solve_sec = 8.6
+        berth_turnaround_reduction_pct = 28.4
+        yard_rehandle_elimination_pct = 94.5
+        imo_gm_stability_gate_ms = 3.2
+        unsafe_vessel_stability_or_stack_pct = 0.0
+        colregs_cpa_barrier_ms = 1.9
+        colregs_or_crane_collision_escape_pct = 0.0
+        maritime_port_slo_met = True
+    else:
+        stowage_crane_solve_sec = 940.0
+        berth_turnaround_reduction_pct = 0.0
+        yard_rehandle_elimination_pct = 0.0
+        imo_gm_stability_gate_ms = 0.0
+        unsafe_vessel_stability_or_stack_pct = 4.6
+        colregs_cpa_barrier_ms = 0.0
+        colregs_or_crane_collision_escape_pct = 3.5
+        maritime_port_slo_met = False
+
+    return {
+        "daily_teu_throughput": daily_teu_throughput,
+        "maritime_agent_mode": maritime_agent_mode,
+        "port_solver_nodes": port_solver_nodes,
+        "stowage_crane_solve_sec": stowage_crane_solve_sec,
+        "berth_turnaround_reduction_pct": berth_turnaround_reduction_pct,
+        "yard_rehandle_elimination_pct": yard_rehandle_elimination_pct,
+        "imo_gm_stability_gate_ms": imo_gm_stability_gate_ms,
+        "unsafe_vessel_stability_or_stack_pct": unsafe_vessel_stability_or_stack_pct,
+        "colregs_cpa_barrier_ms": colregs_cpa_barrier_ms,
+        "colregs_or_crane_collision_escape_pct": colregs_or_crane_collision_escape_pct,
+        "maritime_port_slo_met": maritime_port_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

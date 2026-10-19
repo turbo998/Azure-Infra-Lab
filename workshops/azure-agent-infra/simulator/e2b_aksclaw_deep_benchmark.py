@@ -43,6 +43,7 @@ from agent_infra_sizer import (
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
+    simulate_maritime_port_crane_colregs_sandbox,
     simulate_media_openusd_3dgs_c2pa_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
@@ -573,6 +574,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_datacenter_cooling_bacnet_pue_sandbox(100, "reactive_pid_unchecked_dewpoint_slow_bms"),
     ]
 
+    maritime_port_colregs_profiles: List[Dict[str, object]] = [
+        simulate_maritime_port_crane_colregs_sandbox(12_500, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
+        simulate_maritime_port_crane_colregs_sandbox(50_000, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
+        simulate_maritime_port_crane_colregs_sandbox(200_000, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
+        simulate_maritime_port_crane_colregs_sandbox(50_000, "batch_heuristic_unchecked_gm_raw_vts"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -620,6 +628,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "retail_pos_esl_vision_profiles": retail_pos_esl_vision_profiles,
         "aviation_irops_swim_profiles": aviation_irops_swim_profiles,
         "datacenter_cooling_bacnet_profiles": datacenter_cooling_bacnet_profiles,
+        "maritime_port_colregs_profiles": maritime_port_colregs_profiles,
     }
 
 

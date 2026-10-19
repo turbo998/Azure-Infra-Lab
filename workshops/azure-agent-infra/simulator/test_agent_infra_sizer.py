@@ -37,6 +37,7 @@ from agent_infra_sizer import (
     simulate_hybrid_model_routing_kv_cache_affinity,
     simulate_hyperlight_wasm_microsandbox_dispatch,
     simulate_lakehouse_duckdb_onelake_sandbox,
+    simulate_maritime_port_crane_colregs_sandbox,
     simulate_media_openusd_3dgs_c2pa_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
@@ -895,6 +896,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(dcc["datacenter_cooling_slo_met"])
         self.assertAlmostEqual(raw["annualized_facility_pue"], 1.34)
         self.assertFalse(raw["datacenter_cooling_slo_met"])
+
+    def test_maritime_port_crane_colregs_sandbox(self) -> None:
+        prt = simulate_maritime_port_crane_colregs_sandbox(50_000, "ais_cuopt_stowage_imo_gm_colregs_barrier")
+        raw = simulate_maritime_port_crane_colregs_sandbox(50_000, "batch_heuristic_unchecked_gm_raw_vts")
+        self.assertEqual(prt["port_solver_nodes"], 4)
+        self.assertAlmostEqual(prt["stowage_crane_solve_sec"], 8.6)
+        self.assertAlmostEqual(prt["berth_turnaround_reduction_pct"], 28.4)
+        self.assertAlmostEqual(prt["yard_rehandle_elimination_pct"], 94.5)
+        self.assertAlmostEqual(prt["imo_gm_stability_gate_ms"], 3.2)
+        self.assertEqual(prt["unsafe_vessel_stability_or_stack_pct"], 0.0)
+        self.assertAlmostEqual(prt["colregs_cpa_barrier_ms"], 1.9)
+        self.assertEqual(prt["colregs_or_crane_collision_escape_pct"], 0.0)
+        self.assertTrue(prt["maritime_port_slo_met"])
+        self.assertAlmostEqual(raw["unsafe_vessel_stability_or_stack_pct"], 4.6)
+        self.assertFalse(raw["maritime_port_slo_met"])
 
 
 if __name__ == "__main__":
