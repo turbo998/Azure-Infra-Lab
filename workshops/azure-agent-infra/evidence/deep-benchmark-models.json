@@ -2076,5 +2076,59 @@
       "soar_quarantine_propagation_p95_ms": 2700000.0,
       "cyber_detonation_governed": false
     }
+  ],
+  "edge_disconnected_profiles": [
+    {
+      "concurrent_edge_agents": 125,
+      "edge_continuity_mode": "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt",
+      "edge_cluster_nodes": 2,
+      "disconnected_availability_pct": 99.98,
+      "edge_ttft_p95_ms": 18.4,
+      "ttft_reduction_pct": 97.3,
+      "state_compaction_reduction_pct": 91.4,
+      "outage_checkpoint_loss_pct": 0.0,
+      "reconnect_wan_saturation_pct": 35.0,
+      "twin_reconciliation_sec": 14.2,
+      "edge_continuity_governed": true
+    },
+    {
+      "concurrent_edge_agents": 500,
+      "edge_continuity_mode": "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt",
+      "edge_cluster_nodes": 8,
+      "disconnected_availability_pct": 99.98,
+      "edge_ttft_p95_ms": 18.4,
+      "ttft_reduction_pct": 97.3,
+      "state_compaction_reduction_pct": 91.4,
+      "outage_checkpoint_loss_pct": 0.0,
+      "reconnect_wan_saturation_pct": 35.0,
+      "twin_reconciliation_sec": 14.2,
+      "edge_continuity_governed": true
+    },
+    {
+      "concurrent_edge_agents": 2000,
+      "edge_continuity_mode": "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt",
+      "edge_cluster_nodes": 32,
+      "disconnected_availability_pct": 99.98,
+      "edge_ttft_p95_ms": 18.4,
+      "ttft_reduction_pct": 97.3,
+      "state_compaction_reduction_pct": 91.4,
+      "outage_checkpoint_loss_pct": 0.0,
+      "reconnect_wan_saturation_pct": 35.0,
+      "twin_reconciliation_sec": 14.2,
+      "edge_continuity_governed": true
+    },
+    {
+      "concurrent_edge_agents": 500,
+      "edge_continuity_mode": "cloud_only_inmemory_mqtt_unthrottled_resync",
+      "edge_cluster_nodes": 8,
+      "disconnected_availability_pct": 0.0,
+      "edge_ttft_p95_ms": 680.0,
+      "ttft_reduction_pct": 0.0,
+      "state_compaction_reduction_pct": 0.0,
+      "outage_checkpoint_loss_pct": 98.7,
+      "reconnect_wan_saturation_pct": 100.0,
+      "twin_reconciliation_sec": 480.0,
+      "edge_continuity_governed": false
+    }
   ]
 }

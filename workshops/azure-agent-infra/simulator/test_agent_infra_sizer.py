@@ -24,6 +24,7 @@ from agent_infra_sizer import (
     simulate_cyber_defense_detonation_sentinel_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
+    simulate_edge_disconnected_iot_operations_sandbox,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
@@ -671,6 +672,19 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(leg["lateral_network_escape_surface_pct"], 100.0)
         self.assertAlmostEqual(leg["anti_sandbox_evasion_rate_pct"], 68.0)
         self.assertFalse(leg["cyber_detonation_governed"])
+
+    def test_edge_disconnected_iot_operations_sandbox(self) -> None:
+        edg = simulate_edge_disconnected_iot_operations_sandbox(500, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt")
+        leg = simulate_edge_disconnected_iot_operations_sandbox(500, "cloud_only_inmemory_mqtt_unthrottled_resync")
+        self.assertAlmostEqual(edg["disconnected_availability_pct"], 99.98)
+        self.assertAlmostEqual(edg["edge_ttft_p95_ms"], 18.4)
+        self.assertAlmostEqual(edg["state_compaction_reduction_pct"], 91.4)
+        self.assertEqual(edg["outage_checkpoint_loss_pct"], 0.0)
+        self.assertAlmostEqual(edg["twin_reconciliation_sec"], 14.2)
+        self.assertTrue(edg["edge_continuity_governed"])
+        self.assertEqual(leg["disconnected_availability_pct"], 0.0)
+        self.assertAlmostEqual(leg["outage_checkpoint_loss_pct"], 98.7)
+        self.assertFalse(leg["edge_continuity_governed"])
 
 
 if __name__ == "__main__":

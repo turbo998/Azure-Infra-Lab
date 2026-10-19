@@ -430,6 +430,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(30)">31. AP2/x402 消费授权令 + Confidential Ledger 金融账本护栏 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(31)">32. 跨企业 A2A Entra Verified ID SD-JWT + HTTP/3 QUIC 联邦网格 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(32)">33. 自主网络防御气隙 vsock MicroVM + eBPF KRSI + Sentinel SOAR (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(33)">34. 工业边缘 Azure Local + IoT Operations 断网存储转发与孪生同步 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1178,6 +1179,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 33: Industrial Edge-to-Cloud Disconnected Agentic Infrastructure Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 33 · INDUSTRIAL EDGE DISCONNECTED AGENT INFRA (AZURE LOCAL + IOT OPERATIONS MQTT SAF + ONNX SLM + HLC-CRDT SIZER)</span>
+    <h2>工业边缘断网自治与云边协同：Azure Local、AIO 持久化 MQTTv5 存储转发与 HLC-CRDT 孪生同步测算器</h2>
+    <div class="sub">量化在 <code>125 – 2,000</code> 并发产线/风电/远洋边缘智能体下，启用 Azure Local + <code>ONNX Runtime GenAI INT4</code> 本地小模型降级（<code>72h</code> 断网可用性 <code>99.98%</code>、本地 <code>TTFT p95 = 18.4 ms</code> vs <code>680.0 ms</code> WAN）、<code>Azure IoT Operations</code> 本地 NVMe 存储转发 + <code>LZ4</code> 状态差分压缩（落盘体积缩减 <code>91.4%</code>、<code>0.0%</code> 断网检查点丢失 vs <code>98.7%</code> 内存队列溢出）与 <code>HLC-CRDT</code> 令牌桶限流云端合入（<code>35.0%</code> WAN 占用上限、<code>14.2 s</code> 同步完成）的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发工业边缘巡检与控制智能体规模 (Concurrent Industrial Edge Agents): <strong id="lbl_edg_ag" style="color:var(--teal)">500</strong></label>
+          <input type="range" id="rng_edg_ag" min="125" max="2000" step="125" value="500" oninput="runEdgLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 边缘断网自治与云边状态同步模式 (Edge Disconnected Continuity Mode)</label>
+          <select id="sel_edg_mode" onchange="runEdgLab()">
+            <option value="azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt" selected>Azure Local + AIO NVMe 存储转发 (0% 丢失) + 本地 ONNX SLM (18.4ms) + HLC-CRDT 限流同步 (推荐)</option>
+            <option value="cloud_only_inmemory_mqtt_unthrottled_resync">传统反模式：纯云端推理依赖 (断网 0% 可用) + 内存 MQTT (98.7% 溢出丢失) + 重连风暴</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="edgOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -1796,6 +1820,17 @@ resource detonationPool 'Microsoft.ContainerService/managedClusters/agentPools@2
       'aksclaw.io/telemetry-hook': 'krsi-ebpf-lsm-ringbuf'
     }
   }
+}`,
+`// 34. Azure Bicep: Industrial Edge Disconnected Agent Infra (Azure Local + IoT Operations NVMe MQTT SAF)
+resource mqttBroker 'Microsoft.IoTOperations/instances/brokers@2024-08-15-preview' = {
+  name: 'aksclaw-edge-aio-instance/default'
+  properties: {
+    memoryProfile: 'High'
+    diskBackedMessageBuffer: {
+      maxSize: '250G'
+      ephemeralVolumeClaimSpec: { storageClassName: 'local-nvme-saf' }
+    }
+  }
 }`
 ];
 
@@ -1929,6 +1964,29 @@ runHpcLab();
 runPayLab();
 runA2aLab();
 runCybLab();
+runEdgLab();
+
+function runEdgLab() {
+  const ag = parseInt(document.getElementById('rng_edg_ag').value, 10);
+  const mode = document.getElementById('sel_edg_mode').value;
+  document.getElementById('lbl_edg_ag').textContent = ag.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(ag / 64));
+  const ok = mode === 'azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt';
+  const availStr = ok ? "99.98% 72h 断网可用性 · 18.4 ms 本地 ONNX SLM TTFT (-97.3%)" : "0.0% 断网瘫痪 · 680.0 ms WAN RTT";
+  const safStr = ok ? "91.4% LZ4 状态差分压缩 · 0.0% 断网检查点丢失" : "98.7% 内存 MQTT 队列溢出丢失";
+  const syncStr = ok ? "35.0% WAN 令牌桶限流 · 14.2 s HLC-CRDT 零冲突合入" : "100.0% 重连风暴打满产线链路";
+
+  document.getElementById('edgOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + availStr : '❌ 断网 0% 可用 · 98.7% 检查点溢出丢失'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 Azure Local (${safStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>网络恢复期带宽保护与数字孪生合入</strong>：<strong>${syncStr}</strong>
+    </p>
+  `;
+}
 
 function runCybLab() {
   const sbx = parseInt(document.getElementById('rng_cyb_sbx').value, 10);

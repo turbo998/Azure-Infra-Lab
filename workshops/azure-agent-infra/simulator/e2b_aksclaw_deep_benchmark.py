@@ -30,6 +30,7 @@ from agent_infra_sizer import (
     simulate_cyber_defense_detonation_sentinel_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
+    simulate_edge_disconnected_iot_operations_sandbox,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
@@ -453,6 +454,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "vnet_container_ptrace_manual_soc"),
     ]
 
+    edge_disconnected_profiles: List[Dict[str, object]] = [
+        simulate_edge_disconnected_iot_operations_sandbox(125, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
+        simulate_edge_disconnected_iot_operations_sandbox(500, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
+        simulate_edge_disconnected_iot_operations_sandbox(2_000, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
+        simulate_edge_disconnected_iot_operations_sandbox(500, "cloud_only_inmemory_mqtt_unthrottled_resync"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -485,6 +493,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "payment_ledger_profiles": payment_ledger_profiles,
         "a2a_federation_profiles": a2a_federation_profiles,
         "cyber_detonation_profiles": cyber_detonation_profiles,
+        "edge_disconnected_profiles": edge_disconnected_profiles,
     }
 
 

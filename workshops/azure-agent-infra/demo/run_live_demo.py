@@ -37,6 +37,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_cyber_defense_detonation_sentinel_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
+    simulate_edge_disconnected_iot_operations_sandbox,
     simulate_egress_exfiltration_and_mcp_supply_chain,
     simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
@@ -397,6 +398,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "airgapped_krsi_1k": simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
             "airgapped_krsi_5k": simulate_cyber_defense_detonation_sentinel_sandbox(5_000, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
             "vnet_ptrace_1k": simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "vnet_container_ptrace_manual_soc"),
+        },
+        "demo_33_edge_disconnected_iot_operations": {
+            "azure_local_aio_125": simulate_edge_disconnected_iot_operations_sandbox(125, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
+            "azure_local_aio_500": simulate_edge_disconnected_iot_operations_sandbox(500, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
+            "azure_local_aio_2k": simulate_edge_disconnected_iot_operations_sandbox(2_000, "azure_local_aio_mqtt_saf_onnx_slm_hlc_crdt"),
+            "cloud_only_500": simulate_edge_disconnected_iot_operations_sandbox(500, "cloud_only_inmemory_mqtt_unthrottled_resync"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

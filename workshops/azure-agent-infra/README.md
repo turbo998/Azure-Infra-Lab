@@ -1241,7 +1241,31 @@ sequenceDiagram
 
 ---
 
-## 38. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 38. 工业边缘断网自治与云边协同智能体底座 —— Azure Local (`Azure IoT Operations`)、NVMe 磁盘持久化 MQTTv5 存储转发、ONNX Runtime GenAI 本地小模型降级与混合逻辑时钟 (`HLC-CRDT`) 孪生重同步物理模型（Industrial Edge-to-Cloud Disconnected Agentic Infrastructure — Azure Local, `AIO` Disk-Backed MQTT Store-and-Forward, Local SLM Fallback & `HLC-CRDT` Twin Reconciliation）
+
+> 本章由确定性工业边缘断网自治仿真模型 [`simulate_edge_disconnected_iot_operations_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-azure-local-iot-operations-disconnected-edge.bicep`](blueprints/aksclaw-azure-local-iot-operations-disconnected-edge.bicep) 驱动，面向智能制造产线、海上风电/远洋船舶、矿山与院区边缘（`125–2,000` 并发 OT/OPC-UA 巡检与控制智能体）解决 **广域网（WAN）中断或卫星高抖动下纯云端 Agent 100% 瘫痪、内存态 MQTT 队列在 `18 分钟` 内溢出丢失 `98.7%` 现场检查点，以及网络恢复瞬间重连风暴打满产线带宽并引发云边数字孪生状态因果冲突的三大工程瓶颈**。
+
+### 38.1 工业边缘断网自治与云边协同三大工程支柱
+
+1. **Pillar 1：Azure Local + Arc-Enabled Kubernetes + ONNX Runtime GenAI (`Phi-4-mini / Qwen2.5-7B-INT4`) 本地推理热降级**：
+   - 在长达 **`72 小时` 广域网断联**或卫星链路劣化场景下，边缘节点自动从云端 Foundry 大模型无缝降级至本地 GPU/NPU 运行的 **ONNX Runtime GenAI INT4 小模型 + 本地 OPC-UA / Modbus MCP 工具服务**，将断网期间产线闭环控制可用性从纯云端架构的 `0.0%` 提升至 **`99.98%`**，并将本地工具决策首字延迟（`TTFT p95`）从广域网往返的 `680.0 ms` 压缩至 **`18.4 ms`（`-97.3%`）**。
+2. **Pillar 2：Azure IoT Operations (`AIO`) 本地 NVMe 持久化 MQTTv5 存储转发环（`diskBackedMessageBuffer`）与键值合并 `LZ4` 差分压缩**：
+   - 500 个边缘智能体在 24 小时断网期内产生约 `1,800 GB` 原始状态与传感器检查点，纯内存队列在 18 分钟内即溢出丢弃 `98.7%` 数据；启用 `AIO` 本地 NVMe 存储转发结合同 OPC-UA 节点最新状态合并 + `LZ4` 块压缩后，落盘体积消减 **`91.4%`（`1.8 TB -> 154.8 GB`）**，实现 **`0.0%` 断网检查点与审计轨迹丢失**。
+3. **Pillar 3：令牌桶上行带宽整形（`<= 35.0%` WAN 上行水位上限）与混合逻辑时钟（`HLC`）LWW-Element-Set CRDT 云端无冲突合入**：
+   - 广域网恢复时通过优先级令牌桶限制历史回放流量最多占用 **`35.0%`** 产线 WAN 上行带宽（彻底消除 `100.0%` 重连风暴对实时 SCADA 报文的挤占），并利用 `HLC` 混合逻辑时钟 CRDT 在 **`14.2 s`** 内将 24 小时边缘增量状态无锁合入云端 **Azure HorizonDB** 与 **Azure Digital Twins**（因果冲突率 **`0.0%`**）。
+
+### 38.2 Azure Local + `AIO` 持久化 MQTT + 本地 SLM + `HLC-CRDT` vs 纯云端内存队列架构对比表
+
+| 并发边缘智能体规模与云边协同架构 | 所需 Azure Local 节点 | **72h 断网可用性** | **本地控制 `TTFT p95`** | **断网状态压缩率** | **断网检查点丢失率** | **恢复期 WAN 占用上限** | **24h 状态云端合入耗时** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`125` 边缘 Agent · Azure Local + AIO NVMe SAF + 本地 SLM + HLC-CRDT** | `2` | **`99.98%`** | **`18.4 ms` (`-97.3%`)** | **`91.4%`** | **`0.0%`** | **`35.0%` (SCADA 零拥塞)** | **`14.2 s` (`0.0%` 冲突)** |
+| **`500` 边缘 Agent · Azure Local + AIO NVMe SAF + 本地 SLM + HLC-CRDT (推荐)** | **`8`** | **`99.98%`** | **`18.4 ms` (`-97.3%`)** | **`91.4%`** | **`0.0%`** | **`35.0%` (SCADA 零拥塞)** | **`14.2 s` (`0.0%` 冲突)** |
+| **`2,000` 边缘 Agent · Azure Local + AIO NVMe SAF + 本地 SLM + HLC-CRDT** | `32` | **`99.98%`** | **`18.4 ms` (`-97.3%`)** | **`91.4%`** | **`0.0%`** | **`35.0%` (SCADA 零拥塞)** | **`14.2 s` (`0.0%` 冲突)** |
+| `500` 边缘 Agent · 纯云端推理依赖 + 内存态 MQTT + 无整形重连风暴 (反模式) | `8` | `0.00%` (❌ 断网瘫痪) | `680.0 ms` (`0.0%`) | `0.0%` | `98.7%` (❌ 队列溢出) | `100.0%` (❌ 链路打满) | `480.0 s` |
+
+---
+
+## 39. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1254,10 +1278,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 32 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱）
+# 2. 运行深度定量模型（全部 33 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 41 项单元测试（100% 覆盖 6 大运行时契约、32 大深度物理模型、33 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 42 项单元测试（100% 覆盖 6 大运行时契约、33 大深度物理模型、34 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
