@@ -20,6 +20,7 @@ from agent_infra_sizer import (
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
+    simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
@@ -504,6 +505,24 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(ak["static_secret_exposure_pct"], 100.0)
         self.assertAlmostEqual(ak["oidc_sts_exchange_p95_ms"], 185.0)
         self.assertFalse(ak["cleanroom_federation_governed"])
+
+    def test_embodied_robotics_digital_twin_sandbox(self) -> None:
+        sim = simulate_embodied_robotics_digital_twin_sandbox(1_000, "iceoryx_usd_prewarm_cbf_safety_shield")
+        raw = simulate_embodied_robotics_digital_twin_sandbox(1_000, "bridge_udp_cold_usd_unfiltered_vla")
+        self.assertAlmostEqual(sim["ros2_dds_pubsub_p99_ms"], 0.42)
+        self.assertAlmostEqual(sim["ros2_dds_latency_reduction_pct"], 97.2)
+        self.assertEqual(sim["control_deadline_miss_pct"], 0.0)
+        self.assertAlmostEqual(sim["usd_episode_init_sec"], 1.15)
+        self.assertAlmostEqual(sim["usd_init_reduction_pct"], 97.0)
+        self.assertAlmostEqual(sim["realtime_physics_speedup_x"], 420.0)
+        self.assertAlmostEqual(sim["cbf_safety_filter_overhead_ms"], 0.35)
+        self.assertEqual(sim["kinematic_collision_violation_pct"], 0.0)
+        self.assertAlmostEqual(sim["wan_blackout_safe_stop_pct"], 100.0)
+        self.assertTrue(sim["embodied_safety_governed"])
+        self.assertAlmostEqual(raw["ros2_dds_pubsub_p99_ms"], 14.80)
+        self.assertAlmostEqual(raw["usd_episode_init_sec"], 38.50)
+        self.assertAlmostEqual(raw["kinematic_collision_violation_pct"], 6.8)
+        self.assertFalse(raw["embodied_safety_governed"])
 
 
 if __name__ == "__main__":

@@ -26,6 +26,7 @@ from agent_infra_sizer import (
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
+    simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
@@ -373,6 +374,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_multicloud_confidential_cleanroom_federation(1_000, "static_aksk_userspace_mtls_shared_vm"),
     ]
 
+    embodied_robotics_digital_twin_profiles: List[Dict[str, object]] = [
+        simulate_embodied_robotics_digital_twin_sandbox(250, "iceoryx_usd_prewarm_cbf_safety_shield"),
+        simulate_embodied_robotics_digital_twin_sandbox(1_000, "iceoryx_usd_prewarm_cbf_safety_shield"),
+        simulate_embodied_robotics_digital_twin_sandbox(5_000, "iceoryx_usd_prewarm_cbf_safety_shield"),
+        simulate_embodied_robotics_digital_twin_sandbox(1_000, "bridge_udp_cold_usd_unfiltered_vla"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -395,6 +403,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cicd_buildkit_bazel_profiles": cicd_buildkit_bazel_profiles,
         "lakehouse_duckdb_onelake_profiles": lakehouse_duckdb_onelake_profiles,
         "multicloud_cleanroom_profiles": multicloud_cleanroom_profiles,
+        "embodied_robotics_digital_twin_profiles": embodied_robotics_digital_twin_profiles,
     }
 
 

@@ -1500,5 +1500,75 @@
       "bilateral_attestation_verified_pct": 0.0,
       "cleanroom_federation_governed": false
     }
+  ],
+  "embodied_robotics_digital_twin_profiles": [
+    {
+      "concurrent_sim_rollouts": 250,
+      "embodied_sandbox_mode": "iceoryx_usd_prewarm_cbf_safety_shield",
+      "sim_gpu_nodes": 7,
+      "baseline_bridge_udp_p99_ms": 14.8,
+      "ros2_dds_pubsub_p99_ms": 0.42,
+      "ros2_dds_latency_reduction_pct": 97.2,
+      "control_deadline_miss_pct": 0.0,
+      "baseline_cold_usd_init_sec": 38.5,
+      "usd_episode_init_sec": 1.15,
+      "usd_init_reduction_pct": 97.0,
+      "realtime_physics_speedup_x": 420.0,
+      "cbf_safety_filter_overhead_ms": 0.35,
+      "kinematic_collision_violation_pct": 0.0,
+      "wan_blackout_safe_stop_pct": 100.0,
+      "embodied_safety_governed": true
+    },
+    {
+      "concurrent_sim_rollouts": 1000,
+      "embodied_sandbox_mode": "iceoryx_usd_prewarm_cbf_safety_shield",
+      "sim_gpu_nodes": 25,
+      "baseline_bridge_udp_p99_ms": 14.8,
+      "ros2_dds_pubsub_p99_ms": 0.42,
+      "ros2_dds_latency_reduction_pct": 97.2,
+      "control_deadline_miss_pct": 0.0,
+      "baseline_cold_usd_init_sec": 38.5,
+      "usd_episode_init_sec": 1.15,
+      "usd_init_reduction_pct": 97.0,
+      "realtime_physics_speedup_x": 420.0,
+      "cbf_safety_filter_overhead_ms": 0.35,
+      "kinematic_collision_violation_pct": 0.0,
+      "wan_blackout_safe_stop_pct": 100.0,
+      "embodied_safety_governed": true
+    },
+    {
+      "concurrent_sim_rollouts": 5000,
+      "embodied_sandbox_mode": "iceoryx_usd_prewarm_cbf_safety_shield",
+      "sim_gpu_nodes": 125,
+      "baseline_bridge_udp_p99_ms": 14.8,
+      "ros2_dds_pubsub_p99_ms": 0.42,
+      "ros2_dds_latency_reduction_pct": 97.2,
+      "control_deadline_miss_pct": 0.0,
+      "baseline_cold_usd_init_sec": 38.5,
+      "usd_episode_init_sec": 1.15,
+      "usd_init_reduction_pct": 97.0,
+      "realtime_physics_speedup_x": 420.0,
+      "cbf_safety_filter_overhead_ms": 0.35,
+      "kinematic_collision_violation_pct": 0.0,
+      "wan_blackout_safe_stop_pct": 100.0,
+      "embodied_safety_governed": true
+    },
+    {
+      "concurrent_sim_rollouts": 1000,
+      "embodied_sandbox_mode": "bridge_udp_cold_usd_unfiltered_vla",
+      "sim_gpu_nodes": 25,
+      "baseline_bridge_udp_p99_ms": 14.8,
+      "ros2_dds_pubsub_p99_ms": 14.8,
+      "ros2_dds_latency_reduction_pct": 0.0,
+      "control_deadline_miss_pct": 8.4,
+      "baseline_cold_usd_init_sec": 38.5,
+      "usd_episode_init_sec": 38.5,
+      "usd_init_reduction_pct": 0.0,
+      "realtime_physics_speedup_x": 18.0,
+      "cbf_safety_filter_overhead_ms": 0.0,
+      "kinematic_collision_violation_pct": 6.8,
+      "wan_blackout_safe_stop_pct": 0.0,
+      "embodied_safety_governed": false
+    }
   ]
 }

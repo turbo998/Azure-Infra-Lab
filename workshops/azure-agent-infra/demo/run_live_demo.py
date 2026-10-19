@@ -33,6 +33,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
+    simulate_embodied_robotics_digital_twin_sandbox,
     simulate_finops_spot_eviction_drain,
     simulate_gpu_heterogeneous_sandbox_mps_mig,
     simulate_hybrid_model_routing_kv_cache_affinity,
@@ -327,6 +328,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "oidc_cleanroom_1k": simulate_multicloud_confidential_cleanroom_federation(1_000, "oidc_federation_wireguard_sev_snp_cleanroom"),
             "oidc_cleanroom_5k": simulate_multicloud_confidential_cleanroom_federation(5_000, "oidc_federation_wireguard_sev_snp_cleanroom"),
             "static_aksk_1k": simulate_multicloud_confidential_cleanroom_federation(1_000, "static_aksk_userspace_mtls_shared_vm"),
+        },
+        "demo_23_embodied_robotics_digital_twin": {
+            "iceoryx_usd_cbf_250": simulate_embodied_robotics_digital_twin_sandbox(250, "iceoryx_usd_prewarm_cbf_safety_shield"),
+            "iceoryx_usd_cbf_1k": simulate_embodied_robotics_digital_twin_sandbox(1_000, "iceoryx_usd_prewarm_cbf_safety_shield"),
+            "iceoryx_usd_cbf_5k": simulate_embodied_robotics_digital_twin_sandbox(5_000, "iceoryx_usd_prewarm_cbf_safety_shield"),
+            "bridge_udp_cold_1k": simulate_embodied_robotics_digital_twin_sandbox(1_000, "bridge_udp_cold_usd_unfiltered_vla"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

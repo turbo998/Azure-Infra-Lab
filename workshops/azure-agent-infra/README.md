@@ -993,7 +993,33 @@ sequenceDiagram
 
 ---
 
-## 28. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 28. 具身智能、机器人与数字孪生仿真沙箱 —— 零拷贝 `Iceoryx` ROS2 DDS 总线、OpenUSD 预热并行物理推演与控制屏障函数（CBF）运动安全护盾物理模型（Physical AI, Robotics & Digital-Twin Embodied Agent Sandboxes — Zero-Copy `Iceoryx` ROS2 DDS Bus, Pre-Warmed OpenUSD Parallel Physics Rollouts & Control-Barrier-Function Safety Shield Physics）
+
+> 本章由确定性具身智能与数字孪生沙箱仿真模型 [`simulate_embodied_robotics_digital_twin_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-iot-operations-ros2-digital-twin.bicep`](blueprints/aksclaw-iot-operations-ros2-digital-twin.bicep) 驱动，面向工业制造、仓储物流与具身机器人（VLA / Embodied AI Agent）在 Azure 云边协同架构（`AKS GPU Digital-Twin Pool + Azure IoT Operations + ROS2 Humble/Jazzy + NVIDIA Omniverse/Isaac Sim Headless`）下的三大核心瓶颈：**容器桥接网络 UDP 多播抖动导致高频（`100–500 Hz`）传感器-执行器控制环掉帧、每次强化学习/策略验证回合冷加载数 GB OpenUSD 网格与 PhysX 着色器导致的数十秒级启动停滞，以及将大模型生成的动作序列（Action Tokens）未经动力学约束直接下发物理电机引发的碰撞与力矩超限事故**。
+
+### 28.1 具身智能与数字孪生沙箱三大支柱
+
+1. **Pillar 1：微虚拟机内零拷贝 `Iceoryx` 共享内存环形缓冲区 + 宿主机 eBPF ROS2 DDS 快速通道 vs 传统容器网桥 UDP 多播**：
+   - 在 `100 Hz – 500 Hz` 激光雷达/深度相机点云与关节力矩控制环中，传统容器网桥 UDP 序列化与内核协议栈拷贝造成 **`14.80 ms` p99 发布/订阅抖动**（导致 `8.4%` 控制帧错过实时截止期）；
+   - 启用基于 `ivshmem` / 沙箱内 `Iceoryx` 零拷贝共享内存与宿主机 eBPF DDS 旁路转发后，传感器-执行器消息传递 p99 延迟压降至 **`0.42 ms`（`-97.2%`）**，控制帧超期率归零至 **`0.0%`**。
+2. **Pillar 2：`Standard_NV36ads_A10_v5` 本地 NVMe OpenUSD / PhysX 着色器预热缓存与 GPU 上下文写时复制（CoW）并行克隆**：
+   - 在 `1,000` 个并发无头（Headless）数字孪生仿真沙箱上验证 VLA 策略时，传统冷加载 OpenUSD 场景资产与即时编译 PhysX GPU 内核耗时达 **`38.50 s`**；
+   - 通过宿主机 NVMe 只读挂载预编译 OpenUSD/PhysX 缓存并执行 GPU 上下文 CoW 派生，单回合仿真环境初始化耗时降至 **`1.15 s`（`-97.0%`）**，实现 **`420x` 实时物理推演加速比**（较传统未加速管线的 `18x` 提升 `23.3` 倍）。
+3. **Pillar 3：边缘侧控制屏障函数（Control Barrier Function, CBF）二次规划运动安全护盾 + Azure IoT Operations 断网确定性优雅停机门控**：
+   - 在 VLA / LLM 动作指令进入物理控制器或高保真 HIL（硬件在环）台架前，强制经过 `< 0.35 ms` 的 CBF 二次规划（QP）动力学与碰撞包络投影过滤器，将机械臂奇异点、关节力矩超限与障碍物碰撞违规率从无过滤直连的 **`6.8%` 压降至 `0.0%`**；同时在云边 WAN 断连时由边缘控制器实现 **`100.0%` 安全降级与零失控急停**。
+
+### 28.2 零拷贝 `Iceoryx` DDS + OpenUSD 预热并行仿真 + CBF 运动安全护盾 vs 传统容器 UDP + 冷加载直连定量对比表
+
+| 并发数字孪生推演沙箱与具身安全架构 | GPU 仿真节点数 (`NV36ads_A10_v5`) | **ROS2 DDS 发布订阅 (`p99`)** | **控制帧超期率** | **OpenUSD 回合初始化** | 物理推演加速比 | CBF 护盾开销 | **运动碰撞/超限违规率** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`250` 沙箱 · `Iceoryx` 零拷贝 DDS + OpenUSD 预热 + CBF 安全护盾** | `7` | **`0.42 ms` (`-97.2%`)** | **`0.0%`** | **`1.15 s` (`-97.0%`)** | `420x` | `0.35 ms` | **`0.0%` (✅ 100% 断网急停保护)** |
+| **`1,000` 沙箱 · `Iceoryx` 零拷贝 DDS + OpenUSD 预热 + CBF 安全护盾 (推荐)** | `25` | **`0.42 ms` (`-97.2%`)** | **`0.0%`** | **`1.15 s` (`-97.0%`)** | **`420x`** | **`0.35 ms`** | **`0.0%` (✅ 100% 断网急停保护)** |
+| **`5,000` 沙箱 · `Iceoryx` 零拷贝 DDS + OpenUSD 预热 + CBF 安全护盾** | `125` | **`0.42 ms` (`-97.2%`)** | **`0.0%`** | **`1.15 s` (`-97.0%`)** | `420x` | `0.35 ms` | **`0.0%` (✅ 100% 断网急停保护)** |
+| `1,000` 沙箱 · 传统容器网桥 UDP + OpenUSD 冷加载 + VLA 裸连下发 (反模式) | `25` | `14.80 ms` (`0.0%`) | `8.4%` (❌ 掉帧失稳) | `38.50 s` (`0.0%`) | `18x` | `0.00 ms` | `6.8%` (❌ 机械碰撞高危) |
+
+---
+
+## 29. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1006,10 +1032,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 22 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室）
+# 2. 运行深度定量模型（全部 23 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 31 项单元测试（100% 覆盖 6 大运行时契约、22 大深度物理模型、23 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 32 项单元测试（100% 覆盖 6 大运行时契约、23 大深度物理模型、24 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
