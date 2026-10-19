@@ -26,6 +26,7 @@ from agent_infra_sizer import (  # noqa: E402
     RUNTIMES,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_a2a_verified_id_quic_federation_mesh,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
@@ -383,6 +384,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "mandate_escrow_2500": simulate_agentic_payment_confidential_ledger_guardrail(2_500, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
             "mandate_escrow_10k": simulate_agentic_payment_confidential_ledger_guardrail(10_000, "hsm_spend_mandate_horizondb_escrow_confidential_ledger"),
             "raw_vault_2500": simulate_agentic_payment_confidential_ledger_guardrail(2_500, "raw_card_vault_unidempotent_rest"),
+        },
+        "demo_31_a2a_verified_id_quic_mesh": {
+            "a2a_quic_1k": simulate_a2a_verified_id_quic_federation_mesh(1_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
+            "a2a_quic_5k": simulate_a2a_verified_id_quic_federation_mesh(5_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
+            "a2a_quic_25k": simulate_a2a_verified_id_quic_federation_mesh(25_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
+            "raw_oauth_tcp_5k": simulate_a2a_verified_id_quic_federation_mesh(5_000, "raw_oauth_tcp_http1_no_budget"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

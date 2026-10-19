@@ -1193,7 +1193,31 @@ sequenceDiagram
 
 ---
 
-## 36. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 36. 跨企业 Agent-to-Agent (`A2A`) 联邦服务网格与可验证凭证 —— Microsoft Entra Verified ID (`did:web` + SD-JWT 选择性披露)、HTTP/3 QUIC 0-RTT 流式多路复用与跨组织 SLA 预算传播物理模型（Cross-Organization `A2A` Federation & Verifiable Credential Mesh — Entra Verified ID SD-JWT, HTTP/3 QUIC 0-RTT & Deadline-Budget SLA Routing）
+
+> 本章由确定性跨组织 `A2A` 联邦网格仿真模型 [`simulate_a2a_verified_id_quic_federation_mesh()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-a2a-entra-verified-id-quic-mesh.bicep`](blueprints/aksclaw-a2a-entra-verified-id-quic-mesh.bicep) 驱动，面向跨企业供应链协同、跨机构金融询价与多方服务商智能体互操作（`1,000–25,000` 并发 `A2A` 委托会话）解决 **传统 OAuth Token 全量暴露企业内部组织架构/用户 OID、跨洲际广域网 `1.2%` 丢包下 TCP 队头阻塞（Head-of-Line Blocking）拖慢 `tasks/sendSubscribe` 流式协同，以及多跳外部 Agent 调用缺乏剩余超时预算传导引发的级联雪崩**。
+
+### 36.1 跨企业 `A2A` 联邦服务网格三大工程支柱
+
+1. **Pillar 1：Microsoft Entra Verified ID (`did:web`) + `SD-JWT` 选择性披露可验证凭证（零组织敏感属性外泄）**：
+   - 在发现并调用外部企业 `/.well-known/agent.json`（`A2A` Agent Card）时，调用方通过 **Entra Verified ID** 出示仅包含必要合规断言（如 `iso27001_certified=true`、`partner_tier=platinum`）的 `SD-JWT` 选择性披露凭证（本地验签耗时 **`1.85 ms`**），将内部组织拓扑与员工身份属性过度暴露率从粗粒度 OAuth Token 的 `100.0%` 压降至 **`0.0%`**。
+2. **Pillar 2：Azure Front Door + APIM `HTTP/3 QUIC 0-RTT` 多路复用流式传输（消除跨洲际 WAN 丢包下的 TCP 队头阻塞）**：
+   - 在跨洲际 `1.2%` 广域网随机丢包与 `5,000` 并发 `A2A` 实时任务流（`tasks/sendSubscribe` SSE）下，传统 HTTP/1.1 + TCP 因单包重传阻塞整条连接导致 `p99` 事件投递延迟飙升至 `420.0 ms`；切换为 **HTTP/3 QUIC 0-RTT 独立流复用**后，跨组织 `p99` 流式延迟骤降至 **`38.5 ms`（`-90.8%`）**。
+3. **Pillar 3：全链路剩余截止时间预算传导（`x-a2a-deadline-budget-ms`）与备用合作伙伴自动降级路由**：
+   - 每一跳 `A2A` 委托头强制扣减本跳已消耗耗时并向下游传递剩余毫秒预算，当外部合作方 `p95` 响应逼近预算红线时自动切流至预验证备选供应方 Agent，将多跳跨组织级联超时失败率从 `19.4%` 压降至 **`0.15%`（`-99.2%`）**。
+
+### 36.2 Entra Verified ID `SD-JWT` + HTTP/3 QUIC `0-RTT` + 预算传播 vs 传统 OAuth + TCP HTTP/1.1 对比表
+
+| 并发跨企业 `A2A` 委托规模与联邦网格架构 | 所需 `D32as_v6` 网关节点 | **DID/SD-JWT 验签** | **敏感属性过度暴露率** | **跨洲际流式 `p99` 延迟** | **多跳级联超时失败率** | **超时故障削减** | **跨组织互信状态** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`1,000` 并发委托 · Verified ID SD-JWT + HTTP/3 QUIC + 预算路由** | `2` | **`1.85 ms`** | **`0.0%`** | **`38.5 ms` (`-90.8%`)** | **`0.15%`** | **`-99.2%`** | **`✅ 零属性泄露低时延联邦`** |
+| **`5,000` 并发委托 · Verified ID SD-JWT + HTTP/3 QUIC + 预算路由 (推荐)** | **`6`** | **`1.85 ms`** | **`0.0%`** | **`38.5 ms` (`-90.8%`)** | **`0.15%`** | **`-99.2%`** | **`✅ 零属性泄露低时延联邦`** |
+| **`25,000` 并发委托 · Verified ID SD-JWT + HTTP/3 QUIC + 预算路由** | `28` | **`1.85 ms`** | **`0.0%`** | **`38.5 ms` (`-90.8%`)** | **`0.15%`** | **`-99.2%`** | **`✅ 零属性泄露低时延联邦`** |
+| `5,000` 并发委托 · 传统 OAuth 全量声明 + TCP HTTP/1.1 + 无预算传导 (反模式) | `6` | `24.00 ms` | `100.0%` (❌ 内部 OID 暴露) | `420.0 ms` (`0.0%`) | `19.40%` | `0.0%` | `❌ 队头阻塞与级联超时` |
+
+---
+
+## 37. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1206,10 +1230,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 30 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本护栏）
+# 2. 运行深度定量模型（全部 31 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 39 项单元测试（100% 覆盖 6 大运行时契约、30 大深度物理模型、31 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 40 项单元测试（100% 覆盖 6 大运行时契约、31 大深度物理模型、32 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

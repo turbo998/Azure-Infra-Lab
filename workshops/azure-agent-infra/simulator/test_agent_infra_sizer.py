@@ -13,6 +13,7 @@ from agent_infra_sizer import (
     build_report_payload,
     calculate_e2b_vmss_cluster_sizing,
     recommend_runtime,
+    simulate_a2a_verified_id_quic_federation_mesh,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
@@ -643,6 +644,19 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(raw["unauthorized_spend_exposure_pct"], 100.0)
         self.assertAlmostEqual(raw["duplicate_charge_rate_pct"], 3.8)
         self.assertFalse(raw["payment_ledger_governed"])
+
+    def test_a2a_verified_id_quic_federation_mesh(self) -> None:
+        a2a = simulate_a2a_verified_id_quic_federation_mesh(5_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget")
+        leg = simulate_a2a_verified_id_quic_federation_mesh(5_000, "raw_oauth_tcp_http1_no_budget")
+        self.assertAlmostEqual(a2a["did_sdjwt_verify_ms"], 1.85)
+        self.assertEqual(a2a["attribute_overdisclosure_pct"], 0.0)
+        self.assertAlmostEqual(a2a["wan_stream_p99_latency_ms"], 38.5)
+        self.assertAlmostEqual(a2a["latency_reduction_pct"], 90.8)
+        self.assertAlmostEqual(a2a["cascading_timeout_failure_pct"], 0.15)
+        self.assertTrue(a2a["a2a_mesh_governed"])
+        self.assertEqual(leg["attribute_overdisclosure_pct"], 100.0)
+        self.assertAlmostEqual(leg["wan_stream_p99_latency_ms"], 420.0)
+        self.assertFalse(leg["a2a_mesh_governed"])
 
 
 if __name__ == "__main__":

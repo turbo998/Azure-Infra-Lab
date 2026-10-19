@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Dict, List
 
 from agent_infra_sizer import (
+    simulate_a2a_verified_id_quic_federation_mesh,
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_agentic_payment_confidential_ledger_guardrail,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
@@ -437,6 +438,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_agentic_payment_confidential_ledger_guardrail(2_500, "raw_card_vault_unidempotent_rest"),
     ]
 
+    a2a_federation_profiles: List[Dict[str, object]] = [
+        simulate_a2a_verified_id_quic_federation_mesh(1_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
+        simulate_a2a_verified_id_quic_federation_mesh(5_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
+        simulate_a2a_verified_id_quic_federation_mesh(25_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
+        simulate_a2a_verified_id_quic_federation_mesh(5_000, "raw_oauth_tcp_http1_no_budget"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -467,6 +475,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "chaos_byzantine_profiles": chaos_byzantine_profiles,
         "scientific_hpc_profiles": scientific_hpc_profiles,
         "payment_ledger_profiles": payment_ledger_profiles,
+        "a2a_federation_profiles": a2a_federation_profiles,
     }
 
 

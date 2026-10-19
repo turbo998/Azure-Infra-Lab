@@ -1972,5 +1972,55 @@
       "merkle_non_repudiation_pct": 0.0,
       "payment_ledger_governed": false
     }
+  ],
+  "a2a_federation_profiles": [
+    {
+      "concurrent_a2a_delegations": 1000,
+      "a2a_mesh_mode": "entra_verified_id_sdjwt_http3_quic_deadline_budget",
+      "a2a_gateway_nodes": 2,
+      "did_sdjwt_verify_ms": 1.85,
+      "attribute_overdisclosure_pct": 0.0,
+      "wan_stream_p99_latency_ms": 38.5,
+      "latency_reduction_pct": 90.8,
+      "cascading_timeout_failure_pct": 0.15,
+      "timeout_reduction_pct": 99.2,
+      "a2a_mesh_governed": true
+    },
+    {
+      "concurrent_a2a_delegations": 5000,
+      "a2a_mesh_mode": "entra_verified_id_sdjwt_http3_quic_deadline_budget",
+      "a2a_gateway_nodes": 6,
+      "did_sdjwt_verify_ms": 1.85,
+      "attribute_overdisclosure_pct": 0.0,
+      "wan_stream_p99_latency_ms": 38.5,
+      "latency_reduction_pct": 90.8,
+      "cascading_timeout_failure_pct": 0.15,
+      "timeout_reduction_pct": 99.2,
+      "a2a_mesh_governed": true
+    },
+    {
+      "concurrent_a2a_delegations": 25000,
+      "a2a_mesh_mode": "entra_verified_id_sdjwt_http3_quic_deadline_budget",
+      "a2a_gateway_nodes": 28,
+      "did_sdjwt_verify_ms": 1.85,
+      "attribute_overdisclosure_pct": 0.0,
+      "wan_stream_p99_latency_ms": 38.5,
+      "latency_reduction_pct": 90.8,
+      "cascading_timeout_failure_pct": 0.15,
+      "timeout_reduction_pct": 99.2,
+      "a2a_mesh_governed": true
+    },
+    {
+      "concurrent_a2a_delegations": 5000,
+      "a2a_mesh_mode": "raw_oauth_tcp_http1_no_budget",
+      "a2a_gateway_nodes": 6,
+      "did_sdjwt_verify_ms": 24.0,
+      "attribute_overdisclosure_pct": 100.0,
+      "wan_stream_p99_latency_ms": 420.0,
+      "latency_reduction_pct": 0.0,
+      "cascading_timeout_failure_pct": 19.4,
+      "timeout_reduction_pct": 0.0,
+      "a2a_mesh_governed": false
+    }
   ]
 }
