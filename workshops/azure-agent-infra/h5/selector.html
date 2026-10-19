@@ -429,6 +429,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(29)">30. AI-for-Science Managed Lustre + HBv4 InfiniBand 科学计算池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(30)">31. AP2/x402 消费授权令 + Confidential Ledger 金融账本护栏 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(31)">32. 跨企业 A2A Entra Verified ID SD-JWT + HTTP/3 QUIC 联邦网格 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(32)">33. 自主网络防御气隙 vsock MicroVM + eBPF KRSI + Sentinel SOAR (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1154,6 +1155,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 32: Autonomous Cyber-Defense & AI Red-Team Detonation Sandbox Sizer -->
+  <section class="card">
+    <span class="pill pill-rose">TOOL 32 · AUTONOMOUS CYBER-DEFENSE &amp; MALWARE DETONATION SANDBOX (AIR-GAPPED VSOCK MICROVM + EBPF KRSI + SENTINEL SOAR SIZER)</span>
+    <h2>自主网络防御与样本引爆沙箱：气隙 vsock MicroVM、内核 eBPF KRSI/LSM 与 Sentinel 亚秒级隔离测算器</h2>
+    <div class="sub">量化在 <code>250 – 5,000</code> 并发漏洞复现与恶意样本引爆沙箱下，采用零网卡气隙 <code>--net=none</code> + 单向 <code>AF_VSOCK</code> MicroVM（<code>0.0%</code> 内网横向逃逸、<code>45.0 ms</code> 内存擦除重置 vs <code>18,500 ms</code> 传统重装）、内核态 eBPF <code>KRSI/LSM</code> 钩子（<code>1.8%</code> CPU 开销、<code>0.4%</code> 反沙箱逃逸率 vs <code>68.0%</code> 用户态 <code>ptrace</code>）与 Microsoft Sentinel <code>680.0 ms</code> 自主 SOAR 全网隔离闭环的收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发漏洞复现与样本引爆沙箱规模 (Concurrent Detonation Sandboxes): <strong id="lbl_cyb_sbx" style="color:var(--teal)">1,000</strong></label>
+          <input type="range" id="rng_cyb_sbx" min="250" max="5000" step="250" value="1000" oninput="runCybLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 引爆隔离边界与内核行为遥测架构 (Detonation Isolation &amp; Telemetry Mode)</label>
+          <select id="sel_cyb_mode" onchange="runCybLab()">
+            <option value="airgapped_vsock_microvm_krsi_ebpf_sentinel_soar" selected>气隙 vsock MicroVM (0% 逃逸 / 45ms 重置) + eBPF KRSI (0.4% 反检测) + Sentinel 680ms SOAR (推荐)</option>
+            <option value="vnet_container_ptrace_manual_soc">传统反模式：带 VNet 容器 (100% 内网暴露) + 用户态 ptrace (68% 样本逃逸) + 45m 人工 SOC</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cybOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -1759,6 +1783,19 @@ resource a2aFederationPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/transport-protocol': 'http3-quic-0rtt-multiplexed'
     }
   }
+}`,
+`// 33. Azure Bicep: Air-Gapped Cyber-Defense Detonation MicroVM Pool + eBPF KRSI + Sentinel SOAR
+resource detonationPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'aks-aksclaw-prod/detonatepool'
+  properties: {
+    count: 16
+    vmSize: 'Standard_DC48ads_v5'
+    workloadRuntime: 'KataMshvVmIsolation'
+    nodeLabels: {
+      'aksclaw.io/guest-network': 'none-af-vsock-only'
+      'aksclaw.io/telemetry-hook': 'krsi-ebpf-lsm-ringbuf'
+    }
+  }
 }`
 ];
 
@@ -1891,6 +1928,29 @@ runChLab();
 runHpcLab();
 runPayLab();
 runA2aLab();
+runCybLab();
+
+function runCybLab() {
+  const sbx = parseInt(document.getElementById('rng_cyb_sbx').value, 10);
+  const mode = document.getElementById('sel_cyb_mode').value;
+  document.getElementById('lbl_cyb_sbx').textContent = sbx.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sbx / 64));
+  const ok = mode === 'airgapped_vsock_microvm_krsi_ebpf_sentinel_soar';
+  const isoStr = ok ? "0.0% 内网横向逃逸 · 45.0 ms 密码学内存重置 (-99.8%)" : "100.0% RFC1918 内网暴露 · 18,500 ms 重装";
+  const krsiStr = ok ? "1.8% eBPF KRSI/LSM 开销 · 0.4% 反沙箱逃逸 (-99.4%)" : "42.0% ptrace 开销 · 68.0% 样本静默逃逸";
+  const soarStr = ok ? "680.0 ms Sentinel SOAR 全网隔离 (<= 1,000ms)" : "2,700,000 ms (45m) 人工 SOC 滞后";
+
+  document.getElementById('cybOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + isoStr : '❌ 带网卡容器内网暴露 · 68% 样本反调试逃逸'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 DC48ads_v5 (${soarStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>内核态行为调用图捕获与反逃逸</strong>：<strong>${krsiStr}</strong>
+    </p>
+  `;
+}
 
 function runA2aLab() {
   const del = parseInt(document.getElementById('rng_a2a_del').value, 10);

@@ -34,6 +34,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
+    simulate_cyber_defense_detonation_sentinel_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
@@ -390,6 +391,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "a2a_quic_5k": simulate_a2a_verified_id_quic_federation_mesh(5_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
             "a2a_quic_25k": simulate_a2a_verified_id_quic_federation_mesh(25_000, "entra_verified_id_sdjwt_http3_quic_deadline_budget"),
             "raw_oauth_tcp_5k": simulate_a2a_verified_id_quic_federation_mesh(5_000, "raw_oauth_tcp_http1_no_budget"),
+        },
+        "demo_32_cyber_defense_detonation_sandbox": {
+            "airgapped_krsi_250": simulate_cyber_defense_detonation_sentinel_sandbox(250, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
+            "airgapped_krsi_1k": simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
+            "airgapped_krsi_5k": simulate_cyber_defense_detonation_sentinel_sandbox(5_000, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
+            "vnet_ptrace_1k": simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "vnet_container_ptrace_manual_soc"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

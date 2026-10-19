@@ -27,6 +27,7 @@ from agent_infra_sizer import (
     simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
+    simulate_cyber_defense_detonation_sentinel_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
@@ -445,6 +446,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_a2a_verified_id_quic_federation_mesh(5_000, "raw_oauth_tcp_http1_no_budget"),
     ]
 
+    cyber_detonation_profiles: List[Dict[str, object]] = [
+        simulate_cyber_defense_detonation_sentinel_sandbox(250, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
+        simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
+        simulate_cyber_defense_detonation_sentinel_sandbox(5_000, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar"),
+        simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "vnet_container_ptrace_manual_soc"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -476,6 +484,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "scientific_hpc_profiles": scientific_hpc_profiles,
         "payment_ledger_profiles": payment_ledger_profiles,
         "a2a_federation_profiles": a2a_federation_profiles,
+        "cyber_detonation_profiles": cyber_detonation_profiles,
     }
 
 

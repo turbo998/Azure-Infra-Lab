@@ -2224,6 +2224,60 @@
         "timeout_reduction_pct": 0.0,
         "a2a_mesh_governed": false
       }
+    ],
+    "cyber_detonation_profiles": [
+      {
+        "concurrent_detonation_sandboxes": 250,
+        "detonation_sandbox_mode": "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar",
+        "detonation_host_nodes": 4,
+        "lateral_network_escape_surface_pct": 0.0,
+        "post_detonation_wipe_ms": 45.0,
+        "wipe_latency_reduction_pct": 99.8,
+        "telemetry_cpu_overhead_pct": 1.8,
+        "anti_sandbox_evasion_rate_pct": 0.4,
+        "evasion_reduction_pct": 99.4,
+        "soar_quarantine_propagation_p95_ms": 680.0,
+        "cyber_detonation_governed": true
+      },
+      {
+        "concurrent_detonation_sandboxes": 1000,
+        "detonation_sandbox_mode": "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar",
+        "detonation_host_nodes": 16,
+        "lateral_network_escape_surface_pct": 0.0,
+        "post_detonation_wipe_ms": 45.0,
+        "wipe_latency_reduction_pct": 99.8,
+        "telemetry_cpu_overhead_pct": 1.8,
+        "anti_sandbox_evasion_rate_pct": 0.4,
+        "evasion_reduction_pct": 99.4,
+        "soar_quarantine_propagation_p95_ms": 680.0,
+        "cyber_detonation_governed": true
+      },
+      {
+        "concurrent_detonation_sandboxes": 5000,
+        "detonation_sandbox_mode": "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar",
+        "detonation_host_nodes": 79,
+        "lateral_network_escape_surface_pct": 0.0,
+        "post_detonation_wipe_ms": 45.0,
+        "wipe_latency_reduction_pct": 99.8,
+        "telemetry_cpu_overhead_pct": 1.8,
+        "anti_sandbox_evasion_rate_pct": 0.4,
+        "evasion_reduction_pct": 99.4,
+        "soar_quarantine_propagation_p95_ms": 680.0,
+        "cyber_detonation_governed": true
+      },
+      {
+        "concurrent_detonation_sandboxes": 1000,
+        "detonation_sandbox_mode": "vnet_container_ptrace_manual_soc",
+        "detonation_host_nodes": 16,
+        "lateral_network_escape_surface_pct": 100.0,
+        "post_detonation_wipe_ms": 18500.0,
+        "wipe_latency_reduction_pct": 0.0,
+        "telemetry_cpu_overhead_pct": 42.0,
+        "anti_sandbox_evasion_rate_pct": 68.0,
+        "evasion_reduction_pct": 0.0,
+        "soar_quarantine_propagation_p95_ms": 2700000.0,
+        "cyber_detonation_governed": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -3992,5 +4046,59 @@
       "a2a_mesh_governed": false
     }
   },
-  "trace_sha256": "8a409e65600015657f52bcd913b4e8f9121e8124dbccfcc305a88bf210ec8f08"
+  "demo_32_cyber_defense_detonation_sandbox": {
+    "airgapped_krsi_250": {
+      "concurrent_detonation_sandboxes": 250,
+      "detonation_sandbox_mode": "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar",
+      "detonation_host_nodes": 4,
+      "lateral_network_escape_surface_pct": 0.0,
+      "post_detonation_wipe_ms": 45.0,
+      "wipe_latency_reduction_pct": 99.8,
+      "telemetry_cpu_overhead_pct": 1.8,
+      "anti_sandbox_evasion_rate_pct": 0.4,
+      "evasion_reduction_pct": 99.4,
+      "soar_quarantine_propagation_p95_ms": 680.0,
+      "cyber_detonation_governed": true
+    },
+    "airgapped_krsi_1k": {
+      "concurrent_detonation_sandboxes": 1000,
+      "detonation_sandbox_mode": "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar",
+      "detonation_host_nodes": 16,
+      "lateral_network_escape_surface_pct": 0.0,
+      "post_detonation_wipe_ms": 45.0,
+      "wipe_latency_reduction_pct": 99.8,
+      "telemetry_cpu_overhead_pct": 1.8,
+      "anti_sandbox_evasion_rate_pct": 0.4,
+      "evasion_reduction_pct": 99.4,
+      "soar_quarantine_propagation_p95_ms": 680.0,
+      "cyber_detonation_governed": true
+    },
+    "airgapped_krsi_5k": {
+      "concurrent_detonation_sandboxes": 5000,
+      "detonation_sandbox_mode": "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar",
+      "detonation_host_nodes": 79,
+      "lateral_network_escape_surface_pct": 0.0,
+      "post_detonation_wipe_ms": 45.0,
+      "wipe_latency_reduction_pct": 99.8,
+      "telemetry_cpu_overhead_pct": 1.8,
+      "anti_sandbox_evasion_rate_pct": 0.4,
+      "evasion_reduction_pct": 99.4,
+      "soar_quarantine_propagation_p95_ms": 680.0,
+      "cyber_detonation_governed": true
+    },
+    "vnet_ptrace_1k": {
+      "concurrent_detonation_sandboxes": 1000,
+      "detonation_sandbox_mode": "vnet_container_ptrace_manual_soc",
+      "detonation_host_nodes": 16,
+      "lateral_network_escape_surface_pct": 100.0,
+      "post_detonation_wipe_ms": 18500.0,
+      "wipe_latency_reduction_pct": 0.0,
+      "telemetry_cpu_overhead_pct": 42.0,
+      "anti_sandbox_evasion_rate_pct": 68.0,
+      "evasion_reduction_pct": 0.0,
+      "soar_quarantine_propagation_p95_ms": 2700000.0,
+      "cyber_detonation_governed": false
+    }
+  },
+  "trace_sha256": "104c52b3bf15026ac713f7525ec329a43bc6eedffc87a6035615877a08800d15"
 }

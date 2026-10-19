@@ -21,6 +21,7 @@ from agent_infra_sizer import (
     simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
+    simulate_cyber_defense_detonation_sentinel_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_egress_exfiltration_and_mcp_supply_chain,
@@ -657,6 +658,19 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(leg["attribute_overdisclosure_pct"], 100.0)
         self.assertAlmostEqual(leg["wan_stream_p99_latency_ms"], 420.0)
         self.assertFalse(leg["a2a_mesh_governed"])
+
+    def test_cyber_defense_detonation_sentinel_sandbox(self) -> None:
+        cyb = simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "airgapped_vsock_microvm_krsi_ebpf_sentinel_soar")
+        leg = simulate_cyber_defense_detonation_sentinel_sandbox(1_000, "vnet_container_ptrace_manual_soc")
+        self.assertEqual(cyb["lateral_network_escape_surface_pct"], 0.0)
+        self.assertAlmostEqual(cyb["post_detonation_wipe_ms"], 45.0)
+        self.assertAlmostEqual(cyb["telemetry_cpu_overhead_pct"], 1.8)
+        self.assertAlmostEqual(cyb["anti_sandbox_evasion_rate_pct"], 0.4)
+        self.assertAlmostEqual(cyb["soar_quarantine_propagation_p95_ms"], 680.0)
+        self.assertTrue(cyb["cyber_detonation_governed"])
+        self.assertEqual(leg["lateral_network_escape_surface_pct"], 100.0)
+        self.assertAlmostEqual(leg["anti_sandbox_evasion_rate_pct"], 68.0)
+        self.assertFalse(leg["cyber_detonation_governed"])
 
 
 if __name__ == "__main__":

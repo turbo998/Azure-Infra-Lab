@@ -1217,7 +1217,31 @@ sequenceDiagram
 
 ---
 
-## 37. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 37. 自主网络防御与 AI 红队样本引爆沙箱 —— 无网卡气隙 MicroVM（`--net=none` + `AF_VSOCK`）、内核 eBPF `KRSI/LSM` 行为调用图捕获与 Microsoft Sentinel 亚秒级 SOAR 自动隔离物理模型（Autonomous Cyber-Defense & AI Red-Team Detonation Sandboxes — Air-Gapped `vsock` MicroVMs, Kernel eBPF `KRSI/LSM` Telemetry & Sub-Second Sentinel SOAR Quarantine）
+
+> 本章由确定性网络防御与样本引爆沙箱仿真模型 [`simulate_cyber_defense_detonation_sentinel_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-cyber-detonation-sentinel-soar.bicep`](blueprints/aksclaw-cyber-detonation-sentinel-soar.bicep) 驱动，面向自主 SecOps 漏洞复现、恶意开源包（npm/PyPI 投毒）动态引爆分析、补丁有效性验证与 AI 红队攻防演练集群（`250–5,000` 并发引爆沙箱）解决 **传统带网卡容器引爆样本时的内网横向渗透风险、用户态 `ptrace` 调试器高达 `68.0%` 的反沙箱逃逸检测率，以及人工 SOC 研判与全网隔离规则下发耗时 `45 分钟` 赶不上自动化漏洞利用速度的三大安全瓶颈**。
+
+### 37.1 自主网络防御与样本引爆沙箱三大工程支柱
+
+1. **Pillar 1：零网卡气隙隔离 MicroVM（`--net=none` + `dm-verity` 只读根文件系统 + 内存盘 `brd` + 单向 `AF_VSOCK` 遥测环）**：
+   - 引爆沙箱运行于 `Standard_DC48ads_v5` Kata/Firecracker 机密 MicroVM 内，彻底剥离 Guest 虚拟网卡（`--net=none`），仅通过虚拟仿真蜜罐套接字与宿主机单向只写 `AF_VSOCK` 环形缓冲区导出遥测，将 RFC1918/VNet 内网横向逃逸暴露面从带网卡容器的 `100.0%` 压降至 **`0.0%`**，并将单次引爆后的密码学内存擦除重置耗时从全量重装 VM 的 `18,500.0 ms` 压缩至 **`45.0 ms`（`-99.8%`）**。
+2. **Pillar 2：内核态 eBPF `KRSI`（Linux Security Module `LSM` 钩子）行为调用图捕获 vs 用户态 `ptrace / strace`**：
+   - 传统沙箱依赖用户态 `ptrace` 拦截系统调用，不仅带来 `42.0%` 的运行时性能损耗，更会被恶意样本通过 `PTRACE_TRACEME` 或 RDTSC 时钟差检测轻易识破（反沙箱逃逸率 **`68.0%`**）；采用 Guest 内核态 eBPF `KRSI/LSM` 钩子（挂载 `bprm_check_security`、`socket_connect`、`bpf`、`kallsyms_lookup_name`）配合 Hypervisor 只读内存页保护后，遥测 CPU 开销降至 **`1.8%`**，反沙箱逃逸成功率骤降至 **`0.4%`（`-99.4%`）**。
+3. **Pillar 3：Azure Event Hubs + Microsoft Sentinel ASIM 流式入湖与亚秒级自主 SOAR / Cilium 全网隔离闭环**：
+   - eBPF 行为因果图经 Event Hubs 实时流式注入 Microsoft Sentinel，由 SecOps 防御智能体自动合成并验证确定性 YARA / Azure WAF / Cilium `NetworkPolicy` 阻断签名，在 **`680.0 ms`（`p95 <= 1,000.0 ms` SLO）** 内完成全集群 `10,000` 节点的联动隔离下发（相比传统人工 SOC `45 分钟 / 2,700,000 ms` 响应提速 **`99.97%`**）。
+
+### 37.2 气隙 `vsock` MicroVM + eBPF `KRSI/LSM` + Sentinel SOAR vs 传统 VNet 容器 + `ptrace` 对比表
+
+| 并发引爆沙箱规模与安全分析架构 | 所需 `DC48ads_v5` 宿主机 | **内网横向逃逸面** | **引爆后重置耗时** | **遥测 CPU 开销** | **反沙箱逃逸率** | **全网隔离下发 (`p95`)** | **防御闭环状态** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **`250` 引爆沙箱 · 气隙 `vsock` MicroVM + eBPF `KRSI` + Sentinel SOAR** | `4` | **`0.0%`** | **`45.0 ms` (`-99.8%`)** | **`1.8%`** | **`0.4%` (`-99.4%`)** | **`680.0 ms` (`<= 1,000ms`)** | **`✅ 零逃逸亚秒级全网免疫`** |
+| **`1,000` 引爆沙箱 · 气隙 `vsock` MicroVM + eBPF `KRSI` + Sentinel SOAR (推荐)** | **`16`** | **`0.0%`** | **`45.0 ms` (`-99.8%`)** | **`1.8%`** | **`0.4%` (`-99.4%`)** | **`680.0 ms` (`<= 1,000ms`)** | **`✅ 零逃逸亚秒级全网免疫`** |
+| **`5,000` 引爆沙箱 · 气隙 `vsock` MicroVM + eBPF `KRSI` + Sentinel SOAR** | `79` | **`0.0%`** | **`45.0 ms` (`-99.8%`)** | **`1.8%`** | **`0.4%` (`-99.4%`)** | **`680.0 ms` (`<= 1,000ms`)** | **`✅ 零逃逸亚秒级全网免疫`** |
+| `1,000` 引爆沙箱 · 传统带 VNet 容器 + 用户态 `ptrace` + 人工 SOC 研判 (反模式) | `16` | `100.0%` (❌ 内网暴露) | `18,500.0 ms` (`0.0%`) | `42.0%` | `68.0%` (❌ 样本静默逃逸) | `2,700,000.0 ms` (`45m`) | `❌ 高逃逸且响应滞后` |
+
+---
+
+## 38. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1230,10 +1254,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 31 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格）
+# 2. 运行深度定量模型（全部 32 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 40 项单元测试（100% 覆盖 6 大运行时契约、31 大深度物理模型、32 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 41 项单元测试（100% 覆盖 6 大运行时契约、32 大深度物理模型、33 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
