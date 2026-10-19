@@ -29,6 +29,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
+    simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -362,6 +363,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hyperlight_50k": simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
             "hyperlight_250k": simulate_hyperlight_wasm_microsandbox_dispatch(250_000, "hyperlight_wasi02_wit_zerocopy_hybrid_dispatch"),
             "linux_vm_only_50k": simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "full_linux_microvm_loopback_http_json_only"),
+        },
+        "demo_28_chaos_byzantine_fencing": {
+            "chaos_fenced_1k": simulate_chaos_byzantine_fault_injection_gameday(1_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
+            "chaos_fenced_10k": simulate_chaos_byzantine_fault_injection_gameday(10_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
+            "chaos_fenced_50k": simulate_chaos_byzantine_fault_injection_gameday(50_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
+            "unverified_10k": simulate_chaos_byzantine_fault_injection_gameday(10_000, "unverified_runbook_no_fencing_unbounded_retry"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

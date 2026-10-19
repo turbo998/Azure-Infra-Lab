@@ -16,6 +16,7 @@ from agent_infra_sizer import (
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
+    simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -594,6 +595,22 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(vm_only["sandboxes_per_d96_node"], 1_200)
         self.assertAlmostEqual(vm_only["median_mcp_tool_latency_ms"], 114.40)
         self.assertFalse(vm_only["hyperlight_hybrid_governed"])
+
+    def test_chaos_byzantine_fault_injection_gameday(self) -> None:
+        ch = simulate_chaos_byzantine_fault_injection_gameday(10_000, "chaos_studio_epoch_fencing_byzantine_breaker")
+        unv = simulate_chaos_byzantine_fault_injection_gameday(10_000, "unverified_runbook_no_fencing_unbounded_retry")
+        self.assertAlmostEqual(ch["compound_fault_mttr_sec"], 6.8)
+        self.assertAlmostEqual(ch["mttr_reduction_pct"], 99.5)
+        self.assertAlmostEqual(ch["task_survival_under_chaos_pct"], 99.94)
+        self.assertAlmostEqual(ch["fencing_check_overhead_ms"], 0.22)
+        self.assertEqual(ch["split_brain_corruption_pct"], 0.0)
+        self.assertAlmostEqual(ch["byzantine_quarantine_sec"], 1.20)
+        self.assertAlmostEqual(ch["retry_token_waste_pct"], 0.4)
+        self.assertTrue(ch["chaos_resilience_governed"])
+        self.assertAlmostEqual(unv["compound_fault_mttr_sec"], 1420.0)
+        self.assertAlmostEqual(unv["split_brain_corruption_pct"], 4.8)
+        self.assertAlmostEqual(unv["retry_token_waste_pct"], 42.0)
+        self.assertFalse(unv["chaos_resilience_governed"])
 
 
 if __name__ == "__main__":

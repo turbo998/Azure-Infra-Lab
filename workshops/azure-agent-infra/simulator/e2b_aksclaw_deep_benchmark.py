@@ -22,6 +22,7 @@ from agent_infra_sizer import (
     simulate_agentic_memory_diskann_graphrag_tiering,
     simulate_autonomous_cicd_buildkit_bazel_sandbox,
     simulate_carbon_aware_greenops_fleet_scheduler,
+    simulate_chaos_byzantine_fault_injection_gameday,
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_dependency_cache_virtiofs_dax,
@@ -413,6 +414,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hyperlight_wasm_microsandbox_dispatch(50_000, "full_linux_microvm_loopback_http_json_only"),
     ]
 
+    chaos_byzantine_profiles: List[Dict[str, object]] = [
+        simulate_chaos_byzantine_fault_injection_gameday(1_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
+        simulate_chaos_byzantine_fault_injection_gameday(10_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
+        simulate_chaos_byzantine_fault_injection_gameday(50_000, "chaos_studio_epoch_fencing_byzantine_breaker"),
+        simulate_chaos_byzantine_fault_injection_gameday(10_000, "unverified_runbook_no_fencing_unbounded_retry"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -440,6 +448,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "pqc_crypto_agility_profiles": pqc_crypto_agility_profiles,
         "greenops_carbon_profiles": greenops_carbon_profiles,
         "hyperlight_wasm_profiles": hyperlight_wasm_profiles,
+        "chaos_byzantine_profiles": chaos_byzantine_profiles,
     }
 
 
