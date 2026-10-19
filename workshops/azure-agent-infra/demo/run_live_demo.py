@@ -55,6 +55,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
@@ -474,6 +475,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "biopharma_2000_ligands": simulate_biopharma_alphafold_wetlab_sila2_sandbox(2_000, "mmseqs2_gpu_msa_fep_sila2_securedna_guard"),
             "biopharma_8000_ligands": simulate_biopharma_alphafold_wetlab_sila2_sandbox(8_000, "mmseqs2_gpu_msa_fep_sila2_securedna_guard"),
             "raw_wetlab_2000_ligands": simulate_biopharma_alphafold_wetlab_sila2_sandbox(2_000, "cpu_jackhmmer_unchecked_pipette_unscreened_seq"),
+        },
+        "demo_44_quant_trading_fix_afxdp_risk_sandbox": {
+            "quant_50_strategies": simulate_quant_trading_fix_afxdp_risk_sandbox(50, "afxdp_itch_fpga_15c35_ptp_audit"),
+            "quant_200_strategies": simulate_quant_trading_fix_afxdp_risk_sandbox(200, "afxdp_itch_fpga_15c35_ptp_audit"),
+            "quant_800_strategies": simulate_quant_trading_fix_afxdp_risk_sandbox(800, "afxdp_itch_fpga_15c35_ptp_audit"),
+            "raw_tcp_200_strategies": simulate_quant_trading_fix_afxdp_risk_sandbox(200, "kernel_tcp_json_unfiltered_ntp_clock"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

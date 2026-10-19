@@ -441,6 +441,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(41)">42. 智能网联汽车 V2X MQTT-over-QUIC 遥测 + CARLA/OpenSCENARIO RSS 闭环仿真与 UNECE R155 Uptane OTA 池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(42)">43. 半导体 EDA 芯片 RTL-to-GDSII ANF Ultra + Standard_FX48mds 4.0GHz 形式化验证与 FlexNet 许可证池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(43)">44. 生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对 + SiLA-2 湿实验机械臂互锁与 SecureDNA 筛查池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(44)">45. 量化交易 Standard_FX48mds PPG + AF_XDP 零拷贝订单簿 + SEC 15c3-5 盘前风控与 PTP 纳秒审计池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1442,6 +1443,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 44: Autonomous Quantitative Trading, Market Microstructure & FIX/ITCH Execution Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 44 · QUANTITATIVE TRADING AF_XDP ORDER-BOOK FEED, SEC RULE 15C3-5 PRE-TRADE RISK GATE &amp; PTP 1588V2 AUDIT SIZER</span>
+    <h2>量化交易与低延迟订单执行：AF_XDP 零拷贝行情、SEC 15c3-5 盘前硬风控与 PTP 1588v2 纳秒审计测算器</h2>
+    <div class="sub">量化在 <code>50 – 800</code> 并发量化策略沙箱规模下，启用 <code>Standard_FX48mds (4.0 GHz + PPG)</code> 与 Azure Boost <code>MANA AF_XDP</code> 零拷贝 <code>ITCH 5.0 / SBE</code> 订单簿共享内存环（Tick-to-Signal 延迟从 <code>1,420.0 us</code> 降至 <code>11.5 us</code>，开收盘微突发丢包率 <code>0.0%</code> vs <code>6.8%</code>）、<code>SEC Rule 15c3-5 / MiFID II RTS 6</code> 内联盘前风控引擎（<code>1.8 us</code> 拦截 <code>100.0%</code> 胖手指/自成交/幌骗错单，<code>85.0 us</code> 全局撤单硬熔断）与 <code>IEEE 1588v2 PTP (/dev/ptp_hyperv)</code> 硬件时钟同步 + WORM 不可变审计链（<code>180.0 ns</code> 时钟漂移，<code>100.0%</code> 监管订单簿回放完整率）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发量化与算法执行策略沙箱数 (Concurrent Quant Execution Strategies): <strong id="lbl_qnt_strats" style="color:var(--teal)">200</strong></label>
+          <input type="range" id="rng_qnt_strats" min="50" max="800" step="50" value="200" oninput="runQuantLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 行情接入旁路、盘前风控网关与硬件时钟同步模式 (Quant Execution Architecture Mode)</label>
+          <select id="sel_qnt_mode" onchange="runQuantLab()">
+            <option value="afxdp_itch_fpga_15c35_ptp_audit" selected>MANA AF_XDP 零拷贝 (11.5us) + SEC 15c3-5 内联风控 (1.8us/0% 错单) + PTP 180ns 审计 (推荐)</option>
+            <option value="kernel_tcp_json_unfiltered_ntp_clock">传统反模式：内核 TCP/JSON (1,420us/6.8% 丢包) + 无盘前硬风控 (5.4% 胖手指) + NTP 时钟 (14.5ms)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="qntOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2245,6 +2269,22 @@ resource biopharmaGpuPool 'Microsoft.ContainerService/managedClusters/agentPools
       'aksclaw.io/biosecurity-screen-gate': 'securedna-ibbis-select-agent-block'
     }
   }
+}`,
+`// 45. Quant Trading AF_XDP Order-Book Feed, SEC 15c3-5 Pre-Trade Risk & PTP Audit Pool (blueprints/aksclaw-quant-trading-fix-afxdp-risk-pool.bicep)
+resource quantTradingPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'quantfxp'
+  properties: {
+    count: 8
+    vmSize: 'Standard_FX48mds'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'quant-trading-fix-itch-execution-agent'
+      'aksclaw.io/afxdp-orderbook-feed': 'mana-zerocopy-sbe-itch50-11.5us'
+      'aksclaw.io/pretrade-risk-gate': 'sec-15c3-5-mifid2-rts6-1.8us-killswitch'
+      'aksclaw.io/ptp-clock-sync': 'hyperv-phc-1588v2-180ns-worm-audit'
+    }
+  }
 }`
 ];
 
@@ -2389,6 +2429,29 @@ runMediaUsdLab();
 runSdvLab();
 runEdaLab();
 runBioLab();
+runQuantLab();
+
+function runQuantLab() {
+  const strats = parseInt(document.getElementById('rng_qnt_strats').value, 10);
+  const mode = document.getElementById('sel_qnt_mode').value;
+  document.getElementById('lbl_qnt_strats').textContent = strats.toLocaleString();
+
+  const nodes = Math.max(4, Math.ceil(strats / 25));
+  const ok = mode === 'afxdp_itch_fpga_15c35_ptp_audit';
+  const feedStr = ok ? "Tick-to-Signal 11.5 us (-99.2%) · 微突发丢包率 0.0%" : "内核 TCP/JSON 1,420.0 us · 集合竞价微突发丢包 6.8%";
+  const riskStr = ok ? "1.8 us SEC 15c3-5 内联风控 · 0.0% 胖手指逃逸 · 85.0 us 全局撤单熔断" : "无内联盘前硬风控 · 5.4% 胖手指/自成交风险 · 450 ms 撤单滞后";
+  const ptpStr = ok ? "180.0 ns PTP (/dev/ptp_hyperv) 时钟同步 · 100.0% CAT/MiFID II WORM 审计重构" : "14.5 ms NTP 时钟漂移 · 仅 62.0% 订单事件可重构";
+
+  document.getElementById('qntOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + feedStr : '❌ 1,420us 延迟滑点 · 5.4% 胖手指错单风险'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 FX48mds PPG 节点 (${riskStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>IEEE 1588v2 PTP 硬件时钟与 SEC CAT / MiFID II RTS 25 不可篡改审计链</strong>：<strong>${ptpStr}</strong>
+    </p>
+  `;
+}
 
 function runBioLab() {
   const lig = parseInt(document.getElementById('rng_bio_lig').value, 10);

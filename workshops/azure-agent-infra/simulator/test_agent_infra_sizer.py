@@ -42,6 +42,7 @@ from agent_infra_sizer import (
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
@@ -832,6 +833,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(bio["biopharma_wetlab_slo_met"])
         self.assertAlmostEqual(raw["wetlab_deck_collision_or_incompat_pct"], 7.6)
         self.assertFalse(raw["biopharma_wetlab_slo_met"])
+
+    def test_quant_trading_fix_afxdp_risk_sandbox(self) -> None:
+        qnt = simulate_quant_trading_fix_afxdp_risk_sandbox(200, "afxdp_itch_fpga_15c35_ptp_audit")
+        raw = simulate_quant_trading_fix_afxdp_risk_sandbox(200, "kernel_tcp_json_unfiltered_ntp_clock")
+        self.assertEqual(qnt["quant_fx_nodes"], 8)
+        self.assertAlmostEqual(qnt["tick_to_signal_latency_us"], 11.5)
+        self.assertEqual(qnt["microburst_packet_drop_pct"], 0.0)
+        self.assertAlmostEqual(qnt["pretrade_risk_gate_us"], 1.8)
+        self.assertEqual(qnt["rogue_fat_finger_escape_pct"], 0.0)
+        self.assertAlmostEqual(qnt["kill_switch_cancel_all_us"], 85.0)
+        self.assertAlmostEqual(qnt["ptp_clock_drift_ns"], 180.0)
+        self.assertAlmostEqual(qnt["cat_mifid_audit_completeness_pct"], 100.0)
+        self.assertTrue(qnt["quant_trading_slo_met"])
+        self.assertAlmostEqual(raw["rogue_fat_finger_escape_pct"], 5.4)
+        self.assertFalse(raw["quant_trading_slo_met"])
 
 
 if __name__ == "__main__":

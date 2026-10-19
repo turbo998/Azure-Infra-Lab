@@ -48,6 +48,7 @@ from agent_infra_sizer import (
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
@@ -541,6 +542,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_biopharma_alphafold_wetlab_sila2_sandbox(2_000, "cpu_jackhmmer_unchecked_pipette_unscreened_seq"),
     ]
 
+    quant_trading_fix_afxdp_profiles: List[Dict[str, object]] = [
+        simulate_quant_trading_fix_afxdp_risk_sandbox(50, "afxdp_itch_fpga_15c35_ptp_audit"),
+        simulate_quant_trading_fix_afxdp_risk_sandbox(200, "afxdp_itch_fpga_15c35_ptp_audit"),
+        simulate_quant_trading_fix_afxdp_risk_sandbox(800, "afxdp_itch_fpga_15c35_ptp_audit"),
+        simulate_quant_trading_fix_afxdp_risk_sandbox(200, "kernel_tcp_json_unfiltered_ntp_clock"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -584,6 +592,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "automotive_sdv_v2x_profiles": automotive_sdv_v2x_profiles,
         "semiconductor_eda_rtl_profiles": semiconductor_eda_rtl_profiles,
         "biopharma_alphafold_wetlab_profiles": biopharma_alphafold_wetlab_profiles,
+        "quant_trading_fix_afxdp_profiles": quant_trading_fix_afxdp_profiles,
     }
 
 

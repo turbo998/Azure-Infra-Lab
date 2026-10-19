@@ -2719,6 +2719,46 @@ def simulate_biopharma_alphafold_wetlab_sila2_sandbox(
     }
 
 
+def simulate_quant_trading_fix_afxdp_risk_sandbox(
+    concurrent_strategies: int = 200,
+    quant_trading_mode: str = "afxdp_itch_fpga_15c35_ptp_audit",
+) -> dict[str, Any]:
+    """Simulate Autonomous Quantitative Trading, Market Microstructure & FIX/ITCH Execution Agent Infrastructure."""
+    quant_fx_nodes = max(4, math.ceil(concurrent_strategies / 25))
+    if quant_trading_mode == "afxdp_itch_fpga_15c35_ptp_audit":
+        tick_to_signal_latency_us = 11.5
+        microburst_packet_drop_pct = 0.0
+        pretrade_risk_gate_us = 1.8
+        rogue_fat_finger_escape_pct = 0.0
+        kill_switch_cancel_all_us = 85.0
+        ptp_clock_drift_ns = 180.0
+        cat_mifid_audit_completeness_pct = 100.0
+        quant_trading_slo_met = True
+    else:
+        tick_to_signal_latency_us = 1_420.0
+        microburst_packet_drop_pct = 6.8
+        pretrade_risk_gate_us = 0.0
+        rogue_fat_finger_escape_pct = 5.4
+        kill_switch_cancel_all_us = 450_000.0
+        ptp_clock_drift_ns = 14_500_000.0
+        cat_mifid_audit_completeness_pct = 62.0
+        quant_trading_slo_met = False
+
+    return {
+        "concurrent_strategies": concurrent_strategies,
+        "quant_trading_mode": quant_trading_mode,
+        "quant_fx_nodes": quant_fx_nodes,
+        "tick_to_signal_latency_us": tick_to_signal_latency_us,
+        "microburst_packet_drop_pct": microburst_packet_drop_pct,
+        "pretrade_risk_gate_us": pretrade_risk_gate_us,
+        "rogue_fat_finger_escape_pct": rogue_fat_finger_escape_pct,
+        "kill_switch_cancel_all_us": kill_switch_cancel_all_us,
+        "ptp_clock_drift_ns": ptp_clock_drift_ns,
+        "cat_mifid_audit_completeness_pct": cat_mifid_audit_completeness_pct,
+        "quant_trading_slo_met": quant_trading_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

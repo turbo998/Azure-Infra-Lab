@@ -2674,5 +2674,59 @@
       "securedna_screen_latency_ms": 0.0,
       "biopharma_wetlab_slo_met": false
     }
+  ],
+  "quant_trading_fix_afxdp_profiles": [
+    {
+      "concurrent_strategies": 50,
+      "quant_trading_mode": "afxdp_itch_fpga_15c35_ptp_audit",
+      "quant_fx_nodes": 4,
+      "tick_to_signal_latency_us": 11.5,
+      "microburst_packet_drop_pct": 0.0,
+      "pretrade_risk_gate_us": 1.8,
+      "rogue_fat_finger_escape_pct": 0.0,
+      "kill_switch_cancel_all_us": 85.0,
+      "ptp_clock_drift_ns": 180.0,
+      "cat_mifid_audit_completeness_pct": 100.0,
+      "quant_trading_slo_met": true
+    },
+    {
+      "concurrent_strategies": 200,
+      "quant_trading_mode": "afxdp_itch_fpga_15c35_ptp_audit",
+      "quant_fx_nodes": 8,
+      "tick_to_signal_latency_us": 11.5,
+      "microburst_packet_drop_pct": 0.0,
+      "pretrade_risk_gate_us": 1.8,
+      "rogue_fat_finger_escape_pct": 0.0,
+      "kill_switch_cancel_all_us": 85.0,
+      "ptp_clock_drift_ns": 180.0,
+      "cat_mifid_audit_completeness_pct": 100.0,
+      "quant_trading_slo_met": true
+    },
+    {
+      "concurrent_strategies": 800,
+      "quant_trading_mode": "afxdp_itch_fpga_15c35_ptp_audit",
+      "quant_fx_nodes": 32,
+      "tick_to_signal_latency_us": 11.5,
+      "microburst_packet_drop_pct": 0.0,
+      "pretrade_risk_gate_us": 1.8,
+      "rogue_fat_finger_escape_pct": 0.0,
+      "kill_switch_cancel_all_us": 85.0,
+      "ptp_clock_drift_ns": 180.0,
+      "cat_mifid_audit_completeness_pct": 100.0,
+      "quant_trading_slo_met": true
+    },
+    {
+      "concurrent_strategies": 200,
+      "quant_trading_mode": "kernel_tcp_json_unfiltered_ntp_clock",
+      "quant_fx_nodes": 8,
+      "tick_to_signal_latency_us": 1420.0,
+      "microburst_packet_drop_pct": 6.8,
+      "pretrade_risk_gate_us": 0.0,
+      "rogue_fat_finger_escape_pct": 5.4,
+      "kill_switch_cancel_all_us": 450000.0,
+      "ptp_clock_drift_ns": 14500000.0,
+      "cat_mifid_audit_completeness_pct": 62.0,
+      "quant_trading_slo_met": false
+    }
   ]
 }
