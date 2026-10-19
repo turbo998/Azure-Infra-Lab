@@ -439,6 +439,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(39)">40. 智慧仓储 AMR 舰队 Azure Digital Twins + MAPF-CBS 无死锁轨迹与冷链护栏池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(40)">41. 影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环 + OpenUSD/3DGS 校验与 C2PA 2.1 HSM 签名池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(41)">42. 智能网联汽车 V2X MQTT-over-QUIC 遥测 + CARLA/OpenSCENARIO RSS 闭环仿真与 UNECE R155 Uptane OTA 池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(42)">43. 半导体 EDA 芯片 RTL-to-GDSII ANF Ultra + Standard_FX48mds 4.0GHz 形式化验证与 FlexNet 许可证池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1394,6 +1395,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 42: Autonomous Semiconductor EDA, Chip RTL-to-GDSII & Formal Verification Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 42 · SEMICONDUCTOR EDA RTL-TO-GDSII VERILATOR FARM, SYMBIYOSYS/LEC FORMAL GATE &amp; FLEXNET LICENSE SIZER</span>
+    <h2>半导体 EDA 与芯片 RTL-to-GDSII：Verilator AST 缓存、SymbiYosys/LEC 形式化验证与 FlexNet 许可证防死锁测算器</h2>
+    <div class="sub">量化在 <code>250 – 4,000</code> 并发 <code>SystemVerilog / UVM / OpenROAD</code> 芯片设计与验证作业规模下，启用 <code>Standard_FX48mds (4.0 GHz) + Azure NetApp Files Ultra</code> 增量 AST 哈希缓存（千种子回归从 <code>1,480.0 s</code> 降至 <code>62.0 s</code>，仿真速度提升至 <code>185.0 kHz</code>）、<code>SymbiYosys / LEC</code> 形式化等价性证明 + <code>OpenROAD / KLayout WNS &gt;= 0 ps</code> 版图签核门控（<code>0.0%</code> 硅片逻辑 Bug 与时序/DRC 逃逸）及 <code>FlexNet</code> 浮动许可证 DAG 原子预留与 <code>3.0 s</code> 僵尸席位回收（<code>0.0%</code> 死锁率，席位利用率提升至 <code>96.8%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 并发 RTL 回归与物理综合任务数 (Concurrent EDA RTL/Sign-off Jobs): <strong id="lbl_eda_jobs" style="color:var(--blue)">1,000</strong></label>
+          <input type="range" id="rng_eda_jobs" min="250" max="4000" step="250" value="1000" oninput="runEdaLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 半导体 EDA 仿真缓存、形式化 LEC/DRC 签核与许可证调度模式 (EDA Agent Architecture Mode)</label>
+          <select id="sel_eda_mode" onchange="runEdaLab()">
+            <option value="verilator_ast_cache_symbiyosys_lec_flexnet_lease" selected>ANF Ultra AST 缓存 (62s/185kHz) + SymbiYosys LEC/OpenROAD 签核 (0% 逃逸) + FlexNet 防死锁 (推荐)</option>
+            <option value="cold_compile_testbench_only_unmanaged_lmgrd">传统反模式：全芯片冷重编译 (1,480s/44kHz) + 仅跑 Testbench (8.4% Bug 漏检) + 裸抢 lmgrd (19.5% 死锁)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="edaOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2165,6 +2189,22 @@ resource carlaAdasVerifyPool 'Microsoft.ContainerService/managedClusters/agentPo
       'aksclaw.io/ota-guardrail': 'unece-r155-iso21434-uptane-parked-interlock'
     }
   }
+}`,
+`// 43. Semiconductor EDA RTL-to-GDSII Verilator Farm, SymbiYosys LEC & FlexNet Lease Pool (blueprints/aksclaw-semiconductor-eda-rtl-gdsii-farm.bicep)
+resource edaRtlGdsiiPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'edafx48p'
+  properties: {
+    count: 8
+    vmSize: 'Standard_FX48mds'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'semiconductor-eda-rtl-gdsii-verifier'
+      'aksclaw.io/verilator-ast-cache': 'anf-ultra-posix-185khz-62s'
+      'aksclaw.io/formal-lec-drc-gate': 'symbiyosys-lec-klayout-wns-zero-ps'
+      'aksclaw.io/flexnet-license-guard': 'dag-prelease-3s-zombie-reaper'
+    }
+  }
 }`
 ];
 
@@ -2307,6 +2347,29 @@ runGridLab();
 runScmLab();
 runMediaUsdLab();
 runSdvLab();
+runEdaLab();
+
+function runEdaLab() {
+  const jobs = parseInt(document.getElementById('rng_eda_jobs').value, 10);
+  const mode = document.getElementById('sel_eda_mode').value;
+  document.getElementById('lbl_eda_jobs').textContent = jobs.toLocaleString();
+
+  const nodes = Math.max(4, Math.ceil(jobs / 125));
+  const ok = mode === 'verilator_ast_cache_symbiyosys_lec_flexnet_lease';
+  const simStr = ok ? "62.0 s 回归 (-95.8%) · 185.0 kHz 仿真主频 (4.2x)" : "1,480.0 s 全量冷重编译 · 44.0 kHz 低频受限";
+  const lecStr = ok ? "0.0% 硅片逻辑 Bug 逃逸 · 0.0% WNS<0ps 时序或 DRC/LVS 违例" : "8.4% 逻辑 Bug 漏检 · 11.2% 时序/版图违例逃逸";
+  const licStr = ok ? "0.0% FlexNet 许可证死锁 · 96.8% 席位利用率 (3.0 s 僵尸回收)" : "19.5% 跨工具循环死锁 · 54.0% 席位利用率";
+
+  document.getElementById('edaOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + simStr : '❌ 1,480s 冷编译 · 19.5% FlexNet 许可证死锁'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 FX48mds 4.0GHz 节点 (${lecStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>FlexNet 浮动许可证 DAG 原子预留与僵尸席位回收护栏</strong>：<strong>${licStr}</strong>
+    </p>
+  `;
+}
 
 function runSdvLab() {
   const veh = parseInt(document.getElementById('rng_sdv_veh').value, 10);

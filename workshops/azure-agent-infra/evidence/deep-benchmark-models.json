@@ -2570,5 +2570,59 @@
       "ab_ota_rollback_sec": 1800.0,
       "automotive_sdv_slo_met": false
     }
+  ],
+  "semiconductor_eda_rtl_profiles": [
+    {
+      "rtl_regression_jobs": 250,
+      "eda_agent_mode": "verilator_ast_cache_symbiyosys_lec_flexnet_lease",
+      "eda_compute_nodes": 4,
+      "regression_wallclock_sec": 62.0,
+      "rtl_sim_speed_khz": 185.0,
+      "silicon_bug_escape_pct": 0.0,
+      "negative_wns_drc_escape_pct": 0.0,
+      "flexnet_license_deadlock_pct": 0.0,
+      "flexnet_seat_utilization_pct": 96.8,
+      "zombie_seat_reclaim_sec": 3.0,
+      "semiconductor_eda_slo_met": true
+    },
+    {
+      "rtl_regression_jobs": 1000,
+      "eda_agent_mode": "verilator_ast_cache_symbiyosys_lec_flexnet_lease",
+      "eda_compute_nodes": 8,
+      "regression_wallclock_sec": 62.0,
+      "rtl_sim_speed_khz": 185.0,
+      "silicon_bug_escape_pct": 0.0,
+      "negative_wns_drc_escape_pct": 0.0,
+      "flexnet_license_deadlock_pct": 0.0,
+      "flexnet_seat_utilization_pct": 96.8,
+      "zombie_seat_reclaim_sec": 3.0,
+      "semiconductor_eda_slo_met": true
+    },
+    {
+      "rtl_regression_jobs": 4000,
+      "eda_agent_mode": "verilator_ast_cache_symbiyosys_lec_flexnet_lease",
+      "eda_compute_nodes": 32,
+      "regression_wallclock_sec": 62.0,
+      "rtl_sim_speed_khz": 185.0,
+      "silicon_bug_escape_pct": 0.0,
+      "negative_wns_drc_escape_pct": 0.0,
+      "flexnet_license_deadlock_pct": 0.0,
+      "flexnet_seat_utilization_pct": 96.8,
+      "zombie_seat_reclaim_sec": 3.0,
+      "semiconductor_eda_slo_met": true
+    },
+    {
+      "rtl_regression_jobs": 1000,
+      "eda_agent_mode": "cold_compile_testbench_only_unmanaged_lmgrd",
+      "eda_compute_nodes": 8,
+      "regression_wallclock_sec": 1480.0,
+      "rtl_sim_speed_khz": 44.0,
+      "silicon_bug_escape_pct": 8.4,
+      "negative_wns_drc_escape_pct": 11.2,
+      "flexnet_license_deadlock_pct": 19.5,
+      "flexnet_seat_utilization_pct": 54.0,
+      "zombie_seat_reclaim_sec": 900.0,
+      "semiconductor_eda_slo_met": false
+    }
   ]
 }

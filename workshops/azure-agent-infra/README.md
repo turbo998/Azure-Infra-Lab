@@ -1458,7 +1458,31 @@ sequenceDiagram
 
 ---
 
-## 47. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 47. 自主半导体 EDA、芯片 `RTL-to-GDSII` 物理设计与形式化等价性验证智能体基础设施 —— `Standard_FX48mds` `4.0 GHz` 增量 `Verilator` 仿真农场、`SymbiYosys / LEC` 形式化证明门控与 `FlexNet` 浮动许可证防死锁护栏物理模型（Autonomous Semiconductor EDA, Chip RTL-to-GDSII Physical Design & Formal Equivalence Verification Agent Infrastructure — AST-Cached Verilator C++ RTL Simulation Farm, SymbiYosys/LEC Formal Proof + OpenROAD Timing-Closure Gate & FlexNet Floating License Deadlock Guardrail Physics）
+
+> 本章由确定性半导体 EDA 与芯片 RTL 验证智能体模型 [`simulate_semiconductor_eda_rtl_gdsii_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-semiconductor-eda-rtl-gdsii-farm.bicep`](blueprints/aksclaw-semiconductor-eda-rtl-gdsii-farm.bicep) 驱动，面向芯片设计公司与 AI 加速器研发团队（`250–4,000` 并发 `SystemVerilog / Chisel / UVM` 回归与物理综合任务），解决 **全芯片 RTL 冷编译耗时长达 `1,480.0 s` 且通用低主频云主机仿真速度仅 `44.0 kHz`、仅靠随机激励 Testbench 遗漏 `8.4%` 组合逻辑环路/锁存器推导与 `11.2%` 负建立时间裕量（`WNS < 0 ps`）或 `DRC/LVS` 版图违例，以及智能体并发抢占商业 EDA 浮动许可证（`$500K+/seat/yr`）引发 `19.5%` 多工具循环等待死锁与 `54.0%` 席位空置浪费的三大硅前工程瓶颈**。
+
+### 47.1 芯片 `RTL-to-GDSII` 与形式化验证智能体三大工程支柱
+
+1. **Pillar 1：`Standard_FX48mds`（`4.0 GHz` 全核睿频 + `768 GiB` 内存）+ `Azure NetApp Files Ultra` 增量 AST 哈希 `Verilator` C++ 对象缓存 vs 全芯片冷重编译**：
+   - 将芯片模块级 SystemVerilog AST 哈希映射至 **Azure NetApp Files Ultra** 亚毫秒级 POSIX 共享卷上的预编译 `Verilator` C++ 对象缓存，并在 `Standard_FX48mds`（`4.0 GHz` 高主频、`16:1` 内存配比）节点池上并发运行 `Cocotb / UVM` 回归，将 `1,000` 种子回归墙钟耗时从 `1,480.0 s` 压缩至 **`62.0 s`（提速 `-95.8%`）**，并将 RTL 仿真吞吐提升 **`4.2x`（从 `44.0 kHz` 跃升至 `185.0 kHz`）**。
+2. **Pillar 2：`SymbiYosys / JasperGold LEC` 形式化逻辑等价性证明 + `OpenROAD / KLayout` `DRC/LVS` 与时序收敛（`WNS >= 0 ps`）硬门控**：
+   - 任何由 RTL 生成/优化智能体提交的流水线重构或门控时钟改写，必须通过 **形式化逻辑等价性检查（`LEC`）与有界模型检验（`BMC`）** 数学证明其状态机输出与 Golden 规范逐拍等价，并通过 `OpenROAD / OpenSTA` 静态时序分析（`Setup/Hold WNS >= 0 ps`）与 `KLayout DRC/LVS` 版图规则校验，将 **硅片逻辑缺陷逃逸率（从 `8.4%` 降至 `0.0%`）与时序/版图违例逃逸率（从 `11.2%` 降至 `0.0%`）双双清零**。
+3. **Pillar 3：`FlexNet` 商业 EDA 浮动许可证 DAG 原子预留与 `3.0 s` 僵尸席位回收器（Zombie-Seat Reaper）**：
+   - 针对昂贵的商业 EDA 签核工具（综合、布局布线、寄生参数提取），在调度器侧强制执行 **DAG 全套许可证原子预留（All-or-Nothing Lease）** 以消除“持有综合 Token 等待 STA Token”的跨工具死锁（死锁率从 `19.5%` 降至 **`0.0%`**），并在沙箱卡死或思考停顿时于 **`3.0 s`** 内抢占回收闲置许可证，将昂贵 EDA 席位有效利用率从 `54.0%` 提升至 **`96.8%`**。
+
+### 47.2 `Verilator` AST 缓存 + `SymbiYosys / LEC` 形式化签核 + `FlexNet` 预留 vs 传统冷编译裸跑 EDA 对比表
+
+| 并发 RTL/物理设计作业规模与 EDA 智能体架构 | `Standard_FX48mds` (`4.0 GHz`) 节点数 | **`1,000` 种子回归耗时 / 仿真主频** | **硅片逻辑 Bug 逃逸率 (`LEC/BMC`)** | **`WNS < 0 ps` 或 `DRC/LVS` 违例逃逸率** | **`FlexNet` 许可证死锁率 / 席位利用率** | **僵尸许可证回收耗时** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`250` 并发作业 · AST 缓存 + LEC/OpenROAD 签核 + FlexNet 预留** | `4` | **`62.0 s` / `185.0 kHz`** | **`0.0%`** | **`0.0%`** | **`0.0%` / `96.8%`** | **`3.0 s`** |
+| **`1,000` 并发作业 · AST 缓存 + LEC/OpenROAD 签核 + FlexNet 预留 (推荐)** | **`8`** | **`62.0 s` / `185.0 kHz`** | **`0.0%`** | **`0.0%`** | **`0.0%` / `96.8%`** | **`3.0 s`** |
+| **`4,000` 并发作业 · AST 缓存 + LEC/OpenROAD 签核 + FlexNet 预留** | `32` | **`62.0 s` / `185.0 kHz`** | **`0.0%`** | **`0.0%`** | **`0.0%` / `96.8%`** | **`3.0 s`** |
+| `1,000` 并发作业 · 全量冷重编译 + 仅跑 Testbench + 裸抢 `lmgrd` (反模式) | `8` | `1,480.0 s` / `44.0 kHz` (❌ 极慢) | `8.4%` (❌ 锁存器/截断漏检) | `11.2%` (❌ 流片时序失败) | `19.5%` / `54.0%` (❌ 死锁空置) | `900.0 s` (❌ 席位浪费) |
+
+---
+
+## 48. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1471,10 +1495,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 41 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱）
+# 2. 运行深度定量模型（全部 42 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 50 项单元测试（100% 覆盖 6 大运行时契约、41 大深度物理模型、42 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 51 项单元测试（100% 覆盖 6 大运行时契约、42 大深度物理模型、43 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

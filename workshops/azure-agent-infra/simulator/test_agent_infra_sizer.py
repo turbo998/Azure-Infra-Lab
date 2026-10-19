@@ -43,6 +43,7 @@ from agent_infra_sizer import (
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
+    simulate_semiconductor_eda_rtl_gdsii_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
@@ -801,6 +802,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(sdv["automotive_sdv_slo_met"])
         self.assertAlmostEqual(raw["rss_ttc_violation_escape_pct"], 6.2)
         self.assertFalse(raw["automotive_sdv_slo_met"])
+
+    def test_semiconductor_eda_rtl_gdsii_sandbox(self) -> None:
+        eda = simulate_semiconductor_eda_rtl_gdsii_sandbox(1_000, "verilator_ast_cache_symbiyosys_lec_flexnet_lease")
+        raw = simulate_semiconductor_eda_rtl_gdsii_sandbox(1_000, "cold_compile_testbench_only_unmanaged_lmgrd")
+        self.assertEqual(eda["eda_compute_nodes"], 8)
+        self.assertAlmostEqual(eda["regression_wallclock_sec"], 62.0)
+        self.assertAlmostEqual(eda["rtl_sim_speed_khz"], 185.0)
+        self.assertEqual(eda["silicon_bug_escape_pct"], 0.0)
+        self.assertEqual(eda["negative_wns_drc_escape_pct"], 0.0)
+        self.assertEqual(eda["flexnet_license_deadlock_pct"], 0.0)
+        self.assertAlmostEqual(eda["flexnet_seat_utilization_pct"], 96.8)
+        self.assertAlmostEqual(eda["zombie_seat_reclaim_sec"], 3.0)
+        self.assertTrue(eda["semiconductor_eda_slo_met"])
+        self.assertAlmostEqual(raw["flexnet_license_deadlock_pct"], 19.5)
+        self.assertFalse(raw["semiconductor_eda_slo_met"])
 
 
 if __name__ == "__main__":
