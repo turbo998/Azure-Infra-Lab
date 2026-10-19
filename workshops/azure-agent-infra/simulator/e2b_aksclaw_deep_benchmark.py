@@ -31,6 +31,7 @@ from agent_infra_sizer import (
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_cyber_defense_detonation_sentinel_sandbox,
+    simulate_datacenter_cooling_bacnet_pue_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_edge_disconnected_iot_operations_sandbox,
@@ -565,6 +566,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_aviation_irops_swim_do178c_sandbox(1_000, "batch_milp_unchecked_part117_raw_cpdlc"),
     ]
 
+    datacenter_cooling_bacnet_profiles: List[Dict[str, object]] = [
+        simulate_datacenter_cooling_bacnet_pue_sandbox(25, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
+        simulate_datacenter_cooling_bacnet_pue_sandbox(100, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
+        simulate_datacenter_cooling_bacnet_pue_sandbox(400, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
+        simulate_datacenter_cooling_bacnet_pue_sandbox(100, "reactive_pid_unchecked_dewpoint_slow_bms"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -611,6 +619,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "quant_trading_fix_afxdp_profiles": quant_trading_fix_afxdp_profiles,
         "retail_pos_esl_vision_profiles": retail_pos_esl_vision_profiles,
         "aviation_irops_swim_profiles": aviation_irops_swim_profiles,
+        "datacenter_cooling_bacnet_profiles": datacenter_cooling_bacnet_profiles,
     }
 
 

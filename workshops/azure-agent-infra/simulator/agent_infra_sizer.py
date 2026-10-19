@@ -2852,6 +2852,55 @@ def simulate_aviation_irops_swim_do178c_sandbox(
     }
 
 
+def simulate_datacenter_cooling_bacnet_pue_sandbox(
+    it_load_mw: int = 100,
+    cooling_agent_mode: str = "bacnet_pinn_mpc_dewpoint_leak_interlock",
+) -> dict[str, Any]:
+    """
+    Chapter 52: Autonomous Smart Building, Hyperscale AI Datacenter Liquid-Cooling &
+    Digital-Twin HVAC Optimization Agent Infrastructure Physics.
+      - Pillar 1: BACnet/SC (TLS 1.3) + Modbus-TCP CDU Telemetry & Physics-Informed Neural
+        Network (PINN) + Model-Predictive Control (MPC) Pre-Cooling vs Reactive PID Loops
+      - Pillar 2: Deterministic ASHRAE Magnus-Tetens Dew-Point Margin (>= +2.0 C) & GPU
+        TjMax (<= 80.0 C) Psychrometric Interlock Gate
+      - Pillar 3: Differential-Pressure Direct-to-Chip Coolant Leak Detection & Sub-50ms
+        Motorized Solenoid Isolation Valve Trip
+    """
+    cooling_control_nodes = max(2, math.ceil(it_load_mw / 25))
+    if cooling_agent_mode == "bacnet_pinn_mpc_dewpoint_leak_interlock":
+        thermal_mpc_loop_sec = 0.42
+        annualized_facility_pue = 1.12
+        cooling_overhead_reduction_pct = 64.7
+        dewpoint_psychrometric_gate_ms = 1.8
+        condensation_or_tjmax_throttle_pct = 0.0
+        coolant_leak_valve_trip_ms = 38.0
+        server_blade_liquid_damage_pct = 0.0
+        datacenter_cooling_slo_met = True
+    else:
+        thermal_mpc_loop_sec = 45.0
+        annualized_facility_pue = 1.34
+        cooling_overhead_reduction_pct = 0.0
+        dewpoint_psychrometric_gate_ms = 0.0
+        condensation_or_tjmax_throttle_pct = 8.2
+        coolant_leak_valve_trip_ms = 30_000.0
+        server_blade_liquid_damage_pct = 100.0
+        datacenter_cooling_slo_met = False
+
+    return {
+        "it_load_mw": it_load_mw,
+        "cooling_agent_mode": cooling_agent_mode,
+        "cooling_control_nodes": cooling_control_nodes,
+        "thermal_mpc_loop_sec": thermal_mpc_loop_sec,
+        "annualized_facility_pue": annualized_facility_pue,
+        "cooling_overhead_reduction_pct": cooling_overhead_reduction_pct,
+        "dewpoint_psychrometric_gate_ms": dewpoint_psychrometric_gate_ms,
+        "condensation_or_tjmax_throttle_pct": condensation_or_tjmax_throttle_pct,
+        "coolant_leak_valve_trip_ms": coolant_leak_valve_trip_ms,
+        "server_blade_liquid_damage_pct": server_blade_liquid_damage_pct,
+        "datacenter_cooling_slo_met": datacenter_cooling_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -38,6 +38,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_cyber_defense_detonation_sentinel_sandbox,
+    simulate_datacenter_cooling_bacnet_pue_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_edge_disconnected_iot_operations_sandbox,
@@ -495,6 +496,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "aviation_1000_flights": simulate_aviation_irops_swim_do178c_sandbox(1_000, "swim_cuopt_part117_mel_do178c_rvsm"),
             "aviation_2000_flights": simulate_aviation_irops_swim_do178c_sandbox(2_000, "swim_cuopt_part117_mel_do178c_rvsm"),
             "raw_milp_1000_flights": simulate_aviation_irops_swim_do178c_sandbox(1_000, "batch_milp_unchecked_part117_raw_cpdlc"),
+        },
+        "demo_47_datacenter_cooling_bacnet_pue_sandbox": {
+            "dc_cooling_25mw": simulate_datacenter_cooling_bacnet_pue_sandbox(25, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
+            "dc_cooling_100mw": simulate_datacenter_cooling_bacnet_pue_sandbox(100, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
+            "dc_cooling_400mw": simulate_datacenter_cooling_bacnet_pue_sandbox(400, "bacnet_pinn_mpc_dewpoint_leak_interlock"),
+            "raw_pid_100mw": simulate_datacenter_cooling_bacnet_pue_sandbox(100, "reactive_pid_unchecked_dewpoint_slow_bms"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -25,6 +25,7 @@ from agent_infra_sizer import (
     simulate_confidential_sandbox_attestation,
     simulate_cua_browser_sandbox_grounding,
     simulate_cyber_defense_detonation_sentinel_sandbox,
+    simulate_datacenter_cooling_bacnet_pue_sandbox,
     simulate_dependency_cache_virtiofs_dax,
     simulate_durable_agent_workflow_saga_gc,
     simulate_edge_disconnected_iot_operations_sandbox,
@@ -879,6 +880,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(avn["aviation_irops_slo_met"])
         self.assertAlmostEqual(raw["illegal_crew_or_mel_dispatch_pct"], 6.4)
         self.assertFalse(raw["aviation_irops_slo_met"])
+
+    def test_datacenter_cooling_bacnet_pue_sandbox(self) -> None:
+        dcc = simulate_datacenter_cooling_bacnet_pue_sandbox(100, "bacnet_pinn_mpc_dewpoint_leak_interlock")
+        raw = simulate_datacenter_cooling_bacnet_pue_sandbox(100, "reactive_pid_unchecked_dewpoint_slow_bms")
+        self.assertEqual(dcc["cooling_control_nodes"], 4)
+        self.assertAlmostEqual(dcc["thermal_mpc_loop_sec"], 0.42)
+        self.assertAlmostEqual(dcc["annualized_facility_pue"], 1.12)
+        self.assertAlmostEqual(dcc["cooling_overhead_reduction_pct"], 64.7)
+        self.assertAlmostEqual(dcc["dewpoint_psychrometric_gate_ms"], 1.8)
+        self.assertEqual(dcc["condensation_or_tjmax_throttle_pct"], 0.0)
+        self.assertAlmostEqual(dcc["coolant_leak_valve_trip_ms"], 38.0)
+        self.assertEqual(dcc["server_blade_liquid_damage_pct"], 0.0)
+        self.assertTrue(dcc["datacenter_cooling_slo_met"])
+        self.assertAlmostEqual(raw["annualized_facility_pue"], 1.34)
+        self.assertFalse(raw["datacenter_cooling_slo_met"])
 
 
 if __name__ == "__main__":

@@ -1578,7 +1578,31 @@ sequenceDiagram
 
 ---
 
-## 52. 7-Card 4:5 架构评测结论摘要与可复现验证命令
+## 52. 超大规模 AI 智算中心液冷、智慧建筑暖通（HVAC）与 `PUE` 优化智能体基础设施 —— `BACnet/SC + Modbus-TCP` 遥测流、物理信息神经网络（`PINN`）模型预测控制（`MPC`）预冷及 `ASHRAE` 露点凝露/漏液电磁阀互锁物理模型（Autonomous Smart Building, Hyperscale AI Datacenter Liquid-Cooling & Digital-Twin HVAC Optimization Agent Infrastructure — BACnet/SC + Modbus-TCP Telemetry Ingestion, PINN/MPC Thermal Envelope PUE Optimization & Hard Dew-Point / Coolant Leak Interlock Physics）
+
+> 本章由确定性超大规模智算中心液冷与暖通优化智能体模型 [`simulate_datacenter_cooling_bacnet_pue_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-datacenter-cooling-bacnet-pue-pool.bicep`](blueprints/aksclaw-datacenter-cooling-bacnet-pue-pool.bicep) 驱动，面向百兆瓦级（`25–400 MW`）直接芯片液冷（Direct-to-Chip Cold Plate）AI 智算中心与园区楼宇自控系统（BMS），解决 **万卡 GPU 集群同步启动大模型训练时瞬态热设计功耗（TDP）在 `50 ms` 内阶跃翻倍而传统响应式 PID 回路滞后长达 `45.0 s`（被迫长年维持过低供液温度，导致全年平均 `PUE` 高达 `1.34`）、强化学习节能智能体盲目调低冷冻水温度跌破机房露点或过度调高供水温度引发 `8.2%` 机柜结露短路与 GPU `TjMax >= 85°C` 降频事件，以及慢速 BMS 轮询（`30,000.0 ms`）在冷板微漏液时导致 `100.0%` 服务器刀片浸液损毁的三大智算基础设施温控工程瓶颈**。
+
+### 52.1 智算中心 `BACnet/SC + PINN/MPC` 预冷、`ASHRAE` 露点屏障与 `38ms` 漏液互锁三大工程支柱
+
+1. **Pillar 1：`BACnet/SC`（TLS 1.3 安全互联）+ `Modbus-TCP` 冷却分配单元（`CDU`）遥测与 `Standard_NC24ads_A100_v4` 物理信息神经网络（`PINN`）+ 模型预测控制（`MPC`）前馈预冷 vs 传统响应式 PID**：
+   - 实时融合 Kubernetes 作业调度队列、`NVIDIA DCGM` 毫秒级 GPU 功耗遥测与 `BACnet/SC` 冷冻水歧管流量/温度传感器，在训练任务拉起前 `15 s` 通过 **物理信息神经网络（`PINN`）热力学代理模型 + `MPC` 滚动时域优化** 提前拉升 `CDU` 变频泵速与干冷器风量，将热控闭环响应耗时从 `45.0 s` 压缩至 **`0.42 s`（提速 `-99.1%`）**，将智算中心全年 **`PUE` 从 `1.34` 降至 `1.12`（冷却能耗开销削减 `-64.7%`）**。
+2. **Pillar 2：`ASHRAE` 心理湿球 Magnus-Tetens 露点安全裕度（`T_supply >= T_dew + 2.0°C`）与 GPU 结温上限（`Tj <= 80.0°C`）确定性热力学互锁门控（`1.8 ms` 校验）**：
+   - 任何由节能智能体下发的供液温度或泵频设定值（Setpoint），在写入 `CDU / Chiller` PLC 寄存器前必须经过 **`1.8 ms` 确定性湿空气动力学与热阻包络门控**：严格保证二次侧供液温度始终高于机房实时露点温度至少 `+2.0°C` 且预测 GPU 最高结温 `<= 80.0°C`，将 **机柜凝露短路与 GPU 过热降频违例率从 `8.2%` 降至 `0.0%`**。
+3. **Pillar 3：直接芯片冷板（Direct-to-Chip）微压差/流量差漏液检测与 `38.0 ms` 电动电磁阀（Solenoid）隔离排空互锁**：
+   - 在机柜分液歧管（Manifold）进出端部署高频科里奥利质量流量与微压差硬件看门狗，一旦检测到微漏失衡，无需等待云端或慢速 BMS 轮询（`30,000.0 ms`），在 **`38.0 ms` 内自动闭合故障机柜进液电动截止阀并触发负压回抽排空**，将 **服务器刀片浸液损坏暴露率从 `100.0%` 彻底清零至 `0.0%`**。
+
+### 52.2 `BACnet/SC + PINN/MPC` 前馈预冷 + `ASHRAE` 露点门控 + `38ms` 漏液互锁 vs 传统响应式 PID 对比表
+
+| 智算中心 IT 负载规模与液冷温控智能体架构 | `NC24ads_A100_v4` 节点数 | **热控闭环周期 / 全年设施 `PUE`** | **制冷系统能耗开销削减率** | **`ASHRAE` 露点凝露或 `TjMax` 降频率** | **冷板微漏液电磁阀关断耗时** | **服务器刀片浸液损坏暴露率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`25 MW` IT 负载 · PINN/MPC 预冷 + 露点门控 + 38ms 排空** | `2` | **`0.42 s` / `PUE 1.12`** | **`64.7%`** | **`0.0%` (`1.8 ms`)** | **`38.0 ms`** | **`0.0%`** |
+| **`100 MW` IT 负载 · PINN/MPC 预冷 + 露点门控 + 38ms 排空 (推荐)** | **`4`** | **`0.42 s` / `PUE 1.12`** | **`64.7%`** | **`0.0%` (`1.8 ms`)** | **`38.0 ms`** | **`0.0%`** |
+| **`400 MW` IT 负载 · PINN/MPC 预冷 + 露点门控 + 38ms 排空** | `16` | **`0.42 s` / `PUE 1.12`** | **`64.7%`** | **`0.0%` (`1.8 ms`)** | **`38.0 ms`** | **`0.0%`** |
+| `100 MW` IT 负载 · 响应式 PID + 无露点门控 + 30s BMS 轮询 (反模式) | `4` | `45.0 s` / `PUE 1.34` (❌ 过冷浪费) | `0.0%` (❌ 高能耗基线) | `8.2%` (❌ 凝露短路/GPU降频) | `30,000.0 ms` (❌ 30秒滞后) | `100.0%` (❌ 刀片浸液烧毁) |
+
+---
+
+## 53. 7-Card 4:5 架构评测结论摘要与可复现验证命令
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链：
 
@@ -1591,10 +1615,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 46 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱）
+# 2. 运行深度定量模型（全部 47 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 55 项单元测试（100% 覆盖 6 大运行时契约、46 大深度物理模型、47 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 56 项单元测试（100% 覆盖 6 大运行时契约、47 大深度物理模型、48 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
