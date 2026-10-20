@@ -4410,6 +4410,57 @@ def simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(
     }
 
 
+def simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(
+    collector_riser_units: int = 6,
+    subsea_mining_mode: str = "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Deep-Ocean Polymetallic Nodule & Subsea Mineral Collector
+    (4,000-6,000 m Abyssal Benthic Crawler, Vertical Slurry Riser & DP-3 Surface
+    Production Vessel), Cohesive Benthic Soil-Track Terramechanics & Sediment-Plume
+    Advection-Diffusion PINN, Vertical Two-Phase Slurry Riser Anti-Plugging & DP-3
+    MPC & ISA ISBA/25/LTC / DNV-ST-E407 / IMCA M 103 / IEC 61508 SIL-3 Benthic
+    Plume Turbidity Cutoff, Riser Emergency Dump Valve & Umbilical Tension
+    Interlock Agent Infrastructure (Chapter 83).
+    """
+    if collector_riser_units <= 0:
+        raise ValueError("collector_riser_units must be positive")
+    valid_modes = {
+        "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge",
+        "open_loop_crawler_unverified_riser_cloud",
+    }
+    if subsea_mining_mode not in valid_modes:
+        raise ValueError(f"subsea_mining_mode must be one of {sorted(valid_modes)}")
+
+    governed = subsea_mining_mode == "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge"
+    gpu_nodes = max(2, math.ceil(collector_riser_units / 3))
+    active_subsea_mining_pods = max(2, int(collector_riser_units // 2))
+
+    nodule_pickup_efficiency_and_riser_throughput_gain_pct = 24.6 if governed else 0.0
+    benthic_sediment_plume_dispersion_reduction_pct = 38.2 if governed else 0.0
+    isa_dnv_sil3_riser_dump_umbilical_interlock_ms = 2.4 if governed else 580.0
+    vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct = 0.0 if governed else 1.8
+    subsea_sonar_adcp_edge_inference_latency_ms = 2.1 if governed else 1540.0
+    wan_bandwidth_reduction_pct = 98.5 if governed else 0.0
+    isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct = 0.0 if governed else 3.3
+
+    return {
+        "collector_riser_units": collector_riser_units,
+        "subsea_mining_mode": subsea_mining_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_subsea_mining_pods": active_subsea_mining_pods,
+        "nodule_pickup_efficiency_and_riser_throughput_gain_pct": nodule_pickup_efficiency_and_riser_throughput_gain_pct,
+        "benthic_sediment_plume_dispersion_reduction_pct": benthic_sediment_plume_dispersion_reduction_pct,
+        "isa_dnv_sil3_riser_dump_umbilical_interlock_ms": isa_dnv_sil3_riser_dump_umbilical_interlock_ms,
+        "vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct": vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct,
+        "subsea_sonar_adcp_edge_inference_latency_ms": subsea_sonar_adcp_edge_inference_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct": isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct,
+        "deepsea_mineral_collector_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

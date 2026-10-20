@@ -97,6 +97,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
     simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
     simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
+    simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -712,6 +713,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "leo_24_planes": simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(24, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
             "leo_96_planes": simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(96, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
             "raw_leo_24_planes": simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(24, "static_tle_ground_schedule_cloud_loop"),
+        },
+        "demo_78_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox": {
+            "deepsea_3_units": simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(3, "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge"),
+            "deepsea_6_units": simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(6, "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge"),
+            "deepsea_24_units": simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(24, "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge"),
+            "raw_deepsea_6_units": simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(6, "open_loop_crawler_unverified_riser_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

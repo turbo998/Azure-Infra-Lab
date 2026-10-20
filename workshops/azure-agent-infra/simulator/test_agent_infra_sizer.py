@@ -84,6 +84,7 @@ from agent_infra_sizer import (
     simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
     simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
     simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
+    simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -215,6 +216,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-saf-ptl-fischer-tropsch-rwgs-astm-d7566-sil3-pool.bicep",
             "aksclaw-quantum-superconducting-qec-cryo-dilution-sil3-pool.bicep",
             "aksclaw-leo-megaconstellation-oisl-conjunction-iso24113-sil3-pool.bicep",
+            "aksclaw-deepsea-mineral-collector-riser-isa-dnv-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1471,6 +1473,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["solar_storm_drag_or_oisl_drop_false_clearance_pct"], 2.9)
         self.assertTrue(gov["leo_megaconstellation_oisl_slo_met"])
         self.assertFalse(raw["leo_megaconstellation_oisl_slo_met"])
+
+    def test_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(self) -> None:
+        gov = simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(
+            6, "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge"
+        )
+        raw = simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(
+            6, "open_loop_crawler_unverified_riser_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_subsea_mining_pods"], 3)
+        self.assertEqual(gov["nodule_pickup_efficiency_and_riser_throughput_gain_pct"], 24.6)
+        self.assertEqual(gov["benthic_sediment_plume_dispersion_reduction_pct"], 38.2)
+        self.assertEqual(gov["isa_dnv_sil3_riser_dump_umbilical_interlock_ms"], 2.4)
+        self.assertEqual(gov["vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct"], 0.0)
+        self.assertGreater(raw["vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct"], 1.5)
+        self.assertEqual(gov["subsea_sonar_adcp_edge_inference_latency_ms"], 2.1)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.5)
+        self.assertEqual(gov["isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct"], 3.0)
+        self.assertTrue(gov["deepsea_mineral_collector_slo_met"])
+        self.assertFalse(raw["deepsea_mineral_collector_slo_met"])
 
 
 if __name__ == "__main__":

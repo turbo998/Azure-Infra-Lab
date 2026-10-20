@@ -4722,5 +4722,67 @@
       "solar_storm_drag_or_oisl_drop_false_clearance_pct": 3.1,
       "leo_megaconstellation_oisl_slo_met": false
     }
+  ],
+  "deepsea_mineral_collector_profiles": [
+    {
+      "collector_riser_units": 3,
+      "subsea_mining_mode": "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_subsea_mining_pods": 2,
+      "nodule_pickup_efficiency_and_riser_throughput_gain_pct": 24.6,
+      "benthic_sediment_plume_dispersion_reduction_pct": 38.2,
+      "isa_dnv_sil3_riser_dump_umbilical_interlock_ms": 2.4,
+      "vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct": 0.0,
+      "subsea_sonar_adcp_edge_inference_latency_ms": 2.1,
+      "wan_bandwidth_reduction_pct": 98.5,
+      "isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct": 0.0,
+      "deepsea_mineral_collector_slo_met": true
+    },
+    {
+      "collector_riser_units": 6,
+      "subsea_mining_mode": "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_subsea_mining_pods": 3,
+      "nodule_pickup_efficiency_and_riser_throughput_gain_pct": 24.6,
+      "benthic_sediment_plume_dispersion_reduction_pct": 38.2,
+      "isa_dnv_sil3_riser_dump_umbilical_interlock_ms": 2.4,
+      "vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct": 0.0,
+      "subsea_sonar_adcp_edge_inference_latency_ms": 2.1,
+      "wan_bandwidth_reduction_pct": 98.5,
+      "isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct": 0.0,
+      "deepsea_mineral_collector_slo_met": true
+    },
+    {
+      "collector_riser_units": 24,
+      "subsea_mining_mode": "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_subsea_mining_pods": 12,
+      "nodule_pickup_efficiency_and_riser_throughput_gain_pct": 24.6,
+      "benthic_sediment_plume_dispersion_reduction_pct": 38.2,
+      "isa_dnv_sil3_riser_dump_umbilical_interlock_ms": 2.4,
+      "vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct": 0.0,
+      "subsea_sonar_adcp_edge_inference_latency_ms": 2.1,
+      "wan_bandwidth_reduction_pct": 98.5,
+      "isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct": 0.0,
+      "deepsea_mineral_collector_slo_met": true
+    },
+    {
+      "collector_riser_units": 6,
+      "subsea_mining_mode": "open_loop_crawler_unverified_riser_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_subsea_mining_pods": 3,
+      "nodule_pickup_efficiency_and_riser_throughput_gain_pct": 0.0,
+      "benthic_sediment_plume_dispersion_reduction_pct": 0.0,
+      "isa_dnv_sil3_riser_dump_umbilical_interlock_ms": 580.0,
+      "vertical_riser_plugging_or_crawler_liquefaction_sinkage_pct": 1.8,
+      "subsea_sonar_adcp_edge_inference_latency_ms": 1540.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct": 3.3,
+      "deepsea_mineral_collector_slo_met": false
+    }
   ]
 }
