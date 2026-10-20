@@ -45,6 +45,7 @@ from agent_infra_sizer import (
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_maritime_port_crane_colregs_sandbox,
     simulate_media_openusd_3dgs_c2pa_sandbox,
+    simulate_mining_ahs_iso21815_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
@@ -589,6 +590,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_rail_ertms_etcs_sil4_sandbox(500, "batch_milp_unchecked_ma_raw_wayside_stream"),
     ]
 
+    mining_ahs_iso21815_profiles: List[Dict[str, object]] = [
+        simulate_mining_ahs_iso21815_sandbox(30, "cuopt_dispatch_iso21815_georadar_interlock"),
+        simulate_mining_ahs_iso21815_sandbox(120, "cuopt_dispatch_iso21815_georadar_interlock"),
+        simulate_mining_ahs_iso21815_sandbox(480, "cuopt_dispatch_iso21815_georadar_interlock"),
+        simulate_mining_ahs_iso21815_sandbox(120, "fixed_shift_dispatch_unchecked_collision_raw_radar"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -638,6 +646,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "datacenter_cooling_bacnet_profiles": datacenter_cooling_bacnet_profiles,
         "maritime_port_colregs_profiles": maritime_port_colregs_profiles,
         "rail_ertms_sil4_profiles": rail_ertms_sil4_profiles,
+        "mining_ahs_iso21815_profiles": mining_ahs_iso21815_profiles,
     }
 
 

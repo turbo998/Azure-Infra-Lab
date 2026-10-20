@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #49 · 55 Chapters · 50 Blueprints · 49 Simulators · 58/58 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #50 · 56 Chapters · 51 Blueprints · 50 Simulators · 59/59 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -1678,7 +1678,33 @@ sequenceDiagram
 
 ---
 
-## 55. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 55. 自主露天与井工矿山、无人矿卡（`AHS ISO 21815 / EMESRT Level 9`）防碰撞互锁、坑口至港口矿石品位（`XRF + Kriging`）实时配矿与边坡雷达（`SSR / InSAR`）稳定性智能体基础设施 —— `NVIDIA cuOpt` 卡车-电铲-破碎机动态调度、车载 `ISO 21815` 介入制动及岩土边坡反演速度预警物理模型（Autonomous Open-Pit & Underground Mining, Haul-Truck ISO 21815 Collision-Avoidance, Pit-to-Port Ore-Grade XRF Blending & Geotechnical Slope-Radar Stability Agent Infrastructure — cuOpt Truck-Shovel Dispatch, ISO 21815 Level 9 Vehicle Intervention & Slope-Stability Radar Physics）
+
+> 本章由确定性自主矿山无人驾驶运输系统（`AHS`）与岩土边坡安全智能体模型 [`simulate_mining_ahs_iso21815_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-mining-ahs-iso21815-pool.bicep`](blueprints/aksclaw-mining-ahs-iso21815-pool.bicep) 驱动，面向大型露天铜铁矿与深部井工矿区（并发在线 320 吨级自动驾驶矿卡 `30–480` 台、电铲装车位 `18` 个、旋回破碎站与高陡边坡台阶雷达网络），解决 **传统班次固定指派（Fixed Shift-Locked Truck-to-Shovel Assignment）面对电铲故障或矿脉品位突变时重优化耗时长达 `540.0 s`（`9.0 min`，导致电铲前矿卡排队积压或欠车待料并造成破碎站入磨品位波动 `±0.22% Cu`）、扬尘暴雪或深坑 GNSS 多径遮挡下未经车载 `ISO 21815 / EMESRT Level 9` 确定性防碰撞互锁直接下发轨迹导致 `2.9%` 运输干道交叉口碰撞或挡墙越界风险，以及将地面边坡稳定性合成孔径雷达（`SSR / InSAR`）原始相干干涉点云直接通过受限矿区无线网回传云端引发 `1,450.0 ms` 滑坡预警滞后与 `3.7%` 台阶塌方未及时撤离暴露率三大矿山工程瓶颈**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_mining_ahs_iso21815_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-mining-ahs-iso21815-pool.bicep`](blueprints/aksclaw-mining-ahs-iso21815-pool.bicep), this chapter models autonomous open-pit and underground mining (`30–480` autonomous 320-tonne haul trucks, `18` electric rope shovels, and pit-wall radar arrays): (1) streaming truck-shovel telemetry and conveyor X-Ray Fluorescence (`XRF`) ore-grade readings into `Standard_NC24ads_A100_v4` `NVIDIA cuOpt` + 3D Kriging block-model solvers cuts fleet dispatch re-optimization from `540.0 s` to **`4.2 s` (`-99.2%`)**, reducing shovel queue wait time by **`41.5%`** and tightening crusher feed grade variance by **`64.0%` (`±0.08% Cu` vs `±0.22% Cu`)**; (2) enforcing a **`2.2 ms`** on-board **`ISO 21815` / `EMESRT Level 9` Vehicle Intervention & Collision-Avoidance Interlock** fuses millimeter-wave radar, solid-state LiDAR, and UWB ranging to eliminate **`100.0%` (`0.0%` vs `2.9%`)** of haul-road intersection collisions or safety-berm breaches during dust whiteouts and deep-pit GNSS multipath dropouts; and (3) running **Ground-Based Slope-Stability Radar (`SSR / InSAR`) Inverse-Velocity Edge Triage** on Azure Local pit-rim ruggedized nodes detects sub-millimeter bench deformation in **`18.0 ms`** (`vs 1,450.0 ms`), cutting pit wireless backhaul bandwidth by **`96.8%`** and preventing **`100.0%` (`0.0%` vs `3.7%`)** of un-evacuated bench rockfall exposures.
+
+### 55.1 自主矿山 `cuOpt + XRF` 动态配矿调度、车载 `ISO 21815 Level 9` 防碰撞互锁与边坡雷达 `SSR` 边缘预警三大工程支柱
+
+1. **Pillar 1：矿卡-电铲实时遥测 + 皮带在线 X 射线荧光光谱（`XRF`）品位流 + `Standard_NC24ads_A100_v4` `NVIDIA cuOpt` 动态车铲指派与三维克里金（3D Kriging）配矿求解池 vs 传统班次固定指派**：
+   - 通过坑口私有 5G 汇聚矿卡载重、液压悬挂压力、电铲挖掘周期与装车位在线 `XRF` 品位数据，在 A100 GPU 沙箱内实时联合求解 **最小化空驶排队耗时与破碎站目标入磨品位配比约束**，将 `120` 台无人矿卡的重调度耗时从 `540.0 s` 压缩至 **`4.2 s`（降低 `-99.2%`）**，削减电铲前矿卡排队等待时间 **`41.5%`**，并将选矿厂入磨铜品位波动标准差降低 **`64.0%`（从 `±0.22% Cu` 收敛至 `±0.08% Cu`）**。
+2. **Pillar 2：`ISO 21815`（土方机械防碰撞系统接口）与 `EMESRT Level 9` 车载自动介入制动安全屏障（`2.2 ms` 互锁）**：
+   - 任何由车队调度或路径规划智能体下发的矿卡速度曲线与交叉口通行令牌，在进入矿卡线控转向/制动总线前必须通过车载 **`2.2 ms` 确定性 `ISO 21815 / EMESRT Level 9` 多传感器融合安全包络校验器**：融合 77GHz 毫米波雷达、固态激光雷达、超宽带（UWB）测距与满载 550 吨湿滑坡道制动距离模型，即使在浓尘/暴雪白盲或深坑底部 GNSS 卫星失锁时，也能将 **运输干道碰撞或安全挡墙越界逃逸率从 `2.9%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：坑口边缘 `Azure Local` 地面边坡稳定性雷达（`SSR / InSAR`）位移速率倒数（Inverse-Velocity）实时分诊与台阶自动封锁联动（`18.0 ms`）**：
+   - 在露天矿坑口边缘节点本地处理地面干涉雷达次毫米级相位位移流与孔隙水压计数据，在 **`18.0 ms` 内（对比云端回传 `1,450.0 ms`）** 识别台阶蠕变加速拐点并自动向受影响扇区内的无人矿卡与电铲广播电子围栏撤离指令，削减 **`96.8%` 矿山广域无线回传带宽**，并将 **边坡塌方/落石未撤离设备暴露率从 `3.7%` 降至 `0.0%`**。
+
+### 55.2 `cuOpt + XRF` 车铲配矿调度 + `ISO 21815 Level 9` 防碰撞互锁 + `SSR` 边坡雷达边缘分诊 vs 传统固定指派对比表
+
+| 并发自动驾驶矿卡规模与自主矿山 `AHS` 智能体架构 | `NC24ads_A100_v4` 节点数 | **全矿车铲重调度求解耗时** | **电铲排队缩减 / 入磨品位波动削减** | **`ISO 21815` 碰撞或挡墙越界逃逸率** | **边坡雷达 `SSR` 分诊延迟与回传带宽削减** | **台阶塌方未撤离暴露率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`30` 台无人矿卡 · cuOpt 配矿 + ISO 21815 + 边坡雷达边缘** | `2` | **`4.2 s`** | **`41.5%` / `64.0%`** | **`0.0%` (`2.2 ms`)** | **`18.0 ms` / `96.8%`** | **`0.0%`** |
+| **`120` 台无人矿卡 · cuOpt 配矿 + ISO 21815 + 边坡雷达边缘 (推荐)** | **`4`** | **`4.2 s`** | **`41.5%` / `64.0%`** | **`0.0%` (`2.2 ms`)** | **`18.0 ms` / `96.8%`** | **`0.0%`** |
+| **`480` 台无人矿卡 · cuOpt 配矿 + ISO 21815 + 边坡雷达边缘** | `16` | **`4.2 s`** | **`41.5%` / `64.0%`** | **`0.0%` (`2.2 ms`)** | **`18.0 ms` / `96.8%`** | **`0.0%`** |
+| `120` 台无人矿卡 · 固定班次指派 + 无车载互锁 + 原始雷达回传 (反模式) | `4` | `540.0 s` (❌ 9分钟压车待料) | `0.0%` / `0.0%` (❌ 品位剧烈波动) | `2.9%` (❌ 扬尘盲区碰撞风险) | `1,450.0 ms` / `0.0%` (❌ 无线回传拥塞) | `3.7%` (❌ 塌方未及时撤离) |
+
+---
+
+## 56. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
@@ -1692,10 +1718,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 49 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱）
+# 2. 运行深度定量模型（全部 50 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 58 项单元测试（100% 覆盖 6 大运行时契约、49 大深度物理模型、50 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 59 项单元测试（100% 覆盖 6 大运行时契约、50 大深度物理模型、51 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

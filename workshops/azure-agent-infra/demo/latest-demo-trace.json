@@ -3200,6 +3200,64 @@
         "unscheduled_in_tunnel_halt_pct": 4.1,
         "rail_ertms_slo_met": false
       }
+    ],
+    "mining_ahs_iso21815_profiles": [
+      {
+        "autonomous_haul_trucks": 30,
+        "mining_agent_mode": "cuopt_dispatch_iso21815_georadar_interlock",
+        "mining_solver_nodes": 2,
+        "haul_dispatch_reoptimize_sec": 4.2,
+        "truck_queue_waiting_reduction_pct": 41.5,
+        "crusher_feed_grade_variance_reduction_pct": 64.0,
+        "iso21815_collision_interlock_ms": 2.2,
+        "haul_road_collision_escape_pct": 0.0,
+        "slope_deformation_alarm_triage_ms": 18.0,
+        "pit_backhaul_bandwidth_reduction_pct": 96.8,
+        "unevacuated_bench_rockfall_exposure_pct": 0.0,
+        "mining_ahs_slo_met": true
+      },
+      {
+        "autonomous_haul_trucks": 120,
+        "mining_agent_mode": "cuopt_dispatch_iso21815_georadar_interlock",
+        "mining_solver_nodes": 4,
+        "haul_dispatch_reoptimize_sec": 4.2,
+        "truck_queue_waiting_reduction_pct": 41.5,
+        "crusher_feed_grade_variance_reduction_pct": 64.0,
+        "iso21815_collision_interlock_ms": 2.2,
+        "haul_road_collision_escape_pct": 0.0,
+        "slope_deformation_alarm_triage_ms": 18.0,
+        "pit_backhaul_bandwidth_reduction_pct": 96.8,
+        "unevacuated_bench_rockfall_exposure_pct": 0.0,
+        "mining_ahs_slo_met": true
+      },
+      {
+        "autonomous_haul_trucks": 480,
+        "mining_agent_mode": "cuopt_dispatch_iso21815_georadar_interlock",
+        "mining_solver_nodes": 16,
+        "haul_dispatch_reoptimize_sec": 4.2,
+        "truck_queue_waiting_reduction_pct": 41.5,
+        "crusher_feed_grade_variance_reduction_pct": 64.0,
+        "iso21815_collision_interlock_ms": 2.2,
+        "haul_road_collision_escape_pct": 0.0,
+        "slope_deformation_alarm_triage_ms": 18.0,
+        "pit_backhaul_bandwidth_reduction_pct": 96.8,
+        "unevacuated_bench_rockfall_exposure_pct": 0.0,
+        "mining_ahs_slo_met": true
+      },
+      {
+        "autonomous_haul_trucks": 120,
+        "mining_agent_mode": "fixed_shift_dispatch_unchecked_collision_raw_radar",
+        "mining_solver_nodes": 4,
+        "haul_dispatch_reoptimize_sec": 540.0,
+        "truck_queue_waiting_reduction_pct": 0.0,
+        "crusher_feed_grade_variance_reduction_pct": 0.0,
+        "iso21815_collision_interlock_ms": 0.0,
+        "haul_road_collision_escape_pct": 2.9,
+        "slope_deformation_alarm_triage_ms": 1450.0,
+        "pit_backhaul_bandwidth_reduction_pct": 0.0,
+        "unevacuated_bench_rockfall_exposure_pct": 3.7,
+        "mining_ahs_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -5944,5 +6002,63 @@
       "rail_ertms_slo_met": false
     }
   },
-  "trace_sha256": "9f85f4d4edc30fe1b5d945f557f38b024fb748db06c7b9b83938570aa94b015c"
+  "demo_50_mining_ahs_iso21815_sandbox": {
+    "mining_30_trucks": {
+      "autonomous_haul_trucks": 30,
+      "mining_agent_mode": "cuopt_dispatch_iso21815_georadar_interlock",
+      "mining_solver_nodes": 2,
+      "haul_dispatch_reoptimize_sec": 4.2,
+      "truck_queue_waiting_reduction_pct": 41.5,
+      "crusher_feed_grade_variance_reduction_pct": 64.0,
+      "iso21815_collision_interlock_ms": 2.2,
+      "haul_road_collision_escape_pct": 0.0,
+      "slope_deformation_alarm_triage_ms": 18.0,
+      "pit_backhaul_bandwidth_reduction_pct": 96.8,
+      "unevacuated_bench_rockfall_exposure_pct": 0.0,
+      "mining_ahs_slo_met": true
+    },
+    "mining_120_trucks": {
+      "autonomous_haul_trucks": 120,
+      "mining_agent_mode": "cuopt_dispatch_iso21815_georadar_interlock",
+      "mining_solver_nodes": 4,
+      "haul_dispatch_reoptimize_sec": 4.2,
+      "truck_queue_waiting_reduction_pct": 41.5,
+      "crusher_feed_grade_variance_reduction_pct": 64.0,
+      "iso21815_collision_interlock_ms": 2.2,
+      "haul_road_collision_escape_pct": 0.0,
+      "slope_deformation_alarm_triage_ms": 18.0,
+      "pit_backhaul_bandwidth_reduction_pct": 96.8,
+      "unevacuated_bench_rockfall_exposure_pct": 0.0,
+      "mining_ahs_slo_met": true
+    },
+    "mining_480_trucks": {
+      "autonomous_haul_trucks": 480,
+      "mining_agent_mode": "cuopt_dispatch_iso21815_georadar_interlock",
+      "mining_solver_nodes": 16,
+      "haul_dispatch_reoptimize_sec": 4.2,
+      "truck_queue_waiting_reduction_pct": 41.5,
+      "crusher_feed_grade_variance_reduction_pct": 64.0,
+      "iso21815_collision_interlock_ms": 2.2,
+      "haul_road_collision_escape_pct": 0.0,
+      "slope_deformation_alarm_triage_ms": 18.0,
+      "pit_backhaul_bandwidth_reduction_pct": 96.8,
+      "unevacuated_bench_rockfall_exposure_pct": 0.0,
+      "mining_ahs_slo_met": true
+    },
+    "raw_mining_120_trucks": {
+      "autonomous_haul_trucks": 120,
+      "mining_agent_mode": "fixed_shift_dispatch_unchecked_collision_raw_radar",
+      "mining_solver_nodes": 4,
+      "haul_dispatch_reoptimize_sec": 540.0,
+      "truck_queue_waiting_reduction_pct": 0.0,
+      "crusher_feed_grade_variance_reduction_pct": 0.0,
+      "iso21815_collision_interlock_ms": 0.0,
+      "haul_road_collision_escape_pct": 2.9,
+      "slope_deformation_alarm_triage_ms": 1450.0,
+      "pit_backhaul_bandwidth_reduction_pct": 0.0,
+      "unevacuated_bench_rockfall_exposure_pct": 3.7,
+      "mining_ahs_slo_met": false
+    }
+  },
+  "trace_sha256": "77580a6d0299a01c62f176b897eed485a772fc467202ab5498a17a196c1c3364"
 }

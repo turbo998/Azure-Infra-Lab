@@ -39,6 +39,7 @@ from agent_infra_sizer import (
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_maritime_port_crane_colregs_sandbox,
     simulate_media_openusd_3dgs_c2pa_sandbox,
+    simulate_mining_ahs_iso21815_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
@@ -928,6 +929,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(rail["rail_ertms_slo_met"])
         self.assertAlmostEqual(raw["spad_or_conflicting_route_escape_pct"], 3.2)
         self.assertFalse(raw["rail_ertms_slo_met"])
+
+    def test_mining_ahs_iso21815_sandbox(self) -> None:
+        gov = simulate_mining_ahs_iso21815_sandbox(120, "cuopt_dispatch_iso21815_georadar_interlock")
+        raw = simulate_mining_ahs_iso21815_sandbox(120, "fixed_shift_dispatch_unchecked_collision_raw_radar")
+        self.assertEqual(gov["mining_solver_nodes"], 4)
+        self.assertEqual(gov["haul_dispatch_reoptimize_sec"], 4.2)
+        self.assertLess(gov["haul_dispatch_reoptimize_sec"], raw["haul_dispatch_reoptimize_sec"])
+        self.assertEqual(gov["truck_queue_waiting_reduction_pct"], 41.5)
+        self.assertEqual(gov["crusher_feed_grade_variance_reduction_pct"], 64.0)
+        self.assertEqual(gov["iso21815_collision_interlock_ms"], 2.2)
+        self.assertEqual(gov["haul_road_collision_escape_pct"], 0.0)
+        self.assertGreater(raw["haul_road_collision_escape_pct"], 2.0)
+        self.assertEqual(gov["slope_deformation_alarm_triage_ms"], 18.0)
+        self.assertEqual(gov["pit_backhaul_bandwidth_reduction_pct"], 96.8)
+        self.assertEqual(gov["unevacuated_bench_rockfall_exposure_pct"], 0.0)
+        self.assertTrue(gov["mining_ahs_slo_met"])
+        self.assertFalse(raw["mining_ahs_slo_met"])
 
 
 if __name__ == "__main__":

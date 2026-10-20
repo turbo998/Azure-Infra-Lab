@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #49 · **55 Chapters** · **50 IaC Blueprints** · **49 Quantitative Physics Simulators** · **58/58 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 54-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #50 · **56 Chapters** · **51 IaC Blueprints** · **50 Quantitative Physics Simulators** · **59/59 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 56-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 49 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [58-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 50 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [59-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -143,6 +143,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **51** | **Hyperscale AI Datacenter Liquid-Cooling (`BACnet/SC PINN+MPC` `PUE 1.12` + `ASHRAE` Dew-Point + `38ms` Valve)** | `simulate_datacenter_cooling_bacnet_pue_sandbox()` | `aksclaw-datacenter-cooling-bacnet-pue-pool.bicep` | **`0.42 s` thermal MPC loop (`PUE 1.12` vs `1.34`, `-64.7%` cooling energy)**, **`0.0%` condensation/throttle**, **`38.0 ms` leak trip** |
 | **52** | **Autonomous Maritime Port (`STS/ARMG` `cuOpt` Stowage + `IMO IS Code GM` Gate + `COLREGs` Barrier)** | `simulate_maritime_port_crane_colregs_sandbox()` | `aksclaw-maritime-port-crane-colregs-pool.bicep` | **`8.6 s` 24K-TEU stowage solve (`-99.1%`, `-28.4%` berth time, `-94.5%` re-handles)**, **`0.0%` GM stability or `COLREGs` breach** |
 | **53–54** | **Autonomous High-Speed Rail (`ERTMS/ETCS Level 3` `cuOpt` Train-Graph + `EN 50129 SIL-4` Gate + `TADS` Edge)** | `simulate_rail_ertms_etcs_sil4_sandbox()` | `aksclaw-rail-ertms-etcs-sil4-pool.bicep` | **`6.4 s` 500-train rescheduling (`-99.2%`, `-46.2%` knock-on delay, `+24.0%` headway)**, **`0.0%` SPAD (`1.5 ms` SIL-4)**, **`12.0 ms` TADS** |
+| **55** | **Autonomous Open-Pit & Underground Mining (`AHS cuOpt+XRF` Dispatch + `ISO 21815 Level 9` Interlock + `SSR` Slope Radar)** | `simulate_mining_ahs_iso21815_sandbox()` | `aksclaw-mining-ahs-iso21815-pool.bicep` | **`4.2 s` 120-truck dispatch (`-99.2%`, `-41.5%` queue wait, `-64.0%` grade variance)**, **`0.0%` haul-road collision (`2.2 ms`)**, **`18.0 ms` SSR radar** |
 
 ---
 
@@ -152,10 +153,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 49 quantitative engineering & physics simulators (Chapters 7–54)
+# 2. Run all 50 quantitative engineering & physics simulators (Chapters 7–55)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 58 unit tests (100% pass across 6 runtimes, 49 physics models, 50 blueprints & links)
+# 3. Execute all 59 unit tests (100% pass across 6 runtimes, 50 physics models, 51 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

@@ -52,6 +52,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_lakehouse_duckdb_onelake_sandbox,
     simulate_maritime_port_crane_colregs_sandbox,
     simulate_media_openusd_3dgs_c2pa_sandbox,
+    simulate_mining_ahs_iso21815_sandbox,
     simulate_multi_agent_swarm_fanout_governance,
     simulate_multicloud_confidential_cleanroom_federation,
     simulate_multiregion_dr_failover,
@@ -516,6 +517,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "rail_500_trains": simulate_rail_ertms_etcs_sil4_sandbox(500, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
             "rail_2000_trains": simulate_rail_ertms_etcs_sil4_sandbox(2_000, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
             "raw_rail_500_trains": simulate_rail_ertms_etcs_sil4_sandbox(500, "batch_milp_unchecked_ma_raw_wayside_stream"),
+        },
+        "demo_50_mining_ahs_iso21815_sandbox": {
+            "mining_30_trucks": simulate_mining_ahs_iso21815_sandbox(30, "cuopt_dispatch_iso21815_georadar_interlock"),
+            "mining_120_trucks": simulate_mining_ahs_iso21815_sandbox(120, "cuopt_dispatch_iso21815_georadar_interlock"),
+            "mining_480_trucks": simulate_mining_ahs_iso21815_sandbox(480, "cuopt_dispatch_iso21815_georadar_interlock"),
+            "raw_mining_120_trucks": simulate_mining_ahs_iso21815_sandbox(120, "fixed_shift_dispatch_unchecked_collision_raw_radar"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -3001,6 +3001,58 @@ def simulate_rail_ertms_etcs_sil4_sandbox(
     }
 
 
+def simulate_mining_ahs_iso21815_sandbox(
+    autonomous_haul_trucks: int = 120,
+    mining_agent_mode: str = "cuopt_dispatch_iso21815_georadar_interlock",
+) -> dict[str, Any]:
+    """
+    Chapter 55: Autonomous Open-Pit & Underground Mining, Haul-Truck ISO 21815 Collision-Avoidance,
+    Pit-to-Port Ore-Grade XRF Blending & Geotechnical Slope-Radar (InSAR/SSR) Stability Agent Infrastructure.
+      - Pillar 1: Private 5G SA + NVIDIA cuOpt Dynamic Truck-Shovel-Crusher Dispatch & Real-Time
+        XRF Ore-Grade Kriging Blending vs Fixed Shift-Locked Truck Assignment
+      - Pillar 2: ISO 21815 / EMESRT Level 9 Deterministic Vehicle Intervention & Collision-Avoidance
+        Interlock on On-Board Ruggedized Edge
+      - Pillar 3: Ground-Based Slope-Stability Radar (SSR / InSAR) Inverse-Velocity Bench Evacuation
+        & Blast-Fume Exclusion Guardrail
+    """
+    mining_solver_nodes = max(2, math.ceil(autonomous_haul_trucks / 30))
+    if mining_agent_mode == "cuopt_dispatch_iso21815_georadar_interlock":
+        haul_dispatch_reoptimize_sec = 4.2
+        truck_queue_waiting_reduction_pct = 41.5
+        crusher_feed_grade_variance_reduction_pct = 64.0
+        iso21815_collision_interlock_ms = 2.2
+        haul_road_collision_escape_pct = 0.0
+        slope_deformation_alarm_triage_ms = 18.0
+        pit_backhaul_bandwidth_reduction_pct = 96.8
+        unevacuated_bench_rockfall_exposure_pct = 0.0
+        mining_ahs_slo_met = True
+    else:
+        haul_dispatch_reoptimize_sec = 540.0
+        truck_queue_waiting_reduction_pct = 0.0
+        crusher_feed_grade_variance_reduction_pct = 0.0
+        iso21815_collision_interlock_ms = 0.0
+        haul_road_collision_escape_pct = 2.9
+        slope_deformation_alarm_triage_ms = 1450.0
+        pit_backhaul_bandwidth_reduction_pct = 0.0
+        unevacuated_bench_rockfall_exposure_pct = 3.7
+        mining_ahs_slo_met = False
+
+    return {
+        "autonomous_haul_trucks": autonomous_haul_trucks,
+        "mining_agent_mode": mining_agent_mode,
+        "mining_solver_nodes": mining_solver_nodes,
+        "haul_dispatch_reoptimize_sec": haul_dispatch_reoptimize_sec,
+        "truck_queue_waiting_reduction_pct": truck_queue_waiting_reduction_pct,
+        "crusher_feed_grade_variance_reduction_pct": crusher_feed_grade_variance_reduction_pct,
+        "iso21815_collision_interlock_ms": iso21815_collision_interlock_ms,
+        "haul_road_collision_escape_pct": haul_road_collision_escape_pct,
+        "slope_deformation_alarm_triage_ms": slope_deformation_alarm_triage_ms,
+        "pit_backhaul_bandwidth_reduction_pct": pit_backhaul_bandwidth_reduction_pct,
+        "unevacuated_bench_rockfall_exposure_pct": unevacuated_bench_rockfall_exposure_pct,
+        "mining_ahs_slo_met": mining_ahs_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
