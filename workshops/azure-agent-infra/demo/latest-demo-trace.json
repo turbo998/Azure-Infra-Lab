@@ -4180,6 +4180,68 @@
         "xenon_oscillation_axial_offset_breach_pct": 3.4,
         "smr_neutronics_slo_met": false
       }
+    ],
+    "tbm_tunnel_geomechanics_profiles": [
+      {
+        "tbm_cutterhead_rings_and_plc_loops": 8,
+        "tbm_geomechanics_mode": "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tbm_shield_drives": 2,
+        "tbm_advance_rate_and_specific_energy_gain_pct": 32.9,
+        "disc_cutter_wear_life_extension_pct": 24.6,
+        "iso19296_sil3_cutterhead_torque_interlock_ms": 1.7,
+        "cutterhead_stall_or_surface_settlement_breach_pct": 0.0,
+        "on_shield_gpr_acoustic_edge_inversion_ms": 4.2,
+        "wan_bandwidth_reduction_pct": 97.5,
+        "tail_void_grout_or_face_blowout_excursion_pct": 0.0,
+        "tbm_geomechanics_slo_met": true
+      },
+      {
+        "tbm_cutterhead_rings_and_plc_loops": 16,
+        "tbm_geomechanics_mode": "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tbm_shield_drives": 4,
+        "tbm_advance_rate_and_specific_energy_gain_pct": 32.9,
+        "disc_cutter_wear_life_extension_pct": 24.6,
+        "iso19296_sil3_cutterhead_torque_interlock_ms": 1.7,
+        "cutterhead_stall_or_surface_settlement_breach_pct": 0.0,
+        "on_shield_gpr_acoustic_edge_inversion_ms": 4.2,
+        "wan_bandwidth_reduction_pct": 97.5,
+        "tail_void_grout_or_face_blowout_excursion_pct": 0.0,
+        "tbm_geomechanics_slo_met": true
+      },
+      {
+        "tbm_cutterhead_rings_and_plc_loops": 64,
+        "tbm_geomechanics_mode": "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tbm_shield_drives": 16,
+        "tbm_advance_rate_and_specific_energy_gain_pct": 32.9,
+        "disc_cutter_wear_life_extension_pct": 24.6,
+        "iso19296_sil3_cutterhead_torque_interlock_ms": 1.7,
+        "cutterhead_stall_or_surface_settlement_breach_pct": 0.0,
+        "on_shield_gpr_acoustic_edge_inversion_ms": 4.2,
+        "wan_bandwidth_reduction_pct": 97.5,
+        "tail_void_grout_or_face_blowout_excursion_pct": 0.0,
+        "tbm_geomechanics_slo_met": true
+      },
+      {
+        "tbm_cutterhead_rings_and_plc_loops": 16,
+        "tbm_geomechanics_mode": "cloud_only_unverified_epb_raw_gpr_telemetry",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tbm_shield_drives": 4,
+        "tbm_advance_rate_and_specific_energy_gain_pct": 0.0,
+        "disc_cutter_wear_life_extension_pct": 0.0,
+        "iso19296_sil3_cutterhead_torque_interlock_ms": 390.0,
+        "cutterhead_stall_or_surface_settlement_breach_pct": 1.8,
+        "on_shield_gpr_acoustic_edge_inversion_ms": 1360.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "tail_void_grout_or_face_blowout_excursion_pct": 3.7,
+        "tbm_geomechanics_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -7904,5 +7966,67 @@
       "smr_neutronics_slo_met": false
     }
   },
-  "trace_sha256": "50b003bc97e281143abe8985ed5764f23fa7ba346621e2a3f41ea2943ad60507"
+  "demo_66_tbm_tunnel_boring_geomechanics_sil3_sandbox": {
+    "tbm_8_loops": {
+      "tbm_cutterhead_rings_and_plc_loops": 8,
+      "tbm_geomechanics_mode": "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tbm_shield_drives": 2,
+      "tbm_advance_rate_and_specific_energy_gain_pct": 32.9,
+      "disc_cutter_wear_life_extension_pct": 24.6,
+      "iso19296_sil3_cutterhead_torque_interlock_ms": 1.7,
+      "cutterhead_stall_or_surface_settlement_breach_pct": 0.0,
+      "on_shield_gpr_acoustic_edge_inversion_ms": 4.2,
+      "wan_bandwidth_reduction_pct": 97.5,
+      "tail_void_grout_or_face_blowout_excursion_pct": 0.0,
+      "tbm_geomechanics_slo_met": true
+    },
+    "tbm_16_loops": {
+      "tbm_cutterhead_rings_and_plc_loops": 16,
+      "tbm_geomechanics_mode": "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tbm_shield_drives": 4,
+      "tbm_advance_rate_and_specific_energy_gain_pct": 32.9,
+      "disc_cutter_wear_life_extension_pct": 24.6,
+      "iso19296_sil3_cutterhead_torque_interlock_ms": 1.7,
+      "cutterhead_stall_or_surface_settlement_breach_pct": 0.0,
+      "on_shield_gpr_acoustic_edge_inversion_ms": 4.2,
+      "wan_bandwidth_reduction_pct": 97.5,
+      "tail_void_grout_or_face_blowout_excursion_pct": 0.0,
+      "tbm_geomechanics_slo_met": true
+    },
+    "tbm_64_loops": {
+      "tbm_cutterhead_rings_and_plc_loops": 64,
+      "tbm_geomechanics_mode": "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tbm_shield_drives": 16,
+      "tbm_advance_rate_and_specific_energy_gain_pct": 32.9,
+      "disc_cutter_wear_life_extension_pct": 24.6,
+      "iso19296_sil3_cutterhead_torque_interlock_ms": 1.7,
+      "cutterhead_stall_or_surface_settlement_breach_pct": 0.0,
+      "on_shield_gpr_acoustic_edge_inversion_ms": 4.2,
+      "wan_bandwidth_reduction_pct": 97.5,
+      "tail_void_grout_or_face_blowout_excursion_pct": 0.0,
+      "tbm_geomechanics_slo_met": true
+    },
+    "raw_tbm_16_loops": {
+      "tbm_cutterhead_rings_and_plc_loops": 16,
+      "tbm_geomechanics_mode": "cloud_only_unverified_epb_raw_gpr_telemetry",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tbm_shield_drives": 4,
+      "tbm_advance_rate_and_specific_energy_gain_pct": 0.0,
+      "disc_cutter_wear_life_extension_pct": 0.0,
+      "iso19296_sil3_cutterhead_torque_interlock_ms": 390.0,
+      "cutterhead_stall_or_surface_settlement_breach_pct": 1.8,
+      "on_shield_gpr_acoustic_edge_inversion_ms": 1360.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "tail_void_grout_or_face_blowout_excursion_pct": 3.7,
+      "tbm_geomechanics_slo_met": false
+    }
+  },
+  "trace_sha256": "06bf06458ca7745080dab0c917e6b3e295d85e516aec806cdfb8c4022d4efcad"
 }

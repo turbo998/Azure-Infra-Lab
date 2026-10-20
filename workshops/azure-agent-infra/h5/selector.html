@@ -478,6 +478,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(63)">64. 深海有缆观测网海啸 BPR PINN 反演 + AUV 水声对接与 API RP 53 / SIL-3 深水防喷器 BOP 互锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(64)">65. 增强型地热系统 EGS 水力压裂 THM-PINN + 诱发微震红绿灯 TLS 泄压与 SIL-3 井口联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(65)">66. 模块化小型核反应堆 SMR 堆芯中子学 PINN + 氙振荡阻尼与 IEEE 603 / Class 1E RTS 保护池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(66)">67. 地下盾构机 TBM 超前探地雷达 GPR 全波形反演 + 土压平衡 EPB MPC 与 ISO 19296 / SIL-3 扭矩沉降联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1966,6 +1967,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 66 · SUBTERRANEAN TUNNEL BORING MACHINE (TBM) GEOMECHANICS, GPR KARST FWI, EPB CHAMBER MPC &amp; ISO 19296 / SIL-3 SIZER</span>
+    <h2>自主地下盾构机（TBM）岩土力学、探地雷达（GPR）超前溶洞反演、土压平衡（EPB）MPC 与 ISO 19296 / SIL-3 刀盘扭矩沉降联锁测算器 (Chapter 71 · Bilingual)</h2>
+    <div class="sub">量化在盾构刀盘检测环与推进液压回路规模 <code>8 – 64 回路</code>（<code>2 – 16 台</code> 在掘大直径土压/泥水平衡盾构机）下，启用 <code>掌子面超前 30m 探地雷达 (GPR) / 地震波三维全波形反演 (FWI) + 土压平衡仓 (EPB) 螺旋出土与同步注浆 MPC</code>（掘进速率与比能耗效率提升 <code>+32.9%</code>、19 英寸盘形滚刀耐磨寿命延长 <code>+24.6%</code>、同步注浆亏空或掌子面冒浆越界率 <code>0.0%</code>）、<code>ISO 19296 与 IEC 61508 SIL-3 刀盘脱困扭矩 (&lt;= 92%) 及地表 InSAR/静力水准仪沉降 (&lt;= 10.0 mm) PLC 硬联锁</code>（<code>1.7 ms</code> 校验，<code>0.0%</code> 刀盘抱死卡盾与地表沉降超限）以及盾体后配套台车 <code>Azure Local + IoT Operations</code> <code>滚刀声发射 (AE) 偏磨与 GPR 波场</code> 边缘反演（<code>4.2 ms</code> 响应，削减 <code>97.5%</code> 隧道漏泄电缆回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 盾构机刀盘检测环与推进液压回路数量 (TBM Cutterhead Rings &amp; PLC Loops): <strong id="lbl_tbm_loops" style="color:var(--teal)">16</strong> Loops</label>
+          <input type="range" id="rng_tbm_loops" min="8" max="64" step="8" value="16" oninput="runTbmTunnelLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 超前地质反演、土仓压力 MPC 与 ISO 19296 / SIL-3 联锁模式 (TBM Geomechanics &amp; SIL-3 Mode)</label>
+          <select id="sel_tbm_mode" onchange="runTbmTunnelLab()">
+            <option value="tbm_gpr_fwi_epb_mpc_sil3_plc_edge" selected>超前 GPR-FWI + EPB MPC (+32.9% 掘进比能 / +24.6% 滚刀寿命) + SIL-3 扭矩/沉降联锁 (0% 卡盾沉降) + 盾体边缘 (推荐)</option>
+            <option value="cloud_only_unverified_epb_raw_gpr_telemetry">传统反模式：固定推力排土 (0 增益) + 无 SIL-3 扭矩/沉降门控 (1.8% 卡盾/沉降超限) + 原始 GPR 流上云 (3.7% 冒浆/注浆亏空)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="tbmOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3125,6 +3148,23 @@ resource smrNeutronicsPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/incore-spnd-gamma-spectroscopy-edge': 'enabled-3.5ms-97.9pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// =============================================================================
+// 67. AKSClaw Subterranean Tunnel Boring Machine (TBM) Geomechanics & SIL-3 Pool (Bicep)
+// =============================================================================
+resource tbmGeomechanicsPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'tbmsil3pool'
+  properties: {
+    count: 2
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'tbm-tunnel-boring-geomechanics-sil3-agent'
+      'aksclaw.io/gpr-fwi-epb-chamber-mpc': 'enabled-32.9pct-advance-rate-24.6pct-disc-cutter-life'
+      'aksclaw.io/iso19296-sil3-torque-settlement': 'enforced-1.7ms-zero-cutterhead-stall-or-10mm-settlement-breach'
+      'aksclaw.io/on-shield-gpr-acoustic-emission-edge': 'enabled-4.2ms-97.5pct-leaky-feeder-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3291,6 +3331,30 @@ runDeepSpaceTelescopeLab();
 runSubseaObservatoryLab();
 runGeothermalEgsLab();
 runSmrNuclearLab();
+runTbmTunnelLab();
+
+function runTbmTunnelLab() {
+  const loops = parseInt(document.getElementById('rng_tbm_loops').value, 10);
+  const mode = document.getElementById('sel_tbm_mode').value;
+  document.getElementById('lbl_tbm_loops').textContent = loops.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(loops / 8));
+  const drives = Math.max(2, Math.floor(loops / 4));
+  const ok = mode === 'tbm_gpr_fwi_epb_mpc_sil3_plc_edge';
+  const fwiStr = ok ? "超前 30m GPR/地震 FWI + EPB 土仓压力 MPC · 掘进效率 +32.9% · 滚刀寿命 +24.6%" : "经验固定推力与螺旋机转速 · 0.0% 掘进与刀具增益 (复合地层盲目推进且 3.7% 掌子面冒浆或注浆亏空)";
+  const sil3Str = ok ? "1.7 ms ISO 19296 / SIL-3 刀盘过载扭矩 (<=92%) 与地表沉降 (<=10.0mm) 联锁 · 0.0% 卡盾/沉降违例" : "无 SIL-3 刀盘扭矩与地表沉降硬联锁 (390.0 ms 云端滞后) · 1.8% 断层卡盾抱死与地表建筑沉降超限风险";
+  const edgeStr = ok ? "4.2 ms 盾体台车 Azure Local 滚刀声发射 (AE) 偏磨与 GPR 波场边缘反演 (-97.5% 隧道漏泄电缆带宽) · 0.0% 冒浆" : "1,360.0 ms 原始高频 GPR 与声发射波形上云 · 拥塞地下漏泄同轴电缆且错过溶洞突水封堵窗口";
+
+  document.getElementById('tbmOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + fwiStr : '❌ 1.8% 刀盘抱死卡盾/地表沉降超限风险 · 3.7% 掌子面劈裂冒浆或同步注浆亏空'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${drives} 台大直径盾构机 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>盾构后配套台车 Azure Local + IoT Operations 滚刀声发射 (AE) 与探地雷达 (GPR) 边缘反演</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runSmrNuclearLab() {
   const mods = parseInt(document.getElementById('rng_smr_modules').value, 10);

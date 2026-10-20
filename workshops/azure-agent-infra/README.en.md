@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #65 · **71 Chapters** · **66 IaC Blueprints** · **65 Quantitative Physics Simulators** · **74/74 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 71-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #66 · **72 Chapters** · **67 IaC Blueprints** · **66 Quantitative Physics Simulators** · **75/75 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 72-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 65 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [74-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 66 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [75-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -159,6 +159,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **68** | **Subsea Cabled Ocean Observatory & Tsunami Array (`NSWE-PINN` BPR Inversion + `AUV Inductive Docking MPC` + `API RP 53 / SIL-3 BOP` Gate + `DAS` Edge)** | `simulate_subsea_cabled_observatory_tsunami_bop_sandbox()` | `aksclaw-subsea-cabled-observatory-tsunami-bop-pool.bicep` | **`+44.6%` tsunami lead time & `-38.2%` AUV energy**, **`0.0%` blowout or HVDC ground fault (`1.2 ms` SIL-3 BOP)**, **`6.5 ms` DAS/hydrophone edge (`97.4%` SatCom cut)** |
 | **69** | **Enhanced Geothermal Systems `EGS` & Binary Turbine (`Coupled THM-PINN` + `sCO2 Rankine MPC` + `TLS Mw>=2.1 / SIL-3` Wellhead Bleed-Off + `Borehole DAS/DTS` Edge)** | `simulate_geothermal_egs_induced_seismicity_turbine_sandbox()` | `aksclaw-geothermal-egs-induced-seismicity-turbine-pool.bicep` | **`+36.4%` baseload MW & `-31.8%` reinjection pump power**, **`0.0%` seismic TLS exceedance (`2.1 ms` SIL-3)**, **`4.8 ms` borehole DAS/DTS edge (`97.5%` WAN cut)** |
 | **70** | **Small Modular Reactor `SMR` Core Neutronics (`3D OpenMC + Xe-135 PINN` + `Gray-Bank Rod MPC` + `IEEE 603 / IEC 61513 Class 1E RTS` `DNBR>=1.30` Gate + `In-Core SPND` Edge)** | `simulate_smr_nuclear_neutronics_class1e_rts_sandbox()` | `aksclaw-smr-nuclear-neutronics-class1e-rts-pool.bicep` | **`+34.2%` load-following ramp & `+19.4%` burnup symmetry**, **`0.0%` DNBR/reactivity breach (`1.2 ms` Class 1E RTS)**, **`3.5 ms` SPND edge (`97.9%` WAN cut)** |
+| **71** | **Subterranean Tunnel Boring Machine `TBM` Geomechanics (`3D GPR/Seismic FWI` + `EPB/Slurry Chamber MPC` + `ISO 19296 / SIL-3` Torque & `10mm` Settlement Gate + `On-Shield AE/GPR` Edge)** | `simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox()` | `aksclaw-tbm-tunnel-boring-geomechanics-sil3-pool.bicep` | **`+32.9%` advance rate & `+24.6%` cutter life**, **`0.0%` stall torque or settlement breach (`1.7 ms` SIL-3)**, **`4.2 ms` on-shield edge (`97.5%` WAN cut)** |
 
 ---
 
@@ -168,10 +169,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 65 quantitative engineering & physics simulators (Chapters 7–70)
+# 2. Run all 66 quantitative engineering & physics simulators (Chapters 7–71)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 74 unit tests (100% pass across 6 runtimes, 65 physics models, 66 blueprints & links)
+# 3. Execute all 75 unit tests (100% pass across 6 runtimes, 66 physics models, 67 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

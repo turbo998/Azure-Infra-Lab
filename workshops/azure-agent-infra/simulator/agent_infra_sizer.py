@@ -3816,6 +3816,55 @@ def simulate_smr_nuclear_neutronics_class1e_rts_sandbox(
     }
 
 
+def simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(
+    tbm_cutterhead_rings_and_plc_loops: int = 16,
+    tbm_geomechanics_mode: str = "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Subterranean Tunnel Boring Machine (TBM) & Civil
+    Megaproject Geomechanics, Ground-Penetrating Radar (GPR) Karst/Fault
+    Ahead-of-Face Inversion, Slurry/EPB Chamber Face-Pressure Balance &
+    ISO 19296 / IEC 61508 SIL-3 Cutterhead Over-Torque & Settlement Interlock
+    Agent Infrastructure (Chapter 71).
+    """
+    if tbm_cutterhead_rings_and_plc_loops <= 0:
+        raise ValueError("tbm_cutterhead_rings_and_plc_loops must be positive")
+    valid_modes = {
+        "tbm_gpr_fwi_epb_mpc_sil3_plc_edge",
+        "cloud_only_unverified_epb_raw_gpr_telemetry",
+    }
+    if tbm_geomechanics_mode not in valid_modes:
+        raise ValueError(f"tbm_geomechanics_mode must be one of {sorted(valid_modes)}")
+
+    governed = tbm_geomechanics_mode == "tbm_gpr_fwi_epb_mpc_sil3_plc_edge"
+    gpu_nodes = max(2, math.ceil(tbm_cutterhead_rings_and_plc_loops / 8))
+    active_tbm_shield_drives = max(2, int(tbm_cutterhead_rings_and_plc_loops // 4))
+
+    tbm_advance_rate_and_specific_energy_gain_pct = 32.9 if governed else 0.0
+    disc_cutter_wear_life_extension_pct = 24.6 if governed else 0.0
+    iso19296_sil3_cutterhead_torque_interlock_ms = 1.7 if governed else 390.0
+    cutterhead_stall_or_surface_settlement_breach_pct = 0.0 if governed else 1.8
+    on_shield_gpr_acoustic_edge_inversion_ms = 4.2 if governed else 1360.0
+    wan_bandwidth_reduction_pct = 97.5 if governed else 0.0
+    tail_void_grout_or_face_blowout_excursion_pct = 0.0 if governed else 3.7
+
+    return {
+        "tbm_cutterhead_rings_and_plc_loops": tbm_cutterhead_rings_and_plc_loops,
+        "tbm_geomechanics_mode": tbm_geomechanics_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tbm_shield_drives": active_tbm_shield_drives,
+        "tbm_advance_rate_and_specific_energy_gain_pct": tbm_advance_rate_and_specific_energy_gain_pct,
+        "disc_cutter_wear_life_extension_pct": disc_cutter_wear_life_extension_pct,
+        "iso19296_sil3_cutterhead_torque_interlock_ms": iso19296_sil3_cutterhead_torque_interlock_ms,
+        "cutterhead_stall_or_surface_settlement_breach_pct": cutterhead_stall_or_surface_settlement_breach_pct,
+        "on_shield_gpr_acoustic_edge_inversion_ms": on_shield_gpr_acoustic_edge_inversion_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "tail_void_grout_or_face_blowout_excursion_pct": tail_void_grout_or_face_blowout_excursion_pct,
+        "tbm_geomechanics_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -72,6 +72,7 @@ from agent_infra_sizer import (
     simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
     simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
     simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
+    simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -190,6 +191,8 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-deep-space-telescope-adaptive-optics-pool.bicep",
             "aksclaw-subsea-cabled-observatory-tsunami-bop-pool.bicep",
             "aksclaw-geothermal-egs-induced-seismicity-turbine-pool.bicep",
+            "aksclaw-smr-nuclear-neutronics-class1e-rts-pool.bicep",
+            "aksclaw-tbm-tunnel-boring-geomechanics-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1222,6 +1225,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["xenon_oscillation_axial_offset_breach_pct"], 3.0)
         self.assertTrue(gov["smr_neutronics_slo_met"])
         self.assertFalse(raw["smr_neutronics_slo_met"])
+
+    def test_tbm_tunnel_boring_geomechanics_sil3_sandbox(self) -> None:
+        gov = simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(16, "tbm_gpr_fwi_epb_mpc_sil3_plc_edge")
+        raw = simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(16, "cloud_only_unverified_epb_raw_gpr_telemetry")
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_tbm_shield_drives"], 4)
+        self.assertEqual(gov["tbm_advance_rate_and_specific_energy_gain_pct"], 32.9)
+        self.assertEqual(gov["disc_cutter_wear_life_extension_pct"], 24.6)
+        self.assertEqual(gov["iso19296_sil3_cutterhead_torque_interlock_ms"], 1.7)
+        self.assertEqual(gov["cutterhead_stall_or_surface_settlement_breach_pct"], 0.0)
+        self.assertGreater(raw["cutterhead_stall_or_surface_settlement_breach_pct"], 1.7)
+        self.assertEqual(gov["on_shield_gpr_acoustic_edge_inversion_ms"], 4.2)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 97.5)
+        self.assertEqual(gov["tail_void_grout_or_face_blowout_excursion_pct"], 0.0)
+        self.assertGreater(raw["tail_void_grout_or_face_blowout_excursion_pct"], 3.5)
+        self.assertTrue(gov["tbm_geomechanics_slo_met"])
+        self.assertFalse(raw["tbm_geomechanics_slo_met"])
 
 
 if __name__ == "__main__":

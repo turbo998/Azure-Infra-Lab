@@ -85,6 +85,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
     simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
     simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
+    simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -628,6 +629,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "smr_24_modules": simulate_smr_nuclear_neutronics_class1e_rts_sandbox(24, "smr_neutronics_pinn_xenon_damping_class1e_rts_edge"),
             "smr_96_modules": simulate_smr_nuclear_neutronics_class1e_rts_sandbox(96, "smr_neutronics_pinn_xenon_damping_class1e_rts_edge"),
             "raw_smr_24_modules": simulate_smr_nuclear_neutronics_class1e_rts_sandbox(24, "cloud_only_unverified_rod_stepping_raw_spnd"),
+        },
+        "demo_66_tbm_tunnel_boring_geomechanics_sil3_sandbox": {
+            "tbm_8_loops": simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(8, "tbm_gpr_fwi_epb_mpc_sil3_plc_edge"),
+            "tbm_16_loops": simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(16, "tbm_gpr_fwi_epb_mpc_sil3_plc_edge"),
+            "tbm_64_loops": simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(64, "tbm_gpr_fwi_epb_mpc_sil3_plc_edge"),
+            "raw_tbm_16_loops": simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(16, "cloud_only_unverified_epb_raw_gpr_telemetry"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
