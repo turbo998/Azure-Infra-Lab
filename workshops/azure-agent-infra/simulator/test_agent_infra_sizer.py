@@ -46,6 +46,7 @@ from agent_infra_sizer import (
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_precision_ag_isobus_ndvi_sandbox,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_rail_ertms_etcs_sil4_sandbox,
@@ -964,6 +965,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["smoke_damper_override_escape_pct"], 2.0)
         self.assertTrue(gov["smart_building_slo_met"])
         self.assertFalse(raw["smart_building_slo_met"])
+
+    def test_precision_ag_isobus_ndvi_sandbox(self) -> None:
+        gov = simulate_precision_ag_isobus_ndvi_sandbox(100, "fao56_vra_iso11783_epa_drift_uav_edge")
+        raw = simulate_precision_ag_isobus_ndvi_sandbox(100, "uniform_blanket_spray_unchecked_drift_raw_uav_upload")
+        self.assertEqual(gov["ag_solver_nodes"], 4)
+        self.assertEqual(gov["autonomous_isobus_tractors"], 80)
+        self.assertEqual(gov["chemical_herbicide_reduction_pct"], 42.6)
+        self.assertEqual(gov["irrigation_water_reduction_pct"], 34.8)
+        self.assertEqual(gov["iso11783_epa_drift_gate_ms"], 1.9)
+        self.assertEqual(gov["waterway_spray_drift_escape_pct"], 0.0)
+        self.assertGreater(raw["waterway_spray_drift_escape_pct"], 3.0)
+        self.assertEqual(gov["uav_ndvi_edge_triage_ms"], 22.0)
+        self.assertEqual(gov["rural_wan_bandwidth_reduction_pct"], 96.4)
+        self.assertEqual(gov["crop_row_trampling_escape_pct"], 0.0)
+        self.assertGreater(raw["crop_row_trampling_escape_pct"], 2.0)
+        self.assertTrue(gov["precision_ag_slo_met"])
+        self.assertFalse(raw["precision_ag_slo_met"])
 
 
 if __name__ == "__main__":

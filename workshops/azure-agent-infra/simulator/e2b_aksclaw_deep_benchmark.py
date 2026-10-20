@@ -52,6 +52,7 @@ from agent_infra_sizer import (
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_precision_ag_isobus_ndvi_sandbox,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_rail_ertms_etcs_sil4_sandbox,
@@ -605,6 +606,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_smart_building_ashrae_nfpa72_sandbox(500, "static_schedule_unchecked_co2_unisolated_bacnet"),
     ]
 
+    precision_ag_isobus_profiles: List[Dict[str, object]] = [
+        simulate_precision_ag_isobus_ndvi_sandbox(25, "fao56_vra_iso11783_epa_drift_uav_edge"),
+        simulate_precision_ag_isobus_ndvi_sandbox(100, "fao56_vra_iso11783_epa_drift_uav_edge"),
+        simulate_precision_ag_isobus_ndvi_sandbox(400, "fao56_vra_iso11783_epa_drift_uav_edge"),
+        simulate_precision_ag_isobus_ndvi_sandbox(100, "uniform_blanket_spray_unchecked_drift_raw_uav_upload"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -656,6 +664,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "rail_ertms_sil4_profiles": rail_ertms_sil4_profiles,
         "mining_ahs_iso21815_profiles": mining_ahs_iso21815_profiles,
         "smart_building_ashrae_profiles": smart_building_ashrae_profiles,
+        "precision_ag_isobus_profiles": precision_ag_isobus_profiles,
     }
 
 

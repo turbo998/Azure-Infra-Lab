@@ -59,6 +59,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_online_rft_verifier_selfplay_sandbox,
     simulate_otel_ebpf_observability_pipeline,
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
+    simulate_precision_ag_isobus_ndvi_sandbox,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
     simulate_rail_ertms_etcs_sil4_sandbox,
@@ -530,6 +531,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "campus_500k_sqm": simulate_smart_building_ashrae_nfpa72_sandbox(500, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
             "campus_2000k_sqm": simulate_smart_building_ashrae_nfpa72_sandbox(2_000, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
             "raw_campus_500k_sqm": simulate_smart_building_ashrae_nfpa72_sandbox(500, "static_schedule_unchecked_co2_unisolated_bacnet"),
+        },
+        "demo_52_precision_ag_isobus_ndvi_sandbox": {
+            "ag_25k_ha": simulate_precision_ag_isobus_ndvi_sandbox(25, "fao56_vra_iso11783_epa_drift_uav_edge"),
+            "ag_100k_ha": simulate_precision_ag_isobus_ndvi_sandbox(100, "fao56_vra_iso11783_epa_drift_uav_edge"),
+            "ag_400k_ha": simulate_precision_ag_isobus_ndvi_sandbox(400, "fao56_vra_iso11783_epa_drift_uav_edge"),
+            "raw_ag_100k_ha": simulate_precision_ag_isobus_ndvi_sandbox(100, "uniform_blanket_spray_unchecked_drift_raw_uav_upload"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #51 · 57 Chapters · 52 Blueprints · 51 Simulators · 60/60 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #52 · 58 Chapters · 53 Blueprints · 52 Simulators · 61/61 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -1730,7 +1730,33 @@ sequenceDiagram
 
 ---
 
-## 57. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 57. 自主精准农业、无人驾驶农机与变量喷洒/灌溉（`ISOBUS ISO 11783`）舰队、植保无人机多光谱（`NDVI / RedEdge`）田间边缘分诊与农药防漂移缓冲带互锁（`EPA FIFRA`）智能体基础设施 —— `FAO-56 Penman-Monteith` 蒸散发变量处方图、车载 `ISO 11783` 喷嘴风速熔断及 `2.0 cm RTK-GNSS` 护苗物理模型（Autonomous Precision Agriculture, Variable-Rate Irrigation/Spraying ISOBUS ISO 11783 Tractor Fleet, Drone Multispectral NDVI Edge Triage & EPA Drift-Buffer Interlock Agent Infrastructure — FAO-56 Evapotranspiration Prescription, ISO 11783 Nozzle Shutoff & UAV Multispectral Edge Physics）
+
+> 本章由确定性精准农业与自主农机（`ISOBUS ISO 11783`）智能体模型 [`simulate_precision_ag_isobus_ndvi_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-precision-ag-isobus-ndvi-pool.bicep`](blueprints/aksclaw-precision-ag-isobus-ndvi-pool.bicep) 驱动，面向超大型现代农场与跨区域农业合作社（管理耕地面积 `25k–400k` 公顷、并发在线 `RTK-GNSS` 自动驾驶拖拉机/自走式喷杆喷雾机 `20–320` 台、10 波段多光谱植保无人机阵列与田间土壤墒情传感器网），解决 **传统全田均匀漫灌与无差别满幅喷药（Uniform Blanket Spraying & Irrigation）造成除草剂与氮肥浪费高达 `42.6%` 及地下水超采、阵风超标或临近水源保护区时未经 `ISO 11783` 与 `EPA FIFRA` 防漂移缓冲带互锁直接喷洒引发 `3.6%` 邻田药害或河道污染事故，以及将多光谱无人机数十 GB 原始高光谱正射影像通过脆弱农村蜂窝/卫星链路回传云端导致 `1,680.0 ms` 靶向点喷滞后与 `2.8%` 农机转向压苗率三大智慧农业工程难题**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_precision_ag_isobus_ndvi_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-precision-ag-isobus-ndvi-pool.bicep`](blueprints/aksclaw-precision-ag-isobus-ndvi-pool.bicep), this chapter models autonomous precision agriculture (`25k–400k` hectares, `80` autonomous `ISO 11783` RTK-GNSS tractors/sprayers at `100k ha`): (1) fusing **FAO-56 Penman-Monteith evapotranspiration models**, soil-moisture telemetry, and satellite/UAV **Normalized Difference Vegetation Index (`NDVI`)** on `Standard_NC24ads_A100_v4` nodes to generate real-time **Variable-Rate Application (`VRA`) prescription maps** cuts chemical herbicide/fertilizer usage by **`42.6%`** and groundwater irrigation draw by **`34.8%`** vs uniform blanket application; (2) enforcing a **`1.9 ms`** on-board **`ISO 11783 (ISOBUS Class 3)` + `EPA FIFRA` Wind-Speed (`> 15 mph`) & Riparian Waterway Buffer-Zone Nozzle Shutoff Interlock** eliminates **`100.0%` (`0.0%` vs `3.6%`)** of off-target pesticide spray drift and waterway contamination; and (3) running **10-Band Multispectral (`RedEdge/NIR`) & Weed Spot-Spray Vision Triage** on Azure Local farm-edge nodes in **`22.0 ms`** (`vs 1,680.0 ms` rural WAN/satellite upload) cuts rural backhaul bandwidth by **`96.4%`** while maintaining `2.0 cm` RTK-GNSS row guidance (`0.0%` vs `2.8%` crop-row trampling).
+
+### 57.1 精准农业 `FAO-56 + VRA` 变量处方、`ISO 11783 + EPA FIFRA` 防漂移互锁与多光谱无人机田间边缘分诊三大工程支柱
+
+1. **Pillar 1：`FAO-56 Penman-Monteith` 作物蒸散发数字孪生 + `Standard_NC24ads_A100_v4` 变量施肥/变量喷洒（`VRA`）处方图生成池 vs 传统全田均匀漫灌与普喷**：
+   - 汇聚田间多深度土壤水势传感器、气象站太阳辐射/温湿度与多光谱长势指数（`NDVI / NDRE`），在 A100 GPU 沙箱内按 `1m × 1m` 网格实时生成 **变量灌溉水肥处方图与靶向除草剂处方图**，相比全田无差别均匀施用，直接削减化学除草剂与化肥用量 **`42.6%`**，并降低农业地下水灌溉抽水量 **`34.8%`**。
+2. **Pillar 2：`ISO 11783`（`ISOBUS Class 3` 拖拉机-农具总线控制）与 `EPA FIFRA` 风速及水源生态缓冲带确定性喷嘴关断互锁（`1.9 ms` 校验）**：
+   - 任何由变量处方智能体或视觉点喷模型下发的 `ISOBUS` 脉冲宽度调制（`PWM`）电磁喷嘴开启指令，在执行前必须经过车载 **`1.9 ms` 确定性气象风速与水源保护区地理围栏互锁校验器**：实时读取车载超声波风速仪（当瞬时横风 `> 15 mph / 6.7 m/s` 时自动关断高雾化喷嘴或切换防漂移粗液滴模式）并核对河道/饮用水源缓冲带多边形，将 **农药跨界漂移药害或水源污染逃逸率从 `3.6%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：农场边缘 `Azure Local` 植保无人机 10 波段多光谱（`RedEdge / NIR`）拼接与喷杆相机毫秒级杂草靶向识别分诊（`22.0 ms`）**：
+   - 在农机机库与田间移动边缘节点本地运行多光谱病虫害胁迫分诊与喷杆前端 `TensorRT` 绿中识绿（Green-on-Green）杂草检测，在 **`22.0 ms` 内（对比卫星/农村弱网回传云端 `1,680.0 ms`）** 触发单喷嘴靶向点喷并结合本地 `RTK-GNSS` 基站差分修正保持 **`2.0 cm` 垄间行进精度**，削减 **`96.4%` 农村卫星/蜂窝回传带宽**，并将 **农机延迟偏航压苗损毁率从 `2.8%` 降至 `0.0%`**。
+
+### 57.2 `FAO-56 VRA` 变量处方 + `ISO 11783 / EPA` 防漂移互锁 + 无人机多光谱边缘分诊 vs 传统均匀普喷对比表
+
+| 管理耕地规模与精准农业 `ISOBUS` 智能体架构 | `NC24ads_A100_v4` 节点数 | 并发无人农机数 | **农药化肥削减 / 灌溉节水比例** | **`ISO 11783 / EPA` 漂移或水源污染逃逸率** | **多光谱/杂草边缘分诊延迟与弱网带宽削减** | **`RTK-GNSS` 农机压苗损毁率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`25k` 公顷农场 · FAO-56 VRA + ISO 11783 互锁 + 边缘分诊** | `2` | `20` | **`42.6%` / `34.8%`** | **`0.0%` (`1.9 ms`)** | **`22.0 ms` / `96.4%`** | **`0.0%` (`2.0 cm` RTK)** |
+| **`100k` 公顷农场 · FAO-56 VRA + ISO 11783 互锁 + 边缘分诊 (推荐)** | **`4`** | **`80`** | **`42.6%` / `34.8%`** | **`0.0%` (`1.9 ms`)** | **`22.0 ms` / `96.4%`** | **`0.0%` (`2.0 cm` RTK)** |
+| **`400k` 公顷农场 · FAO-56 VRA + ISO 11783 互锁 + 边缘分诊** | `16` | `320` | **`42.6%` / `34.8%`** | **`0.0%` (`1.9 ms`)** | **`22.0 ms` / `96.4%`** | **`0.0%` (`2.0 cm` RTK)** |
+| `100k` 公顷农场 · 全田均匀普喷 + 无防风缓冲互锁 + 原始影像上云 (反模式) | `4` | `80` | `0.0%` / `0.0%` (❌ 农药地下水浪费) | `3.6%` (❌ 阵风漂移污染河道) | `1,680.0 ms` / `0.0%` (❌ 农村弱网拥塞) | `2.8%` (❌ 弱网滞后压毁幼苗) |
+
+---
+
+## 58. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
@@ -1744,10 +1770,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 51 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱）
+# 2. 运行深度定量模型（全部 52 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 60 项单元测试（100% 覆盖 6 大运行时契约、51 大深度物理模型、52 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 61 项单元测试（100% 覆盖 6 大运行时契约、52 大深度物理模型、53 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

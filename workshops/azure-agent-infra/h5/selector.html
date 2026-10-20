@@ -464,6 +464,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(49)">50. 高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排 + EN 50129 SIL-4 制动门控与轨旁 TADS 边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(50)">51. 自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度 + ISO 21815 Level 9 防碰撞互锁与边坡雷达 SSR 边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(51)">52. 智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优 + ASHRAE 62.1 新风保底与 NFPA 72 消防优先级互锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(52)">53. 精准农业 FAO-56 VRA 变量水肥药处方 + ISO 11783/EPA 防漂移喷嘴互锁与植保无人机多光谱边缘池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1644,6 +1645,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-blue">TOOL 52 · PRECISION AGRICULTURE FAO-56 VRA PRESCRIPTION, ISO 11783 / EPA DRIFT-BUFFER INTERLOCK &amp; UAV MULTISPECTRAL NDVI EDGE SIZER</span>
+    <h2>自主精准农业 FAO-56 变量水肥药处方、ISO 11783 防漂移互锁与植保无人机多光谱边缘测算器 (Chapter 57 · Bilingual)</h2>
+    <div class="sub">量化在 <code>25 – 400 千公顷</code> 现代农场（<code>20 – 320 台</code> RTK-GNSS 无人拖拉机/喷雾机）规模下，启用 <code>FAO-56 Penman-Monteith 蒸散发 + A100 VRA 变量处方图</code>（化学除草剂与化肥削减 <code>42.6%</code>、地下水灌溉抽水量削减 <code>34.8%</code>）、车载 <code>ISO 11783 (ISOBUS Class 3) + EPA FIFRA</code> 阵风与水源保护带喷嘴关断互锁（<code>1.9 ms</code> 校验，<code>0.0%</code> 跨界漂移药害或河道污染）以及农场边缘 10 波段多光谱（<code>NDVI/RedEdge</code>）与喷杆视觉点喷分诊（<code>22.0 ms</code> 检出，削减 <code>96.4%</code> 卫星/弱网带宽，<code>2.0 cm</code> RTK 行进 <code>0.0%</code> 压苗损毁）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 管理耕地总面积 (Managed Farmland Area): <strong id="lbl_ag_ha" style="color:var(--teal)">100</strong>k Hectares</label>
+          <input type="range" id="rng_ag_ha" min="25" max="400" step="25" value="100" oninput="runPrecisionAgLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 变量水肥药处方、ISO 11783 防漂移互锁与多光谱边缘模式 (Precision Agriculture Agent Mode)</label>
+          <select id="sel_ag_mode" onchange="runPrecisionAgLab()">
+            <option value="fao56_vra_iso11783_epa_drift_uav_edge" selected>FAO-56 VRA 变量处方 (-42.6% 农药/-34.8% 节水) + ISO 11783 防漂移 (0% 污染) + 无人机多光谱边缘 (推荐)</option>
+            <option value="uniform_blanket_spray_unchecked_drift_raw_uav_upload">传统反模式：全田均匀普喷 (0% 节药节水) + 无防风缓冲互锁 (3.6% 漂移污染) + 原始影像上云 (2.8% 压苗)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="agOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2575,6 +2598,22 @@ resource smartBuildingPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/nfpa72-bacnet-priority1-lock': 'enforced-0.8ms-zero-smokedamper-override'
     }
   }
+}`,
+`// 53. Autonomous Precision Agriculture FAO-56 VRA Prescription, ISO 11783 Drift Interlock & UAV NDVI Edge Pool (blueprints/aksclaw-precision-ag-isobus-ndvi-pool.bicep)
+resource precisionAgPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'agisobus'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'precision-ag-isobus-ndvi-agent'
+      'aksclaw.io/fao56-et-vra-prescription': 'enabled-42.6pct-herbicide-34.8pct-water-saved'
+      'aksclaw.io/iso11783-epa-drift-buffer-gate': 'enforced-1.9ms-zero-waterway-drift-escape'
+      'aksclaw.io/uav-multispectral-ndvi-edge': 'enabled-22ms-96.4pct-sat-uplink-cut'
+    }
+  }
 }`
 ];
 
@@ -2727,6 +2766,30 @@ runMaritimePortLab();
 runRailErtmsLab();
 runMiningAhsLab();
 runSmartBuildingLab();
+runPrecisionAgLab();
+
+function runPrecisionAgLab() {
+  const ha = parseInt(document.getElementById('rng_ag_ha').value, 10);
+  const mode = document.getElementById('sel_ag_mode').value;
+  document.getElementById('lbl_ag_ha').textContent = ha.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(ha / 25));
+  const tractors = Math.max(20, Math.round(ha * 0.8));
+  const ok = mode === 'fao56_vra_iso11783_epa_drift_uav_edge';
+  const vraStr = ok ? "FAO-56 + VRA 变量处方 · 除草剂/化肥 -42.6% · 地下水灌溉 -34.8%" : "全田均匀漫灌与普喷 · 0.0% 节药节水 (化学品与地下水浪费)";
+  const driftStr = ok ? "1.9 ms ISO 11783 + EPA FIFRA 防漂移喷嘴互锁 · 0.0% 河道水源污染" : "无阵风与水源保护带互锁 · 3.6% 农药跨界漂移与水源污染风险";
+  const uavStr = ok ? "22.0 ms 植保无人机多光谱与靶向点喷边缘分诊 (-96.4% 弱网带宽) · 2.0 cm RTK 0.0% 压苗" : "1,680.0 ms 原始高光谱回传云端 · 2.8% 弱网滞后压苗损毁";
+
+  document.getElementById('agOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + vraStr : '❌ 3.6% 农药漂移污染 · 2.8% RTK 延迟压苗风险'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${tractors} 台 ISOBUS 农机 · ${driftStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>农场边缘 Azure Local 多光谱 (NDVI/RedEdge) 病虫害分诊与 RTK-GNSS 护苗协同</strong>：<strong>${uavStr}</strong>
+    </p>
+  `;
+}
 
 function runSmartBuildingLab() {
   const area = parseInt(document.getElementById('rng_bldg_area').value, 10);

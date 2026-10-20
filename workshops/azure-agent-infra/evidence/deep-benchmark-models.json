@@ -3118,5 +3118,63 @@
       "bacnet_priority_array_level": "Unrestricted_BACnet_WriteProperty_Priority_Collision",
       "smart_building_slo_met": false
     }
+  ],
+  "precision_ag_isobus_profiles": [
+    {
+      "managed_farmland_k_hectares": 25,
+      "ag_agent_mode": "fao56_vra_iso11783_epa_drift_uav_edge",
+      "ag_solver_nodes": 2,
+      "autonomous_isobus_tractors": 20,
+      "chemical_herbicide_reduction_pct": 42.6,
+      "irrigation_water_reduction_pct": 34.8,
+      "iso11783_epa_drift_gate_ms": 1.9,
+      "waterway_spray_drift_escape_pct": 0.0,
+      "uav_ndvi_edge_triage_ms": 22.0,
+      "rural_wan_bandwidth_reduction_pct": 96.4,
+      "crop_row_trampling_escape_pct": 0.0,
+      "precision_ag_slo_met": true
+    },
+    {
+      "managed_farmland_k_hectares": 100,
+      "ag_agent_mode": "fao56_vra_iso11783_epa_drift_uav_edge",
+      "ag_solver_nodes": 4,
+      "autonomous_isobus_tractors": 80,
+      "chemical_herbicide_reduction_pct": 42.6,
+      "irrigation_water_reduction_pct": 34.8,
+      "iso11783_epa_drift_gate_ms": 1.9,
+      "waterway_spray_drift_escape_pct": 0.0,
+      "uav_ndvi_edge_triage_ms": 22.0,
+      "rural_wan_bandwidth_reduction_pct": 96.4,
+      "crop_row_trampling_escape_pct": 0.0,
+      "precision_ag_slo_met": true
+    },
+    {
+      "managed_farmland_k_hectares": 400,
+      "ag_agent_mode": "fao56_vra_iso11783_epa_drift_uav_edge",
+      "ag_solver_nodes": 16,
+      "autonomous_isobus_tractors": 320,
+      "chemical_herbicide_reduction_pct": 42.6,
+      "irrigation_water_reduction_pct": 34.8,
+      "iso11783_epa_drift_gate_ms": 1.9,
+      "waterway_spray_drift_escape_pct": 0.0,
+      "uav_ndvi_edge_triage_ms": 22.0,
+      "rural_wan_bandwidth_reduction_pct": 96.4,
+      "crop_row_trampling_escape_pct": 0.0,
+      "precision_ag_slo_met": true
+    },
+    {
+      "managed_farmland_k_hectares": 100,
+      "ag_agent_mode": "uniform_blanket_spray_unchecked_drift_raw_uav_upload",
+      "ag_solver_nodes": 4,
+      "autonomous_isobus_tractors": 80,
+      "chemical_herbicide_reduction_pct": 0.0,
+      "irrigation_water_reduction_pct": 0.0,
+      "iso11783_epa_drift_gate_ms": 0.0,
+      "waterway_spray_drift_escape_pct": 3.6,
+      "uav_ndvi_edge_triage_ms": 1680.0,
+      "rural_wan_bandwidth_reduction_pct": 0.0,
+      "crop_row_trampling_escape_pct": 2.8,
+      "precision_ag_slo_met": false
+    }
   ]
 }
