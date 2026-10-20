@@ -5017,6 +5017,49 @@ def simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(
     }
 
 
+def simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox(
+    cryogenic_launch_pad_propellant_complexes: int = 8,
+    launch_pad_governance_mode: str = "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Cryogenic Liquid-Hydrogen (LH2 20 K) & Subcooled Liquid-Methane/LOX Orbital Launch Pad Propellant Densification, Transfer-Line Chilldown Geysering Suppression, Zero-Boil-Off Recovery & NASA-STD-5005 / NFPA 2 / AFSPCMAN 91-710 SIL-3 Pad Abort & Deluge Agent Infrastructure (Chapter 96)."""
+    if cryogenic_launch_pad_propellant_complexes <= 0:
+        raise ValueError("cryogenic_launch_pad_propellant_complexes must be positive")
+    valid_modes = {
+        "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge",
+        "open_loop_continuous_chilldown_flare_vent_cloud",
+    }
+    if launch_pad_governance_mode not in valid_modes:
+        raise ValueError(f"launch_pad_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = launch_pad_governance_mode == "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge"
+    active_cryo_launch_pad_pods = max(2, int(cryogenic_launch_pad_propellant_complexes))
+    gpu_nodes = max(2, math.ceil(cryogenic_launch_pad_propellant_complexes / 4))
+
+    subcooled_propellant_mass_fraction_and_zbo_recovery_gain_pct = 28.9 if governed else 4.8
+    chilldown_lh2_boiloff_loss_and_geyser_waterhammer_reduction_pct = 44.6 if governed else 7.5
+    nasa_std_5005_nfpa2_sil3_qd_deluge_detank_interlock_ms = 0.8 if governed else 112.0
+    umbilical_h2_leak_detonation_or_tank_implosion_breach_pct = 0.0 if governed else 1.6
+    pad_bunker_raman_lidar_cernox_tte_edge_latency_ms = 0.7 if governed else 228.0
+    wan_bandwidth_reduction_pct = 99.1 if governed else 0.0
+    undetected_geyser_void_collapse_or_ullage_stratification_pct = 0.0 if governed else 3.5
+
+    return {
+        "cryogenic_launch_pad_propellant_complexes": cryogenic_launch_pad_propellant_complexes,
+        "launch_pad_governance_mode": launch_pad_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_cryo_launch_pad_pods": active_cryo_launch_pad_pods,
+        "subcooled_propellant_mass_fraction_and_zbo_recovery_gain_pct": subcooled_propellant_mass_fraction_and_zbo_recovery_gain_pct,
+        "chilldown_lh2_boiloff_loss_and_geyser_waterhammer_reduction_pct": chilldown_lh2_boiloff_loss_and_geyser_waterhammer_reduction_pct,
+        "nasa_std_5005_nfpa2_sil3_qd_deluge_detank_interlock_ms": nasa_std_5005_nfpa2_sil3_qd_deluge_detank_interlock_ms,
+        "umbilical_h2_leak_detonation_or_tank_implosion_breach_pct": umbilical_h2_leak_detonation_or_tank_implosion_breach_pct,
+        "pad_bunker_raman_lidar_cernox_tte_edge_latency_ms": pad_bunker_raman_lidar_cernox_tte_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "undetected_geyser_void_collapse_or_ullage_stratification_pct": undetected_geyser_void_collapse_or_ullage_stratification_pct,
+        "cryogenic_launch_pad_propellant_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

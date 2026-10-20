@@ -110,6 +110,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox,
     simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox,
     simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox,
+    simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -791,6 +792,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hts_rebco_12_corridors": simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(12, "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge"),
             "hts_rebco_48_corridors": simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(48, "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge"),
             "raw_hts_rebco_12_corridors": simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(12, "static_ln2_pump_threshold_voltage_trip_cloud"),
+        },
+        "demo_91_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox": {
+            "cryo_launch_pad_8_complexes": simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox(8, "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge"),
+            "cryo_launch_pad_32_complexes": simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox(32, "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge"),
+            "raw_cryo_launch_pad_8_complexes": simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox(8, "open_loop_continuous_chilldown_flare_vent_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

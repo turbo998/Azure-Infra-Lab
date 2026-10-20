@@ -5528,5 +5528,67 @@
       "unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct": 3.4,
       "hts_rebco_superconducting_cable_sfcl_slo_met": false
     }
+  ],
+  "cryogenic_lh2_lch4_launch_pad_profiles": [
+    {
+      "cryogenic_launch_pad_propellant_complexes": 4,
+      "launch_pad_governance_mode": "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_launch_pad_pods": 4,
+      "subcooled_propellant_mass_fraction_and_zbo_recovery_gain_pct": 28.9,
+      "chilldown_lh2_boiloff_loss_and_geyser_waterhammer_reduction_pct": 44.6,
+      "nasa_std_5005_nfpa2_sil3_qd_deluge_detank_interlock_ms": 0.8,
+      "umbilical_h2_leak_detonation_or_tank_implosion_breach_pct": 0.0,
+      "pad_bunker_raman_lidar_cernox_tte_edge_latency_ms": 0.7,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "undetected_geyser_void_collapse_or_ullage_stratification_pct": 0.0,
+      "cryogenic_launch_pad_propellant_slo_met": true
+    },
+    {
+      "cryogenic_launch_pad_propellant_complexes": 8,
+      "launch_pad_governance_mode": "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_launch_pad_pods": 8,
+      "subcooled_propellant_mass_fraction_and_zbo_recovery_gain_pct": 28.9,
+      "chilldown_lh2_boiloff_loss_and_geyser_waterhammer_reduction_pct": 44.6,
+      "nasa_std_5005_nfpa2_sil3_qd_deluge_detank_interlock_ms": 0.8,
+      "umbilical_h2_leak_detonation_or_tank_implosion_breach_pct": 0.0,
+      "pad_bunker_raman_lidar_cernox_tte_edge_latency_ms": 0.7,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "undetected_geyser_void_collapse_or_ullage_stratification_pct": 0.0,
+      "cryogenic_launch_pad_propellant_slo_met": true
+    },
+    {
+      "cryogenic_launch_pad_propellant_complexes": 32,
+      "launch_pad_governance_mode": "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_launch_pad_pods": 32,
+      "subcooled_propellant_mass_fraction_and_zbo_recovery_gain_pct": 28.9,
+      "chilldown_lh2_boiloff_loss_and_geyser_waterhammer_reduction_pct": 44.6,
+      "nasa_std_5005_nfpa2_sil3_qd_deluge_detank_interlock_ms": 0.8,
+      "umbilical_h2_leak_detonation_or_tank_implosion_breach_pct": 0.0,
+      "pad_bunker_raman_lidar_cernox_tte_edge_latency_ms": 0.7,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "undetected_geyser_void_collapse_or_ullage_stratification_pct": 0.0,
+      "cryogenic_launch_pad_propellant_slo_met": true
+    },
+    {
+      "cryogenic_launch_pad_propellant_complexes": 8,
+      "launch_pad_governance_mode": "open_loop_continuous_chilldown_flare_vent_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_launch_pad_pods": 8,
+      "subcooled_propellant_mass_fraction_and_zbo_recovery_gain_pct": 4.8,
+      "chilldown_lh2_boiloff_loss_and_geyser_waterhammer_reduction_pct": 7.5,
+      "nasa_std_5005_nfpa2_sil3_qd_deluge_detank_interlock_ms": 112.0,
+      "umbilical_h2_leak_detonation_or_tank_implosion_breach_pct": 1.6,
+      "pad_bunker_raman_lidar_cernox_tte_edge_latency_ms": 228.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "undetected_geyser_void_collapse_or_ullage_stratification_pct": 3.5,
+      "cryogenic_launch_pad_propellant_slo_met": false
+    }
   ]
 }

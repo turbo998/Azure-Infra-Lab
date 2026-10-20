@@ -503,6 +503,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(88)">89. 第四代液态金属快中子增殖堆 (钠冷快堆 SFR / 铅铋快堆 LBE) 热池热条纹与冷阱控氧 PINN-MPC + 蒸汽发生器钠水反应 (SWR) 声学检测与 ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3 爆破片联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(89)">90. 超深水盐下控压钻井 (MPD) 窄密度窗口 (PP-FG &lt; 0.4 ppg) 当量循环密度 ECD 与钻柱粘滑 PINN-MPC + 有线钻杆 (WDP)/科里奥利微流量溢流早检与 API RP 53 / IEC 61511 SIL-3 节流/防喷器 BOP 联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(90)">91. 城市特大电网高温超导 (HTS REBCO 2G) 故障限流器 (SFCL) 与过冷液氮 (LN2 65-77K) 三同轴超导电力电缆失超热点传播 (NZPV) PINN-MPC 及 IEEE C37.302 / IEC 61508 SIL-3 高速旁路开关联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(91)">92. 航天发射场深冷液氢 (LH2 20K) 与过冷液甲烷/液氧 (LCH4/LOX) 推进剂过冷致密化、莱顿弗罗斯特预冷间歇泉 (Geysering) 气锤抑制、零蒸发 (ZBO) 回收及 NASA-STD-5005 / NFPA 2 / SIL-3 脐带塔快脱与防瘪罐联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2557,6 +2558,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 91: Autonomous Cryogenic Liquid-Hydrogen (LH2 20 K) & Subcooled Liquid-Methane/LOX Orbital Launch Pad Propellant Densification, Chilldown Geysering Suppression, Zero-Boil-Off Recovery & NASA-STD-5005 / NFPA 2 / AFSPCMAN 91-710 SIL-3 Quick-Disconnect & Deluge Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 91 · CRYOGENIC LIQUID-HYDROGEN (LH2 20 K) &amp; SUBCOOLED LCH4/LOX ORBITAL LAUNCH PAD PROPELLANT DENSIFICATION, CHILLDOWN GEYSERING PINN-MPC &amp; NASA-STD-5005 / NFPA 2 SIL-3 INTERLOCK SIZER</span>
+    <h2>自主航天发射场深冷液氢 (<code>LH2 20 K</code>) 与过冷液甲烷/液氧 (<code>LCH4/LOX</code>) 推进剂致密化加注、管路预冷间歇泉 (<code>Geysering</code>) 水锤抑制、正仲氢零蒸发 (<code>ZBO</code>) 回收及 <code>NASA-STD-5005 / NFPA 2 / AFSPCMAN 91-710 SIL-3</code> 脐带快脱与防瘪罐联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 座重型运载火箭深冷过冷推进剂加注与零蒸发球罐群 (<code>GSE Cryogenic Launch Complexes</code>) 规模下，真空夹套管路莱顿弗罗斯特膜态沸腾 (<code>Leidenfrost Film Boiling</code>) 脉冲预冷与垂直立管泰勒气泡间歇泉 (<code>Geysering</code>) 冷凝水锤 <code>PINN</code> + 正仲氢 (<code>Ortho-to-Para H2</code>) 催化逆布雷顿零蒸发 (<code>ZBO</code>) 过冷致密化 <code>MPC</code>（过冷推进剂装填质量分数与 <code>ZBO</code> 再液化回收率 <code>+28.9%</code>、预冷阶段液氢蒸发损耗与两相流间歇泉气锤冲击峰值 <code>-44.6%</code>）、<code>NASA-STD-5005 / NFPA 2 / AFSPCMAN 91-710 SIL-3</code> 脐带塔快脱连接器 (<code>QD</code>) 毫秒级切断、箭体薄壁贮箱防负压抽瘪 (<code>Anti-Implosion</code>) 与万0吨级水幕喷淋硬联锁（<code>0.8 ms</code>，脐带口氢漏爆燃或箭体负压瘪罐违例率 <code>0.0%</code>）及发射台防爆地下掩体 (<code>Pad Bunker</code>) 远距离紫外拉曼氢气激光雷达 (<code>UV Raman H2 LiDAR</code>) + <code>Cernox 20 K</code> 温度阵 + 时间触发以太网 (<code>TTE / Azure Local</code>) 边缘推理（<code>0.7 ms</code>，航区遥测广域专网带宽削减 <code>99.1%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在役深冷发射工位与过冷推进剂加注综合体数 (Cryogenic Launch Pad Propellant Complexes): <strong id="lbl_lh2_pads" style="color:var(--teal)">8</strong> Launch Complexes</label>
+          <input type="range" id="rng_lh2_pads" min="4" max="32" step="4" value="8" oninput="runCryoLaunchPadLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 莱顿弗罗斯特脉冲预冷/间歇泉抑制 PINN-MPC、正仲氢 ZBO 过冷与 NASA-STD-5005 / NFPA 2 SIL-3 联锁模式 (Launch Pad Governance Mode)</label>
+          <select id="sel_lh2_mode" onchange="runCryoLaunchPadLab()">
+            <option value="pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge" selected>莱顿弗罗斯特脉冲预冷与间歇泉水锤 PINN + 正仲氢催化 ZBO 过冷致密化 MPC (+28.9% 装填质量/ZBO 回收 / -44.6% 预冷损耗与气锤峰值) + NASA-STD-5005 / NFPA 2 SIL-3 0.8ms 脐带快脱/防瘪罐联锁 + 0.7ms 发射台掩体 Raman/Cernox 边缘 (推荐)</option>
+            <option value="open_loop_continuous_chilldown_flare_vent_cloud">传统反模式：连续大流量开环预冷与火炬池放空 (+4.8% 装填增益) + 无防负压瘪罐与氢漏快脱 SIL-3 硬联锁 (1.6% 脐带口氢漏爆燃或薄壁贮箱负压瘪罐违例) + 原始遥测流上云 (3.5% 立管间歇泉气穴溃灭水锤或贮箱热分层气蚀漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="lh2PadOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -4101,6 +4125,21 @@ resource htsRebcoSfclSil3Pool 'Microsoft.ContainerService/managedClusters/agentP
       'aksclaw.io/substation-bofda-voltage-tap-iec61850-edge': 'enabled-0.6ms-99.1pct-grid-wan-cut'
     }
   }
+}`,
+`// Blueprint #92: Cryogenic Liquid-Hydrogen (LH2 20 K) & Subcooled LCH4/LOX Orbital Launch Pad Propellant Densification, Chilldown Geysering & Range Safety SIL-3 Pool (Chapter 96)
+resource cryoLaunchPadSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'lh2padsil3'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'cryogenic-lh2-lch4-launch-pad-chilldown-geyser-sil3-agent'
+      'aksclaw.io/pinn-mpc-leidenfrost-geyser-ortho-para-zbo-densifier': 'enabled-28.9pct-subcooled-mass-zbo-gain-44.6pct-boiloff-waterhammer-cut'
+      'aksclaw.io/nasa-std-5005-nfpa2-afspcman-91-710-sil3-qd-deluge': 'enforced-0.8ms-zero-h2-detonation-or-tank-implosion-breach'
+      'aksclaw.io/pad-bunker-raman-lidar-cernox-tte-edge': 'enabled-0.7ms-99.1pct-range-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4292,6 +4331,30 @@ runStratosphericHaleLab();
 runGen4LiquidMetalSfrLab();
 runSubsaltMpdDrillingLab();
 runHtsRebcoCableSfclLab();
+runCryoLaunchPadLab();
+
+function runCryoLaunchPadLab() {
+  const pads = parseInt(document.getElementById('rng_lh2_pads').value, 10);
+  const mode = document.getElementById('sel_lh2_mode').value;
+  document.getElementById('lbl_lh2_pads').textContent = pads.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(pads / 4));
+  const pods = Math.max(2, pads);
+  const ok = mode === 'pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge';
+  const mpcStr = ok ? "真空夹套管路莱顿弗罗斯特膜态沸腾脉冲预冷与垂直立管泰勒气泡间歇泉 (Geysering) 水锤 PINN + 正仲氢催化逆布雷顿零蒸发 (ZBO) 过冷致密化 (LH2 16.5K / LOX 66K / LCH4 93K) MPC · 过冷推进剂装填质量分数与 ZBO 再液化回收率 +28.9% · 预冷蒸发损耗与两相流气锤峰值 -44.6%" : "传统连续大流量开环预冷与火炬池放空 · 仅 +4.8% 装填增益 / -7.5% 损耗削减 (管壁长期处于莱顿弗罗斯特膜态沸腾气膜阻热导致海量液氢白白蒸发烧掉，且 3.5% 立管间歇泉气穴溃灭水锤或箭体贮箱热分层引发涡轮泵气蚀漏检)";
+  const sil3Str = ok ? "0.8 ms NASA-STD-5005 / NFPA 2 / AFSPCMAN 91-710 SIL-3 脐带塔快脱连接器 (QD) 紧急切断、薄壁箭体贮箱防负压抽瘪 (+15 kPa 氦气快补) 与万0吨级水幕喷淋硬联锁 · 0.0% 氢漏爆燃/负压瘪罐违例" : "无防负压瘪罐与紫外氢漏快脱 SIL-3 硬联锁 (112.0 ms 远端指控滞后) · 1.6% 过冷液氢骤冷气枕引发薄壁贮箱负压失稳内陷瘪罐或脐带口氢漏 (0.017 mJ 静电) 引爆风险";
+  const edgeStr = ok ? "0.7 ms 发射台抗爆地下掩体 (Pad Bunker) 远距离紫外拉曼氢气激光雷达 (UV Raman H2 LiDAR)、Cernox 20K 极低温温度阵、科里奥利空泡率计与 TTE / Azure Local 边缘 (-99.1% 航区专网带宽) · 0.0% 隐形氢焰/水锤漏检" : "228.0 ms 原始多通道高频水锤波形与紫外/红外多光谱流回传远端测控中心 · 远超两相流泰勒气泡冷凝水锤激波传播与 T-0 紧急断脱响应窗口";
+
+  document.getElementById('lh2PadOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.6% 脐带口氢气泄漏爆燃或箭体薄壁贮箱负压抽瘪风险 · 3.5% 垂直立管间歇泉气穴溃灭水锤或贮箱热分层气蚀漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个深冷推进剂过冷加注与零蒸发孪生单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>发射台防爆掩体远距离紫外拉曼氢气激光雷达 (UV Raman LiDAR)、Cernox 20K 阵列与 TTE / Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runHtsRebcoCableSfclLab() {
   const corridors = parseInt(document.getElementById('rng_hts_corridors').value, 10);
