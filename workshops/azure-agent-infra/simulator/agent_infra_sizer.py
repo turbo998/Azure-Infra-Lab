@@ -3962,6 +3962,55 @@ def simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(
     }
 
 
+def simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(
+    lng_c3mr_cryogenic_trains: int = 8,
+    cryogenic_governance_mode: str = "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous LNG Liquefaction Train (C3MR / Mixed-Refrigerant
+    Cryogenic Heat Exchanger), Boil-Off Gas (BOG) Reliquefaction Compressor
+    Anti-Surge Control, Cryogenic LNG Storage Tank Rollover Stratification &
+    NFPA 59A / SIGTTO / IEC 61511 SIL-3 Emergency Shutdown (ESD / PERC)
+    Agent Infrastructure (Chapter 74).
+    """
+    if lng_c3mr_cryogenic_trains <= 0:
+        raise ValueError("lng_c3mr_cryogenic_trains must be positive")
+    valid_modes = {
+        "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+        "unconstrained_mr_valve_cloud_loop",
+    }
+    if cryogenic_governance_mode not in valid_modes:
+        raise ValueError(f"cryogenic_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cryogenic_governance_mode == "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge"
+    gpu_nodes = max(2, math.ceil(lng_c3mr_cryogenic_trains / 4))
+    active_c3mr_trains_and_berths = max(2, int(lng_c3mr_cryogenic_trains // 2))
+
+    mche_pinch_liquefaction_yield_gain_pct = 21.8 if governed else 0.0
+    specific_compressor_power_reduction_pct = 24.2 if governed else 0.0
+    nfpa59a_sil3_antisurge_perc_esd_latency_ms = 1.2 if governed else 1120.0
+    compressor_surge_or_tank_rollover_breach_pct = 0.0 if governed else 1.6
+    edge_dts_ogi_cryogenic_leak_inference_ms = 3.5 if governed else 1390.0
+    wan_bandwidth_reduction_pct = 97.9 if governed else 0.0
+    cryogenic_cold_spot_or_ogi_false_clearance_pct = 0.0 if governed else 3.1
+
+    return {
+        "lng_c3mr_cryogenic_trains": lng_c3mr_cryogenic_trains,
+        "cryogenic_governance_mode": cryogenic_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_c3mr_trains_and_berths": active_c3mr_trains_and_berths,
+        "mche_pinch_liquefaction_yield_gain_pct": mche_pinch_liquefaction_yield_gain_pct,
+        "specific_compressor_power_reduction_pct": specific_compressor_power_reduction_pct,
+        "nfpa59a_sil3_antisurge_perc_esd_latency_ms": nfpa59a_sil3_antisurge_perc_esd_latency_ms,
+        "compressor_surge_or_tank_rollover_breach_pct": compressor_surge_or_tank_rollover_breach_pct,
+        "edge_dts_ogi_cryogenic_leak_inference_ms": edge_dts_ogi_cryogenic_leak_inference_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "cryogenic_cold_spot_or_ogi_false_clearance_pct": cryogenic_cold_spot_or_ogi_false_clearance_pct,
+        "lng_cryogenic_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

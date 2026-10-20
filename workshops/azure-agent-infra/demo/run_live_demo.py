@@ -88,6 +88,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
     simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
     simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
+    simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -649,6 +650,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "composite_16_zones": simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(16, "thermochemical_cure_mpc_paut_nadcap_sil3_edge"),
             "composite_64_zones": simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(64, "thermochemical_cure_mpc_paut_nadcap_sil3_edge"),
             "raw_composite_16_zones": simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(16, "open_loop_dwell_recipe_unverified_paut_cloud"),
+        },
+        "demo_69_lng_cryogenic_c3mr_bog_sil3_esd_sandbox": {
+            "lng_4_trains": simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(4, "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge"),
+            "lng_8_trains": simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(8, "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge"),
+            "lng_32_trains": simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(32, "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge"),
+            "raw_lng_8_trains": simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(8, "unconstrained_mr_valve_cloud_loop"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

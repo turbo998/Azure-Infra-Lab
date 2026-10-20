@@ -75,6 +75,7 @@ from agent_infra_sizer import (
     simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
     simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
     simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
+    simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -197,6 +198,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-tbm-tunnel-boring-geomechanics-sil3-pool.bicep",
             "aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep",
             "aksclaw-aerospace-composite-autoclave-ndt-sil3-pool.bicep",
+            "aksclaw-lng-cryogenic-c3mr-bog-sil3-esd-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1280,6 +1282,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["afp_delamination_or_ndt_false_accept_pct"], 3.5)
         self.assertTrue(gov["aerospace_composite_slo_met"])
         self.assertFalse(raw["aerospace_composite_slo_met"])
+
+    def test_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(self) -> None:
+        gov = simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(8, "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge")
+        raw = simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(8, "unconstrained_mr_valve_cloud_loop")
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_c3mr_trains_and_berths"], 4)
+        self.assertEqual(gov["mche_pinch_liquefaction_yield_gain_pct"], 21.8)
+        self.assertEqual(gov["specific_compressor_power_reduction_pct"], 24.2)
+        self.assertEqual(gov["nfpa59a_sil3_antisurge_perc_esd_latency_ms"], 1.2)
+        self.assertEqual(gov["compressor_surge_or_tank_rollover_breach_pct"], 0.0)
+        self.assertGreater(raw["compressor_surge_or_tank_rollover_breach_pct"], 1.5)
+        self.assertEqual(gov["edge_dts_ogi_cryogenic_leak_inference_ms"], 3.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 97.9)
+        self.assertEqual(gov["cryogenic_cold_spot_or_ogi_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["cryogenic_cold_spot_or_ogi_false_clearance_pct"], 3.0)
+        self.assertTrue(gov["lng_cryogenic_slo_met"])
+        self.assertFalse(raw["lng_cryogenic_slo_met"])
 
 
 if __name__ == "__main__":

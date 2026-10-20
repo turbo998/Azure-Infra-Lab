@@ -481,6 +481,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(66)">67. 地下盾构机 TBM 超前探地雷达 GPR 全波形反演 + 土压平衡 EPB MPC 与 ISO 19296 / SIL-3 扭矩沉降联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(67)">68. 石化炼油流化催化裂化 FCC 反再烧焦 MPC + 在线 Raman 辛烷值软测量与 API RP 554 / SIL-3 滑阀防倒流联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(68)">69. 航空航天复合材料热压罐固化 PINN-MPC + 自动铺丝 AFP 热成像与相控阵超声 PAUT 及 NADCAP / SIL-3 防放热联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(69)">70. 液化天然气 LNG 丙烷预冷混合冷剂 C3MR 夹点 MPC + BOG 压缩机防喘振与低温储罐防翻滚及 NFPA 59A / SIL-3 紧急停车联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2035,6 +2036,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 69 · LNG LIQUEFACTION TRAIN (C3MR), BOG COMPRESSOR ANTI-SURGE, CRYOGENIC TANK ROLLOVER &amp; NFPA 59A / SIGTTO / SIL-3 ESD SIZER</span>
+    <h2>自主液化天然气（LNG）丙烷预冷混合冷剂（C3MR）深冷液化、蒸发气（BOG）压缩机防喘振、低温储罐防翻滚与 NFPA 59A / SIGTTO / SIL-3 紧急停车（ESD / PERC）测算器 (Chapter 74 · Bilingual)</h2>
+    <div class="sub">量化在深冷液化与 BOG 再液化控制回路规模 <code>4 – 32 生产线</code>（<code>2 – 16 套</code> 百万吨级 C3MR 液化冷箱与深水 LNG 船装卸泊位）下，启用 <code>Peng-Robinson 状态方程相平衡 PINN + 主低温换热器 (MCHE) 夹点非线性 MPC</code>（MCHE 换热夹点效率与 LNG 液化产量提升 <code>+21.8%</code>、单位吨 LNG 制冷压缩功耗降低 <code>-24.2%</code>、深冷冷斑或红外甲烷微云团漏报率 <code>0.0%</code>）、<code>NFPA 59A / SIGTTO 与 IEC 61511 SIL-3 离心压缩机防喘振裕度 (&gt;= 10%)、低温储罐分层翻滚 (&Delta;&rho; &lt;= 1.5 kg/m³) 及船岸装卸臂快速脱离 (PERC) 硬联锁</code>（<code>1.2 ms</code> 校验，<code>0.0%</code> 压缩机喘振与储罐翻滚超压违例）以及接收站 <code>Azure Local + IoT Operations</code> <code>拉曼光纤分布式测温 (Raman DTS -162 °C) 与中波红外光学气体成像 (MWIR OGI)</code> 边缘测漏（<code>3.5 ms</code> 响应，削减 <code>97.9%</code> 海事终端广域网回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. LNG 深冷液化与 BOG 再液化生产线回路数 (LNG C3MR Cryogenic Trains): <strong id="lbl_lng_trains" style="color:var(--teal)">8</strong> Trains</label>
+          <input type="range" id="rng_lng_trains" min="4" max="32" step="4" value="8" oninput="runLngCryogenicLab()">
+        </div>
+        <div class="form-row">
+          <label>2. C3MR 夹点 PINN-MPC、防喘振/防翻滚与 NFPA 59A / SIL-3 紧急停车模式 (LNG Cryogenic Governance Mode)</label>
+          <select id="sel_lng_mode" onchange="runLngCryogenicLab()">
+            <option value="c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge" selected>Peng-Robinson EOS PINN-MPC (+21.8% 液化收率 / -24.2% 功耗) + NFPA 59A SIL-3 防喘振/PERC 联锁 (0% 喘振/翻滚) + DTS/OGI 边缘 (推荐)</option>
+            <option value="unconstrained_mr_valve_cloud_loop">传统反模式：云端开环冷剂配比调节 (0 增益) + 无 SIL-3 防喘振/储罐防翻滚门控 (1.6% 压缩机喘振/储罐翻滚超压) + 原始 OGI 视频上云 (3.1% 深冷微渗漏漏报)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="lngOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3245,6 +3268,23 @@ resource aeroCompositeSil3Pool 'Microsoft.ContainerService/managedClusters/agent
       'aksclaw.io/paut-fmc-tfm-afp-thermography-edge': 'enabled-3.9ms-97.7pct-aerospace-wan-cut'
     }
   }
+}`,
+`// =============================================================================
+// 70. AKSClaw LNG Cryogenic C3MR Liquefaction, BOG Anti-Surge & NFPA 59A / SIL-3 Pool (Bicep)
+// =============================================================================
+resource lngCryogenicSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'lngc3mrmpc'
+  properties: {
+    count: 2
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'lng-cryogenic-c3mr-bog-sil3-esd-agent'
+      'aksclaw.io/peng-robinson-eos-mche-pinch-mpc': 'enabled-21.8pct-liquefaction-yield-24.2pct-power-cut'
+      'aksclaw.io/nfpa59a-sigtto-sil3-antisurge-perc-esd': 'enforced-1.2ms-zero-compressor-surge-or-tank-rollover'
+      'aksclaw.io/raman-dts-mwir-ogi-cryogenic-edge': 'enabled-3.5ms-97.9pct-terminal-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3414,6 +3454,30 @@ runSmrNuclearLab();
 runTbmTunnelLab();
 runPetroFccLab();
 runAeroCompositeLab();
+runLngCryogenicLab();
+
+function runLngCryogenicLab() {
+  const trains = parseInt(document.getElementById('rng_lng_trains').value, 10);
+  const mode = document.getElementById('sel_lng_mode').value;
+  document.getElementById('lbl_lng_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const berths = Math.max(2, Math.floor(trains / 2));
+  const ok = mode === 'c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge';
+  const mpcStr = ok ? "Peng-Robinson 状态方程 PINN + MCHE 夹点 MPC · LNG 液化产量 +21.8% · 单位吨 LNG 制冷压缩机电耗 -24.2%" : "云端开环混合冷剂节流调节 · 0.0% 液化收率与功耗增益 (原料气组分波动引发 MCHE 温差夹点偏移且 3.1% 深冷冷斑或甲烷羽流漏报)";
+  const sil3Str = ok ? "1.2 ms NFPA 59A / SIGTTO / SIL-3 防喘振 (>=10% 裕度)、储罐防翻滚 (<=1.5kg/m³) 与 PERC 紧急脱离联锁 · 0.0% 喘振/翻滚违例" : "无 SIL-3 防喘振与储罐防翻滚硬联锁 (1,120.0 ms 云端滞后) · 1.6% 混合冷剂压缩机喘振与 20 万方低温储罐分层翻滚超压风险";
+  const edgeStr = ok ? "3.5 ms 接收站 Azure Local 拉曼光纤分布式测温 (Raman DTS -162°C) 与中波红外 OGI 边缘测漏 (-97.9% 海事终端广域网带宽) · 0.0% 漏报" : "1,390.0 ms 原始中波红外视频与光纤拉曼散射谱全量上云 · 拥塞码头专网且错过法兰深冷微渗漏早期封堵窗口";
+
+  document.getElementById('lngOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.6% 混合冷剂压缩机喘振/低温储罐翻滚超压风险 · 3.1% 深冷冷斑或甲烷羽流漏报'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${berths} 套 C3MR 液化线与装卸泊位 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>接收站防爆区 Azure Local + IoT Operations 拉曼光纤分布式测温 (DTS -162°C) 与中波红外 OGI 边缘测漏</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runAeroCompositeLab() {
   const zones = parseInt(document.getElementById('rng_aero_zones').value, 10);

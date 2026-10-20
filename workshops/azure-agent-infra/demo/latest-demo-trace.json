@@ -4366,6 +4366,68 @@
         "afp_delamination_or_ndt_false_accept_pct": 3.6,
         "aerospace_composite_slo_met": false
       }
+    ],
+    "lng_cryogenic_c3mr_bog_profiles": [
+      {
+        "lng_c3mr_cryogenic_trains": 4,
+        "cryogenic_governance_mode": "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_c3mr_trains_and_berths": 2,
+        "mche_pinch_liquefaction_yield_gain_pct": 21.8,
+        "specific_compressor_power_reduction_pct": 24.2,
+        "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1.2,
+        "compressor_surge_or_tank_rollover_breach_pct": 0.0,
+        "edge_dts_ogi_cryogenic_leak_inference_ms": 3.5,
+        "wan_bandwidth_reduction_pct": 97.9,
+        "cryogenic_cold_spot_or_ogi_false_clearance_pct": 0.0,
+        "lng_cryogenic_slo_met": true
+      },
+      {
+        "lng_c3mr_cryogenic_trains": 8,
+        "cryogenic_governance_mode": "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_c3mr_trains_and_berths": 4,
+        "mche_pinch_liquefaction_yield_gain_pct": 21.8,
+        "specific_compressor_power_reduction_pct": 24.2,
+        "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1.2,
+        "compressor_surge_or_tank_rollover_breach_pct": 0.0,
+        "edge_dts_ogi_cryogenic_leak_inference_ms": 3.5,
+        "wan_bandwidth_reduction_pct": 97.9,
+        "cryogenic_cold_spot_or_ogi_false_clearance_pct": 0.0,
+        "lng_cryogenic_slo_met": true
+      },
+      {
+        "lng_c3mr_cryogenic_trains": 32,
+        "cryogenic_governance_mode": "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_c3mr_trains_and_berths": 16,
+        "mche_pinch_liquefaction_yield_gain_pct": 21.8,
+        "specific_compressor_power_reduction_pct": 24.2,
+        "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1.2,
+        "compressor_surge_or_tank_rollover_breach_pct": 0.0,
+        "edge_dts_ogi_cryogenic_leak_inference_ms": 3.5,
+        "wan_bandwidth_reduction_pct": 97.9,
+        "cryogenic_cold_spot_or_ogi_false_clearance_pct": 0.0,
+        "lng_cryogenic_slo_met": true
+      },
+      {
+        "lng_c3mr_cryogenic_trains": 8,
+        "cryogenic_governance_mode": "unconstrained_mr_valve_cloud_loop",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_c3mr_trains_and_berths": 4,
+        "mche_pinch_liquefaction_yield_gain_pct": 0.0,
+        "specific_compressor_power_reduction_pct": 0.0,
+        "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1120.0,
+        "compressor_surge_or_tank_rollover_breach_pct": 1.6,
+        "edge_dts_ogi_cryogenic_leak_inference_ms": 1390.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "cryogenic_cold_spot_or_ogi_false_clearance_pct": 3.1,
+        "lng_cryogenic_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -8276,5 +8338,67 @@
       "aerospace_composite_slo_met": false
     }
   },
-  "trace_sha256": "093beb56bdd841830dfb5440f22e343058c5897046401f52b524d4285c445003"
+  "demo_69_lng_cryogenic_c3mr_bog_sil3_esd_sandbox": {
+    "lng_4_trains": {
+      "lng_c3mr_cryogenic_trains": 4,
+      "cryogenic_governance_mode": "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_c3mr_trains_and_berths": 2,
+      "mche_pinch_liquefaction_yield_gain_pct": 21.8,
+      "specific_compressor_power_reduction_pct": 24.2,
+      "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1.2,
+      "compressor_surge_or_tank_rollover_breach_pct": 0.0,
+      "edge_dts_ogi_cryogenic_leak_inference_ms": 3.5,
+      "wan_bandwidth_reduction_pct": 97.9,
+      "cryogenic_cold_spot_or_ogi_false_clearance_pct": 0.0,
+      "lng_cryogenic_slo_met": true
+    },
+    "lng_8_trains": {
+      "lng_c3mr_cryogenic_trains": 8,
+      "cryogenic_governance_mode": "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_c3mr_trains_and_berths": 4,
+      "mche_pinch_liquefaction_yield_gain_pct": 21.8,
+      "specific_compressor_power_reduction_pct": 24.2,
+      "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1.2,
+      "compressor_surge_or_tank_rollover_breach_pct": 0.0,
+      "edge_dts_ogi_cryogenic_leak_inference_ms": 3.5,
+      "wan_bandwidth_reduction_pct": 97.9,
+      "cryogenic_cold_spot_or_ogi_false_clearance_pct": 0.0,
+      "lng_cryogenic_slo_met": true
+    },
+    "lng_32_trains": {
+      "lng_c3mr_cryogenic_trains": 32,
+      "cryogenic_governance_mode": "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_c3mr_trains_and_berths": 16,
+      "mche_pinch_liquefaction_yield_gain_pct": 21.8,
+      "specific_compressor_power_reduction_pct": 24.2,
+      "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1.2,
+      "compressor_surge_or_tank_rollover_breach_pct": 0.0,
+      "edge_dts_ogi_cryogenic_leak_inference_ms": 3.5,
+      "wan_bandwidth_reduction_pct": 97.9,
+      "cryogenic_cold_spot_or_ogi_false_clearance_pct": 0.0,
+      "lng_cryogenic_slo_met": true
+    },
+    "raw_lng_8_trains": {
+      "lng_c3mr_cryogenic_trains": 8,
+      "cryogenic_governance_mode": "unconstrained_mr_valve_cloud_loop",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_c3mr_trains_and_berths": 4,
+      "mche_pinch_liquefaction_yield_gain_pct": 0.0,
+      "specific_compressor_power_reduction_pct": 0.0,
+      "nfpa59a_sil3_antisurge_perc_esd_latency_ms": 1120.0,
+      "compressor_surge_or_tank_rollover_breach_pct": 1.6,
+      "edge_dts_ogi_cryogenic_leak_inference_ms": 1390.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "cryogenic_cold_spot_or_ogi_false_clearance_pct": 3.1,
+      "lng_cryogenic_slo_met": false
+    }
+  },
+  "trace_sha256": "77bdc43e7b1de6d6dce51f11a33cd3d0e09f3002de43c04c37dd3ba04f3aa794"
 }

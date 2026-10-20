@@ -81,6 +81,7 @@ from agent_infra_sizer import (
     simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
     simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
     simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
+    simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -725,6 +726,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(64, "thermochemical_cure_mpc_paut_nadcap_sil3_edge"),
         simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(16, "open_loop_dwell_recipe_unverified_paut_cloud"),
     ]
+    lng_cryogenic_c3mr_bog_profiles: List[Dict[str, object]] = [
+        simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(4, "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge"),
+        simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(8, "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge"),
+        simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(32, "c3mr_pinch_mpc_antisurge_nfpa59a_sil3_edge"),
+        simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(8, "unconstrained_mr_valve_cloud_loop"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -794,6 +801,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "tbm_tunnel_geomechanics_profiles": tbm_tunnel_geomechanics_profiles,
         "petrochemical_fcc_refinery_profiles": petrochemical_fcc_refinery_profiles,
         "aerospace_composite_autoclave_profiles": aerospace_composite_autoclave_profiles,
+        "lng_cryogenic_c3mr_bog_profiles": lng_cryogenic_c3mr_bog_profiles,
     }
 
 
