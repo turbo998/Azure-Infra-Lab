@@ -494,6 +494,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(79)">80. 连续灌流哺乳动物细胞生物反应器 (2000-20000L mAb/AAV) + dFBA 代谢通量与糖基化 PINN-MPC 及 FDA 21 CFR Part 11 / ASME BPE / SIL-3 在线灭菌 SIP 与低 pH 病毒灭活联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(80)">81. 超高温 SiC/SiC 陶瓷基复合材料 CVI 沉积与高超声速电弧风洞 TPS 烧蚀 (2200-3000°C) + 克努森扩散 PINN-MPC 及 NASA-STD-5001B / NFPA 86 / SIL-3 硅烷防爆与水冷电极联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(81)">82. 深海 ±525kV 柔直海缆与跨洋海光缆敷设船 (CLV) + 海底犁式埋设机悬链线触地点 TDP 张力 PINN-MPC 及 DNV-ST-F101 / CIGRE TB 610 / SIL-3 最小弯曲半径与自动松缆联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(82)">83. 抽水蓄能电站 (PSH) 250-400MW 变速可逆混流式水泵水轮机 + 调压室水锤与尾水管涡带 S 区 PINN-MPC 及 IEEE 1020 / IEC 60308 / SIL-3 导叶折线慢关防爆管联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2341,6 +2342,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 82: Pumped-Storage Hydropower (PSH) Variable-Speed Reversible Pump-Turbine, Surge-Tank Water-Hammer & S-Region Vortex-Rope PINN-MPC & IEEE 1020 / IEC 60308 / SIL-3 Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 82 · PUMPED-STORAGE HYDROPOWER (PSH) VARIABLE-SPEED REVERSIBLE PUMP-TURBINE (250-400 MW), WATER-HAMMER &amp; S-REGION VORTEX PINN-MPC &amp; IEEE 1020 / IEC 60308 / SIL-3 SIZER</span>
+    <h2>自主抽水蓄能电站 (<code>PSH 250–400 MW</code>) 变速可逆水泵水轮机、调压室水锤与 <code>S</code> 特性区涡带 <code>PINN-MPC</code> 及 <code>IEEE 1020 / IEC 60308 / SIL-3</code> 导叶折线慢关防爆管联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 台 <code>250–400 MW</code> 变速双馈可逆混流式水泵水轮机 (<code>DFIM Pump-Turbine</code>) 规模下，一维引水隧洞-调压室弹性水锤特征线 (<code>1D Allievi-Joukowsky MOC</code>) 与四象限全特性 <code>S</code> 区尾水管螺旋涡带 <code>PINN</code> + 双馈转子滑差与活动导叶 (<code>Wicket Gate</code>) 动态协联 <code>MPC</code>（抽水至发电转换速度与综合循环效率 <code>RTE +29.2%</code>、<code>S</code> 区无叶区压力脉动与蜗壳水锤瞬态升压峰值 <code>-37.6%</code>）、<code>IEEE 1020 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3</code> 活动导叶两段折线缓冲慢关律 (<code>Polygonal Cushion-Law</code>) 与尾水管防液柱分离强迫补气阀硬联锁（<code>1.4 ms</code>，蜗壳超压爆管或尾水反水锤抬机违例率 <code>0.0%</code>）及地下厂房 <code>10 kHz</code> 压电高频动态压力/大轴摆度轨迹 (<code>Shaft Orbit</code>)/空化声学 + <code>IEC 61850-9-2LE / Azure Local</code> 边缘推理（<code>1.3 ms</code>，山区电站专网带宽削减 <code>98.6%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 250-400MW 变速可逆抽水蓄能水泵水轮机台数 (Reversible DFIM Pump-Turbine Units): <strong id="lbl_psh_units" style="color:var(--amber)">8</strong> Reversible Units</label>
+          <input type="range" id="rng_psh_units" min="4" max="32" step="4" value="8" oninput="runPshHydroLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 水锤特征线与 S 区涡带 PINN-MPC 及 IEEE 1020 / IEC 60308 / SIL-3 导叶折线慢关联锁模式 (PSH Pump-Turbine Governance Mode)</label>
+          <select id="sel_psh_mode" onchange="runPshHydroLab()">
+            <option value="allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge" selected>Allievi 水锤特征线与 S 区涡带 PINN + DFIM/导叶协联 MPC (+29.2% 转换速度/RTE / -37.6% S区脉动与水锤峰值) + IEC 60308 SIL-3 折线慢关/补气联锁 + 1.3ms 压电/摆度边缘 (推荐)</option>
+            <option value="fixed_linear_servo_unverified_wicket_cloud">传统反模式：固定单斜率直线关机调速器 (0 增益) + 无导叶折线缓冲与尾水补气 SIL-3 门控 (1.5% 蜗壳超压/液柱分离抬机违例) + 原始 10kHz 波形上云 (3.1% S区同期失败/空蚀漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="pshOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3750,6 +3774,21 @@ resource subseaCableLayPloughSil3Pool 'Microsoft.ContainerService/managedCluster
       'aksclaw.io/vessel-cotdr-botda-usbl-edge': 'enabled-1.5ms-98.8pct-satcom-wan-cut'
     }
   }
+}`,
+`// Blueprint #83: Pumped-Storage Hydropower (PSH) Variable-Speed Reversible Pump-Turbine, Water-Hammer & S-Region Vortex PINN-MPC & IEEE 1020 / IEC 60308 / SIL-3 Pool (Chapter 87)
+resource pshPumpedHydroWaterhammerSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'pshturbine'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'psh-pumped-hydro-waterhammer-vortex-iec60308-sil3-agent'
+      'aksclaw.io/allievi-waterhammer-sregion-pinn-mpc': 'enabled-29.2pct-mode-switch-rte-37.6pct-pulsation-waterhammer-cut'
+      'aksclaw.io/ieee1020-iec60308-sil3-wicket-cushion': 'enforced-1.4ms-zero-penstock-overpressure-or-column-separation'
+      'aksclaw.io/powerhouse-10khz-piezo-orbit-edge': 'enabled-1.3ms-98.6pct-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3932,6 +3971,30 @@ runDeepseaCollectorLab();
 runBiomanufacturingLab();
 runHypersonicCmcLab();
 runSubseaCableLayLab();
+runPshHydroLab();
+
+function runPshHydroLab() {
+  const units = parseInt(document.getElementById('rng_psh_units').value, 10);
+  const mode = document.getElementById('sel_psh_mode').value;
+  document.getElementById('lbl_psh_units').textContent = units.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(units / 4));
+  const pods = Math.max(2, Math.floor(units / 2));
+  const ok = mode === 'allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge';
+  const mpcStr = ok ? "一维 Allievi-Joukowsky 水锤特征线与全特性 S 区螺旋涡带 PINN + 双馈 DFIM 转子滑差与活动导叶协联 MPC · 抽水转发电速度与综合循环效率 RTE +29.2% · S 区压力脉动与蜗壳水锤峰值 -37.6%" : "传统单斜率直线关机调速器与静态死区避振 · 0.0% 极速调相与抑振增益 (S 特性区转速往复摆振且 3.1% 并网同期失败或尾水管涡带空蚀剥落误放行)";
+  const sil3Str = ok ? "1.4 ms IEEE 1020 / IEC 60308 / ASME PTC 18 / SIL-3 活动导叶折线缓冲慢关律与尾水管防液柱分离强迫补气硬联锁 · 0.0% 爆管/抬机违例" : "无导叶折线缓冲与真空补气 SIL-3 硬联锁 (480.0 ms 云端回路滞后) · 1.5% 满载甩负荷快关引发蜗壳超压爆管或尾水管液柱分离反水锤抬机风险";
+  const edgeStr = ok ? "1.3 ms 地下厂房 10 kHz 压电动态压力阵列、电涡流大轴摆度轨迹 (Shaft Orbit) 与 IEC 61850-9-2LE + Azure Local 边缘 (-98.6% 山区电站专网带宽) · 0.0% 瞬态监测盲区" : "1,390.0 ms 原始多通道 10 kHz 压电脉动与摆度波形回传云端 · 占满山区通信光缆且无法在甩负荷水锤波反射周期内完成毫秒级折线慢关切换";
+
+  document.getElementById('pshOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 蜗壳水锤超压或尾水管液柱分离反水锤抬机风险 · 3.1% S 区转速摆振同期失败或转轮空蚀误放行'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个地下厂房可逆机组控制单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>地下厂房 10 kHz 压电高频动态压力、大轴摆度轴心轨迹与空化声学 + Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runSubseaCableLayLab() {
   const spreads = parseInt(document.getElementById('rng_clv_spreads').value, 10);

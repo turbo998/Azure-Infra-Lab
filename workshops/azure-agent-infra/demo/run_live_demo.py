@@ -101,6 +101,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
     simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
+    simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -737,6 +738,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "subsea_cable_lay_4_spreads": simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(4, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
             "subsea_cable_lay_16_spreads": simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(16, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
             "raw_subsea_cable_lay_4_spreads": simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(4, "static_catenary_table_unverified_plough_cloud"),
+        },
+        "demo_82_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox": {
+            "psh_hydro_8_units": simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(8, "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"),
+            "psh_hydro_32_units": simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(32, "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"),
+            "raw_psh_hydro_8_units": simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(8, "fixed_linear_servo_unverified_wicket_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

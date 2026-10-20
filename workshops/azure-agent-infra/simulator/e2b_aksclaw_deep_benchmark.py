@@ -94,6 +94,7 @@ from agent_infra_sizer import (
     simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
     simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
+    simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -816,6 +817,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(16, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
         simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(4, "static_catenary_table_unverified_plough_cloud"),
     ]
+    psh_pumped_hydro_waterhammer_profiles: List[Dict[str, object]] = [
+        simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(4, "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"),
+        simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(8, "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"),
+        simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(32, "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"),
+        simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(8, "fixed_linear_servo_unverified_wicket_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -898,6 +905,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "biomanufacturing_perfusion_bioreactor_profiles": biomanufacturing_perfusion_bioreactor_profiles,
         "hypersonic_cmc_cvi_arcjet_profiles": hypersonic_cmc_cvi_arcjet_profiles,
         "subsea_cable_lay_plough_profiles": subsea_cable_lay_plough_profiles,
+        "psh_pumped_hydro_waterhammer_profiles": psh_pumped_hydro_waterhammer_profiles,
     }
 
 

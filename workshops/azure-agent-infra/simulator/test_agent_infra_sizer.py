@@ -88,6 +88,7 @@ from agent_infra_sizer import (
     simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
     simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
+    simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -223,6 +224,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-biomanufacturing-perfusion-bioreactor-pat-gmp-sil3-pool.bicep",
             "aksclaw-hypersonic-cmc-cvi-arcjet-tps-nfpa86-sil3-pool.bicep",
             "aksclaw-subsea-cable-lay-plough-otdr-das-dnv-sil3-pool.bicep",
+            "aksclaw-psh-pumped-hydro-waterhammer-vortex-iec60308-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1563,6 +1565,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct"], 3.0)
         self.assertTrue(gov["subsea_cable_lay_plough_slo_met"])
         self.assertFalse(raw["subsea_cable_lay_plough_slo_met"])
+
+    def test_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(self) -> None:
+        gov = simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(
+            8, "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"
+        )
+        raw = simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(
+            8, "fixed_linear_servo_unverified_wicket_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_psh_powerhouse_pods"], 4)
+        self.assertEqual(gov["pump_to_turbine_transition_speed_and_rte_gain_pct"], 29.2)
+        self.assertEqual(gov["sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct"], 37.6)
+        self.assertEqual(gov["ieee1020_iec60308_sil3_wicket_cushion_interlock_ms"], 1.4)
+        self.assertEqual(gov["penstock_overpressure_or_draft_tube_column_separation_breach_pct"], 0.0)
+        self.assertGreater(raw["penstock_overpressure_or_draft_tube_column_separation_breach_pct"], 1.3)
+        self.assertEqual(gov["powerhouse_piezo_shaft_orbit_edge_latency_ms"], 1.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.6)
+        self.assertEqual(gov["sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct"], 2.9)
+        self.assertTrue(gov["psh_pumped_hydro_waterhammer_slo_met"])
+        self.assertFalse(raw["psh_pumped_hydro_waterhammer_slo_met"])
 
 
 if __name__ == "__main__":

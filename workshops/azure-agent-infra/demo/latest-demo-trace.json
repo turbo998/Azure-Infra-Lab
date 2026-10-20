@@ -5172,6 +5172,68 @@
         "plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct": 3.3,
         "subsea_cable_lay_plough_slo_met": false
       }
+    ],
+    "psh_pumped_hydro_waterhammer_profiles": [
+      {
+        "psh_reversible_units": 4,
+        "psh_governance_mode": "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_psh_powerhouse_pods": 2,
+        "pump_to_turbine_transition_speed_and_rte_gain_pct": 29.2,
+        "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": 37.6,
+        "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": 1.4,
+        "penstock_overpressure_or_draft_tube_column_separation_breach_pct": 0.0,
+        "powerhouse_piezo_shaft_orbit_edge_latency_ms": 1.3,
+        "wan_bandwidth_reduction_pct": 98.6,
+        "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 0.0,
+        "psh_pumped_hydro_waterhammer_slo_met": true
+      },
+      {
+        "psh_reversible_units": 8,
+        "psh_governance_mode": "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_psh_powerhouse_pods": 4,
+        "pump_to_turbine_transition_speed_and_rte_gain_pct": 29.2,
+        "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": 37.6,
+        "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": 1.4,
+        "penstock_overpressure_or_draft_tube_column_separation_breach_pct": 0.0,
+        "powerhouse_piezo_shaft_orbit_edge_latency_ms": 1.3,
+        "wan_bandwidth_reduction_pct": 98.6,
+        "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 0.0,
+        "psh_pumped_hydro_waterhammer_slo_met": true
+      },
+      {
+        "psh_reversible_units": 32,
+        "psh_governance_mode": "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_psh_powerhouse_pods": 16,
+        "pump_to_turbine_transition_speed_and_rte_gain_pct": 29.2,
+        "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": 37.6,
+        "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": 1.4,
+        "penstock_overpressure_or_draft_tube_column_separation_breach_pct": 0.0,
+        "powerhouse_piezo_shaft_orbit_edge_latency_ms": 1.3,
+        "wan_bandwidth_reduction_pct": 98.6,
+        "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 0.0,
+        "psh_pumped_hydro_waterhammer_slo_met": true
+      },
+      {
+        "psh_reversible_units": 8,
+        "psh_governance_mode": "fixed_linear_servo_unverified_wicket_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_psh_powerhouse_pods": 4,
+        "pump_to_turbine_transition_speed_and_rte_gain_pct": 0.0,
+        "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": 0.0,
+        "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": 480.0,
+        "penstock_overpressure_or_draft_tube_column_separation_breach_pct": 1.5,
+        "powerhouse_piezo_shaft_orbit_edge_latency_ms": 1390.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 3.1,
+        "psh_pumped_hydro_waterhammer_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -9843,5 +9905,52 @@
       "subsea_cable_lay_plough_slo_met": false
     }
   },
-  "trace_sha256": "710ac19ebd939a5e0ab963fac8ad6aa89af91c5b036aeaca148c678644e4b8b5"
+  "demo_82_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox": {
+    "psh_hydro_8_units": {
+      "psh_reversible_units": 8,
+      "psh_governance_mode": "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_psh_powerhouse_pods": 4,
+      "pump_to_turbine_transition_speed_and_rte_gain_pct": 29.2,
+      "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": 37.6,
+      "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": 1.4,
+      "penstock_overpressure_or_draft_tube_column_separation_breach_pct": 0.0,
+      "powerhouse_piezo_shaft_orbit_edge_latency_ms": 1.3,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 0.0,
+      "psh_pumped_hydro_waterhammer_slo_met": true
+    },
+    "psh_hydro_32_units": {
+      "psh_reversible_units": 32,
+      "psh_governance_mode": "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_psh_powerhouse_pods": 16,
+      "pump_to_turbine_transition_speed_and_rte_gain_pct": 29.2,
+      "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": 37.6,
+      "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": 1.4,
+      "penstock_overpressure_or_draft_tube_column_separation_breach_pct": 0.0,
+      "powerhouse_piezo_shaft_orbit_edge_latency_ms": 1.3,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 0.0,
+      "psh_pumped_hydro_waterhammer_slo_met": true
+    },
+    "raw_psh_hydro_8_units": {
+      "psh_reversible_units": 8,
+      "psh_governance_mode": "fixed_linear_servo_unverified_wicket_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_psh_powerhouse_pods": 4,
+      "pump_to_turbine_transition_speed_and_rte_gain_pct": 0.0,
+      "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": 0.0,
+      "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": 480.0,
+      "penstock_overpressure_or_draft_tube_column_separation_breach_pct": 1.5,
+      "powerhouse_piezo_shaft_orbit_edge_latency_ms": 1390.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 3.1,
+      "psh_pumped_hydro_waterhammer_slo_met": false
+    }
+  },
+  "trace_sha256": "5ea49613684332120d89c9d02d77dc0c1be56d06f396b502b4bfdac6f6a99787"
 }

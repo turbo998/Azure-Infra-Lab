@@ -4612,6 +4612,57 @@ def simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(
     }
 
 
+def simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(
+    psh_reversible_units: int = 8,
+    psh_governance_mode: str = "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Pumped-Storage Hydropower (PSH) Variable-Speed
+    Reversible Francis Pump-Turbine (250-400 MW Doubly-Fed Induction Machine
+    DFIM), Surge-Tank Water-Hammer (1D Allievi-Joukowsky Method of
+    Characteristics) & S-Region Draft-Tube Vortex Rope PINN-MPC & IEEE 1020 /
+    IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3 Multi-Stage Wicket-Gate
+    Cushion-Law & Tailrace Column-Separation Interlock Agent Infrastructure
+    (Chapter 87).
+    """
+    if psh_reversible_units <= 0:
+        raise ValueError("psh_reversible_units must be positive")
+    valid_modes = {
+        "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge",
+        "fixed_linear_servo_unverified_wicket_cloud",
+    }
+    if psh_governance_mode not in valid_modes:
+        raise ValueError(f"psh_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = psh_governance_mode == "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"
+    gpu_nodes = max(2, math.ceil(psh_reversible_units / 4))
+    active_psh_powerhouse_pods = max(2, int(psh_reversible_units // 2))
+
+    pump_to_turbine_transition_speed_and_rte_gain_pct = 29.2 if governed else 0.0
+    sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct = 37.6 if governed else 0.0
+    ieee1020_iec60308_sil3_wicket_cushion_interlock_ms = 1.4 if governed else 480.0
+    penstock_overpressure_or_draft_tube_column_separation_breach_pct = 0.0 if governed else 1.5
+    powerhouse_piezo_shaft_orbit_edge_latency_ms = 1.3 if governed else 1390.0
+    wan_bandwidth_reduction_pct = 98.6 if governed else 0.0
+    sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct = 0.0 if governed else 3.1
+
+    return {
+        "psh_reversible_units": psh_reversible_units,
+        "psh_governance_mode": psh_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_psh_powerhouse_pods": active_psh_powerhouse_pods,
+        "pump_to_turbine_transition_speed_and_rte_gain_pct": pump_to_turbine_transition_speed_and_rte_gain_pct,
+        "sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct": sregion_pressure_pulsation_and_waterhammer_peak_reduction_pct,
+        "ieee1020_iec60308_sil3_wicket_cushion_interlock_ms": ieee1020_iec60308_sil3_wicket_cushion_interlock_ms,
+        "penstock_overpressure_or_draft_tube_column_separation_breach_pct": penstock_overpressure_or_draft_tube_column_separation_breach_pct,
+        "powerhouse_piezo_shaft_orbit_edge_latency_ms": powerhouse_piezo_shaft_orbit_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct,
+        "psh_pumped_hydro_waterhammer_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
