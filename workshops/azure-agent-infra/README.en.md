@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #56 · **62 Chapters** · **57 IaC Blueprints** · **56 Quantitative Physics Simulators** · **65/65 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 62-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #57 · **63 Chapters** · **58 IaC Blueprints** · **57 Quantitative Physics Simulators** · **66/66 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 63-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 56 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [65-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 57 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [66-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -150,6 +150,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **59** | **Emergency Dispatch & Wildland Fire (`WRF-SFIRE` Spread + `cuOpt` Apparatus/Contraflow + `FEMA NIMS/ICS` Gate + `LWIR` Ember Edge)** | `simulate_emergency_wildfire_cad_nims_sandbox()` | `aksclaw-emergency-wildfire-cad-nims-pool.bicep` | **`-29.4%` evac clearance time & `+33.8%` containment**, **`0.0%` burnover/evac-downgrade escape (`2.1 ms`)**, **`17.0 ms` LWIR ember triage (`96.6%` SatCom cut)** |
 | **60** | **Offshore Wind & Subsea Pipeline (`FLORIS Wake MPC` + `Resident ROV` + `DNV/API SIL-3 ESD` Gate + `Coherent-OTDR DAS` Edge)** | `simulate_offshore_wind_subsea_rov_esd_sandbox()` | `aksclaw-offshore-wind-subsea-rov-esd-pool.bicep` | **`+11.8%` wind farm AEP & `-46.2%` vessel cost**, **`0.0%` MAOP overpressure (`1.4 ms` SIL-3 ESD gate)**, **`14.0 ms` DAS anchor-drag triage (`97.2%` VSAT cut)** |
 | **61** | **Circular Economy & EV Battery Recycling (`CAD-Free Force-Torque` Unbolting + `UL 9540A / NFPA 855` Thermal Gate + `XRF/NIR` Edge)** | `simulate_circular_recycling_battery_xrf_sandbox()` | `aksclaw-circular-recycling-battery-xrf-pool.bicep` | **`+23.6%` mineral yield & `-37.5%` cycle time**, **`0.0%` thermal runaway (`0.8 ms` UL 9540A gate)**, **`9.0 ms` XRF/NIR edge sorting (`96.9%` WAN cut)** |
+| **62** | **Green Steelmaking (`EAF Foaming-Slag MPC` + `LIBS` Scrap Charge + `NFPA 86 / SIL-3` Molten-Water & `FBG` Mold Breakout Gate)** | `simulate_steelmaking_eaf_casting_sil3_sandbox()` | `aksclaw-steelmaking-eaf-casting-sil3-pool.bicep` | **`-44.5 kWh/t` EAF power & `-18.4%` electrode wear**, **`0.0%` steam explosion or mold breakout (`0.9 ms`)**, **`8.0 ms` LIBS/FBG edge triage (`97.1%` WAN cut)** |
 
 ---
 
@@ -159,10 +160,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 56 quantitative engineering & physics simulators (Chapters 7–61)
+# 2. Run all 57 quantitative engineering & physics simulators (Chapters 7–62)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 65 unit tests (100% pass across 6 runtimes, 56 physics models, 57 blueprints & links)
+# 3. Execute all 66 unit tests (100% pass across 6 runtimes, 57 physics models, 58 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

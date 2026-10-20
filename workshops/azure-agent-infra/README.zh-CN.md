@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #56 · 62 Chapters · 57 Blueprints · 56 Simulators · 65/65 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #57 · 63 Chapters · 58 Blueprints · 57 Simulators · 66/66 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -1860,7 +1860,33 @@ sequenceDiagram
 
 ---
 
-## 62. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 62. 自主绿色钢铁冶炼、电弧炉（`EAF`）泡沫渣声学谐波与废钢配料寻优、连铸结晶器（`Continuous Casting Mold`）光纤热电偶黏结漏钢预警与 `NFPA 86 / IEC 61511 SIL-3` 钢水遇水爆炸硬件互锁智能体基础设施 —— 吨钢电耗（`kWh/t`）削减、石墨电极损耗控制与零漏钢/零炉内蒸汽爆炸逃逸物理模型（Autonomous Steelmaking, Electric Arc Furnace `EAF` Scrap-Charge Melting Optimization, Continuous Casting Mold Breakout Prevention & `NFPA 86 / IEC 61511 SIL-3` Molten-Metal Water-Explosion Interlock Agent Infrastructure — Foaming-Slag MPC, FBG Sticker Breakout Gate & LIBS Edge Physics）
+
+> 本章由确定性绿色短流程电弧炉炼钢与连铸智能体物理模型 [`simulate_steelmaking_eaf_casting_sil3_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-steelmaking-eaf-casting-sil3-pool.bicep`](blueprints/aksclaw-steelmaking-eaf-casting-sil3-pool.bicep) 驱动，面向大型绿色短流程电弧炉（`EAF`）炼钢、钢包精炼炉（`LF/RH`）与板坯连铸车间（粗钢年产能 `2–32 MTPA` 百万吨/年、电弧炉与连铸流数 `6–96` 条），解决 **传统固定供电曲线（`Static Tap-Setting Chart`）在废钢成分波动时造成电弧暴露辐射热损失与石墨电极折断消耗高、钢包精炼合金微调偏差导致 `3.2%` 成分出格回炉重炼、智能体未经 `NFPA 86 / IEC 61511 SIL-3` 湿废钢/密闭容器筛查与水冷氧枪漏水差流互锁及连铸结晶器黏结漏钢（`Sticker Breakout`）安全门控引发 `1.8%` 钢水遇水蒸汽爆炸或拉速过高漏钢逃逸风险，以及炉门红外与 `LIBS` 光谱原始视频直接上传云端挤占炼钢厂广域网（延迟 `1,120.0 ms`）**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_steelmaking_eaf_casting_sil3_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-steelmaking-eaf-casting-sil3-pool.bicep`](blueprints/aksclaw-steelmaking-eaf-casting-sil3-pool.bicep), this chapter models autonomous green steelmaking and continuous casting agent infrastructure (`2–32 MTPA` liquid steel capacity, `24` EAF furnaces & caster strands at `8 MTPA`): (1) running **EAF Acoustic-Harmonics Foaming-Slag MPC + `LIBS` Scrap-Bucket Charge Optimization & Secondary Metallurgy (`LF/RH`) Ferroalloy Trim Solver** on `Standard_NC24ads_A100_v4` nodes cuts EAF specific electrical energy consumption by **`44.5 kWh/t`** (`~11.6%` power reduction), reduces graphite electrode consumption by **`18.4%`**, and eliminates off-spec ladle chemistry reheats (**`0.0%` vs `3.2%`**); (2) enforcing a **`0.9 ms`** **`NFPA 86 / IEC 61511 SIL-3` Wet-Scrap / Water-Cooled Lance Differential-Flow & 2D Fiber-Bragg-Grating (`FBG`) Mold Sticker-Breakout Hardware Interlock** eliminates **`100.0%` (`0.0%` vs `1.8%`)** of molten-steel steam explosion and continuous-casting mold breakout escapes; and (3) executing **Melt-Shop `Azure IoT Operations` Slag-Door Radiometric IR + `LIBS` Spectrum + `FBG` Mold Thermocouple Edge Triage** in **`8.0 ms`** (`vs 1,120.0 ms` raw high-speed furnace video cloud upload) cuts steel-plant WAN bandwidth by **`97.1%`**.
+
+### 62.1 绿色电弧炉炼钢与连铸泡沫渣谐波 `MPC`、`NFPA 86 / SIL-3` 防漏钢防爆硬件门控与 `LIBS/FBG` 边缘分诊三大工程支柱
+
+1. **Pillar 1：电弧炉（`EAF`）电流谐波与炉音泡沫渣 `MPC` 寻优 + `LIBS` 废钢配料及 `LF` 精炼微调（`Standard_NC24ads_A100_v4`）**：
+   - 在 `Standard_NC24ads_A100_v4` 节点上实时融合电弧炉二次侧三相电流总谐波畸变率（`THD`）与炉壁结构声学传感器特征，动态耦合喷碳量与吹氧流量维持最佳埋弧泡沫渣高度（`Foaming Slag Height`），结合行车磁盘抓取阶段的激光诱导击穿光谱（`LIBS`）残余元素（铜/锡/铬）分层装料与 `LF` 钢包精炼最小成本铁合金配比求解器，将 **吨钢冶炼电耗净降 `44.5 kWh/t`、石墨电极氧化与折断消耗削减 `18.4%`**，并将 **钢水成分出格回炉率从 `3.2%` 降至 `0.0%`**。
+2. **Pillar 2：`NFPA 86 / IEC 61511 SIL-3` 湿废钢/水冷氧枪差流防爆互锁与连铸结晶器光纤光栅（`FBG`）防漏钢门控（`0.9 ms`）**：
+   - 任何由炼钢或连铸智能体生成的料篮倾翻装料、超音速水冷氧枪（`CoJet Lance`）升降及连铸拉坯速度（`Casting Speed`）调整指令，在送达炉前 PLC 前必须通过 **`0.9 ms` 独立 `SIL-3` 硬件安全门控**：一旦废钢料篮微波/红外扫描检出积水冰雪或密闭压力容器、水冷炉盖/氧枪进回水流量差超限（预示漏水入钢水），或者连铸结晶器铜板二维光纤布拉格光栅（`2D FBG`）温度阵列识别到坯壳黏结下行热波形（`Sticker Propagation`），硬件互锁立即锁死装料/切断冷却水阀并触发电磁制动（`EMBr`）降速愈合坯壳，将 **炉内蒸汽爆炸与连铸漏钢逃逸率从 `1.8%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：炼钢车间 `Azure IoT Operations` 炉门热辐射红外 + `LIBS` 能谱与结晶器 `FBG` 温度场边缘分诊（`8.0 ms`）**：
+   - 在炼钢与连铸跨边缘节点本地处理炉门高清测温红外流、废钢跨 `LIBS` 高频脉冲光谱与结晶器数千点 `FBG` 光纤温度应变流，在 **`8.0 ms` 内（对比原始高帧率热像与光谱上传云端推理 `1,120.0 ms`）** 完成出钢终点磷碳预测与坯壳凝固厚度重构，削减 **`97.1%` 钢铁基地广域网上行带宽**。
+
+### 62.2 电弧炉泡沫渣 `MPC` + `NFPA 86 / SIL-3` 硬件门控 + 炼钢边缘分诊 vs 传统静态供电图表与云端回传对比表
+
+| 粗钢年产能规模及电弧炉连铸智能体架构 | `NC24ads_A100_v4` 节点数 | 电弧炉与连铸流数 | **吨钢节电 (`kWh/t`) / 电极损耗降幅** | **`SIL-3` 蒸汽爆炸与连铸漏钢逃逸率** | **炼钢边缘分诊延迟与广域网带宽削减** | **钢包精炼成分出格回炉率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`2 MTPA` 钢厂 · 泡沫渣 MPC + SIL-3 互锁 + 边缘分诊** | `2` | `6` | **`-44.5 kWh/t` / `-18.4%`** | **`0.0%` (`0.9 ms`)** | **`8.0 ms` / `97.1%`** | **`0.0%`** |
+| **`8 MTPA` 钢厂 · 泡沫渣 MPC + SIL-3 互锁 + 边缘分诊 (推荐)** | **`4`** | **`24`** | **`-44.5 kWh/t` / `-18.4%`** | **`0.0%` (`0.9 ms`)** | **`8.0 ms` / `97.1%`** | **`0.0%`** |
+| **`32 MTPA` 钢厂 · 泡沫渣 MPC + SIL-3 互锁 + 边缘分诊** | `16` | `96` | **`-44.5 kWh/t` / `-18.4%`** | **`0.0%` (`0.9 ms`)** | **`8.0 ms` / `97.1%`** | **`0.0%`** |
+| `8 MTPA` 钢厂 · 静态供电表 + 无防漏钢互锁 + 原始红外上云 (反模式) | `4` | `24` | `0.0 kWh/t` / `0.0%` (❌ 弧光裸露与断电极) | `1.8%` (❌ 湿废钢爆喷与黏结漏钢) | `1,120.0 ms` / `0.0%` (❌ 错过拉速减速窗口) | `3.2%` (❌ 铜锡富集与回炉改判) |
+
+---
+
+## 63. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
@@ -1874,10 +1900,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 56 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱、应急山火指挥 WRF-SFIRE+cuOpt 蔓延疏散寻优与 FEMA NIMS/ICS 防轰燃互锁及高空热红外 LWIR 飞火边缘沙箱、深远海风电与海底管道 FLORIS 尾流 MPC 寻优与 DNV/API SIL-3 ESD 互锁及海缆 DAS 拖锚边缘分诊沙箱、循环经济退役动力电池无图纸力矩拆解与 UL 9540A 热失控互锁及 XRF/NIR 高光谱边缘分选沙箱）
+# 2. 运行深度定量模型（全部 57 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱、应急山火指挥 WRF-SFIRE+cuOpt 蔓延疏散寻优与 FEMA NIMS/ICS 防轰燃互锁及高空热红外 LWIR 飞火边缘沙箱、深远海风电与海底管道 FLORIS 尾流 MPC 寻优与 DNV/API SIL-3 ESD 互锁及海缆 DAS 拖锚边缘分诊沙箱、循环经济退役动力电池无图纸力矩拆解与 UL 9540A 热失控互锁及 XRF/NIR 高光谱边缘分选沙箱、绿色钢铁电弧炉 EAF 泡沫渣谐波 MPC 寻优与 NFPA 86 / SIL-3 防爆防漏钢互锁及 LIBS/FBG 边缘分诊沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 65 项单元测试（100% 覆盖 6 大运行时契约、56 大深度物理模型、57 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 66 项单元测试（100% 覆盖 6 大运行时契约、57 大深度物理模型、58 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

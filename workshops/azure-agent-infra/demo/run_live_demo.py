@@ -76,6 +76,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_emergency_wildfire_cad_nims_sandbox,
     simulate_offshore_wind_subsea_rov_esd_sandbox,
     simulate_circular_recycling_battery_xrf_sandbox,
+    simulate_steelmaking_eaf_casting_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -565,6 +566,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "recycling_120_tpd": simulate_circular_recycling_battery_xrf_sandbox(120, "cad_torque_xrf_ul9540a_lwir_edge"),
             "recycling_480_tpd": simulate_circular_recycling_battery_xrf_sandbox(480, "cad_torque_xrf_ul9540a_lwir_edge"),
             "raw_recycling_120_tpd": simulate_circular_recycling_battery_xrf_sandbox(120, "fixed_trajectory_unverified_cutter_raw_hsi"),
+        },
+        "demo_57_steelmaking_eaf_casting_sil3_sandbox": {
+            "steel_2_mtpa": simulate_steelmaking_eaf_casting_sil3_sandbox(2, "eaf_foaming_mpc_mold_pinns_sil3_edge"),
+            "steel_8_mtpa": simulate_steelmaking_eaf_casting_sil3_sandbox(8, "eaf_foaming_mpc_mold_pinns_sil3_edge"),
+            "steel_32_mtpa": simulate_steelmaking_eaf_casting_sil3_sandbox(32, "eaf_foaming_mpc_mold_pinns_sil3_edge"),
+            "raw_steel_8_mtpa": simulate_steelmaking_eaf_casting_sil3_sandbox(8, "static_tap_chart_unverified_lance_raw_ir"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

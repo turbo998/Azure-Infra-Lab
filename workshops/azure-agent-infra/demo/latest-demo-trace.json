@@ -3622,6 +3622,68 @@
         "corroded_bolt_strip_or_tool_break_pct": 3.8,
         "circular_recycling_slo_met": false
       }
+    ],
+    "steelmaking_eaf_casting_sil3_profiles": [
+      {
+        "annual_liquid_steel_capacity_mtpa": 2,
+        "steelmaking_eaf_mode": "eaf_foaming_mpc_mold_pinns_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "eaf_furnaces_and_caster_strands": 6,
+        "eaf_specific_power_reduction_kwh_per_ton": 44.5,
+        "electrode_consumption_reduction_pct": 18.4,
+        "nfpa86_sil3_molten_water_gate_ms": 0.9,
+        "wet_scrap_explosion_or_mold_breakout_escape_pct": 0.0,
+        "slag_camera_libs_edge_triage_ms": 8.0,
+        "meltshop_wan_bandwidth_reduction_pct": 97.1,
+        "off_spec_ladle_chemistry_reheat_pct": 0.0,
+        "steelmaking_eaf_slo_met": true
+      },
+      {
+        "annual_liquid_steel_capacity_mtpa": 8,
+        "steelmaking_eaf_mode": "eaf_foaming_mpc_mold_pinns_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "eaf_furnaces_and_caster_strands": 24,
+        "eaf_specific_power_reduction_kwh_per_ton": 44.5,
+        "electrode_consumption_reduction_pct": 18.4,
+        "nfpa86_sil3_molten_water_gate_ms": 0.9,
+        "wet_scrap_explosion_or_mold_breakout_escape_pct": 0.0,
+        "slag_camera_libs_edge_triage_ms": 8.0,
+        "meltshop_wan_bandwidth_reduction_pct": 97.1,
+        "off_spec_ladle_chemistry_reheat_pct": 0.0,
+        "steelmaking_eaf_slo_met": true
+      },
+      {
+        "annual_liquid_steel_capacity_mtpa": 32,
+        "steelmaking_eaf_mode": "eaf_foaming_mpc_mold_pinns_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "eaf_furnaces_and_caster_strands": 96,
+        "eaf_specific_power_reduction_kwh_per_ton": 44.5,
+        "electrode_consumption_reduction_pct": 18.4,
+        "nfpa86_sil3_molten_water_gate_ms": 0.9,
+        "wet_scrap_explosion_or_mold_breakout_escape_pct": 0.0,
+        "slag_camera_libs_edge_triage_ms": 8.0,
+        "meltshop_wan_bandwidth_reduction_pct": 97.1,
+        "off_spec_ladle_chemistry_reheat_pct": 0.0,
+        "steelmaking_eaf_slo_met": true
+      },
+      {
+        "annual_liquid_steel_capacity_mtpa": 8,
+        "steelmaking_eaf_mode": "static_tap_chart_unverified_lance_raw_ir",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "eaf_furnaces_and_caster_strands": 24,
+        "eaf_specific_power_reduction_kwh_per_ton": 0.0,
+        "electrode_consumption_reduction_pct": 0.0,
+        "nfpa86_sil3_molten_water_gate_ms": 0.0,
+        "wet_scrap_explosion_or_mold_breakout_escape_pct": 1.8,
+        "slag_camera_libs_edge_triage_ms": 1120.0,
+        "meltshop_wan_bandwidth_reduction_pct": 0.0,
+        "off_spec_ladle_chemistry_reheat_pct": 3.2,
+        "steelmaking_eaf_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -6788,5 +6850,67 @@
       "circular_recycling_slo_met": false
     }
   },
-  "trace_sha256": "17d980e574d13bafebb0e5b7f140b8c66817f475c921c7aba4212bc220343d73"
+  "demo_57_steelmaking_eaf_casting_sil3_sandbox": {
+    "steel_2_mtpa": {
+      "annual_liquid_steel_capacity_mtpa": 2,
+      "steelmaking_eaf_mode": "eaf_foaming_mpc_mold_pinns_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "eaf_furnaces_and_caster_strands": 6,
+      "eaf_specific_power_reduction_kwh_per_ton": 44.5,
+      "electrode_consumption_reduction_pct": 18.4,
+      "nfpa86_sil3_molten_water_gate_ms": 0.9,
+      "wet_scrap_explosion_or_mold_breakout_escape_pct": 0.0,
+      "slag_camera_libs_edge_triage_ms": 8.0,
+      "meltshop_wan_bandwidth_reduction_pct": 97.1,
+      "off_spec_ladle_chemistry_reheat_pct": 0.0,
+      "steelmaking_eaf_slo_met": true
+    },
+    "steel_8_mtpa": {
+      "annual_liquid_steel_capacity_mtpa": 8,
+      "steelmaking_eaf_mode": "eaf_foaming_mpc_mold_pinns_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "eaf_furnaces_and_caster_strands": 24,
+      "eaf_specific_power_reduction_kwh_per_ton": 44.5,
+      "electrode_consumption_reduction_pct": 18.4,
+      "nfpa86_sil3_molten_water_gate_ms": 0.9,
+      "wet_scrap_explosion_or_mold_breakout_escape_pct": 0.0,
+      "slag_camera_libs_edge_triage_ms": 8.0,
+      "meltshop_wan_bandwidth_reduction_pct": 97.1,
+      "off_spec_ladle_chemistry_reheat_pct": 0.0,
+      "steelmaking_eaf_slo_met": true
+    },
+    "steel_32_mtpa": {
+      "annual_liquid_steel_capacity_mtpa": 32,
+      "steelmaking_eaf_mode": "eaf_foaming_mpc_mold_pinns_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "eaf_furnaces_and_caster_strands": 96,
+      "eaf_specific_power_reduction_kwh_per_ton": 44.5,
+      "electrode_consumption_reduction_pct": 18.4,
+      "nfpa86_sil3_molten_water_gate_ms": 0.9,
+      "wet_scrap_explosion_or_mold_breakout_escape_pct": 0.0,
+      "slag_camera_libs_edge_triage_ms": 8.0,
+      "meltshop_wan_bandwidth_reduction_pct": 97.1,
+      "off_spec_ladle_chemistry_reheat_pct": 0.0,
+      "steelmaking_eaf_slo_met": true
+    },
+    "raw_steel_8_mtpa": {
+      "annual_liquid_steel_capacity_mtpa": 8,
+      "steelmaking_eaf_mode": "static_tap_chart_unverified_lance_raw_ir",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "eaf_furnaces_and_caster_strands": 24,
+      "eaf_specific_power_reduction_kwh_per_ton": 0.0,
+      "electrode_consumption_reduction_pct": 0.0,
+      "nfpa86_sil3_molten_water_gate_ms": 0.0,
+      "wet_scrap_explosion_or_mold_breakout_escape_pct": 1.8,
+      "slag_camera_libs_edge_triage_ms": 1120.0,
+      "meltshop_wan_bandwidth_reduction_pct": 0.0,
+      "off_spec_ladle_chemistry_reheat_pct": 3.2,
+      "steelmaking_eaf_slo_met": false
+    }
+  },
+  "trace_sha256": "39b2ab98072e1badf5334b2ccabb14ebb70cd5ce97b1ee72bfd1a10b533c18eb"
 }

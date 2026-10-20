@@ -63,6 +63,7 @@ from agent_infra_sizer import (
     simulate_emergency_wildfire_cad_nims_sandbox,
     simulate_offshore_wind_subsea_rov_esd_sandbox,
     simulate_circular_recycling_battery_xrf_sandbox,
+    simulate_steelmaking_eaf_casting_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1054,6 +1055,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["corroded_bolt_strip_or_tool_break_pct"], 3.5)
         self.assertTrue(gov["circular_recycling_slo_met"])
         self.assertFalse(raw["circular_recycling_slo_met"])
+
+    def test_steelmaking_eaf_casting_sil3_sandbox(self) -> None:
+        gov = simulate_steelmaking_eaf_casting_sil3_sandbox(8, "eaf_foaming_mpc_mold_pinns_sil3_edge")
+        raw = simulate_steelmaking_eaf_casting_sil3_sandbox(8, "static_tap_chart_unverified_lance_raw_ir")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["eaf_furnaces_and_caster_strands"], 24)
+        self.assertEqual(gov["eaf_specific_power_reduction_kwh_per_ton"], 44.5)
+        self.assertEqual(gov["electrode_consumption_reduction_pct"], 18.4)
+        self.assertEqual(gov["nfpa86_sil3_molten_water_gate_ms"], 0.9)
+        self.assertEqual(gov["wet_scrap_explosion_or_mold_breakout_escape_pct"], 0.0)
+        self.assertGreater(raw["wet_scrap_explosion_or_mold_breakout_escape_pct"], 1.5)
+        self.assertEqual(gov["slag_camera_libs_edge_triage_ms"], 8.0)
+        self.assertEqual(gov["meltshop_wan_bandwidth_reduction_pct"], 97.1)
+        self.assertEqual(gov["off_spec_ladle_chemistry_reheat_pct"], 0.0)
+        self.assertGreater(raw["off_spec_ladle_chemistry_reheat_pct"], 3.0)
+        self.assertTrue(gov["steelmaking_eaf_slo_met"])
+        self.assertFalse(raw["steelmaking_eaf_slo_met"])
 
 
 if __name__ == "__main__":

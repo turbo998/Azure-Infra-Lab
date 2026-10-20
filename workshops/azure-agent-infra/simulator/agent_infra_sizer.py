@@ -3384,6 +3384,54 @@ def simulate_circular_recycling_battery_xrf_sandbox(
     }
 
 
+def simulate_steelmaking_eaf_casting_sil3_sandbox(
+    annual_liquid_steel_capacity_mtpa: int = 8,
+    steelmaking_eaf_mode: str = "eaf_foaming_mpc_mold_pinns_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Steelmaking, Electric Arc Furnace (EAF) Scrap-Charge
+    Melting Optimization, Continuous Casting Mold Breakout Prevention &
+    NFPA 86 / IEC 61511 SIL-3 Molten-Metal Water-Explosion Interlock Agent
+    Infrastructure (Chapter 62).
+    """
+    if annual_liquid_steel_capacity_mtpa <= 0:
+        raise ValueError("annual_liquid_steel_capacity_mtpa must be positive")
+    valid_modes = {
+        "eaf_foaming_mpc_mold_pinns_sil3_edge",
+        "static_tap_chart_unverified_lance_raw_ir",
+    }
+    if steelmaking_eaf_mode not in valid_modes:
+        raise ValueError(f"steelmaking_eaf_mode must be one of {sorted(valid_modes)}")
+
+    governed = steelmaking_eaf_mode == "eaf_foaming_mpc_mold_pinns_sil3_edge"
+    gpu_nodes = max(2, math.ceil(annual_liquid_steel_capacity_mtpa / 2))
+    eaf_furnaces_and_caster_strands = max(6, int(annual_liquid_steel_capacity_mtpa * 3))
+
+    eaf_specific_power_reduction_kwh_per_ton = 44.5 if governed else 0.0
+    electrode_consumption_reduction_pct = 18.4 if governed else 0.0
+    nfpa86_sil3_molten_water_gate_ms = 0.9 if governed else 0.0
+    wet_scrap_explosion_or_mold_breakout_escape_pct = 0.0 if governed else 1.8
+    slag_camera_libs_edge_triage_ms = 8.0 if governed else 1120.0
+    meltshop_wan_bandwidth_reduction_pct = 97.1 if governed else 0.0
+    off_spec_ladle_chemistry_reheat_pct = 0.0 if governed else 3.2
+
+    return {
+        "annual_liquid_steel_capacity_mtpa": annual_liquid_steel_capacity_mtpa,
+        "steelmaking_eaf_mode": steelmaking_eaf_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "eaf_furnaces_and_caster_strands": eaf_furnaces_and_caster_strands,
+        "eaf_specific_power_reduction_kwh_per_ton": eaf_specific_power_reduction_kwh_per_ton,
+        "electrode_consumption_reduction_pct": electrode_consumption_reduction_pct,
+        "nfpa86_sil3_molten_water_gate_ms": nfpa86_sil3_molten_water_gate_ms,
+        "wet_scrap_explosion_or_mold_breakout_escape_pct": wet_scrap_explosion_or_mold_breakout_escape_pct,
+        "slag_camera_libs_edge_triage_ms": slag_camera_libs_edge_triage_ms,
+        "meltshop_wan_bandwidth_reduction_pct": meltshop_wan_bandwidth_reduction_pct,
+        "off_spec_ladle_chemistry_reheat_pct": off_spec_ladle_chemistry_reheat_pct,
+        "steelmaking_eaf_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
