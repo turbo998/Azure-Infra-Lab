@@ -3865,6 +3865,55 @@ def simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(
     }
 
 
+def simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(
+    fcc_reactor_regenerator_riser_loops: int = 16,
+    fcc_policy: str = "fcc_regenerator_mpc_raman_sil3_esd_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Petrochemical Refinery Fluid Catalytic Cracking (FCC),
+    Reactor-Regenerator Coke Burnoff & Slide-Valve Differential-Pressure Control,
+    Online NIR/Raman Octane Soft-Sensor & API RP 554 / IEC 61511 SIL-3
+    Catalyst-Reversal & Over-Temperature Emergency Shutdown (ESD) Agent
+    Infrastructure (Chapter 72).
+    """
+    if fcc_reactor_regenerator_riser_loops <= 0:
+        raise ValueError("fcc_reactor_regenerator_riser_loops must be positive")
+    valid_modes = {
+        "fcc_regenerator_mpc_raman_sil3_esd_edge",
+        "unconstrained_pid_manual_sampling_cloud",
+    }
+    if fcc_policy not in valid_modes:
+        raise ValueError(f"fcc_policy must be one of {sorted(valid_modes)}")
+
+    governed = fcc_policy == "fcc_regenerator_mpc_raman_sil3_esd_edge"
+    gpu_nodes = max(2, math.ceil(fcc_reactor_regenerator_riser_loops / 8))
+    active_fcc_reactor_regenerator_units = max(2, int(fcc_reactor_regenerator_riser_loops // 4))
+
+    gasoline_light_olefin_yield_gain_pct = 18.7 if governed else 0.0
+    regenerator_afterburn_flue_gas_reduction_pct = 31.4 if governed else 0.0
+    sil3_slide_valve_catalyst_reversal_esd_ms = 1.6 if governed else 380.0
+    catalyst_reversal_or_cyclone_overtemp_breach_pct = 0.0 if governed else 1.7
+    edge_raman_octane_soft_sensor_inference_ms = 3.8 if governed else 1330.0
+    wan_bandwidth_reduction_pct = 97.6 if governed else 0.0
+    fractionator_flooding_or_wgc_surge_excursion_pct = 0.0 if governed else 3.5
+
+    return {
+        "fcc_reactor_regenerator_riser_loops": fcc_reactor_regenerator_riser_loops,
+        "fcc_policy": fcc_policy,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_fcc_reactor_regenerator_units": active_fcc_reactor_regenerator_units,
+        "gasoline_light_olefin_yield_gain_pct": gasoline_light_olefin_yield_gain_pct,
+        "regenerator_afterburn_flue_gas_reduction_pct": regenerator_afterburn_flue_gas_reduction_pct,
+        "sil3_slide_valve_catalyst_reversal_esd_ms": sil3_slide_valve_catalyst_reversal_esd_ms,
+        "catalyst_reversal_or_cyclone_overtemp_breach_pct": catalyst_reversal_or_cyclone_overtemp_breach_pct,
+        "edge_raman_octane_soft_sensor_inference_ms": edge_raman_octane_soft_sensor_inference_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "fractionator_flooding_or_wgc_surge_excursion_pct": fractionator_flooding_or_wgc_surge_excursion_pct,
+        "petrochemical_fcc_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

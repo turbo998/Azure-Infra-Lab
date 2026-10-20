@@ -479,6 +479,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(64)">65. 增强型地热系统 EGS 水力压裂 THM-PINN + 诱发微震红绿灯 TLS 泄压与 SIL-3 井口联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(65)">66. 模块化小型核反应堆 SMR 堆芯中子学 PINN + 氙振荡阻尼与 IEEE 603 / Class 1E RTS 保护池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(66)">67. 地下盾构机 TBM 超前探地雷达 GPR 全波形反演 + 土压平衡 EPB MPC 与 ISO 19296 / SIL-3 扭矩沉降联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(67)">68. 石化炼油流化催化裂化 FCC 反再烧焦 MPC + 在线 Raman 辛烷值软测量与 API RP 554 / SIL-3 滑阀防倒流联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1989,6 +1990,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 67 · PETROCHEMICAL REFINERY FLUID CATALYTIC CRACKING (FCC) MPC, ONLINE NIR/RAMAN OCTANE SOFT-SENSOR &amp; API RP 554 / SIL-3 ESD SIZER</span>
+    <h2>自主石化炼油流化催化裂化（FCC）反再耦合 MPC、在线近红外/拉曼（NIR/Raman）辛烷值软测量与 API RP 554 / IEC 61511 SIL-3 滑阀防倒流联锁测算器 (Chapter 72 · Bilingual)</h2>
+    <div class="sub">量化在提升管反应-再生滑阀与主分馏塔控制回路规模 <code>8 – 64 回路</code>（<code>2 – 16 套</code> 千万吨级重油催化裂化反再联合装置）下，启用 <code>提升管反应器-再生器碳平衡/热平衡多变量模型预测控制 (MPC) + 在线近红外/拉曼 (NIR/Raman) 汽油辛烷值 (RON) 软测量</code>（高辛烷值汽油与丙烯/低碳烯烃选择性收率提升 <code>+18.7%</code>、再生器稀相尾燃温升与烟气 SOx/NOx 排放降低 <code>-31.4%</code>、主分馏塔冲塔液泛或富气压缩机喘振越界率 <code>0.0%</code>）、<code>API RP 554 与 IEC 61511 SIL-3 再生/待生滑阀正差压 (&gt;= 15.0 kPa 防倒流) 及旋风分离器二次燃烧 (&lt;= 760 °C) SIS 硬联锁</code>（<code>1.6 ms</code> 校验，<code>0.0%</code> 催化剂倒流油气爆燃与旋风筒超温烧毁）以及炼厂抗暴控制室 <code>Azure Local + IoT Operations</code> <code>在线拉曼光谱化学计量学与旋风筒料腿声波</code> 边缘软测量（<code>3.8 ms</code> 响应，削减 <code>97.6%</code> 炼厂广域网回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 提升管反应-再生滑阀与分馏塔回路数量 (FCC Riser-Regenerator &amp; Fractionator Loops): <strong id="lbl_fcc_loops" style="color:var(--teal)">16</strong> Loops</label>
+          <input type="range" id="rng_fcc_loops" min="8" max="64" step="8" value="16" oninput="runPetroFccLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 反再热平衡 MPC、在线 Raman 软测量与 API RP 554 / SIL-3 联锁模式 (FCC Refinery &amp; SIL-3 Mode)</label>
+          <select id="sel_fcc_mode" onchange="runPetroFccLab()">
+            <option value="fcc_regenerator_mpc_raman_sil3_esd_edge" selected>反再耦合 MPC + 在线 Raman 软测量 (+18.7% 汽油烯烃收率 / -31.4% 尾燃) + SIL-3 滑阀防倒流联锁 (0% 倒流/超温) + 炼厂边缘 (推荐)</option>
+            <option value="unconstrained_pid_manual_sampling_cloud">传统反模式：单回路 PID + 离线化验 (0 增益) + 无 SIL-3 滑阀差压门控 (1.7% 催化剂倒流/旋风筒超温) + 原始光谱流上云 (3.5% 冲塔/喘振)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="fccOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3165,6 +3188,23 @@ resource tbmGeomechanicsPool 'Microsoft.ContainerService/managedClusters/agentPo
       'aksclaw.io/on-shield-gpr-acoustic-emission-edge': 'enabled-4.2ms-97.5pct-leaky-feeder-wan-cut'
     }
   }
+}`,
+`// =============================================================================
+// 68. AKSClaw Petrochemical Refinery Fluid Catalytic Cracking (FCC) & SIL-3 Pool (Bicep)
+// =============================================================================
+resource petroFccSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'petrofccpool'
+  properties: {
+    count: 2
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'petrochemical-fcc-refinery-sil3-esd-agent'
+      'aksclaw.io/riser-regenerator-mpc-raman-ron': 'enabled-18.7pct-gasoline-olefin-yield-31.4pct-afterburn-cut'
+      'aksclaw.io/api-rp554-sil3-slide-valve-dp-esd': 'enforced-1.6ms-15kpa-anti-reversal-760C-cyclone-guard'
+      'aksclaw.io/nir-raman-chemometrics-dipleg-edge': 'enabled-3.8ms-97.6pct-refinery-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3332,6 +3372,30 @@ runSubseaObservatoryLab();
 runGeothermalEgsLab();
 runSmrNuclearLab();
 runTbmTunnelLab();
+runPetroFccLab();
+
+function runPetroFccLab() {
+  const loops = parseInt(document.getElementById('rng_fcc_loops').value, 10);
+  const mode = document.getElementById('sel_fcc_mode').value;
+  document.getElementById('lbl_fcc_loops').textContent = loops.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(loops / 8));
+  const units = Math.max(2, Math.floor(loops / 4));
+  const ok = mode === 'fcc_regenerator_mpc_raman_sil3_esd_edge';
+  const mpcStr = ok ? "提升管-再生器热平衡 MPC + 在线 Raman 辛烷值软测量 · 汽油与低碳烯烃收率 +18.7% · 再生尾燃与烟气排放 -31.4%" : "单回路定值 PID 与人工离线色谱化验 · 0.0% 收率与尾燃增益 (重油残炭波动下 3.5% 主分馏塔冲塔液泛或富气压缩机喘振)";
+  const sil3Str = ok ? "1.6 ms API RP 554 / SIL-3 再生/待生滑阀正差压 (>=15.0kPa) 与旋风筒 (<=760°C) 联锁 · 0.0% 催化剂倒流/超温违例" : "无 SIL-3 滑阀正差压与二次燃烧硬联锁 (380.0 ms 云端滞后) · 1.7% 催化剂倒流油气互窜与旋风分离器超温烧毁风险";
+  const edgeStr = ok ? "3.8 ms 炼厂控制室 Azure Local 在线 NIR/Raman 光谱化学计量学与翼阀声波边缘软测量 (-97.6% 广域网带宽) · 0.0% 冲塔/喘振" : "1,330.0 ms 原始 2,048 通道全光谱流上云 · 拥塞厂区专网且错过主分馏塔热平衡前馈调节窗口";
+
+  document.getElementById('fccOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.7% 滑阀差压反转催化剂倒流/旋风筒超温风险 · 3.5% 主分馏塔液泛或富气压缩机喘振'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${units} 套催化裂化反再装置 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>炼厂抗暴控制室 Azure Local + IoT Operations 在线 NIR/Raman 光谱与旋风筒料腿声波边缘软测量</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runTbmTunnelLab() {
   const loops = parseInt(document.getElementById('rng_tbm_loops').value, 10);

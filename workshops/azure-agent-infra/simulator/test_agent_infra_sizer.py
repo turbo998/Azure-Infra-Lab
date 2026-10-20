@@ -73,6 +73,7 @@ from agent_infra_sizer import (
     simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
     simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
     simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
+    simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -193,6 +194,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-geothermal-egs-induced-seismicity-turbine-pool.bicep",
             "aksclaw-smr-nuclear-neutronics-class1e-rts-pool.bicep",
             "aksclaw-tbm-tunnel-boring-geomechanics-sil3-pool.bicep",
+            "aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1242,6 +1244,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["tail_void_grout_or_face_blowout_excursion_pct"], 3.5)
         self.assertTrue(gov["tbm_geomechanics_slo_met"])
         self.assertFalse(raw["tbm_geomechanics_slo_met"])
+
+    def test_petrochemical_fcc_refinery_sil3_esd_sandbox(self) -> None:
+        gov = simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(16, "fcc_regenerator_mpc_raman_sil3_esd_edge")
+        raw = simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(16, "unconstrained_pid_manual_sampling_cloud")
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_fcc_reactor_regenerator_units"], 4)
+        self.assertEqual(gov["gasoline_light_olefin_yield_gain_pct"], 18.7)
+        self.assertEqual(gov["regenerator_afterburn_flue_gas_reduction_pct"], 31.4)
+        self.assertEqual(gov["sil3_slide_valve_catalyst_reversal_esd_ms"], 1.6)
+        self.assertEqual(gov["catalyst_reversal_or_cyclone_overtemp_breach_pct"], 0.0)
+        self.assertGreater(raw["catalyst_reversal_or_cyclone_overtemp_breach_pct"], 1.6)
+        self.assertEqual(gov["edge_raman_octane_soft_sensor_inference_ms"], 3.8)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 97.6)
+        self.assertEqual(gov["fractionator_flooding_or_wgc_surge_excursion_pct"], 0.0)
+        self.assertGreater(raw["fractionator_flooding_or_wgc_surge_excursion_pct"], 3.4)
+        self.assertTrue(gov["petrochemical_fcc_slo_met"])
+        self.assertFalse(raw["petrochemical_fcc_slo_met"])
 
 
 if __name__ == "__main__":

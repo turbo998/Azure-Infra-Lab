@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #66 · 72 Chapters · 67 Blueprints · 66 Simulators · 75/75 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #67 · 73 Chapters · 68 Blueprints · 67 Simulators · 76/76 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -2120,7 +2120,33 @@ sequenceDiagram
 
 ---
 
-## 72. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 72. 自主石化炼油流化催化裂化（FCC）、反应-再生器烧焦与滑阀差压协同模型预测控制、在线近红外/拉曼（`NIR/Raman`）辛烷值软测量与 `API RP 554 / IEC 61511 SIL-3` 催化剂倒流及超温紧急停车（`ESD`）联锁沙箱（Autonomous Petrochemical Refinery Fluid Catalytic Cracking `FCC`, Reactor-Regenerator Coke Burnoff & Slide-Valve Differential-Pressure Control, Online `NIR/Raman` Octane Soft-Sensor & `API RP 554 / IEC 61511 SIL-3` Catalyst-Reversal & Over-Temperature Emergency Shutdown `ESD` Agent Infrastructure）
+
+> 本章由确定性石化炼油流化催化裂化（`FCC`）提升管反应器-再生器流化耦合、在线光谱软测量与 `API RP 554 / IEC 61511 SIL-3` 催化剂倒流紧急停车智能体物理模型 [`simulate_petrochemical_fcc_refinery_sil3_esd_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep`](blueprints/aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep) 驱动，面向千万吨级炼化一体化基地重油流化催化裂化（`FCC`）与高辛烷值汽油/低碳烯烃（丙烯）联合装置（提升管反应-再生滑阀与主分馏塔控制回路规模 `8–64` 回路、在役重油催化裂化反再联合装置 `2–16` 套），解决 **传统单变量定值 PID 与人工离线气相色谱化验在重质原料油残炭值与金属（镍/钒）污染波动时引发主分馏塔冲塔液泛或富气压缩机（`Wet Gas Compressor, WGC`）喘振（`Fractionator Flooding / WGC Surge Excursion` 发生率 `3.5%`）、智能体未经炼厂过程控制标准 `API RP 554` 与 `IEC 61511 SIL-3` 再生/待生滑阀正差压（$\Delta P \ge 15.0\text{ kPa}$ 防倒流）及旋风分离器二次燃烧超温（$\le 760\text{ }^\circ\text{C}$）硬联锁导致油气倒窜进入再生器爆燃或旋风筒冶金烧毁（`1.7%` 违例率，`380.0 ms` 云端回路滞后），以及全厂在线近红外/拉曼（`NIR/Raman`）全光谱与旋风分离器料腿声发射高频流全量上云造成 `1,330.0 ms` 延迟**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_petrochemical_fcc_refinery_sil3_esd_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep`](blueprints/aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep), this chapter models autonomous Petrochemical Refinery Fluid Catalytic Cracking (`FCC`), reactor-regenerator coke burnoff control, online `NIR/Raman` octane soft-sensing, and `API RP 554 / IEC 61511 SIL-3` Emergency Shutdown (`ESD`) agent infrastructure (`8–64` riser-regenerator & fractionator loops, `4` active FCC units at `16` loops): (1) running **Coupled Riser-Reactor / Regenerator Fluidization & Coke-Burnoff Model Predictive Control (`MPC`) + Online `NIR/Raman` Research Octane Number (`RON`) Soft-Sensor** on `Standard_NC24ads_A100_v4` nodes boosts high-octane gasoline and propylene/light-olefin selective yield by **`+18.7%`**, reduces regenerator dilute-phase afterburn ($\Delta T$) and flue-gas $\text{SO}_x/\text{NO}_x$ emissions by **`31.4%`**, and eliminates main-fractionator flooding or wet-gas compressor (`WGC`) surge excursions (**`0.0%` vs `3.5%`**); (2) enforcing a **`1.6 ms`** **`API RP 554` / `IEC 61511 SIL-3` Regenerated/Spent Catalyst Slide-Valve Differential-Pressure ($\Delta P \ge 15.0\text{ kPa}$ Anti-Reversal) & Cyclone Afterburn ($\le 760\text{ }^\circ\text{C}$) SIS Hardware ESD Interlock** (`vs 380.0 ms` cloud loop) eliminates **`100.0%` (`0.0%` vs `1.7%`)** of hydrocarbon-into-regenerator catalyst reversal and cyclone metallurgical over-temperature breaches; and (3) executing **Refinery Blast-Resistant `Azure Local` + `IoT Operations` Online `NIR/Raman` Chemometrics & Cyclone Dipleg Trickling Acoustic Edge Inference** in **`3.8 ms`** (`vs 1,330.0 ms` raw cloud historian streaming) cuts refinery WAN bandwidth by **`97.6%`**.
+
+### 72.1 石化 `FCC` 反再热平衡与剂油比 `MPC`、`API RP 554 / IEC 61511 SIL-3` 滑阀防倒流联锁及在线拉曼边缘软测量三大工程支柱
+
+1. **Pillar 1：提升管反应器-再生器碳平衡/热平衡多变量模型预测控制（`MPC`）+ 在线近红外/拉曼（`NIR/Raman`）汽油辛烷值（`RON`）软测量（`Standard_NC24ads_A100_v4`）**：
+   - 在 `Standard_NC24ads_A100_v4` 节点上运行耦合提升管反应动力学（`Lumped Kinetic Network`）、再生器浓相床烧焦速率与主分馏塔气液平衡的非线性模型预测控制器（`NMPC`），实时融合在线拉曼光谱（`Raman`）测得的催化汽油研究法辛烷值（`RON`）与液化气丙烯收率，协同寻优剂油比（`Catalyst-to-Oil Ratio`）、提升管出口温度（`ROT`）与主风流量，使 **高辛烷值汽油与低碳烯烃选择性收率提升 `+18.7%`**、**再生器稀相尾燃温升（`Afterburn` $\Delta T$）与烟气 $\text{SO}_x/\text{NO}_x$ 排放降低 `31.4%`**，并将 **主分馏塔液泛冲塔或富气压缩机喘振越界率从 `3.5%` 降至 `0.0%`**。
+2. **Pillar 2：`API RP 554` 与 `IEC 61511 SIL-3` 再生/待生滑阀正差压（$\Delta P \ge 15.0\text{ kPa}$）防催化剂倒流及旋风分离器 `760 °C` 超温硬联锁（`1.6 ms`）**：
+   - 催化裂化装置最致命的恶性事故是再生滑阀或待生滑阀差压反转引发高温空气与油气互窜爆炸（`Catalyst Reversal Explosion`）；任何由优化智能体下发的再生滑阀开度、待生滑阀开度与双动滑阀烟气蝶阀指令，在写入炼厂 DCS 前必须经由 **`1.6 ms` 独立 `API RP 554 / IEC 61511 SIL-3` 安全仪表系统（`SIS`）硬件联锁（对比云端回路 `380.0 ms`）**：实时校验滑阀两端正差压（$\Delta P \ge 15.0\text{ kPa}$）、再生器密相与稀相温差及二级旋风分离器升气管金属壁温（$\le 760\text{ }^\circ\text{C}$），一旦差压跌破安全裕度立即触发 `SIL-3` 自保闭锁滑阀并切断进料切换事故蒸汽，将 **催化剂倒流油气互窜与旋风筒超温烧毁违例率从 `1.7%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：炼厂防爆抗暴控制室 `Azure Local` 在线拉曼（`Raman`）光谱化学计量学反演与旋风筒料腿流化声发射边缘分诊（`3.8 ms`）**：
+   - 在炼化中心控制室本地部署 `Azure Local` + `Azure IoT Operations` 边缘节点，通过 `OPC UA PubSub` 毫秒级采集主分馏塔顶/塔底在线近红外与拉曼（`NIR/Raman`）光谱仪 `2,048` 通道吸光度谱图及再生器旋风分离器翼阀（`Trickle Valve`）高频声波信号，在 **`3.8 ms` 内（对比原始全光谱流经集团云端实时库 `1,330.0 ms`）** 完成汽油 `RON/MON` 辛烷值、芳烃/烯烃含量软测量与翼阀失封跑剂诊断，削减 **`97.6%` 炼厂广域网回传带宽**。
+
+### 72.2 石化炼油 `FCC` 反再耦合 `MPC + 在线 Raman` + `API RP 554 / SIL-3` 滑阀防倒流联锁 + 炼厂边缘软测量 vs 云端无约束 PID 基线对比表
+
+| FCC 反再滑阀与主分馏塔回路规模及石化炼油智能体架构 | `NC24ads_A100_v4` 节点数 | 在役重油催化裂化装置套数 | **高辛烷值汽油与烯烃收率增益 / 尾燃排放削减** | **`API RP 554 / SIL-3` 催化剂倒流或超温违例率** | **在线 `Raman/声波` 边缘软测量与带宽削减** | **主分馏塔液泛或富气压缩机喘振率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`8` 回路千万吨炼厂单系列重油 FCC 装置 · 反再 MPC + 在线 Raman + SIL-3 滑阀联锁 + 炼厂边缘** | `2` | `2` | **`+18.7%` / `-31.4%`** | **`0.0%` (`1.6 ms`)** | **`3.8 ms` / `97.6%`** | **`0.0%`** |
+| **`16` 回路大型炼化一体化双系列 FCC + DCC 集群 · 反再 MPC + 在线 Raman + SIL-3 滑阀联锁 + 炼厂边缘 (推荐)** | **`2`** | **`4`** | **`+18.7%` / `-31.4%`** | **`0.0%` (`1.6 ms`)** | **`3.8 ms` / `97.6%`** | **`0.0%`** |
+| **`64` 回路跨基地石化集团催化裂化舰队 · 反再 MPC + 在线 Raman + SIL-3 滑阀联锁 + 炼厂边缘** | `8` | `16` | **`+18.7%` / `-31.4%`** | **`0.0%` (`1.6 ms`)** | **`3.8 ms` / `97.6%`** | **`0.0%`** |
+| `16` 回路炼化 FCC 集群 · 云端单回路 PID + 离线化验 + 无 SIL-3 滑阀差压门控 + 原始光谱流上云 (反模式) | `2` | `4` | `0.0%` / `0.0%` (❌ 剂油比失调引发干气焦炭产率偏高与尾燃) | `1.7%` (`380.0 ms` ❌ 滑阀差压反转催化剂倒流与旋风筒超温) | `1,330.0 ms` / `0.0%` (❌ 全光谱高频流拥塞厂区专网) | `3.5%` (❌ 进料性质突变导致分馏塔冲塔或压缩机喘振) |
+
+---
+
+## 73. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

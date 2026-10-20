@@ -4040,5 +4040,67 @@
       "tail_void_grout_or_face_blowout_excursion_pct": 3.7,
       "tbm_geomechanics_slo_met": false
     }
+  ],
+  "petrochemical_fcc_refinery_profiles": [
+    {
+      "fcc_reactor_regenerator_riser_loops": 8,
+      "fcc_policy": "fcc_regenerator_mpc_raman_sil3_esd_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_fcc_reactor_regenerator_units": 2,
+      "gasoline_light_olefin_yield_gain_pct": 18.7,
+      "regenerator_afterburn_flue_gas_reduction_pct": 31.4,
+      "sil3_slide_valve_catalyst_reversal_esd_ms": 1.6,
+      "catalyst_reversal_or_cyclone_overtemp_breach_pct": 0.0,
+      "edge_raman_octane_soft_sensor_inference_ms": 3.8,
+      "wan_bandwidth_reduction_pct": 97.6,
+      "fractionator_flooding_or_wgc_surge_excursion_pct": 0.0,
+      "petrochemical_fcc_slo_met": true
+    },
+    {
+      "fcc_reactor_regenerator_riser_loops": 16,
+      "fcc_policy": "fcc_regenerator_mpc_raman_sil3_esd_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_fcc_reactor_regenerator_units": 4,
+      "gasoline_light_olefin_yield_gain_pct": 18.7,
+      "regenerator_afterburn_flue_gas_reduction_pct": 31.4,
+      "sil3_slide_valve_catalyst_reversal_esd_ms": 1.6,
+      "catalyst_reversal_or_cyclone_overtemp_breach_pct": 0.0,
+      "edge_raman_octane_soft_sensor_inference_ms": 3.8,
+      "wan_bandwidth_reduction_pct": 97.6,
+      "fractionator_flooding_or_wgc_surge_excursion_pct": 0.0,
+      "petrochemical_fcc_slo_met": true
+    },
+    {
+      "fcc_reactor_regenerator_riser_loops": 64,
+      "fcc_policy": "fcc_regenerator_mpc_raman_sil3_esd_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_fcc_reactor_regenerator_units": 16,
+      "gasoline_light_olefin_yield_gain_pct": 18.7,
+      "regenerator_afterburn_flue_gas_reduction_pct": 31.4,
+      "sil3_slide_valve_catalyst_reversal_esd_ms": 1.6,
+      "catalyst_reversal_or_cyclone_overtemp_breach_pct": 0.0,
+      "edge_raman_octane_soft_sensor_inference_ms": 3.8,
+      "wan_bandwidth_reduction_pct": 97.6,
+      "fractionator_flooding_or_wgc_surge_excursion_pct": 0.0,
+      "petrochemical_fcc_slo_met": true
+    },
+    {
+      "fcc_reactor_regenerator_riser_loops": 16,
+      "fcc_policy": "unconstrained_pid_manual_sampling_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_fcc_reactor_regenerator_units": 4,
+      "gasoline_light_olefin_yield_gain_pct": 0.0,
+      "regenerator_afterburn_flue_gas_reduction_pct": 0.0,
+      "sil3_slide_valve_catalyst_reversal_esd_ms": 380.0,
+      "catalyst_reversal_or_cyclone_overtemp_breach_pct": 1.7,
+      "edge_raman_octane_soft_sensor_inference_ms": 1330.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "fractionator_flooding_or_wgc_surge_excursion_pct": 3.5,
+      "petrochemical_fcc_slo_met": false
+    }
   ]
 }

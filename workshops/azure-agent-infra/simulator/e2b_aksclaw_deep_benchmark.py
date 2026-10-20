@@ -79,6 +79,7 @@ from agent_infra_sizer import (
     simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
     simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
     simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
+    simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -711,6 +712,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(64, "tbm_gpr_fwi_epb_mpc_sil3_plc_edge"),
         simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox(16, "cloud_only_unverified_epb_raw_gpr_telemetry"),
     ]
+    petrochemical_fcc_refinery_profiles: List[Dict[str, object]] = [
+        simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(8, "fcc_regenerator_mpc_raman_sil3_esd_edge"),
+        simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(16, "fcc_regenerator_mpc_raman_sil3_esd_edge"),
+        simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(64, "fcc_regenerator_mpc_raman_sil3_esd_edge"),
+        simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(16, "unconstrained_pid_manual_sampling_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -778,6 +785,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "geothermal_egs_seismicity_profiles": geothermal_egs_seismicity_profiles,
         "smr_nuclear_neutronics_profiles": smr_nuclear_neutronics_profiles,
         "tbm_tunnel_geomechanics_profiles": tbm_tunnel_geomechanics_profiles,
+        "petrochemical_fcc_refinery_profiles": petrochemical_fcc_refinery_profiles,
     }
 
 
