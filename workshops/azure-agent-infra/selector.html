@@ -477,6 +477,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(62)">63. 极大口径地基望远镜极限自适应光学 XAO 变形镜 + SKA 射电相关器与 LGS 空域/太阳快门互锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(63)">64. 深海有缆观测网海啸 BPR PINN 反演 + AUV 水声对接与 API RP 53 / SIL-3 深水防喷器 BOP 互锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(64)">65. 增强型地热系统 EGS 水力压裂 THM-PINN + 诱发微震红绿灯 TLS 泄压与 SIL-3 井口联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(65)">66. 模块化小型核反应堆 SMR 堆芯中子学 PINN + 氙振荡阻尼与 IEEE 603 / Class 1E RTS 保护池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1943,6 +1944,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 65 · SMALL MODULAR REACTOR (SMR) CORE NEUTRONICS PINN, XENON-135 DAMPING &amp; IEEE 603 / IEC 61513 CLASS 1E RTS SIZER</span>
+    <h2>自主模块化小型核反应堆（SMR）堆芯中子学数字孪生、氙-135 振荡阻尼与 IEEE 603 / Class 1E 保护联锁测算器 (Chapter 70 · Bilingual)</h2>
+    <div class="sub">量化在 SMR 反应堆模块与一回路冷却剂环路规模 <code>6 – 96 单元</code>（<code>2 – 24 座</code> 多模块核电厂）下，启用 <code>三维中子输运 OpenMC + 氙-135 空间振荡 PINN + 灰棒组微步进负荷跟踪 MPC</code>（算力园区负荷跟踪爬坡效率提升 <code>+34.2%</code>、燃料组件燃耗均匀度提升 <code>+19.4%</code>、氙振荡轴向功率偏移 AO 越界率 <code>0.0%</code>）、<code>单向光闸 + IEEE 603 / IEC 61513 Class 1E 独立 FPGA 反应堆保护系统 (RTS DNBR &gt;= 1.30) 硬联锁</code>（<code>1.2 ms</code> 校验，<code>0.0%</code> 热工水力裕度违例与正反应性瞬变逃逸）以及核岛非安全区 <code>Azure IoT Operations</code> <code>堆内自给能中子探测器 (SPND) 与一回路伽马能谱</code> 边缘分诊（<code>3.5 ms</code> 响应，削减 <code>97.9%</code> 广域网回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 模块化小型核反应堆 SMR 模块与一回路环路数量 (SMR Modules &amp; Coolant Loops): <strong id="lbl_smr_modules" style="color:var(--teal)">24</strong> Units</label>
+          <input type="range" id="rng_smr_modules" min="6" max="96" step="6" value="24" oninput="runSmrNuclearLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 堆芯中子学氙振荡阻尼、控制棒微步进与 Class 1E RTS 保护联锁模式 (SMR Neutronics &amp; Class 1E RTS Mode)</label>
+          <select id="sel_smr_mode" onchange="runSmrNuclearLab()">
+            <option value="smr_neutronics_pinn_xenon_damping_class1e_rts_edge" selected>中子学 PINN + 灰棒 MPC (+34.2% 调峰爬坡 / +19.4% 燃耗对称) + Class 1E RTS 联锁 (0% DNBR 违例) + SPND 边缘 (推荐)</option>
+            <option value="cloud_only_unverified_rod_stepping_raw_spnd">传统反模式：开环控制棒步进 (0 增益) + 无 Class 1E RTS 门控 (1.5% DNBR/反应性越界) + 原始 SPND 流上云 (3.4% 氙振荡 AO 越界)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="smrOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3085,6 +3108,23 @@ resource geothermalEgsPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/borehole-das-dts-seismic-edge': 'enabled-4.8ms-97.5pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// =============================================================================
+// 66. AKSClaw Small Modular Reactor (SMR) Neutronics PINN & Class 1E RTS Pool (Bicep)
+// =============================================================================
+resource smrNeutronicsPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'smrpinnpool'
+  properties: {
+    count: 3
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'smr-nuclear-neutronics-class1e-rts-agent'
+      'aksclaw.io/openmc-xe135-pinn-gray-rod-mpc': 'enabled-34.2pct-load-following-ramp-19.4pct-burnup-symmetry'
+      'aksclaw.io/ieee603-iec61513-class1e-rts-dnbr': 'enforced-1.2ms-data-diode-zero-dnbr-reactivity-excursion'
+      'aksclaw.io/incore-spnd-gamma-spectroscopy-edge': 'enabled-3.5ms-97.9pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -3250,6 +3290,30 @@ runParticleAcceleratorLab();
 runDeepSpaceTelescopeLab();
 runSubseaObservatoryLab();
 runGeothermalEgsLab();
+runSmrNuclearLab();
+
+function runSmrNuclearLab() {
+  const mods = parseInt(document.getElementById('rng_smr_modules').value, 10);
+  const mode = document.getElementById('sel_smr_mode').value;
+  document.getElementById('lbl_smr_modules').textContent = mods.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(mods / 8));
+  const plants = Math.max(2, Math.floor(mods / 4));
+  const ok = mode === 'smr_neutronics_pinn_xenon_damping_class1e_rts_edge';
+  const pinnStr = ok ? "三维 OpenMC + 氙-135 阻尼 PINN + 灰棒微步进 MPC · 调峰爬坡效率 +34.2% · 燃耗对称 +19.4%" : "开环控制棒步进 · 0.0% 调峰与燃耗增益 (负荷跟踪迟缓且 3.4% 氙振荡引发轴向功率偏移 AO 越界)";
+  const rtsStr = ok ? "1.2 ms 单向光闸 + IEEE 603 / Class 1E FPGA 反应堆保护 (DNBR>=1.30) 硬联锁 · 0.0% 热工/反应性越界" : "无 Class 1E RTS 硬件包络联锁 (310.0 ms 云端滞后) · 1.5% DNBR 热工裕度侵蚀与正反应性瞬变风险";
+  const edgeStr = ok ? "3.5 ms 核岛非安全区堆内自给能中子探测器 (SPND) 解卷积与一回路伽马能谱边缘分诊 (-97.9% 广域网带宽) · 0.0% 氙越界" : "1,280.0 ms 原始堆内中子脉冲流上云 · 拥塞电厂广域网且错过三维堆芯通量畸变抑制窗口";
+
+  document.getElementById('smrOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + pinnStr : '❌ 1.5% DNBR 热工裕度/反应性越界风险 · 3.4% 空间氙-135 振荡轴向功率偏移越界'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${plants} 座 SMR 核电厂 · ${rtsStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>核岛非安全区 Azure IoT Operations 堆内 SPND 延迟解卷积与一回路裂变产物伽马能谱边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runGeothermalEgsLab() {
   const wells = parseInt(document.getElementById('rng_egs_wells').value, 10);

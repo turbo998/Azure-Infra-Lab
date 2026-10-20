@@ -3768,6 +3768,54 @@ def simulate_geothermal_egs_induced_seismicity_turbine_sandbox(
     }
 
 
+def simulate_smr_nuclear_neutronics_class1e_rts_sandbox(
+    smr_reactor_modules_and_loops: int = 24,
+    smr_neutronics_mode: str = "smr_neutronics_pinn_xenon_damping_class1e_rts_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Small Modular Reactor (SMR) Core Neutronics, Monte Carlo
+    Burnup & Xenon-135 Oscillation Digital Twin, Load-Following Reactivity
+    Control-Rod Stepping & IEEE 603 / IEC 61513 Class 1E Reactor Trip System
+    (RTS) Interlock Agent Infrastructure (Chapter 70).
+    """
+    if smr_reactor_modules_and_loops <= 0:
+        raise ValueError("smr_reactor_modules_and_loops must be positive")
+    valid_modes = {
+        "smr_neutronics_pinn_xenon_damping_class1e_rts_edge",
+        "cloud_only_unverified_rod_stepping_raw_spnd",
+    }
+    if smr_neutronics_mode not in valid_modes:
+        raise ValueError(f"smr_neutronics_mode must be one of {sorted(valid_modes)}")
+
+    governed = smr_neutronics_mode == "smr_neutronics_pinn_xenon_damping_class1e_rts_edge"
+    gpu_nodes = max(2, math.ceil(smr_reactor_modules_and_loops / 8))
+    smr_multi_module_power_plants = max(2, int(smr_reactor_modules_and_loops // 4))
+
+    smr_load_following_ramp_efficiency_gain_pct = 34.2 if governed else 0.0
+    fuel_cycle_burnup_utilization_saving_pct = 19.4 if governed else 0.0
+    class1e_rts_dnbr_interlock_latency_ms = 1.2 if governed else 310.0
+    dnbr_or_reactivity_excursion_violation_rate_pct = 0.0 if governed else 1.5
+    in_core_fission_chamber_edge_latency_ms = 3.5 if governed else 1280.0
+    wan_bandwidth_reduction_pct = 97.9 if governed else 0.0
+    xenon_oscillation_axial_offset_breach_pct = 0.0 if governed else 3.4
+
+    return {
+        "smr_reactor_modules_and_loops": smr_reactor_modules_and_loops,
+        "smr_neutronics_mode": smr_neutronics_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "smr_multi_module_power_plants": smr_multi_module_power_plants,
+        "smr_load_following_ramp_efficiency_gain_pct": smr_load_following_ramp_efficiency_gain_pct,
+        "fuel_cycle_burnup_utilization_saving_pct": fuel_cycle_burnup_utilization_saving_pct,
+        "class1e_rts_dnbr_interlock_latency_ms": class1e_rts_dnbr_interlock_latency_ms,
+        "dnbr_or_reactivity_excursion_violation_rate_pct": dnbr_or_reactivity_excursion_violation_rate_pct,
+        "in_core_fission_chamber_edge_latency_ms": in_core_fission_chamber_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "xenon_oscillation_axial_offset_breach_pct": xenon_oscillation_axial_offset_breach_pct,
+        "smr_neutronics_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -84,6 +84,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
     simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
+    simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -621,6 +622,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "egs_48_wells": simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
             "egs_192_wells": simulate_geothermal_egs_induced_seismicity_turbine_sandbox(192, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
             "raw_egs_48_wells": simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "cloud_only_unthrottled_injection_telemetry"),
+        },
+        "demo_65_smr_nuclear_neutronics_class1e_rts_sandbox": {
+            "smr_6_modules": simulate_smr_nuclear_neutronics_class1e_rts_sandbox(6, "smr_neutronics_pinn_xenon_damping_class1e_rts_edge"),
+            "smr_24_modules": simulate_smr_nuclear_neutronics_class1e_rts_sandbox(24, "smr_neutronics_pinn_xenon_damping_class1e_rts_edge"),
+            "smr_96_modules": simulate_smr_nuclear_neutronics_class1e_rts_sandbox(96, "smr_neutronics_pinn_xenon_damping_class1e_rts_edge"),
+            "raw_smr_24_modules": simulate_smr_nuclear_neutronics_class1e_rts_sandbox(24, "cloud_only_unverified_rod_stepping_raw_spnd"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

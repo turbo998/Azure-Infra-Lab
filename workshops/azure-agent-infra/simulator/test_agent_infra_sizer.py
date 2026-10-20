@@ -71,6 +71,7 @@ from agent_infra_sizer import (
     simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
     simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
+    simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1204,6 +1205,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["fracture_thermal_short_circuit_breakthrough_pct"], 3.5)
         self.assertTrue(gov["geothermal_egs_slo_met"])
         self.assertFalse(raw["geothermal_egs_slo_met"])
+
+    def test_smr_nuclear_neutronics_class1e_rts_sandbox(self) -> None:
+        gov = simulate_smr_nuclear_neutronics_class1e_rts_sandbox(24, "smr_neutronics_pinn_xenon_damping_class1e_rts_edge")
+        raw = simulate_smr_nuclear_neutronics_class1e_rts_sandbox(24, "cloud_only_unverified_rod_stepping_raw_spnd")
+        self.assertEqual(gov["gpu_nodes"], 3)
+        self.assertEqual(gov["smr_multi_module_power_plants"], 6)
+        self.assertEqual(gov["smr_load_following_ramp_efficiency_gain_pct"], 34.2)
+        self.assertEqual(gov["fuel_cycle_burnup_utilization_saving_pct"], 19.4)
+        self.assertEqual(gov["class1e_rts_dnbr_interlock_latency_ms"], 1.2)
+        self.assertEqual(gov["dnbr_or_reactivity_excursion_violation_rate_pct"], 0.0)
+        self.assertGreater(raw["dnbr_or_reactivity_excursion_violation_rate_pct"], 1.4)
+        self.assertEqual(gov["in_core_fission_chamber_edge_latency_ms"], 3.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 97.9)
+        self.assertEqual(gov["xenon_oscillation_axial_offset_breach_pct"], 0.0)
+        self.assertGreater(raw["xenon_oscillation_axial_offset_breach_pct"], 3.0)
+        self.assertTrue(gov["smr_neutronics_slo_met"])
+        self.assertFalse(raw["smr_neutronics_slo_met"])
 
 
 if __name__ == "__main__":
