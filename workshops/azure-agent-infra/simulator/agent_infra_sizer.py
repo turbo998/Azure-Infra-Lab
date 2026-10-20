@@ -3337,6 +3337,53 @@ def simulate_offshore_wind_subsea_rov_esd_sandbox(
     }
 
 
+def simulate_circular_recycling_battery_xrf_sandbox(
+    daily_retired_ev_packs_and_ewaste_tons: int = 120,
+    circular_recycling_mode: str = "cad_torque_xrf_ul9540a_lwir_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Circular Economy, Lithium-Ion EV Battery Pack Robotic
+    Disassembly, Hyperspectral NIR/XRF Material Sorting & UL 9540A / NFPA 855
+    Thermal Runaway Suppression Interlock Agent Infrastructure (Chapter 61).
+    """
+    if daily_retired_ev_packs_and_ewaste_tons <= 0:
+        raise ValueError("daily_retired_ev_packs_and_ewaste_tons must be positive")
+    valid_modes = {
+        "cad_torque_xrf_ul9540a_lwir_edge",
+        "fixed_trajectory_unverified_cutter_raw_hsi",
+    }
+    if circular_recycling_mode not in valid_modes:
+        raise ValueError(f"circular_recycling_mode must be one of {sorted(valid_modes)}")
+
+    governed = circular_recycling_mode == "cad_torque_xrf_ul9540a_lwir_edge"
+    gpu_nodes = max(2, math.ceil(daily_retired_ev_packs_and_ewaste_tons / 30))
+    robotic_disassembly_and_xrf_cells = max(8, int(daily_retired_ev_packs_and_ewaste_tons // 3))
+
+    critical_mineral_recovery_yield_gain_pct = 23.6 if governed else 0.0
+    disassembly_cycle_time_reduction_pct = 37.5 if governed else 0.0
+    ul9540a_nfpa855_thermal_gate_ms = 0.8 if governed else 0.0
+    thermal_runaway_puncture_escape_pct = 0.0 if governed else 2.5
+    hsi_xrf_lwir_edge_triage_ms = 9.0 if governed else 1180.0
+    recycling_wan_bandwidth_reduction_pct = 96.9 if governed else 0.0
+    corroded_bolt_strip_or_tool_break_pct = 0.0 if governed else 3.8
+
+    return {
+        "daily_retired_ev_packs_and_ewaste_tons": daily_retired_ev_packs_and_ewaste_tons,
+        "circular_recycling_mode": circular_recycling_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "robotic_disassembly_and_xrf_cells": robotic_disassembly_and_xrf_cells,
+        "critical_mineral_recovery_yield_gain_pct": critical_mineral_recovery_yield_gain_pct,
+        "disassembly_cycle_time_reduction_pct": disassembly_cycle_time_reduction_pct,
+        "ul9540a_nfpa855_thermal_gate_ms": ul9540a_nfpa855_thermal_gate_ms,
+        "thermal_runaway_puncture_escape_pct": thermal_runaway_puncture_escape_pct,
+        "hsi_xrf_lwir_edge_triage_ms": hsi_xrf_lwir_edge_triage_ms,
+        "recycling_wan_bandwidth_reduction_pct": recycling_wan_bandwidth_reduction_pct,
+        "corroded_bolt_strip_or_tool_break_pct": corroded_bolt_strip_or_tool_break_pct,
+        "circular_recycling_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

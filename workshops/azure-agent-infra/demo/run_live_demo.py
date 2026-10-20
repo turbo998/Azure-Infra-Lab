@@ -75,6 +75,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_emergency_wildfire_cad_nims_sandbox,
     simulate_offshore_wind_subsea_rov_esd_sandbox,
+    simulate_circular_recycling_battery_xrf_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -558,6 +559,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "offshore_240_km": simulate_offshore_wind_subsea_rov_esd_sandbox(240, "wake_mpc_dnv_sil3_esd_das_edge"),
             "offshore_960_km": simulate_offshore_wind_subsea_rov_esd_sandbox(960, "wake_mpc_dnv_sil3_esd_das_edge"),
             "raw_offshore_240_km": simulate_offshore_wind_subsea_rov_esd_sandbox(240, "greedy_yaw_unchecked_scada_raw_sonar"),
+        },
+        "demo_56_circular_recycling_battery_xrf_sandbox": {
+            "recycling_30_tpd": simulate_circular_recycling_battery_xrf_sandbox(30, "cad_torque_xrf_ul9540a_lwir_edge"),
+            "recycling_120_tpd": simulate_circular_recycling_battery_xrf_sandbox(120, "cad_torque_xrf_ul9540a_lwir_edge"),
+            "recycling_480_tpd": simulate_circular_recycling_battery_xrf_sandbox(480, "cad_torque_xrf_ul9540a_lwir_edge"),
+            "raw_recycling_120_tpd": simulate_circular_recycling_battery_xrf_sandbox(120, "fixed_trajectory_unverified_cutter_raw_hsi"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

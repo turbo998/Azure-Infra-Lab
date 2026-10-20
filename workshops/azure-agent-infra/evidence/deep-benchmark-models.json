@@ -3358,5 +3358,67 @@
       "rov_tether_collision_escape_pct": 2.9,
       "offshore_subsea_slo_met": false
     }
+  ],
+  "circular_recycling_battery_xrf_profiles": [
+    {
+      "daily_retired_ev_packs_and_ewaste_tons": 30,
+      "circular_recycling_mode": "cad_torque_xrf_ul9540a_lwir_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "robotic_disassembly_and_xrf_cells": 10,
+      "critical_mineral_recovery_yield_gain_pct": 23.6,
+      "disassembly_cycle_time_reduction_pct": 37.5,
+      "ul9540a_nfpa855_thermal_gate_ms": 0.8,
+      "thermal_runaway_puncture_escape_pct": 0.0,
+      "hsi_xrf_lwir_edge_triage_ms": 9.0,
+      "recycling_wan_bandwidth_reduction_pct": 96.9,
+      "corroded_bolt_strip_or_tool_break_pct": 0.0,
+      "circular_recycling_slo_met": true
+    },
+    {
+      "daily_retired_ev_packs_and_ewaste_tons": 120,
+      "circular_recycling_mode": "cad_torque_xrf_ul9540a_lwir_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "robotic_disassembly_and_xrf_cells": 40,
+      "critical_mineral_recovery_yield_gain_pct": 23.6,
+      "disassembly_cycle_time_reduction_pct": 37.5,
+      "ul9540a_nfpa855_thermal_gate_ms": 0.8,
+      "thermal_runaway_puncture_escape_pct": 0.0,
+      "hsi_xrf_lwir_edge_triage_ms": 9.0,
+      "recycling_wan_bandwidth_reduction_pct": 96.9,
+      "corroded_bolt_strip_or_tool_break_pct": 0.0,
+      "circular_recycling_slo_met": true
+    },
+    {
+      "daily_retired_ev_packs_and_ewaste_tons": 480,
+      "circular_recycling_mode": "cad_torque_xrf_ul9540a_lwir_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "robotic_disassembly_and_xrf_cells": 160,
+      "critical_mineral_recovery_yield_gain_pct": 23.6,
+      "disassembly_cycle_time_reduction_pct": 37.5,
+      "ul9540a_nfpa855_thermal_gate_ms": 0.8,
+      "thermal_runaway_puncture_escape_pct": 0.0,
+      "hsi_xrf_lwir_edge_triage_ms": 9.0,
+      "recycling_wan_bandwidth_reduction_pct": 96.9,
+      "corroded_bolt_strip_or_tool_break_pct": 0.0,
+      "circular_recycling_slo_met": true
+    },
+    {
+      "daily_retired_ev_packs_and_ewaste_tons": 120,
+      "circular_recycling_mode": "fixed_trajectory_unverified_cutter_raw_hsi",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "robotic_disassembly_and_xrf_cells": 40,
+      "critical_mineral_recovery_yield_gain_pct": 0.0,
+      "disassembly_cycle_time_reduction_pct": 0.0,
+      "ul9540a_nfpa855_thermal_gate_ms": 0.0,
+      "thermal_runaway_puncture_escape_pct": 2.5,
+      "hsi_xrf_lwir_edge_triage_ms": 1180.0,
+      "recycling_wan_bandwidth_reduction_pct": 0.0,
+      "corroded_bolt_strip_or_tool_break_pct": 3.8,
+      "circular_recycling_slo_met": false
+    }
   ]
 }

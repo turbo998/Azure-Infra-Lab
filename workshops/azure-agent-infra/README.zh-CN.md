@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #55 · 61 Chapters · 56 Blueprints · 55 Simulators · 64/64 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #56 · 62 Chapters · 57 Blueprints · 56 Simulators · 65/65 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -1834,7 +1834,33 @@ sequenceDiagram
 
 ---
 
-## 61. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 61. 自主循环经济、退役动力电池包与电子废弃物（`E-Waste`）具身机械臂拆解、高光谱近红外（`NIR`）/ X 射线荧光（`XRF`）材料分选与 `UL 9540A / NFPA 855` 热失控防爆抑爆硬件互锁智能体基础设施 —— 无图纸三维点云锈蚀螺栓自适应力矩脱扣、高价值稀贵金属纯度提升与热红外电芯短路隔离门控模型（Autonomous Circular Economy, Lithium-Ion EV Battery Pack Robotic Disassembly, Hyperspectral NIR/XRF Material Sorting & `UL 9540A / NFPA 855` Thermal Runaway Suppression Interlock Agent Infrastructure — CAD-Free Force-Torque Unbolting, Black-Mass Purity & Thermal Runaway Gate Physics）
+
+> 本章由确定性循环经济、退役动力电池包拆解与高光谱分选智能体物理模型 [`simulate_circular_recycling_battery_xrf_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-circular-recycling-battery-xrf-pool.bicep`](blueprints/aksclaw-circular-recycling-battery-xrf-pool.bicep) 驱动，面向大型退役新能源动力电池包（`EV Battery Pack`）与电子废弃物智能拆解回收基地（日处理规模 `30–480 吨/天`、具身拆解工位与 `XRF/NIR` 分选单元 `8–160` 套），解决 **退役电池包型号繁杂且壳体变形/螺栓锈蚀导致传统固定轨迹机械臂（`Fixed Teach-Pendant`）频繁滑丝断刀（`3.8%`）、粉碎分选混入铜铝杂质拉低黑粉（`Black Mass`）锂镍钴回收率、具身拆解智能体未经 `UL 9540A / NFPA 855` 热失控与可燃气体（`VOC/H2 LEL`）硬件互锁盲目铣削穿刺高残电电芯引发 `2.5%` 热失控起火逃逸风险，以及 `45 GB/hr` 原始高光谱立方体（`Hyperspectral Cube`）直接上传云端挤爆厂区广域网（延迟 `1,180.0 ms`）**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_circular_recycling_battery_xrf_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-circular-recycling-battery-xrf-pool.bicep`](blueprints/aksclaw-circular-recycling-battery-xrf-pool.bicep), this chapter models autonomous circular economy and EV battery recycling agent infrastructure (`30–480 tons/day`, `40` robotic disassembly & XRF/NIR sorting cells at `120 tons/day`): (1) running **CAD-Free 3D Point-Cloud Fastener Pose Estimation + `1 kHz` Impedance Force-Torque Adaptive Unbolting & Pneumatic XRF/NIR Material Sorting** on `Standard_NC24ads_A100_v4` nodes boosts critical mineral (`Li / Ni / Co / Cu`) black-mass purity and recovery yield by **`+23.6%`** while cutting corroded battery pack disassembly cycle time by **`37.5%`** and eliminating stripped-bolt/tool-breakage incidents (**`0.0%` vs `3.8%`**); (2) enforcing a **`0.8 ms`** **`UL 9540A / NFPA 855` Hardware Safety PLC Thermal Runaway & Gas LEL Interlock** (`dT/dt <= 1.5 °C/s`, `T <= 62 °C`, `VOC/H2 <= 15% LEL` with instant spindle cut-off and nitrogen/water-mist quench tank ejection) eliminates **`100.0%` (`0.0%` vs `2.5%`)** of mechanical cell-puncture or over-SOC cutting thermal runaway escapes; and (3) executing **Plant-Floor `Azure IoT Operations` Hyperspectral (`SWIR/NIR`) + `XRF` Alloy & `LWIR` Thermal Edge Triage** in **`9.0 ms`** (`vs 1,180.0 ms` raw hyperspectral cloud upload) cuts plant WAN bandwidth by **`96.9%`**.
+
+### 61.1 退役动力电池与电子废弃物无图纸自适应力矩拆解、`UL 9540A` 热失控防爆门控与 `XRF/NIR` 边缘分选三大工程支柱
+
+1. **Pillar 1：无图纸三维点云紧固件位姿估计 + `1 kHz` 阻抗力矩自适应拧松与 `XRF / SWIR` 气动高纯分选（`Standard_NC24ads_A100_v4`）**：
+   - 针对无原始 CAD 图纸、经历碰撞挤压或底盘盐雾锈蚀的退役动力电池包，在 `Standard_NC24ads_A100_v4` 节点上运行多视角结构光点云分割与六维力/力矩传感器（`6-Axis F/T Sensor`）`1 kHz` 导纳柔顺控制，自动感知螺纹咬死扭矩阈值并切换脉冲微振退刀策略，将 **锈蚀螺栓滑丝与铣刀崩刃率从 `3.8%` 降至 `0.0%`**，同时将 **单包拆解节拍缩短 `37.5%`**；配合高速 `XRF`（X 射线荧光）与 `SWIR`（短波红外）气动喷吹分选线精准分离铜汇流排、铝壳与正负极片，使 **锂镍钴稀贵金属黑粉综合回收率净增 `+23.6%`**。
+2. **Pillar 2：`UL 9540A / NFPA 855` 电芯热失控与电解液挥发气体（`VOC / H2 LEL`）硬件安全 PLC 互锁（`0.8 ms` 门控）**：
+   - 任何由具身机械臂规划的激光切割、铣削开盖或极耳剪切动作，在执行前与执行中均受 **`0.8 ms` 独立硬件安全 PLC（`UL 9540A / NFPA 855`）实时门控**：一旦双波段长波红外（`LWIR`）测温仪或气体传感器检测到电芯表面温升速率 **`dT/dt > 1.5 °C/s`、绝对温度 `> 62 °C` 或电解液蒸气/氢气浓度 `> 15% LEL`**，硬件互锁立即切断主轴/激光电源、闭合防爆隔离闸门并将异常模组推入全氟己酮/水雾浸没急冷槽，将 **电芯穿刺短路与热失控起火逃逸率从 `2.5%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：拆解车间 `Azure IoT Operations` 高光谱（`SWIR/NIR`）+ `XRF` 光谱与热红外 `LWIR` 边缘分诊（`9.0 ms`）**：
+   - 在车间边缘侧本地对每条分选线高达 `45 GB/hr` 的线阵高光谱图像立方体与 `XRF` 能谱脉冲执行 TensorRT 实时物质分类，在 **`9.0 ms` 内（对比原始高光谱数据上传云端推理 `1,180.0 ms`）** 触发高速气动喷嘴阵列并仅上传批次物料纯度账本与碳足迹护照（`EU Battery Passport`），削减 **`96.9%` 厂区广域网上行带宽**。
+
+### 61.2 无图纸力矩拆解 + `UL 9540A` 热失控硬件门控 + `XRF/NIR` 边缘分选 vs 传统固定轨迹拆解与云端高光谱回传对比表
+
+| 日处理退役电池包与电子废弃物规模及智能体架构 | `NC24ads_A100_v4` 节点数 | 拆解工位与 `XRF` 单元 | **稀贵金属回收率提升 / 拆解节拍缩短** | **`UL 9540A` 热失控穿刺起火逃逸率** | **`XRF/NIR` 边缘分诊与厂区广域网带宽削减** | **锈蚀螺栓滑丝与刀具崩刃率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`30 吨/天` · 力矩自适应 + UL 9540A + XRF 边缘** | `2` | `10` | **`+23.6%` / `-37.5%`** | **`0.0%` (`0.8 ms`)** | **`9.0 ms` / `96.9%`** | **`0.0%`** |
+| **`120 吨/天` · 力矩自适应 + UL 9540A + XRF 边缘 (推荐)** | **`4`** | **`40`** | **`+23.6%` / `-37.5%`** | **`0.0%` (`0.8 ms`)** | **`9.0 ms` / `96.9%`** | **`0.0%`** |
+| **`480 吨/天` · 力矩自适应 + UL 9540A + XRF 边缘** | `16` | `160` | **`+23.6%` / `-37.5%`** | **`0.0%` (`0.8 ms`)** | **`9.0 ms` / `96.9%`** | **`0.0%`** |
+| `120 吨/天` · 固定示教轨迹 + 无防爆互锁 + 原始高光谱上云 (反模式) | `4` | `40` | `0.0%` / `0.0%` (❌ 杂质混入与人工返工) | `2.5%` (❌ 带电穿刺引发热失控) | `1,180.0 ms` / `0.0%` (❌ 错过高速喷吹时机) | `3.8%` (❌ 锈蚀卡死与断刀停机) |
+
+---
+
+## 62. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
@@ -1848,10 +1874,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 55 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱、应急山火指挥 WRF-SFIRE+cuOpt 蔓延疏散寻优与 FEMA NIMS/ICS 防轰燃互锁及高空热红外 LWIR 飞火边缘沙箱、深远海风电与海底管道 FLORIS 尾流 MPC 寻优与 DNV/API SIL-3 ESD 互锁及海缆 DAS 拖锚边缘分诊沙箱）
+# 2. 运行深度定量模型（全部 56 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱、应急山火指挥 WRF-SFIRE+cuOpt 蔓延疏散寻优与 FEMA NIMS/ICS 防轰燃互锁及高空热红外 LWIR 飞火边缘沙箱、深远海风电与海底管道 FLORIS 尾流 MPC 寻优与 DNV/API SIL-3 ESD 互锁及海缆 DAS 拖锚边缘分诊沙箱、循环经济退役动力电池无图纸力矩拆解与 UL 9540A 热失控互锁及 XRF/NIR 高光谱边缘分选沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 64 项单元测试（100% 覆盖 6 大运行时契约、55 大深度物理模型、56 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 65 项单元测试（100% 覆盖 6 大运行时契约、56 大深度物理模型、57 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

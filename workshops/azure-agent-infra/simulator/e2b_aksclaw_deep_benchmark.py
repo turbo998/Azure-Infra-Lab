@@ -68,6 +68,7 @@ from agent_infra_sizer import (
     simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_emergency_wildfire_cad_nims_sandbox,
     simulate_offshore_wind_subsea_rov_esd_sandbox,
+    simulate_circular_recycling_battery_xrf_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -634,6 +635,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_offshore_wind_subsea_rov_esd_sandbox(960, "wake_mpc_dnv_sil3_esd_das_edge"),
         simulate_offshore_wind_subsea_rov_esd_sandbox(240, "greedy_yaw_unchecked_scada_raw_sonar"),
     ]
+    circular_recycling_battery_xrf_profiles: List[Dict[str, object]] = [
+        simulate_circular_recycling_battery_xrf_sandbox(30, "cad_torque_xrf_ul9540a_lwir_edge"),
+        simulate_circular_recycling_battery_xrf_sandbox(120, "cad_torque_xrf_ul9540a_lwir_edge"),
+        simulate_circular_recycling_battery_xrf_sandbox(480, "cad_torque_xrf_ul9540a_lwir_edge"),
+        simulate_circular_recycling_battery_xrf_sandbox(120, "fixed_trajectory_unverified_cutter_raw_hsi"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -690,6 +697,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "water_utility_ro_sdwa_profiles": water_utility_ro_sdwa_profiles,
         "emergency_wildfire_cad_nims_profiles": emergency_wildfire_cad_nims_profiles,
         "offshore_wind_subsea_rov_esd_profiles": offshore_wind_subsea_rov_esd_profiles,
+        "circular_recycling_battery_xrf_profiles": circular_recycling_battery_xrf_profiles,
     }
 
 

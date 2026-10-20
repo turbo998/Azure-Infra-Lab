@@ -468,6 +468,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(53)">54. 市政水务与海水淡化 RO 膜结垢 MPC 寻优 + EPA SDWA 余氯浊度硬件互锁与管网水听器边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(54)">55. 应急山火指挥 WRF-SFIRE+cuOpt 疏散调度 + FEMA NIMS/ICS 防轰燃互锁与高空 LWIR 飞火边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(55)">56. 深远海风电与海底管道 FLORIS 尾流 MPC 寻优 + DNV/API SIL-3 ESD 互锁与海缆 DAS 拖锚边缘池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(56)">57. 循环经济退役动力电池无图纸力矩拆解 + UL 9540A 热失控防爆互锁与 XRF/NIR 高光谱边缘分选池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1736,6 +1737,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-blue">TOOL 56 · CIRCULAR ECONOMY EV BATTERY ROBOTIC DISASSEMBLY, UL 9540A THERMAL RUNAWAY GATE &amp; XRF/NIR EDGE SIZER</span>
+    <h2>自主循环经济退役动力电池包机械臂拆解、UL 9540A 热失控互锁与 XRF/NIR 高光谱分选测算器 (Chapter 61 · Bilingual)</h2>
+    <div class="sub">量化在日处理 <code>30 – 480 吨/天</code> 退役动力电池包与电子废弃物（<code>10 – 160 套</code> 具身拆解工位与 <code>XRF/NIR</code> 气动分选单元）规模下，启用 <code>无图纸三维点云位姿估计 + 1 kHz 阻抗力矩自适应拧松与 XRF/SWIR 气动分选</code>（锂镍钴稀贵金属黑粉回收率提升 <code>+23.6%</code>、拆解节拍缩短 <code>37.5%</code>、锈蚀螺栓滑丝断刀率 <code>0.0%</code>）、<code>UL 9540A / NFPA 855</code> 热失控与电解液气体硬件安全 PLC 互锁（<code>0.8 ms</code> 急停浸没，强制 <code>dT/dt &lt;= 1.5°C/s, T &lt;= 62°C</code>，<code>0.0%</code> 穿刺起火逃逸）以及拆解车间高光谱 <code>SWIR/NIR + XRF</code> 边缘分诊（<code>9.0 ms</code> 喷吹，削减 <code>96.9%</code> 厂区广域网带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 日处理退役动力电池包与电子废弃物吨数 (Daily Retired EV Battery &amp; E-Waste Throughput): <strong id="lbl_rec_tpd" style="color:var(--teal)">120</strong> tons/day</label>
+          <input type="range" id="rng_rec_tpd" min="30" max="480" step="30" value="120" oninput="runCircularRecyclingLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 具身力矩拆解、UL 9540A 防爆互锁与高光谱边缘模式 (Circular Disassembly &amp; Sorting Mode)</label>
+          <select id="sel_rec_mode" onchange="runCircularRecyclingLab()">
+            <option value="cad_torque_xrf_ul9540a_lwir_edge" selected>无图纸 1kHz 力矩拆解 (+23.6% 回收/-37.5% 节拍) + UL 9540A 互锁 (0% 起火) + XRF 边缘 (推荐)</option>
+            <option value="fixed_trajectory_unverified_cutter_raw_hsi">传统反模式：固定示教轨迹 (3.8% 断刀) + 无防爆互锁盲切 (2.5% 热失控) + 原始高光谱上云 (延迟 1,180ms)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="recOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2731,6 +2754,22 @@ resource offshoreSubseaPool 'Microsoft.ContainerService/managedClusters/agentPoo
       'aksclaw.io/das-anchor-drag-rov-sonar-edge': 'enabled-14ms-97.2pct-vsat-bandwidth-cut'
     }
   }
+}`,
+`// 57. Autonomous Circular Economy EV Battery Disassembly, XRF/NIR Sorting & UL 9540A Interlock Pool (blueprints/aksclaw-circular-recycling-battery-xrf-pool.bicep)
+resource circularRecyclingPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'recycxrf'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'circular-recycling-battery-xrf-agent'
+      'aksclaw.io/cad-free-torque-xrf-sorting': 'enabled-23.6pct-yield-gain-37.5pct-cycle-time-cut'
+      'aksclaw.io/ul9540a-nfpa855-thermal-interlock': 'enforced-0.8ms-62C-zero-puncture-thermal-runaway'
+      'aksclaw.io/hsi-xrf-lwir-edge-triage': 'enabled-9ms-96.9pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -2887,6 +2926,30 @@ runPrecisionAgLab();
 runWaterUtilityLab();
 runEmergencyWildfireLab();
 runOffshoreSubseaLab();
+runCircularRecyclingLab();
+
+function runCircularRecyclingLab() {
+  const tpd = parseInt(document.getElementById('rng_rec_tpd').value, 10);
+  const mode = document.getElementById('sel_rec_mode').value;
+  document.getElementById('lbl_rec_tpd').textContent = tpd.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(tpd / 30));
+  const cells = Math.max(8, Math.floor(tpd / 3));
+  const ok = mode === 'cad_torque_xrf_ul9540a_lwir_edge';
+  const yieldStr = ok ? "无图纸 1kHz 力矩拆解 + XRF 分选 · 稀贵金属回收 +23.6% · 节拍 -37.5%" : "固定示教轨迹 · 0.0% 回收增益 (3.8% 锈蚀螺栓滑丝与铣刀崩刃停机)";
+  const ulStr = ok ? "0.8 ms UL 9540A / NFPA 855 防爆互锁 (<=62°C) · 0.0% 热失控" : "无 UL 9540A 热失控硬件门控 · 2.5% 带电电芯穿刺短路起火风险";
+  const edgeStr = ok ? "9.0 ms 高光谱 SWIR/NIR + XRF 边缘分诊 (-96.9% 广域网带宽) · 0.0% 断刀" : "1,180.0 ms 45GB/hr 原始高光谱立方体上云 · 错过气动喷吹分选时机";
+
+  document.getElementById('recOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + yieldStr : '❌ 2.5% 电芯穿刺热失控风险 · 3.8% 螺栓滑丝断刀风险'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${cells} 套拆解/XRF 单元 · ${ulStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>拆解车间 Azure IoT Operations 高光谱 XRF/NIR 边缘分诊与力矩柔顺控制</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runOffshoreSubseaLab() {
   const km = parseInt(document.getElementById('rng_sub_km').value, 10);
