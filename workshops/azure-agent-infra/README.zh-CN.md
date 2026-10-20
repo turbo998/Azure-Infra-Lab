@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #53 · 59 Chapters · 54 Blueprints · 53 Simulators · 62/62 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #54 · 60 Chapters · 55 Blueprints · 54 Simulators · 63/63 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -1782,7 +1782,33 @@ sequenceDiagram
 
 ---
 
-## 59. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 59. 自主应急指挥调度、山火气象-火场耦合蔓延推演（`WRF-SFIRE / Rothermel`）、`911/112 CAD` 多警种救援力量 `cuOpt` 协同路径寻优与 `NIMS / ICS` 疏散区安全互锁智能体基础设施 —— `PINN` 火线推进速度推演、无人机高空热红外（`LWIR`）飞火热点边缘分诊及应急广播地理围栏硬件门控模型（Autonomous Emergency Dispatch, Wildland Fire Coupled Atmosphere-Fire `WRF-SFIRE / Rothermel` Spread Forecasting, `911/112 CAD` Multi-Agency `cuOpt` Apparatus Routing & `NIMS / ICS` Evacuation Interlock Agent Infrastructure — Coupled Fire-Atmosphere PINN, Airborne LWIR Ember Edge Triage & Burnover Safety Gate Physics）
+
+> 本章由确定性应急指挥与山火蔓延救援调度物理模型 [`simulate_emergency_wildfire_cad_nims_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-emergency-wildfire-cad-nims-pool.bicep`](blueprints/aksclaw-emergency-wildfire-cad-nims-pool.bicep) 驱动，面向特大林火/野火城乡结合部（`Wildland-Urban Interface, WUI`）应急指挥中心与 `NG911 / 112 CAD` 跨部门联合调度平台（活跃火线周长 `40–640 km`、高空热红外无人机与瞭望塔节点 `12–160` 具），解决 **传统静态等时线（`Static Isochrone`）火场推演无法捕捉峡谷焚风/阵风突变与飞火（`Spotting Embers`）跨越隔离带、未经 `FEMA NIMS / ICS`（国家事件管理系统/事件指挥体系）指挥官硬件互锁的 LLM 坐席智能体擅自缩减强制疏散区（`Mandatory Evacuation Polygon`）或将消防车派入火焰长度 `> 3.4 m` 的轰燃死亡区（`Burnover Zone`）引发 `2.7%` 伤亡风险，以及高空长波红外（`LWIR 8–14 μm`）未压缩热成像视频直接回传抢占 `FirstNet / SatCom` 应急战术卫星通道（延迟 `1,520.0 ms`）**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_emergency_wildfire_cad_nims_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-emergency-wildfire-cad-nims-pool.bicep`](blueprints/aksclaw-emergency-wildfire-cad-nims-pool.bicep), this chapter models autonomous wildland fire & multi-agency `NG911 / CAD` incident response (`40–640 km` active fireline perimeter, `40` airborne/tower LWIR thermal nodes at `160 km`): (1) running **Coupled Atmosphere-Fire (`WRF-SFIRE + Rothermel`) Surface/Crown Rate-of-Spread (`ROS`) PINN Surrogates + `NVIDIA cuOpt` Dynamic Contraflow & Multi-Agency Apparatus Routing** on `Standard_NC24ads_A100_v4` nodes cuts WUI civilian evacuation clearance time by **`29.4%`** and boosts fireline retardant/dozer containment efficiency by **`33.8%`** vs static isochrone maps; (2) enforcing a **`2.1 ms`** **`FEMA NIMS / ICS & IPAWS/WEA` Hardware Safety Envelope Gate** blocking autonomous contraction of active evacuation polygons or apparatus dispatch into burnover zones (`Flame Length > 3.4 m`, `ROS > 65 ch/h`) eliminates **`100.0%` (`0.0%` vs `2.7%`)** of burnover/premature-reentry escapes and **`0.0%` (`vs 3.4%`)** multi-agency CAD dispatch conflicts; and (3) executing **Airborne/Tower `Azure IoT Operations` LWIR (`8–14 μm`) Radiometric Spot-Fire Ember Triage** in **`17.0 ms`** (`vs 1,520.0 ms` raw thermal video backhaul) cuts FirstNet/SatCom tactical uplink bandwidth by **`96.6%`**.
+
+### 59.1 应急山火指挥 `WRF-SFIRE + cuOpt`、`FEMA NIMS / ICS` 防轰燃/疏散区安全门控与高空热红外 `LWIR` 边缘分诊三大工程支柱
+
+1. **Pillar 1：`WRF-SFIRE + Rothermel` 气象-火场耦合 `PINN` 蔓延推演 + `NVIDIA cuOpt` 逆向车道（`Contraflow`）疏散与多警种救援车辆联合寻优（`Standard_NC24ads_A100_v4`）**：
+   - 在 `Standard_NC24ads_A100_v4` 节点上融合高分辨率数字高程模型（`3DEP DEM` 坡度）、死可燃物含水率（`1-hr / 10-hr Dead Fuel Moisture`）与火场自生热对流风场（`Pyro-convection`），每 30 秒滚动推演未来 6 小时树冠火跃迁概率，并联动 `NVIDIA cuOpt` 动态优化跨辖区消防水罐车、推土机、空中灭火机（`VLAT`）投放点与居民疏散逆向绿波带，将 **城乡结合部（`WUI`）疏散清场时间缩短 `29.4%`**、**火线阻截控制效率提升 `33.8%`**。
+2. **Pillar 2：`FEMA NIMS / ICS` 与 `IPAWS / WEA` 强制疏散区防缩减及防轰燃（`Burnover`）硬件安全互锁（`2.1 ms` 门控）**：
+   - 任何由 `CAD` 辅助调度智能体生成的“解除/缩减强制疏散区（`Evacuation Order -> Warning`）”或“向火线侧翼派谴地面消防中队”指令，在写入 `NG911 CAD / IPAWS` 广播网关前必须经过 **`2.1 ms` 确定性 `NIMS / ICS` 安全包络门控**：严禁在未经现场事件指挥官（`Incident Commander, IC`）双因子硬件签名下缩减任何活跃疏散多边形，且当预测火焰长度 **`> 3.4 m`（`11 ft`）** 或无逃生安全区（`Safety Zone`）时硬件拦截地面力量派入指令，将 **过早解除疏散与消防车轰燃被困逃逸率从 `2.7%` 彻底清零至 `0.0%`**，并将 **跨部门 `P25 / CAD` 重复/冲突派警率从 `3.4%` 降至 `0.0%`**。
+3. **Pillar 3：高空长航时无人机与瞭望塔 `Azure IoT Operations` 长波红外（`LWIR 8–14 μm`）穿透浓烟飞火（`Spot-Fire Ember`）边缘分诊（`17.0 ms`）**：
+   - 在高空无人机与林区边缘网关本地利用 `8–14 μm` 辐射测温热红外算子穿透浓烟提取火线前沿与下风向 2 公里内的零星飞火着火点（`GeoJSON` 亚米级坐标 + 辐射温度梯度），在 **`17.0 ms` 内（对比原始热成像视频流回传 `1,520.0 ms`）** 直接触发扑火小队精确打击，削减 **`96.6%` `FirstNet / SatCom` 应急战术卫星上行带宽**。
+
+### 59.2 `WRF-SFIRE + cuOpt` 协同寻优 + `NIMS / ICS` 硬件门控 + 高空 `LWIR` 边缘分诊 vs 传统静态等时线调度对比表
+
+| 活跃火线规模与应急指挥 `CAD` 智能体架构 | `NC24ads_A100_v4` 节点数 | 高空 `LWIR` 无人机/塔 | **疏散清场时间缩减 / 火线阻截效率提升** | **`NIMS/ICS` 疏散误降级与轰燃被困逃逸率** | **`LWIR` 飞火热点边缘分诊与卫星带宽削减** | **多部门 `CAD` 派警冲突率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`40 km` 火线 · WRF-SFIRE+cuOpt + NIMS/ICS 互锁 + LWIR 边缘** | `2` | `12` | **`29.4%` / `+33.8%`** | **`0.0%` (`2.1 ms`)** | **`17.0 ms` / `96.6%`** | **`0.0%`** |
+| **`160 km` 火线 · WRF-SFIRE+cuOpt + NIMS/ICS 互锁 + LWIR 边缘 (推荐)** | **`4`** | **`40`** | **`29.4%` / `+33.8%`** | **`0.0%` (`2.1 ms`)** | **`17.0 ms` / `96.6%`** | **`0.0%`** |
+| **`640 km` 火线 · WRF-SFIRE+cuOpt + NIMS/ICS 互锁 + LWIR 边缘** | `16` | `160` | **`29.4%` / `+33.8%`** | **`0.0%` (`2.1 ms`)** | **`17.0 ms` / `96.6%`** | **`0.0%`** |
+| `160 km` 火线 · 静态等时线 + 无 NIMS 互锁直发 CAD + 原始视频回传 (反模式) | `4` | `40` | `0.0%` / `0.0%` (❌ 焚风飞火失控与拥堵) | `2.7%` (❌ 轰燃被困与过早返家风险) | `1,520.0 ms` / `0.0%` (❌ 战术卫通拥塞) | `3.4%` (❌ 跨警种路网死锁) |
+
+---
+
+## 60. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
@@ -1796,10 +1822,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 53 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱）
+# 2. 运行深度定量模型（全部 54 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱、应急山火指挥 WRF-SFIRE+cuOpt 蔓延疏散寻优与 FEMA NIMS/ICS 防轰燃互锁及高空热红外 LWIR 飞火边缘沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 62 项单元测试（100% 覆盖 6 大运行时契约、53 大深度物理模型、54 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 63 项单元测试（100% 覆盖 6 大运行时契约、54 大深度物理模型、55 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

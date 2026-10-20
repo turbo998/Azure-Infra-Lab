@@ -66,6 +66,7 @@ from agent_infra_sizer import (
     simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_water_utility_ro_scada_sdwa_sandbox,
+    simulate_emergency_wildfire_cad_nims_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -620,6 +621,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_water_utility_ro_scada_sdwa_sandbox(2_000, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
         simulate_water_utility_ro_scada_sdwa_sandbox(500, "fixed_flux_ro_unverified_modbus_raw_hydrophone"),
     ]
+    emergency_wildfire_cad_nims_profiles: List[Dict[str, object]] = [
+        simulate_emergency_wildfire_cad_nims_sandbox(40, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
+        simulate_emergency_wildfire_cad_nims_sandbox(160, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
+        simulate_emergency_wildfire_cad_nims_sandbox(640, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
+        simulate_emergency_wildfire_cad_nims_sandbox(160, "static_isochrone_unverified_cad_raw_lwir"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -674,6 +681,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "smart_building_ashrae_profiles": smart_building_ashrae_profiles,
         "precision_ag_isobus_profiles": precision_ag_isobus_profiles,
         "water_utility_ro_sdwa_profiles": water_utility_ro_sdwa_profiles,
+        "emergency_wildfire_cad_nims_profiles": emergency_wildfire_cad_nims_profiles,
     }
 
 

@@ -73,6 +73,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_water_utility_ro_scada_sdwa_sandbox,
+    simulate_emergency_wildfire_cad_nims_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -544,6 +545,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "water_500_mld": simulate_water_utility_ro_scada_sdwa_sandbox(500, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
             "water_2000_mld": simulate_water_utility_ro_scada_sdwa_sandbox(2_000, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
             "raw_water_500_mld": simulate_water_utility_ro_scada_sdwa_sandbox(500, "fixed_flux_ro_unverified_modbus_raw_hydrophone"),
+        },
+        "demo_54_emergency_wildfire_cad_nims_sandbox": {
+            "wildfire_40_km": simulate_emergency_wildfire_cad_nims_sandbox(40, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
+            "wildfire_160_km": simulate_emergency_wildfire_cad_nims_sandbox(160, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
+            "wildfire_640_km": simulate_emergency_wildfire_cad_nims_sandbox(640, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
+            "raw_wildfire_160_km": simulate_emergency_wildfire_cad_nims_sandbox(160, "static_isochrone_unverified_cad_raw_lwir"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

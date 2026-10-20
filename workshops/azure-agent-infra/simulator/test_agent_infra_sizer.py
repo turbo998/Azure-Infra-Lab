@@ -60,6 +60,7 @@ from agent_infra_sizer import (
     simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
     simulate_water_utility_ro_scada_sdwa_sandbox,
+    simulate_emergency_wildfire_cad_nims_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1000,6 +1001,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["water_hammer_pressure_transient_escape_pct"], 2.5)
         self.assertTrue(gov["water_utility_slo_met"])
         self.assertFalse(raw["water_utility_slo_met"])
+
+    def test_emergency_wildfire_cad_nims_sandbox(self) -> None:
+        gov = simulate_emergency_wildfire_cad_nims_sandbox(160, "wrf_sfire_cuopt_nims_ics_lwir_edge")
+        raw = simulate_emergency_wildfire_cad_nims_sandbox(160, "static_isochrone_unverified_cad_raw_lwir")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["aerial_lwir_drones_and_towers"], 40)
+        self.assertEqual(gov["evacuation_clearance_time_reduction_pct"], 29.4)
+        self.assertEqual(gov["fireline_containment_efficiency_gain_pct"], 33.8)
+        self.assertEqual(gov["nims_ics_interlock_latency_ms"], 2.1)
+        self.assertEqual(gov["premature_evac_downgrade_or_burnover_escape_pct"], 0.0)
+        self.assertGreater(raw["premature_evac_downgrade_or_burnover_escape_pct"], 2.0)
+        self.assertEqual(gov["lwir_thermal_hotspot_edge_triage_ms"], 17.0)
+        self.assertEqual(gov["firstnet_satcom_bandwidth_reduction_pct"], 96.6)
+        self.assertEqual(gov["cad_multi_agency_dispatch_conflict_pct"], 0.0)
+        self.assertGreater(raw["cad_multi_agency_dispatch_conflict_pct"], 3.0)
+        self.assertTrue(gov["emergency_wildfire_slo_met"])
+        self.assertFalse(raw["emergency_wildfire_slo_met"])
 
 
 if __name__ == "__main__":

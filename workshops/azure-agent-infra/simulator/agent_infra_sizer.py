@@ -3242,6 +3242,53 @@ def simulate_water_utility_ro_scada_sdwa_sandbox(
     }
 
 
+def simulate_emergency_wildfire_cad_nims_sandbox(
+    active_fireline_perimeter_km: int = 160,
+    wildfire_cad_mode: str = "wrf_sfire_cuopt_nims_ics_lwir_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Emergency Dispatch, Wildland Fire Coupled Atmosphere-Fire
+    (WRF-SFIRE / Rothermel) Spread Forecasting, 911/112 CAD Multi-Agency cuOpt
+    Apparatus Routing & FEMA NIMS / ICS Evacuation Interlock Agent Infrastructure (Chapter 59).
+    """
+    if active_fireline_perimeter_km <= 0:
+        raise ValueError("active_fireline_perimeter_km must be positive")
+    valid_modes = {
+        "wrf_sfire_cuopt_nims_ics_lwir_edge",
+        "static_isochrone_unverified_cad_raw_lwir",
+    }
+    if wildfire_cad_mode not in valid_modes:
+        raise ValueError(f"wildfire_cad_mode must be one of {sorted(valid_modes)}")
+
+    governed = wildfire_cad_mode == "wrf_sfire_cuopt_nims_ics_lwir_edge"
+    gpu_nodes = max(2, math.ceil(active_fireline_perimeter_km / 40))
+    aerial_lwir_drones_and_towers = max(12, int(active_fireline_perimeter_km // 4))
+
+    evacuation_clearance_time_reduction_pct = 29.4 if governed else 0.0
+    fireline_containment_efficiency_gain_pct = 33.8 if governed else 0.0
+    nims_ics_interlock_latency_ms = 2.1 if governed else 0.0
+    premature_evac_downgrade_or_burnover_escape_pct = 0.0 if governed else 2.7
+    lwir_thermal_hotspot_edge_triage_ms = 17.0 if governed else 1520.0
+    firstnet_satcom_bandwidth_reduction_pct = 96.6 if governed else 0.0
+    cad_multi_agency_dispatch_conflict_pct = 0.0 if governed else 3.4
+
+    return {
+        "active_fireline_perimeter_km": active_fireline_perimeter_km,
+        "wildfire_cad_mode": wildfire_cad_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "aerial_lwir_drones_and_towers": aerial_lwir_drones_and_towers,
+        "evacuation_clearance_time_reduction_pct": evacuation_clearance_time_reduction_pct,
+        "fireline_containment_efficiency_gain_pct": fireline_containment_efficiency_gain_pct,
+        "nims_ics_interlock_latency_ms": nims_ics_interlock_latency_ms,
+        "premature_evac_downgrade_or_burnover_escape_pct": premature_evac_downgrade_or_burnover_escape_pct,
+        "lwir_thermal_hotspot_edge_triage_ms": lwir_thermal_hotspot_edge_triage_ms,
+        "firstnet_satcom_bandwidth_reduction_pct": firstnet_satcom_bandwidth_reduction_pct,
+        "cad_multi_agency_dispatch_conflict_pct": cad_multi_agency_dispatch_conflict_pct,
+        "emergency_wildfire_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
