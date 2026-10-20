@@ -47,6 +47,7 @@ from agent_infra_sizer import (
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
+    simulate_rail_ertms_etcs_sil4_sandbox,
     simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
@@ -911,6 +912,22 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertTrue(prt["maritime_port_slo_met"])
         self.assertAlmostEqual(raw["unsafe_vessel_stability_or_stack_pct"], 4.6)
         self.assertFalse(raw["maritime_port_slo_met"])
+
+    def test_rail_ertms_etcs_sil4_sandbox(self) -> None:
+        rail = simulate_rail_ertms_etcs_sil4_sandbox(500, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge")
+        raw = simulate_rail_ertms_etcs_sil4_sandbox(500, "batch_milp_unchecked_ma_raw_wayside_stream")
+        self.assertEqual(rail["rail_solver_nodes"], 4)
+        self.assertAlmostEqual(rail["timetable_reschedule_solve_sec"], 6.4)
+        self.assertAlmostEqual(rail["knock_on_delay_reduction_pct"], 46.2)
+        self.assertAlmostEqual(rail["moving_block_headway_gain_pct"], 24.0)
+        self.assertAlmostEqual(rail["sil4_braking_curve_gate_ms"], 1.5)
+        self.assertEqual(rail["spad_or_conflicting_route_escape_pct"], 0.0)
+        self.assertAlmostEqual(rail["wayside_defect_triage_ms"], 12.0)
+        self.assertAlmostEqual(rail["frmcs_backhaul_reduction_pct"], 97.4)
+        self.assertEqual(rail["unscheduled_in_tunnel_halt_pct"], 0.0)
+        self.assertTrue(rail["rail_ertms_slo_met"])
+        self.assertAlmostEqual(raw["spad_or_conflicting_route_escape_pct"], 3.2)
+        self.assertFalse(raw["rail_ertms_slo_met"])
 
 
 if __name__ == "__main__":

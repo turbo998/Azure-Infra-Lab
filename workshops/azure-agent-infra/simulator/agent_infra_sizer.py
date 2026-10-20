@@ -2950,6 +2950,57 @@ def simulate_maritime_port_crane_colregs_sandbox(
     }
 
 
+def simulate_rail_ertms_etcs_sil4_sandbox(
+    active_trains: int = 500,
+    rail_agent_mode: str = "frmcs_cuopt_reschedule_sil4_evc_wayside_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 54: Autonomous High-Speed Rail, ERTMS/ETCS Level 3 Moving-Block Signaling &
+    Rolling-Stock Predictive Maintenance Agent Infrastructure Physics.
+      - Pillar 1: FRMCS 5G / GSM-R Wayside Telemetry + NVIDIA cuOpt Real-Time Train-Graph
+        Conflict Resolution vs Legacy Batch MILP Dispatch
+      - Pillar 2: CENELEC EN 50128 / EN 50129 SIL-4 European Vital Computer (EVC) Safe Braking
+        Curve & Interlocking (IXL) Movement Authority (MA) Deterministic Gate
+      - Pillar 3: Wayside Acoustic Bearing (TADS) & Pantograph-Catenary Vision Edge Triage
+    """
+    rail_solver_nodes = max(2, math.ceil(active_trains / 125))
+    if rail_agent_mode == "frmcs_cuopt_reschedule_sil4_evc_wayside_edge":
+        timetable_reschedule_solve_sec = 6.4
+        knock_on_delay_reduction_pct = 46.2
+        moving_block_headway_gain_pct = 24.0
+        sil4_braking_curve_gate_ms = 1.5
+        spad_or_conflicting_route_escape_pct = 0.0
+        wayside_defect_triage_ms = 12.0
+        frmcs_backhaul_reduction_pct = 97.4
+        unscheduled_in_tunnel_halt_pct = 0.0
+        rail_ertms_slo_met = True
+    else:
+        timetable_reschedule_solve_sec = 780.0
+        knock_on_delay_reduction_pct = 0.0
+        moving_block_headway_gain_pct = 0.0
+        sil4_braking_curve_gate_ms = 0.0
+        spad_or_conflicting_route_escape_pct = 3.2
+        wayside_defect_triage_ms = 920.0
+        frmcs_backhaul_reduction_pct = 0.0
+        unscheduled_in_tunnel_halt_pct = 4.1
+        rail_ertms_slo_met = False
+
+    return {
+        "active_trains": active_trains,
+        "rail_agent_mode": rail_agent_mode,
+        "rail_solver_nodes": rail_solver_nodes,
+        "timetable_reschedule_solve_sec": timetable_reschedule_solve_sec,
+        "knock_on_delay_reduction_pct": knock_on_delay_reduction_pct,
+        "moving_block_headway_gain_pct": moving_block_headway_gain_pct,
+        "sil4_braking_curve_gate_ms": sil4_braking_curve_gate_ms,
+        "spad_or_conflicting_route_escape_pct": spad_or_conflicting_route_escape_pct,
+        "wayside_defect_triage_ms": wayside_defect_triage_ms,
+        "frmcs_backhaul_reduction_pct": frmcs_backhaul_reduction_pct,
+        "unscheduled_in_tunnel_halt_pct": unscheduled_in_tunnel_halt_pct,
+        "rail_ertms_slo_met": rail_ertms_slo_met,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

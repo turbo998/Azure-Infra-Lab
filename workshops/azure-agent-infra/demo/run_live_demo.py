@@ -60,6 +60,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
+    simulate_rail_ertms_etcs_sil4_sandbox,
     simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
@@ -509,6 +510,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "port_50000_teu": simulate_maritime_port_crane_colregs_sandbox(50_000, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
             "port_200000_teu": simulate_maritime_port_crane_colregs_sandbox(200_000, "ais_cuopt_stowage_imo_gm_colregs_barrier"),
             "raw_port_50000_teu": simulate_maritime_port_crane_colregs_sandbox(50_000, "batch_heuristic_unchecked_gm_raw_vts"),
+        },
+        "demo_49_rail_ertms_etcs_sil4_sandbox": {
+            "rail_125_trains": simulate_rail_ertms_etcs_sil4_sandbox(125, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
+            "rail_500_trains": simulate_rail_ertms_etcs_sil4_sandbox(500, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
+            "rail_2000_trains": simulate_rail_ertms_etcs_sil4_sandbox(2_000, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
+            "raw_rail_500_trains": simulate_rail_ertms_etcs_sil4_sandbox(500, "batch_milp_unchecked_ma_raw_wayside_stream"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

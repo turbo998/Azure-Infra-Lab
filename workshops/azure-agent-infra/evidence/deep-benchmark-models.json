@@ -2940,5 +2940,63 @@
       "colregs_or_crane_collision_escape_pct": 3.5,
       "maritime_port_slo_met": false
     }
+  ],
+  "rail_ertms_sil4_profiles": [
+    {
+      "active_trains": 125,
+      "rail_agent_mode": "frmcs_cuopt_reschedule_sil4_evc_wayside_edge",
+      "rail_solver_nodes": 2,
+      "timetable_reschedule_solve_sec": 6.4,
+      "knock_on_delay_reduction_pct": 46.2,
+      "moving_block_headway_gain_pct": 24.0,
+      "sil4_braking_curve_gate_ms": 1.5,
+      "spad_or_conflicting_route_escape_pct": 0.0,
+      "wayside_defect_triage_ms": 12.0,
+      "frmcs_backhaul_reduction_pct": 97.4,
+      "unscheduled_in_tunnel_halt_pct": 0.0,
+      "rail_ertms_slo_met": true
+    },
+    {
+      "active_trains": 500,
+      "rail_agent_mode": "frmcs_cuopt_reschedule_sil4_evc_wayside_edge",
+      "rail_solver_nodes": 4,
+      "timetable_reschedule_solve_sec": 6.4,
+      "knock_on_delay_reduction_pct": 46.2,
+      "moving_block_headway_gain_pct": 24.0,
+      "sil4_braking_curve_gate_ms": 1.5,
+      "spad_or_conflicting_route_escape_pct": 0.0,
+      "wayside_defect_triage_ms": 12.0,
+      "frmcs_backhaul_reduction_pct": 97.4,
+      "unscheduled_in_tunnel_halt_pct": 0.0,
+      "rail_ertms_slo_met": true
+    },
+    {
+      "active_trains": 2000,
+      "rail_agent_mode": "frmcs_cuopt_reschedule_sil4_evc_wayside_edge",
+      "rail_solver_nodes": 16,
+      "timetable_reschedule_solve_sec": 6.4,
+      "knock_on_delay_reduction_pct": 46.2,
+      "moving_block_headway_gain_pct": 24.0,
+      "sil4_braking_curve_gate_ms": 1.5,
+      "spad_or_conflicting_route_escape_pct": 0.0,
+      "wayside_defect_triage_ms": 12.0,
+      "frmcs_backhaul_reduction_pct": 97.4,
+      "unscheduled_in_tunnel_halt_pct": 0.0,
+      "rail_ertms_slo_met": true
+    },
+    {
+      "active_trains": 500,
+      "rail_agent_mode": "batch_milp_unchecked_ma_raw_wayside_stream",
+      "rail_solver_nodes": 4,
+      "timetable_reschedule_solve_sec": 780.0,
+      "knock_on_delay_reduction_pct": 0.0,
+      "moving_block_headway_gain_pct": 0.0,
+      "sil4_braking_curve_gate_ms": 0.0,
+      "spad_or_conflicting_route_escape_pct": 3.2,
+      "wayside_defect_triage_ms": 920.0,
+      "frmcs_backhaul_reduction_pct": 0.0,
+      "unscheduled_in_tunnel_halt_pct": 4.1,
+      "rail_ertms_slo_met": false
+    }
   ]
 }

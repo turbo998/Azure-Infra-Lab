@@ -53,6 +53,7 @@ from agent_infra_sizer import (
     simulate_pqc_hybrid_mtls_agent_crypto_agility,
     simulate_quant_trading_fix_afxdp_risk_sandbox,
     simulate_quantum_classical_hybrid_qir_sandbox,
+    simulate_rail_ertms_etcs_sil4_sandbox,
     simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
@@ -581,6 +582,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_maritime_port_crane_colregs_sandbox(50_000, "batch_heuristic_unchecked_gm_raw_vts"),
     ]
 
+    rail_ertms_sil4_profiles: List[Dict[str, object]] = [
+        simulate_rail_ertms_etcs_sil4_sandbox(125, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
+        simulate_rail_ertms_etcs_sil4_sandbox(500, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
+        simulate_rail_ertms_etcs_sil4_sandbox(2_000, "frmcs_cuopt_reschedule_sil4_evc_wayside_edge"),
+        simulate_rail_ertms_etcs_sil4_sandbox(500, "batch_milp_unchecked_ma_raw_wayside_stream"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -629,6 +637,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "aviation_irops_swim_profiles": aviation_irops_swim_profiles,
         "datacenter_cooling_bacnet_profiles": datacenter_cooling_bacnet_profiles,
         "maritime_port_colregs_profiles": maritime_port_colregs_profiles,
+        "rail_ertms_sil4_profiles": rail_ertms_sil4_profiles,
     }
 
 
