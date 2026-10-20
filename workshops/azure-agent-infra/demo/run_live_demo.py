@@ -83,6 +83,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
+    simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -614,6 +615,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "subsea_80_nodes": simulate_subsea_cabled_observatory_tsunami_bop_sandbox(80, "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge"),
             "subsea_240_nodes": simulate_subsea_cabled_observatory_tsunami_bop_sandbox(240, "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge"),
             "raw_subsea_80_nodes": simulate_subsea_cabled_observatory_tsunami_bop_sandbox(80, "static_threshold_unverified_bop_raw_hydrophone"),
+        },
+        "demo_64_geothermal_egs_induced_seismicity_turbine_sandbox": {
+            "egs_12_wells": simulate_geothermal_egs_induced_seismicity_turbine_sandbox(12, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
+            "egs_48_wells": simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
+            "egs_192_wells": simulate_geothermal_egs_induced_seismicity_turbine_sandbox(192, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
+            "raw_egs_48_wells": simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "cloud_only_unthrottled_injection_telemetry"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

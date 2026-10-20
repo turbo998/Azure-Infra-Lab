@@ -3720,6 +3720,54 @@ def simulate_subsea_cabled_observatory_tsunami_bop_sandbox(
     }
 
 
+def simulate_geothermal_egs_induced_seismicity_turbine_sandbox(
+    egs_injection_wells_and_turbines: int = 48,
+    geothermal_egs_mode: str = "egs_seismicity_tls_pinn_sco2_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Enhanced Geothermal Systems (EGS) Hydraulic Stimulation,
+    Induced-Seismicity Traffic-Light System (TLS) Moment-Magnitude Inversion,
+    Supercritical CO2 Binary Turbine Dispatch & IEC 61511 SIL-3 Wellhead
+    Overpressure / H2S Interlock Agent Infrastructure (Chapter 69).
+    """
+    if egs_injection_wells_and_turbines <= 0:
+        raise ValueError("egs_injection_wells_and_turbines must be positive")
+    valid_modes = {
+        "egs_seismicity_tls_pinn_sco2_sil3_edge",
+        "cloud_only_unthrottled_injection_telemetry",
+    }
+    if geothermal_egs_mode not in valid_modes:
+        raise ValueError(f"geothermal_egs_mode must be one of {sorted(valid_modes)}")
+
+    governed = geothermal_egs_mode == "egs_seismicity_tls_pinn_sco2_sil3_edge"
+    gpu_nodes = max(2, math.ceil(egs_injection_wells_and_turbines / 12))
+    egs_multi_stage_stimulation_pads = max(4, int(egs_injection_wells_and_turbines // 3))
+
+    baseload_geothermal_mw_gain_pct = 36.4 if governed else 0.0
+    parasitic_reinjection_pump_saving_pct = 31.8 if governed else 0.0
+    tls_seismic_bleedoff_and_sil3_interlock_ms = 2.1 if governed else 340.0
+    induced_seismicity_tls_exceedance_or_overpressure_pct = 0.0 if governed else 1.9
+    downhole_das_microseismic_edge_filter_ms = 4.8 if governed else 1340.0
+    wan_bandwidth_reduction_pct = 97.5 if governed else 0.0
+    fracture_thermal_short_circuit_breakthrough_pct = 0.0 if governed else 3.8
+
+    return {
+        "egs_injection_wells_and_turbines": egs_injection_wells_and_turbines,
+        "geothermal_egs_mode": geothermal_egs_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "egs_multi_stage_stimulation_pads": egs_multi_stage_stimulation_pads,
+        "baseload_geothermal_mw_gain_pct": baseload_geothermal_mw_gain_pct,
+        "parasitic_reinjection_pump_saving_pct": parasitic_reinjection_pump_saving_pct,
+        "tls_seismic_bleedoff_and_sil3_interlock_ms": tls_seismic_bleedoff_and_sil3_interlock_ms,
+        "induced_seismicity_tls_exceedance_or_overpressure_pct": induced_seismicity_tls_exceedance_or_overpressure_pct,
+        "downhole_das_microseismic_edge_filter_ms": downhole_das_microseismic_edge_filter_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "fracture_thermal_short_circuit_breakthrough_pct": fracture_thermal_short_circuit_breakthrough_pct,
+        "geothermal_egs_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

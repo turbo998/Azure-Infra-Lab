@@ -4056,6 +4056,68 @@
         "acoustic_multipath_auv_lost_lock_pct": 4.1,
         "subsea_observatory_slo_met": false
       }
+    ],
+    "geothermal_egs_seismicity_profiles": [
+      {
+        "egs_injection_wells_and_turbines": 12,
+        "geothermal_egs_mode": "egs_seismicity_tls_pinn_sco2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "egs_multi_stage_stimulation_pads": 4,
+        "baseload_geothermal_mw_gain_pct": 36.4,
+        "parasitic_reinjection_pump_saving_pct": 31.8,
+        "tls_seismic_bleedoff_and_sil3_interlock_ms": 2.1,
+        "induced_seismicity_tls_exceedance_or_overpressure_pct": 0.0,
+        "downhole_das_microseismic_edge_filter_ms": 4.8,
+        "wan_bandwidth_reduction_pct": 97.5,
+        "fracture_thermal_short_circuit_breakthrough_pct": 0.0,
+        "geothermal_egs_slo_met": true
+      },
+      {
+        "egs_injection_wells_and_turbines": 48,
+        "geothermal_egs_mode": "egs_seismicity_tls_pinn_sco2_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "egs_multi_stage_stimulation_pads": 16,
+        "baseload_geothermal_mw_gain_pct": 36.4,
+        "parasitic_reinjection_pump_saving_pct": 31.8,
+        "tls_seismic_bleedoff_and_sil3_interlock_ms": 2.1,
+        "induced_seismicity_tls_exceedance_or_overpressure_pct": 0.0,
+        "downhole_das_microseismic_edge_filter_ms": 4.8,
+        "wan_bandwidth_reduction_pct": 97.5,
+        "fracture_thermal_short_circuit_breakthrough_pct": 0.0,
+        "geothermal_egs_slo_met": true
+      },
+      {
+        "egs_injection_wells_and_turbines": 192,
+        "geothermal_egs_mode": "egs_seismicity_tls_pinn_sco2_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "egs_multi_stage_stimulation_pads": 64,
+        "baseload_geothermal_mw_gain_pct": 36.4,
+        "parasitic_reinjection_pump_saving_pct": 31.8,
+        "tls_seismic_bleedoff_and_sil3_interlock_ms": 2.1,
+        "induced_seismicity_tls_exceedance_or_overpressure_pct": 0.0,
+        "downhole_das_microseismic_edge_filter_ms": 4.8,
+        "wan_bandwidth_reduction_pct": 97.5,
+        "fracture_thermal_short_circuit_breakthrough_pct": 0.0,
+        "geothermal_egs_slo_met": true
+      },
+      {
+        "egs_injection_wells_and_turbines": 48,
+        "geothermal_egs_mode": "cloud_only_unthrottled_injection_telemetry",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "egs_multi_stage_stimulation_pads": 16,
+        "baseload_geothermal_mw_gain_pct": 0.0,
+        "parasitic_reinjection_pump_saving_pct": 0.0,
+        "tls_seismic_bleedoff_and_sil3_interlock_ms": 340.0,
+        "induced_seismicity_tls_exceedance_or_overpressure_pct": 1.9,
+        "downhole_das_microseismic_edge_filter_ms": 1340.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "fracture_thermal_short_circuit_breakthrough_pct": 3.8,
+        "geothermal_egs_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -7656,5 +7718,67 @@
       "subsea_observatory_slo_met": false
     }
   },
-  "trace_sha256": "0db392769473d52273f546637983f0bad31be2f95b50da840b1cadfb75c74836"
+  "demo_64_geothermal_egs_induced_seismicity_turbine_sandbox": {
+    "egs_12_wells": {
+      "egs_injection_wells_and_turbines": 12,
+      "geothermal_egs_mode": "egs_seismicity_tls_pinn_sco2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "egs_multi_stage_stimulation_pads": 4,
+      "baseload_geothermal_mw_gain_pct": 36.4,
+      "parasitic_reinjection_pump_saving_pct": 31.8,
+      "tls_seismic_bleedoff_and_sil3_interlock_ms": 2.1,
+      "induced_seismicity_tls_exceedance_or_overpressure_pct": 0.0,
+      "downhole_das_microseismic_edge_filter_ms": 4.8,
+      "wan_bandwidth_reduction_pct": 97.5,
+      "fracture_thermal_short_circuit_breakthrough_pct": 0.0,
+      "geothermal_egs_slo_met": true
+    },
+    "egs_48_wells": {
+      "egs_injection_wells_and_turbines": 48,
+      "geothermal_egs_mode": "egs_seismicity_tls_pinn_sco2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "egs_multi_stage_stimulation_pads": 16,
+      "baseload_geothermal_mw_gain_pct": 36.4,
+      "parasitic_reinjection_pump_saving_pct": 31.8,
+      "tls_seismic_bleedoff_and_sil3_interlock_ms": 2.1,
+      "induced_seismicity_tls_exceedance_or_overpressure_pct": 0.0,
+      "downhole_das_microseismic_edge_filter_ms": 4.8,
+      "wan_bandwidth_reduction_pct": 97.5,
+      "fracture_thermal_short_circuit_breakthrough_pct": 0.0,
+      "geothermal_egs_slo_met": true
+    },
+    "egs_192_wells": {
+      "egs_injection_wells_and_turbines": 192,
+      "geothermal_egs_mode": "egs_seismicity_tls_pinn_sco2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "egs_multi_stage_stimulation_pads": 64,
+      "baseload_geothermal_mw_gain_pct": 36.4,
+      "parasitic_reinjection_pump_saving_pct": 31.8,
+      "tls_seismic_bleedoff_and_sil3_interlock_ms": 2.1,
+      "induced_seismicity_tls_exceedance_or_overpressure_pct": 0.0,
+      "downhole_das_microseismic_edge_filter_ms": 4.8,
+      "wan_bandwidth_reduction_pct": 97.5,
+      "fracture_thermal_short_circuit_breakthrough_pct": 0.0,
+      "geothermal_egs_slo_met": true
+    },
+    "raw_egs_48_wells": {
+      "egs_injection_wells_and_turbines": 48,
+      "geothermal_egs_mode": "cloud_only_unthrottled_injection_telemetry",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "egs_multi_stage_stimulation_pads": 16,
+      "baseload_geothermal_mw_gain_pct": 0.0,
+      "parasitic_reinjection_pump_saving_pct": 0.0,
+      "tls_seismic_bleedoff_and_sil3_interlock_ms": 340.0,
+      "induced_seismicity_tls_exceedance_or_overpressure_pct": 1.9,
+      "downhole_das_microseismic_edge_filter_ms": 1340.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "fracture_thermal_short_circuit_breakthrough_pct": 3.8,
+      "geothermal_egs_slo_met": false
+    }
+  },
+  "trace_sha256": "cded12b44b738e1a2092ecdbaad3b679b8c8f601f7d3fa98283f4624d5b7d62d"
 }

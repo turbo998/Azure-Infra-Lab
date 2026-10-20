@@ -70,6 +70,7 @@ from agent_infra_sizer import (
     simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
+    simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -187,6 +188,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-particle-accelerator-synchrotron-beam-pool.bicep",
             "aksclaw-deep-space-telescope-adaptive-optics-pool.bicep",
             "aksclaw-subsea-cabled-observatory-tsunami-bop-pool.bicep",
+            "aksclaw-geothermal-egs-induced-seismicity-turbine-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1185,6 +1187,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["acoustic_multipath_auv_lost_lock_pct"], 4.0)
         self.assertTrue(gov["subsea_observatory_slo_met"])
         self.assertFalse(raw["subsea_observatory_slo_met"])
+
+    def test_geothermal_egs_induced_seismicity_turbine_sandbox(self) -> None:
+        gov = simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "egs_seismicity_tls_pinn_sco2_sil3_edge")
+        raw = simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "cloud_only_unthrottled_injection_telemetry")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["egs_multi_stage_stimulation_pads"], 16)
+        self.assertEqual(gov["baseload_geothermal_mw_gain_pct"], 36.4)
+        self.assertEqual(gov["parasitic_reinjection_pump_saving_pct"], 31.8)
+        self.assertEqual(gov["tls_seismic_bleedoff_and_sil3_interlock_ms"], 2.1)
+        self.assertEqual(gov["induced_seismicity_tls_exceedance_or_overpressure_pct"], 0.0)
+        self.assertGreater(raw["induced_seismicity_tls_exceedance_or_overpressure_pct"], 1.8)
+        self.assertEqual(gov["downhole_das_microseismic_edge_filter_ms"], 4.8)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 97.5)
+        self.assertEqual(gov["fracture_thermal_short_circuit_breakthrough_pct"], 0.0)
+        self.assertGreater(raw["fracture_thermal_short_circuit_breakthrough_pct"], 3.5)
+        self.assertTrue(gov["geothermal_egs_slo_met"])
+        self.assertFalse(raw["geothermal_egs_slo_met"])
 
 
 if __name__ == "__main__":

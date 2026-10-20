@@ -76,6 +76,7 @@ from agent_infra_sizer import (
     simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
+    simulate_geothermal_egs_induced_seismicity_turbine_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -690,6 +691,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_subsea_cabled_observatory_tsunami_bop_sandbox(240, "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge"),
         simulate_subsea_cabled_observatory_tsunami_bop_sandbox(80, "static_threshold_unverified_bop_raw_hydrophone"),
     ]
+    geothermal_egs_seismicity_profiles: List[Dict[str, object]] = [
+        simulate_geothermal_egs_induced_seismicity_turbine_sandbox(12, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
+        simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
+        simulate_geothermal_egs_induced_seismicity_turbine_sandbox(192, "egs_seismicity_tls_pinn_sco2_sil3_edge"),
+        simulate_geothermal_egs_induced_seismicity_turbine_sandbox(48, "cloud_only_unthrottled_injection_telemetry"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -754,6 +761,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "particle_accelerator_beam_profiles": particle_accelerator_beam_profiles,
         "deep_space_telescope_ao_profiles": deep_space_telescope_ao_profiles,
         "subsea_cabled_observatory_profiles": subsea_cabled_observatory_profiles,
+        "geothermal_egs_seismicity_profiles": geothermal_egs_seismicity_profiles,
     }
 
 

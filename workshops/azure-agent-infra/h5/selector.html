@@ -476,6 +476,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(61)">62. 第四代同步辐射光源与自由电子激光 XFEL 快速轨道反馈 FOFB + 超导腔微音 MPC 与 SIL-3 机器保护池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(62)">63. 极大口径地基望远镜极限自适应光学 XAO 变形镜 + SKA 射电相关器与 LGS 空域/太阳快门互锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(63)">64. 深海有缆观测网海啸 BPR PINN 反演 + AUV 水声对接与 API RP 53 / SIL-3 深水防喷器 BOP 互锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(64)">65. 增强型地热系统 EGS 水力压裂 THM-PINN + 诱发微震红绿灯 TLS 泄压与 SIL-3 井口联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1920,6 +1921,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 64 · ENHANCED GEOTHERMAL SYSTEMS (EGS) THM-PINN, INDUCED-SEISMICITY TLS BLEED-OFF &amp; IEC 61511 SIL-3 WELLHEAD SIZER</span>
+    <h2>自主增强型地热系统（EGS）水力压裂、诱发微震红绿灯系统（TLS）与超临界 CO2 汽轮机测算器 (Chapter 69 · Bilingual)</h2>
+    <div class="sub">量化在地热注采井与超临界 CO2 汽轮机规模 <code>12 – 192 单元</code>（<code>4 – 64 座</code> 多级水力压裂激发井场）下，启用 <code>热-水-力耦合裂缝渗透率 PINN (THM-PINN) + 超临界 CO2 (sCO2) 双工质透平可变喷嘴 MPC</code>（地热基荷净发电功率提升 <code>+36.4%</code>、高压回注泵寄生电耗降低 <code>31.8%</code>、裂缝热短路冷水突破率 <code>0.0%</code>）、<code>诱发微震红绿灯系统 (TLS Mw &gt;= 2.1) 节流泄压与 IEC 61511 SIL-3 井口超压/H2S 联锁</code>（<code>2.1 ms</code> 校验，<code>0.0%</code> 有感诱发地震越界与井口超压逃逸）以及井场 <code>Azure IoT Operations</code> <code>耐高温井下光纤 DAS/DTS</code> 边缘分诊（<code>4.8 ms</code> 响应，削减 <code>97.5%</code> 广域网回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 地热 EGS 注采井与超临界 CO2 汽轮机数量 (EGS Wells &amp; sCO2 Turbines): <strong id="lbl_egs_wells" style="color:var(--teal)">48</strong> Units</label>
+          <input type="range" id="rng_egs_wells" min="12" max="192" step="12" value="48" oninput="runGeothermalEgsLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 干热岩储层压裂寻优、诱发微震红绿灯 TLS 与 SIL-3 井口联锁模式 (Geothermal EGS &amp; TLS Safety Mode)</label>
+          <select id="sel_egs_mode" onchange="runGeothermalEgsLab()">
+            <option value="egs_seismicity_tls_pinn_sco2_sil3_edge" selected>THM-PINN + sCO2 透平寻优 (+36.4% 基荷发电 / -31.8% 泵耗) + TLS/SIL-3 泄压联锁 (0% 微震越界) + 井下 DAS 边缘 (推荐)</option>
+            <option value="cloud_only_unthrottled_injection_telemetry">传统反模式：恒定排量盲目注水 (0 增益) + 无 TLS/SIL-3 泄压联锁 (1.9% 诱发微震越界) + 原始光纤流上云 (3.8% 热短路突破)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="egsOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3045,6 +3068,23 @@ resource subseaObservatoryPool 'Microsoft.ContainerService/managedClusters/agent
       'aksclaw.io/subsea-das-hydrophone-acoustic-edge': 'enabled-6.5ms-97.4pct-acoustic-satcom-bandwidth-cut'
     }
   }
+}`,
+`// =============================================================================
+// 65. AKSClaw Enhanced Geothermal Systems (EGS), TLS Seismicity & sCO2 Pool (Bicep)
+// =============================================================================
+resource geothermalEgsPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'egsthmpool'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'geothermal-egs-induced-seismicity-turbine-agent'
+      'aksclaw.io/thm-fracture-pinn-sco2-mpc': 'enabled-36.4pct-baseload-mw-gain-31.8pct-pump-power-cut'
+      'aksclaw.io/tls-mw21-bleedoff-sil3-wellhead': 'enforced-2.1ms-zero-induced-seismicity-exceedance-overpressure'
+      'aksclaw.io/borehole-das-dts-seismic-edge': 'enabled-4.8ms-97.5pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -3209,6 +3249,30 @@ runFusionTokamakLab();
 runParticleAcceleratorLab();
 runDeepSpaceTelescopeLab();
 runSubseaObservatoryLab();
+runGeothermalEgsLab();
+
+function runGeothermalEgsLab() {
+  const wells = parseInt(document.getElementById('rng_egs_wells').value, 10);
+  const mode = document.getElementById('sel_egs_mode').value;
+  document.getElementById('lbl_egs_wells').textContent = wells.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(wells / 12));
+  const pads = Math.max(4, Math.floor(wells / 3));
+  const ok = mode === 'egs_seismicity_tls_pinn_sco2_sil3_edge';
+  const thmStr = ok ? "THM-PINN 裂缝寻优 + sCO2 透平 MPC · 基荷发电 +36.4% · 回注泵耗 -31.8%" : "恒定排量盲目注水 · 0.0% 发电与节电增益 (优势裂缝非均质窜流与 3.8% 热短路突破)";
+  const tlsStr = ok ? "2.1 ms TLS 微震红绿灯 (Mw>=2.1) 节流泄压与 SIL-3 井口联锁 · 0.0% 微震越界/超压" : "无 TLS 泄压与 SIL-3 井口联锁 (340.0 ms 云端滞后) · 1.9% 诱发微震越界与井口超压风险";
+  const edgeStr = ok ? "4.8 ms 井场耐高温井下光纤 DAS P/S 波拾取与 DTS 温度边缘分诊 (-97.5% 广域网带宽) · 0.0% 热突破" : "1,340.0 ms 原始 10kHz 井下光纤流上云 · 拥塞偏远井场链路且错过断层孔隙压力泄压窗口";
+
+  document.getElementById('egsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + thmStr : '❌ 1.9% 诱发微震越界/井口超压风险 · 3.8% 优势裂缝冷水早穿热短路'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${pads} 座压裂井场 · ${tlsStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>地热井场 Azure IoT Operations 耐高温井下光纤 DAS 微震拾取与 DTS 温度剖面边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runSubseaObservatoryLab() {
   const units = parseInt(document.getElementById('rng_sub_nodes').value, 10);
