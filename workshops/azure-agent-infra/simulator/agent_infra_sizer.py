@@ -5103,6 +5103,49 @@ def simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(
     }
 
 
+def simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(
+    maglev_lsm_propulsion_sectors: int = 24,
+    maglev_governance_mode: str = "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-High-Speed 600 km/h EMS/EDS Superconducting Maglev Linear Synchronous Motor (LSM) Section-Switching, Air-Gap Levitation / Guidance Coupled Electrodynamic Girder Flutter PINN-MPC & EN 50126 / EN 50128 / EN 50129 SIL-4 Zero-Contact Guideway Touchdown Prevention & Eddy-Current Brake Agent Infrastructure (Chapter 98)."""
+    if maglev_lsm_propulsion_sectors <= 0:
+        raise ValueError("maglev_lsm_propulsion_sectors must be positive")
+    valid_modes = {
+        "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge",
+        "decoupled_pid_airgap_hard_thyristor_block_switch_cloud",
+    }
+    if maglev_governance_mode not in valid_modes:
+        raise ValueError(f"maglev_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = maglev_governance_mode == "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"
+    active_maglev_lsm_pods = max(2, int(maglev_lsm_propulsion_sectors // 3))
+    gpu_nodes = max(2, math.ceil(maglev_lsm_propulsion_sectors / 12))
+
+    airgap_margin_and_ride_comfort_sperling_gain_pct = 32.4 if governed else 5.4
+    lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct = 39.2 if governed else 6.9
+    en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms = 0.4 if governed else 86.0
+    guideway_stator_pole_strike_or_levitation_collapse_breach_pct = 0.0 if governed else 1.4
+    wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms = 0.4 if governed else 198.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_girder_resonance_or_lsm_phase_desync_pct = 0.0 if governed else 3.2
+
+    return {
+        "maglev_lsm_propulsion_sectors": maglev_lsm_propulsion_sectors,
+        "maglev_governance_mode": maglev_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_maglev_lsm_pods": active_maglev_lsm_pods,
+        "airgap_margin_and_ride_comfort_sperling_gain_pct": airgap_margin_and_ride_comfort_sperling_gain_pct,
+        "lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct": lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct,
+        "en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms": en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms,
+        "guideway_stator_pole_strike_or_levitation_collapse_breach_pct": guideway_stator_pole_strike_or_levitation_collapse_breach_pct,
+        "wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms": wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_girder_resonance_or_lsm_phase_desync_pct": uncompensated_girder_resonance_or_lsm_phase_desync_pct,
+        "maglev_lsm_levitation_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

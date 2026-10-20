@@ -99,6 +99,7 @@ from agent_infra_sizer import (
     simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox,
     simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
     simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
+    simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -245,6 +246,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-hts-rebco-superconducting-cable-sfcl-quench-sil3-pool.bicep",
             "aksclaw-cryogenic-lh2-lch4-launch-pad-chilldown-geyser-sil3-pool.bicep",
             "aksclaw-airborne-wind-energy-crosswind-kite-tether-iec61400-sil3-pool.bicep",
+            "aksclaw-maglev-eds-ems-lsm-levitation-airgap-en50129-sil4-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1816,6 +1818,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct"], 3.0)
         self.assertTrue(gov["airborne_wind_energy_kite_slo_met"])
         self.assertFalse(raw["airborne_wind_energy_kite_slo_met"])
+
+    def test_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(self) -> None:
+        gov = simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(
+            24, "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"
+        )
+        raw = simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(
+            24, "decoupled_pid_airgap_hard_thyristor_block_switch_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_maglev_lsm_pods"], 8)
+        self.assertEqual(gov["airgap_margin_and_ride_comfort_sperling_gain_pct"], 32.4)
+        self.assertEqual(gov["lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct"], 39.2)
+        self.assertEqual(gov["en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms"], 0.4)
+        self.assertEqual(gov["guideway_stator_pole_strike_or_levitation_collapse_breach_pct"], 0.0)
+        self.assertGreater(raw["guideway_stator_pole_strike_or_levitation_collapse_breach_pct"], 1.2)
+        self.assertEqual(gov["wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_girder_resonance_or_lsm_phase_desync_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_girder_resonance_or_lsm_phase_desync_pct"], 3.0)
+        self.assertTrue(gov["maglev_lsm_levitation_slo_met"])
+        self.assertFalse(raw["maglev_lsm_levitation_slo_met"])
 
 
 if __name__ == "__main__":

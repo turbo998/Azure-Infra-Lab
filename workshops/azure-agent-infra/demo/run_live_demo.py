@@ -112,6 +112,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox,
     simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
     simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
+    simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -803,6 +804,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "awe_kite_32_units": simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(32, "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"),
             "awe_kite_128_units": simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(128, "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"),
             "raw_awe_kite_32_units": simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(32, "fixed_azimuth_pid_open_loop_reel_out_cloud"),
+        },
+        "demo_93_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox": {
+            "maglev_lsm_24_sectors": simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(24, "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"),
+            "maglev_lsm_96_sectors": simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(96, "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"),
+            "raw_maglev_lsm_24_sectors": simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(24, "decoupled_pid_airgap_hard_thyristor_block_switch_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

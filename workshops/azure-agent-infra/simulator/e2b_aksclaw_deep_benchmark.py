@@ -105,6 +105,7 @@ from agent_infra_sizer import (
     simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox,
     simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
     simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
+    simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -893,6 +894,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(128, "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"),
         simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(32, "fixed_azimuth_pid_open_loop_reel_out_cloud"),
     ]
+    maglev_lsm_levitation_airgap_profiles: List[Dict[str, object]] = [
+        simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(12, "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"),
+        simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(24, "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"),
+        simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(96, "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"),
+        simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(24, "decoupled_pid_airgap_hard_thyristor_block_switch_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -986,6 +993,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hts_rebco_superconducting_cable_sfcl_profiles": hts_rebco_superconducting_cable_sfcl_profiles,
         "cryogenic_lh2_lch4_launch_pad_profiles": cryogenic_lh2_lch4_launch_pad_profiles,
         "awe_crosswind_kite_tether_profiles": awe_crosswind_kite_tether_profiles,
+        "maglev_lsm_levitation_airgap_profiles": maglev_lsm_levitation_airgap_profiles,
     }
 
 

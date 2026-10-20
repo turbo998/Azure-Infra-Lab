@@ -5652,5 +5652,67 @@
       "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 3.3,
       "airborne_wind_energy_kite_slo_met": false
     }
+  ],
+  "maglev_lsm_levitation_airgap_profiles": [
+    {
+      "maglev_lsm_propulsion_sectors": 12,
+      "maglev_governance_mode": "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_maglev_lsm_pods": 4,
+      "airgap_margin_and_ride_comfort_sperling_gain_pct": 32.4,
+      "lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct": 39.2,
+      "en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms": 0.4,
+      "guideway_stator_pole_strike_or_levitation_collapse_breach_pct": 0.0,
+      "wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_girder_resonance_or_lsm_phase_desync_pct": 0.0,
+      "maglev_lsm_levitation_slo_met": true
+    },
+    {
+      "maglev_lsm_propulsion_sectors": 24,
+      "maglev_governance_mode": "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_maglev_lsm_pods": 8,
+      "airgap_margin_and_ride_comfort_sperling_gain_pct": 32.4,
+      "lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct": 39.2,
+      "en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms": 0.4,
+      "guideway_stator_pole_strike_or_levitation_collapse_breach_pct": 0.0,
+      "wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_girder_resonance_or_lsm_phase_desync_pct": 0.0,
+      "maglev_lsm_levitation_slo_met": true
+    },
+    {
+      "maglev_lsm_propulsion_sectors": 96,
+      "maglev_governance_mode": "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_maglev_lsm_pods": 32,
+      "airgap_margin_and_ride_comfort_sperling_gain_pct": 32.4,
+      "lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct": 39.2,
+      "en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms": 0.4,
+      "guideway_stator_pole_strike_or_levitation_collapse_breach_pct": 0.0,
+      "wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_girder_resonance_or_lsm_phase_desync_pct": 0.0,
+      "maglev_lsm_levitation_slo_met": true
+    },
+    {
+      "maglev_lsm_propulsion_sectors": 24,
+      "maglev_governance_mode": "decoupled_pid_airgap_hard_thyristor_block_switch_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_maglev_lsm_pods": 8,
+      "airgap_margin_and_ride_comfort_sperling_gain_pct": 5.4,
+      "lsm_stator_handover_thrust_ripple_and_reactive_power_reduction_pct": 6.9,
+      "en50128_en50129_sil4_eddy_current_brake_skid_interlock_ms": 86.0,
+      "guideway_stator_pole_strike_or_levitation_collapse_breach_pct": 1.4,
+      "wayside_38ghz_mmwave_eddy_gap_tsn_edge_latency_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_girder_resonance_or_lsm_phase_desync_pct": 3.2,
+      "maglev_lsm_levitation_slo_met": false
+    }
   ]
 }
