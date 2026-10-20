@@ -81,6 +81,7 @@ from agent_infra_sizer import (
     simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
     simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
     simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
+    simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -209,6 +210,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-bess-grid-storage-eis-thermal-ul9540a-sil3-pool.bicep",
             "aksclaw-additive-manufacturing-lpbf-meltpool-nfpa484-sil3-pool.bicep",
             "aksclaw-euv-lithography-scanner-lpp-overlay-semi-s2-sil3-pool.bicep",
+            "aksclaw-saf-ptl-fischer-tropsch-rwgs-astm-d7566-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1402,6 +1404,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["stochastic_defect_or_dose_false_clearance_pct"], 2.5)
         self.assertTrue(gov["euv_lithography_scanner_slo_met"])
         self.assertFalse(raw["euv_lithography_scanner_slo_met"])
+
+    def test_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(self) -> None:
+        gov = simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(
+            8, "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge"
+        )
+        raw = simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(
+            8, "open_loop_pid_cloud_refinery"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_saf_ptl_refinery_pods"], 2)
+        self.assertEqual(gov["c8_c16_jet_selectivity_gain_pct"], 21.8)
+        self.assertEqual(gov["specific_syngas_energy_reduction_pct"], 18.4)
+        self.assertEqual(gov["astm_d7566_sil3_depressuring_n2_purge_interlock_ms"], 2.2)
+        self.assertEqual(gov["ft_thermal_runaway_or_syngas_autoignition_pct"], 0.0)
+        self.assertGreater(raw["ft_thermal_runaway_or_syngas_autoignition_pct"], 1.5)
+        self.assertEqual(gov["raman_gcms_dts_edge_latency_ms"], 1.6)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.4)
+        self.assertEqual(gov["astm_d7566_freeze_point_or_aromatic_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["astm_d7566_freeze_point_or_aromatic_false_clearance_pct"], 2.5)
+        self.assertTrue(gov["saf_ptl_fischer_tropsch_slo_met"])
+        self.assertFalse(raw["saf_ptl_fischer_tropsch_slo_met"])
 
 
 if __name__ == "__main__":

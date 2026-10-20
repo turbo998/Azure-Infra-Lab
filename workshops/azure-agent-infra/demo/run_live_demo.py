@@ -94,6 +94,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
     simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
     simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
+    simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -691,6 +692,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "euv_12_scanners": simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(12, "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge"),
             "euv_48_scanners": simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(48, "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge"),
             "raw_euv_12_scanners": simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(12, "open_loop_pid_cloud_scanner"),
+        },
+        "demo_75_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox": {
+            "saf_4_trains": simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(4, "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge"),
+            "saf_8_trains": simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(8, "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge"),
+            "saf_32_trains": simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(32, "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge"),
+            "raw_saf_8_trains": simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(8, "open_loop_pid_cloud_refinery"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

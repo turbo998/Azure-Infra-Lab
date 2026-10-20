@@ -487,6 +487,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(72)">73. 百兆瓦级混合电网储能 BESS 液冷 LFP+全钒液流 VRFB + 电化学阻抗谱 EIS/dQ/dV 热失控预测与 UL 9540A / NFPA 855 / SIL-3 爆燃排风及直流熔断联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(73)">74. 金属增材制造激光粉末床熔融 LPBF/SLM 熔池同轴双波段高温计/OCT PINN + 多激光矢量 MPC 与 ASTM F3303 / NFPA 484 氩气惰化 SIL-3 激光快门联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(74)">75. 半导体极紫外 EUV (13.5nm / High-NA 0.55) 光刻机 50kHz 锡液滴等离子体 LPP / Mo-Si 收集镜污染 PINN + 磁悬浮亚纳米套刻 MPC 与 SEMI S2 / S22 / SIL-3 超高真空氢气吹扫及 30kW CO2 驱动激光快门联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(75)">76. 可持续航空燃料 SAF / e-SAF 电转液 PtL 逆水煤气变换 RWGS 与费托合成 FT 反应器 ASF 链增长 PINN + 加氢异构化 MPC 与 ASTM D7566 / API RP 521 / SIL-3 飞温泄压氮气吹扫联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2173,6 +2174,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 75: Sustainable Aviation Fuel (SAF / e-SAF) Power-to-Liquid (PtL) RWGS & Fischer-Tropsch (FT) Synthesis Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 75 · SUSTAINABLE AVIATION FUEL (SAF / E-SAF) POWER-TO-LIQUID (PTL) RWGS &amp; FISCHER-TROPSCH (FT) CATALYTIC SYNTHESIS, ASF CHAIN-GROWTH PINN &amp; ASTM D7566 / API RP 521 / IEC 61511 SIL-3 INTERLOCK SIZER</span>
+    <h2>自主可持续航空燃料 (<code>SAF / e-SAF</code>) 电转液 (<code>PtL</code>) 逆水煤气变换 (<code>RWGS</code>) 与费托合成 (<code>FT</code>) 反应器、<code>ASF</code> 链增长与强放热 <code>PINN-MPC</code> 及 <code>ASTM D7566 / API RP 521 / SIL-3</code> 飞温泄压氮气吹扫联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 套列管式费托合成 (<code>FT 220°C / 25-30 bar</code>) 与高温逆水煤气变换 (<code>RWGS 850°C</code>) 反应器系列规模下，安德森-舒尔茨-弗洛里 (<code>ASF α≈0.90</code>) 聚合动力学与强放热传热 <code>PINN</code> + 加氢异构化切点 <code>MPC</code>（<code>C8–C16</code> 航煤馏分选择性 <code>+21.8%</code>、合成气比能耗 <code>-18.4%</code>）、<code>ASTM D7566 / API RP 521 / IEC 61511 SIL-3</code> 床层飞温紧急泄压 (<code>BDV</code>) 与高压氮气吹扫硬联锁（<code>2.2 ms</code>，热失控或合成气自燃违例率 <code>0.0%</code>）及炼厂 <code>Azure Local</code> 在线拉曼/<code>GC-MS</code>/光纤 <code>DTS</code> 边缘反演（<code>1.6 ms</code>，广域网带宽削减 <code>98.4%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 电转液 e-SAF 逆水煤气变换与列管式费托合成反应器系列数 (RWGS + Fischer-Tropsch Reactor Trains): <strong id="lbl_saf_trains" style="color:var(--teal)">8</strong> Trains</label>
+          <input type="range" id="rng_saf_trains" min="4" max="32" step="4" value="8" oninput="runSafPtlLab()">
+        </div>
+        <div class="form-row">
+          <label>2. ASF 链增长与放热传热 PINN-MPC 及 ASTM D7566 / API RP 521 / SIL-3 飞温泄压氮气吹扫联锁模式 (e-SAF PtL Governance Mode)</label>
+          <select id="sel_saf_mode" onchange="runSafPtlLab()">
+            <option value="rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge" selected>RWGS-FT ASF PINN + 加氢异构化 MPC (+21.8% C8-C16 航煤选择性 / -18.4% 比能耗) + API RP 521 SIL-3 飞温泄压氮气吹扫联锁 + 1.6ms 拉曼/DTS 边缘 (推荐)</option>
+            <option value="open_loop_pid_cloud_refinery">传统反模式：开环汽包恒温 PID (0 增益) + 无 API RP 521 床层飞温 BDV 泄压/氮气吹扫 SIL-3 门控 (1.7% 飞温/自燃违例) + 原始光谱/DTS 流上云 (2.9% 冰点不合格漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="safOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3477,6 +3501,21 @@ resource euvLithoScannerSil3Pool 'Microsoft.ContainerService/managedClusters/age
       'aksclaw.io/subfab-50khz-l2d-droplet-fpga-edge': 'enabled-0.8ms-98.6pct-fab-wan-cut'
     }
   }
+}`,
+`// Blueprint #76: Sustainable Aviation Fuel (SAF / e-SAF) Power-to-Liquid (PtL) RWGS & Fischer-Tropsch (FT) Synthesis, ASF PINN & ASTM D7566 / SIL-3 Pool (Chapter 80)
+resource safPtlFischerTropschSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'ftasfpinn'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'saf-ptl-fischer-tropsch-rwgs-astm-d7566-sil3-agent'
+      'aksclaw.io/rwgs-ft-asf-exothermic-pinn-mpc': 'enabled-21.8pct-jet-selectivity-18.4pct-syngas-energy-cut'
+      'aksclaw.io/astm-d7566-api521-sil3-bdv-n2-quench': 'enforced-2.2ms-zero-ft-thermal-runaway-or-autoignition'
+      'aksclaw.io/refinery-raman-gcms-dts-edge': 'enabled-1.6ms-98.4pct-refinery-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3652,6 +3691,30 @@ runDacClass6Lab();
 runBessUl9540aLab();
 runLpbfAdditiveLab();
 runEuvLithoLab();
+runSafPtlLab();
+
+function runSafPtlLab() {
+  const trains = parseInt(document.getElementById('rng_saf_trains').value, 10);
+  const mode = document.getElementById('sel_saf_mode').value;
+  document.getElementById('lbl_saf_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 6));
+  const pods = Math.max(2, Math.floor(trains / 4));
+  const ok = mode === 'rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge';
+  const mpcStr = ok ? "ASF (α≈0.90) 链增长与列管强放热传热 PINN + 加氢异构化切点 MPC · C8–C16 航煤馏分选择性 +21.8% · 单位吨 e-SAF 合成气比能耗 -18.4%" : "传统开环汽包恒温 PID · 0.0% 航煤选择性与节能增益 (局部热点加速甲烷化副反应且 2.9% ASTM D7566 冰点 >-47°C 或芳烃馏分不合格误放行)";
+  const sil3Str = ok ? "2.2 ms ASTM D7566 / API RP 521 / SIL-3 床层飞温 (dT/dt >3.5K/s 或 T >255°C) 紧急泄压 (BDV) 与高压冷氮气绝氧吹扫联锁 · 0.0% 飞温/自燃" : "无 API RP 521 床层飞温泄压与氮气吹扫 SIL-3 硬联锁 (460.0 ms 云端滞后) · 1.7% 列管固定床绝热飞温烧结或高压合成气 (CO/H2) 泄漏自燃风险";
+  const edgeStr = ok ? "1.6 ms 炼厂 Azure Local 在线拉曼光谱、过程 GC-MS 与反应器全床层光纤测温 (DTS) 边缘反演 (-98.4% 绿氢炼化基地专网带宽) · 0.0% 漏检" : "1,095.0 ms 原始全床层 DTS 与在线 GC-MS 光谱流全量上云 · 阻塞风光氢炼化基地网络且错过阿伦尼乌斯指数飞温初期 2 秒抑制窗口";
+
+  document.getElementById('safOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.7% 列管床层飞温热失控/合成气自燃风险 · 2.9% ASTM D7566 冰点或芳烃馏分误放行'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个 e-SAF 联合装置单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>电转液炼厂 Azure Local + IoT Operations 在线拉曼光谱、过程 GC-MS 与光纤 DTS 床层温度场边缘反演</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runEuvLithoLab() {
   const scanners = parseInt(document.getElementById('rng_euv_scanners').value, 10);

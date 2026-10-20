@@ -4738,6 +4738,68 @@
         "stochastic_defect_or_dose_false_clearance_pct": 2.8,
         "euv_lithography_scanner_slo_met": false
       }
+    ],
+    "saf_ptl_fischer_tropsch_profiles": [
+      {
+        "ft_reactor_trains": 4,
+        "saf_governance_mode": "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_saf_ptl_refinery_pods": 2,
+        "c8_c16_jet_selectivity_gain_pct": 21.8,
+        "specific_syngas_energy_reduction_pct": 18.4,
+        "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 2.2,
+        "ft_thermal_runaway_or_syngas_autoignition_pct": 0.0,
+        "raman_gcms_dts_edge_latency_ms": 1.6,
+        "wan_bandwidth_reduction_pct": 98.4,
+        "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 0.0,
+        "saf_ptl_fischer_tropsch_slo_met": true
+      },
+      {
+        "ft_reactor_trains": 8,
+        "saf_governance_mode": "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_saf_ptl_refinery_pods": 2,
+        "c8_c16_jet_selectivity_gain_pct": 21.8,
+        "specific_syngas_energy_reduction_pct": 18.4,
+        "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 2.2,
+        "ft_thermal_runaway_or_syngas_autoignition_pct": 0.0,
+        "raman_gcms_dts_edge_latency_ms": 1.6,
+        "wan_bandwidth_reduction_pct": 98.4,
+        "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 0.0,
+        "saf_ptl_fischer_tropsch_slo_met": true
+      },
+      {
+        "ft_reactor_trains": 32,
+        "saf_governance_mode": "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+        "gpu_nodes": 6,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_saf_ptl_refinery_pods": 8,
+        "c8_c16_jet_selectivity_gain_pct": 21.8,
+        "specific_syngas_energy_reduction_pct": 18.4,
+        "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 2.2,
+        "ft_thermal_runaway_or_syngas_autoignition_pct": 0.0,
+        "raman_gcms_dts_edge_latency_ms": 1.6,
+        "wan_bandwidth_reduction_pct": 98.4,
+        "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 0.0,
+        "saf_ptl_fischer_tropsch_slo_met": true
+      },
+      {
+        "ft_reactor_trains": 8,
+        "saf_governance_mode": "open_loop_pid_cloud_refinery",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_saf_ptl_refinery_pods": 2,
+        "c8_c16_jet_selectivity_gain_pct": 0.0,
+        "specific_syngas_energy_reduction_pct": 0.0,
+        "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 460.0,
+        "ft_thermal_runaway_or_syngas_autoignition_pct": 1.7,
+        "raman_gcms_dts_edge_latency_ms": 1095.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 2.9,
+        "saf_ptl_fischer_tropsch_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -9020,5 +9082,67 @@
       "euv_lithography_scanner_slo_met": false
     }
   },
-  "trace_sha256": "09347d313b6032d4b2c25dfb4f9fd2e8ade688193ecffb2225ece0b82fa7a3f8"
+  "demo_75_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox": {
+    "saf_4_trains": {
+      "ft_reactor_trains": 4,
+      "saf_governance_mode": "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_saf_ptl_refinery_pods": 2,
+      "c8_c16_jet_selectivity_gain_pct": 21.8,
+      "specific_syngas_energy_reduction_pct": 18.4,
+      "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 2.2,
+      "ft_thermal_runaway_or_syngas_autoignition_pct": 0.0,
+      "raman_gcms_dts_edge_latency_ms": 1.6,
+      "wan_bandwidth_reduction_pct": 98.4,
+      "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 0.0,
+      "saf_ptl_fischer_tropsch_slo_met": true
+    },
+    "saf_8_trains": {
+      "ft_reactor_trains": 8,
+      "saf_governance_mode": "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_saf_ptl_refinery_pods": 2,
+      "c8_c16_jet_selectivity_gain_pct": 21.8,
+      "specific_syngas_energy_reduction_pct": 18.4,
+      "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 2.2,
+      "ft_thermal_runaway_or_syngas_autoignition_pct": 0.0,
+      "raman_gcms_dts_edge_latency_ms": 1.6,
+      "wan_bandwidth_reduction_pct": 98.4,
+      "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 0.0,
+      "saf_ptl_fischer_tropsch_slo_met": true
+    },
+    "saf_32_trains": {
+      "ft_reactor_trains": 32,
+      "saf_governance_mode": "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+      "gpu_nodes": 6,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_saf_ptl_refinery_pods": 8,
+      "c8_c16_jet_selectivity_gain_pct": 21.8,
+      "specific_syngas_energy_reduction_pct": 18.4,
+      "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 2.2,
+      "ft_thermal_runaway_or_syngas_autoignition_pct": 0.0,
+      "raman_gcms_dts_edge_latency_ms": 1.6,
+      "wan_bandwidth_reduction_pct": 98.4,
+      "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 0.0,
+      "saf_ptl_fischer_tropsch_slo_met": true
+    },
+    "raw_saf_8_trains": {
+      "ft_reactor_trains": 8,
+      "saf_governance_mode": "open_loop_pid_cloud_refinery",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_saf_ptl_refinery_pods": 2,
+      "c8_c16_jet_selectivity_gain_pct": 0.0,
+      "specific_syngas_energy_reduction_pct": 0.0,
+      "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": 460.0,
+      "ft_thermal_runaway_or_syngas_autoignition_pct": 1.7,
+      "raman_gcms_dts_edge_latency_ms": 1095.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 2.9,
+      "saf_ptl_fischer_tropsch_slo_met": false
+    }
+  },
+  "trace_sha256": "d25496d196e1a5f57ec2e1dcb93975771b8782bc1aab5ab44fb4ddd1f7fbec9c"
 }

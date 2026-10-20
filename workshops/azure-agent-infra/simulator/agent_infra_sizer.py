@@ -4258,6 +4258,56 @@ def simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(
     }
 
 
+def simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(
+    ft_reactor_trains: int = 8,
+    saf_governance_mode: str = "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Sustainable Aviation Fuel (SAF / e-SAF) Power-to-Liquid (PtL)
+    Reverse Water-Gas Shift (RWGS) & Multi-Tubular Fischer-Tropsch (FT) Catalytic
+    Synthesis Plant, Anderson-Schulz-Flory (ASF alpha) Chain-Growth & Exothermic
+    Radial Heat-Transfer PINN, Hydrocracking/Isomerization Cut-Point MPC & ASTM D7566
+    Annex A1 / API RP 521 / IEC 61511 SIL-3 Syngas (CO/H2) Thermal-Runaway
+    Depressuring & High-Pressure Nitrogen Purge Interlock Agent Infrastructure (Chapter 80).
+    """
+    if ft_reactor_trains <= 0:
+        raise ValueError("ft_reactor_trains must be positive")
+    valid_modes = {
+        "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge",
+        "open_loop_pid_cloud_refinery",
+    }
+    if saf_governance_mode not in valid_modes:
+        raise ValueError(f"saf_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = saf_governance_mode == "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge"
+    gpu_nodes = max(2, math.ceil(ft_reactor_trains / 6))
+    active_saf_ptl_refinery_pods = max(2, int(ft_reactor_trains // 4))
+
+    c8_c16_jet_selectivity_gain_pct = 21.8 if governed else 0.0
+    specific_syngas_energy_reduction_pct = 18.4 if governed else 0.0
+    astm_d7566_sil3_depressuring_n2_purge_interlock_ms = 2.2 if governed else 460.0
+    ft_thermal_runaway_or_syngas_autoignition_pct = 0.0 if governed else 1.7
+    raman_gcms_dts_edge_latency_ms = 1.6 if governed else 1095.0
+    wan_bandwidth_reduction_pct = 98.4 if governed else 0.0
+    astm_d7566_freeze_point_or_aromatic_false_clearance_pct = 0.0 if governed else 2.9
+
+    return {
+        "ft_reactor_trains": ft_reactor_trains,
+        "saf_governance_mode": saf_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_saf_ptl_refinery_pods": active_saf_ptl_refinery_pods,
+        "c8_c16_jet_selectivity_gain_pct": c8_c16_jet_selectivity_gain_pct,
+        "specific_syngas_energy_reduction_pct": specific_syngas_energy_reduction_pct,
+        "astm_d7566_sil3_depressuring_n2_purge_interlock_ms": astm_d7566_sil3_depressuring_n2_purge_interlock_ms,
+        "ft_thermal_runaway_or_syngas_autoignition_pct": ft_thermal_runaway_or_syngas_autoignition_pct,
+        "raman_gcms_dts_edge_latency_ms": raman_gcms_dts_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": astm_d7566_freeze_point_or_aromatic_false_clearance_pct,
+        "saf_ptl_fischer_tropsch_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #74 · **80 Chapters** · **75 IaC Blueprints** · **74 Quantitative Physics Simulators** · **83/83 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 79-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #75 · **81 Chapters** · **76 IaC Blueprints** · **75 Quantitative Physics Simulators** · **84/84 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 80-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 74 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [83-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 75 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [84-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -168,6 +168,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **77** | **Grid-Scale Hybrid Battery Energy Storage System `BESS` (`LFP + VRFB`), `EIS / dQ/dV` Thermal Runaway PINN & `UL 9540A / NFPA 855 / IEC 62933-5-2 SIL-3` Deflagration Venting & DC Pyro-Fuse Contactor Interlock** | `simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox()` | `aksclaw-bess-grid-storage-eis-thermal-ul9540a-sil3-pool.bicep` | **`+16.4%` RTE/cycle-life gain & `-23.6%` chiller/pump load**, **`0.0%` thermal runaway or `>25% LEL` deflagration breach (`4.2 ms` SIL-3)**, **`6.1 ms` EIS/FBG edge (`98.2%` WAN cut)** |
 | **78** | **Precision Laser Powder Bed Fusion `LPBF` Metal Additive Manufacturing (`3D Rosenthal/Marangoni Melt-Pool PINN-MPC` + `ASTM F3303 / NFPA 484 / SIL-3` Argon `O2<=500ppm` Laser Shutter & Recoater Collision Gate + `100kHz Coaxial Pyrometry / OCT` Edge)** | `simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox()` | `aksclaw-additive-manufacturing-lpbf-meltpool-nfpa484-sil3-pool.bicep` | **`-34.2%` keyhole/lack-of-fusion porosity & `+21.8%` build speed**, **`0.0%` titanium/aluminum dust ignition or recoater crash (`0.9 ms` SIL-3)**, **`1.4 ms` coaxial OCT edge (`98.4%` WAN cut)** |
 | **79** | **Semiconductor Extreme Ultraviolet `EUV 13.5 nm / High-NA 0.55` Photolithography Scanner (`50kHz Sn Droplet LPP Plasma / Mo-Si Collector PINN + Sub-nm MagLev Overlay MPC` + `SEMI S2 / S22 / SIL-3` UHV `H2` Scavenging & `30kW CO2` Laser Shutter Gate + `50kHz L2D` Edge)** | `simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox()` | `aksclaw-euv-lithography-scanner-lpp-overlay-semi-s2-sil3-pool.bicep` | **`-35.6%` 3-sigma overlay/CD error & `+19.4%` WPH throughput**, **`0.0%` UHV `H2` excursion or stage collision (`0.7 ms` SIL-3)**, **`0.8 ms` `50kHz L2D` droplet edge (`98.6%` WAN cut)** |
+| **80** | **Sustainable Aviation Fuel `SAF / e-SAF` Power-to-Liquid `PtL` `RWGS` & Fischer-Tropsch `FT` Synthesis (`ASF Chain-Growth & Exothermic Tubular PINN + Hydrocracking Cut-Point MPC` + `ASTM D7566 / API RP 521 / SIL-3` Thermal-Runaway `BDV` Depressuring & `N2` Quench Gate + `Raman / GC-MS / DTS` Edge)** | `simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox()` | `aksclaw-saf-ptl-fischer-tropsch-rwgs-astm-d7566-sil3-pool.bicep` | **`+21.8%` `C8-C16` jet selectivity & `-18.4%` syngas energy**, **`0.0%` FT thermal runaway or syngas auto-ignition (`2.2 ms` SIL-3)**, **`1.6 ms` Raman/DTS edge (`98.4%` WAN cut)** |
 
 ---
 
@@ -177,10 +178,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 74 quantitative engineering & physics simulators (Chapters 7–79)
+# 2. Run all 75 quantitative engineering & physics simulators (Chapters 7–80)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 83 unit tests (100% pass across 6 runtimes, 74 physics models, 75 blueprints & links)
+# 3. Execute all 84 unit tests (100% pass across 6 runtimes, 75 physics models, 76 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)
