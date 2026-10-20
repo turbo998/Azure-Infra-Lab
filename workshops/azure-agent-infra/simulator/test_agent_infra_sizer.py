@@ -61,6 +61,7 @@ from agent_infra_sizer import (
     simulate_telco_oran_network_slicing_sandbox,
     simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_emergency_wildfire_cad_nims_sandbox,
+    simulate_offshore_wind_subsea_rov_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1018,6 +1019,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["cad_multi_agency_dispatch_conflict_pct"], 3.0)
         self.assertTrue(gov["emergency_wildfire_slo_met"])
         self.assertFalse(raw["emergency_wildfire_slo_met"])
+
+    def test_offshore_wind_subsea_rov_esd_sandbox(self) -> None:
+        gov = simulate_offshore_wind_subsea_rov_esd_sandbox(240, "wake_mpc_dnv_sil3_esd_das_edge")
+        raw = simulate_offshore_wind_subsea_rov_esd_sandbox(240, "greedy_yaw_unchecked_scada_raw_sonar")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["subsea_rov_and_das_interrogators"], 40)
+        self.assertEqual(gov["array_wake_loss_energy_gain_pct"], 11.8)
+        self.assertEqual(gov["vessel_rov_inspection_cost_reduction_pct"], 46.2)
+        self.assertEqual(gov["dnv_api1173_sil3_esd_gate_ms"], 1.4)
+        self.assertEqual(gov["maop_overpressure_or_esd_bypass_escape_pct"], 0.0)
+        self.assertGreater(raw["maop_overpressure_or_esd_bypass_escape_pct"], 2.0)
+        self.assertEqual(gov["das_anchor_drag_edge_triage_ms"], 14.0)
+        self.assertEqual(gov["offshore_vsat_bandwidth_reduction_pct"], 97.2)
+        self.assertEqual(gov["rov_tether_collision_escape_pct"], 0.0)
+        self.assertGreater(raw["rov_tether_collision_escape_pct"], 2.5)
+        self.assertTrue(gov["offshore_subsea_slo_met"])
+        self.assertFalse(raw["offshore_subsea_slo_met"])
 
 
 if __name__ == "__main__":

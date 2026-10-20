@@ -67,6 +67,7 @@ from agent_infra_sizer import (
     simulate_telco_oran_network_slicing_sandbox,
     simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_emergency_wildfire_cad_nims_sandbox,
+    simulate_offshore_wind_subsea_rov_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -627,6 +628,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_emergency_wildfire_cad_nims_sandbox(640, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
         simulate_emergency_wildfire_cad_nims_sandbox(160, "static_isochrone_unverified_cad_raw_lwir"),
     ]
+    offshore_wind_subsea_rov_esd_profiles: List[Dict[str, object]] = [
+        simulate_offshore_wind_subsea_rov_esd_sandbox(60, "wake_mpc_dnv_sil3_esd_das_edge"),
+        simulate_offshore_wind_subsea_rov_esd_sandbox(240, "wake_mpc_dnv_sil3_esd_das_edge"),
+        simulate_offshore_wind_subsea_rov_esd_sandbox(960, "wake_mpc_dnv_sil3_esd_das_edge"),
+        simulate_offshore_wind_subsea_rov_esd_sandbox(240, "greedy_yaw_unchecked_scada_raw_sonar"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -682,6 +689,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "precision_ag_isobus_profiles": precision_ag_isobus_profiles,
         "water_utility_ro_sdwa_profiles": water_utility_ro_sdwa_profiles,
         "emergency_wildfire_cad_nims_profiles": emergency_wildfire_cad_nims_profiles,
+        "offshore_wind_subsea_rov_esd_profiles": offshore_wind_subsea_rov_esd_profiles,
     }
 
 

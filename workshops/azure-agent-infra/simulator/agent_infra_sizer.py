@@ -3289,6 +3289,54 @@ def simulate_emergency_wildfire_cad_nims_sandbox(
     }
 
 
+def simulate_offshore_wind_subsea_rov_esd_sandbox(
+    offshore_wind_and_pipeline_km: int = 240,
+    offshore_subsea_mode: str = "wake_mpc_dnv_sil3_esd_das_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Subsea Pipeline & Offshore Wind Turbine Integrity,
+    Remotely Operated Vehicle (ROV) Sonar/Laser Inspection, Distributed Acoustic
+    Sensing (DAS) Third-Party Anchor-Drag Triage & API RP 1173 / DNV-ST-F101
+    SIL-3 HIPPS/ESD Interlock Agent Infrastructure (Chapter 60).
+    """
+    if offshore_wind_and_pipeline_km <= 0:
+        raise ValueError("offshore_wind_and_pipeline_km must be positive")
+    valid_modes = {
+        "wake_mpc_dnv_sil3_esd_das_edge",
+        "greedy_yaw_unchecked_scada_raw_sonar",
+    }
+    if offshore_subsea_mode not in valid_modes:
+        raise ValueError(f"offshore_subsea_mode must be one of {sorted(valid_modes)}")
+
+    governed = offshore_subsea_mode == "wake_mpc_dnv_sil3_esd_das_edge"
+    gpu_nodes = max(2, math.ceil(offshore_wind_and_pipeline_km / 60))
+    subsea_rov_and_das_interrogators = max(8, int(offshore_wind_and_pipeline_km // 6))
+
+    array_wake_loss_energy_gain_pct = 11.8 if governed else 0.0
+    vessel_rov_inspection_cost_reduction_pct = 46.2 if governed else 0.0
+    dnv_api1173_sil3_esd_gate_ms = 1.4 if governed else 0.0
+    maop_overpressure_or_esd_bypass_escape_pct = 0.0 if governed else 2.2
+    das_anchor_drag_edge_triage_ms = 14.0 if governed else 1840.0
+    offshore_vsat_bandwidth_reduction_pct = 97.2 if governed else 0.0
+    rov_tether_collision_escape_pct = 0.0 if governed else 2.9
+
+    return {
+        "offshore_wind_and_pipeline_km": offshore_wind_and_pipeline_km,
+        "offshore_subsea_mode": offshore_subsea_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "subsea_rov_and_das_interrogators": subsea_rov_and_das_interrogators,
+        "array_wake_loss_energy_gain_pct": array_wake_loss_energy_gain_pct,
+        "vessel_rov_inspection_cost_reduction_pct": vessel_rov_inspection_cost_reduction_pct,
+        "dnv_api1173_sil3_esd_gate_ms": dnv_api1173_sil3_esd_gate_ms,
+        "maop_overpressure_or_esd_bypass_escape_pct": maop_overpressure_or_esd_bypass_escape_pct,
+        "das_anchor_drag_edge_triage_ms": das_anchor_drag_edge_triage_ms,
+        "offshore_vsat_bandwidth_reduction_pct": offshore_vsat_bandwidth_reduction_pct,
+        "rov_tether_collision_escape_pct": rov_tether_collision_escape_pct,
+        "offshore_subsea_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

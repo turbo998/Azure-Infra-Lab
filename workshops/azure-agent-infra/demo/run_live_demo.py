@@ -74,6 +74,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_telco_oran_network_slicing_sandbox,
     simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_emergency_wildfire_cad_nims_sandbox,
+    simulate_offshore_wind_subsea_rov_esd_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -551,6 +552,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "wildfire_160_km": simulate_emergency_wildfire_cad_nims_sandbox(160, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
             "wildfire_640_km": simulate_emergency_wildfire_cad_nims_sandbox(640, "wrf_sfire_cuopt_nims_ics_lwir_edge"),
             "raw_wildfire_160_km": simulate_emergency_wildfire_cad_nims_sandbox(160, "static_isochrone_unverified_cad_raw_lwir"),
+        },
+        "demo_55_offshore_wind_subsea_rov_esd_sandbox": {
+            "offshore_60_km": simulate_offshore_wind_subsea_rov_esd_sandbox(60, "wake_mpc_dnv_sil3_esd_das_edge"),
+            "offshore_240_km": simulate_offshore_wind_subsea_rov_esd_sandbox(240, "wake_mpc_dnv_sil3_esd_das_edge"),
+            "offshore_960_km": simulate_offshore_wind_subsea_rov_esd_sandbox(960, "wake_mpc_dnv_sil3_esd_das_edge"),
+            "raw_offshore_240_km": simulate_offshore_wind_subsea_rov_esd_sandbox(240, "greedy_yaw_unchecked_scada_raw_sonar"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

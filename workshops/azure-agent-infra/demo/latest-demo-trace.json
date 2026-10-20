@@ -3498,6 +3498,68 @@
         "cad_multi_agency_dispatch_conflict_pct": 3.4,
         "emergency_wildfire_slo_met": false
       }
+    ],
+    "offshore_wind_subsea_rov_esd_profiles": [
+      {
+        "offshore_wind_and_pipeline_km": 60,
+        "offshore_subsea_mode": "wake_mpc_dnv_sil3_esd_das_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "subsea_rov_and_das_interrogators": 10,
+        "array_wake_loss_energy_gain_pct": 11.8,
+        "vessel_rov_inspection_cost_reduction_pct": 46.2,
+        "dnv_api1173_sil3_esd_gate_ms": 1.4,
+        "maop_overpressure_or_esd_bypass_escape_pct": 0.0,
+        "das_anchor_drag_edge_triage_ms": 14.0,
+        "offshore_vsat_bandwidth_reduction_pct": 97.2,
+        "rov_tether_collision_escape_pct": 0.0,
+        "offshore_subsea_slo_met": true
+      },
+      {
+        "offshore_wind_and_pipeline_km": 240,
+        "offshore_subsea_mode": "wake_mpc_dnv_sil3_esd_das_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "subsea_rov_and_das_interrogators": 40,
+        "array_wake_loss_energy_gain_pct": 11.8,
+        "vessel_rov_inspection_cost_reduction_pct": 46.2,
+        "dnv_api1173_sil3_esd_gate_ms": 1.4,
+        "maop_overpressure_or_esd_bypass_escape_pct": 0.0,
+        "das_anchor_drag_edge_triage_ms": 14.0,
+        "offshore_vsat_bandwidth_reduction_pct": 97.2,
+        "rov_tether_collision_escape_pct": 0.0,
+        "offshore_subsea_slo_met": true
+      },
+      {
+        "offshore_wind_and_pipeline_km": 960,
+        "offshore_subsea_mode": "wake_mpc_dnv_sil3_esd_das_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "subsea_rov_and_das_interrogators": 160,
+        "array_wake_loss_energy_gain_pct": 11.8,
+        "vessel_rov_inspection_cost_reduction_pct": 46.2,
+        "dnv_api1173_sil3_esd_gate_ms": 1.4,
+        "maop_overpressure_or_esd_bypass_escape_pct": 0.0,
+        "das_anchor_drag_edge_triage_ms": 14.0,
+        "offshore_vsat_bandwidth_reduction_pct": 97.2,
+        "rov_tether_collision_escape_pct": 0.0,
+        "offshore_subsea_slo_met": true
+      },
+      {
+        "offshore_wind_and_pipeline_km": 240,
+        "offshore_subsea_mode": "greedy_yaw_unchecked_scada_raw_sonar",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "subsea_rov_and_das_interrogators": 40,
+        "array_wake_loss_energy_gain_pct": 0.0,
+        "vessel_rov_inspection_cost_reduction_pct": 0.0,
+        "dnv_api1173_sil3_esd_gate_ms": 0.0,
+        "maop_overpressure_or_esd_bypass_escape_pct": 2.2,
+        "das_anchor_drag_edge_triage_ms": 1840.0,
+        "offshore_vsat_bandwidth_reduction_pct": 0.0,
+        "rov_tether_collision_escape_pct": 2.9,
+        "offshore_subsea_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -6540,5 +6602,67 @@
       "emergency_wildfire_slo_met": false
     }
   },
-  "trace_sha256": "e6a659ef2e3680fb9b88d9e539c010e9ecc6c26019ababfa7d5ee561278d6e29"
+  "demo_55_offshore_wind_subsea_rov_esd_sandbox": {
+    "offshore_60_km": {
+      "offshore_wind_and_pipeline_km": 60,
+      "offshore_subsea_mode": "wake_mpc_dnv_sil3_esd_das_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "subsea_rov_and_das_interrogators": 10,
+      "array_wake_loss_energy_gain_pct": 11.8,
+      "vessel_rov_inspection_cost_reduction_pct": 46.2,
+      "dnv_api1173_sil3_esd_gate_ms": 1.4,
+      "maop_overpressure_or_esd_bypass_escape_pct": 0.0,
+      "das_anchor_drag_edge_triage_ms": 14.0,
+      "offshore_vsat_bandwidth_reduction_pct": 97.2,
+      "rov_tether_collision_escape_pct": 0.0,
+      "offshore_subsea_slo_met": true
+    },
+    "offshore_240_km": {
+      "offshore_wind_and_pipeline_km": 240,
+      "offshore_subsea_mode": "wake_mpc_dnv_sil3_esd_das_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "subsea_rov_and_das_interrogators": 40,
+      "array_wake_loss_energy_gain_pct": 11.8,
+      "vessel_rov_inspection_cost_reduction_pct": 46.2,
+      "dnv_api1173_sil3_esd_gate_ms": 1.4,
+      "maop_overpressure_or_esd_bypass_escape_pct": 0.0,
+      "das_anchor_drag_edge_triage_ms": 14.0,
+      "offshore_vsat_bandwidth_reduction_pct": 97.2,
+      "rov_tether_collision_escape_pct": 0.0,
+      "offshore_subsea_slo_met": true
+    },
+    "offshore_960_km": {
+      "offshore_wind_and_pipeline_km": 960,
+      "offshore_subsea_mode": "wake_mpc_dnv_sil3_esd_das_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "subsea_rov_and_das_interrogators": 160,
+      "array_wake_loss_energy_gain_pct": 11.8,
+      "vessel_rov_inspection_cost_reduction_pct": 46.2,
+      "dnv_api1173_sil3_esd_gate_ms": 1.4,
+      "maop_overpressure_or_esd_bypass_escape_pct": 0.0,
+      "das_anchor_drag_edge_triage_ms": 14.0,
+      "offshore_vsat_bandwidth_reduction_pct": 97.2,
+      "rov_tether_collision_escape_pct": 0.0,
+      "offshore_subsea_slo_met": true
+    },
+    "raw_offshore_240_km": {
+      "offshore_wind_and_pipeline_km": 240,
+      "offshore_subsea_mode": "greedy_yaw_unchecked_scada_raw_sonar",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "subsea_rov_and_das_interrogators": 40,
+      "array_wake_loss_energy_gain_pct": 0.0,
+      "vessel_rov_inspection_cost_reduction_pct": 0.0,
+      "dnv_api1173_sil3_esd_gate_ms": 0.0,
+      "maop_overpressure_or_esd_bypass_escape_pct": 2.2,
+      "das_anchor_drag_edge_triage_ms": 1840.0,
+      "offshore_vsat_bandwidth_reduction_pct": 0.0,
+      "rov_tether_collision_escape_pct": 2.9,
+      "offshore_subsea_slo_met": false
+    }
+  },
+  "trace_sha256": "df4e613f8d66c54f8bf9a30b6d8d2f2822b7e8af150bda5c35c24258232819f0"
 }
