@@ -100,6 +100,7 @@ from agent_infra_sizer import (
     simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
     simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
     simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
+    simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -247,6 +248,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-cryogenic-lh2-lch4-launch-pad-chilldown-geyser-sil3-pool.bicep",
             "aksclaw-airborne-wind-energy-crosswind-kite-tether-iec61400-sil3-pool.bicep",
             "aksclaw-maglev-eds-ems-lsm-levitation-airgap-en50129-sil4-pool.bicep",
+            "aksclaw-ptes-carnot-battery-brayton-turbocompressor-thermocline-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1839,6 +1841,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_girder_resonance_or_lsm_phase_desync_pct"], 3.0)
         self.assertTrue(gov["maglev_lsm_levitation_slo_met"])
         self.assertFalse(raw["maglev_lsm_levitation_slo_met"])
+
+    def test_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(self) -> None:
+        gov = simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(
+            20, "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge"
+        )
+        raw = simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(
+            20, "static_igv_schedule_delayed_recycle_valve_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ptes_carnot_pods"], 8)
+        self.assertEqual(gov["round_trip_exergy_efficiency_gain_pct"], 31.8)
+        self.assertEqual(gov["thermocline_degradation_and_surge_recycle_loss_reduction_pct"], 42.5)
+        self.assertEqual(gov["asme_api670_sil3_antisurge_and_overspeed_interlock_ms"], 0.5)
+        self.assertEqual(gov["compressor_surge_reversal_or_tank_creep_breach_pct"], 0.0)
+        self.assertGreater(raw["compressor_surge_reversal_or_tank_creep_breach_pct"], 1.2)
+        self.assertEqual(gov["turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms"], 0.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.2)
+        self.assertEqual(gov["uncompensated_thermocline_breakthrough_or_shaft_rub_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_thermocline_breakthrough_or_shaft_rub_pct"], 3.0)
+        self.assertTrue(gov["ptes_carnot_battery_slo_met"])
+        self.assertFalse(raw["ptes_carnot_battery_slo_met"])
 
 
 if __name__ == "__main__":

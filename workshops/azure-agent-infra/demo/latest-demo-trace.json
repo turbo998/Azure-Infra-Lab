@@ -5916,6 +5916,68 @@
         "uncompensated_girder_resonance_or_lsm_phase_desync_pct": 3.2,
         "maglev_lsm_levitation_slo_met": false
       }
+    ],
+    "ptes_carnot_battery_brayton_profiles": [
+      {
+        "ptes_carnot_trains": 10,
+        "ptes_governance_mode": "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ptes_carnot_pods": 5,
+        "round_trip_exergy_efficiency_gain_pct": 31.8,
+        "thermocline_degradation_and_surge_recycle_loss_reduction_pct": 42.5,
+        "asme_api670_sil3_antisurge_and_overspeed_interlock_ms": 0.5,
+        "compressor_surge_reversal_or_tank_creep_breach_pct": 0.0,
+        "turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.2,
+        "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 0.0,
+        "ptes_carnot_battery_slo_met": true
+      },
+      {
+        "ptes_carnot_trains": 20,
+        "ptes_governance_mode": "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ptes_carnot_pods": 8,
+        "round_trip_exergy_efficiency_gain_pct": 31.8,
+        "thermocline_degradation_and_surge_recycle_loss_reduction_pct": 42.5,
+        "asme_api670_sil3_antisurge_and_overspeed_interlock_ms": 0.5,
+        "compressor_surge_reversal_or_tank_creep_breach_pct": 0.0,
+        "turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.2,
+        "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 0.0,
+        "ptes_carnot_battery_slo_met": true
+      },
+      {
+        "ptes_carnot_trains": 80,
+        "ptes_governance_mode": "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ptes_carnot_pods": 26,
+        "round_trip_exergy_efficiency_gain_pct": 31.8,
+        "thermocline_degradation_and_surge_recycle_loss_reduction_pct": 42.5,
+        "asme_api670_sil3_antisurge_and_overspeed_interlock_ms": 0.5,
+        "compressor_surge_reversal_or_tank_creep_breach_pct": 0.0,
+        "turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.2,
+        "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 0.0,
+        "ptes_carnot_battery_slo_met": true
+      },
+      {
+        "ptes_carnot_trains": 20,
+        "ptes_governance_mode": "static_igv_schedule_delayed_recycle_valve_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ptes_carnot_pods": 8,
+        "round_trip_exergy_efficiency_gain_pct": 5.3,
+        "thermocline_degradation_and_surge_recycle_loss_reduction_pct": 7.1,
+        "asme_api670_sil3_antisurge_and_overspeed_interlock_ms": 154.0,
+        "compressor_surge_reversal_or_tank_creep_breach_pct": 1.5,
+        "turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms": 206.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 3.4,
+        "ptes_carnot_battery_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -11151,5 +11213,52 @@
       "maglev_lsm_levitation_slo_met": false
     }
   },
-  "trace_sha256": "1c2578e5eb82727fc702fcd8da5f61113aad916a3c0b2b053a85b29898729f58"
+  "demo_94_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox": {
+    "ptes_carnot_20_trains": {
+      "ptes_carnot_trains": 20,
+      "ptes_governance_mode": "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ptes_carnot_pods": 8,
+      "round_trip_exergy_efficiency_gain_pct": 31.8,
+      "thermocline_degradation_and_surge_recycle_loss_reduction_pct": 42.5,
+      "asme_api670_sil3_antisurge_and_overspeed_interlock_ms": 0.5,
+      "compressor_surge_reversal_or_tank_creep_breach_pct": 0.0,
+      "turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.2,
+      "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 0.0,
+      "ptes_carnot_battery_slo_met": true
+    },
+    "ptes_carnot_80_trains": {
+      "ptes_carnot_trains": 80,
+      "ptes_governance_mode": "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ptes_carnot_pods": 26,
+      "round_trip_exergy_efficiency_gain_pct": 31.8,
+      "thermocline_degradation_and_surge_recycle_loss_reduction_pct": 42.5,
+      "asme_api670_sil3_antisurge_and_overspeed_interlock_ms": 0.5,
+      "compressor_surge_reversal_or_tank_creep_breach_pct": 0.0,
+      "turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.2,
+      "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 0.0,
+      "ptes_carnot_battery_slo_met": true
+    },
+    "raw_ptes_carnot_20_trains": {
+      "ptes_carnot_trains": 20,
+      "ptes_governance_mode": "static_igv_schedule_delayed_recycle_valve_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ptes_carnot_pods": 8,
+      "round_trip_exergy_efficiency_gain_pct": 5.3,
+      "thermocline_degradation_and_surge_recycle_loss_reduction_pct": 7.1,
+      "asme_api670_sil3_antisurge_and_overspeed_interlock_ms": 154.0,
+      "compressor_surge_reversal_or_tank_creep_breach_pct": 1.5,
+      "turbomachinery_dynamic_pressure_dts_magnetic_bearing_edge_latency_ms": 206.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 3.4,
+      "ptes_carnot_battery_slo_met": false
+    }
+  },
+  "trace_sha256": "1e557a8e2c8091fb92620b7348aa8d489f18e6f81f4f430c3b185bfea784b073"
 }

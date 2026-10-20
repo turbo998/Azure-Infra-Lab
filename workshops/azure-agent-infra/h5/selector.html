@@ -506,6 +506,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(91)">92. 航天发射场深冷液氢 (LH2 20K) 与过冷液甲烷/液氧 (LCH4/LOX) 推进剂过冷致密化、莱顿弗罗斯特预冷间歇泉 (Geysering) 气锤抑制、零蒸发 (ZBO) 回收及 NASA-STD-5005 / NFPA 2 / SIL-3 脐带塔快脱与防瘪罐联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(92)">93. 高空风能 (AWE) 兆瓦级横风刚性翼系留风筝与深远海浮式高空风场、大气边界层急流/悬链线冲击张力 (Snap-Load) PINN-MPC 及 IEC 61400-30 / EASA SC-AWES SIL-3 绞车泄荷与空域防撞联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(93)">94. 超高速磁浮 (600 km/h EMS/EDS) 地面长定子直线同步电机 (LSM) 无冲击越区切换、悬浮气隙/高架梁车桥耦合颤振 PINN-MPC 及 EN 50128 / EN 50129 SIL-4 防碰极与电涡流制动联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(94)">95. 吉瓦级长时泵热储能 (PTES / 卡诺电池) 超临界 sCO2/氩气闭式布雷顿可逆涡轮压缩机喘振裕度、填充床斜温层热弥散 PINN-MPC 及 ASME PTC 10 / API 670 / SIL-3 防喘振热气旁路与超速跳闸联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2629,6 +2630,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 94: Autonomous Long-Duration Pumped Thermal Electricity Storage (PTES / Carnot Battery) Reversible Brayton Turbocompressor, Thermocline PINN-MPC & ASME PTC 10 / API 670 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 94 · LONG-DURATION PUMPED THERMAL ELECTRICITY STORAGE (PTES / CARNOT BATTERY) REVERSIBLE BRAYTON TURBOCOMPRESSOR, THERMOCLINE PINN-MPC &amp; ASME PTC 10 / API 670 / SIL-3 INTERLOCK SIZER</span>
+    <h2>自主吉瓦级长时泵热储能 (<code>PTES / Carnot Battery</code> 卡诺电池) 闭式布雷顿可逆涡轮压缩机喘振裕度、填充床/熔盐斜温层 (<code>Thermocline</code>) 热弥散 <code>PINN-MPC</code> 及 <code>ASME PTC 10 / API 670 / IEC 61511 SIL-3</code> 防喘振热气旁路与超速跳闸联锁测算器</h2>
+    <div class="sub">量化在 <code>10 – 80</code> 套长时泵热储能（<code>10–100 hr</code> 超临界 <code>sCO2</code> 或氩气闭式布雷顿可逆热泵/热机储热机组，耦合 <code>565–950 °C</code> 高温玄武岩填充床/熔盐罐与 <code>-60 °C</code> 冷罐）规模下，<code>Schumann</code> 多孔介质填充床斜温层热弥散与 <code>Span-Wagner</code> 真实气体压气机旋转失速/喘振边界 <code>PINN</code> + 多级可调进口导叶 (<code>VIGV</code>) 与闭式工质库存充排 (<code>Inventory Control</code>) 协同 <code>MPC</code>（全周期往返㶲效率 <code>RTE</code> 与顶峰可用容量 <code>+31.8%</code>、斜温层轴向展宽贬值与防喘振回流节流损耗 <code>-42.5%</code>）、<code>ASME PTC 10 / API 670 / IEC 61511 SIL-3</code> 电液比例防喘振热气快开旁路阀 (<code>ASV</code>)、五自由度磁悬浮轴承 (<code>AMB</code>) 防跌落保护与 <code>110%</code> 甩负荷超速跳闸 (<code>OST</code>) 硬联锁（<code>0.5 ms</code>，压气机喘振倒灌断叶或高温储罐热棘轮蠕变破裂违例率 <code>0.0%</code>）及厂房滑撬 <code>100 kHz Kulite</code> 叶顶动态压力阵 + 三维储罐分布式光纤测温 (<code>DTS</code>) + <code>API 670 / Azure Local</code> 边缘推理（<code>0.5 ms</code>，储能电站广域网带宽削减 <code>99.2%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在役卡诺电池 (PTES) 可逆布雷顿涡轮压缩与储热机组数 (PTES Carnot Battery Trains): <strong id="lbl_ptes_trains" style="color:var(--teal)">20</strong> PTES Trains</label>
+          <input type="range" id="rng_ptes_trains" min="10" max="80" step="10" value="20" oninput="runPtesCarnotBatteryLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 斜温层热弥散/喘振裕度 PINN-MPC、工质库存调节与 ASME PTC 10 / API 670 SIL-3 联锁模式 (PTES Governance Mode)</label>
+          <select id="sel_ptes_mode" onchange="runPtesCarnotBatteryLab()">
+            <option value="pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge" selected>Schumann 斜温层与真实气体喘振 PINN + 可变导叶/库存压力 MPC (+31.8% 往返㶲效率 RTE / -42.5% 斜温层贬值与回流损耗) + API 670 SIL-3 0.5ms 防喘振热气旁路/防超速联锁 + 0.5ms 厂房 100kHz Kulite/DTS 边缘 (推荐)</option>
+            <option value="static_igv_schedule_delayed_recycle_valve_cloud">传统反模式：静态导叶查表与慢速机械回流阀 (+5.3% 效率增益) + 无 0.5ms 热气快开旁路与磁轴承防跌落 SIL-3 硬联锁 (1.5% 喘振倒灌折断叶片或高温储罐热棘轮违例) + 原始振动波形流上云 (3.4% 斜温层冷锋击穿或磁轴承刮缸漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="ptesCarnotOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -4218,6 +4242,21 @@ resource maglevLsmAirgapSil4Pool 'Microsoft.ContainerService/managedClusters/age
       'aksclaw.io/wayside-38ghz-mmwave-eddy-gap-tsn-edge': 'enabled-0.4ms-99.3pct-rail-wan-cut'
     }
   }
+}`,
+`// Blueprint #95: Long-Duration Pumped Thermal Electricity Storage (PTES / Carnot Battery) Reversible Brayton Turbocompressor, Thermocline PINN-MPC & ASME PTC 10 / API 670 / SIL-3 Pool (Chapter 99)
+resource ptesCarnotBatterySil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'ptessil3'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'ptes-carnot-battery-brayton-turbocompressor-sil3-agent'
+      'aksclaw.io/pinn-mpc-schumann-thermocline-vigv-inventory-control': 'enabled-31.8pct-roundtrip-exergy-gain-42.5pct-thermocline-surge-loss-cut'
+      'aksclaw.io/asme-ptc10-api670-iec61511-sil3-hotgas-bypass-ost': 'enforced-0.5ms-zero-compressor-surge-or-tank-creep-breach'
+      'aksclaw.io/turbomachinery-100khz-kulite-dts-amb-edge': 'enabled-0.5ms-99.2pct-plant-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4412,6 +4451,30 @@ runHtsRebcoCableSfclLab();
 runCryoLaunchPadLab();
 runAweCrosswindKiteLab();
 runMaglevLsmAirgapLab();
+runPtesCarnotBatteryLab();
+
+function runPtesCarnotBatteryLab() {
+  const trains = parseInt(document.getElementById('rng_ptes_trains').value, 10);
+  const mode = document.getElementById('sel_ptes_mode').value;
+  document.getElementById('lbl_ptes_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 10));
+  const pods = trains <= 20 ? Math.max(2, Math.min(8, Math.floor(trains / 2))) : Math.max(8, Math.floor(trains / 3));
+  const ok = mode === 'pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge';
+  const mpcStr = ok ? "Schumann 多孔介质填充床斜温层热弥散与真实气体 (Span-Wagner sCO2) 压气机失速/喘振 PINN + 多级可调进口导叶 (VIGV) 与闭式工质库存压力 (Inventory Control) MPC · 往返㶲效率 (RTE) 与顶峰容量 +31.8% · 斜温层轴向展宽贬值与防喘振回流节流损耗 -42.5%" : "传统静态导叶查表与慢速机械防喘振回流阀 · 仅 +5.3% 效率增益 / -7.1% 损耗削减 (频繁充放切换引发斜温层严重展宽退化，且 3.4% 斜温层冷锋击穿冲击透平或磁轴承刮缸漏检)";
+  const sil3Str = ok ? "0.5 ms ASME PTC 10 / API 670 / IEC 61511 SIL-3 电液防喘振热气快开旁路阀 (ASV)、五自由度磁悬浮轴承 (AMB) 防跌落与 110% 超速跳闸 (OST) 硬联锁 · 0.0% 喘振断叶/储罐蠕变违例" : "无 0.5ms 热气快开旁路与磁轴承防跌落 SIL-3 硬联锁 (154.0 ms 远端云滞后) · 1.5% 快频响应跨越喘振线引发高压气流倒灌折断叶片或高温储罐热棘轮蠕变开裂风险";
+  const edgeStr = ok ? "0.5 ms 厂房滑撬 100 kHz Kulite 耐高温叶顶动态压力阵列、储热罐三维分布式光纤测温 (DTS)、API 670 轴心轨迹与 Azure Local 边缘 (-99.2% 储能电站广域网带宽) · 0.0% 模态失速波/斜温层畸变漏检" : "206.0 ms 原始 100 kHz 多通道动态压力波形与三维储罐温度场流回传远端电网云 · 远超 20,000 RPM 转子旋转失速尖峰发展为全面喘振的 ~15 ms 物理极限窗口";
+
+  document.getElementById('ptesCarnotOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 可逆压气机喘振倒灌断叶或高温储罐热棘轮蠕变破裂风险 · 3.4% 斜温层冷锋提前击穿或磁悬浮轴承跌落刮缸漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个可逆涡轮压缩机与斜温层孪生单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>厂房滑撬 100 kHz Kulite 叶顶动态压力阵列、储热罐分布式光纤测温 (DTS) 与 API 670 / Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runMaglevLsmAirgapLab() {
   const sectors = parseInt(document.getElementById('rng_maglev_sectors').value, 10);

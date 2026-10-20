@@ -106,6 +106,7 @@ from agent_infra_sizer import (
     simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
     simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
     simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
+    simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -900,6 +901,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(96, "pinn_mpc_airgap_girder_lsm_handover_en50129_sil4_edge"),
         simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox(24, "decoupled_pid_airgap_hard_thyristor_block_switch_cloud"),
     ]
+    ptes_carnot_battery_brayton_profiles: List[Dict[str, object]] = [
+        simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(10, "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge"),
+        simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(20, "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge"),
+        simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(80, "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge"),
+        simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(20, "static_igv_schedule_delayed_recycle_valve_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -994,6 +1001,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cryogenic_lh2_lch4_launch_pad_profiles": cryogenic_lh2_lch4_launch_pad_profiles,
         "awe_crosswind_kite_tether_profiles": awe_crosswind_kite_tether_profiles,
         "maglev_lsm_levitation_airgap_profiles": maglev_lsm_levitation_airgap_profiles,
+        "ptes_carnot_battery_brayton_profiles": ptes_carnot_battery_brayton_profiles,
     }
 
 
