@@ -502,6 +502,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(87)">88. 平流层高空长航时 (HALE) 太阳能伪卫星 (HAPS) 大展弦比超柔机翼气动弹性阵风载荷减缓 (GLA) + 全固态锂硫 (Li-S) 电池昼夜势能-电能平衡 PINN-MPC 与 STANAG 4671 / DO-178C DAL-A 防颤振联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(88)">89. 第四代液态金属快中子增殖堆 (钠冷快堆 SFR / 铅铋快堆 LBE) 热池热条纹与冷阱控氧 PINN-MPC + 蒸汽发生器钠水反应 (SWR) 声学检测与 ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3 爆破片联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(89)">90. 超深水盐下控压钻井 (MPD) 窄密度窗口 (PP-FG &lt; 0.4 ppg) 当量循环密度 ECD 与钻柱粘滑 PINN-MPC + 有线钻杆 (WDP)/科里奥利微流量溢流早检与 API RP 53 / IEC 61511 SIL-3 节流/防喷器 BOP 联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(90)">91. 城市特大电网高温超导 (HTS REBCO 2G) 故障限流器 (SFCL) 与过冷液氮 (LN2 65-77K) 三同轴超导电力电缆失超热点传播 (NZPV) PINN-MPC 及 IEEE C37.302 / IEC 61508 SIL-3 高速旁路开关联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2533,6 +2534,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 90: Autonomous Grid-Scale High-Temperature Superconducting (HTS REBCO 2G) Fault-Current Limiter (SFCL) & Subcooled Liquid-Nitrogen (LN2 65–77 K) Triaxial Superconducting Power Cable, Quench Hot-Spot Propagation PINN-MPC & IEEE C37.302 / IEC 61508 SIL-3 Bypass Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 90 · GRID-SCALE HTS REBCO 2G SUPERCONDUCTING CABLE &amp; FAULT-CURRENT LIMITER (SFCL), QUENCH HOT-SPOT PINN-MPC &amp; IEEE C37.302 / IEC 61508 SIL-3 BYPASS INTERLOCK SIZER</span>
+    <h2>自主城市特大电网高温超导 (<code>HTS REBCO 2G</code>) 故障限流器 (<code>SFCL</code>) 与过冷液氮 (<code>LN2 65–77 K</code>) 三同轴超导电缆、失超热点传播 (<code>NZPV</code>) <code>PINN-MPC</code> 及 <code>IEEE C37.302 / IEC 61508 SIL-3</code> 高速旁路联锁测算器</h2>
+    <div class="sub">量化在 <code>6 – 48</code> 条城市吉瓦级三同轴高温超导输电走廊与故障限流器 (<code>SFCL</code>) 规模下，第二代稀土钡铜氧 (<code>2G REBCO</code>) 超导带材各向异性 <code>E-J</code> 幂律磁通蠕动、交流磁滞损耗与慢速失超正常区传播 (<code>NZPV ~ 1–5 cm/s</code>) <code>PINN</code> + 逆布雷顿 (<code>Reverse-Brayton</code>) 过冷液氮 (<code>65 K, 1.5 MPa</code>) 流量与三相电流平衡 <code>MPC</code>（临界电流载流裕度与 <code>SFCL</code> 限流后快速复归可用率 <code>+31.2%</code>、交流损耗与低温制冷站综合电耗 <code>-38.6%</code>）、<code>IEEE C37.302 / IEC 62814 / IEC 61508 SIL-3</code> 亚毫秒级电磁斥力真空旁路断路器与杜瓦过压泄放硬联锁（<code>0.7 ms</code>，<code>REBCO</code> 带材热分层烧毁或液氮沸腾绝缘闪络违例率 <code>0.0%</code>）及变电站瑞利光频域 (<code>BOFDA / Φ-OTDR</code>) 分布式低温光纤 + 桥式差分失超电压抽头 + <code>IEC 61850-9-2LE / Azure Local</code> 边缘推理（<code>0.6 ms</code>，电网广域专网带宽削减 <code>99.1%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在役城市高温超导电缆走廊与故障限流器数 (HTS REBCO Cable &amp; SFCL Corridors): <strong id="lbl_hts_corridors" style="color:var(--amber)">12</strong> HTS Corridors</label>
+          <input type="range" id="rng_hts_corridors" min="6" max="48" step="6" value="12" oninput="runHtsRebcoCableSfclLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 超导带材 E-J/NZPV 失超 PINN-MPC、过冷液氮制冷平衡与 IEEE C37.302 / IEC 61508 SIL-3 高速旁路联锁模式 (HTS REBCO Governance Mode)</label>
+          <select id="sel_hts_mode" onchange="runHtsRebcoCableSfclLab()">
+            <option value="pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge" selected>各向异性 E-J 磁通蠕动与慢速 NZPV 失超 PINN + 逆布雷顿 65K 过冷液氮 MPC (+31.2% 载流裕度/SFCL 复归 / -38.6% 交流损耗与制冷电耗) + IEEE C37.302 SIL-3 0.7ms 高速旁路联锁 + 0.6ms 变电站 BOFDA/IEC61850 边缘 (推荐)</option>
+            <option value="static_ln2_pump_threshold_voltage_trip_cloud">传统反模式：定速液氮泵与终端总电压阈值跳闸 (+5.2% 载流裕度) + 无亚毫秒电磁斥力旁路开关 SIL-3 硬联锁 (1.5% REBCO 带材热分层烧毁或液氮沸腾闪络违例) + 原始光纤/行波流上云 (3.4% 厘米级孤立失超热点或杜瓦真空劣化漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="htsOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -4062,6 +4086,21 @@ resource subsaltMpdDrillingSil3Pool 'Microsoft.ContainerService/managedClusters/
       'aksclaw.io/drillship-wdp-intelliserv-coriolis-witsml-edge': 'enabled-0.9ms-99.1pct-offshore-satcom-wan-cut'
     }
   }
+}`,
+`// Blueprint #91: Grid-Scale High-Temperature Superconducting (HTS REBCO 2G) Fault-Current Limiter (SFCL) & Subcooled LN2 (65–77 K) Triaxial Superconducting Cable Pool (Chapter 95)
+resource htsRebcoSfclSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'htsrebcosil3'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'hts-rebco-superconducting-cable-sfcl-quench-sil3-agent'
+      'aksclaw.io/pinn-mpc-ej-powerlaw-nzpv-quench-reverse-brayton-ln2': 'enabled-31.2pct-ic-ampacity-gain-38.6pct-ac-cryo-power-cut'
+      'aksclaw.io/ieee-c37-302-iec61508-sil3-fast-bypass-relief-interlock': 'enforced-0.7ms-zero-rebco-delamination-or-ln2-flashover'
+      'aksclaw.io/substation-bofda-voltage-tap-iec61850-edge': 'enabled-0.6ms-99.1pct-grid-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4252,6 +4291,30 @@ runGwInterferometerLab();
 runStratosphericHaleLab();
 runGen4LiquidMetalSfrLab();
 runSubsaltMpdDrillingLab();
+runHtsRebcoCableSfclLab();
+
+function runHtsRebcoCableSfclLab() {
+  const corridors = parseInt(document.getElementById('rng_hts_corridors').value, 10);
+  const mode = document.getElementById('sel_hts_mode').value;
+  document.getElementById('lbl_hts_corridors').textContent = corridors.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(corridors / 6));
+  const pods = Math.max(2, Math.floor(corridors / 2));
+  const ok = mode === 'pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge';
+  const mpcStr = ok ? "2G REBCO 超导带材各向异性 E-J 磁通蠕动与慢速失超正常区传播 (NZPV ~ 1-5 cm/s) PINN + 逆布雷顿 (Reverse-Brayton) 过冷液氮 (65 K, 1.5 MPa) 与三同轴电流平衡 MPC · 临界电流载流裕度与 SFCL 限流复归可用率 +31.2% · 交流磁滞损耗与低温制冷站综合电耗 -38.6%" : "传统定速液氮泵与终端总电压阈值跳闸 · 仅 +5.2% 载流裕度 / -6.8% 损耗削减 (三同轴各相电流不平衡与定工况过冷冗余导致高制冷电耗，且 3.4% 厘米级孤立慢速失超热点或杜瓦高真空绝热劣化漏检)";
+  const sil3Str = ok ? "0.7 ms IEEE C37.302 / IEC 62814 / IEC 61508 SIL-3 亚毫秒电磁斥力真空旁路开关、超导限流换流与杜瓦爆破片泄放硬联锁 · 0.0% REBCO 带材热分层烧毁/液氮沸腾绝缘闪络违例" : "仅靠终端总电压判据与常规机械断路器分闸无亚毫秒旁路 SIL-3 硬联锁 (105.0 ms 回路滞后) · 1.5% 慢速 NZPV 局部热点在端电压达标前已超温至 >250 K 烧毁带材或引发液氮气化闪络风险";
+  const edgeStr = ok ? "0.6 ms 变电站瑞利光频域 (BOFDA / Φ-OTDR) 分布式低温光纤、桥式差分失超电压抽头与 IEC 61850-9-2LE / Azure Local 边缘 (-99.1% 电力调度专网带宽) · 0.0% 局部热点漏检" : "218.0 ms 原始高频行波、局部放电与分布式光纤光谱流回传区域调控云 · 远超 1/4 工频周期短路限流配合与毫米级液氮核态沸腾抑制窗口";
+
+  document.getElementById('htsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% REBCO 超导带材热分层烧毁或液氮沸腾气泡绝缘闪络风险 · 3.4% 慢速 NZPV 孤立失超热点 (<2 cm) 或杜瓦真空劣化漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个高温超导电缆与 SFCL 数字孪生单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>变电站瑞利光频域 (BOFDA / Φ-OTDR) 分布式低温光纤、桥式失超电压抽头与 IEC 61850-9-2LE / Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runSubsaltMpdDrillingLab() {
   const wells = parseInt(document.getElementById('rng_mpd_wells').value, 10);

@@ -96,6 +96,7 @@ from agent_infra_sizer import (
     simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
     simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox,
     simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox,
+    simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -239,6 +240,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-stratospheric-hale-solar-haps-aeroelastic-dala-pool.bicep",
             "aksclaw-gen4-liquid-metal-sfr-lbe-swr-class1e-sil3-pool.bicep",
             "aksclaw-subsalt-mpd-drilling-lwd-kick-apirp53-sil3-pool.bicep",
+            "aksclaw-hts-rebco-superconducting-cable-sfcl-quench-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1747,6 +1749,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncontrolled_gas_influx_or_lost_return_fracture_pct"], 3.0)
         self.assertTrue(gov["subsalt_mpd_drilling_slo_met"])
         self.assertFalse(raw["subsalt_mpd_drilling_slo_met"])
+
+    def test_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(self) -> None:
+        gov = simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(
+            12, "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge"
+        )
+        raw = simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(
+            12, "static_ln2_pump_threshold_voltage_trip_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_hts_rebco_grid_pods"], 6)
+        self.assertEqual(gov["critical_current_ampacity_and_sfcl_recovery_gain_pct"], 31.2)
+        self.assertEqual(gov["ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct"], 38.6)
+        self.assertEqual(gov["ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms"], 0.7)
+        self.assertEqual(gov["rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct"], 0.0)
+        self.assertGreater(raw["rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct"], 1.2)
+        self.assertEqual(gov["substation_bofda_voltage_tap_iec61850_edge_latency_ms"], 0.6)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.1)
+        self.assertEqual(gov["unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct"], 0.0)
+        self.assertGreater(raw["unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct"], 3.0)
+        self.assertTrue(gov["hts_rebco_superconducting_cable_sfcl_slo_met"])
+        self.assertFalse(raw["hts_rebco_superconducting_cable_sfcl_slo_met"])
 
 
 if __name__ == "__main__":

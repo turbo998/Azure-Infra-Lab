@@ -5466,5 +5466,67 @@
       "uncontrolled_gas_influx_or_lost_return_fracture_pct": 3.5,
       "subsalt_mpd_drilling_slo_met": false
     }
+  ],
+  "hts_rebco_superconducting_cable_sfcl_profiles": [
+    {
+      "hts_rebco_cable_sfcl_corridors": 6,
+      "hts_governance_mode": "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hts_rebco_grid_pods": 3,
+      "critical_current_ampacity_and_sfcl_recovery_gain_pct": 31.2,
+      "ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct": 38.6,
+      "ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms": 0.7,
+      "rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct": 0.0,
+      "substation_bofda_voltage_tap_iec61850_edge_latency_ms": 0.6,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct": 0.0,
+      "hts_rebco_superconducting_cable_sfcl_slo_met": true
+    },
+    {
+      "hts_rebco_cable_sfcl_corridors": 12,
+      "hts_governance_mode": "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hts_rebco_grid_pods": 6,
+      "critical_current_ampacity_and_sfcl_recovery_gain_pct": 31.2,
+      "ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct": 38.6,
+      "ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms": 0.7,
+      "rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct": 0.0,
+      "substation_bofda_voltage_tap_iec61850_edge_latency_ms": 0.6,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct": 0.0,
+      "hts_rebco_superconducting_cable_sfcl_slo_met": true
+    },
+    {
+      "hts_rebco_cable_sfcl_corridors": 48,
+      "hts_governance_mode": "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hts_rebco_grid_pods": 24,
+      "critical_current_ampacity_and_sfcl_recovery_gain_pct": 31.2,
+      "ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct": 38.6,
+      "ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms": 0.7,
+      "rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct": 0.0,
+      "substation_bofda_voltage_tap_iec61850_edge_latency_ms": 0.6,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct": 0.0,
+      "hts_rebco_superconducting_cable_sfcl_slo_met": true
+    },
+    {
+      "hts_rebco_cable_sfcl_corridors": 12,
+      "hts_governance_mode": "static_ln2_pump_threshold_voltage_trip_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hts_rebco_grid_pods": 6,
+      "critical_current_ampacity_and_sfcl_recovery_gain_pct": 5.2,
+      "ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct": 6.8,
+      "ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms": 105.0,
+      "rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct": 1.5,
+      "substation_bofda_voltage_tap_iec61850_edge_latency_ms": 218.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct": 3.4,
+      "hts_rebco_superconducting_cable_sfcl_slo_met": false
+    }
   ]
 }

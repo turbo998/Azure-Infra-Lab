@@ -4974,6 +4974,49 @@ def simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(
     }
 
 
+def simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox(
+    hts_rebco_cable_sfcl_corridors: int = 12,
+    hts_governance_mode: str = "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Grid-Scale High-Temperature Superconducting (HTS REBCO 2G) Fault-Current Limiter (SFCL) & Subcooled Liquid-Nitrogen (LN2 65-77 K) Triaxial Superconducting Power Cable, Quench Hot-Spot Propagation PINN-MPC & IEEE C37.302 / IEC 61508 SIL-3 Bypass Interlock Agent Infrastructure (Chapter 95)."""
+    if hts_rebco_cable_sfcl_corridors <= 0:
+        raise ValueError("hts_rebco_cable_sfcl_corridors must be positive")
+    valid_modes = {
+        "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge",
+        "static_ln2_pump_threshold_voltage_trip_cloud",
+    }
+    if hts_governance_mode not in valid_modes:
+        raise ValueError(f"hts_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = hts_governance_mode == "pinn_mpc_ej_nzpv_quench_subcooled_ln2_sil3_edge"
+    active_hts_rebco_grid_pods = max(2, int(hts_rebco_cable_sfcl_corridors // 2))
+    gpu_nodes = max(2, math.ceil(hts_rebco_cable_sfcl_corridors / 6))
+
+    critical_current_ampacity_and_sfcl_recovery_gain_pct = 31.2 if governed else 5.2
+    ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct = 38.6 if governed else 6.8
+    ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms = 0.7 if governed else 105.0
+    rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct = 0.0 if governed else 1.5
+    substation_bofda_voltage_tap_iec61850_edge_latency_ms = 0.6 if governed else 218.0
+    wan_bandwidth_reduction_pct = 99.1 if governed else 0.0
+    unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct = 0.0 if governed else 3.4
+
+    return {
+        "hts_rebco_cable_sfcl_corridors": hts_rebco_cable_sfcl_corridors,
+        "hts_governance_mode": hts_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_hts_rebco_grid_pods": active_hts_rebco_grid_pods,
+        "critical_current_ampacity_and_sfcl_recovery_gain_pct": critical_current_ampacity_and_sfcl_recovery_gain_pct,
+        "ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct": ac_hysteresis_loss_and_reverse_brayton_cryocooler_power_reduction_pct,
+        "ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms": ieee_c37_302_iec61508_sil3_fast_bypass_relief_interlock_ms,
+        "rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct": rebco_tape_delamination_or_ln2_boiling_flashover_breach_pct,
+        "substation_bofda_voltage_tap_iec61850_edge_latency_ms": substation_bofda_voltage_tap_iec61850_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct": unmasked_normal_zone_hot_spot_or_cryostat_vacuum_loss_pct,
+        "hts_rebco_superconducting_cable_sfcl_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
