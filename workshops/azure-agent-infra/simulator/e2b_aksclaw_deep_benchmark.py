@@ -97,6 +97,7 @@ from agent_infra_sizer import (
     simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
     simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
+    simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -837,6 +838,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(64, "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge"),
         simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(16, "blind_recipe_pyrometer_unverified_coil_cloud"),
     ]
+    polar_icebreaker_ice_routing_profiles: List[Dict[str, object]] = [
+        simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(8, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"),
+        simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(16, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"),
+        simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(64, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"),
+        simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(16, "daily_ice_chart_manual_helm_unverified_azipod_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -922,6 +929,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "psh_pumped_hydro_waterhammer_profiles": psh_pumped_hydro_waterhammer_profiles,
         "fpso_turret_mooring_riser_slugging_profiles": fpso_turret_mooring_riser_slugging_profiles,
         "sic_pvt_boule_crystal_growth_profiles": sic_pvt_boule_crystal_growth_profiles,
+        "polar_icebreaker_ice_routing_profiles": polar_icebreaker_ice_routing_profiles,
     }
 
 

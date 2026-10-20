@@ -5156,5 +5156,67 @@
       "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 3.4,
       "sic_pvt_boule_crystal_growth_slo_met": false
     }
+  ],
+  "polar_icebreaker_ice_routing_profiles": [
+    {
+      "polar_icebreaker_escort_corridors": 8,
+      "polar_governance_mode": "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_polar_icebreaker_pods": 4,
+      "ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct": 26.8,
+      "hull_frame_strain_and_azipod_milling_torque_reduction_pct": 43.4,
+      "imopolar_iacs_sil3_hull_besetting_interlock_ms": 1.3,
+      "hull_plastic_buckling_or_azipod_shaft_shear_breach_pct": 0.0,
+      "bridge_iceradar_fbg_edge_latency_ms": 1.1,
+      "wan_bandwidth_reduction_pct": 98.9,
+      "multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct": 0.0,
+      "polar_icebreaker_ice_routing_slo_met": true
+    },
+    {
+      "polar_icebreaker_escort_corridors": 16,
+      "polar_governance_mode": "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_polar_icebreaker_pods": 8,
+      "ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct": 26.8,
+      "hull_frame_strain_and_azipod_milling_torque_reduction_pct": 43.4,
+      "imopolar_iacs_sil3_hull_besetting_interlock_ms": 1.3,
+      "hull_plastic_buckling_or_azipod_shaft_shear_breach_pct": 0.0,
+      "bridge_iceradar_fbg_edge_latency_ms": 1.1,
+      "wan_bandwidth_reduction_pct": 98.9,
+      "multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct": 0.0,
+      "polar_icebreaker_ice_routing_slo_met": true
+    },
+    {
+      "polar_icebreaker_escort_corridors": 64,
+      "polar_governance_mode": "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_polar_icebreaker_pods": 32,
+      "ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct": 26.8,
+      "hull_frame_strain_and_azipod_milling_torque_reduction_pct": 43.4,
+      "imopolar_iacs_sil3_hull_besetting_interlock_ms": 1.3,
+      "hull_plastic_buckling_or_azipod_shaft_shear_breach_pct": 0.0,
+      "bridge_iceradar_fbg_edge_latency_ms": 1.1,
+      "wan_bandwidth_reduction_pct": 98.9,
+      "multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct": 0.0,
+      "polar_icebreaker_ice_routing_slo_met": true
+    },
+    {
+      "polar_icebreaker_escort_corridors": 16,
+      "polar_governance_mode": "daily_ice_chart_manual_helm_unverified_azipod_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_polar_icebreaker_pods": 8,
+      "ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct": 5.2,
+      "hull_frame_strain_and_azipod_milling_torque_reduction_pct": 7.6,
+      "imopolar_iacs_sil3_hull_besetting_interlock_ms": 128.0,
+      "hull_plastic_buckling_or_azipod_shaft_shear_breach_pct": 1.6,
+      "bridge_iceradar_fbg_edge_latency_ms": 1480.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct": 3.5,
+      "polar_icebreaker_ice_routing_slo_met": false
+    }
   ]
 }

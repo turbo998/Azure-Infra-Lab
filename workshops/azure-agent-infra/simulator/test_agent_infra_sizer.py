@@ -91,6 +91,7 @@ from agent_infra_sizer import (
     simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
     simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
+    simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -229,6 +230,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-psh-pumped-hydro-waterhammer-vortex-iec60308-sil3-pool.bicep",
             "aksclaw-fpso-turret-mooring-riser-slugging-apirp14c-sil3-pool.bicep",
             "aksclaw-sic-pvt-boule-crystal-growth-htcvd-semis2-sil3-pool.bicep",
+            "aksclaw-polar-icebreaker-ice-routing-azimuth-imopolar-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1632,6 +1634,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["polytype_6h_inclusion_or_micropipe_false_clearance_pct"], 3.1)
         self.assertTrue(gov["sic_pvt_boule_crystal_growth_slo_met"])
         self.assertFalse(raw["sic_pvt_boule_crystal_growth_slo_met"])
+
+    def test_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(self) -> None:
+        gov = simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(
+            16, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"
+        )
+        raw = simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(
+            16, "daily_ice_chart_manual_helm_unverified_azipod_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_polar_icebreaker_pods"], 8)
+        self.assertEqual(gov["ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct"], 26.8)
+        self.assertEqual(gov["hull_frame_strain_and_azipod_milling_torque_reduction_pct"], 43.4)
+        self.assertEqual(gov["imopolar_iacs_sil3_hull_besetting_interlock_ms"], 1.3)
+        self.assertEqual(gov["hull_plastic_buckling_or_azipod_shaft_shear_breach_pct"], 0.0)
+        self.assertGreater(raw["hull_plastic_buckling_or_azipod_shaft_shear_breach_pct"], 1.4)
+        self.assertEqual(gov["bridge_iceradar_fbg_edge_latency_ms"], 1.1)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.9)
+        self.assertEqual(gov["multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct"], 3.2)
+        self.assertTrue(gov["polar_icebreaker_ice_routing_slo_met"])
+        self.assertFalse(raw["polar_icebreaker_ice_routing_slo_met"])
 
 
 if __name__ == "__main__":

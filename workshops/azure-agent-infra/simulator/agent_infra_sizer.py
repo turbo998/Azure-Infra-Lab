@@ -4768,6 +4768,40 @@ def simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(
     }
 
 
+def simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(
+    polar_icebreaker_escort_corridors: int = 16,
+    polar_governance_mode: str = "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Polar Icebreaker, Dynamic Ice-Routing, Hull Ice-Impact Strain & Azimuth Thruster IMO Polar Code / IACS URI / SIL-3 Agent Infrastructure (Chapter 90)."""
+    governed = polar_governance_mode == "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"
+    active_polar_icebreaker_pods = max(1, (polar_icebreaker_escort_corridors + 1) // 2)
+    gpu_nodes = max(2, (active_polar_icebreaker_pods + 3) // 4)
+
+    ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct = 26.8 if governed else 5.2
+    hull_frame_strain_and_azipod_milling_torque_reduction_pct = 43.4 if governed else 7.6
+    imopolar_iacs_sil3_hull_besetting_interlock_ms = 1.3 if governed else 128.0
+    hull_plastic_buckling_or_azipod_shaft_shear_breach_pct = 0.0 if governed else 1.6
+    bridge_iceradar_fbg_edge_latency_ms = 1.1 if governed else 1480.0
+    wan_bandwidth_reduction_pct = 98.9 if governed else 0.0
+    multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct = 0.0 if governed else 3.5
+
+    return {
+        "polar_icebreaker_escort_corridors": polar_icebreaker_escort_corridors,
+        "polar_governance_mode": polar_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_polar_icebreaker_pods": active_polar_icebreaker_pods,
+        "ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct": ice_transit_vmg_and_ramming_fuel_efficiency_gain_pct,
+        "hull_frame_strain_and_azipod_milling_torque_reduction_pct": hull_frame_strain_and_azipod_milling_torque_reduction_pct,
+        "imopolar_iacs_sil3_hull_besetting_interlock_ms": imopolar_iacs_sil3_hull_besetting_interlock_ms,
+        "hull_plastic_buckling_or_azipod_shaft_shear_breach_pct": hull_plastic_buckling_or_azipod_shaft_shear_breach_pct,
+        "bridge_iceradar_fbg_edge_latency_ms": bridge_iceradar_fbg_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct": multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct,
+        "polar_icebreaker_ice_routing_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

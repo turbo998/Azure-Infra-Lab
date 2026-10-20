@@ -104,6 +104,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
     simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
+    simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -755,6 +756,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "sic_pvt_16_arrays": simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(16, "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge"),
             "sic_pvt_64_arrays": simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(64, "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge"),
             "raw_sic_pvt_16_arrays": simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(16, "blind_recipe_pyrometer_unverified_coil_cloud"),
+        },
+        "demo_85_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox": {
+            "polar_icebreaker_16_corridors": simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(16, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"),
+            "polar_icebreaker_64_corridors": simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(64, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"),
+            "raw_polar_icebreaker_16_corridors": simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(16, "daily_ice_chart_manual_helm_unverified_azipod_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
