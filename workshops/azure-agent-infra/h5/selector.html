@@ -475,6 +475,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(60)">61. 托卡马克磁约束核聚变 Grad-Shafranov 撕裂模抑制 + 偏滤器脱靶 MPC 与 SIL-3 破碎弹丸失超保护池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(61)">62. 第四代同步辐射光源与自由电子激光 XFEL 快速轨道反馈 FOFB + 超导腔微音 MPC 与 SIL-3 机器保护池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(62)">63. 极大口径地基望远镜极限自适应光学 XAO 变形镜 + SKA 射电相关器与 LGS 空域/太阳快门互锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(63)">64. 深海有缆观测网海啸 BPR PINN 反演 + AUV 水声对接与 API RP 53 / SIL-3 深水防喷器 BOP 互锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1897,6 +1898,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 63 · SUBSEA CABLED OCEAN OBSERVATORY, TSUNAMI BPR PINN, AUV DOCKING &amp; API RP 53 / SIL-3 BOP SIZER</span>
+    <h2>自主深海有缆观测网海啸 BPR PINN 反演、AUV 水声非接触对接与 API RP 53 / SIL-3 防喷器互锁测算器 (Chapter 68 · Bilingual)</h2>
+    <div class="sub">量化在海底观测节点与 AUV 集群规模 <code>20 – 240 单元</code>（<code>6 – 60 座</code> <code>10 kV HVDC</code> 海底主接驳盒）下，启用 <code>非线性浅水波海啸源 PINN 反演 (NSWE-PINN) + 温盐射线追踪 AUV 感应充电对接 MPC</code>（近岸海啸预警提前量提升 <code>+44.6%</code>、AUV 对接能耗降低 <code>38.2%</code>、水声多径 USBL 失锁率 <code>0.0%</code>）、<code>API RP 53 / IEC 61508 SIL-3 深水防喷器 (BOP) 盲剪闸板与 10kV HVDC 海水接地互锁</code>（<code>1.2 ms</code> 校验，<code>0.0%</code> 井喷失控与湿插拔电弧爆炸逃逸）以及海缆登陆站 <code>Azure IoT Operations</code> <code>相干 DAS / 宽带水听器</code> 边缘分诊（<code>6.5 ms</code> 响应，削减 <code>97.4%</code> 水声与卫星回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 海底有缆观测节点与 AUV 集群数量 (Subsea Nodes &amp; AUV Swarm Units): <strong id="lbl_sub_nodes" style="color:var(--teal)">80</strong> Units</label>
+          <input type="range" id="rng_sub_nodes" min="20" max="240" step="20" value="80" oninput="runSubseaObservatoryLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 海啸 BPR 物理反演、AUV 对接与深水防喷器 BOP 互锁模式 (Subsea Tsunami &amp; SIL-3 BOP Mode)</label>
+          <select id="sel_sub_mode" onchange="runSubseaObservatoryLab()">
+            <option value="bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge" selected>海啸 NSWE-PINN + AUV 声光对接 (+44.6% 预警提前量 / -38.2% 能耗) + SIL-3 盲剪互锁 (0% 井喷/电弧) + DAS 边缘 (推荐)</option>
+            <option value="static_threshold_unverified_bop_raw_hydrophone">传统反模式：静态水压阈值 (0 增益) + 无盲剪/HVDC 互锁 (1.8% 井喷/电弧故障) + 原始水听器流回传 (4.1% 水声多径失锁)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="subOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3005,6 +3028,23 @@ resource observatoryAoPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/shack-hartmann-frb-dedispersion-edge': 'enabled-0.8ms-98.2pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// =============================================================================
+// 64. AKSClaw Subsea Cabled Observatory, Tsunami PINN & SIL-3 BOP Pool (Bicep)
+// =============================================================================
+resource subseaObservatoryPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'subseabop'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'subsea-cabled-observatory-tsunami-bop-agent'
+      'aksclaw.io/bpr-tsunami-pinn-auv-acoustic-mpc': 'enabled-44.6pct-lead-time-gain-38.2pct-auv-docking-energy-cut'
+      'aksclaw.io/api-rp53-sil3-bop-shear-ram-hvdc': 'enforced-1.2ms-zero-blowout-hvdc-seawater-fault'
+      'aksclaw.io/subsea-das-hydrophone-acoustic-edge': 'enabled-6.5ms-97.4pct-acoustic-satcom-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -3168,6 +3208,30 @@ runGreenHydrogenLab();
 runFusionTokamakLab();
 runParticleAcceleratorLab();
 runDeepSpaceTelescopeLab();
+runSubseaObservatoryLab();
+
+function runSubseaObservatoryLab() {
+  const units = parseInt(document.getElementById('rng_sub_nodes').value, 10);
+  const mode = document.getElementById('sel_sub_mode').value;
+  document.getElementById('lbl_sub_nodes').textContent = units.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(units / 20));
+  const jboxes = Math.max(6, Math.floor(units / 4));
+  const ok = mode === 'bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge';
+  const pinnStr = ok ? "海啸 NSWE-PINN + AUV 声光感应对接 · 预警提前量 +44.6% · 对接能耗 -38.2%" : "静态水压阈值 · 0.0% 预警与节能增益 (地震瑞利波干扰与 4.1% 水声多径失锁)";
+  const bopStr = ok ? "1.2 ms API RP 53 / SIL-3 防喷器盲剪闸板与 10kV HVDC 绝缘互锁 · 0.0% 井喷/电弧" : "无 SIL-3 盲剪与 HVDC 接地互锁 · 1.8% 深水井涌失控与海底接驳盒电弧击穿风险";
+  const edgeStr = ok ? "6.5 ms 海缆登陆站相干 DAS + 256kHz 水听器边缘分诊 (-97.4% 水声/卫星带宽) · 0.0% 失联" : "1,420.0 ms 原始水听器流经水声猫/海事卫星上云 · 信道拥塞且错过海啸首波反演窗口";
+
+  document.getElementById('subOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + pinnStr : '❌ 1.8% 深水井喷/10kV 接驳盒电弧风险 · 4.1% 温盐跃层水声多径 AUV 导航失锁'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${jboxes} 座 HVDC 接驳盒 · ${bopStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>海缆登陆站与海底主接驳盒 Azure IoT Operations 相干 DAS 与宽带水听器边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runDeepSpaceTelescopeLab() {
   const dishes = parseInt(document.getElementById('rng_ao_dishes').value, 10);

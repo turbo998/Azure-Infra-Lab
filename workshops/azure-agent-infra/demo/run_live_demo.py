@@ -82,6 +82,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_fusion_tokamak_plasma_quench_sandbox,
     simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_deep_space_telescope_adaptive_optics_sandbox,
+    simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -607,6 +608,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ao_64_dishes": simulate_deep_space_telescope_adaptive_optics_sandbox(64, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
             "ao_256_dishes": simulate_deep_space_telescope_adaptive_optics_sandbox(256, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
             "raw_ao_64_dishes": simulate_deep_space_telescope_adaptive_optics_sandbox(64, "classic_integrator_unverified_lgs_raw_visibilities"),
+        },
+        "demo_63_subsea_cabled_observatory_tsunami_bop_sandbox": {
+            "subsea_20_nodes": simulate_subsea_cabled_observatory_tsunami_bop_sandbox(20, "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge"),
+            "subsea_80_nodes": simulate_subsea_cabled_observatory_tsunami_bop_sandbox(80, "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge"),
+            "subsea_240_nodes": simulate_subsea_cabled_observatory_tsunami_bop_sandbox(240, "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge"),
+            "raw_subsea_80_nodes": simulate_subsea_cabled_observatory_tsunami_bop_sandbox(80, "static_threshold_unverified_bop_raw_hydrophone"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

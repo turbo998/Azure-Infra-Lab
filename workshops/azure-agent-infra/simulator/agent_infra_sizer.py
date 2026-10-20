@@ -3672,6 +3672,54 @@ def simulate_deep_space_telescope_adaptive_optics_sandbox(
     }
 
 
+def simulate_subsea_cabled_observatory_tsunami_bop_sandbox(
+    subsea_observatory_nodes_and_auvs: int = 80,
+    subsea_observatory_mode: str = "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Subsea Cabled Ocean Observatory, Deep-Ocean Tsunami
+    Bottom-Pressure Early-Warning Array, Autonomous Underwater Vehicle (AUV)
+    Acoustic Swarm Docking & API RP 53 / IEC 61508 SIL-3 Subsea Blowout
+    Preventer (BOP) Deadman Shear-Ram Interlock Agent Infrastructure (Chapter 68).
+    """
+    if subsea_observatory_nodes_and_auvs <= 0:
+        raise ValueError("subsea_observatory_nodes_and_auvs must be positive")
+    valid_modes = {
+        "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+        "static_threshold_unverified_bop_raw_hydrophone",
+    }
+    if subsea_observatory_mode not in valid_modes:
+        raise ValueError(f"subsea_observatory_mode must be one of {sorted(valid_modes)}")
+
+    governed = subsea_observatory_mode == "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge"
+    gpu_nodes = max(2, math.ceil(subsea_observatory_nodes_and_auvs / 20))
+    cabled_science_junction_boxes = max(6, int(subsea_observatory_nodes_and_auvs // 4))
+
+    tsunami_early_warning_lead_time_gain_pct = 44.6 if governed else 0.0
+    auv_inductive_docking_energy_saving_pct = 38.2 if governed else 0.0
+    api_rp53_sil3_bop_shear_ram_hvdc_gate_ms = 1.2 if governed else 0.0
+    subsea_blowout_or_hvdc_ground_fault_escape_pct = 0.0 if governed else 1.8
+    subsea_das_hydrophone_edge_triage_ms = 6.5 if governed else 1420.0
+    acoustic_satcom_bandwidth_reduction_pct = 97.4 if governed else 0.0
+    acoustic_multipath_auv_lost_lock_pct = 0.0 if governed else 4.1
+
+    return {
+        "subsea_observatory_nodes_and_auvs": subsea_observatory_nodes_and_auvs,
+        "subsea_observatory_mode": subsea_observatory_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "cabled_science_junction_boxes": cabled_science_junction_boxes,
+        "tsunami_early_warning_lead_time_gain_pct": tsunami_early_warning_lead_time_gain_pct,
+        "auv_inductive_docking_energy_saving_pct": auv_inductive_docking_energy_saving_pct,
+        "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": api_rp53_sil3_bop_shear_ram_hvdc_gate_ms,
+        "subsea_blowout_or_hvdc_ground_fault_escape_pct": subsea_blowout_or_hvdc_ground_fault_escape_pct,
+        "subsea_das_hydrophone_edge_triage_ms": subsea_das_hydrophone_edge_triage_ms,
+        "acoustic_satcom_bandwidth_reduction_pct": acoustic_satcom_bandwidth_reduction_pct,
+        "acoustic_multipath_auv_lost_lock_pct": acoustic_multipath_auv_lost_lock_pct,
+        "subsea_observatory_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

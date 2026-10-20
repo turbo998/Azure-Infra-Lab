@@ -69,6 +69,7 @@ from agent_infra_sizer import (
     simulate_fusion_tokamak_plasma_quench_sandbox,
     simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_deep_space_telescope_adaptive_optics_sandbox,
+    simulate_subsea_cabled_observatory_tsunami_bop_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -185,6 +186,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-fusion-tokamak-plasma-quench-pool.bicep",
             "aksclaw-particle-accelerator-synchrotron-beam-pool.bicep",
             "aksclaw-deep-space-telescope-adaptive-optics-pool.bicep",
+            "aksclaw-subsea-cabled-observatory-tsunami-bop-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1166,6 +1168,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["segmented_mirror_piston_phase_error_pct"], 3.0)
         self.assertTrue(gov["observatory_ao_slo_met"])
         self.assertFalse(raw["observatory_ao_slo_met"])
+
+    def test_subsea_cabled_observatory_tsunami_bop_sandbox(self) -> None:
+        gov = simulate_subsea_cabled_observatory_tsunami_bop_sandbox(80, "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge")
+        raw = simulate_subsea_cabled_observatory_tsunami_bop_sandbox(80, "static_threshold_unverified_bop_raw_hydrophone")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["cabled_science_junction_boxes"], 20)
+        self.assertEqual(gov["tsunami_early_warning_lead_time_gain_pct"], 44.6)
+        self.assertEqual(gov["auv_inductive_docking_energy_saving_pct"], 38.2)
+        self.assertEqual(gov["api_rp53_sil3_bop_shear_ram_hvdc_gate_ms"], 1.2)
+        self.assertEqual(gov["subsea_blowout_or_hvdc_ground_fault_escape_pct"], 0.0)
+        self.assertGreater(raw["subsea_blowout_or_hvdc_ground_fault_escape_pct"], 1.7)
+        self.assertEqual(gov["subsea_das_hydrophone_edge_triage_ms"], 6.5)
+        self.assertEqual(gov["acoustic_satcom_bandwidth_reduction_pct"], 97.4)
+        self.assertEqual(gov["acoustic_multipath_auv_lost_lock_pct"], 0.0)
+        self.assertGreater(raw["acoustic_multipath_auv_lost_lock_pct"], 4.0)
+        self.assertTrue(gov["subsea_observatory_slo_met"])
+        self.assertFalse(raw["subsea_observatory_slo_met"])
 
 
 if __name__ == "__main__":

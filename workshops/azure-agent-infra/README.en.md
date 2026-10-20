@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #62 · **68 Chapters** · **63 IaC Blueprints** · **62 Quantitative Physics Simulators** · **71/71 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 68-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #63 · **69 Chapters** · **64 IaC Blueprints** · **63 Quantitative Physics Simulators** · **72/72 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 69-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 62 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [71-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 63 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [72-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -156,6 +156,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **65** | **Tokamak Fusion Plasma Control (`Grad-Shafranov MHD` + `ECH` Tearing-Mode + `Divertor Detachment MPC` + `SIL-3 SPI / HTS Quench` Gate)** | `simulate_fusion_tokamak_plasma_quench_sandbox()` | `aksclaw-fusion-tokamak-plasma-quench-pool.bicep` | **`+48.5%` H-Mode pulse & `-36.4%` divertor heat flux**, **`0.0%` runaway electron or HTS quench (`0.4 ms` SIL-3)**, **`2.5 ms` Mirnov edge (`97.6%` WAN cut)** |
 | **66** | **Synchrotron & XFEL Particle Accelerator (`Neural FOFB` + `SRF Microphonics MPC` + `SIL-3 MPS Beam-Dump` + `EPICS pvAccess` Edge)** | `simulate_particle_accelerator_synchrotron_beam_sandbox()` | `aksclaw-particle-accelerator-synchrotron-beam-pool.bicep` | **`+42.8%` photon emittance stability & `-34.5%` RF power**, **`0.0%` undulator demagnetization (`0.05 ms` SIL-3 MPS)**, **`1.8 ms` EPICS edge (`97.9%` WAN cut)** |
 | **67** | **Extremely Large Telescope & SKA Radio Array (`Predictive XAO` Deformable Mirror + `RFI Nulling` + `LGS FAA Airspace / Solar Shutter` + `FRB` Edge)** | `simulate_deep_space_telescope_adaptive_optics_sandbox()` | `aksclaw-deep-space-telescope-adaptive-optics-pool.bicep` | **`+46.2%` Strehl ratio & `+31.8%` clean visibilities**, **`0.0%` aircraft lasing or detector burn (`0.6 ms` LGS gate)**, **`0.8 ms` FRB/XAO edge (`98.2%` WAN cut)** |
+| **68** | **Subsea Cabled Ocean Observatory & Tsunami Array (`NSWE-PINN` BPR Inversion + `AUV Inductive Docking MPC` + `API RP 53 / SIL-3 BOP` Gate + `DAS` Edge)** | `simulate_subsea_cabled_observatory_tsunami_bop_sandbox()` | `aksclaw-subsea-cabled-observatory-tsunami-bop-pool.bicep` | **`+44.6%` tsunami lead time & `-38.2%` AUV energy**, **`0.0%` blowout or HVDC ground fault (`1.2 ms` SIL-3 BOP)**, **`6.5 ms` DAS/hydrophone edge (`97.4%` SatCom cut)** |
 
 ---
 
@@ -165,10 +166,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 62 quantitative engineering & physics simulators (Chapters 7–67)
+# 2. Run all 63 quantitative engineering & physics simulators (Chapters 7–68)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 71 unit tests (100% pass across 6 runtimes, 62 physics models, 63 blueprints & links)
+# 3. Execute all 72 unit tests (100% pass across 6 runtimes, 63 physics models, 64 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

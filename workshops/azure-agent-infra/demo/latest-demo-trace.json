@@ -3994,6 +3994,68 @@
         "segmented_mirror_piston_phase_error_pct": 3.5,
         "observatory_ao_slo_met": false
       }
+    ],
+    "subsea_cabled_observatory_profiles": [
+      {
+        "subsea_observatory_nodes_and_auvs": 20,
+        "subsea_observatory_mode": "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "cabled_science_junction_boxes": 6,
+        "tsunami_early_warning_lead_time_gain_pct": 44.6,
+        "auv_inductive_docking_energy_saving_pct": 38.2,
+        "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 1.2,
+        "subsea_blowout_or_hvdc_ground_fault_escape_pct": 0.0,
+        "subsea_das_hydrophone_edge_triage_ms": 6.5,
+        "acoustic_satcom_bandwidth_reduction_pct": 97.4,
+        "acoustic_multipath_auv_lost_lock_pct": 0.0,
+        "subsea_observatory_slo_met": true
+      },
+      {
+        "subsea_observatory_nodes_and_auvs": 80,
+        "subsea_observatory_mode": "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "cabled_science_junction_boxes": 20,
+        "tsunami_early_warning_lead_time_gain_pct": 44.6,
+        "auv_inductive_docking_energy_saving_pct": 38.2,
+        "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 1.2,
+        "subsea_blowout_or_hvdc_ground_fault_escape_pct": 0.0,
+        "subsea_das_hydrophone_edge_triage_ms": 6.5,
+        "acoustic_satcom_bandwidth_reduction_pct": 97.4,
+        "acoustic_multipath_auv_lost_lock_pct": 0.0,
+        "subsea_observatory_slo_met": true
+      },
+      {
+        "subsea_observatory_nodes_and_auvs": 240,
+        "subsea_observatory_mode": "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+        "gpu_nodes": 12,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "cabled_science_junction_boxes": 60,
+        "tsunami_early_warning_lead_time_gain_pct": 44.6,
+        "auv_inductive_docking_energy_saving_pct": 38.2,
+        "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 1.2,
+        "subsea_blowout_or_hvdc_ground_fault_escape_pct": 0.0,
+        "subsea_das_hydrophone_edge_triage_ms": 6.5,
+        "acoustic_satcom_bandwidth_reduction_pct": 97.4,
+        "acoustic_multipath_auv_lost_lock_pct": 0.0,
+        "subsea_observatory_slo_met": true
+      },
+      {
+        "subsea_observatory_nodes_and_auvs": 80,
+        "subsea_observatory_mode": "static_threshold_unverified_bop_raw_hydrophone",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "cabled_science_junction_boxes": 20,
+        "tsunami_early_warning_lead_time_gain_pct": 0.0,
+        "auv_inductive_docking_energy_saving_pct": 0.0,
+        "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 0.0,
+        "subsea_blowout_or_hvdc_ground_fault_escape_pct": 1.8,
+        "subsea_das_hydrophone_edge_triage_ms": 1420.0,
+        "acoustic_satcom_bandwidth_reduction_pct": 0.0,
+        "acoustic_multipath_auv_lost_lock_pct": 4.1,
+        "subsea_observatory_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -7532,5 +7594,67 @@
       "observatory_ao_slo_met": false
     }
   },
-  "trace_sha256": "1427761f9d1fcfa92441cf738aa3fb10c4d48c62df1d5a3086690c415c6a26fa"
+  "demo_63_subsea_cabled_observatory_tsunami_bop_sandbox": {
+    "subsea_20_nodes": {
+      "subsea_observatory_nodes_and_auvs": 20,
+      "subsea_observatory_mode": "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "cabled_science_junction_boxes": 6,
+      "tsunami_early_warning_lead_time_gain_pct": 44.6,
+      "auv_inductive_docking_energy_saving_pct": 38.2,
+      "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 1.2,
+      "subsea_blowout_or_hvdc_ground_fault_escape_pct": 0.0,
+      "subsea_das_hydrophone_edge_triage_ms": 6.5,
+      "acoustic_satcom_bandwidth_reduction_pct": 97.4,
+      "acoustic_multipath_auv_lost_lock_pct": 0.0,
+      "subsea_observatory_slo_met": true
+    },
+    "subsea_80_nodes": {
+      "subsea_observatory_nodes_and_auvs": 80,
+      "subsea_observatory_mode": "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "cabled_science_junction_boxes": 20,
+      "tsunami_early_warning_lead_time_gain_pct": 44.6,
+      "auv_inductive_docking_energy_saving_pct": 38.2,
+      "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 1.2,
+      "subsea_blowout_or_hvdc_ground_fault_escape_pct": 0.0,
+      "subsea_das_hydrophone_edge_triage_ms": 6.5,
+      "acoustic_satcom_bandwidth_reduction_pct": 97.4,
+      "acoustic_multipath_auv_lost_lock_pct": 0.0,
+      "subsea_observatory_slo_met": true
+    },
+    "subsea_240_nodes": {
+      "subsea_observatory_nodes_and_auvs": 240,
+      "subsea_observatory_mode": "bpr_tsunami_pinn_auv_acoustic_sil3_bop_edge",
+      "gpu_nodes": 12,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "cabled_science_junction_boxes": 60,
+      "tsunami_early_warning_lead_time_gain_pct": 44.6,
+      "auv_inductive_docking_energy_saving_pct": 38.2,
+      "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 1.2,
+      "subsea_blowout_or_hvdc_ground_fault_escape_pct": 0.0,
+      "subsea_das_hydrophone_edge_triage_ms": 6.5,
+      "acoustic_satcom_bandwidth_reduction_pct": 97.4,
+      "acoustic_multipath_auv_lost_lock_pct": 0.0,
+      "subsea_observatory_slo_met": true
+    },
+    "raw_subsea_80_nodes": {
+      "subsea_observatory_nodes_and_auvs": 80,
+      "subsea_observatory_mode": "static_threshold_unverified_bop_raw_hydrophone",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "cabled_science_junction_boxes": 20,
+      "tsunami_early_warning_lead_time_gain_pct": 0.0,
+      "auv_inductive_docking_energy_saving_pct": 0.0,
+      "api_rp53_sil3_bop_shear_ram_hvdc_gate_ms": 0.0,
+      "subsea_blowout_or_hvdc_ground_fault_escape_pct": 1.8,
+      "subsea_das_hydrophone_edge_triage_ms": 1420.0,
+      "acoustic_satcom_bandwidth_reduction_pct": 0.0,
+      "acoustic_multipath_auv_lost_lock_pct": 4.1,
+      "subsea_observatory_slo_met": false
+    }
+  },
+  "trace_sha256": "0db392769473d52273f546637983f0bad31be2f95b50da840b1cadfb75c74836"
 }
