@@ -4308,6 +4308,57 @@ def simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(
     }
 
 
+def simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(
+    dilution_cryostats: int = 8,
+    quantum_qec_mode: str = "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Superconducting Quantum Processor (1,000–10,000+ Transmon /
+    Fluxonium Qubit 10 mK Dilution Refrigerator Array), Rotated Surface-Code
+    Quantum Error Correction (QEC MWPM / Neural Belief-Propagation) Syndrome
+    Decoder & Lindblad Master-Equation PINN, Cryo-CMOS DRAG Pulse Optimal Control
+    MPC & ASME BPVC Section VIII / ANSI Z136.1 / IEC 61508 SIL-3 3He/4He Dilution
+    Cryostat Quench Boil-Off Dump-Tank Venting & Cryo-Optical Interlock Agent
+    Infrastructure (Chapter 81).
+    """
+    if dilution_cryostats <= 0:
+        raise ValueError("dilution_cryostats must be positive")
+    valid_modes = {
+        "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge",
+        "static_lookup_mwpm_cloud_cryostat",
+    }
+    if quantum_qec_mode not in valid_modes:
+        raise ValueError(f"quantum_qec_mode must be one of {sorted(valid_modes)}")
+
+    governed = quantum_qec_mode == "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"
+    gpu_nodes = max(2, math.ceil(dilution_cryostats / 4))
+    active_quantum_cryo_qec_pods = max(2, int(dilution_cryostats // 2))
+
+    logical_error_rate_per_round_reduction_pct = 42.5 if governed else 0.0
+    two_qubit_gate_fidelity_coherence_gain_pct = 29.4 if governed else 0.0
+    asme_bpvc_sil3_he3_he4_dump_interlock_ms = 0.6 if governed else 410.0
+    cryostat_overpressure_or_he3_loss_quench_pct = 0.0 if governed else 1.6
+    rfsoc_fpga_syndrome_decoding_edge_latency_ms = 0.4 if governed else 1280.0
+    wan_bandwidth_reduction_pct = 98.8 if governed else 0.0
+    cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct = 0.0 if governed else 3.2
+
+    return {
+        "dilution_cryostats": dilution_cryostats,
+        "quantum_qec_mode": quantum_qec_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_quantum_cryo_qec_pods": active_quantum_cryo_qec_pods,
+        "logical_error_rate_per_round_reduction_pct": logical_error_rate_per_round_reduction_pct,
+        "two_qubit_gate_fidelity_coherence_gain_pct": two_qubit_gate_fidelity_coherence_gain_pct,
+        "asme_bpvc_sil3_he3_he4_dump_interlock_ms": asme_bpvc_sil3_he3_he4_dump_interlock_ms,
+        "cryostat_overpressure_or_he3_loss_quench_pct": cryostat_overpressure_or_he3_loss_quench_pct,
+        "rfsoc_fpga_syndrome_decoding_edge_latency_ms": rfsoc_fpga_syndrome_decoding_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct": cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct,
+        "quantum_superconducting_qec_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

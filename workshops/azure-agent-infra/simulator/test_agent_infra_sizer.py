@@ -82,6 +82,7 @@ from agent_infra_sizer import (
     simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
     simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
     simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
+    simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -211,6 +212,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-additive-manufacturing-lpbf-meltpool-nfpa484-sil3-pool.bicep",
             "aksclaw-euv-lithography-scanner-lpp-overlay-semi-s2-sil3-pool.bicep",
             "aksclaw-saf-ptl-fischer-tropsch-rwgs-astm-d7566-sil3-pool.bicep",
+            "aksclaw-quantum-superconducting-qec-cryo-dilution-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1425,6 +1427,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["astm_d7566_freeze_point_or_aromatic_false_clearance_pct"], 2.5)
         self.assertTrue(gov["saf_ptl_fischer_tropsch_slo_met"])
         self.assertFalse(raw["saf_ptl_fischer_tropsch_slo_met"])
+
+    def test_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(self) -> None:
+        gov = simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(
+            8, "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"
+        )
+        raw = simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(
+            8, "static_lookup_mwpm_cloud_cryostat"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_quantum_cryo_qec_pods"], 4)
+        self.assertEqual(gov["logical_error_rate_per_round_reduction_pct"], 42.5)
+        self.assertEqual(gov["two_qubit_gate_fidelity_coherence_gain_pct"], 29.4)
+        self.assertEqual(gov["asme_bpvc_sil3_he3_he4_dump_interlock_ms"], 0.6)
+        self.assertEqual(gov["cryostat_overpressure_or_he3_loss_quench_pct"], 0.0)
+        self.assertGreater(raw["cryostat_overpressure_or_he3_loss_quench_pct"], 1.5)
+        self.assertEqual(gov["rfsoc_fpga_syndrome_decoding_edge_latency_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.8)
+        self.assertEqual(gov["cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct"], 3.0)
+        self.assertTrue(gov["quantum_superconducting_qec_slo_met"])
+        self.assertFalse(raw["quantum_superconducting_qec_slo_met"])
 
 
 if __name__ == "__main__":

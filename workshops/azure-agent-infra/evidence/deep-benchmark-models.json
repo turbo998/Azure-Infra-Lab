@@ -4598,5 +4598,67 @@
       "astm_d7566_freeze_point_or_aromatic_false_clearance_pct": 2.9,
       "saf_ptl_fischer_tropsch_slo_met": false
     }
+  ],
+  "quantum_superconducting_qec_profiles": [
+    {
+      "dilution_cryostats": 4,
+      "quantum_qec_mode": "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_quantum_cryo_qec_pods": 2,
+      "logical_error_rate_per_round_reduction_pct": 42.5,
+      "two_qubit_gate_fidelity_coherence_gain_pct": 29.4,
+      "asme_bpvc_sil3_he3_he4_dump_interlock_ms": 0.6,
+      "cryostat_overpressure_or_he3_loss_quench_pct": 0.0,
+      "rfsoc_fpga_syndrome_decoding_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 98.8,
+      "cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct": 0.0,
+      "quantum_superconducting_qec_slo_met": true
+    },
+    {
+      "dilution_cryostats": 8,
+      "quantum_qec_mode": "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_quantum_cryo_qec_pods": 4,
+      "logical_error_rate_per_round_reduction_pct": 42.5,
+      "two_qubit_gate_fidelity_coherence_gain_pct": 29.4,
+      "asme_bpvc_sil3_he3_he4_dump_interlock_ms": 0.6,
+      "cryostat_overpressure_or_he3_loss_quench_pct": 0.0,
+      "rfsoc_fpga_syndrome_decoding_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 98.8,
+      "cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct": 0.0,
+      "quantum_superconducting_qec_slo_met": true
+    },
+    {
+      "dilution_cryostats": 32,
+      "quantum_qec_mode": "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_quantum_cryo_qec_pods": 16,
+      "logical_error_rate_per_round_reduction_pct": 42.5,
+      "two_qubit_gate_fidelity_coherence_gain_pct": 29.4,
+      "asme_bpvc_sil3_he3_he4_dump_interlock_ms": 0.6,
+      "cryostat_overpressure_or_he3_loss_quench_pct": 0.0,
+      "rfsoc_fpga_syndrome_decoding_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 98.8,
+      "cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct": 0.0,
+      "quantum_superconducting_qec_slo_met": true
+    },
+    {
+      "dilution_cryostats": 8,
+      "quantum_qec_mode": "static_lookup_mwpm_cloud_cryostat",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_quantum_cryo_qec_pods": 4,
+      "logical_error_rate_per_round_reduction_pct": 0.0,
+      "two_qubit_gate_fidelity_coherence_gain_pct": 0.0,
+      "asme_bpvc_sil3_he3_he4_dump_interlock_ms": 410.0,
+      "cryostat_overpressure_or_he3_loss_quench_pct": 1.6,
+      "rfsoc_fpga_syndrome_decoding_edge_latency_ms": 1280.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct": 3.2,
+      "quantum_superconducting_qec_slo_met": false
+    }
   ]
 }

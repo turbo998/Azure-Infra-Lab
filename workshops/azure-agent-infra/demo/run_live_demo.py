@@ -95,6 +95,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
     simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
     simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
+    simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -698,6 +699,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "saf_8_trains": simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(8, "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge"),
             "saf_32_trains": simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(32, "rwgs_ft_asf_pinn_mpc_astm_d7566_sil3_edge"),
             "raw_saf_8_trains": simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox(8, "open_loop_pid_cloud_refinery"),
+        },
+        "demo_76_quantum_superconducting_qec_cryo_dilution_sil3_sandbox": {
+            "qec_4_cryostats": simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(4, "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"),
+            "qec_8_cryostats": simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(8, "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"),
+            "qec_32_cryostats": simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(32, "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"),
+            "raw_qec_8_cryostats": simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(8, "static_lookup_mwpm_cloud_cryostat"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
