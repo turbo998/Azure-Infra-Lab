@@ -495,6 +495,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(80)">81. 超高温 SiC/SiC 陶瓷基复合材料 CVI 沉积与高超声速电弧风洞 TPS 烧蚀 (2200-3000°C) + 克努森扩散 PINN-MPC 及 NASA-STD-5001B / NFPA 86 / SIL-3 硅烷防爆与水冷电极联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(81)">82. 深海 ±525kV 柔直海缆与跨洋海光缆敷设船 (CLV) + 海底犁式埋设机悬链线触地点 TDP 张力 PINN-MPC 及 DNV-ST-F101 / CIGRE TB 610 / SIL-3 最小弯曲半径与自动松缆联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(82)">83. 抽水蓄能电站 (PSH) 250-400MW 变速可逆混流式水泵水轮机 + 调压室水锤与尾水管涡带 S 区 PINN-MPC 及 IEEE 1020 / IEC 60308 / SIL-3 导叶折线慢关防爆管联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(83)">84. 深水浮式生产储卸油装置 (FPSO) 内转塔单点系泊 + 海底立管严重段塞流抑制与离心压缩机防喘振 PINN-MPC 及 API RP 14C / DNV-OS-E301 / SIL-3 HIPPS 与快脱 EQD 联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2365,6 +2366,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 83: Deepwater FPSO Internal Turret-Mooring Weathervaning, Subsea Riser Severe-Slugging & Topside Compressor Anti-Surge PINN-MPC & API RP 14C / DNV-OS-E301 / SIL-3 Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 83 · DEEPWATER FPSO TURRET-MOORING WEATHERVANING, SUBSEA RISER SEVERE-SLUGGING &amp; TOPSIDE COMPRESSOR ANTI-SURGE PINN-MPC &amp; API RP 14C / DNV-OS-E301 / SIL-3 SIZER</span>
+    <h2>自主深水浮式生产储卸油装置 (<code>FPSO 150K–250K bopd</code>) 内转塔系泊、海底立管严重段塞流抑制与压缩机防喘振 <code>PINN-MPC</code> 及 <code>API RP 14C / DNV-OS-E301 / SIL-3</code> 联锁测算器</h2>
+    <div class="sub">量化在 <code>3 – 24</code> 座深水 <code>FPSO</code> 生产储卸油装置与水下管汇规模下，海底悬链线立管 (<code>SLWR</code>) 油气水三相严重段塞流 (<code>Severe Slugging</code>) 与内转塔系泊六自由度风标水动力 <code>PINN</code> + 上部模块登船节流阀 (<code>Boarding Choke</code>) 主动消塞与多级离心注气压缩机防喘振回流阀 <code>MPC</code>（油气分离稳态处理量与压缩机防喘振安全裕度 <code>+25.6%</code>、立管底部压力震荡与一级分离器液位涌浪幅值 <code>-39.1%</code>）、<code>API RP 14C / ISO 10418 / DNV-OS-E301 / IEC 61508 SIL-3</code> 水下高完整性压力保护 (<code>HIPPS</code>)、分离器高高液位 (<code>LSHH</code>) <code>ESD-1</code> 关断与内转塔立管紧急快脱 (<code>EQD</code>) 硬联锁（<code>1.2 ms</code>，分离器带液撞毁压缩机或系泊锚链超载断裂违例率 <code>0.0%</code>）及船载水下湿气多相流量计 (<code>Subsea MPFM</code>)/立管分布式光纤应变 (<code>DAS/FBG</code>) + <code>OPC UA FX / Azure Local</code> 边缘推理（<code>1.1 ms</code>，海事卫星广域网带宽削减 <code>98.9%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 深水 FPSO 生产装置与水下管汇规模 (Deepwater FPSO Vessels &amp; Subsea Manifolds): <strong id="lbl_fpso_units" style="color:var(--teal)">6</strong> FPSO Production Units</label>
+          <input type="range" id="rng_fpso_units" min="3" max="24" step="3" value="6" oninput="runFpsoTurretLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 立管消塞与转塔风标 PINN-MPC 及 API RP 14C / DNV-OS-E301 / SIL-3 联锁模式 (FPSO Turret &amp; Riser Slugging Governance Mode)</label>
+          <select id="sel_fpso_mode" onchange="runFpsoTurretLab()">
+            <option value="riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge" selected>立管段塞与转塔风标 PINN + 节流阀主动消塞与防喘振 MPC (+25.6% 处理量/裕度 / -39.1% 压力震荡与液位涌浪) + API RP 14C SIL-3 HIPPS/ESD-1/EQD 联锁 + 1.1ms MPFM/光纤边缘 (推荐)</option>
+            <option value="manual_choke_unverified_antisurge_cloud">传统反模式：手动关小登船节流阀 (0 增益) + 无 HIPPS/LSHH/EQD SIL-3 硬联锁 (1.4% 分离器带液毁机/系泊断裂违例) + 原始光纤/多相流数据卫星上云 (3.0% 泰勒气泡喷发/喘振漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="fpsoOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3789,6 +3813,21 @@ resource pshPumpedHydroWaterhammerSil3Pool 'Microsoft.ContainerService/managedCl
       'aksclaw.io/powerhouse-10khz-piezo-orbit-edge': 'enabled-1.3ms-98.6pct-wan-cut'
     }
   }
+}`,
+`// Blueprint #84: Deepwater FPSO Turret-Mooring Weathervaning, Subsea Riser Severe-Slugging & Topside Anti-Surge PINN-MPC & API RP 14C / DNV-OS-E301 / SIL-3 Pool (Chapter 88)
+resource fpsoTurretMooringRiserSluggingSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'fpsoturret'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'fpso-turret-mooring-riser-slugging-apirp14c-sil3-agent'
+      'aksclaw.io/riser-slugging-turret-pinn-mpc': 'enabled-25.6pct-throughput-39.1pct-slug-oscillation-cut'
+      'aksclaw.io/apirp14c-dnv-sil3-hipps-eqd-esd1': 'enforced-1.2ms-zero-separator-carryover-or-mooring-breach'
+      'aksclaw.io/topside-mpfm-das-antisurge-edge': 'enabled-1.1ms-98.9pct-satcom-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3972,6 +4011,30 @@ runBiomanufacturingLab();
 runHypersonicCmcLab();
 runSubseaCableLayLab();
 runPshHydroLab();
+runFpsoTurretLab();
+
+function runFpsoTurretLab() {
+  const units = parseInt(document.getElementById('rng_fpso_units').value, 10);
+  const mode = document.getElementById('sel_fpso_mode').value;
+  document.getElementById('lbl_fpso_units').textContent = units.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(units / 3));
+  const pods = Math.max(2, Math.floor(units / 2));
+  const ok = mode === 'riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge';
+  const mpcStr = ok ? "海底立管油气水三相严重段塞流与内转塔六自由度风标 PINN + 登船节流阀主动消塞与离心压缩机防喘振 MPC · 分离稳态处理量与压缩机安全裕度 +25.6% · 立管底压震荡与分离器液位涌浪 -39.1%" : "传统手动关小登船节流阀与固定喘振线控制 · 0.0% 主动消塞与扩容增益 (深水油井背压过高减产且 3.0% 泰勒气泡猛烈喷发或压缩机旋转失速误放行)";
+  const sil3Str = ok ? "1.2 ms API RP 14C / ISO 10418 / DNV-OS-E301 / SIL-3 水下 HIPPS、分离器高高液位 (LSHH) ESD-1 与立管紧急快脱 (EQD) 硬联锁 · 0.0% 带液毁机/系泊断裂违例" : "无 HIPPS/LSHH/EQD SIL-3 硬联锁 (510.0 ms 卫星云端回路滞后) · 1.4% 分离器带液冲毁高压离心压缩机叶轮或台风漂移拉断海底立管溢油风险";
+  const edgeStr = ok ? "1.1 ms 船载水下湿气多相流量计 (Subsea MPFM)、立管分布式光纤应变 (DAS/FBG) 与 OPC UA FX + Azure Local 边缘 (-98.9% 海事卫星带宽) · 0.0% 段塞先兆盲区" : "1,440.0 ms 原始水下多相流与立管光纤振动波形经海事卫星回传岸基云端 · 占满卫星链路且无法在液塞加速冲顶周期内完成毫秒级节流与防喘振旁通切换";
+
+  document.getElementById('fpsoOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 分离器带液毁机或锚链超载断裂风险 · 3.0% 严重段塞流泰勒气泡喷发或压缩机喘振反转误放行'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个 FPSO 上部模块/水下立管控制单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>FPSO 船载水下湿气多相流量计 (MPFM)、立管光纤应变与声学喘振先兆 + Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runPshHydroLab() {
   const units = parseInt(document.getElementById('rng_psh_units').value, 10);

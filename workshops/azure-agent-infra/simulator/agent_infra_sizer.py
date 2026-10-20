@@ -4663,6 +4663,58 @@ def simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(
     }
 
 
+def simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(
+    fpso_production_units: int = 6,
+    fpso_governance_mode: str = "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Deepwater FPSO (Floating Production Storage and
+    Offloading) Internal Turret-Mooring Weathervaning, Subsea Multiphase
+    Production Riser Severe-Slugging (Taylor-Bubble Blowout) Suppression &
+    Topside Gas-Injection Centrifugal Compressor Anti-Surge PINN-MPC &
+    API RP 14C / ISO 10418 / DNV-OS-E301 / IEC 61508 SIL-3 High-Integrity
+    Pressure Protection System (HIPPS), ESD-1 High-High Liquid Level (LSHH)
+    Trip & Riser Emergency Quick-Disconnect (EQD) Interlock Agent
+    Infrastructure (Chapter 88).
+    """
+    if fpso_production_units <= 0:
+        raise ValueError("fpso_production_units must be positive")
+    valid_modes = {
+        "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge",
+        "manual_choke_unverified_antisurge_cloud",
+    }
+    if fpso_governance_mode not in valid_modes:
+        raise ValueError(f"fpso_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = fpso_governance_mode == "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge"
+    gpu_nodes = max(2, math.ceil(fpso_production_units / 3))
+    active_fpso_topside_subsea_pods = max(2, int(fpso_production_units // 2))
+
+    separation_throughput_and_compressor_margin_gain_pct = 25.6 if governed else 0.0
+    riser_slug_pressure_and_separator_surge_reduction_pct = 39.1 if governed else 0.0
+    apirp14c_dnv_sil3_hipps_eqd_interlock_ms = 1.2 if governed else 510.0
+    separator_carryover_or_mooring_line_breach_pct = 0.0 if governed else 1.4
+    topside_mpfm_das_edge_latency_ms = 1.1 if governed else 1440.0
+    wan_bandwidth_reduction_pct = 98.9 if governed else 0.0
+    severe_slug_blowout_or_compressor_surge_false_clearance_pct = 0.0 if governed else 3.0
+
+    return {
+        "fpso_production_units": fpso_production_units,
+        "fpso_governance_mode": fpso_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_fpso_topside_subsea_pods": active_fpso_topside_subsea_pods,
+        "separation_throughput_and_compressor_margin_gain_pct": separation_throughput_and_compressor_margin_gain_pct,
+        "riser_slug_pressure_and_separator_surge_reduction_pct": riser_slug_pressure_and_separator_surge_reduction_pct,
+        "apirp14c_dnv_sil3_hipps_eqd_interlock_ms": apirp14c_dnv_sil3_hipps_eqd_interlock_ms,
+        "separator_carryover_or_mooring_line_breach_pct": separator_carryover_or_mooring_line_breach_pct,
+        "topside_mpfm_das_edge_latency_ms": topside_mpfm_das_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "severe_slug_blowout_or_compressor_surge_false_clearance_pct": severe_slug_blowout_or_compressor_surge_false_clearance_pct,
+        "fpso_turret_mooring_riser_slugging_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

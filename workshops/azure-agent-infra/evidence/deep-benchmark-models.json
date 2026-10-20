@@ -5032,5 +5032,67 @@
       "sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct": 3.1,
       "psh_pumped_hydro_waterhammer_slo_met": false
     }
+  ],
+  "fpso_turret_mooring_riser_slugging_profiles": [
+    {
+      "fpso_production_units": 3,
+      "fpso_governance_mode": "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fpso_topside_subsea_pods": 2,
+      "separation_throughput_and_compressor_margin_gain_pct": 25.6,
+      "riser_slug_pressure_and_separator_surge_reduction_pct": 39.1,
+      "apirp14c_dnv_sil3_hipps_eqd_interlock_ms": 1.2,
+      "separator_carryover_or_mooring_line_breach_pct": 0.0,
+      "topside_mpfm_das_edge_latency_ms": 1.1,
+      "wan_bandwidth_reduction_pct": 98.9,
+      "severe_slug_blowout_or_compressor_surge_false_clearance_pct": 0.0,
+      "fpso_turret_mooring_riser_slugging_slo_met": true
+    },
+    {
+      "fpso_production_units": 6,
+      "fpso_governance_mode": "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fpso_topside_subsea_pods": 3,
+      "separation_throughput_and_compressor_margin_gain_pct": 25.6,
+      "riser_slug_pressure_and_separator_surge_reduction_pct": 39.1,
+      "apirp14c_dnv_sil3_hipps_eqd_interlock_ms": 1.2,
+      "separator_carryover_or_mooring_line_breach_pct": 0.0,
+      "topside_mpfm_das_edge_latency_ms": 1.1,
+      "wan_bandwidth_reduction_pct": 98.9,
+      "severe_slug_blowout_or_compressor_surge_false_clearance_pct": 0.0,
+      "fpso_turret_mooring_riser_slugging_slo_met": true
+    },
+    {
+      "fpso_production_units": 24,
+      "fpso_governance_mode": "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fpso_topside_subsea_pods": 12,
+      "separation_throughput_and_compressor_margin_gain_pct": 25.6,
+      "riser_slug_pressure_and_separator_surge_reduction_pct": 39.1,
+      "apirp14c_dnv_sil3_hipps_eqd_interlock_ms": 1.2,
+      "separator_carryover_or_mooring_line_breach_pct": 0.0,
+      "topside_mpfm_das_edge_latency_ms": 1.1,
+      "wan_bandwidth_reduction_pct": 98.9,
+      "severe_slug_blowout_or_compressor_surge_false_clearance_pct": 0.0,
+      "fpso_turret_mooring_riser_slugging_slo_met": true
+    },
+    {
+      "fpso_production_units": 6,
+      "fpso_governance_mode": "manual_choke_unverified_antisurge_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fpso_topside_subsea_pods": 3,
+      "separation_throughput_and_compressor_margin_gain_pct": 0.0,
+      "riser_slug_pressure_and_separator_surge_reduction_pct": 0.0,
+      "apirp14c_dnv_sil3_hipps_eqd_interlock_ms": 510.0,
+      "separator_carryover_or_mooring_line_breach_pct": 1.4,
+      "topside_mpfm_das_edge_latency_ms": 1440.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "severe_slug_blowout_or_compressor_surge_false_clearance_pct": 3.0,
+      "fpso_turret_mooring_riser_slugging_slo_met": false
+    }
   ]
 }

@@ -89,6 +89,7 @@ from agent_infra_sizer import (
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
     simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
     simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
+    simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -225,6 +226,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-hypersonic-cmc-cvi-arcjet-tps-nfpa86-sil3-pool.bicep",
             "aksclaw-subsea-cable-lay-plough-otdr-das-dnv-sil3-pool.bicep",
             "aksclaw-psh-pumped-hydro-waterhammer-vortex-iec60308-sil3-pool.bicep",
+            "aksclaw-fpso-turret-mooring-riser-slugging-apirp14c-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1586,6 +1588,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["sregion_grid_sync_failure_or_runner_cavitation_false_clearance_pct"], 2.9)
         self.assertTrue(gov["psh_pumped_hydro_waterhammer_slo_met"])
         self.assertFalse(raw["psh_pumped_hydro_waterhammer_slo_met"])
+
+    def test_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(self) -> None:
+        gov = simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(
+            6, "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge"
+        )
+        raw = simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(
+            6, "manual_choke_unverified_antisurge_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_fpso_topside_subsea_pods"], 3)
+        self.assertEqual(gov["separation_throughput_and_compressor_margin_gain_pct"], 25.6)
+        self.assertEqual(gov["riser_slug_pressure_and_separator_surge_reduction_pct"], 39.1)
+        self.assertEqual(gov["apirp14c_dnv_sil3_hipps_eqd_interlock_ms"], 1.2)
+        self.assertEqual(gov["separator_carryover_or_mooring_line_breach_pct"], 0.0)
+        self.assertGreater(raw["separator_carryover_or_mooring_line_breach_pct"], 1.2)
+        self.assertEqual(gov["topside_mpfm_das_edge_latency_ms"], 1.1)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.9)
+        self.assertEqual(gov["severe_slug_blowout_or_compressor_surge_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["severe_slug_blowout_or_compressor_surge_false_clearance_pct"], 2.8)
+        self.assertTrue(gov["fpso_turret_mooring_riser_slugging_slo_met"])
+        self.assertFalse(raw["fpso_turret_mooring_riser_slugging_slo_met"])
 
 
 if __name__ == "__main__":

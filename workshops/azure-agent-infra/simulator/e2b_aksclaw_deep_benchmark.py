@@ -95,6 +95,7 @@ from agent_infra_sizer import (
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
     simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
     simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
+    simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -823,6 +824,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(32, "allievi_waterhammer_sregion_pinn_dfim_mpc_iec60308_sil3_edge"),
         simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox(8, "fixed_linear_servo_unverified_wicket_cloud"),
     ]
+    fpso_turret_mooring_riser_slugging_profiles: List[Dict[str, object]] = [
+        simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(3, "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge"),
+        simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(6, "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge"),
+        simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(24, "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge"),
+        simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(6, "manual_choke_unverified_antisurge_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -906,6 +913,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hypersonic_cmc_cvi_arcjet_profiles": hypersonic_cmc_cvi_arcjet_profiles,
         "subsea_cable_lay_plough_profiles": subsea_cable_lay_plough_profiles,
         "psh_pumped_hydro_waterhammer_profiles": psh_pumped_hydro_waterhammer_profiles,
+        "fpso_turret_mooring_riser_slugging_profiles": fpso_turret_mooring_riser_slugging_profiles,
     }
 
 

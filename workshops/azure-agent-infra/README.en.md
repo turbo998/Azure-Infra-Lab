@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #82 · **88 Chapters** · **83 IaC Blueprints** · **82 Quantitative Physics Simulators** · **91/91 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 87-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #83 · **89 Chapters** · **84 IaC Blueprints** · **83 Quantitative Physics Simulators** · **92/92 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 88-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 82 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [91-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 83 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [92-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -176,6 +176,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **85** | **Ultra-High-Temperature Ceramic Matrix Composite (`SiC/SiC CMC`) CVI & Hypersonic Arc-Jet TPS Testing (`2,200–3,000 °C` Mach 7–15 Plasma Tunnel, `Knudsen-Fick Pore Diffusion & Ablation PINN + Thermal-Gradient CVI & Arc-Jet MPC` + `NASA-STD-5001B / NFPA 86 / SIL-3` Pyrophoric `MTS/H2` Purge & Anode Cooling Gate + `Pyrometry/PLIF` Edge)** | `simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox()` | `aksclaw-hypersonic-cmc-cvi-arcjet-tps-nfpa86-sil3-pool.bicep` | **`+26.8%` `SiC/SiC` densification/ILSS & `-36.4%` pore crusting**, **`0.0%` `H2/MTS` deflagration or anode burnout (`1.3 ms` SIL-3)**, **`1.2 ms` test-cell pyrometry/PLIF edge (`98.7%` WAN cut)** |
 | **86** | **Subsea HVDC / Submarine Fiber-Optic Cable Laying Vessel `CLV` & Plough Trenching (`3D Dynamic Catenary TDP & Plough Soil-Cutting PINN + DP-3 LCE & Jetting MPC` + `DNV-ST-F101 / CIGRE TB 610 / IMCA M 103 DP-3 / SIL-3` Chute `MBR < 3.5 m` & Tow-Winch Render Gate + `C-OTDR / BOTDA / USBL` Edge)** | `simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox()` | `aksclaw-subsea-cable-lay-plough-otdr-das-dnv-sil3-pool.bicep` | **`+26.4%` burial compliance/lay speed & `-38.2%` TDP tension variance/microbend loss**, **`0.0%` chute MBR buckling or armour birdcaging (`1.6 ms` SIL-3)**, **`1.5 ms` vessel `C-OTDR/BOTDA` edge (`98.8%` SatCom cut)** |
 | **87** | **Pumped-Storage Hydropower `PSH` Variable-Speed Reversible Pump-Turbine (`250–400 MW` DFIM, `1D Allievi-Joukowsky MOC Water-Hammer & S-Region Vortex-Rope PINN + DFIM Slip & Wicket-Gate MPC` + `IEEE 1020 / IEC 60308 / ASME PTC 18 / SIL-3` Polygonal Cushion-Law & Vacuum-Breaker Gate + `10 kHz Piezo / Shaft-Orbit` Edge)** | `simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox()` | `aksclaw-psh-pumped-hydro-waterhammer-vortex-iec60308-sil3-pool.bicep` | **`+29.2%` mode-switch speed/RTE & `-37.6%` S-region pulsation/water-hammer peak**, **`0.0%` penstock overpressure or column separation (`1.4 ms` SIL-3)**, **`1.3 ms` cavern piezo/orbit edge (`98.6%` WAN cut)** |
+| **88** | **Deepwater `FPSO` Internal Turret-Mooring Weathervaning, Subsea Riser Severe-Slugging & Topside Centrifugal Compressor Anti-Surge (`1D/3D Multiphase Riser Slugging & 6-DOF Turret PINN + Active Choke & Anti-Surge Recycle MPC` + `API RP 14C / ISO 10418 / DNV-OS-E301 / SIL-3` HIPPS, `ESD-1` & `EQD` Gate + `Subsea MPFM / Riser FBG` Edge)** | `simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox()` | `aksclaw-fpso-turret-mooring-riser-slugging-apirp14c-sil3-pool.bicep` | **`+25.6%` separation throughput/margin & `-39.1%` slug pressure/level surge**, **`0.0%` separator carry-over or mooring breach (`1.2 ms` SIL-3)**, **`1.1 ms` topside `MPFM/DAS` edge (`98.9%` SatCom cut)** |
 
 ---
 
@@ -185,10 +186,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 82 quantitative engineering & physics simulators (Chapters 7–87)
+# 2. Run all 83 quantitative engineering & physics simulators (Chapters 7–88)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 91 unit tests (100% pass across 6 runtimes, 82 physics models, 83 blueprints & links)
+# 3. Execute all 92 unit tests (100% pass across 6 runtimes, 83 physics models, 84 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)
