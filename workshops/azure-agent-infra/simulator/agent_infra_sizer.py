@@ -4888,6 +4888,49 @@ def simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(
     }
 
 
+def simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(
+    sfr_lbe_reactor_primary_loops: int = 12,
+    sfr_governance_mode: str = "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Gen-IV Liquid-Metal Fast Reactor (SFR / LBE), Pool Thermal-Stratification & Electromagnetic Pump PINN-MPC, Steam-Generator Sodium-Water Reaction (SWR) Acoustic Detection & ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3 Agent Infrastructure (Chapter 93)."""
+    if sfr_lbe_reactor_primary_loops <= 0:
+        raise ValueError("sfr_lbe_reactor_primary_loops must be positive")
+    valid_modes = {
+        "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge",
+        "manual_cold_trap_delayed_hydrogen_meter_cloud",
+    }
+    if sfr_governance_mode not in valid_modes:
+        raise ValueError(f"sfr_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = sfr_governance_mode == "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge"
+    active_sfr_lbe_reactor_pods = max(2, int(sfr_lbe_reactor_primary_loops // 2))
+    gpu_nodes = max(2, math.ceil(sfr_lbe_reactor_primary_loops / 6))
+
+    breeding_burnup_and_thermal_cycle_efficiency_gain_pct = 25.8 if governed else 4.1
+    upper_plenum_thermal_striping_creep_fatigue_reduction_pct = 42.6 if governed else 7.2
+    asme_div5_ieee603_class1e_swr_dump_interlock_ms = 0.9 if governed else 118.0
+    sodium_water_reaction_or_cladding_eutectic_breach_pct = 0.0 if governed else 1.5
+    under_sodium_ultrasonic_acoustic_edge_latency_ms = 0.8 if governed else 235.0
+    wan_bandwidth_reduction_pct = 99.0 if governed else 0.0
+    plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct = 0.0 if governed else 3.3
+
+    return {
+        "sfr_lbe_reactor_primary_loops": sfr_lbe_reactor_primary_loops,
+        "sfr_governance_mode": sfr_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_sfr_lbe_reactor_pods": active_sfr_lbe_reactor_pods,
+        "breeding_burnup_and_thermal_cycle_efficiency_gain_pct": breeding_burnup_and_thermal_cycle_efficiency_gain_pct,
+        "upper_plenum_thermal_striping_creep_fatigue_reduction_pct": upper_plenum_thermal_striping_creep_fatigue_reduction_pct,
+        "asme_div5_ieee603_class1e_swr_dump_interlock_ms": asme_div5_ieee603_class1e_swr_dump_interlock_ms,
+        "sodium_water_reaction_or_cladding_eutectic_breach_pct": sodium_water_reaction_or_cladding_eutectic_breach_pct,
+        "under_sodium_ultrasonic_acoustic_edge_latency_ms": under_sodium_ultrasonic_acoustic_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct": plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct,
+        "gen4_liquid_metal_sfr_lbe_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

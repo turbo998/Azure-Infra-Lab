@@ -94,6 +94,7 @@ from agent_infra_sizer import (
     simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
     simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
     simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
+    simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -235,6 +236,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-polar-icebreaker-ice-routing-azimuth-imopolar-sil3-pool.bicep",
             "aksclaw-gravitational-wave-interferometer-fabry-perot-sil3-pool.bicep",
             "aksclaw-stratospheric-hale-solar-haps-aeroelastic-dala-pool.bicep",
+            "aksclaw-gen4-liquid-metal-sfr-lbe-swr-class1e-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1701,6 +1703,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["nighttime_lis_battery_undervoltage_descent_breach_pct"], 3.0)
         self.assertTrue(gov["stratospheric_hale_solar_haps_slo_met"])
         self.assertFalse(raw["stratospheric_hale_solar_haps_slo_met"])
+
+    def test_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(self) -> None:
+        gov = simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(
+            12, "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge"
+        )
+        raw = simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(
+            12, "manual_cold_trap_delayed_hydrogen_meter_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_sfr_lbe_reactor_pods"], 6)
+        self.assertEqual(gov["breeding_burnup_and_thermal_cycle_efficiency_gain_pct"], 25.8)
+        self.assertEqual(gov["upper_plenum_thermal_striping_creep_fatigue_reduction_pct"], 42.6)
+        self.assertEqual(gov["asme_div5_ieee603_class1e_swr_dump_interlock_ms"], 0.9)
+        self.assertEqual(gov["sodium_water_reaction_or_cladding_eutectic_breach_pct"], 0.0)
+        self.assertGreater(raw["sodium_water_reaction_or_cladding_eutectic_breach_pct"], 1.2)
+        self.assertEqual(gov["under_sodium_ultrasonic_acoustic_edge_latency_ms"], 0.8)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.0)
+        self.assertEqual(gov["plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct"], 0.0)
+        self.assertGreater(raw["plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct"], 3.0)
+        self.assertTrue(gov["gen4_liquid_metal_sfr_lbe_slo_met"])
+        self.assertFalse(raw["gen4_liquid_metal_sfr_lbe_slo_met"])
 
 
 if __name__ == "__main__":

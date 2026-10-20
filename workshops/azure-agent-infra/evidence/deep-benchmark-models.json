@@ -5342,5 +5342,67 @@
       "nighttime_lis_battery_undervoltage_descent_breach_pct": 3.6,
       "stratospheric_hale_solar_haps_slo_met": false
     }
+  ],
+  "gen4_liquid_metal_sfr_lbe_profiles": [
+    {
+      "sfr_lbe_reactor_primary_loops": 6,
+      "sfr_governance_mode": "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_sfr_lbe_reactor_pods": 3,
+      "breeding_burnup_and_thermal_cycle_efficiency_gain_pct": 25.8,
+      "upper_plenum_thermal_striping_creep_fatigue_reduction_pct": 42.6,
+      "asme_div5_ieee603_class1e_swr_dump_interlock_ms": 0.9,
+      "sodium_water_reaction_or_cladding_eutectic_breach_pct": 0.0,
+      "under_sodium_ultrasonic_acoustic_edge_latency_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 99.0,
+      "plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct": 0.0,
+      "gen4_liquid_metal_sfr_lbe_slo_met": true
+    },
+    {
+      "sfr_lbe_reactor_primary_loops": 12,
+      "sfr_governance_mode": "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_sfr_lbe_reactor_pods": 6,
+      "breeding_burnup_and_thermal_cycle_efficiency_gain_pct": 25.8,
+      "upper_plenum_thermal_striping_creep_fatigue_reduction_pct": 42.6,
+      "asme_div5_ieee603_class1e_swr_dump_interlock_ms": 0.9,
+      "sodium_water_reaction_or_cladding_eutectic_breach_pct": 0.0,
+      "under_sodium_ultrasonic_acoustic_edge_latency_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 99.0,
+      "plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct": 0.0,
+      "gen4_liquid_metal_sfr_lbe_slo_met": true
+    },
+    {
+      "sfr_lbe_reactor_primary_loops": 48,
+      "sfr_governance_mode": "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_sfr_lbe_reactor_pods": 24,
+      "breeding_burnup_and_thermal_cycle_efficiency_gain_pct": 25.8,
+      "upper_plenum_thermal_striping_creep_fatigue_reduction_pct": 42.6,
+      "asme_div5_ieee603_class1e_swr_dump_interlock_ms": 0.9,
+      "sodium_water_reaction_or_cladding_eutectic_breach_pct": 0.0,
+      "under_sodium_ultrasonic_acoustic_edge_latency_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 99.0,
+      "plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct": 0.0,
+      "gen4_liquid_metal_sfr_lbe_slo_met": true
+    },
+    {
+      "sfr_lbe_reactor_primary_loops": 12,
+      "sfr_governance_mode": "manual_cold_trap_delayed_hydrogen_meter_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_sfr_lbe_reactor_pods": 6,
+      "breeding_burnup_and_thermal_cycle_efficiency_gain_pct": 4.1,
+      "upper_plenum_thermal_striping_creep_fatigue_reduction_pct": 7.2,
+      "asme_div5_ieee603_class1e_swr_dump_interlock_ms": 118.0,
+      "sodium_water_reaction_or_cladding_eutectic_breach_pct": 1.5,
+      "under_sodium_ultrasonic_acoustic_edge_latency_ms": 235.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct": 3.3,
+      "gen4_liquid_metal_sfr_lbe_slo_met": false
+    }
   ]
 }

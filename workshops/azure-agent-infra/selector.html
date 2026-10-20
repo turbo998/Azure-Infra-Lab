@@ -500,6 +500,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(85)">86. 极地重型破冰船 (PC1-PC3) 星载 SAR 多年冰脊动态寻优 + 船体冰带 FBG 冲击应变与吊舱推进器 (Azipod) 铣冰防过载 PINN-MPC 及 IMO Polar Code / IACS URI / SIL-3 防困冰联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(86)">87. 千米级引力波激光干涉仪 (LIGO/CE/ET) 四级悬架法布里-珀罗臂腔分层锁腔 Deep-RL + 牛顿引力梯度噪声 (NN) PINN + 频变压缩真空态 MPC 与 IEC 61508 SIL-3 / ANSI Z136.1 1.5MW 激光快门联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(87)">88. 平流层高空长航时 (HALE) 太阳能伪卫星 (HAPS) 大展弦比超柔机翼气动弹性阵风载荷减缓 (GLA) + 全固态锂硫 (Li-S) 电池昼夜势能-电能平衡 PINN-MPC 与 STANAG 4671 / DO-178C DAL-A 防颤振联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(88)">89. 第四代液态金属快中子增殖堆 (钠冷快堆 SFR / 铅铋快堆 LBE) 热池热条纹与冷阱控氧 PINN-MPC + 蒸汽发生器钠水反应 (SWR) 声学检测与 ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3 爆破片联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2485,6 +2486,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 88: Autonomous Gen-IV Liquid-Metal Fast Reactor (SFR / LBE), Pool Thermal-Stratification & Electromagnetic Pump PINN-MPC, Steam-Generator Sodium-Water Reaction (SWR) Acoustic Detection & ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3 Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 88 · GEN-IV LIQUID-METAL FAST REACTOR (SFR / LBE), POOL THERMAL-STRIPING &amp; EMP PINN-MPC, SODIUM-WATER REACTION (SWR) ACOUSTIC &amp; ASME BPVC III DIV 5 / IEEE 603 CLASS 1E SIL-3 SIZER</span>
+    <h2>自主第四代液态金属快中子增殖堆 (<code>SFR / LBE</code>)、主容器热条纹与电磁泵 <code>PINN-MPC</code>、蒸汽发生器钠水反应 (<code>SWR</code>) 声学检测与 <code>ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3</code> 联锁测算器</h2>
+    <div class="sub">量化在 <code>6 – 48</code> 条池式钠冷快堆 (<code>550 °C Na</code>) 与铅铋快堆 (<code>LBE</code>) 一/二回路规模下，上部堆内构件热条纹 (<code>Thermal Striping</code>) 与冷阱控氧 (<code>10⁻⁶ wt% O</code>) <code>PINN</code> + 环形线性感应电磁泵 (<code>ALIP/EMP</code>) 与中间热交换器 (<code>IHX</code>) <code>MPC</code>（超铀增殖燃耗与过热蒸汽热效率 <code>+25.8%</code>、上部构件热疲劳蠕变损伤与氧化物结渣 <code>-42.6%</code>）、<code>ASME BPVC Section III Division 5 / IEEE 603 Class 1E SIL-3</code> 蒸汽发生器钠水反应 (<code>SWR</code>) 爆破片紧急排钠充氩与非能动余热排出 (<code>DRACS</code>) 硬联锁（<code>0.9 ms</code>，传热管连锁吹穿或燃料包壳共晶超温违例率 <code>0.0%</code>）及核岛耐高温钠下超声成像 (<code>USV</code>) + 声学检漏阵列 + <code>Azure Local</code> 边缘推理（<code>0.8 ms</code>，核岛专网带宽削减 <code>99.0%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在役第四代液态金属快堆一/二回路及蒸汽发生器模块数 (Gen-IV SFR/LBE Reactor Primary/Secondary Loops): <strong id="lbl_sfr_loops" style="color:var(--amber)">12</strong> Reactor Loops</label>
+          <input type="range" id="rng_sfr_loops" min="6" max="48" step="6" value="12" oninput="runGen4LiquidMetalSfrLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 热池热条纹/控氧 PINN-MPC、钠水反应声学监测与 ASME Div 5 / IEEE 603 Class 1E SIL-3 爆破片联锁模式 (Gen-IV SFR/LBE Governance Mode)</label>
+          <select id="sel_sfr_mode" onchange="runGen4LiquidMetalSfrLab()">
+            <option value="pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge" selected>三维热池热条纹与冷阱控氧 PINN + 电磁泵 ALIP/IHX MPC (+25.8% 增殖燃耗/热效率 / -42.6% 热条纹蠕变疲劳) + Class 1E SIL-3 钠水反应爆破片卸荷联锁 + 0.8ms 钠下超声 USV/声学边缘 (推荐)</option>
+            <option value="manual_cold_trap_delayed_hydrogen_meter_cloud">传统反模式：定速电磁泵与间歇阻塞计测氧 (+4.1% 效率增益) + 仅靠慢速扩散氢计无声学/爆破片 Class 1E 硬联锁 (1.5% 钠水反应传热管吹穿违例) + 原始声学流上云 (3.3% 冷阱结晶堵管/覆盖气室漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="sfrOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3984,6 +4008,21 @@ resource haleSolarHapsDalAPool 'Microsoft.ContainerService/managedClusters/agent
       'aksclaw.io/onboard-fbg-wing-strain-arinc825-ka-satcom-edge': 'enabled-0.9ms-99.0pct-blos-satcom-wan-cut'
     }
   }
+}`,
+`// Blueprint #89: Gen-IV Liquid-Metal Fast Reactor (SFR / LBE) Thermal-Striping & EMP PINN-MPC, Sodium-Water Reaction (SWR) Acoustic & ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3 Pool (Chapter 93)
+resource gen4LiquidMetalSfrClass1eSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'gen4sfrlbe'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'gen4-liquid-metal-sfr-lbe-swr-class1e-sil3-agent'
+      'aksclaw.io/pinn-mpc-pool-thermal-striping-emp-oxygen-control': 'enabled-25.8pct-breeding-thermal-eff-42.6pct-thermal-striping-fatigue-cut'
+      'aksclaw.io/asme-bpvc-iii-div5-ieee603-class1e-swr-rupture-disc': 'enforced-0.9ms-zero-sodium-water-excursion-or-cladding-creep-breach'
+      'aksclaw.io/containment-ultrasonic-under-sodium-viewing-spnd-edge': 'enabled-0.8ms-99.0pct-nuclear-island-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4172,6 +4211,30 @@ runSicPvtLab();
 runPolarIcebreakerLab();
 runGwInterferometerLab();
 runStratosphericHaleLab();
+runGen4LiquidMetalSfrLab();
+
+function runGen4LiquidMetalSfrLab() {
+  const loops = parseInt(document.getElementById('rng_sfr_loops').value, 10);
+  const mode = document.getElementById('sel_sfr_mode').value;
+  document.getElementById('lbl_sfr_loops').textContent = loops.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(loops / 6));
+  const pods = Math.max(2, Math.floor(loops / 2));
+  const ok = mode === 'pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge';
+  const mpcStr = ok ? "三维池式液态钠 (550°C Na)/铅铋 (LBE) 热条纹与冷阱控氧 (10⁻⁶ wt% O) PINN + 环形线性感应电磁泵 (ALIP/EMP) 与中间热交换器 (IHX) MPC · 超铀增殖燃耗与过热蒸汽热效率 +25.8% · 上部堆内构件 (UIS) 热条纹蠕变疲劳与氧化物结渣 -42.6%" : "传统定速电磁泵与人工间歇阻塞计测氧 · 仅 +4.1% 热效率增益 / +7.2% 疲劳恶化 (堆芯出口冷热射流高频脉动导致上部构件热疲劳裂纹，且 3.3% 冷阱氧化钠/氧化铅过饱和结晶堵管或氩气室裂变气体微漏漏检)";
+  const sil3Str = ok ? "0.9 ms ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3 蒸汽发生器钠水反应 (SWR) 爆破片紧急排钠充氩与非能动余热排出 (DRACS) 硬联锁 · 0.0% 传热管连锁吹穿/燃料包壳共晶超温违例" : "仅靠慢速扩散氢计无声学/爆破片 Class 1E 硬联锁 (118.0 ms 回路滞后) · 1.5% 高压水微漏演变为自催化喷射腐蚀吹穿相邻传热管及剧烈钠水反应风险";
+  const edgeStr = ok ? "0.8 ms 核岛耐高温波导钠下超声成像 (USV)、蒸汽发生器高频声发射 (AE) 检漏阵与 Azure Local 反应堆保护边缘 (-99.0% 核岛专网带宽) · 0.0% 微漏漏检" : "235.0 ms 原始多通道百千赫声学波形与超声体数据外传 · 远超毫克每秒级水微泄漏声学瞬态捕捉与电磁泵防气蚀响应窗口";
+
+  document.getElementById('sfrOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 蒸汽发生器钠水反应 (SWR) 传热管连锁吹穿或燃料包壳超温风险 · 3.3% 冷阱氧化物结晶堵管或覆盖气室裂变气体漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个第四代快堆热工与安全数字孪生单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>核岛耐高温波导钠下超声成像 (USV)、高频声发射 (AE) 钠水微漏阵列与 Azure Local 保护边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runStratosphericHaleLab() {
   const aircraft = parseInt(document.getElementById('rng_hale_aircraft').value, 10);

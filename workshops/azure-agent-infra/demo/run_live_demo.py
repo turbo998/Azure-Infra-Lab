@@ -107,6 +107,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
     simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
     simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
+    simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -773,6 +774,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hale_solar_haps_18_aircraft": simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(18, "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge"),
             "hale_solar_haps_72_aircraft": simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(72, "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge"),
             "raw_hale_solar_haps_18_aircraft": simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(18, "rigid_body_autopilot_fixed_waypoint_cloud_satcom"),
+        },
+        "demo_88_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox": {
+            "gen4_sfr_lbe_12_loops": simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(12, "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge"),
+            "gen4_sfr_lbe_48_loops": simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(48, "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge"),
+            "raw_gen4_sfr_lbe_12_loops": simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(12, "manual_cold_trap_delayed_hydrogen_meter_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
