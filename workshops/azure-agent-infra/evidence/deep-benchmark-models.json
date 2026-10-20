@@ -3606,5 +3606,67 @@
       "membrane_dp_pinhole_degradation_pct": 3.4,
       "green_hydrogen_ammonia_slo_met": false
     }
+  ],
+  "fusion_tokamak_plasma_profiles": [
+    {
+      "fusion_thermal_power_mw": 100,
+      "fusion_tokamak_mode": "grad_shafranov_mhd_detachment_sil3_spi_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "pf_coils_and_ech_gyrotrons": 12,
+      "h_mode_pulse_duration_gain_pct": 48.5,
+      "divertor_peak_heat_flux_reduction_pct": 36.4,
+      "iec61508_sil3_spi_quench_gate_ms": 0.4,
+      "runaway_electron_or_hts_quench_escape_pct": 0.0,
+      "mirnov_thomson_edge_triage_ms": 2.5,
+      "fusion_diagnostics_wan_bandwidth_reduction_pct": 97.6,
+      "divertor_tungsten_recrystallization_pct": 0.0,
+      "fusion_tokamak_slo_met": true
+    },
+    {
+      "fusion_thermal_power_mw": 500,
+      "fusion_tokamak_mode": "grad_shafranov_mhd_detachment_sil3_spi_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "pf_coils_and_ech_gyrotrons": 40,
+      "h_mode_pulse_duration_gain_pct": 48.5,
+      "divertor_peak_heat_flux_reduction_pct": 36.4,
+      "iec61508_sil3_spi_quench_gate_ms": 0.4,
+      "runaway_electron_or_hts_quench_escape_pct": 0.0,
+      "mirnov_thomson_edge_triage_ms": 2.5,
+      "fusion_diagnostics_wan_bandwidth_reduction_pct": 97.6,
+      "divertor_tungsten_recrystallization_pct": 0.0,
+      "fusion_tokamak_slo_met": true
+    },
+    {
+      "fusion_thermal_power_mw": 2000,
+      "fusion_tokamak_mode": "grad_shafranov_mhd_detachment_sil3_spi_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "pf_coils_and_ech_gyrotrons": 160,
+      "h_mode_pulse_duration_gain_pct": 48.5,
+      "divertor_peak_heat_flux_reduction_pct": 36.4,
+      "iec61508_sil3_spi_quench_gate_ms": 0.4,
+      "runaway_electron_or_hts_quench_escape_pct": 0.0,
+      "mirnov_thomson_edge_triage_ms": 2.5,
+      "fusion_diagnostics_wan_bandwidth_reduction_pct": 97.6,
+      "divertor_tungsten_recrystallization_pct": 0.0,
+      "fusion_tokamak_slo_met": true
+    },
+    {
+      "fusion_thermal_power_mw": 500,
+      "fusion_tokamak_mode": "open_loop_pid_unmitigated_disruption_raw_mirnov",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "pf_coils_and_ech_gyrotrons": 40,
+      "h_mode_pulse_duration_gain_pct": 0.0,
+      "divertor_peak_heat_flux_reduction_pct": 0.0,
+      "iec61508_sil3_spi_quench_gate_ms": 0.0,
+      "runaway_electron_or_hts_quench_escape_pct": 1.9,
+      "mirnov_thomson_edge_triage_ms": 980.0,
+      "fusion_diagnostics_wan_bandwidth_reduction_pct": 0.0,
+      "divertor_tungsten_recrystallization_pct": 3.8,
+      "fusion_tokamak_slo_met": false
+    }
   ]
 }

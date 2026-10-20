@@ -66,6 +66,7 @@ from agent_infra_sizer import (
     simulate_steelmaking_eaf_casting_sil3_sandbox,
     simulate_cement_kiln_ccus_pyro_sandbox,
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
+    simulate_fusion_tokamak_plasma_quench_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1108,6 +1109,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["membrane_dp_pinhole_degradation_pct"], 3.0)
         self.assertTrue(gov["green_hydrogen_ammonia_slo_met"])
         self.assertFalse(raw["green_hydrogen_ammonia_slo_met"])
+
+    def test_fusion_tokamak_plasma_quench_sandbox(self) -> None:
+        gov = simulate_fusion_tokamak_plasma_quench_sandbox(500, "grad_shafranov_mhd_detachment_sil3_spi_edge")
+        raw = simulate_fusion_tokamak_plasma_quench_sandbox(500, "open_loop_pid_unmitigated_disruption_raw_mirnov")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["pf_coils_and_ech_gyrotrons"], 40)
+        self.assertEqual(gov["h_mode_pulse_duration_gain_pct"], 48.5)
+        self.assertEqual(gov["divertor_peak_heat_flux_reduction_pct"], 36.4)
+        self.assertEqual(gov["iec61508_sil3_spi_quench_gate_ms"], 0.4)
+        self.assertEqual(gov["runaway_electron_or_hts_quench_escape_pct"], 0.0)
+        self.assertGreater(raw["runaway_electron_or_hts_quench_escape_pct"], 1.5)
+        self.assertEqual(gov["mirnov_thomson_edge_triage_ms"], 2.5)
+        self.assertEqual(gov["fusion_diagnostics_wan_bandwidth_reduction_pct"], 97.6)
+        self.assertEqual(gov["divertor_tungsten_recrystallization_pct"], 0.0)
+        self.assertGreater(raw["divertor_tungsten_recrystallization_pct"], 3.5)
+        self.assertTrue(gov["fusion_tokamak_slo_met"])
+        self.assertFalse(raw["fusion_tokamak_slo_met"])
 
 
 if __name__ == "__main__":

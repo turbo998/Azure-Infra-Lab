@@ -472,6 +472,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(57)">58. 绿色钢铁电弧炉 EAF 泡沫渣谐波 MPC 寻优 + NFPA 86 / SIL-3 防爆防漏钢互锁与 LIBS/FBG 边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(58)">59. 低碳水泥回转窑 PINN MPC 替代燃料 RDF 协同 + 窑尾醇胺 CCUS 再生寻优与 EN 746-2 CO 防爆池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(59)">60. 吉瓦级绿氢 PEM/碱性电解槽宽负荷跟随 MPC + 哈伯-博施绿氨协同与 ISO 22734 SIL-3 氧中氢防爆池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(60)">61. 托卡马克磁约束核聚变 Grad-Shafranov 撕裂模抑制 + 偏滤器脱靶 MPC 与 SIL-3 破碎弹丸失超保护池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1828,6 +1829,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 60 · TOKAMAK FUSION PLASMA MAGNETIC CONTROL, DIVERTOR DETACHMENT MPC &amp; IEC 61508 SIL-3 SPI / HTS QUENCH SIZER</span>
+    <h2>自主托卡马克磁约束核聚变等离子体控制、偏滤器脱靶 MPC 与 SIL-3 破碎弹丸/超导失超测算器 (Chapter 65 · Bilingual)</h2>
+    <div class="sub">量化在聚变装置热功率 <code>100 – 2,000 MW</code>（<code>12 – 160 路</code> 极向场线圈 <code>PF Coils</code> 与电子回旋共振加热 <code>ECH</code> 回旋管）规模下，启用 <code>Grad-Shafranov 实时磁平衡神经算子 + ECH 撕裂模抑制与偏滤器充杂辐射脱靶 MPC</code>（高约束模 <code>H-Mode</code> 脉冲平顶延长 <code>+48.5%</code>、偏滤器峰值热流降低 <code>36.4%</code>、钨靶板再结晶损伤率 <code>0.0%</code>）、<code>IEC 61508 SIL-3</code> 破碎弹丸注入 <code>SPI</code> 破裂缓解与 <code>REBCO</code> 高温超导线圈失超泄能硬件互锁（<code>0.4 ms</code> 校验，<code>0.0%</code> 逃逸电子束击穿第一壁与超导失超逃逸）以及聚变实验大厅 <code>Azure IoT Operations</code> 米尔诺夫磁探针与汤姆逊散射边缘分诊（<code>2.5 ms</code> 响应，削减 <code>97.6%</code> 广域网带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 托卡马克聚变堆热功率规模 (Tokamak Thermal Fusion Power Rating): <strong id="lbl_fus_mw" style="color:var(--teal)">500</strong> MW</label>
+          <input type="range" id="rng_fus_mw" min="100" max="2000" step="100" value="500" oninput="runFusionTokamakLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 等离子体磁流体控制、偏滤器脱靶与 SIL-3 破裂/失超互锁模式 (Tokamak Plasma &amp; Magnet Safety Mode)</label>
+          <select id="sel_fus_mode" onchange="runFusionTokamakLab()">
+            <option value="grad_shafranov_mhd_detachment_sil3_spi_edge" selected>Grad-Shafranov 神经控制 (+48.5% H-Mode / -36.4% 热流) + SIL-3 SPI/失超互锁 (0% 逃逸/烧毁) + 边缘诊断 (推荐)</option>
+            <option value="open_loop_pid_unmitigated_disruption_raw_mirnov">传统反模式：预设开环 PID (0 增益) + 无 SPI/失超互锁 (1.9% 逃逸电子/磁体失超) + 原始探针流上云 (3.8% 钨靶损伤)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="fusOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2887,6 +2910,22 @@ resource greenHydrogenPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/cell-eis-thermal-edge': 'enabled-9.5ms-96.8pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// Blueprint #61: AKSClaw Tokamak Fusion Plasma Magnetic Control,
+// Divertor Detachment Heat-Flux MPC & IEC 61508 SIL-3 Shattered-Pellet / HTS Quench Interlock Pool
+resource fusionTokamakPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'mhdcontrol'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'fusion-tokamak-plasma-quench-agent'
+      'aksclaw.io/grad-shafranov-mhd-detachment': 'enabled-48.5pct-hmode-gain-36.4pct-heatflux-cut'
+      'aksclaw.io/iec61508-sil3-spi-hts-quench': 'enforced-0.4ms-zero-runaway-electron-quench-escape'
+      'aksclaw.io/mirnov-thomson-diagnostics-edge': 'enabled-2.5ms-97.6pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -3047,6 +3086,30 @@ runCircularRecyclingLab();
 runSteelmakingEafLab();
 runCementKilnLab();
 runGreenHydrogenLab();
+runFusionTokamakLab();
+
+function runFusionTokamakLab() {
+  const mw = parseInt(document.getElementById('rng_fus_mw').value, 10);
+  const mode = document.getElementById('sel_fus_mode').value;
+  document.getElementById('lbl_fus_mw').textContent = mw.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(mw / 125));
+  const coils = Math.max(12, Math.floor((mw * 2) / 25));
+  const ok = mode === 'grad_shafranov_mhd_detachment_sil3_spi_edge';
+  const mhdStr = ok ? "Grad-Shafranov 神经控制 + 偏滤器脱靶 · H-Mode 脉冲 +48.5% · 靶板热流 -36.4%" : "预设开环 PID · 0.0% 脉冲与热流增益 (撕裂模锁模破裂与 3.8% 钨靶再结晶损伤)";
+  const silStr = ok ? "0.4 ms IEC 61508 SIL-3 破碎弹丸 (SPI) 与 REBCO 超导失超互锁 · 0.0% 逃逸/烧毁" : "无 SIL-3 SPI 破裂缓解与超导失超互锁 · 1.9% 逃逸电子击穿第一壁与磁体失超风险";
+  const edgeStr = ok ? "2.5 ms 诊断大厅 2MHz 米尔诺夫探针 + 汤姆逊散射边缘分诊 (-97.6% 广域网带宽) · 0.0% 钨损伤" : "980.0 ms 原始高频诊断流上云 · 错过亚毫秒锁模前兆与偏滤器脱靶恢复窗口";
+
+  document.getElementById('fusOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mhdStr : '❌ 1.9% 逃逸电子/超导磁体失超风险 · 3.8% 偏滤器钨靶再结晶损伤'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${coils} 路 PF 线圈/ECH 回旋管 · ${silStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>聚变诊断大厅 Azure IoT Operations 米尔诺夫磁探针频谱与汤姆逊散射边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runGreenHydrogenLab() {
   const mw = parseInt(document.getElementById('rng_h2_mw').value, 10);

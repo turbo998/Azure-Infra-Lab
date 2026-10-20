@@ -79,6 +79,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_steelmaking_eaf_casting_sil3_sandbox,
     simulate_cement_kiln_ccus_pyro_sandbox,
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
+    simulate_fusion_tokamak_plasma_quench_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -586,6 +587,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "h2_1000_mw": simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "load_following_mpc_haber_bosch_iso22734_edge"),
             "h2_5000_mw": simulate_green_hydrogen_electrolyzer_ammonia_sandbox(5000, "load_following_mpc_haber_bosch_iso22734_edge"),
             "raw_h2_1000_mw": simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "static_rectifier_unverified_dp_raw_eis_stream"),
+        },
+        "demo_60_fusion_tokamak_plasma_quench_sandbox": {
+            "fusion_100_mw": simulate_fusion_tokamak_plasma_quench_sandbox(100, "grad_shafranov_mhd_detachment_sil3_spi_edge"),
+            "fusion_500_mw": simulate_fusion_tokamak_plasma_quench_sandbox(500, "grad_shafranov_mhd_detachment_sil3_spi_edge"),
+            "fusion_2000_mw": simulate_fusion_tokamak_plasma_quench_sandbox(2000, "grad_shafranov_mhd_detachment_sil3_spi_edge"),
+            "raw_fusion_500_mw": simulate_fusion_tokamak_plasma_quench_sandbox(500, "open_loop_pid_unmitigated_disruption_raw_mirnov"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

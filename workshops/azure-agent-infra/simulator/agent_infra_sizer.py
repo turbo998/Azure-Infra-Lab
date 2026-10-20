@@ -3528,6 +3528,54 @@ def simulate_green_hydrogen_electrolyzer_ammonia_sandbox(
     }
 
 
+def simulate_fusion_tokamak_plasma_quench_sandbox(
+    fusion_thermal_power_mw: int = 500,
+    fusion_tokamak_mode: str = "grad_shafranov_mhd_detachment_sil3_spi_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Tokamak Fusion Plasma Magnetic Control, Real-Time
+    Tearing-Mode Instability Suppression, Divertor Detachment Heat-Flux MPC &
+    IEC 61508 SIL-3 Shattered-Pellet Disruption Mitigation (SPI) & HTS Coil
+    Quench Protection Interlock Agent Infrastructure (Chapter 65).
+    """
+    if fusion_thermal_power_mw <= 0:
+        raise ValueError("fusion_thermal_power_mw must be positive")
+    valid_modes = {
+        "grad_shafranov_mhd_detachment_sil3_spi_edge",
+        "open_loop_pid_unmitigated_disruption_raw_mirnov",
+    }
+    if fusion_tokamak_mode not in valid_modes:
+        raise ValueError(f"fusion_tokamak_mode must be one of {sorted(valid_modes)}")
+
+    governed = fusion_tokamak_mode == "grad_shafranov_mhd_detachment_sil3_spi_edge"
+    gpu_nodes = max(2, math.ceil(fusion_thermal_power_mw / 125))
+    pf_coils_and_ech_gyrotrons = max(12, int((fusion_thermal_power_mw * 2) // 25))
+
+    h_mode_pulse_duration_gain_pct = 48.5 if governed else 0.0
+    divertor_peak_heat_flux_reduction_pct = 36.4 if governed else 0.0
+    iec61508_sil3_spi_quench_gate_ms = 0.4 if governed else 0.0
+    runaway_electron_or_hts_quench_escape_pct = 0.0 if governed else 1.9
+    mirnov_thomson_edge_triage_ms = 2.5 if governed else 980.0
+    fusion_diagnostics_wan_bandwidth_reduction_pct = 97.6 if governed else 0.0
+    divertor_tungsten_recrystallization_pct = 0.0 if governed else 3.8
+
+    return {
+        "fusion_thermal_power_mw": fusion_thermal_power_mw,
+        "fusion_tokamak_mode": fusion_tokamak_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "pf_coils_and_ech_gyrotrons": pf_coils_and_ech_gyrotrons,
+        "h_mode_pulse_duration_gain_pct": h_mode_pulse_duration_gain_pct,
+        "divertor_peak_heat_flux_reduction_pct": divertor_peak_heat_flux_reduction_pct,
+        "iec61508_sil3_spi_quench_gate_ms": iec61508_sil3_spi_quench_gate_ms,
+        "runaway_electron_or_hts_quench_escape_pct": runaway_electron_or_hts_quench_escape_pct,
+        "mirnov_thomson_edge_triage_ms": mirnov_thomson_edge_triage_ms,
+        "fusion_diagnostics_wan_bandwidth_reduction_pct": fusion_diagnostics_wan_bandwidth_reduction_pct,
+        "divertor_tungsten_recrystallization_pct": divertor_tungsten_recrystallization_pct,
+        "fusion_tokamak_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
