@@ -5792,6 +5792,68 @@
         "undetected_geyser_void_collapse_or_ullage_stratification_pct": 3.5,
         "cryogenic_launch_pad_propellant_slo_met": false
       }
+    ],
+    "awe_crosswind_kite_tether_profiles": [
+      {
+        "awe_crosswind_kite_units": 16,
+        "awe_governance_mode": "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_awe_kite_pods": 4,
+        "net_pumping_cycle_capacity_factor_gain_pct": 34.5,
+        "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": 41.8,
+        "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": 0.6,
+        "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": 0.0,
+        "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.2,
+        "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 0.0,
+        "airborne_wind_energy_kite_slo_met": true
+      },
+      {
+        "awe_crosswind_kite_units": 32,
+        "awe_governance_mode": "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_awe_kite_pods": 8,
+        "net_pumping_cycle_capacity_factor_gain_pct": 34.5,
+        "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": 41.8,
+        "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": 0.6,
+        "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": 0.0,
+        "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.2,
+        "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 0.0,
+        "airborne_wind_energy_kite_slo_met": true
+      },
+      {
+        "awe_crosswind_kite_units": 128,
+        "awe_governance_mode": "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_awe_kite_pods": 32,
+        "net_pumping_cycle_capacity_factor_gain_pct": 34.5,
+        "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": 41.8,
+        "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": 0.6,
+        "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": 0.0,
+        "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.2,
+        "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 0.0,
+        "airborne_wind_energy_kite_slo_met": true
+      },
+      {
+        "awe_crosswind_kite_units": 32,
+        "awe_governance_mode": "fixed_azimuth_pid_open_loop_reel_out_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_awe_kite_pods": 8,
+        "net_pumping_cycle_capacity_factor_gain_pct": 5.8,
+        "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": 7.2,
+        "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": 98.0,
+        "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": 1.5,
+        "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": 212.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 3.3,
+        "airborne_wind_energy_kite_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -10933,5 +10995,52 @@
       "cryogenic_launch_pad_propellant_slo_met": false
     }
   },
-  "trace_sha256": "e586abf7e918bbc1ef51fb073ef4a3dc0cd37092e7e3ad72ff89b3e7930351d4"
+  "demo_92_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox": {
+    "awe_kite_32_units": {
+      "awe_crosswind_kite_units": 32,
+      "awe_governance_mode": "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_awe_kite_pods": 8,
+      "net_pumping_cycle_capacity_factor_gain_pct": 34.5,
+      "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": 41.8,
+      "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": 0.6,
+      "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": 0.0,
+      "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.2,
+      "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 0.0,
+      "airborne_wind_energy_kite_slo_met": true
+    },
+    "awe_kite_128_units": {
+      "awe_crosswind_kite_units": 128,
+      "awe_governance_mode": "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_awe_kite_pods": 32,
+      "net_pumping_cycle_capacity_factor_gain_pct": 34.5,
+      "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": 41.8,
+      "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": 0.6,
+      "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": 0.0,
+      "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.2,
+      "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 0.0,
+      "airborne_wind_energy_kite_slo_met": true
+    },
+    "raw_awe_kite_32_units": {
+      "awe_crosswind_kite_units": 32,
+      "awe_governance_mode": "fixed_azimuth_pid_open_loop_reel_out_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_awe_kite_pods": 8,
+      "net_pumping_cycle_capacity_factor_gain_pct": 5.8,
+      "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": 7.2,
+      "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": 98.0,
+      "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": 1.5,
+      "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": 3.3,
+      "airborne_wind_energy_kite_slo_met": false
+    }
+  },
+  "trace_sha256": "64309c377d3691b671f5876a40189299cd9615be4cab3b5a99770dc9e2f12db7"
 }

@@ -104,6 +104,7 @@ from agent_infra_sizer import (
     simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox,
     simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox,
     simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
+    simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -886,6 +887,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox(32, "pinn_mpc_leidenfrost_geyser_zbo_densifier_nfpa2_sil3_edge"),
         simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox(8, "open_loop_continuous_chilldown_flare_vent_cloud"),
     ]
+    awe_crosswind_kite_tether_profiles: List[Dict[str, object]] = [
+        simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(16, "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"),
+        simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(32, "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"),
+        simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(128, "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"),
+        simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(32, "fixed_azimuth_pid_open_loop_reel_out_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -978,6 +985,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "subsalt_mpd_drilling_lwd_kick_profiles": subsalt_mpd_drilling_lwd_kick_profiles,
         "hts_rebco_superconducting_cable_sfcl_profiles": hts_rebco_superconducting_cable_sfcl_profiles,
         "cryogenic_lh2_lch4_launch_pad_profiles": cryogenic_lh2_lch4_launch_pad_profiles,
+        "awe_crosswind_kite_tether_profiles": awe_crosswind_kite_tether_profiles,
     }
 
 

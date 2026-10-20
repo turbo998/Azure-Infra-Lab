@@ -504,6 +504,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(89)">90. 超深水盐下控压钻井 (MPD) 窄密度窗口 (PP-FG &lt; 0.4 ppg) 当量循环密度 ECD 与钻柱粘滑 PINN-MPC + 有线钻杆 (WDP)/科里奥利微流量溢流早检与 API RP 53 / IEC 61511 SIL-3 节流/防喷器 BOP 联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(90)">91. 城市特大电网高温超导 (HTS REBCO 2G) 故障限流器 (SFCL) 与过冷液氮 (LN2 65-77K) 三同轴超导电力电缆失超热点传播 (NZPV) PINN-MPC 及 IEEE C37.302 / IEC 61508 SIL-3 高速旁路开关联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(91)">92. 航天发射场深冷液氢 (LH2 20K) 与过冷液甲烷/液氧 (LCH4/LOX) 推进剂过冷致密化、莱顿弗罗斯特预冷间歇泉 (Geysering) 气锤抑制、零蒸发 (ZBO) 回收及 NASA-STD-5005 / NFPA 2 / SIL-3 脐带塔快脱与防瘪罐联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(92)">93. 高空风能 (AWE) 兆瓦级横风刚性翼系留风筝与深远海浮式高空风场、大气边界层急流/悬链线冲击张力 (Snap-Load) PINN-MPC 及 IEC 61400-30 / EASA SC-AWES SIL-3 绞车泄荷与空域防撞联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2581,6 +2582,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 92: Autonomous High-Altitude Airborne Wind Energy (AWE Crosswind Rigid-Wing Tethered Kite & Ground-Gen Pumping Cycle) & IEC 61400-30 / EASA SC-AWES / FAA SIL-3 Winch & Airspace Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 92 · HIGH-ALTITUDE AIRBORNE WIND ENERGY (AWE CROSSWIND RIGID-WING TETHERED KITE), CATENARY SNAP-LOAD PINN-MPC &amp; IEC 61400-30 / EASA SC-AWES SIL-3 INTERLOCK SIZER</span>
+    <h2>自主高空风能 (<code>AWE</code> 兆瓦级横风刚性翼系留风筝与地面抽水式循环发电) 及深远海浮式高空风场、悬链线冲击张力 (<code>Snap-Load</code>) <code>PINN-MPC</code> 与 <code>IEC 61400-30 / EASA SC-AWES SIL-3</code> 绞车防断缆联锁测算器</h2>
+    <div class="sub">量化在 <code>16 – 128</code> 台高空（<code>300–800 m</code>）横风刚性翼系留发电风筝 (<code>AWE Crosswind Tethered Kites</code>) 规模下，六自由度横风 8 字机动气动与千米级超高分子量聚乙烯 (<code>UHMWPE</code>) 系留索悬链线弹性波 <code>PINN</code> + 抽水式 (<code>Pumping Cycle</code>) 放缆牵引做功与低阻俯冲回撤收缆 <code>MPC</code>（净抽水循环容量因子与平均发电功率 <code>+34.5%</code>、系留索松紧突变冲击疲劳与收缆寄生耗电 <code>-41.8%</code>）、<code>IEC 61400-30 / EASA SC-AWES / FAA Part 101/107 SIL-3</code> 绞车张力峰值主动顺桨泄荷、天顶中立悬停 (<code>Zenith Loiter</code>) 与 <code>ADS-B</code> 空域避让硬联锁（<code>0.6 ms</code>，<code>UHMWPE</code> 系留索拉断或横风失速触地/坠海违例率 <code>0.0%</code>）及地面绞车站半球扫描相干多普勒测风激光雷达 (<code>Doppler Wind LiDAR</code>) + 系留索内嵌光纤光栅 (<code>FBG</code>) 应变 + <code>RTK-GNSS / Azure Local</code> 边缘推理（<code>0.5 ms</code>，远海/荒漠风场广域网带宽削减 <code>99.2%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在役高空横风系留发电风筝与地面绞车单元数 (AWE Crosswind Tethered Kite Units): <strong id="lbl_awe_kites" style="color:var(--teal)">32</strong> Kite Units</label>
+          <input type="range" id="rng_awe_kites" min="16" max="128" step="16" value="32" oninput="runAweCrosswindKiteLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 横风 8 字气动/悬链线 PINN-MPC、抽水式收放缆与 IEC 61400-30 / EASA SC-AWES SIL-3 联锁模式 (AWE Governance Mode)</label>
+          <select id="sel_awe_mode" onchange="runAweCrosswindKiteLab()">
+            <option value="pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge" selected>横风 8 字机动与系留索悬链线 PINN + 抽水式放缆做功/低阻俯冲收缆 MPC (+34.5% 容量因子 / -41.8% 缆绳冲击疲劳与收缆耗电) + IEC 61400-30 / EASA SC-AWES SIL-3 0.6ms 绞车泄荷/天顶悬停联锁 + 0.5ms 地面站 Doppler LiDAR/FBG 边缘 (推荐)</option>
+            <option value="fixed_azimuth_pid_open_loop_reel_out_cloud">传统反模式：固定方位角 8 字 PID 与开环匀速收放缆 (+5.8% 容量增益) + 无防冲击断缆与天顶悬停 SIL-3 硬联锁 (1.5% UHMWPE 系留索拉断或横风失速坠毁违例) + 原始激光雷达流上云 (3.3% 强风切变失速或多风筝缆绳交错缠绕漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="aweKiteOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -4140,6 +4164,21 @@ resource cryoLaunchPadSil3Pool 'Microsoft.ContainerService/managedClusters/agent
       'aksclaw.io/pad-bunker-raman-lidar-cernox-tte-edge': 'enabled-0.7ms-99.1pct-range-wan-cut'
     }
   }
+}`,
+`// Blueprint #93: High-Altitude Airborne Wind Energy (AWE Crosswind Rigid-Wing Tethered Kite & Ground-Gen Pumping Cycle) & IEC 61400-30 / EASA SC-AWES SIL-3 Pool (Chapter 97)
+resource aweCrosswindKiteSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'awekitesil3'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'airborne-wind-energy-crosswind-kite-tether-sil3-agent'
+      'aksclaw.io/pinn-mpc-crosswind-figure8-catenary-pumping-cycle': 'enabled-34.5pct-capacity-factor-gain-41.8pct-tether-snapload-fatigue-cut'
+      'aksclaw.io/iec61400-30-easa-sc-awes-faa-sil3-winch-adsb-interlock': 'enforced-0.6ms-zero-tether-rupture-or-ground-stall-impact'
+      'aksclaw.io/ground-station-doppler-lidar-fbg-tether-adsb-edge': 'enabled-0.5ms-99.2pct-offshore-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4332,6 +4371,30 @@ runGen4LiquidMetalSfrLab();
 runSubsaltMpdDrillingLab();
 runHtsRebcoCableSfclLab();
 runCryoLaunchPadLab();
+runAweCrosswindKiteLab();
+
+function runAweCrosswindKiteLab() {
+  const kites = parseInt(document.getElementById('rng_awe_kites').value, 10);
+  const mode = document.getElementById('sel_awe_mode').value;
+  document.getElementById('lbl_awe_kites').textContent = kites.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(kites / 16));
+  const pods = Math.max(2, Math.floor(kites / 4));
+  const ok = mode === 'pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge';
+  const mpcStr = ok ? "高空横风 8 字机动六自由度气动与千米级 UHMWPE 系留索悬链线弹性波 PINN + 抽水式 (Pumping Cycle) 最大升阻比放缆牵引与低阻俯冲收缆多机尾流协同 MPC · 净抽水循环容量因子与发电功率 +34.5% · 缆绳松紧冲击疲劳与收缆回撤寄生耗电 -41.8%" : "传统固定方位角 8 字 PID 与开环匀速收放缆 · 仅 +5.8% 容量增益 / -7.2% 损耗削减 (无法动态追踪高空低空急流核，且 3.3% 强风切变失速或相邻风筝系留索交错缠绕漏检)";
+  const sil3Str = ok ? "0.6 ms IEC 61400-30 / EASA SC-AWES / FAA SIL-3 绞车张力峰值顺桨泄荷、天顶中立悬停 (Zenith Loiter) 与 ADS-B 空域防撞硬联锁 · 0.0% 断缆逃逸/失速坠毁违例" : "无防冲击断缆与天顶中立悬停 SIL-3 硬联锁 (98.0 ms 远端云滞后) · 1.5% 阵风引发系留索松弛再绷紧 Snap-Load 拉断 UHMWPE 缆绳或大坡度失速坠海风险";
+  const edgeStr = ok ? "0.5 ms 地面绞车站半球扫描相干多普勒测风激光雷达 (Doppler Wind LiDAR)、系留索内嵌光纤光栅 (FBG) 应变、双天线 RTK-GNSS/INS 与 Azure Local 边缘 (-99.2% 远海风场广域网带宽) · 0.0% 阵风锋面/缆绳应力波漏检" : "212.0 ms 原始三维测风激光雷达点云与高频飞控遥测回传陆上集控云 · 远超 80 m/s 横风掠飞姿态发散与绞车微秒级张力波抑制窗口";
+
+  document.getElementById('aweKiteOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% UHMWPE 系留索冲击拉断或横风失速触地/坠海风险 · 3.3% 强风切变失速或多风筝系留索空间缠绕漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个高空风筝气动与地面绞车孪生单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>地面绞车站相干多普勒测风激光雷达 (Doppler Wind LiDAR)、系留索内嵌 FBG 应变与 RTK-GNSS / Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runCryoLaunchPadLab() {
   const pads = parseInt(document.getElementById('rng_lh2_pads').value, 10);

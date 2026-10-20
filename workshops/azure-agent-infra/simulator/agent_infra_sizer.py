@@ -5060,6 +5060,49 @@ def simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox(
     }
 
 
+def simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(
+    awe_crosswind_kite_units: int = 32,
+    awe_governance_mode: str = "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous High-Altitude Airborne Wind Energy (AWE Crosswind Rigid-Wing Tethered Kite & Ground-Gen Pumping Cycle) & Offshore Floating Airborne Wind Farm, Atmospheric Boundary-Layer Gust/Wind-Shear L1-Adaptive PINN-MPC, Tether Catenary Snap-Load Envelope & IEC 61400-30 / EASA SC-AWES / FAA SIL-3 Winch & Airspace Interlock Agent Infrastructure (Chapter 97)."""
+    if awe_crosswind_kite_units <= 0:
+        raise ValueError("awe_crosswind_kite_units must be positive")
+    valid_modes = {
+        "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge",
+        "fixed_azimuth_pid_open_loop_reel_out_cloud",
+    }
+    if awe_governance_mode not in valid_modes:
+        raise ValueError(f"awe_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = awe_governance_mode == "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"
+    active_awe_kite_pods = max(2, int(awe_crosswind_kite_units // 4))
+    gpu_nodes = max(2, math.ceil(awe_crosswind_kite_units / 16))
+
+    net_pumping_cycle_capacity_factor_gain_pct = 34.5 if governed else 5.8
+    tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct = 41.8 if governed else 7.2
+    iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms = 0.6 if governed else 98.0
+    uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct = 0.0 if governed else 1.5
+    ground_station_doppler_lidar_fbg_tether_edge_latency_ms = 0.5 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.2 if governed else 0.0
+    uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct = 0.0 if governed else 3.3
+
+    return {
+        "awe_crosswind_kite_units": awe_crosswind_kite_units,
+        "awe_governance_mode": awe_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_awe_kite_pods": active_awe_kite_pods,
+        "net_pumping_cycle_capacity_factor_gain_pct": net_pumping_cycle_capacity_factor_gain_pct,
+        "tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct": tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct,
+        "iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms": iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms,
+        "uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct": uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct,
+        "ground_station_doppler_lidar_fbg_tether_edge_latency_ms": ground_station_doppler_lidar_fbg_tether_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct": uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct,
+        "airborne_wind_energy_kite_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

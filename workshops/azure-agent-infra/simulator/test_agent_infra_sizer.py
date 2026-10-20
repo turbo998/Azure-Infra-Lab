@@ -98,6 +98,7 @@ from agent_infra_sizer import (
     simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox,
     simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox,
     simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox,
+    simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -243,6 +244,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-subsalt-mpd-drilling-lwd-kick-apirp53-sil3-pool.bicep",
             "aksclaw-hts-rebco-superconducting-cable-sfcl-quench-sil3-pool.bicep",
             "aksclaw-cryogenic-lh2-lch4-launch-pad-chilldown-geyser-sil3-pool.bicep",
+            "aksclaw-airborne-wind-energy-crosswind-kite-tether-iec61400-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1793,6 +1795,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["undetected_geyser_void_collapse_or_ullage_stratification_pct"], 3.0)
         self.assertTrue(gov["cryogenic_launch_pad_propellant_slo_met"])
         self.assertFalse(raw["cryogenic_launch_pad_propellant_slo_met"])
+
+    def test_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(self) -> None:
+        gov = simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(
+            32, "pinn_mpc_crosswind_figure8_catenary_pumping_iec61400_sil3_edge"
+        )
+        raw = simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox(
+            32, "fixed_azimuth_pid_open_loop_reel_out_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_awe_kite_pods"], 8)
+        self.assertEqual(gov["net_pumping_cycle_capacity_factor_gain_pct"], 34.5)
+        self.assertEqual(gov["tether_snap_load_fatigue_and_retraction_parasitic_loss_reduction_pct"], 41.8)
+        self.assertEqual(gov["iec61400_30_easa_sc_awes_sil3_winch_adsb_interlock_ms"], 0.6)
+        self.assertEqual(gov["uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct"], 0.0)
+        self.assertGreater(raw["uhmwpe_tether_rupture_or_ground_stall_impact_breach_pct"], 1.2)
+        self.assertEqual(gov["ground_station_doppler_lidar_fbg_tether_edge_latency_ms"], 0.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.2)
+        self.assertEqual(gov["uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_wind_shear_stall_or_multi_kite_tether_entanglement_pct"], 3.0)
+        self.assertTrue(gov["airborne_wind_energy_kite_slo_met"])
+        self.assertFalse(raw["airborne_wind_energy_kite_slo_met"])
 
 
 if __name__ == "__main__":

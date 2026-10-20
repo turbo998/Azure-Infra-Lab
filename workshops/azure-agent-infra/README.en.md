@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #91 · **97 Chapters** · **92 IaC Blueprints** · **91 Quantitative Physics Simulators** · **100/100 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 96-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #92 · **98 Chapters** · **93 IaC Blueprints** · **92 Quantitative Physics Simulators** · **101/101 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 97-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 91 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [100-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 92 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [101-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -185,6 +185,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **94** | **Autonomous Ultra-Deep Subsalt Managed-Pressure Drilling (`MPD`), Wired-Drill-Pipe (`WDP / IntelliServ`) Downhole LWD, Annular Kick-Influx Early Detection & `API RP 53 / IEC 61511 SIL-3` Blowout Preventer (`BOP`) (`Multiphase Drift-Flux ECD & Stick-Slip PINN-MPC` + `API RP 53 SIL-3` Automated MPD Choke & Blind-Shear-Ram `BOP` Gate + `Drillship WDP / Coriolis / WITSML` Edge)** | `simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox()` | `aksclaw-subsalt-mpd-drilling-lwd-kick-apirp53-sil3-pool.bicep` | **`+29.4%` ROP/drilling time & `-46.2%` kick/lost-return/stick-slip NPT**, **`0.0%` narrow `PP-FG` window or blowout breach (`1.0 ms` SIL-3)**, **`0.9 ms` drillship `WDP/Coriolis` edge (`99.1%` SatCom cut)** |
 | **95** | **Autonomous Grid-Scale High-Temperature Superconducting (`HTS REBCO 2G`) Fault-Current Limiter (`SFCL`) & Subcooled Liquid-Nitrogen (`LN2 65–77 K`) Triaxial Superconducting Power Cable, Quench Hot-Spot Propagation `PINN-MPC` & `IEEE C37.302 / IEC 61508 SIL-3` Bypass Interlock (`E-J Power-Law & Slow-NZPV Quench PINN + Reverse-Brayton Subcooled LN2 MPC` + `IEEE C37.302 SIL-3` Fast Vacuum Bypass & Relief Gate + `Substation BOFDA / Voltage-Tap / IEC 61850` Edge)** | `simulate_hts_rebco_superconducting_cable_sfcl_quench_sil3_sandbox()` | `aksclaw-hts-rebco-superconducting-cable-sfcl-quench-sil3-pool.bicep` | **`+31.2%` `Ic` ampacity/SFCL recovery & `-38.6%` AC/cryocooler power**, **`0.0%` `REBCO` tape delamination or `LN2` flashover (`0.7 ms` SIL-3)**, **`0.6 ms` substation `BOFDA/IEC 61850` edge (`99.1%` WAN cut)** |
 | **96** | **Autonomous Cryogenic Liquid-Hydrogen (`LH2 20 K`) & Subcooled Liquid-Methane/LOX Orbital Launch Pad Propellant Densification, Transfer-Line Chilldown Geysering Suppression, Zero-Boil-Off (`ZBO`) Recovery & `NASA-STD-5005 / NFPA 2 / AFSPCMAN 91-710 SIL-3` Quick-Disconnect (`QD`) & Deluge Interlock (`Leidenfrost Film-Boiling & Taylor-Bubble Geysering PINN + Ortho-Para H2 ZBO Densifier MPC` + `NASA-STD-5005 / NFPA 2 SIL-3` `QD` & Anti-Implosion Gate + `Pad-Bunker UV Raman LiDAR / Cernox / TTE` Edge)** | `simulate_cryogenic_lh2_lch4_launch_pad_chilldown_geyser_sil3_sandbox()` | `aksclaw-cryogenic-lh2-lch4-launch-pad-chilldown-geyser-sil3-pool.bicep` | **`+28.9%` subcooled mass/ZBO recovery & `-44.6%` chilldown boil-off/geyser hammer**, **`0.0%` `H2` detonation or tank implosion (`0.8 ms` SIL-3)**, **`0.7 ms` pad-bunker `Raman/Cernox` edge (`99.1%` WAN cut)** |
+| **97** | **Autonomous High-Altitude Airborne Wind Energy (`AWE` Megawatt Crosswind Rigid-Wing Tethered Kite & Ground-Gen Pumping Cycle) & Offshore Floating Airborne Wind Farm, Atmospheric Boundary-Layer Wind-Shear `PINN-MPC`, Tether Catenary Snap-Load Envelope & `IEC 61400-30 / EASA SC-AWES / FAA SIL-3` Winch & Airspace Interlock (`6-DoF Crosswind Figure-8 & Catenary Snap-Load PINN + Two-Phase Pumping-Cycle Winch MPC` + `IEC 61400-30 / EASA SC-AWES SIL-3` Winch Brake & Zenith Loiter Gate + `Ground-Station Doppler LiDAR / FBG Tether / ADS-B` Edge)** | `simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox()` | `aksclaw-airborne-wind-energy-crosswind-kite-tether-iec61400-sil3-pool.bicep` | **`+34.5%` pumping capacity factor & `-41.8%` tether snap-load/retraction loss**, **`0.0%` `UHMWPE` tether rupture or stall crash (`0.6 ms` SIL-3)**, **`0.5 ms` winch-station `Doppler LiDAR/FBG` edge (`99.2%` WAN cut)** |
 
 ---
 
@@ -194,10 +195,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 91 quantitative engineering & physics simulators (Chapters 7–96)
+# 2. Run all 92 quantitative engineering & physics simulators (Chapters 7–97)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 100 unit tests (100% pass across 6 runtimes, 91 physics models, 92 blueprints & links)
+# 3. Execute all 101 unit tests (100% pass across 6 runtimes, 92 physics models, 93 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)
