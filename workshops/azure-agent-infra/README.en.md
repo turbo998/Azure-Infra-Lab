@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #71 · **77 Chapters** · **72 IaC Blueprints** · **71 Quantitative Physics Simulators** · **80/80 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 76-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #72 · **78 Chapters** · **73 IaC Blueprints** · **72 Quantitative Physics Simulators** · **81/81 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 77-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 70 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [79-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 72 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [81-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -165,6 +165,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **74** | **LNG Liquefaction Train `C3MR`, `BOG` Compressor Anti-Surge & Cryogenic Tank Rollover (`Peng-Robinson EOS PINN-MPC` + `NFPA 59A / SIGTTO / SIL-3` Anti-Surge & `PERC` ESD + `Raman DTS / MWIR OGI` Edge)** | `simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox()` | `aksclaw-lng-cryogenic-c3mr-bog-sil3-esd-pool.bicep` | **`+21.8%` MCHE liquefaction yield & `-24.2%` specific compressor power**, **`0.0%` surge or tank rollover breach (`1.2 ms` SIL-3 ESD)**, **`3.5 ms` DTS/OGI edge (`97.9%` WAN cut)** |
 | **75** | **Subsea Multi-Terminal `MMC-HVDC` Interconnector, `GFM-VSM` Control & Dynamic Cable Rating `DCR` (`IEC 60287 Electro-Thermal PINN-MPC` + `CIGRE TB 496 / SIL-3` Hybrid `DCCB` & Anchor-Strike Gate + `DAS/DTS + SV` Edge)** | `simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox()` | `aksclaw-hvdc-subsea-interconnector-mmc-dcr-sil3-dccb-pool.bicep` | **`+19.6%` subsea cable ampacity & `-26.4%` MMC IGBT switching loss**, **`0.0%` DC fault or `XLPE >70 °C` breach (`1.1 ms` SIL-3 DCCB)**, **`3.3 ms` DAS/SV edge (`98.3%` WAN cut)** |
 | **76** | **Direct Air Capture `DAC` (`V-TSA` Sorbent Array), Supercritical $\text{CO}_2$ (`sCO2`) Pipeline & `ISO 27914 / US EPA Class VI` Geological Sequestration (`Toth V-TSA MPC + TOUGH3 Plume PINN` + `SIL-3` `BHP<=90%` & `ESDV` Gate + `Downhole DAS/DTS` Edge)** | `simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox()` | `aksclaw-dac-carbon-sequestration-vtsa-sco2-class6-sil3-pool.bicep` | **`-24.8%` `V-TSA` steam energy & `+18.2%` net $\text{CO}_2$ yield**, **`0.0%` caprock fracture or `sCO2` two-phase breach (`5.4 ms` SIL-3 ESDV)**, **`6.8 ms` downhole DAS edge (`98.1%` WAN cut)** |
+| **77** | **Grid-Scale Hybrid Battery Energy Storage System `BESS` (`LFP + VRFB`), `EIS / dQ/dV` Thermal Runaway PINN & `UL 9540A / NFPA 855 / IEC 62933-5-2 SIL-3` Deflagration Venting & DC Pyro-Fuse Contactor Interlock** | `simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox()` | `aksclaw-bess-grid-storage-eis-thermal-ul9540a-sil3-pool.bicep` | **`+16.4%` RTE/cycle-life gain & `-23.6%` chiller/pump load**, **`0.0%` thermal runaway or `>25% LEL` deflagration breach (`4.2 ms` SIL-3)**, **`6.1 ms` EIS/FBG edge (`98.2%` WAN cut)** |
 
 ---
 
@@ -174,10 +175,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 71 quantitative engineering & physics simulators (Chapters 7–76)
+# 2. Run all 72 quantitative engineering & physics simulators (Chapters 7–77)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 80 unit tests (100% pass across 6 runtimes, 71 physics models, 72 blueprints & links)
+# 3. Execute all 81 unit tests (100% pass across 6 runtimes, 72 physics models, 73 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

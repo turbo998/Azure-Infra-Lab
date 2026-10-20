@@ -78,6 +78,7 @@ from agent_infra_sizer import (
     simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
     simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
     simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
+    simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -203,6 +204,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-lng-cryogenic-c3mr-bog-sil3-esd-pool.bicep",
             "aksclaw-hvdc-subsea-interconnector-mmc-dcr-sil3-dccb-pool.bicep",
             "aksclaw-dac-carbon-sequestration-vtsa-sco2-class6-sil3-pool.bicep",
+            "aksclaw-bess-grid-storage-eis-thermal-ul9540a-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1337,6 +1339,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["microseismic_or_hydrate_false_clearance_pct"], 3.0)
         self.assertTrue(gov["dac_carbon_sequestration_slo_met"])
         self.assertFalse(raw["dac_carbon_sequestration_slo_met"])
+
+    def test_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(self) -> None:
+        gov = simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(32, "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge")
+        raw = simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(32, "cloud_bms_polling_naive")
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_pcs_inverter_bays"], 4)
+        self.assertEqual(gov["round_trip_efficiency_and_life_gain_pct"], 16.4)
+        self.assertEqual(gov["auxiliary_chiller_and_pump_energy_saving_pct"], 23.6)
+        self.assertEqual(gov["ul9540a_nfpa855_sil3_contactor_interlock_ms"], 4.2)
+        self.assertEqual(gov["thermal_runaway_propagation_or_lel_breach_pct"], 0.0)
+        self.assertGreater(raw["thermal_runaway_propagation_or_lel_breach_pct"], 1.5)
+        self.assertEqual(gov["substation_edge_eis_spectrum_inversion_ms"], 6.1)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.2)
+        self.assertEqual(gov["cell_imbalance_or_soh_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["cell_imbalance_or_soh_false_clearance_pct"], 2.9)
+        self.assertTrue(gov["bess_grid_storage_slo_met"])
+        self.assertFalse(raw["bess_grid_storage_slo_met"])
 
 
 if __name__ == "__main__":

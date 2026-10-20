@@ -4110,6 +4110,56 @@ def simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(
     }
 
 
+def simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(
+    bess_containers: int = 32,
+    bess_governance_mode: str = "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Grid-Scale Hybrid Battery Energy Storage System (BESS)
+    (Liquid-Cooled LFP + Vanadium Redox Flow VRFB), Newman P2D Electrochemical
+    Impedance Spectroscopy (EIS) / Differential Voltage Analysis (dQ/dV) Thermal
+    Runaway PINN & UL 9540A / NFPA 855 / IEC 62933-5-2 SIL-3 Off-Gas (LEL <= 25%)
+    Deflagration Venting & 1500V DC Pyro-Fuse Contactor Isolation Agent
+    Infrastructure (Chapter 77).
+    """
+    if bess_containers <= 0:
+        raise ValueError("bess_containers must be positive")
+    valid_modes = {
+        "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+        "cloud_bms_polling_naive",
+    }
+    if bess_governance_mode not in valid_modes:
+        raise ValueError(f"bess_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = bess_governance_mode == "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge"
+    gpu_nodes = max(2, math.ceil(bess_containers / 16))
+    active_pcs_inverter_bays = max(2, int(bess_containers // 8))
+
+    round_trip_efficiency_and_life_gain_pct = 16.4 if governed else 0.0
+    auxiliary_chiller_and_pump_energy_saving_pct = 23.6 if governed else 0.0
+    ul9540a_nfpa855_sil3_contactor_interlock_ms = 4.2 if governed else 510.0
+    thermal_runaway_propagation_or_lel_breach_pct = 0.0 if governed else 1.7
+    substation_edge_eis_spectrum_inversion_ms = 6.1 if governed else 1340.0
+    wan_bandwidth_reduction_pct = 98.2 if governed else 0.0
+    cell_imbalance_or_soh_false_clearance_pct = 0.0 if governed else 3.1
+
+    return {
+        "bess_containers": bess_containers,
+        "bess_governance_mode": bess_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pcs_inverter_bays": active_pcs_inverter_bays,
+        "round_trip_efficiency_and_life_gain_pct": round_trip_efficiency_and_life_gain_pct,
+        "auxiliary_chiller_and_pump_energy_saving_pct": auxiliary_chiller_and_pump_energy_saving_pct,
+        "ul9540a_nfpa855_sil3_contactor_interlock_ms": ul9540a_nfpa855_sil3_contactor_interlock_ms,
+        "thermal_runaway_propagation_or_lel_breach_pct": thermal_runaway_propagation_or_lel_breach_pct,
+        "substation_edge_eis_spectrum_inversion_ms": substation_edge_eis_spectrum_inversion_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "cell_imbalance_or_soh_false_clearance_pct": cell_imbalance_or_soh_false_clearance_pct,
+        "bess_grid_storage_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

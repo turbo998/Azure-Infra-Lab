@@ -4552,6 +4552,68 @@
         "microseismic_or_hydrate_false_clearance_pct": 3.2,
         "dac_carbon_sequestration_slo_met": false
       }
+    ],
+    "bess_grid_storage_profiles": [
+      {
+        "bess_containers": 16,
+        "bess_governance_mode": "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pcs_inverter_bays": 2,
+        "round_trip_efficiency_and_life_gain_pct": 16.4,
+        "auxiliary_chiller_and_pump_energy_saving_pct": 23.6,
+        "ul9540a_nfpa855_sil3_contactor_interlock_ms": 4.2,
+        "thermal_runaway_propagation_or_lel_breach_pct": 0.0,
+        "substation_edge_eis_spectrum_inversion_ms": 6.1,
+        "wan_bandwidth_reduction_pct": 98.2,
+        "cell_imbalance_or_soh_false_clearance_pct": 0.0,
+        "bess_grid_storage_slo_met": true
+      },
+      {
+        "bess_containers": 32,
+        "bess_governance_mode": "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pcs_inverter_bays": 4,
+        "round_trip_efficiency_and_life_gain_pct": 16.4,
+        "auxiliary_chiller_and_pump_energy_saving_pct": 23.6,
+        "ul9540a_nfpa855_sil3_contactor_interlock_ms": 4.2,
+        "thermal_runaway_propagation_or_lel_breach_pct": 0.0,
+        "substation_edge_eis_spectrum_inversion_ms": 6.1,
+        "wan_bandwidth_reduction_pct": 98.2,
+        "cell_imbalance_or_soh_false_clearance_pct": 0.0,
+        "bess_grid_storage_slo_met": true
+      },
+      {
+        "bess_containers": 128,
+        "bess_governance_mode": "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pcs_inverter_bays": 16,
+        "round_trip_efficiency_and_life_gain_pct": 16.4,
+        "auxiliary_chiller_and_pump_energy_saving_pct": 23.6,
+        "ul9540a_nfpa855_sil3_contactor_interlock_ms": 4.2,
+        "thermal_runaway_propagation_or_lel_breach_pct": 0.0,
+        "substation_edge_eis_spectrum_inversion_ms": 6.1,
+        "wan_bandwidth_reduction_pct": 98.2,
+        "cell_imbalance_or_soh_false_clearance_pct": 0.0,
+        "bess_grid_storage_slo_met": true
+      },
+      {
+        "bess_containers": 32,
+        "bess_governance_mode": "cloud_bms_polling_naive",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pcs_inverter_bays": 4,
+        "round_trip_efficiency_and_life_gain_pct": 0.0,
+        "auxiliary_chiller_and_pump_energy_saving_pct": 0.0,
+        "ul9540a_nfpa855_sil3_contactor_interlock_ms": 510.0,
+        "thermal_runaway_propagation_or_lel_breach_pct": 1.7,
+        "substation_edge_eis_spectrum_inversion_ms": 1340.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "cell_imbalance_or_soh_false_clearance_pct": 3.1,
+        "bess_grid_storage_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -8648,5 +8710,67 @@
       "dac_carbon_sequestration_slo_met": false
     }
   },
-  "trace_sha256": "9fa65a782b3bb15fd195257b633a53d3958faf6fb0ea2d5c0c6488edd719d0b2"
+  "demo_72_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox": {
+    "bess_16_containers": {
+      "bess_containers": 16,
+      "bess_governance_mode": "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_pcs_inverter_bays": 2,
+      "round_trip_efficiency_and_life_gain_pct": 16.4,
+      "auxiliary_chiller_and_pump_energy_saving_pct": 23.6,
+      "ul9540a_nfpa855_sil3_contactor_interlock_ms": 4.2,
+      "thermal_runaway_propagation_or_lel_breach_pct": 0.0,
+      "substation_edge_eis_spectrum_inversion_ms": 6.1,
+      "wan_bandwidth_reduction_pct": 98.2,
+      "cell_imbalance_or_soh_false_clearance_pct": 0.0,
+      "bess_grid_storage_slo_met": true
+    },
+    "bess_32_containers": {
+      "bess_containers": 32,
+      "bess_governance_mode": "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_pcs_inverter_bays": 4,
+      "round_trip_efficiency_and_life_gain_pct": 16.4,
+      "auxiliary_chiller_and_pump_energy_saving_pct": 23.6,
+      "ul9540a_nfpa855_sil3_contactor_interlock_ms": 4.2,
+      "thermal_runaway_propagation_or_lel_breach_pct": 0.0,
+      "substation_edge_eis_spectrum_inversion_ms": 6.1,
+      "wan_bandwidth_reduction_pct": 98.2,
+      "cell_imbalance_or_soh_false_clearance_pct": 0.0,
+      "bess_grid_storage_slo_met": true
+    },
+    "bess_128_containers": {
+      "bess_containers": 128,
+      "bess_governance_mode": "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_pcs_inverter_bays": 16,
+      "round_trip_efficiency_and_life_gain_pct": 16.4,
+      "auxiliary_chiller_and_pump_energy_saving_pct": 23.6,
+      "ul9540a_nfpa855_sil3_contactor_interlock_ms": 4.2,
+      "thermal_runaway_propagation_or_lel_breach_pct": 0.0,
+      "substation_edge_eis_spectrum_inversion_ms": 6.1,
+      "wan_bandwidth_reduction_pct": 98.2,
+      "cell_imbalance_or_soh_false_clearance_pct": 0.0,
+      "bess_grid_storage_slo_met": true
+    },
+    "raw_bess_32_containers": {
+      "bess_containers": 32,
+      "bess_governance_mode": "cloud_bms_polling_naive",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_pcs_inverter_bays": 4,
+      "round_trip_efficiency_and_life_gain_pct": 0.0,
+      "auxiliary_chiller_and_pump_energy_saving_pct": 0.0,
+      "ul9540a_nfpa855_sil3_contactor_interlock_ms": 510.0,
+      "thermal_runaway_propagation_or_lel_breach_pct": 1.7,
+      "substation_edge_eis_spectrum_inversion_ms": 1340.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "cell_imbalance_or_soh_false_clearance_pct": 3.1,
+      "bess_grid_storage_slo_met": false
+    }
+  },
+  "trace_sha256": "f9e8ae684bdfb1590d84ac1917eb0df002971420f98e28ed81c3c7f16f18c68d"
 }
