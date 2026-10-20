@@ -4474,5 +4474,67 @@
       "spatter_inclusion_or_delamination_false_clearance_pct": 2.9,
       "lpbf_additive_manufacturing_slo_met": false
     }
+  ],
+  "euv_lithography_scanner_profiles": [
+    {
+      "euv_scanners": 6,
+      "euv_governance_mode": "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_euv_litho_bay_pods": 2,
+      "overlay_and_cd_error_reduction_pct": 35.6,
+      "wafer_throughput_wph_gain_pct": 19.4,
+      "semi_s2_s22_sil3_uhv_laser_interlock_ms": 0.7,
+      "uhv_hydrogen_excursion_or_stage_collision_pct": 0.0,
+      "droplet_l2d_tracking_edge_latency_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "stochastic_defect_or_dose_false_clearance_pct": 0.0,
+      "euv_lithography_scanner_slo_met": true
+    },
+    {
+      "euv_scanners": 12,
+      "euv_governance_mode": "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_euv_litho_bay_pods": 3,
+      "overlay_and_cd_error_reduction_pct": 35.6,
+      "wafer_throughput_wph_gain_pct": 19.4,
+      "semi_s2_s22_sil3_uhv_laser_interlock_ms": 0.7,
+      "uhv_hydrogen_excursion_or_stage_collision_pct": 0.0,
+      "droplet_l2d_tracking_edge_latency_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "stochastic_defect_or_dose_false_clearance_pct": 0.0,
+      "euv_lithography_scanner_slo_met": true
+    },
+    {
+      "euv_scanners": 48,
+      "euv_governance_mode": "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_euv_litho_bay_pods": 12,
+      "overlay_and_cd_error_reduction_pct": 35.6,
+      "wafer_throughput_wph_gain_pct": 19.4,
+      "semi_s2_s22_sil3_uhv_laser_interlock_ms": 0.7,
+      "uhv_hydrogen_excursion_or_stage_collision_pct": 0.0,
+      "droplet_l2d_tracking_edge_latency_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "stochastic_defect_or_dose_false_clearance_pct": 0.0,
+      "euv_lithography_scanner_slo_met": true
+    },
+    {
+      "euv_scanners": 12,
+      "euv_governance_mode": "open_loop_pid_cloud_scanner",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_euv_litho_bay_pods": 3,
+      "overlay_and_cd_error_reduction_pct": 0.0,
+      "wafer_throughput_wph_gain_pct": 0.0,
+      "semi_s2_s22_sil3_uhv_laser_interlock_ms": 385.0,
+      "uhv_hydrogen_excursion_or_stage_collision_pct": 1.5,
+      "droplet_l2d_tracking_edge_latency_ms": 1340.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "stochastic_defect_or_dose_false_clearance_pct": 2.8,
+      "euv_lithography_scanner_slo_met": false
+    }
   ]
 }

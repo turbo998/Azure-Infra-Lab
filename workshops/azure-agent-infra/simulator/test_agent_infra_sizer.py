@@ -80,6 +80,7 @@ from agent_infra_sizer import (
     simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
     simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
+    simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -207,6 +208,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-dac-carbon-sequestration-vtsa-sco2-class6-sil3-pool.bicep",
             "aksclaw-bess-grid-storage-eis-thermal-ul9540a-sil3-pool.bicep",
             "aksclaw-additive-manufacturing-lpbf-meltpool-nfpa484-sil3-pool.bicep",
+            "aksclaw-euv-lithography-scanner-lpp-overlay-semi-s2-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1379,6 +1381,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["spatter_inclusion_or_delamination_false_clearance_pct"], 2.5)
         self.assertTrue(gov["lpbf_additive_manufacturing_slo_met"])
         self.assertFalse(raw["lpbf_additive_manufacturing_slo_met"])
+
+    def test_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(self) -> None:
+        gov = simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(
+            12, "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge"
+        )
+        raw = simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(
+            12, "open_loop_pid_cloud_scanner"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_euv_litho_bay_pods"], 3)
+        self.assertEqual(gov["overlay_and_cd_error_reduction_pct"], 35.6)
+        self.assertEqual(gov["wafer_throughput_wph_gain_pct"], 19.4)
+        self.assertEqual(gov["semi_s2_s22_sil3_uhv_laser_interlock_ms"], 0.7)
+        self.assertEqual(gov["uhv_hydrogen_excursion_or_stage_collision_pct"], 0.0)
+        self.assertGreater(raw["uhv_hydrogen_excursion_or_stage_collision_pct"], 1.4)
+        self.assertEqual(gov["droplet_l2d_tracking_edge_latency_ms"], 0.8)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.6)
+        self.assertEqual(gov["stochastic_defect_or_dose_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["stochastic_defect_or_dose_false_clearance_pct"], 2.5)
+        self.assertTrue(gov["euv_lithography_scanner_slo_met"])
+        self.assertFalse(raw["euv_lithography_scanner_slo_met"])
 
 
 if __name__ == "__main__":

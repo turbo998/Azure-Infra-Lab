@@ -4209,6 +4209,55 @@ def simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(
     }
 
 
+def simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(
+    euv_scanners: int = 12,
+    euv_governance_mode: str = "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Semiconductor Extreme Ultraviolet (EUV 13.5 nm / High-NA 0.55)
+    Photolithography Scanner, 50 kHz CO2 Laser-Produced Tin (Sn) Droplet Plasma (LPP)
+    Mo/Si Collector Mirror Contamination PINN, Sub-Nanometer MagLev Reticle/Wafer Stage
+    Overlay (< 1.1 nm) MPC & SEMI S2 / S22 / IEC 61508 SIL-3 Ultra-High Vacuum (UHV)
+    Hydrogen Scavenging (LEL < 25%) & 30 kW CO2 Drive-Laser Interlock Agent Infrastructure (Chapter 79).
+    """
+    if euv_scanners <= 0:
+        raise ValueError("euv_scanners must be positive")
+    valid_modes = {
+        "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge",
+        "open_loop_pid_cloud_scanner",
+    }
+    if euv_governance_mode not in valid_modes:
+        raise ValueError(f"euv_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = euv_governance_mode == "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge"
+    gpu_nodes = max(2, math.ceil(euv_scanners / 6))
+    active_euv_litho_bay_pods = max(2, int(euv_scanners // 4))
+
+    overlay_and_cd_error_reduction_pct = 35.6 if governed else 0.0
+    wafer_throughput_wph_gain_pct = 19.4 if governed else 0.0
+    semi_s2_s22_sil3_uhv_laser_interlock_ms = 0.7 if governed else 385.0
+    uhv_hydrogen_excursion_or_stage_collision_pct = 0.0 if governed else 1.5
+    droplet_l2d_tracking_edge_latency_ms = 0.8 if governed else 1340.0
+    wan_bandwidth_reduction_pct = 98.6 if governed else 0.0
+    stochastic_defect_or_dose_false_clearance_pct = 0.0 if governed else 2.8
+
+    return {
+        "euv_scanners": euv_scanners,
+        "euv_governance_mode": euv_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_euv_litho_bay_pods": active_euv_litho_bay_pods,
+        "overlay_and_cd_error_reduction_pct": overlay_and_cd_error_reduction_pct,
+        "wafer_throughput_wph_gain_pct": wafer_throughput_wph_gain_pct,
+        "semi_s2_s22_sil3_uhv_laser_interlock_ms": semi_s2_s22_sil3_uhv_laser_interlock_ms,
+        "uhv_hydrogen_excursion_or_stage_collision_pct": uhv_hydrogen_excursion_or_stage_collision_pct,
+        "droplet_l2d_tracking_edge_latency_ms": droplet_l2d_tracking_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "stochastic_defect_or_dose_false_clearance_pct": stochastic_defect_or_dose_false_clearance_pct,
+        "euv_lithography_scanner_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -86,6 +86,7 @@ from agent_infra_sizer import (
     simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
     simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
+    simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -760,6 +761,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(64, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"),
         simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(16, "open_loop_power_unverified_argon_cloud"),
     ]
+    euv_lithography_scanner_profiles: List[Dict[str, object]] = [
+        simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(6, "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge"),
+        simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(12, "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge"),
+        simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(48, "lpp_overlay_pinn_mpc_semi_s2_s22_sil3_edge"),
+        simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox(12, "open_loop_pid_cloud_scanner"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -834,6 +841,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "dac_carbon_sequestration_profiles": dac_carbon_sequestration_profiles,
         "bess_grid_storage_profiles": bess_grid_storage_profiles,
         "additive_manufacturing_lpbf_profiles": additive_manufacturing_lpbf_profiles,
+        "euv_lithography_scanner_profiles": euv_lithography_scanner_profiles,
     }
 
 
