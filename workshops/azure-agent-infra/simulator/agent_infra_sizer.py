@@ -4715,6 +4715,59 @@ def simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(
     }
 
 
+def simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(
+    sic_pvt_furnace_arrays: int = 16,
+    sic_governance_mode: str = "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Third-Generation Wide-Bandgap Semiconductor 8-Inch
+    (200 mm) 4H-SiC Silicon Carbide Physical Vapor Transport (PVT, 2200-2400 C)
+    Single-Crystal Boule Growth & High-Temperature CVD (HT-CVD) Epitaxy
+    (3D Graphite Crucible Radiative-Inductive Heat Transfer, SiC2/Si2C/Si
+    Vapor Stoichiometry & Basal Plane Dislocation BPD / Micropipe Stress PINN
+    + RF Induction Coil Position & Argon Backpressure MPC & SEMI S2 / SEMI M55
+    / NFPA 86 / IEC 61508 SIL-3 Induction Coil Water-Leak Steam-Explosion
+    Prevention & Silane/Hydrogen Purge Interlock) Agent Infrastructure
+    (Chapter 89).
+    """
+    if sic_pvt_furnace_arrays <= 0:
+        raise ValueError("sic_pvt_furnace_arrays must be positive")
+    valid_modes = {
+        "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge",
+        "blind_recipe_pyrometer_unverified_coil_cloud",
+    }
+    if sic_governance_mode not in valid_modes:
+        raise ValueError(f"sic_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = sic_governance_mode == "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge"
+    gpu_nodes = max(2, math.ceil(sic_pvt_furnace_arrays / 8))
+    active_sic_crystal_pods = max(2, int(sic_pvt_furnace_arrays // 2))
+
+    single_polytype_4h_boule_yield_and_usable_wafers_gain_pct = 28.7 if governed else 0.0
+    bpd_dislocation_and_radial_thermal_stress_reduction_pct = 41.2 if governed else 0.0
+    semis2_nfpa86_sil3_coil_leak_silane_interlock_ms = 1.3 if governed else 490.0
+    coil_water_leak_steam_explosion_or_silane_breach_pct = 0.0 if governed else 1.5
+    cleanroom_xray_pyrometry_edge_latency_ms = 1.2 if governed else 1350.0
+    wan_bandwidth_reduction_pct = 98.7 if governed else 0.0
+    polytype_6h_inclusion_or_micropipe_false_clearance_pct = 0.0 if governed else 3.4
+
+    return {
+        "sic_pvt_furnace_arrays": sic_pvt_furnace_arrays,
+        "sic_governance_mode": sic_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_sic_crystal_pods": active_sic_crystal_pods,
+        "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": single_polytype_4h_boule_yield_and_usable_wafers_gain_pct,
+        "bpd_dislocation_and_radial_thermal_stress_reduction_pct": bpd_dislocation_and_radial_thermal_stress_reduction_pct,
+        "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": semis2_nfpa86_sil3_coil_leak_silane_interlock_ms,
+        "coil_water_leak_steam_explosion_or_silane_breach_pct": coil_water_leak_steam_explosion_or_silane_breach_pct,
+        "cleanroom_xray_pyrometry_edge_latency_ms": cleanroom_xray_pyrometry_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "polytype_6h_inclusion_or_micropipe_false_clearance_pct": polytype_6h_inclusion_or_micropipe_false_clearance_pct,
+        "sic_pvt_boule_crystal_growth_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

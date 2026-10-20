@@ -5296,6 +5296,68 @@
         "severe_slug_blowout_or_compressor_surge_false_clearance_pct": 3.0,
         "fpso_turret_mooring_riser_slugging_slo_met": false
       }
+    ],
+    "sic_pvt_boule_crystal_growth_profiles": [
+      {
+        "sic_pvt_furnace_arrays": 8,
+        "sic_governance_mode": "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_sic_crystal_pods": 4,
+        "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": 28.7,
+        "bpd_dislocation_and_radial_thermal_stress_reduction_pct": 41.2,
+        "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": 1.3,
+        "coil_water_leak_steam_explosion_or_silane_breach_pct": 0.0,
+        "cleanroom_xray_pyrometry_edge_latency_ms": 1.2,
+        "wan_bandwidth_reduction_pct": 98.7,
+        "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 0.0,
+        "sic_pvt_boule_crystal_growth_slo_met": true
+      },
+      {
+        "sic_pvt_furnace_arrays": 16,
+        "sic_governance_mode": "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_sic_crystal_pods": 8,
+        "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": 28.7,
+        "bpd_dislocation_and_radial_thermal_stress_reduction_pct": 41.2,
+        "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": 1.3,
+        "coil_water_leak_steam_explosion_or_silane_breach_pct": 0.0,
+        "cleanroom_xray_pyrometry_edge_latency_ms": 1.2,
+        "wan_bandwidth_reduction_pct": 98.7,
+        "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 0.0,
+        "sic_pvt_boule_crystal_growth_slo_met": true
+      },
+      {
+        "sic_pvt_furnace_arrays": 64,
+        "sic_governance_mode": "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_sic_crystal_pods": 32,
+        "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": 28.7,
+        "bpd_dislocation_and_radial_thermal_stress_reduction_pct": 41.2,
+        "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": 1.3,
+        "coil_water_leak_steam_explosion_or_silane_breach_pct": 0.0,
+        "cleanroom_xray_pyrometry_edge_latency_ms": 1.2,
+        "wan_bandwidth_reduction_pct": 98.7,
+        "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 0.0,
+        "sic_pvt_boule_crystal_growth_slo_met": true
+      },
+      {
+        "sic_pvt_furnace_arrays": 16,
+        "sic_governance_mode": "blind_recipe_pyrometer_unverified_coil_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_sic_crystal_pods": 8,
+        "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": 0.0,
+        "bpd_dislocation_and_radial_thermal_stress_reduction_pct": 0.0,
+        "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": 490.0,
+        "coil_water_leak_steam_explosion_or_silane_breach_pct": 1.5,
+        "cleanroom_xray_pyrometry_edge_latency_ms": 1350.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 3.4,
+        "sic_pvt_boule_crystal_growth_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -10061,5 +10123,52 @@
       "fpso_turret_mooring_riser_slugging_slo_met": false
     }
   },
-  "trace_sha256": "68fa6d1a497306f3e2e5dd0b845b989edff46eec5de20d7da06d61be8c6b4934"
+  "demo_84_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox": {
+    "sic_pvt_16_arrays": {
+      "sic_pvt_furnace_arrays": 16,
+      "sic_governance_mode": "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_sic_crystal_pods": 8,
+      "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": 28.7,
+      "bpd_dislocation_and_radial_thermal_stress_reduction_pct": 41.2,
+      "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": 1.3,
+      "coil_water_leak_steam_explosion_or_silane_breach_pct": 0.0,
+      "cleanroom_xray_pyrometry_edge_latency_ms": 1.2,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 0.0,
+      "sic_pvt_boule_crystal_growth_slo_met": true
+    },
+    "sic_pvt_64_arrays": {
+      "sic_pvt_furnace_arrays": 64,
+      "sic_governance_mode": "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_sic_crystal_pods": 32,
+      "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": 28.7,
+      "bpd_dislocation_and_radial_thermal_stress_reduction_pct": 41.2,
+      "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": 1.3,
+      "coil_water_leak_steam_explosion_or_silane_breach_pct": 0.0,
+      "cleanroom_xray_pyrometry_edge_latency_ms": 1.2,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 0.0,
+      "sic_pvt_boule_crystal_growth_slo_met": true
+    },
+    "raw_sic_pvt_16_arrays": {
+      "sic_pvt_furnace_arrays": 16,
+      "sic_governance_mode": "blind_recipe_pyrometer_unverified_coil_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_sic_crystal_pods": 8,
+      "single_polytype_4h_boule_yield_and_usable_wafers_gain_pct": 0.0,
+      "bpd_dislocation_and_radial_thermal_stress_reduction_pct": 0.0,
+      "semis2_nfpa86_sil3_coil_leak_silane_interlock_ms": 490.0,
+      "coil_water_leak_steam_explosion_or_silane_breach_pct": 1.5,
+      "cleanroom_xray_pyrometry_edge_latency_ms": 1350.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "polytype_6h_inclusion_or_micropipe_false_clearance_pct": 3.4,
+      "sic_pvt_boule_crystal_growth_slo_met": false
+    }
+  },
+  "trace_sha256": "42cf22f559cb1a70701fca05b93b7ab0b46806da0b07c6042531e9f319f5bf6b"
 }

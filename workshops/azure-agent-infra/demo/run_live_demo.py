@@ -103,6 +103,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
     simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
+    simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -749,6 +750,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "fpso_turret_6_units": simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(6, "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge"),
             "fpso_turret_24_units": simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(24, "riser_slugging_turret_weathervane_pinn_antisurge_mpc_apirp14c_sil3_edge"),
             "raw_fpso_turret_6_units": simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox(6, "manual_choke_unverified_antisurge_cloud"),
+        },
+        "demo_84_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox": {
+            "sic_pvt_16_arrays": simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(16, "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge"),
+            "sic_pvt_64_arrays": simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(64, "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge"),
+            "raw_sic_pvt_16_arrays": simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(16, "blind_recipe_pyrometer_unverified_coil_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

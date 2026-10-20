@@ -90,6 +90,7 @@ from agent_infra_sizer import (
     simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
     simulate_psh_pumped_hydro_waterhammer_vortex_iec60308_sil3_sandbox,
     simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
+    simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -227,6 +228,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-subsea-cable-lay-plough-otdr-das-dnv-sil3-pool.bicep",
             "aksclaw-psh-pumped-hydro-waterhammer-vortex-iec60308-sil3-pool.bicep",
             "aksclaw-fpso-turret-mooring-riser-slugging-apirp14c-sil3-pool.bicep",
+            "aksclaw-sic-pvt-boule-crystal-growth-htcvd-semis2-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1609,6 +1611,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["severe_slug_blowout_or_compressor_surge_false_clearance_pct"], 2.8)
         self.assertTrue(gov["fpso_turret_mooring_riser_slugging_slo_met"])
         self.assertFalse(raw["fpso_turret_mooring_riser_slugging_slo_met"])
+
+    def test_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(
+            16, "radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge"
+        )
+        raw = simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox(
+            16, "blind_recipe_pyrometer_unverified_coil_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_sic_crystal_pods"], 8)
+        self.assertEqual(gov["single_polytype_4h_boule_yield_and_usable_wafers_gain_pct"], 28.7)
+        self.assertEqual(gov["bpd_dislocation_and_radial_thermal_stress_reduction_pct"], 41.2)
+        self.assertEqual(gov["semis2_nfpa86_sil3_coil_leak_silane_interlock_ms"], 1.3)
+        self.assertEqual(gov["coil_water_leak_steam_explosion_or_silane_breach_pct"], 0.0)
+        self.assertGreater(raw["coil_water_leak_steam_explosion_or_silane_breach_pct"], 1.3)
+        self.assertEqual(gov["cleanroom_xray_pyrometry_edge_latency_ms"], 1.2)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.7)
+        self.assertEqual(gov["polytype_6h_inclusion_or_micropipe_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["polytype_6h_inclusion_or_micropipe_false_clearance_pct"], 3.1)
+        self.assertTrue(gov["sic_pvt_boule_crystal_growth_slo_met"])
+        self.assertFalse(raw["sic_pvt_boule_crystal_growth_slo_met"])
 
 
 if __name__ == "__main__":

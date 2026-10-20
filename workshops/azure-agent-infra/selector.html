@@ -496,6 +496,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(81)">82. 深海 ±525kV 柔直海缆与跨洋海光缆敷设船 (CLV) + 海底犁式埋设机悬链线触地点 TDP 张力 PINN-MPC 及 DNV-ST-F101 / CIGRE TB 610 / SIL-3 最小弯曲半径与自动松缆联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(82)">83. 抽水蓄能电站 (PSH) 250-400MW 变速可逆混流式水泵水轮机 + 调压室水锤与尾水管涡带 S 区 PINN-MPC 及 IEEE 1020 / IEC 60308 / SIL-3 导叶折线慢关防爆管联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(83)">84. 深水浮式生产储卸油装置 (FPSO) 内转塔单点系泊 + 海底立管严重段塞流抑制与离心压缩机防喘振 PINN-MPC 及 API RP 14C / DNV-OS-E301 / SIL-3 HIPPS 与快脱 EQD 联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(84)">85. 第三代半导体 8英寸碳化硅 (200mm 4H-SiC) PVT 2400°C 单晶生长与 HT-CVD 外延 PINN-MPC 及 SEMI S2 / SEMI M55 / NFPA 86 / SIL-3 水冷防蒸汽爆炸与硅烷吹扫联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2389,6 +2390,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 84: Third-Generation Semiconductor 8-Inch 4H-SiC PVT Crystal Boule Growth & HT-CVD Epitaxy PINN-MPC & SEMI S2 / SEMI M55 / NFPA 86 / SIL-3 Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 84 · 8-INCH 4H-SiC SILICON CARBIDE PVT CRYSTAL BOULE GROWTH (2200–2400°C) &amp; HT-CVD EPITAXY PINN-MPC &amp; SEMI S2 / NFPA 86 / SIL-3 SIZER</span>
+    <h2>自主第三代半导体 <code>8</code> 英寸碳化硅 (<code>200 mm 4H-SiC</code>) <code>PVT</code> 单晶生长与 <code>HT-CVD</code> 外延 <code>PINN-MPC</code> 及 <code>SEMI S2 / NFPA 86 / SIL-3</code> 联锁测算器</h2>
+    <div class="sub">量化在 <code>8 – 64</code> 组 <code>8</code> 英寸碳化硅物理气相传输法 (<code>PVT, 2,200–2,400°C</code>) 长晶炉与高温化学气相沉积 (<code>HT-CVD</code>) 外延阵列规模下，高纯石墨坩埚三维电磁感应-辐射传热、<code>SiC2/Si2C/Si</code> 气相化学计量比与基面位错 (<code>BPD</code>)/微管热弹性应力 <code>PINN</code> + 双频感应线圈高度与氩气背压动态 <code>MPC</code>（单一 <code>4H-SiC</code> 晶型零微管良率与单锭可用晶圆切片数 <code>+28.7%</code>、基面位错 <code>BPD</code> 密度与径向热应力梯度 <code>-41.2%</code>）、<code>SEMI S2 / SEMI M55 / NFPA 86 / IEC 61508 SIL-3</code> 紫铜感应线圈水冷微漏防 <code>2,300°C</code> 水蒸气-氢气爆炸与硅烷 (<code>SiH4/H2</code>) 吹扫硬联锁（<code>1.3 ms</code>，高温蒸汽/氢爆或硅烷自燃违例率 <code>0.0%</code>）及洁净室原位 X 射线数字射线成像 (<code>In-Situ X-Ray DR</code>)/双色高温计 + <code>SECS/GEM E84 / Azure Local</code> 边缘推理（<code>1.2 ms</code>，晶圆厂广域网带宽削减 <code>98.7%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 8英寸 4H-SiC PVT 长晶炉与 HT-CVD 外延阵列数 (200mm 4H-SiC PVT &amp; HT-CVD Furnace Arrays): <strong id="lbl_sic_arrays" style="color:var(--amber)">16</strong> Furnace Arrays</label>
+          <input type="range" id="rng_sic_arrays" min="8" max="64" step="8" value="16" oninput="runSicPvtLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 石墨坩埚辐射升华与位错 PINN-MPC 及 SEMI S2 / NFPA 86 / SIL-3 联锁模式 (SiC PVT Crystal Growth Governance Mode)</label>
+          <select id="sel_sic_mode" onchange="runSicPvtLab()">
+            <option value="radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge" selected>石墨坩埚辐射升华与 BPD 位错 PINN + 感应线圈与氩气背压 MPC (+28.7% 4H晶锭良率/切片数 / -41.2% BPD位错与热应力) + SEMI S2 SIL-3 防蒸汽爆炸联锁 + 1.2ms 原位 X-Ray 边缘 (推荐)</option>
+            <option value="blind_recipe_pyrometer_unverified_coil_cloud">传统反模式：固定时间-功率盲长曲线 (0 增益) + 无水冷微漏 RGA 与硅烷吹扫 SIL-3 硬联锁 (1.5% 2300°C 水煤气氢爆/硅烷起火违例) + 原始 X-Ray 图像上云 (3.4% 6H多型夹杂/微管报废漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="sicOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3828,6 +3852,21 @@ resource fpsoTurretMooringRiserSluggingSil3Pool 'Microsoft.ContainerService/mana
       'aksclaw.io/topside-mpfm-das-antisurge-edge': 'enabled-1.1ms-98.9pct-satcom-wan-cut'
     }
   }
+}`,
+`// Blueprint #85: 8-Inch 4H-SiC Silicon Carbide PVT Crystal Boule Growth & HT-CVD Epitaxy PINN-MPC & SEMI S2 / SEMI M55 / NFPA 86 / SIL-3 Pool (Chapter 89)
+resource sicPvtBouleCrystalGrowthSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'sicpvt'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'sic-pvt-boule-crystal-growth-htcvd-semis2-sil3-agent'
+      'aksclaw.io/radiative-sublimation-bpd-pinn-mpc': 'enabled-28.7pct-boule-yield-41.2pct-bpd-dislocation-cut'
+      'aksclaw.io/semis2-nfpa86-sil3-coil-leak-silane-purge': 'enforced-1.3ms-zero-steam-explosion-or-silane-breach'
+      'aksclaw.io/cleanroom-xray-pyrometry-secsgem-edge': 'enabled-1.2ms-98.7pct-fab-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4012,6 +4051,30 @@ runHypersonicCmcLab();
 runSubseaCableLayLab();
 runPshHydroLab();
 runFpsoTurretLab();
+runSicPvtLab();
+
+function runSicPvtLab() {
+  const arrays = parseInt(document.getElementById('rng_sic_arrays').value, 10);
+  const mode = document.getElementById('sel_sic_mode').value;
+  document.getElementById('lbl_sic_arrays').textContent = arrays.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(arrays / 8));
+  const pods = Math.max(2, Math.floor(arrays / 2));
+  const ok = mode === 'radiative_sublimation_bpd_pinn_coil_crucible_mpc_semis2_sil3_edge';
+  const mpcStr = ok ? "高纯石墨坩埚三维感应辐射传热、SiC2/Si2C/Si 气相化学计量比与 BPD 位错热弹性应力 PINN + 双频感应线圈高度与氩气背压 MPC · 8英寸单一 4H 晶型零微管良率与切片数 +28.7% · BPD 位错密度与径向热应力梯度 -41.2%" : "传统固定时间-功率盲长曲线与单点测温 · 0.0% 温场匀化与抑错增益 (粉源石墨化掏空引发径向温差漂移且 3.4% 6H/15R 异质多型寄生夹杂或微管贯通误放行)";
+  const sil3Str = ok ? "1.3 ms SEMI S2 / SEMI M55 / NFPA 86 / SIL-3 紫铜感应线圈水冷微漏 RGA 联锁与 HT-CVD 硅烷/氢气紧急吹扫硬联锁 · 0.0% 蒸汽氢爆/硅烷起火违例" : "无水冷微漏 RGA 与硅烷吹扫 SIL-3 硬联锁 (490.0 ms 云端回路滞后) · 1.5% 冷却水渗入 2300°C 石墨炉膛引发水煤气氢爆或硅烷自燃风险";
+  const edgeStr = ok ? "1.2 ms 洁净室原位高能 X 射线数字射线成像 (In-Situ X-Ray DR)、双色高温计与 SECS/GEM E84 + Azure Local 边缘 (-98.7% 晶圆厂 WAN 带宽) · 0.0% 黑匣子生长界面盲区" : "1,350.0 ms 原始高分辨率 X 射线透视图像回传云端 · 占满 Fab 工业环网且无法在感应线圈电弧击穿瞬态内完成毫秒级 IGBT 硬关断与断水吹扫";
+
+  document.getElementById('sicOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 2300°C 水冷漏水蒸汽/氢气爆炸或硅烷自燃风险 · 3.4% 6H/15R 多型寄生夹杂或微管整锭报废误放行'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个 8英寸 SiC 长晶/外延控制单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>洁净室原位 X 射线数字射线成像 (In-Situ X-Ray DR)、双色红外高温计与 SECS/GEM + Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runFpsoTurretLab() {
   const units = parseInt(document.getElementById('rng_fpso_units').value, 10);
