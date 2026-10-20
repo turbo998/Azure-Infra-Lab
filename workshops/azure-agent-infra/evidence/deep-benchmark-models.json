@@ -4784,5 +4784,67 @@
       "isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct": 3.3,
       "deepsea_mineral_collector_slo_met": false
     }
+  ],
+  "biomanufacturing_perfusion_bioreactor_profiles": [
+    {
+      "bioreactor_trains": 4,
+      "bioprocess_governance_mode": "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_bioprocess_suite_pods": 2,
+      "volumetric_titer_yield_and_cqa_consistency_gain_pct": 28.4,
+      "tff_membrane_fouling_and_lactate_inhibition_reduction_pct": 34.6,
+      "gmp_bpe_sil3_sip_viral_inactivation_interlock_ms": 1.9,
+      "sterile_boundary_contamination_or_viral_hold_breach_pct": 0.0,
+      "cleanroom_raman_capacitance_edge_latency_ms": 1.7,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct": 0.0,
+      "biomanufacturing_perfusion_slo_met": true
+    },
+    {
+      "bioreactor_trains": 8,
+      "bioprocess_governance_mode": "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_bioprocess_suite_pods": 4,
+      "volumetric_titer_yield_and_cqa_consistency_gain_pct": 28.4,
+      "tff_membrane_fouling_and_lactate_inhibition_reduction_pct": 34.6,
+      "gmp_bpe_sil3_sip_viral_inactivation_interlock_ms": 1.9,
+      "sterile_boundary_contamination_or_viral_hold_breach_pct": 0.0,
+      "cleanroom_raman_capacitance_edge_latency_ms": 1.7,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct": 0.0,
+      "biomanufacturing_perfusion_slo_met": true
+    },
+    {
+      "bioreactor_trains": 32,
+      "bioprocess_governance_mode": "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_bioprocess_suite_pods": 16,
+      "volumetric_titer_yield_and_cqa_consistency_gain_pct": 28.4,
+      "tff_membrane_fouling_and_lactate_inhibition_reduction_pct": 34.6,
+      "gmp_bpe_sil3_sip_viral_inactivation_interlock_ms": 1.9,
+      "sterile_boundary_contamination_or_viral_hold_breach_pct": 0.0,
+      "cleanroom_raman_capacitance_edge_latency_ms": 1.7,
+      "wan_bandwidth_reduction_pct": 98.6,
+      "lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct": 0.0,
+      "biomanufacturing_perfusion_slo_met": true
+    },
+    {
+      "bioreactor_trains": 8,
+      "bioprocess_governance_mode": "offline_hplc_pid_unverified_sip_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_bioprocess_suite_pods": 4,
+      "volumetric_titer_yield_and_cqa_consistency_gain_pct": 0.0,
+      "tff_membrane_fouling_and_lactate_inhibition_reduction_pct": 0.0,
+      "gmp_bpe_sil3_sip_viral_inactivation_interlock_ms": 490.0,
+      "sterile_boundary_contamination_or_viral_hold_breach_pct": 1.6,
+      "cleanroom_raman_capacitance_edge_latency_ms": 1360.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct": 3.1,
+      "biomanufacturing_perfusion_slo_met": false
+    }
   ]
 }

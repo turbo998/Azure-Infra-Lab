@@ -4461,6 +4461,57 @@ def simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(
     }
 
 
+def simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(
+    bioreactor_trains: int = 8,
+    bioprocess_governance_mode: str = "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Biomanufacturing & Continuous Perfusion Mammalian Cell
+    Bioreactor (2,000-20,000 L CHO mAb / AAV Viral Vector Single-Use & Stainless
+    Bioreactors), Genome-Scale Metabolic Flux Balance Analysis (dFBA) & N-Glycan
+    Glycosylation PINN, Alternating Tangential Flow (ATF/TFF) Anti-Fouling & DO/pH
+    Cascade MPC & FDA 21 CFR Part 11 / EU GMP Annex 11 / ICH Q8-Q11 PAT / ASME BPE
+    / IEC 61511 SIL-3 Viral Inactivation Low-pH Hold & Sterile-in-Place (SIP)
+    Barrier Interlock Agent Infrastructure (Chapter 84).
+    """
+    if bioreactor_trains <= 0:
+        raise ValueError("bioreactor_trains must be positive")
+    valid_modes = {
+        "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge",
+        "offline_hplc_pid_unverified_sip_cloud",
+    }
+    if bioprocess_governance_mode not in valid_modes:
+        raise ValueError(f"bioprocess_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = bioprocess_governance_mode == "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge"
+    gpu_nodes = max(2, math.ceil(bioreactor_trains / 4))
+    active_bioprocess_suite_pods = max(2, int(bioreactor_trains // 2))
+
+    volumetric_titer_yield_and_cqa_consistency_gain_pct = 28.4 if governed else 0.0
+    tff_membrane_fouling_and_lactate_inhibition_reduction_pct = 34.6 if governed else 0.0
+    gmp_bpe_sil3_sip_viral_inactivation_interlock_ms = 1.9 if governed else 490.0
+    sterile_boundary_contamination_or_viral_hold_breach_pct = 0.0 if governed else 1.6
+    cleanroom_raman_capacitance_edge_latency_ms = 1.7 if governed else 1360.0
+    wan_bandwidth_reduction_pct = 98.6 if governed else 0.0
+    lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct = 0.0 if governed else 3.1
+
+    return {
+        "bioreactor_trains": bioreactor_trains,
+        "bioprocess_governance_mode": bioprocess_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_bioprocess_suite_pods": active_bioprocess_suite_pods,
+        "volumetric_titer_yield_and_cqa_consistency_gain_pct": volumetric_titer_yield_and_cqa_consistency_gain_pct,
+        "tff_membrane_fouling_and_lactate_inhibition_reduction_pct": tff_membrane_fouling_and_lactate_inhibition_reduction_pct,
+        "gmp_bpe_sil3_sip_viral_inactivation_interlock_ms": gmp_bpe_sil3_sip_viral_inactivation_interlock_ms,
+        "sterile_boundary_contamination_or_viral_hold_breach_pct": sterile_boundary_contamination_or_viral_hold_breach_pct,
+        "cleanroom_raman_capacitance_edge_latency_ms": cleanroom_raman_capacitance_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct": lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct,
+        "biomanufacturing_perfusion_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

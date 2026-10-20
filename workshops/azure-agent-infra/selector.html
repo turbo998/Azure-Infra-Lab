@@ -491,6 +491,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(76)">77. 超导量子计算 10mK 稀释制冷机阵列旋转表面码 QEC 神经伴随式解码 PINN + 极低温 Cryo-CMOS DRAG 脉冲 MPC 与 ASME BPVC VIII / SIL-3 3He/4He 失超暴沸储气罐快排联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(77)">78. 低轨巨型卫星星座 1550nm 相干激光星间链路 OISL PAT + J2-J6 热层阻力轨道摄动 PINN 与 ISO 24113 / NASA-STD-8719.14 / SIL-3 空间碎片防撞及对日安全模式联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(78)">79. 深海 4000-6000m 多金属结核采集车与垂直扬矿立管 + 稀软底质土力学与底栖羽流 PINN-MPC 及 ISA / DNV-ST-E407 / SIL-3 立管紧急排空阀与脐带缆张力联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(79)">80. 连续灌流哺乳动物细胞生物反应器 (2000-20000L mAb/AAV) + dFBA 代谢通量与糖基化 PINN-MPC 及 FDA 21 CFR Part 11 / ASME BPE / SIL-3 在线灭菌 SIP 与低 pH 病毒灭活联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2269,6 +2270,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 79: Biomanufacturing & Continuous Perfusion Mammalian Cell Bioreactor (2000-20000L), dFBA/Glycosylation PINN-MPC & FDA 21 CFR Part 11 / ASME BPE / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-purple">TOOL 79 · BIOMANUFACTURING &amp; CONTINUOUS PERFUSION BIOREACTOR (2000-20000L CHO MAB / AAV VIRAL VECTOR), DFBA &amp; GLYCOSYLATION PINN-MPC &amp; FDA 21 CFR PART 11 / ASME BPE / SIL-3 SIZER</span>
+    <h2>自主生物制造与连续灌流细胞生物反应器 (<code>2,000–20,000 L</code> 单抗/病毒载体)、代谢通量与糖基化 <code>PINN-MPC</code> 及 <code>FDA 21 CFR Part 11 / ASME BPE / SIL-3</code> 无菌与病毒灭活联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 条 <code>2,000–20,000 L</code> 哺乳动物细胞 (<code>CHO mAb / HEK293 AAV</code>) 连续灌流生物反应器与下游交替切向流 (<code>ATF/TFF</code>) 纯化产线规模下，基因组尺度动态代谢通量平衡 (<code>dFBA</code>) 与 N-糖基化修饰 <code>PINN</code> + <code>ATF/TFF</code> 跨膜压防膜污染与溶氧/pH 级联 <code>MPC</code>（单位体积滴度与 <code>CQA</code> 糖型一致性 <code>+28.4%</code>、中空纤维超滤膜污染与乳酸抑制 <code>-34.6%</code>）、<code>FDA 21 CFR Part 11 / EU GMP Annex 11 / ASME BPE / IEC 61511 SIL-3</code> 在线蒸汽灭菌 (<code>SIP 121.5 °C</code>) 无菌边界双座阀与低 pH (<code>pH 3.50 ± 0.05</code>) 病毒灭活硬联锁（<code>1.9 ms</code>，无菌边界污染或病毒灭活不彻底违例率 <code>0.0%</code>）及洁净室原位拉曼光谱 (<code>100–3,200 cm⁻¹</code>)/多频介电电容探头 + <code>OPC-UA / SiLA-2 + Azure Local</code> 边缘推理（<code>1.7 ms</code>，生物制药车间广域网带宽削减 <code>98.6%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 2000-20000L 连续灌流生物反应器与下游纯化产线数量 (Perfusion Bioreactor &amp; ATF/TFF Trains): <strong id="lbl_bmp_trains" style="color:var(--purple)">8</strong> Bioprocess Trains</label>
+          <input type="range" id="rng_bmp_trains" min="4" max="32" step="4" value="8" oninput="runBiomanufacturingLab()">
+        </div>
+        <div class="form-row">
+          <label>2. dFBA 代谢通量与糖基化 PINN-MPC 及 FDA 21 CFR Part 11 / ASME BPE / SIL-3 联锁模式 (Bioprocess PAT &amp; GMP Governance Mode)</label>
+          <select id="sel_bmp_mode" onchange="runBiomanufacturingLab()">
+            <option value="metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge" selected>dFBA 代谢与糖基化 PINN + ATF/TFF 防膜污染 MPC (+28.4% 滴度/CQA 产率 / -34.6% 膜污染) + GMP/BPE SIL-3 SIP/病毒灭活联锁 + 1.7ms 原位拉曼边缘 (推荐)</option>
+            <option value="offline_hplc_pid_unverified_sip_cloud">传统反模式：24h 离线 HPLC 取样与恒速补料 PID (0 增益) + 无 SIP 冷点与低 pH 病毒灭活 SIL-3 门控 (1.6% 染菌/灭活违例) + 原始拉曼光谱上云 (3.1% 乳酸酸中毒倒罐漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="bmpOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3633,6 +3657,21 @@ resource deepseaCollectorRiserSil3Pool 'Microsoft.ContainerService/managedCluste
       'aksclaw.io/subsea-6000m-fso-sonar-adcp-edge': 'enabled-2.1ms-98.5pct-vsat-wan-cut'
     }
   }
+}`,
+`// Blueprint #80: Biomanufacturing & Continuous Perfusion Bioreactor (2000-20000L mAb/AAV), Metabolic dFBA & Glycosylation PINN-MPC & FDA 21 CFR Part 11 / ASME BPE / SIL-3 Pool (Chapter 84)
+resource biomanufacturingPerfusionGmpSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'bioperfusion'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'biomanufacturing-perfusion-bioreactor-pat-gmp-sil3-agent'
+      'aksclaw.io/metabolic-fba-glycosylation-pinn-tff-mpc': 'enabled-28.4pct-titer-yield-34.6pct-tff-fouling-cut'
+      'aksclaw.io/fda-cfr11-gmp-bpe-sil3-sip-viral-interlock': 'enforced-1.9ms-zero-contamination-or-viral-hold-breach'
+      'aksclaw.io/cleanroom-raman-capacitance-opcua-edge': 'enabled-1.7ms-98.6pct-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3812,6 +3851,30 @@ runSafPtlLab();
 runQuantumQecLab();
 runLeoConstellationLab();
 runDeepseaCollectorLab();
+runBiomanufacturingLab();
+
+function runBiomanufacturingLab() {
+  const trains = parseInt(document.getElementById('rng_bmp_trains').value, 10);
+  const mode = document.getElementById('sel_bmp_mode').value;
+  document.getElementById('lbl_bmp_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const pods = Math.max(2, Math.floor(trains / 2));
+  const ok = mode === 'metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge';
+  const mpcStr = ok ? "基因组尺度代谢通量平衡 (dFBA) 与 N-糖基化修饰 PINN + ATF/TFF 防膜污染与溶氧/pH 级联 MPC · 单抗/病毒载体单位体积滴度与 CQA 一致性 +28.4% · 中空纤维膜污染与乳酸积累 -34.6%" : "传统 24h 离线 HPLC 取样与恒速流加 PID 控制 · 0.0% 滴度与防污染增益 (补料滞后引发瓦伯格乳酸堆积、糖基化偏移且 3.1% 乳酸酸中毒倒罐或中空纤维剪切细胞裂解误放行)";
+  const sil3Str = ok ? "1.9 ms FDA 21 CFR Part 11 / EU GMP Annex 11 / ASME BPE / SIL-3 在线蒸汽灭菌 (SIP 121.5°C) 双座阀与低 pH (3.50±0.05) 病毒灭活硬联锁 · 0.0% 染菌/灭活违例" : "无 SIP 冷点与低 pH 病毒灭活 SIL-3 硬联锁 (490.0 ms 云端回路滞后) · 1.6% 无菌边界交叉染菌报废或病毒灭活不彻底批次放行风险";
+  const edgeStr = ok ? "1.7 ms GMP 洁净室原位拉曼光谱 (100-3,200 cm⁻¹)、多频介电电容活细胞生物量探头与 OPC-UA / SiLA-2 + Azure Local 边缘 (-98.6% 制药车间广域网带宽) · 0.0% 采样盲区" : "1,360.0 ms 原始高维拉曼光谱与高频介电阻抗流全量上云 · 阻塞 GMP 车间网络且无法支撑亚秒级跨膜压防污染与流加闭环控制";
+
+  document.getElementById('bmpOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.6% 无菌边界交叉染菌或病毒灭活不彻底批次违例风险 · 3.1% 乳酸酸中毒倒罐或 TFF 剪切裂解误放行'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个 GMP 生物工艺控制单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>GMP 洁净室原位拉曼光谱、多频介电电容活细胞探头与 OPC-UA / SiLA-2 + Azure Local 实时放行检验 (RTRT) 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runDeepseaCollectorLab() {
   const units = parseInt(document.getElementById('rng_dsm_units').value, 10);

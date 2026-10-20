@@ -85,6 +85,7 @@ from agent_infra_sizer import (
     simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
     simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
     simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
+    simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -217,6 +218,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-quantum-superconducting-qec-cryo-dilution-sil3-pool.bicep",
             "aksclaw-leo-megaconstellation-oisl-conjunction-iso24113-sil3-pool.bicep",
             "aksclaw-deepsea-mineral-collector-riser-isa-dnv-sil3-pool.bicep",
+            "aksclaw-biomanufacturing-perfusion-bioreactor-pat-gmp-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1494,6 +1496,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["isa_turbidity_threshold_or_dp3_umbilical_snap_false_clearance_pct"], 3.0)
         self.assertTrue(gov["deepsea_mineral_collector_slo_met"])
         self.assertFalse(raw["deepsea_mineral_collector_slo_met"])
+
+    def test_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(self) -> None:
+        gov = simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(
+            8, "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge"
+        )
+        raw = simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(
+            8, "offline_hplc_pid_unverified_sip_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_bioprocess_suite_pods"], 4)
+        self.assertEqual(gov["volumetric_titer_yield_and_cqa_consistency_gain_pct"], 28.4)
+        self.assertEqual(gov["tff_membrane_fouling_and_lactate_inhibition_reduction_pct"], 34.6)
+        self.assertEqual(gov["gmp_bpe_sil3_sip_viral_inactivation_interlock_ms"], 1.9)
+        self.assertEqual(gov["sterile_boundary_contamination_or_viral_hold_breach_pct"], 0.0)
+        self.assertGreater(raw["sterile_boundary_contamination_or_viral_hold_breach_pct"], 1.4)
+        self.assertEqual(gov["cleanroom_raman_capacitance_edge_latency_ms"], 1.7)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.6)
+        self.assertEqual(gov["lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct"], 2.9)
+        self.assertTrue(gov["biomanufacturing_perfusion_slo_met"])
+        self.assertFalse(raw["biomanufacturing_perfusion_slo_met"])
 
 
 if __name__ == "__main__":

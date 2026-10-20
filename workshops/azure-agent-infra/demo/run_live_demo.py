@@ -98,6 +98,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
     simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
     simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
+    simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -719,6 +720,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "deepsea_6_units": simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(6, "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge"),
             "deepsea_24_units": simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(24, "benthic_terramechanics_plume_pinn_riser_mpc_isa_dnv_sil3_edge"),
             "raw_deepsea_6_units": simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox(6, "open_loop_crawler_unverified_riser_cloud"),
+        },
+        "demo_79_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox": {
+            "biomanufacturing_8_trains": simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(8, "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge"),
+            "biomanufacturing_32_trains": simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(32, "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge"),
+            "raw_biomanufacturing_8_trains": simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(8, "offline_hplc_pid_unverified_sip_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
