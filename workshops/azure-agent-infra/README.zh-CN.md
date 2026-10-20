@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #88 · 94 Chapters · 89 Blueprints · 88 Simulators · 97/97 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #89 · 95 Chapters · 90 Blueprints · 89 Simulators · 98/98 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -2662,7 +2662,33 @@ sequenceDiagram
 
 ---
 
-## 94. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 94. 自主超深水盐下控压钻井（`MPD`）、有线钻杆（`WDP / IntelliServ`）随钻测井（`LWD`）、微流量科里奥利溢流井涌早期检测与 `API RP 53 / IEC 61511 SIL-3` 防喷器（`BOP`）智能体基础设施（Autonomous Ultra-Deep Subsalt Managed-Pressure Drilling `MPD`, Wired-Drill-Pipe Downhole LWD, Annular Kick-Influx Early Detection & `API RP 53 / IEC 61511 SIL-3` Blowout Preventer `BOP` Agent Infrastructure）
+
+> **English Summary (Chapter 94 — Ultra-Deep Subsalt Managed-Pressure Drilling `MPD`, Wired-Drill-Pipe Downhole LWD, Annular Kick-Influx Early Detection & `API RP 53 / IEC 61511 SIL-3` Blowout Preventer `BOP` Agent Infrastructure)**:
+> - **Architecture**: Runs a coupled **Transient Multiphase Wellbore Hydraulics (`Drift-Flux`) Equivalent Circulating Density (`ECD`) within Narrow Subsalt Pore-Pressure/Fracture-Gradient (`PP-FG < 0.4 ppg`) Windows, Downhole Stick-Slip Torsional Vibration & Cuttings-Transport PINN + Automated `MPD` Surface Backpressure ChokeManifold & Top-Drive Active Stick-Slip Damping (`SoftSpeed`) MPC** on `Standard_ND96isr_H100_v5` (`aksclaw-subsalt-mpd-drilling-lwd-kick-apirp53-sil3-pool.bicep`), paired with a **`1.0 ms` `API RP 53 / API Spec 16D / IEC 61511 SIL-3` automated MPD choke pressure-envelope, annular/pipe-ram shut-in & blind-shear-ram (`BSR`) emergency blowout preventer (`BOP`) interlock** and **`0.9 ms` drillship `Wired-Drill-Pipe (WDP / IntelliServ 57,600 bps) Downhole Annular Pressure (PWD) + Surface Coriolis Delta-Flow + WITSML 2.1 / Azure Local` rig-floor edge inference**.
+> - **Key Quantitative Gains (`simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox()`)**: **`+29.4%` rate of penetration (`ROP`) and productive bottomhole drilling time across ultra-deep (`>8,000 m TVD`) subsalt reservoirs**, **`-46.2%` non-productive time (`NPT`) from gas-kick shut-ins, lost-circulation mud losses, and BHA stick-slip torsional fatigue**, **`0.0%` narrow `PP-FG` window breach or uncontrolled wellbore blowout excursion (`1.0 ms` API RP 53 SIL-3 interlock vs `1.6%` at `125.0 ms` manual pit-gain / mud-weight loop)**, **`0.0%` undetected sour-gas (`H2S / CH4`) micro-influx (`< 0.5 bbl`) or induced formation fracture lost-return false clearance (`vs 3.5%` on conventional mud-pulse telemetry + pit-level floats)**, and **`0.9 ms` drillship `WDP/Coriolis/WITSML` edge latency (`99.1%` offshore SatCom WAN bandwidth reduction vs `242.0 ms` shore-cloud loop)**.
+
+### 94.1 超深水盐下窄安全密度窗口（`PP-FG < 0.4 ppg`）控压钻井 `ECD PINN-MPC`、有线钻杆与科里奥利微流量溢流早检、`API RP 53 / IEC 61511 SIL-3` 节流管汇/防喷器（`BOP`）硬联锁及钻井船 `WITSML` 边缘三大工程支柱
+
+1. **Pillar 1：超深水盐下瞬态多相井筒水力学（`Drift-Flux`）当量循环密度（`ECD`）、窄孔隙压力-破裂压力窗口（`PP-FG < 0.4 ppg`）与钻柱粘滑振动（`Stick-Slip`）`PINN` + 自动控压钻井（`MPD`）节流管汇回压与顶驱软扭矩（`Soft-Torque`）协同 `MPC`（`Standard_ND96isr_H100_v5`）**：
+   - 在 `Standard_ND96isr_H100_v5` 节点上运行耦合水深 `2,500–3,000 m`、垂深 `> 8,000 m` 盐下高温高压（`HPHT`）碳酸盐岩储层瞬态气液固三相漂移流（`Transient Multiphase Drift-Flux`）水力学、接单根停泵期间当量静态密度（`ESD`）向当量循环密度（`ECD`）的抽吸/激动压力瞬变（`Swab / Surge`）、窄至 `0.3–0.4 ppg` 的地层孔隙压力与破裂压力窗口（`Pore-Pressure / Fracture-Gradient Window`），以及万米细长钻柱扭转自激粘滑振动（`Stick-Slip`）与轴向跳钻（`Bit-Bounce`）的 `PINN`，并与地面自动控压钻井（`MPD`）精密旋转控制头（`RCD`）回压节流阀组（动态补偿停泵期间损失的环空摩阻 `AFP`，将井底恒压精度控制在 `±15 psi` 以内）及顶驱转速阻抗匹配 `MPC` 闭环协同，使 **超深水盐下复杂地层机械钻速（`ROP`）与有效纯钻进时间提升 `+29.4%`**、**因井涌关井、井漏堵漏与底部钻具组合（`BHA`）扭转疲劳断裂导致的非生产时间（`NPT`）降低 `-46.2%`**，并将 **微量高含硫天然气（`CH4 / H2S`）侵入（`< 0.5 bbl`）或压裂盐下地层引发恶性失返性井漏误放行率从 `3.5%` 降至 `0.0%`**。
+2. **Pillar 2：`API RP 53 / API Spec 16D / IEC 61511 SIL-3` 控压钻井节流管汇动态升压包络、环空/闸板防喷器关井与盲剪切闸板（`BSR`）紧急切断硬联锁（`1.0 ms`）**：
+   - 在超深水盐下窄密度窗口钻井中，井底压力稍低于孔隙压力即诱发高压天然气井涌（`Gas Kick`），且气体在沿 `3,000 m` 隔水管向上运移膨胀过程中体积成百倍剧增；反之井底压力稍高于破裂压力即压裂地层造成泥浆全失返，进而导致液柱压力骤降引发灾难性井喷（`Wellbore Blowout`）。任何由钻井参数优化智能体下发的泥浆泵冲数、顶驱钻压（`WOB`）与 `MPD` 节流阀开度指令，在进入钻井控制网前必须经过 **`1.0 ms` 硬件级隔离的 `API RP 53 / API Spec 16D / IEC 61511 SIL-3` 井控安全联锁门控（对比依赖泥浆池液面浮子与人工压井回路 `125.0 ms`）**：一旦科里奥利质量流量计检测到进出口微流量差（`Delta-Flow > 15 L/min`）或井底环空压力传感器（`PWD`）捕捉到气体滑脱降压特征，立即在 `1.0 ms` 内自动增大 `MPD` 节流背压扼杀微溢流于萌芽状态；若溢流体积逼近防喷器关井阈值或发生隔水管解脱工况，则瞬时触发水下防喷器组（`Subsea BOP Stack`）声学/蓝黄双冗余控制盒（`MUX Pod`）关闭环形/半封闸板乃至激发高液压盲剪切闸板（`Blind Shear Ram, BSR`）剪断钻杆封井，将 **窄密度窗口突破或井喷失控违例率从 `1.6%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：有线钻杆（`WDP / IntelliServ`）高速随钻测井（`LWD`）、科里奥利质量流量计与钻井船 `WITSML 2.1 / Azure Local` 钻台边缘（`0.9 ms`）**：
+   - 在第七代超深水钻井船司钻房与机舱部署加固型 `Azure Local` 边缘计算机架，通过高速工业以太网与 `WITSML 2.1 / OPC UA` 总线直连电磁感应耦合有线钻杆（`Wired Drill Pipe, WDP`，以 `57,600 bps` 带宽实时回传井底近钻头伽马、方位电阻率、环空压力 `PWD` 与三轴高频振动谱，彻底克服传统泥浆脉冲遥测 `1–3 bps` 带宽与数十秒延迟瓶颈）及返出管线高精度科里奥利质量流量/密度计，在 **`0.9 ms` 内（对比原始高频随钻测井与地震随钻 `SWD` 数据经海事卫星回传陆地基地 `242.0 ms`）** 完成井底 `ECD` 闭环微调与粘滑有源阻尼，削减 **`99.1%` 远洋钻井船卫星上行带宽**。
+
+### 94.2 超深水盐下控压钻井 `ECD & Stick-Slip PINN-MPC` + `API RP 53 / IEC 61511 SIL-3` 节流/BOP 联锁 + 钻井船 `WDP / Coriolis` 边缘 vs 传统泥浆脉冲与泥浆池浮子基线对比表
+
+| 超深水盐下控压钻井 (`Subsalt MPD`) 钻井船井群规模及智能体架构 | `ND96isr_H100_v5` 节点数 | 在役超深水 `MPD` 井筒水力学与井控孪生单元数 | **机械钻速 (`ROP`)/纯钻时间增益与溢流井漏/粘滑非生产时间 (`NPT`) 削减** | **`API RP 53 / IEC 61511 SIL-3` 窄窗口突破或井喷违例率** | **钻井船 `WDP / Coriolis / WITSML` 边缘延迟与卫通带宽削减** | **未检出微气侵溢流 (`<0.5 bbl`) 或压裂井漏失返误放行率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`4` 口超深水盐下高温高压探井 · Subsalt ECD PINN-MPC + API RP 53 SIL-3 联锁 + 钻台 WDP 边缘** | `2` | `4` | **`+29.4%` / `-46.2%`** | **`0.0%` (`1.0 ms`)** | **`0.9 ms` / `99.1%`** | **`0.0%`** |
+| **`8` 口盆地级超深水盐下开发钻井船集群 · Subsalt ECD PINN-MPC + API RP 53 SIL-3 联锁 + 钻台 WDP 边缘 (推荐)** | **`2`** | **`8`** | **`+29.4%` / `-46.2%`** | **`0.0%` (`1.0 ms`)** | **`0.9 ms` / `99.1%`** | **`0.0%`** |
+| **`32` 口全球深水油气与地热深钻井队群 · Subsalt ECD PINN-MPC + API RP 53 SIL-3 联锁 + 钻台 WDP 边缘** | `8` | `32` | **`+29.4%` / `-46.2%`** | **`0.0%` (`1.0 ms`)** | **`0.9 ms` / `99.1%`** | **`0.0%`** |
+| `8` 口超深水盐下钻井 · 传统泥浆密度静态配置 + 泥浆脉冲慢速遥测 + 依赖泥浆池浮子发现溢流 (`>10 bbl`) + 无 SIL-3 自动节流/BOP 联锁 (反模式) | `2` | `8` | `+4.6%` / `-8.1%` (❌ 接单根停泵 ECD 剧烈跌落与万米钻柱严重粘滑导致频繁卡钻与钻头崩齿) | `1.6%` (`125.0 ms` ❌ 泥浆池液面浮子滞后十余分钟才发现大气侵，错失微溢流动态压井窗口) | `242.0 ms` / `0.0%` (❌ 远洋卫通高延迟无法闭环抑制接单根抽吸压力瞬变与钻柱高频粘滑) | `3.5%` (❌ 0.3 ppg 超窄窗口下手动节流过调直接压裂盐下地层引发泥浆全失返与诱发井涌) |
+
+---
+
+## 95. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

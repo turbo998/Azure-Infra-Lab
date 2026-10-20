@@ -5404,5 +5404,67 @@
       "plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct": 3.3,
       "gen4_liquid_metal_sfr_lbe_slo_met": false
     }
+  ],
+  "subsalt_mpd_drilling_lwd_kick_profiles": [
+    {
+      "subsalt_mpd_drillship_wells": 4,
+      "mpd_governance_mode": "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_mpd_drilling_pods": 4,
+      "rop_and_productive_drilling_time_gain_pct": 29.4,
+      "npt_kick_lost_circulation_and_stick_slip_reduction_pct": 46.2,
+      "apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms": 1.0,
+      "pore_fracture_window_or_wellbore_blowout_breach_pct": 0.0,
+      "wdp_intelliserv_coriolis_witsml_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "uncontrolled_gas_influx_or_lost_return_fracture_pct": 0.0,
+      "subsalt_mpd_drilling_slo_met": true
+    },
+    {
+      "subsalt_mpd_drillship_wells": 8,
+      "mpd_governance_mode": "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_mpd_drilling_pods": 8,
+      "rop_and_productive_drilling_time_gain_pct": 29.4,
+      "npt_kick_lost_circulation_and_stick_slip_reduction_pct": 46.2,
+      "apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms": 1.0,
+      "pore_fracture_window_or_wellbore_blowout_breach_pct": 0.0,
+      "wdp_intelliserv_coriolis_witsml_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "uncontrolled_gas_influx_or_lost_return_fracture_pct": 0.0,
+      "subsalt_mpd_drilling_slo_met": true
+    },
+    {
+      "subsalt_mpd_drillship_wells": 32,
+      "mpd_governance_mode": "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_mpd_drilling_pods": 32,
+      "rop_and_productive_drilling_time_gain_pct": 29.4,
+      "npt_kick_lost_circulation_and_stick_slip_reduction_pct": 46.2,
+      "apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms": 1.0,
+      "pore_fracture_window_or_wellbore_blowout_breach_pct": 0.0,
+      "wdp_intelliserv_coriolis_witsml_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "uncontrolled_gas_influx_or_lost_return_fracture_pct": 0.0,
+      "subsalt_mpd_drilling_slo_met": true
+    },
+    {
+      "subsalt_mpd_drillship_wells": 8,
+      "mpd_governance_mode": "manual_mud_weight_pit_gain_delayed_choke_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_mpd_drilling_pods": 8,
+      "rop_and_productive_drilling_time_gain_pct": 4.6,
+      "npt_kick_lost_circulation_and_stick_slip_reduction_pct": 8.1,
+      "apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms": 125.0,
+      "pore_fracture_window_or_wellbore_blowout_breach_pct": 1.6,
+      "wdp_intelliserv_coriolis_witsml_edge_latency_ms": 242.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncontrolled_gas_influx_or_lost_return_fracture_pct": 3.5,
+      "subsalt_mpd_drilling_slo_met": false
+    }
   ]
 }

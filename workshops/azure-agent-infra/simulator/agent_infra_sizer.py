@@ -4931,6 +4931,49 @@ def simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(
     }
 
 
+def simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(
+    subsalt_mpd_drillship_wells: int = 8,
+    mpd_governance_mode: str = "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Deep Subsalt Managed-Pressure Drilling (MPD), Wired-Drill-Pipe Downhole LWD, Annular Kick-Influx Early Detection & API RP 53 / IEC 61511 SIL-3 Blowout Preventer (BOP) Agent Infrastructure (Chapter 94)."""
+    if subsalt_mpd_drillship_wells <= 0:
+        raise ValueError("subsalt_mpd_drillship_wells must be positive")
+    valid_modes = {
+        "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge",
+        "manual_mud_weight_pit_gain_delayed_choke_cloud",
+    }
+    if mpd_governance_mode not in valid_modes:
+        raise ValueError(f"mpd_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = mpd_governance_mode == "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge"
+    active_mpd_drilling_pods = max(2, int(subsalt_mpd_drillship_wells))
+    gpu_nodes = max(2, math.ceil(subsalt_mpd_drillship_wells / 4))
+
+    rop_and_productive_drilling_time_gain_pct = 29.4 if governed else 4.6
+    npt_kick_lost_circulation_and_stick_slip_reduction_pct = 46.2 if governed else 8.1
+    apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms = 1.0 if governed else 125.0
+    pore_fracture_window_or_wellbore_blowout_breach_pct = 0.0 if governed else 1.6
+    wdp_intelliserv_coriolis_witsml_edge_latency_ms = 0.9 if governed else 242.0
+    wan_bandwidth_reduction_pct = 99.1 if governed else 0.0
+    uncontrolled_gas_influx_or_lost_return_fracture_pct = 0.0 if governed else 3.5
+
+    return {
+        "subsalt_mpd_drillship_wells": subsalt_mpd_drillship_wells,
+        "mpd_governance_mode": mpd_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_mpd_drilling_pods": active_mpd_drilling_pods,
+        "rop_and_productive_drilling_time_gain_pct": rop_and_productive_drilling_time_gain_pct,
+        "npt_kick_lost_circulation_and_stick_slip_reduction_pct": npt_kick_lost_circulation_and_stick_slip_reduction_pct,
+        "apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms": apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms,
+        "pore_fracture_window_or_wellbore_blowout_breach_pct": pore_fracture_window_or_wellbore_blowout_breach_pct,
+        "wdp_intelliserv_coriolis_witsml_edge_latency_ms": wdp_intelliserv_coriolis_witsml_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncontrolled_gas_influx_or_lost_return_fracture_pct": uncontrolled_gas_influx_or_lost_return_fracture_pct,
+        "subsalt_mpd_drilling_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

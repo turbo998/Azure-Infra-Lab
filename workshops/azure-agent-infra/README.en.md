@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #88 · **94 Chapters** · **89 IaC Blueprints** · **88 Quantitative Physics Simulators** · **97/97 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 93-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #89 · **95 Chapters** · **90 IaC Blueprints** · **89 Quantitative Physics Simulators** · **98/98 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 94-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 88 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [97-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 89 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [98-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -182,6 +182,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **91** | **Autonomous Gravitational-Wave Laser Interferometer (`LIGO / CE / ET`), `Fabry-Pérot` Arm Cavity Locking, Newtonian Seismic Feedforward Cancellation & Squeezed-Vacuum (`Deep-RL Hierarchical Lock + Borehole Newtonian-Noise PINN + 10 dB Squeezed-Vacuum MPC` + `IEC 61508 SIL-3 / ANSI Z136.1` `1.5 MW` Laser Shutter & Quad-Pendulum Gate + `CDS Dolphin PCIe RFM` Edge)** | `simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox()` | `aksclaw-gravitational-wave-interferometer-fabry-perot-sil3-pool.bicep` | **`+27.4%` duty-cycle/BNS range & `-44.2%` sub-10 Hz DARM noise/lock-loss**, **`0.0%` mirror thermal damage or suspension crash (`0.8 ms` SIL-3)**, **`0.7 ms` `CDS Dolphin RFM` edge (`99.1%` WAN cut)** |
 | **92** | **Autonomous High-Altitude Stratospheric `HALE` Solar Pseudo-Satellite (`HAPS`), Gust-Load Aeroelastic Wing Alleviation (`GLA`) & Solid-State `Li-S` Day-Night Energy Balance (`Hodges-Dowell Nonlinear Beam Aeroelastic PINN + Distributed Flap/Propulsion GLA & Potential-Battery MPC` + `STANAG 4671 / DO-178C DAL-A` Flutter Envelope Gate + `Onboard FBG / Doppler LiDAR / ARINC 825` Edge)** | `simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox()` | `aksclaw-stratospheric-hale-solar-haps-aeroelastic-dala-pool.bicep` | **`+26.2%` winter-solstice endurance & `-39.8%` wing-root bending/torsion**, **`0.0%` aeroelastic flutter or night SoC cutoff (`1.0 ms` DAL-A)**, **`0.9 ms` onboard `FBG/ARINC 825` edge (`99.0%` SatCom cut)** |
 | **93** | **Autonomous Gen-IV Liquid-Metal Fast Reactor (`SFR / LBE`), Pool Thermal-Stratification & Electromagnetic Pump (`ALIP/EMP`) PINN-MPC, Steam-Generator Sodium-Water Reaction (`SWR`) Acoustic Detection & `ASME BPVC III Div 5 / IEEE 603 Class 1E SIL-3` (`Pool Thermal-Striping & Cold-Trap Oxygen PINN-MPC` + `Class 1E SIL-3` `SWR` Rupture-Disc Dump & `DRACS` Gate + `Under-Sodium Ultrasonic Viewing USV / Acoustic` Edge)** | `simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox()` | `aksclaw-gen4-liquid-metal-sfr-lbe-swr-class1e-sil3-pool.bicep` | **`+25.8%` breeding/thermal efficiency & `-42.6%` UIS thermal-striping fatigue**, **`0.0%` sodium-water reaction tube blowout (`0.9 ms` Class 1E)**, **`0.8 ms` nuclear-island `USV/AE` edge (`99.0%` WAN cut)** |
+| **94** | **Autonomous Ultra-Deep Subsalt Managed-Pressure Drilling (`MPD`), Wired-Drill-Pipe (`WDP / IntelliServ`) Downhole LWD, Annular Kick-Influx Early Detection & `API RP 53 / IEC 61511 SIL-3` Blowout Preventer (`BOP`) (`Multiphase Drift-Flux ECD & Stick-Slip PINN-MPC` + `API RP 53 SIL-3` Automated MPD Choke & Blind-Shear-Ram `BOP` Gate + `Drillship WDP / Coriolis / WITSML` Edge)** | `simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox()` | `aksclaw-subsalt-mpd-drilling-lwd-kick-apirp53-sil3-pool.bicep` | **`+29.4%` ROP/drilling time & `-46.2%` kick/lost-return/stick-slip NPT**, **`0.0%` narrow `PP-FG` window or blowout breach (`1.0 ms` SIL-3)**, **`0.9 ms` drillship `WDP/Coriolis` edge (`99.1%` SatCom cut)** |
 
 ---
 
@@ -191,10 +192,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 88 quantitative engineering & physics simulators (Chapters 7–93)
+# 2. Run all 89 quantitative engineering & physics simulators (Chapters 7–94)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 97 unit tests (100% pass across 6 runtimes, 88 physics models, 89 blueprints & links)
+# 3. Execute all 98 unit tests (100% pass across 6 runtimes, 89 physics models, 90 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

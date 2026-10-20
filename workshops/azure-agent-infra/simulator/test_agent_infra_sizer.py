@@ -95,6 +95,7 @@ from agent_infra_sizer import (
     simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
     simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
     simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox,
+    simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -237,6 +238,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-gravitational-wave-interferometer-fabry-perot-sil3-pool.bicep",
             "aksclaw-stratospheric-hale-solar-haps-aeroelastic-dala-pool.bicep",
             "aksclaw-gen4-liquid-metal-sfr-lbe-swr-class1e-sil3-pool.bicep",
+            "aksclaw-subsalt-mpd-drilling-lwd-kick-apirp53-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1724,6 +1726,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["plugging_meter_oxide_fouling_or_cover_gas_fission_escape_pct"], 3.0)
         self.assertTrue(gov["gen4_liquid_metal_sfr_lbe_slo_met"])
         self.assertFalse(raw["gen4_liquid_metal_sfr_lbe_slo_met"])
+
+    def test_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(self) -> None:
+        gov = simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(
+            8, "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge"
+        )
+        raw = simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(
+            8, "manual_mud_weight_pit_gain_delayed_choke_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_mpd_drilling_pods"], 8)
+        self.assertEqual(gov["rop_and_productive_drilling_time_gain_pct"], 29.4)
+        self.assertEqual(gov["npt_kick_lost_circulation_and_stick_slip_reduction_pct"], 46.2)
+        self.assertEqual(gov["apirp53_iec61511_sil3_mpd_choke_bop_interlock_ms"], 1.0)
+        self.assertEqual(gov["pore_fracture_window_or_wellbore_blowout_breach_pct"], 0.0)
+        self.assertGreater(raw["pore_fracture_window_or_wellbore_blowout_breach_pct"], 1.2)
+        self.assertEqual(gov["wdp_intelliserv_coriolis_witsml_edge_latency_ms"], 0.9)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.1)
+        self.assertEqual(gov["uncontrolled_gas_influx_or_lost_return_fracture_pct"], 0.0)
+        self.assertGreater(raw["uncontrolled_gas_influx_or_lost_return_fracture_pct"], 3.0)
+        self.assertTrue(gov["subsalt_mpd_drilling_slo_met"])
+        self.assertFalse(raw["subsalt_mpd_drilling_slo_met"])
 
 
 if __name__ == "__main__":

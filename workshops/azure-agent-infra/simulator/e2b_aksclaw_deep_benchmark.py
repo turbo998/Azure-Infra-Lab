@@ -101,6 +101,7 @@ from agent_infra_sizer import (
     simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
     simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
     simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox,
+    simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -865,6 +866,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(48, "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge"),
         simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(12, "manual_cold_trap_delayed_hydrogen_meter_cloud"),
     ]
+    subsalt_mpd_drilling_lwd_kick_profiles: List[Dict[str, object]] = [
+        simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(4, "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge"),
+        simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(8, "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge"),
+        simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(32, "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge"),
+        simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(8, "manual_mud_weight_pit_gain_delayed_choke_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -954,6 +961,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "gw_interferometer_fabry_perot_profiles": gw_interferometer_fabry_perot_profiles,
         "stratospheric_hale_solar_haps_profiles": stratospheric_hale_solar_haps_profiles,
         "gen4_liquid_metal_sfr_lbe_profiles": gen4_liquid_metal_sfr_lbe_profiles,
+        "subsalt_mpd_drilling_lwd_kick_profiles": subsalt_mpd_drilling_lwd_kick_profiles,
     }
 
 

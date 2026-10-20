@@ -108,6 +108,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
     simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
     simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox,
+    simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -779,6 +780,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "gen4_sfr_lbe_12_loops": simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(12, "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge"),
             "gen4_sfr_lbe_48_loops": simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(48, "pinn_mpc_pool_thermal_striping_emp_swr_class1e_sil3_edge"),
             "raw_gen4_sfr_lbe_12_loops": simulate_gen4_liquid_metal_sfr_lbe_swr_class1e_sil3_sandbox(12, "manual_cold_trap_delayed_hydrogen_meter_cloud"),
+        },
+        "demo_89_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox": {
+            "subsalt_mpd_8_wells": simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(8, "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge"),
+            "subsalt_mpd_32_wells": simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(32, "pinn_mpc_ecd_wdp_coriolis_kick_apirp53_sil3_edge"),
+            "raw_subsalt_mpd_8_wells": simulate_subsalt_mpd_drilling_lwd_kick_apirp53_sil3_sandbox(8, "manual_mud_weight_pit_gain_delayed_choke_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
