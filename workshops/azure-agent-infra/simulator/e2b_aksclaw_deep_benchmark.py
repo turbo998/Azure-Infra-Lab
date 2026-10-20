@@ -73,6 +73,7 @@ from agent_infra_sizer import (
     simulate_cement_kiln_ccus_pyro_sandbox,
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_fusion_tokamak_plasma_quench_sandbox,
+    simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -669,6 +670,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_fusion_tokamak_plasma_quench_sandbox(2000, "grad_shafranov_mhd_detachment_sil3_spi_edge"),
         simulate_fusion_tokamak_plasma_quench_sandbox(500, "open_loop_pid_unmitigated_disruption_raw_mirnov"),
     ]
+    particle_accelerator_beam_profiles: List[Dict[str, object]] = [
+        simulate_particle_accelerator_synchrotron_beam_sandbox(12, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
+        simulate_particle_accelerator_synchrotron_beam_sandbox(36, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
+        simulate_particle_accelerator_synchrotron_beam_sandbox(108, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
+        simulate_particle_accelerator_synchrotron_beam_sandbox(36, "manual_orbit_correction_unverified_blm_raw_epics"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -730,6 +737,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cement_kiln_ccus_pyro_profiles": cement_kiln_ccus_pyro_profiles,
         "green_hydrogen_ammonia_profiles": green_hydrogen_ammonia_profiles,
         "fusion_tokamak_plasma_profiles": fusion_tokamak_plasma_profiles,
+        "particle_accelerator_beam_profiles": particle_accelerator_beam_profiles,
     }
 
 

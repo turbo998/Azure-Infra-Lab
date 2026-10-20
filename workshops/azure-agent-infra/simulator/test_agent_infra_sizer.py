@@ -67,6 +67,7 @@ from agent_infra_sizer import (
     simulate_cement_kiln_ccus_pyro_sandbox,
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_fusion_tokamak_plasma_quench_sandbox,
+    simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -179,6 +180,9 @@ class TestAgentInfraSizer(unittest.TestCase):
             "horizondb-langgraph-checkpointer.py",
             "aca-dynamic-sessions-pool.bicep",
             "entra-agent-id-ai-gateway-policy.xml",
+            "aksclaw-green-hydrogen-electrolyzer-ammonia-pool.bicep",
+            "aksclaw-fusion-tokamak-plasma-quench-pool.bicep",
+            "aksclaw-particle-accelerator-synchrotron-beam-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1126,6 +1130,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["divertor_tungsten_recrystallization_pct"], 3.5)
         self.assertTrue(gov["fusion_tokamak_slo_met"])
         self.assertFalse(raw["fusion_tokamak_slo_met"])
+
+    def test_particle_accelerator_synchrotron_beam_sandbox(self) -> None:
+        gov = simulate_particle_accelerator_synchrotron_beam_sandbox(36, "fofb_srf_microphonics_mpc_sil3_mps_edge")
+        raw = simulate_particle_accelerator_synchrotron_beam_sandbox(36, "manual_orbit_correction_unverified_blm_raw_epics")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["srf_cryomodules_and_undulators"], 72)
+        self.assertEqual(gov["photon_beam_emittance_stability_gain_pct"], 42.8)
+        self.assertEqual(gov["srf_cavity_rf_overhead_power_saving_pct"], 34.5)
+        self.assertEqual(gov["iec61508_sil3_mps_beam_dump_gate_ms"], 0.05)
+        self.assertEqual(gov["undulator_demagnetization_or_vacuum_breach_escape_pct"], 0.0)
+        self.assertGreater(raw["undulator_demagnetization_or_vacuum_breach_escape_pct"], 1.5)
+        self.assertEqual(gov["epics_pvaccess_detector_edge_triage_ms"], 1.8)
+        self.assertEqual(gov["beamline_wan_bandwidth_reduction_pct"], 97.9)
+        self.assertEqual(gov["srf_lorentz_detuning_trip_pct"], 0.0)
+        self.assertGreater(raw["srf_lorentz_detuning_trip_pct"], 3.0)
+        self.assertTrue(gov["accelerator_beam_slo_met"])
+        self.assertFalse(raw["accelerator_beam_slo_met"])
 
 
 if __name__ == "__main__":

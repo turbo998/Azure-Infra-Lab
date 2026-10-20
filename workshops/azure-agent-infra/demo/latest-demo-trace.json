@@ -3870,6 +3870,68 @@
         "divertor_tungsten_recrystallization_pct": 3.8,
         "fusion_tokamak_slo_met": false
       }
+    ],
+    "particle_accelerator_beam_profiles": [
+      {
+        "accelerator_beamlines_count": 12,
+        "accelerator_beam_mode": "fofb_srf_microphonics_mpc_sil3_mps_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "srf_cryomodules_and_undulators": 24,
+        "photon_beam_emittance_stability_gain_pct": 42.8,
+        "srf_cavity_rf_overhead_power_saving_pct": 34.5,
+        "iec61508_sil3_mps_beam_dump_gate_ms": 0.05,
+        "undulator_demagnetization_or_vacuum_breach_escape_pct": 0.0,
+        "epics_pvaccess_detector_edge_triage_ms": 1.8,
+        "beamline_wan_bandwidth_reduction_pct": 97.9,
+        "srf_lorentz_detuning_trip_pct": 0.0,
+        "accelerator_beam_slo_met": true
+      },
+      {
+        "accelerator_beamlines_count": 36,
+        "accelerator_beam_mode": "fofb_srf_microphonics_mpc_sil3_mps_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "srf_cryomodules_and_undulators": 72,
+        "photon_beam_emittance_stability_gain_pct": 42.8,
+        "srf_cavity_rf_overhead_power_saving_pct": 34.5,
+        "iec61508_sil3_mps_beam_dump_gate_ms": 0.05,
+        "undulator_demagnetization_or_vacuum_breach_escape_pct": 0.0,
+        "epics_pvaccess_detector_edge_triage_ms": 1.8,
+        "beamline_wan_bandwidth_reduction_pct": 97.9,
+        "srf_lorentz_detuning_trip_pct": 0.0,
+        "accelerator_beam_slo_met": true
+      },
+      {
+        "accelerator_beamlines_count": 108,
+        "accelerator_beam_mode": "fofb_srf_microphonics_mpc_sil3_mps_edge",
+        "gpu_nodes": 12,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "srf_cryomodules_and_undulators": 216,
+        "photon_beam_emittance_stability_gain_pct": 42.8,
+        "srf_cavity_rf_overhead_power_saving_pct": 34.5,
+        "iec61508_sil3_mps_beam_dump_gate_ms": 0.05,
+        "undulator_demagnetization_or_vacuum_breach_escape_pct": 0.0,
+        "epics_pvaccess_detector_edge_triage_ms": 1.8,
+        "beamline_wan_bandwidth_reduction_pct": 97.9,
+        "srf_lorentz_detuning_trip_pct": 0.0,
+        "accelerator_beam_slo_met": true
+      },
+      {
+        "accelerator_beamlines_count": 36,
+        "accelerator_beam_mode": "manual_orbit_correction_unverified_blm_raw_epics",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "srf_cryomodules_and_undulators": 72,
+        "photon_beam_emittance_stability_gain_pct": 0.0,
+        "srf_cavity_rf_overhead_power_saving_pct": 0.0,
+        "iec61508_sil3_mps_beam_dump_gate_ms": 0.0,
+        "undulator_demagnetization_or_vacuum_breach_escape_pct": 1.7,
+        "epics_pvaccess_detector_edge_triage_ms": 1120.0,
+        "beamline_wan_bandwidth_reduction_pct": 0.0,
+        "srf_lorentz_detuning_trip_pct": 3.6,
+        "accelerator_beam_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -7284,5 +7346,67 @@
       "fusion_tokamak_slo_met": false
     }
   },
-  "trace_sha256": "d3b67c3a3fd4ac58f2ab465919c563a15ca9fd64cc21fb6bb62a0f7612cc6087"
+  "demo_61_particle_accelerator_synchrotron_beam_sandbox": {
+    "beam_12_lines": {
+      "accelerator_beamlines_count": 12,
+      "accelerator_beam_mode": "fofb_srf_microphonics_mpc_sil3_mps_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "srf_cryomodules_and_undulators": 24,
+      "photon_beam_emittance_stability_gain_pct": 42.8,
+      "srf_cavity_rf_overhead_power_saving_pct": 34.5,
+      "iec61508_sil3_mps_beam_dump_gate_ms": 0.05,
+      "undulator_demagnetization_or_vacuum_breach_escape_pct": 0.0,
+      "epics_pvaccess_detector_edge_triage_ms": 1.8,
+      "beamline_wan_bandwidth_reduction_pct": 97.9,
+      "srf_lorentz_detuning_trip_pct": 0.0,
+      "accelerator_beam_slo_met": true
+    },
+    "beam_36_lines": {
+      "accelerator_beamlines_count": 36,
+      "accelerator_beam_mode": "fofb_srf_microphonics_mpc_sil3_mps_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "srf_cryomodules_and_undulators": 72,
+      "photon_beam_emittance_stability_gain_pct": 42.8,
+      "srf_cavity_rf_overhead_power_saving_pct": 34.5,
+      "iec61508_sil3_mps_beam_dump_gate_ms": 0.05,
+      "undulator_demagnetization_or_vacuum_breach_escape_pct": 0.0,
+      "epics_pvaccess_detector_edge_triage_ms": 1.8,
+      "beamline_wan_bandwidth_reduction_pct": 97.9,
+      "srf_lorentz_detuning_trip_pct": 0.0,
+      "accelerator_beam_slo_met": true
+    },
+    "beam_108_lines": {
+      "accelerator_beamlines_count": 108,
+      "accelerator_beam_mode": "fofb_srf_microphonics_mpc_sil3_mps_edge",
+      "gpu_nodes": 12,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "srf_cryomodules_and_undulators": 216,
+      "photon_beam_emittance_stability_gain_pct": 42.8,
+      "srf_cavity_rf_overhead_power_saving_pct": 34.5,
+      "iec61508_sil3_mps_beam_dump_gate_ms": 0.05,
+      "undulator_demagnetization_or_vacuum_breach_escape_pct": 0.0,
+      "epics_pvaccess_detector_edge_triage_ms": 1.8,
+      "beamline_wan_bandwidth_reduction_pct": 97.9,
+      "srf_lorentz_detuning_trip_pct": 0.0,
+      "accelerator_beam_slo_met": true
+    },
+    "raw_beam_36_lines": {
+      "accelerator_beamlines_count": 36,
+      "accelerator_beam_mode": "manual_orbit_correction_unverified_blm_raw_epics",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "srf_cryomodules_and_undulators": 72,
+      "photon_beam_emittance_stability_gain_pct": 0.0,
+      "srf_cavity_rf_overhead_power_saving_pct": 0.0,
+      "iec61508_sil3_mps_beam_dump_gate_ms": 0.0,
+      "undulator_demagnetization_or_vacuum_breach_escape_pct": 1.7,
+      "epics_pvaccess_detector_edge_triage_ms": 1120.0,
+      "beamline_wan_bandwidth_reduction_pct": 0.0,
+      "srf_lorentz_detuning_trip_pct": 3.6,
+      "accelerator_beam_slo_met": false
+    }
+  },
+  "trace_sha256": "a24329960b5068615960b53b4bd782772d38e35373d06b8f5ee0b7a10de9dcdf"
 }

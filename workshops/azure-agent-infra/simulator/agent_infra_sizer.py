@@ -3576,6 +3576,54 @@ def simulate_fusion_tokamak_plasma_quench_sandbox(
     }
 
 
+def simulate_particle_accelerator_synchrotron_beam_sandbox(
+    accelerator_beamlines_count: int = 36,
+    accelerator_beam_mode: str = "fofb_srf_microphonics_mpc_sil3_mps_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Synchrotron Light Source & Free-Electron Laser (XFEL)
+    Fast Orbit Feedback (FOFB), Cryomodule Superconducting RF (SRF) Cavity
+    Microphonics Detuning MPC & IEC 61508 SIL-3 Fast Machine Protection System
+    (MPS) Beam-Dump Interlock Agent Infrastructure (Chapter 66).
+    """
+    if accelerator_beamlines_count <= 0:
+        raise ValueError("accelerator_beamlines_count must be positive")
+    valid_modes = {
+        "fofb_srf_microphonics_mpc_sil3_mps_edge",
+        "manual_orbit_correction_unverified_blm_raw_epics",
+    }
+    if accelerator_beam_mode not in valid_modes:
+        raise ValueError(f"accelerator_beam_mode must be one of {sorted(valid_modes)}")
+
+    governed = accelerator_beam_mode == "fofb_srf_microphonics_mpc_sil3_mps_edge"
+    gpu_nodes = max(2, math.ceil(accelerator_beamlines_count / 9))
+    srf_cryomodules_and_undulators = max(8, int(accelerator_beamlines_count * 2))
+
+    photon_beam_emittance_stability_gain_pct = 42.8 if governed else 0.0
+    srf_cavity_rf_overhead_power_saving_pct = 34.5 if governed else 0.0
+    iec61508_sil3_mps_beam_dump_gate_ms = 0.05 if governed else 0.0
+    undulator_demagnetization_or_vacuum_breach_escape_pct = 0.0 if governed else 1.7
+    epics_pvaccess_detector_edge_triage_ms = 1.8 if governed else 1120.0
+    beamline_wan_bandwidth_reduction_pct = 97.9 if governed else 0.0
+    srf_lorentz_detuning_trip_pct = 0.0 if governed else 3.6
+
+    return {
+        "accelerator_beamlines_count": accelerator_beamlines_count,
+        "accelerator_beam_mode": accelerator_beam_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "srf_cryomodules_and_undulators": srf_cryomodules_and_undulators,
+        "photon_beam_emittance_stability_gain_pct": photon_beam_emittance_stability_gain_pct,
+        "srf_cavity_rf_overhead_power_saving_pct": srf_cavity_rf_overhead_power_saving_pct,
+        "iec61508_sil3_mps_beam_dump_gate_ms": iec61508_sil3_mps_beam_dump_gate_ms,
+        "undulator_demagnetization_or_vacuum_breach_escape_pct": undulator_demagnetization_or_vacuum_breach_escape_pct,
+        "epics_pvaccess_detector_edge_triage_ms": epics_pvaccess_detector_edge_triage_ms,
+        "beamline_wan_bandwidth_reduction_pct": beamline_wan_bandwidth_reduction_pct,
+        "srf_lorentz_detuning_trip_pct": srf_lorentz_detuning_trip_pct,
+        "accelerator_beam_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

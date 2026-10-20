@@ -473,6 +473,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(58)">59. 低碳水泥回转窑 PINN MPC 替代燃料 RDF 协同 + 窑尾醇胺 CCUS 再生寻优与 EN 746-2 CO 防爆池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(59)">60. 吉瓦级绿氢 PEM/碱性电解槽宽负荷跟随 MPC + 哈伯-博施绿氨协同与 ISO 22734 SIL-3 氧中氢防爆池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(60)">61. 托卡马克磁约束核聚变 Grad-Shafranov 撕裂模抑制 + 偏滤器脱靶 MPC 与 SIL-3 破碎弹丸失超保护池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(61)">62. 第四代同步辐射光源与自由电子激光 XFEL 快速轨道反馈 FOFB + 超导腔微音 MPC 与 SIL-3 机器保护池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1851,6 +1852,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 61 · SYNCHROTRON LIGHT SOURCE &amp; XFEL PARTICLE ACCELERATOR FOFB, SRF MICROPHONICS MPC &amp; IEC 61508 SIL-3 MPS SIZER</span>
+    <h2>自主第四代同步辐射光源与自由电子激光 XFEL 快速轨道反馈、超导腔微音 MPC 与 SIL-3 机器保护测算器 (Chapter 66 · Bilingual)</h2>
+    <div class="sub">量化在实验光束线站规模 <code>12 – 108 条</code>（<code>24 – 216 组</code> 超导射频低温模组 <code>SRF Cryomodules</code> 与波荡器 <code>Undulators</code>）下，启用 <code>神经快速轨道反馈 (Neural FOFB) + 压电陶瓷超导腔微音效应与洛伦兹力失谐 MPC</code>（光子束发射度与指向稳定性提升 <code>+42.8%</code>、速调管/固态射频功耗降低 <code>34.5%</code>、超导腔失谐掉束率 <code>0.0%</code>）、<code>IEC 61508 SIL-3</code> 切伦科夫光纤束损监测 <code>BLM</code> 与快速踢束器 <code>Beam-Dump</code> 硬件互锁（<code>0.05 ms</code> 校验，<code>0.0%</code> 永磁波荡器辐照退磁与超高真空束管击穿逃逸）以及线站实验棚屋 <code>Azure IoT Operations</code> <code>EPICS pvAccess</code> 二维探测器实时寻峰边缘分诊（<code>1.8 ms</code> 响应，削减 <code>97.9%</code> 广域网带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 同步辐射 / XFEL 实验光束线站数量 (Experimental Beamlines Count): <strong id="lbl_acc_lines" style="color:var(--teal)">36</strong> Beamlines</label>
+          <input type="range" id="rng_acc_lines" min="9" max="108" step="9" value="36" oninput="runParticleAcceleratorLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 快速轨道反馈、超导射频腔失谐补偿与 SIL-3 机器保护模式 (Accelerator Beam &amp; MPS Safety Mode)</label>
+          <select id="sel_acc_mode" onchange="runParticleAcceleratorLab()">
+            <option value="fofb_srf_microphonics_mpc_sil3_mps_edge" selected>神经 FOFB + 超导腔压电 MPC (+42.8% 束流稳定 / -34.5% 射频功耗) + SIL-3 快踢束互锁 (0% 退磁) + EPICS 边缘 (推荐)</option>
+            <option value="manual_orbit_correction_unverified_blm_raw_epics">传统反模式：人工 SVD 调束 (0 增益) + 无快踢束互锁 (1.7% 波荡器退磁/破真空) + 原始探测器流上云 (3.6% 超导腔掉束)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="accOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2926,6 +2949,22 @@ resource fusionTokamakPool 'Microsoft.ContainerService/managedClusters/agentPool
       'aksclaw.io/mirnov-thomson-diagnostics-edge': 'enabled-2.5ms-97.6pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// Blueprint #62: AKSClaw Synchrotron Light Source & XFEL Particle Accelerator
+// Fast Orbit Feedback, SRF Cryomodule Microphonics MPC & IEC 61508 SIL-3 MPS Beam-Dump Pool
+resource acceleratorBeamPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'xfelbeam'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'particle-accelerator-synchrotron-beam-agent'
+      'aksclaw.io/fofb-srf-microphonics-mpc': 'enabled-42.8pct-emittance-stability-34.5pct-rf-power-cut'
+      'aksclaw.io/iec61508-sil3-mps-beam-dump': 'enforced-0.05ms-blm-kicker-zero-undulator-demagnetization'
+      'aksclaw.io/epics-pvaccess-xray-detector-edge': 'enabled-1.8ms-97.9pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -3087,6 +3126,30 @@ runSteelmakingEafLab();
 runCementKilnLab();
 runGreenHydrogenLab();
 runFusionTokamakLab();
+runParticleAcceleratorLab();
+
+function runParticleAcceleratorLab() {
+  const lines = parseInt(document.getElementById('rng_acc_lines').value, 10);
+  const mode = document.getElementById('sel_acc_mode').value;
+  document.getElementById('lbl_acc_lines').textContent = lines.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(lines / 9));
+  const modules = Math.max(8, lines * 2);
+  const ok = mode === 'fofb_srf_microphonics_mpc_sil3_mps_edge';
+  const fofbStr = ok ? "神经 FOFB + 超导腔压电 MPC · 光子束稳定性 +42.8% · 射频功耗 -34.5%" : "人工 SVD 调束 · 0.0% 稳定性与射频节能增益 (磁隙耦合漂移与 3.6% 超导腔失谐掉束)";
+  const mpsStr = ok ? "0.05 ms (50 µs) IEC 61508 SIL-3 光纤束损 BLM 与快踢束器互锁 · 0.0% 退磁/破真空" : "无 SIL-3 快踢束互锁 · 1.7% 波荡器辐照退磁与超高真空束管击穿风险";
+  const edgeStr = ok ? "1.8 ms 线站 EPICS pvAccess 2kHz 探测器 BraggNN 边缘寻峰 (-97.9% 广域网带宽) · 0.0% 掉束" : "1,120.0 ms 原始探测器流上云 · 空白帧拥塞科研网且错过微音失谐前馈窗口";
+
+  document.getElementById('accOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + fofbStr : '❌ 1.7% 波荡器退磁/超高真空束管击穿风险 · 3.6% 超导射频腔洛伦兹失谐掉束'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${modules} 组 SRF 模组/波荡器 · ${mpsStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>实验线站 Azure IoT Operations EPICS pvAccess 二维探测器 BraggNN 边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runFusionTokamakLab() {
   const mw = parseInt(document.getElementById('rng_fus_mw').value, 10);

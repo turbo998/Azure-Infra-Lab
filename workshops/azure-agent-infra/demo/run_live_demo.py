@@ -80,6 +80,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_cement_kiln_ccus_pyro_sandbox,
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_fusion_tokamak_plasma_quench_sandbox,
+    simulate_particle_accelerator_synchrotron_beam_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -593,6 +594,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "fusion_500_mw": simulate_fusion_tokamak_plasma_quench_sandbox(500, "grad_shafranov_mhd_detachment_sil3_spi_edge"),
             "fusion_2000_mw": simulate_fusion_tokamak_plasma_quench_sandbox(2000, "grad_shafranov_mhd_detachment_sil3_spi_edge"),
             "raw_fusion_500_mw": simulate_fusion_tokamak_plasma_quench_sandbox(500, "open_loop_pid_unmitigated_disruption_raw_mirnov"),
+        },
+        "demo_61_particle_accelerator_synchrotron_beam_sandbox": {
+            "beam_12_lines": simulate_particle_accelerator_synchrotron_beam_sandbox(12, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
+            "beam_36_lines": simulate_particle_accelerator_synchrotron_beam_sandbox(36, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
+            "beam_108_lines": simulate_particle_accelerator_synchrotron_beam_sandbox(108, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
+            "raw_beam_36_lines": simulate_particle_accelerator_synchrotron_beam_sandbox(36, "manual_orbit_correction_unverified_blm_raw_epics"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
