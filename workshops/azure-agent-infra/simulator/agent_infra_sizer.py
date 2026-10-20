@@ -4011,6 +4011,55 @@ def simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox(
     }
 
 
+def simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(
+    hvdc_mmc_converter_bipoles: int = 8,
+    hvdc_governance_mode: str = "mmc_gfm_dcr_cigre_sil3_dccb_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Multi-Terminal HVDC (MTDC / MMC-HVDC) Subsea
+    Interconnector, Grid-Forming Virtual Synchronous Machine (GFM-VSM) Control,
+    Dynamic Submarine Cable Thermal Rating (DCR) & CIGRE TB 496 / ENTSO-E NC
+    HVDC / IEC 61508 SIL-3 Hybrid DC Circuit Breaker (DCCB) & Anchor-Strike
+    (DAS/DTS) Protection Agent Infrastructure (Chapter 75).
+    """
+    if hvdc_mmc_converter_bipoles <= 0:
+        raise ValueError("hvdc_mmc_converter_bipoles must be positive")
+    valid_modes = {
+        "mmc_gfm_dcr_cigre_sil3_dccb_edge",
+        "static_cable_rating_unblocked_mmc_cloud_loop",
+    }
+    if hvdc_governance_mode not in valid_modes:
+        raise ValueError(f"hvdc_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = hvdc_governance_mode == "mmc_gfm_dcr_cigre_sil3_dccb_edge"
+    gpu_nodes = max(2, math.ceil(hvdc_mmc_converter_bipoles / 4))
+    active_hvdc_subsea_corridors = max(2, int(hvdc_mmc_converter_bipoles // 2))
+
+    dcr_submarine_cable_ampacity_gain_pct = 19.6 if governed else 0.0
+    mmc_igbt_switching_loss_reduction_pct = 26.4 if governed else 0.0
+    sil3_dccb_anchor_strike_interlock_ms = 1.1 if governed else 1280.0
+    dc_pole_fault_xlpe_overtemp_breach_pct = 0.0 if governed else 1.5
+    azure_local_das_sv_edge_latency_ms = 3.3 if governed else 1360.0
+    wan_bandwidth_reduction_pct = 98.3 if governed else 0.0
+    das_anchor_strike_false_clearance_pct = 0.0 if governed else 2.9
+
+    return {
+        "hvdc_mmc_converter_bipoles": hvdc_mmc_converter_bipoles,
+        "hvdc_governance_mode": hvdc_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_hvdc_subsea_corridors": active_hvdc_subsea_corridors,
+        "dcr_submarine_cable_ampacity_gain_pct": dcr_submarine_cable_ampacity_gain_pct,
+        "mmc_igbt_switching_loss_reduction_pct": mmc_igbt_switching_loss_reduction_pct,
+        "sil3_dccb_anchor_strike_interlock_ms": sil3_dccb_anchor_strike_interlock_ms,
+        "dc_pole_fault_xlpe_overtemp_breach_pct": dc_pole_fault_xlpe_overtemp_breach_pct,
+        "azure_local_das_sv_edge_latency_ms": azure_local_das_sv_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "das_anchor_strike_false_clearance_pct": das_anchor_strike_false_clearance_pct,
+        "hvdc_subsea_interconnector_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

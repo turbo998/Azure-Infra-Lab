@@ -76,6 +76,7 @@ from agent_infra_sizer import (
     simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
     simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
     simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
+    simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -199,6 +200,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep",
             "aksclaw-aerospace-composite-autoclave-ndt-sil3-pool.bicep",
             "aksclaw-lng-cryogenic-c3mr-bog-sil3-esd-pool.bicep",
+            "aksclaw-hvdc-subsea-interconnector-mmc-dcr-sil3-dccb-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1299,6 +1301,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["cryogenic_cold_spot_or_ogi_false_clearance_pct"], 3.0)
         self.assertTrue(gov["lng_cryogenic_slo_met"])
         self.assertFalse(raw["lng_cryogenic_slo_met"])
+
+    def test_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(self) -> None:
+        gov = simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(8, "mmc_gfm_dcr_cigre_sil3_dccb_edge")
+        raw = simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(8, "static_cable_rating_unblocked_mmc_cloud_loop")
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_hvdc_subsea_corridors"], 4)
+        self.assertEqual(gov["dcr_submarine_cable_ampacity_gain_pct"], 19.6)
+        self.assertEqual(gov["mmc_igbt_switching_loss_reduction_pct"], 26.4)
+        self.assertEqual(gov["sil3_dccb_anchor_strike_interlock_ms"], 1.1)
+        self.assertEqual(gov["dc_pole_fault_xlpe_overtemp_breach_pct"], 0.0)
+        self.assertGreater(raw["dc_pole_fault_xlpe_overtemp_breach_pct"], 1.4)
+        self.assertEqual(gov["azure_local_das_sv_edge_latency_ms"], 3.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.3)
+        self.assertEqual(gov["das_anchor_strike_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["das_anchor_strike_false_clearance_pct"], 2.8)
+        self.assertTrue(gov["hvdc_subsea_interconnector_slo_met"])
+        self.assertFalse(raw["hvdc_subsea_interconnector_slo_met"])
 
 
 if __name__ == "__main__":

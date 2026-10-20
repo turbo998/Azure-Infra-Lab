@@ -482,6 +482,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(67)">68. 石化炼油流化催化裂化 FCC 反再烧焦 MPC + 在线 Raman 辛烷值软测量与 API RP 554 / SIL-3 滑阀防倒流联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(68)">69. 航空航天复合材料热压罐固化 PINN-MPC + 自动铺丝 AFP 热成像与相控阵超声 PAUT 及 NADCAP / SIL-3 防放热联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(69)">70. 液化天然气 LNG 丙烷预冷混合冷剂 C3MR 夹点 MPC + BOG 压缩机防喘振与低温储罐防翻滚及 NFPA 59A / SIL-3 紧急停车联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(70)">71. 跨海多端柔性直流 MMC-HVDC 换流站 + 海缆动态增容 DCR PINN-MPC 与 CIGRE TB 496 / SIL-3 混合直流断路器 DCCB 联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2058,6 +2059,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-blue">TOOL 70 · SUBSEA MULTI-TERMINAL MMC-HVDC INTERCONNECTOR, GFM-VSM CONTROL, DYNAMIC CABLE RATING (DCR) &amp; CIGRE TB 496 / SIL-3 HYBRID DCCB SIZER</span>
+    <h2>自主跨海多端柔性直流输电（MTDC / MMC-HVDC）、构网型虚拟同步机（GFM-VSM）控制、海底电缆动态增容（DCR）与 CIGRE TB 496 / ENTSO-E NC HVDC / IEC 61508 SIL-3 混合直流断路器（DCCB）联锁测算器 (Chapter 75 · Bilingual)</h2>
+    <div class="sub">量化在 ±525 kV 双极模块化多电平换流站（MMC-HVDC）与跨海输电走廊规模 <code>4 – 32 换流站</code>（<code>2 – 16 条</code> 吉瓦级深远海风电并网与跨国海底直流互联走廊）下，启用 <code>IEC 60287 海床掩埋深度电热 PINN + 多端 MMC 二倍频环流抑制与构网型虚拟同步机 (GFM-VSM) MPC</code>（海底 XLPE 直流电缆动态载流量 DCR 与跨海新能源消纳裕度提升 <code>+19.6%</code>、MMC 换流阀 IGBT 子模块开关与环流损耗降低 <code>-26.4%</code>、商船走锚/渔船拖网撞击海缆误放行率 <code>0.0%</code>）、<code>CIGRE TB 496 / ENTSO-E NC HVDC 与 IEC 61508 SIL-3 混合高压直流断路器 (Hybrid DCCB &lt;= 2.5 ms 故障切除)、XLPE 导体最高温度 (&lt;= 70 °C) 及防拖锚主动降功率硬联锁</code>（<code>1.1 ms</code> 校验，<code>0.0%</code> 直流极间短路故障扩大与 XLPE 绝缘超温击穿违例）以及换流站 <code>Azure Local + IoT Operations</code> <code>50 kHz 光纤分布式声波/测温 (DAS/DTS) 与 14.4 kHz IEC 61850-9-2LE 采样值 (SV)</code> 边缘推理（<code>3.3 ms</code> 响应，削减 <code>98.3%</code> 电力通信广域网回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. ±525 kV 双极 MMC-HVDC 换流站与海缆终端回路数 (MMC-HVDC Converter Bipoles): <strong id="lbl_hvdc_bipoles" style="color:var(--teal)">8</strong> Bipoles</label>
+          <input type="range" id="rng_hvdc_bipoles" min="4" max="32" step="4" value="8" oninput="runHvdcSubseaLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 海缆电热 DCR PINN-MPC、构网型 GFM-VSM 与 CIGRE / SIL-3 DCCB 联锁模式 (MMC-HVDC Subsea Governance Mode)</label>
+          <select id="sel_hvdc_mode" onchange="runHvdcSubseaLab()">
+            <option value="mmc_gfm_dcr_cigre_sil3_dccb_edge" selected>IEC 60287 DCR PINN + GFM-VSM MPC (+19.6% 载流量 / -26.4% 阀损耗) + SIL-3 DCCB/70°C 联锁 (0% 击穿) + DAS/SV 边缘 (推荐)</option>
+            <option value="static_cable_rating_unblocked_mmc_cloud_loop">传统反模式：静态保守海缆定额 (0 增益) + 无 SIL-3 混合直流断路器/超温硬门控 (1.5% 直流故障扩大/XLPE 超温) + 原始 DAS/SV 流上云 (2.9% 拖锚漏报)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="hvdcOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3285,6 +3308,23 @@ resource lngCryogenicSil3Pool 'Microsoft.ContainerService/managedClusters/agentP
       'aksclaw.io/raman-dts-mwir-ogi-cryogenic-edge': 'enabled-3.5ms-97.9pct-terminal-wan-cut'
     }
   }
+}`,
+`// =============================================================================
+// 71. AKSClaw Subsea Multi-Terminal MMC-HVDC Interconnector, DCR & SIL-3 DCCB Pool (Bicep)
+// =============================================================================
+resource hvdcMmcDcrSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'hvdcdcrpool'
+  properties: {
+    count: 2
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'hvdc-subsea-interconnector-mmc-dcr-sil3-dccb-agent'
+      'aksclaw.io/iec60287-dcr-pinn-mmc-gfm-mpc': 'enabled-19.6pct-cable-ampacity-26.4pct-igbt-loss-cut'
+      'aksclaw.io/cigre-tb496-sil3-hybrid-dccb-70C': 'enforced-1.1ms-zero-dc-fault-or-xlpe-overtemp-breach'
+      'aksclaw.io/subsea-das-dts-iec61850-sv-edge': 'enabled-3.3ms-98.3pct-grid-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3455,6 +3495,30 @@ runTbmTunnelLab();
 runPetroFccLab();
 runAeroCompositeLab();
 runLngCryogenicLab();
+runHvdcSubseaLab();
+
+function runHvdcSubseaLab() {
+  const bipoles = parseInt(document.getElementById('rng_hvdc_bipoles').value, 10);
+  const mode = document.getElementById('sel_hvdc_mode').value;
+  document.getElementById('lbl_hvdc_bipoles').textContent = bipoles.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(bipoles / 4));
+  const corridors = Math.max(2, Math.floor(bipoles / 2));
+  const ok = mode === 'mmc_gfm_dcr_cigre_sil3_dccb_edge';
+  const mpcStr = ok ? "IEC 60287 海缆电热 PINN + 构网型 MMC-GFM MPC · 海缆动态载流量 (DCR) +19.6% · MMC IGBT 子模块开关与环流损耗 -26.4%" : "静态保守季节载流量定额 · 0.0% 跨海送电增容与降损增益 (大风期新能源受阻弃电且 2.9% 商船走锚或拖网刮伤海缆误放行)";
+  const sil3Str = ok ? "1.1 ms CIGRE TB 496 / ENTSO-E / SIL-3 混合直流断路器 (DCCB <=2.5ms) 与 XLPE (<=70°C) 联锁 · 0.0% 直流短路扩大/超温击穿" : "无 SIL-3 混合直流断路器与海缆热点硬联锁 (1,280.0 ms 云端滞后) · 1.5% 直流极间故障烧毁 IGBT 与深埋沙波段 XLPE >70°C 热击穿风险";
+  const edgeStr = ok ? "3.3 ms 换流站 Azure Local 50 kHz 光纤分布式声波/测温 (DAS/DTS) 与 14.4 kHz 采样值 (SV) 边缘推理 (-98.3% 电力广域网带宽) · 0.0% 漏报" : "1,360.0 ms 原始 50kHz 光纤散射与 14.4kHz 采样值流全量上云 · 拥塞电力调度专网且错过船锚拖拽海缆早期主动降功率窗口";
+
+  document.getElementById('hvdcOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 直流极间故障扩大/XLPE >70°C 超温风险 · 2.9% 商船走锚或拖网刮伤海缆漏报'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${corridors} 条 ±525kV 跨海直流走廊 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>换流站与登陆站 Azure Local + IoT Operations 50kHz 光纤 DAS/DTS 与 IEC 61850-9-2LE 采样值边缘推理</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runLngCryogenicLab() {
   const trains = parseInt(document.getElementById('rng_lng_trains').value, 10);

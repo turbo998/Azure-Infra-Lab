@@ -4226,5 +4226,67 @@
       "cryogenic_cold_spot_or_ogi_false_clearance_pct": 3.1,
       "lng_cryogenic_slo_met": false
     }
+  ],
+  "hvdc_subsea_interconnector_profiles": [
+    {
+      "hvdc_mmc_converter_bipoles": 4,
+      "hvdc_governance_mode": "mmc_gfm_dcr_cigre_sil3_dccb_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hvdc_subsea_corridors": 2,
+      "dcr_submarine_cable_ampacity_gain_pct": 19.6,
+      "mmc_igbt_switching_loss_reduction_pct": 26.4,
+      "sil3_dccb_anchor_strike_interlock_ms": 1.1,
+      "dc_pole_fault_xlpe_overtemp_breach_pct": 0.0,
+      "azure_local_das_sv_edge_latency_ms": 3.3,
+      "wan_bandwidth_reduction_pct": 98.3,
+      "das_anchor_strike_false_clearance_pct": 0.0,
+      "hvdc_subsea_interconnector_slo_met": true
+    },
+    {
+      "hvdc_mmc_converter_bipoles": 8,
+      "hvdc_governance_mode": "mmc_gfm_dcr_cigre_sil3_dccb_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hvdc_subsea_corridors": 4,
+      "dcr_submarine_cable_ampacity_gain_pct": 19.6,
+      "mmc_igbt_switching_loss_reduction_pct": 26.4,
+      "sil3_dccb_anchor_strike_interlock_ms": 1.1,
+      "dc_pole_fault_xlpe_overtemp_breach_pct": 0.0,
+      "azure_local_das_sv_edge_latency_ms": 3.3,
+      "wan_bandwidth_reduction_pct": 98.3,
+      "das_anchor_strike_false_clearance_pct": 0.0,
+      "hvdc_subsea_interconnector_slo_met": true
+    },
+    {
+      "hvdc_mmc_converter_bipoles": 32,
+      "hvdc_governance_mode": "mmc_gfm_dcr_cigre_sil3_dccb_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hvdc_subsea_corridors": 16,
+      "dcr_submarine_cable_ampacity_gain_pct": 19.6,
+      "mmc_igbt_switching_loss_reduction_pct": 26.4,
+      "sil3_dccb_anchor_strike_interlock_ms": 1.1,
+      "dc_pole_fault_xlpe_overtemp_breach_pct": 0.0,
+      "azure_local_das_sv_edge_latency_ms": 3.3,
+      "wan_bandwidth_reduction_pct": 98.3,
+      "das_anchor_strike_false_clearance_pct": 0.0,
+      "hvdc_subsea_interconnector_slo_met": true
+    },
+    {
+      "hvdc_mmc_converter_bipoles": 8,
+      "hvdc_governance_mode": "static_cable_rating_unblocked_mmc_cloud_loop",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hvdc_subsea_corridors": 4,
+      "dcr_submarine_cable_ampacity_gain_pct": 0.0,
+      "mmc_igbt_switching_loss_reduction_pct": 0.0,
+      "sil3_dccb_anchor_strike_interlock_ms": 1280.0,
+      "dc_pole_fault_xlpe_overtemp_breach_pct": 1.5,
+      "azure_local_das_sv_edge_latency_ms": 1360.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "das_anchor_strike_false_clearance_pct": 2.9,
+      "hvdc_subsea_interconnector_slo_met": false
+    }
   ]
 }

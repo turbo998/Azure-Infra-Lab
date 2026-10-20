@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #69 · **75 Chapters** · **70 IaC Blueprints** · **69 Quantitative Physics Simulators** · **78/78 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 75-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #70 · **76 Chapters** · **71 IaC Blueprints** · **70 Quantitative Physics Simulators** · **79/79 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 76-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 69 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [78-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 70 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [79-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -163,6 +163,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **72** | **Petrochemical Refinery Fluid Catalytic Cracking `FCC` (`Coupled Riser/Regenerator MPC` + `Online NIR/Raman RON` Soft-Sensor + `API RP 554 / SIL-3` Slide-Valve $\Delta P \ge 15\text{ kPa}$ ESD + `Chemometrics` Edge)** | `simulate_petrochemical_fcc_refinery_sil3_esd_sandbox()` | `aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep` | **`+18.7%` gasoline/olefin yield & `-31.4%` afterburn**, **`0.0%` catalyst reversal or cyclone overtemp (`1.6 ms` SIL-3 ESD)**, **`3.8 ms` Raman edge (`97.6%` WAN cut)** |
 | **73** | **Aerospace Composite Autoclave Curing, `AFP` Laser Thermography & `PAUT` NDT (`Kamal-Sourour Cure PINN-MPC` + `NADCAP AC7118 / AMS2750G / SIL-3` Exotherm/Vacuum Gate + `PAUT FMC/TFM` Edge)** | `simulate_aerospace_composite_autoclave_ndt_sil3_sandbox()` | `aksclaw-aerospace-composite-autoclave-ndt-sil3-pool.bicep` | **`+23.4%` cure uniformity/porosity reduction & `-26.8%` N2/cure energy**, **`0.0%` exotherm runaway or vacuum breach (`1.8 ms` SIL-3)**, **`3.9 ms` PAUT/AFP edge (`97.7%` WAN cut)** |
 | **74** | **LNG Liquefaction Train `C3MR`, `BOG` Compressor Anti-Surge & Cryogenic Tank Rollover (`Peng-Robinson EOS PINN-MPC` + `NFPA 59A / SIGTTO / SIL-3` Anti-Surge & `PERC` ESD + `Raman DTS / MWIR OGI` Edge)** | `simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox()` | `aksclaw-lng-cryogenic-c3mr-bog-sil3-esd-pool.bicep` | **`+21.8%` MCHE liquefaction yield & `-24.2%` specific compressor power**, **`0.0%` surge or tank rollover breach (`1.2 ms` SIL-3 ESD)**, **`3.5 ms` DTS/OGI edge (`97.9%` WAN cut)** |
+| **75** | **Subsea Multi-Terminal `MMC-HVDC` Interconnector, `GFM-VSM` Control & Dynamic Cable Rating `DCR` (`IEC 60287 Electro-Thermal PINN-MPC` + `CIGRE TB 496 / SIL-3` Hybrid `DCCB` & Anchor-Strike Gate + `DAS/DTS + SV` Edge)** | `simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox()` | `aksclaw-hvdc-subsea-interconnector-mmc-dcr-sil3-dccb-pool.bicep` | **`+19.6%` subsea cable ampacity & `-26.4%` MMC IGBT switching loss**, **`0.0%` DC fault or `XLPE >70 °C` breach (`1.1 ms` SIL-3 DCCB)**, **`3.3 ms` DAS/SV edge (`98.3%` WAN cut)** |
 
 ---
 
@@ -172,10 +173,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 69 quantitative engineering & physics simulators (Chapters 7–74)
+# 2. Run all 70 quantitative engineering & physics simulators (Chapters 7–75)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 78 unit tests (100% pass across 6 runtimes, 69 physics models, 70 blueprints & links)
+# 3. Execute all 79 unit tests (100% pass across 6 runtimes, 70 physics models, 71 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)
