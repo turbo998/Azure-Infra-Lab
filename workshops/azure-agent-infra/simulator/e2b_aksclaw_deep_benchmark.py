@@ -89,6 +89,7 @@ from agent_infra_sizer import (
     simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
     simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
     simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
+    simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -781,6 +782,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(32, "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"),
         simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(8, "static_lookup_mwpm_cloud_cryostat"),
     ]
+    leo_megaconstellation_oisl_profiles: List[Dict[str, object]] = [
+        simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(12, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
+        simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(24, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
+        simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(96, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
+        simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(24, "static_tle_ground_schedule_cloud_loop"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -858,6 +865,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "euv_lithography_scanner_profiles": euv_lithography_scanner_profiles,
         "saf_ptl_fischer_tropsch_profiles": saf_ptl_fischer_tropsch_profiles,
         "quantum_superconducting_qec_profiles": quantum_superconducting_qec_profiles,
+        "leo_megaconstellation_oisl_profiles": leo_megaconstellation_oisl_profiles,
     }
 
 

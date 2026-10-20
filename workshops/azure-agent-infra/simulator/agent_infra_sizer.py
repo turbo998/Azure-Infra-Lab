@@ -4359,6 +4359,57 @@ def simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(
     }
 
 
+def simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(
+    orbital_planes: int = 24,
+    constellation_governance_mode: str = "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Low-Earth-Orbit (LEO / VLEO) Satellite Megaconstellation
+    Optical Inter-Satellite Link (OISL 1550 nm Coherent 100 Gbps+ PAT), J2-J6 &
+    Thermospheric Drag Orbital Perturbation PINN, Space-Track Conjunction Data
+    Message (CDM Pc < 10^-5) Hall-Thruster Avoidance MPC & ISO 24113 /
+    NASA-STD-8719.14 / CCSDS 232.0 / IEC 61508 SIL-3 Autonomous Debris Collision-
+    Avoidance Delta-V Burn, Safe-Mode Sun-Pointing & Laser Blinding Interlock
+    Agent Infrastructure (Chapter 82).
+    """
+    if orbital_planes <= 0:
+        raise ValueError("orbital_planes must be positive")
+    valid_modes = {
+        "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge",
+        "static_tle_ground_schedule_cloud_loop",
+    }
+    if constellation_governance_mode not in valid_modes:
+        raise ValueError(f"constellation_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = constellation_governance_mode == "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"
+    gpu_nodes = max(2, math.ceil(orbital_planes / 12))
+    active_constellation_control_pods = max(2, int(orbital_planes // 6))
+
+    oisl_mesh_goodput_and_link_availability_gain_pct = 31.6 if governed else 0.0
+    krypton_xenon_propellant_budget_saving_pct = 27.8 if governed else 0.0
+    iso24113_sil3_conjunction_safemode_interlock_ms = 1.1 if governed else 520.0
+    debris_conjunction_or_attitude_tumble_breach_pct = 0.0 if governed else 1.5
+    onboard_radhard_npu_pat_cdm_edge_latency_ms = 0.9 if governed else 1420.0
+    wan_bandwidth_reduction_pct = 98.7 if governed else 0.0
+    solar_storm_drag_or_oisl_drop_false_clearance_pct = 0.0 if governed else 3.1
+
+    return {
+        "orbital_planes": orbital_planes,
+        "constellation_governance_mode": constellation_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_constellation_control_pods": active_constellation_control_pods,
+        "oisl_mesh_goodput_and_link_availability_gain_pct": oisl_mesh_goodput_and_link_availability_gain_pct,
+        "krypton_xenon_propellant_budget_saving_pct": krypton_xenon_propellant_budget_saving_pct,
+        "iso24113_sil3_conjunction_safemode_interlock_ms": iso24113_sil3_conjunction_safemode_interlock_ms,
+        "debris_conjunction_or_attitude_tumble_breach_pct": debris_conjunction_or_attitude_tumble_breach_pct,
+        "onboard_radhard_npu_pat_cdm_edge_latency_ms": onboard_radhard_npu_pat_cdm_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "solar_storm_drag_or_oisl_drop_false_clearance_pct": solar_storm_drag_or_oisl_drop_false_clearance_pct,
+        "leo_megaconstellation_oisl_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

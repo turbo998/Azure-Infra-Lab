@@ -83,6 +83,7 @@ from agent_infra_sizer import (
     simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
     simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
     simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
+    simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -213,6 +214,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-euv-lithography-scanner-lpp-overlay-semi-s2-sil3-pool.bicep",
             "aksclaw-saf-ptl-fischer-tropsch-rwgs-astm-d7566-sil3-pool.bicep",
             "aksclaw-quantum-superconducting-qec-cryo-dilution-sil3-pool.bicep",
+            "aksclaw-leo-megaconstellation-oisl-conjunction-iso24113-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1448,6 +1450,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct"], 3.0)
         self.assertTrue(gov["quantum_superconducting_qec_slo_met"])
         self.assertFalse(raw["quantum_superconducting_qec_slo_met"])
+
+    def test_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(self) -> None:
+        gov = simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(
+            24, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"
+        )
+        raw = simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(
+            24, "static_tle_ground_schedule_cloud_loop"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_constellation_control_pods"], 4)
+        self.assertEqual(gov["oisl_mesh_goodput_and_link_availability_gain_pct"], 31.6)
+        self.assertEqual(gov["krypton_xenon_propellant_budget_saving_pct"], 27.8)
+        self.assertEqual(gov["iso24113_sil3_conjunction_safemode_interlock_ms"], 1.1)
+        self.assertEqual(gov["debris_conjunction_or_attitude_tumble_breach_pct"], 0.0)
+        self.assertGreater(raw["debris_conjunction_or_attitude_tumble_breach_pct"], 1.4)
+        self.assertEqual(gov["onboard_radhard_npu_pat_cdm_edge_latency_ms"], 0.9)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.7)
+        self.assertEqual(gov["solar_storm_drag_or_oisl_drop_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["solar_storm_drag_or_oisl_drop_false_clearance_pct"], 2.9)
+        self.assertTrue(gov["leo_megaconstellation_oisl_slo_met"])
+        self.assertFalse(raw["leo_megaconstellation_oisl_slo_met"])
 
 
 if __name__ == "__main__":

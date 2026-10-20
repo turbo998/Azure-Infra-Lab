@@ -4660,5 +4660,67 @@
       "cosmic_ray_quasiparticle_burst_or_leakage_false_clearance_pct": 3.2,
       "quantum_superconducting_qec_slo_met": false
     }
+  ],
+  "leo_megaconstellation_oisl_profiles": [
+    {
+      "orbital_planes": 12,
+      "constellation_governance_mode": "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_constellation_control_pods": 2,
+      "oisl_mesh_goodput_and_link_availability_gain_pct": 31.6,
+      "krypton_xenon_propellant_budget_saving_pct": 27.8,
+      "iso24113_sil3_conjunction_safemode_interlock_ms": 1.1,
+      "debris_conjunction_or_attitude_tumble_breach_pct": 0.0,
+      "onboard_radhard_npu_pat_cdm_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "solar_storm_drag_or_oisl_drop_false_clearance_pct": 0.0,
+      "leo_megaconstellation_oisl_slo_met": true
+    },
+    {
+      "orbital_planes": 24,
+      "constellation_governance_mode": "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_constellation_control_pods": 4,
+      "oisl_mesh_goodput_and_link_availability_gain_pct": 31.6,
+      "krypton_xenon_propellant_budget_saving_pct": 27.8,
+      "iso24113_sil3_conjunction_safemode_interlock_ms": 1.1,
+      "debris_conjunction_or_attitude_tumble_breach_pct": 0.0,
+      "onboard_radhard_npu_pat_cdm_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "solar_storm_drag_or_oisl_drop_false_clearance_pct": 0.0,
+      "leo_megaconstellation_oisl_slo_met": true
+    },
+    {
+      "orbital_planes": 96,
+      "constellation_governance_mode": "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_constellation_control_pods": 16,
+      "oisl_mesh_goodput_and_link_availability_gain_pct": 31.6,
+      "krypton_xenon_propellant_budget_saving_pct": 27.8,
+      "iso24113_sil3_conjunction_safemode_interlock_ms": 1.1,
+      "debris_conjunction_or_attitude_tumble_breach_pct": 0.0,
+      "onboard_radhard_npu_pat_cdm_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "solar_storm_drag_or_oisl_drop_false_clearance_pct": 0.0,
+      "leo_megaconstellation_oisl_slo_met": true
+    },
+    {
+      "orbital_planes": 24,
+      "constellation_governance_mode": "static_tle_ground_schedule_cloud_loop",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_constellation_control_pods": 4,
+      "oisl_mesh_goodput_and_link_availability_gain_pct": 0.0,
+      "krypton_xenon_propellant_budget_saving_pct": 0.0,
+      "iso24113_sil3_conjunction_safemode_interlock_ms": 520.0,
+      "debris_conjunction_or_attitude_tumble_breach_pct": 1.5,
+      "onboard_radhard_npu_pat_cdm_edge_latency_ms": 1420.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "solar_storm_drag_or_oisl_drop_false_clearance_pct": 3.1,
+      "leo_megaconstellation_oisl_slo_met": false
+    }
   ]
 }

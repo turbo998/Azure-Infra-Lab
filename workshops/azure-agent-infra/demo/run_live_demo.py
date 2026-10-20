@@ -96,6 +96,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_euv_lithography_scanner_lpp_overlay_semi_s2_sil3_sandbox,
     simulate_saf_ptl_fischer_tropsch_rwgs_astm_d7566_sil3_sandbox,
     simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox,
+    simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -705,6 +706,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "qec_8_cryostats": simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(8, "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"),
             "qec_32_cryostats": simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(32, "surface_code_neural_bp_pinn_drag_mpc_asme_sil3_edge"),
             "raw_qec_8_cryostats": simulate_quantum_superconducting_qec_cryo_dilution_sil3_sandbox(8, "static_lookup_mwpm_cloud_cryostat"),
+        },
+        "demo_77_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox": {
+            "leo_12_planes": simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(12, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
+            "leo_24_planes": simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(24, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
+            "leo_96_planes": simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(96, "j2j6_orbital_pinn_oisl_pat_mpc_iso24113_sil3_edge"),
+            "raw_leo_24_planes": simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox(24, "static_tle_ground_schedule_cloud_loop"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
