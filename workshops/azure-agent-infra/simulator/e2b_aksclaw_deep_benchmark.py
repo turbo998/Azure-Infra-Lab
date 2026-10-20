@@ -58,6 +58,7 @@ from agent_infra_sizer import (
     simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
+    simulate_smart_building_ashrae_nfpa72_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
@@ -597,6 +598,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_mining_ahs_iso21815_sandbox(120, "fixed_shift_dispatch_unchecked_collision_raw_radar"),
     ]
 
+    smart_building_ashrae_profiles: List[Dict[str, object]] = [
+        simulate_smart_building_ashrae_nfpa72_sandbox(125, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
+        simulate_smart_building_ashrae_nfpa72_sandbox(500, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
+        simulate_smart_building_ashrae_nfpa72_sandbox(2_000, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
+        simulate_smart_building_ashrae_nfpa72_sandbox(500, "static_schedule_unchecked_co2_unisolated_bacnet"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -647,6 +655,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "maritime_port_colregs_profiles": maritime_port_colregs_profiles,
         "rail_ertms_sil4_profiles": rail_ertms_sil4_profiles,
         "mining_ahs_iso21815_profiles": mining_ahs_iso21815_profiles,
+        "smart_building_ashrae_profiles": smart_building_ashrae_profiles,
     }
 
 

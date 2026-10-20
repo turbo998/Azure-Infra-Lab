@@ -463,6 +463,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(48)">49. 海事港口 AIS/VTS 遥测 + STS/ARMG 岸桥 cuOpt 配载 + IMO GM 稳性与 COLREGs 避碰池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(49)">50. 高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排 + EN 50129 SIL-4 制动门控与轨旁 TADS 边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(50)">51. 自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度 + ISO 21815 Level 9 防碰撞互锁与边坡雷达 SSR 边缘池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(51)">52. 智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优 + ASHRAE 62.1 新风保底与 NFPA 72 消防优先级互锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1621,6 +1622,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-blue">TOOL 51 · SMART CAMPUS &amp; HIGH-RISE ADT BRICK MPC, ASHRAE 62.1 IAQ FLOOR &amp; NFPA 72 LIFE-SAFETY INTERLOCK SIZER</span>
+    <h2>自主智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优、ASHRAE 62.1 新风保底与 NFPA 72 消防互锁测算器 (Chapter 56 · Bilingual)</h2>
+    <div class="sub">量化在 <code>125 – 2,000 千平方米</code> 智慧园区与超高层商业综合体（<code>3,000 – 48,000</code> 个 VAV 变风量区域）规模下，启用 <code>Azure Digital Twins (Brick/RealEstateCore) + MPC</code> 暖通照明协同与目的层电梯群控（暖通照明总能耗削减 <code>31.8%</code>、电网尖峰需量电费削减 <code>26.4%</code>、大堂早高峰候梯时间缩短 <code>38.2%</code>）、<code>ASHRAE Standard 62.1</code> 室内空气质量（<code>CO2 &lt;= 800 ppm</code>）最小新风阀保底（<code>1.6 ms</code> 门控，<code>0.0%</code> 室内缺氧认知疲劳超标）以及 <code>NFPA 72 / EN 54 BACnet Priority Array Level 1</code> 消防排烟硬件级互锁（<code>0.8 ms</code> 抢占，<code>0.0%</code> 防排烟风阀被 AI 节能指令误覆盖）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 园区受控总建筑面积 (Campus Gross Floor Area): <strong id="lbl_bldg_area" style="color:var(--teal)">500</strong>k m²</label>
+          <input type="range" id="rng_bldg_area" min="125" max="2000" step="125" value="500" oninput="runSmartBuildingLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 楼宇 MPC 寻优、ASHRAE 62.1 新风保底与 NFPA 72 消防互锁模式 (Smart Building Agent Mode)</label>
+          <select id="sel_bldg_mode" onchange="runSmartBuildingLab()">
+            <option value="adt_mpc_ashrae62_elevator_nfpa72_interlock" selected>ADT Brick MPC 节能 (-31.8% 能耗/-38.2% 候梯) + ASHRAE 62.1 新风保底 (0% CO2 超标) + NFPA 72 消防互锁 (推荐)</option>
+            <option value="static_schedule_unchecked_co2_unisolated_bacnet">传统反模式：固定时刻表 (0% 节能) + 激进关新风 (4.8% CO2&gt;1000ppm) + 无 BACnet 优先级隔离 (2.4% 消防冲突)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="bldgOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2536,6 +2559,22 @@ resource miningAhsPool 'Microsoft.ContainerService/managedClusters/agentPools@20
       'aksclaw.io/ssr-insar-slope-radar-edge': 'enabled-18ms-96.8pct-backhaul-cut'
     }
   }
+}`,
+`// 52. Autonomous Smart Campus & High-Rise ADT Brick MPC, ASHRAE 62.1 IAQ & NFPA 72 Life-Safety Interlock Pool (blueprints/aksclaw-smart-building-ashrae-nfpa72-pool.bicep)
+resource smartBuildingPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'bldgmpc'
+  properties: {
+    count: 4
+    vmSize: 'Standard_D32as_v7'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'smart-building-ashrae-nfpa72-agent'
+      'aksclaw.io/adt-brick-mpc-elevator': 'enabled-31.8pct-energy-38.2pct-wait-cut'
+      'aksclaw.io/ashrae62-1-co2-floor-gate': 'enforced-800ppm-1.6ms-zero-iaq-breach'
+      'aksclaw.io/nfpa72-bacnet-priority1-lock': 'enforced-0.8ms-zero-smokedamper-override'
+    }
+  }
 }`
 ];
 
@@ -2687,6 +2726,30 @@ runDatacenterCoolingLab();
 runMaritimePortLab();
 runRailErtmsLab();
 runMiningAhsLab();
+runSmartBuildingLab();
+
+function runSmartBuildingLab() {
+  const area = parseInt(document.getElementById('rng_bldg_area').value, 10);
+  const mode = document.getElementById('sel_bldg_mode').value;
+  document.getElementById('lbl_bldg_area').textContent = area.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(area / 125));
+  const vavZones = area * 24;
+  const ok = mode === 'adt_mpc_ashrae62_elevator_nfpa72_interlock';
+  const mpcStr = ok ? "ADT Brick MPC 暖通照明节电 -31.8% · 尖峰需量 -26.4% · 目的层候梯 -38.2%" : "固定时刻表 0.0% 节能 · 早高峰大堂电梯排长队";
+  const iaqStr = ok ? "1.6 ms ASHRAE 62.1 新风下限门控 · 0.0% 室内 CO2 > 1,000 ppm 违例" : "无新风下限保护 · 4.8% 会议室 CO2 > 1,000 ppm 认知疲劳超标";
+  const nfpaStr = ok ? "0.8 ms NFPA 72 / EN 54 BACnet Priority 1 消防硬件互锁 · 0.0% 防排烟风阀误覆盖" : "无 BACnet 优先级阵列隔离 · 2.4% 防排烟风阀与节能指令冲突风险";
+
+  document.getElementById('bldgOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 4.8% CO2 缺氧超标 · 2.4% NFPA 72 消防风阀冲突风险'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 D32as_v7 (${vavZones.toLocaleString()} VAV 区域 · ${iaqStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>NFPA 72 / EN 54 火灾报警与防排烟正压送风 BACnet Priority Array 硬件互锁</strong>：<strong>${nfpaStr}</strong>
+    </p>
+  `;
+}
 
 function runMiningAhsLab() {
   const trucks = parseInt(document.getElementById('rng_mine_trucks').value, 10);

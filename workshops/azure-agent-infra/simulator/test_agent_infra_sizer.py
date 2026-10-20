@@ -52,6 +52,7 @@ from agent_infra_sizer import (
     simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
+    simulate_smart_building_ashrae_nfpa72_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
@@ -946,6 +947,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertEqual(gov["unevacuated_bench_rockfall_exposure_pct"], 0.0)
         self.assertTrue(gov["mining_ahs_slo_met"])
         self.assertFalse(raw["mining_ahs_slo_met"])
+
+    def test_smart_building_ashrae_nfpa72_sandbox(self) -> None:
+        gov = simulate_smart_building_ashrae_nfpa72_sandbox(500, "adt_mpc_ashrae62_elevator_nfpa72_interlock")
+        raw = simulate_smart_building_ashrae_nfpa72_sandbox(500, "static_schedule_unchecked_co2_unisolated_bacnet")
+        self.assertEqual(gov["campus_edge_nodes"], 4)
+        self.assertEqual(gov["monitored_vav_zones"], 12_000)
+        self.assertEqual(gov["hvac_lighting_energy_reduction_pct"], 31.8)
+        self.assertEqual(gov["peak_demand_charge_reduction_pct"], 26.4)
+        self.assertEqual(gov["elevator_lobby_wait_reduction_pct"], 38.2)
+        self.assertEqual(gov["ashrae62_iaq_gate_ms"], 1.6)
+        self.assertEqual(gov["indoor_co2_violation_pct"], 0.0)
+        self.assertGreater(raw["indoor_co2_violation_pct"], 4.0)
+        self.assertEqual(gov["nfpa72_lifesafety_interlock_ms"], 0.8)
+        self.assertEqual(gov["smoke_damper_override_escape_pct"], 0.0)
+        self.assertGreater(raw["smoke_damper_override_escape_pct"], 2.0)
+        self.assertTrue(gov["smart_building_slo_met"])
+        self.assertFalse(raw["smart_building_slo_met"])
 
 
 if __name__ == "__main__":

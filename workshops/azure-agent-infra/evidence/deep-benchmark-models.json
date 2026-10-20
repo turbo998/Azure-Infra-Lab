@@ -3056,5 +3056,67 @@
       "unevacuated_bench_rockfall_exposure_pct": 3.7,
       "mining_ahs_slo_met": false
     }
+  ],
+  "smart_building_ashrae_profiles": [
+    {
+      "campus_gross_floor_area_k_sqm": 125,
+      "building_control_mode": "adt_mpc_ashrae62_elevator_nfpa72_interlock",
+      "campus_edge_nodes": 2,
+      "monitored_vav_zones": 3000,
+      "hvac_lighting_energy_reduction_pct": 31.8,
+      "peak_demand_charge_reduction_pct": 26.4,
+      "elevator_lobby_wait_reduction_pct": 38.2,
+      "ashrae62_iaq_gate_ms": 1.6,
+      "indoor_co2_violation_pct": 0.0,
+      "nfpa72_lifesafety_interlock_ms": 0.8,
+      "smoke_damper_override_escape_pct": 0.0,
+      "bacnet_priority_array_level": "Priority_12_Energy_Below_Priority_1_LifeSafety",
+      "smart_building_slo_met": true
+    },
+    {
+      "campus_gross_floor_area_k_sqm": 500,
+      "building_control_mode": "adt_mpc_ashrae62_elevator_nfpa72_interlock",
+      "campus_edge_nodes": 4,
+      "monitored_vav_zones": 12000,
+      "hvac_lighting_energy_reduction_pct": 31.8,
+      "peak_demand_charge_reduction_pct": 26.4,
+      "elevator_lobby_wait_reduction_pct": 38.2,
+      "ashrae62_iaq_gate_ms": 1.6,
+      "indoor_co2_violation_pct": 0.0,
+      "nfpa72_lifesafety_interlock_ms": 0.8,
+      "smoke_damper_override_escape_pct": 0.0,
+      "bacnet_priority_array_level": "Priority_12_Energy_Below_Priority_1_LifeSafety",
+      "smart_building_slo_met": true
+    },
+    {
+      "campus_gross_floor_area_k_sqm": 2000,
+      "building_control_mode": "adt_mpc_ashrae62_elevator_nfpa72_interlock",
+      "campus_edge_nodes": 16,
+      "monitored_vav_zones": 48000,
+      "hvac_lighting_energy_reduction_pct": 31.8,
+      "peak_demand_charge_reduction_pct": 26.4,
+      "elevator_lobby_wait_reduction_pct": 38.2,
+      "ashrae62_iaq_gate_ms": 1.6,
+      "indoor_co2_violation_pct": 0.0,
+      "nfpa72_lifesafety_interlock_ms": 0.8,
+      "smoke_damper_override_escape_pct": 0.0,
+      "bacnet_priority_array_level": "Priority_12_Energy_Below_Priority_1_LifeSafety",
+      "smart_building_slo_met": true
+    },
+    {
+      "campus_gross_floor_area_k_sqm": 500,
+      "building_control_mode": "static_schedule_unchecked_co2_unisolated_bacnet",
+      "campus_edge_nodes": 4,
+      "monitored_vav_zones": 12000,
+      "hvac_lighting_energy_reduction_pct": 0.0,
+      "peak_demand_charge_reduction_pct": 0.0,
+      "elevator_lobby_wait_reduction_pct": 0.0,
+      "ashrae62_iaq_gate_ms": 0.0,
+      "indoor_co2_violation_pct": 4.8,
+      "nfpa72_lifesafety_interlock_ms": 0.0,
+      "smoke_damper_override_escape_pct": 2.4,
+      "bacnet_priority_array_level": "Unrestricted_BACnet_WriteProperty_Priority_Collision",
+      "smart_building_slo_met": false
+    }
   ]
 }

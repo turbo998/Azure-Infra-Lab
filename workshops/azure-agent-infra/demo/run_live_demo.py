@@ -65,6 +65,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_retail_pos_esl_vision_edge_sandbox,
     simulate_scientific_hpc_lustre_mpi_sandbox,
     simulate_semiconductor_eda_rtl_gdsii_sandbox,
+    simulate_smart_building_ashrae_nfpa72_sandbox,
     simulate_sovereign_data_residency_crypto_shredding,
     simulate_smart_grid_iec61850_pmu_sandbox,
     simulate_space_orbital_satellite_edge_sandbox,
@@ -523,6 +524,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "mining_120_trucks": simulate_mining_ahs_iso21815_sandbox(120, "cuopt_dispatch_iso21815_georadar_interlock"),
             "mining_480_trucks": simulate_mining_ahs_iso21815_sandbox(480, "cuopt_dispatch_iso21815_georadar_interlock"),
             "raw_mining_120_trucks": simulate_mining_ahs_iso21815_sandbox(120, "fixed_shift_dispatch_unchecked_collision_raw_radar"),
+        },
+        "demo_51_smart_building_ashrae_nfpa72_sandbox": {
+            "campus_125k_sqm": simulate_smart_building_ashrae_nfpa72_sandbox(125, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
+            "campus_500k_sqm": simulate_smart_building_ashrae_nfpa72_sandbox(500, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
+            "campus_2000k_sqm": simulate_smart_building_ashrae_nfpa72_sandbox(2_000, "adt_mpc_ashrae62_elevator_nfpa72_interlock"),
+            "raw_campus_500k_sqm": simulate_smart_building_ashrae_nfpa72_sandbox(500, "static_schedule_unchecked_co2_unisolated_bacnet"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
