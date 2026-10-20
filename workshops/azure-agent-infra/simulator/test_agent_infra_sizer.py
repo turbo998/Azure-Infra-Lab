@@ -103,6 +103,7 @@ from agent_infra_sizer import (
     simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
     simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
     simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
+    simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -253,6 +254,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-ptes-carnot-battery-brayton-turbocompressor-thermocline-sil3-pool.bicep",
             "aksclaw-vleo-abep-atmosphere-breathing-ion-thruster-dsmc-sil3-pool.bicep",
             "aksclaw-offshore-ccus-co2-pipeline-decompression-fracture-sccs-iso27914-sil3-pool.bicep",
+            "aksclaw-fsw-friction-stir-welding-cryo-tank-phased-array-ut-awsd17-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1908,6 +1910,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct"], 3.0)
         self.assertTrue(gov["offshore_ccus_sequestration_slo_met"])
         self.assertFalse(raw["offshore_ccus_sequestration_slo_met"])
+
+    def test_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(self) -> None:
+        gov = simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(
+            16, "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"
+        )
+        raw = simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(
+            16, "constant_rpm_plunge_depth_pid_postweld_xray_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_fsw_cryotank_pods"], 8)
+        self.assertEqual(gov["weld_uts_cryo_fracture_toughness_and_speed_gain_pct"], 32.8)
+        self.assertEqual(gov["wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct"], 45.6)
+        self.assertEqual(gov["awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms"], 0.4)
+        self.assertEqual(gov["stir_pin_fracture_in_tank_or_burnthrough_breach_pct"], 0.0)
+        self.assertGreater(raw["stir_pin_fracture_in_tank_or_burnthrough_breach_pct"], 1.2)
+        self.assertEqual(gov["spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct"], 3.0)
+        self.assertTrue(gov["fsw_cryotank_welding_slo_met"])
+        self.assertFalse(raw["fsw_cryotank_welding_slo_met"])
 
 
 if __name__ == "__main__":

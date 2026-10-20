@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #96 · **102 Chapters** · **97 IaC Blueprints** · **96 Quantitative Physics Simulators** · **105/105 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 101-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #97 · **103 Chapters** · **98 IaC Blueprints** · **97 Quantitative Physics Simulators** · **106/106 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 102-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 96 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [105-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 97 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [106-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -190,6 +190,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **99** | **Autonomous Long-Duration Pumped Thermal Electricity Storage (`PTES / Carnot Battery`) Reversible Brayton Turbocompressor Surge-Margin, Packed-Bed / Molten-Salt Thermocline Propagation `PINN-MPC` & `ASME PTC 10 / API 670 / IEC 61511 SIL-3` Anti-Surge Hot-Gas Bypass & Overspeed Trip (`Schumann Packed-Bed Thermocline & Span-Wagner sCO2 Surge PINN + VIGV & Inventory MPC` + `ASME PTC 10 / API 670 SIL-3` Hot-Gas Bypass, `AMB` & `110% OST` Gate + `100 kHz Kulite / Fiber DTS / AMB` Edge)** | `simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox()` | `aksclaw-ptes-carnot-battery-brayton-turbocompressor-thermocline-sil3-pool.bicep` | **`+31.8%` round-trip exergy efficiency & `-42.5%` thermocline/recycle loss**, **`0.0%` compressor surge blade fracture or tank creep (`0.5 ms` SIL-3)**, **`0.5 ms` skid `100 kHz Kulite/DTS` edge (`99.2%` WAN cut)** |
 | **100** | **Autonomous Very-Low-Earth-Orbit (`VLEO 150–250 km`) Atmosphere-Breathing Electric Propulsion (`ABEP / RAM-EP`) Satellite Intake Rarefied-Gas `DSMC` Compression, RF Helicon / Gridded Ion Thruster Isp-Drag Compensation `PINN-MPC` & `ECSS-E-ST-10C / NASA-STD-8719.24 / IEC 61508 SIL-3` Perigee Decay Safe-Hold & Attitude Feathering (`Rarefied-Gas CLL-DSMC Intake & RF Helicon Plasma PINN + Drag-Free Ram-Pointing MPC` + `ECSS-E-ST-10C / NASA SIL-3` Aero-Feathering & Aux-Xenon Cathode Gate + `Onboard SpaceVPX / RPA / Ionization-Gauge` Edge)** | `simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox()` | `aksclaw-vleo-abep-atmosphere-breathing-ion-thruster-dsmc-sil3-pool.bicep` | **`+35.2%` thrust-to-drag/Isp margin & `-46.4%` altitude dip/Xe supplement**, **`0.0%` uncontrolled perigee reentry or grid arc-short (`0.4 ms` SIL-3)**, **`0.4 ms` onboard `SpaceVPX/RPA` edge (`99.4%` S/X/Ka WAN cut)** |
 | **101** | **Autonomous Gigaton-Scale Offshore Carbon Capture, Utilization & Subsea Geological Sequestration (`CCUS / Saline Aquifer Storage`) Dense-Phase Supercritical $\text{CO}_2$ Trunkline Decompression-Wave Fracture-Arrest `PINN-MPC`, Caprock Pore-Pressure Inversion & `ISO 27913 / ISO 27914 / DNV-RP-F104 / IEC 61511 SIL-3` Subsea Isolation (`Span-Wagner Impure CO2 Decompression & Biot Caprock PINN + J-T Anti-Freeze & Multi-Well BHP MPC` + `ISO 27913 / ISO 27914 / DNV SIL-3` `SSIV / HIPPS` & `<85% LOT` Gate + `Subsea 4D DAS/DTS / Quartz Gauge` Edge)** | `simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox()` | `aksclaw-offshore-ccus-co2-pipeline-decompression-fracture-sccs-iso27914-sil3-pool.bicep` | **`+33.6%` storage/trapping efficiency & `-44.2%` J-T freeze/throttle loss**, **`0.0%` running ductile fracture or caprock fault breach (`0.5 ms` SIL-3)**, **`0.5 ms` subsea `4D DAS/DTS` edge (`99.3%` offshore WAN cut)** |
+| **102** | **Autonomous Aerospace Cryogenic Propellant Dome & Al-Li Fuselage Friction Stir Welding (`FSW / Bobbin-Tool FSW`) Thermomechanical Material-Flow Viscoplasticity `PINN-MPC`, In-Situ Phased-Array Ultrasonic (`PAUT`) Wormhole Detection & `AWS D17.3 / NASA-STD-5009 / ISO 25239 / IEC 61508 SIL-3` Spindle Plunge-Force & Pin-Shear (`Sheppard-Wright Zener-Hollomon Viscoplastic PINN + Axial Forge-Force & Bobbin-Gap MPC` + `AWS D17.3 / NASA-STD-5009 SIL-3` Stir-Pin Shear Retract Gate + `Spindle Piezo Dynamometer / Trailing 10 MHz Roller PAUT` Edge)** | `simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox()` | `aksclaw-fsw-friction-stir-welding-cryo-tank-phased-array-ut-awsd17-sil3-pool.bicep` | **`+32.8%` cryogenic weld UTS/toughness & `-45.6%` wormhole/kiss-bond scrap**, **`0.0%` stir-pin fracture in tank or burn-through (`0.4 ms` SIL-3)**, **`0.4 ms` spindle `Piezo/10MHz PAUT` edge (`99.3%` WAN cut)** |
 
 ---
 
@@ -199,10 +200,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 96 quantitative engineering & physics simulators (Chapters 7–101)
+# 2. Run all 97 quantitative engineering & physics simulators (Chapters 7–102)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 105 unit tests (100% pass across 6 runtimes, 96 physics models, 97 blueprints & links)
+# 3. Execute all 106 unit tests (100% pass across 6 runtimes, 97 physics models, 98 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

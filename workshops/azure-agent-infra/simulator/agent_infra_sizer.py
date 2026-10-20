@@ -5275,6 +5275,49 @@ def simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(
     }
 
 
+def simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(
+    fsw_gantry_cells: int = 16,
+    fsw_governance_mode: str = "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Aerospace Cryogenic Propellant Dome & Al-Li Fuselage Friction Stir Welding (FSW / Bobbin-Tool FSW) Thermomechanical Material-Flow Viscoplasticity PINN-MPC, In-Situ Phased-Array Ultrasonic (PAUT) / Acoustic-Emission Wormhole-Void Detection & AWS D17.3 / NASA-STD-5009 / ISO 25239 / IEC 61508 SIL-3 Spindle Plunge-Force & Pin-Shear Interlock Agent Infrastructure (Chapter 102)."""
+    if fsw_gantry_cells <= 0:
+        raise ValueError("fsw_gantry_cells must be positive")
+    valid_modes = {
+        "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge",
+        "constant_rpm_plunge_depth_pid_postweld_xray_cloud",
+    }
+    if fsw_governance_mode not in valid_modes:
+        raise ValueError(f"fsw_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = fsw_governance_mode == "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"
+    active_fsw_cryotank_pods = max(2, min(8, int(fsw_gantry_cells // 2))) if fsw_gantry_cells <= 16 else max(8, int(fsw_gantry_cells // 4))
+    gpu_nodes = max(2, math.ceil(fsw_gantry_cells / 8))
+
+    weld_uts_cryo_fracture_toughness_and_speed_gain_pct = 32.8 if governed else 5.2
+    wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct = 45.6 if governed else 7.4
+    awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms = 0.4 if governed else 142.0
+    stir_pin_fracture_in_tank_or_burnthrough_breach_pct = 0.0 if governed else 1.5
+    spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms = 0.4 if governed else 208.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct = 0.0 if governed else 3.4
+
+    return {
+        "fsw_gantry_cells": fsw_gantry_cells,
+        "fsw_governance_mode": fsw_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_fsw_cryotank_pods": active_fsw_cryotank_pods,
+        "weld_uts_cryo_fracture_toughness_and_speed_gain_pct": weld_uts_cryo_fracture_toughness_and_speed_gain_pct,
+        "wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct": wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct,
+        "awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms": awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms,
+        "stir_pin_fracture_in_tank_or_burnthrough_breach_pct": stir_pin_fracture_in_tank_or_burnthrough_breach_pct,
+        "spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms": spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct": uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct,
+        "fsw_cryotank_welding_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

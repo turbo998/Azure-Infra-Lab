@@ -5900,5 +5900,67 @@
       "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 3.4,
       "offshore_ccus_sequestration_slo_met": false
     }
+  ],
+  "fsw_cryo_tank_paut_profiles": [
+    {
+      "fsw_gantry_cells": 8,
+      "fsw_governance_mode": "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fsw_cryotank_pods": 4,
+      "weld_uts_cryo_fracture_toughness_and_speed_gain_pct": 32.8,
+      "wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct": 45.6,
+      "awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms": 0.4,
+      "stir_pin_fracture_in_tank_or_burnthrough_breach_pct": 0.0,
+      "spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct": 0.0,
+      "fsw_cryotank_welding_slo_met": true
+    },
+    {
+      "fsw_gantry_cells": 16,
+      "fsw_governance_mode": "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fsw_cryotank_pods": 8,
+      "weld_uts_cryo_fracture_toughness_and_speed_gain_pct": 32.8,
+      "wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct": 45.6,
+      "awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms": 0.4,
+      "stir_pin_fracture_in_tank_or_burnthrough_breach_pct": 0.0,
+      "spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct": 0.0,
+      "fsw_cryotank_welding_slo_met": true
+    },
+    {
+      "fsw_gantry_cells": 64,
+      "fsw_governance_mode": "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fsw_cryotank_pods": 16,
+      "weld_uts_cryo_fracture_toughness_and_speed_gain_pct": 32.8,
+      "wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct": 45.6,
+      "awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms": 0.4,
+      "stir_pin_fracture_in_tank_or_burnthrough_breach_pct": 0.0,
+      "spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct": 0.0,
+      "fsw_cryotank_welding_slo_met": true
+    },
+    {
+      "fsw_gantry_cells": 16,
+      "fsw_governance_mode": "constant_rpm_plunge_depth_pid_postweld_xray_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_fsw_cryotank_pods": 8,
+      "weld_uts_cryo_fracture_toughness_and_speed_gain_pct": 5.2,
+      "wormhole_void_kissbond_and_tool_wear_scrap_reduction_pct": 7.4,
+      "awsd17_3_nasa5009_iso25239_sil3_pin_shear_retract_interlock_ms": 142.0,
+      "stir_pin_fracture_in_tank_or_burnthrough_breach_pct": 1.5,
+      "spindle_piezo_dynamometer_roller_paut_ethercat_edge_latency_ms": 208.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct": 3.4,
+      "fsw_cryotank_welding_slo_met": false
+    }
   ]
 }

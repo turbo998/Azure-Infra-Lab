@@ -109,6 +109,7 @@ from agent_infra_sizer import (
     simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
     simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
     simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
+    simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -921,6 +922,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(48, "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge"),
         simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(18, "steady_state_darcy_flow_fixed_wellhead_choke_cloud"),
     ]
+    fsw_cryo_tank_paut_profiles: List[Dict[str, object]] = [
+        simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(8, "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"),
+        simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(16, "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"),
+        simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(64, "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"),
+        simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(16, "constant_rpm_plunge_depth_pid_postweld_xray_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1018,6 +1025,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ptes_carnot_battery_brayton_profiles": ptes_carnot_battery_brayton_profiles,
         "vleo_abep_ion_thruster_profiles": vleo_abep_ion_thruster_profiles,
         "offshore_ccus_co2_sequestration_profiles": offshore_ccus_co2_sequestration_profiles,
+        "fsw_cryo_tank_paut_profiles": fsw_cryo_tank_paut_profiles,
     }
 
 
