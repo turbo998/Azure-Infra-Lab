@@ -105,6 +105,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
     simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
     simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
+    simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -761,6 +762,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "polar_icebreaker_16_corridors": simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(16, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"),
             "polar_icebreaker_64_corridors": simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(64, "sar_fbg_ice_ridge_pinn_azipod_milling_mpc_imopolar_sil3_edge"),
             "raw_polar_icebreaker_16_corridors": simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox(16, "daily_ice_chart_manual_helm_unverified_azipod_cloud"),
+        },
+        "demo_86_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox": {
+            "gw_interferometer_8_sites": simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(8, "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge"),
+            "gw_interferometer_32_sites": simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(32, "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge"),
+            "raw_gw_interferometer_8_sites": simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(8, "linear_pid_lock_acquisition_static_seismic_filter_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

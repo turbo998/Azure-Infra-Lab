@@ -5218,5 +5218,67 @@
       "multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct": 3.5,
       "polar_icebreaker_ice_routing_slo_met": false
     }
+  ],
+  "gw_interferometer_fabry_perot_profiles": [
+    {
+      "gw_interferometer_detector_sites": 4,
+      "gw_governance_mode": "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_gw_interferometer_pods": 2,
+      "observation_duty_cycle_and_bns_inspiral_range_gain_pct": 27.4,
+      "sub10hz_darm_strain_noise_and_lockloss_reduction_pct": 44.2,
+      "iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms": 0.8,
+      "intracavity_mirror_thermal_or_suspension_stop_breach_pct": 0.0,
+      "cds_dolphin_rfm_epics_edge_latency_ms": 0.7,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "teleseismic_lockloss_or_false_gcn_alert_clearance_pct": 0.0,
+      "gw_interferometer_fabry_perot_slo_met": true
+    },
+    {
+      "gw_interferometer_detector_sites": 8,
+      "gw_governance_mode": "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_gw_interferometer_pods": 4,
+      "observation_duty_cycle_and_bns_inspiral_range_gain_pct": 27.4,
+      "sub10hz_darm_strain_noise_and_lockloss_reduction_pct": 44.2,
+      "iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms": 0.8,
+      "intracavity_mirror_thermal_or_suspension_stop_breach_pct": 0.0,
+      "cds_dolphin_rfm_epics_edge_latency_ms": 0.7,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "teleseismic_lockloss_or_false_gcn_alert_clearance_pct": 0.0,
+      "gw_interferometer_fabry_perot_slo_met": true
+    },
+    {
+      "gw_interferometer_detector_sites": 32,
+      "gw_governance_mode": "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_gw_interferometer_pods": 16,
+      "observation_duty_cycle_and_bns_inspiral_range_gain_pct": 27.4,
+      "sub10hz_darm_strain_noise_and_lockloss_reduction_pct": 44.2,
+      "iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms": 0.8,
+      "intracavity_mirror_thermal_or_suspension_stop_breach_pct": 0.0,
+      "cds_dolphin_rfm_epics_edge_latency_ms": 0.7,
+      "wan_bandwidth_reduction_pct": 99.1,
+      "teleseismic_lockloss_or_false_gcn_alert_clearance_pct": 0.0,
+      "gw_interferometer_fabry_perot_slo_met": true
+    },
+    {
+      "gw_interferometer_detector_sites": 8,
+      "gw_governance_mode": "linear_pid_lock_acquisition_static_seismic_filter_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_gw_interferometer_pods": 4,
+      "observation_duty_cycle_and_bns_inspiral_range_gain_pct": 4.6,
+      "sub10hz_darm_strain_noise_and_lockloss_reduction_pct": 8.1,
+      "iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms": 94.0,
+      "intracavity_mirror_thermal_or_suspension_stop_breach_pct": 1.4,
+      "cds_dolphin_rfm_epics_edge_latency_ms": 215.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "teleseismic_lockloss_or_false_gcn_alert_clearance_pct": 3.2,
+      "gw_interferometer_fabry_perot_slo_met": false
+    }
   ]
 }

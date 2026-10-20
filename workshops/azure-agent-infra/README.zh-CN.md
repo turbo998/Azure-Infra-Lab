@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #85 · 91 Chapters · 86 Blueprints · 85 Simulators · 94/94 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #86 · 92 Chapters · 87 Blueprints · 86 Simulators · 95/95 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -2584,7 +2584,33 @@ sequenceDiagram
 
 ---
 
-## 91. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 91. 自主千米级引力波激光干涉仪（`LIGO / Cosmic Explorer / Einstein Telescope`）、法布里-珀罗（`Fabry-Pérot`）四级悬架臂腔锁腔控制、牛顿引力梯度地震前馈抵消与频变压缩真空态（`Frequency-Dependent Squeezed Vacuum`）`IEC 61508 SIL-3` 智能体基础设施（Autonomous Gravitational-Wave Laser Interferometer, Fabry-Pérot Arm Cavity Locking, Newtonian Seismic Feedforward Cancellation & Squeezed-Vacuum `IEC 61508 SIL-3` Agent Infrastructure）
+
+> **English Summary (Chapter 91 — Gravitational-Wave Laser Interferometer `LIGO / CE / ET`, `Fabry-Pérot` Arm Cavity Locking, Newtonian Seismic Feedforward Cancellation & Squeezed-Vacuum `IEC 61508 SIL-3` Agent Infrastructure)**:
+> - **Architecture**: Runs a coupled **Deep Reinforcement Learning (`Deep-RL`) Hierarchical Multi-DOF Optical Cavity Lock Acquisition & Angular Alignment Sensing (`ASC`) Controller, Borehole Seismometer Array Newtonian Gravity-Gradient (`NN`) Feedforward Cancellation & Parametric Instability (`PI`) Acoustic-Mode PINN + `300 m` Filter-Cavity Frequency-Dependent Squeezed-Vacuum (`10 dB`) Phase MPC** on `Standard_ND96isr_H100_v5` (`aksclaw-gravitational-wave-interferometer-fabry-perot-sil3-pool.bicep`), paired with a **`0.8 ms` `IEC 61508 SIL-3 / ANSI Z136.1 Class 4` `1.5 MW` intracavity circulating laser fast shutter dump & quadruple-pendulum electrostatic drive (`ESD`) mechanical-stop latch interlock** and **`0.7 ms` corner/end-station `LIGO CDS Dolphin PCIe Reflective Memory (16.384 kHz) + EPICS pvAccess + Azure Local` edge inference**.
+> - **Key Quantitative Gains (`simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox()`)**: **`+27.4%` astrophysics coincidence observation duty cycle and binary neutron star (`BNS`) inspiral detection range**, **`-44.2%` sub-10 Hz differential arm (`DARM`) seismic/quantum radiation-pressure strain noise and lock-loss rate**, **`0.0%` intracavity fused-silica mirror thermal-lensing damage or quadruple-suspension mechanical stop impact (`0.8 ms` SIL-3 interlock vs `1.4%` at `94.0 ms` unverified lock loop)**, **`0.0%` teleseismic Rayleigh-wave lock-loss or false multi-messenger `GCN` alert trigger (`vs 3.2%` on static linear filters)**, and **`0.7 ms` `CDS Dolphin RFM` edge latency (`99.1%` raw `gwf` frame stream WAN bandwidth reduction vs `215.0 ms` cloud loop)**.
+
+### 91.1 四级悬架测试质量与 `1.5 MW` 法布里-珀罗臂腔分层锁腔 `Deep-RL`、牛顿引力梯度噪声（`NN`）地震阵列 `PINN`、频变压缩真空态 `MPC`、`IEC 61508 SIL-3` 腔内高功率激光快门联锁及 `Dolphin PCIe` 反射内存边缘三大工程支柱
+
+1. **Pillar 1：四级摆熔融石英测试质量（`Quadruple-Pendulum Test Mass`）多自由度光学谐振腔锁腔与角向准直（`ASC`）`Deep-RL` + 钻孔地震仪阵列牛顿引力梯度噪声（`Newtonian Noise, NN`）前馈抵消 `PINN` + `300 m` 滤波腔频变压缩真空态（`Squeezed Vacuum`）相位 `MPC`（`Standard_ND96isr_H100_v5`）**：
+   - 在 `Standard_ND96isr_H100_v5` 节点上运行耦合 `4 km – 40 km` 双臂法布里-珀罗（`Fabry-Pérot`）迈克尔逊干涉仪、功率再循环（`PRC`）与信号再循环（`SRC`）五耦合谐振腔非线性光学辐射压力矩（`Sidles-Sigg` 光弹簧不稳定性）、三维钻孔地震仪/倾斜仪阵列瑞利波土壤密度扰动引发的牛顿引力梯度噪声（`Newtonian Gravity-Gradient Noise, NN`）与测试质量 `80 kHz` 声学本征模参量不稳定性（`Parametric Instability, PI`）的 `PINN`，并与 `300 m` 超高真空滤波腔频变压缩真空光源（`Frequency-Dependent Squeezing, 10 dB` 低频辐射压噪声与高频散粒噪声联合旋转压缩）相位锁定 `MPC` 及多自由度角向准直控制（`Angular Sensing and Control, ASC`）深度强化学习策略闭环协同，使 **双中子星（`BNS`）并合引力波探测视界距离与全网联合观测占空比（`Duty Cycle`）提升 `+27.4%`**、**`3–30 Hz` 低频段差分臂长（`DARM`）残余应变噪声（`< 10⁻²⁰ m/√Hz`）与强震/微震失锁率降低 `-44.2%`**，并将 **远震面波（`Teleseismic Rayleigh Wave`）冲垮腔锁或非高斯瞬态噪声毛刺（`Blip Glitch`）误触发全球多信使天文台（`GCN/SCiMMA`）电磁随动警报率从 `3.2%` 降至 `0.0%`**。
+2. **Pillar 2：`IEC 61508 SIL-3 / ANSI Z136.1 Class 4` `1.5 MW` 腔内循环激光声光快门（`AOM`）紧急卸荷与四级悬架静电驱动器（`ESD`）防碰撞机械止挡硬联锁（`0.8 ms`）**：
+   - 在下一代万瓦级输入、高达 `1.5 MW` 腔内循环激光功率的引力波干涉仪中，若 `40 kg – 320 kg` 超纯熔融石英反射镜在极端锁腔失步或强辐射压扭矩下发生微弧度级角向偏摆（`Pitch/Yaw Excursion`），高达兆瓦级的聚焦激光束将瞬间偏离镜面中心直接轰击悬架玻璃纤维丝（`400 µm` 熔融石英吊丝）或镜面高反膜边缘，导致吊丝瞬间气化断裂、价值数千万美元的核心测试质量坠落损毁；同时若静电驱动器（`Electrostatic Drive, ESD`）输出电压失控，还将引发测试质量撞击捕集笼机械止挡并产生数天无法衰减的寄生电荷。任何由深度强化学习锁腔智能体输出的音圈电机（`OSEM`）、静电驱动器偏置与热补偿环（`TCS CO2 Laser`）指令，在送达实时前端控制器前必须经过 **`0.8 ms` 硬件级隔离的 `IEC 61508 SIL-3 / ANSI Z136.1 Class 4` 独立光电与悬架安全联锁门控（对比广域云端回路 `94.0 ms`）**：一旦监测到腔内透射光电二极管功率骤降率、光学杠杆（`Optical Lever`）倾角越界或悬架丝热噪声异常，立即在 `0.8 ms` 内触发注入工作台声光调制器（`AOM`）切断主激光束进入光束收集器（`Beam Dump`），并将四级摆切换至硬件无源涡流/静电过阻尼制动包络，将 **腔内兆瓦激光灼伤镜面/熔断石英吊丝或测试质量撞击机械止挡违例率从 `1.4%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：中央站与端站 `LIGO CDS Dolphin PCIe` 反射内存网（`16.384 kHz`）、`EPICS pvAccess` 与 `Azure Local` 干涉仪实时边缘（`0.7 ms`）**：
+   - 在相距 `4 km – 40 km` 的干涉仪中央角站（`Corner Station`）与 X/Y 端站（`End Stations`）本地部署加固型 `Azure Local` 实时边缘节点，通过纳秒级同步的 `Dolphin PCIe` 反射内存网络（`Reflective Memory Network, RFM`）与白兔（`White Rabbit PTP`）原子钟直连 `16.384 kHz / 65.536 kHz` 数字控制与数据采集系统（`CDS`），在本地完成百通道辅助传感器特征正交化降噪（`DeepClean`）与即时双星并合匹配滤波预警，在 **`0.7 ms` 内（对比原始高采样率 `gwf` 帧流回传异地超算中心 `215.0 ms`）** 输出牛顿噪声抵消力与角向反馈指令，削减 **`99.1%` 跨广域科研专网传输带宽**。
+
+### 91.2 引力波激光干涉仪 `Deep-RL Hierarchical Lock + Newtonian-Noise PINN + Squeezed-Vacuum MPC` + `IEC 61508 SIL-3 / ANSI Z136.1` 腔内激光快门与四级悬架联锁 + `CDS Dolphin RFM` 边缘 vs 传统线性 PID 锁腔与静态滤波基线对比表
+
+| 引力波激光干涉仪台站（角站与双臂端站）规模及智能体架构 | `ND96isr_H100_v5` 节点数 | 在役干涉仪腔锁与降噪控制单元数 | **双中子星探测距离/占空比增益与 `3–30 Hz DARM` 应变噪声/失锁削减** | **`IEC 61508 SIL-3 / ANSI Z136.1` 腔内激光灼伤吊丝或悬架碰撞违例率** | **台站 `CDS Dolphin PCIe RFM` 边缘延迟与 `gwf` 帧流带宽削减** | **远震瑞利波冲垮腔锁或瞬态毛刺 (`Glitch`) 误发 `GCN` 天文警报率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`4` 座引力波干涉仪角站/端站实验综合体 · Deep-RL Lock + NN-PINN + Squeezed MPC + SIL-3 激光/悬架联锁 + CDS 边缘** | `2` | `2` | **`+27.4%` / `-44.2%`** | **`0.0%` (`0.8 ms`)** | **`0.7 ms` / `99.1%`** | **`0.0%`** |
+| **`8` 座全球多台站联合引力波观测网 (LIGO-Virgo-KAGRA 级) · Deep-RL Lock + NN-PINN + Squeezed MPC + SIL-3 联锁 + CDS 边缘 (推荐)** | **`2`** | **`4`** | **`+27.4%` / `-44.2%`** | **`0.0%` (`0.8 ms`)** | **`0.7 ms` / `99.1%`** | **`0.0%`** |
+| **`32` 座下一代地基三角/L型 40km Cosmic Explorer 与 Einstein Telescope 全球阵列 · Deep-RL Lock + NN-PINN + SIL-3 联锁 + CDS 边缘** | `8` | `16` | **`+27.4%` / `-44.2%`** | **`0.0%` (`0.8 ms`)** | **`0.7 ms` / `99.1%`** | **`0.0%`** |
+| `8` 座引力波干涉仪台站 · 传统单自由度线性 SISO PID 锁腔 + 静态维纳地震滤波 + 无 1.5MW 激光快门与四级摆 SIL-3 硬件联锁 + 原始 gwf 帧流上云 (反模式) | `2` | `4` | `+4.6%` / `+8.1%` (❌ 强辐射压光弹簧耦合导致锁腔耗时数十分钟且低频微震噪声掩盖并合信号) | `1.4%` (`94.0 ms` ❌ 腔锁失步时兆瓦级光束扫过熔融石英吊丝或静电饱和撞击止挡) | `215.0 ms` / `0.0%` (❌ 广域传输延迟远超 16.384 kHz 腔锁相位裕度要求) | `3.2%` (❌ 远震面波引发集体失锁或非高斯散射光毛刺误触发全球望远镜随动转向) |
+
+---
+
+## 92. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

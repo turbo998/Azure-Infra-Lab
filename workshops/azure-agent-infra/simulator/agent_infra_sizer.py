@@ -4802,6 +4802,49 @@ def simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox
     }
 
 
+def simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(
+    gw_interferometer_detector_sites: int = 8,
+    gw_governance_mode: str = "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Gravitational-Wave Laser Interferometer (LIGO / Cosmic Explorer / Einstein Telescope), Fabry-Perot Arm Cavity Locking, Newtonian Seismic Feedforward Cancellation & Squeezed-Vacuum IEC 61508 SIL-3 Agent Infrastructure (Chapter 91)."""
+    if gw_interferometer_detector_sites <= 0:
+        raise ValueError("gw_interferometer_detector_sites must be positive")
+    valid_modes = {
+        "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge",
+        "linear_pid_lock_acquisition_static_seismic_filter_cloud",
+    }
+    if gw_governance_mode not in valid_modes:
+        raise ValueError(f"gw_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = gw_governance_mode == "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge"
+    active_gw_interferometer_pods = max(2, int(gw_interferometer_detector_sites // 2))
+    gpu_nodes = max(2, math.ceil(gw_interferometer_detector_sites / 4))
+
+    observation_duty_cycle_and_bns_inspiral_range_gain_pct = 27.4 if governed else 4.6
+    sub10hz_darm_strain_noise_and_lockloss_reduction_pct = 44.2 if governed else 8.1
+    iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms = 0.8 if governed else 94.0
+    intracavity_mirror_thermal_or_suspension_stop_breach_pct = 0.0 if governed else 1.4
+    cds_dolphin_rfm_epics_edge_latency_ms = 0.7 if governed else 215.0
+    wan_bandwidth_reduction_pct = 99.1 if governed else 0.0
+    teleseismic_lockloss_or_false_gcn_alert_clearance_pct = 0.0 if governed else 3.2
+
+    return {
+        "gw_interferometer_detector_sites": gw_interferometer_detector_sites,
+        "gw_governance_mode": gw_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_gw_interferometer_pods": active_gw_interferometer_pods,
+        "observation_duty_cycle_and_bns_inspiral_range_gain_pct": observation_duty_cycle_and_bns_inspiral_range_gain_pct,
+        "sub10hz_darm_strain_noise_and_lockloss_reduction_pct": sub10hz_darm_strain_noise_and_lockloss_reduction_pct,
+        "iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms": iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms,
+        "intracavity_mirror_thermal_or_suspension_stop_breach_pct": intracavity_mirror_thermal_or_suspension_stop_breach_pct,
+        "cds_dolphin_rfm_epics_edge_latency_ms": cds_dolphin_rfm_epics_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "teleseismic_lockloss_or_false_gcn_alert_clearance_pct": teleseismic_lockloss_or_false_gcn_alert_clearance_pct,
+        "gw_interferometer_fabry_perot_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

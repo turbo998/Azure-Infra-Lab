@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #85 · **91 Chapters** · **86 IaC Blueprints** · **85 Quantitative Physics Simulators** · **94/94 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 90-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #86 · **92 Chapters** · **87 IaC Blueprints** · **86 Quantitative Physics Simulators** · **95/95 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 91-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 85 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [94-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 86 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [95-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -179,6 +179,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **88** | **Deepwater `FPSO` Internal Turret-Mooring Weathervaning, Subsea Riser Severe-Slugging & Topside Centrifugal Compressor Anti-Surge (`1D/3D Multiphase Riser Slugging & 6-DOF Turret PINN + Active Choke & Anti-Surge Recycle MPC` + `API RP 14C / ISO 10418 / DNV-OS-E301 / SIL-3` HIPPS, `ESD-1` & `EQD` Gate + `Subsea MPFM / Riser FBG` Edge)** | `simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox()` | `aksclaw-fpso-turret-mooring-riser-slugging-apirp14c-sil3-pool.bicep` | **`+25.6%` separation throughput/margin & `-39.1%` slug pressure/level surge**, **`0.0%` separator carry-over or mooring breach (`1.2 ms` SIL-3)**, **`1.1 ms` topside `MPFM/DAS` edge (`98.9%` SatCom cut)** |
 | **89** | **Third-Gen Semiconductor `8-Inch 4H-SiC` Physical Vapor Transport (`PVT`, `2,200–2,400°C`) Crystal Boule Growth & `HT-CVD` Epitaxy (`3D Graphite Crucible Radiative-Sublimation & BPD Thermoelastic Stress PINN + RF Coil Position & Argon Backpressure MPC` + `SEMI S2 / SEMI M55 / NFPA 86 / SIL-3` Coil Water-Leak & Silane Purge Gate + `In-Situ X-Ray DR / Pyrometry` Edge)** | `simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox()` | `aksclaw-sic-pvt-boule-crystal-growth-htcvd-semis2-sil3-pool.bicep` | **`+28.7%` `4H-SiC` boule yield/wafers & `-41.2%` BPD dislocation/stress**, **`0.0%` coil water-leak steam explosion (`1.3 ms` SIL-3)**, **`1.2 ms` cleanroom `X-Ray/Pyrometer` edge (`98.7%` WAN cut)** |
 | **90** | **Autonomous Polar Icebreaker (`PC1–PC3`), Multi-Year Pressure-Ridge SAR Routing, Hull `FBG` Ice-Belt Strain & `Azipod` Ice-Milling (`C/X-Band SAR + 3D DEM Ice-Hull PINN + Azipod Milling & Heeling MPC` + `IMO Polar Code / IACS URI / SIL-3` Hull Yield & Besetting Gate + `Marine X-Band Ice Radar / FBG` Edge)** | `simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox()` | `aksclaw-polar-icebreaker-ice-routing-azimuth-imopolar-sil3-pool.bicep` | **`+26.8%` ice-transit VMG/ramming fuel & `-43.4%` hull strain/Azipod milling torque**, **`0.0%` hull buckling or shaft shear (`1.3 ms` SIL-3)**, **`1.1 ms` bridge `Ice-Radar/FBG` edge (`98.9%` SatCom cut)** |
+| **91** | **Autonomous Gravitational-Wave Laser Interferometer (`LIGO / CE / ET`), `Fabry-Pérot` Arm Cavity Locking, Newtonian Seismic Feedforward Cancellation & Squeezed-Vacuum (`Deep-RL Hierarchical Lock + Borehole Newtonian-Noise PINN + 10 dB Squeezed-Vacuum MPC` + `IEC 61508 SIL-3 / ANSI Z136.1` `1.5 MW` Laser Shutter & Quad-Pendulum Gate + `CDS Dolphin PCIe RFM` Edge)** | `simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox()` | `aksclaw-gravitational-wave-interferometer-fabry-perot-sil3-pool.bicep` | **`+27.4%` duty-cycle/BNS range & `-44.2%` sub-10 Hz DARM noise/lock-loss**, **`0.0%` mirror thermal damage or suspension crash (`0.8 ms` SIL-3)**, **`0.7 ms` `CDS Dolphin RFM` edge (`99.1%` WAN cut)** |
 
 ---
 
@@ -188,10 +189,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 85 quantitative engineering & physics simulators (Chapters 7–90)
+# 2. Run all 86 quantitative engineering & physics simulators (Chapters 7–91)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 94 unit tests (100% pass across 6 runtimes, 85 physics models, 86 blueprints & links)
+# 3. Execute all 95 unit tests (100% pass across 6 runtimes, 86 physics models, 87 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

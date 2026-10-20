@@ -92,6 +92,7 @@ from agent_infra_sizer import (
     simulate_fpso_turret_mooring_riser_slugging_apirp14c_sil3_sandbox,
     simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
     simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
+    simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -231,6 +232,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-fpso-turret-mooring-riser-slugging-apirp14c-sil3-pool.bicep",
             "aksclaw-sic-pvt-boule-crystal-growth-htcvd-semis2-sil3-pool.bicep",
             "aksclaw-polar-icebreaker-ice-routing-azimuth-imopolar-sil3-pool.bicep",
+            "aksclaw-gravitational-wave-interferometer-fabry-perot-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1655,6 +1657,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["multiyear_pressure_ridge_or_bergy_bit_false_clearance_pct"], 3.2)
         self.assertTrue(gov["polar_icebreaker_ice_routing_slo_met"])
         self.assertFalse(raw["polar_icebreaker_ice_routing_slo_met"])
+
+    def test_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(self) -> None:
+        gov = simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(
+            8, "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge"
+        )
+        raw = simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(
+            8, "linear_pid_lock_acquisition_static_seismic_filter_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_gw_interferometer_pods"], 4)
+        self.assertEqual(gov["observation_duty_cycle_and_bns_inspiral_range_gain_pct"], 27.4)
+        self.assertEqual(gov["sub10hz_darm_strain_noise_and_lockloss_reduction_pct"], 44.2)
+        self.assertEqual(gov["iec61508_sil3_ansi_z136_laser_quad_suspension_interlock_ms"], 0.8)
+        self.assertEqual(gov["intracavity_mirror_thermal_or_suspension_stop_breach_pct"], 0.0)
+        self.assertGreater(raw["intracavity_mirror_thermal_or_suspension_stop_breach_pct"], 1.2)
+        self.assertEqual(gov["cds_dolphin_rfm_epics_edge_latency_ms"], 0.7)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.1)
+        self.assertEqual(gov["teleseismic_lockloss_or_false_gcn_alert_clearance_pct"], 0.0)
+        self.assertGreater(raw["teleseismic_lockloss_or_false_gcn_alert_clearance_pct"], 3.0)
+        self.assertTrue(gov["gw_interferometer_fabry_perot_slo_met"])
+        self.assertFalse(raw["gw_interferometer_fabry_perot_slo_met"])
 
 
 if __name__ == "__main__":

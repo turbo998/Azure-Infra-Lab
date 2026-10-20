@@ -498,6 +498,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(83)">84. 深水浮式生产储卸油装置 (FPSO) 内转塔单点系泊 + 海底立管严重段塞流抑制与离心压缩机防喘振 PINN-MPC 及 API RP 14C / DNV-OS-E301 / SIL-3 HIPPS 与快脱 EQD 联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(84)">85. 第三代半导体 8英寸碳化硅 (200mm 4H-SiC) PVT 2400°C 单晶生长与 HT-CVD 外延 PINN-MPC 及 SEMI S2 / SEMI M55 / NFPA 86 / SIL-3 水冷防蒸汽爆炸与硅烷吹扫联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(85)">86. 极地重型破冰船 (PC1-PC3) 星载 SAR 多年冰脊动态寻优 + 船体冰带 FBG 冲击应变与吊舱推进器 (Azipod) 铣冰防过载 PINN-MPC 及 IMO Polar Code / IACS URI / SIL-3 防困冰联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(86)">87. 千米级引力波激光干涉仪 (LIGO/CE/ET) 四级悬架法布里-珀罗臂腔分层锁腔 Deep-RL + 牛顿引力梯度噪声 (NN) PINN + 频变压缩真空态 MPC 与 IEC 61508 SIL-3 / ANSI Z136.1 1.5MW 激光快门联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2437,6 +2438,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 86: Autonomous Gravitational-Wave Laser Interferometer, Fabry-Perot Arm Cavity Locking, Newtonian Seismic Feedforward Cancellation & Squeezed-Vacuum IEC 61508 SIL-3 Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 86 · GRAVITATIONAL-WAVE LASER INTERFEROMETER (LIGO / CE / ET), FABRY-PEROT CAVITY LOCKING, NEWTONIAN NOISE PINN &amp; SQUEEZED-VACUUM IEC 61508 SIL-3 SIZER</span>
+    <h2>自主千米级引力波激光干涉仪 (<code>LIGO / CE / ET</code>)、法布里-珀罗臂腔锁腔、牛顿引力梯度地震前馈抵消与频变压缩真空态 <code>IEC 61508 SIL-3</code> 联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 座千米级引力波干涉仪角站与端站实验综合体规模下，四级摆熔融石英测试质量多自由度谐振腔分层锁腔与角向准直 (<code>ASC</code>) <code>Deep-RL</code>、钻孔地震仪阵列牛顿引力梯度噪声 (<code>Newtonian Noise, NN</code>) 前馈抵消与参量不稳定性 (<code>PI</code>) <code>PINN</code> + <code>300 m</code> 滤波腔频变压缩真空态 (<code>10 dB Squeezed Vacuum</code>) 相位 <code>MPC</code>（双中子星并合探测距离与联合观测占空比 <code>+27.4%</code>、<code>3–30 Hz</code> 低频段差分臂长 <code>DARM</code> 残余应变噪声与失锁率 <code>-44.2%</code>）、<code>IEC 61508 SIL-3 / ANSI Z136.1 Class 4</code> <code>1.5 MW</code> 腔内循环激光声光快门卸荷与四级悬架静电防碰撞止挡硬联锁（<code>0.8 ms</code>，腔内激光灼伤吊丝或悬架碰撞违例率 <code>0.0%</code>）及台站 <code>LIGO CDS Dolphin PCIe</code> 反射内存网 (<code>16.384 kHz</code>) + <code>EPICS pvAccess / Azure Local</code> 边缘推理（<code>0.7 ms</code>，原始 <code>gwf</code> 帧流广域网带宽削减 <code>99.1%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 引力波激光干涉仪角站与双臂端站综合体数 (Gravitational-Wave Detector Sites): <strong id="lbl_gw_sites" style="color:var(--amber)">8</strong> Detector Sites</label>
+          <input type="range" id="rng_gw_sites" min="4" max="32" step="4" value="8" oninput="runGwInterferometerLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 法布里-珀罗分层锁腔 Deep-RL、牛顿噪声 PINN-MPC 与 IEC 61508 SIL-3 腔内激光联锁模式 (GW Interferometer Governance Mode)</label>
+          <select id="sel_gw_mode" onchange="runGwInterferometerLab()">
+            <option value="deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge" selected>四级摆分层锁腔 Deep-RL + 钻孔阵列牛顿引力梯度 PINN + 频变压缩真空 MPC (+27.4% 占空比/视界距离 / -44.2% 低频 DARM 应变噪声) + SIL-3 1.5MW 激光快门联锁 + 0.7ms Dolphin 反射内存边缘 (推荐)</option>
+            <option value="linear_pid_lock_acquisition_static_seismic_filter_cloud">传统反模式：单自由度线性 PID 锁腔与静态维纳滤波 (+4.6% 增益) + 无 1.5MW 激光快门与四级摆防碰撞 SIL-3 硬联锁 (1.4% 熔融石英吊丝灼断/碰撞违例) + 原始 gwf 帧流上云 (3.2% 远震失锁/误发 GCN 警报)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="gwOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3906,6 +3930,21 @@ resource polarIcebreakerSil3Pool 'Microsoft.ContainerService/managedClusters/age
       'aksclaw.io/bridge-xband-iceradar-fbg-iec61162-edge': 'enabled-1.1ms-98.9pct-polar-satcom-wan-cut'
     }
   }
+}`,
+`// Blueprint #87: Gravitational-Wave Laser Interferometer (LIGO/CE/ET) Fabry-Perot Cavity Locking, Newtonian Noise PINN & Squeezed-Vacuum IEC 61508 SIL-3 Pool (Chapter 91)
+resource gwInterferometerSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'gwinterfero'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'gravitational-wave-interferometer-fabry-perot-sil3-agent'
+      'aksclaw.io/deep-rl-lock-newtonian-pinn-squeezed-mpc': 'enabled-27.4pct-duty-bns-range-44.2pct-darm-noise-cut'
+      'aksclaw.io/iec61508-sil3-ansi-z136-laser-quad-suspension': 'enforced-0.8ms-zero-mirror-thermal-or-suspension-stop-breach'
+      'aksclaw.io/ligo-cds-dolphin-pcie-rfm-epics-edge': 'enabled-0.7ms-99.1pct-gwf-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4092,6 +4131,30 @@ runPshHydroLab();
 runFpsoTurretLab();
 runSicPvtLab();
 runPolarIcebreakerLab();
+runGwInterferometerLab();
+
+function runGwInterferometerLab() {
+  const sites = parseInt(document.getElementById('rng_gw_sites').value, 10);
+  const mode = document.getElementById('sel_gw_mode').value;
+  document.getElementById('lbl_gw_sites').textContent = sites.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(sites / 4));
+  const pods = Math.max(2, Math.floor(sites / 2));
+  const ok = mode === 'deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge';
+  const mpcStr = ok ? "四级摆多自由度分层锁腔与角向准直 (ASC) Deep-RL + 钻孔地震阵列牛顿引力梯度 (NN) 前馈抵消 PINN + 300m 滤波腔频变压缩真空态 (10dB Squeezed Vacuum) MPC · 联合观测占空比与双中子星探测视界 +27.4% · 3-30Hz 低频 DARM 残余应变噪声与失锁率 -44.2%" : "传统单自由度线性 PID 锁腔与静态维纳地震滤波 · 仅 +4.6% 占空比增益 / +8.1% 噪声恶化 (强辐射压光弹簧耦合导致锁腔耗时数十分钟且 3.2% 远震瑞利波冲垮腔锁或瞬态毛刺误发 GCN 天文警报)";
+  const sil3Str = ok ? "0.8 ms IEC 61508 SIL-3 / ANSI Z136.1 Class 4 1.5MW 腔内循环激光声光快门 (AOM) 卸荷与四级悬架静电防碰撞止挡硬联锁 · 0.0% 石英吊丝灼断/测试质量碰撞违例" : "无 1.5MW 激光快门与四级摆防碰撞 SIL-3 硬联锁 (94.0 ms 广域回路滞后) · 1.4% 腔锁失步时兆瓦级光束扫过 400µm 熔融石英吊丝或静电饱和撞击机械止挡风险";
+  const edgeStr = ok ? "0.7 ms 中央角站与双臂端站 LIGO CDS Dolphin PCIe 反射内存网 (16.384 kHz)、EPICS pvAccess 与 Azure Local 实时边缘 (-99.1% 广域科研专网带宽) · 0.0% 跨站相位失步" : "215.0 ms 原始高采样率 gwf 帧流回传异地超算中心 · 远超 16.384 kHz 腔锁相位裕度要求且无法在微弧度级镜面偏摆瞬态内切断 1.5MW 腔内循环激光";
+
+  document.getElementById('gwOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 1.5MW 腔内激光灼伤石英吊丝或悬架碰撞风险 · 3.2% 远震瑞利波失锁或瞬态毛刺误触发全球 GCN 警报'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个引力波干涉仪腔锁与降噪控制单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>角站/端站 LIGO CDS Dolphin PCIe 反射内存网 (16.384 kHz)、EPICS pvAccess 与 Azure Local 实时边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runPolarIcebreakerLab() {
   const corridors = parseInt(document.getElementById('rng_polar_corridors').value, 10);
