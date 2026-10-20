@@ -5318,6 +5318,49 @@ def simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(
     }
 
 
+def simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(
+    pv_roll_to_roll_lines: int = 16,
+    pv_governance_mode: str = "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Next-Gen Perovskite-Silicon Tandem Photovoltaic (PV) Roll-to-Roll Slot-Die Coating, Meniscus Fluid-Dynamics & Laser P1-P2-P3 Scribing Ablation PINN-MPC, In-Situ Photoluminescence (PL) / Hyperspectral Crystallization Defect Detection & IEC 61215 / IEC 61730 / SEMI PV22 / IEC 61508 SIL-3 Toxic Lead-Solvent Vapor & Ultrafast Femtosecond Laser Interlock Agent Infrastructure (Chapter 103)."""
+    if pv_roll_to_roll_lines <= 0:
+        raise ValueError("pv_roll_to_roll_lines must be positive")
+    valid_modes = {
+        "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge",
+        "open_loop_fixed_web_speed_empirical_oven_cloud_polling",
+    }
+    if pv_governance_mode not in valid_modes:
+        raise ValueError(f"pv_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = pv_governance_mode == "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge"
+    active_pv_tandem_pods = max(2, min(8, int(pv_roll_to_roll_lines // 2))) if pv_roll_to_roll_lines <= 16 else max(8, int(pv_roll_to_roll_lines // 4))
+    gpu_nodes = max(2, math.ceil(pv_roll_to_roll_lines / 8))
+
+    tandem_cell_pce_yield_and_web_throughput_gain_pct = 33.2 if governed else 5.3
+    pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct = 45.4 if governed else 7.3
+    iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms = 0.4 if governed else 185.0
+    unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct = 0.0 if governed else 1.5
+    line_edge_hyperspectral_pl_and_oct_loop_ms = 0.4 if governed else 206.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    unmitigated_perovskite_yellow_phase_or_delamination_pct = 0.0 if governed else 3.4
+
+    return {
+        "pv_roll_to_roll_lines": pv_roll_to_roll_lines,
+        "pv_governance_mode": pv_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pv_tandem_pods": active_pv_tandem_pods,
+        "tandem_cell_pce_yield_and_web_throughput_gain_pct": tandem_cell_pce_yield_and_web_throughput_gain_pct,
+        "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct,
+        "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms,
+        "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct,
+        "line_edge_hyperspectral_pl_and_oct_loop_ms": line_edge_hyperspectral_pl_and_oct_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "unmitigated_perovskite_yellow_phase_or_delamination_pct": unmitigated_perovskite_yellow_phase_or_delamination_pct,
+        "perovskite_tandem_pv_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

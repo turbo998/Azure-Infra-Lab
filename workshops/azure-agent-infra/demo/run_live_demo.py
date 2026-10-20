@@ -117,6 +117,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
     simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
     simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
+    simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -833,6 +834,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "fsw_cryo_tank_16_cells": simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(16, "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"),
             "fsw_cryo_tank_64_cells": simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(64, "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"),
             "raw_fsw_cryo_tank_16_cells": simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(16, "constant_rpm_plunge_depth_pid_postweld_xray_cloud"),
+        },
+        "demo_98_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox": {
+            "pv_tandem_16_lines": simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(16, "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge"),
+            "pv_tandem_64_lines": simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(64, "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge"),
+            "raw_pv_tandem_16_lines": simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(16, "open_loop_fixed_web_speed_empirical_oven_cloud_polling"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

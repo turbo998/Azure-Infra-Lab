@@ -104,6 +104,7 @@ from agent_infra_sizer import (
     simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
     simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
     simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
+    simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -255,6 +256,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-vleo-abep-atmosphere-breathing-ion-thruster-dsmc-sil3-pool.bicep",
             "aksclaw-offshore-ccus-co2-pipeline-decompression-fracture-sccs-iso27914-sil3-pool.bicep",
             "aksclaw-fsw-friction-stir-welding-cryo-tank-phased-array-ut-awsd17-sil3-pool.bicep",
+            "aksclaw-perovskite-silicon-tandem-pv-slot-die-laser-scribing-iec61215-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1931,6 +1933,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct"], 3.0)
         self.assertTrue(gov["fsw_cryotank_welding_slo_met"])
         self.assertFalse(raw["fsw_cryotank_welding_slo_met"])
+
+    def test_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(self) -> None:
+        gov = simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(
+            16, "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge"
+        )
+        raw = simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(
+            16, "open_loop_fixed_web_speed_empirical_oven_cloud_polling"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_pv_tandem_pods"], 8)
+        self.assertEqual(gov["tandem_cell_pce_yield_and_web_throughput_gain_pct"], 33.2)
+        self.assertEqual(gov["pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct"], 45.4)
+        self.assertEqual(gov["iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct"], 1.2)
+        self.assertEqual(gov["line_edge_hyperspectral_pl_and_oct_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["unmitigated_perovskite_yellow_phase_or_delamination_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_perovskite_yellow_phase_or_delamination_pct"], 3.0)
+        self.assertTrue(gov["perovskite_tandem_pv_slo_met"])
+        self.assertFalse(raw["perovskite_tandem_pv_slo_met"])
 
 
 if __name__ == "__main__":

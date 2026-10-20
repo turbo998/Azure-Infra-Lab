@@ -110,6 +110,7 @@ from agent_infra_sizer import (
     simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
     simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
     simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
+    simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -928,6 +929,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(64, "pinn_mpc_sheppard_wright_fsw_viscoplastic_paut_awsd17_sil3_edge"),
         simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox(16, "constant_rpm_plunge_depth_pid_postweld_xray_cloud"),
     ]
+    perovskite_silicon_tandem_pv_profiles: List[Dict[str, object]] = [
+        simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(8, "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge"),
+        simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(16, "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge"),
+        simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(64, "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge"),
+        simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(16, "open_loop_fixed_web_speed_empirical_oven_cloud_polling"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1026,6 +1033,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "vleo_abep_ion_thruster_profiles": vleo_abep_ion_thruster_profiles,
         "offshore_ccus_co2_sequestration_profiles": offshore_ccus_co2_sequestration_profiles,
         "fsw_cryo_tank_paut_profiles": fsw_cryo_tank_paut_profiles,
+        "perovskite_silicon_tandem_pv_profiles": perovskite_silicon_tandem_pv_profiles,
     }
 
 

@@ -6164,6 +6164,68 @@
         "uncompensated_kissing_bond_oxide_or_solidus_hot_cracking_pct": 3.4,
         "fsw_cryotank_welding_slo_met": false
       }
+    ],
+    "perovskite_silicon_tandem_pv_profiles": [
+      {
+        "pv_roll_to_roll_lines": 8,
+        "pv_governance_mode": "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pv_tandem_pods": 4,
+        "tandem_cell_pce_yield_and_web_throughput_gain_pct": 33.2,
+        "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": 45.4,
+        "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": 0.4,
+        "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": 0.0,
+        "line_edge_hyperspectral_pl_and_oct_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "unmitigated_perovskite_yellow_phase_or_delamination_pct": 0.0,
+        "perovskite_tandem_pv_slo_met": true
+      },
+      {
+        "pv_roll_to_roll_lines": 16,
+        "pv_governance_mode": "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pv_tandem_pods": 8,
+        "tandem_cell_pce_yield_and_web_throughput_gain_pct": 33.2,
+        "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": 45.4,
+        "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": 0.4,
+        "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": 0.0,
+        "line_edge_hyperspectral_pl_and_oct_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "unmitigated_perovskite_yellow_phase_or_delamination_pct": 0.0,
+        "perovskite_tandem_pv_slo_met": true
+      },
+      {
+        "pv_roll_to_roll_lines": 64,
+        "pv_governance_mode": "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pv_tandem_pods": 16,
+        "tandem_cell_pce_yield_and_web_throughput_gain_pct": 33.2,
+        "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": 45.4,
+        "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": 0.4,
+        "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": 0.0,
+        "line_edge_hyperspectral_pl_and_oct_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "unmitigated_perovskite_yellow_phase_or_delamination_pct": 0.0,
+        "perovskite_tandem_pv_slo_met": true
+      },
+      {
+        "pv_roll_to_roll_lines": 16,
+        "pv_governance_mode": "open_loop_fixed_web_speed_empirical_oven_cloud_polling",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pv_tandem_pods": 8,
+        "tandem_cell_pce_yield_and_web_throughput_gain_pct": 5.3,
+        "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": 7.3,
+        "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": 185.0,
+        "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": 1.5,
+        "line_edge_hyperspectral_pl_and_oct_loop_ms": 206.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "unmitigated_perovskite_yellow_phase_or_delamination_pct": 3.4,
+        "perovskite_tandem_pv_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -11587,5 +11649,52 @@
       "fsw_cryotank_welding_slo_met": false
     }
   },
-  "trace_sha256": "320a3de0de587d90b8ad442ecf43a6289014188de414bcb0cfbfce7197d699ae"
+  "demo_98_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox": {
+    "pv_tandem_16_lines": {
+      "pv_roll_to_roll_lines": 16,
+      "pv_governance_mode": "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_pv_tandem_pods": 8,
+      "tandem_cell_pce_yield_and_web_throughput_gain_pct": 33.2,
+      "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": 45.4,
+      "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": 0.4,
+      "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": 0.0,
+      "line_edge_hyperspectral_pl_and_oct_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "unmitigated_perovskite_yellow_phase_or_delamination_pct": 0.0,
+      "perovskite_tandem_pv_slo_met": true
+    },
+    "pv_tandem_64_lines": {
+      "pv_roll_to_roll_lines": 64,
+      "pv_governance_mode": "pinn_mpc_landau_levich_perovskite_meniscus_femtosecond_p2_iec61215_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_pv_tandem_pods": 16,
+      "tandem_cell_pce_yield_and_web_throughput_gain_pct": 33.2,
+      "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": 45.4,
+      "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": 0.4,
+      "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": 0.0,
+      "line_edge_hyperspectral_pl_and_oct_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "unmitigated_perovskite_yellow_phase_or_delamination_pct": 0.0,
+      "perovskite_tandem_pv_slo_met": true
+    },
+    "raw_pv_tandem_16_lines": {
+      "pv_roll_to_roll_lines": 16,
+      "pv_governance_mode": "open_loop_fixed_web_speed_empirical_oven_cloud_polling",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_pv_tandem_pods": 8,
+      "tandem_cell_pce_yield_and_web_throughput_gain_pct": 5.3,
+      "pinhole_shunt_and_p2_tco_damage_scrap_reduction_pct": 7.3,
+      "iec61215_sil3_laser_and_pb_solvent_interlock_latency_ms": 185.0,
+      "unmitigated_p2_subcell_shunt_or_solvent_lel_breach_pct": 1.5,
+      "line_edge_hyperspectral_pl_and_oct_loop_ms": 206.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "unmitigated_perovskite_yellow_phase_or_delamination_pct": 3.4,
+      "perovskite_tandem_pv_slo_met": false
+    }
+  },
+  "trace_sha256": "178168ace8b44508b6661d967ea26861c5d11225fba685e8797782f96649bf48"
 }

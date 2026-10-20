@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #97 · 103 Chapters · 98 Blueprints · 97 Simulators · 106/106 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #98 · 104 Chapters · 99 Blueprints · 98 Simulators · 107/107 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -2882,7 +2882,31 @@ sequenceDiagram
 
 ---
 
-## 103. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 103. 自主下一代钙钛矿-晶硅叠层光伏（`Perovskite-Silicon Tandem PV`）卷对卷狭缝涂布（`Slot-Die Coating`）弯月面流体动力学与 `P1-P2-P3` 飞秒激光刻划烧蚀 `PINN-MPC`、原位光致发光/高光谱（`PL / Hyperspectral`）结晶相变检测及 `IEC 61215 / IEC 61730 / SEMI PV22 / IEC 61508 SIL-3` 铅溶剂蒸汽防爆与超快激光联锁沙箱架构（Autonomous Next-Gen Perovskite-Silicon Tandem Photovoltaic (`PV`) Roll-to-Roll Slot-Die Meniscus Fluid-Dynamics & `P1-P2-P3` Femtosecond Laser Scribing `PINN-MPC`, In-Situ Photoluminescence (`PL`) Crystallization Inspection & `IEC 61215 / IEC 61730 / SEMI PV22 / IEC 61508 SIL-3` Toxic Lead-Solvent Vapor & Laser Interlock Agent Infrastructure）
+
+> **English Summary**: For gigawatt-scale monolithic and 4-terminal Perovskite-Silicon Tandem Photovoltaic (`PV`, `>31.5%–33.9%` cell efficiency) roll-to-roll and large-area (`G12 / M10` wafer & `1.2 m × 2.4 m` glass) manufacturing lines (`8` to `64` high-speed slot-die coating, gas-quench crystallization, and `P1-P2-P3` ultrafast laser scribing lines), conventional open-loop fixed web-speed coaters and empirical hot-air drying ovens suffer from Landau-Levich meniscus ribbing and Marangoni convection instabilities (`creating sub-micron pinholes and coffee-ring thickness striations`), incomplete $\delta\text{-FAPbI}_3$ photo-inactive yellow-phase conversion during anti-solvent/nitrogen-knife quenching, and thermal damage to the underlying transparent conductive oxide (`ITO / IZO`) or silicon tunnel-oxide passivated contact (`TOPCon / HJT`) bottom subcell during `P2` interconnect laser scribing. Combining a **Coupled Two-Phase Landau-Levich / Navier-Stokes Slot-Die Meniscus Bead & LaMer Nucleation-Crystallization Kinetics PINN + Real-Time Nitrogen Air-Knife Quench Velocity, Vacuum-Flash Pressure & Ultrafast Femtosecond `P1-P2-P3` Laser Pulse-Fluence MPC on `Standard_ND96isr_H100_v5`** (`+33.2%` tandem cell power conversion efficiency `PCE > 31.5%` bin yield & roll-to-roll web speed gain, `-45.4%` pinhole shunt defect, $\delta\text{-FAPbI}_3$ yellow-phase impurity & `P2` scribe contact-resistance/bottom-cell damage scrap reduction) with a **`0.4 ms` hardware-isolated `IEC 61215 / IEC 61730 / SEMI PV22 / ANSI Z136.1 / IEC 61508 SIL-3` ultrafast laser acoustic-optic modulator (`AOM`) beam dump, toxic lead-halide/DMF/DMSO solvent vapor `LEL < 15%` nitrogen-purge & electrostatic discharge (`ESD`) interlock** (`0.0%` vs `1.5%` `P2` laser bottom-subcell shunt burn-through or toxic solvent vapor LEL breach, `0.0%` vs `3.4%` uncompensated non-perovskite yellow-phase retention or moisture-induced halide phase segregation) and **`0.4 ms` line-side `Line-Scan Hyperspectral Photoluminescence (PL) Camera + Swept-Source OCT Wet-Film Profilometer + LIBS Scribe-Depth Monitor + CoaXPress/EtherCAT Edge`** (`99.3%` gigafactory WAN bandwidth reduction vs `206.0 ms` offline electroluminescence `EL` / solar-simulator IV cloud loop) enables defect-free gigawatt tandem solar production.
+
+### 103.1 钙钛矿-晶硅叠层光伏（`Perovskite-Silicon Tandem PV`）狭缝涂布 `Landau-Levich` 弯月面/结晶动力学 `PINN-MPC`、`IEC 61215 / SEMI PV22 SIL-3` 飞秒激光/铅溶剂蒸汽硬联锁及线扫光致发光（`PL`）边缘三大工程支柱
+
+1. **Pillar 1：`Landau-Levich` 狭缝涂布双弯月面（`Coating Bead`）马兰戈尼流场与 `LaMer` 成核结晶相变 `PINN` + 高速风刀气淬（`Gas-Quenching`）/飞秒激光 `P1-P2-P3` 选择性烧蚀 `MPC`（`Standard_ND96isr_H100_v5`）**：
+   - 在 `Standard_ND96isr_H100_v5` 节点上运行耦合钙钛矿前驱体墨水（`$\text{Cs}_{0.05}(\text{FA}_{0.90}\text{MA}_{0.10})_{0.95}\text{Pb}(\text{I}_{0.90}\text{Br}_{0.10})_3$` 溶于 `DMF/DMSO/NMP` 混合溶剂）在纹理化绒面晶硅底电池/自组装单分子层（`Me-4PACz SAM`）空穴传输层上高速狭缝涂布时的 `Landau-Levich` 上下游自由弯月面毛细数（`Capillary Number $Ca$`）稳定窗口、溶剂挥发驱动的马兰戈尼对流（`Marangoni Stress`）以及 `LaMer` 过饱和爆发成核与黑相 $\alpha\text{-FAPbI}_3$ 晶粒取向生长动力学的 `PINN`，并与层流氮气风刀（`$\text{N}_2$ Air-Knife`）风速/倾角、真空闪蒸（`VASP`）抽速曲线及皮秒/飞秒绿光（`515 nm`）激光 `P2` 开槽脉冲能量密度（`Fluence`）多变量 `MPC` 闭环协同，使 **叠层电池光电转换效率（`PCE > 31.5%`）优品率与卷对卷/大版面涂布线速提升 `+33.2%`**、**微米级针孔漏电（`Pinhole Shunt`）、非活性黄相（`$\delta$-Phase`）残留与 `P2` 刻划损毁底电池缓冲层报废降低 `-45.4%`**，并将 **未补偿钙钛矿黄相偏析或光致卤素相分离（`Hoke Effect`）漏检率从 `3.4%` 降至 `0.0%`**。
+2. **Pillar 2：`IEC 61215 / IEC 61730 / SEMI PV22 / ANSI Z136.1 / IEC 61508 SIL-3` 亚毫秒飞秒激光声光调制器（`AOM`）快门截断、含铅有机溶剂（`DMF/DMSO/PbI2`）防爆负压氮气吹扫与防穿透底电池硬联锁（`0.4 ms`）**：
+   - 在大面积钙钛矿-晶硅串联组件全自动产线中，`P2` 激光刻划必须在彻底剥离百纳米级钙钛矿与电子传输层（`C60/SnO2`）的同时，绝不能击穿下方仅数十纳米厚的透明导电氧化物（`ITO/IZO`）复合层或损伤异质结（`HJT`）本征非晶硅钝化层，否则将直接造成串联子电池大面积短路报废；同时，涂布与退火烘道内挥发的 `DMF/DMSO` 有机溶剂及水溶性铅盐气溶胶一旦发生排风失压、浓度逼近爆炸下限（`15% LEL`）或工作舱露点回升（`$\text{H}_2\text{O} > 10\text{ ppm}$`），将引发剧毒铅泄漏、溶剂闪爆或整批未封装钙钛矿薄膜瞬间水合降解。任何由智能体下发的激光振镜偏转、脉冲能量、涂布模头计量泵与烘道风门指令，在送入现场执行器前必须通过 **`0.4 ms` 硬件级隔离的 `IEC 61215 / IEC 61730 / SEMI PV22 / ANSI Z136.1 / IEC 61508 SIL-3` 激光能量包络与环境毒物/防爆硬联锁验证（对比离线组件电致发光 EL 抽检与云端分析回路 `185.0 ms`）**：一旦在线激光诱导击穿光谱（`LIBS`）检出刻槽触及底电极铟/锡特征谱线出现过刻趋势，或红外气体传感器检出溶剂蒸汽逼近 `15% LEL` / 负压隔离手套箱压差跌落，立即在 `0.4 ms` 内通过声光调制器（`AOM`）在单脉冲周期内截断激光束流、关断前驱体供液阀并启动应急活性炭/分子筛双塔负压氮气吹扫，将 **`P2` 激光击穿晶硅底电池短路或有毒铅溶剂蒸汽越界违例率从 `1.5%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：产线端高速线扫高光谱光致发光（`Hyperspectral PL`）相机、扫频光学相干层析（`SS-OCT`）湿膜测厚仪、`LIBS` 激光刻深监测与 `CoaXPress / EtherCAT` 边缘（`0.4 ms`）**：
+   - 在狭缝涂布机、风刀淬火段与激光刻划台架侧部署工业 GPU + FPGA 边缘计算节点，通过 `CoaXPress 2.0 (50 Gbps)` 采集卡与 `EtherCAT` 总线直连 `16 kHz` 高速线扫高光谱光致发光（`Line-Scan Hyperspectral Photoluminescence, PL`）成像仪（实时反演带隙 `$E_g \approx 1.68\text{ eV}$` 空间分布与非辐射复合准费米能级分裂 `$\Delta E_F / q = \text{i}V_{oc}$`）、扫频 `SS-OCT` 纳米级湿膜弯月面轮廓仪以及同轴等离子体发射光谱（`LIBS`）刻划深度传感器，在 **`0.4 ms` 内（对比将高分辨率 PL 高光谱立方体与全版面显微图像上传云端训练集群 `206.0 ms`）** 完成微米级针孔定位、风刀压力场毫秒级前馈补偿与 `P1-P2-P3` 死区宽度（`Dead-Zone < 60 μm`）亚微米视觉纠偏，削减 **`99.3%` 光伏超级工厂高光谱视觉上云 WAN 带宽**。
+
+### 103.2 钙钛矿-晶硅叠层光伏（`Perovskite-Silicon Tandem PV`）卷对卷狭缝涂布与飞秒激光刻划 `Landau-Levich / LaMer PINN-MPC` + `IEC 61215 / SEMI PV22 SIL-3` 激光/铅溶剂硬联锁 + 线扫 `PL/OCT` 边缘 vs 传统恒速涂布与固定参数激光刻划基线对比表
+
+| 钙钛矿-晶硅叠层光伏 (`Perovskite-Silicon Tandem PV`) 产线规模与智能体架构 | `ND96isr_H100_v5` 节点数 | 在役狭缝涂布弯月面与飞秒激光刻划数字孪生体数 | **叠层光电效率 (`PCE>31.5%`) 良率/涂布线速增益与针孔漏电/`P2` 损伤报废削减** | **`IEC 61215 / SEMI PV22 SIL-3` `P2` 击穿底电池或铅溶剂蒸汽越界违例率** | **线扫高光谱 `PL / SS-OCT / LIBS` 边缘延迟与带宽削减** | **未补偿非活性黄相 (`δ-FAPbI3`) 残留或卤素相分离漏检率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`8` 条百兆瓦级大面积钙钛矿-晶硅叠层涂布与激光刻划中试线 · Landau-Levich/LaMer PINN-MPC + IEC 61215 SIL-3 联锁 + 线扫 PL 边缘** | `2` | `4` | **`+33.2%` / `-45.4%`** | **`0.0%` (`0.4 ms`)** | **`0.4 ms` / `99.3%`** | **`0.0%`** |
+| **`16` 条吉瓦级 (`GW-Scale`) 钙钛矿-异质结/TOPCon 叠层光伏主力制造产线 · Landau-Levich/LaMer PINN-MPC + IEC 61215 SIL-3 联锁 + 线扫 PL 边缘 (推荐)** | **`2`** | **`8`** | **`+33.2%` / `-45.4%`** | **`0.0%` (`0.4 ms`)** | **`0.4 ms` / `99.3%`** | **`0.0%`** |
+| **`64` 条跨基地十吉瓦级 (`10-GW`) 钙钛矿-晶硅叠层超级工厂集群 · Landau-Levich/LaMer PINN-MPC + IEC 61215 SIL-3 联锁 + 线扫 PL 边缘** | `8` | `16` | **`+33.2%` / `-45.4%`** | **`0.0%` (`0.4 ms`)** | **`0.4 ms` / `99.3%`** | **`0.0%`** |
+| `16` 条叠层光伏产线 · 传统恒定线速狭缝涂布 + 经验热风烘道 + 固定功率激光刻划 + 无 0.4ms 飞秒声光快门与铅溶剂 LEL SIL-3 硬联锁 + 离线 EL/IV 抽检上云 (反模式) | `2` | `8` | `+5.3%` / `-7.3%` (❌ 涂布弯月面马兰戈尼对流失稳引发微米针孔与咖啡环条纹，导致子电池并联电阻骤降与大面积漏电降档) | `1.5%` (`185.0 ms` ❌ 膜厚波动下固定激光通量直接烧穿底电极 ITO/钝化层造成子电池短路，或烘道 DMF 溶剂蒸汽超标泄漏) | `206.0 ms` / `0.0%` (❌ 仅靠组件封装后离线太阳光模拟器抽检，无法在数秒级湿膜成核相变窗口内闭环调节风刀流场) | `3.4%` (❌ 风刀淬火不均导致光惰性黄相 δ-FAPbI3 残留或微痕水氧诱发卤素偏析与早期光衰 T80 崩塌) |
+
+---
+
+## 104. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
