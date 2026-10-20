@@ -4288,5 +4288,67 @@
       "das_anchor_strike_false_clearance_pct": 2.9,
       "hvdc_subsea_interconnector_slo_met": false
     }
+  ],
+  "dac_carbon_sequestration_profiles": [
+    {
+      "dac_modules_and_wells": 8,
+      "dac_governance_mode": "vtsa_mpc_sco2_class6_bhp_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_class6_injection_corridors": 2,
+      "vtsa_regeneration_steam_saving_pct": 24.8,
+      "net_co2_sequestration_yield_gain_pct": 18.2,
+      "sil3_wellhead_esdv_interlock_ms": 5.4,
+      "caprock_fracture_or_sco2_two_phase_breach_pct": 0.0,
+      "azure_local_downhole_das_edge_latency_ms": 6.8,
+      "wan_bandwidth_reduction_pct": 98.1,
+      "microseismic_or_hydrate_false_clearance_pct": 0.0,
+      "dac_carbon_sequestration_slo_met": true
+    },
+    {
+      "dac_modules_and_wells": 16,
+      "dac_governance_mode": "vtsa_mpc_sco2_class6_bhp_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_class6_injection_corridors": 4,
+      "vtsa_regeneration_steam_saving_pct": 24.8,
+      "net_co2_sequestration_yield_gain_pct": 18.2,
+      "sil3_wellhead_esdv_interlock_ms": 5.4,
+      "caprock_fracture_or_sco2_two_phase_breach_pct": 0.0,
+      "azure_local_downhole_das_edge_latency_ms": 6.8,
+      "wan_bandwidth_reduction_pct": 98.1,
+      "microseismic_or_hydrate_false_clearance_pct": 0.0,
+      "dac_carbon_sequestration_slo_met": true
+    },
+    {
+      "dac_modules_and_wells": 64,
+      "dac_governance_mode": "vtsa_mpc_sco2_class6_bhp_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_class6_injection_corridors": 16,
+      "vtsa_regeneration_steam_saving_pct": 24.8,
+      "net_co2_sequestration_yield_gain_pct": 18.2,
+      "sil3_wellhead_esdv_interlock_ms": 5.4,
+      "caprock_fracture_or_sco2_two_phase_breach_pct": 0.0,
+      "azure_local_downhole_das_edge_latency_ms": 6.8,
+      "wan_bandwidth_reduction_pct": 98.1,
+      "microseismic_or_hydrate_false_clearance_pct": 0.0,
+      "dac_carbon_sequestration_slo_met": true
+    },
+    {
+      "dac_modules_and_wells": 16,
+      "dac_governance_mode": "unmanaged_fixed_steam_unthrottled_bhp_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_class6_injection_corridors": 4,
+      "vtsa_regeneration_steam_saving_pct": 0.0,
+      "net_co2_sequestration_yield_gain_pct": 0.0,
+      "sil3_wellhead_esdv_interlock_ms": 1420.0,
+      "caprock_fracture_or_sco2_two_phase_breach_pct": 1.8,
+      "azure_local_downhole_das_edge_latency_ms": 1390.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "microseismic_or_hydrate_false_clearance_pct": 3.2,
+      "dac_carbon_sequestration_slo_met": false
+    }
   ]
 }

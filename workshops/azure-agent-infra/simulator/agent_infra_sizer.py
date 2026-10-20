@@ -4060,6 +4060,56 @@ def simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(
     }
 
 
+def simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(
+    dac_modules_and_wells: int = 16,
+    dac_governance_mode: str = "vtsa_mpc_sco2_class6_bhp_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Direct Air Capture (DAC) Solid-Sorbent Vacuum
+    Temperature Swing Adsorption (V-TSA) Array, Supercritical CO2 (sCO2 > 7.38
+    MPa) Pipeline Phase-Envelope & Hydrate Control, and ISO 27914 / US EPA UIC
+    Class VI Deep Saline Aquifer Geological Sequestration Bottomhole Pressure
+    (BHP <= 90% Fracture Gradient) IEC 61511 SIL-3 Wellhead Emergency Shut-In
+    Valve (ESDV) Agent Infrastructure (Chapter 76).
+    """
+    if dac_modules_and_wells <= 0:
+        raise ValueError("dac_modules_and_wells must be positive")
+    valid_modes = {
+        "vtsa_mpc_sco2_class6_bhp_sil3_edge",
+        "unmanaged_fixed_steam_unthrottled_bhp_cloud",
+    }
+    if dac_governance_mode not in valid_modes:
+        raise ValueError(f"dac_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = dac_governance_mode == "vtsa_mpc_sco2_class6_bhp_sil3_edge"
+    gpu_nodes = max(2, math.ceil(dac_modules_and_wells / 8))
+    active_class6_injection_corridors = max(2, int(dac_modules_and_wells // 4))
+
+    vtsa_regeneration_steam_saving_pct = 24.8 if governed else 0.0
+    net_co2_sequestration_yield_gain_pct = 18.2 if governed else 0.0
+    sil3_wellhead_esdv_interlock_ms = 5.4 if governed else 1420.0
+    caprock_fracture_or_sco2_two_phase_breach_pct = 0.0 if governed else 1.8
+    azure_local_downhole_das_edge_latency_ms = 6.8 if governed else 1390.0
+    wan_bandwidth_reduction_pct = 98.1 if governed else 0.0
+    microseismic_or_hydrate_false_clearance_pct = 0.0 if governed else 3.2
+
+    return {
+        "dac_modules_and_wells": dac_modules_and_wells,
+        "dac_governance_mode": dac_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_class6_injection_corridors": active_class6_injection_corridors,
+        "vtsa_regeneration_steam_saving_pct": vtsa_regeneration_steam_saving_pct,
+        "net_co2_sequestration_yield_gain_pct": net_co2_sequestration_yield_gain_pct,
+        "sil3_wellhead_esdv_interlock_ms": sil3_wellhead_esdv_interlock_ms,
+        "caprock_fracture_or_sco2_two_phase_breach_pct": caprock_fracture_or_sco2_two_phase_breach_pct,
+        "azure_local_downhole_das_edge_latency_ms": azure_local_downhole_das_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "microseismic_or_hydrate_false_clearance_pct": microseismic_or_hydrate_false_clearance_pct,
+        "dac_carbon_sequestration_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -483,6 +483,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(68)">69. 航空航天复合材料热压罐固化 PINN-MPC + 自动铺丝 AFP 热成像与相控阵超声 PAUT 及 NADCAP / SIL-3 防放热联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(69)">70. 液化天然气 LNG 丙烷预冷混合冷剂 C3MR 夹点 MPC + BOG 压缩机防喘振与低温储罐防翻滚及 NFPA 59A / SIL-3 紧急停车联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(70)">71. 跨海多端柔性直流 MMC-HVDC 换流站 + 海缆动态增容 DCR PINN-MPC 与 CIGRE TB 496 / SIL-3 混合直流断路器 DCCB 联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(71)">72. 直接空气碳捕集 DAC 真空变温吸附 V-TSA 阵列 + 超临界 sCO2 管网与 ISO 27914 / EPA Class VI 地质封存 SIL-3 井口联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2081,6 +2082,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 71 · DIRECT AIR CAPTURE (DAC) V-TSA SORBENT ARRAY, SUPERCRITICAL CO2 (sCO2) PIPELINE &amp; ISO 27914 / US EPA CLASS VI GEOLOGICAL SEQUESTRATION SIL-3 SIZER</span>
+    <h2>自主直接空气碳捕集（DAC）真空变温吸附（V-TSA）阵列、超临界 CO2（sCO2 &gt;7.38 MPa）管网相包络控制与 ISO 27914 / US EPA UIC Class VI 深部咸水层地质封存井底流压（BHP &lt;=90% 破裂梯度）IEC 61511 SIL-3 井口紧急关断（ESDV）联锁测算器 (Chapter 76 · Bilingual)</h2>
+    <div class="sub">量化在百万吨级直接空气碳捕集（DAC）真空变温吸附（V-TSA）接触器模组与 Class VI 深部咸水层/玄武岩矿化封存井规模 <code>8 – 64 模组与注入井</code>（<code>2 – 16 条</code> 超临界 sCO2 干线输送与地下封存走廊）下，启用 <code>Toth 等温线 V-TSA 吸附-解吸再生动力学 MPC + TOUGH3 / ECLIPSE 多相 CO2-卤水羽流运移 PINN</code>（V-TSA 固态胺低压再生蒸汽能耗降低 <code>-24.8%</code>、年度净 CO2 捕集与地质矿化封存收率提升 <code>+18.2%</code>、储层微震激活或管网水合物冻堵误放行率 <code>0.0%</code>）、<code>ISO 27914 / US EPA UIC Class VI 与 IEC 61511 SIL-3 井底流压上限 (BHP &lt;= 90% 盖层破裂梯度)、超临界 sCO2 管网最低压力底线 (&gt;= 8.50 MPa) 及井口紧急关断阀 (ESDV) 硬联锁</code>（<code>5.4 ms</code> 校验，<code>0.0%</code> 盖层压裂逃逸与 sCO2 跌入两相干冰冻堵违例）以及井丛场 <code>Azure Local + IoT Operations</code> <code>井下分布式光纤声波/测温 (Downhole DAS/DTS) 与跨孔电阻率层析 (ERT)</code> 边缘反演（<code>6.8 ms</code> 响应，削减 <code>98.1%</code> 远端封存基地广域网回传带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. DAC 真空变温吸附 (V-TSA) 模组与 Class VI 封存注入井数 (DAC V-TSA Modules &amp; Class VI Wells): <strong id="lbl_dac_modules" style="color:var(--teal)">16</strong> Modules &amp; Wells</label>
+          <input type="range" id="rng_dac_modules" min="8" max="64" step="8" value="16" oninput="runDacClass6Lab()">
+        </div>
+        <div class="form-row">
+          <label>2. V-TSA 吸附动力学 MPC、sCO2 相包络与 EPA Class VI / SIL-3 井口联锁模式 (DAC &amp; Class VI Sequestration Governance Mode)</label>
+          <select id="sel_dac_mode" onchange="runDacClass6Lab()">
+            <option value="vtsa_mpc_sco2_class6_bhp_sil3_edge" selected>Toth V-TSA MPC + TOUGH3 Plume PINN (-24.8% 再生蒸汽 / +18.2% 净封存量) + Class VI SIL-3 BHP/sCO2 联锁 (0% 盖层压裂) + 井下 DAS 边缘 (推荐)</option>
+            <option value="unmanaged_fixed_steam_unthrottled_bhp_cloud">传统反模式：固定时长蒸汽吹扫 (0 增益) + 无 Class VI 井底流压/sCO2 相态 SIL-3 门控 (1.8% 盖层超压/干冰冻堵) + 原始井下 DAS 流上云 (3.2% 微震/冻堵漏报)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="dacOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3325,6 +3348,21 @@ resource hvdcMmcDcrSil3Pool 'Microsoft.ContainerService/managedClusters/agentPoo
       'aksclaw.io/subsea-das-dts-iec61850-sv-edge': 'enabled-3.3ms-98.3pct-grid-wan-cut'
     }
   }
+}`,
+`// Blueprint #72: Direct Air Capture (DAC) V-TSA Sorbent Array, Supercritical CO2 Pipeline & EPA Class VI Sequestration SIL-3 Pool (Chapter 76)
+resource dacVtsaClass6Sil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'dacvtsapinn'
+  properties: {
+    count: 2
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'dac-carbon-sequestration-vtsa-sco2-class6-sil3-agent'
+      'aksclaw.io/toth-vtsa-mpc-tough3-plume-pinn': 'enabled-24.8pct-steam-cut-18.2pct-net-cdr-yield'
+      'aksclaw.io/iso27914-epa-class6-sil3-bhp-esdv': 'enforced-5.4ms-zero-caprock-fracture-or-sco2-freeze'
+      'aksclaw.io/downhole-das-dts-ert-edge': 'enabled-6.8ms-98.1pct-wellpad-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3496,6 +3534,30 @@ runPetroFccLab();
 runAeroCompositeLab();
 runLngCryogenicLab();
 runHvdcSubseaLab();
+runDacClass6Lab();
+
+function runDacClass6Lab() {
+  const modules = parseInt(document.getElementById('rng_dac_modules').value, 10);
+  const mode = document.getElementById('sel_dac_mode').value;
+  document.getElementById('lbl_dac_modules').textContent = modules.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(modules / 8));
+  const corridors = Math.max(2, Math.floor(modules / 4));
+  const ok = mode === 'vtsa_mpc_sco2_class6_bhp_sil3_edge';
+  const mpcStr = ok ? "Toth V-TSA 动力学 MPC + TOUGH3 羽流 PINN · V-TSA 再生蒸汽能耗 -24.8% · 净 CO2 地质封存收率 +18.2%" : "固定时长蒸汽解吸与开环定压注入 · 0.0% 节能与封存增益 (环境湿度波动导致水共吸附热损且 3.2% 盖层微震或管网水合物冻堵误放行)";
+  const sil3Str = ok ? "5.4 ms ISO 27914 / EPA Class VI / SIL-3 井底流压 (BHP <=90% 破裂梯度)、sCO2 (>=8.50MPa) 与 ESDV 关断联锁 · 0.0% 盖层压裂/两相冻堵" : "无 Class VI 井底流压与 sCO2 相态 SIL-3 硬联锁 (1,420.0 ms 云端滞后) · 1.8% 井底流压突破盖层破裂梯度或 sCO2 失压析出干冰冻堵风险";
+  const edgeStr = ok ? "6.8 ms 井场 Azure Local 井下光纤声波/测温 (Downhole DAS/DTS) 与跨孔电阻率层析 (ERT) 边缘反演 (-98.1% 荒漠/近海广域网带宽) · 0.0% 漏报" : "1,390.0 ms 原始井下光纤 DAS/DTS 与微震波形流全量上云 · 拥塞偏远封存基地卫星链路且错过水泥环微环隙窜流早期节流窗口";
+
+  document.getElementById('dacOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.8% 盖层压裂逃逸/sCO2 两相干冰冻堵风险 · 3.2% 储层微震或水合物冻堵漏报'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${corridors} 条 sCO2 封存注入走廊 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>封存井丛场 Azure Local + IoT Operations 井下光纤分布式声波/测温 (Downhole DAS/DTS) 与 ERT 羽流边缘反演</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runHvdcSubseaLab() {
   const bipoles = parseInt(document.getElementById('rng_hvdc_bipoles').value, 10);

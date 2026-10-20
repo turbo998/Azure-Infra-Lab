@@ -83,6 +83,7 @@ from agent_infra_sizer import (
     simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
     simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
     simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
+    simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -739,6 +740,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(32, "mmc_gfm_dcr_cigre_sil3_dccb_edge"),
         simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(8, "static_cable_rating_unblocked_mmc_cloud_loop"),
     ]
+    dac_carbon_sequestration_profiles: List[Dict[str, object]] = [
+        simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(8, "vtsa_mpc_sco2_class6_bhp_sil3_edge"),
+        simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(16, "vtsa_mpc_sco2_class6_bhp_sil3_edge"),
+        simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(64, "vtsa_mpc_sco2_class6_bhp_sil3_edge"),
+        simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(16, "unmanaged_fixed_steam_unthrottled_bhp_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -810,6 +817,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "aerospace_composite_autoclave_profiles": aerospace_composite_autoclave_profiles,
         "lng_cryogenic_c3mr_bog_profiles": lng_cryogenic_c3mr_bog_profiles,
         "hvdc_subsea_interconnector_profiles": hvdc_subsea_interconnector_profiles,
+        "dac_carbon_sequestration_profiles": dac_carbon_sequestration_profiles,
     }
 
 

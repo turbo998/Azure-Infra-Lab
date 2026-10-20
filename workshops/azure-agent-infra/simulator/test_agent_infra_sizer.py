@@ -77,6 +77,7 @@ from agent_infra_sizer import (
     simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
     simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
     simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
+    simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -201,6 +202,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-aerospace-composite-autoclave-ndt-sil3-pool.bicep",
             "aksclaw-lng-cryogenic-c3mr-bog-sil3-esd-pool.bicep",
             "aksclaw-hvdc-subsea-interconnector-mmc-dcr-sil3-dccb-pool.bicep",
+            "aksclaw-dac-carbon-sequestration-vtsa-sco2-class6-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1318,6 +1320,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["das_anchor_strike_false_clearance_pct"], 2.8)
         self.assertTrue(gov["hvdc_subsea_interconnector_slo_met"])
         self.assertFalse(raw["hvdc_subsea_interconnector_slo_met"])
+
+    def test_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(self) -> None:
+        gov = simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(16, "vtsa_mpc_sco2_class6_bhp_sil3_edge")
+        raw = simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(16, "unmanaged_fixed_steam_unthrottled_bhp_cloud")
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_class6_injection_corridors"], 4)
+        self.assertEqual(gov["vtsa_regeneration_steam_saving_pct"], 24.8)
+        self.assertEqual(gov["net_co2_sequestration_yield_gain_pct"], 18.2)
+        self.assertEqual(gov["sil3_wellhead_esdv_interlock_ms"], 5.4)
+        self.assertEqual(gov["caprock_fracture_or_sco2_two_phase_breach_pct"], 0.0)
+        self.assertGreater(raw["caprock_fracture_or_sco2_two_phase_breach_pct"], 1.5)
+        self.assertEqual(gov["azure_local_downhole_das_edge_latency_ms"], 6.8)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.1)
+        self.assertEqual(gov["microseismic_or_hydrate_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["microseismic_or_hydrate_false_clearance_pct"], 3.0)
+        self.assertTrue(gov["dac_carbon_sequestration_slo_met"])
+        self.assertFalse(raw["dac_carbon_sequestration_slo_met"])
 
 
 if __name__ == "__main__":

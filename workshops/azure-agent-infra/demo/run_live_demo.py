@@ -90,6 +90,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
     simulate_lng_cryogenic_c3mr_bog_sil3_esd_sandbox,
     simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
+    simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -663,6 +664,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hvdc_8_bipoles": simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(8, "mmc_gfm_dcr_cigre_sil3_dccb_edge"),
             "hvdc_32_bipoles": simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(32, "mmc_gfm_dcr_cigre_sil3_dccb_edge"),
             "raw_hvdc_8_bipoles": simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox(8, "static_cable_rating_unblocked_mmc_cloud_loop"),
+        },
+        "demo_71_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox": {
+            "dac_8_modules": simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(8, "vtsa_mpc_sco2_class6_bhp_sil3_edge"),
+            "dac_16_modules": simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(16, "vtsa_mpc_sco2_class6_bhp_sil3_edge"),
+            "dac_64_modules": simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(64, "vtsa_mpc_sco2_class6_bhp_sil3_edge"),
+            "raw_dac_16_modules": simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox(16, "unmanaged_fixed_steam_unthrottled_bhp_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
