@@ -6040,6 +6040,68 @@
         "uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct": 3.5,
         "vleo_abep_propulsion_slo_met": false
       }
+    ],
+    "offshore_ccus_co2_sequestration_profiles": [
+      {
+        "ccus_injection_clusters": 6,
+        "ccus_governance_mode": "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ccus_sequestration_pods": 2,
+        "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": 33.6,
+        "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": 44.2,
+        "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": 0.5,
+        "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": 0.0,
+        "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 0.0,
+        "offshore_ccus_sequestration_slo_met": true
+      },
+      {
+        "ccus_injection_clusters": 18,
+        "ccus_governance_mode": "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ccus_sequestration_pods": 8,
+        "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": 33.6,
+        "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": 44.2,
+        "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": 0.5,
+        "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": 0.0,
+        "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 0.0,
+        "offshore_ccus_sequestration_slo_met": true
+      },
+      {
+        "ccus_injection_clusters": 48,
+        "ccus_governance_mode": "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge",
+        "gpu_nodes": 6,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ccus_sequestration_pods": 16,
+        "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": 33.6,
+        "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": 44.2,
+        "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": 0.5,
+        "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": 0.0,
+        "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": 0.5,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 0.0,
+        "offshore_ccus_sequestration_slo_met": true
+      },
+      {
+        "ccus_injection_clusters": 18,
+        "ccus_governance_mode": "steady_state_darcy_flow_fixed_wellhead_choke_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ccus_sequestration_pods": 8,
+        "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": 5.4,
+        "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": 7.2,
+        "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": 146.0,
+        "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": 1.5,
+        "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": 212.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 3.4,
+        "offshore_ccus_sequestration_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -11369,5 +11431,52 @@
       "vleo_abep_propulsion_slo_met": false
     }
   },
-  "trace_sha256": "3f96a2205248afb990cc14a0143472c76e000b1e343b17bff7a37080edf990c9"
+  "demo_96_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox": {
+    "ccus_sequestration_18_clusters": {
+      "ccus_injection_clusters": 18,
+      "ccus_governance_mode": "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ccus_sequestration_pods": 8,
+      "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": 33.6,
+      "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": 44.2,
+      "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": 0.5,
+      "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": 0.0,
+      "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 0.0,
+      "offshore_ccus_sequestration_slo_met": true
+    },
+    "ccus_sequestration_48_clusters": {
+      "ccus_injection_clusters": 48,
+      "ccus_governance_mode": "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge",
+      "gpu_nodes": 6,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ccus_sequestration_pods": 16,
+      "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": 33.6,
+      "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": 44.2,
+      "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": 0.5,
+      "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": 0.0,
+      "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 0.0,
+      "offshore_ccus_sequestration_slo_met": true
+    },
+    "raw_ccus_sequestration_18_clusters": {
+      "ccus_injection_clusters": 18,
+      "ccus_governance_mode": "steady_state_darcy_flow_fixed_wellhead_choke_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ccus_sequestration_pods": 8,
+      "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": 5.4,
+      "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": 7.2,
+      "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": 146.0,
+      "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": 1.5,
+      "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": 3.4,
+      "offshore_ccus_sequestration_slo_met": false
+    }
+  },
+  "trace_sha256": "f54580ba87cb655c776671de7a7a089acdae7b47ee7d466dc34424207752c999"
 }

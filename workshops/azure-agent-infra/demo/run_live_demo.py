@@ -115,6 +115,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
     simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
     simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
+    simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -821,6 +822,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "vleo_abep_24_satellites": simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(24, "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge"),
             "vleo_abep_96_satellites": simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(96, "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge"),
             "raw_vleo_abep_24_satellites": simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(24, "open_loop_nrlmsise00_lookup_table_fixed_rf_power"),
+        },
+        "demo_96_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox": {
+            "ccus_sequestration_18_clusters": simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(18, "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge"),
+            "ccus_sequestration_48_clusters": simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(48, "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge"),
+            "raw_ccus_sequestration_18_clusters": simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(18, "steady_state_darcy_flow_fixed_wellhead_choke_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

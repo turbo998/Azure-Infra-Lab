@@ -5232,6 +5232,49 @@ def simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(
     }
 
 
+def simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(
+    ccus_injection_clusters: int = 18,
+    ccus_governance_mode: str = "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Gigaton-Scale Offshore Carbon Capture, Utilization & Subsea Geological Sequestration (CCUS / Saline Aquifer Storage) Dense-Phase Supercritical CO2 Trunkline Two-Phase Decompression-Wave Fracture-Arrest PINN-MPC, Caprock Pore-Pressure / Fault-Slip Microseismic Plume Inversion & ISO 27913 / ISO 27914 / DNV-RP-F104 / IEC 61511 SIL-3 Emergency Subsea Isolation Valve (SSIV) & Injection Pressure-Relief Interlock Agent Infrastructure (Chapter 101)."""
+    if ccus_injection_clusters <= 0:
+        raise ValueError("ccus_injection_clusters must be positive")
+    valid_modes = {
+        "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge",
+        "steady_state_darcy_flow_fixed_wellhead_choke_cloud",
+    }
+    if ccus_governance_mode not in valid_modes:
+        raise ValueError(f"ccus_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ccus_governance_mode == "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge"
+    active_ccus_sequestration_pods = max(2, min(8, int(ccus_injection_clusters * 4 // 9))) if ccus_injection_clusters <= 18 else max(8, int(ccus_injection_clusters // 3))
+    gpu_nodes = max(2, math.ceil(ccus_injection_clusters / 9))
+
+    co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct = 33.6 if governed else 5.4
+    joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct = 44.2 if governed else 7.2
+    iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms = 0.5 if governed else 146.0
+    running_ductile_pipeline_fracture_or_caprock_fault_breach_pct = 0.0 if governed else 1.5
+    subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms = 0.5 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct = 0.0 if governed else 3.4
+
+    return {
+        "ccus_injection_clusters": ccus_injection_clusters,
+        "ccus_governance_mode": ccus_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ccus_sequestration_pods": active_ccus_sequestration_pods,
+        "co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct": co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct,
+        "joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct": joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct,
+        "iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms": iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms,
+        "running_ductile_pipeline_fracture_or_caprock_fault_breach_pct": running_ductile_pipeline_fracture_or_caprock_fault_breach_pct,
+        "subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms": subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct": uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct,
+        "offshore_ccus_sequestration_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -102,6 +102,7 @@ from agent_infra_sizer import (
     simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
     simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
     simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
+    simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -251,6 +252,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-maglev-eds-ems-lsm-levitation-airgap-en50129-sil4-pool.bicep",
             "aksclaw-ptes-carnot-battery-brayton-turbocompressor-thermocline-sil3-pool.bicep",
             "aksclaw-vleo-abep-atmosphere-breathing-ion-thruster-dsmc-sil3-pool.bicep",
+            "aksclaw-offshore-ccus-co2-pipeline-decompression-fracture-sccs-iso27914-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1885,6 +1887,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct"], 3.0)
         self.assertTrue(gov["vleo_abep_propulsion_slo_met"])
         self.assertFalse(raw["vleo_abep_propulsion_slo_met"])
+
+    def test_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(self) -> None:
+        gov = simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(
+            18, "pinn_mpc_span_wagner_co2_fracture_arrest_biot_caprock_iso27914_sil3_edge"
+        )
+        raw = simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox(
+            18, "steady_state_darcy_flow_fixed_wellhead_choke_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ccus_sequestration_pods"], 8)
+        self.assertEqual(gov["co2_storage_capacity_and_mineral_trapping_efficiency_gain_pct"], 33.6)
+        self.assertEqual(gov["joule_thomson_hydrate_freeze_and_compression_loss_reduction_pct"], 44.2)
+        self.assertEqual(gov["iso27913_iso27914_dnv_sil3_ssiv_and_lot_relief_interlock_ms"], 0.5)
+        self.assertEqual(gov["running_ductile_pipeline_fracture_or_caprock_fault_breach_pct"], 0.0)
+        self.assertGreater(raw["running_ductile_pipeline_fracture_or_caprock_fault_breach_pct"], 1.2)
+        self.assertEqual(gov["subsea_4d_das_dts_downhole_quartz_gauge_edge_latency_ms"], 0.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_jt_dry_ice_plug_or_induced_microseismic_slip_pct"], 3.0)
+        self.assertTrue(gov["offshore_ccus_sequestration_slo_met"])
+        self.assertFalse(raw["offshore_ccus_sequestration_slo_met"])
 
 
 if __name__ == "__main__":
