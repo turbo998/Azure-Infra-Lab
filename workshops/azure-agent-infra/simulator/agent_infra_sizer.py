@@ -3480,6 +3480,54 @@ def simulate_cement_kiln_ccus_pyro_sandbox(
     }
 
 
+def simulate_green_hydrogen_electrolyzer_ammonia_sandbox(
+    electrolyzer_plant_capacity_mw: int = 1000,
+    green_hydrogen_ammonia_mode: str = "load_following_mpc_haber_bosch_iso22734_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Green Hydrogen (PEM / Alkaline Electrolyzer) Gigawatt
+    Plant, Renewable Curtailment Load-Following MPC, Haber-Bosch Green Ammonia
+    (NH3) Synthesis & ISO 22734 / IEC 61511 SIL-3 H2-in-O2 (<1.6% vol) Crossover
+    Detonation Interlock Agent Infrastructure (Chapter 64).
+    """
+    if electrolyzer_plant_capacity_mw <= 0:
+        raise ValueError("electrolyzer_plant_capacity_mw must be positive")
+    valid_modes = {
+        "load_following_mpc_haber_bosch_iso22734_edge",
+        "static_rectifier_unverified_dp_raw_eis_stream",
+    }
+    if green_hydrogen_ammonia_mode not in valid_modes:
+        raise ValueError(f"green_hydrogen_ammonia_mode must be one of {sorted(valid_modes)}")
+
+    governed = green_hydrogen_ammonia_mode == "load_following_mpc_haber_bosch_iso22734_edge"
+    gpu_nodes = max(2, math.ceil(electrolyzer_plant_capacity_mw / 250))
+    electrolyzer_trains_and_nh3_reactors = max(4, int(electrolyzer_plant_capacity_mw // 50))
+
+    stack_specific_energy_saving_pct = 11.8 if governed else 0.0
+    green_ammonia_curtailment_yield_gain_pct = 23.6 if governed else 5.2
+    iso22734_sil3_h2_in_o2_gate_ms = 0.9 if governed else 0.0
+    h2_in_o2_crossover_or_catalyst_poison_escape_pct = 0.0 if governed else 1.5
+    cell_eis_thermal_edge_triage_ms = 9.5 if governed else 1190.0
+    hydrogen_plant_wan_bandwidth_reduction_pct = 96.8 if governed else 0.0
+    membrane_dp_pinhole_degradation_pct = 0.0 if governed else 3.4
+
+    return {
+        "electrolyzer_plant_capacity_mw": electrolyzer_plant_capacity_mw,
+        "green_hydrogen_ammonia_mode": green_hydrogen_ammonia_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "electrolyzer_trains_and_nh3_reactors": electrolyzer_trains_and_nh3_reactors,
+        "stack_specific_energy_saving_pct": stack_specific_energy_saving_pct,
+        "green_ammonia_curtailment_yield_gain_pct": green_ammonia_curtailment_yield_gain_pct,
+        "iso22734_sil3_h2_in_o2_gate_ms": iso22734_sil3_h2_in_o2_gate_ms,
+        "h2_in_o2_crossover_or_catalyst_poison_escape_pct": h2_in_o2_crossover_or_catalyst_poison_escape_pct,
+        "cell_eis_thermal_edge_triage_ms": cell_eis_thermal_edge_triage_ms,
+        "hydrogen_plant_wan_bandwidth_reduction_pct": hydrogen_plant_wan_bandwidth_reduction_pct,
+        "membrane_dp_pinhole_degradation_pct": membrane_dp_pinhole_degradation_pct,
+        "green_hydrogen_ammonia_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

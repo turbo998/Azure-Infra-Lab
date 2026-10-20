@@ -3746,6 +3746,68 @@
         "clinker_free_lime_off_spec_pct": 4.1,
         "cement_kiln_ccus_slo_met": false
       }
+    ],
+    "green_hydrogen_ammonia_profiles": [
+      {
+        "electrolyzer_plant_capacity_mw": 200,
+        "green_hydrogen_ammonia_mode": "load_following_mpc_haber_bosch_iso22734_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "electrolyzer_trains_and_nh3_reactors": 4,
+        "stack_specific_energy_saving_pct": 11.8,
+        "green_ammonia_curtailment_yield_gain_pct": 23.6,
+        "iso22734_sil3_h2_in_o2_gate_ms": 0.9,
+        "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 0.0,
+        "cell_eis_thermal_edge_triage_ms": 9.5,
+        "hydrogen_plant_wan_bandwidth_reduction_pct": 96.8,
+        "membrane_dp_pinhole_degradation_pct": 0.0,
+        "green_hydrogen_ammonia_slo_met": true
+      },
+      {
+        "electrolyzer_plant_capacity_mw": 1000,
+        "green_hydrogen_ammonia_mode": "load_following_mpc_haber_bosch_iso22734_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "electrolyzer_trains_and_nh3_reactors": 20,
+        "stack_specific_energy_saving_pct": 11.8,
+        "green_ammonia_curtailment_yield_gain_pct": 23.6,
+        "iso22734_sil3_h2_in_o2_gate_ms": 0.9,
+        "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 0.0,
+        "cell_eis_thermal_edge_triage_ms": 9.5,
+        "hydrogen_plant_wan_bandwidth_reduction_pct": 96.8,
+        "membrane_dp_pinhole_degradation_pct": 0.0,
+        "green_hydrogen_ammonia_slo_met": true
+      },
+      {
+        "electrolyzer_plant_capacity_mw": 5000,
+        "green_hydrogen_ammonia_mode": "load_following_mpc_haber_bosch_iso22734_edge",
+        "gpu_nodes": 20,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "electrolyzer_trains_and_nh3_reactors": 100,
+        "stack_specific_energy_saving_pct": 11.8,
+        "green_ammonia_curtailment_yield_gain_pct": 23.6,
+        "iso22734_sil3_h2_in_o2_gate_ms": 0.9,
+        "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 0.0,
+        "cell_eis_thermal_edge_triage_ms": 9.5,
+        "hydrogen_plant_wan_bandwidth_reduction_pct": 96.8,
+        "membrane_dp_pinhole_degradation_pct": 0.0,
+        "green_hydrogen_ammonia_slo_met": true
+      },
+      {
+        "electrolyzer_plant_capacity_mw": 1000,
+        "green_hydrogen_ammonia_mode": "static_rectifier_unverified_dp_raw_eis_stream",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "electrolyzer_trains_and_nh3_reactors": 20,
+        "stack_specific_energy_saving_pct": 0.0,
+        "green_ammonia_curtailment_yield_gain_pct": 5.2,
+        "iso22734_sil3_h2_in_o2_gate_ms": 0.0,
+        "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 1.5,
+        "cell_eis_thermal_edge_triage_ms": 1190.0,
+        "hydrogen_plant_wan_bandwidth_reduction_pct": 0.0,
+        "membrane_dp_pinhole_degradation_pct": 3.4,
+        "green_hydrogen_ammonia_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -7036,5 +7098,67 @@
       "cement_kiln_ccus_slo_met": false
     }
   },
-  "trace_sha256": "a516c28a43d9b5ff1c1c6d751e19f9c5ccef3e6168643e3656af577e805bfce5"
+  "demo_59_green_hydrogen_electrolyzer_ammonia_sandbox": {
+    "h2_200_mw": {
+      "electrolyzer_plant_capacity_mw": 200,
+      "green_hydrogen_ammonia_mode": "load_following_mpc_haber_bosch_iso22734_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "electrolyzer_trains_and_nh3_reactors": 4,
+      "stack_specific_energy_saving_pct": 11.8,
+      "green_ammonia_curtailment_yield_gain_pct": 23.6,
+      "iso22734_sil3_h2_in_o2_gate_ms": 0.9,
+      "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 0.0,
+      "cell_eis_thermal_edge_triage_ms": 9.5,
+      "hydrogen_plant_wan_bandwidth_reduction_pct": 96.8,
+      "membrane_dp_pinhole_degradation_pct": 0.0,
+      "green_hydrogen_ammonia_slo_met": true
+    },
+    "h2_1000_mw": {
+      "electrolyzer_plant_capacity_mw": 1000,
+      "green_hydrogen_ammonia_mode": "load_following_mpc_haber_bosch_iso22734_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "electrolyzer_trains_and_nh3_reactors": 20,
+      "stack_specific_energy_saving_pct": 11.8,
+      "green_ammonia_curtailment_yield_gain_pct": 23.6,
+      "iso22734_sil3_h2_in_o2_gate_ms": 0.9,
+      "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 0.0,
+      "cell_eis_thermal_edge_triage_ms": 9.5,
+      "hydrogen_plant_wan_bandwidth_reduction_pct": 96.8,
+      "membrane_dp_pinhole_degradation_pct": 0.0,
+      "green_hydrogen_ammonia_slo_met": true
+    },
+    "h2_5000_mw": {
+      "electrolyzer_plant_capacity_mw": 5000,
+      "green_hydrogen_ammonia_mode": "load_following_mpc_haber_bosch_iso22734_edge",
+      "gpu_nodes": 20,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "electrolyzer_trains_and_nh3_reactors": 100,
+      "stack_specific_energy_saving_pct": 11.8,
+      "green_ammonia_curtailment_yield_gain_pct": 23.6,
+      "iso22734_sil3_h2_in_o2_gate_ms": 0.9,
+      "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 0.0,
+      "cell_eis_thermal_edge_triage_ms": 9.5,
+      "hydrogen_plant_wan_bandwidth_reduction_pct": 96.8,
+      "membrane_dp_pinhole_degradation_pct": 0.0,
+      "green_hydrogen_ammonia_slo_met": true
+    },
+    "raw_h2_1000_mw": {
+      "electrolyzer_plant_capacity_mw": 1000,
+      "green_hydrogen_ammonia_mode": "static_rectifier_unverified_dp_raw_eis_stream",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "electrolyzer_trains_and_nh3_reactors": 20,
+      "stack_specific_energy_saving_pct": 0.0,
+      "green_ammonia_curtailment_yield_gain_pct": 5.2,
+      "iso22734_sil3_h2_in_o2_gate_ms": 0.0,
+      "h2_in_o2_crossover_or_catalyst_poison_escape_pct": 1.5,
+      "cell_eis_thermal_edge_triage_ms": 1190.0,
+      "hydrogen_plant_wan_bandwidth_reduction_pct": 0.0,
+      "membrane_dp_pinhole_degradation_pct": 3.4,
+      "green_hydrogen_ammonia_slo_met": false
+    }
+  },
+  "trace_sha256": "a0b2b7aec2885e28432e881e958b07792983bc3cb857864016ec19966103d182"
 }

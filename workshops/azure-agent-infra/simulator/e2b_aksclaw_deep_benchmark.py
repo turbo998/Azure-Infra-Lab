@@ -71,6 +71,7 @@ from agent_infra_sizer import (
     simulate_circular_recycling_battery_xrf_sandbox,
     simulate_steelmaking_eaf_casting_sil3_sandbox,
     simulate_cement_kiln_ccus_pyro_sandbox,
+    simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -655,6 +656,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cement_kiln_ccus_pyro_sandbox(80000, "pyro_mpc_amine_ccus_en746_co_edge"),
         simulate_cement_kiln_ccus_pyro_sandbox(20000, "manual_burner_unverified_rdf_raw_kiln_ir"),
     ]
+    green_hydrogen_ammonia_profiles: List[Dict[str, object]] = [
+        simulate_green_hydrogen_electrolyzer_ammonia_sandbox(200, "load_following_mpc_haber_bosch_iso22734_edge"),
+        simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "load_following_mpc_haber_bosch_iso22734_edge"),
+        simulate_green_hydrogen_electrolyzer_ammonia_sandbox(5000, "load_following_mpc_haber_bosch_iso22734_edge"),
+        simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "static_rectifier_unverified_dp_raw_eis_stream"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -714,6 +721,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "circular_recycling_battery_xrf_profiles": circular_recycling_battery_xrf_profiles,
         "steelmaking_eaf_casting_sil3_profiles": steelmaking_eaf_casting_sil3_profiles,
         "cement_kiln_ccus_pyro_profiles": cement_kiln_ccus_pyro_profiles,
+        "green_hydrogen_ammonia_profiles": green_hydrogen_ammonia_profiles,
     }
 
 

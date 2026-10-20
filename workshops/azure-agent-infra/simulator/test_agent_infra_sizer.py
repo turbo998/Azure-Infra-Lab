@@ -65,6 +65,7 @@ from agent_infra_sizer import (
     simulate_circular_recycling_battery_xrf_sandbox,
     simulate_steelmaking_eaf_casting_sil3_sandbox,
     simulate_cement_kiln_ccus_pyro_sandbox,
+    simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1090,6 +1091,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["clinker_free_lime_off_spec_pct"], 4.0)
         self.assertTrue(gov["cement_kiln_ccus_slo_met"])
         self.assertFalse(raw["cement_kiln_ccus_slo_met"])
+
+    def test_green_hydrogen_electrolyzer_ammonia_sandbox(self) -> None:
+        gov = simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "load_following_mpc_haber_bosch_iso22734_edge")
+        raw = simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "static_rectifier_unverified_dp_raw_eis_stream")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["electrolyzer_trains_and_nh3_reactors"], 20)
+        self.assertEqual(gov["stack_specific_energy_saving_pct"], 11.8)
+        self.assertEqual(gov["green_ammonia_curtailment_yield_gain_pct"], 23.6)
+        self.assertEqual(gov["iso22734_sil3_h2_in_o2_gate_ms"], 0.9)
+        self.assertEqual(gov["h2_in_o2_crossover_or_catalyst_poison_escape_pct"], 0.0)
+        self.assertGreater(raw["h2_in_o2_crossover_or_catalyst_poison_escape_pct"], 1.4)
+        self.assertEqual(gov["cell_eis_thermal_edge_triage_ms"], 9.5)
+        self.assertEqual(gov["hydrogen_plant_wan_bandwidth_reduction_pct"], 96.8)
+        self.assertEqual(gov["membrane_dp_pinhole_degradation_pct"], 0.0)
+        self.assertGreater(raw["membrane_dp_pinhole_degradation_pct"], 3.0)
+        self.assertTrue(gov["green_hydrogen_ammonia_slo_met"])
+        self.assertFalse(raw["green_hydrogen_ammonia_slo_met"])
 
 
 if __name__ == "__main__":

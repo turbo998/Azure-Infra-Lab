@@ -78,6 +78,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_circular_recycling_battery_xrf_sandbox,
     simulate_steelmaking_eaf_casting_sil3_sandbox,
     simulate_cement_kiln_ccus_pyro_sandbox,
+    simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -579,6 +580,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "cement_20000_tpd": simulate_cement_kiln_ccus_pyro_sandbox(20000, "pyro_mpc_amine_ccus_en746_co_edge"),
             "cement_80000_tpd": simulate_cement_kiln_ccus_pyro_sandbox(80000, "pyro_mpc_amine_ccus_en746_co_edge"),
             "raw_cement_20000_tpd": simulate_cement_kiln_ccus_pyro_sandbox(20000, "manual_burner_unverified_rdf_raw_kiln_ir"),
+        },
+        "demo_59_green_hydrogen_electrolyzer_ammonia_sandbox": {
+            "h2_200_mw": simulate_green_hydrogen_electrolyzer_ammonia_sandbox(200, "load_following_mpc_haber_bosch_iso22734_edge"),
+            "h2_1000_mw": simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "load_following_mpc_haber_bosch_iso22734_edge"),
+            "h2_5000_mw": simulate_green_hydrogen_electrolyzer_ammonia_sandbox(5000, "load_following_mpc_haber_bosch_iso22734_edge"),
+            "raw_h2_1000_mw": simulate_green_hydrogen_electrolyzer_ammonia_sandbox(1000, "static_rectifier_unverified_dp_raw_eis_stream"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

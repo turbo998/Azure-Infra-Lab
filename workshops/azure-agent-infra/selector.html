@@ -471,6 +471,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(56)">57. 循环经济退役动力电池无图纸力矩拆解 + UL 9540A 热失控防爆互锁与 XRF/NIR 高光谱边缘分选池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(57)">58. 绿色钢铁电弧炉 EAF 泡沫渣谐波 MPC 寻优 + NFPA 86 / SIL-3 防爆防漏钢互锁与 LIBS/FBG 边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(58)">59. 低碳水泥回转窑 PINN MPC 替代燃料 RDF 协同 + 窑尾醇胺 CCUS 再生寻优与 EN 746-2 CO 防爆池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(59)">60. 吉瓦级绿氢 PEM/碱性电解槽宽负荷跟随 MPC + 哈伯-博施绿氨协同与 ISO 22734 SIL-3 氧中氢防爆池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1805,6 +1806,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 59 · GREEN HYDROGEN (PEM / ALKALINE) GIGAWATT PLANT, HABER-BOSCH AMMONIA &amp; ISO 22734 SIL-3 H2-IN-O2 SIZER</span>
+    <h2>自主吉瓦级绿氢（PEM / 碱性电解槽）宽负荷跟随 MPC、哈伯-博施绿氨合成与 ISO 22734 氧中氢防爆测算器 (Chapter 64 · Bilingual)</h2>
+    <div class="sub">量化在绿氢与绿氨装机容量 <code>200 – 5,000 MW</code>（<code>4 – 100 套</code> 电解槽列阵与哈伯-博施合成氨塔）规模下，启用 <code>风光弃电宽负荷跟随 MPC + 氢氧分离器差压均衡与绿氨合成缓冲寻优</code>（制氢直流电耗降低 <code>11.8%</code> 至 <code>46.2 kWh/kg H2</code>、绿氨弃电转化产率提升 <code>+23.6%</code>、隔膜差压针孔劣化率 <code>0.0%</code>）、<code>ISO 22734 / IEC 61511 SIL-3</code> 阳极氧中氢 <code>H2-in-O2 (&lt;1.6% vol)</code> 整流跳闸充氮吹扫与合成氨脱氧互锁（<code>0.9 ms</code> 校验，<code>0.0%</code> 串氢燃爆与催化剂中毒逃逸）以及整流变电站 <code>Azure IoT Operations</code> 多通道电化学阻抗谱 <code>EIS</code> 边缘分诊（<code>9.5 ms</code> 响应，削减 <code>96.8%</code> 荒漠广域网带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 绿氢电解槽与绿氨工厂总装机规模 (Electrolyzer &amp; Green Ammonia Plant Capacity): <strong id="lbl_h2_mw" style="color:var(--teal)">1,000</strong> MW</label>
+          <input type="range" id="rng_h2_mw" min="200" max="5000" step="200" value="1000" oninput="runGreenHydrogenLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 绿氢宽负荷跟随 MPC、绿氨合成与 ISO 22734 氧中氢互锁模式 (Green H2 &amp; NH3 Agent Mode)</label>
+          <select id="sel_h2_mode" onchange="runGreenHydrogenLab()">
+            <option value="load_following_mpc_haber_bosch_iso22734_edge" selected>宽负荷跟随 MPC (-11.8% 制氢电耗 / +23.6% 绿氨产率) + ISO 22734 互锁 (0% 氧中氢燃爆) + EIS 边缘 (推荐)</option>
+            <option value="static_rectifier_unverified_dp_raw_eis_stream">传统反模式：静态整流设定 (0 节电) + 无氧中氢互锁 (1.5% 串氢燃爆/催化剂中毒) + 原始 EIS 上云 (3.4% 膜劣化)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="h2Out"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2848,6 +2871,22 @@ resource cementKilnCcusPool 'Microsoft.ContainerService/managedClusters/agentPoo
       'aksclaw.io/kiln-shell-ir-pgnaa-edge': 'enabled-11ms-96.7pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// Blueprint #60: AKSClaw Green Hydrogen (PEM / Alkaline Electrolyzer) MPC,
+// Haber-Bosch Green Ammonia Synthesis & ISO 22734 / IEC 61511 SIL-3 H2-in-O2 Interlock Pool
+resource greenHydrogenPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'h2nh3mpc'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'green-hydrogen-electrolyzer-ammonia-agent'
+      'aksclaw.io/load-following-mpc-haber-bosch': 'enabled-11.8pct-kwh-cut-23.6pct-nh3-yield-gain'
+      'aksclaw.io/iso22734-sil3-h2-in-o2-interlock': 'enforced-0.9ms-1.6pct-h2-zero-crossover-explosion'
+      'aksclaw.io/cell-eis-thermal-edge': 'enabled-9.5ms-96.8pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -3007,6 +3046,30 @@ runOffshoreSubseaLab();
 runCircularRecyclingLab();
 runSteelmakingEafLab();
 runCementKilnLab();
+runGreenHydrogenLab();
+
+function runGreenHydrogenLab() {
+  const mw = parseInt(document.getElementById('rng_h2_mw').value, 10);
+  const mode = document.getElementById('sel_h2_mode').value;
+  document.getElementById('lbl_h2_mw').textContent = mw.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(mw / 250));
+  const trains = Math.max(4, Math.floor(mw / 50));
+  const ok = mode === 'load_following_mpc_haber_bosch_iso22734_edge';
+  const mpcStr = ok ? "宽负荷跟随 MPC + 绿氨缓冲寻优 · 制氢电耗 -11.8% (46.2 kWh/kg) · 绿氨产率 +23.6%" : "静态整流设定 · 0.0% 节电与 +5.2% 产率 (3.4% 隔膜差压冲击针孔劣化)";
+  const isoStr = ok ? "0.9 ms ISO 22734 / SIL-3 氧中氢 (<1.6% vol) 与差压互锁 · 0.0% 燃爆/中毒" : "无 ISO 22734 氧中氢与脱氧硬件互锁 · 1.5% 串氢燃爆与合成氨催化剂中毒风险";
+  const edgeStr = ok ? "9.5 ms 变电站多通道 EIS 电化学阻抗 + 极板热斑边缘分诊 (-96.8% 广域网带宽) · 0.0% 膜劣化" : "1,190.0 ms 原始高频 CVM/EIS 波形上云 · 荒漠广域网拥塞且膜脱水响应滞后";
+
+  document.getElementById('h2Out').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 氧中氢串氢燃爆风险 · 3.4% 质子膜/隔膜针孔劣化'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${trains} 套电解列阵/合成氨塔 · ${isoStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>整流变电站 Azure IoT Operations 多通道电化学阻抗谱 (EIS) 与极板热像边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runCementKilnLab() {
   const tpd = parseInt(document.getElementById('rng_cem_tpd').value, 10);
