@@ -99,6 +99,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_leo_megaconstellation_oisl_conjunction_iso24113_sil3_sandbox,
     simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
     simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
+    simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -725,6 +726,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "biomanufacturing_8_trains": simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(8, "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge"),
             "biomanufacturing_32_trains": simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(32, "metabolic_fba_glycosylation_pinn_tff_mpc_gmp_sil3_edge"),
             "raw_biomanufacturing_8_trains": simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(8, "offline_hplc_pid_unverified_sip_cloud"),
+        },
+        "demo_80_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox": {
+            "hypersonic_cmc_6_bays": simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(6, "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge"),
+            "hypersonic_cmc_24_bays": simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(24, "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge"),
+            "raw_hypersonic_cmc_6_bays": simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(6, "isothermal_open_loop_unverified_arcjet_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

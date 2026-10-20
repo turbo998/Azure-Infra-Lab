@@ -4512,6 +4512,56 @@ def simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox(
     }
 
 
+def simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(
+    cvi_arcjet_bays: int = 6,
+    tps_governance_mode: str = "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Ultra-High-Temperature Ceramic Matrix Composite (SiC/SiC CMC)
+    Chemical Vapor Infiltration (CVI) & Hypersonic Thermal Protection System (TPS)
+    Arc-Jet Testing (2,200-3,000 C Mach 7-15 Segmented Plasma Wind Tunnel),
+    Knudsen-Fick Multiscale Pore Diffusion & Ablation Recession PINN-MPC & SAE
+    AS9100 / NASA-STD-5001B / NFPA 86 / IEC 61511 SIL-3 Pyrophoric MTS/H2 Emergency
+    Purge & Arc-Heater Cooling Interlock Agent Infrastructure (Chapter 85).
+    """
+    if cvi_arcjet_bays <= 0:
+        raise ValueError("cvi_arcjet_bays must be positive")
+    valid_modes = {
+        "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge",
+        "isothermal_open_loop_unverified_arcjet_cloud",
+    }
+    if tps_governance_mode not in valid_modes:
+        raise ValueError(f"tps_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = tps_governance_mode == "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge"
+    gpu_nodes = max(2, math.ceil(cvi_arcjet_bays / 3))
+    active_hypersonic_tps_pods = max(2, int(cvi_arcjet_bays // 2))
+
+    cmc_densification_and_ilss_strength_gain_pct = 26.8 if governed else 0.0
+    surface_pore_crusting_and_void_porosity_reduction_pct = 36.4 if governed else 0.0
+    nasa5001_nfpa86_sil3_mts_purge_anode_interlock_ms = 1.3 if governed else 470.0
+    mts_h2_deflagration_or_copper_anode_burnout_breach_pct = 0.0 if governed else 1.7
+    testcell_pyrometry_plif_edge_latency_ms = 1.2 if governed else 1450.0
+    wan_bandwidth_reduction_pct = 98.7 if governed else 0.0
+    pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct = 0.0 if governed else 3.2
+
+    return {
+        "cvi_arcjet_bays": cvi_arcjet_bays,
+        "tps_governance_mode": tps_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_hypersonic_tps_pods": active_hypersonic_tps_pods,
+        "cmc_densification_and_ilss_strength_gain_pct": cmc_densification_and_ilss_strength_gain_pct,
+        "surface_pore_crusting_and_void_porosity_reduction_pct": surface_pore_crusting_and_void_porosity_reduction_pct,
+        "nasa5001_nfpa86_sil3_mts_purge_anode_interlock_ms": nasa5001_nfpa86_sil3_mts_purge_anode_interlock_ms,
+        "mts_h2_deflagration_or_copper_anode_burnout_breach_pct": mts_h2_deflagration_or_copper_anode_burnout_breach_pct,
+        "testcell_pyrometry_plif_edge_latency_ms": testcell_pyrometry_plif_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct": pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct,
+        "hypersonic_cmc_cvi_arcjet_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

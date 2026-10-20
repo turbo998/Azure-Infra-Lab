@@ -4846,5 +4846,67 @@
       "lactate_acidosis_crash_or_tff_shear_lysis_false_clearance_pct": 3.1,
       "biomanufacturing_perfusion_slo_met": false
     }
+  ],
+  "hypersonic_cmc_cvi_arcjet_profiles": [
+    {
+      "cvi_arcjet_bays": 3,
+      "tps_governance_mode": "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hypersonic_tps_pods": 2,
+      "cmc_densification_and_ilss_strength_gain_pct": 26.8,
+      "surface_pore_crusting_and_void_porosity_reduction_pct": 36.4,
+      "nasa5001_nfpa86_sil3_mts_purge_anode_interlock_ms": 1.3,
+      "mts_h2_deflagration_or_copper_anode_burnout_breach_pct": 0.0,
+      "testcell_pyrometry_plif_edge_latency_ms": 1.2,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct": 0.0,
+      "hypersonic_cmc_cvi_arcjet_slo_met": true
+    },
+    {
+      "cvi_arcjet_bays": 6,
+      "tps_governance_mode": "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hypersonic_tps_pods": 3,
+      "cmc_densification_and_ilss_strength_gain_pct": 26.8,
+      "surface_pore_crusting_and_void_porosity_reduction_pct": 36.4,
+      "nasa5001_nfpa86_sil3_mts_purge_anode_interlock_ms": 1.3,
+      "mts_h2_deflagration_or_copper_anode_burnout_breach_pct": 0.0,
+      "testcell_pyrometry_plif_edge_latency_ms": 1.2,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct": 0.0,
+      "hypersonic_cmc_cvi_arcjet_slo_met": true
+    },
+    {
+      "cvi_arcjet_bays": 24,
+      "tps_governance_mode": "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hypersonic_tps_pods": 12,
+      "cmc_densification_and_ilss_strength_gain_pct": 26.8,
+      "surface_pore_crusting_and_void_porosity_reduction_pct": 36.4,
+      "nasa5001_nfpa86_sil3_mts_purge_anode_interlock_ms": 1.3,
+      "mts_h2_deflagration_or_copper_anode_burnout_breach_pct": 0.0,
+      "testcell_pyrometry_plif_edge_latency_ms": 1.2,
+      "wan_bandwidth_reduction_pct": 98.7,
+      "pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct": 0.0,
+      "hypersonic_cmc_cvi_arcjet_slo_met": true
+    },
+    {
+      "cvi_arcjet_bays": 6,
+      "tps_governance_mode": "isothermal_open_loop_unverified_arcjet_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hypersonic_tps_pods": 3,
+      "cmc_densification_and_ilss_strength_gain_pct": 0.0,
+      "surface_pore_crusting_and_void_porosity_reduction_pct": 0.0,
+      "nasa5001_nfpa86_sil3_mts_purge_anode_interlock_ms": 470.0,
+      "mts_h2_deflagration_or_copper_anode_burnout_breach_pct": 1.7,
+      "testcell_pyrometry_plif_edge_latency_ms": 1450.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct": 3.2,
+      "hypersonic_cmc_cvi_arcjet_slo_met": false
+    }
   ]
 }

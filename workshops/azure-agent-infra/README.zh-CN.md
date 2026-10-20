@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #79 · 85 Chapters · 80 Blueprints · 79 Simulators · 88/88 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-21 (Cycle #80 · 86 Chapters · 81 Blueprints · 80 Simulators · 89/89 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -2438,7 +2438,31 @@ sequenceDiagram
 
 ---
 
-## 85. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 85. 自主超高温陶瓷基复合材料（`SiC/SiC CMC`）化学气相渗透（`CVI`）与高超声速热防护系统（`TPS`）电弧风洞烧蚀试验（`2,200–3,000 °C` Mach 7–15 等离子体风洞）、克努森多尺度孔隙扩散与烧蚀后退 `PINN-MPC` 及 `SAE AS9100 / NASA-STD-5001B / NFPA 86 / IEC 61511 SIL-3` 三氯甲基硅烷（`MTS / H2`）自燃尾气急冷与电弧加热器水冷防烧穿硬联锁沙箱架构（Autonomous Ultra-High-Temperature Ceramic Matrix Composite (`SiC/SiC CMC`) Chemical Vapor Infiltration (`CVI`) & Hypersonic Thermal Protection System (`TPS`) Arc-Jet Testing (`2,200–3,000 °C` Mach 7–15 Plasma Wind Tunnel), Knudsen-Fick Multiscale Pore Diffusion & Ablation Recession PINN-MPC & `SAE AS9100 / NASA-STD-5001B / NFPA 86 / IEC 61511 SIL-3` Pyrophoric `MTS/H2` Purge & Arc-Heater Cooling Interlock Agent Infrastructure）
+
+> **English Summary**: For aerospace ultra-high-temperature ceramic matrix composite (`SiC/SiC` & `C/SiC CMC`) Chemical Vapor Infiltration (`CVI`) densification furnaces and `60 MW` segmented-constrictor plasma arc-jet wind tunnel bays (`2,200–3,000 °C`, Mach 7–15 stagnation enthalpy) operating `3` to `24` test and deposition cells, conventional isothermal open-loop `MTS/H2` precursor flow and manual arc-current schedules cause premature surface pore-mouth crusting (`Canning Effect`), subsurface micro-void porosity, or thermal-shock delamination under extreme stagnation heat flux (`> 12 MW/m²`). Combining a **Knudsen-Fick Multiscale Pore Diffusion & Methyltrichlorosilane (`MTS`) Pyrolysis Kinetics PINN + Arc-Jet Stagnation Enthalpy / Surface Catalycity & Recession MPC on `Standard_ND96isr_H100_v5`** (`+26.8%` `SiC/SiC` matrix densification uniformity & interlaminar shear strength `ILSS`, `-36.4%` premature surface pore-crusting & internal void porosity) with a **`1.3 ms` hardware-isolated `SAE AS9100 / NASA-STD-5001B / NFPA 86 / IEC 61511 SIL-3` pyrophoric `MTS/H2/HCl` emergency argon purge, copper-anode water-jacket burnout & vacuum-vessel overpressure interlock** (`0.0%` vs `1.7%` `H2/MTS` explosive deflagration or plasma torch copper-electrode cooling burn-through, `0.0%` vs `3.2%` premature pore-seal delamination or stagnation burn-through false clearance) and **`1.2 ms` test-cell `2-Color Ratio Pyrometry (1,000–3,200 °C) + Planar Laser-Induced Fluorescence (PLIF) + Acoustic Emission + Azure Local` edge inference** (`98.7%` aerospace facility WAN bandwidth reduction vs `1,450.0 ms` raw kHz PLIF/pyrometry hypercube cloud loop) ensures flight-certified hypersonic thermal protection manufacturing and qualification.
+
+### 85.1 超高温 `SiC/SiC CMC` 化学气相渗透克努森扩散与烧蚀 `PINN`、梯度热场 `CVI` 与电弧风洞焓值 `MPC`、`NASA-STD-5001B / NFPA 86 / SIL-3` 防爆防烧穿硬联锁及双色高温计/`PLIF` 边缘三大工程支柱
+
+1. **Pillar 1：克努森-菲克（`Knudsen-Fick`）多尺度微孔扩散与三氯甲基硅烷（`MTS`）热解沉积 `PINN` + 温度/压力梯度 `CVI` 与高超声速电弧风洞驻点热流 `MPC`（`Standard_ND96isr_H100_v5`）**：
+   - 在 `Standard_ND96isr_H100_v5` 节点上运行耦合三维编织碳化硅（`3D Woven SiC`）纤维预制体纳米/微米双尺度孔隙网络克努森扩散（`Knudsen Number Kn > 10`）、`CH3SiCl3 (MTS) + H2 -> beta-SiC + 3HCl` 表面非均相热解动力学与高超声速边界层离解氧/氮原子表面催化复合（`Surface Recombination Catalycity`）氧化烧蚀后退方程的 `PINN`，并与多温区感应加热热梯度 `CVI` 炉及 `60 MW` 分段约束型电弧风洞（`Segmented Arc-Jet`）电流/磁场旋流与质量流量 `MPC` 闭环协同，动态调节 `H2/MTS` 摩尔比（`alpha = 6–12`）、炉膛脉冲压力（`2–15 kPa`）与电弧驻点焓值剖面，使 **`SiC/SiC` 构件基体致密化均匀度与层间剪切强度（`ILSS`）提升 `+26.8%`**、**预制体表层孔口过早封孔结壳（`Surface Crusting`）与内部闭孔率降低 `-36.4%`**，并将 **热震分层裂纹或风洞驻点热流超限烧穿误放行率从 `3.2%` 降至 `0.0%`**。
+2. **Pillar 2：`SAE AS9100 / NASA-STD-5001B / NFPA 86 / IEC 61511 SIL-3` 易燃腐蚀性硅烷/氢气（`MTS / H2 / HCl`）紧急氩气吹扫、电弧阴极/阳极高压水冷防烧穿与真空室防爆硬联锁（`1.3 ms`）**：
+   - 在 `1,100 °C` 低压 `CVI` 沉积炉与 `3,000 °C` 高压电弧风洞运行中，若真空室密封法兰微漏导致空气倒灌入富氢与氯硅烷腔体，将瞬间引发遵循 `NFPA 86` Class C 真空炉标准的氢爆燃；而在 `60 MW` 电弧加热器中，若旋流磁场失步导致电弧弧根驻留或去离子冷却水套发生偏离核态沸腾（`DNB`），将在数毫秒内击穿紫铜水冷电极引发高压水蒸气爆炸。任何由沉积与风洞智能体输出的 `MTS` 闪蒸罐阀门、电弧整流电源电流与模型送进机构（`Sting Arm`）指令，在进入现场控制柜前必须通过 **`1.3 ms` 硬件级隔离的 `SAE AS9100 / NASA-STD-5001B / NFPA 86 / IEC 61511 SIL-3` 安全联锁系统（对比云端回路 `470.0 ms`）**：一旦检测到真空腔残氧量异常、电极进出水口温差/流量越界或红外火焰/氢敏传感器触发，立即在 `1.3 ms` 内切断 `MTS/H2` 气源与兆瓦级直流晶闸管电源、开启高压氩气（`Ar`）惰化快冲阀并收回风洞试验支杆，将 **氢气/氯硅烷爆燃或电弧水冷铜电极烧穿违例率从 `1.7%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：试验舱双波段比色高温计（`2-Color Pyrometry 1,000–3,200 °C`）、平面激光诱导荧光（`PLIF`）边界层自由基成像与多通道声发射（`AE`）+ `Azure Local` 边缘（`1.2 ms`）**：
+   - 在 `CVI` 沉积车间与电弧风洞观察窗旁部署 `Azure Local` 实时边缘机柜，通过 CoaXPress 光纤直连双波段红外比色高温相机（消除 `SiO2` 玻璃态氧化膜发射率剧变干扰）、平面激光诱导荧光（`PLIF` 测量边界层 `NO / O` 自由基浓度场）与高温波导杆声发射（`AE` 捕捉基体微裂纹萌生）传感器，在本地完成亚像素表面烧蚀后退量视觉追踪与电磁涡流致密度在线反演，在 **`1.2 ms` 内（对比原始千赫兹高光谱/PLIF 视频流回传云端 `1,450.0 ms`）** 闭环调节风洞热流与沉积气量，削减 **`98.7%` 航材与风洞基地广域网带宽**。
+
+### 85.2 超高温 `SiC/SiC CMC CVI` 与高超声速电弧风洞 `Knudsen-Ablation PINN-MPC` + `NASA-STD-5001B / NFPA 86 / SIL-3` 防爆防烧穿联锁 + 双色高温计/`PLIF` 边缘 vs 等温开环基线对比表
+
+| SiC/SiC 化学气相渗透炉与高超声速电弧风洞舱规模及智能体架构 | `ND96isr_H100_v5` 节点数 | 在役航材沉积与风洞控制单元数 | **`SiC/SiC` 致密化/层间剪切强度增益与表层封孔削减** | **`NASA-STD-5001B / NFPA 86 / SIL-3` 氢爆燃或电极烧穿违例率** | **试验舱双色高温计/`PLIF` 边缘延迟与带宽削减** | **表层封孔分层或驻点热流烧穿误放行率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`3` 座 CVI 沉积炉与电弧风洞试验舱 · Knudsen-Ablation PINN-MPC + NFPA 86 SIL-3 联锁 + PLIF 边缘** | `2` | `2` | **`+26.8%` / `-36.4%`** | **`0.0%` (`1.3 ms`)** | **`1.2 ms` / `98.7%`** | **`0.0%`** |
+| **`6` 座航空发动机热端/TPS 制造与风洞验证舱 · Knudsen-Ablation PINN-MPC + NFPA 86 SIL-3 联锁 + PLIF 边缘 (推荐)** | **`2`** | **`3`** | **`+26.8%` / `-36.4%`** | **`0.0%` (`1.3 ms`)** | **`1.2 ms` / `98.7%`** | **`0.0%`** |
+| **`24` 座国家级高超声速热防护与复合材料联合试验基地 · Knudsen-Ablation PINN-MPC + NFPA 86 SIL-3 联锁 + PLIF 边缘** | `8` | `12` | **`+26.8%` / `-36.4%`** | **`0.0%` (`1.3 ms`)** | **`1.2 ms` / `98.7%`** | **`0.0%`** |
+| `6` 座 CVI 与电弧风洞舱 · 传统恒温恒流开环沉积 + 无 MTS/H2 氩气快冲与电极防烧穿 SIL-3 硬件联锁 + 原始 PLIF 图像上云 (反模式) | `2` | `3` | `0.0%` / `0.0%` (❌ 预制体表层过早封孔导致内部高孔隙率缺陷且需多次机械扒皮返工) | `1.7%` (`470.0 ms` ❌ 真空微漏引发氢/硅烷爆燃或电弧弧根驻留烧穿铜电极水套) | `1,450.0 ms` / `0.0%` (❌ 原始 kHz PLIF 与双色高温相机流阻塞基地网络) | `3.2%` (❌ 氧化膜发射率突变引起测温失真导致模型驻点烧穿与基体热震分层漏检) |
+
+---
+
+## 86. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

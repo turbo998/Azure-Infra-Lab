@@ -492,6 +492,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(77)">78. 低轨巨型卫星星座 1550nm 相干激光星间链路 OISL PAT + J2-J6 热层阻力轨道摄动 PINN 与 ISO 24113 / NASA-STD-8719.14 / SIL-3 空间碎片防撞及对日安全模式联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(78)">79. 深海 4000-6000m 多金属结核采集车与垂直扬矿立管 + 稀软底质土力学与底栖羽流 PINN-MPC 及 ISA / DNV-ST-E407 / SIL-3 立管紧急排空阀与脐带缆张力联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(79)">80. 连续灌流哺乳动物细胞生物反应器 (2000-20000L mAb/AAV) + dFBA 代谢通量与糖基化 PINN-MPC 及 FDA 21 CFR Part 11 / ASME BPE / SIL-3 在线灭菌 SIP 与低 pH 病毒灭活联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(80)">81. 超高温 SiC/SiC 陶瓷基复合材料 CVI 沉积与高超声速电弧风洞 TPS 烧蚀 (2200-3000°C) + 克努森扩散 PINN-MPC 及 NASA-STD-5001B / NFPA 86 / SIL-3 硅烷防爆与水冷电极联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2293,6 +2294,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 80: Ultra-High-Temperature Ceramic Matrix Composite (SiC/SiC CMC) CVI & Hypersonic Arc-Jet TPS Testing (2200-3000C), Knudsen Diffusion & Ablation PINN-MPC & NASA-STD-5001B / NFPA 86 / SIL-3 Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 80 · ULTRA-HIGH-TEMPERATURE CERAMIC MATRIX COMPOSITE (SIC/SIC CMC) CVI &amp; HYPERSONIC ARC-JET TPS TESTING (2200-3000°C), KNUDSEN DIFFUSION &amp; ABLATION PINN-MPC &amp; NASA-STD-5001B / NFPA 86 / SIL-3 SIZER</span>
+    <h2>自主超高温陶瓷基复合材料 (<code>SiC/SiC CMC</code>) 化学气相渗透与高超声速电弧风洞热防护 (<code>2,200–3,000 °C</code>) <code>PINN-MPC</code> 及 <code>NASA-STD-5001B / NFPA 86 / SIL-3</code> 硅烷防爆与水冷电极联锁测算器</h2>
+    <div class="sub">量化在 <code>3 – 24</code> 座 <code>SiC/SiC CMC</code> 热梯度化学气相渗透 (<code>CVI</code>) 炉与 <code>60 MW</code> 高超声速分段电弧风洞 (<code>2,200–3,000 °C</code> Mach 7–15) 试验舱规模下，克努森-菲克多尺度微孔扩散与三氯甲基硅烷 (<code>MTS</code>) 热解动力学及边界层催化烧蚀后退 <code>PINN</code> + 热梯度 <code>CVI</code> 与电弧风洞驻点焓值 <code>MPC</code>（<code>SiC/SiC</code> 致密化均匀度与层间剪切强度 <code>ILSS +26.8%</code>、预制体表层过早封孔结壳与内部闭孔率 <code>-36.4%</code>）、<code>SAE AS9100 / NASA-STD-5001B / NFPA 86 / IEC 61511 SIL-3</code> 易燃氯硅烷/氢气 (<code>MTS/H2</code>) 紧急氩气快冲与电弧紫铜电极高压水冷防烧穿硬联锁（<code>1.3 ms</code>，氢/硅烷爆燃或电极水套烧穿违例率 <code>0.0%</code>）及试验舱双波段比色高温计 (<code>1,000–3,200 °C</code>)/平面激光诱导荧光 (<code>PLIF</code>)/声发射 + <code>Azure Local</code> 边缘推理（<code>1.2 ms</code>，航材与风洞基地广域网带宽削减 <code>98.7%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. SiC/SiC 化学气相渗透炉与 60MW 高超声速电弧风洞试验舱数 (CVI Furnace &amp; Arc-Jet Wind Tunnel Bays): <strong id="lbl_cmc_bays" style="color:var(--amber)">6</strong> CVI / Arc-Jet Bays</label>
+          <input type="range" id="rng_cmc_bays" min="3" max="24" step="3" value="6" oninput="runHypersonicCmcLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 克努森微孔扩散与烧蚀 PINN-MPC 及 NASA-STD-5001B / NFPA 86 / SIL-3 防爆联锁模式 (Hypersonic CMC &amp; Arc-Jet Governance Mode)</label>
+          <select id="sel_cmc_mode" onchange="runHypersonicCmcLab()">
+            <option value="knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge" selected>Knudsen 微孔扩散与烧蚀 PINN + 热梯度 CVI/电弧焓值 MPC (+26.8% 致密度/ILSS / -36.4% 表层封孔) + NFPA 86 SIL-3 氩气快冲/电极防烧穿联锁 + 1.2ms 双色高温计/PLIF 边缘 (推荐)</option>
+            <option value="isothermal_open_loop_unverified_arcjet_cloud">传统反模式：恒温开环 CVI 与手动电弧电流调节 (0 增益) + 无 MTS/H2 氩气快冲与电极冷却 SIL-3 门控 (1.7% 氢爆燃/电极烧穿违例) + 原始 PLIF 视频上云 (3.2% 封孔分层/驻点烧穿漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cmcOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3672,6 +3696,21 @@ resource biomanufacturingPerfusionGmpSil3Pool 'Microsoft.ContainerService/manage
       'aksclaw.io/cleanroom-raman-capacitance-opcua-edge': 'enabled-1.7ms-98.6pct-wan-cut'
     }
   }
+}`,
+`// Blueprint #81: Ultra-High-Temperature Ceramic Matrix Composite (SiC/SiC CMC) CVI & Hypersonic Arc-Jet TPS Testing (2200-3000C), Knudsen Diffusion & Ablation PINN-MPC & NASA-STD-5001B / NFPA 86 / SIL-3 Pool (Chapter 85)
+resource hypersonicCmcCviArcjetSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'cmcarcjet'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'hypersonic-cmc-cvi-arcjet-tps-nfpa86-sil3-agent'
+      'aksclaw.io/knudsen-cvi-ablation-pinn-mpc': 'enabled-26.8pct-ilss-density-36.4pct-pore-crusting-cut'
+      'aksclaw.io/nasa5001-nfpa86-sil3-mts-purge-arc-cooling': 'enforced-1.3ms-zero-h2-deflagration-or-anode-burnout'
+      'aksclaw.io/testcell-pyrometry-plif-ae-edge': 'enabled-1.2ms-98.7pct-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3852,6 +3891,30 @@ runQuantumQecLab();
 runLeoConstellationLab();
 runDeepseaCollectorLab();
 runBiomanufacturingLab();
+runHypersonicCmcLab();
+
+function runHypersonicCmcLab() {
+  const bays = parseInt(document.getElementById('rng_cmc_bays').value, 10);
+  const mode = document.getElementById('sel_cmc_mode').value;
+  document.getElementById('lbl_cmc_bays').textContent = bays.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(bays / 3));
+  const pods = Math.max(2, Math.floor(bays / 2));
+  const ok = mode === 'knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge';
+  const mpcStr = ok ? "克努森-菲克多尺度微孔扩散与 MTS 热解及边界层催化烧蚀 PINN + 热梯度 CVI 与电弧风洞驻点焓值 MPC · SiC/SiC 致密化均匀度与层间剪切强度 ILSS +26.8% · 表层过早封孔结壳与内部闭孔率 -36.4%" : "传统恒温开环 CVI 与手动电弧风洞电流调节 · 0.0% 致密化与抗烧蚀增益 (预制体表层过早封孔结壳且 3.2% 热震分层裂纹或驻点超限烧穿误放行)";
+  const sil3Str = ok ? "1.3 ms SAE AS9100 / NASA-STD-5001B / NFPA 86 / SIL-3 氯硅烷/氢气 (MTS/H2) 紧急氩气吹扫与电弧紫铜电极高压水冷防烧穿硬联锁 · 0.0% 氢爆燃/电极烧穿" : "无 MTS/H2 氩气快冲与电弧电极冷却 SIL-3 硬联锁 (470.0 ms 云端滞后) · 1.7% 真空微漏引发氢/氯硅烷爆燃或电弧弧根驻留烧穿铜电极水套风险";
+  const edgeStr = ok ? "1.2 ms 试验舱双波段比色高温计 (1,000-3,200 °C)、平面激光诱导荧光 (PLIF) 边界层自由基成像与声发射 + Azure Local 边缘 (-98.7% 航材与风洞基地广域网带宽) · 0.0% 测温盲区" : "1,450.0 ms 原始 kHz PLIF 荧光图像与双色高温计全帧流回传云端 · 阻塞基地网络且无法在氧化膜发射率突变时完成毫秒级风洞驻点热流闭环";
+
+  document.getElementById('cmcOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.7% 氯硅烷/氢气爆燃或电弧水冷铜电极烧穿风险 · 3.2% 预制体封孔分层或风洞驻点烧穿误放行'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个高超声速航材与风洞控制单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>试验舱双波段红外比色高温计、平面激光诱导荧光 (PLIF) 自由基场与高温声发射 + Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runBiomanufacturingLab() {
   const trains = parseInt(document.getElementById('rng_bmp_trains').value, 10);
