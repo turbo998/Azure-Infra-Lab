@@ -3378,6 +3378,64 @@
         "crop_row_trampling_escape_pct": 2.8,
         "precision_ag_slo_met": false
       }
+    ],
+    "water_utility_ro_sdwa_profiles": [
+      {
+        "daily_water_capacity_mld": 125,
+        "water_agent_mode": "ro_fouling_mpc_epa_sdwa_acoustic_edge",
+        "water_solver_nodes": 2,
+        "distribution_acoustic_sensors": 1000,
+        "ro_specific_energy_reduction_pct": 16.4,
+        "non_revenue_water_leak_reduction_pct": 38.5,
+        "epa_sdwa_chlorine_interlock_ms": 1.6,
+        "chemical_overdose_escape_pct": 0.0,
+        "acoustic_leak_edge_triage_ms": 19.0,
+        "cellular_ami_bandwidth_reduction_pct": 95.8,
+        "water_hammer_pressure_transient_escape_pct": 0.0,
+        "water_utility_slo_met": true
+      },
+      {
+        "daily_water_capacity_mld": 500,
+        "water_agent_mode": "ro_fouling_mpc_epa_sdwa_acoustic_edge",
+        "water_solver_nodes": 4,
+        "distribution_acoustic_sensors": 4000,
+        "ro_specific_energy_reduction_pct": 16.4,
+        "non_revenue_water_leak_reduction_pct": 38.5,
+        "epa_sdwa_chlorine_interlock_ms": 1.6,
+        "chemical_overdose_escape_pct": 0.0,
+        "acoustic_leak_edge_triage_ms": 19.0,
+        "cellular_ami_bandwidth_reduction_pct": 95.8,
+        "water_hammer_pressure_transient_escape_pct": 0.0,
+        "water_utility_slo_met": true
+      },
+      {
+        "daily_water_capacity_mld": 2000,
+        "water_agent_mode": "ro_fouling_mpc_epa_sdwa_acoustic_edge",
+        "water_solver_nodes": 16,
+        "distribution_acoustic_sensors": 16000,
+        "ro_specific_energy_reduction_pct": 16.4,
+        "non_revenue_water_leak_reduction_pct": 38.5,
+        "epa_sdwa_chlorine_interlock_ms": 1.6,
+        "chemical_overdose_escape_pct": 0.0,
+        "acoustic_leak_edge_triage_ms": 19.0,
+        "cellular_ami_bandwidth_reduction_pct": 95.8,
+        "water_hammer_pressure_transient_escape_pct": 0.0,
+        "water_utility_slo_met": true
+      },
+      {
+        "daily_water_capacity_mld": 500,
+        "water_agent_mode": "fixed_flux_ro_unverified_modbus_raw_hydrophone",
+        "water_solver_nodes": 4,
+        "distribution_acoustic_sensors": 4000,
+        "ro_specific_energy_reduction_pct": 0.0,
+        "non_revenue_water_leak_reduction_pct": 0.0,
+        "epa_sdwa_chlorine_interlock_ms": 0.0,
+        "chemical_overdose_escape_pct": 2.4,
+        "acoustic_leak_edge_triage_ms": 1450.0,
+        "cellular_ami_bandwidth_reduction_pct": 0.0,
+        "water_hammer_pressure_transient_escape_pct": 3.1,
+        "water_utility_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -6300,5 +6358,63 @@
       "precision_ag_slo_met": false
     }
   },
-  "trace_sha256": "6d8800a7ce62591f6ded4af85b427e92682b36194dda5b86670dcc3b2daaa9a8"
+  "demo_53_water_utility_ro_scada_sdwa_sandbox": {
+    "water_125_mld": {
+      "daily_water_capacity_mld": 125,
+      "water_agent_mode": "ro_fouling_mpc_epa_sdwa_acoustic_edge",
+      "water_solver_nodes": 2,
+      "distribution_acoustic_sensors": 1000,
+      "ro_specific_energy_reduction_pct": 16.4,
+      "non_revenue_water_leak_reduction_pct": 38.5,
+      "epa_sdwa_chlorine_interlock_ms": 1.6,
+      "chemical_overdose_escape_pct": 0.0,
+      "acoustic_leak_edge_triage_ms": 19.0,
+      "cellular_ami_bandwidth_reduction_pct": 95.8,
+      "water_hammer_pressure_transient_escape_pct": 0.0,
+      "water_utility_slo_met": true
+    },
+    "water_500_mld": {
+      "daily_water_capacity_mld": 500,
+      "water_agent_mode": "ro_fouling_mpc_epa_sdwa_acoustic_edge",
+      "water_solver_nodes": 4,
+      "distribution_acoustic_sensors": 4000,
+      "ro_specific_energy_reduction_pct": 16.4,
+      "non_revenue_water_leak_reduction_pct": 38.5,
+      "epa_sdwa_chlorine_interlock_ms": 1.6,
+      "chemical_overdose_escape_pct": 0.0,
+      "acoustic_leak_edge_triage_ms": 19.0,
+      "cellular_ami_bandwidth_reduction_pct": 95.8,
+      "water_hammer_pressure_transient_escape_pct": 0.0,
+      "water_utility_slo_met": true
+    },
+    "water_2000_mld": {
+      "daily_water_capacity_mld": 2000,
+      "water_agent_mode": "ro_fouling_mpc_epa_sdwa_acoustic_edge",
+      "water_solver_nodes": 16,
+      "distribution_acoustic_sensors": 16000,
+      "ro_specific_energy_reduction_pct": 16.4,
+      "non_revenue_water_leak_reduction_pct": 38.5,
+      "epa_sdwa_chlorine_interlock_ms": 1.6,
+      "chemical_overdose_escape_pct": 0.0,
+      "acoustic_leak_edge_triage_ms": 19.0,
+      "cellular_ami_bandwidth_reduction_pct": 95.8,
+      "water_hammer_pressure_transient_escape_pct": 0.0,
+      "water_utility_slo_met": true
+    },
+    "raw_water_500_mld": {
+      "daily_water_capacity_mld": 500,
+      "water_agent_mode": "fixed_flux_ro_unverified_modbus_raw_hydrophone",
+      "water_solver_nodes": 4,
+      "distribution_acoustic_sensors": 4000,
+      "ro_specific_energy_reduction_pct": 0.0,
+      "non_revenue_water_leak_reduction_pct": 0.0,
+      "epa_sdwa_chlorine_interlock_ms": 0.0,
+      "chemical_overdose_escape_pct": 2.4,
+      "acoustic_leak_edge_triage_ms": 1450.0,
+      "cellular_ami_bandwidth_reduction_pct": 0.0,
+      "water_hammer_pressure_transient_escape_pct": 3.1,
+      "water_utility_slo_met": false
+    }
+  },
+  "trace_sha256": "2be1080157ab044d53004a9e3189de22ecfe1da5d29159c4b0c1b4e928c83aac"
 }

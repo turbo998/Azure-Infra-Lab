@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #52 · **58 Chapters** · **53 IaC Blueprints** · **52 Quantitative Physics Simulators** · **61/61 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 58-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-20 (Cycle #53 · **59 Chapters** · **54 IaC Blueprints** · **53 Quantitative Physics Simulators** · **62/62 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 59-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 52 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [61-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 53 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [62-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -146,6 +146,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **55** | **Autonomous Open-Pit & Underground Mining (`AHS cuOpt+XRF` Dispatch + `ISO 21815 Level 9` Interlock + `SSR` Slope Radar)** | `simulate_mining_ahs_iso21815_sandbox()` | `aksclaw-mining-ahs-iso21815-pool.bicep` | **`4.2 s` 120-truck dispatch (`-99.2%`, `-41.5%` queue wait, `-64.0%` grade variance)**, **`0.0%` haul-road collision (`2.2 ms`)**, **`18.0 ms` SSR radar** |
 | **56** | **Smart Campus & High-Rise Commercial Real Estate (`ADT Brick MPC` + `ASHRAE 62.1` IAQ Gate + `NFPA 72` Life-Safety Lock)** | `simulate_smart_building_ashrae_nfpa72_sandbox()` | `aksclaw-smart-building-ashrae-nfpa72-pool.bicep` | **`-31.8%` HVAC/lighting energy (`-26.4%` peak demand, `-38.2%` elevator wait)**, **`0.0%` CO2 > 1,000 ppm (`1.6 ms`)**, **`0.0%` smoke-damper override (`0.8 ms`)** |
 | **57** | **Autonomous Precision Agriculture (`FAO-56 VRA` Prescription + `ISO 11783 / EPA` Drift Gate + `UAV NDVI` Edge Triage)** | `simulate_precision_ag_isobus_ndvi_sandbox()` | `aksclaw-precision-ag-isobus-ndvi-pool.bicep` | **`-42.6%` herbicide & `-34.8%` irrigation water**, **`0.0%` waterway spray drift (`1.9 ms`)**, **`22.0 ms` UAV NDVI triage (`96.4%` WAN cut)** |
+| **58** | **Municipal Water Treatment & `RO` Desalination (`EPANET PINN` + `RO` Fouling MPC + `EPA SDWA` Chlorine Gate + Acoustic Leak Edge)** | `simulate_water_utility_ro_scada_sdwa_sandbox()` | `aksclaw-water-utility-ro-scada-sdwa-pool.bicep` | **`-16.4%` RO specific energy & `-38.5%` NRW leak**, **`0.0%` chemical overdose (`1.6 ms` SDWA gate)**, **`19.0 ms` hydrophone leak triage (`95.8%` AMI cut)** |
 
 ---
 
@@ -155,10 +156,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 52 quantitative engineering & physics simulators (Chapters 7–57)
+# 2. Run all 53 quantitative engineering & physics simulators (Chapters 7–58)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 61 unit tests (100% pass across 6 runtimes, 52 physics models, 53 blueprints & links)
+# 3. Execute all 62 unit tests (100% pass across 6 runtimes, 53 physics models, 54 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)

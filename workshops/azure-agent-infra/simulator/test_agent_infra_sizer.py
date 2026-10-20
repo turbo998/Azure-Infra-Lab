@@ -59,6 +59,7 @@ from agent_infra_sizer import (
     simulate_space_orbital_satellite_edge_sandbox,
     simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
+    simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -982,6 +983,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["crop_row_trampling_escape_pct"], 2.0)
         self.assertTrue(gov["precision_ag_slo_met"])
         self.assertFalse(raw["precision_ag_slo_met"])
+
+    def test_water_utility_ro_scada_sdwa_sandbox(self) -> None:
+        gov = simulate_water_utility_ro_scada_sdwa_sandbox(500, "ro_fouling_mpc_epa_sdwa_acoustic_edge")
+        raw = simulate_water_utility_ro_scada_sdwa_sandbox(500, "fixed_flux_ro_unverified_modbus_raw_hydrophone")
+        self.assertEqual(gov["water_solver_nodes"], 4)
+        self.assertEqual(gov["distribution_acoustic_sensors"], 4_000)
+        self.assertEqual(gov["ro_specific_energy_reduction_pct"], 16.4)
+        self.assertEqual(gov["non_revenue_water_leak_reduction_pct"], 38.5)
+        self.assertEqual(gov["epa_sdwa_chlorine_interlock_ms"], 1.6)
+        self.assertEqual(gov["chemical_overdose_escape_pct"], 0.0)
+        self.assertGreater(raw["chemical_overdose_escape_pct"], 2.0)
+        self.assertEqual(gov["acoustic_leak_edge_triage_ms"], 19.0)
+        self.assertEqual(gov["cellular_ami_bandwidth_reduction_pct"], 95.8)
+        self.assertEqual(gov["water_hammer_pressure_transient_escape_pct"], 0.0)
+        self.assertGreater(raw["water_hammer_pressure_transient_escape_pct"], 2.5)
+        self.assertTrue(gov["water_utility_slo_met"])
+        self.assertFalse(raw["water_utility_slo_met"])
 
 
 if __name__ == "__main__":

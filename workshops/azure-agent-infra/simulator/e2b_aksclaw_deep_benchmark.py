@@ -65,6 +65,7 @@ from agent_infra_sizer import (
     simulate_space_orbital_satellite_edge_sandbox,
     simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
+    simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -613,6 +614,13 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_precision_ag_isobus_ndvi_sandbox(100, "uniform_blanket_spray_unchecked_drift_raw_uav_upload"),
     ]
 
+    water_utility_ro_sdwa_profiles: List[Dict[str, object]] = [
+        simulate_water_utility_ro_scada_sdwa_sandbox(125, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
+        simulate_water_utility_ro_scada_sdwa_sandbox(500, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
+        simulate_water_utility_ro_scada_sdwa_sandbox(2_000, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
+        simulate_water_utility_ro_scada_sdwa_sandbox(500, "fixed_flux_ro_unverified_modbus_raw_hydrophone"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -665,6 +673,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "mining_ahs_iso21815_profiles": mining_ahs_iso21815_profiles,
         "smart_building_ashrae_profiles": smart_building_ashrae_profiles,
         "precision_ag_isobus_profiles": precision_ag_isobus_profiles,
+        "water_utility_ro_sdwa_profiles": water_utility_ro_sdwa_profiles,
     }
 
 

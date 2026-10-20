@@ -72,6 +72,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_space_orbital_satellite_edge_sandbox,
     simulate_supplychain_amr_mapf_coldchain_sandbox,
     simulate_telco_oran_network_slicing_sandbox,
+    simulate_water_utility_ro_scada_sdwa_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -537,6 +538,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ag_100k_ha": simulate_precision_ag_isobus_ndvi_sandbox(100, "fao56_vra_iso11783_epa_drift_uav_edge"),
             "ag_400k_ha": simulate_precision_ag_isobus_ndvi_sandbox(400, "fao56_vra_iso11783_epa_drift_uav_edge"),
             "raw_ag_100k_ha": simulate_precision_ag_isobus_ndvi_sandbox(100, "uniform_blanket_spray_unchecked_drift_raw_uav_upload"),
+        },
+        "demo_53_water_utility_ro_scada_sdwa_sandbox": {
+            "water_125_mld": simulate_water_utility_ro_scada_sdwa_sandbox(125, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
+            "water_500_mld": simulate_water_utility_ro_scada_sdwa_sandbox(500, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
+            "water_2000_mld": simulate_water_utility_ro_scada_sdwa_sandbox(2_000, "ro_fouling_mpc_epa_sdwa_acoustic_edge"),
+            "raw_water_500_mld": simulate_water_utility_ro_scada_sdwa_sandbox(500, "fixed_flux_ro_unverified_modbus_raw_hydrophone"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

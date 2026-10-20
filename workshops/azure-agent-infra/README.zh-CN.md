@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #52 · 58 Chapters · 53 Blueprints · 52 Simulators · 61/61 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #53 · 59 Chapters · 54 Blueprints · 53 Simulators · 62/62 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -1756,7 +1756,33 @@ sequenceDiagram
 
 ---
 
-## 58. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 58. 自主市政水务、海水淡化反渗透膜（`RO`）结垢预测控制、供水管网声学漏损边缘分诊与加药安全互锁（`EPA SDWA / SCADA OPC-UA`）智能体基础设施 —— `EPANET` 水力物理内嵌网络、膜跨膜压差（`TMP`）比能耗寻优及余氯/浊度 `PLC` 硬件互锁模型（Autonomous Municipal Water Treatment, Desalination Reverse-Osmosis `RO` Membrane Fouling Control, Distribution Network Acoustic Leak Triage & `EPA SDWA / SCADA OPC-UA` Dosing Interlock Agent Infrastructure — EPANET Hydraulic PINN, RO Specific Energy MPC & PLC Chlorine/Turbidity Interlock Physics）
+
+> 本章由确定性市政水务与海水淡化（`RO`）智能体模型 [`simulate_water_utility_ro_scada_sdwa_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-water-utility-ro-scada-sdwa-pool.bicep`](blueprints/aksclaw-water-utility-ro-scada-sdwa-pool.bicep) 驱动，面向特大城市水务集团与大型海水淡化厂（日供水规模 `125–2,000 MLD` 百万升/日、供水管网声学水听器与压力监测点 `1,000–16,000` 个），解决 **传统反渗透（`RO`）海水淡化定通量高压泵运行导致跨膜压差（`TMP`）飙升与吨水比能耗（`SEC`）居高不下、市政供水管网被动等待爆管报修导致无收益水（`Non-Revenue Water, NRW`）漏损率偏高，以及加药智能体未经 `EPA SDWA`（安全饮用水法）与 `PLC` 梯形图硬件互锁直接向 `SCADA OPC-UA / Modbus` 寄存器下发次氯酸钠/氢氧化钠投加指令引发类似 Oldsmar 水厂事件的 `2.4%` 药剂过量投加风险与 `3.1%` 变频泵骤启水锤爆管风险**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_water_utility_ro_scada_sdwa_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-water-utility-ro-scada-sdwa-pool.bicep`](blueprints/aksclaw-water-utility-ro-scada-sdwa-pool.bicep), this chapter models autonomous municipal water treatment and reverse-osmosis (`RO`) desalination (`125–2,000 MLD`, `4,000` trunk-main acoustic hydrophones at `500 MLD`): (1) running **EPANET Hydraulic Physics-Informed Neural Networks (`PINN`) + RO Transmembrane Pressure (`TMP`) & Antiscalant/Backwash Model Predictive Control (`MPC`)** on `Standard_NC24ads_A100_v4` nodes cuts RO specific energy consumption (`SEC`) by **`16.4%`** (from `3.45` to `2.88 kWh/m³`) and distribution network non-revenue water (`NRW`) leakage by **`38.5%`** vs fixed-flux pumping; (2) enforcing a **`1.6 ms`** **`EPA Safe Drinking Water Act (SDWA) / AWWA` PLC Hardware Ladder Interlock** clamping free residual chlorine strictly within `[0.2, 4.0] mg/L` and finished water turbidity `<= 0.3 NTU` plus an `S-curve` VFD pump ramp limiter (`< 0.15 bar/s`) eliminates **`100.0%` (`0.0%` vs `2.4%`)** of chemical overdosing escapes and **`0.0%` (`vs 3.1%`)** water-hammer pressure transients; and (3) executing **Edge Hydrophone Acoustic Cross-Correlation Leak Triage** on Azure IoT Operations gateways in **`19.0 ms`** (`vs 1,450.0 ms` raw `20 kHz` acoustic waveform cellular backhaul) cuts cellular AMI bandwidth by **`95.8%`**.
+
+### 58.1 市政水务与海水淡化 `RO MPC + EPANET PINN`、`EPA SDWA` 加药互锁与管网声学测漏三大工程支柱
+
+1. **Pillar 1：`EPANET` 管网水力物理内嵌网络（`PINN`）+ 反渗透膜（`RO`）跨膜压差与阻垢反洗 `MPC` 寻优池（`Standard_NC24ads_A100_v4`） vs 传统定通量运行**：
+   - 实时融合原水电导率/盐度（`TDS`）、水温、高压泵增压透平能量回收装置（`ERD`）工况与管网分区计量（`DMA`）夜间最小流量，在 A100 节点上滚动优化反渗透多段回收率与化学阻垢剂/浓水冲洗周期，将海水淡化吨水比能耗（`SEC`）降低 **`16.4%`**（从 `3.45 kWh/m³` 降至 `2.88 kWh/m³`），并通过管网压力动态调控将无收益水（`NRW`）暗漏损失削减 **`38.5%`**。
+2. **Pillar 2：`EPA Safe Drinking Water Act (SDWA) / AWWA` 余氯与浊度 `PLC` 硬件梯形图互锁（`1.6 ms` 门控）与变频水泵 `S-Curve` 防水锤斜率限制**：
+   - 任何由水质优化智能体生成的混凝剂（`PAC`）、次氯酸钠消毒剂或 pH 调节碱液（`NaOH`）计量泵冲程指令，在写入 `SCADA OPC-UA` 寄存器前必须经过 **`1.6 ms` 独立 `PLC` 硬件安全包络门控**：强制锁定出厂水游离余氯在 **`[0.2, 4.0] mg/L`**、出水浊度 **`<= 0.3 NTU`** 且变频调速泵（`VFD`）升压速率 **`< 0.15 bar/s`**，将 **类似 Oldsmar 水厂的药剂过量投加逃逸率从 `2.4%` 彻底清零至 `0.0%`**，并将 **管网水锤瞬态超压爆管率从 `3.1%` 降至 `0.0%`**。
+3. **Pillar 3：`Azure IoT Operations` 供水干管水听器（`Hydrophone`）声学互相关暗漏边缘分诊（`19.0 ms`）**：
+   - 在市政管网阀门井边缘网关本地对 `20 kHz` 压电水听器振动频谱执行短时傅里叶变换（`STFT`）与双传感器到达时间差（`TDOA`）声学互相关测漏定位，在 **`19.0 ms` 内（对比原始高频声波全量上传蜂窝网 `1,450.0 ms`）** 精确定位亚米级微裂纹暗漏点，削减 **`95.8%` 蜂窝窄带物联网（`NB-IoT / LTE-M`）回传带宽**。
+
+### 58.2 `RO + EPANET MPC` 节能降漏 + `EPA SDWA` 加药互锁 + 管网水听器边缘测漏 vs 传统定通量水厂对比表
+
+| 日供水规模与市政水务 `SCADA` 智能体架构 | `NC24ads_A100_v4` 节点数 | 管网声学水听器数 | **`RO` 比能耗削减 / `NRW` 漏损削减** | **`EPA SDWA` 药剂过量投加逃逸率** | **水听器边缘测漏延迟与蜂窝带宽削减** | **水锤瞬态超压爆管逃逸率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`125 MLD` 水厂 · RO MPC + EPA SDWA 互锁 + 声学边缘** | `2` | `1,000` | **`16.4%` / `38.5%`** | **`0.0%` (`1.6 ms`)** | **`19.0 ms` / `95.8%`** | **`0.0%` (`<0.15 bar/s`)** |
+| **`500 MLD` 水厂 · RO MPC + EPA SDWA 互锁 + 声学边缘 (推荐)** | **`4`** | **`4,000`** | **`16.4%` / `38.5%`** | **`0.0%` (`1.6 ms`)** | **`19.0 ms` / `95.8%`** | **`0.0%` (`<0.15 bar/s`)** |
+| **`2,000 MLD` 水厂 · RO MPC + EPA SDWA 互锁 + 声学边缘** | `16` | `16,000` | **`16.4%` / `38.5%`** | **`0.0%` (`1.6 ms`)** | **`19.0 ms` / `95.8%`** | **`0.0%` (`<0.15 bar/s`)** |
+| `500 MLD` 水厂 · 定通量泵运行 + Modbus 直写无互锁 + 原始声波回传 (反模式) | `4` | `4,000` | `0.0%` / `0.0%` (❌ 膜结垢耗电与暗漏) | `2.4%` (❌ 加药越界水质风险) | `1,450.0 ms` / `0.0%` (❌ 蜂窝链路拥塞) | `3.1%` (❌ 骤启停水锤冲击) |
+
+---
+
+## 59. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
@@ -1770,10 +1796,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 52 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱）
+# 2. 运行深度定量模型（全部 53 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 61 项单元测试（100% 覆盖 6 大运行时契约、52 大深度物理模型、53 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 62 项单元测试（100% 覆盖 6 大运行时契约、53 大深度物理模型、54 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
