@@ -100,6 +100,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
     simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
+    simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -731,6 +732,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hypersonic_cmc_6_bays": simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(6, "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge"),
             "hypersonic_cmc_24_bays": simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(24, "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge"),
             "raw_hypersonic_cmc_6_bays": simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(6, "isothermal_open_loop_unverified_arcjet_cloud"),
+        },
+        "demo_81_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox": {
+            "subsea_cable_lay_4_spreads": simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(4, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
+            "subsea_cable_lay_16_spreads": simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(16, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
+            "raw_subsea_cable_lay_4_spreads": simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(4, "static_catenary_table_unverified_plough_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -93,6 +93,7 @@ from agent_infra_sizer import (
     simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
     simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
+    simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -809,6 +810,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(24, "knudsen_cvi_ablation_pinn_mpc_nasa5001_nfpa86_sil3_edge"),
         simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(6, "isothermal_open_loop_unverified_arcjet_cloud"),
     ]
+    subsea_cable_lay_plough_profiles: List[Dict[str, object]] = [
+        simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(2, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
+        simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(4, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
+        simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(16, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"),
+        simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(4, "static_catenary_table_unverified_plough_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -890,6 +897,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "deepsea_mineral_collector_profiles": deepsea_mineral_collector_profiles,
         "biomanufacturing_perfusion_bioreactor_profiles": biomanufacturing_perfusion_bioreactor_profiles,
         "hypersonic_cmc_cvi_arcjet_profiles": hypersonic_cmc_cvi_arcjet_profiles,
+        "subsea_cable_lay_plough_profiles": subsea_cable_lay_plough_profiles,
     }
 
 

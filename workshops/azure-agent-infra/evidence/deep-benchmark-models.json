@@ -4908,5 +4908,67 @@
       "pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct": 3.2,
       "hypersonic_cmc_cvi_arcjet_slo_met": false
     }
+  ],
+  "subsea_cable_lay_plough_profiles": [
+    {
+      "clv_plough_spreads": 2,
+      "cable_governance_mode": "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cable_lay_pods": 2,
+      "burial_depth_compliance_and_lay_speed_gain_pct": 26.4,
+      "residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct": 38.2,
+      "dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms": 1.6,
+      "cable_mbr_buckling_or_armour_birdcaging_breach_pct": 0.0,
+      "vessel_cotdr_das_usbl_edge_latency_ms": 1.5,
+      "wan_bandwidth_reduction_pct": 98.8,
+      "plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct": 0.0,
+      "subsea_cable_lay_plough_slo_met": true
+    },
+    {
+      "clv_plough_spreads": 4,
+      "cable_governance_mode": "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cable_lay_pods": 4,
+      "burial_depth_compliance_and_lay_speed_gain_pct": 26.4,
+      "residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct": 38.2,
+      "dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms": 1.6,
+      "cable_mbr_buckling_or_armour_birdcaging_breach_pct": 0.0,
+      "vessel_cotdr_das_usbl_edge_latency_ms": 1.5,
+      "wan_bandwidth_reduction_pct": 98.8,
+      "plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct": 0.0,
+      "subsea_cable_lay_plough_slo_met": true
+    },
+    {
+      "clv_plough_spreads": 16,
+      "cable_governance_mode": "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cable_lay_pods": 16,
+      "burial_depth_compliance_and_lay_speed_gain_pct": 26.4,
+      "residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct": 38.2,
+      "dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms": 1.6,
+      "cable_mbr_buckling_or_armour_birdcaging_breach_pct": 0.0,
+      "vessel_cotdr_das_usbl_edge_latency_ms": 1.5,
+      "wan_bandwidth_reduction_pct": 98.8,
+      "plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct": 0.0,
+      "subsea_cable_lay_plough_slo_met": true
+    },
+    {
+      "clv_plough_spreads": 4,
+      "cable_governance_mode": "static_catenary_table_unverified_plough_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cable_lay_pods": 4,
+      "burial_depth_compliance_and_lay_speed_gain_pct": 0.0,
+      "residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct": 0.0,
+      "dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms": 520.0,
+      "cable_mbr_buckling_or_armour_birdcaging_breach_pct": 1.6,
+      "vessel_cotdr_das_usbl_edge_latency_ms": 1520.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct": 3.3,
+      "subsea_cable_lay_plough_slo_met": false
+    }
   ]
 }

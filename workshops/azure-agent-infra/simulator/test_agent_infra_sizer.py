@@ -87,6 +87,7 @@ from agent_infra_sizer import (
     simulate_deepsea_mineral_collector_riser_isa_dnv_sil3_sandbox,
     simulate_biomanufacturing_perfusion_bioreactor_pat_gmp_sil3_sandbox,
     simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox,
+    simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -221,6 +222,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-deepsea-mineral-collector-riser-isa-dnv-sil3-pool.bicep",
             "aksclaw-biomanufacturing-perfusion-bioreactor-pat-gmp-sil3-pool.bicep",
             "aksclaw-hypersonic-cmc-cvi-arcjet-tps-nfpa86-sil3-pool.bicep",
+            "aksclaw-subsea-cable-lay-plough-otdr-das-dnv-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1540,6 +1542,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["pore_seal_delamination_or_stagnation_burnthrough_false_clearance_pct"], 3.0)
         self.assertTrue(gov["hypersonic_cmc_cvi_arcjet_slo_met"])
         self.assertFalse(raw["hypersonic_cmc_cvi_arcjet_slo_met"])
+
+    def test_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(self) -> None:
+        gov = simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(
+            4, "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"
+        )
+        raw = simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(
+            4, "static_catenary_table_unverified_plough_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cable_lay_pods"], 4)
+        self.assertEqual(gov["burial_depth_compliance_and_lay_speed_gain_pct"], 26.4)
+        self.assertEqual(gov["residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct"], 38.2)
+        self.assertEqual(gov["dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms"], 1.6)
+        self.assertEqual(gov["cable_mbr_buckling_or_armour_birdcaging_breach_pct"], 0.0)
+        self.assertGreater(raw["cable_mbr_buckling_or_armour_birdcaging_breach_pct"], 1.4)
+        self.assertEqual(gov["vessel_cotdr_das_usbl_edge_latency_ms"], 1.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.8)
+        self.assertEqual(gov["plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct"], 3.0)
+        self.assertTrue(gov["subsea_cable_lay_plough_slo_met"])
+        self.assertFalse(raw["subsea_cable_lay_plough_slo_met"])
 
 
 if __name__ == "__main__":

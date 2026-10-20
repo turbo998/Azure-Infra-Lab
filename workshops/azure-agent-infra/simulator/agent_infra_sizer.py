@@ -4562,6 +4562,56 @@ def simulate_hypersonic_cmc_cvi_arcjet_tps_nfpa86_sil3_sandbox(
     }
 
 
+def simulate_subsea_cable_lay_plough_otdr_das_dnv_sil3_sandbox(
+    clv_plough_spreads: int = 4,
+    cable_governance_mode: str = "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Subsea HVDC / Submarine Fiber-Optic Cable Laying,
+    Subsea Plough Trenching & Coherent OTDR / Brillouin BOTDA / DAS Fault
+    Localization (Catenary Touchdown Point TDP Tension & Lay-Back Angle PINN,
+    Plough Share Soil-Cutting Draft Force & Jetting MPC & DNV-ST-F101 /
+    CIGRE TB 610 / IMCA M 103 DP-3 / IEC 61508 SIL-3 Chute Minimum Bending
+    Radius MBR & Tow-Winch Render Interlock) Agent Infrastructure (Chapter 86).
+    """
+    if clv_plough_spreads <= 0:
+        raise ValueError("clv_plough_spreads must be positive")
+    valid_modes = {
+        "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge",
+        "static_catenary_table_unverified_plough_cloud",
+    }
+    if cable_governance_mode not in valid_modes:
+        raise ValueError(f"cable_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cable_governance_mode == "catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge"
+    gpu_nodes = max(2, math.ceil(clv_plough_spreads / 2))
+    active_cable_lay_pods = max(2, int(clv_plough_spreads))
+
+    burial_depth_compliance_and_lay_speed_gain_pct = 26.4 if governed else 0.0
+    residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct = 38.2 if governed else 0.0
+    dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms = 1.6 if governed else 520.0
+    cable_mbr_buckling_or_armour_birdcaging_breach_pct = 0.0 if governed else 1.6
+    vessel_cotdr_das_usbl_edge_latency_ms = 1.5 if governed else 1520.0
+    wan_bandwidth_reduction_pct = 98.8 if governed else 0.0
+    plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct = 0.0 if governed else 3.3
+
+    return {
+        "clv_plough_spreads": clv_plough_spreads,
+        "cable_governance_mode": cable_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_cable_lay_pods": active_cable_lay_pods,
+        "burial_depth_compliance_and_lay_speed_gain_pct": burial_depth_compliance_and_lay_speed_gain_pct,
+        "residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct": residual_bottom_tension_variance_and_microbend_attenuation_reduction_pct,
+        "dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms": dnv_st_f101_imca_dp3_sil3_chute_mbr_tow_interlock_ms,
+        "cable_mbr_buckling_or_armour_birdcaging_breach_pct": cable_mbr_buckling_or_armour_birdcaging_breach_pct,
+        "vessel_cotdr_das_usbl_edge_latency_ms": vessel_cotdr_das_usbl_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct": plough_hanger_snag_or_tdp_loop_throw_false_clearance_pct,
+        "subsea_cable_lay_plough_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

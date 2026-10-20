@@ -493,6 +493,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(78)">79. 深海 4000-6000m 多金属结核采集车与垂直扬矿立管 + 稀软底质土力学与底栖羽流 PINN-MPC 及 ISA / DNV-ST-E407 / SIL-3 立管紧急排空阀与脐带缆张力联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(79)">80. 连续灌流哺乳动物细胞生物反应器 (2000-20000L mAb/AAV) + dFBA 代谢通量与糖基化 PINN-MPC 及 FDA 21 CFR Part 11 / ASME BPE / SIL-3 在线灭菌 SIP 与低 pH 病毒灭活联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(80)">81. 超高温 SiC/SiC 陶瓷基复合材料 CVI 沉积与高超声速电弧风洞 TPS 烧蚀 (2200-3000°C) + 克努森扩散 PINN-MPC 及 NASA-STD-5001B / NFPA 86 / SIL-3 硅烷防爆与水冷电极联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(81)">82. 深海 ±525kV 柔直海缆与跨洋海光缆敷设船 (CLV) + 海底犁式埋设机悬链线触地点 TDP 张力 PINN-MPC 及 DNV-ST-F101 / CIGRE TB 610 / SIL-3 最小弯曲半径与自动松缆联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2317,6 +2318,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 81: Subsea HVDC / Submarine Fiber-Optic Cable Laying Vessel (CLV), Subsea Plough Trenching, Catenary TDP Tension PINN-MPC & DNV-ST-F101 / CIGRE TB 610 / SIL-3 Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 81 · SUBSEA HVDC / SUBMARINE FIBER-OPTIC CABLE LAYING VESSEL (CLV), SUBSEA PLOUGH TRENCHING, CATENARY TDP PINN-MPC &amp; DNV-ST-F101 / CIGRE TB 610 / SIL-3 SIZER</span>
+    <h2>自主深海特高压海缆 (<code>±525 kV HVDC</code>)/跨洋海光缆敷设船与海底犁式埋设机 (<code>Subsea Plough</code>) <code>PINN-MPC</code> 及 <code>DNV-ST-F101 / CIGRE TB 610 / SIL-3</code> 防弯折与自动松缆联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 16</code> 支万吨级海缆敷设船 (<code>CLV</code>) 与 150 吨级海底犁式埋设机 (<code>Subsea Plough</code>) 编队规模下，三维波浪升沉动态悬链线触地点 (<code>TDP</code>) 张力与海床非均质切土力学 <code>PINN</code> + 敷设船 <code>DP-3</code> 纵荡/直线牵引机 (<code>LCE</code>) 与高压水射流辅助埋深 <code>MPC</code>（目标埋深 <code>1.5–3.0 m</code> 达标率与敷设航速 <code>+26.4%</code>、触地点残余张力波动与光纤微弯附加衰减 <code>-38.2%</code>）、<code>DNV-ST-F101 / CIGRE TB 610 / IMCA M 103 DP-3 / IEC 61508 SIL-3</code> 船尾滑道最小弯曲半径 (<code>MBR &lt; 3.5 m</code>) 防护与拖曳绞车超载恒张力自动松缆 (<code>Auto-Render</code>) 硬联锁（<code>1.6 ms</code>，绝缘弯曲击穿或钢丝铠装鸟笼畸变违例率 <code>0.0%</code>）及船载相干光时域反射仪 (<code>C-OTDR</code>)/布里渊应变分析 (<code>BOTDA</code>)/超短基线水声定位 (<code>USBL</code>) + <code>Azure Local</code> 边缘推理（<code>1.5 ms</code>，远洋海事卫星广域网带宽削减 <code>98.8%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 万吨级海缆敷设船与海底犁式埋设作业编队数 (CLV &amp; Subsea Plough Trenching Spreads): <strong id="lbl_clv_spreads" style="color:var(--amber)">4</strong> CLV / Plough Spreads</label>
+          <input type="range" id="rng_clv_spreads" min="2" max="16" step="2" value="4" oninput="runSubseaCableLayLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 动态悬链线触地点与海底犁切土 PINN-MPC 及 DNV-ST-F101 / CIGRE TB 610 / SIL-3 防弯折联锁模式 (Subsea Cable Laying &amp; Plough Governance Mode)</label>
+          <select id="sel_clv_mode" onchange="runSubseaCableLayLab()">
+            <option value="catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge" selected>三维动态悬链线 TDP 与切土 PINN + DP-3/LCE 协同 MPC (+26.4% 埋深达标率/航速 / -38.2% 张力波动与微弯损耗) + DNV SIL-3 滑道 MBR/自动松缆联锁 + 1.5ms 船载 C-OTDR/BOTDA 边缘 (推荐)</option>
+            <option value="static_catenary_table_unverified_plough_cloud">传统反模式：静态悬链线查表与手动绞车控制 (0 增益) + 无尾滑道 MBR 与拖缆自动松缆 SIL-3 门控 (1.6% 铠装鸟笼/绝缘弯曲违例) + 原始光纤散射卫星上云 (3.3% 犁刀挂石/触地点打扭漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="clvOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3711,6 +3735,21 @@ resource hypersonicCmcCviArcjetSil3Pool 'Microsoft.ContainerService/managedClust
       'aksclaw.io/testcell-pyrometry-plif-ae-edge': 'enabled-1.2ms-98.7pct-wan-cut'
     }
   }
+}`,
+`// Blueprint #82: Subsea HVDC / Submarine Fiber-Optic Cable Laying Vessel (CLV), Subsea Plough Trenching, Catenary TDP PINN-MPC & DNV-ST-F101 / CIGRE TB 610 / SIL-3 Pool (Chapter 86)
+resource subseaCableLayPloughSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'cablelay'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'subsea-cable-lay-plough-otdr-das-dnv-sil3-agent'
+      'aksclaw.io/catenary-tdp-plough-pinn-mpc': 'enabled-26.4pct-burial-speed-38.2pct-tension-microbend-cut'
+      'aksclaw.io/dnv-st-f101-cigre-tb610-sil3-mbr-render': 'enforced-1.6ms-zero-mbr-buckling-or-armour-birdcaging'
+      'aksclaw.io/vessel-cotdr-botda-usbl-edge': 'enabled-1.5ms-98.8pct-satcom-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -3892,6 +3931,30 @@ runLeoConstellationLab();
 runDeepseaCollectorLab();
 runBiomanufacturingLab();
 runHypersonicCmcLab();
+runSubseaCableLayLab();
+
+function runSubseaCableLayLab() {
+  const spreads = parseInt(document.getElementById('rng_clv_spreads').value, 10);
+  const mode = document.getElementById('sel_clv_mode').value;
+  document.getElementById('lbl_clv_spreads').textContent = spreads.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(spreads / 2));
+  const pods = Math.max(2, spreads);
+  const ok = mode === 'catenary_tdp_plough_soil_pinn_cotdr_das_mpc_dnv_sil3_edge';
+  const mpcStr = ok ? "三维动态悬链线触地点 (TDP) 张力与海底犁切土力学 PINN + DP-3 纵荡/直线牵引机 (LCE) 与射流埋深 MPC · 目标埋深 (1.5-3.0m) 达标率与敷设航速 +26.4% · 触地点残余张力波动与光纤微弯附加衰减 -38.2%" : "传统静态悬链线查表与手动拖曳绞车调节 · 0.0% 埋深与抗微弯增益 (涌浪升沉引发底张力剧烈波动且 3.3% 海底犁挂石过载或触地点失张打扭成环误放行)";
+  const sil3Str = ok ? "1.6 ms DNV-ST-F101 / CIGRE TB 610 / IMCA M 103 DP-3 / SIL-3 尾滑道最小弯曲半径 (MBR < 3.5m) 与拖曳绞车恒张力自动松缆硬联锁 · 0.0% 绝缘弯曲/铠装鸟笼畸变" : "无尾滑道 MBR 与拖缆自动松缆 SIL-3 硬联锁 (520.0 ms 卫星回路滞后) · 1.6% 尾滑道过弯压裂铅护套或拖缆骤紧引发钢丝铠装鸟笼形变风险";
+  const edgeStr = ok ? "1.5 ms 敷设船相干光时域反射仪 (C-OTDR)、布里渊光时域分析 (BOTDA) 分布式微应变与 USBL 水声定位 + Azure Local 边缘 (-98.8% 远洋海事卫星广域网带宽) · 0.0% 路由监测盲区" : "1,520.0 ms 原始分布式光纤后向散射波形与多波束声呐点云经海事卫星回传岸基云端 · 阻塞船载卫星链路且无法在海底犁遇孤石瞬间完成毫秒级松缆闭环";
+
+  document.getElementById('clvOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.6% 尾滑道最小弯曲半径屈服或钢丝铠装鸟笼畸变风险 · 3.3% 海底犁碰撞孤石挂犁或触地点失张打扭误放行'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个海缆敷设与海底犁控制单元 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>船载相干光时域反射仪 (C-OTDR)、布里渊光时域分析 (BOTDA) 与 USBL 水声定位 + Azure Local 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runHypersonicCmcLab() {
   const bays = parseInt(document.getElementById('rng_cmc_bays').value, 10);
