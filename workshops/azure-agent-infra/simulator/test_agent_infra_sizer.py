@@ -106,6 +106,7 @@ from agent_infra_sizer import (
     simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
     simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
     simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox,
+    simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -259,6 +260,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-fsw-friction-stir-welding-cryo-tank-phased-array-ut-awsd17-sil3-pool.bicep",
             "aksclaw-perovskite-silicon-tandem-pv-slot-die-laser-scribing-iec61215-sil3-pool.bicep",
             "aksclaw-solid-state-sulfide-battery-dry-electrode-isobaric-h2s-ul9540a-sil3-pool.bicep",
+            "aksclaw-pem-fuel-cell-ccm-ultrasonic-spray-bipolar-plate-saej2579-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1977,6 +1979,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_argyrodite_grain_boundary_crack_or_void_pct"], 3.0)
         self.assertTrue(gov["assb_sulfide_battery_slo_met"])
         self.assertFalse(raw["assb_sulfide_battery_slo_met"])
+
+    def test_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(self) -> None:
+        gov = simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(
+            16, "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge"
+        )
+        raw = simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(
+            16, "constant_spray_flow_fixed_hot_press_offline_polarization_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_pem_ccm_pods"], 8)
+        self.assertEqual(gov["stack_power_density_and_pt_mass_activity_yield_gain_pct"], 33.8)
+        self.assertEqual(gov["membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct"], 45.7)
+        self.assertEqual(gov["saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct"], 1.2)
+        self.assertEqual(gov["line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct"], 3.0)
+        self.assertTrue(gov["pem_fuel_cell_ccm_slo_met"])
+        self.assertFalse(raw["pem_fuel_cell_ccm_slo_met"])
 
 
 if __name__ == "__main__":

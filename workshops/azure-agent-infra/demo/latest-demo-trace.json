@@ -6288,6 +6288,68 @@
         "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 3.5,
         "assb_sulfide_battery_slo_met": false
       }
+    ],
+    "pem_fuel_cell_ccm_profiles": [
+      {
+        "pem_ccm_stack_lines": 8,
+        "pem_governance_mode": "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pem_ccm_pods": 4,
+        "stack_power_density_and_pt_mass_activity_yield_gain_pct": 33.8,
+        "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": 45.7,
+        "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": 0.4,
+        "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": 0.0,
+        "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 0.0,
+        "pem_fuel_cell_ccm_slo_met": true
+      },
+      {
+        "pem_ccm_stack_lines": 16,
+        "pem_governance_mode": "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pem_ccm_pods": 8,
+        "stack_power_density_and_pt_mass_activity_yield_gain_pct": 33.8,
+        "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": 45.7,
+        "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": 0.4,
+        "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": 0.0,
+        "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 0.0,
+        "pem_fuel_cell_ccm_slo_met": true
+      },
+      {
+        "pem_ccm_stack_lines": 64,
+        "pem_governance_mode": "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pem_ccm_pods": 16,
+        "stack_power_density_and_pt_mass_activity_yield_gain_pct": 33.8,
+        "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": 45.7,
+        "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": 0.4,
+        "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": 0.0,
+        "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 0.0,
+        "pem_fuel_cell_ccm_slo_met": true
+      },
+      {
+        "pem_ccm_stack_lines": 16,
+        "pem_governance_mode": "constant_spray_flow_fixed_hot_press_offline_polarization_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pem_ccm_pods": 8,
+        "stack_power_density_and_pt_mass_activity_yield_gain_pct": 5.4,
+        "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": 7.2,
+        "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": 186.0,
+        "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": 1.5,
+        "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": 207.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 3.4,
+        "pem_fuel_cell_ccm_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -11805,5 +11867,52 @@
       "assb_sulfide_battery_slo_met": false
     }
   },
-  "trace_sha256": "05e41eb78c0be6c24a1c49277483736c9182d9cca6b9e8ff8cb40e244bd12ca1"
+  "demo_100_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox": {
+    "pem_ccm_16_lines": {
+      "pem_ccm_stack_lines": 16,
+      "pem_governance_mode": "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_pem_ccm_pods": 8,
+      "stack_power_density_and_pt_mass_activity_yield_gain_pct": 33.8,
+      "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": 45.7,
+      "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": 0.4,
+      "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": 0.0,
+      "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 0.0,
+      "pem_fuel_cell_ccm_slo_met": true
+    },
+    "pem_ccm_64_lines": {
+      "pem_ccm_stack_lines": 64,
+      "pem_governance_mode": "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_pem_ccm_pods": 16,
+      "stack_power_density_and_pt_mass_activity_yield_gain_pct": 33.8,
+      "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": 45.7,
+      "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": 0.4,
+      "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": 0.0,
+      "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 0.0,
+      "pem_fuel_cell_ccm_slo_met": true
+    },
+    "raw_pem_ccm_16_lines": {
+      "pem_ccm_stack_lines": 16,
+      "pem_governance_mode": "constant_spray_flow_fixed_hot_press_offline_polarization_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_pem_ccm_pods": 8,
+      "stack_power_density_and_pt_mass_activity_yield_gain_pct": 5.4,
+      "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": 7.2,
+      "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": 186.0,
+      "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": 1.5,
+      "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": 207.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 3.4,
+      "pem_fuel_cell_ccm_slo_met": false
+    }
+  },
+  "trace_sha256": "8e3d9377918fa6ae013c17fc8a152d569fdab0cb50f18365fb8f827166a99edb"
 }

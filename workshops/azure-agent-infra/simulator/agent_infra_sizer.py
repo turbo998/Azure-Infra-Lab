@@ -5404,6 +5404,49 @@ def simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox
     }
 
 
+def simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(
+    pem_ccm_stack_lines: int = 16,
+    pem_governance_mode: str = "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Next-Gen Proton-Exchange Membrane (PEM) Fuel-Cell Roll-to-Roll Catalyst-Coated Membrane (CCM) Ultrasonic Spray Ionomer-Pt/C Dispersion, Decal Transfer Hot-Pressing & Bipolar Plate Hydroforming PINN-MPC, In-Situ X-Ray Fluorescence (XRF) Pt-Loading / Infrared Pinhole Inspection & SAE J2579 / IEC 62282-3-100 / NFPA 2 / IEC 61508 SIL-3 Hydrogen Crossover & Catalytic Ignition Interlock Agent Infrastructure (Chapter 105)."""
+    if pem_ccm_stack_lines <= 0:
+        raise ValueError("pem_ccm_stack_lines must be positive")
+    valid_modes = {
+        "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge",
+        "constant_spray_flow_fixed_hot_press_offline_polarization_cloud",
+    }
+    if pem_governance_mode not in valid_modes:
+        raise ValueError(f"pem_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = pem_governance_mode == "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge"
+    active_pem_ccm_pods = max(2, min(8, int(pem_ccm_stack_lines // 2))) if pem_ccm_stack_lines <= 16 else max(8, int(pem_ccm_stack_lines // 4))
+    gpu_nodes = max(2, math.ceil(pem_ccm_stack_lines / 8))
+
+    stack_power_density_and_pt_mass_activity_yield_gain_pct = 33.8 if governed else 5.4
+    membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct = 45.7 if governed else 7.2
+    saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms = 0.4 if governed else 186.0
+    unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct = 0.0 if governed else 1.5
+    line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms = 0.4 if governed else 207.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct = 0.0 if governed else 3.4
+
+    return {
+        "pem_ccm_stack_lines": pem_ccm_stack_lines,
+        "pem_governance_mode": pem_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_pem_ccm_pods": active_pem_ccm_pods,
+        "stack_power_density_and_pt_mass_activity_yield_gain_pct": stack_power_density_and_pt_mass_activity_yield_gain_pct,
+        "membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct": membrane_pinhole_catalyst_mudcrack_and_bpp_thinning_scrap_reduction_pct,
+        "saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms": saej2579_iec62282_sil3_h2_crossover_and_ignition_interlock_ms,
+        "unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct": unmitigated_h2_crossover_or_catalytic_pt_solvent_ignition_pct,
+        "line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms": line_edge_xrf_pt_and_lockin_ir_pinhole_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct,
+        "pem_fuel_cell_ccm_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

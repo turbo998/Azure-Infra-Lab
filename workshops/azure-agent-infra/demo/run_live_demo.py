@@ -119,6 +119,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
     simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
     simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox,
+    simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -845,6 +846,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "assb_sulfide_16_lines": simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox(16, "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge"),
             "assb_sulfide_64_lines": simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox(64, "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge"),
             "raw_assb_sulfide_16_lines": simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox(16, "constant_roll_gap_uniaxial_press_offline_eis_cloud_polling"),
+        },
+        "demo_100_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox": {
+            "pem_ccm_16_lines": simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(16, "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge"),
+            "pem_ccm_64_lines": simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(64, "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge"),
+            "raw_pem_ccm_16_lines": simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(16, "constant_spray_flow_fixed_hot_press_offline_polarization_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

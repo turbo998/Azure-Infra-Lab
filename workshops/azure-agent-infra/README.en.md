@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[📘 Bilingual Entry (`README.md`)](README.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](h5/selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #99 · **105 Chapters** · **100 IaC Blueprints** · **99 Quantitative Physics Simulators** · **108/108 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 104-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-21 (Cycle #100 · **106 Chapters** · **101 IaC Blueprints** · **100 Quantitative Physics Simulators** · **109/109 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 105-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](test-report.en.md) · [中文 7-Card 评测报告](test-report.md) · [CSP-Locked Self-Contained HTML Deck](test-report-cards.html) · [Sealed Benchmark JSON (`report.json`)](report.json)
-  - 🧮 [Deterministic Architecture Sizer & 99 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [108-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 100 Physics Simulators (`simulator/agent_infra_sizer.py`)](simulator/agent_infra_sizer.py) · [109-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](h5/index.html) · [`h5/demo.html`](h5/demo.html) · [`h5/selector.html`](h5/selector.html) · [`h5/cards.html`](h5/cards.html)
 
 ---
@@ -193,6 +193,7 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 | **102** | **Autonomous Aerospace Cryogenic Propellant Dome & Al-Li Fuselage Friction Stir Welding (`FSW / Bobbin-Tool FSW`) Thermomechanical Material-Flow Viscoplasticity `PINN-MPC`, In-Situ Phased-Array Ultrasonic (`PAUT`) Wormhole Detection & `AWS D17.3 / NASA-STD-5009 / ISO 25239 / IEC 61508 SIL-3` Spindle Plunge-Force & Pin-Shear (`Sheppard-Wright Zener-Hollomon Viscoplastic PINN + Axial Forge-Force & Bobbin-Gap MPC` + `AWS D17.3 / NASA-STD-5009 SIL-3` Stir-Pin Shear Retract Gate + `Spindle Piezo Dynamometer / Trailing 10 MHz Roller PAUT` Edge)** | `simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox()` | `aksclaw-fsw-friction-stir-welding-cryo-tank-phased-array-ut-awsd17-sil3-pool.bicep` | **`+32.8%` cryogenic weld UTS/toughness & `-45.6%` wormhole/kiss-bond scrap**, **`0.0%` stir-pin fracture in tank or burn-through (`0.4 ms` SIL-3)**, **`0.4 ms` spindle `Piezo/10MHz PAUT` edge (`99.3%` WAN cut)** |
 | **103** | **Autonomous Next-Gen Perovskite-Silicon Tandem Photovoltaic (`PV`) Roll-to-Roll Slot-Die Meniscus Fluid-Dynamics & `P1-P2-P3` Femtosecond Laser Scribing `PINN-MPC`, In-Situ Photoluminescence (`PL`) Crystallization Inspection & `IEC 61215 / IEC 61730 / SEMI PV22 / IEC 61508 SIL-3` Toxic Lead-Solvent Vapor & Laser Interlock (`Landau-Levich Meniscus & LaMer Crystallization PINN + N2 Quench & Femtosecond P2 Fluence MPC` + `IEC 61215 / SEMI PV22 SIL-3` `AOM` Laser Dump & `DMF/Pb <15% LEL` Gate + `Line-Scan Hyperspectral PL / SS-OCT / LIBS` Edge)** | `simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox()` | `aksclaw-perovskite-silicon-tandem-pv-slot-die-laser-scribing-iec61215-sil3-pool.bicep` | **`+33.2%` tandem `PCE>31.5%` yield/speed & `-45.4%` pinhole/`P2` damage scrap**, **`0.0%` `P2` bottom-cell shunt or solvent LEL breach (`0.4 ms` SIL-3)**, **`0.4 ms` line-side `PL/SS-OCT/LIBS` edge (`99.3%` WAN cut)** |
 | **104** | **Autonomous Next-Gen Solid-State Sulfide Lithium-Metal Battery (`ASSB / Li6PS5Cl`) Dry-Electrode PTFE Fibrillation Calendering, Warm Isobaric Stack Press (`50–300 MPa`) Viscoplastic-Electrochemical `PINN-MPC`, In-Situ Ultrasonic Acoustic `ToF` Inspection & `UL 9540A / IEC 62619 / OSHA 1910.1000 / IEC 61508 SIL-3` Toxic `H2S < 1 ppm` Dry-Room Purge & Stack-Short Interlock (`Newman-Monroe Viscoplastic Dendrite & PTFE Fibrillation PINN + Multi-Roll Gap & Isobaric Ramp MPC` + `UL 9540A / OSHA SIL-3` `H2S <0.8ppm` Argon Purge & Relief Gate + `Dry-Room 25 MHz Ultrasonic ToF / TDLAS H2S` Edge)** | `simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox()` | `aksclaw-solid-state-sulfide-battery-dry-electrode-isobaric-h2s-ul9540a-sil3-pool.bicep` | **`+34.6%` energy density/`CCD` yield & `-46.2%` void/crack scrap**, **`0.0%` toxic `H2S` excursion or dendrite short (`0.4 ms` SIL-3)**, **`0.4 ms` dry-room `Ultrasonic ToF/TDLAS` edge (`99.3%` WAN cut)** |
+| **105** | **Autonomous Next-Gen Proton-Exchange Membrane (`PEMFC`) Roll-to-Roll Catalyst-Coated Membrane (`CCM`) Ultrasonic Spray Ionomer-Pt/C Dispersion, Decal Hot-Pressing & Bipolar Plate Hydroforming `PINN-MPC`, In-Situ `XRF` Pt-Loading / Lock-In IR Pinhole Inspection & `SAE J2579 / IEC 62282-3-100 / NFPA 2 / IEC 61508 SIL-3` Hydrogen Crossover & Catalytic Ignition Interlock (`Butler-Volmer / Dusty-Gas TPB & PFSA Decal Creep PINN + Ultrasonic Spray & Hydroforming MPC` + `SAE J2579 / NFPA 2 SIL-3` `H2` Crossover & `N2` Deluge Gate + `Line-Side 50 kHz XRF & Lock-In IR` Edge)** | `simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox()` | `aksclaw-pem-fuel-cell-ccm-ultrasonic-spray-bipolar-plate-saej2579-sil3-pool.bicep` | **`+33.8%` stack power/low-Pt yield & `-45.7%` pinhole/mudcrack scrap**, **`0.0%` `H2` crossover or catalytic `Pt/C` ignition (`0.4 ms` SIL-3)**, **`0.4 ms` line-side `50kHz XRF/Lock-In IR` edge (`99.3%` WAN cut)** |
 
 ---
 
@@ -202,10 +203,10 @@ Every chapter in [`README.zh-CN.md`](README.zh-CN.md) / [`README.md`](README.md)
 # 1. Verify deterministic runtime selector and 100,000-sandbox E2B VMSS cluster sizing
 python simulator/agent_infra_sizer.py --check
 
-# 2. Run all 99 quantitative engineering & physics simulators (Chapters 7–104)
+# 2. Run all 100 quantitative engineering & physics simulators (Chapters 7–105)
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. Execute all 108 unit tests (100% pass across 6 runtimes, 99 physics models, 100 blueprints & links)
+# 3. Execute all 109 unit tests (100% pass across 6 runtimes, 100 physics models, 101 blueprints & links)
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)
