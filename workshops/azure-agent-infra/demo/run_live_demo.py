@@ -106,6 +106,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
     simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
     simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
+    simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -767,6 +768,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "gw_interferometer_8_sites": simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(8, "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge"),
             "gw_interferometer_32_sites": simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(32, "deep_rl_hierarchical_lock_newtonian_pinn_squeezed_sil3_edge"),
             "raw_gw_interferometer_8_sites": simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox(8, "linear_pid_lock_acquisition_static_seismic_filter_cloud"),
+        },
+        "demo_87_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox": {
+            "hale_solar_haps_18_aircraft": simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(18, "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge"),
+            "hale_solar_haps_72_aircraft": simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(72, "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge"),
+            "raw_hale_solar_haps_18_aircraft": simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(18, "rigid_body_autopilot_fixed_waypoint_cloud_satcom"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

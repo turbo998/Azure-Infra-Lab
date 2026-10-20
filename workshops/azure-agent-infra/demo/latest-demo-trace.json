@@ -5482,6 +5482,68 @@
         "teleseismic_lockloss_or_false_gcn_alert_clearance_pct": 3.2,
         "gw_interferometer_fabry_perot_slo_met": false
       }
+    ],
+    "stratospheric_hale_solar_haps_profiles": [
+      {
+        "hale_solar_haps_aircraft": 9,
+        "hale_governance_mode": "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_hale_haps_flight_pods": 6,
+        "winter_solstice_endurance_and_stationkeeping_gain_pct": 26.2,
+        "wing_root_bending_moment_and_torsion_reduction_pct": 39.8,
+        "stanag4671_dala_flutter_envelope_interlock_ms": 1.0,
+        "aeroelastic_flutter_or_structural_overload_breach_pct": 0.0,
+        "onboard_fbg_strain_arinc825_edge_latency_ms": 0.9,
+        "wan_bandwidth_reduction_pct": 99.0,
+        "nighttime_lis_battery_undervoltage_descent_breach_pct": 0.0,
+        "stratospheric_hale_solar_haps_slo_met": true
+      },
+      {
+        "hale_solar_haps_aircraft": 18,
+        "hale_governance_mode": "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_hale_haps_flight_pods": 12,
+        "winter_solstice_endurance_and_stationkeeping_gain_pct": 26.2,
+        "wing_root_bending_moment_and_torsion_reduction_pct": 39.8,
+        "stanag4671_dala_flutter_envelope_interlock_ms": 1.0,
+        "aeroelastic_flutter_or_structural_overload_breach_pct": 0.0,
+        "onboard_fbg_strain_arinc825_edge_latency_ms": 0.9,
+        "wan_bandwidth_reduction_pct": 99.0,
+        "nighttime_lis_battery_undervoltage_descent_breach_pct": 0.0,
+        "stratospheric_hale_solar_haps_slo_met": true
+      },
+      {
+        "hale_solar_haps_aircraft": 72,
+        "hale_governance_mode": "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_hale_haps_flight_pods": 48,
+        "winter_solstice_endurance_and_stationkeeping_gain_pct": 26.2,
+        "wing_root_bending_moment_and_torsion_reduction_pct": 39.8,
+        "stanag4671_dala_flutter_envelope_interlock_ms": 1.0,
+        "aeroelastic_flutter_or_structural_overload_breach_pct": 0.0,
+        "onboard_fbg_strain_arinc825_edge_latency_ms": 0.9,
+        "wan_bandwidth_reduction_pct": 99.0,
+        "nighttime_lis_battery_undervoltage_descent_breach_pct": 0.0,
+        "stratospheric_hale_solar_haps_slo_met": true
+      },
+      {
+        "hale_solar_haps_aircraft": 18,
+        "hale_governance_mode": "rigid_body_autopilot_fixed_waypoint_cloud_satcom",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_hale_haps_flight_pods": 12,
+        "winter_solstice_endurance_and_stationkeeping_gain_pct": 4.3,
+        "wing_root_bending_moment_and_torsion_reduction_pct": 6.8,
+        "stanag4671_dala_flutter_envelope_interlock_ms": 112.0,
+        "aeroelastic_flutter_or_structural_overload_breach_pct": 1.5,
+        "onboard_fbg_strain_arinc825_edge_latency_ms": 248.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "nighttime_lis_battery_undervoltage_descent_breach_pct": 3.6,
+        "stratospheric_hale_solar_haps_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -10388,5 +10450,52 @@
       "gw_interferometer_fabry_perot_slo_met": false
     }
   },
-  "trace_sha256": "b2e56facea6ed6e1d9d417b2bbac8c8ad40fc778bb116a028bab912e0e7465e5"
+  "demo_87_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox": {
+    "hale_solar_haps_18_aircraft": {
+      "hale_solar_haps_aircraft": 18,
+      "hale_governance_mode": "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hale_haps_flight_pods": 12,
+      "winter_solstice_endurance_and_stationkeeping_gain_pct": 26.2,
+      "wing_root_bending_moment_and_torsion_reduction_pct": 39.8,
+      "stanag4671_dala_flutter_envelope_interlock_ms": 1.0,
+      "aeroelastic_flutter_or_structural_overload_breach_pct": 0.0,
+      "onboard_fbg_strain_arinc825_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 99.0,
+      "nighttime_lis_battery_undervoltage_descent_breach_pct": 0.0,
+      "stratospheric_hale_solar_haps_slo_met": true
+    },
+    "hale_solar_haps_72_aircraft": {
+      "hale_solar_haps_aircraft": 72,
+      "hale_governance_mode": "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hale_haps_flight_pods": 48,
+      "winter_solstice_endurance_and_stationkeeping_gain_pct": 26.2,
+      "wing_root_bending_moment_and_torsion_reduction_pct": 39.8,
+      "stanag4671_dala_flutter_envelope_interlock_ms": 1.0,
+      "aeroelastic_flutter_or_structural_overload_breach_pct": 0.0,
+      "onboard_fbg_strain_arinc825_edge_latency_ms": 0.9,
+      "wan_bandwidth_reduction_pct": 99.0,
+      "nighttime_lis_battery_undervoltage_descent_breach_pct": 0.0,
+      "stratospheric_hale_solar_haps_slo_met": true
+    },
+    "raw_hale_solar_haps_18_aircraft": {
+      "hale_solar_haps_aircraft": 18,
+      "hale_governance_mode": "rigid_body_autopilot_fixed_waypoint_cloud_satcom",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_hale_haps_flight_pods": 12,
+      "winter_solstice_endurance_and_stationkeeping_gain_pct": 4.3,
+      "wing_root_bending_moment_and_torsion_reduction_pct": 6.8,
+      "stanag4671_dala_flutter_envelope_interlock_ms": 112.0,
+      "aeroelastic_flutter_or_structural_overload_breach_pct": 1.5,
+      "onboard_fbg_strain_arinc825_edge_latency_ms": 248.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "nighttime_lis_battery_undervoltage_descent_breach_pct": 3.6,
+      "stratospheric_hale_solar_haps_slo_met": false
+    }
+  },
+  "trace_sha256": "3d2f90e6c605b935a549e3b77885c1131f3a1d8be7751b71d82ff086216c6acb"
 }

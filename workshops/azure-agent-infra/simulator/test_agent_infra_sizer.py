@@ -93,6 +93,7 @@ from agent_infra_sizer import (
     simulate_sic_pvt_boule_crystal_growth_htcvd_semis2_sil3_sandbox,
     simulate_polar_icebreaker_ice_routing_azimuth_thruster_imopolar_sil3_sandbox,
     simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbox,
+    simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -233,6 +234,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-sic-pvt-boule-crystal-growth-htcvd-semis2-sil3-pool.bicep",
             "aksclaw-polar-icebreaker-ice-routing-azimuth-imopolar-sil3-pool.bicep",
             "aksclaw-gravitational-wave-interferometer-fabry-perot-sil3-pool.bicep",
+            "aksclaw-stratospheric-hale-solar-haps-aeroelastic-dala-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1678,6 +1680,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["teleseismic_lockloss_or_false_gcn_alert_clearance_pct"], 3.0)
         self.assertTrue(gov["gw_interferometer_fabry_perot_slo_met"])
         self.assertFalse(raw["gw_interferometer_fabry_perot_slo_met"])
+
+    def test_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(self) -> None:
+        gov = simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(
+            18, "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge"
+        )
+        raw = simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(
+            18, "rigid_body_autopilot_fixed_waypoint_cloud_satcom"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_hale_haps_flight_pods"], 12)
+        self.assertEqual(gov["winter_solstice_endurance_and_stationkeeping_gain_pct"], 26.2)
+        self.assertEqual(gov["wing_root_bending_moment_and_torsion_reduction_pct"], 39.8)
+        self.assertEqual(gov["stanag4671_dala_flutter_envelope_interlock_ms"], 1.0)
+        self.assertEqual(gov["aeroelastic_flutter_or_structural_overload_breach_pct"], 0.0)
+        self.assertGreater(raw["aeroelastic_flutter_or_structural_overload_breach_pct"], 1.2)
+        self.assertEqual(gov["onboard_fbg_strain_arinc825_edge_latency_ms"], 0.9)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.0)
+        self.assertEqual(gov["nighttime_lis_battery_undervoltage_descent_breach_pct"], 0.0)
+        self.assertGreater(raw["nighttime_lis_battery_undervoltage_descent_breach_pct"], 3.0)
+        self.assertTrue(gov["stratospheric_hale_solar_haps_slo_met"])
+        self.assertFalse(raw["stratospheric_hale_solar_haps_slo_met"])
 
 
 if __name__ == "__main__":

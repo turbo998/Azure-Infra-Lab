@@ -499,6 +499,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(84)">85. 第三代半导体 8英寸碳化硅 (200mm 4H-SiC) PVT 2400°C 单晶生长与 HT-CVD 外延 PINN-MPC 及 SEMI S2 / SEMI M55 / NFPA 86 / SIL-3 水冷防蒸汽爆炸与硅烷吹扫联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(85)">86. 极地重型破冰船 (PC1-PC3) 星载 SAR 多年冰脊动态寻优 + 船体冰带 FBG 冲击应变与吊舱推进器 (Azipod) 铣冰防过载 PINN-MPC 及 IMO Polar Code / IACS URI / SIL-3 防困冰联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(86)">87. 千米级引力波激光干涉仪 (LIGO/CE/ET) 四级悬架法布里-珀罗臂腔分层锁腔 Deep-RL + 牛顿引力梯度噪声 (NN) PINN + 频变压缩真空态 MPC 与 IEC 61508 SIL-3 / ANSI Z136.1 1.5MW 激光快门联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(87)">88. 平流层高空长航时 (HALE) 太阳能伪卫星 (HAPS) 大展弦比超柔机翼气动弹性阵风载荷减缓 (GLA) + 全固态锂硫 (Li-S) 电池昼夜势能-电能平衡 PINN-MPC 与 STANAG 4671 / DO-178C DAL-A 防颤振联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2461,6 +2462,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 87: Autonomous High-Altitude Stratospheric HALE Solar Pseudo-Satellite (HAPS), Gust-Load Aeroelastic Wing Alleviation, Solid-State Li-S Day-Night Energy Balance & STANAG 4671 / DO-178C DAL-A Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 87 · STRATOSPHERIC HALE SOLAR PSEUDO-SATELLITE (HAPS), AEROELASTIC GUST-LOAD ALLEVIATION (GLA), LI-S ENERGY BALANCE &amp; STANAG 4671 / DO-178C DAL-A SIZER</span>
+    <h2>自主平流层高空长航时 (<code>HALE</code>) 太阳能伪卫星 (<code>HAPS</code>)、超柔机翼气动弹性阵风载荷减缓 (<code>GLA</code>)、全固态锂硫 (<code>Li-S</code>) 昼夜能量平衡与 <code>STANAG 4671 / DO-178C DAL-A</code> 联锁测算器</h2>
+    <div class="sub">量化在 <code>9 – 72</code> 架平流层太阳能伪卫星机队规模下，几何非线性本征梁 (<code>Hodges-Dowell</code>) 机翼大挠度气动弹性与晴空湍流 (<code>CAT</code>) <code>PINN</code> + 分布式襟副翼/差动电推进主动阵风载荷减缓 (<code>GLA</code>) 与昼夜重力势能-全固态锂硫电池 (<code>450 Wh/kg Li-S</code>) 协同 <code>MPC</code>（冬至极长黑夜平流层连续驻空续航与 <code>5G NTN</code> 载荷可用度 <code>+26.2%</code>、穿越对流层顶风切变时翼根峰值弯矩与扭转幅值 <code>-39.8%</code>）、<code>NATO STANAG 4671 / RTCA DO-178C DAL-A</code> 刚体-弯曲-扭转耦合颤振 (<code>BFF</code>) 抑制与极限动压包络保护硬联锁（<code>1.0 ms</code>，气动弹性颤振折翼或结构过载违例率 <code>0.0%</code>）及机载全翼展 <code>FBG</code> 光纤光栅应变阵 + 前视多普勒测风激光雷达 + <code>ARINC 825 / Azure Local</code> 航电边缘推理（<code>0.9 ms</code>，超视距 <code>Ka</code> 卫通带宽削减 <code>99.0%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 在役平流层高空长航时太阳能伪卫星数 (Stratospheric HALE Solar HAPS Aircraft): <strong id="lbl_hale_aircraft" style="color:var(--amber)">18</strong> HAPS Aircraft</label>
+          <input type="range" id="rng_hale_aircraft" min="9" max="72" step="9" value="18" oninput="runStratosphericHaleLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 超柔机翼气动弹性 GLA、昼夜势能-锂硫电池 MPC 与 STANAG 4671 / DO-178C DAL-A 防颤振联锁模式 (HALE HAPS Governance Mode)</label>
+          <select id="sel_hale_mode" onchange="runStratosphericHaleLab()">
+            <option value="pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge" selected>几何非线性机翼气动弹性 PINN + 分布式舵面/差动推进 GLA 与昼夜势能-LiS 电池 MPC (+26.2% 冬至跨夜续航 / -39.8% 翼根峰值弯矩) + STANAG 4671 DAL-A 防颤振硬联锁 + 0.9ms 机载 FBG/ARINC825 边缘 (推荐)</option>
+            <option value="rigid_body_autopilot_fixed_waypoint_cloud_satcom">传统反模式：刚体假设 PID 自动驾驶仪与固定高度巡航 (+4.3% 续航增益) + 无刚体-机翼耦合颤振 DAL-A 硬联锁 (1.5% BFF 颤振折翼违例) + 原始应变经卫通上云 (3.6% 夜间 Li-S 电池欠压弃高)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="haleOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -3945,6 +3969,21 @@ resource gwInterferometerSil3Pool 'Microsoft.ContainerService/managedClusters/ag
       'aksclaw.io/ligo-cds-dolphin-pcie-rfm-epics-edge': 'enabled-0.7ms-99.1pct-gwf-wan-cut'
     }
   }
+}`,
+`// Blueprint #88: High-Altitude Stratospheric HALE Solar Pseudo-Satellite (HAPS) Aeroelastic GLA, Li-S Energy Balance & STANAG 4671 / DO-178C DAL-A Pool (Chapter 92)
+resource haleSolarHapsDalAPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'halehaps'
+  properties: {
+    count: 2
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'stratospheric-hale-solar-haps-aeroelastic-dala-agent'
+      'aksclaw.io/pinn-mpc-aeroelastic-gla-stratospheric-stationkeeping': 'enabled-26.2pct-winter-solstice-endurance-39.8pct-wing-root-bending-cut'
+      'aksclaw.io/stanag4671-do178c-dala-flutter-envelope-interlock': 'enforced-1.0ms-zero-aeroelastic-flutter-or-night-soc-cutoff'
+      'aksclaw.io/onboard-fbg-wing-strain-arinc825-ka-satcom-edge': 'enabled-0.9ms-99.0pct-blos-satcom-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4132,6 +4171,30 @@ runFpsoTurretLab();
 runSicPvtLab();
 runPolarIcebreakerLab();
 runGwInterferometerLab();
+runStratosphericHaleLab();
+
+function runStratosphericHaleLab() {
+  const aircraft = parseInt(document.getElementById('rng_hale_aircraft').value, 10);
+  const mode = document.getElementById('sel_hale_mode').value;
+  document.getElementById('lbl_hale_aircraft').textContent = aircraft.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(aircraft / 9));
+  const pods = Math.max(2, Math.floor(aircraft * 2 / 3));
+  const ok = mode === 'pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge';
+  const mpcStr = ok ? "Hodges-Dowell 几何非线性机翼气动弹性与晴空湍流 (CAT) PINN + 分布式舵面/差动电推进阵风减缓 (GLA) 与昼夜重力势能-全固态锂硫电池 (Li-S) 能量平衡 MPC · 冬至跨夜驻空续航与 5G-NTN 载荷可用度 +26.2% · 翼根峰值弯矩与扭转幅值 -39.8%" : "传统刚体假设 PID 自动驾驶仪与固定高度巡航 · 仅 +4.3% 续航增益 / -7.6% 弯矩削减 (忽略 25% 翼尖大挠度几何非线性导致副翼反效，且 3.6% 夜间强逆风死守固定高度耗尽锂硫电池安全荷电状态)";
+  const dalaStr = ok ? "1.0 ms NATO STANAG 4671 / RTCA DO-178C DAL-A 刚体-弯曲-扭转耦合颤振 (BFF) 抑制与极限动压包络硬联锁 · 0.0% 气动弹性折翼/结构过载违例" : "无刚体-机翼耦合颤振 DAL-A 硬联锁 (112.0 ms 超视距卫通滞后) · 1.5% 刚体短周期模态与机翼一阶弯曲耦合激发 BFF 颤振导致超薄碳纤维主梁空中折断风险";
+  const edgeStr = ok ? "0.9 ms 机载全翼展 FBG 光纤光栅应变阵、前视多普勒测风激光雷达与 ARINC 825 / Azure Local 航电边缘 (-99.0% Ka 卫通带宽) · 0.0% 跨夜欠压弃高" : "248.0 ms 原始高频翼梁应变与遥感流经超视距卫通回传地面 · 远超亚秒级阵风卸荷与气动弹性相位裕度要求";
+
+  document.getElementById('haleOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 刚体-机翼耦合颤振 (BFF) 折断碳纤维主梁风险 · 3.6% 夜间全固态 Li-S 电池欠压被迫放弃驻空高度'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个平流层 HAPS 飞控与能量孪生单元 · ${dalaStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>机载全翼展 FBG 光纤应变阵、前视紫外多普勒测风激光雷达与 ARINC 825 / Azure Local 航电边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runGwInterferometerLab() {
   const sites = parseInt(document.getElementById('rng_gw_sites').value, 10);

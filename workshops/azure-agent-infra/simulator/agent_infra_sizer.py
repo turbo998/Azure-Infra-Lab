@@ -4845,6 +4845,49 @@ def simulate_gravitational_wave_interferometer_fabry_perot_newtonian_sil3_sandbo
     }
 
 
+def simulate_stratospheric_hale_solar_haps_aeroelastic_dala_sandbox(
+    hale_solar_haps_aircraft: int = 18,
+    hale_governance_mode: str = "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous High-Altitude Stratospheric HALE Solar Pseudo-Satellite (HAPS), Gust-Load Aeroelastic Wing Alleviation, Solid-State Li-S Day-Night Energy Balance & STANAG 4671 / DO-178C DAL-A Agent Infrastructure (Chapter 92)."""
+    if hale_solar_haps_aircraft <= 0:
+        raise ValueError("hale_solar_haps_aircraft must be positive")
+    valid_modes = {
+        "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge",
+        "rigid_body_autopilot_fixed_waypoint_cloud_satcom",
+    }
+    if hale_governance_mode not in valid_modes:
+        raise ValueError(f"hale_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = hale_governance_mode == "pinn_mpc_aeroelastic_gla_lis_energy_stanag4671_dala_edge"
+    active_hale_haps_flight_pods = max(2, int(hale_solar_haps_aircraft * 2 // 3))
+    gpu_nodes = max(2, math.ceil(hale_solar_haps_aircraft / 9))
+
+    winter_solstice_endurance_and_stationkeeping_gain_pct = 26.2 if governed else 4.3
+    wing_root_bending_moment_and_torsion_reduction_pct = 39.8 if governed else 6.8
+    stanag4671_dala_flutter_envelope_interlock_ms = 1.0 if governed else 112.0
+    aeroelastic_flutter_or_structural_overload_breach_pct = 0.0 if governed else 1.5
+    onboard_fbg_strain_arinc825_edge_latency_ms = 0.9 if governed else 248.0
+    wan_bandwidth_reduction_pct = 99.0 if governed else 0.0
+    nighttime_lis_battery_undervoltage_descent_breach_pct = 0.0 if governed else 3.6
+
+    return {
+        "hale_solar_haps_aircraft": hale_solar_haps_aircraft,
+        "hale_governance_mode": hale_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_hale_haps_flight_pods": active_hale_haps_flight_pods,
+        "winter_solstice_endurance_and_stationkeeping_gain_pct": winter_solstice_endurance_and_stationkeeping_gain_pct,
+        "wing_root_bending_moment_and_torsion_reduction_pct": wing_root_bending_moment_and_torsion_reduction_pct,
+        "stanag4671_dala_flutter_envelope_interlock_ms": stanag4671_dala_flutter_envelope_interlock_ms,
+        "aeroelastic_flutter_or_structural_overload_breach_pct": aeroelastic_flutter_or_structural_overload_breach_pct,
+        "onboard_fbg_strain_arinc825_edge_latency_ms": onboard_fbg_strain_arinc825_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "nighttime_lis_battery_undervoltage_descent_breach_pct": nighttime_lis_battery_undervoltage_descent_breach_pct,
+        "stratospheric_hale_solar_haps_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
