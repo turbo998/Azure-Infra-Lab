@@ -81,6 +81,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_fusion_tokamak_plasma_quench_sandbox,
     simulate_particle_accelerator_synchrotron_beam_sandbox,
+    simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -600,6 +601,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "beam_36_lines": simulate_particle_accelerator_synchrotron_beam_sandbox(36, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
             "beam_108_lines": simulate_particle_accelerator_synchrotron_beam_sandbox(108, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
             "raw_beam_36_lines": simulate_particle_accelerator_synchrotron_beam_sandbox(36, "manual_orbit_correction_unverified_blm_raw_epics"),
+        },
+        "demo_62_deep_space_telescope_adaptive_optics_sandbox": {
+            "ao_16_dishes": simulate_deep_space_telescope_adaptive_optics_sandbox(16, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
+            "ao_64_dishes": simulate_deep_space_telescope_adaptive_optics_sandbox(64, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
+            "ao_256_dishes": simulate_deep_space_telescope_adaptive_optics_sandbox(256, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
+            "raw_ao_64_dishes": simulate_deep_space_telescope_adaptive_optics_sandbox(64, "classic_integrator_unverified_lgs_raw_visibilities"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

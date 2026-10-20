@@ -3624,6 +3624,54 @@ def simulate_particle_accelerator_synchrotron_beam_sandbox(
     }
 
 
+def simulate_deep_space_telescope_adaptive_optics_sandbox(
+    observatory_telescopes_and_antennas: int = 64,
+    observatory_ao_mode: str = "xao_deformable_mirror_mpc_lgs_airspace_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Extremely Large Ground-Based Telescope Extreme Adaptive
+    Optics (XAO) Deformable-Mirror Wavefront Control, Radio Interferometer
+    Phase-Calibration Correlator & Laser Guide Star (LGS) FAA Airspace /
+    Solar-Avoidance Shutter Interlock Agent Infrastructure (Chapter 67).
+    """
+    if observatory_telescopes_and_antennas <= 0:
+        raise ValueError("observatory_telescopes_and_antennas must be positive")
+    valid_modes = {
+        "xao_deformable_mirror_mpc_lgs_airspace_edge",
+        "classic_integrator_unverified_lgs_raw_visibilities",
+    }
+    if observatory_ao_mode not in valid_modes:
+        raise ValueError(f"observatory_ao_mode must be one of {sorted(valid_modes)}")
+
+    governed = observatory_ao_mode == "xao_deformable_mirror_mpc_lgs_airspace_edge"
+    gpu_nodes = max(2, math.ceil(observatory_telescopes_and_antennas / 16))
+    deformable_mirror_actuators_k = max(4, int(observatory_telescopes_and_antennas // 4))
+
+    strehl_ratio_coronagraph_contrast_gain_pct = 46.2 if governed else 0.0
+    clean_visibility_rfi_recovery_gain_pct = 31.8 if governed else 0.0
+    lgs_faa_airspace_solar_shutter_gate_ms = 0.6 if governed else 0.0
+    aircraft_lasing_or_focal_plane_burn_escape_pct = 0.0 if governed else 1.4
+    shack_hartmann_frb_dedispersion_edge_ms = 0.8 if governed else 1280.0
+    observatory_wan_bandwidth_reduction_pct = 98.2 if governed else 0.0
+    segmented_mirror_piston_phase_error_pct = 0.0 if governed else 3.5
+
+    return {
+        "observatory_telescopes_and_antennas": observatory_telescopes_and_antennas,
+        "observatory_ao_mode": observatory_ao_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "deformable_mirror_actuators_k": deformable_mirror_actuators_k,
+        "strehl_ratio_coronagraph_contrast_gain_pct": strehl_ratio_coronagraph_contrast_gain_pct,
+        "clean_visibility_rfi_recovery_gain_pct": clean_visibility_rfi_recovery_gain_pct,
+        "lgs_faa_airspace_solar_shutter_gate_ms": lgs_faa_airspace_solar_shutter_gate_ms,
+        "aircraft_lasing_or_focal_plane_burn_escape_pct": aircraft_lasing_or_focal_plane_burn_escape_pct,
+        "shack_hartmann_frb_dedispersion_edge_ms": shack_hartmann_frb_dedispersion_edge_ms,
+        "observatory_wan_bandwidth_reduction_pct": observatory_wan_bandwidth_reduction_pct,
+        "segmented_mirror_piston_phase_error_pct": segmented_mirror_piston_phase_error_pct,
+        "observatory_ao_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

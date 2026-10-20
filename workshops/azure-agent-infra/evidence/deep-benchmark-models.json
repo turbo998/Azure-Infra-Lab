@@ -3730,5 +3730,67 @@
       "srf_lorentz_detuning_trip_pct": 3.6,
       "accelerator_beam_slo_met": false
     }
+  ],
+  "deep_space_telescope_ao_profiles": [
+    {
+      "observatory_telescopes_and_antennas": 16,
+      "observatory_ao_mode": "xao_deformable_mirror_mpc_lgs_airspace_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "deformable_mirror_actuators_k": 4,
+      "strehl_ratio_coronagraph_contrast_gain_pct": 46.2,
+      "clean_visibility_rfi_recovery_gain_pct": 31.8,
+      "lgs_faa_airspace_solar_shutter_gate_ms": 0.6,
+      "aircraft_lasing_or_focal_plane_burn_escape_pct": 0.0,
+      "shack_hartmann_frb_dedispersion_edge_ms": 0.8,
+      "observatory_wan_bandwidth_reduction_pct": 98.2,
+      "segmented_mirror_piston_phase_error_pct": 0.0,
+      "observatory_ao_slo_met": true
+    },
+    {
+      "observatory_telescopes_and_antennas": 64,
+      "observatory_ao_mode": "xao_deformable_mirror_mpc_lgs_airspace_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "deformable_mirror_actuators_k": 16,
+      "strehl_ratio_coronagraph_contrast_gain_pct": 46.2,
+      "clean_visibility_rfi_recovery_gain_pct": 31.8,
+      "lgs_faa_airspace_solar_shutter_gate_ms": 0.6,
+      "aircraft_lasing_or_focal_plane_burn_escape_pct": 0.0,
+      "shack_hartmann_frb_dedispersion_edge_ms": 0.8,
+      "observatory_wan_bandwidth_reduction_pct": 98.2,
+      "segmented_mirror_piston_phase_error_pct": 0.0,
+      "observatory_ao_slo_met": true
+    },
+    {
+      "observatory_telescopes_and_antennas": 256,
+      "observatory_ao_mode": "xao_deformable_mirror_mpc_lgs_airspace_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "deformable_mirror_actuators_k": 64,
+      "strehl_ratio_coronagraph_contrast_gain_pct": 46.2,
+      "clean_visibility_rfi_recovery_gain_pct": 31.8,
+      "lgs_faa_airspace_solar_shutter_gate_ms": 0.6,
+      "aircraft_lasing_or_focal_plane_burn_escape_pct": 0.0,
+      "shack_hartmann_frb_dedispersion_edge_ms": 0.8,
+      "observatory_wan_bandwidth_reduction_pct": 98.2,
+      "segmented_mirror_piston_phase_error_pct": 0.0,
+      "observatory_ao_slo_met": true
+    },
+    {
+      "observatory_telescopes_and_antennas": 64,
+      "observatory_ao_mode": "classic_integrator_unverified_lgs_raw_visibilities",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "deformable_mirror_actuators_k": 16,
+      "strehl_ratio_coronagraph_contrast_gain_pct": 0.0,
+      "clean_visibility_rfi_recovery_gain_pct": 0.0,
+      "lgs_faa_airspace_solar_shutter_gate_ms": 0.0,
+      "aircraft_lasing_or_focal_plane_burn_escape_pct": 1.4,
+      "shack_hartmann_frb_dedispersion_edge_ms": 1280.0,
+      "observatory_wan_bandwidth_reduction_pct": 0.0,
+      "segmented_mirror_piston_phase_error_pct": 3.5,
+      "observatory_ao_slo_met": false
+    }
   ]
 }

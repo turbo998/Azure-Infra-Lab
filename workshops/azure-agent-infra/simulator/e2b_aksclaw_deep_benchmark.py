@@ -74,6 +74,7 @@ from agent_infra_sizer import (
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_fusion_tokamak_plasma_quench_sandbox,
     simulate_particle_accelerator_synchrotron_beam_sandbox,
+    simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -676,6 +677,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_particle_accelerator_synchrotron_beam_sandbox(108, "fofb_srf_microphonics_mpc_sil3_mps_edge"),
         simulate_particle_accelerator_synchrotron_beam_sandbox(36, "manual_orbit_correction_unverified_blm_raw_epics"),
     ]
+    deep_space_telescope_ao_profiles: List[Dict[str, object]] = [
+        simulate_deep_space_telescope_adaptive_optics_sandbox(16, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
+        simulate_deep_space_telescope_adaptive_optics_sandbox(64, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
+        simulate_deep_space_telescope_adaptive_optics_sandbox(256, "xao_deformable_mirror_mpc_lgs_airspace_edge"),
+        simulate_deep_space_telescope_adaptive_optics_sandbox(64, "classic_integrator_unverified_lgs_raw_visibilities"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -738,6 +745,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "green_hydrogen_ammonia_profiles": green_hydrogen_ammonia_profiles,
         "fusion_tokamak_plasma_profiles": fusion_tokamak_plasma_profiles,
         "particle_accelerator_beam_profiles": particle_accelerator_beam_profiles,
+        "deep_space_telescope_ao_profiles": deep_space_telescope_ao_profiles,
     }
 
 

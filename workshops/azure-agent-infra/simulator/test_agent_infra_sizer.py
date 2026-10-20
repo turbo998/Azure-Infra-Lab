@@ -68,6 +68,7 @@ from agent_infra_sizer import (
     simulate_green_hydrogen_electrolyzer_ammonia_sandbox,
     simulate_fusion_tokamak_plasma_quench_sandbox,
     simulate_particle_accelerator_synchrotron_beam_sandbox,
+    simulate_deep_space_telescope_adaptive_optics_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -183,6 +184,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-green-hydrogen-electrolyzer-ammonia-pool.bicep",
             "aksclaw-fusion-tokamak-plasma-quench-pool.bicep",
             "aksclaw-particle-accelerator-synchrotron-beam-pool.bicep",
+            "aksclaw-deep-space-telescope-adaptive-optics-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1147,6 +1149,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["srf_lorentz_detuning_trip_pct"], 3.0)
         self.assertTrue(gov["accelerator_beam_slo_met"])
         self.assertFalse(raw["accelerator_beam_slo_met"])
+
+    def test_deep_space_telescope_adaptive_optics_sandbox(self) -> None:
+        gov = simulate_deep_space_telescope_adaptive_optics_sandbox(64, "xao_deformable_mirror_mpc_lgs_airspace_edge")
+        raw = simulate_deep_space_telescope_adaptive_optics_sandbox(64, "classic_integrator_unverified_lgs_raw_visibilities")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["deformable_mirror_actuators_k"], 16)
+        self.assertEqual(gov["strehl_ratio_coronagraph_contrast_gain_pct"], 46.2)
+        self.assertEqual(gov["clean_visibility_rfi_recovery_gain_pct"], 31.8)
+        self.assertEqual(gov["lgs_faa_airspace_solar_shutter_gate_ms"], 0.6)
+        self.assertEqual(gov["aircraft_lasing_or_focal_plane_burn_escape_pct"], 0.0)
+        self.assertGreater(raw["aircraft_lasing_or_focal_plane_burn_escape_pct"], 1.3)
+        self.assertEqual(gov["shack_hartmann_frb_dedispersion_edge_ms"], 0.8)
+        self.assertEqual(gov["observatory_wan_bandwidth_reduction_pct"], 98.2)
+        self.assertEqual(gov["segmented_mirror_piston_phase_error_pct"], 0.0)
+        self.assertGreater(raw["segmented_mirror_piston_phase_error_pct"], 3.0)
+        self.assertTrue(gov["observatory_ao_slo_met"])
+        self.assertFalse(raw["observatory_ao_slo_met"])
 
 
 if __name__ == "__main__":

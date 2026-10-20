@@ -474,6 +474,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(59)">60. 吉瓦级绿氢 PEM/碱性电解槽宽负荷跟随 MPC + 哈伯-博施绿氨协同与 ISO 22734 SIL-3 氧中氢防爆池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(60)">61. 托卡马克磁约束核聚变 Grad-Shafranov 撕裂模抑制 + 偏滤器脱靶 MPC 与 SIL-3 破碎弹丸失超保护池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(61)">62. 第四代同步辐射光源与自由电子激光 XFEL 快速轨道反馈 FOFB + 超导腔微音 MPC 与 SIL-3 机器保护池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(62)">63. 极大口径地基望远镜极限自适应光学 XAO 变形镜 + SKA 射电相关器与 LGS 空域/太阳快门互锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1874,6 +1875,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 62 · EXTREMELY LARGE TELESCOPE XAO DEFORMABLE MIRROR, SKA RADIO CORRELATOR &amp; LGS AIRSPACE INTERLOCK SIZER</span>
+    <h2>自主极大口径地基望远镜极限自适应光学 XAO、平方公里射电干涉阵 SKA 相位校准与激光导星空域快门互锁测算器 (Chapter 67 · Bilingual)</h2>
+    <div class="sub">量化在光学望远镜与射电干涉天线规模 <code>16 – 256 座</code>（<code>4k – 64k</code> 压电变形镜促动器通道）下，启用 <code>大气冻结流时空预测极限自适应光学 (Predictive XAO) + 射电干涉子空间 RFI 零陷校准</code>（近红外斯特列尔比 <code>Strehl Ratio</code> 与日冕仪对比度提升 <code>+46.2%</code>、有效射电可见度恢复率 <code>+31.8%</code>、拼接主镜活塞相位失锁率 <code>0.0%</code>）、<code>589 nm 钠激光导星 (LGS) FAA 航空雷达/ADS-B 空域避让与太阳快门硬件互锁</code>（<code>0.6 ms</code> 校验，<code>0.0%</code> 航空器激光照射与焦面探测器烧毁逃逸）以及圆顶边缘 <code>Azure IoT Operations</code> <code>Shack-Hartmann / FRB</code> 相干消色散分诊（<code>0.8 ms</code> 响应，削减 <code>98.2%</code> 广域网带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 光学望远镜与射电干涉天线单元数量 (Observatory Telescopes &amp; Radio Dishes): <strong id="lbl_ao_dishes" style="color:var(--teal)">64</strong> Units</label>
+          <input type="range" id="rng_ao_dishes" min="16" max="256" step="16" value="64" oninput="runDeepSpaceTelescopeLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 极限自适应光学 XAO、射电抗干扰与激光导星安全快门模式 (Observatory XAO &amp; LGS Safety Mode)</label>
+          <select id="sel_ao_mode" onchange="runDeepSpaceTelescopeLab()">
+            <option value="xao_deformable_mirror_mpc_lgs_airspace_edge" selected>预测 XAO 变形镜 + RFI 零陷 (+46.2% Strehl 比 / +31.8% 可见度) + LGS 空域快门 (0% 照射/烧毁) + 圆顶 FRB 边缘 (推荐)</option>
+            <option value="classic_integrator_unverified_lgs_raw_visibilities">传统反模式：经典积分器 (0 增益) + 无空域快门互锁 (1.4% 航班照射/焦面烧毁) + 原始基带回传 (3.5% 拼镜相位失锁)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="aoOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2965,6 +2988,23 @@ resource acceleratorBeamPool 'Microsoft.ContainerService/managedClusters/agentPo
       'aksclaw.io/epics-pvaccess-xray-detector-edge': 'enabled-1.8ms-97.9pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// =============================================================================
+// 63. AKSClaw Extremely Large Telescope XAO, SKA Correlator & LGS Safety Pool (Bicep)
+// =============================================================================
+resource observatoryAoPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'xaooptics'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'deep-space-telescope-adaptive-optics-agent'
+      'aksclaw.io/xao-deformable-mirror-mpc': 'enabled-46.2pct-strehl-ratio-gain-31.8pct-rfi-flag-saving'
+      'aksclaw.io/lgs-faa-airspace-solar-interlock': 'enforced-0.6ms-zero-aircraft-lasing-focal-plane-burn'
+      'aksclaw.io/shack-hartmann-frb-dedispersion-edge': 'enabled-0.8ms-98.2pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -3127,6 +3167,30 @@ runCementKilnLab();
 runGreenHydrogenLab();
 runFusionTokamakLab();
 runParticleAcceleratorLab();
+runDeepSpaceTelescopeLab();
+
+function runDeepSpaceTelescopeLab() {
+  const dishes = parseInt(document.getElementById('rng_ao_dishes').value, 10);
+  const mode = document.getElementById('sel_ao_mode').value;
+  document.getElementById('lbl_ao_dishes').textContent = dishes.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(dishes / 16));
+  const actuatorsK = Math.max(4, Math.floor(dishes / 4));
+  const ok = mode === 'xao_deformable_mirror_mpc_lgs_airspace_edge';
+  const xaoStr = ok ? "预测 XAO 变形镜 + 子空间 RFI 零陷 · Strehl 比 +46.2% · 可见度恢复 +31.8%" : "经典积分器控制 · 0.0% 对比度与 RFI 恢复增益 (湍流残差与 3.5% 拼接主镜活塞失锁)";
+  const lgsStr = ok ? "0.6 ms LGS FAA 空域雷达/ADS-B 与太阳快门硬件互锁 · 0.0% 航空器照射/焦面烧毁" : "无 LGS 空域与太阳快门互锁 · 1.4% 过顶航班激光照射与焦面探测器热烧毁风险";
+  const edgeStr = ok ? "0.8 ms 圆顶 Shack-Hartmann 波前与 FRB 相干消色散边缘分诊 (-98.2% 广域网带宽) · 0.0% 拼镜失锁" : "1,280.0 ms 原始 Tbps 基带流上云 · 阻塞高山光纤且错过毫秒级大气湍流相干窗口";
+
+  document.getElementById('aoOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + xaoStr : '❌ 1.4% 航班激光照射/焦面烧毁风险 · 3.5% 拼接主镜活塞相位失锁'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${actuatorsK}k 促动器 · ${lgsStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>圆顶与台站 Azure IoT Operations 波前重构与 FRB 相干消色散边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runParticleAcceleratorLab() {
   const lines = parseInt(document.getElementById('rng_acc_lines').value, 10);
