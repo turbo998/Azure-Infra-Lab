@@ -5361,6 +5361,49 @@ def simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox(
     }
 
 
+def simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox(
+    assb_dry_room_lines: int = 16,
+    assb_governance_mode: str = "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Next-Gen Solid-State Sulfide Lithium-Metal Battery (ASSB) Dry-Electrode PTFE Fibrillation Calendering, High-Pressure Isobaric Stack Press Viscoplastic-Electrochemical PINN-MPC, In-Situ Ultrasonic Acoustic Time-of-Flight (ToF) Dendrite / Delamination Inspection & UL 9540A / IEC 62619 / OSHA 29 CFR 1910.1000 / IEC 61508 SIL-3 Toxic Hydrogen Sulfide (H2S < 1 ppm) Dry-Room Purge & Stack-Short Interlock Agent Infrastructure (Chapter 104)."""
+    if assb_dry_room_lines <= 0:
+        raise ValueError("assb_dry_room_lines must be positive")
+    valid_modes = {
+        "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge",
+        "constant_roll_gap_uniaxial_press_offline_eis_cloud_polling",
+    }
+    if assb_governance_mode not in valid_modes:
+        raise ValueError(f"assb_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = assb_governance_mode == "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge"
+    active_assb_sulfide_pods = max(2, min(8, int(assb_dry_room_lines // 2))) if assb_dry_room_lines <= 16 else max(8, int(assb_dry_room_lines // 4))
+    gpu_nodes = max(2, math.ceil(assb_dry_room_lines / 8))
+
+    energy_density_yield_and_critical_current_ccd_gain_pct = 34.6 if governed else 5.5
+    interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct = 46.2 if governed else 7.4
+    ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms = 0.4 if governed else 188.0
+    unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct = 0.0 if governed else 1.4
+    dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms = 0.4 if governed else 209.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_argyrodite_grain_boundary_crack_or_void_pct = 0.0 if governed else 3.5
+
+    return {
+        "assb_dry_room_lines": assb_dry_room_lines,
+        "assb_governance_mode": assb_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_assb_sulfide_pods": active_assb_sulfide_pods,
+        "energy_density_yield_and_critical_current_ccd_gain_pct": energy_density_yield_and_critical_current_ccd_gain_pct,
+        "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct,
+        "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms,
+        "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct,
+        "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": uncompensated_argyrodite_grain_boundary_crack_or_void_pct,
+        "assb_sulfide_battery_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

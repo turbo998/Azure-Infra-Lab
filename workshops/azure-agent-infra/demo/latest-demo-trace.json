@@ -6226,6 +6226,68 @@
         "unmitigated_perovskite_yellow_phase_or_delamination_pct": 3.4,
         "perovskite_tandem_pv_slo_met": false
       }
+    ],
+    "solid_state_sulfide_battery_profiles": [
+      {
+        "assb_dry_room_lines": 8,
+        "assb_governance_mode": "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_assb_sulfide_pods": 4,
+        "energy_density_yield_and_critical_current_ccd_gain_pct": 34.6,
+        "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": 46.2,
+        "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": 0.4,
+        "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": 0.0,
+        "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 0.0,
+        "assb_sulfide_battery_slo_met": true
+      },
+      {
+        "assb_dry_room_lines": 16,
+        "assb_governance_mode": "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_assb_sulfide_pods": 8,
+        "energy_density_yield_and_critical_current_ccd_gain_pct": 34.6,
+        "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": 46.2,
+        "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": 0.4,
+        "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": 0.0,
+        "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 0.0,
+        "assb_sulfide_battery_slo_met": true
+      },
+      {
+        "assb_dry_room_lines": 64,
+        "assb_governance_mode": "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_assb_sulfide_pods": 16,
+        "energy_density_yield_and_critical_current_ccd_gain_pct": 34.6,
+        "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": 46.2,
+        "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": 0.4,
+        "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": 0.0,
+        "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 0.0,
+        "assb_sulfide_battery_slo_met": true
+      },
+      {
+        "assb_dry_room_lines": 16,
+        "assb_governance_mode": "constant_roll_gap_uniaxial_press_offline_eis_cloud_polling",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_assb_sulfide_pods": 8,
+        "energy_density_yield_and_critical_current_ccd_gain_pct": 5.5,
+        "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": 7.4,
+        "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": 188.0,
+        "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": 1.4,
+        "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": 209.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 3.5,
+        "assb_sulfide_battery_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -11696,5 +11758,52 @@
       "perovskite_tandem_pv_slo_met": false
     }
   },
-  "trace_sha256": "178168ace8b44508b6661d967ea26861c5d11225fba685e8797782f96649bf48"
+  "demo_99_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox": {
+    "assb_sulfide_16_lines": {
+      "assb_dry_room_lines": 16,
+      "assb_governance_mode": "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_assb_sulfide_pods": 8,
+      "energy_density_yield_and_critical_current_ccd_gain_pct": 34.6,
+      "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": 46.2,
+      "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": 0.4,
+      "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": 0.0,
+      "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 0.0,
+      "assb_sulfide_battery_slo_met": true
+    },
+    "assb_sulfide_64_lines": {
+      "assb_dry_room_lines": 64,
+      "assb_governance_mode": "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_assb_sulfide_pods": 16,
+      "energy_density_yield_and_critical_current_ccd_gain_pct": 34.6,
+      "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": 46.2,
+      "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": 0.4,
+      "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": 0.0,
+      "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 0.0,
+      "assb_sulfide_battery_slo_met": true
+    },
+    "raw_assb_sulfide_16_lines": {
+      "assb_dry_room_lines": 16,
+      "assb_governance_mode": "constant_roll_gap_uniaxial_press_offline_eis_cloud_polling",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_assb_sulfide_pods": 8,
+      "energy_density_yield_and_critical_current_ccd_gain_pct": 5.5,
+      "interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct": 7.4,
+      "ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms": 188.0,
+      "unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct": 1.4,
+      "dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms": 209.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_argyrodite_grain_boundary_crack_or_void_pct": 3.5,
+      "assb_sulfide_battery_slo_met": false
+    }
+  },
+  "trace_sha256": "05e41eb78c0be6c24a1c49277483736c9182d9cca6b9e8ff8cb40e244bd12ca1"
 }

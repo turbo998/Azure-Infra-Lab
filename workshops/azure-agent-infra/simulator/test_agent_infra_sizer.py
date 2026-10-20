@@ -105,6 +105,7 @@ from agent_infra_sizer import (
     simulate_offshore_ccus_co2_pipeline_caprock_sequestration_sil3_sandbox,
     simulate_fsw_friction_stir_welding_cryo_tank_paut_awsd17_sil3_sandbox,
     simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
+    simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -257,6 +258,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-offshore-ccus-co2-pipeline-decompression-fracture-sccs-iso27914-sil3-pool.bicep",
             "aksclaw-fsw-friction-stir-welding-cryo-tank-phased-array-ut-awsd17-sil3-pool.bicep",
             "aksclaw-perovskite-silicon-tandem-pv-slot-die-laser-scribing-iec61215-sil3-pool.bicep",
+            "aksclaw-solid-state-sulfide-battery-dry-electrode-isobaric-h2s-ul9540a-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1954,6 +1956,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["unmitigated_perovskite_yellow_phase_or_delamination_pct"], 3.0)
         self.assertTrue(gov["perovskite_tandem_pv_slo_met"])
         self.assertFalse(raw["perovskite_tandem_pv_slo_met"])
+
+    def test_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox(self) -> None:
+        gov = simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox(
+            16, "pinn_mpc_newman_monroe_viscoplastic_isobaric_tof_ul9540a_h2s_sil3_edge"
+        )
+        raw = simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox(
+            16, "constant_roll_gap_uniaxial_press_offline_eis_cloud_polling"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_assb_sulfide_pods"], 8)
+        self.assertEqual(gov["energy_density_yield_and_critical_current_ccd_gain_pct"], 34.6)
+        self.assertEqual(gov["interfacial_void_delamination_and_ptfe_over_shear_scrap_reduction_pct"], 46.2)
+        self.assertEqual(gov["ul9540a_iec62619_sil3_h2s_purge_and_isobaric_relief_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2s_dry_room_excursion_or_lithium_dendrite_short_pct"], 1.2)
+        self.assertEqual(gov["dry_room_edge_ultrasonic_tof_and_ftir_h2s_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_argyrodite_grain_boundary_crack_or_void_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_argyrodite_grain_boundary_crack_or_void_pct"], 3.0)
+        self.assertTrue(gov["assb_sulfide_battery_slo_met"])
+        self.assertFalse(raw["assb_sulfide_battery_slo_met"])
 
 
 if __name__ == "__main__":
