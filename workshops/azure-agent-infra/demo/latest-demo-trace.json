@@ -4614,6 +4614,68 @@
         "cell_imbalance_or_soh_false_clearance_pct": 3.1,
         "bess_grid_storage_slo_met": false
       }
+    ],
+    "additive_manufacturing_lpbf_profiles": [
+      {
+        "lpbf_chambers": 8,
+        "lpbf_governance_mode": "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_multi_laser_print_cells": 2,
+        "keyhole_and_lack_of_fusion_porosity_reduction_pct": 34.2,
+        "multi_laser_build_rate_gain_pct": 21.8,
+        "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 0.9,
+        "combustible_dust_ignition_or_recoater_crash_pct": 0.0,
+        "coaxial_pyrometry_oct_edge_latency_ms": 1.4,
+        "wan_bandwidth_reduction_pct": 98.4,
+        "spatter_inclusion_or_delamination_false_clearance_pct": 0.0,
+        "lpbf_additive_manufacturing_slo_met": true
+      },
+      {
+        "lpbf_chambers": 16,
+        "lpbf_governance_mode": "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_multi_laser_print_cells": 4,
+        "keyhole_and_lack_of_fusion_porosity_reduction_pct": 34.2,
+        "multi_laser_build_rate_gain_pct": 21.8,
+        "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 0.9,
+        "combustible_dust_ignition_or_recoater_crash_pct": 0.0,
+        "coaxial_pyrometry_oct_edge_latency_ms": 1.4,
+        "wan_bandwidth_reduction_pct": 98.4,
+        "spatter_inclusion_or_delamination_false_clearance_pct": 0.0,
+        "lpbf_additive_manufacturing_slo_met": true
+      },
+      {
+        "lpbf_chambers": 64,
+        "lpbf_governance_mode": "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_multi_laser_print_cells": 16,
+        "keyhole_and_lack_of_fusion_porosity_reduction_pct": 34.2,
+        "multi_laser_build_rate_gain_pct": 21.8,
+        "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 0.9,
+        "combustible_dust_ignition_or_recoater_crash_pct": 0.0,
+        "coaxial_pyrometry_oct_edge_latency_ms": 1.4,
+        "wan_bandwidth_reduction_pct": 98.4,
+        "spatter_inclusion_or_delamination_false_clearance_pct": 0.0,
+        "lpbf_additive_manufacturing_slo_met": true
+      },
+      {
+        "lpbf_chambers": 16,
+        "lpbf_governance_mode": "open_loop_power_unverified_argon_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_multi_laser_print_cells": 4,
+        "keyhole_and_lack_of_fusion_porosity_reduction_pct": 0.0,
+        "multi_laser_build_rate_gain_pct": 0.0,
+        "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 490.0,
+        "combustible_dust_ignition_or_recoater_crash_pct": 1.6,
+        "coaxial_pyrometry_oct_edge_latency_ms": 1280.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "spatter_inclusion_or_delamination_false_clearance_pct": 2.9,
+        "lpbf_additive_manufacturing_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -8772,5 +8834,67 @@
       "bess_grid_storage_slo_met": false
     }
   },
-  "trace_sha256": "f9e8ae684bdfb1590d84ac1917eb0df002971420f98e28ed81c3c7f16f18c68d"
+  "demo_73_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox": {
+    "lpbf_8_chambers": {
+      "lpbf_chambers": 8,
+      "lpbf_governance_mode": "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_multi_laser_print_cells": 2,
+      "keyhole_and_lack_of_fusion_porosity_reduction_pct": 34.2,
+      "multi_laser_build_rate_gain_pct": 21.8,
+      "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 0.9,
+      "combustible_dust_ignition_or_recoater_crash_pct": 0.0,
+      "coaxial_pyrometry_oct_edge_latency_ms": 1.4,
+      "wan_bandwidth_reduction_pct": 98.4,
+      "spatter_inclusion_or_delamination_false_clearance_pct": 0.0,
+      "lpbf_additive_manufacturing_slo_met": true
+    },
+    "lpbf_16_chambers": {
+      "lpbf_chambers": 16,
+      "lpbf_governance_mode": "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_multi_laser_print_cells": 4,
+      "keyhole_and_lack_of_fusion_porosity_reduction_pct": 34.2,
+      "multi_laser_build_rate_gain_pct": 21.8,
+      "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 0.9,
+      "combustible_dust_ignition_or_recoater_crash_pct": 0.0,
+      "coaxial_pyrometry_oct_edge_latency_ms": 1.4,
+      "wan_bandwidth_reduction_pct": 98.4,
+      "spatter_inclusion_or_delamination_false_clearance_pct": 0.0,
+      "lpbf_additive_manufacturing_slo_met": true
+    },
+    "lpbf_64_chambers": {
+      "lpbf_chambers": 64,
+      "lpbf_governance_mode": "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_multi_laser_print_cells": 16,
+      "keyhole_and_lack_of_fusion_porosity_reduction_pct": 34.2,
+      "multi_laser_build_rate_gain_pct": 21.8,
+      "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 0.9,
+      "combustible_dust_ignition_or_recoater_crash_pct": 0.0,
+      "coaxial_pyrometry_oct_edge_latency_ms": 1.4,
+      "wan_bandwidth_reduction_pct": 98.4,
+      "spatter_inclusion_or_delamination_false_clearance_pct": 0.0,
+      "lpbf_additive_manufacturing_slo_met": true
+    },
+    "raw_lpbf_16_chambers": {
+      "lpbf_chambers": 16,
+      "lpbf_governance_mode": "open_loop_power_unverified_argon_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_multi_laser_print_cells": 4,
+      "keyhole_and_lack_of_fusion_porosity_reduction_pct": 0.0,
+      "multi_laser_build_rate_gain_pct": 0.0,
+      "astm_f3303_nfpa484_sil3_shutter_interlock_ms": 490.0,
+      "combustible_dust_ignition_or_recoater_crash_pct": 1.6,
+      "coaxial_pyrometry_oct_edge_latency_ms": 1280.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "spatter_inclusion_or_delamination_false_clearance_pct": 2.9,
+      "lpbf_additive_manufacturing_slo_met": false
+    }
+  },
+  "trace_sha256": "c682cf1cf58621248f49dd56dc334a545755086d09ecbb54e7129eaf626009a3"
 }

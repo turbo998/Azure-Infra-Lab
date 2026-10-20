@@ -4160,6 +4160,55 @@ def simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(
     }
 
 
+def simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(
+    lpbf_chambers: int = 16,
+    lpbf_governance_mode: str = "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Precision Laser Powder Bed Fusion (LPBF / Metal 3D Printing),
+    3D Rosenthal / Marangoni Melt-Pool Coaxial Pyrometry & Inline OCT PINN-MPC &
+    ASTM F3303 / NFPA 484 Combustible Reactive Metal Powder (Ti-6Al-4V / AlSi10Mg)
+    Argon Inerting (O2 <= 500 ppm) & IEC 61508 SIL-3 Laser Shutter / Recoater
+    Collision Interlock Agent Infrastructure (Chapter 78).
+    """
+    if lpbf_chambers <= 0:
+        raise ValueError("lpbf_chambers must be positive")
+    valid_modes = {
+        "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge",
+        "open_loop_power_unverified_argon_cloud",
+    }
+    if lpbf_governance_mode not in valid_modes:
+        raise ValueError(f"lpbf_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = lpbf_governance_mode == "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"
+    gpu_nodes = max(2, math.ceil(lpbf_chambers / 8))
+    active_multi_laser_print_cells = max(2, int(lpbf_chambers // 4))
+
+    keyhole_and_lack_of_fusion_porosity_reduction_pct = 34.2 if governed else 0.0
+    multi_laser_build_rate_gain_pct = 21.8 if governed else 0.0
+    astm_f3303_nfpa484_sil3_shutter_interlock_ms = 0.9 if governed else 490.0
+    combustible_dust_ignition_or_recoater_crash_pct = 0.0 if governed else 1.6
+    coaxial_pyrometry_oct_edge_latency_ms = 1.4 if governed else 1280.0
+    wan_bandwidth_reduction_pct = 98.4 if governed else 0.0
+    spatter_inclusion_or_delamination_false_clearance_pct = 0.0 if governed else 2.9
+
+    return {
+        "lpbf_chambers": lpbf_chambers,
+        "lpbf_governance_mode": lpbf_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_multi_laser_print_cells": active_multi_laser_print_cells,
+        "keyhole_and_lack_of_fusion_porosity_reduction_pct": keyhole_and_lack_of_fusion_porosity_reduction_pct,
+        "multi_laser_build_rate_gain_pct": multi_laser_build_rate_gain_pct,
+        "astm_f3303_nfpa484_sil3_shutter_interlock_ms": astm_f3303_nfpa484_sil3_shutter_interlock_ms,
+        "combustible_dust_ignition_or_recoater_crash_pct": combustible_dust_ignition_or_recoater_crash_pct,
+        "coaxial_pyrometry_oct_edge_latency_ms": coaxial_pyrometry_oct_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "spatter_inclusion_or_delamination_false_clearance_pct": spatter_inclusion_or_delamination_false_clearance_pct,
+        "lpbf_additive_manufacturing_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

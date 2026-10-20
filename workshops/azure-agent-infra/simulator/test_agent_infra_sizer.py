@@ -79,6 +79,7 @@ from agent_infra_sizer import (
     simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
     simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
+    simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -205,6 +206,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-hvdc-subsea-interconnector-mmc-dcr-sil3-dccb-pool.bicep",
             "aksclaw-dac-carbon-sequestration-vtsa-sco2-class6-sil3-pool.bicep",
             "aksclaw-bess-grid-storage-eis-thermal-ul9540a-sil3-pool.bicep",
+            "aksclaw-additive-manufacturing-lpbf-meltpool-nfpa484-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1356,6 +1358,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["cell_imbalance_or_soh_false_clearance_pct"], 2.9)
         self.assertTrue(gov["bess_grid_storage_slo_met"])
         self.assertFalse(raw["bess_grid_storage_slo_met"])
+
+    def test_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(self) -> None:
+        gov = simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(
+            16, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"
+        )
+        raw = simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(
+            16, "open_loop_power_unverified_argon_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_multi_laser_print_cells"], 4)
+        self.assertEqual(gov["keyhole_and_lack_of_fusion_porosity_reduction_pct"], 34.2)
+        self.assertEqual(gov["multi_laser_build_rate_gain_pct"], 21.8)
+        self.assertEqual(gov["astm_f3303_nfpa484_sil3_shutter_interlock_ms"], 0.9)
+        self.assertEqual(gov["combustible_dust_ignition_or_recoater_crash_pct"], 0.0)
+        self.assertGreater(raw["combustible_dust_ignition_or_recoater_crash_pct"], 1.4)
+        self.assertEqual(gov["coaxial_pyrometry_oct_edge_latency_ms"], 1.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 98.4)
+        self.assertEqual(gov["spatter_inclusion_or_delamination_false_clearance_pct"], 0.0)
+        self.assertGreater(raw["spatter_inclusion_or_delamination_false_clearance_pct"], 2.5)
+        self.assertTrue(gov["lpbf_additive_manufacturing_slo_met"])
+        self.assertFalse(raw["lpbf_additive_manufacturing_slo_met"])
 
 
 if __name__ == "__main__":

@@ -85,6 +85,7 @@ from agent_infra_sizer import (
     simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
     simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
+    simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -753,6 +754,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(128, "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge"),
         simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(32, "cloud_bms_polling_naive"),
     ]
+    additive_manufacturing_lpbf_profiles: List[Dict[str, object]] = [
+        simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(8, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"),
+        simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(16, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"),
+        simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(64, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"),
+        simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(16, "open_loop_power_unverified_argon_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -826,6 +833,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hvdc_subsea_interconnector_profiles": hvdc_subsea_interconnector_profiles,
         "dac_carbon_sequestration_profiles": dac_carbon_sequestration_profiles,
         "bess_grid_storage_profiles": bess_grid_storage_profiles,
+        "additive_manufacturing_lpbf_profiles": additive_manufacturing_lpbf_profiles,
     }
 
 

@@ -92,6 +92,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hvdc_subsea_interconnector_mmc_dcr_sil3_dccb_sandbox,
     simulate_dac_carbon_sequestration_vtsa_sco2_class6_sil3_sandbox,
     simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox,
+    simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -677,6 +678,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "bess_32_containers": simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(32, "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge"),
             "bess_128_containers": simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(128, "eis_dqdv_mpc_ul9540a_nfpa855_sil3_edge"),
             "raw_bess_32_containers": simulate_bess_grid_storage_eis_thermal_ul9540a_sil3_sandbox(32, "cloud_bms_polling_naive"),
+        },
+        "demo_73_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox": {
+            "lpbf_8_chambers": simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(8, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"),
+            "lpbf_16_chambers": simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(16, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"),
+            "lpbf_64_chambers": simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(64, "marangoni_pinn_mpc_astm_f3303_nfpa484_sil3_edge"),
+            "raw_lpbf_16_chambers": simulate_additive_manufacturing_lpbf_meltpool_nfpa484_sil3_sandbox(16, "open_loop_power_unverified_argon_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
