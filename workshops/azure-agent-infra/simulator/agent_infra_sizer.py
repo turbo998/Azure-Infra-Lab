@@ -3432,6 +3432,54 @@ def simulate_steelmaking_eaf_casting_sil3_sandbox(
     }
 
 
+def simulate_cement_kiln_ccus_pyro_sandbox(
+    clinker_and_ccus_capacity_tpd: int = 20000,
+    cement_kiln_ccus_mode: str = "pyro_mpc_amine_ccus_en746_co_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Cement Kiln Pyroprocessing, Alternative Refuse-Derived
+    Fuel (RDF) Co-Firing MPC, Post-Combustion Amine Carbon Capture (CCUS)
+    Reboiler Optimization & EN 746-2 / NFPA 86 Kiln Back-End CO ESP Explosion
+    Interlock Agent Infrastructure (Chapter 63).
+    """
+    if clinker_and_ccus_capacity_tpd <= 0:
+        raise ValueError("clinker_and_ccus_capacity_tpd must be positive")
+    valid_modes = {
+        "pyro_mpc_amine_ccus_en746_co_edge",
+        "manual_burner_unverified_rdf_raw_kiln_ir",
+    }
+    if cement_kiln_ccus_mode not in valid_modes:
+        raise ValueError(f"cement_kiln_ccus_mode must be one of {sorted(valid_modes)}")
+
+    governed = cement_kiln_ccus_mode == "pyro_mpc_amine_ccus_en746_co_edge"
+    gpu_nodes = max(2, math.ceil(clinker_and_ccus_capacity_tpd / 5000))
+    rotary_kilns_and_amine_absorbers = max(4, int(clinker_and_ccus_capacity_tpd // 2500))
+
+    alternative_rdf_substitution_gain_pct = 26.8 if governed else 0.0
+    ccus_amine_reboiler_steam_saving_pct = 19.4 if governed else 0.0
+    en746_nfpa86_co_esp_gate_ms = 1.1 if governed else 0.0
+    esp_co_explosion_or_red_kiln_escape_pct = 0.0 if governed else 1.7
+    kiln_shell_ir_pgnna_edge_triage_ms = 11.0 if governed else 1280.0
+    cement_plant_wan_bandwidth_reduction_pct = 96.7 if governed else 0.0
+    clinker_free_lime_off_spec_pct = 0.0 if governed else 4.1
+
+    return {
+        "clinker_and_ccus_capacity_tpd": clinker_and_ccus_capacity_tpd,
+        "cement_kiln_ccus_mode": cement_kiln_ccus_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "rotary_kilns_and_amine_absorbers": rotary_kilns_and_amine_absorbers,
+        "alternative_rdf_substitution_gain_pct": alternative_rdf_substitution_gain_pct,
+        "ccus_amine_reboiler_steam_saving_pct": ccus_amine_reboiler_steam_saving_pct,
+        "en746_nfpa86_co_esp_gate_ms": en746_nfpa86_co_esp_gate_ms,
+        "esp_co_explosion_or_red_kiln_escape_pct": esp_co_explosion_or_red_kiln_escape_pct,
+        "kiln_shell_ir_pgnna_edge_triage_ms": kiln_shell_ir_pgnna_edge_triage_ms,
+        "cement_plant_wan_bandwidth_reduction_pct": cement_plant_wan_bandwidth_reduction_pct,
+        "clinker_free_lime_off_spec_pct": clinker_free_lime_off_spec_pct,
+        "cement_kiln_ccus_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

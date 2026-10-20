@@ -3684,6 +3684,68 @@
         "off_spec_ladle_chemistry_reheat_pct": 3.2,
         "steelmaking_eaf_slo_met": false
       }
+    ],
+    "cement_kiln_ccus_pyro_profiles": [
+      {
+        "clinker_and_ccus_capacity_tpd": 5000,
+        "cement_kiln_ccus_mode": "pyro_mpc_amine_ccus_en746_co_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "rotary_kilns_and_amine_absorbers": 4,
+        "alternative_rdf_substitution_gain_pct": 26.8,
+        "ccus_amine_reboiler_steam_saving_pct": 19.4,
+        "en746_nfpa86_co_esp_gate_ms": 1.1,
+        "esp_co_explosion_or_red_kiln_escape_pct": 0.0,
+        "kiln_shell_ir_pgnna_edge_triage_ms": 11.0,
+        "cement_plant_wan_bandwidth_reduction_pct": 96.7,
+        "clinker_free_lime_off_spec_pct": 0.0,
+        "cement_kiln_ccus_slo_met": true
+      },
+      {
+        "clinker_and_ccus_capacity_tpd": 20000,
+        "cement_kiln_ccus_mode": "pyro_mpc_amine_ccus_en746_co_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "rotary_kilns_and_amine_absorbers": 8,
+        "alternative_rdf_substitution_gain_pct": 26.8,
+        "ccus_amine_reboiler_steam_saving_pct": 19.4,
+        "en746_nfpa86_co_esp_gate_ms": 1.1,
+        "esp_co_explosion_or_red_kiln_escape_pct": 0.0,
+        "kiln_shell_ir_pgnna_edge_triage_ms": 11.0,
+        "cement_plant_wan_bandwidth_reduction_pct": 96.7,
+        "clinker_free_lime_off_spec_pct": 0.0,
+        "cement_kiln_ccus_slo_met": true
+      },
+      {
+        "clinker_and_ccus_capacity_tpd": 80000,
+        "cement_kiln_ccus_mode": "pyro_mpc_amine_ccus_en746_co_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "rotary_kilns_and_amine_absorbers": 32,
+        "alternative_rdf_substitution_gain_pct": 26.8,
+        "ccus_amine_reboiler_steam_saving_pct": 19.4,
+        "en746_nfpa86_co_esp_gate_ms": 1.1,
+        "esp_co_explosion_or_red_kiln_escape_pct": 0.0,
+        "kiln_shell_ir_pgnna_edge_triage_ms": 11.0,
+        "cement_plant_wan_bandwidth_reduction_pct": 96.7,
+        "clinker_free_lime_off_spec_pct": 0.0,
+        "cement_kiln_ccus_slo_met": true
+      },
+      {
+        "clinker_and_ccus_capacity_tpd": 20000,
+        "cement_kiln_ccus_mode": "manual_burner_unverified_rdf_raw_kiln_ir",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "rotary_kilns_and_amine_absorbers": 8,
+        "alternative_rdf_substitution_gain_pct": 0.0,
+        "ccus_amine_reboiler_steam_saving_pct": 0.0,
+        "en746_nfpa86_co_esp_gate_ms": 0.0,
+        "esp_co_explosion_or_red_kiln_escape_pct": 1.7,
+        "kiln_shell_ir_pgnna_edge_triage_ms": 1280.0,
+        "cement_plant_wan_bandwidth_reduction_pct": 0.0,
+        "clinker_free_lime_off_spec_pct": 4.1,
+        "cement_kiln_ccus_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -6912,5 +6974,67 @@
       "steelmaking_eaf_slo_met": false
     }
   },
-  "trace_sha256": "39b2ab98072e1badf5334b2ccabb14ebb70cd5ce97b1ee72bfd1a10b533c18eb"
+  "demo_58_cement_kiln_ccus_pyro_sandbox": {
+    "cement_5000_tpd": {
+      "clinker_and_ccus_capacity_tpd": 5000,
+      "cement_kiln_ccus_mode": "pyro_mpc_amine_ccus_en746_co_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "rotary_kilns_and_amine_absorbers": 4,
+      "alternative_rdf_substitution_gain_pct": 26.8,
+      "ccus_amine_reboiler_steam_saving_pct": 19.4,
+      "en746_nfpa86_co_esp_gate_ms": 1.1,
+      "esp_co_explosion_or_red_kiln_escape_pct": 0.0,
+      "kiln_shell_ir_pgnna_edge_triage_ms": 11.0,
+      "cement_plant_wan_bandwidth_reduction_pct": 96.7,
+      "clinker_free_lime_off_spec_pct": 0.0,
+      "cement_kiln_ccus_slo_met": true
+    },
+    "cement_20000_tpd": {
+      "clinker_and_ccus_capacity_tpd": 20000,
+      "cement_kiln_ccus_mode": "pyro_mpc_amine_ccus_en746_co_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "rotary_kilns_and_amine_absorbers": 8,
+      "alternative_rdf_substitution_gain_pct": 26.8,
+      "ccus_amine_reboiler_steam_saving_pct": 19.4,
+      "en746_nfpa86_co_esp_gate_ms": 1.1,
+      "esp_co_explosion_or_red_kiln_escape_pct": 0.0,
+      "kiln_shell_ir_pgnna_edge_triage_ms": 11.0,
+      "cement_plant_wan_bandwidth_reduction_pct": 96.7,
+      "clinker_free_lime_off_spec_pct": 0.0,
+      "cement_kiln_ccus_slo_met": true
+    },
+    "cement_80000_tpd": {
+      "clinker_and_ccus_capacity_tpd": 80000,
+      "cement_kiln_ccus_mode": "pyro_mpc_amine_ccus_en746_co_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "rotary_kilns_and_amine_absorbers": 32,
+      "alternative_rdf_substitution_gain_pct": 26.8,
+      "ccus_amine_reboiler_steam_saving_pct": 19.4,
+      "en746_nfpa86_co_esp_gate_ms": 1.1,
+      "esp_co_explosion_or_red_kiln_escape_pct": 0.0,
+      "kiln_shell_ir_pgnna_edge_triage_ms": 11.0,
+      "cement_plant_wan_bandwidth_reduction_pct": 96.7,
+      "clinker_free_lime_off_spec_pct": 0.0,
+      "cement_kiln_ccus_slo_met": true
+    },
+    "raw_cement_20000_tpd": {
+      "clinker_and_ccus_capacity_tpd": 20000,
+      "cement_kiln_ccus_mode": "manual_burner_unverified_rdf_raw_kiln_ir",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "rotary_kilns_and_amine_absorbers": 8,
+      "alternative_rdf_substitution_gain_pct": 0.0,
+      "ccus_amine_reboiler_steam_saving_pct": 0.0,
+      "en746_nfpa86_co_esp_gate_ms": 0.0,
+      "esp_co_explosion_or_red_kiln_escape_pct": 1.7,
+      "kiln_shell_ir_pgnna_edge_triage_ms": 1280.0,
+      "cement_plant_wan_bandwidth_reduction_pct": 0.0,
+      "clinker_free_lime_off_spec_pct": 4.1,
+      "cement_kiln_ccus_slo_met": false
+    }
+  },
+  "trace_sha256": "a516c28a43d9b5ff1c1c6d751e19f9c5ccef3e6168643e3656af577e805bfce5"
 }

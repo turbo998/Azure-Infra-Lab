@@ -77,6 +77,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_offshore_wind_subsea_rov_esd_sandbox,
     simulate_circular_recycling_battery_xrf_sandbox,
     simulate_steelmaking_eaf_casting_sil3_sandbox,
+    simulate_cement_kiln_ccus_pyro_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -572,6 +573,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "steel_8_mtpa": simulate_steelmaking_eaf_casting_sil3_sandbox(8, "eaf_foaming_mpc_mold_pinns_sil3_edge"),
             "steel_32_mtpa": simulate_steelmaking_eaf_casting_sil3_sandbox(32, "eaf_foaming_mpc_mold_pinns_sil3_edge"),
             "raw_steel_8_mtpa": simulate_steelmaking_eaf_casting_sil3_sandbox(8, "static_tap_chart_unverified_lance_raw_ir"),
+        },
+        "demo_58_cement_kiln_ccus_pyro_sandbox": {
+            "cement_5000_tpd": simulate_cement_kiln_ccus_pyro_sandbox(5000, "pyro_mpc_amine_ccus_en746_co_edge"),
+            "cement_20000_tpd": simulate_cement_kiln_ccus_pyro_sandbox(20000, "pyro_mpc_amine_ccus_en746_co_edge"),
+            "cement_80000_tpd": simulate_cement_kiln_ccus_pyro_sandbox(80000, "pyro_mpc_amine_ccus_en746_co_edge"),
+            "raw_cement_20000_tpd": simulate_cement_kiln_ccus_pyro_sandbox(20000, "manual_burner_unverified_rdf_raw_kiln_ir"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

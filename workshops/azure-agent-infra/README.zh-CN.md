@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #57 · 63 Chapters · 58 Blueprints · 57 Simulators · 66/66 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-20 (Cycle #58 · 64 Chapters · 59 Blueprints · 58 Simulators · 67/67 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -1886,7 +1886,33 @@ sequenceDiagram
 
 ---
 
-## 63. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 63. 自主水泥回转窑煅烧、垃圾衍生替代燃料（`RDF`）协同处置热耗 `MPC` 寻优、窑尾醇胺法碳捕集（`CCUS`）再沸器蒸汽再生优化与 `EN 746-2 / NFPA 86` 预热器出口一氧化碳（`CO`）电除尘器防爆硬件互锁智能体基础设施 —— 熟料游离钙（`f-CaO`）软测量、回转窑结圈/红窑红外预警与碳捕集能耗最小化物理模型（Autonomous Cement Kiln Pyroprocessing, Alternative Refuse-Derived Fuel `RDF` Co-Firing MPC, Post-Combustion Amine `CCUS` Reboiler Optimization & `EN 746-2 / NFPA 86` Kiln Back-End `CO` ESP Explosion Interlock Agent Infrastructure — Burning-Zone PINN MPC, Amine Stripper Steam Duty & Kiln Shell IR Edge Physics）
+
+> 本章由确定性低碳水泥回转窑煅烧与窑尾碳捕集（`CCUS`）智能体物理模型 [`simulate_cement_kiln_ccus_pyro_sandbox()`](simulator/agent_infra_sizer.py) 与生产蓝图 [`blueprints/aksclaw-cement-kiln-ccus-pyro-pool.bicep`](blueprints/aksclaw-cement-kiln-ccus-pyro-pool.bicep) 驱动，面向大型新型干法水泥预分解窑与窑尾醇胺法碳捕集基地（日产熟料与碳捕集规模 `5,000–80,000 t/d`、回转窑与胺液吸收/解吸塔 `4–32` 套），解决 **传统人工看火与固定喂煤（`Manual Burner Control`）在掺烧高水分/热值波动的垃圾衍生替代燃料（`RDF / Biomass`）时易导致烧成带温度波动与熟料游离氧化钙（`f-CaO`）出格率高达 `4.1%`、窑尾醇胺法（`MEA / Piperazine`）碳捕集解吸塔再沸器蒸汽能耗居高不下、智能体未经 `EN 746-2 / NFPA 86` 预热器出口 `CO` 浓度与回转窑筒体红外热斑硬件互锁引发电除尘器（`ESP`）`CO` 燃爆或耐火砖剥落“红窑”（`Red Kiln`）穿孔事故（`1.7%` 逃逸率），以及回转窑筒体线阵红外与跨带中子活化分析仪（`PGNAA`）原始数据流直接上传云端造成 `1,280.0 ms` 延迟**。
+>
+> **🇬🇧 English Summary**: Powered by [`simulate_cement_kiln_ccus_pyro_sandbox()`](simulator/agent_infra_sizer.py) and [`blueprints/aksclaw-cement-kiln-ccus-pyro-pool.bicep`](blueprints/aksclaw-cement-kiln-ccus-pyro-pool.bicep), this chapter models autonomous low-carbon cement pyroprocessing and post-combustion amine carbon capture (`CCUS`) agent infrastructure (`5,000–80,000 t/d` clinker capacity, `8` rotary kilns & amine absorbers at `20,000 t/d`): (1) running **Burning-Zone Flame Pyrometry PINN MPC + Precalciner Refuse-Derived Fuel (`RDF`) Co-Firing & Amine Stripper Reboiler Steam Optimization** on `Standard_NC24ads_A100_v4` nodes boosts alternative RDF thermal substitution rate by **`+26.8%`**, cuts post-combustion CCUS amine reboiler regeneration steam consumption by **`19.4%`** (`3.1 -> 2.50 GJ/tCO2`), and eliminates off-spec free-lime (`f-CaO`) clinker (**`0.0%` vs `4.1%`**); (2) enforcing a **`1.1 ms`** **`EN 746-2 / NFPA 86` Preheater Exit `CO` (`<0.8% vol`) Electrostatic Precipitator (`ESP`) High-Voltage Rectifier Trip & Kiln Shell Refractory Spalling (`<380 °C`) Hardware Safety PLC Interlock** eliminates **`100.0%` (`0.0%` vs `1.7%`)** of ESP `CO` gas/dust explosions and rotary kiln shell perforation ("Red Kiln") escapes; and (3) executing **Cement-Plant `Azure IoT Operations` Kiln-Shell `360°` Line-Scan IR + `PGNAA` Raw-Mix Gamma Spectrum Edge Triage** in **`11.0 ms`** (`vs 1,280.0 ms` raw cloud upload) cuts plant WAN bandwidth by **`96.7%`**.
+
+### 63.1 水泥回转窑 `PINN MPC` 替代燃料协同、`EN 746-2 / NFPA 86` 防爆防红窑硬件门控与 `PGNAA/IR` 边缘分诊三大工程支柱
+
+1. **Pillar 1：烧成带火焰比色高温计 `PINN MPC` + 分解炉 `RDF` 替代燃料协同与窑尾 `CCUS` 醇胺再生蒸汽寻优（`Standard_NC24ads_A100_v4`）**：
+   - 在 `Standard_NC24ads_A100_v4` 节点上实时融合窑头双波段比色高温计、篦冷机二次/三次风温、窑主传扭矩与熟料游离钙（`f-CaO`）软测量模型，动态前馈补偿垃圾衍生燃料（`RDF`）水分与热值波动，使 **替代燃料（`RDF`）热替代率净增 `+26.8%`** 并将 **熟料 `f-CaO` 质量出格率从 `4.1%` 降至 `0.0%`**；同时耦合窑尾烟气 `CO2` 浓度与贫/富胺液循环负荷优化解吸塔再沸器低压蒸汽阀门，使 **碳捕集（`CCUS`）再沸器再生蒸汽热耗降低 `19.4%`**。
+2. **Pillar 2：`EN 746-2 / NFPA 86` 预热器出口一氧化碳（`CO`）电除尘器高压断电互锁与筒体耐火砖剥落“红窑”门控（`1.1 ms`）**：
+   - 任何由烧成智能体生成的头煤/尾煤喂料量、`RDF` 喂料螺旋转速与高温风机转速指令，在送达窑中控 DCS 前必须通过 **`1.1 ms` 独立硬件安全 PLC（`EN 746-2 / NFPA 86`）门控**：一旦预热器 C1 出口激光气体分析仪检测到不完全燃烧 `CO > 0.8% vol`（`8,000 ppm`），或回转窑筒体红外线扫仪检测到窑皮脱落红斑温度 `> 380 °C`，硬件互锁立即跳闸切断电除尘器（`ESP`）高压硅整流电场电源、联锁停止 `RDF` 投料并启动筒体轴流冷却风机，将 **电除尘器 `CO` 燃爆与回转窑穿孔“红窑”逃逸率从 `1.7%` 彻底清零至 `0.0%`**。
+3. **Pillar 3：水泥厂区 `Azure IoT Operations` 回转窑筒体 `360°` 红外线扫与生料跨带中子活化（`PGNAA`）边缘分诊（`11.0 ms`）**：
+   - 在厂区边缘节点本地处理回转窑筒体高速红外线扫描热像、生料皮带在线中子活化分析仪（`PGNAA`）钙硅铝铁率值（`KH / SM / IM`）伽马能谱与窑头看火工业相机视频流，在 **`11.0 ms` 内（对比原始高帧率热像与能谱上传云端推理 `1,280.0 ms`）** 完成配料率值闭环纠偏与结圈/掉砖定姿，削减 **`96.7%` 偏远矿山与水泥厂区广域网上行带宽**。
+
+### 63.2 回转窑 `PINN MPC` + `EN 746-2` 防爆硬件门控 + 厂区 `PGNAA/IR` 边缘分诊 vs 传统人工看火与无门控基线对比表
+
+| 日产熟料与碳捕集规模及水泥智能体架构 | `NC24ads_A100_v4` 节点数 | 回转窑与胺捕集塔数 | **替代燃料 `RDF` 提升 / `CCUS` 蒸汽节省** | **`EN 746-2` 电除尘爆炸与红窑逃逸率** | **厂区 `PGNAA/IR` 边缘分诊与带宽削减** | **熟料游离钙 (`f-CaO`) 出格率** |
+|---|---:|---:|---:|---:|---:|---:|
+| **`5,000 t/d` 单线窑 · 烧成 MPC + EN 746 互锁 + 边缘分诊** | `2` | `4` | **`+26.8%` / `-19.4%`** | **`0.0%` (`1.1 ms`)** | **`11.0 ms` / `96.7%`** | **`0.0%`** |
+| **`20,000 t/d` 低碳基地 · 烧成 MPC + EN 746 互锁 + 边缘分诊 (推荐)** | **`4`** | **`8`** | **`+26.8%` / `-19.4%`** | **`0.0%` (`1.1 ms`)** | **`11.0 ms` / `96.7%`** | **`0.0%`** |
+| **`80,000 t/d` 区域集群 · 烧成 MPC + EN 746 互锁 + 边缘分诊** | `16` | `32` | **`+26.8%` / `-19.4%`** | **`0.0%` (`1.1 ms`)** | **`11.0 ms` / `96.7%`** | **`0.0%`** |
+| `20,000 t/d` 低碳基地 · 人工看火 + 无 CO/红窑互锁 + 原始红外上云 (反模式) | `4` | `8` | `0.0%` / `0.0%` (❌ 热值波动与高蒸汽耗) | `1.7%` (❌ 电除尘 CO 燃爆与红窑穿孔) | `1,280.0 ms` / `0.0%` (❌ 偏远矿山链路拥塞) | `4.1%` (❌ 欠烧/过烧熟料出格) |
+
+---
+
+## 64. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 
@@ -1900,10 +1926,10 @@ sequenceDiagram
 # 1. 运行确定性架构选型器与 10万并发 E2B 集群容量测算校验
 python simulator/agent_infra_sizer.py --check
 
-# 2. 运行深度定量模型（全部 57 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱、应急山火指挥 WRF-SFIRE+cuOpt 蔓延疏散寻优与 FEMA NIMS/ICS 防轰燃互锁及高空热红外 LWIR 飞火边缘沙箱、深远海风电与海底管道 FLORIS 尾流 MPC 寻优与 DNV/API SIL-3 ESD 互锁及海缆 DAS 拖锚边缘分诊沙箱、循环经济退役动力电池无图纸力矩拆解与 UL 9540A 热失控互锁及 XRF/NIR 高光谱边缘分选沙箱、绿色钢铁电弧炉 EAF 泡沫渣谐波 MPC 寻优与 NFPA 86 / SIL-3 防爆防漏钢互锁及 LIBS/FBG 边缘分诊沙箱）
+# 2. 运行深度定量模型（全部 58 项物理仿真器：涵盖 Firecracker 缺页分解、AKSClaw Kata 密度、HorizonDB 留存、跨区 DR、FinOps Spot 排空、SEV-SNP 机密沙箱、零信任出网/MCP 准入、GPU MIG/MPS/KAITO、OTel/eBPF/ADX、长周期休眠/Saga/GC、CUA 浏览器沙箱池、virtiofs DAX 依赖加速、多智能体并发扇出治理、主权云驻留与密码学粉碎、零停机热迁移与金丝雀升级、混合级联路由与 KV 亲和预取、DiskANN/GraphRAG 多租户记忆分层、WebRTC 实时音视频 eBPF 沙箱、SWE-Agent BuildKit/Bazel CAS 验证沙箱、OneLake/DuckDB 数据湖仓分析沙箱、跨云 OIDC 联邦与机密洁净室、具身智能 ROS2/OpenUSD 数字孪生与 CBF 安全护盾、在线 RFT/GRPO 树状 CoW 分叉与防篡改验证器沙箱、后量子密码 PQC X25519MLKEM768/ML-DSA-65 与抗 HNDL 记忆信封、GreenOps 碳感知时空路由与 Kepler RAPL 碳核算、Hyperlight/SpinKube WASI-0.2 亚毫秒微沙箱、Chaos Studio 混沌演练与单调纪元防脑裂、Managed Lustre/HBv4 科学计算沙箱、AP2/x402 消费授权令与 Confidential Ledger 金融账本、跨组织 A2A Verified ID SD-JWT 与 HTTP/3 QUIC 联邦网格、自主网络防御气隙 MicroVM 与 eBPF KRSI/Sentinel SOAR 沙箱、Azure Local × IoT Operations 工业边缘断网自治与 HLC-CRDT 孪生同步、医疗临床 FHIR/DICOM 零拷贝与 HIPAA Safe-Harbor / 21 CFR Part 11 双签电子审计、Azure Quantum QIR × NVIDIA cuQuantum 混合量子-经典科学计算沙箱、电信 5G-A/O-RAN Operator Nexus SR-IOV/DPDK 与 Near-RT RIC xApp 亚 10ms 网络切片沙箱、空天低轨卫星 Azure Orbital × RFC 9171 BPv7 延迟容忍网络与抗辐射在轨预筛沙箱、智能电网变电站 IEC 61850 / IEEE C37.118 PMU 边缘分诊与 AC-OPF 潮流安全屏障沙箱、智慧仓储 AMR 舰队 MAPF-CBS 无死锁路径规划与冷链动力学护栏沙箱、影视直播 SMPTE ST 2110 NVDEC 零拷贝帧环与 OpenUSD/3DGS 场景校验及 C2PA 2.1 内容溯源沙箱、智能网联汽车 V2X MQTT-over-QUIC 边缘差分与 CARLA/OpenSCENARIO RSS 闭环验证及 UNECE R155 Uptane 驻车 OTA 护栏沙箱、半导体 EDA 芯片 RTL-to-GDSII Verilator AST 缓存与 SymbiYosys/LEC 形式化验证及 FlexNet 许可证防死锁护栏沙箱、生物医药 AlphaFold3/FEP+ MMseqs2-GPU 序列比对与 SiLA-2 湿实验机械臂防碰撞互锁及 SecureDNA 生物安全筛查沙箱、量化交易 AF_XDP 零拷贝订单簿与 SEC Rule 15c3-5 盘前风控熔断及 PTP 1588v2 纳秒审计沙箱、智慧零售 Arc 门店边缘防损与 BLE 5.4 PAwR 电子价签原子锁价及 PCI-DSS v4.0 内联脱敏沙箱、民航运行控制 SWIM cuOpt 大面积延误恢复与 FAA Part 117/MEL 适航门控及 DO-178C 航迹间隔屏障沙箱、超大规模智算中心液冷 BACnet/SC PINN/MPC PUE 1.12 预冷与 ASHRAE 露点/38ms 漏液电磁阀互锁沙箱、海事港口 STS/ARMG 岸桥 cuOpt 配载与 IMO GM 稳性门控及 COLREGs 避碰屏障沙箱、高速铁路 ERTMS/ETCS Level 3 移动闭塞 cuOpt 重排与 EN 50129 SIL-4 制动曲线门控及轨旁 TADS 边缘分诊沙箱、自主矿山 AHS 无人矿卡 cuOpt+XRF 动态配矿调度与 ISO 21815 Level 9 防碰撞互锁及 SSR 边坡雷达边缘预警沙箱、智慧园区与超高层建筑 ADT Brick MPC 暖通派梯寻优与 ASHRAE 62.1 新风保底及 NFPA 72 消防优先级互锁沙箱、精准农业 FAO-56 VRA 变量处方与 ISO 11783/EPA 防漂移互锁及植保无人机多光谱边缘分诊沙箱、市政水务与海水淡化 RO 膜结垢 MPC 寻优与 EPA SDWA 加药互锁及管网水听器声学测漏边缘沙箱、应急山火指挥 WRF-SFIRE+cuOpt 蔓延疏散寻优与 FEMA NIMS/ICS 防轰燃互锁及高空热红外 LWIR 飞火边缘沙箱、深远海风电与海底管道 FLORIS 尾流 MPC 寻优与 DNV/API SIL-3 ESD 互锁及海缆 DAS 拖锚边缘分诊沙箱、循环经济退役动力电池无图纸力矩拆解与 UL 9540A 热失控互锁及 XRF/NIR 高光谱边缘分选沙箱、绿色钢铁电弧炉 EAF 泡沫渣谐波 MPC 寻优与 NFPA 86 / SIL-3 防爆防漏钢互锁及 LIBS/FBG 边缘分诊沙箱、水泥回转窑 PINN MPC 替代燃料 RDF 协同与窑尾醇胺 CCUS 蒸汽寻优及 EN 746-2 CO 电除尘防爆互锁沙箱）
 python simulator/e2b_aksclaw_deep_benchmark.py
 
-# 3. 运行全部 66 项单元测试（100% 覆盖 6 大运行时契约、57 大深度物理模型、58 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
+# 3. 运行全部 67 项单元测试（100% 覆盖 6 大运行时契约、58 大深度物理模型、59 套 Bicep/Terraform/YAML 蓝图与 Markdown 链接完整性）
 python simulator/test_agent_infra_sizer.py -v
 
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告

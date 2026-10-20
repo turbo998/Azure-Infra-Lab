@@ -64,6 +64,7 @@ from agent_infra_sizer import (
     simulate_offshore_wind_subsea_rov_esd_sandbox,
     simulate_circular_recycling_battery_xrf_sandbox,
     simulate_steelmaking_eaf_casting_sil3_sandbox,
+    simulate_cement_kiln_ccus_pyro_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1072,6 +1073,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["off_spec_ladle_chemistry_reheat_pct"], 3.0)
         self.assertTrue(gov["steelmaking_eaf_slo_met"])
         self.assertFalse(raw["steelmaking_eaf_slo_met"])
+
+    def test_cement_kiln_ccus_pyro_sandbox(self) -> None:
+        gov = simulate_cement_kiln_ccus_pyro_sandbox(20000, "pyro_mpc_amine_ccus_en746_co_edge")
+        raw = simulate_cement_kiln_ccus_pyro_sandbox(20000, "manual_burner_unverified_rdf_raw_kiln_ir")
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["rotary_kilns_and_amine_absorbers"], 8)
+        self.assertEqual(gov["alternative_rdf_substitution_gain_pct"], 26.8)
+        self.assertEqual(gov["ccus_amine_reboiler_steam_saving_pct"], 19.4)
+        self.assertEqual(gov["en746_nfpa86_co_esp_gate_ms"], 1.1)
+        self.assertEqual(gov["esp_co_explosion_or_red_kiln_escape_pct"], 0.0)
+        self.assertGreater(raw["esp_co_explosion_or_red_kiln_escape_pct"], 1.5)
+        self.assertEqual(gov["kiln_shell_ir_pgnna_edge_triage_ms"], 11.0)
+        self.assertEqual(gov["cement_plant_wan_bandwidth_reduction_pct"], 96.7)
+        self.assertEqual(gov["clinker_free_lime_off_spec_pct"], 0.0)
+        self.assertGreater(raw["clinker_free_lime_off_spec_pct"], 4.0)
+        self.assertTrue(gov["cement_kiln_ccus_slo_met"])
+        self.assertFalse(raw["cement_kiln_ccus_slo_met"])
 
 
 if __name__ == "__main__":

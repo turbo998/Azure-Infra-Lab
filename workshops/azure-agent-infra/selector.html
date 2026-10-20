@@ -470,6 +470,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(55)">56. 深远海风电与海底管道 FLORIS 尾流 MPC 寻优 + DNV/API SIL-3 ESD 互锁与海缆 DAS 拖锚边缘池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(56)">57. 循环经济退役动力电池无图纸力矩拆解 + UL 9540A 热失控防爆互锁与 XRF/NIR 高光谱边缘分选池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(57)">58. 绿色钢铁电弧炉 EAF 泡沫渣谐波 MPC 寻优 + NFPA 86 / SIL-3 防爆防漏钢互锁与 LIBS/FBG 边缘池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(58)">59. 低碳水泥回转窑 PINN MPC 替代燃料 RDF 协同 + 窑尾醇胺 CCUS 再生寻优与 EN 746-2 CO 防爆池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -1782,6 +1783,28 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card">
+    <span class="pill pill-teal">TOOL 58 · CEMENT KILN PYROPROCESSING, RDF CO-FIRING MPC, AMINE CCUS &amp; EN 746-2 CO ESP INTERLOCK SIZER</span>
+    <h2>自主低碳水泥回转窑煅烧、替代燃料 RDF 协同 MPC、窑尾醇胺 CCUS 与 EN 746-2 防爆测算器 (Chapter 63 · Bilingual)</h2>
+    <div class="sub">量化在日产熟料与碳捕集 <code>5,000 – 80,000 t/d</code>（<code>4 – 32 套</code> 回转窑与醇胺吸收/解吸塔）规模下，启用 <code>烧成带比色高温计 PINN MPC + 分解炉 RDF 协同与 CCUS 再沸器蒸汽寻优</code>（替代燃料热替代率提升 <code>+26.8%</code>、碳捕集再沸器蒸汽热耗降低 <code>19.4%</code>、熟料游离钙 <code>f-CaO</code> 出格率 <code>0.0%</code>）、<code>EN 746-2 / NFPA 86</code> 预热器出口 <code>CO (&lt;0.8% vol)</code> 电除尘高压断电与红窑硬件门控（<code>1.1 ms</code> 校验，<code>0.0%</code> 电除尘燃爆或红窑穿孔逃逸）以及水泥厂区 <code>Azure IoT Operations</code> 筒体红外与生料 <code>PGNAA</code> 边缘分诊（<code>11.0 ms</code> 响应，削减 <code>96.7%</code> 广域网带宽）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 日产熟料与窑尾碳捕集规模 (Clinker &amp; Post-Combustion CCUS Capacity): <strong id="lbl_cem_tpd" style="color:var(--teal)">20,000</strong> t/d</label>
+          <input type="range" id="rng_cem_tpd" min="5000" max="80000" step="5000" value="20000" oninput="runCementKilnLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 回转窑烧成 MPC、醇胺 CCUS 寻优与 EN 746-2 防爆模式 (Pyroprocessing &amp; CCUS Agent Mode)</label>
+          <select id="sel_cem_mode" onchange="runCementKilnLab()">
+            <option value="pyro_mpc_amine_ccus_en746_co_edge" selected>烧成带 PINN MPC (+26.8% RDF / -19.4% CCUS 蒸汽) + EN 746-2 互锁 (0% 燃爆/红窑) + PGNAA/IR 边缘 (推荐)</option>
+            <option value="manual_burner_unverified_rdf_raw_kiln_ir">传统反模式：人工看火 (0 增益) + 无 CO/红窑互锁 (1.7% 燃爆/红窑) + 原始筒体红外上云 (4.1% f-CaO 出格)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cemOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -2809,6 +2832,22 @@ resource steelmakingEafPool 'Microsoft.ContainerService/managedClusters/agentPoo
       'aksclaw.io/meltshop-ir-libs-fbg-edge': 'enabled-8ms-97.1pct-wan-bandwidth-cut'
     }
   }
+}`,
+`// 59. Autonomous Cement Kiln Pyroprocessing, RDF Co-Firing MPC, Amine CCUS & EN 746-2 CO Pool (blueprints/aksclaw-cement-kiln-ccus-pyro-pool.bicep)
+resource cementKilnCcusPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-05-01' = {
+  parent: aksCluster
+  name: 'kilnccus'
+  properties: {
+    count: 4
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'cement-kiln-ccus-pyro-agent'
+      'aksclaw.io/rdf-pyro-mpc-amine-ccus': 'enabled-26.8pct-rdf-gain-19.4pct-ccus-steam-cut'
+      'aksclaw.io/en746-nfpa86-co-esp-interlock': 'enforced-1.1ms-0.8pct-co-zero-esp-explosion-red-kiln'
+      'aksclaw.io/kiln-shell-ir-pgnaa-edge': 'enabled-11ms-96.7pct-wan-bandwidth-cut'
+    }
+  }
 }`
 ];
 
@@ -2967,6 +3006,30 @@ runEmergencyWildfireLab();
 runOffshoreSubseaLab();
 runCircularRecyclingLab();
 runSteelmakingEafLab();
+runCementKilnLab();
+
+function runCementKilnLab() {
+  const tpd = parseInt(document.getElementById('rng_cem_tpd').value, 10);
+  const mode = document.getElementById('sel_cem_mode').value;
+  document.getElementById('lbl_cem_tpd').textContent = tpd.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(tpd / 5000));
+  const kilns = Math.max(4, Math.floor(tpd / 2500));
+  const ok = mode === 'pyro_mpc_amine_ccus_en746_co_edge';
+  const pyroStr = ok ? "烧成带 PINN MPC + 醇胺 CCUS · RDF 替代率 +26.8% · 再沸器蒸汽 -19.4%" : "人工看火与定值喂料 · 0.0% 替代燃料与蒸汽节省 (4.1% 熟料游离钙 f-CaO 出格)";
+  const enStr = ok ? "1.1 ms EN 746-2 / NFPA 86 预热器 CO (<0.8%) 与红窑互锁 · 0.0% 燃爆/红窑" : "无 EN 746-2 CO 与红窑硬件互锁 · 1.7% 电除尘器 CO 燃爆与筒体穿孔风险";
+  const edgeStr = ok ? "11.0 ms 筒体 360° 红外线扫 + PGNAA 生料率值边缘分诊 (-96.7% 广域网带宽) · 0.0% 出格" : "1,280.0 ms 原始筒体红外与伽马能谱上云 · 偏远矿山广域网拥塞且配料滞后";
+
+  document.getElementById('cemOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + pyroStr : '❌ 1.7% 电除尘 CO 燃爆/红窑风险 · 4.1% 熟料 f-CaO 出格'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 A100 节点 (${kilns} 套回转窑/CCUS 塔 · ${enStr})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>水泥厂区 Azure IoT Operations 筒体红外线扫与 PGNAA 跨带中子活化边缘分诊</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runSteelmakingEafLab() {
   const mtpa = parseInt(document.getElementById('rng_stl_mtpa').value, 10);
