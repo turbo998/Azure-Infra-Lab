@@ -101,6 +101,7 @@ from agent_infra_sizer import (
     simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
     simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
     simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
+    simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -249,6 +250,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-airborne-wind-energy-crosswind-kite-tether-iec61400-sil3-pool.bicep",
             "aksclaw-maglev-eds-ems-lsm-levitation-airgap-en50129-sil4-pool.bicep",
             "aksclaw-ptes-carnot-battery-brayton-turbocompressor-thermocline-sil3-pool.bicep",
+            "aksclaw-vleo-abep-atmosphere-breathing-ion-thruster-dsmc-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1862,6 +1864,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_thermocline_breakthrough_or_shaft_rub_pct"], 3.0)
         self.assertTrue(gov["ptes_carnot_battery_slo_met"])
         self.assertFalse(raw["ptes_carnot_battery_slo_met"])
+
+    def test_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(self) -> None:
+        gov = simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(
+            24, "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge"
+        )
+        raw = simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(
+            24, "open_loop_nrlmsise00_lookup_table_fixed_rf_power"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_vleo_abep_pods"], 8)
+        self.assertEqual(gov["thrust_to_drag_margin_and_isp_efficiency_gain_pct"], 35.2)
+        self.assertEqual(gov["orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct"], 46.4)
+        self.assertEqual(gov["ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms"], 0.4)
+        self.assertEqual(gov["uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct"], 0.0)
+        self.assertGreater(raw["uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct"], 1.2)
+        self.assertEqual(gov["onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct"], 3.0)
+        self.assertTrue(gov["vleo_abep_propulsion_slo_met"])
+        self.assertFalse(raw["vleo_abep_propulsion_slo_met"])
 
 
 if __name__ == "__main__":

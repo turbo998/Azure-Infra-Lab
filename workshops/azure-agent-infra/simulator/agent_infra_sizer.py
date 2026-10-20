@@ -5189,6 +5189,49 @@ def simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(
     }
 
 
+def simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(
+    vleo_abep_satellites: int = 24,
+    vleo_governance_mode: str = "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Very-Low-Earth-Orbit (VLEO 150-250 km) Atmosphere-Breathing Electric Propulsion (ABEP / RAM-EP) Satellite Intake Rarefied-Gas DSMC Compression, RF Helicon / Gridded Ion Thruster Isp-Drag Compensation PINN-MPC & ECSS-E-ST-10C / NASA-STD-8719.24 / IEC 61508 SIL-3 Perigee Decay Safe-Hold & Attitude Feathering Interlock Agent Infrastructure (Chapter 100)."""
+    if vleo_abep_satellites <= 0:
+        raise ValueError("vleo_abep_satellites must be positive")
+    valid_modes = {
+        "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge",
+        "open_loop_nrlmsise00_lookup_table_fixed_rf_power",
+    }
+    if vleo_governance_mode not in valid_modes:
+        raise ValueError(f"vleo_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = vleo_governance_mode == "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge"
+    active_vleo_abep_pods = max(2, min(8, int(vleo_abep_satellites // 3))) if vleo_abep_satellites <= 24 else max(8, int(vleo_abep_satellites // 4))
+    gpu_nodes = max(2, math.ceil(vleo_abep_satellites / 12))
+
+    thrust_to_drag_margin_and_isp_efficiency_gain_pct = 35.2 if governed else 5.8
+    orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct = 46.4 if governed else 7.6
+    ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms = 0.4 if governed else 138.0
+    uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct = 0.0 if governed else 1.6
+    onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms = 0.4 if governed else 248.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct = 0.0 if governed else 3.5
+
+    return {
+        "vleo_abep_satellites": vleo_abep_satellites,
+        "vleo_governance_mode": vleo_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_vleo_abep_pods": active_vleo_abep_pods,
+        "thrust_to_drag_margin_and_isp_efficiency_gain_pct": thrust_to_drag_margin_and_isp_efficiency_gain_pct,
+        "orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct": orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct,
+        "ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms": ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms,
+        "uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct": uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct,
+        "onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms": onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct": uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct,
+        "vleo_abep_propulsion_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

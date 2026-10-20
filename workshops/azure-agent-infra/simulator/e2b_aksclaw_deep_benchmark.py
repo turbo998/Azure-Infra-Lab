@@ -107,6 +107,7 @@ from agent_infra_sizer import (
     simulate_airborne_wind_energy_crosswind_kite_tether_sil3_sandbox,
     simulate_maglev_eds_ems_lsm_levitation_airgap_en50129_sil4_sandbox,
     simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox,
+    simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -907,6 +908,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(80, "pinn_mpc_brayton_thermocline_antisurge_asme_sil3_edge"),
         simulate_ptes_carnot_battery_brayton_turbocompressor_sil3_sandbox(20, "static_igv_schedule_delayed_recycle_valve_cloud"),
     ]
+    vleo_abep_ion_thruster_profiles: List[Dict[str, object]] = [
+        simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(12, "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge"),
+        simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(24, "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge"),
+        simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(96, "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge"),
+        simulate_vleo_abep_atmosphere_breathing_ion_thruster_sil3_sandbox(24, "open_loop_nrlmsise00_lookup_table_fixed_rf_power"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1002,6 +1009,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "awe_crosswind_kite_tether_profiles": awe_crosswind_kite_tether_profiles,
         "maglev_lsm_levitation_airgap_profiles": maglev_lsm_levitation_airgap_profiles,
         "ptes_carnot_battery_brayton_profiles": ptes_carnot_battery_brayton_profiles,
+        "vleo_abep_ion_thruster_profiles": vleo_abep_ion_thruster_profiles,
     }
 
 

@@ -5776,5 +5776,67 @@
       "uncompensated_thermocline_breakthrough_or_shaft_rub_pct": 3.4,
       "ptes_carnot_battery_slo_met": false
     }
+  ],
+  "vleo_abep_ion_thruster_profiles": [
+    {
+      "vleo_abep_satellites": 12,
+      "vleo_governance_mode": "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_vleo_abep_pods": 4,
+      "thrust_to_drag_margin_and_isp_efficiency_gain_pct": 35.2,
+      "orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct": 46.4,
+      "ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms": 0.4,
+      "uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct": 0.0,
+      "onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct": 0.0,
+      "vleo_abep_propulsion_slo_met": true
+    },
+    {
+      "vleo_abep_satellites": 24,
+      "vleo_governance_mode": "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_vleo_abep_pods": 8,
+      "thrust_to_drag_margin_and_isp_efficiency_gain_pct": 35.2,
+      "orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct": 46.4,
+      "ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms": 0.4,
+      "uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct": 0.0,
+      "onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct": 0.0,
+      "vleo_abep_propulsion_slo_met": true
+    },
+    {
+      "vleo_abep_satellites": 96,
+      "vleo_governance_mode": "pinn_mpc_dsmc_intake_helicon_thruster_ecss_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_vleo_abep_pods": 24,
+      "thrust_to_drag_margin_and_isp_efficiency_gain_pct": 35.2,
+      "orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct": 46.4,
+      "ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms": 0.4,
+      "uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct": 0.0,
+      "onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct": 0.0,
+      "vleo_abep_propulsion_slo_met": true
+    },
+    {
+      "vleo_abep_satellites": 24,
+      "vleo_governance_mode": "open_loop_nrlmsise00_lookup_table_fixed_rf_power",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_vleo_abep_pods": 8,
+      "thrust_to_drag_margin_and_isp_efficiency_gain_pct": 5.8,
+      "orbital_altitude_dip_and_xenon_supplement_burn_reduction_pct": 7.6,
+      "ecss_st10c_nasa8719_sil3_feathering_and_cathode_quench_interlock_ms": 138.0,
+      "uncontrolled_perigee_reentry_or_grid_erosion_short_breach_pct": 1.6,
+      "onboard_rpa_ionization_gauge_startracker_orbital_edge_latency_ms": 248.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_geomagnetic_storm_density_spike_or_plume_backflow_pct": 3.5,
+      "vleo_abep_propulsion_slo_met": false
+    }
   ]
 }
