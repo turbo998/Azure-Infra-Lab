@@ -87,6 +87,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
     simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
     simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
+    simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -642,6 +643,12 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "fcc_16_loops": simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(16, "fcc_regenerator_mpc_raman_sil3_esd_edge"),
             "fcc_64_loops": simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(64, "fcc_regenerator_mpc_raman_sil3_esd_edge"),
             "raw_fcc_16_loops": simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(16, "unconstrained_pid_manual_sampling_cloud"),
+        },
+        "demo_68_aerospace_composite_autoclave_ndt_sil3_sandbox": {
+            "composite_8_zones": simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(8, "thermochemical_cure_mpc_paut_nadcap_sil3_edge"),
+            "composite_16_zones": simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(16, "thermochemical_cure_mpc_paut_nadcap_sil3_edge"),
+            "composite_64_zones": simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(64, "thermochemical_cure_mpc_paut_nadcap_sil3_edge"),
+            "raw_composite_16_zones": simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(16, "open_loop_dwell_recipe_unverified_paut_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -3914,6 +3914,54 @@ def simulate_petrochemical_fcc_refinery_sil3_esd_sandbox(
     }
 
 
+def simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(
+    autoclave_afp_cure_zones: int = 16,
+    cure_ndt_governance_mode: str = "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Simulate Autonomous Aerospace Composite Autoclave Curing, Automated Fiber
+    Placement (AFP) Laser Thermography, Ultrasonic Phased-Array (PAUT) NDT &
+    NADCAP AC7118 / AMS2750G / AS9100 / IEC 61508 SIL-3 Exothermic Runaway &
+    Vacuum-Bag Breach Interlock Agent Infrastructure (Chapter 73).
+    """
+    if autoclave_afp_cure_zones <= 0:
+        raise ValueError("autoclave_afp_cure_zones must be positive")
+    valid_modes = {
+        "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+        "open_loop_dwell_recipe_unverified_paut_cloud",
+    }
+    if cure_ndt_governance_mode not in valid_modes:
+        raise ValueError(f"cure_ndt_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cure_ndt_governance_mode == "thermochemical_cure_mpc_paut_nadcap_sil3_edge"
+    gpu_nodes = max(2, math.ceil(autoclave_afp_cure_zones / 8))
+    active_autoclaves_and_afp_gantries = max(2, int(autoclave_afp_cure_zones // 4))
+
+    cure_uniformity_and_porosity_reduction_gain_pct = 23.4 if governed else 0.0
+    autoclave_n2_and_cure_energy_reduction_pct = 26.8 if governed else 0.0
+    nadcap_sil3_exotherm_interlock_latency_ms = 1.8 if governed else 1150.0
+    exothermic_runaway_or_vacuum_breach_pct = 0.0 if governed else 1.8
+    edge_paut_thermography_inference_latency_ms = 3.9 if governed else 1360.0
+    wan_bandwidth_reduction_pct = 97.7 if governed else 0.0
+    afp_delamination_or_ndt_false_accept_pct = 0.0 if governed else 3.6
+
+    return {
+        "autoclave_afp_cure_zones": autoclave_afp_cure_zones,
+        "cure_ndt_governance_mode": cure_ndt_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_autoclaves_and_afp_gantries": active_autoclaves_and_afp_gantries,
+        "cure_uniformity_and_porosity_reduction_gain_pct": cure_uniformity_and_porosity_reduction_gain_pct,
+        "autoclave_n2_and_cure_energy_reduction_pct": autoclave_n2_and_cure_energy_reduction_pct,
+        "nadcap_sil3_exotherm_interlock_latency_ms": nadcap_sil3_exotherm_interlock_latency_ms,
+        "exothermic_runaway_or_vacuum_breach_pct": exothermic_runaway_or_vacuum_breach_pct,
+        "edge_paut_thermography_inference_latency_ms": edge_paut_thermography_inference_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "afp_delamination_or_ndt_false_accept_pct": afp_delamination_or_ndt_false_accept_pct,
+        "aerospace_composite_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

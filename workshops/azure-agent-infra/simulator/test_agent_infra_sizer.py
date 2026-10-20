@@ -74,6 +74,7 @@ from agent_infra_sizer import (
     simulate_smr_nuclear_neutronics_class1e_rts_sandbox,
     simulate_tbm_tunnel_boring_geomechanics_sil3_sandbox,
     simulate_petrochemical_fcc_refinery_sil3_esd_sandbox,
+    simulate_aerospace_composite_autoclave_ndt_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -195,6 +196,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-smr-nuclear-neutronics-class1e-rts-pool.bicep",
             "aksclaw-tbm-tunnel-boring-geomechanics-sil3-pool.bicep",
             "aksclaw-petrochemical-fcc-refinery-sil3-esd-pool.bicep",
+            "aksclaw-aerospace-composite-autoclave-ndt-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -1261,6 +1263,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["fractionator_flooding_or_wgc_surge_excursion_pct"], 3.4)
         self.assertTrue(gov["petrochemical_fcc_slo_met"])
         self.assertFalse(raw["petrochemical_fcc_slo_met"])
+
+    def test_aerospace_composite_autoclave_ndt_sil3_sandbox(self) -> None:
+        gov = simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(16, "thermochemical_cure_mpc_paut_nadcap_sil3_edge")
+        raw = simulate_aerospace_composite_autoclave_ndt_sil3_sandbox(16, "open_loop_dwell_recipe_unverified_paut_cloud")
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_autoclaves_and_afp_gantries"], 4)
+        self.assertEqual(gov["cure_uniformity_and_porosity_reduction_gain_pct"], 23.4)
+        self.assertEqual(gov["autoclave_n2_and_cure_energy_reduction_pct"], 26.8)
+        self.assertEqual(gov["nadcap_sil3_exotherm_interlock_latency_ms"], 1.8)
+        self.assertEqual(gov["exothermic_runaway_or_vacuum_breach_pct"], 0.0)
+        self.assertGreater(raw["exothermic_runaway_or_vacuum_breach_pct"], 1.7)
+        self.assertEqual(gov["edge_paut_thermography_inference_latency_ms"], 3.9)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 97.7)
+        self.assertEqual(gov["afp_delamination_or_ndt_false_accept_pct"], 0.0)
+        self.assertGreater(raw["afp_delamination_or_ndt_false_accept_pct"], 3.5)
+        self.assertTrue(gov["aerospace_composite_slo_met"])
+        self.assertFalse(raw["aerospace_composite_slo_met"])
 
 
 if __name__ == "__main__":

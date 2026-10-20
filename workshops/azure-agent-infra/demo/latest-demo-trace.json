@@ -4304,6 +4304,68 @@
         "fractionator_flooding_or_wgc_surge_excursion_pct": 3.5,
         "petrochemical_fcc_slo_met": false
       }
+    ],
+    "aerospace_composite_autoclave_profiles": [
+      {
+        "autoclave_afp_cure_zones": 8,
+        "cure_ndt_governance_mode": "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_autoclaves_and_afp_gantries": 2,
+        "cure_uniformity_and_porosity_reduction_gain_pct": 23.4,
+        "autoclave_n2_and_cure_energy_reduction_pct": 26.8,
+        "nadcap_sil3_exotherm_interlock_latency_ms": 1.8,
+        "exothermic_runaway_or_vacuum_breach_pct": 0.0,
+        "edge_paut_thermography_inference_latency_ms": 3.9,
+        "wan_bandwidth_reduction_pct": 97.7,
+        "afp_delamination_or_ndt_false_accept_pct": 0.0,
+        "aerospace_composite_slo_met": true
+      },
+      {
+        "autoclave_afp_cure_zones": 16,
+        "cure_ndt_governance_mode": "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_autoclaves_and_afp_gantries": 4,
+        "cure_uniformity_and_porosity_reduction_gain_pct": 23.4,
+        "autoclave_n2_and_cure_energy_reduction_pct": 26.8,
+        "nadcap_sil3_exotherm_interlock_latency_ms": 1.8,
+        "exothermic_runaway_or_vacuum_breach_pct": 0.0,
+        "edge_paut_thermography_inference_latency_ms": 3.9,
+        "wan_bandwidth_reduction_pct": 97.7,
+        "afp_delamination_or_ndt_false_accept_pct": 0.0,
+        "aerospace_composite_slo_met": true
+      },
+      {
+        "autoclave_afp_cure_zones": 64,
+        "cure_ndt_governance_mode": "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_autoclaves_and_afp_gantries": 16,
+        "cure_uniformity_and_porosity_reduction_gain_pct": 23.4,
+        "autoclave_n2_and_cure_energy_reduction_pct": 26.8,
+        "nadcap_sil3_exotherm_interlock_latency_ms": 1.8,
+        "exothermic_runaway_or_vacuum_breach_pct": 0.0,
+        "edge_paut_thermography_inference_latency_ms": 3.9,
+        "wan_bandwidth_reduction_pct": 97.7,
+        "afp_delamination_or_ndt_false_accept_pct": 0.0,
+        "aerospace_composite_slo_met": true
+      },
+      {
+        "autoclave_afp_cure_zones": 16,
+        "cure_ndt_governance_mode": "open_loop_dwell_recipe_unverified_paut_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_autoclaves_and_afp_gantries": 4,
+        "cure_uniformity_and_porosity_reduction_gain_pct": 0.0,
+        "autoclave_n2_and_cure_energy_reduction_pct": 0.0,
+        "nadcap_sil3_exotherm_interlock_latency_ms": 1150.0,
+        "exothermic_runaway_or_vacuum_breach_pct": 1.8,
+        "edge_paut_thermography_inference_latency_ms": 1360.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "afp_delamination_or_ndt_false_accept_pct": 3.6,
+        "aerospace_composite_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -8152,5 +8214,67 @@
       "petrochemical_fcc_slo_met": false
     }
   },
-  "trace_sha256": "25bd6b8dc43f54ccb20c591d6d80afb41975d13803e7a261c9970cf2853e267f"
+  "demo_68_aerospace_composite_autoclave_ndt_sil3_sandbox": {
+    "composite_8_zones": {
+      "autoclave_afp_cure_zones": 8,
+      "cure_ndt_governance_mode": "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_autoclaves_and_afp_gantries": 2,
+      "cure_uniformity_and_porosity_reduction_gain_pct": 23.4,
+      "autoclave_n2_and_cure_energy_reduction_pct": 26.8,
+      "nadcap_sil3_exotherm_interlock_latency_ms": 1.8,
+      "exothermic_runaway_or_vacuum_breach_pct": 0.0,
+      "edge_paut_thermography_inference_latency_ms": 3.9,
+      "wan_bandwidth_reduction_pct": 97.7,
+      "afp_delamination_or_ndt_false_accept_pct": 0.0,
+      "aerospace_composite_slo_met": true
+    },
+    "composite_16_zones": {
+      "autoclave_afp_cure_zones": 16,
+      "cure_ndt_governance_mode": "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_autoclaves_and_afp_gantries": 4,
+      "cure_uniformity_and_porosity_reduction_gain_pct": 23.4,
+      "autoclave_n2_and_cure_energy_reduction_pct": 26.8,
+      "nadcap_sil3_exotherm_interlock_latency_ms": 1.8,
+      "exothermic_runaway_or_vacuum_breach_pct": 0.0,
+      "edge_paut_thermography_inference_latency_ms": 3.9,
+      "wan_bandwidth_reduction_pct": 97.7,
+      "afp_delamination_or_ndt_false_accept_pct": 0.0,
+      "aerospace_composite_slo_met": true
+    },
+    "composite_64_zones": {
+      "autoclave_afp_cure_zones": 64,
+      "cure_ndt_governance_mode": "thermochemical_cure_mpc_paut_nadcap_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_autoclaves_and_afp_gantries": 16,
+      "cure_uniformity_and_porosity_reduction_gain_pct": 23.4,
+      "autoclave_n2_and_cure_energy_reduction_pct": 26.8,
+      "nadcap_sil3_exotherm_interlock_latency_ms": 1.8,
+      "exothermic_runaway_or_vacuum_breach_pct": 0.0,
+      "edge_paut_thermography_inference_latency_ms": 3.9,
+      "wan_bandwidth_reduction_pct": 97.7,
+      "afp_delamination_or_ndt_false_accept_pct": 0.0,
+      "aerospace_composite_slo_met": true
+    },
+    "raw_composite_16_zones": {
+      "autoclave_afp_cure_zones": 16,
+      "cure_ndt_governance_mode": "open_loop_dwell_recipe_unverified_paut_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_autoclaves_and_afp_gantries": 4,
+      "cure_uniformity_and_porosity_reduction_gain_pct": 0.0,
+      "autoclave_n2_and_cure_energy_reduction_pct": 0.0,
+      "nadcap_sil3_exotherm_interlock_latency_ms": 1150.0,
+      "exothermic_runaway_or_vacuum_breach_pct": 1.8,
+      "edge_paut_thermography_inference_latency_ms": 1360.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "afp_delamination_or_ndt_false_accept_pct": 3.6,
+      "aerospace_composite_slo_met": false
+    }
+  },
+  "trace_sha256": "093beb56bdd841830dfb5440f22e343058c5897046401f52b524d4285c445003"
 }
