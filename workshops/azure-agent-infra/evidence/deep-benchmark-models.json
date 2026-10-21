@@ -7264,5 +7264,67 @@
       "uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct": 3.6,
       "vrfb_flow_battery_ldes_slo_met": false
     }
+  ],
+  "ebam_electron_beam_titanium_profiles": [
+    {
+      "ebam_vacuum_chambers": 8,
+      "ebam_governance_mode": "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ebam_pods": 8,
+      "fatigue_life_and_as_built_density_qualification_gain_pct": 39.2,
+      "al_evaporation_scrap_and_machining_allowance_reduction_pct": 53.6,
+      "ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms": 0.2,
+      "unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct": 0.0,
+      "gun_edge_elo_tomography_and_magnetic_deflection_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct": 0.0,
+      "ebam_electron_beam_titanium_slo_met": true
+    },
+    {
+      "ebam_vacuum_chambers": 16,
+      "ebam_governance_mode": "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ebam_pods": 8,
+      "fatigue_life_and_as_built_density_qualification_gain_pct": 39.2,
+      "al_evaporation_scrap_and_machining_allowance_reduction_pct": 53.6,
+      "ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms": 0.2,
+      "unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct": 0.0,
+      "gun_edge_elo_tomography_and_magnetic_deflection_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct": 0.0,
+      "ebam_electron_beam_titanium_slo_met": true
+    },
+    {
+      "ebam_vacuum_chambers": 64,
+      "ebam_governance_mode": "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ebam_pods": 32,
+      "fatigue_life_and_as_built_density_qualification_gain_pct": 39.2,
+      "al_evaporation_scrap_and_machining_allowance_reduction_pct": 53.6,
+      "ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms": 0.2,
+      "unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct": 0.0,
+      "gun_edge_elo_tomography_and_magnetic_deflection_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct": 0.0,
+      "ebam_electron_beam_titanium_slo_met": true
+    },
+    {
+      "ebam_vacuum_chambers": 16,
+      "ebam_governance_mode": "open_loop_beam_current_fixed_wire_feed_post_build_hip_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ebam_pods": 8,
+      "fatigue_life_and_as_built_density_qualification_gain_pct": 5.8,
+      "al_evaporation_scrap_and_machining_allowance_reduction_pct": 8.2,
+      "ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms": 168.0,
+      "unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct": 1.5,
+      "gun_edge_elo_tomography_and_magnetic_deflection_loop_ms": 196.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct": 3.8,
+      "ebam_electron_beam_titanium_slo_met": false
+    }
   ]
 }

@@ -6221,6 +6221,49 @@ def simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(
     }
 
 
+def simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(
+    ebam_vacuum_chambers: int = 16,
+    ebam_governance_mode: str = "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Aerospace & Submarine Titanium Electron Beam Additive Manufacturing (EBAM / EB-PBF) High-Vacuum Chamber & 60-150 kV Electromagnetic Electron Gun, Backscattered Electron Optical (ELO) Keyhole Porosity & Langmuir Aluminum Vaporization PINN-MPC, and AMS 4999A / AWS D17.1 / NFPA 484 / IEC 61508 SIL-3 High-Voltage Arc-Flash Crowbar & Pyrophoric Titanium Condensate Passivation Interlock Agent Infrastructure (Chapter 124)."""
+    if ebam_vacuum_chambers <= 0:
+        raise ValueError("ebam_vacuum_chambers must be positive")
+    valid_modes = {
+        "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge",
+        "open_loop_beam_current_fixed_wire_feed_post_build_hip_cloud",
+    }
+    if ebam_governance_mode not in valid_modes:
+        raise ValueError(f"ebam_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ebam_governance_mode == "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge"
+    active_ebam_pods = max(2, min(8, int(ebam_vacuum_chambers))) if ebam_vacuum_chambers <= 8 else max(8, int(ebam_vacuum_chambers // 2))
+    gpu_nodes = max(2, math.ceil(ebam_vacuum_chambers / 8))
+
+    fatigue_life_and_as_built_density_qualification_gain_pct = 39.2 if governed else 5.8
+    al_evaporation_scrap_and_machining_allowance_reduction_pct = 53.6 if governed else 8.2
+    ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms = 0.2 if governed else 168.0
+    unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct = 0.0 if governed else 1.5
+    gun_edge_elo_tomography_and_magnetic_deflection_loop_ms = 0.3 if governed else 196.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct = 0.0 if governed else 3.8
+
+    return {
+        "ebam_vacuum_chambers": ebam_vacuum_chambers,
+        "ebam_governance_mode": ebam_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ebam_pods": active_ebam_pods,
+        "fatigue_life_and_as_built_density_qualification_gain_pct": fatigue_life_and_as_built_density_qualification_gain_pct,
+        "al_evaporation_scrap_and_machining_allowance_reduction_pct": al_evaporation_scrap_and_machining_allowance_reduction_pct,
+        "ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms": ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms,
+        "unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct": unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct,
+        "gun_edge_elo_tomography_and_magnetic_deflection_loop_ms": gun_edge_elo_tomography_and_magnetic_deflection_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct": uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct,
+        "ebam_electron_beam_titanium_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

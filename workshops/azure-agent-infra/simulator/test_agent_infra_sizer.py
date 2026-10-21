@@ -125,6 +125,7 @@ from agent_infra_sizer import (
     simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
     simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
     simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
+    simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -297,6 +298,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-carbon-fiber-pan-oxidation-carbonization-hcn-nfpa86-sil3-pool.bicep",
             "aksclaw-dle-lithium-brine-sorption-libs-epauic-sil3-pool.bicep",
             "aksclaw-vrfb-flow-battery-ldes-uvvis-nfpa855-sil3-pool.bicep",
+            "aksclaw-ebam-electron-beam-titanium-elo-ams4999-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2414,6 +2416,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct"], 3.0)
         self.assertTrue(gov["vrfb_flow_battery_ldes_slo_met"])
         self.assertFalse(raw["vrfb_flow_battery_ldes_slo_met"])
+
+    def test_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(self) -> None:
+        gov = simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(
+            16, "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge"
+        )
+        raw = simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(
+            16, "open_loop_beam_current_fixed_wire_feed_post_build_hip_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ebam_pods"], 8)
+        self.assertEqual(gov["fatigue_life_and_as_built_density_qualification_gain_pct"], 39.2)
+        self.assertEqual(gov["al_evaporation_scrap_and_machining_allowance_reduction_pct"], 53.6)
+        self.assertEqual(gov["ams4999_sil3_hv_crowbar_and_argon_passivation_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hv_arc_flashover_or_pyrophoric_soot_ignition_pct"], 1.0)
+        self.assertEqual(gov["gun_edge_elo_tomography_and_magnetic_deflection_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct"], 3.0)
+        self.assertTrue(gov["ebam_electron_beam_titanium_slo_met"])
+        self.assertFalse(raw["ebam_electron_beam_titanium_slo_met"])
 
 
 if __name__ == "__main__":

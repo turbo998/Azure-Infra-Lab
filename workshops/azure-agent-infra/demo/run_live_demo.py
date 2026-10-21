@@ -138,6 +138,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
     simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
     simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
+    simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -959,6 +960,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "vrfb_16_blocks": simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(16, "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge"),
             "vrfb_64_blocks": simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(64, "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge"),
             "raw_vrfb_16_blocks": simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(16, "constant_flow_rate_coulomb_counting_manual_remix_cloud"),
+        },
+        "demo_119_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox": {
+            "ebam_16_chambers": simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(16, "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge"),
+            "ebam_64_chambers": simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(64, "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge"),
+            "raw_ebam_16_chambers": simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(16, "open_loop_beam_current_fixed_wire_feed_post_build_hip_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
