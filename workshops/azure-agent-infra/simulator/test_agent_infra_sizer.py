@@ -112,6 +112,7 @@ from agent_infra_sizer import (
     simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
     simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox,
     simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
+    simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -271,6 +272,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-cryo-har-plasma-etch-3dnand-esc-oes-semis2-sil3-pool.bicep",
             "aksclaw-mrna-lnp-microfluidic-mixing-tff-dls-gmp-nfpa30-sil3-pool.bicep",
             "aksclaw-ultradeep-10km-superhot-rock-drilling-fwi-iso15156-sil3-pool.bicep",
+            "aksclaw-cmp-planarization-hybrid-w2w-bonding-epd-semis2-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2115,6 +2117,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct"], 3.0)
         self.assertTrue(gov["ultradeep_10km_drilling_slo_met"])
         self.assertFalse(raw["ultradeep_10km_drilling_slo_met"])
+
+    def test_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(
+            16, "pinn_mpc_preston_reynolds_cmp_w2w_wavefront_epd_ir_semis2_sil3_edge"
+        )
+        raw = simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(
+            16, "fixed_membrane_pressure_timed_polish_open_loop_w2w_pin_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cmp_w2w_pods"], 8)
+        self.assertEqual(gov["submicron_cu_hybrid_bonding_yield_and_overlay_alignment_gain_pct"], 35.6)
+        self.assertEqual(gov["cu_dishing_sio2_erosion_and_interfacial_void_scrap_reduction_pct"], 48.2)
+        self.assertEqual(gov["semis2_s8_sil3_retaining_ring_wafer_slip_and_chuck_vacuum_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_wafer_breakage_slurry_leak_or_chuck_drop_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_wafer_breakage_slurry_leak_or_chuck_drop_pct"], 1.1)
+        self.assertEqual(gov["bay_edge_eddy_current_epd_and_ir_void_interferometry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_pad_glazing_drift_or_bonding_wave_asymmetry_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_pad_glazing_drift_or_bonding_wave_asymmetry_pct"], 3.0)
+        self.assertTrue(gov["cmp_w2w_hybrid_bonding_slo_met"])
+        self.assertFalse(raw["cmp_w2w_hybrid_bonding_slo_met"])
 
 
 if __name__ == "__main__":

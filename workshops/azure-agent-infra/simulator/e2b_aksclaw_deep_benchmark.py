@@ -118,6 +118,7 @@ from agent_infra_sizer import (
     simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
     simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox,
     simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
+    simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -984,6 +985,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(64, "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge"),
         simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(16, "constant_wob_rpm_mud_pulse_telemetry_manual_pit_gain_bop_cloud"),
     ]
+    cmp_w2w_hybrid_bonding_profiles: List[Dict[str, object]] = [
+        simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(8, "pinn_mpc_preston_reynolds_cmp_w2w_wavefront_epd_ir_semis2_sil3_edge"),
+        simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(16, "pinn_mpc_preston_reynolds_cmp_w2w_wavefront_epd_ir_semis2_sil3_edge"),
+        simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(64, "pinn_mpc_preston_reynolds_cmp_w2w_wavefront_epd_ir_semis2_sil3_edge"),
+        simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(16, "fixed_membrane_pressure_timed_polish_open_loop_w2w_pin_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1090,6 +1097,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cryo_har_plasma_etch_profiles": cryo_har_plasma_etch_profiles,
         "mrna_lnp_microfluidic_profiles": mrna_lnp_microfluidic_profiles,
         "ultradeep_10km_drilling_profiles": ultradeep_10km_drilling_profiles,
+        "cmp_w2w_hybrid_bonding_profiles": cmp_w2w_hybrid_bonding_profiles,
     }
 
 

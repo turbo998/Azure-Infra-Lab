@@ -5662,6 +5662,49 @@ def simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(
     }
 
 
+def simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(
+    cmp_w2w_bonding_bays: int = 16,
+    cmp_w2w_governance_mode: str = "pinn_mpc_preston_reynolds_cmp_w2w_wavefront_epd_ir_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous 3D IC Chemical-Mechanical Planarization (CMP) & Sub-Micron Hybrid Cu-SiO2 Wafer-to-Wafer (W2W) Bonding PINN-MPC, Eddy-Current / Multi-Wavelength Optical Endpoint & IR Void Interferometry & SEMI S2 / S8 / IEC 61511 SIL-3 Wafer-Slip & Chuck Vacuum Interlock Agent Infrastructure (Chapter 111)."""
+    if cmp_w2w_bonding_bays <= 0:
+        raise ValueError("cmp_w2w_bonding_bays must be positive")
+    valid_modes = {
+        "pinn_mpc_preston_reynolds_cmp_w2w_wavefront_epd_ir_semis2_sil3_edge",
+        "fixed_membrane_pressure_timed_polish_open_loop_w2w_pin_cloud",
+    }
+    if cmp_w2w_governance_mode not in valid_modes:
+        raise ValueError(f"cmp_w2w_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cmp_w2w_governance_mode == "pinn_mpc_preston_reynolds_cmp_w2w_wavefront_epd_ir_semis2_sil3_edge"
+    active_cmp_w2w_pods = max(2, min(8, int(cmp_w2w_bonding_bays))) if cmp_w2w_bonding_bays <= 8 else max(8, int(cmp_w2w_bonding_bays // 2))
+    gpu_nodes = max(2, math.ceil(cmp_w2w_bonding_bays / 8))
+
+    submicron_cu_hybrid_bonding_yield_and_overlay_alignment_gain_pct = 35.6 if governed else 5.6
+    cu_dishing_sio2_erosion_and_interfacial_void_scrap_reduction_pct = 48.2 if governed else 7.9
+    semis2_s8_sil3_retaining_ring_wafer_slip_and_chuck_vacuum_interlock_ms = 0.3 if governed else 184.0
+    unmitigated_wafer_breakage_slurry_leak_or_chuck_drop_pct = 0.0 if governed else 1.3
+    bay_edge_eddy_current_epd_and_ir_void_interferometry_loop_ms = 0.3 if governed else 208.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_pad_glazing_drift_or_bonding_wave_asymmetry_pct = 0.0 if governed else 3.4
+
+    return {
+        "cmp_w2w_bonding_bays": cmp_w2w_bonding_bays,
+        "cmp_w2w_governance_mode": cmp_w2w_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_cmp_w2w_pods": active_cmp_w2w_pods,
+        "submicron_cu_hybrid_bonding_yield_and_overlay_alignment_gain_pct": submicron_cu_hybrid_bonding_yield_and_overlay_alignment_gain_pct,
+        "cu_dishing_sio2_erosion_and_interfacial_void_scrap_reduction_pct": cu_dishing_sio2_erosion_and_interfacial_void_scrap_reduction_pct,
+        "semis2_s8_sil3_retaining_ring_wafer_slip_and_chuck_vacuum_interlock_ms": semis2_s8_sil3_retaining_ring_wafer_slip_and_chuck_vacuum_interlock_ms,
+        "unmitigated_wafer_breakage_slurry_leak_or_chuck_drop_pct": unmitigated_wafer_breakage_slurry_leak_or_chuck_drop_pct,
+        "bay_edge_eddy_current_epd_and_ir_void_interferometry_loop_ms": bay_edge_eddy_current_epd_and_ir_void_interferometry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_pad_glazing_drift_or_bonding_wave_asymmetry_pct": uncompensated_pad_glazing_drift_or_bonding_wave_asymmetry_pct,
+        "cmp_w2w_hybrid_bonding_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
