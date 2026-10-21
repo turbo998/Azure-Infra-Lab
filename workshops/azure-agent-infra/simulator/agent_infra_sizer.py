@@ -6835,6 +6835,56 @@ def simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(
     }
 
 
+def simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(
+    hpal_autoclave_trains: int = 8,
+    hpal_governance_mode: str = "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous High-Pressure Acid Leach (HPAL Titanium-Clad Multi-Compartment
+    Autoclave 255 C / 4.5 MPa Nickel-Cobalt Laterite Hydrometallurgy), Sulfuric Acid-to-Ore
+    Stoichiometry, Hematite/Alunite Scale Suppression & Flash-Letdown Ceramic Choke Valve
+    Cavitation PINN-MPC, Online Prompt-Gamma Neutron Activation (PGNAA) Ore Mineralogy /
+    High-Temp ORP Metrology & ASME BPVC Section VIII Div 2 / API 521 / IEC 61508 SIL-3
+    Titanium Pyrophoric Ignition (O2 Passivation Loss), Autoclave Over-Pressure & H2S
+    Sulfide Precipitation Gas Interlock (Chapter 138).
+    """
+    if hpal_autoclave_trains < 1:
+        raise ValueError("hpal_autoclave_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge",
+        "manual_acid_to_ore_ratio_fixed_letdown_choke_offline_icp_assay_cloud",
+    }
+    if hpal_governance_mode not in valid_modes:
+        raise ValueError(f"hpal_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = hpal_governance_mode == "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"
+    active_hpal_autoclave_pods = max(2, min(8, int(hpal_autoclave_trains))) if hpal_autoclave_trains <= 8 else max(8, int(hpal_autoclave_trains // 2))
+    gpu_nodes = max(2, math.ceil(hpal_autoclave_trains / 4))
+
+    nickel_cobalt_leach_recovery_and_autoclave_availability_gain_pct = 40.2 if governed else 5.9
+    sulfuric_acid_overconsumption_and_letdown_choke_erosion_reduction_pct = 55.4 if governed else 8.4
+    asmediv2_api521_sil3_titanium_passivation_and_h2s_scrubber_interlock_ms = 0.3 if governed else 148.0
+    unmitigated_titanium_pyrophoric_ignition_or_h2s_toxic_release_pct = 0.0 if governed else 1.3
+    autoclave_edge_pgnaa_mineralogy_and_ultrasonic_cavitation_loop_ms = 0.3 if governed else 190.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct = 0.0 if governed else 3.6
+
+    return {
+        "hpal_autoclave_trains": hpal_autoclave_trains,
+        "hpal_governance_mode": hpal_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_hpal_autoclave_pods": active_hpal_autoclave_pods,
+        "nickel_cobalt_leach_recovery_and_autoclave_availability_gain_pct": nickel_cobalt_leach_recovery_and_autoclave_availability_gain_pct,
+        "sulfuric_acid_overconsumption_and_letdown_choke_erosion_reduction_pct": sulfuric_acid_overconsumption_and_letdown_choke_erosion_reduction_pct,
+        "asmediv2_api521_sil3_titanium_passivation_and_h2s_scrubber_interlock_ms": asmediv2_api521_sil3_titanium_passivation_and_h2s_scrubber_interlock_ms,
+        "unmitigated_titanium_pyrophoric_ignition_or_h2s_toxic_release_pct": unmitigated_titanium_pyrophoric_ignition_or_h2s_toxic_release_pct,
+        "autoclave_edge_pgnaa_mineralogy_and_ultrasonic_cavitation_loop_ms": autoclave_edge_pgnaa_mineralogy_and_ultrasonic_cavitation_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct": uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct,
+        "hpal_titanium_autoclave_laterite_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

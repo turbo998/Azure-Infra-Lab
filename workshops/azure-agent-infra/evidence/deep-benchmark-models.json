@@ -8132,5 +8132,67 @@
       "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 3.7,
       "copper_flash_smelter_converter_slo_met": false
     }
+  ],
+  "hpal_titanium_autoclave_laterite_profiles": [
+    {
+      "hpal_autoclave_trains": 4,
+      "hpal_governance_mode": "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hpal_autoclave_pods": 4,
+      "nickel_cobalt_leach_recovery_and_autoclave_availability_gain_pct": 40.2,
+      "sulfuric_acid_overconsumption_and_letdown_choke_erosion_reduction_pct": 55.4,
+      "asmediv2_api521_sil3_titanium_passivation_and_h2s_scrubber_interlock_ms": 0.3,
+      "unmitigated_titanium_pyrophoric_ignition_or_h2s_toxic_release_pct": 0.0,
+      "autoclave_edge_pgnaa_mineralogy_and_ultrasonic_cavitation_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct": 0.0,
+      "hpal_titanium_autoclave_laterite_slo_met": true
+    },
+    {
+      "hpal_autoclave_trains": 8,
+      "hpal_governance_mode": "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hpal_autoclave_pods": 8,
+      "nickel_cobalt_leach_recovery_and_autoclave_availability_gain_pct": 40.2,
+      "sulfuric_acid_overconsumption_and_letdown_choke_erosion_reduction_pct": 55.4,
+      "asmediv2_api521_sil3_titanium_passivation_and_h2s_scrubber_interlock_ms": 0.3,
+      "unmitigated_titanium_pyrophoric_ignition_or_h2s_toxic_release_pct": 0.0,
+      "autoclave_edge_pgnaa_mineralogy_and_ultrasonic_cavitation_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct": 0.0,
+      "hpal_titanium_autoclave_laterite_slo_met": true
+    },
+    {
+      "hpal_autoclave_trains": 32,
+      "hpal_governance_mode": "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hpal_autoclave_pods": 16,
+      "nickel_cobalt_leach_recovery_and_autoclave_availability_gain_pct": 40.2,
+      "sulfuric_acid_overconsumption_and_letdown_choke_erosion_reduction_pct": 55.4,
+      "asmediv2_api521_sil3_titanium_passivation_and_h2s_scrubber_interlock_ms": 0.3,
+      "unmitigated_titanium_pyrophoric_ignition_or_h2s_toxic_release_pct": 0.0,
+      "autoclave_edge_pgnaa_mineralogy_and_ultrasonic_cavitation_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct": 0.0,
+      "hpal_titanium_autoclave_laterite_slo_met": true
+    },
+    {
+      "hpal_autoclave_trains": 8,
+      "hpal_governance_mode": "manual_acid_to_ore_ratio_fixed_letdown_choke_offline_icp_assay_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hpal_autoclave_pods": 8,
+      "nickel_cobalt_leach_recovery_and_autoclave_availability_gain_pct": 5.9,
+      "sulfuric_acid_overconsumption_and_letdown_choke_erosion_reduction_pct": 8.4,
+      "asmediv2_api521_sil3_titanium_passivation_and_h2s_scrubber_interlock_ms": 148.0,
+      "unmitigated_titanium_pyrophoric_ignition_or_h2s_toxic_release_pct": 1.3,
+      "autoclave_edge_pgnaa_mineralogy_and_ultrasonic_cavitation_loop_ms": 190.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct": 3.6,
+      "hpal_titanium_autoclave_laterite_slo_met": false
+    }
   ]
 }

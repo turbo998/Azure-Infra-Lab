@@ -152,6 +152,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox,
     simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox,
     simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox,
+    simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1043,6 +1044,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "copper_smelter_8_lines": simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(8, "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge"),
             "copper_smelter_32_lines": simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(32, "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge"),
             "raw_copper_smelter_8_lines": simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(8, "manual_oxygen_concentrate_ratio_spoon_sample_xrf_visual_tuyere_cloud"),
+        },
+        "demo_133_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox": {
+            "hpal_autoclave_8_trains": simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(8, "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"),
+            "hpal_autoclave_32_trains": simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(32, "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"),
+            "raw_hpal_autoclave_8_trains": simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(8, "manual_acid_to_ore_ratio_fixed_letdown_choke_offline_icp_assay_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

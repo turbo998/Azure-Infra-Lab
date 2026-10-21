@@ -145,6 +145,7 @@ from agent_infra_sizer import (
     simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox,
     simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox,
     simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox,
+    simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1173,6 +1174,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(32, "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge"),
         simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(8, "manual_oxygen_concentrate_ratio_spoon_sample_xrf_visual_tuyere_cloud"),
     ]
+    hpal_titanium_autoclave_laterite_profiles = [
+        simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(4, "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"),
+        simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(8, "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"),
+        simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(32, "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"),
+        simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(8, "manual_acid_to_ore_ratio_fixed_letdown_choke_offline_icp_assay_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1306,6 +1313,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "float_glass_tin_bath_lehr_profiles": float_glass_tin_bath_lehr_profiles,
         "kraft_pulp_recovery_boiler_profiles": kraft_pulp_recovery_boiler_profiles,
         "copper_flash_smelter_converter_profiles": copper_flash_smelter_converter_profiles,
+        "hpal_titanium_autoclave_laterite_profiles": hpal_titanium_autoclave_laterite_profiles,
     }
 
 
