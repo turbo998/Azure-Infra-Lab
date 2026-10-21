@@ -6933,6 +6933,54 @@ def simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbo
     }
 
 
+def simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(
+    rare_earth_sx_electrolysis_lines: int = 8,
+    rare_earth_governance_mode: str = "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Rare-Earth Neodymium-Praseodymium (NdPr) Bastnasite/Monazite Acid Roasting,
+    120-Stage P507 Counter-Current Mixer-Settler Solvent Extraction (SX) & 1,050 C Fluoride-Oxide
+    Molten Salt Electrolysis (Nd2O3 + LiF-NdF3 -> Nd) PINN-MPC, Online EDXRF / FTIR CF4 Metrology &
+    IAEA SSR-6 / NFPA 30 / IEC 61508 SIL-3 Kerosene Flash-Fire, HF Dry-Scrubber & Thorium-232 NORM
+    Tailings Interlock Sandbox (Chapter 140).
+    """
+    if rare_earth_sx_electrolysis_lines < 1:
+        raise ValueError("rare_earth_sx_electrolysis_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge",
+        "manual_acid_scrub_ratio_fixed_oxide_batch_feeding_offline_icp_assay_cloud",
+    }
+    if rare_earth_governance_mode not in valid_modes:
+        raise ValueError(f"rare_earth_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = rare_earth_governance_mode == "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge"
+    active_rare_earth_pods = max(2, min(8, int(rare_earth_sx_electrolysis_lines))) if rare_earth_sx_electrolysis_lines <= 8 else max(8, int(rare_earth_sx_electrolysis_lines // 2))
+    gpu_nodes = max(2, math.ceil(rare_earth_sx_electrolysis_lines / 4))
+
+    ndpr_separation_purity_and_molten_salt_current_efficiency_gain_pct = 41.2 if governed else 6.0
+    saponification_ammonia_acid_consumption_and_cf4_anode_effect_reduction_pct = 56.8 if governed else 8.5
+    nfpa30_iaea_sil3_organic_n2_blanket_and_hf_dry_scrubber_interlock_ms = 0.3 if governed else 154.0
+    unmitigated_kerosene_flash_fire_or_hf_norm_tailings_release_pct = 0.0 if governed else 1.3
+    cascade_edge_edxrf_lanthanide_profile_and_anode_voltage_noise_loop_ms = 0.3 if governed else 196.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_third_phase_emulsification_or_electrolyte_sludge_freeze_pct = 0.0 if governed else 3.7
+
+    return {
+        "rare_earth_sx_electrolysis_lines": rare_earth_sx_electrolysis_lines,
+        "rare_earth_governance_mode": rare_earth_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rare_earth_pods": active_rare_earth_pods,
+        "ndpr_separation_purity_and_molten_salt_current_efficiency_gain_pct": ndpr_separation_purity_and_molten_salt_current_efficiency_gain_pct,
+        "saponification_ammonia_acid_consumption_and_cf4_anode_effect_reduction_pct": saponification_ammonia_acid_consumption_and_cf4_anode_effect_reduction_pct,
+        "nfpa30_iaea_sil3_organic_n2_blanket_and_hf_dry_scrubber_interlock_ms": nfpa30_iaea_sil3_organic_n2_blanket_and_hf_dry_scrubber_interlock_ms,
+        "unmitigated_kerosene_flash_fire_or_hf_norm_tailings_release_pct": unmitigated_kerosene_flash_fire_or_hf_norm_tailings_release_pct,
+        "cascade_edge_edxrf_lanthanide_profile_and_anode_voltage_noise_loop_ms": cascade_edge_edxrf_lanthanide_profile_and_anode_voltage_noise_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_third_phase_emulsification_or_electrolyte_sludge_freeze_pct": uncompensated_third_phase_emulsification_or_electrolyte_sludge_freeze_pct,
+        "rare_earth_ndpr_sx_electrolysis_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

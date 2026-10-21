@@ -147,6 +147,7 @@ from agent_infra_sizer import (
     simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox,
     simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
     simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
+    simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1187,6 +1188,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(32, "pinn_mpc_kroll_chlorinator_vocl3_distillation_mg_retort_creep_raman_nfpa484_sil3_edge"),
         simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(8, "manual_ticl4_drip_rate_fixed_vacuum_distillation_timer_offline_bhn_hardness_cloud"),
     ]
+    rare_earth_ndpr_sx_electrolysis_profiles: List[Dict[str, object]] = [
+        simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(4, "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge"),
+        simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(8, "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge"),
+        simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(32, "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge"),
+        simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(8, "manual_acid_scrub_ratio_fixed_oxide_batch_feeding_offline_icp_assay_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1322,6 +1329,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "copper_flash_smelter_converter_profiles": copper_flash_smelter_converter_profiles,
         "hpal_titanium_autoclave_laterite_profiles": hpal_titanium_autoclave_laterite_profiles,
         "kroll_sponge_titanium_retort_profiles": kroll_sponge_titanium_retort_profiles,
+        "rare_earth_ndpr_sx_electrolysis_profiles": rare_earth_ndpr_sx_electrolysis_profiles,
     }
 
 

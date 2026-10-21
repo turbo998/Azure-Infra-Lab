@@ -141,6 +141,7 @@ from agent_infra_sizer import (
     simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox,
     simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
     simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
+    simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -329,6 +330,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-copper-flash-smelter-peircesmith-converter-so2-nfpa86-sil3-pool.bicep",
             "aksclaw-hpal-titanium-autoclave-nickel-cobalt-laterite-asmediv2-sil3-pool.bicep",
             "aksclaw-kroll-sponge-titanium-ticl4-magnesium-reduction-nfpa484-sil3-pool.bicep",
+            "aksclaw-rare-earth-ndpr-solvent-extraction-molten-salt-electrolysis-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2782,6 +2784,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_fe_eutectic_wall_burnthrough_or_oxygen_alpha_case_defect_pct"], 3.0)
         self.assertTrue(gov["kroll_sponge_titanium_retort_slo_met"])
         self.assertFalse(raw["kroll_sponge_titanium_retort_slo_met"])
+
+    def test_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(self) -> None:
+        gov = simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(
+            8, "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge"
+        )
+        raw = simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(
+            8, "manual_acid_scrub_ratio_fixed_oxide_batch_feeding_offline_icp_assay_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_rare_earth_pods"], 8)
+        self.assertEqual(gov["ndpr_separation_purity_and_molten_salt_current_efficiency_gain_pct"], 41.2)
+        self.assertEqual(gov["saponification_ammonia_acid_consumption_and_cf4_anode_effect_reduction_pct"], 56.8)
+        self.assertEqual(gov["nfpa30_iaea_sil3_organic_n2_blanket_and_hf_dry_scrubber_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_kerosene_flash_fire_or_hf_norm_tailings_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_kerosene_flash_fire_or_hf_norm_tailings_release_pct"], 1.0)
+        self.assertEqual(gov["cascade_edge_edxrf_lanthanide_profile_and_anode_voltage_noise_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_third_phase_emulsification_or_electrolyte_sludge_freeze_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_third_phase_emulsification_or_electrolyte_sludge_freeze_pct"], 3.0)
+        self.assertTrue(gov["rare_earth_ndpr_sx_electrolysis_slo_met"])
+        self.assertFalse(raw["rare_earth_ndpr_sx_electrolysis_slo_met"])
 
 
 if __name__ == "__main__":

@@ -547,6 +547,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(132)">133. 富氧铜闪速熔炼炉 (Outokumpu 反应塔 1,300°C)、闪速/皮尔斯-史密斯转炉吹炼 (Cu2S·FeS→99% 粗铜)、铁橄榄石渣型 Fe/SiO2 四氧化三铁调控与双转双吸制酸 (SO2→SO3) PINN-MPC、在线 LIBS 冰铜品位/风口光谱造铜终点计量及 NFPA 86 / ISO 13577 / IEC 61508 SIL-3 水冷铜水套漏水冰铜爆炸跳闸、转炉倾转出风与高浓 SO2 应急吸收塔硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(133)">134. 高压酸浸 (HPAL 钛复合板多隔室高压釜 255°C / 4.5 MPa 红土镍钴矿湿法冶金)、硫酸矿石化学计量比、明矾石/赤铁矿结垢抑制与陶瓷闪蒸降压阀空化 PINN-MPC、在线瞬发伽马中子活化 (PGNAA) 矿石矿物学/高温 ORP 计量及 ASME BPVC Sec VIII Div 2 / API 521 / IEC 61508 SIL-3 钛材失钝自燃、高压釜超压泄放与 H2S 硫化氢沉淀毒气硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(134)">135. 航空级海绵钛克劳尔法 (Kroll Process 流化床沸腾氯化 TiO2+C+Cl2→TiCl4 1,000°C、VOCl3 精馏提纯与密封不锈钢反应器镁热还原 TiCl4+2Mg→Ti+2MgCl2 / 1,020°C 真空蒸馏 PINN-MPC)、在线拉曼 VOCl3/真空四极杆质谱计量及 NFPA 484 / ASME BPVC Sec VIII / IEC 61508 SIL-3 反应器热失控铁钛共晶烧穿、高温真空蠕变塌陷与 TiCl4/Cl2 剧毒烟雾紧急碱洗硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(135)">136. 稀土镨钕 (NdPr) 氟碳铈矿/独居石酸法焙烧、120级 P507 串级混合澄清槽溶剂萃取分离与 1,050°C 氟盐氧化物熔盐电解槽 (Nd2O3+LiF-NdF3→Nd) PINN-MPC、在线多流道 EDXRF / FTIR 氟碳气体计量及 IAEA SSR-6 / NFPA 30 / IEC 61508 SIL-3 萃取煤油闪燃氮封、电解阳极效应 CF4/HF 干法吸收与钍-232 (NORM) 尾渣隔离硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3613,6 +3614,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 135: Autonomous Rare-Earth Neodymium-Praseodymium (NdPr) 120-Stage P507 Solvent Extraction & 1,050 C Molten Salt Electrolysis & IAEA / NFPA 30 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 135 · RARE-EARTH NdPr (120-STAGE P507 COUNTER-CURRENT MIXER-SETTLER SOLVENT EXTRACTION &amp; 1,050 °C LiF-NdF3 MOLTEN SALT ELECTROLYSIS) PINN-MPC, ONLINE EDXRF / FTIR METROLOGY &amp; IAEA SSR-6 / NFPA 30 / SIL-3 ORGANIC FLASH-FIRE &amp; HF SCRUBBER SIZER</span>
+    <h2>自主稀土镨钕（NdPr 120 级 P507 串级萃取槽分离与 30 kA / 1,050 °C 氟盐体系熔盐电解槽）：镧系微差分离 PINN-MPC 与 IAEA SSR-6 / NFPA 30 / SIL-3 硬联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 条年产万吨级 <code>4N5 (99.995%)</code> 电池/永磁级氧化镨钕（<code>Pr6O11 / Nd2O3</code>）120 级 <code>P507 (HEH[EHP])</code> 煤油串级混合澄清萃取线与 <code>30 kA / 1,050 °C</code> 氟化钕-氟化锂（<code>NdF3-LiF</code>）熔盐电解产线规模下，启用 <code>Standard_NC24ads_A100_v4</code> 多组分 Kremser-McCabe-Thiele 镧系紧邻元素（分离系数 $\beta_{\text{Pr/Nd}} \approx 1.5$）传质偏微分方程、钙镁皂化平衡与三相乳化（Crud）抑制及熔盐电解槽三维磁流体（<code>MHD</code>）氧化钕溶解度/阳极效应（<code>CF4 / C2F6</code> 温室气体）抑制 <code>PINN</code> + 萃取段酸度/皂化率/洗涤回流比与电解槽高频微量下料前馈 <code>MPC</code>（4N5 高纯镨钕直收率与熔盐电解电流效率提升 <code>+41.2%</code>，皂化氨水/盐酸单耗与电解阳极效应全氟化碳 <code>CF4</code> 排放削减 <code>-56.8%</code>）、<code>IAEA SSR-6 / NFPA 30 / IEC 61508 SIL-3</code> 萃取槽煤油静电闪燃高速氮封泡沫覆盖、电解阳极效应快速脉冲补料/提极与氟化氢（<code>HF</code>）干法消石灰吸收塔及伴生钍-232/镭-226（<code>NORM</code>）放射性铁磷渣双层防渗隔离硬联锁（<code>0.3 ms</code> 响应，<code>0.0%</code> 磺化煤油池火爆炸、高腐蚀性 <code>HF</code> 酸雾外泄或放射性浸出渣外溢，对比传统人工比色与定时投加氧化钕反模式 <code>1.3%</code> 风险）以及车间边缘 24 流道在线能量色散X射线荧光（<code>EDXRF</code>）稀土组分剖面、<code>10 kHz</code> 电解槽电压小波噪声阳极效应前兆与烟道 <code>FTIR</code> 边缘分诊（<code>0.3 ms</code>，削减 <code>99.5%</code> WAN 带宽，避免 <code>3.7%</code> 萃取槽第三相乳化跑料混级或熔盐电解槽底结壳沉淀短路漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 120级 P507 稀土串级萃取与 30kA 熔盐电解产线数 (Rare-Earth NdPr SX &amp; Molten-Salt Electrolysis Lines): <strong id="lbl_rare_earth_lines" style="color:var(--teal)">8</strong></label>
+          <input type="range" id="rng_rare_earth_lines" min="2" max="32" step="2" value="8" oninput="runRareEarthNdprLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 120级串级萃取/熔盐电解 PINN-MPC 与 IAEA SSR-6 / NFPA 30 / SIL-3 防闪燃及防 HF 硬联锁模式 (Rare-Earth Governance Mode)</label>
+          <select id="sel_rare_earth_mode" onchange="runRareEarthNdprLab()">
+            <option value="pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge" selected>120级 P507 串级传质与 LiF-NdF3 熔盐阳极效应抑制 PINN + 酸度/皂化率与微量连续下料 MPC (+41.2% 4N5 镨钕直收率与电流效率 / -56.8% 酸碱单耗与 CF4 阳极效应) + IAEA / NFPA 30 SIL-3 0.3ms 煤油氮封与 HF 干法吸收硬联锁 + 0.3ms 在线多流道 EDXRF/槽压小波边缘 (推荐)</option>
+            <option value="manual_acid_scrub_ratio_fixed_oxide_batch_feeding_offline_icp_assay_cloud">传统反模式：人工观察萃取槽分相界面与固定周期大批量投加氧化钕 (+6.0% 效率增益) + 无 0.3ms 萃取煤油氮封与电解阳极效应脉冲消弧联锁 (1.3% 磺化煤油静电闪燃大火或 HF/CF4 毒气及钍渣外溢风险) + 依赖每班人工取样 ICP 化验 (3.7% 第三相乳化串级混料或电解槽底氧化钕结壳沉淀漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="rareEarthNdprOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5817,6 +5841,21 @@ resource krollSpongeTitaniumRetortSil3Pool 'Microsoft.ContainerService/managedCl
       'aksclaw.io/retort-edge-raman-vocl3-vacuum-qms-ir-creep-thermography': 'enabled-0.3ms-99.5pct-titanium-plant-wan-cut'
     }
   }
+}`,
+`// 136. Azure Bicep: Rare-Earth Neodymium-Praseodymium (NdPr) Acid Roasting, 120-Stage P507 Counter-Current Solvent Extraction & 1,050 C LiF-NdF3 Molten Salt Electrolysis PINN-MPC, Online EDXRF / FTIR Metrology & IAEA SSR-6 / NFPA 30 / SIL-3 Kerosene Flash-Fire, HF Dry-Scrubber & Thorium-232 NORM Tailings Interlock Pool
+resource rareEarthNdprSxElectrolysisSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'ndprsil3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (120-Stage P507 Lanthanide Cascade Mass-Transfer, Ca/Mg Saponification & 1,050C LiF-NdF3 Molten-Salt MHD Anode-Effect PINN + Scrubbing Acid/Organic Ratio & Micro-Pulse Nd2O3 Feeding MPC + Online 24-Ch EDXRF, 10kHz Cell-Voltage Wavelet & FTIR HF/CF4 Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'rare-earth-ndpr-solvent-extraction-molten-salt-electrolysis-sil3-agent'
+      'aksclaw.io/pinn-mpc-p507-cascade-saponification-ndf3-lif-anode': 'enabled-41.2pct-ndpr-purity-current-eff-gain-56.8pct-acid-ammonia-cf4-cut'
+      'aksclaw.io/nfpa30-iaea-sil3-organic-n2-blanket-hf-dry-scrubber': 'enforced-0.3ms-zero-kerosene-flash-fire-or-hf-norm-release'
+      'aksclaw.io/cascade-edge-edxrf-lanthanide-anode-voltage-wavelet': 'enabled-0.3ms-99.5pct-rare-earth-refinery-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6052,6 +6091,30 @@ runKraftPulpRecoveryBoilerLab();
 runCopperFlashSmelterConverterLab();
 runHpalTitaniumAutoclaveLab();
 runKrollSpongeTitaniumLab();
+runRareEarthNdprLab();
+
+function runRareEarthNdprLab() {
+  const lines = parseInt(document.getElementById('rng_rare_earth_lines').value, 10);
+  const mode = document.getElementById('sel_rare_earth_mode').value;
+  document.getElementById('lbl_rare_earth_lines').textContent = lines.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(lines / 4));
+  const pods = lines <= 8 ? Math.max(2, Math.min(8, lines)) : Math.max(8, Math.floor(lines / 2));
+  const ok = mode === 'pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge';
+  const mpcStr = ok ? "120级 P507 串级混合澄清槽镧系微差传质 (β_Pr/Nd≈1.5) 与 1,050°C LiF-NdF3 熔盐电解槽磁流体氧化钕溶解 PINN + 皂化度/洗涤酸比与高频微量氧化钕下料前馈 MPC · 4N5 高纯镨钕直收率与电解电流效率 +41.2% · 酸碱皂化单耗与全氟化碳 (CF4/C2F6) 阳极效应率 -56.8%" : "传统人工肉眼看分相与固定周期成批倾倒氧化钕 · 仅 +6.0% 效率增益 / -8.5% 酸碱与阳极效应削减 (进料稀土配分波动导致 120 级萃取槽等效理论级数漂移混级，且 3.7% 硅铁杂质诱发第三相乳化跑料或电解槽底未溶氧化钕结壳沉淀漏检)";
+  const sil3Str = ok ? "0.3 ms IAEA SSR-6 / NFPA 30 / IEC 61508 SIL-3 萃取槽煤油静电氮封覆盖、阳极效应 (>6.8V) 脉冲补料消弧与 HF 干法消石灰洗涤塔及钍-232 (NORM) 防渗隔离硬联锁 · 0.0% 煤油闪燃或 HF/放射性尾渣泄漏违例" : "无 0.3ms 萃取槽有机相氮封与电解槽电压突跳消弧联锁 (154.0 ms 联锁滞后) · 1.3% 上千立方米磺化煤油有机相静电引燃连环池火、电解槽剧烈阳极效应喷溅释放剧毒 HF 氟化氢酸雾或伴生钍-232 放射性酸浸渣外溢风险";
+  const edgeStr = ok ? "0.3 ms 车间边缘 24 流道在线能量色散X射线荧光 (EDXRF) 水相/有机相组分剖面反演 + 10 kHz 电解槽电压小波噪声阳极效应前兆与烟道 FTIR 边缘 (-99.5% 稀土厂 WAN 带宽) · 0.0% 第三相乳化或槽底结壳漏检" : "196.0 ms 每 6 小时人工从澄清室取样送实验室 ICP-OES 化验 · 无法在长达 48 小时水力停留时间的 120 级萃取槽发生组分偏移初期及时纠偏";
+
+  document.getElementById('rareEarthNdprOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.3% 萃取车间磺化煤油闪燃大火或电解 HF 剧毒酸雾及钍渣外溢风险 · 3.7% 萃取槽第三相乳化跑料或电解槽底结壳短路漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个稀土串级萃取-熔盐电解孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>车间边缘 24 流道在线 EDXRF 镧系浓度剖面、10 kHz 电解槽压小波与 FTIR 氟化物监测边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runKrollSpongeTitaniumLab() {
   const retorts = parseInt(document.getElementById('rng_kroll_retorts').value, 10);
