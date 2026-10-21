@@ -127,6 +127,7 @@ from agent_infra_sizer import (
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
+    simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1047,6 +1048,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(64, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
         simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(16, "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud"),
     ]
+    chlor_alkali_membrane_electrolyzer_profiles: List[Dict[str, object]] = [
+        simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(8, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"),
+        simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(16, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"),
+        simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(64, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"),
+        simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(16, "manual_dp_valve_fixed_rectifier_ramp_periodic_brine_icp_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1162,6 +1169,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hollowcore_optical_fiber_draw_profiles": hollowcore_optical_fiber_draw_profiles,
         "polysilicon_siemens_cvd_fbr_profiles": polysilicon_siemens_cvd_fbr_profiles,
         "cryogenic_asu_air_separation_profiles": cryogenic_asu_air_separation_profiles,
+        "chlor_alkali_membrane_electrolyzer_profiles": chlor_alkali_membrane_electrolyzer_profiles,
     }
 
 

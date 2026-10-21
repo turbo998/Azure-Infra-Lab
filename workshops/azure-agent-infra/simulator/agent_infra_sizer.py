@@ -6049,6 +6049,49 @@ def simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(
     }
 
 
+def simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(
+    chlor_alkali_cellrooms: int = 16,
+    electrolyzer_governance_mode: str = "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Chlor-Alkali Ion-Exchange Membrane Electrolyzer, Perfluorinated Sulfonic/Carboxylic Bilayer Membrane Brine Impurity (Ca2+/Mg2+ <20 ppb) & Cathode-to-Anode Differential Pressure PINN-MPC, Wet Chlorine-in-Hydrogen / Hydrogen-in-Chlorine TDLAS & Euro Chlor GEST 79/82 / NFPA 68 / IEC 61511 SIL-3 Nitrogen Inerting & Polarization Rectifier Interlock Agent Infrastructure (Chapter 120)."""
+    if chlor_alkali_cellrooms <= 0:
+        raise ValueError("chlor_alkali_cellrooms must be positive")
+    valid_modes = {
+        "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge",
+        "manual_dp_valve_fixed_rectifier_ramp_periodic_brine_icp_cloud",
+    }
+    if electrolyzer_governance_mode not in valid_modes:
+        raise ValueError(f"electrolyzer_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = electrolyzer_governance_mode == "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"
+    active_electrolyzer_pods = max(2, min(8, int(chlor_alkali_cellrooms))) if chlor_alkali_cellrooms <= 8 else max(8, int(chlor_alkali_cellrooms // 2))
+    gpu_nodes = max(2, math.ceil(chlor_alkali_cellrooms / 8))
+
+    specific_dc_power_saving_and_current_efficiency_gain_pct = 34.8 if governed else 5.1
+    membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct = 48.6 if governed else 7.6
+    eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms = 0.3 if governed else 178.0
+    unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct = 0.0 if governed else 1.2
+    cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms = 0.3 if governed else 204.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct = 0.0 if governed else 3.3
+
+    return {
+        "chlor_alkali_cellrooms": chlor_alkali_cellrooms,
+        "electrolyzer_governance_mode": electrolyzer_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_F16s_v2",
+        "active_electrolyzer_pods": active_electrolyzer_pods,
+        "specific_dc_power_saving_and_current_efficiency_gain_pct": specific_dc_power_saving_and_current_efficiency_gain_pct,
+        "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct,
+        "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms,
+        "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct,
+        "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct,
+        "chlor_alkali_membrane_electrolyzer_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

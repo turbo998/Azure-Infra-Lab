@@ -134,6 +134,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
+    simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -935,6 +936,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "asu_16_trains": simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(16, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
             "asu_64_trains": simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(64, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
             "raw_asu_16_trains": simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(16, "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud"),
+        },
+        "demo_115_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox": {
+            "chlor_alkali_16_cellrooms": simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(16, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"),
+            "chlor_alkali_64_cellrooms": simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(64, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"),
+            "raw_chlor_alkali_16_cellrooms": simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(16, "manual_dp_valve_fixed_rectifier_ramp_periodic_brine_icp_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

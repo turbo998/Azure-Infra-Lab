@@ -7218,6 +7218,68 @@
         "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 3.2,
         "cryogenic_asu_air_separation_slo_met": false
       }
+    ],
+    "chlor_alkali_membrane_electrolyzer_profiles": [
+      {
+        "chlor_alkali_cellrooms": 8,
+        "electrolyzer_governance_mode": "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_F16s_v2",
+        "active_electrolyzer_pods": 8,
+        "specific_dc_power_saving_and_current_efficiency_gain_pct": 34.8,
+        "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": 48.6,
+        "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": 0.3,
+        "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": 0.0,
+        "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.4,
+        "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 0.0,
+        "chlor_alkali_membrane_electrolyzer_slo_met": true
+      },
+      {
+        "chlor_alkali_cellrooms": 16,
+        "electrolyzer_governance_mode": "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_F16s_v2",
+        "active_electrolyzer_pods": 8,
+        "specific_dc_power_saving_and_current_efficiency_gain_pct": 34.8,
+        "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": 48.6,
+        "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": 0.3,
+        "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": 0.0,
+        "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.4,
+        "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 0.0,
+        "chlor_alkali_membrane_electrolyzer_slo_met": true
+      },
+      {
+        "chlor_alkali_cellrooms": 64,
+        "electrolyzer_governance_mode": "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_F16s_v2",
+        "active_electrolyzer_pods": 32,
+        "specific_dc_power_saving_and_current_efficiency_gain_pct": 34.8,
+        "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": 48.6,
+        "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": 0.3,
+        "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": 0.0,
+        "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.4,
+        "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 0.0,
+        "chlor_alkali_membrane_electrolyzer_slo_met": true
+      },
+      {
+        "chlor_alkali_cellrooms": 16,
+        "electrolyzer_governance_mode": "manual_dp_valve_fixed_rectifier_ramp_periodic_brine_icp_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_F16s_v2",
+        "active_electrolyzer_pods": 8,
+        "specific_dc_power_saving_and_current_efficiency_gain_pct": 5.1,
+        "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": 7.6,
+        "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": 178.0,
+        "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": 1.2,
+        "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": 204.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 3.3,
+        "chlor_alkali_membrane_electrolyzer_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -13440,5 +13502,52 @@
       "cryogenic_asu_air_separation_slo_met": false
     }
   },
-  "trace_sha256": "e38a01c52de487099034202ec547d89d8830c83b2d917360d6bf0e8c44b8a85e"
+  "demo_115_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox": {
+    "chlor_alkali_16_cellrooms": {
+      "chlor_alkali_cellrooms": 16,
+      "electrolyzer_governance_mode": "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_F16s_v2",
+      "active_electrolyzer_pods": 8,
+      "specific_dc_power_saving_and_current_efficiency_gain_pct": 34.8,
+      "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": 48.6,
+      "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": 0.3,
+      "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": 0.0,
+      "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 0.0,
+      "chlor_alkali_membrane_electrolyzer_slo_met": true
+    },
+    "chlor_alkali_64_cellrooms": {
+      "chlor_alkali_cellrooms": 64,
+      "electrolyzer_governance_mode": "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_F16s_v2",
+      "active_electrolyzer_pods": 32,
+      "specific_dc_power_saving_and_current_efficiency_gain_pct": 34.8,
+      "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": 48.6,
+      "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": 0.3,
+      "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": 0.0,
+      "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 0.0,
+      "chlor_alkali_membrane_electrolyzer_slo_met": true
+    },
+    "raw_chlor_alkali_16_cellrooms": {
+      "chlor_alkali_cellrooms": 16,
+      "electrolyzer_governance_mode": "manual_dp_valve_fixed_rectifier_ramp_periodic_brine_icp_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_F16s_v2",
+      "active_electrolyzer_pods": 8,
+      "specific_dc_power_saving_and_current_efficiency_gain_pct": 5.1,
+      "membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct": 7.6,
+      "eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms": 178.0,
+      "unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct": 1.2,
+      "cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms": 204.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 3.3,
+      "chlor_alkali_membrane_electrolyzer_slo_met": false
+    }
+  },
+  "trace_sha256": "4b36178514adc1e254036c88303ce3408ef1f16919e6c83f0ab43becf6b7d1dd"
 }

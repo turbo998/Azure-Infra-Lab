@@ -121,6 +121,7 @@ from agent_infra_sizer import (
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
+    simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2320,6 +2321,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct"], 3.0)
         self.assertTrue(gov["cryogenic_asu_air_separation_slo_met"])
         self.assertFalse(raw["cryogenic_asu_air_separation_slo_met"])
+
+    def test_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(self) -> None:
+        gov = simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(
+            16, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"
+        )
+        raw = simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(
+            16, "manual_dp_valve_fixed_rectifier_ramp_periodic_brine_icp_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_electrolyzer_pods"], 8)
+        self.assertEqual(gov["specific_dc_power_saving_and_current_efficiency_gain_pct"], 34.8)
+        self.assertEqual(gov["membrane_blistering_voltage_creep_and_ca_mg_scaling_reduction_pct"], 48.6)
+        self.assertEqual(gov["eurochlor_gest_sil3_n2_inerting_and_polarization_rectifier_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2_in_cl2_photochemical_detonation_or_dsa_reverse_current_pct"], 1.0)
+        self.assertEqual(gov["cellroom_edge_tdlas_h2_in_cl2_and_dp_hydrostatic_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct"], 3.0)
+        self.assertTrue(gov["chlor_alkali_membrane_electrolyzer_slo_met"])
+        self.assertFalse(raw["chlor_alkali_membrane_electrolyzer_slo_met"])
 
 
 if __name__ == "__main__":
