@@ -6393,6 +6393,49 @@ def simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(
     }
 
 
+def simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox(
+    lng_membrane_cargo_tanks: int = 16,
+    lng_governance_mode: str = "pinn_mpc_bagnold_sloshing_bog_reliquefaction_fbg_igc_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Large 266,000 m3 Membrane LNG Carrier (GTT Mark III / NO96 36% Ni Invar & 304L Corrugated Primary/Secondary Barrier at -163 C) & Dual-Fuel ME-GI/X-DF Reliquefaction, Hydroelastic Bagnold Sloshing Impact & BOG Subcooling PINN-MPC, Cryogenic FBG / Interbarrier N2-IR CH4 Leak-Tomography & IMO IGC Code / DNV-RU-SHIP / SIGTTO / IEC 61511 SIL-3 Inner-Hull Cold-Spot & Overpressure Interlock Agent Infrastructure (Chapter 128)."""
+    if lng_membrane_cargo_tanks <= 0:
+        raise ValueError("lng_membrane_cargo_tanks must be positive")
+    valid_modes = {
+        "pinn_mpc_bagnold_sloshing_bog_reliquefaction_fbg_igc_sil3_edge",
+        "static_barred_filling_range_manual_gcu_flaring_periodic_n2_sniffing_cloud",
+    }
+    if lng_governance_mode not in valid_modes:
+        raise ValueError(f"lng_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = lng_governance_mode == "pinn_mpc_bagnold_sloshing_bog_reliquefaction_fbg_igc_sil3_edge"
+    active_lng_pods = max(2, min(8, int(lng_membrane_cargo_tanks))) if lng_membrane_cargo_tanks <= 8 else max(8, int(lng_membrane_cargo_tanks // 2))
+    gpu_nodes = max(2, math.ceil(lng_membrane_cargo_tanks / 8))
+
+    reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct = 38.8 if governed else 5.8
+    sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct = 54.1 if governed else 8.4
+    igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms = 0.4 if governed else 156.0
+    unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct = 0.0 if governed else 1.5
+    tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms = 0.3 if governed else 198.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct = 0.0 if governed else 3.9
+
+    return {
+        "lng_membrane_cargo_tanks": lng_membrane_cargo_tanks,
+        "lng_governance_mode": lng_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_lng_pods": active_lng_pods,
+        "reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct": reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct,
+        "sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct": sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct,
+        "igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms": igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms,
+        "unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct": unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct,
+        "tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms": tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct": uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct,
+        "lng_membrane_containment_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

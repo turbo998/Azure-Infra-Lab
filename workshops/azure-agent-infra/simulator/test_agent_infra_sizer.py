@@ -129,6 +129,7 @@ from agent_infra_sizer import (
     simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
     simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox,
     simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox,
+    simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2506,6 +2507,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct"], 3.0)
         self.assertTrue(gov["sputter_magnetron_glass_coater_slo_met"])
         self.assertFalse(raw["sputter_magnetron_glass_coater_slo_met"])
+
+    def test_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox(self) -> None:
+        gov = simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox(
+            16, "pinn_mpc_bagnold_sloshing_bog_reliquefaction_fbg_igc_sil3_edge"
+        )
+        raw = simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox(
+            16, "static_barred_filling_range_manual_gcu_flaring_periodic_n2_sniffing_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_lng_pods"], 8)
+        self.assertEqual(gov["reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct"], 38.8)
+        self.assertEqual(gov["sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct"], 54.1)
+        self.assertEqual(gov["igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct"], 1.0)
+        self.assertEqual(gov["tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct"], 3.0)
+        self.assertTrue(gov["lng_membrane_containment_slo_met"])
+        self.assertFalse(raw["lng_membrane_containment_slo_met"])
 
 
 if __name__ == "__main__":

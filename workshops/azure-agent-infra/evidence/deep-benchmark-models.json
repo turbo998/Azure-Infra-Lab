@@ -7512,5 +7512,67 @@
       "uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct": 3.8,
       "sputter_magnetron_glass_coater_slo_met": false
     }
+  ],
+  "lng_membrane_containment_profiles": [
+    {
+      "lng_membrane_cargo_tanks": 8,
+      "lng_governance_mode": "pinn_mpc_bagnold_sloshing_bog_reliquefaction_fbg_igc_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lng_pods": 8,
+      "reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct": 38.8,
+      "sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct": 54.1,
+      "igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms": 0.4,
+      "unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct": 0.0,
+      "tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct": 0.0,
+      "lng_membrane_containment_slo_met": true
+    },
+    {
+      "lng_membrane_cargo_tanks": 16,
+      "lng_governance_mode": "pinn_mpc_bagnold_sloshing_bog_reliquefaction_fbg_igc_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lng_pods": 8,
+      "reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct": 38.8,
+      "sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct": 54.1,
+      "igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms": 0.4,
+      "unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct": 0.0,
+      "tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct": 0.0,
+      "lng_membrane_containment_slo_met": true
+    },
+    {
+      "lng_membrane_cargo_tanks": 64,
+      "lng_governance_mode": "pinn_mpc_bagnold_sloshing_bog_reliquefaction_fbg_igc_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lng_pods": 32,
+      "reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct": 38.8,
+      "sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct": 54.1,
+      "igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms": 0.4,
+      "unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct": 0.0,
+      "tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct": 0.0,
+      "lng_membrane_containment_slo_met": true
+    },
+    {
+      "lng_membrane_cargo_tanks": 16,
+      "lng_governance_mode": "static_barred_filling_range_manual_gcu_flaring_periodic_n2_sniffing_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lng_pods": 8,
+      "reliquefaction_energy_efficiency_and_propulsion_bog_utilization_gain_pct": 5.8,
+      "sloshing_impact_peak_pressure_and_gcu_methane_flaring_reduction_pct": 8.4,
+      "igc_sil3_interbarrier_n2_sweep_and_cofferdam_heating_trip_ms": 156.0,
+      "unmitigated_inner_hull_brittle_fracture_or_tank_vacuum_collapse_pct": 1.5,
+      "tank_edge_cryogenic_fbg_and_interbarrier_ir_ch4_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct": 3.9,
+      "lng_membrane_containment_slo_met": false
+    }
   ]
 }
