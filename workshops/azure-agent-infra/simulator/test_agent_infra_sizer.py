@@ -133,6 +133,7 @@ from agent_infra_sizer import (
     simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox,
     simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox,
     simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox,
+    simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -313,6 +314,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-subsea-flexlay-jlay-pipelay-catenary-das-dnvstf101-sil3-pool.bicep",
             "aksclaw-pelton-francis-hydro-turbine-cavitation-deflector-iec60308-sil3-pool.bicep",
             "aksclaw-usc-boiler-turbine-flex-co-firing-tdlas-nfpa85-mft-sil3-pool.bicep",
+            "aksclaw-offshore-jackup-spudcan-punchthrough-sscv-sname55a-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2598,6 +2600,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct"], 3.0)
         self.assertTrue(gov["usc_boiler_turbine_flex_slo_met"])
         self.assertFalse(raw["usc_boiler_turbine_flex_slo_met"])
+
+    def test_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(self) -> None:
+        gov = simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(
+            16, "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"
+        )
+        raw = simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(
+            16, "stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_jackup_pods"], 8)
+        self.assertEqual(gov["jacking_preloading_and_heavylift_weather_window_gain_pct"], 39.4)
+        self.assertEqual(gov["chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct"], 54.3)
+        self.assertEqual(gov["iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct"], 1.0)
+        self.assertEqual(gov["jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct"], 3.0)
+        self.assertTrue(gov["offshore_jackup_spudcan_sscv_slo_met"])
+        self.assertFalse(raw["offshore_jackup_spudcan_sscv_slo_met"])
 
 
 if __name__ == "__main__":

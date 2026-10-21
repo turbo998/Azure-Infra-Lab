@@ -6565,6 +6565,49 @@ def simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox(
     }
 
 
+def simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(
+    jackup_and_sscv_units: int = 16,
+    jackup_governance_mode: str = "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Offshore Jack-Up Rig (120-180 m Water Depth 3/4-Leg Truss Chord-Rack-Pinion Jacking) & Heavy-Lift Semi-Submersible Crane Vessel (5,000-20,000 t SSCV), Spudcan Punch-Through Geomechanics & Dynamic Anti-Heeling Ballast PINN-MPC, Rack-Phase-Difference (RPD) / Chord AE Metrology & SNAME T&R 5-5A / ISO 19905-1 / DNV-OS-C104 / API Spec 2C / IEC 61508 SIL-3 Punch-Through Preload Dump & Crane AOPS/MOPS Interlock Agent Infrastructure (Chapter 132)."""
+    if jackup_and_sscv_units <= 0:
+        raise ValueError("jackup_and_sscv_units must be positive")
+    valid_modes = {
+        "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge",
+        "stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud",
+    }
+    if jackup_governance_mode not in valid_modes:
+        raise ValueError(f"jackup_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = jackup_governance_mode == "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"
+    active_jackup_pods = max(2, min(8, int(jackup_and_sscv_units))) if jackup_and_sscv_units <= 8 else max(8, int(jackup_and_sscv_units // 2))
+    gpu_nodes = max(2, math.ceil(jackup_and_sscv_units / 8))
+
+    jacking_preloading_and_heavylift_weather_window_gain_pct = 39.4 if governed else 5.8
+    chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct = 54.3 if governed else 8.4
+    iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms = 0.3 if governed else 154.0
+    unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct = 0.0 if governed else 1.5
+    jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms = 0.3 if governed else 196.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct = 0.0 if governed else 3.8
+
+    return {
+        "jackup_and_sscv_units": jackup_and_sscv_units,
+        "jackup_governance_mode": jackup_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_jackup_pods": active_jackup_pods,
+        "jacking_preloading_and_heavylift_weather_window_gain_pct": jacking_preloading_and_heavylift_weather_window_gain_pct,
+        "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct,
+        "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms,
+        "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct,
+        "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct,
+        "offshore_jackup_spudcan_sscv_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -7962,6 +7962,68 @@
         "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 3.8,
         "usc_boiler_turbine_flex_slo_met": false
       }
+    ],
+    "offshore_jackup_spudcan_sscv_profiles": [
+      {
+        "jackup_and_sscv_units": 8,
+        "jackup_governance_mode": "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_jackup_pods": 8,
+        "jacking_preloading_and_heavylift_weather_window_gain_pct": 39.4,
+        "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": 54.3,
+        "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": 0.3,
+        "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": 0.0,
+        "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 0.0,
+        "offshore_jackup_spudcan_sscv_slo_met": true
+      },
+      {
+        "jackup_and_sscv_units": 16,
+        "jackup_governance_mode": "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_jackup_pods": 8,
+        "jacking_preloading_and_heavylift_weather_window_gain_pct": 39.4,
+        "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": 54.3,
+        "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": 0.3,
+        "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": 0.0,
+        "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 0.0,
+        "offshore_jackup_spudcan_sscv_slo_met": true
+      },
+      {
+        "jackup_and_sscv_units": 64,
+        "jackup_governance_mode": "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_jackup_pods": 32,
+        "jacking_preloading_and_heavylift_weather_window_gain_pct": 39.4,
+        "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": 54.3,
+        "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": 0.3,
+        "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": 0.0,
+        "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 0.0,
+        "offshore_jackup_spudcan_sscv_slo_met": true
+      },
+      {
+        "jackup_and_sscv_units": 16,
+        "jackup_governance_mode": "stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_jackup_pods": 8,
+        "jacking_preloading_and_heavylift_weather_window_gain_pct": 5.8,
+        "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": 8.4,
+        "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": 154.0,
+        "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": 1.5,
+        "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": 196.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 3.8,
+        "offshore_jackup_spudcan_sscv_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -14748,5 +14810,52 @@
       "usc_boiler_turbine_flex_slo_met": false
     }
   },
-  "trace_sha256": "dbfea4e3ab17bbcd05f94971c8708e89d21fbc56ca266a365a09852fb463da96"
+  "demo_127_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox": {
+    "jackup_16_units": {
+      "jackup_and_sscv_units": 16,
+      "jackup_governance_mode": "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_jackup_pods": 8,
+      "jacking_preloading_and_heavylift_weather_window_gain_pct": 39.4,
+      "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": 54.3,
+      "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": 0.3,
+      "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": 0.0,
+      "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 0.0,
+      "offshore_jackup_spudcan_sscv_slo_met": true
+    },
+    "jackup_64_units": {
+      "jackup_and_sscv_units": 64,
+      "jackup_governance_mode": "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_jackup_pods": 32,
+      "jacking_preloading_and_heavylift_weather_window_gain_pct": 39.4,
+      "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": 54.3,
+      "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": 0.3,
+      "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": 0.0,
+      "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 0.0,
+      "offshore_jackup_spudcan_sscv_slo_met": true
+    },
+    "raw_jackup_16_units": {
+      "jackup_and_sscv_units": 16,
+      "jackup_governance_mode": "stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_jackup_pods": 8,
+      "jacking_preloading_and_heavylift_weather_window_gain_pct": 5.8,
+      "chord_rpd_bending_stress_and_hook_pendulum_swing_reduction_pct": 8.4,
+      "iso19905_api2c_sil3_preload_dump_and_aops_mops_interlock_ms": 154.0,
+      "unmitigated_punchthrough_leg_buckling_or_crane_boom_collapse_pct": 1.5,
+      "jackhouse_edge_laser_rpd_and_chord_fbg_cpt_loop_ms": 196.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 3.8,
+      "offshore_jackup_spudcan_sscv_slo_met": false
+    }
+  },
+  "trace_sha256": "8bf51005d2e83edd578ed738a95736cdc9daed71c4507982e89e13551a80800c"
 }

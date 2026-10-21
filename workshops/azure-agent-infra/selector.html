@@ -539,6 +539,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(124)">125. 超深水海底油气/氢氨管道铺设船 (2,500–3,500m J-Lay / S-Lay / Reel-Lay 铺管船 · 600–2,000t 四履带张紧器与托管架/J型塔)、悬垂段触地点 (TDP) 弹塑性椭圆化与传播屈曲 PINN-MPC、全自动相控阵超声 (AUT) 环焊缝/OFDR 光纤应变监测及 DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3 湿屈曲弃管绞车 (A&amp;R Winch) 与张紧器防滑压溃硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(125)">126. 超高水头冲击式 (Pelton 500–1,800m 六喷嘴水斗式) 与巨型混流式 (Francis 600–1,200 MW 单机) 水轮发电机组、水斗/转轮空化剥蚀 (Cavitation Pitting) 与引水压力钢管水锤 (Water Hammer) PINN-MPC、100 kHz 声发射 (AE)/定转子气隙不平衡磁拉力 (UMP) 监测及 IEEE C37.102 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3 折向器 (Jet Deflector) 毫秒级切入与主进水球阀 (MIV) 防飞逸硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(126)">127. 超超临界 (USC 620–650°C / 30–35 MPa) 与 700°C 先进超超临界 (A-USC) 百万千瓦级灵活性调峰掺烧生物质/绿氨及燃烧后碳捕集 (PCC) 锅炉-汽轮机组、四角切圆火焰涡流与过热器/再热器氧化皮剥落阻塞蠕变疲劳 PINN-MPC、TDLAS 一氧化碳/氧量/SCR 氨逃逸与声学温度场层析及 NFPA 85 / ASME BPVC Sec I / IEEE C37.106 / IEC 61508 SIL-3 主燃料跳闸 (MFT)、炉膛防内爆/外爆与 100% FCB 快速甩负荷硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(127)">128. 自升式海洋钻井/风电安装平台 (120–180m 水深桁架桩腿齿轮齿条升降系统) 与超大型半潜式起重船 (5,000–20,000t SSCV)、桩靴“上硬下软”地层穿刺 (Spudcan Punch-Through) 土力学与动态压载水防倾覆 PINN-MPC、齿条相位差 (RPD)/主弦杆 FBG 应变监测及 SNAME T&amp;R 5-5A / ISO 19905-1 / DNV-OS-C104 / API Spec 2C / IEC 61508 SIL-3 桩靴穿刺压载快排与起重机超力矩自动过载保护 (AOPS/MOPS) 硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3421,6 +3422,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 127: Offshore Jack-Up Spudcan Punch-Through & SSCV Heavy-Lift Crane SNAME 5-5A / ISO 19905-1 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 127 · OFFSHORE JACK-UP RIG (120–180 m TRUSS LEG SPUDCAN PUNCH-THROUGH) &amp; 20,000 t SEMI-SUBMERSIBLE CRANE VESSEL (SSCV) ANTI-HEELING PINN-MPC &amp; SNAME T&amp;R 5-5A / ISO 19905-1 / DNV-OS-C104 / API SPEC 2C / IEC 61508 SIL-3 PRELOAD DUMP &amp; CRANE AOPS/MOPS INTERLOCK SIZER</span>
+    <h2>全自主自升式海洋钻井/20 MW+ 海上风电安装平台（<code>120–180 m</code> 水深桁架桩腿齿轮齿条升降系统）与超大型半潜式起重船（<code>5,000–20,000 t SSCV</code>）、桩靴“上硬下软”地层穿刺（<code>Spudcan Punch-Through</code>）土力学与动态压载水防倾覆 <code>PINN-MPC</code>、齿条相位差（<code>RPD</code>）/主弦杆 <code>FBG</code> 应变及 <code>SNAME T&amp;R 5-5A / ISO 19905-1 / DNV-OS-C104 / API Spec 2C / IEC 61508 SIL-3</code> 桩靴穿刺压载快排与起重机超力矩自动过载保护（<code>AOPS/MOPS</code>）硬联锁测算器</h2>
+    <div class="sub">量化在 <code>8 – 64</code> 座深水自升式钻井/风电安装平台（<code>120–180 m</code> 水深，3/4 条超高强钢 <code>690–890 MPa</code> 三角桁架桩腿，每条桩腿配备 <code>18–36</code> 台变频爬升齿轮箱啮合双面齿条，单腿预压载力高达 <code>12,000–22,000 t</code>）与双臂 <code>2 × 10,000 t</code> 超大型半潜式起重船（<code>SSCV</code>）集群下，海底“上硬砂层（Dense Sand Crust）-下软黏土（Soft Clay）”层状海床大变形欧拉-拉格朗日耦合（<code>CEL</code>）桩靴穿刺剪切破坏面（Spudcan Punch-Through Shear Plug）、桁架主弦杆（Chord）齿条相位差（Rack Phase Difference, <code>RPD</code>）P-Delta 二阶弯矩放大与万吨吊装回转-船体六自由度水动力-高速压载水/调倾水舱（Anti-Heeling Rapid Ballast）耦合方程 <code>PINN</code> + 四腿 72–144 台爬升电机同步转矩分配、贴底分级预压载（Preloading）与双主钩三维防摆主动升沉补偿（<code>3D Anti-Pendulum AHC</code>）<code>MPC</code>（平台插桩预压载效率与万吨级风机/导管架浮态吊装作业气象窗口增益 <code>+39.4%</code>、主弦杆齿条相位差 <code>RPD</code> 附加弯矩与吊钩三维钟摆晃动幅值削减 <code>-54.3%</code>）、<code>SNAME T&amp;R 5-5A / ISO 19905-1 / DNV-OS-C104 / API Spec 2C / IEC 61508 SIL-3</code> 预压载期间单腿突然击穿硬砂层发生数米级灾难性瞬态沉降（Punch-Through，船体急剧倾斜使其余桩腿承受超过屈服极限的巨额横向弯矩引发整座平台折腿倾覆）或 <code>SSCV</code> 吊装脱钩/海床吸附力突释（Suction Break-Out）诱发吊臂后翻与船体瞬间大角度横倾时亚毫秒级 <code>单腿沉降速率 &gt; 0.15 m/s 或船体倾角 &gt; 0.8° 硬触发压载舱大口径海底门快排阀（Rapid Preload Dump）+ 全船爬升齿轮箱同步电磁抱闸与液压固桩锁紧装置（Fixation Chocks）毫秒级分担剪力 + 起重机自动过载保护（AOPS）与手动过载释放（MOPS）恒张力紧急松钩卸荷</code> 硬联锁（<code>0.3 ms</code>，桩靴穿刺折腿倾覆或超大型起重船吊臂后翻/超力矩坍塌事故率 <code>0.0%</code>）与升降室/主弦杆端 <code>高精度激光齿条相位差（RPD &lt; ±3 mm）测量 + 爬升小齿轮齿根裂纹 100 kHz 声发射（AE）/主弦杆光纤光栅（FBG）弯矩与随桩孔压静力触探（Piezo-CPT）超前地层反演</code> 边缘推理（<code>0.3 ms</code>，海洋卫通 WAN 带宽削减 <code>99.5%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 自升式平台与万吨级半潜起重船规模 (Jack-Up Rigs &amp; Heavy-Lift SSCV Units): <strong id="lbl_jackup_units" style="color:var(--teal)">16</strong> Units</label>
+          <input type="range" id="rng_jackup_units" min="8" max="64" step="8" value="16" oninput="runOffshoreJackupSpudcanSscvLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 桩靴穿刺/防倾覆 PINN-MPC 与 ISO 19905-1 / API 2C / SIL-3 快排及 AOPS 硬联锁模式 (Jack-Up &amp; SSCV Governance Mode)</label>
+          <select id="sel_jackup_mode" onchange="runOffshoreJackupSpudcanSscvLab()">
+            <option value="pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge" selected>CEL 桩靴穿刺土力学与主弦杆 RPD/万吨起重船动态调倾 PINN + 爬升电机转矩均衡与 3D 防摆 AHC MPC (+39.4% 插桩预压载效率与浮吊作业窗口 / -54.3% 弦杆 RPD 附加弯矩与吊钩摆幅) + ISO 19905-1 / API 2C SIL-3 0.3ms 穿刺压载快排与起重机 AOPS/MOPS 硬联锁 + 0.3ms 激光 RPD/小齿轮 AE 边缘 (推荐)</option>
+            <option value="stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud">传统反模式：盲目分步注水压载与人工蝶阀调倾 (+5.8% 作业增益) + 无 0.3ms 穿刺快排与起重机 AOPS 液压卸荷联锁 (1.5% 桩靴突刺硬壳层引发单腿急速下陷折断其余桩腿倾覆、或海底脱离吸附突跳折断万吨吊臂风险) + 人工气泡水平仪与定期磁粉探伤 (3.8% 爬升小齿轮齿根疲劳断齿或桩靴局部冲刷倾斜漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="offshoreJackupSpudcanSscvOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5505,6 +5529,21 @@ resource uscBoilerTurbineSil3Pool 'Microsoft.ContainerService/managedClusters/ag
       'aksclaw.io/boiler-edge-tdlas-co-nh3-acoustic-pyrometry': 'enabled-0.3ms-99.5pct-plant-wan-cut'
     }
   }
+}`,
+`// 128. Azure Bicep: Offshore Jack-Up Rig (120-180 m Truss Leg Spudcan Punch-Through) & 20,000 t Semi-Submersible Crane Vessel (SSCV), Spudcan Geomechanics & Dynamic Anti-Heeling PINN-MPC & SNAME T&R 5-5A / ISO 19905-1 / API Spec 2C / SIL-3 Preload Dump & Crane AOPS/MOPS Interlock Pool
+resource offshoreJackupSscvSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'jkupsscvs3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (CEL Spudcan Sand-Over-Clay Punch-Through Geomechanics, Truss Chord RPD P-Delta & SSCV 6-DOF Anti-Heeling PINN + Multi-Pinion Torque Sharing & 3D Anti-Pendulum AHC MPC + Laser RPD, Pinion AE & Piezo-CPT Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'offshore-jackup-spudcan-punchthrough-sscv-sname55a-sil3-agent'
+      'aksclaw.io/pinn-mpc-spudcan-punchthrough-sscv-antiheeling': 'enabled-39.4pct-jacking-heavylift-window-gain-54.3pct-chord-rpd-pendulum-swing-cut'
+      'aksclaw.io/iso19905-api2c-sil3-preload-dump-aops-mops-interlock': 'enforced-0.3ms-zero-leg-buckling-capsizing-or-boom-collapse'
+      'aksclaw.io/jackhouse-edge-laser-rpd-chord-fbg-cpt': 'enabled-0.3ms-99.5pct-satcom-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -5732,6 +5771,30 @@ runLngMembraneContainmentLab();
 runSubseaPipelayJlaySlayLab();
 runPeltonFrancisHydroTurbineLab();
 runUscBoilerTurbineFlexLab();
+runOffshoreJackupSpudcanSscvLab();
+
+function runOffshoreJackupSpudcanSscvLab() {
+  const units = parseInt(document.getElementById('rng_jackup_units').value, 10);
+  const mode = document.getElementById('sel_jackup_mode').value;
+  document.getElementById('lbl_jackup_units').textContent = units.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(units / 8));
+  const pods = units <= 8 ? Math.max(2, Math.min(8, units)) : Math.max(8, Math.floor(units / 2));
+  const ok = mode === 'pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge';
+  const mpcStr = ok ? "CEL 上硬砂下软土桩靴穿刺剪切塞、890MPa 主弦杆 RPD 二阶弯矩与 20,000t 起重船调倾水舱 PINN + 144 台爬升齿轮箱转矩均衡与双钩 3D 防摆 AHC MPC · 插桩预压载与万吨浮吊作业窗口 +39.4% · 弦杆 RPD 附加弯矩与吊钩钟摆幅值 -54.3%" : "传统盲目分步注水压载与人工蝶阀调倾 · 仅 +5.8% 作业增益 / -8.4% 应力削减 (各爬升小齿轮啮合间隙与海床刚度不均引发主弦杆严重偏载，且 3.8% 小齿轮齿根疲劳微裂纹或桩靴冲刷掏空漏检)";
+  const sil3Str = ok ? "0.3 ms SNAME T&R 5-5A / ISO 19905-1 / DNV-OS-C104 / API Spec 2C / IEC 61508 SIL-3 桩靴穿刺压载快排 (Rapid Preload Dump) + 固桩锁紧装置 (Fixation Chocks) 均载与起重机自动过载保护 (AOPS/MOPS) 硬联锁 · 0.0% 折腿倾覆或吊臂坍塌违例" : "无 0.3ms 穿刺快排与起重机 AOPS 恒张力释放硬联锁 (154.0 ms 人工监测滞后) · 1.5% 桩靴击穿硬壳层瞬间下陷 4-6m 导致船体急倾折断其余桩腿或水下构件突脱海床吸附力反抽折断吊臂风险";
+  const edgeStr = ok ? "0.3 ms 升降室端高精度激光齿条相位差 (RPD < ±3 mm) + 爬升小齿轮齿根 100 kHz 声发射 (AE) / 主弦杆 FBG 弯矩与随桩孔压静力触探 (Piezo-CPT) 边缘 (-99.5% 海洋卫通 WAN 带宽) · 0.0% 齿轮断齿或桩靴偏心穿刺漏检" : "196.0 ms 船体宏观倾角仪与航次后磁粉探伤 · 无法在桩靴底部剪切带孔隙水压陡降前预判穿刺失稳，也无法拦截单颗爬升小齿轮过载咬死引发的连锁断齿滑腿";
+
+  document.getElementById('offshoreJackupSpudcanSscvOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 桩靴穿刺折腿倾覆或万吨起重船吊臂超力矩坍塌风险 · 3.8% 爬升小齿轮齿根疲劳裂纹或桩靴冲刷倾斜漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个海工升降/重吊孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>升降室端激光齿条相位差 (RPD)、小齿轮声发射 (AE) 与随桩孔压静力触探 (Piezo-CPT) 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runUscBoilerTurbineFlexLab() {
   const units = parseInt(document.getElementById('rng_usc_units').value, 10);

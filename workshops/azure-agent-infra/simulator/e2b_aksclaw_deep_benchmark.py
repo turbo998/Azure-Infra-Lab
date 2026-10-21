@@ -139,6 +139,7 @@ from agent_infra_sizer import (
     simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox,
     simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox,
     simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox,
+    simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1131,6 +1132,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox(32, "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge"),
         simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox(8, "pid_coordinated_ccs_zirconia_o2_manual_sootblowing_cloud"),
     ]
+    offshore_jackup_spudcan_sscv_profiles: List[Dict[str, object]] = [
+        simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(8, "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"),
+        simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(16, "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"),
+        simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(64, "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"),
+        simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(16, "stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1258,6 +1265,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "subsea_pipelay_jlay_slay_profiles": subsea_pipelay_jlay_slay_profiles,
         "pelton_francis_hydro_turbine_profiles": pelton_francis_hydro_turbine_profiles,
         "usc_boiler_turbine_flex_profiles": usc_boiler_turbine_flex_profiles,
+        "offshore_jackup_spudcan_sscv_profiles": offshore_jackup_spudcan_sscv_profiles,
     }
 
 
