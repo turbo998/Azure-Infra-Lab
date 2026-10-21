@@ -131,6 +131,7 @@ from agent_infra_sizer import (
     simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox,
     simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox,
     simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox,
+    simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2550,6 +2551,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct"], 3.0)
         self.assertTrue(gov["subsea_pipelay_jlay_slay_slo_met"])
         self.assertFalse(raw["subsea_pipelay_jlay_slay_slo_met"])
+
+    def test_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox(self) -> None:
+        gov = simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox(
+            16, "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge"
+        )
+        raw = simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox(
+            16, "static_cam_curve_governor_linear_needle_ramp_periodic_ndt_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_hydro_pods"], 8)
+        self.assertEqual(gov["weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct"], 38.7)
+        self.assertEqual(gov["cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct"], 53.4)
+        self.assertEqual(gov["iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct"], 1.0)
+        self.assertEqual(gov["turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct"], 3.0)
+        self.assertTrue(gov["pelton_francis_hydro_turbine_slo_met"])
+        self.assertFalse(raw["pelton_francis_hydro_turbine_slo_met"])
 
 
 if __name__ == "__main__":

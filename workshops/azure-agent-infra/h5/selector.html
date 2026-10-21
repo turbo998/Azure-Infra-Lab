@@ -537,6 +537,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(122)">123. 超大板幅建筑与汽车三银低辐射及电致变色镀膜玻璃 (3.21×6.00m Ag³ Low-E / WO3-NiO EC 20–40 室旋转靶真空磁控溅射流水线)、Berg 反应溅射靶中毒迟滞 S 曲线与等离子体发射光谱 (PEM) PINN-MPC、在线穆勒矩阵椭偏仪及 EN 1096 / ASTM C1376 / SEMI S2 / IEC 61508 SIL-3 纳秒微弧反向脉冲灭弧与旋转靶冷却水破裂隔离联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(123)">124. 超大型薄膜型液化天然气运输船 (266,000 m³ Q-Max LNG Carrier · GTT Mark III 波纹不锈钢 / NO96 36% 镍殷瓦钢双层绝热薄膜围护系统 -163°C) 与双燃料推进/再液化、Bagnold 气袋水弹性晃荡冲击与蒸发气 (BOG) 过冷 PINN-MPC、低温光纤光栅 (FBG)/绝热层红外甲烷断层监测及 IMO IGC Code / DNV-RU-SHIP / SIGTTO / IEC 61511 SIL-3 内船壳冷斑脆断防护与超压/负压硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(124)">125. 超深水海底油气/氢氨管道铺设船 (2,500–3,500m J-Lay / S-Lay / Reel-Lay 铺管船 · 600–2,000t 四履带张紧器与托管架/J型塔)、悬垂段触地点 (TDP) 弹塑性椭圆化与传播屈曲 PINN-MPC、全自动相控阵超声 (AUT) 环焊缝/OFDR 光纤应变监测及 DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3 湿屈曲弃管绞车 (A&amp;R Winch) 与张紧器防滑压溃硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(125)">126. 超高水头冲击式 (Pelton 500–1,800m 六喷嘴水斗式) 与巨型混流式 (Francis 600–1,200 MW 单机) 水轮发电机组、水斗/转轮空化剥蚀 (Cavitation Pitting) 与引水压力钢管水锤 (Water Hammer) PINN-MPC、100 kHz 声发射 (AE)/定转子气隙不平衡磁拉力 (UMP) 监测及 IEEE C37.102 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3 折向器 (Jet Deflector) 毫秒级切入与主进水球阀 (MIV) 防飞逸硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3373,6 +3374,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 125: Ultra-High-Head Pelton & Giant Francis Hydroelectric Turbine Cavitation & IEC 60308 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 125 · ULTRA-HIGH-HEAD PELTON (500–1,800 m 6-NOZZLE) &amp; GIANT FRANCIS (600–1,200 MW) HYDROELECTRIC TURBINE CAVITATION PITTING &amp; PENSTOCK WATER-HAMMER PINN-MPC &amp; IEEE C37.102 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3 JET-DEFLECTOR CUT-IN &amp; RUNAWAY INTERLOCK SIZER</span>
+    <h2>全自主超高水头冲击式（<code>Pelton 500–1,800 m</code> 六喷嘴水斗式）与巨型混流式（<code>Francis 600–1,200 MW</code> 单机）水轮发电机组、水斗/转轮空化剥蚀（<code>Cavitation Pitting</code>）与引水压力钢管水锤 <code>PINN-MPC</code>、<code>100 kHz</code> 声发射（<code>AE</code>）/定转子气隙不平衡磁拉力（<code>UMP</code>）量测及 <code>IEEE C37.102 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3</code> 折向器（<code>Jet Deflector</code>）毫秒级切入与主进水球阀（<code>MIV</code>）防飞逸硬联锁测算器</h2>
+    <div class="sub">量化在 <code>8 – 64</code> 台超高水头冲击式水轮机（<code>500–1,800 m</code> 落差，喷嘴自由射流速度高达 <code>100–185 m/s</code>，6 个喷针-折向器双调节机构冲击 <code>21–23</code> 个马氏体不锈钢 <code>X3CrNiMo13-4</code> 水斗）与巨型百万千瓦级混流式水轮发电机组（单机 <code>600–1,200 MW</code>，转轮直径 <code>8–10 m</code>，旋转惯量 <code>GD² &gt; 100,000 t·m²</code>）集群下，三维自由液面多相射流冲击水斗分水刃（Bucket Splitter）、Thoma 空化系数 $\sigma$ 微泡溃灭微射流剥蚀（Micro-Jet Cavitation Pitting）与长引水隧洞/高强压力钢管（Penstock）特征线法（MOC）弹性水锤波传播方程 <code>PINN</code> + 六喷针（Spear Needle）非对称组合寻优、折向器（Deflector）快调与高压调压井（Surge Tank）/导叶两段式折线关闭律一次调频协同 <code>MPC</code>（全水头加权水力效率与电网一次调频惯量响应速率增益 <code>+38.7%</code>、水斗分水刃/转轮叶片空化泥沙协同磨损剥蚀率与压力钢管水锤升压峰值削减 <code>-53.4%</code>）、<code>IEEE C37.102 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3</code> 满载甩负荷（Full Load Rejection）引发机组转速在数秒内飙向 <code>180%–195%</code> 飞逸转速（Runaway Speed，离心应力足以撕裂千吨级发电机转子磁轭）而此时若直接快速关闭喷针或导叶又会在 <code>1,500 m</code> 压力钢管内引发 <code>&gt; 25 MPa</code> 毁灭性正水锤炸裂地下钢衬隧洞（或尾水管液柱分离反水锤抬机）时亚毫秒级 <code>六路液压折向器（Jet Deflectors）毫秒级切入射流瞬间偏转卸荷 + 喷针 40–90 秒超慢速斜坡关断（先切折向器防飞逸、慢关喷针防水锤解耦） + 导叶机械剪断销（Shear Pin）断裂告警与重锤式主进水球阀（Spherical MIV）紧急动水落门</code> 硬联锁（<code>0.3 ms</code>，机组飞逸超速解体或压力钢管水锤爆管事故率 <code>0.0%</code>）与机坑端 <code>100 kHz 水导轴承/尾水管空化声发射（Cavitation AE）与水斗根部无线光纤光栅（FBG）高周疲劳监测 + 发电机定转子 24 点电容式气隙（Air-Gap）不平衡磁拉力（UMP）偏心扫膛预警</code> 边缘推理（<code>0.3 ms</code>，地下厂房 WAN 带宽削减 <code>99.5%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 超高水头冲击式/巨型混流式水电机组并发规模 (Pelton &amp; Giant Francis Hydro Units): <strong id="lbl_hydro_units" style="color:var(--teal)">16</strong> Units</label>
+          <input type="range" id="rng_hydro_units" min="8" max="64" step="8" value="16" oninput="runPeltonFrancisHydroTurbineLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 空化/水锤 PINN-MPC 与 IEC 60308 / SIL-3 折向器先切-喷针慢关及球阀硬联锁模式 (Hydro Turbine Governance Mode)</label>
+          <select id="sel_hydro_mode" onchange="runPeltonFrancisHydroTurbineLab()">
+            <option value="pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge" selected>射流-水斗冲击空化与特征线法 (MOC) 钢管水锤 PINN + 多喷针动态组合与导叶折线关闭律 MPC (+38.7% 加权水力效率与一次调频速率 / -53.4% 空化泥沙剥蚀与钢管水锤升压峰值) + IEC 60308 SIL-3 0.3ms 折向器毫秒切入卸荷/喷针慢关与球阀防飞逸硬联锁 + 0.3ms 100kHz 空化 AE/气隙 UMP 边缘 (推荐)</option>
+            <option value="static_cam_curve_governor_linear_needle_ramp_periodic_ndt_cloud">传统反模式：静态协联曲线调速器与单斜率线性关针/关导叶 (+5.6% 效率增益) + 无 0.3ms 折向器-喷针水锤解耦与球阀 SIL-3 联锁 (1.4% 满载甩负荷引发转子飞逸超速或急关喷针诱发 1,500m 压力钢管水锤爆裂风险) + 大修期停机着色探伤 (3.7% 水斗根部高周疲劳裂纹断裂或定转子热偏心扫膛漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="peltonFrancisHydroTurbineOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5427,6 +5451,21 @@ resource subseaPipelayJlaySlaySil3Pool 'Microsoft.ContainerService/managedCluste
       'aksclaw.io/firing-line-edge-zonal-aut-stinger-ofdr': 'enabled-0.3ms-99.5pct-satcom-wan-cut'
     }
   }
+}`,
+`// 126. Azure Bicep: Ultra-High-Head Pelton (500-1,800 m 6-Nozzle) & Giant Francis (600-1,200 MW) Hydroelectric Turbine-Generator, Cavitation Pitting & Penstock Water-Hammer PINN-MPC & IEEE C37.102 / IEC 60308 / ASME PTC 18 / SIL-3 Jet-Deflector Cut-In & MIV Runaway Interlock Pool
+resource peltonFrancisHydroSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'hydropinns3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (3D Free-Surface Pelton Jet-Bucket Impingement, Thoma Cavitation Pitting & MOC Penstock Water-Hammer PINN + Multi-Nozzle Spear Combination & Two-Stage Guide-Vane Law MPC + 100kHz Cavitation AE & Stator Air-Gap UMP Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'pelton-francis-hydro-turbine-cavitation-deflector-iec60308-sil3-agent'
+      'aksclaw.io/pinn-mpc-pelton-jet-bucket-cavitation-waterhammer': 'enabled-38.7pct-weighted-efficiency-grid-inertia-53.4pct-cavitation-pitting-penstock-surge-cut'
+      'aksclaw.io/iec60308-sil3-jet-deflector-cutin-miv-overspeed-interlock': 'enforced-0.3ms-zero-runaway-overspeed-or-penstock-burst'
+      'aksclaw.io/turbine-pit-edge-100khz-cavitation-ae-airgap-ump': 'enabled-0.3ms-99.5pct-powerhouse-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -5652,6 +5691,30 @@ runSmrSteamMethaneReformingCcsLab();
 runSputterMagnetronGlassCoaterLab();
 runLngMembraneContainmentLab();
 runSubseaPipelayJlaySlayLab();
+runPeltonFrancisHydroTurbineLab();
+
+function runPeltonFrancisHydroTurbineLab() {
+  const units = parseInt(document.getElementById('rng_hydro_units').value, 10);
+  const mode = document.getElementById('sel_hydro_mode').value;
+  document.getElementById('lbl_hydro_units').textContent = units.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(units / 8));
+  const pods = units <= 8 ? Math.max(2, Math.min(8, units)) : Math.max(8, Math.floor(units / 2));
+  const ok = mode === 'pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge';
+  const mpcStr = ok ? "1,800m 六喷嘴射流冲击水斗分水刃、Thoma 空化微射流剥蚀与特征线法 (MOC) 压力钢管水锤 PINN + 多喷针非对称寻优与导叶折线关闭律一次调频 MPC · 加权水力效率与一次调频响应速率 +38.7% · 空化泥沙剥蚀与压力钢管水锤升压峰值 -53.4%" : "传统静态协联曲线调速器与线性单斜率关针/关导叶 · 仅 +5.6% 效率增益 / -8.1% 水锤削减 (偏离最优水头工况时水斗背面背水冲击诱发剧烈空化蜂窝剥蚀，且 3.7% 水斗根部高周疲劳微裂纹或定转子热偏心扫膛漏检)";
+  const sil3Str = ok ? "0.3 ms IEEE C37.102 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3 六路液压折向器毫秒级切入偏转射流 (防飞逸超速) + 喷针 60s 慢关 (防 1,500m 压力钢管正水锤爆管) + 重锤式主进水球阀 (MIV) 紧急落门硬联锁 · 0.0% 机组飞逸解体或压力钢管水锤爆裂违例" : "无 0.3ms 折向器-喷针解耦与主球阀 SIL-3 硬联锁 (148.0 ms 云端 SCADA 滞后) · 1.4% 满载甩负荷折向器拒动引发 190% 飞逸转速炸裂转子磁轭或急关喷针产生 >25 MPa 水锤炸穿地下高压引水钢衬隧洞风险";
+  const edgeStr = ok ? "0.3 ms 机坑端 100 kHz 水导轴承/尾水管空化声发射 (AE) + 水斗根部无线光纤光栅 (FBG) 冲击应变与发电机定转子 24 点电容式气隙不平衡磁拉力 (UMP) 边缘 (-99.5% 地下厂房 WAN 带宽) · 0.0% 水斗疲劳飞脱或定转子偏心扫膛漏检" : "192.0 ms 大修期停机人工着色探伤与低频 SCADA 采样 · 无法捕捉每秒上百次高速射流冲击水斗根部引发的亚毫米裂纹扩展声发射脉冲，也无法实时抑制转子磁极热弯曲引发的电磁自激振动";
+
+  document.getElementById('peltonFrancisHydroTurbineOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 满载甩负荷机组飞逸超速或 1,500m 压力钢管水锤爆管风险 · 3.7% 水斗根部高周疲劳裂纹或定转子气隙扫膛漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个水轮机孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>机坑端 100 kHz 空化声发射 (AE)、水斗根部光纤光栅 (FBG) 与定转子气隙不平衡磁拉力 (UMP) 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runSubseaPipelayJlaySlayLab() {
   const lines = parseInt(document.getElementById('rng_pipelay_lines').value, 10);

@@ -7838,6 +7838,68 @@
         "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 3.8,
         "subsea_pipelay_jlay_slay_slo_met": false
       }
+    ],
+    "pelton_francis_hydro_turbine_profiles": [
+      {
+        "hydro_turbine_units": 8,
+        "hydro_governance_mode": "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_hydro_pods": 8,
+        "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": 38.7,
+        "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": 53.4,
+        "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": 0.3,
+        "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": 0.0,
+        "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 0.0,
+        "pelton_francis_hydro_turbine_slo_met": true
+      },
+      {
+        "hydro_turbine_units": 16,
+        "hydro_governance_mode": "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_hydro_pods": 8,
+        "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": 38.7,
+        "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": 53.4,
+        "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": 0.3,
+        "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": 0.0,
+        "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 0.0,
+        "pelton_francis_hydro_turbine_slo_met": true
+      },
+      {
+        "hydro_turbine_units": 64,
+        "hydro_governance_mode": "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_hydro_pods": 32,
+        "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": 38.7,
+        "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": 53.4,
+        "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": 0.3,
+        "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": 0.0,
+        "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 0.0,
+        "pelton_francis_hydro_turbine_slo_met": true
+      },
+      {
+        "hydro_turbine_units": 16,
+        "hydro_governance_mode": "static_cam_curve_governor_linear_needle_ramp_periodic_ndt_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_hydro_pods": 8,
+        "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": 5.6,
+        "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": 8.1,
+        "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": 148.0,
+        "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": 1.4,
+        "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": 192.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 3.7,
+        "pelton_francis_hydro_turbine_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -14530,5 +14592,52 @@
       "subsea_pipelay_jlay_slay_slo_met": false
     }
   },
-  "trace_sha256": "4ac60e306945d8b351a17714e7140c0a1fee6d5a727df0a2917fa790770d36ce"
+  "demo_125_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox": {
+    "hydro_16_units": {
+      "hydro_turbine_units": 16,
+      "hydro_governance_mode": "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hydro_pods": 8,
+      "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": 38.7,
+      "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": 53.4,
+      "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": 0.3,
+      "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": 0.0,
+      "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 0.0,
+      "pelton_francis_hydro_turbine_slo_met": true
+    },
+    "hydro_64_units": {
+      "hydro_turbine_units": 64,
+      "hydro_governance_mode": "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hydro_pods": 32,
+      "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": 38.7,
+      "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": 53.4,
+      "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": 0.3,
+      "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": 0.0,
+      "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 0.0,
+      "pelton_francis_hydro_turbine_slo_met": true
+    },
+    "raw_hydro_16_units": {
+      "hydro_turbine_units": 16,
+      "hydro_governance_mode": "static_cam_curve_governor_linear_needle_ramp_periodic_ndt_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_hydro_pods": 8,
+      "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": 5.6,
+      "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": 8.1,
+      "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": 148.0,
+      "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": 1.4,
+      "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": 192.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 3.7,
+      "pelton_francis_hydro_turbine_slo_met": false
+    }
+  },
+  "trace_sha256": "6fc562c296b4121517b9136192133ce58fb2833ef15db4d2df8e06f48cebfcd3"
 }

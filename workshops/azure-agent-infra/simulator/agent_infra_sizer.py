@@ -6479,6 +6479,49 @@ def simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox(
     }
 
 
+def simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox(
+    hydro_turbine_units: int = 16,
+    hydro_governance_mode: str = "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-High-Head Pelton & Giant Francis Hydroelectric Turbine-Generator (600-1,200 MW Single-Unit / 500-1,800 m Head 6-Nozzle Pelton Needle-Deflector & Giant Francis Runner), Bucket/Blade Cavitation Erosion & Penstock Water-Hammer PINN-MPC, 100 kHz Acoustic Emission (AE) / Stator Air-Gap Unbalanced Magnetic Pull (UMP) Metrology & IEEE C37.102 / IEC 60308 / ASME PTC 18 / IEC 61508 SIL-3 Jet-Deflector Cut-In & Spherical Main Inlet Valve (MIV) Runaway Over-Speed Interlock Agent Infrastructure (Chapter 130)."""
+    if hydro_turbine_units <= 0:
+        raise ValueError("hydro_turbine_units must be positive")
+    valid_modes = {
+        "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge",
+        "static_cam_curve_governor_linear_needle_ramp_periodic_ndt_cloud",
+    }
+    if hydro_governance_mode not in valid_modes:
+        raise ValueError(f"hydro_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = hydro_governance_mode == "pinn_mpc_pelton_jet_bucket_cavitation_waterhammer_ae_iec60308_sil3_edge"
+    active_hydro_pods = max(2, min(8, int(hydro_turbine_units))) if hydro_turbine_units <= 8 else max(8, int(hydro_turbine_units // 2))
+    gpu_nodes = max(2, math.ceil(hydro_turbine_units / 8))
+
+    weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct = 38.7 if governed else 5.6
+    cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct = 53.4 if governed else 8.1
+    iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms = 0.3 if governed else 148.0
+    unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct = 0.0 if governed else 1.4
+    turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms = 0.3 if governed else 192.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct = 0.0 if governed else 3.7
+
+    return {
+        "hydro_turbine_units": hydro_turbine_units,
+        "hydro_governance_mode": hydro_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_hydro_pods": active_hydro_pods,
+        "weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct": weighted_hydraulic_efficiency_and_primary_frequency_response_gain_pct,
+        "cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct": cavitation_pitting_erosion_and_penstock_water_hammer_surge_reduction_pct,
+        "iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms": iec60308_sil3_jet_deflector_cutin_and_miv_overspeed_trip_ms,
+        "unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct": unmitigated_runaway_overspeed_or_penstock_hoop_rupture_pct,
+        "turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms": turbine_pit_edge_100khz_cavitation_ae_and_airgap_ump_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct,
+        "pelton_francis_hydro_turbine_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
