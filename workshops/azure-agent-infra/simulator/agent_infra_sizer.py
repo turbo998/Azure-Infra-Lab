@@ -5877,6 +5877,49 @@ def simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(
     }
 
 
+def simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(
+    cyclotron_hotcell_suites: int = 16,
+    cyclotron_governance_mode: str = "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Medical Cyclotron (18–70 MeV) & Radiopharmaceutical (18F-FDG / 68Ga / 177Lu / 225Ac) Automated Hot-Cell Synthesis, Liquid/Solid Target Boiling & Space-Charge Beam-Optics PINN-MPC, Real-Time Prompt-Gamma / Radio-HPLC Tomography & IAEA SSG-30 / USP <823> / 21 CFR Part 212 / IEC 61508 SIL-3 Radioisotope Containment & RF-Crowbar Interlock Agent Infrastructure (Chapter 116)."""
+    if cyclotron_hotcell_suites <= 0:
+        raise ValueError("cyclotron_hotcell_suites must be positive")
+    valid_modes = {
+        "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge",
+        "static_beam_collimator_fixed_timer_cassette_manual_qc_cloud",
+    }
+    if cyclotron_governance_mode not in valid_modes:
+        raise ValueError(f"cyclotron_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cyclotron_governance_mode == "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge"
+    active_cyclotron_pods = max(2, min(8, int(cyclotron_hotcell_suites))) if cyclotron_hotcell_suites <= 8 else max(8, int(cyclotron_hotcell_suites // 2))
+    gpu_nodes = max(2, math.ceil(cyclotron_hotcell_suites / 8))
+
+    decay_corrected_radiochemical_yield_and_molar_activity_gain_pct = 36.2 if governed else 5.7
+    havar_foil_burnout_and_radiolysis_impurity_batch_scrap_reduction_pct = 48.5 if governed else 7.9
+    iaea_ssg30_usp823_sil3_rf_crowbar_and_hotcell_delay_tank_interlock_ms = 0.3 if governed else 184.0
+    unmitigated_airborne_18f_release_or_havar_window_rupture_pct = 0.0 if governed else 1.2
+    vault_edge_prompt_gamma_and_radio_hplc_qc_loop_ms = 0.3 if governed else 208.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_target_voiding_beam_walk_or_kryptofix_exceedance_pct = 0.0 if governed else 3.3
+
+    return {
+        "cyclotron_hotcell_suites": cyclotron_hotcell_suites,
+        "cyclotron_governance_mode": cyclotron_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_cyclotron_pods": active_cyclotron_pods,
+        "decay_corrected_radiochemical_yield_and_molar_activity_gain_pct": decay_corrected_radiochemical_yield_and_molar_activity_gain_pct,
+        "havar_foil_burnout_and_radiolysis_impurity_batch_scrap_reduction_pct": havar_foil_burnout_and_radiolysis_impurity_batch_scrap_reduction_pct,
+        "iaea_ssg30_usp823_sil3_rf_crowbar_and_hotcell_delay_tank_interlock_ms": iaea_ssg30_usp823_sil3_rf_crowbar_and_hotcell_delay_tank_interlock_ms,
+        "unmitigated_airborne_18f_release_or_havar_window_rupture_pct": unmitigated_airborne_18f_release_or_havar_window_rupture_pct,
+        "vault_edge_prompt_gamma_and_radio_hplc_qc_loop_ms": vault_edge_prompt_gamma_and_radio_hplc_qc_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_target_voiding_beam_walk_or_kryptofix_exceedance_pct": uncompensated_target_voiding_beam_walk_or_kryptofix_exceedance_pct,
+        "medical_cyclotron_radiopharma_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

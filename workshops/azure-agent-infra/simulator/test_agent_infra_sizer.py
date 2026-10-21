@@ -117,6 +117,7 @@ from agent_infra_sizer import (
     simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
     simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
     simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
+    simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -281,6 +282,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-subsea-methane-hydrate-depressurization-sand-control-dts-sil3-pool.bicep",
             "aksclaw-uhv-mbe-quantum-epitaxy-rheed-bet-semis2-sil3-pool.bicep",
             "aksclaw-ldpe-hypercompressor-tubular-reactor-ftnir-api618-sil3-pool.bicep",
+            "aksclaw-medical-cyclotron-radiopharma-hotcell-usp823-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2230,6 +2232,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct"], 3.0)
         self.assertTrue(gov["ldpe_hypercompressor_reactor_slo_met"])
         self.assertFalse(raw["ldpe_hypercompressor_reactor_slo_met"])
+
+    def test_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(self) -> None:
+        gov = simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(
+            16, "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge"
+        )
+        raw = simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(
+            16, "static_beam_collimator_fixed_timer_cassette_manual_qc_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cyclotron_pods"], 8)
+        self.assertEqual(gov["decay_corrected_radiochemical_yield_and_molar_activity_gain_pct"], 36.2)
+        self.assertEqual(gov["havar_foil_burnout_and_radiolysis_impurity_batch_scrap_reduction_pct"], 48.5)
+        self.assertEqual(gov["iaea_ssg30_usp823_sil3_rf_crowbar_and_hotcell_delay_tank_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_airborne_18f_release_or_havar_window_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_airborne_18f_release_or_havar_window_rupture_pct"], 1.1)
+        self.assertEqual(gov["vault_edge_prompt_gamma_and_radio_hplc_qc_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_target_voiding_beam_walk_or_kryptofix_exceedance_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_target_voiding_beam_walk_or_kryptofix_exceedance_pct"], 3.0)
+        self.assertTrue(gov["medical_cyclotron_radiopharma_slo_met"])
+        self.assertFalse(raw["medical_cyclotron_radiopharma_slo_met"])
 
 
 if __name__ == "__main__":

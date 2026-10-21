@@ -130,6 +130,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
     simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
     simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
+    simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -911,6 +912,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ldpe_16_trains": simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(16, "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge"),
             "ldpe_64_trains": simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(64, "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge"),
             "raw_ldpe_16_trains": simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(16, "fixed_peroxide_initiator_dosing_offline_rheometer_delayed_dump_cloud"),
+        },
+        "demo_111_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox": {
+            "cyclotron_16_suites": simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(16, "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge"),
+            "cyclotron_64_suites": simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(64, "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge"),
+            "raw_cyclotron_16_suites": simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(16, "static_beam_collimator_fixed_timer_cassette_manual_qc_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
