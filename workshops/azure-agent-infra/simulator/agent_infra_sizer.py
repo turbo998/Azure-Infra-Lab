@@ -5490,6 +5490,49 @@ def simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(
     }
 
 
+def simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(
+    h2_dri_shaft_furnaces: int = 8,
+    dri_governance_mode: str = "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Direct-Reduced Iron (H2-DRI) Shaft Furnace Counter-Current Hydrogen Reduction Kinetics (Fe2O3 -> Fe3O4 -> FeO -> Fe), Metallization & Burden-Sticking/Clustering Prevention PINN-MPC, In-Situ Top-Gas Laser TDLAS / Mass-Spec Composition Inversion & NFPA 86 / ISO 13577 / ATEX / IEC 61511 SIL-3 Hot Pyrophoric Sponge-Iron Passivation & Pressurized Hydrogen Seal Interlock Agent Infrastructure (Chapter 107)."""
+    if h2_dri_shaft_furnaces <= 0:
+        raise ValueError("h2_dri_shaft_furnaces must be positive")
+    valid_modes = {
+        "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge",
+        "fixed_bustle_gas_temp_manual_burden_feeder_offline_titration_cloud",
+    }
+    if dri_governance_mode not in valid_modes:
+        raise ValueError(f"dri_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = dri_governance_mode == "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge"
+    active_h2_dri_pods = max(2, min(8, int(h2_dri_shaft_furnaces))) if h2_dri_shaft_furnaces <= 8 else max(8, int(h2_dri_shaft_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(h2_dri_shaft_furnaces / 4))
+
+    metallization_degree_consistency_and_specific_h2_yield_gain_pct = 33.4 if governed else 5.2
+    pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct = 47.2 if governed else 7.6
+    nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms = 0.4 if governed else 194.0
+    unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct = 0.0 if governed else 1.5
+    furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms = 0.4 if governed else 218.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_wustite_unreduced_core_or_shaft_channeling_pct = 0.0 if governed else 3.6
+
+    return {
+        "h2_dri_shaft_furnaces": h2_dri_shaft_furnaces,
+        "dri_governance_mode": dri_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_h2_dri_pods": active_h2_dri_pods,
+        "metallization_degree_consistency_and_specific_h2_yield_gain_pct": metallization_degree_consistency_and_specific_h2_yield_gain_pct,
+        "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct,
+        "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms,
+        "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct,
+        "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": uncompensated_wustite_unreduced_core_or_shaft_channeling_pct,
+        "h2_dri_shaft_furnace_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

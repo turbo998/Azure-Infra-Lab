@@ -121,6 +121,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox,
     simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
     simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
+    simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -857,6 +858,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "soec_ceramic_16_modules": simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(16, "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"),
             "soec_ceramic_64_modules": simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(64, "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"),
             "raw_soec_ceramic_16_modules": simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(16, "constant_voltage_fixed_steam_ratio_open_loop_furnace_cloud"),
+        },
+        "demo_102_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox": {
+            "h2_dri_8_furnaces": simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(8, "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge"),
+            "h2_dri_32_furnaces": simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(32, "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge"),
+            "raw_h2_dri_8_furnaces": simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(8, "fixed_bustle_gas_temp_manual_burden_feeder_offline_titration_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

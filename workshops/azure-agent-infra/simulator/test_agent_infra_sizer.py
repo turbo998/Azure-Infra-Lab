@@ -108,6 +108,7 @@ from agent_infra_sizer import (
     simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox,
     simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
     simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
+    simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -263,6 +264,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-solid-state-sulfide-battery-dry-electrode-isobaric-h2s-ul9540a-sil3-pool.bicep",
             "aksclaw-pem-fuel-cell-ccm-ultrasonic-spray-bipolar-plate-saej2579-sil3-pool.bicep",
             "aksclaw-soec-high-temp-steam-co2-coelectrolysis-ceramic-iso22734-sil3-pool.bicep",
+            "aksclaw-h2-dri-shaft-furnace-hydrogen-reduction-clustering-nfpa86-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2023,6 +2025,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct"], 3.0)
         self.assertTrue(gov["soec_coelectrolysis_slo_met"])
         self.assertFalse(raw["soec_coelectrolysis_slo_met"])
+
+    def test_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(self) -> None:
+        gov = simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(
+            8, "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge"
+        )
+        raw = simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(
+            8, "fixed_bustle_gas_temp_manual_burden_feeder_offline_titration_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_h2_dri_pods"], 8)
+        self.assertEqual(gov["metallization_degree_consistency_and_specific_h2_yield_gain_pct"], 33.4)
+        self.assertEqual(gov["pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct"], 47.2)
+        self.assertEqual(gov["nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct"], 1.3)
+        self.assertEqual(gov["furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_wustite_unreduced_core_or_shaft_channeling_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_wustite_unreduced_core_or_shaft_channeling_pct"], 3.0)
+        self.assertTrue(gov["h2_dri_shaft_furnace_slo_met"])
+        self.assertFalse(raw["h2_dri_shaft_furnace_slo_met"])
 
 
 if __name__ == "__main__":

@@ -514,6 +514,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(99)">100. 下一代全固态硫化物锂金属电池 (ASSB / Li6PS5Cl) 干法电极 PTFE 纤维化辊压、温等静压 (50-300 MPa) 粘塑性-电化学枝晶 PINN-MPC、原位 25 MHz 超声渡越时间 (ToF) 检测及 UL 9540A / OSHA SIL-3 剧毒硫化氢 (H2S &lt; 0.8 ppm) 干房吹扫联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(100)">101. 下一代质子交换膜燃料电池 (PEMFC) 卷对卷催化剂涂层膜 (CCM) 超声雾化离聚物-铂碳分散、转印热压与金属双极板液压成形 PINN-MPC、原位 50 kHz XRF 铂载量/锁相红外针孔检测及 SAE J2579 / NFPA 2 SIL-3 跨膜氢渗透与铂碳催化自燃联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(101)">102. 下一代固体氧化物电解池 (SOEC / rSOC 750-850°C) 高温水蒸气/CO2 共电解合成气电堆、YSZ/GDC 陶瓷热应力与镍渗流粗化 PINN-MPC、原位 DRT-EIS 阻抗谱氧电极分层检测及 ISO 22734 / ASME / NFPA 2 SIL-3 高温 H2/CO 密封泄漏与热震联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(102)">103. 纯氢竖炉直接还原铁 (H2-DRI / HYBRIT) 逆流氢气还原动力学、金属化率与球团粘结悬料抑制 PINN-MPC、原位炉顶煤气 TDLAS/质谱与 79 GHz 料面雷达及 NFPA 86 / ISO 13577 SIL-3 高温自燃海绵铁钝化与动态氢密封腿联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2821,6 +2822,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 102: Autonomous Direct-Reduced Iron (H2-DRI) Shaft Furnace Counter-Current Hydrogen Reduction Kinetics, Metallization & Burden-Clustering Prevention PINN-MPC, In-Situ Top-Gas TDLAS / Mass-Spec & NFPA 86 / ISO 13577 SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 102 · DIRECT-REDUCED IRON (H2-DRI) SHAFT FURNACE COUNTER-CURRENT HYDROGEN REDUCTION KINETICS, METALLIZATION &amp; CLUSTERING PINN-MPC, IN-SITU TOP-GAS TDLAS / 79 GHz RADAR &amp; NFPA 86 / ISO 13577 SIL-3 INTERLOCK SIZER</span>
+    <h2>自主纯氢竖炉直接还原铁 (<code>H2-DRI / HYBRIT / MIDREX H2</code>) 逆流氢气还原动力学 (<code>Fe2O3 → Fe3O4 → FeO → Fe</code>)、金属化率与球团粘结悬料抑制 <code>PINN-MPC</code>、原位炉顶煤气 <code>TDLAS / 质谱</code> 反演及 <code>NFPA 86 / ISO 13577 / ATEX / IEC 61511 SIL-3</code> 高温自燃海绵铁钝化与动态氢密封联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 座两百万吨级纯氢直接还原竖炉规模下，三阶未反应收缩核 (<code>Unreacted Shrinking-Core</code>) 强吸热氢还原、<code>Ergun</code> 多孔竖炉逆流压降与铁晶须固相烧结粘结 (<code>Sintering Clustering</code>) <code>PINN</code> + 围管热氢温度/过渡区微量生物甲烷纳米渗碳钝化与底部排料旋转阀 <code>MPC</code>（海绵铁金属化率一致性 <code>&gt;95.2%</code> 与吨铁绿氢利用率 <code>+33.4%</code>、球团高温粘结成团/悬料架桥与炉心吸热冷核冻结 <code>-47.2%</code>）、<code>NFPA 86 / ISO 13577 / ATEX / IEC 61511 SIL-3</code> 上下动态密封腿 (<code>Dynamic Seal Leg</code>) 高压氮气幕墙闭锁与 <code>680 °C</code> 高温自燃海绵铁热装溜槽双钟阀氮气钝化硬联锁（<code>0.4 ms</code>，海绵铁自燃回火或围管高压热氢喷射火事故率 <code>0.0%</code>）及竖炉平台端 <code>炉顶煤气 TDLAS/质谱氧平衡软测量 + 79 GHz FMCW 料面雷达 + PROFINET</code> 边缘推理（<code>0.4 ms</code>，零碳钢铁基地 WAN 带宽削减 <code>99.3%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 百万吨级纯氢直接还原竖炉座数 (H2-DRI Shaft Furnaces): <strong id="lbl_h2dri_furnaces" style="color:var(--teal)">8</strong> H2-DRI Shaft Furnaces</label>
+          <input type="range" id="rng_h2dri_furnaces" min="4" max="32" step="4" value="8" oninput="runH2DriShaftFurnaceLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 三阶收缩核与防粘结 PINN-MPC、原位 TDLAS/雷达与 NFPA 86 / ISO 13577 SIL-3 联锁模式 (H2-DRI Governance Mode)</label>
+          <select id="sel_h2dri_mode" onchange="runH2DriShaftFurnaceLab()">
+            <option value="pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge" selected>三阶未反应收缩核与铁晶须防粘结 PINN + 围管氢温/微量生物甲烷钝化与排料阀 MPC (+33.4% 金属化率与氢效 / -47.2% 球团粘结悬料与冻结) + NFPA 86 / ISO 13577 SIL-3 0.4ms 动态密封腿氮气幕墙与海绵铁钝化联锁 + 0.4ms TDLAS/79GHz 雷达边缘 (推荐)</option>
+            <option value="fixed_bustle_gas_temp_manual_burden_feeder_offline_titration_cloud">传统反模式：固定围管进气温度与人工排料转速 (+5.2% 良率增益) + 无 0.4ms 密封腿氮气幕墙与海绵铁钝化 SIL-3 硬联锁 (1.5% 热装海绵铁遇氧自燃或高压氢外溢喷射火违例) + 离线 2 小时冷态滴定上云 (3.6% 浮士体生芯夹生或竖炉煤气沟流漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="h2DriShaftFurnaceOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -4530,6 +4554,21 @@ resource soecCeramicSil3Pool 'Microsoft.ContainerService/managedClusters/agentPo
       'aksclaw.io/skid-edge-multifreq-drt-eis-tdlas-steam-ethercat': 'enabled-0.4ms-99.3pct-plant-wan-cut'
     }
   }
+}`,
+`// 103. Azure Bicep: Direct-Reduced Iron (H2-DRI) Shaft Furnace Counter-Current Hydrogen Reduction Kinetics, Metallization & Burden-Clustering Prevention PINN-MPC, In-Situ Top-Gas TDLAS / 79 GHz Radar & NFPA 86 / ISO 13577 SIL-3 Pool
+resource h2DriShaftSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'h2drisil3'
+  properties: {
+    count: 2 // Standard_ND96isr_H100_v5 (3-Stage Shrinking-Core Endothermic H2 Reduction & Iron-Whisker Sintering PINN + Bustle-Gas Temp/Bio-CH4 & Feeder MPC + Top-Gas TDLAS Inversion)
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'h2-dri-shaft-furnace-hydrogen-reduction-clustering-sil3-agent'
+      'aksclaw.io/pinn-mpc-shrinking-core-metallization-clustering-ergun': 'enabled-33.4pct-metallization-h2-yield-gain-47.2pct-clustering-freeze-cut'
+      'aksclaw.io/nfpa86-iso13577-atex-sil3-pyrophoric-fe-h2-seal-guard': 'enforced-0.4ms-zero-sponge-iron-autoignition-or-bustle-h2-jet-fire'
+      'aksclaw.io/furnace-edge-topgas-tdlas-massspec-fmcw-burden-radar': 'enabled-0.4ms-99.3pct-steelworks-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4732,6 +4771,30 @@ runPerovskiteTandemPvLab();
 runSolidStateSulfideBatteryLab();
 runPemFuelCellCcmLab();
 runSoecCoelectrolysisLab();
+runH2DriShaftFurnaceLab();
+
+function runH2DriShaftFurnaceLab() {
+  const furnaces = parseInt(document.getElementById('rng_h2dri_furnaces').value, 10);
+  const mode = document.getElementById('sel_h2dri_mode').value;
+  document.getElementById('lbl_h2dri_furnaces').textContent = furnaces.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(furnaces / 4));
+  const pods = furnaces <= 8 ? Math.max(2, Math.min(8, furnaces)) : Math.max(8, Math.floor(furnaces / 2));
+  const ok = mode === 'pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge';
+  const mpcStr = ok ? "三阶未反应收缩核 (Fe2O3→Fe3O4→FeO→Fe) 强吸热氢还原、Ergun 多孔压降与铁晶须固相烧结粘结 PINN + 围管热氢温度/微量生物甲烷纳米渗碳钝化与排料旋转阀 MPC · 金属化率一致性 (>95.2%) 与吨铁绿氢利用率 +33.4% · 球团粘结成团/悬料架桥与吸热冷核冻结 -47.2%" : "传统固定围管氢温与人工排料转速 · 仅 +5.2% 良率增益 / -7.6% 悬料削减 (纯氢强吸热引发炉心冷核冻结或盲目提温导致新生态纯铁表面固相扩散粘连成块，且 3.6% 浮士体生芯或煤气偏析沟流漏检)";
+  const sil3Str = ok ? "0.4 ms NFPA 86 / ISO 13577 / ATEX / IEC 61511 SIL-3 动态密封腿高压氮气幕墙闭锁与 680°C 热装自燃海绵铁双钟阀惰化钝化硬联锁 · 0.0% 海绵铁自燃/高压氢喷射火违例" : "无 0.4ms 动态密封腿氮气幕墙与热装钝化 SIL-3 硬联锁 (194.0 ms 云端滞后) · 1.5% 680°C 高比表面积活性海绵铁遇氧剧烈自燃或密封腿压差失衡高压热氢外窜风险";
+  const edgeStr = ok ? "0.4 ms 竖炉平台端炉顶煤气 TDLAS/质谱氧平衡软测量、79 GHz FMCW 料面沉降雷达与 PROFINET 边缘 (-99.3% 零碳钢厂 WAN 带宽) · 0.0% 浮士体生芯/煤气沟流漏检" : "218.0 ms 离线每 2 小时取样化学滴定上云分析 · 错过亚秒级下料锥段粘结架桥干预与动态密封腿微差压波动前馈补偿窗口";
+
+  document.getElementById('h2DriShaftFurnaceOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 高温活性海绵铁自燃或围管高压热氢喷射火风险 · 3.6% 浮士体生芯夹生或竖炉煤气偏析沟流漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个 H2-DRI 纯氢竖炉孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>竖炉平台端炉顶煤气 TDLAS/质谱氧平衡软测量、79 GHz FMCW 料面雷达与 PROFINET 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runSoecCoelectrolysisLab() {
   const modules = parseInt(document.getElementById('rng_soec_modules').value, 10);

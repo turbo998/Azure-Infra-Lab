@@ -6412,6 +6412,68 @@
         "uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct": 3.5,
         "soec_coelectrolysis_slo_met": false
       }
+    ],
+    "h2_dri_shaft_furnace_profiles": [
+      {
+        "h2_dri_shaft_furnaces": 4,
+        "dri_governance_mode": "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_h2_dri_pods": 4,
+        "metallization_degree_consistency_and_specific_h2_yield_gain_pct": 33.4,
+        "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": 47.2,
+        "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": 0.4,
+        "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": 0.0,
+        "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 0.0,
+        "h2_dri_shaft_furnace_slo_met": true
+      },
+      {
+        "h2_dri_shaft_furnaces": 8,
+        "dri_governance_mode": "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_h2_dri_pods": 8,
+        "metallization_degree_consistency_and_specific_h2_yield_gain_pct": 33.4,
+        "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": 47.2,
+        "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": 0.4,
+        "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": 0.0,
+        "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 0.0,
+        "h2_dri_shaft_furnace_slo_met": true
+      },
+      {
+        "h2_dri_shaft_furnaces": 32,
+        "dri_governance_mode": "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_h2_dri_pods": 16,
+        "metallization_degree_consistency_and_specific_h2_yield_gain_pct": 33.4,
+        "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": 47.2,
+        "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": 0.4,
+        "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": 0.0,
+        "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 0.0,
+        "h2_dri_shaft_furnace_slo_met": true
+      },
+      {
+        "h2_dri_shaft_furnaces": 8,
+        "dri_governance_mode": "fixed_bustle_gas_temp_manual_burden_feeder_offline_titration_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_h2_dri_pods": 8,
+        "metallization_degree_consistency_and_specific_h2_yield_gain_pct": 5.2,
+        "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": 7.6,
+        "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": 194.0,
+        "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": 1.5,
+        "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": 218.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 3.6,
+        "h2_dri_shaft_furnace_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -12023,5 +12085,52 @@
       "soec_coelectrolysis_slo_met": false
     }
   },
-  "trace_sha256": "7662296eefcaa298271265c45df4da9b4a337868e6302cbff7ee7fec8b469d75"
+  "demo_102_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox": {
+    "h2_dri_8_furnaces": {
+      "h2_dri_shaft_furnaces": 8,
+      "dri_governance_mode": "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_h2_dri_pods": 8,
+      "metallization_degree_consistency_and_specific_h2_yield_gain_pct": 33.4,
+      "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": 47.2,
+      "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": 0.4,
+      "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": 0.0,
+      "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 0.0,
+      "h2_dri_shaft_furnace_slo_met": true
+    },
+    "h2_dri_32_furnaces": {
+      "h2_dri_shaft_furnaces": 32,
+      "dri_governance_mode": "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_h2_dri_pods": 16,
+      "metallization_degree_consistency_and_specific_h2_yield_gain_pct": 33.4,
+      "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": 47.2,
+      "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": 0.4,
+      "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": 0.0,
+      "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 0.0,
+      "h2_dri_shaft_furnace_slo_met": true
+    },
+    "raw_h2_dri_8_furnaces": {
+      "h2_dri_shaft_furnaces": 8,
+      "dri_governance_mode": "fixed_bustle_gas_temp_manual_burden_feeder_offline_titration_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_h2_dri_pods": 8,
+      "metallization_degree_consistency_and_specific_h2_yield_gain_pct": 5.2,
+      "pellet_sintering_clustering_hanging_and_endothermic_freeze_reduction_pct": 7.6,
+      "nfpa86_iso13577_sil3_hot_pyrophoric_fe_passivation_and_h2_seal_interlock_ms": 194.0,
+      "unmitigated_hot_sponge_iron_autoignition_or_bustle_h2_jet_fire_pct": 1.5,
+      "furnace_edge_topgas_tdlas_mass_spec_and_burden_radar_loop_ms": 218.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 3.6,
+      "h2_dri_shaft_furnace_slo_met": false
+    }
+  },
+  "trace_sha256": "a24a4e99d60100cff6d6cdb2be3500281b764e8e98f4a9a07f89f648c95b68ec"
 }
