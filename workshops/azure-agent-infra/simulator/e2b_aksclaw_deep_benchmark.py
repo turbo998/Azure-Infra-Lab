@@ -150,6 +150,7 @@ from agent_infra_sizer import (
     simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
     simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
     simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
+    simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1208,6 +1209,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(32, "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge"),
         simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(8, "constant_ram_feed_pid_arc_voltage_post_ingot_ultrasonic_cscan_cloud"),
     ]
+    polyolefin_fluidized_bed_profiles: List[Dict[str, object]] = [
+        simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(4, "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge"),
+        simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(8, "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge"),
+        simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(32, "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge"),
+        simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(8, "manual_h2_c2_ratio_step_offline_2hr_lab_mfi_gpc_unmonitored_wall_static_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1346,6 +1353,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "rare_earth_ndpr_sx_electrolysis_profiles": rare_earth_ndpr_sx_electrolysis_profiles,
         "hall_heroult_aluminum_potline_profiles": hall_heroult_aluminum_potline_profiles,
         "var_esr_superalloy_remelting_profiles": var_esr_superalloy_remelting_profiles,
+        "polyolefin_fluidized_bed_profiles": polyolefin_fluidized_bed_profiles,
     }
 
 

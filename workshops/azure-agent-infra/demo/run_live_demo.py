@@ -157,6 +157,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
     simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
     simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
+    simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1073,6 +1074,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "var_esr_8_bays": simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(8, "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge"),
             "var_esr_32_bays": simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(32, "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge"),
             "raw_var_esr_8_bays": simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(8, "constant_ram_feed_pid_arc_voltage_post_ingot_ultrasonic_cscan_cloud"),
+        },
+        "demo_138_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox": {
+            "polyolefin_8_trains": simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(8, "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge"),
+            "polyolefin_32_trains": simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(32, "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge"),
+            "raw_polyolefin_8_trains": simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(8, "manual_h2_c2_ratio_step_offline_2hr_lab_mfi_gpc_unmonitored_wall_static_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

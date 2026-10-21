@@ -7080,6 +7080,56 @@ def simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox
     }
 
 
+def simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(
+    polyolefin_reactor_trains: int = 8,
+    polyolefin_governance_mode: str = "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Gas-Phase Fluidized-Bed Polyolefin (UNIPOL PE / Spheripol PP, 18-35 bar,
+    75-112 C) & Loop-Slurry Polymerization Reactor, Ziegler-Natta / Metallocene Single-Site Catalyst
+    Population-Balance Molecular Weight Distribution (MWD, PDI = Mw/Mn & Melt Flow Index MFI) &
+    Short-Chain Branching (SCB), Expanded-Bed Electrostatic Tribocharging & Wall-Sheeting / Chunking
+    Thermal Hot-Spot Suppression PINN-MPC, Online Multi-Frequency Acoustic Emission (AE) / Raman
+    Comonomer Metrology & API RP 554 / NFPA 68 / IEC 61508 SIL-3 Exothermic Runaway Catalyst Killer
+    (CO / H2O Poison Injection) & Emergency Depressurization Flare Interlock Sandbox (Chapter 143).
+    """
+    if polyolefin_reactor_trains < 1:
+        raise ValueError("polyolefin_reactor_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge",
+        "manual_h2_c2_ratio_step_offline_2hr_lab_mfi_gpc_unmonitored_wall_static_cloud",
+    }
+    if polyolefin_governance_mode not in valid_modes:
+        raise ValueError(f"polyolefin_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = polyolefin_governance_mode == "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge"
+    active_polyolefin_reactor_pods = max(2, min(8, int(polyolefin_reactor_trains))) if polyolefin_reactor_trains <= 8 else max(8, int(polyolefin_reactor_trains // 2))
+    gpu_nodes = max(2, math.ceil(polyolefin_reactor_trains / 4))
+
+    space_time_yield_and_condensed_mode_heat_removal_gain_pct = 42.9 if governed else 6.4
+    grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct = 58.6 if governed else 8.9
+    apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms = 0.3 if governed else 152.0
+    unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct = 0.0 if governed else 1.4
+    reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms = 0.3 if governed else 195.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct = 0.0 if governed else 3.8
+
+    return {
+        "polyolefin_reactor_trains": polyolefin_reactor_trains,
+        "polyolefin_governance_mode": polyolefin_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_polyolefin_reactor_pods": active_polyolefin_reactor_pods,
+        "space_time_yield_and_condensed_mode_heat_removal_gain_pct": space_time_yield_and_condensed_mode_heat_removal_gain_pct,
+        "grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct": grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct,
+        "apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms": apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms,
+        "unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct": unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct,
+        "reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms": reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct": uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct,
+        "polyolefin_fluidized_bed_reactor_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

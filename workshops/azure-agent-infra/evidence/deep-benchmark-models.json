@@ -8442,5 +8442,67 @@
       "uncompensated_glow_discharge_long_arc_or_crown_fallback_white_spot_pct": 3.7,
       "var_esr_superalloy_remelting_slo_met": false
     }
+  ],
+  "polyolefin_fluidized_bed_profiles": [
+    {
+      "polyolefin_reactor_trains": 4,
+      "polyolefin_governance_mode": "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polyolefin_reactor_pods": 4,
+      "space_time_yield_and_condensed_mode_heat_removal_gain_pct": 42.9,
+      "grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct": 58.6,
+      "apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms": 0.3,
+      "unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct": 0.0,
+      "reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct": 0.0,
+      "polyolefin_fluidized_bed_reactor_slo_met": true
+    },
+    {
+      "polyolefin_reactor_trains": 8,
+      "polyolefin_governance_mode": "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polyolefin_reactor_pods": 8,
+      "space_time_yield_and_condensed_mode_heat_removal_gain_pct": 42.9,
+      "grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct": 58.6,
+      "apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms": 0.3,
+      "unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct": 0.0,
+      "reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct": 0.0,
+      "polyolefin_fluidized_bed_reactor_slo_met": true
+    },
+    {
+      "polyolefin_reactor_trains": 32,
+      "polyolefin_governance_mode": "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polyolefin_reactor_pods": 16,
+      "space_time_yield_and_condensed_mode_heat_removal_gain_pct": 42.9,
+      "grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct": 58.6,
+      "apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms": 0.3,
+      "unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct": 0.0,
+      "reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct": 0.0,
+      "polyolefin_fluidized_bed_reactor_slo_met": true
+    },
+    {
+      "polyolefin_reactor_trains": 8,
+      "polyolefin_governance_mode": "manual_h2_c2_ratio_step_offline_2hr_lab_mfi_gpc_unmonitored_wall_static_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polyolefin_reactor_pods": 8,
+      "space_time_yield_and_condensed_mode_heat_removal_gain_pct": 6.4,
+      "grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct": 8.9,
+      "apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms": 152.0,
+      "unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct": 1.4,
+      "reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct": 3.8,
+      "polyolefin_fluidized_bed_reactor_slo_met": false
+    }
   ]
 }

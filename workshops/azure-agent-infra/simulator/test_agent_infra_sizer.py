@@ -144,6 +144,7 @@ from agent_infra_sizer import (
     simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
     simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
     simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
+    simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -335,6 +336,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-rare-earth-ndpr-solvent-extraction-molten-salt-electrolysis-sil3-pool.bicep",
             "aksclaw-hall-heroult-aluminum-potline-cryolite-mhd-hf-scrubber-sil3-pool.bicep",
             "aksclaw-var-esr-superalloy-remelting-drip-short-freckle-nfpa86-sil3-pool.bicep",
+            "aksclaw-polyolefin-fluidized-bed-mwd-electrostatics-sheeting-apirp554-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2851,6 +2853,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_glow_discharge_long_arc_or_crown_fallback_white_spot_pct"], 3.0)
         self.assertTrue(gov["var_esr_superalloy_remelting_slo_met"])
         self.assertFalse(raw["var_esr_superalloy_remelting_slo_met"])
+
+    def test_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(self) -> None:
+        gov = simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(
+            8, "pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge"
+        )
+        raw = simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox(
+            8, "manual_h2_c2_ratio_step_offline_2hr_lab_mfi_gpc_unmonitored_wall_static_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_polyolefin_reactor_pods"], 8)
+        self.assertEqual(gov["space_time_yield_and_condensed_mode_heat_removal_gain_pct"], 42.9)
+        self.assertEqual(gov["grade_transition_offspec_resin_and_wall_sheeting_downtime_reduction_pct"], 58.6)
+        self.assertEqual(gov["apirp554_nfpa68_sil3_co_killer_injection_and_flare_depressuring_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_exothermic_chunking_runaway_or_ethylene_deflagration_pct"], 1.0)
+        self.assertEqual(gov["reactor_edge_200khz_acoustic_emission_and_raman_mfi_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct"], 3.0)
+        self.assertTrue(gov["polyolefin_fluidized_bed_reactor_slo_met"])
+        self.assertFalse(raw["polyolefin_fluidized_bed_reactor_slo_met"])
 
 
 if __name__ == "__main__":

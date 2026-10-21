@@ -550,6 +550,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(135)">136. 稀土镨钕 (NdPr) 氟碳铈矿/独居石酸法焙烧、120级 P507 串级混合澄清槽溶剂萃取分离与 1,050°C 氟盐氧化物熔盐电解槽 (Nd2O3+LiF-NdF3→Nd) PINN-MPC、在线多流道 EDXRF / FTIR 氟碳气体计量及 IAEA SSR-6 / NFPA 30 / IEC 61508 SIL-3 萃取煤油闪燃氮封、电解阳极效应 CF4/HF 干法吸收与钍-232 (NORM) 尾渣隔离硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(136)">137. 原铝霍尔-埃鲁法 (Hall-Héroult 500–600 kA 冰晶石-氧化铝熔盐电解槽系列 960°C Na3AlF6-AlF3-Al2O3)、三维磁流体 (MHD) 铝液隆起波动、伸腿炉帮结壳与全氟化碳 (CF4/C2F6) 阳极效应抑制 PINN-MPC、在线 40 阳极导杆光纤光栅 (FBG) 均流/拉曼分子比计量及 NFPA 70E / ISO 13849 / IEC 61508 SIL-3 漏炉铝水爆炸、系列开路电弧闪络短接与干法氧化铝烟气净化 (GTC HF &lt; 0.5 ppm) 硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(137)">138. 航空高温合金与钛合金真空自耗电弧重熔 (VAR 30–45 kA DC / 10⁻³–10⁻⁴ mbar) 及电渣重熔 (ESR CaF2-CaO-Al2O3 渣系) 三联熔炼 (VIM-ESR-VAR) 钢锭凝固、滴落短路弧长与熔池洛伦兹-热溶质浮力宏观偏析 (黑斑 Freckle / 白斑 White-Spot) 抑制 PINN-MPC、在线 100 kHz 电弧滴落短路小波/称重传感器熔速计量及 NFPA 86 / NADCAP AMS 2750 / IEC 61508 SIL-3 水冷铜坩埚侧弧烧穿 (铜-水-钛氢爆)、同轴 IGCT 撬棒断路器与高纯氦气回充急冷硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(138)">139. 气相流化床聚烯烃 (UNIPOL PE / Spheripol PP 18–35 bar, 75–112°C) 与环管淤浆聚合反应器、Ziegler-Natta/茂金属催化剂分子量分布 (MWD/PDI 与熔指 MFI) 群体平衡、冷凝态异戊烷露点与扩大段静电摩擦结片/结块 (Sheeting/Chunking) 抑制 PINN-MPC、在线 200 kHz 声发射 (AE)/拉曼共聚单体计量及 API RP 554 / NFPA 68 / IEC 61508 SIL-3 放热飞温催化剂杀死剂 (CO/H2O) 注入与紧急火炬泄压硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3685,6 +3686,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 138: Autonomous Gas-Phase Fluidized-Bed Polyolefin (UNIPOL PE / Spheripol PP) MWD/MFI & Electrostatics Sheeting PINN-MPC & API RP 554 / NFPA 68 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 138 · GAS-PHASE FLUIDIZED-BED POLYOLEFIN (UNIPOL PE / SPHERIPOL PP) &amp; LOOP-SLURRY REACTOR POPULATION-BALANCE MWD/MFI, CONDENSED-MODE ICA DEW-POINT &amp; ELECTROSTATIC WALL-SHEETING PINN-MPC, 200 kHz ACOUSTIC EMISSION METROLOGY &amp; API RP 554 / NFPA 68 / SIL-3 CATALYST KILLER SIZER</span>
+    <h2>自主气相流化床聚烯烃（UNIPOL PE / Spheripol PP）与环管淤浆聚合反应器：分子量分布（MWD/MFI）群体平衡、扩大段静电摩擦结片抑制 PINN-MPC 与 API RP 554 / NFPA 68 / SIL-3 催化剂杀死剂（CO/H2O）硬联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 套百万吨级气相流化床聚乙烯/聚丙烯（<code>UNIPOL PE / Innovene G / Spheripol PP</code>，反应器床层压力 <code>18–35 bar</code>、床温 <code>75–112°C</code>、表观气速 <code>0.55–0.80 m/s</code>、强放热聚合热 $\Delta H_p \approx -108 \text{ kJ/mol}$，单线产能 <code>45–80 万吨/年</code>）聚合生产线规模下，启用 <code>Standard_NV36ads_A10_v5</code> 多活性中心（<code>Ziegler-Natta / 茂金属 Metallocene</code>）导数矩群体平衡（<code>Method of Moments</code>）分子量分布（$\text{PDI}=M_w/M_n$、熔融指数 $\text{MFI}$）与共聚单体（1-丁烯/1-己烯）短链支化度（$\text{SCB}$）、诱导冷凝剂（<code>ICA 异戊烷/异丁烷</code>）冷凝态蒸发潜热（<code>Condensed Mode 15–25 wt%</code>）露点裕度及扩大段（<code>Expanded Section</code>）气固两相摩擦带电（<code>Tribocharging</code>）壁面静电偶极层结片（<code>Wall Sheeting</code>）耦合 <code>PINN</code> + 氢气/乙烯比（$\text{H}_2/\text{C}_2\text{H}_4$）、共聚单体比、异戊烷冷凝分数与微量抗静电剂（<code> Continuity Additive</code>）前馈 <code>MPC</code>（单釜时空产率 <code>STY</code> 与超冷凝态撤热极限提升 <code>+42.9%</code>，牌号切换过渡料 <code>Off-Spec Resin</code> 与壁面结片掉块堵塞出料阀非计划停工率削减 <code>-58.6%</code>）、<code>API RP 554 / NFPA 68 / IEC 61508 SIL-3</code> 气相床层局部热点飞温（$T_{\text{bed}} > T_{\text{stick}} - 3\text{ K}$ 或 $\mathrm{d}T/\mathrm{d}t > +1.5\text{ K/min}$）高压催化剂杀死剂（<code>CO 一氧化碳 / 水蒸气 Poison Killer Gas</code>）毫秒级穿刺注入、烷基铝（<code>TEAL</code>）自燃源切断与紧急火炬泄压硬联锁（<code>0.3 ms</code> 响应，<code>0.0%</code> 聚乙烯/聚丙烯床层暴聚熔融结整釜大块 <code>Reactor Chunking</code> 或高压乙烯爆燃事故，对比传统人工调节氢烯比与滞后 2 小时实验室熔指化验反模式 <code>1.4%</code> 风险）以及反应器边缘 <code>200 kHz</code> 声发射（<code>Acoustic Emission AE</code>）颗粒撞击粒径/团聚谱、齐平式静电电压探头与循环气在线拉曼（<code>Raman</code>）边缘分诊（<code>0.3 ms</code>，削减 <code>99.6%</code> WAN 带宽，避免 <code>3.8%</code> 静电结片脱落砸毁分布板或冷凝液夹带淹床漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 气相流化床/环管聚烯烃反应器聚合线数 (Polyolefin Polymerization Reactor Trains): <strong id="lbl_polyolefin_trains" style="color:var(--teal)">8</strong></label>
+          <input type="range" id="rng_polyolefin_trains" min="2" max="32" step="2" value="8" oninput="runPolyolefinFluidizedBedLab()">
+        </div>
+        <div class="form-row">
+          <label>2. MWD/MFI 群体平衡、冷凝态静电结片 PINN-MPC 与 API RP 554 / SIL-3 杀死剂注入模式 (Polyolefin Reactor Governance Mode)</label>
+          <select id="sel_polyolefin_mode" onchange="runPolyolefinFluidizedBedLab()">
+            <option value="pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge" selected>多活性位点矩方程 MWD/MFI、ICA 超冷凝露点与摩擦静电壁面结片 PINN + 氢烯比/异戊烷/抗静电剂前馈 MPC (+42.9% 冷凝态时空产率 / -58.6% 牌号切换过渡料与结片停工) + API RP 554 / NFPA 68 SIL-3 0.3ms CO 杀死剂注入与 TEAL 切断联锁 + 0.3ms 200kHz 声发射/静电/拉曼边缘 (推荐)</option>
+            <option value="manual_h2_c2_ratio_step_offline_2hr_lab_mfi_gpc_unmonitored_wall_static_cloud">传统反模式：靠每 2 小时人工取样实验室熔融指数 (MFI) 与 GPC 滞后回调氢烯比 (+6.4% 产率增益) + 无 0.3ms 静电热斑检测与 CO 催化剂杀死剂高压注入联锁 (1.4% 放热失控整釜熔融结块抱死或烷基铝/乙烯爆燃风险) + 缺乏 200kHz 声发射团聚识别 (3.8% 壁面静电熔融结片剥落堵塞分布板与出料系统漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="polyolefinFluidizedBedOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5934,6 +5958,21 @@ resource varEsrSuperalloyRemeltingSil3Pool 'Microsoft.ContainerService/managedCl
       'aksclaw.io/bunker-edge-100khz-drip-short-wavelet-hall-ring': 'enabled-0.3ms-99.6pct-var-esr-meltshop-wan-cut'
     }
   }
+}`,
+`// 139. Azure Bicep: Gas-Phase Fluidized-Bed Polyolefin (UNIPOL PE / Spheripol PP 18-35 bar) & Loop-Slurry Reactor Population-Balance MWD/MFI, Condensed-Mode ICA Dew-Point & Electrostatic Wall-Sheeting PINN-MPC, Online 200 kHz AE / Raman Metrology & API RP 554 / NFPA 68 / SIL-3 CO Catalyst Killer Injection Interlock Pool
+resource polyolefinFluidizedBedSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'polyolefins3'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (Multi-Site Ziegler-Natta/Metallocene Method-of-Moments MWD/PDI, Isopentane ICA Condensed-Mode Dew-Point & Triboelectric Wall-Sheeting PINN + H2/C2, Comonomer & Continuity-Additive MPC + Online 200 kHz Acoustic Emission AE, Static Probe & Cycle-Gas Raman Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'polyolefin-fluidized-bed-mwd-electrostatics-sheeting-apirp554-sil3-agent'
+      'aksclaw.io/pinn-mpc-moment-mwd-ica-condensed-electrostatics': 'enabled-42.9pct-space-time-yield-gain-58.6pct-offspec-sheeting-downtime-cut'
+      'aksclaw.io/apirp554-nfpa68-sil3-co-killer-injection-flare': 'enforced-0.3ms-zero-exothermic-chunking-runaway-or-ethylene-deflagration'
+      'aksclaw.io/reactor-edge-200khz-ae-electrostatics-raman': 'enabled-0.3ms-99.6pct-polyolefin-plant-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6172,6 +6211,30 @@ runKrollSpongeTitaniumLab();
 runRareEarthNdprLab();
 runHallHeroultAluminumPotlineLab();
 runVarEsrSuperalloyRemeltingLab();
+runPolyolefinFluidizedBedLab();
+
+function runPolyolefinFluidizedBedLab() {
+  const trains = parseInt(document.getElementById('rng_polyolefin_trains').value, 10);
+  const mode = document.getElementById('sel_polyolefin_mode').value;
+  document.getElementById('lbl_polyolefin_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const pods = trains <= 8 ? Math.max(2, Math.min(8, trains)) : Math.max(8, Math.floor(trains / 2));
+  const ok = mode === 'pinn_mpc_moment_mwd_ica_condensed_dewpoint_ae_electrostatics_apirp554_sil3_edge';
+  const mpcStr = ok ? "多活性位点矩方程分子量分布 (MWD/MFI)、异戊烷诱导冷凝态 (ICA 22 wt%) 蒸发潜热露点与扩大段气固摩擦静电偶极层 (Tribocharging) PINN + 氢烯比 (H2/C2)、共聚单体与 ppm 级抗静电剂前馈 MPC · 单釜时空产率与超冷凝撤热能力 +42.9% · 牌号切换过渡料 (Off-Spec) 与壁面熔融结片停工率 -58.6%" : "传统靠每 2 小时人工取样实验室熔指 (MFI) 滞后回调氢烯比与保守干态操作 · 仅 +6.4% 产率增益 / -8.9% 过渡料与停工削减 (2 小时分析滞后导致牌号切换产生数百吨次品料，且 3.8% 壁面静电吸附细粉熔融结片剥落砸毁分布板或堵塞出料阀漏检)";
+  const sil3Str = ok ? "0.3 ms API RP 554 / NFPA 68 / IEC 61508 SIL-3 一氧化碳 (CO) 催化剂杀死剂高压穿刺注入、三乙基铝 (TEAL) 助催化剂紧急切断与火炬泄压硬联锁 · 0.0% 气相床暴聚熔融结整釜大块 (Chunking) 或高压乙烯爆燃违例" : "无 0.3ms 声发射/静电热斑早期识别与 CO 催化剂杀死剂自动注入联锁 (152.0 ms 联锁滞后) · 1.4% 局部流化死区聚合放热突破树脂软化粘连点 (T_stick) 引发整座百吨级流化床在数分钟内熔结成实心巨块或高压乙烯爆燃风险";
+  const edgeStr = ok ? "0.3 ms 反应器壁边缘 200 kHz 声发射 (AE) 颗粒撞击粒径/团聚谱 (比热电偶提前 18 分钟识别微米级粘连结片) + 齐平式静电探头与循环气在线拉曼 (Raman) 氢烯比边缘 (-99.6% 聚烯烃装置 WAN 带宽) · 0.0% 静电结片脱落或冷凝液淹床漏检" : "195.0 ms 仅靠反应器壁插入式慢速热电偶 (被结片包裹后产生热阻盲区) 与离线实验室 GPC · 无法在静电偶极层吸引活性细粉贴壁发生放热结片前注入微量抗静电剂消除电荷";
+
+  document.getElementById('polyolefinFluidizedBedOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 气相流化床放热飞温整釜熔融结块 (Chunking) 或乙烯爆燃风险 · 3.8% 扩大段静电摩擦结片剥落堵塞分布板与出料系统漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个聚烯烃反应器孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>反应器壁边缘 200 kHz 声发射 (AE) 颗粒撞击团聚谱、齐平静电探头与循环气拉曼边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runVarEsrSuperalloyRemeltingLab() {
   const bays = parseInt(document.getElementById('rng_var_esr_bays').value, 10);
