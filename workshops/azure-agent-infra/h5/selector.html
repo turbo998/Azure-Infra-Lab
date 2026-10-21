@@ -544,6 +544,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(129)">130. 大型气流床加压煤/生物质气化炉 (1,350–1,600°C / 6.5 MPa)、低温甲醇洗 (Rectisol -60°C) 与高压合成氨-尿素甲铵冷凝汽提联合装置 (15–25 MPa)、熔渣粘度 T250 液态排渣与甲铵钝化膜腐蚀电化学 PINN-MPC、TDLAS 合成气/拉曼氨碳比监测及 API RP 554 / ASME Sec VIII Div 2 / IEC 61508 SIL-3 氧煤比偏离烧嘴跳车、尿素高压圈断氧防爆与液氨球罐切断硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(130)">131. 超薄显示基板 (0.3–0.7 mm TFT/OLED) 与大型全氧燃烧浮法玻璃熔窑 (1,600°C / 850 t/d)、液态锡槽 (1,100→600°C 氮氢保护气) 拉边机展薄与退火窑热应力双折射 PINN-MPC、激光莫尔偏折光学畸变/光弹应力监测及 NFPA 86 / EN 746-2 / IEC 61508 SIL-3 锡槽氢氮混合气防爆吹扫、大碹超温断燃料与锡液漏穿硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(131)">132. 大型硫酸盐木浆连续蒸煮器 (H因子/卡伯值脱木素)、多效黑液蒸发站 (80% 固形物) 与汤姆林森碱回收炉垫层还原 (Na2SO4→Na2S, 1,050°C) PINN-MPC、在线拉曼卡伯值/溜槽红外测温及 BLRBAC / NFPA 85 / IEC 61508 SIL-3 熔融物-水接触爆炸紧急快排 (ESP)、低浓黑液 (<58% DS) 旁路切换与恶臭不凝气 (NCG) 防回火硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(132)">133. 富氧铜闪速熔炼炉 (Outokumpu 反应塔 1,300°C)、闪速/皮尔斯-史密斯转炉吹炼 (Cu2S·FeS→99% 粗铜)、铁橄榄石渣型 Fe/SiO2 四氧化三铁调控与双转双吸制酸 (SO2→SO3) PINN-MPC、在线 LIBS 冰铜品位/风口光谱造铜终点计量及 NFPA 86 / ISO 13577 / IEC 61508 SIL-3 水冷铜水套漏水冰铜爆炸跳闸、转炉倾转出风与高浓 SO2 应急吸收塔硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3541,6 +3542,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 132: Copper Flash Smelter, Peirce-Smith Converter & Double-Contact Acid Plant NFPA 86 / ISO 13577 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 132 · COPPER FLASH SMELTING (OUTOKUMPU REACTION SHAFT 1,300 °C), PEIRCE-SMITH MATTE CONVERTING (Cu2S·FeS → 99% BLISTER COPPER), FAYALITE SLAG Fe/SiO2 &amp; DOUBLE-CONTACT ACID PLANT PINN-MPC, ONLINE LIBS MATTE-GRADE / OPTICAL ENDPOINT METROLOGY &amp; NFPA 86 / ISO 13577 / IEC 61508 SIL-3 COPPER-JACKET WATER-LEAK &amp; CONVERTER ROLL-OUT INTERLOCK SIZER</span>
+    <h2>全自主富氧铜闪速熔炼炉（<code>Outokumpu</code> 反应塔 <code>1,300 °C</code>）、闪速/皮尔斯-史密斯转炉吹炼（$\text{Cu}_2\text{S}\cdot\text{FeS} \to 99\%$ 粗铜）、铁橄榄石渣型（$\text{Fe}/\text{SiO}_2$）四氧化三铁控制与双转双吸制酸装置（$\text{SO}_2 \to \text{SO}_3$）<code>PINN-MPC</code>、在线激光诱导击穿光谱（<code>LIBS</code>）冰铜品位/风口光发射吹炼终点计量及 <code>NFPA 86 / ISO 13577 / IEC 61508 SIL-3</code> 水冷铜水套漏水冰铜爆炸跳闸、转炉紧急倾转出风与高浓 $\text{SO}_2$ 应急吸收塔硬联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 条年产 <code>400,000+ t/a</code> 阴极铜的富氧闪速熔炼-闪速/PS转炉吹炼-阳极炉精炼-双转双吸制酸联合冶炼产线（日处理干铜精矿 <code>3,500–5,500 t/d</code>、反应塔富氧浓度 <code>72–85% O2</code>、沉淀池 <code>1,250–1,320 °C</code> 冰铜层 <code>65% Cu</code> 与铁橄榄石渣层 $2\text{FeO}\cdot\text{SiO}_2$ 分离、皮尔斯-史密斯转炉 50–60 支水下富氧风口造渣期/造铜期吹炼及 <code>12–16% SO2</code> 五氧化二钒 $\text{V}_2\text{O}_5$ 催化转化制酸）集群下，黄铜矿/辉铜矿（$\text{CuFeS}_2/\text{Cu}_2\text{S}$）精矿颗粒在反应塔中央富氧喷嘴（Concentrate Burner）高速旋流场中的 **毫秒级离解脱硫自热闪速着火动力学**、沉淀池铁橄榄石渣（Fayalite Slag）氧势过冲诱发高熔点尖晶石四氧化三铁（Magnetite $\text{Fe}_3\text{O}_4$, 熔点 $1,597\text{ }^\circ\text{C}$）析出增粘导致机械夹杂铜锍液滴（Matte Entrainment Loss）与炉底结瘤（Hearth Accretion），以及 PS 转炉周期性间歇送风冲击对一转一吸/二转二吸钒催化剂床层（`420–610 °C`）的热波扰动 <code>PINN</code> + 精矿喷嘴富氧/石英石熔剂（Flux $\text{SiO}_2$）实时配比、转炉风口富氧流量与制酸转化器冷激旁路阀前馈协同 <code>MPC</code>（粗铜直收率与高浓 $\text{SO}_2$ 制酸总转化率综合增益 <code>+39.4%</code>、炉渣游离/机械夹杂铜损失与磁性氧化铁炉底结瘤率削减 <code>-54.8%</code>）、<code>NFPA 86 / ISO 13577 / IEC 61508 SIL-3</code> 闪速炉反应塔/沉淀池密集水冷铜水套（Water-Cooled Copper Jackets/Elements）发生高温硫酸化腐蚀微穿孔漏水（进回水电磁流量差动 `> 1.5 L/min` 或水套热通量突变）一旦渗入 `1,280 °C` 冰铜池（Molten Matte）将引发毁灭性 **冰铜-水接触氢气/二氧化硫复合蒸汽爆炸**、或 PS 转炉鼓风机失电/风口回灌导致熔融冰铜倒灌堵死风口并烧穿炉壳、或余热锅炉（WHB）/制酸主鼓风机跳闸引起高浓 $\text{SO}_2$ 烟气正压外溢中毒时亚毫秒级 <code>水冷铜水套受损回路进水快关阀毫秒级切断并切换压缩空气/氮气吹扫排空残水 + PS 转炉液压/气动应急马达（Air/Hydraulic Emergency Roll-Out Motor）瞬间自动倾转炉体使全部风口（Tuyeres）旋出熔池液面以上 + 制酸尾气应急碱液洗涤塔（Emergency Caustic Scrubber）与精矿喷嘴联锁跳闸</code> 硬联锁（<code>0.3 ms</code>，冰铜-水爆炸或高浓 $\text{SO}_2$ 毒气泄漏事故率 <code>0.0%</code>）与冶炼厂边缘 <code>溜槽在线激光诱导击穿光谱（LIBS）冰铜品位（%Cu）与炉渣铁硅比（Fe/SiO2）秒级定量 + 转炉风口光纤光发射光谱（Optical Emission Spectroscopy PbS/CuO/Cu2O 特征谱线）造渣/造铜终点无损判别 + 声学风口堵塞监测</code> 边缘推理（<code>0.3 ms</code>，有色冶炼基地 WAN 带宽削减 <code>99.5%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 富氧铜闪速熔炼-转炉吹炼-双转双吸制酸产线规模 (Copper Flash Smelter &amp; Converter Lines): <strong id="lbl_copper_smelter_lines" style="color:var(--teal)">8</strong> Lines</label>
+          <input type="range" id="rng_copper_smelter_lines" min="4" max="32" step="4" value="8" oninput="runCopperFlashSmelterConverterLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 闪速塔自热反应/铁硅渣型 PINN-MPC 与 NFPA 86 / ISO 13577 / SIL-3 铜水套断水吹扫及转炉倾转硬联锁模式 (Copper Smelter Governance Mode)</label>
+          <select id="sel_copper_smelter_mode" onchange="runCopperFlashSmelterConverterLab()">
+            <option value="pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge" selected>反应塔硫化物闪速着火、铁橄榄石渣 Fe3O4 粘度与制酸热波 PINN + 富氧/石英熔剂配比与转炉制酸前馈 MPC (+39.4% 粗铜直收率与制酸转化率 / -54.8% 渣含铜夹杂损失与磁性铁结瘤) + NFPA 86 / ISO 13577 SIL-3 0.3ms 水冷铜水套微漏断水气吹与转炉应急倾转出风硬联锁 + 0.3ms 在线 LIBS/风口光谱造铜终点边缘 (推荐)</option>
+            <option value="manual_oxygen_concentrate_ratio_spoon_sample_xrf_visual_tuyere_cloud">传统反模式：固定氧料比与人工铁勺取样送化验室 XRF 测冰铜品位 (+5.7% 回收率增益) + 无 0.3ms 水冷铜水套微流量差动断水吹扫与转炉失风自动倾转联锁 (1.4% 铜水套渗水流入 1,280°C 冰铜池引发恶性蒸汽爆炸或主风机跳闸高浓 SO2 外溢风险) + 凭工长肉眼看钎子颜色判终点 (3.7% 转炉过吹生成氧化亚铜引起剧烈喷溅泡沫渣或风口结瘤堵死漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="copperFlashSmelterConverterOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5700,6 +5724,21 @@ resource kraftPulpRecoveryBoilerSil3Pool 'Microsoft.ContainerService/managedClus
       'aksclaw.io/mill-edge-raman-kappa-coriolis-solids-charbed-pyrometry': 'enabled-0.3ms-99.5pct-pulp-mill-wan-cut'
     }
   }
+}`,
+`// 133. Azure Bicep: Oxygen-Enriched Copper Flash Smelting (Outokumpu Reaction Shaft 1,300 C), Peirce-Smith Matte Converting (Cu2S-FeS -> 99% Blister Copper), Fayalite Slag Fe/SiO2 Magnetite Control & Double-Contact Acid Plant PINN-MPC, Online LIBS Matte-Grade / Optical Endpoint Metrology & NFPA 86 / ISO 13577 / SIL-3 Copper-Jacket Water-Leak & Converter Roll-Out Interlock Pool
+resource copperFlashSmelterConverterSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'cusmeltsil3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (Flash Reaction-Shaft Sulfide Combustion, Fayalite Slag Fe3O4 Magnetite Viscosity & Double-Contact Acid Plant PINN + Oxygen/Silica-Flux Ratio & Converter-Acid Feedforward MPC + Online LIBS Matte-Grade & Tuyere Optical Emission Endpoint Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'copper-flash-smelter-peircesmith-converter-so2-nfpa86-sil3-agent'
+      'aksclaw.io/pinn-mpc-flash-shaft-fayalite-slag-converter-acid': 'enabled-39.4pct-blister-copper-acid-recovery-gain-54.8pct-slag-copper-loss-magnetite-cut'
+      'aksclaw.io/nfpa86-iso13577-sil3-cooling-water-cutoff-converter-rollout': 'enforced-0.3ms-zero-matte-water-explosion-or-so2-plume-release'
+      'aksclaw.io/smelter-edge-libs-matte-grade-optical-endpoint-spectroscopy': 'enabled-0.3ms-99.5pct-smelter-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -5932,6 +5971,30 @@ runLongwallRockburstShearerLab();
 runCoalGasifierRectisolUreaLab();
 runFloatGlassTinBathLehrLab();
 runKraftPulpRecoveryBoilerLab();
+runCopperFlashSmelterConverterLab();
+
+function runCopperFlashSmelterConverterLab() {
+  const lines = parseInt(document.getElementById('rng_copper_smelter_lines').value, 10);
+  const mode = document.getElementById('sel_copper_smelter_mode').value;
+  document.getElementById('lbl_copper_smelter_lines').textContent = lines.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(lines / 4));
+  const pods = lines <= 8 ? Math.max(2, Math.min(8, lines)) : Math.max(8, Math.floor(lines / 2));
+  const ok = mode === 'pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge';
+  const mpcStr = ok ? "闪速反应塔精矿旋流自热熔炼、铁橄榄石渣 Fe3O4 粘度场与双转双吸制酸热波 PINN + 富氧/石英熔剂配比与转炉-制酸前馈协同 MPC · 粗铜直收率与制酸总转化率 +39.4% · 炉渣夹杂铜损失与磁性铁炉底结瘤 -54.8%" : "传统固定氧料比与人工铁勺取样送 XRF 化验 · 仅 +5.7% 回收率增益 / -8.3% 渣铜损失削减 (精矿硫铁比波动导致沉淀池氧势过冲析出高熔点 Fe3O4 裹挟铜滴入渣，且 3.7% 转炉过吹引发氧化亚铜泡沫渣剧烈喷溅或风口结瘤漏检)";
+  const sil3Str = ok ? "0.3 ms NFPA 86 / ISO 13577 / IEC 61508 SIL-3 水冷铜水套微漏断水气吹排空 + PS 转炉失风气动马达自动倾转出风与高浓 SO2 应急碱洗塔硬联锁 · 0.0% 冰铜-水爆炸或 SO2 外溢违例" : "无 0.3ms 水冷铜水套微流量差动断水与转炉应急倾转联锁 (149.0 ms 联锁滞后) · 1.4% 沉淀池水冷铜水套渗水流入 1,280°C 冰铜池诱发灾难性蒸汽/氢氧复合爆炸、或转炉停风冰铜倒灌堵死全部风口及高浓 SO2 外溢风险";
+  const edgeStr = ok ? "0.3 ms 冶炼端溜槽在线激光诱导击穿光谱 (LIBS) 冰铜品位/铁硅比秒级反演 + 转炉风口光纤 PbS/CuO 发射光谱造铜终点判别边缘 (-99.5% 冶炼厂 WAN 带宽) · 0.0% 转炉过吹喷溅或风口堵塞漏检" : "192.0 ms 每炉人工取样冷却粉碎 XRF 化验 (滞后 35–50 分钟) 与肉眼观察风口火焰 · 无法在造铜终点毫秒级精准停吹，极易造成铜过氧化蚀穿镁铬砖内衬";
+
+  document.getElementById('copperFlashSmelterConverterOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 闪速炉水冷铜水套漏水冰铜蒸汽爆炸或高浓 SO2 毒气外溢风险 · 3.7% 转炉过吹氧化亚铜泡沫渣喷溅或风口结瘤堵塞漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个闪速熔炼-转炉-制酸孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>冶炼端溜槽在线 LIBS 冰铜品位/铁硅比与转炉风口光纤光发射光谱吹炼终点边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runKraftPulpRecoveryBoilerLab() {
   const lines = parseInt(document.getElementById('rng_kraft_pulp_lines').value, 10);

@@ -144,6 +144,7 @@ from agent_infra_sizer import (
     simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox,
     simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox,
     simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox,
+    simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1166,6 +1167,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(32, "pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge"),
         simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(8, "manual_h_factor_lookup_periodic_kappa_titration_fixed_liquor_gun_cloud"),
     ]
+    copper_flash_smelter_converter_profiles = [
+        simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(4, "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge"),
+        simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(8, "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge"),
+        simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(32, "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge"),
+        simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(8, "manual_oxygen_concentrate_ratio_spoon_sample_xrf_visual_tuyere_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1298,6 +1305,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "coal_gasifier_rectisol_urea_profiles": coal_gasifier_rectisol_urea_profiles,
         "float_glass_tin_bath_lehr_profiles": float_glass_tin_bath_lehr_profiles,
         "kraft_pulp_recovery_boiler_profiles": kraft_pulp_recovery_boiler_profiles,
+        "copper_flash_smelter_converter_profiles": copper_flash_smelter_converter_profiles,
     }
 
 

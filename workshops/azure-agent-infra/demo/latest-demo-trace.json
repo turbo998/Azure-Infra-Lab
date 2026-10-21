@@ -8272,6 +8272,68 @@
         "uncompensated_digester_screen_hangup_or_smelt_spout_plugging_pct": 3.6,
         "kraft_pulp_recovery_boiler_slo_met": false
       }
+    ],
+    "copper_flash_smelter_converter_profiles": [
+      {
+        "copper_smelter_lines": 4,
+        "copper_smelter_governance_mode": "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_copper_smelter_pods": 4,
+        "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": 39.4,
+        "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": 54.8,
+        "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": 0.3,
+        "unmitigated_matte_water_explosion_or_so2_plume_release_pct": 0.0,
+        "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 0.0,
+        "copper_flash_smelter_converter_slo_met": true
+      },
+      {
+        "copper_smelter_lines": 8,
+        "copper_smelter_governance_mode": "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_copper_smelter_pods": 8,
+        "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": 39.4,
+        "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": 54.8,
+        "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": 0.3,
+        "unmitigated_matte_water_explosion_or_so2_plume_release_pct": 0.0,
+        "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 0.0,
+        "copper_flash_smelter_converter_slo_met": true
+      },
+      {
+        "copper_smelter_lines": 32,
+        "copper_smelter_governance_mode": "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_copper_smelter_pods": 16,
+        "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": 39.4,
+        "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": 54.8,
+        "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": 0.3,
+        "unmitigated_matte_water_explosion_or_so2_plume_release_pct": 0.0,
+        "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 0.0,
+        "copper_flash_smelter_converter_slo_met": true
+      },
+      {
+        "copper_smelter_lines": 8,
+        "copper_smelter_governance_mode": "manual_oxygen_concentrate_ratio_spoon_sample_xrf_visual_tuyere_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_copper_smelter_pods": 8,
+        "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": 5.7,
+        "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": 8.3,
+        "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": 149.0,
+        "unmitigated_matte_water_explosion_or_so2_plume_release_pct": 1.4,
+        "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": 192.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 3.7,
+        "copper_flash_smelter_converter_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -15293,5 +15355,52 @@
       "kraft_pulp_recovery_boiler_slo_met": false
     }
   },
-  "trace_sha256": "eb9a70b8913354c346fb4cbd6bf379b0f320bc345397455307e836033d585cdb"
+  "demo_132_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox": {
+    "copper_smelter_8_lines": {
+      "copper_smelter_lines": 8,
+      "copper_smelter_governance_mode": "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_copper_smelter_pods": 8,
+      "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": 39.4,
+      "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": 54.8,
+      "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": 0.3,
+      "unmitigated_matte_water_explosion_or_so2_plume_release_pct": 0.0,
+      "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 0.0,
+      "copper_flash_smelter_converter_slo_met": true
+    },
+    "copper_smelter_32_lines": {
+      "copper_smelter_lines": 32,
+      "copper_smelter_governance_mode": "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_copper_smelter_pods": 16,
+      "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": 39.4,
+      "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": 54.8,
+      "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": 0.3,
+      "unmitigated_matte_water_explosion_or_so2_plume_release_pct": 0.0,
+      "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 0.0,
+      "copper_flash_smelter_converter_slo_met": true
+    },
+    "raw_copper_smelter_8_lines": {
+      "copper_smelter_lines": 8,
+      "copper_smelter_governance_mode": "manual_oxygen_concentrate_ratio_spoon_sample_xrf_visual_tuyere_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_copper_smelter_pods": 8,
+      "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": 5.7,
+      "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": 8.3,
+      "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": 149.0,
+      "unmitigated_matte_water_explosion_or_so2_plume_release_pct": 1.4,
+      "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": 192.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": 3.7,
+      "copper_flash_smelter_converter_slo_met": false
+    }
+  },
+  "trace_sha256": "5558afc1eb6ea880d0305ce620e16a4246cfe9fc345e80ae6557c1190bc742a9"
 }

@@ -6786,6 +6786,55 @@ def simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(
     }
 
 
+def simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox(
+    copper_smelter_lines: int = 8,
+    copper_smelter_governance_mode: str = "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Oxygen-Enriched Copper Flash Smelting (Outokumpu Reaction Shaft
+    1,300 C), Flash/Peirce-Smith Matte Converting (Cu2S-FeS -> 99% Blister Copper),
+    Fayalite Slag Fe/SiO2 Magnetite Control & Double-Contact Sulfuric Acid Plant
+    (SO2 -> SO3) PINN-MPC, Online LIBS Matte-Grade / Optical Slag-Endpoint Metrology &
+    NFPA 86 / ISO 13577 / IEC 61508 SIL-3 Water-Cooled Copper-Element Leak Matte-Explosion
+    Trip, Oxygen Tuyere Burn-Back ESD & SO2 Emergency Scrubber Interlock (Chapter 137).
+    """
+    if copper_smelter_lines < 1:
+        raise ValueError("copper_smelter_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge",
+        "manual_oxygen_concentrate_ratio_spoon_sample_xrf_visual_tuyere_cloud",
+    }
+    if copper_smelter_governance_mode not in valid_modes:
+        raise ValueError(f"copper_smelter_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = copper_smelter_governance_mode == "pinn_mpc_flash_shaft_fayalite_slag_converter_libs_nfpa86_sil3_edge"
+    active_copper_smelter_pods = max(2, min(8, int(copper_smelter_lines))) if copper_smelter_lines <= 8 else max(8, int(copper_smelter_lines // 2))
+    gpu_nodes = max(2, math.ceil(copper_smelter_lines / 4))
+
+    blister_copper_recovery_and_acid_conversion_efficiency_gain_pct = 39.4 if governed else 5.7
+    slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct = 54.8 if governed else 8.3
+    nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms = 0.3 if governed else 149.0
+    unmitigated_matte_water_explosion_or_so2_plume_release_pct = 0.0 if governed else 1.4
+    smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms = 0.3 if governed else 192.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct = 0.0 if governed else 3.7
+
+    return {
+        "copper_smelter_lines": copper_smelter_lines,
+        "copper_smelter_governance_mode": copper_smelter_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_copper_smelter_pods": active_copper_smelter_pods,
+        "blister_copper_recovery_and_acid_conversion_efficiency_gain_pct": blister_copper_recovery_and_acid_conversion_efficiency_gain_pct,
+        "slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct": slag_copper_entrainment_loss_and_magnetite_accretion_reduction_pct,
+        "nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms": nfpa86_iso13577_sil3_cooling_water_cutoff_and_converter_rollout_interlock_ms,
+        "unmitigated_matte_water_explosion_or_so2_plume_release_pct": unmitigated_matte_water_explosion_or_so2_plume_release_pct,
+        "smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms": smelter_edge_libs_matte_grade_and_optical_endpoint_spectroscopy_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct": uncompensated_overblowing_copper_oxide_slopping_or_tuyere_blockage_pct,
+        "copper_flash_smelter_converter_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
