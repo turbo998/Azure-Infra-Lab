@@ -5748,6 +5748,49 @@ def simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox
     }
 
 
+def simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(
+    hydrate_production_wells: int = 16,
+    hydrate_governance_mode: str = "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Subsea High-Pressure Natural Gas Hydrate (CH4·nH2O) Depressurization & Thermal-Stimulation Production, Wellbore Joule-Thomson Secondary Hydrate Plugging & Sand-Control Geomechanical Subsidence PINN-MPC, Real-Time DAS/DTS Dissociation Front Tomography & API RP 14C / ISO 13628 / NORSOK D-010 / IEC 61511 SIL-3 Subsea MEG Inhibitor Injection & Seafloor Slope-Failure Shut-In Interlock Agent Infrastructure (Chapter 113)."""
+    if hydrate_production_wells <= 0:
+        raise ValueError("hydrate_production_wells must be positive")
+    valid_modes = {
+        "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge",
+        "aggressive_step_drawdown_esp_open_loop_choke_unmonitored_sand_cloud",
+    }
+    if hydrate_governance_mode not in valid_modes:
+        raise ValueError(f"hydrate_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = hydrate_governance_mode == "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"
+    active_hydrate_well_pods = max(2, min(8, int(hydrate_production_wells))) if hydrate_production_wells <= 8 else max(8, int(hydrate_production_wells // 2))
+    gpu_nodes = max(2, math.ceil(hydrate_production_wells / 8))
+
+    ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct = 35.4 if governed else 5.5
+    wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct = 47.8 if governed else 7.7
+    apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms = 0.5 if governed else 192.0
+    unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct = 0.0 if governed else 1.3
+    vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms = 0.4 if governed else 215.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct = 0.0 if governed else 3.5
+
+    return {
+        "hydrate_production_wells": hydrate_production_wells,
+        "hydrate_governance_mode": hydrate_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_hydrate_well_pods": active_hydrate_well_pods,
+        "ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct": ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct,
+        "wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct": wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct,
+        "apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms": apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms,
+        "unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct": unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct,
+        "vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms": vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct": uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct,
+        "subsea_methane_hydrate_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

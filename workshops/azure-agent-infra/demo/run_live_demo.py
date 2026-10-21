@@ -127,6 +127,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
     simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
     simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
+    simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -893,6 +894,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "sx_bridgman_16_furnaces": simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(16, "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge"),
             "sx_bridgman_64_furnaces": simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(64, "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge"),
             "raw_sx_bridgman_16_furnaces": simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(16, "fixed_withdrawal_speed_open_loop_baffle_post_cast_laue_cloud"),
+        },
+        "demo_108_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox": {
+            "hydrate_16_wells": simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(16, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"),
+            "hydrate_64_wells": simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(64, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"),
+            "raw_hydrate_16_wells": simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(16, "aggressive_step_drawdown_esp_open_loop_choke_unmonitored_sand_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

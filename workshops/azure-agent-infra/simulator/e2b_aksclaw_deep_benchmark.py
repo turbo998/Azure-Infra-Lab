@@ -120,6 +120,7 @@ from agent_infra_sizer import (
     simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
     simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
     simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
+    simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -998,6 +999,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(64, "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge"),
         simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(16, "fixed_withdrawal_speed_open_loop_baffle_post_cast_laue_cloud"),
     ]
+    subsea_methane_hydrate_profiles: List[Dict[str, object]] = [
+        simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(8, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"),
+        simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(16, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"),
+        simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(64, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"),
+        simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(16, "aggressive_step_drawdown_esp_open_loop_choke_unmonitored_sand_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1106,6 +1113,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ultradeep_10km_drilling_profiles": ultradeep_10km_drilling_profiles,
         "cmp_w2w_hybrid_bonding_profiles": cmp_w2w_hybrid_bonding_profiles,
         "sx_superalloy_bridgman_profiles": sx_superalloy_bridgman_profiles,
+        "subsea_methane_hydrate_profiles": subsea_methane_hydrate_profiles,
     }
 
 

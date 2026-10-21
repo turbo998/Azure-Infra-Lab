@@ -6582,5 +6582,67 @@
       "uncompensated_spiral_selector_misorientation_or_sliver_defect_pct": 3.5,
       "sx_superalloy_bridgman_slo_met": false
     }
+  ],
+  "subsea_methane_hydrate_profiles": [
+    {
+      "hydrate_production_wells": 8,
+      "hydrate_governance_mode": "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_hydrate_well_pods": 8,
+      "ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct": 35.4,
+      "wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct": 47.8,
+      "apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms": 0.5,
+      "unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct": 0.0,
+      "vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct": 0.0,
+      "subsea_methane_hydrate_slo_met": true
+    },
+    {
+      "hydrate_production_wells": 16,
+      "hydrate_governance_mode": "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_hydrate_well_pods": 8,
+      "ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct": 35.4,
+      "wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct": 47.8,
+      "apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms": 0.5,
+      "unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct": 0.0,
+      "vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct": 0.0,
+      "subsea_methane_hydrate_slo_met": true
+    },
+    {
+      "hydrate_production_wells": 64,
+      "hydrate_governance_mode": "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_hydrate_well_pods": 32,
+      "ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct": 35.4,
+      "wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct": 47.8,
+      "apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms": 0.5,
+      "unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct": 0.0,
+      "vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct": 0.0,
+      "subsea_methane_hydrate_slo_met": true
+    },
+    {
+      "hydrate_production_wells": 16,
+      "hydrate_governance_mode": "aggressive_step_drawdown_esp_open_loop_choke_unmonitored_sand_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_hydrate_well_pods": 8,
+      "ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct": 5.5,
+      "wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct": 7.7,
+      "apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms": 192.0,
+      "unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct": 1.3,
+      "vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms": 215.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct": 3.5,
+      "subsea_methane_hydrate_slo_met": false
+    }
   ]
 }

@@ -114,6 +114,7 @@ from agent_infra_sizer import (
     simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
     simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
     simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
+    simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -275,6 +276,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-ultradeep-10km-superhot-rock-drilling-fwi-iso15156-sil3-pool.bicep",
             "aksclaw-cmp-planarization-hybrid-w2w-bonding-epd-semis2-sil3-pool.bicep",
             "aksclaw-single-crystal-superalloy-bridgman-lmc-casting-ams2280-sil3-pool.bicep",
+            "aksclaw-subsea-methane-hydrate-depressurization-sand-control-dts-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2161,6 +2163,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_spiral_selector_misorientation_or_sliver_defect_pct"], 3.0)
         self.assertTrue(gov["sx_superalloy_bridgman_slo_met"])
         self.assertFalse(raw["sx_superalloy_bridgman_slo_met"])
+
+    def test_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(self) -> None:
+        gov = simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(
+            16, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"
+        )
+        raw = simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(
+            16, "aggressive_step_drawdown_esp_open_loop_choke_unmonitored_sand_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_hydrate_well_pods"], 8)
+        self.assertEqual(gov["ch4_hydrate_gas_recovery_and_sand_free_uptime_gain_pct"], 35.4)
+        self.assertEqual(gov["wellbore_secondary_hydrate_plug_and_screen_erosion_reduction_pct"], 47.8)
+        self.assertEqual(gov["apirp14c_iso13628_sil3_meg_injection_and_seafloor_subsidence_shutin_ms"], 0.5)
+        self.assertEqual(gov["unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_seafloor_methane_seepage_or_wellhead_tilt_collapse_pct"], 1.1)
+        self.assertEqual(gov["vessel_edge_downhole_das_dts_and_acoustic_sand_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct"], 3.0)
+        self.assertTrue(gov["subsea_methane_hydrate_slo_met"])
+        self.assertFalse(raw["subsea_methane_hydrate_slo_met"])
 
 
 if __name__ == "__main__":
