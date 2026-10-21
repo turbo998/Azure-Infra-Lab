@@ -137,6 +137,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
     simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
+    simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -953,6 +954,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "dle_16_trains": simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(16, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"),
             "dle_64_trains": simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(64, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"),
             "raw_dle_16_trains": simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(16, "fixed_bed_volume_timer_manual_acid_elution_offline_icp_cloud"),
+        },
+        "demo_118_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox": {
+            "vrfb_16_blocks": simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(16, "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge"),
+            "vrfb_64_blocks": simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(64, "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge"),
+            "raw_vrfb_16_blocks": simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(16, "constant_flow_rate_coulomb_counting_manual_remix_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

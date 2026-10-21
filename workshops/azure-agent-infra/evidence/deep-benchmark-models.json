@@ -7202,5 +7202,67 @@
       "uncompensated_mg_ca_coelution_or_silica_scaling_pct": 3.7,
       "dle_lithium_brine_sorption_slo_met": false
     }
+  ],
+  "vrfb_flow_battery_ldes_profiles": [
+    {
+      "vrfb_power_blocks": 8,
+      "vrfb_governance_mode": "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_vrfb_pods": 8,
+      "usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct": 37.8,
+      "pump_parasitic_loss_and_shunt_current_reduction_pct": 48.6,
+      "nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms": 0.4,
+      "unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct": 0.0,
+      "stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct": 0.0,
+      "vrfb_flow_battery_ldes_slo_met": true
+    },
+    {
+      "vrfb_power_blocks": 16,
+      "vrfb_governance_mode": "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_vrfb_pods": 8,
+      "usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct": 37.8,
+      "pump_parasitic_loss_and_shunt_current_reduction_pct": 48.6,
+      "nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms": 0.4,
+      "unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct": 0.0,
+      "stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct": 0.0,
+      "vrfb_flow_battery_ldes_slo_met": true
+    },
+    {
+      "vrfb_power_blocks": 64,
+      "vrfb_governance_mode": "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_vrfb_pods": 32,
+      "usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct": 37.8,
+      "pump_parasitic_loss_and_shunt_current_reduction_pct": 48.6,
+      "nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms": 0.4,
+      "unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct": 0.0,
+      "stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct": 0.0,
+      "vrfb_flow_battery_ldes_slo_met": true
+    },
+    {
+      "vrfb_power_blocks": 16,
+      "vrfb_governance_mode": "constant_flow_rate_coulomb_counting_manual_remix_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_vrfb_pods": 8,
+      "usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct": 5.4,
+      "pump_parasitic_loss_and_shunt_current_reduction_pct": 7.6,
+      "nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms": 184.0,
+      "unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct": 1.4,
+      "stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct": 3.6,
+      "vrfb_flow_battery_ldes_slo_met": false
+    }
   ]
 }

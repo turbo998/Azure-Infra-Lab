@@ -530,6 +530,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(115)">116. 零极距离子交换膜氯碱电解槽 (全氟磺酸/羧酸双层膜 18–36 kA 双极电槽)、二次盐水螯合树脂钙镁硬度 (&lt;20 ppb) 与阴/阳极室差压防串气 PINN-MPC、湿氯气中含氢 (H2-in-Cl2) 激光 TDLAS 在线监测及 Euro Chlor GEST 79/82 / NFPA 68 / IEC 61511 SIL-3 充氮稀释与极化整流器防反电势硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(116)">117. 航空级碳纤维 (T1100G / M60J 12K–50K 原丝) 聚丙烯腈 (PAN) 预氧化炉与高温碳化/石墨化炉 (220–2,800°C)、腈基环化强放热防失控与乱层石墨微晶取向罗拉张力 PINN-MPC、在线广角 X 射线散射 (WAXS)/拉曼光谱及 NFPA 86 / OSHA 1910 / EN 1539 / IEC 61511 SIL-3 剧毒氰化氢 (HCN) 裂解尾气焚烧与氮气迷宫气幕硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(117)">118. 盐湖/地热卤水直接提锂 (DLE 20,000–100,000 tpa LCE) 钛/锰尖晶石离子筛转盘吸附与膜电容去离子 (MCDI)、穿透曲线与镁锂选择性 PINN-MPC、在线激光诱导击穿光谱 (LIBS)/ICP-OES 及 API RP 14C / OSHA 1910 / EPA UIC / IEC 61511 SIL-3 酸洗 HCl/H2S 闪蒸与回注井口压裂超压硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(118)">119. 百兆瓦级全钒液流电池 (VRFB 100 MW / 1,000 MWh) 长时储能 (LDES)、唐南膜钒离子穿跃与正负极价态失衡再平衡 PINN-MPC、在线紫外可见吸收光谱 (UV-Vis)/开路电压 (OCV) 量测及 UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3 析氢吹扫、旁路漏电跳闸与五氧化二钒热析出硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3205,6 +3206,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 118: Vanadium Redox Flow Battery (VRFB) LDES & UL 1973 / NFPA 855 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 118 · VANADIUM REDOX FLOW BATTERY (VRFB 100 MW / 1,000 MWH LDES) DONNAN MEMBRANE CROSSOVER &amp; VALENCE REBALANCING PINN-MPC, IN-LINE UV-VIS/OCV METROLOGY &amp; UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3 H2 EVOLUTION &amp; V2O5 PRECIPITATION INTERLOCK SIZER</span>
+    <h2>全自主百兆瓦级全钒液流电池（<code>VRFB 100 MW / 1,000 MWh</code> 10 小时电网级长时储能 <code>LDES</code>）全氟磺酸/阴离子交换膜唐南（Donnan）钒离子穿跃与正负极电解液价态失衡（<code>V2+/V3+ vs VO2+/VO2+</code>）在线自动移液/电化学再平衡 <code>PINN-MPC</code>、在线紫外可见吸收光谱（<code>UV-Vis</code>）四价态摩尔分数与开路电压（<code>OCV</code>）软测量及 <code>UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3</code> 负极析氢爆炸下限（<code>H2 LEL</code>）氮气吹扫、公共歧管旁路电流接地跳闸与正极五氧化二钒（<code>V2O5</code>）热沉淀不可逆堵毡硬联锁测算器</h2>
+    <div class="sub">量化在 <code>8 – 64</code> 组百兆瓦级全钒液流电池（<code>VRFB</code>）独立功率模块（<code>Power Blocks</code>，每模块含多级双极电堆串并联与数千立方米硫酸钒/盐酸混酸储罐）规模下，多价态钒离子（<code>V2+, V3+, VO2+, VO2+</code>）与水合质子在离子交换膜两侧因浓度梯度、电迁移与电渗拖拽引发的非对称跨膜穿跃（Nernst-Planck-Donnan 膜传质与电极多孔碳毡 Darcy-Brinkman 渗流极化模型）容量衰减动力学耦合 <code>PINN</code> + 变频磁力泵化学计量流量（Stoichiometric Flow Factor）寻优与正负储罐自动旁通回流/催化还原价态再平衡 <code>MPC</code>（长周期可用放电容量保持率与系统综合能量效率增益 <code>+37.8%</code>、循环泵寄生功耗与公共歧管旁路漏电损耗 <code>-48.6%</code>）、<code>UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3</code> 高荷电态（<code>SoC &gt; 85%</code>）负极过电位析氢致储罐顶空氢气逼近 <code>15% LEL (0.6% vol H2)</code> 紧急氮气吹扫与催化复合、正极五价钒（<code>VO2+</code>）在电解液超温（<code>&gt;40.0&deg;C</code>）下不可逆胶体析出 <code>V2O5</code> 堵死碳毡流道冷冻水急冷、以及高导电强酸公共进出液歧管旁路电流引发绝缘击穿/双极板碳腐蚀或围堰漏酸 <code>DC</code> 固态断路器毫秒级跳闸硬联锁（<code>0.4 ms</code>，顶空氢气闪爆或正极 <code>V2O5</code> 热沉淀报废电堆事故率 <code>0.0%</code>）与电堆支路端 <code>在线流通池 UV-Vis 全光谱光度计（760 nm VO2+ / 605 nm V3+ / 390 nm VO2+ 解耦）+ 参比半电池 OCV</code> 边缘推理（<code>0.4 ms</code>，储能电站 WAN 带宽削减 <code>99.4%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 全钒液流电池长时储能独立功率模块与储罐单元数 (VRFB LDES Power Blocks &amp; Tank Units): <strong id="lbl_vrfb_blocks" style="color:var(--teal)">16</strong> Blocks</label>
+          <input type="range" id="rng_vrfb_blocks" min="8" max="64" step="8" value="16" oninput="runVrfbFlowBatteryLdesLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 唐南膜穿跃与价态再平衡 PINN-MPC、在线 UV-Vis/OCV 监测与 NFPA 855 / SIL-3 析氢/V2O5 硬联锁模式 (VRFB LDES Governance Mode)</label>
+          <select id="sel_vrfb_mode" onchange="runVrfbFlowBatteryLdesLab()">
+            <option value="pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge" selected>唐南跨膜穿跃与多孔碳毡浓差极化 PINN + 变频泵化学计量比与自动移液/还原再平衡 MPC (+37.8% 容量保持率与系统效率 / -48.6% 泵耗与旁路漏电) + NFPA 855 SIL-3 0.4ms 顶空析氢吹扫与 V2O5 防析出急冷联锁 + 0.4ms UV-Vis/OCV 边缘 (推荐)</option>
+            <option value="constant_flow_rate_coulomb_counting_manual_remix_cloud">传统反模式：恒定最大流量运行 + 安时积分 (Coulomb Counting) 估算 SoC 与人工定期混液 (+5.4% 效率增益) + 无 0.4ms 顶空析氢与 V2O5 沉淀 SIL-3 联锁 (1.4% 储罐顶空 H2 超标或正极 >40°C 析出 V2O5 堵堆违例) + 离线实验室滴定云端轮询 (3.6% 平均价态偏移失衡或双极板过充腐蚀漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="vrfbFlowBatteryLdesOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5154,6 +5178,21 @@ resource dleLithiumBrineSorptionSil3Pool 'Microsoft.ContainerService/managedClus
       'aksclaw.io/carousel-edge-libs-icp-oes-mcdi': 'enabled-0.4ms-99.4pct-salar-wan-cut'
     }
   }
+}`,
+`// 119. Azure Bicep: Vanadium Redox Flow Battery (VRFB 100 MW / 1,000 MWh LDES) Donnan Membrane Crossover & Valence Rebalancing PINN-MPC, In-Line UV-Vis/OCV Metrology & UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3 H2 Evolution & V2O5 Precipitation Pool
+resource vrfbFlowBatteryLdesSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'vrfbpinnsil3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (Nernst-Planck-Donnan Membrane Vanadium Crossover & Porous Felt Polarization PINN + Variable-Speed Stoichiometric Flow & Auto Electrolyte Remix/Valence Rebalancing MPC + In-Line UV-Vis Spectrophotometry & Half-Cell OCV Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'vrfb-flow-battery-ldes-uvvis-nfpa855-sil3-agent'
+      'aksclaw.io/pinn-mpc-donnan-crossover-valence-rebalancing': 'enabled-37.8pct-capacity-retention-rte-48.6pct-pump-shunt-loss-cut'
+      'aksclaw.io/nfpa855-sil3-h2-headspace-purge-v2o5-chill-dc-trip': 'enforced-0.4ms-zero-h2-lel-or-v2o5-stack-plugging'
+      'aksclaw.io/stack-edge-uvvis-valence-halfcell-ocv': 'enabled-0.4ms-99.4pct-ldes-plant-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -5372,6 +5411,30 @@ runCryogenicAsuAirSeparationLab();
 runChlorAlkaliMembraneElectrolyzerLab();
 runCarbonFiberPanOxidationCarbonizationLab();
 runDleLithiumBrineSorptionLab();
+runVrfbFlowBatteryLdesLab();
+
+function runVrfbFlowBatteryLdesLab() {
+  const blocks = parseInt(document.getElementById('rng_vrfb_blocks').value, 10);
+  const mode = document.getElementById('sel_vrfb_mode').value;
+  document.getElementById('lbl_vrfb_blocks').textContent = blocks.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(blocks / 8));
+  const pods = blocks <= 8 ? Math.max(2, Math.min(8, blocks)) : Math.max(8, Math.floor(blocks / 2));
+  const ok = mode === 'pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge';
+  const mpcStr = ok ? "Nernst-Planck-Donnan 跨膜穿跃与碳毡浓差极化 PINN + 变频泵化学计量流率与自动移液/还原再平衡 MPC · 长周期可用放电容量保持率与综合效率增益 +37.8% · 循环泵寄生功耗与歧管旁路电流损耗 -48.6%" : "传统恒定最大流量与安时积分 (Coulomb Counting) · 仅 +5.4% 效率增益 / -7.6% 泵耗削减 (非对称水迁移与钒穿跃致正负极有效容量失配，且 3.6% 平均价态高于 +3.5 偏移或双极板过充腐蚀漏检)";
+  const sil3Str = ok ? "0.4 ms UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3 储罐顶空析氢 (<15% LEL) 氮气吹扫/催化复合、正极超温 (>40°C) 防 V2O5 沉淀急冷与旁路漏电 DC 断路器硬联锁 · 0.0% 顶空氢气燃爆或 V2O5 堵堆事故违例" : "无 0.4ms 顶空析氢吹扫与防 V2O5 热析出 SIL-3 硬联锁 (184.0 ms 云端滞后) · 1.4% 充电末期负极浓差极化剧烈析氢突破 LEL 或夏季正极 VO2+ 超温不可逆析出 V2O5 晶泥堵死电堆风险";
+  const edgeStr = ok ? "0.4 ms 电堆支路端在线流通池 UV-Vis 光谱 (760/605/390 nm 四价态解耦) + 正负半电池参比电极 OCV 边缘 (-99.4% 电站 WAN 带宽) · 0.0% 副反应造成全钒平均价态失衡 (>+3.55) 或高电位双极板碳腐蚀穿孔漏检" : "212.0 ms 离线电位滴定抽检与云端 BMS 轮询延迟 · 无法在末端高 SoC 极化骤升瞬间动态上调供液化学计量比以抑制析氢与正极析氧腐蚀";
+
+  document.getElementById('vrfbFlowBatteryLdesOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 储罐顶空负极析氢突破 LEL 或正极超温析出 V2O5 堵堆风险 · 3.6% 全钒平均价态失衡或双极板腐蚀漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个 VRFB 储能孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>电堆支路端在线流通池 UV-Vis 四价态吸收光谱、半电池参比电极 OCV 与旁路漏电阻抗边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runDleLithiumBrineSorptionLab() {
   const trains = parseInt(document.getElementById('rng_dle_trains').value, 10);

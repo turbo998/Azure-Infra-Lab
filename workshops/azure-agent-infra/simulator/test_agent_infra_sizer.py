@@ -124,6 +124,7 @@ from agent_infra_sizer import (
     simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
     simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
+    simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -290,6 +291,12 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-ldpe-hypercompressor-tubular-reactor-ftnir-api618-sil3-pool.bicep",
             "aksclaw-medical-cyclotron-radiopharma-hotcell-usp823-sil3-pool.bicep",
             "aksclaw-hollowcore-optical-fiber-draw-tower-meniscus-itu-sil3-pool.bicep",
+            "aksclaw-polysilicon-siemens-cvd-fbr-trichlorosilane-semis2-sil3-pool.bicep",
+            "aksclaw-cryogenic-asu-air-separation-lox-reboiler-eiga65-sil3-pool.bicep",
+            "aksclaw-chlor-alkali-membrane-electrolyzer-cl2-h2-eurochlor-sil3-pool.bicep",
+            "aksclaw-carbon-fiber-pan-oxidation-carbonization-hcn-nfpa86-sil3-pool.bicep",
+            "aksclaw-dle-lithium-brine-sorption-libs-epauic-sil3-pool.bicep",
+            "aksclaw-vrfb-flow-battery-ldes-uvvis-nfpa855-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2386,6 +2393,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_mg_ca_coelution_or_silica_scaling_pct"], 3.0)
         self.assertTrue(gov["dle_lithium_brine_sorption_slo_met"])
         self.assertFalse(raw["dle_lithium_brine_sorption_slo_met"])
+
+    def test_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(self) -> None:
+        gov = simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(
+            16, "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge"
+        )
+        raw = simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(
+            16, "constant_flow_rate_coulomb_counting_manual_remix_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_vrfb_pods"], 8)
+        self.assertEqual(gov["usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct"], 37.8)
+        self.assertEqual(gov["pump_parasitic_loss_and_shunt_current_reduction_pct"], 48.6)
+        self.assertEqual(gov["nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct"], 1.0)
+        self.assertEqual(gov["stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct"], 3.0)
+        self.assertTrue(gov["vrfb_flow_battery_ldes_slo_met"])
+        self.assertFalse(raw["vrfb_flow_battery_ldes_slo_met"])
 
 
 if __name__ == "__main__":

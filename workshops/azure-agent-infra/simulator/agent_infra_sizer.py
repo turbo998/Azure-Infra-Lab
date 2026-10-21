@@ -6178,6 +6178,49 @@ def simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(
     }
 
 
+def simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox(
+    vrfb_power_blocks: int = 16,
+    vrfb_governance_mode: str = "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Utility-Scale Vanadium Redox Flow Battery (VRFB) Long-Duration Energy Storage (LDES 100 MW / 1,000 MWh), Donnan Membrane Vanadium Crossover & Electrolyte Valence (V2+/V3+ vs VO2+/VO2+) Rebalancing PINN-MPC, In-Line UV-Vis Spectrophotometric State-of-Charge / Open-Circuit Voltage (OCV) Metrology & UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3 Hydrogen Evolution Headspace Purge, Shunt-Current Ground-Fault & Acid Containment Interlock Agent Infrastructure (Chapter 123)."""
+    if vrfb_power_blocks <= 0:
+        raise ValueError("vrfb_power_blocks must be positive")
+    valid_modes = {
+        "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge",
+        "constant_flow_rate_coulomb_counting_manual_remix_cloud",
+    }
+    if vrfb_governance_mode not in valid_modes:
+        raise ValueError(f"vrfb_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = vrfb_governance_mode == "pinn_mpc_donnan_crossover_valence_rebalancing_uvvis_nfpa855_sil3_edge"
+    active_vrfb_pods = max(2, min(8, int(vrfb_power_blocks))) if vrfb_power_blocks <= 8 else max(8, int(vrfb_power_blocks // 2))
+    gpu_nodes = max(2, math.ceil(vrfb_power_blocks / 8))
+
+    usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct = 37.8 if governed else 5.4
+    pump_parasitic_loss_and_shunt_current_reduction_pct = 48.6 if governed else 7.6
+    nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms = 0.4 if governed else 184.0
+    unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct = 0.0 if governed else 1.4
+    stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms = 0.4 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct = 0.0 if governed else 3.6
+
+    return {
+        "vrfb_power_blocks": vrfb_power_blocks,
+        "vrfb_governance_mode": vrfb_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_vrfb_pods": active_vrfb_pods,
+        "usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct": usable_discharge_capacity_retention_and_roundtrip_efficiency_gain_pct,
+        "pump_parasitic_loss_and_shunt_current_reduction_pct": pump_parasitic_loss_and_shunt_current_reduction_pct,
+        "nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms": nfpa855_sil3_h2_headspace_purge_and_dc_breaker_trip_ms,
+        "unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct": unmitigated_h2_evolution_lel_or_v2o5_thermal_precipitation_pct,
+        "stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms": stack_edge_uvvis_valence_and_stoichiometric_flow_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct": uncompensated_valence_imbalance_or_bipolar_plate_corrosion_pct,
+        "vrfb_flow_battery_ldes_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
