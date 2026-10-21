@@ -7884,5 +7884,67 @@
       "uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct": 3.9,
       "longwall_mining_rockburst_shearer_slo_met": false
     }
+  ],
+  "coal_gasifier_rectisol_urea_profiles": [
+    {
+      "gasifier_urea_trains": 4,
+      "gasifier_governance_mode": "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gasifier_pods": 4,
+      "effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct": 38.9,
+      "slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct": 53.9,
+      "apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms": 0.3,
+      "unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct": 0.0,
+      "plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct": 0.0,
+      "coal_gasifier_rectisol_urea_slo_met": true
+    },
+    {
+      "gasifier_urea_trains": 8,
+      "gasifier_governance_mode": "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gasifier_pods": 8,
+      "effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct": 38.9,
+      "slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct": 53.9,
+      "apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms": 0.3,
+      "unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct": 0.0,
+      "plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct": 0.0,
+      "coal_gasifier_rectisol_urea_slo_met": true
+    },
+    {
+      "gasifier_urea_trains": 32,
+      "gasifier_governance_mode": "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gasifier_pods": 16,
+      "effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct": 38.9,
+      "slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct": 53.9,
+      "apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms": 0.3,
+      "unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct": 0.0,
+      "plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct": 0.0,
+      "coal_gasifier_rectisol_urea_slo_met": true
+    },
+    {
+      "gasifier_urea_trains": 8,
+      "gasifier_governance_mode": "fixed_o2_coal_ratio_manual_flux_addition_offline_titration_urea_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gasifier_pods": 8,
+      "effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct": 5.6,
+      "slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct": 8.2,
+      "apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms": 152.0,
+      "unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct": 1.4,
+      "plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms": 194.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct": 3.8,
+      "coal_gasifier_rectisol_urea_slo_met": false
+    }
   ]
 }

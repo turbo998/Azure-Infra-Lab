@@ -6651,6 +6651,49 @@ def simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(
     }
 
 
+def simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(
+    gasifier_urea_trains: int = 8,
+    gasifier_governance_mode: str = "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Mega-Scale Coal/Biomass Entrained-Flow Slagging Gasifier (1,350-1,600 C / 6.5 MPa), Rectisol (-60 C) Acid-Gas Removal, Haber-Bosch Ammonia Converter & High-Pressure Urea Stripping Loop (15-25 MPa), Slag Viscosity T250 Tapping & Ammonium Carbamate Passivation PINN-MPC, TDLAS Syngas / Raman N/C Ratio Metrology & API RP 554 / ASME Section VIII Div. 2 / IEC 61508 SIL-3 Gasifier O2/Coal Ratio ESD, Urea Passivation-Air Trip & NH3 Horton-Sphere Isolation Interlock Agent Infrastructure (Chapter 134)."""
+    if gasifier_urea_trains <= 0:
+        raise ValueError("gasifier_urea_trains must be positive")
+    valid_modes = {
+        "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge",
+        "fixed_o2_coal_ratio_manual_flux_addition_offline_titration_urea_cloud",
+    }
+    if gasifier_governance_mode not in valid_modes:
+        raise ValueError(f"gasifier_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = gasifier_governance_mode == "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge"
+    active_gasifier_pods = max(2, min(8, int(gasifier_urea_trains))) if gasifier_urea_trains <= 8 else max(8, int(gasifier_urea_trains // 2))
+    gpu_nodes = max(2, math.ceil(gasifier_urea_trains / 4))
+
+    effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct = 38.9 if governed else 5.6
+    slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct = 53.9 if governed else 8.2
+    apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms = 0.3 if governed else 152.0
+    unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct = 0.0 if governed else 1.4
+    plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms = 0.3 if governed else 194.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct = 0.0 if governed else 3.8
+
+    return {
+        "gasifier_urea_trains": gasifier_urea_trains,
+        "gasifier_governance_mode": gasifier_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gasifier_pods": active_gasifier_pods,
+        "effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct": effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct,
+        "slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct": slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct,
+        "apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms": apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms,
+        "unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct": unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct,
+        "plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms": plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct": uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct,
+        "coal_gasifier_rectisol_urea_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -135,6 +135,7 @@ from agent_infra_sizer import (
     simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox,
     simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
     simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
+    simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -317,6 +318,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-usc-boiler-turbine-flex-co-firing-tdlas-nfpa85-mft-sil3-pool.bicep",
             "aksclaw-offshore-jackup-spudcan-punchthrough-sscv-sname55a-sil3-pool.bicep",
             "aksclaw-longwall-mining-rockburst-shearer-methane-atex-m1-sil3-pool.bicep",
+            "aksclaw-coal-gasifier-rectisol-urea-carbamate-asmeviii-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2644,6 +2646,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct"], 3.0)
         self.assertTrue(gov["longwall_mining_rockburst_shearer_slo_met"])
         self.assertFalse(raw["longwall_mining_rockburst_shearer_slo_met"])
+
+    def test_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(self) -> None:
+        gov = simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(
+            8, "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge"
+        )
+        raw = simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(
+            8, "fixed_o2_coal_ratio_manual_flux_addition_offline_titration_urea_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_gasifier_pods"], 8)
+        self.assertEqual(gov["effective_syngas_co_h2_and_urea_single_pass_conversion_gain_pct"], 38.9)
+        self.assertEqual(gov["slag_tap_plugging_frequency_and_stripper_steam_consumption_reduction_pct"], 53.9)
+        self.assertEqual(gov["apirp554_asmeviii_sil3_o2_coal_esd_and_urea_passivation_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_gasifier_oxygen_burnthrough_or_urea_stripper_rupture_pct"], 1.0)
+        self.assertEqual(gov["plant_edge_tdlas_syngas_and_raman_carbamate_corrosion_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct"], 3.0)
+        self.assertTrue(gov["coal_gasifier_rectisol_urea_slo_met"])
+        self.assertFalse(raw["coal_gasifier_rectisol_urea_slo_met"])
 
 
 if __name__ == "__main__":
