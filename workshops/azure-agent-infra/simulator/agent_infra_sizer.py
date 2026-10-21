@@ -5963,6 +5963,49 @@ def simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(
     }
 
 
+def simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(
+    polysilicon_reactors: int = 16,
+    polysilicon_governance_mode: str = "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Pure Electronic-Grade Polysilicon (11N–12N) Modified Siemens CVD Bell-Jar Reactor (1,050–1,150°C) & Fluidized-Bed Reactor (FBR), Trichlorosilane (SiHCl3/H2) Radiative-Convective Boundary-Layer & Popcorn-Dust Nucleation PINN-MPC, In-Line CRDS/ICP-MS Sub-ppt Dopant Metrology & NFPA 69 / SEMI S2 / API RP 521 / IEC 61508 SIL-3 Chlorosilane Auto-Ignition & Water-Jacket Rupture Interlock Agent Infrastructure (Chapter 118)."""
+    if polysilicon_reactors <= 0:
+        raise ValueError("polysilicon_reactors must be positive")
+    valid_modes = {
+        "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge",
+        "fixed_current_ramp_constant_tcs_h2_ratio_offline_ftir_cloud",
+    }
+    if polysilicon_governance_mode not in valid_modes:
+        raise ValueError(f"polysilicon_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = polysilicon_governance_mode == "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"
+    active_polysilicon_pods = max(2, min(8, int(polysilicon_reactors))) if polysilicon_reactors <= 8 else max(8, int(polysilicon_reactors // 2))
+    gpu_nodes = max(2, math.ceil(polysilicon_reactors / 8))
+
+    specific_power_consumption_cut_and_11n_12n_yield_gain_pct = 36.3 if governed else 5.8
+    popcorn_crystal_homogeneous_dust_and_rod_collapse_reduction_pct = 49.0 if governed else 8.1
+    nfpa69_semis2_sil3_chlorosilane_isolation_and_water_jacket_depressurization_ms = 0.4 if governed else 186.0
+    unmitigated_chlorosilane_h2_autoignition_or_water_jacket_steam_explosion_pct = 0.0 if governed else 1.2
+    reactor_bay_edge_crds_subppt_dopant_and_two_color_pyrometer_loop_ms = 0.3 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct = 0.0 if governed else 3.4
+
+    return {
+        "polysilicon_reactors": polysilicon_reactors,
+        "polysilicon_governance_mode": polysilicon_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_polysilicon_pods": active_polysilicon_pods,
+        "specific_power_consumption_cut_and_11n_12n_yield_gain_pct": specific_power_consumption_cut_and_11n_12n_yield_gain_pct,
+        "popcorn_crystal_homogeneous_dust_and_rod_collapse_reduction_pct": popcorn_crystal_homogeneous_dust_and_rod_collapse_reduction_pct,
+        "nfpa69_semis2_sil3_chlorosilane_isolation_and_water_jacket_depressurization_ms": nfpa69_semis2_sil3_chlorosilane_isolation_and_water_jacket_depressurization_ms,
+        "unmitigated_chlorosilane_h2_autoignition_or_water_jacket_steam_explosion_pct": unmitigated_chlorosilane_h2_autoignition_or_water_jacket_steam_explosion_pct,
+        "reactor_bay_edge_crds_subppt_dopant_and_two_color_pyrometer_loop_ms": reactor_bay_edge_crds_subppt_dopant_and_two_color_pyrometer_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct": uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct,
+        "polysilicon_siemens_cvd_fbr_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

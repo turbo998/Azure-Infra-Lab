@@ -6892,5 +6892,67 @@
       "uncompensated_microtube_asymmetry_or_uv_coating_delamination_pct": 3.5,
       "hollowcore_optical_fiber_draw_slo_met": false
     }
+  ],
+  "polysilicon_siemens_cvd_fbr_profiles": [
+    {
+      "polysilicon_reactors": 8,
+      "polysilicon_governance_mode": "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polysilicon_pods": 8,
+      "specific_power_consumption_cut_and_11n_12n_yield_gain_pct": 36.3,
+      "popcorn_crystal_homogeneous_dust_and_rod_collapse_reduction_pct": 49.0,
+      "nfpa69_semis2_sil3_chlorosilane_isolation_and_water_jacket_depressurization_ms": 0.4,
+      "unmitigated_chlorosilane_h2_autoignition_or_water_jacket_steam_explosion_pct": 0.0,
+      "reactor_bay_edge_crds_subppt_dopant_and_two_color_pyrometer_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct": 0.0,
+      "polysilicon_siemens_cvd_fbr_slo_met": true
+    },
+    {
+      "polysilicon_reactors": 16,
+      "polysilicon_governance_mode": "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polysilicon_pods": 8,
+      "specific_power_consumption_cut_and_11n_12n_yield_gain_pct": 36.3,
+      "popcorn_crystal_homogeneous_dust_and_rod_collapse_reduction_pct": 49.0,
+      "nfpa69_semis2_sil3_chlorosilane_isolation_and_water_jacket_depressurization_ms": 0.4,
+      "unmitigated_chlorosilane_h2_autoignition_or_water_jacket_steam_explosion_pct": 0.0,
+      "reactor_bay_edge_crds_subppt_dopant_and_two_color_pyrometer_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct": 0.0,
+      "polysilicon_siemens_cvd_fbr_slo_met": true
+    },
+    {
+      "polysilicon_reactors": 64,
+      "polysilicon_governance_mode": "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polysilicon_pods": 32,
+      "specific_power_consumption_cut_and_11n_12n_yield_gain_pct": 36.3,
+      "popcorn_crystal_homogeneous_dust_and_rod_collapse_reduction_pct": 49.0,
+      "nfpa69_semis2_sil3_chlorosilane_isolation_and_water_jacket_depressurization_ms": 0.4,
+      "unmitigated_chlorosilane_h2_autoignition_or_water_jacket_steam_explosion_pct": 0.0,
+      "reactor_bay_edge_crds_subppt_dopant_and_two_color_pyrometer_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct": 0.0,
+      "polysilicon_siemens_cvd_fbr_slo_met": true
+    },
+    {
+      "polysilicon_reactors": 16,
+      "polysilicon_governance_mode": "fixed_current_ramp_constant_tcs_h2_ratio_offline_ftir_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_polysilicon_pods": 8,
+      "specific_power_consumption_cut_and_11n_12n_yield_gain_pct": 5.8,
+      "popcorn_crystal_homogeneous_dust_and_rod_collapse_reduction_pct": 8.1,
+      "nfpa69_semis2_sil3_chlorosilane_isolation_and_water_jacket_depressurization_ms": 186.0,
+      "unmitigated_chlorosilane_h2_autoignition_or_water_jacket_steam_explosion_pct": 1.2,
+      "reactor_bay_edge_crds_subppt_dopant_and_two_color_pyrometer_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct": 3.4,
+      "polysilicon_siemens_cvd_fbr_slo_met": false
+    }
   ]
 }

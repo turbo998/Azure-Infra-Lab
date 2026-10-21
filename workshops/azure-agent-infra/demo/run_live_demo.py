@@ -132,6 +132,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
+    simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -923,6 +924,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "fiber_16_towers": simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(16, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
             "fiber_64_towers": simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(64, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
             "raw_fiber_16_towers": simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(16, "pid_capstan_speed_fixed_manifold_pressure_offline_otdr_cloud"),
+        },
+        "demo_113_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox": {
+            "polysilicon_16_reactors": simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(16, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
+            "polysilicon_64_reactors": simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(64, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
+            "raw_polysilicon_16_reactors": simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(16, "fixed_current_ramp_constant_tcs_h2_ratio_offline_ftir_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

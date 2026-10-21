@@ -125,6 +125,7 @@ from agent_infra_sizer import (
     simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
+    simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1033,6 +1034,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(64, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
         simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(16, "pid_capstan_speed_fixed_manifold_pressure_offline_otdr_cloud"),
     ]
+    polysilicon_siemens_cvd_fbr_profiles: List[Dict[str, object]] = [
+        simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(8, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
+        simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(16, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
+        simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(64, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
+        simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(16, "fixed_current_ramp_constant_tcs_h2_ratio_offline_ftir_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1146,6 +1153,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ldpe_hypercompressor_reactor_profiles": ldpe_hypercompressor_reactor_profiles,
         "medical_cyclotron_radiopharma_profiles": medical_cyclotron_radiopharma_profiles,
         "hollowcore_optical_fiber_draw_profiles": hollowcore_optical_fiber_draw_profiles,
+        "polysilicon_siemens_cvd_fbr_profiles": polysilicon_siemens_cvd_fbr_profiles,
     }
 
 
