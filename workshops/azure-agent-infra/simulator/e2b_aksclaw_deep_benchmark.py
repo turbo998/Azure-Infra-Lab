@@ -126,6 +126,7 @@ from agent_infra_sizer import (
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
+    simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1040,6 +1041,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(64, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
         simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(16, "fixed_current_ramp_constant_tcs_h2_ratio_offline_ftir_cloud"),
     ]
+    cryogenic_asu_air_separation_profiles: List[Dict[str, object]] = [
+        simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(8, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
+        simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(16, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
+        simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(64, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
+        simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(16, "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1154,6 +1161,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "medical_cyclotron_radiopharma_profiles": medical_cyclotron_radiopharma_profiles,
         "hollowcore_optical_fiber_draw_profiles": hollowcore_optical_fiber_draw_profiles,
         "polysilicon_siemens_cvd_fbr_profiles": polysilicon_siemens_cvd_fbr_profiles,
+        "cryogenic_asu_air_separation_profiles": cryogenic_asu_air_separation_profiles,
     }
 
 

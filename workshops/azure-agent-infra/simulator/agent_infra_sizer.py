@@ -6006,6 +6006,49 @@ def simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(
     }
 
 
+def simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(
+    cryo_asu_trains: int = 16,
+    asu_governance_mode: str = "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Cryogenic Air Separation Unit (ASU, 100,000+ Nm3/h Ultra-Pure O2/N2/Ar/Kr/Xe Double-Column Distillation) & Liquid Air Energy Storage (LAES), Structured-Packing Flooding & Argon-Front Migration PINN-MPC, In-Line FTIR/GC-DID Sub-ppm Hydrocarbon Metrology in Liquid Oxygen & EIGA Doc 65 / CGA P-8 / API 670 / IEC 61508 SIL-3 Reboiler-Condenser Acetylene Dry-Boiling Detonation & Oxygen-Turboexpander Titanium-Fire Interlock Agent Infrastructure (Chapter 119)."""
+    if cryo_asu_trains <= 0:
+        raise ValueError("cryo_asu_trains must be positive")
+    valid_modes = {
+        "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge",
+        "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud",
+    }
+    if asu_governance_mode not in valid_modes:
+        raise ValueError(f"asu_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = asu_governance_mode == "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"
+    active_asu_pods = max(2, min(8, int(cryo_asu_trains))) if cryo_asu_trains <= 8 else max(8, int(cryo_asu_trains // 2))
+    gpu_nodes = max(2, math.ceil(cryo_asu_trains / 8))
+
+    argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct = 35.6 if governed else 5.4
+    argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct = 48.3 if governed else 7.8
+    eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms = 0.3 if governed else 181.0
+    unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct = 0.0 if governed else 1.1
+    coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms = 0.3 if governed else 206.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct = 0.0 if governed else 3.2
+
+    return {
+        "cryo_asu_trains": cryo_asu_trains,
+        "asu_governance_mode": asu_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_asu_pods": active_asu_pods,
+        "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct,
+        "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct,
+        "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms,
+        "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct,
+        "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct,
+        "cryogenic_asu_air_separation_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

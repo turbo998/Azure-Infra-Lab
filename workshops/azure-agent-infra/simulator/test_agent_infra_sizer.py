@@ -120,6 +120,7 @@ from agent_infra_sizer import (
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
+    simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2298,6 +2299,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct"], 3.0)
         self.assertTrue(gov["polysilicon_siemens_cvd_fbr_slo_met"])
         self.assertFalse(raw["polysilicon_siemens_cvd_fbr_slo_met"])
+
+    def test_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(self) -> None:
+        gov = simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(
+            16, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"
+        )
+        raw = simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(
+            16, "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_asu_pods"], 8)
+        self.assertEqual(gov["argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct"], 35.6)
+        self.assertEqual(gov["argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct"], 48.3)
+        self.assertEqual(gov["eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct"], 1.0)
+        self.assertEqual(gov["coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct"], 3.0)
+        self.assertTrue(gov["cryogenic_asu_air_separation_slo_met"])
+        self.assertFalse(raw["cryogenic_asu_air_separation_slo_met"])
 
 
 if __name__ == "__main__":

@@ -7156,6 +7156,68 @@
         "uncompensated_boron_phosphorus_donor_contamination_or_core_melt_pct": 3.4,
         "polysilicon_siemens_cvd_fbr_slo_met": false
       }
+    ],
+    "cryogenic_asu_air_separation_profiles": [
+      {
+        "cryo_asu_trains": 8,
+        "asu_governance_mode": "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_asu_pods": 8,
+        "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": 35.6,
+        "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": 48.3,
+        "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": 0.3,
+        "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": 0.0,
+        "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.4,
+        "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 0.0,
+        "cryogenic_asu_air_separation_slo_met": true
+      },
+      {
+        "cryo_asu_trains": 16,
+        "asu_governance_mode": "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_asu_pods": 8,
+        "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": 35.6,
+        "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": 48.3,
+        "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": 0.3,
+        "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": 0.0,
+        "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.4,
+        "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 0.0,
+        "cryogenic_asu_air_separation_slo_met": true
+      },
+      {
+        "cryo_asu_trains": 64,
+        "asu_governance_mode": "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_asu_pods": 32,
+        "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": 35.6,
+        "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": 48.3,
+        "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": 0.3,
+        "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": 0.0,
+        "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.4,
+        "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 0.0,
+        "cryogenic_asu_air_separation_slo_met": true
+      },
+      {
+        "cryo_asu_trains": 16,
+        "asu_governance_mode": "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_asu_pods": 8,
+        "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": 5.4,
+        "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": 7.8,
+        "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": 181.0,
+        "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": 1.1,
+        "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": 206.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 3.2,
+        "cryogenic_asu_air_separation_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -13331,5 +13393,52 @@
       "polysilicon_siemens_cvd_fbr_slo_met": false
     }
   },
-  "trace_sha256": "f352e574e0c2f14c3bc859cc75b5e8f3d2eae769dd69506c1cb5281772c8b32a"
+  "demo_114_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox": {
+    "asu_16_trains": {
+      "cryo_asu_trains": 16,
+      "asu_governance_mode": "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_asu_pods": 8,
+      "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": 35.6,
+      "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": 48.3,
+      "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": 0.3,
+      "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": 0.0,
+      "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 0.0,
+      "cryogenic_asu_air_separation_slo_met": true
+    },
+    "asu_64_trains": {
+      "cryo_asu_trains": 64,
+      "asu_governance_mode": "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_asu_pods": 32,
+      "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": 35.6,
+      "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": 48.3,
+      "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": 0.3,
+      "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": 0.0,
+      "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 0.0,
+      "cryogenic_asu_air_separation_slo_met": true
+    },
+    "raw_asu_16_trains": {
+      "cryo_asu_trains": 16,
+      "asu_governance_mode": "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_asu_pods": 8,
+      "argon_krypton_recovery_and_renewable_load_following_ramp_gain_pct": 5.4,
+      "argon_column_nitrogen_plugging_and_packing_flooding_vent_reduction_pct": 7.8,
+      "eiga65_cgap8_sil3_lox_reboiler_purge_and_turboexpander_trip_ms": 181.0,
+      "unmitigated_lox_reboiler_acetylene_detonation_or_oxygen_compressor_fire_pct": 1.1,
+      "coldbox_edge_lox_ftir_gcdid_hydrocarbon_and_bearing_orbit_loop_ms": 206.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_tsa_co2_breakthrough_freezing_or_9n_purity_excursion_pct": 3.2,
+      "cryogenic_asu_air_separation_slo_met": false
+    }
+  },
+  "trace_sha256": "e38a01c52de487099034202ec547d89d8830c83b2d917360d6bf0e8c44b8a85e"
 }

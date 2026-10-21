@@ -133,6 +133,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
     simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
+    simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -929,6 +930,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "polysilicon_16_reactors": simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(16, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
             "polysilicon_64_reactors": simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(64, "pinn_mpc_tcs_cvd_fbr_boundary_layer_popcorn_crds_semis2_sil3_edge"),
             "raw_polysilicon_16_reactors": simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox(16, "fixed_current_ramp_constant_tcs_h2_ratio_offline_ftir_cloud"),
+        },
+        "demo_114_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox": {
+            "asu_16_trains": simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(16, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
+            "asu_64_trains": simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(64, "pinn_mpc_cryo_distillation_argon_front_laes_eiga65_sil3_edge"),
+            "raw_asu_16_trains": simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox(16, "manual_load_ramp_fixed_reflux_ratio_periodic_lox_gc_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
