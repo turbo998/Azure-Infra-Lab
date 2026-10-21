@@ -142,6 +142,7 @@ from agent_infra_sizer import (
     simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
     simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
     simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
+    simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -331,6 +332,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-hpal-titanium-autoclave-nickel-cobalt-laterite-asmediv2-sil3-pool.bicep",
             "aksclaw-kroll-sponge-titanium-ticl4-magnesium-reduction-nfpa484-sil3-pool.bicep",
             "aksclaw-rare-earth-ndpr-solvent-extraction-molten-salt-electrolysis-sil3-pool.bicep",
+            "aksclaw-hall-heroult-aluminum-potline-cryolite-mhd-hf-scrubber-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2805,6 +2807,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_third_phase_emulsification_or_electrolyte_sludge_freeze_pct"], 3.0)
         self.assertTrue(gov["rare_earth_ndpr_sx_electrolysis_slo_met"])
         self.assertFalse(raw["rare_earth_ndpr_sx_electrolysis_slo_met"])
+
+    def test_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(self) -> None:
+        gov = simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(
+            8, "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge"
+        )
+        raw = simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(
+            8, "manual_acd_beam_raising_periodic_bath_dip_sample_offline_xrd_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_aluminum_potline_pods"], 8)
+        self.assertEqual(gov["faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct"], 41.8)
+        self.assertEqual(gov["perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct"], 57.4)
+        self.assertEqual(gov["nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct"], 1.0)
+        self.assertEqual(gov["potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct"], 3.0)
+        self.assertTrue(gov["hall_heroult_aluminum_potline_slo_met"])
+        self.assertFalse(raw["hall_heroult_aluminum_potline_slo_met"])
 
 
 if __name__ == "__main__":

@@ -155,6 +155,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
     simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
     simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
+    simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1061,6 +1062,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "rare_earth_8_lines": simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(8, "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge"),
             "rare_earth_32_lines": simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(32, "pinn_mpc_p507_cascade_saponification_ndf3_lif_anode_effect_edxrf_nfpa30_sil3_edge"),
             "raw_rare_earth_8_lines": simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox(8, "manual_acid_scrub_ratio_fixed_oxide_batch_feeding_offline_icp_assay_cloud"),
+        },
+        "demo_136_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox": {
+            "aluminum_potline_8_series": simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(8, "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge"),
+            "aluminum_potline_32_series": simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(32, "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge"),
+            "raw_aluminum_potline_8_series": simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(8, "manual_acd_beam_raising_periodic_bath_dip_sample_offline_xrd_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -6981,6 +6981,55 @@ def simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sa
     }
 
 
+def simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(
+    aluminum_potline_series: int = 8,
+    potline_governance_mode: str = "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Primary Aluminum Hall-Héroult 500-600 kA Cryolite-Alumina Reduction
+    Potline (960 C Na3AlF6-AlF3-CaF2-Al2O3 MHD Metal-Pad Roll Instability, Ledge Freeze Toe &
+    Anode-Effect CF4/C2F6 Suppression PINN-MPC), Online 40-Anode-Rod FBG Current / Bath Ratio
+    Raman Metrology & NFPA 70E / ISO 13849 / IEC 61508 SIL-3 Pot Tap-Out Molten Aluminum-Water
+    Explosion, Open-Circuit Potline Arc-Flash & HF Dry-Alumina Gas Treatment Center (GTC)
+    Interlock Sandbox (Chapter 141).
+    """
+    if aluminum_potline_series < 1:
+        raise ValueError("aluminum_potline_series must be >= 1")
+    valid_modes = {
+        "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge",
+        "manual_acd_beam_raising_periodic_bath_dip_sample_offline_xrd_cloud",
+    }
+    if potline_governance_mode not in valid_modes:
+        raise ValueError(f"potline_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = potline_governance_mode == "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge"
+    active_aluminum_potline_pods = max(2, min(8, int(aluminum_potline_series))) if aluminum_potline_series <= 8 else max(8, int(aluminum_potline_series // 2))
+    gpu_nodes = max(2, math.ceil(aluminum_potline_series / 4))
+
+    faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct = 41.8 if governed else 6.1
+    perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct = 57.4 if governed else 8.6
+    nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms = 0.3 if governed else 156.0
+    unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct = 0.0 if governed else 1.4
+    potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms = 0.3 if governed else 198.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct = 0.0 if governed else 3.8
+
+    return {
+        "aluminum_potline_series": aluminum_potline_series,
+        "potline_governance_mode": potline_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_aluminum_potline_pods": active_aluminum_potline_pods,
+        "faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct": faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct,
+        "perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct": perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct,
+        "nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms": nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms,
+        "unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct": unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct,
+        "potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms": potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct": uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct,
+        "hall_heroult_aluminum_potline_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

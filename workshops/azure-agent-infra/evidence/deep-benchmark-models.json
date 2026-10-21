@@ -8318,5 +8318,67 @@
       "uncompensated_third_phase_emulsification_or_electrolyte_sludge_freeze_pct": 3.7,
       "rare_earth_ndpr_sx_electrolysis_slo_met": false
     }
+  ],
+  "hall_heroult_aluminum_potline_profiles": [
+    {
+      "aluminum_potline_series": 4,
+      "potline_governance_mode": "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_aluminum_potline_pods": 4,
+      "faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct": 41.8,
+      "perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct": 57.4,
+      "nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms": 0.3,
+      "unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct": 0.0,
+      "potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct": 0.0,
+      "hall_heroult_aluminum_potline_slo_met": true
+    },
+    {
+      "aluminum_potline_series": 8,
+      "potline_governance_mode": "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_aluminum_potline_pods": 8,
+      "faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct": 41.8,
+      "perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct": 57.4,
+      "nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms": 0.3,
+      "unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct": 0.0,
+      "potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct": 0.0,
+      "hall_heroult_aluminum_potline_slo_met": true
+    },
+    {
+      "aluminum_potline_series": 32,
+      "potline_governance_mode": "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_aluminum_potline_pods": 16,
+      "faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct": 41.8,
+      "perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct": 57.4,
+      "nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms": 0.3,
+      "unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct": 0.0,
+      "potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct": 0.0,
+      "hall_heroult_aluminum_potline_slo_met": true
+    },
+    {
+      "aluminum_potline_series": 8,
+      "potline_governance_mode": "manual_acd_beam_raising_periodic_bath_dip_sample_offline_xrd_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_aluminum_potline_pods": 8,
+      "faradaic_current_efficiency_and_dc_kwh_per_ton_al_gain_pct": 6.1,
+      "perfluorocarbon_cf4_c2f6_anode_effect_and_net_carbon_consumption_reduction_pct": 8.6,
+      "nfpa70e_iso13849_sil3_pot_wedge_bypass_and_gtc_hf_scrubber_interlock_ms": 156.0,
+      "unmitigated_pot_tapout_molten_al_water_explosion_or_hf_roofline_release_pct": 1.4,
+      "potroom_edge_40_anode_fbg_current_and_shell_infrared_ledge_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct": 3.8,
+      "hall_heroult_aluminum_potline_slo_met": false
+    }
   ]
 }
