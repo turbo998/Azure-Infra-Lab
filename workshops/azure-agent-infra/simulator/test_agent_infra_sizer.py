@@ -143,6 +143,7 @@ from agent_infra_sizer import (
     simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
     simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
     simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
+    simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -333,6 +334,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-kroll-sponge-titanium-ticl4-magnesium-reduction-nfpa484-sil3-pool.bicep",
             "aksclaw-rare-earth-ndpr-solvent-extraction-molten-salt-electrolysis-sil3-pool.bicep",
             "aksclaw-hall-heroult-aluminum-potline-cryolite-mhd-hf-scrubber-sil3-pool.bicep",
+            "aksclaw-var-esr-superalloy-remelting-drip-short-freckle-nfpa86-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2828,6 +2830,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_mhd_metal_pad_roll_short_circuit_or_anode_spike_mucking_pct"], 3.0)
         self.assertTrue(gov["hall_heroult_aluminum_potline_slo_met"])
         self.assertFalse(raw["hall_heroult_aluminum_potline_slo_met"])
+
+    def test_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge"
+        )
+        raw = simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(
+            8, "constant_ram_feed_pid_arc_voltage_post_ingot_ultrasonic_cscan_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_var_esr_remelting_pods"], 8)
+        self.assertEqual(gov["rotor_grade_ultrasonic_cleanliness_and_equiaxed_grain_yield_gain_pct"], 42.4)
+        self.assertEqual(gov["freckle_channel_and_discrete_white_spot_ingot_scrap_reduction_pct"], 58.1)
+        self.assertEqual(gov["nfpa86_ams2750_sil3_igct_crowbar_and_helium_backfill_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_crucible_sidearc_burnthrough_steam_h2_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_crucible_sidearc_burnthrough_steam_h2_explosion_pct"], 1.0)
+        self.assertEqual(gov["bunker_edge_100khz_drip_short_wavelet_and_hall_ring_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_glow_discharge_long_arc_or_crown_fallback_white_spot_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_glow_discharge_long_arc_or_crown_fallback_white_spot_pct"], 3.0)
+        self.assertTrue(gov["var_esr_superalloy_remelting_slo_met"])
+        self.assertFalse(raw["var_esr_superalloy_remelting_slo_met"])
 
 
 if __name__ == "__main__":

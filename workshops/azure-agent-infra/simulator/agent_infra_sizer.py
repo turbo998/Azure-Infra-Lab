@@ -7030,6 +7030,56 @@ def simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox
     }
 
 
+def simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(
+    var_esr_furnace_bays: int = 8,
+    remelting_governance_mode: str = "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Aerospace Superalloy & Titanium Vacuum Arc Remelting (VAR, 30-45 kA DC,
+    10^-3 to 10^-4 mbar) & Electroslag Remelting (ESR, CaF2-CaO-Al2O3 Slag) Triple-Melt (VIM-ESR-VAR)
+    Ingot Solidification, Drip-Short Gap & Molten-Pool Paraboloid Stefan-Lorentz-Buoyancy
+    Macrosegregation (Freckle / White-Spot) Suppression PINN-MPC, Online 100 kHz Voltage Drip-Short
+    Wavelet / Load-Cell Melt-Rate Metrology & NFPA 86 / NADCAP AMS 2750 / IEC 61508 SIL-3 Copper
+    Crucible Side-Arc Burn-Through (Cu-Water-Ti Steam-Hydrogen Explosion), Coaxial IGCT Crowbar Trip
+    & Helium Backfill Quench Interlock Sandbox (Chapter 142).
+    """
+    if var_esr_furnace_bays < 1:
+        raise ValueError("var_esr_furnace_bays must be >= 1")
+    valid_modes = {
+        "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge",
+        "constant_ram_feed_pid_arc_voltage_post_ingot_ultrasonic_cscan_cloud",
+    }
+    if remelting_governance_mode not in valid_modes:
+        raise ValueError(f"remelting_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = remelting_governance_mode == "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge"
+    active_var_esr_remelting_pods = max(2, min(8, int(var_esr_furnace_bays))) if var_esr_furnace_bays <= 8 else max(8, int(var_esr_furnace_bays // 2))
+    gpu_nodes = max(2, math.ceil(var_esr_furnace_bays / 4))
+
+    rotor_grade_ultrasonic_cleanliness_and_equiaxed_grain_yield_gain_pct = 42.4 if governed else 6.3
+    freckle_channel_and_discrete_white_spot_ingot_scrap_reduction_pct = 58.1 if governed else 8.8
+    nfpa86_ams2750_sil3_igct_crowbar_and_helium_backfill_interlock_ms = 0.2 if governed else 148.0
+    unmitigated_crucible_sidearc_burnthrough_steam_h2_explosion_pct = 0.0 if governed else 1.3
+    bunker_edge_100khz_drip_short_wavelet_and_hall_ring_loop_ms = 0.3 if governed else 192.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_glow_discharge_long_arc_or_crown_fallback_white_spot_pct = 0.0 if governed else 3.7
+
+    return {
+        "var_esr_furnace_bays": var_esr_furnace_bays,
+        "remelting_governance_mode": remelting_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_var_esr_remelting_pods": active_var_esr_remelting_pods,
+        "rotor_grade_ultrasonic_cleanliness_and_equiaxed_grain_yield_gain_pct": rotor_grade_ultrasonic_cleanliness_and_equiaxed_grain_yield_gain_pct,
+        "freckle_channel_and_discrete_white_spot_ingot_scrap_reduction_pct": freckle_channel_and_discrete_white_spot_ingot_scrap_reduction_pct,
+        "nfpa86_ams2750_sil3_igct_crowbar_and_helium_backfill_interlock_ms": nfpa86_ams2750_sil3_igct_crowbar_and_helium_backfill_interlock_ms,
+        "unmitigated_crucible_sidearc_burnthrough_steam_h2_explosion_pct": unmitigated_crucible_sidearc_burnthrough_steam_h2_explosion_pct,
+        "bunker_edge_100khz_drip_short_wavelet_and_hall_ring_loop_ms": bunker_edge_100khz_drip_short_wavelet_and_hall_ring_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_glow_discharge_long_arc_or_crown_fallback_white_spot_pct": uncompensated_glow_discharge_long_arc_or_crown_fallback_white_spot_pct,
+        "var_esr_superalloy_remelting_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

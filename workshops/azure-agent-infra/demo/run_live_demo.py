@@ -156,6 +156,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
     simulate_rare_earth_ndpr_solvent_extraction_molten_salt_electrolysis_sil3_sandbox,
     simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
+    simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1067,6 +1068,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "aluminum_potline_8_series": simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(8, "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge"),
             "aluminum_potline_32_series": simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(32, "pinn_mpc_sele_mhd_metal_pad_roll_sidewall_ledge_anode_rod_fbg_nfpa70e_sil3_edge"),
             "raw_aluminum_potline_8_series": simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox(8, "manual_acd_beam_raising_periodic_bath_dip_sample_offline_xrd_cloud"),
+        },
+        "demo_137_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox": {
+            "var_esr_8_bays": simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(8, "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge"),
+            "var_esr_32_bays": simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(32, "pinn_mpc_var_drip_short_stefan_lorentz_freckle_hall_ring_nfpa86_sil3_edge"),
+            "raw_var_esr_8_bays": simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox(8, "constant_ram_feed_pid_arc_voltage_post_ingot_ultrasonic_cscan_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
