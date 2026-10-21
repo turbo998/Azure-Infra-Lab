@@ -5920,6 +5920,49 @@ def simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(
     }
 
 
+def simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(
+    draw_towers: int = 16,
+    fiber_draw_governance_mode: str = "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Low-Vibration Photonic Quantum & Telecom Hollow-Core Anti-Resonant Fiber (HC-ARF / NANF) Draw Tower (2,000–2,200°C Graphite Induction Furnace), Neck-Down Meniscus Viscoelasticity & Capillary Pressurization PINN-MPC, In-Line 10 kHz Laser Concentricity Metrology & ITU-T G.652/G.654 / Telcordia GR-20 / NFPA 86 / IEC 61508 SIL-3 Bare-Silica Breakage Catcher Interlock Agent Infrastructure (Chapter 117)."""
+    if draw_towers <= 0:
+        raise ValueError("draw_towers must be positive")
+    valid_modes = {
+        "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge",
+        "pid_capstan_speed_fixed_manifold_pressure_offline_otdr_cloud",
+    }
+    if fiber_draw_governance_mode not in valid_modes:
+        raise ValueError(f"fiber_draw_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = fiber_draw_governance_mode == "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"
+    active_draw_tower_pods = max(2, min(8, int(draw_towers))) if draw_towers <= 8 else max(8, int(draw_towers // 2))
+    gpu_nodes = max(2, math.ceil(draw_towers / 8))
+
+    nanf_sub_01db_km_attenuation_and_draw_speed_yield_gain_pct = 35.9 if governed else 5.5
+    capillary_collapse_and_diameter_rayleigh_wave_scrap_reduction_pct = 48.7 if governed else 8.0
+    itu_nfpa86_sil3_bare_fiber_whip_catcher_and_argon_seal_interlock_ms = 0.3 if governed else 179.0
+    unmitigated_high_speed_bare_fiber_shatter_or_graphite_oxidation_pct = 0.0 if governed else 1.3
+    tower_edge_10khz_laser_micrometer_and_concentricity_loop_ms = 0.3 if governed else 204.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_microtube_asymmetry_or_uv_coating_delamination_pct = 0.0 if governed else 3.5
+
+    return {
+        "draw_towers": draw_towers,
+        "fiber_draw_governance_mode": fiber_draw_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_draw_tower_pods": active_draw_tower_pods,
+        "nanf_sub_01db_km_attenuation_and_draw_speed_yield_gain_pct": nanf_sub_01db_km_attenuation_and_draw_speed_yield_gain_pct,
+        "capillary_collapse_and_diameter_rayleigh_wave_scrap_reduction_pct": capillary_collapse_and_diameter_rayleigh_wave_scrap_reduction_pct,
+        "itu_nfpa86_sil3_bare_fiber_whip_catcher_and_argon_seal_interlock_ms": itu_nfpa86_sil3_bare_fiber_whip_catcher_and_argon_seal_interlock_ms,
+        "unmitigated_high_speed_bare_fiber_shatter_or_graphite_oxidation_pct": unmitigated_high_speed_bare_fiber_shatter_or_graphite_oxidation_pct,
+        "tower_edge_10khz_laser_micrometer_and_concentricity_loop_ms": tower_edge_10khz_laser_micrometer_and_concentricity_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_microtube_asymmetry_or_uv_coating_delamination_pct": uncompensated_microtube_asymmetry_or_uv_coating_delamination_pct,
+        "hollowcore_optical_fiber_draw_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

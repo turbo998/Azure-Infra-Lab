@@ -131,6 +131,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
     simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
+    simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -917,6 +918,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "cyclotron_16_suites": simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(16, "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge"),
             "cyclotron_64_suites": simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(64, "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge"),
             "raw_cyclotron_16_suites": simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(16, "static_beam_collimator_fixed_timer_cassette_manual_qc_cloud"),
+        },
+        "demo_112_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox": {
+            "fiber_16_towers": simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(16, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
+            "fiber_64_towers": simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(64, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
+            "raw_fiber_16_towers": simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(16, "pid_capstan_speed_fixed_manifold_pressure_offline_otdr_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

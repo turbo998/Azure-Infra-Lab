@@ -118,6 +118,7 @@ from agent_infra_sizer import (
     simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
     simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
+    simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -283,6 +284,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-uhv-mbe-quantum-epitaxy-rheed-bet-semis2-sil3-pool.bicep",
             "aksclaw-ldpe-hypercompressor-tubular-reactor-ftnir-api618-sil3-pool.bicep",
             "aksclaw-medical-cyclotron-radiopharma-hotcell-usp823-sil3-pool.bicep",
+            "aksclaw-hollowcore-optical-fiber-draw-tower-meniscus-itu-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2253,6 +2255,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_target_voiding_beam_walk_or_kryptofix_exceedance_pct"], 3.0)
         self.assertTrue(gov["medical_cyclotron_radiopharma_slo_met"])
         self.assertFalse(raw["medical_cyclotron_radiopharma_slo_met"])
+
+    def test_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(self) -> None:
+        gov = simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(
+            16, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"
+        )
+        raw = simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(
+            16, "pid_capstan_speed_fixed_manifold_pressure_offline_otdr_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_draw_tower_pods"], 8)
+        self.assertEqual(gov["nanf_sub_01db_km_attenuation_and_draw_speed_yield_gain_pct"], 35.9)
+        self.assertEqual(gov["capillary_collapse_and_diameter_rayleigh_wave_scrap_reduction_pct"], 48.7)
+        self.assertEqual(gov["itu_nfpa86_sil3_bare_fiber_whip_catcher_and_argon_seal_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_high_speed_bare_fiber_shatter_or_graphite_oxidation_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_high_speed_bare_fiber_shatter_or_graphite_oxidation_pct"], 1.2)
+        self.assertEqual(gov["tower_edge_10khz_laser_micrometer_and_concentricity_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_microtube_asymmetry_or_uv_coating_delamination_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_microtube_asymmetry_or_uv_coating_delamination_pct"], 3.0)
+        self.assertTrue(gov["hollowcore_optical_fiber_draw_slo_met"])
+        self.assertFalse(raw["hollowcore_optical_fiber_draw_slo_met"])
 
 
 if __name__ == "__main__":

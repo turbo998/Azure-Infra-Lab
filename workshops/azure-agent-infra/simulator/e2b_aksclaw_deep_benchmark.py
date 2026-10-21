@@ -124,6 +124,7 @@ from agent_infra_sizer import (
     simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
     simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
     simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox,
+    simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1026,6 +1027,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(64, "pinn_mpc_bethe_bloch_target_boiling_decay_corrected_synthesis_usp823_sil3_edge"),
         simulate_medical_cyclotron_radiopharma_hotcell_usp823_sil3_sandbox(16, "static_beam_collimator_fixed_timer_cassette_manual_qc_cloud"),
     ]
+    hollowcore_optical_fiber_draw_profiles: List[Dict[str, object]] = [
+        simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(8, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
+        simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(16, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
+        simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(64, "pinn_mpc_neckdown_meniscus_nanf_capillary_pressure_itu_sil3_edge"),
+        simulate_hollowcore_optical_fiber_draw_tower_meniscus_itu_sil3_sandbox(16, "pid_capstan_speed_fixed_manifold_pressure_offline_otdr_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1138,6 +1145,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "uhv_mbe_quantum_epitaxy_profiles": uhv_mbe_quantum_epitaxy_profiles,
         "ldpe_hypercompressor_reactor_profiles": ldpe_hypercompressor_reactor_profiles,
         "medical_cyclotron_radiopharma_profiles": medical_cyclotron_radiopharma_profiles,
+        "hollowcore_optical_fiber_draw_profiles": hollowcore_optical_fiber_draw_profiles,
     }
 
 
