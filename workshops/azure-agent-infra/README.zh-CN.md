@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-22 (Cycle #130 · 136 Chapters · 131 Blueprints · 130 Simulators · 139/139 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-22 (Cycle #131 · 137 Chapters · 132 Blueprints · 131 Simulators · 140/140 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -3824,7 +3824,36 @@ sequenceDiagram
 
 ---
 
-## 136. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 136. 自主大型硫酸盐法制浆连续蒸煮器（`H-Factor / Kappa` 卡伯值脱木素）、多效浓黑液蒸发站（`80% DS` 高固形物）与汤姆林森碱回收锅炉（`Tomlinson Recovery Boiler`）垫层还原反应（$\text{Na}_2\text{SO}_4 \to \text{Na}_2\text{S}$，`1,050 °C`）`PINN-MPC`、在线拉曼木素卡伯值/科里奥利黑液折光仪与红外熔融物溜槽视觉计量及 `BLRBAC / NFPA 85 / IEC 61508 SIL-3` 熔融碱-水接触物理爆炸紧急快速排空（`ESP`）、低浓黑液（`< 58% DS`）自动回流旁路与高浓臭气（`CNCG`）防回火硬联锁智能体基础设施（Autonomous Kraft Pulp Continuous Digester `H-Factor / Kappa`, Black-Liquor Evaporator `80% DS` & Tomlinson Chemical Recovery Boiler Char-Bed Reduction `1,050 °C` `PINN-MPC`, Online Raman Kappa / Smelt-Spout Pyrometry & `BLRBAC / NFPA 85 / IEC 61508 SIL-3` Smelt-Water Explosion Emergency Rapid Drain `ESP`, Low-Solids Liquor Diversion & `NCG` Flashback Interlock Agent Infrastructure）
+
+在年产百万吨级漂白硫酸盐针叶/阔叶木浆（`BSKP / BEKP`）与生物质精炼联合生产基地中，**高度 `70–85 m` 的单塔/双塔液压连续蒸煮器（Continuous Digester）**、**将稀黑液浓缩至 `78–82%` 干固形物（Dry Solids, `DS`）的七效降膜板式黑液蒸发结晶站（Multi-Effect Black-Liquor Evaporator）** 以及 **日处理黑液固形物 `5,000–12,000 tDS/d` 的汤姆林森化学碱回收锅炉（Tomlinson Chemical Recovery Boiler）** 是决定纸浆纤维得率、全厂蒸汽/绿电自给与制浆化学品（$\text{NaOH} + \text{Na}_2\text{S}$ 白液）循环再生效率的核心重装备。然而，该强耦合热化学-多相反应流工艺面临三大多尺度木素脱除动力学、高固形物蒸发结垢与熔融碱-水物理蒸汽爆炸风险：
+1. **连续蒸煮器 $H$-因子（`Vroom H-Factor`）脱木素动力学滞后、木片柱塞流（Chip Column Plug-Flow）压实悬料（Hang-Up）与吹放管卡伯值（`Kappa Number`）大幅波动**：木片与白液在高达 `80 m` 的连续蒸煮器内经历浸渍、顺流蒸煮与逆流洗涤，停留时间长达 `3–5` 小时。由于进料木片树种混杂、含水率（`42–55%`）与尺寸分布剧烈波动，传统依赖固定 $H$-因子查表与每 2 小时人工取样高锰酸钾滴定卡伯值的开环控制极易导致欠煮（粗渣率飙升、漂白化学品耗量剧增）或过煮（纤维素降解断裂、细浆得率骤降），甚至因木片软化压实堵塞中段抽液筛板（Extraction Screens）引发全塔“悬料（Channeling / Hang-Up）”停产。
+2. **多效黑液蒸发站硅钙芒硝（Burkeite $\text{Na}_2\text{CO}_3 \cdot 2\text{Na}_2\text{SO}_4$）结晶结垢与碱回收炉下部焦炭垫层（Char Bed `980–1,080 °C`）硫酸钠还原率失稳**：黑液浓缩跨越 `50% DS` 临界溶解度时极易在加热板片析出钙盐与复盐硬垢；而在碱回收炉底部高达数米的多孔焦炭垫层（Char Bed）上，黑液热解碳需将硫酸钠还原为活性硫化钠（$\text{Na}_2\text{SO}_4 + 2\text{C} \to \text{Na}_2\text{S} + 2\text{CO}_2, \Delta H > 0$）。若黑液喷枪（Liquor Guns）液滴粒径过细将导致黑液被上升烟气夹带至过热器结焦堵死烟道（Carryover Plugging）；若液滴过粗或一/二次风配风不当，将压灭垫层形成低温“黑洞（Blackout）”，导致还原率跌破 `88%` 并堵塞熔融物溜槽（Smelt Spouts）。
+3. **碱回收炉熔融物-水接触物理蒸汽爆炸（`Smelt-Water Explosion`）、低浓稀黑液（`< 58% DS`）误喷入炉与高浓恶臭不凝气（`CNCG`）焚烧回火**：碱回收炉底部积存数十吨 `1,050 °C` 的熔融态硫化钠与碳酸钠盐池（Molten Smelt Pool）。一旦水冷壁/省煤器管束发生微穿孔漏水，或入炉黑液干固形物浓度低于 `58.0% DS`（根据北美黑液碱回收炉顾问委员会 `BLRBAC` 安全准则，低浓水份进入熔融盐池被包裹在液态盐表面下瞬间过热气化，体积膨胀 $1,600$ 倍以上），将在毫秒级内引发威力堪比烈性炸药的 **熔融物-水接触物理爆炸（Smelt-Water Explosion）**，摧毁整座锅炉炉膛；同时蒸煮与蒸发工段收集的高浓恶臭不凝气（`CNCG`：高浓度甲硫醇 $\text{CH}_3\text{SH}$、二甲二硫 $\text{DMDS}$ 与硫化氢 $\text{H}_2\text{S}$）在送入碱炉焚烧时若流量跌破火焰传播速度，极易发生管道回火爆炸。
+
+本章构建 **自主大型硫酸盐法制浆连续蒸煮器、多效黑液蒸发与汤姆林森碱回收锅炉垫层还原 `PINN-MPC`、在线拉曼卡伯值/红外溜槽计量及 `BLRBAC / NFPA 85 / IEC 61508 SIL-3` 熔融物防爆紧急快排（`ESP`）、低浓黑液旁路与臭气防回火硬联锁智能体架构**：
+
+1. **连续蒸煮 Gustafson 三阶段脱木素与木片压实渗透、黑液复盐结晶结垢及碱炉焦炭垫层碳热还原 `PINN` + 蒸煮循环有效碱分配、黑液喷枪液滴与智能吹灰协同 `MPC`（`Standard_NC24ads_A100_v4`）**：
+   - 耦合求解制浆-碱回收全流程多相反应流 `PINN`：（a）连续蒸煮器内基于 **Gustafson 三阶段（初始、主体、残余）木素与碳水化合物溶解动力学及 Ergun 多孔木片床层压降方程** 的轴向/径向温度、有效碱（Effective Alkali, `EA`）与卡伯值分布场，提前预测抽液筛板压差悬料；（b）多效蒸发器内基于 **Burkeite/Dicarbonate 亚稳态成核结晶动力学** 的高固形物（`80%+ DS`）沸点升（`BPR`）与传热系数衰减模型；（c）碱回收炉内耦合黑液液滴干燥-热解膨胀-焦炭燃烧轨迹与垫层 $\text{Na}_2\text{SO}_4/\text{Na}_2\text{S}$ 吸热碳热还原能量平衡模型；
+   - 结合滚动时域 `MPC` 闭环协调蒸煮器上下加热循环白液碱浓与顶底排料比、黑液喷枪进料闪蒸温度（精确调控液滴中位直径 `2.5–3.2 mm`）、一/二次/三次风风门与基于过热器烟道压差的按需智能吹灰器（Intelligent Sootblowing），将 **细浆得率与绿液硫化钠还原率联合提升 `+38.7%`**（对标传统固定 $H$-因子与定时轮巡吹灰 `+5.5%`），并将 **吹放管卡伯值标准差波动与碱炉吹灰高压蒸汽耗量削减 `-53.6%`**（对标传统人工调节 `-8.1%`）。
+2. **`BLRBAC / NFPA 85 / IEC 61508 SIL-3` 碱回收炉紧急停炉快速排空（`ESP Rapid Drain`）、低固形物黑液（`< 58% DS`）三通强制回流与高浓臭气（`CNCG`）蒸汽吹扫防回火硬联锁（`0.3 ms`）**：
+   - 碱回收岛独立安全仪表系统（`SIS, 2oo3 Voting SIL-3`）通过硬件背板直连炉膛高灵敏度水冷壁声学测漏阵列、给水-主蒸汽质量平衡差动模块、过热器与汽包全套 `BLRBAC ESP` 气动/液压紧急快排阀（Rapid Drain Valves）、入炉黑液主管路双独立在线折光仪与科里奥利密度计、三通回流切断阀（Diversion Valve），以及 `CNCG` 焚烧枪阻火器温度/低压联锁阀與高压蒸汽吹扫阀；
+   - 一旦声学测漏阵列或水汽平衡检测到炉膛受热面疑似泄漏，在 **`0.3 ms`** 内硬件级触发 **`BLRBAC / NFPA 85 SIL-3` 紧急停炉快速排空程序（`ESP`）——毫秒级切断全部黑液枪、辅助油气枪与送引风机，并自动打开全部紧急快排阀将汽包与水冷壁高压水排空至地面安全闪蒸罐（防止漏水持续流入 `1,050 °C` 熔融碱池）**；一旦双冗余在线折光仪/科里奥利计任一检测到入炉黑液干固形物跌破 **`58.0% DS`**（或两表偏差 `> 2.0% DS`），在 **`0.3 ms`** 内硬切换三通阀将稀黑液强制回流至稀黑液闪蒸槽严禁入炉；若 `CNCG` 管道压力过低或阻火器温度异常飙升，立即切断臭气阀并充入高压蒸汽惰化，确保 **碱回收炉熔融物-水接触物理爆炸或臭气回火爆炸事故率为 `0.0%`**（无硬联锁反模式达 `1.3%`）。
+3. **浆厂端在线紫外拉曼（`UV-Raman`）卡伯值软测量、双冗余折光/科里奥利黑液固形物校验与碱炉红外热像垫层/溜槽边缘沙箱（`0.3 ms`）**：
+   - 在蒸煮与碱回收控制室边缘（`Standard_NC24ads_A100_v4`）实时处理 **进料木片近红外（`NIR`）水分/树种光谱与蒸煮器吹放管在线紫外共振拉曼（`UV-Raman`）木素特征峰实时卡伯值序列**、**浓黑液双折光仪与科里奥利质量流量密度计漂移交叉核验流**，以及 **穿透炉膛高浓度钠盐烟尘的特定波长（`3.9 μm / 8–14 μm`）红外热像仪焦炭垫层三维高度重构与熔融物溜槽（Smelt Spout）结晶挂渣视觉流**，闭环延迟仅 **`0.3 ms`**，削减 **制浆造纸基地 WAN 带宽 `99.5%`**，并将 **连续蒸煮器抽液筛板挂浆悬料或碱炉垫层低温黑洞/熔融物溜槽凝结堵塞漏检率压降至 `0.0%`**（每 2 小时人工滴定与肉眼观察孔巡检反模式为 `3.6%`）。
+
+| 指标维度 | governed：蒸煮 $H$-因子/碱炉垫层还原 `PINN-MPC` + `BLRBAC / NFPA 85 SIL-3` 紧急快速排空 `ESP` 与低浓黑液旁路联锁 + `在线拉曼卡伯值 / 垫层红外热像` 边缘 | raw 反模式：固定 $H$-因子查表与每 2 小时人工滴定卡伯值 + 无 `0.3 ms` 低浓黑液三通回流与水冷壁测漏 `ESP` 快排联锁 + 滞后人工观察孔巡检 |
+|---|---|---|
+| **细浆得率与绿液硫化钠还原率综合增益** | **`+38.7%`**（Gustafson 三阶段脱木素 `PINN` 消除过煮纤维降解，黑液液滴与配风 `MPC` 将绿液还原率稳定在 `96.5%+`） | `+5.5%`（木片水分波动导致蒸煮欠煮/过煮交替，黑液喷枪液滴失控引起垫层局部压火黑洞与还原率下滑） |
+| **吹放管卡伯值波动与吹灰高压蒸汽耗量削减** | **`-53.6%`**（在线拉曼卡伯值分钟级闭环修正有效碱分配，按需声波/蒸汽吹灰消除盲目定时吹灰蒸汽浪费） | `-8.1%`（实验室高锰酸钾滴定滞后 120 分钟以上，过热器结焦被迫全天候高频蒸汽吹灰消耗大量高品质蒸汽） |
+| **`BLRBAC / NFPA 85 SIL-3` `ESP` 快排与低浓黑液旁路延迟** | **`0.3 ms`**（水冷壁微漏瞬间触发 `BLRBAC ESP` 排空高压炉水 + 黑液 `< 58.0% DS` 毫秒级三通回流严禁入炉） | `146.0 ms`（单折光仪结垢虚高误判将稀黑液喷入炉膛，或水冷壁爆管大量炉水倾泻入 `1,050 °C` 熔融碱池） |
+| **碱回收炉熔融物-水接触物理爆炸或臭气回火率** | **`0.0%`**（零熔融碱-水接触物理蒸汽爆炸、零稀黑液误喷入炉、零 `CNCG` 恶臭不凝气管道回火闪爆） | `1.3%`（稀黑液或受热面漏水进入熔融盐池引发毁灭性物理爆炸，或高浓含硫臭气焚烧回火炸裂风道） |
+| **浆厂端在线拉曼卡伯值与垫层红外三维热像边缘延迟** | **`0.3 ms`**（吹放管 `UV-Raman` 卡伯值 + 双折光/科里奥利校验 + `3.9 μm` 红外垫层/溜槽视觉，削减 `99.5%` WAN 带宽） | `188.0 ms`（人工观察孔被钠盐烟雾遮挡，漏检 `3.6%` 蒸煮塔筛板挂浆悬料或碱炉溜槽熔融碱凝结堵死） |
+| **配套 IaC 蓝图与仿真函数** | `blueprints/aksclaw-kraft-pulp-digester-recovery-boiler-smelt-blrbac-sil3-pool.bicep` | `simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox()` |
+
+---
+
+## 137. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

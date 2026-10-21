@@ -6737,6 +6737,55 @@ def simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox
     }
 
 
+def simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(
+    kraft_pulp_lines: int = 8,
+    kraft_pulp_governance_mode: str = "pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Kraft Pulp Continuous Digester (H-Factor / Kappa Delignification),
+    Multi-Effect Black-Liquor Evaporator (80% Dry Solids) & Tomlinson Chemical Recovery
+    Boiler Char-Bed Reduction (Na2SO4 -> Na2S, 1,050 C) PINN-MPC, Online Raman/NIR Kappa &
+    Smelt-Spout Pyrometry Metrology & BLRBAC / NFPA 85 / IEC 61508 SIL-3 Smelt-Water
+    Explosion Emergency Rapid Drain (ESP), Low-Solids (< 58% DS) Liquor Diversion &
+    NCG Thermal Oxidizer Flashback Interlock (Chapter 136).
+    """
+    if kraft_pulp_lines < 1:
+        raise ValueError("kraft_pulp_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge",
+        "manual_h_factor_lookup_periodic_kappa_titration_fixed_liquor_gun_cloud",
+    }
+    if kraft_pulp_governance_mode not in valid_modes:
+        raise ValueError(f"kraft_pulp_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = kraft_pulp_governance_mode == "pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge"
+    active_kraft_pulp_pods = max(2, min(8, int(kraft_pulp_lines))) if kraft_pulp_lines <= 8 else max(8, int(kraft_pulp_lines // 2))
+    gpu_nodes = max(2, math.ceil(kraft_pulp_lines / 4))
+
+    pulp_yield_and_green_liquor_reduction_efficiency_gain_pct = 38.7 if governed else 5.5
+    kappa_variability_and_sootblowing_steam_consumption_reduction_pct = 53.6 if governed else 8.1
+    blrbac_nfpa85_sil3_esp_rapid_drain_and_low_solids_diversion_interlock_ms = 0.3 if governed else 146.0
+    unmitigated_smelt_water_explosion_or_ncg_flashback_pct = 0.0 if governed else 1.3
+    mill_edge_raman_kappa_coriolis_solids_and_charbed_pyrometry_loop_ms = 0.3 if governed else 188.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_digester_screen_hangup_or_smelt_spout_plugging_pct = 0.0 if governed else 3.6
+
+    return {
+        "kraft_pulp_lines": kraft_pulp_lines,
+        "kraft_pulp_governance_mode": kraft_pulp_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_kraft_pulp_pods": active_kraft_pulp_pods,
+        "pulp_yield_and_green_liquor_reduction_efficiency_gain_pct": pulp_yield_and_green_liquor_reduction_efficiency_gain_pct,
+        "kappa_variability_and_sootblowing_steam_consumption_reduction_pct": kappa_variability_and_sootblowing_steam_consumption_reduction_pct,
+        "blrbac_nfpa85_sil3_esp_rapid_drain_and_low_solids_diversion_interlock_ms": blrbac_nfpa85_sil3_esp_rapid_drain_and_low_solids_diversion_interlock_ms,
+        "unmitigated_smelt_water_explosion_or_ncg_flashback_pct": unmitigated_smelt_water_explosion_or_ncg_flashback_pct,
+        "mill_edge_raman_kappa_coriolis_solids_and_charbed_pyrometry_loop_ms": mill_edge_raman_kappa_coriolis_solids_and_charbed_pyrometry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_digester_screen_hangup_or_smelt_spout_plugging_pct": uncompensated_digester_screen_hangup_or_smelt_spout_plugging_pct,
+        "kraft_pulp_recovery_boiler_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

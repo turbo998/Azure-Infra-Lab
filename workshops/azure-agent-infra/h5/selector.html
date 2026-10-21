@@ -543,6 +543,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(128)">129. 深部煤矿高瓦斯/冲击地压超长综合机械化放顶煤工作面 (800–1,500m 采深 8–10m 超大采高液压支架群与双滚筒采煤机)、采动覆岩关键层破断微震层析 (Rockburst Microseismic) 与煤岩界面自然伽马/太赫兹识别 PINN-MPC、光纤光栅立柱压力/激光气体层析及 IEC 61508 SIL-3 / ATEX Group I M1 Ex ia 冲击地压大流量安全阀卸压、瓦斯突出风电瓦电闭锁与采空区液氮防灭火硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(129)">130. 大型气流床加压煤/生物质气化炉 (1,350–1,600°C / 6.5 MPa)、低温甲醇洗 (Rectisol -60°C) 与高压合成氨-尿素甲铵冷凝汽提联合装置 (15–25 MPa)、熔渣粘度 T250 液态排渣与甲铵钝化膜腐蚀电化学 PINN-MPC、TDLAS 合成气/拉曼氨碳比监测及 API RP 554 / ASME Sec VIII Div 2 / IEC 61508 SIL-3 氧煤比偏离烧嘴跳车、尿素高压圈断氧防爆与液氨球罐切断硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(130)">131. 超薄显示基板 (0.3–0.7 mm TFT/OLED) 与大型全氧燃烧浮法玻璃熔窑 (1,600°C / 850 t/d)、液态锡槽 (1,100→600°C 氮氢保护气) 拉边机展薄与退火窑热应力双折射 PINN-MPC、激光莫尔偏折光学畸变/光弹应力监测及 NFPA 86 / EN 746-2 / IEC 61508 SIL-3 锡槽氢氮混合气防爆吹扫、大碹超温断燃料与锡液漏穿硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(131)">132. 大型硫酸盐木浆连续蒸煮器 (H因子/卡伯值脱木素)、多效黑液蒸发站 (80% 固形物) 与汤姆林森碱回收炉垫层还原 (Na2SO4→Na2S, 1,050°C) PINN-MPC、在线拉曼卡伯值/溜槽红外测温及 BLRBAC / NFPA 85 / IEC 61508 SIL-3 熔融物-水接触爆炸紧急快排 (ESP)、低浓黑液 (<58% DS) 旁路切换与恶臭不凝气 (NCG) 防回火硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3517,6 +3518,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 131: Kraft Pulp Continuous Digester, Black-Liquor Evaporator & Tomlinson Recovery Boiler BLRBAC / NFPA 85 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 131 · KRAFT PULP CONTINUOUS DIGESTER (H-FACTOR / KAPPA), BLACK-LIQUOR EVAPORATOR (80% DS) &amp; TOMLINSON RECOVERY BOILER CHAR-BED REDUCTION (1,050 °C) PINN-MPC, ONLINE RAMAN KAPPA / SMELT-SPOUT PYROMETRY &amp; BLRBAC / NFPA 85 / IEC 61508 SIL-3 SMELT-WATER ESP RAPID DRAIN &amp; LOW-SOLIDS DIVERSION INTERLOCK SIZER</span>
+    <h2>全自主大型硫酸盐法制浆连续蒸煮器（<code>H-Factor / Kappa</code> 卡伯值脱木素）、多效浓黑液蒸发站（<code>80% DS</code> 高固形物）与汤姆林森碱回收锅炉（<code>Tomlinson Recovery Boiler</code>）垫层还原反应（$\text{Na}_2\text{SO}_4 \to \text{Na}_2\text{S}$，<code>1,050 °C</code>）<code>PINN-MPC</code>、在线拉曼木素卡伯值/科里奥利黑液折光仪与红外熔融物溜槽视觉计量及 <code>BLRBAC / NFPA 85 / IEC 61508 SIL-3</code> 熔融碱-水接触物理爆炸紧急快速排空（<code>ESP</code>）、低浓黑液（<code>&lt; 58% DS</code>）自动回流旁路与高浓臭气（<code>CNCG</code>）防回火硬联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 32</code> 条年产百万吨级漂白硫酸盐木浆（BSKP/BEKP）连续蒸煮-黑液蒸发-碱回收炉-苛化转窑联合生产线（高度 <code>70–85 m</code> 双塔/单塔液压连续蒸煮器、七效降膜板式黑液蒸发结晶器浓缩至 <code>78–82%</code> 干固形物、日处理黑液固形物 <code>5,000–12,000 tDS/d</code> 汤姆林森化学碱回收锅炉）集群下，木片在连续蒸煮器浸渍-顺流-逆流洗涤段中的 **Vroom $H$-因子阿伦尼乌斯脱木素动力学（Bulk / Residual Delignification）与木片柱塞流压实孔隙率渗透场**、多效蒸发器高固形物区硅钙芒硝（Burkeite $\text{Na}_2\text{CO}_3 \cdot 2\text{Na}_2\text{SO}_4$）结晶结垢热阻，以及碱回收炉下部还原性焦炭垫层（Char Bed <code>980–1,080 °C</code>）内硫酸钠碳热还原生成硫化钠（$\text{Na}_2\text{SO}_4 + 2\text{C} \to \text{Na}_2\text{S} + 2\text{CO}_2$）的三维热质传递与一/二次/三次风（Primary/Secondary/Tertiary Air）喷射穿透深度 <code>PINN</code> + 蒸煮器上下循环白液碱浓（Effective Alkali）分配、黑液喷枪液滴粒径（温度/粘度调制）与智能声波/蒸汽吹灰器协同 <code>MPC</code>（细浆得率与绿液硫化钠还原率综合增益 <code>+38.7%</code>、吹放管卡伯值标准差波动与碱炉吹灰高压蒸汽耗量削减 <code>-53.6%</code>）、<code>BLRBAC (Black Liquor Recovery Boiler Advisory Committee) / NFPA 85 / IEC 61508 SIL-3</code> 炉膛水冷壁/省煤器管束发生微渗漏（给水/蒸汽流量不平衡或炉膛声学测漏触发）可能使液态水接触炉底 <code>1,050 °C</code> 熔融碱池（Smelt Pool）引发毁灭性 **熔融物-水接触物理蒸汽爆炸（Smelt-Water Explosion）**、或入炉黑液干固形物浓度跌破 <code>58.0% DS</code> 临界门槛（将大量水分直接喷入熔融垫层）、或蒸煮/蒸发高浓恶臭不凝气（<code>CNCG</code>：甲硫醇/二甲二硫/硫化氢）在碱炉/石灰窑焚烧支路回火时亚毫秒级 <code>BLRBAC 紧急停炉程序（ESP, Emergency Shutdown Procedure）：毫秒级切断全部黑液枪与辅助燃料并开启过热器/汽包紧急快排阀将锅炉高压水排空至安全闪蒸槽 + 入炉黑液固形物双冗余折光/科里奥利计低于 58% DS 瞬间切换三通回流阀禁止入炉 + CNCG 管道阻火器超温瞬间切断臭气阀并充入高压蒸汽吹扫</code> 硬联锁（<code>0.3 ms</code>，碱回收炉熔融物-水爆炸或臭气回火爆炸事故率 <code>0.0%</code>）与全厂边缘 <code>在线紫外拉曼/近红外（UV-Raman / NIR）蒸煮吹放管实时卡伯值（Kappa Number）软测量 + 双黑液折光仪/科里奥利质量流量密度计串联校验 + 碱炉红外热像仪焦炭垫层三维形貌与熔融物溜槽（Smelt Spout）防堵视觉监控</code> 边缘推理（<code>0.3 ms</code>，制浆造纸基地 WAN 带宽削减 <code>99.5%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 硫酸盐连续蒸煮-多效蒸发-碱回收炉产线规模 (Kraft Pulp &amp; Recovery Boiler Lines): <strong id="lbl_kraft_pulp_lines" style="color:var(--teal)">8</strong> Lines</label>
+          <input type="range" id="rng_kraft_pulp_lines" min="4" max="32" step="4" value="8" oninput="runKraftPulpRecoveryBoilerLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 蒸煮卡伯值/碱炉垫层还原 PINN-MPC 与 BLRBAC / NFPA 85 / SIL-3 熔融物防爆紧急快排 ESP 模式 (Kraft Pulp &amp; Recovery Boiler Governance Mode)</label>
+          <select id="sel_kraft_pulp_mode" onchange="runKraftPulpRecoveryBoilerLab()">
+            <option value="pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge" selected>连续蒸煮 H 因子脱木素与碱炉焦炭垫层还原 PINN + 白液有效碱分配、黑液液滴粒径与智能吹灰 MPC (+38.7% 细浆得率与绿液还原率 / -53.6% 卡伯值波动与吹灰蒸汽耗量) + BLRBAC / NFPA 85 SIL-3 0.3ms 紧急停炉快速排水 ESP 与低浓黑液 (<58% DS) 自动旁路联锁 + 0.3ms 在线拉曼卡伯值/垫层三维热像边缘 (推荐)</option>
+            <option value="manual_h_factor_lookup_periodic_kappa_titration_fixed_liquor_gun_cloud">传统反模式：固定 H 因子查表与每 2 小时人工高锰酸钾滴定卡伯值 (+5.5% 得率增益) + 无 0.3ms 低浓黑液三通回流与水冷壁微漏声学预警 ESP 联锁 (1.3% 稀黑液入炉或水冷壁漏水滴入 1,050°C 熔融碱池诱发灾难性熔融物-水蒸汽爆炸风险) + 滞后人工巡检溜槽 (3.6% 连续蒸煮器抽液筛板挂浆悬料或碱炉垫层黑洞/熔融物溜槽凝结堵塞漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="kraftPulpRecoveryBoilerOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5661,6 +5685,21 @@ resource floatGlassTinBathLehrSil3Pool 'Microsoft.ContainerService/managedCluste
       'aksclaw.io/tinbath-edge-laser-moire-photoelastic-birefringence': 'enabled-0.3ms-99.5pct-glass-plant-wan-cut'
     }
   }
+}`,
+`// 132. Azure Bicep: Kraft Pulp Continuous Digester (H-Factor / Kappa Delignification), Multi-Effect Black-Liquor Evaporator (80% DS) & Tomlinson Chemical Recovery Boiler Char-Bed Reduction (1,050 C) PINN-MPC, Online Raman Kappa / Smelt-Spout Pyrometry & BLRBAC / NFPA 85 / SIL-3 Smelt-Water ESP Rapid Drain & Low-Solids Diversion Interlock Pool
+resource kraftPulpRecoveryBoilerSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'krftpulpbl3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (Continuous Digester H-Factor Chip-Column Compaction, Evaporator Burkeite Fouling & Recovery Boiler Char-Bed Reduction PINN + Effective Alkali Split, Liquor Droplet & Sootblowing MPC + Online Raman Kappa & IR Char-Bed Pyrometry Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'kraft-pulp-digester-recovery-boiler-smelt-blrbac-sil3-agent'
+      'aksclaw.io/pinn-mpc-digester-kappa-evaporator-charbed-reduction': 'enabled-38.7pct-pulp-yield-reduction-gain-53.6pct-kappa-variance-sootblowing-steam-cut'
+      'aksclaw.io/blrbac-nfpa85-sil3-esp-rapid-drain-low-solids-diversion': 'enforced-0.3ms-zero-smelt-water-explosion-or-ncg-flashback'
+      'aksclaw.io/mill-edge-raman-kappa-coriolis-solids-charbed-pyrometry': 'enabled-0.3ms-99.5pct-pulp-mill-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -5892,6 +5931,30 @@ runOffshoreJackupSpudcanSscvLab();
 runLongwallRockburstShearerLab();
 runCoalGasifierRectisolUreaLab();
 runFloatGlassTinBathLehrLab();
+runKraftPulpRecoveryBoilerLab();
+
+function runKraftPulpRecoveryBoilerLab() {
+  const lines = parseInt(document.getElementById('rng_kraft_pulp_lines').value, 10);
+  const mode = document.getElementById('sel_kraft_pulp_mode').value;
+  document.getElementById('lbl_kraft_pulp_lines').textContent = lines.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(lines / 4));
+  const pods = lines <= 8 ? Math.max(2, Math.min(8, lines)) : Math.max(8, Math.floor(lines / 2));
+  const ok = mode === 'pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge';
+  const mpcStr = ok ? "连续蒸煮 H 因子脱木素/木片柱塞压实与碱炉 1,050°C 焦炭垫层碳热还原 PINN + 白液有效碱梯度分配、黑液喷枪液滴调制与智能吹灰 MPC · 细浆得率与绿液还原率 +38.7% · 卡伯值标准差波动与吹灰蒸汽耗量 -53.6%" : "传统固定 H 因子查表与定时轮巡吹灰 · 仅 +5.5% 得率增益 / -8.1% 蒸汽削减 (树种水分与尺寸波动导致蒸煮过煮或欠煮，且 3.6% 蒸煮器筛板挂浆悬料或碱炉垫层低温黑洞/溜槽堵死漏检)";
+  const sil3Str = ok ? "0.3 ms BLRBAC / NFPA 85 / IEC 61508 SIL-3 紧急停炉快速排空 (ESP Rapid Drain) + 低固形物黑液 (<58% DS) 三通自动回流与高浓恶臭不凝气 (CNCG) 蒸汽吹扫防回火硬联锁 · 0.0% 熔融物-水接触爆炸或臭气回火违例" : "无 0.3ms 水冷壁声学测漏 ESP 快速排空与双折光仪低浓黑液回流联锁 (146.0 ms 联锁滞后) · 1.3% 稀黑液直接喷入或水冷壁渗漏水滴入 1,050°C 熔融硫化钠/碳酸钠碱池诱发灾难性物理蒸汽爆炸风险";
+  const edgeStr = ok ? "0.3 ms 浆厂端在线紫外拉曼 (UV-Raman) 吹放管卡伯值软测量 + 双科里奥利/折光黑液固形物校验与碱炉红外热像垫层三维重构边缘 (-99.5% 制浆基地 WAN 带宽) · 0.0% 蒸煮器悬料或溜槽凝结漏检" : "188.0 ms 每2小时实验室高锰酸钾滴定卡伯值与人工观察孔巡检 · 无法在高达 80m 的连续蒸煮器出现液泛悬料前调整循环流量，也无法透过浓烟实时透视碱炉焦炭垫层高度";
+
+  document.getElementById('kraftPulpRecoveryBoilerOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.3% 碱回收炉熔融物-水接触蒸汽爆炸或 CNCG 臭气回火闪爆风险 · 3.6% 连续蒸煮器抽液筛板悬料或熔融物溜槽凝结堵塞漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个蒸煮-蒸发-碱炉孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>浆厂端在线拉曼卡伯值、黑液固形物双冗余折光/科里奥利计与碱炉垫层红外三维热像边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runFloatGlassTinBathLehrLab() {
   const lines = parseInt(document.getElementById('rng_float_glass_lines').value, 10);

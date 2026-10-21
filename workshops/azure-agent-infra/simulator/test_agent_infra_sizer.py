@@ -137,6 +137,7 @@ from agent_infra_sizer import (
     simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
     simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox,
     simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox,
+    simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -321,6 +322,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-longwall-mining-rockburst-shearer-methane-atex-m1-sil3-pool.bicep",
             "aksclaw-coal-gasifier-rectisol-urea-carbamate-asmeviii-sil3-pool.bicep",
             "aksclaw-float-glass-tin-bath-oxyfuel-lehr-birefringence-nfpa86-sil3-pool.bicep",
+            "aksclaw-kraft-pulp-digester-recovery-boiler-smelt-blrbac-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2690,6 +2692,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct"], 3.0)
         self.assertTrue(gov["float_glass_tin_bath_lehr_slo_met"])
         self.assertFalse(raw["float_glass_tin_bath_lehr_slo_met"])
+
+    def test_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(self) -> None:
+        gov = simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(
+            8, "pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge"
+        )
+        raw = simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(
+            8, "manual_h_factor_lookup_periodic_kappa_titration_fixed_liquor_gun_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_kraft_pulp_pods"], 8)
+        self.assertEqual(gov["pulp_yield_and_green_liquor_reduction_efficiency_gain_pct"], 38.7)
+        self.assertEqual(gov["kappa_variability_and_sootblowing_steam_consumption_reduction_pct"], 53.6)
+        self.assertEqual(gov["blrbac_nfpa85_sil3_esp_rapid_drain_and_low_solids_diversion_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_smelt_water_explosion_or_ncg_flashback_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_smelt_water_explosion_or_ncg_flashback_pct"], 1.0)
+        self.assertEqual(gov["mill_edge_raman_kappa_coriolis_solids_and_charbed_pyrometry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_digester_screen_hangup_or_smelt_spout_plugging_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_digester_screen_hangup_or_smelt_spout_plugging_pct"], 3.0)
+        self.assertTrue(gov["kraft_pulp_recovery_boiler_slo_met"])
+        self.assertFalse(raw["kraft_pulp_recovery_boiler_slo_met"])
 
 
 if __name__ == "__main__":

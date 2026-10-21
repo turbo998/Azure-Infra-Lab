@@ -150,6 +150,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
     simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox,
     simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox,
+    simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1031,6 +1032,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "float_glass_8_lines": simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(8, "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge"),
             "float_glass_32_lines": simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(32, "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge"),
             "raw_float_glass_8_lines": simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(8, "manual_toproll_speed_pid_crown_pyrometer_offline_polariscope_lehr_cloud"),
+        },
+        "demo_131_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox": {
+            "kraft_pulp_8_lines": simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(8, "pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge"),
+            "kraft_pulp_32_lines": simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(32, "pinn_mpc_digester_kappa_evaporator_charbed_reduction_raman_blrbac_sil3_edge"),
+            "raw_kraft_pulp_8_lines": simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox(8, "manual_h_factor_lookup_periodic_kappa_titration_fixed_liquor_gun_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
