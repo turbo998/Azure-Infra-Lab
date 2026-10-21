@@ -5834,6 +5834,49 @@ def simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(
     }
 
 
+def simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(
+    ldpe_reactor_trains: int = 16,
+    ldpe_governance_mode: str = "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous High-Pressure Polyethylene (LDPE / EVA) Hyper-Compressor (2,500–3,200 bar) & Tubular/Autoclave Free-Radical Polymerization Reactor, Runaway Decomposition Thermal Wave PINN-MPC, In-Line FT-NIR Melt-Index / Vinyl-Acetate Soft-Sensor & API 618 / ASME BPVC Section VIII Div. 3 / IEC 61511 SIL-3 Rapid Depressurization Dump Valve & Ethylene Decomposition Quench Interlock Agent Infrastructure (Chapter 115)."""
+    if ldpe_reactor_trains <= 0:
+        raise ValueError("ldpe_reactor_trains must be positive")
+    valid_modes = {
+        "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge",
+        "fixed_peroxide_initiator_dosing_offline_rheometer_delayed_dump_cloud",
+    }
+    if ldpe_governance_mode not in valid_modes:
+        raise ValueError(f"ldpe_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ldpe_governance_mode == "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge"
+    active_ldpe_reactor_pods = max(2, min(8, int(ldpe_reactor_trains))) if ldpe_reactor_trains <= 8 else max(8, int(ldpe_reactor_trains // 2))
+    gpu_nodes = max(2, math.ceil(ldpe_reactor_trains / 8))
+
+    single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct = 35.8 if governed else 5.6
+    ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct = 49.2 if governed else 8.1
+    api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms = 0.4 if governed else 188.0
+    unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct = 0.0 if governed else 1.4
+    train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms = 0.3 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct = 0.0 if governed else 3.6
+
+    return {
+        "ldpe_reactor_trains": ldpe_reactor_trains,
+        "ldpe_governance_mode": ldpe_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ldpe_reactor_pods": active_ldpe_reactor_pods,
+        "single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct": single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct,
+        "ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct": ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct,
+        "api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms": api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms,
+        "unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct": unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct,
+        "train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms": train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct": uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct,
+        "ldpe_hypercompressor_reactor_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

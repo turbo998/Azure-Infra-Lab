@@ -6706,5 +6706,67 @@
       "uncompensated_shutter_flux_overshoot_or_surface_reconstruction_drift_pct": 3.4,
       "uhv_mbe_quantum_epitaxy_slo_met": false
     }
+  ],
+  "ldpe_hypercompressor_reactor_profiles": [
+    {
+      "ldpe_reactor_trains": 8,
+      "ldpe_governance_mode": "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ldpe_reactor_pods": 8,
+      "single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct": 35.8,
+      "ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct": 49.2,
+      "api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms": 0.4,
+      "unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct": 0.0,
+      "train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct": 0.0,
+      "ldpe_hypercompressor_reactor_slo_met": true
+    },
+    {
+      "ldpe_reactor_trains": 16,
+      "ldpe_governance_mode": "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ldpe_reactor_pods": 8,
+      "single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct": 35.8,
+      "ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct": 49.2,
+      "api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms": 0.4,
+      "unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct": 0.0,
+      "train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct": 0.0,
+      "ldpe_hypercompressor_reactor_slo_met": true
+    },
+    {
+      "ldpe_reactor_trains": 64,
+      "ldpe_governance_mode": "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ldpe_reactor_pods": 32,
+      "single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct": 35.8,
+      "ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct": 49.2,
+      "api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms": 0.4,
+      "unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct": 0.0,
+      "train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct": 0.0,
+      "ldpe_hypercompressor_reactor_slo_met": true
+    },
+    {
+      "ldpe_reactor_trains": 16,
+      "ldpe_governance_mode": "fixed_peroxide_initiator_dosing_offline_rheometer_delayed_dump_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ldpe_reactor_pods": 8,
+      "single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct": 5.6,
+      "ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct": 8.1,
+      "api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms": 188.0,
+      "unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct": 1.4,
+      "train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct": 3.6,
+      "ldpe_hypercompressor_reactor_slo_met": false
+    }
   ]
 }

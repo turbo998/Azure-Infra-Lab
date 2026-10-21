@@ -116,6 +116,7 @@ from agent_infra_sizer import (
     simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
     simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
     simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
+    simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -279,6 +280,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-single-crystal-superalloy-bridgman-lmc-casting-ams2280-sil3-pool.bicep",
             "aksclaw-subsea-methane-hydrate-depressurization-sand-control-dts-sil3-pool.bicep",
             "aksclaw-uhv-mbe-quantum-epitaxy-rheed-bet-semis2-sil3-pool.bicep",
+            "aksclaw-ldpe-hypercompressor-tubular-reactor-ftnir-api618-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2207,6 +2209,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_shutter_flux_overshoot_or_surface_reconstruction_drift_pct"], 3.0)
         self.assertTrue(gov["uhv_mbe_quantum_epitaxy_slo_met"])
         self.assertFalse(raw["uhv_mbe_quantum_epitaxy_slo_met"])
+
+    def test_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(self) -> None:
+        gov = simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(
+            16, "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge"
+        )
+        raw = simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(
+            16, "fixed_peroxide_initiator_dosing_offline_rheometer_delayed_dump_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ldpe_reactor_pods"], 8)
+        self.assertEqual(gov["single_pass_ethylene_conversion_and_mfi_grade_transition_gain_pct"], 35.8)
+        self.assertEqual(gov["ethylene_runaway_decomposition_and_plunger_packing_failure_reduction_pct"], 49.2)
+        self.assertEqual(gov["api618_asmediv3_sil3_rapid_dump_valve_and_peroxide_cutoff_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_tubular_autodecomposition_blast_or_wc_plunger_shatter_pct"], 1.1)
+        self.assertEqual(gov["train_edge_ftnir_melt_index_and_hypercompressor_ae_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_fouling_wall_film_hot_spot_or_off_spec_gel_pct"], 3.0)
+        self.assertTrue(gov["ldpe_hypercompressor_reactor_slo_met"])
+        self.assertFalse(raw["ldpe_hypercompressor_reactor_slo_met"])
 
 
 if __name__ == "__main__":

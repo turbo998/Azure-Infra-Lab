@@ -122,6 +122,7 @@ from agent_infra_sizer import (
     simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
     simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
     simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
+    simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1012,6 +1013,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(64, "pinn_mpc_bcf_step_flow_knudsen_flux_rheed_bet_semis2_sil3_edge"),
         simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(16, "timed_shutter_fixed_cell_temp_thermocouple_offset_cloud"),
     ]
+    ldpe_hypercompressor_reactor_profiles: List[Dict[str, object]] = [
+        simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(8, "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge"),
+        simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(16, "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge"),
+        simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(64, "pinn_mpc_free_radical_runaway_plunger_rodload_ftnir_api618_sil3_edge"),
+        simulate_ldpe_hypercompressor_tubular_reactor_ftnir_api618_sil3_sandbox(16, "fixed_peroxide_initiator_dosing_offline_rheometer_delayed_dump_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1122,6 +1129,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "sx_superalloy_bridgman_profiles": sx_superalloy_bridgman_profiles,
         "subsea_methane_hydrate_profiles": subsea_methane_hydrate_profiles,
         "uhv_mbe_quantum_epitaxy_profiles": uhv_mbe_quantum_epitaxy_profiles,
+        "ldpe_hypercompressor_reactor_profiles": ldpe_hypercompressor_reactor_profiles,
     }
 
 
