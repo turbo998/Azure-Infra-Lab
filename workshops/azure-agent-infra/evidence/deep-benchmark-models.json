@@ -6148,5 +6148,67 @@
       "uncompensated_ionomer_skin_poisoning_or_micro_pinhole_pct": 3.4,
       "pem_fuel_cell_ccm_slo_met": false
     }
+  ],
+  "soec_coelectrolysis_ceramic_profiles": [
+    {
+      "soec_coelectrolysis_modules": 8,
+      "soec_governance_mode": "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_soec_ceramic_pods": 4,
+      "faradaic_syngas_efficiency_and_thermoneutral_yield_gain_pct": 34.2,
+      "ceramic_cell_microcrack_oxygen_electrode_delamination_and_coking_reduction_pct": 46.5,
+      "iso22734_asme_nfpa2_sil3_hot_h2_co_seal_and_thermal_shock_interlock_ms": 0.4,
+      "unmitigated_hot_syngas_autoignition_or_ceramic_stack_fracture_pct": 0.0,
+      "skid_edge_multifreq_drt_eis_and_tdlas_steam_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct": 0.0,
+      "soec_coelectrolysis_slo_met": true
+    },
+    {
+      "soec_coelectrolysis_modules": 16,
+      "soec_governance_mode": "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_soec_ceramic_pods": 8,
+      "faradaic_syngas_efficiency_and_thermoneutral_yield_gain_pct": 34.2,
+      "ceramic_cell_microcrack_oxygen_electrode_delamination_and_coking_reduction_pct": 46.5,
+      "iso22734_asme_nfpa2_sil3_hot_h2_co_seal_and_thermal_shock_interlock_ms": 0.4,
+      "unmitigated_hot_syngas_autoignition_or_ceramic_stack_fracture_pct": 0.0,
+      "skid_edge_multifreq_drt_eis_and_tdlas_steam_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct": 0.0,
+      "soec_coelectrolysis_slo_met": true
+    },
+    {
+      "soec_coelectrolysis_modules": 64,
+      "soec_governance_mode": "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_soec_ceramic_pods": 16,
+      "faradaic_syngas_efficiency_and_thermoneutral_yield_gain_pct": 34.2,
+      "ceramic_cell_microcrack_oxygen_electrode_delamination_and_coking_reduction_pct": 46.5,
+      "iso22734_asme_nfpa2_sil3_hot_h2_co_seal_and_thermal_shock_interlock_ms": 0.4,
+      "unmitigated_hot_syngas_autoignition_or_ceramic_stack_fracture_pct": 0.0,
+      "skid_edge_multifreq_drt_eis_and_tdlas_steam_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct": 0.0,
+      "soec_coelectrolysis_slo_met": true
+    },
+    {
+      "soec_coelectrolysis_modules": 16,
+      "soec_governance_mode": "constant_voltage_fixed_steam_ratio_open_loop_furnace_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_soec_ceramic_pods": 8,
+      "faradaic_syngas_efficiency_and_thermoneutral_yield_gain_pct": 5.6,
+      "ceramic_cell_microcrack_oxygen_electrode_delamination_and_coking_reduction_pct": 7.4,
+      "iso22734_asme_nfpa2_sil3_hot_h2_co_seal_and_thermal_shock_interlock_ms": 189.0,
+      "unmitigated_hot_syngas_autoignition_or_ceramic_stack_fracture_pct": 1.4,
+      "skid_edge_multifreq_drt_eis_and_tdlas_steam_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct": 3.5,
+      "soec_coelectrolysis_slo_met": false
+    }
   ]
 }

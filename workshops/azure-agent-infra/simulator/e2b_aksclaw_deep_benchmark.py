@@ -113,6 +113,7 @@ from agent_infra_sizer import (
     simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
     simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox,
     simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
+    simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -949,6 +950,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(64, "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge"),
         simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(16, "constant_spray_flow_fixed_hot_press_offline_polarization_cloud"),
     ]
+    soec_coelectrolysis_ceramic_profiles: List[Dict[str, object]] = [
+        simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(8, "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"),
+        simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(16, "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"),
+        simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(64, "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"),
+        simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(16, "constant_voltage_fixed_steam_ratio_open_loop_furnace_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1050,6 +1057,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "perovskite_silicon_tandem_pv_profiles": perovskite_silicon_tandem_pv_profiles,
         "solid_state_sulfide_battery_profiles": solid_state_sulfide_battery_profiles,
         "pem_fuel_cell_ccm_profiles": pem_fuel_cell_ccm_profiles,
+        "soec_coelectrolysis_ceramic_profiles": soec_coelectrolysis_ceramic_profiles,
     }
 
 

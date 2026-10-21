@@ -513,6 +513,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(98)">99. 下一代钙钛矿-晶硅叠层光伏 (Perovskite-Silicon Tandem PV) 卷对卷狭缝涂布弯月面流体动力学与 P1-P2-P3 飞秒激光刻划 PINN-MPC、原位高光谱光致发光 (PL) 检测及 IEC 61215 / SEMI PV22 SIL-3 铅溶剂蒸汽防爆与超快激光联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(99)">100. 下一代全固态硫化物锂金属电池 (ASSB / Li6PS5Cl) 干法电极 PTFE 纤维化辊压、温等静压 (50-300 MPa) 粘塑性-电化学枝晶 PINN-MPC、原位 25 MHz 超声渡越时间 (ToF) 检测及 UL 9540A / OSHA SIL-3 剧毒硫化氢 (H2S &lt; 0.8 ppm) 干房吹扫联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(100)">101. 下一代质子交换膜燃料电池 (PEMFC) 卷对卷催化剂涂层膜 (CCM) 超声雾化离聚物-铂碳分散、转印热压与金属双极板液压成形 PINN-MPC、原位 50 kHz XRF 铂载量/锁相红外针孔检测及 SAE J2579 / NFPA 2 SIL-3 跨膜氢渗透与铂碳催化自燃联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(101)">102. 下一代固体氧化物电解池 (SOEC / rSOC 750-850°C) 高温水蒸气/CO2 共电解合成气电堆、YSZ/GDC 陶瓷热应力与镍渗流粗化 PINN-MPC、原位 DRT-EIS 阻抗谱氧电极分层检测及 ISO 22734 / ASME / NFPA 2 SIL-3 高温 H2/CO 密封泄漏与热震联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -2797,6 +2798,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 101: Autonomous Next-Gen Solid-Oxide Electrolyzer Cell (SOEC / rSOC 750-850°C) High-Temperature Steam / CO2 Co-Electrolysis Syngas Stack, YSZ/GDC Ceramic Thermal-Stress & Ni-Percolation PINN-MPC, In-Situ DRT-EIS Delamination Detection & ISO 22734 / ASME / NFPA 2 SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 101 · SOLID-OXIDE ELECTROLYZER CELL (SOEC / rSOC 750–850 °C) HIGH-TEMP STEAM / CO2 CO-ELECTROLYSIS SYNGAS STACK, YSZ/GDC CERAMIC THERMAL-STRESS &amp; Ni-PERCOLATION PINN-MPC, IN-SITU DRT-EIS &amp; ISO 22734 / NFPA 2 SIL-3 INTERLOCK SIZER</span>
+    <h2>自主下一代固体氧化物电解池 (<code>SOEC / rSOC 750–850 °C</code>) 高温水蒸气/二氧化碳共电解 (<code>Steam / CO2 Co-Electrolysis</code>) 合成气电堆、<code>YSZ/GDC</code> 陶瓷热应力与镍渗流粗化 <code>PINN-MPC</code>、原位 <code>DRT-EIS</code> 阻抗谱分层检测及 <code>ISO 22734 / ASME BPVC VIII / NFPA 2 / IEC 61511 SIL-3</code> 高温 <code>H2/CO</code> 密封泄漏与热震联锁测算器</h2>
+    <div class="sub">量化在 <code>8 – 64</code> 套百兆瓦级高温固体氧化物共电解热箱模块规模下，<code>Nernst / Butler-Volmer</code> 水蒸气/<code>CO2</code> 共电解与逆水煤气变换 (<code>RWGS</code>)、<code>8YSZ/GDC</code> 脆性陶瓷空间热弹性应力梯度及多孔 <code>Ni-YSZ</code> 镍迁移/布杜阿尔积碳 <code>PINN</code> + 动态热中性电压 (<code>E_tn ≈ 1.29–1.46 V</code>) 与吹扫空气温控 <code>MPC</code>（法拉第合成气转换效率与热中性区能量良率 <code>+34.2%</code>、陶瓷微裂纹/氧电极分层剥离与积碳失活报废 <code>-46.5%</code>）、<code>ISO 22734 / ASME BPVC VIII / NFPA 2 / IEC 61511 SIL-3</code> 高温合成气密封泄漏还原保护气 (<code>95% N2 + 5% H2</code>) 吹扫、阴阳极微差压平衡与 <code>≤3 K/min</code> 变温斜率锁死硬联锁（<code>0.4 ms</code>，高温 <code>H2/CO</code> 跨腔自燃或陶瓷热震脆断事故率 <code>0.0%</code>）及热箱撬块端 <code>多频弛豫时间分布 (DRT-EIS) 电化学阻抗谱 + TDLAS 水碳比监测 + EtherCAT</code> 边缘推理（<code>0.4 ms</code>，绿氢与电子合成燃料工厂 WAN 带宽削减 <code>99.3%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 高温固体氧化物共电解热箱模块数 (SOEC / rSOC Hot-Box Modules): <strong id="lbl_soec_modules" style="color:var(--teal)">16</strong> SOEC Co-Electrolysis Modules</label>
+          <input type="range" id="rng_soec_modules" min="8" max="64" step="8" value="16" oninput="runSoecCoelectrolysisLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 陶瓷热应力与共电解 PINN-MPC、原位 DRT-EIS 与 ISO 22734 / NFPA 2 SIL-3 联锁模式 (SOEC Governance Mode)</label>
+          <select id="sel_soec_mode" onchange="runSoecCoelectrolysisLab()">
+            <option value="pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge" selected>Nernst/Butler-Volmer 共电解与 YSZ 陶瓷热应力 PINN + 热中性电压与吹扫风温控 MPC (+34.2% 合成气能量良率 / -46.5% 陶瓷微裂分层与积碳) + ISO 22734 / NFPA 2 SIL-3 0.4ms 还原保护气与热震钳位联锁 + 0.4ms DRT-EIS/TDLAS 边缘 (推荐)</option>
+            <option value="constant_voltage_fixed_steam_ratio_open_loop_furnace_cloud">传统反模式：恒定电压与固定水碳进料比 (+5.6% 良率增益) + 无 0.4ms 保护气吹扫与变温钳位 SIL-3 硬联锁 (1.4% 800°C 跨腔自燃爆燃或陶瓷电堆热震断裂违例) + 离线总电压巡检上云 (3.5% 多孔镍氧化膨胀碎裂或布杜阿尔积碳漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="soecCoelectrolysisOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -4491,6 +4515,21 @@ resource pemCcmSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2
       'aksclaw.io/lineside-50khz-xrf-pt-lockin-ir-pinhole-ethercat-edge': 'enabled-0.4ms-99.3pct-gigafactory-wan-cut'
     }
   }
+}`,
+`// 102. Azure Bicep: Next-Gen Solid-Oxide Electrolyzer Cell (SOEC / rSOC 750-850°C) High-Temperature Steam / CO2 Co-Electrolysis Syngas Stack, YSZ/GDC Ceramic Thermal-Stress & Ni-Percolation PINN-MPC, In-Situ DRT-EIS & ISO 22734 / ASME / NFPA 2 SIL-3 Pool
+resource soecCeramicSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'soecsil3'
+  properties: {
+    count: 2 // Standard_ND96isr_H100_v5 (Nernst/Butler-Volmer Co-Electrolysis, YSZ/GDC Thermoelastic & Ni-Percolation PINN + Thermoneutral Voltage & Sweep-Air MPC + DRT-EIS Inversion)
+    vmSize: 'Standard_ND96isr_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'soec-high-temp-steam-co2-coelectrolysis-ceramic-sil3-agent'
+      'aksclaw.io/pinn-mpc-nernst-tpb-ceramic-thermoelastic-drt': 'enabled-34.2pct-syngas-efficiency-gain-46.5pct-crack-delam-coking-cut'
+      'aksclaw.io/iso22734-asme-nfpa2-sil3-hot-syngas-seal-shock-guard': 'enforced-0.4ms-zero-hot-h2-co-autoignition-or-ceramic-fracture'
+      'aksclaw.io/skid-edge-multifreq-drt-eis-tdlas-steam-ethercat': 'enabled-0.4ms-99.3pct-plant-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -4692,6 +4731,30 @@ runFswCryoTankWeldingLab();
 runPerovskiteTandemPvLab();
 runSolidStateSulfideBatteryLab();
 runPemFuelCellCcmLab();
+runSoecCoelectrolysisLab();
+
+function runSoecCoelectrolysisLab() {
+  const modules = parseInt(document.getElementById('rng_soec_modules').value, 10);
+  const mode = document.getElementById('sel_soec_mode').value;
+  document.getElementById('lbl_soec_modules').textContent = modules.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(modules / 8));
+  const pods = modules <= 16 ? Math.max(2, Math.min(8, Math.floor(modules / 2))) : Math.max(8, Math.floor(modules / 4));
+  const ok = mode === 'pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge';
+  const mpcStr = ok ? "Nernst/Butler-Volmer 水蒸气/CO2 共电解、8YSZ/GDC 陶瓷热弹性应力梯度与 Ni-YSZ 渗流/布杜阿尔积碳 PINN + 动态热中性电压 (1.29–1.46 V) 与吹扫风温控 MPC · 法拉第合成气效率与热中性区能量良率 +34.2% · 陶瓷微裂纹/氧电极分层与积碳失活报废 -46.5%" : "传统恒定电压与固定水碳进料比 · 仅 +5.6% 良率增益 / -7.4% 报废削减 (风光功率波动穿越热中性点引发电堆剧烈吸放热温差与氧电极界面高氧压剥离，且 3.5% 多孔镍氧化膨胀碎裂或布杜阿尔积碳漏检)";
+  const sil3Str = ok ? "0.4 ms ISO 22734 / ASME BPVC VIII / NFPA 2 / IEC 61511 SIL-3 高温合成气密封泄漏还原保护气 (95% N2 + 5% H2) 吹扫、微差压平衡与 ≤3 K/min 热震斜率锁死硬联锁 · 0.0% 跨腔自燃/陶瓷脆断违例" : "无 0.4ms 还原保护气吹扫与变温钳位 SIL-3 硬联锁 (189.0 ms 云端滞后) · 1.4% 800°C 玻璃陶瓷密封开裂引发高温 H2/CO 跨腔自燃爆燃或停机残余水汽将 Ni 氧化膨胀 70% 撑裂电堆风险";
+  const edgeStr = ok ? "0.4 ms 热箱撬块端多频弛豫时间分布 (DRT-EIS) 电化学阻抗谱氧电极微剥离反演、TDLAS 水碳比监测与 EtherCAT 边缘 (-99.3% 合成燃料工厂 WAN 带宽) · 0.0% 镍陶粒氧化/积碳漏检" : "212.0 ms 离线电堆总电压巡检上云分析 · 错过亚毫欧级氧电极早期分层剥离抑制与局部水蒸气饥饿前馈补汽窗口";
+
+  document.getElementById('soecCoelectrolysisOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 800°C 高温合成气跨腔自燃或陶瓷热震断裂风险 · 3.5% 多孔镍氧化膨胀碎裂或布杜阿尔积碳漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 H100 节点 (${pods} 个 SOEC 高温共电解电堆孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>热箱撬块端多频弛豫时间分布 (DRT-EIS) 阻抗谱、TDLAS 水碳比监测与 EtherCAT 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runPemFuelCellCcmLab() {
   const lines = parseInt(document.getElementById('rng_pem_lines').value, 10);

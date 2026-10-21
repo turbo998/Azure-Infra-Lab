@@ -120,6 +120,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_perovskite_silicon_tandem_pv_slot_die_laser_scribing_sil3_sandbox,
     simulate_solid_state_sulfide_battery_dry_electrode_isobaric_h2s_sil3_sandbox,
     simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
+    simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -851,6 +852,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "pem_ccm_16_lines": simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(16, "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge"),
             "pem_ccm_64_lines": simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(64, "pinn_mpc_butler_volmer_tpb_ionomer_decal_hydroforming_saej2579_sil3_edge"),
             "raw_pem_ccm_16_lines": simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox(16, "constant_spray_flow_fixed_hot_press_offline_polarization_cloud"),
+        },
+        "demo_101_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox": {
+            "soec_ceramic_16_modules": simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(16, "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"),
+            "soec_ceramic_64_modules": simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(64, "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"),
+            "raw_soec_ceramic_16_modules": simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(16, "constant_voltage_fixed_steam_ratio_open_loop_furnace_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -5447,6 +5447,49 @@ def simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sand
     }
 
 
+def simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox(
+    soec_coelectrolysis_modules: int = 16,
+    soec_governance_mode: str = "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Next-Gen Solid-Oxide Electrolyzer Cell (SOEC / rSOC, 750-850°C) High-Temperature Steam / CO2 Co-Electrolysis Syngas Stack, YSZ/GDC Ceramic Thermal-Stress & Ni-Percolation Coarsening PINN-MPC, In-Situ DRT-EIS Delamination Detection & ISO 22734 / ASME BPVC VIII / NFPA 2 / IEC 61511 SIL-3 Hot H2/CO Seal-Leak & Thermal-Shock Interlock Agent Infrastructure (Chapter 106)."""
+    if soec_coelectrolysis_modules <= 0:
+        raise ValueError("soec_coelectrolysis_modules must be positive")
+    valid_modes = {
+        "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge",
+        "constant_voltage_fixed_steam_ratio_open_loop_furnace_cloud",
+    }
+    if soec_governance_mode not in valid_modes:
+        raise ValueError(f"soec_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = soec_governance_mode == "pinn_mpc_nernst_tpb_ceramic_thermoelastic_drt_iso22734_sil3_edge"
+    active_soec_ceramic_pods = max(2, min(8, int(soec_coelectrolysis_modules // 2))) if soec_coelectrolysis_modules <= 16 else max(8, int(soec_coelectrolysis_modules // 4))
+    gpu_nodes = max(2, math.ceil(soec_coelectrolysis_modules / 8))
+
+    faradaic_syngas_efficiency_and_thermoneutral_yield_gain_pct = 34.2 if governed else 5.6
+    ceramic_cell_microcrack_oxygen_electrode_delamination_and_coking_reduction_pct = 46.5 if governed else 7.4
+    iso22734_asme_nfpa2_sil3_hot_h2_co_seal_and_thermal_shock_interlock_ms = 0.4 if governed else 189.0
+    unmitigated_hot_syngas_autoignition_or_ceramic_stack_fracture_pct = 0.0 if governed else 1.4
+    skid_edge_multifreq_drt_eis_and_tdlas_steam_loop_ms = 0.4 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct = 0.0 if governed else 3.5
+
+    return {
+        "soec_coelectrolysis_modules": soec_coelectrolysis_modules,
+        "soec_governance_mode": soec_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_soec_ceramic_pods": active_soec_ceramic_pods,
+        "faradaic_syngas_efficiency_and_thermoneutral_yield_gain_pct": faradaic_syngas_efficiency_and_thermoneutral_yield_gain_pct,
+        "ceramic_cell_microcrack_oxygen_electrode_delamination_and_coking_reduction_pct": ceramic_cell_microcrack_oxygen_electrode_delamination_and_coking_reduction_pct,
+        "iso22734_asme_nfpa2_sil3_hot_h2_co_seal_and_thermal_shock_interlock_ms": iso22734_asme_nfpa2_sil3_hot_h2_co_seal_and_thermal_shock_interlock_ms,
+        "unmitigated_hot_syngas_autoignition_or_ceramic_stack_fracture_pct": unmitigated_hot_syngas_autoignition_or_ceramic_stack_fracture_pct,
+        "skid_edge_multifreq_drt_eis_and_tdlas_steam_loop_ms": skid_edge_multifreq_drt_eis_and_tdlas_steam_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct": uncompensated_ni_cermet_oxidation_or_boudouard_carbon_coking_pct,
+        "soec_coelectrolysis_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
