@@ -113,6 +113,7 @@ from agent_infra_sizer import (
     simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox,
     simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
     simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
+    simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -273,6 +274,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-mrna-lnp-microfluidic-mixing-tff-dls-gmp-nfpa30-sil3-pool.bicep",
             "aksclaw-ultradeep-10km-superhot-rock-drilling-fwi-iso15156-sil3-pool.bicep",
             "aksclaw-cmp-planarization-hybrid-w2w-bonding-epd-semis2-sil3-pool.bicep",
+            "aksclaw-single-crystal-superalloy-bridgman-lmc-casting-ams2280-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2138,6 +2140,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pad_glazing_drift_or_bonding_wave_asymmetry_pct"], 3.0)
         self.assertTrue(gov["cmp_w2w_hybrid_bonding_slo_met"])
         self.assertFalse(raw["cmp_w2w_hybrid_bonding_slo_met"])
+
+    def test_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(self) -> None:
+        gov = simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(
+            16, "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge"
+        )
+        raw = simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(
+            16, "fixed_withdrawal_speed_open_loop_baffle_post_cast_laue_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_sx_casting_pods"], 8)
+        self.assertEqual(gov["single_crystal_001_yield_and_creep_rupture_life_gain_pct"], 36.1)
+        self.assertEqual(gov["freckle_chain_stray_grain_and_hab_scrap_reduction_pct"], 48.6)
+        self.assertEqual(gov["ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct"], 1.1)
+        self.assertEqual(gov["furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_spiral_selector_misorientation_or_sliver_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_spiral_selector_misorientation_or_sliver_defect_pct"], 3.0)
+        self.assertTrue(gov["sx_superalloy_bridgman_slo_met"])
+        self.assertFalse(raw["sx_superalloy_bridgman_slo_met"])
 
 
 if __name__ == "__main__":

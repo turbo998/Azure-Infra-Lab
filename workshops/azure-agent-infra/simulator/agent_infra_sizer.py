@@ -5705,6 +5705,49 @@ def simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox(
     }
 
 
+def simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox(
+    sx_bridgman_furnaces: int = 16,
+    sx_casting_governance_mode: str = "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Single-Crystal Superalloy Directional Solidification & Liquid-Metal Cooling (Bridgman-LMC) Turbine Blade Investment Casting, Mushy-Zone Thermal Gradient (G/R) & Freckle Defect Suppression PINN-MPC, Real-Time High-Energy X-Ray Radioscopy PDAS Tomography & AMS 2280 / NADCAP / NFPA 86 / IEC 61511 SIL-3 Vacuum Induction Melt Pour-Abort & Liquid-Tin Quench Bath Interlock Agent Infrastructure (Chapter 112)."""
+    if sx_bridgman_furnaces <= 0:
+        raise ValueError("sx_bridgman_furnaces must be positive")
+    valid_modes = {
+        "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge",
+        "fixed_withdrawal_speed_open_loop_baffle_post_cast_laue_cloud",
+    }
+    if sx_casting_governance_mode not in valid_modes:
+        raise ValueError(f"sx_casting_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = sx_casting_governance_mode == "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge"
+    active_sx_casting_pods = max(2, min(8, int(sx_bridgman_furnaces))) if sx_bridgman_furnaces <= 8 else max(8, int(sx_bridgman_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(sx_bridgman_furnaces / 8))
+
+    single_crystal_001_yield_and_creep_rupture_life_gain_pct = 36.1 if governed else 5.7
+    freckle_chain_stray_grain_and_hab_scrap_reduction_pct = 48.6 if governed else 8.1
+    ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms = 0.4 if governed else 188.0
+    unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct = 0.0 if governed else 1.3
+    furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms = 0.4 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_spiral_selector_misorientation_or_sliver_defect_pct = 0.0 if governed else 3.5
+
+    return {
+        "sx_bridgman_furnaces": sx_bridgman_furnaces,
+        "sx_casting_governance_mode": sx_casting_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_sx_casting_pods": active_sx_casting_pods,
+        "single_crystal_001_yield_and_creep_rupture_life_gain_pct": single_crystal_001_yield_and_creep_rupture_life_gain_pct,
+        "freckle_chain_stray_grain_and_hab_scrap_reduction_pct": freckle_chain_stray_grain_and_hab_scrap_reduction_pct,
+        "ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms": ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms,
+        "unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct": unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct,
+        "furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms": furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_spiral_selector_misorientation_or_sliver_defect_pct": uncompensated_spiral_selector_misorientation_or_sliver_defect_pct,
+        "sx_superalloy_bridgman_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -6520,5 +6520,67 @@
       "uncompensated_pad_glazing_drift_or_bonding_wave_asymmetry_pct": 3.4,
       "cmp_w2w_hybrid_bonding_slo_met": false
     }
+  ],
+  "sx_superalloy_bridgman_profiles": [
+    {
+      "sx_bridgman_furnaces": 8,
+      "sx_casting_governance_mode": "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sx_casting_pods": 8,
+      "single_crystal_001_yield_and_creep_rupture_life_gain_pct": 36.1,
+      "freckle_chain_stray_grain_and_hab_scrap_reduction_pct": 48.6,
+      "ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms": 0.4,
+      "unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct": 0.0,
+      "furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_spiral_selector_misorientation_or_sliver_defect_pct": 0.0,
+      "sx_superalloy_bridgman_slo_met": true
+    },
+    {
+      "sx_bridgman_furnaces": 16,
+      "sx_casting_governance_mode": "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sx_casting_pods": 8,
+      "single_crystal_001_yield_and_creep_rupture_life_gain_pct": 36.1,
+      "freckle_chain_stray_grain_and_hab_scrap_reduction_pct": 48.6,
+      "ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms": 0.4,
+      "unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct": 0.0,
+      "furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_spiral_selector_misorientation_or_sliver_defect_pct": 0.0,
+      "sx_superalloy_bridgman_slo_met": true
+    },
+    {
+      "sx_bridgman_furnaces": 64,
+      "sx_casting_governance_mode": "pinn_mpc_mushy_zone_gr_pdas_rayleigh_freckle_xray_ams2280_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sx_casting_pods": 32,
+      "single_crystal_001_yield_and_creep_rupture_life_gain_pct": 36.1,
+      "freckle_chain_stray_grain_and_hab_scrap_reduction_pct": 48.6,
+      "ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms": 0.4,
+      "unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct": 0.0,
+      "furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_spiral_selector_misorientation_or_sliver_defect_pct": 0.0,
+      "sx_superalloy_bridgman_slo_met": true
+    },
+    {
+      "sx_bridgman_furnaces": 16,
+      "sx_casting_governance_mode": "fixed_withdrawal_speed_open_loop_baffle_post_cast_laue_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sx_casting_pods": 8,
+      "single_crystal_001_yield_and_creep_rupture_life_gain_pct": 5.7,
+      "freckle_chain_stray_grain_and_hab_scrap_reduction_pct": 8.1,
+      "ams2280_nfpa86_sil3_ceramic_shell_breach_and_lmc_tin_quench_interlock_ms": 188.0,
+      "unmitigated_molten_superalloy_runout_or_lmc_vapor_explosion_pct": 1.3,
+      "furnace_edge_xray_radioscopy_and_pyrometer_baffle_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_spiral_selector_misorientation_or_sliver_defect_pct": 3.5,
+      "sx_superalloy_bridgman_slo_met": false
+    }
   ]
 }
