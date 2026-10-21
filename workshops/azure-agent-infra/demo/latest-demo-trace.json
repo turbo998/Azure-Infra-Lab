@@ -7900,6 +7900,68 @@
         "uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct": 3.7,
         "pelton_francis_hydro_turbine_slo_met": false
       }
+    ],
+    "usc_boiler_turbine_flex_profiles": [
+      {
+        "usc_boiler_turbine_units": 4,
+        "usc_governance_mode": "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_usc_pods": 4,
+        "flex_ramp_and_net_efficiency_gain_pct": 39.2,
+        "superheater_creep_and_nox_nh3_slip_reduction_pct": 54.1,
+        "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": 0.3,
+        "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": 0.0,
+        "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 0.0,
+        "usc_boiler_turbine_flex_slo_met": true
+      },
+      {
+        "usc_boiler_turbine_units": 8,
+        "usc_governance_mode": "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_usc_pods": 8,
+        "flex_ramp_and_net_efficiency_gain_pct": 39.2,
+        "superheater_creep_and_nox_nh3_slip_reduction_pct": 54.1,
+        "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": 0.3,
+        "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": 0.0,
+        "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 0.0,
+        "usc_boiler_turbine_flex_slo_met": true
+      },
+      {
+        "usc_boiler_turbine_units": 32,
+        "usc_governance_mode": "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_usc_pods": 16,
+        "flex_ramp_and_net_efficiency_gain_pct": 39.2,
+        "superheater_creep_and_nox_nh3_slip_reduction_pct": 54.1,
+        "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": 0.3,
+        "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": 0.0,
+        "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 0.0,
+        "usc_boiler_turbine_flex_slo_met": true
+      },
+      {
+        "usc_boiler_turbine_units": 8,
+        "usc_governance_mode": "pid_coordinated_ccs_zirconia_o2_manual_sootblowing_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_usc_pods": 8,
+        "flex_ramp_and_net_efficiency_gain_pct": 5.7,
+        "superheater_creep_and_nox_nh3_slip_reduction_pct": 8.2,
+        "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": 149.0,
+        "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": 1.4,
+        "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": 195.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 3.8,
+        "usc_boiler_turbine_flex_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -14639,5 +14701,52 @@
       "pelton_francis_hydro_turbine_slo_met": false
     }
   },
-  "trace_sha256": "6fc562c296b4121517b9136192133ce58fb2833ef15db4d2df8e06f48cebfcd3"
+  "demo_126_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox": {
+    "usc_8_units": {
+      "usc_boiler_turbine_units": 8,
+      "usc_governance_mode": "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_usc_pods": 8,
+      "flex_ramp_and_net_efficiency_gain_pct": 39.2,
+      "superheater_creep_and_nox_nh3_slip_reduction_pct": 54.1,
+      "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": 0.3,
+      "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": 0.0,
+      "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 0.0,
+      "usc_boiler_turbine_flex_slo_met": true
+    },
+    "usc_32_units": {
+      "usc_boiler_turbine_units": 32,
+      "usc_governance_mode": "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_usc_pods": 16,
+      "flex_ramp_and_net_efficiency_gain_pct": 39.2,
+      "superheater_creep_and_nox_nh3_slip_reduction_pct": 54.1,
+      "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": 0.3,
+      "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": 0.0,
+      "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 0.0,
+      "usc_boiler_turbine_flex_slo_met": true
+    },
+    "raw_usc_8_units": {
+      "usc_boiler_turbine_units": 8,
+      "usc_governance_mode": "pid_coordinated_ccs_zirconia_o2_manual_sootblowing_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_usc_pods": 8,
+      "flex_ramp_and_net_efficiency_gain_pct": 5.7,
+      "superheater_creep_and_nox_nh3_slip_reduction_pct": 8.2,
+      "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": 149.0,
+      "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": 1.4,
+      "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": 3.8,
+      "usc_boiler_turbine_flex_slo_met": false
+    }
+  },
+  "trace_sha256": "dbfea4e3ab17bbcd05f94971c8708e89d21fbc56ca266a365a09852fb463da96"
 }

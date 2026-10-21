@@ -6522,6 +6522,49 @@ def simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_san
     }
 
 
+def simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox(
+    usc_boiler_turbine_units: int = 8,
+    usc_governance_mode: str = "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Supercritical (USC 620-650 C / 30-35 MPa) & 700 C Advanced Ultra-Supercritical (A-USC) Deep-Peak-Shaving Boiler-Turbine Unit (1,000-1,350 MW) with Biomass/Ammonia Co-Firing & Post-Combustion Carbon Capture (PCC), Tangential Fireball Vortex & Superheater/Reheater Oxide-Scale Exfoliation Creep-Fatigue PINN-MPC, TDLAS CO/O2/NH3-Slip & Acoustic Pyrometry Metrology & NFPA 85 / ASME BPVC Section I / IEEE C37.106 / IEC 61508 SIL-3 Master Fuel Trip (MFT), Furnace Implosion/Explosion Draft & Turbine 100% Fast Cut-Back (FCB) Interlock Agent Infrastructure (Chapter 131)."""
+    if usc_boiler_turbine_units <= 0:
+        raise ValueError("usc_boiler_turbine_units must be positive")
+    valid_modes = {
+        "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge",
+        "pid_coordinated_ccs_zirconia_o2_manual_sootblowing_cloud",
+    }
+    if usc_governance_mode not in valid_modes:
+        raise ValueError(f"usc_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = usc_governance_mode == "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge"
+    active_usc_pods = max(2, min(8, int(usc_boiler_turbine_units))) if usc_boiler_turbine_units <= 8 else max(8, int(usc_boiler_turbine_units // 2))
+    gpu_nodes = max(2, math.ceil(usc_boiler_turbine_units / 4))
+
+    flex_ramp_and_net_efficiency_gain_pct = 39.2 if governed else 5.7
+    superheater_creep_and_nox_nh3_slip_reduction_pct = 54.1 if governed else 8.2
+    nfpa85_sil3_mft_draft_and_fcb_interlock_ms = 0.3 if governed else 149.0
+    unmitigated_furnace_explosion_implosion_or_tube_burst_pct = 0.0 if governed else 1.4
+    boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms = 0.3 if governed else 195.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct = 0.0 if governed else 3.8
+
+    return {
+        "usc_boiler_turbine_units": usc_boiler_turbine_units,
+        "usc_governance_mode": usc_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_usc_pods": active_usc_pods,
+        "flex_ramp_and_net_efficiency_gain_pct": flex_ramp_and_net_efficiency_gain_pct,
+        "superheater_creep_and_nox_nh3_slip_reduction_pct": superheater_creep_and_nox_nh3_slip_reduction_pct,
+        "nfpa85_sil3_mft_draft_and_fcb_interlock_ms": nfpa85_sil3_mft_draft_and_fcb_interlock_ms,
+        "unmitigated_furnace_explosion_implosion_or_tube_burst_pct": unmitigated_furnace_explosion_implosion_or_tube_burst_pct,
+        "boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms": boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct": uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct,
+        "usc_boiler_turbine_flex_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

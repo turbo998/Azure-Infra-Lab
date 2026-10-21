@@ -132,6 +132,7 @@ from agent_infra_sizer import (
     simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox,
     simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox,
     simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox,
+    simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -308,6 +309,10 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-scwo-supercritical-water-pfas-mineralization-raman-asmediv3-sil3-pool.bicep",
             "aksclaw-smr-steam-methane-reforming-ccs-pigtube-creep-api530-sil3-pool.bicep",
             "aksclaw-sputter-magnetron-glass-coater-pem-hips-en1096-sil3-pool.bicep",
+            "aksclaw-lng-membrane-containment-markiii-no96-sloshing-igc-sil3-pool.bicep",
+            "aksclaw-subsea-flexlay-jlay-pipelay-catenary-das-dnvstf101-sil3-pool.bicep",
+            "aksclaw-pelton-francis-hydro-turbine-cavitation-deflector-iec60308-sil3-pool.bicep",
+            "aksclaw-usc-boiler-turbine-flex-co-firing-tdlas-nfpa85-mft-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2572,6 +2577,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bucket_root_fatigue_crack_or_stator_rotor_rub_pct"], 3.0)
         self.assertTrue(gov["pelton_francis_hydro_turbine_slo_met"])
         self.assertFalse(raw["pelton_francis_hydro_turbine_slo_met"])
+
+    def test_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox(self) -> None:
+        gov = simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox(
+            8, "pinn_mpc_usc_fireball_superheater_oxide_creep_tdlas_nfpa85_mft_sil3_edge"
+        )
+        raw = simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox(
+            8, "pid_coordinated_ccs_zirconia_o2_manual_sootblowing_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_usc_pods"], 8)
+        self.assertEqual(gov["flex_ramp_and_net_efficiency_gain_pct"], 39.2)
+        self.assertEqual(gov["superheater_creep_and_nox_nh3_slip_reduction_pct"], 54.1)
+        self.assertEqual(gov["nfpa85_sil3_mft_draft_and_fcb_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_furnace_explosion_implosion_or_tube_burst_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_furnace_explosion_implosion_or_tube_burst_pct"], 1.0)
+        self.assertEqual(gov["boiler_edge_tdlas_and_acoustic_pyrometry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_slagging_waterwall_corrosion_or_airheater_abs_plug_pct"], 3.0)
+        self.assertTrue(gov["usc_boiler_turbine_flex_slo_met"])
+        self.assertFalse(raw["usc_boiler_turbine_flex_slo_met"])
 
 
 if __name__ == "__main__":
