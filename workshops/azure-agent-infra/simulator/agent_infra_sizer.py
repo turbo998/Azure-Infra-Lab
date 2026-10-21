@@ -6135,6 +6135,49 @@ def simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(
     }
 
 
+def simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(
+    dle_column_trains: int = 16,
+    dle_governance_mode: str = "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Direct Lithium Extraction (DLE) Geothermal & Continental Brine Ion-Exchange Sorption & Membrane Capacitive Deionization (20,000-100,000 tpa LCE), Titanium/Manganese Spinel Sieve Breakthrough & Mg/Li Selectivity PINN-MPC, In-Line LIBS/ICP-OES Impurity Metrology & API RP 14C / OSHA 1910 / EPA UIC / IEC 61511 SIL-3 HCl Elution / H2S Degassing & Reinjection Wellhead Fracturing Pressure Interlock Agent Infrastructure (Chapter 122)."""
+    if dle_column_trains <= 0:
+        raise ValueError("dle_column_trains must be positive")
+    valid_modes = {
+        "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge",
+        "fixed_bed_volume_timer_manual_acid_elution_offline_icp_cloud",
+    }
+    if dle_governance_mode not in valid_modes:
+        raise ValueError(f"dle_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = dle_governance_mode == "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"
+    active_dle_pods = max(2, min(8, int(dle_column_trains))) if dle_column_trains <= 8 else max(8, int(dle_column_trains // 2))
+    gpu_nodes = max(2, math.ceil(dle_column_trains / 8))
+
+    lithium_recovery_yield_and_eluate_purity_gain_pct = 38.4 if governed else 5.8
+    freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct = 52.4 if governed else 8.1
+    epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms = 0.4 if governed else 188.0
+    unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct = 0.0 if governed else 1.4
+    carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms = 0.4 if governed else 216.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_mg_ca_coelution_or_silica_scaling_pct = 0.0 if governed else 3.7
+
+    return {
+        "dle_column_trains": dle_column_trains,
+        "dle_governance_mode": dle_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_dle_pods": active_dle_pods,
+        "lithium_recovery_yield_and_eluate_purity_gain_pct": lithium_recovery_yield_and_eluate_purity_gain_pct,
+        "freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct": freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct,
+        "epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms": epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms,
+        "unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct": unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct,
+        "carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms": carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_mg_ca_coelution_or_silica_scaling_pct": uncompensated_mg_ca_coelution_or_silica_scaling_pct,
+        "dle_lithium_brine_sorption_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

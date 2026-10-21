@@ -136,6 +136,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
+    simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -945,8 +946,13 @@ def build_full_demo_bundle() -> Dict[str, Any]:
         },
         "demo_116_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox": {
             "carbon_fiber_16_lines": simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(16, "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"),
-            "carbon_fiber_64_lines": simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(64, "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"),
+            "carbon_fiber_64_lines": simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(64, "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_sandbox" if False else "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"),
             "raw_carbon_fiber_16_lines": simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(16, "static_zone_temp_fixed_stretch_ratio_offline_tensile_coupon_cloud"),
+        },
+        "demo_117_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox": {
+            "dle_16_trains": simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(16, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"),
+            "dle_64_trains": simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(64, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"),
+            "raw_dle_16_trains": simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(16, "fixed_bed_volume_timer_manual_acid_elution_offline_icp_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

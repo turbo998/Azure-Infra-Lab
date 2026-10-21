@@ -123,6 +123,7 @@ from agent_infra_sizer import (
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
+    simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2364,6 +2365,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct"], 3.0)
         self.assertTrue(gov["carbon_fiber_pan_oxidation_carbonization_slo_met"])
         self.assertFalse(raw["carbon_fiber_pan_oxidation_carbonization_slo_met"])
+
+    def test_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(self) -> None:
+        gov = simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(
+            16, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"
+        )
+        raw = simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(
+            16, "fixed_bed_volume_timer_manual_acid_elution_offline_icp_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_dle_pods"], 8)
+        self.assertEqual(gov["lithium_recovery_yield_and_eluate_purity_gain_pct"], 38.4)
+        self.assertEqual(gov["freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct"], 52.4)
+        self.assertEqual(gov["epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct"], 1.0)
+        self.assertEqual(gov["carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_mg_ca_coelution_or_silica_scaling_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_mg_ca_coelution_or_silica_scaling_pct"], 3.0)
+        self.assertTrue(gov["dle_lithium_brine_sorption_slo_met"])
+        self.assertFalse(raw["dle_lithium_brine_sorption_slo_met"])
 
 
 if __name__ == "__main__":

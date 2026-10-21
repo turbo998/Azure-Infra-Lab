@@ -129,6 +129,7 @@ from agent_infra_sizer import (
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
     simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
+    simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1061,6 +1062,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(64, "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"),
         simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(16, "static_zone_temp_fixed_stretch_ratio_offline_tensile_coupon_cloud"),
     ]
+    dle_lithium_brine_sorption_profiles: List[Dict[str, object]] = [
+        simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(8, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"),
+        simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(16, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"),
+        simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(64, "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge"),
+        simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox(16, "fixed_bed_volume_timer_manual_acid_elution_offline_icp_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1178,6 +1185,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cryogenic_asu_air_separation_profiles": cryogenic_asu_air_separation_profiles,
         "chlor_alkali_membrane_electrolyzer_profiles": chlor_alkali_membrane_electrolyzer_profiles,
         "carbon_fiber_pan_oxidation_carbonization_profiles": carbon_fiber_pan_oxidation_carbonization_profiles,
+        "dle_lithium_brine_sorption_profiles": dle_lithium_brine_sorption_profiles,
     }
 
 

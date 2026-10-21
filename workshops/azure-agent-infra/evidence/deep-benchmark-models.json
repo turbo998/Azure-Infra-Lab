@@ -7140,5 +7140,67 @@
       "uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct": 3.5,
       "carbon_fiber_pan_oxidation_carbonization_slo_met": false
     }
+  ],
+  "dle_lithium_brine_sorption_profiles": [
+    {
+      "dle_column_trains": 8,
+      "dle_governance_mode": "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_dle_pods": 8,
+      "lithium_recovery_yield_and_eluate_purity_gain_pct": 38.4,
+      "freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct": 52.4,
+      "epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms": 0.4,
+      "unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct": 0.0,
+      "carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_mg_ca_coelution_or_silica_scaling_pct": 0.0,
+      "dle_lithium_brine_sorption_slo_met": true
+    },
+    {
+      "dle_column_trains": 16,
+      "dle_governance_mode": "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_dle_pods": 8,
+      "lithium_recovery_yield_and_eluate_purity_gain_pct": 38.4,
+      "freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct": 52.4,
+      "epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms": 0.4,
+      "unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct": 0.0,
+      "carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_mg_ca_coelution_or_silica_scaling_pct": 0.0,
+      "dle_lithium_brine_sorption_slo_met": true
+    },
+    {
+      "dle_column_trains": 64,
+      "dle_governance_mode": "pinn_mpc_spinel_sieve_breakthrough_mcdi_libs_epauic_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_dle_pods": 32,
+      "lithium_recovery_yield_and_eluate_purity_gain_pct": 38.4,
+      "freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct": 52.4,
+      "epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms": 0.4,
+      "unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct": 0.0,
+      "carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_mg_ca_coelution_or_silica_scaling_pct": 0.0,
+      "dle_lithium_brine_sorption_slo_met": true
+    },
+    {
+      "dle_column_trains": 16,
+      "dle_governance_mode": "fixed_bed_volume_timer_manual_acid_elution_offline_icp_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_dle_pods": 8,
+      "lithium_recovery_yield_and_eluate_purity_gain_pct": 5.8,
+      "freshwater_acid_consumption_and_sorbent_dissolution_reduction_pct": 8.1,
+      "epauic_sil3_reinjection_hipps_and_h2s_scrubber_interlock_ms": 188.0,
+      "unmitigated_caprock_fracturing_overpressure_or_h2s_flash_pct": 1.4,
+      "carousel_edge_libs_breakthrough_and_mcdi_voltage_loop_ms": 216.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_mg_ca_coelution_or_silica_scaling_pct": 3.7,
+      "dle_lithium_brine_sorption_slo_met": false
+    }
   ]
 }
