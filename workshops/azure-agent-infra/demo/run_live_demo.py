@@ -139,6 +139,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
     simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
     simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
+    simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -965,6 +966,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ebam_16_chambers": simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(16, "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge"),
             "ebam_64_chambers": simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(64, "pinn_mpc_elo_keyhole_al_vaporization_ams4999_nfpa484_sil3_edge"),
             "raw_ebam_16_chambers": simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(16, "open_loop_beam_current_fixed_wire_feed_post_build_hip_cloud"),
+        },
+        "demo_120_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox": {
+            "scwo_16_trains": simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(16, "pinn_mpc_transcritical_salt_transpiration_wall_raman_asmediv3_sil3_edge"),
+            "scwo_64_trains": simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(64, "pinn_mpc_transcritical_salt_transpiration_wall_raman_asmediv3_sil3_edge"),
+            "raw_scwo_16_trains": simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(16, "fixed_lox_injection_uncooled_tubular_wall_offline_lcms_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

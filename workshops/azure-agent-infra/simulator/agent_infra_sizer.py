@@ -6264,6 +6264,49 @@ def simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox(
     }
 
 
+def simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(
+    scwo_reactor_trains: int = 16,
+    scwo_governance_mode: str = "pinn_mpc_transcritical_salt_transpiration_wall_raman_asmediv3_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Supercritical Water Oxidation (SCWO 374-650 C, 22.1-30.0 MPa) & Per- and Polyfluoroalkyl Substances (PFAS / Forever Chemicals) Complete Mineralization Reactor, Transcritical Salt Precipitation & Transpiration-Wall Boundary-Layer PINN-MPC, In-Line High-Pressure Raman / Fluoride Metrology & ASME BPVC Section VIII Div. 3 / EPA PFAS / NFPA 69 / IEC 61511 SIL-3 Titanium/Inconel HF Corrosion Rupture & Rapid Depressurization Quench Interlock Agent Infrastructure (Chapter 125)."""
+    if scwo_reactor_trains <= 0:
+        raise ValueError("scwo_reactor_trains must be positive")
+    valid_modes = {
+        "pinn_mpc_transcritical_salt_transpiration_wall_raman_asmediv3_sil3_edge",
+        "fixed_lox_injection_uncooled_tubular_wall_offline_lcms_cloud",
+    }
+    if scwo_governance_mode not in valid_modes:
+        raise ValueError(f"scwo_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = scwo_governance_mode == "pinn_mpc_transcritical_salt_transpiration_wall_raman_asmediv3_sil3_edge"
+    active_scwo_pods = max(2, min(8, int(scwo_reactor_trains))) if scwo_reactor_trains <= 8 else max(8, int(scwo_reactor_trains // 2))
+    gpu_nodes = max(2, math.ceil(scwo_reactor_trains / 8))
+
+    pfas_mineralization_dre_and_continuous_uptime_gain_pct = 39.6 if governed else 5.2
+    salt_plugging_and_liner_corrosion_replacement_reduction_pct = 54.8 if governed else 7.9
+    asmediv3_sil3_quench_letdown_and_caustic_neutralization_ms = 0.4 if governed else 182.0
+    unmitigated_hf_liner_rupture_or_salt_plug_overpressure_pct = 0.0 if governed else 1.5
+    reactor_edge_diamond_raman_and_fluoride_ise_loop_ms = 0.3 if governed else 208.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_incomplete_shortchain_tfa_escape_or_hot_spot_pct = 0.0 if governed else 3.9
+
+    return {
+        "scwo_reactor_trains": scwo_reactor_trains,
+        "scwo_governance_mode": scwo_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_scwo_pods": active_scwo_pods,
+        "pfas_mineralization_dre_and_continuous_uptime_gain_pct": pfas_mineralization_dre_and_continuous_uptime_gain_pct,
+        "salt_plugging_and_liner_corrosion_replacement_reduction_pct": salt_plugging_and_liner_corrosion_replacement_reduction_pct,
+        "asmediv3_sil3_quench_letdown_and_caustic_neutralization_ms": asmediv3_sil3_quench_letdown_and_caustic_neutralization_ms,
+        "unmitigated_hf_liner_rupture_or_salt_plug_overpressure_pct": unmitigated_hf_liner_rupture_or_salt_plug_overpressure_pct,
+        "reactor_edge_diamond_raman_and_fluoride_ise_loop_ms": reactor_edge_diamond_raman_and_fluoride_ise_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_incomplete_shortchain_tfa_escape_or_hot_spot_pct": uncompensated_incomplete_shortchain_tfa_escape_or_hot_spot_pct,
+        "scwo_supercritical_water_pfas_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

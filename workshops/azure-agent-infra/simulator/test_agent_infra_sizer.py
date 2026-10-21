@@ -126,6 +126,7 @@ from agent_infra_sizer import (
     simulate_dle_lithium_brine_sorption_libs_epauic_sil3_sandbox,
     simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
     simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
+    simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -299,6 +300,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-dle-lithium-brine-sorption-libs-epauic-sil3-pool.bicep",
             "aksclaw-vrfb-flow-battery-ldes-uvvis-nfpa855-sil3-pool.bicep",
             "aksclaw-ebam-electron-beam-titanium-elo-ams4999-sil3-pool.bicep",
+            "aksclaw-scwo-supercritical-water-pfas-mineralization-raman-asmediv3-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2437,6 +2439,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_keyhole_lack_of_fusion_or_alpha_case_embrittlement_pct"], 3.0)
         self.assertTrue(gov["ebam_electron_beam_titanium_slo_met"])
         self.assertFalse(raw["ebam_electron_beam_titanium_slo_met"])
+
+    def test_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(self) -> None:
+        gov = simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(
+            16, "pinn_mpc_transcritical_salt_transpiration_wall_raman_asmediv3_sil3_edge"
+        )
+        raw = simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(
+            16, "fixed_lox_injection_uncooled_tubular_wall_offline_lcms_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_scwo_pods"], 8)
+        self.assertEqual(gov["pfas_mineralization_dre_and_continuous_uptime_gain_pct"], 39.6)
+        self.assertEqual(gov["salt_plugging_and_liner_corrosion_replacement_reduction_pct"], 54.8)
+        self.assertEqual(gov["asmediv3_sil3_quench_letdown_and_caustic_neutralization_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_hf_liner_rupture_or_salt_plug_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hf_liner_rupture_or_salt_plug_overpressure_pct"], 1.0)
+        self.assertEqual(gov["reactor_edge_diamond_raman_and_fluoride_ise_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_incomplete_shortchain_tfa_escape_or_hot_spot_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_incomplete_shortchain_tfa_escape_or_hot_spot_pct"], 3.0)
+        self.assertTrue(gov["scwo_supercritical_water_pfas_slo_met"])
+        self.assertFalse(raw["scwo_supercritical_water_pfas_slo_met"])
 
 
 if __name__ == "__main__":
