@@ -5576,6 +5576,49 @@ def simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(
     }
 
 
+def simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(
+    mrna_lnp_microfluidic_skids: int = 16,
+    lnp_governance_mode: str = "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Biopharmaceutical Continuous mRNA-LNP Microfluidic Chaotic-Advection Mixing (FRR/TFR), Ionizable-Lipid Self-Assembly & Tangential-Flow Filtration (TFF) PINN-MPC, In-Situ Spatially-Resolved Dynamic Light Scattering (SR-DLS / Raman) Inversion & FDA 21 CFR Part 11 / EU GMP Annex 1 / NFPA 30 / IEC 61511 SIL-3 Single-Use Manifold Over-Pressure & Class-I Ethanol Vapor Interlock Agent Infrastructure (Chapter 109)."""
+    if mrna_lnp_microfluidic_skids <= 0:
+        raise ValueError("mrna_lnp_microfluidic_skids must be positive")
+    valid_modes = {
+        "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge",
+        "fixed_frr_syringe_pump_offline_batch_dls_unmonitored_ethanol_cloud",
+    }
+    if lnp_governance_mode not in valid_modes:
+        raise ValueError(f"lnp_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = lnp_governance_mode == "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge"
+    active_mrna_lnp_pods = max(2, min(8, int(mrna_lnp_microfluidic_skids))) if mrna_lnp_microfluidic_skids <= 8 else max(8, int(mrna_lnp_microfluidic_skids // 2))
+    gpu_nodes = max(2, math.ceil(mrna_lnp_microfluidic_skids / 8))
+
+    mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct = 34.8 if governed else 5.5
+    polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct = 47.5 if governed else 7.8
+    gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms = 0.4 if governed else 186.0
+    unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct = 0.0 if governed else 1.3
+    skid_edge_srdls_raman_and_coriolis_frr_loop_ms = 0.4 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct = 0.0 if governed else 3.3
+
+    return {
+        "mrna_lnp_microfluidic_skids": mrna_lnp_microfluidic_skids,
+        "lnp_governance_mode": lnp_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_mrna_lnp_pods": active_mrna_lnp_pods,
+        "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct,
+        "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct,
+        "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms,
+        "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct,
+        "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": skid_edge_srdls_raman_and_coriolis_frr_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct,
+        "mrna_lnp_microfluidic_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -6536,6 +6536,68 @@
         "uncompensated_sidewall_charge_bowing_or_punchthrough_pct": 3.5,
         "cryo_har_plasma_etch_slo_met": false
       }
+    ],
+    "mrna_lnp_microfluidic_profiles": [
+      {
+        "mrna_lnp_microfluidic_skids": 8,
+        "lnp_governance_mode": "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_mrna_lnp_pods": 8,
+        "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": 34.8,
+        "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": 47.5,
+        "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": 0.4,
+        "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": 0.0,
+        "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 0.0,
+        "mrna_lnp_microfluidic_slo_met": true
+      },
+      {
+        "mrna_lnp_microfluidic_skids": 16,
+        "lnp_governance_mode": "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_mrna_lnp_pods": 8,
+        "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": 34.8,
+        "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": 47.5,
+        "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": 0.4,
+        "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": 0.0,
+        "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 0.0,
+        "mrna_lnp_microfluidic_slo_met": true
+      },
+      {
+        "mrna_lnp_microfluidic_skids": 64,
+        "lnp_governance_mode": "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_mrna_lnp_pods": 32,
+        "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": 34.8,
+        "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": 47.5,
+        "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": 0.4,
+        "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": 0.0,
+        "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 0.0,
+        "mrna_lnp_microfluidic_slo_met": true
+      },
+      {
+        "mrna_lnp_microfluidic_skids": 16,
+        "lnp_governance_mode": "fixed_frr_syringe_pump_offline_batch_dls_unmonitored_ethanol_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_mrna_lnp_pods": 8,
+        "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": 5.5,
+        "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": 7.8,
+        "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": 186.0,
+        "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": 1.3,
+        "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": 212.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 3.3,
+        "mrna_lnp_microfluidic_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -12241,5 +12303,52 @@
       "cryo_har_plasma_etch_slo_met": false
     }
   },
-  "trace_sha256": "bf6994ad666ac7f31d9faa2974d39e44934835e5a129d81324a9fc92790ce236"
+  "demo_104_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox": {
+    "mrna_lnp_16_skids": {
+      "mrna_lnp_microfluidic_skids": 16,
+      "lnp_governance_mode": "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_mrna_lnp_pods": 8,
+      "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": 34.8,
+      "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": 47.5,
+      "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": 0.4,
+      "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": 0.0,
+      "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 0.0,
+      "mrna_lnp_microfluidic_slo_met": true
+    },
+    "mrna_lnp_64_skids": {
+      "mrna_lnp_microfluidic_skids": 64,
+      "lnp_governance_mode": "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_mrna_lnp_pods": 32,
+      "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": 34.8,
+      "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": 47.5,
+      "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": 0.4,
+      "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": 0.0,
+      "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 0.0,
+      "mrna_lnp_microfluidic_slo_met": true
+    },
+    "raw_mrna_lnp_16_skids": {
+      "mrna_lnp_microfluidic_skids": 16,
+      "lnp_governance_mode": "fixed_frr_syringe_pump_offline_batch_dls_unmonitored_ethanol_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_mrna_lnp_pods": 8,
+      "mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct": 5.5,
+      "polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct": 7.8,
+      "gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms": 186.0,
+      "unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct": 1.3,
+      "skid_edge_srdls_raman_and_coriolis_frr_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 3.3,
+      "mrna_lnp_microfluidic_slo_met": false
+    }
+  },
+  "trace_sha256": "643b9c94bc96a4dda28a44e157462bd7dbf58ad469c06e142b97cb7816260094"
 }

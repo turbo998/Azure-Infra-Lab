@@ -123,6 +123,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
     simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
     simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
+    simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -869,6 +870,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "cryo_etch_16_chambers": simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(16, "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge"),
             "cryo_etch_64_chambers": simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(64, "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge"),
             "raw_cryo_etch_16_chambers": simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(16, "fixed_rf_cw_bias_open_loop_he_chuck_timed_etch_cloud"),
+        },
+        "demo_104_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox": {
+            "mrna_lnp_16_skids": simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(16, "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge"),
+            "mrna_lnp_64_skids": simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(64, "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge"),
+            "raw_mrna_lnp_16_skids": simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(16, "fixed_frr_syringe_pump_offline_batch_dls_unmonitored_ethanol_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

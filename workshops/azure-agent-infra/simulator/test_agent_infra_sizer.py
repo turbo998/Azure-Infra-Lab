@@ -110,6 +110,7 @@ from agent_infra_sizer import (
     simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
     simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
     simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
+    simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -267,6 +268,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-soec-high-temp-steam-co2-coelectrolysis-ceramic-iso22734-sil3-pool.bicep",
             "aksclaw-h2-dri-shaft-furnace-hydrogen-reduction-clustering-nfpa86-sil3-pool.bicep",
             "aksclaw-cryo-har-plasma-etch-3dnand-esc-oes-semis2-sil3-pool.bicep",
+            "aksclaw-mrna-lnp-microfluidic-mixing-tff-dls-gmp-nfpa30-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2069,6 +2071,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_sidewall_charge_bowing_or_punchthrough_pct"], 3.0)
         self.assertTrue(gov["cryo_har_plasma_etch_slo_met"])
         self.assertFalse(raw["cryo_har_plasma_etch_slo_met"])
+
+    def test_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(self) -> None:
+        gov = simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(
+            16, "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge"
+        )
+        raw = simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(
+            16, "fixed_frr_syringe_pump_offline_batch_dls_unmonitored_ethanol_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_mrna_lnp_pods"], 8)
+        self.assertEqual(gov["mrna_encapsulation_efficiency_and_monodisperse_lnp_yield_gain_pct"], 34.8)
+        self.assertEqual(gov["polydispersity_pdi_excursion_tff_shear_lysis_and_batch_rejection_reduction_pct"], 47.5)
+        self.assertEqual(gov["gmp_annex1_nfpa30_sil3_manifold_overpressure_and_ethanol_lel_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_single_use_bag_rupture_or_ethanol_vapor_ignition_pct"], 1.1)
+        self.assertEqual(gov["skid_edge_srdls_raman_and_coriolis_frr_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct"], 3.0)
+        self.assertTrue(gov["mrna_lnp_microfluidic_slo_met"])
+        self.assertFalse(raw["mrna_lnp_microfluidic_slo_met"])
 
 
 if __name__ == "__main__":
