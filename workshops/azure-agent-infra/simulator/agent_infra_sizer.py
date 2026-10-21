@@ -6608,6 +6608,49 @@ def simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(
     }
 
 
+def simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(
+    longwall_faces: int = 16,
+    longwall_governance_mode: str = "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Deep-Underground Longwall Top-Coal Caving & High-Seam Shearers (800-1,500 m Depth, 8-10 m Hydraulic Shields), Overburden Key-Stratum Rockburst Microseismic Tomography & Coal-Rock Interface Natural-Gamma/THz PINN-MPC, Hydraulic Shield Leg FBG / TDLAS CH4-CO Metrology & IEC 61508 SIL-3 / ATEX Group I Category M1 Ex ia Rockburst High-Flow Yield Valve, Coal-and-Gas Outburst Power Cut-Off & Goaf Nitrogen Inerting Interlock Agent Infrastructure (Chapter 133)."""
+    if longwall_faces <= 0:
+        raise ValueError("longwall_faces must be positive")
+    valid_modes = {
+        "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge",
+        "memory_cut_shearer_timed_topcoal_caving_catalytic_pellistor_ch4_cloud",
+    }
+    if longwall_governance_mode not in valid_modes:
+        raise ValueError(f"longwall_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = longwall_governance_mode == "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge"
+    active_longwall_pods = max(2, min(8, int(longwall_faces))) if longwall_faces <= 8 else max(8, int(longwall_faces // 2))
+    gpu_nodes = max(2, math.ceil(longwall_faces / 8))
+
+    raw_coal_recovery_and_face_advance_rate_gain_pct = 39.6 if governed else 6.1
+    gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct = 54.5 if governed else 8.6
+    atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms = 0.3 if governed else 156.0
+    unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct = 0.0 if governed else 1.5
+    roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms = 0.3 if governed else 198.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct = 0.0 if governed else 3.9
+
+    return {
+        "longwall_faces": longwall_faces,
+        "longwall_governance_mode": longwall_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_longwall_pods": active_longwall_pods,
+        "raw_coal_recovery_and_face_advance_rate_gain_pct": raw_coal_recovery_and_face_advance_rate_gain_pct,
+        "gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct": gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct,
+        "atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms": atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms,
+        "unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct": unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct,
+        "roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms": roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct": uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct,
+        "longwall_mining_rockburst_shearer_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

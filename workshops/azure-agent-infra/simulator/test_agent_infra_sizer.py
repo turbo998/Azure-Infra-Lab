@@ -134,6 +134,7 @@ from agent_infra_sizer import (
     simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox,
     simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox,
     simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
+    simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -315,6 +316,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-pelton-francis-hydro-turbine-cavitation-deflector-iec60308-sil3-pool.bicep",
             "aksclaw-usc-boiler-turbine-flex-co-firing-tdlas-nfpa85-mft-sil3-pool.bicep",
             "aksclaw-offshore-jackup-spudcan-punchthrough-sscv-sname55a-sil3-pool.bicep",
+            "aksclaw-longwall-mining-rockburst-shearer-methane-atex-m1-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2621,6 +2623,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct"], 3.0)
         self.assertTrue(gov["offshore_jackup_spudcan_sscv_slo_met"])
         self.assertFalse(raw["offshore_jackup_spudcan_sscv_slo_met"])
+
+    def test_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(self) -> None:
+        gov = simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(
+            16, "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge"
+        )
+        raw = simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(
+            16, "memory_cut_shearer_timed_topcoal_caving_catalytic_pellistor_ch4_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_longwall_pods"], 8)
+        self.assertEqual(gov["raw_coal_recovery_and_face_advance_rate_gain_pct"], 39.6)
+        self.assertEqual(gov["gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct"], 54.5)
+        self.assertEqual(gov["atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct"], 1.0)
+        self.assertEqual(gov["roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct"], 3.0)
+        self.assertTrue(gov["longwall_mining_rockburst_shearer_slo_met"])
+        self.assertFalse(raw["longwall_mining_rockburst_shearer_slo_met"])
 
 
 if __name__ == "__main__":

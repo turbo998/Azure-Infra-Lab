@@ -140,6 +140,7 @@ from agent_infra_sizer import (
     simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox,
     simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox,
     simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
+    simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1138,6 +1139,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(64, "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"),
         simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(16, "stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud"),
     ]
+    longwall_mining_rockburst_shearer_profiles: List[Dict[str, object]] = [
+        simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(8, "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge"),
+        simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(16, "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge"),
+        simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(64, "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge"),
+        simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(16, "memory_cut_shearer_timed_topcoal_caving_catalytic_pellistor_ch4_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1266,6 +1273,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "pelton_francis_hydro_turbine_profiles": pelton_francis_hydro_turbine_profiles,
         "usc_boiler_turbine_flex_profiles": usc_boiler_turbine_flex_profiles,
         "offshore_jackup_spudcan_sscv_profiles": offshore_jackup_spudcan_sscv_profiles,
+        "longwall_mining_rockburst_shearer_profiles": longwall_mining_rockburst_shearer_profiles,
     }
 
 

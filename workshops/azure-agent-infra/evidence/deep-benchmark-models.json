@@ -7822,5 +7822,67 @@
       "uncompensated_pinion_tooth_root_crack_or_spudcan_scour_tilt_pct": 3.8,
       "offshore_jackup_spudcan_sscv_slo_met": false
     }
+  ],
+  "longwall_mining_rockburst_shearer_profiles": [
+    {
+      "longwall_faces": 8,
+      "longwall_governance_mode": "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_longwall_pods": 8,
+      "raw_coal_recovery_and_face_advance_rate_gain_pct": 39.6,
+      "gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct": 54.5,
+      "atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms": 0.3,
+      "unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct": 0.0,
+      "roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct": 0.0,
+      "longwall_mining_rockburst_shearer_slo_met": true
+    },
+    {
+      "longwall_faces": 16,
+      "longwall_governance_mode": "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_longwall_pods": 8,
+      "raw_coal_recovery_and_face_advance_rate_gain_pct": 39.6,
+      "gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct": 54.5,
+      "atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms": 0.3,
+      "unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct": 0.0,
+      "roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct": 0.0,
+      "longwall_mining_rockburst_shearer_slo_met": true
+    },
+    {
+      "longwall_faces": 64,
+      "longwall_governance_mode": "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_longwall_pods": 32,
+      "raw_coal_recovery_and_face_advance_rate_gain_pct": 39.6,
+      "gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct": 54.5,
+      "atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms": 0.3,
+      "unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct": 0.0,
+      "roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct": 0.0,
+      "longwall_mining_rockburst_shearer_slo_met": true
+    },
+    {
+      "longwall_faces": 16,
+      "longwall_governance_mode": "memory_cut_shearer_timed_topcoal_caving_catalytic_pellistor_ch4_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_longwall_pods": 8,
+      "raw_coal_recovery_and_face_advance_rate_gain_pct": 6.1,
+      "gangue_refuse_ratio_and_shield_leg_impact_overload_reduction_pct": 8.6,
+      "atexm1_sil3_rockburst_yield_valve_and_ch4_power_cutoff_interlock_ms": 156.0,
+      "unmitigated_methane_explosion_or_rockburst_shield_column_burst_pct": 1.5,
+      "roadway_edge_microseismic_gamma_and_tdlas_ch4_co_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_drum_pick_bit_rock_wear_or_goaf_spontaneous_combustion_pct": 3.9,
+      "longwall_mining_rockburst_shearer_slo_met": false
+    }
   ]
 }

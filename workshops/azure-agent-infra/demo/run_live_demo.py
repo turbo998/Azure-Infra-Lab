@@ -147,6 +147,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_pelton_francis_hydro_turbine_cavitation_deflector_iec60308_sil3_sandbox,
     simulate_usc_boiler_turbine_flex_cofiring_tdlas_nfpa85_mft_sil3_sandbox,
     simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
+    simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1013,6 +1014,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "jackup_16_units": simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(16, "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"),
             "jackup_64_units": simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(64, "pinn_mpc_spudcan_punchthrough_sscv_antiheeling_rpd_iso19905_sil3_edge"),
             "raw_jackup_16_units": simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox(16, "stepwise_blind_preload_manual_ballast_valve_uncompensated_hook_cloud"),
+        },
+        "demo_128_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox": {
+            "longwall_16_faces": simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(16, "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge"),
+            "longwall_64_faces": simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(64, "pinn_mpc_overburden_rockburst_coal_rock_horizon_tdlas_atexm1_sil3_edge"),
+            "raw_longwall_16_faces": simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox(16, "memory_cut_shearer_timed_topcoal_caving_catalytic_pellistor_ch4_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
