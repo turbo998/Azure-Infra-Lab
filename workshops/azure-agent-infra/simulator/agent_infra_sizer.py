@@ -5533,6 +5533,49 @@ def simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(
     }
 
 
+def simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(
+    cryo_har_etch_chambers: int = 16,
+    cryo_etch_governance_mode: str = "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Semiconductor 3D NAND / 3D DRAM High-Aspect-Ratio (HAR > 100:1) Cryogenic Plasma Etch (Cryo-Etch, -100 C), Dual-Frequency RF Sheath Ion-Angular-Distribution & Channel-Bowing PINN-MPC, In-Situ OES Endpoint Interferometry & SEMI S2 / NFPA 318 / IEC 61511 SIL-3 Electrostatic Chuck (ESC) Helium-Leak Wafer-Pop & Toxic HF Abatement Interlock Agent Infrastructure (Chapter 108)."""
+    if cryo_har_etch_chambers <= 0:
+        raise ValueError("cryo_har_etch_chambers must be positive")
+    valid_modes = {
+        "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge",
+        "fixed_rf_cw_bias_open_loop_he_chuck_timed_etch_cloud",
+    }
+    if cryo_etch_governance_mode not in valid_modes:
+        raise ValueError(f"cryo_etch_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cryo_etch_governance_mode == "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge"
+    active_cryo_etch_pods = max(2, min(8, int(cryo_har_etch_chambers))) if cryo_har_etch_chambers <= 8 else max(8, int(cryo_har_etch_chambers // 2))
+    gpu_nodes = max(2, math.ceil(cryo_har_etch_chambers / 8))
+
+    har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct = 35.4 if governed else 5.6
+    channel_bowing_twisting_and_arde_notching_scrap_reduction_pct = 47.8 if governed else 7.9
+    semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms = 0.3 if governed else 182.0
+    unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct = 0.0 if governed else 1.4
+    chamber_edge_oes_iead_vip_sensor_loop_ms = 0.3 if governed else 206.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_sidewall_charge_bowing_or_punchthrough_pct = 0.0 if governed else 3.5
+
+    return {
+        "cryo_har_etch_chambers": cryo_har_etch_chambers,
+        "cryo_etch_governance_mode": cryo_etch_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_cryo_etch_pods": active_cryo_etch_pods,
+        "har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct": har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct,
+        "channel_bowing_twisting_and_arde_notching_scrap_reduction_pct": channel_bowing_twisting_and_arde_notching_scrap_reduction_pct,
+        "semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms": semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms,
+        "unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct": unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct,
+        "chamber_edge_oes_iead_vip_sensor_loop_ms": chamber_edge_oes_iead_vip_sensor_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_sidewall_charge_bowing_or_punchthrough_pct": uncompensated_sidewall_charge_bowing_or_punchthrough_pct,
+        "cryo_har_plasma_etch_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

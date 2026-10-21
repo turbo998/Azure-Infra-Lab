@@ -122,6 +122,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
     simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
     simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
+    simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -863,6 +864,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "h2_dri_8_furnaces": simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(8, "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge"),
             "h2_dri_32_furnaces": simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(32, "pinn_mpc_shrinking_core_metallization_clustering_tdlas_nfpa86_sil3_edge"),
             "raw_h2_dri_8_furnaces": simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox(8, "fixed_bustle_gas_temp_manual_burden_feeder_offline_titration_cloud"),
+        },
+        "demo_103_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox": {
+            "cryo_etch_16_chambers": simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(16, "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge"),
+            "cryo_etch_64_chambers": simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(64, "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge"),
+            "raw_cryo_etch_16_chambers": simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(16, "fixed_rf_cw_bias_open_loop_he_chuck_timed_etch_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

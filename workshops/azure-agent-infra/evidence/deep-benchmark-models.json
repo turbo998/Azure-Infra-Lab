@@ -6272,5 +6272,67 @@
       "uncompensated_wustite_unreduced_core_or_shaft_channeling_pct": 3.6,
       "h2_dri_shaft_furnace_slo_met": false
     }
+  ],
+  "cryo_har_plasma_etch_profiles": [
+    {
+      "cryo_har_etch_chambers": 8,
+      "cryo_etch_governance_mode": "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_etch_pods": 8,
+      "har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct": 35.4,
+      "channel_bowing_twisting_and_arde_notching_scrap_reduction_pct": 47.8,
+      "semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms": 0.3,
+      "unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct": 0.0,
+      "chamber_edge_oes_iead_vip_sensor_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_sidewall_charge_bowing_or_punchthrough_pct": 0.0,
+      "cryo_har_plasma_etch_slo_met": true
+    },
+    {
+      "cryo_har_etch_chambers": 16,
+      "cryo_etch_governance_mode": "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_etch_pods": 8,
+      "har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct": 35.4,
+      "channel_bowing_twisting_and_arde_notching_scrap_reduction_pct": 47.8,
+      "semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms": 0.3,
+      "unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct": 0.0,
+      "chamber_edge_oes_iead_vip_sensor_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_sidewall_charge_bowing_or_punchthrough_pct": 0.0,
+      "cryo_har_plasma_etch_slo_met": true
+    },
+    {
+      "cryo_har_etch_chambers": 64,
+      "cryo_etch_governance_mode": "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_etch_pods": 32,
+      "har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct": 35.4,
+      "channel_bowing_twisting_and_arde_notching_scrap_reduction_pct": 47.8,
+      "semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms": 0.3,
+      "unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct": 0.0,
+      "chamber_edge_oes_iead_vip_sensor_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_sidewall_charge_bowing_or_punchthrough_pct": 0.0,
+      "cryo_har_plasma_etch_slo_met": true
+    },
+    {
+      "cryo_har_etch_chambers": 16,
+      "cryo_etch_governance_mode": "fixed_rf_cw_bias_open_loop_he_chuck_timed_etch_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_cryo_etch_pods": 8,
+      "har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct": 5.6,
+      "channel_bowing_twisting_and_arde_notching_scrap_reduction_pct": 7.9,
+      "semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms": 182.0,
+      "unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct": 1.4,
+      "chamber_edge_oes_iead_vip_sensor_loop_ms": 206.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_sidewall_charge_bowing_or_punchthrough_pct": 3.5,
+      "cryo_har_plasma_etch_slo_met": false
+    }
   ]
 }

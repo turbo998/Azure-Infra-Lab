@@ -109,6 +109,7 @@ from agent_infra_sizer import (
     simulate_pem_fuel_cell_ccm_ultrasonic_spray_bipolar_plate_saej2579_sil3_sandbox,
     simulate_soec_high_temp_steam_co2_coelectrolysis_ceramic_sil3_sandbox,
     simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
+    simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -265,6 +266,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-pem-fuel-cell-ccm-ultrasonic-spray-bipolar-plate-saej2579-sil3-pool.bicep",
             "aksclaw-soec-high-temp-steam-co2-coelectrolysis-ceramic-iso22734-sil3-pool.bicep",
             "aksclaw-h2-dri-shaft-furnace-hydrogen-reduction-clustering-nfpa86-sil3-pool.bicep",
+            "aksclaw-cryo-har-plasma-etch-3dnand-esc-oes-semis2-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2046,6 +2048,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_wustite_unreduced_core_or_shaft_channeling_pct"], 3.0)
         self.assertTrue(gov["h2_dri_shaft_furnace_slo_met"])
         self.assertFalse(raw["h2_dri_shaft_furnace_slo_met"])
+
+    def test_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(
+            16, "pinn_mpc_iead_sheath_bowing_oes_interferometry_semis2_sil3_edge"
+        )
+        raw = simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox(
+            16, "fixed_rf_cw_bias_open_loop_he_chuck_timed_etch_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cryo_etch_pods"], 8)
+        self.assertEqual(gov["har_channel_verticality_cd_yield_and_etch_selectivity_gain_pct"], 35.4)
+        self.assertEqual(gov["channel_bowing_twisting_and_arde_notching_scrap_reduction_pct"], 47.8)
+        self.assertEqual(gov["semis2_nfpa318_sil3_esc_dechuck_and_hf_abatement_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_esc_wafer_pop_arcing_or_toxic_hf_exhaust_breach_pct"], 1.2)
+        self.assertEqual(gov["chamber_edge_oes_iead_vip_sensor_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_sidewall_charge_bowing_or_punchthrough_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_sidewall_charge_bowing_or_punchthrough_pct"], 3.0)
+        self.assertTrue(gov["cryo_har_plasma_etch_slo_met"])
+        self.assertFalse(raw["cryo_har_plasma_etch_slo_met"])
 
 
 if __name__ == "__main__":
