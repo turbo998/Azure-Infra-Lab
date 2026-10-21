@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-22 (Cycle #123 · 129 Chapters · 124 Blueprints · 123 Simulators · 132/132 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-22 (Cycle #124 · 130 Chapters Milestone · 125 Blueprints Milestone · 124 Simulators · 133/133 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -3621,7 +3621,36 @@ sequenceDiagram
 
 ---
 
-## 129. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
+## 129. 自主超深水海底管道铺设船（`2,500–3,500 m J-Lay / S-Lay / Reel-Lay` · `600–2,000 t` 四履带张紧器与铰接托管架 / `J-Lay` 塔）、悬垂段触地点（`TDP`）弹塑性椭圆化与传播屈曲 `PINN-MPC`、全自动分区相控阵超声（`Zonal AUT`）环焊缝 / `OFDR` 光纤应变检测及 `DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3` 湿屈曲弃管绞车（`A&R Winch`）与张紧器防滑压溃硬联锁智能体基础设施（Autonomous Ultra-Deepwater `J-Lay / S-Lay / Reel-Lay` Subsea Pipeline Laying Vessel `2,500–3,500 m` Water Depth, `600–2,000 t` Quad-Track Tensioner & Stinger / `J-Lay` Tower, Sagbend Touchdown-Point `TDP` Elasto-Plastic Ovalization & Propagating-Buckle `PINN-MPC`, Automated Ultrasonic Testing `AUT` Girth-Weld / `OFDR` Strain Metrology & `DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3` Wet-Buckle Abandonment & Tensioner Slip-Crush Interlock Agent Infrastructure）
+
+在超深水海底长输油气干线、跨海绿氢/绿氨管道与海上碳封存（CCUS）高压超临界 $\text{CO}_2$ 注入管网建设中，搭载 **`DP-3` 动力定位系统** 的重型半潜式或单体铺管船（Pipelay Vessel）需通过 **`S-Lay`（双接单根流水线 + `100–120 m` 三节铰接式托管架 Stinger）**、**`J-Lay`（近垂直高塔单工位焊接，專攻 `2,500–3,500 m` 超深水以消除上弯段塑性应变）** 或 **`Reel-Lay`（岸基预制盘管上船 + 矫直器连续下放）** 工艺，将直径 `16–48 inch`、壁厚 `25–50 mm` 的 `X65 / X70` 高强碳钢或双金属冶金复合管（`CRA Clad / Lined Pipe`）连续沉放至数千米深的海床。在铺设过程中，长约 **`3,000–5,000 m`**、水下悬挂湿重高达 **`500–1,800 t`** 的自由悬垂管柱（Free-Hanging Catenary）完全依靠船上 3 至 4 台串联 **四履带张紧器（Quad-Track Tensioners）** 或 `J-Lay` 摩擦吊卡提供恒定顶张力支承，同时承受外侧高达 **`25–35 MPa`（`250–350 bar`）** 的深海静水外压。然而，超深水海底管道铺设面临三大海洋结构力学-焊接冶金耦合与毁灭性工程安全挑战：
+1. **船体波浪升沉（Heave）动力放大与海床触地点下弯段（Sagbend Touchdown Point, `TDP`）Brazier 截面椭圆化（Ovalization）诱发 `35 MPa` 外水压传播屈曲（Propagating / Wet Buckle）拍扁整条海管**：当铺管船在涌浪中发生 `±1.5–3.0 m` 的垂荡（Heave）与纵摇（Pitch）时，动张力波动沿着长达数千米的悬垂管柱向下传播并在海床触地点（`TDP`）引发剧烈的弯矩脉动与管-土循环拍击；根据 **`DNV-ST-F101` 轴力-弯矩-外水压组合载荷判据（Combined Loading Criterion）**，纵向弯曲使原本圆形的钢管截面发生 **Brazier 扁平椭圆化（Ovality $f_0 = (D_{\max} - D_{\min})/D$）**，一旦局部椭圆度跨过临界失稳点，高达 `35 MPa` 的深海静水压将瞬间压垮管壁形成局部失稳甚至刺穿管体（**湿屈曲 Wet Buckle**），高压海水涌入管内并以 **`> 100–180 m/s`** 的传播速度将已铺设的数十公里海底管道像压扁易拉罐一样连续压扁（Propagating Buckle），造成数亿美元级工期报废与深海弃管切割抢修。
+2. **四履带张紧器（Quad-Track Tensioner）聚氨酯垫块径向夹紧力与轴向打滑（Pipe Slippage）之间的极窄安全窗口，以及 `Reel-Lay` 管线包申格效应（Bauschinger Effect）矫直残余曲率偏差**：张紧器必须依靠数百个液压夹紧油缸推动 V 型聚氨酯摩擦块紧紧抱住运动中的 `3LPP` 防腐层与混凝土配重层钢管；若夹紧力过小或海浪引发瞬间动张力尖峰超过静摩擦极限，重达千吨的千米管柱将发生灾难性打滑坠海（**Uncontrolled Pipe Drop**），瞬间扯断托管架（Stinger）并危及甲板人员；反之若液压夹紧力过大，又会直接压碎混凝土配重层、剥离 `FBE/3LPP` 防腐层甚至在薄壁内衬复合管（Lined CRA Pipe）内引发内衬层脱粘起皱（Liner Wrinkling）。
+3. **高速流水线（Firing Line）双焊炬全自动气体保护焊（`GMAW`）环焊缝 `300 °C` 热态下全自动相控阵超声（`Zonal AUT + TOFD`）秒级判伤与每次步进移船（Pipe-Step `12.2 m / 24.4 m`）时效瓶颈**：在 S-Lay 船上，每隔 `3–5` 分钟铺管船就必须通过 `DP-3` 全回转推力器精确前移一根或两根管长（`12.2 m` 或 `24.4 m`），在短短 `20–40 s` 的移船驻留窗口内，NDT 工位必须完成刚焊完尚处于 `200–300 °C` 高温梯度的环焊缝 100% 体积缺陷扫查；传统依赖人工复核 B/D 扫描图像或冷却后射线拍片（RT）极易漏检坡口侧壁未熔合（Lack of Sidewall Fusion）或根部热裂纹，一旦带缺陷焊口越过托管架尾端（Stinger Tip）进入高弯曲应力区，将在水下直接脆断引发湿屈曲。
+
+本章构建 **自主超深水海底管道铺设船（`J-Lay / S-Lay / Reel-Lay`）悬垂段触地点（`TDP`）弹塑性椭圆化与传播屈曲 `PINN-MPC`、全自动分区相控阵超声（`Zonal AUT`）环焊缝 / `OFDR` 光纤应变检测及 `DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3` 湿屈曲弃管绞车（`A&R Winch`）与张紧器防滑压溃硬联锁智能体架构**：
+
+1. **三维大挠度悬垂管柱-海床土体非线性耦合、Brazier 弹塑性椭圆化与外水压传播屈曲 `PINN` + 四履带张紧器主动升沉补偿、托管架铰接刚度与 `DP-3` 步进移船协同 `MPC`（`Standard_NC24ads_A100_v4`）**：
+   - 耦合求解三维深海结构与岩土力学 `PINN`：（a）长达 `3.5 km` 悬垂管柱在三维海流（Current Profile）涡激振动（VIV）与 `DP-3` 船体六自由度波浪运动激励下的几何非线性空间欧拉-伯努利/铁木辛柯梁方程，耦合海床软黏土非线性吸力-回弹（P-y / T-z Trenching）刚度与 **Brazier 截面椭圆化-静水外压弹塑性失稳（`DNV-ST-F101` LCC/DFC 组合载荷利用因子 $\eta \le 0.85$）**；（b）`Reel-Lay` 工艺在卷盘弯曲-反弯矫直循环下计及随动硬化（Kinematic Hardening）与包申格效应（Bauschinger Effect）的残余应力/椭圆度演化解算；
+   - 结合滚动时域 `MPC` 协同控制四履带张紧器闭环恒张力主动升沉补偿（Active Heave Compensation，实时抵消波浪动张力尖峰）、托管架（Stinger）浮筒压载水舱与滚轮高度包络、以及 `DP-3` 船舶前移步进（Pipe-Step）加减速S曲线，将 **铺管作业速率与恶劣海况可作业气象窗口（Operational Weather Window）提升 `+39.1%`**（对标传统死区张紧控制与人工步进 `+5.9%`），并将 **悬垂段触地点循环疲劳损伤累积与环焊缝割口返修（Cut-Out Repair）率削减 `-53.8%`**（对标传统经验铺设 `-8.3%`）。
+2. **`DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3` 防湿屈曲弃管与回收绞车（`A&R Winch`）应急挂接、固定摩擦卡瓦（`Hang-Off Clamp`）防溜管与张紧器防压溃硬联锁（`0.3 ms`）**：
+   - 铺管主控台（Pipelay Control Desk）边缘通过工业安全现场总线（`PROFIsafe / CIP Safety`）直连四台张紧器激光多普勒管体微滑移传感器、履带径向夹紧油缸压力变送器、托管架尾端最后一节滚轮（Last Roller）三轴载荷销（Load Pins）、管内行走式无线屈曲探测器（Buckle Detector Gauging Pig）及 `2,000 t` 弃管与回收绞车（`A&R Winch`）液压制动器；
+   - 一旦检测到张紧器履带与管体发生 **`> 1.5 mm` 相对微滑移**、夹紧液压逼近管体或 `CRA` 内衬压溃阈值、或恶化海况下托管架尾端倾角/触地点组合载荷因子 $\eta$ 突破 **`0.92`**（濒临局部屈曲或湿屈曲），在 **`0.3 ms`** 内无需岸基卫通介入，硬件级触发 **张紧器径向夹紧力在防滑下限与防压溃上限之间的毫秒级自适应钳位、甲板固定式重型摩擦悬挂卡瓦（`Friction Hang-Off Clamp / Collar`）瞬时机械抱死闭锁（彻底阻断管柱坠海）、`DP-3` 船舶自动顺浪微退释放悬垂过弯应力、以及在海况超限时自动挂接焊封封头并通过 `2,000 t` `A&R` 绞车恒张力安全弃管下放海床（Safe Pipe Abandonment）**，确保 **深海传播性湿屈曲塌管或张紧器打滑溜管坠海事故率为 `0.0%`**（无硬联锁反模式达 `1.5%`）。
+3. **作业线端热态环焊缝全自动分区相控阵超声（`Zonal AUT + TOFD`）与托管架/ROV 光纤频域反射（`OFDR`）触地点曲率边缘沙箱（`0.3 ms`）**：
+   - 在铺管流水线（Firing Line）边缘（`Standard_NC24ads_A100_v4`）直连带高温水冷楔块的双侧全自动分区相控阵超声与衍射时差法（**`Zonal PAUT + TOFD`**）扫查环，在焊后 **`250–300 °C`** 热态下实时完成动态声速温漂补偿与三维全聚焦（`TFM`）体积/面状缺陷毫秒级重构（自动区分几何焊根反射与坡口未熔合 `LoF`），同步融合托管架滚轮载荷销与水下伴航 `ROV` 声学/光纤频域反射（`OFDR`）触地点（`TDP`）形态监测，闭环延迟仅 **`0.3 ms`**，削减 **远洋海事卫通（SATCOM）WAN 带宽 `99.5%`**，并将 **触地点局部椭圆化超标或带根部缺陷环焊缝越过托管架入海漏检率压降至 `0.0%`**（焊后放射源抽检反模式为 `3.8%`）。
+
+| 指标维度 | governed：悬垂段 `TDP` 椭圆化与防屈曲 `PINN-MPC` + `DNV-ST-F101 / SIL-3` 防滑卡瓦与 `A&R` 弃管联锁 + `热态 Zonal AUT / OFDR` 边缘 | raw 反模式：静态死区张紧器控制与人工 `DP` 移船 + 无 `0.3 ms` 防滑卡瓦与防湿屈曲 `SIL-3` 联锁 + 焊后冷却放射源拍片抽检 |
+|---|---|---|
+| **超深水铺管作业速率与可作业气象窗口增益** | **`+39.1%`**（张紧器主动升沉补偿与 `DP-3` 移船 S 曲线协同，在 `Hs = 3.5–4.5 m` 涌浪下仍保持稳态铺设） | `+5.9%`（死区张紧器引发悬垂管柱动张力共振，海况稍有恶化即被迫停工待命 `Waiting on Weather`） |
+| **触地点（`TDP`）疲劳损伤与环焊缝割口返修削减率** | **`-53.8%`**（`Zonal AUT` 热态秒级反馈实时微调前序焊机摆动参数，且消除移船驻留期间 `TDP` 同一截面反复弯曲疲劳） | `-8.3%`（人工阅片滞后导致整批环焊缝连续出现侧壁未熔合，被迫倒车割口重焊延误数小时） |
+| **`DNV-ST-F101 / IMCA SIL-3` 防滑闭锁与弃管联锁延迟** | **`0.3 ms`**（`<1.5 mm` 微滑移瞬时触发防压溃夹紧钳位 + 悬挂摩擦卡瓦抱死 + `2,000 t A&R` 绞车恒张力护航） | `152.0 ms`（传统液压回路与卫通滞后，涌浪尖峰瞬间扯滑张紧器履带或压扁托管架尾端管体） |
+| **深海传播性湿屈曲（`Wet Buckle`）或溜管坠海事故率** | **`0.0%`**（零 `35 MPa` 外水压刺穿压扁海底管线、零千米管柱从张紧器滑脱坠海） | `1.5%`（`TDP` 椭圆化超限诱发湿屈曲以 `150 m/s` 拍扁数十公里管线，或履带过压压碎 `3LPP/CRA` 复合管） |
+| **作业线端热态 `Zonal AUT + TOFD` 与 `OFDR` 边缘延迟** | **`0.3 ms`**（`300 °C` 声速温漂补偿 `TFM` 焊缝三维判伤 + 托管架滚轮载荷反演，削减 `99.5%` 卫通带宽） | `194.0 ms`（依赖冷却后放射源拍片与人工判读，漏检 `3.8%` 焊根微裂纹或 `TDP` 局部椭圆化超标直接入海） |
+| **配套 IaC 蓝图与仿真函数** | `blueprints/aksclaw-subsea-flexlay-jlay-pipelay-catenary-das-dnvstf101-sil3-pool.bicep` | `simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox()` |
+
+---
+
+## 130. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

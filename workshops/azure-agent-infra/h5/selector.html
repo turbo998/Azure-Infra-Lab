@@ -536,6 +536,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(121)">122. 百万吨级蓝氢蒸汽甲烷重整与自热重整 (SMR / ATR 850–1,050°C / 25–40 bar 离心铸造转化炉管与 MDEA/哌嗪燃烧前碳捕集 CCS)、吸热重整积碳与 API STD 530 Larson-Miller 蠕变寿命 PINN-MPC、看火孔二维中波红外 (2D-MWIR) 管壁热斑成像及 API RP 556 / NFPA 86 / IEC 61511 SIL-3 猪尾管蠕变爆管蒸汽幕封与燃料气切断联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(122)">123. 超大板幅建筑与汽车三银低辐射及电致变色镀膜玻璃 (3.21×6.00m Ag³ Low-E / WO3-NiO EC 20–40 室旋转靶真空磁控溅射流水线)、Berg 反应溅射靶中毒迟滞 S 曲线与等离子体发射光谱 (PEM) PINN-MPC、在线穆勒矩阵椭偏仪及 EN 1096 / ASTM C1376 / SEMI S2 / IEC 61508 SIL-3 纳秒微弧反向脉冲灭弧与旋转靶冷却水破裂隔离联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(123)">124. 超大型薄膜型液化天然气运输船 (266,000 m³ Q-Max LNG Carrier · GTT Mark III 波纹不锈钢 / NO96 36% 镍殷瓦钢双层绝热薄膜围护系统 -163°C) 与双燃料推进/再液化、Bagnold 气袋水弹性晃荡冲击与蒸发气 (BOG) 过冷 PINN-MPC、低温光纤光栅 (FBG)/绝热层红外甲烷断层监测及 IMO IGC Code / DNV-RU-SHIP / SIGTTO / IEC 61511 SIL-3 内船壳冷斑脆断防护与超压/负压硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(124)">125. 超深水海底油气/氢氨管道铺设船 (2,500–3,500m J-Lay / S-Lay / Reel-Lay 铺管船 · 600–2,000t 四履带张紧器与托管架/J型塔)、悬垂段触地点 (TDP) 弹塑性椭圆化与传播屈曲 PINN-MPC、全自动相控阵超声 (AUT) 环焊缝/OFDR 光纤应变监测及 DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3 湿屈曲弃管绞车 (A&amp;R Winch) 与张紧器防滑压溃硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3349,6 +3350,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 124: Ultra-Deepwater Subsea Pipelay Vessel (J-Lay / S-Lay / Reel-Lay) Catenary Sagbend & DNV-ST-F101 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 124 · ULTRA-DEEPWATER SUBSEA PIPELAY VESSEL (2,500–3,500 m J-LAY / S-LAY / REEL-LAY) SAGBEND TDP OVALIZATION &amp; PROPAGATING-BUCKLE PINN-MPC &amp; DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3 WET-BUCKLE A&amp;R WINCH &amp; TENSIONER INTERLOCK SIZER</span>
+    <h2>全自主超深水海底管道铺设船（<code>2,500–3,500 m J-Lay / S-Lay / Reel-Lay</code> · <code>600–2,000 t</code> 四履带张紧器与铰接托管架 / <code>J-Lay</code> 塔）、悬垂段触地点（<code>TDP</code>）弹塑性椭圆化与传播屈曲 <code>PINN-MPC</code>、全自动分区相控阵超声（<code>Zonal AUT</code>）环焊缝 / <code>OFDR</code> 光纤应变检测及 <code>DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3</code> 湿屈曲弃管回收（<code>A&amp;R Winch</code>）与张紧器防滑溜/压溃硬联锁测算器</h2>
+    <div class="sub">量化在 <code>8 – 64</code> 条超深水海底刚性/内衬复合油气与纯氢/CO₂干线铺设作业线（<code>2,500–3,500 m</code> 水深，管径 <code>16–48 inch X65/X70/CRA Clad</code> 厚壁海底管线，外部静水压高达 <code>25–35 MPa</code>）规模下，动力定位（<code>DP-3</code>）船体六自由度波浪升沉（Heave）激励下高达 <code>3.5 km</code> 自由悬垂管柱（Catenary）托管架上弯段（Overbend）与海床触地点下弯段（Sagbend Touchdown Point <code>TDP</code>）几何非线性大挠度梁、Brazier 截面椭圆化（Ovalization）与外水压耦合局部/传播屈曲（Propagating Buckling）<code>PINN</code> + 四履带张紧器（Tensioner）与摩擦卡瓦恒张力升沉补偿、<code>DP-3</code> 推力器步进移船（Pipe-Step）及卷管矫直器（Reel-Lay Straightener）反向残余曲率协同 <code>MPC</code>（铺管作业速率与恶劣海况可作业气象窗口增益 <code>+39.1%</code>、悬垂段触地点循环涡激振动/波浪低周疲劳损伤与环焊缝割口返修率削减 <code>-53.8%</code>）、<code>DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3</code> 张紧器聚氨酯履带打滑引发千米管柱坠海（Pipe Drop）或夹紧油缸过压压扁防腐涂层/管体及悬垂段突破组合载荷极限（<code>LCC / DFC &gt; 0.92</code>）面临深海湿屈曲（Wet Buckle，一旦进水整条数十公里海底管道将被 <code>35 MPa</code> 水压以 <code>150 m/s</code> 速度一路拍扁报废）时亚毫秒级 <code>张紧器应急卡瓦（Friction Clamp / Hang-Off Collar）毫秒级机械闭锁、液压缸防压溃压力钳位与 2,000 t 弃管与回收绞车（Abandonment &amp; Recovery A&amp;R Winch）恒张力紧急挂接下放</code> 硬联锁（<code>0.3 ms</code>，传播性湿屈曲塌管或管柱滑脱坠海事故率 <code>0.0%</code>）与流水线端 <code>双焊炬全自动分区相控阵超声/衍射时差法（Zonal AUT + TOFD）热态环焊缝秒级判伤 + 托管架滚轮载荷销与海床 ROV 声学/OFDR 光纤触地点曲率重构</code> 边缘推理（<code>0.3 ms</code>，远洋卫通 SATCOM WAN 带宽削减 <code>99.5%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 超深水海底铺管作业线并发规模 (Subsea J-Lay / S-Lay / Reel-Lay Firing Lines): <strong id="lbl_pipelay_lines" style="color:var(--teal)">16</strong> Lines</label>
+          <input type="range" id="rng_pipelay_lines" min="8" max="64" step="8" value="16" oninput="runSubseaPipelayJlaySlayLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 悬垂段 TDP 椭圆化防屈曲 PINN-MPC 与 DNV-ST-F101 / SIL-3 防湿屈曲/张紧器硬联锁模式 (Subsea Pipelay Governance Mode)</label>
+          <select id="sel_pipelay_mode" onchange="runSubseaPipelayJlaySlayLab()">
+            <option value="pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge" selected>悬垂段 TDP 弹塑性椭圆化与外水压传播屈曲 PINN + 张紧器波浪升沉补偿与 DP-3 移船协同 MPC (+39.1% 铺管速率与气象窗口 / -53.8% 触地点疲劳损伤与环焊缝返修) + DNV-ST-F101 SIL-3 0.3ms 防溜管卡瓦闭锁与 A&amp;R 弃管防湿屈曲硬联锁 + 0.3ms 分区 AUT/OFDR 边缘 (推荐)</option>
+            <option value="static_deadband_tensioner_manual_dp_step_postweld_radiography_cloud">传统反模式：静态死区张紧器控制与人工 DP 移船步进 (+5.9% 速率增益) + 无 0.3ms 防滑卡瓦与防湿屈曲 SIL-3 联锁 (1.5% 涌浪动张力尖峰诱发 3,000m 水深传播性湿屈曲拍扁整条海管或张紧器打滑溜管风险) + 焊后冷却放射源拍片抽检 (3.8% TDP 局部椭圆化超标或坡口未熔合缺陷入海漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="subseaPipelayJlaySlayOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5388,6 +5412,21 @@ resource lngMembraneContainmentSloshingSil3Pool 'Microsoft.ContainerService/mana
       'aksclaw.io/tank-edge-cryogenic-fbg-interbarrier-ir-ch4': 'enabled-0.3ms-99.5pct-satcom-wan-cut'
     }
   }
+}`,
+`// 125. Azure Bicep: Ultra-Deepwater J-Lay / S-Lay / Reel-Lay Subsea Pipelay Vessel (2,500-3,500 m), Sagbend TDP Ovalization & Propagating-Buckle PINN-MPC & DNV-ST-F101 / API RP 1111 / IMCA M 103 / SIL-3 Wet-Buckle A&R Winch & Tensioner Interlock Pool
+resource subseaPipelayJlaySlaySil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'pipelaypinns3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (Catenary Overbend/Sagbend Touchdown-Point TDP Elasto-Plastic Ovalization & Hydrostatic Propagating-Buckle PINN + Quad-Track Tensioner Heave-Compensation & DP-3 Vessel Step MPC + Firing-Line Zonal AUT/TOFD & Stinger OFDR Strain Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'subsea-flexlay-jlay-pipelay-catenary-das-dnvstf101-sil3-agent'
+      'aksclaw.io/pinn-mpc-catenary-sagbend-ovalization-dp3-tensioner': 'enabled-39.1pct-pipelay-rate-weather-window-53.8pct-sagbend-fatigue-weld-cutout-cut'
+      'aksclaw.io/dnvstf101-sil3-wet-buckle-ar-winch-tensioner-clamp-interlock': 'enforced-0.3ms-zero-wet-buckle-collapse-or-pipe-drop'
+      'aksclaw.io/firing-line-edge-zonal-aut-stinger-ofdr': 'enabled-0.3ms-99.5pct-satcom-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -5612,6 +5651,30 @@ runScwoSupercriticalWaterPfasLab();
 runSmrSteamMethaneReformingCcsLab();
 runSputterMagnetronGlassCoaterLab();
 runLngMembraneContainmentLab();
+runSubseaPipelayJlaySlayLab();
+
+function runSubseaPipelayJlaySlayLab() {
+  const lines = parseInt(document.getElementById('rng_pipelay_lines').value, 10);
+  const mode = document.getElementById('sel_pipelay_mode').value;
+  document.getElementById('lbl_pipelay_lines').textContent = lines.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(lines / 8));
+  const pods = lines <= 8 ? Math.max(2, Math.min(8, lines)) : Math.max(8, Math.floor(lines / 2));
+  const ok = mode === 'pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge';
+  const mpcStr = ok ? "3,500m 悬垂段触地点 (TDP) Brazier 弹塑性椭圆化与 35 MPa 外水压传播屈曲 PINN + 2,000t 四履带张紧器波浪升沉补偿与 DP-3 步进移船协同 MPC · 铺管速率与作业气象窗口 +39.1% · 悬垂段疲劳损伤与环焊缝割口返修 -53.8%" : "传统静态死区张紧器控制与人工 DP 移船步进 · 仅 +5.9% 速率增益 / -8.3% 疲劳削减 (船体升沉耦合引发触地点悬垂弯矩剧烈脉动，且 3.8% 海床局部椭圆化超标或环焊缝热裂纹漏检入海)";
+  const sil3Str = ok ? "0.3 ms DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3 悬挂摩擦卡瓦 (Hang-Off Clamp) 防滑闭锁、张紧器防压溃钳位与 2,000t A&R 弃管绞车恒张力应急挂接硬联锁 · 0.0% 传播性湿屈曲塌管或管柱坠海违例" : "无 0.3ms 防滑卡瓦与防湿屈曲 A&R 联锁 (152.0 ms 岸基卫通滞后) · 1.5% 涌浪动张力失步诱发 3,000m 水深湿屈曲 (35 MPa 海水以 150 m/s 沿管线传播拍扁整条海管) 或张紧器打滑溜管坠海风险";
+  const edgeStr = ok ? "0.3 ms 作业线端全自动分区相控阵超声 (Zonal AUT + TOFD 热态秒级环焊缝判伤) + 托管架滚轮载荷销/OFDR 光纤触地点曲率重构边缘 (-99.5% 远洋 SATCOM WAN 带宽) · 0.0% 焊根未熔合或防腐层剥离漏检" : "194.0 ms 焊后冷却放射源拍片与高延迟海事卫通上云 · 无法在移船步进 20 秒窗口内完成 300°C 热态焊缝体积缺陷三维反演，也无法实时捕捉触地点毫秒级屈曲前兆";
+
+  document.getElementById('subseaPipelayJlaySlayOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 3,500m 深水传播性湿屈曲 (Wet Buckle) 拍扁海管或张紧器溜管坠海风险 · 3.8% TDP 椭圆化超标或环焊缝缺陷入海漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个海底铺管孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>作业线端全自动分区相控阵超声 (Zonal AUT + TOFD) 与托管架/ROV 光纤频域反射 (OFDR) 触地点应变边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runLngMembraneContainmentLab() {
   const tanks = parseInt(document.getElementById('rng_lng_tanks').value, 10);

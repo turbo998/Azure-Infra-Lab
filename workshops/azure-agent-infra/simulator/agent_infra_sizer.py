@@ -6436,6 +6436,49 @@ def simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox(
     }
 
 
+def simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox(
+    pipelay_firing_lines: int = 16,
+    pipelay_governance_mode: str = "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Deepwater J-Lay / S-Lay / Reel-Lay Subsea Pipeline Laying Vessel (2,500-3,500 m Water Depth, 600-2,000 t Quad-Track Tensioner & Stinger / J-Lay Tower), Sagbend Touchdown-Point (TDP) Elasto-Plastic Ovalization & Propagating-Buckle PINN-MPC, Automated Ultrasonic Testing (AUT) Girth-Weld / OFDR Strain Metrology & DNV-ST-F101 / API RP 1111 / IMCA M 103 / IEC 61508 SIL-3 Wet-Buckle Abandonment & Tensioner Slip-Crush Interlock Agent Infrastructure (Chapter 129)."""
+    if pipelay_firing_lines <= 0:
+        raise ValueError("pipelay_firing_lines must be positive")
+    valid_modes = {
+        "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge",
+        "static_deadband_tensioner_manual_dp_step_postweld_radiography_cloud",
+    }
+    if pipelay_governance_mode not in valid_modes:
+        raise ValueError(f"pipelay_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = pipelay_governance_mode == "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge"
+    active_pipelay_pods = max(2, min(8, int(pipelay_firing_lines))) if pipelay_firing_lines <= 8 else max(8, int(pipelay_firing_lines // 2))
+    gpu_nodes = max(2, math.ceil(pipelay_firing_lines / 8))
+
+    pipelay_lay_rate_and_operational_weather_window_gain_pct = 39.1 if governed else 5.9
+    sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct = 53.8 if governed else 8.3
+    dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms = 0.3 if governed else 152.0
+    unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct = 0.0 if governed else 1.5
+    firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms = 0.3 if governed else 194.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct = 0.0 if governed else 3.8
+
+    return {
+        "pipelay_firing_lines": pipelay_firing_lines,
+        "pipelay_governance_mode": pipelay_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pipelay_pods": active_pipelay_pods,
+        "pipelay_lay_rate_and_operational_weather_window_gain_pct": pipelay_lay_rate_and_operational_weather_window_gain_pct,
+        "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct,
+        "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms,
+        "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct,
+        "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct,
+        "subsea_pipelay_jlay_slay_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

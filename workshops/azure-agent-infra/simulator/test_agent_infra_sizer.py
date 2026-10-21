@@ -130,6 +130,7 @@ from agent_infra_sizer import (
     simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox,
     simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox,
     simulate_lng_membrane_containment_markiii_no96_sloshing_igc_sil3_sandbox,
+    simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2528,6 +2529,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct"], 3.0)
         self.assertTrue(gov["lng_membrane_containment_slo_met"])
         self.assertFalse(raw["lng_membrane_containment_slo_met"])
+
+    def test_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox(self) -> None:
+        gov = simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox(
+            16, "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge"
+        )
+        raw = simulate_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox(
+            16, "static_deadband_tensioner_manual_dp_step_postweld_radiography_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_pipelay_pods"], 8)
+        self.assertEqual(gov["pipelay_lay_rate_and_operational_weather_window_gain_pct"], 39.1)
+        self.assertEqual(gov["sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct"], 53.8)
+        self.assertEqual(gov["dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct"], 1.0)
+        self.assertEqual(gov["firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct"], 3.0)
+        self.assertTrue(gov["subsea_pipelay_jlay_slay_slo_met"])
+        self.assertFalse(raw["subsea_pipelay_jlay_slay_slo_met"])
 
 
 if __name__ == "__main__":

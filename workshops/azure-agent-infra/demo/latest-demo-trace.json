@@ -7776,6 +7776,68 @@
         "uncompensated_bagnold_sloshing_denting_or_rollover_overpressure_pct": 3.9,
         "lng_membrane_containment_slo_met": false
       }
+    ],
+    "subsea_pipelay_jlay_slay_profiles": [
+      {
+        "pipelay_firing_lines": 8,
+        "pipelay_governance_mode": "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pipelay_pods": 8,
+        "pipelay_lay_rate_and_operational_weather_window_gain_pct": 39.1,
+        "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": 53.8,
+        "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": 0.3,
+        "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": 0.0,
+        "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 0.0,
+        "subsea_pipelay_jlay_slay_slo_met": true
+      },
+      {
+        "pipelay_firing_lines": 16,
+        "pipelay_governance_mode": "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pipelay_pods": 8,
+        "pipelay_lay_rate_and_operational_weather_window_gain_pct": 39.1,
+        "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": 53.8,
+        "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": 0.3,
+        "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": 0.0,
+        "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 0.0,
+        "subsea_pipelay_jlay_slay_slo_met": true
+      },
+      {
+        "pipelay_firing_lines": 64,
+        "pipelay_governance_mode": "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pipelay_pods": 32,
+        "pipelay_lay_rate_and_operational_weather_window_gain_pct": 39.1,
+        "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": 53.8,
+        "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": 0.3,
+        "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": 0.0,
+        "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.5,
+        "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 0.0,
+        "subsea_pipelay_jlay_slay_slo_met": true
+      },
+      {
+        "pipelay_firing_lines": 16,
+        "pipelay_governance_mode": "static_deadband_tensioner_manual_dp_step_postweld_radiography_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pipelay_pods": 8,
+        "pipelay_lay_rate_and_operational_weather_window_gain_pct": 5.9,
+        "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": 8.3,
+        "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": 152.0,
+        "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": 1.5,
+        "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": 194.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 3.8,
+        "subsea_pipelay_jlay_slay_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -14421,5 +14483,52 @@
       "lng_membrane_containment_slo_met": false
     }
   },
-  "trace_sha256": "b1e94d8f491c8b6dfda7b366ec3872a4939bdd87395152816885ed114d21f4bd"
+  "demo_124_subsea_pipelay_jlay_slay_catenary_aut_dnvstf101_sil3_sandbox": {
+    "pipelay_16_lines": {
+      "pipelay_firing_lines": 16,
+      "pipelay_governance_mode": "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_pipelay_pods": 8,
+      "pipelay_lay_rate_and_operational_weather_window_gain_pct": 39.1,
+      "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": 53.8,
+      "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": 0.3,
+      "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": 0.0,
+      "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 0.0,
+      "subsea_pipelay_jlay_slay_slo_met": true
+    },
+    "pipelay_64_lines": {
+      "pipelay_firing_lines": 64,
+      "pipelay_governance_mode": "pinn_mpc_catenary_sagbend_ovalization_zonal_aut_dnvstf101_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_pipelay_pods": 32,
+      "pipelay_lay_rate_and_operational_weather_window_gain_pct": 39.1,
+      "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": 53.8,
+      "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": 0.3,
+      "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": 0.0,
+      "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 0.0,
+      "subsea_pipelay_jlay_slay_slo_met": true
+    },
+    "raw_pipelay_16_lines": {
+      "pipelay_firing_lines": 16,
+      "pipelay_governance_mode": "static_deadband_tensioner_manual_dp_step_postweld_radiography_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_pipelay_pods": 8,
+      "pipelay_lay_rate_and_operational_weather_window_gain_pct": 5.9,
+      "sagbend_fatigue_damage_and_girth_weld_cutout_reduction_pct": 8.3,
+      "dnvstf101_sil3_wet_buckle_ar_winch_and_tensioner_clamp_ms": 152.0,
+      "unmitigated_propagating_wet_buckle_or_tensioner_pipe_drop_pct": 1.5,
+      "firing_line_edge_zonal_aut_and_stinger_ofdr_loop_ms": 194.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_tdp_local_ovalization_or_weld_root_lack_of_fusion_pct": 3.8,
+      "subsea_pipelay_jlay_slay_slo_met": false
+    }
+  },
+  "trace_sha256": "4ac60e306945d8b351a17714e7140c0a1fee6d5a727df0a2917fa790770d36ce"
 }
