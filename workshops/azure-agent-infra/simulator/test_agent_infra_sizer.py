@@ -127,6 +127,7 @@ from agent_infra_sizer import (
     simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
     simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
     simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
+    simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -301,6 +302,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-vrfb-flow-battery-ldes-uvvis-nfpa855-sil3-pool.bicep",
             "aksclaw-ebam-electron-beam-titanium-elo-ams4999-sil3-pool.bicep",
             "aksclaw-scwo-supercritical-water-pfas-mineralization-raman-asmediv3-sil3-pool.bicep",
+            "aksclaw-smr-steam-methane-reforming-ccs-pigtube-creep-api530-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2460,6 +2462,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_incomplete_shortchain_tfa_escape_or_hot_spot_pct"], 3.0)
         self.assertTrue(gov["scwo_supercritical_water_pfas_slo_met"])
         self.assertFalse(raw["scwo_supercritical_water_pfas_slo_met"])
+
+    def test_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(self) -> None:
+        gov = simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(
+            16, "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"
+        )
+        raw = simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(
+            16, "fixed_steam_to_carbon_manual_burner_trim_periodic_ir_survey_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_smr_pods"], 8)
+        self.assertEqual(gov["blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct"], 38.4)
+        self.assertEqual(gov["tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct"], 52.8)
+        self.assertEqual(gov["api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct"], 1.0)
+        self.assertEqual(gov["furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_tube_skin_overheat_or_co2_breakthrough_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tube_skin_overheat_or_co2_breakthrough_pct"], 3.0)
+        self.assertTrue(gov["smr_steam_methane_reforming_ccs_slo_met"])
+        self.assertFalse(raw["smr_steam_methane_reforming_ccs_slo_met"])
 
 
 if __name__ == "__main__":

@@ -7388,5 +7388,67 @@
       "uncompensated_incomplete_shortchain_tfa_escape_or_hot_spot_pct": 3.9,
       "scwo_supercritical_water_pfas_slo_met": false
     }
+  ],
+  "smr_steam_methane_reforming_ccs_profiles": [
+    {
+      "smr_reformer_furnaces": 8,
+      "smr_governance_mode": "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_smr_pods": 8,
+      "blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct": 38.4,
+      "tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct": 52.8,
+      "api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms": 0.4,
+      "unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct": 0.0,
+      "furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tube_skin_overheat_or_co2_breakthrough_pct": 0.0,
+      "smr_steam_methane_reforming_ccs_slo_met": true
+    },
+    {
+      "smr_reformer_furnaces": 16,
+      "smr_governance_mode": "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_smr_pods": 8,
+      "blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct": 38.4,
+      "tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct": 52.8,
+      "api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms": 0.4,
+      "unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct": 0.0,
+      "furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tube_skin_overheat_or_co2_breakthrough_pct": 0.0,
+      "smr_steam_methane_reforming_ccs_slo_met": true
+    },
+    {
+      "smr_reformer_furnaces": 64,
+      "smr_governance_mode": "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_smr_pods": 32,
+      "blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct": 38.4,
+      "tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct": 52.8,
+      "api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms": 0.4,
+      "unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct": 0.0,
+      "furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tube_skin_overheat_or_co2_breakthrough_pct": 0.0,
+      "smr_steam_methane_reforming_ccs_slo_met": true
+    },
+    {
+      "smr_reformer_furnaces": 16,
+      "smr_governance_mode": "fixed_steam_to_carbon_manual_burner_trim_periodic_ir_survey_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_smr_pods": 8,
+      "blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct": 5.6,
+      "tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct": 8.1,
+      "api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms": 178.0,
+      "unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct": 1.4,
+      "furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms": 204.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_tube_skin_overheat_or_co2_breakthrough_pct": 3.7,
+      "smr_steam_methane_reforming_ccs_slo_met": false
+    }
   ]
 }

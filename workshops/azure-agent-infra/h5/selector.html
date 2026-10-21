@@ -533,6 +533,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(118)">119. 百兆瓦级全钒液流电池 (VRFB 100 MW / 1,000 MWh) 长时储能 (LDES)、唐南膜钒离子穿跃与正负极价态失衡再平衡 PINN-MPC、在线紫外可见吸收光谱 (UV-Vis)/开路电压 (OCV) 量测及 UL 1973 / NFPA 855 / IEEE 1547 / IEC 61511 SIL-3 析氢吹扫、旁路漏电跳闸与五氧化二钒热析出硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(119)">120. 航空航天大型钛合金电子束增材制造 (EBAM / EB-PBF 60–150 kV 高真空舱)、背散射电子光学 (ELO) 匙孔气孔率与铝元素挥发补偿 PINN-MPC 及 AMS 4999A / AWS D17.1 / NFPA 484 / IEC 61508 SIL-3 高压电子枪打火撬棒与自燃钛粉/冷凝烟尘钝化硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(120)">121. 超临界水氧化 (SCWO 374–650°C / 22.1–30.0 MPa) 全氟和多氟烷基物质 (PFAS / 永久化学品) 彻底矿化反应器、跨临界无机盐析出防堵与发汗水冷壁 (Transpiration Wall) 边界层 PINN-MPC、在线高压金刚石视窗拉曼光谱与氟离子监测及 ASME Section VIII Div. 3 / EPA PFAS / IEC 61511 SIL-3 氢氟酸 (HF) 应力腐蚀防爆与快速泄压急冷联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(121)">122. 百万吨级蓝氢蒸汽甲烷重整与自热重整 (SMR / ATR 850–1,050°C / 25–40 bar 离心铸造转化炉管与 MDEA/哌嗪燃烧前碳捕集 CCS)、吸热重整积碳与 API STD 530 Larson-Miller 蠕变寿命 PINN-MPC、看火孔二维中波红外 (2D-MWIR) 管壁热斑成像及 API RP 556 / NFPA 86 / IEC 61511 SIL-3 猪尾管蠕变爆管蒸汽幕封与燃料气切断联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3277,6 +3278,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 121: Blue-Hydrogen Steam Methane Reforming (SMR / ATR + Pre-Combustion CCS) & API STD 530 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-teal">TOOL 121 · BLUE-HYDROGEN STEAM METHANE REFORMING &amp; AUTOTHERMAL REFORMING (SMR / ATR 850–1,050°C + MDEA/PZ CCS) LARSON-MILLER TUBE-CREEP &amp; COKING PINN-MPC &amp; API STD 530 / API RP 556 / NFPA 86 / IEC 61511 SIL-3 PIGTAIL-RUPTURE &amp; FIREBOX INTERLOCK SIZER</span>
+    <h2>全自主百万吨级蓝氢蒸汽甲烷重整与自热重整（<code>SMR / ATR</code> <code>850–1,050 °C / 25–40 bar</code> <code>HP25Cr35NiNb</code> 离心铸造辐射炉管与活化 <code>MDEA / 哌嗪 PZ</code> 燃烧前碳捕集 <code>CCS</code>）、吸热重整-Boudouard 积碳与 <code>API STD 530</code> Larson-Miller 蠕变损伤 <code>PINN-MPC</code>、看火孔二维中波红外（<code>2D-MWIR</code>）管壁温度场层析及 <code>API RP 556 / NFPA 86 / IEC 61511 SIL-3</code> 猪尾管蠕变爆管蒸汽幕封与炉膛防回火硬联锁测算器</h2>
+    <div class="sub">量化在 <code>8 – 64</code> 座大型蓝氢顶烧/侧烧辐射转化炉（单炉排布 <code>200–600</code> 根 <code>HP-Microalloy / 25Cr-35Ni-Nb-Ti</code> 高温离心铸造转化管，配套高/低温水煤气变换 <code>WGS</code>、变压吸附 <code>PSA</code> 与活化 <code>MDEA / PZ</code> 碳捕集塔）集群规模下，管内强吸热蒸汽甲烷重整（<code>CH₄ + H₂O ⇌ CO + 3H₂, ΔH° = +206 kJ/mol</code>）Xu-Froment 本征动力学、镍催化剂表面甲烷裂解/Boudouard 歧化积碳（Carbon Whisker Coking）导致局部传热恶化出现“热斑条带（Hot Bands）”以及 <code>API STD 530 / Omega 方法</code> 高温内压蠕变损伤指数级加速耦合 <code>PINN</code> + 炉顶百组低氮燃烧器燃料气/PSA 解吸尾气空燃比配风、水碳摩尔比（<code>S/C = 2.4–3.0</code>）与再生塔重沸器低压蒸汽协同 <code>MPC</code>（蓝氢综合热效率与转化炉管 <code>100,000 小时</code> 剩余蠕变寿命增益 <code>+38.4%</code>、催化剂结焦热斑与碳捕集重沸器蒸汽能耗削减 <code>-52.8%</code>）、<code>API STD 530 / API RP 556 / NFPA 86 / IEC 61511 SIL-3</code> 管壁外壁温度（<code>TWT</code>）突破设计红线（<code>&gt; 1,035 °C</code>）、炉膛正压回火或下猪尾集气管（Outlet Pigtail / Manifold）蠕变破裂喷出高压合成气时毫秒级 <code>燃料气双切断阀（Double-Block-and-Bleed）跳闸、猪尾管热态夹扁/切断隔离与消防水幕/高压蒸汽吹扫幕封</code> 硬联锁（<code>0.4 ms</code>，转化管蠕变爆管或炉膛次生爆炸率 <code>0.0%</code>）与炉墙看火孔端 <code>3.9 μm 二维中波红外（2D-MWIR）透火焰热像仪 + 激光轮廓膨胀仪 + TDLAS 合成气甲烷残余量测</code> 边缘推理（<code>0.3 ms</code>，氢能基地 WAN 带宽削减 <code>99.4%</code>）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 蓝氢蒸汽重整辐射转化炉与碳捕集系列数 (Blue-H2 SMR/ATR Reformer Furnaces &amp; CCS Trains): <strong id="lbl_smr_furnaces" style="color:var(--teal)">16</strong> Furnaces</label>
+          <input type="range" id="rng_smr_furnaces" min="8" max="64" step="8" value="16" oninput="runSmrSteamMethaneReformingCcsLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 管壁热斑防积碳与 API 530 蠕变寿命 PINN-MPC 及 NFPA 86 / SIL-3 防爆管联锁模式 (SMR-CCS Governance Mode)</label>
+          <select id="sel_smr_mode" onchange="runSmrSteamMethaneReformingCcsLab()">
+            <option value="pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge" selected>Xu-Froment 重整积碳与 API 530 Larson-Miller 蠕变 PINN + 多燃烧器辐射通量与水碳比/CCS 协同 MPC (+38.4% 蓝氢热效率与炉管寿命 / -52.8% 结焦热斑与再生蒸汽) + API 530 / NFPA 86 SIL-3 0.4ms 爆管蒸汽幕封与燃料跳闸 + 0.3ms 3.9μm 2D-MWIR 边缘 (推荐)</option>
+            <option value="fixed_steam_to_carbon_manual_burner_trim_periodic_ir_survey_cloud">传统反模式：固定高水碳比裕量 (S/C > 3.2) 与人工周期调火 (+5.6% 效率增益) + 无 0.4ms 炉管超温/猪尾管破裂 SIL-3 联锁 (1.4% 局部热斑过温 +20°C 致炉管蠕变寿命减半爆裂或炉膛回火爆炸违例) + 手持光学高温计巡检 (3.7% 火焰反射伪影致管壁热斑或 CO2 穿透漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="smrSteamMethaneReformingCcsOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -5271,6 +5295,21 @@ resource scwoSupercriticalWaterPfasSil3Pool 'Microsoft.ContainerService/managedC
       'aksclaw.io/reactor-edge-diamond-raman-fluoride-ise': 'enabled-0.3ms-99.4pct-plant-wan-cut'
     }
   }
+}`,
+`// 122. Azure Bicep: Blue-Hydrogen Steam Methane Reforming & Autothermal Reforming (SMR / ATR 850-1050 C + MDEA/PZ CCS), Endothermic Reforming-Coking & API 530 Larson-Miller Creep PINN-MPC & API RP 556 / NFPA 86 / SIL-3 Tube-Rupture Interlock Pool
+resource smrSteamMethaneReformingCcsSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'smrccspinns3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (Xu-Froment Steam Reforming / Boudouard Coking & API 530 Larson-Miller Creep PINN + Multi-Burner Radiant Flux, S/C Ratio & MDEA/PZ Reboiler MPC + 3.9um 2D-MWIR Tube-Skin Pyrometry & TDLAS Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'smr-steam-methane-reforming-ccs-pigtube-creep-api530-sil3-agent'
+      'aksclaw.io/pinn-mpc-xufroment-coking-api530-creep': 'enabled-38.4pct-h2-thermal-efficiency-tube-life-52.8pct-hotband-coking-cut'
+      'aksclaw.io/api530-sil3-tube-rupture-steam-curtain-fuel-trip': 'enforced-0.4ms-zero-pigtube-stress-rupture-or-furnace-explosion'
+      'aksclaw.io/furnace-edge-2d-mwir-tubeskin-pyrometry-tdlas': 'enabled-0.3ms-99.4pct-hydrogen-plant-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -5492,6 +5531,30 @@ runDleLithiumBrineSorptionLab();
 runVrfbFlowBatteryLdesLab();
 runEbamElectronBeamTitaniumLab();
 runScwoSupercriticalWaterPfasLab();
+runSmrSteamMethaneReformingCcsLab();
+
+function runSmrSteamMethaneReformingCcsLab() {
+  const furnaces = parseInt(document.getElementById('rng_smr_furnaces').value, 10);
+  const mode = document.getElementById('sel_smr_mode').value;
+  document.getElementById('lbl_smr_furnaces').textContent = furnaces.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(furnaces / 8));
+  const pods = furnaces <= 8 ? Math.max(2, Math.min(8, furnaces)) : Math.max(8, Math.floor(furnaces / 2));
+  const ok = mode === 'pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge';
+  const mpcStr = ok ? "Xu-Froment 重整积碳动力学与 API 530 Larson-Miller 蠕变 PINN + 多燃烧器辐射热通量均衡与水碳比/CCS 再生协同 MPC · 蓝氢热效率与炉管剩余蠕变寿命 +38.4% · 催化剂热斑结焦与碳捕集重沸器蒸汽耗量 -52.8%" : "传统固定高水碳比裕量与人工周期调火 · 仅 +5.6% 效率增益 / -8.1% 蒸汽削减 (管壁局部过温 +15~20°C 即可使 HP25Cr35NiNb 炉管 100,000h 蠕变寿命腰斩，且 3.7% 管壁热斑或 MDEA 吸收塔 CO2 穿透漏检)";
+  const sil3Str = ok ? "0.4 ms API STD 530 / API RP 556 / NFPA 86 / IEC 61511 SIL-3 管壁超温 (>1,035°C)/猪尾管蠕变破裂燃料气双切断跳闸、蒸汽幕封与引风机负压联锁 · 0.0% 转化炉管应力爆管或炉膛次生爆炸违例" : "无 0.4ms 爆管蒸汽幕封与燃料气跳闸 SIL-3 硬联锁 (178.0 ms 云端滞后) · 1.4% 催化剂结焦虎斑纹引发炉管纵向蠕变开裂或猪尾集气管脆断喷出 35 bar 高温氢/一氧化碳射流火风险";
+  const edgeStr = ok ? "0.3 ms 炉墙看火孔端 3.9 μm 二维中波红外 (2D-MWIR 穿透烟气 CO2/H2O 吸收带并剥离火焰反射伪影) + TDLAS 甲烷残余边缘 (-99.4% 制氢厂 WAN 带宽) · 0.0% 管壁热斑超温或碳捕集率跌破 96% 漏检" : "204.0 ms 人工手持红外测温仪班次巡检与云端 DCS 轮询延迟 · 无法扣除炉膛耐火砖与邻管背景辐射反射误差，且无法在 PSA 尾气热值波动瞬间前馈稳住炉膛热负荷";
+
+  document.getElementById('smrSteamMethaneReformingCcsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% HP25Cr35NiNb 转化炉管/猪尾管蠕变爆裂或炉膛回火爆炸风险 · 3.7% 管壁结焦热斑或 CCS 碳捕集穿透漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个 SMR-CCS 重整孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>炉墙看火孔端 3.9 μm 二维中波红外 (2D-MWIR) 管壁热斑层析、管径蠕变激光轮廓与合成气 TDLAS 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runScwoSupercriticalWaterPfasLab() {
   const trains = parseInt(document.getElementById('rng_scwo_trains').value, 10);

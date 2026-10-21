@@ -133,6 +133,7 @@ from agent_infra_sizer import (
     simulate_vrfb_flow_battery_ldes_uvvis_nfpa855_sil3_sandbox,
     simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
     simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
+    simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1089,6 +1090,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(64, "pinn_mpc_transcritical_salt_transpiration_wall_raman_asmediv3_sil3_edge"),
         simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox(16, "fixed_lox_injection_uncooled_tubular_wall_offline_lcms_cloud"),
     ]
+    smr_steam_methane_reforming_ccs_profiles: List[Dict[str, object]] = [
+        simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(8, "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"),
+        simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(16, "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"),
+        simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(64, "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"),
+        simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(16, "fixed_steam_to_carbon_manual_burner_trim_periodic_ir_survey_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1210,6 +1217,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "vrfb_flow_battery_ldes_profiles": vrfb_flow_battery_ldes_profiles,
         "ebam_electron_beam_titanium_profiles": ebam_electron_beam_titanium_profiles,
         "scwo_supercritical_water_pfas_profiles": scwo_supercritical_water_pfas_profiles,
+        "smr_steam_methane_reforming_ccs_profiles": smr_steam_methane_reforming_ccs_profiles,
     }
 
 

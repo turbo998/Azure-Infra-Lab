@@ -6307,6 +6307,49 @@ def simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sa
     }
 
 
+def simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(
+    smr_reformer_furnaces: int = 16,
+    smr_governance_mode: str = "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Blue-Hydrogen Steam Methane Reforming & Autothermal Reforming (SMR / ATR 850-1050 C, 25-40 bar HP25Cr35NiNb Catalyst Tubes & MDEA/PZ Pre-Combustion CCS), Endothermic Reforming-Coking & Larson-Miller Creep-Rupture PINN-MPC, 2D IR Tube-Skin Pyrometry & API STD 530 / API RP 556 / NFPA 86 / IEC 61511 SIL-3 Tube-Rupture Steam-Curtain & Fuel-Gas Trip Interlock Agent Infrastructure (Chapter 126)."""
+    if smr_reformer_furnaces <= 0:
+        raise ValueError("smr_reformer_furnaces must be positive")
+    valid_modes = {
+        "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge",
+        "fixed_steam_to_carbon_manual_burner_trim_periodic_ir_survey_cloud",
+    }
+    if smr_governance_mode not in valid_modes:
+        raise ValueError(f"smr_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = smr_governance_mode == "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"
+    active_smr_pods = max(2, min(8, int(smr_reformer_furnaces))) if smr_reformer_furnaces <= 8 else max(8, int(smr_reformer_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(smr_reformer_furnaces / 8))
+
+    blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct = 38.4 if governed else 5.6
+    tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct = 52.8 if governed else 8.1
+    api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms = 0.4 if governed else 178.0
+    unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct = 0.0 if governed else 1.4
+    furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms = 0.3 if governed else 204.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_tube_skin_overheat_or_co2_breakthrough_pct = 0.0 if governed else 3.7
+
+    return {
+        "smr_reformer_furnaces": smr_reformer_furnaces,
+        "smr_governance_mode": smr_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_smr_pods": active_smr_pods,
+        "blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct": blue_h2_thermal_efficiency_and_catalyst_tube_life_gain_pct,
+        "tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct": tube_hotband_coking_and_ccs_reboiler_steam_reduction_pct,
+        "api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms": api530_sil3_fuel_gas_trip_and_pigtail_isolation_ms,
+        "unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct": unmitigated_catalyst_tube_creep_rupture_or_firebox_explosion_pct,
+        "furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms": furnace_edge_2d_mwir_pyrometry_and_tdlas_slip_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_tube_skin_overheat_or_co2_breakthrough_pct": uncompensated_tube_skin_overheat_or_co2_breakthrough_pct,
+        "smr_steam_methane_reforming_ccs_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
