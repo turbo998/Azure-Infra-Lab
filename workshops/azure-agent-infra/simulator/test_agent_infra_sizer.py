@@ -122,6 +122,7 @@ from agent_infra_sizer import (
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
+    simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2342,6 +2343,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct"], 3.0)
         self.assertTrue(gov["chlor_alkali_membrane_electrolyzer_slo_met"])
         self.assertFalse(raw["chlor_alkali_membrane_electrolyzer_slo_met"])
+
+    def test_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(
+            16, "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"
+        )
+        raw = simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(
+            16, "static_zone_temp_fixed_stretch_ratio_offline_tensile_coupon_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_carbon_fiber_pods"], 8)
+        self.assertEqual(gov["tensile_strength_weibull_modulus_and_tow_yield_gain_pct"], 37.8)
+        self.assertEqual(gov["oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct"], 51.6)
+        self.assertEqual(gov["nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct"], 1.0)
+        self.assertEqual(gov["furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct"], 3.0)
+        self.assertTrue(gov["carbon_fiber_pan_oxidation_carbonization_slo_met"])
+        self.assertFalse(raw["carbon_fiber_pan_oxidation_carbonization_slo_met"])
 
 
 if __name__ == "__main__":

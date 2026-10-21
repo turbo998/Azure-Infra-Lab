@@ -6092,6 +6092,49 @@ def simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(
     }
 
 
+def simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(
+    carbon_fiber_lines: int = 16,
+    carbon_fiber_governance_mode: str = "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Aerospace Carbon-Fiber PAN Precursor Wet-Spinning & Multi-Zone High-Temperature Oxidation/Carbonization/Graphitization (220-2,800 C T1100G / M60J Grade), Exothermic Cyclization Thermal-Runaway & Filament Tension Viscoelasticity PINN-MPC, In-Line WAXS/Raman Crystallite Orientation Metrology & NFPA 86 / OSHA 1910 / EN 1539 / IEC 61511 SIL-3 Hydrogen Cyanide (HCN) Off-Gas Thermal Oxidizer & Nitrogen Curtain Quench Interlock Agent Infrastructure (Chapter 121)."""
+    if carbon_fiber_lines <= 0:
+        raise ValueError("carbon_fiber_lines must be positive")
+    valid_modes = {
+        "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge",
+        "static_zone_temp_fixed_stretch_ratio_offline_tensile_coupon_cloud",
+    }
+    if carbon_fiber_governance_mode not in valid_modes:
+        raise ValueError(f"carbon_fiber_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = carbon_fiber_governance_mode == "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"
+    active_carbon_fiber_pods = max(2, min(8, int(carbon_fiber_lines))) if carbon_fiber_lines <= 8 else max(8, int(carbon_fiber_lines // 2))
+    gpu_nodes = max(2, math.ceil(carbon_fiber_lines / 8))
+
+    tensile_strength_weibull_modulus_and_tow_yield_gain_pct = 37.8 if governed else 5.5
+    oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct = 51.6 if governed else 7.9
+    nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms = 0.4 if governed else 186.0
+    unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct = 0.0 if governed else 1.3
+    furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms = 0.4 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct = 0.0 if governed else 3.5
+
+    return {
+        "carbon_fiber_lines": carbon_fiber_lines,
+        "carbon_fiber_governance_mode": carbon_fiber_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_carbon_fiber_pods": active_carbon_fiber_pods,
+        "tensile_strength_weibull_modulus_and_tow_yield_gain_pct": tensile_strength_weibull_modulus_and_tow_yield_gain_pct,
+        "oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct": oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct,
+        "nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms": nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms,
+        "unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct": unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct,
+        "furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms": furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct": uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct,
+        "carbon_fiber_pan_oxidation_carbonization_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

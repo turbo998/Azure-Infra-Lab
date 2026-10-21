@@ -7078,5 +7078,67 @@
       "uncompensated_brine_hardness_breakthrough_or_chlorate_excursion_pct": 3.3,
       "chlor_alkali_membrane_electrolyzer_slo_met": false
     }
+  ],
+  "carbon_fiber_pan_oxidation_carbonization_profiles": [
+    {
+      "carbon_fiber_lines": 8,
+      "carbon_fiber_governance_mode": "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_carbon_fiber_pods": 8,
+      "tensile_strength_weibull_modulus_and_tow_yield_gain_pct": 37.8,
+      "oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct": 51.6,
+      "nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms": 0.4,
+      "unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct": 0.0,
+      "furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct": 0.0,
+      "carbon_fiber_pan_oxidation_carbonization_slo_met": true
+    },
+    {
+      "carbon_fiber_lines": 16,
+      "carbon_fiber_governance_mode": "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_carbon_fiber_pods": 8,
+      "tensile_strength_weibull_modulus_and_tow_yield_gain_pct": 37.8,
+      "oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct": 51.6,
+      "nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms": 0.4,
+      "unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct": 0.0,
+      "furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct": 0.0,
+      "carbon_fiber_pan_oxidation_carbonization_slo_met": true
+    },
+    {
+      "carbon_fiber_lines": 64,
+      "carbon_fiber_governance_mode": "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_carbon_fiber_pods": 32,
+      "tensile_strength_weibull_modulus_and_tow_yield_gain_pct": 37.8,
+      "oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct": 51.6,
+      "nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms": 0.4,
+      "unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct": 0.0,
+      "furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.4,
+      "uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct": 0.0,
+      "carbon_fiber_pan_oxidation_carbonization_slo_met": true
+    },
+    {
+      "carbon_fiber_lines": 16,
+      "carbon_fiber_governance_mode": "static_zone_temp_fixed_stretch_ratio_offline_tensile_coupon_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_carbon_fiber_pods": 8,
+      "tensile_strength_weibull_modulus_and_tow_yield_gain_pct": 5.5,
+      "oxidation_core_skin_heterogeneity_and_fuzz_break_reduction_pct": 7.9,
+      "nfpa86_sil3_n2_quench_and_hcn_labyrinth_curtain_interlock_ms": 186.0,
+      "unmitigated_oxidation_exothermic_runaway_or_hcn_leak_pct": 1.3,
+      "furnace_edge_waxs_raman_orientation_and_godet_tension_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_tar_condensation_or_muffle_oxygen_ingress_pct": 3.5,
+      "carbon_fiber_pan_oxidation_carbonization_slo_met": false
+    }
   ]
 }

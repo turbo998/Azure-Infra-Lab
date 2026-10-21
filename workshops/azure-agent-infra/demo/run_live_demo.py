@@ -135,6 +135,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_polysilicon_siemens_cvd_fbr_trichlorosilane_semis2_sil3_sandbox,
     simulate_cryogenic_asu_air_separation_lox_reboiler_eiga65_sil3_sandbox,
     simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox,
+    simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -941,6 +942,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "chlor_alkali_16_cellrooms": simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(16, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"),
             "chlor_alkali_64_cellrooms": simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(64, "pinn_mpc_zero_gap_bilayer_membrane_tdlas_h2_in_cl2_eurochlor_sil3_edge"),
             "raw_chlor_alkali_16_cellrooms": simulate_chlor_alkali_membrane_electrolyzer_cl2_h2_eurochlor_sil3_sandbox(16, "manual_dp_valve_fixed_rectifier_ramp_periodic_brine_icp_cloud"),
+        },
+        "demo_116_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox": {
+            "carbon_fiber_16_lines": simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(16, "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"),
+            "carbon_fiber_64_lines": simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(64, "pinn_mpc_pan_exotherm_waxs_orientation_godet_tension_nfpa86_sil3_edge"),
+            "raw_carbon_fiber_16_lines": simulate_carbon_fiber_pan_oxidation_carbonization_hcn_nfpa86_sil3_sandbox(16, "static_zone_temp_fixed_stretch_ratio_offline_tensile_coupon_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
