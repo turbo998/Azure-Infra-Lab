@@ -115,6 +115,7 @@ from agent_infra_sizer import (
     simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
     simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
     simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
+    simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -277,6 +278,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-cmp-planarization-hybrid-w2w-bonding-epd-semis2-sil3-pool.bicep",
             "aksclaw-single-crystal-superalloy-bridgman-lmc-casting-ams2280-sil3-pool.bicep",
             "aksclaw-subsea-methane-hydrate-depressurization-sand-control-dts-sil3-pool.bicep",
+            "aksclaw-uhv-mbe-quantum-epitaxy-rheed-bet-semis2-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2184,6 +2186,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_gravel_pack_plugging_or_endothermic_ice_blockage_pct"], 3.0)
         self.assertTrue(gov["subsea_methane_hydrate_slo_met"])
         self.assertFalse(raw["subsea_methane_hydrate_slo_met"])
+
+    def test_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(
+            16, "pinn_mpc_bcf_step_flow_knudsen_flux_rheed_bet_semis2_sil3_edge"
+        )
+        raw = simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(
+            16, "timed_shutter_fixed_cell_temp_thermocouple_offset_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_uhv_mbe_pods"], 8)
+        self.assertEqual(gov["two_deg_mobility_and_monolayer_thickness_uniformity_gain_pct"], 36.4)
+        self.assertEqual(gov["oval_defect_threading_dislocation_and_flux_transient_scrap_reduction_pct"], 48.8)
+        self.assertEqual(gov["semis2_nfpa318_sil3_arsenic_phosphorus_cracker_and_uhv_gate_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_white_phosphorus_ignition_toxic_ash3_leak_or_uhv_vent_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_white_phosphorus_ignition_toxic_ash3_leak_or_uhv_vent_pct"], 1.1)
+        self.assertEqual(gov["chamber_edge_rheed_oscillation_and_band_edge_thermometry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.4)
+        self.assertEqual(gov["uncompensated_shutter_flux_overshoot_or_surface_reconstruction_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_shutter_flux_overshoot_or_surface_reconstruction_drift_pct"], 3.0)
+        self.assertTrue(gov["uhv_mbe_quantum_epitaxy_slo_met"])
+        self.assertFalse(raw["uhv_mbe_quantum_epitaxy_slo_met"])
 
 
 if __name__ == "__main__":

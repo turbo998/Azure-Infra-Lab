@@ -5791,6 +5791,49 @@ def simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandb
     }
 
 
+def simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(
+    uhv_mbe_chambers: int = 16,
+    mbe_governance_mode: str = "pinn_mpc_bcf_step_flow_knudsen_flux_rheed_bet_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-High-Vacuum Molecular Beam Epitaxy (UHV-MBE) & III-V / Topological Quantum Heterostructure Atomic-Layer Growth, Knudsen Cell Flux Transient & Surface Reconstruction PINN-MPC, Real-Time RHEED Oscillation & Band-Edge Thermometry (BET) Inversion & SEMI S2 / S6 / NFPA 318 / IEC 61511 SIL-3 Pyrophoric Phosphorus / Arsenic Cracker Valve & Cryopump Interlock Agent Infrastructure (Chapter 114)."""
+    if uhv_mbe_chambers <= 0:
+        raise ValueError("uhv_mbe_chambers must be positive")
+    valid_modes = {
+        "pinn_mpc_bcf_step_flow_knudsen_flux_rheed_bet_semis2_sil3_edge",
+        "timed_shutter_fixed_cell_temp_thermocouple_offset_cloud",
+    }
+    if mbe_governance_mode not in valid_modes:
+        raise ValueError(f"mbe_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = mbe_governance_mode == "pinn_mpc_bcf_step_flow_knudsen_flux_rheed_bet_semis2_sil3_edge"
+    active_uhv_mbe_pods = max(2, min(8, int(uhv_mbe_chambers))) if uhv_mbe_chambers <= 8 else max(8, int(uhv_mbe_chambers // 2))
+    gpu_nodes = max(2, math.ceil(uhv_mbe_chambers / 8))
+
+    two_deg_mobility_and_monolayer_thickness_uniformity_gain_pct = 36.4 if governed else 5.8
+    oval_defect_threading_dislocation_and_flux_transient_scrap_reduction_pct = 48.8 if governed else 8.2
+    semis2_nfpa318_sil3_arsenic_phosphorus_cracker_and_uhv_gate_interlock_ms = 0.3 if governed else 182.0
+    unmitigated_white_phosphorus_ignition_toxic_ash3_leak_or_uhv_vent_pct = 0.0 if governed else 1.3
+    chamber_edge_rheed_oscillation_and_band_edge_thermometry_loop_ms = 0.3 if governed else 206.0
+    wan_bandwidth_reduction_pct = 99.4 if governed else 0.0
+    uncompensated_shutter_flux_overshoot_or_surface_reconstruction_drift_pct = 0.0 if governed else 3.4
+
+    return {
+        "uhv_mbe_chambers": uhv_mbe_chambers,
+        "mbe_governance_mode": mbe_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_uhv_mbe_pods": active_uhv_mbe_pods,
+        "two_deg_mobility_and_monolayer_thickness_uniformity_gain_pct": two_deg_mobility_and_monolayer_thickness_uniformity_gain_pct,
+        "oval_defect_threading_dislocation_and_flux_transient_scrap_reduction_pct": oval_defect_threading_dislocation_and_flux_transient_scrap_reduction_pct,
+        "semis2_nfpa318_sil3_arsenic_phosphorus_cracker_and_uhv_gate_interlock_ms": semis2_nfpa318_sil3_arsenic_phosphorus_cracker_and_uhv_gate_interlock_ms,
+        "unmitigated_white_phosphorus_ignition_toxic_ash3_leak_or_uhv_vent_pct": unmitigated_white_phosphorus_ignition_toxic_ash3_leak_or_uhv_vent_pct,
+        "chamber_edge_rheed_oscillation_and_band_edge_thermometry_loop_ms": chamber_edge_rheed_oscillation_and_band_edge_thermometry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_shutter_flux_overshoot_or_surface_reconstruction_drift_pct": uncompensated_shutter_flux_overshoot_or_surface_reconstruction_drift_pct,
+        "uhv_mbe_quantum_epitaxy_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

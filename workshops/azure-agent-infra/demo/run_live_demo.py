@@ -128,6 +128,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_cmp_planarization_hybrid_w2w_bonding_epd_semis2_sil3_sandbox,
     simulate_single_crystal_superalloy_bridgman_lmc_casting_ams2280_sil3_sandbox,
     simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox,
+    simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -899,6 +900,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hydrate_16_wells": simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(16, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"),
             "hydrate_64_wells": simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(64, "pinn_mpc_kim_bishnoi_dissociation_jt_plug_sand_subsidence_dts_apirp14c_sil3_edge"),
             "raw_hydrate_16_wells": simulate_subsea_methane_hydrate_depressurization_sand_control_dts_sil3_sandbox(16, "aggressive_step_drawdown_esp_open_loop_choke_unmonitored_sand_cloud"),
+        },
+        "demo_109_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox": {
+            "mbe_16_chambers": simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(16, "pinn_mpc_bcf_step_flow_knudsen_flux_rheed_bet_semis2_sil3_edge"),
+            "mbe_64_chambers": simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(64, "pinn_mpc_bcf_step_flow_knudsen_flux_rheed_bet_semis2_sil3_edge"),
+            "raw_mbe_16_chambers": simulate_uhv_mbe_quantum_epitaxy_rheed_bet_semis2_sil3_sandbox(16, "timed_shutter_fixed_cell_temp_thermocouple_offset_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
