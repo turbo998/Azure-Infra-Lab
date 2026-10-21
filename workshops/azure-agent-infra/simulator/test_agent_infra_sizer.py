@@ -128,6 +128,7 @@ from agent_infra_sizer import (
     simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
     simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
     simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox,
+    simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -303,6 +304,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-ebam-electron-beam-titanium-elo-ams4999-sil3-pool.bicep",
             "aksclaw-scwo-supercritical-water-pfas-mineralization-raman-asmediv3-sil3-pool.bicep",
             "aksclaw-smr-steam-methane-reforming-ccs-pigtube-creep-api530-sil3-pool.bicep",
+            "aksclaw-sputter-magnetron-glass-coater-pem-hips-en1096-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2483,6 +2485,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_tube_skin_overheat_or_co2_breakthrough_pct"], 3.0)
         self.assertTrue(gov["smr_steam_methane_reforming_ccs_slo_met"])
         self.assertFalse(raw["smr_steam_methane_reforming_ccs_slo_met"])
+
+    def test_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(self) -> None:
+        gov = simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(
+            16, "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge"
+        )
+        raw = simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(
+            16, "fixed_o2_mass_flow_manual_cathode_voltage_postline_spectrophotometer_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_sputter_pods"], 8)
+        self.assertEqual(gov["deposition_rate_and_deltae_color_uniformity_gain_pct"], 38.6)
+        self.assertEqual(gov["target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct"], 53.2)
+        self.assertEqual(gov["en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct"], 1.0)
+        self.assertEqual(gov["cathode_edge_100khz_pem_and_ellipsometry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct"], 3.0)
+        self.assertTrue(gov["sputter_magnetron_glass_coater_slo_met"])
+        self.assertFalse(raw["sputter_magnetron_glass_coater_slo_met"])
 
 
 if __name__ == "__main__":

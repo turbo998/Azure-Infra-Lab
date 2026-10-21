@@ -141,6 +141,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
     simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
     simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox,
+    simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -977,6 +978,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "smr_16_furnaces": simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(16, "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"),
             "smr_64_furnaces": simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(64, "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"),
             "raw_smr_16_furnaces": simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(16, "fixed_steam_to_carbon_manual_burner_trim_periodic_ir_survey_cloud"),
+        },
+        "demo_122_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox": {
+            "sputter_16_chambers": simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(16, "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge"),
+            "sputter_64_chambers": simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(64, "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge"),
+            "raw_sputter_16_chambers": simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(16, "fixed_o2_mass_flow_manual_cathode_voltage_postline_spectrophotometer_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

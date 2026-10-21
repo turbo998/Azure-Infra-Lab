@@ -134,6 +134,7 @@ from agent_infra_sizer import (
     simulate_ebam_electron_beam_titanium_elo_ams4999_sil3_sandbox,
     simulate_scwo_supercritical_water_pfas_mineralization_raman_asmediv3_sil3_sandbox,
     simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox,
+    simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1096,6 +1097,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(64, "pinn_mpc_xufroment_coking_api530_creep_mwir_sil3_edge"),
         simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(16, "fixed_steam_to_carbon_manual_burner_trim_periodic_ir_survey_cloud"),
     ]
+    sputter_magnetron_glass_coater_profiles: List[Dict[str, object]] = [
+        simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(8, "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge"),
+        simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(16, "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge"),
+        simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(64, "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge"),
+        simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(16, "fixed_o2_mass_flow_manual_cathode_voltage_postline_spectrophotometer_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1218,6 +1225,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ebam_electron_beam_titanium_profiles": ebam_electron_beam_titanium_profiles,
         "scwo_supercritical_water_pfas_profiles": scwo_supercritical_water_pfas_profiles,
         "smr_steam_methane_reforming_ccs_profiles": smr_steam_methane_reforming_ccs_profiles,
+        "sputter_magnetron_glass_coater_profiles": sputter_magnetron_glass_coater_profiles,
     }
 
 

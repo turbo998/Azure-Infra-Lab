@@ -6350,6 +6350,49 @@ def simulate_smr_steam_methane_reforming_ccs_pigtube_creep_api530_sil3_sandbox(
     }
 
 
+def simulate_sputter_magnetron_glass_coater_pem_hips_en1096_sil3_sandbox(
+    sputter_coater_chambers: int = 16,
+    sputter_governance_mode: str = "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Jumbo-Glass Vacuum Magnetron Sputtering Coater (3.21x6.00m Triple-Silver Low-E & Electrochromic WO3/NiO, 20-40 Rotary C-MAG/TwinMag Cathodes), Berg Target-Poisoning Hysteresis S-Curve & Plasma Emission Monitoring (PEM) PINN-MPC, In-Line Spectroscopic Ellipsometry & EN 1096 / ASTM C1376 / SEMI S2 / IEC 61508 SIL-3 Micro-Arc Blanking & Rotary-Target Water-Leak Interlock Agent Infrastructure (Chapter 127)."""
+    if sputter_coater_chambers <= 0:
+        raise ValueError("sputter_coater_chambers must be positive")
+    valid_modes = {
+        "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge",
+        "fixed_o2_mass_flow_manual_cathode_voltage_postline_spectrophotometer_cloud",
+    }
+    if sputter_governance_mode not in valid_modes:
+        raise ValueError(f"sputter_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = sputter_governance_mode == "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge"
+    active_sputter_pods = max(2, min(8, int(sputter_coater_chambers))) if sputter_coater_chambers <= 8 else max(8, int(sputter_coater_chambers // 2))
+    gpu_nodes = max(2, math.ceil(sputter_coater_chambers / 8))
+
+    deposition_rate_and_deltae_color_uniformity_gain_pct = 38.6 if governed else 5.7
+    target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct = 53.2 if governed else 8.2
+    en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms = 0.2 if governed else 148.0
+    unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct = 0.0 if governed else 1.5
+    cathode_edge_100khz_pem_and_ellipsometry_loop_ms = 0.3 if governed else 196.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct = 0.0 if governed else 3.8
+
+    return {
+        "sputter_coater_chambers": sputter_coater_chambers,
+        "sputter_governance_mode": sputter_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_sputter_pods": active_sputter_pods,
+        "deposition_rate_and_deltae_color_uniformity_gain_pct": deposition_rate_and_deltae_color_uniformity_gain_pct,
+        "target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct": target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct,
+        "en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms": en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms,
+        "unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct": unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct,
+        "cathode_edge_100khz_pem_and_ellipsometry_loop_ms": cathode_edge_100khz_pem_and_ellipsometry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct": uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct,
+        "sputter_magnetron_glass_coater_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

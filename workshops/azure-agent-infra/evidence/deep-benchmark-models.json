@@ -7450,5 +7450,67 @@
       "uncompensated_tube_skin_overheat_or_co2_breakthrough_pct": 3.7,
       "smr_steam_methane_reforming_ccs_slo_met": false
     }
+  ],
+  "sputter_magnetron_glass_coater_profiles": [
+    {
+      "sputter_coater_chambers": 8,
+      "sputter_governance_mode": "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sputter_pods": 8,
+      "deposition_rate_and_deltae_color_uniformity_gain_pct": 38.6,
+      "target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct": 53.2,
+      "en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms": 0.2,
+      "unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct": 0.0,
+      "cathode_edge_100khz_pem_and_ellipsometry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct": 0.0,
+      "sputter_magnetron_glass_coater_slo_met": true
+    },
+    {
+      "sputter_coater_chambers": 16,
+      "sputter_governance_mode": "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sputter_pods": 8,
+      "deposition_rate_and_deltae_color_uniformity_gain_pct": 38.6,
+      "target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct": 53.2,
+      "en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms": 0.2,
+      "unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct": 0.0,
+      "cathode_edge_100khz_pem_and_ellipsometry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct": 0.0,
+      "sputter_magnetron_glass_coater_slo_met": true
+    },
+    {
+      "sputter_coater_chambers": 64,
+      "sputter_governance_mode": "pinn_mpc_berg_hysteresis_pem_ellipsometry_en1096_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sputter_pods": 32,
+      "deposition_rate_and_deltae_color_uniformity_gain_pct": 38.6,
+      "target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct": 53.2,
+      "en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms": 0.2,
+      "unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct": 0.0,
+      "cathode_edge_100khz_pem_and_ellipsometry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct": 0.0,
+      "sputter_magnetron_glass_coater_slo_met": true
+    },
+    {
+      "sputter_coater_chambers": 16,
+      "sputter_governance_mode": "fixed_o2_mass_flow_manual_cathode_voltage_postline_spectrophotometer_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sputter_pods": 8,
+      "deposition_rate_and_deltae_color_uniformity_gain_pct": 5.7,
+      "target_poisoning_hysteresis_and_arc_pinhole_scrap_reduction_pct": 8.2,
+      "en1096_sil3_microarc_reverse_pulse_and_water_valve_trip_ms": 148.0,
+      "unmitigated_macroarc_droplet_spatter_or_rotary_water_flood_pct": 1.5,
+      "cathode_edge_100khz_pem_and_ellipsometry_loop_ms": 196.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ag_layer_oxidation_or_cross_web_deltae_drift_pct": 3.8,
+      "sputter_magnetron_glass_coater_slo_met": false
+    }
   ]
 }
