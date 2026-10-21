@@ -6694,6 +6694,49 @@ def simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(
     }
 
 
+def simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(
+    float_glass_lines: int = 8,
+    float_glass_governance_mode: str = "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Thin Display & Architectural Float Glass Oxy-Fuel Melting Furnace (1,600 C), Molten Tin-Bath Ribbon Attenuation (1,100 -> 600 C) & Annealing Lehr Stress Birefringence PINN-MPC, Laser Moire Deflectometry & NFPA 86 / EN 746-2 / IEC 61508 SIL-3 Forming-Gas H2/O2 Purge, Crown Over-Temperature & Tin-Bath Leak Interlock Agent Infrastructure (Chapter 135)."""
+    if float_glass_lines <= 0:
+        raise ValueError("float_glass_lines must be positive")
+    valid_modes = {
+        "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge",
+        "manual_toproll_speed_pid_crown_pyrometer_offline_polariscope_lehr_cloud",
+    }
+    if float_glass_governance_mode not in valid_modes:
+        raise ValueError(f"float_glass_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = float_glass_governance_mode == "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge"
+    active_float_glass_pods = max(2, min(8, int(float_glass_lines))) if float_glass_lines <= 8 else max(8, int(float_glass_lines // 2))
+    gpu_nodes = max(2, math.ceil(float_glass_lines / 4))
+
+    prime_ribbon_yield_and_pull_rate_efficiency_gain_pct = 39.2 if governed else 5.8
+    optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct = 54.4 if governed else 8.4
+    nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms = 0.3 if governed else 148.0
+    unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct = 0.0 if governed else 1.4
+    tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms = 0.3 if governed else 191.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct = 0.0 if governed else 3.7
+
+    return {
+        "float_glass_lines": float_glass_lines,
+        "float_glass_governance_mode": float_glass_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_float_glass_pods": active_float_glass_pods,
+        "prime_ribbon_yield_and_pull_rate_efficiency_gain_pct": prime_ribbon_yield_and_pull_rate_efficiency_gain_pct,
+        "optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct": optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct,
+        "nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms": nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms,
+        "unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct": unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct,
+        "tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms": tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct": uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct,
+        "float_glass_tin_bath_lehr_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

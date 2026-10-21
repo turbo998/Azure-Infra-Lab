@@ -136,6 +136,7 @@ from agent_infra_sizer import (
     simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
     simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
     simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox,
+    simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -319,6 +320,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-offshore-jackup-spudcan-punchthrough-sscv-sname55a-sil3-pool.bicep",
             "aksclaw-longwall-mining-rockburst-shearer-methane-atex-m1-sil3-pool.bicep",
             "aksclaw-coal-gasifier-rectisol-urea-carbamate-asmeviii-sil3-pool.bicep",
+            "aksclaw-float-glass-tin-bath-oxyfuel-lehr-birefringence-nfpa86-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2667,6 +2669,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct"], 3.0)
         self.assertTrue(gov["coal_gasifier_rectisol_urea_slo_met"])
         self.assertFalse(raw["coal_gasifier_rectisol_urea_slo_met"])
+
+    def test_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge"
+        )
+        raw = simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(
+            8, "manual_toproll_speed_pid_crown_pyrometer_offline_polariscope_lehr_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_float_glass_pods"], 8)
+        self.assertEqual(gov["prime_ribbon_yield_and_pull_rate_efficiency_gain_pct"], 39.2)
+        self.assertEqual(gov["optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct"], 54.4)
+        self.assertEqual(gov["nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct"], 1.0)
+        self.assertEqual(gov["tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct"], 3.0)
+        self.assertTrue(gov["float_glass_tin_bath_lehr_slo_met"])
+        self.assertFalse(raw["float_glass_tin_bath_lehr_slo_met"])
 
 
 if __name__ == "__main__":

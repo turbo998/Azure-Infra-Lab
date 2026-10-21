@@ -149,6 +149,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_offshore_jackup_spudcan_punchthrough_sscv_sname55a_sil3_sandbox,
     simulate_longwall_mining_rockburst_shearer_methane_atexm1_sil3_sandbox,
     simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox,
+    simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1025,6 +1026,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "gasifier_8_trains": simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(8, "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge"),
             "gasifier_32_trains": simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(32, "pinn_mpc_slag_t250_rectisol_urea_nc_ratio_tdlas_asmeviii_sil3_edge"),
             "raw_gasifier_8_trains": simulate_coal_gasifier_rectisol_urea_carbamate_asmeviii_sil3_sandbox(8, "fixed_o2_coal_ratio_manual_flux_addition_offline_titration_urea_cloud"),
+        },
+        "demo_130_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox": {
+            "float_glass_8_lines": simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(8, "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge"),
+            "float_glass_32_lines": simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(32, "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge"),
+            "raw_float_glass_8_lines": simulate_float_glass_tin_bath_oxyfuel_lehr_birefringence_nfpa86_sil3_sandbox(8, "manual_toproll_speed_pid_crown_pyrometer_offline_polariscope_lehr_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

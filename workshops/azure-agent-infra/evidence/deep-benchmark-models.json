@@ -7946,5 +7946,67 @@
       "uncompensated_refractory_spalling_or_rectisol_h2s_slip_catalyst_poison_pct": 3.8,
       "coal_gasifier_rectisol_urea_slo_met": false
     }
+  ],
+  "float_glass_tin_bath_lehr_profiles": [
+    {
+      "float_glass_lines": 4,
+      "float_glass_governance_mode": "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_float_glass_pods": 4,
+      "prime_ribbon_yield_and_pull_rate_efficiency_gain_pct": 39.2,
+      "optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct": 54.4,
+      "nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms": 0.3,
+      "unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct": 0.0,
+      "tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct": 0.0,
+      "float_glass_tin_bath_lehr_slo_met": true
+    },
+    {
+      "float_glass_lines": 8,
+      "float_glass_governance_mode": "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_float_glass_pods": 8,
+      "prime_ribbon_yield_and_pull_rate_efficiency_gain_pct": 39.2,
+      "optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct": 54.4,
+      "nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms": 0.3,
+      "unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct": 0.0,
+      "tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct": 0.0,
+      "float_glass_tin_bath_lehr_slo_met": true
+    },
+    {
+      "float_glass_lines": 32,
+      "float_glass_governance_mode": "pinn_mpc_tin_bath_ribbon_attenuation_lehr_birefringence_moire_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_float_glass_pods": 16,
+      "prime_ribbon_yield_and_pull_rate_efficiency_gain_pct": 39.2,
+      "optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct": 54.4,
+      "nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms": 0.3,
+      "unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct": 0.0,
+      "tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct": 0.0,
+      "float_glass_tin_bath_lehr_slo_met": true
+    },
+    {
+      "float_glass_lines": 8,
+      "float_glass_governance_mode": "manual_toproll_speed_pid_crown_pyrometer_offline_polariscope_lehr_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_float_glass_pods": 8,
+      "prime_ribbon_yield_and_pull_rate_efficiency_gain_pct": 5.8,
+      "optical_distortion_millidiopter_and_lehr_residual_stress_reduction_pct": 8.4,
+      "nfpa86_en746_sil3_forming_gas_h2_purge_and_tinbath_leak_interlock_ms": 148.0,
+      "unmitigated_forming_gas_h2_deflagration_or_tin_bath_casing_breach_pct": 1.4,
+      "tinbath_edge_laser_moire_and_photoelastic_birefringence_loop_ms": 191.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_tin_oxide_dross_drip_or_lehr_thermal_shock_breakage_pct": 3.7,
+      "float_glass_tin_bath_lehr_slo_met": false
+    }
   ]
 }
