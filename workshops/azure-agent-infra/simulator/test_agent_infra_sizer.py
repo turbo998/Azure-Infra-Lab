@@ -140,6 +140,7 @@ from agent_infra_sizer import (
     simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox,
     simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox,
     simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
+    simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -327,6 +328,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-kraft-pulp-digester-recovery-boiler-smelt-blrbac-sil3-pool.bicep",
             "aksclaw-copper-flash-smelter-peircesmith-converter-so2-nfpa86-sil3-pool.bicep",
             "aksclaw-hpal-titanium-autoclave-nickel-cobalt-laterite-asmediv2-sil3-pool.bicep",
+            "aksclaw-kroll-sponge-titanium-ticl4-magnesium-reduction-nfpa484-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2759,6 +2761,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct"], 3.0)
         self.assertTrue(gov["hpal_titanium_autoclave_laterite_slo_met"])
         self.assertFalse(raw["hpal_titanium_autoclave_laterite_slo_met"])
+
+    def test_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(self) -> None:
+        gov = simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(
+            8, "pinn_mpc_kroll_chlorinator_vocl3_distillation_mg_retort_creep_raman_nfpa484_sil3_edge"
+        )
+        raw = simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(
+            8, "manual_ticl4_drip_rate_fixed_vacuum_distillation_timer_offline_bhn_hardness_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_kroll_titanium_pods"], 8)
+        self.assertEqual(gov["grade1_aerospace_sponge_titanium_yield_and_batch_cycle_gain_pct"], 40.6)
+        self.assertEqual(gov["specific_power_and_fe_ni_cr_retort_wall_contamination_reduction_pct"], 56.2)
+        self.assertEqual(gov["nfpa484_asme_sil3_argon_backfill_and_ticl4_caustic_scrubber_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_retort_creep_implosion_or_ticl4_hcl_plume_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_retort_creep_implosion_or_ticl4_hcl_plume_release_pct"], 1.0)
+        self.assertEqual(gov["retort_edge_raman_vocl3_and_infrared_creep_thermography_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_fe_eutectic_wall_burnthrough_or_oxygen_alpha_case_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_fe_eutectic_wall_burnthrough_or_oxygen_alpha_case_defect_pct"], 3.0)
+        self.assertTrue(gov["kroll_sponge_titanium_retort_slo_met"])
+        self.assertFalse(raw["kroll_sponge_titanium_retort_slo_met"])
 
 
 if __name__ == "__main__":

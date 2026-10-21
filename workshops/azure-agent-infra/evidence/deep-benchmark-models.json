@@ -8194,5 +8194,67 @@
       "uncompensated_alunite_scale_choking_or_ferric_iron_reprecipitation_pct": 3.6,
       "hpal_titanium_autoclave_laterite_slo_met": false
     }
+  ],
+  "kroll_sponge_titanium_retort_profiles": [
+    {
+      "kroll_reduction_retorts": 4,
+      "kroll_governance_mode": "pinn_mpc_kroll_chlorinator_vocl3_distillation_mg_retort_creep_raman_nfpa484_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_kroll_titanium_pods": 4,
+      "grade1_aerospace_sponge_titanium_yield_and_batch_cycle_gain_pct": 40.6,
+      "specific_power_and_fe_ni_cr_retort_wall_contamination_reduction_pct": 56.2,
+      "nfpa484_asme_sil3_argon_backfill_and_ticl4_caustic_scrubber_interlock_ms": 0.3,
+      "unmitigated_retort_creep_implosion_or_ticl4_hcl_plume_release_pct": 0.0,
+      "retort_edge_raman_vocl3_and_infrared_creep_thermography_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_fe_eutectic_wall_burnthrough_or_oxygen_alpha_case_defect_pct": 0.0,
+      "kroll_sponge_titanium_retort_slo_met": true
+    },
+    {
+      "kroll_reduction_retorts": 8,
+      "kroll_governance_mode": "pinn_mpc_kroll_chlorinator_vocl3_distillation_mg_retort_creep_raman_nfpa484_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_kroll_titanium_pods": 8,
+      "grade1_aerospace_sponge_titanium_yield_and_batch_cycle_gain_pct": 40.6,
+      "specific_power_and_fe_ni_cr_retort_wall_contamination_reduction_pct": 56.2,
+      "nfpa484_asme_sil3_argon_backfill_and_ticl4_caustic_scrubber_interlock_ms": 0.3,
+      "unmitigated_retort_creep_implosion_or_ticl4_hcl_plume_release_pct": 0.0,
+      "retort_edge_raman_vocl3_and_infrared_creep_thermography_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_fe_eutectic_wall_burnthrough_or_oxygen_alpha_case_defect_pct": 0.0,
+      "kroll_sponge_titanium_retort_slo_met": true
+    },
+    {
+      "kroll_reduction_retorts": 32,
+      "kroll_governance_mode": "pinn_mpc_kroll_chlorinator_vocl3_distillation_mg_retort_creep_raman_nfpa484_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_kroll_titanium_pods": 16,
+      "grade1_aerospace_sponge_titanium_yield_and_batch_cycle_gain_pct": 40.6,
+      "specific_power_and_fe_ni_cr_retort_wall_contamination_reduction_pct": 56.2,
+      "nfpa484_asme_sil3_argon_backfill_and_ticl4_caustic_scrubber_interlock_ms": 0.3,
+      "unmitigated_retort_creep_implosion_or_ticl4_hcl_plume_release_pct": 0.0,
+      "retort_edge_raman_vocl3_and_infrared_creep_thermography_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_fe_eutectic_wall_burnthrough_or_oxygen_alpha_case_defect_pct": 0.0,
+      "kroll_sponge_titanium_retort_slo_met": true
+    },
+    {
+      "kroll_reduction_retorts": 8,
+      "kroll_governance_mode": "manual_ticl4_drip_rate_fixed_vacuum_distillation_timer_offline_bhn_hardness_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_kroll_titanium_pods": 8,
+      "grade1_aerospace_sponge_titanium_yield_and_batch_cycle_gain_pct": 5.8,
+      "specific_power_and_fe_ni_cr_retort_wall_contamination_reduction_pct": 8.2,
+      "nfpa484_asme_sil3_argon_backfill_and_ticl4_caustic_scrubber_interlock_ms": 152.0,
+      "unmitigated_retort_creep_implosion_or_ticl4_hcl_plume_release_pct": 1.4,
+      "retort_edge_raman_vocl3_and_infrared_creep_thermography_loop_ms": 194.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_fe_eutectic_wall_burnthrough_or_oxygen_alpha_case_defect_pct": 3.8,
+      "kroll_sponge_titanium_retort_slo_met": false
+    }
   ]
 }

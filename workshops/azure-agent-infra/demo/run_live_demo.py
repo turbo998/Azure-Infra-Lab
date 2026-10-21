@@ -153,6 +153,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_kraft_pulp_digester_recovery_boiler_smelt_blrbac_sil3_sandbox,
     simulate_copper_flash_smelter_peircesmith_converter_so2_nfpa86_sil3_sandbox,
     simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox,
+    simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1049,6 +1050,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hpal_autoclave_8_trains": simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(8, "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"),
             "hpal_autoclave_32_trains": simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(32, "pinn_mpc_hpal_acid_stoichiometry_alunite_scale_letdown_pgnaa_asmediv2_sil3_edge"),
             "raw_hpal_autoclave_8_trains": simulate_hpal_titanium_autoclave_nickel_cobalt_laterite_asmediv2_sil3_sandbox(8, "manual_acid_to_ore_ratio_fixed_letdown_choke_offline_icp_assay_cloud"),
+        },
+        "demo_134_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox": {
+            "kroll_retort_8_trains": simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(8, "pinn_mpc_kroll_chlorinator_vocl3_distillation_mg_retort_creep_raman_nfpa484_sil3_edge"),
+            "kroll_retort_32_trains": simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(32, "pinn_mpc_kroll_chlorinator_vocl3_distillation_mg_retort_creep_raman_nfpa484_sil3_edge"),
+            "raw_kroll_retort_8_trains": simulate_kroll_sponge_titanium_ticl4_magnesium_reduction_nfpa484_sil3_sandbox(8, "manual_ticl4_drip_rate_fixed_vacuum_distillation_timer_offline_bhn_hardness_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
