@@ -117,6 +117,7 @@ from agent_infra_sizer import (
     simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
     simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
     simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox,
+    simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -977,6 +978,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(64, "pinn_mpc_chaotic_advection_smoluchowski_tff_srdls_gmp_sil3_edge"),
         simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(16, "fixed_frr_syringe_pump_offline_batch_dls_unmonitored_ethanol_cloud"),
     ]
+    ultradeep_10km_drilling_profiles: List[Dict[str, object]] = [
+        simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(8, "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge"),
+        simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(16, "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge"),
+        simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(64, "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge"),
+        simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(16, "constant_wob_rpm_mud_pulse_telemetry_manual_pit_gain_bop_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1082,6 +1089,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "h2_dri_shaft_furnace_profiles": h2_dri_shaft_furnace_profiles,
         "cryo_har_plasma_etch_profiles": cryo_har_plasma_etch_profiles,
         "mrna_lnp_microfluidic_profiles": mrna_lnp_microfluidic_profiles,
+        "ultradeep_10km_drilling_profiles": ultradeep_10km_drilling_profiles,
     }
 
 

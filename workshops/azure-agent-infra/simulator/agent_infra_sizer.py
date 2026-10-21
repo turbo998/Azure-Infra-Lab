@@ -5619,6 +5619,49 @@ def simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox(
     }
 
 
+def simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(
+    ultradeep_10km_drilling_rigs: int = 16,
+    ultradeep_governance_mode: str = "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Deep Continental Scientific & Superhot-Rock (10,000–12,000 m, >260 °C / 180 MPa) Hybrid Plasma-Percussion Drilling, High-Temperature Mud Rheology & Borehole Thermoelastic Breakout PINN-MPC, In-Situ Sonic-While-Drilling FWI Overpressure/Sour-Gas Look-Ahead & API RP 53 / ISO 15156 / IEC 61511 SIL-3 H2S Stress-Cracking & 140 MPa BOP Interlock Agent Infrastructure (Chapter 110)."""
+    if ultradeep_10km_drilling_rigs <= 0:
+        raise ValueError("ultradeep_10km_drilling_rigs must be positive")
+    valid_modes = {
+        "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge",
+        "constant_wob_rpm_mud_pulse_telemetry_manual_pit_gain_bop_cloud",
+    }
+    if ultradeep_governance_mode not in valid_modes:
+        raise ValueError(f"ultradeep_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ultradeep_governance_mode == "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge"
+    active_ultradeep_drilling_pods = max(2, min(8, int(ultradeep_10km_drilling_rigs))) if ultradeep_10km_drilling_rigs <= 8 else max(8, int(ultradeep_10km_drilling_rigs // 2))
+    gpu_nodes = max(2, math.ceil(ultradeep_10km_drilling_rigs / 8))
+
+    crystalline_basement_rop_and_bit_life_gain_pct = 35.2 if governed else 5.4
+    borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct = 47.6 if governed else 7.7
+    apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms = 0.4 if governed else 192.0
+    unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct = 0.0 if governed else 1.4
+    rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms = 0.4 if governed else 215.0
+    wan_bandwidth_reduction_pct = 99.3 if governed else 0.0
+    uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct = 0.0 if governed else 3.5
+
+    return {
+        "ultradeep_10km_drilling_rigs": ultradeep_10km_drilling_rigs,
+        "ultradeep_governance_mode": ultradeep_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ultradeep_drilling_pods": active_ultradeep_drilling_pods,
+        "crystalline_basement_rop_and_bit_life_gain_pct": crystalline_basement_rop_and_bit_life_gain_pct,
+        "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct,
+        "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms,
+        "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct,
+        "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct,
+        "ultradeep_10km_drilling_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

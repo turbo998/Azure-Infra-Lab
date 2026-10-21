@@ -6598,6 +6598,68 @@
         "uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct": 3.3,
         "mrna_lnp_microfluidic_slo_met": false
       }
+    ],
+    "ultradeep_10km_drilling_profiles": [
+      {
+        "ultradeep_10km_drilling_rigs": 8,
+        "ultradeep_governance_mode": "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ultradeep_drilling_pods": 8,
+        "crystalline_basement_rop_and_bit_life_gain_pct": 35.2,
+        "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": 47.6,
+        "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": 0.4,
+        "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": 0.0,
+        "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": 0.0,
+        "ultradeep_10km_drilling_slo_met": true
+      },
+      {
+        "ultradeep_10km_drilling_rigs": 16,
+        "ultradeep_governance_mode": "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ultradeep_drilling_pods": 8,
+        "crystalline_basement_rop_and_bit_life_gain_pct": 35.2,
+        "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": 47.6,
+        "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": 0.4,
+        "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": 0.0,
+        "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": 0.0,
+        "ultradeep_10km_drilling_slo_met": true
+      },
+      {
+        "ultradeep_10km_drilling_rigs": 64,
+        "ultradeep_governance_mode": "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ultradeep_drilling_pods": 32,
+        "crystalline_basement_rop_and_bit_life_gain_pct": 35.2,
+        "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": 47.6,
+        "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": 0.4,
+        "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": 0.0,
+        "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.3,
+        "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": 0.0,
+        "ultradeep_10km_drilling_slo_met": true
+      },
+      {
+        "ultradeep_10km_drilling_rigs": 16,
+        "ultradeep_governance_mode": "constant_wob_rpm_mud_pulse_telemetry_manual_pit_gain_bop_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_ND96isr_H100_v5",
+        "active_ultradeep_drilling_pods": 8,
+        "crystalline_basement_rop_and_bit_life_gain_pct": 5.4,
+        "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": 7.7,
+        "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": 192.0,
+        "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": 1.4,
+        "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": 215.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": 3.5,
+        "ultradeep_10km_drilling_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -12350,5 +12412,52 @@
       "mrna_lnp_microfluidic_slo_met": false
     }
   },
-  "trace_sha256": "643b9c94bc96a4dda28a44e157462bd7dbf58ad469c06e142b97cb7816260094"
+  "demo_105_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox": {
+    "ultradeep_16_rigs": {
+      "ultradeep_10km_drilling_rigs": 16,
+      "ultradeep_governance_mode": "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ultradeep_drilling_pods": 8,
+      "crystalline_basement_rop_and_bit_life_gain_pct": 35.2,
+      "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": 47.6,
+      "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": 0.4,
+      "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": 0.0,
+      "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": 0.0,
+      "ultradeep_10km_drilling_slo_met": true
+    },
+    "ultradeep_64_rigs": {
+      "ultradeep_10km_drilling_rigs": 64,
+      "ultradeep_governance_mode": "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ultradeep_drilling_pods": 32,
+      "crystalline_basement_rop_and_bit_life_gain_pct": 35.2,
+      "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": 47.6,
+      "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": 0.4,
+      "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": 0.0,
+      "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.3,
+      "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": 0.0,
+      "ultradeep_10km_drilling_slo_met": true
+    },
+    "raw_ultradeep_16_rigs": {
+      "ultradeep_10km_drilling_rigs": 16,
+      "ultradeep_governance_mode": "constant_wob_rpm_mud_pulse_telemetry_manual_pit_gain_bop_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96isr_H100_v5",
+      "active_ultradeep_drilling_pods": 8,
+      "crystalline_basement_rop_and_bit_life_gain_pct": 5.4,
+      "borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct": 7.7,
+      "apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms": 192.0,
+      "unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct": 1.4,
+      "rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms": 215.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct": 3.5,
+      "ultradeep_10km_drilling_slo_met": false
+    }
+  },
+  "trace_sha256": "288b1583911fa6859fff0bbd830a901e4331d1d95df9e3004ac7815f2ef58ab7"
 }

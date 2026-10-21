@@ -111,6 +111,7 @@ from agent_infra_sizer import (
     simulate_h2_dri_shaft_furnace_hydrogen_reduction_clustering_sil3_sandbox,
     simulate_cryo_har_plasma_etch_3dnand_esc_oes_semis2_sil3_sandbox,
     simulate_mrna_lnp_microfluidic_mixing_tff_dls_gmp_sil3_sandbox,
+    simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -269,6 +270,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-h2-dri-shaft-furnace-hydrogen-reduction-clustering-nfpa86-sil3-pool.bicep",
             "aksclaw-cryo-har-plasma-etch-3dnand-esc-oes-semis2-sil3-pool.bicep",
             "aksclaw-mrna-lnp-microfluidic-mixing-tff-dls-gmp-nfpa30-sil3-pool.bicep",
+            "aksclaw-ultradeep-10km-superhot-rock-drilling-fwi-iso15156-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2092,6 +2094,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_lipid_aggregation_or_empty_capsid_fraction_pct"], 3.0)
         self.assertTrue(gov["mrna_lnp_microfluidic_slo_met"])
         self.assertFalse(raw["mrna_lnp_microfluidic_slo_met"])
+
+    def test_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(self) -> None:
+        gov = simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(
+            16, "pinn_mpc_thermoelastic_breakout_hthp_rheology_swd_fwi_iso15156_sil3_edge"
+        )
+        raw = simulate_ultradeep_10km_superhot_rock_drilling_fwi_iso15156_sil3_sandbox(
+            16, "constant_wob_rpm_mud_pulse_telemetry_manual_pit_gain_bop_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ultradeep_drilling_pods"], 8)
+        self.assertEqual(gov["crystalline_basement_rop_and_bit_life_gain_pct"], 35.2)
+        self.assertEqual(gov["borehole_breakout_stuck_pipe_and_mud_sag_npt_reduction_pct"], 47.6)
+        self.assertEqual(gov["apirp53_iso15156_sil3_sour_gas_h2s_scavenger_and_140mpa_bop_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2s_sulfide_stress_cracking_or_hthp_blowout_pct"], 1.2)
+        self.assertEqual(gov["rig_edge_swd_fwi_wired_pipe_and_coriolis_kick_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.3)
+        self.assertEqual(gov["uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bha_whirl_or_mwd_260c_thermal_failure_pct"], 3.0)
+        self.assertTrue(gov["ultradeep_10km_drilling_slo_met"])
+        self.assertFalse(raw["ultradeep_10km_drilling_slo_met"])
 
 
 if __name__ == "__main__":
