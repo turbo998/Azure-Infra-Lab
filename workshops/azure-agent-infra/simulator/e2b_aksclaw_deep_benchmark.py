@@ -190,6 +190,7 @@ from agent_infra_sizer import (
     simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
     simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
     simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
+    simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1489,6 +1490,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_lance_o2_coal_ratio_and_offline_slag_sn_cupellation_assay"),
     ]
 
+    ferrochrome_submerged_arc_furnace_profiles: List[Dict[str, object]] = [
+        simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(8, "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge"),
+        simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(32, "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge"),
+        simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_c3_westly_factor_and_manual_electrode_slipping_timer"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1666,6 +1673,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "zinc_pressure_leaching_electrowinning_profiles": zinc_pressure_leaching_electrowinning_profiles,
         "ilmenite_dc_eaf_titania_slag_smelting_profiles": ilmenite_dc_eaf_titania_slag_smelting_profiles,
         "tin_tsl_ausmelt_bath_smelting_profiles": tin_tsl_ausmelt_bath_smelting_profiles,
+        "ferrochrome_submerged_arc_furnace_profiles": ferrochrome_submerged_arc_furnace_profiles,
     }
 
 

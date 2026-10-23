@@ -184,6 +184,7 @@ from agent_infra_sizer import (
     simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
     simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
     simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
+    simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3736,6 +3737,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct"], 3.0)
         self.assertTrue(gov["tin_tsl_ausmelt_bath_smelting_slo_met"])
         self.assertFalse(raw["tin_tsl_ausmelt_bath_smelting_slo_met"])
+
+    def test_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge"
+        )
+        raw = simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_c3_westly_factor_and_manual_electrode_slipping_timer"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_fecr_pods"], 8)
+        self.assertEqual(gov["chromium_recovery_and_specific_mwh_per_ton_fecr_efficiency_gain_pct"], 45.9)
+        self.assertEqual(gov["soderberg_electrode_soft_break_and_coke_bed_overcoking_reduction_pct"], 70.6)
+        self.assertEqual(gov["nfpa86_osha19101026_sil3_soft_break_and_closed_hood_co_o2_interlock_ms"], 0.34)
+        self.assertEqual(gov["unmitigated_electrode_green_paste_fire_or_closed_hood_co_h2_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_electrode_green_paste_fire_or_closed_hood_co_h2_explosion_pct"], 1.0)
+        self.assertEqual(gov["saf_edge_10khz_electrode_harmonic_casing_ae_and_tdlas_co_o2_h2_telemetry_loop_ms"], 0.24)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_chromite_mg_al_spinel_shift_or_electrode_tip_loss_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_chromite_mg_al_spinel_shift_or_electrode_tip_loss_slip_pct"], 3.0)
+        self.assertTrue(gov["ferrochrome_submerged_arc_furnace_slo_met"])
+        self.assertFalse(raw["ferrochrome_submerged_arc_furnace_slo_met"])
 
 
 if __name__ == "__main__":

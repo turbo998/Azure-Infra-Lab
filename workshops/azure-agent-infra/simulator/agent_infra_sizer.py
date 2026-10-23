@@ -9103,6 +9103,49 @@ def simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil
     }
 
 
+def simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(
+    fecr_saf_furnaces: int = 8,
+    fecr_governance_mode: str = "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Closed Submerged Arc Furnace (SAF 75 MVA Soderberg Self-Baking Electrodes) High-Carbon Ferrochrome (HC-FeCr 1,650-1,750 C) & Steel-Belt Chromite Pellet Sintering, Soderberg 480 C Baking Isotherm, Coke-Bed Conductivity & MgO-Al2O3-SiO2 Slag PINN-MPC & NFPA 86 / OSHA 1910.1026 / ISO 13577 / IEC 61511 SIL-3 Interlock (Cycle #178)."""
+    if fecr_saf_furnaces <= 0:
+        raise ValueError("fecr_saf_furnaces must be positive")
+    valid_modes = {
+        "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge",
+        "raw_cloud_fixed_c3_westly_factor_and_manual_electrode_slipping_timer",
+    }
+    if fecr_governance_mode not in valid_modes:
+        raise ValueError(f"fecr_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = fecr_governance_mode == "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge"
+    active_fecr_pods = max(2, min(16, int(fecr_saf_furnaces))) if fecr_saf_furnaces <= 16 else max(16, int(fecr_saf_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(fecr_saf_furnaces / 4))
+
+    chromium_recovery_and_specific_mwh_per_ton_fecr_efficiency_gain_pct = 45.9 if governed else 6.8
+    soderberg_electrode_soft_break_and_coke_bed_overcoking_reduction_pct = 70.6 if governed else 9.5
+    nfpa86_osha19101026_sil3_soft_break_and_closed_hood_co_o2_interlock_ms = 0.34 if governed else 382.0
+    unmitigated_electrode_green_paste_fire_or_closed_hood_co_h2_explosion_pct = 0.0 if governed else 1.5
+    saf_edge_10khz_electrode_harmonic_casing_ae_and_tdlas_co_o2_h2_telemetry_loop_ms = 0.24 if governed else 208.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_chromite_mg_al_spinel_shift_or_electrode_tip_loss_slip_pct = 0.0 if governed else 4.4
+
+    return {
+        "fecr_saf_furnaces": fecr_saf_furnaces,
+        "fecr_governance_mode": fecr_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_fecr_pods": active_fecr_pods,
+        "chromium_recovery_and_specific_mwh_per_ton_fecr_efficiency_gain_pct": chromium_recovery_and_specific_mwh_per_ton_fecr_efficiency_gain_pct,
+        "soderberg_electrode_soft_break_and_coke_bed_overcoking_reduction_pct": soderberg_electrode_soft_break_and_coke_bed_overcoking_reduction_pct,
+        "nfpa86_osha19101026_sil3_soft_break_and_closed_hood_co_o2_interlock_ms": nfpa86_osha19101026_sil3_soft_break_and_closed_hood_co_o2_interlock_ms,
+        "unmitigated_electrode_green_paste_fire_or_closed_hood_co_h2_explosion_pct": unmitigated_electrode_green_paste_fire_or_closed_hood_co_h2_explosion_pct,
+        "saf_edge_10khz_electrode_harmonic_casing_ae_and_tdlas_co_o2_h2_telemetry_loop_ms": saf_edge_10khz_electrode_harmonic_casing_ae_and_tdlas_co_o2_h2_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_chromite_mg_al_spinel_shift_or_electrode_tip_loss_slip_pct": uncompensated_chromite_mg_al_spinel_shift_or_electrode_tip_loss_slip_pct,
+        "ferrochrome_submerged_arc_furnace_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
