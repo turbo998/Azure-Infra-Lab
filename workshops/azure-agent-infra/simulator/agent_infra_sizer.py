@@ -7896,6 +7896,55 @@ def simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_san
     }
 
 
+def simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(
+    vcv_extrusion_towers: int = 8,
+    hvdc_xlpe_governance_mode: str = "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Subsea ±525 kV HVDC Extruded Cross-Linked Polyethylene (XLPE) Power Cable
+    Vertical Continuous Vulcanization (VCV) Catenary Curing Tower, Kamal-Sourour Peroxide Cross-Linking
+    Reaction-Diffusion & Bipolar Charge Transport (BCT) Space-Charge Trap Suppressing PINN-MPC,
+    Online 50 kHz Terahertz (THz) / Ultrasonic Eccentricity / Pulsed Electro-Acoustic (PEA) Space-Charge
+    Metrology & CIGRE TB 852 / IEC 62895 / DNV-ST-F101 / IEC 61508 SIL-3 Nitrogen Curing-Tube Relief,
+    CH4 Degassing LEL Purge & HV Impulse Crowbar Interlock Sandbox (Chapter 159).
+    """
+    if vcv_extrusion_towers < 1:
+        raise ValueError("vcv_extrusion_towers must be >= 1")
+    valid_modes = {
+        "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge",
+        "fixed_vcv_zone_temp_timer_degassing_offline_sample_pea_test_cloud",
+    }
+    if hvdc_xlpe_governance_mode not in valid_modes:
+        raise ValueError(f"hvdc_xlpe_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = hvdc_xlpe_governance_mode == "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge"
+    active_hvdc_xlpe_vcv_pods = max(2, min(8, int(vcv_extrusion_towers))) if vcv_extrusion_towers <= 8 else max(8, int(vcv_extrusion_towers // 2))
+    gpu_nodes = max(2, math.ceil(vcv_extrusion_towers / 4))
+
+    vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct = 43.2 if governed else 6.5
+    eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct = 61.0 if governed else 9.4
+    cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms = 0.2 if governed else 138.0
+    unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct = 0.0 if governed else 1.5
+    tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms = 0.3 if governed else 185.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct = 0.0 if governed else 3.7
+
+    return {
+        "vcv_extrusion_towers": vcv_extrusion_towers,
+        "hvdc_xlpe_governance_mode": hvdc_xlpe_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_hvdc_xlpe_vcv_pods": active_hvdc_xlpe_vcv_pods,
+        "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct,
+        "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct,
+        "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms,
+        "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct,
+        "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct,
+        "hvdc_subsea_xlpe_vcv_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

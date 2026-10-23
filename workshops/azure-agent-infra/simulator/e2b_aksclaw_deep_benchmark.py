@@ -166,6 +166,7 @@ from agent_infra_sizer import (
     simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox,
     simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox,
     simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox,
+    simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1320,6 +1321,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(32, "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge"),
         simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(8, "static_gaussian_pec_table_fixed_multipass_dose_offline_cd_sem_inspection_cloud"),
     ]
+    hvdc_subsea_xlpe_vcv_profiles: List[Dict[str, object]] = [
+        simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(4, "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge"),
+        simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(8, "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge"),
+        simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(32, "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge"),
+        simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(8, "fixed_vcv_zone_temp_timer_degassing_offline_sample_pea_test_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1474,6 +1481,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "optical_fiber_preform_draw_profiles": optical_fiber_preform_draw_profiles,
         "scco2_supercritical_smb_profiles": scco2_supercritical_smb_profiles,
         "euv_photomask_mbmw_profiles": euv_photomask_mbmw_profiles,
+        "hvdc_subsea_xlpe_vcv_profiles": hvdc_subsea_xlpe_vcv_profiles,
     }
 
 

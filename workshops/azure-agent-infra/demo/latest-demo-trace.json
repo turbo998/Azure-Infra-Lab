@@ -9636,6 +9636,68 @@
         "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 3.8,
         "euv_photomask_mbmw_slo_met": false
       }
+    ],
+    "hvdc_subsea_xlpe_vcv_profiles": [
+      {
+        "vcv_extrusion_towers": 4,
+        "hvdc_xlpe_governance_mode": "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_hvdc_xlpe_vcv_pods": 4,
+        "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": 43.2,
+        "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": 61.0,
+        "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": 0.2,
+        "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": 0.0,
+        "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": 0.0,
+        "hvdc_subsea_xlpe_vcv_slo_met": true
+      },
+      {
+        "vcv_extrusion_towers": 8,
+        "hvdc_xlpe_governance_mode": "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_hvdc_xlpe_vcv_pods": 8,
+        "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": 43.2,
+        "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": 61.0,
+        "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": 0.2,
+        "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": 0.0,
+        "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": 0.0,
+        "hvdc_subsea_xlpe_vcv_slo_met": true
+      },
+      {
+        "vcv_extrusion_towers": 32,
+        "hvdc_xlpe_governance_mode": "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_hvdc_xlpe_vcv_pods": 16,
+        "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": 43.2,
+        "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": 61.0,
+        "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": 0.2,
+        "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": 0.0,
+        "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": 0.0,
+        "hvdc_subsea_xlpe_vcv_slo_met": true
+      },
+      {
+        "vcv_extrusion_towers": 8,
+        "hvdc_xlpe_governance_mode": "fixed_vcv_zone_temp_timer_degassing_offline_sample_pea_test_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_hvdc_xlpe_vcv_pods": 8,
+        "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": 6.5,
+        "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": 9.4,
+        "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": 138.0,
+        "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": 1.5,
+        "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": 185.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": 3.7,
+        "hvdc_subsea_xlpe_vcv_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -17691,5 +17753,52 @@
       "euv_photomask_mbmw_slo_met": false
     }
   },
-  "trace_sha256": "ad59d6514d04e68b184764f7438bb44708b8237a63f1ca8f54f8cfc48df2f43e"
+  "demo_154_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox": {
+    "hvdc_xlpe_8_towers": {
+      "vcv_extrusion_towers": 8,
+      "hvdc_xlpe_governance_mode": "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_hvdc_xlpe_vcv_pods": 8,
+      "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": 43.2,
+      "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": 61.0,
+      "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": 0.2,
+      "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": 0.0,
+      "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": 0.0,
+      "hvdc_subsea_xlpe_vcv_slo_met": true
+    },
+    "hvdc_xlpe_32_towers": {
+      "vcv_extrusion_towers": 32,
+      "hvdc_xlpe_governance_mode": "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_hvdc_xlpe_vcv_pods": 16,
+      "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": 43.2,
+      "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": 61.0,
+      "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": 0.2,
+      "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": 0.0,
+      "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": 0.0,
+      "hvdc_subsea_xlpe_vcv_slo_met": true
+    },
+    "raw_hvdc_xlpe_8_towers": {
+      "vcv_extrusion_towers": 8,
+      "hvdc_xlpe_governance_mode": "fixed_vcv_zone_temp_timer_degassing_offline_sample_pea_test_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_hvdc_xlpe_vcv_pods": 8,
+      "vcv_cable_extrusion_line_speed_and_insulation_yield_gain_pct": 6.5,
+      "eccentricity_microvoid_and_pea_space_charge_field_distortion_reduction_pct": 9.4,
+      "cigre852_iec62895_sil3_vcv_n2_relief_ch4_lel_purge_and_hv_crowbar_interlock_ms": 138.0,
+      "unmitigated_vcv_scorch_runaway_ch4_ignition_or_hv_test_flashover_pct": 1.5,
+      "tower_edge_50khz_thz_ultrasonic_pea_and_tdlas_telemetry_loop_ms": 185.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct": 3.7,
+      "hvdc_subsea_xlpe_vcv_slo_met": false
+    }
+  },
+  "trace_sha256": "62b689c662d5ed51851d9aa0ec1128af49ec999a2511bed0aff80a1b0c555b7e"
 }
