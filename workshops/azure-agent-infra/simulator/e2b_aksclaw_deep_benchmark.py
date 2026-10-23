@@ -171,6 +171,7 @@ from agent_infra_sizer import (
     simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
     simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
     simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
+    simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1356,6 +1357,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(12, "baseline_collective_blade_pitch_pi_ballast_step_electrolyzer_offline_rov_umbilical_inspection_cloud"),
     ]
 
+    tfln_lnoi_modulator_profiles: List[Dict[str, object]] = [
+        simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(8, "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge"),
+        simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(32, "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge"),
+        simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(8, "fixed_implant_anneal_ramp_blind_argon_milling_open_loop_hv_poling_pulse_cloud"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1514,6 +1521,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "bspdn_backside_power_ntsv_profiles": bspdn_backside_power_ntsv_profiles,
         "diamond_hpht_mpcvd_wafer_profiles": diamond_hpht_mpcvd_wafer_profiles,
         "floating_wind_h2_hvdc_umbilical_profiles": floating_wind_h2_hvdc_umbilical_profiles,
+        "tfln_lnoi_modulator_profiles": tfln_lnoi_modulator_profiles,
     }
 
 

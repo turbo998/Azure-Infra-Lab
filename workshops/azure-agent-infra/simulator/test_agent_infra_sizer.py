@@ -165,6 +165,7 @@ from agent_infra_sizer import (
     simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
     simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
     simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
+    simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3318,6 +3319,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct"], 3.0)
         self.assertTrue(gov["floating_wind_h2_hvdc_umbilical_slo_met"])
         self.assertFalse(raw["floating_wind_h2_hvdc_umbilical_slo_met"])
+
+    def test_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(
+            8, "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge"
+        )
+        raw = simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(
+            8, "fixed_implant_anneal_ramp_blind_argon_milling_open_loop_hv_poling_pulse_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_tfln_lnoi_pods"], 8)
+        self.assertEqual(gov["tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct"], 45.6)
+        self.assertEqual(gov["waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct"], 63.4)
+        self.assertEqual(gov["semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct"], 1.0)
+        self.assertEqual(gov["tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms"], 0.25)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct"], 3.0)
+        self.assertTrue(gov["tfln_lnoi_modulator_slo_met"])
+        self.assertFalse(raw["tfln_lnoi_modulator_slo_met"])
 
 
 if __name__ == "__main__":

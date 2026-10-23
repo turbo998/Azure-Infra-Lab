@@ -8141,6 +8141,55 @@ def simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(
     }
 
 
+def simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(
+    tfln_process_tools: int = 8,
+    tfln_governance_mode: str = "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous 150/200 mm Thin-Film Lithium Niobate (TFLN / LNOI 300-600 nm X-Cut LiNbO3-on-Insulator
+    1.6T/3.2T Electro-Optic Mach-Zehnder Modulator VpiL < 1.8 V*cm, >110 GHz) He+ Smart-Cut Ion-Slicing
+    Exfoliation, Ar/CHF3 Ion-Beam Etching (IBE) Ridge-Waveguide Sidewall (60-75 deg Zero-Redeposition) &
+    Periodically Poled Lithium Niobate (PPLN) Ferroelectric Domain-Inversion PINN-MPC, Online 50 kHz
+    Spectroscopic Ellipsometry / Cherenkov Second-Harmonic Generation (SHG) Metrology & SEMI S2 / S8 /
+    ANSI Z136.1 / IEC 61508 SIL-3 High-Voltage Poling Breakdown Crowbar & Ion-Implanter Interlock Sandbox (Chapter 164).
+    """
+    if tfln_process_tools < 1:
+        raise ValueError("tfln_process_tools must be >= 1")
+    valid_modes = {
+        "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge",
+        "fixed_implant_anneal_ramp_blind_argon_milling_open_loop_hv_poling_pulse_cloud",
+    }
+    if tfln_governance_mode not in valid_modes:
+        raise ValueError(f"tfln_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = tfln_governance_mode == "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge"
+    active_tfln_lnoi_pods = max(2, min(8, int(tfln_process_tools))) if tfln_process_tools <= 8 else max(8, int(tfln_process_tools // 2))
+    gpu_nodes = max(2, math.ceil(tfln_process_tools / 4))
+
+    tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct = 45.6 if governed else 6.7
+    waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct = 63.4 if governed else 9.6
+    semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms = 0.2 if governed else 155.0
+    unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct = 0.0 if governed else 1.6
+    tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms = 0.25 if governed else 192.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct = 0.0 if governed else 3.9
+
+    return {
+        "tfln_process_tools": tfln_process_tools,
+        "tfln_governance_mode": tfln_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tfln_lnoi_pods": active_tfln_lnoi_pods,
+        "tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct": tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct,
+        "waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct": waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct,
+        "semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms": semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms,
+        "unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct": unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct,
+        "tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms": tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct,
+        "tfln_lnoi_modulator_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

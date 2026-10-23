@@ -571,6 +571,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(156)">157. 300mm 背面供电网络 (BSPDN / PowerVia / 埋入式电源轨 BPR) 纳米硅通孔 (nTSV &lt; 50nm CD) 极限晶圆减薄 (&lt; 500nm 残余硅厚)、承载晶圆混合熔融键合翘曲与亚 10nm 背面套刻畸变补偿 PINN-MPC、在线 100kHz 宽谱红外干涉硅厚层析 (TTV ±1.5nm 3σ)/高频声学显微镜 (C-SAM) 空洞计量及 SEMI S2 / S8 / IEC 61508 SIL-3 磨削主轴压电防碎急退、背面 CMP 露头终点淬灭与多孔陶瓷吸盘双冗余真空保压硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(157)">158. 超高压高温 (HPHT 5.5–8.0 GPa, 1,350–1,650°C 六面顶/Belt) 与 915MHz/2.45GHz 微波等离子体化学气相沉积 (MPCVD 15–60 kW) 100mm (4 英寸) 电子/量子级 (NV⁻ 色心) 单晶金刚石晶圆径向温度梯度 (&lt; 3.5 K/cm) 与等离子体球化/石英窗拉弧抑制 PINN-MPC、在线 10kHz 发射光谱 (OES C2 516.5nm / Hα 656.3nm)/双色高温计计量及 ASME BPVC VIII-3 / NFPA 55 / IEC 61508 SIL-3 碳化钨顶锤卸载防爆、微波源撬棒关断与氢气/甲烷氮气吹扫淬灭硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(158)">159. 远海深水 1–5 GW 漂浮式海上风电原位制氢与水下 66kV / ±320kV HVDC 动态输出脐带缆、半潜/单柱平台六自由度 (6-DOF) 纵摇-横摇-首摇与立管涡激振动 (VIV) 抑制及 PEM 电解槽阵列爬坡率 PINN-MPC、在线 10kHz 分布式声学/布里渊光纤传感 (DAS/BOTDR) 与无 SF6 GIS 特高频局部放电 (UHF PD) 计量及 IEC 61400-3-2 / DNV-ST-0119 / CIGRE TB 852 / IEC 61511 SIL-3 动态海缆最小弯曲半径 (MBR)、氢氧互串 (&lt; 1.6% LEL) 氮封与紧急脱离系统 (ERS) 硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(159)">160. 150/200mm 薄膜铌酸锂 (TFLN / LNOI 300–600nm X-Cut LiNbO3-on-Insulator 1.6T/3.2T 电光马赫-曾德尔调制器 VπL &lt; 1.8 V·cm, &gt; 110 GHz) 氦离子注入智能剥离 (He⁺ Smart-Cut 零起泡裂片)、氩/氟离子束刻蚀 (Ar/CHF3 IBE 60°–75° 脊波导侧壁无重沉积围栏) 与周期极化反转 (PPLN 铁电畴占空比 50.0 ± 0.3%) PINN-MPC、在线 50kHz 切伦科夫倍频显微 (Cherenkov SHG)/光谱椭偏仪计量及 SEMI S2 / S8 / IEC 61508 SIL-3 PPLN 高压极化击穿撬棒与离子注入联锁池 (Bicep · 160 蓝图里程碑)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4189,6 +4190,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 159: 150/200mm Thin-Film Lithium Niobate (TFLN/LNOI) 1.6T/3.2T Electro-Optic Modulator Smart-Cut, IBE & PPLN PINN-MPC Calculator -->
+  <section class="card" style="margin-top:1.25rem;">
+    <span class="pill pill-teal">TOOL 159 · 150/200mm THIN-FILM LITHIUM NIOBATE (TFLN / LNOI 300–600nm X-CUT 1.6T/3.2T ELECTRO-OPTIC MZM VπL &lt; 1.8 V·cm, &gt; 110 GHz) He⁺ SMART-CUT, Ar/CHF₃ ION-BEAM ETCHING (IBE) &amp; PPLN FERROELECTRIC POLING PINN-MPC, ONLINE 50kHz CHERENKOV SHG &amp; ELLIPSOMETRY METROLOGY &amp; SEMI S2 / S8 / SIL-3 HV POLING CROWBAR INTERLOCK CALCULATOR</span>
+    <h2>自主 150/200mm 薄膜铌酸锂（TFLN / LNOI）1.6T/3.2T 电光调制器与周期极化晶圆：He⁺ 智能剥离、离子束刻蚀与 PPLN 铁电畴 PINN-MPC 及 SIL-3 高压极化撬棒联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 台 <code>150 / 200 mm</code> 绝缘体上薄膜铌酸锂（<code>TFLN / LNOI</code>，<code>300–600 nm</code> <code>X-Cut / Z-Cut</code> 单晶 $\text{LiNbO}_3$ 键合于 <code>2–4.7 μm</code> 热氧化硅/石英/蓝宝石埋氧层，用于 AI 超算集群 <code>1.6T / 3.2T</code> 薄膜铌酸锂马赫-曾德尔电光调制器 <code>MZM</code> 半波电压长度积 $V_\pi L &lt; 1.8\text{ V}\cdot\text{cm}$、<code>3-dB</code> 电光带宽 <code>&gt; 110 GHz</code> 以及量子纠缠光子源周期极化铌酸锂波导 <code>PPLN</code>）制造机台规模下，启用 <code>Standard_NC40ads_H100_v5</code> <strong>高剂量氦离子注入（<code>He+ 150–300 keV, 3–5×10¹⁶ cm⁻² Smart-Cut</code>）微裂纹奥斯特瓦尔德熟化剥离热力学、斜角旋转氩/三氟甲烷反应离子束刻蚀（<code>Ar⁺ / CHF3 IBE</code> $60^\circ\text{–}75^\circ$ 脊形波导倾角与非挥发性氟化锂 $\text{LiF}$ 侧壁重沉积围栏 <code>Fencing</code> 抑制）及强矫顽场（$E_c \approx 21\text{ kV/mm}$）铁电畴壁成核-横向扩展动力学</strong> <code>PINN</code> + 阶梯退火剥离温控、离子束入射倾角/背冷氦压/电子中和枪流量与多脉冲自适应高压极化波形协同 <code>MPC</code>（锁定整片 <code>TFLN</code> 膜厚均匀性 <code>≤ ±1.2 nm 3σ</code>、波导传输损耗 <code>&lt; 0.03 dB/cm</code> 与 <code>PPLN</code> 极化占空比 <code>50.0 ± 0.3%</code>，$V_\pi L$ 带宽达标率与量子频移转换效率良率提升 <code>+45.6%</code>，脊形波导散射损耗与极化占空比偏差削减 <code>-63.4%</code>）、<code>SEMI S2 / S8 / ANSI Z136.1 / IEC 61508 SIL-3</code> 检出高压极化电极漏电击穿（电流密度尖峰 <code>&gt; 18.5 mA/cm²</code>）、<code>IBE</code> 中和电子束失锁引发绝缘衬底表面电荷积累拉弧或离子注入机高能韧致辐射 X 射线/六氟化硫（<code>SF6</code>）绝缘气泄漏时，瞬时触发固态高压极化电源亚微秒级撬棒泄放（<code>HV Crowbar &lt; 500 ns</code>）、遮断射频离子源栅极并启动注入机双联锁快门（<code>0.2 ms</code> 响应，<code>0.0%</code> 埋氧层电介质击穿炸裂晶圆、静电荷放电烧毁共面波导行波电极或辐射/氟化物泄漏事故，对比传统固定退火升温、盲刻与开环极化脉冲反模式 <code>1.6%</code> 风险）以及机台边缘 <code>50 kHz</code> 非破坏性切伦科夫二次谐波显微成像（<code>Cherenkov SHG</code> 三维铁电畴反转边界层析）、穆勒矩阵光谱椭偏仪与二次离子质谱（<code>SIMS</code> $\text{LiF}$ 终点）边缘分诊（<code>0.25 ms</code>，削减 <code>99.6%</code> 光子晶圆厂 WAN 带宽，避免 <code>3.9%</code> 侧壁 $\text{LiF}$ 重沉积“兔耳”围栏导致高传输损耗、<code>Smart-Cut</code> 微泡崩裂或相邻反转铁电畴横向合并报废）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 150/200mm 薄膜铌酸锂 (TFLN Smart-Cut 剥离 + IBE 波导刻蚀 + PPLN 极化) 机台数 (TFLN/LNOI Process Tools): <strong id="lbl_tfln_tools" style="color:var(--teal)">8</strong></label>
+          <input type="range" id="rng_tfln_tools" min="2" max="32" step="2" value="8" oninput="runTflnLnoiModulatorLab()">
+        </div>
+        <div class="form-row">
+          <label>2. He⁺ 剥离/IBE 侧壁零重沉积/PPLN 铁电畴 PINN-MPC 与 SEMI S2 / SIL-3 极化撬棒联锁模式 (TFLN/LNOI Governance Mode)</label>
+          <select id="sel_tfln_mode" onchange="runTflnLnoiModulatorLab()">
+            <option value="pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge" selected>He⁺ 注入微裂纹剥离、Ar/CHF3 IBE 零 LiF 重沉积脊波导与 PPLN 铁电畴成核 PINN-MPC (+45.6% 调制器 VπL 带宽与 PPLN 良率 / -63.4% 波导损耗与极化占空比误差) + SEMI S2 / S8 SIL-3 0.2ms 高压极化撬棒、IBE 中和枪保护与注入快门硬联锁 + 0.25ms 50kHz 切伦科夫 SHG 与椭偏边缘 (推荐)</option>
+            <option value="fixed_implant_anneal_ramp_blind_argon_milling_open_loop_hv_poling_pulse_cloud">传统反模式：固定退火升温斜率、纯氩离子盲铣与开环方波高压极化 (+6.7% 良率增益) + 无 0.2ms 高压极化击穿撬棒与静电荷中和硬联锁 (1.6% PPLN 21kV/mm 强场击穿埋氧层炸裂晶圆、IBE 绝缘衬底电荷拉弧烧毁金电极或注入机辐射违例风险) + 缺乏在线 50kHz 切伦科夫 SHG 与 SIMS 终点闭环 (3.9% 非挥发性 LiF 侧壁重沉积围栏使波导损耗劣化 &gt; 0.5 dB/cm、Smart-Cut 起泡剥落或铁电畴过度横向扩展合并报废)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="tflnLnoiModulatorOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6775,6 +6799,24 @@ resource floatingWindH2Pool 'Microsoft.ContainerService/managedClusters/agentPoo
       'aksclaw.io/platform-edge-10khz-das-botdr-uhf-pd': 'enabled-1.2ms-99.5pct-offshore-satcom-wan-cut'
     }
   }
+}`,
+  `// Blueprint #160 (160-Blueprint Milestone!): 150/200mm Thin-Film Lithium Niobate (TFLN / LNOI 300-600nm X-Cut 1.6T/3.2T Electro-Optic MZM VpiL < 1.8 V*cm, >110 GHz) He+ Smart-Cut, Ar/CHF3 Ion-Beam Etching (IBE) & PPLN Poling PINN-MPC + Online 50 kHz Cherenkov SHG & Ellipsometry Metrology + SEMI S2 / S8 / IEC 61508 SIL-3 HV Poling Crowbar Pool
+param location string = 'eastus2'
+param tflnProcessTools int = 8
+
+resource tflnLnoiModulatorPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'tflnpinn'
+  properties: {
+    count: 2 // Standard_NC40ads_H100_v5 (He+ Smart-Cut Blister-Free Exfoliation, Ar/CHF3 IBE Zero-LiF-Redeposition & PPLN Domain-Inversion PINN-MPC + Online 50 kHz Cherenkov SHG & Ellipsometry Edge)
+    vmSize: 'Standard_NC40ads_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'tfln-lnoi-modulator-smartcut-ibe-shg-semis2-sil3-agent'
+      'aksclaw.io/pinn-mpc-smartcut-ibe-ppln-domain-inversion': 'enabled-45.6pct-mzm-vpil-ppln-yield-gain-63.4pct-loss-duty-error-cut'
+      'aksclaw.io/semis2-s8-sil3-ppln-hv-crowbar-ibe-implanter-guard': 'enforced-0.2ms-zero-dielectric-punchthrough-wafer-crack-or-arc'
+      'aksclaw.io/tool-edge-50khz-cherenkov-shg-ellipsometry-sims': 'enabled-0.25ms-99.6pct-photonics-fab-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -7034,6 +7076,30 @@ runCpoSiliconPhotonicsHexapodLab();
 runBspdnBacksidePowerNtsvLab();
 runDiamondHphtMpcvdWaferLab();
 runFloatingWindH2HvdcUmbilicalLab();
+runTflnLnoiModulatorLab();
+
+function runTflnLnoiModulatorLab() {
+  const tools = parseInt(document.getElementById('rng_tfln_tools').value, 10);
+  const mode = document.getElementById('sel_tfln_mode').value;
+  document.getElementById('lbl_tfln_tools').textContent = tools.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(tools / 4));
+  const pods = tools <= 8 ? Math.max(2, Math.min(8, tools)) : Math.max(8, Math.floor(tools / 2));
+  const ok = mode === 'pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge';
+  const mpcStr = ok ? "He⁺ 离子注入 (150–300 keV) 纳米气泡压力演化剥离动力学、斜角旋转 Ar/CHF3 离子束刻蚀 (IBE 60°–75° 脊形波导倾角与零 LiF 重沉积围栏) 及 21 kV/mm 强矫顽场 PPLN 铁电畴成核-横向扩展 PINN + 阶梯退火温控、离子束倾角/电子中和流与多脉冲极化电流波形协同 MPC · 1.6T/3.2T TFLN 调制器 VπL (< 1.8 V·cm) 与 PPLN 转换良率 +45.6% · 波导传输损耗 (< 0.03 dB/cm) 与极化占空比偏差 -63.4%" : "传统靠固定退火升温斜率、纯氩离子盲铣与开环方波高压极化滞后 · 仅 +6.7% 良率增益 / -9.6% 误差削减 (纯 Ar⁺ 铣削铌酸锂时高熔点非挥发性产物重新附着于波导侧壁形成兔耳围栏，且开环高压脉冲极易导致 3.9% 相邻反转铁电畴横向过度合并或 Smart-Cut 局部微泡提前爆裂)";
+  const sil3Str = ok ? "0.2 ms SEMI S2 / S8 / ANSI Z136.1 / IEC 61508 SIL-3 检出 PPLN 高压极化位移电流尖峰 (> 18.5 mA/cm² 电介质击穿前兆)、IBE 中和电子枪断流导致绝缘衬底静电位跃升或注入机辐射/SF6 超限时瞬时触发 < 500ns 固态高压撬棒泄放、遮断离子源栅极并闭锁法拉第杯快门硬联锁 · 0.0% 埋氧层电介质击穿炸片、行波电极静电拉弧烧毁或辐射泄漏违例" : "无 0.2ms 高压极化撬棒与离子束电荷中和硬联锁 (155.0 ms 传统 PLC 联锁滞后) · 1.6% PPLN 21kV/mm 强场击穿 SiO2 埋氧层炸裂晶圆、绝缘衬底静电荷拉弧损毁共面行波电极或注入机超标风险";
+  const edgeStr = ok ? "0.25 ms 机台端 50 kHz 非破坏性切伦科夫二次谐波显微成像 (Cherenkov SHG 实时反演三维铁电畴反转深度与 50.0 ± 0.3% 占空比) + 穆勒矩阵光谱椭偏仪 (±1.2 nm 膜厚) + SIMS LiF 刻蚀终点边缘 (-99.6% 晶圆厂 WAN 带宽) · 0.0% LiF 侧壁重沉积围栏、Smart-Cut 起泡或铁电畴合并漏检" : "192.0 ms 依赖刻蚀极化后破坏性氢氟酸 (HF) 腐蚀抽检或离线光纤耦合测试 · 无法在毫秒级铁电畴壁雪崩扩展周期内实施精确电荷积分截断";
+
+  document.getElementById('tflnLnoiModulatorOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.6% PPLN 强场击穿炸裂晶圆或静电拉弧烧毁电极风险 · 3.9% LiF 侧壁重沉积围栏、微泡剥落或铁电畴合并漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC40ads_H100_v5 节点 (${pods} 个薄膜铌酸锂孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>50kHz 切伦科夫二次谐波 (Cherenkov SHG) 铁电畴显微、穆勒椭偏与 SIMS 刻蚀终点边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runFloatingWindH2HvdcUmbilicalLab() {
   const units = parseInt(document.getElementById('rng_floating_wind_units').value, 10);

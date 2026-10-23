@@ -9916,6 +9916,53 @@
         "uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct": 4.3,
         "floating_wind_h2_hvdc_umbilical_slo_met": false
       }
+    ],
+    "tfln_lnoi_modulator_profiles": [
+      {
+        "tfln_process_tools": 8,
+        "tfln_governance_mode": "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tfln_lnoi_pods": 8,
+        "tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct": 45.6,
+        "waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct": 63.4,
+        "semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms": 0.2,
+        "unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct": 0.0,
+        "tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": 0.0,
+        "tfln_lnoi_modulator_slo_met": true
+      },
+      {
+        "tfln_process_tools": 32,
+        "tfln_governance_mode": "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tfln_lnoi_pods": 16,
+        "tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct": 45.6,
+        "waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct": 63.4,
+        "semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms": 0.2,
+        "unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct": 0.0,
+        "tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": 0.0,
+        "tfln_lnoi_modulator_slo_met": true
+      },
+      {
+        "tfln_process_tools": 8,
+        "tfln_governance_mode": "fixed_implant_anneal_ramp_blind_argon_milling_open_loop_hv_poling_pulse_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tfln_lnoi_pods": 8,
+        "tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct": 6.7,
+        "waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct": 9.6,
+        "semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms": 155.0,
+        "unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct": 1.6,
+        "tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms": 192.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": 3.9,
+        "tfln_lnoi_modulator_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -18206,5 +18253,52 @@
       "floating_wind_h2_hvdc_umbilical_slo_met": false
     }
   },
-  "trace_sha256": "67cc0f579a3eccdfa63a60d9d520b62195038c5d21aec34a3447a231c66e9aa7"
+  "demo_159_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox": {
+    "tfln_8_tools": {
+      "tfln_process_tools": 8,
+      "tfln_governance_mode": "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tfln_lnoi_pods": 8,
+      "tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct": 45.6,
+      "waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct": 63.4,
+      "semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms": 0.2,
+      "unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct": 0.0,
+      "tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": 0.0,
+      "tfln_lnoi_modulator_slo_met": true
+    },
+    "tfln_32_tools": {
+      "tfln_process_tools": 32,
+      "tfln_governance_mode": "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tfln_lnoi_pods": 16,
+      "tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct": 45.6,
+      "waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct": 63.4,
+      "semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms": 0.2,
+      "unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct": 0.0,
+      "tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": 0.0,
+      "tfln_lnoi_modulator_slo_met": true
+    },
+    "raw_tfln_8_tools": {
+      "tfln_process_tools": 8,
+      "tfln_governance_mode": "fixed_implant_anneal_ramp_blind_argon_milling_open_loop_hv_poling_pulse_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tfln_lnoi_pods": 8,
+      "tfln_modulator_vpil_bandwidth_and_ppln_conversion_yield_gain_pct": 6.7,
+      "waveguide_propagation_loss_db_cm_and_poling_duty_cycle_error_reduction_pct": 9.6,
+      "semis2_s8_sil3_ppln_hv_crowbar_ibe_beam_quench_and_implanter_interlock_ms": 155.0,
+      "unmitigated_ppln_dielectric_punchthrough_wafer_cracking_or_xray_leak_pct": 1.6,
+      "tool_edge_50khz_cherenkov_shg_and_ellipsometry_sims_telemetry_loop_ms": 192.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": 3.9,
+      "tfln_lnoi_modulator_slo_met": false
+    }
+  },
+  "trace_sha256": "8b498225abf782235917154a1403f6a03de4f49f2991def278fb8f07ac7539ed"
 }
