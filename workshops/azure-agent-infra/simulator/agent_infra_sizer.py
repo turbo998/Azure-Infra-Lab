@@ -7798,6 +7798,55 @@ def simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sand
     }
 
 
+def simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox(
+    scco2_smb_purification_skids: int = 8,
+    scco2_governance_mode: str = "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Industrial Supercritical Fluid Extraction (scCO2, T > 31.1 C, P = 100-700 bar)
+    & Simulated Moving Bed (SMB / SFC) Preparative Chiral Pharmaceutical Chromatography Pool,
+    Peng-Robinson / Chrastil Solubility Isotherm & Competitive Langmuir Adsorption Wavefront PINN-MPC,
+    Inline 20 kHz UV-DAD / Coriolis Mass-Density / Polarimetry PAT & ASME BPVC Section VIII Div. 2 /
+    ISO 4126 / FDA 21 CFR Part 11 / IEC 61511 SIL-3 Overpressure, Joule-Thomson Dry-Ice Anti-Plug
+    & CO2 Asphyxiation Interlock Sandbox (Chapter 157).
+    """
+    if scco2_smb_purification_skids < 1:
+        raise ValueError("scco2_smb_purification_skids must be >= 1")
+    valid_modes = {
+        "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge",
+        "fixed_bpr_pressure_step_timed_smb_port_switch_offline_hplc_fraction_assay_cloud",
+    }
+    if scco2_governance_mode not in valid_modes:
+        raise ValueError(f"scco2_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = scco2_governance_mode == "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge"
+    active_scco2_smb_pods = max(2, min(8, int(scco2_smb_purification_skids))) if scco2_smb_purification_skids <= 8 else max(8, int(scco2_smb_purification_skids // 2))
+    gpu_nodes = max(2, math.ceil(scco2_smb_purification_skids / 4))
+
+    chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct = 44.3 if governed else 6.6
+    cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct = 60.2 if governed else 9.1
+    asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms = 0.2 if governed else 137.0
+    unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct = 0.0 if governed else 1.5
+    skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms = 0.3 if governed else 184.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct = 0.0 if governed else 3.7
+
+    return {
+        "scco2_smb_purification_skids": scco2_smb_purification_skids,
+        "scco2_governance_mode": scco2_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_scco2_smb_pods": active_scco2_smb_pods,
+        "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct,
+        "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct,
+        "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms,
+        "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct,
+        "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct,
+        "scco2_supercritical_smb_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

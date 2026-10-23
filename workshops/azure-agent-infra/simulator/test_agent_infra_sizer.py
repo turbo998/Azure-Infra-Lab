@@ -158,6 +158,7 @@ from agent_infra_sizer import (
     simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox,
     simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox,
     simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox,
+    simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3164,6 +3165,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct"], 3.0)
         self.assertTrue(gov["optical_fiber_preform_draw_slo_met"])
         self.assertFalse(raw["optical_fiber_preform_draw_slo_met"])
+
+    def test_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox(self) -> None:
+        gov = simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox(
+            8, "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge"
+        )
+        raw = simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox(
+            8, "fixed_bpr_pressure_step_timed_smb_port_switch_offline_hplc_fraction_assay_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_scco2_smb_pods"], 8)
+        self.assertEqual(gov["chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct"], 44.3)
+        self.assertEqual(gov["cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct"], 60.2)
+        self.assertEqual(gov["asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct"], 1.0)
+        self.assertEqual(gov["skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct"], 3.0)
+        self.assertTrue(gov["scco2_supercritical_smb_slo_met"])
+        self.assertFalse(raw["scco2_supercritical_smb_slo_met"])
 
 
 if __name__ == "__main__":

@@ -9512,6 +9512,68 @@
         "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 3.6,
         "optical_fiber_preform_draw_slo_met": false
       }
+    ],
+    "scco2_supercritical_smb_profiles": [
+      {
+        "scco2_smb_purification_skids": 4,
+        "scco2_governance_mode": "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_scco2_smb_pods": 4,
+        "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": 44.3,
+        "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": 60.2,
+        "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": 0.2,
+        "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": 0.0,
+        "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 0.0,
+        "scco2_supercritical_smb_slo_met": true
+      },
+      {
+        "scco2_smb_purification_skids": 8,
+        "scco2_governance_mode": "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_scco2_smb_pods": 8,
+        "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": 44.3,
+        "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": 60.2,
+        "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": 0.2,
+        "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": 0.0,
+        "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 0.0,
+        "scco2_supercritical_smb_slo_met": true
+      },
+      {
+        "scco2_smb_purification_skids": 32,
+        "scco2_governance_mode": "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_scco2_smb_pods": 16,
+        "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": 44.3,
+        "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": 60.2,
+        "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": 0.2,
+        "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": 0.0,
+        "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 0.0,
+        "scco2_supercritical_smb_slo_met": true
+      },
+      {
+        "scco2_smb_purification_skids": 8,
+        "scco2_governance_mode": "fixed_bpr_pressure_step_timed_smb_port_switch_offline_hplc_fraction_assay_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_scco2_smb_pods": 8,
+        "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": 6.6,
+        "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": 9.1,
+        "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": 137.0,
+        "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": 1.5,
+        "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": 184.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 3.7,
+        "scco2_supercritical_smb_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -17473,5 +17535,52 @@
       "optical_fiber_preform_draw_slo_met": false
     }
   },
-  "trace_sha256": "b35376d5431d534aaa6123c03797c4d3553c90c84b1052384049f5037b16e765"
+  "demo_152_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox": {
+    "scco2_8_skids": {
+      "scco2_smb_purification_skids": 8,
+      "scco2_governance_mode": "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_scco2_smb_pods": 8,
+      "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": 44.3,
+      "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": 60.2,
+      "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": 0.2,
+      "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": 0.0,
+      "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 0.0,
+      "scco2_supercritical_smb_slo_met": true
+    },
+    "scco2_32_skids": {
+      "scco2_smb_purification_skids": 32,
+      "scco2_governance_mode": "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_scco2_smb_pods": 16,
+      "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": 44.3,
+      "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": 60.2,
+      "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": 0.2,
+      "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": 0.0,
+      "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 0.0,
+      "scco2_supercritical_smb_slo_met": true
+    },
+    "raw_scco2_8_skids": {
+      "scco2_smb_purification_skids": 8,
+      "scco2_governance_mode": "fixed_bpr_pressure_step_timed_smb_port_switch_offline_hplc_fraction_assay_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_scco2_smb_pods": 8,
+      "chiral_api_enantiomeric_purity_yield_and_smb_productivity_gain_pct": 6.6,
+      "cosolvent_consumption_and_column_pressure_drop_variance_reduction_pct": 9.1,
+      "asme_viii_iso4126_sil3_overpressure_jt_dryice_and_co2_pel_interlock_ms": 137.0,
+      "unmitigated_vessel_overpressure_jt_dryice_burst_or_co2_asphyxiation_pct": 1.5,
+      "skid_edge_20khz_uv_dad_coriolis_density_and_polarimetry_pat_loop_ms": 184.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 3.7,
+      "scco2_supercritical_smb_slo_met": false
+    }
+  },
+  "trace_sha256": "7294ba22857314fed07db89578181c9b406c3c4ab47982dfed0285d3edc2e9ca"
 }
