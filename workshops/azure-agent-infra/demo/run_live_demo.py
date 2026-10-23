@@ -179,6 +179,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
     simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
     simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
+    simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1205,6 +1206,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "tfln_8_tools": simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(8, "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge"),
             "tfln_32_tools": simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(32, "pinn_mpc_smartcut_helium_blister_ibe_redeposition_ppln_shg_semis2_sil3_edge"),
             "raw_tfln_8_tools": simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(8, "fixed_implant_anneal_ramp_blind_argon_milling_open_loop_hv_poling_pulse_cloud"),
+        },
+        "demo_160_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox": {
+            "lh2_8_trains": simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(8, "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge"),
+            "lh2_32_trains": simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(32, "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge"),
+            "raw_lh2_8_trains": simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(8, "manual_valve_chilldown_unmonitored_ortho_para_slip_flare_vent_boil_off_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

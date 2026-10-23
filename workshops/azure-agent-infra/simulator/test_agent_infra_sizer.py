@@ -166,6 +166,7 @@ from agent_infra_sizer import (
     simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
     simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
     simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
+    simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3340,6 +3341,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct"], 3.0)
         self.assertTrue(gov["tfln_lnoi_modulator_slo_met"])
         self.assertFalse(raw["tfln_lnoi_modulator_slo_met"])
+
+    def test_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(self) -> None:
+        gov = simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(
+            8, "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge"
+        )
+        raw = simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(
+            8, "manual_valve_chilldown_unmonitored_ortho_para_slip_flare_vent_boil_off_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_lh2_zbo_pods"], 8)
+        self.assertEqual(gov["zbo_reliquefaction_specific_energy_and_loading_throughput_gain_pct"], 42.8)
+        self.assertEqual(gov["latent_ortho_para_boil_off_and_chilldown_ciwh_pressure_surge_reduction_pct"], 64.1)
+        self.assertEqual(gov["nfpa2_cgah3_sil3_lov_solid_o2_he_purge_and_flare_isolation_interlock_ms"], 0.6)
+        self.assertEqual(gov["unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct"], 1.0)
+        self.assertEqual(gov["terminal_edge_10khz_rotational_raman_and_cryo_fbg_telemetry_loop_ms"], 0.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct"], 3.0)
+        self.assertTrue(gov["lh2_cryogenic_zbo_orthopara_slo_met"])
+        self.assertFalse(raw["lh2_cryogenic_zbo_orthopara_slo_met"])
 
 
 if __name__ == "__main__":

@@ -572,6 +572,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(157)">158. 超高压高温 (HPHT 5.5–8.0 GPa, 1,350–1,650°C 六面顶/Belt) 与 915MHz/2.45GHz 微波等离子体化学气相沉积 (MPCVD 15–60 kW) 100mm (4 英寸) 电子/量子级 (NV⁻ 色心) 单晶金刚石晶圆径向温度梯度 (&lt; 3.5 K/cm) 与等离子体球化/石英窗拉弧抑制 PINN-MPC、在线 10kHz 发射光谱 (OES C2 516.5nm / Hα 656.3nm)/双色高温计计量及 ASME BPVC VIII-3 / NFPA 55 / IEC 61508 SIL-3 碳化钨顶锤卸载防爆、微波源撬棒关断与氢气/甲烷氮气吹扫淬灭硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(158)">159. 远海深水 1–5 GW 漂浮式海上风电原位制氢与水下 66kV / ±320kV HVDC 动态输出脐带缆、半潜/单柱平台六自由度 (6-DOF) 纵摇-横摇-首摇与立管涡激振动 (VIV) 抑制及 PEM 电解槽阵列爬坡率 PINN-MPC、在线 10kHz 分布式声学/布里渊光纤传感 (DAS/BOTDR) 与无 SF6 GIS 特高频局部放电 (UHF PD) 计量及 IEC 61400-3-2 / DNV-ST-0119 / CIGRE TB 852 / IEC 61511 SIL-3 动态海缆最小弯曲半径 (MBR)、氢氧互串 (&lt; 1.6% LEL) 氮封与紧急脱离系统 (ERS) 硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(159)">160. 150/200mm 薄膜铌酸锂 (TFLN / LNOI 300–600nm X-Cut LiNbO3-on-Insulator 1.6T/3.2T 电光马赫-曾德尔调制器 VπL &lt; 1.8 V·cm, &gt; 110 GHz) 氦离子注入智能剥离 (He⁺ Smart-Cut 零起泡裂片)、氩/氟离子束刻蚀 (Ar/CHF3 IBE 60°–75° 脊波导侧壁无重沉积围栏) 与周期极化反转 (PPLN 铁电畴占空比 50.0 ± 0.3%) PINN-MPC、在线 50kHz 切伦科夫倍频显微 (Cherenkov SHG)/光谱椭偏仪计量及 SEMI S2 / S8 / IEC 61508 SIL-3 PPLN 高压极化击穿撬棒与离子注入联锁池 (Bicep · 160 蓝图里程碑)</button>
+      <button class="tab-btn" onclick="showBlueprint(160)">161. 零蒸发 (ZBO) 深冷液氢 (LH2 20.28 K, -252.87°C, 40,000–160,000 m³ 真空珠光砂/多层绝热球罐与液氢运输船装卸终端)、正仲氢催化转化 (o-H2 → p-H2 ≥ 99.8% 放热 ΔH = -703 kJ/kg 水合氧化铁固定床)、两相预冷间歇泉喷发 (Geysering)/凝结水击 (CIWH) 与热分层翻滚 (Rollover) 抑制 PINN-MPC、在线 10kHz 转动拉曼光谱 (354/587 cm⁻¹)/深冷光纤光栅 (FBG) 计量及 NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / IEC 61511 SIL-3 真空夹层破空 (LOV) 固态氧冷凝防爆、氦气吹扫与快速应急脱离 (ERS) 硬联锁池 (Bicep · 160 周期与 160 仿真器里程碑)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4213,6 +4214,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 160: Autonomous Zero-Boil-Off (ZBO) Cryogenic Liquid Hydrogen (LH2) Storage & Marine Export Terminal Calculator -->
+  <section class="card" style="margin-top:1.2rem;border-color:rgba(16,185,129,0.45);">
+    <span class="pill pill-teal">TOOL 160 (160-SIMULATOR MILESTONE!) · ZERO-BOIL-OFF (ZBO) CRYOGENIC LIQUID HYDROGEN (LH2 20.28 K, -252.87°C, 40,000–160,000 m³ SPHERICAL STORAGE &amp; MARINE EXPORT TERMINAL), ORTHO-TO-PARA HYDROGEN (o-H₂ → p-H₂ ≥ 99.8%, ΔH = -703 kJ/kg) CATALYTIC CONVERSION, CHILLDOWN GEYSERING / CIWH &amp; ROLLOVER PINN-MPC, ONLINE 10kHz ROTATIONAL RAMAN (354/587 cm⁻¹) &amp; CRYO-FBG METROLOGY &amp; NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / SIL-3 LOSS-OF-VACUUM (LOV) SOLID-O₂ GUARD &amp; HELIUM PURGE INTERLOCK CALCULATOR</span>
+    <h2>自主零蒸发（ZBO）深冷液氢（LH₂ 20.28 K）球罐与海运装卸终端：正仲氢催化转化、两相预冷防喘水击 PINN-MPC 及 SIL-3 破空固氧防爆与氦吹扫联锁测算器（160 周期与 160 仿真器里程碑）</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 条深冷液氢（<code>LH2, 20.28 K / -252.87°C</code>，<code>40,000–160,000 m³</code> 高真空多层绝热 <code>MLI</code> / 空心玻璃微珠球罐与海运装船低温流体装卸臂）液化-储运-装船装置规模下，启用 <code>Standard_NV36ads_A10_v5</code> <strong>多级水合氧化铁（$\text{Fe}_2\text{O}_3\cdot x\text{H}_2\text{O}$）固定床正仲氢自旋异构放热转化动力学（$\text{o-H}_2 \to \text{p-H}_2 \ge 99.8\%$，转化放热 $\Delta H = -703\text{ kJ/kg}$ 高于液氢气化潜热 $446\text{ kJ/kg}$）、真空夹套低温管线两相流莱顿弗罗斯特（<code>Leidenfrost</code>）膜态沸腾预冷间歇泉反喷（<code>Geysering</code>）/凝结诱发水击（<code>CIWH</code>）及球罐气液界面热分层翻滚（<code>Rollover</code>）</strong> <code>PINN</code> + 氦/氖逆布雷顿（<code>Reverse-Brayton</code>）透平膨胀机零蒸发（<code>ZBO</code>）再液化冷量分配与装船预冷脉冲阀门协同 <code>MPC</code>（锁定出塔仲氢纯度 <code>≥ 99.8%</code>、日蒸发率 <code>BOR = 0.00%/d (ZBO)</code> 且预冷压降尖峰 <code>&lt; 0.12 MPa</code>，再液化比功耗削减与装船周转吞吐提升 <code>+42.8%</code>，残余正氢放热蒸发与两相预冷水击压力峰值削减 <code>-64.1%</code>）、<code>NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / IEC 61511 SIL-3</code> 检出球罐或低温管线真空夹层破空（<code>Loss of Vacuum &gt; 10 Pa</code> 空气渗入在 <code>20.28 K</code> 外壁凝结为固态氧/固态氮，与液氢混合即形成高感度雷管级固氧-液氢爆轰物）、装船臂低温旋转接头泄漏或火炬管负压回火吸空气（由于氮气在 <code>63.15 K</code> 冻结堵塞，严禁使用普通氮气吹扫 <code>20 K</code> 液氢死区）时，瞬时触发超纯氦气（<code>99.999% He</code>，沸点 <code>4.2 K</code>）正压吹扫惰化、关闭气动低温切断阀、启动水下/码头液压脉冲快速脱离耦合器（<code>PERC / ERS</code>）并投入紧急增压泄放火炬联锁（<code>0.6 ms</code> 响应，<code>0.0%</code> 真空破空固氧-液氢冷凝爆轰、氮吹扫冰堵胀裂阀门或两相水击拉断装卸臂事故，对比传统人工节流预冷与开环火炬放空反模式 <code>1.7%</code> 风险）以及终端边缘 <code>10 kHz</code> 原位光纤转动拉曼光谱（<code>Rotational Raman 354 cm⁻¹ J=0→2 仲氢峰 / 587 cm⁻¹ J=1→3 正氢峰</code> 实时监测正仲比）、<code>4–300 K</code> 再生光纤布拉格光栅（<code>Cryo-FBG</code> 罐壁与管线三维热应力层析）与夹套四极杆质谱氦检漏边缘分诊（<code>0.5 ms</code>，削减 <code>99.6%</code> 液氢港口终端 WAN 带宽，避免 <code>4.1%</code> 催化剂床层沟流导致残余正氢入罐慢速放热引发球罐超压翻滚或装船预冷气塞间歇泉喷发）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 深冷液氢 ZBO 球罐与海运装船装置序列数 (LH2 Liquefaction, Storage &amp; Loading Trains): <strong id="lbl_lh2_trains" style="color:var(--teal)">8</strong></label>
+          <input type="range" id="rng_lh2_trains" min="2" max="32" step="2" value="8" oninput="runLh2CryoZboLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 正仲氢催化/两相预冷防喘水击 PINN-MPC 与 NFPA 2 / CGA H-3 SIL-3 破空固氧及氦吹扫联锁模式 (LH2 ZBO Governance Mode)</label>
+          <select id="sel_lh2_mode" onchange="runLh2CryoZboLab()">
+            <option value="pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge" selected>o-H2→p-H2 (≥99.8%) 放热催化、两相预冷防 Geysering/CIWH 水击与氦逆布雷顿 ZBO 再液化 PINN-MPC (+42.8% 再液化能效与装船吞吐 / -64.1% 潜热蒸发与水击压力峰值) + NFPA 2 / CGA H-3 SIL-3 0.6ms 破空固氧防爆、4.2K 纯氦吹扫防冰堵与 ERS 脱离硬联锁 + 0.5ms 10kHz 转动拉曼与深冷 FBG 边缘 (推荐)</option>
+            <option value="manual_valve_chilldown_unmonitored_ortho_para_slip_flare_vent_boil_off_cloud">传统反模式：固定节流阀经验预冷、离线正仲氢抽检与开环 BOG 火炬放空 (+6.5% 吞吐增益) + 无 0.6ms 破空固氧防护与纯氦吹扫硬联锁 (1.7% 真空夹层破空凝结固态氧与液氢混合爆轰、误用液氮/氮气吹扫在 20K 冻结堵死安全阀或 CIWH 水击震裂管线风险) + 缺乏在线 10kHz 转动拉曼与 Cryo-FBG 闭环 (4.1% 催化剂失活导致残余 o-H2 在罐内释放 703 kJ/kg 转化热诱发分层翻滚超压或预冷间歇泉反喷)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="lh2CryoZboOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6817,6 +6841,24 @@ resource tflnLnoiModulatorPool 'Microsoft.ContainerService/managedClusters/agent
       'aksclaw.io/tool-edge-50khz-cherenkov-shg-ellipsometry-sims': 'enabled-0.25ms-99.6pct-photonics-fab-wan-cut'
     }
   }
+}`,
+  `// Blueprint #161 (160-Cycle & 160-Simulator Milestone!): Zero-Boil-Off (ZBO) Cryogenic Liquid Hydrogen (LH2 20.28 K, -252.87 C, 40,000-160,000 m3 Spherical Storage & Marine Export Terminal), Ortho-to-Para H2 (>=99.8%, dH = -703 kJ/kg) Catalysis, Chilldown CIWH & Rollover PINN-MPC + Online 10 kHz Rotational Raman & Cryo-FBG Metrology + NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / IEC 61511 SIL-3 Loss-of-Vacuum Solid-O2 Guard & Helium Purge Pool
+param location string = 'eastus2'
+param lh2CryoTrains int = 8
+
+resource lh2CryoZboPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'lh2zbopinn'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (Ortho-Para H2 Catalytic Conversion, Two-Phase Chilldown Geysering/CIWH & Reverse-Brayton ZBO PINN-MPC + Online 10 kHz Rotational Raman & Cryo-FBG Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'lh2-cryogenic-zbo-orthopara-raman-nfpa2-sil3-agent'
+      'aksclaw.io/pinn-mpc-ortho-para-chilldown-ciwh-zbo': 'enabled-42.8pct-zbo-energy-loading-gain-64.1pct-boiloff-ciwh-surge-cut'
+      'aksclaw.io/nfpa2-cgah3-sil3-lov-solido2-he-purge-ers-guard': 'enforced-0.6ms-zero-solido2-detonation-n2-plug-or-ciwh-rupture'
+      'aksclaw.io/terminal-edge-10khz-rotational-raman-cryo-fbg': 'enabled-0.5ms-99.6pct-lh2-terminal-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -7077,6 +7119,30 @@ runBspdnBacksidePowerNtsvLab();
 runDiamondHphtMpcvdWaferLab();
 runFloatingWindH2HvdcUmbilicalLab();
 runTflnLnoiModulatorLab();
+runLh2CryoZboLab();
+
+function runLh2CryoZboLab() {
+  const trains = parseInt(document.getElementById('rng_lh2_trains').value, 10);
+  const mode = document.getElementById('sel_lh2_mode').value;
+  document.getElementById('lbl_lh2_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const pods = trains <= 8 ? Math.max(2, Math.min(8, trains)) : Math.max(8, Math.floor(trains / 2));
+  const ok = mode === 'pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge';
+  const mpcStr = ok ? "多级水合氧化铁催化剂正仲氢转化动力学 (o-H2 → p-H2 ≥ 99.8%, ΔH = -703 kJ/kg)、20.28 K 低温管线两相流 Leidenfrost 膜态沸腾预冷间歇泉 (Geysering)/凝结水击 (CIWH) 与球罐热分层翻滚 (Rollover) PINN + 氦逆布雷顿透平膨胀机零蒸发 (ZBO) 再液化与脉冲预冷阀协同 MPC · ZBO 再液化比能效与海运装船吞吐 +42.8% · 残余正氢放热蒸发与预冷水击压力峰值 -64.1%" : "传统靠固定阀门开度经验预冷、离线正仲氢抽检与开环 BOG 火炬放空滞后 · 仅 +6.5% 吞吐增益 / -9.3% 水击削减 (未完全转化的正氢入罐后持续释放 703 kJ/kg 潜热引发高达 4.1% 底部过热分层翻滚超压或低温长管线预冷气塞间歇泉剧烈水击)";
+  const sil3Str = ok ? "0.6 ms NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / IEC 61511 SIL-3 检出真空夹层破空 (LOV > 10 Pa 空气渗入在 20.28 K 凝结为高爆轰敏感度固态氧)、装船臂旋转接头微漏或火炬负压吸氧时瞬时注入 99.999% 超纯氦气 (4.2K 沸点防 63K 氮气结冰堵死安全阀) 正压惰化、闭合低温切断阀并触发 PERC/ERS 紧急脱离硬联锁 · 0.0% 破空固氧-液氢爆轰、氮冰堵胀裂或水击断管违例" : "无 0.6ms 破空固氧防护与纯氦吹扫硬联锁 (420.0 ms 传统安全 PLC 联锁滞后) · 1.7% 真空夹层破空凝结固态氧与液氢冲击引爆、误用氮气吹扫在 20K 冻结堵塞泄放阀或 CIWH 水击拉裂低温装船臂风险";
+  const edgeStr = ok ? "0.5 ms 终端边缘 10 kHz 原位光纤转动拉曼光谱 (354 cm⁻¹ 仲氢峰 / 587 cm⁻¹ 正氢峰实时锁定 p-H2 ≥ 99.8%) + 4–300 K 深冷光纤光栅 (Cryo-FBG 罐壁梯度与管线水击层析) + 夹套质谱氦检漏边缘 (-99.6% 港口终端 WAN 带宽) · 0.0% 正氢穿透入罐翻滚或两相预冷间歇泉漏检" : "215.0 ms 依赖实验室气相色谱滞后取样与点式温度计 · 无法在毫秒级两相流泰勒气泡坍塌水击与真空度雪崩劣化周期内实施闭环抑制";
+
+  document.getElementById('lh2CryoZboOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.7% 真空破空固氧-液氢爆轰或氮气冰堵安全阀风险 · 4.1% 正仲氢放热翻滚超压或预冷间歇泉水击漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个深冷液氢 ZBO 孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>10kHz 原位转动拉曼光谱 (354/587 cm⁻¹ 正仲氢比)、4–300K 深冷 FBG 与夹套质谱检漏边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runTflnLnoiModulatorLab() {
   const tools = parseInt(document.getElementById('rng_tfln_tools').value, 10);

@@ -9761,5 +9761,52 @@
       "uncompensated_lif_redeposition_fencing_smartcut_blistering_or_domain_merging_pct": 3.9,
       "tfln_lnoi_modulator_slo_met": false
     }
+  ],
+  "lh2_cryogenic_zbo_orthopara_profiles": [
+    {
+      "lh2_cryo_trains": 8,
+      "lh2_governance_mode": "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_lh2_zbo_pods": 8,
+      "zbo_reliquefaction_specific_energy_and_loading_throughput_gain_pct": 42.8,
+      "latent_ortho_para_boil_off_and_chilldown_ciwh_pressure_surge_reduction_pct": 64.1,
+      "nfpa2_cgah3_sil3_lov_solid_o2_he_purge_and_flare_isolation_interlock_ms": 0.6,
+      "unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct": 0.0,
+      "terminal_edge_10khz_rotational_raman_and_cryo_fbg_telemetry_loop_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct": 0.0,
+      "lh2_cryogenic_zbo_orthopara_slo_met": true
+    },
+    {
+      "lh2_cryo_trains": 32,
+      "lh2_governance_mode": "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_lh2_zbo_pods": 16,
+      "zbo_reliquefaction_specific_energy_and_loading_throughput_gain_pct": 42.8,
+      "latent_ortho_para_boil_off_and_chilldown_ciwh_pressure_surge_reduction_pct": 64.1,
+      "nfpa2_cgah3_sil3_lov_solid_o2_he_purge_and_flare_isolation_interlock_ms": 0.6,
+      "unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct": 0.0,
+      "terminal_edge_10khz_rotational_raman_and_cryo_fbg_telemetry_loop_ms": 0.5,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct": 0.0,
+      "lh2_cryogenic_zbo_orthopara_slo_met": true
+    },
+    {
+      "lh2_cryo_trains": 8,
+      "lh2_governance_mode": "manual_valve_chilldown_unmonitored_ortho_para_slip_flare_vent_boil_off_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_lh2_zbo_pods": 8,
+      "zbo_reliquefaction_specific_energy_and_loading_throughput_gain_pct": 6.5,
+      "latent_ortho_para_boil_off_and_chilldown_ciwh_pressure_surge_reduction_pct": 9.3,
+      "nfpa2_cgah3_sil3_lov_solid_o2_he_purge_and_flare_isolation_interlock_ms": 420.0,
+      "unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct": 1.7,
+      "terminal_edge_10khz_rotational_raman_and_cryo_fbg_telemetry_loop_ms": 215.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct": 4.1,
+      "lh2_cryogenic_zbo_orthopara_slo_met": false
+    }
   ]
 }

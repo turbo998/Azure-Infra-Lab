@@ -8190,6 +8190,57 @@ def simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox(
     }
 
 
+def simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(
+    lh2_cryo_trains: int = 8,
+    lh2_governance_mode: str = "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Zero-Boil-Off (ZBO) Cryogenic Liquid Hydrogen (LH2 20.28 K, -252.87 C,
+    40,000-160,000 m3 Vacuum-Perlite / MLI Spherical Storage & Marine Export Terminal), Ortho-to-Para
+    Hydrogen (o-H2 -> p-H2 >= 99.8%, Exothermic dH = -703 kJ/kg) Hydrous Ferric Oxide Catalytic Conversion,
+    Two-Phase Transfer Chilldown Geysering / Condensation-Induced Water Hammer (CIWH) & Rollover Stratification
+    Suppression PINN-MPC, Online 10 kHz Rotational Raman Spectroscopy (354 / 587 cm^-1) / Cryogenic FBG &
+    Vacuum-Jacket Mass-Spec Metrology & NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / IEC 61511 SIL-3 Loss-of-Vacuum
+    (LOV) Solid-O2 Cryo-Condensation Detonation Guard & Helium Purge Interlock Sandbox (Chapter 165 —
+    160-Cycle & 160-Simulator Milestone!).
+    """
+    if lh2_cryo_trains < 1:
+        raise ValueError("lh2_cryo_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge",
+        "manual_valve_chilldown_unmonitored_ortho_para_slip_flare_vent_boil_off_cloud",
+    }
+    if lh2_governance_mode not in valid_modes:
+        raise ValueError(f"lh2_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = lh2_governance_mode == "pinn_mpc_ortho_para_catalysis_chilldown_ciwh_brayton_zbo_raman_nfpa2_sil3_edge"
+    active_lh2_zbo_pods = max(2, min(8, int(lh2_cryo_trains))) if lh2_cryo_trains <= 8 else max(8, int(lh2_cryo_trains // 2))
+    gpu_nodes = max(2, math.ceil(lh2_cryo_trains / 4))
+
+    zbo_reliquefaction_specific_energy_and_loading_throughput_gain_pct = 42.8 if governed else 6.5
+    latent_ortho_para_boil_off_and_chilldown_ciwh_pressure_surge_reduction_pct = 64.1 if governed else 9.3
+    nfpa2_cgah3_sil3_lov_solid_o2_he_purge_and_flare_isolation_interlock_ms = 0.6 if governed else 420.0
+    unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct = 0.0 if governed else 1.7
+    terminal_edge_10khz_rotational_raman_and_cryo_fbg_telemetry_loop_ms = 0.5 if governed else 215.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct = 0.0 if governed else 4.1
+
+    return {
+        "lh2_cryo_trains": lh2_cryo_trains,
+        "lh2_governance_mode": lh2_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_lh2_zbo_pods": active_lh2_zbo_pods,
+        "zbo_reliquefaction_specific_energy_and_loading_throughput_gain_pct": zbo_reliquefaction_specific_energy_and_loading_throughput_gain_pct,
+        "latent_ortho_para_boil_off_and_chilldown_ciwh_pressure_surge_reduction_pct": latent_ortho_para_boil_off_and_chilldown_ciwh_pressure_surge_reduction_pct,
+        "nfpa2_cgah3_sil3_lov_solid_o2_he_purge_and_flare_isolation_interlock_ms": nfpa2_cgah3_sil3_lov_solid_o2_he_purge_and_flare_isolation_interlock_ms,
+        "unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct": unmitigated_solid_o2_cryo_condensation_detonation_or_ciwh_pipe_rupture_pct,
+        "terminal_edge_10khz_rotational_raman_and_cryo_fbg_telemetry_loop_ms": terminal_edge_10khz_rotational_raman_and_cryo_fbg_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct": uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct,
+        "lh2_cryogenic_zbo_orthopara_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
