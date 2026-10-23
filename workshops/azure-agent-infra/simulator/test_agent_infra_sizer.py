@@ -155,6 +155,7 @@ from agent_infra_sizer import (
     simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
     simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
     simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
+    simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3098,6 +3099,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct"], 3.0)
         self.assertTrue(gov["lipf6_lifsi_electrolyte_salt_slo_met"])
         self.assertFalse(raw["lipf6_lifsi_electrolyte_salt_slo_met"])
+
+    def test_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox(self) -> None:
+        gov = simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox(
+            8, "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge"
+        )
+        raw = simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox(
+            8, "manual_r142b_furnace_firing_fixed_persulfate_initiator_offline_8hr_gpc_viscosity_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_vdf_pvdf_pods"], 8)
+        self.assertEqual(gov["vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct"], 43.9)
+        self.assertEqual(gov["head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct"], 59.8)
+        self.assertEqual(gov["osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct"], 1.0)
+        self.assertEqual(gov["autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct"], 3.0)
+        self.assertTrue(gov["vdf_pvdf_fluoropolymer_slo_met"])
+        self.assertFalse(raw["vdf_pvdf_fluoropolymer_slo_met"])
 
 
 if __name__ == "__main__":

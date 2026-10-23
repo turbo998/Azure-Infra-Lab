@@ -7641,6 +7641,58 @@ def simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1
     }
 
 
+def simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox(
+    vdf_pvdf_production_trains: int = 8,
+    pvdf_governance_mode: str = "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Vinylidene Fluoride (VDF R142b CH3CClF2 -> CH2=CF2 + HCl Thermal
+    Pyrolysis at 650-700 C) & Battery-Grade Polyvinylidene Fluoride (PVDF High-Voltage Cathode
+    Binder Mw > 1.0M Da & Piezoelectric Beta-Phase Membrane) Supercritical/Emulsion Polymerization
+    (45-95 bar, 65-95 C), Head-to-Head / Tail-to-Tail (-CF2-CF2-CH2-CH2- < 3.5 mol%) Regio-Defect,
+    Inconel Pyrolysis Tube Coking & Alkaline Slurry Dehydrofluorination Gelation Suppression
+    PINN-MPC, Online 19F-NMR Regio-Isomer / FT-IR Beta-Phase (840 cm^-1) & Raman VDF Metrology &
+    OSHA 29 CFR 1910.119 / NFPA 68 / DIERS / IEC 61511 SIL-3 Supercritical VDF Monomer Runaway
+    Exothermic Decomposition, Radical Short-Stop Inhibitor Injection & Anhydrous HCl Quench
+    Interlock Sandbox (Chapter 154).
+    """
+    if vdf_pvdf_production_trains < 1:
+        raise ValueError("vdf_pvdf_production_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge",
+        "manual_r142b_furnace_firing_fixed_persulfate_initiator_offline_8hr_gpc_viscosity_cloud",
+    }
+    if pvdf_governance_mode not in valid_modes:
+        raise ValueError(f"pvdf_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = pvdf_governance_mode == "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge"
+    active_vdf_pvdf_pods = max(2, min(8, int(vdf_pvdf_production_trains))) if vdf_pvdf_production_trains <= 8 else max(8, int(vdf_pvdf_production_trains // 2))
+    gpu_nodes = max(2, math.ceil(vdf_pvdf_production_trains / 4))
+
+    vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct = 43.9 if governed else 6.5
+    head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct = 59.8 if governed else 9.0
+    osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms = 0.2 if governed else 140.0
+    unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct = 0.0 if governed else 1.4
+    autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms = 0.3 if governed else 188.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct = 0.0 if governed else 3.6
+
+    return {
+        "vdf_pvdf_production_trains": vdf_pvdf_production_trains,
+        "pvdf_governance_mode": pvdf_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_vdf_pvdf_pods": active_vdf_pvdf_pods,
+        "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct,
+        "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct,
+        "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms,
+        "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct,
+        "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct,
+        "vdf_pvdf_fluoropolymer_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

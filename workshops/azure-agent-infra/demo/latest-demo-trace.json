@@ -9326,6 +9326,68 @@
         "uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct": 3.6,
         "lipf6_lifsi_electrolyte_salt_slo_met": false
       }
+    ],
+    "vdf_pvdf_fluoropolymer_profiles": [
+      {
+        "vdf_pvdf_production_trains": 4,
+        "pvdf_governance_mode": "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_vdf_pvdf_pods": 4,
+        "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": 43.9,
+        "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": 59.8,
+        "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": 0.2,
+        "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": 0.0,
+        "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 0.0,
+        "vdf_pvdf_fluoropolymer_slo_met": true
+      },
+      {
+        "vdf_pvdf_production_trains": 8,
+        "pvdf_governance_mode": "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_vdf_pvdf_pods": 8,
+        "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": 43.9,
+        "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": 59.8,
+        "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": 0.2,
+        "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": 0.0,
+        "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 0.0,
+        "vdf_pvdf_fluoropolymer_slo_met": true
+      },
+      {
+        "vdf_pvdf_production_trains": 32,
+        "pvdf_governance_mode": "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_vdf_pvdf_pods": 16,
+        "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": 43.9,
+        "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": 59.8,
+        "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": 0.2,
+        "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": 0.0,
+        "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 0.0,
+        "vdf_pvdf_fluoropolymer_slo_met": true
+      },
+      {
+        "vdf_pvdf_production_trains": 8,
+        "pvdf_governance_mode": "manual_r142b_furnace_firing_fixed_persulfate_initiator_offline_8hr_gpc_viscosity_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_vdf_pvdf_pods": 8,
+        "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": 6.5,
+        "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": 9.0,
+        "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": 140.0,
+        "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": 1.4,
+        "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": 188.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 3.6,
+        "vdf_pvdf_fluoropolymer_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -17146,5 +17208,52 @@
       "lipf6_lifsi_electrolyte_salt_slo_met": false
     }
   },
-  "trace_sha256": "e9b45f590e6c24e86d8d33d2ed4eced9c41b148a2ca35ff8b400ab157f6d5a3b"
+  "demo_149_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox": {
+    "pvdf_8_trains": {
+      "vdf_pvdf_production_trains": 8,
+      "pvdf_governance_mode": "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_vdf_pvdf_pods": 8,
+      "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": 43.9,
+      "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": 59.8,
+      "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": 0.2,
+      "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": 0.0,
+      "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 0.0,
+      "vdf_pvdf_fluoropolymer_slo_met": true
+    },
+    "pvdf_32_trains": {
+      "vdf_pvdf_production_trains": 32,
+      "pvdf_governance_mode": "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_vdf_pvdf_pods": 16,
+      "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": 43.9,
+      "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": 59.8,
+      "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": 0.2,
+      "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": 0.0,
+      "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 0.0,
+      "vdf_pvdf_fluoropolymer_slo_met": true
+    },
+    "raw_pvdf_8_trains": {
+      "vdf_pvdf_production_trains": 8,
+      "pvdf_governance_mode": "manual_r142b_furnace_firing_fixed_persulfate_initiator_offline_8hr_gpc_viscosity_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_vdf_pvdf_pods": 8,
+      "vdf_cracking_selectivity_and_battery_binder_pvdf_yield_gain_pct": 6.5,
+      "head_to_head_regio_defect_and_pyrolysis_coking_reduction_pct": 9.0,
+      "osha1910119_diers_sil3_vdf_shortstop_inhibitor_and_hcl_quench_interlock_ms": 140.0,
+      "unmitigated_supercritical_vdf_runaway_deflagration_or_hcl_release_pct": 1.4,
+      "autoclave_edge_19f_nmr_hh_defect_and_ftir_beta_phase_loop_ms": 188.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 3.6,
+      "vdf_pvdf_fluoropolymer_slo_met": false
+    }
+  },
+  "trace_sha256": "4c6a546f538fdd640d3ed984df638846452ce73f8478e02fda56bcb47571d71f"
 }
