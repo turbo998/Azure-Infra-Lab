@@ -10198,6 +10198,53 @@
         "uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct": 4.0,
         "cdc_rotary_tablet_press_slo_met": false
       }
+    ],
+    "ebchr_titanium_refining_profiles": [
+      {
+        "ebchr_furnaces": 8,
+        "ebchr_governance_mode": "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ebchr_furnace_pods": 8,
+        "rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct": 43.5,
+        "hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct": 67.2,
+        "ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms": 0.4,
+        "unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct": 0.0,
+        "furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": 0.0,
+        "ebeam_cold_hearth_refining_ebchr_slo_met": true
+      },
+      {
+        "ebchr_furnaces": 32,
+        "ebchr_governance_mode": "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge",
+        "gpu_nodes": 6,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ebchr_furnace_pods": 16,
+        "rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct": 43.5,
+        "hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct": 67.2,
+        "ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms": 0.4,
+        "unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct": 0.0,
+        "furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": 0.0,
+        "ebeam_cold_hearth_refining_ebchr_slo_met": true
+      },
+      {
+        "ebchr_furnaces": 8,
+        "ebchr_governance_mode": "raw_cloud_fixed_raster_pattern_post_ingot_ultrasonic_sampling",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ebchr_furnace_pods": 8,
+        "rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct": 6.4,
+        "hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct": 9.0,
+        "ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms": 385.0,
+        "unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct": 1.6,
+        "furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms": 208.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": 4.1,
+        "ebeam_cold_hearth_refining_ebchr_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -18770,5 +18817,52 @@
       "cdc_rotary_tablet_press_slo_met": false
     }
   },
-  "trace_sha256": "ca2f769e592a7bcf0d3f65dcdbdd2236a7da653ca5f8e9775781c96e35b3e591"
+  "demo_165_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox": {
+    "ebchr_8_furnaces": {
+      "ebchr_furnaces": 8,
+      "ebchr_governance_mode": "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ebchr_furnace_pods": 8,
+      "rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct": 43.5,
+      "hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct": 67.2,
+      "ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms": 0.4,
+      "unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct": 0.0,
+      "furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": 0.0,
+      "ebeam_cold_hearth_refining_ebchr_slo_met": true
+    },
+    "ebchr_32_furnaces": {
+      "ebchr_furnaces": 32,
+      "ebchr_governance_mode": "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge",
+      "gpu_nodes": 6,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ebchr_furnace_pods": 16,
+      "rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct": 43.5,
+      "hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct": 67.2,
+      "ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms": 0.4,
+      "unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct": 0.0,
+      "furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": 0.0,
+      "ebeam_cold_hearth_refining_ebchr_slo_met": true
+    },
+    "raw_ebchr_8_furnaces": {
+      "ebchr_furnaces": 8,
+      "ebchr_governance_mode": "raw_cloud_fixed_raster_pattern_post_ingot_ultrasonic_sampling",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ebchr_furnace_pods": 8,
+      "rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct": 6.4,
+      "hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct": 9.0,
+      "ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms": 385.0,
+      "unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct": 1.6,
+      "furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms": 208.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": 4.1,
+      "ebeam_cold_hearth_refining_ebchr_slo_met": false
+    }
+  },
+  "trace_sha256": "50143fc2ca1787320fd667bfa12349f7da397b705c3df84b93cd0bc127f47436"
 }

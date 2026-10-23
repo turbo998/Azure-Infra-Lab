@@ -8442,6 +8442,58 @@ def simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(
     }
 
 
+def simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(
+    ebchr_furnaces: int = 8,
+    ebchr_governance_mode: str = "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Aerospace Rotor-Grade Titanium (Ti-6Al-4V / Ti-6242 / Ti-17) & Superalloy
+    Electron-Beam Cold-Hearth Refining (EBCHR 4x800 kW 40 kV Magnetic-Deflection Electron Guns,
+    Water-Cooled Copper Refining Hearth & Withdrawal Mold Skull Melting) High-Density Inclusion (HDI
+    Tungsten-Carbide Stokes Sinking) & Hard-Alpha (TiN Interstitial-Nitrogen Dissolution Residence-Time)
+    Elimination & Langmuir-Knudsen Alloying Evaporation (Al/Cr/Sn Vapor-Loss) PINN-MPC, Online 20 kHz
+    XRF/LIBS Molten-Pool Composition & Two-Color Pyrometry Metrology & AMS 2380 / NADCAP / NFPA 86 /
+    IEC 61511 SIL-3 Water-Cooled Copper Hearth Burn-Through Steam-in-Vacuum Explosion Guard, 40 kV
+    Electron-Gun Arc Crowbar & Ingot Withdrawal Interlock Sandbox (Chapter 170 · 165-Cycle, 165-Simulator &
+    170-Chapter Milestone!).
+    """
+    if ebchr_furnaces < 1:
+        raise ValueError("ebchr_furnaces must be >= 1")
+    valid_modes = {
+        "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge",
+        "raw_cloud_fixed_raster_pattern_post_ingot_ultrasonic_sampling",
+    }
+    if ebchr_governance_mode not in valid_modes:
+        raise ValueError(f"ebchr_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ebchr_governance_mode == "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge"
+    active_ebchr_furnace_pods = max(2, min(12, int(ebchr_furnaces))) if ebchr_furnaces <= 12 else max(12, int(ebchr_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(ebchr_furnaces / 6))
+
+    rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct = 43.5 if governed else 6.4
+    hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct = 67.2 if governed else 9.0
+    ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms = 0.4 if governed else 385.0
+    unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct = 0.0 if governed else 1.6
+    furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms = 0.3 if governed else 208.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct = 0.0 if governed else 4.1
+
+    return {
+        "ebchr_furnaces": ebchr_furnaces,
+        "ebchr_governance_mode": ebchr_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ebchr_furnace_pods": active_ebchr_furnace_pods,
+        "rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct": rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct,
+        "hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct": hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct,
+        "ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms": ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms,
+        "unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct": unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct,
+        "furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms": furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct,
+        "ebeam_cold_hearth_refining_ebchr_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

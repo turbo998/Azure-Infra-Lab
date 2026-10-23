@@ -171,6 +171,7 @@ from agent_infra_sizer import (
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
+    simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3450,6 +3451,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct"], 3.0)
         self.assertTrue(gov["cdc_rotary_tablet_press_slo_met"])
         self.assertFalse(raw["cdc_rotary_tablet_press_slo_met"])
+
+    def test_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(self) -> None:
+        gov = simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(
+            8, "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge"
+        )
+        raw = simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(
+            8, "raw_cloud_fixed_raster_pattern_post_ingot_ultrasonic_sampling"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ebchr_furnace_pods"], 8)
+        self.assertEqual(gov["rotor_grade_clean_titanium_ingot_yield_and_melt_rate_gain_pct"], 43.5)
+        self.assertEqual(gov["hard_alpha_tin_defect_and_langmuir_al_evaporation_variance_reduction_pct"], 67.2)
+        self.assertEqual(gov["ams2380_nadcap_nfpa86_sil3_copper_hearth_water_and_40kv_crowbar_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_copper_hearth_burnthrough_steam_explosion_or_gun_arc_pct"], 1.0)
+        self.assertEqual(gov["furnace_edge_20khz_xrf_libs_and_two_color_pyrometry_telemetry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct"], 3.0)
+        self.assertTrue(gov["ebeam_cold_hearth_refining_ebchr_slo_met"])
+        self.assertFalse(raw["ebeam_cold_hearth_refining_ebchr_slo_met"])
 
 
 if __name__ == "__main__":

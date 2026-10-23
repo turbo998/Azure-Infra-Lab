@@ -177,6 +177,7 @@ from agent_infra_sizer import (
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
+    simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1398,6 +1399,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(12, "raw_cloud_batch_tableting_offline_hplc_dissolution_sampling"),
     ]
 
+    ebchr_titanium_refining_profiles: List[Dict[str, object]] = [
+        simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(8, "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge"),
+        simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(32, "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge"),
+        simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(8, "raw_cloud_fixed_raster_pattern_post_ingot_ultrasonic_sampling"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1562,6 +1569,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ibf_mrf_subnm_aspheric_mirror_profiles": ibf_mrf_subnm_aspheric_mirror_profiles,
         "allam_fetvedt_sco2_oxyfuel_profiles": allam_fetvedt_sco2_oxyfuel_profiles,
         "cdc_rotary_tablet_press_profiles": cdc_rotary_tablet_press_profiles,
+        "ebchr_titanium_refining_profiles": ebchr_titanium_refining_profiles,
     }
 
 
