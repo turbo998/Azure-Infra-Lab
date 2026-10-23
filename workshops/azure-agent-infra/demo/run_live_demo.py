@@ -164,6 +164,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
     simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox,
     simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
+    simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1115,6 +1116,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "mdi_8_trains": simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(8, "pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge"),
             "mdi_32_trains": simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(32, "pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge"),
             "raw_mdi_8_trains": simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(8, "manual_cocl2_excess_ratio_step_offline_4hr_hc_titration_colorimetric_paper_tape_cloud"),
+        },
+        "demo_145_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox": {
+            "ncm811_8_lines": simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(8, "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge"),
+            "ncm811_32_lines": simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(32, "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge"),
+            "raw_ncm811_8_lines": simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(8, "fixed_ph_nh3_dosing_manual_roller_kiln_zone_temp_offline_8hr_icp_titration_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

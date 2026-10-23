@@ -7435,6 +7435,57 @@ def simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbo
     }
 
 
+def simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(
+    cathode_kiln_production_lines: int = 8,
+    cathode_governance_mode: str = "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous High-Nickel Lithium-Ion Cathode Precursor (NCM811 / NCA Taylor-Couette
+    Vortex Co-Precipitation Ni0.8Co0.1Mn0.1(OH)2) & Pure-Oxygen Roller-Hearth Kiln Calcination
+    (730-790 C LiOH.H2O + O2 Lithiation -> LiNi0.8Co0.1Mn0.1O2), Li+/Ni2+ 3a-Site Cation Mixing
+    (< 1.5%), Surface Residual Lithium Carbonate (Li2CO3 < 1,200 ppm) & Cordierite-Mullite Sagger
+    Corrosion/Cracking Suppression PINN-MPC, Online Laser Diffraction PSD / In-Situ XRD
+    I(003)/I(104) & TDLAS NH3/O2/CO2 Metrology & NFPA 86 / OSHA 29 CFR 1910.119 / IEC 61511 SIL-3
+    Ammonia Complexation Excursion, Pure-Oxygen Kiln Over-Pressure / Flash-Fire & Roller-Jam
+    Emergency Nitrogen Blanket Purge Interlock Sandbox (Chapter 150).
+    """
+    if cathode_kiln_production_lines < 1:
+        raise ValueError("cathode_kiln_production_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge",
+        "fixed_ph_nh3_dosing_manual_roller_kiln_zone_temp_offline_8hr_icp_titration_cloud",
+    }
+    if cathode_governance_mode not in valid_modes:
+        raise ValueError(f"cathode_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cathode_governance_mode == "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge"
+    active_cathode_kiln_pods = max(2, min(8, int(cathode_kiln_production_lines))) if cathode_kiln_production_lines <= 8 else max(8, int(cathode_kiln_production_lines // 2))
+    gpu_nodes = max(2, math.ceil(cathode_kiln_production_lines / 4))
+
+    first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct = 43.6 if governed else 6.4
+    li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct = 59.5 if governed else 8.9
+    nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms = 0.3 if governed else 140.0
+    unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct = 0.0 if governed else 1.2
+    kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms = 0.3 if governed else 189.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct = 0.0 if governed else 3.5
+
+    return {
+        "cathode_kiln_production_lines": cathode_kiln_production_lines,
+        "cathode_governance_mode": cathode_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cathode_kiln_pods": active_cathode_kiln_pods,
+        "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct,
+        "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct,
+        "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms,
+        "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct,
+        "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct,
+        "ncm811_cathode_precursor_kiln_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

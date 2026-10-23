@@ -9078,6 +9078,68 @@
         "uncompensated_cold_stage_amine_hydrochloride_plugging_or_cocl2_breakthrough_pct": 3.6,
         "mdi_tdi_isocyanate_phosgenation_slo_met": false
       }
+    ],
+    "ncm811_cathode_precursor_kiln_profiles": [
+      {
+        "cathode_kiln_production_lines": 4,
+        "cathode_governance_mode": "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cathode_kiln_pods": 4,
+        "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": 43.6,
+        "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": 59.5,
+        "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": 0.3,
+        "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": 0.0,
+        "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 0.0,
+        "ncm811_cathode_precursor_kiln_slo_met": true
+      },
+      {
+        "cathode_kiln_production_lines": 8,
+        "cathode_governance_mode": "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cathode_kiln_pods": 8,
+        "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": 43.6,
+        "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": 59.5,
+        "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": 0.3,
+        "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": 0.0,
+        "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 0.0,
+        "ncm811_cathode_precursor_kiln_slo_met": true
+      },
+      {
+        "cathode_kiln_production_lines": 32,
+        "cathode_governance_mode": "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cathode_kiln_pods": 16,
+        "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": 43.6,
+        "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": 59.5,
+        "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": 0.3,
+        "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": 0.0,
+        "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 0.0,
+        "ncm811_cathode_precursor_kiln_slo_met": true
+      },
+      {
+        "cathode_kiln_production_lines": 8,
+        "cathode_governance_mode": "fixed_ph_nh3_dosing_manual_roller_kiln_zone_temp_offline_8hr_icp_titration_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cathode_kiln_pods": 8,
+        "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": 6.4,
+        "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": 8.9,
+        "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": 140.0,
+        "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": 1.2,
+        "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": 189.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 3.5,
+        "ncm811_cathode_precursor_kiln_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -16710,5 +16772,52 @@
       "mdi_tdi_isocyanate_phosgenation_slo_met": false
     }
   },
-  "trace_sha256": "b6ea40f1c9fef3ac5db8e661f578211f7df6d945b04af42d2f3d719e59b81abc"
+  "demo_145_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox": {
+    "ncm811_8_lines": {
+      "cathode_kiln_production_lines": 8,
+      "cathode_governance_mode": "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_cathode_kiln_pods": 8,
+      "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": 43.6,
+      "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": 59.5,
+      "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": 0.3,
+      "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": 0.0,
+      "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 0.0,
+      "ncm811_cathode_precursor_kiln_slo_met": true
+    },
+    "ncm811_32_lines": {
+      "cathode_kiln_production_lines": 32,
+      "cathode_governance_mode": "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_cathode_kiln_pods": 16,
+      "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": 43.6,
+      "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": 59.5,
+      "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": 0.3,
+      "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": 0.0,
+      "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 0.0,
+      "ncm811_cathode_precursor_kiln_slo_met": true
+    },
+    "raw_ncm811_8_lines": {
+      "cathode_kiln_production_lines": 8,
+      "cathode_governance_mode": "fixed_ph_nh3_dosing_manual_roller_kiln_zone_temp_offline_8hr_icp_titration_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_cathode_kiln_pods": 8,
+      "first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct": 6.4,
+      "li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct": 8.9,
+      "nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms": 140.0,
+      "unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct": 1.2,
+      "kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms": 189.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 3.5,
+      "ncm811_cathode_precursor_kiln_slo_met": false
+    }
+  },
+  "trace_sha256": "e135fd17bf14b7dd1afc5ae54f1e0bf3602df4b4460c6eb01b922d6f5d603e52"
 }

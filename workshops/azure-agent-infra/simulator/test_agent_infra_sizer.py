@@ -151,6 +151,7 @@ from agent_infra_sizer import (
     simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
     simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox,
     simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
+    simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3010,6 +3011,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cold_stage_amine_hydrochloride_plugging_or_cocl2_breakthrough_pct"], 3.0)
         self.assertTrue(gov["mdi_tdi_isocyanate_phosgenation_slo_met"])
         self.assertFalse(raw["mdi_tdi_isocyanate_phosgenation_slo_met"])
+
+    def test_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge"
+        )
+        raw = simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(
+            8, "fixed_ph_nh3_dosing_manual_roller_kiln_zone_temp_offline_8hr_icp_titration_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cathode_kiln_pods"], 8)
+        self.assertEqual(gov["first_cycle_discharge_capacity_and_single_crystal_yield_gain_pct"], 43.6)
+        self.assertEqual(gov["li_ni_cation_mixing_residual_li2co3_and_sagger_loss_reduction_pct"], 59.5)
+        self.assertEqual(gov["nfpa86_osha1910119_sil3_o2_shutoff_n2_blanket_and_nh3_scrubber_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_oxygen_kiln_flash_fire_or_toxic_nh3_leak_pct"], 1.0)
+        self.assertEqual(gov["kiln_edge_laser_psd_in_situ_xrd_and_tdlas_o2_co2_nh3_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct"], 3.0)
+        self.assertTrue(gov["ncm811_cathode_precursor_kiln_slo_met"])
+        self.assertFalse(raw["ncm811_cathode_precursor_kiln_slo_met"])
 
 
 if __name__ == "__main__":

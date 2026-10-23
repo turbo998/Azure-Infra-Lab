@@ -157,6 +157,7 @@ from agent_infra_sizer import (
     simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
     simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox,
     simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
+    simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1257,6 +1258,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(32, "pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge"),
         simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(8, "manual_cocl2_excess_ratio_step_offline_4hr_hc_titration_colorimetric_paper_tape_cloud"),
     ]
+    ncm811_cathode_precursor_kiln_profiles: List[Dict[str, object]] = [
+        simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(4, "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge"),
+        simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(8, "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge"),
+        simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(32, "pinn_mpc_taylor_couette_coprecipitation_roller_kiln_o2_calcination_xrd_psd_nfpa86_sil3_edge"),
+        simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox(8, "fixed_ph_nh3_dosing_manual_roller_kiln_zone_temp_offline_8hr_icp_titration_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1402,6 +1409,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "blast_furnace_cohesive_zone_profiles": blast_furnace_cohesive_zone_profiles,
         "cumene_phenol_hock_cleavage_profiles": cumene_phenol_hock_cleavage_profiles,
         "mdi_tdi_isocyanate_phosgenation_profiles": mdi_tdi_isocyanate_phosgenation_profiles,
+        "ncm811_cathode_precursor_kiln_profiles": ncm811_cathode_precursor_kiln_profiles,
     }
 
 
