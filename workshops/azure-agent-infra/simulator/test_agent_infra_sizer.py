@@ -150,6 +150,7 @@ from agent_infra_sizer import (
     simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox,
     simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
     simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox,
+    simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2988,6 +2989,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct"], 3.0)
         self.assertTrue(gov["cumene_phenol_hock_cleavage_slo_met"])
         self.assertFalse(raw["cumene_phenol_hock_cleavage_slo_met"])
+
+    def test_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(self) -> None:
+        gov = simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(
+            8, "pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge"
+        )
+        raw = simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(
+            8, "manual_cocl2_excess_ratio_step_offline_4hr_hc_titration_colorimetric_paper_tape_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_mdi_tdi_phosgenation_pods"], 8)
+        self.assertEqual(gov["monomeric_mdi_tdi_yield_and_phosgene_recycle_efficiency_gain_pct"], 43.9)
+        self.assertEqual(gov["urea_tar_residue_fouling_and_hydrolyzable_chlorine_offspec_reduction_pct"], 59.8)
+        self.assertEqual(gov["osha1910119_nfpa704_sil3_naoh_nh3_scrubber_and_steam_curtain_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_toxic_phosgene_containment_breach_or_hcl_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_toxic_phosgene_containment_breach_or_hcl_overpressure_pct"], 1.0)
+        self.assertEqual(gov["containment_edge_open_path_tdlas_cocl2_and_atr_ftir_nco_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_cold_stage_amine_hydrochloride_plugging_or_cocl2_breakthrough_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cold_stage_amine_hydrochloride_plugging_or_cocl2_breakthrough_pct"], 3.0)
+        self.assertTrue(gov["mdi_tdi_isocyanate_phosgenation_slo_met"])
+        self.assertFalse(raw["mdi_tdi_isocyanate_phosgenation_slo_met"])
 
 
 if __name__ == "__main__":

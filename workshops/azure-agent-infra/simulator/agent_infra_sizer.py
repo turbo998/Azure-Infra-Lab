@@ -7384,6 +7384,57 @@ def simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sa
     }
 
 
+def simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox(
+    mdi_tdi_phosgenation_trains: int = 8,
+    phosgene_governance_mode: str = "pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Polyurethane Isocyanate (MDI / TDI) Cold/Hot Two-Stage Phosgenation
+    (CO + Cl2 -> COCl2 Activated-Carbon Synthesis & MDA/TDA + COCl2 -> MDI/TDI + 2HCl in MCB/ODCB),
+    Carbamoyl Chloride Intermediate Dissociation, Substituted Urea / Biuret / Carbodiimide Tar
+    Oligomer & Hydrolyzable Chlorine (HC < 65 ppm) Suppression PINN-MPC, Online Open-Path Tunable
+    Diode Laser (TDLAS) ppb Phosgene / Mid-IR ATR-FTIR Isocyanate -N=C=O (2,270 cm^-1) Metrology &
+    OSHA 29 CFR 1910.119 / NFPA 704 / API RP 521 / IEC 61511 SIL-3 Negative-Pressure Secondary
+    Containment Enclosure, NaOH/NH4OH Caustic-Ammonia Decomposition Scrubber & High-Pressure
+    Ammonia-Steam Curtain Deluge Interlock Sandbox (Chapter 149).
+    """
+    if mdi_tdi_phosgenation_trains < 1:
+        raise ValueError("mdi_tdi_phosgenation_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge",
+        "manual_cocl2_excess_ratio_step_offline_4hr_hc_titration_colorimetric_paper_tape_cloud",
+    }
+    if phosgene_governance_mode not in valid_modes:
+        raise ValueError(f"phosgene_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = phosgene_governance_mode == "pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge"
+    active_mdi_tdi_phosgenation_pods = max(2, min(8, int(mdi_tdi_phosgenation_trains))) if mdi_tdi_phosgenation_trains <= 8 else max(8, int(mdi_tdi_phosgenation_trains // 2))
+    gpu_nodes = max(2, math.ceil(mdi_tdi_phosgenation_trains / 4))
+
+    monomeric_mdi_tdi_yield_and_phosgene_recycle_efficiency_gain_pct = 43.9 if governed else 6.5
+    urea_tar_residue_fouling_and_hydrolyzable_chlorine_offspec_reduction_pct = 59.8 if governed else 9.0
+    osha1910119_nfpa704_sil3_naoh_nh3_scrubber_and_steam_curtain_interlock_ms = 0.2 if governed else 142.0
+    unmitigated_toxic_phosgene_containment_breach_or_hcl_overpressure_pct = 0.0 if governed else 1.3
+    containment_edge_open_path_tdlas_cocl2_and_atr_ftir_nco_loop_ms = 0.3 if governed else 188.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_cold_stage_amine_hydrochloride_plugging_or_cocl2_breakthrough_pct = 0.0 if governed else 3.6
+
+    return {
+        "mdi_tdi_phosgenation_trains": mdi_tdi_phosgenation_trains,
+        "phosgene_governance_mode": phosgene_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_mdi_tdi_phosgenation_pods": active_mdi_tdi_phosgenation_pods,
+        "monomeric_mdi_tdi_yield_and_phosgene_recycle_efficiency_gain_pct": monomeric_mdi_tdi_yield_and_phosgene_recycle_efficiency_gain_pct,
+        "urea_tar_residue_fouling_and_hydrolyzable_chlorine_offspec_reduction_pct": urea_tar_residue_fouling_and_hydrolyzable_chlorine_offspec_reduction_pct,
+        "osha1910119_nfpa704_sil3_naoh_nh3_scrubber_and_steam_curtain_interlock_ms": osha1910119_nfpa704_sil3_naoh_nh3_scrubber_and_steam_curtain_interlock_ms,
+        "unmitigated_toxic_phosgene_containment_breach_or_hcl_overpressure_pct": unmitigated_toxic_phosgene_containment_breach_or_hcl_overpressure_pct,
+        "containment_edge_open_path_tdlas_cocl2_and_atr_ftir_nco_loop_ms": containment_edge_open_path_tdlas_cocl2_and_atr_ftir_nco_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cold_stage_amine_hydrochloride_plugging_or_cocl2_breakthrough_pct": uncompensated_cold_stage_amine_hydrochloride_plugging_or_cocl2_breakthrough_pct,
+        "mdi_tdi_isocyanate_phosgenation_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

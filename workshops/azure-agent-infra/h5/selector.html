@@ -556,6 +556,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(141)">142. 湿法磷酸 (WPA 二水-半水法 DH-HH 80–98°C 磷矿硫酸萃取槽与真空闪蒸冷却) 与磷酸二铵 (DAP 18-46-0 管式反应器 PCR 及转鼓氨化造粒)、磷石膏 (CaSO4·2H2O) 结晶习性过饱和度与游离硫酸根 (SO4²⁻ 24–28 g/L) 过滤 PINN-MPC、酸浆在线衰减全反射红外 (ATR-FTIR)/尾气 TDLAS (HF/SiF4/NH3) 计量及 EPA 40 CFR 63 Subpart AA / NFPA 704 / IEC 61508 SIL-3 四氟化硅/氢氟酸 (SiF4/HF &gt; 2.5 ppm) 洗涤塔穿透、碳酸盐泡沫溢槽与 PCR 超压硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(142)">143. 大型炼铁高炉 (BF 4,000–5,800 m³ 铁水冶炼与带式烧结机)、软熔带 (1,150–1,450°C 倒 V 型内聚区) 透气性、风口回旋区煤粉/富氢喷吹 (PCI 180–220 kg/t-HM) 与炉缸炭砖象脚侵蚀 PINN-MPC、炉顶煤气在线质谱/微波料面雷达与 36 风口高速双色 CCD 计量及 NFPA 86 / ISO 13577 / IEC 61508 SIL-3 悬料崩料炉顶超压、风口铜套漏水氢爆与炉缸烧穿硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(143)">144. 异丙苯过氧化与霍克 (Hock) 苯酚-丙酮酸催化裂解 (90–115°C 鼓泡塔自由基氧化、真空薄膜蒸发提浓 80–85 wt% 过氧化氢异丙苯 CHP 与强放热硫酸重排 ΔH=-252 kJ/mol) 及双酚 A (BPA 离子交换树脂缩合)、CHP 自加速热分解失控与羟基丙酮 (HA &lt; 10 ppm) 显色副产物抑制 PINN-MPC、在线中红外 ATR-FTIR 过氧键/拉曼苯酚-丙酮-α-甲基苯乙烯计量及 NFPA 30 / DIERS / API RP 521 / IEC 61508 SIL-3 CHP 热失控 (dT/dt &gt; 0.5°C/min)、酚钠弱碱骤冷中和与冷丙酮喷淋稀释硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(144)">145. 聚氨酯异氰酸酯 (MDI / TDI) 光气化合成 (CO+Cl2→COCl2 活性炭催化合成与二胺 MDA/TDA 氯苯溶剂冷/热两段光气化 R-NH2+COCl2→R-NCO+2HCl)、氨基甲酰氯分解、缩二脲/碳化二亚胺焦油残渣与可水解氯 (HC &lt; 65 ppm) 抑制 PINN-MPC、开放光程可调谐激光 (TDLAS) ppb 级光气/中红外 ATR-FTIR 异氰酸酯基团 (-N=C=O 2,270 cm⁻¹) 计量及 OSHA 1910.119 / NFPA 704 / API RP 521 / IEC 61511 SIL-3 双层负压安全壳、苛性钠/氨水光气分解塔与高压氨-水蒸气幕硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3829,6 +3830,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 144: Autonomous Polyurethane Isocyanate (MDI / TDI) Cold/Hot Two-Stage Phosgenation, Urea-Tar & Hydrolyzable Chlorine Suppression PINN-MPC, Open-Path TDLAS ppb Phosgene / ATR-FTIR Metrology & OSHA 1910.119 / NFPA 704 / SIL-3 Secondary Containment & Caustic-Ammonia Scrubber Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 144 · POLYURETHANE ISOCYANATE (MDI / TDI) COLD/HOT TWO-STAGE PHOSGENATION (CO + Cl2 → COCl2 &amp; MDA/TDA + COCl2 → MDI/TDI + 2HCl), CARBAMOYL CHLORIDE DISSOCIATION, UREA-TAR OLIGOMER &amp; HYDROLYZABLE CHLORINE (HC &lt; 65 ppm) SUPPRESSION PINN-MPC, OPEN-PATH TDLAS ppb PHOSGENE / ATR-FTIR -N=C=O (2,270 cm⁻¹) METROLOGY &amp; OSHA 1910.119 / NFPA 704 / API RP 521 / SIL-3 SECONDARY CONTAINMENT, CAUSTIC-AMMONIA SCRUBBER &amp; STEAM CURTAIN INTERLOCK SIZER</span>
+    <h2>自主聚氨酯异氰酸酯（MDI / TDI）冷热两段光气化合成：脲焦油与可水解氯抑制 PINN-MPC 及 OSHA 1910.119 / SIL-3 剧毒光气安全壳与碱氨分解塔硬联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 条年产 <code>40–80 万吨</code> 二苯基甲烷二异氰酸酯（<code>MDI</code>）与甲苯二异氰酸酯（<code>TDI</code>，包含活性炭列管催化一氧化碳与氯气合成剧毒光气 $\text{CO} + \text{Cl}_2 \rightarrow \text{COCl}_2\ (\Delta H = -107.6\text{ kJ/mol})$、一氯苯/邻二氯苯 <code>MCB/ODCB</code> 溶剂中 <code>30–60°C</code> 撞击流冷光气化瞬时生成氨基甲酰氯与胺盐酸盐浆料、<code>110–170°C / 5–12 bar</code> 多级塔式热光气化脱氯化氢转化异氰酸酯 $\text{R-NH}_2 + \text{COCl}_2 \rightarrow \text{R-N=C=O} + 2\text{HCl}$ 以及脱光气、溶剂精馏与薄膜蒸发拔顶分离单体 <code>4,4'-MDI</code> / 聚合 <code>PMDI</code>）大型装置规模下，启用 <code>Standard_NC24ads_A100_v4</code> 冷段毫米级高剪切撞击流混合器（<code>Impinging-Jet Mixer</code>）内游离二胺（<code>MDA/TDA</code>）与生成态异氰酸酯二次缩合结垢（生成不溶性聚脲/缩二脲/碳化二亚胺焦油残渣 <code>Urea-Tar</code> 堵塞换热管）动力学、热段氨基甲酰氯热解平衡与可水解氯杂质（<code>Hydrolyzable Chlorine, HC &lt; 65 ppm</code>，如氯甲脒与次级氨基甲酰氯）耦合 <code>PINN</code> + 光气过量摩尔比（$\text{COCl}_2/\text{-NH}_2 = 2.2\text{–}3.2$）、冷热两段温度梯度与负压脱光气闪蒸塔 <code>MPC</code>（单体 MDI/TDI 优等品收率与循环光气回收效率提升 <code>+43.9%</code>，重质脲焦油残渣结垢与可水解氯 HC 超标削减 <code>-59.8%</code>）、<code>OSHA 29 CFR 1910.119 / NFPA 704 / API RP 521 / IEC 61511 SIL-3</code> 剧毒光气（<code>TLV-TWA = 0.1 ppm / 100 ppb</code>，<code>IDLH = 2 ppm</code>）双层负压安全壳/冷箱（<code>Secondary Containment Enclosure</code>）内一旦检测到痕量光气泄漏（$&gt; 50\text{ ppb}$）或反应塔氯化氢超压时瞬时切断 CO/$\text{Cl}_2$ 光气发生器进料、将全系统残余光气快速泄放切入双级苛性钠/氨水（<code>15 wt% NaOH + NH4OH</code>）紧急分解吸收塔与活性炭催化水解床、并同步开启装置边界高压氨水-水蒸气幕墙（<code>Ammonia-Steam Curtain Deluge</code>）气相瞬间中和硬联锁（<code>0.2 ms</code> 响应，<code>0.0%</code> 剧毒光气外泄或 HCl 超压爆破事故，对比传统纸带比色卡测漏滞后 15–30 秒与每 4 小时离线滴定测 HC 反模式 <code>1.3%</code> 风险）以及全厂界开放光程可调谐半导体激光吸收光谱（<code>Open-Path TDLAS</code>，<code>ppb</code> 级 $\text{COCl}_2/\text{HCl}$ 毫秒级层析）与反应液在线金刚石 <code>ATR-FTIR</code> 异氰酸酯特征峰（$-\text{N=C=O}\ 2,270\text{ cm}^{-1}$ vs 脲羰基 $1,640\text{ cm}^{-1}$）边缘分诊（<code>0.3 ms</code>，削减 <code>99.6%</code> WAN 带宽，避免 <code>3.6%</code> 冷段胺盐酸盐结晶堵管或光气合成器余氯穿透漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 聚氨酯异氰酸酯 (MDI / TDI) 光气化合成产线数 (MDI / TDI Phosgenation Trains): <strong id="lbl_mdi_trains" style="color:var(--blue)">8</strong></label>
+          <input type="range" id="rng_mdi_trains" min="2" max="32" step="2" value="8" oninput="runMdiTdiIsocyanatePhosgenationLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 冷热两段光气化 PINN-MPC 与 OSHA 1910.119 / NFPA 704 / SIL-3 剧毒光气安全壳与碱氨分解塔联锁模式 (MDI / TDI Phosgenation Governance Mode)</label>
+          <select id="sel_mdi_mode" onchange="runMdiTdiIsocyanatePhosgenationLab()">
+            <option value="pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge" selected>冷段撞击流微混合、热段氨基甲酰氯分解与脲焦油/可水解氯 (HC &lt; 65 ppm) 抑制 PINN + 光气过量比与负压脱光气闪蒸 MPC (+43.9% 单体 MDI/TDI 收率与光气回收效率 / -59.8% 脲焦油残渣与 HC 超标) + OSHA 1910.119 / NFPA 704 SIL-3 0.2ms 双层负压安全壳、苛性碱/氨水分解吸收塔与高压氨-蒸汽幕墙硬联锁 + 0.3ms 开放光程 TDLAS ppb 光气与 ATR-FTIR 边缘 (推荐)</option>
+            <option value="manual_cocl2_excess_ratio_step_offline_4hr_hc_titration_colorimetric_paper_tape_cloud">传统反模式：靠固定高倍光气过量比、依赖每 4 小时离线电位滴定测 HC 与纸带比色卡测光气滞后 (+6.5% 收率增益) + 无 0.2ms TDLAS 光气层析与碱氨分解塔/蒸汽幕瞬时切换联锁 (1.3% 法兰/机封微漏剧毒光气突破 2 ppm IDLH 致死阈值或 HCl 吸收塔超压风险) + 缺乏在线 ATR-FTIR 监测 (3.6% 冷光气化胺盐酸盐暴聚堵管或光气合成余氯穿透腐蚀漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="mdiTdiIsocyanatePhosgenationOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6168,6 +6192,21 @@ resource cumenePhenolHockCleavageBpaSil3Pool 'Microsoft.ContainerService/managed
       'aksclaw.io/cleavage-edge-atr-ftir-peroxide-raman-ams-ha': 'enabled-0.3ms-99.6pct-phenol-bpa-complex-wan-cut'
     }
   }
+}`,
+`// 145. Azure Bicep: Polyurethane Isocyanate (MDI / TDI) Cold/Hot Two-Stage Phosgenation (CO+Cl2->COCl2 & MDA/TDA+COCl2->MDI/TDI+2HCl), Carbamoyl Chloride Dissociation, Urea-Tar & Hydrolyzable Chlorine (HC <65 ppm) Suppression PINN-MPC, Open-Path TDLAS ppb Phosgene / ATR-FTIR -N=C=O Metrology & OSHA 1910.119 / NFPA 704 / SIL-3 Secondary Containment, NaOH/NH3 Scrubber & Steam Curtain Interlock Pool
+resource mdiTdiIsocyanatePhosgenationSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'mdiphossil3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (Impinging-Jet Cold Phosgenation, Hot-Stage Carbamoyl Chloride Dissociation & Urea-Tar/HC <65 ppm Suppression PINN + COCl2/NH2 Ratio & MCB/ODCB Stripping MPC + Open-Path TDLAS ppb Phosgene & Mid-IR ATR-FTIR 2270 cm^-1 -N=C=O Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'mdi-tdi-isocyanate-phosgenation-urea-tar-cocl2-scrubber-sil3-agent'
+      'aksclaw.io/pinn-mpc-cold-hot-phosgenation-carbamoyl-urea-tar-hc': 'enabled-43.9pct-mdi-tdi-yield-cocl2-recycle-gain-59.8pct-urea-tar-hc-cut'
+      'aksclaw.io/osha1910119-nfpa704-sil3-naoh-nh3-scrubber-steam-curtain-guard': 'enforced-0.2ms-zero-toxic-phosgene-containment-breach-or-hcl-overpressure'
+      'aksclaw.io/containment-edge-open-path-tdlas-cocl2-atr-ftir-nco': 'enabled-0.3ms-99.6pct-isocyanate-complex-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6412,6 +6451,30 @@ runPtaPxOxidationLab();
 runWetPhosphoricAcidDapLab();
 runBlastFurnaceCohesiveZoneLab();
 runCumenePhenolHockCleavageLab();
+runMdiTdiIsocyanatePhosgenationLab();
+
+function runMdiTdiIsocyanatePhosgenationLab() {
+  const trains = parseInt(document.getElementById('rng_mdi_trains').value, 10);
+  const mode = document.getElementById('sel_mdi_mode').value;
+  document.getElementById('lbl_mdi_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const pods = trains <= 8 ? Math.max(2, Math.min(8, trains)) : Math.max(8, Math.floor(trains / 2));
+  const ok = mode === 'pinn_mpc_cold_hot_phosgenation_carbamoyl_urea_tar_tdlas_cocl2_atr_ftir_osha1910119_sil3_edge';
+  const mpcStr = ok ? "冷光气化 (30–60°C) 撞击流毫米级微混合、热光气化 (110–170°C) 氨基甲酰氯脱 HCl 解离与聚脲/缩二脲/碳化二亚胺焦油残渣 (Urea-Tar) 耦合 PINN + 光气过量摩尔比 (COCl2/-NH2 = 2.65)、氯苯溶剂分级闪蒸与可水解氯 (HC < 65 ppm) 软测量前馈 MPC · 单体 4,4'-MDI / TDI 收率与循环光气回收率 +43.9% · 脲焦油残渣结垢与可水解氯 HC 超标 -59.8%" : "传统靠盲目拉高光气过量比 (COCl2/-NH2 > 3.5) 维持转化、依赖每 4 小时离线滴定测 HC 与气相色谱滞后 · 仅 +6.5% 收率增益 / -9.0% 焦油削减 (冷段局部二胺过量瞬间与异氰酸酯缩合成难溶聚脲堵死换热管，且 3.6% 胺盐酸盐结晶堵管或光气发生器余氯穿透腐蚀漏检)";
+  const sil3Str = ok ? "0.2 ms OSHA 29 CFR 1910.119 / NFPA 704 / API RP 521 / IEC 61511 SIL-3 双层负压安全壳/冷箱内 TDLAS 检出痕量光气 (>50 ppb) 或反应塔 HCl 超压时瞬时切断 CO/Cl2 进料、全系统残余光气直排切入双级苛性钠/氨水 (15 wt% NaOH + NH4OH) 分解吸收塔与活性炭水解床、并同步开启边界高压氨水-水蒸气幕墙 (Steam-Ammonia Curtain) 气相瞬间中和硬联锁 · 0.0% 剧毒光气外泄或超压违例" : "无 0.2ms 开放光程 TDLAS 光气层析与碱氨分解塔/蒸汽幕硬联锁 (142.0 ms 传统纸带比色卡与电化学传感器响应滞后) · 1.3% 高温高压光气管线法兰或泵机封微漏突破 2 ppm IDLH 剧毒致死阈值或 HCl 尾气吸收塔超压外泄风险";
+  const edgeStr = ok ? "0.3 ms 安全壳边缘开放光程可调谐激光吸收光谱 (Open-Path TDLAS 毫秒级层析 ppb 级 COCl2 与 HCl 三维浓度场) + 反应浆料在线金刚石 ATR-FTIR (2,270 cm⁻¹ 异氰酸酯基 -N=C=O vs 1,640 cm⁻¹ 脲羰基实时解耦) 边缘 (-99.6% 异氰酸酯基地 WAN 带宽) · 0.0% 胺盐堵管或余氯穿透漏检" : "188.0 ms 依赖人工穿重型防化服取样滴定与慢速纸带比色卡报警 · 无法在毫秒级捕捉冷段撞击流混合失稳聚脲暴聚或高压光气微漏早期羽流扩散";
+
+  document.getElementById('mdiTdiIsocyanatePhosgenationOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.3% 剧毒光气 (COCl2 IDLH = 2 ppm) 安全壳微漏突破或氯化氢超压风险 · 3.6% 冷段胺盐酸盐结晶堵管或光气合成器余氯穿透腐蚀漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个 MDI/TDI 光气化孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>开放光程 TDLAS ppb 级光气/HCl 三维层析与反应液在线中红外 ATR-FTIR (-N=C=O 2,270 cm⁻¹) 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runCumenePhenolHockCleavageLab() {
   const trains = parseInt(document.getElementById('rng_chp_trains').value, 10);
