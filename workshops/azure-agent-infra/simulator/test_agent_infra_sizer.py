@@ -177,6 +177,7 @@ from agent_infra_sizer import (
     simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
     simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
     simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
+    simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3582,6 +3583,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct"], 3.0)
         self.assertTrue(gov["ostwald_nitric_acid_ptrh_gauze_slo_met"])
         self.assertFalse(raw["ostwald_nitric_acid_ptrh_gauze_slo_met"])
+
+    def test_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(self) -> None:
+        gov = simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(
+            8, "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge"
+        )
+        raw = simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(
+            8, "raw_cloud_fixed_air_acidgas_ratio_pid_and_delayed_tailgas_gc"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_sru_pods"], 8)
+        self.assertEqual(gov["sulfur_recovery_efficiency_and_catalyst_life_gain_pct"], 44.9)
+        self.assertEqual(gov["tailgas_so2_emission_and_btex_soot_fouling_reduction_pct"], 67.9)
+        self.assertEqual(gov["apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct"], 1.0)
+        self.assertEqual(gov["sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct"], 3.0)
+        self.assertTrue(gov["claus_sulfur_recovery_sru_slo_met"])
+        self.assertFalse(raw["claus_sulfur_recovery_sru_slo_met"])
 
 
 if __name__ == "__main__":

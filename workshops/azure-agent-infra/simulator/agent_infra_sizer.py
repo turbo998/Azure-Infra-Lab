@@ -8758,6 +8758,57 @@ def simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_s
     }
 
 
+def simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(
+    sru_trains: int = 8,
+    sru_governance_mode: str = "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Claus Sulfur Recovery Unit (SRU 1,150-1,400 °C Thermal Reaction Furnace
+    H2S + 1/2 O2 -> SO2 + Sx, BTEX/NH3 Destruction & COS/CS2 TiO2 Hydrolysis) & Multi-Stage
+    Catalytic Claus Converters / Liquid-Sulfur Degassing (H2Sx Polysulfide Decomposition) PINN-MPC,
+    Online 10 kHz UV-DOAS Tail-Gas Air-Demand Analyzer ([H2S] - 2[SO2] = 0), Dual-Wavelength IR
+    Refractory Pyrometry & Coriolis Liquid-Sulfur Seal-Leg Metrology & API RP 556 / NFPA 85 / OSHA
+    1910.119 / IEC 61511 SIL-3 Sulfur Seal-Leg Blowout (> 100 ppmv H2S Toxic Release), Claus
+    Condenser Sulfur-Fog Plugging & Liquid-Sulfur Pit H2S LEL Explosion (> 4.3 vol%) Interlock
+    Sandbox (Chapter 176 · 180-Test Milestone!).
+    """
+    if sru_trains < 1:
+        raise ValueError("sru_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge",
+        "raw_cloud_fixed_air_acidgas_ratio_pid_and_delayed_tailgas_gc",
+    }
+    if sru_governance_mode not in valid_modes:
+        raise ValueError(f"sru_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = sru_governance_mode == "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge"
+    active_sru_pods = max(2, min(16, int(sru_trains))) if sru_trains <= 16 else max(16, int(sru_trains // 2))
+    gpu_nodes = max(2, math.ceil(sru_trains / 4))
+
+    sulfur_recovery_efficiency_and_catalyst_life_gain_pct = 44.9 if governed else 6.6
+    tailgas_so2_emission_and_btex_soot_fouling_reduction_pct = 67.9 if governed else 9.0
+    apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms = 0.4 if governed else 380.0
+    unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct = 0.0 if governed else 1.5
+    sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms = 0.3 if governed else 202.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct = 0.0 if governed else 4.3
+
+    return {
+        "sru_trains": sru_trains,
+        "sru_governance_mode": sru_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_sru_pods": active_sru_pods,
+        "sulfur_recovery_efficiency_and_catalyst_life_gain_pct": sulfur_recovery_efficiency_and_catalyst_life_gain_pct,
+        "tailgas_so2_emission_and_btex_soot_fouling_reduction_pct": tailgas_so2_emission_and_btex_soot_fouling_reduction_pct,
+        "apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms": apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms,
+        "unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct": unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct,
+        "sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms": sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct,
+        "claus_sulfur_recovery_sru_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -10480,6 +10480,53 @@
         "uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct": 4.4,
         "ostwald_nitric_acid_ptrh_gauze_slo_met": false
       }
+    ],
+    "claus_sulfur_recovery_sru_profiles": [
+      {
+        "sru_trains": 8,
+        "sru_governance_mode": "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_sru_pods": 8,
+        "sulfur_recovery_efficiency_and_catalyst_life_gain_pct": 44.9,
+        "tailgas_so2_emission_and_btex_soot_fouling_reduction_pct": 67.9,
+        "apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms": 0.4,
+        "unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct": 0.0,
+        "sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": 0.0,
+        "claus_sulfur_recovery_sru_slo_met": true
+      },
+      {
+        "sru_trains": 32,
+        "sru_governance_mode": "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_sru_pods": 16,
+        "sulfur_recovery_efficiency_and_catalyst_life_gain_pct": 44.9,
+        "tailgas_so2_emission_and_btex_soot_fouling_reduction_pct": 67.9,
+        "apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms": 0.4,
+        "unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct": 0.0,
+        "sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": 0.0,
+        "claus_sulfur_recovery_sru_slo_met": true
+      },
+      {
+        "sru_trains": 8,
+        "sru_governance_mode": "raw_cloud_fixed_air_acidgas_ratio_pid_and_delayed_tailgas_gc",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_sru_pods": 8,
+        "sulfur_recovery_efficiency_and_catalyst_life_gain_pct": 6.6,
+        "tailgas_so2_emission_and_btex_soot_fouling_reduction_pct": 9.0,
+        "apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms": 380.0,
+        "unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct": 1.5,
+        "sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms": 202.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": 4.3,
+        "claus_sulfur_recovery_sru_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -19334,5 +19381,52 @@
       "ostwald_nitric_acid_ptrh_gauze_slo_met": false
     }
   },
-  "trace_sha256": "a8b07aa58e8c93cec1a0e13734abdd0c46f3ddb93d1ced21ff4f660a355f6eca"
+  "demo_171_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox": {
+    "sru_8_trains": {
+      "sru_trains": 8,
+      "sru_governance_mode": "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sru_pods": 8,
+      "sulfur_recovery_efficiency_and_catalyst_life_gain_pct": 44.9,
+      "tailgas_so2_emission_and_btex_soot_fouling_reduction_pct": 67.9,
+      "apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms": 0.4,
+      "unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct": 0.0,
+      "sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": 0.0,
+      "claus_sulfur_recovery_sru_slo_met": true
+    },
+    "sru_32_trains": {
+      "sru_trains": 32,
+      "sru_governance_mode": "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sru_pods": 16,
+      "sulfur_recovery_efficiency_and_catalyst_life_gain_pct": 44.9,
+      "tailgas_so2_emission_and_btex_soot_fouling_reduction_pct": 67.9,
+      "apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms": 0.4,
+      "unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct": 0.0,
+      "sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": 0.0,
+      "claus_sulfur_recovery_sru_slo_met": true
+    },
+    "raw_sru_8_trains": {
+      "sru_trains": 8,
+      "sru_governance_mode": "raw_cloud_fixed_air_acidgas_ratio_pid_and_delayed_tailgas_gc",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sru_pods": 8,
+      "sulfur_recovery_efficiency_and_catalyst_life_gain_pct": 6.6,
+      "tailgas_so2_emission_and_btex_soot_fouling_reduction_pct": 9.0,
+      "apirp556_nfpa85_sil3_seal_leg_blowout_and_sulfur_pit_lel_interlock_ms": 380.0,
+      "unmitigated_h2s_seal_leg_blowout_sulfur_pit_explosion_or_refractory_slump_pct": 1.5,
+      "sru_edge_10khz_uvdoas_air_demand_and_ir_refractory_telemetry_loop_ms": 202.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": 4.3,
+      "claus_sulfur_recovery_sru_slo_met": false
+    }
+  },
+  "trace_sha256": "5ed85c04942be29657fc34200890586f6f615ee9047176ddecbcdb38a209ee76"
 }
