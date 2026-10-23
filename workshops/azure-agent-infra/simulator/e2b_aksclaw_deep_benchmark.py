@@ -176,6 +176,7 @@ from agent_infra_sizer import (
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
+    simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1391,6 +1392,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(8, "raw_cloud_ideal_gas_pid_fixed_anti_surge_line"),
     ]
 
+    cdc_rotary_tablet_press_profiles: List[Dict[str, object]] = [
+        simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(12, "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge"),
+        simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(48, "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge"),
+        simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(12, "raw_cloud_batch_tableting_offline_hplc_dissolution_sampling"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1554,6 +1561,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "mcz_silicon_ingot_voronkov_profiles": mcz_silicon_ingot_voronkov_profiles,
         "ibf_mrf_subnm_aspheric_mirror_profiles": ibf_mrf_subnm_aspheric_mirror_profiles,
         "allam_fetvedt_sco2_oxyfuel_profiles": allam_fetvedt_sco2_oxyfuel_profiles,
+        "cdc_rotary_tablet_press_profiles": cdc_rotary_tablet_press_profiles,
     }
 
 

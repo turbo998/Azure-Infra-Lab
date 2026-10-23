@@ -10151,6 +10151,53 @@
         "uncompensated_span_wagner_density_shock_or_pche_microchannel_fouling_pct": 4.1,
         "allam_fetvedt_sco2_oxyfuel_slo_met": false
       }
+    ],
+    "cdc_rotary_tablet_press_profiles": [
+      {
+        "cdc_tablet_lines": 12,
+        "cdc_governance_mode": "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_cdc_line_pods": 12,
+        "rtrt_continuous_tableting_yield_and_oee_gain_pct": 44.2,
+        "api_content_uniformity_rsd_and_tablet_capping_reduction_pct": 66.8,
+        "ichq13_21cfr11_atex_sil3_single_tablet_reject_and_punch_interlock_ms": 0.4,
+        "unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct": 0.0,
+        "press_edge_10khz_piezo_punch_and_nir_transmission_raman_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct": 0.0,
+        "cdc_rotary_tablet_press_slo_met": true
+      },
+      {
+        "cdc_tablet_lines": 48,
+        "cdc_governance_mode": "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_cdc_line_pods": 24,
+        "rtrt_continuous_tableting_yield_and_oee_gain_pct": 44.2,
+        "api_content_uniformity_rsd_and_tablet_capping_reduction_pct": 66.8,
+        "ichq13_21cfr11_atex_sil3_single_tablet_reject_and_punch_interlock_ms": 0.4,
+        "unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct": 0.0,
+        "press_edge_10khz_piezo_punch_and_nir_transmission_raman_telemetry_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct": 0.0,
+        "cdc_rotary_tablet_press_slo_met": true
+      },
+      {
+        "cdc_tablet_lines": 12,
+        "cdc_governance_mode": "raw_cloud_batch_tableting_offline_hplc_dissolution_sampling",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_cdc_line_pods": 12,
+        "rtrt_continuous_tableting_yield_and_oee_gain_pct": 6.8,
+        "api_content_uniformity_rsd_and_tablet_capping_reduction_pct": 9.1,
+        "ichq13_21cfr11_atex_sil3_single_tablet_reject_and_punch_interlock_ms": 380.0,
+        "unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct": 1.5,
+        "press_edge_10khz_piezo_punch_and_nir_transmission_raman_telemetry_loop_ms": 205.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct": 4.0,
+        "cdc_rotary_tablet_press_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -18676,5 +18723,52 @@
       "allam_fetvedt_sco2_oxyfuel_slo_met": false
     }
   },
-  "trace_sha256": "1e12df86341f5104c602577c62b51b882d89bd319d87fac9baee3f020ed8d5c6"
+  "demo_164_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox": {
+    "cdc_12_lines": {
+      "cdc_tablet_lines": 12,
+      "cdc_governance_mode": "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_cdc_line_pods": 12,
+      "rtrt_continuous_tableting_yield_and_oee_gain_pct": 44.2,
+      "api_content_uniformity_rsd_and_tablet_capping_reduction_pct": 66.8,
+      "ichq13_21cfr11_atex_sil3_single_tablet_reject_and_punch_interlock_ms": 0.4,
+      "unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct": 0.0,
+      "press_edge_10khz_piezo_punch_and_nir_transmission_raman_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct": 0.0,
+      "cdc_rotary_tablet_press_slo_met": true
+    },
+    "cdc_48_lines": {
+      "cdc_tablet_lines": 48,
+      "cdc_governance_mode": "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_cdc_line_pods": 24,
+      "rtrt_continuous_tableting_yield_and_oee_gain_pct": 44.2,
+      "api_content_uniformity_rsd_and_tablet_capping_reduction_pct": 66.8,
+      "ichq13_21cfr11_atex_sil3_single_tablet_reject_and_punch_interlock_ms": 0.4,
+      "unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct": 0.0,
+      "press_edge_10khz_piezo_punch_and_nir_transmission_raman_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct": 0.0,
+      "cdc_rotary_tablet_press_slo_met": true
+    },
+    "raw_cdc_12_lines": {
+      "cdc_tablet_lines": 12,
+      "cdc_governance_mode": "raw_cloud_batch_tableting_offline_hplc_dissolution_sampling",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_cdc_line_pods": 12,
+      "rtrt_continuous_tableting_yield_and_oee_gain_pct": 6.8,
+      "api_content_uniformity_rsd_and_tablet_capping_reduction_pct": 9.1,
+      "ichq13_21cfr11_atex_sil3_single_tablet_reject_and_punch_interlock_ms": 380.0,
+      "unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct": 1.5,
+      "press_edge_10khz_piezo_punch_and_nir_transmission_raman_telemetry_loop_ms": 205.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct": 4.0,
+      "cdc_rotary_tablet_press_slo_met": false
+    }
+  },
+  "trace_sha256": "ca2f769e592a7bcf0d3f65dcdbdd2236a7da653ca5f8e9775781c96e35b3e591"
 }

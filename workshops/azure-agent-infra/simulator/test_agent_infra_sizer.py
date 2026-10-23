@@ -170,6 +170,7 @@ from agent_infra_sizer import (
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
+    simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3428,6 +3429,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_span_wagner_density_shock_or_pche_microchannel_fouling_pct"], 3.0)
         self.assertTrue(gov["allam_fetvedt_sco2_oxyfuel_slo_met"])
         self.assertFalse(raw["allam_fetvedt_sco2_oxyfuel_slo_met"])
+
+    def test_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(self) -> None:
+        gov = simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(
+            12, "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge"
+        )
+        raw = simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(
+            12, "raw_cloud_batch_tableting_offline_hplc_dissolution_sampling"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cdc_line_pods"], 12)
+        self.assertEqual(gov["rtrt_continuous_tableting_yield_and_oee_gain_pct"], 44.2)
+        self.assertEqual(gov["api_content_uniformity_rsd_and_tablet_capping_reduction_pct"], 66.8)
+        self.assertEqual(gov["ichq13_21cfr11_atex_sil3_single_tablet_reject_and_punch_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_oot_subpotent_tablet_escape_or_punch_collision_explosion_pct"], 1.0)
+        self.assertEqual(gov["press_edge_10khz_piezo_punch_and_nir_transmission_raman_telemetry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_feeder_bridge_rtd_disturbance_or_overlubrication_pct"], 3.0)
+        self.assertTrue(gov["cdc_rotary_tablet_press_slo_met"])
+        self.assertFalse(raw["cdc_rotary_tablet_press_slo_met"])
 
 
 if __name__ == "__main__":

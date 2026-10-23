@@ -183,6 +183,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
+    simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1229,6 +1230,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "sco2_8_trains": simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(8, "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge"),
             "sco2_32_trains": simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(32, "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge"),
             "raw_sco2_8_trains": simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(8, "raw_cloud_ideal_gas_pid_fixed_anti_surge_line"),
+        },
+        "demo_164_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox": {
+            "cdc_12_lines": simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(12, "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge"),
+            "cdc_48_lines": simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(48, "pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge"),
+            "raw_cdc_12_lines": simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox(12, "raw_cloud_batch_tableting_offline_hplc_dissolution_sampling"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

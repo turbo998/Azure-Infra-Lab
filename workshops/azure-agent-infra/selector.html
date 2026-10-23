@@ -576,6 +576,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(161)">162. 300mm 半导体单晶硅磁场直拉法 (MCZ 0.3–0.4 T 超导水平/勾形磁场, 1,420°C 石英坩埚熔体) 与连续直拉 (CCZ) 单晶炉、Voronkov 点缺陷判据 (v/G0 = 1.34×10⁻³ cm²/min·K 零 COP 空洞/零位错环中性区)、洛伦兹磁流体 (MHD) 熔体对流与间隙氧 [Oi] (8–14 ppma) 条纹抑制 PINN-MPC、在线 5kHz 弯月面亮环 (Meniscus Bright-Ring) 激光三角直径/Dash 细颈无位错成像与双色高温计计量及 SEMI S2 / SEMI M1 / NFPA 86 / ASME BPVC / IEC 61511 SIL-3 石英坩埚漏硅水冷炉体蒸汽爆炸防护、籽晶钢索超载防坠抓捕与超导磁体失超硬联锁池 (Bicep · 170 单测里程碑)</button>
       <button class="tab-btn" onclick="showBlueprint(162)">163. 亚纳米级 (&lt; 0.10 nm RMS 面形误差) 非球面/自由曲面超低膨胀光学反射镜 (ULE / Zerodur 400–800mm 极紫外光刻物镜与空间望远镜主镜) 五轴离子束修形 (IBF 500–1,500 eV Ar⁺ 考夫曼/射频离子源) 与磁流变抛光 (MRF 宾汉塑性羟基铁粉/氧化铈柔性缎带)、Tikhonov 正则化 Richardson-Lucy 非负驻留时间矩阵反卷积与去除函数 (TIF) 热足迹漂移补偿 PINN-MPC、在线移相斐索计算全息 (CGH) 零位激光干涉仪 (37 项 Zernike 波前与中频误差 MSF 功率谱密度 PSD) 计量及 SEMI S2 / ISO 10110 / ANSI Z136.1 / IEC 61511 SIL-3 离子源屏栅高压打火蚀坑抑制、零重力 Whiffletree 镜室支撑过载与高真空联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(163)">164. 超临界二氧化碳 (sCO2 Allam-Fetvedt 300 bar / 1,150°C 纯氧直燃零碳发电循环与 300 MW 透平压缩机组) 近临界主压缩机 (7.38 MPa, 30.98°C) Span-Wagner 真实气体状态方程密度突变与两相液滴凝结防喘振 PINN-MPC、在线 50kHz 叶尖间隙电容/可调谐二极管激光吸收光谱 (TDLAS) 纯氧燃烧当量比与扩散焊印刷电路板式回热器 (PCHE Inconel 617/740H 微通道) 压差计量及 API 617 / ASME PTC 10 / NFPA 85 / IEC 61511 SIL-3 热气旁路快速防喘振阀 (&lt;12ms)、高压纯氧防金属自燃切断与轴系超速跳闸硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(164)">165. 制药连续直接压片 (CDC 失重式双螺杆喂料机 LIW、连续螺带混合机与 72 冲高速旋转压片机 150万片/h) 停留时间分布 (RTD 多釜串联泰勒色散) 与 Heckel/Kawakita 粉末致密化 PINN-MPC、在线 10kHz 压电冲头压力曲线、近红外 (NIR)/透射拉曼含量均匀度 (RSD &lt;1.5%) 与太赫兹包衣厚度计量及 FDA 21 CFR Part 11 / ICH Q13 / ATEX / IEC 61511 SIL-3 单片高速气动剔废门、冲头卡死防撞过载与可燃药粉防爆硬联锁池 (Bicep · 165蓝图里程碑!)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4309,6 +4310,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 164: Pharmaceutical Continuous Direct Compression (CDC) Rotary Tablet Press RTD & Heckel PINN-MPC & ICH Q13 SIL-3 Simulator -->
+  <section class="card" style="margin-top:1.25rem;border-color:rgba(16,185,129,0.45);">
+    <span class="pill pill-teal">TOOL 164 · PHARMACEUTICAL CONTINUOUS DIRECT COMPRESSION (CDC LIW FEEDER, CONTINUOUS BLENDER &amp; 72-STATION ROTARY TABLET PRESS) RTD &amp; HECKEL/KAWAKITA PINN-MPC SIMULATOR (165-BLUEPRINT MILESTONE!)</span>
+    <h2>制药固体制剂连续直接压片 (CDC 失重式双螺杆喂料 LIW、连续混合与 72 冲高速旋转压片机) 停留时间分布 (RTD 泰勒色散) 与 Heckel/Kawakita 压实力学 PINN-MPC、在线 10kHz 压电冲头力/透射拉曼含量均匀度 (RSD &lt;1.5%)/太赫兹包衣计量及 FDA 21 CFR Part 11 / ICH Q13 / ATEX / SIL-3 单片气动剔废与防爆硬联锁测算器 (CDC Rotary Tablet Press Twins)</h2>
+    <div class="sub">量化在 <code>2 – 48</code> 条符合 <code>ICH Q13 / FDA PAT</code> 连续制造规范的制药固体制剂连续直接压片（<code>Continuous Direct Compression, CDC</code>：涵盖多路失重式双螺杆喂料机 <code>LIW Feeder</code>、连续桨叶混合机与 <code>72</code> 冲位双出料高速旋转压片机，产能高达 <code>1,000,000 – 1,500,000 片/小时</code>）产线规模下，启用 <code>Standard_NV36ads_A10_v5</code> <strong>多釜串联轴向泰勒色散停留时间分布（<code>Tank-in-Series Axial Taylor Dispersion RTD</code> $E(t)$ 卷积积分追踪喂料加料斗补料 <code>Refill</code> 瞬态质量脉冲在管道内的阻尼与相位延迟）、Heckel 屈服压实方程 $\ln(1/(1-D)) = K P + A$、Kawakita 粉末体积压缩方程与硬脂酸镁（<code>MgSt</code>）剪切应变积分润滑动力学</strong> <code>PINN</code> + 喂料比例前馈补偿、强迫加料器（<code>Force Feeder Paddle</code>）转速、预压轮/主压轮（<code>Pre-/Main-Compression Roll</code>）毫米级间隙与模孔充填深度协同 <code>MPC</code>（锁定活性药物成分 <code>API</code> 含量均匀度相对标准偏差 <code>RSD &lt; 1.5%</code>、片剂孔隙率与抗张强度以消除顶裂/层裂 <code>Capping &amp; Lamination</code> 及过度润滑导致的溶出度迟滞，实时放行测试 <code>RTRT</code> 良率与设备综合效率 <code>OEE</code> 提升 <code>+44.2%</code>，<code>API</code> 含量均匀度偏差与顶裂/粘冲废片率削减 <code>-66.8%</code>）、<code>FDA 21 CFR Part 11 / ICH Q13 / ATEX Zone 20 / NFPA 652 / IEC 61511 SIL-3</code> 检出单冲模孔超重/欠量或 <code>RTD</code> 追溯超限（<code>OOT / OOS API Potency</code>）、上下冲头咬死/异物金属过载（主压轮峰值力 <code>&gt; 65 kN</code> 威胁冲头断裂碎块混入药片）以及高活性可燃药粉尘云超限（<code>MIE &lt; 3 mJ</code>）时，瞬时触发 <code>&lt; 2 ms</code> 高速阵列压电先导气动单片剔废拨叉（<code>Single-Tablet Air-Jet Reject Gate</code>）与 <code>RTD</code> 污染段自动分流阀、压片轮液压缓冲急退卸荷并联动无焰泄爆/碳酸氢钠化学抑爆筒隔离硬联锁（<code>0.4 ms</code> 响应，<code>0.0%</code> 含量超标伪劣药片漏放行、冲头断裂碎屑混药或可燃药粉尘爆事故，对比传统批次压片离线抽检反模式 <code>1.5%</code> 风险）以及压片洁净室边缘 <code>10 kHz</code> 压电冲头压力-位移滞回曲线、出片滑道在线傅里叶近红外/透射拉曼光谱（<code>NIR / Transmission Raman</code>）与太赫兹脉冲成像（<code>TPI</code>）包衣膜厚层析边缘分诊（<code>0.3 ms</code>，削减 <code>99.7%</code> 药厂 GMP 专网 WAN 带宽，避免 <code>4.0%</code> 喂料架桥鼠洞脉动或硬脂酸镁过润滑导致溶出不合格整批报废）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 制药连续直接压片 (CDC 72冲高速旋转压片与RTRT在线放行) 洁净产线数量 (CDC Continuous Tablet Lines): <strong id="lbl_cdc_lines" style="color:var(--teal)">12</strong></label>
+          <input type="range" id="rng_cdc_lines" min="2" max="48" step="2" value="12" oninput="runCdcTabletLab()">
+        </div>
+        <div class="form-row">
+          <label>2. RTD 停留时间分布/Heckel 压实 PINN-MPC 与 ICH Q13 / 21 CFR Part 11 SIL-3 单片剔废及防撞联锁模式 (CDC Governance Mode)</label>
+          <select id="sel_cdc_mode" onchange="runCdcTabletLab()">
+            <option value="pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge" selected>RTD 泰勒色散卷积追踪、Heckel/Kawakita 致密化与 MgSt 剪切润滑 PINN-MPC (+44.2% RTRT 实时放行良率与 OEE / -66.8% API 含量 RSD 与顶裂粘冲) + ICH Q13 / ATEX SIL-3 0.4ms 单片气动剔废、主压轮液压急退与抑爆硬联锁 + 0.3ms 10kHz 压电冲头力与 NIR/透射拉曼边缘 (推荐)</option>
+            <option value="raw_cloud_batch_tableting_offline_hplc_dissolution_sampling">传统反模式：亚批固定转速压片与完批后实验室离线 HPLC/溶出度抽检 (+6.8% 良率增益) + 无 0.4ms 单片气动剔废与液压急退硬联锁 (1.5% 喂料补料瞬态亚效/超效药片流入包装、冲头卡死断冲混入药片或高敏药粉静电闪爆风险) + 缺乏在线 10kHz 冲头功与透射拉曼/RTD 实时重构 (4.0% 喂料斗架桥或 MgSt 过润滑疏水膜致整批溶出失败报废)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cdcTabletOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6985,6 +7009,24 @@ resource sco2AllamPool 'Microsoft.ContainerService/managedClusters/agentPools@20
       'aksclaw.io/skid-edge-50khz-blade-tip-tdlas-oxycombustor': 'enabled-0.4ms-99.6pct-power-plant-wan-cut'
     }
   }
+}`,
+  `// 165. Pharmaceutical Continuous Direct Compression (CDC Loss-in-Weight Twin-Screw Feeder, Continuous Blender & 72-Station Rotary Tablet Press) RTD Taylor-Dispersion & Heckel/Kawakita Compaction PINN-MPC, Online 10 kHz Piezo Punch-Force / NIR / Transmission Raman / THz Metrology & FDA 21 CFR Part 11 / ICH Q13 / ATEX / IEC 61511 SIL-3 Single-Tablet Reject-Gate, Punch Overload & Dust Explosion Pool (165-Blueprint Milestone!)
+param aksClusterName string = 'aks-cdc-tablet-press-ichq13-sil3'
+param location string = resourceGroup().location
+
+resource cdcTabletPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'cdctabpool3'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (RTD Axial Taylor-Dispersion Convolution & Heckel/Kawakita Compaction PINN-MPC + Online 10 kHz Piezo Punch & NIR/Raman Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'cdc-rotary-tablet-press-rtd-heckel-raman-ichq13-sil3-agent'
+      'aksclaw.io/pinn-mpc-rtd-taylor-dispersion-heckel-kawakita-compaction': 'enabled-44.2pct-rtrt-yield-gain-66.8pct-api-rsd-capping-cut'
+      'aksclaw.io/ichq13-21cfr11-atex-sil3-single-tablet-reject-punch-overload': 'enforced-0.4ms-zero-oot-subpotent-tablet-escape-punch-collision-or-dust-explosion'
+      'aksclaw.io/press-edge-10khz-piezo-punch-nir-transmission-raman-thz': 'enabled-0.3ms-99.7pct-pharma-suite-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -7249,6 +7291,30 @@ runLh2CryoZboLab();
 runMczSiliconLab();
 runIbfMrfOpticsLab();
 runAllamSco2Lab();
+runCdcTabletLab();
+
+function runCdcTabletLab() {
+  const lines = parseInt(document.getElementById('rng_cdc_lines').value, 10);
+  const mode = document.getElementById('sel_cdc_mode').value;
+  document.getElementById('lbl_cdc_lines').textContent = lines.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(lines / 6));
+  const pods = lines <= 12 ? Math.max(2, Math.min(12, lines)) : Math.max(12, Math.floor(lines / 2));
+  const ok = mode === 'pinn_mpc_rtd_taylor_dispersion_heckel_kawakita_compaction_nir_raman_ichq13_sil3_edge';
+  const mpcStr = ok ? "多釜串联轴向泰勒色散停留时间分布 (RTD E(t) 实时前向卷积追踪喂料补料瞬态扰动包络)、Heckel 塑性致密化屈服方程与硬脂酸镁 (MgSt) 比总剪切应变润滑 PINN + 双螺杆失重喂料 (LIW) 配比、强迫加料桨转速与预压/主压轮间隙协同 MPC · 实时放行测试 (RTRT) 良率与压片 OEE +44.2% · API 含量均匀度偏差 (RSD <1.5%) 与顶裂/层裂/溶出迟滞废片率 -66.8%" : "传统靠亚批固定转速混合压片与完批后实验室离线 HPLC/溶出抽检滞后 · 仅 +6.8% 良率增益 / -9.1% 废片削减 (失重喂料斗补料切换瞬态压力扰动或混合机剪切过润滑无法实时补偿，造成高达 4.0% 批次含量偏离或疏水膜溶出度不合格)";
+  const sil3Str = ok ? "0.4 ms FDA 21 CFR Part 11 / ICH Q13 / ATEX Zone 20 / IEC 61511 SIL-3 检出单冲压片力偏离质量包络、RTD 污染段到达转塔或主压轮力 >65 kN 过载时瞬时触发 <2ms 高速气动单片剔废门/分流阀、液压支撑柱塞毫秒级急退卸荷并联动隔离室碳酸氢钠抑爆筒硬联锁 · 0.0% OOT/OOS 问题药片漏放行、断冲碎屑混药或药粉尘爆违例" : "无 0.4ms 单片高速气动剔废与液压防断冲硬联锁 (380.0 ms 传统转塔急停滞后) · 1.5% 150万片/小时高速下数十片超效/亚效药片滑入良品桶、涩冲咬死崩断冲头尖端或高活性 API 粉尘闪爆风险";
+  const edgeStr = ok ? "0.3 ms 压片隔离器边缘 10 kHz 72 冲位压电应变环压力-位移功积分 + 滑道在线多通道傅里叶近红外/透射拉曼 (NIR / Transmission Raman API 定量) + 太赫兹脉冲包衣层析边缘 (-99.7% 药厂 WAN 带宽) · 0.0% 喂料架桥鼠洞或片剂微裂纹漏检" : "205.0 ms 依赖每 30 分钟人工取样称重与离线脆碎度仪 · 无法在毫秒级单冲驻留时间 (Dwell Time <8ms) 内拦截粘冲与微裂纹";
+
+  document.getElementById('cdcTabletOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 超效/亚效药片漏放行、断冲混药或药粉闪爆风险 · 4.0% RTD 补料脉动与 MgSt 过润滑溶出失败漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个 CDC 连续压片孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>10kHz 72冲压电力位移曲线、在线 NIR/透射拉曼与太赫兹包衣边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runAllamSco2Lab() {
   const trains = parseInt(document.getElementById('rng_sco2_trains').value, 10);
