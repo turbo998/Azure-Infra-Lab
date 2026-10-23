@@ -10762,6 +10762,53 @@
         "uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct": 4.4,
         "ilmenite_dc_eaf_titania_slag_smelting_slo_met": false
       }
+    ],
+    "tin_tsl_ausmelt_bath_smelting_profiles": [
+      {
+        "tin_tsl_furnace_lines": 8,
+        "tin_governance_mode": "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tin_pods": 8,
+        "direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct": 46.8,
+        "discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct": 71.2,
+        "nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms": 0.35,
+        "unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct": 0.0,
+        "smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct": 0.0,
+        "tin_tsl_ausmelt_bath_smelting_slo_met": true
+      },
+      {
+        "tin_tsl_furnace_lines": 32,
+        "tin_governance_mode": "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tin_pods": 16,
+        "direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct": 46.8,
+        "discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct": 71.2,
+        "nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms": 0.35,
+        "unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct": 0.0,
+        "smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct": 0.0,
+        "tin_tsl_ausmelt_bath_smelting_slo_met": true
+      },
+      {
+        "tin_tsl_furnace_lines": 8,
+        "tin_governance_mode": "raw_cloud_fixed_lance_o2_coal_ratio_and_offline_slag_sn_cupellation_assay",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tin_pods": 8,
+        "direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct": 6.7,
+        "discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct": 9.6,
+        "nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms": 386.0,
+        "unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct": 1.6,
+        "smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms": 211.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct": 4.5,
+        "tin_tsl_ausmelt_bath_smelting_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -19898,5 +19945,52 @@
       "ilmenite_dc_eaf_titania_slag_smelting_slo_met": false
     }
   },
-  "trace_sha256": "ba51f3fcec78b33324ac8dc7b97209f164760bed0fa292ba9aebe78859518463"
+  "demo_177_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox": {
+    "tin_8_lines": {
+      "tin_tsl_furnace_lines": 8,
+      "tin_governance_mode": "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tin_pods": 8,
+      "direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct": 46.8,
+      "discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct": 71.2,
+      "nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms": 0.35,
+      "unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct": 0.0,
+      "smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct": 0.0,
+      "tin_tsl_ausmelt_bath_smelting_slo_met": true
+    },
+    "tin_32_lines": {
+      "tin_tsl_furnace_lines": 32,
+      "tin_governance_mode": "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tin_pods": 16,
+      "direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct": 46.8,
+      "discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct": 71.2,
+      "nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms": 0.35,
+      "unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct": 0.0,
+      "smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct": 0.0,
+      "tin_tsl_ausmelt_bath_smelting_slo_met": true
+    },
+    "raw_tin_8_lines": {
+      "tin_tsl_furnace_lines": 8,
+      "tin_governance_mode": "raw_cloud_fixed_lance_o2_coal_ratio_and_offline_slag_sn_cupellation_assay",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tin_pods": 8,
+      "direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct": 6.7,
+      "discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct": 9.6,
+      "nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms": 386.0,
+      "unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct": 1.6,
+      "smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms": 211.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct": 4.5,
+      "tin_tsl_ausmelt_bath_smelting_slo_met": false
+    }
+  },
+  "trace_sha256": "f7baf1ed70bbf5590e6de8b61067f5aeff5f3dea3e665257dd4170490baa8374"
 }

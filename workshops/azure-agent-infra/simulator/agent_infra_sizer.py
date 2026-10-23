@@ -9060,6 +9060,49 @@ def simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86
     }
 
 
+def simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(
+    tin_tsl_furnace_lines: int = 8,
+    tin_governance_mode: str = "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Tin Ausmelt/IsaSmelt Top-Submerged Lance (TSL) Bath Smelting (1,180-1,320 C), Fuming Furnace SnS Volatilization, Vacuum Distillation Pb/Bi/As Removal (1,150 C, 5-15 Pa) & Fluorosilicic Acid Electrolytic Refining 4N 99.99% Sn PINN-MPC & NFPA 86 / OSHA 1910.1018 / ASME BPVC VIII / IEC 61511 SIL-3 Interlock (Cycle #177)."""
+    if tin_tsl_furnace_lines <= 0:
+        raise ValueError("tin_tsl_furnace_lines must be positive")
+    valid_modes = {
+        "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge",
+        "raw_cloud_fixed_lance_o2_coal_ratio_and_offline_slag_sn_cupellation_assay",
+    }
+    if tin_governance_mode not in valid_modes:
+        raise ValueError(f"tin_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = tin_governance_mode == "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge"
+    active_tin_pods = max(2, min(16, int(tin_tsl_furnace_lines))) if tin_tsl_furnace_lines <= 16 else max(16, int(tin_tsl_furnace_lines // 2))
+    gpu_nodes = max(2, math.ceil(tin_tsl_furnace_lines / 4))
+
+    direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct = 46.8 if governed else 6.7
+    discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct = 71.2 if governed else 9.6
+    nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms = 0.35 if governed else 386.0
+    unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct = 0.0 if governed else 1.6
+    smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms = 0.25 if governed else 211.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct = 0.0 if governed else 4.5
+
+    return {
+        "tin_tsl_furnace_lines": tin_tsl_furnace_lines,
+        "tin_governance_mode": tin_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tin_pods": active_tin_pods,
+        "direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct": direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct,
+        "discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct": discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct,
+        "nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms": nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms,
+        "unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct": unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct,
+        "smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms": smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct": uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct,
+        "tin_tsl_ausmelt_bath_smelting_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

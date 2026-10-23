@@ -189,6 +189,7 @@ from agent_infra_sizer import (
     simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox,
     simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
     simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
+    simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1482,6 +1483,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_arc_power_anthracite_ratio_and_offline_slag_xrf_dip_testing"),
     ]
 
+    tin_tsl_ausmelt_bath_smelting_profiles: List[Dict[str, object]] = [
+        simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(8, "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge"),
+        simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(32, "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge"),
+        simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_lance_o2_coal_ratio_and_offline_slag_sn_cupellation_assay"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1658,6 +1665,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ccr_platforming_moving_bed_radial_reactor_profiles": ccr_platforming_moving_bed_radial_reactor_profiles,
         "zinc_pressure_leaching_electrowinning_profiles": zinc_pressure_leaching_electrowinning_profiles,
         "ilmenite_dc_eaf_titania_slag_smelting_profiles": ilmenite_dc_eaf_titania_slag_smelting_profiles,
+        "tin_tsl_ausmelt_bath_smelting_profiles": tin_tsl_ausmelt_bath_smelting_profiles,
     }
 
 

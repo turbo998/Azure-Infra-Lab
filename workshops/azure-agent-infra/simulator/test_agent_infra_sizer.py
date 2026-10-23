@@ -183,6 +183,7 @@ from agent_infra_sizer import (
     simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox,
     simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
     simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
+    simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3714,6 +3715,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct"], 3.0)
         self.assertTrue(gov["ilmenite_dc_eaf_titania_slag_smelting_slo_met"])
         self.assertFalse(raw["ilmenite_dc_eaf_titania_slag_smelting_slo_met"])
+
+    def test_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_tin_tsl_ausmelt_bath_smelting_sns_fuming_vacuum_distillation_nfpa86_sil3_edge"
+        )
+        raw = simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_lance_o2_coal_ratio_and_offline_slag_sn_cupellation_assay"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_tin_pods"], 8)
+        self.assertEqual(gov["direct_tin_recovery_and_4n_vacuum_distillation_yield_gain_pct"], 46.8)
+        self.assertEqual(gov["discard_slag_sn_loss_and_lance_tip_erosion_reduction_pct"], 71.2)
+        self.assertEqual(gov["nfpa86_osha19101018_sil3_lance_water_leak_and_as2o3_fugitive_interlock_ms"], 0.35)
+        self.assertEqual(gov["unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lance_water_jacket_burnthrough_steam_explosion_or_as2o3_release_pct"], 1.0)
+        self.assertEqual(gov["smelter_edge_10khz_lance_ae_libs_slag_sno_and_tdlas_as2o3_so2_telemetry_loop_ms"], 0.25)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cassiterite_fe_sio2_shift_or_hardhead_fe_sn_alloy_crusting_slip_pct"], 3.0)
+        self.assertTrue(gov["tin_tsl_ausmelt_bath_smelting_slo_met"])
+        self.assertFalse(raw["tin_tsl_ausmelt_bath_smelting_slo_met"])
 
 
 if __name__ == "__main__":
