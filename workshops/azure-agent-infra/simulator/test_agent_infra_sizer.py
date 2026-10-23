@@ -148,6 +148,7 @@ from agent_infra_sizer import (
     simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox,
     simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox,
     simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox,
+    simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -343,6 +344,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-mto-dmto-sapo34-hydrocarbon-pool-coke-slidevalve-apirp554-sil3-pool.bicep",
             "aksclaw-pta-px-oxidation-bubble-column-4cba-offgas-o2-nfpa69-sil3-pool.bicep",
             "aksclaw-wet-phosphoric-acid-dap-gypsum-crystal-so4-hf-scrubber-epa63aa-sil3-pool.bicep",
+            "aksclaw-sinter-plant-blast-furnace-cohesive-zone-tuyere-raceway-nfpa86-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2943,6 +2945,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct"], 3.0)
         self.assertTrue(gov["wet_phosphoric_acid_dap_slo_met"])
         self.assertFalse(raw["wet_phosphoric_acid_dap_slo_met"])
+
+    def test_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge"
+        )
+        raw = simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(
+            8, "manual_paul_wurth_chute_matrix_fixed_pci_lance_offline_torpedo_ladle_si_assay_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_blast_furnace_pods"], 8)
+        self.assertEqual(gov["hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct"], 42.6)
+        self.assertEqual(gov["coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct"], 58.4)
+        self.assertEqual(gov["nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct"], 1.0)
+        self.assertEqual(gov["casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct"], 3.0)
+        self.assertTrue(gov["blast_furnace_cohesive_zone_slo_met"])
+        self.assertFalse(raw["blast_furnace_cohesive_zone_slo_met"])
 
 
 if __name__ == "__main__":

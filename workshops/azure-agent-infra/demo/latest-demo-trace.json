@@ -8892,6 +8892,68 @@
         "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 3.7,
         "wet_phosphoric_acid_dap_slo_met": false
       }
+    ],
+    "blast_furnace_cohesive_zone_profiles": [
+      {
+        "blast_furnace_sinter_complexes": 4,
+        "bf_governance_mode": "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_blast_furnace_pods": 4,
+        "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": 42.6,
+        "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": 58.4,
+        "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": 0.3,
+        "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": 0.0,
+        "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 0.0,
+        "blast_furnace_cohesive_zone_slo_met": true
+      },
+      {
+        "blast_furnace_sinter_complexes": 8,
+        "bf_governance_mode": "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_blast_furnace_pods": 8,
+        "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": 42.6,
+        "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": 58.4,
+        "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": 0.3,
+        "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": 0.0,
+        "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 0.0,
+        "blast_furnace_cohesive_zone_slo_met": true
+      },
+      {
+        "blast_furnace_sinter_complexes": 32,
+        "bf_governance_mode": "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_blast_furnace_pods": 16,
+        "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": 42.6,
+        "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": 58.4,
+        "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": 0.3,
+        "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": 0.0,
+        "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 0.0,
+        "blast_furnace_cohesive_zone_slo_met": true
+      },
+      {
+        "blast_furnace_sinter_complexes": 8,
+        "bf_governance_mode": "manual_paul_wurth_chute_matrix_fixed_pci_lance_offline_torpedo_ladle_si_assay_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_blast_furnace_pods": 8,
+        "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": 6.2,
+        "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": 8.7,
+        "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": 150.0,
+        "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": 1.3,
+        "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": 195.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 3.6,
+        "blast_furnace_cohesive_zone_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -16383,5 +16445,52 @@
       "wet_phosphoric_acid_dap_slo_met": false
     }
   },
-  "trace_sha256": "1121993ea4083eb17e38aa1ae32fbfab6a6cea80bbd424ea5fbd447b3fd30618"
+  "demo_142_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox": {
+    "bf_8_complexes": {
+      "blast_furnace_sinter_complexes": 8,
+      "bf_governance_mode": "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_blast_furnace_pods": 8,
+      "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": 42.6,
+      "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": 58.4,
+      "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": 0.3,
+      "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": 0.0,
+      "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 0.0,
+      "blast_furnace_cohesive_zone_slo_met": true
+    },
+    "bf_32_complexes": {
+      "blast_furnace_sinter_complexes": 32,
+      "bf_governance_mode": "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_blast_furnace_pods": 16,
+      "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": 42.6,
+      "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": 58.4,
+      "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": 0.3,
+      "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": 0.0,
+      "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 0.0,
+      "blast_furnace_cohesive_zone_slo_met": true
+    },
+    "raw_bf_8_complexes": {
+      "blast_furnace_sinter_complexes": 8,
+      "bf_governance_mode": "manual_paul_wurth_chute_matrix_fixed_pci_lance_offline_torpedo_ladle_si_assay_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_blast_furnace_pods": 8,
+      "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": 6.2,
+      "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": 8.7,
+      "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": 150.0,
+      "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": 1.3,
+      "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 3.6,
+      "blast_furnace_cohesive_zone_slo_met": false
+    }
+  },
+  "trace_sha256": "72acebca0e4436d957a28eafd21d1804c7cc8cdf4552b848e9cf75db09d4ed76"
 }

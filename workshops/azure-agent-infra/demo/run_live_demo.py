@@ -161,6 +161,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox,
     simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox,
     simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox,
+    simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1097,6 +1098,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "wpa_8_trains": simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(8, "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge"),
             "wpa_32_trains": simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(32, "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge"),
             "raw_wpa_8_trains": simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(8, "manual_h2so4_rock_ratio_offline_2hr_barium_titration_so4_unmonitored_hf_foam_cloud"),
+        },
+        "demo_142_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox": {
+            "bf_8_complexes": simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(8, "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge"),
+            "bf_32_complexes": simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(32, "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge"),
+            "raw_bf_8_complexes": simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(8, "manual_paul_wurth_chute_matrix_fixed_pci_lance_offline_torpedo_ladle_si_assay_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

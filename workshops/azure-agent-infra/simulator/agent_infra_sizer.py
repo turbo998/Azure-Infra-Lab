@@ -7283,6 +7283,56 @@ def simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3
     }
 
 
+def simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(
+    blast_furnace_sinter_complexes: int = 8,
+    bf_governance_mode: str = "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Integrated Blast Furnace (BF 4,000-5,800 m3 Hot-Metal Ironmaking &
+    Dwight-Lloyd Sinter Plant), Cohesive-Zone (Softening-Melting Zone 1,150-1,450 C Inverted-V
+    Profile) Permeability, Tuyere Raceway Pulverized Coal / Hydrogen-Enriched Injection (PCI
+    180-220 kg/t-HM) & Hearth Carbon-Brick Elephant-Foot Erosion PINN-MPC, Online Top-Gas Mass-Spec /
+    Microwave Burden Profilemeter Metrology & NFPA 86 / ISO 13577 / IEC 61508 SIL-3 Burden
+    Hanging-Slipping, Copper-Tuyere Water-Leak Hydrogen Explosion & Hearth Breakout Interlock
+    Sandbox (Chapter 147).
+    """
+    if blast_furnace_sinter_complexes < 1:
+        raise ValueError("blast_furnace_sinter_complexes must be >= 1")
+    valid_modes = {
+        "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge",
+        "manual_paul_wurth_chute_matrix_fixed_pci_lance_offline_torpedo_ladle_si_assay_cloud",
+    }
+    if bf_governance_mode not in valid_modes:
+        raise ValueError(f"bf_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = bf_governance_mode == "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge"
+    active_blast_furnace_pods = max(2, min(8, int(blast_furnace_sinter_complexes))) if blast_furnace_sinter_complexes <= 8 else max(8, int(blast_furnace_sinter_complexes // 2))
+    gpu_nodes = max(2, math.ceil(blast_furnace_sinter_complexes / 4))
+
+    hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct = 42.6 if governed else 6.2
+    coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct = 58.4 if governed else 8.7
+    nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms = 0.3 if governed else 150.0
+    unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct = 0.0 if governed else 1.3
+    casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms = 0.3 if governed else 195.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct = 0.0 if governed else 3.6
+
+    return {
+        "blast_furnace_sinter_complexes": blast_furnace_sinter_complexes,
+        "bf_governance_mode": bf_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_blast_furnace_pods": active_blast_furnace_pods,
+        "hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct": hot_metal_productivity_and_top_gas_co_utilization_eta_co_gain_pct,
+        "coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct": coke_rate_and_hot_metal_silicon_temperature_variance_reduction_pct,
+        "nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms": nfpa86_iso13577_sil3_tuyere_water_leak_hanging_slip_and_hearth_interlock_ms,
+        "unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct": unmitigated_tuyere_water_h2_explosion_or_hearth_breakout_pct,
+        "casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms": casthouse_edge_36_tuyere_ccd_and_topgas_ms_fmcw_radar_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct,
+        "blast_furnace_cohesive_zone_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

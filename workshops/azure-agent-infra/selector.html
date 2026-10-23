@@ -554,6 +554,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(139)">140. 煤制烯烃/甲醇制烯烃 (MTO / DMTO-III 460–510°C 双流化床循环反-再系统)、SAPO-34 分子筛笼内烃池机理 (多甲基苯活性中间体 vs 稠环芳烃定碳 wt%) 与乙烯/丙烯 (C2=/C3=) 选择性 PINN-MPC、斜管在线近红外 (NIR) 催化剂定碳/旋风分离器料腿压差计量及 API RP 554 / ASME BPVC Sec VIII / IEC 61508 SIL-3 反-再滑阀压差倒流 (氧-烃爆燃)、再生器尾燃水热脱铝与水蒸气幕硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(140)">141. 精对苯二甲酸 (PTA 195–205°C / 14–16 bar 对二甲苯 PX 醋酸溶剂钴锰溴催化液相空气氧化鼓泡塔) 与聚酯 (PET 连续熔体缩聚)、4-羧基苯甲醛 (4-CBA) 杂质与醋酸溶剂氧化燃烧损失抑制 PINN-MPC、反应器尾气在线可调谐激光 (TDLAS O2/CO/CO2)/浆料拉曼 4-CBA 计量及 NFPA 69 / API RP 554 / IEC 61508 SIL-3 尾气氧含量突破 (&gt;4.5 vol% O2 醋酸/醋酸甲酯爆炸)、高压氮气瞬时惰化吹扫与空压机联锁跳车硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(141)">142. 湿法磷酸 (WPA 二水-半水法 DH-HH 80–98°C 磷矿硫酸萃取槽与真空闪蒸冷却) 与磷酸二铵 (DAP 18-46-0 管式反应器 PCR 及转鼓氨化造粒)、磷石膏 (CaSO4·2H2O) 结晶习性过饱和度与游离硫酸根 (SO4²⁻ 24–28 g/L) 过滤 PINN-MPC、酸浆在线衰减全反射红外 (ATR-FTIR)/尾气 TDLAS (HF/SiF4/NH3) 计量及 EPA 40 CFR 63 Subpart AA / NFPA 704 / IEC 61508 SIL-3 四氟化硅/氢氟酸 (SiF4/HF &gt; 2.5 ppm) 洗涤塔穿透、碳酸盐泡沫溢槽与 PCR 超压硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(142)">143. 大型炼铁高炉 (BF 4,000–5,800 m³ 铁水冶炼与带式烧结机)、软熔带 (1,150–1,450°C 倒 V 型内聚区) 透气性、风口回旋区煤粉/富氢喷吹 (PCI 180–220 kg/t-HM) 与炉缸炭砖象脚侵蚀 PINN-MPC、炉顶煤气在线质谱/微波料面雷达与 36 风口高速双色 CCD 计量及 NFPA 86 / ISO 13577 / IEC 61508 SIL-3 悬料崩料炉顶超压、风口铜套漏水氢爆与炉缸烧穿硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3781,6 +3782,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 142: Autonomous Blast Furnace (BF 4,000-5,800 m3) Cohesive-Zone, Tuyere Raceway PCI & Hearth Erosion NFPA 86 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 142 · INTEGRATED BLAST FURNACE (BF 4,000–5,800 m³ HOT-METAL IRONMAKING &amp; DWIGHT-LLOYD SINTER PLANT), COHESIVE-ZONE (1,150–1,450°IST INVERTED-V) PERMEABILITY, TUYERE RACEWAY PCI / H2 INJECTION &amp; HEARTH CARBON-BRICK ELEPHANT-FOOT EROSION PINN-MPC, TOP-GAS MS / FMCW BURDEN RADAR &amp; NFPA 86 / ISO 13577 / SIL-3 TUYERE WATER-LEAK &amp; HEARTH BREAKOUT INTERLOCK SIZER</span>
+    <h2>自主大型炼铁高炉（BF 4,000–5,800 m³）与烧结系统：软熔带透气性、风口回旋区喷煤与炉缸侵蚀 PINN-MPC 及 NFPA 86 / SIL-3 防风口漏水氢爆与炉缸烧穿硬联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 座 <code>4,000–5,800 m³</code> 特大型现代化炼铁高炉（<code>Integrated Blast Furnace</code>，日产铁水 <code>10,000–14,000 吨</code>、炉顶压力 <code>2.5–3.0 bar</code>、热风温度 <code>1,200–1,280°C</code>、36–42 个水冷紫铜风口回旋区理论燃烧温度 <code>RAFT 2,100–2,250°C</code>、大喷煤量 <code>PCI 180–220 kg/t-HM</code> 耦合富氧富氢喷吹与 <code>500–600 m²</code> 带式烧结机）联合钢铁基地规模下，启用 <code>Standard_NV36ads_A10_v5</code> 高炉炉身块状带-软熔带（<code>Cohesive / Softening-Melting Zone 1,150–1,450°C</code>，焦炭窗与软化矿石层交替构成的倒 V 型气液固多相流阻力压降核心区）-滴落带-死料柱（<code>Deadman</code>）三维非均质多孔介质欧根（<code>Ergun</code>）压降与煤气流二次分布、风口回旋区煤粉闪速热解气化未燃煤粉（<code>Unburned Char</code>）沉积鸟巢效应及炉缸炭砖（<code>Hearth Carbon Brick</code>）1,150°C 铁水凝固保护壳层与象脚状环缝侵蚀（<code>Elephant-Foot Erosion</code>）Stefan 逆传热耦合 <code>PINN</code> + 无料钟（<code>Paul Wurth Bell-Less Top</code>）多环布料溜槽倾角/矿焦比、冷风富氧率/加湿量与各风口差异化喷煤量前馈 <code>MPC</code>（高炉利用系数与炉顶煤气一氧化碳利用率 $\eta_{\text{CO}}$ 提升 <code>+42.6%</code>，综合焦比燃料消耗与铁水硅含量 $[\text{Si}]$ 及铁水温度波动削减 <code>-58.4%</code>）、<code>NFPA 86 / ISO 13577 / IEC 61508 SIL-3</code> 水冷铜风口小套烧损漏水（高压冷却水漏入 2,150°C 炉膛瞬间裂解生成高浓水煤气 $\text{H}_2+\text{CO}$ 引发炉内剧烈氢爆与向风口平台喷火）、炉身严重悬料-崩料（<code>Burden Hanging &amp; Slipping</code>）瞬间冲击炉顶放散阀联锁与炉缸侧壁炭砖残厚（`< 250 mm`）热流密度超限休风护炉硬联锁（<code>0.3 ms</code> 响应，<code>0.0%</code> 风口漏水恶性爆炸、崩料掀翻炉顶设备或 1,500°C 铁水炉缸烧穿事故，对比传统人工每 2 小时鱼雷罐铁水取样化验 $[\text{Si}]$ 滞后调剂与人工观察风口窥视孔反模式 <code>1.3%</code> 风险）以及 36 风口全周向双色辐射测温高速 CCD 相机、炉顶煤气在线磁扇质谱（$\text{CO}/\text{CO}_2/\text{H}_2/\text{N}_2$）与炉喉相控阵微波料面成像雷达（<code>FMCW Burden Profilemeter</code>）边缘分诊（<code>0.3 ms</code>，削减 <code>99.6%</code> WAN 带宽，避免 <code>3.6%</code> 软熔带根部粘结结瘤 <code>Scaffolding</code> 或回旋区鸟巢死焦堆恶化漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 4,000–5,800 m³ 大型高炉-烧结联合系统座数 (Blast Furnace-Sinter Complexes): <strong id="lbl_bf_units" style="color:var(--blue)">8</strong></label>
+          <input type="range" id="rng_bf_units" min="2" max="32" step="2" value="8" oninput="runBlastFurnaceCohesiveZoneLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 软熔带透气性/风口回旋区/炉缸侵蚀 PINN-MPC 与 NFPA 86 / SIL-3 防漏水氢爆与炉缸烧穿联锁模式 (Blast Furnace Governance Mode)</label>
+          <select id="sel_bf_mode" onchange="runBlastFurnaceCohesiveZoneLab()">
+            <option value="pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge" selected>倒 V 型软熔带透气性指数、风口回旋区煤粉燃尽率与炉缸 1,150°C 铁水凝固线 PINN + 无料钟多环布料/富氧喷煤/风温 MPC (+42.6% 高炉利用系数与煤气利用率 ηCO / -58.4% 焦比与铁水硅 [Si] 波动) + NFPA 86 / ISO 13577 SIL-3 0.3ms 风口漏水闭水停煤、悬料崩料減风与炉缸护炉联锁 + 0.3ms 36风口双色CCD/炉顶质谱/微波料面雷达边缘 (推荐)</option>
+            <option value="manual_paul_wurth_chute_matrix_fixed_pci_lance_offline_torpedo_ladle_si_assay_cloud">传统反模式：靠固定无料钟布料矩阵与每炉次鱼雷罐铁水离线光谱测 [Si] 滞后 3–5 小时调剂 (+6.2% 产能增益) + 靠人工肉眼巡视风口窥视孔与出水差流量表滞后无 0.3ms 煤气 H2 突升与热流联锁 (1.3% 风口烧穿漏水入炉引发水煤气氢爆、崩料冲顶或炉缸象脚区炭砖烧穿铁水泄漏风险) + 缺乏全风口双色 CCD 与微波三维料面重构 (3.6% 软熔带根部偏行结瘤或未燃煤粉堵塞死料柱漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="blastFurnaceCohesiveZoneOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6090,6 +6114,21 @@ resource wpaDapGypsumCrystalHfSil3Pool 'Microsoft.ContainerService/managedCluste
       'aksclaw.io/attack-tank-edge-atr-ftir-so4-tdlas-hf-nh3': 'enabled-0.3ms-99.6pct-phosphate-fertilizer-complex-wan-cut'
     }
   }
+}`,
+`// 143. Azure Bicep: Integrated Blast Furnace (BF 4,000-5,800 m3 Hot-Metal Ironmaking & Dwight-Lloyd Sinter Plant), Cohesive-Zone (1,150-1,450 C Inverted-V) Permeability, Tuyere Raceway PCI / H2 Injection & Hearth Carbon-Brick Elephant-Foot Erosion PINN-MPC, Top-Gas MS / Microwave Burden Radar & NFPA 86 / ISO 13577 / SIL-3 Tuyere Water-Leak & Hearth Breakout Interlock Pool
+resource blastFurnaceCohesiveZoneTuyereSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'bfcohsil3'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (1,150-1,450C Inverted-V Cohesive-Zone Ergun Permeability, Tuyere Raceway PCI/H2 Unburned-Char & Hearth Carbon-Brick 1,150C Solidification Line Stefan PINN + Bell-Less Chute Burden Matrix, O2/Steam Blast & Per-Tuyere PCI MPC + 36-Tuyere 2-Color CCD, Top-Gas MS & FMCW Burden Radar Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'sinter-plant-blast-furnace-cohesive-zone-tuyere-raceway-nfpa86-sil3-agent'
+      'aksclaw.io/pinn-mpc-cohesive-zone-permeability-pci-raceway-hearth-erosion': 'enabled-42.6pct-hot-metal-productivity-top-gas-eta-co-gain-58.4pct-coke-rate-silicon-variance-cut'
+      'aksclaw.io/nfpa86-iso13577-sil3-tuyere-water-leak-hanging-slip-hearth-guard': 'enforced-0.3ms-zero-tuyere-water-h2-explosion-burden-slip-or-hearth-breakout'
+      'aksclaw.io/casthouse-edge-36-tuyere-ccd-topgas-ms-fmcw-radar': 'enabled-0.3ms-99.6pct-integrated-steelworks-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6332,6 +6371,30 @@ runPolyolefinFluidizedBedLab();
 runMtoDmtoSapo34Lab();
 runPtaPxOxidationLab();
 runWetPhosphoricAcidDapLab();
+runBlastFurnaceCohesiveZoneLab();
+
+function runBlastFurnaceCohesiveZoneLab() {
+  const units = parseInt(document.getElementById('rng_bf_units').value, 10);
+  const mode = document.getElementById('sel_bf_mode').value;
+  document.getElementById('lbl_bf_units').textContent = units.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(units / 4));
+  const pods = units <= 8 ? Math.max(2, Math.min(8, units)) : Math.max(8, Math.floor(units / 2));
+  const ok = mode === 'pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge';
+  const mpcStr = ok ? "倒 V 型软熔带 (1,150–1,450°C) 焦窗透气性压降、风口回旋区煤粉/富氢燃尽率与炉缸炭砖 1,150°C 凝固线 Stefan 逆传热 PINN + 无料钟溜槽多环矿焦比、风温湿分与 36 风口独立喷煤 MPC · 高炉利用系数与煤气利用率 ηCO +42.6% · 综合焦比与铁水硅 [Si] 波动 -58.4%" : "传统靠固定布料矩阵与每炉次鱼雷罐铁水取样化验 [Si] 滞后 3–5 小时调剂 · 仅 +6.2% 产能增益 / -8.7% 焦比削减 (高炉大喷煤时极易因局部煤气流偏行导致软熔带根部塌陷悬料，且 3.6% 炉墙粘结结瘤或未燃煤粉鸟巢堵塞死料柱漏检)";
+  const sil3Str = ok ? "0.3 ms NFPA 86 / ISO 13577 / IEC 61508 SIL-3 风口铜套微漏水 (给回水电磁流量差 + 炉顶 H2 质谱跃升) 自动降压闭水/切煤槍、炉身悬料压差骤升可控坐料减风与炉缸侧壁热流超限含钛护炉硬联锁 · 0.0% 风口漏水氢爆、崩料冲顶或炉缸烧穿违例" : "无 0.3ms 风口微漏水多模态耦合识别与炉缸炭砖环缝侵蚀硬联锁 (150.0 ms 人工巡检窥视孔滞后) · 1.3% 渣铁烧穿水冷紫铜风口导致高压水涌入 2,150°C 回旋区引发水煤气剧烈氢爆、恶性崩料掀顶或 1,500°C 铁水烧穿炉缸侧壁风险";
+  const edgeStr = ok ? "0.3 ms 出铁场边缘 36 风口高速双色辐射测温 CCD (2,000 fps 实时追踪回旋区燃烧温度 RAFT 与煤枪落点) + 炉顶煤气在线扇形质谱 (CO/CO2/H2/N2) + 炉喉 79 GHz 微波料面雷达边缘 (-99.6% 钢铁基地 WAN 带宽) · 0.0% 软熔带根部结瘤或回旋区堵塞漏检" : "195.0 ms 依赖炉顶十字测温热电偶慢速扫描与离线铁水化验 · 无法在秒级发生的风口回旋区灌渣回火、煤枪偏吹磨穿风口小套或料面塌陷崩料前兆期实时干预";
+
+  document.getElementById('blastFurnaceCohesiveZoneOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.3% 紫铜风口烧穿漏水引发炉内水煤气氢爆、恶性悬料崩料或 1,500°C 铁水炉缸象脚区烧穿风险 · 3.6% 软熔带结瘤偏行或回旋区未燃煤粉鸟巢堵塞漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个大型高炉-烧结孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>36 风口双色高速 CCD、炉顶煤气在线质谱 (CO/CO2/H2) 与炉喉微波料面雷达边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runWetPhosphoricAcidDapLab() {
   const trains = parseInt(document.getElementById('rng_wpa_trains').value, 10);
