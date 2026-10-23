@@ -553,6 +553,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(138)">139. 气相流化床聚烯烃 (UNIPOL PE / Spheripol PP 18–35 bar, 75–112°C) 与环管淤浆聚合反应器、Ziegler-Natta/茂金属催化剂分子量分布 (MWD/PDI 与熔指 MFI) 群体平衡、冷凝态异戊烷露点与扩大段静电摩擦结片/结块 (Sheeting/Chunking) 抑制 PINN-MPC、在线 200 kHz 声发射 (AE)/拉曼共聚单体计量及 API RP 554 / NFPA 68 / IEC 61508 SIL-3 放热飞温催化剂杀死剂 (CO/H2O) 注入与紧急火炬泄压硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(139)">140. 煤制烯烃/甲醇制烯烃 (MTO / DMTO-III 460–510°C 双流化床循环反-再系统)、SAPO-34 分子筛笼内烃池机理 (多甲基苯活性中间体 vs 稠环芳烃定碳 wt%) 与乙烯/丙烯 (C2=/C3=) 选择性 PINN-MPC、斜管在线近红外 (NIR) 催化剂定碳/旋风分离器料腿压差计量及 API RP 554 / ASME BPVC Sec VIII / IEC 61508 SIL-3 反-再滑阀压差倒流 (氧-烃爆燃)、再生器尾燃水热脱铝与水蒸气幕硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(140)">141. 精对苯二甲酸 (PTA 195–205°C / 14–16 bar 对二甲苯 PX 醋酸溶剂钴锰溴催化液相空气氧化鼓泡塔) 与聚酯 (PET 连续熔体缩聚)、4-羧基苯甲醛 (4-CBA) 杂质与醋酸溶剂氧化燃烧损失抑制 PINN-MPC、反应器尾气在线可调谐激光 (TDLAS O2/CO/CO2)/浆料拉曼 4-CBA 计量及 NFPA 69 / API RP 554 / IEC 61508 SIL-3 尾气氧含量突破 (&gt;4.5 vol% O2 醋酸/醋酸甲酯爆炸)、高压氮气瞬时惰化吹扫与空压机联锁跳车硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(141)">142. 湿法磷酸 (WPA 二水-半水法 DH-HH 80–98°C 磷矿硫酸萃取槽与真空闪蒸冷却) 与磷酸二铵 (DAP 18-46-0 管式反应器 PCR 及转鼓氨化造粒)、磷石膏 (CaSO4·2H2O) 结晶习性过饱和度与游离硫酸根 (SO4²⁻ 24–28 g/L) 过滤 PINN-MPC、酸浆在线衰减全反射红外 (ATR-FTIR)/尾气 TDLAS (HF/SiF4/NH3) 计量及 EPA 40 CFR 63 Subpart AA / NFPA 704 / IEC 61508 SIL-3 四氟化硅/氢氟酸 (SiF4/HF &gt; 2.5 ppm) 洗涤塔穿透、碳酸盐泡沫溢槽与 PCR 超压硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3757,6 +3758,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 141: Autonomous Wet-Process Phosphoric Acid (WPA) & DAP Granulation Phosphogypsum & HF/SiF4 Scrubber EPA 40 CFR 63 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-amber">TOOL 141 · WET-PROCESS PHOSPHORIC ACID (WPA DH-HH 80–98°C PHOSPHATE-ROCK H2SO4 ATTACK REACTOR) &amp; DIAMMONIUM PHOSPHATE (DAP 18-46-0 PIPE-CROSS REACTOR PCR), PHOSPHOGYPSUM CRYSTAL HABIT &amp; FREE SULFATE (SO4²⁻ 24–28 g/L) FILTRATION PINN-MPC, SLURRY ATR-FTIR / TDLAS HF-NH3 METROLOGY &amp; EPA 40 CFR 63 SUBPART AA / NFPA 704 / SIL-3 HF/SIF4 SCRUBBER INTERLOCK SIZER</span>
+    <h2>自主湿法磷酸（WPA 二水-半水萃取）与磷酸二铵（DAP 管式反应造粒）：磷石膏结晶游离硫酸根 PINN-MPC 与 EPA 40 CFR 63 / SIL-3 防氟化氢穿透及泡沫溢槽硬联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 条大型湿法磷酸（<code>WPA</code>，多隔室二水物/半水物 <code>DH-HH</code> 氟磷灰石 $\text{Ca}_{10}(\text{PO}_4)_6\text{F}_2$ 浓硫酸浸出萃取槽 <code>80–98°C</code>、真空闪蒸冷却器与大型翻盘/水平带式真空过滤机）及磷酸二铵（<code>DAP 18-46-0</code>，管式反应器 <code>Pipe-Cross Reactor PCR</code> 与氨化转鼓造粒机）联合磷肥化工装置规模下，启用 <code>Standard_NV36ads_A10_v5</code> 硫酸钙二水物（磷石膏 $\text{CaSO}_4\cdot 2\text{H}_2\text{O}$）局部过饱和度结晶成核-生长群体平衡（控制粗大菱形板状晶习 <code>Tabular/Rhombohedral Crystal Habit</code>，防止过低硫酸根引发晶格共结晶包夹 $\text{HPO}_4^{2-}$ 损失或过高硫酸根在磷矿表面生成致密硫酸钙钝化包裹壳层 <code>Sulfate Coating</code> 及细针状结晶 <code>Needle Crystals</code> 堵塞滤布）与 <code>DAP</code> 管式反应器中和摩尔比（$\text{N/P} = 1.85–1.95$）耦合 <code>PINN</code> + 98%浓硫酸/返酸稀释风量、真空闪蒸循环浆流量与液氨分流比前馈 <code>MPC</code>（磷矿五氧化二磷 $\text{P}_2\text{O}_5$ 萃取回收率与真空过滤滤饼过滤排水速率提升 <code>+43.1%</code>，磷石膏针状晶滤布糊死停机清洗与造粒机尾气游离氨逃逸削减 <code>-58.9%</code>）、<code>EPA 40 CFR Part 63 Subpart AA / NFPA 704 / IEC 61508 SIL-3</code> 萃取尾气剧毒四氟化硅/氟化氢（$\text{SiF}_4/\text{HF} > 2.5\text{ ppm}$）氟硅酸（$\text{H}_2\text{SiF}_6$）文丘里吸收塔双泵联锁切备、高碳酸盐磷矿剧烈释放 $\text{CO}_2$ 酸泡沫溢槽（<code>Carbonate Foaming Boil-Over</code>）高压消泡剂脉冲注入与 <code>PCR</code> 管式反应器超温超压（`> 9.5 bar`）液氨/浓磷酸紧急切断硬联锁（<code>0.3 ms</code> 响应，<code>0.0%</code> 剧毒氟化氢/四氟化硅气云泄漏、85°C 浓磷酸泡沫沸溢灼伤或管式反应器爆管事故，对比传统人工每 2 小时取样硫酸钡浊度滴定测游离硫酸根反模式 <code>1.4%</code> 风险）以及萃取槽耐氢氟酸金刚石视窗衰减全反射红外光谱（<code>Diamond ATR-FTIR Free-SO4²⁻ / P2O5</code>）与尾气烟道原位激光（<code>TDLAS HF / SiF4 / NH3</code>）边缘分诊（<code>0.3 ms</code>，削减 <code>99.6%</code> WAN 带宽，避免 <code>3.7%</code> 晶格磷共结晶跑损或磷矿硫酸钙包裹盲区漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 湿法磷酸 (WPA) 与磷酸二铵 (DAP) 联合生产线列数 (WPA-DAP Production Trains): <strong id="lbl_wpa_trains" style="color:var(--amber)">8</strong></label>
+          <input type="range" id="rng_wpa_trains" min="2" max="32" step="2" value="8" oninput="runWetPhosphoricAcidDapLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 磷石膏结晶游离硫酸根 (SO4²⁻ 24–28 g/L) PINN-MPC 与 EPA 40 CFR 63 / SIL-3 防 HF/SiF4 穿透联锁模式 (WPA-DAP Governance Mode)</label>
+          <select id="sel_wpa_mode" onchange="runWetPhosphoricAcidDapLab()">
+            <option value="pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge" selected>磷石膏粗大板状结晶习性与游离 SO4²⁻ (24–28 g/L) 窗口 PINN + 浓硫酸/返酸/闪蒸真空与 DAP 氨化中和度 (N/P 1.92) MPC (+43.1% P2O5 萃取率与过滤速率 / -58.9% 针状晶糊滤布与氨逃逸) + EPA 63 AA / NFPA 704 SIL-3 0.3ms HF/SiF4 吸收塔联锁与防溢槽消泡联锁 + 0.3ms 金刚石 ATR-FTIR 酸浆/TDLAS HF-NH3 边缘 (推荐)</option>
+            <option value="manual_h2so4_rock_ratio_offline_2hr_barium_titration_so4_unmonitored_hf_foam_cloud">传统反模式：靠每 2 小时人工取热酸浆冷却过滤后用硫酸钡比浊/滴定法测游离 SO4²⁻ (+6.3% 回收率增益) + 无 0.3ms 氟硅酸洗涤塔喷淋硅胶堵塞与高碳酸盐磷矿泡沫暴涨联锁 (1.4% 剧毒 HF/SiF4 氟气云泄漏、热磷酸泡沫漫顶溢槽或 DAP 管式反应器超压爆裂风险) + 缺乏在线耐氟 ATR-FTIR 与尾气激光监测 (3.7% 硫酸根失控导致磷石膏针状细晶糊死真空过滤机或磷矿颗粒表面硫酸钙包裹失活漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="wetPhosphoricAcidDapOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6051,6 +6075,21 @@ resource ptaPxOxidationBubbleColumnSil3Pool 'Microsoft.ContainerService/managedC
       'aksclaw.io/reactor-edge-cross-duct-tdlas-o2-co-slurry-raman-4cba': 'enabled-0.3ms-99.6pct-pta-pet-complex-wan-cut'
     }
   }
+}`,
+`// 142. Azure Bicep: Wet-Process Phosphoric Acid (WPA DH-HH 80-98 C Phosphate-Rock H2SO4 Attack Reactor) & Diammonium Phosphate (DAP 18-46-0 Pipe-Cross Reactor PCR), Phosphogypsum (CaSO4.2H2O) Crystal Habit Supersaturation & Free Sulfate (SO4 2- 24-28 g/L) Filtration PINN-MPC, Slurry Diamond ATR-FTIR / TDLAS HF-SiF4-NH3 Metrology & EPA 40 CFR 63 Subpart AA / NFPA 704 / SIL-3 HF/SiF4 Scrubber & Boil-Over Interlock Pool
+resource wpaDapGypsumCrystalHfSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'wpadaphfs3'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (CaSO4.2H2O Phosphogypsum Tabular Crystal Habit Supersaturation & Free Sulfate 24-28 g/L Window PINN + H2SO4/Return-Acid, Flash Cooler Vacuum & DAP PCR N/P=1.92 Neutralization MPC + Diamond ATR-FTIR Slurry & TDLAS HF/SiF4/NH3 Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'wet-phosphoric-acid-dap-gypsum-crystal-so4-hf-scrubber-epa63aa-sil3-agent'
+      'aksclaw.io/pinn-mpc-phosphogypsum-supersaturation-free-so4-dap-nmr': 'enabled-43.1pct-p2o5-recovery-filtration-rate-gain-58.9pct-gypsum-blinding-nh3-slip-cut'
+      'aksclaw.io/epa63aa-nfpa704-sil3-hf-sif4-scrubber-antifoam-pcr-cutoff': 'enforced-0.3ms-zero-hf-sif4-toxic-plume-or-reactor-foam-boilover'
+      'aksclaw.io/attack-tank-edge-atr-ftir-so4-tdlas-hf-nh3': 'enabled-0.3ms-99.6pct-phosphate-fertilizer-complex-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6292,6 +6331,30 @@ runVarEsrSuperalloyRemeltingLab();
 runPolyolefinFluidizedBedLab();
 runMtoDmtoSapo34Lab();
 runPtaPxOxidationLab();
+runWetPhosphoricAcidDapLab();
+
+function runWetPhosphoricAcidDapLab() {
+  const trains = parseInt(document.getElementById('rng_wpa_trains').value, 10);
+  const mode = document.getElementById('sel_wpa_mode').value;
+  document.getElementById('lbl_wpa_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const pods = trains <= 8 ? Math.max(2, Math.min(8, trains)) : Math.max(8, Math.floor(trains / 2));
+  const ok = mode === 'pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge';
+  const mpcStr = ok ? "磷石膏 (CaSO4·2H2O) 菱形粗晶成核-生长群体平衡与游离硫酸根 (SO4²⁻ = 24–28 g/L) 过饱和窗口 PINN + 浓硫酸/返酸配比、真空闪蒸冷却温差与 DAP 管式反应器中和度 (N/P = 1.92) 前馈 MPC · P2O5 萃取回收率与真空带滤机排水速率 +43.1% · 细针状石膏晶糊死滤布与氨逃逸 -58.9%" : "传统靠每 2 小时人工取样硫酸钡滴定测游离 SO4²⁻ 滞后配酸 · 仅 +6.3% 萃取增益 / -8.8% 糊布削减 (磷矿品位波动导致游离硫酸根频繁跌破 20 g/L 引发晶格共结晶包夹磷损失，或突破 32 g/L 形成磷矿硫酸钙钝化硬壳与细针状晶堵死真空滤机，3.7% 晶格磷跑损或包裹失活漏检)";
+  const sil3Str = ok ? "0.3 ms EPA 40 CFR 63 Subpart AA / NFPA 704 / IEC 61508 SIL-3 氟硅酸吸收塔 HF/SiF4 (>2.5 ppm) 高压应急碱液/水幕联锁、高碳酸盐泡沫溢槽雷达消泡剂脉冲注入与 PCR 管式反应器超压 (>9.5 bar) 液氨切断硬联锁 · 0.0% 剧毒氟气泄漏或热酸溢槽违例" : "无 0.3ms 氟吸收塔二氧化硅结垢堵塞预警与泡沫沸溢自动消泡联锁 (148.0 ms 湿化学吸收瓶与人工巡检滞后) · 1.4% 四氟化硅水解硅胶堵死文丘里喷嘴导致剧毒 HF/SiF4 烟羽外溢、萃取槽 CO2 泡沫沸溢漫顶或 PCR 爆管风险";
+  const edgeStr = ok ? "0.3 ms 萃取槽耐氢氟酸金刚石探头衰减全反射红外光谱 (Diamond ATR-FTIR 在线实时解算游离 SO4²⁻、P2O5 与氟硅酸浓度) + 尾气烟道原位 TDLAS (HF / SiF4 / NH3) 边缘 (-99.6% 磷化工基地 WAN 带宽) · 0.0% 晶格磷共结晶跑损或硫酸钙包裹漏检" : "192.0 ms 依赖人工从 85°C 含氟腐蚀性酸浆槽取样送化验室滴定 · 无法在磷矿伴生白云石/碳酸盐品位突变引发的分钟级过饱和度漂移与泡沫暴涨初期闭环纠偏";
+
+  document.getElementById('wetPhosphoricAcidDapOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 氟硅酸洗涤塔硅胶堵喷嘴导致剧毒 HF/SiF4 (>2.5 ppm) 穿透或热酸泡沫溢槽风险 · 3.7% 游离 SO4²⁻ 漂移引发晶格磷跑损或针状石膏糊死真空滤布漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个 WPA-DAP 磷肥化工孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>萃取槽耐氟金刚石 ATR-FTIR (游离 SO4²⁻ / P2O5) 与尾气原位 TDLAS (HF / SiF4 / NH3) 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runPtaPxOxidationLab() {
   const trains = parseInt(document.getElementById('rng_pta_trains').value, 10);

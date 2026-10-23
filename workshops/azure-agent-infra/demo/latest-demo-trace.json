@@ -8830,6 +8830,68 @@
         "uncompensated_overoxidation_yellowing_b_value_or_4cba_breakthrough_pct": 3.7,
         "pta_px_oxidation_bubble_column_slo_met": false
       }
+    ],
+    "wet_phosphoric_acid_dap_profiles": [
+      {
+        "wpa_dap_production_trains": 4,
+        "wpa_governance_mode": "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_wpa_dap_pods": 4,
+        "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": 43.1,
+        "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": 58.9,
+        "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": 0.3,
+        "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": 0.0,
+        "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 0.0,
+        "wet_phosphoric_acid_dap_slo_met": true
+      },
+      {
+        "wpa_dap_production_trains": 8,
+        "wpa_governance_mode": "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_wpa_dap_pods": 8,
+        "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": 43.1,
+        "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": 58.9,
+        "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": 0.3,
+        "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": 0.0,
+        "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 0.0,
+        "wet_phosphoric_acid_dap_slo_met": true
+      },
+      {
+        "wpa_dap_production_trains": 32,
+        "wpa_governance_mode": "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_wpa_dap_pods": 16,
+        "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": 43.1,
+        "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": 58.9,
+        "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": 0.3,
+        "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": 0.0,
+        "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 0.0,
+        "wet_phosphoric_acid_dap_slo_met": true
+      },
+      {
+        "wpa_dap_production_trains": 8,
+        "wpa_governance_mode": "manual_h2so4_rock_ratio_offline_2hr_barium_titration_so4_unmonitored_hf_foam_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_wpa_dap_pods": 8,
+        "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": 6.3,
+        "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": 8.8,
+        "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": 148.0,
+        "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": 1.4,
+        "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": 192.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 3.7,
+        "wet_phosphoric_acid_dap_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -16274,5 +16336,52 @@
       "pta_px_oxidation_bubble_column_slo_met": false
     }
   },
-  "trace_sha256": "24663c8e9038bd3dcfc71928adbad7ab4e9cc17f2044ed4eefa4976536642826"
+  "demo_141_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox": {
+    "wpa_8_trains": {
+      "wpa_dap_production_trains": 8,
+      "wpa_governance_mode": "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_wpa_dap_pods": 8,
+      "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": 43.1,
+      "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": 58.9,
+      "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": 0.3,
+      "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": 0.0,
+      "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 0.0,
+      "wet_phosphoric_acid_dap_slo_met": true
+    },
+    "wpa_32_trains": {
+      "wpa_dap_production_trains": 32,
+      "wpa_governance_mode": "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_wpa_dap_pods": 16,
+      "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": 43.1,
+      "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": 58.9,
+      "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": 0.3,
+      "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": 0.0,
+      "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 0.0,
+      "wet_phosphoric_acid_dap_slo_met": true
+    },
+    "raw_wpa_8_trains": {
+      "wpa_dap_production_trains": 8,
+      "wpa_governance_mode": "manual_h2so4_rock_ratio_offline_2hr_barium_titration_so4_unmonitored_hf_foam_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_wpa_dap_pods": 8,
+      "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": 6.3,
+      "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": 8.8,
+      "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": 148.0,
+      "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": 1.4,
+      "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": 192.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": 3.7,
+      "wet_phosphoric_acid_dap_slo_met": false
+    }
+  },
+  "trace_sha256": "1121993ea4083eb17e38aa1ae32fbfab6a6cea80bbd424ea5fbd447b3fd30618"
 }

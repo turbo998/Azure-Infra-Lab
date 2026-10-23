@@ -153,6 +153,7 @@ from agent_infra_sizer import (
     simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox,
     simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox,
     simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox,
+    simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1229,6 +1230,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(32, "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge"),
         simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(8, "manual_air_px_ratio_step_slow_paramagnetic_o2_offline_4hr_hplc_4cba_cloud"),
     ]
+    wet_phosphoric_acid_dap_profiles: List[Dict[str, object]] = [
+        simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(4, "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge"),
+        simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(8, "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge"),
+        simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(32, "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge"),
+        simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(8, "manual_h2so4_rock_ratio_offline_2hr_barium_titration_so4_unmonitored_hf_foam_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1370,6 +1377,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "polyolefin_fluidized_bed_profiles": polyolefin_fluidized_bed_profiles,
         "mto_dmto_sapo34_profiles": mto_dmto_sapo34_profiles,
         "pta_px_oxidation_profiles": pta_px_oxidation_profiles,
+        "wet_phosphoric_acid_dap_profiles": wet_phosphoric_acid_dap_profiles,
     }
 
 

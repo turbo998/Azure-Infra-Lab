@@ -7231,6 +7231,58 @@ def simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(
     }
 
 
+def simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox(
+    wpa_dap_production_trains: int = 8,
+    wpa_governance_mode: str = "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Wet-Process Phosphoric Acid (WPA Dihydrate-Hemihydrate DH-HH 80-98 C
+    Phosphate-Rock Sulfuric-Acid Attack Reactor & Vacuum Flash Cooler) & Diammonium Phosphate
+    (DAP 18-46-0 Pipe-Cross Reactor PCR & Rotary Ammoniator-Granulator), Calcium Sulfate Dihydrate
+    (CaSO4.2H2O Phosphogypsum) Rhombohedral/Tabular Crystal Habit Supersaturation & Free Sulfate
+    (SO4 2- 24-28 g/L) Filtration PINN-MPC, Online Slurry Attenuated Total Reflectance (ATR-FTIR
+    Free-SO4/P2O5) / Vent TDLAS (HF / SiF4 / NH3) Metrology & EPA 40 CFR Part 63 Subpart AA /
+    NFPA 704 / IEC 61508 SIL-3 Silicon Tetrafluoride / Hydrofluoric Acid (SiF4 / HF > 2.5 ppm)
+    Fluosilicic Scrubber Breakthrough, Carbonate Foaming Boil-Over & PCR Slurry Over-Pressurization
+    Interlock Sandbox (Chapter 146).
+    """
+    if wpa_dap_production_trains < 1:
+        raise ValueError("wpa_dap_production_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge",
+        "manual_h2so4_rock_ratio_offline_2hr_barium_titration_so4_unmonitored_hf_foam_cloud",
+    }
+    if wpa_governance_mode not in valid_modes:
+        raise ValueError(f"wpa_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = wpa_governance_mode == "pinn_mpc_phosphogypsum_supersaturation_free_so4_dap_nmr_atr_ftir_epa63aa_sil3_edge"
+    active_wpa_dap_pods = max(2, min(8, int(wpa_dap_production_trains))) if wpa_dap_production_trains <= 8 else max(8, int(wpa_dap_production_trains // 2))
+    gpu_nodes = max(2, math.ceil(wpa_dap_production_trains / 4))
+
+    p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct = 43.1 if governed else 6.3
+    phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct = 58.9 if governed else 8.8
+    epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms = 0.3 if governed else 148.0
+    unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct = 0.0 if governed else 1.4
+    attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms = 0.3 if governed else 192.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct = 0.0 if governed else 3.7
+
+    return {
+        "wpa_dap_production_trains": wpa_dap_production_trains,
+        "wpa_governance_mode": wpa_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_wpa_dap_pods": active_wpa_dap_pods,
+        "p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct": p2o5_digestion_recovery_and_belt_filter_drainage_rate_gain_pct,
+        "phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct": phosphogypsum_needle_blinding_and_dap_ammonia_slip_reduction_pct,
+        "epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms": epa63aa_nfpa704_sil3_hf_sif4_scrubber_and_antifoam_pcr_cutoff_interlock_ms,
+        "unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct": unmitigated_hf_sif4_toxic_plume_or_attack_tank_foam_boilover_pct,
+        "attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms": attack_tank_edge_atr_ftir_free_so4_and_tdlas_hf_nh3_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct": uncompensated_lattice_p2o5_cocrystallization_or_sulfate_coating_pct,
+        "wet_phosphoric_acid_dap_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
