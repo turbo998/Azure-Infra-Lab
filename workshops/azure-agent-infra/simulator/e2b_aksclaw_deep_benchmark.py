@@ -175,6 +175,7 @@ from agent_infra_sizer import (
     simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
+    simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1384,6 +1385,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(12, "raw_cloud_open_loop_constant_tif_dwell_and_offline_interferometry"),
     ]
 
+    allam_fetvedt_sco2_oxyfuel_profiles: List[Dict[str, object]] = [
+        simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(8, "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge"),
+        simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(32, "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge"),
+        simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(8, "raw_cloud_ideal_gas_pid_fixed_anti_surge_line"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1546,6 +1553,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "lh2_cryogenic_zbo_orthopara_profiles": lh2_cryogenic_zbo_orthopara_profiles,
         "mcz_silicon_ingot_voronkov_profiles": mcz_silicon_ingot_voronkov_profiles,
         "ibf_mrf_subnm_aspheric_mirror_profiles": ibf_mrf_subnm_aspheric_mirror_profiles,
+        "allam_fetvedt_sco2_oxyfuel_profiles": allam_fetvedt_sco2_oxyfuel_profiles,
     }
 
 

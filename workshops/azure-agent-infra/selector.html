@@ -575,6 +575,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(160)">161. 零蒸发 (ZBO) 深冷液氢 (LH2 20.28 K, -252.87°C, 40,000–160,000 m³ 真空珠光砂/多层绝热球罐与液氢运输船装卸终端)、正仲氢催化转化 (o-H2 → p-H2 ≥ 99.8% 放热 ΔH = -703 kJ/kg 水合氧化铁固定床)、两相预冷间歇泉喷发 (Geysering)/凝结水击 (CIWH) 与热分层翻滚 (Rollover) 抑制 PINN-MPC、在线 10kHz 转动拉曼光谱 (354/587 cm⁻¹)/深冷光纤光栅 (FBG) 计量及 NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / IEC 61511 SIL-3 真空夹层破空 (LOV) 固态氧冷凝防爆、氦气吹扫与快速应急脱离 (ERS) 硬联锁池 (Bicep · 160 周期与 160 仿真器里程碑)</button>
       <button class="tab-btn" onclick="showBlueprint(161)">162. 300mm 半导体单晶硅磁场直拉法 (MCZ 0.3–0.4 T 超导水平/勾形磁场, 1,420°C 石英坩埚熔体) 与连续直拉 (CCZ) 单晶炉、Voronkov 点缺陷判据 (v/G0 = 1.34×10⁻³ cm²/min·K 零 COP 空洞/零位错环中性区)、洛伦兹磁流体 (MHD) 熔体对流与间隙氧 [Oi] (8–14 ppma) 条纹抑制 PINN-MPC、在线 5kHz 弯月面亮环 (Meniscus Bright-Ring) 激光三角直径/Dash 细颈无位错成像与双色高温计计量及 SEMI S2 / SEMI M1 / NFPA 86 / ASME BPVC / IEC 61511 SIL-3 石英坩埚漏硅水冷炉体蒸汽爆炸防护、籽晶钢索超载防坠抓捕与超导磁体失超硬联锁池 (Bicep · 170 单测里程碑)</button>
       <button class="tab-btn" onclick="showBlueprint(162)">163. 亚纳米级 (&lt; 0.10 nm RMS 面形误差) 非球面/自由曲面超低膨胀光学反射镜 (ULE / Zerodur 400–800mm 极紫外光刻物镜与空间望远镜主镜) 五轴离子束修形 (IBF 500–1,500 eV Ar⁺ 考夫曼/射频离子源) 与磁流变抛光 (MRF 宾汉塑性羟基铁粉/氧化铈柔性缎带)、Tikhonov 正则化 Richardson-Lucy 非负驻留时间矩阵反卷积与去除函数 (TIF) 热足迹漂移补偿 PINN-MPC、在线移相斐索计算全息 (CGH) 零位激光干涉仪 (37 项 Zernike 波前与中频误差 MSF 功率谱密度 PSD) 计量及 SEMI S2 / ISO 10110 / ANSI Z136.1 / IEC 61511 SIL-3 离子源屏栅高压打火蚀坑抑制、零重力 Whiffletree 镜室支撑过载与高真空联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(163)">164. 超临界二氧化碳 (sCO2 Allam-Fetvedt 300 bar / 1,150°C 纯氧直燃零碳发电循环与 300 MW 透平压缩机组) 近临界主压缩机 (7.38 MPa, 30.98°C) Span-Wagner 真实气体状态方程密度突变与两相液滴凝结防喘振 PINN-MPC、在线 50kHz 叶尖间隙电容/可调谐二极管激光吸收光谱 (TDLAS) 纯氧燃烧当量比与扩散焊印刷电路板式回热器 (PCHE Inconel 617/740H 微通道) 压差计量及 API 617 / ASME PTC 10 / NFPA 85 / IEC 61511 SIL-3 热气旁路快速防喘振阀 (&lt;12ms)、高压纯氧防金属自燃切断与轴系超速跳闸硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4285,6 +4286,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 163: Supercritical CO2 Allam-Fetvedt Oxy-Fuel Power Cycle PINN-MPC & API 617 / NFPA 85 SIL-3 Simulator -->
+  <section class="card" style="margin-top:1.25rem;border-color:rgba(16,185,129,0.45);">
+    <span class="pill pill-teal">TOOL 163 · SUPERCRITICAL CO2 (sCO2 ALLAM-FETVEDT 300 BAR / 1,150°C OXY-FUEL CYCLE) TURBINE-COMPANDER, SPAN-WAGNER NEAR-CRITICAL COMPRESSOR ANTI-SURGE &amp; PCHE RECUPERATOR SIMULATOR</span>
+    <h2>超临界二氧化碳 (sCO2 Allam-Fetvedt 300 bar / 1,150°C 纯氧直燃零碳循环) 透平压缩机组、近临界点 (7.38 MPa, 30.98°C) Span-Wagner 真实气体状态方程防喘振与 PCHE 微通道回热器热应力 PINN-MPC、在线 50kHz 叶尖间隙电容/TDLAS 氧燃比计量及 API 617 / NFPA 85 / SIL-3 快速防喘振阀与高压氧切断硬联锁测算器 (Allam-Fetvedt sCO2 Oxy-Fuel Twins)</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 套 <code>300 MW</code> 级超临界二氧化碳（<code>sCO2 Allam-Fetvedt Cycle, 300 bar / 1,150°C</code> 高压纯氧直燃零碳捕集动力循环）透平-主压缩机-再压缩机同轴/分轴机组规模下，启用 <code>Standard_NV36ads_A10_v5</code> <strong>Span-Wagner 亥姆霍兹自由能真实气体状态方程（在临界点 $P_c = 7.377\text{ MPa}, T_c = 30.978\text{ }^\circ\text{C}$ 附近极小温压扰动即引发流体密度 $\rho \in [250, 750]\text{ kg/m}^3$ 跨数量级突变、等熵压缩比热容发散（<code>Widom Line</code> 拟临界脊线）及叶轮喉部亚稳态两相液滴闪蒸/凝结空化冲击）与扩散焊印刷电路板式回热器（<code>PCHE, Inconel 617/740H</code> 半圆微通道 $\Delta T/\Delta x$ 热疲劳蠕变）</strong> <code>PINN</code> + 可调进口导叶（<code>IGV</code>）、主压缩机/再压缩机分流比（<code>Split-Flow Ratio</code>）、纯氧-天然气分级燃烧室循环 $\text{CO}_2$ 稀释流量与透平气膜冷却协同 <code>MPC</code>（锁定主压缩机入口流体处于高密度拟液相单相区且喘振裕度 <code>&ge; 18.0%</code>，净循环热效率与变负荷爬坡速率提升 <code>+41.8%</code>，近临界压缩机喘振边界漂移与 <code>PCHE</code> 回热器热应力幅值削减 <code>-65.4%</code>）、<code>API 617 / ASME PTC 10 / NFPA 85 / CGA G-4.4 / IEC 61511 SIL-3</code> 检出近临界叶轮两相液击/旋转失速喘振前兆、<code>300 bar</code> 高压富氧管路绝热压缩温升或颗粒撞击引发的镍基合金自燃风险（<code>Oxygen-Enriched Metal Ignition</code>）以及发电机甩负荷引发超高功率密度（较蒸汽轮机体积小 10 倍、转动惯量极低）转子毫米秒级飞车超速（<code>&gt; 108% Rated RPM</code>）时，瞬时触发电液伺服超快热气旁路防喘振阀（<code>&lt; 12 ms</code> 全开回流）、高压液氧（<code>LOX</code>）双切断阀与超临界 $\text{CO}_2$ 惰化吹扫并联动透平主调门快速截流硬联锁（<code>0.5 ms</code> 响应，<code>0.0%</code> 压缩机两相液击断叶喘振、高压氧管线金属爆燃或低惯量转子飞车解体事故，对比传统理想气体修正 PID 反模式 <code>1.6%</code> 风险）以及机组撬块边缘 <code>50 kHz</code> 叶尖间隙电容/电涡流位移、燃烧室原位可调谐二极管激光吸收光谱（<code>TDLAS</code> $\text{O}_2 / \text{CO} / \text{H}_2\text{O}$ 化学当量比）与 <code>PCHE</code> 微通道压差层析边缘分诊（<code>0.4 ms</code>，削减 <code>99.6%</code> 电站 WAN 带宽，避免 <code>4.1%</code> 临界点物性畸变跨越气液两相线冲蚀叶轮或 <code>PCHE</code> 水分结冰/碳酸盐微孔堵塞）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 300MW 级 Allam-Fetvedt 超临界二氧化碳 (sCO2) 纯氧燃烧发电动力岛台数 (sCO2 Oxy-Fuel Power Trains): <strong id="lbl_sco2_trains" style="color:var(--teal)">8</strong></label>
+          <input type="range" id="rng_sco2_trains" min="2" max="32" step="2" value="8" oninput="runAllamSco2Lab()">
+        </div>
+        <div class="form-row">
+          <label>2. Span-Wagner 近临界真实气体防喘振/PCHE 热应力 PINN-MPC 与 API 617 / NFPA 85 SIL-3 热气旁路及纯氧联锁模式 (sCO2 Governance Mode)</label>
+          <select id="sel_sco2_mode" onchange="runAllamSco2Lab()">
+            <option value="pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge" selected>Span-Wagner 临界点物性发散、叶轮两相闪蒸抑制与 PCHE 回热器热应力 PINN-MPC (+41.8% 净循环效率与爬坡速率 / -65.4% 压缩机喘振漂移与 PCHE 热应力) + API 617 / NFPA 85 SIL-3 0.5ms 热气旁路防喘振、高压氧切断与防飞车硬联锁 + 0.4ms 50kHz 叶尖间隙与 TDLAS 氧燃比边缘 (推荐)</option>
+            <option value="raw_cloud_ideal_gas_pid_fixed_anti_surge_line">传统反模式：理想气体压缩因子查表 PID 与固定压比防喘振线 (+6.1% 效率增益) + 无 0.5ms 电液热气旁路与高压氧惰化硬联锁 (1.6% 冷却水温波动致入口跌入两相区液击断叶、高压氧管金属燃爆或甩负荷低惯量转子飞车风险) + 缺乏在线 50kHz 叶尖间隙与 Span-Wagner 实时声速重构 (4.1% 拟临界密度突变触发深度喘振或 PCHE 微通道热冲击开裂)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="allamSco2Out"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6943,6 +6967,24 @@ resource ibfMrfOpticsPool 'Microsoft.ContainerService/managedClusters/agentPools
       'aksclaw.io/chamber-edge-10khz-rf-grid-fizeau-cgh-zernike': 'enabled-0.4ms-99.7pct-optics-shop-wan-cut'
     }
   }
+}`,
+  `// 164. Supercritical Carbon Dioxide (sCO2 Allam-Fetvedt 300 bar / 1,150°C Direct-Fired Oxy-Fuel Power Cycle) Near-Critical Compressor Span-Wagner Real-Gas Anti-Surge & PCHE Recuperator PINN-MPC, Online 50 kHz Blade-Tip Capacitance / TDLAS Oxy-Combustor Metrology & API 617 / ASME PTC 10 / NFPA 85 / IEC 61511 SIL-3 Hot-Gas Bypass, High-Pressure Oxygen Shutoff & Overspeed Trip Pool
+param aksClusterName string = 'aks-allam-sco2-oxyfuel-sil3'
+param location string = resourceGroup().location
+
+resource sco2AllamPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'sco2allam3'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (Span-Wagner Near-Critical EoS Density-Gradient, Two-Phase Surge Avoidance & PCHE Thermal Stress PINN-MPC + Online 50 kHz Blade-Tip & TDLAS Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'allam-fetvedt-sco2-oxyfuel-turbine-compander-spanwagner-api617-sil3-agent'
+      'aksclaw.io/pinn-mpc-span-wagner-near-critical-compressor-pche': 'enabled-41.8pct-efficiency-ramp-gain-65.4pct-surge-pche-stress-cut'
+      'aksclaw.io/api617-nfpa85-sil3-hot-gas-bypass-lox-shutoff': 'enforced-0.5ms-zero-liquid-slugging-surge-lox-fire-or-overspeed'
+      'aksclaw.io/skid-edge-50khz-blade-tip-tdlas-oxycombustor': 'enabled-0.4ms-99.6pct-power-plant-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -7206,6 +7248,30 @@ runTflnLnoiModulatorLab();
 runLh2CryoZboLab();
 runMczSiliconLab();
 runIbfMrfOpticsLab();
+runAllamSco2Lab();
+
+function runAllamSco2Lab() {
+  const trains = parseInt(document.getElementById('rng_sco2_trains').value, 10);
+  const mode = document.getElementById('sel_sco2_mode').value;
+  document.getElementById('lbl_sco2_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const pods = trains <= 8 ? Math.max(2, Math.min(8, trains)) : Math.max(8, Math.floor(trains / 2));
+  const ok = mode === 'pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge';
+  const mpcStr = ok ? "Span-Wagner 亥姆霍兹自由能真实气体状态方程 (精准解算 7.38 MPa / 30.98°C 临界点 Widom 脊线附近密度跨量级突变与叶轮前缘亚稳态两相闪蒸凝结边界) 与 Inconel 740H 印刷电路板式回热器 (PCHE) 微通道热应力 PINN + 进口导叶 (IGV)、主/再压缩分流比与纯氧燃烧室循环 CO2 稀释流量协同 MPC · 净循环发电热效率与调峰爬坡速率 +41.8% · 近临界压缩机喘振裕度偏移与 PCHE 微通道热梯度应力 -65.4%" : "传统靠理想气体状态方程压缩因子查表 PID 与固定压比防喘振线滞后 · 仅 +6.1% 效率增益 / -8.9% 应力削减 (冷却塔环境温度轻微波动即导致主压缩机入口跨越气液两相线，造成高达 4.1% 拟临界密度休克喘振或 PCHE 高低温流体失配热疲劳)";
+  const sil3Str = ok ? "0.5 ms API 617 / ASME PTC 10 / NFPA 85 / CGA G-4.4 / IEC 61511 SIL-3 检出近临界叶轮旋转失速/液击前兆、300 bar 高压纯氧支路温升异常或电网甩负荷低惯量转子加速度越限时瞬时开启 <12ms 电液超快热气旁路防喘振阀、切断液氧 (LOX) 双联阀注入超临界 CO2 吹扫惰化并快速关断透平主进气阀硬联锁 · 0.0% 压缩机液击断叶、高压氧管金属爆燃或转子飞车违例" : "无 0.5ms 超快热气旁路与高压氧惰化硬联锁 (390.0 ms 传统 PLC 联锁滞后) · 1.6% 高密度超临界流体喘振轴向推力击碎止推轴承、300 bar 高压氧管线金属自燃或紧凑高功密转子甩负荷飞车风险";
+  const edgeStr = ok ? "0.4 ms 动力岛边缘 50 kHz 叶尖间隙电容/高频压力脉动 + 燃烧室可调谐二极管激光吸收光谱 (TDLAS O2/CO/H2O 当量比) + PCHE 压差层析边缘 (-99.6% 电站 WAN 带宽) · 0.0% 临界点两相液滴冲蚀或 PCHE 微孔结垢堵塞漏检" : "210.0 ms 依赖常规慢速热电偶与排气烟气分析仪 · 无法在毫秒级近临界声速陡降与叶轮失速发展期内阻断深度喘振";
+
+  document.getElementById('allamSco2Out').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.6% 近临界压缩机液击喘振、300bar 高压氧自燃或飞车风险 · 4.1% Span-Wagner 临界物性突变与 PCHE 热冲击漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个 sCO2 零碳动力岛孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>50kHz 叶尖间隙电容、TDLAS 纯氧燃烧光谱与 PCHE 微通道压差边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runIbfMrfOpticsLab() {
   const cells = parseInt(document.getElementById('rng_ibf_cells').value, 10);

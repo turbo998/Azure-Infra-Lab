@@ -182,6 +182,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
+    simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1223,6 +1224,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ibf_mrf_12_cells": simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(12, "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge"),
             "ibf_mrf_48_cells": simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(48, "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge"),
             "raw_ibf_mrf_12_cells": simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(12, "raw_cloud_open_loop_constant_tif_dwell_and_offline_interferometry"),
+        },
+        "demo_163_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox": {
+            "sco2_8_trains": simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(8, "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge"),
+            "sco2_32_trains": simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(32, "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge"),
+            "raw_sco2_8_trains": simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(8, "raw_cloud_ideal_gas_pid_fixed_anti_surge_line"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

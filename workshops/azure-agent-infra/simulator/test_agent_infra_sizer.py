@@ -169,6 +169,7 @@ from agent_infra_sizer import (
     simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
+    simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3406,6 +3407,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct"], 3.0)
         self.assertTrue(gov["ibf_mrf_subnm_aspheric_mirror_slo_met"])
         self.assertFalse(raw["ibf_mrf_subnm_aspheric_mirror_slo_met"])
+
+    def test_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(self) -> None:
+        gov = simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(
+            8, "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge"
+        )
+        raw = simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox(
+            8, "raw_cloud_ideal_gas_pid_fixed_anti_surge_line"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_sco2_train_pods"], 8)
+        self.assertEqual(gov["net_cycle_thermal_efficiency_and_ramp_rate_gain_pct"], 41.8)
+        self.assertEqual(gov["near_critical_compressor_surge_margin_and_pche_thermal_stress_reduction_pct"], 65.4)
+        self.assertEqual(gov["api617_nfpa85_sil3_hot_gas_bypass_and_lox_shutoff_interlock_ms"], 0.5)
+        self.assertEqual(gov["unmitigated_compressor_liquid_slugging_surge_or_lox_metal_fire_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_compressor_liquid_slugging_surge_or_lox_metal_fire_pct"], 1.0)
+        self.assertEqual(gov["skid_edge_50khz_blade_tip_capacitance_and_tdlas_oxyfuel_telemetry_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_span_wagner_density_shock_or_pche_microchannel_fouling_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_span_wagner_density_shock_or_pche_microchannel_fouling_pct"], 3.0)
+        self.assertTrue(gov["allam_fetvedt_sco2_oxyfuel_slo_met"])
+        self.assertFalse(raw["allam_fetvedt_sco2_oxyfuel_slo_met"])
 
 
 if __name__ == "__main__":

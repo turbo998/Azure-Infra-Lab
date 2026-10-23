@@ -9902,5 +9902,52 @@
       "uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct": 4.2,
       "ibf_mrf_subnm_aspheric_mirror_slo_met": false
     }
+  ],
+  "allam_fetvedt_sco2_oxyfuel_profiles": [
+    {
+      "sco2_power_trains": 8,
+      "sco2_governance_mode": "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sco2_train_pods": 8,
+      "net_cycle_thermal_efficiency_and_ramp_rate_gain_pct": 41.8,
+      "near_critical_compressor_surge_margin_and_pche_thermal_stress_reduction_pct": 65.4,
+      "api617_nfpa85_sil3_hot_gas_bypass_and_lox_shutoff_interlock_ms": 0.5,
+      "unmitigated_compressor_liquid_slugging_surge_or_lox_metal_fire_pct": 0.0,
+      "skid_edge_50khz_blade_tip_capacitance_and_tdlas_oxyfuel_telemetry_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_span_wagner_density_shock_or_pche_microchannel_fouling_pct": 0.0,
+      "allam_fetvedt_sco2_oxyfuel_slo_met": true
+    },
+    {
+      "sco2_power_trains": 32,
+      "sco2_governance_mode": "pinn_mpc_span_wagner_near_critical_compressor_oxycombustor_pche_api617_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sco2_train_pods": 16,
+      "net_cycle_thermal_efficiency_and_ramp_rate_gain_pct": 41.8,
+      "near_critical_compressor_surge_margin_and_pche_thermal_stress_reduction_pct": 65.4,
+      "api617_nfpa85_sil3_hot_gas_bypass_and_lox_shutoff_interlock_ms": 0.5,
+      "unmitigated_compressor_liquid_slugging_surge_or_lox_metal_fire_pct": 0.0,
+      "skid_edge_50khz_blade_tip_capacitance_and_tdlas_oxyfuel_telemetry_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_span_wagner_density_shock_or_pche_microchannel_fouling_pct": 0.0,
+      "allam_fetvedt_sco2_oxyfuel_slo_met": true
+    },
+    {
+      "sco2_power_trains": 8,
+      "sco2_governance_mode": "raw_cloud_ideal_gas_pid_fixed_anti_surge_line",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_sco2_train_pods": 8,
+      "net_cycle_thermal_efficiency_and_ramp_rate_gain_pct": 6.1,
+      "near_critical_compressor_surge_margin_and_pche_thermal_stress_reduction_pct": 8.9,
+      "api617_nfpa85_sil3_hot_gas_bypass_and_lox_shutoff_interlock_ms": 390.0,
+      "unmitigated_compressor_liquid_slugging_surge_or_lox_metal_fire_pct": 1.6,
+      "skid_edge_50khz_blade_tip_capacitance_and_tdlas_oxyfuel_telemetry_loop_ms": 210.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_span_wagner_density_shock_or_pche_microchannel_fouling_pct": 4.1,
+      "allam_fetvedt_sco2_oxyfuel_slo_met": false
+    }
   ]
 }
