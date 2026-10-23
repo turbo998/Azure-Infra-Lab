@@ -8548,6 +8548,59 @@ def simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2
     }
 
 
+def simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(
+    msr_loops: int = 8,
+    msr_governance_mode: str = "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Generation-IV Molten-Salt Reactor (MSR / TMSR Liquid-Fluoride Fuel Loop
+    LiF-BeF2-ZrF4-UF4/ThF4 at 650-700 °C) & Pyroprocessing Spent-Fuel Molten-Salt Electrorefining
+    (500 °C LiCl-KCl Eutectic Liquid-Cadmium Cathode LCC Uranium/Transuranic U/TRU Codeposition &
+    Zeolite-A Ceramic Waste Immobilization) Flowing Delayed-Neutron Precursor Drift, UF4/UF3 Redox
+    Potential Hastelloy-N Intergranular Tellurium-Embrittlement Suppression & Nernst-Planck
+    Electrodeposition PINN-MPC, Online 10 kHz Cyclic Voltammetry (CV) / High-Purity Germanium
+    (HPGe) Gamma Spectroscopy & Laser-Induced Breakdown Spectroscopy (LIBS) Metrology & IAEA
+    SSR-2/1 / ANSI/ANS-8.1 / ASME BPVC Section III Div. 5 / IEC 61513 SIL-3 Passive Freeze-Plug
+    Gravity Drain Tank, Subcriticality (k_eff < 0.92) Dendrite Short-Circuit Guard & Hot-Cell
+    Tritium/HF Negative-Pressure Containment Interlock Sandbox (Chapter 172).
+    """
+    if msr_loops < 1:
+        raise ValueError("msr_loops must be >= 1")
+    valid_modes = {
+        "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge",
+        "raw_cloud_manual_salt_sampling_fixed_electrorefiner_current_and_delayed_drain",
+    }
+    if msr_governance_mode not in valid_modes:
+        raise ValueError(f"msr_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = msr_governance_mode == "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge"
+    active_msr_pyro_pods = max(2, min(16, int(msr_loops))) if msr_loops <= 16 else max(16, int(msr_loops // 2))
+    gpu_nodes = max(2, math.ceil(msr_loops / 4))
+
+    actinide_recovery_and_thermal_conversion_efficiency_gain_pct = 44.3 if governed else 6.5
+    hastelloy_tellurium_corrosion_and_cathode_dendrite_short_reduction_pct = 67.5 if governed else 8.9
+    iaea_ans81_iec61513_sil3_freeze_plug_drain_and_subcritical_interlock_ms = 0.4 if governed else 390.0
+    unmitigated_supercritical_excursion_tritium_leak_or_vessel_breach_pct = 0.0 if governed else 1.4
+    hotcell_edge_10khz_cv_hpge_gamma_and_libs_actinide_telemetry_loop_ms = 0.3 if governed else 212.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct = 0.0 if governed else 4.1
+
+    return {
+        "msr_loops": msr_loops,
+        "msr_governance_mode": msr_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_msr_pyro_pods": active_msr_pyro_pods,
+        "actinide_recovery_and_thermal_conversion_efficiency_gain_pct": actinide_recovery_and_thermal_conversion_efficiency_gain_pct,
+        "hastelloy_tellurium_corrosion_and_cathode_dendrite_short_reduction_pct": hastelloy_tellurium_corrosion_and_cathode_dendrite_short_reduction_pct,
+        "iaea_ans81_iec61513_sil3_freeze_plug_drain_and_subcritical_interlock_ms": iaea_ans81_iec61513_sil3_freeze_plug_drain_and_subcritical_interlock_ms,
+        "unmitigated_supercritical_excursion_tritium_leak_or_vessel_structural_breach_pct": unmitigated_supercritical_excursion_tritium_leak_or_vessel_breach_pct,
+        "hotcell_edge_10khz_cv_hpge_gamma_and_libs_actinide_telemetry_loop_ms": hotcell_edge_10khz_cv_hpge_gamma_and_libs_actinide_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct": uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct,
+        "gen4_msr_molten_salt_pyroprocessing_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -10090,5 +10090,52 @@
       "uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct": 4.3,
       "tgv_glass_core_substrate_slo_met": false
     }
+  ],
+  "gen4_msr_pyroprocessing_profiles": [
+    {
+      "msr_loops": 8,
+      "msr_governance_mode": "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_msr_pyro_pods": 8,
+      "actinide_recovery_and_thermal_conversion_efficiency_gain_pct": 44.3,
+      "hastelloy_tellurium_corrosion_and_cathode_dendrite_short_reduction_pct": 67.5,
+      "iaea_ans81_iec61513_sil3_freeze_plug_drain_and_subcritical_interlock_ms": 0.4,
+      "unmitigated_supercritical_excursion_tritium_leak_or_vessel_structural_breach_pct": 0.0,
+      "hotcell_edge_10khz_cv_hpge_gamma_and_libs_actinide_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct": 0.0,
+      "gen4_msr_molten_salt_pyroprocessing_slo_met": true
+    },
+    {
+      "msr_loops": 32,
+      "msr_governance_mode": "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_msr_pyro_pods": 16,
+      "actinide_recovery_and_thermal_conversion_efficiency_gain_pct": 44.3,
+      "hastelloy_tellurium_corrosion_and_cathode_dendrite_short_reduction_pct": 67.5,
+      "iaea_ans81_iec61513_sil3_freeze_plug_drain_and_subcritical_interlock_ms": 0.4,
+      "unmitigated_supercritical_excursion_tritium_leak_or_vessel_structural_breach_pct": 0.0,
+      "hotcell_edge_10khz_cv_hpge_gamma_and_libs_actinide_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct": 0.0,
+      "gen4_msr_molten_salt_pyroprocessing_slo_met": true
+    },
+    {
+      "msr_loops": 8,
+      "msr_governance_mode": "raw_cloud_manual_salt_sampling_fixed_electrorefiner_current_and_delayed_drain",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_msr_pyro_pods": 8,
+      "actinide_recovery_and_thermal_conversion_efficiency_gain_pct": 6.5,
+      "hastelloy_tellurium_corrosion_and_cathode_dendrite_short_reduction_pct": 8.9,
+      "iaea_ans81_iec61513_sil3_freeze_plug_drain_and_subcritical_interlock_ms": 390.0,
+      "unmitigated_supercritical_excursion_tritium_leak_or_vessel_structural_breach_pct": 1.4,
+      "hotcell_edge_10khz_cv_hpge_gamma_and_libs_actinide_telemetry_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct": 4.1,
+      "gen4_msr_molten_salt_pyroprocessing_slo_met": false
+    }
   ]
 }

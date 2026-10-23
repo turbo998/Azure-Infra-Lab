@@ -173,6 +173,7 @@ from agent_infra_sizer import (
     simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
     simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
+    simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3494,6 +3495,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct"], 3.0)
         self.assertTrue(gov["tgv_glass_core_substrate_slo_met"])
         self.assertFalse(raw["tgv_glass_core_substrate_slo_met"])
+
+    def test_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(self) -> None:
+        gov = simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(
+            8, "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge"
+        )
+        raw = simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(
+            8, "raw_cloud_manual_salt_sampling_fixed_electrorefiner_current_and_delayed_drain"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_msr_pyro_pods"], 8)
+        self.assertEqual(gov["actinide_recovery_and_thermal_conversion_efficiency_gain_pct"], 44.3)
+        self.assertEqual(gov["hastelloy_tellurium_corrosion_and_cathode_dendrite_short_reduction_pct"], 67.5)
+        self.assertEqual(gov["iaea_ans81_iec61513_sil3_freeze_plug_drain_and_subcritical_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_supercritical_excursion_tritium_leak_or_vessel_structural_breach_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_supercritical_excursion_tritium_leak_or_vessel_structural_breach_pct"], 1.0)
+        self.assertEqual(gov["hotcell_edge_10khz_cv_hpge_gamma_and_libs_actinide_telemetry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct"], 3.0)
+        self.assertTrue(gov["gen4_msr_molten_salt_pyroprocessing_slo_met"])
+        self.assertFalse(raw["gen4_msr_molten_salt_pyroprocessing_slo_met"])
 
 
 if __name__ == "__main__":

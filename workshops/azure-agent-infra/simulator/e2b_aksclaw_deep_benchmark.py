@@ -179,6 +179,7 @@ from agent_infra_sizer import (
     simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
     simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
+    simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1412,6 +1413,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(12, "raw_cloud_fixed_laser_pulse_energy_timed_hf_dip_and_offline_cross_section_sem"),
     ]
 
+    gen4_msr_pyroprocessing_profiles: List[Dict[str, object]] = [
+        simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(8, "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge"),
+        simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(32, "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge"),
+        simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(8, "raw_cloud_manual_salt_sampling_fixed_electrorefiner_current_and_delayed_drain"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1578,6 +1585,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cdc_rotary_tablet_press_profiles": cdc_rotary_tablet_press_profiles,
         "ebchr_titanium_refining_profiles": ebchr_titanium_refining_profiles,
         "tgv_glass_substrate_profiles": tgv_glass_substrate_profiles,
+        "gen4_msr_pyroprocessing_profiles": gen4_msr_pyroprocessing_profiles,
     }
 
 
