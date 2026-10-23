@@ -164,6 +164,7 @@ from agent_infra_sizer import (
     simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
     simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
+    simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3296,6 +3297,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct"], 3.0)
         self.assertTrue(gov["diamond_hpht_mpcvd_wafer_slo_met"])
         self.assertFalse(raw["diamond_hpht_mpcvd_wafer_slo_met"])
+
+    def test_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(self) -> None:
+        gov = simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(
+            12, "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge"
+        )
+        raw = simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(
+            12, "baseline_collective_blade_pitch_pi_ballast_step_electrolyzer_offline_rov_umbilical_inspection_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_floating_wind_h2_pods"], 12)
+        self.assertEqual(gov["green_h2_hvdc_co_dispatch_yield_and_umbilical_fatigue_life_gain_pct"], 41.5)
+        self.assertEqual(gov["platform_pitch_nacelle_fore_aft_and_dynamic_cable_mbr_violation_reduction_pct"], 63.8)
+        self.assertEqual(gov["iec61400_dnv_st0119_sil3_h2_purge_hvdc_breaker_and_ers_disconnect_interlock_ms"], 2.8)
+        self.assertEqual(gov["unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct"], 1.0)
+        self.assertEqual(gov["platform_edge_10khz_das_botdr_strain_and_uhf_pd_telemetry_loop_ms"], 1.2)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.5)
+        self.assertEqual(gov["uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct"], 3.0)
+        self.assertTrue(gov["floating_wind_h2_hvdc_umbilical_slo_met"])
+        self.assertFalse(raw["floating_wind_h2_hvdc_umbilical_slo_met"])
 
 
 if __name__ == "__main__":

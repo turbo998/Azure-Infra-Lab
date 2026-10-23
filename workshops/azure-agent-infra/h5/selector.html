@@ -570,6 +570,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(155)">156. 共封装光学 (CPO 1.6T / 3.2T 光引擎) 与 300mm 硅光晶圆 (SiPh SOI / Si3N4 波导) 有源亚微米 (&lt; 100nm) 六自由度压电六足台 (6-DOF Piezo-Hexapod) 光纤阵列/CW-DFB 激光器首次通光对准及紫外胶固化收缩补偿 PINN-MPC、在线 100kHz 光频域反射仪 (OFDR 波导背向散射损耗 &lt; 0.15 dB/cm)/微环谐振器 (MRR) 热相移计量及 Telcordia GR-468-CORE / IEC 60825-1 Class 3B/4 / SEMI S2 / IEC 61508 SIL-3 外置激光源 (ELSFP) 快门遮断、六足台端面剪切防撞限力与紫外固化吹扫硬联锁池 (Bicep · 155 仿真器里程碑)</button>
       <button class="tab-btn" onclick="showBlueprint(156)">157. 300mm 背面供电网络 (BSPDN / PowerVia / 埋入式电源轨 BPR) 纳米硅通孔 (nTSV &lt; 50nm CD) 极限晶圆减薄 (&lt; 500nm 残余硅厚)、承载晶圆混合熔融键合翘曲与亚 10nm 背面套刻畸变补偿 PINN-MPC、在线 100kHz 宽谱红外干涉硅厚层析 (TTV ±1.5nm 3σ)/高频声学显微镜 (C-SAM) 空洞计量及 SEMI S2 / S8 / IEC 61508 SIL-3 磨削主轴压电防碎急退、背面 CMP 露头终点淬灭与多孔陶瓷吸盘双冗余真空保压硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(157)">158. 超高压高温 (HPHT 5.5–8.0 GPa, 1,350–1,650°C 六面顶/Belt) 与 915MHz/2.45GHz 微波等离子体化学气相沉积 (MPCVD 15–60 kW) 100mm (4 英寸) 电子/量子级 (NV⁻ 色心) 单晶金刚石晶圆径向温度梯度 (&lt; 3.5 K/cm) 与等离子体球化/石英窗拉弧抑制 PINN-MPC、在线 10kHz 发射光谱 (OES C2 516.5nm / Hα 656.3nm)/双色高温计计量及 ASME BPVC VIII-3 / NFPA 55 / IEC 61508 SIL-3 碳化钨顶锤卸载防爆、微波源撬棒关断与氢气/甲烷氮气吹扫淬灭硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(158)">159. 远海深水 1–5 GW 漂浮式海上风电原位制氢与水下 66kV / ±320kV HVDC 动态输出脐带缆、半潜/单柱平台六自由度 (6-DOF) 纵摇-横摇-首摇与立管涡激振动 (VIV) 抑制及 PEM 电解槽阵列爬坡率 PINN-MPC、在线 10kHz 分布式声学/布里渊光纤传感 (DAS/BOTDR) 与无 SF6 GIS 特高频局部放电 (UHF PD) 计量及 IEC 61400-3-2 / DNV-ST-0119 / CIGRE TB 852 / IEC 61511 SIL-3 动态海缆最小弯曲半径 (MBR)、氢氧互串 (&lt; 1.6% LEL) 氮封与紧急脱离系统 (ERS) 硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4165,6 +4166,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 158: Floating Offshore Wind-to-Hydrogen & Dynamic HVDC Umbilical 6-DOF VIV PINN-MPC Calculator -->
+  <section class="card" style="margin-top:1.25rem;">
+    <span class="pill pill-teal">TOOL 158 · 1–5 GW FLOATING OFFSHORE WIND-TO-HYDROGEN &amp; SUBSEA 66kV / ±320kV HVDC DYNAMIC EXPORT UMBILICAL 6-DOF PITCH-ROLL-YAW &amp; VIV SUPPRESSION PINN-MPC, ONLINE 10kHz DAS/BOTDR &amp; UHF PD METROLOGY &amp; IEC 61400-3-2 / DNV-ST-0119 / CIGRE TB 852 / SIL-3 MBR, H₂ CROSSOVER &amp; ERS INTERLOCK CALCULATOR</span>
+    <h2>自主 1–5 GW 漂浮式海上风电制氢与水下动态 HVDC 脐带缆：平台六自由度/涡激振动 PINN-MPC 及 SIL-3 动态海缆曲率/氢氧互串/ERS 硬联锁测算器</h2>
+    <div class="sub">量化在 <code>4 – 60</code> 座深远海（水深 <code>80–1,000 m</code>）<code>15–25 MW</code> 漂浮式风电机组（半潜式 <code>Semi-Submersible</code> / 单柱式 <code>Spar</code> / 张力腿 <code>TLP</code> 浮体平台）原位耦合海水淡化-质子交换膜（<code>PEM</code>）电解制氢阵列与水下悬链波浪形（<code>Lazy-Wave</code>）<code>66 kV AC / ±320 kV HVDC</code> 电-氢复合动态脐带缆（<code>Dynamic Power-and-H2 Umbilical</code>）规模下，启用 <code>Standard_ND96amsr_A100_v4</code> <strong>浮体六自由度水动力-气动伺服弹性耦合方程（<code>Cummins Impulse-Response + Blade-Element Momentum Negative Aerodynamic Damping</code>）、悬链线系泊与动态脐带缆尾流涡激振动（<code>Wake-Oscillator VIV Lock-In &amp; Hog/Sag Bend Curvature</code>）及晃荡工况下 PEM 电解槽气液两相膜电极水饥饿/氢氧互串动力学</strong> <code>PINN</code> + 独立变桨（<code>IPC</code>）、发电机电磁转矩阻尼、主动压载水舱配平与 PEM 电解槽/HVDC 换流器秒级功率协同分配 <code>MPC</code>（消除额定风速以上负气动阻尼纵摇发散与动态缆拱背/垂弯最小弯曲半径 <code>MBR</code> 违例，电-氢联合消纳产率与动态脐带缆铜导体疲劳寿命提升 <code>+41.5%</code>，平台纵摇角、机舱前后加速度均方根与动态缆 <code>MBR</code> 超限率削减 <code>-63.8%</code>）、<code>IEC 61400-3-2 / DNV-ST-0119 / CIGRE TB 852 / IEC 61511 SIL-3</code> 检出动态脐带缆曲率突破最小弯曲半径安全裕度（$\kappa &gt; 1/\text{MBR}_{\text{lim}}$）、系泊破断张力尖峰、氧中氢（<code>H2-in-O2 &gt; 1.6% LEL</code>）互串或无 $\text{SF}_6$ 气体绝缘开关设备（<code>GIS</code>）绝缘击穿前兆时，瞬时触发 PEM 电解槽固态直流断路器分断与高压氮气惰化吹扫、顺桨气动刹停并激活水下电-氢复合紧急脱离接头（<code>ERS Dry-Break Coupling</code>）无泄漏闭锁（<code>2.8 ms</code> 响应，<code>0.0%</code> 动态脐带缆铜芯疲劳断裂击穿、氢氧爆轰或系泊断缆漂移事故，对比传统统一变桨 PI 与离线 ROV 巡检反模式 <code>1.8%</code> 风险）以及浮体边缘 <code>10 kHz</code> 分布式声学/布里渊光时域反射仪（<code>DAS / BOTDR</code> 全长动态海缆微应变与尾流涡激频率层析）与特高频局部放电（<code>UHF PD 300–1,500 MHz</code>）边缘分诊（<code>1.2 ms</code>，削减 <code>99.5%</code> 远海卫星/微波回传 WAN 带宽，避免 <code>4.3%</code> 负气动阻尼共振、立管 <code>VIV</code> 锁频疲劳或电解槽局部干涸穿孔）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 深远海漂浮式风电-原位 PEM 制氢与动态电氢脐带缆单元数 (Floating Wind-to-H2 &amp; Dynamic HVDC Umbilical Units): <strong id="lbl_floating_wind_units" style="color:var(--teal)">12</strong></label>
+          <input type="range" id="rng_floating_wind_units" min="4" max="60" step="4" value="12" oninput="runFloatingWindH2HvdcUmbilicalLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 浮体 6-DOF/动态海缆 VIV PINN-MPC 与 DNV-ST-0119 / SIL-3 动态缆 MBR/氢氧互串/ERS 联锁模式 (Floating Wind-to-H2 Governance Mode)</label>
+          <select id="sel_floating_wind_mode" onchange="runFloatingWindH2HvdcUmbilicalLab()">
+            <option value="pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge" selected>浮体 6-DOF 水动力-气动弹性、动态脐带缆 VIV 曲率与晃荡 PEM 两相流 PINN-MPC (+41.5% 电氢产率与海缆疲劳寿命 / -63.8% 平台纵摇与动态缆 MBR 超限) + IEC 61400-3-2 / DNV-ST-0119 SIL-3 2.8ms 电解槽直流快切氮封、顺桨刹停与水下 ERS 干式脱离硬联锁 + 1.2ms 10kHz DAS/BOTDR 光纤应变与 UHF 局放边缘 (推荐)</option>
+            <option value="baseline_collective_blade_pitch_pi_ballast_step_electrolyzer_offline_rov_umbilical_inspection_cloud">传统反模式：统一变桨 PI 控制、阶梯电解槽负荷与季度 ROV 离线巡检 (+6.4% 产率增益) + 无 2.8ms 动态缆 MBR/H2 互串与 ERS 硬联锁 (1.8% 百年一遇台风巨浪下动态脐带缆过度弯曲疲劳击穿、平台剧烈横摇导致电解槽气液分离器液位失控氢氧互串或系泊断缆风险) + 缺乏在线 10kHz DAS/BOTDR 光纤分布式应变闭环 (4.3% 负气动阻尼纵摇发散、海流立管 VIV 锁频共振或 PEM 膜电极局部水饥饿降解)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="floatingWindH2HvdcUmbilicalOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6733,6 +6757,24 @@ resource diamondHphtMpcvdPool 'Microsoft.ContainerService/managedClusters/agentP
       'aksclaw.io/reactor-edge-10khz-oes-pyrometry-ae': 'enabled-0.8ms-99.6pct-diamond-fab-wan-cut'
     }
   }
+}`,
+  `// Blueprint #159: 1-5 GW Floating Offshore Wind-to-Hydrogen & Subsea 66 kV / +-320 kV HVDC Dynamic Export Umbilical 6-DOF Pitch-Roll-Yaw & VIV Suppression PINN-MPC + Online 10 kHz DAS/BOTDR & UHF PD Metrology + IEC 61400-3-2 / DNV-ST-0119 / CIGRE TB 852 / IEC 61511 SIL-3 Dynamic Cable MBR, H2 Crossover & ERS Interlock Pool
+param location string = 'northeurope'
+param floatingWindH2Units int = 12
+
+resource floatingWindH2Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'fltwindpinn'
+  properties: {
+    count: 2 // Standard_ND96amsr_A100_v4 (Cummins 6-DOF Hydro-Aero-Servo-Elastic, Dynamic Umbilical VIV & Sloshing PEM PINN-MPC + Online 10 kHz DAS/BOTDR & UHF PD Edge)
+    vmSize: 'Standard_ND96amsr_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'floating-wind-h2-hvdc-umbilical-das-dnv-sil3-agent'
+      'aksclaw.io/pinn-mpc-6dof-spar-viv-electrolyzer-ramp': 'enabled-41.5pct-h2-hvdc-yield-umbilical-life-gain-63.8pct-pitch-mbr-cut'
+      'aksclaw.io/iec61400-dnvst0119-sil3-h2-purge-hvdc-ers-guard': 'enforced-2.8ms-zero-umbilical-fatigue-h2-crossover-or-mooring-snap'
+      'aksclaw.io/platform-edge-10khz-das-botdr-uhf-pd': 'enabled-1.2ms-99.5pct-offshore-satcom-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6991,6 +7033,30 @@ runHvdcSubseaXlpeVcvLab();
 runCpoSiliconPhotonicsHexapodLab();
 runBspdnBacksidePowerNtsvLab();
 runDiamondHphtMpcvdWaferLab();
+runFloatingWindH2HvdcUmbilicalLab();
+
+function runFloatingWindH2HvdcUmbilicalLab() {
+  const units = parseInt(document.getElementById('rng_floating_wind_units').value, 10);
+  const mode = document.getElementById('sel_floating_wind_mode').value;
+  document.getElementById('lbl_floating_wind_units').textContent = units.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(units / 6));
+  const pods = units <= 12 ? Math.max(2, Math.min(12, units)) : Math.max(12, Math.floor(units / 2));
+  const ok = mode === 'pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge';
+  const mpcStr = ok ? "Cummins 六自由度浮体水动力-气动伺服弹性方程、悬链波浪形 (Lazy-Wave) 动态电-氢脐带缆尾流涡激振动 (VIV) 与平台横摇晃荡下 PEM 电解槽气液两相分布 PINN + 独立变桨 (IPC)、发电机电磁阻尼转矩、主动压载舱与 PEM 电解槽/HVDC 换流器秒级功率协同 MPC · 电-氢联合产率与动态脐带缆疲劳寿命 +41.5% · 平台纵摇角、机舱加速度与动态缆最小弯曲半径 (MBR) 超限率 -63.8%" : "传统靠统一变桨 PI、阶梯电解槽出力与季度 ROV 水下巡检滞后 · 仅 +6.4% 产率增益 / -9.2% 载荷削减 (额定风速以上传统变桨引发负气动阻尼纵摇发散，叠加内波与洋流切变导致 4.3% 动态海缆拱背段/触地段发生锁频 VIV 铜芯绝缘微裂纹或平台横摇诱发 PEM 膜电极局部水饥饿)";
+  const sil3Str = ok ? "2.8 ms IEC 61400-3-2 / DNV-ST-0119 / CIGRE TB 852 / IEC 61511 SIL-3 检出动态脐带缆曲率突破 MBR 安全阈值、系泊链张力尖峰、电解槽气液分离器液位倾覆导致 H2-in-O2 > 1.6% LEL 或无 SF6 GIS 局部放电超限时瞬时触发固态直流断路器快切、高纯氮气吹扫惰化、顺桨刹停及水下电-氢干式紧急脱离接头 (ERS) 闭锁硬联锁 · 0.0% 动态海缆疲劳击穿、氢氧爆轰或断缆漂移违例" : "无 2.8ms 动态缆 MBR/H2 互串与水下 ERS 脱离硬联锁 (890.0 ms 传统陆上 SCADA 联锁滞后) · 1.8% 恶劣海况下动态脐带缆过弯折断短路、晃荡导致氢氧互串闪爆或系泊断缆拉裂海缆风险";
+  const edgeStr = ok ? "1.2 ms 浮体端 10 kHz 分布式声学/布里渊光时域反射仪 (DAS/BOTDR 全长动态脐带缆微应变 < ±15 μɛ 与曲率层析) + 特高频局部放电 (UHF PD 300–1,500 MHz) + 激光雷达前馈测风边缘 (-99.5% 远海卫通 WAN 带宽) · 0.0% 负气动阻尼共振或动态海缆 VIV 锁频疲劳漏检" : "260.0 ms 依赖远海高延迟卫星回传与定期 ROV 外观抽检 · 无法在秒级巨浪涌浪与涡激共振周期内实施主动变桨阻尼与电解槽功率解耦";
+
+  document.getElementById('floatingWindH2HvdcUmbilicalOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.8% 动态脐带缆过弯疲劳击穿或晃荡氢氧互串风险 · 4.3% 负气动阻尼纵摇发散或立管 VIV 锁频漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 ND96amsr_A100_v4 节点 (${pods} 个漂浮式风电制氢孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>10kHz DAS/BOTDR 全长动态海缆光纤应变、UHF 局放与前馈激光测风边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runDiamondHphtMpcvdWaferLab() {
   const reactors = parseInt(document.getElementById('rng_diamond_reactors').value, 10);

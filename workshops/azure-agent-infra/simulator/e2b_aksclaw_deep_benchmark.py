@@ -170,6 +170,7 @@ from agent_infra_sizer import (
     simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
     simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
+    simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1349,6 +1350,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(8, "fixed_microwave_power_pressure_step_open_loop_holder_cooling_post_growth_birefringence_cloud"),
     ]
 
+    floating_wind_h2_hvdc_umbilical_profiles: List[Dict[str, object]] = [
+        simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(12, "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge"),
+        simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(48, "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge"),
+        simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(12, "baseline_collective_blade_pitch_pi_ballast_step_electrolyzer_offline_rov_umbilical_inspection_cloud"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1506,6 +1513,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cpo_silicon_photonics_pic_profiles": cpo_silicon_photonics_pic_profiles,
         "bspdn_backside_power_ntsv_profiles": bspdn_backside_power_ntsv_profiles,
         "diamond_hpht_mpcvd_wafer_profiles": diamond_hpht_mpcvd_wafer_profiles,
+        "floating_wind_h2_hvdc_umbilical_profiles": floating_wind_h2_hvdc_umbilical_profiles,
     }
 
 

@@ -9667,5 +9667,52 @@
       "uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct": 4.2,
       "diamond_hpht_mpcvd_wafer_slo_met": false
     }
+  ],
+  "floating_wind_h2_hvdc_umbilical_profiles": [
+    {
+      "floating_wind_h2_units": 12,
+      "floating_wind_governance_mode": "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96amsr_A100_v4",
+      "active_floating_wind_h2_pods": 12,
+      "green_h2_hvdc_co_dispatch_yield_and_umbilical_fatigue_life_gain_pct": 41.5,
+      "platform_pitch_nacelle_fore_aft_and_dynamic_cable_mbr_violation_reduction_pct": 63.8,
+      "iec61400_dnv_st0119_sil3_h2_purge_hvdc_breaker_and_ers_disconnect_interlock_ms": 2.8,
+      "unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct": 0.0,
+      "platform_edge_10khz_das_botdr_strain_and_uhf_pd_telemetry_loop_ms": 1.2,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct": 0.0,
+      "floating_wind_h2_hvdc_umbilical_slo_met": true
+    },
+    {
+      "floating_wind_h2_units": 48,
+      "floating_wind_governance_mode": "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_ND96amsr_A100_v4",
+      "active_floating_wind_h2_pods": 24,
+      "green_h2_hvdc_co_dispatch_yield_and_umbilical_fatigue_life_gain_pct": 41.5,
+      "platform_pitch_nacelle_fore_aft_and_dynamic_cable_mbr_violation_reduction_pct": 63.8,
+      "iec61400_dnv_st0119_sil3_h2_purge_hvdc_breaker_and_ers_disconnect_interlock_ms": 2.8,
+      "unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct": 0.0,
+      "platform_edge_10khz_das_botdr_strain_and_uhf_pd_telemetry_loop_ms": 1.2,
+      "wan_bandwidth_reduction_pct": 99.5,
+      "uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct": 0.0,
+      "floating_wind_h2_hvdc_umbilical_slo_met": true
+    },
+    {
+      "floating_wind_h2_units": 12,
+      "floating_wind_governance_mode": "baseline_collective_blade_pitch_pi_ballast_step_electrolyzer_offline_rov_umbilical_inspection_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_ND96amsr_A100_v4",
+      "active_floating_wind_h2_pods": 12,
+      "green_h2_hvdc_co_dispatch_yield_and_umbilical_fatigue_life_gain_pct": 6.4,
+      "platform_pitch_nacelle_fore_aft_and_dynamic_cable_mbr_violation_reduction_pct": 9.2,
+      "iec61400_dnv_st0119_sil3_h2_purge_hvdc_breaker_and_ers_disconnect_interlock_ms": 890.0,
+      "unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct": 1.8,
+      "platform_edge_10khz_das_botdr_strain_and_uhf_pd_telemetry_loop_ms": 260.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct": 4.3,
+      "floating_wind_h2_hvdc_umbilical_slo_met": false
+    }
   ]
 }

@@ -8092,6 +8092,55 @@ def simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(
     }
 
 
+def simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(
+    floating_wind_h2_units: int = 12,
+    floating_wind_governance_mode: str = "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous 1-5 GW Floating Offshore Wind-to-Hydrogen & Subsea 66 kV / +-320 kV HVDC
+    Dynamic Export Umbilical Spar/Semi-Submersible 6-DOF Pitch-Roll-Yaw & Vortex-Induced Vibration (VIV)
+    Suppression, Electrolyzer Array Ramp-Rate PINN-MPC, Online 10 kHz Distributed Acoustic/Brillouin Optical
+    Time-Domain Reflectometry (DAS/BOTDR) & SF6-Free GIS UHF Partial-Discharge Metrology & IEC 61400-3-2 /
+    DNV-ST-0119 / CIGRE TB 852 / IEC 61511 SIL-3 Dynamic Cable Minimum-Bend-Radius (MBR), H2 Crossover &
+    Emergency Release System (ERS) Interlock Sandbox (Chapter 163).
+    """
+    if floating_wind_h2_units < 1:
+        raise ValueError("floating_wind_h2_units must be >= 1")
+    valid_modes = {
+        "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge",
+        "baseline_collective_blade_pitch_pi_ballast_step_electrolyzer_offline_rov_umbilical_inspection_cloud",
+    }
+    if floating_wind_governance_mode not in valid_modes:
+        raise ValueError(f"floating_wind_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = floating_wind_governance_mode == "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge"
+    active_floating_wind_h2_pods = max(2, min(12, int(floating_wind_h2_units))) if floating_wind_h2_units <= 12 else max(12, int(floating_wind_h2_units // 2))
+    gpu_nodes = max(2, math.ceil(floating_wind_h2_units / 6))
+
+    green_h2_hvdc_co_dispatch_yield_and_umbilical_fatigue_life_gain_pct = 41.5 if governed else 6.4
+    platform_pitch_nacelle_fore_aft_and_dynamic_cable_mbr_violation_reduction_pct = 63.8 if governed else 9.2
+    iec61400_dnv_st0119_sil3_h2_purge_hvdc_breaker_and_ers_disconnect_interlock_ms = 2.8 if governed else 890.0
+    unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct = 0.0 if governed else 1.8
+    platform_edge_10khz_das_botdr_strain_and_uhf_pd_telemetry_loop_ms = 1.2 if governed else 260.0
+    wan_bandwidth_reduction_pct = 99.5 if governed else 0.0
+    uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct = 0.0 if governed else 4.3
+
+    return {
+        "floating_wind_h2_units": floating_wind_h2_units,
+        "floating_wind_governance_mode": floating_wind_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_ND96amsr_A100_v4",
+        "active_floating_wind_h2_pods": active_floating_wind_h2_pods,
+        "green_h2_hvdc_co_dispatch_yield_and_umbilical_fatigue_life_gain_pct": green_h2_hvdc_co_dispatch_yield_and_umbilical_fatigue_life_gain_pct,
+        "platform_pitch_nacelle_fore_aft_and_dynamic_cable_mbr_violation_reduction_pct": platform_pitch_nacelle_fore_aft_and_dynamic_cable_mbr_violation_reduction_pct,
+        "iec61400_dnv_st0119_sil3_h2_purge_hvdc_breaker_and_ers_disconnect_interlock_ms": iec61400_dnv_st0119_sil3_h2_purge_hvdc_breaker_and_ers_disconnect_interlock_ms,
+        "unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct": unmitigated_dynamic_umbilical_copper_fatigue_h2_o2_crossover_or_mooring_snap_pct,
+        "platform_edge_10khz_das_botdr_strain_and_uhf_pd_telemetry_loop_ms": platform_edge_10khz_das_botdr_strain_and_uhf_pd_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct": uncompensated_negative_aerodynamic_damping_viv_lock_in_or_pem_starvation_pct,
+        "floating_wind_h2_hvdc_umbilical_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

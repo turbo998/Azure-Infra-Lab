@@ -177,6 +177,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
     simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
+    simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1193,6 +1194,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "diamond_8_reactors": simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(8, "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge"),
             "diamond_32_reactors": simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(32, "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge"),
             "raw_diamond_8_reactors": simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(8, "fixed_microwave_power_pressure_step_open_loop_holder_cooling_post_growth_birefringence_cloud"),
+        },
+        "demo_158_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox": {
+            "floating_wind_12_units": simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(12, "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge"),
+            "floating_wind_48_units": simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(48, "pinn_mpc_6dof_spar_viv_electrolyzer_ramp_das_botdr_uhf_dnv_st0119_sil3_edge"),
+            "raw_floating_wind_12_units": simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox(12, "baseline_collective_blade_pitch_pi_ballast_step_electrolyzer_offline_rov_umbilical_inspection_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
