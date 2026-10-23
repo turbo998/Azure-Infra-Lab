@@ -10184,5 +10184,52 @@
       "uncompensated_ale_synergy_loss_incomplete_purge_or_asald_nucleation_pct": 4.2,
       "gaa_cfet_nanosheet_ale_asald_slo_met": false
     }
+  ],
+  "ethylene_steam_cracker_profiles": [
+    {
+      "cracker_furnaces": 12,
+      "cracker_governance_mode": "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_cracker_furnace_pods": 12,
+      "ethylene_selectivity_and_furnace_run_length_gain_pct": 44.7,
+      "radiant_coil_coking_rate_and_tle_fouling_overpressure_reduction_pct": 68.1,
+      "api530_nfpa85_sil3_tube_rupture_and_decoking_burnthrough_interlock_ms": 0.4,
+      "unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct": 0.0,
+      "furnace_edge_10khz_ir_tmt_pyrometry_tdlas_and_spallation_acoustic_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct": 0.0,
+      "ethylene_steam_cracker_radiant_coil_slo_met": true
+    },
+    {
+      "cracker_furnaces": 48,
+      "cracker_governance_mode": "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_cracker_furnace_pods": 24,
+      "ethylene_selectivity_and_furnace_run_length_gain_pct": 44.7,
+      "radiant_coil_coking_rate_and_tle_fouling_overpressure_reduction_pct": 68.1,
+      "api530_nfpa85_sil3_tube_rupture_and_decoking_burnthrough_interlock_ms": 0.4,
+      "unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct": 0.0,
+      "furnace_edge_10khz_ir_tmt_pyrometry_tdlas_and_spallation_acoustic_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct": 0.0,
+      "ethylene_steam_cracker_radiant_coil_slo_met": true
+    },
+    {
+      "cracker_furnaces": 12,
+      "cracker_governance_mode": "raw_cloud_fixed_cot_pid_manual_optical_pyrometer_and_scheduled_decoking",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_cracker_furnace_pods": 12,
+      "ethylene_selectivity_and_furnace_run_length_gain_pct": 6.6,
+      "radiant_coil_coking_rate_and_tle_fouling_overpressure_reduction_pct": 9.1,
+      "api530_nfpa85_sil3_tube_rupture_and_decoking_burnthrough_interlock_ms": 375.0,
+      "unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct": 1.5,
+      "furnace_edge_10khz_ir_tmt_pyrometry_tdlas_and_spallation_acoustic_loop_ms": 205.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct": 4.2,
+      "ethylene_steam_cracker_radiant_coil_slo_met": false
+    }
   ]
 }

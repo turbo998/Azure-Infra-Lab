@@ -175,6 +175,7 @@ from agent_infra_sizer import (
     simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
     simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
+    simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3538,6 +3539,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ale_synergy_loss_incomplete_purge_or_asald_nucleation_pct"], 3.0)
         self.assertTrue(gov["gaa_cfet_nanosheet_ale_asald_slo_met"])
         self.assertFalse(raw["gaa_cfet_nanosheet_ale_asald_slo_met"])
+
+    def test_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(self) -> None:
+        gov = simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(
+            12, "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge"
+        )
+        raw = simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(
+            12, "raw_cloud_fixed_cot_pid_manual_optical_pyrometer_and_scheduled_decoking"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cracker_furnace_pods"], 12)
+        self.assertEqual(gov["ethylene_selectivity_and_furnace_run_length_gain_pct"], 44.7)
+        self.assertEqual(gov["radiant_coil_coking_rate_and_tle_fouling_overpressure_reduction_pct"], 68.1)
+        self.assertEqual(gov["api530_nfpa85_sil3_tube_rupture_and_decoking_burnthrough_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct"], 1.0)
+        self.assertEqual(gov["furnace_edge_10khz_ir_tmt_pyrometry_tdlas_and_spallation_acoustic_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct"], 3.0)
+        self.assertTrue(gov["ethylene_steam_cracker_radiant_coil_slo_met"])
+        self.assertFalse(raw["ethylene_steam_cracker_radiant_coil_slo_met"])
 
 
 if __name__ == "__main__":

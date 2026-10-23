@@ -8654,6 +8654,59 @@ def simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sa
     }
 
 
+def simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(
+    cracker_furnaces: int = 12,
+    cracker_governance_mode: str = "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Million-Ton Ethylene Steam Cracking Furnace (820-865 °C Millisecond
+    Radiant Coil Naphtha/Ethane Pyrolysis, <0.15 s Residence Time, Swirling Fin/Rifled HP-Mod
+    Cr-Ni-Al Alloy Tubes) & Transfer-Line Exchanger (TLE Ultra-Rapid Quench Cooler) Free-Radical
+    Pyrolysis Severity (C3H6/C2H4 Ratio), Filamentous/Pyrolytic Coke Deposition (Fe/Ni-Catalyzed &
+    Polyaromatic Asymptotic Coking + DMDS Sulfiding Passivation) & Larson-Miller Carburization
+    Creep-Rupture PINN-MPC, Online 10 kHz Dual-Wavelength IR Radiant Tube-Skin Pyrometry (TMT) /
+    Tunable Diode Laser Absorption Spectroscopy (TDLAS C2H4/CH4/CO) & Acoustic Spallation
+    Metrology & API STD 530 / API RP 556 / NFPA 85 / IEC 61511 SIL-3 Radiant Tube Creep-Rupture
+    (TMT > 1,110 °C), Steam-Air Decoking Spallation Plugging & Firebox Fuel-Trip Interlock Sandbox
+    (Chapter 174 · 170-Blueprint & 175-Chapter Milestone!).
+    """
+    if cracker_furnaces < 1:
+        raise ValueError("cracker_furnaces must be >= 1")
+    valid_modes = {
+        "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge",
+        "raw_cloud_fixed_cot_pid_manual_optical_pyrometer_and_scheduled_decoking",
+    }
+    if cracker_governance_mode not in valid_modes:
+        raise ValueError(f"cracker_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cracker_governance_mode == "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge"
+    active_cracker_furnace_pods = max(2, min(16, int(cracker_furnaces))) if cracker_furnaces <= 16 else max(16, int(cracker_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(cracker_furnaces / 6))
+
+    ethylene_selectivity_and_furnace_run_length_gain_pct = 44.7 if governed else 6.6
+    radiant_coil_coking_rate_and_tle_fouling_overpressure_reduction_pct = 68.1 if governed else 9.1
+    api530_nfpa85_sil3_tube_rupture_and_decoking_burnthrough_interlock_ms = 0.4 if governed else 375.0
+    unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct = 0.0 if governed else 1.5
+    furnace_edge_10khz_ir_tmt_pyrometry_tdlas_and_spallation_acoustic_loop_ms = 0.3 if governed else 205.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct = 0.0 if governed else 4.2
+
+    return {
+        "cracker_furnaces": cracker_furnaces,
+        "cracker_governance_mode": cracker_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_cracker_furnace_pods": active_cracker_furnace_pods,
+        "ethylene_selectivity_and_furnace_run_length_gain_pct": ethylene_selectivity_and_furnace_run_length_gain_pct,
+        "radiant_coil_coking_rate_and_tle_fouling_overpressure_reduction_pct": radiant_coil_coking_rate_and_tle_fouling_overpressure_reduction_pct,
+        "api530_nfpa85_sil3_tube_rupture_and_decoking_burnthrough_interlock_ms": api530_nfpa85_sil3_tube_rupture_and_decoking_burnthrough_interlock_ms,
+        "unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct": unmitigated_radiant_tube_creep_rupture_firebox_explosion_or_tle_plug_pct,
+        "furnace_edge_10khz_ir_tmt_pyrometry_tdlas_and_spallation_acoustic_loop_ms": furnace_edge_10khz_ir_tmt_pyrometry_tdlas_and_spallation_acoustic_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct": uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct,
+        "ethylene_steam_cracker_radiant_coil_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

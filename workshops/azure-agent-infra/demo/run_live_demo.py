@@ -188,6 +188,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
     simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
+    simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1259,6 +1260,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ale_16_chambers": simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(16, "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"),
             "ale_64_chambers": simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(64, "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"),
             "raw_ale_16_chambers": simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(16, "raw_cloud_fixed_cycle_timer_open_loop_rf_bias_and_offline_tem_metrology"),
+        },
+        "demo_169_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox": {
+            "cracker_12_furnaces": simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(12, "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge"),
+            "cracker_48_furnaces": simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(48, "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge"),
+            "raw_cracker_12_furnaces": simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(12, "raw_cloud_fixed_cot_pid_manual_optical_pyrometer_and_scheduled_decoking"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
