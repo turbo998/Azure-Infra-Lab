@@ -160,6 +160,7 @@ from agent_infra_sizer import (
     simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
     simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
+    simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1278,6 +1279,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(32, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
         simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(8, "manual_hcl_sparging_fixed_naoh_saponification_ratio_offline_4hr_eew_hycl_titration_cloud"),
     ]
+    lipf6_lifsi_electrolyte_salt_profiles: List[Dict[str, object]] = [
+        simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(4, "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge"),
+        simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(8, "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge"),
+        simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(32, "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge"),
+        simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(8, "manual_pf5_bubbling_linear_cooling_ramp_offline_6hr_karl_fischer_acid_titration_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1426,6 +1433,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ncm811_cathode_precursor_kiln_profiles": ncm811_cathode_precursor_kiln_profiles,
         "acrylonitrile_ammoxidation_hcn_profiles": acrylonitrile_ammoxidation_hcn_profiles,
         "epichlorohydrin_epoxy_resin_profiles": epichlorohydrin_epoxy_resin_profiles,
+        "lipf6_lifsi_electrolyte_salt_profiles": lipf6_lifsi_electrolyte_salt_profiles,
     }
 
 

@@ -9062,5 +9062,67 @@
       "uncompensated_saponification_column_caco3_nacl_salting_or_gelation_pct": 3.5,
       "epichlorohydrin_epoxy_resin_slo_met": false
     }
+  ],
+  "lipf6_lifsi_electrolyte_salt_profiles": [
+    {
+      "lipf6_lifsi_production_trains": 4,
+      "lipf6_governance_mode": "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lipf6_lifsi_pods": 4,
+      "lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct": 43.8,
+      "free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct": 59.7,
+      "osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms": 0.2,
+      "unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct": 0.0,
+      "crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct": 0.0,
+      "lipf6_lifsi_electrolyte_salt_slo_met": true
+    },
+    {
+      "lipf6_lifsi_production_trains": 8,
+      "lipf6_governance_mode": "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lipf6_lifsi_pods": 8,
+      "lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct": 43.8,
+      "free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct": 59.7,
+      "osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms": 0.2,
+      "unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct": 0.0,
+      "crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct": 0.0,
+      "lipf6_lifsi_electrolyte_salt_slo_met": true
+    },
+    {
+      "lipf6_lifsi_production_trains": 32,
+      "lipf6_governance_mode": "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lipf6_lifsi_pods": 16,
+      "lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct": 43.8,
+      "free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct": 59.7,
+      "osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms": 0.2,
+      "unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct": 0.0,
+      "crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct": 0.0,
+      "lipf6_lifsi_electrolyte_salt_slo_met": true
+    },
+    {
+      "lipf6_lifsi_production_trains": 8,
+      "lipf6_governance_mode": "manual_pf5_bubbling_linear_cooling_ramp_offline_6hr_karl_fischer_acid_titration_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lipf6_lifsi_pods": 8,
+      "lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct": 6.4,
+      "free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct": 8.9,
+      "osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms": 143.0,
+      "unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct": 1.3,
+      "crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms": 189.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct": 3.6,
+      "lipf6_lifsi_electrolyte_salt_slo_met": false
+    }
   ]
 }

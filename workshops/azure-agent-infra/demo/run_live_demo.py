@@ -167,6 +167,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
     simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
+    simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1133,6 +1134,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ech_8_trains": simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(8, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
             "ech_32_trains": simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(32, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
             "raw_ech_8_trains": simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(8, "manual_hcl_sparging_fixed_naoh_saponification_ratio_offline_4hr_eew_hycl_titration_cloud"),
+        },
+        "demo_148_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox": {
+            "lipf6_8_trains": simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(8, "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge"),
+            "lipf6_32_trains": simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(32, "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge"),
+            "raw_lipf6_8_trains": simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(8, "manual_pf5_bubbling_linear_cooling_ramp_offline_6hr_karl_fischer_acid_titration_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

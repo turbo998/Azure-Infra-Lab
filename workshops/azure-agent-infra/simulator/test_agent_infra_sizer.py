@@ -154,6 +154,7 @@ from agent_infra_sizer import (
     simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
     simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
+    simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3076,6 +3077,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_saponification_column_caco3_nacl_salting_or_gelation_pct"], 3.0)
         self.assertTrue(gov["epichlorohydrin_epoxy_resin_slo_met"])
         self.assertFalse(raw["epichlorohydrin_epoxy_resin_slo_met"])
+
+    def test_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(self) -> None:
+        gov = simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(
+            8, "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge"
+        )
+        raw = simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(
+            8, "manual_pf5_bubbling_linear_cooling_ramp_offline_6hr_karl_fischer_acid_titration_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_lipf6_lifsi_pods"], 8)
+        self.assertEqual(gov["lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct"], 43.8)
+        self.assertEqual(gov["free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct"], 59.7)
+        self.assertEqual(gov["osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct"], 1.0)
+        self.assertEqual(gov["crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct"], 3.0)
+        self.assertTrue(gov["lipf6_lifsi_electrolyte_salt_slo_met"])
+        self.assertFalse(raw["lipf6_lifsi_electrolyte_salt_slo_met"])
 
 
 if __name__ == "__main__":

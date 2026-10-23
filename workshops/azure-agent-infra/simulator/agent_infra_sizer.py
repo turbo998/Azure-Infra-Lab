@@ -7589,6 +7589,58 @@ def simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sand
     }
 
 
+def simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox(
+    lipf6_lifsi_production_trains: int = 8,
+    lipf6_governance_mode: str = "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Lithium Hexafluorophosphate (LiPF6 Anhydrous HF Solvent Synthesis
+    PCl5 + 5HF -> PF5 + 5HCl, LiF + PF5 -> LiPF6 at -20 to +15 C) & Lithium Bis(fluorosulfonyl)imide
+    (LiFSI) Battery-Grade Electrolyte Salt Dynamic Crystallization & Ultra-Dry Carbonate Electrolyte
+    Blending (EC/DMC/EMC), PF5 Gas-Liquid Mass Transfer, Metastable Zone Width (MSZW) Supersaturation,
+    POF3 Hydrolysis & Free Acid (HF < 15 ppm) / Trace Moisture (H2O < 10 ppm) Suppression PINN-MPC,
+    Online Benchtop 19F/31P-NMR / FT-NIR Trace Moisture & TDLAS HF Metrology & OSHA 29 CFR 1910.119 /
+    NFPA 704 / SEMI S2 / IEC 61511 SIL-3 Anhydrous Hydrogen Fluoride (AHF) / PF5 / POF3 Toxic Release,
+    LiPF6 Thermal Decomposition (> 70 C -> LiF + PF5) Nitrogen Cryo-Quench & Two-Stage KOH/Ca(OH)2
+    Fluoride Scrubber Interlock Sandbox (Chapter 153).
+    """
+    if lipf6_lifsi_production_trains < 1:
+        raise ValueError("lipf6_lifsi_production_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge",
+        "manual_pf5_bubbling_linear_cooling_ramp_offline_6hr_karl_fischer_acid_titration_cloud",
+    }
+    if lipf6_governance_mode not in valid_modes:
+        raise ValueError(f"lipf6_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = lipf6_governance_mode == "pinn_mpc_pf5_ahf_absorption_lipf6_crystallization_free_hf_h2o_19fnmr_ftnir_osha1910119_sil3_edge"
+    active_lipf6_lifsi_pods = max(2, min(8, int(lipf6_lifsi_production_trains))) if lipf6_lifsi_production_trains <= 8 else max(8, int(lipf6_lifsi_production_trains // 2))
+    gpu_nodes = max(2, math.ceil(lipf6_lifsi_production_trains / 4))
+
+    lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct = 43.8 if governed else 6.4
+    free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct = 59.7 if governed else 8.9
+    osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms = 0.2 if governed else 143.0
+    unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct = 0.0 if governed else 1.3
+    crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms = 0.3 if governed else 189.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct = 0.0 if governed else 3.6
+
+    return {
+        "lipf6_lifsi_production_trains": lipf6_lifsi_production_trains,
+        "lipf6_governance_mode": lipf6_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_lipf6_lifsi_pods": active_lipf6_lifsi_pods,
+        "lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct": lipf6_lifsi_crystal_yield_and_battery_grade_purity_gain_pct,
+        "free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct": free_hf_acidity_pof3_hydrolysis_and_moisture_offspec_reduction_pct,
+        "osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms": osha1910119_nfpa704_sil3_ahf_pf5_cryo_condenser_and_koh_lime_scrubber_interlock_ms,
+        "unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct": unmitigated_ahf_pf5_toxic_plume_or_lipf6_thermal_decomposition_pct,
+        "crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms": crystallizer_edge_19f_31p_nmr_ftnir_moisture_and_tdlas_hf_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct": uncompensated_fine_crystal_mother_liquor_inclusion_or_ptfe_lining_blistering_pct,
+        "lipf6_lifsi_electrolyte_salt_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
