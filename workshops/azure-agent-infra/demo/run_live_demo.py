@@ -185,6 +185,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
+    simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1241,6 +1242,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ebchr_8_furnaces": simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(8, "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge"),
             "ebchr_32_furnaces": simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(32, "pinn_mpc_stokes_hdi_sinking_tin_hard_alpha_dissolution_langmuir_al_evaporation_nadcap_sil3_edge"),
             "raw_ebchr_8_furnaces": simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(8, "raw_cloud_fixed_raster_pattern_post_ingot_ultrasonic_sampling"),
+        },
+        "demo_166_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox": {
+            "tgv_12_lines": simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(12, "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge"),
+            "tgv_48_lines": simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(48, "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge"),
+            "raw_tgv_12_lines": simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(12, "raw_cloud_fixed_laser_pulse_energy_timed_hf_dip_and_offline_cross_section_sem"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

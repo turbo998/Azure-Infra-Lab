@@ -178,6 +178,7 @@ from agent_infra_sizer import (
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
+    simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1405,6 +1406,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox(8, "raw_cloud_fixed_raster_pattern_post_ingot_ultrasonic_sampling"),
     ]
 
+    tgv_glass_substrate_profiles: List[Dict[str, object]] = [
+        simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(12, "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge"),
+        simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(48, "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge"),
+        simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(12, "raw_cloud_fixed_laser_pulse_energy_timed_hf_dip_and_offline_cross_section_sem"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1570,6 +1577,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "allam_fetvedt_sco2_oxyfuel_profiles": allam_fetvedt_sco2_oxyfuel_profiles,
         "cdc_rotary_tablet_press_profiles": cdc_rotary_tablet_press_profiles,
         "ebchr_titanium_refining_profiles": ebchr_titanium_refining_profiles,
+        "tgv_glass_substrate_profiles": tgv_glass_substrate_profiles,
     }
 
 

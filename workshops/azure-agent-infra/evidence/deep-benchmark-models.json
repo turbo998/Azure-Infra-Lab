@@ -10043,5 +10043,52 @@
       "uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct": 4.1,
       "ebeam_cold_hearth_refining_ebchr_slo_met": false
     }
+  ],
+  "tgv_glass_substrate_profiles": [
+    {
+      "tgv_lines": 12,
+      "tgv_governance_mode": "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_tgv_panel_pods": 12,
+      "void_free_tgv_panel_yield_and_aspect_ratio_conformity_gain_pct": 45.1,
+      "via_waist_hourglass_taper_and_cu_seam_void_defect_reduction_pct": 68.4,
+      "semis2_ansiz136_sil3_femtosecond_shutter_and_hf_leak_interlock_ms": 0.3,
+      "unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct": 0.0,
+      "tool_edge_50khz_ssoct_via_tomography_and_cvs_additive_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct": 0.0,
+      "tgv_glass_core_substrate_slo_met": true
+    },
+    {
+      "tgv_lines": 48,
+      "tgv_governance_mode": "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_tgv_panel_pods": 24,
+      "void_free_tgv_panel_yield_and_aspect_ratio_conformity_gain_pct": 45.1,
+      "via_waist_hourglass_taper_and_cu_seam_void_defect_reduction_pct": 68.4,
+      "semis2_ansiz136_sil3_femtosecond_shutter_and_hf_leak_interlock_ms": 0.3,
+      "unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct": 0.0,
+      "tool_edge_50khz_ssoct_via_tomography_and_cvs_additive_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct": 0.0,
+      "tgv_glass_core_substrate_slo_met": true
+    },
+    {
+      "tgv_lines": 12,
+      "tgv_governance_mode": "raw_cloud_fixed_laser_pulse_energy_timed_hf_dip_and_offline_cross_section_sem",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_tgv_panel_pods": 12,
+      "void_free_tgv_panel_yield_and_aspect_ratio_conformity_gain_pct": 6.8,
+      "via_waist_hourglass_taper_and_cu_seam_void_defect_reduction_pct": 9.3,
+      "semis2_ansiz136_sil3_femtosecond_shutter_and_hf_leak_interlock_ms": 360.0,
+      "unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct": 1.5,
+      "tool_edge_50khz_ssoct_via_tomography_and_cvs_additive_telemetry_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct": 4.3,
+      "tgv_glass_core_substrate_slo_met": false
+    }
   ]
 }

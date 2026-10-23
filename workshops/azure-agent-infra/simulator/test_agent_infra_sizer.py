@@ -172,6 +172,7 @@ from agent_infra_sizer import (
     simulate_allam_fetvedt_sco2_oxyfuel_turbine_compander_spanwagner_api617_sil3_sandbox,
     simulate_cdc_rotary_tablet_press_rtd_heckel_raman_ichq13_sil3_sandbox,
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
+    simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3472,6 +3473,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_marangoni_short_circuit_hard_alpha_escape_or_cold_shut_pct"], 3.0)
         self.assertTrue(gov["ebeam_cold_hearth_refining_ebchr_slo_met"])
         self.assertFalse(raw["ebeam_cold_hearth_refining_ebchr_slo_met"])
+
+    def test_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(
+            12, "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge"
+        )
+        raw = simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(
+            12, "raw_cloud_fixed_laser_pulse_energy_timed_hf_dip_and_offline_cross_section_sem"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_tgv_panel_pods"], 12)
+        self.assertEqual(gov["void_free_tgv_panel_yield_and_aspect_ratio_conformity_gain_pct"], 45.1)
+        self.assertEqual(gov["via_waist_hourglass_taper_and_cu_seam_void_defect_reduction_pct"], 68.4)
+        self.assertEqual(gov["semis2_ansiz136_sil3_femtosecond_shutter_and_hf_leak_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct"], 1.0)
+        self.assertEqual(gov["tool_edge_50khz_ssoct_via_tomography_and_cvs_additive_telemetry_loop_ms"], 0.25)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct"], 3.0)
+        self.assertTrue(gov["tgv_glass_core_substrate_slo_met"])
+        self.assertFalse(raw["tgv_glass_core_substrate_slo_met"])
 
 
 if __name__ == "__main__":

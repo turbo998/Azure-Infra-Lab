@@ -8494,6 +8494,60 @@ def simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_na
     }
 
 
+def simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox(
+    tgv_lines: int = 12,
+    tgv_governance_mode: str = "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Semiconductor Advanced Packaging Glass Core Substrate (510x515 mm
+    Borosilicate / Fused-Silica Panel-Level Packaging PLP) Bessel-Beam Femtosecond Laser
+    Modification (1,030 nm < 300 fs Non-Diffracting Axicon Kerr Filamentation), Hydrofluoric /
+    Alkaline (HF / KOH) Selective Laser-Induced Etching (SLE High-Aspect-Ratio 10:1 Through-Glass
+    Via TGV 10-30 um Waist-Taper Control) & Copper Superconformal Bottom-Up Electroplating
+    (Suppressor-Accelerator-Leveler SPS-PEG-JGB Curvature-Enhanced Accelerator Coverage CEAC
+    Void-Free Filling) PINN-MPC, Online 50 kHz Swept-Source Optical Coherence Tomography (SS-OCT
+    Via-Waist/Seam-Void Tomography) & Cyclic Voltammetric Stripping (CVS Additive Activity)
+    Metrology & SEMI S2 / S8 / ANSI Z136.1 / IEC 61511 SIL-3 Ultrafast Class 4 Laser Beam-Dump
+    Shutter, Large-Format Glass Panel Thermal-Stress Fracture Arrestor & HF Etchant Leak
+    Neutralization Interlock Sandbox (Chapter 171 · 175-Test Milestone!).
+    """
+    if tgv_lines < 1:
+        raise ValueError("tgv_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge",
+        "raw_cloud_fixed_laser_pulse_energy_timed_hf_dip_and_offline_cross_section_sem",
+    }
+    if tgv_governance_mode not in valid_modes:
+        raise ValueError(f"tgv_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = tgv_governance_mode == "pinn_mpc_bessel_kerr_filamentation_sle_anisotropic_etch_ceac_cu_plating_semis2_sil3_edge"
+    active_tgv_panel_pods = max(2, min(16, int(tgv_lines))) if tgv_lines <= 16 else max(16, int(tgv_lines // 2))
+    gpu_nodes = max(2, math.ceil(tgv_lines / 6))
+
+    void_free_tgv_panel_yield_and_aspect_ratio_conformity_gain_pct = 45.1 if governed else 6.8
+    via_waist_hourglass_taper_and_cu_seam_void_defect_reduction_pct = 68.4 if governed else 9.3
+    semis2_ansiz136_sil3_femtosecond_shutter_and_hf_leak_interlock_ms = 0.3 if governed else 360.0
+    unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct = 0.0 if governed else 1.5
+    tool_edge_50khz_ssoct_via_tomography_and_cvs_additive_telemetry_loop_ms = 0.25 if governed else 198.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct = 0.0 if governed else 4.3
+
+    return {
+        "tgv_lines": tgv_lines,
+        "tgv_governance_mode": tgv_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_tgv_panel_pods": active_tgv_panel_pods,
+        "void_free_tgv_panel_yield_and_aspect_ratio_conformity_gain_pct": void_free_tgv_panel_yield_and_aspect_ratio_conformity_gain_pct,
+        "via_waist_hourglass_taper_and_cu_seam_void_defect_reduction_pct": via_waist_hourglass_taper_and_cu_seam_void_defect_reduction_pct,
+        "semis2_ansiz136_sil3_femtosecond_shutter_and_hf_leak_interlock_ms": semis2_ansiz136_sil3_femtosecond_shutter_and_hf_leak_interlock_ms,
+        "unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct": unmitigated_glass_panel_thermal_shatter_hf_leak_or_laser_hazard_pct,
+        "tool_edge_50khz_ssoct_via_tomography_and_cvs_additive_telemetry_loop_ms": tool_edge_50khz_ssoct_via_tomography_and_cvs_additive_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct": uncompensated_bessel_focus_drift_microcrack_or_butterfly_void_pct,
+        "tgv_glass_core_substrate_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
