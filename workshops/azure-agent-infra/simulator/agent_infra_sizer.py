@@ -7744,6 +7744,60 @@ def simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(
     }
 
 
+def simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(
+    optical_fiber_preform_draw_lines: int = 8,
+    fiber_governance_mode: str = "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ultra-Low-Loss Telecom Optical Fiber Preform Modified Chemical Vapor
+    Deposition (MCVD / OVD / VAD SiCl4 + GeCl4 + POCl3 + O2 -> SiO2-GeO2 2,000 C Oxy-Hydrogen
+    Soot Deposition & Chlorine Cl2 Dehydration Sintering) & High-Speed 2,400 m/min 2,150 C
+    Graphite Induction Drawing Tower, Core-Cladding Refractive Index Profile (G.654.E / G.652.D
+    Attenuation < 0.155 dB/km @ 1,550 nm), Neck-Down Meniscus Draw Tension (85-115 g Rayleigh
+    Scattering / E' Defect Suppression) & Dual-Layer UV-Acrylate Coating Concentricity (< 0.3 um)
+    PINN-MPC, Online Non-Contact 50 kHz Laser Micrometer (125.0 +- 0.1 um) / OTDR 1,383 nm OH-
+    Water-Peak & FTIR (SiCl4 / HCl / Cl2) Metrology & OSHA 29 CFR 1910.119 / NFPA 86 / SEMI S2 /
+    IEC 61511 SIL-3 Corrosive SiCl4 Hydrolysis HCl / Cl2 Scrubber, H2/O2 Burner Flashback Arrestor
+    & 2,150 C Graphite Furnace Argon-Curtain Oxidation-Explosion Interlock Sandbox (Chapter 156 —
+    160-Test Milestone!).
+    """
+    if optical_fiber_preform_draw_lines < 1:
+        raise ValueError("optical_fiber_preform_draw_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge",
+        "pid_capstan_draw_speed_fixed_cl2_sinter_flow_post_spool_otdr_attenuation_cloud",
+    }
+    if fiber_governance_mode not in valid_modes:
+        raise ValueError(f"fiber_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = fiber_governance_mode == "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge"
+    active_optical_fiber_pods = max(2, min(8, int(optical_fiber_preform_draw_lines))) if optical_fiber_preform_draw_lines <= 8 else max(8, int(optical_fiber_preform_draw_lines // 2))
+    gpu_nodes = max(2, math.ceil(optical_fiber_preform_draw_lines / 4))
+
+    g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct = 44.0 if governed else 6.5
+    attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct = 59.9 if governed else 9.0
+    osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms = 0.2 if governed else 139.0
+    unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct = 0.0 if governed else 1.4
+    tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms = 0.3 if governed else 185.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct = 0.0 if governed else 3.6
+
+    return {
+        "optical_fiber_preform_draw_lines": optical_fiber_preform_draw_lines,
+        "fiber_governance_mode": fiber_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_optical_fiber_pods": active_optical_fiber_pods,
+        "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct,
+        "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct,
+        "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms,
+        "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct,
+        "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct,
+        "optical_fiber_preform_draw_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -157,6 +157,7 @@ from agent_infra_sizer import (
     simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
     simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox,
     simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox,
+    simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3142,6 +3143,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct"], 3.0)
         self.assertTrue(gov["sic_gan_pvt_cvd_slo_met"])
         self.assertFalse(raw["sic_gan_pvt_cvd_slo_met"])
+
+    def test_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(self) -> None:
+        gov = simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(
+            8, "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge"
+        )
+        raw = simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(
+            8, "pid_capstan_draw_speed_fixed_cl2_sinter_flow_post_spool_otdr_attenuation_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_optical_fiber_pods"], 8)
+        self.assertEqual(gov["g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct"], 44.0)
+        self.assertEqual(gov["attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct"], 59.9)
+        self.assertEqual(gov["osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct"], 1.0)
+        self.assertEqual(gov["tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct"], 3.0)
+        self.assertTrue(gov["optical_fiber_preform_draw_slo_met"])
+        self.assertFalse(raw["optical_fiber_preform_draw_slo_met"])
 
 
 if __name__ == "__main__":

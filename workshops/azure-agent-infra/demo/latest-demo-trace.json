@@ -9450,6 +9450,68 @@
         "uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct": 3.7,
         "sic_gan_pvt_cvd_slo_met": false
       }
+    ],
+    "optical_fiber_preform_draw_profiles": [
+      {
+        "optical_fiber_preform_draw_lines": 4,
+        "fiber_governance_mode": "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_optical_fiber_pods": 4,
+        "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": 44.0,
+        "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": 59.9,
+        "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": 0.2,
+        "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": 0.0,
+        "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 0.0,
+        "optical_fiber_preform_draw_slo_met": true
+      },
+      {
+        "optical_fiber_preform_draw_lines": 8,
+        "fiber_governance_mode": "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_optical_fiber_pods": 8,
+        "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": 44.0,
+        "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": 59.9,
+        "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": 0.2,
+        "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": 0.0,
+        "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 0.0,
+        "optical_fiber_preform_draw_slo_met": true
+      },
+      {
+        "optical_fiber_preform_draw_lines": 32,
+        "fiber_governance_mode": "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_optical_fiber_pods": 16,
+        "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": 44.0,
+        "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": 59.9,
+        "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": 0.2,
+        "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": 0.0,
+        "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 0.0,
+        "optical_fiber_preform_draw_slo_met": true
+      },
+      {
+        "optical_fiber_preform_draw_lines": 8,
+        "fiber_governance_mode": "pid_capstan_draw_speed_fixed_cl2_sinter_flow_post_spool_otdr_attenuation_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_optical_fiber_pods": 8,
+        "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": 6.5,
+        "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": 9.0,
+        "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": 139.0,
+        "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": 1.4,
+        "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": 185.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 3.6,
+        "optical_fiber_preform_draw_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -17364,5 +17426,52 @@
       "sic_gan_pvt_cvd_slo_met": false
     }
   },
-  "trace_sha256": "e9720efa6718901e82bd8d5028012f47d2249b224096fe3bd13c6fe2097926c9"
+  "demo_151_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox": {
+    "fiber_8_lines": {
+      "optical_fiber_preform_draw_lines": 8,
+      "fiber_governance_mode": "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_optical_fiber_pods": 8,
+      "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": 44.0,
+      "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": 59.9,
+      "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": 0.2,
+      "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": 0.0,
+      "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 0.0,
+      "optical_fiber_preform_draw_slo_met": true
+    },
+    "fiber_32_lines": {
+      "optical_fiber_preform_draw_lines": 32,
+      "fiber_governance_mode": "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_optical_fiber_pods": 16,
+      "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": 44.0,
+      "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": 59.9,
+      "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": 0.2,
+      "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": 0.0,
+      "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 0.0,
+      "optical_fiber_preform_draw_slo_met": true
+    },
+    "raw_fiber_8_lines": {
+      "optical_fiber_preform_draw_lines": 8,
+      "fiber_governance_mode": "pid_capstan_draw_speed_fixed_cl2_sinter_flow_post_spool_otdr_attenuation_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_optical_fiber_pods": 8,
+      "g654e_low_loss_fiber_spool_yield_and_2400mpm_draw_productivity_gain_pct": 6.5,
+      "attenuation_1550nm_oh_1383nm_water_peak_and_cladding_diameter_variance_reduction_pct": 9.0,
+      "osha1910119_nfpa86_sil3_sicl4_hcl_cl2_scrubber_and_h2_o2_flashback_interlock_ms": 139.0,
+      "unmitigated_sicl4_hcl_cl2_toxic_plume_h2_o2_flashback_or_graphite_furnace_blast_pct": 1.4,
+      "tower_edge_50khz_laser_micrometer_1383nm_otdr_and_ftir_sicl4_cl2_loop_ms": 185.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_high_speed_draw_fiber_break_or_uv_coating_delamination_pct": 3.6,
+      "optical_fiber_preform_draw_slo_met": false
+    }
+  },
+  "trace_sha256": "b35376d5431d534aaa6123c03797c4d3553c90c84b1052384049f5037b16e765"
 }

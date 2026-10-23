@@ -163,6 +163,7 @@ from agent_infra_sizer import (
     simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
     simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox,
     simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox,
+    simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1299,6 +1300,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(32, "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge"),
         simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(8, "open_loop_rf_coil_position_fixed_c_si_flow_ratio_post_run_koh_etch_xrt_cloud"),
     ]
+    optical_fiber_preform_draw_profiles: List[Dict[str, object]] = [
+        simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(4, "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge"),
+        simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(8, "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge"),
+        simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(32, "pinn_mpc_mcvd_ovd_thermophoresis_cl2_dehydration_2400mpm_draw_meniscus_otdr_semis2_sil3_edge"),
+        simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox(8, "pid_capstan_draw_speed_fixed_cl2_sinter_flow_post_spool_otdr_attenuation_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1450,6 +1457,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "lipf6_lifsi_electrolyte_salt_profiles": lipf6_lifsi_electrolyte_salt_profiles,
         "vdf_pvdf_fluoropolymer_profiles": vdf_pvdf_fluoropolymer_profiles,
         "sic_gan_pvt_cvd_profiles": sic_gan_pvt_cvd_profiles,
+        "optical_fiber_preform_draw_profiles": optical_fiber_preform_draw_profiles,
     }
 
 
