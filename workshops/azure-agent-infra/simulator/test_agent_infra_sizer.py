@@ -179,6 +179,7 @@ from agent_infra_sizer import (
     simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
     simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox,
     simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox,
+    simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3626,6 +3627,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct"], 3.0)
         self.assertTrue(gov["bayer_alumina_refinery_tube_digestion_slo_met"])
         self.assertFalse(raw["bayer_alumina_refinery_tube_digestion_slo_met"])
+
+    def test_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge"
+        )
+        raw = simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_bustle_gas_temperature_pid_and_offline_lab_metallization_titration"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_dri_pods"], 8)
+        self.assertEqual(gov["metallization_uniformity_and_h2_utilization_gain_pct"], 45.4)
+        self.assertEqual(gov["pellet_sticking_clustering_and_endothermic_slump_reduction_pct"], 68.8)
+        self.assertEqual(gov["nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms"], 0.35)
+        self.assertEqual(gov["unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct"], 1.0)
+        self.assertEqual(gov["shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms"], 0.25)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct"], 3.0)
+        self.assertTrue(gov["dri_hbi_shaft_furnace_hydrogen_reduction_slo_met"])
+        self.assertFalse(raw["dri_hbi_shaft_furnace_hydrogen_reduction_slo_met"])
 
 
 if __name__ == "__main__":

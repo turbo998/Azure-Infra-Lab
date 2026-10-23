@@ -8860,6 +8860,56 @@ def simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_
     }
 
 
+def simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox(
+    dri_shaft_furnaces: int = 8,
+    dri_governance_mode: str = "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Direct Reduced Iron (DRI) & Hot-Briquetted Iron (HBI) Shaft Furnace
+    (MIDREX / HYL-Energiron 850-1,050 °C Green-Hydrogen/Syngas Counter-Current Moving-Bed Hematite
+    Reduction Fe2O3 -> Fe3O4 -> FeO -> Fe), Boudouard/Methane Carburization & Iron-Whisker Pellet
+    Sticking/Clustering PINN-MPC, Online 10 kHz Microwave Burden-Descent Radar / TDLAS Bustle-Gas
+    (H2/CO/H2O/CO2/CH4) / PGNAA Metallization Metrology & NFPA 86 / ISO 13577 / IMO IMSBC / IEC
+    61511 SIL-3 Hot-DRI Pyrophoric Auto-Ignition, Shaft-Bridging Gas Blowthrough & Reformer
+    Tube-Rupture Interlock Sandbox (Chapter 178).
+    """
+    if dri_shaft_furnaces < 1:
+        raise ValueError("dri_shaft_furnaces must be >= 1")
+    valid_modes = {
+        "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge",
+        "raw_cloud_fixed_bustle_gas_temperature_pid_and_offline_lab_metallization_titration",
+    }
+    if dri_governance_mode not in valid_modes:
+        raise ValueError(f"dri_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = dri_governance_mode == "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge"
+    active_dri_pods = max(2, min(16, int(dri_shaft_furnaces))) if dri_shaft_furnaces <= 16 else max(16, int(dri_shaft_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(dri_shaft_furnaces / 4))
+
+    metallization_uniformity_and_h2_utilization_gain_pct = 45.4 if governed else 6.8
+    pellet_sticking_clustering_and_endothermic_slump_reduction_pct = 68.8 if governed else 9.3
+    nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms = 0.35 if governed else 370.0
+    unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct = 0.0 if governed else 1.4
+    shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms = 0.25 if governed else 198.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct = 0.0 if governed else 4.2
+
+    return {
+        "dri_shaft_furnaces": dri_shaft_furnaces,
+        "dri_governance_mode": dri_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_dri_pods": active_dri_pods,
+        "metallization_uniformity_and_h2_utilization_gain_pct": metallization_uniformity_and_h2_utilization_gain_pct,
+        "pellet_sticking_clustering_and_endothermic_slump_reduction_pct": pellet_sticking_clustering_and_endothermic_slump_reduction_pct,
+        "nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms": nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms,
+        "unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct": unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct,
+        "shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms": shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct,
+        "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

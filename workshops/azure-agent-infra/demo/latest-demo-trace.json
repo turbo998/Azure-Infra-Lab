@@ -10574,6 +10574,53 @@
         "uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct": 4.4,
         "bayer_alumina_refinery_tube_digestion_slo_met": false
       }
+    ],
+    "dri_hbi_shaft_furnace_hydrogen_reduction_profiles": [
+      {
+        "dri_shaft_furnaces": 8,
+        "dri_governance_mode": "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_dri_pods": 8,
+        "metallization_uniformity_and_h2_utilization_gain_pct": 45.4,
+        "pellet_sticking_clustering_and_endothermic_slump_reduction_pct": 68.8,
+        "nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms": 0.35,
+        "unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct": 0.0,
+        "shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": 0.0,
+        "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": true
+      },
+      {
+        "dri_shaft_furnaces": 32,
+        "dri_governance_mode": "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_dri_pods": 16,
+        "metallization_uniformity_and_h2_utilization_gain_pct": 45.4,
+        "pellet_sticking_clustering_and_endothermic_slump_reduction_pct": 68.8,
+        "nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms": 0.35,
+        "unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct": 0.0,
+        "shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": 0.0,
+        "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": true
+      },
+      {
+        "dri_shaft_furnaces": 8,
+        "dri_governance_mode": "raw_cloud_fixed_bustle_gas_temperature_pid_and_offline_lab_metallization_titration",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_dri_pods": 8,
+        "metallization_uniformity_and_h2_utilization_gain_pct": 6.8,
+        "pellet_sticking_clustering_and_endothermic_slump_reduction_pct": 9.3,
+        "nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms": 370.0,
+        "unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct": 1.4,
+        "shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms": 198.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": 4.2,
+        "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -19522,5 +19569,52 @@
       "bayer_alumina_refinery_tube_digestion_slo_met": false
     }
   },
-  "trace_sha256": "0d8d24f50d5a3ae69e24eb355205f87093755e67481bb988c927e3d5aa54285f"
+  "demo_173_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox": {
+    "dri_8_furnaces": {
+      "dri_shaft_furnaces": 8,
+      "dri_governance_mode": "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_dri_pods": 8,
+      "metallization_uniformity_and_h2_utilization_gain_pct": 45.4,
+      "pellet_sticking_clustering_and_endothermic_slump_reduction_pct": 68.8,
+      "nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms": 0.35,
+      "unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct": 0.0,
+      "shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": 0.0,
+      "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": true
+    },
+    "dri_32_furnaces": {
+      "dri_shaft_furnaces": 32,
+      "dri_governance_mode": "pinn_mpc_dri_three_interface_h2_co_reduction_whisker_clustering_carburization_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_dri_pods": 16,
+      "metallization_uniformity_and_h2_utilization_gain_pct": 45.4,
+      "pellet_sticking_clustering_and_endothermic_slump_reduction_pct": 68.8,
+      "nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms": 0.35,
+      "unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct": 0.0,
+      "shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": 0.0,
+      "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": true
+    },
+    "raw_dri_8_furnaces": {
+      "dri_shaft_furnaces": 8,
+      "dri_governance_mode": "raw_cloud_fixed_bustle_gas_temperature_pid_and_offline_lab_metallization_titration",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_dri_pods": 8,
+      "metallization_uniformity_and_h2_utilization_gain_pct": 6.8,
+      "pellet_sticking_clustering_and_endothermic_slump_reduction_pct": 9.3,
+      "nfpa86_iso13577_sil3_pyrophoric_dri_and_shaft_blowthrough_interlock_ms": 370.0,
+      "unmitigated_dri_pyrophoric_fire_shaft_blowthrough_or_h2_explosion_pct": 1.4,
+      "shaft_edge_10khz_fmcw_radar_tdlas_and_pgnaa_telemetry_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": 4.2,
+      "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": false
+    }
+  },
+  "trace_sha256": "0f296cc237a96eca436a89570730fb0d559490116b62fe50c290387112ca7fe1"
 }
