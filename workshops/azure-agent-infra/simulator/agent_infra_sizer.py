@@ -7945,6 +7945,55 @@ def simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_san
     }
 
 
+def simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(
+    cpo_alignment_cells: int = 8,
+    cpo_siph_governance_mode: str = "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Co-Packaged Optics (CPO 1.6T / 3.2T Optical Engine) & 300 mm Silicon Photonics
+    (SiPh) SOI / Si3N4 Waveguide Active Sub-Micron (< 100 nm) 6-DOF Piezo-Hexapod Fiber-Array / CW-DFB
+    Laser First-Light Alignment & UV-Epoxy Cure-Shrinkage Compensation PINN-MPC, Online 100 kHz Optical
+    Frequency-Domain Reflectometry (OFDR) Waveguide Backscatter & Micro-Ring Resonator (MRR) Thermal-Phase
+    Metrology & Telcordia GR-468-CORE / IEC 60825-1 Class 3B/4 / SEMI S2 / IEC 61508 SIL-3 High-Power
+    ELSFP Laser Shutter, Piezo Shear-Force Limit & UV Cure Purge Interlock Sandbox (Chapter 160).
+    """
+    if cpo_alignment_cells < 1:
+        raise ValueError("cpo_alignment_cells must be >= 1")
+    valid_modes = {
+        "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge",
+        "blind_hill_climbing_spiral_scan_uncompensated_uv_cure_offline_il_test_cloud",
+    }
+    if cpo_siph_governance_mode not in valid_modes:
+        raise ValueError(f"cpo_siph_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = cpo_siph_governance_mode == "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge"
+    active_cpo_siph_pods = max(2, min(8, int(cpo_alignment_cells))) if cpo_alignment_cells <= 8 else max(8, int(cpo_alignment_cells // 2))
+    gpu_nodes = max(2, math.ceil(cpo_alignment_cells / 4))
+
+    cpo_optical_engine_coupling_yield_and_alignment_throughput_gain_pct = 45.4 if governed else 6.8
+    post_uv_cure_insertion_loss_variance_and_mrr_wavelength_drift_reduction_pct = 62.5 if governed else 9.7
+    gr468_iec60825_sil3_elsfp_laser_shutter_piezo_force_and_uv_purge_interlock_ms = 0.2 if governed else 142.0
+    unmitigated_facet_crunch_class4_laser_exposure_or_uv_epoxy_outgas_pct = 0.0 if governed else 1.6
+    cell_edge_100khz_ofdr_hexapod_piezo_and_mrr_osa_telemetry_loop_ms = 0.2 if governed else 188.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_uv_shrinkage_misalignment_or_mrr_thermal_crosstalk_unlock_pct = 0.0 if governed else 3.9
+
+    return {
+        "cpo_alignment_cells": cpo_alignment_cells,
+        "cpo_siph_governance_mode": cpo_siph_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_cpo_siph_pods": active_cpo_siph_pods,
+        "cpo_optical_engine_coupling_yield_and_alignment_throughput_gain_pct": cpo_optical_engine_coupling_yield_and_alignment_throughput_gain_pct,
+        "post_uv_cure_insertion_loss_variance_and_mrr_wavelength_drift_reduction_pct": post_uv_cure_insertion_loss_variance_and_mrr_wavelength_drift_reduction_pct,
+        "gr468_iec60825_sil3_elsfp_laser_shutter_piezo_force_and_uv_purge_interlock_ms": gr468_iec60825_sil3_elsfp_laser_shutter_piezo_force_and_uv_purge_interlock_ms,
+        "unmitigated_facet_crunch_class4_laser_exposure_or_uv_epoxy_outgas_pct": unmitigated_facet_crunch_class4_laser_exposure_or_uv_epoxy_outgas_pct,
+        "cell_edge_100khz_ofdr_hexapod_piezo_and_mrr_osa_telemetry_loop_ms": cell_edge_100khz_ofdr_hexapod_piezo_and_mrr_osa_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_uv_shrinkage_misalignment_or_mrr_thermal_crosstalk_unlock_pct": uncompensated_uv_shrinkage_misalignment_or_mrr_thermal_crosstalk_unlock_pct,
+        "cpo_silicon_photonics_pic_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

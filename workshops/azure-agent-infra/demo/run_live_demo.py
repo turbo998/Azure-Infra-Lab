@@ -174,6 +174,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox,
     simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox,
     simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox,
+    simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1175,6 +1176,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hvdc_xlpe_8_towers": simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(8, "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge"),
             "hvdc_xlpe_32_towers": simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(32, "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge"),
             "raw_hvdc_xlpe_8_towers": simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(8, "fixed_vcv_zone_temp_timer_degassing_offline_sample_pea_test_cloud"),
+        },
+        "demo_155_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox": {
+            "cpo_siph_8_cells": simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(8, "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge"),
+            "cpo_siph_32_cells": simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(32, "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge"),
+            "raw_cpo_siph_8_cells": simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(8, "blind_hill_climbing_spiral_scan_uncompensated_uv_cure_offline_il_test_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

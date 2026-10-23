@@ -161,6 +161,7 @@ from agent_infra_sizer import (
     simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox,
     simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox,
     simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox,
+    simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3230,6 +3231,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_amber_scorch_microvoid_or_dc_field_inversion_breakdown_pct"], 3.0)
         self.assertTrue(gov["hvdc_subsea_xlpe_vcv_slo_met"])
         self.assertFalse(raw["hvdc_subsea_xlpe_vcv_slo_met"])
+
+    def test_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(self) -> None:
+        gov = simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(
+            8, "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge"
+        )
+        raw = simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(
+            8, "blind_hill_climbing_spiral_scan_uncompensated_uv_cure_offline_il_test_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cpo_siph_pods"], 8)
+        self.assertEqual(gov["cpo_optical_engine_coupling_yield_and_alignment_throughput_gain_pct"], 45.4)
+        self.assertEqual(gov["post_uv_cure_insertion_loss_variance_and_mrr_wavelength_drift_reduction_pct"], 62.5)
+        self.assertEqual(gov["gr468_iec60825_sil3_elsfp_laser_shutter_piezo_force_and_uv_purge_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_facet_crunch_class4_laser_exposure_or_uv_epoxy_outgas_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_facet_crunch_class4_laser_exposure_or_uv_epoxy_outgas_pct"], 1.0)
+        self.assertEqual(gov["cell_edge_100khz_ofdr_hexapod_piezo_and_mrr_osa_telemetry_loop_ms"], 0.2)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_uv_shrinkage_misalignment_or_mrr_thermal_crosstalk_unlock_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_uv_shrinkage_misalignment_or_mrr_thermal_crosstalk_unlock_pct"], 3.0)
+        self.assertTrue(gov["cpo_silicon_photonics_pic_slo_met"])
+        self.assertFalse(raw["cpo_silicon_photonics_pic_slo_met"])
 
 
 if __name__ == "__main__":

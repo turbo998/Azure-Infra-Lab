@@ -567,6 +567,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(152)">153. 超临界二氧化碳流体萃取 (scCO2, T &gt; 31.1°C, P = 100–700 bar) 与模拟移动床 (SMB / SFC) 制备手性药物色谱纯化、Peng-Robinson / Chrastil 溶解度等温线与非线性竞争吸附波前 PINN-MPC、在线 20kHz 紫外二极管阵列 (UV-DAD)/科里奥利密度/旋光手性 PAT 计量及 ASME BPVC Section VIII Div. 2 / ISO 4126 / FDA 21 CFR Part 11 / IEC 61511 SIL-3 萃取釜超压爆破、焦耳-汤姆逊 (Joule-Thomson) 干冰结冰堵管与受限空间 CO2 窒息 (&gt; 5,000 ppm) 硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(153)">154. 极紫外光掩模版与 50 keV 多电子束掩模直写机 (MBMW 262,144 可编程孔径阵列、40 对 Mo/Si 离子束沉积 IBD、TaBN/Ru 吸收层 ICP-RIE 刻蚀与 CNT 防尘薄膜 Pellicle)、库仑空间电荷散焦、基底抗蚀剂热变形与 3D 掩模阴影/邻近效应校正 (3D-M3D / PEC) PINN-MPC、在线 50kHz 13.5nm 光化空间像计量 (Actinic AIMS / APMI)/外差激光干涉仪及 SEMI S2 / SEMI P37 / ISO 14644-1 Class 1 / IEC 61508 SIL-3 50kV 电子镜筒高压拉弧撬棒、超高真空 (10⁻⁹ mbar) 插板阀隔离与卤素刻蚀气 (Cl2/F2) 硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(154)">155. 远海 ±525kV/2GW 特高压直流海底电缆 (HVDC XLPE 交联聚乙烯三层共挤 180m 立式连续硫化塔 VCV 与 70°C 甲烷脱气仓)、Kamal-Sourour 过氧化物交联反应-扩散与双极性空间电荷陷阱抑制 (BCT FEF ≤ 1.15) PINN-MPC、在线 50kHz 太赫兹 (0.3–3 THz)/超声偏心度层析/电声脉冲法 (PEA) 空间电荷与 TDLAS 甲烷计量及 CIGRE TB 852 / IEC 62895 / DNV-ST-F101 / IEC 61508 SIL-3 硫化管超压泄放、先期焦烧排料、脱气室 CH4 (&gt; 10% LEL) 氮封与高压出厂试验撬棒硬联锁池 (Bicep · 160 章里程碑)</button>
+      <button class="tab-btn" onclick="showBlueprint(155)">156. 共封装光学 (CPO 1.6T / 3.2T 光引擎) 与 300mm 硅光晶圆 (SiPh SOI / Si3N4 波导) 有源亚微米 (&lt; 100nm) 六自由度压电六足台 (6-DOF Piezo-Hexapod) 光纤阵列/CW-DFB 激光器首次通光对准及紫外胶固化收缩补偿 PINN-MPC、在线 100kHz 光频域反射仪 (OFDR 波导背向散射损耗 &lt; 0.15 dB/cm)/微环谐振器 (MRR) 热相移计量及 Telcordia GR-468-CORE / IEC 60825-1 Class 3B/4 / SEMI S2 / IEC 61508 SIL-3 外置激光源 (ELSFP) 快门遮断、六足台端面剪切防撞限力与紫外固化吹扫硬联锁池 (Bicep · 155 仿真器里程碑)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4093,6 +4094,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 155: Co-Packaged Optics (CPO 1.6T/3.2T) & 300mm Silicon Photonics 6-DOF Piezo-Hexapod Alignment PINN-MPC Calculator -->
+  <section class="card" style="margin-top:1.25rem;">
+    <span class="pill pill-teal">TOOL 155 · CO-PACKAGED OPTICS (CPO 1.6T / 3.2T OPTICAL ENGINE) &amp; 300mm SILICON PHOTONICS (SiPh) 6-DOF PIEZO-HEXAPOD ACTIVE SUB-MICRON ALIGNMENT &amp; UV-EPOXY SHRINKAGE PINN-MPC, ONLINE 100 kHz OFDR &amp; MRR METROLOGY &amp; TELCORDIA GR-468 / IEC 60825-1 / SIL-3 LASER SHUTTER &amp; PIEZO FORCE-LIMIT CALCULATOR (155 SIMULATORS MILESTONE!)</span>
+    <h2>自主共封装光学（CPO 1.6T/3.2T 光引擎）与 300mm 硅光（SiPh SOI/Si3N4 波导）：六自由度压电六足台有源对准与紫外固化收缩补偿 PINN-MPC 及 SIL-3 激光快门/端面防撞硬联锁测算器（155 仿真器里程碑！）</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 台 <code>1.6T / 3.2T</code> 共封装光学（<code>Co-Packaged Optics, CPO</code> 光引擎与可插拔外置激光源 <code>ELSFP</code>）及 <code>300 mm</code> 绝缘体上硅/氮化硅（$\text{SOI} / \text{Si}_3\text{N}_4$ 双层波导光电子集成芯片 <code>PIC</code>）有源封装与晶圆级光测试工位（<code>Active Alignment &amp; Wafer-Level Photonic Probe Cell</code>：含 <code>16–32</code> 通道保偏光纤阵列 <code>PM-FAU</code> / 边缘倒锥耦合器 <code>Spot-Size Converter</code> / 光栅耦合器或混合集成磷化铟 <code>InP CW-DFB</code> 激光器芯片、<code>6-DOF</code> 纳米压电六足并联平台 <code>Piezo-Hexapod</code> 与 <code>365 nm</code> 多向紫外胶固化系统）规模下，启用 <code>Standard_NV36ads_A10_v5</code> <strong>高斯模态重叠积分（<code>Gaussian Mode-Overlap Integral</code>）、六自由度压电六足台迟滞-蠕变运动学（$X/Y/Z/\theta_x/\theta_y/\theta_z$ 分辨率 <code>&lt; 5 nm / 0.5 μrad</code>）与紫外丙烯酸/环氧胶自由基交联聚合体积收缩（<code>1.2–2.5%</code>）热-力-光耦合漂移</strong>及<strong>高密度微环谐振器（<code>Micro-Ring Resonator, MRR</code>）热光相移串扰（$\mathrm{d}n_{\text{eff}}/\mathrm{d}T \approx 1.86\times 10^{-4}\text{ K}^{-1}$）</strong> <code>PINN</code> + 首次通光（<code>First-Light</code>）随机梯度无盲扫极速寻优、紫外曝光前亚微米预偏置（<code>Pre-Offset Compensation</code> 抵消固化收缩，锁定残余偏心 <code>&lt; 80 nm</code>、单通道耦合插损 <code>≤ 1.15 dB</code>）与片上微加热器热调谐协同 <code>MPC</code>（<code>CPO</code> 光引擎耦合良率与有源对准节拍提升 <code>+45.4%</code>，紫外固化后插损离散度与微环谐振波长漂移削减 <code>-62.5%</code>）、<code>Telcordia GR-468-CORE / IEC 60825-1 Class 3B/4 / SEMI S2 / IEC 61508 SIL-3</code> 外置大功率连续波激光源（<code>ELSFP</code> <code>&gt; +20 dBm</code>）防护罩联锁开启/光纤断裂反射功率激增、压电六足台 Z 向/剪切接触力超限（<code>&gt; 350 mN</code> 威胁压碎硅光波导端面或微透镜）或紫外胶固化挥发单体超标时，瞬时闭合微秒级声光/机械安全激光快门（<code>Laser Safety Shutter</code>）、触发六足台压电紧急零力回退并启动局部负压活性炭吸附吹扫硬联锁（<code>0.2 ms</code> 响应，<code>0.0%</code> 硅光芯片端面压碎、<code>Class 4</code> 激光灼伤/反射烧毁端面或紫外单体污染光学腔体事故，对比传统盲螺旋爬山扫描、无预偏置紫外固化与离线插损抽检反模式 <code>1.6%</code> 风险）以及工位端 <code>100 kHz</code> 光频域反射仪（<code>OFDR</code>，<code>10 μm</code> 空间分辨率定位波导背向散射损耗 <code>&lt; 0.15 dB/cm</code> 与端面微裂纹）、六维电容位移/微力传感及多通道光谱分析仪（<code>OSA</code>）边缘分诊（<code>0.2 ms</code>，削减 <code>99.7%</code> 封测车间 WAN 带宽，避免 <code>3.9%</code> 紫外胶非对称固化收缩导致耦合插损超标或微环热串扰失锁漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. CPO 1.6T/3.2T 光引擎 6-DOF 压电六足台有源对准与 300mm 硅光测试工位数 (CPO SiPh Active Alignment Cells): <strong id="lbl_cpo_siph_cells" style="color:var(--teal)">8</strong></label>
+          <input type="range" id="rng_cpo_siph_cells" min="2" max="32" step="2" value="8" oninput="runCpoSiliconPhotonicsHexapodLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 六自由度压电对准/紫外固化收缩补偿 PINN-MPC 与 Telcordia GR-468 / SIL-3 激光快门/端面防撞联锁模式 (CPO SiPh Governance Mode)</label>
+          <select id="sel_cpo_siph_mode" onchange="runCpoSiliconPhotonicsHexapodLab()">
+            <option value="pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge" selected>模态重叠积分、6-DOF 压电迟滞与紫外胶固化收缩预偏置 (&lt; 80nm) 及微环 MRR 热串扰 PINN-MPC (+45.4% CPO 耦合良率与对准节拍 / -62.5% 固化后插损方差与波长漂移) + GR-468/IEC 60825-1 SIL-3 0.2ms ELSFP 激光快门、端面 &gt;350mN 防撞回退与 UV 吹扫硬联锁 + 0.2ms 100kHz OFDR/六足力控/OSA 边缘 (推荐)</option>
+            <option value="blind_hill_climbing_spiral_scan_uncompensated_uv_cure_offline_il_test_cloud">传统反模式：盲螺旋爬山寻优、无预偏置直接紫外固化与下线插损抽检 (+6.8% 良率增益) + 无 0.2ms 激光快门与六足压电防撞硬联锁 (1.6% 光纤阵列压碎 PIC 端面、高功率激光烧蚀端面或 UV 挥发物污染透镜风险) + 缺乏在线 OFDR 与固化收缩闭环 (3.9% UV 胶非对称收缩致插损超标或微环热串扰失锁报废)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cpoSiliconPhotonicsHexapodOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6607,6 +6631,24 @@ resource hvdcXlpeVcvPool 'Microsoft.ContainerService/managedClusters/agentPools@
       'aksclaw.io/tower-edge-50khz-thz-ultrasonic-pea-tdlas': 'enabled-0.3ms-99.6pct-vcv-tower-wan-cut'
     }
   }
+}`,
+  `// Blueprint #156: Co-Packaged Optics (CPO 1.6T / 3.2T Optical Engine) & 300mm Silicon Photonics (SiPh) 6-DOF Piezo-Hexapod Active Alignment & UV-Shrinkage PINN-MPC + Online 100 kHz OFDR & MRR Metrology + Telcordia GR-468-CORE / IEC 60825-1 / SEMI S2 / IEC 61508 SIL-3 ELSFP Laser Shutter & Piezo Force-Limit Pool (155 Simulators Milestone)
+param location string = 'eastus2'
+param cpoAlignmentCells int = 8
+
+resource cpoSiPhHexapodPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'cposiphsil3'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (6-DOF Piezo-Hexapod Mode-Overlap, UV-Cure Shrinkage Pre-Offset & MRR Thermal PINN-MPC + Online 100 kHz OFDR / OSA Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'cpo-silicon-photonics-pic-hexapod-alignment-ofdr-gr468-sil3-agent'
+      'aksclaw.io/pinn-mpc-6dof-hexapod-uv-shrinkage-mrr': 'enabled-45.4pct-coupling-yield-throughput-gain-62.5pct-il-variance-mrr-drift-cut'
+      'aksclaw.io/gr468-iec60825-sil3-laser-shutter-piezo-force-guard': 'enforced-0.2ms-zero-facet-crunch-class4-laser-or-uv-outgas'
+      'aksclaw.io/cell-edge-100khz-ofdr-hexapod-osa': 'enabled-0.2ms-99.7pct-cpo-cell-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6862,6 +6904,30 @@ runOpticalFiberDrawLab();
 runScCo2SmbLab();
 runEuvPhotomaskMbmwLab();
 runHvdcSubseaXlpeVcvLab();
+runCpoSiliconPhotonicsHexapodLab();
+
+function runCpoSiliconPhotonicsHexapodLab() {
+  const cells = parseInt(document.getElementById('rng_cpo_siph_cells').value, 10);
+  const mode = document.getElementById('sel_cpo_siph_mode').value;
+  document.getElementById('lbl_cpo_siph_cells').textContent = cells.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(cells / 4));
+  const pods = cells <= 8 ? Math.max(2, Math.min(8, cells)) : Math.max(8, Math.floor(cells / 2));
+  const ok = mode === 'pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge';
+  const mpcStr = ok ? "高斯模态重叠积分、六自由度压电六足台 (6-DOF Piezo-Hexapod < 5nm/0.5μrad) 迟滞蠕变、365nm 紫外环氧胶自由基聚合体积收缩 (1.2–2.5%) 热-力-光漂移与微环谐振器 (MRR) 热光相移串扰 PINN + 首次通光极速寻优、紫外曝光前亚微米反向预偏置 (< 80nm 残余偏心，单通道插损 ≤ 1.15 dB) 与片上热相移器协同 MPC · CPO 1.6T/3.2T 光引擎耦合良率与对准节拍 +45.4% · 紫外固化后插损方差与 MRR 谐振波长漂移 -62.5%" : "传统靠盲螺旋爬山扫描、无预偏置直接紫外固化与离线插损抽检滞后 · 仅 +6.8% 良率增益 / -9.7% 漂移削减 (32 通道保偏光纤阵列 FAU 在紫外胶固化交联收缩时产生 150–400 nm 非对称拉扯偏移，导致 3.9% 边缘通道耦合插损劣化超 2.5 dB 或微环热串扰失锁整颗 CPO 引擎报废)";
+  const sil3Str = ok ? "0.2 ms Telcordia GR-468-CORE / IEC 60825-1 Class 3B/4 / SEMI S2 / IEC 61508 SIL-3 检出外置大功率连续激光源 (ELSFP > +20 dBm) 回波反射激增/安全门开启、压电六足台端面接触剪切力 > 350 mN 或紫外胶挥发单体超标时瞬时闭合微秒级激光安全快门、触发六足台零力回退并启动负压活性炭吹扫硬联锁 · 0.0% 硅光端面压碎、激光烧蚀端面或 UV 挥发物污染透镜违例" : "无 0.2ms 激光快门与六足压电防撞回退硬联锁 (142.0 ms 传统 PLC 联锁滞后) · 1.6% 压电台过冲压碎 SOI/Si3N4 倒锥耦合器端面、高功率激光端面烧蚀或紫外挥发物污染微透镜风险";
+  const edgeStr = ok ? "0.2 ms 工位端 100 kHz 光频域反射仪 (OFDR 10μm 分辨率定位波导背向散射损耗 < 0.15 dB/cm 与端面微裂纹) + 六维电容位移/纳米力控传感 + 多通道光谱分析仪 (OSA) 边缘 (-99.7% 封测车间 WAN 带宽) · 0.0% 紫外固化收缩失准或微环热串扰失锁漏检" : "188.0 ms 依赖封装固化后下线逐通道 BERT/插损抽检 · 无法在紫外胶凝胶化前实时修正亚微米级热-力收缩漂移";
+
+  document.getElementById('cpoSiliconPhotonicsHexapodOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.6% 压电六足台压碎硅光波导端面或高功率激光烧蚀风险 · 3.9% 紫外胶固化收缩失准或微环热串扰失锁漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个硅光共封装孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>100kHz 光频域反射仪 (OFDR)、六维电容压电力控与多通道光谱 (OSA) 边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runHvdcSubseaXlpeVcvLab() {
   const towers = parseInt(document.getElementById('rng_hvdc_xlpe_towers').value, 10);

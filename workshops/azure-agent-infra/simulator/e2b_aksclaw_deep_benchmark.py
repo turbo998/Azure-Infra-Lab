@@ -167,6 +167,7 @@ from agent_infra_sizer import (
     simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox,
     simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox,
     simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox,
+    simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1327,6 +1328,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(32, "pinn_mpc_vcv_kamal_crosslink_bct_spacecharge_thz_pea_cigre852_sil3_edge"),
         simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox(8, "fixed_vcv_zone_temp_timer_degassing_offline_sample_pea_test_cloud"),
     ]
+    cpo_silicon_photonics_pic_profiles: List[Dict[str, object]] = [
+        simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(4, "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge"),
+        simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(8, "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge"),
+        simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(32, "pinn_mpc_6dof_hexapod_active_alignment_uv_shrinkage_ofdr_gr468_sil3_edge"),
+        simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox(8, "blind_hill_climbing_spiral_scan_uncompensated_uv_cure_offline_il_test_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1482,6 +1489,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "scco2_supercritical_smb_profiles": scco2_supercritical_smb_profiles,
         "euv_photomask_mbmw_profiles": euv_photomask_mbmw_profiles,
         "hvdc_subsea_xlpe_vcv_profiles": hvdc_subsea_xlpe_vcv_profiles,
+        "cpo_silicon_photonics_pic_profiles": cpo_silicon_photonics_pic_profiles,
     }
 
 
