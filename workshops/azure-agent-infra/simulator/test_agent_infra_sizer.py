@@ -145,6 +145,7 @@ from agent_infra_sizer import (
     simulate_hall_heroult_aluminum_potline_cryolite_mhd_hf_scrubber_sil3_sandbox,
     simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
     simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox,
+    simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -337,6 +338,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-hall-heroult-aluminum-potline-cryolite-mhd-hf-scrubber-sil3-pool.bicep",
             "aksclaw-var-esr-superalloy-remelting-drip-short-freckle-nfpa86-sil3-pool.bicep",
             "aksclaw-polyolefin-fluidized-bed-mwd-electrostatics-sheeting-apirp554-sil3-pool.bicep",
+            "aksclaw-mto-dmto-sapo34-hydrocarbon-pool-coke-slidevalve-apirp554-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2874,6 +2876,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct"], 3.0)
         self.assertTrue(gov["polyolefin_fluidized_bed_reactor_slo_met"])
         self.assertFalse(raw["polyolefin_fluidized_bed_reactor_slo_met"])
+
+    def test_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox(self) -> None:
+        gov = simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox(
+            8, "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge"
+        )
+        raw = simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox(
+            8, "manual_catalyst_circulation_step_offline_4hr_leco_coke_unprotected_slidevalve_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_mto_reactor_pods"], 8)
+        self.assertEqual(gov["light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct"], 43.4)
+        self.assertEqual(gov["sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct"], 59.2)
+        self.assertEqual(gov["apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct"], 1.0)
+        self.assertEqual(gov["standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct"], 3.0)
+        self.assertTrue(gov["mto_dmto_sapo34_reactor_slo_met"])
+        self.assertFalse(raw["mto_dmto_sapo34_reactor_slo_met"])
 
 
 if __name__ == "__main__":

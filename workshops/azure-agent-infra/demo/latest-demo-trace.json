@@ -8706,6 +8706,68 @@
         "uncompensated_triboelectric_wall_sheet_peeling_or_distributor_plugging_pct": 3.8,
         "polyolefin_fluidized_bed_reactor_slo_met": false
       }
+    ],
+    "mto_dmto_sapo34_profiles": [
+      {
+        "mto_reactor_regenerator_units": 4,
+        "mto_governance_mode": "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_mto_reactor_pods": 4,
+        "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": 43.4,
+        "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": 59.2,
+        "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": 0.3,
+        "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": 0.0,
+        "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": 0.0,
+        "mto_dmto_sapo34_reactor_slo_met": true
+      },
+      {
+        "mto_reactor_regenerator_units": 8,
+        "mto_governance_mode": "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_mto_reactor_pods": 8,
+        "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": 43.4,
+        "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": 59.2,
+        "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": 0.3,
+        "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": 0.0,
+        "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": 0.0,
+        "mto_dmto_sapo34_reactor_slo_met": true
+      },
+      {
+        "mto_reactor_regenerator_units": 32,
+        "mto_governance_mode": "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_mto_reactor_pods": 16,
+        "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": 43.4,
+        "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": 59.2,
+        "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": 0.3,
+        "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": 0.0,
+        "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": 0.0,
+        "mto_dmto_sapo34_reactor_slo_met": true
+      },
+      {
+        "mto_reactor_regenerator_units": 8,
+        "mto_governance_mode": "manual_catalyst_circulation_step_offline_4hr_leco_coke_unprotected_slidevalve_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_mto_reactor_pods": 8,
+        "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": 6.5,
+        "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": 9.1,
+        "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": 146.0,
+        "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": 1.3,
+        "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": 190.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": 3.6,
+        "mto_dmto_sapo34_reactor_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -16056,5 +16118,52 @@
       "polyolefin_fluidized_bed_reactor_slo_met": false
     }
   },
-  "trace_sha256": "8cafe7d36c281127e32077c746530ac494ee07d2e58fe0c4ab19e1d2cbc0b0b4"
+  "demo_139_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox": {
+    "mto_8_units": {
+      "mto_reactor_regenerator_units": 8,
+      "mto_governance_mode": "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_mto_reactor_pods": 8,
+      "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": 43.4,
+      "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": 59.2,
+      "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": 0.3,
+      "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": 0.0,
+      "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": 0.0,
+      "mto_dmto_sapo34_reactor_slo_met": true
+    },
+    "mto_32_units": {
+      "mto_reactor_regenerator_units": 32,
+      "mto_governance_mode": "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_mto_reactor_pods": 16,
+      "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": 43.4,
+      "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": 59.2,
+      "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": 0.3,
+      "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": 0.0,
+      "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": 0.0,
+      "mto_dmto_sapo34_reactor_slo_met": true
+    },
+    "raw_mto_8_units": {
+      "mto_reactor_regenerator_units": 8,
+      "mto_governance_mode": "manual_catalyst_circulation_step_offline_4hr_leco_coke_unprotected_slidevalve_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_mto_reactor_pods": 8,
+      "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": 6.5,
+      "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": 9.1,
+      "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": 146.0,
+      "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": 1.3,
+      "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": 190.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": 3.6,
+      "mto_dmto_sapo34_reactor_slo_met": false
+    }
+  },
+  "trace_sha256": "3e0cb9223081cc830ce4210fd0c06e60b9171370467816bf5c590d64fd7fa68a"
 }

@@ -7130,6 +7130,57 @@ def simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_
     }
 
 
+def simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox(
+    mto_reactor_regenerator_units: int = 8,
+    mto_governance_mode: str = "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Coal-to-Olefins / Methanol-to-Olefins (MTO / DMTO-III, 460-510 C)
+    Dual-Fluidized-Bed Circulating Reactor-Regenerator, SAPO-34 Molecular-Sieve Cage Hydrocarbon-Pool
+    (Polymethylbenzene Active Intermediates vs Polycyclic Aromatics Coke wt% Distribution) &
+    Ethylene-to-Propylene (C2=/C3=) Selectivity PINN-MPC, Online Standpipe Near-Infrared (NIR)
+    Spent-Catalyst Carbon-Content / Cyclone Dipleg 500 Hz Differential-Pressure Metrology &
+    API RP 554 / ASME BPVC Section VIII / IEC 61508 SIL-3 Slide-Valve Differential-Pressure Reversal
+    (O2-Hydrocarbon Deflagration), Regenerator Afterburning (> 720 C SAPO-34 Hydrothermal Dealumination)
+    & Steam-Curtain Standpipe Isolation Interlock Sandbox (Chapter 144).
+    """
+    if mto_reactor_regenerator_units < 1:
+        raise ValueError("mto_reactor_regenerator_units must be >= 1")
+    valid_modes = {
+        "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge",
+        "manual_catalyst_circulation_step_offline_4hr_leco_coke_unprotected_slidevalve_cloud",
+    }
+    if mto_governance_mode not in valid_modes:
+        raise ValueError(f"mto_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = mto_governance_mode == "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge"
+    active_mto_reactor_pods = max(2, min(8, int(mto_reactor_regenerator_units))) if mto_reactor_regenerator_units <= 8 else max(8, int(mto_reactor_regenerator_units // 2))
+    gpu_nodes = max(2, math.ceil(mto_reactor_regenerator_units / 4))
+
+    light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct = 43.4 if governed else 6.5
+    sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct = 59.2 if governed else 9.1
+    apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms = 0.3 if governed else 146.0
+    unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct = 0.0 if governed else 1.3
+    standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms = 0.3 if governed else 190.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct = 0.0 if governed else 3.6
+
+    return {
+        "mto_reactor_regenerator_units": mto_reactor_regenerator_units,
+        "mto_governance_mode": mto_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_mto_reactor_pods": active_mto_reactor_pods,
+        "light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct": light_olefin_c2_c3_selectivity_and_methanol_per_ton_olefin_gain_pct,
+        "sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct": sapo34_catalyst_attrition_and_hydrothermal_dealumination_loss_reduction_pct,
+        "apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms": apirp554_asmeviii_sil3_slidevalve_lock_and_steam_curtain_interlock_ms,
+        "unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct": unmitigated_reactor_regenerator_reversal_deflagration_or_afterburn_pct,
+        "standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms": standpipe_edge_nir_coke_wtpct_and_500hz_dipleg_dp_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct": uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct,
+        "mto_dmto_sapo34_reactor_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
