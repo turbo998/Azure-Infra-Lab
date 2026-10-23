@@ -8954,6 +8954,68 @@
         "uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct": 3.6,
         "blast_furnace_cohesive_zone_slo_met": false
       }
+    ],
+    "cumene_phenol_hock_cleavage_profiles": [
+      {
+        "cumene_phenol_bpa_trains": 4,
+        "chp_governance_mode": "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cumene_phenol_pods": 4,
+        "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": 43.5,
+        "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": 59.3,
+        "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": 0.3,
+        "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": 0.0,
+        "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": 0.0,
+        "cumene_phenol_hock_cleavage_slo_met": true
+      },
+      {
+        "cumene_phenol_bpa_trains": 8,
+        "chp_governance_mode": "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cumene_phenol_pods": 8,
+        "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": 43.5,
+        "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": 59.3,
+        "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": 0.3,
+        "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": 0.0,
+        "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": 0.0,
+        "cumene_phenol_hock_cleavage_slo_met": true
+      },
+      {
+        "cumene_phenol_bpa_trains": 32,
+        "chp_governance_mode": "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cumene_phenol_pods": 16,
+        "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": 43.5,
+        "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": 59.3,
+        "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": 0.3,
+        "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": 0.0,
+        "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": 0.0,
+        "cumene_phenol_hock_cleavage_slo_met": true
+      },
+      {
+        "cumene_phenol_bpa_trains": 8,
+        "chp_governance_mode": "manual_oxidizer_air_step_fixed_h2so4_dosing_offline_4hr_iodometric_chp_titration_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cumene_phenol_pods": 8,
+        "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": 6.4,
+        "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": 8.9,
+        "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": 146.0,
+        "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": 1.4,
+        "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": 190.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": 3.5,
+        "cumene_phenol_hock_cleavage_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -16492,5 +16554,52 @@
       "blast_furnace_cohesive_zone_slo_met": false
     }
   },
-  "trace_sha256": "72acebca0e4436d957a28eafd21d1804c7cc8cdf4552b848e9cf75db09d4ed76"
+  "demo_143_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox": {
+    "chp_8_trains": {
+      "cumene_phenol_bpa_trains": 8,
+      "chp_governance_mode": "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_cumene_phenol_pods": 8,
+      "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": 43.5,
+      "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": 59.3,
+      "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": 0.3,
+      "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": 0.0,
+      "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": 0.0,
+      "cumene_phenol_hock_cleavage_slo_met": true
+    },
+    "chp_32_trains": {
+      "cumene_phenol_bpa_trains": 32,
+      "chp_governance_mode": "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_cumene_phenol_pods": 16,
+      "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": 43.5,
+      "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": 59.3,
+      "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": 0.3,
+      "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": 0.0,
+      "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": 0.0,
+      "cumene_phenol_hock_cleavage_slo_met": true
+    },
+    "raw_chp_8_trains": {
+      "cumene_phenol_bpa_trains": 8,
+      "chp_governance_mode": "manual_oxidizer_air_step_fixed_h2so4_dosing_offline_4hr_iodometric_chp_titration_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_cumene_phenol_pods": 8,
+      "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": 6.4,
+      "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": 8.9,
+      "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": 146.0,
+      "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": 1.4,
+      "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": 190.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": 3.5,
+      "cumene_phenol_hock_cleavage_slo_met": false
+    }
+  },
+  "trace_sha256": "e24142563853432ae93ff2828f948b9f5ee12e5ed079a498c302df4850868253"
 }

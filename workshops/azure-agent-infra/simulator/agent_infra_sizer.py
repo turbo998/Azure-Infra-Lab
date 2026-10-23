@@ -7333,6 +7333,57 @@ def simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3
     }
 
 
+def simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(
+    cumene_phenol_bpa_trains: int = 8,
+    chp_governance_mode: str = "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Cumene Peroxidation & Hock Phenol-Acetone Cleavage (90-115 C Bubble-Column
+    Cumene Oxidation, Vacuum Thin-Film CHP Concentration to 80-85 wt%, Exothermic Sulfuric-Acid Hock
+    Rearrangement dH = -252 kJ/mol & Bisphenol-A BPA Ion-Exchange Resin Condensation), Runaway
+    Thermal Decomposition (CHP -> Acetophenone + Methyl Radical) & Byproduct Hydroxyacetone
+    (HA < 10 ppm) Suppression PINN-MPC, Online Mid-IR ATR-FTIR Peroxide / Raman Phenol-Acetone-AMS
+    Metrology & NFPA 30 / DIERS / API RP 521 / IEC 61508 SIL-3 CHP Thermal Runaway (dT/dt > 0.5 C/min),
+    Alkaline Phenate Quench / Weak-Base Neutralization Injection & Dilution-Acetone Deluge Interlock
+    Sandbox (Chapter 148).
+    """
+    if cumene_phenol_bpa_trains < 1:
+        raise ValueError("cumene_phenol_bpa_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge",
+        "manual_oxidizer_air_step_fixed_h2so4_dosing_offline_4hr_iodometric_chp_titration_cloud",
+    }
+    if chp_governance_mode not in valid_modes:
+        raise ValueError(f"chp_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = chp_governance_mode == "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge"
+    active_cumene_phenol_pods = max(2, min(8, int(cumene_phenol_bpa_trains))) if cumene_phenol_bpa_trains <= 8 else max(8, int(cumene_phenol_bpa_trains // 2))
+    gpu_nodes = max(2, math.ceil(cumene_phenol_bpa_trains / 4))
+
+    phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct = 43.5 if governed else 6.4
+    acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct = 59.3 if governed else 8.9
+    nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms = 0.3 if governed else 146.0
+    unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct = 0.0 if governed else 1.4
+    cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms = 0.3 if governed else 190.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct = 0.0 if governed else 3.5
+
+    return {
+        "cumene_phenol_bpa_trains": cumene_phenol_bpa_trains,
+        "chp_governance_mode": chp_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cumene_phenol_pods": active_cumene_phenol_pods,
+        "phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct": phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct,
+        "acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct": acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct,
+        "nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms": nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms,
+        "unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct": unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct,
+        "cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms": cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct": uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct,
+        "cumene_phenol_hock_cleavage_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -149,6 +149,7 @@ from agent_infra_sizer import (
     simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox,
     simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox,
     simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
+    simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2966,6 +2967,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cohesive_root_scaffolding_or_raceway_birdnest_plugging_pct"], 3.0)
         self.assertTrue(gov["blast_furnace_cohesive_zone_slo_met"])
         self.assertFalse(raw["blast_furnace_cohesive_zone_slo_met"])
+
+    def test_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(self) -> None:
+        gov = simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(
+            8, "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge"
+        )
+        raw = simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(
+            8, "manual_oxidizer_air_step_fixed_h2so4_dosing_offline_4hr_iodometric_chp_titration_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_cumene_phenol_pods"], 8)
+        self.assertEqual(gov["phenol_acetone_selectivity_and_bpa_polycarbonate_purity_gain_pct"], 43.5)
+        self.assertEqual(gov["acetophenone_dmpc_byproduct_and_hydroxyacetone_color_reduction_pct"], 59.3)
+        self.assertEqual(gov["nfpa30_diers_sil3_alkaline_phenate_quench_and_acetone_deluge_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_chp_sadt_thermal_runaway_or_cleavage_overpressure_pct"], 1.0)
+        self.assertEqual(gov["cleavage_edge_atr_ftir_peroxide_and_raman_ams_ha_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_2_methylbenzofuran_yellowing_or_ier_sulfonic_leaching_pct"], 3.0)
+        self.assertTrue(gov["cumene_phenol_hock_cleavage_slo_met"])
+        self.assertFalse(raw["cumene_phenol_hock_cleavage_slo_met"])
 
 
 if __name__ == "__main__":

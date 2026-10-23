@@ -555,6 +555,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(140)">141. 精对苯二甲酸 (PTA 195–205°C / 14–16 bar 对二甲苯 PX 醋酸溶剂钴锰溴催化液相空气氧化鼓泡塔) 与聚酯 (PET 连续熔体缩聚)、4-羧基苯甲醛 (4-CBA) 杂质与醋酸溶剂氧化燃烧损失抑制 PINN-MPC、反应器尾气在线可调谐激光 (TDLAS O2/CO/CO2)/浆料拉曼 4-CBA 计量及 NFPA 69 / API RP 554 / IEC 61508 SIL-3 尾气氧含量突破 (&gt;4.5 vol% O2 醋酸/醋酸甲酯爆炸)、高压氮气瞬时惰化吹扫与空压机联锁跳车硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(141)">142. 湿法磷酸 (WPA 二水-半水法 DH-HH 80–98°C 磷矿硫酸萃取槽与真空闪蒸冷却) 与磷酸二铵 (DAP 18-46-0 管式反应器 PCR 及转鼓氨化造粒)、磷石膏 (CaSO4·2H2O) 结晶习性过饱和度与游离硫酸根 (SO4²⁻ 24–28 g/L) 过滤 PINN-MPC、酸浆在线衰减全反射红外 (ATR-FTIR)/尾气 TDLAS (HF/SiF4/NH3) 计量及 EPA 40 CFR 63 Subpart AA / NFPA 704 / IEC 61508 SIL-3 四氟化硅/氢氟酸 (SiF4/HF &gt; 2.5 ppm) 洗涤塔穿透、碳酸盐泡沫溢槽与 PCR 超压硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(142)">143. 大型炼铁高炉 (BF 4,000–5,800 m³ 铁水冶炼与带式烧结机)、软熔带 (1,150–1,450°C 倒 V 型内聚区) 透气性、风口回旋区煤粉/富氢喷吹 (PCI 180–220 kg/t-HM) 与炉缸炭砖象脚侵蚀 PINN-MPC、炉顶煤气在线质谱/微波料面雷达与 36 风口高速双色 CCD 计量及 NFPA 86 / ISO 13577 / IEC 61508 SIL-3 悬料崩料炉顶超压、风口铜套漏水氢爆与炉缸烧穿硬联锁池 (Bicep)</button>
+      <button class="tab-btn" onclick="showBlueprint(143)">144. 异丙苯过氧化与霍克 (Hock) 苯酚-丙酮酸催化裂解 (90–115°C 鼓泡塔自由基氧化、真空薄膜蒸发提浓 80–85 wt% 过氧化氢异丙苯 CHP 与强放热硫酸重排 ΔH=-252 kJ/mol) 及双酚 A (BPA 离子交换树脂缩合)、CHP 自加速热分解失控与羟基丙酮 (HA &lt; 10 ppm) 显色副产物抑制 PINN-MPC、在线中红外 ATR-FTIR 过氧键/拉曼苯酚-丙酮-α-甲基苯乙烯计量及 NFPA 30 / DIERS / API RP 521 / IEC 61508 SIL-3 CHP 热失控 (dT/dt &gt; 0.5°C/min)、酚钠弱碱骤冷中和与冷丙酮喷淋稀释硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -3805,6 +3806,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 143: Autonomous Cumene Peroxidation, CHP Concentration & Hock Phenol-Acetone Acid Cleavage + BPA Condensation DIERS / NFPA 30 / SIL-3 Interlock Sizer -->
+  <section class="card">
+    <span class="pill pill-blue">TOOL 143 · CUMENE PEROXIDATION, VACUUM CHP CONCENTRATION (80–85 wt%) &amp; HOCK PHENOL-ACETONE EXOTHERMIC ACID CLEAVAGE (ΔH = -252 kJ/mol) + BISPHENOL-A (BPA) CONDENSATION, HYDROXYACETONE (&lt; 10 ppm) &amp; CHP THERMAL RUNAWAY SUPPRESSION PINN-MPC, ATR-FTIR PEROXIDE / RAMAN AMS METROLOGY &amp; NFPA 30 / DIERS / API RP 521 / SIL-3 ALKALINE PHENATE QUENCH &amp; ACETONE DELUGE INTERLOCK SIZER</span>
+    <h2>自主异丙苯法苯酚-丙酮（CHP 过氧化提浓与 Hock 强放热酸裂解）及双酚 A（BPA）装置：副产抑制 PINN-MPC 与 DIERS / SIL-3 防过氧化物热失控硬联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 条年产 <code>40–65 万吨</code> 异丙苯过氧化-霍克（<code>Hock</code>）酸催化裂解制苯酚-丙酮及下游聚碳酸酯级双酚 A（<code>BPA</code>，包含 <code>90–115°C / 4–6 bar</code> 多级串联鼓泡塔异丙苯空气自由基自催化氧化、三级高真空降膜蒸发提浓至 <code>80–85 wt%</code> 高危过氧化氢异丙苯 <code>CHP</code>、<code>60–85°C</code> 微量硫酸催化强放热 Hock 重排裂解 $\Delta H = -252\text{ kJ/mol}$ 以及磺酸型大孔阳离子交换树脂床层苯酚-丙酮缩合合成 $p,p'$-BPA）联合化工产线规模下，启用 <code>Standard_NC24ads_A100_v4</code> 异丙苯自由基链式过氧化动力学（平衡 <code>CHP</code> 转化率与二甲基苄醇 <code>DMPC</code> / 苯乙酮 <code>ACP</code> / 过氧化二异丙苯 <code>DCP</code> 副反应）、裂解反应器微混合硫酸活度（<code>15–35 ppm</code> $\text{H}_2\text{SO}_4$）与丙酮回流蒸发移热及微量水分（<code>0.8–1.2 wt%</code> $\text{H}_2\text{O}$）耦合 <code>PINN</code> + 氧化塔梯度温控、高真空提浓停留时间、裂解丙酮循环比与二段 DMPC 脱水成 $\alpha$-甲基苯乙烯（<code>AMS</code>）并压制致色杂质羟基丙酮（<code>Hydroxyacetone, HA &lt; 10 ppm</code>）及 2-甲基苯并呋喃（<code>2-MBF</code>）的 <code>MPC</code>（苯酚-丙酮总选择性与聚碳酸酯光学级双酚 A 优等品收率提升 <code>+43.5%</code>，苯乙酮/焦油重质副产物与羟基丙酮色度超标削减 <code>-59.3%</code>）、<code>NFPA 30 / DIERS / API RP 521 / IEC 61508 SIL-3</code> 高浓 <code>80–85 wt% CHP</code> 自加速分解温度（<code>SADT</code>，$\text{d}T/\text{d}t &gt; 0.5^\circ\text{C/min}$ 或局部温度 $&gt; 92^\circ\text{C}$ 触发自由基甲基裂解剧烈放热 $\Delta H_{\text{decomp}} &gt; -380\text{ kJ/mol}$ 气相冲塔爆炸）时自动切断 CHP 进料与硫酸催化剂、瞬时注入酚钠/弱碱水溶液强制中和微量酸根并打开冷丙酮/冷异丙苯紧急稀释洪流阀（<code>Dilution Deluge</code>）硬联锁（<code>0.3 ms</code> 响应，<code>0.0%</code> CHP 提浓塔或裂解器有机过氧化物热失控爆炸事故，对比传统人工每 4 小时碘量法滴定测 CHP 浓度与常规温控滞后反模式 <code>1.4%</code> 风险）以及在线中红外金刚石 <code>ATR-FTIR</code> 过氧键（$-\text{O}-\text{O}-$ `835 cm⁻¹`）与游离酸度、裂解液原位拉曼光谱（苯酚/丙酮/AMS/DMPC/HA）与高灵敏度 $\text{d}T/\text{d}t$ 绝热量热阵列边缘分诊（<code>0.3 ms</code>，削减 <code>99.6%</code> WAN 带宽，避免 <code>3.5%</code> 2-甲基苯并呋喃致色黄变或 BPA 离子交换树脂脱磺酸基团失活漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 异丙苯法苯酚-丙酮与双酚 A 联合产线数 (Cumene-Phenol-Acetone &amp; BPA Trains): <strong id="lbl_chp_trains" style="color:var(--blue)">8</strong></label>
+          <input type="range" id="rng_chp_trains" min="2" max="32" step="2" value="8" oninput="runCumenePhenolHockCleavageLab()">
+        </div>
+        <div class="form-row">
+          <label>2. CHP 过氧化/Hock 裂解/BPA 缩合 PINN-MPC 与 DIERS / NFPA 30 / SIL-3 防过氧化物热失控联锁模式 (CHP &amp; Hock Cleavage Governance Mode)</label>
+          <select id="sel_chp_mode" onchange="runCumenePhenolHockCleavageLab()">
+            <option value="pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge" selected>CHP 自由基过氧化、Hock 酸催化重排移热与羟基丙酮 (HA &lt; 10 ppm) 抑制 PINN + 梯度氧化温控、硫酸微定量与丙酮蒸发回流 MPC (+43.5% 苯酚-丙酮选择性与光学级 BPA 收率 / -59.3% 苯乙酮焦油副产与色度超标) + NFPA 30 / DIERS SIL-3 0.3ms 酚钠弱碱中和淬灭与冷丙酮稀释洪流硬联锁 + 0.3ms ATR-FTIR 过氧键与拉曼 AMS/HA 边缘 (推荐)</option>
+            <option value="manual_oxidizer_air_step_fixed_h2so4_dosing_offline_4hr_iodometric_chp_titration_cloud">传统反模式：靠固定氧化风量与硫酸滴加速率、依赖每 4 小时离线碘量法滴定测 CHP 与气相色谱测 HA 滞后 (+6.4% 收率增益) + 无 0.3ms dT/dt 量热斜率与酚钠弱碱强制中和联锁 (1.4% 85 wt% 高浓 CHP 局部微量铁锈/酸污染诱发 -252 kJ/mol 指数级热失控冲塔爆炸风险) + 缺乏在线 ATR-FTIR 过氧键与拉曼监测 (3.5% 羟基丙酮/2-甲基苯并呋喃致色黄变或 BPA 树脂床脱磺酸失活漏检)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="cumenePhenolHockCleavageOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6129,6 +6153,21 @@ resource blastFurnaceCohesiveZoneTuyereSil3Pool 'Microsoft.ContainerService/mana
       'aksclaw.io/casthouse-edge-36-tuyere-ccd-topgas-ms-fmcw-radar': 'enabled-0.3ms-99.6pct-integrated-steelworks-wan-cut'
     }
   }
+}`,
+`// 144. Azure Bicep: Cumene Peroxidation, Vacuum CHP Concentration (80-85 wt%) & Hock Phenol-Acetone Exothermic Acid Cleavage (dH = -252 kJ/mol) + Bisphenol-A (BPA) Condensation, Hydroxyacetone (<10 ppm) & CHP Thermal Runaway Suppression PINN-MPC, ATR-FTIR Peroxide / Raman AMS Metrology & NFPA 30 / DIERS / API RP 521 / SIL-3 Alkaline Phenate Quench & Acetone Deluge Interlock Pool
+resource cumenePhenolHockCleavageBpaSil3Pool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'chphocksil3'
+  properties: {
+    count: 2 // Standard_NC24ads_A100_v4 (Cumene Free-Radical Peroxidation, 80-85 wt% CHP Concentration & Hock Rearrangement dH=-252 kJ/mol PINN + H2SO4 Micro-Mixing, Acetone Boil-Up Cooling & BPA Ion-Exchange Resin MPC + Mid-IR ATR-FTIR Peroxide & Raman Phenol-Acetone-AMS-HA Edge)
+    vmSize: 'Standard_NC24ads_A100_v4'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'cumene-hydroperoxide-hock-phenol-acetone-cleavage-bpa-diers-sil3-agent'
+      'aksclaw.io/pinn-mpc-chp-peroxidation-hock-cleavage-ha-bpa': 'enabled-43.5pct-phenol-acetone-selectivity-bpa-purity-gain-59.3pct-acetophenone-ha-color-cut'
+      'aksclaw.io/nfpa30-diers-sil3-alkaline-phenate-quench-acetone-deluge-guard': 'enforced-0.3ms-zero-chp-sadt-thermal-runaway-or-cleavage-overpressure'
+      'aksclaw.io/cleavage-edge-atr-ftir-peroxide-raman-ams-ha': 'enabled-0.3ms-99.6pct-phenol-bpa-complex-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6372,6 +6411,30 @@ runMtoDmtoSapo34Lab();
 runPtaPxOxidationLab();
 runWetPhosphoricAcidDapLab();
 runBlastFurnaceCohesiveZoneLab();
+runCumenePhenolHockCleavageLab();
+
+function runCumenePhenolHockCleavageLab() {
+  const trains = parseInt(document.getElementById('rng_chp_trains').value, 10);
+  const mode = document.getElementById('sel_chp_mode').value;
+  document.getElementById('lbl_chp_trains').textContent = trains.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(trains / 4));
+  const pods = trains <= 8 ? Math.max(2, Math.min(8, trains)) : Math.max(8, Math.floor(trains / 2));
+  const ok = mode === 'pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge';
+  const mpcStr = ok ? "异丙苯多级鼓泡自由基氧化、80–85 wt% CHP 降膜提浓与 Hock 硫酸催化重排 (ΔH = -252 kJ/mol) 动力学 PINN + 梯度氧化温控、15–35 ppm 硫酸微混合、丙酮蒸发回流移热与 DMPC 二段脱水成 AMS 压制羟基丙酮 (HA < 10 ppm) 前馈 MPC · 苯酚-丙酮总选择性与光学级双酚 A (BPA) 收率 +43.5% · 苯乙酮/焦油重质副产与 HA 致色超标 -59.3%" : "传统靠固定氧化风量与硫酸滴加比例、每 4 小时离线碘量法滴定测 CHP 与气相色谱测 HA 滞后 · 仅 +6.4% 收率增益 / -8.9% 副产削减 (裂解器微混合不均导致局部酸过量生成大量羟基丙酮与 2-甲基苯并呋喃污染苯酚紫外透光率，3.5% 聚碳酸酯级 BPA 色度黄变或阳离子交换树脂床脱磺酸失活漏检)";
+  const sil3Str = ok ? "0.3 ms NFPA 30 / DIERS / API RP 521 / IEC 61508 SIL-3 提浓塔/裂解器温升速率 (dT/dt > 0.5°C/min) 或温度 (>92°C) 越限自动切断 CHP 与硫酸进料、瞬时注入酚钠/弱碱水溶液强制中和酸催化剂并开启冷丙酮/冷异丙苯紧急稀释洪流 (Dilution Deluge) 硬联锁 · 0.0% 高浓 CHP 有机过氧化物热失控爆炸违例" : "无 0.3ms dT/dt 绝热量热斜率预判与酚钠弱碱自动中和联锁 (146.0 ms 常规点温计与人工打冷料滞后) · 1.4% 80–85 wt% 高浓 CHP 接触微量铁离子或游离酸触发指数级自由基热分解 (SADT 失控生成甲烷与苯乙酮剧烈产气) 炸毁提浓塔与裂解反应器风险";
+  const edgeStr = ok ? "0.3 ms 反应器边缘中红外金刚石 ATR-FTIR (实时解算 835 cm⁻¹ 过氧键 -O-O- 浓度与微量硫酸活度) + 在线拉曼光谱 (苯酚 / 丙酮 / AMS / DMPC / HA) + 高频 dT/dt 量热阵列边缘 (-99.6% 酚酮-双酚 A 基地 WAN 带宽) · 0.0% 2-甲基苯并呋喃致色或树脂床脱酸漏检" : "190.0 ms 依赖人工从高危易爆过氧化物管线取样送化验室碘量法滴定 · 无法在秒级发生的裂解酸度漂移、丙酮回流中断移热恶化或过氧化物自加速分解前兆期实时闭环阻断";
+
+  document.getElementById('cumenePhenolHockCleavageOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.4% 80–85 wt% 过氧化氢异丙苯 (CHP) 自加速热分解失控或 Hock 裂解飞温超压爆炸风险 · 3.5% 羟基丙酮/2-甲基苯并呋喃致色黄变或 BPA 离子交换树脂失活漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC24ads_A100_v4 节点 (${pods} 个酚酮-BPA 孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>在线中红外 ATR-FTIR 过氧键 (-O-O-)、拉曼光谱 (苯酚/丙酮/AMS/HA) 与 dT/dt 量热边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runBlastFurnaceCohesiveZoneLab() {
   const units = parseInt(document.getElementById('rng_bf_units').value, 10);

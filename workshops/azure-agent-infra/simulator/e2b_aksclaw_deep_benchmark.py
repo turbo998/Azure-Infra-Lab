@@ -155,6 +155,7 @@ from agent_infra_sizer import (
     simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox,
     simulate_wet_phosphoric_acid_dap_gypsum_crystal_so4_hf_scrubber_epa63aa_sil3_sandbox,
     simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox,
+    simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1243,6 +1244,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(32, "pinn_mpc_cohesive_zone_permeability_pci_raceway_hearth_erosion_fmcw_nfpa86_sil3_edge"),
         simulate_sinter_plant_blast_furnace_cohesive_zone_tuyere_raceway_nfpa86_sil3_sandbox(8, "manual_paul_wurth_chute_matrix_fixed_pci_lance_offline_torpedo_ladle_si_assay_cloud"),
     ]
+    cumene_phenol_hock_cleavage_profiles: List[Dict[str, object]] = [
+        simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(4, "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge"),
+        simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(8, "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge"),
+        simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(32, "pinn_mpc_chp_peroxidation_hock_cleavage_ha_bpa_atr_ftir_raman_diers_sil3_edge"),
+        simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox(8, "manual_oxidizer_air_step_fixed_h2so4_dosing_offline_4hr_iodometric_chp_titration_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1386,6 +1393,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "pta_px_oxidation_profiles": pta_px_oxidation_profiles,
         "wet_phosphoric_acid_dap_profiles": wet_phosphoric_acid_dap_profiles,
         "blast_furnace_cohesive_zone_profiles": blast_furnace_cohesive_zone_profiles,
+        "cumene_phenol_hock_cleavage_profiles": cumene_phenol_hock_cleavage_profiles,
     }
 
 
