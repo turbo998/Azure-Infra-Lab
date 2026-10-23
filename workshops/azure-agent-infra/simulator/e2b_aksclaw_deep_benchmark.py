@@ -152,6 +152,7 @@ from agent_infra_sizer import (
     simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
     simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox,
     simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox,
+    simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1222,6 +1223,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox(32, "pinn_mpc_sapo34_dual_cycle_hydrocarbon_pool_coke_nir_slidevalve_apirp554_sil3_edge"),
         simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox(8, "manual_catalyst_circulation_step_offline_4hr_leco_coke_unprotected_slidevalve_cloud"),
     ]
+    pta_px_oxidation_profiles: List[Dict[str, object]] = [
+        simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(4, "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge"),
+        simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(8, "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge"),
+        simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(32, "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge"),
+        simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(8, "manual_air_px_ratio_step_slow_paramagnetic_o2_offline_4hr_hplc_4cba_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1362,6 +1369,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "var_esr_superalloy_remelting_profiles": var_esr_superalloy_remelting_profiles,
         "polyolefin_fluidized_bed_profiles": polyolefin_fluidized_bed_profiles,
         "mto_dmto_sapo34_profiles": mto_dmto_sapo34_profiles,
+        "pta_px_oxidation_profiles": pta_px_oxidation_profiles,
     }
 
 

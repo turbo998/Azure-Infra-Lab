@@ -146,6 +146,7 @@ from agent_infra_sizer import (
     simulate_var_esr_superalloy_remelting_drip_short_freckle_nfpa86_sil3_sandbox,
     simulate_polyolefin_fluidized_bed_mwd_electrostatics_sheeting_apirp554_sil3_sandbox,
     simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sandbox,
+    simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -339,6 +340,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-var-esr-superalloy-remelting-drip-short-freckle-nfpa86-sil3-pool.bicep",
             "aksclaw-polyolefin-fluidized-bed-mwd-electrostatics-sheeting-apirp554-sil3-pool.bicep",
             "aksclaw-mto-dmto-sapo34-hydrocarbon-pool-coke-slidevalve-apirp554-sil3-pool.bicep",
+            "aksclaw-pta-px-oxidation-bubble-column-4cba-offgas-o2-nfpa69-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -2897,6 +2899,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cage_overcoking_methanol_breakthrough_or_cyclone_flooding_pct"], 3.0)
         self.assertTrue(gov["mto_dmto_sapo34_reactor_slo_met"])
         self.assertFalse(raw["mto_dmto_sapo34_reactor_slo_met"])
+
+    def test_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(self) -> None:
+        gov = simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(
+            8, "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge"
+        )
+        raw = simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(
+            8, "manual_air_px_ratio_step_slow_paramagnetic_o2_offline_4hr_hplc_4cba_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_pta_oxidation_pods"], 8)
+        self.assertEqual(gov["pta_yield_and_pd_c_hydropurification_catalyst_life_gain_pct"], 43.8)
+        self.assertEqual(gov["acetic_acid_solvent_oxidative_burn_and_4cba_offspec_reduction_pct"], 59.7)
+        self.assertEqual(gov["nfpa69_apirp554_sil3_hp_n2_purge_and_air_compressor_trip_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_offgas_o2_breakthrough_methyl_acetate_deflagration_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_offgas_o2_breakthrough_methyl_acetate_deflagration_pct"], 1.0)
+        self.assertEqual(gov["reactor_edge_cross_duct_tdlas_o2_co_and_slurry_raman_4cba_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_overoxidation_yellowing_b_value_or_4cba_breakthrough_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_overoxidation_yellowing_b_value_or_4cba_breakthrough_pct"], 3.0)
+        self.assertTrue(gov["pta_px_oxidation_bubble_column_slo_met"])
+        self.assertFalse(raw["pta_px_oxidation_bubble_column_slo_met"])
 
 
 if __name__ == "__main__":

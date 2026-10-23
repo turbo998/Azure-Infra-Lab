@@ -7181,6 +7181,56 @@ def simulate_mto_dmto_sapo34_hydrocarbon_pool_coke_slidevalve_apirp554_sil3_sand
     }
 
 
+def simulate_pta_px_oxidation_bubble_column_4cba_offgas_o2_nfpa69_sil3_sandbox(
+    pta_oxidation_trains: int = 8,
+    pta_governance_mode: str = "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Purified Terephthalic Acid (PTA, 195-205 C, 14-16 bar Paraxylene PX
+    Liquid-Phase Acetic-Acid Co-Mn-Br Catalytic Oxidation Bubble-Column Reactor) & Polyethylene
+    Terephthalate (PET Continuous Melt Polycondensation), 4-Carboxybenzaldehyde (4-CBA) Impurity &
+    Acetic-Acid Solvent Oxidative Burning Suppression PINN-MPC, Online Off-Gas Tunable Diode Laser
+    (TDLAS O2/CO/CO2) / Slurry Raman 4-CBA Metrology & NFPA 69 / API RP 554 / IEC 61508 SIL-3
+    Off-Gas Oxygen Breakthrough (> 4.5 vol% O2 Acetic-Acid/Methyl-Acetate Deflagration),
+    High-Pressure Nitrogen Inerting & Air-Compressor Trip Interlock Sandbox (Chapter 145).
+    """
+    if pta_oxidation_trains < 1:
+        raise ValueError("pta_oxidation_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge",
+        "manual_air_px_ratio_step_slow_paramagnetic_o2_offline_4hr_hplc_4cba_cloud",
+    }
+    if pta_governance_mode not in valid_modes:
+        raise ValueError(f"pta_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = pta_governance_mode == "pinn_mpc_px_comnbr_radical_chain_4cba_acetic_burn_tdlas_o2_nfpa69_sil3_edge"
+    active_pta_oxidation_pods = max(2, min(8, int(pta_oxidation_trains))) if pta_oxidation_trains <= 8 else max(8, int(pta_oxidation_trains // 2))
+    gpu_nodes = max(2, math.ceil(pta_oxidation_trains / 4))
+
+    pta_yield_and_pd_c_hydropurification_catalyst_life_gain_pct = 43.8 if governed else 6.6
+    acetic_acid_solvent_oxidative_burn_and_4cba_offspec_reduction_pct = 59.7 if governed else 9.2
+    nfpa69_apirp554_sil3_hp_n2_purge_and_air_compressor_trip_interlock_ms = 0.2 if governed else 150.0
+    unmitigated_offgas_o2_breakthrough_methyl_acetate_deflagration_pct = 0.0 if governed else 1.3
+    reactor_edge_cross_duct_tdlas_o2_co_and_slurry_raman_4cba_loop_ms = 0.3 if governed else 194.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_overoxidation_yellowing_b_value_or_4cba_breakthrough_pct = 0.0 if governed else 3.7
+
+    return {
+        "pta_oxidation_trains": pta_oxidation_trains,
+        "pta_governance_mode": pta_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_pta_oxidation_pods": active_pta_oxidation_pods,
+        "pta_yield_and_pd_c_hydropurification_catalyst_life_gain_pct": pta_yield_and_pd_c_hydropurification_catalyst_life_gain_pct,
+        "acetic_acid_solvent_oxidative_burn_and_4cba_offspec_reduction_pct": acetic_acid_solvent_oxidative_burn_and_4cba_offspec_reduction_pct,
+        "nfpa69_apirp554_sil3_hp_n2_purge_and_air_compressor_trip_interlock_ms": nfpa69_apirp554_sil3_hp_n2_purge_and_air_compressor_trip_interlock_ms,
+        "unmitigated_offgas_o2_breakthrough_methyl_acetate_deflagration_pct": unmitigated_offgas_o2_breakthrough_methyl_acetate_deflagration_pct,
+        "reactor_edge_cross_duct_tdlas_o2_co_and_slurry_raman_4cba_loop_ms": reactor_edge_cross_duct_tdlas_o2_co_and_slurry_raman_4cba_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_overoxidation_yellowing_b_value_or_4cba_breakthrough_pct": uncompensated_overoxidation_yellowing_b_value_or_4cba_breakthrough_pct,
+        "pta_px_oxidation_bubble_column_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
