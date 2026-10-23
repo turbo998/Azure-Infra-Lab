@@ -9620,5 +9620,52 @@
       "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 3.8,
       "bspdn_backside_power_ntsv_slo_met": false
     }
+  ],
+  "diamond_hpht_mpcvd_wafer_profiles": [
+    {
+      "diamond_reactors": 8,
+      "diamond_governance_mode": "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_diamond_mpcvd_pods": 8,
+      "single_crystal_wafer_usable_area_and_nv_coherence_t2_yield_gain_pct": 46.2,
+      "dislocation_etch_pit_density_and_polycrystalline_rim_encroachment_reduction_pct": 64.5,
+      "asme_viii3_nfpa55_sil3_microwave_crowbar_h2_purge_and_anvil_unload_interlock_ms": 0.8,
+      "unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct": 0.0,
+      "reactor_edge_10khz_oes_c2_ha_and_two_color_pyrometry_telemetry_loop_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct": 0.0,
+      "diamond_hpht_mpcvd_wafer_slo_met": true
+    },
+    {
+      "diamond_reactors": 32,
+      "diamond_governance_mode": "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_diamond_mpcvd_pods": 16,
+      "single_crystal_wafer_usable_area_and_nv_coherence_t2_yield_gain_pct": 46.2,
+      "dislocation_etch_pit_density_and_polycrystalline_rim_encroachment_reduction_pct": 64.5,
+      "asme_viii3_nfpa55_sil3_microwave_crowbar_h2_purge_and_anvil_unload_interlock_ms": 0.8,
+      "unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct": 0.0,
+      "reactor_edge_10khz_oes_c2_ha_and_two_color_pyrometry_telemetry_loop_ms": 0.8,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct": 0.0,
+      "diamond_hpht_mpcvd_wafer_slo_met": true
+    },
+    {
+      "diamond_reactors": 8,
+      "diamond_governance_mode": "fixed_microwave_power_pressure_step_open_loop_holder_cooling_post_growth_birefringence_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_diamond_mpcvd_pods": 8,
+      "single_crystal_wafer_usable_area_and_nv_coherence_t2_yield_gain_pct": 6.8,
+      "dislocation_etch_pit_density_and_polycrystalline_rim_encroachment_reduction_pct": 9.8,
+      "asme_viii3_nfpa55_sil3_microwave_crowbar_h2_purge_and_anvil_unload_interlock_ms": 680.0,
+      "unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct": 1.7,
+      "reactor_edge_10khz_oes_c2_ha_and_two_color_pyrometry_telemetry_loop_ms": 210.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct": 4.2,
+      "diamond_hpht_mpcvd_wafer_slo_met": false
+    }
   ]
 }

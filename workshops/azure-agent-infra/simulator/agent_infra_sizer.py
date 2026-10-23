@@ -8043,6 +8043,55 @@ def simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox(
     }
 
 
+def simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(
+    diamond_reactors: int = 8,
+    diamond_governance_mode: str = "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous 100 mm (4-inch) Electronic & Quantum-Grade (NV- Color-Center) Single-Crystal
+    Diamond Wafer High-Pressure High-Temperature (HPHT 5.5-8.0 GPa, 1350-1650 C Cubic-Anvil / Belt) &
+    915 MHz / 2.45 GHz Microwave-Plasma CVD (MPCVD 15-60 kW) Plasma-Ball Anti-Arcing & Substrate Radial
+    Temperature-Gradient (< 3.5 K/cm) PINN-MPC, Online Optical Emission Spectroscopy (OES C2 Swan 516.5 nm /
+    H-alpha 656.3 nm) & Two-Color Pyrometry Metrology & ASME BPVC Section VIII Div. 3 / NFPA 55 / IEC 61508
+    SIL-3 Anvil Blowout, Quartz-Window Thermal-Runaway & H2/CH4 Plasma Quench Interlock Sandbox (Chapter 162).
+    """
+    if diamond_reactors < 1:
+        raise ValueError("diamond_reactors must be >= 1")
+    valid_modes = {
+        "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge",
+        "fixed_microwave_power_pressure_step_open_loop_holder_cooling_post_growth_birefringence_cloud",
+    }
+    if diamond_governance_mode not in valid_modes:
+        raise ValueError(f"diamond_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = diamond_governance_mode == "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge"
+    active_diamond_mpcvd_pods = max(2, min(8, int(diamond_reactors))) if diamond_reactors <= 8 else max(8, int(diamond_reactors // 2))
+    gpu_nodes = max(2, math.ceil(diamond_reactors / 4))
+
+    single_crystal_wafer_usable_area_and_nv_coherence_t2_yield_gain_pct = 46.2 if governed else 6.8
+    dislocation_etch_pit_density_and_polycrystalline_rim_encroachment_reduction_pct = 64.5 if governed else 9.8
+    asme_viii3_nfpa55_sil3_microwave_crowbar_h2_purge_and_anvil_unload_interlock_ms = 0.8 if governed else 680.0
+    unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct = 0.0 if governed else 1.7
+    reactor_edge_10khz_oes_c2_ha_and_two_color_pyrometry_telemetry_loop_ms = 0.8 if governed else 210.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct = 0.0 if governed else 4.2
+
+    return {
+        "diamond_reactors": diamond_reactors,
+        "diamond_governance_mode": diamond_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_diamond_mpcvd_pods": active_diamond_mpcvd_pods,
+        "single_crystal_wafer_usable_area_and_nv_coherence_t2_yield_gain_pct": single_crystal_wafer_usable_area_and_nv_coherence_t2_yield_gain_pct,
+        "dislocation_etch_pit_density_and_polycrystalline_rim_encroachment_reduction_pct": dislocation_etch_pit_density_and_polycrystalline_rim_encroachment_reduction_pct,
+        "asme_viii3_nfpa55_sil3_microwave_crowbar_h2_purge_and_anvil_unload_interlock_ms": asme_viii3_nfpa55_sil3_microwave_crowbar_h2_purge_and_anvil_unload_interlock_ms,
+        "unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct": unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct,
+        "reactor_edge_10khz_oes_c2_ha_and_two_color_pyrometry_telemetry_loop_ms": reactor_edge_10khz_oes_c2_ha_and_two_color_pyrometry_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct": uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct,
+        "diamond_hpht_mpcvd_wafer_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

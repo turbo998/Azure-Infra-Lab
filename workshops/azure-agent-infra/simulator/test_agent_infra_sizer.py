@@ -163,6 +163,7 @@ from agent_infra_sizer import (
     simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox,
     simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
+    simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3274,6 +3275,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct"], 3.0)
         self.assertTrue(gov["bspdn_backside_power_ntsv_slo_met"])
         self.assertFalse(raw["bspdn_backside_power_ntsv_slo_met"])
+
+    def test_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(self) -> None:
+        gov = simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(
+            8, "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge"
+        )
+        raw = simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(
+            8, "fixed_microwave_power_pressure_step_open_loop_holder_cooling_post_growth_birefringence_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_diamond_mpcvd_pods"], 8)
+        self.assertEqual(gov["single_crystal_wafer_usable_area_and_nv_coherence_t2_yield_gain_pct"], 46.2)
+        self.assertEqual(gov["dislocation_etch_pit_density_and_polycrystalline_rim_encroachment_reduction_pct"], 64.5)
+        self.assertEqual(gov["asme_viii3_nfpa55_sil3_microwave_crowbar_h2_purge_and_anvil_unload_interlock_ms"], 0.8)
+        self.assertEqual(gov["unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_quartz_window_arc_crack_anvil_blowout_or_h2_leak_pct"], 1.0)
+        self.assertEqual(gov["reactor_edge_10khz_oes_c2_ha_and_two_color_pyrometry_telemetry_loop_ms"], 0.8)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_plasma_ball_constriction_twinning_or_soot_inclusion_pct"], 3.0)
+        self.assertTrue(gov["diamond_hpht_mpcvd_wafer_slo_met"])
+        self.assertFalse(raw["diamond_hpht_mpcvd_wafer_slo_met"])
 
 
 if __name__ == "__main__":

@@ -169,6 +169,7 @@ from agent_infra_sizer import (
     simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox,
     simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
     simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
+    simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1342,6 +1343,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox(8, "fixed_time_backgrind_uniform_cmp_zone_pressure_offline_ir_ttv_sampling_cloud"),
     ]
 
+    diamond_hpht_mpcvd_wafer_profiles: List[Dict[str, object]] = [
+        simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(8, "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge"),
+        simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(32, "pinn_mpc_mpcvd_helmholtz_plasma_ball_hpht_thermal_gradient_oes_asme_viii3_sil3_edge"),
+        simulate_diamond_hpht_mpcvd_wafer_oes_asme_sil3_sandbox(8, "fixed_microwave_power_pressure_step_open_loop_holder_cooling_post_growth_birefringence_cloud"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1498,6 +1505,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hvdc_subsea_xlpe_vcv_profiles": hvdc_subsea_xlpe_vcv_profiles,
         "cpo_silicon_photonics_pic_profiles": cpo_silicon_photonics_pic_profiles,
         "bspdn_backside_power_ntsv_profiles": bspdn_backside_power_ntsv_profiles,
+        "diamond_hpht_mpcvd_wafer_profiles": diamond_hpht_mpcvd_wafer_profiles,
     }
 
 
