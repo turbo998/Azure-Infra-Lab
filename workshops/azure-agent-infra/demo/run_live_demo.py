@@ -181,6 +181,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
     simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
+    simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1217,6 +1218,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "mcz_16_furnaces": simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(16, "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge"),
             "mcz_64_furnaces": simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(64, "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge"),
             "raw_mcz_16_furnaces": simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(16, "raw_cloud_pid_manual_seed_lift_and_optical_diameter_only"),
+        },
+        "demo_162_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox": {
+            "ibf_mrf_12_cells": simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(12, "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge"),
+            "ibf_mrf_48_cells": simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(48, "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge"),
+            "raw_ibf_mrf_12_cells": simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(12, "raw_cloud_open_loop_constant_tif_dwell_and_offline_interferometry"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

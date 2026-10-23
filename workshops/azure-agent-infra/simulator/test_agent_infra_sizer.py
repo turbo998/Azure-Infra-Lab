@@ -168,6 +168,7 @@ from agent_infra_sizer import (
     simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
     simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
     simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
+    simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3384,6 +3385,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_voronkov_cop_vacancy_ring_or_dash_neck_dislocation_slip_pct"], 3.0)
         self.assertTrue(gov["mcz_silicon_ingot_voronkov_slo_met"])
         self.assertFalse(raw["mcz_silicon_ingot_voronkov_slo_met"])
+
+    def test_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(
+            12, "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge"
+        )
+        raw = simulate_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox(
+            12, "raw_cloud_open_loop_constant_tif_dwell_and_offline_interferometry"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ibf_mrf_pods"], 8)
+        self.assertEqual(gov["subnm_figure_convergence_and_polishing_cycle_gain_pct"], 43.2)
+        self.assertEqual(gov["mid_spatial_frequency_msf_psd_ripple_and_edge_rolloff_reduction_pct"], 68.5)
+        self.assertEqual(gov["semis2_iso10110_sil3_ion_arc_suppression_and_whiffletree_mount_interlock_ms"], 0.5)
+        self.assertEqual(gov["unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct"], 1.0)
+        self.assertEqual(gov["chamber_edge_10khz_rf_ion_grid_and_fizeau_cgh_zernike_telemetry_loop_ms"], 0.4)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct"], 3.0)
+        self.assertTrue(gov["ibf_mrf_subnm_aspheric_mirror_slo_met"])
+        self.assertFalse(raw["ibf_mrf_subnm_aspheric_mirror_slo_met"])
 
 
 if __name__ == "__main__":

@@ -574,6 +574,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(159)">160. 150/200mm 薄膜铌酸锂 (TFLN / LNOI 300–600nm X-Cut LiNbO3-on-Insulator 1.6T/3.2T 电光马赫-曾德尔调制器 VπL &lt; 1.8 V·cm, &gt; 110 GHz) 氦离子注入智能剥离 (He⁺ Smart-Cut 零起泡裂片)、氩/氟离子束刻蚀 (Ar/CHF3 IBE 60°–75° 脊波导侧壁无重沉积围栏) 与周期极化反转 (PPLN 铁电畴占空比 50.0 ± 0.3%) PINN-MPC、在线 50kHz 切伦科夫倍频显微 (Cherenkov SHG)/光谱椭偏仪计量及 SEMI S2 / S8 / IEC 61508 SIL-3 PPLN 高压极化击穿撬棒与离子注入联锁池 (Bicep · 160 蓝图里程碑)</button>
       <button class="tab-btn" onclick="showBlueprint(160)">161. 零蒸发 (ZBO) 深冷液氢 (LH2 20.28 K, -252.87°C, 40,000–160,000 m³ 真空珠光砂/多层绝热球罐与液氢运输船装卸终端)、正仲氢催化转化 (o-H2 → p-H2 ≥ 99.8% 放热 ΔH = -703 kJ/kg 水合氧化铁固定床)、两相预冷间歇泉喷发 (Geysering)/凝结水击 (CIWH) 与热分层翻滚 (Rollover) 抑制 PINN-MPC、在线 10kHz 转动拉曼光谱 (354/587 cm⁻¹)/深冷光纤光栅 (FBG) 计量及 NFPA 2 / CGA H-3 / ISO 19884 / SIGTTO / IEC 61511 SIL-3 真空夹层破空 (LOV) 固态氧冷凝防爆、氦气吹扫与快速应急脱离 (ERS) 硬联锁池 (Bicep · 160 周期与 160 仿真器里程碑)</button>
       <button class="tab-btn" onclick="showBlueprint(161)">162. 300mm 半导体单晶硅磁场直拉法 (MCZ 0.3–0.4 T 超导水平/勾形磁场, 1,420°C 石英坩埚熔体) 与连续直拉 (CCZ) 单晶炉、Voronkov 点缺陷判据 (v/G0 = 1.34×10⁻³ cm²/min·K 零 COP 空洞/零位错环中性区)、洛伦兹磁流体 (MHD) 熔体对流与间隙氧 [Oi] (8–14 ppma) 条纹抑制 PINN-MPC、在线 5kHz 弯月面亮环 (Meniscus Bright-Ring) 激光三角直径/Dash 细颈无位错成像与双色高温计计量及 SEMI S2 / SEMI M1 / NFPA 86 / ASME BPVC / IEC 61511 SIL-3 石英坩埚漏硅水冷炉体蒸汽爆炸防护、籽晶钢索超载防坠抓捕与超导磁体失超硬联锁池 (Bicep · 170 单测里程碑)</button>
+      <button class="tab-btn" onclick="showBlueprint(162)">163. 亚纳米级 (&lt; 0.10 nm RMS 面形误差) 非球面/自由曲面超低膨胀光学反射镜 (ULE / Zerodur 400–800mm 极紫外光刻物镜与空间望远镜主镜) 五轴离子束修形 (IBF 500–1,500 eV Ar⁺ 考夫曼/射频离子源) 与磁流变抛光 (MRF 宾汉塑性羟基铁粉/氧化铈柔性缎带)、Tikhonov 正则化 Richardson-Lucy 非负驻留时间矩阵反卷积与去除函数 (TIF) 热足迹漂移补偿 PINN-MPC、在线移相斐索计算全息 (CGH) 零位激光干涉仪 (37 项 Zernike 波前与中频误差 MSF 功率谱密度 PSD) 计量及 SEMI S2 / ISO 10110 / ANSI Z136.1 / IEC 61511 SIL-3 离子源屏栅高压打火蚀坑抑制、零重力 Whiffletree 镜室支撑过载与高真空联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4261,6 +4262,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 162: Sub-Nanometer IBF & MRF Aspheric Optical Mirror PINN-MPC & SEMI S2 / ISO 10110 SIL-3 Simulator -->
+  <section class="card" style="margin-top:1.25rem;border-color:rgba(16,185,129,0.45);">
+    <span class="pill pill-teal">TOOL 162 · SUB-NANOMETER IBF &amp; MRF ASPHERIC/FREEFORM OPTICAL MIRROR POLISHING, TIKHONOV-RICHARDSON-LUCY DWELL-TIME DECONVOLUTION &amp; FIZEAU CGH NULL INTERFEROMETRY SIMULATOR</span>
+    <h2>亚纳米级 (&lt; 0.10 nm RMS) 非球面/自由曲面光学反射镜五轴离子束修形 (IBF) 与磁流变抛光 (MRF)、Tikhonov-Richardson-Lucy 驻留时间矩阵反卷积与去除函数 (TIF) 热漂移 PINN-MPC、在线移相斐索计算全息 (CGH) 零位激光干涉仪 (37 项 Zernike + 中频 MSF PSD) 及 SEMI S2 / ISO 10110 / SIL-3 高压离子源防拉弧与 Whiffletree 支撑联锁测算器 (Sub-nm IBF/MRF Optical Mirror Twins)</h2>
+    <div class="sub">量化在 <code>2 – 48</code> 座亚纳米级非球面/自由曲面超低膨胀光学反射镜（<code>ULE / Zerodur, Ø 400–800 mm</code> 极紫外 <code>EUV High-NA</code> 投影物镜与天基望远镜主镜）五轴离子束修形（<code>IBF, 500–1,500 eV Ar⁺</code> 考夫曼/射频三栅极聚焦离子源）与磁流变抛光（<code>MRF</code> 宾汉塑性羟基铁粉/纳米氧化铈磁致流变缎带）高真空精抛单元规模下，启用 <code>Standard_NV36ads_A10_v5</code> <strong>Fredholm 第一类病态积分方程 $z(x,y) = \iint R(x-\xi, y-\eta)\, t(\xi,\eta)\,d\xi d\eta$ 的 Tikhonov 正则化阻尼 Richardson-Lucy 非负驻留时间矩阵反卷积、Sigmund 原子级物理溅射去除函数（<code>TIF</code> 高斯束斑随曲面局部入射角 $\theta$ 及镜体累积温升 $\Delta T$ 的非平稳展宽漂移）与五轴 B-样条轨迹加减速跃度（<code>Jerk</code>）约束</strong> <code>PINN</code> + 栅极束流调制、磁流变轮转速/励磁电流、边缘防塌边（<code>Edge Roll-Off</code>）补偿路径与双频驻留步距协同 <code>MPC</code>（锁定全口径面形误差 <code>&lt; 0.10 nm RMS</code>、中空间频率 <code>MSF 1–10 mm⁻¹</code> 纹波 <code>&lt; 0.08 nm RMS</code>，亚纳米面形收敛速度与单镜精抛周期效率提升 <code>+43.2%</code>，中频工具刀纹 <code>MSF PSD</code> 峰值与边缘塌边量削减 <code>-68.5%</code>）、<code>SEMI S2 / ISO 10110 / ANSI Z136.1 / IEC 61511 SIL-3</code> 检出离子源加速栅/屏栅钼网高压打火拉弧（<code>&gt; 1,200 V</code> 瞬态放电将在价值数百万美元的超光滑反射镜表面轰击出微米级不可逆重金属溅射蚀坑）、电子中和器（<code> Hollow-Cathode Neutralizer</code>）熄弧导致绝缘微晶玻璃表面正电荷累积击穿或 36 点零重力 <code>Whiffletree</code> 液压/压电镜体支撑单元局部顶力超限（<code>&gt; 1.5 N</code> 诱发寄生像散或薄镜脆性崩裂）时，瞬时触发纳秒级固态高压开关消弧关断、快速机械法拉第杯遮挡快门（<code>Fast Beam-Dump Shutter</code>）切入束路并卸载 <code>Whiffletree</code> 压电致动器至等压安全浮动位硬联锁（<code>0.5 ms</code> 响应，<code>0.0%</code> 离子束高压打火炸坑、表面静电荷热震碎裂或镜体支撑过载事故，对比传统开环驻留时间查表反模式 <code>1.5%</code> 风险）以及真空舱边缘 <code>10 kHz</code> 射频离子源屏栅/加速栅电流比、空心阴极中和电势传感与原位波长移相斐索计算全息（<code>Phase-Shifting Fizeau CGH</code>）零位激光干涉仪 37 项 <code>Zernike</code> 多项式与二维径向功率谱密度（<code>2D PSD</code>）边缘重构（<code>0.4 ms</code>，削减 <code>99.7%</code> 光学精抛车间 WAN 带宽，避免 <code>4.2%</code> 温升引起 <code>TIF</code> 去除率漂移过抛或 <code>CGH</code> 对准五自由度寄生彗差/像散误导反卷积返工）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 五轴离子束修形 (IBF) 与磁流变抛光 (MRF) 光学超精密加工舱台数 (IBF/MRF Sub-nm Polishing Cells): <strong id="lbl_ibf_cells" style="color:var(--teal)">12</strong></label>
+          <input type="range" id="rng_ibf_cells" min="2" max="48" step="2" value="12" oninput="runIbfMrfOpticsLab()">
+        </div>
+        <div class="form-row">
+          <label>2. Tikhonov-Richardson-Lucy 驻留时间反卷积/TIF 热漂移 PINN-MPC 与 SEMI S2 / ISO 10110 SIL-3 防打火及支撑联锁模式 (IBF/MRF Governance Mode)</label>
+          <select id="sel_ibf_mode" onchange="runIbfMrfOpticsLab()">
+            <option value="pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge" selected>Tikhonov 正则化 Richardson-Lucy 非负驻留时间反卷积、Sigmund 溅射 TIF 热足迹与五轴跃度约束 PINN-MPC (+43.2% 亚纳米面形收敛速度 / -68.5% 中频 MSF 纹波与塌边) + SEMI S2 / ISO 10110 SIL-3 0.5ms 栅极防拉弧快门遮断与 Whiffletree 支撑保护硬联锁 + 0.4ms 10kHz 栅极电流与斐索 CGH Zernike 干涉边缘 (推荐)</option>
+            <option value="raw_cloud_open_loop_constant_tif_dwell_and_offline_interferometry">传统反模式：恒定高斯去除函数 (TIF) 截断奇异值分解 (TSVD) 开环驻留表与下机离线干涉测量 (+6.4% 收敛增益) + 无 0.5ms 栅极消弧快门与中和器断弧联锁 (1.5% 离子枪屏栅高压打火或表面电荷累积击穿在反射镜面留下永久微坑报废风险) + 缺乏在线 10kHz 束流热漂移与原位 CGH 零位干涉校准 (4.2% TIF 热展宽过抛或 CGH 偏心引入寄生像散导致百小时修形发散返工)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="ibfMrfOpticsOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6901,6 +6925,24 @@ resource mczSiliconPullerPool 'Microsoft.ContainerService/managedClusters/agentP
       'aksclaw.io/puller-edge-5khz-meniscus-brightring-pyrometry': 'enabled-0.5ms-99.6pct-crystal-shop-wan-cut'
     }
   }
+}`,
+  `// 163. Sub-Nanometer (< 0.10 nm RMS) Aspheric/Freeform Optical Mirror 5-Axis Ion-Beam Figuring (IBF) & Magnetorheological Finishing (MRF), Tikhonov-Richardson-Lucy Dwell-Time Deconvolution & TIF Thermal Drift PINN-MPC, Online Phase-Shifting Fizeau CGH Null Interferometry (37-Term Zernike + MSF PSD) & SEMI S2 / ISO 10110 / ANSI Z136.1 / IEC 61511 SIL-3 Ion-Source Arc Suppression & Whiffletree Mount Pool
+param aksClusterName string = 'aks-ibf-mrf-subnm-optics-sil3'
+param location string = resourceGroup().location
+
+resource ibfMrfOpticsPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'ibfmrfsil3'
+  properties: {
+    count: 2 // Standard_NV36ads_A10_v5 (Tikhonov-Richardson-Lucy Dwell-Time Deconvolution, Sigmund TIF Thermal Drift PINN-MPC + Online 10 kHz RF Grid & Fizeau CGH Zernike Wavefront Edge)
+    vmSize: 'Standard_NV36ads_A10_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'ibf-mrf-subnm-aspheric-mirror-zernike-fizeau-semis2-sil3-agent'
+      'aksclaw.io/pinn-mpc-tikhonov-richardson-lucy-dwell-tif': 'enabled-43.2pct-figure-convergence-gain-68.5pct-msf-ripple-cut'
+      'aksclaw.io/semis2-iso10110-sil3-ion-arc-whiffletree-guard': 'enforced-0.5ms-zero-ion-arc-pit-charge-breakdown-or-mount-overload'
+      'aksclaw.io/chamber-edge-10khz-rf-grid-fizeau-cgh-zernike': 'enabled-0.4ms-99.7pct-optics-shop-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -7163,6 +7205,30 @@ runFloatingWindH2HvdcUmbilicalLab();
 runTflnLnoiModulatorLab();
 runLh2CryoZboLab();
 runMczSiliconLab();
+runIbfMrfOpticsLab();
+
+function runIbfMrfOpticsLab() {
+  const cells = parseInt(document.getElementById('rng_ibf_cells').value, 10);
+  const mode = document.getElementById('sel_ibf_mode').value;
+  document.getElementById('lbl_ibf_cells').textContent = cells.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(cells / 6));
+  const pods = cells <= 8 ? Math.max(2, Math.min(8, cells)) : Math.max(8, Math.floor(cells / 2));
+  const ok = mode === 'pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge';
+  const mpcStr = ok ? "Fredholm 第一类卷积方程 Tikhonov 正则化阻尼 Richardson-Lucy 非负驻留时间矩阵反卷积、Sigmund 离子溅射去除函数 (TIF 随局部曲面斜率与镜体热积累非平稳漂移) 与五轴机械臂跃度 (Jerk) 约束 PINN + 栅极束流调制、MRF 磁流变缎带压深与防塌边轨迹协同 MPC · 亚纳米 (<0.10 nm RMS) 面形收敛速率与单镜抛光周期效率 +43.2% · 中空间频率 (MSF 1–10 mm⁻¹) 功率谱密度纹波与边缘塌边 -68.5%" : "传统靠恒定高斯 TIF 假设开环驻留时间矩阵与离线干涉下机抽检滞后 · 仅 +6.4% 收敛增益 / -9.3% 纹波削减 (高曲率非球面入射角变化与镜体真空温升引发 TIF 体积去除率漂移，造成高达 4.2% 驻留时间过冲振铃纹波或 CGH 偏心对准寄生像散返工)";
+  const sil3Str = ok ? "0.5 ms SEMI S2 / ISO 10110 / ANSI Z136.1 / IEC 61511 SIL-3 检出考夫曼/射频离子源三栅极钼网高压打火前兆 (>1,200V dv/dt 突变)、空心阴极电子中和器熄弧 (防 ULE/Zerodur 绝缘镜面正电荷积累放电炸坑) 或 36 点零重力 Whiffletree 支撑致动器局部应力超限 (>1.5 N) 时瞬时触发固态高压撬棒消弧、快速法拉第杯机械遮断快门 (Beam-Dump Shutter) 切入并锁定 Whiffletree 等压安全浮动硬联锁 · 0.0% 离子束打火微坑、静电击穿或镜体崩边违例" : "无 0.5ms 栅极消弧快门与中和器断弧硬联锁 (415.0 ms 传统 PLC 联锁滞后) · 1.5% 离子枪高压栅网打火溅射钼颗粒或绝缘镜面电荷击穿在接近完工的亚纳米反射镜面留下致命微米级凹坑风险";
+  const edgeStr = ok ? "0.4 ms 真空舱边缘 10 kHz 射频离子源屏栅/加速栅束流比 + 原位波长移相斐索计算全息 (Phase-Shifting Fizeau CGH) 零位激光干涉仪 37 项 Zernike 波前与二维 PSD 频谱重构边缘 (-99.7% 光学车间 WAN 带宽) · 0.0% TIF 热足迹漂移过抛或 CGH 五自由度位姿寄生像差漏检" : "215.0 ms 依赖破坏真空出舱搬运至离线干涉仪检测 · 每次破真空与重装卡引入数纳米重力/热弛豫装夹误差，无法在连续数十小时离子束扫描中闭环修正去除函数漂移";
+
+  document.getElementById('ibfMrfOpticsOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 离子源高压栅极打火蚀坑或镜面电荷击穿报废风险 · 4.2% TIF 热漂移过抛振铃纹波或 CGH 寄生像差误导返工漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NV36ads_A10_v5 节点 (${pods} 个亚纳米光学修形孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>10kHz 离子源三栅极束流监测与原位斐索计算全息 (Fizeau CGH) 37 项 Zernike 波前边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runMczSiliconLab() {
   const furnaces = parseInt(document.getElementById('rng_mcz_furnaces').value, 10);

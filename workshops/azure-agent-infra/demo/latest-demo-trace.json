@@ -10057,6 +10057,53 @@
         "uncompensated_voronkov_cop_vacancy_ring_or_dash_neck_dislocation_slip_pct": 4.3,
         "mcz_silicon_ingot_voronkov_slo_met": false
       }
+    ],
+    "ibf_mrf_subnm_aspheric_mirror_profiles": [
+      {
+        "ibf_mrf_polishing_cells": 12,
+        "optics_governance_mode": "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ibf_mrf_pods": 8,
+        "subnm_figure_convergence_and_polishing_cycle_gain_pct": 43.2,
+        "mid_spatial_frequency_msf_psd_ripple_and_edge_rolloff_reduction_pct": 68.5,
+        "semis2_iso10110_sil3_ion_arc_suppression_and_whiffletree_mount_interlock_ms": 0.5,
+        "unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct": 0.0,
+        "chamber_edge_10khz_rf_ion_grid_and_fizeau_cgh_zernike_telemetry_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct": 0.0,
+        "ibf_mrf_subnm_aspheric_mirror_slo_met": true
+      },
+      {
+        "ibf_mrf_polishing_cells": 48,
+        "optics_governance_mode": "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ibf_mrf_pods": 24,
+        "subnm_figure_convergence_and_polishing_cycle_gain_pct": 43.2,
+        "mid_spatial_frequency_msf_psd_ripple_and_edge_rolloff_reduction_pct": 68.5,
+        "semis2_iso10110_sil3_ion_arc_suppression_and_whiffletree_mount_interlock_ms": 0.5,
+        "unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct": 0.0,
+        "chamber_edge_10khz_rf_ion_grid_and_fizeau_cgh_zernike_telemetry_loop_ms": 0.4,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct": 0.0,
+        "ibf_mrf_subnm_aspheric_mirror_slo_met": true
+      },
+      {
+        "ibf_mrf_polishing_cells": 12,
+        "optics_governance_mode": "raw_cloud_open_loop_constant_tif_dwell_and_offline_interferometry",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ibf_mrf_pods": 8,
+        "subnm_figure_convergence_and_polishing_cycle_gain_pct": 6.4,
+        "mid_spatial_frequency_msf_psd_ripple_and_edge_rolloff_reduction_pct": 9.3,
+        "semis2_iso10110_sil3_ion_arc_suppression_and_whiffletree_mount_interlock_ms": 415.0,
+        "unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct": 1.5,
+        "chamber_edge_10khz_rf_ion_grid_and_fizeau_cgh_zernike_telemetry_loop_ms": 215.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct": 4.2,
+        "ibf_mrf_subnm_aspheric_mirror_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -18488,5 +18535,52 @@
       "mcz_silicon_ingot_voronkov_slo_met": false
     }
   },
-  "trace_sha256": "727275ddda2d4f5df4761812d424ba6f35933daa3ac968b9a9ad949944e0eb3b"
+  "demo_162_ibf_mrf_subnm_aspheric_mirror_zernike_fizeau_semis2_sil3_sandbox": {
+    "ibf_mrf_12_cells": {
+      "ibf_mrf_polishing_cells": 12,
+      "optics_governance_mode": "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ibf_mrf_pods": 8,
+      "subnm_figure_convergence_and_polishing_cycle_gain_pct": 43.2,
+      "mid_spatial_frequency_msf_psd_ripple_and_edge_rolloff_reduction_pct": 68.5,
+      "semis2_iso10110_sil3_ion_arc_suppression_and_whiffletree_mount_interlock_ms": 0.5,
+      "unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct": 0.0,
+      "chamber_edge_10khz_rf_ion_grid_and_fizeau_cgh_zernike_telemetry_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct": 0.0,
+      "ibf_mrf_subnm_aspheric_mirror_slo_met": true
+    },
+    "ibf_mrf_48_cells": {
+      "ibf_mrf_polishing_cells": 48,
+      "optics_governance_mode": "pinn_mpc_tikhonov_richardson_lucy_dwell_tif_fizeau_cgh_zernike_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ibf_mrf_pods": 24,
+      "subnm_figure_convergence_and_polishing_cycle_gain_pct": 43.2,
+      "mid_spatial_frequency_msf_psd_ripple_and_edge_rolloff_reduction_pct": 68.5,
+      "semis2_iso10110_sil3_ion_arc_suppression_and_whiffletree_mount_interlock_ms": 0.5,
+      "unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct": 0.0,
+      "chamber_edge_10khz_rf_ion_grid_and_fizeau_cgh_zernike_telemetry_loop_ms": 0.4,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct": 0.0,
+      "ibf_mrf_subnm_aspheric_mirror_slo_met": true
+    },
+    "raw_ibf_mrf_12_cells": {
+      "ibf_mrf_polishing_cells": 12,
+      "optics_governance_mode": "raw_cloud_open_loop_constant_tif_dwell_and_offline_interferometry",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ibf_mrf_pods": 8,
+      "subnm_figure_convergence_and_polishing_cycle_gain_pct": 6.4,
+      "mid_spatial_frequency_msf_psd_ripple_and_edge_rolloff_reduction_pct": 9.3,
+      "semis2_iso10110_sil3_ion_arc_suppression_and_whiffletree_mount_interlock_ms": 415.0,
+      "unmitigated_ion_beam_arc_pit_thermal_fracture_or_mount_overload_pct": 1.5,
+      "chamber_edge_10khz_rf_ion_grid_and_fizeau_cgh_zernike_telemetry_loop_ms": 215.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_tif_thermal_footprint_drift_or_cgh_alignment_aberration_pct": 4.2,
+      "ibf_mrf_subnm_aspheric_mirror_slo_met": false
+    }
+  },
+  "trace_sha256": "beb734bfd52b584eb4a01001f7a5d927970105898d03d582eb684bc918c6631d"
 }
