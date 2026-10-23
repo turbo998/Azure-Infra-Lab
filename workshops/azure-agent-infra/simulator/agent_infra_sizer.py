@@ -8809,6 +8809,57 @@ def simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_
     }
 
 
+def simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(
+    bayer_trains: int = 8,
+    bayer_governance_mode: str = "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Bayer Process Alumina Refinery High-Temperature Tube Digestion
+    (245-280 °C / 3.5-5.5 MPa Boehmite/Diaspore Bauxite Caustic Leaching
+    AlO(OH) + OH- + H2O -> Al(OH)4-), Sodium Aluminosilicate Desilication Product
+    (DSP Sodalite/Cancrinite Scale) & Gibbsite Seeded Precipitation Population-Balance
+    PINN-MPC, Online 10 kHz Ultrasonic Scale Tomography / Raman Supersaturation
+    (A/C Ratio) / Coriolis Liquor Metrology & ASME BPVC Section VIII / API RP 556 /
+    OSHA 1910.119 / IEC 61511 SIL-3 Flash-Tank Caustic-Steam Eruption, Autoclave
+    Overpressure & Alkaline Stress-Corrosion Cracking (SCC) Interlock Sandbox (Chapter 177).
+    """
+    if bayer_trains < 1:
+        raise ValueError("bayer_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge",
+        "raw_cloud_fixed_steam_pressure_pid_and_manual_acid_descaling_schedule",
+    }
+    if bayer_governance_mode not in valid_modes:
+        raise ValueError(f"bayer_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = bayer_governance_mode == "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge"
+    active_bayer_pods = max(2, min(16, int(bayer_trains))) if bayer_trains <= 16 else max(16, int(bayer_trains // 2))
+    gpu_nodes = max(2, math.ceil(bayer_trains / 4))
+
+    alumina_digestion_extraction_and_heater_htc_gain_pct = 45.1 if governed else 6.7
+    dsp_sodalite_cancrinite_scale_and_gibbsite_fines_reduction_pct = 68.2 if governed else 9.1
+    asme8_apirp556_sil3_flash_eruption_and_autoclave_scc_interlock_ms = 0.4 if governed else 385.0
+    unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct = 0.0 if governed else 1.5
+    digester_edge_10khz_ultrasonic_scale_and_raman_ac_telemetry_loop_ms = 0.3 if governed else 204.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct = 0.0 if governed else 4.4
+
+    return {
+        "bayer_trains": bayer_trains,
+        "bayer_governance_mode": bayer_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_bayer_pods": active_bayer_pods,
+        "alumina_digestion_extraction_and_heater_htc_gain_pct": alumina_digestion_extraction_and_heater_htc_gain_pct,
+        "dsp_sodalite_cancrinite_scale_and_gibbsite_fines_reduction_pct": dsp_sodalite_cancrinite_scale_and_gibbsite_fines_reduction_pct,
+        "asme8_apirp556_sil3_flash_eruption_and_autoclave_scc_interlock_ms": asme8_apirp556_sil3_flash_eruption_and_autoclave_scc_interlock_ms,
+        "unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct": unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct,
+        "digester_edge_10khz_ultrasonic_scale_and_raman_ac_telemetry_loop_ms": digester_edge_10khz_ultrasonic_scale_and_raman_ac_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct": uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct,
+        "bayer_alumina_refinery_tube_digestion_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

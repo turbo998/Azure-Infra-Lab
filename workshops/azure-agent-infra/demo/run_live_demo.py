@@ -191,6 +191,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
     simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
     simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox,
+    simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1277,6 +1278,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "sru_8_trains": simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(8, "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge"),
             "sru_32_trains": simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(32, "pinn_mpc_claus_air_demand_stoichiometry_btex_cos_cs2_hydrolysis_uvdoas_nfpa85_sil3_edge"),
             "raw_sru_8_trains": simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(8, "raw_cloud_fixed_air_acidgas_ratio_pid_and_delayed_tailgas_gc"),
+        },
+        "demo_172_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox": {
+            "bayer_8_trains": simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(8, "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge"),
+            "bayer_32_trains": simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(32, "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge"),
+            "raw_bayer_8_trains": simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(8, "raw_cloud_fixed_steam_pressure_pid_and_manual_acid_descaling_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

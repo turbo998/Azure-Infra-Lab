@@ -178,6 +178,7 @@ from agent_infra_sizer import (
     simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
     simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
     simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox,
+    simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3604,6 +3605,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct"], 3.0)
         self.assertTrue(gov["claus_sulfur_recovery_sru_slo_met"])
         self.assertFalse(raw["claus_sulfur_recovery_sru_slo_met"])
+
+    def test_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(self) -> None:
+        gov = simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(
+            8, "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge"
+        )
+        raw = simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(
+            8, "raw_cloud_fixed_steam_pressure_pid_and_manual_acid_descaling_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_bayer_pods"], 8)
+        self.assertEqual(gov["alumina_digestion_extraction_and_heater_htc_gain_pct"], 45.1)
+        self.assertEqual(gov["dsp_sodalite_cancrinite_scale_and_gibbsite_fines_reduction_pct"], 68.2)
+        self.assertEqual(gov["asme8_apirp556_sil3_flash_eruption_and_autoclave_scc_interlock_ms"], 0.4)
+        self.assertEqual(gov["unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct"], 1.0)
+        self.assertEqual(gov["digester_edge_10khz_ultrasonic_scale_and_raman_ac_telemetry_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct"], 3.0)
+        self.assertTrue(gov["bayer_alumina_refinery_tube_digestion_slo_met"])
+        self.assertFalse(raw["bayer_alumina_refinery_tube_digestion_slo_met"])
 
 
 if __name__ == "__main__":

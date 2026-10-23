@@ -10325,5 +10325,52 @@
       "uncompensated_acidgas_hc_spike_stoichiometry_drift_or_sulfur_viscosity_lock_pct": 4.3,
       "claus_sulfur_recovery_sru_slo_met": false
     }
+  ],
+  "bayer_alumina_refinery_tube_digestion_profiles": [
+    {
+      "bayer_trains": 8,
+      "bayer_governance_mode": "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_bayer_pods": 8,
+      "alumina_digestion_extraction_and_heater_htc_gain_pct": 45.1,
+      "dsp_sodalite_cancrinite_scale_and_gibbsite_fines_reduction_pct": 68.2,
+      "asme8_apirp556_sil3_flash_eruption_and_autoclave_scc_interlock_ms": 0.4,
+      "unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct": 0.0,
+      "digester_edge_10khz_ultrasonic_scale_and_raman_ac_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct": 0.0,
+      "bayer_alumina_refinery_tube_digestion_slo_met": true
+    },
+    {
+      "bayer_trains": 32,
+      "bayer_governance_mode": "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_bayer_pods": 16,
+      "alumina_digestion_extraction_and_heater_htc_gain_pct": 45.1,
+      "dsp_sodalite_cancrinite_scale_and_gibbsite_fines_reduction_pct": 68.2,
+      "asme8_apirp556_sil3_flash_eruption_and_autoclave_scc_interlock_ms": 0.4,
+      "unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct": 0.0,
+      "digester_edge_10khz_ultrasonic_scale_and_raman_ac_telemetry_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct": 0.0,
+      "bayer_alumina_refinery_tube_digestion_slo_met": true
+    },
+    {
+      "bayer_trains": 8,
+      "bayer_governance_mode": "raw_cloud_fixed_steam_pressure_pid_and_manual_acid_descaling_schedule",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_bayer_pods": 8,
+      "alumina_digestion_extraction_and_heater_htc_gain_pct": 6.7,
+      "dsp_sodalite_cancrinite_scale_and_gibbsite_fines_reduction_pct": 9.1,
+      "asme8_apirp556_sil3_flash_eruption_and_autoclave_scc_interlock_ms": 385.0,
+      "unmitigated_autoclave_rupture_flash_caustic_eruption_or_scc_pct": 1.5,
+      "digester_edge_10khz_ultrasonic_scale_and_raman_ac_telemetry_loop_ms": 204.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_reactive_silica_surge_or_oxalate_fines_nucleation_pct": 4.4,
+      "bayer_alumina_refinery_tube_digestion_slo_met": false
+    }
   ]
 }

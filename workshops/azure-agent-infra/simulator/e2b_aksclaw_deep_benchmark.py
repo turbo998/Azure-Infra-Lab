@@ -184,6 +184,7 @@ from agent_infra_sizer import (
     simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
     simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
     simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox,
+    simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1447,6 +1448,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox(8, "raw_cloud_fixed_air_acidgas_ratio_pid_and_delayed_tailgas_gc"),
     ]
 
+    bayer_alumina_refinery_tube_digestion_profiles: List[Dict[str, object]] = [
+        simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(8, "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge"),
+        simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(32, "pinn_mpc_bayer_tube_digestion_dsp_scale_gibbsite_seeded_precipitation_pbm_asme8_sil3_edge"),
+        simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox(8, "raw_cloud_fixed_steam_pressure_pid_and_manual_acid_descaling_schedule"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1618,6 +1625,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ethylene_steam_cracker_profiles": ethylene_steam_cracker_profiles,
         "ostwald_nitric_acid_profiles": ostwald_nitric_acid_profiles,
         "claus_sulfur_recovery_sru_profiles": claus_sulfur_recovery_sru_profiles,
+        "bayer_alumina_refinery_tube_digestion_profiles": bayer_alumina_refinery_tube_digestion_profiles,
     }
 
 
