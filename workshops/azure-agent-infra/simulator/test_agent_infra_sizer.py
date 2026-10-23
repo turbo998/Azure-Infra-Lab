@@ -156,6 +156,7 @@ from agent_infra_sizer import (
     simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
     simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
     simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox,
+    simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3120,6 +3121,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct"], 3.0)
         self.assertTrue(gov["vdf_pvdf_fluoropolymer_slo_met"])
         self.assertFalse(raw["vdf_pvdf_fluoropolymer_slo_met"])
+
+    def test_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(
+            8, "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge"
+        )
+        raw = simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(
+            8, "open_loop_rf_coil_position_fixed_c_si_flow_ratio_post_run_koh_etch_xrt_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_sic_pvt_cvd_pods"], 8)
+        self.assertEqual(gov["prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct"], 44.2)
+        self.assertEqual(gov["basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct"], 60.1)
+        self.assertEqual(gov["semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct"], 1.0)
+        self.assertEqual(gov["furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct"], 3.0)
+        self.assertTrue(gov["sic_gan_pvt_cvd_slo_met"])
+        self.assertFalse(raw["sic_gan_pvt_cvd_slo_met"])
 
 
 if __name__ == "__main__":

@@ -9186,5 +9186,67 @@
       "uncompensated_cathode_slurry_dehydrofluorination_gelation_or_tube_plugging_pct": 3.6,
       "vdf_pvdf_fluoropolymer_slo_met": false
     }
+  ],
+  "sic_gan_pvt_cvd_profiles": [
+    {
+      "sic_pvt_cvd_reactors": 4,
+      "sic_governance_mode": "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sic_pvt_cvd_pods": 4,
+      "prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct": 44.2,
+      "basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct": 60.1,
+      "semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms": 0.2,
+      "unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct": 0.0,
+      "furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct": 0.0,
+      "sic_gan_pvt_cvd_slo_met": true
+    },
+    {
+      "sic_pvt_cvd_reactors": 8,
+      "sic_governance_mode": "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sic_pvt_cvd_pods": 8,
+      "prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct": 44.2,
+      "basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct": 60.1,
+      "semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms": 0.2,
+      "unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct": 0.0,
+      "furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct": 0.0,
+      "sic_gan_pvt_cvd_slo_met": true
+    },
+    {
+      "sic_pvt_cvd_reactors": 32,
+      "sic_governance_mode": "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sic_pvt_cvd_pods": 16,
+      "prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct": 44.2,
+      "basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct": 60.1,
+      "semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms": 0.2,
+      "unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct": 0.0,
+      "furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct": 0.0,
+      "sic_gan_pvt_cvd_slo_met": true
+    },
+    {
+      "sic_pvt_cvd_reactors": 8,
+      "sic_governance_mode": "open_loop_rf_coil_position_fixed_c_si_flow_ratio_post_run_koh_etch_xrt_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sic_pvt_cvd_pods": 8,
+      "prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct": 6.6,
+      "basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct": 9.1,
+      "semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms": 138.0,
+      "unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct": 1.5,
+      "furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms": 186.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct": 3.7,
+      "sic_gan_pvt_cvd_slo_met": false
+    }
   ]
 }

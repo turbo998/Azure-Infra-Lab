@@ -169,6 +169,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
     simulate_lipf6_lifsi_electrolyte_salt_anhydrous_hf_pf5_crystallization_osha1910119_sil3_sandbox,
     simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox,
+    simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1145,6 +1146,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "pvdf_8_trains": simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox(8, "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge"),
             "pvdf_32_trains": simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox(32, "pinn_mpc_r142b_pyrolysis_vdf_hh_defect_pvdf_mwd_19fnmr_ftir_diers_sil3_edge"),
             "raw_pvdf_8_trains": simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_diers_sil3_sandbox(8, "manual_r142b_furnace_firing_fixed_persulfate_initiator_offline_8hr_gpc_viscosity_cloud"),
+        },
+        "demo_150_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox": {
+            "sic_8_reactors": simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(8, "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge"),
+            "sic_32_reactors": simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(32, "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge"),
+            "raw_sic_8_reactors": simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(8, "open_loop_rf_coil_position_fixed_c_si_flow_ratio_post_run_koh_etch_xrt_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

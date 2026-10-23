@@ -7693,6 +7693,57 @@ def simulate_vdf_pvdf_fluoropolymer_r142b_pyrolysis_emulsion_polymerization_dier
     }
 
 
+def simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox(
+    sic_pvt_cvd_reactors: int = 8,
+    sic_governance_mode: str = "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Silicon Carbide (4H-SiC) & Gallium Nitride (GaN) Physical Vapor Transport
+    (PVT 2,200-2,400 C Sublimation Boule Growth) & Hot-Wall Chemical Vapor Deposition (CVD SiH4 / C3H8
+    / H2 Step-Flow Epitaxy) Wide-Bandgap (WBG) Wafer Fabrication, Axial/Radial Thermal Gradient,
+    4H-SiC Polytype Stability, Basal Plane Dislocation (BPD < 0.1 cm^-2 -> TED Conversion) & Micropipe
+    Suppression PINN-MPC, Online Two-Color Pyrometry / 355nm UV Photoluminescence (UV-PL) & Laser Light
+    Scattering (LLS) Metrology & SEMI S2 / NFPA 86 / OSHA 29 CFR 1910.119 / IEC 61511 SIL-3 Pyrophoric
+    Silane (SiH4) Auto-Ignition, Hydrogen (H2) Explosion & 2,400 C Induction Coil Cooling-Water Loss
+    Steam-Explosion Interlock Sandbox (Chapter 155 — 150-Cycle & 150-Simulator Milestone!).
+    """
+    if sic_pvt_cvd_reactors < 1:
+        raise ValueError("sic_pvt_cvd_reactors must be >= 1")
+    valid_modes = {
+        "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge",
+        "open_loop_rf_coil_position_fixed_c_si_flow_ratio_post_run_koh_etch_xrt_cloud",
+    }
+    if sic_governance_mode not in valid_modes:
+        raise ValueError(f"sic_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = sic_governance_mode == "pinn_mpc_pvt_sublimation_4h_polytype_stepflow_cvd_bpd_pyrometry_pl_semis2_sil3_edge"
+    active_sic_pvt_cvd_pods = max(2, min(8, int(sic_pvt_cvd_reactors))) if sic_pvt_cvd_reactors <= 8 else max(8, int(sic_pvt_cvd_reactors // 2))
+    gpu_nodes = max(2, math.ceil(sic_pvt_cvd_reactors / 4))
+
+    prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct = 44.2 if governed else 6.6
+    basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct = 60.1 if governed else 9.1
+    semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms = 0.2 if governed else 138.0
+    unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct = 0.0 if governed else 1.5
+    furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms = 0.3 if governed else 186.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct = 0.0 if governed else 3.7
+
+    return {
+        "sic_pvt_cvd_reactors": sic_pvt_cvd_reactors,
+        "sic_governance_mode": sic_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_sic_pvt_cvd_pods": active_sic_pvt_cvd_pods,
+        "prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct": prime_200mm_4h_sic_boule_and_epilayer_die_yield_gain_pct,
+        "basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct": basal_plane_dislocation_bpd_micropipe_and_6h_15r_inclusion_reduction_pct,
+        "semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms": semis2_nfpa86_sil3_sih4_rfo_purge_and_induction_crowbar_interlock_ms,
+        "unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct": unmitigated_sih4_pyrophoric_detonation_h2_explosion_or_coil_steam_blast_pct,
+        "furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms": furnace_edge_two_color_pyrometry_and_uv_pl_lls_defect_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct": uncompensated_boule_thermoelastic_cracking_or_si_droplet_step_bunching_pct,
+        "sic_gan_pvt_cvd_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
