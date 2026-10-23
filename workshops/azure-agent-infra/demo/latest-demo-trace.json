@@ -9760,6 +9760,68 @@
         "uncompensated_uv_shrinkage_misalignment_or_mrr_thermal_crosstalk_unlock_pct": 3.9,
         "cpo_silicon_photonics_pic_slo_met": false
       }
+    ],
+    "bspdn_backside_power_ntsv_profiles": [
+      {
+        "bspdn_process_modules": 4,
+        "bspdn_governance_mode": "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bspdn_ntsv_pods": 4,
+        "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": 44.8,
+        "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": 62.0,
+        "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": 0.2,
+        "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": 0.0,
+        "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 0.0,
+        "bspdn_backside_power_ntsv_slo_met": true
+      },
+      {
+        "bspdn_process_modules": 8,
+        "bspdn_governance_mode": "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bspdn_ntsv_pods": 8,
+        "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": 44.8,
+        "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": 62.0,
+        "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": 0.2,
+        "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": 0.0,
+        "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 0.0,
+        "bspdn_backside_power_ntsv_slo_met": true
+      },
+      {
+        "bspdn_process_modules": 32,
+        "bspdn_governance_mode": "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bspdn_ntsv_pods": 16,
+        "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": 44.8,
+        "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": 62.0,
+        "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": 0.2,
+        "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": 0.0,
+        "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 0.0,
+        "bspdn_backside_power_ntsv_slo_met": true
+      },
+      {
+        "bspdn_process_modules": 8,
+        "bspdn_governance_mode": "fixed_time_backgrind_uniform_cmp_zone_pressure_offline_ir_ttv_sampling_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bspdn_ntsv_pods": 8,
+        "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": 6.6,
+        "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": 9.5,
+        "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": 140.0,
+        "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": 1.5,
+        "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": 186.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 3.8,
+        "bspdn_backside_power_ntsv_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -17909,5 +17971,52 @@
       "cpo_silicon_photonics_pic_slo_met": false
     }
   },
-  "trace_sha256": "faed7708fb7ec3cebc0e4ea266a08784b75d81ce0c076919caeb586adfe87b64"
+  "demo_156_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox": {
+    "bspdn_8_modules": {
+      "bspdn_process_modules": 8,
+      "bspdn_governance_mode": "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bspdn_ntsv_pods": 8,
+      "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": 44.8,
+      "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": 62.0,
+      "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": 0.2,
+      "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": 0.0,
+      "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 0.0,
+      "bspdn_backside_power_ntsv_slo_met": true
+    },
+    "bspdn_32_modules": {
+      "bspdn_process_modules": 32,
+      "bspdn_governance_mode": "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bspdn_ntsv_pods": 16,
+      "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": 44.8,
+      "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": 62.0,
+      "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": 0.2,
+      "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": 0.0,
+      "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 0.0,
+      "bspdn_backside_power_ntsv_slo_met": true
+    },
+    "raw_bspdn_8_modules": {
+      "bspdn_process_modules": 8,
+      "bspdn_governance_mode": "fixed_time_backgrind_uniform_cmp_zone_pressure_offline_ir_ttv_sampling_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bspdn_ntsv_pods": 8,
+      "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": 6.6,
+      "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": 9.5,
+      "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": 140.0,
+      "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": 1.5,
+      "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": 186.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": 3.8,
+      "bspdn_backside_power_ntsv_slo_met": false
+    }
+  },
+  "trace_sha256": "39b5163222003097df2037a56b7e4037401e881ed1abbfe3ff13d010c0a810fb"
 }

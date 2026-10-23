@@ -162,6 +162,7 @@ from agent_infra_sizer import (
     simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox,
     simulate_hvdc_subsea_xlpe_cable_vcv_curing_pea_spacecharge_cigre852_sil3_sandbox,
     simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox,
+    simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3252,6 +3253,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_uv_shrinkage_misalignment_or_mrr_thermal_crosstalk_unlock_pct"], 3.0)
         self.assertTrue(gov["cpo_silicon_photonics_pic_slo_met"])
         self.assertFalse(raw["cpo_silicon_photonics_pic_slo_met"])
+
+    def test_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox(
+            8, "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge"
+        )
+        raw = simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox(
+            8, "fixed_time_backgrind_uniform_cmp_zone_pressure_offline_ir_ttv_sampling_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_bspdn_ntsv_pods"], 8)
+        self.assertEqual(gov["bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct"], 44.8)
+        self.assertEqual(gov["residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct"], 62.0)
+        self.assertEqual(gov["semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct"], 1.0)
+        self.assertEqual(gov["module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms"], 0.2)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct"], 3.0)
+        self.assertTrue(gov["bspdn_backside_power_ntsv_slo_met"])
+        self.assertFalse(raw["bspdn_backside_power_ntsv_slo_met"])
 
 
 if __name__ == "__main__":

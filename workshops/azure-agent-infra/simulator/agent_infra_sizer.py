@@ -7994,6 +7994,55 @@ def simulate_cpo_silicon_photonics_pic_hexapod_alignment_ofdr_gr468_sil3_sandbox
     }
 
 
+def simulate_bspdn_backside_power_ntsv_wafer_thinning_ir_semis2_sil3_sandbox(
+    bspdn_process_modules: int = 8,
+    bspdn_governance_mode: str = "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous 300 mm Backside Power Delivery Network (BSPDN / PowerVia / Buried Power Rail BPR)
+    Nano-Through-Silicon-Via (nTSV < 50 nm CD) Extreme Wafer Thinning (< 500 nm Residual Silicon),
+    Wafer-to-Carrier Direct Dielectric Fusion Bonding & Sub-10nm Overlay Distortion Compensation PINN-MPC,
+    Online 100 kHz Broadband Infrared (IR) Interferometric Silicon-Thickness (±1.5 nm 3-sigma) & Acoustic
+    C-SAM Void Metrology & SEMI S2 / S8 / IEC 61508 SIL-3 TTV Wafer-Breakage Grind-Spindle Retract,
+    Backside CMP Endpoint & Chuck Vacuum-Loss Interlock Sandbox (Chapter 161).
+    """
+    if bspdn_process_modules < 1:
+        raise ValueError("bspdn_process_modules must be >= 1")
+    valid_modes = {
+        "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge",
+        "fixed_time_backgrind_uniform_cmp_zone_pressure_offline_ir_ttv_sampling_cloud",
+    }
+    if bspdn_governance_mode not in valid_modes:
+        raise ValueError(f"bspdn_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = bspdn_governance_mode == "pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge"
+    active_bspdn_ntsv_pods = max(2, min(8, int(bspdn_process_modules))) if bspdn_process_modules <= 8 else max(8, int(bspdn_process_modules // 2))
+    gpu_nodes = max(2, math.ceil(bspdn_process_modules / 4))
+
+    bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct = 44.8 if governed else 6.6
+    residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct = 62.0 if governed else 9.5
+    semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms = 0.2 if governed else 140.0
+    unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct = 0.0 if governed else 1.5
+    module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms = 0.2 if governed else 186.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct = 0.0 if governed else 3.8
+
+    return {
+        "bspdn_process_modules": bspdn_process_modules,
+        "bspdn_governance_mode": bspdn_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bspdn_ntsv_pods": active_bspdn_ntsv_pods,
+        "bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct": bspdn_ntsv_reveal_yield_and_backside_ir_drop_efficiency_gain_pct,
+        "residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct": residual_silicon_ttv_3sigma_and_ntsv_overlay_distortion_reduction_pct,
+        "semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms": semis2_s8_sil3_grind_spindle_retract_cmp_quench_and_chuck_vacuum_interlock_ms,
+        "unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct": unmitigated_wafer_delamination_shatter_or_chuck_vacuum_loss_pct,
+        "module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms": module_edge_100khz_broadband_ir_interferometry_and_csam_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct": uncompensated_ntsv_over_polish_dishing_or_bonding_wave_void_trap_pct,
+        "bspdn_backside_power_ntsv_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

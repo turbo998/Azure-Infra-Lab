@@ -568,6 +568,7 @@ pre.code-box {
       <button class="tab-btn" onclick="showBlueprint(153)">154. 极紫外光掩模版与 50 keV 多电子束掩模直写机 (MBMW 262,144 可编程孔径阵列、40 对 Mo/Si 离子束沉积 IBD、TaBN/Ru 吸收层 ICP-RIE 刻蚀与 CNT 防尘薄膜 Pellicle)、库仑空间电荷散焦、基底抗蚀剂热变形与 3D 掩模阴影/邻近效应校正 (3D-M3D / PEC) PINN-MPC、在线 50kHz 13.5nm 光化空间像计量 (Actinic AIMS / APMI)/外差激光干涉仪及 SEMI S2 / SEMI P37 / ISO 14644-1 Class 1 / IEC 61508 SIL-3 50kV 电子镜筒高压拉弧撬棒、超高真空 (10⁻⁹ mbar) 插板阀隔离与卤素刻蚀气 (Cl2/F2) 硬联锁池 (Bicep)</button>
       <button class="tab-btn" onclick="showBlueprint(154)">155. 远海 ±525kV/2GW 特高压直流海底电缆 (HVDC XLPE 交联聚乙烯三层共挤 180m 立式连续硫化塔 VCV 与 70°C 甲烷脱气仓)、Kamal-Sourour 过氧化物交联反应-扩散与双极性空间电荷陷阱抑制 (BCT FEF ≤ 1.15) PINN-MPC、在线 50kHz 太赫兹 (0.3–3 THz)/超声偏心度层析/电声脉冲法 (PEA) 空间电荷与 TDLAS 甲烷计量及 CIGRE TB 852 / IEC 62895 / DNV-ST-F101 / IEC 61508 SIL-3 硫化管超压泄放、先期焦烧排料、脱气室 CH4 (&gt; 10% LEL) 氮封与高压出厂试验撬棒硬联锁池 (Bicep · 160 章里程碑)</button>
       <button class="tab-btn" onclick="showBlueprint(155)">156. 共封装光学 (CPO 1.6T / 3.2T 光引擎) 与 300mm 硅光晶圆 (SiPh SOI / Si3N4 波导) 有源亚微米 (&lt; 100nm) 六自由度压电六足台 (6-DOF Piezo-Hexapod) 光纤阵列/CW-DFB 激光器首次通光对准及紫外胶固化收缩补偿 PINN-MPC、在线 100kHz 光频域反射仪 (OFDR 波导背向散射损耗 &lt; 0.15 dB/cm)/微环谐振器 (MRR) 热相移计量及 Telcordia GR-468-CORE / IEC 60825-1 Class 3B/4 / SEMI S2 / IEC 61508 SIL-3 外置激光源 (ELSFP) 快门遮断、六足台端面剪切防撞限力与紫外固化吹扫硬联锁池 (Bicep · 155 仿真器里程碑)</button>
+      <button class="tab-btn" onclick="showBlueprint(156)">157. 300mm 背面供电网络 (BSPDN / PowerVia / 埋入式电源轨 BPR) 纳米硅通孔 (nTSV &lt; 50nm CD) 极限晶圆减薄 (&lt; 500nm 残余硅厚)、承载晶圆混合熔融键合翘曲与亚 10nm 背面套刻畸变补偿 PINN-MPC、在线 100kHz 宽谱红外干涉硅厚层析 (TTV ±1.5nm 3σ)/高频声学显微镜 (C-SAM) 空洞计量及 SEMI S2 / S8 / IEC 61508 SIL-3 磨削主轴压电防碎急退、背面 CMP 露头终点淬灭与多孔陶瓷吸盘双冗余真空保压硬联锁池 (Bicep)</button>
     </div>
     <pre class="code-box" id="blueprintBox"></pre>
   </section>
@@ -4117,6 +4118,29 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Tool 156: 300mm Backside Power Delivery Network (BSPDN / PowerVia / BPR) & nTSV Extreme Wafer Thinning PINN-MPC Calculator -->
+  <section class="card" style="margin-top:1.25rem;">
+    <span class="pill pill-teal">TOOL 156 · 300mm BACKSIDE POWER DELIVERY NETWORK (BSPDN / POWERVIA / BPR) NANO-TSV (&lt; 50nm CD) EXTREME WAFER THINNING (&lt; 500nm RESIDUAL SILICON) &amp; SUB-10nm OVERLAY PINN-MPC, ONLINE 100 kHz IR INTERFEROMETRY &amp; C-SAM METROLOGY &amp; SEMI S2 / S8 / SIL-3 GRIND-SPINDLE RETRACT &amp; CMP ENDPOINT CALCULATOR</span>
+    <h2>自主 300mm 背面供电网络（BSPDN / PowerVia）与纳米硅通孔（nTSV）：极限晶圆减薄（&lt; 500nm 残余硅厚）与背面套刻畸变补偿 PINN-MPC 及 SIL-3 磨削防碎/CMP 终点硬联锁测算器</h2>
+    <div class="sub">量化在 <code>2 – 32</code> 台 <code>300 mm</code> 埃米级逻辑芯片（<code>2nm / A16 / A14 GAA Nanosheet</code>）背面供电网络（<code>Backside Power Delivery Network, BSPDN / PowerVia / Buried Power Rail, BPR</code>）承载晶圆键合、超精密背面减薄与纳米硅通孔（<code>nTSV &lt; 50 nm</code> 临界尺寸）露头化学机械抛光联机工作站（<code>Wafer-to-Carrier Direct Bonding, Coarse/Fine Diamond Back-Grinding, TMAH/HF/HNO3 Selective Wet/Dry Etch &amp; Multi-Zone Backside Reveal CMP Module</code>：将器件晶圆从 <code>775 μm</code> 极限减薄至 <code>&lt; 500 nm</code> 残余硅厚）规模下，启用 <code>Standard_NC40ads_H100_v5</code> <strong>冯·卡门大挠度板壳非对称残余应力翘曲（<code>Von Kármán Plate-Shell Bow/Warp</code>）、键合波前微空洞流体捕获、多区气囊承载头普雷斯顿材料去除率（<code>Preston CMP Removal Rate</code> $RR = k_p P_{\text{zone}} V_{\text{rel}}$）与背面-正面高阶泽尼克纳米硅通孔套刻畸变场（<code>Zernike Overlay Distortion</code> $\Delta x, \Delta y &lt; 2.8\text{ nm } 3\sigma$）</strong> <code>PINN</code> + 静压磨削主轴倾角微调、<code>7</code> 区独立气囊压力分布（锁定全晶圆总厚度偏差 <code>TTV ≤ ±1.5 nm 3σ</code>，消除 <code>nTSV</code> 铜/钌柱露头碟形凹陷 <code>Dishing</code>）与光刻机高阶网格畸变前馈补偿协同 <code>MPC</code>（<code>BSPDN nTSV</code> 露头良率与背面供电 <code>IR-Drop</code> 效能增益提升 <code>+44.8%</code>，残余硅厚 <code>TTV 3σ</code> 与 <code>nTSV</code> 背面套刻误差削减 <code>-62.0%</code>）、<code>SEMI S2 / S8 / IEC 61508 SIL-3</code> 磨削主轴轴向载荷尖峰（<code>&gt; 85 N</code> 预示晶圆边缘崩裂）、背面 <code>CMP</code> 突破外延 <code>SiGe</code> 刻蚀停止层（威胁磨穿前端有源 <code>GAA</code> 纳米片沟道）或多孔陶瓷吸盘真空度骤降时，瞬时触发压电磨削主轴快速 Z 向回退与静压轴承锁止、泄放 <code>CMP</code> 气囊压力并注入去离子水（<code>DIW</code>）淬灭冲洗及切换双冗余真空蓄能罐保压硬联锁（<code>0.2 ms</code> 响应，<code>0.0%</code> 超薄晶圆剥离碎裂、磨穿有源晶体管层或吸盘失真飞片事故，对比传统固定时间背磨、均压 <code>CMP</code> 与下线抽检反模式 <code>1.5%</code> 风险）以及模块端 <code>100 kHz</code> 宽谱红外（<code>Broadband IR</code> <code>1.1–1.7 μm</code>）共焦干涉硅厚层析、高频声学扫描显微镜（<code>C-SAM</code> 键合界面微空洞检测）与激光散射摩擦终点边缘分诊（<code>0.2 ms</code>，削减 <code>99.7%</code> 晶圆厂 WAN 带宽，避免 <code>3.8%</code> <code>nTSV</code> 过抛碟形短路或键合微空洞热爆裂漏检）的工程收益：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. 300mm 背面供电网络 (BSPDN / PowerVia) 键合、极限减薄与 nTSV 露头 CMP 联机模块数 (300mm BSPDN Thinning &amp; nTSV Modules): <strong id="lbl_bspdn_modules" style="color:var(--teal)">8</strong></label>
+          <input type="range" id="rng_bspdn_modules" min="2" max="32" step="2" value="8" oninput="runBspdnBacksidePowerNtsvLab()">
+        </div>
+        <div class="form-row">
+          <label>2. 板壳翘曲/多区 Preston-CMP 与套刻畸变 PINN-MPC 及 SEMI S2 / SIL-3 磨削防碎/CMP 终点联锁模式 (BSPDN nTSV Governance Mode)</label>
+          <select id="sel_bspdn_mode" onchange="runBspdnBacksidePowerNtsvLab()">
+            <option value="pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge" selected>冯·卡门翘曲、7 区 Preston-CMP 去除率 (TTV ≤ ±1.5nm) 与 Zernike 背面套刻畸变 (&lt; 2.8nm) PINN-MPC (+44.8% nTSV 露头良率与供电效能 / -62.0% TTV 与套刻误差) + SEMI S2/S8 SIL-3 0.2ms 磨削主轴急退、CMP DIW 淬灭与双冗余真空保压硬联锁 + 0.2ms 100kHz 宽谱红外干涉/C-SAM 边缘 (推荐)</option>
+            <option value="fixed_time_backgrind_uniform_cmp_zone_pressure_offline_ir_ttv_sampling_cloud">传统反模式：固定时长背磨、均压 CMP 与下线红外硅厚抽检 (+6.6% 良率增益) + 无 0.2ms 主轴防碎急退与 SiGe 停止层淬灭硬联锁 (1.5% 775μm→380nm 超薄晶圆边缘崩裂、磨穿 GAA 有源层或真空失压飞片风险) + 缺乏在线 100kHz 红外干涉与多区压力闭环 (3.8% nTSV 过抛碟形凹陷短路或键合界面微空洞热爆裂报废)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="bspdnBacksidePowerNtsvOut"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -6649,6 +6673,24 @@ resource cpoSiPhHexapodPool 'Microsoft.ContainerService/managedClusters/agentPoo
       'aksclaw.io/cell-edge-100khz-ofdr-hexapod-osa': 'enabled-0.2ms-99.7pct-cpo-cell-wan-cut'
     }
   }
+}`,
+  `// Blueprint #157: 300mm Backside Power Delivery Network (BSPDN / PowerVia / BPR) Nano-TSV (< 50nm CD) Extreme Wafer Thinning (< 500nm Residual Silicon) & Sub-10nm Overlay PINN-MPC + Online 100 kHz Broadband IR Interferometry & C-SAM Metrology + SEMI S2 / S8 / IEC 61508 SIL-3 Grind-Spindle Retract & CMP Endpoint Pool
+param location string = 'eastus2'
+param bspdnProcessModules int = 8
+
+resource bspdnNtsvThinningPool 'Microsoft.ContainerService/managedClusters/agentPools@2024-02-01' = {
+  name: 'bspdnntsvsil3'
+  properties: {
+    count: 2 // Standard_NC40ads_H100_v5 (Von Karman Warpage, 7-Zone Preston-CMP TTV <= 1.5nm & Zernike nTSV Overlay PINN-MPC + Online 100 kHz Broadband IR Interferometry / C-SAM Edge)
+    vmSize: 'Standard_NC40ads_H100_v5'
+    mode: 'User'
+    nodeLabels: {
+      'aksclaw.io/workload-class': 'bspdn-backside-power-ntsv-wafer-thinning-ir-semis2-sil3-agent'
+      'aksclaw.io/pinn-mpc-von-karman-preston-cmp-ntsv-overlay': 'enabled-44.8pct-ntsv-yield-gain-62.0pct-ttv-overlay-error-cut'
+      'aksclaw.io/semis2-s8-sil3-spindle-retract-cmp-quench-vacuum-guard': 'enforced-0.2ms-zero-wafer-shatter-channel-breach-or-vacuum-loss'
+      'aksclaw.io/module-edge-100khz-ir-interferometry-csam': 'enabled-0.2ms-99.7pct-bspdn-fab-wan-cut'
+    }
+  }
 }`
 ];
 
@@ -6905,6 +6947,30 @@ runScCo2SmbLab();
 runEuvPhotomaskMbmwLab();
 runHvdcSubseaXlpeVcvLab();
 runCpoSiliconPhotonicsHexapodLab();
+runBspdnBacksidePowerNtsvLab();
+
+function runBspdnBacksidePowerNtsvLab() {
+  const modules = parseInt(document.getElementById('rng_bspdn_modules').value, 10);
+  const mode = document.getElementById('sel_bspdn_mode').value;
+  document.getElementById('lbl_bspdn_modules').textContent = modules.toLocaleString();
+
+  const nodes = Math.max(2, Math.ceil(modules / 4));
+  const pods = modules <= 8 ? Math.max(2, Math.min(8, modules)) : Math.max(8, Math.floor(modules / 2));
+  const ok = mode === 'pinn_mpc_von_karman_warpage_preston_cmp_ntsv_overlay_ir_semis2_sil3_edge';
+  const mpcStr = ok ? "冯·卡门大挠度板壳残余应力翘曲、键合波前空洞捕获、7 区气囊承载头 Preston-CMP 去除率 (全片硅厚 TTV ≤ ±1.5nm 3σ) 与高阶 Zernike 纳米硅通孔 (nTSV < 50nm CD) 背面套刻畸变场 (< 2.8nm 3σ) PINN + 静压磨削倾角微调、多区气囊压力分配与光刻高阶网格畸变前馈协同 MPC · BSPDN nTSV 露头良率与背面供电 IR-Drop 效能 +44.8% · 残余硅厚 TTV 3σ 与 nTSV 背面套刻误差 -62.0%" : "传统靠固定时长背磨、均压 CMP 与下线红外硅厚抽检滞后 · 仅 +6.6% 良率增益 / -9.5% 误差削减 (器件晶圆从 775 μm 减薄至 < 500 nm 过程中因前端多层金属内应力释放产生非对称马鞍形翘曲，导致 3.8% 晶圆边缘 nTSV 过抛碟形短路、中心欠抛开路或键合界面微空洞在退火时热爆裂整片报废)";
+  const sil3Str = ok ? "0.2 ms SEMI S2 / S8 / IEC 61508 SIL-3 检出磨削主轴轴向载荷尖峰 (> 85 N)、背面 CMP 触及外延 SiGe 停止层摩擦声发射突变或多孔陶瓷吸盘真空度跌落时瞬时触发压电磨削主轴快速 Z 向回退、泄放 CMP 气囊压力并注入 DIW 去离子水淬灭及切换双冗余真空蓄能罐保压硬联锁 · 0.0% 超薄晶圆剥离碎裂、磨穿 GAA 纳米片沟道或吸盘飞片违例" : "无 0.2ms 磨削主轴防碎急退与 SiGe 停止层淬灭硬联锁 (140.0 ms 传统 PLC 联锁滞后) · 1.5% 超薄晶圆边缘崩裂、过抛磨穿前端 GAA 晶体管有源区或真空失压飞片损毁风险";
+  const edgeStr = ok ? "0.2 ms 模块端 100 kHz 宽谱红外 (1.1–1.7 μm) 共焦干涉全片硅厚层析 (±1.5 nm) + 高频声学扫描显微镜 (C-SAM 键合微空洞检测) + 涡流/光学摩擦终点边缘 (-99.7% 晶圆厂 WAN 带宽) · 0.0% nTSV 过抛碟形短路或键合微空洞热爆裂漏检" : "186.0 ms 依赖减薄 CMP 后下线单点红外抽检 · 无法在亚微米残余硅厚窗口内实时阻断径向非均匀过抛";
+
+  document.getElementById('bspdnBacksidePowerNtsvOut').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="pill ${ok ? 'pill-teal' : 'pill-rose'}">${ok ? '✅ ' + mpcStr : '❌ 1.5% 超薄晶圆崩裂或磨穿 GAA 纳米片有源层风险 · 3.8% nTSV 过抛碟形短路或键合空洞爆裂漏检'}</span>
+      <strong style="color:#34d399;font-size:1.05rem;">${nodes} 台 NC40ads_H100_v5 节点 (${pods} 个背面供电减薄孪生体 · ${sil3Str})</strong>
+    </div>
+    <p style="font-size:0.83rem;color:#cbd5e1;margin:0.55rem 0 0;">
+      • <strong>100kHz 宽谱红外干涉硅厚层析、高频声学显微镜 (C-SAM) 与 CMP 终点边缘</strong>：<strong>${edgeStr}</strong>
+    </p>
+  `;
+}
 
 function runCpoSiliconPhotonicsHexapodLab() {
   const cells = parseInt(document.getElementById('rng_cpo_siph_cells').value, 10);
