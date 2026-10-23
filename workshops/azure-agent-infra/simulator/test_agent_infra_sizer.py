@@ -152,6 +152,7 @@ from agent_infra_sizer import (
     simulate_cumene_hydroperoxide_hock_phenol_acetone_cleavage_bpa_diers_sil3_sandbox,
     simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
     simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
+    simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3032,6 +3033,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct"], 3.0)
         self.assertTrue(gov["ncm811_cathode_precursor_kiln_slo_met"])
         self.assertFalse(raw["ncm811_cathode_precursor_kiln_slo_met"])
+
+    def test_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(self) -> None:
+        gov = simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(
+            8, "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge"
+        )
+        raw = simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(
+            8, "manual_nh3_propylene_air_ratio_step_offline_4hr_hcn_acidity_titration_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_acn_hcn_reactor_pods"], 8)
+        self.assertEqual(gov["acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct"], 43.7)
+        self.assertEqual(gov["acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct"], 59.6)
+        self.assertEqual(gov["osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct"], 1.0)
+        self.assertEqual(gov["reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct"], 3.0)
+        self.assertTrue(gov["acrylonitrile_ammoxidation_hcn_slo_met"])
+        self.assertFalse(raw["acrylonitrile_ammoxidation_hcn_slo_met"])
 
 
 if __name__ == "__main__":

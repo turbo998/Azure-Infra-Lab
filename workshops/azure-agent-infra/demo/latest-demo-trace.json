@@ -9140,6 +9140,68 @@
         "uncompensated_precursor_secondary_particle_cracking_or_li2co3_slurry_gelation_pct": 3.5,
         "ncm811_cathode_precursor_kiln_slo_met": false
       }
+    ],
+    "acrylonitrile_ammoxidation_hcn_profiles": [
+      {
+        "acn_hcn_reactor_trains": 4,
+        "acn_governance_mode": "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_acn_hcn_reactor_pods": 4,
+        "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": 43.7,
+        "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": 59.6,
+        "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": 0.2,
+        "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": 0.0,
+        "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": 0.0,
+        "acrylonitrile_ammoxidation_hcn_slo_met": true
+      },
+      {
+        "acn_hcn_reactor_trains": 8,
+        "acn_governance_mode": "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_acn_hcn_reactor_pods": 8,
+        "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": 43.7,
+        "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": 59.6,
+        "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": 0.2,
+        "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": 0.0,
+        "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": 0.0,
+        "acrylonitrile_ammoxidation_hcn_slo_met": true
+      },
+      {
+        "acn_hcn_reactor_trains": 32,
+        "acn_governance_mode": "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_acn_hcn_reactor_pods": 16,
+        "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": 43.7,
+        "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": 59.6,
+        "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": 0.2,
+        "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": 0.0,
+        "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": 0.0,
+        "acrylonitrile_ammoxidation_hcn_slo_met": true
+      },
+      {
+        "acn_hcn_reactor_trains": 8,
+        "acn_governance_mode": "manual_nh3_propylene_air_ratio_step_offline_4hr_hcn_acidity_titration_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_acn_hcn_reactor_pods": 8,
+        "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": 6.4,
+        "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": 8.9,
+        "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": 144.0,
+        "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": 1.4,
+        "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": 191.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": 3.6,
+        "acrylonitrile_ammoxidation_hcn_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -16819,5 +16881,52 @@
       "ncm811_cathode_precursor_kiln_slo_met": false
     }
   },
-  "trace_sha256": "e135fd17bf14b7dd1afc5ae54f1e0bf3602df4b4460c6eb01b922d6f5d603e52"
+  "demo_146_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox": {
+    "acn_8_trains": {
+      "acn_hcn_reactor_trains": 8,
+      "acn_governance_mode": "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_acn_hcn_reactor_pods": 8,
+      "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": 43.7,
+      "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": 59.6,
+      "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": 0.2,
+      "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": 0.0,
+      "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": 0.0,
+      "acrylonitrile_ammoxidation_hcn_slo_met": true
+    },
+    "acn_32_trains": {
+      "acn_hcn_reactor_trains": 32,
+      "acn_governance_mode": "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_acn_hcn_reactor_pods": 16,
+      "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": 43.7,
+      "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": 59.6,
+      "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": 0.2,
+      "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": 0.0,
+      "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": 0.0,
+      "acrylonitrile_ammoxidation_hcn_slo_met": true
+    },
+    "raw_acn_8_trains": {
+      "acn_hcn_reactor_trains": 8,
+      "acn_governance_mode": "manual_nh3_propylene_air_ratio_step_offline_4hr_hcn_acidity_titration_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_acn_hcn_reactor_pods": 8,
+      "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": 6.4,
+      "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": 8.9,
+      "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": 144.0,
+      "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": 1.4,
+      "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": 191.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": 3.6,
+      "acrylonitrile_ammoxidation_hcn_slo_met": false
+    }
+  },
+  "trace_sha256": "42b92ad16e0f10365bb7f8fcfa841904048c80417a551d1ec2f5bc749e774bfb"
 }

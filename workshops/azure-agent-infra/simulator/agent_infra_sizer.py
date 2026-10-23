@@ -7486,6 +7486,57 @@ def simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nf
     }
 
 
+def simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(
+    acn_hcn_reactor_trains: int = 8,
+    acn_governance_mode: str = "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Acrylonitrile (ACN Sohio Propylene Ammoxidation C3H6 + NH3 + 1.5O2 ->
+    CH2=CHCN + 3H2O, dH = -515 kJ/mol) Fluidized-Bed Reactor & Byproduct Hydrogen Cyanide (HCN
+    Recovery & NaCN Neutralization), Mo-Bi-Fe-Co Multicomponent Catalyst Mars-van Krevelen Lattice-
+    Oxygen Redox Balance, Acrolein/Cyanohydrin Polymerization Fouling & Quench-Tower Ammonium Sulfate
+    Scaling Suppression PINN-MPC, Online Tunable Diode Laser (TDLAS HCN/NH3/O2) / Raman ACN-Acrolein
+    Metrology & OSHA 29 CFR 1910.119 / NFPA 704 / API RP 521 / IEC 61511 SIL-3 Runaway Liquid HCN
+    Exothermic Polymerization (pH > 5.5 Cyanide Bomb), Sulfur-Dioxide / Phosphoric-Acid Inhibitor
+    Injection & Thermal Incinerator Interlock Sandbox (Chapter 151).
+    """
+    if acn_hcn_reactor_trains < 1:
+        raise ValueError("acn_hcn_reactor_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge",
+        "manual_nh3_propylene_air_ratio_step_offline_4hr_hcn_acidity_titration_cloud",
+    }
+    if acn_governance_mode not in valid_modes:
+        raise ValueError(f"acn_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = acn_governance_mode == "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge"
+    active_acn_hcn_reactor_pods = max(2, min(8, int(acn_hcn_reactor_trains))) if acn_hcn_reactor_trains <= 8 else max(8, int(acn_hcn_reactor_trains // 2))
+    gpu_nodes = max(2, math.ceil(acn_hcn_reactor_trains / 4))
+
+    acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct = 43.7 if governed else 6.4
+    acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct = 59.6 if governed else 8.9
+    osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms = 0.2 if governed else 144.0
+    unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct = 0.0 if governed else 1.4
+    reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms = 0.3 if governed else 191.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct = 0.0 if governed else 3.6
+
+    return {
+        "acn_hcn_reactor_trains": acn_hcn_reactor_trains,
+        "acn_governance_mode": acn_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_acn_hcn_reactor_pods": active_acn_hcn_reactor_pods,
+        "acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct": acrylonitrile_selectivity_and_mobi_catalyst_redox_stability_gain_pct,
+        "acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct": acrolein_cyanohydrin_fouling_and_ammonium_sulfate_scaling_reduction_pct,
+        "osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms": osha1910119_nfpa704_sil3_hcn_so2_h3po4_inhibitor_and_incinerator_interlock_ms,
+        "unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct": unmitigated_liquid_hcn_exothermic_polymerization_or_o2_breakthrough_pct,
+        "reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms": reactor_edge_tdlas_hcn_nh3_o2_and_raman_acn_acrolein_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct": uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct,
+        "acrylonitrile_ammoxidation_hcn_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
