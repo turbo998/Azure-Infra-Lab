@@ -182,6 +182,7 @@ from agent_infra_sizer import (
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
     simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
     simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
+    simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1433,6 +1434,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(12, "raw_cloud_fixed_cot_pid_manual_optical_pyrometer_and_scheduled_decoking"),
     ]
 
+    ostwald_nitric_acid_profiles: List[Dict[str, object]] = [
+        simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(8, "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge"),
+        simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(32, "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge"),
+        simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(8, "raw_cloud_fixed_nh3_air_ratio_pid_and_offline_titration"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1602,6 +1609,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "gen4_msr_pyroprocessing_profiles": gen4_msr_pyroprocessing_profiles,
         "gaa_cfet_ale_asald_profiles": gaa_cfet_ale_asald_profiles,
         "ethylene_steam_cracker_profiles": ethylene_steam_cracker_profiles,
+        "ostwald_nitric_acid_profiles": ostwald_nitric_acid_profiles,
     }
 
 

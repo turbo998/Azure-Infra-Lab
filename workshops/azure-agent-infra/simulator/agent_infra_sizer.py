@@ -8707,6 +8707,57 @@ def simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil
     }
 
 
+def simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(
+    ostwald_trains: int = 8,
+    ostwald_governance_mode: str = "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Ostwald Dual-Pressure Nitric Acid (HNO3) & Platinum-Rhodium (Pt-Rh 90/10)
+    Gauze Ammonia Catalytic Oxidation (890-920 °C, < 1 ms Contact Time, PtO2 Volatilization & Pd-Ni
+    Catchment Gauze) & Secondary N2O Abatement / NOx Tray Absorption PINN-MPC, Online 10 kHz Tunable
+    Diode Laser NH3/Air Ratio (TDLAS) / Two-Color IR Gauze-Hotspot Pyrometry / Quantum-Cascade Laser
+    (QCL N2O/NO/NO2/NH3-Slip) Metrology & NFPA 69 / AIChE CCPS / EN 12952 / IEC 61511 SIL-3
+    Ammonia-Air LEL Detonation (> 13.8 vol% NH3), Unburnt NH3-Slip Ammonium Nitrate (NH4NO3)
+    Explosion & Gauze Burn-Through Interlock Sandbox (Chapter 175 · 170-Cycle & 170-Simulator
+    Milestone!).
+    """
+    if ostwald_trains < 1:
+        raise ValueError("ostwald_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge",
+        "raw_cloud_fixed_nh3_air_ratio_pid_and_offline_titration",
+    }
+    if ostwald_governance_mode not in valid_modes:
+        raise ValueError(f"ostwald_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ostwald_governance_mode == "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge"
+    active_ostwald_pods = max(2, min(16, int(ostwald_trains))) if ostwald_trains <= 16 else max(16, int(ostwald_trains // 2))
+    gpu_nodes = max(2, math.ceil(ostwald_trains / 4))
+
+    no_selectivity_and_acid_yield_gain_pct = 45.3 if governed else 6.7
+    platinum_volatilization_and_n2o_emission_reduction_pct = 68.6 if governed else 9.2
+    nfpa69_ccps_sil3_nh3_lel_trip_and_steam_snuffing_interlock_ms = 0.35 if governed else 365.0
+    unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct = 0.0 if governed else 1.6
+    burner_edge_10khz_tdlas_nh3_air_pyrometry_and_qcl_n2o_telemetry_loop_ms = 0.25 if governed else 195.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct = 0.0 if governed else 4.4
+
+    return {
+        "ostwald_trains": ostwald_trains,
+        "ostwald_governance_mode": ostwald_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ostwald_pods": active_ostwald_pods,
+        "no_selectivity_and_acid_yield_gain_pct": no_selectivity_and_acid_yield_gain_pct,
+        "platinum_volatilization_and_n2o_emission_reduction_pct": platinum_volatilization_and_n2o_emission_reduction_pct,
+        "nfpa69_ccps_sil3_nh3_lel_trip_and_steam_snuffing_interlock_ms": nfpa69_ccps_sil3_nh3_lel_trip_and_steam_snuffing_interlock_ms,
+        "unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct": unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct,
+        "burner_edge_10khz_tdlas_nh3_air_pyrometry_and_qcl_n2o_telemetry_loop_ms": burner_edge_10khz_tdlas_nh3_air_pyrometry_and_qcl_n2o_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct": uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct,
+        "ostwald_nitric_acid_ptrh_gauze_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

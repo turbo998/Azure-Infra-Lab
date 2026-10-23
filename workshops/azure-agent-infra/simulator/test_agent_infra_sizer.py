@@ -176,6 +176,7 @@ from agent_infra_sizer import (
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
     simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
     simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
+    simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3560,6 +3561,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct"], 3.0)
         self.assertTrue(gov["ethylene_steam_cracker_radiant_coil_slo_met"])
         self.assertFalse(raw["ethylene_steam_cracker_radiant_coil_slo_met"])
+
+    def test_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(self) -> None:
+        gov = simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(
+            8, "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge"
+        )
+        raw = simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(
+            8, "raw_cloud_fixed_nh3_air_ratio_pid_and_offline_titration"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ostwald_pods"], 8)
+        self.assertEqual(gov["no_selectivity_and_acid_yield_gain_pct"], 45.3)
+        self.assertEqual(gov["platinum_volatilization_and_n2o_emission_reduction_pct"], 68.6)
+        self.assertEqual(gov["nfpa69_ccps_sil3_nh3_lel_trip_and_steam_snuffing_interlock_ms"], 0.35)
+        self.assertEqual(gov["unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct"], 1.0)
+        self.assertEqual(gov["burner_edge_10khz_tdlas_nh3_air_pyrometry_and_qcl_n2o_telemetry_loop_ms"], 0.25)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct"], 3.0)
+        self.assertTrue(gov["ostwald_nitric_acid_ptrh_gauze_slo_met"])
+        self.assertFalse(raw["ostwald_nitric_acid_ptrh_gauze_slo_met"])
 
 
 if __name__ == "__main__":

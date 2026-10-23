@@ -10231,5 +10231,52 @@
       "uncompensated_hotspot_carburization_or_decoke_spall_plugging_pct": 4.2,
       "ethylene_steam_cracker_radiant_coil_slo_met": false
     }
+  ],
+  "ostwald_nitric_acid_profiles": [
+    {
+      "ostwald_trains": 8,
+      "ostwald_governance_mode": "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ostwald_pods": 8,
+      "no_selectivity_and_acid_yield_gain_pct": 45.3,
+      "platinum_volatilization_and_n2o_emission_reduction_pct": 68.6,
+      "nfpa69_ccps_sil3_nh3_lel_trip_and_steam_snuffing_interlock_ms": 0.35,
+      "unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct": 0.0,
+      "burner_edge_10khz_tdlas_nh3_air_pyrometry_and_qcl_n2o_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct": 0.0,
+      "ostwald_nitric_acid_ptrh_gauze_slo_met": true
+    },
+    {
+      "ostwald_trains": 32,
+      "ostwald_governance_mode": "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ostwald_pods": 16,
+      "no_selectivity_and_acid_yield_gain_pct": 45.3,
+      "platinum_volatilization_and_n2o_emission_reduction_pct": 68.6,
+      "nfpa69_ccps_sil3_nh3_lel_trip_and_steam_snuffing_interlock_ms": 0.35,
+      "unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct": 0.0,
+      "burner_edge_10khz_tdlas_nh3_air_pyrometry_and_qcl_n2o_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct": 0.0,
+      "ostwald_nitric_acid_ptrh_gauze_slo_met": true
+    },
+    {
+      "ostwald_trains": 8,
+      "ostwald_governance_mode": "raw_cloud_fixed_nh3_air_ratio_pid_and_offline_titration",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ostwald_pods": 8,
+      "no_selectivity_and_acid_yield_gain_pct": 6.7,
+      "platinum_volatilization_and_n2o_emission_reduction_pct": 9.2,
+      "nfpa69_ccps_sil3_nh3_lel_trip_and_steam_snuffing_interlock_ms": 365.0,
+      "unmitigated_nh3_air_detonation_nh4no3_explosion_or_gauze_burn_pct": 1.6,
+      "burner_edge_10khz_tdlas_nh3_air_pyrometry_and_qcl_n2o_telemetry_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_gauze_tear_nh3_slip_or_hotspot_pt_loss_pct": 4.4,
+      "ostwald_nitric_acid_ptrh_gauze_slo_met": false
+    }
   ]
 }

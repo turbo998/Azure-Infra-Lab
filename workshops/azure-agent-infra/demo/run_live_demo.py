@@ -189,6 +189,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
     simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
     simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox,
+    simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1265,6 +1266,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "cracker_12_furnaces": simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(12, "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge"),
             "cracker_48_furnaces": simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(48, "pinn_mpc_free_radical_severity_coking_larson_miller_tle_api530_sil3_edge"),
             "raw_cracker_12_furnaces": simulate_ethylene_steam_cracker_radiant_coil_coking_tle_pyrometry_api530_sil3_sandbox(12, "raw_cloud_fixed_cot_pid_manual_optical_pyrometer_and_scheduled_decoking"),
+        },
+        "demo_170_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox": {
+            "ostwald_8_trains": simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(8, "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge"),
+            "ostwald_32_trains": simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(32, "pinn_mpc_ptrh_gauze_nh3_oxidation_pto2_catchment_n2o_nox_absorption_nfpa69_sil3_edge"),
+            "raw_ostwald_8_trains": simulate_ostwald_nitric_acid_ptrh_gauze_nh3_oxidation_n2o_abatement_nfpa69_sil3_sandbox(8, "raw_cloud_fixed_nh3_air_ratio_pid_and_offline_titration"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
