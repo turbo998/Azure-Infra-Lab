@@ -166,6 +166,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
     simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
+    simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1127,6 +1128,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "acn_8_trains": simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(8, "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge"),
             "acn_32_trains": simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(32, "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge"),
             "raw_acn_8_trains": simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(8, "manual_nh3_propylene_air_ratio_step_offline_4hr_hcn_acidity_titration_cloud"),
+        },
+        "demo_147_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox": {
+            "ech_8_trains": simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(8, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
+            "ech_32_trains": simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(32, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
+            "raw_ech_8_trains": simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(8, "manual_hcl_sparging_fixed_naoh_saponification_ratio_offline_4hr_eew_hycl_titration_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

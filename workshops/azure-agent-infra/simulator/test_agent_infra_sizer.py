@@ -153,6 +153,7 @@ from agent_infra_sizer import (
     simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
     simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
+    simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3054,6 +3055,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_catalyst_overreduction_or_quench_tower_polymer_plugging_pct"], 3.0)
         self.assertTrue(gov["acrylonitrile_ammoxidation_hcn_slo_met"])
         self.assertFalse(raw["acrylonitrile_ammoxidation_hcn_slo_met"])
+
+    def test_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(self) -> None:
+        gov = simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(
+            8, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"
+        )
+        raw = simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(
+            8, "manual_hcl_sparging_fixed_naoh_saponification_ratio_offline_4hr_eew_hycl_titration_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ech_epoxy_pods"], 8)
+        self.assertEqual(gov["ech_saponification_selectivity_and_electronic_grade_epoxy_yield_gain_pct"], 43.5)
+        self.assertEqual(gov["glycidol_hydrolysis_loss_and_hydrolyzable_chlorine_hycl_reduction_pct"], 59.4)
+        self.assertEqual(gov["osha1910119_diers_sil3_ech_ring_opening_quench_and_hcl_scrubber_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_ech_exothermic_ring_opening_runaway_or_hcl_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ech_exothermic_ring_opening_runaway_or_hcl_release_pct"], 1.0)
+        self.assertEqual(gov["reactor_edge_ftnir_eew_and_raman_1255cm_epoxide_ring_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_saponification_column_caco3_nacl_salting_or_gelation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_saponification_column_caco3_nacl_salting_or_gelation_pct"], 3.0)
+        self.assertTrue(gov["epichlorohydrin_epoxy_resin_slo_met"])
+        self.assertFalse(raw["epichlorohydrin_epoxy_resin_slo_met"])
 
 
 if __name__ == "__main__":

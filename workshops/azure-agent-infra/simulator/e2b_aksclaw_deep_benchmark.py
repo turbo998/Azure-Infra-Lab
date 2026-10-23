@@ -159,6 +159,7 @@ from agent_infra_sizer import (
     simulate_mdi_tdi_isocyanate_phosgenation_urea_tar_cocl2_scrubber_sil3_sandbox,
     simulate_ncm811_cathode_precursor_coprecipitation_roller_kiln_calcination_nfpa86_sil3_sandbox,
     simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox,
+    simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1271,6 +1272,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(32, "pinn_mpc_sohio_ammoxidation_mobi_redox_hcn_stabilizer_tdlas_raman_osha1910119_sil3_edge"),
         simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119_sil3_sandbox(8, "manual_nh3_propylene_air_ratio_step_offline_4hr_hcn_acidity_titration_cloud"),
     ]
+    epichlorohydrin_epoxy_resin_profiles: List[Dict[str, object]] = [
+        simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(4, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
+        simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(8, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
+        simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(32, "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"),
+        simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(8, "manual_hcl_sparging_fixed_naoh_saponification_ratio_offline_4hr_eew_hycl_titration_cloud"),
+    ]
 
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
@@ -1418,6 +1425,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "mdi_tdi_isocyanate_phosgenation_profiles": mdi_tdi_isocyanate_phosgenation_profiles,
         "ncm811_cathode_precursor_kiln_profiles": ncm811_cathode_precursor_kiln_profiles,
         "acrylonitrile_ammoxidation_hcn_profiles": acrylonitrile_ammoxidation_hcn_profiles,
+        "epichlorohydrin_epoxy_resin_profiles": epichlorohydrin_epoxy_resin_profiles,
     }
 
 

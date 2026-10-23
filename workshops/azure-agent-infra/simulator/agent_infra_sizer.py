@@ -7537,6 +7537,58 @@ def simulate_acrylonitrile_ammoxidation_hcn_polymerization_inhibitor_osha1910119
     }
 
 
+def simulate_epichlorohydrin_glycerin_saponification_epoxy_resin_diers_sil3_sandbox(
+    ech_epoxy_production_trains: int = 8,
+    ech_governance_mode: str = "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Epichlorohydrin (ECH Glycerin Hydrochlorination GTE C3H8O3 + 2HCl ->
+    1,3-DCH + 2H2O & Reactive Stripping Alkaline Saponification 1,3-DCH + NaOH -> ECH + NaCl + H2O)
+    & Electronic-Grade Liquid Epoxy Resin (LER DGEBA Bisphenol-A Condensation), 1,3-Dichloropropanol
+    vs 2,3-DCH Regioselectivity, Saponification Glycidol/Polyglycerol Hydrolysis & Hydrolyzable
+    Chlorine (HyCl < 150 ppm) Suppression PINN-MPC, Online FT-NIR Epoxide Equivalent Weight (EEW) /
+    Raman Epoxide-Ring (1,255 cm^-1) Metrology & OSHA 29 CFR 1910.119 / NFPA 30 / DIERS / IEC 61511
+    SIL-3 Epichlorohydrin Runaway Ring-Opening Exothermic Polymerization (dH = -108 kJ/mol),
+    Anhydrous HCl Over-Pressure Scrubber & Cold-Toluene/Xylene Dilution Quench Interlock Sandbox
+    (Chapter 152).
+    """
+    if ech_epoxy_production_trains < 1:
+        raise ValueError("ech_epoxy_production_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge",
+        "manual_hcl_sparging_fixed_naoh_saponification_ratio_offline_4hr_eew_hycl_titration_cloud",
+    }
+    if ech_governance_mode not in valid_modes:
+        raise ValueError(f"ech_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ech_governance_mode == "pinn_mpc_gte_dch_regioselectivity_ech_saponification_ler_eew_hycl_ftnir_raman_diers_sil3_edge"
+    active_ech_epoxy_pods = max(2, min(8, int(ech_epoxy_production_trains))) if ech_epoxy_production_trains <= 8 else max(8, int(ech_epoxy_production_trains // 2))
+    gpu_nodes = max(2, math.ceil(ech_epoxy_production_trains / 4))
+
+    ech_saponification_selectivity_and_electronic_grade_epoxy_yield_gain_pct = 43.5 if governed else 6.3
+    glycidol_hydrolysis_loss_and_hydrolyzable_chlorine_hycl_reduction_pct = 59.4 if governed else 8.8
+    osha1910119_diers_sil3_ech_ring_opening_quench_and_hcl_scrubber_interlock_ms = 0.3 if governed else 141.0
+    unmitigated_ech_exothermic_ring_opening_runaway_or_hcl_release_pct = 0.0 if governed else 1.3
+    reactor_edge_ftnir_eew_and_raman_1255cm_epoxide_ring_loop_ms = 0.3 if governed else 187.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_saponification_column_caco3_nacl_salting_or_gelation_pct = 0.0 if governed else 3.5
+
+    return {
+        "ech_epoxy_production_trains": ech_epoxy_production_trains,
+        "ech_governance_mode": ech_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_ech_epoxy_pods": active_ech_epoxy_pods,
+        "ech_saponification_selectivity_and_electronic_grade_epoxy_yield_gain_pct": ech_saponification_selectivity_and_electronic_grade_epoxy_yield_gain_pct,
+        "glycidol_hydrolysis_loss_and_hydrolyzable_chlorine_hycl_reduction_pct": glycidol_hydrolysis_loss_and_hydrolyzable_chlorine_hycl_reduction_pct,
+        "osha1910119_diers_sil3_ech_ring_opening_quench_and_hcl_scrubber_interlock_ms": osha1910119_diers_sil3_ech_ring_opening_quench_and_hcl_scrubber_interlock_ms,
+        "unmitigated_ech_exothermic_ring_opening_runaway_or_hcl_release_pct": unmitigated_ech_exothermic_ring_opening_runaway_or_hcl_release_pct,
+        "reactor_edge_ftnir_eew_and_raman_1255cm_epoxide_ring_loop_ms": reactor_edge_ftnir_eew_and_raman_1255cm_epoxide_ring_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_saponification_column_caco3_nacl_salting_or_gelation_pct": uncompensated_saponification_column_caco3_nacl_salting_or_gelation_pct,
+        "epichlorohydrin_epoxy_resin_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
