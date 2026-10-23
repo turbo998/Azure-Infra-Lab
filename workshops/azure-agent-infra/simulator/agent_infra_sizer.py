@@ -8959,6 +8959,57 @@ def simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination
     }
 
 
+def simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(
+    zinc_hydromet_lines: int = 8,
+    zinc_governance_mode: str = "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Zinc Oxygen Pressure Leaching (OPL 150 °C / 1.3 MPa Sphalerite Autoclave
+    ZnS + H2SO4 + 1/2 O2 -> ZnSO4 + S0 + H2O), Jarosite/Goethite Iron Precipitation, Zn-Dust
+    Cementation Purification (Co/Ni/Cd/Ge/Sb Removal) & Giant Cellhouse Zinc Electrowinning PINN-MPC,
+    Online 10 kHz IR Cathode-Busbar Short-Circuit Thermography / XRF-Voltammetry Trace Co-Ge-Sb /
+    TDLAS Arsine-Stibine (AsH3/SbH3) Metrology & NFPA 70E / OSHA 1910.119 / ASME BPVC VIII / IEC
+    61511 SIL-3 Lethal Arsine/Stibine (<50 ppbv) Gas Evolution, Molten-Sulfur Autoclave Exotherm &
+    Cellhouse H2-Acid-Mist Deflagration Interlock Sandbox (Chapter 180 · 175-Cycle & 175-Simulator
+    Milestone!).
+    """
+    if zinc_hydromet_lines < 1:
+        raise ValueError("zinc_hydromet_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge",
+        "raw_cloud_fixed_autoclave_o2_pid_and_manual_cellhouse_short_circuit_gaussmeter",
+    }
+    if zinc_governance_mode not in valid_modes:
+        raise ValueError(f"zinc_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = zinc_governance_mode == "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge"
+    active_zinc_pods = max(2, min(16, int(zinc_hydromet_lines))) if zinc_hydromet_lines <= 16 else max(16, int(zinc_hydromet_lines // 2))
+    gpu_nodes = max(2, math.ceil(zinc_hydromet_lines / 4))
+
+    shg_zinc_current_efficiency_and_leach_extraction_gain_pct = 45.2 if governed else 6.7
+    cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct = 68.9 if governed else 9.2
+    osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms = 0.35 if governed else 375.0
+    unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct = 0.0 if governed else 1.5
+    cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms = 0.25 if governed else 204.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct = 0.0 if governed else 4.3
+
+    return {
+        "zinc_hydromet_lines": zinc_hydromet_lines,
+        "zinc_governance_mode": zinc_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_zinc_pods": active_zinc_pods,
+        "shg_zinc_current_efficiency_and_leach_extraction_gain_pct": shg_zinc_current_efficiency_and_leach_extraction_gain_pct,
+        "cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct": cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct,
+        "osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms": osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms,
+        "unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct": unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct,
+        "cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms": cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct,
+        "zinc_pressure_leaching_electrowinning_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

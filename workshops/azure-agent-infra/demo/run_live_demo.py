@@ -194,6 +194,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox,
     simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox,
     simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox,
+    simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1295,6 +1296,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ccr_8_trains": simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox(8, "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge"),
             "ccr_32_trains": simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox(32, "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge"),
             "raw_ccr_8_trains": simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox(8, "raw_cloud_fixed_wait_temperature_pid_and_offline_lab_ron_chloride_titration"),
+        },
+        "demo_175_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox": {
+            "zinc_8_lines": simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(8, "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge"),
+            "zinc_32_lines": simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(32, "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge"),
+            "raw_zinc_8_lines": simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(8, "raw_cloud_fixed_autoclave_o2_pid_and_manual_cellhouse_short_circuit_gaussmeter"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

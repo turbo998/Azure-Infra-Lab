@@ -181,6 +181,7 @@ from agent_infra_sizer import (
     simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox,
     simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox,
     simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox,
+    simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3670,6 +3671,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct"], 3.0)
         self.assertTrue(gov["ccr_platforming_moving_bed_radial_reactor_slo_met"])
         self.assertFalse(raw["ccr_platforming_moving_bed_radial_reactor_slo_met"])
+
+    def test_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(self) -> None:
+        gov = simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(
+            8, "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge"
+        )
+        raw = simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(
+            8, "raw_cloud_fixed_autoclave_o2_pid_and_manual_cellhouse_short_circuit_gaussmeter"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_zinc_pods"], 8)
+        self.assertEqual(gov["shg_zinc_current_efficiency_and_leach_extraction_gain_pct"], 45.2)
+        self.assertEqual(gov["cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct"], 68.9)
+        self.assertEqual(gov["osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms"], 0.35)
+        self.assertEqual(gov["unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct"], 1.0)
+        self.assertEqual(gov["cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms"], 0.25)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct"], 3.0)
+        self.assertTrue(gov["zinc_pressure_leaching_electrowinning_slo_met"])
+        self.assertFalse(raw["zinc_pressure_leaching_electrowinning_slo_met"])
 
 
 if __name__ == "__main__":

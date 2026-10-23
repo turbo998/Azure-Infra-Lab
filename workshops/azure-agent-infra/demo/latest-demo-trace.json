@@ -10668,6 +10668,53 @@
         "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": 4.1,
         "ccr_platforming_moving_bed_radial_reactor_slo_met": false
       }
+    ],
+    "zinc_pressure_leaching_electrowinning_profiles": [
+      {
+        "zinc_hydromet_lines": 8,
+        "zinc_governance_mode": "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_zinc_pods": 8,
+        "shg_zinc_current_efficiency_and_leach_extraction_gain_pct": 45.2,
+        "cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct": 68.9,
+        "osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms": 0.35,
+        "unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct": 0.0,
+        "cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": 0.0,
+        "zinc_pressure_leaching_electrowinning_slo_met": true
+      },
+      {
+        "zinc_hydromet_lines": 32,
+        "zinc_governance_mode": "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_zinc_pods": 16,
+        "shg_zinc_current_efficiency_and_leach_extraction_gain_pct": 45.2,
+        "cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct": 68.9,
+        "osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms": 0.35,
+        "unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct": 0.0,
+        "cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": 0.0,
+        "zinc_pressure_leaching_electrowinning_slo_met": true
+      },
+      {
+        "zinc_hydromet_lines": 8,
+        "zinc_governance_mode": "raw_cloud_fixed_autoclave_o2_pid_and_manual_cellhouse_short_circuit_gaussmeter",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_zinc_pods": 8,
+        "shg_zinc_current_efficiency_and_leach_extraction_gain_pct": 6.7,
+        "cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct": 9.2,
+        "osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms": 375.0,
+        "unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct": 1.5,
+        "cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms": 204.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": 4.3,
+        "zinc_pressure_leaching_electrowinning_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -19710,5 +19757,52 @@
       "ccr_platforming_moving_bed_radial_reactor_slo_met": false
     }
   },
-  "trace_sha256": "b0e03677e9dc82c22e219d1b5eac1d0e95c34ad8b07212318708fb37c8211299"
+  "demo_175_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox": {
+    "zinc_8_lines": {
+      "zinc_hydromet_lines": 8,
+      "zinc_governance_mode": "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_zinc_pods": 8,
+      "shg_zinc_current_efficiency_and_leach_extraction_gain_pct": 45.2,
+      "cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct": 68.9,
+      "osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms": 0.35,
+      "unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct": 0.0,
+      "cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": 0.0,
+      "zinc_pressure_leaching_electrowinning_slo_met": true
+    },
+    "zinc_32_lines": {
+      "zinc_hydromet_lines": 32,
+      "zinc_governance_mode": "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_zinc_pods": 16,
+      "shg_zinc_current_efficiency_and_leach_extraction_gain_pct": 45.2,
+      "cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct": 68.9,
+      "osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms": 0.35,
+      "unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct": 0.0,
+      "cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": 0.0,
+      "zinc_pressure_leaching_electrowinning_slo_met": true
+    },
+    "raw_zinc_8_lines": {
+      "zinc_hydromet_lines": 8,
+      "zinc_governance_mode": "raw_cloud_fixed_autoclave_o2_pid_and_manual_cellhouse_short_circuit_gaussmeter",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_zinc_pods": 8,
+      "shg_zinc_current_efficiency_and_leach_extraction_gain_pct": 6.7,
+      "cathode_redissolution_dendrite_shorts_and_sulfur_encapsulation_reduction_pct": 9.2,
+      "osha1910119_nfpa70e_sil3_arsine_stibine_and_autoclave_exotherm_interlock_ms": 375.0,
+      "unmitigated_lethal_ash3_sbh3_evolution_autoclave_runaway_or_h2_explosion_pct": 1.5,
+      "cellhouse_edge_10khz_tdlas_ash3_ir_busbar_and_asv_trace_ge_co_telemetry_loop_ms": 204.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": 4.3,
+      "zinc_pressure_leaching_electrowinning_slo_met": false
+    }
+  },
+  "trace_sha256": "9ba1bb3080c50a69857767af054fbb759843bc3624b8a0d2a37237993c11dc1b"
 }
