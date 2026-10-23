@@ -167,6 +167,7 @@ from agent_infra_sizer import (
     simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
     simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
     simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
+    simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3362,6 +3363,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ortho_para_exothermic_rollover_or_loading_arm_geysering_pct"], 3.0)
         self.assertTrue(gov["lh2_cryogenic_zbo_orthopara_slo_met"])
         self.assertFalse(raw["lh2_cryogenic_zbo_orthopara_slo_met"])
+
+    def test_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(
+            16, "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge"
+        )
+        raw = simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(
+            16, "raw_cloud_pid_manual_seed_lift_and_optical_diameter_only"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_mcz_puller_pods"], 8)
+        self.assertEqual(gov["defect_free_npv_zone_yield_and_body_growth_rate_gain_pct"], 38.6)
+        self.assertEqual(gov["interstitial_oxygen_striation_and_diameter_taper_variance_reduction_pct"], 62.8)
+        self.assertEqual(gov["semis2_nfpa86_sil3_crucible_breach_steam_explosion_and_cable_catch_interlock_ms"], 0.6)
+        self.assertEqual(gov["unmitigated_crucible_melt_leak_water_jacket_explosion_or_ingot_drop_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_crucible_melt_leak_water_jacket_explosion_or_ingot_drop_pct"], 1.0)
+        self.assertEqual(gov["puller_edge_5khz_meniscus_brightring_and_mhd_gauss_telemetry_loop_ms"], 0.5)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_voronkov_cop_vacancy_ring_or_dash_neck_dislocation_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_voronkov_cop_vacancy_ring_or_dash_neck_dislocation_slip_pct"], 3.0)
+        self.assertTrue(gov["mcz_silicon_ingot_voronkov_slo_met"])
+        self.assertFalse(raw["mcz_silicon_ingot_voronkov_slo_met"])
 
 
 if __name__ == "__main__":

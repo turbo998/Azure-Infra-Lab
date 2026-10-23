@@ -173,6 +173,7 @@ from agent_infra_sizer import (
     simulate_floating_wind_h2_hvdc_umbilical_das_dnv_sil3_sandbox,
     simulate_tfln_lnoi_modulator_smartcut_ibe_shg_semis2_sil3_sandbox,
     simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox,
+    simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1370,6 +1371,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(8, "manual_valve_chilldown_unmonitored_ortho_para_slip_flare_vent_boil_off_cloud"),
     ]
 
+    mcz_silicon_ingot_voronkov_profiles: List[Dict[str, object]] = [
+        simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(16, "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge"),
+        simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(64, "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge"),
+        simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(16, "raw_cloud_pid_manual_seed_lift_and_optical_diameter_only"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1530,6 +1537,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "floating_wind_h2_hvdc_umbilical_profiles": floating_wind_h2_hvdc_umbilical_profiles,
         "tfln_lnoi_modulator_profiles": tfln_lnoi_modulator_profiles,
         "lh2_cryogenic_zbo_orthopara_profiles": lh2_cryogenic_zbo_orthopara_profiles,
+        "mcz_silicon_ingot_voronkov_profiles": mcz_silicon_ingot_voronkov_profiles,
     }
 
 

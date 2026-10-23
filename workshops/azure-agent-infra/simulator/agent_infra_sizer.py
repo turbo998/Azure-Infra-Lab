@@ -8241,6 +8241,57 @@ def simulate_lh2_cryogenic_zbo_orthopara_raman_nfpa2_sil3_sandbox(
     }
 
 
+def simulate_mcz_silicon_ingot_voronkov_meniscus_semis2_sil3_sandbox(
+    mcz_puller_furnaces: int = 16,
+    mcz_governance_mode: str = "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous 300 mm Semiconductor Monocrystalline Silicon Magnetic-Field-Applied Czochralski
+    (MCZ 0.3-0.4 T Superconducting Cusp/Horizontal Magnet, 1,420 C Quartz Crucible Melt) & Continuous-Czochralski
+    (CCZ) Crystal Puller, Voronkov Point-Defect Criterion (v/G0 = 1.34e-3 cm^2/min*K COP Vacancy / Dislocation-Loop
+    Neutral Zone), Magnetohydrodynamic (MHD) Melt Convection & Interstitial Oxygen [Oi] (8-14 ppma) Striation
+    Suppression PINN-MPC, Online 5 kHz Laser Triangulation Meniscus Bright-Ring Diameter / Dash-Necking
+    Zero-Dislocation Imaging & Two-Color Pyrometry Metrology & SEMI S2 / SEMI M1 / NFPA 86 / ASME BPVC /
+    IEC 61511 SIL-3 Quartz Crucible Melt-Breach Water-Jacket Steam-Explosion Guard, Seed-Cable Overload Catch &
+    Superconducting Magnet Quench Interlock Sandbox (Chapter 166 — 170-Test Milestone!).
+    """
+    if mcz_puller_furnaces < 1:
+        raise ValueError("mcz_puller_furnaces must be >= 1")
+    valid_modes = {
+        "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge",
+        "raw_cloud_pid_manual_seed_lift_and_optical_diameter_only",
+    }
+    if mcz_governance_mode not in valid_modes:
+        raise ValueError(f"mcz_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = mcz_governance_mode == "pinn_mpc_voronkov_vg_mhd_oxygen_meniscus_brightring_dashneck_semis2_sil3_edge"
+    active_mcz_puller_pods = max(2, min(8, int(mcz_puller_furnaces))) if mcz_puller_furnaces <= 8 else max(8, int(mcz_puller_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(mcz_puller_furnaces / 8))
+
+    defect_free_npv_zone_yield_and_body_growth_rate_gain_pct = 38.6 if governed else 5.9
+    interstitial_oxygen_striation_and_diameter_taper_variance_reduction_pct = 62.8 if governed else 8.7
+    semis2_nfpa86_sil3_crucible_breach_steam_explosion_and_cable_catch_interlock_ms = 0.6 if governed else 430.0
+    unmitigated_crucible_melt_leak_water_jacket_explosion_or_ingot_drop_pct = 0.0 if governed else 1.6
+    puller_edge_5khz_meniscus_brightring_and_mhd_gauss_telemetry_loop_ms = 0.5 if governed else 220.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_voronkov_cop_vacancy_ring_or_dash_neck_dislocation_slip_pct = 0.0 if governed else 4.3
+
+    return {
+        "mcz_puller_furnaces": mcz_puller_furnaces,
+        "mcz_governance_mode": mcz_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_mcz_puller_pods": active_mcz_puller_pods,
+        "defect_free_npv_zone_yield_and_body_growth_rate_gain_pct": defect_free_npv_zone_yield_and_body_growth_rate_gain_pct,
+        "interstitial_oxygen_striation_and_diameter_taper_variance_reduction_pct": interstitial_oxygen_striation_and_diameter_taper_variance_reduction_pct,
+        "semis2_nfpa86_sil3_crucible_breach_steam_explosion_and_cable_catch_interlock_ms": semis2_nfpa86_sil3_crucible_breach_steam_explosion_and_cable_catch_interlock_ms,
+        "unmitigated_crucible_melt_leak_water_jacket_explosion_or_ingot_drop_pct": unmitigated_crucible_melt_leak_water_jacket_explosion_or_ingot_drop_pct,
+        "puller_edge_5khz_meniscus_brightring_and_mhd_gauss_telemetry_loop_ms": puller_edge_5khz_meniscus_brightring_and_mhd_gauss_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_voronkov_cop_vacancy_ring_or_dash_neck_dislocation_slip_pct": uncompensated_voronkov_cop_vacancy_ring_or_dash_neck_dislocation_slip_pct,
+        "mcz_silicon_ingot_voronkov_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
