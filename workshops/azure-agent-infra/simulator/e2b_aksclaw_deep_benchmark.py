@@ -180,6 +180,7 @@ from agent_infra_sizer import (
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
     simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
+    simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1419,6 +1420,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(8, "raw_cloud_manual_salt_sampling_fixed_electrorefiner_current_and_delayed_drain"),
     ]
 
+    gaa_cfet_ale_asald_profiles: List[Dict[str, object]] = [
+        simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(16, "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"),
+        simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(64, "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"),
+        simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(16, "raw_cloud_fixed_cycle_timer_open_loop_rf_bias_and_offline_tem_metrology"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1586,6 +1593,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ebchr_titanium_refining_profiles": ebchr_titanium_refining_profiles,
         "tgv_glass_substrate_profiles": tgv_glass_substrate_profiles,
         "gen4_msr_pyroprocessing_profiles": gen4_msr_pyroprocessing_profiles,
+        "gaa_cfet_ale_asald_profiles": gaa_cfet_ale_asald_profiles,
     }
 
 

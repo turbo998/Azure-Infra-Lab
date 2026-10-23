@@ -187,6 +187,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
     simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
+    simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1253,6 +1254,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "msr_8_loops": simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(8, "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge"),
             "msr_32_loops": simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(32, "pinn_mpc_delayed_neutron_drift_uf4_uf3_redox_lcc_utru_codeposition_ans81_sil3_edge"),
             "raw_msr_8_loops": simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox(8, "raw_cloud_manual_salt_sampling_fixed_electrorefiner_current_and_delayed_drain"),
+        },
+        "demo_168_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox": {
+            "ale_16_chambers": simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(16, "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"),
+            "ale_64_chambers": simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(64, "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"),
+            "raw_ale_16_chambers": simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(16, "raw_cloud_fixed_cycle_timer_open_loop_rf_bias_and_offline_tem_metrology"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

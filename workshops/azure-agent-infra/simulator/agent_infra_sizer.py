@@ -8601,6 +8601,59 @@ def simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81
     }
 
 
+def simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(
+    ale_chambers: int = 16,
+    ale_governance_mode: str = "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Sub-2nm Gate-All-Around (GAA) Nanosheet & Complementary FET (CFET)
+    Atomic Layer Etching (ALE, Self-Limiting Cl2/BCl3 Chemisorption + Low-Energy Ar+ Ion
+    Desorption Synergy Window [E_th, E_sput]) & Area-Selective Atomic Layer Deposition (AS-ALD,
+    Small-Molecule Inhibitor Passivation + High-k HfO2 / TiN Work-Function Metal Dipole
+    Conformal Filling) Langmuir Surface Coverage, Sub-Monolayer SiGe/Si Inner-Spacer Cavity
+    Isotropic Etch Selectivity (>180:1) & Ion-Energy Angular Distribution (IEAD) PINN-MPC,
+    Online 20 kHz In-Situ Spectroscopic Ellipsometry (SE) / Quartz Crystal Microbalance (QCM)
+    & Retarding-Field Energy Analyzer (RFEA) Metrology & SEMI S2 / S8 / NFPA 318 / IEC 61511
+    SIL-3 Pyrophoric Organometallic/Halide Precursor (TMA / HfCl4 / WF6 / BCl3) Double-Block
+    Purge & RF Bias Arc Crowbar Interlock Sandbox (Chapter 173).
+    """
+    if ale_chambers < 1:
+        raise ValueError("ale_chambers must be >= 1")
+    valid_modes = {
+        "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge",
+        "raw_cloud_fixed_cycle_timer_open_loop_rf_bias_and_offline_tem_metrology",
+    }
+    if ale_governance_mode not in valid_modes:
+        raise ValueError(f"ale_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ale_governance_mode == "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"
+    active_ale_asald_pods = max(2, min(16, int(ale_chambers))) if ale_chambers <= 16 else max(16, int(ale_chambers // 2))
+    gpu_nodes = max(2, math.ceil(ale_chambers / 8))
+
+    gaa_nanosheet_epc_precision_and_asald_selectivity_yield_gain_pct = 45.8 if governed else 6.7
+    si_channel_lattice_sputter_damage_and_inner_spacer_crescent_defect_reduction_pct = 68.9 if governed else 9.4
+    semis2_nfpa318_sil3_pyrophoric_tma_purge_and_rf_arc_crowbar_interlock_ms = 0.3 if governed else 355.0
+    unmitigated_pyrophoric_tma_fire_halide_leak_or_wafer_arc_burn_pct = 0.0 if governed else 1.5
+    chamber_edge_20khz_se_qcm_and_rfea_ion_energy_telemetry_loop_ms = 0.25 if governed else 195.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ale_synergy_loss_incomplete_purge_or_asald_nucleation_pct = 0.0 if governed else 4.2
+
+    return {
+        "ale_chambers": ale_chambers,
+        "ale_governance_mode": ale_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ale_asald_pods": active_ale_asald_pods,
+        "gaa_nanosheet_epc_precision_and_asald_selectivity_yield_gain_pct": gaa_nanosheet_epc_precision_and_asald_selectivity_yield_gain_pct,
+        "si_channel_lattice_sputter_damage_and_inner_spacer_crescent_defect_reduction_pct": si_channel_lattice_sputter_damage_and_inner_spacer_crescent_defect_reduction_pct,
+        "semis2_nfpa318_sil3_pyrophoric_tma_purge_and_rf_arc_crowbar_interlock_ms": semis2_nfpa318_sil3_pyrophoric_tma_purge_and_rf_arc_crowbar_interlock_ms,
+        "unmitigated_pyrophoric_tma_fire_halide_leak_or_wafer_arc_burn_pct": unmitigated_pyrophoric_tma_fire_halide_leak_or_wafer_arc_burn_pct,
+        "chamber_edge_20khz_se_qcm_and_rfea_ion_energy_telemetry_loop_ms": chamber_edge_20khz_se_qcm_and_rfea_ion_energy_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ale_synergy_loss_incomplete_purge_or_asald_nucleation_pct": uncompensated_ale_synergy_loss_incomplete_purge_or_asald_nucleation_pct,
+        "gaa_cfet_nanosheet_ale_asald_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

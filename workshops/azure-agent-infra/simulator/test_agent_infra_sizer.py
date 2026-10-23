@@ -174,6 +174,7 @@ from agent_infra_sizer import (
     simulate_ebeam_cold_hearth_refining_ebchr_titanium_aerospace_hearth_skull_nadcap_sil3_sandbox,
     simulate_tgv_glass_core_substrate_femtosecond_sle_ceac_electroplating_semis2_sil3_sandbox,
     simulate_gen4_msr_molten_salt_pyroprocessing_electrorefiner_freezeplug_ans81_sil3_sandbox,
+    simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3516,6 +3517,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_delayed_neutron_reactivity_swing_or_uf4_uf3_redox_drift_pct"], 3.0)
         self.assertTrue(gov["gen4_msr_molten_salt_pyroprocessing_slo_met"])
         self.assertFalse(raw["gen4_msr_molten_salt_pyroprocessing_slo_met"])
+
+    def test_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(
+            16, "pinn_mpc_langmuir_synergy_iead_sige_cavity_asald_nucleation_semis2_sil3_edge"
+        )
+        raw = simulate_gaa_cfet_nanosheet_ale_asald_langmuir_synergy_qcm_se_semis2_sil3_sandbox(
+            16, "raw_cloud_fixed_cycle_timer_open_loop_rf_bias_and_offline_tem_metrology"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ale_asald_pods"], 16)
+        self.assertEqual(gov["gaa_nanosheet_epc_precision_and_asald_selectivity_yield_gain_pct"], 45.8)
+        self.assertEqual(gov["si_channel_lattice_sputter_damage_and_inner_spacer_crescent_defect_reduction_pct"], 68.9)
+        self.assertEqual(gov["semis2_nfpa318_sil3_pyrophoric_tma_purge_and_rf_arc_crowbar_interlock_ms"], 0.3)
+        self.assertEqual(gov["unmitigated_pyrophoric_tma_fire_halide_leak_or_wafer_arc_burn_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_tma_fire_halide_leak_or_wafer_arc_burn_pct"], 1.0)
+        self.assertEqual(gov["chamber_edge_20khz_se_qcm_and_rfea_ion_energy_telemetry_loop_ms"], 0.25)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ale_synergy_loss_incomplete_purge_or_asald_nucleation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ale_synergy_loss_incomplete_purge_or_asald_nucleation_pct"], 3.0)
+        self.assertTrue(gov["gaa_cfet_nanosheet_ale_asald_slo_met"])
+        self.assertFalse(raw["gaa_cfet_nanosheet_ale_asald_slo_met"])
 
 
 if __name__ == "__main__":
