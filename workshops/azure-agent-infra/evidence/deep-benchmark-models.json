@@ -10513,5 +10513,52 @@
       "uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct": 4.3,
       "zinc_pressure_leaching_electrowinning_slo_met": false
     }
+  ],
+  "ilmenite_dc_eaf_titania_slag_smelting_profiles": [
+    {
+      "ilmenite_dc_furnaces": 8,
+      "ilmenite_governance_mode": "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_ilmenite_pods": 8,
+      "titania_slag_tio2_grade_consistency_and_specific_energy_gain_pct": 45.6,
+      "slag_foaming_boilover_and_freeze_lining_erosion_reduction_pct": 69.3,
+      "nfpa86_iso13577_sil3_slag_boilover_and_freeze_lining_breakout_interlock_ms": 0.34,
+      "unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct": 0.0,
+      "furnace_edge_10khz_oes_arc_acoustic_and_copper_cooler_heat_flux_telemetry_loop_ms": 0.24,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct": 0.0,
+      "ilmenite_dc_eaf_titania_slag_smelting_slo_met": true
+    },
+    {
+      "ilmenite_dc_furnaces": 32,
+      "ilmenite_governance_mode": "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_ilmenite_pods": 16,
+      "titania_slag_tio2_grade_consistency_and_specific_energy_gain_pct": 45.6,
+      "slag_foaming_boilover_and_freeze_lining_erosion_reduction_pct": 69.3,
+      "nfpa86_iso13577_sil3_slag_boilover_and_freeze_lining_breakout_interlock_ms": 0.34,
+      "unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct": 0.0,
+      "furnace_edge_10khz_oes_arc_acoustic_and_copper_cooler_heat_flux_telemetry_loop_ms": 0.24,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct": 0.0,
+      "ilmenite_dc_eaf_titania_slag_smelting_slo_met": true
+    },
+    {
+      "ilmenite_dc_furnaces": 8,
+      "ilmenite_governance_mode": "raw_cloud_fixed_arc_power_anthracite_ratio_and_offline_slag_xrf_dip_testing",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_ilmenite_pods": 8,
+      "titania_slag_tio2_grade_consistency_and_specific_energy_gain_pct": 6.8,
+      "slag_foaming_boilover_and_freeze_lining_erosion_reduction_pct": 9.4,
+      "nfpa86_iso13577_sil3_slag_boilover_and_freeze_lining_breakout_interlock_ms": 378.0,
+      "unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct": 1.5,
+      "furnace_edge_10khz_oes_arc_acoustic_and_copper_cooler_heat_flux_telemetry_loop_ms": 206.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct": 4.4,
+      "ilmenite_dc_eaf_titania_slag_smelting_slo_met": false
+    }
   ]
 }

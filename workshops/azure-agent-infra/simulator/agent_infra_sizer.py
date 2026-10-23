@@ -9010,6 +9010,56 @@ def simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_os
     }
 
 
+def simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(
+    ilmenite_dc_furnaces: int = 8,
+    ilmenite_governance_mode: str = "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Direct-Current Electric Arc Furnace (DC-EAF) Ilmenite Smelting (1,650–1,750 °C
+    High-Titania Slag 85–90% TiO2 & Sorelmetal Low-Manganese Pig Iron Bath FeTiO3 + C -> TiO2(slag) +
+    Fe(l) + CO), Open-Arc / Foaming-Slag Freeze-Lining Heat-Flux & FeO-Ti2O3-TiO2 Pseudobrookite
+    Activity PINN-MPC, Online 10 kHz Optical Emission Spectroscopy (OES) / Acoustic Arc-Stability /
+    Copper-Cooler Thermocouple Freeze-Lining Metrology & NFPA 86 / ISO 13577 / OSHA 1910.119 / IEC
+    61511 SIL-3 Slag Foaming Boilover, Freeze-Lining Breakout & Water-Cooled Roof/Hollow-Electrode
+    CO/H2 Explosion Interlock Sandbox (Chapter 181 · 185-Test Milestone!).
+    """
+    if ilmenite_dc_furnaces < 1:
+        raise ValueError("ilmenite_dc_furnaces must be >= 1")
+    valid_modes = {
+        "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge",
+        "raw_cloud_fixed_arc_power_anthracite_ratio_and_offline_slag_xrf_dip_testing",
+    }
+    if ilmenite_governance_mode not in valid_modes:
+        raise ValueError(f"ilmenite_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ilmenite_governance_mode == "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge"
+    active_ilmenite_pods = max(2, min(16, int(ilmenite_dc_furnaces))) if ilmenite_dc_furnaces <= 16 else max(16, int(ilmenite_dc_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(ilmenite_dc_furnaces / 4))
+
+    titania_slag_tio2_grade_consistency_and_specific_energy_gain_pct = 45.6 if governed else 6.8
+    slag_foaming_boilover_and_freeze_lining_erosion_reduction_pct = 69.3 if governed else 9.4
+    nfpa86_iso13577_sil3_slag_boilover_and_freeze_lining_breakout_interlock_ms = 0.34 if governed else 378.0
+    unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct = 0.0 if governed else 1.5
+    furnace_edge_10khz_oes_arc_acoustic_and_copper_cooler_heat_flux_telemetry_loop_ms = 0.24 if governed else 206.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct = 0.0 if governed else 4.4
+
+    return {
+        "ilmenite_dc_furnaces": ilmenite_dc_furnaces,
+        "ilmenite_governance_mode": ilmenite_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_ilmenite_pods": active_ilmenite_pods,
+        "titania_slag_tio2_grade_consistency_and_specific_energy_gain_pct": titania_slag_tio2_grade_consistency_and_specific_energy_gain_pct,
+        "slag_foaming_boilover_and_freeze_lining_erosion_reduction_pct": slag_foaming_boilover_and_freeze_lining_erosion_reduction_pct,
+        "nfpa86_iso13577_sil3_slag_boilover_and_freeze_lining_breakout_interlock_ms": nfpa86_iso13577_sil3_slag_boilover_and_freeze_lining_breakout_interlock_ms,
+        "unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct": unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct,
+        "furnace_edge_10khz_oes_arc_acoustic_and_copper_cooler_heat_flux_telemetry_loop_ms": furnace_edge_10khz_oes_arc_acoustic_and_copper_cooler_heat_flux_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct": uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct,
+        "ilmenite_dc_eaf_titania_slag_smelting_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

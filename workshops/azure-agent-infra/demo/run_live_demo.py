@@ -195,6 +195,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox,
     simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox,
     simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
+    simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1301,6 +1302,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "zinc_8_lines": simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(8, "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge"),
             "zinc_32_lines": simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(32, "pinn_mpc_zinc_opl_lignosulfonate_cementation_electrowinning_ash3_osha1910119_sil3_edge"),
             "raw_zinc_8_lines": simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox(8, "raw_cloud_fixed_autoclave_o2_pid_and_manual_cellhouse_short_circuit_gaussmeter"),
+        },
+        "demo_176_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox": {
+            "ilmenite_8_furnaces": simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(8, "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge"),
+            "ilmenite_32_furnaces": simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(32, "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge"),
+            "raw_ilmenite_8_furnaces": simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_arc_power_anthracite_ratio_and_offline_slag_xrf_dip_testing"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -182,6 +182,7 @@ from agent_infra_sizer import (
     simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox,
     simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox,
     simulate_zinc_pressure_leaching_jarosite_purification_electrowinning_ash3_osha1910119_sil3_sandbox,
+    simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3692,6 +3693,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_trace_ge_sb_co_hydrogen_redissolution_or_sulfur_wetting_slip_pct"], 3.0)
         self.assertTrue(gov["zinc_pressure_leaching_electrowinning_slo_met"])
         self.assertFalse(raw["zinc_pressure_leaching_electrowinning_slo_met"])
+
+    def test_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_ilmenite_dc_eaf_open_arc_feo_activity_freeze_lining_boilover_nfpa86_sil3_edge"
+        )
+        raw = simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_arc_power_anthracite_ratio_and_offline_slag_xrf_dip_testing"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_ilmenite_pods"], 8)
+        self.assertEqual(gov["titania_slag_tio2_grade_consistency_and_specific_energy_gain_pct"], 45.6)
+        self.assertEqual(gov["slag_foaming_boilover_and_freeze_lining_erosion_reduction_pct"], 69.3)
+        self.assertEqual(gov["nfpa86_iso13577_sil3_slag_boilover_and_freeze_lining_breakout_interlock_ms"], 0.34)
+        self.assertEqual(gov["unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_freeze_lining_breakout_slag_boilover_or_water_leak_h2_explosion_pct"], 1.0)
+        self.assertEqual(gov["furnace_edge_10khz_oes_arc_acoustic_and_copper_cooler_heat_flux_telemetry_loop_ms"], 0.24)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ilmenite_fe3_ratio_shift_or_ti2o3_overreduction_crusting_slip_pct"], 3.0)
+        self.assertTrue(gov["ilmenite_dc_eaf_titania_slag_smelting_slo_met"])
+        self.assertFalse(raw["ilmenite_dc_eaf_titania_slag_smelting_slo_met"])
 
 
 if __name__ == "__main__":
