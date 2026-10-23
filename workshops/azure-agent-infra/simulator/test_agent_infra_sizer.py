@@ -159,6 +159,7 @@ from agent_infra_sizer import (
     simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox,
     simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox,
     simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox,
+    simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3186,6 +3187,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct"], 3.0)
         self.assertTrue(gov["scco2_supercritical_smb_slo_met"])
         self.assertFalse(raw["scco2_supercritical_smb_slo_met"])
+
+    def test_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(self) -> None:
+        gov = simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(
+            8, "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge"
+        )
+        raw = simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(
+            8, "static_gaussian_pec_table_fixed_multipass_dose_offline_cd_sem_inspection_cloud"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_euv_photomask_pods"], 8)
+        self.assertEqual(gov["zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct"], 44.5)
+        self.assertEqual(gov["cd_uniformity_3sigma_and_registration_placement_error_reduction_pct"], 60.5)
+        self.assertEqual(gov["semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms"], 0.2)
+        self.assertEqual(gov["unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct"], 1.0)
+        self.assertEqual(gov["bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms"], 0.3)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.6)
+        self.assertEqual(gov["uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct"], 3.0)
+        self.assertTrue(gov["euv_photomask_mbmw_slo_met"])
+        self.assertFalse(raw["euv_photomask_mbmw_slo_met"])
 
 
 if __name__ == "__main__":

@@ -9574,6 +9574,68 @@
         "uncompensated_smb_raffinate_extract_crossover_or_stationary_phase_collapse_pct": 3.7,
         "scco2_supercritical_smb_slo_met": false
       }
+    ],
+    "euv_photomask_mbmw_profiles": [
+      {
+        "mbmw_photomask_bays": 4,
+        "photomask_governance_mode": "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_euv_photomask_pods": 4,
+        "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": 44.5,
+        "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": 60.5,
+        "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": 0.2,
+        "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": 0.0,
+        "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 0.0,
+        "euv_photomask_mbmw_slo_met": true
+      },
+      {
+        "mbmw_photomask_bays": 8,
+        "photomask_governance_mode": "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_euv_photomask_pods": 8,
+        "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": 44.5,
+        "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": 60.5,
+        "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": 0.2,
+        "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": 0.0,
+        "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 0.0,
+        "euv_photomask_mbmw_slo_met": true
+      },
+      {
+        "mbmw_photomask_bays": 32,
+        "photomask_governance_mode": "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_euv_photomask_pods": 16,
+        "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": 44.5,
+        "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": 60.5,
+        "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": 0.2,
+        "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": 0.0,
+        "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": 0.3,
+        "wan_bandwidth_reduction_pct": 99.6,
+        "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 0.0,
+        "euv_photomask_mbmw_slo_met": true
+      },
+      {
+        "mbmw_photomask_bays": 8,
+        "photomask_governance_mode": "static_gaussian_pec_table_fixed_multipass_dose_offline_cd_sem_inspection_cloud",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_euv_photomask_pods": 8,
+        "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": 6.7,
+        "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": 9.2,
+        "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": 135.0,
+        "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": 1.4,
+        "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": 182.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 3.8,
+        "euv_photomask_mbmw_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -17582,5 +17644,52 @@
       "scco2_supercritical_smb_slo_met": false
     }
   },
-  "trace_sha256": "7294ba22857314fed07db89578181c9b406c3c4ab47982dfed0285d3edc2e9ca"
+  "demo_153_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox": {
+    "photomask_8_bays": {
+      "mbmw_photomask_bays": 8,
+      "photomask_governance_mode": "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_euv_photomask_pods": 8,
+      "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": 44.5,
+      "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": 60.5,
+      "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": 0.2,
+      "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": 0.0,
+      "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 0.0,
+      "euv_photomask_mbmw_slo_met": true
+    },
+    "photomask_32_bays": {
+      "mbmw_photomask_bays": 32,
+      "photomask_governance_mode": "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_euv_photomask_pods": 16,
+      "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": 44.5,
+      "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": 60.5,
+      "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": 0.2,
+      "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": 0.0,
+      "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": 0.3,
+      "wan_bandwidth_reduction_pct": 99.6,
+      "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 0.0,
+      "euv_photomask_mbmw_slo_met": true
+    },
+    "raw_photomask_8_bays": {
+      "mbmw_photomask_bays": 8,
+      "photomask_governance_mode": "static_gaussian_pec_table_fixed_multipass_dose_offline_cd_sem_inspection_cloud",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_euv_photomask_pods": 8,
+      "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": 6.7,
+      "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": 9.2,
+      "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": 135.0,
+      "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": 1.4,
+      "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": 182.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": 3.8,
+      "euv_photomask_mbmw_slo_met": false
+    }
+  },
+  "trace_sha256": "ad59d6514d04e68b184764f7438bb44708b8237a63f1ca8f54f8cfc48df2f43e"
 }

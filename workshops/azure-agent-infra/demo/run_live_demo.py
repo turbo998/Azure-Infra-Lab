@@ -172,6 +172,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_sic_gan_pvt_boule_cvd_epitaxy_bpd_micropipe_semis2_sil3_sandbox,
     simulate_optical_fiber_preform_mcvd_ovd_draw_tower_g654e_sicl4_hcl_sil3_sandbox,
     simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox,
+    simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1163,6 +1164,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "scco2_8_skids": simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox(8, "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge"),
             "scco2_32_skids": simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox(32, "pinn_mpc_peng_robinson_scco2_density_smb_wavefront_uv_dad_coriolis_asme_viii_sil3_edge"),
             "raw_scco2_8_skids": simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asme_viii_sil3_sandbox(8, "fixed_bpr_pressure_step_timed_smb_port_switch_offline_hplc_fraction_assay_cloud"),
+        },
+        "demo_153_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox": {
+            "photomask_8_bays": simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(8, "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge"),
+            "photomask_32_bays": simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(32, "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge"),
+            "raw_photomask_8_bays": simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(8, "static_gaussian_pec_table_fixed_multipass_dose_offline_cd_sem_inspection_cloud"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

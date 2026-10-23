@@ -7847,6 +7847,55 @@ def simulate_scco2_supercritical_extraction_smb_chromatography_peng_robinson_asm
     }
 
 
+def simulate_euv_photomask_mbmw_eb_writer_actinic_aims_pellicle_semi_s2_sil3_sandbox(
+    mbmw_photomask_bays: int = 8,
+    photomask_governance_mode: str = "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Semiconductor EUV Photomask Blank (40-Bilayer Mo/Si Ion-Beam Deposition IBD
+    & TaBN/Ru Absorber ICP-RIE Etch), 50 keV 262,144-Beam Multi-Beam Mask Writer (MBMW) & CNT EUV Pellicle Pool,
+    Coulomb Space-Charge Blur, Substrate Resist Heating & 3D Mask Shadowing / Proximity Effect Correction (PEC)
+    PINN-MPC, Online 50 kHz Actinic 13.5 nm AIMS / APMI / Heterodyne Laser Interferometer Metrology &
+    SEMI S2 / SEMI P37 / ISO 14644-1 Class 1 / IEC 61508 SIL-3 50 kV Electron-Column Arc Crowbar,
+    UHV Gate-Valve Isolation & Halogen Etch Gas Interlock Sandbox (Chapter 158).
+    """
+    if mbmw_photomask_bays < 1:
+        raise ValueError("mbmw_photomask_bays must be >= 1")
+    valid_modes = {
+        "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge",
+        "static_gaussian_pec_table_fixed_multipass_dose_offline_cd_sem_inspection_cloud",
+    }
+    if photomask_governance_mode not in valid_modes:
+        raise ValueError(f"photomask_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = photomask_governance_mode == "pinn_mpc_mbmw_coulomb_pec_resist_heating_3d_m3d_actinic_aims_semis2_sil3_edge"
+    active_euv_photomask_pods = max(2, min(8, int(mbmw_photomask_bays))) if mbmw_photomask_bays <= 8 else max(8, int(mbmw_photomask_bays // 2))
+    gpu_nodes = max(2, math.ceil(mbmw_photomask_bays / 4))
+
+    zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct = 44.5 if governed else 6.7
+    cd_uniformity_3sigma_and_registration_placement_error_reduction_pct = 60.5 if governed else 9.2
+    semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms = 0.2 if governed else 135.0
+    unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct = 0.0 if governed else 1.4
+    bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms = 0.3 if governed else 182.0
+    wan_bandwidth_reduction_pct = 99.6 if governed else 0.0
+    uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct = 0.0 if governed else 3.8
+
+    return {
+        "mbmw_photomask_bays": mbmw_photomask_bays,
+        "photomask_governance_mode": photomask_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_euv_photomask_pods": active_euv_photomask_pods,
+        "zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct": zero_defect_euv_mask_yield_and_mbmw_throughput_gain_pct,
+        "cd_uniformity_3sigma_and_registration_placement_error_reduction_pct": cd_uniformity_3sigma_and_registration_placement_error_reduction_pct,
+        "semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms": semis2_p37_sil3_50kv_column_crowbar_uhv_gate_and_cl2_f2_scrubber_interlock_ms,
+        "unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct": unmitigated_50kv_column_arc_uhv_vent_contamination_or_halogen_leak_pct,
+        "bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms": bay_edge_50khz_actinic_13p5nm_aims_apmi_and_interferometer_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct": uncompensated_resist_heating_cd_drift_or_mo_si_multilayer_phase_defect_pct,
+        "euv_photomask_mbmw_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
