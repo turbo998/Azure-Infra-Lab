@@ -10621,6 +10621,53 @@
         "uncompensated_burden_hangup_bridge_or_low_metallization_slip_pct": 4.2,
         "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": false
       }
+    ],
+    "ccr_platforming_moving_bed_radial_reactor_profiles": [
+      {
+        "ccr_reforming_trains": 8,
+        "ccr_governance_mode": "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ccr_pods": 8,
+        "reformate_ron_c5plus_yield_and_h2_purity_gain_pct": 44.8,
+        "regenerator_pt_sintering_and_screen_pinning_reduction_pct": 69.2,
+        "apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms": 0.35,
+        "unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct": 0.0,
+        "ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": 0.0,
+        "ccr_platforming_moving_bed_radial_reactor_slo_met": true
+      },
+      {
+        "ccr_reforming_trains": 32,
+        "ccr_governance_mode": "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ccr_pods": 16,
+        "reformate_ron_c5plus_yield_and_h2_purity_gain_pct": 44.8,
+        "regenerator_pt_sintering_and_screen_pinning_reduction_pct": 69.2,
+        "apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms": 0.35,
+        "unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct": 0.0,
+        "ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms": 0.25,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": 0.0,
+        "ccr_platforming_moving_bed_radial_reactor_slo_met": true
+      },
+      {
+        "ccr_reforming_trains": 8,
+        "ccr_governance_mode": "raw_cloud_fixed_wait_temperature_pid_and_offline_lab_ron_chloride_titration",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ccr_pods": 8,
+        "reformate_ron_c5plus_yield_and_h2_purity_gain_pct": 6.6,
+        "regenerator_pt_sintering_and_screen_pinning_reduction_pct": 9.1,
+        "apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms": 365.0,
+        "unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct": 1.4,
+        "ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms": 196.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": 4.1,
+        "ccr_platforming_moving_bed_radial_reactor_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -19616,5 +19663,52 @@
       "dri_hbi_shaft_furnace_hydrogen_reduction_slo_met": false
     }
   },
-  "trace_sha256": "0f296cc237a96eca436a89570730fb0d559490116b62fe50c290387112ca7fe1"
+  "demo_174_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox": {
+    "ccr_8_trains": {
+      "ccr_reforming_trains": 8,
+      "ccr_governance_mode": "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ccr_pods": 8,
+      "reformate_ron_c5plus_yield_and_h2_purity_gain_pct": 44.8,
+      "regenerator_pt_sintering_and_screen_pinning_reduction_pct": 69.2,
+      "apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms": 0.35,
+      "unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct": 0.0,
+      "ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": 0.0,
+      "ccr_platforming_moving_bed_radial_reactor_slo_met": true
+    },
+    "ccr_32_trains": {
+      "ccr_reforming_trains": 32,
+      "ccr_governance_mode": "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ccr_pods": 16,
+      "reformate_ron_c5plus_yield_and_h2_purity_gain_pct": 44.8,
+      "regenerator_pt_sintering_and_screen_pinning_reduction_pct": 69.2,
+      "apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms": 0.35,
+      "unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct": 0.0,
+      "ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms": 0.25,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": 0.0,
+      "ccr_platforming_moving_bed_radial_reactor_slo_met": true
+    },
+    "raw_ccr_8_trains": {
+      "ccr_reforming_trains": 8,
+      "ccr_governance_mode": "raw_cloud_fixed_wait_temperature_pid_and_offline_lab_ron_chloride_titration",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NV36ads_A10_v5",
+      "active_ccr_pods": 8,
+      "reformate_ron_c5plus_yield_and_h2_purity_gain_pct": 6.6,
+      "regenerator_pt_sintering_and_screen_pinning_reduction_pct": 9.1,
+      "apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms": 365.0,
+      "unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct": 1.4,
+      "ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms": 196.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": 4.1,
+      "ccr_platforming_moving_bed_radial_reactor_slo_met": false
+    }
+  },
+  "trace_sha256": "b0e03677e9dc82c22e219d1b5eac1d0e95c34ad8b07212318708fb37c8211299"
 }

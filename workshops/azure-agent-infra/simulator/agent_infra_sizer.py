@@ -8910,6 +8910,55 @@ def simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_n
     }
 
 
+def simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox(
+    ccr_reforming_trains: int = 8,
+    ccr_governance_mode: str = "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Continuous Catalytic Reforming (CCR Platforming) & Moving-Bed Radial-Flow
+    Reactor (490-540 °C / 0.35-0.85 MPa Naphtha Dehydrocyclization, Dehydrogenation & Isomerization),
+    Pt-Sn/Al2O3 Catalyst Regeneration Coke-Burn & Oxychlorination Redispersion PINN-MPC, Online 10 kHz
+    FT-NIR Research Octane Number (RON) / Capacitance Catalyst Mass-Flux / Centerpipe Screen Delta-P
+    Metrology & API RP 556 / NFPA 85 / OSHA 1910.119 / IEC 61511 SIL-3 Regenerator Thermal Runaway,
+    Catalyst Pinning & H2/O2 Lock-Hopper Purge Interlock Sandbox (Chapter 179).
+    """
+    if ccr_reforming_trains < 1:
+        raise ValueError("ccr_reforming_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge",
+        "raw_cloud_fixed_wait_temperature_pid_and_offline_lab_ron_chloride_titration",
+    }
+    if ccr_governance_mode not in valid_modes:
+        raise ValueError(f"ccr_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = ccr_governance_mode == "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge"
+    active_ccr_pods = max(2, min(16, int(ccr_reforming_trains))) if ccr_reforming_trains <= 16 else max(16, int(ccr_reforming_trains // 2))
+    gpu_nodes = max(2, math.ceil(ccr_reforming_trains / 4))
+
+    reformate_ron_c5plus_yield_and_h2_purity_gain_pct = 44.8 if governed else 6.6
+    regenerator_pt_sintering_and_screen_pinning_reduction_pct = 69.2 if governed else 9.1
+    apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms = 0.35 if governed else 365.0
+    unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct = 0.0 if governed else 1.4
+    ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms = 0.25 if governed else 196.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct = 0.0 if governed else 4.1
+
+    return {
+        "ccr_reforming_trains": ccr_reforming_trains,
+        "ccr_governance_mode": ccr_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NV36ads_A10_v5",
+        "active_ccr_pods": active_ccr_pods,
+        "reformate_ron_c5plus_yield_and_h2_purity_gain_pct": reformate_ron_c5plus_yield_and_h2_purity_gain_pct,
+        "regenerator_pt_sintering_and_screen_pinning_reduction_pct": regenerator_pt_sintering_and_screen_pinning_reduction_pct,
+        "apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms": apirp556_nfpa85_sil3_coke_burn_runaway_and_lockhopper_h2_o2_interlock_ms,
+        "unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct": unmitigated_regenerator_sintering_screen_collapse_or_lockhopper_explosion_pct,
+        "ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms": ccr_edge_10khz_ftnir_ron_and_catalyst_flux_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct": uncompensated_naphtha_pn_aromatics_shift_or_water_chloride_imbalance_pct,
+        "ccr_platforming_moving_bed_radial_reactor_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

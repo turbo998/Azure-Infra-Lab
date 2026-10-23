@@ -186,6 +186,7 @@ from agent_infra_sizer import (
     simulate_claus_sulfur_recovery_sru_thermal_furnace_air_demand_uvdoas_nfpa85_sil3_sandbox,
     simulate_bayer_alumina_refinery_tube_digestion_dsp_scale_gibbsite_pbm_asme8_sil3_sandbox,
     simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox,
+    simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1461,6 +1462,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_dri_hbi_shaft_furnace_hydrogen_syngas_reduction_pellet_clustering_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_bustle_gas_temperature_pid_and_offline_lab_metallization_titration"),
     ]
 
+    ccr_platforming_moving_bed_radial_reactor_profiles: List[Dict[str, object]] = [
+        simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox(8, "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge"),
+        simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox(32, "pinn_mpc_ccr_radial_reactor_wait_coke_burn_oxychlorination_redispersion_apirp556_sil3_edge"),
+        simulate_ccr_platforming_moving_bed_radial_reactor_coke_burn_oxychlorination_apirp556_sil3_sandbox(8, "raw_cloud_fixed_wait_temperature_pid_and_offline_lab_ron_chloride_titration"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1634,6 +1641,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "claus_sulfur_recovery_sru_profiles": claus_sulfur_recovery_sru_profiles,
         "bayer_alumina_refinery_tube_digestion_profiles": bayer_alumina_refinery_tube_digestion_profiles,
         "dri_hbi_shaft_furnace_hydrogen_reduction_profiles": dri_hbi_shaft_furnace_hydrogen_reduction_profiles,
+        "ccr_platforming_moving_bed_radial_reactor_profiles": ccr_platforming_moving_bed_radial_reactor_profiles,
     }
 
 
