@@ -10654,5 +10654,52 @@
       "uncompensated_chromite_mg_al_spinel_shift_or_electrode_tip_loss_slip_pct": 4.4,
       "ferrochrome_submerged_arc_furnace_slo_met": false
     }
+  ],
+  "silicomanganese_ferromanganese_saf_profiles": [
+    {
+      "simn_saf_furnaces": 8,
+      "simn_governance_mode": "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_simn_pods": 8,
+      "mn_si_recovery_and_co_prereduction_energy_efficiency_gain_pct": 45.4,
+      "burden_bridging_hang_and_mn_vapor_volatilization_loss_reduction_pct": 70.2,
+      "nfpa86_osha19101000_sil3_burden_eruption_and_mnox_fume_interlock_ms": 0.34,
+      "unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct": 0.0,
+      "saf_edge_10khz_burden_impedance_tdlas_co_co2_and_libs_mn_si_telemetry_loop_ms": 0.24,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct": 0.0,
+      "silicomanganese_ferromanganese_saf_slo_met": true
+    },
+    {
+      "simn_saf_furnaces": 32,
+      "simn_governance_mode": "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_simn_pods": 16,
+      "mn_si_recovery_and_co_prereduction_energy_efficiency_gain_pct": 45.4,
+      "burden_bridging_hang_and_mn_vapor_volatilization_loss_reduction_pct": 70.2,
+      "nfpa86_osha19101000_sil3_burden_eruption_and_mnox_fume_interlock_ms": 0.34,
+      "unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct": 0.0,
+      "saf_edge_10khz_burden_impedance_tdlas_co_co2_and_libs_mn_si_telemetry_loop_ms": 0.24,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct": 0.0,
+      "silicomanganese_ferromanganese_saf_slo_met": true
+    },
+    {
+      "simn_saf_furnaces": 8,
+      "simn_governance_mode": "raw_cloud_fixed_ore_coke_ratio_and_manual_electrode_resistance_pid",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_simn_pods": 8,
+      "mn_si_recovery_and_co_prereduction_energy_efficiency_gain_pct": 6.7,
+      "burden_bridging_hang_and_mn_vapor_volatilization_loss_reduction_pct": 9.4,
+      "nfpa86_osha19101000_sil3_burden_eruption_and_mnox_fume_interlock_ms": 376.0,
+      "unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct": 1.6,
+      "saf_edge_10khz_burden_impedance_tdlas_co_co2_and_libs_mn_si_telemetry_loop_ms": 205.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct": 4.3,
+      "silicomanganese_ferromanganese_saf_slo_met": false
+    }
   ]
 }

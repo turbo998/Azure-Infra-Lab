@@ -185,6 +185,7 @@ from agent_infra_sizer import (
     simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
     simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
     simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
+    simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3758,6 +3759,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_chromite_mg_al_spinel_shift_or_electrode_tip_loss_slip_pct"], 3.0)
         self.assertTrue(gov["ferrochrome_submerged_arc_furnace_slo_met"])
         self.assertFalse(raw["ferrochrome_submerged_arc_furnace_slo_met"])
+
+    def test_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge"
+        )
+        raw = simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_ore_coke_ratio_and_manual_electrode_resistance_pid"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_simn_pods"], 8)
+        self.assertEqual(gov["mn_si_recovery_and_co_prereduction_energy_efficiency_gain_pct"], 45.4)
+        self.assertEqual(gov["burden_bridging_hang_and_mn_vapor_volatilization_loss_reduction_pct"], 70.2)
+        self.assertEqual(gov["nfpa86_osha19101000_sil3_burden_eruption_and_mnox_fume_interlock_ms"], 0.34)
+        self.assertEqual(gov["unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct"], 1.0)
+        self.assertEqual(gov["saf_edge_10khz_burden_impedance_tdlas_co_co2_and_libs_mn_si_telemetry_loop_ms"], 0.24)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct"], 3.0)
+        self.assertTrue(gov["silicomanganese_ferromanganese_saf_slo_met"])
+        self.assertFalse(raw["silicomanganese_ferromanganese_saf_slo_met"])
 
 
 if __name__ == "__main__":

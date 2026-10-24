@@ -198,6 +198,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ilmenite_dc_eaf_titania_slag_smelting_freeze_lining_boilover_nfpa86_sil3_sandbox,
     simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
     simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
+    simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1319,6 +1320,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "fecr_8_furnaces": simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(8, "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge"),
             "fecr_32_furnaces": simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(32, "pinn_mpc_fecr_saf_soderberg_baking_isotherm_coke_bed_resistance_nfpa86_sil3_edge"),
             "raw_fecr_8_furnaces": simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_c3_westly_factor_and_manual_electrode_slipping_timer"),
+        },
+        "demo_179_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox": {
+            "simn_8_furnaces": simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(8, "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge"),
+            "simn_32_furnaces": simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(32, "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge"),
+            "raw_simn_8_furnaces": simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_ore_coke_ratio_and_manual_electrode_resistance_pid"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

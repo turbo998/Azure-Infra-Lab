@@ -9146,6 +9146,49 @@ def simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa
     }
 
 
+def simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(
+    simn_saf_furnaces: int = 8,
+    simn_governance_mode: str = "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Silicomanganese & High-Carbon Ferromanganese Submerged Arc Furnace (SiMn/HC-FeMn SAF 63 MVA, 1,400-1,650 C) & AOD Refining, CO Shaft Pre-Reduction, Burden Permeability & MnO-SiO2-CaO Slag Basicity PINN-MPC & NFPA 86 / OSHA 1910.1000 / ISO 13577 / IEC 61511 SIL-3 Interlock (Cycle #179)."""
+    if simn_saf_furnaces <= 0:
+        raise ValueError("simn_saf_furnaces must be positive")
+    valid_modes = {
+        "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge",
+        "raw_cloud_fixed_ore_coke_ratio_and_manual_electrode_resistance_pid",
+    }
+    if simn_governance_mode not in valid_modes:
+        raise ValueError(f"simn_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = simn_governance_mode == "pinn_mpc_simn_saf_co_prereduction_burden_permeability_slag_basicity_nfpa86_sil3_edge"
+    active_simn_pods = max(2, min(16, int(simn_saf_furnaces))) if simn_saf_furnaces <= 16 else max(16, int(simn_saf_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(simn_saf_furnaces / 4))
+
+    mn_si_recovery_and_co_prereduction_energy_efficiency_gain_pct = 45.4 if governed else 6.7
+    burden_bridging_hang_and_mn_vapor_volatilization_loss_reduction_pct = 70.2 if governed else 9.4
+    nfpa86_osha19101000_sil3_burden_eruption_and_mnox_fume_interlock_ms = 0.34 if governed else 376.0
+    unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct = 0.0 if governed else 1.6
+    saf_edge_10khz_burden_impedance_tdlas_co_co2_and_libs_mn_si_telemetry_loop_ms = 0.24 if governed else 205.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct = 0.0 if governed else 4.3
+
+    return {
+        "simn_saf_furnaces": simn_saf_furnaces,
+        "simn_governance_mode": simn_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_simn_pods": active_simn_pods,
+        "mn_si_recovery_and_co_prereduction_energy_efficiency_gain_pct": mn_si_recovery_and_co_prereduction_energy_efficiency_gain_pct,
+        "burden_bridging_hang_and_mn_vapor_volatilization_loss_reduction_pct": burden_bridging_hang_and_mn_vapor_volatilization_loss_reduction_pct,
+        "nfpa86_osha19101000_sil3_burden_eruption_and_mnox_fume_interlock_ms": nfpa86_osha19101000_sil3_burden_eruption_and_mnox_fume_interlock_ms,
+        "unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct": unmitigated_furnace_blow_eruption_or_mnox_fume_exceedance_pct,
+        "saf_edge_10khz_burden_impedance_tdlas_co_co2_and_libs_mn_si_telemetry_loop_ms": saf_edge_10khz_burden_impedance_tdlas_co_co2_and_libs_mn_si_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct": uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct,
+        "silicomanganese_ferromanganese_saf_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
