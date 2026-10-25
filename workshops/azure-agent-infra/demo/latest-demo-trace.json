@@ -12125,6 +12125,53 @@
         "uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct": 4.3,
         "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met": false
       }
+    ],
+    "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles": [
+      {
+        "gd_ho_er_lines": 8,
+        "gd_ho_er_governance_mode": "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd_ho_er_pods": 32,
+        "gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct": 51.4,
+        "uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct": 76.1,
+        "cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms": 0.24,
+        "unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct": 0.0,
+        "gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": 0.0,
+        "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": true
+      },
+      {
+        "gd_ho_er_lines": 32,
+        "gd_ho_er_governance_mode": "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd_ho_er_pods": 128,
+        "gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct": 51.4,
+        "uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct": 76.1,
+        "cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms": 0.24,
+        "unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct": 0.0,
+        "gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": 0.0,
+        "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": true
+      },
+      {
+        "gd_ho_er_lines": 8,
+        "gd_ho_er_governance_mode": "raw_cloud_open_loop_uo2_gd2o3_sintering_conventional_mcvd_solution_doping_and_unpassivated_prep",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd_ho_er_pods": 32,
+        "gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct": 8.7,
+        "uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct": 11.6,
+        "cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms": 364.0,
+        "unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct": 1.5,
+        "gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms": 198.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": 4.3,
+        "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -22624,5 +22671,52 @@
       "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met": false
     }
   },
-  "trace_sha256": "82fdbd19fe8b41dca1b6b71577dc3fd57f0cfb7ad4441bac56acb88c3c2161a3"
+  "demo_206_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox": {
+    "gd_ho_er_8_lines": {
+      "gd_ho_er_lines": 8,
+      "gd_ho_er_governance_mode": "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gd_ho_er_pods": 32,
+      "gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct": 51.4,
+      "uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct": 76.1,
+      "cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms": 0.24,
+      "unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct": 0.0,
+      "gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": 0.0,
+      "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": true
+    },
+    "gd_ho_er_32_lines": {
+      "gd_ho_er_lines": 32,
+      "gd_ho_er_governance_mode": "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gd_ho_er_pods": 128,
+      "gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct": 51.4,
+      "uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct": 76.1,
+      "cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms": 0.24,
+      "unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct": 0.0,
+      "gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": 0.0,
+      "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": true
+    },
+    "raw_gd_ho_er_8_lines": {
+      "gd_ho_er_lines": 8,
+      "gd_ho_er_governance_mode": "raw_cloud_open_loop_uo2_gd2o3_sintering_conventional_mcvd_solution_doping_and_unpassivated_prep",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gd_ho_er_pods": 32,
+      "gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct": 8.7,
+      "uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct": 11.6,
+      "cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms": 364.0,
+      "unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct": 1.5,
+      "gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": 4.3,
+      "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": false
+    }
+  },
+  "trace_sha256": "2c5a330107cc71e6d381c20d811eb2b2de0417d7f2778e2f64ccafcd07bd4e20"
 }

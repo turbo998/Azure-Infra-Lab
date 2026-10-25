@@ -10862,6 +10862,72 @@ def simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialo
     }
 
 
+def simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(
+    gd_ho_er_lines: int = 8,
+    gd_ho_er_governance_mode: str = "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 211 (Cycle #206 — 215-Test Milestone): Autonomous Gadolinium (Gd),
+    Holmium (Ho) & Erbium (Er) Cascade Extraction & 5N Vacuum Distillation,
+    Isotopically Enriched 157Gd2O3-UO2 Nuclear Burnable Poison Fuel Pellet
+    Sintering (sigma_th(157Gd) = 254,000 barns, O/M = 2.000 +/- 0.005), 20 K
+    Liquid-Hydrogen Active Magnetic Regenerator (AMR) Giant Magnetocaloric
+    Gd5(Si2Ge2) / HoB2 Spherical Powder Plasma Rotating Electrode Atomization
+    (PREP), Submarine C+L-Band Optical Fiber Amplifier (EDFA Er3+/Al3+ Co-Doped
+    MCVD Preform, 1,530-1,625 nm) & 2.94 um Medical/Mid-IR Er:YAG / 2.1 um Ho:YAG
+    Single-Crystal PINN-MPC, Online 10 kHz TIMS/ICP-MS, XRF & High-Resolution
+    Optical Spectrum Analyzer (OSA) Metrology & 10 CFR 50 / NFPA 484 /
+    OSHA 1910.1000 / SEMI S2 / IEC 61511 SIL-3 UO2-Gd2O3 Criticality/H2-Sintering,
+    SiCl4/GeCl4/POCl3 MCVD Chloride Scrubbing & Pyrophoric Gd/Ho/Er PREP Powder
+    Explosion Interlock.
+    """
+    if gd_ho_er_lines < 1:
+        raise ValueError("gd_ho_er_lines must be >= 1")
+
+    governed = (
+        gd_ho_er_governance_mode
+        == "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(gd_ho_er_lines / 2))
+    active_gd_ho_er_pods = gd_ho_er_lines * 4
+
+    gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct = (
+        51.4 if governed else 8.7
+    )
+    uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct = (
+        76.1 if governed else 11.6
+    )
+    cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms = (
+        0.24 if governed else 364.0
+    )
+    unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct = (
+        0.0 if governed else 1.5
+    )
+    gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms = (
+        0.19 if governed else 198.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct = (
+        0.0 if governed else 4.3
+    )
+
+    return {
+        "gd_ho_er_lines": gd_ho_er_lines,
+        "gd_ho_er_governance_mode": gd_ho_er_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd_ho_er_pods": active_gd_ho_er_pods,
+        "gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct": gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct,
+        "uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct": uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct,
+        "cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms": cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms,
+        "unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct": unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct,
+        "gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms": gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct,
+        "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

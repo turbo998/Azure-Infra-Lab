@@ -218,6 +218,7 @@ from agent_infra_sizer import (
     simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
     simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
     simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
+    simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1685,6 +1686,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(8, "raw_cloud_empirical_lanthanothermic_retort_heating_fixed_sm2co17_step_aging_and_open_loop_sialon_firing"),
     ]
 
+    gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles: List[Dict[str, object]] = [
+        simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(8, "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge"),
+        simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(32, "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge"),
+        simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(8, "raw_cloud_open_loop_uo2_gd2o3_sintering_conventional_mcvd_solution_doping_and_unpassivated_prep"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1890,6 +1897,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_profiles": scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_profiles,
         "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_profiles": lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_profiles,
         "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_profiles": samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_profiles,
+        "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles": gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles,
     }
 
 

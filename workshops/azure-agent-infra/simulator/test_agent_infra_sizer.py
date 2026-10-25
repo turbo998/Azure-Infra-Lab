@@ -212,6 +212,7 @@ from agent_infra_sizer import (
     simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
     simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
     simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
+    simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4361,6 +4362,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct"], 3.0)
         self.assertTrue(gov["samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met"])
         self.assertFalse(raw["samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met"])
+
+    def test_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(self) -> None:
+        gov = simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(
+            8, "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge"
+        )
+        raw = simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(
+            8, "raw_cloud_open_loop_uo2_gd2o3_sintering_conventional_mcvd_solution_doping_and_unpassivated_prep"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_gd_ho_er_pods"], 32)
+        self.assertEqual(gov["gd_ho_er_5n_yield_uo2_gd2o3_homogeneity_amr_delta_sm_and_edfa_gain_flatness_gain_pct"], 51.4)
+        self.assertEqual(gov["uo2_gd2o3_free_gd_island_edfa_er_clustering_piq_and_prep_satellite_powder_reduction_pct"], 76.1)
+        self.assertEqual(gov["cfr50_nfpa484_semis2_sil3_uo2_gd2o3_h2_sinter_mcvd_chloride_and_prep_pyrophoric_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2_sinter_explosion_mcvd_cl2_pocl3_leak_or_prep_gd_ho_er_dust_deflagration_pct"], 1.0)
+        self.assertEqual(gov["gd_ho_er_edge_10khz_tims_icpms_xrf_and_edfa_osa_piq_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct"], 3.0)
+        self.assertTrue(gov["gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met"])
+        self.assertFalse(raw["gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met"])
 
 
 if __name__ == "__main__":
