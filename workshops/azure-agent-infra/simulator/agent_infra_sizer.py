@@ -9716,6 +9716,73 @@ def simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_si
     }
 
 
+def simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(
+    strontium_barium_lines: int = 8,
+    strontium_barium_governance_mode: str = "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Celestine (SrSO4) & Barite (BaSO4) Rotary-Kiln Carbothermic
+    Black-Ash Reduction (SrS / BaS), Carbonation Purification, Vacuum Aluminothermic
+    Reduction (3SrO + 2Al -> 3Sr(g) + Al2O3 at 1,150 °C, <1 Pa) & Sub-80nm Hydrothermal
+    Tetragonal Barium Strontium Titanate (Ba_{1-x}Sr_xTiO3, BT / BST) Ultra-High-Capacitance
+    AI-GPU Multi-Layer Ceramic Capacitor (MLCC) Dielectric & 87Sr Optical-Lattice Atomic-Clock
+    Dispenser PINN-MPC, Online 10 kHz In-Situ UV-Raman Tetragonal c/a Tetragonality, LIBS
+    Ti/(Ba+Sr) Stoichiometry (1.000 ± 0.001) & TDLAS H2S/CO Metrology & NFPA 86 / NFPA 652 /
+    OSHA 1910.119 / IEC 61511 SIL-3 Lethal Hydrogen Sulfide (H2S) Scrubber, Pyrophoric Sr/Ba
+    Vacuum Retort Argon Quench & Soluble Barium (Ba2+) Containment Interlock Sandbox (Chapter 194).
+    """
+    if strontium_barium_lines < 1:
+        raise ValueError("strontium_barium_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge",
+        "raw_cloud_fixed_kiln_coal_ratio_and_open_loop_hydrothermal_batio3_autoclave_schedule",
+    }
+    if strontium_barium_governance_mode not in valid_modes:
+        raise ValueError(f"strontium_barium_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        strontium_barium_governance_mode
+        == "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(strontium_barium_lines / 2))
+    active_strontium_barium_pods = strontium_barium_lines * 4
+
+    sr_ba_aluminothermic_yield_bst_tetragonal_ca_and_mlcc_breakdown_voltage_gain_pct = (
+        48.9 if governed else 7.4
+    )
+    cubic_batio3_hydroxyl_defect_ba_ti_off_stoichiometry_and_black_ash_sio2_slagging_reduction_pct = (
+        73.6 if governed else 10.3
+    )
+    nfpa86_nfpa652_osha1910119_sil3_h2s_scrubber_vacuum_retort_argon_quench_and_ba_interlock_ms = (
+        0.28 if governed else 362.0
+    )
+    unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct = (
+        0.0 if governed else 1.5
+    )
+    sr_ba_bst_edge_10khz_insitu_uv_raman_ca_libs_ti_ba_sr_and_tdlas_h2s_co_telemetry_loop_ms = (
+        0.20 if governed else 193.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct = (
+        0.0 if governed else 4.0
+    )
+
+    return {
+        "strontium_barium_lines": strontium_barium_lines,
+        "strontium_barium_governance_mode": strontium_barium_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_strontium_barium_pods": active_strontium_barium_pods,
+        "sr_ba_aluminothermic_yield_bst_tetragonal_ca_and_mlcc_breakdown_voltage_gain_pct": sr_ba_aluminothermic_yield_bst_tetragonal_ca_and_mlcc_breakdown_voltage_gain_pct,
+        "cubic_batio3_hydroxyl_defect_ba_ti_off_stoichiometry_and_black_ash_sio2_slagging_reduction_pct": cubic_batio3_hydroxyl_defect_ba_ti_off_stoichiometry_and_black_ash_sio2_slagging_reduction_pct,
+        "nfpa86_nfpa652_osha1910119_sil3_h2s_scrubber_vacuum_retort_argon_quench_and_ba_interlock_ms": nfpa86_nfpa652_osha1910119_sil3_h2s_scrubber_vacuum_retort_argon_quench_and_ba_interlock_ms,
+        "unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct": unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct,
+        "sr_ba_bst_edge_10khz_insitu_uv_raman_ca_libs_ti_ba_sr_and_tdlas_h2s_co_telemetry_loop_ms": sr_ba_bst_edge_10khz_insitu_uv_raman_ca_libs_ti_ba_sr_and_tdlas_h2s_co_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct": uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct,
+        "strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

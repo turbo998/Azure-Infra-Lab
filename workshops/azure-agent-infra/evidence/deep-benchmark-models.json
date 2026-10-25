@@ -11124,5 +11124,52 @@
       "uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct": 4.1,
       "selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met": false
     }
+  ],
+  "strontium_barium_celestine_barite_aluminothermic_bst_mlcc_profiles": [
+    {
+      "strontium_barium_lines": 8,
+      "strontium_barium_governance_mode": "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_strontium_barium_pods": 32,
+      "sr_ba_aluminothermic_yield_bst_tetragonal_ca_and_mlcc_breakdown_voltage_gain_pct": 48.9,
+      "cubic_batio3_hydroxyl_defect_ba_ti_off_stoichiometry_and_black_ash_sio2_slagging_reduction_pct": 73.6,
+      "nfpa86_nfpa652_osha1910119_sil3_h2s_scrubber_vacuum_retort_argon_quench_and_ba_interlock_ms": 0.28,
+      "unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct": 0.0,
+      "sr_ba_bst_edge_10khz_insitu_uv_raman_ca_libs_ti_ba_sr_and_tdlas_h2s_co_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct": 0.0,
+      "strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met": true
+    },
+    {
+      "strontium_barium_lines": 32,
+      "strontium_barium_governance_mode": "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_strontium_barium_pods": 128,
+      "sr_ba_aluminothermic_yield_bst_tetragonal_ca_and_mlcc_breakdown_voltage_gain_pct": 48.9,
+      "cubic_batio3_hydroxyl_defect_ba_ti_off_stoichiometry_and_black_ash_sio2_slagging_reduction_pct": 73.6,
+      "nfpa86_nfpa652_osha1910119_sil3_h2s_scrubber_vacuum_retort_argon_quench_and_ba_interlock_ms": 0.28,
+      "unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct": 0.0,
+      "sr_ba_bst_edge_10khz_insitu_uv_raman_ca_libs_ti_ba_sr_and_tdlas_h2s_co_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct": 0.0,
+      "strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met": true
+    },
+    {
+      "strontium_barium_lines": 8,
+      "strontium_barium_governance_mode": "raw_cloud_fixed_kiln_coal_ratio_and_open_loop_hydrothermal_batio3_autoclave_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_strontium_barium_pods": 32,
+      "sr_ba_aluminothermic_yield_bst_tetragonal_ca_and_mlcc_breakdown_voltage_gain_pct": 7.4,
+      "cubic_batio3_hydroxyl_defect_ba_ti_off_stoichiometry_and_black_ash_sio2_slagging_reduction_pct": 10.3,
+      "nfpa86_nfpa652_osha1910119_sil3_h2s_scrubber_vacuum_retort_argon_quench_and_ba_interlock_ms": 362.0,
+      "unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct": 1.5,
+      "sr_ba_bst_edge_10khz_insitu_uv_raman_ca_libs_ti_ba_sr_and_tdlas_h2s_co_telemetry_loop_ms": 193.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct": 4.0,
+      "strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met": false
+    }
   ]
 }

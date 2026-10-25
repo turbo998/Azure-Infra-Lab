@@ -201,6 +201,7 @@ from agent_infra_sizer import (
     simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
     simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
     simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox,
+    simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1566,6 +1567,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(8, "raw_cloud_fixed_roaster_so2_flow_and_open_loop_znse_cvd_h2se_furnace_schedule"),
     ]
 
+    strontium_barium_celestine_barite_aluminothermic_bst_mlcc_profiles: List[Dict[str, object]] = [
+        simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(8, "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge"),
+        simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(32, "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge"),
+        simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_kiln_coal_ratio_and_open_loop_hydrothermal_batio3_autoclave_schedule"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1754,6 +1761,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "bismuth_betterton_kroll_6n_zone_refining_lbe_profiles": bismuth_betterton_kroll_6n_zone_refining_lbe_profiles,
         "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_profiles": tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_profiles,
         "selenium_6n5_znse_cvd_laser_optics_cigs_selenization_profiles": selenium_6n5_znse_cvd_laser_optics_cigs_selenization_profiles,
+        "strontium_barium_celestine_barite_aluminothermic_bst_mlcc_profiles": strontium_barium_celestine_barite_aluminothermic_bst_mlcc_profiles,
     }
 
 

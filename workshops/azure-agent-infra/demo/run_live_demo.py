@@ -208,6 +208,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
     simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
     simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox,
+    simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1379,6 +1380,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "selenium_8_lines": simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(8, "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge"),
             "selenium_32_lines": simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(32, "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge"),
             "raw_selenium_8_lines": simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(8, "raw_cloud_fixed_roaster_so2_flow_and_open_loop_znse_cvd_h2se_furnace_schedule"),
+        },
+        "demo_189_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox": {
+            "strontium_barium_8_lines": simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(8, "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge"),
+            "strontium_barium_32_lines": simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(32, "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge"),
+            "raw_strontium_barium_8_lines": simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_kiln_coal_ratio_and_open_loop_hydrothermal_batio3_autoclave_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

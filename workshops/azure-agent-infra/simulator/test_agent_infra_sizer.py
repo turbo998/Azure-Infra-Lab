@@ -195,6 +195,7 @@ from agent_infra_sizer import (
     simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
     simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
     simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox,
+    simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3978,6 +3979,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct"], 3.0)
         self.assertTrue(gov["selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met"])
         self.assertFalse(raw["selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met"])
+
+    def test_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_srso4_baso4_black_ash_aluminothermic_sr_hydrothermal_bst_mlcc_h2s_nfpa86_sil3_edge"
+        )
+        raw = simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_kiln_coal_ratio_and_open_loop_hydrothermal_batio3_autoclave_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_strontium_barium_pods"], 32)
+        self.assertEqual(gov["sr_ba_aluminothermic_yield_bst_tetragonal_ca_and_mlcc_breakdown_voltage_gain_pct"], 48.9)
+        self.assertEqual(gov["cubic_batio3_hydroxyl_defect_ba_ti_off_stoichiometry_and_black_ash_sio2_slagging_reduction_pct"], 73.6)
+        self.assertEqual(gov["nfpa86_nfpa652_osha1910119_sil3_h2s_scrubber_vacuum_retort_argon_quench_and_ba_interlock_ms"], 0.28)
+        self.assertEqual(gov["unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2s_toxic_gas_release_pyrophoric_sr_ba_retort_fire_or_soluble_ba_leak_pct"], 1.0)
+        self.assertEqual(gov["sr_ba_bst_edge_10khz_insitu_uv_raman_ca_libs_ti_ba_sr_and_tdlas_h2s_co_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct"], 3.0)
+        self.assertTrue(gov["strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met"])
+        self.assertFalse(raw["strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met"])
 
 
 if __name__ == "__main__":
