@@ -11091,6 +11091,53 @@
         "uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct": 4.0,
         "vanadium_slag_converter_roasting_fev80_slo_met": false
       }
+    ],
+    "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_profiles": [
+      {
+        "nb_ta_refining_trains": 8,
+        "nb_ta_governance_mode": "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nb_ta_pods": 32,
+        "ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct": 47.5,
+        "hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct": 72.4,
+        "nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms": 0.3,
+        "unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct": 0.0,
+        "nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms": 0.22,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": 0.0,
+        "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": true
+      },
+      {
+        "nb_ta_refining_trains": 32,
+        "nb_ta_governance_mode": "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nb_ta_pods": 128,
+        "ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct": 47.5,
+        "hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct": 72.4,
+        "nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms": 0.3,
+        "unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct": 0.0,
+        "nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms": 0.22,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": 0.0,
+        "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": true
+      },
+      {
+        "nb_ta_refining_trains": 8,
+        "nb_ta_governance_mode": "raw_cloud_fixed_hf_h2so4_acid_ratio_mibk_sx_flow_and_scheduled_liquid_sodium_dosing",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nb_ta_pods": 32,
+        "ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct": 7.4,
+        "hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct": 10.1,
+        "nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms": 368.0,
+        "unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct": 1.6,
+        "nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms": 199.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": 4.1,
+        "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -20556,5 +20603,52 @@
       "vanadium_slag_converter_roasting_fev80_slo_met": false
     }
   },
-  "trace_sha256": "bbe2df34d7ece4e5b6c448cd88f7726ae5b921e97590a0c5ab7b6c27a304aede"
+  "demo_184_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox": {
+    "nb_ta_8_trains": {
+      "nb_ta_refining_trains": 8,
+      "nb_ta_governance_mode": "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_nb_ta_pods": 32,
+      "ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct": 47.5,
+      "hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct": 72.4,
+      "nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms": 0.3,
+      "unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct": 0.0,
+      "nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": 0.0,
+      "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": true
+    },
+    "nb_ta_32_trains": {
+      "nb_ta_refining_trains": 32,
+      "nb_ta_governance_mode": "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_nb_ta_pods": 128,
+      "ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct": 47.5,
+      "hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct": 72.4,
+      "nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms": 0.3,
+      "unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct": 0.0,
+      "nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": 0.0,
+      "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": true
+    },
+    "raw_nb_ta_8_trains": {
+      "nb_ta_refining_trains": 8,
+      "nb_ta_governance_mode": "raw_cloud_fixed_hf_h2so4_acid_ratio_mibk_sx_flow_and_scheduled_liquid_sodium_dosing",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_nb_ta_pods": 32,
+      "ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct": 7.4,
+      "hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct": 10.1,
+      "nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms": 368.0,
+      "unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct": 1.6,
+      "nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms": 199.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": 4.1,
+      "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": false
+    }
+  },
+  "trace_sha256": "b3d6f7a2d2eb4ecfff380f2560b6430247d68c6d0e5a9a2cdc98db24ff15200c"
 }

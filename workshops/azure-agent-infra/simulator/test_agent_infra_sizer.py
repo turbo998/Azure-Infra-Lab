@@ -190,6 +190,7 @@ from agent_infra_sizer import (
     simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
     simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox,
     simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox,
+    simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3868,6 +3869,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct"], 3.0)
         self.assertTrue(gov["vanadium_slag_converter_roasting_fev80_slo_met"])
         self.assertFalse(raw["vanadium_slag_converter_roasting_fev80_slo_met"])
+
+    def test_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox(self) -> None:
+        gov = simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox(
+            8, "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge"
+        )
+        raw = simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox(
+            8, "raw_cloud_fixed_hf_h2so4_acid_ratio_mibk_sx_flow_and_scheduled_liquid_sodium_dosing"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_nb_ta_pods"], 32)
+        self.assertEqual(gov["ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct"], 47.5)
+        self.assertEqual(gov["hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct"], 72.4)
+        self.assertEqual(gov["nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms"], 0.30)
+        self.assertEqual(gov["unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct"], 1.0)
+        self.assertEqual(gov["nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms"], 0.22)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct"], 3.0)
+        self.assertTrue(gov["niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met"])
+        self.assertFalse(raw["niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met"])
 
 
 if __name__ == "__main__":

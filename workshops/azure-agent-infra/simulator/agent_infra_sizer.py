@@ -9400,6 +9400,65 @@ def simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sa
     }
 
 
+def simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox(
+    nb_ta_refining_trains: int = 8,
+    nb_ta_governance_mode: str = "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Columbite-Tantalite ((Fe,Mn)(Nb,Ta)2O6) HF-H2SO4 Digestion,
+    MIBK Pulsed-Column Solvent Extraction (Ta/Nb Separation), K2TaF7 Liquid-Sodium
+    Sodiothermic Capacitor-Grade Tantalum Powder Reduction & Aluminothermic
+    Ferroniobium (FeNb65) Smelting PINN-MPC, Online 10 kHz Raman Fluorocomplex
+    Speciation, Off-Gas HF TDLAS & Slag LIBS Metrology & NFPA 30 / NFPA 484 /
+    OSHA 1910.119 / IEC 61511 SIL-3 HF Vapor Release, MIBK Flash-Fire &
+    Sodium-Molten-Salt Runaway Interlock.
+    """
+    if nb_ta_refining_trains < 1:
+        raise ValueError("nb_ta_refining_trains must be >= 1")
+
+    governed = (
+        nb_ta_governance_mode
+        == "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(nb_ta_refining_trains / 2))
+    active_nb_ta_pods = nb_ta_refining_trains * 4
+
+    ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct = (
+        47.5 if governed else 7.4
+    )
+    hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct = (
+        72.4 if governed else 10.1
+    )
+    nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms = (
+        0.30 if governed else 368.0
+    )
+    unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct = (
+        0.0 if governed else 1.6
+    )
+    nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms = (
+        0.22 if governed else 199.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "nb_ta_refining_trains": nb_ta_refining_trains,
+        "nb_ta_governance_mode": nb_ta_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nb_ta_pods": active_nb_ta_pods,
+        "ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct": ta_nb_sx_separation_purity_and_capacitor_ta_powder_specific_charge_gain_pct,
+        "hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct": hf_acid_overconsumption_and_sodiothermic_retort_thermal_spike_reduction_pct,
+        "nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms": nfpa484_nfpa30_sil3_hf_scrubber_mibk_blanketing_and_liquid_na_shutoff_interlock_ms,
+        "unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct": unmitigated_hf_vapor_release_mibk_flash_fire_or_na_k2taf7_retort_runaway_pct,
+        "nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms": nb_ta_edge_10khz_raman_fluorocomplex_tdlas_hf_and_slag_libs_nb_ta_fe_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct,
+        "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

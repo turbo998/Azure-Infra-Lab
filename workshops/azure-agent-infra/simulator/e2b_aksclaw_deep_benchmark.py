@@ -196,6 +196,7 @@ from agent_infra_sizer import (
     simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
     simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox,
     simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox,
+    simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1531,6 +1532,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_oxygen_lance_height_coolant_batching_and_offline_v2o5_titration"),
     ]
 
+    niobium_tantalum_hf_mibk_sx_k2taf7_fennb_profiles: List[Dict[str, object]] = [
+        simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox(8, "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge"),
+        simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox(32, "pinn_mpc_columbite_tantalite_hf_mibk_sx_k2taf7_sodiothermic_ta_fennb_nfpa484_sil3_edge"),
+        simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox(8, "raw_cloud_fixed_hf_h2so4_acid_ratio_mibk_sx_flow_and_scheduled_liquid_sodium_dosing"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1714,6 +1721,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "rkef_laterite_ferronickel_saf_profiles": rkef_laterite_ferronickel_saf_profiles,
         "molybdenite_herreshoff_roaster_femo_profiles": molybdenite_herreshoff_roaster_femo_profiles,
         "vanadium_slag_converter_roasting_fev80_profiles": vanadium_slag_converter_roasting_fev80_profiles,
+        "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_profiles": niobium_tantalum_hf_mibk_sx_k2taf7_fennb_profiles,
     }
 
 
