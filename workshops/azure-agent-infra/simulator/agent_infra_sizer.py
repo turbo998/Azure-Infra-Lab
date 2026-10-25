@@ -10796,6 +10796,72 @@ def simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_l
     }
 
 
+def simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(
+    sm_eu_lines: int = 8,
+    sm_eu_governance_mode: str = "pinn_mpc_sm_eu_lanthanothermic_sublimation_sm2co17_cellular_1_5_2_17r_z_phase_pinning_and_sialon_eu2_phosphor_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 210 (Cycle #205 — 205-Cycle & 205-Simulator Milestone): Autonomous
+    Samarium (Sm) & Europium (Eu) Vacuum Lanthanothermic Reduction-Distillation
+    (4N5-5N Sublimation @ 1,150 C, 10^-3 Pa), Ultra-High-Temperature Aerospace 2:17
+    Samarium-Cobalt (Sm2(Co,Fe,Cu,Zr)17, Tc = 820 C, 550 C Zero-Demagnetization
+    Cellular 1:5 Cu-Rich Boundary / 2:17R Rhombohedral / Zr-Rich Z-Phase Lamellar
+    Pinning Network) Permanent Magnet Step-Aging, Hg-Free Electrochemical Eu3+->Eu2+
+    Selective Reduction & Micro-LED / Quantum-Memory Narrow-Band Phosphor
+    (beta-SiAlON:Eu2+ 535 nm FWHM <50 nm & 151Eu3+:Y2SiO5 Optical Quantum Memory
+    Crystal) PINN-MPC, Online 10 kHz LIBS/ICP-MS, High-Temperature Fluxgate
+    Hysteresisgraph (Hcj @ 500 C) & Time-Resolved Photoluminescence (TRPL) Metrology
+    & NFPA 484 / OSHA 1910.1000 / SEMI S2 / IEC 61511 SIL-3 Pyrophoric Sm/Eu
+    Sublimation Condensate Flash-Fire, High-Pressure N2 Gas-Nitridation Autoclave
+    Overpressure (>10 MPa) & H2-Sintering Furnace Explosion Interlock.
+    """
+    if sm_eu_lines < 1:
+        raise ValueError("sm_eu_lines must be >= 1")
+
+    governed = (
+        sm_eu_governance_mode
+        == "pinn_mpc_sm_eu_lanthanothermic_sublimation_sm2co17_cellular_1_5_2_17r_z_phase_pinning_and_sialon_eu2_phosphor_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(sm_eu_lines / 2))
+    active_sm_eu_pods = sm_eu_lines * 4
+
+    sm_eu_5n_sublimation_yield_sm2co17_500c_coercivity_and_beta_sialon_eu2_iqe_gain_pct = (
+        51.3 if governed else 8.6
+    )
+    sm_volatilization_loss_sm2co17_cellular_coarsening_and_eu2_reoxidation_quench_reduction_pct = (
+        76.0 if governed else 11.6
+    )
+    nfpa484_osha19101000_semis2_sil3_pyrophoric_sm_eu_condensate_n2_autoclave_and_h2_sinter_interlock_ms = (
+        0.24 if governed else 363.0
+    )
+    unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct = (
+        0.0 if governed else 1.5
+    )
+    sm_eu_edge_10khz_libs_icpms_500c_hysteresisgraph_and_trpl_eu2_eu3_loop_ms = (
+        0.19 if governed else 197.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct = (
+        0.0 if governed else 4.3
+    )
+
+    return {
+        "sm_eu_lines": sm_eu_lines,
+        "sm_eu_governance_mode": sm_eu_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_sm_eu_pods": active_sm_eu_pods,
+        "sm_eu_5n_sublimation_yield_sm2co17_500c_coercivity_and_beta_sialon_eu2_iqe_gain_pct": sm_eu_5n_sublimation_yield_sm2co17_500c_coercivity_and_beta_sialon_eu2_iqe_gain_pct,
+        "sm_volatilization_loss_sm2co17_cellular_coarsening_and_eu2_reoxidation_quench_reduction_pct": sm_volatilization_loss_sm2co17_cellular_coarsening_and_eu2_reoxidation_quench_reduction_pct,
+        "nfpa484_osha19101000_semis2_sil3_pyrophoric_sm_eu_condensate_n2_autoclave_and_h2_sinter_interlock_ms": nfpa484_osha19101000_semis2_sil3_pyrophoric_sm_eu_condensate_n2_autoclave_and_h2_sinter_interlock_ms,
+        "unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct": unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct,
+        "sm_eu_edge_10khz_libs_icpms_500c_hysteresisgraph_and_trpl_eu2_eu3_loop_ms": sm_eu_edge_10khz_libs_icpms_500c_hysteresisgraph_and_trpl_eu2_eu3_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct": uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct,
+        "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

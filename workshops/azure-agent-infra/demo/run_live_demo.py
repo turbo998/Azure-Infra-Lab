@@ -224,6 +224,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
     simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
     simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
+    simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1475,6 +1476,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "la_ce_8_lines": simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(8, "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge"),
             "la_ce_32_lines": simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(32, "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge"),
             "raw_la_ce_8_lines": simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(8, "raw_cloud_open_loop_bastnasite_calcination_unfiltered_ceo2_milling_and_manual_lab6_zone_melt"),
+        },
+        "demo_205_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox": {
+            "sm_eu_8_lines": simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(8, "pinn_mpc_sm_eu_lanthanothermic_sublimation_sm2co17_cellular_1_5_2_17r_z_phase_pinning_and_sialon_eu2_phosphor_sil3_edge"),
+            "sm_eu_32_lines": simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(32, "pinn_mpc_sm_eu_lanthanothermic_sublimation_sm2co17_cellular_1_5_2_17r_z_phase_pinning_and_sialon_eu2_phosphor_sil3_edge"),
+            "raw_sm_eu_8_lines": simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(8, "raw_cloud_empirical_lanthanothermic_retort_heating_fixed_sm2co17_step_aging_and_open_loop_sialon_firing"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

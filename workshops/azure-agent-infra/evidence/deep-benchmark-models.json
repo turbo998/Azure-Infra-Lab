@@ -11876,5 +11876,52 @@
       "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": 4.3,
       "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": false
     }
+  ],
+  "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_profiles": [
+    {
+      "sm_eu_lines": 8,
+      "sm_eu_governance_mode": "pinn_mpc_sm_eu_lanthanothermic_sublimation_sm2co17_cellular_1_5_2_17r_z_phase_pinning_and_sialon_eu2_phosphor_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sm_eu_pods": 32,
+      "sm_eu_5n_sublimation_yield_sm2co17_500c_coercivity_and_beta_sialon_eu2_iqe_gain_pct": 51.3,
+      "sm_volatilization_loss_sm2co17_cellular_coarsening_and_eu2_reoxidation_quench_reduction_pct": 76.0,
+      "nfpa484_osha19101000_semis2_sil3_pyrophoric_sm_eu_condensate_n2_autoclave_and_h2_sinter_interlock_ms": 0.24,
+      "unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct": 0.0,
+      "sm_eu_edge_10khz_libs_icpms_500c_hysteresisgraph_and_trpl_eu2_eu3_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct": 0.0,
+      "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met": true
+    },
+    {
+      "sm_eu_lines": 32,
+      "sm_eu_governance_mode": "pinn_mpc_sm_eu_lanthanothermic_sublimation_sm2co17_cellular_1_5_2_17r_z_phase_pinning_and_sialon_eu2_phosphor_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sm_eu_pods": 128,
+      "sm_eu_5n_sublimation_yield_sm2co17_500c_coercivity_and_beta_sialon_eu2_iqe_gain_pct": 51.3,
+      "sm_volatilization_loss_sm2co17_cellular_coarsening_and_eu2_reoxidation_quench_reduction_pct": 76.0,
+      "nfpa484_osha19101000_semis2_sil3_pyrophoric_sm_eu_condensate_n2_autoclave_and_h2_sinter_interlock_ms": 0.24,
+      "unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct": 0.0,
+      "sm_eu_edge_10khz_libs_icpms_500c_hysteresisgraph_and_trpl_eu2_eu3_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct": 0.0,
+      "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met": true
+    },
+    {
+      "sm_eu_lines": 8,
+      "sm_eu_governance_mode": "raw_cloud_empirical_lanthanothermic_retort_heating_fixed_sm2co17_step_aging_and_open_loop_sialon_firing",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sm_eu_pods": 32,
+      "sm_eu_5n_sublimation_yield_sm2co17_500c_coercivity_and_beta_sialon_eu2_iqe_gain_pct": 8.6,
+      "sm_volatilization_loss_sm2co17_cellular_coarsening_and_eu2_reoxidation_quench_reduction_pct": 11.6,
+      "nfpa484_osha19101000_semis2_sil3_pyrophoric_sm_eu_condensate_n2_autoclave_and_h2_sinter_interlock_ms": 363.0,
+      "unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct": 1.5,
+      "sm_eu_edge_10khz_libs_icpms_500c_hysteresisgraph_and_trpl_eu2_eu3_loop_ms": 197.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct": 4.3,
+      "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met": false
+    }
   ]
 }

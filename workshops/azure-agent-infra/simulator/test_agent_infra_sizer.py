@@ -211,6 +211,7 @@ from agent_infra_sizer import (
     simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
     simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
     simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
+    simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4339,6 +4340,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct"], 3.0)
         self.assertTrue(gov["lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met"])
         self.assertFalse(raw["lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met"])
+
+    def test_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(self) -> None:
+        gov = simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(
+            8, "pinn_mpc_sm_eu_lanthanothermic_sublimation_sm2co17_cellular_1_5_2_17r_z_phase_pinning_and_sialon_eu2_phosphor_sil3_edge"
+        )
+        raw = simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox(
+            8, "raw_cloud_empirical_lanthanothermic_retort_heating_fixed_sm2co17_step_aging_and_open_loop_sialon_firing"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_sm_eu_pods"], 32)
+        self.assertEqual(gov["sm_eu_5n_sublimation_yield_sm2co17_500c_coercivity_and_beta_sialon_eu2_iqe_gain_pct"], 51.3)
+        self.assertEqual(gov["sm_volatilization_loss_sm2co17_cellular_coarsening_and_eu2_reoxidation_quench_reduction_pct"], 76.0)
+        self.assertEqual(gov["nfpa484_osha19101000_semis2_sil3_pyrophoric_sm_eu_condensate_n2_autoclave_and_h2_sinter_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_sm_eu_sublimation_fire_or_high_pressure_sialon_n2_autoclave_rupture_pct"], 1.0)
+        self.assertEqual(gov["sm_eu_edge_10khz_libs_icpms_500c_hysteresisgraph_and_trpl_eu2_eu3_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_sm_vapor_condenser_bridging_sm2co17_cu_partition_drift_or_eu3_luminescence_quench_pct"], 3.0)
+        self.assertTrue(gov["samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met"])
+        self.assertFalse(raw["samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_slo_met"])
 
 
 if __name__ == "__main__":
