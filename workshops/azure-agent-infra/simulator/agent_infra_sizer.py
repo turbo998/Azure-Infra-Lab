@@ -9520,6 +9520,68 @@ def simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandb
     }
 
 
+def simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(
+    bismuth_refining_lines: int = 8,
+    bismuth_governance_mode: str = "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Bismuthinite & Lead-Anode Slime (Bi2S3-Pb-Sb-As-Ag-Te) Oxidative
+    Converting, Betterton-Kroll Calcium-Magnesium Debismuthizing (CaMg2Bi2
+    Intermetallic Drossing), Chlorine Dezincing/Deleading, 6N (99.9999%) Pfann
+    Multipass Zone Refining, Gen-IV Lead-Bismuth Eutectic (LBE, 44.5% Pb-55.5% Bi,
+    Tm = 123.5 C) Nuclear Coolant Oxygen-Activity Control & Bi2Te3 Bridgman
+    Thermoelectric Crystal Growth PINN-MPC, Online 10 kHz Molten-Bath LIBS
+    (Bi/Pb/Ag/Te/Sb), YSZ Solid-Electrolyte Oxygen EMF & Off-Gas AsH3/Cl2 TDLAS
+    Metrology & NFPA 86 / OSHA 1910.1025 / IAEA SSG-2 / IEC 61511 SIL-3 Toxic
+    Arsine-Chlorine-Lead Vapor Scrubbing, Polonium-210 Alpha-Volatile Containment
+    & Molten LBE Steam-Generator Tube Rupture (SGTR) Dump Interlock.
+    """
+    if bismuth_refining_lines < 1:
+        raise ValueError("bismuth_refining_lines must be >= 1")
+
+    governed = (
+        bismuth_governance_mode
+        == "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(bismuth_refining_lines / 2))
+    active_bismuth_pods = bismuth_refining_lines * 4
+
+    bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct = (
+        47.9 if governed else 7.4
+    )
+    betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct = (
+        72.8 if governed else 10.2
+    )
+    nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms = (
+        0.30 if governed else 369.0
+    )
+    unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct = (
+        0.0 if governed else 1.5
+    )
+    bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms = (
+        0.22 if governed else 198.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "bismuth_refining_lines": bismuth_refining_lines,
+        "bismuth_governance_mode": bismuth_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bismuth_pods": active_bismuth_pods,
+        "bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct": bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct,
+        "betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct": betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct,
+        "nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms": nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms,
+        "unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct": unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct,
+        "bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms": bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct,
+        "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -192,6 +192,7 @@ from agent_infra_sizer import (
     simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox,
     simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
     simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox,
+    simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3912,6 +3913,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct"], 3.0)
         self.assertTrue(gov["beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met"])
         self.assertFalse(raw["beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met"])
+
+    def test_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(self) -> None:
+        gov = simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(
+            8, "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge"
+        )
+        raw = simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(
+            8, "raw_cloud_fixed_ca_mg_debismuthizing_dross_skimming_and_constant_speed_zone_heater"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_bismuth_pods"], 32)
+        self.assertEqual(gov["bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct"], 47.9)
+        self.assertEqual(gov["betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct"], 72.8)
+        self.assertEqual(gov["nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms"], 0.30)
+        self.assertEqual(gov["unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct"], 1.0)
+        self.assertEqual(gov["bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms"], 0.22)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct"], 3.0)
+        self.assertTrue(gov["bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met"])
+        self.assertFalse(raw["bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met"])
 
 
 if __name__ == "__main__":

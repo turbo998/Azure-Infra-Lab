@@ -205,6 +205,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox,
     simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
     simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox,
+    simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1361,6 +1362,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "beryllium_8_lines": simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox(8, "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge"),
             "beryllium_32_lines": simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox(32, "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge"),
             "raw_beryllium_8_lines": simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox(8, "raw_cloud_fixed_bef2_mg_stoichiometry_open_loop_thermal_decomposition_and_manual_vhp_pressing"),
+        },
+        "demo_186_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox": {
+            "bismuth_8_lines": simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(8, "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge"),
+            "bismuth_32_lines": simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(32, "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge"),
+            "raw_bismuth_8_lines": simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(8, "raw_cloud_fixed_ca_mg_debismuthizing_dross_skimming_and_constant_speed_zone_heater"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

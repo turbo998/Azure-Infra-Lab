@@ -11185,6 +11185,53 @@
         "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": 4.0,
         "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": false
       }
+    ],
+    "bismuth_betterton_kroll_6n_zone_refining_lbe_profiles": [
+      {
+        "bismuth_refining_lines": 8,
+        "bismuth_governance_mode": "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bismuth_pods": 32,
+        "bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct": 47.9,
+        "betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct": 72.8,
+        "nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms": 0.3,
+        "unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct": 0.0,
+        "bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms": 0.22,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": 0.0,
+        "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": true
+      },
+      {
+        "bismuth_refining_lines": 32,
+        "bismuth_governance_mode": "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bismuth_pods": 128,
+        "bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct": 47.9,
+        "betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct": 72.8,
+        "nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms": 0.3,
+        "unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct": 0.0,
+        "bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms": 0.22,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": 0.0,
+        "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": true
+      },
+      {
+        "bismuth_refining_lines": 8,
+        "bismuth_governance_mode": "raw_cloud_fixed_ca_mg_debismuthizing_dross_skimming_and_constant_speed_zone_heater",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bismuth_pods": 32,
+        "bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct": 7.4,
+        "betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct": 10.2,
+        "nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms": 369.0,
+        "unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct": 1.5,
+        "bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms": 198.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": 4.1,
+        "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -20744,5 +20791,52 @@
       "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": false
     }
   },
-  "trace_sha256": "b3477a4b3936584f6578108dbeb00c54c57f4a7637ee6d505e1174859dfaca4a"
+  "demo_186_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox": {
+    "bismuth_8_lines": {
+      "bismuth_refining_lines": 8,
+      "bismuth_governance_mode": "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bismuth_pods": 32,
+      "bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct": 47.9,
+      "betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct": 72.8,
+      "nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms": 0.3,
+      "unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct": 0.0,
+      "bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": 0.0,
+      "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": true
+    },
+    "bismuth_32_lines": {
+      "bismuth_refining_lines": 32,
+      "bismuth_governance_mode": "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bismuth_pods": 128,
+      "bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct": 47.9,
+      "betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct": 72.8,
+      "nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms": 0.3,
+      "unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct": 0.0,
+      "bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": 0.0,
+      "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": true
+    },
+    "raw_bismuth_8_lines": {
+      "bismuth_refining_lines": 8,
+      "bismuth_governance_mode": "raw_cloud_fixed_ca_mg_debismuthizing_dross_skimming_and_constant_speed_zone_heater",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bismuth_pods": 32,
+      "bismuth_6n_zone_purity_lbe_oxide_passivation_and_bi2te3_zt_figure_of_merit_gain_pct": 7.4,
+      "betterton_kroll_ca_mg_overconsumption_and_lbe_pbo_slag_plugging_reduction_pct": 10.2,
+      "nfpa86_osha19101025_iaea_sil3_ash3_cl2_scrubber_po210_trap_and_lbe_sgtr_dump_interlock_ms": 369.0,
+      "unmitigated_ash3_cl2_vapor_release_po210_alpha_escape_or_lbe_sgtr_overpressure_pct": 1.5,
+      "bismuth_edge_10khz_molten_libs_ysz_oxygen_emf_and_tdlas_ash3_cl2_telemetry_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": 4.1,
+      "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": false
+    }
+  },
+  "trace_sha256": "b443adc99bd15de4ef7669817582f95dae0a61002b00af5b8a8e43f3830b3ba2"
 }
