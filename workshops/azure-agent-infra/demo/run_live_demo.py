@@ -214,6 +214,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox,
     simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
     simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox,
+    simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1415,6 +1416,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "fluorine_nf3_8_lines": simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox(8, "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge"),
             "fluorine_nf3_32_lines": simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox(32, "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge"),
             "raw_fluorine_nf3_8_lines": simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox(8, "raw_cloud_fixed_moissan_cell_current_and_open_loop_nf3_cryo_distillation_reflux_schedule"),
+        },
+        "demo_195_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox": {
+            "bromine_iodine_8_lines": simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(8, "pinn_mpc_brine_blowout_6n_iodine_5n5_electronic_hbr_hi_2nm_gaa_anisotropic_etch_semis2_sil3_edge"),
+            "bromine_iodine_32_lines": simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(32, "pinn_mpc_brine_blowout_6n_iodine_5n5_electronic_hbr_hi_2nm_gaa_anisotropic_etch_semis2_sil3_edge"),
+            "raw_bromine_iodine_8_lines": simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(8, "raw_cloud_fixed_cl2_oxidation_ratio_and_open_loop_hbr_distillation_gaa_etch_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

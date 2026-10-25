@@ -201,6 +201,7 @@ from agent_infra_sizer import (
     simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox,
     simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
     simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox,
+    simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4110,6 +4111,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct"], 3.0)
         self.assertTrue(gov["fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met"])
         self.assertFalse(raw["fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met"])
+
+    def test_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(
+            8, "pinn_mpc_brine_blowout_6n_iodine_5n5_electronic_hbr_hi_2nm_gaa_anisotropic_etch_semis2_sil3_edge"
+        )
+        raw = simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_cl2_oxidation_ratio_and_open_loop_hbr_distillation_gaa_etch_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_bromine_iodine_pods"], 32)
+        self.assertEqual(gov["br2_i2_blowout_recovery_5n5_hbr_hi_purity_and_2nm_gaa_nanosheet_etch_selectivity_gain_pct"], 49.9)
+        self.assertEqual(gov["interhalogen_icl_io3_overoxidation_loss_hbr_moisture_corrosion_and_gaa_fin_notching_reduction_pct"], 74.7)
+        self.assertEqual(gov["osha1910119_nfpa318_semis2_sil3_br2_i2_100ppb_thiosulfate_deluge_and_hbr_lockout_interlock_ms"], 0.26)
+        self.assertEqual(gov["unmitigated_liquid_br2_fuming_vapor_cloud_hbr_corrosive_release_or_h2_br2_burner_flashback_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_liquid_br2_fuming_vapor_cloud_hbr_corrosive_release_or_h2_br2_burner_flashback_pct"], 1.0)
+        self.assertEqual(gov["bromine_iodine_edge_10khz_insitu_uvvis_br2_i2_icl_tdlas_hbr_h2o_and_oes_br_etch_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_brine_ph_orp_drift_316l_fe_halide_leaching_or_gaa_sige_indent_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_brine_ph_orp_drift_316l_fe_halide_leaching_or_gaa_sige_indent_drift_pct"], 3.0)
+        self.assertTrue(gov["bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_slo_met"])
+        self.assertFalse(raw["bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_slo_met"])
 
 
 if __name__ == "__main__":

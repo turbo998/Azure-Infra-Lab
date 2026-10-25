@@ -10122,6 +10122,74 @@ def simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cr
     }
 
 
+def simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(
+    bromine_iodine_hbr_lines: int = 8,
+    bromine_iodine_governance_mode: str = "pinn_mpc_brine_blowout_6n_iodine_5n5_electronic_hbr_hi_2nm_gaa_anisotropic_etch_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Subsurface Brine / Caliche-Leach Blow-Out Oxidation
+    (Cl2 + 2Br- -> Br2, Cl2 + 2I- -> I2), SO2 Absorption & 6N Sublimed Iodine
+    (I2), 5N5 Electronic-Grade Hydrogen Bromide (HBr) / Hydrogen Iodide (HI)
+    Direct Catalytic Synthesis & 2nm Gate-All-Around (GAA) Nanosheet
+    Silicon/SiGe HBr/Cl2/O2 Anisotropic Plasma Etching PINN-MPC, Online 10 kHz
+    In-Situ UV-Vis (Br2/I2/ICl), TDLAS (HBr/HI/Cl2/H2O) & OES Metrology &
+    OSHA 1910.119 / NFPA 318 / SEMI S2 / IEC 61511 SIL-3 Liquid Bromine (PEL
+    100 ppb, IDLH 3 ppm) / HBr Vapor Cloud Suppression, Sodium Thiosulfate
+    (Na2S2O3/NaOH) Reductive Scrubber & Interhalogen Over-Chlorination
+    Interlock (Cycle #195 — 195-Cycle & 195-Simulator Milestone!)."""
+    if bromine_iodine_hbr_lines < 1:
+        raise ValueError("bromine_iodine_hbr_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_brine_blowout_6n_iodine_5n5_electronic_hbr_hi_2nm_gaa_anisotropic_etch_semis2_sil3_edge",
+        "raw_cloud_fixed_cl2_oxidation_ratio_and_open_loop_hbr_distillation_gaa_etch_schedule",
+    }
+    if bromine_iodine_governance_mode not in valid_modes:
+        raise ValueError(f"bromine_iodine_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        bromine_iodine_governance_mode
+        == "pinn_mpc_brine_blowout_6n_iodine_5n5_electronic_hbr_hi_2nm_gaa_anisotropic_etch_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(bromine_iodine_hbr_lines / 2))
+    active_bromine_iodine_pods = bromine_iodine_hbr_lines * 4
+
+    br2_i2_blowout_recovery_5n5_hbr_hi_purity_and_2nm_gaa_nanosheet_etch_selectivity_gain_pct = (
+        49.9 if governed else 7.9
+    )
+    interhalogen_icl_io3_overoxidation_loss_hbr_moisture_corrosion_and_gaa_fin_notching_reduction_pct = (
+        74.7 if governed else 10.8
+    )
+    osha1910119_nfpa318_semis2_sil3_br2_i2_100ppb_thiosulfate_deluge_and_hbr_lockout_interlock_ms = (
+        0.26 if governed else 360.0
+    )
+    unmitigated_liquid_br2_fuming_vapor_cloud_hbr_corrosive_release_or_h2_br2_burner_flashback_pct = (
+        0.0 if governed else 1.5
+    )
+    bromine_iodine_edge_10khz_insitu_uvvis_br2_i2_icl_tdlas_hbr_h2o_and_oes_br_etch_telemetry_loop_ms = (
+        0.20 if governed else 195.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_brine_ph_orp_drift_316l_fe_halide_leaching_or_gaa_sige_indent_drift_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "bromine_iodine_hbr_lines": bromine_iodine_hbr_lines,
+        "bromine_iodine_governance_mode": bromine_iodine_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bromine_iodine_pods": active_bromine_iodine_pods,
+        "br2_i2_blowout_recovery_5n5_hbr_hi_purity_and_2nm_gaa_nanosheet_etch_selectivity_gain_pct": br2_i2_blowout_recovery_5n5_hbr_hi_purity_and_2nm_gaa_nanosheet_etch_selectivity_gain_pct,
+        "interhalogen_icl_io3_overoxidation_loss_hbr_moisture_corrosion_and_gaa_fin_notching_reduction_pct": interhalogen_icl_io3_overoxidation_loss_hbr_moisture_corrosion_and_gaa_fin_notching_reduction_pct,
+        "osha1910119_nfpa318_semis2_sil3_br2_i2_100ppb_thiosulfate_deluge_and_hbr_lockout_interlock_ms": osha1910119_nfpa318_semis2_sil3_br2_i2_100ppb_thiosulfate_deluge_and_hbr_lockout_interlock_ms,
+        "unmitigated_liquid_br2_fuming_vapor_cloud_hbr_corrosive_release_or_h2_br2_burner_flashback_pct": unmitigated_liquid_br2_fuming_vapor_cloud_hbr_corrosive_release_or_h2_br2_burner_flashback_pct,
+        "bromine_iodine_edge_10khz_insitu_uvvis_br2_i2_icl_tdlas_hbr_h2o_and_oes_br_etch_telemetry_loop_ms": bromine_iodine_edge_10khz_insitu_uvvis_br2_i2_icl_tdlas_hbr_h2o_and_oes_br_etch_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_brine_ph_orp_drift_316l_fe_halide_leaching_or_gaa_sige_indent_drift_pct": uncompensated_brine_ph_orp_drift_316l_fe_halide_leaching_or_gaa_sige_indent_drift_pct,
+        "bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_slo_met": governed,
+    }
+
+
+
 
 SCENARIOS_12: list[dict[str, Any]] = [
     {
