@@ -206,6 +206,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
     simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox,
     simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
+    simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1367,6 +1368,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "bismuth_8_lines": simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(8, "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge"),
             "bismuth_32_lines": simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(32, "pinn_mpc_betterton_kroll_camg2bi2_6n_pfann_zone_refining_lbe_ysz_oxygen_bi2te3_iaea_sil3_edge"),
             "raw_bismuth_8_lines": simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(8, "raw_cloud_fixed_ca_mg_debismuthizing_dross_skimming_and_constant_speed_zone_heater"),
+        },
+        "demo_187_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox": {
+            "tellurium_8_lines": simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(8, "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge"),
+            "tellurium_32_lines": simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(32, "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge"),
+            "raw_tellurium_8_lines": simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(8, "raw_cloud_fixed_autoclave_naoh_dosing_and_open_loop_bridgman_ampoule_pull_rate"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

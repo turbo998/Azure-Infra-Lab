@@ -11232,6 +11232,53 @@
         "uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct": 4.1,
         "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": false
       }
+    ],
+    "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_profiles": [
+      {
+        "tellurium_czt_lines": 8,
+        "tellurium_governance_mode": "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tellurium_pods": 32,
+        "te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct": 48.6,
+        "czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct": 73.4,
+        "nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms": 0.29,
+        "unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct": 0.0,
+        "te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms": 0.21,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": 0.0,
+        "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": true
+      },
+      {
+        "tellurium_czt_lines": 32,
+        "tellurium_governance_mode": "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tellurium_pods": 128,
+        "te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct": 48.6,
+        "czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct": 73.4,
+        "nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms": 0.29,
+        "unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct": 0.0,
+        "te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms": 0.21,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": 0.0,
+        "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": true
+      },
+      {
+        "tellurium_czt_lines": 8,
+        "tellurium_governance_mode": "raw_cloud_fixed_autoclave_naoh_dosing_and_open_loop_bridgman_ampoule_pull_rate",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tellurium_pods": 32,
+        "te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct": 7.5,
+        "czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct": 10.4,
+        "nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms": 368.0,
+        "unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct": 1.5,
+        "te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms": 197.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": 4.1,
+        "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -20838,5 +20885,52 @@
       "bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met": false
     }
   },
-  "trace_sha256": "b443adc99bd15de4ef7669817582f95dae0a61002b00af5b8a8e43f3830b3ba2"
+  "demo_187_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox": {
+    "tellurium_8_lines": {
+      "tellurium_czt_lines": 8,
+      "tellurium_governance_mode": "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tellurium_pods": 32,
+      "te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct": 48.6,
+      "czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct": 73.4,
+      "nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms": 0.29,
+      "unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct": 0.0,
+      "te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms": 0.21,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": 0.0,
+      "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": true
+    },
+    "tellurium_32_lines": {
+      "tellurium_czt_lines": 32,
+      "tellurium_governance_mode": "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tellurium_pods": 128,
+      "te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct": 48.6,
+      "czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct": 73.4,
+      "nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms": 0.29,
+      "unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct": 0.0,
+      "te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms": 0.21,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": 0.0,
+      "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": true
+    },
+    "raw_tellurium_8_lines": {
+      "tellurium_czt_lines": 8,
+      "tellurium_governance_mode": "raw_cloud_fixed_autoclave_naoh_dosing_and_open_loop_bridgman_ampoule_pull_rate",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tellurium_pods": 32,
+      "te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct": 7.5,
+      "czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct": 10.4,
+      "nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms": 368.0,
+      "unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct": 1.5,
+      "te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms": 197.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": 4.1,
+      "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": false
+    }
+  },
+  "trace_sha256": "ba5e1e24f37d6800a088272e9503c2d4928c2885d33281f81029f7a051f38730"
 }

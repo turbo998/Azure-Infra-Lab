@@ -199,6 +199,7 @@ from agent_infra_sizer import (
     simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
     simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox,
     simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
+    simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1552,6 +1553,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox(8, "raw_cloud_fixed_ca_mg_debismuthizing_dross_skimming_and_constant_speed_zone_heater"),
     ]
 
+    tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_profiles: List[Dict[str, object]] = [
+        simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(8, "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge"),
+        simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(32, "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge"),
+        simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(8, "raw_cloud_fixed_autoclave_naoh_dosing_and_open_loop_bridgman_ampoule_pull_rate"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1738,6 +1745,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_profiles": niobium_tantalum_hf_mibk_sx_k2taf7_fennb_profiles,
         "beryllium_beryl_bef2_mg_reduction_vhp_s200f_profiles": beryllium_beryl_bef2_mg_reduction_vhp_s200f_profiles,
         "bismuth_betterton_kroll_6n_zone_refining_lbe_profiles": bismuth_betterton_kroll_6n_zone_refining_lbe_profiles,
+        "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_profiles": tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_profiles,
     }
 
 

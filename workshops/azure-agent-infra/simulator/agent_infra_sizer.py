@@ -9582,6 +9582,73 @@ def simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_si
     }
 
 
+def simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(
+    tellurium_czt_lines: int = 8,
+    tellurium_governance_mode: str = "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Copper-Anode Slime & Tellurobismuthite (Cu2Te-Ag2Te-AuTe2) High-Pressure
+    Oxidative Alkaline Autoclave Leaching, Na2TeO3 Neutralization to TeO2, Alkaline Electrowinning,
+    Vacuum Distillation & 7N (99.99999%) Traveling-Heater / Vertical Bridgman (THM/VB) Cadmium Zinc
+    Telluride (Cd_{1-x}Zn_xTe, CZT) Room-Temperature Photon-Counting Gamma/X-Ray Detector &
+    Hg_{1-x}Cd_xTe (MCT) Infrared Focal-Plane Substrate Crystal Growth PINN-MPC, Online 10 kHz
+    In-Situ EDXRD Solid-Liquid Interface Curvature, FTIR Zinc Composition x (0.04-0.10) & TDLAS
+    H2Te/Cd Vapor Metrology & NFPA 86 / OSHA 1910.1027 / SEMI S2 / IEC 61511 SIL-3 Lethal Hydrogen
+    Telluride (H2Te) Scrubbing, High-Pressure Cadmium Overpressure Containment & Quartz Ampoule
+    Rupture Quench Interlock Sandbox (Chapter 192).
+    """
+    if tellurium_czt_lines < 1:
+        raise ValueError("tellurium_czt_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge",
+        "raw_cloud_fixed_autoclave_naoh_dosing_and_open_loop_bridgman_ampoule_pull_rate",
+    }
+    if tellurium_governance_mode not in valid_modes:
+        raise ValueError(f"tellurium_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        tellurium_governance_mode
+        == "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(tellurium_czt_lines / 2))
+    active_tellurium_pods = tellurium_czt_lines * 4
+
+    te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct = (
+        48.6 if governed else 7.5
+    )
+    czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct = (
+        73.4 if governed else 10.4
+    )
+    nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms = (
+        0.29 if governed else 368.0
+    )
+    unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct = (
+        0.0 if governed else 1.5
+    )
+    te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms = (
+        0.21 if governed else 197.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "tellurium_czt_lines": tellurium_czt_lines,
+        "tellurium_governance_mode": tellurium_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tellurium_pods": active_tellurium_pods,
+        "te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct": te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct,
+        "czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct": czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct,
+        "nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms": nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms,
+        "unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct": unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct,
+        "te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms": te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct,
+        "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -193,6 +193,7 @@ from agent_infra_sizer import (
     simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
     simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox,
     simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
+    simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3934,6 +3935,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bullion_bi_ag_te_shift_or_zone_solidification_constitutional_supercooling_pct"], 3.0)
         self.assertTrue(gov["bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met"])
         self.assertFalse(raw["bismuth_betterton_kroll_6n_zone_refining_lbe_slo_met"])
+
+    def test_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(
+            8, "pinn_mpc_cu2te_alkaline_autoclave_7n_te_czt_thm_bridgman_edxr_interface_h2te_semis2_sil3_edge"
+        )
+        raw = simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_autoclave_naoh_dosing_and_open_loop_bridgman_ampoule_pull_rate"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_tellurium_pods"], 32)
+        self.assertEqual(gov["te_7n_purity_czt_mu_tau_electron_transport_and_mct_ir_substrate_yield_gain_pct"], 48.6)
+        self.assertEqual(gov["czt_te_inclusion_twinning_and_autoclave_se_pb_co_leaching_reduction_pct"], 73.4)
+        self.assertEqual(gov["nfpa86_osha19101027_semis2_sil3_h2te_scrubber_cd_overpressure_and_ampoule_quench_interlock_ms"], 0.29)
+        self.assertEqual(gov["unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2te_toxic_gas_release_cd_vapor_leak_or_quartz_ampoule_rupture_pct"], 1.0)
+        self.assertEqual(gov["te_czt_edge_10khz_insitu_edxr_interface_ftir_zn_fraction_and_tdlas_h2te_cd_telemetry_loop_ms"], 0.21)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct"], 3.0)
+        self.assertTrue(gov["tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met"])
+        self.assertFalse(raw["tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met"])
 
 
 if __name__ == "__main__":
