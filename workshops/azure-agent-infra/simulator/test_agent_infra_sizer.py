@@ -204,6 +204,7 @@ from agent_infra_sizer import (
     simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
     simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
     simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
+    simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -402,6 +403,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-sinter-plant-blast-furnace-cohesive-zone-tuyere-raceway-nfpa86-sil3-pool.bicep",
             "aksclaw-neon-krypton-xenon-cryogenic-asu-6n-rare-gas-arf-krf-excimer-lithography-eiga147-sil3-pool.bicep",
             "aksclaw-tungsten-scheelite-wolframite-apt-hydrogen-reduction-wc-co-sinter-hip-nfpa86-sil3-pool.bicep",
+            "aksclaw-germanium-gecl4-rectification-13n-zone-refining-cz-crystal-geh4-sige-epitaxy-semis2-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -4178,6 +4180,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct"], 3.0)
         self.assertTrue(gov["tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met"])
         self.assertFalse(raw["tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met"])
+
+    def test_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(
+            8, "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge"
+        )
+        raw = simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_gecl4_reflux_ratio_and_open_loop_zone_refining_cz_ge_pulling_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_germanium_13n_cz_geh4_pods"], 32)
+        self.assertEqual(gov["ge_13n_zone_refining_purity_zero_dislocation_cz_solar_wafer_and_6n_geh4_yield_gain_pct"], 50.3)
+        self.assertEqual(gov["ascl3_bcl3_dopant_carryover_cz_vacancy_cluster_ring_and_geo_volatile_etch_pit_reduction_pct"], 75.0)
+        self.assertEqual(gov["semis2_nfpa55_osha1910119_sil3_pyrophoric_geh4_ash3_dry_scrubber_and_gecl4_hydrolysis_interlock_ms"], 0.25)
+        self.assertEqual(gov["unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct"], 1.0)
+        self.assertEqual(gov["germanium_edge_10khz_insitu_ftir_gecl4_ascl3_geh4_icpms_and_hall_50ohmcm_resistivity_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct"], 3.0)
+        self.assertTrue(gov["germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met"])
+        self.assertFalse(raw["germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met"])
 
 
 if __name__ == "__main__":

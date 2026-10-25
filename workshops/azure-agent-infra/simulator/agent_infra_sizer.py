@@ -10328,6 +10328,75 @@ def simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_h
     }
 
 
+def simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(
+    germanium_13n_cz_geh4_lines: int = 8,
+    germanium_13n_cz_geh4_governance_mode: str = "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Germanium (Ge) Zinc-Leach Residue & Lignite Fly-Ash
+    Chlorination Distillation (GeCl4 Boiling Point 83.1 C Ultra-Trace AsCl3/BCl3
+    Rectification to 7N Purity), GeO2 Hydrolysis & Hydrogen Reduction (650 C), RF
+    Induction Zone Refining (13N Intrinsic Resistivity > 50 Ohm-cm), Dislocation-
+    Free Czochralski (CZ) Ge Single-Crystal Pulling (Space-Grade Multi-Junction
+    GaInP/GaAs/Ge Solar Wafer & 8-12 um Thermal Infrared Optics) & 6N Germane
+    (GeH4) Synthesis for 2nm SiGe Gate-All-Around (GAA) Nanosheet Epitaxy PINN-MPC,
+    Online 10 kHz In-Situ FTIR (GeCl4/AsCl3/GeH4), ICP-MS & Four-Point Probe Hall
+    Resistivity Metrology & SEMI S2 / NFPA 55 / OSHA 1910.119 / IEC 61511 SIL-3
+    Pyrophoric/Toxic Germane (GeH4, TLV 0.2 ppm) & Arsine (AsH3, IDLH 3 ppm) Auto-
+    Decomposition, Corrosive GeCl4/HCl Scrubbing & Zone-Refining Melt-Runaway
+    Interlock (Cycle #198)."""
+    if germanium_13n_cz_geh4_lines < 1:
+        raise ValueError("germanium_13n_cz_geh4_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge",
+        "raw_cloud_fixed_gecl4_reflux_ratio_and_open_loop_zone_refining_cz_ge_pulling_schedule",
+    }
+    if germanium_13n_cz_geh4_governance_mode not in valid_modes:
+        raise ValueError(f"germanium_13n_cz_geh4_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        germanium_13n_cz_geh4_governance_mode
+        == "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(germanium_13n_cz_geh4_lines / 2))
+    active_germanium_13n_cz_geh4_pods = germanium_13n_cz_geh4_lines * 4
+
+    ge_13n_zone_refining_purity_zero_dislocation_cz_solar_wafer_and_6n_geh4_yield_gain_pct = (
+        50.3 if governed else 8.0
+    )
+    ascl3_bcl3_dopant_carryover_cz_vacancy_cluster_ring_and_geo_volatile_etch_pit_reduction_pct = (
+        75.0 if governed else 10.9
+    )
+    semis2_nfpa55_osha1910119_sil3_pyrophoric_geh4_ash3_dry_scrubber_and_gecl4_hydrolysis_interlock_ms = (
+        0.25 if governed else 345.0
+    )
+    unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct = (
+        0.0 if governed else 1.4
+    )
+    germanium_edge_10khz_insitu_ftir_gecl4_ascl3_geh4_icpms_and_hall_50ohmcm_resistivity_loop_ms = (
+        0.19 if governed else 188.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct = (
+        0.0 if governed else 4.0
+    )
+
+    return {
+        "germanium_13n_cz_geh4_lines": germanium_13n_cz_geh4_lines,
+        "germanium_13n_cz_geh4_governance_mode": germanium_13n_cz_geh4_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_germanium_13n_cz_geh4_pods": active_germanium_13n_cz_geh4_pods,
+        "ge_13n_zone_refining_purity_zero_dislocation_cz_solar_wafer_and_6n_geh4_yield_gain_pct": ge_13n_zone_refining_purity_zero_dislocation_cz_solar_wafer_and_6n_geh4_yield_gain_pct,
+        "ascl3_bcl3_dopant_carryover_cz_vacancy_cluster_ring_and_geo_volatile_etch_pit_reduction_pct": ascl3_bcl3_dopant_carryover_cz_vacancy_cluster_ring_and_geo_volatile_etch_pit_reduction_pct,
+        "semis2_nfpa55_osha1910119_sil3_pyrophoric_geh4_ash3_dry_scrubber_and_gecl4_hydrolysis_interlock_ms": semis2_nfpa55_osha1910119_sil3_pyrophoric_geh4_ash3_dry_scrubber_and_gecl4_hydrolysis_interlock_ms,
+        "unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct": unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct,
+        "germanium_edge_10khz_insitu_ftir_gecl4_ascl3_geh4_icpms_and_hall_50ohmcm_resistivity_loop_ms": germanium_edge_10khz_insitu_ftir_gecl4_ascl3_geh4_icpms_and_hall_50ohmcm_resistivity_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct": uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct,
+        "germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

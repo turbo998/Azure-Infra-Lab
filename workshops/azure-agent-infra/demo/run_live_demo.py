@@ -217,6 +217,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
     simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
     simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
+    simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1433,6 +1434,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "tungsten_apt_wcco_8_lines": simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(8, "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge"),
             "tungsten_apt_wcco_32_lines": simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(32, "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge"),
             "raw_tungsten_apt_wcco_8_lines": simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_autoclave_soda_ratio_and_open_loop_h2_pusher_furnace_sinter_hip_schedule"),
+        },
+        "demo_198_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox": {
+            "germanium_13n_cz_geh4_8_lines": simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(8, "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge"),
+            "germanium_13n_cz_geh4_32_lines": simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(32, "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge"),
+            "raw_germanium_13n_cz_geh4_8_lines": simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(8, "raw_cloud_fixed_gecl4_reflux_ratio_and_open_loop_zone_refining_cz_ge_pulling_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

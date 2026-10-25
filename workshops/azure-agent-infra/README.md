@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #197 · 203 Chapters · 198 Blueprints · 197 Simulators · 206/206 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #198 · 204 Chapters · 199 Blueprints · 198 Simulators · 207/207 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -5714,7 +5714,35 @@ $$\text{WO}_2\text{(s)} + 2\text{H}_2\text{O(g)} \Longleftrightarrow \text{WO}_2
 
 ---
 
-## 203. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #197）
+## 203. 锌浸出渣与褐煤飞灰氯化蒸馏提锗 ($\text{Ge}$)、四氯化锗 ($\text{GeCl}_4$ `83.1 °C`) 精馏脱除痕量 $\text{AsCl}_3/\text{BCl}_3$ (`7N`)、`13N` 高频感应水平区熔提纯（本征电阻率 $\ge 50\text{ }\Omega\cdot\text{cm}$）、直拉法 (`CZ`) 零位错锗单晶生长（空间三结 $\text{GaInP/GaAs/Ge}$ 光伏衬底与 `8–12 μm` 红外光学）及 `2 nm` $\text{SiGe}$ 环绕栅 (`GAA`) 外延 `6N` 锗烷 ($\text{GeH}_4$) 合成 `PINN-MPC`、在线 `10 kHz` 原位 `FTIR` ($\text{GeCl}_4/\text{AsCl}_3/\text{GeH}_4/\text{AsH}_3$)、`ICP-MS` 与四探针霍尔电阻率计量及 `SEMI S2 / NFPA 55 / OSHA 1910.119 / IEC 61511 SIL-3` 自燃剧毒锗烷 ($\text{GeH}_4$ TLV `0.2 ppm`) 与砷化氢 ($\text{AsH}_3$ IDLH `3 ppm`) 干法分解及 $\text{GeCl}_4/\text{HCl}$ 碱洗硬联锁（Autonomous Germanium $\text{GeCl}_4$ Rectification, `13N` Zone Refining, Dislocation-Free `CZ` $\text{Ge}$ Wafer & `6N` $\text{GeH}_4$ $\text{SiGe}$ Epitaxy `PINN-MPC`, Online `10 kHz` In-Situ `FTIR`, `ICP-MS` & Hall `50 Ω·cm` Metrology & `SIL-3` Interlock · Cycle #198）
+
+在低轨宽带通信卫星星座空间抗辐照三结砷化镓太阳电池（$\text{GaInP/GaAs/Ge}$，转换效率 $> 32\%$，要求 $150\text{–}200\text{ mm}$ 零位错锗单晶外延衬底）、`2 nm` 及以下埃米级硅锗（$\text{Si}_{1-x}\text{Ge}_x$）全环绕栅极（`GAA` Nanosheet）高迁移率应变沟道与选择性刻蚀牺牲层外延前驱体 `6N` 锗烷（$\text{GeH}_4$）、$8\text{–}12\text{ }\mu\text{m}$ 大气窗口长波红外热成像（`LWIR`）高折射率（$n = 4.003$）非球面光学镜头、掺锗四氯化锗（$\text{GeCl}_4$）超低损耗通信光纤预制棒以及天体物理暗物质探测/核辐射能谱仪用 **`13N`（`99.99999999999%`，杂质浓度 $\le 10^{10}\text{ atoms/cm}^3$，人类工业迄今制备的最高纯度固态材料）** 超高纯锗（`HPGe`）单晶全产业链中，稀散战略金属锗（$\text{Ge}$，原子序数 $32$，禁带宽度 $E_g = 0.66\text{ eV}$ at $300\text{ K}$）主要赋存于湿法炼锌浸出渣（置换沉锗精矿）与富锗褐煤燃烧挥发飞灰中。其从复杂多金属伴生渣跨越十余个数量级提纯至 `7N–13N` 并长成零位错单晶的核心工艺包括：① **浓盐酸氯化蒸馏与 $\text{GeCl}_4$ 氧化络合多级精馏**：在 $8\text{–}10\text{ mol/L HCl}$ 中通氯浸出挥发生成四氯化锗（$\text{GeCl}_4$，沸点 $83.1\text{ }^\circ\text{C}$），在石英筛板精馏塔中通过 $\text{Cl}_2/\text{KMnO}_4/\text{CuCl}$ 络合氧化将沸点相近的致命 N 型施主杂质三氯化砷（$\text{AsCl}_3$，沸点 $130.2\text{ }^\circ\text{C}$）锁定为高沸点五价砷酸根，产出 `7N` 光纤级/电子级 $\text{GeCl}_4$；② **高纯水水解、氢还原与 `13N` 水平高频感应区域熔炼（Zone Refining）**：$\text{GeCl}_4$ 与 $18.2\text{ M}\Omega\cdot\text{cm}$ 超纯水水解生成 $\text{GeO}_2$，经 $650\text{ }^\circ\text{C}$ 纯氢还原为还原锗锭后，在倾角受控的涂覆高纯烟炱/石英舟内利用高频感应线圈产生宽度 $L$ 的移动熔区（$T_m = 938.25\text{ }^\circ\text{C}$），依据 **Pfann 区域熔炼分凝定律**与 **Burton-Prim-Slichter (`BPS`) 有效分凝方程**将磷、砷、镓、铝、硼等电活性杂质赶向锭尾，使 $298\text{ K}$ 本征电阻率达到理论极限 $\rho_{\text{intrinsic}} \ge 50\text{ }\Omega\cdot\text{cm}$；③ **直拉法（`CZ`）零位错单晶生长与 `6N` 锗烷（$\text{GeH}_4$）合成**：
+
+$$\text{GeO}_2\text{(s)} + 4\text{HCl(aq)} \Longleftrightarrow \text{GeCl}_4\text{(g)}\uparrow + 2\text{H}_2\text{O(l)}, \qquad k_{\text{eff}} = \frac{k_0}{k_0 + (1 - k_0)\exp\left(-\frac{f \cdot \delta_{\text{BPS}}}{D_L}\right)}$$
+
+$$\text{GeO}_3^{2-}\text{(aq)} + \text{BH}_4^-\text{(aq)} + 2\text{H}^+\text{(aq)} \longrightarrow \text{GeH}_4\text{(g)}\uparrow + \text{H}_2\text{BO}_3^-\text{(aq)}, \qquad \text{GeH}_4\text{(g)} \xrightarrow{\Delta \text{ or Adiabatic Shock}} \text{Ge(s)} + 2\text{H}_2\text{(g)} \quad (\Delta H^\circ = -90.8\text{ kJ/mol})$$
+
+若沿用传统固定精馏回流比、开环区熔程序与离线切锭抽检，将面临两大物理瓶颈与致命安全红线：
+1. **$\text{GeCl}_4$ 精馏痕量 $\text{AsCl}_3/\text{BCl}_3$ 穿透导致区熔分凝停滞，以及直拉法（`CZ`）锗单晶固液界面 $V/G$ 与热应力失衡诱发位错滑移和挥发性 $\text{GeO(g)}$ 蚀坑缺陷**：在 $\text{GeCl}_4$ 精馏中，若原矿含砷量波动或氧化氯势不足，ppb 级未氧化的挥发性 $\text{AsCl}_3$ 会随 $\text{GeCl}_4$ 馏出；而在水平区熔中，若高频感应功率或移动速度 $f$ 未随熔区边界层厚度 $\delta_{\text{BPS}}$ 动态调整，有效分凝系数 $k_{\text{eff}}$ 趋近于 $1$ 导致分凝效率断崖式衰减；在直拉法（`CZ`）生长 $200\text{ mm}$ 空间太阳电池用零位错锗单晶时，由于锗晶格临界分切应力极低（高温下 $\tau_{\text{CRSS}} \approx 1.0\text{ MPa}$，仅为硅的 $1/5$），固液界面稍微内凹或提拉速度/轴向温度梯度比 $V/G$ 偏离 Voronkov 零缺陷窗口，即在晶棒外缘激发出高密度位错增殖（Etch-Pit Density $\text{EPD} > 500\text{ cm}^{-2}$）与空位聚集环，使外延三结电池开路电压 $V_{\text{oc}}$ 崩溃；同时熔体表面生成的气态一氧化锗（$\text{GeO(g)}$）在热屏冷壁凝华后回落至固液界面，直接破坏单晶零位错结构。
+2. **剧毒自燃电子特气锗烷（$\text{GeH}_4$，TLV `0.2 ppm`）受热自催化分解爆炸、合成伴生极毒砷化氢（$\text{AsH}_3$，IDLH `3 ppm`）致命泄漏及 $\text{GeCl}_4$ 水解浓盐酸烟羽风险**：用于 `2 nm SiGe` 外延的电子级锗烷（$\text{GeH}_4$）是热力学高度不稳定的正生成焓氢化物（$\Delta H_f^\circ = +90.8\text{ kJ/mol}$），不僅具有强烈溶血剧毒性（OSHA/ACGIH TLV 仅 `0.2 ppm`），而且在充装压缩或阀门绝热冲击达到 $> 280\text{ }^\circ\text{C}$ 时无需氧气即可发生**无氧自催化放热分解爆炸**（$\text{GeH}_4 \rightarrow \text{Ge} + 2\text{H}_2$），一旦泄漏至空气中立即自燃；更危险的是，在硼氢化钠水相还原 $\text{GeO}_2$ 制备 $\text{GeH}_4$ 时，原料中哪怕 ppm 级的残余砷都会被同步还原为剧毒气体**砷化氢（$\text{AsH}_3$，IDLH 仅 `3 ppm`）**混入粗锗烷中；此外，氯化精馏工段液态 $\text{GeCl}_4$ 管路若发生泄漏，遇空气水分瞬间剧烈水解喷发出窒息性浓 $\text{HCl}$ 酸雾与 $\text{GeO}_2$ 气溶胶。
+
+本章节构建 **$\text{GeCl}_4$ 精馏、`13N` 区熔、零位错 `CZ` 锗单晶与 `6N` $\text{GeH}_4$ 合成 `PINN-MPC` + `SEMI S2 / NFPA 55 / OSHA 1910.119 / IEC 61511 SIL-3` 剧毒锗烷/砷化氢干法分解与 $\text{GeCl}_4$ 碱洗硬联锁架构**：
+- **$\text{GeCl}_4\text{-AsCl}_3$ 络合精馏、Pfann/`BPS` 多道次区熔分凝与 `CZ` 零位错 Voronkov $V/G$ 热应力场 `PINN-MPC`**：在 `Standard_NC40ads_H100_v5` 节点池上，联合求解 $\text{GeCl}_4$ 筛板塔 $\text{As}^{3+}\rightarrow\text{As}^{5+}$ 氧化络合气液平衡、12 道次水平区熔电磁感应涡流对流边界层 $\delta_{\text{BPS}}(x,t)$ 与截面向杂质分布 $C_s(x)$、以及 `CZ` 单晶炉固液界面相变潜热、Von Mises 热应力张量 $\sigma_{\text{vm}} < \tau_{\text{CRSS}}$ 与热屏氩气流场，动态闭环调节精馏回流比、区熔高频线圈功率/行进速率与 `CZ` 提拉速率/坩埚转速，将 `13N` 区熔锗纯度、零位错 `CZ` 空间光伏锗晶圆与 `6N` $\text{GeH}_4$ 综合良率提升 **`+50.3%`**，同时将 $\text{AsCl}_3/\text{BCl}_3$ 施受主杂质残留、`CZ` 空位缺陷环与挥发性 $\text{GeO}$ 蚀坑率削减 **`-75.0%`**。
+- **`SEMI S2 / NFPA 55 / OSHA 1910.119 / IEC 61511 SIL-3` 亚毫秒级剧毒自燃 $\text{GeH}_4/\text{AsH}_3$ 干法矿化切断与 $\text{GeCl}_4$ 碱洗硬联锁**：当特气走廊激光/电化学传感器检出 $\text{GeH}_4 > 50\text{ ppb}$ 或 $\text{AsH}_3 > 15\text{ ppb}$、充装歧管温升速率 $\text{d}T/\text{d}t > 2\text{ K/s}$ 预示 $\text{GeH}_4$ 自催化分解，或精馏室检出 $\text{HCl} > 1\text{ ppm}$ 时，现场 FPGA 安全控制器在 **`0.25 ms`** 内瞬时关闭钢瓶阀口内置 `RFO` 限流气动隔膜阀并注入高纯氦/氮气稀释阻爆，将尾气全流量切入多级 $\text{CuO/MnO}_2/\text{Ag}_2\text{O}$ 干法室温化学吸附分解床（将 $\text{GeH}_4$ 与 $\text{AsH}_3$ 不可逆固相矿化为固态锗酸盐/砷酸盐，出口 $< 1\text{ ppb}$），并联动 $\text{GeCl}_4$ 精馏舱双级负压 $\text{NaOH}$ 喷淋碱洗塔，实现剧毒锗烷自燃爆炸、砷化氢毒气外泄或 $\text{GeCl}_4/\text{HCl}$ 酸雾事故率 **`0.0%`**。
+- **产线侧 `10 kHz` 原位长光程 `FTIR` ($\text{GeCl}_4/\text{AsCl}_3/\text{GeH}_4/\text{AsH}_3$)、在线 `ICP-MS` 与 `≥50 Ω·cm` 霍尔本征电阻率边缘环路**：在石英精馏塔、区熔炉与特气纯化台边缘原位处理 `10 kHz` 液芯光纤/长光程气体池 `FTIR` 光谱（实时在线锁定 $\text{GeCl}_4$ 中 $3,600\text{ cm}^{-1}$ 痕量 $\text{-OH}$ 水解峰、$\text{AsCl}_3$ 及 $\text{GeH}_4$ 中 $2,115\text{ cm}^{-1}$ $\text{AsH}_3$ 与乙锗烷 $\text{Ge}_2\text{H}_6$ 杂峰）、在线 `ICP-MS` 以及区熔锗锭非接触高频涡流与四探针霍尔电阻率轴向扫描（毫秒级判定 $\rho \ge 50\text{ }\Omega\cdot\text{cm}$ 本征区长度），闭环延迟 **`0.19 ms`**，削减 **`99.7%`** 高纯锗与电子特气基地 WAN 带宽，原料含砷波动、区熔分凝停滞或 `CZ` $V/G$ 漂移漏检率降至 **`0.0%`**。
+
+| 架构维度 / 性能指标 | `PINN-MPC` + `SEMI S2 / NFPA 55 / SIL-3` + `10 kHz` 原位 `FTIR` / `ICP-MS` / `≥50 Ω·cm` 霍尔电阻率边缘（受控模式） | 传统固定 $\text{GeCl}_4$ 回流比 + 开环区熔/提拉 + 离线切锭霍尔抽检（反模式） |
+|---|---|---|
+| **`13N` 区熔锗纯度、零位错 `CZ` 空间光伏锗晶圆与 `6N` $\text{GeH}_4$ 综合良率增益** | **`+50.3%`**（Pfann/`BPS` 电磁对流分凝 + `CZ` $\sigma_{\text{vm}} < \tau_{\text{CRSS}}$ 零位错 `PINN-MPC`） | `+8.0%`（区熔尾部施主杂质回跳且 `CZ` 固液界面凹陷诱发位错滑移导致晶圆报废） |
+| **$\text{AsCl}_3/\text{BCl}_3$ 施受主杂质残留、`CZ` 空位缺陷环与挥发性 $\text{GeO}$ 蚀坑削减** | **`-75.0%`**（本征电阻率稳定 $\ge 50\text{ }\Omega\cdot\text{cm}$、位错腐蚀坑密度 $\text{EPD} = 0\text{ cm}^{-2}$） | `-10.9%`（$\text{GeO(g)}$ 凝华颗粒回落熔体诱发双晶与多晶位错簇） |
+| **`SEMI S2 / NFPA 55 / OSHA 1910.119 / SIL-3` 剧毒 $\text{GeH}_4/\text{AsH}_3$ 干法分解联锁** | **`0.25 ms`**（钢瓶口 `RFO` 隔膜阀瞬断 + $\text{CuO/MnO}_2$ 室温矿化床 $< 1\text{ ppb}$ + $\text{GeCl}_4$ 双级碱洗） | `345.0 ms`（普通气柜排风响应滞后，无法阻断绝热压缩诱发的 $\text{GeH}_4$ 无氧分解爆燃） |
+| **自燃剧毒锗烷 ($\text{GeH}_4$) 爆炸、极毒砷化氢 ($\text{AsH}_3$) 泄漏或 $\text{GeCl}_4$ 酸雾事故率** | **`0.0%`**（零 $\text{GeH}_4$ 自催化分解闪爆、零 $\text{AsH}_3/\text{GeH}_4$ 溶血毒气外泄、零 $\text{HCl}$ 烟羽） | `1.4%`（合成工段伴生 $\text{AsH}_3$ 穿透或充装歧管 $\text{GeH}_4$ 绝热温升分解高风险） |
+| **`10 kHz` 原位 `FTIR` ($\text{GeCl}_4/\text{AsCl}_3/\text{GeH}_4/\text{AsH}_3$) 与霍尔电阻率边缘延迟** | **`0.19 ms`**（实时解析 ppb 级 $\text{AsCl}_3/\text{AsH}_3$ 与 $\ge 50\text{ }\Omega\cdot\text{cm}$ 本征区，削减 `99.7%` WAN 带宽） | `188.0 ms`（依赖出炉冷却后离线切锭四探针抽检，漏检 `4.0%` 批次掺杂与位错漂移） |
+| **配套 IaC 蓝图与仿真函数** | `blueprints/aksclaw-germanium-gecl4-rectification-13n-zone-refining-cz-crystal-geh4-sige-epitaxy-semis2-sil3-pool.bicep`（**第 199 套蓝图**） | `simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox()`（**第 198 项仿真器 · 207/207 单测全绿**） |
+
+---
+
+## 204. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #198）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

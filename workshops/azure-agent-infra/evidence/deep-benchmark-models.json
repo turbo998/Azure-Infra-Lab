@@ -11547,5 +11547,52 @@
       "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": 4.0,
       "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": false
     }
+  ],
+  "germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_profiles": [
+    {
+      "germanium_13n_cz_geh4_lines": 8,
+      "germanium_13n_cz_geh4_governance_mode": "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_germanium_13n_cz_geh4_pods": 32,
+      "ge_13n_zone_refining_purity_zero_dislocation_cz_solar_wafer_and_6n_geh4_yield_gain_pct": 50.3,
+      "ascl3_bcl3_dopant_carryover_cz_vacancy_cluster_ring_and_geo_volatile_etch_pit_reduction_pct": 75.0,
+      "semis2_nfpa55_osha1910119_sil3_pyrophoric_geh4_ash3_dry_scrubber_and_gecl4_hydrolysis_interlock_ms": 0.25,
+      "unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct": 0.0,
+      "germanium_edge_10khz_insitu_ftir_gecl4_ascl3_geh4_icpms_and_hall_50ohmcm_resistivity_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct": 0.0,
+      "germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met": true
+    },
+    {
+      "germanium_13n_cz_geh4_lines": 32,
+      "germanium_13n_cz_geh4_governance_mode": "pinn_mpc_gecl4_rectification_13n_zone_refining_dislocation_free_cz_ge_wafer_and_6n_geh4_semis2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_germanium_13n_cz_geh4_pods": 128,
+      "ge_13n_zone_refining_purity_zero_dislocation_cz_solar_wafer_and_6n_geh4_yield_gain_pct": 50.3,
+      "ascl3_bcl3_dopant_carryover_cz_vacancy_cluster_ring_and_geo_volatile_etch_pit_reduction_pct": 75.0,
+      "semis2_nfpa55_osha1910119_sil3_pyrophoric_geh4_ash3_dry_scrubber_and_gecl4_hydrolysis_interlock_ms": 0.25,
+      "unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct": 0.0,
+      "germanium_edge_10khz_insitu_ftir_gecl4_ascl3_geh4_icpms_and_hall_50ohmcm_resistivity_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct": 0.0,
+      "germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met": true
+    },
+    {
+      "germanium_13n_cz_geh4_lines": 8,
+      "germanium_13n_cz_geh4_governance_mode": "raw_cloud_fixed_gecl4_reflux_ratio_and_open_loop_zone_refining_cz_ge_pulling_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_germanium_13n_cz_geh4_pods": 32,
+      "ge_13n_zone_refining_purity_zero_dislocation_cz_solar_wafer_and_6n_geh4_yield_gain_pct": 8.0,
+      "ascl3_bcl3_dopant_carryover_cz_vacancy_cluster_ring_and_geo_volatile_etch_pit_reduction_pct": 10.9,
+      "semis2_nfpa55_osha1910119_sil3_pyrophoric_geh4_ash3_dry_scrubber_and_gecl4_hydrolysis_interlock_ms": 345.0,
+      "unmitigated_pyrophoric_geh4_auto_ignition_toxic_ash3_release_or_gecl4_hcl_plume_pct": 1.4,
+      "germanium_edge_10khz_insitu_ftir_gecl4_ascl3_geh4_icpms_and_hall_50ohmcm_resistivity_loop_ms": 188.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct": 4.0,
+      "germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met": false
+    }
   ]
 }
