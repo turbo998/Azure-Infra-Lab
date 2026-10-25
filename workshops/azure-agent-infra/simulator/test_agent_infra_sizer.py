@@ -197,6 +197,7 @@ from agent_infra_sizer import (
     simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox,
     simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox,
     simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox,
+    simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4022,6 +4023,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct"], 3.0)
         self.assertTrue(gov["boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met"])
         self.assertFalse(raw["boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met"])
+
+    def test_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge"
+        )
+        raw = simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_slag_acidity_ratio_and_open_loop_inp_high_pressure_lec_pull_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_phosphorus_p4_pods"], 32)
+        self.assertEqual(gov["p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct"], 49.2)
+        self.assertEqual(gov["phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct"], 74.2)
+        self.assertEqual(gov["nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms"], 0.27)
+        self.assertEqual(gov["unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct"], 1.0)
+        self.assertEqual(gov["p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct"], 3.0)
+        self.assertTrue(gov["phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met"])
+        self.assertFalse(raw["phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met"])
 
 
 if __name__ == "__main__":

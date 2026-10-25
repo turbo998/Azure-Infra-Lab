@@ -210,6 +210,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox,
     simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox,
     simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox,
+    simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1391,6 +1392,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "boron_10b_8_lines": simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox(8, "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge"),
             "boron_10b_32_lines": simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox(32, "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge"),
             "raw_boron_10b_8_lines": simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_reflux_bf3_column_and_open_loop_b4c_arc_furnace_schedule"),
+        },
+        "demo_191_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox": {
+            "phosphorus_p4_8_lines": simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox(8, "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge"),
+            "phosphorus_p4_32_lines": simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox(32, "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge"),
+            "raw_phosphorus_p4_8_lines": simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_slag_acidity_ratio_and_open_loop_inp_high_pressure_lec_pull_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

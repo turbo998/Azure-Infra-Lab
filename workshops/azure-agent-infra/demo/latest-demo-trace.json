@@ -11420,6 +11420,53 @@
         "uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct": 4.1,
         "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met": false
       }
+    ],
+    "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_profiles": [
+      {
+        "phosphorus_p4_inp_lines": 8,
+        "phosphorus_p4_governance_mode": "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_phosphorus_p4_pods": 32,
+        "p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct": 49.2,
+        "phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct": 74.2,
+        "nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms": 0.27,
+        "unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct": 0.0,
+        "p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": 0.0,
+        "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": true
+      },
+      {
+        "phosphorus_p4_inp_lines": 32,
+        "phosphorus_p4_governance_mode": "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_phosphorus_p4_pods": 128,
+        "p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct": 49.2,
+        "phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct": 74.2,
+        "nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms": 0.27,
+        "unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct": 0.0,
+        "p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": 0.0,
+        "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": true
+      },
+      {
+        "phosphorus_p4_inp_lines": 8,
+        "phosphorus_p4_governance_mode": "raw_cloud_fixed_slag_acidity_ratio_and_open_loop_inp_high_pressure_lec_pull_schedule",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_phosphorus_p4_pods": 32,
+        "p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct": 7.6,
+        "phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct": 10.5,
+        "nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms": 365.0,
+        "unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct": 1.5,
+        "p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms": 195.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": 4.1,
+        "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -21214,5 +21261,52 @@
       "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met": false
     }
   },
-  "trace_sha256": "1d4171e71fabe00fade431633021809b155814d0c5879e65bd603341b303941b"
+  "demo_191_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox": {
+    "phosphorus_p4_8_lines": {
+      "phosphorus_p4_inp_lines": 8,
+      "phosphorus_p4_governance_mode": "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_phosphorus_p4_pods": 32,
+      "p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct": 49.2,
+      "phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct": 74.2,
+      "nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms": 0.27,
+      "unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct": 0.0,
+      "p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": 0.0,
+      "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": true
+    },
+    "phosphorus_p4_32_lines": {
+      "phosphorus_p4_inp_lines": 32,
+      "phosphorus_p4_governance_mode": "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_phosphorus_p4_pods": 128,
+      "p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct": 49.2,
+      "phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct": 74.2,
+      "nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms": 0.27,
+      "unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct": 0.0,
+      "p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": 0.0,
+      "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": true
+    },
+    "raw_phosphorus_p4_8_lines": {
+      "phosphorus_p4_inp_lines": 8,
+      "phosphorus_p4_governance_mode": "raw_cloud_fixed_slag_acidity_ratio_and_open_loop_inp_high_pressure_lec_pull_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_phosphorus_p4_pods": 32,
+      "p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct": 7.6,
+      "phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct": 10.5,
+      "nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms": 365.0,
+      "unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct": 1.5,
+      "p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": 4.1,
+      "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": false
+    }
+  },
+  "trace_sha256": "2190f4d8ecb209c7bddeb63e3569d9531189756770f103de55672040788f1a81"
 }

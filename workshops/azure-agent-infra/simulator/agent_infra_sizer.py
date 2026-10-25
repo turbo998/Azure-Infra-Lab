@@ -9852,6 +9852,77 @@ def simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil
     }
 
 
+def simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox(
+    phosphorus_p4_inp_lines: int = 8,
+    phosphorus_p4_governance_mode: str = "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Phosphate Rock (Ca5(PO4)3F) Electrothermal Yellow Phosphorus (P4)
+    Submerged-Arc Smelting (1,450-1,550 °C, 2Ca3(PO4)2 + 6SiO2 + 10C -> P4(g) + 6CaSiO3 + 10CO),
+    Wet Electrostatic Precipitator (WESP) Cottrell Dust Removal, 6N5 (99.99995%) Zone-Refined /
+    Fractional-Distilled Electronic Red/White Phosphorus & Phosphorus Trichloride (PCl3) /
+    Phosphine (PH3) Purification, and High-Pressure Liquid-Encapsulated Czochralski / Vertical
+    Gradient Freeze (LEC / VGF 27.5 atm P4 Dissociation Vapor Pressure, B2O3 Encapsulant)
+    Indium Phosphide (InP) 1.6T / 3.2T AI Optical Transceiver Wafer Synthesis PINN-MPC,
+    Online 10 kHz In-Situ Raman P4/P2 Vapor Speciation, TDLAS PH3/CO & Slag LIBS CaO/SiO2
+    Metrology & NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3 Pyrophoric White Phosphorus
+    (P4, Auto-Ignition 34 °C) Warm-Water Seal, Lethal Phosphine (PH3, PEL 0.3 ppm) Scrubbing &
+    High-Pressure InP Autoclave Containment Interlock Sandbox (Chapter 196 · Cycle #191 ·
+    200-Test Milestone!).
+    """
+    if phosphorus_p4_inp_lines < 1:
+        raise ValueError("phosphorus_p4_inp_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge",
+        "raw_cloud_fixed_slag_acidity_ratio_and_open_loop_inp_high_pressure_lec_pull_schedule",
+    }
+    if phosphorus_p4_governance_mode not in valid_modes:
+        raise ValueError(f"phosphorus_p4_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        phosphorus_p4_governance_mode
+        == "pinn_mpc_phosphate_p4_submerged_arc_wesp_6n5_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(phosphorus_p4_inp_lines / 2))
+    active_phosphorus_p4_pods = phosphorus_p4_inp_lines * 4
+
+    p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct = (
+        49.2 if governed else 7.6
+    )
+    phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct = (
+        74.2 if governed else 10.5
+    )
+    nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms = (
+        0.27 if governed else 365.0
+    )
+    unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct = (
+        0.0 if governed else 1.5
+    )
+    p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms = (
+        0.20 if governed else 195.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "phosphorus_p4_inp_lines": phosphorus_p4_inp_lines,
+        "phosphorus_p4_governance_mode": phosphorus_p4_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_phosphorus_p4_pods": active_phosphorus_p4_pods,
+        "p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct": p4_condensation_yield_6n5_electronic_purity_and_inp_low_epd_wafer_yield_gain_pct,
+        "phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct": phosphorus_mud_emulsion_slag_ferrophosphorus_loss_and_inp_twin_dislocation_reduction_pct,
+        "nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms": nfpa86_osha1910119_semis2_sil3_pyrophoric_p4_water_seal_ph3_scrubber_and_inp_autoclave_interlock_ms,
+        "unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct": unmitigated_pyrophoric_p4_air_ignition_lethal_ph3_release_or_inp_27atm_autoclave_rupture_pct,
+        "p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms": p4_inp_edge_10khz_insitu_raman_p4_p2_tdlas_ph3_co_and_slag_libs_cao_sio2_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct,
+        "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": governed,
+    }
+
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
