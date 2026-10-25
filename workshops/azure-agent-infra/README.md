@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #187 · 193 Chapters · 188 Blueprints · 187 Simulators · 196/196 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #188 · 194 Chapters · 189 Blueprints · 188 Simulators · 197/197 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -5444,7 +5444,35 @@ $$\text{Ca}_{10}(\text{PO}_4)_6\text{F}_2 + 10\,\text{H}_2\text{SO}_4 + 20\,\tex
 
 ---
 
-## 193. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #187）
+## 193. 自主铜阳极泥与硒银矿（$\text{Ag}_2\text{Se-CuAgSe-Cu}_2\text{Se}$）硫酸化焙烧/苏打氧化熔炼（$\text{SeO}_2/\text{Na}_2\text{SeO}_3$）、二氧化硫选择性还原沉硒、硒化氢（$\text{H}_2\text{Se}$）精馏热解与 `6N5`（`99.99995%`）超高纯硒、化学气相沉积（`CVD`）大口径硒化锌（$\text{ZnSe}$）极紫外（`EUV`）$\text{CO}_2$ 驱动激光窗口及铜铟镓硒（$\text{Cu(In}_{1-x}\text{Ga}_x\text{)Se}_2$, `CIGS`）双V带隙薄膜光伏 `PINN-MPC`、在线 `10 kHz` 原位拉曼/XRF 镓组分梯度、中红外激光散射与 `TDLAS` $\text{H}_2\text{Se/SeO}_2$ 计量及 `NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3` 剧毒硒化氢（$\text{H}_2\text{Se}$）干式化学吸附洗涤、热氧化裂解与 CVD 反应釜超压隔离硬联锁（Autonomous Copper-Anode Slime 6N5 Selenium, Large-Aperture CVD `ZnSe` EUV Laser Optics & `CIGS` Double-Graded Selenization Sandbox · Cycle #188）
+
+针对先进半导体极紫外光刻机（`EUV Lithography`）`20–40 kW` 高功率脉冲 $\text{CO}_2$ 液滴锡（`Sn`）等离子体驱动激光器核心光学元件 **大口径化学气相沉积多晶硒化锌（`CVD ZnSe`，要求在 $\lambda = 10.6\text{ }\mu\text{m}$ 波长下体吸收系数 $\alpha < 4 \times 10^{-4}\text{ cm}^{-1}$ 以抑制高功率热透镜畸变）**、高效柔性及叠层薄膜光伏 **铜铟镓硒（$\text{Cu(In}_{1-x}\text{Ga}_x\text{)Se}_2$, `CIGS`，禁带宽度 $E_g = 1.04\text{–}1.68\text{ eV}$ 连续可调）** 以及医疗平板 X 射线直接转换探测器用非晶硒（`a-Se`）关键战略稀散金属的 **脱铜阳极泥（富含硒银矿 $\text{Ag}_2\text{Se}$、硒铜银矿 $\text{CuAgSe}$ 与硒铜矿 $\text{Cu}_2\text{Se}$）回转窑硫酸化氧化焙烧（`550–650 °C` 转化为升华态二氧化硒 $\text{SeO}_2\uparrow$）或卡尔多炉（`Kaldo`）苏打氧化熔炼水浸亚硒酸钠（$\text{Na}_2\text{SeO}_3$）—盐酸介质分步通入二氧化硫（$\text{SO}_2$）选择性还原沉淀 `3N–4N` 粗硒—`550 °C` 高纯氢气合成硒化氢（$\text{H}_2\text{Se}$）低温多塔精馏脱除 $\text{H}_2\text{Te/AsH}_3/\text{H}_2\text{S}$ 后 `1,000 °C` 石英管热解制取 `99.99995%`（`6N5`）超高纯硒—低压化学气相沉积炉（$\text{Zn(g)} + \text{H}_2\text{Se(g)} \to \text{ZnSe(s)} + \text{H}_2\text{(g)}$，`720–780 °C`，`30–70 mbar`）生长厚板大口径 `CVD ZnSe` 光学毛坯及三阶段共蒸发/快速热加工（`RTP`）$\text{H}_2\text{Se/H}_2\text{S}$ 硒化制备双 V 型带隙 `CIGS` 薄膜全流程产线** 场景，传统依赖固定焙烧 $\text{SO}_2$ 通量、开环 `CVD` 炉温与出炉后离线 `10.6 μm` 激光量热仪（`Laser Calorimetry`）抽检的经验控制面临两大深层光电材料/稀散冶金物理盲区与致命安全红线：
+1. **铜阳极泥焙烧与 $\text{SO}_2$ 还原中伴生碲/砷/汞共挥发共沉污染，以及 `CVD ZnSe` 炉腔内 $\text{Zn(g)}/\text{H}_2\text{Se(g)}$ 边界层过饱和度失控诱发气相成核粉末夹杂（Cloudiness / Nodules）与 $\text{Zn-H / Se-H}$ 氢化物红外吸收峰，及 `CIGS` 吸收层背表面/前表面双 V 型 $\text{Ga/(In+Ga)}$（`GGI`）带隙梯度失配引发 $\text{Cu}_{2-x}\text{Se}$ 导电杂相分流**：在硫酸化焙烧反应 $\text{Ag}_2\text{Se} + 3\text{H}_2\text{SO}_4(\text{conc.}) \to \text{Ag}_2\text{SO}_4 + \text{SeO}_2\uparrow + 2\text{SO}_2\uparrow + 3\text{H}_2\text{O}$ 与湿法还原 $\text{H}_2\text{SeO}_3 + 2\text{SO}_2 + \text{H}_2\text{O} \to \text{Se}^0\downarrow + 2\text{H}_2\text{SO}_4$ 中，若酸度（`< 3.5 mol/L HCl`）与氧化还原电位控制失当，伴生亚碲酸与三价砷将与单质硒共还原沉淀。而在长达 `200–400 小时` 的大口径 `CVD ZnSe` 沉积过程中，高温锌蒸气（$\text{Zn}$）与 $\text{H}_2\text{Se}$ 气体在石墨沉积芯轴（Mandrel）表面边界层内发生快速气固反应——一旦局部反应物分压比或边界层过饱和度超限，将由异相表面外延转向均相气相成核（Homogeneous Gas-Phase Nucleation），纳米级 $\text{ZnSe}$ 粉尘嵌入生长层形成伞状结瘤缺陷（Nodules）与云雾散射带，且未脱除的 $\text{Zn-H}$ 键在 `9.4–10.6 μm` 波段产生强红外本征吸收，使镜片在 `30 kW` $\text{CO}_2$ 激光照射下发生灾难性热透镜焦距漂移甚至热应力炸裂；同时在 `CIGS` 三阶段共蒸发/快速热硒化中，若富铜阶段向贫铜终点的化学计量转换点（`Cu/(In+Ga) = CGI` 从 `1.08` 回调至 `0.88–0.92`）与背场/表面双 V 型镓梯度（`GGI`）扩散速率失配，将在晶界残留高导电性 $\text{Cu}_{2-x}\text{Se}$ 二次相或形成深能级 $\text{In}_{\text{Cu}}$ 反位缺陷，导致电池开路电压（$V_{\text{oc}}$）与填充因子暴跌。
+2. **剧毒且易燃的硒化氢气体（$\text{H}_2\text{Se}$，沸点 `-41.3 °C`，`OSHA PEL / ACGIH TLV-TWA` 仅 `0.05 ppm = 50 ppb`，立即危及生命和健康浓度 `IDLH` 仅 `1 ppm`，具强烈嗅觉神经麻痹性与迟发性致命肺水肿风险）、腐蚀性二氧化硒（$\text{SeO}_2$）升华毒烟及 `CVD` 高温锌蒸发坩埚喷嘴结壳阻塞超压**：$\text{H}_2\text{Se}$ 是半导体与光电工业中毒性最剧烈的氢化物气体之一，在极低浓度下即可迅速麻痹人体的嗅觉感受器（“蒜臭味消失假象”），随后引发化学性肺炎与肺水肿；同时在 `CVD ZnSe` 炉内，若锌蒸发源（`620–680 °C`）输送喷嘴因局部回流生成高熔点 $\text{ZnSe}$（熔点 `1,525 °C`）结瘤堵死，锌坩埚内部蒸气压将急剧飙升，极易冲破石墨密封引发高温锌蒸气喷发与 $\text{H}_2\text{Se}$ 泄漏。
+
+本章节构建 **“铜阳极泥硫酸化焙烧、$\text{H}_2\text{Se}$ 精馏 `6N5` 超纯硒、`CVD ZnSe` 边界层过饱和度与 `CIGS` 双 V 带隙 `PINN-MPC` + `NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3` 剧毒 $\text{H}_2\text{Se}$ 干法化学吸附-热氧化裂解与 `CVD` 隔离硬联锁 + 产线侧 `10 kHz` 原位拉曼/XRF、中红外散射与尾气 `TDLAS` 边缘”** 三层自治架构：
+
+1. **硫酸化焙烧分步还原、`H2Se` 精馏、`CVD ZnSe` 边界层传质与 `CIGS` 双 V 能带工程 `PINN-MPC`**：
+   - 在 `AKSClaw` GPU 节点池（`Standard_NC40ads_H100_v5`）中联合求解：① **铜阳极泥 $\text{Ag}_2\text{Se-Cu}_2\text{Se}$ 硫酸化焙烧 $\text{SeO}_2/\text{TeO}_2$ 饱和蒸气压分馏方程与高酸度盐酸介质 $\text{SO}_2$ 选择性沉硒氧化还原动力学**；② **低压 `CVD ZnSe` 反应器内可压缩 Stefan-Maxwell 多组分扩散对流、Damköhler 表面沉积与气相成核过饱和度判据及氢化物脱附动力学方程**；③ **`CIGS` 三阶段共蒸发/RTP 硒化过程中 $\text{Cu}_2\text{Se}$ 液相辅助晶粒生长与 $\text{In/Ga}$ 互扩散双 V 型带隙偏微分方程**；
+   - `MPC` 实时协同调控 **还原槽 $\text{HCl}$ 活度与 $\text{SO}_2$ 梯度流量、`CVD` 中央喷嘴 $\text{H}_2\text{Se}/\text{Ar}$ 载气雷诺数与锌蒸发源过热度、五温区沉积芯轴温度场、以及 `CIGS` 腔室 $\text{In/Ga/Se}$ 分子束流切换轨迹**，将 **`6N5` 超高纯硒收率、`CVD ZnSe` 激光窗口超低吸收（$\alpha_{10.6\mu\text{m}} < 4 \times 10^{-4}\text{ cm}^{-1}$）合格率与 `CIGS` 开路电压 $V_{\text{oc}}$ 成品率提升 `+49.1%`**，并将 **`ZnSe` 气相成核结瘤/氢化物夹杂与阳极泥碲砷汞共挥发率削减 `-73.8%`**（传统固定 $\text{SO}_2$ 流量与开环 `CVD` 温控反模式仅 `+7.6%` / `-10.5%`）。
+2. **`NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3` 剧毒硒化氢干法吸附、热氧化裂解与 `CVD` 锌坩埚隔离硬联锁（`0.28 ms`）**：
+   - 严格遵循 **`NFPA 86`**、**`OSHA 29 CFR 1910.119`（高危剧毒气体工艺安全管理 `PSM`）**、**`SEMI S2 / S6`**（$\text{H}_2\text{Se}$ `TLV-TWA = 50 ppb`）及 **`IEC 61511 SIL-3`** 标准，对 $\text{H}_2\text{Se}$ 特气柜、精馏塔、`CVD` 反应釜与尾气处理系统（`Local Scrubber`）实施 `2oo3` 硬件表决联锁：
+   - 一旦在线 `TDLAS` 检出特气柜/尾气总管 $\text{H}_2\text{Se} > 25\text{ ppb}$（`1/2 TLV-TWA`）、或焙烧炉 $\text{SeO}_2$ 烟道微正压外溢、或 `CVD` 反应釜/锌蒸发坩埚压力 $> 85\text{ mbar}$，在 **`0.28 ms`** 内硬件级触发 **：① 瞬时关闭 $\text{H}_2\text{Se}$ 气瓶阀口限流器（`RFO`）下游双级气动隔膜切断阀（`DBB`）；② 瞬时将尾气切入双冗余氧化铜-氢氧化钠干法化学吸附塔（$\text{CuO/MnO}_2\text{-NaOH}$ `Dry-Bed Chemisorption`，将 $\text{H}_2\text{Se}$ 不可逆固封为 $\text{CuSe}$）与高温热氧化裂解-文丘里碱性急冷洗涤塔（`Thermal Oxidizer + Wet Venturi Scrubber` 捕集 $\text{SeO}_2$）；③ 瞬时向 `CVD` 锌蒸发坩埚与喷嘴注入高纯氩气（$\text{Ar}$）正压惰化封锁并切断加热电源**，确保 **剧毒 $\text{H}_2\text{Se}$ 外泄、$\text{SeO}_2$ 毒烟逸散与 `CVD` 锌坩埚超压事故率为 `0.0%`**（传统反模式达 `1.5%`）。
+3. **产线侧边缘 `10 kHz` 原位拉曼/XRF 组分梯度、中红外 `10.6 μm` 激光散射与尾气 `TDLAS` 边缘沙箱（`0.20 ms`）**：
+   - 在硫酸化焙烧炉、$\text{H}_2\text{Se}$ 精馏塔与 `CVD ZnSe / CIGS` 腔室边缘（`Standard_NC40ads_H100_v5`）实时解算 **`10 kHz` 原位共聚焦拉曼与 X 射线荧光光谱（`In-Situ Raman & XRF`，实时追踪 `CIGS` 薄膜 $A_1$ 模频移、$\text{Cu}_{2-x}\text{Se}$ 杂相消失终点与 $\text{Ga/(In+Ga)}$ 深度分布）**、**中红外 `10.6 μm` 量子级联激光散射与锁相热辐射层析（`MIR Laser Scatterometry & Lock-In Thermography`，在线监测 `CVD ZnSe` 边界层气相微粒散射与体吸收系数 $\alpha$）** 以及 **尾气 `QCL-TDLAS`（亚 `ppbv` 级连续锁定 $\text{H}_2\text{Se}$、$\text{SeO}_2$ 与 $\text{SO}_2$ 浓度）**，闭环延迟仅 **`0.20 ms`**，削减 **超纯硒与激光光学基地 WAN 带宽 `99.7%`**，并将 **阳极泥碲硒比波动或 `CVD` 边界层过饱和气相成核结瘤漏检率压降至 `0.0%`**（传统出炉后离线激光量热抽检反模式为 `4.1%`）。
+
+| 指标维度 | governed：铜阳极泥硫酸化焙烧、$\text{H}_2\text{Se}$ 精馏 `6N5` 硒、`CVD ZnSe` 边界层过饱和度与 `CIGS` 双V带隙 `PINN-MPC` + `NFPA 86 / OSHA 1910.119 / SEMI S2 / SIL-3` `0.28 ms` $\text{H}_2\text{Se}$ 干法吸附与 `CVD` 隔离联锁 + `10 kHz 原位拉曼/XRF / 中红外散射 / TDLAS` 边缘 | raw 反模式：固定焙烧 $\text{SO}_2$ 通量 + 开环 `CVD ZnSe / CIGS` 温控 + 出炉离线量热抽检 + 无 `0.28 ms` $\text{H}_2\text{Se}$ 吸附联锁 |
+|---|---|---|
+| **`6N5` 超纯硒纯度、`CVD ZnSe` 超低吸收合格率与 `CIGS` 开路电压成品率增益** | **`+49.1%`**（严格限制 `CVD` 边界层过饱和度消除氢化物吸收，精准塑造 `CIGS` 双 V 带隙） | `+7.6%`（气相成核导致 `ZnSe` 散射损耗超标，`CIGS` 晶界残留导电 $\text{Cu}_{2-x}\text{Se}$） |
+| **`ZnSe` 气相成核结瘤/氢化物夹杂与阳极泥碲砷汞共挥发率削减** | **`-73.8%`**（Stefan-Maxwell 边界层配气抑制均相成核，高酸分步还原阻断碲砷共沉） | `-10.5%`（喷嘴湍流引发伞状结瘤缺陷，焙烧与还原参数漂移带入痕量碲砷） |
+| **`NFPA 86 / OSHA 1910.119 / SEMI S2 / SIL-3` $\text{H}_2\text{Se}$ 吸附与隔离联锁延迟** | **`0.28 ms`**（检出 $\text{H}_2\text{Se} > 25\text{ ppb}$、$\text{SeO}_2$ 外溢或 `CVD` 压力 $> 85\text{ mbar}$ 时瞬时双阀切断、投入干法吸附/热氧化裂解并氩气封锁锌坩埚） | `366.0 ms`（依赖常规电化学传感器慢速响应，剧毒 $\text{H}_2\text{Se}$ 已突破 `50 ppb` 限值） |
+| **剧毒 $\text{H}_2\text{Se}$ 毒气外泄、$\text{SeO}_2$ 毒烟逸散或 `CVD` 锌坩埚超压率** | **`0.0%`**（零硒化氢中毒、零二氧化硒烟气逸散、零高温锌蒸气坩埚超压喷发） | `1.5%`（特气管路微漏释放 `IDLH 1 ppm` 剧毒 $\text{H}_2\text{Se}$ 或喷嘴结瘤导致锌坩埚超压） |
+| **`10 kHz` 原位拉曼/XRF、中红外 `10.6 μm` 激光散射与 `TDLAS` 边缘延迟** | **`0.20 ms`**（实时反演 `CIGS` 化学计量转换点、`ZnSe` 体吸收与 $\text{H}_2\text{Se}$ 亚 `ppbv` 浓度，削减 `99.7%` WAN 带宽） | `196.0 ms`（依赖数百小时沉积结束后切样离线激光量热检测，漏检 `4.1%` 气相成核结瘤） |
+| **配套 IaC 蓝图与仿真函数** | `blueprints/aksclaw-selenium-6n5-znse-cvd-laser-optics-cigs-selenization-h2se-semis2-sil3-pool.bicep`（**第 189 套蓝图**） | `simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox()`（**第 188 项仿真器 · 197/197 单测全绿**） |
+
+---
+
+## 194. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #188）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

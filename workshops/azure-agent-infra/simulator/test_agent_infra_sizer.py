@@ -194,6 +194,7 @@ from agent_infra_sizer import (
     simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox,
     simulate_bismuth_betterton_kroll_6n_zone_refining_lbe_coolant_bi2te3_iaea_sil3_sandbox,
     simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
+    simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3956,6 +3957,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct"], 3.0)
         self.assertTrue(gov["tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met"])
         self.assertFalse(raw["tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met"])
+
+    def test_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(
+            8, "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge"
+        )
+        raw = simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_roaster_so2_flow_and_open_loop_znse_cvd_h2se_furnace_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_selenium_pods"], 32)
+        self.assertEqual(gov["se_6n5_purity_znse_cvd_laser_absorption_and_cigs_double_graded_voc_yield_gain_pct"], 49.1)
+        self.assertEqual(gov["znse_cvd_hydride_inclusion_nodule_and_roaster_te_as_hg_carryover_reduction_pct"], 73.8)
+        self.assertEqual(gov["nfpa86_osha1910119_semis2_sil3_h2se_dry_scrubber_thermal_oxidizer_and_cvd_isolation_interlock_ms"], 0.28)
+        self.assertEqual(gov["unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct"], 1.0)
+        self.assertEqual(gov["se_znse_cigs_edge_10khz_insitu_raman_xrf_ga_grading_mir_scatter_and_tdlas_h2se_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct"], 3.0)
+        self.assertTrue(gov["selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met"])
+        self.assertFalse(raw["selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met"])
 
 
 if __name__ == "__main__":

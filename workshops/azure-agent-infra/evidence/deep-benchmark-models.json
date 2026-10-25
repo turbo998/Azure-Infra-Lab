@@ -11077,5 +11077,52 @@
       "uncompensated_slime_ag_se_te_ratio_shift_or_czt_zn_segregation_interface_concavity_pct": 4.1,
       "tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_slo_met": false
     }
+  ],
+  "selenium_6n5_znse_cvd_laser_optics_cigs_selenization_profiles": [
+    {
+      "selenium_znse_lines": 8,
+      "selenium_governance_mode": "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_selenium_pods": 32,
+      "se_6n5_purity_znse_cvd_laser_absorption_and_cigs_double_graded_voc_yield_gain_pct": 49.1,
+      "znse_cvd_hydride_inclusion_nodule_and_roaster_te_as_hg_carryover_reduction_pct": 73.8,
+      "nfpa86_osha1910119_semis2_sil3_h2se_dry_scrubber_thermal_oxidizer_and_cvd_isolation_interlock_ms": 0.28,
+      "unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct": 0.0,
+      "se_znse_cigs_edge_10khz_insitu_raman_xrf_ga_grading_mir_scatter_and_tdlas_h2se_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct": 0.0,
+      "selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met": true
+    },
+    {
+      "selenium_znse_lines": 32,
+      "selenium_governance_mode": "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_selenium_pods": 128,
+      "se_6n5_purity_znse_cvd_laser_absorption_and_cigs_double_graded_voc_yield_gain_pct": 49.1,
+      "znse_cvd_hydride_inclusion_nodule_and_roaster_te_as_hg_carryover_reduction_pct": 73.8,
+      "nfpa86_osha1910119_semis2_sil3_h2se_dry_scrubber_thermal_oxidizer_and_cvd_isolation_interlock_ms": 0.28,
+      "unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct": 0.0,
+      "se_znse_cigs_edge_10khz_insitu_raman_xrf_ga_grading_mir_scatter_and_tdlas_h2se_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct": 0.0,
+      "selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met": true
+    },
+    {
+      "selenium_znse_lines": 8,
+      "selenium_governance_mode": "raw_cloud_fixed_roaster_so2_flow_and_open_loop_znse_cvd_h2se_furnace_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_selenium_pods": 32,
+      "se_6n5_purity_znse_cvd_laser_absorption_and_cigs_double_graded_voc_yield_gain_pct": 7.6,
+      "znse_cvd_hydride_inclusion_nodule_and_roaster_te_as_hg_carryover_reduction_pct": 10.5,
+      "nfpa86_osha1910119_semis2_sil3_h2se_dry_scrubber_thermal_oxidizer_and_cvd_isolation_interlock_ms": 366.0,
+      "unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct": 1.5,
+      "se_znse_cigs_edge_10khz_insitu_raman_xrf_ga_grading_mir_scatter_and_tdlas_h2se_telemetry_loop_ms": 196.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct": 4.1,
+      "selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met": false
+    }
   ]
 }

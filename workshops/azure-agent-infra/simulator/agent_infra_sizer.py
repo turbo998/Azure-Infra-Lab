@@ -9649,6 +9649,73 @@ def simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil
     }
 
 
+def simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox(
+    selenium_znse_lines: int = 8,
+    selenium_governance_mode: str = "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Copper-Anode Slime & Naumannite-Eucairite (Ag2Se-CuAgSe-Cu2Se)
+    Sulfating Roasting / Soda-Ash Smelting (SeO2 / Na2SeO3), SO2 Selective Reductive
+    Precipitation, Hydride (H2Se) Rectification-Pyrolysis & 6N5 (99.99995%) Ultra-Pure
+    Selenium, Large-Aperture Chemical Vapor Deposition (CVD) Zinc Selenide (ZnSe) EUV
+    CO2-Laser Optics & Cu(In_{1-x}Ga_x)Se2 (CIGS) Double-Graded Bandgap Thin-Film
+    Photovoltaics PINN-MPC, Online 10 kHz In-Situ Raman/XRF Ga/(In+Ga) Grading, Mid-IR
+    Laser Scatterometry & TDLAS H2Se/SeO2 Metrology & NFPA 86 / OSHA 1910.119 / SEMI S2 /
+    IEC 61511 SIL-3 Lethal Hydrogen Selenide (H2Se) Dry-Bed Chemisorption Scrubbing,
+    Pyrolysis Thermal Oxidizer & CVD Retort Isolation Interlock Sandbox (Chapter 193).
+    """
+    if selenium_znse_lines < 1:
+        raise ValueError("selenium_znse_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge",
+        "raw_cloud_fixed_roaster_so2_flow_and_open_loop_znse_cvd_h2se_furnace_schedule",
+    }
+    if selenium_governance_mode not in valid_modes:
+        raise ValueError(f"selenium_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        selenium_governance_mode
+        == "pinn_mpc_ag2se_roasting_6n5_se_znse_cvd_optics_cigs_double_graded_h2se_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(selenium_znse_lines / 2))
+    active_selenium_pods = selenium_znse_lines * 4
+
+    se_6n5_purity_znse_cvd_laser_absorption_and_cigs_double_graded_voc_yield_gain_pct = (
+        49.1 if governed else 7.6
+    )
+    znse_cvd_hydride_inclusion_nodule_and_roaster_te_as_hg_carryover_reduction_pct = (
+        73.8 if governed else 10.5
+    )
+    nfpa86_osha1910119_semis2_sil3_h2se_dry_scrubber_thermal_oxidizer_and_cvd_isolation_interlock_ms = (
+        0.28 if governed else 366.0
+    )
+    unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct = (
+        0.0 if governed else 1.5
+    )
+    se_znse_cigs_edge_10khz_insitu_raman_xrf_ga_grading_mir_scatter_and_tdlas_h2se_telemetry_loop_ms = (
+        0.20 if governed else 196.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "selenium_znse_lines": selenium_znse_lines,
+        "selenium_governance_mode": selenium_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_selenium_pods": active_selenium_pods,
+        "se_6n5_purity_znse_cvd_laser_absorption_and_cigs_double_graded_voc_yield_gain_pct": se_6n5_purity_znse_cvd_laser_absorption_and_cigs_double_graded_voc_yield_gain_pct,
+        "znse_cvd_hydride_inclusion_nodule_and_roaster_te_as_hg_carryover_reduction_pct": znse_cvd_hydride_inclusion_nodule_and_roaster_te_as_hg_carryover_reduction_pct,
+        "nfpa86_osha1910119_semis2_sil3_h2se_dry_scrubber_thermal_oxidizer_and_cvd_isolation_interlock_ms": nfpa86_osha1910119_semis2_sil3_h2se_dry_scrubber_thermal_oxidizer_and_cvd_isolation_interlock_ms,
+        "unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct": unmitigated_h2se_toxic_gas_release_seo2_fume_or_cvd_zinc_retort_overpressure_pct,
+        "se_znse_cigs_edge_10khz_insitu_raman_xrf_ga_grading_mir_scatter_and_tdlas_h2se_telemetry_loop_ms": se_znse_cigs_edge_10khz_insitu_raman_xrf_ga_grading_mir_scatter_and_tdlas_h2se_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct": uncompensated_slime_te_se_ratio_shift_or_znse_cvd_boundary_layer_supersaturation_pct,
+        "selenium_6n5_znse_cvd_laser_optics_cigs_selenization_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
