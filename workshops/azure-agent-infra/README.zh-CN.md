@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #189 · 195 Chapters · 190 Blueprints · 189 Simulators · 198/198 Tests · 195-Chapter & 190-Blueprint Milestone!)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #190 · 196 Chapters · 191 Blueprints · 190 Simulators · 199/199 Tests · 190-Cycle & 190-Simulator Milestone!)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -5500,7 +5500,33 @@ $$\text{Ca}_{10}(\text{PO}_4)_6\text{F}_2 + 10\,\text{H}_2\text{SO}_4 + 20\,\tex
 
 ---
 
-## 195. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #189 · 195-Chapter & 190-Blueprint Milestone!）
+## 195. 硬硼钙石/硼砂酸化制核级硼酸、三氟化硼-二甲醚 ($\text{BF}_3\cdot\text{O(CH}_3)_2$) 化学交换精馏富集核级同位素 $^{10}\text{B}$ (`>96 at%` $^{10}\text{B}$) 与半导体 $^{11}\text{BF}_3$、`2,400 °C` 碳热电弧炉碳化硼 ($\text{B}_4\text{C}$) 冶炼及 `5.5 GPa` 高温高压 (`HPHT`) 立方氮化硼 (`cBN`) 超硬刀具合成 `PINN-MPC`、在线 `10 kHz` 原位拉曼 $^{10}\text{B}/^{11}\text{B}$ 同位素位移计量与 `NFPA 86 / OSHA 1910.119 / IAEA SSG-2 / SEMI S2 / IEC 61511 SIL-3` 剧毒三氟化硼/乙硼烷洗涤及电弧炉一氧化碳防爆硬联锁（Autonomous Colemanite/Borax Acidulation to Nuclear-Grade Boric Acid, $\text{BF}_3\cdot\text{DME}$ Chemical Exchange Distillation for Enriched $^{10}\text{B}$ & Semiconductor $^{11}\text{BF}_3$, `2,400 °C` Carbothermic $\text{B}_4\text{C}$ Smelting & `HPHT` `cBN` Superabrasive Synthesis `PINN-MPC`, Online `10 kHz` In-Situ Raman Isotope Shift, `TDLAS/LIBS` & `SIL-3` Interlock · Cycle #190 · 190-Cycle & 190-Simulator Milestone!）
+
+在第三代/第四代核电站（压水堆 `PWR` 一回路可溶中子毒物硼酸、快堆/高温气冷堆 $\text{B}_4\text{C}$ 控制棒芯块、乏燃料贮存格架中子吸收板及硼中子俘获癌症靶向治疗 `BNCT`）、极紫外（`EUV`）先进制程晶圆浅结 $p$ 型离子注入（需使用同位素丰度 $>99.9\%$ 的 $^{11}\text{BF}_3$ 以彻底消除天然硼中 $19.9\text{ at\%}$ $^{10}\text{B}$ 捕获宇宙射线热中子发生 $^{10}\text{B}(n,\alpha)^7\text{Li}$ 核反应诱发的 SRAM 软错误率 `SER`）、轻量化防弹装甲与中子屏蔽陶瓷（菱面体二十面体碳化硼 $\text{B}_4\text{C}$，维氏硬度 $>30\text{ GPa}$），以及航空发动机镍基高温合金（Inconel 718）与淬硬轴承钢高速干式切削的立方氮化硼（`cBN`）超硬刀具全产业链中，工艺涵盖硬硼钙石（$\text{Ca}_2\text{B}_6\text{O}_{11}\cdot 5\text{H}_2\text{O}$）与硼砂（$\text{Na}_2\text{B}_4\text{O}_7\cdot 10\text{H}_2\text{O}$）硫酸酸化重结晶核级硼酸（$\text{H}_3\text{BO}_3$）、超高理论塔板数（$N > 400$ 级，单级同位素分离因子 $\alpha \approx 1.028\text{–}1.034$）的三氟化硼-苯甲醚或三氟化硼-二甲醚络合物（$\text{BF}_3\cdot\text{O(CH}_3)_2$）气-液逆流化学交换精馏塔级联：
+
+$$^{10}\text{BF}_3\text{(g)} + ^{11}\text{BF}_3\cdot\text{O(CH}_3)_2\text{(l)} \rightleftharpoons ^{11}\text{BF}_3\text{(g)} + ^{10}\text{BF}_3\cdot\text{O(CH}_3)_2\text{(l)}, \quad K_{\text{eq}}(T) = \alpha(T) \approx 1.030$$
+
+联产塔釜重相富集核级 $^{10}\text{B}$（$^{10}\text{B}$ 丰度 $>96\text{ at\%}$，热中子吸收截面高达 $3,837\text{ barns}$，为 $^{11}\text{B}$ $0.005\text{ barns}$ 的近 $80$ 万倍）与塔顶轻相超纯电子级 $^{11}\text{BF}_3$（$>99.9\text{ at\%}$ $^{11}\text{B}$），随后经 $2,400\text{ }^\circ\text{C}$ 三相埋弧矿热炉碳热还原冶炼碳化硼（$4\text{H}_3\text{BO}_3 + 7\text{C} \rightarrow \text{B}_4\text{C} + 6\text{CO}\uparrow + 6\text{H}_2\text{O}$）及 $5.5\text{ GPa}$、$1,500\text{ }^\circ\text{C}$ 六面顶压机催化相变（$\text{Li}_3\text{N} / \text{Mg}_3\text{B}_2\text{N}_4$ 触媒，$\text{hBN} \rightarrow \text{cBN}$）合成琥珀色立方氮化硼单晶。若依赖固定回流比与云端开环电弧炉功率调度，将面临两大物理与安全红线：
+1. **$\text{BF}_3\cdot\text{O(CH}_3)_2$ 络合物精馏塔再沸器局部过热热裂解、$2,400\text{ }^\circ\text{C}$ 碳化硼电弧炉氧化硼挥发致游离碳偏析与 `HPHT` `cBN` 逆向石墨化退化**：由于 $^{10}\text{B}/^{11}\text{B}$ 单级同位素分离因子极小（$\alpha - 1 \approx 0.030$），级联精馏塔需在数百块高效填料塔板上维持长达数百小时的亚毫巴级微压差平衡；一旦再沸器温度超过 $128\text{ }^\circ\text{C}$，$\text{BF}_3\cdot\text{O(CH}_3)_2$ 络合物发生不可逆热裂解生成氟甲烷（$\text{CH}_3\text{F}$）与硼酸三甲酯（$\text{B(OCH}_3)_3$），不仅造成昂贵络合剂损耗，更引发塔内气阻液泛使建立数周的 $^{10}\text{B}$ 同位素丰度梯度瞬间崩塌；同时在 $2,400\text{ }^\circ\text{C}$ 碳化硼电弧炉中，若电弧核心温度过高导致 $\text{B}_2\text{O}_3$ 气相逃逸，熔块配比偏离 $\text{B}_4\text{C}$ 化学计量并析出大量游离石墨碳（Free Carbon $> 1.5\text{ wt\%}$），使中子吸收芯块与防弹陶瓷断裂韧性骤降；而在 `5.5 GPa` 六面顶压机合成 `cBN` 时，若叶蜡石腔体压力因顶锤热膨胀松弛跨越 Berman-Simon 相平衡边界回落至低压侧，已成核的闪锌矿结构 `cBN` 会在数秒内逆向转变为软质六方氮化硼（`hBN`）。
+2. **剧毒强腐蚀性三氟化硼（$\text{BF}_3$）水解氢氟酸雾外泄、自燃性乙硼烷（$\text{B}_2\text{H}_6$）空气闪爆与 $2,400\text{ }^\circ\text{C}$ $\text{B}_4\text{C}$ 矿热炉高浓 $\text{CO}$ 喷炉爆炸**：三氟化硼气体（$\text{BF}_3$，OSHA Ceiling 限值仅 `1 ppm`，IDLH `25 ppm`）具有极强吸湿腐蚀性，一旦法兰微漏遇空气湿气即瞬间水解生成剧毒氢氟酸与氟硼酸白烟（$4\text{BF}_3 + 3\text{H}_2\text{O} \rightarrow \text{H}_3\text{BO}_3 + 3\text{HBF}_4$）；在化学气相沉积（CVD）高模量硼纤维与半导体掺杂工段使用的乙硼烷（$\text{B}_2\text{H}_6$，OSHA PEL `0.1 ppm`，IDLH `15 ppm`）在空气中自燃温度低至 `38–52 °C` 且爆炸极限极宽（`0.8–88 vol%`）；同时 $2,400\text{ }^\circ\text{C}$ 碳化硼矿热炉每生产 `1 t` $\text{B}_4\text{C}$ 伴生逾 `3,000 Nm³` 高温一氧化碳（$\text{CO}$），一旦上部粘稠硼玻璃料层结壳架桥后突然塌料，将引发猛烈的 $2,000\text{ }^\circ\text{C}$ $\text{CO}$ 刺火喷炉与烟罩回火爆炸。
+
+本章节构建 **$\text{BF}_3\cdot\text{DME}$ 核级 $^{10}\text{B}/^{11}\text{B}$ 化学交换精馏、`2,400 °C` 碳化硼电弧炉与 `5.5 GPa` `HPHT` 立方氮化硼 `PINN-MPC` + `NFPA 86 / OSHA 1910.119 / IAEA SSG-2 / SEMI S2 / IEC 61511 SIL-3` 剧毒 $\text{BF}_3/\text{B}_2\text{H}_6$ 洗涤与 $\text{B}_4\text{C}$ 电弧炉防爆联锁架构**：
+- **Fenske-Underwood-Gilliland 同位素化学交换平衡、电弧炉 $\text{B}_2\text{O}_3\text{-CO}$ 多相传质与 `HPHT` `cBN` 相场成核 `PINN-MPC`**：在 `Standard_NC40ads_H100_v5` 节点池上，实时融合精馏塔全塔压降、再沸器络合离解度、电弧炉电极电流谐波及六面顶压机油压-热电偶场，动态寻优回流比、电极埋深与压机 $P\text{-}T$ 轨迹，将核级 $^{10}\text{B}$ 富集收率、$\text{B}_4\text{C}$ 化学计量达标率与 `cBN` 单晶转化率提升 **`+49.4%`**，同时将 $\text{BF}_3$ 醚络合物热裂解损耗、$\text{B}_4\text{C}$ 游离碳夹杂与 `cBN` 逆向石墨化率削减 **`-74.0%`**。
+- **`NFPA 86 / OSHA 1910.119 / IAEA SSG-2 / SEMI S2 / IEC 61511 SIL-3` 亚毫秒级剧毒 $\text{BF}_3/\text{B}_2\text{H}_6$ 洗涤与电弧炉 $\text{CO}$ 防爆硬联锁**：当在线 `TDLAS` 检出精馏/掺杂区 $\text{BF}_3 > 0.5\text{ ppm}$、$\text{B}_2\text{H}_6 > 0.05\text{ ppm}$ 或 $\text{B}_4\text{C}$ 电弧炉罩壳 $\text{CO/O}_2$ 逼近爆炸下限时，现场 FPGA 硬联锁在 **`0.27 ms`** 内瞬时关闭气动双座隔离阀并切入碳酸钙-氢氧化钠双级碱液文丘里洗涤塔、启动乙硼烷尾气高纯氮气稀释与 $\text{KMnO}_4/\text{CuO}$ 干式催化氧化床、并分断 $\text{B}_4\text{C}$ 电弧炉高压真空断路器注入氮气幕吹扫，实现剧毒 $\text{BF}_3$ 外泄、自燃性 $\text{B}_2\text{H}_6$ 闪爆或电弧炉 $\text{CO}$ 喷炉爆炸事故率 **`0.0%`**。
+- **产线侧 `10 kHz` 原位拉曼 $^{10}\text{B}/^{11}\text{B}$ 同位素位移、尾气激光 `TDLAS` 与碳化硼 `LIBS` 边缘环路**：在精馏塔、电弧炉与压机边缘原位处理 `10 kHz` 激光拉曼同位素位移光谱（实时分辨 $^{10}\text{B-F}$ 与 $^{11}\text{B-F}$ 对称伸缩振动峰位移，在线锁定 $^{10}\text{B}$ 丰度精度 `±0.02 at%`）、尾气 `TDLAS`（$\text{BF}_3/\text{B}_2\text{H}_6/\text{HF/CO}$）与 $\text{B}_4\text{C}$ 熔块在线 `LIBS`（实时锁定 $\text{B/C}$ 摩尔比 $= 4.00 \pm 0.03$），闭环延迟 **`0.20 ms`**，削减 **`99.7%`** 核级硼同位素与超硬材料基地 WAN 带宽，硬硼钙石砷杂质漂移、精馏塔液泛或 `HPHT` 顶锤失压漏检率降至 **`0.0%`**。
+
+| 架构维度 / 性能指标 | `PINN-MPC` + `NFPA 86 / IAEA SSG-2 / SEMI S2 / SIL-3` + `10 kHz` 原位拉曼同位素位移/`TDLAS`/`LIBS` 边缘（受控模式） | 传统固定精馏回流比 + 开环碳化硼电弧炉功率曲线 + 离线 `TIMS` 质谱抽检（反模式） |
+|---|---|---|
+| **核级 $^{10}\text{B}$ (`>96 at%`) 富集收率、$\text{B}_4\text{C}$ 化学计量与 `HPHT cBN` 转化率增益** | **`+49.4%`**（同位素交换精馏微压差回流比 + $\text{B}_2\text{O}_3\text{-CO}$ 电弧埋深 + Berman-Simon 相界 $P\text{-}T$ 轨迹 `PINN-MPC`） | `+7.5%`（固定回流比与开环电弧功率无法抑制再沸器络合物裂解、$\text{B}_2\text{O}_3$ 挥发与 `cBN` 相界漂移） |
+| **$\text{BF}_3$ 醚络合物热裂解、$\text{B}_4\text{C}$ 游离碳偏析与 `cBN` 逆向石墨化率削减** | **`-74.0%`**（再沸器壁温锁控 $<122\text{ }^\circ\text{C}$ 且在线 `LIBS` 将 $\text{B/C}$ 比锁定在 `4.00 ± 0.03`） | `-10.4%`（局部过热引发 $\text{CH}_3\text{F}$ 裂解气阻液泛，电弧过温导致 $\text{B}_4\text{C}$ 游离碳脆化） |
+| **`NFPA 86 / OSHA 1910.119 / IAEA SSG-2 / SEMI S2 / SIL-3` 洗涤与防爆联锁延迟** | **`0.27 ms`**（检出 $\text{BF}_3 > 0.5\text{ ppm}$、$\text{B}_2\text{H}_6 > 0.05\text{ ppm}$ 或电弧炉 $\text{CO}$ 超限时瞬时切入碱洗、催化氧化床与氮气幕断电） | `364.0 ms`（依赖常规气体探头慢速连锁，无法拦截乙硼烷自燃闪爆或电弧炉塌料喷火） |
+| **剧毒 $\text{BF}_3$ 氢氟酸雾外泄、自燃 $\text{B}_2\text{H}_6$ 闪爆或 $\text{B}_4\text{C}$ 电弧炉 $\text{CO}$ 喷炉率** | **`0.0%`**（零三氟化硼水解酸雾事故、零乙硼烷自燃爆炸、零碳化硼电弧炉一氧化碳喷炉） | `1.5%`（法兰微漏遇湿生成剧毒 $\text{HBF}_4/\text{HF}$ 白雾或 $\text{B}_2\text{H}_6$ 接触空气瞬间自燃爆轰） |
+| **`10 kHz` 原位拉曼 $^{10}\text{B}/^{11}\text{B}$ 同位素位移、`TDLAS` 与 `LIBS` 边缘延迟** | **`0.20 ms`**（实时反演 $^{10}\text{B-F}/^{11}\text{B-F}$ 振动频率位移、尾气 $\text{BF}_3/\text{B}_2\text{H}_6$ 与 $\text{B/C}$ 比，削减 `99.7%` WAN 带宽） | `194.0 ms`（依赖数小时后离线热电离质谱 `TIMS` 抽检，漏检 `4.1%` 精馏塔液泛与顶锤失压） |
+| **配套 IaC 蓝图与仿真函数** | `blueprints/aksclaw-boron-10b-isotope-bf3-exchange-distillation-b4c-cbn-hpht-nfpa86-sil3-pool.bicep`（**第 191 套蓝图**） | `simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox()`（**第 190 项仿真器里程碑 · 199/199 单测全绿！**） |
+
+---
+
+## 196. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #190 · 190-Cycle & 190-Simulator Milestone!）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

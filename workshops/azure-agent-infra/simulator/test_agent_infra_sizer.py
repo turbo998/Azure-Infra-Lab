@@ -196,6 +196,7 @@ from agent_infra_sizer import (
     simulate_tellurium_7n_czt_cdznte_thm_bridgman_gamma_detector_h2te_semis2_sil3_sandbox,
     simulate_selenium_6n5_znse_cvd_laser_optics_cigs_selenization_h2se_semis2_sil3_sandbox,
     simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox,
+    simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4000,6 +4001,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct"], 3.0)
         self.assertTrue(gov["strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met"])
         self.assertFalse(raw["strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met"])
+
+    def test_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge"
+        )
+        raw = simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_reflux_bf3_column_and_open_loop_b4c_arc_furnace_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_boron_10b_pods"], 32)
+        self.assertEqual(gov["b10_isotopic_enrichment_b4c_stoichiometry_and_cbn_hpht_conversion_yield_gain_pct"], 49.4)
+        self.assertEqual(gov["bf3_ether_complex_thermal_decomposition_b4c_free_carbon_and_cbn_hbn_back_conversion_reduction_pct"], 74.0)
+        self.assertEqual(gov["nfpa86_osha1910119_iaea_ssg2_sil3_bf3_b2h6_scrubber_and_b4c_co_explosion_interlock_ms"], 0.27)
+        self.assertEqual(gov["unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct"], 1.0)
+        self.assertEqual(gov["boron_10b_b4c_cbn_edge_10khz_insitu_raman_isotope_tdlas_bf3_b2h6_co_and_libs_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct"], 3.0)
+        self.assertTrue(gov["boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met"])
+        self.assertFalse(raw["boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met"])
 
 
 if __name__ == "__main__":

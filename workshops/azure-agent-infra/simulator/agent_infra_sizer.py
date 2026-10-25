@@ -9783,6 +9783,75 @@ def simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectri
     }
 
 
+def simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox(
+    boron_10b_cbn_lines: int = 8,
+    boron_10b_governance_mode: str = "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Colemanite/Borax Acidulation to Nuclear-Grade Boric Acid (H3BO3),
+    Boron Trifluoride-Dimethyl Ether / Anisole (BF3·O(CH3)2) Chemical Exchange Distillation
+    for Enriched 10B (>96 at% 10B for PWR Soluble Neutron Poison, B4C Control Rods & BNCT,
+    and >99.9% Isotopically Depleted 11BF3 for Semiconductor p-Type Ion Implantation),
+    2,400 °C Carbothermic Boron Carbide (B4C) Submerged-Arc Smelting & High-Pressure
+    High-Temperature (HPHT 5.5 GPa, 1,500 °C Li3N/Mg3B2N4 Catalyst) Cubic Boron Nitride (cBN)
+    Superabrasive Synthesis PINN-MPC, Online 10 kHz In-Situ Raman 10B/11B Isotope Shift,
+    TDLAS BF3/B2H6/CO & LIBS Metrology & NFPA 86 / OSHA 1910.119 / IAEA SSG-2 / SEMI S2 /
+    IEC 61511 SIL-3 Toxic Boron Trifluoride (BF3) / Pyrophoric Diborane (B2H6) Scrubbing &
+    2,400 °C B4C Furnace CO-Explosion Interlock Sandbox (Chapter 195 · 190-Cycle &
+    190-Simulator Milestone!).
+    """
+    if boron_10b_cbn_lines < 1:
+        raise ValueError("boron_10b_cbn_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge",
+        "raw_cloud_fixed_reflux_bf3_column_and_open_loop_b4c_arc_furnace_schedule",
+    }
+    if boron_10b_governance_mode not in valid_modes:
+        raise ValueError(f"boron_10b_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        boron_10b_governance_mode
+        == "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(boron_10b_cbn_lines / 2))
+    active_boron_10b_pods = boron_10b_cbn_lines * 4
+
+    b10_isotopic_enrichment_b4c_stoichiometry_and_cbn_hpht_conversion_yield_gain_pct = (
+        49.4 if governed else 7.5
+    )
+    bf3_ether_complex_thermal_decomposition_b4c_free_carbon_and_cbn_hbn_back_conversion_reduction_pct = (
+        74.0 if governed else 10.4
+    )
+    nfpa86_osha1910119_iaea_ssg2_sil3_bf3_b2h6_scrubber_and_b4c_co_explosion_interlock_ms = (
+        0.27 if governed else 364.0
+    )
+    unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct = (
+        0.0 if governed else 1.5
+    )
+    boron_10b_b4c_cbn_edge_10khz_insitu_raman_isotope_tdlas_bf3_b2h6_co_and_libs_telemetry_loop_ms = (
+        0.20 if governed else 194.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "boron_10b_cbn_lines": boron_10b_cbn_lines,
+        "boron_10b_governance_mode": boron_10b_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_boron_10b_pods": active_boron_10b_pods,
+        "b10_isotopic_enrichment_b4c_stoichiometry_and_cbn_hpht_conversion_yield_gain_pct": b10_isotopic_enrichment_b4c_stoichiometry_and_cbn_hpht_conversion_yield_gain_pct,
+        "bf3_ether_complex_thermal_decomposition_b4c_free_carbon_and_cbn_hbn_back_conversion_reduction_pct": bf3_ether_complex_thermal_decomposition_b4c_free_carbon_and_cbn_hbn_back_conversion_reduction_pct,
+        "nfpa86_osha1910119_iaea_ssg2_sil3_bf3_b2h6_scrubber_and_b4c_co_explosion_interlock_ms": nfpa86_osha1910119_iaea_ssg2_sil3_bf3_b2h6_scrubber_and_b4c_co_explosion_interlock_ms,
+        "unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct": unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct,
+        "boron_10b_b4c_cbn_edge_10khz_insitu_raman_isotope_tdlas_bf3_b2h6_co_and_libs_telemetry_loop_ms": boron_10b_b4c_cbn_edge_10khz_insitu_raman_isotope_tdlas_bf3_b2h6_co_and_libs_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct": uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct,
+        "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

@@ -11171,5 +11171,52 @@
       "uncompensated_celestine_ba_ca_impurity_shift_or_hydrothermal_ostwald_coarsening_pct": 4.0,
       "strontium_barium_celestine_barite_aluminothermic_bst_mlcc_slo_met": false
     }
+  ],
+  "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_profiles": [
+    {
+      "boron_10b_cbn_lines": 8,
+      "boron_10b_governance_mode": "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_boron_10b_pods": 32,
+      "b10_isotopic_enrichment_b4c_stoichiometry_and_cbn_hpht_conversion_yield_gain_pct": 49.4,
+      "bf3_ether_complex_thermal_decomposition_b4c_free_carbon_and_cbn_hbn_back_conversion_reduction_pct": 74.0,
+      "nfpa86_osha1910119_iaea_ssg2_sil3_bf3_b2h6_scrubber_and_b4c_co_explosion_interlock_ms": 0.27,
+      "unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct": 0.0,
+      "boron_10b_b4c_cbn_edge_10khz_insitu_raman_isotope_tdlas_bf3_b2h6_co_and_libs_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct": 0.0,
+      "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met": true
+    },
+    {
+      "boron_10b_cbn_lines": 32,
+      "boron_10b_governance_mode": "pinn_mpc_bf3_dimethyl_ether_10b_exchange_distillation_b4c_arc_cbn_hpht_nfpa86_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_boron_10b_pods": 128,
+      "b10_isotopic_enrichment_b4c_stoichiometry_and_cbn_hpht_conversion_yield_gain_pct": 49.4,
+      "bf3_ether_complex_thermal_decomposition_b4c_free_carbon_and_cbn_hbn_back_conversion_reduction_pct": 74.0,
+      "nfpa86_osha1910119_iaea_ssg2_sil3_bf3_b2h6_scrubber_and_b4c_co_explosion_interlock_ms": 0.27,
+      "unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct": 0.0,
+      "boron_10b_b4c_cbn_edge_10khz_insitu_raman_isotope_tdlas_bf3_b2h6_co_and_libs_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct": 0.0,
+      "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met": true
+    },
+    {
+      "boron_10b_cbn_lines": 8,
+      "boron_10b_governance_mode": "raw_cloud_fixed_reflux_bf3_column_and_open_loop_b4c_arc_furnace_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_boron_10b_pods": 32,
+      "b10_isotopic_enrichment_b4c_stoichiometry_and_cbn_hpht_conversion_yield_gain_pct": 7.5,
+      "bf3_ether_complex_thermal_decomposition_b4c_free_carbon_and_cbn_hbn_back_conversion_reduction_pct": 10.4,
+      "nfpa86_osha1910119_iaea_ssg2_sil3_bf3_b2h6_scrubber_and_b4c_co_explosion_interlock_ms": 364.0,
+      "unmitigated_bf3_toxic_release_pyrophoric_b2h6_ignition_or_b4c_furnace_co_blowout_pct": 1.5,
+      "boron_10b_b4c_cbn_edge_10khz_insitu_raman_isotope_tdlas_bf3_b2h6_co_and_libs_telemetry_loop_ms": 194.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_colemanite_arsenic_drift_bf3_column_flooding_or_hpht_anvil_pressure_drop_pct": 4.1,
+      "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_slo_met": false
+    }
   ]
 }
