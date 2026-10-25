@@ -10466,6 +10466,74 @@ def simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_s
     }
 
 
+def simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(
+    ga_in_mocvd_ito_lines: int = 8,
+    ga_in_mocvd_ito_governance_mode: str = "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Bayer-Liquor Gallium (Ga) & Sphalerite Zinc-Residue Indium (In)
+    Amidoxime Chelating Ion-Exchange / D2EHPA Solvent Extraction, Co-Electrowinning &
+    Multi-Stage Vacuum Distillation / Fractional Crystallization (7N-8N MBE-Grade Ga
+    29.76 C & In 156.60 C), Trimethylgallium / Trimethylindium (TMGa/TMIn) Metalorganic
+    MOCVD Precursor Synthesis & Indium Phosphide (InP) 1.6 Tbps Coherent Optical
+    Transceiver Wafer / Indium Tin Oxide (ITO) Sputtering Target PINN-MPC, Online 10 kHz
+    In-Situ NMR/FTIR (TMGa/TMIn Ether Adduct Free), GD-MS / ICP-MS & Eddy-Current
+    Metrology & SEMI S2 / NFPA 55 / OSHA 1910.119 / IEC 61511 SIL-3 Pyrophoric
+    Trimethylgallium/Trimethylindium (TMGa/TMIn) Spontaneous Air-Ignition Suppression,
+    Hydrogen Evolution & Indium Tin Oxide (ITO < 0.1 mg/m3) Pulmonary Fibrosis
+    Nanoparticle Containment Interlock (Cycle #200 — 200-Cycle & 200-Simulator Milestone!)."""
+    if ga_in_mocvd_ito_lines < 1:
+        raise ValueError("ga_in_mocvd_ito_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge",
+        "raw_cloud_fixed_amidoxime_resin_regeneration_and_open_loop_tmga_ether_adduct_distillation_schedule",
+    }
+    if ga_in_mocvd_ito_governance_mode not in valid_modes:
+        raise ValueError(f"ga_in_mocvd_ito_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        ga_in_mocvd_ito_governance_mode
+        == "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(ga_in_mocvd_ito_lines / 2))
+    active_ga_in_mocvd_ito_pods = ga_in_mocvd_ito_lines * 4
+
+    ga_in_8n_mbe_purity_tmga_tmin_adduct_free_yield_and_inp_ito_target_gain_pct = (
+        50.8 if governed else 8.2
+    )
+    si_fe_zn_cu_carryover_tmga_ether_oxygen_adduct_and_ito_nodule_arcing_reduction_pct = (
+        75.5 if governed else 11.1
+    )
+    semis2_nfpa55_osha1910119_sil3_pyrophoric_tmga_tmin_double_block_h2_purge_and_ito_hepa_interlock_ms = (
+        0.24 if governed else 356.0
+    )
+    unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct = (
+        0.0 if governed else 1.5
+    )
+    ga_in_edge_10khz_insitu_nmr_ftir_adduct_gdms_8n_trace_and_eddy_current_ito_density_loop_ms = (
+        0.19 if governed else 192.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "ga_in_mocvd_ito_lines": ga_in_mocvd_ito_lines,
+        "ga_in_mocvd_ito_governance_mode": ga_in_mocvd_ito_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_ga_in_mocvd_ito_pods": active_ga_in_mocvd_ito_pods,
+        "ga_in_8n_mbe_purity_tmga_tmin_adduct_free_yield_and_inp_ito_target_gain_pct": ga_in_8n_mbe_purity_tmga_tmin_adduct_free_yield_and_inp_ito_target_gain_pct,
+        "si_fe_zn_cu_carryover_tmga_ether_oxygen_adduct_and_ito_nodule_arcing_reduction_pct": si_fe_zn_cu_carryover_tmga_ether_oxygen_adduct_and_ito_nodule_arcing_reduction_pct,
+        "semis2_nfpa55_osha1910119_sil3_pyrophoric_tmga_tmin_double_block_h2_purge_and_ito_hepa_interlock_ms": semis2_nfpa55_osha1910119_sil3_pyrophoric_tmga_tmin_double_block_h2_purge_and_ito_hepa_interlock_ms,
+        "unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct": unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct,
+        "ga_in_edge_10khz_insitu_nmr_ftir_adduct_gdms_8n_trace_and_eddy_current_ito_density_loop_ms": ga_in_edge_10khz_insitu_nmr_ftir_adduct_gdms_8n_trace_and_eddy_current_ito_density_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct": uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct,
+        "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

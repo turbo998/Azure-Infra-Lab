@@ -219,6 +219,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
     simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
     simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
+    simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1445,6 +1446,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "zr_hf_nuclear_ald_8_lines": simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(8, "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge"),
             "zr_hf_nuclear_ald_32_lines": simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(32, "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge"),
             "raw_zr_hf_nuclear_ald_8_lines": simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(8, "raw_cloud_fixed_mibk_hscn_extraction_stage_ratio_and_open_loop_kroll_mg_reduction_schedule"),
+        },
+        "demo_200_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox": {
+            "ga_in_mocvd_ito_8_lines": simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(8, "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge"),
+            "ga_in_mocvd_ito_32_lines": simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(32, "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge"),
+            "raw_ga_in_mocvd_ito_8_lines": simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(8, "raw_cloud_fixed_amidoxime_resin_regeneration_and_open_loop_tmga_ether_adduct_distillation_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

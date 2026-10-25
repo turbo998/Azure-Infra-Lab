@@ -206,6 +206,7 @@ from agent_infra_sizer import (
     simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
     simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
     simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
+    simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4224,6 +4225,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct"], 3.0)
         self.assertTrue(gov["zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met"])
         self.assertFalse(raw["zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met"])
+
+    def test_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(
+            8, "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge"
+        )
+        raw = simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_amidoxime_resin_regeneration_and_open_loop_tmga_ether_adduct_distillation_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_ga_in_mocvd_ito_pods"], 32)
+        self.assertEqual(gov["ga_in_8n_mbe_purity_tmga_tmin_adduct_free_yield_and_inp_ito_target_gain_pct"], 50.8)
+        self.assertEqual(gov["si_fe_zn_cu_carryover_tmga_ether_oxygen_adduct_and_ito_nodule_arcing_reduction_pct"], 75.5)
+        self.assertEqual(gov["semis2_nfpa55_osha1910119_sil3_pyrophoric_tmga_tmin_double_block_h2_purge_and_ito_hepa_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct"], 1.0)
+        self.assertEqual(gov["ga_in_edge_10khz_insitu_nmr_ftir_adduct_gdms_8n_trace_and_eddy_current_ito_density_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct"], 3.0)
+        self.assertTrue(gov["gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met"])
+        self.assertFalse(raw["gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met"])
 
 
 if __name__ == "__main__":

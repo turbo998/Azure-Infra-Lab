@@ -11641,5 +11641,52 @@
       "uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct": 4.1,
       "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met": false
     }
+  ],
+  "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_profiles": [
+    {
+      "ga_in_mocvd_ito_lines": 8,
+      "ga_in_mocvd_ito_governance_mode": "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_ga_in_mocvd_ito_pods": 32,
+      "ga_in_8n_mbe_purity_tmga_tmin_adduct_free_yield_and_inp_ito_target_gain_pct": 50.8,
+      "si_fe_zn_cu_carryover_tmga_ether_oxygen_adduct_and_ito_nodule_arcing_reduction_pct": 75.5,
+      "semis2_nfpa55_osha1910119_sil3_pyrophoric_tmga_tmin_double_block_h2_purge_and_ito_hepa_interlock_ms": 0.24,
+      "unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct": 0.0,
+      "ga_in_edge_10khz_insitu_nmr_ftir_adduct_gdms_8n_trace_and_eddy_current_ito_density_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct": 0.0,
+      "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met": true
+    },
+    {
+      "ga_in_mocvd_ito_lines": 32,
+      "ga_in_mocvd_ito_governance_mode": "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_ga_in_mocvd_ito_pods": 128,
+      "ga_in_8n_mbe_purity_tmga_tmin_adduct_free_yield_and_inp_ito_target_gain_pct": 50.8,
+      "si_fe_zn_cu_carryover_tmga_ether_oxygen_adduct_and_ito_nodule_arcing_reduction_pct": 75.5,
+      "semis2_nfpa55_osha1910119_sil3_pyrophoric_tmga_tmin_double_block_h2_purge_and_ito_hepa_interlock_ms": 0.24,
+      "unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct": 0.0,
+      "ga_in_edge_10khz_insitu_nmr_ftir_adduct_gdms_8n_trace_and_eddy_current_ito_density_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct": 0.0,
+      "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met": true
+    },
+    {
+      "ga_in_mocvd_ito_lines": 8,
+      "ga_in_mocvd_ito_governance_mode": "raw_cloud_fixed_amidoxime_resin_regeneration_and_open_loop_tmga_ether_adduct_distillation_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_ga_in_mocvd_ito_pods": 32,
+      "ga_in_8n_mbe_purity_tmga_tmin_adduct_free_yield_and_inp_ito_target_gain_pct": 8.2,
+      "si_fe_zn_cu_carryover_tmga_ether_oxygen_adduct_and_ito_nodule_arcing_reduction_pct": 11.1,
+      "semis2_nfpa55_osha1910119_sil3_pyrophoric_tmga_tmin_double_block_h2_purge_and_ito_hepa_interlock_ms": 356.0,
+      "unmitigated_pyrophoric_tmga_tmin_spontaneous_ignition_h2_explosion_or_ito_fibrosis_exposure_pct": 1.5,
+      "ga_in_edge_10khz_insitu_nmr_ftir_adduct_gdms_8n_trace_and_eddy_current_ito_density_loop_ms": 192.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct": 4.1,
+      "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met": false
+    }
   ]
 }
