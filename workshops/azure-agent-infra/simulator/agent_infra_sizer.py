@@ -9459,6 +9459,67 @@ def simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_s
     }
 
 
+def simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox(
+    beryllium_refining_lines: int = 8,
+    beryllium_governance_mode: str = "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Bertrandite & Beryl (Be3Al2Si6O18) Sulfuric Acid Leaching,
+    D2EHPA Solvent Extraction, Ammonium Beryllium Fluoride ((NH4)2BeF4) Thermal
+    Decomposition to BeF2, Magnesiothermic Beryllium Pebble Reduction
+    (BeF2 + Mg -> Be + MgF2, 900-1,300 C) & Vacuum Hot-Pressed Optical/Fusion
+    Beryllium (S-200F / O-30-H) Powder Metallurgy PINN-MPC, Online 10 kHz
+    Airborne Beryllium Aerosol LIBS (< 0.02 ug/m3), Off-Gas HF/NH3 TDLAS &
+    Ultrasonic VHP Density Metrology & OSHA 1910.1024 / 10 CFR 850 / NFPA 484 /
+    IEC 61511 SIL-3 Sub-Microgram Airborne Beryllium Containment, (NH4)2BeF4
+    Off-Gas & Molten Be-MgF2 Crucible Runaway Interlock.
+    """
+    if beryllium_refining_lines < 1:
+        raise ValueError("beryllium_refining_lines must be >= 1")
+
+    governed = (
+        beryllium_governance_mode
+        == "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(beryllium_refining_lines / 2))
+    active_beryllium_pods = beryllium_refining_lines * 4
+
+    be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct = (
+        48.2 if governed else 7.5
+    )
+    bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct = (
+        73.1 if governed else 10.3
+    )
+    osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms = (
+        0.29 if governed else 372.0
+    )
+    unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct = (
+        0.0 if governed else 1.5
+    )
+    beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms = (
+        0.21 if governed else 197.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct = (
+        0.0 if governed else 4.0
+    )
+
+    return {
+        "beryllium_refining_lines": beryllium_refining_lines,
+        "beryllium_governance_mode": beryllium_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_beryllium_pods": active_beryllium_pods,
+        "be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct": be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct,
+        "bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct": bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct,
+        "osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms": osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms,
+        "unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct": unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct,
+        "beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms": beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct,
+        "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

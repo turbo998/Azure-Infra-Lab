@@ -191,6 +191,7 @@ from agent_infra_sizer import (
     simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox,
     simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox,
     simulate_niobium_tantalum_hf_mibk_sx_k2taf7_sodium_reduction_fennb_nfpa484_sil3_sandbox,
+    simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3890,6 +3891,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct"], 3.0)
         self.assertTrue(gov["niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met"])
         self.assertFalse(raw["niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met"])
+
+    def test_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox(self) -> None:
+        gov = simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox(
+            8, "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge"
+        )
+        raw = simulate_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox(
+            8, "raw_cloud_fixed_bef2_mg_stoichiometry_open_loop_thermal_decomposition_and_manual_vhp_pressing"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_beryllium_pods"], 32)
+        self.assertEqual(gov["be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct"], 48.2)
+        self.assertEqual(gov["bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct"], 73.1)
+        self.assertEqual(gov["osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms"], 0.29)
+        self.assertEqual(gov["unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct"], 1.0)
+        self.assertEqual(gov["beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms"], 0.21)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct"], 3.0)
+        self.assertTrue(gov["beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met"])
+        self.assertFalse(raw["beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met"])
 
 
 if __name__ == "__main__":

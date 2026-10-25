@@ -11138,6 +11138,53 @@
         "uncompensated_ore_ta_nb_ratio_shift_or_fluoride_acidity_drift_pct": 4.1,
         "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": false
       }
+    ],
+    "beryllium_beryl_bef2_mg_reduction_vhp_s200f_profiles": [
+      {
+        "beryllium_refining_lines": 8,
+        "beryllium_governance_mode": "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_beryllium_pods": 32,
+        "be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct": 48.2,
+        "bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct": 73.1,
+        "osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms": 0.29,
+        "unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct": 0.0,
+        "beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms": 0.21,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": 0.0,
+        "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": true
+      },
+      {
+        "beryllium_refining_lines": 32,
+        "beryllium_governance_mode": "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_beryllium_pods": 128,
+        "be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct": 48.2,
+        "bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct": 73.1,
+        "osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms": 0.29,
+        "unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct": 0.0,
+        "beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms": 0.21,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": 0.0,
+        "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": true
+      },
+      {
+        "beryllium_refining_lines": 8,
+        "beryllium_governance_mode": "raw_cloud_fixed_bef2_mg_stoichiometry_open_loop_thermal_decomposition_and_manual_vhp_pressing",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_beryllium_pods": 32,
+        "be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct": 7.5,
+        "bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct": 10.3,
+        "osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms": 372.0,
+        "unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct": 1.5,
+        "beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms": 197.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": 4.0,
+        "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -20650,5 +20697,52 @@
       "niobium_tantalum_hf_mibk_sx_k2taf7_fennb_slo_met": false
     }
   },
-  "trace_sha256": "b3d6f7a2d2eb4ecfff380f2560b6430247d68c6d0e5a9a2cdc98db24ff15200c"
+  "demo_185_beryllium_beryl_bef2_mg_reduction_vhp_s200f_osha19101024_sil3_sandbox": {
+    "beryllium_8_lines": {
+      "beryllium_refining_lines": 8,
+      "beryllium_governance_mode": "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_beryllium_pods": 32,
+      "be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct": 48.2,
+      "bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct": 73.1,
+      "osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms": 0.29,
+      "unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct": 0.0,
+      "beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms": 0.21,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": 0.0,
+      "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": true
+    },
+    "beryllium_32_lines": {
+      "beryllium_refining_lines": 32,
+      "beryllium_governance_mode": "pinn_mpc_beryl_d2ehpa_sx_bef2_magnesiothermic_reduction_vhp_s200f_be_osha19101024_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_beryllium_pods": 128,
+      "be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct": 48.2,
+      "bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct": 73.1,
+      "osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms": 0.29,
+      "unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct": 0.0,
+      "beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms": 0.21,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": 0.0,
+      "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": true
+    },
+    "raw_beryllium_8_lines": {
+      "beryllium_refining_lines": 8,
+      "beryllium_governance_mode": "raw_cloud_fixed_bef2_mg_stoichiometry_open_loop_thermal_decomposition_and_manual_vhp_pressing",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_beryllium_pods": 32,
+      "be_pebble_coalescence_yield_and_vhp_optical_be_isotropy_density_gain_pct": 7.5,
+      "bef2_volatility_loss_and_vhp_beo_grain_boundary_microcrack_reduction_pct": 10.3,
+      "osha19101024_10cfr850_sil3_hepa_negative_pressure_hf_scrubber_and_argon_quench_interlock_ms": 372.0,
+      "unmitigated_airborne_be_aerosol_excursion_nh4bef3_hf_release_or_be_mgf2_crucible_breach_pct": 1.5,
+      "beryllium_edge_10khz_aerosol_libs_tdlas_hf_nh3_and_ultrasonic_vhp_density_telemetry_loop_ms": 197.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ore_beo_grade_shift_or_bef2_mg_slag_viscosity_drift_pct": 4.0,
+      "beryllium_beryl_bef2_mg_reduction_vhp_s200f_slo_met": false
+    }
+  },
+  "trace_sha256": "b3477a4b3936584f6578108dbeb00c54c57f4a7637ee6d505e1174859dfaca4a"
 }
