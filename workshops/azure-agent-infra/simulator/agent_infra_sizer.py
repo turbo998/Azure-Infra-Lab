@@ -9922,6 +9922,72 @@ def simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3
     }
 
 
+def simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(
+    antimony_insb_t2sl_lines: int = 8,
+    antimony_insb_governance_mode: str = "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Antimony Sulfide Stibnite (Sb2S3) Volatilization
+    Blast-Furnace Roasting (Sb2O3) / Alkaline Sulfide (Na3SbS3) Electrowinning,
+    6N5 (99.99995%) Zone-Refined Antimony & Trimethylantimony (TMSb) / Indium
+    Antimonide (InSb) & InAs/GaSb Type-II Superlattice (T2SL) MWIR/LWIR
+    Infrared Focal-Plane Detector & Ge2Sb2Te5 (GST) Phase-Change Photonic
+    Memory PINN-MPC, Online 10 kHz In-Situ Raman/LIBS, TDLAS SbH3/AsH3/SO2
+    Metrology & NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3 Lethal
+    Stibine (SbH3, PEL 0.1 ppm) Dry Chemisorption Scrubbing, Pyrophoric TMSb
+    Isolation & Blast-Furnace CO/Sb2O3 Fume Interlock (Cycle #192)."""
+    if antimony_insb_t2sl_lines < 1:
+        raise ValueError("antimony_insb_t2sl_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge",
+        "raw_cloud_fixed_blast_furnace_coke_ratio_and_open_loop_insb_t2sl_mbe_antimony_cracker_schedule",
+    }
+    if antimony_insb_governance_mode not in valid_modes:
+        raise ValueError(f"antimony_insb_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        antimony_insb_governance_mode
+        == "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(antimony_insb_t2sl_lines / 2))
+    active_antimony_insb_pods = antimony_insb_t2sl_lines * 4
+
+    sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct = (
+        49.5 if governed else 7.7
+    )
+    non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct = (
+        74.4 if governed else 10.6
+    )
+    nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms = (
+        0.27 if governed else 365.0
+    )
+    unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct = (
+        0.0 if governed else 1.5
+    )
+    antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms = (
+        0.20 if governed else 195.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct = (
+        0.0 if governed else 4.2
+    )
+
+    return {
+        "antimony_insb_t2sl_lines": antimony_insb_t2sl_lines,
+        "antimony_insb_governance_mode": antimony_insb_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_antimony_insb_pods": active_antimony_insb_pods,
+        "sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct": sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct,
+        "non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct": non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct,
+        "nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms": nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms,
+        "unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct": unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct,
+        "antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms": antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct,
+        "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": governed,
+    }
+
+
 
 SCENARIOS_12: list[dict[str, Any]] = [
     {

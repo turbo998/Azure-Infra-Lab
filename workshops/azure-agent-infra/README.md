@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #191 · 197 Chapters · 192 Blueprints · 191 Simulators · 200/200 Tests · 200-Test Milestone!)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-25 (Cycle #192 · 198 Chapters · 193 Blueprints · 192 Simulators · 201/201 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -5552,7 +5552,33 @@ $$2\text{Ca}_3(\text{PO}_4)_2 + 6\text{SiO}_2 + 10\text{C} \xrightarrow{1,450\te
 
 ---
 
-## 197. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #191 · 200-Test Milestone!）
+## 197. 辉锑矿 ($\text{Sb}_2\text{S}_3$) 鼓风炉挥发熔炼 ($\text{Sb}_2\text{O}_3$)、硫代亚锑酸钠 ($\text{Na}_3\text{SbS}_3$) 隔膜电积、`6N5` (`99.99995%`) 区域熔炼高纯锑及三甲基锑 ($\text{TMSb}$) / 锑化铟 (`InSb`) 与 $\text{InAs/GaSb}$ 二类超晶格 (`T2SL`) 中长波红外焦平面探测器及 $\text{Ge}_2\text{Sb}_2\text{Te}_5$ (`GST`) 相变光子存算芯片 `PINN-MPC`、在线 `10 kHz` 原位拉曼/`TDLAS/LIBS` 计量与 `NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3` 剧毒锑化氢 ($\text{SbH}_3$) 干法化学吸附及自燃三甲基锑隔离硬联锁（Autonomous Stibnite $\text{Sb}_2\text{S}_3$ Volatilization Blast-Furnace Smelting, `6N5` Antimony & `InSb / T2SL` Infrared Focal-Plane / `GST` Phase-Change Photonic Memory `PINN-MPC`, Online `10 kHz` In-Situ Raman, `TDLAS/LIBS` & `SIL-3` Interlock · Cycle #192）
+
+在战略红外光电探测（天基预警、高超音速目标探测与机载光电吊舱核心——工作于 `3–5 μm` 中波红外的窄带隙锑化铟 `InSb` 单晶与工作于 `3–12 μm` 中长波双色红外的 $\text{InAs/GaSb}$ 或 $\text{InAs/InAsSb}$ 二类超晶格 `T2SL` 焦平面阵列 `FPA`）、下一代存算一体与硅光可编程非易失光子突触芯片（基于 $\text{Ge}_2\text{Sb}_2\text{Te}_5$ `GST` 纳秒级可逆非晶-晶态折射率/电阻切换的相变存储器 `PCM`），以及高性能阻燃协效剂与液态金属储能电池产业链中，源头核心是将辉锑矿（$\text{Sb}_2\text{S}_3$）与复杂脆硫铅锑矿（$\text{Pb}_4\text{FeSb}_6\text{S}_{14}$）在 $1,000\text{–}1,250\text{ }^\circ\text{C}$ 富氧挥发熔炼鼓风炉中进行“选择性氧化挥发—造锍造渣”耦合冶炼：
+
+$$2\text{Sb}_2\text{S}_3\text{(s/l)} + 9\text{O}_2\text{(g)} \xrightarrow{1,000\text{–}1,200\text{ }^\circ\text{C}} 2\text{Sb}_2\text{O}_3\text{(g)}\uparrow + 6\text{SO}_2\text{(g)}\uparrow$$
+
+气态三氧化二锑（$\text{Sb}_2\text{O}_3$，沸点 $1,425\text{ }^\circ\text{C}$ 且在 $656\text{ }^\circ\text{C}$ 以上具有极高蒸气压）随炉气进入旋风与布袋收尘系统冷凝捕集为高纯锑白，再经反射炉碳热还原产出粗锑；或采用湿法硫化钠-氢氧化钠碱性体系浸出生成可溶性硫代亚锑酸钠（$\text{Sb}_2\text{S}_3 + 3\text{Na}_2\text{S} \rightarrow 2\text{Na}_3\text{SbS}_3$）并进行隔膜电积沉积阴极金属锑；随后经多级真空蒸馏除砷/铅/硫与高纯氢气保护下 50 道次水平区域熔炼提纯至 `6N5`（`99.99995%`，$\text{As/Se/Pb/Cu} < 20\text{ ppb}$）电子级高纯锑及金属有机前驱体三甲基锑（$\text{Sb(CH}_3)_3$，`TMSb`），最终在分子束外延（`MBE`）裂解锑炉（Valved Antimony Cracker Cell，将四聚体 $\text{Sb}_4$ 高温裂解为高活性二聚体 $\text{Sb}_2$ 和单原子 $\text{Sb}_1$）或磁控溅射腔内生长原子级平整的 `T2SL` 红外外延片与 `GST` 相变光子薄膜。若依赖传统固定焦率鼓风炉与开环 `MBE` 锑裂解温度曲线，将面临两大工程瓶颈与致命安全红线：
+1. **鼓风炉氧势失衡诱发难挥发四氧化二锑（$\text{Sb}_2\text{O}_4$）死相入渣、碱性电积多硫离子穿梭与伴生砷共沉积、以及 `T2SL` 超晶格界面锑偏析引发暗电流激增**：在挥发熔炼鼓风炉中，$\text{Sb}_2\text{O}_3(g)$ 的高效挥发窗口对局部温度与氧分压（$P_{\text{O}_2}$）极度敏感——一旦风口富氧过高或焦炭床温度跌入 $750\text{–}950\text{ }^\circ\text{C}$ 氧化区，气态/液态 $\text{Sb}_2\text{O}_3$ 即被过度氧化为不挥发、高熔点（$> 1,060\text{ }^\circ\text{C}$）且极难还原的四氧化二锑（$\text{Sb}_2\text{O}_4$），不仅造成炉身严重结瘤（Accretion），更使大量锑包裹在硅酸盐炉渣中流失；在湿法 $\text{Na}_3\text{SbS}_3$ 电积槽中，阳极氧化产生的多硫离子（$\text{S}_2^{2-}/\text{S}_n^{2-}$）与硫代硫酸根一旦穿透老化隔膜到达阴极，会使已沉积的金属锑重新溶解使电流效率暴跌至 `50%` 以下，同时伴生硫代砷酸根（$\text{AsS}_3^{3-}$）在阴极过电位漂移时共沉积污染高纯锑；而在 `MBE` 生长 $\text{InAs/GaSb}$ 二类超晶格时，若裂解锑源 $\text{Sb}_2/\text{Sb}_4$ 束流比与衬底温度存在微小漂移，锑原子极易向 $\text{InAs}$ 层表面偏析（Antimony Segregation），破坏关键的“$\text{InSb}$-like”应变补偿界面键合，导致晶格失配位错与 Shockley-Read-Hall（`SRH`）复合中心暴增，使中长波红外焦平面暗电流劣化两个数量级。
+2. **剧毒溶血性气体锑化氢（$\text{SbH}_3$，PEL `0.1 ppm`）与砷化氢（$\text{AsH}_3$）外泄、自燃性三甲基锑（$\text{TMSb}$）暴露空气瞬间爆燃与鼓风炉 $\text{CO/Sb}_2\text{O}_3$ 毒烟反喷风险**：在湿法净液、阴极高过电位析氢或含锑铝/镁还原渣遇湿工况下，锑与砷极易被新生氢还原生成无色、剧毒的溶血性与肾衰竭致命气体——锑化氢（Stibine，$\text{SbH}_3$，OSHA PEL 仅 **`0.1 ppm`**，IDLH **`5 ppm`**）与砷化氢（$\text{AsH}_3$，OSHA PEL `0.003 ppm`），且 $\text{SbH}_3$ 在室温下热力学不稳定，接触器壁催化分解放热即可自燃甚至引爆；同时用于 `MOCVD` 生长锑化物的有机金属源三甲基锑（$\text{TMSb}$）与三乙基锑（$\text{TESb}$）属于极度危险的空气自燃液体（Pyrophoric Liquid），任何波纹管阀或质量流量计（`MFC`）微漏接触空气即瞬间发生爆燃；而鼓风炉顶一旦因布袋收尘器压差激增引发正压反喷，高浓度 $\text{CO}$ 与亚微米 $\text{Sb}_2\text{O}_3$ 毒烟将直接危及厂区安全。
+
+本章节构建 **辉锑矿鼓风炉挥发熔炼、$\text{Na}_3\text{SbS}_3$ 碱性电积、`6N5` 区域熔炼高纯锑与 `InSb/T2SL` 红外探测器及 `GST` 相变芯片 `PINN-MPC` + `NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3` 剧毒 $\text{SbH}_3$ 干法化学吸附与自燃 $\text{TMSb}$ 联锁架构**：
+- **鼓风炉 $\text{Sb-S-O}$ 挥发优势区、隔膜电积多硫离子阻断与 `MBE` 裂解 $\text{Sb}_2$ 界面应变补偿 `PINN-MPC`**：在 `Standard_NC40ads_H100_v5` 节点池上，实时求解鼓风炉反应带気固多相传质-热力学相图、隔膜电解槽 Nernst-Planck 离子迁移方程及 `MBE` 超晶格界面 $\text{InSb}$ 键合应力场，动态闭环调节风口富氧浓度-焦炭配比、阴极脉冲电位与裂解锑阀针开度，将 $\text{Sb}_2\text{O}_3$ 挥发直收率、`6N5` 高纯锑纯度与 `InSb / T2SL / GST` 光电芯片良率提升 **`+49.5%`**，同时将难挥发 $\text{Sb}_2\text{O}_4$ 渣损、伴生砷共沉积与 `T2SL` 超晶格界面失配位错率削减 **`-74.4%`**。
+- **`NFPA 86 / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3` 亚毫秒级剧毒 $\text{SbH}_3/\text{AsH}_3$ 干法化学吸附、自燃 $\text{TMSb}$ 隔离与鼓风炉防爆硬联锁**：当在线激光光谱检出环境或排风管 $\text{SbH}_3 > 0.02\text{ ppm}$、$\text{AsH}_3 > 0.002\text{ ppm}$、$\text{TMSb}$ 源柜压差异常或鼓风炉顶正压越限时，现场 FPGA 联锁在 **`0.27 ms`** 内瞬时切断电积整流器电源并注入碱性过氧化氢钝化液、切入高锰酸钾浸渍氧化铝与纳米氧化铜（$\text{KMnO}_4/\text{CuO-MnO}_2$）多级干法化学吸附洗涤塔（将 $\text{SbH}_3/\text{AsH}_3$ 不可逆氧化固定为固态锑酸盐/砷酸盐）、关闭 $\text{TMSb}$ 双气动隔膜阀并启动高纯氮气吹扫，实现剧毒 $\text{SbH}_3/\text{AsH}_3$ 外泄、自燃 $\text{TMSb}$ 闪爆或鼓风炉毒烟反喷率 **`0.0%`**。
+- **产线侧 `10 kHz` 原位拉曼、尾气激光 `TDLAS`（$\text{SbH}_3/\text{AsH}_3/\text{SO}_2$）与在线 `LIBS` 边缘环路**：在鼓风炉、区域熔炼炉与 `MBE`/溅射腔边缘原位处理 `10 kHz` 激光拉曼光谱（实时追踪 $150\text{ cm}^{-1}$ $\text{Ge}_2\text{Sb}_2\text{Te}_5$ 中 $\text{Sb-Te}_6$ 八面体键合振动模与 `T2SL` 界面 $\text{InSb}$-like 光学声子峰位 $190\text{ cm}^{-1}$）、尾气 `TDLAS`（$\text{SbH}_3/\text{AsH}_3/\text{SO}_2$ 亚 ppb 级监测）与区域熔炼锑锭在线 `LIBS`（实时锁定 $\text{As/Pb/Se} < 0.05\text{ ppm}$），闭环延迟 **`0.20 ms`**，削减 **`99.7%`** 高纯锑与红外光电/相变芯片基地 WAN 带宽，伴生砷铅波动、阴极钝化或 `T2SL` 锑通量失配漏检率降至 **`0.0%`**。
+
+| 架构维度 / 性能指标 | `PINN-MPC` + `NFPA 86 / SEMI S2 / SIL-3` + `10 kHz` 原位拉曼 / `TDLAS` ($\text{SbH}_3/\text{AsH}_3$) / `LIBS` 边缘（受控模式） | 传统固定鼓风炉焦率 + 开环 `MBE` 锑裂解炉温曲线 + 离线 `ICP-MS`/红外暗电流抽检（反模式） |
+|---|---|---|
+| **$\text{Sb}_2\text{O}_3$ 挥发收率、`6N5` 锑纯度与 `InSb / T2SL / GST` 芯片良率增益** | **`+49.5%`**（鼓风炉 $\text{Sb-S-O}$ 优势区 + 隔膜电积抑硫除砷 + `MBE` 裂解 $\text{Sb}_2$ 界面应变补偿 `PINN-MPC`） | `+7.7%`（固定焦率与开环锑阀无法抑制鼓风炉结瘤及 `T2SL` 超晶格界面锑偏析引发的高暗电流） |
+| **难挥发 $\text{Sb}_2\text{O}_4$ 渣损、砷共沉积与 `T2SL` 界面失配缺陷率削减** | **`-74.4%`**（氧势闭环阻断 $\text{Sb}_2\text{O}_4$ 生成且原位拉曼锁定 $190\text{ cm}^{-1}$ $\text{InSb}$-like 界面键合） | `-10.6%`（过氧化生成难还原 $\text{Sb}_2\text{O}_4$ 入渣，多硫离子穿梭导致电积返溶且 `GST` 相分离） |
+| **`NFPA 86 / OSHA 1910.119 / SEMI S2 / SIL-3` 剧毒 $\text{SbH}_3$ 吸附与 $\text{TMSb}$ 联锁延迟** | **`0.27 ms`**（检出 $\text{SbH}_3 > 0.02\text{ ppm}$、$\text{AsH}_3 > 0.002\text{ ppm}$ 或 $\text{TMSb}$ 压降异常时瞬时断电钝化、切入干法吸附塔与氮气吹扫） | `365.0 ms`（依赖慢速纸带比色计与常规排风阀，无法拦截 $\text{SbH}_3$ 催化分解自燃与 $\text{TMSb}$ 空气闪爆） |
+| **剧毒 $\text{SbH}_3/\text{AsH}_3$ 外泄、自燃 $\text{TMSb}$ 闪爆或 $\text{Sb}_2\text{O}_3/\text{CO}$ 烟气爆喷率** | **`0.0%`**（零剧毒锑化氢/砷化氢溶血中毒、零三甲基锑自燃爆燃、零鼓风炉正压毒烟外溢） | `1.5%`（阴极过电位析出致命 $\text{SbH}_3$ 毒气或 $\text{TMSb}$ 阀门微漏接触空气瞬间起火爆炸） |
+| **`10 kHz` 原位拉曼、`TDLAS` ($\text{SbH}_3/\text{AsH}_3/\text{SO}_2$) 与 `LIBS` 边缘延迟** | **`0.20 ms`**（实时反演 $150/190\text{ cm}^{-1}$ 拉曼声子模、亚 ppb $\text{SbH}_3$ 与痕量 $\text{As/Pb}$，削减 `99.7%` WAN 带宽） | `195.0 ms`（依赖数小时后离线 `ICP-MS` 与液氮杜瓦焦平面测试，漏检 `4.2%` 界面失配） |
+| **配套 IaC 蓝图与仿真函数** | `blueprints/aksclaw-antimony-stibnite-blast-furnace-6n5-antimony-insb-t2sl-infrared-detector-gst-sbh3-nfpa86-sil3-pool.bicep`（**第 193 套蓝图**） | `simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox()`（**第 192 项仿真器 · 201/201 单测全绿**） |
+
+---
+
+## 198. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #192）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

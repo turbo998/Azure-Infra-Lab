@@ -198,6 +198,7 @@ from agent_infra_sizer import (
     simulate_strontium_barium_celestine_barite_aluminothermic_bst_mlcc_dielectric_h2s_nfpa86_sil3_sandbox,
     simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox,
     simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox,
+    simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4044,6 +4045,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct"], 3.0)
         self.assertTrue(gov["phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met"])
         self.assertFalse(raw["phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met"])
+
+    def test_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge"
+        )
+        raw = simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_blast_furnace_coke_ratio_and_open_loop_insb_t2sl_mbe_antimony_cracker_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_antimony_insb_pods"], 32)
+        self.assertEqual(gov["sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct"], 49.5)
+        self.assertEqual(gov["non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct"], 74.4)
+        self.assertEqual(gov["nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms"], 0.27)
+        self.assertEqual(gov["unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct"], 1.0)
+        self.assertEqual(gov["antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct"], 3.0)
+        self.assertTrue(gov["antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met"])
+        self.assertFalse(raw["antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met"])
 
 
 if __name__ == "__main__":

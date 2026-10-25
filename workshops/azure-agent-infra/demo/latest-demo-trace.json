@@ -11467,6 +11467,53 @@
         "uncompensated_phosphate_silica_drift_wesp_tar_fouling_or_inp_p4_dissociation_loss_pct": 4.1,
         "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": false
       }
+    ],
+    "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_profiles": [
+      {
+        "antimony_insb_t2sl_lines": 8,
+        "antimony_insb_governance_mode": "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_antimony_insb_pods": 32,
+        "sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct": 49.5,
+        "non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct": 74.4,
+        "nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms": 0.27,
+        "unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct": 0.0,
+        "antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": 0.0,
+        "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": true
+      },
+      {
+        "antimony_insb_t2sl_lines": 32,
+        "antimony_insb_governance_mode": "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_antimony_insb_pods": 128,
+        "sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct": 49.5,
+        "non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct": 74.4,
+        "nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms": 0.27,
+        "unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct": 0.0,
+        "antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": 0.0,
+        "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": true
+      },
+      {
+        "antimony_insb_t2sl_lines": 8,
+        "antimony_insb_governance_mode": "raw_cloud_fixed_blast_furnace_coke_ratio_and_open_loop_insb_t2sl_mbe_antimony_cracker_schedule",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_antimony_insb_pods": 32,
+        "sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct": 7.7,
+        "non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct": 10.6,
+        "nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms": 365.0,
+        "unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct": 1.5,
+        "antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms": 195.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": 4.2,
+        "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -21308,5 +21355,52 @@
       "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_slo_met": false
     }
   },
-  "trace_sha256": "2190f4d8ecb209c7bddeb63e3569d9531189756770f103de55672040788f1a81"
+  "demo_192_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox": {
+    "antimony_insb_8_lines": {
+      "antimony_insb_t2sl_lines": 8,
+      "antimony_insb_governance_mode": "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_antimony_insb_pods": 32,
+      "sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct": 49.5,
+      "non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct": 74.4,
+      "nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms": 0.27,
+      "unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct": 0.0,
+      "antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": 0.0,
+      "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": true
+    },
+    "antimony_insb_32_lines": {
+      "antimony_insb_t2sl_lines": 32,
+      "antimony_insb_governance_mode": "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_antimony_insb_pods": 128,
+      "sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct": 49.5,
+      "non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct": 74.4,
+      "nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms": 0.27,
+      "unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct": 0.0,
+      "antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": 0.0,
+      "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": true
+    },
+    "raw_antimony_insb_8_lines": {
+      "antimony_insb_t2sl_lines": 8,
+      "antimony_insb_governance_mode": "raw_cloud_fixed_blast_furnace_coke_ratio_and_open_loop_insb_t2sl_mbe_antimony_cracker_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_antimony_insb_pods": 32,
+      "sb2o3_volatilization_recovery_6n5_antimony_purity_and_insb_t2sl_gst_yield_gain_pct": 7.7,
+      "non_volatile_sb2o4_slag_loss_arsenic_codeposition_and_t2sl_interfacial_strain_defect_reduction_pct": 10.6,
+      "nfpa86_osha1910119_semis2_sil3_lethal_sbh3_dry_scrubber_pyrophoric_tmsb_and_fume_interlock_ms": 365.0,
+      "unmitigated_lethal_sbh3_ash3_release_pyrophoric_tmsb_ignition_or_sb2o3_co_fume_blowout_pct": 1.5,
+      "antimony_insb_edge_10khz_insitu_raman_gst_t2sl_tdlas_sbh3_ash3_so2_and_libs_sb_as_telemetry_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": 4.2,
+      "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": false
+    }
+  },
+  "trace_sha256": "f73b4ddc4731ffebea02c7454e1c9cdde2bf1e627a931ede29b21b29eb0e0267"
 }
