@@ -214,6 +214,7 @@ from agent_infra_sizer import (
     simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
     simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
     simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
+    simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1657,6 +1658,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(8, "raw_cloud_fixed_hcl_cl2_redox_dosing_and_open_loop_ruo4_distillation_eb_ir_melting_schedule"),
     ]
 
+    gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_profiles: List[Dict[str, object]] = [
+        simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(8, "pinn_mpc_pox_cil_wohlwill_moebius_6n_au_wire_and_hjt_ag_paste_hcn_semis2_sil3_edge"),
+        simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(32, "pinn_mpc_pox_cil_wohlwill_moebius_6n_au_wire_and_hjt_ag_paste_hcn_semis2_sil3_edge"),
+        simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(8, "raw_cloud_fixed_cyanide_lime_dosing_and_open_loop_wohlwill_dc_current_ag_powder_reduction_schedule"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1858,6 +1865,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_profiles": zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_profiles,
         "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_profiles": gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_profiles,
         "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_profiles": pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_profiles,
+        "gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_profiles": gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_profiles,
     }
 
 

@@ -208,6 +208,7 @@ from agent_infra_sizer import (
     simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
     simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
     simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
+    simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4268,6 +4269,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct"], 3.0)
         self.assertTrue(gov["pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met"])
         self.assertFalse(raw["pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met"])
+
+    def test_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(
+            8, "pinn_mpc_pox_cil_wohlwill_moebius_6n_au_wire_and_hjt_ag_paste_hcn_semis2_sil3_edge"
+        )
+        raw = simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_cyanide_lime_dosing_and_open_loop_wohlwill_dc_current_ag_powder_reduction_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_au_ag_pods"], 32)
+        self.assertEqual(gov["au_ag_6n_refining_yield_12um_bonding_wire_loop_stability_and_hjt_ag_paste_conductivity_gain_pct"], 51.0)
+        self.assertEqual(gov["wohlwill_agcl_anode_passivation_wire_fab_neck_break_and_hjt_ag_agglomeration_reduction_pct"], 75.7)
+        self.assertEqual(gov["icmi_osha1910119_semis2_sil3_hcn_ph_alkali_flood_and_fulminating_au_ag_nitride_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_lethal_hcn_gas_evolution_or_explosive_fulminating_au_ag_nitride_detonation_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lethal_hcn_gas_evolution_or_explosive_fulminating_au_ag_nitride_detonation_pct"], 1.0)
+        self.assertEqual(gov["au_ag_edge_10khz_insitu_raman_uvvis_aucn2_aucl4_gdms_and_laser_diffraction_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_preg_robbing_wohlwill_anode_slime_crust_or_wire_ca_be_dopant_segregation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_preg_robbing_wohlwill_anode_slime_crust_or_wire_ca_be_dopant_segregation_pct"], 3.0)
+        self.assertTrue(gov["gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_slo_met"])
+        self.assertFalse(raw["gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_slo_met"])
 
 
 if __name__ == "__main__":

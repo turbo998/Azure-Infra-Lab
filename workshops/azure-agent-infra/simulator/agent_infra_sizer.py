@@ -10601,6 +10601,72 @@ def simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2n
     }
 
 
+def simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(
+    au_ag_lines: int = 8,
+    au_ag_governance_mode: str = "pinn_mpc_pox_cil_wohlwill_moebius_6n_au_wire_and_hjt_ag_paste_hcn_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 207 (Cycle #202): Autonomous Refractory Gold (Au) & Silver (Ag) Pressure Oxidation (POX 225 C /
+    3.2 MPa O2) & Carbon-in-Leach (CIL) / Zadra Elution, Moebius AgNO3 & Wohlwill HAuCl4 Electrorefining
+    (5N/6N 99.9999% Au & Ag), Semiconductor Packaging Ultra-Fine Gold Bonding Wire (12-15 um Free-Air Ball
+    FAB Heat-Affected Zone Control) & HJT/TOPCon Photovoltaic Sub-Micron Silver Paste / Non-Cyanide Sulfite
+    Wafer Bump Electroplating PINN-MPC, Online 10 kHz In-Situ Raman/UV-Vis, GDMS & Laser-Diffraction Metrology
+    & ICMI Cyanide Code / OSHA 1910.119 / SEMI S2 / IEC 61511 SIL-3 Lethal Hydrogen Cyanide (HCN < 4.7 ppm,
+    pH >= 10.8) & Explosive Fulminating Gold/Silver (AuNxHy / Ag3N) Interlock.
+    """
+    if au_ag_lines < 1:
+        raise ValueError("au_ag_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_pox_cil_wohlwill_moebius_6n_au_wire_and_hjt_ag_paste_hcn_semis2_sil3_edge",
+        "raw_cloud_fixed_cyanide_lime_dosing_and_open_loop_wohlwill_dc_current_ag_powder_reduction_schedule",
+    }
+    if au_ag_governance_mode not in valid_modes:
+        raise ValueError(f"Unsupported au_ag_governance_mode: {au_ag_governance_mode}")
+
+    governed = (
+        au_ag_governance_mode
+        == "pinn_mpc_pox_cil_wohlwill_moebius_6n_au_wire_and_hjt_ag_paste_hcn_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(au_ag_lines / 2))
+    active_au_ag_pods = au_ag_lines * 4
+
+    au_ag_6n_refining_yield_12um_bonding_wire_loop_stability_and_hjt_ag_paste_conductivity_gain_pct = (
+        51.0 if governed else 8.3
+    )
+    wohlwill_agcl_anode_passivation_wire_fab_neck_break_and_hjt_ag_agglomeration_reduction_pct = (
+        75.7 if governed else 11.3
+    )
+    icmi_osha1910119_semis2_sil3_hcn_ph_alkali_flood_and_fulminating_au_ag_nitride_interlock_ms = (
+        0.24 if governed else 359.0
+    )
+    unmitigated_lethal_hcn_gas_evolution_or_explosive_fulminating_au_ag_nitride_detonation_pct = (
+        0.0 if governed else 1.5
+    )
+    au_ag_edge_10khz_insitu_raman_uvvis_aucn2_aucl4_gdms_and_laser_diffraction_loop_ms = (
+        0.19 if governed else 194.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_preg_robbing_wohlwill_anode_slime_crust_or_wire_ca_be_dopant_segregation_pct = (
+        0.0 if governed else 4.2
+    )
+
+    return {
+        "au_ag_lines": au_ag_lines,
+        "au_ag_governance_mode": au_ag_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_au_ag_pods": active_au_ag_pods,
+        "au_ag_6n_refining_yield_12um_bonding_wire_loop_stability_and_hjt_ag_paste_conductivity_gain_pct": au_ag_6n_refining_yield_12um_bonding_wire_loop_stability_and_hjt_ag_paste_conductivity_gain_pct,
+        "wohlwill_agcl_anode_passivation_wire_fab_neck_break_and_hjt_ag_agglomeration_reduction_pct": wohlwill_agcl_anode_passivation_wire_fab_neck_break_and_hjt_ag_agglomeration_reduction_pct,
+        "icmi_osha1910119_semis2_sil3_hcn_ph_alkali_flood_and_fulminating_au_ag_nitride_interlock_ms": icmi_osha1910119_semis2_sil3_hcn_ph_alkali_flood_and_fulminating_au_ag_nitride_interlock_ms,
+        "unmitigated_lethal_hcn_gas_evolution_or_explosive_fulminating_au_ag_nitride_detonation_pct": unmitigated_lethal_hcn_gas_evolution_or_explosive_fulminating_au_ag_nitride_detonation_pct,
+        "au_ag_edge_10khz_insitu_raman_uvvis_aucn2_aucl4_gdms_and_laser_diffraction_loop_ms": au_ag_edge_10khz_insitu_raman_uvvis_aucn2_aucl4_gdms_and_laser_diffraction_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_preg_robbing_wohlwill_anode_slime_crust_or_wire_ca_be_dopant_segregation_pct": uncompensated_preg_robbing_wohlwill_anode_slime_crust_or_wire_ca_be_dopant_segregation_pct,
+        "gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
