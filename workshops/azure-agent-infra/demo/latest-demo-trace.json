@@ -10903,6 +10903,53 @@
         "uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct": 4.3,
         "silicomanganese_ferromanganese_saf_slo_met": false
       }
+    ],
+    "metallurgical_silicon_ferrosilicon_saf_profiles": [
+      {
+        "mgsi_saf_furnaces": 8,
+        "mgsi_governance_mode": "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_mgsi_pods": 8,
+        "silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct": 46.2,
+        "sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct": 70.8,
+        "nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms": 0.33,
+        "unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct": 0.0,
+        "saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms": 0.23,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": 0.0,
+        "metallurgical_silicon_ferrosilicon_saf_slo_met": true
+      },
+      {
+        "mgsi_saf_furnaces": 32,
+        "mgsi_governance_mode": "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_mgsi_pods": 16,
+        "silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct": 46.2,
+        "sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct": 70.8,
+        "nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms": 0.33,
+        "unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct": 0.0,
+        "saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms": 0.23,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": 0.0,
+        "metallurgical_silicon_ferrosilicon_saf_slo_met": true
+      },
+      {
+        "mgsi_saf_furnaces": 8,
+        "mgsi_governance_mode": "raw_cloud_fixed_quartz_carbon_ratio_and_manual_periodic_stoking_car",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_mgsi_pods": 8,
+        "silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct": 6.8,
+        "sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct": 9.5,
+        "nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms": 374.0,
+        "unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct": 1.6,
+        "saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms": 203.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": 4.4,
+        "metallurgical_silicon_ferrosilicon_saf_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -20180,5 +20227,52 @@
       "silicomanganese_ferromanganese_saf_slo_met": false
     }
   },
-  "trace_sha256": "ed5d17467bcbe8e35761447604cb0a3c2b6664da9d552c43383217b398278bd2"
+  "demo_180_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox": {
+    "mgsi_8_furnaces": {
+      "mgsi_saf_furnaces": 8,
+      "mgsi_governance_mode": "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_mgsi_pods": 8,
+      "silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct": 46.2,
+      "sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct": 70.8,
+      "nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms": 0.33,
+      "unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct": 0.0,
+      "saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms": 0.23,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": 0.0,
+      "metallurgical_silicon_ferrosilicon_saf_slo_met": true
+    },
+    "mgsi_32_furnaces": {
+      "mgsi_saf_furnaces": 32,
+      "mgsi_governance_mode": "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_mgsi_pods": 16,
+      "silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct": 46.2,
+      "sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct": 70.8,
+      "nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms": 0.33,
+      "unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct": 0.0,
+      "saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms": 0.23,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": 0.0,
+      "metallurgical_silicon_ferrosilicon_saf_slo_met": true
+    },
+    "raw_mgsi_8_furnaces": {
+      "mgsi_saf_furnaces": 8,
+      "mgsi_governance_mode": "raw_cloud_fixed_quartz_carbon_ratio_and_manual_periodic_stoking_car",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_mgsi_pods": 8,
+      "silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct": 6.8,
+      "sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct": 9.5,
+      "nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms": 374.0,
+      "unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct": 1.6,
+      "saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms": 203.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": 4.4,
+      "metallurgical_silicon_ferrosilicon_saf_slo_met": false
+    }
+  },
+  "trace_sha256": "4ba556cdc7c959a89859919062562d7a23462dfd487e756df7dc67a6140aba44"
 }

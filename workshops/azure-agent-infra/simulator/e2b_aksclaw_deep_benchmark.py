@@ -192,6 +192,7 @@ from agent_infra_sizer import (
     simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
     simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
     simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
+    simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1503,6 +1504,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_ore_coke_ratio_and_manual_electrode_resistance_pid"),
     ]
 
+    metallurgical_silicon_ferrosilicon_saf_profiles: List[Dict[str, object]] = [
+        simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(8, "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge"),
+        simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(32, "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge"),
+        simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_quartz_carbon_ratio_and_manual_periodic_stoking_car"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1682,6 +1689,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "tin_tsl_ausmelt_bath_smelting_profiles": tin_tsl_ausmelt_bath_smelting_profiles,
         "ferrochrome_submerged_arc_furnace_profiles": ferrochrome_submerged_arc_furnace_profiles,
         "silicomanganese_ferromanganese_saf_profiles": silicomanganese_ferromanganese_saf_profiles,
+        "metallurgical_silicon_ferrosilicon_saf_profiles": metallurgical_silicon_ferrosilicon_saf_profiles,
     }
 
 

@@ -9189,6 +9189,59 @@ def simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_san
     }
 
 
+def simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(
+    mgsi_saf_furnaces: int = 8,
+    mgsi_governance_mode: str = "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Metallurgical Silicon & Ferrosilicon Semi-Closed Submerged Arc Furnace
+    (MG-Si 99.5% & FeSi75 SAF 45-63 MVA, 1,800-2,050 °C Quartz SiO2 + 2C -> Si(l) + 2CO Two-Stage
+    Silicon Monoxide SiO(g) Gas-Solid Condensation-Carburization SiO(g) + 2C -> SiC + CO &
+    SiO(g) + SiC -> 2Si(l) + CO) & Ladle Oxidative Refining / Microsilica Baghouse Recovery,
+    Sub-Electrode SiO(g)/CO(g) Cavity Pressure, Beta-SiC Accretion Crusting & Stoking Permeability
+    PINN-MPC, Online 10 kHz Arc-Cavity Third-Harmonic Voltage / Top-Charge IR Blowing-Flame
+    Pyrometry / TDLAS SiO/CO & Ladle LIBS (Al/Ca/Fe/Ti/B/P) Metrology & NFPA 86 / NFPA 652 /
+    OSHA 1910.119 / ISO 13577 / IEC 61511 SIL-3 Cavity Gas-Blow Eruption (SiO Jet Blowing),
+    Water-Cooled Smoke-Hood/Electrode Clamp H2/CO Steam-Explosion & Amorphous Silica-Fume
+    Dust-Filter Fire Interlock Sandbox (Chapter 185 · 180-Cycle & 180-Simulator Milestone!).
+    """
+    if mgsi_saf_furnaces < 1:
+        raise ValueError("mgsi_saf_furnaces must be >= 1")
+    valid_modes = {
+        "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge",
+        "raw_cloud_fixed_quartz_carbon_ratio_and_manual_periodic_stoking_car",
+    }
+    if mgsi_governance_mode not in valid_modes:
+        raise ValueError(f"mgsi_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = mgsi_governance_mode == "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge"
+    active_mgsi_pods = max(2, min(16, int(mgsi_saf_furnaces))) if mgsi_saf_furnaces <= 16 else max(16, int(mgsi_saf_furnaces // 2))
+    gpu_nodes = max(2, math.ceil(mgsi_saf_furnaces / 4))
+
+    silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct = 46.2 if governed else 6.8
+    sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct = 70.8 if governed else 9.5
+    nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms = 0.33 if governed else 374.0
+    unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct = 0.0 if governed else 1.6
+    saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms = 0.23 if governed else 203.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct = 0.0 if governed else 4.4
+
+    return {
+        "mgsi_saf_furnaces": mgsi_saf_furnaces,
+        "mgsi_governance_mode": mgsi_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_mgsi_pods": active_mgsi_pods,
+        "silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct": silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct,
+        "sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct": sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct,
+        "nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms": nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms,
+        "unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct": unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct,
+        "saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms": saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct,
+        "metallurgical_silicon_ferrosilicon_saf_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

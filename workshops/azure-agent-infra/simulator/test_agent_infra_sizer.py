@@ -186,6 +186,7 @@ from agent_infra_sizer import (
     simulate_tin_tsl_ausmelt_bath_smelting_fuming_vacuum_distillation_nfpa86_sil3_sandbox,
     simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
     simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
+    simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3780,6 +3781,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pyrolusite_moisture_shift_or_slag_mno_excursion_slip_pct"], 3.0)
         self.assertTrue(gov["silicomanganese_ferromanganese_saf_slo_met"])
         self.assertFalse(raw["silicomanganese_ferromanganese_saf_slo_met"])
+
+    def test_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge"
+        )
+        raw = simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_quartz_carbon_ratio_and_manual_periodic_stoking_car"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_mgsi_pods"], 8)
+        self.assertEqual(gov["silicon_yield_and_specific_mwh_per_ton_mgsi_efficiency_gain_pct"], 46.2)
+        self.assertEqual(gov["sio_gas_blowing_loss_and_sic_hearth_crusting_reduction_pct"], 70.8)
+        self.assertEqual(gov["nfpa86_nfpa652_sil3_sio_jet_blow_water_leak_and_baghouse_fire_interlock_ms"], 0.33)
+        self.assertEqual(gov["unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_sio_cavity_eruption_water_silicon_h2_explosion_or_baghouse_fire_pct"], 1.0)
+        self.assertEqual(gov["saf_edge_10khz_arc_cavity_3rd_harmonic_ir_blowing_and_libs_al_ca_fe_telemetry_loop_ms"], 0.23)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct"], 3.0)
+        self.assertTrue(gov["metallurgical_silicon_ferrosilicon_saf_slo_met"])
+        self.assertFalse(raw["metallurgical_silicon_ferrosilicon_saf_slo_met"])
 
 
 if __name__ == "__main__":
