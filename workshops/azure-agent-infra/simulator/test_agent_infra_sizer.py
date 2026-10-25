@@ -203,6 +203,7 @@ from agent_infra_sizer import (
     simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox,
     simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
     simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
+    simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -399,6 +400,8 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-pta-px-oxidation-bubble-column-4cba-offgas-o2-nfpa69-sil3-pool.bicep",
             "aksclaw-wet-phosphoric-acid-dap-gypsum-crystal-so4-hf-scrubber-epa63aa-sil3-pool.bicep",
             "aksclaw-sinter-plant-blast-furnace-cohesive-zone-tuyere-raceway-nfpa86-sil3-pool.bicep",
+            "aksclaw-neon-krypton-xenon-cryogenic-asu-6n-rare-gas-arf-krf-excimer-lithography-eiga147-sil3-pool.bicep",
+            "aksclaw-tungsten-scheelite-wolframite-apt-hydrogen-reduction-wc-co-sinter-hip-nfpa86-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -4154,6 +4157,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct"], 3.0)
         self.assertTrue(gov["neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met"])
         self.assertFalse(raw["neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met"])
+
+    def test_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge"
+        )
+        raw = simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_autoclave_soda_ratio_and_open_loop_h2_pusher_furnace_sinter_hip_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_tungsten_apt_wcco_pods"], 32)
+        self.assertEqual(gov["wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct"], 50.1)
+        self.assertEqual(gov["wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct"], 74.8)
+        self.assertEqual(gov["nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms"], 0.25)
+        self.assertEqual(gov["unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct"], 1.0)
+        self.assertEqual(gov["tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct"], 3.0)
+        self.assertTrue(gov["tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met"])
+        self.assertFalse(raw["tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met"])
 
 
 if __name__ == "__main__":

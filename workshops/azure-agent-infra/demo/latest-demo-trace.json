@@ -11702,6 +11702,53 @@
         "uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct": 4.0,
         "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": false
       }
+    ],
+    "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_profiles": [
+      {
+        "tungsten_apt_wcco_lines": 8,
+        "tungsten_apt_wcco_governance_mode": "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tungsten_apt_wcco_pods": 32,
+        "wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct": 50.1,
+        "wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct": 74.8,
+        "nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms": 0.25,
+        "unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct": 0.0,
+        "tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": 0.0,
+        "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": true
+      },
+      {
+        "tungsten_apt_wcco_lines": 32,
+        "tungsten_apt_wcco_governance_mode": "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tungsten_apt_wcco_pods": 128,
+        "wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct": 50.1,
+        "wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct": 74.8,
+        "nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms": 0.25,
+        "unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct": 0.0,
+        "tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": 0.0,
+        "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": true
+      },
+      {
+        "tungsten_apt_wcco_lines": 8,
+        "tungsten_apt_wcco_governance_mode": "raw_cloud_fixed_autoclave_soda_ratio_and_open_loop_h2_pusher_furnace_sinter_hip_schedule",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tungsten_apt_wcco_pods": 32,
+        "wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct": 7.9,
+        "wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct": 10.8,
+        "nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms": 350.0,
+        "unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct": 1.5,
+        "tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms": 190.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": 4.0,
+        "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -21778,5 +21825,52 @@
       "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": false
     }
   },
-  "trace_sha256": "82d7d01744eede1d0bcaf6e0af88ce6243f5e4e2ce4fce84aa1d2afaab462875"
+  "demo_197_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox": {
+    "tungsten_apt_wcco_8_lines": {
+      "tungsten_apt_wcco_lines": 8,
+      "tungsten_apt_wcco_governance_mode": "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tungsten_apt_wcco_pods": 32,
+      "wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct": 50.1,
+      "wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct": 74.8,
+      "nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms": 0.25,
+      "unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct": 0.0,
+      "tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": 0.0,
+      "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": true
+    },
+    "tungsten_apt_wcco_32_lines": {
+      "tungsten_apt_wcco_lines": 32,
+      "tungsten_apt_wcco_governance_mode": "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tungsten_apt_wcco_pods": 128,
+      "wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct": 50.1,
+      "wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct": 74.8,
+      "nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms": 0.25,
+      "unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct": 0.0,
+      "tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": 0.0,
+      "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": true
+    },
+    "raw_tungsten_apt_wcco_8_lines": {
+      "tungsten_apt_wcco_lines": 8,
+      "tungsten_apt_wcco_governance_mode": "raw_cloud_fixed_autoclave_soda_ratio_and_open_loop_h2_pusher_furnace_sinter_hip_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_tungsten_apt_wcco_pods": 32,
+      "wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct": 7.9,
+      "wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct": 10.8,
+      "nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms": 350.0,
+      "unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct": 1.5,
+      "tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms": 190.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": 4.0,
+      "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": false
+    }
+  },
+  "trace_sha256": "2facb3206a94a29790b129cd42402d60357f622e09465cd3db1c68828b6742fb"
 }

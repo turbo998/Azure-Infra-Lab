@@ -10257,6 +10257,77 @@ def simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithog
     }
 
 
+def simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(
+    tungsten_apt_wcco_lines: int = 8,
+    tungsten_apt_wcco_governance_mode: str = "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Scheelite (CaWO4) & Wolframite ((Fe,Mn)WO4) Soda/Caustic
+    Autoclave Pressure Leaching, Molybdenum Sulfidation-Ion-Exchange Deep Separation
+    (MoS4^2- < 5 ppm), Ammonium Paratungstate (APT, (NH4)10[H2W12O42]·4H2O)
+    Evaporative Crystallization, Rotary-Kiln Violet/Blue Tungsten Oxide (WO2.72/WO2.90)
+    Calcination, Multi-Zone Pusher-Furnace Hydrogen Reduction (WO2.72 + 2.72H2 <-> W
+    + 2.72H2O Dew-Point CVT Grain-Size Control 80 nm - 2.0 um), Ultrafine Tungsten
+    Carbide-Cobalt (WC-Co with VC/Cr3C2 Inhibitors, 1,420 C Vacuum/Sinter-HIP
+    Avoiding Eta-Phase Co3W3C & Free Graphite) & Fusion-Reactor Tokamak Divertor
+    W-Cu Monoblock PINN-MPC, Online 10 kHz In-Situ Raman (WO4^2-/MoS4^2-/WC),
+    TDLAS (H2O/H2/NH3/H2S) & Magnetic Saturation (Com / Coercivity Hc) Metrology &
+    NFPA 86 / NFPA 652 / ASME BPVC VIII / OSHA 1910.119 / IEC 61511 SIL-3 Pusher-
+    Furnace Hydrogen Air-Ingress Detonation Prevention, Pyrophoric Nano-Tungsten
+    Powder (< 150 nm) Argon Passivation & Sulfidation H2S Scrubbing Interlock
+    (Cycle #197)."""
+    if tungsten_apt_wcco_lines < 1:
+        raise ValueError("tungsten_apt_wcco_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge",
+        "raw_cloud_fixed_autoclave_soda_ratio_and_open_loop_h2_pusher_furnace_sinter_hip_schedule",
+    }
+    if tungsten_apt_wcco_governance_mode not in valid_modes:
+        raise ValueError(f"tungsten_apt_wcco_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        tungsten_apt_wcco_governance_mode
+        == "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(tungsten_apt_wcco_lines / 2))
+    active_tungsten_apt_wcco_pods = tungsten_apt_wcco_lines * 4
+
+    wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct = (
+        50.1 if governed else 7.9
+    )
+    wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct = (
+        74.8 if governed else 10.8
+    )
+    nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms = (
+        0.25 if governed else 350.0
+    )
+    unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct = (
+        0.0 if governed else 1.5
+    )
+    tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms = (
+        0.19 if governed else 190.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct = (
+        0.0 if governed else 4.0
+    )
+
+    return {
+        "tungsten_apt_wcco_lines": tungsten_apt_wcco_lines,
+        "tungsten_apt_wcco_governance_mode": tungsten_apt_wcco_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tungsten_apt_wcco_pods": active_tungsten_apt_wcco_pods,
+        "wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct": wo3_leach_recovery_apt_purity_and_ultrafine_wcco_fracture_toughness_yield_gain_pct,
+        "wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct": wo2_h2o_cvt_grain_coarsening_wcco_eta_phase_co3w3c_and_mo_impurity_carryover_reduction_pct,
+        "nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms": nfpa86_nfpa652_asme8_osha1910119_sil3_h2_furnace_n2_curtain_pyrophoric_w_passivation_and_h2s_scrubber_interlock_ms,
+        "unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct": unmitigated_pusher_furnace_h2_air_detonation_pyrophoric_nano_w_fire_or_sulfidation_h2s_release_pct,
+        "tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms": tungsten_apt_wcco_edge_10khz_insitu_raman_wo4_mos4_tdlas_h2o_dewpoint_and_magnetic_com_hc_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct": uncompensated_scheelite_p_si_as_drift_pusher_boat_bed_h2o_gradient_or_sinter_hip_carbon_window_drift_pct,
+        "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

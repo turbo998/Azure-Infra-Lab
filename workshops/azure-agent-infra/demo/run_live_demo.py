@@ -216,6 +216,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox,
     simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
     simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
+    simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1427,6 +1428,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "neon_krypton_xenon_8_lines": simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(8, "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge"),
             "neon_krypton_xenon_32_lines": simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(32, "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge"),
             "raw_neon_krypton_xenon_8_lines": simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(8, "raw_cloud_fixed_asu_side_draw_reflux_and_open_loop_kr_xe_reboiler_purge_schedule"),
+        },
+        "demo_197_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox": {
+            "tungsten_apt_wcco_8_lines": simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(8, "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge"),
+            "tungsten_apt_wcco_32_lines": simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(32, "pinn_mpc_scheelite_autoclave_apt_crystallization_h2_cvt_reduction_wcco_sinter_hip_nfpa86_sil3_edge"),
+            "raw_tungsten_apt_wcco_8_lines": simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_autoclave_soda_ratio_and_open_loop_h2_pusher_furnace_sinter_hip_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
