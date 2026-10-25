@@ -220,6 +220,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
     simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
     simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
+    simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1451,6 +1452,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ga_in_mocvd_ito_8_lines": simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(8, "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge"),
             "ga_in_mocvd_ito_32_lines": simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(32, "pinn_mpc_bayer_ga_ix_d2ehpa_in_sx_8n_fractional_crystallization_tmga_tmin_and_inp_ito_semis2_sil3_edge"),
             "raw_ga_in_mocvd_ito_8_lines": simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox(8, "raw_cloud_fixed_amidoxime_resin_regeneration_and_open_loop_tmga_ether_adduct_distillation_schedule"),
+        },
+        "demo_201_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox": {
+            "pgm_ir_ru_8_lines": simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(8, "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge"),
+            "pgm_ir_ru_32_lines": simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(32, "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge"),
+            "raw_pgm_ir_ru_8_lines": simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(8, "raw_cloud_fixed_hcl_cl2_redox_dosing_and_open_loop_ruo4_distillation_eb_ir_melting_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -11890,6 +11890,53 @@
         "uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct": 4.1,
         "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met": false
       }
+    ],
+    "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_profiles": [
+      {
+        "pgm_ir_ru_lines": 8,
+        "pgm_ir_ru_governance_mode": "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pgm_ir_ru_pods": 32,
+        "pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct": 50.9,
+        "rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct": 75.6,
+        "osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms": 0.24,
+        "unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct": 0.0,
+        "pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct": 0.0,
+        "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met": true
+      },
+      {
+        "pgm_ir_ru_lines": 32,
+        "pgm_ir_ru_governance_mode": "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pgm_ir_ru_pods": 128,
+        "pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct": 50.9,
+        "rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct": 75.6,
+        "osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms": 0.24,
+        "unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct": 0.0,
+        "pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct": 0.0,
+        "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met": true
+      },
+      {
+        "pgm_ir_ru_lines": 8,
+        "pgm_ir_ru_governance_mode": "raw_cloud_fixed_hcl_cl2_redox_dosing_and_open_loop_ruo4_distillation_eb_ir_melting_schedule",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pgm_ir_ru_pods": 32,
+        "pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct": 8.3,
+        "rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct": 11.2,
+        "osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms": 358.0,
+        "unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct": 1.5,
+        "pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms": 193.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct": 4.2,
+        "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -22154,5 +22201,52 @@
       "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met": false
     }
   },
-  "trace_sha256": "3c57db7265e51ba8d2032698c967b01ea8b3b8e6924458dce4fc441dd48e0d6a"
+  "demo_201_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox": {
+    "pgm_ir_ru_8_lines": {
+      "pgm_ir_ru_lines": 8,
+      "pgm_ir_ru_governance_mode": "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_pgm_ir_ru_pods": 32,
+      "pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct": 50.9,
+      "rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct": 75.6,
+      "osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms": 0.24,
+      "unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct": 0.0,
+      "pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct": 0.0,
+      "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met": true
+    },
+    "pgm_ir_ru_32_lines": {
+      "pgm_ir_ru_lines": 32,
+      "pgm_ir_ru_governance_mode": "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_pgm_ir_ru_pods": 128,
+      "pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct": 50.9,
+      "rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct": 75.6,
+      "osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms": 0.24,
+      "unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct": 0.0,
+      "pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct": 0.0,
+      "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met": true
+    },
+    "raw_pgm_ir_ru_8_lines": {
+      "pgm_ir_ru_lines": 8,
+      "pgm_ir_ru_governance_mode": "raw_cloud_fixed_hcl_cl2_redox_dosing_and_open_loop_ruo4_distillation_eb_ir_melting_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_pgm_ir_ru_pods": 32,
+      "pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct": 8.3,
+      "rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct": 11.2,
+      "osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms": 358.0,
+      "unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct": 1.5,
+      "pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms": 193.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct": 4.2,
+      "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met": false
+    }
+  },
+  "trace_sha256": "c2ed8129295472a47a846ae7531e1a0c57e0c7d294d2d09cd830408304a38e6b"
 }

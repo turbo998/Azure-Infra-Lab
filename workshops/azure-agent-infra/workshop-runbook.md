@@ -3,7 +3,7 @@
 > 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.zh-CN.md`)](README.zh-CN.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)**
 >
 > **Purpose**: Actionable field delivery guide for **Step 04 Validate (1/2-Day or 1-Day Hands-On Workshop + Target Architecture Whiteboard Session)** from the *Agent Infra Playbook* (`Agent_Infra_Playbook.pptx`, Slides 14–18).
-> **定位**：面向架构师与现场交付团队的 **Step 04 Validate（半天/全天动手工作坊 + 目标架构白板共创）** 落地执行手册（覆盖 206 章行业模型、201 套 IaC 蓝图与 200 项定量仿真器里程碑，209/209 项单测全绿）。
+> **定位**：面向架构师与现场交付团队的 **Step 04 Validate（半天/全天动手工作坊 + 目标架构白板共创）** 落地执行手册（覆盖 207 章行业模型、202 套 IaC 蓝图与 201 项定量仿真器，210/210 项单测全绿里程碑）。
 
 ---
 

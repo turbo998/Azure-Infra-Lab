@@ -207,6 +207,7 @@ from agent_infra_sizer import (
     simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
     simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
     simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
+    simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4246,6 +4247,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bayer_humate_resin_fouling_ga_supercooling_or_tmin_sublimation_channeling_pct"], 3.0)
         self.assertTrue(gov["gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met"])
         self.assertFalse(raw["gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_slo_met"])
+
+    def test_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(
+            8, "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge"
+        )
+        raw = simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_hcl_cl2_redox_dosing_and_open_loop_ruo4_distillation_eb_ir_melting_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_pgm_ir_ru_pods"], 32)
+        self.assertEqual(gov["pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct"], 50.9)
+        self.assertEqual(gov["rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct"], 75.6)
+        self.assertEqual(gov["osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct"], 1.0)
+        self.assertEqual(gov["pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct"], 3.0)
+        self.assertTrue(gov["pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met"])
+        self.assertFalse(raw["pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met"])
 
 
 if __name__ == "__main__":

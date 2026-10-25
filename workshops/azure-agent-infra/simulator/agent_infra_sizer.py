@@ -10534,6 +10534,73 @@ def simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_i
     }
 
 
+def simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox(
+    pgm_ir_ru_lines: int = 8,
+    pgm_ir_ru_governance_mode: str = "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 206 (Cycle #201 — 210-Test Milestone!): Autonomous Platinum-Group Metals (PGM: Pt, Pd, Rh, Ir, Ru, Os)
+    HCl/Cl2 Total Pressure Leaching, Ir(IV)/Ir(III) Redox-Potential Solvent Extraction / Molecular Recognition
+    Separation, 5N Iridium (Ir, Tm = 2,446 °C) Czochralski Oxide-Crystal Crucible Electron-Beam Metallurgy,
+    PEM Water Electrolyzer IrO2 OER Anode Catalyst & 6N Ruthenium (Ru, 6.6 nm Electron Mean-Free-Path) 2 nm GAA
+    Backside Power Delivery (BSPDN) Barrierless Interconnect ALD Precursor (RuO4 / Ru(EtCp)2) PINN-MPC, Online
+    10 kHz In-Situ Raman/UV-Vis, ICP-MS & Phased-Array Ultrasonic Ir-Crucible Metrology & OSHA 1910.1000 / ACGIH /
+    SEMI S2 / IEC 61511 SIL-3 Volatile Osmium/Ruthenium Tetroxide (OsO4 TLV 0.2 ppb / Explosive RuO4 > 108 °C)
+    & Chloroplatinate Respiratory Sensitization (Platinosis PEL 2 ug/m3) Interlock.
+    """
+    if pgm_ir_ru_lines < 1:
+        raise ValueError("pgm_ir_ru_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge",
+        "raw_cloud_fixed_hcl_cl2_redox_dosing_and_open_loop_ruo4_distillation_eb_ir_melting_schedule",
+    }
+    if pgm_ir_ru_governance_mode not in valid_modes:
+        raise ValueError(f"Unsupported pgm_ir_ru_governance_mode: {pgm_ir_ru_governance_mode}")
+
+    governed = (
+        pgm_ir_ru_governance_mode
+        == "pinn_mpc_pgm_ir4_ir3_orp_sx_cascade_5n_eb_ir_crucible_iro2_oer_and_6n_ru_2nm_ald_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(pgm_ir_ru_lines / 2))
+    active_pgm_ir_ru_pods = pgm_ir_ru_lines * 4
+
+    pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct = (
+        50.9 if governed else 8.3
+    )
+    rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct = (
+        75.6 if governed else 11.2
+    )
+    osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms = (
+        0.24 if governed else 358.0
+    )
+    unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct = (
+        0.0 if governed else 1.5
+    )
+    pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms = (
+        0.19 if governed else 193.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct = (
+        0.0 if governed else 4.2
+    )
+
+    return {
+        "pgm_ir_ru_lines": pgm_ir_ru_lines,
+        "pgm_ir_ru_governance_mode": pgm_ir_ru_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pgm_ir_ru_pods": active_pgm_ir_ru_pods,
+        "pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct": pgm_5n_ir_crucible_life_6n_ru_2nm_ald_precursor_and_iro2_oer_catalyst_gain_pct,
+        "rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct": rh_ir_pt_cross_contamination_ir_grain_boundary_cracking_and_2nm_ru_void_reduction_pct,
+        "osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms": osha19101000_acgih_semis2_sil3_oso4_ruo4_reductive_trap_and_platinosis_containment_interlock_ms,
+        "unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct": unmitigated_volatile_oso4_corneal_blindness_explosive_ruo4_decomposition_or_platinosis_exposure_pct,
+        "pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms": pgm_edge_10khz_insitu_raman_uvvis_ptcl6_ircl6_ruo4_icpms_and_paut_ir_crucible_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct": uncompensated_ir4_ir3_orp_redox_drift_eb_ir_thorium_cerium_doping_loss_or_ruo4_autoreduction_pct,
+        "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
