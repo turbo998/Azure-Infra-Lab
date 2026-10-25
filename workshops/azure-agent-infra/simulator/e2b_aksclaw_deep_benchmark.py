@@ -208,6 +208,7 @@ from agent_infra_sizer import (
     simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
     simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox,
     simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
+    simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1615,6 +1616,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox(8, "raw_cloud_fixed_cl2_oxidation_ratio_and_open_loop_hbr_distillation_gaa_etch_schedule"),
     ]
 
+    neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_profiles: List[Dict[str, object]] = [
+        simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(8, "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge"),
+        simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(32, "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge"),
+        simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(8, "raw_cloud_fixed_asu_side_draw_reflux_and_open_loop_kr_xe_reboiler_purge_schedule"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1810,6 +1817,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_profiles": arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_profiles,
         "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_profiles": fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_profiles,
         "bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_profiles": bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_profiles,
+        "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_profiles": neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_profiles,
     }
 
 

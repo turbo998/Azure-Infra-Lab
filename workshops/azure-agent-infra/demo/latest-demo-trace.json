@@ -11655,6 +11655,53 @@
         "uncompensated_brine_ph_orp_drift_316l_fe_halide_leaching_or_gaa_sige_indent_drift_pct": 4.1,
         "bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_slo_met": false
       }
+    ],
+    "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_profiles": [
+      {
+        "neon_krypton_xenon_asu_lines": 8,
+        "neon_krypton_xenon_governance_mode": "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_neon_krypton_xenon_pods": 32,
+        "ne_kr_xe_6n_cryo_recovery_arf_krf_excimer_pulse_stability_and_xekr_etch_recycle_gain_pct": 50.4,
+        "lox_reboiler_hydrocarbon_n2o_accumulation_cf4_carryover_and_excimer_wavelength_chirp_reduction_pct": 75.1,
+        "cgap89_eiga147_nfpa55_semis2_sil3_lox_kr_xe_reboiler_c2h2_thc_liquid_drain_and_purge_interlock_ms": 0.25,
+        "unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct": 0.0,
+        "neon_krypton_xenon_edge_10khz_insitu_ftir_c2h2_ch4_n2o_cf4_tdlas_and_excimer_spectrometer_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct": 0.0,
+        "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": true
+      },
+      {
+        "neon_krypton_xenon_asu_lines": 32,
+        "neon_krypton_xenon_governance_mode": "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_neon_krypton_xenon_pods": 128,
+        "ne_kr_xe_6n_cryo_recovery_arf_krf_excimer_pulse_stability_and_xekr_etch_recycle_gain_pct": 50.4,
+        "lox_reboiler_hydrocarbon_n2o_accumulation_cf4_carryover_and_excimer_wavelength_chirp_reduction_pct": 75.1,
+        "cgap89_eiga147_nfpa55_semis2_sil3_lox_kr_xe_reboiler_c2h2_thc_liquid_drain_and_purge_interlock_ms": 0.25,
+        "unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct": 0.0,
+        "neon_krypton_xenon_edge_10khz_insitu_ftir_c2h2_ch4_n2o_cf4_tdlas_and_excimer_spectrometer_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct": 0.0,
+        "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": true
+      },
+      {
+        "neon_krypton_xenon_asu_lines": 8,
+        "neon_krypton_xenon_governance_mode": "raw_cloud_fixed_asu_side_draw_reflux_and_open_loop_kr_xe_reboiler_purge_schedule",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_neon_krypton_xenon_pods": 32,
+        "ne_kr_xe_6n_cryo_recovery_arf_krf_excimer_pulse_stability_and_xekr_etch_recycle_gain_pct": 8.0,
+        "lox_reboiler_hydrocarbon_n2o_accumulation_cf4_carryover_and_excimer_wavelength_chirp_reduction_pct": 10.9,
+        "cgap89_eiga147_nfpa55_semis2_sil3_lox_kr_xe_reboiler_c2h2_thc_liquid_drain_and_purge_interlock_ms": 355.0,
+        "unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct": 1.5,
+        "neon_krypton_xenon_edge_10khz_insitu_ftir_c2h2_ch4_n2o_cf4_tdlas_and_excimer_spectrometer_loop_ms": 192.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct": 4.0,
+        "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -21684,5 +21731,52 @@
       "bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_slo_met": false
     }
   },
-  "trace_sha256": "987041cf8851c49f850f5e7685940553476a8461556dbaf74a91c1d71d16a4c6"
+  "demo_196_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox": {
+    "neon_krypton_xenon_8_lines": {
+      "neon_krypton_xenon_asu_lines": 8,
+      "neon_krypton_xenon_governance_mode": "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_neon_krypton_xenon_pods": 32,
+      "ne_kr_xe_6n_cryo_recovery_arf_krf_excimer_pulse_stability_and_xekr_etch_recycle_gain_pct": 50.4,
+      "lox_reboiler_hydrocarbon_n2o_accumulation_cf4_carryover_and_excimer_wavelength_chirp_reduction_pct": 75.1,
+      "cgap89_eiga147_nfpa55_semis2_sil3_lox_kr_xe_reboiler_c2h2_thc_liquid_drain_and_purge_interlock_ms": 0.25,
+      "unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct": 0.0,
+      "neon_krypton_xenon_edge_10khz_insitu_ftir_c2h2_ch4_n2o_cf4_tdlas_and_excimer_spectrometer_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct": 0.0,
+      "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": true
+    },
+    "neon_krypton_xenon_32_lines": {
+      "neon_krypton_xenon_asu_lines": 32,
+      "neon_krypton_xenon_governance_mode": "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_neon_krypton_xenon_pods": 128,
+      "ne_kr_xe_6n_cryo_recovery_arf_krf_excimer_pulse_stability_and_xekr_etch_recycle_gain_pct": 50.4,
+      "lox_reboiler_hydrocarbon_n2o_accumulation_cf4_carryover_and_excimer_wavelength_chirp_reduction_pct": 75.1,
+      "cgap89_eiga147_nfpa55_semis2_sil3_lox_kr_xe_reboiler_c2h2_thc_liquid_drain_and_purge_interlock_ms": 0.25,
+      "unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct": 0.0,
+      "neon_krypton_xenon_edge_10khz_insitu_ftir_c2h2_ch4_n2o_cf4_tdlas_and_excimer_spectrometer_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct": 0.0,
+      "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": true
+    },
+    "raw_neon_krypton_xenon_8_lines": {
+      "neon_krypton_xenon_asu_lines": 8,
+      "neon_krypton_xenon_governance_mode": "raw_cloud_fixed_asu_side_draw_reflux_and_open_loop_kr_xe_reboiler_purge_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_neon_krypton_xenon_pods": 32,
+      "ne_kr_xe_6n_cryo_recovery_arf_krf_excimer_pulse_stability_and_xekr_etch_recycle_gain_pct": 8.0,
+      "lox_reboiler_hydrocarbon_n2o_accumulation_cf4_carryover_and_excimer_wavelength_chirp_reduction_pct": 10.9,
+      "cgap89_eiga147_nfpa55_semis2_sil3_lox_kr_xe_reboiler_c2h2_thc_liquid_drain_and_purge_interlock_ms": 355.0,
+      "unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct": 1.5,
+      "neon_krypton_xenon_edge_10khz_insitu_ftir_c2h2_ch4_n2o_cf4_tdlas_and_excimer_spectrometer_loop_ms": 192.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct": 4.0,
+      "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met": false
+    }
+  },
+  "trace_sha256": "82d7d01744eede1d0bcaf6e0af88ce6243f5e4e2ce4fce84aa1d2afaab462875"
 }

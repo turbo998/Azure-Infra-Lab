@@ -202,6 +202,7 @@ from agent_infra_sizer import (
     simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
     simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox,
     simulate_bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_semis2_sil3_sandbox,
+    simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4132,6 +4133,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_brine_ph_orp_drift_316l_fe_halide_leaching_or_gaa_sige_indent_drift_pct"], 3.0)
         self.assertTrue(gov["bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_slo_met"])
         self.assertFalse(raw["bromine_iodine_brine_blowout_5n5_electronic_hbr_hi_gaa_poly_si_etch_slo_met"])
+
+    def test_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(self) -> None:
+        gov = simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(
+            8, "pinn_mpc_cryogenic_asu_6n_ne_kr_xe_rectification_arf_krf_excimer_laser_xekr_recycle_eiga147_sil3_edge"
+        )
+        raw = simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox(
+            8, "raw_cloud_fixed_asu_side_draw_reflux_and_open_loop_kr_xe_reboiler_purge_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_neon_krypton_xenon_pods"], 32)
+        self.assertEqual(gov["ne_kr_xe_6n_cryo_recovery_arf_krf_excimer_pulse_stability_and_xekr_etch_recycle_gain_pct"], 50.4)
+        self.assertEqual(gov["lox_reboiler_hydrocarbon_n2o_accumulation_cf4_carryover_and_excimer_wavelength_chirp_reduction_pct"], 75.1)
+        self.assertEqual(gov["cgap89_eiga147_nfpa55_semis2_sil3_lox_kr_xe_reboiler_c2h2_thc_liquid_drain_and_purge_interlock_ms"], 0.25)
+        self.assertEqual(gov["unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lox_kr_xe_reboiler_hydrocarbon_detonation_n2o_plugging_or_cryo_column_overpressure_pct"], 1.0)
+        self.assertEqual(gov["neon_krypton_xenon_edge_10khz_insitu_ftir_c2h2_ch4_n2o_cf4_tdlas_and_excimer_spectrometer_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ambient_air_hydrocarbon_spike_helium_neon_27k_condenser_flooding_or_cf4_slip_pct"], 3.0)
+        self.assertTrue(gov["neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met"])
+        self.assertFalse(raw["neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_slo_met"])
 
 
 if __name__ == "__main__":
