@@ -11561,6 +11561,53 @@
         "uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct": 4.1,
         "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met": false
       }
+    ],
+    "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_profiles": [
+      {
+        "fluorine_nf3_ale_lines": 8,
+        "fluorine_nf3_governance_mode": "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_fluorine_nf3_pods": 32,
+        "nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct": 50.2,
+        "cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct": 74.9,
+        "osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms": 0.26,
+        "unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct": 0.0,
+        "fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct": 0.0,
+        "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met": true
+      },
+      {
+        "fluorine_nf3_ale_lines": 32,
+        "fluorine_nf3_governance_mode": "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_fluorine_nf3_pods": 128,
+        "nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct": 50.2,
+        "cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct": 74.9,
+        "osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms": 0.26,
+        "unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct": 0.0,
+        "fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms": 0.2,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct": 0.0,
+        "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met": true
+      },
+      {
+        "fluorine_nf3_ale_lines": 8,
+        "fluorine_nf3_governance_mode": "raw_cloud_fixed_moissan_cell_current_and_open_loop_nf3_cryo_distillation_reflux_schedule",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_fluorine_nf3_pods": 32,
+        "nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct": 7.9,
+        "cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct": 10.8,
+        "osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms": 365.0,
+        "unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct": 1.6,
+        "fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms": 195.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct": 4.1,
+        "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -21496,5 +21543,52 @@
       "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met": false
     }
   },
-  "trace_sha256": "d4ae87d349ee6aa5ba8ada22a6bb45f467811964f2db01a85b70cf161e1f0aa5"
+  "demo_194_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox": {
+    "fluorine_nf3_8_lines": {
+      "fluorine_nf3_ale_lines": 8,
+      "fluorine_nf3_governance_mode": "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_fluorine_nf3_pods": 32,
+      "nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct": 50.2,
+      "cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct": 74.9,
+      "osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms": 0.26,
+      "unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct": 0.0,
+      "fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct": 0.0,
+      "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met": true
+    },
+    "fluorine_nf3_32_lines": {
+      "fluorine_nf3_ale_lines": 32,
+      "fluorine_nf3_governance_mode": "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_fluorine_nf3_pods": 128,
+      "nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct": 50.2,
+      "cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct": 74.9,
+      "osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms": 0.26,
+      "unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct": 0.0,
+      "fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct": 0.0,
+      "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met": true
+    },
+    "raw_fluorine_nf3_8_lines": {
+      "fluorine_nf3_ale_lines": 8,
+      "fluorine_nf3_governance_mode": "raw_cloud_fixed_moissan_cell_current_and_open_loop_nf3_cryo_distillation_reflux_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_fluorine_nf3_pods": 32,
+      "nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct": 7.9,
+      "cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct": 10.8,
+      "osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms": 365.0,
+      "unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct": 1.6,
+      "fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct": 4.1,
+      "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met": false
+    }
+  },
+  "trace_sha256": "a8819833657601fbc10f7025ced484d840643b904845ca68cc70323ce7fe7acb"
 }

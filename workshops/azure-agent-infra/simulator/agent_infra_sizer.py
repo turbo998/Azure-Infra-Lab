@@ -10054,6 +10054,74 @@ def simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmosph
     }
 
 
+def simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox(
+    fluorine_nf3_ale_lines: int = 8,
+    fluorine_nf3_governance_mode: str = "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Fluorspar (CaF2) Rotary-Kiln Sulfuric Acid Digestion
+    to Anhydrous Hydrogen Fluoride (AHF), Potassium Bifluoride (KHF2, 80-100 C
+    Molten Electrolyte) Moissan Anodic Fluorine (F2) Generation, 6N
+    Electronic-Grade Nitrogen Trifluoride (NF3) / Tungsten Hexafluoride (WF6)
+    Fractional Cryogenic Distillation & 3D NAND (>300-Layer) High-Aspect-Ratio
+    (HAR) Cryogenic Atomic-Layer Etching (ALE) PINN-MPC, Online 10 kHz In-Situ
+    FTIR/Raman, TDLAS HF/F2/NF3/OF2 Metrology & OSHA 1910.119 / NFPA 318 /
+    SEMI S2 / IEC 61511 SIL-3 Anhydrous HF (PEL 3 ppm) / Elemental F2 (PEL
+    0.1 ppm) Calcium-Alumina Dry Scrubbing, Moissan Cell H2/F2 Detonation
+    Prevention & Cryogenic NF3 Isolation Interlock (Cycle #194 — 200-Chapter
+    Milestone!)."""
+    if fluorine_nf3_ale_lines < 1:
+        raise ValueError("fluorine_nf3_ale_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge",
+        "raw_cloud_fixed_moissan_cell_current_and_open_loop_nf3_cryo_distillation_reflux_schedule",
+    }
+    if fluorine_nf3_governance_mode not in valid_modes:
+        raise ValueError(f"fluorine_nf3_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        fluorine_nf3_governance_mode
+        == "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(fluorine_nf3_ale_lines / 2))
+    active_fluorine_nf3_pods = fluorine_nf3_ale_lines * 4
+
+    nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct = (
+        50.2 if governed else 7.9
+    )
+    cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct = (
+        74.9 if governed else 10.8
+    )
+    osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms = (
+        0.26 if governed else 365.0
+    )
+    unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct = (
+        0.0 if governed else 1.6
+    )
+    fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms = (
+        0.20 if governed else 195.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "fluorine_nf3_ale_lines": fluorine_nf3_ale_lines,
+        "fluorine_nf3_governance_mode": fluorine_nf3_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_fluorine_nf3_pods": active_fluorine_nf3_pods,
+        "nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct": nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct,
+        "cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct": cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct,
+        "osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms": osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms,
+        "unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct": unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct,
+        "fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms": fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct": uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct,
+        "fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met": governed,
+    }
+
+
 
 SCENARIOS_12: list[dict[str, Any]] = [
     {

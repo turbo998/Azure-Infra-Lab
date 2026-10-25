@@ -200,6 +200,7 @@ from agent_infra_sizer import (
     simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox,
     simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox,
     simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
+    simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4088,6 +4089,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct"], 3.0)
         self.assertTrue(gov["arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met"])
         self.assertFalse(raw["arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met"])
+
+    def test_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox(
+            8, "pinn_mpc_fluorspar_ahf_moissan_f2_electrolysis_6n_nf3_wf6_distillation_3d_nand_cryo_ale_semis2_sil3_edge"
+        )
+        raw = simulate_fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_moissan_cell_current_and_open_loop_nf3_cryo_distillation_reflux_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_fluorine_nf3_pods"], 32)
+        self.assertEqual(gov["nf3_wf6_6n_cryo_purity_moissan_f2_faradaic_efficiency_and_3d_nand_har_ale_yield_gain_pct"], 50.2)
+        self.assertEqual(gov["cf4_of2_sf6_impurity_carryover_moissan_anode_polarization_and_har_channel_bowing_reduction_pct"], 74.9)
+        self.assertEqual(gov["osha1910119_nfpa318_semis2_sil3_ahf_3ppm_f2_100ppb_moissan_h2_f2_detonation_and_dry_scrubber_interlock_ms"], 0.26)
+        self.assertEqual(gov["unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_moissan_cell_h2_f2_detonation_anhydrous_hf_vapor_cloud_or_nf3_oxidizer_fire_pct"], 1.0)
+        self.assertEqual(gov["fluorine_nf3_edge_10khz_insitu_ftir_cf4_of2_tdlas_hf_f2_and_oes_har_etch_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_fluorspar_silica_sif4_drift_moissan_hf_concentration_or_3d_nand_cryo_chuck_drift_pct"], 3.0)
+        self.assertTrue(gov["fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met"])
+        self.assertFalse(raw["fluorine_anhydrous_hf_moissan_f2_electrolysis_6n_nf3_wf6_3d_nand_cryo_ale_slo_met"])
 
 
 if __name__ == "__main__":
