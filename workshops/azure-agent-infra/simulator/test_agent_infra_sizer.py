@@ -210,6 +210,7 @@ from agent_infra_sizer import (
     simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
     simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
     simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
+    simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -410,6 +411,11 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-tungsten-scheelite-wolframite-apt-hydrogen-reduction-wc-co-sinter-hip-nfpa86-sil3-pool.bicep",
             "aksclaw-germanium-gecl4-rectification-13n-zone-refining-cz-crystal-geh4-sige-epitaxy-semis2-sil3-pool.bicep",
             "aksclaw-zirconium-hafnium-carbochlorination-extractive-distillation-kroll-sponge-hfo2-ald-nfpa484-sil3-pool.bicep",
+            "aksclaw-gallium-indium-bayer-ix-7n-8n-vacuum-distillation-tmga-tmin-mocvd-inp-ito-semis2-sil3-pool.bicep",
+            "aksclaw-pgm-platinum-iridium-ruthenium-solvent-extraction-5n-ir-crucible-2nm-ru-ald-semis2-sil3-pool.bicep",
+            "aksclaw-gold-silver-pox-wohlwill-moebius-6n-bonding-wire-hjt-ag-paste-hcn-semis2-sil3-pool.bicep",
+            "aksclaw-scandium-yttrium-red-mud-extraction-calciothermic-5n-distillation-alscn-baw-target-y2o3-plasma-coating-sil3-pool.bicep",
+            "aksclaw-lanthanum-cerium-bastnasite-roasting-ceo2-cmp-slurry-lab6-emitter-lani5-hydride-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -4312,6 +4318,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct"], 3.0)
         self.assertTrue(gov["scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met"])
         self.assertFalse(raw["scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met"])
+
+    def test_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(self) -> None:
+        gov = simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(
+            8, "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge"
+        )
+        raw = simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(
+            8, "raw_cloud_open_loop_bastnasite_calcination_unfiltered_ceo2_milling_and_manual_lab6_zone_melt"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_la_ce_pods"], 32)
+        self.assertEqual(gov["la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct"], 51.2)
+        self.assertEqual(gov["ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct"], 75.9)
+        self.assertEqual(gov["nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct"], 1.0)
+        self.assertEqual(gov["la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct"], 3.0)
+        self.assertTrue(gov["lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met"])
+        self.assertFalse(raw["lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met"])
 
 
 if __name__ == "__main__":

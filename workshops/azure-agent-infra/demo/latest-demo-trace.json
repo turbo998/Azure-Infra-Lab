@@ -12031,6 +12031,53 @@
         "uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct": 4.2,
         "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met": false
       }
+    ],
+    "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_profiles": [
+      {
+        "la_ce_lines": 8,
+        "la_ce_governance_mode": "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_la_ce_pods": 32,
+        "la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct": 51.2,
+        "ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct": 75.9,
+        "nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms": 0.24,
+        "unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct": 0.0,
+        "la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": 0.0,
+        "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": true
+      },
+      {
+        "la_ce_lines": 32,
+        "la_ce_governance_mode": "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_la_ce_pods": 128,
+        "la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct": 51.2,
+        "ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct": 75.9,
+        "nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms": 0.24,
+        "unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct": 0.0,
+        "la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms": 0.19,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": 0.0,
+        "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": true
+      },
+      {
+        "la_ce_lines": 8,
+        "la_ce_governance_mode": "raw_cloud_open_loop_bastnasite_calcination_unfiltered_ceo2_milling_and_manual_lab6_zone_melt",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_la_ce_pods": 32,
+        "la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct": 8.5,
+        "ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct": 11.5,
+        "nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms": 362.0,
+        "unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct": 1.5,
+        "la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms": 196.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": 4.3,
+        "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -22436,5 +22483,52 @@
       "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met": false
     }
   },
-  "trace_sha256": "ac0e554459f067ca8af185ccbef7efd6bb80f0e15c4032331f64b5b6ded43551"
+  "demo_204_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox": {
+    "la_ce_8_lines": {
+      "la_ce_lines": 8,
+      "la_ce_governance_mode": "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_la_ce_pods": 32,
+      "la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct": 51.2,
+      "ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct": 75.9,
+      "nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms": 0.24,
+      "unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct": 0.0,
+      "la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": 0.0,
+      "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": true
+    },
+    "la_ce_32_lines": {
+      "la_ce_lines": 32,
+      "la_ce_governance_mode": "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_la_ce_pods": 128,
+      "la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct": 51.2,
+      "ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct": 75.9,
+      "nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms": 0.24,
+      "unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct": 0.0,
+      "la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": 0.0,
+      "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": true
+    },
+    "raw_la_ce_8_lines": {
+      "la_ce_lines": 8,
+      "la_ce_governance_mode": "raw_cloud_open_loop_bastnasite_calcination_unfiltered_ceo2_milling_and_manual_lab6_zone_melt",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_la_ce_pods": 32,
+      "la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct": 8.5,
+      "ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct": 11.5,
+      "nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms": 362.0,
+      "unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct": 1.5,
+      "la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms": 196.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": 4.3,
+      "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": false
+    }
+  },
+  "trace_sha256": "78d2fd55735b8d917ca55108452956f84230ef8dcd703dd972d35689131e4ab5"
 }

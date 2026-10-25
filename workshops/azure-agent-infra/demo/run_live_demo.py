@@ -223,6 +223,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
     simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
     simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
+    simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1469,6 +1470,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "sc_y_8_lines": simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(8, "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge"),
             "sc_y_32_lines": simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(32, "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge"),
             "raw_sc_y_8_lines": simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(8, "raw_cloud_empirical_d2ehpa_extraction_and_open_loop_calciothermic_reduction_alscn_sputtering_schedule"),
+        },
+        "demo_204_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox": {
+            "la_ce_8_lines": simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(8, "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge"),
+            "la_ce_32_lines": simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(32, "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge"),
+            "raw_la_ce_8_lines": simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(8, "raw_cloud_open_loop_bastnasite_calcination_unfiltered_ceo2_milling_and_manual_lab6_zone_melt"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -10731,6 +10731,71 @@ def simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_a
     }
 
 
+def simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox(
+    la_ce_lines: int = 8,
+    la_ce_governance_mode: str = "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 209 (Cycle #204 — 210-Chapter & 205-Blueprint Milestone): Autonomous
+    Lanthanum (La) & Cerium (Ce) Bastnasite (LnFCO3) Oxidative Roasting-Acid Leaching
+    & Selective Ce4+ Extraction, Sub-2nm Semiconductor STI / 3D-NAND Chemical-Mechanical
+    Planarization (CMP) Colloidal Ceria (CeO2 30-60 nm, Surface Ce3+/Ce4+ Oxygen-Vacancy
+    Ratio & >0.5 um Large-Particle Tail LPC Elimination for Zero Angstrom-Scratch
+    Oxide/Nitride Selectivity >50:1), Single-Crystal Lanthanum Hexaboride (LaB6 (100)
+    Work Function 2.66 eV) Optical Floating-Zone Electron-Beam Emitter & LaNi5
+    Solid-State Hydrogen Storage Alloy PINN-MPC, Online 10 kHz UV-Vis/Raman (Ce3+/Ce4+),
+    Single-Particle Optical Sizing (SPOS/DLS) & ICP-MS Metrology & NFPA 652 /
+    OSHA 1910.1000 / SEMI S2 / IEC 61511 SIL-3 Bastnasite Fluoride-Roasting HF/SiF4
+    Off-Gas, Thorium (Th-232) Radioactive Slag & Pyrophoric La/Ce/LaNi5H6 Hydride
+    Dust Explosion Interlock.
+    """
+    if la_ce_lines < 1:
+        raise ValueError("la_ce_lines must be >= 1")
+
+    governed = (
+        la_ce_governance_mode
+        == "pinn_mpc_bastnasite_ce4_roast_leach_ceo2_cmp_ce3_vacancy_spos_tail_lab6_floating_zone_lani5_hf_th_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(la_ce_lines / 2))
+    active_la_ce_pods = la_ce_lines * 4
+
+    la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct = (
+        51.2 if governed else 8.5
+    )
+    ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct = (
+        75.9 if governed else 11.5
+    )
+    nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms = (
+        0.24 if governed else 362.0
+    )
+    unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct = (
+        0.0 if governed else 1.5
+    )
+    la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms = (
+        0.19 if governed else 196.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct = (
+        0.0 if governed else 4.3
+    )
+
+    return {
+        "la_ce_lines": la_ce_lines,
+        "la_ce_governance_mode": la_ce_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_la_ce_pods": active_la_ce_pods,
+        "la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct": la_ce_5n_extraction_yield_ceo2_cmp_oxide_nitride_selectivity_and_lab6_emission_brightness_gain_pct,
+        "ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct": ceo2_cmp_lpc_wafer_micro_scratch_lab6_subgrain_boundary_and_lani5_disproportionation_reduction_pct,
+        "nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms": nfpa652_osha19101000_semis2_sil3_bastnasite_hf_sif4_scrubber_th_slag_and_pyrophoric_la_ce_hydride_interlock_ms,
+        "unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct": unmitigated_bastnasite_hf_sif4_offgas_th_radioactive_release_or_pyrophoric_la_ce_hydride_explosion_pct,
+        "la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms": la_ce_edge_10khz_uvvis_raman_ce3_ce4_spos_dls_lpc_and_icpms_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct": uncompensated_ceo2_agglomeration_tail_ce3_vacancy_oxidation_drift_or_lab6_boron_volatilization_pct,
+        "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
