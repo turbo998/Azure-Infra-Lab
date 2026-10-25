@@ -199,6 +199,7 @@ from agent_infra_sizer import (
     simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox,
     simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox,
     simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox,
+    simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4066,6 +4067,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct"], 3.0)
         self.assertTrue(gov["antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met"])
         self.assertFalse(raw["antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met"])
+
+    def test_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(self) -> None:
+        gov = simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(
+            8, "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge"
+        )
+        raw = simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(
+            8, "raw_cloud_fixed_ascl3_reflux_and_open_loop_vgf_gaas_arsenic_reservoir_temperature_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_arsenic_gaas_pods"], 32)
+        self.assertEqual(gov["arsenic_7n_sublimation_purity_sds_ash3_yield_and_vgf_gaas_low_epd_wafer_yield_gain_pct"], 49.6)
+        self.assertEqual(gov["ascl3_sulfur_selenium_carryover_gaas_el2_antisite_inhomogeneity_and_scorodite_leach_reduction_pct"], 74.5)
+        self.assertEqual(gov["osha19101018_nfpa318_semis2_sil3_lethal_ash3_3ppb_sds_lockout_and_cuo_mno2_scrubber_interlock_ms"], 0.26)
+        self.assertEqual(gov["unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct"], 1.0)
+        self.assertEqual(gov["arsenic_gaas_edge_10khz_insitu_raman_as4_as2_tdlas_ash3_hcl_and_libs_s_se_si_telemetry_loop_ms"], 0.20)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct"], 3.0)
+        self.assertTrue(gov["arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met"])
+        self.assertFalse(raw["arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met"])
 
 
 if __name__ == "__main__":

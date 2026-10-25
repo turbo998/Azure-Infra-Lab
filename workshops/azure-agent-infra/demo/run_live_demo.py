@@ -212,6 +212,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox,
     simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox,
     simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox,
+    simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1403,6 +1404,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "antimony_insb_8_lines": simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(8, "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge"),
             "antimony_insb_32_lines": simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(32, "pinn_mpc_stibnite_blast_furnace_volatilization_na3sbs3_electrowinning_6n5_antimony_insb_t2sl_gst_sbh3_nfpa86_sil3_edge"),
             "raw_antimony_insb_8_lines": simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_blast_furnace_coke_ratio_and_open_loop_insb_t2sl_mbe_antimony_cracker_schedule"),
+        },
+        "demo_193_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox": {
+            "arsenic_gaas_8_lines": simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(8, "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge"),
+            "arsenic_gaas_32_lines": simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(32, "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge"),
+            "raw_arsenic_gaas_8_lines": simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(8, "raw_cloud_fixed_ascl3_reflux_and_open_loop_vgf_gaas_arsenic_reservoir_temperature_schedule"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

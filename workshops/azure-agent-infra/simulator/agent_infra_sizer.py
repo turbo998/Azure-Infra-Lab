@@ -9988,6 +9988,72 @@ def simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_det
     }
 
 
+def simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(
+    arsenic_gaas_sds_lines: int = 8,
+    arsenic_gaas_governance_mode: str = "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Smelter Flue-Dust / Realgar Vacuum Sublimation
+    (As2O3), AsCl3 Fractional Distillation & H2 Reduction to 7N (99.99999%)
+    Vacuum-Sublimed Electronic Arsenic (As4/As2), Sub-Atmospheric (SDS) 6N5
+    Arsine (AsH3) Synthesis & 6-Inch VGF/LEC Gallium Arsenide (GaAs) Wafer /
+    VCSEL Epitaxy PINN-MPC, Online 10 kHz In-Situ Raman/LIBS, TDLAS AsH3/HCl
+    Metrology & OSHA 1910.1018 / NFPA 318 / SEMI S2 / IEC 61511 SIL-3 Lethal
+    Arsine (AsH3, PEL 3 ppb) Sub-Atmospheric Lockout, Dry CuO/MnO2
+    Chemisorption Scrubbing & Scorodite (FeAsO4·2H2O) Stabilization Interlock
+    (Cycle #193)."""
+    if arsenic_gaas_sds_lines < 1:
+        raise ValueError("arsenic_gaas_sds_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge",
+        "raw_cloud_fixed_ascl3_reflux_and_open_loop_vgf_gaas_arsenic_reservoir_temperature_schedule",
+    }
+    if arsenic_gaas_governance_mode not in valid_modes:
+        raise ValueError(f"arsenic_gaas_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        arsenic_gaas_governance_mode
+        == "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(arsenic_gaas_sds_lines / 2))
+    active_arsenic_gaas_pods = arsenic_gaas_sds_lines * 4
+
+    arsenic_7n_sublimation_purity_sds_ash3_yield_and_vgf_gaas_low_epd_wafer_yield_gain_pct = (
+        49.6 if governed else 7.8
+    )
+    ascl3_sulfur_selenium_carryover_gaas_el2_antisite_inhomogeneity_and_scorodite_leach_reduction_pct = (
+        74.5 if governed else 10.7
+    )
+    osha19101018_nfpa318_semis2_sil3_lethal_ash3_3ppb_sds_lockout_and_cuo_mno2_scrubber_interlock_ms = (
+        0.26 if governed else 360.0
+    )
+    unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct = (
+        0.0 if governed else 1.5
+    )
+    arsenic_gaas_edge_10khz_insitu_raman_as4_as2_tdlas_ash3_hcl_and_libs_s_se_si_telemetry_loop_ms = (
+        0.20 if governed else 195.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "arsenic_gaas_sds_lines": arsenic_gaas_sds_lines,
+        "arsenic_gaas_governance_mode": arsenic_gaas_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_arsenic_gaas_pods": active_arsenic_gaas_pods,
+        "arsenic_7n_sublimation_purity_sds_ash3_yield_and_vgf_gaas_low_epd_wafer_yield_gain_pct": arsenic_7n_sublimation_purity_sds_ash3_yield_and_vgf_gaas_low_epd_wafer_yield_gain_pct,
+        "ascl3_sulfur_selenium_carryover_gaas_el2_antisite_inhomogeneity_and_scorodite_leach_reduction_pct": ascl3_sulfur_selenium_carryover_gaas_el2_antisite_inhomogeneity_and_scorodite_leach_reduction_pct,
+        "osha19101018_nfpa318_semis2_sil3_lethal_ash3_3ppb_sds_lockout_and_cuo_mno2_scrubber_interlock_ms": osha19101018_nfpa318_semis2_sil3_lethal_ash3_3ppb_sds_lockout_and_cuo_mno2_scrubber_interlock_ms,
+        "unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct": unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct,
+        "arsenic_gaas_edge_10khz_insitu_raman_as4_as2_tdlas_ash3_hcl_and_libs_s_se_si_telemetry_loop_ms": arsenic_gaas_edge_10khz_insitu_raman_as4_as2_tdlas_ash3_hcl_and_libs_s_se_si_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct": uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct,
+        "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met": governed,
+    }
+
+
 
 SCENARIOS_12: list[dict[str, Any]] = [
     {

@@ -205,6 +205,7 @@ from agent_infra_sizer import (
     simulate_boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_hpht_nfpa86_sil3_sandbox,
     simulate_phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_lec_vgf_ph3_nfpa86_sil3_sandbox,
     simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox,
+    simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1594,6 +1595,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_infrared_detector_gst_sbh3_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_blast_furnace_coke_ratio_and_open_loop_insb_t2sl_mbe_antimony_cracker_schedule"),
     ]
 
+    arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_profiles: List[Dict[str, object]] = [
+        simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(8, "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge"),
+        simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(32, "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge"),
+        simulate_arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sub_atmospheric_sds_semis2_sil3_sandbox(8, "raw_cloud_fixed_ascl3_reflux_and_open_loop_vgf_gaas_arsenic_reservoir_temperature_schedule"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1786,6 +1793,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_profiles": boron_10b_isotope_bf3_exchange_distillation_b4c_cbn_profiles,
         "phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_profiles": phosphorus_p4_arc_furnace_6n5_electronic_phosphorus_inp_profiles,
         "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_profiles": antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_profiles,
+        "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_profiles": arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_profiles,
     }
 
 

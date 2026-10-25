@@ -11312,5 +11312,52 @@
       "uncompensated_stibnite_arsenic_lead_drift_cathode_passivation_or_t2sl_sb_flux_loss_pct": 4.2,
       "antimony_stibnite_blast_furnace_6n5_antimony_insb_t2sl_gst_slo_met": false
     }
+  ],
+  "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_profiles": [
+    {
+      "arsenic_gaas_sds_lines": 8,
+      "arsenic_gaas_governance_mode": "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_arsenic_gaas_pods": 32,
+      "arsenic_7n_sublimation_purity_sds_ash3_yield_and_vgf_gaas_low_epd_wafer_yield_gain_pct": 49.6,
+      "ascl3_sulfur_selenium_carryover_gaas_el2_antisite_inhomogeneity_and_scorodite_leach_reduction_pct": 74.5,
+      "osha19101018_nfpa318_semis2_sil3_lethal_ash3_3ppb_sds_lockout_and_cuo_mno2_scrubber_interlock_ms": 0.26,
+      "unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct": 0.0,
+      "arsenic_gaas_edge_10khz_insitu_raman_as4_as2_tdlas_ash3_hcl_and_libs_s_se_si_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct": 0.0,
+      "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met": true
+    },
+    {
+      "arsenic_gaas_sds_lines": 32,
+      "arsenic_gaas_governance_mode": "pinn_mpc_ascl3_fractional_distillation_7n_arsenic_sds_ash3_vgf_gaas_el2_semis2_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_arsenic_gaas_pods": 128,
+      "arsenic_7n_sublimation_purity_sds_ash3_yield_and_vgf_gaas_low_epd_wafer_yield_gain_pct": 49.6,
+      "ascl3_sulfur_selenium_carryover_gaas_el2_antisite_inhomogeneity_and_scorodite_leach_reduction_pct": 74.5,
+      "osha19101018_nfpa318_semis2_sil3_lethal_ash3_3ppb_sds_lockout_and_cuo_mno2_scrubber_interlock_ms": 0.26,
+      "unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct": 0.0,
+      "arsenic_gaas_edge_10khz_insitu_raman_as4_as2_tdlas_ash3_hcl_and_libs_s_se_si_telemetry_loop_ms": 0.2,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct": 0.0,
+      "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met": true
+    },
+    {
+      "arsenic_gaas_sds_lines": 8,
+      "arsenic_gaas_governance_mode": "raw_cloud_fixed_ascl3_reflux_and_open_loop_vgf_gaas_arsenic_reservoir_temperature_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_arsenic_gaas_pods": 32,
+      "arsenic_7n_sublimation_purity_sds_ash3_yield_and_vgf_gaas_low_epd_wafer_yield_gain_pct": 7.8,
+      "ascl3_sulfur_selenium_carryover_gaas_el2_antisite_inhomogeneity_and_scorodite_leach_reduction_pct": 10.7,
+      "osha19101018_nfpa318_semis2_sil3_lethal_ash3_3ppb_sds_lockout_and_cuo_mno2_scrubber_interlock_ms": 360.0,
+      "unmitigated_lethal_ash3_hemolytic_release_ascl3_hydrolysis_or_vgf_gaas_ampoule_rupture_pct": 1.5,
+      "arsenic_gaas_edge_10khz_insitu_raman_as4_as2_tdlas_ash3_hcl_and_libs_s_se_si_telemetry_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_flue_dust_antimony_bismuth_drift_ash3_moisture_or_gaas_carbon_el2_drift_pct": 4.1,
+      "arsenic_6n5_high_purity_arsenic_gaas_inp_mbe_mocvd_ash3_sds_slo_met": false
+    }
   ]
 }
