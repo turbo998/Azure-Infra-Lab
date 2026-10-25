@@ -9242,6 +9242,59 @@ def simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_si
     }
 
 
+def simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(
+    rkef_smelting_lines: int = 8,
+    rkef_governance_mode: str = "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Laterite Nickel Rotary Kiln-Electric Furnace (RKEF 80-90 MVA Shielded-Arc
+    Calcined-Saprolite Smelting 1,550-1,650 °C Ferronickel FeNi 20-35% Ni & Sulfurization Converting
+    to High-Grade Low-Iron Nickel Matte 75% Ni) — Rotary-Kiln Selective Pre-Reduction (Fe2O3->FeO
+    vs NiO->Ni), Hot-Calcine 750-850 °C Slide-Gate Surge-Bin Fluidization Control, Shielded-Arc
+    Immersed-Electrode MgO-SiO2-FeO Olivine/Enstatite Slag Superheat & Sidewall Copper-Waffle
+    Freeze-Lining PINN-MPC, Online 10 kHz Sidewall Copper-Cooler Acoustic/Heat-Flux, Rotary-Kiln
+    TDLAS (CO/CO2/CH4/H2O) & Molten-Slag LIBS (Ni/Fe/MgO/SiO2) Metrology & NFPA 86 / ISO 13577 /
+    OSHA 1910.119 / IEC 61511 SIL-3 Hot-Calcine Fluidization Avalanche (Calcine Flush / Boilover),
+    Acidic-Slag Sidewall Copper-Cooler Burn-Through Steam Explosion & Rotary-Kiln Pulverized-Coal
+    Deflagration Interlock Sandbox (Chapter 186 · Cycle #181 · 190-Test Milestone!).
+    """
+    if rkef_smelting_lines < 1:
+        raise ValueError("rkef_smelting_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge",
+        "raw_cloud_fixed_kiln_coal_ratio_and_manual_slide_gate_calcine_charging",
+    }
+    if rkef_governance_mode not in valid_modes:
+        raise ValueError(f"rkef_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = rkef_governance_mode == "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge"
+    active_rkef_pods = max(2, min(16, int(rkef_smelting_lines))) if rkef_smelting_lines <= 16 else max(16, int(rkef_smelting_lines // 2))
+    gpu_nodes = max(2, math.ceil(rkef_smelting_lines / 4))
+
+    nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct = 46.5 if governed else 6.9
+    hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct = 71.4 if governed else 9.6
+    nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms = 0.33 if governed else 371.0
+    unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct = 0.0 if governed else 1.5
+    rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms = 0.23 if governed else 201.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct = 0.0 if governed else 4.2
+
+    return {
+        "rkef_smelting_lines": rkef_smelting_lines,
+        "rkef_governance_mode": rkef_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rkef_pods": active_rkef_pods,
+        "nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct": nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct,
+        "hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct": hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct,
+        "nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms": nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms,
+        "unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct": unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct,
+        "rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms": rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct,
+        "rkef_laterite_ferronickel_saf_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

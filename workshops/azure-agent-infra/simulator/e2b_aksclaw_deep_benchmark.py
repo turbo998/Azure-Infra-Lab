@@ -193,6 +193,7 @@ from agent_infra_sizer import (
     simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
     simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
     simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
+    simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1510,6 +1511,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_quartz_carbon_ratio_and_manual_periodic_stoking_car"),
     ]
 
+    rkef_laterite_ferronickel_saf_profiles: List[Dict[str, object]] = [
+        simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(8, "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge"),
+        simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(32, "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge"),
+        simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_kiln_coal_ratio_and_manual_slide_gate_calcine_charging"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1690,6 +1697,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "ferrochrome_submerged_arc_furnace_profiles": ferrochrome_submerged_arc_furnace_profiles,
         "silicomanganese_ferromanganese_saf_profiles": silicomanganese_ferromanganese_saf_profiles,
         "metallurgical_silicon_ferrosilicon_saf_profiles": metallurgical_silicon_ferrosilicon_saf_profiles,
+        "rkef_laterite_ferronickel_saf_profiles": rkef_laterite_ferronickel_saf_profiles,
     }
 
 

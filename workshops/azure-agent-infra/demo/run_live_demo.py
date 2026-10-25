@@ -200,6 +200,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
     simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
     simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
+    simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1331,6 +1332,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "mgsi_8_furnaces": simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(8, "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge"),
             "mgsi_32_furnaces": simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(32, "pinn_mpc_mgsi_saf_sio_cavity_sic_condensation_stoking_nfpa86_sil3_edge"),
             "raw_mgsi_8_furnaces": simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_quartz_carbon_ratio_and_manual_periodic_stoking_car"),
+        },
+        "demo_181_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox": {
+            "rkef_8_lines": simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(8, "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge"),
+            "rkef_32_lines": simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(32, "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge"),
+            "raw_rkef_8_lines": simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_kiln_coal_ratio_and_manual_slide_gate_calcine_charging"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

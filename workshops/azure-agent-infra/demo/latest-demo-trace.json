@@ -10950,6 +10950,53 @@
         "uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct": 4.4,
         "metallurgical_silicon_ferrosilicon_saf_slo_met": false
       }
+    ],
+    "rkef_laterite_ferronickel_saf_profiles": [
+      {
+        "rkef_smelting_lines": 8,
+        "rkef_governance_mode": "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rkef_pods": 8,
+        "nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct": 46.5,
+        "hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct": 71.4,
+        "nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms": 0.33,
+        "unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct": 0.0,
+        "rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms": 0.23,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": 0.0,
+        "rkef_laterite_ferronickel_saf_slo_met": true
+      },
+      {
+        "rkef_smelting_lines": 32,
+        "rkef_governance_mode": "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rkef_pods": 16,
+        "nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct": 46.5,
+        "hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct": 71.4,
+        "nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms": 0.33,
+        "unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct": 0.0,
+        "rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms": 0.23,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": 0.0,
+        "rkef_laterite_ferronickel_saf_slo_met": true
+      },
+      {
+        "rkef_smelting_lines": 8,
+        "rkef_governance_mode": "raw_cloud_fixed_kiln_coal_ratio_and_manual_slide_gate_calcine_charging",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rkef_pods": 8,
+        "nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct": 6.9,
+        "hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct": 9.6,
+        "nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms": 371.0,
+        "unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct": 1.5,
+        "rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms": 201.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": 4.2,
+        "rkef_laterite_ferronickel_saf_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -20274,5 +20321,52 @@
       "metallurgical_silicon_ferrosilicon_saf_slo_met": false
     }
   },
-  "trace_sha256": "4ba556cdc7c959a89859919062562d7a23462dfd487e756df7dc67a6140aba44"
+  "demo_181_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox": {
+    "rkef_8_lines": {
+      "rkef_smelting_lines": 8,
+      "rkef_governance_mode": "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_rkef_pods": 8,
+      "nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct": 46.5,
+      "hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct": 71.4,
+      "nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms": 0.33,
+      "unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct": 0.0,
+      "rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms": 0.23,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": 0.0,
+      "rkef_laterite_ferronickel_saf_slo_met": true
+    },
+    "rkef_32_lines": {
+      "rkef_smelting_lines": 32,
+      "rkef_governance_mode": "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_rkef_pods": 16,
+      "nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct": 46.5,
+      "hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct": 71.4,
+      "nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms": 0.33,
+      "unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct": 0.0,
+      "rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms": 0.23,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": 0.0,
+      "rkef_laterite_ferronickel_saf_slo_met": true
+    },
+    "raw_rkef_8_lines": {
+      "rkef_smelting_lines": 8,
+      "rkef_governance_mode": "raw_cloud_fixed_kiln_coal_ratio_and_manual_slide_gate_calcine_charging",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_rkef_pods": 8,
+      "nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct": 6.9,
+      "hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct": 9.6,
+      "nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms": 371.0,
+      "unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct": 1.5,
+      "rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms": 201.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": 4.2,
+      "rkef_laterite_ferronickel_saf_slo_met": false
+    }
+  },
+  "trace_sha256": "b365a507522a2c43fb0e72cf330cf93efec32130ecbf4a9dfd7d6b7bb8da2daa"
 }

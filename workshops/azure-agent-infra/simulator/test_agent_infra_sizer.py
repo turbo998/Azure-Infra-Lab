@@ -187,6 +187,7 @@ from agent_infra_sizer import (
     simulate_ferrochrome_submerged_arc_furnace_soderberg_electrode_coke_bed_nfpa86_sil3_sandbox,
     simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
     simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
+    simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3802,6 +3803,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_charcoal_reactivity_shift_or_cavity_collapse_bridging_slip_pct"], 3.0)
         self.assertTrue(gov["metallurgical_silicon_ferrosilicon_saf_slo_met"])
         self.assertFalse(raw["metallurgical_silicon_ferrosilicon_saf_slo_met"])
+
+    def test_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_rkef_rotary_kiln_selective_prereduction_shielded_arc_freeze_lining_nfpa86_sil3_edge"
+        )
+        raw = simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_kiln_coal_ratio_and_manual_slide_gate_calcine_charging"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_rkef_pods"], 8)
+        self.assertEqual(gov["nickel_recovery_and_shielded_arc_specific_energy_efficiency_gain_pct"], 46.5)
+        self.assertEqual(gov["hot_calcine_flush_boilover_and_copper_waffle_freeze_lining_erosion_reduction_pct"], 71.4)
+        self.assertEqual(gov["nfpa86_iso13577_sil3_calcine_flush_boilover_and_waffle_cooler_burnthrough_interlock_ms"], 0.33)
+        self.assertEqual(gov["unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_calcine_flush_slag_boilover_or_copper_cooler_steam_explosion_pct"], 1.0)
+        self.assertEqual(gov["rkef_edge_10khz_waffle_cooler_heat_flux_kiln_tdlas_and_slag_libs_mgo_sio2_telemetry_loop_ms"], 0.23)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct"], 3.0)
+        self.assertTrue(gov["rkef_laterite_ferronickel_saf_slo_met"])
+        self.assertFalse(raw["rkef_laterite_ferronickel_saf_slo_met"])
 
 
 if __name__ == "__main__":
