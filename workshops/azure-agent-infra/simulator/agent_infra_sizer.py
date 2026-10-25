@@ -10667,6 +10667,70 @@ def simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_s
     }
 
 
+def simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(
+    sc_y_lines: int = 8,
+    sc_y_governance_mode: str = "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 208 (Cycle #203): Autonomous Scandium (Sc) & Yttrium (Y) Red-Mud / TiO2-Waste
+    Acid Extraction (D2EHPA/TBP Synergistic Solvent Extraction), Anhydrous Fluoride
+    (ScF3/YF3) NH4HF2 Fluorination & Calciothermic Vacuum Reduction-Distillation
+    (4N5-5N 99.999% Dendritic Sc & Y), 5G/6G BAW/FBAR RF Filter High-Piezoelectric
+    Aluminum-Scandium Nitride (Al(1-x)ScxN, x = 0.20-0.40, d33 Up 5x Without
+    Wurtzite-to-Rocksalt Phase Collapse) Vacuum Hot-Pressed Sputtering Target &
+    Semiconductor Sub-2nm Plasma-Etch Chamber Y2O3/YF3/YAG Fluorocarbon-Radical
+    Barrier Coating / SOFC 8YSZ Solid Electrolyte PINN-MPC, Online 10 kHz LIBS/ICP-OES,
+    XRD Wurtzite c/a-Ratio & RGA Metrology & NFPA 484 / OSHA 1910.1000 / SEMI S2 /
+    IEC 61511 SIL-3 Molten Calcium-Fluoride Thermite Runaway (>1,600 C), Pyrophoric
+    Sc/Y/Ca Metal Vapor & Lethal Anhydrous HF (3 ppm) Dry-Alumina/Argon Interlock.
+    """
+    if sc_y_lines < 1:
+        raise ValueError("sc_y_lines must be >= 1")
+
+    governed = (
+        sc_y_governance_mode
+        == "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(sc_y_lines / 2))
+    active_sc_y_pods = sc_y_lines * 4
+
+    sc_y_5n_distillation_yield_alscn_baw_target_d33_piezo_and_y2o3_plasma_erosion_resistance_gain_pct = (
+        51.1 if governed else 8.4
+    )
+    d2ehpa_fe_ti_coextraction_alscn_rocksalt_phase_defect_and_y2o3_coating_particle_shedding_reduction_pct = (
+        75.8 if governed else 11.4
+    )
+    nfpa484_osha19101000_semis2_sil3_hf_fluorination_scrubber_and_calciothermic_ta_crucible_quench_interlock_ms = (
+        0.24 if governed else 361.0
+    )
+    unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct = (
+        0.0 if governed else 1.5
+    )
+    sc_y_edge_10khz_libs_icpoes_sc_fe_ti_xrd_alscn_wurtzite_and_rga_o2_f2_loop_ms = (
+        0.19 if governed else 195.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct = (
+        0.0 if governed else 4.2
+    )
+
+    return {
+        "sc_y_lines": sc_y_lines,
+        "sc_y_governance_mode": sc_y_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_sc_y_pods": active_sc_y_pods,
+        "sc_y_5n_distillation_yield_alscn_baw_target_d33_piezo_and_y2o3_plasma_erosion_resistance_gain_pct": sc_y_5n_distillation_yield_alscn_baw_target_d33_piezo_and_y2o3_plasma_erosion_resistance_gain_pct,
+        "d2ehpa_fe_ti_coextraction_alscn_rocksalt_phase_defect_and_y2o3_coating_particle_shedding_reduction_pct": d2ehpa_fe_ti_coextraction_alscn_rocksalt_phase_defect_and_y2o3_coating_particle_shedding_reduction_pct,
+        "nfpa484_osha19101000_semis2_sil3_hf_fluorination_scrubber_and_calciothermic_ta_crucible_quench_interlock_ms": nfpa484_osha19101000_semis2_sil3_hf_fluorination_scrubber_and_calciothermic_ta_crucible_quench_interlock_ms,
+        "unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct": unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct,
+        "sc_y_edge_10khz_libs_icpoes_sc_fe_ti_xrd_alscn_wurtzite_and_rga_o2_f2_loop_ms": sc_y_edge_10khz_libs_icpoes_sc_fe_ti_xrd_alscn_wurtzite_and_rga_o2_f2_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct": uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct,
+        "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

@@ -209,6 +209,7 @@ from agent_infra_sizer import (
     simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
     simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
     simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
+    simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4290,6 +4291,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_preg_robbing_wohlwill_anode_slime_crust_or_wire_ca_be_dopant_segregation_pct"], 3.0)
         self.assertTrue(gov["gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_slo_met"])
         self.assertFalse(raw["gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_slo_met"])
+
+    def test_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(self) -> None:
+        gov = simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(
+            8, "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge"
+        )
+        raw = simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(
+            8, "raw_cloud_empirical_d2ehpa_extraction_and_open_loop_calciothermic_reduction_alscn_sputtering_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_sc_y_pods"], 32)
+        self.assertEqual(gov["sc_y_5n_distillation_yield_alscn_baw_target_d33_piezo_and_y2o3_plasma_erosion_resistance_gain_pct"], 51.1)
+        self.assertEqual(gov["d2ehpa_fe_ti_coextraction_alscn_rocksalt_phase_defect_and_y2o3_coating_particle_shedding_reduction_pct"], 75.8)
+        self.assertEqual(gov["nfpa484_osha19101000_semis2_sil3_hf_fluorination_scrubber_and_calciothermic_ta_crucible_quench_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct"], 1.0)
+        self.assertEqual(gov["sc_y_edge_10khz_libs_icpoes_sc_fe_ti_xrd_alscn_wurtzite_and_rga_o2_f2_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct"], 3.0)
+        self.assertTrue(gov["scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met"])
+        self.assertFalse(raw["scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met"])
 
 
 if __name__ == "__main__":

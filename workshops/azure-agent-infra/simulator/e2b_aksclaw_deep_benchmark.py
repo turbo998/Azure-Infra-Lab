@@ -215,6 +215,7 @@ from agent_infra_sizer import (
     simulate_gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_semis2_sil3_sandbox,
     simulate_pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_semis2_sil3_sandbox,
     simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox,
+    simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1664,6 +1665,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_hcn_semis2_sil3_sandbox(8, "raw_cloud_fixed_cyanide_lime_dosing_and_open_loop_wohlwill_dc_current_ag_powder_reduction_schedule"),
     ]
 
+    scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_profiles: List[Dict[str, object]] = [
+        simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(8, "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge"),
+        simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(32, "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge"),
+        simulate_scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_sil3_sandbox(8, "raw_cloud_empirical_d2ehpa_extraction_and_open_loop_calciothermic_reduction_alscn_sputtering_schedule"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1866,6 +1873,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_profiles": gallium_indium_bayer_ix_7n_8n_vacuum_distillation_tmga_tmin_mocvd_inp_ito_profiles,
         "pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_profiles": pgm_platinum_iridium_ruthenium_solvent_extraction_5n_ir_crucible_2nm_ru_ald_profiles,
         "gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_profiles": gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_profiles,
+        "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_profiles": scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_profiles,
     }
 
 

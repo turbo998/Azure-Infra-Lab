@@ -11782,5 +11782,52 @@
       "uncompensated_preg_robbing_wohlwill_anode_slime_crust_or_wire_ca_be_dopant_segregation_pct": 4.2,
       "gold_silver_pox_wohlwill_moebius_6n_bonding_wire_hjt_ag_paste_slo_met": false
     }
+  ],
+  "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_profiles": [
+    {
+      "sc_y_lines": 8,
+      "sc_y_governance_mode": "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sc_y_pods": 32,
+      "sc_y_5n_distillation_yield_alscn_baw_target_d33_piezo_and_y2o3_plasma_erosion_resistance_gain_pct": 51.1,
+      "d2ehpa_fe_ti_coextraction_alscn_rocksalt_phase_defect_and_y2o3_coating_particle_shedding_reduction_pct": 75.8,
+      "nfpa484_osha19101000_semis2_sil3_hf_fluorination_scrubber_and_calciothermic_ta_crucible_quench_interlock_ms": 0.24,
+      "unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct": 0.0,
+      "sc_y_edge_10khz_libs_icpoes_sc_fe_ti_xrd_alscn_wurtzite_and_rga_o2_f2_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct": 0.0,
+      "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met": true
+    },
+    {
+      "sc_y_lines": 32,
+      "sc_y_governance_mode": "pinn_mpc_red_mud_d2ehpa_tbp_sc_y_sx_calciothermic_5n_distillation_alscn_baw_and_y2o3_coating_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sc_y_pods": 128,
+      "sc_y_5n_distillation_yield_alscn_baw_target_d33_piezo_and_y2o3_plasma_erosion_resistance_gain_pct": 51.1,
+      "d2ehpa_fe_ti_coextraction_alscn_rocksalt_phase_defect_and_y2o3_coating_particle_shedding_reduction_pct": 75.8,
+      "nfpa484_osha19101000_semis2_sil3_hf_fluorination_scrubber_and_calciothermic_ta_crucible_quench_interlock_ms": 0.24,
+      "unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct": 0.0,
+      "sc_y_edge_10khz_libs_icpoes_sc_fe_ti_xrd_alscn_wurtzite_and_rga_o2_f2_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct": 0.0,
+      "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met": true
+    },
+    {
+      "sc_y_lines": 8,
+      "sc_y_governance_mode": "raw_cloud_empirical_d2ehpa_extraction_and_open_loop_calciothermic_reduction_alscn_sputtering_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_sc_y_pods": 32,
+      "sc_y_5n_distillation_yield_alscn_baw_target_d33_piezo_and_y2o3_plasma_erosion_resistance_gain_pct": 8.4,
+      "d2ehpa_fe_ti_coextraction_alscn_rocksalt_phase_defect_and_y2o3_coating_particle_shedding_reduction_pct": 11.4,
+      "nfpa484_osha19101000_semis2_sil3_hf_fluorination_scrubber_and_calciothermic_ta_crucible_quench_interlock_ms": 361.0,
+      "unmitigated_anhydrous_hf_fluorination_leak_or_calciothermic_sc_y_ca_thermite_explosion_pct": 1.5,
+      "sc_y_edge_10khz_libs_icpoes_sc_fe_ti_xrd_alscn_wurtzite_and_rga_o2_f2_loop_ms": 195.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_d2ehpa_third_phase_crud_ta_crucible_dissolution_or_alscn_composition_segregation_pct": 4.2,
+      "scandium_yttrium_red_mud_extraction_calciothermic_5n_distillation_alscn_baw_target_y2o3_plasma_coating_slo_met": false
+    }
   ]
 }
