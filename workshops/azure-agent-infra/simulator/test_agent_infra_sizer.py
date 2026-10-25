@@ -189,6 +189,7 @@ from agent_infra_sizer import (
     simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
     simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
     simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox,
+    simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3846,6 +3847,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct"], 3.0)
         self.assertTrue(gov["molybdenite_herreshoff_roaster_femo_slo_met"])
         self.assertFalse(raw["molybdenite_herreshoff_roaster_femo_slo_met"])
+
+    def test_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge"
+        )
+        raw = simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_oxygen_lance_height_coolant_batching_and_offline_v2o5_titration"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_vanadium_pods"], 8)
+        self.assertEqual(gov["vanadium_extraction_yield_and_soluble_v2o5_roast_recovery_gain_pct"], 47.1)
+        self.assertEqual(gov["converter_carbon_temp_inversion_and_kiln_sodium_vanadate_ringing_reduction_pct"], 72.0)
+        self.assertEqual(gov["nfpa86_iso13577_sil3_converter_slop_kiln_ringing_and_fev80_thermite_interlock_ms"], 0.31)
+        self.assertEqual(gov["unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct"], 1.0)
+        self.assertEqual(gov["vanadium_edge_10khz_lance_acoustics_tdlas_co_nh3_and_slag_libs_v_ti_fe_telemetry_loop_ms"], 0.22)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct"], 3.0)
+        self.assertTrue(gov["vanadium_slag_converter_roasting_fev80_slo_met"])
+        self.assertFalse(raw["vanadium_slag_converter_roasting_fev80_slo_met"])
 
 
 if __name__ == "__main__":

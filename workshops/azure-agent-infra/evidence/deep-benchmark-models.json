@@ -10842,5 +10842,52 @@
       "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": 4.1,
       "molybdenite_herreshoff_roaster_femo_slo_met": false
     }
+  ],
+  "vanadium_slag_converter_roasting_fev80_profiles": [
+    {
+      "vanadium_extraction_trains": 8,
+      "vanadium_governance_mode": "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_vanadium_pods": 8,
+      "vanadium_extraction_yield_and_soluble_v2o5_roast_recovery_gain_pct": 47.1,
+      "converter_carbon_temp_inversion_and_kiln_sodium_vanadate_ringing_reduction_pct": 72.0,
+      "nfpa86_iso13577_sil3_converter_slop_kiln_ringing_and_fev80_thermite_interlock_ms": 0.31,
+      "unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct": 0.0,
+      "vanadium_edge_10khz_lance_acoustics_tdlas_co_nh3_and_slag_libs_v_ti_fe_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct": 0.0,
+      "vanadium_slag_converter_roasting_fev80_slo_met": true
+    },
+    {
+      "vanadium_extraction_trains": 32,
+      "vanadium_governance_mode": "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_vanadium_pods": 16,
+      "vanadium_extraction_yield_and_soluble_v2o5_roast_recovery_gain_pct": 47.1,
+      "converter_carbon_temp_inversion_and_kiln_sodium_vanadate_ringing_reduction_pct": 72.0,
+      "nfpa86_iso13577_sil3_converter_slop_kiln_ringing_and_fev80_thermite_interlock_ms": 0.31,
+      "unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct": 0.0,
+      "vanadium_edge_10khz_lance_acoustics_tdlas_co_nh3_and_slag_libs_v_ti_fe_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct": 0.0,
+      "vanadium_slag_converter_roasting_fev80_slo_met": true
+    },
+    {
+      "vanadium_extraction_trains": 8,
+      "vanadium_governance_mode": "raw_cloud_fixed_oxygen_lance_height_coolant_batching_and_offline_v2o5_titration",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_vanadium_pods": 8,
+      "vanadium_extraction_yield_and_soluble_v2o5_roast_recovery_gain_pct": 7.3,
+      "converter_carbon_temp_inversion_and_kiln_sodium_vanadate_ringing_reduction_pct": 9.9,
+      "nfpa86_iso13577_sil3_converter_slop_kiln_ringing_and_fev80_thermite_interlock_ms": 364.0,
+      "unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct": 1.5,
+      "vanadium_edge_10khz_lance_acoustics_tdlas_co_nh3_and_slag_libs_v_ti_fe_telemetry_loop_ms": 197.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct": 4.0,
+      "vanadium_slag_converter_roasting_fev80_slo_met": false
+    }
   ]
 }

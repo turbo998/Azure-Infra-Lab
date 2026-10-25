@@ -9348,6 +9348,58 @@ def simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa8
     }
 
 
+def simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(
+    vanadium_extraction_trains: int = 8,
+    vanadium_governance_mode: str = "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Vanadium-Titanomagnetite Duplex Converter Selective Vanadium Extraction
+    (1,340-1,390 °C Hot-Metal Oxidation V -> FeO·V2O3 Spinel Vanadium Slag below the Carbon-Vanadium
+    Inversion Temperature T_inv ~ 1,395 °C), Rotary-Kiln Sodium/Calcium Salt Oxidative Roasting
+    (800-860 °C V2O3 -> NaVO3 / Ca(VO3)2), Ammonium Polyvanadate (APV) Precipitation & Deammoniation
+    Fusion Flaking to 99.5% V2O5 & Aluminothermic Ferrovanadium (FeV80, 78-82% V) Tilting-Furnace
+    Smelting PINN-MPC, Online 10 kHz Oxygen-Lance Acoustic/Sub-Lance, Off-Gas TDLAS (CO/CO2/NH3/Cl2)
+    & Vanadium-Slag LIBS (V/Ti/Fe/Si/Na) Metrology & NFPA 86 / ISO 13577 / OSHA 1910.119 / IEC 61511
+    SIL-3 Converter Ti(C,N) Foaming Slop / Carbon-Temperature Inversion Runaway, Rotary-Kiln Low-Melting
+    Sodium-Vanadate Eutectic Ringing & FeV80 Thermite Eruption Interlock Sandbox (Chapter 188 · Cycle #183).
+    """
+    if vanadium_extraction_trains < 1:
+        raise ValueError("vanadium_extraction_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge",
+        "raw_cloud_fixed_oxygen_lance_height_coolant_batching_and_offline_v2o5_titration",
+    }
+    if vanadium_governance_mode not in valid_modes:
+        raise ValueError(f"vanadium_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = vanadium_governance_mode == "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge"
+    active_vanadium_pods = max(2, min(16, int(vanadium_extraction_trains))) if vanadium_extraction_trains <= 16 else max(16, int(vanadium_extraction_trains // 2))
+    gpu_nodes = max(2, math.ceil(vanadium_extraction_trains / 4))
+
+    vanadium_extraction_yield_and_soluble_v2o5_roast_recovery_gain_pct = 47.1 if governed else 7.3
+    converter_carbon_temp_inversion_and_kiln_sodium_vanadate_ringing_reduction_pct = 72.0 if governed else 9.9
+    nfpa86_iso13577_sil3_converter_slop_kiln_ringing_and_fev80_thermite_interlock_ms = 0.31 if governed else 364.0
+    unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct = 0.0 if governed else 1.5
+    vanadium_edge_10khz_lance_acoustics_tdlas_co_nh3_and_slag_libs_v_ti_fe_telemetry_loop_ms = 0.22 if governed else 197.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct = 0.0 if governed else 4.0
+
+    return {
+        "vanadium_extraction_trains": vanadium_extraction_trains,
+        "vanadium_governance_mode": vanadium_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_vanadium_pods": active_vanadium_pods,
+        "vanadium_extraction_yield_and_soluble_v2o5_roast_recovery_gain_pct": vanadium_extraction_yield_and_soluble_v2o5_roast_recovery_gain_pct,
+        "converter_carbon_temp_inversion_and_kiln_sodium_vanadate_ringing_reduction_pct": converter_carbon_temp_inversion_and_kiln_sodium_vanadate_ringing_reduction_pct,
+        "nfpa86_iso13577_sil3_converter_slop_kiln_ringing_and_fev80_thermite_interlock_ms": nfpa86_iso13577_sil3_converter_slop_kiln_ringing_and_fev80_thermite_interlock_ms,
+        "unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct": unmitigated_converter_ticn_foaming_slop_kiln_clinker_jam_or_fev80_blowout_pct,
+        "vanadium_edge_10khz_lance_acoustics_tdlas_co_nh3_and_slag_libs_v_ti_fe_telemetry_loop_ms": vanadium_edge_10khz_lance_acoustics_tdlas_co_nh3_and_slag_libs_v_ti_fe_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct": uncompensated_hot_metal_silicon_titanium_shift_or_residual_vanadium_slip_pct,
+        "vanadium_slag_converter_roasting_fev80_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",

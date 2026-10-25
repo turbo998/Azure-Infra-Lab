@@ -202,6 +202,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
     simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
     simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox,
+    simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1343,6 +1344,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "molybdenite_8_trains": simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(8, "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge"),
             "molybdenite_32_trains": simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(32, "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge"),
             "raw_molybdenite_8_trains": simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_hearth_air_damper_and_offline_calcine_leco_sulfur_titration"),
+        },
+        "demo_183_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox": {
+            "vanadium_8_trains": simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(8, "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge"),
+            "vanadium_32_trains": simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(32, "pinn_mpc_duplex_converter_selective_vanadium_slag_rotary_kiln_roast_v2o5_fev80_nfpa86_sil3_edge"),
+            "raw_vanadium_8_trains": simulate_vanadium_slag_converter_roasting_v2o5_fev80_smelting_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_oxygen_lance_height_coolant_batching_and_offline_v2o5_titration"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
