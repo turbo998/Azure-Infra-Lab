@@ -10997,6 +10997,53 @@
         "uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct": 4.2,
         "rkef_laterite_ferronickel_saf_slo_met": false
       }
+    ],
+    "molybdenite_herreshoff_roaster_femo_profiles": [
+      {
+        "molybdenite_roaster_trains": 8,
+        "molybdenite_governance_mode": "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_molybdenite_pods": 8,
+        "molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct": 46.8,
+        "hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct": 71.7,
+        "nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms": 0.32,
+        "unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct": 0.0,
+        "molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms": 0.22,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": 0.0,
+        "molybdenite_herreshoff_roaster_femo_slo_met": true
+      },
+      {
+        "molybdenite_roaster_trains": 32,
+        "molybdenite_governance_mode": "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge",
+        "gpu_nodes": 8,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_molybdenite_pods": 16,
+        "molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct": 46.8,
+        "hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct": 71.7,
+        "nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms": 0.32,
+        "unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct": 0.0,
+        "molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms": 0.22,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": 0.0,
+        "molybdenite_herreshoff_roaster_femo_slo_met": true
+      },
+      {
+        "molybdenite_roaster_trains": 8,
+        "molybdenite_governance_mode": "raw_cloud_fixed_hearth_air_damper_and_offline_calcine_leco_sulfur_titration",
+        "gpu_nodes": 2,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_molybdenite_pods": 8,
+        "molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct": 7.1,
+        "hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct": 9.8,
+        "nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms": 368.0,
+        "unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct": 1.5,
+        "molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms": 199.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": 4.1,
+        "molybdenite_herreshoff_roaster_femo_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -20368,5 +20415,52 @@
       "rkef_laterite_ferronickel_saf_slo_met": false
     }
   },
-  "trace_sha256": "b365a507522a2c43fb0e72cf330cf93efec32130ecbf4a9dfd7d6b7bb8da2daa"
+  "demo_182_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox": {
+    "molybdenite_8_trains": {
+      "molybdenite_roaster_trains": 8,
+      "molybdenite_governance_mode": "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_molybdenite_pods": 8,
+      "molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct": 46.8,
+      "hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct": 71.7,
+      "nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms": 0.32,
+      "unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct": 0.0,
+      "molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": 0.0,
+      "molybdenite_herreshoff_roaster_femo_slo_met": true
+    },
+    "molybdenite_32_trains": {
+      "molybdenite_roaster_trains": 32,
+      "molybdenite_governance_mode": "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge",
+      "gpu_nodes": 8,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_molybdenite_pods": 16,
+      "molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct": 46.8,
+      "hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct": 71.7,
+      "nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms": 0.32,
+      "unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct": 0.0,
+      "molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms": 0.22,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": 0.0,
+      "molybdenite_herreshoff_roaster_femo_slo_met": true
+    },
+    "raw_molybdenite_8_trains": {
+      "molybdenite_roaster_trains": 8,
+      "molybdenite_governance_mode": "raw_cloud_fixed_hearth_air_damper_and_offline_calcine_leco_sulfur_titration",
+      "gpu_nodes": 2,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_molybdenite_pods": 8,
+      "molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct": 7.1,
+      "hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct": 9.8,
+      "nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms": 368.0,
+      "unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct": 1.5,
+      "molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms": 199.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": 4.1,
+      "molybdenite_herreshoff_roaster_femo_slo_met": false
+    }
+  },
+  "trace_sha256": "2b54eacc510079ee7041689d882df574165a5fb803db8a2239fbfad3477a086d"
 }

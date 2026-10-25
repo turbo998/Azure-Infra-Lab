@@ -188,6 +188,7 @@ from agent_infra_sizer import (
     simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
     simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
     simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
+    simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -3824,6 +3825,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_saprolite_mgo_sio2_shift_or_kiln_ringing_prereduction_slip_pct"], 3.0)
         self.assertTrue(gov["rkef_laterite_ferronickel_saf_slo_met"])
         self.assertFalse(raw["rkef_laterite_ferronickel_saf_slo_met"])
+
+    def test_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(self) -> None:
+        gov = simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(
+            8, "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge"
+        )
+        raw = simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(
+            8, "raw_cloud_fixed_hearth_air_damper_and_offline_calcine_leco_sulfur_titration"
+        )
+        self.assertEqual(gov["gpu_nodes"], 2)
+        self.assertEqual(gov["active_molybdenite_pods"], 8)
+        self.assertEqual(gov["molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct"], 46.8)
+        self.assertEqual(gov["hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct"], 71.7)
+        self.assertEqual(gov["nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms"], 0.32)
+        self.assertEqual(gov["unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct"], 1.0)
+        self.assertEqual(gov["molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms"], 0.22)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct"], 3.0)
+        self.assertTrue(gov["molybdenite_herreshoff_roaster_femo_slo_met"])
+        self.assertFalse(raw["molybdenite_herreshoff_roaster_femo_slo_met"])
 
 
 if __name__ == "__main__":

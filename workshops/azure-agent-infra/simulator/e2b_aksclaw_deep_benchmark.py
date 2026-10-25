@@ -194,6 +194,7 @@ from agent_infra_sizer import (
     simulate_silicomanganese_ferromanganese_saf_aod_prereduction_nfpa86_sil3_sandbox,
     simulate_metallurgical_silicon_ferrosilicon_saf_sio_cavity_stoking_nfpa86_sil3_sandbox,
     simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox,
+    simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1517,6 +1518,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_kiln_coal_ratio_and_manual_slide_gate_calcine_charging"),
     ]
 
+    molybdenite_herreshoff_roaster_femo_profiles: List[Dict[str, object]] = [
+        simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(8, "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge"),
+        simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(32, "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge"),
+        simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(8, "raw_cloud_fixed_hearth_air_damper_and_offline_calcine_leco_sulfur_titration"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1698,6 +1705,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "silicomanganese_ferromanganese_saf_profiles": silicomanganese_ferromanganese_saf_profiles,
         "metallurgical_silicon_ferrosilicon_saf_profiles": metallurgical_silicon_ferrosilicon_saf_profiles,
         "rkef_laterite_ferronickel_saf_profiles": rkef_laterite_ferronickel_saf_profiles,
+        "molybdenite_herreshoff_roaster_femo_profiles": molybdenite_herreshoff_roaster_femo_profiles,
     }
 
 

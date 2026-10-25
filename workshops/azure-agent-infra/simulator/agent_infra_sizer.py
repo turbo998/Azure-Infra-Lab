@@ -9295,6 +9295,59 @@ def simulate_rkef_laterite_ferronickel_shielded_arc_calcine_smelting_nfpa86_sil3
     }
 
 
+def simulate_molybdenite_herreshoff_roaster_rhenium_recovery_femo_thermite_nfpa86_sil3_sandbox(
+    molybdenite_roaster_trains: int = 8,
+    molybdenite_governance_mode: str = "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Molybdenite (MoS2) Multiple-Hearth Herreshoff Roasting (12-16 Hearths,
+    550-650 °C Exothermic Oxidation 2MoS2 + 7O2 -> 2MoO3 + 4SO2), Byproduct Rhenium (Re2O7 ->
+    HReO4 -> NH4ReO4) Venturi Wet Scrubbing & Weak-Base Ion-Exchange Recovery, Two-Stage Hydrogen
+    Reduction (MoO3 -> MoO2 @ 550 °C -> Mo Powder @ 1,050 °C) & Aluminothermic/Silicothermic
+    Ferromolybdenum (FeMo 60-70% Mo) Smelting — Hearth-by-Hearth Exothermic Bed Temperature &
+    Rabble-Arm Cooling-Air PINN-MPC (Preventing >680 °C MoO3 Sublimation & Low-Melting CuMoO4/
+    FeMoO4 Eutectic Hearth Clinkering), Online 10 kHz Rabble-Shaft Torque/Acoustic, Off-Gas TDLAS
+    (SO2/O2/H2O/H2) & Calcine LIBS (Mo/S/Re/Cu/Fe) Metrology & NFPA 86 / NFPA 652 / OSHA 1910.119 /
+    IEC 61511 SIL-3 Hearth Runaway Clinkering / Rabble-Arm Shear, H2 Reduction Retort Air-Ingress
+    Explosion & FeMo Thermite Crucible Blowout Interlock Sandbox (Chapter 187 · Cycle #182).
+    """
+    if molybdenite_roaster_trains < 1:
+        raise ValueError("molybdenite_roaster_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge",
+        "raw_cloud_fixed_hearth_air_damper_and_offline_calcine_leco_sulfur_titration",
+    }
+    if molybdenite_governance_mode not in valid_modes:
+        raise ValueError(f"molybdenite_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = molybdenite_governance_mode == "pinn_mpc_herreshoff_hearth_roasting_rhenium_scrub_h2_reduction_femo_thermite_nfpa86_sil3_edge"
+    active_molybdenite_pods = max(2, min(16, int(molybdenite_roaster_trains))) if molybdenite_roaster_trains <= 16 else max(16, int(molybdenite_roaster_trains // 2))
+    gpu_nodes = max(2, math.ceil(molybdenite_roaster_trains / 4))
+
+    molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct = 46.8 if governed else 7.1
+    hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct = 71.7 if governed else 9.8
+    nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms = 0.32 if governed else 368.0
+    unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct = 0.0 if governed else 1.5
+    molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms = 0.22 if governed else 199.0
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct = 0.0 if governed else 4.1
+
+    return {
+        "molybdenite_roaster_trains": molybdenite_roaster_trains,
+        "molybdenite_governance_mode": molybdenite_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_molybdenite_pods": active_molybdenite_pods,
+        "molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct": molybdenum_rhenium_recovery_and_soluble_moo3_yield_gain_pct,
+        "hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct": hearth_moo3_sublimation_clinkering_and_residual_sulfur_offspec_reduction_pct,
+        "nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms": nfpa86_nfpa652_sil3_hearth_clinkering_h2_retort_and_femo_thermite_blowout_interlock_ms,
+        "unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct": unmitigated_rabble_arm_shear_h2_retort_deflagration_or_thermite_blowout_pct,
+        "molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms": molybdenite_edge_10khz_rabble_torque_tdlas_so2_o2_and_calcine_libs_mo_re_s_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct": uncompensated_concentrate_sulfur_chalcopyrite_shift_or_rhenium_volatilization_slip_pct,
+        "molybdenite_herreshoff_roaster_femo_slo_met": governed,
+    }
+
+
 SCENARIOS_12: list[dict[str, Any]] = [
     {
         "id": "S01",
