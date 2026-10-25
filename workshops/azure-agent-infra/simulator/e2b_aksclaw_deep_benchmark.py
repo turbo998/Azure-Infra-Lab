@@ -211,6 +211,7 @@ from agent_infra_sizer import (
     simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
     simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
     simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
+    simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1636,6 +1637,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox(8, "raw_cloud_fixed_gecl4_reflux_ratio_and_open_loop_zone_refining_cz_ge_pulling_schedule"),
     ]
 
+    zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_profiles: List[Dict[str, object]] = [
+        simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(8, "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge"),
+        simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(32, "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge"),
+        simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(8, "raw_cloud_fixed_mibk_hscn_extraction_stage_ratio_and_open_loop_kroll_mg_reduction_schedule"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1834,6 +1841,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_profiles": neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_profiles,
         "tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_profiles": tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_profiles,
         "germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_profiles": germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_profiles,
+        "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_profiles": zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_profiles,
     }
 
 

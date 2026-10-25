@@ -205,6 +205,7 @@ from agent_infra_sizer import (
     simulate_neon_krypton_xenon_cryogenic_asu_6n_rare_gas_arf_krf_excimer_lithography_eiga147_sil3_sandbox,
     simulate_tungsten_scheelite_wolframite_apt_hydrogen_reduction_wc_co_sinter_hip_nfpa86_sil3_sandbox,
     simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_semis2_sil3_sandbox,
+    simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -404,6 +405,7 @@ class TestAgentInfraSizer(unittest.TestCase):
             "aksclaw-neon-krypton-xenon-cryogenic-asu-6n-rare-gas-arf-krf-excimer-lithography-eiga147-sil3-pool.bicep",
             "aksclaw-tungsten-scheelite-wolframite-apt-hydrogen-reduction-wc-co-sinter-hip-nfpa86-sil3-pool.bicep",
             "aksclaw-germanium-gecl4-rectification-13n-zone-refining-cz-crystal-geh4-sige-epitaxy-semis2-sil3-pool.bicep",
+            "aksclaw-zirconium-hafnium-carbochlorination-extractive-distillation-kroll-sponge-hfo2-ald-nfpa484-sil3-pool.bicep",
         ):
             bp_path = bundle_dir / "blueprints" / bp_name
             self.assertTrue(bp_path.exists(), f"Missing blueprint {bp_name}")
@@ -4201,6 +4203,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct"], 3.0)
         self.assertTrue(gov["germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met"])
         self.assertFalse(raw["germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met"])
+
+    def test_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(self) -> None:
+        gov = simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(
+            8, "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge"
+        )
+        raw = simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(
+            8, "raw_cloud_fixed_mibk_hscn_extraction_stage_ratio_and_open_loop_kroll_mg_reduction_schedule"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_zr_hf_nuclear_ald_pods"], 32)
+        self.assertEqual(gov["nuclear_zr_50ppm_hf_separation_kroll_sponge_yield_and_6n_hfcl4_high_k_ald_gain_pct"], 50.5)
+        self.assertEqual(gov["hf_neutron_poison_carryover_kroll_fe_cr_ni_retort_contamination_and_hzo_oxygen_vacancy_reduction_pct"], 75.2)
+        self.assertEqual(gov["astmb350_nfpa484_osha1910119_sil3_pyrophoric_zr_hf_argon_blanket_cocl2_hcn_scrubber_and_kroll_retort_interlock_ms"], 0.24)
+        self.assertEqual(gov["unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct"], 1.0)
+        self.assertEqual(gov["zr_hf_edge_10khz_insitu_raman_zrcl4_hfcl4_hscn_icpms_and_pgnaa_neutron_cross_section_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct"], 3.0)
+        self.assertTrue(gov["zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met"])
+        self.assertFalse(raw["zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met"])
 
 
 if __name__ == "__main__":

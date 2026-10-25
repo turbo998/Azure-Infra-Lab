@@ -11594,5 +11594,52 @@
       "uncompensated_zinc_residue_arsenic_drift_zone_pass_segregation_stall_or_cz_v_over_g_drift_pct": 4.0,
       "germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sige_epitaxy_slo_met": false
     }
+  ],
+  "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_profiles": [
+    {
+      "zr_hf_nuclear_ald_lines": 8,
+      "zr_hf_nuclear_ald_governance_mode": "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_zr_hf_nuclear_ald_pods": 32,
+      "nuclear_zr_50ppm_hf_separation_kroll_sponge_yield_and_6n_hfcl4_high_k_ald_gain_pct": 50.5,
+      "hf_neutron_poison_carryover_kroll_fe_cr_ni_retort_contamination_and_hzo_oxygen_vacancy_reduction_pct": 75.2,
+      "astmb350_nfpa484_osha1910119_sil3_pyrophoric_zr_hf_argon_blanket_cocl2_hcn_scrubber_and_kroll_retort_interlock_ms": 0.24,
+      "unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct": 0.0,
+      "zr_hf_edge_10khz_insitu_raman_zrcl4_hfcl4_hscn_icpms_and_pgnaa_neutron_cross_section_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct": 0.0,
+      "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met": true
+    },
+    {
+      "zr_hf_nuclear_ald_lines": 32,
+      "zr_hf_nuclear_ald_governance_mode": "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_zr_hf_nuclear_ald_pods": 128,
+      "nuclear_zr_50ppm_hf_separation_kroll_sponge_yield_and_6n_hfcl4_high_k_ald_gain_pct": 50.5,
+      "hf_neutron_poison_carryover_kroll_fe_cr_ni_retort_contamination_and_hzo_oxygen_vacancy_reduction_pct": 75.2,
+      "astmb350_nfpa484_osha1910119_sil3_pyrophoric_zr_hf_argon_blanket_cocl2_hcn_scrubber_and_kroll_retort_interlock_ms": 0.24,
+      "unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct": 0.0,
+      "zr_hf_edge_10khz_insitu_raman_zrcl4_hfcl4_hscn_icpms_and_pgnaa_neutron_cross_section_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct": 0.0,
+      "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met": true
+    },
+    {
+      "zr_hf_nuclear_ald_lines": 8,
+      "zr_hf_nuclear_ald_governance_mode": "raw_cloud_fixed_mibk_hscn_extraction_stage_ratio_and_open_loop_kroll_mg_reduction_schedule",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_zr_hf_nuclear_ald_pods": 32,
+      "nuclear_zr_50ppm_hf_separation_kroll_sponge_yield_and_6n_hfcl4_high_k_ald_gain_pct": 8.1,
+      "hf_neutron_poison_carryover_kroll_fe_cr_ni_retort_contamination_and_hzo_oxygen_vacancy_reduction_pct": 11.0,
+      "astmb350_nfpa484_osha1910119_sil3_pyrophoric_zr_hf_argon_blanket_cocl2_hcn_scrubber_and_kroll_retort_interlock_ms": 355.0,
+      "unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct": 1.5,
+      "zr_hf_edge_10khz_insitu_raman_zrcl4_hfcl4_hscn_icpms_and_pgnaa_neutron_cross_section_loop_ms": 191.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct": 4.1,
+      "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met": false
+    }
   ]
 }

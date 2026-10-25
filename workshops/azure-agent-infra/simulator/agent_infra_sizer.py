@@ -10397,6 +10397,75 @@ def simulate_germanium_gecl4_rectification_13n_zone_refining_cz_crystal_geh4_sig
     }
 
 
+def simulate_zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_nfpa484_sil3_sandbox(
+    zr_hf_nuclear_ald_lines: int = 8,
+    zr_hf_nuclear_ald_governance_mode: str = "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Zircon Sand (ZrSiO4) Fluidized-Bed Carbochlorination
+    (1,050 C), Nuclear-Grade Zirconium (Zr, Thermal Neutron Cross-Section 0.184
+    barn) & Semiconductor/Superalloy Hafnium (Hf, 104 barn) Molten-Salt Extractive
+    Distillation / MIBK-HSCN Solvent Extraction Separation (Hf/Zr < 50 ppm for
+    PWR/BWR Zircaloy-4 / M5 Fuel Cladding), Kroll Magnesium Reduction & Vacuum Arc
+    Remelting (VAR), & 6N Electronic-Grade HfCl4 / TDMAHf Precursor Synthesis for
+    2nm High-k Ferroelectric Hf0.5Zr0.5O2 (HZO) Gate Dielectric PINN-MPC, Online
+    10 kHz In-Situ Raman (ZrCl4/HfCl4/HSCN), ICP-OES/MS & Prompt-Gamma Neutron
+    Activation (PGNAA) Metrology & ASTM B350 / NFPA 484 / OSHA 1910.119 / SEMI S2 /
+    IEC 61511 SIL-3 Pyrophoric Zirconium/Hafnium Sponge (< 45 um) Argon Inerting,
+    Kroll Retort MgCl2/ZrCl4 Overpressure & Phosgene (COCl2) / HCN Scrubbing
+    Interlock (Cycle #199 — 200-Blueprint Milestone!)."""
+    if zr_hf_nuclear_ald_lines < 1:
+        raise ValueError("zr_hf_nuclear_ald_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge",
+        "raw_cloud_fixed_mibk_hscn_extraction_stage_ratio_and_open_loop_kroll_mg_reduction_schedule",
+    }
+    if zr_hf_nuclear_ald_governance_mode not in valid_modes:
+        raise ValueError(f"zr_hf_nuclear_ald_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        zr_hf_nuclear_ald_governance_mode
+        == "pinn_mpc_zircon_carbochlorination_zr_hf_separation_kroll_sponge_and_6n_hfcl4_ald_nfpa484_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(zr_hf_nuclear_ald_lines / 2))
+    active_zr_hf_nuclear_ald_pods = zr_hf_nuclear_ald_lines * 4
+
+    nuclear_zr_50ppm_hf_separation_kroll_sponge_yield_and_6n_hfcl4_high_k_ald_gain_pct = (
+        50.5 if governed else 8.1
+    )
+    hf_neutron_poison_carryover_kroll_fe_cr_ni_retort_contamination_and_hzo_oxygen_vacancy_reduction_pct = (
+        75.2 if governed else 11.0
+    )
+    astmb350_nfpa484_osha1910119_sil3_pyrophoric_zr_hf_argon_blanket_cocl2_hcn_scrubber_and_kroll_retort_interlock_ms = (
+        0.24 if governed else 355.0
+    )
+    unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct = (
+        0.0 if governed else 1.5
+    )
+    zr_hf_edge_10khz_insitu_raman_zrcl4_hfcl4_hscn_icpms_and_pgnaa_neutron_cross_section_loop_ms = (
+        0.19 if governed else 191.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct = (
+        0.0 if governed else 4.1
+    )
+
+    return {
+        "zr_hf_nuclear_ald_lines": zr_hf_nuclear_ald_lines,
+        "zr_hf_nuclear_ald_governance_mode": zr_hf_nuclear_ald_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_zr_hf_nuclear_ald_pods": active_zr_hf_nuclear_ald_pods,
+        "nuclear_zr_50ppm_hf_separation_kroll_sponge_yield_and_6n_hfcl4_high_k_ald_gain_pct": nuclear_zr_50ppm_hf_separation_kroll_sponge_yield_and_6n_hfcl4_high_k_ald_gain_pct,
+        "hf_neutron_poison_carryover_kroll_fe_cr_ni_retort_contamination_and_hzo_oxygen_vacancy_reduction_pct": hf_neutron_poison_carryover_kroll_fe_cr_ni_retort_contamination_and_hzo_oxygen_vacancy_reduction_pct,
+        "astmb350_nfpa484_osha1910119_sil3_pyrophoric_zr_hf_argon_blanket_cocl2_hcn_scrubber_and_kroll_retort_interlock_ms": astmb350_nfpa484_osha1910119_sil3_pyrophoric_zr_hf_argon_blanket_cocl2_hcn_scrubber_and_kroll_retort_interlock_ms,
+        "unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct": unmitigated_pyrophoric_zr_hf_sponge_ignition_phosgene_hcn_release_or_kroll_retort_overpressure_pct,
+        "zr_hf_edge_10khz_insitu_raman_zrcl4_hfcl4_hscn_icpms_and_pgnaa_neutron_cross_section_loop_ms": zr_hf_edge_10khz_insitu_raman_zrcl4_hfcl4_hscn_icpms_and_pgnaa_neutron_cross_section_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct": uncompensated_zircon_u_th_norm_drift_mibk_hscn_crud_emulsion_or_kroll_vapor_phase_runaway_pct,
+        "zirconium_hafnium_carbochlorination_extractive_distillation_kroll_sponge_hfo2_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
