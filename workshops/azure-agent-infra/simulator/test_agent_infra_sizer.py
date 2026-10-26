@@ -234,6 +234,7 @@ from agent_infra_sizer import (
     simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
     simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
     simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox,
+    simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4845,6 +4846,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_fe54_58_target_loss_or_normoxic_cu_atsm_washout_failure_pct"], 3.0)
         self.assertTrue(gov["cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_slo_met"])
         self.assertFalse(raw["cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_slo_met"])
+
+    def test_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(self) -> None:
+        gov = simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(
+            8, "pinn_mpc_ac227_ra223_dipex_lapo4_recoil_and_sn119_sb119_trithiocatechol_sil3_edge"
+        )
+        raw = simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(
+            8, "raw_cloud_uncompensated_rn219_recoil_escape_ac227_breakthrough_and_sb120m_sn4_contamination"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_ra223_sb119_pods"], 32)
+        self.assertEqual(gov["ra223_recoil_retention_and_sb119_auger_radiochemical_yield_gain_pct"], 57.3)
+        self.assertEqual(gov["ac227_th227_breakthrough_sb120m_impurity_and_cold_sn4_reduction_pct"], 81.5)
+        self.assertEqual(gov["usp823_iso17873_sil3_actinon_rn219_trap_and_ac227_sb120m_quarantine_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_rn219_leak_ac227_sb120m_overdose_or_sn_target_melt_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rn219_leak_ac227_sb120m_overdose_or_sn_target_melt_pct"], 1.0)
+        self.assertEqual(gov["edge_ulege_hpge_dls_and_icp_ms_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_daughter_recoil_escape_or_sb3_hydrolysis_loss_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_daughter_recoil_escape_or_sb3_hydrolysis_loss_pct"], 3.0)
+        self.assertTrue(gov["radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_slo_met"])
+        self.assertFalse(raw["radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_slo_met"])
 
 
 if __name__ == "__main__":

@@ -12288,6 +12288,65 @@ def simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_si
     }
 
 
+def simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(
+    ra223_sb119_trains: int = 8,
+    governance_mode: str = "pinn_mpc_ac227_ra223_dipex_lapo4_recoil_and_sn119_sb119_trithiocatechol_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Bone-Metastasis Alpha & High-Yield Nanometer Auger-Electron Theranostics:
+    Radium-223 Dichloride & Core-Shell Recoil-Retaining Alpha Nanomedicine (223Ra T1/2=11.43d 4-Alpha Cascade
+    223Ra->219Rn->215Po->211Pb->211Bi->207Tl->207Pb Delivering 28.2 MeV 95.3% Alpha Energy & LaPO4/BaSO4
+    Core-Shell Nanoparticle Daughter-Recoil Confinement via 227Ac/227Th/223Ra Dipex/DGA/P507 Extraction
+    Chromatography with <10^-7 227Ac/227Th Breakthrough) & No-Carrier-Added Antimony-119 (n.c.a. 119Sb
+    T1/2=38.19h 100% EC Emitting ~24 Ultra-Short-Range 0.05-25 keV Auger & Coster-Kronig Electrons per Decay
+    with Zero High-Energy Gamma Only 23.87 keV X/Gamma via 13.0-14.8 MeV Proton Irradiation of Electroplated
+    Enriched Tin-119 119Sn >=98.5% Target 119Sn(p,n)119Sb & TK100/AG1-X8 Sb(V)/Sn(IV) Partitioning +
+    Trithiocatechol Sb(III) Complexation) PINN-MPC, Online 10 kHz ULEGe/HPGe Low-Energy X-Ray/Gamma, DLS
+    Nanoparticle & ICP-MS Metrology & USP <823> / 10 CFR 35.1000 / EU GMP Annex 3 / ISO 17873 / IEC 61511 SIL-3
+    Gaseous Radon-219 (Actinon T1/2=3.96s) Decay-Trap Lockout, 227Ac/227Th Breakthrough Quarantine & 120mSb /
+    Tin-Target Melt Crowbar Interlock (Cycle #228).
+    """
+    trains = max(2, min(int(ra223_sb119_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_ac227_ra223_dipex_lapo4_recoil_and_sn119_sb119_trithiocatechol_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_ra223_sb119_pods = trains * 4
+
+    if governed:
+        ra223_recoil_retention_and_sb119_auger_radiochemical_yield_gain_pct = 57.3
+        ac227_th227_breakthrough_sb120m_impurity_and_cold_sn4_reduction_pct = 81.5
+        usp823_iso17873_sil3_actinon_rn219_trap_and_ac227_sb120m_quarantine_latency_ms = 0.15
+        unmitigated_rn219_leak_ac227_sb120m_overdose_or_sn_target_melt_pct = 0.0
+        edge_ulege_hpge_dls_and_icp_ms_closed_loop_latency_ms = 0.14
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_daughter_recoil_escape_or_sb3_hydrolysis_loss_pct = 0.0
+    else:
+        ra223_recoil_retention_and_sb119_auger_radiochemical_yield_gain_pct = 10.7
+        ac227_th227_breakthrough_sb120m_impurity_and_cold_sn4_reduction_pct = 14.4
+        usp823_iso17873_sil3_actinon_rn219_trap_and_ac227_sb120m_quarantine_latency_ms = 398.0
+        unmitigated_rn219_leak_ac227_sb120m_overdose_or_sn_target_melt_pct = 1.5
+        edge_ulege_hpge_dls_and_icp_ms_closed_loop_latency_ms = 220.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_daughter_recoil_escape_or_sb3_hydrolysis_loss_pct = 4.9
+
+    return {
+        "ra223_sb119_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_ra223_sb119_pods": active_ra223_sb119_pods,
+        "ra223_recoil_retention_and_sb119_auger_radiochemical_yield_gain_pct": ra223_recoil_retention_and_sb119_auger_radiochemical_yield_gain_pct,
+        "ac227_th227_breakthrough_sb120m_impurity_and_cold_sn4_reduction_pct": ac227_th227_breakthrough_sb120m_impurity_and_cold_sn4_reduction_pct,
+        "usp823_iso17873_sil3_actinon_rn219_trap_and_ac227_sb120m_quarantine_latency_ms": usp823_iso17873_sil3_actinon_rn219_trap_and_ac227_sb120m_quarantine_latency_ms,
+        "unmitigated_rn219_leak_ac227_sb120m_overdose_or_sn_target_melt_pct": unmitigated_rn219_leak_ac227_sb120m_overdose_or_sn_target_melt_pct,
+        "edge_ulege_hpge_dls_and_icp_ms_closed_loop_latency_ms": edge_ulege_hpge_dls_and_icp_ms_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_daughter_recoil_escape_or_sb3_hydrolysis_loss_pct": uncompensated_daughter_recoil_escape_or_sb3_hydrolysis_loss_pct,
+        "radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
