@@ -244,6 +244,7 @@ from agent_infra_sizer import (
     simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
     simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
+    simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1867,6 +1868,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_ho166m_impurity_trans_platin_nephrotoxicity_and_tco_deactivation"),
     ]
 
+    rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_profiles = [
+        simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(8, "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge"),
+        simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(32, "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge"),
+        simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_ruo4_vapor_au198_breakthrough_and_aunp_aggregation"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2098,6 +2105,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "lead212_thoron_generator_and_titanium45_bromine77_theranostics_profiles": lead212_thoron_generator_and_titanium45_bromine77_theranostics_profiles,
         "scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_profiles": scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_profiles,
         "platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_profiles": platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_profiles,
+        "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_profiles": rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_profiles,
     }
 
 

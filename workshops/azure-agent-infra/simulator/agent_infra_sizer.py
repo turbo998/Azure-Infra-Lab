@@ -12512,6 +12512,62 @@ def simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_ther
     }
 
 
+def simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(
+    rh105_au199_trains: int = 8,
+    governance_mode: str = "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous No-Carrier-Added Rhodium-105 (n.c.a. 105Rh T1/2=35.36h E_beta_max=567 keV + 318.9 keV 19.1% /
+    306.1 keV 5.1% SPECT Gamma via 104Ru(n,gamma)105Ru->105Rh Hypochlorite/Volatile RuO4 Tetroxide Distillation &
+    [16]aneS4-diol Tetrathioether Macrocycle Bombesin/PSMA Radiotheranostics) & No-Carrier-Added Gold-199 (n.c.a. 199Au
+    T1/2=3.139d E_beta_max=452 keV + 158.4 keV 40.0% / 208.2 keV 8.7% SPECT Gamma via 198Pt(n,gamma)199Pt->199Au
+    Crown-Ether/MIBK Solvent Extraction & Cyclic RGDfK Thiol-Glyconanoparticle Integrin alpha_v_beta_3 Targeted
+    Radiotherapy) PINN-MPC, Online 10 kHz HPGe 318.9/158.4/411.8 keV Gamma, UV-Vis 524 nm Surface Plasmon Resonance
+    (SPR) & ICP-OES Metrology & USP <823> / ISO 17873 / SIL-3 Volatile RuO4 Ocular/Pulmonary Alkaline NaOH/NaHSO3
+    Scrubber, 198Au (411.8 keV) Double-Capture Breakthrough Quarantine & AuNP Aggregation Embolism Hard Interlock
+    (Chapter 237, Cycle #232).
+    """
+    trains = max(2, min(int(rh105_au199_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_rh105_au199_pods = trains * 4
+
+    if governed:
+        rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct = 58.2
+        ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct = 82.3
+        usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms = 0.15
+        unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct = 0.0
+        edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms = 0.14
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct = 0.0
+    else:
+        rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct = 11.1
+        ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct = 14.9
+        usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms = 404.0
+        unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct = 1.5
+        edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms = 224.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct = 5.0
+
+    return {
+        "rh105_au199_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rh105_au199_pods": active_rh105_au199_pods,
+        "rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct": rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct,
+        "ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct": ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct,
+        "usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms": usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms,
+        "unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct": unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct,
+        "edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms": edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct,
+        "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

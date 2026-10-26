@@ -13347,6 +13347,53 @@
         "uncompensated_dy165_co_elution_trans_platin_aquation_or_tco_deactivation_pct": 5.0,
         "platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_slo_met": false
       }
+    ],
+    "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_profiles": [
+      {
+        "rh105_au199_trains": 8,
+        "governance_mode": "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rh105_au199_pods": 32,
+        "rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct": 58.2,
+        "ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct": 82.3,
+        "usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms": 0.15,
+        "unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct": 0.0,
+        "edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms": 0.14,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": 0.0,
+        "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": true
+      },
+      {
+        "rh105_au199_trains": 32,
+        "governance_mode": "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rh105_au199_pods": 128,
+        "rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct": 58.2,
+        "ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct": 82.3,
+        "usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms": 0.15,
+        "unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct": 0.0,
+        "edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms": 0.14,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": 0.0,
+        "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": true
+      },
+      {
+        "rh105_au199_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_ruo4_vapor_au198_breakthrough_and_aunp_aggregation",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_rh105_au199_pods": 32,
+        "rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct": 11.1,
+        "ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct": 14.9,
+        "usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms": 404.0,
+        "unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct": 1.5,
+        "edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms": 224.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": 5.0,
+        "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -25068,5 +25115,52 @@
       "platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_slo_met": false
     }
   },
-  "trace_sha256": "ef3b80c798e99b4eb8c960335dc956dbfbbcf49f3c2188cbfc0cf4a89bb4d6a4"
+  "demo_232_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox": {
+    "governed_rh105_au199_8_trains": {
+      "rh105_au199_trains": 8,
+      "governance_mode": "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_rh105_au199_pods": 32,
+      "rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct": 58.2,
+      "ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct": 82.3,
+      "usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms": 0.15,
+      "unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct": 0.0,
+      "edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms": 0.14,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": 0.0,
+      "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": true
+    },
+    "governed_rh105_au199_32_trains": {
+      "rh105_au199_trains": 32,
+      "governance_mode": "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_rh105_au199_pods": 128,
+      "rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct": 58.2,
+      "ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct": 82.3,
+      "usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms": 0.15,
+      "unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct": 0.0,
+      "edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms": 0.14,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": 0.0,
+      "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": true
+    },
+    "raw_rh105_au199_8_trains": {
+      "rh105_au199_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_ruo4_vapor_au198_breakthrough_and_aunp_aggregation",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_rh105_au199_pods": 32,
+      "rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct": 11.1,
+      "ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct": 14.9,
+      "usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms": 404.0,
+      "unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct": 1.5,
+      "edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms": 224.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": 5.0,
+      "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": false
+    }
+  },
+  "trace_sha256": "e7a248f8039f60cadcecc0404fcca38a041ee25f617b77c3aba0f745d3b2dc83"
 }

@@ -238,6 +238,7 @@ from agent_infra_sizer import (
     simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
     simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
+    simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4933,6 +4934,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_dy165_co_elution_trans_platin_aquation_or_tco_deactivation_pct"], 3.0)
         self.assertTrue(gov["platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_slo_met"])
         self.assertFalse(raw["platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_slo_met"])
+
+    def test_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(self) -> None:
+        gov = simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(
+            8, "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge"
+        )
+        raw = simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(
+            8, "raw_cloud_uncompensated_ruo4_vapor_au198_breakthrough_and_aunp_aggregation"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_rh105_au199_pods"], 32)
+        self.assertEqual(gov["rh105_tetrathioether_and_au199_rgdfk_glyconanoparticle_radiochemical_yield_gain_pct"], 58.2)
+        self.assertEqual(gov["ruo4_vapor_escape_au198_breakthrough_and_aunp_aggregation_reduction_pct"], 82.3)
+        self.assertEqual(gov["usp823_iso17873_sil3_ruo4_scrubber_au198_quarantine_and_aunp_embolism_lockout_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ruo4_vapor_exposure_au198_overdose_or_aunp_embolism_pct"], 1.0)
+        self.assertEqual(gov["edge_hpge_319kev_158kev_uvvis_spr_524nm_and_icp_oes_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct"], 3.0)
+        self.assertTrue(gov["rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met"])
+        self.assertFalse(raw["rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met"])
 
 
 if __name__ == "__main__":
