@@ -236,6 +236,7 @@ from agent_infra_sizer import (
     simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox,
     simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
     simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
+    simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4889,6 +4890,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bi212_alpha_recoil_renal_escape_or_ti45_tio2_precipitation_pct"], 3.0)
         self.assertTrue(gov["lead212_thoron_generator_and_titanium45_bromine77_theranostics_slo_met"])
         self.assertFalse(raw["lead212_thoron_generator_and_titanium45_bromine77_theranostics_slo_met"])
+
+    def test_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(self) -> None:
+        gov = simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(
+            8, "pinn_mpc_ca43_44_sc43_44g_ti48_sc47_dga_aazta_and_sr90_y90_srspec_tare_sil3_edge"
+        )
+        raw = simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(
+            8, "raw_cloud_uncompensated_sr90_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_poisoning"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_sc_y90_pods"], 32)
+        self.assertEqual(gov["sc43_44g_47_aazta_dota_ama_and_y90_microsphere_radiochemical_yield_gain_pct"], 57.7)
+        self.assertEqual(gov["sr90_bone_seeker_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_fe_poisoning_reduction_pct"], 81.9)
+        self.assertEqual(gov["usp823_iso17873_sil3_sr90_breakthrough_sc46_quarantine_and_cao_target_crowbar_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_sr90_marrow_toxicity_sc46_overdose_or_cao_target_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_sr90_marrow_toxicity_sc46_overdose_or_cao_target_rupture_pct"], 1.0)
+        self.assertEqual(gov["edge_hpge_cherenkov_beta_and_arsenazo_titration_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_sc46_co_activation_sr90_radiolytic_bleed_or_ca_target_loss_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_sc46_co_activation_sr90_radiolytic_bleed_or_ca_target_loss_pct"], 3.0)
+        self.assertTrue(gov["scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_slo_met"])
+        self.assertFalse(raw["scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_slo_met"])
 
 
 if __name__ == "__main__":

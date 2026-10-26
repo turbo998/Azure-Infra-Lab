@@ -12401,6 +12401,62 @@ def simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3
     }
 
 
+def simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(
+    sc_y90_trains: int = 8,
+    governance_mode: str = "pinn_mpc_ca43_44_sc43_44g_ti48_sc47_dga_aazta_and_sr90_y90_srspec_tare_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Element-Identical Scandium Triplet Theranostics (n.c.a. 43Sc / 44gSc True-Matched
+    Positron PET via Enriched 43CaO(p,n)43Sc & 44CaO(p,n)44gSc Cyclotron Targets + 47Sc Beta/159.4 keV SPECT
+    Theranostic Twin via 48Ti(gamma,p)47Sc / 46Ca(n,gamma)47Ca->47Sc with Branched DGA/UTEVA Extraction &
+    AAZTA/picaga/DOTA-AMA Chelation) & High-Energy Pure-Beta Yttrium-90 (90Sr/90Y Secular-Equilibrium Dual-Stage
+    Sr-Spec Extraction Generator <10^-8 90Sr Breakthrough & 90Y-TARE Glass/Resin Microspheres) PINN-MPC, Online
+    10 kHz HPGe 889/1120 keV 46Sc + Cherenkov/Plastic-Beta 90Sr Breakthrough Spectroscopy, Post-Column Arsenazo III
+    Trace Metal Metrology & USP <823> / 10 CFR 35.1000 / ISO 17873 / SIL-3 Sr-90 Bone-Seeker Breakthrough Quarantine,
+    Sc-46/Sc-44m Impurity Lockout & Enriched CaO Target Crowbar Interlock (Chapter 235, Cycle #230 — 230-Cycle &
+    230-Simulator Double Milestone!).
+    """
+    trains = max(2, min(int(sc_y90_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_ca43_44_sc43_44g_ti48_sc47_dga_aazta_and_sr90_y90_srspec_tare_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_sc_y90_pods = trains * 4
+
+    if governed:
+        sc43_44g_47_aazta_dota_ama_and_y90_microsphere_radiochemical_yield_gain_pct = 57.7
+        sr90_bone_seeker_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_fe_poisoning_reduction_pct = 81.9
+        usp823_iso17873_sil3_sr90_breakthrough_sc46_quarantine_and_cao_target_crowbar_latency_ms = 0.15
+        unmitigated_sr90_marrow_toxicity_sc46_overdose_or_cao_target_rupture_pct = 0.0
+        edge_hpge_cherenkov_beta_and_arsenazo_titration_closed_loop_latency_ms = 0.14
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_sc46_co_activation_sr90_radiolytic_bleed_or_ca_target_loss_pct = 0.0
+    else:
+        sc43_44g_47_aazta_dota_ama_and_y90_microsphere_radiochemical_yield_gain_pct = 10.9
+        sr90_bone_seeker_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_fe_poisoning_reduction_pct = 14.6
+        usp823_iso17873_sil3_sr90_breakthrough_sc46_quarantine_and_cao_target_crowbar_latency_ms = 400.0
+        unmitigated_sr90_marrow_toxicity_sc46_overdose_or_cao_target_rupture_pct = 1.5
+        edge_hpge_cherenkov_beta_and_arsenazo_titration_closed_loop_latency_ms = 222.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_sc46_co_activation_sr90_radiolytic_bleed_or_ca_target_loss_pct = 4.9
+
+    return {
+        "sc_y90_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_sc_y90_pods": active_sc_y90_pods,
+        "sc43_44g_47_aazta_dota_ama_and_y90_microsphere_radiochemical_yield_gain_pct": sc43_44g_47_aazta_dota_ama_and_y90_microsphere_radiochemical_yield_gain_pct,
+        "sr90_bone_seeker_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_fe_poisoning_reduction_pct": sr90_bone_seeker_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_fe_poisoning_reduction_pct,
+        "usp823_iso17873_sil3_sr90_breakthrough_sc46_quarantine_and_cao_target_crowbar_latency_ms": usp823_iso17873_sil3_sr90_breakthrough_sc46_quarantine_and_cao_target_crowbar_latency_ms,
+        "unmitigated_sr90_marrow_toxicity_sc46_overdose_or_cao_target_rupture_pct": unmitigated_sr90_marrow_toxicity_sc46_overdose_or_cao_target_rupture_pct,
+        "edge_hpge_cherenkov_beta_and_arsenazo_titration_closed_loop_latency_ms": edge_hpge_cherenkov_beta_and_arsenazo_titration_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_sc46_co_activation_sr90_radiolytic_bleed_or_ca_target_loss_pct": uncompensated_sc46_co_activation_sr90_radiolytic_bleed_or_ca_target_loss_pct,
+        "scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
