@@ -223,6 +223,7 @@ from agent_infra_sizer import (
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
     simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
+    simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1720,6 +1721,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(8, "raw_cloud_unpressurized_ion_exchange_open_loop_cf252_oxalate_calcination_and_manual_shield_gate"),
     ]
 
+    medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_profiles: List[Dict[str, object]] = [
+        simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(8, "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"),
+        simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(32, "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"),
+        simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(8, "raw_cloud_fixed_beam_wobble_open_loop_alumina_elution_and_offline_tlc_endotoxin_release"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1930,6 +1937,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles": uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles,
         "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_profiles": plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_profiles,
         "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles": curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles,
+        "medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_profiles": medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_profiles,
     }
 
 

@@ -230,6 +230,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
     simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
+    simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1511,6 +1512,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "transplutonium_cf252_8_cells": simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(8, "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"),
             "transplutonium_cf252_32_cells": simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(32, "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"),
             "raw_transplutonium_cf252_8_cells": simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(8, "raw_cloud_unpressurized_ion_exchange_open_loop_cf252_oxalate_calcination_and_manual_shield_gate"),
+        },
+        "demo_211_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox": {
+            "cyclotron_hotcell_8_lines": simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(8, "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"),
+            "cyclotron_hotcell_32_lines": simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(32, "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"),
+            "raw_cyclotron_hotcell_8_lines": simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(8, "raw_cloud_fixed_beam_wobble_open_loop_alumina_elution_and_offline_tlc_endotoxin_release"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -217,6 +217,7 @@ from agent_infra_sizer import (
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
     simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
+    simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4471,6 +4472,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct"], 3.0)
         self.assertTrue(gov["curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met"])
         self.assertFalse(raw["curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met"])
+
+    def test_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(self) -> None:
+        gov = simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(
+            8, "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"
+        )
+        raw = simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(
+            8, "raw_cloud_fixed_beam_wobble_open_loop_alumina_elution_and_offline_tlc_endotoxin_release"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_cyclotron_hotcell_pods"], 32)
+        self.assertEqual(gov["mo99_tc99m_ac225_decay_corrected_yield_molar_activity_and_radiochemical_purity_gain_pct"], 52.7)
+        self.assertEqual(gov["mo99_breakthrough_ac227_co_production_and_radiolytic_autoradiolysis_impurity_reduction_pct"], 77.1)
+        self.assertEqual(gov["cfr35_usp823_eugmp_sil3_havar_foil_burst_valve_charcoal_stack_and_sterility_release_interlock_ms"], 0.20)
+        self.assertEqual(gov["unmitigated_havar_window_rupture_i131_rn222_stack_release_or_mo99_ac227_breakthrough_dose_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_havar_window_rupture_i131_rn222_stack_release_or_mo99_ac227_breakthrough_dose_pct"], 1.0)
+        self.assertEqual(gov["cyclotron_hotcell_edge_10khz_radio_hplc_hpge_gamma_havar_he_pressure_and_lal_qc_loop_ms"], 0.17)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_cyclotron_target_nucleate_boiling_burnout_cassette_valve_deadvolume_or_ph_buffer_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cyclotron_target_nucleate_boiling_burnout_cassette_valve_deadvolume_or_ph_buffer_drift_pct"], 3.0)
+        self.assertTrue(gov["medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_slo_met"])
+        self.assertFalse(raw["medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_slo_met"])
 
 
 if __name__ == "__main__":

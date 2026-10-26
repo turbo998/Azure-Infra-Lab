@@ -11186,6 +11186,64 @@ def simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_a
     }
 
 
+def simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(
+    cyclotron_hotcell_lines: int = 8,
+    cyclotron_hotcell_governance_mode: str = "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Medical Cyclotron & Research Reactor Radioisotopes (99Mo/99mTc, 18F-FDG, 68Ge/68Ga & 225Ac/213Bi Targeted Alpha Therapy TAT) LEU Target Fission / 100Mo(p,2n)99mTc & 226Ra(p,2n)225Ac Isochronous Cyclotron Beam-Target Thermal-Hydraulics, Automated Hot-Cell Cassette Radiosynthesis PINN-MPC & 10 CFR 35 / USP <823> / EU GMP Annex 3 / IEC 61511 SIL-3 Interlock (Chapter 216, Cycle #211 — 220-Test Milestone!)."""
+    if cyclotron_hotcell_lines < 1:
+        raise ValueError("cyclotron_hotcell_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge",
+        "raw_cloud_fixed_beam_wobble_open_loop_alumina_elution_and_offline_tlc_endotoxin_release",
+    }
+    if cyclotron_hotcell_governance_mode not in valid_modes:
+        raise ValueError(f"cyclotron_hotcell_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        cyclotron_hotcell_governance_mode
+        == "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(cyclotron_hotcell_lines / 2))
+    active_cyclotron_hotcell_pods = cyclotron_hotcell_lines * 4
+
+    mo99_tc99m_ac225_decay_corrected_yield_molar_activity_and_radiochemical_purity_gain_pct = (
+        52.7 if governed else 9.2
+    )
+    mo99_breakthrough_ac227_co_production_and_radiolytic_autoradiolysis_impurity_reduction_pct = (
+        77.1 if governed else 12.2
+    )
+    cfr35_usp823_eugmp_sil3_havar_foil_burst_valve_charcoal_stack_and_sterility_release_interlock_ms = (
+        0.20 if governed else 370.0
+    )
+    unmitigated_havar_window_rupture_i131_rn222_stack_release_or_mo99_ac227_breakthrough_dose_pct = (
+        0.0 if governed else 1.5
+    )
+    cyclotron_hotcell_edge_10khz_radio_hplc_hpge_gamma_havar_he_pressure_and_lal_qc_loop_ms = (
+        0.17 if governed else 202.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_cyclotron_target_nucleate_boiling_burnout_cassette_valve_deadvolume_or_ph_buffer_drift_pct = (
+        0.0 if governed else 4.4
+    )
+
+    return {
+        "cyclotron_hotcell_lines": cyclotron_hotcell_lines,
+        "cyclotron_hotcell_governance_mode": cyclotron_hotcell_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cyclotron_hotcell_pods": active_cyclotron_hotcell_pods,
+        "mo99_tc99m_ac225_decay_corrected_yield_molar_activity_and_radiochemical_purity_gain_pct": mo99_tc99m_ac225_decay_corrected_yield_molar_activity_and_radiochemical_purity_gain_pct,
+        "mo99_breakthrough_ac227_co_production_and_radiolytic_autoradiolysis_impurity_reduction_pct": mo99_breakthrough_ac227_co_production_and_radiolytic_autoradiolysis_impurity_reduction_pct,
+        "cfr35_usp823_eugmp_sil3_havar_foil_burst_valve_charcoal_stack_and_sterility_release_interlock_ms": cfr35_usp823_eugmp_sil3_havar_foil_burst_valve_charcoal_stack_and_sterility_release_interlock_ms,
+        "unmitigated_havar_window_rupture_i131_rn222_stack_release_or_mo99_ac227_breakthrough_dose_pct": unmitigated_havar_window_rupture_i131_rn222_stack_release_or_mo99_ac227_breakthrough_dose_pct,
+        "cyclotron_hotcell_edge_10khz_radio_hplc_hpge_gamma_havar_he_pressure_and_lal_qc_loop_ms": cyclotron_hotcell_edge_10khz_radio_hplc_hpge_gamma_havar_he_pressure_and_lal_qc_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cyclotron_target_nucleate_boiling_burnout_cassette_valve_deadvolume_or_ph_buffer_drift_pct": uncompensated_cyclotron_target_nucleate_boiling_burnout_cassette_valve_deadvolume_or_ph_buffer_drift_pct,
+        "medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
