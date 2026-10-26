@@ -235,6 +235,7 @@ from agent_infra_sizer import (
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
+    simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1804,6 +1805,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(8, "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting"),
     ]
 
+    strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles: List[Dict[str, object]] = [
+        simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(8, "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"),
+        simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(32, "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"),
+        simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(8, "raw_cloud_uncompensated_rbcl_core_melt_sr82_breakthrough_and_200tl_202tl_impurity"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2026,6 +2033,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_profiles": lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_profiles,
         "actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles": actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles,
         "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles": astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles,
+        "strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles": strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles,
     }
 
 

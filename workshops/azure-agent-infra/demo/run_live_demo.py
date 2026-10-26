@@ -242,6 +242,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
+    simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1583,6 +1584,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "at211_i123_8_trains": simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(8, "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"),
             "at211_i123_32_trains": simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(32, "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"),
             "raw_at211_i123_8_trains": simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(8, "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting"),
+        },
+        "demo_223_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox": {
+            "sr82_tl201_8_trains": simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(8, "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"),
+            "sr82_tl201_32_trains": simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(32, "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"),
+            "raw_sr82_tl201_8_trains": simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(8, "raw_cloud_uncompensated_rbcl_core_melt_sr82_breakthrough_and_200tl_202tl_impurity"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -229,6 +229,7 @@ from agent_infra_sizer import (
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
+    simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4735,6 +4736,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct"], 3.0)
         self.assertTrue(gov["astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met"])
         self.assertFalse(raw["astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met"])
+
+    def test_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(self) -> None:
+        gov = simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(
+            8, "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"
+        )
+        raw = simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(
+            8, "raw_cloud_uncompensated_rbcl_core_melt_sr82_breakthrough_and_200tl_202tl_impurity"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_sr82_tl201_pods"], 32)
+        self.assertEqual(gov["sr82_specific_yield_sno2_generator_longevity_and_tl201_ingrowth_purity_gain_pct"], 56.1)
+        self.assertEqual(gov["sr82_sr85_elution_breakthrough_200tl_202tl_impurity_and_tl203_loss_cut_pct"], 80.4)
+        self.assertEqual(gov["usp823_iso17873_sil3_rbcl_capsule_leak_beam_crowbar_and_sr82_infusion_divert_interlock_ms"], 0.16)
+        self.assertEqual(gov["unmitigated_rbcl_target_rupture_patient_sr82_bone_marrow_breakthrough_or_tl_toxicity_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rbcl_target_rupture_patient_sr82_bone_marrow_breakthrough_or_tl_toxicity_pct"], 1.0)
+        self.assertEqual(gov["sr82_tl201_edge_10khz_hpge_gamma_cherenkov_water_monitor_and_rb82_dose_calibrator_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_rbcl_molten_core_overpressure_or_tl203_grazing_beam_burnthrough_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_rbcl_molten_core_overpressure_or_tl203_grazing_beam_burnthrough_pct"], 3.0)
+        self.assertTrue(gov["strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_slo_met"])
+        self.assertFalse(raw["strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_slo_met"])
 
 
 if __name__ == "__main__":

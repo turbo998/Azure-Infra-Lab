@@ -12025,6 +12025,81 @@ def simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_ther
     }
 
 
+def simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(
+    sr82_tl201_trains: int = 8,
+    sr82_tl201_governance_mode: str = "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Cardiac PET/SPECT Radioisotope Production:
+    Strontium-82/Rubidium-82 (82Sr T1/2=25.36d -> 82Rb T1/2=75.0s Cardiac PET
+    Myocardial Perfusion Generator via 70->42 MeV High-Current 250-500 uA
+    Proton Spallation/Evaporation 85Rb(p,4n)82Sr on Inconel/Nb-Encapsulated
+    85RbCl Pressed-Salt Target Stefan Solid-Liquid Moving-Boundary Thermal
+    Control & Hydrous Stannic Oxide SnO2.xH2O Column Adsorption Suppressing
+    USP <823> 82Sr <=0.02 uCi/mCi 82Rb & 85Sr <=0.2 uCi/mCi 82Rb Breakthrough)
+    & Thallium-201 (201Tl T1/2=73.1h Myocardial Perfusion SPECT via 28.5->21.0
+    MeV Slanted Electroplated Enriched 203Tl >=98% Copper-Backed Target
+    203Tl(p,3n)201Pb T1/2=9.33h Windowing Strictly Below 29.5 MeV 200Pb->200Tl
+    Threshold, >99.99% 203Tl Recovery & Optimal 32-36h 201Pb->201Tl Bateman
+    In-Growth) PINN-MPC, Online 10 kHz Cooling-Water Cherenkov/NaI(Tl) Leak
+    Monitor, HPGe Gamma Spectroscopy (82Sr/85Sr 776.5/514.0 keV &
+    201Tl/200Tl/202Tl) & Dual-Redundant 82Rb Infusion Dose Calibrator Metrology
+    & USP <823> / 10 CFR 20 / EU GMP Annex 3 / ISO 17873 / IEC 61511 SIL-3
+    RbCl Capsule Leak Cyclotron RF Crowbar Trip, Patient 82Sr Breakthrough
+    3-Way Diversion Valve Lockout & Toxic Thallium Containment Interlock
+    (Cycle #223)."""
+    if sr82_tl201_trains < 1:
+        raise ValueError("sr82_tl201_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge",
+        "raw_cloud_uncompensated_rbcl_core_melt_sr82_breakthrough_and_200tl_202tl_impurity",
+    }
+    if sr82_tl201_governance_mode not in valid_modes:
+        raise ValueError(f"sr82_tl201_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        sr82_tl201_governance_mode
+        == "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(sr82_tl201_trains / 2))
+    active_sr82_tl201_pods = sr82_tl201_trains * 4
+
+    sr82_specific_yield_sno2_generator_longevity_and_tl201_ingrowth_purity_gain_pct = (
+        56.1 if governed else 10.2
+    )
+    sr82_sr85_elution_breakthrough_200tl_202tl_impurity_and_tl203_loss_cut_pct = (
+        80.4 if governed else 13.8
+    )
+    usp823_iso17873_sil3_rbcl_capsule_leak_beam_crowbar_and_sr82_infusion_divert_interlock_ms = (
+        0.16 if governed else 389.0
+    )
+    unmitigated_rbcl_target_rupture_patient_sr82_bone_marrow_breakthrough_or_tl_toxicity_pct = (
+        0.0 if governed else 1.5
+    )
+    sr82_tl201_edge_10khz_hpge_gamma_cherenkov_water_monitor_and_rb82_dose_calibrator_loop_ms = (
+        0.15 if governed else 214.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_rbcl_molten_core_overpressure_or_tl203_grazing_beam_burnthrough_pct = (
+        0.0 if governed else 4.8
+    )
+
+    return {
+        "sr82_tl201_trains": sr82_tl201_trains,
+        "sr82_tl201_governance_mode": sr82_tl201_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_sr82_tl201_pods": active_sr82_tl201_pods,
+        "sr82_specific_yield_sno2_generator_longevity_and_tl201_ingrowth_purity_gain_pct": sr82_specific_yield_sno2_generator_longevity_and_tl201_ingrowth_purity_gain_pct,
+        "sr82_sr85_elution_breakthrough_200tl_202tl_impurity_and_tl203_loss_cut_pct": sr82_sr85_elution_breakthrough_200tl_202tl_impurity_and_tl203_loss_cut_pct,
+        "usp823_iso17873_sil3_rbcl_capsule_leak_beam_crowbar_and_sr82_infusion_divert_interlock_ms": usp823_iso17873_sil3_rbcl_capsule_leak_beam_crowbar_and_sr82_infusion_divert_interlock_ms,
+        "unmitigated_rbcl_target_rupture_patient_sr82_bone_marrow_breakthrough_or_tl_toxicity_pct": unmitigated_rbcl_target_rupture_patient_sr82_bone_marrow_breakthrough_or_tl_toxicity_pct,
+        "sr82_tl201_edge_10khz_hpge_gamma_cherenkov_water_monitor_and_rb82_dose_calibrator_loop_ms": sr82_tl201_edge_10khz_hpge_gamma_cherenkov_water_monitor_and_rb82_dose_calibrator_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_rbcl_molten_core_overpressure_or_tl203_grazing_beam_burnthrough_pct": uncompensated_rbcl_molten_core_overpressure_or_tl203_grazing_beam_burnthrough_pct,
+        "strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
