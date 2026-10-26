@@ -10994,6 +10994,75 @@ def simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177
     }
 
 
+def simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(
+    haleu_triso_lines: int = 8,
+    haleu_triso_governance_mode: str = "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Uranium (U, Z=92) & Thorium (Th, Z=90) Fluorination
+    Conversion, Sub-Atmospheric UF6 Gas Centrifuge Cascade High-Assay
+    Low-Enriched Uranium (HALEU 5-19.75% 235U) Enrichment, Sol-Gel Internal
+    Gelation Uranium Oxycarbide (UCO) Kernel & Spouted Fluidized-Bed Chemical
+    Vapor Deposition (FB-CVD Buffer PyC / IPyC / 35um beta-SiC / OPyC
+    Quad-Layer) TRISO Particle Fuel Fabrication PINN-MPC, Online 10 kHz Mid-IR
+    UF6 Laser Isotope Ratio (QCL-TDLAS / TIMS), High-Speed X-Ray Phase-Contrast
+    Radiography & Active Neutron Coincidence Counting (NCC) Metrology & 10 CFR
+    70 / ANSI/ANS-8.1 / NFPA 55 / ASME NQA-1 / IEC 61511 SIL-3 Subcritical
+    Geometry/Moderation Lock (k_eff < 0.92), UF6 Hydrolysis (UO2F2 + 2HF)
+    Cryo-Autoclave Isolation & FB-CVD Methyltrichlorosilane (MTS-H2) Pyrolysis
+    Runaway Interlock (Cycle #208)."""
+    if haleu_triso_lines < 1:
+        raise ValueError("haleu_triso_lines must be >= 1")
+    valid_modes = {
+        "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge",
+        "raw_cloud_fixed_centrifuge_baffle_scoop_open_loop_hmta_urea_gelation_and_empirical_fbcvd_mts_flow",
+    }
+    if haleu_triso_governance_mode not in valid_modes:
+        raise ValueError(f"haleu_triso_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        haleu_triso_governance_mode
+        == "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(haleu_triso_lines / 2))
+    active_haleu_triso_pods = haleu_triso_lines * 4
+
+    haleu_swu_separative_efficiency_uco_kernel_sphericity_and_triso_sic_retention_gain_pct = (
+        51.8 if governed else 8.9
+    )
+    triso_sic_exposed_kernel_defect_fraction_uco_amoeba_migration_and_uf6_cascade_mixing_loss_reduction_pct = (
+        76.5 if governed else 11.8
+    )
+    cfr70_ans81_nfpa55_sil3_subcritical_keff_lock_uf6_cryotrap_and_fbcvd_mts_h2_quench_interlock_ms = (
+        0.23 if governed else 364.0
+    )
+    unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct = (
+        0.0 if governed else 1.5
+    )
+    haleu_triso_edge_10khz_qcl_tdlas_uf6_xray_phase_contrast_and_ncc_235u_loop_ms = (
+        0.18 if governed else 198.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct = (
+        0.0 if governed else 4.3
+    )
+
+    return {
+        "haleu_triso_lines": haleu_triso_lines,
+        "haleu_triso_governance_mode": haleu_triso_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_haleu_triso_pods": active_haleu_triso_pods,
+        "haleu_swu_separative_efficiency_uco_kernel_sphericity_and_triso_sic_retention_gain_pct": haleu_swu_separative_efficiency_uco_kernel_sphericity_and_triso_sic_retention_gain_pct,
+        "triso_sic_exposed_kernel_defect_fraction_uco_amoeba_migration_and_uf6_cascade_mixing_loss_reduction_pct": triso_sic_exposed_kernel_defect_fraction_uco_amoeba_migration_and_uf6_cascade_mixing_loss_reduction_pct,
+        "cfr70_ans81_nfpa55_sil3_subcritical_keff_lock_uf6_cryotrap_and_fbcvd_mts_h2_quench_interlock_ms": cfr70_ans81_nfpa55_sil3_subcritical_keff_lock_uf6_cryotrap_and_fbcvd_mts_h2_quench_interlock_ms,
+        "unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct": unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct,
+        "haleu_triso_edge_10khz_qcl_tdlas_uf6_xray_phase_contrast_and_ncc_235u_loop_ms": haleu_triso_edge_10khz_qcl_tdlas_uf6_xray_phase_contrast_and_ncc_235u_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct": uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct,
+        "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

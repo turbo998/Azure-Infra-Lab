@@ -12017,5 +12017,52 @@
       "uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct": 4.2,
       "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met": false
     }
+  ],
+  "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles": [
+    {
+      "haleu_triso_lines": 8,
+      "haleu_triso_governance_mode": "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_haleu_triso_pods": 32,
+      "haleu_swu_separative_efficiency_uco_kernel_sphericity_and_triso_sic_retention_gain_pct": 51.8,
+      "triso_sic_exposed_kernel_defect_fraction_uco_amoeba_migration_and_uf6_cascade_mixing_loss_reduction_pct": 76.5,
+      "cfr70_ans81_nfpa55_sil3_subcritical_keff_lock_uf6_cryotrap_and_fbcvd_mts_h2_quench_interlock_ms": 0.23,
+      "unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct": 0.0,
+      "haleu_triso_edge_10khz_qcl_tdlas_uf6_xray_phase_contrast_and_ncc_235u_loop_ms": 0.18,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct": 0.0,
+      "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met": true
+    },
+    {
+      "haleu_triso_lines": 32,
+      "haleu_triso_governance_mode": "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_haleu_triso_pods": 128,
+      "haleu_swu_separative_efficiency_uco_kernel_sphericity_and_triso_sic_retention_gain_pct": 51.8,
+      "triso_sic_exposed_kernel_defect_fraction_uco_amoeba_migration_and_uf6_cascade_mixing_loss_reduction_pct": 76.5,
+      "cfr70_ans81_nfpa55_sil3_subcritical_keff_lock_uf6_cryotrap_and_fbcvd_mts_h2_quench_interlock_ms": 0.23,
+      "unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct": 0.0,
+      "haleu_triso_edge_10khz_qcl_tdlas_uf6_xray_phase_contrast_and_ncc_235u_loop_ms": 0.18,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct": 0.0,
+      "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met": true
+    },
+    {
+      "haleu_triso_lines": 8,
+      "haleu_triso_governance_mode": "raw_cloud_fixed_centrifuge_baffle_scoop_open_loop_hmta_urea_gelation_and_empirical_fbcvd_mts_flow",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_haleu_triso_pods": 32,
+      "haleu_swu_separative_efficiency_uco_kernel_sphericity_and_triso_sic_retention_gain_pct": 8.9,
+      "triso_sic_exposed_kernel_defect_fraction_uco_amoeba_migration_and_uf6_cascade_mixing_loss_reduction_pct": 11.8,
+      "cfr70_ans81_nfpa55_sil3_subcritical_keff_lock_uf6_cryotrap_and_fbcvd_mts_h2_quench_interlock_ms": 364.0,
+      "unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct": 1.5,
+      "haleu_triso_edge_10khz_qcl_tdlas_uf6_xray_phase_contrast_and_ncc_235u_loop_ms": 198.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct": 4.3,
+      "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met": false
+    }
   ]
 }

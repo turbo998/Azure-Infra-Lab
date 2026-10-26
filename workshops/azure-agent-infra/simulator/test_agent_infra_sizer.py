@@ -214,6 +214,7 @@ from agent_infra_sizer import (
     simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
     simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
     simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
+    simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4405,6 +4406,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct"], 3.0)
         self.assertTrue(gov["thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met"])
         self.assertFalse(raw["thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met"])
+
+    def test_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(self) -> None:
+        gov = simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(
+            8, "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge"
+        )
+        raw = simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(
+            8, "raw_cloud_fixed_centrifuge_baffle_scoop_open_loop_hmta_urea_gelation_and_empirical_fbcvd_mts_flow"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_haleu_triso_pods"], 32)
+        self.assertEqual(gov["haleu_swu_separative_efficiency_uco_kernel_sphericity_and_triso_sic_retention_gain_pct"], 51.8)
+        self.assertEqual(gov["triso_sic_exposed_kernel_defect_fraction_uco_amoeba_migration_and_uf6_cascade_mixing_loss_reduction_pct"], 76.5)
+        self.assertEqual(gov["cfr70_ans81_nfpa55_sil3_subcritical_keff_lock_uf6_cryotrap_and_fbcvd_mts_h2_quench_interlock_ms"], 0.23)
+        self.assertEqual(gov["unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_keff_criticality_excursion_uf6_hf_hydrolysis_plume_or_mts_h2_fbcvd_explosion_pct"], 1.0)
+        self.assertEqual(gov["haleu_triso_edge_10khz_qcl_tdlas_uf6_xray_phase_contrast_and_ncc_235u_loop_ms"], 0.18)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct"], 3.0)
+        self.assertTrue(gov["uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met"])
+        self.assertFalse(raw["uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met"])
 
 
 if __name__ == "__main__":

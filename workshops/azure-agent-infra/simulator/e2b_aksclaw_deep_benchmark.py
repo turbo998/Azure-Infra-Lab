@@ -220,6 +220,7 @@ from agent_infra_sizer import (
     simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
     simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
     simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
+    simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1699,6 +1700,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(8, "raw_cloud_empirical_yb_lu_chromatography_unpassivated_sublimation_and_open_loop_lyso_czochralski"),
     ]
 
+    uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles: List[Dict[str, object]] = [
+        simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(8, "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge"),
+        simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(32, "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge"),
+        simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(8, "raw_cloud_fixed_centrifuge_baffle_scoop_open_loop_hmta_urea_gelation_and_empirical_fbcvd_mts_flow"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1906,6 +1913,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_profiles": samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_profiles,
         "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles": gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles,
         "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles": thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles,
+        "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles": uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles,
     }
 
 
