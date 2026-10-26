@@ -239,6 +239,7 @@ from agent_infra_sizer import (
     simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
     simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
     simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox,
+    simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4955,6 +4956,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct"], 3.0)
         self.assertTrue(gov["rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met"])
         self.assertFalse(raw["rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met"])
+
+    def test_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox(self) -> None:
+        gov = simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox(
+            8, "pinn_mpc_no_cryogenic_distillation_nocl_photolysis_and_no2_disproportionation_sil3_edge"
+        )
+        raw = simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox(
+            8, "raw_cloud_uncompensated_no2_pulmonary_toxin_breakthrough_and_adiabatic_decomposition"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_no_ino_pods"], 32)
+        self.assertEqual(gov["pharmaceutical_5n_no_purity_and_ino_cylinder_stability_yield_gain_pct"], 58.6)
+        self.assertEqual(gov["no2_pulmonary_toxin_breakthrough_and_n2o_disproportionation_reduction_pct"], 82.6)
+        self.assertEqual(gov["usp_nf_iso11114_sil3_no2_scrubber_and_adiabatic_compression_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_5260nm_6250nm_crds_h2o_and_cryo_column_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct"], 3.0)
+        self.assertTrue(gov["nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met"])
+        self.assertFalse(raw["nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met"])
 
 
 if __name__ == "__main__":

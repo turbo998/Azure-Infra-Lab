@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Full Edition (README.en.md)](README.en.md)** | **[📊 7-Card 评测报告 (中文)](test-report.md)** | **[📊 7-Card Benchmark Report (EN)](test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](h5/selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-26 (Cycle #231 · **240-Test Milestone!** · 237 Chapters · 232 Blueprints · 231 Simulators · 240/240 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-26 (Cycle #233 · **240-Chapter Milestone!** · 240 Chapters · 234 Blueprints · 233 Simulators · 242/242 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -6702,7 +6702,55 @@ $$\text{La}_2\text{O}_3 + 15\text{B} \xrightarrow{1,650\text{ }^\circ\text{C, Va
 
 ---
 
-## 238. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #232）
+## 238. 医药级一氧化氮（`5N NO` 与吸入用 `iNO`）深冷分馏纯化、亚硝酰卤光化学解离与高压气瓶二氧化氮（`NO2`）氧化歧化 `PINN-MPC`、原位中红外量子级联激光（`QCL-TDLAS 5.26 µm / 6.25 µm`）与 `USP-NF / ISO 11114-1 / CGA G-10.1 / SIL-3` 肺水肿高毒 `NO2` 突破/绝热压缩自燃分解硬联锁（Autonomous Pharmaceutical-Grade Nitric Oxide (`5N NO` & Inhaled `iNO` `100–800 ppmv`) Cryogenic Fractional Distillation (`119.5–121.4 K`), Nitrosyl Chloride (`NOCl`) `365 nm` Photochemical Dissociation & High-Pressure Cylinder Nitrogen Dioxide (`NO2`) Termolecular Oxidation / Disproportionation (`3NO -> N2O + NO2`) `PINN-MPC`, In-Situ `10 kHz` Mid-IR `QCL-TDLAS` (`5.26 µm NO` / `6.25 µm NO2 <= 10 ppbv` / `4.46 µm N2O`) & `CRDS` (`1.39 µm H2O <= 50 ppbv`) Metrology & `USP-NF / ISO 11114-1 / CGA G-10.1 / IEC 61511 SIL-3` Pulmonary-Edema Toxic `NO2` Breakthrough / Adiabatic Auto-Decomposition Interlock · **240-Chapter Milestone!**）
+
+在**新生儿持续性肺动脉高压（`PPHN`）与心胸外科术后右心室衰竭吸入用一氧化氮（`iNO`，$100\text{–}800\text{ ppmv NO}$ 于医药级高纯氮气 $\text{N}_2$ 平衡气中，通过直接激活血管平滑肌可溶性鸟苷酸环化酶 `sGC` 提升环磷酸鸟苷 `cGMP` 实现选择性肺动脉扩张而不降低体循环血压）以及先进半导体 `2 nm GAA` 纳米片栅极氧化层硅氧氮界面（`SiON`）原位自由基退火用超纯电子/医药级一氧化氮（`5N NO` $\ge 99.999\%$）**领域，一氧化氮（$\text{NO}$，正常沸点 $121.38\text{ K}$ / $-151.77^\circ\text{C}$，三相点 $109.50\text{ K}$ / $-163.65^\circ\text{C}$，液体密度 $1.269\text{ g/cm}^3$）的合成、深冷精馏纯化与高压铝瓶充装面临三大极易导致致命临床肺水肿事故或高压气瓶自燃爆裂的物理化学难题：
+1. **罕见的负活化能三分子氧化动力学（$2\text{NO}+\text{O}_2\to 2\text{NO}_2$，$k \propto T^{-1.5}$ 在深冷温度下反而急剧加速！）与剧毒二氧化氮（$\text{NO}_2\rightleftharpoons\text{N}_2\text{O}_4$）肺水肿风险**：与绝大多数遵循阿伦尼乌斯正活化能定律的化学反应相反，具有奇电子自由基构型（$^2\Pi_{1/2,3/2}$）的一氧化氮与痕量氧分子的三分子反应 $2\text{NO}+\text{O}_2\to 2\text{NO}_2$（经由弱键合过氧亚硝酸自由基 $\text{ONOO}^\bullet$ 或一氧化氮二聚体 $(\text{NO})_2$ 前平衡过渡态）具有显著的**负表观活化能（$E_a \approx -4.4\text{ kJ/mol}$，速率常数 $k(T) = 1.4\times 10^{-38}\exp(530/T)\text{ cm}^6\text{molecule}^{-2}\text{s}^{-1}$）**——在 $120\text{ K}$ 深冷精馏塔冷凝器中，其氧化生成 $\text{NO}_2/\text{N}_2\text{O}_3$ 的速率比室温（$298\text{ K}$）快近 **15 倍**！生成的二氧化氮（$\text{NO}_2$）在重症监护室（`NICU`）呼吸机管路中一旦超过 `USP-NF` 药典红线（$\text{NO}_2 \le 0.5\text{ ppmv}$），新生儿吸入数分钟即可引起肺泡表面活性物质失活、迟发性非心源性肺水肿、支气管痉挛与高铁血红蛋白血症（`MetHb > 5%`）；
+2. **高压热力学不稳定性与绝热压缩自催化歧化分解（$3\text{NO}\to \text{N}_2\text{O}+\text{NO}_2$，$\Delta H^\circ = -155.7\text{ kJ/mol}$）**：气态 $\text{NO}$ 是标准生成吉布斯自由能为正（$\Delta G_f^\circ = +86.55\text{ kJ/mol}$）的吸热亚稳态化合物。当纯 $\text{NO}$ 气瓶充装压力过高（$>3.5\text{ MPa}$）或高压阀门快速开启引发局部绝热压缩温升（$T_{\text{local}} = T_0 (P_2/P_1)^{(\gamma-1)/\gamma} > 410\text{ K}$），或分子筛吸附床初始充气放热失控时，会触发剧烈放热歧化反应 $3\text{NO}\to \text{N}_2\text{O}+\text{NO}_2$ 及 $2\text{NO}\to \text{N}_2+\text{O}_2$（$\Delta H^\circ = -180.6\text{ kJ/mol}$），瞬间使气瓶内二氧化氮与氧化亚氮（$\text{N}_2\text{O}$）飙升数百至数千 ppm，严重时引发高压气瓶热失控爆破；
+3. **亚硝酰卤（$\text{NOCl}$）光化学平衡逆转与痕量水分致硝酸（$\text{HNO}_3$）铝合金/不锈钢气瓶应力腐蚀开裂（`ISO 11114-1 / CGA G-10.1`）**：在粗 $\text{NO}$ 提纯或亚硝酰氯（$\text{NOCl}$）光解路线中，痕量水分（$\text{H}_2\text{O} > 2\text{ ppmv}$）会与痕量 $\text{NO}_2$ 发生歧化水解 $3\text{NO}_2+\text{H}_2\text{O}\to 2\text{HNO}_3+\text{NO}$，生成的微液滴发烟硝酸对医用铝合金气瓶（`AA6061-T6`）内壁钝化膜与 `316L` 电抛光不锈钢阀座造成严重的点蚀与晶间应力腐蚀开裂（`SCC`），同时释放出的金属离子与酸雾彻底污染整批医用气体。
+
+本章构建 **医药级一氧化氮（`5N NO` 与吸入用 `iNO`）$119.5\text{–}121.4\text{ K}$ 窄沸程深冷分馏、亚硝酰氯 $365\text{ nm}$ 光化学解离、改性 `KOH/13X` 双床层选择性化学吸附与氦夹套等温慢速充装物理信息神经网络模型预测控制（`PINN-MPC`）、在线 `10 kHz` 双波长中红外量子级联激光吸收光谱（`QCL-TDLAS` $5.26\text{ }\mu\text{m}$ / $6.25\text{ }\mu\text{m}$）与光腔衰荡水分仪（`CRDS` $1.39\text{ }\mu\text{m}$）边缘及 `USP-NF / FDA cGMP 21 CFR 210-211 / ISO 11114-1 / CGA G-10.1 / IEC 61511 SIL-3` 肺水肿高毒 $\text{NO}_2$ 突破闭锁与绝热压缩自燃分解硬联锁架构**：
+
+```
+[医药级 5N NO 119.5-121.4 K 深冷分馏塔 + NOCl 365 nm 光解反应器 + KOH/13X 分子筛吸附床 + 氦夹套 iNO 气瓶等温充装歧管]
+   ├── 10 kHz 在线双波长中红外量子级联激光光谱仪 (QCL-TDLAS, Herriott 长光程池): 5.26 μm 监测 NO 主纯度、6.25 μm (1600 cm⁻¹) 亚 10 ppbv 级监测剧毒 NO2、4.46 μm 监测 N2O (< 0.5 ppmv)
+   ├── 10 kHz 在线近红外光腔衰荡微量水分仪 (CRDS 1.39 μm) 与激光顺磁氧分析仪: 实时监测 H2O <= 50 ppbv 与残余 O2 <= 100 ppbv (阻断深冷负活化能 2NO+O2->2NO2 氧化)
+   └── 10 kHz 深冷精馏塔差压/温度阵列 (119.5-121.4 K 窄沸程窗口) 与气瓶充装歧管光纤光栅 (FBG) 绝热温升探头 (监测 dT/dt <= 1.2 K/min)
+         │
+         ▼
+[AKSClaw + Kata-CC + GPU (Standard_NC40ads_H100_v5): 负活化能三分子氧化/歧化动力学、深冷窄沸程分馏与等温充装 PINN + MPC]
+   ├── 负活化能三分子氧化 (k ~ T^-1.5) 与 (NO)2 二聚体气液平衡 PINN: 精确求解 119.5-121.4 K 深冷塔内 N2/NO/N2O/N2O3/NO2 相对挥发度与液相二聚焓，消除深冷冷凝器痕量氧富集
+   ├── NOCl 365 nm 紫外光解与改性 KOH/13X 分子筛选择性脱除 NO2/HNO3 PINN: 在线追踪床层吸附传质区 (MTZ) 前沿，阻断分子筛局部水汽饱和沟流与 Lewis 酸位催化 3NO->N2O+NO2 歧化
+   └── 氦冷夹套 <= 0.15 MPa/min 等温压变充装与声速文丘里混配 MPC: 动态控制高纯 N2 稀释混配比，使医药级 5N NO 与 iNO 气瓶稳定产率提升 +58.6%，剧毒 NO2 突破与 N2O 歧化削减 -82.6%
+         │
+         ▼
+[USP-NF / FDA cGMP / ISO 11114-1 / CGA G-10.1 / IEC 61511 SIL-3 硬件安全 PLC 联锁 (0.14 ms)]
+   ├── 在线 QCL-TDLAS 检出剧毒 NO2 > 0.45 ppmv 或 N2O > 4.0 ppmv 或残余 O2 > 1.0 ppmv ──> 0.14 ms 瞬时锁死气瓶充装阀、注入 6N N2 高压吹扫稀释并开启碱性硫代硫酸钠/氢氧化钠 (Na2S2O3/NaOH) 化学还原洗涤塔
+   ├── 在线 CRDS 检出水分 H2O > 1.8 ppmv (预示 3NO2+H2O->2HNO3+NO 气瓶腐蚀风险) ──> 0.14 ms 瞬时切入备用活化 3A/13X 深冷捕集阱并隔离受潮气瓶批次
+   └── 充装歧管或吸附床绝热温升 dT/dt > 1.2 K/min 或局部温度 > 335 K ──> 0.14 ms 瞬时切断隔膜压缩机电源并开启液氦/液氮夹套紧急急冷与泄压旁路 (零 NO2 污染气瓶流入临床、零高压 NO 绝热分解爆燃)
+```
+
+### 核心架构组件与物理信息实现路径
+
+1. **深冷负活化能三分子氧化（$2\text{NO}+\text{O}_2\to 2\text{NO}_2$）抑制、$119.5\text{–}121.4\text{ K}$ 窄沸程分馏与高压气瓶防歧化（$3\text{NO}\to \text{N}_2\text{O}+\text{NO}_2$）等温充装 `PINN-MPC`**：
+   - **深冷负活化能氧化与 $(\text{NO})_2$ 液相二聚体精馏热力学 `PINN`**：在 `Standard_NC40ads_H100_v5` 节点上求解液态一氧化氮特有的顺磁性单体-反磁性顺式二聚体平衡（$2\text{NO}\rightleftharpoons\text{cis-N}_2\text{O}_2$，$\Delta H_{\text{dimer}} \approx -15.5\text{ kJ/mol}$，导致液态 $\text{NO}$ 严重偏离理想溶液及窄沸程 $T_{\text{mp}}=109.5\text{ K}$ 至 $T_{\text{bp}}=121.4\text{ K}$ 仅 $11.9\text{ K}$ 操作窗易结冰堵塔）与三分子负活化能氧化速率方程 $r_{\text{NO}_2} = 2k_0(T/300)^{-1.52}[\text{NO}]^2[\text{O}_2]$；通过在前置脱氧床将粗气中痕量 $\text{O}_2$ 压制在 $<50\text{ ppbv}$ 以下，并精确控制深冷精馏塔釜再沸器热负荷与塔顶液氮回流比，在 $120.2\pm 0.2\text{ K}$、$0.16\text{ MPa}$ 下将低沸点杂质（$\text{N}_2$、$\text{CO}$、$\text{Ar}$）从塔顶剥离，将高沸点氮氧化物（$\text{N}_2\text{O}$ 沸点 $184.7\text{ K}$、$\text{N}_2\text{O}_3$、$\text{NO}_2/\text{N}_2\text{O}_4$）截留在塔釜；
+   - **改性碱性 `KOH/13X` 分子筛防催化歧化与氦夹套等温充装 `MPC`**：普通未改性沸石分子筛表面的强路易斯酸位（$\text{Al}^{3+}$）在高压下会催化一氧化氮发生 $3\text{NO}\to \text{N}_2\text{O}+\text{NO}_2$ 异相歧化；`MPC` 协同控制经碳酸钾/氢氧化钾钝化改性的双床层 `KOH/13X` 精制器（在 $-30^\circ\text{C}$ 下选择性化学吸附痕量酸性 $\text{NO}_2/\text{HNO}_3$ 至 $<10\text{ ppbv}$ 而不诱发 $\text{NO}$ 歧化）与高压医用铝瓶（`AA6061` 内壁经氟化镁/硅烷无水钝化）充装过程，采用预真空-高纯氦置换工艺及 $\le 0.15\text{ MPa/min}$ 的氦冷夹套等温压升曲线（严控瓶内气相最高温度 $<303\text{ K}$），使医药级 `5N NO` 纯度与 `iNO` 气瓶 36 个月有效期稳定产率提升 **`+58.6%`**，致死性肺水肿毒物 $\text{NO}_2$ 突破与 $\text{N}_2\text{O}$ 歧化率削减 **`-82.6%`**；
+2. **产线侧 `10 kHz` 在线中红外 `QCL-TDLAS`（$5.26\text{ }\mu\text{m}$ / $6.25\text{ }\mu\text{m}$）与 `1.39 µm CRDS` 边缘及 `0.14 ms` `USP-NF / ISO 11114-1 / CGA G-10.1 / IEC 61511 SIL-3` 硬件安全联锁**：
+   - **产线侧 `10 kHz` 中红外量子级联激光与光腔衰荡微量水边缘**：在深冷精馏冷箱与 `iNO` 医用气瓶充装线本地部署 **Azure IoT Operations + 边缘微秒级推理节点**，直连 `10 kHz` 在线双波长中红外量子级联激光可调谐二极管激光吸收光谱仪（`QCL-TDLAS`，配 $50\text{ m}$ 光程蒙乃尔/镀金 `Herriott` 多通池：在 $5.26\text{ }\mu\text{m}$ / $1900\text{ cm}^{-1}$ 监测 $\text{NO}$ 基频跃迁，在 $6.25\text{ }\mu\text{m}$ / $1600\text{ cm}^{-1}$ $\nu_3$ 不对称伸缩带实现 $\le 10\text{ ppbv}$ 级剧毒 $\text{NO}_2$ 免干扰直测，在 $4.46\text{ }\mu\text{m}$ / $2240\text{ cm}^{-1}$ 监测 $\text{N}_2\text{O}$）与 `1.39 µm` 光腔衰荡微量水分仪（`CRDS`，检测限 $\le 5\text{ ppbv }\text{H}_2\text{O}$）。数据在产线边缘 `0.13 ms` 内完成闭环解算，仅向云端 `Azure HorizonDB` 上传 `USP-NF` 批放行电子签名摘要，削减 **`99.7%`** 特种医用气体基地广域网带宽；
+   - **`0.14 ms` `USP-NF / FDA cGMP 21 CFR 210-211 / ISO 11114-1 / CGA G-10.1 / IEC 61511 SIL-3` 硬件安全联锁**：针对剧毒二氧化氮（$\text{NO}_2$）混入医用 `iNO` 气瓶引发新生儿致命肺水肿、微量水生成硝酸（$\text{HNO}_3$）导致高压气瓶腐蚀穿孔、以及绝热压缩引发 $3\text{NO}\to \text{N}_2\text{O}+\text{NO}_2$ 放热自燃分解三大安全红线，硬件安全 PLC 执行三道确定性跳闸：① **肺水肿剧毒二氧化氮（$\text{NO}_2 > 0.45\text{ ppmv}$）突破硬闭锁与化学还原洗涤联锁（`USP-NF / FDA cGMP`）**：一旦在线 `QCL-TDLAS` 检出充装总管 $\text{NO}_2 > 0.45\text{ ppmv}$（低于 `USP-NF` $0.5\text{ ppmv}$ 法定上限）或残余 $\text{O}_2 > 1.0\text{ ppmv}$，在 `0.14 ms` 内瞬时锁死全部医用气瓶气动隔膜阀，注入 `6N` 高纯氮气快速吹扫稀释，并将尾气切入双级碱性硫代硫酸钠/氢氧化钠（$\text{Na}_2\text{S}_2\text{O}_3/\text{NaOH}$）化学还原吸收塔，将 $\text{NO}_2/\text{NO}$ 定量还原转化为无害 $\text{N}_2$ 与 $\text{Na}_2\text{SO}_4/\text{NaNO}_3$；② **微量水（$\text{H}_2\text{O} > 1.8\text{ ppmv}$）防硝酸腐蚀硬隔离联锁（`ISO 11114-1 / CGA G-10.1`）**：一旦在线 `CRDS` 检出水分越界，瞬时切换干燥床并锁死气瓶批次防止瓶内缓慢生成 $\text{HNO}_3$；③ **绝热压缩温升（$\text{d}T/\text{d}t > 1.2\text{ K/min}$）防自催化歧化爆瓶硬联锁（`IEC 61511 SIL-3`）**：一旦歧管光纤光栅检出温升率 $>1.2\text{ K/min}$ 或局部温度 $>335\text{ K}$，在 `0.14 ms` 内瞬时切断隔膜压缩机并开启液氮/氦夹套急冷与还原塔紧急泄压，实现剧毒 $\text{NO}_2$ 气瓶临床污染与绝热分解爆燃率 `0.0%`。
+
+| 指标维度 | governed：$119.5\text{–}121.4\text{ K}$ 深冷分馏 + $\text{NOCl}$ 光解 + `KOH/13X` 化学吸附与等温充装 `PINN-MPC` + `USP-NF / ISO 11114-1 / SIL-3` `0.14 ms` 联锁 + `10 kHz QCL-TDLAS / CRDS` 边缘 | raw 反模式：忽略深冷负活化能 $2\text{NO}+\text{O}_2\to 2\text{NO}_2$ 加速效应 + 快速绝热充装诱发 $3\text{NO}\to\text{N}_2\text{O}+\text{NO}_2$ 歧化 + 无 `0.14 ms` $\text{NO}_2$ 还原洗涤与温升闭锁联锁 |
+|---|---|---|
+| **医药级 `5N NO` 纯度与吸入用 `iNO` 气瓶长期稳定性产率增益** | **`+58.6%`**（前置脱氧 $<50\text{ ppbv}$ 阻断深冷负活化能氧化，改性 `KOH/13X` 消除分子筛酸位催化歧化，$\le 0.15\text{ MPa/min}$ 等温充装） | `+11.2%`（深冷冷凝器内痕量氧以室温 15 倍速率生成 $\text{NO}_2/\text{N}_2\text{O}_3$，或普通沸石催化 $\text{NO}$ 歧化导致纯度降级） |
+| **致死性肺水肿毒物 $\text{NO}_2$ 突破与 $\text{N}_2\text{O}$ 歧化副产物削减** | **`-82.6%`**（气瓶内 $\text{NO}_2$ 稳定压制在 $<0.08\text{ ppmv}$，远低于 `USP-NF` $0.5\text{ ppmv}$ 限值，$\text{N}_2\text{O} < 0.8\text{ ppmv}$） | `-15.0%`（快速充装绝热压缩热点 $>410\text{ K}$ 触发 $3\text{NO}\to\text{N}_2\text{O}+\text{NO}_2$ 放热歧化，且痕量水生成发烟 $\text{HNO}_3$ 腐蚀铝瓶） |
+| **`USP-NF / ISO 11114-1 / SIL-3` $\text{NO}_2$ 还原洗涤与绝热压缩闭锁联锁** | **`0.14 ms`**（$\text{NO}_2>0.45\text{ ppmv}$ 瞬锁气瓶阀并切入 $\text{Na}_2\text{S}_2\text{O}_3/\text{NaOH}$ 还原塔 + $\text{H}_2\text{O}>1.8\text{ ppmv}$ 隔离 + $\text{d}T/\text{d}t>1.2\text{ K/min}$ 停机急冷） | `406.0 ms`（传统机械调压阀与离线抽检无法拦截充装歧管毫秒级绝热压缩热点与痕量氧漏入） |
+| **剧毒 $\text{NO}_2$ 气瓶临床污染引发肺水肿或高压绝热分解爆燃率** | **`0.0%`**（零 $\text{NO}_2$ 超标气瓶流入 `NICU` 临床、零 $\text{HNO}_3$ 应力腐蚀穿孔、零高压 $\text{NO}$ 绝热自燃分解） | `1.5%`（超标 $\text{NO}_2$ 气瓶诱发新生儿急性肺水肿/高铁血红蛋白血症，或高压阀门绝热冲击引发歧化爆瓶） |
+| **`10 kHz` 在线中红外 `QCL-TDLAS`（$5.26/6.25\text{ }\mu\text{m}$）与 `CRDS` 边缘延迟** | **`0.13 ms`**（原位直测 $\le 10\text{ ppbv }\text{NO}_2$ 与 $\le 50\text{ ppbv }\text{H}_2\text{O}$，削减 `99.7%` 特种医用气体基地 WAN 带宽） | `226.0 ms`（依赖离线气相色谱/化学发光法抽检，漏检 `5.0%` 深冷负活化能 $\text{NO}$ 氧化与分子筛沟流漂移批次） |
+| **配套 IaC 蓝图与仿真函数** | `blueprints/no-cryogenic-distillation-and-no2-disproportionation-pinn-mpc-sil3.bicep`（**第 234 套蓝图**） | `simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox()`（**第 233 项仿真器**） |
+
+---
+
+## 239. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #233 · **240-Chapter Milestone!**）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

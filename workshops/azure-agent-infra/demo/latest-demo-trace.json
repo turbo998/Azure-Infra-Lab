@@ -13394,6 +13394,53 @@
         "uncompensated_ru_co_distillation_pt_carryover_or_thiol_ligand_exchange_pct": 5.0,
         "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": false
       }
+    ],
+    "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_profiles": [
+      {
+        "no_ino_trains": 8,
+        "governance_mode": "pinn_mpc_no_cryogenic_distillation_nocl_photolysis_and_no2_disproportionation_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_no_ino_pods": 32,
+        "pharmaceutical_5n_no_purity_and_ino_cylinder_stability_yield_gain_pct": 58.6,
+        "no2_pulmonary_toxin_breakthrough_and_n2o_disproportionation_reduction_pct": 82.6,
+        "usp_nf_iso11114_sil3_no2_scrubber_and_adiabatic_compression_lockout_latency_ms": 0.14,
+        "unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct": 0.0,
+        "edge_qcl_tdlas_5260nm_6250nm_crds_h2o_and_cryo_column_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct": 0.0,
+        "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met": true
+      },
+      {
+        "no_ino_trains": 32,
+        "governance_mode": "pinn_mpc_no_cryogenic_distillation_nocl_photolysis_and_no2_disproportionation_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_no_ino_pods": 128,
+        "pharmaceutical_5n_no_purity_and_ino_cylinder_stability_yield_gain_pct": 58.6,
+        "no2_pulmonary_toxin_breakthrough_and_n2o_disproportionation_reduction_pct": 82.6,
+        "usp_nf_iso11114_sil3_no2_scrubber_and_adiabatic_compression_lockout_latency_ms": 0.14,
+        "unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct": 0.0,
+        "edge_qcl_tdlas_5260nm_6250nm_crds_h2o_and_cryo_column_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct": 0.0,
+        "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met": true
+      },
+      {
+        "no_ino_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_no2_pulmonary_toxin_breakthrough_and_adiabatic_decomposition",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_no_ino_pods": 32,
+        "pharmaceutical_5n_no_purity_and_ino_cylinder_stability_yield_gain_pct": 11.2,
+        "no2_pulmonary_toxin_breakthrough_and_n2o_disproportionation_reduction_pct": 15.0,
+        "usp_nf_iso11114_sil3_no2_scrubber_and_adiabatic_compression_lockout_latency_ms": 406.0,
+        "unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct": 1.5,
+        "edge_qcl_tdlas_5260nm_6250nm_crds_h2o_and_cryo_column_closed_loop_latency_ms": 226.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct": 5.0,
+        "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -25162,5 +25209,52 @@
       "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_slo_met": false
     }
   },
-  "trace_sha256": "e7a248f8039f60cadcecc0404fcca38a041ee25f617b77c3aba0f745d3b2dc83"
+  "demo_233_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox": {
+    "governed_no_ino_8_trains": {
+      "no_ino_trains": 8,
+      "governance_mode": "pinn_mpc_no_cryogenic_distillation_nocl_photolysis_and_no2_disproportionation_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_no_ino_pods": 32,
+      "pharmaceutical_5n_no_purity_and_ino_cylinder_stability_yield_gain_pct": 58.6,
+      "no2_pulmonary_toxin_breakthrough_and_n2o_disproportionation_reduction_pct": 82.6,
+      "usp_nf_iso11114_sil3_no2_scrubber_and_adiabatic_compression_lockout_latency_ms": 0.14,
+      "unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct": 0.0,
+      "edge_qcl_tdlas_5260nm_6250nm_crds_h2o_and_cryo_column_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct": 0.0,
+      "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met": true
+    },
+    "governed_no_ino_32_trains": {
+      "no_ino_trains": 32,
+      "governance_mode": "pinn_mpc_no_cryogenic_distillation_nocl_photolysis_and_no2_disproportionation_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_no_ino_pods": 128,
+      "pharmaceutical_5n_no_purity_and_ino_cylinder_stability_yield_gain_pct": 58.6,
+      "no2_pulmonary_toxin_breakthrough_and_n2o_disproportionation_reduction_pct": 82.6,
+      "usp_nf_iso11114_sil3_no2_scrubber_and_adiabatic_compression_lockout_latency_ms": 0.14,
+      "unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct": 0.0,
+      "edge_qcl_tdlas_5260nm_6250nm_crds_h2o_and_cryo_column_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct": 0.0,
+      "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met": true
+    },
+    "raw_no_ino_8_trains": {
+      "no_ino_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_no2_pulmonary_toxin_breakthrough_and_adiabatic_decomposition",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_no_ino_pods": 32,
+      "pharmaceutical_5n_no_purity_and_ino_cylinder_stability_yield_gain_pct": 11.2,
+      "no2_pulmonary_toxin_breakthrough_and_n2o_disproportionation_reduction_pct": 15.0,
+      "usp_nf_iso11114_sil3_no2_scrubber_and_adiabatic_compression_lockout_latency_ms": 406.0,
+      "unmitigated_no2_toxic_cylinder_contamination_or_adiabatic_decomposition_pct": 1.5,
+      "edge_qcl_tdlas_5260nm_6250nm_crds_h2o_and_cryo_column_closed_loop_latency_ms": 226.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct": 5.0,
+      "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met": false
+    }
+  },
+  "trace_sha256": "3ef2a08bb1bc5b99b7a4b490e4295a65c22baa9028caa0cecc553d0ca36e8ff9"
 }

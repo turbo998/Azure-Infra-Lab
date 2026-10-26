@@ -252,6 +252,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
     simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
     simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox,
+    simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1643,6 +1644,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_rh105_au199_8_trains": simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(8, "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge"),
             "governed_rh105_au199_32_trains": simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(32, "pinn_mpc_ru104_rh105_tetrathioether_and_pt198_au199_rgdfk_glyconanoparticle_sil3_edge"),
             "raw_rh105_au199_8_trains": simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_ruo4_vapor_au198_breakthrough_and_aunp_aggregation"),
+        },
+        "demo_233_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox": {
+            "governed_no_ino_8_trains": simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox(8, "pinn_mpc_no_cryogenic_distillation_nocl_photolysis_and_no2_disproportionation_sil3_edge"),
+            "governed_no_ino_32_trains": simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox(32, "pinn_mpc_no_cryogenic_distillation_nocl_photolysis_and_no2_disproportionation_sil3_edge"),
+            "raw_no_ino_8_trains": simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox(8, "raw_cloud_uncompensated_no2_pulmonary_toxin_breakthrough_and_adiabatic_decomposition"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
