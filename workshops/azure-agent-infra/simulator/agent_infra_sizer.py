@@ -10928,6 +10928,72 @@ def simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_
     }
 
 
+def simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(
+    tm_yb_lu_lines: int = 8,
+    tm_yb_lu_governance_mode: str = "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Chapter 212 (Cycle #207): Autonomous Heavy Rare-Earth Terminal Triad —
+    Thulium (Tm, Z=69), Ytterbium (Yb, Z=70) & Lutetium (Lu, Z=71) High-Gradient
+    P507/P229 Ion-Exchange & Lanthanothermic Vacuum Sublimation-Distillation (5N5),
+    kW-Class 1,064 nm Yb3+:Al/P/Ce Double-Clad Fiber Laser Preform & 171Yb+
+    Trapped-Ion Qubit/Optical Clock Isotope Enrichment, 1.94 um Tm:Fiber / Tm:YAG
+    Two-for-One Cross-Relaxation Laser, 2,150 degC Iridium-Crucible Czochralski
+    Growth of Lu1.8Y0.2SiO5:Ce3+ (LYSO:Ce) TOF-PET Scintillator Boules &
+    No-Carrier-Added (n.c.a.) 177Lu Targeted Radioligand Therapy (176Yb(n,gamma)177Yb
+    -> 177Lu LN-Resin Separation) PINN-MPC, Online 10 kHz TIMS/ICP-MS, 511 keV
+    Coincidence Timing Resolution (CTR) & HPGe Gamma Spectroscopy Metrology &
+    10 CFR 35 / NFPA 484 / SEMI S2 / ANSI Z136.1 / IEC 61511 SIL-3 Pyrophoric Yb/Tm
+    Sublimation Condensate, 2,150 degC Ir-Crucible LYSO Melt-Spill & 177Lu/170Tm
+    Hot-Cell Shielding Interlock.
+    """
+    if tm_yb_lu_lines < 1:
+        raise ValueError("tm_yb_lu_lines must be >= 1")
+
+    governed = (
+        tm_yb_lu_governance_mode
+        == "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(tm_yb_lu_lines / 2))
+    active_tm_yb_lu_pods = tm_yb_lu_lines * 4
+
+    tm_yb_lu_5n5_yield_yb_tm_slope_efficiency_lyso_ctr_and_nca_177lu_specific_activity_gain_pct = (
+        51.6 if governed else 8.8
+    )
+    yb_fiber_photodarkening_lyso_oxygen_vacancy_afterglow_and_176yb_breakthrough_reduction_pct = (
+        76.3 if governed else 11.7
+    )
+    cfr35_nfpa484_semis2_sil3_pyrophoric_yb_tm_2150c_ir_crucible_and_177lu_hotcell_interlock_ms = (
+        0.23 if governed else 362.0
+    )
+    unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct = (
+        0.0 if governed else 1.5
+    )
+    tm_yb_lu_edge_10khz_tims_icpms_511kev_ctr_and_hpge_177lu_purity_loop_ms = (
+        0.19 if governed else 196.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct = (
+        0.0 if governed else 4.2
+    )
+
+    return {
+        "tm_yb_lu_lines": tm_yb_lu_lines,
+        "tm_yb_lu_governance_mode": tm_yb_lu_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tm_yb_lu_pods": active_tm_yb_lu_pods,
+        "tm_yb_lu_5n5_yield_yb_tm_slope_efficiency_lyso_ctr_and_nca_177lu_specific_activity_gain_pct": tm_yb_lu_5n5_yield_yb_tm_slope_efficiency_lyso_ctr_and_nca_177lu_specific_activity_gain_pct,
+        "yb_fiber_photodarkening_lyso_oxygen_vacancy_afterglow_and_176yb_breakthrough_reduction_pct": yb_fiber_photodarkening_lyso_oxygen_vacancy_afterglow_and_176yb_breakthrough_reduction_pct,
+        "cfr35_nfpa484_semis2_sil3_pyrophoric_yb_tm_2150c_ir_crucible_and_177lu_hotcell_interlock_ms": cfr35_nfpa484_semis2_sil3_pyrophoric_yb_tm_2150c_ir_crucible_and_177lu_hotcell_interlock_ms,
+        "unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct": unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct,
+        "tm_yb_lu_edge_10khz_tims_icpms_511kev_ctr_and_hpge_177lu_purity_loop_ms": tm_yb_lu_edge_10khz_tims_icpms_511kev_ctr_and_hpge_177lu_purity_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct": uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct,
+        "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

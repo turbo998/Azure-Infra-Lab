@@ -226,6 +226,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
     simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
     simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
+    simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1487,6 +1488,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "gd_ho_er_8_lines": simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(8, "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge"),
             "gd_ho_er_32_lines": simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(32, "pinn_mpc_gd_ho_er_5n_distillation_uo2_gd2o3_kirkendall_amr_prep_and_edfa_mcvd_piq_sil3_edge"),
             "raw_gd_ho_er_8_lines": simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(8, "raw_cloud_open_loop_uo2_gd2o3_sintering_conventional_mcvd_solution_doping_and_unpassivated_prep"),
+        },
+        "demo_207_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox": {
+            "tm_yb_lu_8_lines": simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(8, "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge"),
+            "tm_yb_lu_32_lines": simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(32, "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge"),
+            "raw_tm_yb_lu_8_lines": simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(8, "raw_cloud_empirical_yb_lu_chromatography_unpassivated_sublimation_and_open_loop_lyso_czochralski"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

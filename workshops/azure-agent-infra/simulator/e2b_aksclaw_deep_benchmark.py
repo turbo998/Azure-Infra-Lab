@@ -219,6 +219,7 @@ from agent_infra_sizer import (
     simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
     simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
     simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
+    simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1692,6 +1693,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox(8, "raw_cloud_open_loop_uo2_gd2o3_sintering_conventional_mcvd_solution_doping_and_unpassivated_prep"),
     ]
 
+    thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles: List[Dict[str, object]] = [
+        simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(8, "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge"),
+        simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(32, "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge"),
+        simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(8, "raw_cloud_empirical_yb_lu_chromatography_unpassivated_sublimation_and_open_loop_lyso_czochralski"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1898,6 +1905,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_profiles": lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_profiles,
         "samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_profiles": samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_profiles,
         "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles": gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_profiles,
+        "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles": thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles,
     }
 
 

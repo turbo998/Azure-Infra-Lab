@@ -213,6 +213,7 @@ from agent_infra_sizer import (
     simulate_lanthanum_cerium_bastnasite_roasting_ceo2_cmp_slurry_lab6_emitter_lani5_hydride_sil3_sandbox,
     simulate_samarium_europium_lanthanothermic_distillation_sm2co17_magnet_sialon_phosphor_sil3_sandbox,
     simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
+    simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4383,6 +4384,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct"], 3.0)
         self.assertTrue(gov["gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met"])
         self.assertFalse(raw["gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met"])
+
+    def test_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(self) -> None:
+        gov = simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(
+            8, "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge"
+        )
+        raw = simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox(
+            8, "raw_cloud_empirical_yb_lu_chromatography_unpassivated_sublimation_and_open_loop_lyso_czochralski"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_tm_yb_lu_pods"], 32)
+        self.assertEqual(gov["tm_yb_lu_5n5_yield_yb_tm_slope_efficiency_lyso_ctr_and_nca_177lu_specific_activity_gain_pct"], 51.6)
+        self.assertEqual(gov["yb_fiber_photodarkening_lyso_oxygen_vacancy_afterglow_and_176yb_breakthrough_reduction_pct"], 76.3)
+        self.assertEqual(gov["cfr35_nfpa484_semis2_sil3_pyrophoric_yb_tm_2150c_ir_crucible_and_177lu_hotcell_interlock_ms"], 0.23)
+        self.assertEqual(gov["unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct"], 1.0)
+        self.assertEqual(gov["tm_yb_lu_edge_10khz_tims_icpms_511kev_ctr_and_hpge_177lu_purity_loop_ms"], 0.19)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct"], 3.0)
+        self.assertTrue(gov["thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met"])
+        self.assertFalse(raw["thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met"])
 
 
 if __name__ == "__main__":

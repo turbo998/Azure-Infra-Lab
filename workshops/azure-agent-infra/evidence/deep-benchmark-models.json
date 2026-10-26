@@ -11970,5 +11970,52 @@
       "uncompensated_uo2_gd2o3_om_stoichiometry_drift_amr_hysteresis_crack_or_edfa_oh_quench_pct": 4.3,
       "gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_slo_met": false
     }
+  ],
+  "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles": [
+    {
+      "tm_yb_lu_lines": 8,
+      "tm_yb_lu_governance_mode": "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tm_yb_lu_pods": 32,
+      "tm_yb_lu_5n5_yield_yb_tm_slope_efficiency_lyso_ctr_and_nca_177lu_specific_activity_gain_pct": 51.6,
+      "yb_fiber_photodarkening_lyso_oxygen_vacancy_afterglow_and_176yb_breakthrough_reduction_pct": 76.3,
+      "cfr35_nfpa484_semis2_sil3_pyrophoric_yb_tm_2150c_ir_crucible_and_177lu_hotcell_interlock_ms": 0.23,
+      "unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct": 0.0,
+      "tm_yb_lu_edge_10khz_tims_icpms_511kev_ctr_and_hpge_177lu_purity_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct": 0.0,
+      "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met": true
+    },
+    {
+      "tm_yb_lu_lines": 32,
+      "tm_yb_lu_governance_mode": "pinn_mpc_tm_yb_lu_5n5_sublimation_yb_tm_fiber_photodarkening_czochralski_lyso_and_nca_177lu_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tm_yb_lu_pods": 128,
+      "tm_yb_lu_5n5_yield_yb_tm_slope_efficiency_lyso_ctr_and_nca_177lu_specific_activity_gain_pct": 51.6,
+      "yb_fiber_photodarkening_lyso_oxygen_vacancy_afterglow_and_176yb_breakthrough_reduction_pct": 76.3,
+      "cfr35_nfpa484_semis2_sil3_pyrophoric_yb_tm_2150c_ir_crucible_and_177lu_hotcell_interlock_ms": 0.23,
+      "unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct": 0.0,
+      "tm_yb_lu_edge_10khz_tims_icpms_511kev_ctr_and_hpge_177lu_purity_loop_ms": 0.19,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct": 0.0,
+      "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met": true
+    },
+    {
+      "tm_yb_lu_lines": 8,
+      "tm_yb_lu_governance_mode": "raw_cloud_empirical_yb_lu_chromatography_unpassivated_sublimation_and_open_loop_lyso_czochralski",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tm_yb_lu_pods": 32,
+      "tm_yb_lu_5n5_yield_yb_tm_slope_efficiency_lyso_ctr_and_nca_177lu_specific_activity_gain_pct": 8.8,
+      "yb_fiber_photodarkening_lyso_oxygen_vacancy_afterglow_and_176yb_breakthrough_reduction_pct": 11.7,
+      "cfr35_nfpa484_semis2_sil3_pyrophoric_yb_tm_2150c_ir_crucible_and_177lu_hotcell_interlock_ms": 362.0,
+      "unmitigated_pyrophoric_yb_tm_condensate_fire_2150c_lyso_ir_crucible_breach_or_177lu_hotcell_leak_pct": 1.5,
+      "tm_yb_lu_edge_10khz_tims_icpms_511kev_ctr_and_hpge_177lu_purity_loop_ms": 196.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_yb_tmi_photodarkening_lyso_spiral_cracking_or_177mlu_radionuclidic_impurity_pct": 4.2,
+      "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_slo_met": false
+    }
   ]
 }
