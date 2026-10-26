@@ -12111,5 +12111,52 @@
       "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": 4.3,
       "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": false
     }
+  ],
+  "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles": [
+    {
+      "transplutonium_cf252_cells": 8,
+      "transplutonium_cf252_governance_mode": "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_transplutonium_cf252_pods": 32,
+      "cf252_specific_neutron_yield_alpha_hiba_resolution_and_burnable_absorber_worth_gain_pct": 52.4,
+      "radiolytic_resin_gassing_252cf_elution_tailing_and_b4c_helium_swelling_defect_reduction_pct": 76.9,
+      "cfr70_ans815_iso2919_sil3_cf252_wep_neutron_shield_radiolytic_h2_recombiner_and_capsule_leak_interlock_ms": 0.21,
+      "unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct": 0.0,
+      "transplutonium_cf252_edge_10khz_stilbene_psd_cherenkov_alpha_eluate_and_he_leak_loop_ms": 0.17,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct": 0.0,
+      "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met": true
+    },
+    {
+      "transplutonium_cf252_cells": 32,
+      "transplutonium_cf252_governance_mode": "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_transplutonium_cf252_pods": 128,
+      "cf252_specific_neutron_yield_alpha_hiba_resolution_and_burnable_absorber_worth_gain_pct": 52.4,
+      "radiolytic_resin_gassing_252cf_elution_tailing_and_b4c_helium_swelling_defect_reduction_pct": 76.9,
+      "cfr70_ans815_iso2919_sil3_cf252_wep_neutron_shield_radiolytic_h2_recombiner_and_capsule_leak_interlock_ms": 0.21,
+      "unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct": 0.0,
+      "transplutonium_cf252_edge_10khz_stilbene_psd_cherenkov_alpha_eluate_and_he_leak_loop_ms": 0.17,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct": 0.0,
+      "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met": true
+    },
+    {
+      "transplutonium_cf252_cells": 8,
+      "transplutonium_cf252_governance_mode": "raw_cloud_unpressurized_ion_exchange_open_loop_cf252_oxalate_calcination_and_manual_shield_gate",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_transplutonium_cf252_pods": 32,
+      "cf252_specific_neutron_yield_alpha_hiba_resolution_and_burnable_absorber_worth_gain_pct": 9.1,
+      "radiolytic_resin_gassing_252cf_elution_tailing_and_b4c_helium_swelling_defect_reduction_pct": 12.1,
+      "cfr70_ans815_iso2919_sil3_cf252_wep_neutron_shield_radiolytic_h2_recombiner_and_capsule_leak_interlock_ms": 368.0,
+      "unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct": 1.5,
+      "transplutonium_cf252_edge_10khz_stilbene_psd_cherenkov_alpha_eluate_and_he_leak_loop_ms": 201.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct": 4.4,
+      "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met": false
+    }
   ]
 }

@@ -11134,6 +11134,58 @@ def simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_sa
     }
 
 
+def simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(
+    transplutonium_cf252_cells: int = 8,
+    transplutonium_cf252_governance_mode: str = "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Curium (Cm, Z=96), Berkelium (Bk, Z=97) & Californium-252 (252Cf, Z=98) HFIR target transmutation, HPIX alpha-HIBA chromatography, Pd-252Cf2O3 neutron source & reactor control absorber HIP (Chapter 215, Cycle #210 — 210-Cycle & 210-Simulator Milestone!)."""
+    if transplutonium_cf252_cells < 1:
+        raise ValueError("transplutonium_cf252_cells must be >= 1")
+
+    governed = (
+        transplutonium_cf252_governance_mode
+        == "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(transplutonium_cf252_cells / 2))
+    active_transplutonium_cf252_pods = transplutonium_cf252_cells * 4
+
+    cf252_specific_neutron_yield_alpha_hiba_resolution_and_burnable_absorber_worth_gain_pct = (
+        52.4 if governed else 9.1
+    )
+    radiolytic_resin_gassing_252cf_elution_tailing_and_b4c_helium_swelling_defect_reduction_pct = (
+        76.9 if governed else 12.1
+    )
+    cfr70_ans815_iso2919_sil3_cf252_wep_neutron_shield_radiolytic_h2_recombiner_and_capsule_leak_interlock_ms = (
+        0.21 if governed else 368.0
+    )
+    unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct = (
+        0.0 if governed else 1.5
+    )
+    transplutonium_cf252_edge_10khz_stilbene_psd_cherenkov_alpha_eluate_and_he_leak_loop_ms = (
+        0.17 if governed else 201.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct = (
+        0.0 if governed else 4.4
+    )
+
+    return {
+        "transplutonium_cf252_cells": transplutonium_cf252_cells,
+        "transplutonium_cf252_governance_mode": transplutonium_cf252_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_transplutonium_cf252_pods": active_transplutonium_cf252_pods,
+        "cf252_specific_neutron_yield_alpha_hiba_resolution_and_burnable_absorber_worth_gain_pct": cf252_specific_neutron_yield_alpha_hiba_resolution_and_burnable_absorber_worth_gain_pct,
+        "radiolytic_resin_gassing_252cf_elution_tailing_and_b4c_helium_swelling_defect_reduction_pct": radiolytic_resin_gassing_252cf_elution_tailing_and_b4c_helium_swelling_defect_reduction_pct,
+        "cfr70_ans815_iso2919_sil3_cf252_wep_neutron_shield_radiolytic_h2_recombiner_and_capsule_leak_interlock_ms": cfr70_ans815_iso2919_sil3_cf252_wep_neutron_shield_radiolytic_h2_recombiner_and_capsule_leak_interlock_ms,
+        "unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct": unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct,
+        "transplutonium_cf252_edge_10khz_stilbene_psd_cherenkov_alpha_eluate_and_he_leak_loop_ms": transplutonium_cf252_edge_10khz_stilbene_psd_cherenkov_alpha_eluate_and_he_leak_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct": uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct,
+        "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

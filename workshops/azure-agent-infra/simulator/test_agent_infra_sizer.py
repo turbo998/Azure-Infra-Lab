@@ -216,6 +216,7 @@ from agent_infra_sizer import (
     simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
+    simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4449,6 +4450,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct"], 3.0)
         self.assertTrue(gov["plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met"])
         self.assertFalse(raw["plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met"])
+
+    def test_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(self) -> None:
+        gov = simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(
+            8, "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"
+        )
+        raw = simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(
+            8, "raw_cloud_unpressurized_ion_exchange_open_loop_cf252_oxalate_calcination_and_manual_shield_gate"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_transplutonium_cf252_pods"], 32)
+        self.assertEqual(gov["cf252_specific_neutron_yield_alpha_hiba_resolution_and_burnable_absorber_worth_gain_pct"], 52.4)
+        self.assertEqual(gov["radiolytic_resin_gassing_252cf_elution_tailing_and_b4c_helium_swelling_defect_reduction_pct"], 76.9)
+        self.assertEqual(gov["cfr70_ans815_iso2919_sil3_cf252_wep_neutron_shield_radiolytic_h2_recombiner_and_capsule_leak_interlock_ms"], 0.21)
+        self.assertEqual(gov["unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_cf252_fast_neutron_shine_radiolytic_h2_detonation_or_c66646_capsule_rupture_pct"], 1.0)
+        self.assertEqual(gov["transplutonium_cf252_edge_10khz_stilbene_psd_cherenkov_alpha_eluate_and_he_leak_loop_ms"], 0.17)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_253es_over_irradiation_alpha_hiba_ph_shift_or_pd_cf2o3_wire_brittle_fracture_pct"], 3.0)
+        self.assertTrue(gov["curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met"])
+        self.assertFalse(raw["curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_slo_met"])
 
 
 if __name__ == "__main__":

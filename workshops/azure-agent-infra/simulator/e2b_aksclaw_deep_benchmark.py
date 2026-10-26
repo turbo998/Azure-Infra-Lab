@@ -222,6 +222,7 @@ from agent_infra_sizer import (
     simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
+    simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1713,6 +1714,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(8, "raw_cloud_unexchanged_puo2_sinter_open_loop_lcc_potential_and_offline_alpha_n_assay"),
     ]
 
+    curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles: List[Dict[str, object]] = [
+        simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(8, "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"),
+        simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(32, "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"),
+        simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(8, "raw_cloud_unpressurized_ion_exchange_open_loop_cf252_oxalate_calcination_and_manual_shield_gate"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1922,6 +1929,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles": thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_profiles,
         "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles": uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_profiles,
         "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_profiles": plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_profiles,
+        "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles": curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles,
     }
 
 

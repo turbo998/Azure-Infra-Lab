@@ -5,11 +5,11 @@
 Public Azure infrastructure engineering playbooks, interactive H5 simulators, and partner workshops:
 
 1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure` · Bilingual EN/中文)](workshops/azure-agent-infra/README.en.md)**:
-   - **215 Chapters · 210 Production IaC Blueprints · 209 Deterministic Physics Simulators · 218/218 Unit Tests Passing**
+   - **216 Chapters · 211 Production IaC Blueprints · 210 Deterministic Physics Simulators · 219/219 Unit Tests Passing (210-Cycle & 210-Simulator Milestone!)**
    - **Live GitHub Pages (Bilingual `EN / 中文` Toggle)**:
      - [Interactive Playbook Atlas (`index.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html)
      - [Live Dual-Track Simulator (`demo.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html)
-     - [Decision Engine, 100K Sandbox Sizer & 209 Domain Simulators (`selector.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html)
+     - [Decision Engine, 100K Sandbox Sizer & 210 Domain Simulators (`selector.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html)
      - [7-Card 4:5 Benchmark Deck (`cards.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html)
    - **Documentation**: [English Playbook (`README.en.md`)](workshops/azure-agent-infra/README.en.md) · [中文 Playbook (`README.zh-CN.md`)](workshops/azure-agent-infra/README.zh-CN.md) · [English 7-Card Report (`test-report.en.md`)](workshops/azure-agent-infra/test-report.en.md) · [中文 7-Card 报告 (`test-report.md`)](workshops/azure-agent-infra/test-report.md)
 2. **[Data & AI / FabCon & SQLCon Barcelona 2026 Executive Briefing & Interactive Video Hub (Bilingual EN/中文)](workshops/fabcon-sqlcon-2026/README.en.md)**:

@@ -229,6 +229,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
+    simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1505,6 +1506,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "actinide_pyro_rtg_8_cells": simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(8, "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge"),
             "actinide_pyro_rtg_32_cells": simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(32, "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge"),
             "raw_actinide_pyro_rtg_8_cells": simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(8, "raw_cloud_unexchanged_puo2_sinter_open_loop_lcc_potential_and_offline_alpha_n_assay"),
+        },
+        "demo_210_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox": {
+            "transplutonium_cf252_8_cells": simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(8, "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"),
+            "transplutonium_cf252_32_cells": simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(32, "pinn_mpc_hfir_cm_target_alpha_hiba_hpix_pd_252cf2o3_wire_and_gd2o3_10b4c_hip_sil3_edge"),
+            "raw_transplutonium_cf252_8_cells": simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox(8, "raw_cloud_unpressurized_ion_exchange_open_loop_cf252_oxalate_calcination_and_manual_shield_gate"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
