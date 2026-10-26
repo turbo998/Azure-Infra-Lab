@@ -1,14 +1,16 @@
 # Azure Infra Lab
 
-> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.zh-CN.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📊 7-Card Report (EN)](workshops/azure-agent-infra/test-report.en.md)**
+> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.zh-CN.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📊 7-Card Report (EN)](workshops/azure-agent-infra/test-report.en.md)** | **[🎬 FabCon & SQLCon 2026 视频简报 H5](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)**
 
-面向伙伴、架构师与技术团队的公开 Azure 基础设施实战 Workshop 与技术手册。当前收录两大核心专题：
+面向伙伴、架构师与技术团队的公开 Azure 基础设施实战 Workshop 与技术手册。当前收录三大核心专题：
 1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)](workshops/azure-agent-infra/README.md)**：从四层全栈架构（Build · Run · Ground · Govern）、六大计算运行时光谱到 AKS 多租户 Kata 隔离与 10 万+ 并发 Firecracker MicroVM 云端沙箱底座。
-2. **[Compute / Azure VM Modernization & FinOps](workshops/azure-vm-modernization/README.md)**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
+2. **[Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub](workshops/fabcon-sqlcon-2026/README.md)**：Microsoft Fabric 与 SQL 2026 巴塞罗那峰会全量创新解析、5 支微软官方 1080p/720p 实机演示视频内嵌播放器与直链、六大技术支柱及 18 项 GA/Preview 状态速查矩阵（中英双语切换）。
+3. **[Compute / Azure VM Modernization & FinOps](workshops/azure-vm-modernization/README.md)**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
 
 Public Azure infrastructure workshops and architectural playbooks for partners, architects, and technical teams:
 1. **AI Agent Infrastructure on Azure (`AKSClaw × E2B on Azure`)** — Four-layer reference architecture, 6-tier runtime spectrum, interactive live simulator, 100K sandbox VMSS sizer, and 7-card 4:5 benchmark deck.
-2. **Compute / Azure VM Modernization & FinOps** — Trilingual course, six synthetic cases, browser-local calculator, and standalone reports.
+2. **Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub** — Bilingual interactive H5 briefing with 5 embedded official 1080p/720p product demo videos, 6 strategic pillars, and an 18-item GA/Preview release matrix covering Fabric IQ, Power BI Agentic App Creation, Rayfin, OneLake IQ Sharing, Data Engineering Agents (Osmos), and Azure SQL Hyperscale.
+3. **Compute / Azure VM Modernization & FinOps** — Trilingual course, six synthetic cases, browser-local calculator, and standalone reports.
 
 ---
 
@@ -28,7 +30,21 @@ Public Azure infrastructure workshops and architectural playbooks for partners, 
 
 ---
 
-## 专题二：Compute / Azure VM Modernization & FinOps
+## 专题二：Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub
+
+- **[🎬 交互式双语视频简报 H5 (中文默认)](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)** · **[🎬 Interactive Video Hub (English)](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html?lang=en)** · **[📘 双语总入口 (`README.md`)](workshops/fabcon-sqlcon-2026/README.md)** · **[🇨🇳 中文完整简报 (`README.zh-CN.md`)](workshops/fabcon-sqlcon-2026/README.zh-CN.md)** · **[🇬🇧 English Briefing (`README.en.md`)](workshops/fabcon-sqlcon-2026/README.en.md)**
+
+围绕微软 Azure Data 执行副总裁 Arun Ulag 发布的 **[FabCon and SQLCon 2026: Explore Microsoft Fabric and SQL innovations](https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/)**，完整梳理“为 Microsoft Copilot 与智能体构建可信企业数据底座”的全栈创新：
+
+| 模块 / Module | 核心内容与技术资产 / Capabilities & Assets |
+| --- | --- |
+| **1. 5 支微软官方 1080p/720p 实机演示视频中心** | 页面内嵌 `<video>` 直接播放并提供多码率 MP4（1080p/720p/540p/360p）、TTML 字幕与文稿下载：① **Fabric IQ in M365 Copilot (GA)**、② **Power BI Agentic App Creation (Preview)**、③ **Fabric Apps & Rayfin SDK (Available)**、④ **OneLake IQ Sharing (Preview)**、⑤ **End-to-End Observability in Fabric (Preview)** |
+| **2. 六大战略技术支柱深度拆解** | 覆盖 **Fabric IQ 赋能 Copilot（零额外 AI Token 成本）**、**Power BI 自然语言构建支持 Write-back 与 1GB 免费 Fabric SQL 的全栈应用**、**OneLake IQ Sharing 跨组织共享 Markdown 指令与 RDF 本体**、**Osmos 自主数据工程智能体**、**Apache Ossie 开放语义标准与按需计费**、**Database Hub 与 SQL Hyperscale 192 vCore / DiskANN 向量索引 GA** |
+| **3. 18 项特性 GA / Preview 交互式矩阵** | 支持按 **全部 (18)** / **正式可用 GA (7)** / **预览与即将推出 (11)** 实时筛选，并提供全部 8 篇微软官方配套深度博客直达索引 |
+
+---
+
+## 专题三：Compute / Azure VM Modernization & FinOps
 
 **[立即体验 / Live Demo](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/demo.html)** · **[课程 / Course](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/workshop.html)** · **[计算器 / Calculator](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/calculator.html)** · **[下载离线包 / Download ZIP](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/Azure-VM-Partner-Workshop.zip)** · **[源码 / Source](workshops/azure-vm-modernization/source)**
 

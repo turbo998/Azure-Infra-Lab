@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FabCon &amp; SQLCon Barcelona 2026 | Microsoft Fabric &amp; SQL 创新发布简报</title>
+  <style>
+    :root {
+      --bg-primary: #070b14;
+      --bg-card: #0f172a;
+      --bg-card-hover: #131e36;
+      --bg-elevated: #1e293b;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --accent-fabric: #10b981;
+      --accent-sql: #38bdf8;
+      --accent-copilot: #a855f7;
+      --accent-amber: #f59e0b;
+      --border-subtle: rgba(148, 163, 184, 0.16);
+      --border-glow: rgba(56, 189, 248, 0.38);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-lg: 0 20px 45px -15px rgba(2, 6, 23, 0.75);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at 15% 0%, rgba(16, 185, 129, 0.14), transparent 36%),
+                  radial-gradient(circle at 85% 10%, rgba(56, 189, 248, 0.14), transparent 40%),
+                  var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+      padding-bottom: 64px;
+    }
+
+    html[data-lang="zh"] [data-en] { display: none !important; }
+    html[data-lang="en"] [data-zh] { display: none !important; }
+
+    a {
+      color: var(--accent-sql);
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+    a:hover {
+      color: #7dd3fc;
+      text-decoration: underline;
+    }
+
+    /* Sticky Top Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 11, 20, 0.85);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+    }
+    .topbar-inner {
+      max-width: 1260px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-fabric), var(--accent-sql));
+      box-shadow: 0 0 12px var(--accent-fabric);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links a {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--border-subtle);
+      color: #fff;
+    }
+    .lang-btn {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(56, 189, 248, 0.2));
+      color: var(--text-primary);
+      border: 1px solid var(--border-glow);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.35), rgba(56, 189, 248, 0.35));
+    }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero Header */
+    .hero {
+      padding: 48px 0 36px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(16, 185, 129, 0.14);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(1.85rem, 3.6vw, 2.85rem);
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(95deg, #ffffff 0%, #a7f3d0 52%, #7dd3fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.06rem;
+      color: var(--text-secondary);
+      max-width: 940px;
+      margin-bottom: 22px;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .meta-pill {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid var(--border-subtle);
+      padding: 5px 12px;
+      border-radius: 8px;
+    }
+
+    /* KPI Metrics */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .kpi-card {
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.6));
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-lg);
+    }
+    .kpi-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+    .kpi-num span {
+      background: linear-gradient(135deg, #34d399, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .kpi-label {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    /* Section Headings */
+    .section {
+      padding-top: 44px;
+    }
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-badge {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--accent-sql);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      font-weight: 600;
+    }
+
+    /* Demo Videos Showcase Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 22px;
+    }
+    .video-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-lg);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .video-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-2px);
+    }
+    .video-player-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #020617;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .video-player-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .video-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+    }
+    .video-tag-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.76rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.74rem;
+    }
+    .pill-ga {
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+    .pill-preview {
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+    .pill-track {
+      background: rgba(168, 85, 247, 0.16);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+    }
+    .video-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .video-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      flex: 1;
+    }
+    .video-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-subtle);
+      margin-top: 4px;
+    }
+    .dl-chip {
+      font-size: 0.74rem;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .dl-chip:hover {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: var(--accent-sql);
+      color: #fff;
+      text-decoration: none;
+    }
+    .dl-chip.primary {
+      background: rgba(16, 185, 129, 0.16);
+      border-color: rgba(16, 185, 129, 0.4);
+      color: #6ee7b7;
+      font-weight: 600;
+    }
+
+    /* Pillar Cards */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+    }
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-lg);
+    }
+    .pillar-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .pillar-num {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent-sql);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .pillar-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .feature-list li {
+      font-size: 0.89rem;
+      color: var(--text-secondary);
+      padding-left: 16px;
+      position: relative;
+    }
+    .feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-fabric);
+      font-weight: bold;
+    }
+    .feature-list strong {
+      color: #fff;
+    }
+
+    /* Matrix Table */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .filter-btn {
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .filter-btn.active {
+      background: rgba(56, 189, 248, 0.2);
+      color: #fff;
+      border-color: var(--accent-sql);
+      font-weight: 600;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.87rem;
+    }
+    th, td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: top;
+    }
+    th {
+      background: rgba(30, 41, 59, 0.75);
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Deep Dive Links Grid */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .resource-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .resource-card:hover {
+      border-color: var(--border-glow);
+    }
+    .resource-author {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    .resource-title {
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .video-grid, .pillar-grid {
+        grid-template-columns: 1fr;
+      }
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>FabCon &amp; SQLCon Barcelona 2026</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../../"><span data-zh>🏠 返回实验室主页</span><span data-en>🏠 Lab Home</span></a>
+        <a href="#demos"><span data-zh>🎬 演示视频 (5)</span><span data-en>🎬 Demo Videos (5)</span></a>
+        <a href="#pillars"><span data-zh>🚀 六大核心发布</span><span data-en>🚀 6 Core Pillars</span></a>
+        <a href="#matrix"><span data-zh>📊 特性状态矩阵</span><span data-en>📊 Feature Matrix</span></a>
+        <a href="#resources"><span data-zh>🔗 专题博客与资源</span><span data-en>🔗 Deep-Dive Blogs</span></a>
+        <button class="lang-btn" id="langToggle" type="button">中 / EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Overview -->
+    <section class="hero">
+      <div class="eyebrow">
+        <span>Microsoft Azure Blog · Executive Briefing</span>
+        <span>·</span>
+        <span>2026-09-29 (Updated 2026-10-09)</span>
+      </div>
+      <h1>
+        <span data-zh>FabCon &amp; SQLCon 2026 巴塞罗那峰会：为 Microsoft Copilot 与智能体构建可信数据底座</span>
+        <span data-en>FabCon &amp; SQLCon 2026 in Barcelona: Building the Data Foundation for Microsoft Copilot and Agents</span>
+      </h1>
+      <p class="hero-sub">
+        <span data-zh>由微软 Azure Data 执行副总裁 Arun Ulag 发布。本次大会汇聚近 5,000 名数据专家，全面升级 Microsoft Fabric、Fabric IQ、Power BI 智能体应用构建、Rayfin (Fabric Apps)、OneLake 开放网络、自主数据工程智能体与 Azure SQL / Sovereign 混合主权数据方案。</span>
+        <span data-en>Authored by Arun Ulag (EVP, Azure Data, Microsoft). Bringing together nearly 5,000 data professionals in Barcelona with sweeping innovations across Fabric IQ in Microsoft Copilot, Agentic App Creation in Power BI, Fabric Apps (Rayfin), OneLake IQ Sharing, Data Engineering Agents (Osmos), Fabric Observability, and Azure SQL Hyperscale &amp; Azure Local.</span>
+      </p>
+
+      <div class="meta-bar">
+        <span class="meta-pill">👤 <strong>Author:</strong> Arun Ulag (EVP, Azure Data)</span>
+        <span class="meta-pill">📍 <strong>Event:</strong> FabCon &amp; SQLCon Europe 2026 (Barcelona)</span>
+        <span class="meta-pill">🔗 <a href="https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/" target="_blank" rel="noopener">Original Azure Blog Post ↗</a></span>
+        <span class="meta-pill">📘 <a href="https://github.com/turbo998/Azure-Infra-Lab/tree/main/workshops/fabcon-sqlcon-2026" target="_blank" rel="noopener"><span data-zh>GitHub 双语文档 (ZH/EN) ↗</span><span data-en>GitHub Bilingual Docs (ZH/EN) ↗</span></a></span>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-num"><span>40,000+</span></div>
+          <div class="kpi-label">
+            <span data-zh>Microsoft Fabric 全球企业客户数（含 Levi Strauss、H&amp;M、Thomson Reuters）</span>
+            <span data-en>Global Microsoft Fabric customers (including Levi Strauss, H&amp;M, Thomson Reuters)</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num"><span>425,000+</span></div>
+          <div class="kpi-label">
+            <span data-zh>Power BI 全球客户覆盖，现引入自然语言 Agentic App 构建与 1GB 免费 Fabric SQL</span>
+            <span data-en>Power BI customers globally, now gaining Agentic App Creation &amp; up to 1GB Fabric SQL per app</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num"><span>&gt;90%</span></div>
+          <div class="kpi-label">
+            <span data-zh>财富 500 强企业核心负载依托 SQL Server；Hyperscale 升级至 192 vCore 与 DiskANN 向量索引 GA</span>
+            <span data-en>Fortune 500 backed by SQL Server; Hyperscale scales to 192 vCores &amp; DiskANN vector index GA</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num"><span>5 支官方演示</span></div>
+          <div class="kpi-label">
+            <span data-zh>内嵌完整 1080p/720p 官方产品实机演示视频、CC 字幕与文稿直链</span>
+            <span data-en>5 embedded official 1080p/720p product demo videos with captions &amp; transcripts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: 5 Official Demo Videos -->
+    <section class="section" id="demos">
+      <div class="section-header">
+        <div>
+          <div class="section-title">
+            <span data-zh>🎬 官方发布实机演示视频中心（可直接播放 / 多码率直链）</span>
+            <span data-en>🎬 Official Keynote &amp; Product Demo Videos (Inline Player + Direct CDN Links)</span>
+          </div>
+        </div>
+        <span class="section-badge">5 Official Microsoft CDN MP4 Streams</span>
+      </div>
+
+      <div class="video-grid">
+        <!-- Demo 1: Fabric IQ in M365 Copilot -->
+        <article class="video-card">
+          <div class="video-player-wrap">
+            <video controls preload="metadata" poster="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1117414-fabriciqinm365_tbmnl_en-us?wid=1280">
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-fabriciqinm365-0x1080-6439k" type="video/mp4" />
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-fabriciqinm365-0x720-3266k" type="video/mp4" />
+            </video>
+          </div>
+          <div class="video-body">
+            <div class="video-tag-row">
+              <span class="pill pill-ga">GA · Chat &amp; Cowork</span>
+              <span style="color: var(--text-muted);">Demo 01 / 05</span>
+            </div>
+            <h3 class="video-title">
+              <span data-zh>1. Fabric IQ 赋能全新 Microsoft Copilot (Fabric IQ in M365)</span>
+              <span data-en>1. Powering Microsoft Copilot with Fabric IQ (Fabric IQ in M365)</span>
+            </h3>
+            <p class="video-desc">
+              <span data-zh>展示 Microsoft Copilot (Home / Chat / Cowork) 直接调用 Fabric IQ 与 Power BI 语义模型中的受治理业务指标、本体与企业上下文，无需额外消耗 AI Token 成本即可获得可信业务洞察。</span>
+              <span data-en>Demonstrates Microsoft Copilot grounding responses in governed business context, ontologies, and Power BI semantic models via Fabric IQ with zero additional AI token costs.</span>
+            </p>
+            <div class="video-links">
+              <a class="dl-chip primary" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-fabriciqinm365-0x1080-6439k" target="_blank" rel="noopener">▶ 1080p HQ (MP4)</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-fabriciqinm365-0x720-3266k" target="_blank" rel="noopener">720p HD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-fabriciqinm365-0x540-2160k" target="_blank" rel="noopener">540p SD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-fabriciqinm365-0x360-958k" target="_blank" rel="noopener">360p LO</a>
+              <a class="dl-chip" href="https://www.microsoft.com/content/dam/microsoft/bade/videos/products-and-services/en-us/azure/1117414-fabriciqinm365/1117414-fabriciqinm365_cc_en-us.ttml" target="_blank" rel="noopener">CC 字幕 (TTML)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Demo 2: Future of Power BI (Agentic App Creation) -->
+        <article class="video-card">
+          <div class="video-player-wrap">
+            <video controls preload="metadata" poster="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1117414-futureofpowerbi_tbmnl_en-us?wid=1280">
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-futureofpowerbi-0x1080-6439k" type="video/mp4" />
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-futureofpowerbi-0x720-3266k" type="video/mp4" />
+            </video>
+          </div>
+          <div class="video-body">
+            <div class="video-tag-row">
+              <span class="pill pill-preview">Preview · Power BI Desktop</span>
+              <span style="color: var(--text-muted);">Demo 02 / 05</span>
+            </div>
+            <h3 class="video-title">
+              <span data-zh>2. Power BI 下一代演进：智能体应用构建 (Future of Power BI)</span>
+              <span data-en>2. The Next Evolution of Power BI: Agentic App Creation</span>
+            </h3>
+            <p class="video-desc">
+              <span data-zh>在 Power BI Desktop 中基于可信语义模型，通过自然语言直接生成支持数据输入、数据回写 (Write-back)、状态保持与业务工作流的全栈数据应用，底层自带最高 1GB 免费 Fabric SQL 数据库（支持 Pro/PPU 用户）。</span>
+              <span data-en>Starting from a trusted semantic model in Power BI Desktop, users generate full operational apps with data write-back, shared state, authentication, and a 1GB SQL database in Fabric.</span>
+            </p>
+            <div class="video-links">
+              <a class="dl-chip primary" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-futureofpowerbi-0x1080-6439k" target="_blank" rel="noopener">▶ 1080p HQ (MP4)</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-futureofpowerbi-0x720-3266k" target="_blank" rel="noopener">720p HD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-futureofpowerbi-0x540-2160k" target="_blank" rel="noopener">540p SD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-futureofpowerbi_transcript_en-us" target="_blank" rel="noopener">📄 文稿 (Transcript)</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-futureofpowerbi_audio_en-us" target="_blank" rel="noopener">🔊 音频 (Audio)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Demo 3: Fabric Apps & Rayfin SDK -->
+        <article class="video-card">
+          <div class="video-player-wrap">
+            <video controls preload="metadata" poster="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1117414-agenticappdevdemo_tbmnl_en-us?wid=1280">
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-agenticappdevdemo-0x1080-6439k" type="video/mp4" />
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-agenticappdevdemo-0x720-3266k" type="video/mp4" />
+            </video>
+          </div>
+          <div class="video-body">
+            <div class="video-tag-row">
+              <span class="pill pill-track">Rayfin SDK &amp; CLI · Fabric Apps</span>
+              <span style="color: var(--text-muted);">Demo 03 / 05</span>
+            </div>
+            <h3 class="video-title">
+              <span data-zh>3. 使用开源 Rayfin SDK 构建生产级 Fabric Apps (Agentic App Dev)</span>
+              <span data-en>3. Prompt to Production with Fabric Apps &amp; Rayfin SDK</span>
+            </h3>
+            <p class="video-desc">
+              <span data-zh>演示开发者与编程智能体如何利用开源 Rayfin SDK 和 CLI 构建应用后端并一键部署到 Fabric，直连 Warehouse/SQL/Lakehouse/语义模型，新增 TypeScript 后端函数、Secret Store、PostgreSQL 支持及默认私有访问。</span>
+              <span data-en>Shows developers and coding agents using the open-source Rayfin SDK/CLI to build and deploy governed Fabric Apps with TypeScript backend functions, Secret Store, and PostgreSQL support.</span>
+            </p>
+            <div class="video-links">
+              <a class="dl-chip primary" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-agenticappdevdemo-0x1080-6439k" target="_blank" rel="noopener">▶ 1080p HQ (MP4)</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-agenticappdevdemo-0x720-3266k" target="_blank" rel="noopener">720p HD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-agenticappdevdemo-0x540-2160k" target="_blank" rel="noopener">540p SD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-agenticappdevdemo_transcript_en-us" target="_blank" rel="noopener">📄 文稿 (Transcript)</a>
+              <a class="dl-chip" href="https://www.microsoft.com/content/dam/microsoft/bade/videos/products-and-services/en-us/azure/1117414-agenticappdevdemo/1117414-agenticappdevdemo_cc_en-us.ttml" target="_blank" rel="noopener">CC 字幕 (TTML)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Demo 4: OneLake IQ Sharing -->
+        <article class="video-card">
+          <div class="video-player-wrap">
+            <video controls preload="metadata" poster="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1117414-iqsharing_tbmnl_en-us?wid=1280">
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-iqsharing-0x1080-6439k" type="video/mp4" />
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-iqsharing-0x720-3266k" type="video/mp4" />
+            </video>
+          </div>
+          <div class="video-body">
+            <div class="video-tag-row">
+              <span class="pill pill-preview">Preview · OneLake Network</span>
+              <span style="color: var(--text-muted);">Demo 04 / 05</span>
+            </div>
+            <h3 class="video-title">
+              <span data-zh>4. OneLake IQ Sharing：跨组织共享受治理数据与业务上下文</span>
+              <span data-en>4. OneLake IQ Sharing: Governed Data &amp; Context Sharing</span>
+            </h3>
+            <p class="video-desc">
+              <span data-zh>演示通过 IQ Sharing 在团队、客户与合作伙伴生态间安全共享受治理表、文件、Markdown 智能体指令与 RDF 本体（EY、S&amp;P Global、TomTom 已率先集成，可在 OneLake 目录直接发现数据产品）。</span>
+              <span data-en>Demonstrates sharing governed tables, files, Markdown agent instructions, and RDF ontologies across organizational boundaries with partners like EY, S&amp;P Global, and TomTom.</span>
+            </p>
+            <div class="video-links">
+              <a class="dl-chip primary" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-iqsharing-0x1080-6439k" target="_blank" rel="noopener">▶ 1080p HQ (MP4)</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-iqsharing-0x720-3266k" target="_blank" rel="noopener">720p HD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-iqsharing-0x540-2160k" target="_blank" rel="noopener">540p SD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-iqsharing_transcript_en-us" target="_blank" rel="noopener">📄 文稿 (Transcript)</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-iqsharing_audio_en-us" target="_blank" rel="noopener">🔊 音频 (Audio)</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Demo 5: End-to-End Observability in Fabric -->
+        <article class="video-card">
+          <div class="video-player-wrap">
+            <video controls preload="metadata" poster="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1117414-eumerged_tbmnl_en-us?wid=1280">
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-eumerged-0x1080-6439k" type="video/mp4" />
+              <source src="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-eumerged-0x720-3266k" type="video/mp4" />
+            </video>
+          </div>
+          <div class="video-body">
+            <div class="video-tag-row">
+              <span class="pill pill-preview">Preview · Platform Operations</span>
+              <span style="color: var(--text-muted);">Demo 05 / 05</span>
+            </div>
+            <h3 class="video-title">
+              <span data-zh>5. Microsoft Fabric 全链路可观测性与智能运维 (Observability in Fabric)</span>
+              <span data-en>5. End-to-End Observability &amp; Operations Agents in Fabric</span>
+            </h3>
+            <p class="video-desc">
+              <span data-zh>串联 Workspace Monitoring（跨工作区遥测汇聚至单一 Eventhouse）、Monitor Hub（容量余量视图 + Activator 作业告警）与 Operations Agent（AI 自动根因分析与预授权修复动作）。</span>
+              <span data-en>Showcases cross-workspace telemetry in a single Eventhouse, enhanced Monitor Hub capacity/job views with Activator alerts, and AI-assisted root cause investigation via Operations Agents.</span>
+            </p>
+            <div class="video-links">
+              <a class="dl-chip primary" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-eumerged-0x1080-6439k" target="_blank" rel="noopener">▶ 1080p HQ (MP4)</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-eumerged-0x720-3266k" target="_blank" rel="noopener">720p HD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-eumerged-0x540-2160k" target="_blank" rel="noopener">540p SD</a>
+              <a class="dl-chip" href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/1117414-eumerged-0x360-958k" target="_blank" rel="noopener">360p LO</a>
+              <a class="dl-chip" href="https://www.microsoft.com/content/dam/microsoft/bade/videos/products-and-services/en-us/azure/1117414-eumerged/1117414-eumerged_cc_en-us.ttml" target="_blank" rel="noopener">CC 字幕 (TTML)</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 2: 6 Core Pillars -->
+    <section class="section" id="pillars">
+      <div class="section-header">
+        <div class="section-title">
+          <span data-zh>🚀 六大核心技术发布板块深度梳理</span>
+          <span data-en>🚀 Deep Dive: 6 Strategic Innovation Pillars</span>
+        </div>
+        <span class="section-badge">Frontier Transformation Architecture</span>
+      </div>
+
+      <div class="pillar-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card">
+          <div class="pillar-head">
+            <div>
+              <div class="pillar-num">PILLAR 01 · FRONTIER TRANSFORMATION</div>
+              <div class="pillar-title">
+                <span data-zh>Fabric IQ 深度赋能全新 Microsoft Copilot</span>
+                <span data-en>Fabric IQ Powering the New Microsoft Copilot</span>
+              </div>
+            </div>
+            <span class="pill pill-ga">GA</span>
+          </div>
+          <ul class="feature-list">
+            <li>
+              <span data-zh><strong>共享智能层 (Fabric IQ)：</strong>融合 OneLake 统一数据、Power BI 可信语义指标与 Ontology（本体）及实时情报，为人与 Agent 提供统一的业务理解。</span>
+              <span data-en><strong>Shared Intelligence Layer:</strong> Combines OneLake data, Power BI semantic metrics, ontologies, and real-time intelligence into a unified business context.</span>
+            </li>
+            <li>
+              <span data-zh><strong>Copilot Chat &amp; Cowork 正式版 (GA)：</strong>M365 Copilot 用户现可直接调用 Fabric 洞察，<strong>无额外 AI Token 成本</strong>；全新 Copilot Code 集成即将通过 Frontier 计划推出。</span>
+              <span data-en><strong>GA in Copilot Chat &amp; Cowork:</strong> M365 Copilot customers tap into Fabric insights with <strong>no additional AI token costs</strong>; Code integration coming via Frontier program.</span>
+            </li>
+            <li>
+              <span data-zh><strong>零门槛复用既有资产：</strong>Power BI 语义模型与报表中的业务定义、核心 KPI 自动成为 Copilot 决策依据。</span>
+              <span data-en><strong>Instant Semantic Grounding:</strong> Existing Power BI semantic models and business definitions directly inform decisions in Microsoft Copilot.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card">
+          <div class="pillar-head">
+            <div>
+              <div class="pillar-num">PILLAR 02 · POWER BI &amp; FABRIC APPS</div>
+              <div class="pillar-title">
+                <span data-zh>Power BI 智能体应用构建 &amp; Rayfin 全栈投产</span>
+                <span data-en>Power BI Agentic App Creation &amp; Fabric Apps (Rayfin)</span>
+              </div>
+            </div>
+            <span class="pill pill-preview">Preview</span>
+          </div>
+          <ul class="feature-list">
+            <li>
+              <span data-zh><strong>从看报表到造应用：</strong>在 Power BI Desktop 中基于语义模型用自然语言生成业务应用，支持<strong>数据录入、数据回写 (Write-back)、共享状态与业务流</strong>。</span>
+              <span data-en><strong>Beyond Dashboards:</strong> Generate operational apps in Power BI Desktop via natural language with <strong>inputs, data write-back, shared state, and workflows</strong>.</span>
+            </li>
+            <li>
+              <span data-zh><strong>普惠授权（含 Pro / PPU）：</strong>不仅限于 Fabric 容量客户，Power BI Pro 与 PPU 用户无需额外付费即可使用 Fabric Apps 及<strong>每个应用最高 1GB 的 Fabric SQL 数据库</strong>。</span>
+              <span data-en><strong>Included for Pro &amp; PPU:</strong> Available at no additional cost to Power BI Pro, PPU, and Fabric capacity customers with <strong>up to 1 GB Fabric SQL Database per app</strong>.</span>
+            </li>
+            <li>
+              <span data-zh><strong>开源 Rayfin SDK &amp; CLI 增强：</strong>自 2026 年 6 月发布以来已有数千名开发者采用；新增 <strong>TypeScript 后端函数、Secret Store、PostgreSQL 支持、默认私有访问</strong>及内置性能指标。</span>
+              <span data-en><strong>Open-Source Rayfin SDK &amp; CLI:</strong> Adds <strong>TypeScript backend functions, Secret Store, PostgreSQL support, private-by-default access</strong>, and built-in metrics.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card">
+          <div class="pillar-head">
+            <div>
+              <div class="pillar-num">PILLAR 03 · ONELAKE OPEN DATA NETWORK</div>
+              <div class="pillar-title">
+                <span data-zh>OneLake IQ Sharing 与多云生态扩展</span>
+                <span data-en>OneLake IQ Sharing &amp; Multi-Cloud Ecosystem</span>
+              </div>
+            </div>
+            <span class="pill pill-preview">Preview + GA</span>
+          </div>
+          <ul class="feature-list">
+            <li>
+              <span data-zh><strong>IQ Sharing（预览）：</strong>跨团队、客户与合作伙伴安全共享受治理表/文件、<strong>Markdown 智能体指令与 RDF 本体</strong>（路线图将原生支持 Fabric IQ 本体与 Power BI 语义模型）。EY、S&amp;P Global、TomTom、Financial Fabric、xMentium 已率先接入。</span>
+              <span data-en><strong>IQ Sharing (Preview):</strong> Share governed tables/files alongside <strong>Markdown agent instructions and RDF ontologies</strong> across org boundaries. Adopted by EY, S&amp;P Global, TomTom, Financial Fabric, and xMentium.</span>
+            </li>
+            <li>
+              <span data-zh><strong>跨云零拷贝互联：</strong><strong>Salesforce Data 360 双向集成（预览）</strong>、<strong>Google BigQuery 镜像（正式版 GA）</strong>、Dynamics 365 Business Central 深度集成。</span>
+              <span data-en><strong>Zero-Copy Cross-Cloud:</strong> <strong>Bidirectional Salesforce Data 360 integration (Preview)</strong>, <strong>Google BigQuery Mirroring (GA)</strong>, and deeper D365 Business Central integration.</span>
+            </li>
+            <li>
+              <span data-zh><strong>开放生态工具链：</strong>深化与 <strong>Atlan、dbt、ClickHouse</strong> 的原生协作。</span>
+              <span data-en><strong>Ecosystem Partners:</strong> Expanded integrations with <strong>Atlan, dbt, and ClickHouse</strong>.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="pillar-card">
+          <div class="pillar-head">
+            <div>
+              <div class="pillar-num">PILLAR 04 · AUTONOMOUS DATA ENGINEERING &amp; RTI</div>
+              <div class="pillar-title">
+                <span data-zh>自主数据工程智能体 (Osmos) 与实时情报 Copilot</span>
+                <span data-en>Data Engineering Agent (Osmos) &amp; Real-Time Intelligence</span>
+              </div>
+            </div>
+            <span class="pill pill-preview">Preview</span>
+          </div>
+          <ul class="feature-list">
+            <li>
+              <span data-zh><strong>Data Engineering Agent（预览）：</strong>基于 2026 年初微软收购的 <strong>Osmos</strong> 技术打造，支持数据平台迁移、Lakehouse 现代化、性能优化与复杂 ETL 的受控自主规划与执行。</span>
+              <span data-en><strong>Data Engineering Agent (Preview):</strong> Built on Microsoft's acquisition of <strong>Osmos</strong> (Jan 2026) for autonomous platform migrations, lakehouse modernization, tuning, and complex ETL.</span>
+            </li>
+            <li>
+              <span data-zh><strong>跨 IDE 协同接力：</strong>继承工作区权限，无缝跨 <strong>GitHub Copilot、VS Code、Codex 与 Claude Code</strong> 启动、监控和引导同一工程任务。</span>
+              <span data-en><strong>Multi-Tool Orchestration:</strong> Seamlessly start, monitor, and steer tasks across Fabric, <strong>GitHub Copilot, VS Code, Codex, and Claude Code</strong>.</span>
+            </li>
+            <li>
+              <span data-zh><strong>Real-Time Intelligence Copilot：</strong>自然语言生成实时看板、管理 Eventhouse 表/策略/Schema、提供成本与性能优化建议，并配合 Operations Agent 实现 AI 根因诊断。</span>
+              <span data-en><strong>Copilot in Real-Time Intelligence:</strong> Natural language Real-Time Dashboards, Eventhouse administration, schema optimization, and AI root-cause analysis.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="pillar-card">
+          <div class="pillar-head">
+            <div>
+              <div class="pillar-num">PILLAR 05 · ONTOLOGY, AGENTS &amp; OBSERVABILITY</div>
+              <div class="pillar-title">
+                <span data-zh>本体构建、Apache Ossie 标准、全栈可观测与按需计费</span>
+                <span data-en>Ontology Curation, Apache Ossie, Observability &amp; Billing</span>
+              </div>
+            </div>
+            <span class="pill pill-preview">Preview</span>
+          </div>
+          <ul class="feature-list">
+            <li>
+              <span data-zh><strong>Agentic Ontology 构建 &amp; Apache Ossie：</strong>从语义模型、OneLake 数据和文档自动生成本体，支持自然语言业务规则与复用 Power BI 度量值；携手 Snowflake 等推进 <strong>Apache Ossie (Incubating)</strong> 开放语义元数据标准。</span>
+              <span data-en><strong>Agentic Ontology &amp; Apache Ossie:</strong> Generate ontologies from semantic models/docs, define rules in natural language, reuse Power BI measures, and back <strong>Apache Ossie (incubating)</strong> with Snowflake.</span>
+            </li>
+            <li>
+              <span data-zh><strong>Fabric 智能体升级：</strong>Data Agents 深度融合 Fabric IQ 本体；Build Agent with AI 模式支持读取数据字典与术语表；Operations Agents 新增<strong>预授权动作与根因分析（预览）</strong>。</span>
+              <span data-en><strong>Fabric Agents:</strong> Deeper Data Agent + Ontology integration, AI builder mode using glossaries/dictionaries, and Operations Agents with pre-approved actions &amp; RCA.</span>
+            </li>
+            <li>
+              <span data-zh><strong>全栈可观测性 &amp; 按需计费：</strong>跨工作区遥测汇聚至单一 Eventhouse、Monitor Hub 容量/Activator 告警；推出跨工作负载 <strong>On-Demand Billing（按需计费）</strong>与 <strong>Fabric Zero-Provisioned（零预置起步）</strong>。</span>
+              <span data-en><strong>Observability &amp; On-Demand Billing:</strong> Multi-workspace Eventhouse telemetry, Monitor Hub capacity headroom, <strong>on-demand consumption billing</strong>, and <strong>Fabric zero-provisioned</strong> onboarding.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 6 -->
+        <div class="pillar-card">
+          <div class="pillar-head">
+            <div>
+              <div class="pillar-num">PILLAR 06 · DATABASE ESTATE &amp; SOVEREIGN CLOUD</div>
+              <div class="pillar-title">
+                <span data-zh>Database Hub、SQL Hyperscale 向量与主权云部署</span>
+                <span data-en>Database Hub, SQL Hyperscale AI &amp; Sovereign Estates</span>
+              </div>
+            </div>
+            <span class="pill pill-ga">GA + Preview</span>
+          </div>
+          <ul class="feature-list">
+            <li>
+              <span data-zh><strong>Database Hub in Fabric（预览）&amp; Database Agents：</strong>集中管控 SQL Server、Azure SQL、PostgreSQL、Cosmos DB 与 Fabric SQL；即将推出面向 Azure SQL 与 PostgreSQL 的 <strong>Database Agents（支持 Fabric 与 VS Code）</strong>。</span>
+              <span data-en><strong>Database Hub (Preview) &amp; Agents:</strong> Central control plane for SQL Server, Azure SQL, PostgreSQL, Cosmos DB, and Fabric SQL; specialist <strong>Database Agents for SQL &amp; PostgreSQL</strong> coming soon to Fabric &amp; VS Code.</span>
+            </li>
+            <li>
+              <span data-zh><strong>Azure SQL Database Hyperscale 突破：</strong><strong>Serverless 自动暂停（预览）</strong>、弹性池密度提升至 <strong>50 数据库/池</strong>、<strong>192 vCore 计算规格（GA）</strong>；<strong>DiskANN 向量索引（GA）</strong>全面落地 Hyperscale、SQL MI 与 Fabric SQL。</span>
+              <span data-en><strong>Azure SQL Hyperscale Innovations:</strong> <strong>Serverless auto-pause (Preview)</strong>, elastic pools up to <strong>50 DBs/pool</strong>, <strong>192 vCore compute (GA)</strong>, and <strong>DiskANN vector indexes (GA)</strong> across Hyperscale, SQL MI, and Fabric SQL.</span>
+            </li>
+            <li>
+              <span data-zh><strong>主权与离线环境全面 GA：</strong><strong>SQL Server on Azure Local (GA)</strong>、<strong>Azure Local Disconnected Operations / ALDO (GA)</strong>，以及 Microsoft Fabric 扩展支持 <strong>Microsoft 365 GCC High</strong>。</span>
+              <span data-en><strong>Sovereign &amp; Edge GA:</strong> <strong>SQL Server on Azure Local (GA)</strong>, <strong>Azure Local Disconnected Operations / ALDO (GA)</strong>, and Microsoft Fabric expansion to <strong>M365 GCC High</strong>.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Release Matrix -->
+    <section class="section" id="matrix">
+      <div class="section-header">
+        <div class="section-title">
+          <span data-zh>📊 FabCon &amp; SQLCon 2026 核心发布全景速查表</span>
+          <span data-en>📊 Complete Release &amp; Availability Matrix</span>
+        </div>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all"><span data-zh>全部 (18)</span><span data-en>All (18)</span></button>
+          <button class="filter-btn" data-filter="ga"><span data-zh>正式可用 GA (7)</span><span data-en>Generally Available (7)</span></button>
+          <button class="filter-btn" data-filter="preview"><span data-zh>预览 / 即将推出 (11)</span><span data-en>Preview / Coming Soon (11)</span></button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="releaseTable">
+          <thead>
+            <tr>
+              <th><span data-zh>产品域 / 模块</span><span data-en>Domain</span></th>
+              <th><span data-zh>新发布特性</span><span data-en>Capability / Announcement</span></th>
+              <th><span data-zh>状态</span><span data-en>Status</span></th>
+              <th><span data-zh>关键技术亮点与商业价值</span><span data-en>Key Technical &amp; Business Impact</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-status="ga">
+              <td><strong>Fabric IQ + Copilot</strong></td>
+              <td>Fabric IQ in Microsoft Copilot (Chat &amp; Cowork)</td>
+              <td><span class="pill pill-ga">GA</span></td>
+              <td>
+                <span data-zh>将 OneLake、Power BI 语义模型与本体注入 M365 Copilot，不额外消耗 AI Token；Code 体验即将通过 Frontier 提供。</span>
+                <span data-en>Grounds M365 Copilot in Fabric IQ &amp; Power BI semantic models with zero extra AI token cost; Code integration coming via Frontier.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Power BI Desktop</strong></td>
+              <td>Agentic App Creation in Power BI</td>
+              <td><span class="pill pill-preview">Preview (Coming Weeks)</span></td>
+              <td>
+                <span data-zh>从可信语义模型通过自然语言生成可回写、带状态的业务应用；向 Pro / PPU / Fabric 容量用户免费提供最高 1GB Fabric SQL。</span>
+                <span data-en>Natural-language app generation with write-back and shared state; includes up to 1GB Fabric SQL DB for Pro, PPU, and Fabric capacity users.</span>
+              </td>
+            </tr>
+            <tr data-status="ga">
+              <td><strong>Fabric Apps (Rayfin)</strong></td>
+              <td>Rayfin SDK/CLI Enhancements (TS, Secret Store, PG)</td>
+              <td><span class="pill pill-ga">Available</span></td>
+              <td>
+                <span data-zh>支持直连 Warehouse/SQL/Lakehouse/语义模型，新增 TypeScript 后端函数、Secret Store、PostgreSQL 支持、默认私有访问与内置指标。</span>
+                <span data-en>Direct connection to Fabric data stores plus new TypeScript functions, Secret Store, PostgreSQL support, private-by-default access, and metrics.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Microsoft OneLake</strong></td>
+              <td>OneLake IQ Sharing</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>跨组织边界安全共享受治理表、文件、Markdown 智能体指令与 RDF 本体（EY、S&amp;P Global、TomTom 等首批集成）。</span>
+                <span data-en>Cross-org sharing of governed tables, files, Markdown agent instructions, and RDF ontologies across partner ecosystems.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Microsoft OneLake</strong></td>
+              <td>Bidirectional Salesforce Data 360 Integration</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>无需移动或复制数据即可将 Salesforce Data 360 纳入 OneLake 统一数据资产并供 Data Agent 调用。</span>
+                <span data-en>Zero-copy bidirectional integration bringing Salesforce Data 360 into OneLake for analytics and Fabric data agents.</span>
+              </td>
+            </tr>
+            <tr data-status="ga">
+              <td><strong>Microsoft OneLake</strong></td>
+              <td>Google BigQuery Mirroring &amp; D365 Business Central</td>
+              <td><span class="pill pill-ga">GA</span></td>
+              <td>
+                <span data-zh>Google BigQuery 镜像正式版 (GA)，深化 Dynamics 365 Business Central 及 Atlan、dbt、ClickHouse 生态集成。</span>
+                <span data-en>General availability of Google BigQuery mirroring alongside deeper D365 Business Central, Atlan, dbt, and ClickHouse integrations.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Data Engineering</strong></td>
+              <td>Fabric Data Engineering Agent (Osmos)</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>基于 Osmos 收购技术，自主规划并执行平台迁移、Lakehouse 现代化与复杂 ETL，支持 GitHub Copilot / VS Code / Codex / Claude Code 协同。</span>
+                <span data-en>Autonomous execution for migrations, lakehouse modernization, and ETL across Fabric, GitHub Copilot, VS Code, Codex, and Claude Code.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Real-Time Intelligence</strong></td>
+              <td>Copilot for Real-Time Dashboards &amp; Eventhouse</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>自然语言创建实时看板、管理 Eventhouse 表与策略、提供 Schema 优化建议与 AI 故障根因分析。</span>
+                <span data-en>Natural language dashboard creation, Eventhouse table/policy admin, schema optimization recommendations, and AI troubleshooting.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Fabric IQ</strong></td>
+              <td>Agentic Ontology Creation &amp; Apache Ossie</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>从语义模型与文档自动构建本体、自然语言定义规则、复用 Power BI 度量值；联合 Snowflake 推进 Apache Ossie 开放语义标准。</span>
+                <span data-en>Agentic creation of ontologies, natural language rules, Power BI measure reuse, and commitment to Apache Ossie (incubating).</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Fabric Agents</strong></td>
+              <td>Data Agents + Ontology &amp; Operations Agents RCA</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>Data Agents 结合本体提升可解释性，支持利用术语表/数据字典构建；Operations Agents 新增预授权动作与根因分析。</span>
+                <span data-en>Data agents grounded in Fabric IQ ontologies; Operations agents gain pre-approved actions and root-cause analysis.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Fabric Platform</strong></td>
+              <td>End-to-End Observability in Fabric</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>跨工作区遥测汇聚至单一 Eventhouse、支持自定义导出端点；Monitor Hub 新增容量余量视图与 Activator 作业告警。</span>
+                <span data-en>Consolidates multi-workspace telemetry into one Eventhouse with custom endpoints, capacity headroom view, and Activator job alerts.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Fabric Platform</strong></td>
+              <td>On-Demand Billing &amp; Fabric Zero-Provisioned</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>继 Spark 自动扩缩容计费后，将按需消费计费扩展至更多 Fabric 负载，支持无前期容量承诺的零预置起步。</span>
+                <span data-en>Expands consumption-based billing across Fabric workloads with zero-provisioned onboarding requiring no upfront capacity commitment.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Database Estate</strong></td>
+              <td>Database Hub in Fabric</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>在单一控制平面统一监控、评估风险并治理 SQL Server、Azure SQL、PostgreSQL、Cosmos DB 与 Fabric SQL。</span>
+                <span data-en>Centralized control plane in Fabric to monitor health, assess risk, and govern SQL Server, Azure SQL, PostgreSQL, Cosmos DB, and Fabric SQL.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Database Estate</strong></td>
+              <td>Database Agents for SQL &amp; PostgreSQL on Azure</td>
+              <td><span class="pill pill-preview">Coming Soon (Preview)</span></td>
+              <td>
+                <span data-zh>可在 Fabric Database Hub 与 VS Code 中调用的数据库专家智能体，持续分析数据库信号、定位性能瓶颈并提供优化建议。</span>
+                <span data-en>AI specialist agents in Database Hub and VS Code that continuously analyze signals, bottlenecks, and tuning opportunities.</span>
+              </td>
+            </tr>
+            <tr data-status="preview">
+              <td><strong>Azure SQL Hyperscale</strong></td>
+              <td>Serverless Auto-Pause &amp; 50-DB Elastic Pools</td>
+              <td><span class="pill pill-preview">Preview</span></td>
+              <td>
+                <span data-zh>闲置期间自动暂停计算以节省开发测试与间歇负载成本；弹性池密度提升至每池最多 50 个数据库。</span>
+                <span data-en>Automatically pauses compute during inactivity to cut dev/test costs, plus elastic pool density increased to up to 50 databases per pool.</span>
+              </td>
+            </tr>
+            <tr data-status="ga">
+              <td><strong>Azure SQL Hyperscale</strong></td>
+              <td>192 vCore Compute Tier</td>
+              <td><span class="pill pill-ga">GA</span></td>
+              <td>
+                <span data-zh>Azure SQL Database Hyperscale 192 vCore 超大计算规格正式可用，满足关键任务高并发负载。</span>
+                <span data-en>192 vCore compute tier generally available for mission-critical scale and concurrency in Azure SQL Database Hyperscale.</span>
+              </td>
+            </tr>
+            <tr data-status="ga">
+              <td><strong>Azure SQL &amp; Fabric SQL</strong></td>
+              <td>DiskANN Vector Indexes</td>
+              <td><span class="pill pill-ga">GA</span></td>
+              <td>
+                <span data-zh>在 Azure SQL Hyperscale、SQL MI 与 Fabric SQL 引擎内原生提供高性能 DiskANN 向量索引，无需迁移数据即可构建 RAG 与语义检索。</span>
+                <span data-en>High-performance in-engine DiskANN vector search generally available across Azure SQL Hyperscale, Managed Instance, and SQL DB in Fabric.</span>
+              </td>
+            </tr>
+            <tr data-status="ga">
+              <td><strong>Sovereign &amp; Edge</strong></td>
+              <td>SQL Server on Azure Local, ALDO &amp; Fabric GCC High</td>
+              <td><span class="pill pill-ga">GA</span></td>
+              <td>
+                <span data-zh>SQL Server on Azure Local 与完全断网环境 (ALDO) 正式版 GA；Microsoft Fabric 正式扩展支持美国主权云 M365 GCC High。</span>
+                <span data-en>SQL Server on Azure Local and Azure Local Disconnected Operations (ALDO) GA; Microsoft Fabric expands to M365 GCC High.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Official Companion Blogs -->
+    <section class="section" id="resources">
+      <div class="section-header">
+        <div class="section-title">
+          <span data-zh>🔗 官方配套深度博客与延伸阅读（原文全量收录）</span>
+          <span data-en>🔗 Official Companion Blogs &amp; Partner Resources</span>
+        </div>
+        <span class="section-badge">Direct Links</span>
+      </div>
+
+      <div class="resource-grid">
+        <a class="resource-card" href="https://aka.ms/Analytics-EU26" target="_blank" rel="noopener">
+          <span class="resource-author">Bogdan Crivat · Fabric Analytics</span>
+          <span class="resource-title">Bringing governed analytics into the flow of work: Fabric Analytics at FabCon Europe 2026 ↗</span>
+        </a>
+        <a class="resource-card" href="https://aka.ms/PowerBI-EU26" target="_blank" rel="noopener">
+          <span class="resource-author">Mohammad Ali · Power BI &amp; Apache Ossie</span>
+          <span class="resource-title">Power BI’s next chapter: The evolution of business intelligence ↗</span>
+        </a>
+        <a class="resource-card" href="https://aka.ms/Rayfin-FabConEU26-blog" target="_blank" rel="noopener">
+          <span class="resource-author">Sachin Patney · Fabric Apps (Rayfin)</span>
+          <span class="resource-title">From prompt to production: What’s new in Fabric Apps ↗</span>
+        </a>
+        <a class="resource-card" href="https://aka.ms/OneLake-EU26" target="_blank" rel="noopener">
+          <span class="resource-author">Dipti Borkar · Microsoft OneLake</span>
+          <span class="resource-title">FabCon and SQLCon Barcelona 2026: What’s new in Microsoft OneLake and its ecosystem ↗</span>
+        </a>
+        <a class="resource-card" href="https://aka.ms/FabricIQ-EU26" target="_blank" rel="noopener">
+          <span class="resource-author">Yitzhak Kesselman · Real-Time Intelligence &amp; IQ</span>
+          <span class="resource-title">Trusted AI starts with Microsoft Fabric, Real-Time Intelligence, and IQ ↗</span>
+        </a>
+        <a class="resource-card" href="https://aka.ms/Fabric-Platform-Barcelona-2026" target="_blank" rel="noopener">
+          <span class="resource-author">Kim Manis · Fabric Platform &amp; Observability</span>
+          <span class="resource-title">Build, deploy, and govern Microsoft Fabric at scale ↗</span>
+        </a>
+        <a class="resource-card" href="https://aka.ms/SQLConEU26-databases-blog" target="_blank" rel="noopener">
+          <span class="resource-author">Shireesh Thota · Azure Databases &amp; SQLCon</span>
+          <span class="resource-title">SQLCon Barcelona 2026: Advancing SQL with greater control, scale, and intelligence ↗</span>
+        </a>
+        <a class="resource-card" href="https://aka.ms/Fabric-September-26" target="_blank" rel="noopener">
+          <span class="resource-author">Monthly Summaries · September 2026</span>
+          <span class="resource-title">Fabric September 2026 Feature Summary &amp; Power BI Feature Summary ↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Bilingual Toggle + URL parameter (?lang=en / ?lang=zh)
+    const langBtn = document.getElementById('langToggle');
+    const urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (urlLang === 'en' || urlLang === 'zh') {
+      document.documentElement.setAttribute('data-lang', urlLang);
+    }
+    langBtn.addEventListener('click', () => {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-lang') === 'zh' ? 'en' : 'zh';
+      html.setAttribute('data-lang', next);
+    });
+
+    // Status Matrix Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('#releaseTable tbody tr');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        rows.forEach(row => {
+          if (filter === 'all' || row.getAttribute('data-status') === filter) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
