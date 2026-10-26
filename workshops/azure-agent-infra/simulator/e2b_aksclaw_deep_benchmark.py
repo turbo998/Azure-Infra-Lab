@@ -228,6 +228,7 @@ from agent_infra_sizer import (
     simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
     simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox,
     simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox,
+    simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1755,6 +1756,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(8, "raw_cloud_fixed_still_heater_open_loop_charcoal_trap_and_offline_qms_batch_assay"),
     ]
 
+    silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_profiles: List[Dict[str, object]] = [
+        simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox(8, "pinn_mpc_28sif4_centrifuge_28sih4_conversion_fz_28si_sige_epitaxy_and_12c_nv_diamond_sil3_edge"),
+        simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox(32, "pinn_mpc_28sif4_centrifuge_28sih4_conversion_fz_28si_sige_epitaxy_and_12c_nv_diamond_sil3_edge"),
+        simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox(8, "raw_cloud_fixed_centrifuge_scoop_quartz_lined_sih4_reactor_and_offline_sims_batch_assay"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1970,6 +1977,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles": lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles,
         "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles": tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles,
         "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_profiles": helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_profiles,
+        "silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_profiles": silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_profiles,
     }
 
 

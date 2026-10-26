@@ -222,6 +222,7 @@ from agent_infra_sizer import (
     simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
     simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox,
     simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox,
+    simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4581,6 +4582,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct"], 3.0)
         self.assertTrue(gov["helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met"])
         self.assertFalse(raw["helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met"])
+
+    def test_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox(self) -> None:
+        gov = simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox(
+            8, "pinn_mpc_28sif4_centrifuge_28sih4_conversion_fz_28si_sige_epitaxy_and_12c_nv_diamond_sil3_edge"
+        )
+        raw = simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox(
+            8, "raw_cloud_fixed_centrifuge_scoop_quartz_lined_sih4_reactor_and_offline_sims_batch_assay"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_si28_c12_pods"], 32)
+        self.assertEqual(gov["si28_99995pct_enrichment_qubit_hahn_echo_t2_coherence_and_12c_nv_diamond_yield_gain_pct"], 54.0)
+        self.assertEqual(gov["residual_29si_13c_nuclear_spin_bath_quartz_wall_isotopic_dilution_and_epitaxy_threading_dislocation_cut_pct"], 78.4)
+        self.assertEqual(gov["semis2_nfpa318_cgag13_sil3_pyrophoric_28sih4_rfo_quench_sif4_hf_scrubber_and_mpcvd_window_interlock_ms"], 0.17)
+        self.assertEqual(gov["unmitigated_pyrophoric_28sih4_detonation_sif4_hf_toxic_plume_or_mpcvd_h2_window_implosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_28sih4_detonation_sif4_hf_toxic_plume_or_mpcvd_h2_window_implosion_pct"], 1.0)
+        self.assertEqual(gov["si28_c12_edge_10khz_highres_ftir_isotope_tof_sims_and_odmr_t2_coherence_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_centrifuge_thermal_convection_sio2_wall_29si_leaching_or_nv_charge_state_bleaching_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_centrifuge_thermal_convection_sio2_wall_29si_leaching_or_nv_charge_state_bleaching_pct"], 3.0)
+        self.assertTrue(gov["silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_slo_met"])
+        self.assertFalse(raw["silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_slo_met"])
 
 
 if __name__ == "__main__":
