@@ -219,6 +219,7 @@ from agent_infra_sizer import (
     simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
     simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
     simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
+    simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4515,6 +4516,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct"], 3.0)
         self.assertTrue(gov["heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met"])
         self.assertFalse(raw["heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met"])
+
+    def test_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(self) -> None:
+        gov = simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(
+            8, "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge"
+        )
+        raw = simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(
+            8, "raw_cloud_fixed_rotor_rpm_open_loop_acid_strip_reflux_and_offline_icpms_batch_assay"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_li7_li6_pods"], 32)
+        self.assertEqual(gov["li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct"], 53.1)
+        self.assertEqual(gov["crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct"], 77.5)
+        self.assertEqual(gov["cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms"], 0.18)
+        self.assertEqual(gov["unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct"], 1.0)
+        self.assertEqual(gov["li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms"], 0.16)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct"], 3.0)
+        self.assertTrue(gov["lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met"])
+        self.assertFalse(raw["lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met"])
 
 
 if __name__ == "__main__":

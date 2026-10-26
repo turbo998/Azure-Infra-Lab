@@ -225,6 +225,7 @@ from agent_infra_sizer import (
     simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
     simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
     simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
+    simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1734,6 +1735,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(8, "raw_cloud_fixed_h2s_water_ratio_open_loop_sieve_tray_weeping_and_offline_irms_grab_sampling"),
     ]
 
+    lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles: List[Dict[str, object]] = [
+        simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(8, "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge"),
+        simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(32, "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge"),
+        simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(8, "raw_cloud_fixed_rotor_rpm_open_loop_acid_strip_reflux_and_offline_icpms_batch_assay"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1946,6 +1953,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles": curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_profiles,
         "medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_profiles": medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_profiles,
         "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_profiles": heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_profiles,
+        "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles": lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles,
     }
 
 

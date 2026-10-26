@@ -12454,6 +12454,53 @@
         "uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct": 4.5,
         "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met": false
       }
+    ],
+    "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles": [
+      {
+        "li7_li6_cascade_trains": 8,
+        "li7_li6_governance_mode": "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_li7_li6_pods": 32,
+        "li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct": 53.1,
+        "crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct": 77.5,
+        "cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms": 0.18,
+        "unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct": 0.0,
+        "li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms": 0.16,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": 0.0,
+        "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": true
+      },
+      {
+        "li7_li6_cascade_trains": 32,
+        "li7_li6_governance_mode": "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_li7_li6_pods": 128,
+        "li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct": 53.1,
+        "crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct": 77.5,
+        "cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms": 0.18,
+        "unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct": 0.0,
+        "li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms": 0.16,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": 0.0,
+        "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": true
+      },
+      {
+        "li7_li6_cascade_trains": 8,
+        "li7_li6_governance_mode": "raw_cloud_fixed_rotor_rpm_open_loop_acid_strip_reflux_and_offline_icpms_batch_assay",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_li7_li6_pods": 32,
+        "li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct": 9.2,
+        "crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct": 12.2,
+        "cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms": 376.0,
+        "unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct": 1.6,
+        "li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms": 205.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": 4.5,
+        "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -23282,5 +23329,52 @@
       "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met": false
     }
   },
-  "trace_sha256": "02dc49ee09ecab2c316d5526799cde0cf5cd2b0d149556b633848795c9221509"
+  "demo_213_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox": {
+    "li7_li6_8_trains": {
+      "li7_li6_cascade_trains": 8,
+      "li7_li6_governance_mode": "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_li7_li6_pods": 32,
+      "li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct": 53.1,
+      "crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct": 77.5,
+      "cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms": 0.18,
+      "unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct": 0.0,
+      "li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms": 0.16,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": 0.0,
+      "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": true
+    },
+    "li7_li6_32_trains": {
+      "li7_li6_cascade_trains": 32,
+      "li7_li6_governance_mode": "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_li7_li6_pods": 128,
+      "li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct": 53.1,
+      "crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct": 77.5,
+      "cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms": 0.18,
+      "unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct": 0.0,
+      "li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms": 0.16,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": 0.0,
+      "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": true
+    },
+    "raw_li7_li6_8_trains": {
+      "li7_li6_cascade_trains": 8,
+      "li7_li6_governance_mode": "raw_cloud_fixed_rotor_rpm_open_loop_acid_strip_reflux_and_offline_icpms_batch_assay",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_li7_li6_pods": 32,
+      "li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct": 9.2,
+      "crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct": 12.2,
+      "cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms": 376.0,
+      "unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct": 1.6,
+      "li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms": 205.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": 4.5,
+      "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": false
+    }
+  },
+  "trace_sha256": "0604d0f3bf5b5cc224ba7e77794d2defe3a377d2455100d97a2371f75520cea7"
 }

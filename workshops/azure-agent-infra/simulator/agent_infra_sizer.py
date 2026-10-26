@@ -11310,6 +11310,72 @@ def simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_na
     }
 
 
+def simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(
+    li7_li6_cascade_trains: int = 8,
+    li7_li6_governance_mode: str = "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge",
+) -> dict[str, Any]:
+    """Cycle #213 — Lithium-7 (7LiOH >=99.95% PWR Reactor Coolant) & Lithium-6 (6Li >=90% Fusion Tritium Blanket) Crown-Ether Centrifugal Extraction & Electromigration Cascade Sandbox.
+
+    Models mercury-free Benzo-15-Crown-5 (B15C5) / 14-Crown-4 macrocyclic polyether liquid-liquid extraction in 200-stage
+    high-speed annular centrifugal contactors (ACC) and countercurrent electromigration / displacement chromatography
+    cascades, online 10 kHz Laser-Induced Breakdown & Atomic Absorption Isotopic Spectroscopy (LIBS-LAAS resolving the
+    670.776 nm 7Li vs 670.791 nm 6Li doublet), MC-ICP-MS and phase-entrainment conductometry, and 10 CFR 50 Appendix B /
+    EPRI Primary Water Chemistry / NFPA 30 / IEC 61511 SIL-3 residual 6Li (>500 ppm) lot quarantine, N2 electrostatic
+    solvent blanketing, and Cl2/H2 rectifier cutoff interlocks.
+    """
+    if li7_li6_cascade_trains < 1:
+        raise ValueError("li7_li6_cascade_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge",
+        "raw_cloud_fixed_rotor_rpm_open_loop_acid_strip_reflux_and_offline_icpms_batch_assay",
+    }
+    if li7_li6_governance_mode not in valid_modes:
+        raise ValueError(f"li7_li6_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        li7_li6_governance_mode
+        == "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(li7_li6_cascade_trains / 2))
+    active_li7_li6_pods = li7_li6_cascade_trains * 4
+
+    li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct = (
+        53.1 if governed else 9.2
+    )
+    crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct = (
+        77.5 if governed else 12.2
+    )
+    cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms = (
+        0.18 if governed else 376.0
+    )
+    unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct = (
+        0.0 if governed else 1.6
+    )
+    li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms = (
+        0.16 if governed else 205.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct = (
+        0.0 if governed else 4.5
+    )
+
+    return {
+        "li7_li6_cascade_trains": li7_li6_cascade_trains,
+        "li7_li6_governance_mode": li7_li6_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_li7_li6_pods": active_li7_li6_pods,
+        "li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct": li7_9995pct_pwr_coolant_li6_90pct_fusion_stage_separation_and_yield_gain_pct,
+        "crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct": crown_ether_emulsion_flooding_solvent_radiolysis_and_residual_li6_tritium_source_reduction_pct,
+        "cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms": cfr50_epri_nfpa30_sil3_li6_breakthrough_quarantine_solvent_n2_inerting_and_cl2_h2_rectifier_interlock_ms,
+        "unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct": unmitigated_offspec_li6_pwr_tritium_excursion_crown_ether_vapor_fire_or_cl2_evolution_pct,
+        "li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms": li7_li6_edge_10khz_libs_laas_670nm_doublet_icpms_and_phase_entrainment_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct,
+        "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
