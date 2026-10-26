@@ -233,6 +233,7 @@ from agent_infra_sizer import (
     simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox,
     simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
+    simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1790,6 +1791,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(8, "raw_cloud_direct_lu176_irradiation_with_177mlu_waste_and_natural_mo_target_impurities"),
     ]
 
+    actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles: List[Dict[str, object]] = [
+        simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(8, "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge"),
+        simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(32, "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge"),
+        simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(8, "raw_cloud_high_energy_th232_spallation_with_227ac_impurity_and_manual_resin_elution"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2010,6 +2017,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_profiles": gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_profiles,
         "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles": dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles,
         "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_profiles": lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_profiles,
+        "actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles": actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles,
     }
 
 

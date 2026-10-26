@@ -227,6 +227,7 @@ from agent_infra_sizer import (
     simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox,
     simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
+    simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4691,6 +4692,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct"], 3.0)
         self.assertTrue(gov["lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met"])
         self.assertFalse(raw["lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met"])
+
+    def test_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(self) -> None:
+        gov = simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(
+            8, "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge"
+        )
+        raw = simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(
+            8, "raw_cloud_high_energy_th232_spallation_with_227ac_impurity_and_manual_resin_elution"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_ac225_pb212_pods"], 32)
+        self.assertEqual(gov["nca_ac225_specific_yield_ra226_recovery_and_pb212_ge68_generator_efficiency_gain_pct"], 55.5)
+        self.assertEqual(gov["long_lived_227ac_impurity_ra226_breakthrough_and_radiolytic_resin_bleed_cut_pct"], 79.8)
+        self.assertEqual(gov["usp823_10cfr20_eugmp_sil3_rn222_cryo_trap_226ra_227ac_quarantine_and_target_window_trip_ms"], 0.16)
+        self.assertEqual(gov["unmitigated_rn222_alpha_gas_leak_bone_seeking_226ra_227ac_overdose_or_ra_target_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rn222_alpha_gas_leak_bone_seeking_226ra_227ac_overdose_or_ra_target_rupture_pct"], 1.0)
+        self.assertEqual(gov["ac225_pb212_edge_10khz_pips_alpha_hpge_gamma_and_rn222_ionization_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_proton_energy_drift_226ra_p3n_224ac_or_dga_alpha_radiolysis_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_proton_energy_drift_226ra_p3n_224ac_or_dga_alpha_radiolysis_pct"], 3.0)
+        self.assertTrue(gov["actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_slo_met"])
+        self.assertFalse(raw["actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_slo_met"])
 
 
 if __name__ == "__main__":

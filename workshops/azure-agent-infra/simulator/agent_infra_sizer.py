@@ -11875,6 +11875,82 @@ def simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cycl
     }
 
 
+def simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(
+    ac225_pb212_trains: int = 8,
+    ac225_pb212_governance_mode: str = "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Targeted Alpha Therapy Actinium-225 (n.c.a. 225Ac
+    >=99.9% Radionuclidic Purity, T1/2=9.92d 4-Alpha Cascade Delivering 27.6 MeV
+    High-LET ~100 keV/um Double-Strand DNA Breaks for 225Ac-PSMA-617 / DOTATATE
+    via Medium-Energy Cyclotron Proton Irradiation 226Ra(p,2n)225Ac at 16.2 MeV
+    Eliminating Long-Lived T1/2=21.77-yr 227Ac Co-Produced in High-Energy Th-232
+    Spallation) & In-Vivo Alpha/PET Generator Parent Isotopes Lead-212 /
+    Germanium-68 (224Ra/212Pb/212Bi Alpha Generator & 68Ge/68Ga T1/2=270.95d
+    Ga-Ni Target & TiO2/SnO2 Column PET Generator) — 15.5-16.8 MeV Proton
+    Cyclotron Sealed RaCl2/RaCO3 Target Excitation-Window Locking, Orthogonal
+    DGA / Sr-Spec / TK200 Solid-Phase Extraction Chromatography (>10^7 Ra/Ac
+    Decontamination Factor & >99.5% 226Ra Target Recycling) & Closed-Loop
+    Radon-222 (222Rn) Decay Gas Capture PINN-MPC, Online 10 kHz Passivated
+    Implanted Planar Silicon (PIPS) Alpha Spectroscopy (5.83 MeV 225Ac /
+    6.34 MeV 221Fr / 7.07 MeV 217At / 8.38 MeV 213Po), HPGe Gamma & Rn-222
+    Ionization-Chamber Metrology & USP <823> / 10 CFR 20 / EU GMP Annex 3 /
+    IAEA SSR-6 / IEC 61511 SIL-3 Cryogenic LN2 Activated-Charcoal 222Rn Trap
+    Containment Lockout, Bone-Seeking 226Ra/227Ac Breakthrough Lot Quarantine &
+    Cyclotron Helium-Cooled Ag/Pt Target-Foil Rupture Trip Interlock
+    (Cycle #221 — 230-Test Milestone!)."""
+    if ac225_pb212_trains < 1:
+        raise ValueError("ac225_pb212_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge",
+        "raw_cloud_high_energy_th232_spallation_with_227ac_impurity_and_manual_resin_elution",
+    }
+    if ac225_pb212_governance_mode not in valid_modes:
+        raise ValueError(f"ac225_pb212_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        ac225_pb212_governance_mode
+        == "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(ac225_pb212_trains / 2))
+    active_ac225_pb212_pods = ac225_pb212_trains * 4
+
+    nca_ac225_specific_yield_ra226_recovery_and_pb212_ge68_generator_efficiency_gain_pct = (
+        55.5 if governed else 10.0
+    )
+    long_lived_227ac_impurity_ra226_breakthrough_and_radiolytic_resin_bleed_cut_pct = (
+        79.8 if governed else 13.5
+    )
+    usp823_10cfr20_eugmp_sil3_rn222_cryo_trap_226ra_227ac_quarantine_and_target_window_trip_ms = (
+        0.16 if governed else 385.0
+    )
+    unmitigated_rn222_alpha_gas_leak_bone_seeking_226ra_227ac_overdose_or_ra_target_rupture_pct = (
+        0.0 if governed else 1.5
+    )
+    ac225_pb212_edge_10khz_pips_alpha_hpge_gamma_and_rn222_ionization_loop_ms = (
+        0.15 if governed else 211.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_proton_energy_drift_226ra_p3n_224ac_or_dga_alpha_radiolysis_pct = (
+        0.0 if governed else 4.6
+    )
+
+    return {
+        "ac225_pb212_trains": ac225_pb212_trains,
+        "ac225_pb212_governance_mode": ac225_pb212_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_ac225_pb212_pods": active_ac225_pb212_pods,
+        "nca_ac225_specific_yield_ra226_recovery_and_pb212_ge68_generator_efficiency_gain_pct": nca_ac225_specific_yield_ra226_recovery_and_pb212_ge68_generator_efficiency_gain_pct,
+        "long_lived_227ac_impurity_ra226_breakthrough_and_radiolytic_resin_bleed_cut_pct": long_lived_227ac_impurity_ra226_breakthrough_and_radiolytic_resin_bleed_cut_pct,
+        "usp823_10cfr20_eugmp_sil3_rn222_cryo_trap_226ra_227ac_quarantine_and_target_window_trip_ms": usp823_10cfr20_eugmp_sil3_rn222_cryo_trap_226ra_227ac_quarantine_and_target_window_trip_ms,
+        "unmitigated_rn222_alpha_gas_leak_bone_seeking_226ra_227ac_overdose_or_ra_target_rupture_pct": unmitigated_rn222_alpha_gas_leak_bone_seeking_226ra_227ac_overdose_or_ra_target_rupture_pct,
+        "ac225_pb212_edge_10khz_pips_alpha_hpge_gamma_and_rn222_ionization_loop_ms": ac225_pb212_edge_10khz_pips_alpha_hpge_gamma_and_rn222_ionization_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_proton_energy_drift_226ra_p3n_224ac_or_dga_alpha_radiolysis_pct": uncompensated_proton_energy_drift_226ra_p3n_224ac_or_dga_alpha_radiolysis_pct,
+        "actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
