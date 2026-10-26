@@ -228,6 +228,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
     simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
+    simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1499,6 +1500,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "haleu_triso_8_lines": simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(8, "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge"),
             "haleu_triso_32_lines": simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(32, "pinn_mpc_uf6_centrifuge_haleu_swu_uco_internal_gelation_and_fbcvd_triso_quad_layer_sil3_edge"),
             "raw_haleu_triso_8_lines": simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox(8, "raw_cloud_fixed_centrifuge_baffle_scoop_open_loop_hmta_urea_gelation_and_empirical_fbcvd_mts_flow"),
+        },
+        "demo_209_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox": {
+            "actinide_pyro_rtg_8_cells": simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(8, "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge"),
+            "actinide_pyro_rtg_32_cells": simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(32, "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge"),
+            "raw_actinide_pyro_rtg_8_cells": simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(8, "raw_cloud_unexchanged_puo2_sinter_open_loop_lcc_potential_and_offline_alpha_n_assay"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

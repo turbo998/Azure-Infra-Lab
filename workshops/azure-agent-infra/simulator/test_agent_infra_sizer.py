@@ -215,6 +215,7 @@ from agent_infra_sizer import (
     simulate_gadolinium_holmium_erbium_uo2_gd2o3_fuel_magnetocaloric_edfa_eryag_laser_sil3_sandbox,
     simulate_thulium_ytterbium_lutetium_yb_fiber_laser_lyso_pet_scintillator_177lu_radioligand_sil3_sandbox,
     simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_sil3_sandbox,
+    simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4427,6 +4428,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct"], 3.0)
         self.assertTrue(gov["uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met"])
         self.assertFalse(raw["uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met"])
+
+    def test_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(self) -> None:
+        gov = simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(
+            8, "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge"
+        )
+        raw = simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(
+            8, "raw_cloud_unexchanged_puo2_sinter_open_loop_lcc_potential_and_offline_alpha_n_assay"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_actinide_pyro_rtg_pods"], 32)
+        self.assertEqual(gov["pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct"], 52.0)
+        self.assertEqual(gov["alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct"], 76.7)
+        self.assertEqual(gov["cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms"], 0.22)
+        self.assertEqual(gov["unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct"], 1.0)
+        self.assertEqual(gov["actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms"], 0.18)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct"], 3.0)
+        self.assertTrue(gov["plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met"])
+        self.assertFalse(raw["plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met"])
 
 
 if __name__ == "__main__":

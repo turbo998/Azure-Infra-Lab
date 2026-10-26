@@ -12266,6 +12266,53 @@
         "uncompensated_centrifuge_thermal_drive_swirl_drift_solgel_broth_pregelation_or_sic_soot_inclusion_pct": 4.3,
         "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met": false
       }
+    ],
+    "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_profiles": [
+      {
+        "actinide_pyro_rtg_cells": 8,
+        "actinide_pyro_rtg_governance_mode": "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_actinide_pyro_rtg_pods": 32,
+        "pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct": 52.0,
+        "alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct": 76.7,
+        "cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms": 0.22,
+        "unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct": 0.0,
+        "actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms": 0.18,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": 0.0,
+        "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": true
+      },
+      {
+        "actinide_pyro_rtg_cells": 32,
+        "actinide_pyro_rtg_governance_mode": "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_actinide_pyro_rtg_pods": 128,
+        "pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct": 52.0,
+        "alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct": 76.7,
+        "cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms": 0.22,
+        "unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct": 0.0,
+        "actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms": 0.18,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": 0.0,
+        "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": true
+      },
+      {
+        "actinide_pyro_rtg_cells": 8,
+        "actinide_pyro_rtg_governance_mode": "raw_cloud_unexchanged_puo2_sinter_open_loop_lcc_potential_and_offline_alpha_n_assay",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_actinide_pyro_rtg_pods": 32,
+        "pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct": 9.0,
+        "alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct": 11.9,
+        "cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms": 366.0,
+        "unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct": 1.5,
+        "actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms": 199.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": 4.3,
+        "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -22906,5 +22953,52 @@
       "uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_criticality_slo_met": false
     }
   },
-  "trace_sha256": "f2e8fbcac9a289063604c8914a1e0cb6f6b1b1121c4811a356d93ccae6788433"
+  "demo_209_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox": {
+    "actinide_pyro_rtg_8_cells": {
+      "actinide_pyro_rtg_cells": 8,
+      "actinide_pyro_rtg_governance_mode": "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_actinide_pyro_rtg_pods": 32,
+      "pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct": 52.0,
+      "alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct": 76.7,
+      "cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms": 0.22,
+      "unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct": 0.0,
+      "actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms": 0.18,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": 0.0,
+      "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": true
+    },
+    "actinide_pyro_rtg_32_cells": {
+      "actinide_pyro_rtg_cells": 32,
+      "actinide_pyro_rtg_governance_mode": "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_actinide_pyro_rtg_pods": 128,
+      "pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct": 52.0,
+      "alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct": 76.7,
+      "cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms": 0.22,
+      "unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct": 0.0,
+      "actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms": 0.18,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": 0.0,
+      "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": true
+    },
+    "raw_actinide_pyro_rtg_8_cells": {
+      "actinide_pyro_rtg_cells": 8,
+      "actinide_pyro_rtg_governance_mode": "raw_cloud_unexchanged_puo2_sinter_open_loop_lcc_potential_and_offline_alpha_n_assay",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_actinide_pyro_rtg_pods": 32,
+      "pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct": 9.0,
+      "alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct": 11.9,
+      "cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms": 366.0,
+      "unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct": 1.5,
+      "actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms": 199.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": 4.3,
+      "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": false
+    }
+  },
+  "trace_sha256": "9875d0864d58eb7d724bd92a7b8ae12c2e0d0173c86f9194a366f7df91ca46de"
 }

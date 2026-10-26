@@ -11063,6 +11063,77 @@ def simulate_uranium_thorium_uf6_centrifuge_haleu_enrichment_uco_triso_fbcvd_cri
     }
 
 
+def simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox(
+    actinide_pyro_rtg_cells: int = 8,
+    actinide_pyro_rtg_governance_mode: str = "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Transuranic Actinides — Neptunium (Np, Z=93),
+    Plutonium-238 (238Pu, Z=94, T1/2=87.7 yr, 0.56 W/g alpha-decay) &
+    Americium-241 (241Am, Z=95) Deep-Space Multi-Mission Radioisotope
+    Thermoelectric Generator (MMRTG) General Purpose Heat Source (GPHS
+    238PuO2 Ceramic Pellet 16O2 Isotope-Exchange to Suppress (alpha,n)
+    Neutrons < 2,000 n/s*g & DOP-26 Ir-0.3W Vented Clad Electron-Beam Welding)
+    & Gen-IV Sodium Fast Reactor (SFR) Spent Metallic Fuel 500 degC LiCl-KCl
+    Eutectic Molten-Salt Pyroprocessing Electrorefiner (Liquid Cadmium Cathode
+    LCC U-Pu-Np-Am Co-Recovery) PINN-MPC, Online 10 kHz Molten-Salt Square-Wave
+    Voltammetry (SWV), Neutron Coincidence Counting (NCC) & Ultrasonic DOP-26
+    Ir Weld Metrology & 10 CFR 70 / DOE-STD-3013 / ANSI/ANS-8.15 / IAEA
+    INFCIRC/225 / IEC 61511 SIL-3 Special Nuclear Material (SNM) Criticality
+    Lock, 238PuO2 Alpha Decay Self-Heating Helium Quench & Argon Hot-Cell
+    Containment Interlock (Cycle #209 — 215-Chapter & 210-Blueprint Milestone!)."""
+    if actinide_pyro_rtg_cells < 1:
+        raise ValueError("actinide_pyro_rtg_cells must be >= 1")
+    valid_modes = {
+        "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge",
+        "raw_cloud_unexchanged_puo2_sinter_open_loop_lcc_potential_and_offline_alpha_n_assay",
+    }
+    if actinide_pyro_rtg_governance_mode not in valid_modes:
+        raise ValueError(f"actinide_pyro_rtg_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        actinide_pyro_rtg_governance_mode
+        == "pinn_mpc_238puo2_16o_exchange_dop26_ir_gphs_and_licl_kcl_lcc_electrorefining_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(actinide_pyro_rtg_cells / 2))
+    active_actinide_pyro_rtg_pods = actinide_pyro_rtg_cells * 4
+
+    pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct = (
+        52.0 if governed else 9.0
+    )
+    alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct = (
+        76.7 if governed else 11.9
+    )
+    cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms = (
+        0.22 if governed else 366.0
+    )
+    unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct = (
+        0.0 if governed else 1.5
+    )
+    actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms = (
+        0.18 if governed else 199.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct = (
+        0.0 if governed else 4.3
+    )
+
+    return {
+        "actinide_pyro_rtg_cells": actinide_pyro_rtg_cells,
+        "actinide_pyro_rtg_governance_mode": actinide_pyro_rtg_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_actinide_pyro_rtg_pods": active_actinide_pyro_rtg_pods,
+        "pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct": pu238_gphs_thermal_density_16o_neutron_suppression_and_lcc_actinide_recovery_gain_pct,
+        "alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct": alpha_n_neutron_emission_gphs_pellet_microcrack_and_rare_earth_fission_product_carryover_reduction_pct,
+        "cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms": cfr70_doe3013_ans815_sil3_snm_criticality_pu238_decay_heat_he_quench_and_argon_hotcell_interlock_ms,
+        "unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct": unmitigated_snm_criticality_pu238_alpha_aerosol_breach_or_licl_kcl_cadmium_vapor_fire_pct,
+        "actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms": actinide_pyro_rtg_edge_10khz_swv_molten_salt_ncc_alpha_n_and_dop26_ir_ultrasonic_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct": uncompensated_17o_18o_back_exchange_lcc_uranium_dendrite_short_or_dop26_ir_weld_porosity_pct,
+        "plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
