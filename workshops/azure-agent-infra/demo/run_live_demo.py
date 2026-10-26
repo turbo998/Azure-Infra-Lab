@@ -239,6 +239,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox,
     simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox,
     simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
+    simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1565,6 +1566,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "dy164_er167_8_trains": simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(8, "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge"),
             "dy164_er167_32_trains": simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(32, "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge"),
             "raw_dy164_er167_8_trains": simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(8, "raw_cloud_fixed_ebeam_evaporation_natural_dy_er_oxide_blending_and_offline_destructive_pellet_assay"),
+        },
+        "demo_220_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox": {
+            "lu177_mo100_8_trains": simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(8, "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge"),
+            "lu177_mo100_32_trains": simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(32, "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge"),
+            "raw_lu177_mo100_8_trains": simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(8, "raw_cloud_direct_lu176_irradiation_with_177mlu_waste_and_natural_mo_target_impurities"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

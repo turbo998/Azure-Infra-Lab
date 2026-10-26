@@ -226,6 +226,7 @@ from agent_infra_sizer import (
     simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox,
     simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox,
     simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
+    simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4669,6 +4670,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct"], 3.0)
         self.assertTrue(gov["dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met"])
         self.assertFalse(raw["dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met"])
+
+    def test_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(self) -> None:
+        gov = simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(
+            8, "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge"
+        )
+        raw = simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(
+            8, "raw_cloud_direct_lu176_irradiation_with_177mlu_waste_and_natural_mo_target_impurities"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_lu177_mo100_pods"], 32)
+        self.assertEqual(gov["nca_lu177_specific_activity_yb176_avlis_and_mo100_tc99m_specific_yield_gain_pct"], 55.2)
+        self.assertEqual(gov["metastable_177mlu_waste_yb3_breakthrough_and_9x_tc_isotopic_impurity_cut_pct"], 79.5)
+        self.assertEqual(gov["usp823_eugmp_cfr35_sil3_hotcell_containment_177mlu_yb_quarantine_and_mof6_scrubber_interlock_ms"], 0.16)
+        self.assertEqual(gov["unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct"], 1.0)
+        self.assertEqual(gov["lu177_mo100_edge_10khz_hpge_gamma_fabry_perot_avlis_and_icpms_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct"], 3.0)
+        self.assertTrue(gov["lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met"])
+        self.assertFalse(raw["lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met"])
 
 
 if __name__ == "__main__":

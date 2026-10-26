@@ -12581,5 +12581,52 @@
       "uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct": 4.5,
       "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met": false
     }
+  ],
+  "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_profiles": [
+    {
+      "lu177_mo100_trains": 8,
+      "lu177_mo100_governance_mode": "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lu177_mo100_pods": 32,
+      "nca_lu177_specific_activity_yb176_avlis_and_mo100_tc99m_specific_yield_gain_pct": 55.2,
+      "metastable_177mlu_waste_yb3_breakthrough_and_9x_tc_isotopic_impurity_cut_pct": 79.5,
+      "usp823_eugmp_cfr35_sil3_hotcell_containment_177mlu_yb_quarantine_and_mof6_scrubber_interlock_ms": 0.16,
+      "unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct": 0.0,
+      "lu177_mo100_edge_10khz_hpge_gamma_fabry_perot_avlis_and_icpms_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct": 0.0,
+      "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met": true
+    },
+    {
+      "lu177_mo100_trains": 32,
+      "lu177_mo100_governance_mode": "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lu177_mo100_pods": 128,
+      "nca_lu177_specific_activity_yb176_avlis_and_mo100_tc99m_specific_yield_gain_pct": 55.2,
+      "metastable_177mlu_waste_yb3_breakthrough_and_9x_tc_isotopic_impurity_cut_pct": 79.5,
+      "usp823_eugmp_cfr35_sil3_hotcell_containment_177mlu_yb_quarantine_and_mof6_scrubber_interlock_ms": 0.16,
+      "unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct": 0.0,
+      "lu177_mo100_edge_10khz_hpge_gamma_fabry_perot_avlis_and_icpms_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct": 0.0,
+      "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met": true
+    },
+    {
+      "lu177_mo100_trains": 8,
+      "lu177_mo100_governance_mode": "raw_cloud_direct_lu176_irradiation_with_177mlu_waste_and_natural_mo_target_impurities",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_lu177_mo100_pods": 32,
+      "nca_lu177_specific_activity_yb176_avlis_and_mo100_tc99m_specific_yield_gain_pct": 9.9,
+      "metastable_177mlu_waste_yb3_breakthrough_and_9x_tc_isotopic_impurity_cut_pct": 13.3,
+      "usp823_eugmp_cfr35_sil3_hotcell_containment_177mlu_yb_quarantine_and_mof6_scrubber_interlock_ms": 383.0,
+      "unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct": 1.5,
+      "lu177_mo100_edge_10khz_hpge_gamma_fabry_perot_avlis_and_icpms_loop_ms": 210.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct": 4.6,
+      "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met": false
+    }
   ]
 }

@@ -11804,6 +11804,77 @@ def simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_si
     }
 
 
+def simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox(
+    lu177_mo100_trains: int = 8,
+    lu177_mo100_governance_mode: str = "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous No-Carrier-Added Lutetium-177 (n.c.a. 177Lu >=99.9%
+    Radionuclidic Purity for PSMA-617 / DOTATATE Targeted Radioligand Therapy
+    RLT via Enriched Ytterbium-176 176Yb >=99.6% Indirect Neutron-Capture Route
+    176Yb(n,gamma)177Yb -> 177Lu Eliminating 160.4d Metastable 177mLu Impurity)
+    & Enriched Molybdenum-100 (100Mo >=99.5% Non-Reactor Medical Cyclotron
+    100Mo(p,2n)99mTc Generator & Li2-100MoO4 0vbb Cryogenic Bolometer)
+    1,550 K Yb Atomic-Beam 3-Step Laser Photoionization (AVLIS), Lu3+/Yb3+
+    Electro-Amalgamation / LN2 Extraction-Chromatography Separation & MoF6 Gas
+    Centrifuge Cascade PINN-MPC, Online 10 kHz High-Purity Germanium (HPGe)
+    Gamma Spectrometry, Fabry-Perot AVLIS Spectroscopy & ICP-MS Metrology &
+    USP <823> / EU GMP Annex 3 / 10 CFR 35 / CGA G-13 / IEC 61511 SIL-3
+    Hot-Cell Overpressure/Radiation Containment Lockout, 177mLu/Yb3+
+    Radiopharmaceutical Lot Quarantine & Toxic MoF6/HF Dry-Scrubber Isolation
+    Interlock (Cycle #220 — 220-Cycle & 220-Simulator Milestone!)."""
+    if lu177_mo100_trains < 1:
+        raise ValueError("lu177_mo100_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge",
+        "raw_cloud_direct_lu176_irradiation_with_177mlu_waste_and_natural_mo_target_impurities",
+    }
+    if lu177_mo100_governance_mode not in valid_modes:
+        raise ValueError(f"lu177_mo100_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        lu177_mo100_governance_mode
+        == "pinn_mpc_yb176_avlis_nca_lu177_electro_amalgamation_and_mo100_mof6_centrifuge_tc99m_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(lu177_mo100_trains / 2))
+    active_lu177_mo100_pods = lu177_mo100_trains * 4
+
+    nca_lu177_specific_activity_yb176_avlis_and_mo100_tc99m_specific_yield_gain_pct = (
+        55.2 if governed else 9.9
+    )
+    metastable_177mlu_waste_yb3_breakthrough_and_9x_tc_isotopic_impurity_cut_pct = (
+        79.5 if governed else 13.3
+    )
+    usp823_eugmp_cfr35_sil3_hotcell_containment_177mlu_yb_quarantine_and_mof6_scrubber_interlock_ms = (
+        0.16 if governed else 383.0
+    )
+    unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct = (
+        0.0 if governed else 1.5
+    )
+    lu177_mo100_edge_10khz_hpge_gamma_fabry_perot_avlis_and_icpms_loop_ms = (
+        0.15 if governed else 210.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct = (
+        0.0 if governed else 4.6
+    )
+
+    return {
+        "lu177_mo100_trains": lu177_mo100_trains,
+        "lu177_mo100_governance_mode": lu177_mo100_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_lu177_mo100_pods": active_lu177_mo100_pods,
+        "nca_lu177_specific_activity_yb176_avlis_and_mo100_tc99m_specific_yield_gain_pct": nca_lu177_specific_activity_yb176_avlis_and_mo100_tc99m_specific_yield_gain_pct,
+        "metastable_177mlu_waste_yb3_breakthrough_and_9x_tc_isotopic_impurity_cut_pct": metastable_177mlu_waste_yb3_breakthrough_and_9x_tc_isotopic_impurity_cut_pct,
+        "usp823_eugmp_cfr35_sil3_hotcell_containment_177mlu_yb_quarantine_and_mof6_scrubber_interlock_ms": usp823_eugmp_cfr35_sil3_hotcell_containment_177mlu_yb_quarantine_and_mof6_scrubber_interlock_ms,
+        "unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct": unmitigated_hotcell_radiation_breach_177mlu_yb_patient_overdose_or_mof6_hf_release_pct,
+        "lu177_mo100_edge_10khz_hpge_gamma_fabry_perot_avlis_and_icpms_loop_ms": lu177_mo100_edge_10khz_hpge_gamma_fabry_perot_avlis_and_icpms_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct": uncompensated_yb176_avlis_detuning_ln2_column_radiolysis_or_mof6_hydrolysis_pct,
+        "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
