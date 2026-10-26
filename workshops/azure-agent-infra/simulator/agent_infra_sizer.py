@@ -12241,6 +12241,53 @@ def simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alp
     }
 
 
+def simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox(
+    co_cu_atsm_trains: int = 8,
+    governance_mode: str = "pinn_mpc_fe54_fe58_co55_co58m_dga_ag1x8_and_cu_atsm_hypoxia_redox_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Cobalt-55/58m (54Fe(d,n)55Co PET & 58Fe(p,n)58mCo Auger-Electron Theranostics via DGA/AG1-X8 Fe3+ Partitioning) & Hypoxia-Selective Cu-ATSM Redox-Trapping PINN-MPC + SIL-3 Sandbox (Chapter 232, Cycle #227)."""
+    trains = max(1, int(co_cu_atsm_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_fe54_fe58_co55_co58m_dga_ag1x8_and_cu_atsm_hypoxia_redox_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_co_cu_atsm_pods = trains * 4
+
+    if governed:
+        co55_co58m_molar_activity_and_cu_atsm_hypoxic_selectivity_gain_pct = 57.1
+        cold_fe3_chelator_poisoning_and_co56_co58g_impurity_reduction_pct = 81.3
+        usp823_iso17873_sil3_co56_58g_quarantine_and_fe_target_crowbar_latency_ms = 0.15
+        unmitigated_co56_58g_overdose_fe3_receptor_blockade_or_target_burnthrough_pct = 0.0
+        edge_bewindow_hpge_ferrozine_and_micro_cv_closed_loop_latency_ms = 0.14
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_fe54_58_target_loss_or_normoxic_cu_atsm_washout_failure_pct = 0.0
+    else:
+        co55_co58m_molar_activity_and_cu_atsm_hypoxic_selectivity_gain_pct = 10.6
+        cold_fe3_chelator_poisoning_and_co56_co58g_impurity_reduction_pct = 14.3
+        usp823_iso17873_sil3_co56_58g_quarantine_and_fe_target_crowbar_latency_ms = 396.0
+        unmitigated_co56_58g_overdose_fe3_receptor_blockade_or_target_burnthrough_pct = 1.5
+        edge_bewindow_hpge_ferrozine_and_micro_cv_closed_loop_latency_ms = 219.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_fe54_58_target_loss_or_normoxic_cu_atsm_washout_failure_pct = 4.9
+
+    return {
+        "co_cu_atsm_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_co_cu_atsm_pods": active_co_cu_atsm_pods,
+        "co55_co58m_molar_activity_and_cu_atsm_hypoxic_selectivity_gain_pct": co55_co58m_molar_activity_and_cu_atsm_hypoxic_selectivity_gain_pct,
+        "cold_fe3_chelator_poisoning_and_co56_co58g_impurity_reduction_pct": cold_fe3_chelator_poisoning_and_co56_co58g_impurity_reduction_pct,
+        "usp823_iso17873_sil3_co56_58g_quarantine_and_fe_target_crowbar_latency_ms": usp823_iso17873_sil3_co56_58g_quarantine_and_fe_target_crowbar_latency_ms,
+        "unmitigated_co56_58g_overdose_fe3_receptor_blockade_or_target_burnthrough_pct": unmitigated_co56_58g_overdose_fe3_receptor_blockade_or_target_burnthrough_pct,
+        "edge_bewindow_hpge_ferrozine_and_micro_cv_closed_loop_latency_ms": edge_bewindow_hpge_ferrozine_and_micro_cv_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_fe54_58_target_loss_or_normoxic_cu_atsm_washout_failure_pct": uncompensated_fe54_58_target_loss_or_normoxic_cu_atsm_washout_failure_pct,
+        "cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

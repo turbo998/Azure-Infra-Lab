@@ -233,6 +233,7 @@ from agent_infra_sizer import (
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
     simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
+    simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4823,6 +4824,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cose_target_decomposition_or_hopo_mab_radiolysis_aggregation_pct"], 3.0)
         self.assertTrue(gov["bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_slo_met"])
         self.assertFalse(raw["bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_slo_met"])
+
+    def test_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox(self) -> None:
+        gov = simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox(
+            8, "pinn_mpc_fe54_fe58_co55_co58m_dga_ag1x8_and_cu_atsm_hypoxia_redox_sil3_edge"
+        )
+        raw = simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox(
+            8, "raw_cloud_uncompensated_fe3_breakthrough_co56_58g_impurity_and_cu_atsm_dissociation"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_co_cu_atsm_pods"], 32)
+        self.assertEqual(gov["co55_co58m_molar_activity_and_cu_atsm_hypoxic_selectivity_gain_pct"], 57.1)
+        self.assertEqual(gov["cold_fe3_chelator_poisoning_and_co56_co58g_impurity_reduction_pct"], 81.3)
+        self.assertEqual(gov["usp823_iso17873_sil3_co56_58g_quarantine_and_fe_target_crowbar_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_co56_58g_overdose_fe3_receptor_blockade_or_target_burnthrough_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_co56_58g_overdose_fe3_receptor_blockade_or_target_burnthrough_pct"], 1.0)
+        self.assertEqual(gov["edge_bewindow_hpge_ferrozine_and_micro_cv_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_fe54_58_target_loss_or_normoxic_cu_atsm_washout_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_fe54_58_target_loss_or_normoxic_cu_atsm_washout_failure_pct"], 3.0)
+        self.assertTrue(gov["cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_slo_met"])
+        self.assertFalse(raw["cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_slo_met"])
 
 
 if __name__ == "__main__":

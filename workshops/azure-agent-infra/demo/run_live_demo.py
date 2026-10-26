@@ -246,6 +246,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
     simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
+    simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1607,6 +1608,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "br_th227_8_trains": simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(8, "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"),
             "br_th227_32_trains": simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(32, "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"),
             "raw_br_th227_8_trains": simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(8, "raw_cloud_uncompensated_se_volatilization_br2_escape_and_ac227_ra223_breakthrough"),
+        },
+        "demo_227_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox": {
+            "co_cu_atsm_8_trains": simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox(8, "pinn_mpc_fe54_fe58_co55_co58m_dga_ag1x8_and_cu_atsm_hypoxia_redox_sil3_edge"),
+            "co_cu_atsm_32_trains": simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox(32, "pinn_mpc_fe54_fe58_co55_co58m_dga_ag1x8_and_cu_atsm_hypoxia_redox_sil3_edge"),
+            "raw_co_cu_atsm_8_trains": simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox(8, "raw_cloud_uncompensated_fe3_breakthrough_co56_58g_impurity_and_cu_atsm_dissociation"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
