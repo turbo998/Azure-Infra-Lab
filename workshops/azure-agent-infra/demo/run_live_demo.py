@@ -248,6 +248,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
     simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox,
     simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
+    simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1619,6 +1620,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_ra223_sb119_8_trains": simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(8, "pinn_mpc_ac227_ra223_dipex_lapo4_recoil_and_sn119_sb119_trithiocatechol_sil3_edge"),
             "governed_ra223_sb119_32_trains": simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(32, "pinn_mpc_ac227_ra223_dipex_lapo4_recoil_and_sn119_sb119_trithiocatechol_sil3_edge"),
             "raw_ra223_sb119_8_trains": simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_rn219_recoil_escape_ac227_breakthrough_and_sb120m_sn4_contamination"),
+        },
+        "demo_229_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox": {
+            "governed_pb212_ti45_br77_8_trains": simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(8, "pinn_mpc_th228_ra224_thoron_pb212_tcmc_and_sc45_ti45_cu2se_br77_sil3_edge"),
+            "governed_pb212_ti45_br77_32_trains": simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(32, "pinn_mpc_th228_ra224_thoron_pb212_tcmc_and_sc45_ti45_cu2se_br77_sil3_edge"),
+            "raw_pb212_ti45_br77_8_trains": simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_rn220_leak_tl208_dose_and_ti45_hydrolysis_cu2se_sublimation"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

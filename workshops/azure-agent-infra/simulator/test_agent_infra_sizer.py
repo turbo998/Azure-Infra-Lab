@@ -235,6 +235,7 @@ from agent_infra_sizer import (
     simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
     simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox,
     simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
+    simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4867,6 +4868,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_daughter_recoil_escape_or_sb3_hydrolysis_loss_pct"], 3.0)
         self.assertTrue(gov["radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_slo_met"])
         self.assertFalse(raw["radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_slo_met"])
+
+    def test_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(self) -> None:
+        gov = simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(
+            8, "pinn_mpc_th228_ra224_thoron_pb212_tcmc_and_sc45_ti45_cu2se_br77_sil3_edge"
+        )
+        raw = simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(
+            8, "raw_cloud_uncompensated_rn220_leak_tl208_dose_and_ti45_hydrolysis_cu2se_sublimation"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_pb212_ti45_br77_pods"], 32)
+        self.assertEqual(gov["pb212_tcmc_bi212_retention_and_ti45_br77_radiochemical_yield_gain_pct"], 57.5)
+        self.assertEqual(gov["th228_ra224_breakthrough_ti44_sc44m_impurity_and_ti_hydrolysis_reduction_pct"], 81.7)
+        self.assertEqual(gov["usp823_iso17873_sil3_thoron_rn220_cryo_trap_and_cu2se_crowbar_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_rn220_leak_tl208_dose_exceedance_or_cu2se_sublimation_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rn220_leak_tl208_dose_exceedance_or_cu2se_sublimation_pct"], 1.0)
+        self.assertEqual(gov["edge_labr3_hpge_2615kev_and_radio_hplc_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bi212_alpha_recoil_renal_escape_or_ti45_tio2_precipitation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bi212_alpha_recoil_renal_escape_or_ti45_tio2_precipitation_pct"], 3.0)
+        self.assertTrue(gov["lead212_thoron_generator_and_titanium45_bromine77_theranostics_slo_met"])
+        self.assertFalse(raw["lead212_thoron_generator_and_titanium45_bromine77_theranostics_slo_met"])
 
 
 if __name__ == "__main__":

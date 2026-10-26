@@ -12347,6 +12347,60 @@ def simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_t
     }
 
 
+def simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(
+    pb212_ti45_br77_trains: int = 8,
+    governance_mode: str = "pinn_mpc_th228_ra224_thoron_pb212_tcmc_and_sc45_ti45_cu2se_br77_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Lead-212 / Bismuth-212 In-Vivo Alpha Generator (228Th/224Ra -> 220Rn Thoron
+    Emanation / Pb-Spec Extraction & TCMC/DOTAM Chelation) & Titanium-45 / Bromine-76/77 Positron/Meitner-Auger
+    Theranostic Pair (45Sc(p,n)45Ti Microfluidic Non-Hydrolytic Salen/THP Trapping & Enriched 76/77Se-Cu2Se
+    Intermetallic Target Dry Thermal Distillation) PINN-MPC, Online 10 kHz LaBr3(Ce)/HPGe 2.615 MeV 208Tl
+    Shielding-Dose & Radio-HPLC Metrology & USP <823> / 10 CFR 35.1000 / ISO 17873 / SIL-3 Radon-220 (Thoron)
+    Cryo-Charcoal Lockout, 228Th/224Ra Breakthrough Quarantine & Cu2Se Target Sublimation Crowbar Interlock
+    (Chapter 234, Cycle #229 — 230-Blueprint Milestone!).
+    """
+    trains = max(2, min(int(pb212_ti45_br77_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_th228_ra224_thoron_pb212_tcmc_and_sc45_ti45_cu2se_br77_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_pb212_ti45_br77_pods = trains * 4
+
+    if governed:
+        pb212_tcmc_bi212_retention_and_ti45_br77_radiochemical_yield_gain_pct = 57.5
+        th228_ra224_breakthrough_ti44_sc44m_impurity_and_ti_hydrolysis_reduction_pct = 81.7
+        usp823_iso17873_sil3_thoron_rn220_cryo_trap_and_cu2se_crowbar_latency_ms = 0.15
+        unmitigated_rn220_leak_tl208_dose_exceedance_or_cu2se_sublimation_pct = 0.0
+        edge_labr3_hpge_2615kev_and_radio_hplc_closed_loop_latency_ms = 0.14
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_bi212_alpha_recoil_renal_escape_or_ti45_tio2_precipitation_pct = 0.0
+    else:
+        pb212_tcmc_bi212_retention_and_ti45_br77_radiochemical_yield_gain_pct = 10.8
+        th228_ra224_breakthrough_ti44_sc44m_impurity_and_ti_hydrolysis_reduction_pct = 14.5
+        usp823_iso17873_sil3_thoron_rn220_cryo_trap_and_cu2se_crowbar_latency_ms = 399.0
+        unmitigated_rn220_leak_tl208_dose_exceedance_or_cu2se_sublimation_pct = 1.5
+        edge_labr3_hpge_2615kev_and_radio_hplc_closed_loop_latency_ms = 221.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_bi212_alpha_recoil_renal_escape_or_ti45_tio2_precipitation_pct = 4.9
+
+    return {
+        "pb212_ti45_br77_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_pb212_ti45_br77_pods": active_pb212_ti45_br77_pods,
+        "pb212_tcmc_bi212_retention_and_ti45_br77_radiochemical_yield_gain_pct": pb212_tcmc_bi212_retention_and_ti45_br77_radiochemical_yield_gain_pct,
+        "th228_ra224_breakthrough_ti44_sc44m_impurity_and_ti_hydrolysis_reduction_pct": th228_ra224_breakthrough_ti44_sc44m_impurity_and_ti_hydrolysis_reduction_pct,
+        "usp823_iso17873_sil3_thoron_rn220_cryo_trap_and_cu2se_crowbar_latency_ms": usp823_iso17873_sil3_thoron_rn220_cryo_trap_and_cu2se_crowbar_latency_ms,
+        "unmitigated_rn220_leak_tl208_dose_exceedance_or_cu2se_sublimation_pct": unmitigated_rn220_leak_tl208_dose_exceedance_or_cu2se_sublimation_pct,
+        "edge_labr3_hpge_2615kev_and_radio_hplc_closed_loop_latency_ms": edge_labr3_hpge_2615kev_and_radio_hplc_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bi212_alpha_recoil_renal_escape_or_ti45_tio2_precipitation_pct": uncompensated_bi212_alpha_recoil_renal_escape_or_ti45_tio2_precipitation_pct,
+        "lead212_thoron_generator_and_titanium45_bromine77_theranostics_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

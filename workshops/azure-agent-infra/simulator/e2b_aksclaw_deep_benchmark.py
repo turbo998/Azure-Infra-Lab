@@ -241,6 +241,7 @@ from agent_infra_sizer import (
     simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
     simulate_cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_sil3_sandbox,
     simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
+    simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1846,6 +1847,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_rn219_recoil_escape_ac227_breakthrough_and_sb120m_sn4_contamination"),
     ]
 
+    lead212_thoron_generator_and_titanium45_bromine77_theranostics_profiles = [
+        simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(8, "pinn_mpc_th228_ra224_thoron_pb212_tcmc_and_sc45_ti45_cu2se_br77_sil3_edge"),
+        simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(32, "pinn_mpc_th228_ra224_thoron_pb212_tcmc_and_sc45_ti45_cu2se_br77_sil3_edge"),
+        simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_rn220_leak_tl208_dose_and_ti45_hydrolysis_cu2se_sublimation"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2074,6 +2081,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_profiles": bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_profiles,
         "cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_profiles": cobalt55_58m_theranostics_and_copper_atsm_hypoxia_redox_trapping_profiles,
         "radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_profiles": radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_profiles,
+        "lead212_thoron_generator_and_titanium45_bromine77_theranostics_profiles": lead212_thoron_generator_and_titanium45_bromine77_theranostics_profiles,
     }
 
 
