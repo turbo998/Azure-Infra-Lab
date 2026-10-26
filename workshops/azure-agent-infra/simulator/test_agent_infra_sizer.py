@@ -221,6 +221,7 @@ from agent_infra_sizer import (
     simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
     simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
     simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox,
+    simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4559,6 +4560,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct"], 3.0)
         self.assertTrue(gov["tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met"])
         self.assertFalse(raw["tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met"])
+
+    def test_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(self) -> None:
+        gov = simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(
+            8, "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge"
+        )
+        raw = simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(
+            8, "raw_cloud_fixed_still_heater_open_loop_charcoal_trap_and_offline_qms_batch_assay"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_he3_pods"], 32)
+        self.assertEqual(gov["he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct"], 53.7)
+        self.assertEqual(gov["residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct"], 78.1)
+        self.assertEqual(gov["doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms"], 0.17)
+        self.assertEqual(gov["unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct"], 1.0)
+        self.assertEqual(gov["he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct"], 3.0)
+        self.assertTrue(gov["helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met"])
+        self.assertFalse(raw["helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met"])
 
 
 if __name__ == "__main__":

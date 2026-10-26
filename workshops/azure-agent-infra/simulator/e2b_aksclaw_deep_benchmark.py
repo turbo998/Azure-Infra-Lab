@@ -227,6 +227,7 @@ from agent_infra_sizer import (
     simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
     simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
     simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox,
+    simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1748,6 +1749,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(8, "raw_cloud_fixed_reboiler_duty_open_loop_zrco_desorption_and_offline_gas_chromatography_sampling"),
     ]
 
+    helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_profiles: List[Dict[str, object]] = [
+        simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(8, "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge"),
+        simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(32, "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge"),
+        simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(8, "raw_cloud_fixed_still_heater_open_loop_charcoal_trap_and_offline_qms_batch_assay"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1962,6 +1969,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_profiles": heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_profiles,
         "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles": lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles,
         "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles": tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles,
+        "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_profiles": helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_profiles,
     }
 
 

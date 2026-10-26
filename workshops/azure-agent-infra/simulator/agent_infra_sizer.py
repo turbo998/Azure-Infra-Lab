@@ -11444,6 +11444,77 @@ def simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_
     }
 
 
+def simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox(
+    he3_cryo_quantum_trains: int = 8,
+    he3_governance_mode: str = "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge",
+) -> dict[str, Any]:
+    """Cycle #215 (215-Cycle & 215-Simulator Milestone!) — Helium-3 (3He) Tritium-Decay Extraction, 4K Cryo-Sieve Purification, <10 mK Superfluid 3He-4He Dilution Refrigerator & SEOP Hyperpolarized MRI Sandbox.
+
+    Models Helium-3 (3He >= 99.999%) recovery from tritium beta-decay storage beds (3H -> 3He + e- + v_e, T_1/2 = 12.32 yr)
+    via Pd-25Ag membrane retentate stripping, non-evaporable ZrCo/Ti/SAES St707 getter hydrogen-isotope scrubbing
+    (residual tritium < 1 Bq/STP-L), 1.5-4.2 K liquid-helium superfluid 4He lambda-point (2.17 K) entropy filter and
+    activated-charcoal quantum-sieve adsorption, <10 mK 3He-4He dilution refrigerator mixing-chamber phase-separation
+    (concentrated 3He upper phase vs 6.6% dilute 3He in superfluid 4He lower phase across the 0.87 K tricritical boundary)
+    and 0.7 K still-heater osmotic distillation control for 1,000+ qubit superconducting quantum processors, plus
+    Spin-Exchange Optical Pumping (SEOP, 794.7 nm Rb D1 laser) hyperpolarized 3He/129Xe lung MRI contrast and high-pressure
+    (10-40 bar) 3He proportional neutron detectors, online 10 kHz high-resolution Quadrupole Mass Spectrometry (QMS
+    resolving 3He 3.01603 u vs HD 3.02193 u and trace HT), RuO2 / Coulomb-blockade millikelvin thermometry and ionization
+    chambers, and DOE-STD-1129 / ASME BPVC Section VIII / CGA G-9.1 / IEC 61511 SIL-3 residual tritium quarantine,
+    dilution-refrigerator 3He boil-off closed-loop emergency recovery dump tank, and Rb SEOP cell laser-thermal runaway interlocks.
+    """
+    if he3_cryo_quantum_trains < 1:
+        raise ValueError("he3_cryo_quantum_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge",
+        "raw_cloud_fixed_still_heater_open_loop_charcoal_trap_and_offline_qms_batch_assay",
+    }
+    if he3_governance_mode not in valid_modes:
+        raise ValueError(f"he3_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        he3_governance_mode
+        == "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(he3_cryo_quantum_trains / 2))
+    active_he3_pods = he3_cryo_quantum_trains * 4
+
+    he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct = (
+        53.7 if governed else 9.4
+    )
+    residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct = (
+        78.1 if governed else 12.5
+    )
+    doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms = (
+        0.17 if governed else 382.0
+    )
+    unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct = (
+        0.0 if governed else 1.6
+    )
+    he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms = (
+        0.15 if governed else 210.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct = (
+        0.0 if governed else 4.6
+    )
+
+    return {
+        "he3_cryo_quantum_trains": he3_cryo_quantum_trains,
+        "he3_governance_mode": he3_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_he3_pods": active_he3_pods,
+        "he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct": he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct,
+        "residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct": residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct,
+        "doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms": doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms,
+        "unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct": unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct,
+        "he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms": he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct": uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct,
+        "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

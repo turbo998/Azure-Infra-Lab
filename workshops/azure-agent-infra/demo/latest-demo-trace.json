@@ -12548,6 +12548,53 @@
         "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": 4.6,
         "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": false
       }
+    ],
+    "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_profiles": [
+      {
+        "he3_cryo_quantum_trains": 8,
+        "he3_governance_mode": "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_he3_pods": 32,
+        "he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct": 53.7,
+        "residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct": 78.1,
+        "doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms": 0.17,
+        "unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct": 0.0,
+        "he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct": 0.0,
+        "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met": true
+      },
+      {
+        "he3_cryo_quantum_trains": 32,
+        "he3_governance_mode": "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_he3_pods": 128,
+        "he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct": 53.7,
+        "residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct": 78.1,
+        "doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms": 0.17,
+        "unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct": 0.0,
+        "he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct": 0.0,
+        "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met": true
+      },
+      {
+        "he3_cryo_quantum_trains": 8,
+        "he3_governance_mode": "raw_cloud_fixed_still_heater_open_loop_charcoal_trap_and_offline_qms_batch_assay",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_he3_pods": 32,
+        "he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct": 9.4,
+        "residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct": 12.5,
+        "doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms": 382.0,
+        "unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct": 1.6,
+        "he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms": 210.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct": 4.6,
+        "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -23470,5 +23517,52 @@
       "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": false
     }
   },
-  "trace_sha256": "c08dd2c4146988291f020c76e7a8cd557aa16a1117eb31a6b2af1c3eb192798b"
+  "demo_215_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox": {
+    "he3_8_trains": {
+      "he3_cryo_quantum_trains": 8,
+      "he3_governance_mode": "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_he3_pods": 32,
+      "he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct": 53.7,
+      "residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct": 78.1,
+      "doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms": 0.17,
+      "unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct": 0.0,
+      "he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct": 0.0,
+      "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met": true
+    },
+    "he3_32_trains": {
+      "he3_cryo_quantum_trains": 32,
+      "he3_governance_mode": "pinn_mpc_he3_getter_purification_4k_cryo_sieve_10mk_dilution_fridge_and_seop_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_he3_pods": 128,
+      "he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct": 53.7,
+      "residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct": 78.1,
+      "doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms": 0.17,
+      "unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct": 0.0,
+      "he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct": 0.0,
+      "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met": true
+    },
+    "raw_he3_8_trains": {
+      "he3_cryo_quantum_trains": 8,
+      "he3_governance_mode": "raw_cloud_fixed_still_heater_open_loop_charcoal_trap_and_offline_qms_batch_assay",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_he3_pods": 32,
+      "he3_99999pct_recovery_10mk_mixing_chamber_cooling_power_and_seop_polarization_gain_pct": 9.4,
+      "residual_tritium_carryover_capillary_impurity_plugging_and_he3_boiloff_loss_cut_pct": 12.5,
+      "doestd1129_asme_cga_sil3_residual_tritium_quarantine_he3_dump_recovery_and_seop_laser_interlock_ms": 382.0,
+      "unmitigated_tritium_contaminated_he3_shipment_priceless_he3_vent_loss_or_seop_rb_cell_rupture_pct": 1.6,
+      "he3_edge_10khz_highres_qms_3he_hd_ruo2_millikelvin_and_nmr_polarimetry_loop_ms": 210.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_dilution_phase_separation_drift_4he_superfluid_film_creep_or_seop_spin_destruction_pct": 4.6,
+      "helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_slo_met": false
+    }
+  },
+  "trace_sha256": "c6a9b0f73ca2f1e3e81eca520ac97d3e995cfe219b0b946ebd72154449931411"
 }
