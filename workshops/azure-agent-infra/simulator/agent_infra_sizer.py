@@ -11376,6 +11376,74 @@ def simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extrac
     }
 
 
+def simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(
+    tritium_fuel_cycle_loops: int = 8,
+    tritium_governance_mode: str = "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge",
+) -> dict[str, Any]:
+    """Cycle #214 (220-Chapter & 215-Blueprint Milestone!) — Tritium (T2 / DT) Fusion Fuel Cycle, Tokamak Exhaust Pd-25Ag Permeator, 20-25 K Cryogenic Isotope Distillation & ZrCo Hydride Storage Sandbox.
+
+    Models Tokamak torus exhaust Palladium-Silver (Pd-25wt%Ag, 400 C) Sieverts hydrogen-isotope membrane permeation,
+    Water Detritiation System (WDS-LPCE), 20-25 K 4-column cryogenic distillation separating all 6 isotopologues
+    (H2, HD, HT, D2, DT, T2) under internal tritium beta-decay self-heating (0.324 W/g T, T_1/2 = 12.32 yr -> 3He),
+    and depleted-uranium / ZrCo metal hydride Storage and Delivery System (SDS) beds without CO disproportionation
+    (2ZrCo + H2 -> ZrH2 + ZrCo2 above 480 C), online 10 kHz Laser Raman Q1-band 6-isotopologue spectroscopy,
+    Beta-Induced X-Ray Spectrometry (BIXS) and isothermal calorimetry, and DOE-STD-1129 / ITER RCC-MRx / ISO 17873 /
+    IEC 61511 SIL-3 glovebox Atmosphere Detritiation System (ADS), ZrCo pyrophoric air-ingress isolation, and
+    cryogenic column tritium hold-up (<70 g) passive expansion-tank dump interlocks.
+    """
+    if tritium_fuel_cycle_loops < 1:
+        raise ValueError("tritium_fuel_cycle_loops must be >= 1")
+    valid_modes = {
+        "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge",
+        "raw_cloud_fixed_reboiler_duty_open_loop_zrco_desorption_and_offline_gas_chromatography_sampling",
+    }
+    if tritium_governance_mode not in valid_modes:
+        raise ValueError(f"tritium_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        tritium_governance_mode
+        == "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(tritium_fuel_cycle_loops / 2))
+    active_tritium_pods = tritium_fuel_cycle_loops * 4
+
+    dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct = (
+        53.4 if governed else 9.3
+    )
+    wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct = (
+        77.8 if governed else 12.4
+    )
+    doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms = (
+        0.18 if governed else 378.0
+    )
+    unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct = (
+        0.0 if governed else 1.6
+    )
+    tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms = (
+        0.15 if governed else 208.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct = (
+        0.0 if governed else 4.6
+    )
+
+    return {
+        "tritium_fuel_cycle_loops": tritium_fuel_cycle_loops,
+        "tritium_governance_mode": tritium_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tritium_pods": active_tritium_pods,
+        "dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct": dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct,
+        "wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct": wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct,
+        "doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms": doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms,
+        "unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct": unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct,
+        "tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms": tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct,
+        "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

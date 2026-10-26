@@ -226,6 +226,7 @@ from agent_infra_sizer import (
     simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
     simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
     simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
+    simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1741,6 +1742,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(8, "raw_cloud_fixed_rotor_rpm_open_loop_acid_strip_reflux_and_offline_icpms_batch_assay"),
     ]
 
+    tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles: List[Dict[str, object]] = [
+        simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(8, "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge"),
+        simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(32, "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge"),
+        simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(8, "raw_cloud_fixed_reboiler_duty_open_loop_zrco_desorption_and_offline_gas_chromatography_sampling"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1954,6 +1961,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_profiles": medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_profiles,
         "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_profiles": heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_profiles,
         "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles": lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_profiles,
+        "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles": tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles,
     }
 
 

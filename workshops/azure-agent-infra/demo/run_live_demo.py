@@ -233,6 +233,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
     simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
     simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox,
+    simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1529,6 +1530,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "li7_li6_8_trains": simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(8, "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge"),
             "li7_li6_32_trains": simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(32, "pinn_mpc_benzo_15_crown_5_centrifugal_contactor_electromigration_libs_670nm_and_epri_sil3_edge"),
             "raw_li7_li6_8_trains": simulate_lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_libs_epri_sil3_sandbox(8, "raw_cloud_fixed_rotor_rpm_open_loop_acid_strip_reflux_and_offline_icpms_batch_assay"),
+        },
+        "demo_214_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox": {
+            "tritium_8_loops": simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(8, "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge"),
+            "tritium_32_loops": simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(32, "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge"),
+            "raw_tritium_8_loops": simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox(8, "raw_cloud_fixed_reboiler_duty_open_loop_zrco_desorption_and_offline_gas_chromatography_sampling"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

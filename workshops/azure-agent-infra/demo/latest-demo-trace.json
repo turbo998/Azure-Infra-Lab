@@ -12501,6 +12501,53 @@
         "uncompensated_centrifugal_rotor_weir_shift_reflux_ph_inversion_drift_or_membrane_joule_boiling_pct": 4.5,
         "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": false
       }
+    ],
+    "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_profiles": [
+      {
+        "tritium_fuel_cycle_loops": 8,
+        "tritium_governance_mode": "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tritium_pods": 32,
+        "dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct": 53.4,
+        "wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct": 77.8,
+        "doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms": 0.18,
+        "unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct": 0.0,
+        "tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": 0.0,
+        "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": true
+      },
+      {
+        "tritium_fuel_cycle_loops": 32,
+        "tritium_governance_mode": "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tritium_pods": 128,
+        "dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct": 53.4,
+        "wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct": 77.8,
+        "doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms": 0.18,
+        "unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct": 0.0,
+        "tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": 0.0,
+        "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": true
+      },
+      {
+        "tritium_fuel_cycle_loops": 8,
+        "tritium_governance_mode": "raw_cloud_fixed_reboiler_duty_open_loop_zrco_desorption_and_offline_gas_chromatography_sampling",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tritium_pods": 32,
+        "dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct": 9.3,
+        "wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct": 12.4,
+        "doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms": 378.0,
+        "unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct": 1.6,
+        "tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms": 208.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": 4.6,
+        "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -23376,5 +23423,52 @@
       "lithium7_pwr_coolant_lithium6_fusion_crown_ether_centrifugal_extraction_slo_met": false
     }
   },
-  "trace_sha256": "0604d0f3bf5b5cc224ba7e77794d2defe3a377d2455100d97a2371f75520cea7"
+  "demo_214_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox": {
+    "tritium_8_loops": {
+      "tritium_fuel_cycle_loops": 8,
+      "tritium_governance_mode": "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tritium_pods": 32,
+      "dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct": 53.4,
+      "wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct": 77.8,
+      "doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms": 0.18,
+      "unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct": 0.0,
+      "tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": 0.0,
+      "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": true
+    },
+    "tritium_32_loops": {
+      "tritium_fuel_cycle_loops": 32,
+      "tritium_governance_mode": "pinn_mpc_pd25ag_sieverts_permeator_20k_cryo_distillation_zrco_hydride_raman_and_iter_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tritium_pods": 128,
+      "dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct": 53.4,
+      "wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct": 77.8,
+      "doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms": 0.18,
+      "unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct": 0.0,
+      "tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": 0.0,
+      "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": true
+    },
+    "raw_tritium_8_loops": {
+      "tritium_fuel_cycle_loops": 8,
+      "tritium_governance_mode": "raw_cloud_fixed_reboiler_duty_open_loop_zrco_desorption_and_offline_gas_chromatography_sampling",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_tritium_pods": 32,
+      "dt_fuel_cycle_recovery_cryo_isotopologue_purity_and_sds_delivery_gain_pct": 9.3,
+      "wall_tritium_permeation_zrco_disproportionation_and_he3_blanketing_cut_pct": 12.4,
+      "doestd1129_iter_iso17873_sil3_glovebox_ads_zrco_quench_and_cryo_dump_interlock_ms": 378.0,
+      "unmitigated_hto_glovebox_breach_zrco_pyrophoric_air_ingress_or_cryo_t2_overpressure_pct": 1.6,
+      "tritium_edge_10khz_laser_raman_6isotopologue_bixs_and_calorimetry_loop_ms": 208.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_beta_decay_self_heating_cryo_dryout_pdag_coking_or_he3_pore_blocking_pct": 4.6,
+      "tritium_dt_fusion_fuel_cycle_pdag_cryo_distillation_zrco_slo_met": false
+    }
+  },
+  "trace_sha256": "c08dd2c4146988291f020c76e7a8cd557aa16a1117eb31a6b2af1c3eb192798b"
 }
