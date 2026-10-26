@@ -225,6 +225,7 @@ from agent_infra_sizer import (
     simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox,
     simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox,
     simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox,
+    simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4647,6 +4648,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct"], 3.0)
         self.assertTrue(gov["gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met"])
         self.assertFalse(raw["gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met"])
+
+    def test_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(self) -> None:
+        gov = simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(
+            8, "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge"
+        )
+        raw = simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(
+            8, "raw_cloud_fixed_ebeam_evaporation_natural_dy_er_oxide_blending_and_offline_destructive_pellet_assay"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_dy164_er167_pods"], 32)
+        self.assertEqual(gov["dy164_control_rod_worth_longevity_and_er167_24month_cycle_mtc_stability_gain_pct"], 54.9)
+        self.assertEqual(gov["parasitic_even_er_eofp_penalty_dy2tio5_swelling_and_avlis_charge_exchange_loss_cut_pct"], 79.2)
+        self.assertEqual(gov["cfr5046_asmenqa1_ansiz136_sil3_ebeam_crucible_trip_uo2_er167_quarantine_and_h2_furnace_purge_interlock_ms"], 0.16)
+        self.assertEqual(gov["unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct"], 1.0)
+        self.assertEqual(gov["dy164_er167_edge_10khz_fabry_perot_lif_hyperfine_pgnaa_and_dilatometer_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct"], 3.0)
+        self.assertTrue(gov["dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met"])
+        self.assertFalse(raw["dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met"])
 
 
 if __name__ == "__main__":

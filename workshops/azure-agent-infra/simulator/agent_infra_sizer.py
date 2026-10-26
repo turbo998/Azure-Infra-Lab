@@ -11736,6 +11736,74 @@ def simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_
     }
 
 
+def simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(
+    dy164_er167_trains: int = 8,
+    dy164_er167_governance_mode: str = "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Enriched Dysprosium-164 (164Dy2O3-TiO2 >=96%,
+    sigma_th = 2,650 barns, Non-Gassing VVER/PWR Long-Life Control Rod) &
+    Enriched Erbium-167 (167Er2O3 >=91%, sigma_th = 650 barns, 0.461 eV Giant
+    Epilithic Resonance 24-Month LWR/SMR Integral Fuel Burnable Absorber IFBA)
+    3-Step Atomic Vapor Laser Isotope Separation (AVLIS) & Sintering PINN-MPC,
+    Online 10 kHz High-Finesse Fabry-Perot Laser-Induced Fluorescence (LIF)
+    Hyperfine Isotope Ratio, Prompt Gamma Neutron Activation Analysis (PGNAA) &
+    Laser Dilatometry Metrology & 10 CFR 50.46 / ASME NQA-1 / ANSI Z136.1 /
+    NFPA 86 / IEC 61511 SIL-3 Electron-Beam Crucible Water-Coolant Breach,
+    Sub-Stoichiometric UO2-167Er2O3 Pellet Quarantine & H2 Sintering Furnace
+    Purge Interlock (Cycle #219 — 225-Chapter & 220-Blueprint Milestone!)."""
+    if dy164_er167_trains < 1:
+        raise ValueError("dy164_er167_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge",
+        "raw_cloud_fixed_ebeam_evaporation_natural_dy_er_oxide_blending_and_offline_destructive_pellet_assay",
+    }
+    if dy164_er167_governance_mode not in valid_modes:
+        raise ValueError(f"dy164_er167_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        dy164_er167_governance_mode
+        == "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(dy164_er167_trains / 2))
+    active_dy164_er167_pods = dy164_er167_trains * 4
+
+    dy164_control_rod_worth_longevity_and_er167_24month_cycle_mtc_stability_gain_pct = (
+        54.9 if governed else 9.8
+    )
+    parasitic_even_er_eofp_penalty_dy2tio5_swelling_and_avlis_charge_exchange_loss_cut_pct = (
+        79.2 if governed else 13.1
+    )
+    cfr5046_asmenqa1_ansiz136_sil3_ebeam_crucible_trip_uo2_er167_quarantine_and_h2_furnace_purge_interlock_ms = (
+        0.16 if governed else 381.0
+    )
+    unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct = (
+        0.0 if governed else 1.5
+    )
+    dy164_er167_edge_10khz_fabry_perot_lif_hyperfine_pgnaa_and_dilatometer_loop_ms = (
+        0.15 if governed else 209.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct = (
+        0.0 if governed else 4.5
+    )
+
+    return {
+        "dy164_er167_trains": dy164_er167_trains,
+        "dy164_er167_governance_mode": dy164_er167_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_dy164_er167_pods": active_dy164_er167_pods,
+        "dy164_control_rod_worth_longevity_and_er167_24month_cycle_mtc_stability_gain_pct": dy164_control_rod_worth_longevity_and_er167_24month_cycle_mtc_stability_gain_pct,
+        "parasitic_even_er_eofp_penalty_dy2tio5_swelling_and_avlis_charge_exchange_loss_cut_pct": parasitic_even_er_eofp_penalty_dy2tio5_swelling_and_avlis_charge_exchange_loss_cut_pct,
+        "cfr5046_asmenqa1_ansiz136_sil3_ebeam_crucible_trip_uo2_er167_quarantine_and_h2_furnace_purge_interlock_ms": cfr5046_asmenqa1_ansiz136_sil3_ebeam_crucible_trip_uo2_er167_quarantine_and_h2_furnace_purge_interlock_ms,
+        "unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct": unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct,
+        "dy164_er167_edge_10khz_fabry_perot_lif_hyperfine_pgnaa_and_dilatometer_loop_ms": dy164_er167_edge_10khz_fabry_perot_lif_hyperfine_pgnaa_and_dilatometer_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct": uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct,
+        "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

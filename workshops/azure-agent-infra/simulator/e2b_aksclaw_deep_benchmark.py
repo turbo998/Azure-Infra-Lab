@@ -231,6 +231,7 @@ from agent_infra_sizer import (
     simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox,
     simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox,
     simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox,
+    simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1776,6 +1777,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox(8, "raw_cloud_fixed_ebeam_power_natural_gd2o3_blending_and_open_relief_xenon_cryo_vent"),
     ]
 
+    dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles: List[Dict[str, object]] = [
+        simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(8, "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge"),
+        simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(32, "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge"),
+        simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox(8, "raw_cloud_fixed_ebeam_evaporation_natural_dy_er_oxide_blending_and_offline_destructive_pellet_assay"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -1994,6 +2001,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_profiles": silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_profiles,
         "zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_profiles": zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_profiles,
         "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_profiles": gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_profiles,
+        "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles": dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles,
     }
 
 

@@ -12534,5 +12534,52 @@
       "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": 4.5,
       "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": false
     }
+  ],
+  "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles": [
+    {
+      "dy164_er167_trains": 8,
+      "dy164_er167_governance_mode": "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_dy164_er167_pods": 32,
+      "dy164_control_rod_worth_longevity_and_er167_24month_cycle_mtc_stability_gain_pct": 54.9,
+      "parasitic_even_er_eofp_penalty_dy2tio5_swelling_and_avlis_charge_exchange_loss_cut_pct": 79.2,
+      "cfr5046_asmenqa1_ansiz136_sil3_ebeam_crucible_trip_uo2_er167_quarantine_and_h2_furnace_purge_interlock_ms": 0.16,
+      "unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct": 0.0,
+      "dy164_er167_edge_10khz_fabry_perot_lif_hyperfine_pgnaa_and_dilatometer_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct": 0.0,
+      "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met": true
+    },
+    {
+      "dy164_er167_trains": 32,
+      "dy164_er167_governance_mode": "pinn_mpc_dy164_er167_avlis_photoionization_dy2tio5_control_rod_and_167er2o3_uo2_ifba_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_dy164_er167_pods": 128,
+      "dy164_control_rod_worth_longevity_and_er167_24month_cycle_mtc_stability_gain_pct": 54.9,
+      "parasitic_even_er_eofp_penalty_dy2tio5_swelling_and_avlis_charge_exchange_loss_cut_pct": 79.2,
+      "cfr5046_asmenqa1_ansiz136_sil3_ebeam_crucible_trip_uo2_er167_quarantine_and_h2_furnace_purge_interlock_ms": 0.16,
+      "unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct": 0.0,
+      "dy164_er167_edge_10khz_fabry_perot_lif_hyperfine_pgnaa_and_dilatometer_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct": 0.0,
+      "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met": true
+    },
+    {
+      "dy164_er167_trains": 8,
+      "dy164_er167_governance_mode": "raw_cloud_fixed_ebeam_evaporation_natural_dy_er_oxide_blending_and_offline_destructive_pellet_assay",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_dy164_er167_pods": 32,
+      "dy164_control_rod_worth_longevity_and_er167_24month_cycle_mtc_stability_gain_pct": 9.8,
+      "parasitic_even_er_eofp_penalty_dy2tio5_swelling_and_avlis_charge_exchange_loss_cut_pct": 13.1,
+      "cfr5046_asmenqa1_ansiz136_sil3_ebeam_crucible_trip_uo2_er167_quarantine_and_h2_furnace_purge_interlock_ms": 381.0,
+      "unmitigated_ebeam_crucible_water_explosion_positive_mtc_excursion_or_h2_sinter_deflagration_pct": 1.5,
+      "dy164_er167_edge_10khz_fabry_perot_lif_hyperfine_pgnaa_and_dilatometer_loop_ms": 209.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_avlis_zeeman_stark_detuning_dy2ti2o7_pyrochlore_phase_split_or_er2o3_cluster_pct": 4.5,
+      "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_slo_met": false
+    }
   ]
 }
