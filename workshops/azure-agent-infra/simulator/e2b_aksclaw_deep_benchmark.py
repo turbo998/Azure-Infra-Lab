@@ -237,6 +237,7 @@ from agent_infra_sizer import (
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
+    simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1818,6 +1819,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_cold_cu_zn_contamination_co55_impurity_and_ni64_loss"),
     ]
 
+    terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_profiles: List[Dict[str, object]] = [
+        simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(8, "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"),
+        simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(32, "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"),
+        simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_isobaric_ce_eu_gd_breakthrough_and_rn220_bi212_recoil_escape"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2042,6 +2049,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles": astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles,
         "strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles": strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles,
         "copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_profiles": copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_profiles,
+        "terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_profiles": terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_profiles,
     }
 
 

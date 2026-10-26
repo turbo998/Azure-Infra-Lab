@@ -244,6 +244,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
+    simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1595,6 +1596,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "cu64_cu67_8_trains": simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(8, "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"),
             "cu64_cu67_32_trains": simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(32, "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"),
             "raw_cu64_cu67_8_trains": simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_cold_cu_zn_contamination_co55_impurity_and_ni64_loss"),
+        },
+        "demo_225_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox": {
+            "tb_pb212_8_trains": simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(8, "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"),
+            "tb_pb212_32_trains": simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(32, "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"),
+            "raw_tb_pb212_8_trains": simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_isobaric_ce_eu_gd_breakthrough_and_rn220_bi212_recoil_escape"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

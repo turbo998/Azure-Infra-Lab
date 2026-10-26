@@ -231,6 +231,7 @@ from agent_infra_sizer import (
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
+    simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4779,6 +4780,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_trace_metal_resin_bleed_or_zn68_target_blistering_pct"], 3.0)
         self.assertTrue(gov["copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_slo_met"])
         self.assertFalse(raw["copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_slo_met"])
+
+    def test_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(self) -> None:
+        gov = simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(
+            8, "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"
+        )
+        raw = simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(
+            8, "raw_cloud_uncompensated_isobaric_ce_eu_gd_breakthrough_and_rn220_bi212_recoil_escape"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_tb_pb212_pods"], 32)
+        self.assertEqual(gov["tb_quartet_pb212_radiochemical_purity_and_tcmc_yield_gain_pct"], 56.7)
+        self.assertEqual(gov["isobaric_lanthanide_impurity_and_bi212_free_recoil_reduction_pct"], 80.9)
+        self.assertEqual(gov["usp823_iso17873_sil3_thoron_rn220_isolation_and_beam_dump_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_rn220_thoron_leak_tb160_breakthrough_or_renal_bi212_toxicity_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rn220_thoron_leak_tb160_breakthrough_or_renal_bi212_toxicity_pct"], 1.0)
+        self.assertEqual(gov["edge_isol_mass_slit_and_hpge_gamma_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_gd160_target_breakthrough_or_ra224_parent_bleed_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_gd160_target_breakthrough_or_ra224_parent_bleed_pct"], 3.0)
+        self.assertTrue(gov["terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_slo_met"])
+        self.assertFalse(raw["terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_slo_met"])
 
 
 if __name__ == "__main__":

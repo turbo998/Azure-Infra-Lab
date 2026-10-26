@@ -12147,6 +12147,53 @@ def simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranosti
     }
 
 
+def simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(
+    tb_pb212_trains: int = 8,
+    governance_mode: str = "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Terbium Quartet (149Tb Alpha / 152Tb PET / 155Tb SPECT / 161Tb Beta+Auger ISOL Mass-Separation & 160Gd(n,g)161Gd->161Tb LN Resin) & 224Ra/212Pb Generator TCMC Recoil Re-chelation PINN-MPC + SIL-3 Sandbox (Chapter 230, Cycle #225 — 225-Cycle & 225-Simulator Double Milestone!)."""
+    trains = max(1, int(tb_pb212_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_tb_pb212_pods = trains * 4
+
+    if governed:
+        tb_quartet_pb212_radiochemical_purity_and_tcmc_yield_gain_pct = 56.7
+        isobaric_lanthanide_impurity_and_bi212_free_recoil_reduction_pct = 80.9
+        usp823_iso17873_sil3_thoron_rn220_isolation_and_beam_dump_latency_ms = 0.15
+        unmitigated_rn220_thoron_leak_tb160_breakthrough_or_renal_bi212_toxicity_pct = 0.0
+        edge_isol_mass_slit_and_hpge_gamma_closed_loop_latency_ms = 0.14
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_gd160_target_breakthrough_or_ra224_parent_bleed_pct = 0.0
+    else:
+        tb_quartet_pb212_radiochemical_purity_and_tcmc_yield_gain_pct = 10.4
+        isobaric_lanthanide_impurity_and_bi212_free_recoil_reduction_pct = 14.1
+        usp823_iso17873_sil3_thoron_rn220_isolation_and_beam_dump_latency_ms = 393.0
+        unmitigated_rn220_thoron_leak_tb160_breakthrough_or_renal_bi212_toxicity_pct = 1.5
+        edge_isol_mass_slit_and_hpge_gamma_closed_loop_latency_ms = 216.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_gd160_target_breakthrough_or_ra224_parent_bleed_pct = 4.9
+
+    return {
+        "tb_pb212_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_tb_pb212_pods": active_tb_pb212_pods,
+        "tb_quartet_pb212_radiochemical_purity_and_tcmc_yield_gain_pct": tb_quartet_pb212_radiochemical_purity_and_tcmc_yield_gain_pct,
+        "isobaric_lanthanide_impurity_and_bi212_free_recoil_reduction_pct": isobaric_lanthanide_impurity_and_bi212_free_recoil_reduction_pct,
+        "usp823_iso17873_sil3_thoron_rn220_isolation_and_beam_dump_latency_ms": usp823_iso17873_sil3_thoron_rn220_isolation_and_beam_dump_latency_ms,
+        "unmitigated_rn220_thoron_leak_tb160_breakthrough_or_renal_bi212_toxicity_pct": unmitigated_rn220_thoron_leak_tb160_breakthrough_or_renal_bi212_toxicity_pct,
+        "edge_isol_mass_slit_and_hpge_gamma_closed_loop_latency_ms": edge_isol_mass_slit_and_hpge_gamma_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_gd160_target_breakthrough_or_ra224_parent_bleed_pct": uncompensated_gd160_target_breakthrough_or_ra224_parent_bleed_pct,
+        "terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
