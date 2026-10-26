@@ -237,6 +237,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox,
     simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox,
     simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox,
+    simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1553,6 +1554,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "zn64_ni63_8_trains": simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox(8, "pinn_mpc_dez_nico4_centrifuge_chloride_free_dzo_passivation_and_63ni_4h_sic_betavoltaic_sil3_edge"),
             "zn64_ni63_32_trains": simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox(32, "pinn_mpc_dez_nico4_centrifuge_chloride_free_dzo_passivation_and_63ni_4h_sic_betavoltaic_sil3_edge"),
             "raw_zn64_ni63_8_trains": simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox(8, "raw_cloud_fixed_centrifuge_baffle_wet_zncl2_precipitation_and_offline_icpms_batch_assay"),
+        },
+        "demo_218_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox": {
+            "gd157_xe_8_trains": simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox(8, "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge"),
+            "gd157_xe_32_trains": simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox(32, "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge"),
+            "raw_gd157_xe_8_trains": simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox(8, "raw_cloud_fixed_ebeam_power_natural_gd2o3_blending_and_open_relief_xenon_cryo_vent"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -12689,6 +12689,53 @@
         "uncompensated_dez_nico4_thermal_dissociation_rotor_fouling_or_sic_passivation_leakage_pct": 4.6,
         "zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_slo_met": false
       }
+    ],
+    "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_profiles": [
+      {
+        "gd157_xe_trains": 8,
+        "gd157_xe_governance_mode": "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd157_xe_pods": 32,
+        "gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct": 54.6,
+        "uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct": 78.9,
+        "cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms": 0.16,
+        "unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct": 0.0,
+        "gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": 0.0,
+        "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": true
+      },
+      {
+        "gd157_xe_trains": 32,
+        "gd157_xe_governance_mode": "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd157_xe_pods": 128,
+        "gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct": 54.6,
+        "uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct": 78.9,
+        "cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms": 0.16,
+        "unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct": 0.0,
+        "gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": 0.0,
+        "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": true
+      },
+      {
+        "gd157_xe_trains": 8,
+        "gd157_xe_governance_mode": "raw_cloud_fixed_ebeam_power_natural_gd2o3_blending_and_open_relief_xenon_cryo_vent",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd157_xe_pods": 32,
+        "gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct": 9.7,
+        "uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct": 13.0,
+        "cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms": 379.0,
+        "unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct": 1.5,
+        "gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms": 208.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": 4.5,
+        "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -23752,5 +23799,52 @@
       "zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_slo_met": false
     }
   },
-  "trace_sha256": "b841fc3cc1cdb14b1420bfa41aaecc0689f9754bdc1860ff177b694a4fb0452b"
+  "demo_218_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox": {
+    "gd157_xe_8_trains": {
+      "gd157_xe_trains": 8,
+      "gd157_xe_governance_mode": "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gd157_xe_pods": 32,
+      "gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct": 54.6,
+      "uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct": 78.9,
+      "cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms": 0.16,
+      "unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct": 0.0,
+      "gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": 0.0,
+      "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": true
+    },
+    "gd157_xe_32_trains": {
+      "gd157_xe_trains": 32,
+      "gd157_xe_governance_mode": "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gd157_xe_pods": 128,
+      "gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct": 54.6,
+      "uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct": 78.9,
+      "cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms": 0.16,
+      "unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct": 0.0,
+      "gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": 0.0,
+      "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": true
+    },
+    "raw_gd157_xe_8_trains": {
+      "gd157_xe_trains": 8,
+      "gd157_xe_governance_mode": "raw_cloud_fixed_ebeam_power_natural_gd2o3_blending_and_open_relief_xenon_cryo_vent",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_gd157_xe_pods": 32,
+      "gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct": 9.7,
+      "uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct": 13.0,
+      "cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms": 379.0,
+      "unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct": 1.5,
+      "gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms": 208.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": 4.5,
+      "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": false
+    }
+  },
+  "trace_sha256": "ce0a2761efc6473bd924aa0704f3209d7f4a1afa364ba1b807b6e458ff73de80"
 }

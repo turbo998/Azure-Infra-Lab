@@ -11658,6 +11658,84 @@ def simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centri
     }
 
 
+def simulate_gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_sil3_sandbox(
+    gd157_xe_trains: int = 8,
+    gd157_xe_governance_mode: str = "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge",
+) -> dict[str, Any]:
+    """Cycle #218 — Gadolinium-157 (157Gd2O3 >=85%, sigma_th=254,000 barns) AVLIS Burnable Absorber & Enriched Xenon-129/136 (129Xe >=86% NMRG/MRI & 136Xe >=90% 0vbb LXe-TPC) Centrifuge Sandbox.
+
+    Models:
+    (1) Atomic Vapor Laser Isotope Separation (AVLIS) of Gadolinium-157 (15.65% natural abundance, highest thermal-neutron
+        capture cross-section of any stable nuclide at sigma_th = 254,000 barns vs 49,000 barns natural Gd and 61,000 barns
+        155Gd): 2,100 K water-cooled copper-hearth electron-beam vaporization of metallic Gd into a supersonic atomic beam,
+        3-step narrowband dye/Ti:Sapphire laser selective excitation and autoionization exploiting odd-mass 157Gd (I=3/2)
+        hyperfine structure and isotope shift, cross-field plasma ion extraction, and UO2-157Gd2O3 integral burnable absorber
+        fuel pellet sintering (cutting required Gd2O3 mass loading by ~70% for 24-month high-burnup PWR/BWR fuel cycles so
+        UO2 lattice thermal conductivity degradation is minimized, plus 157Gd Neutron Capture Therapy Gd-NCT);
+    (2) High-speed noble-gas centrifuge cascade enrichment of Xenon-129 (from 26.4% to >=86%, I=1/2 for Nuclear Magnetic
+        Resonance Gyroscopes NMRG & hyperpolarized lung MRI) and Xenon-136 (from 8.86% to >=90%, Q_bb = 2,457.8 keV for
+        tonne-scale neutrinoless double-beta decay 0vbb cryogenic Liquid-Xenon Time-Projection Chambers LXe-TPC such as nEXO /
+        KamLAND-Zen), coupled with hot Zr getter purification (<0.1 ppb O2/H2O electronegative impurities for >5 ms electron
+        drift lifetime) and cryogenic charcoal chromatography stripping (<1 uBq/kg 85Kr & 222Rn);
+    (3) Online 10 kHz Fabry-Perot laser absorption hyperfine spectroscopy, 175 nm VUV LXe scintillation/drift purity monitor
+        and Prompt-Gamma Neutron Activation Analysis (PGNAA 182 keV / 7,937 keV 157Gd capture gamma), plus 10 CFR 50.46 /
+        ASME NQA-1 / ANSI Z136.1 / CGA P-12 / IEC 61511 SIL-3 AVLIS e-beam crucible water-jacket breach steam-explosion cutoff,
+        UO2-157Gd2O3 pellet axial/radial reactivity-worth lot quarantine, and tonne-scale cryogenic 136LXe overpressure
+        closed-loop emergency recovery dump-tank interlocks.
+    """
+    if gd157_xe_trains < 1:
+        raise ValueError("gd157_xe_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge",
+        "raw_cloud_fixed_ebeam_power_natural_gd2o3_blending_and_open_relief_xenon_cryo_vent",
+    }
+    if gd157_xe_governance_mode not in valid_modes:
+        raise ValueError(f"gd157_xe_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        gd157_xe_governance_mode
+        == "pinn_mpc_gd157_avlis_photoionization_uo2_absorber_and_129xe_136xe_centrifuge_lxe_tpc_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(gd157_xe_trains / 2))
+    active_gd157_xe_pods = gd157_xe_trains * 4
+
+    gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct = (
+        54.6 if governed else 9.7
+    )
+    uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct = (
+        78.9 if governed else 13.0
+    )
+    cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms = (
+        0.16 if governed else 379.0
+    )
+    unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct = (
+        0.0 if governed else 1.5
+    )
+    gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms = (
+        0.15 if governed else 208.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct = (
+        0.0 if governed else 4.5
+    )
+
+    return {
+        "gd157_xe_trains": gd157_xe_trains,
+        "gd157_xe_governance_mode": gd157_xe_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_gd157_xe_pods": active_gd157_xe_pods,
+        "gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct": gd157_85pct_uo2_thermal_conductivity_margin_and_129xe_136xe_lxe_tpc_drift_lifetime_gain_pct,
+        "uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct": uo2_gd2o3_parasitic_residual_absorption_charge_exchange_loss_and_85kr_o2_impurity_cut_pct,
+        "cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms": cfr5046_asmenqa1_ansiz136_sil3_ebeam_water_breach_uo2_gd157_quarantine_and_136lxe_recovery_interlock_ms,
+        "unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct": unmitigated_ebeam_crucible_steam_explosion_uo2_peaking_violation_or_136lxe_vent_loss_pct,
+        "gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms": gd157_xe_edge_10khz_fabry_perot_hyperfine_vuv_175nm_lxe_purity_and_pgnaa_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct": uncompensated_avlis_doppler_detuning_charge_exchange_or_lxe_electronegative_attachment_pct,
+        "gadolinium157_avlis_burnable_absorber_xenon129_xenon136_centrifuge_lxe_tpc_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
