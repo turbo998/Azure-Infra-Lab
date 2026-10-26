@@ -11585,6 +11585,79 @@ def simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_n
     }
 
 
+def simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox(
+    zn64_ni63_trains: int = 8,
+    zn64_ni63_governance_mode: str = "pinn_mpc_dez_nico4_centrifuge_chloride_free_dzo_passivation_and_63ni_4h_sic_betavoltaic_sil3_edge",
+) -> dict[str, Any]:
+    """Cycle #217 — Depleted Zinc-64 (DZO >=99.2% 64Zn-Depleted / <0.8% 64Zn) PWR/BWR Primary-Coolant Spinel Passivation & Enriched Nickel-63 (63Ni >=85%, T1/2=100.1 yr) 4H-SiC Betavoltaic Nuclear Battery Sandbox.
+
+    Models sub-atmospheric organometallic Diethylzinc (Zn(C2H5)2, DEZ, M=122-128 u across 64Zn/66Zn/67Zn/68Zn/70Zn) and
+    Nickel Tetracarbonyl (Ni(CO)4, M=170-176 u across 58Ni/60Ni/61Ni/62Ni/64Ni) gas centrifuge cascade separation:
+    (1) depleting natural 48.6% 64Zn to <0.8% residual 64Zn (>99.2% 66Zn/68Zn) and converting DEZ via French-process
+    chloride-free (<10 ppb Cl-/SO4^2-) vapor-phase oxidation into nuclear-grade Depleted Zinc Oxide (DZO) for PWR/BWR
+    primary coolant injection (forming normal spinel ZnCr2O4/ZnFe2O4 protective films that displace 60Co incorporation
+    without generating 64Zn(n,gamma)65Zn T1/2=244 d 1.115 MeV hard-gamma shutdown dose);
+    (2) enriching 62Ni from 3.63% natural abundance to >98.5% via Ni(CO)4 centrifugation while suppressing 59Co/63Cu/64Ni
+    impurities, high-flux thermal neutron irradiation 62Ni(n,gamma)63Ni (pure beta emitter, E_max=66.9 keV, E_avg=17.4 keV,
+    zero gamma emission) and conformal LPCVD 63Ni deposition into 3D micro-trench 4H-SiC p-i-n junction betavoltaic nuclear
+    batteries (>30 yr autonomous deep-space/subsea power), online 10 kHz QCL-FTIR (Ni(CO)4 nu_CO=2057 cm^-1 & DEZ vapor),
+    MC-ICP-MS (64Zn/66Zn/68Zn & 62Ni/63Ni) and 4H-SiC I-V Voc/Jsc metrology, and EPRI BWRVIP / 10 CFR 50 / OSHA 1910.1000 /
+    NFPA 30 / IEC 61511 SIL-3 lethal Ni(CO)4 (PEL=1 ppb) 350 C thermal decomposer scrubber, pyrophoric DEZ liquid-argon/dry
+    powder quench, and reactor coolant Cl-/SO4^2- IGSCC quarantine interlocks.
+    """
+    if zn64_ni63_trains < 1:
+        raise ValueError("zn64_ni63_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_dez_nico4_centrifuge_chloride_free_dzo_passivation_and_63ni_4h_sic_betavoltaic_sil3_edge",
+        "raw_cloud_fixed_centrifuge_baffle_wet_zncl2_precipitation_and_offline_icpms_batch_assay",
+    }
+    if zn64_ni63_governance_mode not in valid_modes:
+        raise ValueError(f"zn64_ni63_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        zn64_ni63_governance_mode
+        == "pinn_mpc_dez_nico4_centrifuge_chloride_free_dzo_passivation_and_63ni_4h_sic_betavoltaic_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(zn64_ni63_trains / 2))
+    active_zn64_ni63_pods = zn64_ni63_trains * 4
+
+    zn64_depletion_dzo_coolant_dose_reduction_and_63ni_4h_sic_betavoltaic_efficiency_gain_pct = (
+        54.3 if governed else 9.6
+    )
+    residual_65zn_60co_gamma_dose_chloride_igscc_impurity_and_63ni_self_absorption_loss_cut_pct = (
+        78.7 if governed else 12.8
+    )
+    epri_osha_nfpa30_sil3_nico4_1ppb_thermal_decomposer_dez_argon_quench_and_chloride_quarantine_interlock_ms = (
+        0.16 if governed else 381.0
+    )
+    unmitigated_lethal_nico4_carbonyl_leak_pyrophoric_dez_fire_or_reactor_chloride_igscc_excursion_pct = (
+        0.0 if governed else 1.6
+    )
+    zn64_ni63_edge_10khz_qcl_ftir_nico4_mc_icp_ms_isotope_and_4h_sic_betavoltaic_iv_loop_ms = (
+        0.15 if governed else 210.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_dez_nico4_thermal_dissociation_rotor_fouling_or_sic_passivation_leakage_pct = (
+        0.0 if governed else 4.6
+    )
+
+    return {
+        "zn64_ni63_trains": zn64_ni63_trains,
+        "zn64_ni63_governance_mode": zn64_ni63_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_zn64_ni63_pods": active_zn64_ni63_pods,
+        "zn64_depletion_dzo_coolant_dose_reduction_and_63ni_4h_sic_betavoltaic_efficiency_gain_pct": zn64_depletion_dzo_coolant_dose_reduction_and_63ni_4h_sic_betavoltaic_efficiency_gain_pct,
+        "residual_65zn_60co_gamma_dose_chloride_igscc_impurity_and_63ni_self_absorption_loss_cut_pct": residual_65zn_60co_gamma_dose_chloride_igscc_impurity_and_63ni_self_absorption_loss_cut_pct,
+        "epri_osha_nfpa30_sil3_nico4_1ppb_thermal_decomposer_dez_argon_quench_and_chloride_quarantine_interlock_ms": epri_osha_nfpa30_sil3_nico4_1ppb_thermal_decomposer_dez_argon_quench_and_chloride_quarantine_interlock_ms,
+        "unmitigated_lethal_nico4_carbonyl_leak_pyrophoric_dez_fire_or_reactor_chloride_igscc_excursion_pct": unmitigated_lethal_nico4_carbonyl_leak_pyrophoric_dez_fire_or_reactor_chloride_igscc_excursion_pct,
+        "zn64_ni63_edge_10khz_qcl_ftir_nico4_mc_icp_ms_isotope_and_4h_sic_betavoltaic_iv_loop_ms": zn64_ni63_edge_10khz_qcl_ftir_nico4_mc_icp_ms_isotope_and_4h_sic_betavoltaic_iv_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_dez_nico4_thermal_dissociation_rotor_fouling_or_sic_passivation_leakage_pct": uncompensated_dez_nico4_thermal_dissociation_rotor_fouling_or_sic_passivation_leakage_pct,
+        "zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

@@ -223,6 +223,7 @@ from agent_infra_sizer import (
     simulate_tritium_dt_fusion_fuel_cycle_pdag_permeator_cryo_distillation_zrco_bed_iter_sil3_sandbox,
     simulate_helium3_tritium_decay_extraction_superfluid_dilution_refrigerator_quantum_cryo_sil3_sandbox,
     simulate_silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_sil3_sandbox,
+    simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4603,6 +4604,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_centrifuge_thermal_convection_sio2_wall_29si_leaching_or_nv_charge_state_bleaching_pct"], 3.0)
         self.assertTrue(gov["silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_slo_met"])
         self.assertFalse(raw["silicon28_carbon12_spin_zero_isotope_sif4_centrifuge_sih4_epitaxy_nv_diamond_qubit_slo_met"])
+
+    def test_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox(self) -> None:
+        gov = simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox(
+            8, "pinn_mpc_dez_nico4_centrifuge_chloride_free_dzo_passivation_and_63ni_4h_sic_betavoltaic_sil3_edge"
+        )
+        raw = simulate_zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_sil3_sandbox(
+            8, "raw_cloud_fixed_centrifuge_baffle_wet_zncl2_precipitation_and_offline_icpms_batch_assay"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_zn64_ni63_pods"], 32)
+        self.assertEqual(gov["zn64_depletion_dzo_coolant_dose_reduction_and_63ni_4h_sic_betavoltaic_efficiency_gain_pct"], 54.3)
+        self.assertEqual(gov["residual_65zn_60co_gamma_dose_chloride_igscc_impurity_and_63ni_self_absorption_loss_cut_pct"], 78.7)
+        self.assertEqual(gov["epri_osha_nfpa30_sil3_nico4_1ppb_thermal_decomposer_dez_argon_quench_and_chloride_quarantine_interlock_ms"], 0.16)
+        self.assertEqual(gov["unmitigated_lethal_nico4_carbonyl_leak_pyrophoric_dez_fire_or_reactor_chloride_igscc_excursion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lethal_nico4_carbonyl_leak_pyrophoric_dez_fire_or_reactor_chloride_igscc_excursion_pct"], 1.0)
+        self.assertEqual(gov["zn64_ni63_edge_10khz_qcl_ftir_nico4_mc_icp_ms_isotope_and_4h_sic_betavoltaic_iv_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_dez_nico4_thermal_dissociation_rotor_fouling_or_sic_passivation_leakage_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_dez_nico4_thermal_dissociation_rotor_fouling_or_sic_passivation_leakage_pct"], 3.0)
+        self.assertTrue(gov["zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_slo_met"])
+        self.assertFalse(raw["zinc64_depleted_dzo_pwr_passivation_nickel63_sic_betavoltaic_centrifuge_slo_met"])
 
 
 if __name__ == "__main__":
