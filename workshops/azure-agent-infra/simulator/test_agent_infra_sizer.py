@@ -218,6 +218,7 @@ from agent_infra_sizer import (
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
     simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
     simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
+    simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4493,6 +4494,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cyclotron_target_nucleate_boiling_burnout_cassette_valve_deadvolume_or_ph_buffer_drift_pct"], 3.0)
         self.assertTrue(gov["medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_slo_met"])
         self.assertFalse(raw["medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_slo_met"])
+
+    def test_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(self) -> None:
+        gov = simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(
+            8, "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge"
+        )
+        raw = simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(
+            8, "raw_cloud_fixed_h2s_water_ratio_open_loop_sieve_tray_weeping_and_offline_irms_grab_sampling"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_d2o_isotope_pods"], 32)
+        self.assertEqual(gov["d2o_9998pct_18o_98pct_13c_99pct_separation_factor_and_cascade_recovery_gain_pct"], 52.9)
+        self.assertEqual(gov["girdler_sieve_tray_froth_flooding_h2s_hydrate_plugging_and_pt_catalyst_wetting_reduction_pct"], 77.3)
+        self.assertEqual(gov["csa_n285_osha1910119_iso15156_sil3_h2s_inventory_blowdown_flare_and_cryo_co_no_relief_interlock_ms"], 0.19)
+        self.assertEqual(gov["unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct"], 1.0)
+        self.assertEqual(gov["d2o_isotope_edge_10khz_crds_ftir_tdlas_h2s_perimeter_and_irms_telemetry_loop_ms"], 0.16)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct"], 3.0)
+        self.assertTrue(gov["heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met"])
+        self.assertFalse(raw["heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met"])
 
 
 if __name__ == "__main__":

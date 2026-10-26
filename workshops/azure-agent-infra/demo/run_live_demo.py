@@ -231,6 +231,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_plutonium238_neptunium_americium_gphs_rtg_pellet_licl_kcl_molten_salt_electrorefining_sil3_sandbox,
     simulate_curium_berkelium_californium252_hfir_hpix_neutron_source_burnable_absorber_sil3_sandbox,
     simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox,
+    simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1517,6 +1518,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "cyclotron_hotcell_8_lines": simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(8, "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"),
             "cyclotron_hotcell_32_lines": simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(32, "pinn_mpc_leu_mo99_cyclotron_havar_foil_ac225_dga_chromatography_and_usp823_cassette_sil3_edge"),
             "raw_cyclotron_hotcell_8_lines": simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_sandbox(8, "raw_cloud_fixed_beam_wobble_open_loop_alumina_elution_and_offline_tlc_endotoxin_release"),
+        },
+        "demo_212_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox": {
+            "d2o_isotope_8_trains": simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(8, "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge"),
+            "d2o_isotope_32_trains": simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(32, "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge"),
+            "raw_d2o_isotope_8_trains": simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(8, "raw_cloud_fixed_h2s_water_ratio_open_loop_sieve_tray_weeping_and_offline_irms_grab_sampling"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

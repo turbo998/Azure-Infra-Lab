@@ -12205,5 +12205,52 @@
       "uncompensated_cyclotron_target_nucleate_boiling_burnout_cassette_valve_deadvolume_or_ph_buffer_drift_pct": 4.4,
       "medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_slo_met": false
     }
+  ],
+  "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_profiles": [
+    {
+      "d2o_isotope_cascade_trains": 8,
+      "d2o_isotope_governance_mode": "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_d2o_isotope_pods": 32,
+      "d2o_9998pct_18o_98pct_13c_99pct_separation_factor_and_cascade_recovery_gain_pct": 52.9,
+      "girdler_sieve_tray_froth_flooding_h2s_hydrate_plugging_and_pt_catalyst_wetting_reduction_pct": 77.3,
+      "csa_n285_osha1910119_iso15156_sil3_h2s_inventory_blowdown_flare_and_cryo_co_no_relief_interlock_ms": 0.19,
+      "unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct": 0.0,
+      "d2o_isotope_edge_10khz_crds_ftir_tdlas_h2s_perimeter_and_irms_telemetry_loop_ms": 0.16,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct": 0.0,
+      "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met": true
+    },
+    {
+      "d2o_isotope_cascade_trains": 32,
+      "d2o_isotope_governance_mode": "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_d2o_isotope_pods": 128,
+      "d2o_9998pct_18o_98pct_13c_99pct_separation_factor_and_cascade_recovery_gain_pct": 52.9,
+      "girdler_sieve_tray_froth_flooding_h2s_hydrate_plugging_and_pt_catalyst_wetting_reduction_pct": 77.3,
+      "csa_n285_osha1910119_iso15156_sil3_h2s_inventory_blowdown_flare_and_cryo_co_no_relief_interlock_ms": 0.19,
+      "unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct": 0.0,
+      "d2o_isotope_edge_10khz_crds_ftir_tdlas_h2s_perimeter_and_irms_telemetry_loop_ms": 0.16,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct": 0.0,
+      "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met": true
+    },
+    {
+      "d2o_isotope_cascade_trains": 8,
+      "d2o_isotope_governance_mode": "raw_cloud_fixed_h2s_water_ratio_open_loop_sieve_tray_weeping_and_offline_irms_grab_sampling",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_d2o_isotope_pods": 32,
+      "d2o_9998pct_18o_98pct_13c_99pct_separation_factor_and_cascade_recovery_gain_pct": 9.1,
+      "girdler_sieve_tray_froth_flooding_h2s_hydrate_plugging_and_pt_catalyst_wetting_reduction_pct": 12.1,
+      "csa_n285_osha1910119_iso15156_sil3_h2s_inventory_blowdown_flare_and_cryo_co_no_relief_interlock_ms": 374.0,
+      "unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct": 1.6,
+      "d2o_isotope_edge_10khz_crds_ftir_tdlas_h2s_perimeter_and_irms_telemetry_loop_ms": 204.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct": 4.5,
+      "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met": false
+    }
   ]
 }

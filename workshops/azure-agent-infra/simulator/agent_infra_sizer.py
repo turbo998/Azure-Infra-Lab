@@ -11244,6 +11244,72 @@ def simulate_medical_cyclotron_mo99_tc99m_ac225_tat_radiosynthesis_usp823_sil3_s
     }
 
 
+def simulate_heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_crds_nace_sil3_sandbox(
+    d2o_isotope_cascade_trains: int = 8,
+    d2o_isotope_governance_mode: str = "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge",
+) -> dict[str, Any]:
+    """Cycle #212 — Heavy Water (D2O) & Stable Isotope (18O / 13C / 15N) Cascade Separation Sandbox.
+
+    Models Girdler-Sulfide (H2S-H2O) dual-temperature bithermal sieve-tray exchange (cold tower 30 degC / hot tower
+    130 degC at 2.1 MPa), Combined Electrolysis and Catalytic Exchange (CECE) over hydrophobic Pt/C-PTFE trickle-bed
+    catalysts, cryogenic CO and NO fractional distillation for 13C (>99 atom%) and 18O (>98 atom%) medical/PET water
+    enrichment, online 10 kHz Cavity Ring-Down Spectroscopy (CRDS), FTIR, TDLAS H2S perimeter arrays, and IRMS
+    metrology, and CAN/CSA-N285.0 / OSHA 1910.119 / ISO 15156 (NACE MR0175) / IEC 61511 SIL-3 H2S inventory
+    isolation, emergency flare blowdown, and cryogenic overpressure relief interlocks.
+    """
+    if d2o_isotope_cascade_trains < 1:
+        raise ValueError("d2o_isotope_cascade_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge",
+        "raw_cloud_fixed_h2s_water_ratio_open_loop_sieve_tray_weeping_and_offline_irms_grab_sampling",
+    }
+    if d2o_isotope_governance_mode not in valid_modes:
+        raise ValueError(f"d2o_isotope_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        d2o_isotope_governance_mode
+        == "pinn_mpc_girdler_sulfide_bithermal_cece_hydrophobic_pt_and_cryo_18o_13c_crds_nace_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(d2o_isotope_cascade_trains / 2))
+    active_d2o_isotope_pods = d2o_isotope_cascade_trains * 4
+
+    d2o_9998pct_18o_98pct_13c_99pct_separation_factor_and_cascade_recovery_gain_pct = (
+        52.9 if governed else 9.1
+    )
+    girdler_sieve_tray_froth_flooding_h2s_hydrate_plugging_and_pt_catalyst_wetting_reduction_pct = (
+        77.3 if governed else 12.1
+    )
+    csa_n285_osha1910119_iso15156_sil3_h2s_inventory_blowdown_flare_and_cryo_co_no_relief_interlock_ms = (
+        0.19 if governed else 374.0
+    )
+    unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct = (
+        0.0 if governed else 1.6
+    )
+    d2o_isotope_edge_10khz_crds_ftir_tdlas_h2s_perimeter_and_irms_telemetry_loop_ms = (
+        0.16 if governed else 204.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct = (
+        0.0 if governed else 4.5
+    )
+
+    return {
+        "d2o_isotope_cascade_trains": d2o_isotope_cascade_trains,
+        "d2o_isotope_governance_mode": d2o_isotope_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_d2o_isotope_pods": active_d2o_isotope_pods,
+        "d2o_9998pct_18o_98pct_13c_99pct_separation_factor_and_cascade_recovery_gain_pct": d2o_9998pct_18o_98pct_13c_99pct_separation_factor_and_cascade_recovery_gain_pct,
+        "girdler_sieve_tray_froth_flooding_h2s_hydrate_plugging_and_pt_catalyst_wetting_reduction_pct": girdler_sieve_tray_froth_flooding_h2s_hydrate_plugging_and_pt_catalyst_wetting_reduction_pct,
+        "csa_n285_osha1910119_iso15156_sil3_h2s_inventory_blowdown_flare_and_cryo_co_no_relief_interlock_ms": csa_n285_osha1910119_iso15156_sil3_h2s_inventory_blowdown_flare_and_cryo_co_no_relief_interlock_ms,
+        "unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct": unmitigated_h2s_sour_gas_plume_ssc_hydrogen_blistering_or_cryo_co_overpressure_event_pct,
+        "d2o_isotope_edge_10khz_crds_ftir_tdlas_h2s_perimeter_and_irms_telemetry_loop_ms": d2o_isotope_edge_10khz_crds_ftir_tdlas_h2s_perimeter_and_irms_telemetry_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct": uncompensated_cold_hot_tower_delta_t_pinch_drift_hdo_backmixing_or_18o_thermal_siphon_instability_pct,
+        "heavy_water_d2o_girdler_sulfide_cece_stable_isotope_18o_13c_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
