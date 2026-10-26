@@ -228,6 +228,7 @@ from agent_infra_sizer import (
     simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
+    simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4713,6 +4714,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_proton_energy_drift_226ra_p3n_224ac_or_dga_alpha_radiolysis_pct"], 3.0)
         self.assertTrue(gov["actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_slo_met"])
         self.assertFalse(raw["actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_slo_met"])
+
+    def test_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(self) -> None:
+        gov = simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(
+            8, "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"
+        )
+        raw = simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(
+            8, "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_at211_i123_pods"], 32)
+        self.assertEqual(gov["at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct"], 55.8)
+        self.assertEqual(gov["toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct"], 80.1)
+        self.assertEqual(gov["usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms"], 0.16)
+        self.assertEqual(gov["unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct"], 1.0)
+        self.assertEqual(gov["at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct"], 3.0)
+        self.assertTrue(gov["astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met"])
+        self.assertFalse(raw["astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met"])
 
 
 if __name__ == "__main__":

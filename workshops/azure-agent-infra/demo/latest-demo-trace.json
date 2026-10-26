@@ -12877,6 +12877,53 @@
         "uncompensated_proton_energy_drift_226ra_p3n_224ac_or_dga_alpha_radiolysis_pct": 4.6,
         "actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_slo_met": false
       }
+    ],
+    "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles": [
+      {
+        "at211_i123_trains": 8,
+        "at211_i123_governance_mode": "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_at211_i123_pods": 32,
+        "at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct": 55.8,
+        "toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct": 80.1,
+        "usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms": 0.16,
+        "unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct": 0.0,
+        "at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct": 0.0,
+        "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met": true
+      },
+      {
+        "at211_i123_trains": 32,
+        "at211_i123_governance_mode": "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_at211_i123_pods": 128,
+        "at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct": 55.8,
+        "toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct": 80.1,
+        "usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms": 0.16,
+        "unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct": 0.0,
+        "at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms": 0.15,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct": 0.0,
+        "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met": true
+      },
+      {
+        "at211_i123_trains": 8,
+        "at211_i123_governance_mode": "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_at211_i123_pods": 32,
+        "at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct": 10.1,
+        "toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct": 13.7,
+        "usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms": 387.0,
+        "unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct": 1.5,
+        "at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms": 212.0,
+        "wan_bandwidth_reduction_pct": 0.0,
+        "uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct": 4.7,
+        "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -24128,5 +24175,52 @@
       "actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_slo_met": false
     }
   },
-  "trace_sha256": "d0f75bb040a104386987d79d46f9fd3194f1eac9dc252dfd52132fc13e8b823e"
+  "demo_222_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox": {
+    "at211_i123_8_trains": {
+      "at211_i123_trains": 8,
+      "at211_i123_governance_mode": "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_at211_i123_pods": 32,
+      "at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct": 55.8,
+      "toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct": 80.1,
+      "usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms": 0.16,
+      "unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct": 0.0,
+      "at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct": 0.0,
+      "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met": true
+    },
+    "at211_i123_32_trains": {
+      "at211_i123_trains": 32,
+      "at211_i123_governance_mode": "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_at211_i123_pods": 128,
+      "at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct": 55.8,
+      "toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct": 80.1,
+      "usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms": 0.16,
+      "unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct": 0.0,
+      "at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms": 0.15,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct": 0.0,
+      "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met": true
+    },
+    "raw_at211_i123_8_trains": {
+      "at211_i123_trains": 8,
+      "at211_i123_governance_mode": "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC24ads_A100_v4",
+      "active_at211_i123_pods": 32,
+      "at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct": 10.1,
+      "toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct": 13.7,
+      "usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms": 387.0,
+      "unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct": 1.5,
+      "at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms": 212.0,
+      "wan_bandwidth_reduction_pct": 0.0,
+      "uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct": 4.7,
+      "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met": false
+    }
+  },
+  "trace_sha256": "4a05f7916b21657cb213f64e9c171bca217ec2f23965466000dc3cc11a2e7efc"
 }

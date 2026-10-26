@@ -241,6 +241,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
+    simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1577,6 +1578,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "ac225_pb212_8_trains": simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(8, "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge"),
             "ac225_pb212_32_trains": simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(32, "pinn_mpc_ra226_p2n_ac225_cyclotron_dga_sr_spec_chromatography_and_pb212_ge68_generator_sil3_edge"),
             "raw_ac225_pb212_8_trains": simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(8, "raw_cloud_high_energy_th232_spallation_with_227ac_impurity_and_manual_resin_elution"),
+        },
+        "demo_222_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox": {
+            "at211_i123_8_trains": simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(8, "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"),
+            "at211_i123_32_trains": simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(32, "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"),
+            "raw_at211_i123_8_trains": simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(8, "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

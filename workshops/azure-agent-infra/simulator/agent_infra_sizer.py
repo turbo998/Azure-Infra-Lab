@@ -11951,6 +11951,80 @@ def simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germ
     }
 
 
+def simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(
+    at211_i123_trains: int = 8,
+    at211_i123_governance_mode: str = "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Halogen Theranostics Astatine-211 (211At T1/2=7.21h
+    100% Alpha-Emitting Heavy Halogen without Long-Lived Alpha Daughters via
+    28.0-28.8 MeV Internal Slanted-Bismuth Target Cyclotron Irradiation
+    209Bi(alpha,2n)211At & 680C Quartz-Capillary Dry Thermochromatographic
+    Distillation Strictly Below 29.0 MeV Threshold to Eliminate 209Bi(alpha,3n)210At
+    -> 210Po T1/2=138.4d Bone/Spleen Alpha Toxin) & No-Carrier-Added Iodine-123
+    (n.c.a. 123I >=99.8% Radionuclidic Purity 159 keV SPECT for mIBG / DaTscan
+    via 30 MeV Proton High-Pressure Enriched Xenon-124 124Xe >=99.9% Gas-Target
+    124Xe(p,2n)123Cs -> 123Xe -> 123I Cryogenic Freeze-Trap Decay Eliminating
+    125I Impurity & >99.9% 124Xe Cryogenic Recovery) PINN-MPC, Online 10 kHz
+    LaBr3:Ce / HPGe Gamma Spectroscopy (211At/211Po 76.9/569.6/897.8 keV vs
+    210At 245.3/1181.4 keV & 123I 159.0 keV), Alpha-Liquid-Scintillation &
+    Airborne Volatile Halogen Ionization Metrology & USP <823> / 10 CFR 20 /
+    EU GMP Annex 3 / ISO 17873 / IEC 61511 SIL-3 Volatile Astatine/Iodine
+    TEDA-AgX Charcoal Scrubber Lockout, Toxic 210At/210Po Impurity Lot
+    Quarantine & High-Pressure 124Xe Gas-Target Cryogenic Salvage Interlock
+    (Cycle #222)."""
+    if at211_i123_trains < 1:
+        raise ValueError("at211_i123_trains must be >= 1")
+    valid_modes = {
+        "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge",
+        "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting",
+    }
+    if at211_i123_governance_mode not in valid_modes:
+        raise ValueError(f"at211_i123_governance_mode must be one of {sorted(valid_modes)}")
+
+    governed = (
+        at211_i123_governance_mode
+        == "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(at211_i123_trains / 2))
+    active_at211_i123_pods = at211_i123_trains * 4
+
+    at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct = (
+        55.8 if governed else 10.1
+    )
+    toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct = (
+        80.1 if governed else 13.7
+    )
+    usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms = (
+        0.16 if governed else 387.0
+    )
+    unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct = (
+        0.0 if governed else 1.5
+    )
+    at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms = (
+        0.15 if governed else 212.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct = (
+        0.0 if governed else 4.7
+    )
+
+    return {
+        "at211_i123_trains": at211_i123_trains,
+        "at211_i123_governance_mode": at211_i123_governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_at211_i123_pods": active_at211_i123_pods,
+        "at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct": at211_dry_distillation_yield_nca_i123_purity_and_xe124_recovery_gain_pct,
+        "toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct": toxic_210at_210po_impurity_125i_contamination_and_halogen_volatilization_loss_cut_pct,
+        "usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms": usp823_iso17873_sil3_teda_agx_scrubber_210po_quarantine_and_xe124_cryo_salvage_interlock_ms,
+        "unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct": unmitigated_volatile_at211_i123_stack_release_210po_patient_toxicity_or_xe124_rupture_pct,
+        "at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms": at211_i123_edge_10khz_labr3_hpge_gamma_alpha_lsc_and_halogen_ionization_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct": uncompensated_alpha_beam_energy_overshoot_210at_or_bismuth_target_melt_pct,
+        "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

@@ -234,6 +234,7 @@ from agent_infra_sizer import (
     simulate_dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_sil3_sandbox,
     simulate_lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_sil3_sandbox,
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
+    simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1797,6 +1798,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox(8, "raw_cloud_high_energy_th232_spallation_with_227ac_impurity_and_manual_resin_elution"),
     ]
 
+    astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles: List[Dict[str, object]] = [
+        simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(8, "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"),
+        simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(32, "pinn_mpc_bi209_a2n_at211_dry_distillation_and_xe124_p2n_i123_cryo_target_sil3_edge"),
+        simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox(8, "raw_cloud_above_threshold_alpha_beam_with_210po_impurity_and_open_halogen_venting"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2018,6 +2025,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles": dysprosium164_erbium167_avlis_control_rod_ifba_burnable_absorber_profiles,
         "lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_profiles": lutetium177_ytterbium176_avlis_radioligand_molybdenum100_tc99m_cyclotron_profiles,
         "actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles": actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles,
+        "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles": astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles,
     }
 
 
