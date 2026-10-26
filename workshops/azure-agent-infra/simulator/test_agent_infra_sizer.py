@@ -232,6 +232,7 @@ from agent_infra_sizer import (
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
+    simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4801,6 +4802,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_gd160_target_breakthrough_or_ra224_parent_bleed_pct"], 3.0)
         self.assertTrue(gov["terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_slo_met"])
         self.assertFalse(raw["terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_slo_met"])
+
+    def test_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(self) -> None:
+        gov = simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(
+            8, "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"
+        )
+        raw = simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(
+            8, "raw_cloud_uncompensated_se_volatilization_br2_escape_and_ac227_ra223_breakthrough"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_br_th227_pods"], 32)
+        self.assertEqual(gov["br77_parpi_and_th227_hopo_immunoreactive_radiochemical_yield_gain_pct"], 56.9)
+        self.assertEqual(gov["selenium_co_distillation_and_free_ra223_daughter_bone_uptake_reduction_pct"], 81.1)
+        self.assertEqual(gov["usp823_iso17873_sil3_volatile_br2_agx_scrubber_and_ac227_quarantine_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_volatile_br76_77_stack_leak_or_ac227_long_lived_contamination_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_volatile_br76_77_stack_leak_or_ac227_long_lived_contamination_pct"], 1.0)
+        self.assertEqual(gov["edge_pyrometry_hpge_and_sec_hplc_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_cose_target_decomposition_or_hopo_mab_radiolysis_aggregation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cose_target_decomposition_or_hopo_mab_radiolysis_aggregation_pct"], 3.0)
+        self.assertTrue(gov["bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_slo_met"])
+        self.assertFalse(raw["bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_slo_met"])
 
 
 if __name__ == "__main__":

@@ -238,6 +238,7 @@ from agent_infra_sizer import (
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
+    simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1825,6 +1826,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_isobaric_ce_eu_gd_breakthrough_and_rn220_bi212_recoil_escape"),
     ]
 
+    bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_profiles = [
+        simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(8, "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"),
+        simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(32, "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"),
+        simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(8, "raw_cloud_uncompensated_se_volatilization_br2_escape_and_ac227_ra223_breakthrough"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2050,6 +2057,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles": strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles,
         "copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_profiles": copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_profiles,
         "terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_profiles": terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_profiles,
+        "bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_profiles": bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_profiles,
     }
 
 

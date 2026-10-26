@@ -245,6 +245,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
     simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox,
+    simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1601,6 +1602,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "tb_pb212_8_trains": simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(8, "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"),
             "tb_pb212_32_trains": simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(32, "pinn_mpc_tb149_152_155_161_isol_ln_resin_and_ra224_pb212_tcmc_rn220_sil3_edge"),
             "raw_tb_pb212_8_trains": simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generator_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_isobaric_ce_eu_gd_breakthrough_and_rn220_bi212_recoil_escape"),
+        },
+        "demo_226_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox": {
+            "br_th227_8_trains": simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(8, "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"),
+            "br_th227_32_trains": simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(32, "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"),
+            "raw_br_th227_8_trains": simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(8, "raw_cloud_uncompensated_se_volatilization_br2_escape_and_ac227_ra223_breakthrough"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

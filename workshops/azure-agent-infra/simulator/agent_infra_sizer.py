@@ -12194,6 +12194,53 @@ def simulate_terbium_quartet_isol_mass_separation_and_lead212_radium224_generato
     }
 
 
+def simulate_bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_sil3_sandbox(
+    br_th227_trains: int = 8,
+    governance_mode: str = "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Bromine-76/77 (76Br PET / 77Br Auger-Electron PARPi via 13-16 MeV Co76Se/Co77Se Dry Distillation) & Thorium-227 (227Ac/227Th Generator & 3,2-HOPO mAb Targeted Alpha Conjugate) PINN-MPC + SIL-3 Sandbox (Chapter 231, Cycle #226 — 235-Test Milestone!)."""
+    trains = max(1, int(br_th227_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_br76_77_cose_dry_distillation_parpi_and_ac227_th227_hopo_ra223_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_br_th227_pods = trains * 4
+
+    if governed:
+        br77_parpi_and_th227_hopo_immunoreactive_radiochemical_yield_gain_pct = 56.9
+        selenium_co_distillation_and_free_ra223_daughter_bone_uptake_reduction_pct = 81.1
+        usp823_iso17873_sil3_volatile_br2_agx_scrubber_and_ac227_quarantine_latency_ms = 0.15
+        unmitigated_volatile_br76_77_stack_leak_or_ac227_long_lived_contamination_pct = 0.0
+        edge_pyrometry_hpge_and_sec_hplc_closed_loop_latency_ms = 0.14
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_cose_target_decomposition_or_hopo_mab_radiolysis_aggregation_pct = 0.0
+    else:
+        br77_parpi_and_th227_hopo_immunoreactive_radiochemical_yield_gain_pct = 10.5
+        selenium_co_distillation_and_free_ra223_daughter_bone_uptake_reduction_pct = 14.2
+        usp823_iso17873_sil3_volatile_br2_agx_scrubber_and_ac227_quarantine_latency_ms = 395.0
+        unmitigated_volatile_br76_77_stack_leak_or_ac227_long_lived_contamination_pct = 1.5
+        edge_pyrometry_hpge_and_sec_hplc_closed_loop_latency_ms = 218.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_cose_target_decomposition_or_hopo_mab_radiolysis_aggregation_pct = 4.9
+
+    return {
+        "br_th227_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_br_th227_pods": active_br_th227_pods,
+        "br77_parpi_and_th227_hopo_immunoreactive_radiochemical_yield_gain_pct": br77_parpi_and_th227_hopo_immunoreactive_radiochemical_yield_gain_pct,
+        "selenium_co_distillation_and_free_ra223_daughter_bone_uptake_reduction_pct": selenium_co_distillation_and_free_ra223_daughter_bone_uptake_reduction_pct,
+        "usp823_iso17873_sil3_volatile_br2_agx_scrubber_and_ac227_quarantine_latency_ms": usp823_iso17873_sil3_volatile_br2_agx_scrubber_and_ac227_quarantine_latency_ms,
+        "unmitigated_volatile_br76_77_stack_leak_or_ac227_long_lived_contamination_pct": unmitigated_volatile_br76_77_stack_leak_or_ac227_long_lived_contamination_pct,
+        "edge_pyrometry_hpge_and_sec_hplc_closed_loop_latency_ms": edge_pyrometry_hpge_and_sec_hplc_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cose_target_decomposition_or_hopo_mab_radiolysis_aggregation_pct": uncompensated_cose_target_decomposition_or_hopo_mab_radiolysis_aggregation_pct,
+        "bromine76_77_cose_dry_distillation_and_thorium227_hopo_targeted_alpha_conjugate_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
