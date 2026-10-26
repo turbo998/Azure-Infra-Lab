@@ -237,6 +237,7 @@ from agent_infra_sizer import (
     simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
     simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
+    simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4911,6 +4912,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_sc46_co_activation_sr90_radiolytic_bleed_or_ca_target_loss_pct"], 3.0)
         self.assertTrue(gov["scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_slo_met"])
         self.assertFalse(raw["scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_slo_met"])
+
+    def test_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(self) -> None:
+        gov = simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(
+            8, "pinn_mpc_au197_hg195m_pt195m_cisplatin_and_dy166_ho166_iedda_prit_sil3_edge"
+        )
+        raw = simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(
+            8, "raw_cloud_uncompensated_ho166m_impurity_trans_platin_nephrotoxicity_and_tco_deactivation"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_pt195m_ho166_pods"], 32)
+        self.assertEqual(gov["pt195m_cisplatin_auger_dna_crosslink_and_ho166_prit_iedda_radiochemical_yield_gain_pct"], 57.9)
+        self.assertEqual(gov["ho166m_1200y_impurity_trans_platin_nephrotoxicity_and_tco_cis_isomerization_reduction_pct"], 82.1)
+        self.assertEqual(gov["usp823_iso17873_sil3_ho166m_quarantine_trans_platin_lockout_and_hg_cryo_trap_latency_ms"], 0.15)
+        self.assertEqual(gov["unmitigated_ho166m_long_lived_contamination_cisplatin_nephrotoxicity_or_hg_vapor_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ho166m_long_lived_contamination_cisplatin_nephrotoxicity_or_hg_vapor_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_hpge_98kev_paramagnetic_susceptibility_and_radio_hplc_closed_loop_latency_ms"], 0.14)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_dy165_co_elution_trans_platin_aquation_or_tco_deactivation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_dy165_co_elution_trans_platin_aquation_or_tco_deactivation_pct"], 3.0)
+        self.assertTrue(gov["platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_slo_met"])
+        self.assertFalse(raw["platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_slo_met"])
 
 
 if __name__ == "__main__":

@@ -250,6 +250,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
     simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
+    simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1631,6 +1632,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_sc_y90_8_trains": simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(8, "pinn_mpc_ca43_44_sc43_44g_ti48_sc47_dga_aazta_and_sr90_y90_srspec_tare_sil3_edge"),
             "governed_sc_y90_32_trains": simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(32, "pinn_mpc_ca43_44_sc43_44g_ti48_sc47_dga_aazta_and_sr90_y90_srspec_tare_sil3_edge"),
             "raw_sc_y90_8_trains": simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(8, "raw_cloud_uncompensated_sr90_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_poisoning"),
+        },
+        "demo_231_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox": {
+            "governed_pt195m_ho166_8_trains": simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(8, "pinn_mpc_au197_hg195m_pt195m_cisplatin_and_dy166_ho166_iedda_prit_sil3_edge"),
+            "governed_pt195m_ho166_32_trains": simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(32, "pinn_mpc_au197_hg195m_pt195m_cisplatin_and_dy166_ho166_iedda_prit_sil3_edge"),
+            "raw_pt195m_ho166_8_trains": simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_ho166m_impurity_trans_platin_nephrotoxicity_and_tco_deactivation"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

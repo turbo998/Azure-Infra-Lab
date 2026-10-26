@@ -243,6 +243,7 @@ from agent_infra_sizer import (
     simulate_radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_sil3_sandbox,
     simulate_lead212_thoron_generator_and_titanium45_bromine77_theranostics_sil3_sandbox,
     simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox,
+    simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1860,6 +1861,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_sil3_sandbox(8, "raw_cloud_uncompensated_sr90_breakthrough_sc46_sc44m_impurity_and_cold_ca_ti_poisoning"),
     ]
 
+    platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_profiles = [
+        simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(8, "pinn_mpc_au197_hg195m_pt195m_cisplatin_and_dy166_ho166_iedda_prit_sil3_edge"),
+        simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(32, "pinn_mpc_au197_hg195m_pt195m_cisplatin_and_dy166_ho166_iedda_prit_sil3_edge"),
+        simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_ho166m_impurity_trans_platin_nephrotoxicity_and_tco_deactivation"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2090,6 +2097,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_profiles": radium223_actinon_recoil_nanoparticle_and_antimony119_sn119_auger_theranostics_profiles,
         "lead212_thoron_generator_and_titanium45_bromine77_theranostics_profiles": lead212_thoron_generator_and_titanium45_bromine77_theranostics_profiles,
         "scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_profiles": scandium43_44_47_triplet_theranostics_and_sr90_y90_generator_profiles,
+        "platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_profiles": platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_profiles,
     }
 
 
