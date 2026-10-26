@@ -236,6 +236,7 @@ from agent_infra_sizer import (
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
+    simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1811,6 +1812,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(8, "raw_cloud_uncompensated_rbcl_core_melt_sr82_breakthrough_and_200tl_202tl_impurity"),
     ]
 
+    copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_profiles: List[Dict[str, object]] = [
+        simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(8, "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"),
+        simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(32, "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"),
+        simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_cold_cu_zn_contamination_co55_impurity_and_ni64_loss"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2034,6 +2041,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles": actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_profiles,
         "astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles": astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_profiles,
         "strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles": strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_profiles,
+        "copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_profiles": copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_profiles,
     }
 
 

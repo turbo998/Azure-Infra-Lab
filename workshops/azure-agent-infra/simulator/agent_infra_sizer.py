@@ -12100,6 +12100,53 @@ def simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial
     }
 
 
+def simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(
+    cu64_cu67_trains: int = 8,
+    governance_mode: str = "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Copper-64 / Copper-67 (n.c.a. 64Cu via 12MeV 64Ni(p,n)64Cu & 67Cu via 40MeV e-Linac Bremsstrahlung 68Zn(gamma,p)67Cu) Theranostics PINN-MPC + SIL-3 Sandbox (Chapter 229, Cycle #224)."""
+    trains = max(1, int(cu64_cu67_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_cu64_cu67_pods = trains * 4
+
+    if governed:
+        cu64_cu67_molar_activity_sarcophagine_labeling_yield_and_ni64_zn68_recovery_gain_pct = 56.4
+        cold_cu2_zn2_ni2_chelate_competition_co55_co57_impurity_and_ni64_loss_cut_pct = 80.7
+        usp823_iso17873_sil3_ta_converter_burnthrough_cold_metal_quarantine_and_ni64_salvage_interlock_ms = 0.16
+        unmitigated_linac_converter_rupture_low_molar_activity_receptor_blockade_or_co55_overdose_pct = 0.0
+        cu64_cu67_edge_10khz_hpge_gamma_teta_titration_molar_activity_and_linac_converter_loop_ms = 0.15
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_trace_metal_resin_bleed_or_zn68_target_blistering_pct = 0.0
+    else:
+        cu64_cu67_molar_activity_sarcophagine_labeling_yield_and_ni64_zn68_recovery_gain_pct = 10.3
+        cold_cu2_zn2_ni2_chelate_competition_co55_co57_impurity_and_ni64_loss_cut_pct = 14.0
+        usp823_iso17873_sil3_ta_converter_burnthrough_cold_metal_quarantine_and_ni64_salvage_interlock_ms = 391.0
+        unmitigated_linac_converter_rupture_low_molar_activity_receptor_blockade_or_co55_overdose_pct = 1.5
+        cu64_cu67_edge_10khz_hpge_gamma_teta_titration_molar_activity_and_linac_converter_loop_ms = 215.0
+        wan_bandwidth_reduction_pct = 12.1
+        uncompensated_trace_metal_resin_bleed_or_zn68_target_blistering_pct = 4.9
+
+    return {
+        "cu64_cu67_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC24ads_A100_v4",
+        "active_cu64_cu67_pods": active_cu64_cu67_pods,
+        "cu64_cu67_molar_activity_sarcophagine_labeling_yield_and_ni64_zn68_recovery_gain_pct": cu64_cu67_molar_activity_sarcophagine_labeling_yield_and_ni64_zn68_recovery_gain_pct,
+        "cold_cu2_zn2_ni2_chelate_competition_co55_co57_impurity_and_ni64_loss_cut_pct": cold_cu2_zn2_ni2_chelate_competition_co55_co57_impurity_and_ni64_loss_cut_pct,
+        "usp823_iso17873_sil3_ta_converter_burnthrough_cold_metal_quarantine_and_ni64_salvage_interlock_ms": usp823_iso17873_sil3_ta_converter_burnthrough_cold_metal_quarantine_and_ni64_salvage_interlock_ms,
+        "unmitigated_linac_converter_rupture_low_molar_activity_receptor_blockade_or_co55_overdose_pct": unmitigated_linac_converter_rupture_low_molar_activity_receptor_blockade_or_co55_overdose_pct,
+        "cu64_cu67_edge_10khz_hpge_gamma_teta_titration_molar_activity_and_linac_converter_loop_ms": cu64_cu67_edge_10khz_hpge_gamma_teta_titration_molar_activity_and_linac_converter_loop_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_trace_metal_resin_bleed_or_zn68_target_blistering_pct": uncompensated_trace_metal_resin_bleed_or_zn68_target_blistering_pct,
+        "copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

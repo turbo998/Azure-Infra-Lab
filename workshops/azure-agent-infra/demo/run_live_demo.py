@@ -243,6 +243,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
+    simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1589,6 +1590,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "sr82_tl201_8_trains": simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(8, "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"),
             "sr82_tl201_32_trains": simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(32, "pinn_mpc_rb85_p4n_sr82_rbcl_target_sno2_generator_and_tl203_p3n_pb201_tl201_ingrowth_sil3_edge"),
             "raw_sr82_tl201_8_trains": simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox(8, "raw_cloud_uncompensated_rbcl_core_melt_sr82_breakthrough_and_200tl_202tl_impurity"),
+        },
+        "demo_224_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox": {
+            "cu64_cu67_8_trains": simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(8, "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"),
+            "cu64_cu67_32_trains": simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(32, "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"),
+            "raw_cu64_cu67_8_trains": simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(8, "raw_cloud_uncompensated_cold_cu_zn_contamination_co55_impurity_and_ni64_loss"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

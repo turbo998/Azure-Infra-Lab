@@ -230,6 +230,7 @@ from agent_infra_sizer import (
     simulate_actinium225_radium226_cyclotron_targeted_alpha_therapy_lead212_germanium68_generator_sil3_sandbox,
     simulate_astatine211_bismuth_alpha_cyclotron_iodine123_xenon124_halogen_theranostics_sil3_sandbox,
     simulate_strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_sil3_sandbox,
+    simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4757,6 +4758,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_rbcl_molten_core_overpressure_or_tl203_grazing_beam_burnthrough_pct"], 3.0)
         self.assertTrue(gov["strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_slo_met"])
         self.assertFalse(raw["strontium82_rubidium82_cardiac_pet_generator_thallium201_myocardial_spect_cyclotron_slo_met"])
+
+    def test_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(self) -> None:
+        gov = simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(
+            8, "pinn_mpc_ni64_pn_cu64_ag1x8_and_zn68_gammap_cu67_photonuclear_molar_activity_sil3_edge"
+        )
+        raw = simulate_copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cold_cu_zn_contamination_co55_impurity_and_ni64_loss"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_cu64_cu67_pods"], 32)
+        self.assertEqual(gov["cu64_cu67_molar_activity_sarcophagine_labeling_yield_and_ni64_zn68_recovery_gain_pct"], 56.4)
+        self.assertEqual(gov["cold_cu2_zn2_ni2_chelate_competition_co55_co57_impurity_and_ni64_loss_cut_pct"], 80.7)
+        self.assertEqual(gov["usp823_iso17873_sil3_ta_converter_burnthrough_cold_metal_quarantine_and_ni64_salvage_interlock_ms"], 0.16)
+        self.assertEqual(gov["unmitigated_linac_converter_rupture_low_molar_activity_receptor_blockade_or_co55_overdose_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_linac_converter_rupture_low_molar_activity_receptor_blockade_or_co55_overdose_pct"], 1.0)
+        self.assertEqual(gov["cu64_cu67_edge_10khz_hpge_gamma_teta_titration_molar_activity_and_linac_converter_loop_ms"], 0.15)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_trace_metal_resin_bleed_or_zn68_target_blistering_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_trace_metal_resin_bleed_or_zn68_target_blistering_pct"], 3.0)
+        self.assertTrue(gov["copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_slo_met"])
+        self.assertFalse(raw["copper64_nickel64_cyclotron_copper67_zinc68_photonuclear_theranostics_slo_met"])
 
 
 if __name__ == "__main__":
