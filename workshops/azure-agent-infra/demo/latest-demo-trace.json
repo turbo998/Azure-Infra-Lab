@@ -14428,6 +14428,53 @@
         "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": 6.4,
         "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": false
       }
+    ],
+    "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_profiles": [
+      {
+        "pfc_cof2_clean_trains": 8,
+        "governance_mode": "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pfc_cof2_pods": 32,
+        "electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct": 63.3,
+        "cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct": 87.1,
+        "semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms": 0.13,
+        "unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct": 0.0,
+        "edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct": 0.0,
+        "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met": true
+      },
+      {
+        "pfc_cof2_clean_trains": 32,
+        "governance_mode": "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pfc_cof2_pods": 128,
+        "electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct": 63.3,
+        "cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct": 87.1,
+        "semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms": 0.13,
+        "unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct": 0.0,
+        "edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct": 0.0,
+        "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met": true
+      },
+      {
+        "pfc_cof2_clean_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_cof2_hf_impurity_and_pecvd_showerhead_over_etch",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pfc_cof2_pods": 32,
+        "electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct": 13.7,
+        "cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct": 17.8,
+        "semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms": 450.0,
+        "unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct": 1.6,
+        "edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms": 262.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct": 6.3,
+        "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -27230,5 +27277,52 @@
       "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": false
     }
   },
-  "trace_sha256": "878ebe3b7e67d7722209b27ca57a274add38d02840778ad735f11ebda15f40fa"
+  "demo_255_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch": {
+    "pfc_cof2_8_trains": {
+      "pfc_cof2_clean_trains": 8,
+      "governance_mode": "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_pfc_cof2_pods": 32,
+      "electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct": 63.3,
+      "cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct": 87.1,
+      "semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms": 0.13,
+      "unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct": 0.0,
+      "edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct": 0.0,
+      "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met": true
+    },
+    "pfc_cof2_32_trains": {
+      "pfc_cof2_clean_trains": 32,
+      "governance_mode": "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_pfc_cof2_pods": 128,
+      "electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct": 63.3,
+      "cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct": 87.1,
+      "semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms": 0.13,
+      "unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct": 0.0,
+      "edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct": 0.0,
+      "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met": true
+    },
+    "raw_pfc_cof2_8_trains": {
+      "pfc_cof2_clean_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_cof2_hf_impurity_and_pecvd_showerhead_over_etch",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_pfc_cof2_pods": 32,
+      "electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct": 13.7,
+      "cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct": 17.8,
+      "semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms": 450.0,
+      "unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct": 1.6,
+      "edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms": 262.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct": 6.3,
+      "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met": false
+    }
+  },
+  "trace_sha256": "09202b57cf94f363f7d1285a1459249f098addeca1e905abcc3ad3b6426c5897"
 }

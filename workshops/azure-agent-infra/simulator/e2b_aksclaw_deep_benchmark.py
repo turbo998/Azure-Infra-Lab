@@ -267,6 +267,7 @@ from agent_infra_sizer import (
     simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
     simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
     simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
+    simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2028,6 +2029,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(8, "raw_cloud_uncompensated_cc4f8_tfe_pfib_impurity_and_bspdn_ntsv_scallop_notching"),
     ]
 
+    c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_profiles = [
+        simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(8, "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge"),
+        simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(32, "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge"),
+        simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(8, "raw_cloud_uncompensated_cof2_hf_impurity_and_pecvd_showerhead_over_etch"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2282,6 +2289,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles": hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles,
         "chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_profiles": chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_profiles,
         "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles": cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles,
+        "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_profiles": c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_profiles,
     }
 
 

@@ -13894,6 +13894,68 @@ def simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbo
     }
 
 
+def simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(
+    pfc_cof2_clean_trains: int = 8,
+    governance_mode: str = "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Hexafluoroethane (5N5 C2F6 >=99.9995%, b.p. -78.2C,
+    Ultra-Low CF4 <=0.25ppmv, CHF3 <=0.15ppmv, C2HF5 <=0.15ppmv, SF6 <=0.10ppmv, HF <=0.10ppmv,
+    H2O <=0.20ppmv) & Electronic-Grade Octafluoropropane (5N5 C3F8 >=99.9995%, b.p. -36.7C,
+    Ultra-Low C3F6 <=0.20ppmv, C2F6 <=0.25ppmv, PFIB <=5ppbv) + Electronic-Grade Carbonyl Fluoride
+    (5N COF2 >=99.999%, b.p. -84.6C, Ultra-Low Greenhouse Potential GWP100 < 1, Ultra-Low CO
+    <=0.30ppmv, CO2 <=0.30ppmv, CF4 <=0.20ppmv, HF <=0.15ppmv, Fe/Ni/Cr <=0.05ppbv) Low-GWP Remote
+    Plasma Source (RPS) PECVD Chamber Cleaning (COF2 -> CO + 2F*, >99.2% F-Radical Utilization vs
+    Legacy C2F6/C3F8 In-Situ RF Clean, Zero CF4 Greenhouse Byproduct Slip) & 2nm GAA / HBM4
+    Selective SiO2/Si3N4 Dielectric Etch Catalytic Carbon Monoxide Oxyfluorination, Direct
+    Fluorination & Cryogenic Rectification PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (1928cm-1 COF2
+    nu2 C=O / 1250cm-1 C2F6 nu7 / 1212cm-1 C3F8 / 2143cm-1 CO) + GC-DID/ICP-MS + 703.7nm F* OES
+    Endpoint Metrology & SEMI S2 / SEMI C3 / NFPA 55 / ACGIH TLV / IEC 61511 SIL-3 Acutely Toxic &
+    Moisture-Reactive Carbonyl Fluoride (COF2 ACGIH TLV-TWA 2ppmv, STEL 5ppmv, Instantaneous
+    Hydrolysis COF2 + H2O -> CO2 + 2HF) & Unabated PFC (C2F6/C3F8) Thermal-Wet Abatement Bypass
+    Hard Interlock.
+    """
+    trains = max(1, int(pfc_cof2_clean_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_pfc_cof2_pods = trains * 4
+
+    if governed:
+        electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct = 63.3
+        cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct = 87.1
+        semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms = 0.13
+        unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct = 0.0
+        edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct = 0.0
+    else:
+        electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct = 13.7
+        cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct = 17.8
+        semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms = 450.0
+        unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct = 1.6
+        edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms = 262.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct = 6.3
+
+    return {
+        "pfc_cof2_clean_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pfc_cof2_pods": active_pfc_cof2_pods,
+        "electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct": electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct,
+        "cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct": cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct,
+        "semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms": semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms,
+        "unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct": unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct,
+        "edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms": edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct": uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct,
+        "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

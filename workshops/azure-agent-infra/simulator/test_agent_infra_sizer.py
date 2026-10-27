@@ -261,6 +261,7 @@ from agent_infra_sizer import (
     simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
     simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
     simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
+    simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5439,6 +5440,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct"], 3.0)
         self.assertTrue(gov["cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met"])
         self.assertFalse(raw["cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met"])
+
+    def test_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(self) -> None:
+        gov = simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(
+            8, "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge"
+        )
+        raw = simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cof2_hf_impurity_and_pecvd_showerhead_over_etch"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_pfc_cof2_pods"], 32)
+        self.assertEqual(gov["electronic_5n5_c2f6_c3f8_5n_cof2_purity_and_rps_clean_yield_gain_pct"], 63.3)
+        self.assertEqual(gov["cf4_c3f6_hf_impurity_and_pecvd_showerhead_over_etch_reduction_pct"], 87.1)
+        self.assertEqual(gov["semi_s2_nfpa55_acgih_sil3_cof2_hydrolysis_and_pfc_abatement_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_cof2_hf_toxic_leak_or_unabated_pfc_slip_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1928cm1_1250cm1_1212cm1_gcdid_oes703nm_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct"], 3.0)
+        self.assertTrue(gov["c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met"])
+        self.assertFalse(raw["c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met"])
 
 
 if __name__ == "__main__":
