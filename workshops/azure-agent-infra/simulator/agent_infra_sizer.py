@@ -13206,6 +13206,69 @@ def simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox(
     }
 
 
+def simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox(
+    moo2cl2_mocl5_trains: int = 8,
+    governance_mode: str = "pinn_mpc_moo2cl2_mocl5_co2co8_sublimation_and_3dnand_mo_wordline_bspdn_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Molybdenum Dichloride Dioxide (6N MoO2Cl2
+    >=99.9999%, Sublimation 156C, Ultra-Low W <=0.5ppmw, Fe/Cr/Ni <=5.0ppbw) &
+    Molybdenum Pentachloride (6N MoCl5 >=99.9999%, m.p. 194C, b.p. 268C,
+    MoCl4/MoCl3 <=0.1ppmw) + Dicobalt Octacarbonyl / Cyclopentadienylcobalt
+    Dicarbonyl (6N Co2(CO)8 / CpCo(CO)2 >=99.9999%, Ni(CO)4 <=0.05ppmw)
+    1000-Layer 3D NAND Low-Resistivity Barrierless Molybdenum Wordline (Mo WL
+    rho ~5.3 uOhm-cm, Mean Free Path lambda_Mo = 11.2nm vs TiN/W 15.5nm,
+    Fluorine-Free Al2O3 Blocking Oxide Preservation without WF6/HF Attack,
+    >=38% RC Delay Reduction) & A14 Backside Power Delivery Network (BSPDN
+    Buried Power Rail BPR & Selective Co Electromigration Cap) Fractional
+    Vacuum Sublimation (WOCl4/WCl6 Separation), Solid-Source Heated Ampoule
+    Vapor Delivery (115-145C +/-0.02C), H2 Thermal ALD (AR 65:1 Lateral Recess
+    Step Coverage >=99.6%) PINN-MPC, Online 10kHz QCL-TDLAS (968cm^-1 Mo=O /
+    392cm^-1 Mo-Cl / 2022cm^-1 Co-C=O / 2586cm^-1 HCl) + HR-ICP-MS + 4-Point
+    Probe/TEM Metrology & SEMI S2 / SEMI C3 / NFPA 704 / OSHA PEL / IEC 61511
+    SIL-3 Moisture-Triggered Corrosive HCl Hydrolysis & Toxic Metal Carbonyl
+    (Co2(CO)8 / Ni(CO)4 IDLH 2.0ppmv) Scrubbing Hard Interlock."""
+    trains = max(1, int(moo2cl2_mocl5_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_moo2cl2_mocl5_co2co8_sublimation_and_3dnand_mo_wordline_bspdn_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_moo2cl2_mocl5_pods = trains * 4
+
+    if governed:
+        electronic_6n_moo2cl2_mocl5_purity_and_3dnand_mo_wl_bspdn_yield_gain_pct = 61.1
+        mocl5_disproportionation_al2o3_etch_and_wordline_void_seam_reduction_pct = 84.9
+        semi_s2_nfpa704_osha_sil3_hcl_hydrolysis_and_metal_carbonyl_lockout_latency_ms = 0.14
+        unmitigated_mocl5_hcl_hydrolysis_or_toxic_metal_carbonyl_leak_pct = 0.0
+        edge_qcl_tdlas_968cm1_392cm1_2022cm1_icp_4pp_tem_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3dnand_mo_wordline_seam_void_or_bspdn_bpr_electromigration_pct = 0.0
+    else:
+        electronic_6n_moo2cl2_mocl5_purity_and_3dnand_mo_wl_bspdn_yield_gain_pct = 12.6
+        mocl5_disproportionation_al2o3_etch_and_wordline_void_seam_reduction_pct = 16.5
+        semi_s2_nfpa704_osha_sil3_hcl_hydrolysis_and_metal_carbonyl_lockout_latency_ms = 432.0
+        unmitigated_mocl5_hcl_hydrolysis_or_toxic_metal_carbonyl_leak_pct = 1.6
+        edge_qcl_tdlas_968cm1_392cm1_2022cm1_icp_4pp_tem_closed_loop_latency_ms = 246.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3dnand_mo_wordline_seam_void_or_bspdn_bpr_electromigration_pct = 5.8
+
+    return {
+        "moo2cl2_mocl5_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_moo2cl2_mocl5_pods": active_moo2cl2_mocl5_pods,
+        "electronic_6n_moo2cl2_mocl5_purity_and_3dnand_mo_wl_bspdn_yield_gain_pct": electronic_6n_moo2cl2_mocl5_purity_and_3dnand_mo_wl_bspdn_yield_gain_pct,
+        "mocl5_disproportionation_al2o3_etch_and_wordline_void_seam_reduction_pct": mocl5_disproportionation_al2o3_etch_and_wordline_void_seam_reduction_pct,
+        "semi_s2_nfpa704_osha_sil3_hcl_hydrolysis_and_metal_carbonyl_lockout_latency_ms": semi_s2_nfpa704_osha_sil3_hcl_hydrolysis_and_metal_carbonyl_lockout_latency_ms,
+        "unmitigated_mocl5_hcl_hydrolysis_or_toxic_metal_carbonyl_leak_pct": unmitigated_mocl5_hcl_hydrolysis_or_toxic_metal_carbonyl_leak_pct,
+        "edge_qcl_tdlas_968cm1_392cm1_2022cm1_icp_4pp_tem_closed_loop_latency_ms": edge_qcl_tdlas_968cm1_392cm1_2022cm1_icp_4pp_tem_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3dnand_mo_wordline_seam_void_or_bspdn_bpr_electromigration_pct": uncompensated_3dnand_mo_wordline_seam_void_or_bspdn_bpr_electromigration_pct,
+        "moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
