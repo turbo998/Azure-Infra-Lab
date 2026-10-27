@@ -263,6 +263,7 @@ from agent_infra_sizer import (
     simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
     simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox,
     simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox,
+    simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5483,6 +5484,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_3dnand_har_channel_bowing_or_dram_twist_defect_pct"], 3.0)
         self.assertTrue(gov["cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_slo_met"])
         self.assertFalse(raw["cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_slo_met"])
+
+    def test_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox(self) -> None:
+        gov = simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox(
+            8, "pinn_mpc_bcl3_cl2_sicl4_phosgene_removal_and_sic_trench_gan_hemt_ale_sil3_edge"
+        )
+        raw = simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox(
+            8, "raw_cloud_uncompensated_bcl3_cocl2_sic_subtrenching_and_gan_hemt_ale_over_etch"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_bcl3_cl2_pods"], 32)
+        self.assertEqual(gov["electronic_6n_bcl3_cl2_sicl4_purity_and_sic_trench_gan_ale_yield_gain_pct"], 63.7)
+        self.assertEqual(gov["cocl2_impurity_sic_subtrenching_and_gan_hemt_vth_shift_reduction_pct"], 87.4)
+        self.assertEqual(gov["semi_s2_nfpa55_osha_psm_sil3_bcl3_hydrolysis_cocl2_and_cl2_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_h3bo3_solid_plugging_or_cocl2_cl2_toxic_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h3bo3_solid_plugging_or_cocl2_cl2_toxic_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_956cm1_1827cm1_uvdoas_330nm_oes271nm_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_4h_sic_trench_corner_crowding_or_algan_barrier_over_etch_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_4h_sic_trench_corner_crowding_or_algan_barrier_over_etch_pct"], 3.0)
+        self.assertTrue(gov["bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_slo_met"])
+        self.assertFalse(raw["bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_slo_met"])
 
 
 if __name__ == "__main__":

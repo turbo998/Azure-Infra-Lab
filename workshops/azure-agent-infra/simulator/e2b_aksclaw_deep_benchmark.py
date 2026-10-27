@@ -269,6 +269,7 @@ from agent_infra_sizer import (
     simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
     simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox,
     simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox,
+    simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2042,6 +2043,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(8, "raw_cloud_uncompensated_cf3i_photolytic_i2_impurity_and_har_channel_bowing"),
     ]
 
+    bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_profiles = [
+        simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox(8, "pinn_mpc_bcl3_cl2_sicl4_phosgene_removal_and_sic_trench_gan_hemt_ale_sil3_edge"),
+        simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox(32, "pinn_mpc_bcl3_cl2_sicl4_phosgene_removal_and_sic_trench_gan_hemt_ale_sil3_edge"),
+        simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox(8, "raw_cloud_uncompensated_bcl3_cocl2_sic_subtrenching_and_gan_hemt_ale_over_etch"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2298,6 +2305,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles": cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles,
         "c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_profiles": c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_profiles,
         "cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_profiles": cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_profiles,
+        "bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_profiles": bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_profiles,
     }
 
 

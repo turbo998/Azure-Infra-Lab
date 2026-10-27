@@ -14019,6 +14019,68 @@ def simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandb
     }
 
 
+def simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox(
+    bcl3_cl2_sic_gan_trains: int = 8,
+    governance_mode: str = "pinn_mpc_bcl3_cl2_sicl4_phosgene_removal_and_sic_trench_gan_hemt_ale_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Boron Trichloride (6N BCl3 >=99.9999%, b.p. 12.6C,
+    Ultra-Low Phosgene COCl2 <=0.15ppmv, SiCl4 <=0.15ppmv, HCl <=0.20ppmv, Cl2 <=0.20ppmv, Fe/Al/Cu
+    <=0.05ppbv) & Electronic-Grade Chlorine (6N Cl2 >=99.9999%, b.p. -34.0C, Ultra-Low H2O <=0.20ppmv,
+    CO2 <=0.30ppmv, O2/N2 <=0.30ppmv, Br2 <=0.10ppmv, Cr/Ni/Fe <=0.05ppbv) + Electronic-Grade Silicon
+    Tetrachloride (6N SiCl4 >=99.9999%, b.p. 57.6C, SiHCl3 <=0.20ppmv) 8-Inch 4H-SiC Trench Power
+    MOSFET (Sub-Trenching-Free BCl3/Cl2/O2/SiCl4 Rounded Bottom Corner Etch Eliminating Gate Oxide
+    Electric Field Crowding) & AlGaN/GaN HEMT Low-Damage Recessed-Gate Cyclic Atomic Layer Etch (ALE
+    Self-Limiting Cl2 Chemisorption + Low-Energy <25 eV Ar+/BClx+ Desorption, GaN:AlGaN Selectivity
+    >=45:1, 0.42nm/cycle Monolayer Precision) Carbothermal Chlorination, Catalytic Phosgene
+    Decomposition & High-Purity Quartz Rectification PINN-MPC, Online 10 kHz QCL-TDLAS / UV-DOAS /
+    FTIR (956cm-1 11BCl3 nu3 / 995cm-1 10BCl3 nu3 / 1827cm-1 COCl2 nu2 C=O / 330nm Cl2 UV Continuum)
+    + GC-DID / ICP-MS + 271.4nm BCl* / 257.7nm AlCl* / 417.2nm Ga* OES Endpoint Metrology & SEMI S2 /
+    SEMI C3 / NFPA 55 / OSHA PSM / ACGIH TLV / IEC 61511 SIL-3 Violent Moisture Hydrolysis (BCl3 +
+    3H2O -> H3BO3(s) + 3HCl(g) Boric Acid Solid Plugging), Trace Phosgene (COCl2 TLV 0.1ppmv) &
+    Chlorine (Cl2 TLV 0.1ppmv) Scrubbing Hard Interlock.
+    """
+    trains = max(1, int(bcl3_cl2_sic_gan_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_bcl3_cl2_sicl4_phosgene_removal_and_sic_trench_gan_hemt_ale_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_bcl3_cl2_pods = trains * 4
+
+    if governed:
+        electronic_6n_bcl3_cl2_sicl4_purity_and_sic_trench_gan_ale_yield_gain_pct = 63.7
+        cocl2_impurity_sic_subtrenching_and_gan_hemt_vth_shift_reduction_pct = 87.4
+        semi_s2_nfpa55_osha_psm_sil3_bcl3_hydrolysis_cocl2_and_cl2_lockout_latency_ms = 0.13
+        unmitigated_h3bo3_solid_plugging_or_cocl2_cl2_toxic_leak_pct = 0.0
+        edge_qcl_tdlas_956cm1_1827cm1_uvdoas_330nm_oes271nm_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_4h_sic_trench_corner_crowding_or_algan_barrier_over_etch_pct = 0.0
+    else:
+        electronic_6n_bcl3_cl2_sicl4_purity_and_sic_trench_gan_ale_yield_gain_pct = 13.9
+        cocl2_impurity_sic_subtrenching_and_gan_hemt_vth_shift_reduction_pct = 18.1
+        semi_s2_nfpa55_osha_psm_sil3_bcl3_hydrolysis_cocl2_and_cl2_lockout_latency_ms = 454.0
+        unmitigated_h3bo3_solid_plugging_or_cocl2_cl2_toxic_leak_pct = 1.6
+        edge_qcl_tdlas_956cm1_1827cm1_uvdoas_330nm_oes271nm_closed_loop_latency_ms = 265.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_4h_sic_trench_corner_crowding_or_algan_barrier_over_etch_pct = 6.2
+
+    return {
+        "bcl3_cl2_sic_gan_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bcl3_cl2_pods": active_bcl3_cl2_pods,
+        "electronic_6n_bcl3_cl2_sicl4_purity_and_sic_trench_gan_ale_yield_gain_pct": electronic_6n_bcl3_cl2_sicl4_purity_and_sic_trench_gan_ale_yield_gain_pct,
+        "cocl2_impurity_sic_subtrenching_and_gan_hemt_vth_shift_reduction_pct": cocl2_impurity_sic_subtrenching_and_gan_hemt_vth_shift_reduction_pct,
+        "semi_s2_nfpa55_osha_psm_sil3_bcl3_hydrolysis_cocl2_and_cl2_lockout_latency_ms": semi_s2_nfpa55_osha_psm_sil3_bcl3_hydrolysis_cocl2_and_cl2_lockout_latency_ms,
+        "unmitigated_h3bo3_solid_plugging_or_cocl2_cl2_toxic_leak_pct": unmitigated_h3bo3_solid_plugging_or_cocl2_cl2_toxic_leak_pct,
+        "edge_qcl_tdlas_956cm1_1827cm1_uvdoas_330nm_oes271nm_closed_loop_latency_ms": edge_qcl_tdlas_956cm1_1827cm1_uvdoas_330nm_oes271nm_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_4h_sic_trench_corner_crowding_or_algan_barrier_over_etch_pct": uncompensated_4h_sic_trench_corner_crowding_or_algan_barrier_over_etch_pct,
+        "bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
