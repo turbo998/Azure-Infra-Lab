@@ -260,6 +260,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox,
     simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox,
     simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox,
+    simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1691,6 +1692,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_cp2mg_rucp2_8_trains": simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox(8, "pinn_mpc_cp2mg_rucp2_sublimation_distillation_and_pgan_beol_ru_peald_sil3_edge"),
             "governed_cp2mg_rucp2_32_trains": simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox(32, "pinn_mpc_cp2mg_rucp2_sublimation_distillation_and_pgan_beol_ru_peald_sil3_edge"),
             "raw_cp2mg_rucp2_8_trains": simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox(8, "raw_cloud_uncompensated_mgh_passivation_si_compensation_and_ruo4_tetroxide_etchback"),
+        },
+        "demo_241_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox": {
+            "governed_tma_tega_tmin_8_trains": simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(8, "pinn_mpc_tma_tega_tmin_ether_free_distillation_and_3dnand_alo_ald_ingan_mocvd_sil3_edge"),
+            "governed_tma_tega_tmin_32_trains": simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(32, "pinn_mpc_tma_tega_tmin_ether_free_distillation_and_3dnand_alo_ald_ingan_mocvd_sil3_edge"),
+            "raw_tma_tega_tmin_8_trains": simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(8, "raw_cloud_uncompensated_alkoxide_oxygen_tmin_channeling_and_pyrophoric_hydrolysis"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

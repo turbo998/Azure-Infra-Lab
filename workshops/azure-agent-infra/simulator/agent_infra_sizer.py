@@ -13015,6 +13015,67 @@ def simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox(
     }
 
 
+def simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(
+    tma_tega_tmin_trains: int = 8,
+    governance_mode: str = "pinn_mpc_tma_tega_tmin_ether_free_distillation_and_3dnand_alo_ald_ingan_mocvd_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Trimethylaluminum (6N TMA Al(CH3)3 >=99.9999%,
+    b.p. 127.1C, m.p. 15.3C, v.p. 8.4Torr @ 20C) & Triethylgallium (6N TEGa
+    Ga(C2H5)3 >=99.9999%, b.p. 142.6C) + Trimethylindium (6N TMIn In(CH3)3
+    >=99.9999%, Solid m.p. 88.4C, v.p. 1.78Torr @ 20C) 3D NAND High-k Blocking
+    Oxide (Al2O3 ALD EOT <=1.35nm, J_leak <=1.2e-8 A/cm^2) & InGaN/GaN Micro-LED
+    / InP EEL Low-Carbon Epitaxy (MOCVD [C] <=8.0e15 cm^-3) Ether-Free
+    Sesquichloride Dehalogenation & Adduct-Zone Fractional Vacuum Distillation
+    (Si/Zn/Mg/Fe <=0.3pptw, Alkoxide R2MOCH3 <=0.08ppmw), Solution-TMIn /
+    Porous-Carrier Sublimation Surface-Area Stabilization (Delta F_TMIn <=+/-0.15%)
+    & Parasitic Gas-Phase Pre-Reaction (TMA-NH3 / TMIn-NH3 Adduct Nanoparticle
+    <=0.01 particles/cm^2) PINN-MPC, Online 10kHz QCL-TDLAS (1210cm^-1 Al-C
+    Dimer Bridge / 772cm^-1 In-C Stretch / 1055cm^-1 M-OCH3 Alkoxide Impurity) +
+    1H/27Al-NMR + ICP-MS/MS Metrology & SEMI S2 / NFPA 30 / CGA P-18 / IEC 61511
+    SIL-3 Pyrophoric Liquid TMA/TEGa Air/Moisture Ignition (<0.2s Auto-Ignition)
+    & Runaway Hydrolysis Overpressure (>3.5 bar) Hard Interlock."""
+    trains = max(1, int(tma_tega_tmin_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_tma_tega_tmin_ether_free_distillation_and_3dnand_alo_ald_ingan_mocvd_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_tma_tega_tmin_pods = trains * 4
+
+    if governed:
+        electronic_6n_tma_tega_tmin_purity_and_3dnand_alo_eot_ingan_eqe_yield_gain_pct = 60.4
+        alkoxide_r2moch3_oxygen_and_tmin_channeling_wavelength_drift_reduction_pct = 84.3
+        semi_s2_nfpa30_cga_p18_sil3_tma_tega_pyrophoric_and_hydrolysis_lockout_latency_ms = 0.14
+        unmitigated_tma_tega_pyrophoric_autoignition_or_hydrolysis_overpressure_pct = 0.0
+        edge_qcl_tdlas_1210cm1_772cm1_1055cm1_epison_nmr_icp_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3dnand_alo_charge_trap_leakage_or_ingan_adduct_particle_pct = 0.0
+    else:
+        electronic_6n_tma_tega_tmin_purity_and_3dnand_alo_eot_ingan_eqe_yield_gain_pct = 12.1
+        alkoxide_r2moch3_oxygen_and_tmin_channeling_wavelength_drift_reduction_pct = 16.0
+        semi_s2_nfpa30_cga_p18_sil3_tma_tega_pyrophoric_and_hydrolysis_lockout_latency_ms = 425.0
+        unmitigated_tma_tega_pyrophoric_autoignition_or_hydrolysis_overpressure_pct = 1.7
+        edge_qcl_tdlas_1210cm1_772cm1_1055cm1_epison_nmr_icp_closed_loop_latency_ms = 240.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3dnand_alo_charge_trap_leakage_or_ingan_adduct_particle_pct = 5.7
+
+    return {
+        "tma_tega_tmin_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tma_tega_tmin_pods": active_tma_tega_tmin_pods,
+        "electronic_6n_tma_tega_tmin_purity_and_3dnand_alo_eot_ingan_eqe_yield_gain_pct": electronic_6n_tma_tega_tmin_purity_and_3dnand_alo_eot_ingan_eqe_yield_gain_pct,
+        "alkoxide_r2moch3_oxygen_and_tmin_channeling_wavelength_drift_reduction_pct": alkoxide_r2moch3_oxygen_and_tmin_channeling_wavelength_drift_reduction_pct,
+        "semi_s2_nfpa30_cga_p18_sil3_tma_tega_pyrophoric_and_hydrolysis_lockout_latency_ms": semi_s2_nfpa30_cga_p18_sil3_tma_tega_pyrophoric_and_hydrolysis_lockout_latency_ms,
+        "unmitigated_tma_tega_pyrophoric_autoignition_or_hydrolysis_overpressure_pct": unmitigated_tma_tega_pyrophoric_autoignition_or_hydrolysis_overpressure_pct,
+        "edge_qcl_tdlas_1210cm1_772cm1_1055cm1_epison_nmr_icp_closed_loop_latency_ms": edge_qcl_tdlas_1210cm1_772cm1_1055cm1_epison_nmr_icp_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3dnand_alo_charge_trap_leakage_or_ingan_adduct_particle_pct": uncompensated_3dnand_alo_charge_trap_leakage_or_ingan_adduct_particle_pct,
+        "tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

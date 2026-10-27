@@ -247,6 +247,7 @@ from agent_infra_sizer import (
     simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox,
     simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox,
     simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox,
+    simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5131,6 +5132,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pgan_acceptor_deactivation_or_beol_ru_void_delamination_pct"], 3.0)
         self.assertTrue(gov["cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_slo_met"])
         self.assertFalse(raw["cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_slo_met"])
+
+    def test_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(self) -> None:
+        gov = simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(
+            8, "pinn_mpc_tma_tega_tmin_ether_free_distillation_and_3dnand_alo_ald_ingan_mocvd_sil3_edge"
+        )
+        raw = simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(
+            8, "raw_cloud_uncompensated_alkoxide_oxygen_tmin_channeling_and_pyrophoric_hydrolysis"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_tma_tega_tmin_pods"], 32)
+        self.assertEqual(gov["electronic_6n_tma_tega_tmin_purity_and_3dnand_alo_eot_ingan_eqe_yield_gain_pct"], 60.4)
+        self.assertEqual(gov["alkoxide_r2moch3_oxygen_and_tmin_channeling_wavelength_drift_reduction_pct"], 84.3)
+        self.assertEqual(gov["semi_s2_nfpa30_cga_p18_sil3_tma_tega_pyrophoric_and_hydrolysis_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_tma_tega_pyrophoric_autoignition_or_hydrolysis_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_tma_tega_pyrophoric_autoignition_or_hydrolysis_overpressure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1210cm1_772cm1_1055cm1_epison_nmr_icp_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_3dnand_alo_charge_trap_leakage_or_ingan_adduct_particle_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_3dnand_alo_charge_trap_leakage_or_ingan_adduct_particle_pct"], 3.0)
+        self.assertTrue(gov["tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_slo_met"])
+        self.assertFalse(raw["tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_slo_met"])
 
 
 if __name__ == "__main__":
