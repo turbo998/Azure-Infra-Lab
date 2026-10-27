@@ -13771,6 +13771,67 @@ def simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(
     }
 
 
+def simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(
+    hfc_spacer_trains: int = 8,
+    governance_mode: str = "pinn_mpc_chf3_ch2f2_ch3f_extractive_distillation_and_gaa_spacer_quasi_ale_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Trifluoromethane & Difluoromethane (5N5 CHF3 >=99.9995%,
+    b.p. -82.1C, Ultra-Low CF4 <=0.30ppmv, C2HF5 <=0.20ppmv, CHClF2 <=0.15ppmv, HF <=0.10ppmv, H2O
+    <=0.20ppmv & 5N5 CH2F2 >=99.9995%, b.p. -51.7C, GWP100 = 675, Ultra-Low CH2ClF <=0.10ppmv, CH3F
+    <=0.20ppmv) + Electronic-Grade Fluoromethane (5N5 CH3F >=99.9995%, b.p. -78.4C, GWP100 = 116,
+    Ultra-Low Dimethyl Ether CH3OCH3 <=0.20ppmv, CH3Cl <=0.10ppmv, CH4 <=0.30ppmv, H2O <=0.20ppmv)
+    2nm GAA Gate-All-Around Si3N4 / SiBCN Low-k Gate Spacer Quasi-Atomic Layer Etch (Quasi-ALE
+    CH3F/CH2F2/O2 Selective Hydrofluorocarbon Polymer Si3N4:SiO2 >=55:1 & Si3N4:Si >=48:1 Zero
+    Silicon Recess <0.3nm) & FinFET/GAA STI / CESL Anisotropic Profile Control Catalytic Swarts
+    Hydrofluorination, Extractive Azeotropic Distillation (Breaking CHF3/CF4 & CH3F/DME Pairs) &
+    Molecular-Sieve Dechlorination PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (1152cm-1 CHF3 nu5 /
+    1090cm-1 CH2F2 nu9 / 1048cm-1 CH3F nu3 / 1102cm-1 CH3OCH3) + GC-PDHID/MS + In-Line HR-XRR /
+    TEM-OCD Metrology & SEMI S2 / SEMI C3 / NFPA 55 / ASHRAE 34 A2L / ISO 817 / IEC 61511 SIL-3
+    Flammable Hydrofluorocarbon CH3F/CH2F2 (CH3F LEL 3.2%, CH2F2 LEL 12.7%) Deflagration &
+    Pyrolysis COF2/HF Scrubbing Hard Interlock.
+    """
+    trains = max(1, int(hfc_spacer_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_chf3_ch2f2_ch3f_extractive_distillation_and_gaa_spacer_quasi_ale_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_hfc_spacer_pods = trains * 4
+
+    if governed:
+        electronic_5n5_chf3_ch2f2_ch3f_purity_and_gaa_spacer_ale_yield_gain_pct = 62.9
+        cf4_dme_chlorocarbon_impurity_and_gaa_si_recess_reduction_pct = 86.7
+        semi_s2_nfpa55_ashrae34_sil3_ch3f_ch2f2_lel_and_cof2_hf_lockout_latency_ms = 0.14
+        unmitigated_ch3f_ch2f2_deflagration_or_cof2_hf_pyrolysis_leak_pct = 0.0
+        edge_qcl_tdlas_1152cm1_1090cm1_1048cm1_gcpdhid_hrxrr_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct = 0.0
+    else:
+        electronic_5n5_chf3_ch2f2_ch3f_purity_and_gaa_spacer_ale_yield_gain_pct = 13.5
+        cf4_dme_chlorocarbon_impurity_and_gaa_si_recess_reduction_pct = 17.6
+        semi_s2_nfpa55_ashrae34_sil3_ch3f_ch2f2_lel_and_cof2_hf_lockout_latency_ms = 446.0
+        unmitigated_ch3f_ch2f2_deflagration_or_cof2_hf_pyrolysis_leak_pct = 1.6
+        edge_qcl_tdlas_1152cm1_1090cm1_1048cm1_gcpdhid_hrxrr_closed_loop_latency_ms = 259.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct = 6.5
+
+    return {
+        "hfc_spacer_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hfc_spacer_pods": active_hfc_spacer_pods,
+        "electronic_5n5_chf3_ch2f2_ch3f_purity_and_gaa_spacer_ale_yield_gain_pct": electronic_5n5_chf3_ch2f2_ch3f_purity_and_gaa_spacer_ale_yield_gain_pct,
+        "cf4_dme_chlorocarbon_impurity_and_gaa_si_recess_reduction_pct": cf4_dme_chlorocarbon_impurity_and_gaa_si_recess_reduction_pct,
+        "semi_s2_nfpa55_ashrae34_sil3_ch3f_ch2f2_lel_and_cof2_hf_lockout_latency_ms": semi_s2_nfpa55_ashrae34_sil3_ch3f_ch2f2_lel_and_cof2_hf_lockout_latency_ms,
+        "unmitigated_ch3f_ch2f2_deflagration_or_cof2_hf_pyrolysis_leak_pct": unmitigated_ch3f_ch2f2_deflagration_or_cof2_hf_pyrolysis_leak_pct,
+        "edge_qcl_tdlas_1152cm1_1090cm1_1048cm1_gcpdhid_hrxrr_closed_loop_latency_ms": edge_qcl_tdlas_1152cm1_1090cm1_1048cm1_gcpdhid_hrxrr_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct": uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct,
+        "chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

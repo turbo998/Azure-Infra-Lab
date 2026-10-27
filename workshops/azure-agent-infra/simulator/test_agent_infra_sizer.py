@@ -259,6 +259,7 @@ from agent_infra_sizer import (
     simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox,
     simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox,
     simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
+    simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5395,6 +5396,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct"], 3.0)
         self.assertTrue(gov["hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_slo_met"])
         self.assertFalse(raw["hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_slo_met"])
+
+    def test_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(self) -> None:
+        gov = simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(
+            8, "pinn_mpc_chf3_ch2f2_ch3f_extractive_distillation_and_gaa_spacer_quasi_ale_sil3_edge"
+        )
+        raw = simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(
+            8, "raw_cloud_uncompensated_chf3_cf4_ch3f_dme_impurity_and_gaa_si_recess"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_hfc_spacer_pods"], 32)
+        self.assertEqual(gov["electronic_5n5_chf3_ch2f2_ch3f_purity_and_gaa_spacer_ale_yield_gain_pct"], 62.9)
+        self.assertEqual(gov["cf4_dme_chlorocarbon_impurity_and_gaa_si_recess_reduction_pct"], 86.7)
+        self.assertEqual(gov["semi_s2_nfpa55_ashrae34_sil3_ch3f_ch2f2_lel_and_cof2_hf_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_ch3f_ch2f2_deflagration_or_cof2_hf_pyrolysis_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ch3f_ch2f2_deflagration_or_cof2_hf_pyrolysis_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1152cm1_1090cm1_1048cm1_gcpdhid_hrxrr_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct"], 3.0)
+        self.assertTrue(gov["chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_slo_met"])
+        self.assertFalse(raw["chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_slo_met"])
 
 
 if __name__ == "__main__":

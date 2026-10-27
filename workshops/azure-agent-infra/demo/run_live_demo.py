@@ -272,6 +272,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox,
     simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox,
     simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
+    simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1763,6 +1764,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_hfib_fno_8_trains": simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(8, "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge"),
             "governed_hfib_fno_32_trains": simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(32, "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge"),
             "raw_hfib_fno_8_trains": simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(8, "raw_cloud_uncompensated_hfib_pfib_impurity_uhar_channel_twist_and_fno_etch_damage"),
+        },
+        "demo_253_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch": {
+            "hfc_spacer_8_trains": simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(8, "pinn_mpc_chf3_ch2f2_ch3f_extractive_distillation_and_gaa_spacer_quasi_ale_sil3_edge"),
+            "hfc_spacer_32_trains": simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(32, "pinn_mpc_chf3_ch2f2_ch3f_extractive_distillation_and_gaa_spacer_quasi_ale_sil3_edge"),
+            "raw_hfc_spacer_8_trains": simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(8, "raw_cloud_uncompensated_chf3_cf4_ch3f_dme_impurity_and_gaa_si_recess"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
