@@ -241,6 +241,7 @@ from agent_infra_sizer import (
     simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox,
     simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox,
     simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox,
+    simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4999,6 +5000,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct"], 3.0)
         self.assertTrue(gov["carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_slo_met"])
         self.assertFalse(raw["carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_slo_met"])
+
+    def test_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox(self) -> None:
+        gov = simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox(
+            8, "pinn_mpc_hcds_vacuum_distillation_disproportionation_and_siloxane_hydrolysis_sil3_edge"
+        )
+        raw = simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox(
+            8, "raw_cloud_uncompensated_sicl4_polysilane_disproportionation_and_explosive_siloxane_hydrolysis"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_hcds_ald_pods"], 32)
+        self.assertEqual(gov["electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct"], 59.0)
+        self.assertEqual(gov["sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct"], 83.0)
+        self.assertEqual(gov["semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct"], 1.0)
+        self.assertEqual(gov["edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct"], 3.0)
+        self.assertTrue(gov["hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met"])
+        self.assertFalse(raw["hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met"])
 
 
 if __name__ == "__main__":

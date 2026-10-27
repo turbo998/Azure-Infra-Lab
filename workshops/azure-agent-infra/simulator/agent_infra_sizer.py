@@ -12672,6 +12672,61 @@ def simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_
     }
 
 
+def simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox(
+    hcds_ald_trains: int = 8,
+    governance_mode: str = "pinn_mpc_hcds_vacuum_distillation_disproportionation_and_siloxane_hydrolysis_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Hexachlorodisilane (6N HCDS Si2Cl6 >= 99.9999%) & Octachlorotrisilane
+    (OCTS Si3Cl8) Low-Temperature 3D NAND / 2nm GAA Atomic Layer Deposition (SiN / SiCN / SiO2 Spacer & Liner ALD at 350-450 C)
+    Vacuum Fractional Distillation (45-52 C at 15-25 Torr Preventing Thermal Disproportionation Si2Cl6 -> SiCl4 + [:SiCl2]n
+    Polysubchloride Polymer Fouling), Hexachlorodisiloxane (Cl3Si-O-SiCl3 HCDOS <= 0.5 ppmv) Suppression & Heated Ampoule/Bubbler
+    Vapor-Pressure Delivery PINN-MPC, Online 10 kHz High-Temperature Cell FTIR/QCL-TDLAS (1080 cm-1 Si-O-Si Siloxane, 2210 cm-1 Si-H
+    SiHCl3/Si2HCl5) + Raman (408 cm-1 Si-Si Stretch) + Piezoelectric Acoustic Concentration (Piezo-Sonic) Metrology & SEMI C3 /
+    NFPA 704 / CGA P-1 / IEC 61511 SIL-3 Moisture-Contact Shock-Sensitive Explosive Siloxane Hydrolysis Dry-Inert N2 Double-Block-and-Bleed
+    & Heated Line Condensation Lockout (Chapter 240, Cycle #235 — 235-Cycle & 235-Simulator Double Milestone!).
+    """
+    trains = max(2, min(int(hcds_ald_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_hcds_vacuum_distillation_disproportionation_and_siloxane_hydrolysis_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_hcds_ald_pods = trains * 4
+
+    if governed:
+        electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct = 59.0
+        sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct = 83.0
+        semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms = 0.14
+        unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct = 0.0
+        edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct = 0.0
+    else:
+        electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct = 11.4
+        sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct = 15.2
+        semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms = 410.0
+        unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct = 1.5
+        edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms = 230.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct = 5.1
+
+    return {
+        "hcds_ald_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hcds_ald_pods": active_hcds_ald_pods,
+        "electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct": electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct,
+        "sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct": sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct,
+        "semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms": semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms,
+        "unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct": unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct,
+        "edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms": edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct,
+        "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

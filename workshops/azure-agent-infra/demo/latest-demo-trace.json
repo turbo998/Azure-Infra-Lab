@@ -13488,6 +13488,53 @@
         "uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct": 5.0,
         "carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_slo_met": false
       }
+    ],
+    "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_profiles": [
+      {
+        "hcds_ald_trains": 8,
+        "governance_mode": "pinn_mpc_hcds_vacuum_distillation_disproportionation_and_siloxane_hydrolysis_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hcds_ald_pods": 32,
+        "electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct": 59.0,
+        "sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct": 83.0,
+        "semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms": 0.14,
+        "unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct": 0.0,
+        "edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": 0.0,
+        "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": true
+      },
+      {
+        "hcds_ald_trains": 32,
+        "governance_mode": "pinn_mpc_hcds_vacuum_distillation_disproportionation_and_siloxane_hydrolysis_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hcds_ald_pods": 128,
+        "electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct": 59.0,
+        "sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct": 83.0,
+        "semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms": 0.14,
+        "unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct": 0.0,
+        "edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": 0.0,
+        "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": true
+      },
+      {
+        "hcds_ald_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_sicl4_polysilane_disproportionation_and_explosive_siloxane_hydrolysis",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hcds_ald_pods": 32,
+        "electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct": 11.4,
+        "sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct": 15.2,
+        "semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms": 410.0,
+        "unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct": 1.5,
+        "edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms": 230.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": 5.1,
+        "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -25350,5 +25397,52 @@
       "carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_slo_met": false
     }
   },
-  "trace_sha256": "e5e0a630f726c66ad3b333992b13ad6a3234185f62810320518d0d3ed151a2d1"
+  "demo_235_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox": {
+    "governed_hcds_ald_8_trains": {
+      "hcds_ald_trains": 8,
+      "governance_mode": "pinn_mpc_hcds_vacuum_distillation_disproportionation_and_siloxane_hydrolysis_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_hcds_ald_pods": 32,
+      "electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct": 59.0,
+      "sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct": 83.0,
+      "semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms": 0.14,
+      "unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct": 0.0,
+      "edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": 0.0,
+      "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": true
+    },
+    "governed_hcds_ald_32_trains": {
+      "hcds_ald_trains": 32,
+      "governance_mode": "pinn_mpc_hcds_vacuum_distillation_disproportionation_and_siloxane_hydrolysis_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_hcds_ald_pods": 128,
+      "electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct": 59.0,
+      "sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct": 83.0,
+      "semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms": 0.14,
+      "unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct": 0.0,
+      "edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": 0.0,
+      "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": true
+    },
+    "raw_hcds_ald_8_trains": {
+      "hcds_ald_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_sicl4_polysilane_disproportionation_and_explosive_siloxane_hydrolysis",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_hcds_ald_pods": 32,
+      "electronic_6n_hcds_purity_and_low_temp_ald_step_coverage_yield_gain_pct": 11.4,
+      "sicl4_polysilane_disproportionation_and_siloxane_hcdos_defect_reduction_pct": 15.2,
+      "semi_c3_nfpa704_sil3_explosive_siloxane_hydrolysis_and_line_condensation_lockout_latency_ms": 410.0,
+      "unmitigated_explosive_siloxane_hydrolysis_or_polysilane_reboiler_plugging_pct": 1.5,
+      "edge_ftir_qcl_1080cm1_2210cm1_raman_408cm1_piezo_sonic_closed_loop_latency_ms": 230.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": 5.1,
+      "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": false
+    }
+  },
+  "trace_sha256": "ab4f88bd8be42cf0d30e7aa8cb818e8858d6bd2e183cd32dca4a604057fc1046"
 }
