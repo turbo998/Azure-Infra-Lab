@@ -14144,6 +14144,71 @@ def simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbo
     }
 
 
+def simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(
+    hbr_cos_so2_trains: int = 8,
+    governance_mode: str = "pinn_mpc_hbr_cos_so2_debromination_and_gaa_dummy_gate_acl_har_etch_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Hydrogen Bromide (5N5 HBr >=99.9995%, b.p. -66.8C, TLV-C
+    2ppmv, Ultra-Low Free Bromine Br2 <=0.20ppmv, HCl <=0.30ppmv, Cl2 <=0.10ppmv, H2O <=0.20ppmv, CO2
+    <=0.20ppmv, Fe/Ni/Cr <=0.05ppbv), Electronic-Grade Carbonyl Sulfide (5N5 COS >=99.9995%, b.p.
+    -50.2C, TLV-TWA 5ppmv, Ultra-Low H2S <=0.15ppmv, CS2 <=0.15ppmv, CO2 <=0.25ppmv, SO2 <=0.10ppmv,
+    H2O <=0.20ppmv) & Electronic-Grade Sulfur Dioxide (5N5 SO2 >=99.9995%, b.p. -10.0C, TLV-STEL
+    0.25ppmv, Ultra-Low SO3/H2SO4 <=0.10ppmv, H2O <=0.20ppmv) 2nm GAA Nanosheet Poly-Si / SiGe Dummy
+    Gate High-Selectivity Anisotropic ICP-RIE (HBr/O2/He Forming Dense SiBrxOy Sidewall Passivation with
+    Si:SiO2 >=180:1 Zero Gate-Oxide Punch-Through & Verticality 89.8 +/- 0.15 deg) & 300+ Layer 3D NAND
+    Amorphous Carbon Hardmask (ACL / SOC) Ultra-High-Aspect-Ratio (HAR >95:1) Etch (COS/SO2/O2 Forming
+    C-S-O Sulfur-Rich Sidewall Polymer Suppressing Lateral Undercut & Line-Edge Roughness LER <0.85nm)
+    Direct H2 + Br2 Platinized-Silica Catalytic Synthesis, Activated-Carbon/Copper De-Bromination,
+    Catalytic CO + S Synthesis & Hydrolysis-Resistant Cryogenic Rectification PINN-MPC, Online 10 kHz
+    QCL-TDLAS / UV-Vis / FTIR (2558cm-1 HBr Fundamental / 2062cm-1 COS nu3 / 1362cm-1 SO2 nu3 / 420nm
+    Br2 Continuum / 2349cm-1 CO2) + GC-SCD/TCD / ICP-MS + 502.6nm Br* / 308.9nm OH* / 516.5nm C2*
+    Swan-Band OES Metrology & SEMI S2 / SEMI C3 / NFPA 55 / OSHA PSM / IEC 61511 SIL-3 Corrosive
+    Hydrogen Bromide (HBr Wet-Acid Pitting), Neurotoxic/Flammable Carbonyl Sulfide Hydrolysis (COS +
+    H2O -> CO2 + H2S, H2S TLV 1ppmv) & SO2 Alkaline-Oxidative Scrubbing Hard Interlock (Cycle #259 -
+    260-Blueprint Milestone!).
+    """
+    trains = max(1, int(hbr_cos_so2_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_hbr_cos_so2_debromination_and_gaa_dummy_gate_acl_har_etch_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_hbr_cos_so2_pods = trains * 4
+
+    if governed:
+        electronic_5n5_hbr_cos_so2_purity_and_gaa_gate_acl_etch_yield_gain_pct = 64.1
+        free_br2_h2s_impurity_gate_oxide_punchthrough_and_acl_bowing_reduction_pct = 87.8
+        semi_s2_nfpa55_osha_psm_sil3_hbr_cos_h2s_so2_scrubbing_lockout_latency_ms = 0.13
+        unmitigated_hbr_corrosion_cos_h2s_neurotoxic_hydrolysis_or_so2_leak_pct = 0.0
+        edge_qcl_tdlas_2558cm1_2062cm1_1362cm1_uvvis_420nm_gc_scd_oes_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct = 0.0
+    else:
+        electronic_5n5_hbr_cos_so2_purity_and_gaa_gate_acl_etch_yield_gain_pct = 14.1
+        free_br2_h2s_impurity_gate_oxide_punchthrough_and_acl_bowing_reduction_pct = 18.4
+        semi_s2_nfpa55_osha_psm_sil3_hbr_cos_h2s_so2_scrubbing_lockout_latency_ms = 458.0
+        unmitigated_hbr_corrosion_cos_h2s_neurotoxic_hydrolysis_or_so2_leak_pct = 1.6
+        edge_qcl_tdlas_2558cm1_2062cm1_1362cm1_uvvis_420nm_gc_scd_oes_latency_ms = 267.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct = 6.2
+
+    return {
+        "hbr_cos_so2_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hbr_cos_so2_pods": active_hbr_cos_so2_pods,
+        "electronic_5n5_hbr_cos_so2_purity_and_gaa_gate_acl_etch_yield_gain_pct": electronic_5n5_hbr_cos_so2_purity_and_gaa_gate_acl_etch_yield_gain_pct,
+        "free_br2_h2s_impurity_gate_oxide_punchthrough_and_acl_bowing_reduction_pct": free_br2_h2s_impurity_gate_oxide_punchthrough_and_acl_bowing_reduction_pct,
+        "semi_s2_nfpa55_osha_psm_sil3_hbr_cos_h2s_so2_scrubbing_lockout_latency_ms": semi_s2_nfpa55_osha_psm_sil3_hbr_cos_h2s_so2_scrubbing_lockout_latency_ms,
+        "unmitigated_hbr_corrosion_cos_h2s_neurotoxic_hydrolysis_or_so2_leak_pct": unmitigated_hbr_corrosion_cos_h2s_neurotoxic_hydrolysis_or_so2_leak_pct,
+        "edge_qcl_tdlas_2558cm1_2062cm1_1362cm1_uvvis_420nm_gc_scd_oes_latency_ms": edge_qcl_tdlas_2558cm1_2062cm1_1362cm1_uvvis_420nm_gc_scd_oes_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct": uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct,
+        "hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

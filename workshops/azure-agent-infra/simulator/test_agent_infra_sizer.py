@@ -265,6 +265,7 @@ from agent_infra_sizer import (
     simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox,
     simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox,
     simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
+    simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5527,6 +5528,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_2nm_gaa_usj_tail_channeling_or_sige_b_cluster_deactivation_pct"], 3.0)
         self.assertTrue(gov["b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_slo_met"])
         self.assertFalse(raw["b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_slo_met"])
+
+    def test_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(self) -> None:
+        gov = simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(
+            8, "pinn_mpc_hbr_cos_so2_debromination_and_gaa_dummy_gate_acl_har_etch_sil3_edge"
+        )
+        raw = simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(
+            8, "raw_cloud_uncompensated_hbr_br2_gate_punchthrough_and_cos_acl_undercut"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_hbr_cos_so2_pods"], 32)
+        self.assertEqual(gov["electronic_5n5_hbr_cos_so2_purity_and_gaa_gate_acl_etch_yield_gain_pct"], 64.1)
+        self.assertEqual(gov["free_br2_h2s_impurity_gate_oxide_punchthrough_and_acl_bowing_reduction_pct"], 87.8)
+        self.assertEqual(gov["semi_s2_nfpa55_osha_psm_sil3_hbr_cos_h2s_so2_scrubbing_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_hbr_corrosion_cos_h2s_neurotoxic_hydrolysis_or_so2_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hbr_corrosion_cos_h2s_neurotoxic_hydrolysis_or_so2_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2558cm1_2062cm1_1362cm1_uvvis_420nm_gc_scd_oes_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct"], 3.0)
+        self.assertTrue(gov["hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_slo_met"])
+        self.assertFalse(raw["hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_slo_met"])
 
 
 if __name__ == "__main__":

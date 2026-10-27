@@ -278,6 +278,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox,
     simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox,
     simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
+    simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1799,6 +1800,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "b2h6_gef4_pf3_8_trains": simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox(8, "pinn_mpc_b2h6_gef4_pf3_cold_chain_sap_delivery_and_usj_pai_sige_boron_sil3_edge"),
             "b2h6_gef4_pf3_32_trains": simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox(32, "pinn_mpc_b2h6_gef4_pf3_cold_chain_sap_delivery_and_usj_pai_sige_boron_sil3_edge"),
             "raw_b2h6_gef4_pf3_8_trains": simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox(8, "raw_cloud_uncompensated_b2h6_polymerization_usj_channeling_and_sige_boron_clustering"),
+        },
+        "demo_259_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch": {
+            "hbr_cos_so2_8_trains": simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(8, "pinn_mpc_hbr_cos_so2_debromination_and_gaa_dummy_gate_acl_har_etch_sil3_edge"),
+            "hbr_cos_so2_32_trains": simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(32, "pinn_mpc_hbr_cos_so2_debromination_and_gaa_dummy_gate_acl_har_etch_sil3_edge"),
+            "raw_hbr_cos_so2_8_trains": simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(8, "raw_cloud_uncompensated_hbr_br2_gate_punchthrough_and_cos_acl_undercut"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
