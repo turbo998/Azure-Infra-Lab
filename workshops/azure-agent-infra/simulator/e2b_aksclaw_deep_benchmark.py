@@ -246,6 +246,7 @@ from agent_infra_sizer import (
     simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
     simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox,
     simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox,
+    simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1881,6 +1882,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox(8, "raw_cloud_uncompensated_no2_pulmonary_toxin_breakthrough_and_adiabatic_decomposition"),
     ]
 
+    carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_profiles = [
+        simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox(8, "pinn_mpc_cos_cryogenic_distillation_disproportionation_and_hydrolysis_sil3_edge"),
+        simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox(32, "pinn_mpc_cos_cryogenic_distillation_disproportionation_and_hydrolysis_sil3_edge"),
+        simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox(8, "raw_cloud_uncompensated_h2s_co2_hydrolysis_cs2_disproportionation_and_liquid_full_cylinder"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2114,6 +2121,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_profiles": platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_profiles,
         "rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_profiles": rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_profiles,
         "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_profiles": nitric_oxide_cryogenic_distillation_and_no2_disproportionation_profiles,
+        "carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_profiles": carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_profiles,
     }
 
 

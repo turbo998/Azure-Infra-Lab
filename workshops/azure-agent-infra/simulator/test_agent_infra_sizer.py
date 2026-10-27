@@ -240,6 +240,7 @@ from agent_infra_sizer import (
     simulate_platinum195m_auger_cisplatin_and_dysprosium166_holmium166_prit_theranostics_sil3_sandbox,
     simulate_rhodium105_tetrathioether_and_gold199_rgdfk_glyconanoparticle_theranostics_sil3_sandbox,
     simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox,
+    simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -4977,6 +4978,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_termolecular_no_oxidation_or_sieve_channeling_drift_pct"], 3.0)
         self.assertTrue(gov["nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met"])
         self.assertFalse(raw["nitric_oxide_cryogenic_distillation_and_no2_disproportionation_slo_met"])
+
+    def test_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox(self) -> None:
+        gov = simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox(
+            8, "pinn_mpc_cos_cryogenic_distillation_disproportionation_and_hydrolysis_sil3_edge"
+        )
+        raw = simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox(
+            8, "raw_cloud_uncompensated_h2s_co2_hydrolysis_cs2_disproportionation_and_liquid_full_cylinder"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_cos_har_pods"], 32)
+        self.assertEqual(gov["electronic_5n5_cos_purity_and_har_etch_selectivity_yield_gain_pct"], 58.8)
+        self.assertEqual(gov["h2s_co2_hydrolysis_and_cs2_disproportionation_defect_reduction_pct"], 82.8)
+        self.assertEqual(gov["semi_c3_nfpa55_sil3_h2s_cos_scrubber_and_liquid_full_cylinder_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_h2s_cos_toxic_release_or_liquid_full_cylinder_rupture_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2s_cos_toxic_release_or_liquid_full_cylinder_rupture_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_4850nm_4260nm_6510nm_crds_h2o_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct"], 3.0)
+        self.assertTrue(gov["carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_slo_met"])
+        self.assertFalse(raw["carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_slo_met"])
 
 
 if __name__ == "__main__":

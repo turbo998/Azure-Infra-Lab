@@ -12620,6 +12620,58 @@ def simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3
     }
 
 
+def simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox(
+    cos_har_trains: int = 8,
+    governance_mode: str = "pinn_mpc_cos_cryogenic_distillation_disproportionation_and_hydrolysis_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Carbonyl Sulfide (5N5 COS >= 99.9995% for 3D NAND/DRAM HAR Contact Etching)
+    Catalytic CO+S Synthesis, Disproportionation Suppression (2COS <-> CO2 + CS2), Cryogenic Fractional Distillation (222.95 K) &
+    Trace Moisture Hydrolysis Prevention (COS + H2O <-> CO2 + H2S) PINN-MPC, In-Situ 10kHz Mid-IR QCL-TDLAS (4.85 um COS / 4.26 um CO2 /
+    6.51 um CS2 / 1.57 um H2S) & CRDS (1.39 um H2O) Metrology & SEMI C3 / NFPA 55 / ISO 11114-1 / IEC 61511 SIL-3 Neurotoxic/Flammable
+    COS/H2S Release, Liquid-Full Cylinder Thermal Overpressure & Alkaline Amine-Peroxide Scrubber Interlock (Chapter 239, Cycle #234 — 235-Blueprint Milestone!).
+    """
+    trains = max(2, min(int(cos_har_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_cos_cryogenic_distillation_disproportionation_and_hydrolysis_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_cos_har_pods = trains * 4
+
+    if governed:
+        electronic_5n5_cos_purity_and_har_etch_selectivity_yield_gain_pct = 58.8
+        h2s_co2_hydrolysis_and_cs2_disproportionation_defect_reduction_pct = 82.8
+        semi_c3_nfpa55_sil3_h2s_cos_scrubber_and_liquid_full_cylinder_lockout_latency_ms = 0.14
+        unmitigated_h2s_cos_toxic_release_or_liquid_full_cylinder_rupture_pct = 0.0
+        edge_qcl_tdlas_4850nm_4260nm_6510nm_crds_h2o_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct = 0.0
+    else:
+        electronic_5n5_cos_purity_and_har_etch_selectivity_yield_gain_pct = 11.3
+        h2s_co2_hydrolysis_and_cs2_disproportionation_defect_reduction_pct = 15.1
+        semi_c3_nfpa55_sil3_h2s_cos_scrubber_and_liquid_full_cylinder_lockout_latency_ms = 408.0
+        unmitigated_h2s_cos_toxic_release_or_liquid_full_cylinder_rupture_pct = 1.5
+        edge_qcl_tdlas_4850nm_4260nm_6510nm_crds_h2o_closed_loop_latency_ms = 228.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct = 5.0
+
+    return {
+        "cos_har_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cos_har_pods": active_cos_har_pods,
+        "electronic_5n5_cos_purity_and_har_etch_selectivity_yield_gain_pct": electronic_5n5_cos_purity_and_har_etch_selectivity_yield_gain_pct,
+        "h2s_co2_hydrolysis_and_cs2_disproportionation_defect_reduction_pct": h2s_co2_hydrolysis_and_cs2_disproportionation_defect_reduction_pct,
+        "semi_c3_nfpa55_sil3_h2s_cos_scrubber_and_liquid_full_cylinder_lockout_latency_ms": semi_c3_nfpa55_sil3_h2s_cos_scrubber_and_liquid_full_cylinder_lockout_latency_ms,
+        "unmitigated_h2s_cos_toxic_release_or_liquid_full_cylinder_rupture_pct": unmitigated_h2s_cos_toxic_release_or_liquid_full_cylinder_rupture_pct,
+        "edge_qcl_tdlas_4850nm_4260nm_6510nm_crds_h2o_closed_loop_latency_ms": edge_qcl_tdlas_4850nm_4260nm_6510nm_crds_h2o_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct": uncompensated_cos_disproportionation_or_h2s_azeotrope_slip_pct,
+        "carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
