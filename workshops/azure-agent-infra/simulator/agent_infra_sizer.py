@@ -13645,6 +13645,69 @@ def simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(
     }
 
 
+def simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(
+    hfpo_cos_trains: int = 8,
+    governance_mode: str = "pinn_mpc_hfpo_tfaa_cos_epoxidation_rectification_and_3dnand_lowgwp_acl_etch_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #251 (260-Test Milestone!): Autonomous Electronic-Grade Hexafluoropropylene Oxide (5N HFPO
+    C3F6O >=99.999%, b.p. -27.4C, GWP100 <1.0, Ultra-Low Acyl Fluoride Isomer CF3CF2COF/CF3COF
+    <=0.20ppmv, C3F6 <=0.30ppmv, HF <=0.15ppmv, H2O <=0.20ppmv) & Trifluoroacetyl Fluoride /
+    Trifluoroacetic Anhydride (5N TFAF CF3COF & 5N TFAA (CF3CO)2O >=99.999%, GWP100 <1.0) +
+    Electronic-Grade Carbonyl Sulfide (5N5 COS O=C=S >=99.9995%, b.p. -50.2C, Ultra-Low H2S
+    <=0.10ppmv, CS2 <=0.20ppmv, CO2 <=0.30ppmv, SO2 <=0.10ppmv) 1000-Layer 3D NAND Ultra-Low-GWP
+    (GWP <1) Difluorocarbene (CF2:) Selective Oxide/Nitride Cryogenic Etch, EUV Amorphous Carbon
+    Hardmask (ACL Aspect Ratio 75:1, Zero Bowing <0.6nm Sidewall Passivation via COS + O2 C-S-O
+    Polymer Skin) & 2nm GAA Self-Aligned Contact (SAC SiO2/Si3N4 Corner Selectivity >=42:1)
+    Liquid-Phase Catalytic Epoxidation, Lewis-Acid-Free Passivated Rectification & Extractive
+    Desulfurization PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (1552cm-1 HFPO Epoxide Ring / 1885cm-1
+    CF3COF Acyl Fluoride / 2062cm-1 COS nu3 / 1361cm-1 SO2) + GC-SCD + OCD Metrology & SEMI S2 /
+    SEMI C3 / NFPA 55 / OSHA PEL / IEC 61511 SIL-3 Exothermic HFPO Epoxide Ring-Opening
+    Isomerization Runaway (C3F6O -> CF3CF2COF -> CF3COF + CF2:, Delta H = -108 kJ/mol) &
+    Toxic/Flammable COS/H2S (COS IDLH 100ppmv, H2S IDLH 100ppmv, LEL 12.0%) Scrubbing Hard Interlock.
+    """
+    trains = max(1, int(hfpo_cos_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_hfpo_tfaa_cos_epoxidation_rectification_and_3dnand_lowgwp_acl_etch_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_hfpo_cos_pods = trains * 4
+
+    if governed:
+        electronic_5n_hfpo_tfaf_5n5_cos_purity_and_3dnand_acl_sac_yield_gain_pct = 62.5
+        acyl_fluoride_isomer_acl_bowing_and_sac_corner_erosion_reduction_pct = 86.3
+        semi_s2_nfpa55_sil3_hfpo_ring_opening_and_toxic_cos_h2s_lockout_latency_ms = 0.14
+        unmitigated_hfpo_epoxide_isomerization_runaway_or_cos_h2s_leak_pct = 0.0
+        edge_qcl_tdlas_1552cm1_1885cm1_2062cm1_gcscd_ocd_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_acl_hardmask_bowing_or_3dnand_etch_stop_defect_pct = 0.0
+    else:
+        electronic_5n_hfpo_tfaf_5n5_cos_purity_and_3dnand_acl_sac_yield_gain_pct = 13.3
+        acyl_fluoride_isomer_acl_bowing_and_sac_corner_erosion_reduction_pct = 17.4
+        semi_s2_nfpa55_sil3_hfpo_ring_opening_and_toxic_cos_h2s_lockout_latency_ms = 450.0
+        unmitigated_hfpo_epoxide_isomerization_runaway_or_cos_h2s_leak_pct = 1.6
+        edge_qcl_tdlas_1552cm1_1885cm1_2062cm1_gcscd_ocd_closed_loop_latency_ms = 260.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_acl_hardmask_bowing_or_3dnand_etch_stop_defect_pct = 6.5
+
+    return {
+        "hfpo_cos_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hfpo_cos_pods": active_hfpo_cos_pods,
+        "electronic_5n_hfpo_tfaf_5n5_cos_purity_and_3dnand_acl_sac_yield_gain_pct": electronic_5n_hfpo_tfaf_5n5_cos_purity_and_3dnand_acl_sac_yield_gain_pct,
+        "acyl_fluoride_isomer_acl_bowing_and_sac_corner_erosion_reduction_pct": acyl_fluoride_isomer_acl_bowing_and_sac_corner_erosion_reduction_pct,
+        "semi_s2_nfpa55_sil3_hfpo_ring_opening_and_toxic_cos_h2s_lockout_latency_ms": semi_s2_nfpa55_sil3_hfpo_ring_opening_and_toxic_cos_h2s_lockout_latency_ms,
+        "unmitigated_hfpo_epoxide_isomerization_runaway_or_cos_h2s_leak_pct": unmitigated_hfpo_epoxide_isomerization_runaway_or_cos_h2s_leak_pct,
+        "edge_qcl_tdlas_1552cm1_1885cm1_2062cm1_gcscd_ocd_closed_loop_latency_ms": edge_qcl_tdlas_1552cm1_1885cm1_2062cm1_gcscd_ocd_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_acl_hardmask_bowing_or_3dnand_etch_stop_defect_pct": uncompensated_acl_hardmask_bowing_or_3dnand_etch_stop_defect_pct,
+        "hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

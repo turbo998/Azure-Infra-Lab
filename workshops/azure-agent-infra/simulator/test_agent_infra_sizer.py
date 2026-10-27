@@ -257,6 +257,7 @@ from agent_infra_sizer import (
     simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox,
     simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox,
     simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox,
+    simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5351,6 +5352,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct"], 3.0)
         self.assertTrue(gov["n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met"])
         self.assertFalse(raw["n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met"])
+
+    def test_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(self) -> None:
+        gov = simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(
+            8, "pinn_mpc_hfpo_tfaa_cos_epoxidation_rectification_and_3dnand_lowgwp_acl_etch_sil3_edge"
+        )
+        raw = simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(
+            8, "raw_cloud_uncompensated_hfpo_acyl_fluoride_isomerization_acl_bowing_and_cos_hydrolysis"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_hfpo_cos_pods"], 32)
+        self.assertEqual(gov["electronic_5n_hfpo_tfaf_5n5_cos_purity_and_3dnand_acl_sac_yield_gain_pct"], 62.5)
+        self.assertEqual(gov["acyl_fluoride_isomer_acl_bowing_and_sac_corner_erosion_reduction_pct"], 86.3)
+        self.assertEqual(gov["semi_s2_nfpa55_sil3_hfpo_ring_opening_and_toxic_cos_h2s_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_hfpo_epoxide_isomerization_runaway_or_cos_h2s_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hfpo_epoxide_isomerization_runaway_or_cos_h2s_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1552cm1_1885cm1_2062cm1_gcscd_ocd_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_acl_hardmask_bowing_or_3dnand_etch_stop_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_acl_hardmask_bowing_or_3dnand_etch_stop_defect_pct"], 3.0)
+        self.assertTrue(gov["hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_slo_met"])
+        self.assertFalse(raw["hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_slo_met"])
 
 
 if __name__ == "__main__":
