@@ -14209,6 +14209,70 @@ def simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(
     }
 
 
+def simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(
+    sih4_si3h8_si5h12_trains: int = 8,
+    governance_mode: str = "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Monosilane (7N SiH4 >=99.99999%, b.p. -111.9C, Spontaneously
+    Pyrophoric in Air >=1.4%, TLV-TWA 5ppmv, Ultra-Low Chlorosilanes SiH3Cl/SiH2Cl2 <=0.05ppbv,
+    Disiloxane H3SiOSiH3 <=0.10ppbv, B2H6/PH3/AsH3 <=0.01ppbv, CH4/C2H6 <=0.05ppmv, H2O <=0.05ppmv),
+    Electronic-Grade Trisilane (5N5 Si3H8 >=99.9995%, Silcore, b.p. +52.9C, m.p. -117.4C, Pyrophoric
+    Liquid Precursor, Tetrasilane Si4H10 <=5.0ppmv, Siloxanes <=0.20ppmv, Cl- <=0.10ppmv) &
+    Electronic-Grade Neopentasilane (5N Si5H12 >=99.999%, Branched Si(SiH3)4, b.p. +133C, Zero-Incubation
+    Seedless Gap-Fill) 2nm GAA Nanosheet Ultra-Low-Temperature (<420C) Selective Tensile n+ Si:P / SiCP
+    Source/Drain Epitaxy (Substitutional Phosphorus ND >3.5e21 cm-3, Contact Resistivity rho_c <0.75e-9
+    Ohm*cm2, Suppressing Nanosheet Thermal Relaxation) & 300+ Layer 3D NAND High-Mobility Poly-Si
+    Macaroni Channel Hole (HAR >100:1, Seam-Void-Free Seedless Gap-Fill & Grain Size >180nm after Excimer
+    Laser Annealing) Catalytic Redistribution / Fractional Vacuum Distillation & Gas-Phase Polysilane
+    (SixHy Yellow-Powder) Nucleation-Suppression PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (2189cm-1 SiH4
+    nu3 / 2155cm-1 Si3H8 Si-H / 1107cm-1 Si-O-Si Disiloxane / 845cm-1 SiH2 Bending) + GC-MS/PDD / ICP-MS
+    + In-Situ Spectroscopic Ellipsometry / Laser Light Scattering (LLS) Metrology & SEMI S2 / SEMI C3 /
+    NFPA 55 / NFPA 318 / OSHA PSM / IEC 61511 SIL-3 Pyrophoric Silane/Trisilane Delayed-Ignition
+    Overpressure Detonation & Foreline SixHy Yellow-Powder Exhaust Autoignition Hard Interlock (Cycle #260
+    - 260-Cycle & 260-Simulator Double Milestone!).
+    """
+    trains = max(1, int(sih4_si3h8_si5h12_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_sih4_si3h8_si5h12_pods = trains * 4
+
+    if governed:
+        electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct = 64.3
+        disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct = 88.0
+        semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms = 0.13
+        unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct = 0.0
+        edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct = 0.0
+    else:
+        electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct = 14.2
+        disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct = 18.6
+        semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms = 460.0
+        unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct = 1.6
+        edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms = 268.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct = 6.3
+
+    return {
+        "sih4_si3h8_si5h12_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_sih4_si3h8_si5h12_pods": active_sih4_si3h8_si5h12_pods,
+        "electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct": electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct,
+        "disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct": disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct,
+        "semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms": semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms,
+        "unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct": unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct,
+        "edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms": edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct,
+        "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

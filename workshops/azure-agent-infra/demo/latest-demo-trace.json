@@ -14663,6 +14663,53 @@
         "uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct": 6.2,
         "hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_slo_met": false
       }
+    ],
+    "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_profiles": [
+      {
+        "sih4_si3h8_si5h12_trains": 8,
+        "governance_mode": "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_sih4_si3h8_si5h12_pods": 32,
+        "electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct": 64.3,
+        "disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct": 88.0,
+        "semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms": 0.13,
+        "unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct": 0.0,
+        "edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": 0.0,
+        "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": true
+      },
+      {
+        "sih4_si3h8_si5h12_trains": 32,
+        "governance_mode": "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_sih4_si3h8_si5h12_pods": 128,
+        "electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct": 64.3,
+        "disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct": 88.0,
+        "semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms": 0.13,
+        "unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct": 0.0,
+        "edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": 0.0,
+        "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": true
+      },
+      {
+        "sih4_si3h8_si5h12_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_sih4_disiloxane_epi_nodule_and_sixhy_powder_nucleation",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_sih4_si3h8_si5h12_pods": 32,
+        "electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct": 14.2,
+        "disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct": 18.6,
+        "semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms": 460.0,
+        "unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct": 1.6,
+        "edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms": 268.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": 6.3,
+        "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -27700,5 +27747,52 @@
       "hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_slo_met": false
     }
   },
-  "trace_sha256": "c43cac3e60e9d7a94a2a63bd9e70edfb36f88512167e8ed707d0eac5ee44784d"
+  "demo_260_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel": {
+    "sih4_si3h8_si5h12_8_trains": {
+      "sih4_si3h8_si5h12_trains": 8,
+      "governance_mode": "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_sih4_si3h8_si5h12_pods": 32,
+      "electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct": 64.3,
+      "disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct": 88.0,
+      "semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms": 0.13,
+      "unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct": 0.0,
+      "edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": 0.0,
+      "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": true
+    },
+    "sih4_si3h8_si5h12_32_trains": {
+      "sih4_si3h8_si5h12_trains": 32,
+      "governance_mode": "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_sih4_si3h8_si5h12_pods": 128,
+      "electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct": 64.3,
+      "disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct": 88.0,
+      "semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms": 0.13,
+      "unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct": 0.0,
+      "edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": 0.0,
+      "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": true
+    },
+    "raw_sih4_si3h8_si5h12_8_trains": {
+      "sih4_si3h8_si5h12_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_sih4_disiloxane_epi_nodule_and_sixhy_powder_nucleation",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_sih4_si3h8_si5h12_pods": 32,
+      "electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct": 14.2,
+      "disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct": 18.6,
+      "semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms": 460.0,
+      "unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct": 1.6,
+      "edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms": 268.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": 6.3,
+      "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": false
+    }
+  },
+  "trace_sha256": "74b6b8c849d15ab837c40c64d4deb15469fe341088d55c100538d92dc6509bb8"
 }

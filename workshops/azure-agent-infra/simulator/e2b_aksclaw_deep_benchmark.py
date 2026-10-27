@@ -272,6 +272,7 @@ from agent_infra_sizer import (
     simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox,
     simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
     simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
+    simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2063,6 +2064,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox(8, "raw_cloud_uncompensated_hbr_br2_gate_punchthrough_and_cos_acl_undercut"),
     ]
 
+    sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_profiles = [
+        simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(8, "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge"),
+        simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(32, "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge"),
+        simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(8, "raw_cloud_uncompensated_sih4_disiloxane_epi_nodule_and_sixhy_powder_nucleation"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2322,6 +2329,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_profiles": bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_profiles,
         "b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_profiles": b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_profiles,
         "hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_profiles": hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_profiles,
+        "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_profiles": sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_profiles,
     }
 
 

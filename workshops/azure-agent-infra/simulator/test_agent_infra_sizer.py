@@ -266,6 +266,7 @@ from agent_infra_sizer import (
     simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox,
     simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
     simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
+    simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5549,6 +5550,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_2nm_gaa_gate_footing_or_3d_nand_acl_hardmask_undercut_pct"], 3.0)
         self.assertTrue(gov["hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_slo_met"])
         self.assertFalse(raw["hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_slo_met"])
+
+    def test_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(self) -> None:
+        gov = simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(
+            8, "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge"
+        )
+        raw = simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(
+            8, "raw_cloud_uncompensated_sih4_disiloxane_epi_nodule_and_sixhy_powder_nucleation"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_sih4_si3h8_si5h12_pods"], 32)
+        self.assertEqual(gov["electronic_7n_sih4_5n5_si3h8_5n_si5h12_purity_and_gaa_3dnand_yield_gain_pct"], 64.3)
+        self.assertEqual(gov["disiloxane_chlorosilane_impurity_sixhy_powder_and_channel_seam_void_reduction_pct"], 88.0)
+        self.assertEqual(gov["semi_s2_nfpa55_nfpa318_osha_psm_sil3_pyrophoric_silane_sixhy_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_sih4_si3h8_detonation_or_foreline_sixhy_autoignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2189cm1_2155cm1_1107cm1_845cm1_gcms_se_lls_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct"], 3.0)
+        self.assertTrue(gov["sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met"])
+        self.assertFalse(raw["sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met"])
 
 
 if __name__ == "__main__":
