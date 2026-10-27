@@ -245,6 +245,7 @@ from agent_infra_sizer import (
     simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
     simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox,
     simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox,
+    simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5087,6 +5088,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct"], 3.0)
         self.assertTrue(gov["organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met"])
         self.assertFalse(raw["organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met"])
+
+    def test_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(self) -> None:
+        gov = simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(
+            8, "pinn_mpc_pdmat_temaz_sublimation_distillation_and_zaz_tan_peald_sil3_edge"
+        )
+        raw = simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_beta_hydride_imine_coking_halide_cu_pitting_and_zaz_leakage"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_pdmat_temaz_pods"], 32)
+        self.assertEqual(gov["electronic_6n_pdmat_temaz_purity_and_beol_tan_dram_zaz_eot_yield_gain_pct"], 59.8)
+        self.assertEqual(gov["beta_hydride_imine_coking_and_halide_cu_pitting_defect_reduction_pct"], 83.8)
+        self.assertEqual(gov["semi_s2_nfpa30_sil3_pdmat_temaz_thermal_runaway_and_dli_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_pdmat_temaz_thermal_decomposition_or_dli_nozzle_coking_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pdmat_temaz_thermal_decomposition_or_dli_nozzle_coking_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_945cm1_1150cm1_1645cm1_nmr_icp_ms_ms_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_tan_barrier_cu_diffusion_or_zaz_capacitor_leakage_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tan_barrier_cu_diffusion_or_zaz_capacitor_leakage_pct"], 3.0)
+        self.assertTrue(gov["pdmat_temaz_highk_zro2_and_tan_barrier_peald_slo_met"])
+        self.assertFalse(raw["pdmat_temaz_highk_zro2_and_tan_barrier_peald_slo_met"])
 
 
 if __name__ == "__main__":

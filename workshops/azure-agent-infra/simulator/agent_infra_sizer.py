@@ -12896,6 +12896,67 @@ def simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox
     }
 
 
+def simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(
+    pdmat_temaz_trains: int = 8,
+    governance_mode: str = "pinn_mpc_pdmat_temaz_sublimation_distillation_and_zaz_tan_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Pentakis(dimethylamino)tantalum (6N PDMAT Ta(N(CH3)2)5 >= 99.9999%, m.p. 98.5 C)
+    & Tetrakis(ethylmethylamino)zirconium (6N TEMAZ Zr(N(CH3)(C2H5))4 >= 99.9999%, b.p. 82 C @ 0.1 Torr) + Tetrakis(dimethylamino)-
+    titanium (6N TDMAT Ti(N(CH3)2)4 >= 99.9999%) 2nm/A14 BEOL Zero-Incubation Copper Diffusion Barrier (1.2 nm Ultrathin TaN
+    PEALD) & 1c/0a DRAM High-k Capacitor (4.5 nm ZrO2/TiN/ZrO2 ZAZ MIM Stack, k >= 38, EOT <= 0.42 nm, J_leak <= 1e-8 A/cm2)
+    Vacuum Sublimation & Short-Path Molecular Distillation, Halide-Free Lithium-Dialkylamide Synthesis (Cl <= 0.10 ppmw
+    Preventing Cu Pitting & TiN Blistering), Zr/Hf Homologous Trace Separation & Mixed-Ligand Scrambling
+    (Zr(NMe2)x(NEtMe)4-x <= 0.15 mol%) Control, Heated Solid-Source PDMAT (65.00 C) & Direct-Liquid-Injection (DLI) TEMAZ
+    (95.0 C) Beta-Hydride Elimination Imine/Metallacycle Suppression (<= 0.12 ppmv) + NH3/O3 Counter-Reactant PEALD
+    Supercycle PINN-MPC, Online 10 kHz QCL-TDLAS (945 cm-1 Ta-N / 1150 cm-1 C-N / 1645 cm-1 C=N Imine Decomposition) +
+    1H/13C NMR + ICP-MS/MS (<= 2 pptw) Metrology & SEMI C3 / SEMI S2 / NFPA 30 / IEC 61511 SIL-3 PDMAT/TEMAZ Thermal
+    Decomposition Runaway (> 105.0 C / > 125.0 C) & Pyrophoric Amine/Hydride Reaction Hard Interlock (Chapter 244, Cycle #239).
+    """
+    trains = max(2, min(int(pdmat_temaz_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_pdmat_temaz_sublimation_distillation_and_zaz_tan_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_pdmat_temaz_pods = trains * 4
+
+    if governed:
+        electronic_6n_pdmat_temaz_purity_and_beol_tan_dram_zaz_eot_yield_gain_pct = 59.8
+        beta_hydride_imine_coking_and_halide_cu_pitting_defect_reduction_pct = 83.8
+        semi_s2_nfpa30_sil3_pdmat_temaz_thermal_runaway_and_dli_lockout_latency_ms = 0.14
+        unmitigated_pdmat_temaz_thermal_decomposition_or_dli_nozzle_coking_pct = 0.0
+        edge_qcl_tdlas_945cm1_1150cm1_1645cm1_nmr_icp_ms_ms_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_tan_barrier_cu_diffusion_or_zaz_capacitor_leakage_pct = 0.0
+    else:
+        electronic_6n_pdmat_temaz_purity_and_beol_tan_dram_zaz_eot_yield_gain_pct = 11.8
+        beta_hydride_imine_coking_and_halide_cu_pitting_defect_reduction_pct = 15.7
+        semi_s2_nfpa30_sil3_pdmat_temaz_thermal_runaway_and_dli_nozzle_lockout_latency_ms = 420.0
+        semi_s2_nfpa30_sil3_pdmat_temaz_thermal_runaway_and_dli_lockout_latency_ms = (
+            semi_s2_nfpa30_sil3_pdmat_temaz_thermal_runaway_and_dli_nozzle_lockout_latency_ms
+        )
+        unmitigated_pdmat_temaz_thermal_decomposition_or_dli_nozzle_coking_pct = 1.6
+        edge_qcl_tdlas_945cm1_1150cm1_1645cm1_nmr_icp_ms_ms_closed_loop_latency_ms = 238.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_tan_barrier_cu_diffusion_or_zaz_capacitor_leakage_pct = 5.5
+
+    return {
+        "pdmat_temaz_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pdmat_temaz_pods": active_pdmat_temaz_pods,
+        "electronic_6n_pdmat_temaz_purity_and_beol_tan_dram_zaz_eot_yield_gain_pct": electronic_6n_pdmat_temaz_purity_and_beol_tan_dram_zaz_eot_yield_gain_pct,
+        "beta_hydride_imine_coking_and_halide_cu_pitting_defect_reduction_pct": beta_hydride_imine_coking_and_halide_cu_pitting_defect_reduction_pct,
+        "semi_s2_nfpa30_sil3_pdmat_temaz_thermal_runaway_and_dli_lockout_latency_ms": semi_s2_nfpa30_sil3_pdmat_temaz_thermal_runaway_and_dli_lockout_latency_ms,
+        "unmitigated_pdmat_temaz_thermal_decomposition_or_dli_nozzle_coking_pct": unmitigated_pdmat_temaz_thermal_decomposition_or_dli_nozzle_coking_pct,
+        "edge_qcl_tdlas_945cm1_1150cm1_1645cm1_nmr_icp_ms_ms_closed_loop_latency_ms": edge_qcl_tdlas_945cm1_1150cm1_1645cm1_nmr_icp_ms_ms_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_tan_barrier_cu_diffusion_or_zaz_capacitor_leakage_pct": uncompensated_tan_barrier_cu_diffusion_or_zaz_capacitor_leakage_pct,
+        "pdmat_temaz_highk_zro2_and_tan_barrier_peald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

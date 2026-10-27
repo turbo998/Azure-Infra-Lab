@@ -258,6 +258,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
     simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox,
     simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox,
+    simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1679,6 +1680,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_snmor_tmi_8_trains": simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(8, "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge"),
             "governed_snmor_tmi_32_trains": simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(32, "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge"),
             "raw_snmor_tmi_8_trains": simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(8, "raw_cloud_uncompensated_dialkyltin_bridging_tmi_channeling_and_melt_runaway"),
+        },
+        "demo_239_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox": {
+            "governed_pdmat_temaz_8_trains": simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(8, "pinn_mpc_pdmat_temaz_sublimation_distillation_and_zaz_tan_peald_sil3_edge"),
+            "governed_pdmat_temaz_32_trains": simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(32, "pinn_mpc_pdmat_temaz_sublimation_distillation_and_zaz_tan_peald_sil3_edge"),
+            "raw_pdmat_temaz_8_trains": simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(8, "raw_cloud_uncompensated_beta_hydride_imine_coking_halide_cu_pitting_and_zaz_leakage"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

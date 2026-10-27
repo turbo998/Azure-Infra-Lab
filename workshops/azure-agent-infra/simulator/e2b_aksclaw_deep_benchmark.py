@@ -251,6 +251,7 @@ from agent_infra_sizer import (
     simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
     simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox,
     simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox,
+    simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1916,6 +1917,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(8, "raw_cloud_uncompensated_dialkyltin_bridging_tmi_channeling_and_melt_runaway"),
     ]
 
+    pdmat_temaz_highk_zro2_and_tan_barrier_peald_profiles = [
+        simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(8, "pinn_mpc_pdmat_temaz_sublimation_distillation_and_zaz_tan_peald_sil3_edge"),
+        simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(32, "pinn_mpc_pdmat_temaz_sublimation_distillation_and_zaz_tan_peald_sil3_edge"),
+        simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(8, "raw_cloud_uncompensated_beta_hydride_imine_coking_halide_cu_pitting_and_zaz_leakage"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2154,6 +2161,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "trimethylsilane_ulk_pecvd_distillation_and_alkane_profiles": trimethylsilane_ulk_pecvd_distillation_and_alkane_profiles,
         "dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_profiles": dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_profiles,
         "organotin_euv_mor_and_trimethylindium_igzo_sublimation_profiles": organotin_euv_mor_and_trimethylindium_igzo_sublimation_profiles,
+        "pdmat_temaz_highk_zro2_and_tan_barrier_peald_profiles": pdmat_temaz_highk_zro2_and_tan_barrier_peald_profiles,
     }
 
 
