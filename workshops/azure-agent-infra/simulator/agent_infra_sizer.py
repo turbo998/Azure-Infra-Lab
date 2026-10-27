@@ -14519,6 +14519,68 @@ def simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode
     }
 
 
+def simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(
+    wcl5_wcl6_pdmat_tbtdet_trains: int = 8,
+    governance_mode: str = "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Tungsten Pentachloride / Hexachloride (6N5 WCl5 / WCl6 >= 99.99995%,
+    Solid Chloride Precursors, WCl6 m.p. 275 C / b.p. 346.7 C, WCl5 m.p. 242 C / b.p. 286 C, Volatile
+    Tungsten Oxytetrachloride WOCl4 m.p. 211 C / b.p. 227.5 C <= 0.05 ppmw, Molybdenum Pentachloride
+    MoCl5 <= 0.05 ppmw, Fe/Cr/Ni <= 0.05 ppbw, U/Th <= 0.001 ppbw) & Electronic-Grade Pentakis(dimethylamino)tantalum
+    (6N5 PDMAT Ta[N(CH3)2]5 >= 99.99995%, m.p. 100 C, Sublimation 65-80 C @ 0.1 Torr) + Tertiarybutylimido-
+    tris(diethylamino)tantalum (6N5 TBTDET (t-C4H9N)Ta[N(C2H5)2]3 >= 99.99995%, Liquid Imido-Amido Precursor,
+    v.p. 0.1 Torr @ 85 C, TaCl5 <= 0.05 ppmw, Nb <= 0.02 ppmw) for Fluorine-Free (F-Free) Low-Resistivity
+    (< 11.8 uOhm-cm) 3D NAND Wordline (AR > 60:1) & 2nm GAA Middle-of-Line (MOL CD < 8 nm) Contact Plug
+    (WCl5/WCl6 + H2 Thermal/PEALD with 0% WF6 Fluorine Attack on TiN/SiO2/Epi-SiGe) and Sub-0.8 nm Amorphous
+    TaCxNy Cu Diffusion Barrier (< 145 uOhm-cm) Chlorination-Rectification (WOCl4 + CCl4 -> WCl6 + COCl2) &
+    Multi-Stage Zone Sublimation, High-Temperature Solid-Source Sublimator (135-165 C) Mass-Flux Feedback &
+    PINN-MPC, Online 10 kHz UV-Vis / QCL-TDLAS / FTIR (382cm-1 W-Cl Stretch / 1028cm-1 W=O Oxychloride /
+    942cm-1 Ta-N Stretch / 1245cm-1 Ta=N-tBu Imido / 2886cm-1 HCl) + GC-ICP-MS + In-Situ 4PP / XRR / AR-XPS /
+    PALS Metrology & SEMI S2 / SEMI C3 / NFPA 704 / OSHA PSM / IEC 61511 SIL-3 Heated-Line WCl6 Condensation-Clog,
+    WCl6 + 3H2O -> WO3(s) + 6HCl(g) Hydrolysis & Pyrophoric Organotantalum Dual-Hazard Hard Interlock.
+    """
+    trains = max(1, int(wcl5_wcl6_pdmat_tbtdet_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_wcl5_wcl6_pdmat_tbtdet_pods = trains * 4
+
+    if governed:
+        electronic_6n5_wcl5_wcl6_6n5_pdmat_6n5_tbtdet_purity_and_ffree_w_tan_yield_gain_pct = 65.6
+        wocl4_mocl5_chlorination_and_wf6_fluorine_attack_elimination_pct = 88.9
+        semi_s2_nfpa704_osha_psm_sil3_wcl6_hcl_condensation_and_organotantalum_lockout_latency_ms = 0.13
+        unmitigated_wcl6_wo3_hcl_line_clog_or_pyrophoric_pdmat_tbtdet_autoignition_pct = 0.0
+        edge_qcl_tdlas_382cm1_1028cm1_942cm1_1245cm1_gcicpms_4pp_xrr_pals_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3dnand_mol_w_fluorine_void_or_sub1nm_tan_cu_diffusion_pct = 0.0
+    else:
+        electronic_6n5_wcl5_wcl6_6n5_pdmat_6n5_tbtdet_purity_and_ffree_w_tan_yield_gain_pct = 14.9
+        wocl4_mocl5_chlorination_and_wf6_fluorine_attack_elimination_pct = 19.4
+        semi_s2_nfpa704_osha_psm_sil3_wcl6_hcl_condensation_and_organotantalum_lockout_latency_ms = 474.0
+        unmitigated_wcl6_wo3_hcl_line_clog_or_pyrophoric_pdmat_tbtdet_autoignition_pct = 1.7
+        edge_qcl_tdlas_382cm1_1028cm1_942cm1_1245cm1_gcicpms_4pp_xrr_pals_latency_ms = 277.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3dnand_mol_w_fluorine_void_or_sub1nm_tan_cu_diffusion_pct = 6.8
+
+    return {
+        "wcl5_wcl6_pdmat_tbtdet_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_wcl5_wcl6_pdmat_tbtdet_pods": active_wcl5_wcl6_pdmat_tbtdet_pods,
+        "electronic_6n5_wcl5_wcl6_6n5_pdmat_6n5_tbtdet_purity_and_ffree_w_tan_yield_gain_pct": electronic_6n5_wcl5_wcl6_6n5_pdmat_6n5_tbtdet_purity_and_ffree_w_tan_yield_gain_pct,
+        "wocl4_mocl5_chlorination_and_wf6_fluorine_attack_elimination_pct": wocl4_mocl5_chlorination_and_wf6_fluorine_attack_elimination_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_wcl6_hcl_condensation_and_organotantalum_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_wcl6_hcl_condensation_and_organotantalum_lockout_latency_ms,
+        "unmitigated_wcl6_wo3_hcl_line_clog_or_pyrophoric_pdmat_tbtdet_autoignition_pct": unmitigated_wcl6_wo3_hcl_line_clog_or_pyrophoric_pdmat_tbtdet_autoignition_pct,
+        "edge_qcl_tdlas_382cm1_1028cm1_942cm1_1245cm1_gcicpms_4pp_xrr_pals_latency_ms": edge_qcl_tdlas_382cm1_1028cm1_942cm1_1245cm1_gcicpms_4pp_xrr_pals_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3dnand_mol_w_fluorine_void_or_sub1nm_tan_cu_diffusion_pct": uncompensated_3dnand_mol_w_fluorine_void_or_sub1nm_tan_cu_diffusion_pct,
+        "wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
