@@ -13076,6 +13076,72 @@ def simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(
     }
 
 
+def simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox(
+    temah_la_iprcp3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_pca21_ferroelectric_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Tetrakis(ethylmethylamino)hafnium (6N TEMAH
+    Hf(N(CH3)(C2H5))4 >=99.9999%, b.p. 83C @ 0.1Torr, Ultra-Low Zr <=3.5ppmw)
+    & Tris(isopropylcyclopentadienyl)lanthanum (6N La(iPrCp)3
+    La(C3H7C5H4)3 >=99.9999%, m.p. 52.0C, v.p. 0.08Torr @ 155C) +
+    Tris(N,N'-diisopropylformamidinato)lanthanum (6N La(iPr-FMD)3 >=99.9999%)
+    2nm / A14 GAA Nanosheet Multi-Vth Dipole-First High-k Metal Gate (HKMG
+    HfO2 / La2O3 / Al2O3 ALD, EOT <=0.65nm, 6-Level Vth Precision <=+/-8.0mV,
+    Delta V_fb = -380mV) & Ferroelectric Hf0.5Zr0.5O2 (HZO Orthorhombic Pca2_1
+    Phase 2P_r >=44 uC/cm^2 FeFET / FeRAM) Extractive Hf/Zr Separation &
+    Short-Path Wiped-Film Molecular Distillation (1.0 Pa, Cl <=0.08ppmw,
+    Ce/Pr/Nd <=0.10ppbw, Na/K/Fe/Cr <=0.3pptw), Bridged Hydroxide Oligomer
+    (La_x(OH)_y(iPrCp)_z <=0.06ppmw) & Metallacycle Imine (Hf=N-CH3 <=0.10ppmv)
+    Suppression, Sub-Monolayer La2O3 Dipole Drive-In Spike Anneal (680C 1.2s) &
+    TiN-Capped Tensile-Stress Pca2_1 Orthorhombic Crystallization PINN-MPC,
+    Online 10kHz QCL-TDLAS (958cm^-1 Hf-N / 2962cm^-1 iPrCp C-H / 3580cm^-1
+    Bridged La-OH-La Hydrolysis / 1648cm^-1 C=N Imine) + ICP-MS/MS + GI-XRD /
+    In-Line XPS Metrology & SEMI S2 / SEMI C3 / NFPA 484 / IEC 61511 SIL-3
+    High-Temperature Pyrophoric Liquid La(iPrCp)3 (165C) Air-Ingress
+    Auto-Ignition & TEMAH Exothermic Beta-Hydride Runaway (>130.0C) Hard
+    Interlock."""
+    trains = max(1, int(temah_la_iprcp3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_pca21_ferroelectric_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_temah_la_iprcp3_pods = trains * 4
+
+    if governed:
+        electronic_6n_temah_la_iprcp3_purity_and_gaa_hkmg_vth_hzo_2pr_yield_gain_pct = 60.6
+        la_oh_oligomer_vth_sigma_drift_and_monoclinic_p21c_dead_layer_reduction_pct = 84.5
+        semi_s2_nfpa484_sil3_hot_pyrophoric_la_iprcp3_and_temah_runaway_lockout_latency_ms = 0.14
+        unmitigated_hot_la_iprcp3_air_ignition_or_temah_dli_nozzle_plugging_pct = 0.0
+        edge_qcl_tdlas_958cm1_2962cm1_3580cm1_icp_gixrd_xps_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_gaa_nfet_vth_roll_off_or_hzo_wake_up_fatigue_failure_pct = 0.0
+    else:
+        electronic_6n_temah_la_iprcp3_purity_and_gaa_hkmg_vth_hzo_2pr_yield_gain_pct = 12.2
+        la_oh_oligomer_vth_sigma_drift_and_monoclinic_p21c_dead_layer_reduction_pct = 16.1
+        semi_s2_nfpa484_sil3_hot_pyrophoric_la_iprcp3_and_temah_runaway_lockout_latency_ms = 426.0
+        unmitigated_hot_la_iprcp3_air_ignition_or_temah_dli_nozzle_plugging_pct = 1.7
+        edge_qcl_tdlas_958cm1_2962cm1_3580cm1_icp_gixrd_xps_closed_loop_latency_ms = 242.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_gaa_nfet_vth_roll_off_or_hzo_wake_up_fatigue_failure_pct = 5.8
+
+    return {
+        "temah_la_iprcp3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_temah_la_iprcp3_pods": active_temah_la_iprcp3_pods,
+        "electronic_6n_temah_la_iprcp3_purity_and_gaa_hkmg_vth_hzo_2pr_yield_gain_pct": electronic_6n_temah_la_iprcp3_purity_and_gaa_hkmg_vth_hzo_2pr_yield_gain_pct,
+        "la_oh_oligomer_vth_sigma_drift_and_monoclinic_p21c_dead_layer_reduction_pct": la_oh_oligomer_vth_sigma_drift_and_monoclinic_p21c_dead_layer_reduction_pct,
+        "semi_s2_nfpa484_sil3_hot_pyrophoric_la_iprcp3_and_temah_runaway_lockout_latency_ms": semi_s2_nfpa484_sil3_hot_pyrophoric_la_iprcp3_and_temah_runaway_lockout_latency_ms,
+        "unmitigated_hot_la_iprcp3_air_ignition_or_temah_dli_nozzle_plugging_pct": unmitigated_hot_la_iprcp3_air_ignition_or_temah_dli_nozzle_plugging_pct,
+        "edge_qcl_tdlas_958cm1_2962cm1_3580cm1_icp_gixrd_xps_closed_loop_latency_ms": edge_qcl_tdlas_958cm1_2962cm1_3580cm1_icp_gixrd_xps_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_gaa_nfet_vth_roll_off_or_hzo_wake_up_fatigue_failure_pct": uncompensated_gaa_nfet_vth_roll_off_or_hzo_wake_up_fatigue_failure_pct,
+        "temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

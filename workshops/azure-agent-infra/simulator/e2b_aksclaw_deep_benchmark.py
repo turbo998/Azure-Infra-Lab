@@ -254,6 +254,7 @@ from agent_infra_sizer import (
     simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox,
     simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox,
     simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox,
+    simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1937,6 +1938,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox(8, "raw_cloud_uncompensated_alkoxide_oxygen_tmin_channeling_and_pyrophoric_hydrolysis"),
     ]
 
+    temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_profiles = [
+        simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox(8, "pinn_mpc_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_pca21_ferroelectric_ald_sil3_edge"),
+        simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox(32, "pinn_mpc_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_pca21_ferroelectric_ald_sil3_edge"),
+        simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox(8, "raw_cloud_uncompensated_zr_crosstalk_la_oh_oligomer_and_monoclinic_dead_layer"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2178,6 +2185,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "pdmat_temaz_highk_zro2_and_tan_barrier_peald_profiles": pdmat_temaz_highk_zro2_and_tan_barrier_peald_profiles,
         "cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_profiles": cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_profiles,
         "tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_profiles": tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_profiles,
+        "temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_profiles": temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_profiles,
     }
 
 

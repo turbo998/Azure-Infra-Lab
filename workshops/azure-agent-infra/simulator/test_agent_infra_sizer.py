@@ -248,6 +248,7 @@ from agent_infra_sizer import (
     simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox,
     simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox,
     simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox,
+    simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5153,6 +5154,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_3dnand_alo_charge_trap_leakage_or_ingan_adduct_particle_pct"], 3.0)
         self.assertTrue(gov["tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_slo_met"])
         self.assertFalse(raw["tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_slo_met"])
+
+    def test_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox(self) -> None:
+        gov = simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox(
+            8, "pinn_mpc_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_pca21_ferroelectric_ald_sil3_edge"
+        )
+        raw = simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_zr_crosstalk_la_oh_oligomer_and_monoclinic_dead_layer"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_temah_la_iprcp3_pods"], 32)
+        self.assertEqual(gov["electronic_6n_temah_la_iprcp3_purity_and_gaa_hkmg_vth_hzo_2pr_yield_gain_pct"], 60.6)
+        self.assertEqual(gov["la_oh_oligomer_vth_sigma_drift_and_monoclinic_p21c_dead_layer_reduction_pct"], 84.5)
+        self.assertEqual(gov["semi_s2_nfpa484_sil3_hot_pyrophoric_la_iprcp3_and_temah_runaway_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_hot_la_iprcp3_air_ignition_or_temah_dli_nozzle_plugging_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_hot_la_iprcp3_air_ignition_or_temah_dli_nozzle_plugging_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_958cm1_2962cm1_3580cm1_icp_gixrd_xps_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_gaa_nfet_vth_roll_off_or_hzo_wake_up_fatigue_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_gaa_nfet_vth_roll_off_or_hzo_wake_up_fatigue_failure_pct"], 3.0)
+        self.assertTrue(gov["temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_slo_met"])
+        self.assertFalse(raw["temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_slo_met"])
 
 
 if __name__ == "__main__":
