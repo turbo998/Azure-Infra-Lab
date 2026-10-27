@@ -268,6 +268,7 @@ from agent_infra_sizer import (
     simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
     simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
     simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox,
+    simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5593,6 +5594,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct"], 3.0)
         self.assertTrue(gov["cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met"])
         self.assertFalse(raw["cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met"])
+
+    def test_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox(self) -> None:
+        gov = simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox(
+            8, "pinn_mpc_hcds_octs_pcds_chloropolysilane_and_3dnand_ctn_gaa_spacer_ald_sil3_edge"
+        )
+        raw = simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_hcds_disiloxane_oxygen_incorporation_and_nh4cl_foreline_plugging"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_hcds_octs_pcds_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_hcds_6n_octs_6n_pcds_purity_and_3dnand_ctn_gaa_yield_gain_pct"], 64.9)
+        self.assertEqual(gov["hexachlorodisiloxane_oxygen_incorporation_and_foreline_nh4cl_plugging_reduction_pct"], 88.4)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_oxychlorosilane_gel_hcl_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_shock_sensitive_oxychlorosilane_gel_or_foreline_nh4cl_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_shock_sensitive_oxychlorosilane_gel_or_foreline_nh4cl_overpressure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_625cm1_460cm1_1092cm1_2158cm1_gcms_se_xrr_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_3d_nand_ctn_trap_density_drift_or_2nm_gaa_spacer_pinhole_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_3d_nand_ctn_trap_density_drift_or_2nm_gaa_spacer_pinhole_pct"], 3.0)
+        self.assertTrue(gov["hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_slo_met"])
+        self.assertFalse(raw["hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_slo_met"])
 
 
 if __name__ == "__main__":

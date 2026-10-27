@@ -14335,6 +14335,67 @@ def simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_s
     }
 
 
+def simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox(
+    hcds_octs_pcds_trains: int = 8,
+    governance_mode: str = "pinn_mpc_hcds_octs_pcds_chloropolysilane_and_3dnand_ctn_gaa_spacer_ald_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #262 (270-Chapter Milestone!): Autonomous Electronic-Grade Hexachlorodisilane & Octachlorotrisilane
+    (6N5 HCDS Si2Cl6 >=99.99995% & 6N OCTS Si3Cl8 >=99.9999%, Hexachlorodisiloxane Cl3SiOSiCl3 <=0.5ppmw,
+    SiCl4 <=10ppmw, Fe/Cr/Ni <=0.05ppbw) + Electronic-Grade Pentachlorodisilane (6N PCDS Si2HCl5 >=99.9999%)
+    300+ Layer 3D NAND Charge-Trap Nitride (CTN Si3N4, Step Coverage >99.5% at AR >85:1 via Si-Si Bond
+    Dissociative Chemisorption & :SiCl2 Silylene Insertion) & 2nm GAA Low-Thermal-Budget (<420C) Conformal
+    SiN / SiCN Liner Atomic Layer Deposition (ALD) Calcium Silicide (CaSi2) Chlorination, Sub-Atmospheric
+    Vacuum Fractionation & Heated Foreline Ammonium Chloride (NH4Cl, Sublimation T_sub ~ 145C @ 1 Torr)
+    Desublimation-Prevention PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (625cm-1 Si2Cl6 Si-Cl nu_as / 460cm-1
+    Si-Si Stretch / 1092cm-1 Cl3Si-O-SiCl3 Siloxane / 2158cm-1 Si2HCl5 Si-H) + GC-TCD/MS / HR-ICP-MS +
+    In-Situ Spectroscopic Ellipsometry (SE) / X-Ray Reflectivity (XRR) Metrology & SEMI S2 / SEMI C3 /
+    NFPA 704 / OSHA PSM / IEC 61511 SIL-3 Shock-Sensitive Polymeric Oxychlorosilane Hydrolysis Gel
+    ([-Si(OH)Cl-Si(OH)Cl-O-]n Friction-Sensitive Detonation & Corrosive HCl Evolution TLV-C 2 ppmv) &
+    Foreline NH4Cl Desublimation Plugging Hard Interlock.
+    """
+    trains = max(1, int(hcds_octs_pcds_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_hcds_octs_pcds_chloropolysilane_and_3dnand_ctn_gaa_spacer_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_hcds_octs_pcds_pods = trains * 4
+
+    if governed:
+        electronic_6n5_hcds_6n_octs_6n_pcds_purity_and_3dnand_ctn_gaa_yield_gain_pct = 64.9
+        hexachlorodisiloxane_oxygen_incorporation_and_foreline_nh4cl_plugging_reduction_pct = 88.4
+        semi_s2_nfpa704_osha_psm_sil3_oxychlorosilane_gel_hcl_lockout_latency_ms = 0.13
+        unmitigated_shock_sensitive_oxychlorosilane_gel_or_foreline_nh4cl_overpressure_pct = 0.0
+        edge_qcl_tdlas_625cm1_460cm1_1092cm1_2158cm1_gcms_se_xrr_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3d_nand_ctn_trap_density_drift_or_2nm_gaa_spacer_pinhole_pct = 0.0
+    else:
+        electronic_6n5_hcds_6n_octs_6n_pcds_purity_and_3dnand_ctn_gaa_yield_gain_pct = 14.5
+        hexachlorodisiloxane_oxygen_incorporation_and_foreline_nh4cl_plugging_reduction_pct = 18.9
+        semi_s2_nfpa704_osha_psm_sil3_oxychlorosilane_gel_hcl_lockout_latency_ms = 465.0
+        unmitigated_shock_sensitive_oxychlorosilane_gel_or_foreline_nh4cl_overpressure_pct = 1.6
+        edge_qcl_tdlas_625cm1_460cm1_1092cm1_2158cm1_gcms_se_xrr_latency_ms = 272.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3d_nand_ctn_trap_density_drift_or_2nm_gaa_spacer_pinhole_pct = 6.5
+
+    return {
+        "hcds_octs_pcds_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hcds_octs_pcds_pods": active_hcds_octs_pcds_pods,
+        "electronic_6n5_hcds_6n_octs_6n_pcds_purity_and_3dnand_ctn_gaa_yield_gain_pct": electronic_6n5_hcds_6n_octs_6n_pcds_purity_and_3dnand_ctn_gaa_yield_gain_pct,
+        "hexachlorodisiloxane_oxygen_incorporation_and_foreline_nh4cl_plugging_reduction_pct": hexachlorodisiloxane_oxygen_incorporation_and_foreline_nh4cl_plugging_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_oxychlorosilane_gel_hcl_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_oxychlorosilane_gel_hcl_lockout_latency_ms,
+        "unmitigated_shock_sensitive_oxychlorosilane_gel_or_foreline_nh4cl_overpressure_pct": unmitigated_shock_sensitive_oxychlorosilane_gel_or_foreline_nh4cl_overpressure_pct,
+        "edge_qcl_tdlas_625cm1_460cm1_1092cm1_2158cm1_gcms_se_xrr_latency_ms": edge_qcl_tdlas_625cm1_460cm1_1092cm1_2158cm1_gcms_se_xrr_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3d_nand_ctn_trap_density_drift_or_2nm_gaa_spacer_pinhole_pct": uncompensated_3d_nand_ctn_trap_density_drift_or_2nm_gaa_spacer_pinhole_pct,
+        "hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
