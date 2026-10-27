@@ -260,6 +260,7 @@ from agent_infra_sizer import (
     simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox,
     simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
     simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
+    simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5417,6 +5418,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct"], 3.0)
         self.assertTrue(gov["chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_slo_met"])
         self.assertFalse(raw["chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_slo_met"])
+
+    def test_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(self) -> None:
+        gov = simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(
+            8, "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge"
+        )
+        raw = simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cc4f8_tfe_pfib_impurity_and_bspdn_ntsv_scallop_notching"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_cyclic_fc_pods"], 32)
+        self.assertEqual(gov["electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct"], 63.1)
+        self.assertEqual(gov["tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct"], 86.9)
+        self.assertEqual(gov["semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct"], 3.0)
+        self.assertTrue(gov["cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met"])
+        self.assertFalse(raw["cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met"])
 
 
 if __name__ == "__main__":

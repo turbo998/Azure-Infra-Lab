@@ -13832,6 +13832,68 @@ def simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(
     }
 
 
+def simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(
+    cyclic_fluorocarbon_trains: int = 8,
+    governance_mode: str = "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Perfluorocyclobutane & Perfluorocyclopentene (5N5 c-C4F8
+    Octafluorocyclobutane >=99.9995%, b.p. -6.0C, Ultra-Low C2F4 <=0.20ppmv, C3F6 <=0.25ppmv, PFIB
+    <=5ppbv, HF <=0.10ppmv, H2O <=0.20ppmv & 5N c-C5F8 Octafluorocyclopentene >=99.999%, b.p. 27.0C,
+    Low GWP100 = 2.0, Ultra-Low 1H-Heptafluorocyclopentene <=0.30ppmv) + Electronic-Grade
+    Bromotrifluoromethane (5N5 CF3Br >=99.9995%, b.p. -57.8C, Ultra-Low CF2Br2 <=0.15ppmv, CF4
+    <=0.20ppmv, Br2/HBr <=0.10ppmv) 2nm GAA / CFET Backside Power Delivery Network (BSPDN Buried
+    Power Rail & Nano-TSV Bosch Cyclic SF6/c-C4F8 Scallop-Free Passivation <1.2nm) & EUV
+    Dual-Damascene Low-k High-Selectivity Contact Etch (c-C5F8 C/F = 0.625 Radical Ratio
+    SiO2:Si3N4 >=38:1, CF3Br Br+ Heavy-Ion Anti-Notching Sidewall Passivation) Tetrafluoroethylene
+    (TFE) Thermal Cyclodimerization, Chlorofluorocarbon Bromination & Extractive Rectification
+    PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (960cm-1 c-C4F8 Ring Breathing / 1762cm-1 c-C5F8 C=C /
+    1085cm-1 CF3Br nu1 / 1340cm-1 C2F4 Monomer) + GC-ECD/ICP-MS + In-Line CD-SAXS / Mueller-Matrix
+    Ellipsometry Metrology & SEMI S2 / SEMI C3 / NFPA 55 / ACGIH TLV-C / IEC 61511 SIL-3 Explosive
+    Tetrafluoroethylene (TFE C2F4 Deflagration dH = -128kJ/mol), Pyrolysis PFIB (<=10ppbv) & Toxic
+    Bromine/Carbonyl Bromide (Br2/COBr2 TLV 0.1ppmv) Scrubbing Hard Interlock.
+    """
+    trains = max(1, int(cyclic_fluorocarbon_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_cyclic_fc_pods = trains * 4
+
+    if governed:
+        electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct = 63.1
+        tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct = 86.9
+        semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms = 0.13
+        unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct = 0.0
+        edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct = 0.0
+    else:
+        electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct = 13.6
+        tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct = 17.7
+        semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms = 448.0
+        unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct = 1.5
+        edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms = 260.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct = 6.4
+
+    return {
+        "cyclic_fluorocarbon_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cyclic_fc_pods": active_cyclic_fc_pods,
+        "electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct": electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct,
+        "tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct": tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct,
+        "semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms": semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms,
+        "unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct": unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct,
+        "edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms": edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct,
+        "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

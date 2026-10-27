@@ -266,6 +266,7 @@ from agent_infra_sizer import (
     simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox,
     simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
     simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
+    simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2021,6 +2022,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox(8, "raw_cloud_uncompensated_chf3_cf4_ch3f_dme_impurity_and_gaa_si_recess"),
     ]
 
+    cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles = [
+        simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(8, "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge"),
+        simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(32, "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge"),
+        simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox(8, "raw_cloud_uncompensated_cc4f8_tfe_pfib_impurity_and_bspdn_ntsv_scallop_notching"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2274,6 +2281,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_profiles": hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_profiles,
         "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles": hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles,
         "chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_profiles": chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_profiles,
+        "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles": cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles,
     }
 
 

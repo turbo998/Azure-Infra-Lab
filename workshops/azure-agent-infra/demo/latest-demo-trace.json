@@ -14381,6 +14381,53 @@
         "uncompensated_gaa_source_drain_si_recess_or_spacer_footing_defect_pct": 6.5,
         "chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_slo_met": false
       }
+    ],
+    "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_profiles": [
+      {
+        "cyclic_fluorocarbon_trains": 8,
+        "governance_mode": "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cyclic_fc_pods": 32,
+        "electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct": 63.1,
+        "tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct": 86.9,
+        "semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms": 0.13,
+        "unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct": 0.0,
+        "edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": 0.0,
+        "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": true
+      },
+      {
+        "cyclic_fluorocarbon_trains": 32,
+        "governance_mode": "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cyclic_fc_pods": 128,
+        "electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct": 63.1,
+        "tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct": 86.9,
+        "semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms": 0.13,
+        "unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct": 0.0,
+        "edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": 0.0,
+        "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": true
+      },
+      {
+        "cyclic_fluorocarbon_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_cc4f8_tfe_pfib_impurity_and_bspdn_ntsv_scallop_notching",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cyclic_fc_pods": 32,
+        "electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct": 13.6,
+        "tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct": 17.7,
+        "semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms": 448.0,
+        "unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct": 1.5,
+        "edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms": 260.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": 6.4,
+        "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -27136,5 +27183,52 @@
       "chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_slo_met": false
     }
   },
-  "trace_sha256": "6df2585f77fba92be70798199c88d3646f9b8984a690d073a486dd2e85ee7ef0"
+  "demo_254_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch": {
+    "cyclic_fc_8_trains": {
+      "cyclic_fluorocarbon_trains": 8,
+      "governance_mode": "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_cyclic_fc_pods": 32,
+      "electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct": 63.1,
+      "tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct": 86.9,
+      "semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms": 0.13,
+      "unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct": 0.0,
+      "edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": 0.0,
+      "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": true
+    },
+    "cyclic_fc_32_trains": {
+      "cyclic_fluorocarbon_trains": 32,
+      "governance_mode": "pinn_mpc_cc4f8_cc5f8_cf3br_cyclodimerization_rectification_and_bspdn_ntsv_bosch_etch_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_cyclic_fc_pods": 128,
+      "electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct": 63.1,
+      "tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct": 86.9,
+      "semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms": 0.13,
+      "unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct": 0.0,
+      "edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": 0.0,
+      "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": true
+    },
+    "raw_cyclic_fc_8_trains": {
+      "cyclic_fluorocarbon_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_cc4f8_tfe_pfib_impurity_and_bspdn_ntsv_scallop_notching",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_cyclic_fc_pods": 32,
+      "electronic_5n5_cc4f8_cc5f8_cf3br_purity_and_bspdn_ntsv_yield_gain_pct": 13.6,
+      "tfe_pfib_impurity_and_ntsv_scallop_notching_reduction_pct": 17.7,
+      "semi_s2_nfpa55_sil3_tfe_deflagration_pfib_and_cobr2_lockout_latency_ms": 448.0,
+      "unmitigated_tfe_runaway_pfib_or_cobr2_br2_leak_pct": 1.5,
+      "edge_qcl_tdlas_960cm1_1762cm1_1085cm1_gcecd_cdsaxs_closed_loop_latency_ms": 260.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_bspdn_ntsv_scallop_or_soi_foot_notching_defect_pct": 6.4,
+      "cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_slo_met": false
+    }
+  },
+  "trace_sha256": "878ebe3b7e67d7722209b27ca57a274add38d02840778ad735f11ebda15f40fa"
 }
