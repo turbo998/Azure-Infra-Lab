@@ -275,6 +275,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
     simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
     simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox,
+    simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1781,6 +1782,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "pfc_cof2_8_trains": simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(8, "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge"),
             "pfc_cof2_32_trains": simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(32, "pinn_mpc_c2f6_c3f8_cof2_oxyfluorination_rectification_and_low_gwp_rps_clean_sil3_edge"),
             "raw_pfc_cof2_8_trains": simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox(8, "raw_cloud_uncompensated_cof2_hf_impurity_and_pecvd_showerhead_over_etch"),
+        },
+        "demo_256_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch": {
+            "iodo_har_8_trains": simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(8, "pinn_mpc_cf3i_c3f7i_c2f5i_iodination_rectification_and_har_3d_nand_dram_rie_sil3_edge"),
+            "iodo_har_32_trains": simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(32, "pinn_mpc_cf3i_c3f7i_c2f5i_iodination_rectification_and_har_3d_nand_dram_rie_sil3_edge"),
+            "raw_iodo_har_8_trains": simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(8, "raw_cloud_uncompensated_cf3i_photolytic_i2_impurity_and_har_channel_bowing"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

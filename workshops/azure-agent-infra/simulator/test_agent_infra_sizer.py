@@ -262,6 +262,7 @@ from agent_infra_sizer import (
     simulate_chf3_ch2f2_ch3f_gaa_spacer_quasi_ale_and_sti_etch_sil3_sandbox,
     simulate_cc4f8_cc5f8_cf3br_bspdn_ntsv_bosch_and_euv_contact_etch_sil3_sandbox,
     simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox,
+    simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5461,6 +5462,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pecvd_aln_showerhead_fluorination_or_pinhole_particle_defect_pct"], 3.0)
         self.assertTrue(gov["c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met"])
         self.assertFalse(raw["c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_slo_met"])
+
+    def test_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(self) -> None:
+        gov = simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(
+            8, "pinn_mpc_cf3i_c3f7i_c2f5i_iodination_rectification_and_har_3d_nand_dram_rie_sil3_edge"
+        )
+        raw = simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cf3i_photolytic_i2_impurity_and_har_channel_bowing"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_iodofluorocarbon_pods"], 32)
+        self.assertEqual(gov["electronic_6n_cf3i_5n5_c3f7i_c2f5i_purity_and_har_etch_yield_gain_pct"], 63.5)
+        self.assertEqual(gov["photolytic_i2_hi_impurity_and_har_channel_bowing_reduction_pct"], 87.2)
+        self.assertEqual(gov["semi_s2_nfpa704_sil3_photolytic_i2_hi_cof2_and_vmb_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_i2_sublimation_plugging_or_hi_cof2_toxic_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_i2_sublimation_plugging_or_hi_cof2_toxic_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1075cm1_uvvis_520nm_gcecd_oes206nm_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_3dnand_har_channel_bowing_or_dram_twist_defect_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_3dnand_har_channel_bowing_or_dram_twist_defect_pct"], 3.0)
+        self.assertTrue(gov["cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_slo_met"])
+        self.assertFalse(raw["cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_slo_met"])
 
 
 if __name__ == "__main__":

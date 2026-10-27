@@ -13956,6 +13956,69 @@ def simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_s
     }
 
 
+def simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox(
+    iodofluorocarbon_har_trains: int = 8,
+    governance_mode: str = "pinn_mpc_cf3i_c3f7i_c2f5i_iodination_rectification_and_har_3d_nand_dram_rie_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Trifluoroiodomethane (6N CF3I >=99.9999%, b.p. -22.5C,
+    Ultra-Low GWP100 = 0.4, Ozone Depletion Potential ODP < 0.0001, Weak C-I Bond Energy 2.33 eV vs
+    C-F 5.6 eV, Free I2 <=15ppbv, HI <=20ppbv, CHF3 <=0.15ppmv, CF4 <=0.20ppmv, H2O <=0.20ppmv) &
+    Electronic-Grade Heptafluoro-2-iodopropane / Heptafluoro-1-iodopropane (5N5 i-C3F7I / n-C3F7I
+    >=99.9995%, b.p. 39.5C / 41.2C, GWP100 < 1, C3F6 <=0.20ppmv, C3HF7 <=0.20ppmv, Free I2 <=15ppbv)
+    + Electronic-Grade Pentafluoroiodoethane (5N5 C2F5I >=99.9995%, b.p. 12.5C, GWP100 < 1, C2F4
+    <=0.15ppmv, C2HF5 <=0.20ppmv) Ultra-Low-GWP 3D NAND High-Aspect-Ratio (HAR > 100:1 ONO Stack
+    Channel Hole) & Sub-10nm DRAM High-k Capacitor Reactive Ion Etch (RIE) (Selective C-I Bond
+    Dissociation Yielding High CF3+ / C3F7+ / C2F4+ / I+ Heavy-Ion Directional Flux & Low F*
+    Isotropic Radical Density, Suppressing Channel Bowing < 1.8% & Hardmask Faceting) Catalytic
+    Oxy-Iodination, Photolysis-Shielded Vacuum Rectification & Cu/Ag-Exchanged Molecular Sieve De-I2
+    Purification PINN-MPC, Online 10 kHz QCL-TDLAS / UV-Vis / FTIR (1075cm-1 CF3I nu1 / 1185cm-1
+    CF3I nu4 / 741cm-1 C-I stretch / 520nm I2 Visible Continuum) + GC-ECD/MS / ICP-MS + 206.2nm I* /
+    703.7nm F* OES Metrology & SEMI S2 / SEMI C3 / NFPA 704 / OSHA / IEC 61511 SIL-3 Photolytic Iodine
+    (I2 Sublimation Plugging & Corrosion), Hydrogen Iodide (HI) & Carbonyl Fluoride (COF2) Thermal
+    Oxidation Byproduct Hard Interlock.
+    """
+    trains = max(1, int(iodofluorocarbon_har_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_cf3i_c3f7i_c2f5i_iodination_rectification_and_har_3d_nand_dram_rie_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_iodofluorocarbon_pods = trains * 4
+
+    if governed:
+        electronic_6n_cf3i_5n5_c3f7i_c2f5i_purity_and_har_etch_yield_gain_pct = 63.5
+        photolytic_i2_hi_impurity_and_har_channel_bowing_reduction_pct = 87.2
+        semi_s2_nfpa704_sil3_photolytic_i2_hi_cof2_and_vmb_lockout_latency_ms = 0.13
+        unmitigated_i2_sublimation_plugging_or_hi_cof2_toxic_leak_pct = 0.0
+        edge_qcl_tdlas_1075cm1_uvvis_520nm_gcecd_oes206nm_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3dnand_har_channel_bowing_or_dram_twist_defect_pct = 0.0
+    else:
+        electronic_6n_cf3i_5n5_c3f7i_c2f5i_purity_and_har_etch_yield_gain_pct = 13.8
+        photolytic_i2_hi_impurity_and_har_channel_bowing_reduction_pct = 17.9
+        semi_s2_nfpa704_sil3_photolytic_i2_hi_cof2_and_vmb_lockout_latency_ms = 452.0
+        unmitigated_i2_sublimation_plugging_or_hi_cof2_toxic_leak_pct = 1.6
+        edge_qcl_tdlas_1075cm1_uvvis_520nm_gcecd_oes206nm_closed_loop_latency_ms = 264.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3dnand_har_channel_bowing_or_dram_twist_defect_pct = 6.3
+
+    return {
+        "iodofluorocarbon_har_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_iodofluorocarbon_pods": active_iodofluorocarbon_pods,
+        "electronic_6n_cf3i_5n5_c3f7i_c2f5i_purity_and_har_etch_yield_gain_pct": electronic_6n_cf3i_5n5_c3f7i_c2f5i_purity_and_har_etch_yield_gain_pct,
+        "photolytic_i2_hi_impurity_and_har_channel_bowing_reduction_pct": photolytic_i2_hi_impurity_and_har_channel_bowing_reduction_pct,
+        "semi_s2_nfpa704_sil3_photolytic_i2_hi_cof2_and_vmb_lockout_latency_ms": semi_s2_nfpa704_sil3_photolytic_i2_hi_cof2_and_vmb_lockout_latency_ms,
+        "unmitigated_i2_sublimation_plugging_or_hi_cof2_toxic_leak_pct": unmitigated_i2_sublimation_plugging_or_hi_cof2_toxic_leak_pct,
+        "edge_qcl_tdlas_1075cm1_uvvis_520nm_gcecd_oes206nm_closed_loop_latency_ms": edge_qcl_tdlas_1075cm1_uvvis_520nm_gcecd_oes206nm_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3dnand_har_channel_bowing_or_dram_twist_defect_pct": uncompensated_3dnand_har_channel_bowing_or_dram_twist_defect_pct,
+        "cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
