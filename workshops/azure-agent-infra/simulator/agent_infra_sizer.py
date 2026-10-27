@@ -12727,6 +12727,62 @@ def simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_s
     }
 
 
+def simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(
+    organosilane_ulk_trains: int = 8,
+    governance_mode: str = "pinn_mpc_3ms_4ms_extractive_distillation_chlorosilane_alkane_and_ulk_pecvd_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Trimethylsilane (6N 3MS HSi(CH3)3 >= 99.9999%) & Tetramethylsilane
+    (6N 4MS Si(CH3)4 >= 99.9999%) Ultra-Low-k (ULK p-SiCOH k <= 2.25-2.40 & a-SiC:H Etch-Stop / EUV Hardmask PECVD)
+    Extractive-Fractional Distillation (3MS b.p. +6.7 C vs Neopentane C5H12 b.p. +9.5 C; 4MS b.p. +26.6 C vs Isopentane
+    b.p. +27.8 C), Hydrolysable Chlorosilane (Me3SiCl/Me2SiHCl <= 0.05 ppmv) & Hexamethyldisiloxane (HMDSO Me3Si-O-SiMe3
+    <= 0.20 ppmv) Chemisorption Polishing, Sub-Parts-Per-Trillion Metal Alkyls (Mg/Al/Fe/B/P <= 5 pptw) Removal &
+    13.56 MHz / 400 kHz Dual-Frequency PECVD Cross-Link Matrix PINN-MPC, Online 10 kHz QCL-TDLAS (2125 cm-1 Si-H /
+    1055 cm-1 Si-O-Si / 472 cm-1 Si-Cl) + VUV-PIMS (C4/C5 Alkane Co-Boilers) + CRDS (H2O <= 0.1 ppmv) Metrology &
+    SEMI C3 / NFPA 55 / NFPA 68 / IEC 61511 SIL-3 Extreme-Flammability (NFPA 704 Fire=4, LEL 1.3%, Flash Point -57 C)
+    & Heated Manifold Anti-Condensation Hard Interlock (Chapter 241, Cycle #236 — 245-Test Milestone!).
+    """
+    trains = max(2, min(int(organosilane_ulk_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_3ms_4ms_extractive_distillation_chlorosilane_alkane_and_ulk_pecvd_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_3ms_4ms_pods = trains * 4
+
+    if governed:
+        electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct = 59.2
+        chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct = 83.2
+        semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms = 0.14
+        unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct = 0.0
+        edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct = 0.0
+    else:
+        electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct = 11.5
+        chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct = 15.4
+        semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms = 415.0
+        unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct = 1.6
+        edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms = 235.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct = 5.2
+
+    return {
+        "organosilane_ulk_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_3ms_4ms_pods": active_3ms_4ms_pods,
+        "electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct": electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct,
+        "chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct": chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct,
+        "semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms": semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms,
+        "unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct": unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct,
+        "edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms": edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct": uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct,
+        "trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

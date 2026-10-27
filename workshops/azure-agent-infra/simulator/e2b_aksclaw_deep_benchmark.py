@@ -248,6 +248,7 @@ from agent_infra_sizer import (
     simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox,
     simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox,
     simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox,
+    simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1895,6 +1896,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox(8, "raw_cloud_uncompensated_sicl4_polysilane_disproportionation_and_explosive_siloxane_hydrolysis"),
     ]
 
+    trimethylsilane_ulk_pecvd_distillation_and_alkane_profiles = [
+        simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(8, "pinn_mpc_3ms_4ms_extractive_distillation_chlorosilane_alkane_and_ulk_pecvd_sil3_edge"),
+        simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(32, "pinn_mpc_3ms_4ms_extractive_distillation_chlorosilane_alkane_and_ulk_pecvd_sil3_edge"),
+        simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(8, "raw_cloud_uncompensated_chlorosilane_c5_alkane_coboiler_and_ulk_k_drift"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2130,6 +2137,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "nitric_oxide_cryogenic_distillation_and_no2_disproportionation_profiles": nitric_oxide_cryogenic_distillation_and_no2_disproportionation_profiles,
         "carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_profiles": carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_profiles,
         "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_profiles": hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_profiles,
+        "trimethylsilane_ulk_pecvd_distillation_and_alkane_profiles": trimethylsilane_ulk_pecvd_distillation_and_alkane_profiles,
     }
 
 

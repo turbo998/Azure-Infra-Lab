@@ -13333,5 +13333,52 @@
       "uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct": 5.1,
       "hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met": false
     }
+  ],
+  "trimethylsilane_ulk_pecvd_distillation_and_alkane_profiles": [
+    {
+      "organosilane_ulk_trains": 8,
+      "governance_mode": "pinn_mpc_3ms_4ms_extractive_distillation_chlorosilane_alkane_and_ulk_pecvd_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_3ms_4ms_pods": 32,
+      "electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct": 59.2,
+      "chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct": 83.2,
+      "semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms": 0.14,
+      "unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct": 0.0,
+      "edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct": 0.0,
+      "trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met": true
+    },
+    {
+      "organosilane_ulk_trains": 32,
+      "governance_mode": "pinn_mpc_3ms_4ms_extractive_distillation_chlorosilane_alkane_and_ulk_pecvd_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_3ms_4ms_pods": 128,
+      "electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct": 59.2,
+      "chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct": 83.2,
+      "semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms": 0.14,
+      "unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct": 0.0,
+      "edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct": 0.0,
+      "trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met": true
+    },
+    {
+      "organosilane_ulk_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_chlorosilane_c5_alkane_coboiler_and_ulk_k_drift",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_3ms_4ms_pods": 32,
+      "electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct": 11.5,
+      "chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct": 15.4,
+      "semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms": 415.0,
+      "unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct": 1.6,
+      "edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms": 235.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct": 5.2,
+      "trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met": false
+    }
   ]
 }

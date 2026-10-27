@@ -242,6 +242,7 @@ from agent_infra_sizer import (
     simulate_nitric_oxide_cryogenic_distillation_and_no2_disproportionation_sil3_sandbox,
     simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox,
     simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox,
+    simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5021,6 +5022,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_hcds_thermal_disproportionation_or_bubbler_vapor_pressure_droop_pct"], 3.0)
         self.assertTrue(gov["hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met"])
         self.assertFalse(raw["hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_slo_met"])
+
+    def test_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(self) -> None:
+        gov = simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(
+            8, "pinn_mpc_3ms_4ms_extractive_distillation_chlorosilane_alkane_and_ulk_pecvd_sil3_edge"
+        )
+        raw = simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(
+            8, "raw_cloud_uncompensated_chlorosilane_c5_alkane_coboiler_and_ulk_k_drift"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_3ms_4ms_pods"], 32)
+        self.assertEqual(gov["electronic_6n_3ms_4ms_purity_and_ulk_pecvd_k_uniformity_yield_gain_pct"], 59.2)
+        self.assertEqual(gov["chlorosilane_hmdso_siloxane_and_c5_alkane_coboiler_defect_reduction_pct"], 83.2)
+        self.assertEqual(gov["semi_c3_nfpa55_nfpa68_sil3_lel_flame_arrestor_and_heated_line_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_3ms_4ms_vapor_deflagration_or_mfc_liquid_condensation_spike_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2125cm1_1055cm1_472cm1_vuv_pims_crds_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct"], 3.0)
+        self.assertTrue(gov["trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met"])
+        self.assertFalse(raw["trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met"])
 
 
 if __name__ == "__main__":
