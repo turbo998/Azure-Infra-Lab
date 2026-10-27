@@ -282,6 +282,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
     simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox,
     simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox,
+    simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1823,6 +1824,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "hcds_octs_pcds_8_trains": simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox(8, "pinn_mpc_hcds_octs_pcds_chloropolysilane_and_3dnand_ctn_gaa_spacer_ald_sil3_edge"),
             "hcds_octs_pcds_32_trains": simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox(32, "pinn_mpc_hcds_octs_pcds_chloropolysilane_and_3dnand_ctn_gaa_spacer_ald_sil3_edge"),
             "raw_hcds_octs_pcds_8_trains": simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox(8, "raw_cloud_uncompensated_hcds_disiloxane_oxygen_incorporation_and_nh4cl_foreline_plugging"),
+        },
+        "demo_263_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald": {
+            "tma_temaz_temah_8_trains": simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(8, "pinn_mpc_tma_temaz_temah_adduct_distillation_and_dram_zaz_gaa_hzo_ald_sil3_edge"),
+            "tma_temaz_temah_32_trains": simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(32, "pinn_mpc_tma_temaz_temah_adduct_distillation_and_dram_zaz_gaa_hzo_ald_sil3_edge"),
+            "raw_tma_temaz_temah_8_trains": simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(8, "raw_cloud_uncompensated_tma_methoxide_alkoxide_and_temaz_amidinate_thermal_coking"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

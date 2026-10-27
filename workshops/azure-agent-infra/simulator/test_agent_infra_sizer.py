@@ -269,6 +269,7 @@ from agent_infra_sizer import (
     simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
     simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox,
     simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox,
+    simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5615,6 +5616,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_3d_nand_ctn_trap_density_drift_or_2nm_gaa_spacer_pinhole_pct"], 3.0)
         self.assertTrue(gov["hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_slo_met"])
         self.assertFalse(raw["hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_slo_met"])
+
+    def test_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(self) -> None:
+        gov = simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(
+            8, "pinn_mpc_tma_temaz_temah_adduct_distillation_and_dram_zaz_gaa_hzo_ald_sil3_edge"
+        )
+        raw = simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_tma_methoxide_alkoxide_and_temaz_amidinate_thermal_coking"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_tma_temaz_temah_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_tma_6n5_temaz_6n5_temah_purity_and_dram_zaz_gaa_hzo_yield_gain_pct"], 65.1)
+        self.assertEqual(gov["alkoxide_me2alome_carbon_residue_and_zaz_capacitor_leakage_reduction_pct"], 88.6)
+        self.assertEqual(gov["semi_s2_nfpa704_433w_osha_psm_sil3_pyrophoric_tma_quench_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_pyrophoric_tma_air_autoignition_or_water_reactive_ch4_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_tma_air_autoignition_or_water_reactive_ch4_explosion_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1208cm1_702cm1_1055cm1_982cm1_nmr_se_gixrd_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_1c_dram_zaz_eot_leakage_or_2nm_gaa_hzo_monoclinic_phase_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_1c_dram_zaz_eot_leakage_or_2nm_gaa_hzo_monoclinic_phase_drift_pct"], 3.0)
+        self.assertTrue(gov["tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_slo_met"])
+        self.assertFalse(raw["tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_slo_met"])
 
 
 if __name__ == "__main__":

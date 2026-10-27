@@ -14396,6 +14396,67 @@ def simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_
     }
 
 
+def simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(
+    tma_temaz_temah_trains: int = 8,
+    governance_mode: str = "pinn_mpc_tma_temaz_temah_adduct_distillation_and_dram_zaz_gaa_hzo_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Trimethylaluminum (6N5 TMA Al2(CH3)6 >= 99.99995%, Dimeric Pyrophoric
+    Organometallic Liquid, b.p. 127.1 C, m.p. 15.2 C, v.p. 11.5 Torr @ 25 C, Ultra-Low Dimethylaluminum
+    Methoxide (CH3)2AlOCH3 <= 0.25 ppmw, Volatile Si/Ga <= 0.05 ppbw, Halides Cl-/I- <= 0.05 ppmw),
+    Electronic-Grade Tetrakis(ethylmethylamino)zirconium (6N5 TEMAZ Zr[N(CH3)(C2H5)]4 >= 99.99995%,
+    v.p. 0.15 Torr @ 65 C, Ultra-Low Hf <= 0.5 ppmw, Cl- <= 0.05 ppmw) & Tetrakis(ethylmethylamino)hafnium
+    (6N5 TEMAH Hf[N(CH3)(C2H5)]4 >= 99.99995%, v.p. 0.12 Torr @ 65 C, Zr <= 0.5 ppmw) for 1c/1d (<10 nm)
+    DRAM High-Aspect-Ratio (HAR > 75:1) ZrO2-Al2O3-ZrO2 (ZAZ, Tetragonal t-ZrO2 k ~ 38, EOT < 0.45 nm,
+    J_leak < 1e-8 A/cm2) MIM Capacitor Dielectric & 2nm GAA Hf0.5Zr0.5O2 (HZO Orthorhombic Pca2_1
+    Ferroelectric / High-k Gate Stack) Supercycle ALD, Lewis-Base Adduct Exchange Distillation,
+    Alkoxide-Free Bubbler Vapor Delivery & PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (1208cm-1 Al-CH3
+    delta_s / 702cm-1 Al-C Bridging / 1055cm-1 Al-O-CH3 Methoxide Impurity / 982cm-1 Zr/Hf-N Stretch) +
+    1H/13C/27Al-NMR / HR-ICP-MS + In-Situ SE / GI-XRD / C-V Metrology & SEMI S2 / SEMI C3 / NFPA 704
+    (4-3-3 W) / OSHA PSM / IEC 61511 SIL-3 Spontaneously Pyrophoric & Explosively Water-Reactive
+    Alkylaluminum (TMA + H2O/O2 -> Al2O3 + CH4, dH = -1940 kJ/mol) Dry-Powder/LN2 Quench Hard Interlock.
+    """
+    trains = max(1, int(tma_temaz_temah_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_tma_temaz_temah_adduct_distillation_and_dram_zaz_gaa_hzo_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_tma_temaz_temah_pods = trains * 4
+
+    if governed:
+        electronic_6n5_tma_6n5_temaz_6n5_temah_purity_and_dram_zaz_gaa_hzo_yield_gain_pct = 65.1
+        alkoxide_me2alome_carbon_residue_and_zaz_capacitor_leakage_reduction_pct = 88.6
+        semi_s2_nfpa704_433w_osha_psm_sil3_pyrophoric_tma_quench_lockout_latency_ms = 0.13
+        unmitigated_pyrophoric_tma_air_autoignition_or_water_reactive_ch4_explosion_pct = 0.0
+        edge_qcl_tdlas_1208cm1_702cm1_1055cm1_982cm1_nmr_se_gixrd_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_1c_dram_zaz_eot_leakage_or_2nm_gaa_hzo_monoclinic_phase_drift_pct = 0.0
+    else:
+        electronic_6n5_tma_6n5_temaz_6n5_temah_purity_and_dram_zaz_gaa_hzo_yield_gain_pct = 14.6
+        alkoxide_me2alome_carbon_residue_and_zaz_capacitor_leakage_reduction_pct = 19.1
+        semi_s2_nfpa704_433w_osha_psm_sil3_pyrophoric_tma_quench_lockout_latency_ms = 468.0
+        unmitigated_pyrophoric_tma_air_autoignition_or_water_reactive_ch4_explosion_pct = 1.7
+        edge_qcl_tdlas_1208cm1_702cm1_1055cm1_982cm1_nmr_se_gixrd_latency_ms = 274.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_1c_dram_zaz_eot_leakage_or_2nm_gaa_hzo_monoclinic_phase_drift_pct = 6.6
+
+    return {
+        "tma_temaz_temah_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tma_temaz_temah_pods": active_tma_temaz_temah_pods,
+        "electronic_6n5_tma_6n5_temaz_6n5_temah_purity_and_dram_zaz_gaa_hzo_yield_gain_pct": electronic_6n5_tma_6n5_temaz_6n5_temah_purity_and_dram_zaz_gaa_hzo_yield_gain_pct,
+        "alkoxide_me2alome_carbon_residue_and_zaz_capacitor_leakage_reduction_pct": alkoxide_me2alome_carbon_residue_and_zaz_capacitor_leakage_reduction_pct,
+        "semi_s2_nfpa704_433w_osha_psm_sil3_pyrophoric_tma_quench_lockout_latency_ms": semi_s2_nfpa704_433w_osha_psm_sil3_pyrophoric_tma_quench_lockout_latency_ms,
+        "unmitigated_pyrophoric_tma_air_autoignition_or_water_reactive_ch4_explosion_pct": unmitigated_pyrophoric_tma_air_autoignition_or_water_reactive_ch4_explosion_pct,
+        "edge_qcl_tdlas_1208cm1_702cm1_1055cm1_982cm1_nmr_se_gixrd_latency_ms": edge_qcl_tdlas_1208cm1_702cm1_1055cm1_982cm1_nmr_se_gixrd_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_1c_dram_zaz_eot_leakage_or_2nm_gaa_hzo_monoclinic_phase_drift_pct": uncompensated_1c_dram_zaz_eot_leakage_or_2nm_gaa_hzo_monoclinic_phase_drift_pct,
+        "tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
