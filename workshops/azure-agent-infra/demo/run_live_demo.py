@@ -257,6 +257,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox,
     simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
     simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox,
+    simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1673,6 +1674,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_dems_omcts_8_trains": simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(8, "pinn_mpc_dems_omcts_vacuum_distillation_atrp_porogen_and_uv_cure_sil3_edge"),
             "governed_dems_omcts_32_trains": simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(32, "pinn_mpc_dems_omcts_vacuum_distillation_atrp_porogen_and_uv_cure_sil3_edge"),
             "raw_dems_omcts_8_trains": simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(8, "raw_cloud_uncompensated_lfc_gelation_atrp_peroxide_and_uv_cure_k_shift"),
+        },
+        "demo_238_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox": {
+            "governed_snmor_tmi_8_trains": simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(8, "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge"),
+            "governed_snmor_tmi_32_trains": simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(32, "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge"),
+            "raw_snmor_tmi_8_trains": simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(8, "raw_cloud_uncompensated_dialkyltin_bridging_tmi_channeling_and_melt_runaway"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

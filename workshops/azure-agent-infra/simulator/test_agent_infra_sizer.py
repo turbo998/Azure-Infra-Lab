@@ -244,6 +244,7 @@ from agent_infra_sizer import (
     simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox,
     simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
     simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox,
+    simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5065,6 +5066,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct"], 3.0)
         self.assertTrue(gov["dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_slo_met"])
         self.assertFalse(raw["dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_slo_met"])
+
+    def test_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(self) -> None:
+        gov = simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(
+            8, "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge"
+        )
+        raw = simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(
+            8, "raw_cloud_uncompensated_dialkyltin_bridging_tmi_channeling_and_melt_runaway"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_snmor_tmi_pods"], 32)
+        self.assertEqual(gov["electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct"], 59.6)
+        self.assertEqual(gov["dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct"], 83.6)
+        self.assertEqual(gov["semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct"], 3.0)
+        self.assertTrue(gov["organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met"])
+        self.assertFalse(raw["organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met"])
 
 
 if __name__ == "__main__":

@@ -12840,6 +12840,62 @@ def simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(
     }
 
 
+def simulate_organotin_euv_mor_and_trimethylindium_igzo_sublimation_sil3_sandbox(
+    euv_mor_tmi_trains: int = 8,
+    governance_mode: str = "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Organotin EUV Metal-Oxide Photoresist Precursors (6N Sn12-MOR [(R)SnO(OAc)]6 /
+    R-Sn(NMe2)3 >= 99.9999%) & Trimethylindium (6N TMI In(CH3)3 >= 99.9999%, m.p. 88.4 C) + Diethylzinc (6N DEZ) High-NA
+    EUV (0.55 NA, 13.5 nm) Dry/Track Photoresist & 2nm/A14 Monolithic 3D BEOL Amorphous Indium-Gallium-Zinc-Oxide (a-IGZO
+    InGaZnO4 2T0C Capacitorless DRAM) Sublimation-Zone Purification, Dialkyltin (R2SnX2 <= 0.15 ppmw) & Trialkyltin
+    (R3SnX <= 0.05 ppmw) Nano-Bridging Defect Elimination, Solution-TMI Multi-Tray Sublimator Channeling Suppression &
+    Piezocon Acoustic Concentration Closed-Loop Control (<= +-0.35% Pick-Up Variance), Dry-MOR Counter-Reactant Vapor
+    Deposition & PEB Sn-O-Sn Condensation PINN-MPC, Online 10 kHz QCL-TDLAS + 119Sn NMR + SP-ICP-ToF-MS (<= 2 pptw Sn/In
+    Nanoparticle & Metal) Metrology & SEMI C3 / SEMI S2 / OSHA Organotin PEL / IEC 61511 SIL-3 Pyrophoric TMI Over-Temperature
+    (> 82.0 C Melt-Runaway) & Toxic Organotin Vapor Leak (<= 10 ppbv as Sn) Hard Interlock (Chapter 243, Cycle #238).
+    """
+    trains = max(2, min(int(euv_mor_tmi_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_snmor_tmi_pods = trains * 4
+
+    if governed:
+        electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct = 59.6
+        dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct = 83.6
+        semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms = 0.14
+        unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct = 0.0
+        edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct = 0.0
+    else:
+        electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct = 11.7
+        dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct = 15.6
+        semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms = 415.0
+        unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct = 1.6
+        edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms = 236.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct = 5.4
+
+    return {
+        "euv_mor_tmi_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_snmor_tmi_pods": active_snmor_tmi_pods,
+        "electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct": electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct,
+        "dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct": dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct,
+        "semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms": semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms,
+        "unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct": unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct,
+        "edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms": edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct": uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct,
+        "organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

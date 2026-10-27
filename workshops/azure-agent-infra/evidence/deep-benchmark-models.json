@@ -13427,5 +13427,52 @@
       "uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct": 5.3,
       "dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_slo_met": false
     }
+  ],
+  "organotin_euv_mor_and_trimethylindium_igzo_sublimation_profiles": [
+    {
+      "euv_mor_tmi_trains": 8,
+      "governance_mode": "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_snmor_tmi_pods": 32,
+      "electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct": 59.6,
+      "dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct": 83.6,
+      "semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms": 0.14,
+      "unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct": 0.0,
+      "edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct": 0.0,
+      "organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met": true
+    },
+    {
+      "euv_mor_tmi_trains": 32,
+      "governance_mode": "pinn_mpc_organotin_euv_mor_tmi_sublimation_and_piezocon_igzo_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_snmor_tmi_pods": 128,
+      "electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct": 59.6,
+      "dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct": 83.6,
+      "semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms": 0.14,
+      "unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct": 0.0,
+      "edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct": 0.0,
+      "organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met": true
+    },
+    {
+      "euv_mor_tmi_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_dialkyltin_bridging_tmi_channeling_and_melt_runaway",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_snmor_tmi_pods": 32,
+      "electronic_6n_snmor_tmi_purity_and_high_na_euv_lwr_igzo_yield_gain_pct": 11.7,
+      "dialkyl_trialkyl_tin_bridging_and_tmi_channeling_defect_reduction_pct": 15.6,
+      "semi_s2_osha_sil3_tmi_melt_runaway_and_organotin_vapor_lockout_latency_ms": 415.0,
+      "unmitigated_tmi_pyrophoric_melt_runaway_or_organotin_toxic_exposure_pct": 1.6,
+      "edge_qcl_tdlas_piezocon_acoustic_119sn_nmr_sp_icp_tof_ms_closed_loop_latency_ms": 236.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_euv_mor_stochastic_nano_bridging_or_tmi_pickup_droop_pct": 5.4,
+      "organotin_euv_mor_and_trimethylindium_igzo_sublimation_slo_met": false
+    }
   ]
 }
