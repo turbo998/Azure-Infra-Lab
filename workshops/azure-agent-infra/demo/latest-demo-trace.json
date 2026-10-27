@@ -14005,6 +14005,53 @@
         "uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct": 5.9,
         "cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_slo_met": false
       }
+    ],
+    "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_profiles": [
+      {
+        "bcl3_ticl4_sicl4_trains": 8,
+        "governance_mode": "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bcl3_ticl4_sicl4_pods": 32,
+        "electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct": 61.5,
+        "cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct": 85.3,
+        "semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms": 0.14,
+        "unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct": 0.0,
+        "edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct": 0.0,
+        "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met": true
+      },
+      {
+        "bcl3_ticl4_sicl4_trains": 32,
+        "governance_mode": "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bcl3_ticl4_sicl4_pods": 128,
+        "electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct": 61.5,
+        "cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct": 85.3,
+        "semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms": 0.14,
+        "unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct": 0.0,
+        "edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct": 0.0,
+        "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met": true
+      },
+      {
+        "bcl3_ticl4_sicl4_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_bcl3_cocl2_mass28_drift_and_ticl4_nh4cl_particulate_hydrolysis",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bcl3_ticl4_sicl4_pods": 32,
+        "electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct": 12.8,
+        "cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct": 16.8,
+        "semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms": 438.0,
+        "unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct": 1.6,
+        "edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms": 250.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct": 6.0,
+        "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -26384,5 +26431,52 @@
       "cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_slo_met": false
     }
   },
-  "trace_sha256": "9155f64a0b2ab6d23add213d60a56e43822e1978368317dcaf3074e7b0fcc8e4"
+  "demo_246_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox": {
+    "governed_bcl3_ticl4_sicl4_8_trains": {
+      "bcl3_ticl4_sicl4_trains": 8,
+      "governance_mode": "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bcl3_ticl4_sicl4_pods": 32,
+      "electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct": 61.5,
+      "cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct": 85.3,
+      "semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms": 0.14,
+      "unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct": 0.0,
+      "edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct": 0.0,
+      "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met": true
+    },
+    "governed_bcl3_ticl4_sicl4_32_trains": {
+      "bcl3_ticl4_sicl4_trains": 32,
+      "governance_mode": "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bcl3_ticl4_sicl4_pods": 128,
+      "electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct": 61.5,
+      "cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct": 85.3,
+      "semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms": 0.14,
+      "unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct": 0.0,
+      "edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct": 0.0,
+      "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met": true
+    },
+    "raw_bcl3_ticl4_sicl4_8_trains": {
+      "bcl3_ticl4_sicl4_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_bcl3_cocl2_mass28_drift_and_ticl4_nh4cl_particulate_hydrolysis",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_bcl3_ticl4_sicl4_pods": 32,
+      "electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct": 12.8,
+      "cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct": 16.8,
+      "semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms": 438.0,
+      "unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct": 1.6,
+      "edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms": 250.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct": 6.0,
+      "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met": false
+    }
+  },
+  "trace_sha256": "9c2024fa604d14fbcfb61bf2711608da35bf22d710a8895a8548205b41d04cef"
 }

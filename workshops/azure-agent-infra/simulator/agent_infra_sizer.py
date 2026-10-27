@@ -13330,6 +13330,69 @@ def simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sand
     }
 
 
+def simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(
+    bcl3_ticl4_sicl4_trains: int = 8,
+    governance_mode: str = "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #246 (255-Test Milestone!): Autonomous Electronic-Grade Boron Trichloride (5N5 BCl3 &
+    Isotopically Enriched 5N5 11BCl3 >=99.9995% Chemical Purity, 11B Isotopic Enrichment >=99.85%,
+    10B <=0.15%, b.p. 12.6C, Ultra-Low Phosgene COCl2 <=0.10ppmv, SiCl4 <=0.20ppmv, HCl <=0.50ppmv,
+    Cl2 <=0.10ppmv, Fe/Cu/Ni <=0.5ppbw) & Titanium Tetrachloride (6N5 TiCl4 >=99.99995%, b.p. 136.4C,
+    Ultra-Low Vanadium Oxytrichloride VOCl3 <=0.02ppmw, SiCl4 <=0.10ppmw, Fe/Al/Cr/Sn <=0.05ppbw) +
+    Silicon Tetrachloride (6N5 SiCl4 >=99.99995%, b.p. 57.6C, SiHCl3 <=0.10ppmv, B/P <=0.02ppbw)
+    2nm GAA Selective Si1-xGex:B Source/Drain Epitaxy / 11B+ Ultra-Shallow Ion Implantation /
+    AlCu/GaN/Al2O3 Native-Oxide Scavenging Plasma Etch & DRAM High-Aspect-Ratio (80:1) Capacitor
+    TiN Electrode / 3D NAND Low-Temp SiNx Spacer Thermal ALD Photochemical Phosgene Decomposition,
+    Vanadium Reduction Complexation Distillation & Multi-Column Sub-Boiling Quartz Rectification
+    PINN-MPC, Online 10 kHz QCL-TDLAS/FTIR (956cm-1 11B-Cl vs 995cm-1 10B-Cl Isotope Shift /
+    1827cm-1 COCl2 Phosgene / 1035cm-1 VOCl3 V=O Stretch / 621cm-1 Si-Cl) + HR-ICP-MS Metrology &
+    SEMI S2 / SEMI C3 / NFPA 704 / OSHA PEL / IEC 61511 SIL-3 Moisture-Triggered Exothermic
+    BCl3/TiCl4/SiCl4 Hydrolysis (HCl Fume + H3BO3/TiO2/SiO2 Valve Seizure) & Phosgene COCl2
+    Breakout Hard Interlock.
+    """
+    trains = max(1, int(bcl3_ticl4_sicl4_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_bcl3_ticl4_sicl4_pods = trains * 4
+
+    if governed:
+        electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct = 61.5
+        cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct = 85.3
+        semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms = 0.14
+        unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct = 0.0
+        edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct = 0.0
+    else:
+        electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct = 12.8
+        cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct = 16.8
+        semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms = 438.0
+        unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct = 1.6
+        edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms = 250.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct = 6.0
+
+    return {
+        "bcl3_ticl4_sicl4_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bcl3_ticl4_sicl4_pods": active_bcl3_ticl4_sicl4_pods,
+        "electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct": electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct,
+        "cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct": cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct,
+        "semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms": semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms,
+        "unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct": unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct,
+        "edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms": edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct": uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct,
+        "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

@@ -252,6 +252,7 @@ from agent_infra_sizer import (
     simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox,
     simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox,
     simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
+    simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5241,6 +5242,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct"], 3.0)
         self.assertTrue(gov["cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_slo_met"])
         self.assertFalse(raw["cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_slo_met"])
+
+    def test_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(self) -> None:
+        gov = simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(
+            8, "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge"
+        )
+        raw = simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_bcl3_cocl2_mass28_drift_and_ticl4_nh4cl_particulate_hydrolysis"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_bcl3_ticl4_sicl4_pods"], 32)
+        self.assertEqual(gov["electronic_5n5_bcl3_6n5_ticl4_sicl4_purity_and_dram_tin_gaa_epi_yield_gain_pct"], 61.5)
+        self.assertEqual(gov["cocl2_mass28_contamination_vocl3_leakage_and_nh4cl_salt_defect_reduction_pct"], 85.3)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_sil3_hydrolysis_hcl_fume_and_cocl2_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_bcl3_ticl4_hydrolysis_hcl_plume_or_sio2_tio2_valve_seizure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_956cm1_1827cm1_1035cm1_icpms_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct"], 3.0)
+        self.assertTrue(gov["bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met"])
+        self.assertFalse(raw["bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met"])
 
 
 if __name__ == "__main__":
