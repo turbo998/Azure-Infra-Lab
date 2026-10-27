@@ -14081,6 +14081,69 @@ def simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox
     }
 
 
+def simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox(
+    b2h6_gef4_pf3_usj_trains: int = 8,
+    governance_mode: str = "pinn_mpc_b2h6_gef4_pf3_cold_chain_sap_delivery_and_usj_pai_sige_boron_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Diborane (5N B2H6 >=99.999%, b.p. -92.5C, Pyrophoric
+    Autoignition 38-52C, TLV-TWA 0.1ppmv, Ultra-Low Higher Boranes B4H10/B5H9 <=0.20ppmv, BF3 <=0.15ppmv,
+    CO2 <=0.20ppmv, H2O <=0.20ppmv), Isotopically Enriched Germanium Tetrafluoride (5N 72GeF4 / GeF4
+    >=99.999%, 72Ge >96%, subl. -36.5C, Zero 70GeF3+ m/z=127 Mass Contamination, SiF4 <=0.15ppmv, HF
+    <=0.15ppmv) & Electronic-Grade Phosphorus Trifluoride (5N5 PF3 >=99.9995%, b.p. -101.8C, PH3-Free
+    High-Beam-Current 31P+ Implantation Source, POF3 <=0.15ppmv, PF5 <=0.15ppmv, HCl <=0.10ppmv) 2nm GAA
+    Nanosheet Ultra-Shallow Junction (USJ <4.5nm Source/Drain Extension SDE) Pre-Amorphization
+    Implantation (PAI Cryogenic -100C 72Ge+ End-of-Range EOR Defect Suppression & Channeling Elimination)
+    & In-Situ Heavy Boron-Doped p+ SiGe:B (NA >3.2e21 cm-3, Contact Resistivity rho_c <0.85e-9 Ohm*cm2)
+    Cold-Chain Synthesis (-20C Jacketed Storage Suppressing 3B2H6 -> B4H10/B5H9/B10H14 Polymerization),
+    Sub-Atmospheric Microporous Carbon Adsorbent Delivery (SAP / VAC <650 Torr) & Anti-Polymerization
+    PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (2520cm-1 B2H6 Terminal B-Ht / 1602cm-1 Bridge B-Hb-B /
+    800cm-1 72GeF4 nu3 / 892cm-1 PF3 nu1) + GC-MS / ICP-MS + In-Line SIMS / Modulated Photoreflectance
+    (Therma-Probe) Metrology & SEMI S2 / SEMI C3 / NFPA 55 / NFPA 318 / OSHA PSM / IEC 61511 SIL-3
+    Pyrophoric Diborane Room-Temperature Autoignition (38-52C), Exothermic Higher-Borane (B5H9/B10H14)
+    Polymerization Plugging & Hemoglobin-Binding PF3 / Hydrolytic GeF4 Toxic Leak Hard Interlock.
+    """
+    trains = max(1, int(b2h6_gef4_pf3_usj_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_b2h6_gef4_pf3_cold_chain_sap_delivery_and_usj_pai_sige_boron_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_b2h6_gef4_pf3_pods = trains * 4
+
+    if governed:
+        electronic_5n_b2h6_72gef4_5n5_pf3_purity_and_gaa_usj_sige_yield_gain_pct = 63.9
+        higher_borane_polymerization_eor_defect_and_usj_channeling_reduction_pct = 87.6
+        semi_s2_nfpa55_nfpa318_sil3_pyrophoric_b2h6_sap_and_pf3_gef4_lockout_latency_ms = 0.13
+        unmitigated_b2h6_autoignition_borane_plugging_or_pf3_gef4_toxic_leak_pct = 0.0
+        edge_qcl_tdlas_2520cm1_1602cm1_800cm1_892cm1_sims_thermaprobe_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_2nm_gaa_usj_tail_channeling_or_sige_b_cluster_deactivation_pct = 0.0
+    else:
+        electronic_5n_b2h6_72gef4_5n5_pf3_purity_and_gaa_usj_sige_yield_gain_pct = 14.0
+        higher_borane_polymerization_eor_defect_and_usj_channeling_reduction_pct = 18.2
+        semi_s2_nfpa55_nfpa318_sil3_pyrophoric_b2h6_sap_and_pf3_gef4_lockout_latency_ms = 456.0
+        unmitigated_b2h6_autoignition_borane_plugging_or_pf3_gef4_toxic_leak_pct = 1.6
+        edge_qcl_tdlas_2520cm1_1602cm1_800cm1_892cm1_sims_thermaprobe_latency_ms = 266.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_2nm_gaa_usj_tail_channeling_or_sige_b_cluster_deactivation_pct = 6.1
+
+    return {
+        "b2h6_gef4_pf3_usj_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_b2h6_gef4_pf3_pods": active_b2h6_gef4_pf3_pods,
+        "electronic_5n_b2h6_72gef4_5n5_pf3_purity_and_gaa_usj_sige_yield_gain_pct": electronic_5n_b2h6_72gef4_5n5_pf3_purity_and_gaa_usj_sige_yield_gain_pct,
+        "higher_borane_polymerization_eor_defect_and_usj_channeling_reduction_pct": higher_borane_polymerization_eor_defect_and_usj_channeling_reduction_pct,
+        "semi_s2_nfpa55_nfpa318_sil3_pyrophoric_b2h6_sap_and_pf3_gef4_lockout_latency_ms": semi_s2_nfpa55_nfpa318_sil3_pyrophoric_b2h6_sap_and_pf3_gef4_lockout_latency_ms,
+        "unmitigated_b2h6_autoignition_borane_plugging_or_pf3_gef4_toxic_leak_pct": unmitigated_b2h6_autoignition_borane_plugging_or_pf3_gef4_toxic_leak_pct,
+        "edge_qcl_tdlas_2520cm1_1602cm1_800cm1_892cm1_sims_thermaprobe_latency_ms": edge_qcl_tdlas_2520cm1_1602cm1_800cm1_892cm1_sims_thermaprobe_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2nm_gaa_usj_tail_channeling_or_sige_b_cluster_deactivation_pct": uncompensated_2nm_gaa_usj_tail_channeling_or_sige_b_cluster_deactivation_pct,
+        "b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

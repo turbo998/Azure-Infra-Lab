@@ -264,6 +264,7 @@ from agent_infra_sizer import (
     simulate_c2f6_c3f8_cof2_low_gwp_rps_chamber_clean_and_dielectric_etch_sil3_sandbox,
     simulate_cf3i_c3f7i_c2f5i_ultra_low_gwp_har_3d_nand_dram_rie_etch_sil3_sandbox,
     simulate_bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_sil3_sandbox,
+    simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5505,6 +5506,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_4h_sic_trench_corner_crowding_or_algan_barrier_over_etch_pct"], 3.0)
         self.assertTrue(gov["bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_slo_met"])
         self.assertFalse(raw["bcl3_cl2_sicl4_sic_trench_mosfet_and_gan_hemt_ale_etch_slo_met"])
+
+    def test_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox(self) -> None:
+        gov = simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox(
+            8, "pinn_mpc_b2h6_gef4_pf3_cold_chain_sap_delivery_and_usj_pai_sige_boron_sil3_edge"
+        )
+        raw = simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox(
+            8, "raw_cloud_uncompensated_b2h6_polymerization_usj_channeling_and_sige_boron_clustering"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_b2h6_gef4_pf3_pods"], 32)
+        self.assertEqual(gov["electronic_5n_b2h6_72gef4_5n5_pf3_purity_and_gaa_usj_sige_yield_gain_pct"], 63.9)
+        self.assertEqual(gov["higher_borane_polymerization_eor_defect_and_usj_channeling_reduction_pct"], 87.6)
+        self.assertEqual(gov["semi_s2_nfpa55_nfpa318_sil3_pyrophoric_b2h6_sap_and_pf3_gef4_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_b2h6_autoignition_borane_plugging_or_pf3_gef4_toxic_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_b2h6_autoignition_borane_plugging_or_pf3_gef4_toxic_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2520cm1_1602cm1_800cm1_892cm1_sims_thermaprobe_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_2nm_gaa_usj_tail_channeling_or_sige_b_cluster_deactivation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_2nm_gaa_usj_tail_channeling_or_sige_b_cluster_deactivation_pct"], 3.0)
+        self.assertTrue(gov["b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_slo_met"])
+        self.assertFalse(raw["b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_slo_met"])
 
 
 if __name__ == "__main__":
