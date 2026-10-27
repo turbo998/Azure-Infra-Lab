@@ -14457,6 +14457,68 @@ def simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox(
     }
 
 
+def simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox(
+    tdmat_ticl4_teal_trains: int = 8,
+    governance_mode: str = "pinn_mpc_tdmat_ticl4_teal_vocl3_stripping_and_gaa_tialc_tin_wf_dram_electrode_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Tetrakis(dimethylamino)titanium (6N5 TDMAT Ti[N(CH3)2]4 >= 99.99995%,
+    Liquid Dialkylamide Precursor, b.p. 50 C @ 0.5 Torr, m.p. 1.5 C, v.p. 0.10 Torr @ 25 C, Chloride-Free
+    Cl- <= 0.05 ppmw, Volatile Si/Sn/Zr/Hf <= 0.1 ppbw), Electronic-Grade Titanium Tetrachloride (6N5 TiCl4
+    >= 99.99995%, b.p. 136.4 C, m.p. -24.1 C, v.p. 10.0 Torr @ 20 C, Near-Azeotropic Vanadium Oxytrichloride
+    VOCl3 b.p. 127 C <= 0.05 ppmw, Hexachlorodisiloxane Cl3SiOSiCl3 <= 0.2 ppmw, Fe/Cr/Ni/Na/Al <= 0.02 ppbv)
+    & Electronic-Grade Triethylaluminum (6N5 TEAl Al(C2H5)3 >= 99.99995%, b.p. 194 C, m.p. -50 C, Pyrophoric
+    beta-Hydride Carbon-Dopant Co-Precursor) for 2nm GAA Nanosheet Dual-Work-Function Metal Gate (n-WF TiAlC
+    Phi_eff ~ 4.18 eV & p-WF TiN Phi_eff ~ 4.92 eV, Sub-1.2 nm Conformal Multi-Vt Tuning within < 3 nm
+    Sheet-to-Sheet Gap) & 1c/1d (< 10 nm) DRAM High-Aspect-Ratio (HAR > 75:1) TiN Top/Bottom MIM Capacitor
+    Electrode (< 120 uOhm-cm, Residual Cl < 0.2 at.%) Thermal/PEALD Copper-Amalgam / Polyphenylene-Sulfide
+    Chemical Vanadium-Reduction & Wiped-Film Molecular Distillation, Ampoule Vapor Delivery & PINN-MPC,
+    Online 10 kHz QCL-TDLAS / FTIR (498cm-1 Ti-Cl nu3 / 948cm-1 Ti-N Stretch / 1035cm-1 V=O Vanadyl Impurity
+    / 1250cm-1 C-N Stretch) + GC-AED / HR-ICP-MS + In-Situ SE / AR-XPS / KPFM Work-Function Metrology &
+    SEMI S2 / SEMI C3 / NFPA 704 / OSHA PSM / IEC 61511 SIL-3 Corrosive Fuming TiCl4 Hydrolysis (TiCl4 +
+    2H2O -> TiO2(s) + 4HCl(g)) & Pyrophoric Alkylaluminum / Dialkylamide Dual-Hazard Hard Interlock.
+    """
+    trains = max(1, int(tdmat_ticl4_teal_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_tdmat_ticl4_teal_vocl3_stripping_and_gaa_tialc_tin_wf_dram_electrode_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_tdmat_ticl4_teal_pods = trains * 4
+
+    if governed:
+        electronic_6n5_tdmat_6n5_ticl4_6n5_teal_purity_and_gaa_wf_dram_tin_yield_gain_pct = 65.4
+        vocl3_vanadium_halide_corrosion_and_gaa_vt_shift_reduction_pct = 88.8
+        semi_s2_nfpa704_osha_psm_sil3_fuming_ticl4_hcl_and_pyrophoric_teal_lockout_latency_ms = 0.13
+        unmitigated_ticl4_tio2_hcl_fume_release_or_pyrophoric_teal_autoignition_pct = 0.0
+        edge_qcl_tdlas_498cm1_948cm1_1035cm1_1250cm1_gcaed_xps_kpfm_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_2nm_gaa_multi_vt_workfunction_drift_or_dram_tin_cl_pitting_pct = 0.0
+    else:
+        electronic_6n5_tdmat_6n5_ticl4_6n5_teal_purity_and_gaa_wf_dram_tin_yield_gain_pct = 14.8
+        vocl3_vanadium_halide_corrosion_and_gaa_vt_shift_reduction_pct = 19.3
+        semi_s2_nfpa704_osha_psm_sil3_fuming_ticl4_hcl_and_pyrophoric_teal_lockout_latency_ms = 472.0
+        unmitigated_ticl4_tio2_hcl_fume_release_or_pyrophoric_teal_autoignition_pct = 1.7
+        edge_qcl_tdlas_498cm1_948cm1_1035cm1_1250cm1_gcaed_xps_kpfm_latency_ms = 276.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_2nm_gaa_multi_vt_workfunction_drift_or_dram_tin_cl_pitting_pct = 6.7
+
+    return {
+        "tdmat_ticl4_teal_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tdmat_ticl4_teal_pods": active_tdmat_ticl4_teal_pods,
+        "electronic_6n5_tdmat_6n5_ticl4_6n5_teal_purity_and_gaa_wf_dram_tin_yield_gain_pct": electronic_6n5_tdmat_6n5_ticl4_6n5_teal_purity_and_gaa_wf_dram_tin_yield_gain_pct,
+        "vocl3_vanadium_halide_corrosion_and_gaa_vt_shift_reduction_pct": vocl3_vanadium_halide_corrosion_and_gaa_vt_shift_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_fuming_ticl4_hcl_and_pyrophoric_teal_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_fuming_ticl4_hcl_and_pyrophoric_teal_lockout_latency_ms,
+        "unmitigated_ticl4_tio2_hcl_fume_release_or_pyrophoric_teal_autoignition_pct": unmitigated_ticl4_tio2_hcl_fume_release_or_pyrophoric_teal_autoignition_pct,
+        "edge_qcl_tdlas_498cm1_948cm1_1035cm1_1250cm1_gcaed_xps_kpfm_latency_ms": edge_qcl_tdlas_498cm1_948cm1_1035cm1_1250cm1_gcaed_xps_kpfm_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2nm_gaa_multi_vt_workfunction_drift_or_dram_tin_cl_pitting_pct": uncompensated_2nm_gaa_multi_vt_workfunction_drift_or_dram_tin_cl_pitting_pct,
+        "tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

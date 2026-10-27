@@ -270,6 +270,7 @@ from agent_infra_sizer import (
     simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox,
     simulate_hcds_octs_pcds_chloropolysilane_3dnand_ctn_and_gaa_spacer_ald_sil3_sandbox,
     simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox,
+    simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5637,6 +5638,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_1c_dram_zaz_eot_leakage_or_2nm_gaa_hzo_monoclinic_phase_drift_pct"], 3.0)
         self.assertTrue(gov["tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_slo_met"])
         self.assertFalse(raw["tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_slo_met"])
+
+    def test_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox(self) -> None:
+        gov = simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox(
+            8, "pinn_mpc_tdmat_ticl4_teal_vocl3_stripping_and_gaa_tialc_tin_wf_dram_electrode_ald_sil3_edge"
+        )
+        raw = simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_ticl4_vocl3_vanadium_drift_and_tdmat_thermal_decomposition"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_tdmat_ticl4_teal_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_tdmat_6n5_ticl4_6n5_teal_purity_and_gaa_wf_dram_tin_yield_gain_pct"], 65.4)
+        self.assertEqual(gov["vocl3_vanadium_halide_corrosion_and_gaa_vt_shift_reduction_pct"], 88.8)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_fuming_ticl4_hcl_and_pyrophoric_teal_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_ticl4_tio2_hcl_fume_release_or_pyrophoric_teal_autoignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ticl4_tio2_hcl_fume_release_or_pyrophoric_teal_autoignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_498cm1_948cm1_1035cm1_1250cm1_gcaed_xps_kpfm_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_2nm_gaa_multi_vt_workfunction_drift_or_dram_tin_cl_pitting_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_2nm_gaa_multi_vt_workfunction_drift_or_dram_tin_cl_pitting_pct"], 3.0)
+        self.assertTrue(gov["tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_slo_met"])
+        self.assertFalse(raw["tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_slo_met"])
 
 
 if __name__ == "__main__":
