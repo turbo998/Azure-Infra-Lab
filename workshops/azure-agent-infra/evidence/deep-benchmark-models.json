@@ -14743,5 +14743,52 @@
       "uncompensated_3dnand_mol_w_fluorine_void_or_sub1nm_tan_cu_diffusion_pct": 6.8,
       "wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_slo_met": false
     }
+  ],
+  "btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_profiles": [
+    {
+      "btmste_btmsse_tdmasb_tdmage_trains": 8,
+      "governance_mode": "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_btmste_btmsse_tdmasb_tdmage_pods": 32,
+      "electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct": 65.8,
+      "photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct": 89.1,
+      "semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms": 0.13,
+      "unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct": 0.0,
+      "edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct": 0.0,
+      "btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met": true
+    },
+    {
+      "btmste_btmsse_tdmasb_tdmage_trains": 32,
+      "governance_mode": "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_btmste_btmsse_tdmasb_tdmage_pods": 128,
+      "electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct": 65.8,
+      "photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct": 89.1,
+      "semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms": 0.13,
+      "unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct": 0.0,
+      "edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct": 0.0,
+      "btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met": true
+    },
+    {
+      "btmste_btmsse_tdmasb_tdmage_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_btmste_te_colloid_and_gst225_stoichiometry_drift",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_btmste_btmsse_tdmasb_tdmage_pods": 32,
+      "electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct": 15.1,
+      "photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct": 19.6,
+      "semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms": 478.0,
+      "unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct": 1.8,
+      "edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms": 279.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct": 6.9,
+      "btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met": false
+    }
   ]
 }

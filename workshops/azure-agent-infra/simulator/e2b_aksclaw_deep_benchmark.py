@@ -278,6 +278,7 @@ from agent_infra_sizer import (
     simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox,
     simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox,
     simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox,
+    simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2105,6 +2106,18 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "raw_cloud_uncompensated_wcl6_wocl4_oxygen_incorporation_and_pdmat_thermal_decomposition"),
     ]
 
+    btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_profiles = [
+        simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(8, "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"),
+        simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(32, "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"),
+        simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(8, "raw_cloud_uncompensated_btmste_te_colloid_and_gst225_stoichiometry_drift"),
+    ]
+
+    wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_profiles = [
+        simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
+        simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(32, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
+        simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "raw_cloud_uncompensated_wcl6_wocl4_oxygen_incorporation_and_pdmat_thermal_decomposition"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2370,6 +2383,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_profiles": tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_profiles,
         "tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_profiles": tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_profiles,
         "wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_profiles": wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_profiles,
+        "btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_profiles": btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_profiles,
     }
 
 

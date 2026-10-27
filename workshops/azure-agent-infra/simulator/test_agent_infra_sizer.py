@@ -272,6 +272,7 @@ from agent_infra_sizer import (
     simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox,
     simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox,
     simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox,
+    simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5681,6 +5682,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_3dnand_mol_w_fluorine_void_or_sub1nm_tan_cu_diffusion_pct"], 3.0)
         self.assertTrue(gov["wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_slo_met"])
         self.assertFalse(raw["wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_slo_met"])
+
+    def test_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(self) -> None:
+        gov = simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(
+            8, "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"
+        )
+        raw = simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_btmste_te_colloid_and_gst225_stoichiometry_drift"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_btmste_btmsse_tdmasb_tdmage_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct"], 65.8)
+        self.assertEqual(gov["photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct"], 89.1)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct"], 3.0)
+        self.assertTrue(gov["btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met"])
+        self.assertFalse(raw["btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met"])
 
 
 if __name__ == "__main__":

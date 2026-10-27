@@ -14581,6 +14581,69 @@ def simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_al
     }
 
 
+def simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(
+    btmste_btmsse_tdmasb_tdmage_trains: int = 8,
+    governance_mode: str = "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Bis(trimethylsilyl)telluride (6N5 BTMSTe [(CH3)3Si]2Te >= 99.99995%,
+    b.p. 204 C @ 760 Torr / 48 C @ 2.0 Torr, Hexamethyldisiloxane HMDSO [(CH3)3Si]2O <= 0.05 ppmw,
+    Photolytic Elemental Te0 Colloid <= 0.02 ppmw, Se <= 0.05 ppmw, Fe/Cu/Na <= 0.05 ppbw, U/Th <= 0.001 ppbw)
+    & Bis(trimethylsilyl)selenide (6N5 BTMSSe [(CH3)3Si]2Se >= 99.99995%, b.p. 166 C @ 760 Torr / 55 C @ 10 Torr,
+    Elemental Se0 <= 0.02 ppmw, S <= 0.05 ppmw) + Tris(dimethylamino)antimony (6N5 TDMASb Sb[N(CH3)2]3 >= 99.99995%,
+    b.p. 42 C @ 1.5 Torr, As <= 0.02 ppmw, SbCl3 <= 0.05 ppmw) & Tetrakis(dimethylamino)germanium (6N5 TDMAGe
+    Ge[N(CH3)2]4 >= 99.99995%, b.p. 203 C / 88 C @ 10 Torr, GeCl4 <= 0.05 ppmw) for 3D Crossbar CXL Storage-Class
+    Memory (SCM) Confined Ge2Sb2Te5 (GST-225 CD < 14 nm, AR > 35:1, Reset/Set Ratio > 10^4, Endurance > 10^9 cycles,
+    Stoichiometric Precision <= +/-0.35 at.%) Phase-Change Memory (PCM) & GeSe_x Ovonic Threshold Switch (OTS,
+    Sub-Threshold Leakage < 1 nA, Threshold Voltage Drift < 12 mV/dec) Low-Temperature (75-90 C) Lewis-Acid-Free
+    Silyl-Elimination (-SiMe3Cl / -SiMe3NMe2) Supercycle ALD Amber-Shielded Vacuum Fractional Distillation,
+    Photolytic Te/Se Colloid Suppression & PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (842cm-1 Si-CH3 Rocking /
+    1252cm-1 Si-CH3 Symmetric Bend / 2060cm-1 H-Te Stretch / 2345cm-1 H-Se Stretch / 965cm-1 Sb-N / 895cm-1 Ge-N) +
+    GC-ICP-MS + In-Situ Raman (152cm-1 Sb-Te / 124cm-1 Ge-Te) / GIXRD / XRF Metrology & SEMI S2 / SEMI C3 /
+    NFPA 704 / OSHA PSM / IEC 61511 SIL-3 Malodorous/Neurotoxic Hydrogen Telluride & Hydrogen Selenide (H2Te TLV
+    0.02 ppm / H2Se IDLH 1 ppm) Hydrolysis-Excursion & Pyrophoric Organochalcogenide Hard Interlock.
+    """
+    trains = max(1, int(btmste_btmsse_tdmasb_tdmage_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_btmste_btmsse_tdmasb_tdmage_pods = trains * 4
+
+    if governed:
+        electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct = 65.8
+        photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct = 89.1
+        semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms = 0.13
+        unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct = 0.0
+        edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct = 0.0
+    else:
+        electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct = 15.1
+        photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct = 19.6
+        semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms = 478.0
+        unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct = 1.8
+        edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms = 279.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct = 6.9
+
+    return {
+        "btmste_btmsse_tdmasb_tdmage_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_btmste_btmsse_tdmasb_tdmage_pods": active_btmste_btmsse_tdmasb_tdmage_pods,
+        "electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct": electronic_6n5_btmste_6n5_btmsse_6n5_tdmasb_6n5_tdmage_purity_and_pcm_ots_yield_gain_pct,
+        "photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct": photolytic_te_se_colloid_and_gst225_stoichiometry_drift_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_h2te_h2se_hydrolysis_and_pyrophoric_chalcogenide_lockout_latency_ms,
+        "unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct": unmitigated_h2te_h2se_toxic_hydride_release_or_organochalcogenide_autoignition_pct,
+        "edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms": edge_qcl_tdlas_842cm1_1252cm1_2060cm1_2345cm1_gcicpms_raman_xrf_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct": uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct,
+        "btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

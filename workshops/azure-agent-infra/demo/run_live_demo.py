@@ -285,6 +285,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_tma_temaz_temah_dram_zaz_capacitor_and_gaa_hzo_ald_sil3_sandbox,
     simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox,
     simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox,
+    simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1841,6 +1842,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "wcl5_wcl6_pdmat_tbtdet_8_trains": simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
             "wcl5_wcl6_pdmat_tbtdet_32_trains": simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(32, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
             "raw_wcl5_wcl6_pdmat_tbtdet_8_trains": simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "raw_cloud_uncompensated_wcl6_wocl4_oxygen_incorporation_and_pdmat_thermal_decomposition"),
+        },
+        "demo_266_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald": {
+            "btmste_btmsse_tdmasb_tdmage_8_trains": simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(8, "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"),
+            "btmste_btmsse_tdmasb_tdmage_32_trains": simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(32, "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"),
+            "raw_btmste_btmsse_tdmasb_tdmage_8_trains": simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(8, "raw_cloud_uncompensated_btmste_te_colloid_and_gst225_stoichiometry_drift"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
