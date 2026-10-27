@@ -13142,6 +13142,70 @@ def simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sand
     }
 
 
+def simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox(
+    c4f6_cos_trains: int = 8,
+    governance_mode: str = "pinn_mpc_c4f6_cos_extractive_distillation_and_3dnand_uhar_cryo_etch_gaa_sac_ale_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Hexafluoro-1,3-butadiene (5N5 C4F6
+    CF2=CF-CF=CF2 >=99.9995%, b.p. 6.0C, GWP100 <1.0) & Carbonyl Sulfide
+    (5N5 COS >=99.9995%, b.p. -50.2C, H2S <=0.15ppmv, CS2 <=0.20ppmv,
+    CO2 <=0.50ppmv) + Octafluorocyclobutane (6N c-C4F8 >=99.9999%)
+    400-Layer+ 3D NAND Ultra-High-Aspect-Ratio (UHAR AR >=100:1, Channel
+    Hole Depth >=14.5um) Cryogenic Dielectric Plasma Etch (-70C ESC
+    SiO2/Si3N4 ONON Stack Selectivity >=45:1 to Carbon Hardmask, Bowing/Twisting
+    CD Deviation <=0.8nm) & 2nm GAA Self-Aligned Contact (SAC) Atomic Layer Etch
+    (ALE) Dechlorination Coupling Synthesis, Cryogenic Extractive Rectification
+    (trans/cis-C4F8 / C4F6Cl2 <=0.3ppmv, HF <=0.05ppmv, H2O <=0.10ppmv),
+    Fluorocarbon Polymer Passivation (CFx / C-S Sidewall Ratio) & High-Energy
+    Ion Angular Distribution (IADF Dual-Frequency 400kHz / 60MHz Pulsed CCP)
+    PINN-MPC, Online 10kHz QCL-TDLAS / FTIR (1792cm^-1 C=C Fluoro-Diene /
+    2062cm^-1 O=C=S Stretch / 857cm^-1 H2S / 1535cm^-1 CS2) + GC-AED /
+    VUV-PI-TOF-MS Radical (CF2 / CF3 / C2F4) Metrology & SEMI S2 / SEMI C3 /
+    NFPA 55 / OSHA PEL / IEC 61511 SIL-3 Pressurized Liquid C4F6
+    Autopolymerization/Peroxide Exothermic Runaway (>65.0C) & Neurotoxic/Flammable
+    COS (IDLH 100ppmv, LEL 12.0% vol) Leak Scrubbing Hard Interlock."""
+    trains = max(1, int(c4f6_cos_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_c4f6_cos_extractive_distillation_and_3dnand_uhar_cryo_etch_gaa_sac_ale_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_c4f6_cos_pods = trains * 4
+
+    if governed:
+        electronic_5n5_c4f6_cos_purity_and_3dnand_uhar_400layer_gaa_sac_yield_gain_pct = 60.8
+        uhar_channel_bowing_twisting_and_cos_hydrolysis_h2s_defect_reduction_pct = 84.7
+        semi_s2_nfpa55_osha_sil3_c4f6_autopolymerization_and_cos_leak_lockout_latency_ms = 0.14
+        unmitigated_c4f6_runaway_polymerization_or_cos_neurotoxic_leak_pct = 0.0
+        edge_qcl_tdlas_1792cm1_2062cm1_857cm1_vuv_pitof_ms_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3dnand_etch_stop_bowing_or_gaa_sac_nitride_punchthrough_pct = 0.0
+    else:
+        electronic_5n5_c4f6_cos_purity_and_3dnand_uhar_400layer_gaa_sac_yield_gain_pct = 12.4
+        uhar_channel_bowing_twisting_and_cos_hydrolysis_h2s_defect_reduction_pct = 16.3
+        semi_s2_nfpa55_osha_sil3_c4f6_autopolymerization_and_cos_leak_lockout_latency_ms = 428.0
+        unmitigated_c4f6_runaway_polymerization_or_cos_neurotoxic_leak_pct = 1.7
+        edge_qcl_tdlas_1792cm1_2062cm1_857cm1_vuv_pitof_ms_closed_loop_latency_ms = 244.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3dnand_etch_stop_bowing_or_gaa_sac_nitride_punchthrough_pct = 5.9
+
+    return {
+        "c4f6_cos_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_c4f6_cos_pods": active_c4f6_cos_pods,
+        "electronic_5n5_c4f6_cos_purity_and_3dnand_uhar_400layer_gaa_sac_yield_gain_pct": electronic_5n5_c4f6_cos_purity_and_3dnand_uhar_400layer_gaa_sac_yield_gain_pct,
+        "uhar_channel_bowing_twisting_and_cos_hydrolysis_h2s_defect_reduction_pct": uhar_channel_bowing_twisting_and_cos_hydrolysis_h2s_defect_reduction_pct,
+        "semi_s2_nfpa55_osha_sil3_c4f6_autopolymerization_and_cos_leak_lockout_latency_ms": semi_s2_nfpa55_osha_sil3_c4f6_autopolymerization_and_cos_leak_lockout_latency_ms,
+        "unmitigated_c4f6_runaway_polymerization_or_cos_neurotoxic_leak_pct": unmitigated_c4f6_runaway_polymerization_or_cos_neurotoxic_leak_pct,
+        "edge_qcl_tdlas_1792cm1_2062cm1_857cm1_vuv_pitof_ms_closed_loop_latency_ms": edge_qcl_tdlas_1792cm1_2062cm1_857cm1_vuv_pitof_ms_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3dnand_etch_stop_bowing_or_gaa_sac_nitride_punchthrough_pct": uncompensated_3dnand_etch_stop_bowing_or_gaa_sac_nitride_punchthrough_pct,
+        "c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

@@ -249,6 +249,7 @@ from agent_infra_sizer import (
     simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox,
     simulate_tma_tega_tmin_3dnand_alo_ald_and_ingan_mocvd_sil3_sandbox,
     simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox,
+    simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5175,6 +5176,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_gaa_nfet_vth_roll_off_or_hzo_wake_up_fatigue_failure_pct"], 3.0)
         self.assertTrue(gov["temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_slo_met"])
         self.assertFalse(raw["temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_slo_met"])
+
+    def test_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox(self) -> None:
+        gov = simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox(
+            8, "pinn_mpc_c4f6_cos_extractive_distillation_and_3dnand_uhar_cryo_etch_gaa_sac_ale_sil3_edge"
+        )
+        raw = simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox(
+            8, "raw_cloud_uncompensated_uhar_bowing_twisting_cos_h2s_and_c4f6_polymer_runaway"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_c4f6_cos_pods"], 32)
+        self.assertEqual(gov["electronic_5n5_c4f6_cos_purity_and_3dnand_uhar_400layer_gaa_sac_yield_gain_pct"], 60.8)
+        self.assertEqual(gov["uhar_channel_bowing_twisting_and_cos_hydrolysis_h2s_defect_reduction_pct"], 84.7)
+        self.assertEqual(gov["semi_s2_nfpa55_osha_sil3_c4f6_autopolymerization_and_cos_leak_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_c4f6_runaway_polymerization_or_cos_neurotoxic_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_c4f6_runaway_polymerization_or_cos_neurotoxic_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1792cm1_2062cm1_857cm1_vuv_pitof_ms_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_3dnand_etch_stop_bowing_or_gaa_sac_nitride_punchthrough_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_3dnand_etch_stop_bowing_or_gaa_sac_nitride_punchthrough_pct"], 3.0)
+        self.assertTrue(gov["c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_slo_met"])
+        self.assertFalse(raw["c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_slo_met"])
 
 
 if __name__ == "__main__":
