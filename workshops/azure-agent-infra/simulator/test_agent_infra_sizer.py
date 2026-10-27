@@ -251,6 +251,7 @@ from agent_infra_sizer import (
     simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox,
     simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox,
     simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox,
+    simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5219,6 +5220,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_3dnand_mo_wordline_seam_void_or_bspdn_bpr_electromigration_pct"], 3.0)
         self.assertTrue(gov["moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_slo_met"])
         self.assertFalse(raw["moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_slo_met"])
+
+    def test_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox(self) -> None:
+        gov = simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox(
+            8, "pinn_mpc_cof2_cf3i_dechlorination_distillation_and_low_gwp_rps_clean_gaa_vuv_free_etch_sil3_edge"
+        )
+        raw = simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cof2_cocl2_alf3_showerhead_erosion_and_cf3i_i2_plugging"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_cof2_cf3i_pods"], 32)
+        self.assertEqual(gov["electronic_5n_cof2_cf3i_purity_and_low_gwp_rps_gaa_etch_yield_gain_pct"], 61.3)
+        self.assertEqual(gov["alf3_showerhead_erosion_vuv_dit_damage_and_iodine_coking_reduction_pct"], 85.1)
+        self.assertEqual(gov["semi_s2_nfpa55_osha_sil3_cof2_hydrolysis_and_cf3i_iodine_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_cof2_fluoro_phosgene_leak_or_cf3i_i2_line_plugging_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_cof2_fluoro_phosgene_leak_or_cf3i_i2_line_plugging_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1928cm1_1075cm1_1827cm1_oes_uvvis_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct"], 3.0)
+        self.assertTrue(gov["cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_slo_met"])
+        self.assertFalse(raw["cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_slo_met"])
 
 
 if __name__ == "__main__":

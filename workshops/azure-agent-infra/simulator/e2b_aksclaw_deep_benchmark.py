@@ -257,6 +257,7 @@ from agent_infra_sizer import (
     simulate_temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_sil3_sandbox,
     simulate_c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_sil3_sandbox,
     simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox,
+    simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1958,6 +1959,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox(8, "raw_cloud_uncompensated_mocl5_disproportionation_wordline_void_and_hcl_hydrolysis"),
     ]
 
+    cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_profiles = [
+        simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox(8, "pinn_mpc_cof2_cf3i_dechlorination_distillation_and_low_gwp_rps_clean_gaa_vuv_free_etch_sil3_edge"),
+        simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox(32, "pinn_mpc_cof2_cf3i_dechlorination_distillation_and_low_gwp_rps_clean_gaa_vuv_free_etch_sil3_edge"),
+        simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox(8, "raw_cloud_uncompensated_cof2_cocl2_alf3_showerhead_erosion_and_cf3i_i2_plugging"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2202,6 +2209,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_profiles": temah_la_iprcp3_gaa_hkmg_dipole_and_hzo_ferroelectric_ald_profiles,
         "c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_profiles": c4f6_cos_3dnand_uhar_cryo_etch_and_gaa_sac_ale_profiles,
         "moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_profiles": moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_profiles,
+        "cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_profiles": cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_profiles,
     }
 
 

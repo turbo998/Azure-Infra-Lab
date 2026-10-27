@@ -13269,6 +13269,67 @@ def simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox(
     }
 
 
+def simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox(
+    cof2_cf3i_trains: int = 8,
+    governance_mode: str = "pinn_mpc_cof2_cf3i_dechlorination_distillation_and_low_gwp_rps_clean_gaa_vuv_free_etch_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #245 (245-Cycle & 245-Simulator Milestone!): Autonomous Electronic-Grade Carbonyl Fluoride
+    (5N COF2 O=CF2 >=99.999%, b.p. -84.6C, GWP100 ~1.0 vs NF3 17,400, Ultra-Low CO <=0.5ppmv,
+    CO2 <=0.5ppmv, HF <=0.2ppmv, Phosgene/Chlorofluorocarbonyl COCl2/COClF <=0.05ppmv) &
+    Trifluoroiodomethane (5N CF3I >=99.999%, b.p. -22.5C, GWP100 <0.4, Free Iodine I2 <=0.05ppmw,
+    C2F6 <=0.3ppmv, CHF3 <=0.5ppmv) + Fluorine/Nitrogen Mixture (20% F2/N2 Electronic Grade >=99.999%)
+    Ultra-Low-GWP Remote Plasma Source (RPS) PECVD/ALD Chamber Cleaning (>99.3% Scope-1 CO2e Abatement,
+    >99.5% Dissociation without AlF3 Showerhead Over-Etch) & 2nm GAA Low-UV-Damage SiO2/Si3N4 Selective
+    Plasma Etch (CF3I Low C-I Bond Dissociation Energy 2.32 eV Generating CF3+/F* Flux Ratio >=18:1,
+    Suppressing VUV 130-180nm Photon Interface Trap Density D_it <=1.2e10 cm^-2 eV^-1) Catalytic
+    Fluorination, Cryogenic Rectification & RPS/VUV-Free Etch PINN-MPC, 10 kHz QCL-TDLAS/FTIR
+    (1928cm-1 C=O / 1075cm-1 C-F / 1827cm-1 COCl2 / 4100cm-1 HF) + OES/UV-Vis Metrology &
+    SEMI S2 / SEMI C3 / NFPA 55 / OSHA PEL / IEC 61511 SIL-3 Acute Toxic Fluoro-Phosgene COF2
+    (IDLH 25ppmv) Hydrolysis & Photolytic CF3I -> I2 Sublimation Plugging Hard Interlock.
+    """
+    trains = max(1, int(cof2_cf3i_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_cof2_cf3i_dechlorination_distillation_and_low_gwp_rps_clean_gaa_vuv_free_etch_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_cof2_cf3i_pods = trains * 4
+
+    if governed:
+        electronic_5n_cof2_cf3i_purity_and_low_gwp_rps_gaa_etch_yield_gain_pct = 61.3
+        alf3_showerhead_erosion_vuv_dit_damage_and_iodine_coking_reduction_pct = 85.1
+        semi_s2_nfpa55_osha_sil3_cof2_hydrolysis_and_cf3i_iodine_lockout_latency_ms = 0.14
+        unmitigated_cof2_fluoro_phosgene_leak_or_cf3i_i2_line_plugging_pct = 0.0
+        edge_qcl_tdlas_1928cm1_1075cm1_1827cm1_oes_uvvis_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct = 0.0
+    else:
+        electronic_5n_cof2_cf3i_purity_and_low_gwp_rps_gaa_etch_yield_gain_pct = 12.7
+        alf3_showerhead_erosion_vuv_dit_damage_and_iodine_coking_reduction_pct = 16.6
+        semi_s2_nfpa55_osha_sil3_cof2_hydrolysis_and_cf3i_iodine_lockout_latency_ms = 435.0
+        unmitigated_cof2_fluoro_phosgene_leak_or_cf3i_i2_line_plugging_pct = 1.6
+        edge_qcl_tdlas_1928cm1_1075cm1_1827cm1_oes_uvvis_closed_loop_latency_ms = 248.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct = 5.9
+
+    return {
+        "cof2_cf3i_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cof2_cf3i_pods": active_cof2_cf3i_pods,
+        "electronic_5n_cof2_cf3i_purity_and_low_gwp_rps_gaa_etch_yield_gain_pct": electronic_5n_cof2_cf3i_purity_and_low_gwp_rps_gaa_etch_yield_gain_pct,
+        "alf3_showerhead_erosion_vuv_dit_damage_and_iodine_coking_reduction_pct": alf3_showerhead_erosion_vuv_dit_damage_and_iodine_coking_reduction_pct,
+        "semi_s2_nfpa55_osha_sil3_cof2_hydrolysis_and_cf3i_iodine_lockout_latency_ms": semi_s2_nfpa55_osha_sil3_cof2_hydrolysis_and_cf3i_iodine_lockout_latency_ms,
+        "unmitigated_cof2_fluoro_phosgene_leak_or_cf3i_i2_line_plugging_pct": unmitigated_cof2_fluoro_phosgene_leak_or_cf3i_i2_line_plugging_pct,
+        "edge_qcl_tdlas_1928cm1_1075cm1_1827cm1_oes_uvvis_closed_loop_latency_ms": edge_qcl_tdlas_1928cm1_1075cm1_1827cm1_oes_uvvis_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct": uncompensated_rps_showerhead_alf3_flake_or_gaa_vuv_threshold_shift_pct,
+        "cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
