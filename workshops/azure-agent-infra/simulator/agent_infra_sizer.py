@@ -12957,6 +12957,64 @@ def simulate_pdmat_temaz_highk_zro2_and_tan_barrier_peald_sil3_sandbox(
     }
 
 
+def simulate_cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_sil3_sandbox(
+    cp2mg_rucp2_trains: int = 8,
+    governance_mode: str = "pinn_mpc_cp2mg_rucp2_sublimation_distillation_and_pgan_beol_ru_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Bis(cyclopentadienyl)magnesium (6N Cp2Mg Mg(C5H5)2 >= 99.9999%, m.p. 176.0 C,
+    v.p. 0.043 Torr @ 25 C) & Bis(ethylcyclopentadienyl)magnesium (6N (EtCp)2Mg Mg(C2H5C5H4)2 >= 99.9999%, Liquid m.p. -17.0 C,
+    v.p. 0.055 Torr @ 40 C) + Bis(cyclopentadienyl)ruthenium / Bis(ethylcyclopentadienyl)ruthenium (6N RuCp2 / 6N Ru(EtCp)2
+    Ru(C5H5)2 / Ru(C2H5C5H4)2 >= 99.9999%, v.p. 0.12 Torr @ 85 C) p-GaN / AlGaN Deep-UV LED / Micro-LED Acceptor Activation
+    (p >= 8.5e17 cm^-3) & 2nm / A14 BEOL Liner-Free Direct-Seeded Ruthenium (Ru rho <= 11.2 uOhm*cm @ 8 nm CD) MOCVD / O2-PEALD
+    Multi-Stage Vacuum Sublimation & Fractional Vacuum Distillation, Grignard-Free Metallocene De-Halogenation (Cl/Br <= 0.05 ppmw,
+    Si/Fe/Cr/Ni <= 0.5 pptw Preventing n-Type Si Donor Compensation in p-GaN), Mg-H Neutral Complex Dissociation (820 C Ultra-Pure
+    N2 Rapid Thermal Activation) & RuO4 Volatile Tetroxide Oxidative Etchback Suppression (<= 0.02 ppmv) PINN-MPC, Online 10 kHz
+    QCL-TDLAS (3105 cm^-1 eta5-Cp C-H / 880 cm^-1 RuO4 Asymmetric Stretch / 1985 cm^-1 Mg-H Passivation Complex) + ICP-MS/MS +
+    SIMS / 4-Point Probe Metrology & SEMI S2 / NFPA 484 / OSHA 1910.1000 / IEC 61511 SIL-3 Pyrophoric Metallocene Air-Ingress &
+    Toxic RuO4 Vapor Excursion (> 0.05 ppmv) Hard Interlock (Chapter 245, Cycle #240 — 240-Simulator Milestone!).
+    """
+    trains = max(2, min(int(cp2mg_rucp2_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_cp2mg_rucp2_sublimation_distillation_and_pgan_beol_ru_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_cp2mg_rucp2_pods = trains * 4
+
+    if governed:
+        electronic_6n_cp2mg_rucp2_purity_and_pgan_hole_beol_ru_resistivity_yield_gain_pct = 60.1
+        mgh_passivation_si_donor_compensation_and_ruo4_etchback_defect_reduction_pct = 84.0
+        semi_s2_nfpa484_osha_sil3_ruo4_vapor_and_pyrophoric_metallocene_lockout_latency_ms = 0.14
+        unmitigated_ruo4_toxic_vapor_excursion_or_cp2mg_pyrophoric_air_ingress_pct = 0.0
+        edge_qcl_tdlas_3105cm1_880cm1_1985cm1_icp_ms_ms_sims_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_pgan_acceptor_deactivation_or_beol_ru_void_delamination_pct = 0.0
+    else:
+        electronic_6n_cp2mg_rucp2_purity_and_pgan_hole_beol_ru_resistivity_yield_gain_pct = 11.9
+        mgh_passivation_si_donor_compensation_and_ruo4_etchback_defect_reduction_pct = 15.8
+        semi_s2_nfpa484_osha_sil3_ruo4_vapor_and_pyrophoric_metallocene_lockout_latency_ms = 420.0
+        unmitigated_ruo4_toxic_vapor_excursion_or_cp2mg_pyrophoric_air_ingress_pct = 1.6
+        edge_qcl_tdlas_3105cm1_880cm1_1985cm1_icp_ms_ms_sims_closed_loop_latency_ms = 238.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_pgan_acceptor_deactivation_or_beol_ru_void_delamination_pct = 5.6
+
+    return {
+        "cp2mg_rucp2_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cp2mg_rucp2_pods": active_cp2mg_rucp2_pods,
+        "electronic_6n_cp2mg_rucp2_purity_and_pgan_hole_beol_ru_resistivity_yield_gain_pct": electronic_6n_cp2mg_rucp2_purity_and_pgan_hole_beol_ru_resistivity_yield_gain_pct,
+        "mgh_passivation_si_donor_compensation_and_ruo4_etchback_defect_reduction_pct": mgh_passivation_si_donor_compensation_and_ruo4_etchback_defect_reduction_pct,
+        "semi_s2_nfpa484_osha_sil3_ruo4_vapor_and_pyrophoric_metallocene_lockout_latency_ms": semi_s2_nfpa484_osha_sil3_ruo4_vapor_and_pyrophoric_metallocene_lockout_latency_ms,
+        "unmitigated_ruo4_toxic_vapor_excursion_or_cp2mg_pyrophoric_air_ingress_pct": unmitigated_ruo4_toxic_vapor_excursion_or_cp2mg_pyrophoric_air_ingress_pct,
+        "edge_qcl_tdlas_3105cm1_880cm1_1985cm1_icp_ms_ms_sims_closed_loop_latency_ms": edge_qcl_tdlas_3105cm1_880cm1_1985cm1_icp_ms_ms_sims_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_pgan_acceptor_deactivation_or_beol_ru_void_delamination_pct": uncompensated_pgan_acceptor_deactivation_or_beol_ru_void_delamination_pct,
+        "cp2mg_pgan_mocvd_and_rucp2_beol_ru_peald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
