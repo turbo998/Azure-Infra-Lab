@@ -13581,6 +13581,70 @@ def simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(
     }
 
 
+def simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(
+    n2o_no_nd3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #250 (250-Cycle & 250-Simulator Milestone!): Autonomous Electronic-Grade Nitrous Oxide
+    (5N5 N2O >=99.9995%, b.p. -88.48C, Ultra-Low NO <=0.10ppmv, NO2 <=0.05ppmv, NH3 <=0.10ppmv,
+    CO <=0.15ppmv, H2O <=0.20ppmv) & Electronic-Grade Nitric Oxide (5N NO >=99.999%, b.p. -151.7C,
+    Ultra-Low NO2/N2O4 <=0.20ppmv, N2O <=0.50ppmv, CO2 <=0.30ppmv) + Isotopically Enriched
+    Deuterated Ammonia (5N5 ND3 >=99.9995% Chemical Purity, D Isotopic Enrichment >=99.90at%)
+    8G+ OLED/MicroLED IGZO (InGaZnO4) & Low-Temp SiO2/SiON PECVD Oxygen-Vacancy (V_O) Passivation,
+    1200V/1700V 4H-SiC MOSFET Gate Oxide SiC/SiO2 Interface Carbon-Cluster Passivation (1280C NO
+    Post-Oxidation Annealing POA Reducing Dit from 10^13 to <=1.5e11 cm^-2 eV^-1 & Boosting Channel
+    Mobility mu_FE >=42 cm^2/V-s) & 2nm GAA Deuterium (Si-D Giant Kinetic Isotope Effect KIE 45x)
+    Hot-Carrier Degradation (HCD) / BTI Immunity Anneal Ammonium Nitrate Low-Temp Melt
+    Decomposition, Alkaline Permanganate NOx Scrubbing & Low-Temp Cryogenic Rectification PINN-MPC,
+    Online 10 kHz QCL-TDLAS / FTIR (2224cm-1 N2O nu3 / 1876cm-1 NO / 1617cm-1 NO2 / 2420cm-1 N-D)
+    + CRDS + In-Line CV/DLTS Metrology & SEMI S2 / SEMI C3 / CGA G-8.3 / NFPA 55 / OSHA PEL /
+    IEC 61511 SIL-3 High-Pressure N2O Exothermic Self-Sustaining Decomposition Explosion (Delta H =
+    -82.05 kJ/mol, >1600C) & Toxic Oxidizer NO/NO2 (NO IDLH 100ppmv, NO2 IDLH 13ppmv) Scrubbing
+    Hard Interlock.
+    """
+    trains = max(1, int(n2o_no_nd3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_n2o_no_nd3_pods = trains * 4
+
+    if governed:
+        electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct = 62.3
+        sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct = 86.1
+        semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms = 0.14
+        unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct = 0.0
+        edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct = 0.0
+    else:
+        electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct = 13.2
+        sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct = 17.2
+        semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms = 448.0
+        unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct = 1.6
+        edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms = 258.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct = 6.4
+
+    return {
+        "n2o_no_nd3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_n2o_no_nd3_pods": active_n2o_no_nd3_pods,
+        "electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct": electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct,
+        "sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct": sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct,
+        "semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms": semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms,
+        "unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct": unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct,
+        "edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms": edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct": uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct,
+        "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

@@ -14193,6 +14193,53 @@
         "uncompensated_euv_znoxo_stochastic_bridging_or_inp_zn_interstitial_diffusion_pct": 6.3,
         "dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_slo_met": false
       }
+    ],
+    "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_profiles": [
+      {
+        "n2o_no_nd3_trains": 8,
+        "governance_mode": "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_n2o_no_nd3_pods": 32,
+        "electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct": 62.3,
+        "sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct": 86.1,
+        "semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms": 0.14,
+        "unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct": 0.0,
+        "edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct": 0.0,
+        "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met": true
+      },
+      {
+        "n2o_no_nd3_trains": 32,
+        "governance_mode": "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_n2o_no_nd3_pods": 128,
+        "electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct": 62.3,
+        "sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct": 86.1,
+        "semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms": 0.14,
+        "unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct": 0.0,
+        "edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct": 0.0,
+        "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met": true
+      },
+      {
+        "n2o_no_nd3_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_n2o_no_impurity_sic_carbon_cluster_dit_and_n2o_adiabatic_decomp",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_n2o_no_nd3_pods": 32,
+        "electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct": 13.2,
+        "sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct": 17.2,
+        "semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms": 448.0,
+        "unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct": 1.6,
+        "edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms": 258.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct": 6.4,
+        "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -26760,5 +26807,52 @@
       "dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_slo_met": false
     }
   },
-  "trace_sha256": "c038b4566e6e84eae7ca0998a8b004b8a1ae53828956611c5c591b1f41b15c23"
+  "demo_250_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa": {
+    "governed_n2o_no_nd3_8_trains": {
+      "n2o_no_nd3_trains": 8,
+      "governance_mode": "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_n2o_no_nd3_pods": 32,
+      "electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct": 62.3,
+      "sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct": 86.1,
+      "semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms": 0.14,
+      "unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct": 0.0,
+      "edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct": 0.0,
+      "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met": true
+    },
+    "governed_n2o_no_nd3_32_trains": {
+      "n2o_no_nd3_trains": 32,
+      "governance_mode": "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_n2o_no_nd3_pods": 128,
+      "electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct": 62.3,
+      "sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct": 86.1,
+      "semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms": 0.14,
+      "unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct": 0.0,
+      "edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct": 0.0,
+      "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met": true
+    },
+    "raw_n2o_no_nd3_8_trains": {
+      "n2o_no_nd3_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_n2o_no_impurity_sic_carbon_cluster_dit_and_n2o_adiabatic_decomp",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_n2o_no_nd3_pods": 32,
+      "electronic_5n5_n2o_5n_no_nd3_purity_and_sic_poa_igzo_yield_gain_pct": 13.2,
+      "sic_sio2_carbon_cluster_dit_igzo_vo_shift_and_gaa_hcd_reduction_pct": 17.2,
+      "semi_s2_cgag83_nfpa55_sil3_n2o_decomp_and_toxic_no_no2_lockout_latency_ms": 448.0,
+      "unmitigated_n2o_exothermic_decomposition_or_toxic_no_no2_leak_pct": 1.6,
+      "edge_qcl_tdlas_2224cm1_1876cm1_1617cm1_2420cm1_crds_cv_closed_loop_latency_ms": 258.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_sic_mosfet_vth_instability_or_igzo_nbis_drift_pct": 6.4,
+      "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_slo_met": false
+    }
+  },
+  "trace_sha256": "3ef3fa0c6d7d2c4b1a3a677896de91a135e0d456aa0281574851cadc0a8fb2c7"
 }

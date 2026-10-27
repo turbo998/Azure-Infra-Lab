@@ -269,6 +269,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
     simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox,
     simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox,
+    simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1745,6 +1746,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_dmzn_dezn_cp2fe_8_trains": simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(8, "pinn_mpc_dmzn_dezn_cp2fe_adduct_rectification_and_euv_znoxo_mor_inp_mocvd_sil3_edge"),
             "governed_dmzn_dezn_cp2fe_32_trains": simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(32, "pinn_mpc_dmzn_dezn_cp2fe_adduct_rectification_and_euv_znoxo_mor_inp_mocvd_sil3_edge"),
             "raw_dmzn_dezn_cp2fe_8_trains": simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(8, "raw_cloud_uncompensated_rzni_iodide_haze_alkoxide_prereaction_and_dmzn_vapor_runaway"),
+        },
+        "demo_250_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa": {
+            "governed_n2o_no_nd3_8_trains": simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(8, "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge"),
+            "governed_n2o_no_nd3_32_trains": simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(32, "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge"),
+            "raw_n2o_no_nd3_8_trains": simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(8, "raw_cloud_uncompensated_n2o_no_impurity_sic_carbon_cluster_dit_and_n2o_adiabatic_decomp"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

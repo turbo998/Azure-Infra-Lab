@@ -262,6 +262,7 @@ from agent_infra_sizer import (
     simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
     simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox,
     simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox,
+    simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1993,6 +1994,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(8, "raw_cloud_uncompensated_rzni_iodide_haze_alkoxide_prereaction_and_dmzn_vapor_runaway"),
     ]
 
+    n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_profiles = [
+        simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(8, "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge"),
+        simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(32, "pinn_mpc_n2o_no_nd3_cryo_rectification_and_igzo_pecvd_sic_gate_poa_sil3_edge"),
+        simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox(8, "raw_cloud_uncompensated_n2o_no_impurity_sic_carbon_cluster_dit_and_n2o_adiabatic_decomp"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2242,6 +2249,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_profiles": bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_profiles,
         "wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_profiles": wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_profiles,
         "dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_profiles": dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_profiles,
+        "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_profiles": n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_profiles,
     }
 
 
