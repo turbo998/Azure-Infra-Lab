@@ -14085,5 +14085,52 @@
       "uncompensated_acl_hardmask_bowing_or_3dnand_etch_stop_defect_pct": 6.5,
       "hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_slo_met": false
     }
+  ],
+  "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles": [
+    {
+      "hfib_fno_trains": 8,
+      "governance_mode": "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_hfib_fno_pods": 32,
+      "electronic_5n_hfib_c4f6_fno_purity_and_gaa_thermal_ale_yield_gain_pct": 62.7,
+      "pfib_impurity_uhar_twist_and_gaa_ale_epc_drift_reduction_pct": 86.5,
+      "semi_s2_acgih_tlvc_sil3_pfib_10ppbv_and_fno_f2_lockout_latency_ms": 0.13,
+      "unmitigated_pfib_lethal_leak_or_c4f6_autopolymerization_runaway_pct": 0.0,
+      "edge_qcl_tdlas_1642cm1_1738cm1_1844cm1_gcaed_qcm_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct": 0.0,
+      "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_slo_met": true
+    },
+    {
+      "hfib_fno_trains": 32,
+      "governance_mode": "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_hfib_fno_pods": 128,
+      "electronic_5n_hfib_c4f6_fno_purity_and_gaa_thermal_ale_yield_gain_pct": 62.7,
+      "pfib_impurity_uhar_twist_and_gaa_ale_epc_drift_reduction_pct": 86.5,
+      "semi_s2_acgih_tlvc_sil3_pfib_10ppbv_and_fno_f2_lockout_latency_ms": 0.13,
+      "unmitigated_pfib_lethal_leak_or_c4f6_autopolymerization_runaway_pct": 0.0,
+      "edge_qcl_tdlas_1642cm1_1738cm1_1844cm1_gcaed_qcm_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct": 0.0,
+      "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_slo_met": true
+    },
+    {
+      "hfib_fno_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_hfib_pfib_impurity_uhar_channel_twist_and_fno_etch_damage",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_hfib_fno_pods": 32,
+      "electronic_5n_hfib_c4f6_fno_purity_and_gaa_thermal_ale_yield_gain_pct": 13.4,
+      "pfib_impurity_uhar_twist_and_gaa_ale_epc_drift_reduction_pct": 17.5,
+      "semi_s2_acgih_tlvc_sil3_pfib_10ppbv_and_fno_f2_lockout_latency_ms": 445.0,
+      "unmitigated_pfib_lethal_leak_or_c4f6_autopolymerization_runaway_pct": 1.5,
+      "edge_qcl_tdlas_1642cm1_1738cm1_1844cm1_gcaed_qcm_closed_loop_latency_ms": 258.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct": 6.4,
+      "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_slo_met": false
+    }
   ]
 }

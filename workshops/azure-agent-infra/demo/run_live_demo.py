@@ -271,6 +271,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox,
     simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox,
     simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox,
+    simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1757,6 +1758,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_hfpo_cos_8_trains": simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(8, "pinn_mpc_hfpo_tfaa_cos_epoxidation_rectification_and_3dnand_lowgwp_acl_etch_sil3_edge"),
             "governed_hfpo_cos_32_trains": simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(32, "pinn_mpc_hfpo_tfaa_cos_epoxidation_rectification_and_3dnand_lowgwp_acl_etch_sil3_edge"),
             "raw_hfpo_cos_8_trains": simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(8, "raw_cloud_uncompensated_hfpo_acyl_fluoride_isomerization_acl_bowing_and_cos_hydrolysis"),
+        },
+        "demo_252_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale": {
+            "governed_hfib_fno_8_trains": simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(8, "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge"),
+            "governed_hfib_fno_32_trains": simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(32, "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge"),
+            "raw_hfib_fno_8_trains": simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(8, "raw_cloud_uncompensated_hfib_pfib_impurity_uhar_channel_twist_and_fno_etch_damage"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -13708,6 +13708,69 @@ def simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(
     }
 
 
+def simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(
+    hfib_fno_trains: int = 8,
+    governance_mode: str = "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #252 (260-Chapter Milestone!): Autonomous Electronic-Grade Hexafluoroisobutylene (5N HFIB
+    (CF3)2C=CH2 >=99.999%, b.p. 14.0C, GWP100 ~2.1, Ultra-Low Extreme-Toxic Perfluoroisobutylene
+    Isomer PFIB (CF3)2C=CF2 <=0.005ppmv / 5ppbv, HF <=0.15ppmv, H2O <=0.20ppmv) & Electronic-Grade
+    1,3-Hexafluorobutadiene (5N c-C4F6 / 1,3-C4F6 CF2=CF-CF=CF2 >=99.999%, b.p. 6.0C, GWP100 <1.0) +
+    Electronic-Grade Nitrosyl Fluoride & Fluorine/Nitrogen Mixture (5N FNO O=N-F >=99.999%, b.p.
+    -59.9C & 20% F2/N2 Ultra-Low HF <=0.20ppmv, NO2 <=0.15ppmv, SiF4 <=0.10ppmv) 1000-Layer 3D NAND
+    Ultra-High-Aspect-Ratio (UHAR AR 115:1) Cryogenic Channel Hole Etch (CxFyHz Hydrofluorocarbon
+    Passivation), 2nm GAA Gate-All-Around SiGe/SiN Damage-Free Thermal Atomic Layer Etch (Thermal
+    ALE FNO/F2 Fluorination + Ligand Exchange, Isotropic EPC 0.38+-0.01 nm/cycle) & Chamber In-Situ
+    Dry Cleaning Selective Dehydrofluorination, Nickel-Passivated Cryogenic Rectification & NaF-Bed
+    HF-Scrubbing PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (1642cm-1 HFIB C=C / 1738cm-1 Trace PFIB /
+    1844cm-1 FNO nu1 / 1790cm-1 1,3-C4F6) + GC-AED / VUV + In-Line QCM / SE Metrology & SEMI S2 /
+    SEMI C3 / NFPA 55 / ACGIH TLV-C / IEC 61511 SIL-3 Extreme-Lethality PFIB Byproduct (4-hr LC50 =
+    0.5ppmv, ACGIH TLV-C 0.01ppmv = 10ppbv, 10x More Toxic Than Phosgene), 1,3-C4F6 Autopolymerization
+    & Oxidizing FNO/F2 Nickel-Monel Passivation Breach Hard Interlock.
+    """
+    trains = max(1, int(hfib_fno_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_hfib_fno_pods = trains * 4
+
+    if governed:
+        electronic_5n_hfib_c4f6_fno_purity_and_gaa_thermal_ale_yield_gain_pct = 62.7
+        pfib_impurity_uhar_twist_and_gaa_ale_epc_drift_reduction_pct = 86.5
+        semi_s2_acgih_tlvc_sil3_pfib_10ppbv_and_fno_f2_lockout_latency_ms = 0.13
+        unmitigated_pfib_lethal_leak_or_c4f6_autopolymerization_runaway_pct = 0.0
+        edge_qcl_tdlas_1642cm1_1738cm1_1844cm1_gcaed_qcm_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct = 0.0
+    else:
+        electronic_5n_hfib_c4f6_fno_purity_and_gaa_thermal_ale_yield_gain_pct = 13.4
+        pfib_impurity_uhar_twist_and_gaa_ale_epc_drift_reduction_pct = 17.5
+        semi_s2_acgih_tlvc_sil3_pfib_10ppbv_and_fno_f2_lockout_latency_ms = 445.0
+        unmitigated_pfib_lethal_leak_or_c4f6_autopolymerization_runaway_pct = 1.5
+        edge_qcl_tdlas_1642cm1_1738cm1_1844cm1_gcaed_qcm_closed_loop_latency_ms = 258.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct = 6.4
+
+    return {
+        "hfib_fno_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_hfib_fno_pods": active_hfib_fno_pods,
+        "electronic_5n_hfib_c4f6_fno_purity_and_gaa_thermal_ale_yield_gain_pct": electronic_5n_hfib_c4f6_fno_purity_and_gaa_thermal_ale_yield_gain_pct,
+        "pfib_impurity_uhar_twist_and_gaa_ale_epc_drift_reduction_pct": pfib_impurity_uhar_twist_and_gaa_ale_epc_drift_reduction_pct,
+        "semi_s2_acgih_tlvc_sil3_pfib_10ppbv_and_fno_f2_lockout_latency_ms": semi_s2_acgih_tlvc_sil3_pfib_10ppbv_and_fno_f2_lockout_latency_ms,
+        "unmitigated_pfib_lethal_leak_or_c4f6_autopolymerization_runaway_pct": unmitigated_pfib_lethal_leak_or_c4f6_autopolymerization_runaway_pct,
+        "edge_qcl_tdlas_1642cm1_1738cm1_1844cm1_gcaed_qcm_closed_loop_latency_ms": edge_qcl_tdlas_1642cm1_1738cm1_1844cm1_gcaed_qcm_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct": uncompensated_3dnand_uhar_channel_twist_or_gaa_ale_damage_pct,
+        "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

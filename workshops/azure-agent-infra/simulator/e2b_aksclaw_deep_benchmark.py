@@ -264,6 +264,7 @@ from agent_infra_sizer import (
     simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox,
     simulate_n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_sil3_sandbox,
     simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox,
+    simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2007,6 +2008,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_sil3_sandbox(8, "raw_cloud_uncompensated_hfpo_acyl_fluoride_isomerization_acl_bowing_and_cos_hydrolysis"),
     ]
 
+    hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles = [
+        simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(8, "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge"),
+        simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(32, "pinn_mpc_hfib_c4f6_fno_dehydrofluorination_rectification_and_gaa_thermal_ale_sil3_edge"),
+        simulate_hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_sil3_sandbox(8, "raw_cloud_uncompensated_hfib_pfib_impurity_uhar_channel_twist_and_fno_etch_damage"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2258,6 +2265,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_profiles": dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_profiles,
         "n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_profiles": n2o_no_nd3_igzo_pecvd_and_sic_gate_poa_profiles,
         "hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_profiles": hfpo_tfaa_cos_3dnand_lowgwp_etch_and_acl_hardmask_profiles,
+        "hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles": hfib_c4f6_fno_3dnand_uhar_etch_and_gaa_thermal_ale_profiles,
     }
 
 
