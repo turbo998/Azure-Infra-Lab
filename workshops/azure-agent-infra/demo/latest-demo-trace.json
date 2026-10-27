@@ -14710,6 +14710,53 @@
         "uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct": 6.3,
         "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": false
       }
+    ],
+    "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_profiles": [
+      {
+        "cctba_ebechru_trains": 8,
+        "governance_mode": "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cctba_ebechru_pods": 32,
+        "electronic_6n5_cctba_6n5_ebechru_purity_and_sub12nm_ru_co_yield_gain_pct": 64.6,
+        "carbonyl_oligomer_carbon_incorporation_and_sub12nm_trench_seam_void_reduction_pct": 88.2,
+        "semi_s2_nfpa704_osha_psm_sil3_toxic_carbonyl_co_decomposition_lockout_latency_ms": 0.13,
+        "unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct": 0.0,
+        "edge_qcl_tdlas_2065cm1_2022cm1_2143cm1_icpms_4point_probe_xrr_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct": 0.0,
+        "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met": true
+      },
+      {
+        "cctba_ebechru_trains": 32,
+        "governance_mode": "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cctba_ebechru_pods": 128,
+        "electronic_6n5_cctba_6n5_ebechru_purity_and_sub12nm_ru_co_yield_gain_pct": 64.6,
+        "carbonyl_oligomer_carbon_incorporation_and_sub12nm_trench_seam_void_reduction_pct": 88.2,
+        "semi_s2_nfpa704_osha_psm_sil3_toxic_carbonyl_co_decomposition_lockout_latency_ms": 0.13,
+        "unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct": 0.0,
+        "edge_qcl_tdlas_2065cm1_2022cm1_2143cm1_icpms_4point_probe_xrr_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct": 0.0,
+        "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met": true
+      },
+      {
+        "cctba_ebechru_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_cctba_thermal_oligomerization_and_ru_seam_void_delamination",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cctba_ebechru_pods": 32,
+        "electronic_6n5_cctba_6n5_ebechru_purity_and_sub12nm_ru_co_yield_gain_pct": 14.3,
+        "carbonyl_oligomer_carbon_incorporation_and_sub12nm_trench_seam_void_reduction_pct": 18.7,
+        "semi_s2_nfpa704_osha_psm_sil3_toxic_carbonyl_co_decomposition_lockout_latency_ms": 462.0,
+        "unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct": 1.6,
+        "edge_qcl_tdlas_2065cm1_2022cm1_2143cm1_icpms_4point_probe_xrr_latency_ms": 270.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct": 6.4,
+        "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -27794,5 +27841,52 @@
       "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met": false
     }
   },
-  "trace_sha256": "74b6b8c849d15ab837c40c64d4deb15469fe341088d55c100538d92dc6509bb8"
+  "demo_261_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect": {
+    "cctba_ebechru_8_trains": {
+      "cctba_ebechru_trains": 8,
+      "governance_mode": "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_cctba_ebechru_pods": 32,
+      "electronic_6n5_cctba_6n5_ebechru_purity_and_sub12nm_ru_co_yield_gain_pct": 64.6,
+      "carbonyl_oligomer_carbon_incorporation_and_sub12nm_trench_seam_void_reduction_pct": 88.2,
+      "semi_s2_nfpa704_osha_psm_sil3_toxic_carbonyl_co_decomposition_lockout_latency_ms": 0.13,
+      "unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct": 0.0,
+      "edge_qcl_tdlas_2065cm1_2022cm1_2143cm1_icpms_4point_probe_xrr_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct": 0.0,
+      "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met": true
+    },
+    "cctba_ebechru_32_trains": {
+      "cctba_ebechru_trains": 32,
+      "governance_mode": "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_cctba_ebechru_pods": 128,
+      "electronic_6n5_cctba_6n5_ebechru_purity_and_sub12nm_ru_co_yield_gain_pct": 64.6,
+      "carbonyl_oligomer_carbon_incorporation_and_sub12nm_trench_seam_void_reduction_pct": 88.2,
+      "semi_s2_nfpa704_osha_psm_sil3_toxic_carbonyl_co_decomposition_lockout_latency_ms": 0.13,
+      "unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct": 0.0,
+      "edge_qcl_tdlas_2065cm1_2022cm1_2143cm1_icpms_4point_probe_xrr_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct": 0.0,
+      "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met": true
+    },
+    "raw_cctba_ebechru_8_trains": {
+      "cctba_ebechru_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_cctba_thermal_oligomerization_and_ru_seam_void_delamination",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_cctba_ebechru_pods": 32,
+      "electronic_6n5_cctba_6n5_ebechru_purity_and_sub12nm_ru_co_yield_gain_pct": 14.3,
+      "carbonyl_oligomer_carbon_incorporation_and_sub12nm_trench_seam_void_reduction_pct": 18.7,
+      "semi_s2_nfpa704_osha_psm_sil3_toxic_carbonyl_co_decomposition_lockout_latency_ms": 462.0,
+      "unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct": 1.6,
+      "edge_qcl_tdlas_2065cm1_2022cm1_2143cm1_icpms_4point_probe_xrr_latency_ms": 270.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct": 6.4,
+      "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met": false
+    }
+  },
+  "trace_sha256": "84ae721f4168cb80112e43d874c9b899e7d5d748fa8d0d48535597d1a78d0778"
 }

@@ -280,6 +280,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
     simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
     simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
+    simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1811,6 +1812,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "sih4_si3h8_si5h12_8_trains": simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(8, "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge"),
             "sih4_si3h8_si5h12_32_trains": simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(32, "pinn_mpc_sih4_si3h8_si5h12_higher_silane_and_gaa_sip_epi_3dnand_channel_sil3_edge"),
             "raw_sih4_si3h8_si5h12_8_trains": simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(8, "raw_cloud_uncompensated_sih4_disiloxane_epi_nodule_and_sixhy_powder_nucleation"),
+        },
+        "demo_261_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect": {
+            "cctba_ebechru_8_trains": simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(8, "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge"),
+            "cctba_ebechru_32_trains": simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(32, "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge"),
+            "raw_cctba_ebechru_8_trains": simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(8, "raw_cloud_uncompensated_cctba_thermal_oligomerization_and_ru_seam_void_delamination"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

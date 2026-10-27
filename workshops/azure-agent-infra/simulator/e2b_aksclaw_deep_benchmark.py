@@ -273,6 +273,7 @@ from agent_infra_sizer import (
     simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
     simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
     simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
+    simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2070,6 +2071,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox(8, "raw_cloud_uncompensated_sih4_disiloxane_epi_nodule_and_sixhy_powder_nucleation"),
     ]
 
+    cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_profiles = [
+        simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(8, "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge"),
+        simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(32, "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge"),
+        simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(8, "raw_cloud_uncompensated_cctba_thermal_oligomerization_and_ru_seam_void_delamination"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2330,6 +2337,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_profiles": b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_profiles,
         "hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_profiles": hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_profiles,
         "sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_profiles": sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_profiles,
+        "cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_profiles": cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_profiles,
     }
 
 

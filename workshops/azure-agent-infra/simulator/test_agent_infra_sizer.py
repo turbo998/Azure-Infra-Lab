@@ -267,6 +267,7 @@ from agent_infra_sizer import (
     simulate_b2h6_gef4_pf3_usj_pai_ion_implant_and_sige_boron_doping_sil3_sandbox,
     simulate_hbr_cos_so2_gaa_dummy_gate_and_acl_hardmask_etch_sil3_sandbox,
     simulate_sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_sil3_sandbox,
+    simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5571,6 +5572,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_2nm_gaa_sip_epi_nodule_or_3d_nand_macaroni_channel_void_pct"], 3.0)
         self.assertTrue(gov["sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met"])
         self.assertFalse(raw["sih4_si3h8_si5h12_higher_silane_gaa_sip_epi_and_3dnand_channel_slo_met"])
+
+    def test_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(self) -> None:
+        gov = simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(
+            8, "pinn_mpc_cctba_ebechru_cobalt_ruthenium_and_gaa_sub12nm_linerless_interconnect_sil3_edge"
+        )
+        raw = simulate_cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cctba_thermal_oligomerization_and_ru_seam_void_delamination"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_cctba_ebechru_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_cctba_6n5_ebechru_purity_and_sub12nm_ru_co_yield_gain_pct"], 64.6)
+        self.assertEqual(gov["carbonyl_oligomer_carbon_incorporation_and_sub12nm_trench_seam_void_reduction_pct"], 88.2)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_toxic_carbonyl_co_decomposition_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_volatile_metal_carbonyl_leak_or_ampoule_autocatalytic_overpressure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2065cm1_2022cm1_2143cm1_icpms_4point_probe_xrr_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_sub12nm_m0_m1_ru_trench_void_or_cu_em_cap_delamination_pct"], 3.0)
+        self.assertTrue(gov["cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met"])
+        self.assertFalse(raw["cctba_ebechru_cobalt_ruthenium_gaa_sub12nm_linerless_interconnect_slo_met"])
 
 
 if __name__ == "__main__":
