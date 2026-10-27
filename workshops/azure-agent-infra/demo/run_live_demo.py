@@ -266,6 +266,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox,
     simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
     simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
+    simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1727,6 +1728,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_bcl3_ticl4_sicl4_8_trains": simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(8, "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge"),
             "governed_bcl3_ticl4_sicl4_32_trains": simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(32, "pinn_mpc_bcl3_ticl4_sicl4_phosgene_photolysis_vocl3_reduction_and_dram_tin_ald_sil3_edge"),
             "raw_bcl3_ticl4_sicl4_8_trains": simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(8, "raw_cloud_uncompensated_bcl3_cocl2_mass28_drift_and_ticl4_nh4cl_particulate_hydrolysis"),
+        },
+        "demo_247_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox": {
+            "governed_bdeas_dipas_btbas_8_trains": simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(8, "pinn_mpc_bdeas_dipas_btbas_halide_free_rectification_and_gaa_sibcn_euv_sadp_peald_sil3_edge"),
+            "governed_bdeas_dipas_btbas_32_trains": simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(32, "pinn_mpc_bdeas_dipas_btbas_halide_free_rectification_and_gaa_sibcn_euv_sadp_peald_sil3_edge"),
+            "raw_bdeas_dipas_btbas_8_trains": simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(8, "raw_cloud_uncompensated_schlenk_disproportionation_cl_pitting_and_dli_silazane_gelation"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

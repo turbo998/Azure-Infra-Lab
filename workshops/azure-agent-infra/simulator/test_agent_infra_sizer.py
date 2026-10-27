@@ -253,6 +253,7 @@ from agent_infra_sizer import (
     simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox,
     simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
     simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
+    simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5263,6 +5264,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_10b_soft_error_or_dram_tin_step_coverage_void_pct"], 3.0)
         self.assertTrue(gov["bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met"])
         self.assertFalse(raw["bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_slo_met"])
+
+    def test_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(self) -> None:
+        gov = simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(
+            8, "pinn_mpc_bdeas_dipas_btbas_halide_free_rectification_and_gaa_sibcn_euv_sadp_peald_sil3_edge"
+        )
+        raw = simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_schlenk_disproportionation_cl_pitting_and_dli_silazane_gelation"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_bdeas_dipas_btbas_pods"], 32)
+        self.assertEqual(gov["electronic_6n_bdeas_dipas_btbas_purity_and_gaa_spacer_euv_sadp_yield_gain_pct"], 61.7)
+        self.assertEqual(gov["schlenk_disproportionation_cl_pitting_and_mandrel_cd_wiggle_reduction_pct"], 85.5)
+        self.assertEqual(gov["semi_s2_nfpa30_sil3_dehydrogenative_h2_overpressure_and_dli_gel_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_aminosilane_hydrolysis_h2_overpressure_or_dli_silazane_gelation_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_aminosilane_hydrolysis_h2_overpressure_or_dli_silazane_gelation_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2145cm1_938cm1_3380cm1_nmr_cic_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct"], 3.0)
+        self.assertTrue(gov["bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_slo_met"])
+        self.assertFalse(raw["bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_slo_met"])
 
 
 if __name__ == "__main__":

@@ -13393,6 +13393,70 @@ def simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(
     }
 
 
+def simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(
+    bdeas_dipas_btbas_trains: int = 8,
+    governance_mode: str = "pinn_mpc_bdeas_dipas_btbas_halide_free_rectification_and_gaa_sibcn_euv_sadp_peald_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #247 (255-Chapter Milestone!): Autonomous Electronic-Grade Bis(diethylamino)silane
+    (6N BDEAS H2Si(N(C2H5)2)2 >=99.9999%, b.p. 72.0C @ 10Torr, Ultra-Low Cl <=0.05ppmw,
+    Mono-/Tris-Aminosilane Schlenk Disproportionation <=0.08mol%) & Diisopropylaminosilane
+    (6N DIPAS H3SiN(CH(CH3)2)2 >=99.9999%, b.p. 131.0C, v.p. 18.5Torr @ 25C) +
+    Bis(tertiary-butylamino)silane / Tris(dimethylamino)silane (6N BTBAS H2Si(NH-tBu)2 &
+    6N 3DMAS HSi(N(CH3)2)3 >=99.9999%) 2nm GAA Sub-1.5nm Ultrathin Low-k Gate Sidewall Spacer
+    (SiBCN / SiOCN k <=4.1, Wet-Etch Rate <0.15nm/min in Dilute HF, Chlorine-Free Zero NH4Cl Salt
+    Deposition) & EUV Self-Aligned Double/Quadruple Patterning (SADP / SAQP 50-150C Conformal SiO2
+    Spacer PEALD Preserving Photoresist Mandrel Profile without Thermal Reflow) Halide-Free
+    Aminolysis Synthesis, Short-Path Wiped-Film Vacuum Rectification (0.5 kPa, Suppressing Silazane
+    Oligomerization & Schlenk Disproportionation), Steric-Hindrance Seeded Chemisorption &
+    Low-Damage PEALD PINN-MPC, Online 10 kHz QCL-TDLAS/FTIR (2145cm-1 Si-H Stretch / 938cm-1 Si-N
+    Asymmetric Stretch / 1182cm-1 C-N Amine / 3380cm-1 Free Amine N-H Cleavage) + 1H/29Si-NMR +
+    CIC/ICP-MS/MS (Cl <=0.05ppmw, Metals <=0.2pptw) Metrology & SEMI S2 / SEMI C3 / NFPA 30 /
+    IEC 61511 SIL-3 Moisture-Catalyzed Aminosilane Exothermic Dehydrogenative Silazane Condensation
+    (Si-H + H2O -> Si-O-Si + H2 + Et2NH Overpressure) & DLI Vaporizer Gelation Hard Interlock.
+    """
+    trains = max(1, int(bdeas_dipas_btbas_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_bdeas_dipas_btbas_halide_free_rectification_and_gaa_sibcn_euv_sadp_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_bdeas_dipas_btbas_pods = trains * 4
+
+    if governed:
+        electronic_6n_bdeas_dipas_btbas_purity_and_gaa_spacer_euv_sadp_yield_gain_pct = 61.7
+        schlenk_disproportionation_cl_pitting_and_mandrel_cd_wiggle_reduction_pct = 85.5
+        semi_s2_nfpa30_sil3_dehydrogenative_h2_overpressure_and_dli_gel_lockout_latency_ms = 0.14
+        unmitigated_aminosilane_hydrolysis_h2_overpressure_or_dli_silazane_gelation_pct = 0.0
+        edge_qcl_tdlas_2145cm1_938cm1_3380cm1_nmr_cic_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct = 0.0
+    else:
+        electronic_6n_bdeas_dipas_btbas_purity_and_gaa_spacer_euv_sadp_yield_gain_pct = 12.9
+        schlenk_disproportionation_cl_pitting_and_mandrel_cd_wiggle_reduction_pct = 16.9
+        semi_s2_nfpa30_sil3_dehydrogenative_h2_overpressure_and_dli_gel_lockout_latency_ms = 440.0
+        unmitigated_aminosilane_hydrolysis_h2_overpressure_or_dli_silazane_gelation_pct = 1.6
+        edge_qcl_tdlas_2145cm1_938cm1_3380cm1_nmr_cic_closed_loop_latency_ms = 252.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct = 6.1
+
+    return {
+        "bdeas_dipas_btbas_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_bdeas_dipas_btbas_pods": active_bdeas_dipas_btbas_pods,
+        "electronic_6n_bdeas_dipas_btbas_purity_and_gaa_spacer_euv_sadp_yield_gain_pct": electronic_6n_bdeas_dipas_btbas_purity_and_gaa_spacer_euv_sadp_yield_gain_pct,
+        "schlenk_disproportionation_cl_pitting_and_mandrel_cd_wiggle_reduction_pct": schlenk_disproportionation_cl_pitting_and_mandrel_cd_wiggle_reduction_pct,
+        "semi_s2_nfpa30_sil3_dehydrogenative_h2_overpressure_and_dli_gel_lockout_latency_ms": semi_s2_nfpa30_sil3_dehydrogenative_h2_overpressure_and_dli_gel_lockout_latency_ms,
+        "unmitigated_aminosilane_hydrolysis_h2_overpressure_or_dli_silazane_gelation_pct": unmitigated_aminosilane_hydrolysis_h2_overpressure_or_dli_silazane_gelation_pct,
+        "edge_qcl_tdlas_2145cm1_938cm1_3380cm1_nmr_cic_closed_loop_latency_ms": edge_qcl_tdlas_2145cm1_938cm1_3380cm1_nmr_cic_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct": uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct,
+        "bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

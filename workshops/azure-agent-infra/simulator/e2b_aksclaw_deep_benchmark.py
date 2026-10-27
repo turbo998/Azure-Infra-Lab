@@ -259,6 +259,7 @@ from agent_infra_sizer import (
     simulate_moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_sil3_sandbox,
     simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
     simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
+    simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1972,6 +1973,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox(8, "raw_cloud_uncompensated_bcl3_cocl2_mass28_drift_and_ticl4_nh4cl_particulate_hydrolysis"),
     ]
 
+    bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_profiles = [
+        simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(8, "pinn_mpc_bdeas_dipas_btbas_halide_free_rectification_and_gaa_sibcn_euv_sadp_peald_sil3_edge"),
+        simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(32, "pinn_mpc_bdeas_dipas_btbas_halide_free_rectification_and_gaa_sibcn_euv_sadp_peald_sil3_edge"),
+        simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(8, "raw_cloud_uncompensated_schlenk_disproportionation_cl_pitting_and_dli_silazane_gelation"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2218,6 +2225,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_profiles": moo2cl2_mocl5_co2co8_3dnand_mo_wordline_and_bspdn_ald_profiles,
         "cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_profiles": cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_profiles,
         "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_profiles": bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_profiles,
+        "bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_profiles": bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_profiles,
     }
 
 
