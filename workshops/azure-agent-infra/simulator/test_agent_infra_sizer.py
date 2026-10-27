@@ -243,6 +243,7 @@ from agent_infra_sizer import (
     simulate_carbonyl_sulfide_cryogenic_distillation_and_hydrolysis_suppression_sil3_sandbox,
     simulate_hexachlorodisilane_vacuum_distillation_and_ald_disproportionation_sil3_sandbox,
     simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox,
+    simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5043,6 +5044,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_neopentane_isopentane_azeotrope_slip_or_ulk_k_drift_pct"], 3.0)
         self.assertTrue(gov["trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met"])
         self.assertFalse(raw["trimethylsilane_ulk_pecvd_distillation_and_alkane_slo_met"])
+
+    def test_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(self) -> None:
+        gov = simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(
+            8, "pinn_mpc_dems_omcts_vacuum_distillation_atrp_porogen_and_uv_cure_sil3_edge"
+        )
+        raw = simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(
+            8, "raw_cloud_uncompensated_lfc_gelation_atrp_peroxide_and_uv_cure_k_shift"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_dems_omcts_pods"], 32)
+        self.assertEqual(gov["electronic_6n_dems_omcts_purity_and_porous_lowk_modulus_yield_gain_pct"], 59.4)
+        self.assertEqual(gov["mtes_d3_d5_oligomer_and_atrp_peroxide_porogen_ash_defect_reduction_pct"], 83.4)
+        self.assertEqual(gov["semi_c3_s2_nfpa30_sil3_lfc_gelation_and_atrp_peroxide_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_lfc_vaporizer_siloxane_gel_plugging_or_atrp_peroxide_runaway_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lfc_vaporizer_siloxane_gel_plugging_or_atrp_peroxide_runaway_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2165cm1_1105cm1_3650cm1_ep_ellipsometry_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct"], 3.0)
+        self.assertTrue(gov["dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_slo_met"])
+        self.assertFalse(raw["dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_slo_met"])
 
 
 if __name__ == "__main__":

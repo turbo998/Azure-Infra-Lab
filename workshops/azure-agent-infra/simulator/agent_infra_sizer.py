@@ -12783,6 +12783,63 @@ def simulate_trimethylsilane_ulk_pecvd_distillation_and_alkane_sil3_sandbox(
     }
 
 
+def simulate_dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_sil3_sandbox(
+    porous_lowk_uv_trains: int = 8,
+    governance_mode: str = "pinn_mpc_dems_omcts_vacuum_distillation_atrp_porogen_and_uv_cure_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Autonomous Electronic-Grade Diethoxymethylsilane (6N DEMS HSi(CH3)(OC2H5)2 >= 99.9999%) &
+    Octamethylcyclotetrasiloxane (6N OMCTS / D4 [(CH3)2SiO]4 >= 99.9999%) + Alpha-Terpinene (6N ATRP C10H16 Sacrificial
+    Porogen) 2nm/A14 BEOL Mesoporous Ultra-Low-k (k <= 2.05-2.18, Elastic Modulus E >= 8.2 GPa, Pore Radius rp <= 0.95 nm
+    p-SiCOH ILD) Vacuum Fractional Distillation, Triethoxymethylsilane (MTES <= 0.30 ppmv) & Cyclic D3/D5 Oligomer
+    Ring-Equilibrium Suppression, Free Ethanol (C2H5OH <= 0.20 ppmv) & Terpinene Peroxide / p-Cymene (<= 0.50 ppmv)
+    Inhibitor-Free Stabilization, Dual-LFC Liquid-Vaporizer Co-Injection + 172/254 nm Broadband Excimer UV-Thermal Cure
+    Porogen Burnout & Si-CH2-Si Cross-Link Matrix PINN-MPC, Online 10 kHz QCL-TDLAS (2165 cm-1 Si-H / 1105 cm-1 Si-O-Et /
+    1650 cm-1 C=C ATRP / 3650 cm-1 Si-OH Silanol <= 25 ppbv) + In-Situ Ellipsometric Porosimetry (EP) + ICP-MS/MS
+    (<= 5 pptw) Metrology & SEMI C3 / SEMI S2 / NFPA 30 / IEC 61511 SIL-3 LFC Vaporizer Oligomer Gelation (> 165 C) &
+    Terpinene Peroxide Runaway Hard Interlock (Chapter 242, Cycle #237 — 245-Chapter Milestone!).
+    """
+    trains = max(2, min(int(porous_lowk_uv_trains), 32))
+    governed = (
+        governance_mode
+        == "pinn_mpc_dems_omcts_vacuum_distillation_atrp_porogen_and_uv_cure_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_dems_omcts_pods = trains * 4
+
+    if governed:
+        electronic_6n_dems_omcts_purity_and_porous_lowk_modulus_yield_gain_pct = 59.4
+        mtes_d3_d5_oligomer_and_atrp_peroxide_porogen_ash_defect_reduction_pct = 83.4
+        semi_c3_s2_nfpa30_sil3_lfc_gelation_and_atrp_peroxide_lockout_latency_ms = 0.14
+        unmitigated_lfc_vaporizer_siloxane_gel_plugging_or_atrp_peroxide_runaway_pct = 0.0
+        edge_qcl_tdlas_2165cm1_1105cm1_3650cm1_ep_ellipsometry_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct = 0.0
+    else:
+        electronic_6n_dems_omcts_purity_and_porous_lowk_modulus_yield_gain_pct = 11.6
+        mtes_d3_d5_oligomer_and_atrp_peroxide_porogen_ash_defect_reduction_pct = 15.5
+        semi_c3_s2_nfpa30_sil3_lfc_gelation_and_atrp_peroxide_lockout_latency_ms = 420.0
+        unmitigated_lfc_vaporizer_siloxane_gel_plugging_or_atrp_peroxide_runaway_pct = 1.6
+        edge_qcl_tdlas_2165cm1_1105cm1_3650cm1_ep_ellipsometry_closed_loop_latency_ms = 238.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct = 5.3
+
+    return {
+        "porous_lowk_uv_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_dems_omcts_pods": active_dems_omcts_pods,
+        "electronic_6n_dems_omcts_purity_and_porous_lowk_modulus_yield_gain_pct": electronic_6n_dems_omcts_purity_and_porous_lowk_modulus_yield_gain_pct,
+        "mtes_d3_d5_oligomer_and_atrp_peroxide_porogen_ash_defect_reduction_pct": mtes_d3_d5_oligomer_and_atrp_peroxide_porogen_ash_defect_reduction_pct,
+        "semi_c3_s2_nfpa30_sil3_lfc_gelation_and_atrp_peroxide_lockout_latency_ms": semi_c3_s2_nfpa30_sil3_lfc_gelation_and_atrp_peroxide_lockout_latency_ms,
+        "unmitigated_lfc_vaporizer_siloxane_gel_plugging_or_atrp_peroxide_runaway_pct": unmitigated_lfc_vaporizer_siloxane_gel_plugging_or_atrp_peroxide_runaway_pct,
+        "edge_qcl_tdlas_2165cm1_1105cm1_3650cm1_ep_ellipsometry_closed_loop_latency_ms": edge_qcl_tdlas_2165cm1_1105cm1_3650cm1_ep_ellipsometry_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct": uncompensated_uv_cure_porogen_residue_or_silanol_moisture_k_shift_pct,
+        "dems_omcts_porous_lowk_uv_cure_and_atrp_porogen_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
