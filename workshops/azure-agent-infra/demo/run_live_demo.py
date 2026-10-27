@@ -268,6 +268,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
     simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
     simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox,
+    simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1739,6 +1740,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "governed_wco6_btbmw_teb_8_trains": simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(8, "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge"),
             "governed_wco6_btbmw_teb_32_trains": simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(32, "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge"),
             "raw_wco6_btbmw_teb_8_trains": simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(8, "raw_cloud_uncompensated_moco6_cosublimation_wf6_fluorine_attack_and_wco6_line_desublimation"),
+        },
+        "demo_249_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd": {
+            "governed_dmzn_dezn_cp2fe_8_trains": simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(8, "pinn_mpc_dmzn_dezn_cp2fe_adduct_rectification_and_euv_znoxo_mor_inp_mocvd_sil3_edge"),
+            "governed_dmzn_dezn_cp2fe_32_trains": simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(32, "pinn_mpc_dmzn_dezn_cp2fe_adduct_rectification_and_euv_znoxo_mor_inp_mocvd_sil3_edge"),
+            "raw_dmzn_dezn_cp2fe_8_trains": simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(8, "raw_cloud_uncompensated_rzni_iodide_haze_alkoxide_prereaction_and_dmzn_vapor_runaway"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

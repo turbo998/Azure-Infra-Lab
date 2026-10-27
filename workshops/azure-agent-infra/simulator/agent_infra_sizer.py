@@ -13519,6 +13519,68 @@ def simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(
     }
 
 
+def simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(
+    dmzn_dezn_cp2fe_trains: int = 8,
+    governance_mode: str = "pinn_mpc_dmzn_dezn_cp2fe_adduct_rectification_and_euv_znoxo_mor_inp_mocvd_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #249 (250-Blueprint Milestone!): Autonomous Electronic-Grade Dimethylzinc (6N DMZn
+    Zn(CH3)2 >=99.9999%, b.p. 46.0C, m.p. -42.0C, v.p. 124Torr @ 0C, Ultra-Low Cd <=0.05ppmw,
+    Pb <=0.02ppmw, RZnI <=0.10ppmw, Oxygenated Alkoxide CH3ZnOCH3 <=0.15ppmw) & Electronic-Grade
+    Diethylzinc (6N DEZn Zn(C2H5)2 >=99.9999%, b.p. 117.6C, v.p. 15.0Torr @ 20C, Ultra-Low Cl/I
+    <=0.05ppmw) + Electronic-Grade Bis(cyclopentadienyl)iron / Ferrocene (6N Cp2Fe Fe(C5H5)2
+    >=99.9999%, Sublimation 100C, Ultra-Low Ni/Co/Cr <=0.03ppmw) High-NA EUV (0.55 NA) Zinc-Oxo
+    Cluster Metal-Oxide Photoresist (Zn-MOR, sigma_EUV(Zn) = 1.45e7 cm2/mol @ 13.5nm, 3.8x vs Sn)
+    Controlled Hydrolysis-Condensation, InP / InGaAsP 1.6T Co-Packaged Optics (CPO) p-Type Zn
+    Acceptor MOCVD Doping & Semi-Insulating Fe-Doped InP / 2D MoS2-WS2 Channel CVD Adduct-
+    Purification Rectification (DMPZ / Bipy / TMEDA Adduct Thermal Dissociation), Cryo-Thermostat
+    Bubbler Vapor-Pressure Regulation & PINN-MPC, Online 10 kHz QCL-TDLAS/FTIR (615cm-1 C-Zn-C
+    nu_as / 562cm-1 Et-Zn-Et / 705cm-1 Zn-O-C Alkoxide) + HR-ICP-MS + 1H/13C-NMR Metrology &
+    SEMI S2 / SEMI C3 / NFPA 704 (4-3-3 W) / IEC 61511 SIL-3 Extreme Pyrophoric DMZn/DEZn Air
+    Auto-Ignition, Water-Reactive CH4/C2H6 Deflagration & ZnO Exhaust Filter Plugging Hard Interlock.
+    """
+    trains = max(1, int(dmzn_dezn_cp2fe_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_dmzn_dezn_cp2fe_adduct_rectification_and_euv_znoxo_mor_inp_mocvd_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_dmzn_dezn_cp2fe_pods = trains * 4
+
+    if governed:
+        electronic_6n_dmzn_dezn_cp2fe_purity_and_euv_znoxo_inp_mocvd_yield_gain_pct = 62.1
+        rzni_iodide_haze_alkoxide_prereaction_and_zn_dopant_spike_reduction_pct = 85.9
+        semi_s2_nfpa704_sil3_pyrophoric_dmzn_dezn_and_zno_filter_lockout_latency_ms = 0.14
+        unmitigated_dmzn_dezn_pyrophoric_autoignition_or_water_methane_explosion_pct = 0.0
+        edge_qcl_tdlas_615cm1_562cm1_705cm1_icpms_nmr_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_euv_znoxo_stochastic_bridging_or_inp_zn_interstitial_diffusion_pct = 0.0
+    else:
+        electronic_6n_dmzn_dezn_cp2fe_purity_and_euv_znoxo_inp_mocvd_yield_gain_pct = 13.1
+        rzni_iodide_haze_alkoxide_prereaction_and_zn_dopant_spike_reduction_pct = 17.1
+        semi_s2_nfpa704_sil3_pyrophoric_dmzn_dezn_and_zno_filter_lockout_latency_ms = 445.0
+        unmitigated_dmzn_dezn_pyrophoric_autoignition_or_water_methane_explosion_pct = 1.6
+        edge_qcl_tdlas_615cm1_562cm1_705cm1_icpms_nmr_closed_loop_latency_ms = 256.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_euv_znoxo_stochastic_bridging_or_inp_zn_interstitial_diffusion_pct = 6.3
+
+    return {
+        "dmzn_dezn_cp2fe_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_dmzn_dezn_cp2fe_pods": active_dmzn_dezn_cp2fe_pods,
+        "electronic_6n_dmzn_dezn_cp2fe_purity_and_euv_znoxo_inp_mocvd_yield_gain_pct": electronic_6n_dmzn_dezn_cp2fe_purity_and_euv_znoxo_inp_mocvd_yield_gain_pct,
+        "rzni_iodide_haze_alkoxide_prereaction_and_zn_dopant_spike_reduction_pct": rzni_iodide_haze_alkoxide_prereaction_and_zn_dopant_spike_reduction_pct,
+        "semi_s2_nfpa704_sil3_pyrophoric_dmzn_dezn_and_zno_filter_lockout_latency_ms": semi_s2_nfpa704_sil3_pyrophoric_dmzn_dezn_and_zno_filter_lockout_latency_ms,
+        "unmitigated_dmzn_dezn_pyrophoric_autoignition_or_water_methane_explosion_pct": unmitigated_dmzn_dezn_pyrophoric_autoignition_or_water_methane_explosion_pct,
+        "edge_qcl_tdlas_615cm1_562cm1_705cm1_icpms_nmr_closed_loop_latency_ms": edge_qcl_tdlas_615cm1_562cm1_705cm1_icpms_nmr_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_euv_znoxo_stochastic_bridging_or_inp_zn_interstitial_diffusion_pct": uncompensated_euv_znoxo_stochastic_bridging_or_inp_zn_interstitial_diffusion_pct,
+        "dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

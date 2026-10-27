@@ -255,6 +255,7 @@ from agent_infra_sizer import (
     simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
     simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
     simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox,
+    simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5307,6 +5308,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct"], 3.0)
         self.assertTrue(gov["wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met"])
         self.assertFalse(raw["wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met"])
+
+    def test_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(self) -> None:
+        gov = simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(
+            8, "pinn_mpc_dmzn_dezn_cp2fe_adduct_rectification_and_euv_znoxo_mor_inp_mocvd_sil3_edge"
+        )
+        raw = simulate_dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_sil3_sandbox(
+            8, "raw_cloud_uncompensated_rzni_iodide_haze_alkoxide_prereaction_and_dmzn_vapor_runaway"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_dmzn_dezn_cp2fe_pods"], 32)
+        self.assertEqual(gov["electronic_6n_dmzn_dezn_cp2fe_purity_and_euv_znoxo_inp_mocvd_yield_gain_pct"], 62.1)
+        self.assertEqual(gov["rzni_iodide_haze_alkoxide_prereaction_and_zn_dopant_spike_reduction_pct"], 85.9)
+        self.assertEqual(gov["semi_s2_nfpa704_sil3_pyrophoric_dmzn_dezn_and_zno_filter_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_dmzn_dezn_pyrophoric_autoignition_or_water_methane_explosion_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_dmzn_dezn_pyrophoric_autoignition_or_water_methane_explosion_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_615cm1_562cm1_705cm1_icpms_nmr_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_euv_znoxo_stochastic_bridging_or_inp_zn_interstitial_diffusion_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_euv_znoxo_stochastic_bridging_or_inp_zn_interstitial_diffusion_pct"], 3.0)
+        self.assertTrue(gov["dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_slo_met"])
+        self.assertFalse(raw["dmzn_dezn_cp2fe_euv_znoxo_mor_and_inp_mocvd_slo_met"])
 
 
 if __name__ == "__main__":
