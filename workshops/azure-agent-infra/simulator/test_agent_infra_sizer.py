@@ -254,6 +254,7 @@ from agent_infra_sizer import (
     simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
     simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
     simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
+    simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5285,6 +5286,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct"], 3.0)
         self.assertTrue(gov["bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_slo_met"])
         self.assertFalse(raw["bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_slo_met"])
+
+    def test_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(self) -> None:
+        gov = simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(
+            8, "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge"
+        )
+        raw = simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_moco6_cosublimation_wf6_fluorine_attack_and_wco6_line_desublimation"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_wco6_btbmw_teb_pods"], 32)
+        self.assertEqual(gov["electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct"], 61.9)
+        self.assertEqual(gov["moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct"], 85.7)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms"], 0.14)
+        self.assertEqual(gov["unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct"], 3.0)
+        self.assertTrue(gov["wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met"])
+        self.assertFalse(raw["wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met"])
 
 
 if __name__ == "__main__":

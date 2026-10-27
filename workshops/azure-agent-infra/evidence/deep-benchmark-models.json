@@ -13897,5 +13897,52 @@
       "uncompensated_gaa_spacer_hf_undercut_or_euv_saqp_pitch_walking_pct": 6.1,
       "bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_slo_met": false
     }
+  ],
+  "wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_profiles": [
+    {
+      "wco6_btbmw_teb_trains": 8,
+      "governance_mode": "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_wco6_btbmw_teb_pods": 32,
+      "electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct": 61.9,
+      "moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct": 85.7,
+      "semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms": 0.14,
+      "unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct": 0.0,
+      "edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct": 0.0,
+      "wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met": true
+    },
+    {
+      "wco6_btbmw_teb_trains": 32,
+      "governance_mode": "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge",
+      "gpu_nodes": 16,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_wco6_btbmw_teb_pods": 128,
+      "electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct": 61.9,
+      "moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct": 85.7,
+      "semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms": 0.14,
+      "unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct": 0.0,
+      "edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct": 0.0,
+      "wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met": true
+    },
+    {
+      "wco6_btbmw_teb_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_moco6_cosublimation_wf6_fluorine_attack_and_wco6_line_desublimation",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_wco6_btbmw_teb_pods": 32,
+      "electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct": 13.0,
+      "moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct": 17.0,
+      "semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms": 442.0,
+      "unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct": 1.6,
+      "edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms": 254.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct": 6.2,
+      "wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met": false
+    }
   ]
 }

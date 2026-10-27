@@ -260,6 +260,7 @@ from agent_infra_sizer import (
     simulate_cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_sil3_sandbox,
     simulate_bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_sil3_sandbox,
     simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox,
+    simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1979,6 +1980,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(8, "raw_cloud_uncompensated_schlenk_disproportionation_cl_pitting_and_dli_silazane_gelation"),
     ]
 
+    wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_profiles = [
+        simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(8, "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge"),
+        simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(32, "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge"),
+        simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(8, "raw_cloud_uncompensated_moco6_cosublimation_wf6_fluorine_attack_and_wco6_line_desublimation"),
+    ]
+
     return {
         "e2b_firecracker_resume_decomposition": e2b_matrix,
         "aksclaw_node_density_comparison": aksclaw_matrix,
@@ -2226,6 +2233,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_profiles": cof2_cf3i_low_gwp_rps_chamber_clean_and_gaa_vuv_free_etch_profiles,
         "bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_profiles": bcl3_ticl4_sicl4_gaa_p_doping_and_dram_tin_ald_profiles,
         "bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_profiles": bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_profiles,
+        "wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_profiles": wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_profiles,
     }
 
 

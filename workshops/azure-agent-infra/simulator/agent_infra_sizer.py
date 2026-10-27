@@ -13457,6 +13457,68 @@ def simulate_bdeas_dipas_btbas_gaa_lowk_spacer_and_euv_sadp_peald_sil3_sandbox(
     }
 
 
+def simulate_wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_sil3_sandbox(
+    wco6_btbmw_teb_trains: int = 8,
+    governance_mode: str = "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge",
+) -> dict[str, Any]:
+    """
+    Cycle #248: Autonomous Electronic-Grade Tungsten Hexacarbonyl (6N W(CO)6 >=99.9999%, Sublimation
+    Point 170.0C, v.p. 0.10Torr @ 65C, Ultra-Low Mo(CO)6 <=0.20ppmw, Cr(CO)6 <=0.05ppmw, Fe(CO)5
+    <=0.02ppmw, Fluorine-Free 0.0pptw) & Bis(tert-butylimido)bis(dimethylamino)tungsten(VI) (6N BTBMW
+    (tBuN)2W(NMe2)2 >=99.9999%, b.p. 90C @ 0.5Torr, Ultra-Low Cl <=0.05ppmw) + Triethylborane /
+    Trimethylboron (6N TEB B(C2H5)3 & 5N5 TMB B(CH3)3 >=99.9995%) 2nm GAA / A14 Fluorine-Free
+    Tungsten Carbonitride / Tungsten Nitride (WCN / WNx) Work-Function Liner & Low-Resistivity
+    Fluorine-Free W Nucleation ALD/CVD (Eliminating WF6-Induced HF Attack on 0.7nm HfO2/La2O3 High-k
+    Gate Dielectric & TiSix Source/Drain Contact Fluorine Poisoning) Multi-Zone Vacuum Fractional
+    Sublimation, Solid-Source Carrier-Gas Saturation & NH3/B2H6/TEB Thermal/Plasma ALD PINN-MPC,
+    Online 10 kHz QCL-TDLAS/FTIR (1998cm-1 W-C=O T1u Asymmetric Stretch / 2004cm-1 Mo(CO)6 Shift /
+    948cm-1 W=N-tBu Imido Stretch / 2143cm-1 Free CO) + HR-ICP-MS + 4PP/XPS Metrology & SEMI S2 /
+    SEMI C3 / NFPA 704 / OSHA PEL / IEC 61511 SIL-3 Pyrophoric TEB/TMB Air-Ingress Auto-Ignition,
+    Toxic Carbon Monoxide (CO IDLH 1200ppmv) Decomposition & W(CO)6 Cold-Spot Desublimation Plugging
+    Hard Interlock.
+    """
+    trains = max(1, int(wco6_btbmw_teb_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_wco6_btbmw_teb_fractional_sublimation_and_gaa_fluorine_free_wcn_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_wco6_btbmw_teb_pods = trains * 4
+
+    if governed:
+        electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct = 61.9
+        moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct = 85.7
+        semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms = 0.14
+        unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct = 0.0
+        edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct = 0.0
+    else:
+        electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct = 13.0
+        moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct = 17.0
+        semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms = 442.0
+        unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct = 1.6
+        edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms = 254.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct = 6.2
+
+    return {
+        "wco6_btbmw_teb_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_wco6_btbmw_teb_pods": active_wco6_btbmw_teb_pods,
+        "electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct": electronic_6n_wco6_btbmw_teb_purity_and_gaa_fluorine_free_wcn_yield_gain_pct,
+        "moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct": moco6_workfunction_drift_hf_dielectric_attack_and_channeling_reduction_pct,
+        "semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms": semi_s2_nfpa704_osha_sil3_pyrophoric_teb_toxic_co_and_desublimation_lockout_latency_ms,
+        "unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct": unmitigated_teb_autoignition_toxic_co_leak_or_wco6_line_plugging_pct,
+        "edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms": edge_qcl_tdlas_1998cm1_2004cm1_948cm1_icpms_4pp_closed_loop_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct": uncompensated_gaa_hfo2_fluorine_blistering_or_wcn_threshold_voltage_shift_pct,
+        "wco6_btbmw_teb_gaa_fluorine_free_wcn_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
