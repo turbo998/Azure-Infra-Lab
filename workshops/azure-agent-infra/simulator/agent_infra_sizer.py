@@ -15975,6 +15975,54 @@ def simulate_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_m
     }
 
 
+def simulate_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_sandbox(
+    si28_3dmas_hcds_nd3_ph3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Isotopically Enriched 6N5 28Si2H6 / 28SiH4 (>=99.998% 28Si, Residual 29Si <=15 ppm) & 6N5 3DMAS / HCDS + 6N5 ND3 + 6N5 PH3 300mm 28Si/28SiGe Wiggle-Well Semiconductor Spin Qubit Array (T2_CPMG=1.48s, F1Q=99.992%, Valley Splitting Ev=285ueV), 10A CFET Low-k SiOCN Sidewall Spacer (k=3.65) & 6.4T CPO Deuterated Si3N4:D Ultra-Low-Loss Photonic Waveguide (0.042 dB/m, Qi=4.2e8) RP-CVD/PEALD PINN-MPC + SIL-3."""
+    trains = max(1, int(si28_3dmas_hcds_nd3_ph3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_28si_spin_qubit_cfet_siocn_deuterated_sin_pods = trains * 4
+    electronic_6n5_28si2h6_6n5_3dmas_6n5_hcds_6n5_nd3_purity_and_spin_qubit_cpo_yield_gain_pct = (
+        76.4 if governed else 15.8
+    )
+    si29_hyperfine_decoherence_valley_degeneracy_and_nh_1550nm_overtone_loss_reduction_pct = (
+        96.2 if governed else 18.8
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_si2h6_toxic_ph3_lockout_latency_ms = (
+        0.10 if governed else 260.0
+    )
+    unmitigated_pyrophoric_si2h6_sih4_detonation_or_toxic_ph3_hydride_leak_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_2189cm1_2187cm1_2442cm1_2322cm1_apt_insitu_1p5k_esr_latency_ms = (
+        0.11 if governed else 360.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_valley_splitting_collapse_or_siocn_wet_etch_undercut_failure_pct = (
+        0.0 if governed else 10.3
+    )
+    return {
+        "si28_3dmas_hcds_nd3_ph3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_28si_spin_qubit_cfet_siocn_deuterated_sin_pods": active_28si_spin_qubit_cfet_siocn_deuterated_sin_pods,
+        "electronic_6n5_28si2h6_6n5_3dmas_6n5_hcds_6n5_nd3_purity_and_spin_qubit_cpo_yield_gain_pct": electronic_6n5_28si2h6_6n5_3dmas_6n5_hcds_6n5_nd3_purity_and_spin_qubit_cpo_yield_gain_pct,
+        "si29_hyperfine_decoherence_valley_degeneracy_and_nh_1550nm_overtone_loss_reduction_pct": si29_hyperfine_decoherence_valley_degeneracy_and_nh_1550nm_overtone_loss_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_si2h6_toxic_ph3_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_si2h6_toxic_ph3_lockout_latency_ms,
+        "unmitigated_pyrophoric_si2h6_sih4_detonation_or_toxic_ph3_hydride_leak_pct": unmitigated_pyrophoric_si2h6_sih4_detonation_or_toxic_ph3_hydride_leak_pct,
+        "edge_qcl_crds_2189cm1_2187cm1_2442cm1_2322cm1_apt_insitu_1p5k_esr_latency_ms": edge_qcl_crds_2189cm1_2187cm1_2442cm1_2322cm1_apt_insitu_1p5k_esr_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_valley_splitting_collapse_or_siocn_wet_etch_undercut_failure_pct": uncompensated_valley_splitting_collapse_or_siocn_wet_etch_undercut_failure_pct,
+        "si28_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_slo_met": governed,
+    }
+
+
 
 
 

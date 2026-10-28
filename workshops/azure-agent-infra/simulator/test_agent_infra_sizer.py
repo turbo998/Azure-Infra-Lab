@@ -300,6 +300,7 @@ from agent_infra_sizer import (
     simulate_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_sandbox,
     simulate_pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_sil3_sandbox,
     simulate_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_sandbox,
+    simulate_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6358,6 +6359,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_mgo_tunnel_barrier_pinhole_or_aqfp_flux_trapping_failure_pct"], 3.0)
         self.assertTrue(gov["nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_slo_met"])
         self.assertFalse(raw["nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_slo_met"])
+
+    def test_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_sandbox(self) -> None:
+        gov = simulate_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_sandbox(
+            si28_3dmas_hcds_nd3_ph3_trains=8,
+            governance_mode="pinn_mpc_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_edge",
+        )
+        raw = simulate_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_sandbox(
+            si28_3dmas_hcds_nd3_ph3_trains=8,
+            governance_mode="unmanaged_open_loop_29si_hyperfine_decoherence_valley_degeneracy_and_nh_1550nm_overtone_loss",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_28si_spin_qubit_cfet_siocn_deuterated_sin_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_28si2h6_6n5_3dmas_6n5_hcds_6n5_nd3_purity_and_spin_qubit_cpo_yield_gain_pct"], 76.4)
+        self.assertEqual(gov["si29_hyperfine_decoherence_valley_degeneracy_and_nh_1550nm_overtone_loss_reduction_pct"], 96.2)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_si2h6_toxic_ph3_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_si2h6_sih4_detonation_or_toxic_ph3_hydride_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_si2h6_sih4_detonation_or_toxic_ph3_hydride_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_2189cm1_2187cm1_2442cm1_2322cm1_apt_insitu_1p5k_esr_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_valley_splitting_collapse_or_siocn_wet_etch_undercut_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_valley_splitting_collapse_or_siocn_wet_etch_undercut_failure_pct"], 3.0)
+        self.assertTrue(gov["si28_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_slo_met"])
+        self.assertFalse(raw["si28_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_slo_met"])
 
 
 if __name__ == "__main__":
