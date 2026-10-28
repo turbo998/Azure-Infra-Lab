@@ -276,6 +276,7 @@ from agent_infra_sizer import (
     simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
     simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
     simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
+    simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5769,6 +5770,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct"], 3.0)
         self.assertTrue(gov["nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met"])
         self.assertFalse(raw["nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met"])
+
+    def test_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(self) -> None:
+        gov = simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(
+            8, "pinn_mpc_cp2mg_tega_tmin_tma_mg_memory_suppression_and_gan_hemt_microled_mocvd_sil3_edge"
+        )
+        raw = simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cp2mg_memory_tail_tmal_nh3_adduct_and_dynamic_ron_collapse"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_cp2mg_tega_tmin_tma_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_cp2mg_6n5_tega_tmga_6n5_tmin_6n5_tma_purity_and_hemt_microled_yield_gain_pct"], 66.6)
+        self.assertEqual(gov["mg_memory_tail_gas_phase_adduct_and_dynamic_ron_collapse_reduction_pct"], 89.8)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mo_nh3_and_1120c_h2_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_pyrophoric_mo_autoignition_nh3_toxic_release_or_h2_deflagration_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_mo_autoignition_nh3_toxic_release_or_h2_deflagration_pct"], 1.0)
+        self.assertEqual(gov["edge_uv_epison_216nm_qcl_tdlas_3085cm1_968cm1_2965cm1_epicurvett_hrxrd_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_pgan_vth_shift_2deg_collapse_or_microled_wavelength_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_pgan_vth_shift_2deg_collapse_or_microled_wavelength_drift_pct"], 3.0)
+        self.assertTrue(gov["cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_slo_met"])
+        self.assertFalse(raw["cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_slo_met"])
 
 
 if __name__ == "__main__":

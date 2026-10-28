@@ -14833,6 +14833,53 @@ def simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_juncti
     }
 
 
+def simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(
+    cp2mg_tega_tmin_tma_trains: int = 8,
+    governance_mode: str = "pinn_mpc_cp2mg_tega_tmin_tma_mg_memory_suppression_and_gan_hemt_microled_mocvd_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(cp2mg_tega_tmin_tma_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_cp2mg_tega_tmin_tma_mg_memory_suppression_and_gan_hemt_microled_mocvd_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_cp2mg_tega_tmin_tma_pods = trains * 4
+    electronic_6n5_cp2mg_6n5_tega_tmga_6n5_tmin_6n5_tma_purity_and_hemt_microled_yield_gain_pct = (
+        66.6 if governed else 15.2
+    )
+    mg_memory_tail_gas_phase_adduct_and_dynamic_ron_collapse_reduction_pct = (
+        89.8 if governed else 19.8
+    )
+    semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mo_nh3_and_1120c_h2_lockout_latency_ms = (
+        0.13 if governed else 488.0
+    )
+    unmitigated_pyrophoric_mo_autoignition_nh3_toxic_release_or_h2_deflagration_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_uv_epison_216nm_qcl_tdlas_3085cm1_968cm1_2965cm1_epicurvett_hrxrd_latency_ms = (
+        0.13 if governed else 286.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_pgan_vth_shift_2deg_collapse_or_microled_wavelength_drift_pct = (
+        0.0 if governed else 7.4
+    )
+    return {
+        "cp2mg_tega_tmin_tma_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_cp2mg_tega_tmin_tma_pods": active_cp2mg_tega_tmin_tma_pods,
+        "electronic_6n5_cp2mg_6n5_tega_tmga_6n5_tmin_6n5_tma_purity_and_hemt_microled_yield_gain_pct": electronic_6n5_cp2mg_6n5_tega_tmga_6n5_tmin_6n5_tma_purity_and_hemt_microled_yield_gain_pct,
+        "mg_memory_tail_gas_phase_adduct_and_dynamic_ron_collapse_reduction_pct": mg_memory_tail_gas_phase_adduct_and_dynamic_ron_collapse_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mo_nh3_and_1120c_h2_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mo_nh3_and_1120c_h2_lockout_latency_ms,
+        "unmitigated_pyrophoric_mo_autoignition_nh3_toxic_release_or_h2_deflagration_pct": unmitigated_pyrophoric_mo_autoignition_nh3_toxic_release_or_h2_deflagration_pct,
+        "edge_uv_epison_216nm_qcl_tdlas_3085cm1_968cm1_2965cm1_epicurvett_hrxrd_latency_ms": edge_uv_epison_216nm_qcl_tdlas_3085cm1_968cm1_2965cm1_epicurvett_hrxrd_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_pgan_vth_shift_2deg_collapse_or_microled_wavelength_drift_pct": uncompensated_pgan_vth_shift_2deg_collapse_or_microled_wavelength_drift_pct,
+        "cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

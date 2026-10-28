@@ -289,6 +289,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
     simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
     simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
+    simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1863,6 +1864,10 @@ def build_full_demo_bundle() -> Dict[str, Any]:
         "demo_269_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald": {
             "governed_nbcl5_tbtden_temav_8_trains": simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(8, "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge"),
             "raw_nbcl5_tbtden_temav_8_trains": simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(8, "raw_cloud_uncompensated_nbocl3_nb2o5_tls_dielectric_loss_and_jj_ic_spread"),
+        },
+        "demo_270_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy": {
+            "governed_cp2mg_tega_tmin_tma_8_trains": simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(8, "pinn_mpc_cp2mg_tega_tmin_tma_mg_memory_suppression_and_gan_hemt_microled_mocvd_sil3_edge"),
+            "raw_cp2mg_tega_tmin_tma_8_trains": simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(8, "raw_cloud_uncompensated_cp2mg_memory_tail_tmal_nh3_adduct_and_dynamic_ron_collapse"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
