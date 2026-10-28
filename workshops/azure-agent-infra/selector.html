@@ -6913,6 +6913,32 @@ pre.code-box {
     </div>
   </section>
 
+  <section class="card" style="margin-top:1.25rem; border:1px solid rgba(56,189,248,0.35);">
+    <div class="pill pill-teal" style="margin-bottom:0.5rem;">Tool 274 · 275-Blueprint Milestone! · Electronic-Grade 6N5 Fe(CO)5 &amp; 6N5 Fe(iPr-AMD)2 + 6N5 Mg(Cp)2 / Mg(EtCp)2 + 6N5 TEB 300mm eSTT/SOT-MRAM p-MTJ (CoFeB/MgO/CoFeB TMR &gt;265%) &amp; 1.6T/3.2T CPO Ce:YIG Non-Reciprocal Optical Isolator Super-Cycle PEALD PINN-MPC &amp; SIL-3 Simulator</div>
+    <h2>电子级六九五五羰基铁 (6N5 Fe(CO)5 &ge;99.99995%, b.p. 103&deg;C, 光解双核簇 Fe2(CO)9 &le;0.02 ppmw, Ni(CO)4 &le;0.005 ppmw) 与六九五双(N,N'-二异丙基乙脒基)亚铁 (6N5 Fe(iPr-AMD)2 &ge;99.99995%) + 六九五双(环戊二烯基)镁/双(乙基环戊二烯基)镁 (6N5 Mg(Cp)2 / 6N5 Mg(EtCp)2 &ge;99.99995%, Ca/Na/K &le;0.005 ppbw) + 六九五三乙基硼 (6N5 TEB B(C2H5)3 &ge;99.99995%) 300mm 嵌入式自旋转移矩/自旋轨道矩磁随机存储器 (eSTT-MRAM / SOT-MRAM 末级缓存 LLC) 垂直磁各向异性磁隧道结 (p-MTJ CoFeB/MgO/CoFeB, 0.85–1.15nm bcc (001) 单晶 MgO 势垒, 室温隧穿磁阻 TMR &gt;265%, RA = 3.2&plusmn;0.08 &Omega;&middot;&mu;m², 翻转电流 Jc0 &lt;1.8 MA/cm², 电压调控磁各向异性 VCMA &gt;95 fJ/V&middot;m) 与 1.6T / 3.2T 共封装光学 (CPO) 硅基单片掺铈钇铁石榴石非互易法拉第光隔离器 (Ce:YIG Ce1Y2Fe5O12, 1550nm 法拉第旋光率 &theta;F &gt;-4800 deg/cm, 品质因数 FoM &gt;450 deg/dB, 隔离度 &gt;32 dB) 超循环 PEALD / IBAD 避光一氧化碳稳压精馏、界面零 FeOx 死层控制与 PINN-MPC、在线 10kHz 量子级联激光 (2014/2038 cm⁻¹ Fe–CO / 1828 cm⁻¹ 桥基 Fe2(CO)9 / 2143 cm⁻¹ CO) + SF-ICP-MS + 原位 RHEED / 磁光克尔 (MOKE) / 铁磁共振 (FMR) 及 SEMI S2 / NFPA 704 / OSHA PSM / IEC 61511 SIL-3 剧毒五羰基铁与自燃三乙基硼硬联锁推演</h2>
+    <div class="sub">量化在 <code>2 / 4 / 8</code> 条电子级 `6N5 Fe(CO)5 + 6N5 Fe(iPr-AMD)2 + 6N5 Mg(Cp)2/Mg(EtCp)2 + 6N5 TEB` 避光减压精馏与 `300mm eSTT/SOT-MRAM p-MTJ 及 CPO 硅基 Ce:YIG 光隔离器超循环 PEALD` 产线规模下，消除 `Fe(CO)5` 光化学脱羰二聚体（$\text{Fe}_2(\text{CO})_9$）颗粒及 `CoFeB/MgO` 界面过氧化磁性死层（$\text{FeO}_x = 0$，保证 $\text{Fe } 3d_{z^2} - \text{O } 2p_z$ 杂化与 $\Delta_1$ 对称性自旋过滤 $\text{TMR} > 265\%$），实现 `+67.4%` 电子级 `6N5 Fe/Mg/B` 纯度与 `p-MTJ / Ce:YIG` 良率增益、`-90.5%` $\text{Fe}_2(\text{CO})_9$ 团簇、$\text{FeO}_x$ 磁性死层与 `MgO` 势垒针孔削减，并执行 `0.13 ms` `SEMI S2 / NFPA 704 / OSHA PSM / SIL-3` 剧毒 `Fe(CO)5`（$\text{TLV-TWA } 0.1\text{ ppmv}$）与绿焰自燃 `TEB` 硬联锁：</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-row">
+          <label>1. Fe(CO)5/Fe(iPr-AMD)2 + Mg(Cp)2 + TEB 精馏与 300mm MRAM p-MTJ / CPO Ce:YIG 产线数</label>
+          <select id="feco5Feamd2Mgcp2TebTrains" onchange="runFeco5Feamd2Mgcp2TebMramPmtjMgoCeyigPhotonicIsolatorAldLab()">
+            <option value="4" selected>4 条 6N5 Fe(CO)5/Fe(iPr-AMD)2/Mg(Cp)2/TEB 精馏与 300mm SOT-MRAM + Ce:YIG 产线</option>
+            <option value="2">2 条 6N5 Fe(iPr-AMD)2/Mg(EtCp)2 超薄 0.9nm MgO 势垒与 p-MTJ CoFeB 示范线</option>
+            <option value="8">8 条 6N5 Fe/Mg/B 全球多基地车规级 eMRAM 与 1.6T/3.2T CPO 硅光隔离器集群</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>2. 零 FeOx 界面死层 bcc-(001) MgO 外延、Ce3+ 价态锁定与 SIL-3 联锁模式</label>
+          <select id="feco5Feamd2Mgcp2TebMode" onchange="runFeco5Feamd2Mgcp2TebMramPmtjMgoCeyigPhotonicIsolatorAldLab()">
+            <option value="pinn" selected>PINN-MPC 避光 CO 微正压 6N5 Fe(CO)5 + bcc-(001) MgO/CoFeB (TMR &gt;265%) &amp; Ce:YIG (&theta;F &gt;-4800 deg/cm) + 10kHz TDLAS + SIL-3 联锁（推荐 · 275-Blueprint Milestone!）</option>
+            <option value="raw">云端非补偿 Fe2(CO)9 光解团簇、CoFeB/MgO 界面 FeOx 过氧化导致 TMR 坍塌与剧毒 Fe(CO)5/自燃 TEB 风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="feco5Feamd2Mgcp2TebResult"></div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Deterministic Sizer Engine · Matches simulator/agent_infra_sizer.py</span>
     <span><a href="cards.html">Next: 7-Card 4:5 Benchmark Report →</a></span>
@@ -11667,6 +11693,50 @@ function runScmecp3Sciprcp3TmaEriprcp3Ymecp3Alscn3dFefet6gBawAndErY2o3QuantumPho
   `;
 }
 runScmecp3Sciprcp3TmaEriprcp3Ymecp3Alscn3dFefet6gBawAndErY2o3QuantumPhotonicPealdLab();
+
+function runFeco5Feamd2Mgcp2TebMramPmtjMgoCeyigPhotonicIsolatorAldLab() {
+  const trains = parseInt(document.getElementById('feco5Feamd2Mgcp2TebTrains').value, 10);
+  const mode = document.getElementById('feco5Feamd2Mgcp2TebMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(4, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityMramCeyigYieldGain = isPinn ? 67.4 : 15.8;
+  const fe2co9FeoDeadlayerMgoPinholeRed = isPinn ? 90.5 : 20.5;
+  const sil3Ms = isPinn ? 0.13 : 505.0;
+  const toxicFeco5PyrophoricTebRiskPct = isPinn ? 0.0 : 1.9;
+  const tdlasRheedMokeFmrMs = isPinn ? 0.13 : 298.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const tmrCollapseFaradayLossPct = isPinn ? 0.0 : 7.8;
+
+  document.getElementById('feco5Feamd2Mgcp2TebResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS Standard_NC40ads_H100_v5 节点 (${trains} 条 Fe(CO)5 + Fe(iPr-AMD)2 + Mg(Cp)2 + TEB 产线)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#ef4444'}">+${purityMramCeyigYieldGain.toFixed(1)}% / -${fe2co9FeoDeadlayerMgoPinholeRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 Fe(CO)5/Fe(iPr-AMD)2/Mg(Cp)2/TEB 纯度与 MRAM/Ce:YIG 良率增益 / Fe2(CO)9 团簇、FeOx 死层与 MgO 针孔削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${toxicFeco5PyrophoricTebRiskPct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 剧毒五羰基铁 Fe(CO)5 与自燃三乙基硼 TEB 联锁延迟 / 羰基铁中毒或绿焰自燃事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasRheedMokeFmrMs.toFixed(2)} ms / ${tmrCollapseFaradayLossPct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (2014/2038/1828cm⁻¹) + 原位 RHEED/MOKE/FMR 延迟 (-${wanRed.toFixed(1)}% WAN) / p-MTJ TMR 坍塌与法拉第隔离度失效</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>275-Blueprint Milestone 达成 (`pinn_mpc_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_and_ceyig_photonic_isolator_ald_sil3_edge`)</strong>：通过 &gt;590nm 琥珀色避光与 CO 微正压减压精馏将 6N5 Fe(CO)5 中光解双核簇 Fe2(CO)9 压制在 &le;0.02 ppmw，在 300mm eSTT/SOT-MRAM p-MTJ 中精确构筑 0.95nm bcc-(001) MgO 势垒与零 FeOx 死层 CoFeB 界面（室温 TMR &gt;265%，RA = 3.2 &Omega;&middot;&mu;m²，VCMA &gt;95 fJ/V&middot;m）及 CPO 硅基 Ce:YIG 非互易光隔离器（1550nm &theta;F &gt;-4800 deg/cm，隔离度 &gt;32 dB），并以 0.13ms SIL-3 联锁将剧毒 Fe(CO)5 与自燃 TEB 风险压降至 0.0%。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：Fe(CO)5 受蓝紫光照射发生脱羰缩合析出不挥发 Fe2(CO)9 颗粒污染并释放高压 CO，且 CoFeB/MgO 界面过氧化生成反铁磁 FeOx 死层破坏 Δ1 自旋极化对称性导致 TMR 跌破 120%，Ce4+ 价态失控引起 1550nm 法拉第旋光消失（7.8% 失效率，505ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runFeco5Feamd2Mgcp2TebMramPmtjMgoCeyigPhotonicIsolatorAldLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

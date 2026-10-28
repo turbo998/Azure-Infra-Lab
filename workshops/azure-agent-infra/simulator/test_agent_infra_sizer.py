@@ -280,6 +280,7 @@ from agent_infra_sizer import (
     simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox,
     simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox,
     simulate_scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_photonic_peald_sil3_sandbox,
+    simulate_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5857,6 +5858,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_alscn_2pr_ferroelectric_fatigue_or_1536nm_quantum_coherence_t2_quench_pct"], 3.0)
         self.assertTrue(gov["scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_photonic_peald_slo_met"])
         self.assertFalse(raw["scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_photonic_peald_slo_met"])
+
+    def test_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_sil3_sandbox(self) -> None:
+        gov = simulate_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_sil3_sandbox(
+            8, "pinn_mpc_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_and_ceyig_photonic_isolator_ald_sil3_edge"
+        )
+        raw = simulate_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_fe2co9_cluster_feo_dead_layer_and_mgo_pinhole"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_feco5_feamd2_mgcp2_teb_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_feco5_6n5_feamd2_6n5_mgcp2_6n5_teb_purity_and_mram_ceyig_yield_gain_pct"], 67.4)
+        self.assertEqual(gov["fe2co9_photolytic_cluster_feo_dead_layer_and_mgo_pinhole_reduction_pct"], 90.5)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_toxic_feco5_co_and_pyrophoric_teb_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_feco5_carbonyl_poisoning_or_pyrophoric_teb_autoignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_feco5_carbonyl_poisoning_or_pyrophoric_teb_autoignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2014cm1_2038cm1_1828cm1_insitu_rheed_kerr_fmr_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_pmtj_tmr_collapse_or_cpo_ceyig_faraday_isolation_loss_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_pmtj_tmr_collapse_or_cpo_ceyig_faraday_isolation_loss_pct"], 3.0)
+        self.assertTrue(gov["feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_slo_met"])
+        self.assertFalse(raw["feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_slo_met"])
 
 
 if __name__ == "__main__":

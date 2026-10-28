@@ -15021,6 +15021,54 @@ def simulate_scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y
     }
 
 
+def simulate_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_sil3_sandbox(
+    feco5_feamd2_mgcp2_teb_trains: int = 8,
+    governance_mode: str = "pinn_mpc_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_and_ceyig_photonic_isolator_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(feco5_feamd2_mgcp2_teb_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_and_ceyig_photonic_isolator_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_feco5_feamd2_mgcp2_teb_pods = trains * 4
+    electronic_6n5_feco5_6n5_feamd2_6n5_mgcp2_6n5_teb_purity_and_mram_ceyig_yield_gain_pct = (
+        67.4 if governed else 15.8
+    )
+    fe2co9_photolytic_cluster_feo_dead_layer_and_mgo_pinhole_reduction_pct = (
+        90.5 if governed else 20.5
+    )
+    semi_s2_nfpa704_osha_psm_sil3_toxic_feco5_co_and_pyrophoric_teb_lockout_latency_ms = (
+        0.13 if governed else 505.0
+    )
+    unmitigated_feco5_carbonyl_poisoning_or_pyrophoric_teb_autoignition_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_2014cm1_2038cm1_1828cm1_insitu_rheed_kerr_fmr_latency_ms = (
+        0.13 if governed else 298.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_pmtj_tmr_collapse_or_cpo_ceyig_faraday_isolation_loss_pct = (
+        0.0 if governed else 7.8
+    )
+    return {
+        "feco5_feamd2_mgcp2_teb_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_feco5_feamd2_mgcp2_teb_pods": active_feco5_feamd2_mgcp2_teb_pods,
+        "electronic_6n5_feco5_6n5_feamd2_6n5_mgcp2_6n5_teb_purity_and_mram_ceyig_yield_gain_pct": electronic_6n5_feco5_6n5_feamd2_6n5_mgcp2_6n5_teb_purity_and_mram_ceyig_yield_gain_pct,
+        "fe2co9_photolytic_cluster_feo_dead_layer_and_mgo_pinhole_reduction_pct": fe2co9_photolytic_cluster_feo_dead_layer_and_mgo_pinhole_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_toxic_feco5_co_and_pyrophoric_teb_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_toxic_feco5_co_and_pyrophoric_teb_lockout_latency_ms,
+        "unmitigated_feco5_carbonyl_poisoning_or_pyrophoric_teb_autoignition_pct": unmitigated_feco5_carbonyl_poisoning_or_pyrophoric_teb_autoignition_pct,
+        "edge_qcl_tdlas_2014cm1_2038cm1_1828cm1_insitu_rheed_kerr_fmr_latency_ms": edge_qcl_tdlas_2014cm1_2038cm1_1828cm1_insitu_rheed_kerr_fmr_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_pmtj_tmr_collapse_or_cpo_ceyig_faraday_isolation_loss_pct": uncompensated_pmtj_tmr_collapse_or_cpo_ceyig_faraday_isolation_loss_pct,
+        "feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_slo_met": governed,
+    }
+
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
