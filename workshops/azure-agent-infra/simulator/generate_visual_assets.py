@@ -1608,9 +1608,10 @@ def main() -> int:
     cards_html = build_7card_html(report)
     cards_md = build_7card_markdown(report)
 
-    (bundle_dir / "test-report-cards.html").write_text(cards_html, encoding="utf-8")
+    (bundle_dir / "cards.html").write_text(cards_html, encoding="utf-8")
+    (bundle_dir / "benchmark-cards.html").write_text(cards_html, encoding="utf-8")
     (bundle_dir / "test-report.md").write_text(cards_md, encoding="utf-8")
-    print(f"OK: generated and XML-validated {len(svgs)} SVGs + test-report-cards.html + test-report.md")
+    print(f"OK: generated and XML-validated {len(svgs)} SVGs + cards.html + test-report.md")
     return 0
 
 

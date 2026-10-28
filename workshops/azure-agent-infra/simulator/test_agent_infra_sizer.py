@@ -287,6 +287,7 @@ from agent_infra_sizer import (
     simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox,
     simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox,
     simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox,
+    simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -375,8 +376,10 @@ class TestAgentInfraSizer(unittest.TestCase):
         import xml.etree.ElementTree as ET
         bundle_dir = Path(__file__).resolve().parent.parent
         svg_files = sorted((bundle_dir / "assets").glob("*.svg"))
+        svg_subdir_files = sorted((bundle_dir / "assets" / "svg").glob("*.svg"))
         self.assertEqual(len(svg_files), 8)
-        for svg in svg_files:
+        self.assertEqual(len(svg_subdir_files), 8)
+        for svg in svg_files + svg_subdir_files:
             ET.fromstring(svg.read_text(encoding="utf-8"))
         for h5_name in ("index.html", "demo.html", "selector.html", "cards.html"):
             p = bundle_dir / h5_name
@@ -385,15 +388,23 @@ class TestAgentInfraSizer(unittest.TestCase):
         for doc_name in (
             "README.md",
             "README.en.md",
+            "docs/full-monograph-archive.md",
             "workshop-runbook.md",
             "test-report.md",
+            "test-report.en.md",
             "cards.html",
             "report.json",
             "evidence.json",
             "review.md",
         ):
             self.assertTrue((bundle_dir / doc_name).exists(), f"Missing {doc_name}")
-        self.assertTrue((bundle_dir / "docs" / "full-monograph-archive.md").exists(), "Missing full-monograph-archive.md")
+        self.assertLess((bundle_dir / "README.md").stat().st_size, 50_000)
+        self.assertLess((bundle_dir / "README.en.md").stat().st_size, 50_000)
+        self.assertFalse((bundle_dir / "README.zh-CN.md").exists())
+        self.assertFalse((bundle_dir / "test-report-cards.html").exists())
+        self.assertFalse((bundle_dir / "h5" / "selector.html").exists())
+        self.assertFalse((bundle_dir / "h5" / "cards.html").exists())
+        self.assertFalse((bundle_dir / "h5" / "benchmark-cards.html").exists())
         for bp_name in (
             "aksclaw-kata-fleet.yaml",
             "e2b-apim-per-host-policy.xml",
@@ -6023,6 +6034,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_vo2_imt_hysteresis_drift_or_cfet_bi_contact_resistance_spike_pct"], 3.0)
         self.assertTrue(gov["vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_slo_met"])
         self.assertFalse(raw["vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_slo_met"])
+
+    def test_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox(self) -> None:
+        gov = simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox(
+            rhetcpcod_rhacacco2_cppdallyl_trains=8,
+            governance_mode="pinn_mpc_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_edge",
+        )
+        raw = simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox(
+            rhetcpcod_rhacacco2_cppdallyl_trains=8,
+            governance_mode="unmanaged_legacy_cu_tan_dual_damascene_and_pvd_pd_contact",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_rhetcpcod_rhacacco2_cppdallyl_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_rhetcpcod_6n5_rhacacco2_6n5_cppdallyl_6n5_pdhfac2_purity_and_cfet_m0_yield_gain_pct"], 71.2)
+        self.assertEqual(gov["rh_trench_seam_void_and_pd_pfet_schottky_pinning_defect_reduction_pct"], 93.0)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_rhacacco2_co_and_cppdallyl_autocatalytic_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_rhacacco2_co_release_or_cppdallyl_autocatalytic_runaway_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rhacacco2_co_release_or_cppdallyl_autocatalytic_runaway_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2015cm1_2084cm1_1528cm1_insitu_4pp_gixrd_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_rh_m0_line_resistance_or_wse2_cnt_pfet_contact_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_rh_m0_line_resistance_or_wse2_cnt_pfet_contact_drift_pct"], 3.0)
+        self.assertTrue(gov["rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_slo_met"])
+        self.assertFalse(raw["rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_slo_met"])
 
 
 if __name__ == "__main__":

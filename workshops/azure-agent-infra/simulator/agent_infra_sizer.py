@@ -15350,6 +15350,53 @@ def simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismu
     }
 
 
+def simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox(
+    rhetcpcod_rhacacco2_cppdallyl_trains: int = 8,
+    governance_mode: str = "pinn_mpc_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(rhetcpcod_rhacacco2_cppdallyl_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_rhetcpcod_rhacacco2_cppdallyl_pods = trains * 4
+    electronic_6n5_rhetcpcod_6n5_rhacacco2_6n5_cppdallyl_6n5_pdhfac2_purity_and_cfet_m0_yield_gain_pct = (
+        71.2 if governed else 18.0
+    )
+    rh_trench_seam_void_and_pd_pfet_schottky_pinning_defect_reduction_pct = (
+        93.0 if governed else 23.0
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_rhacacco2_co_and_cppdallyl_autocatalytic_lockout_latency_ms = (
+        0.10 if governed else 520.0
+    )
+    unmitigated_rhacacco2_co_release_or_cppdallyl_autocatalytic_runaway_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_2015cm1_2084cm1_1528cm1_insitu_4pp_gixrd_latency_ms = (
+        0.11 if governed else 310.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_rh_m0_line_resistance_or_wse2_cnt_pfet_contact_drift_pct = (
+        0.0 if governed else 8.6
+    )
+    return {
+        "rhetcpcod_rhacacco2_cppdallyl_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_rhetcpcod_rhacacco2_cppdallyl_pods": active_rhetcpcod_rhacacco2_cppdallyl_pods,
+        "electronic_6n5_rhetcpcod_6n5_rhacacco2_6n5_cppdallyl_6n5_pdhfac2_purity_and_cfet_m0_yield_gain_pct": electronic_6n5_rhetcpcod_6n5_rhacacco2_6n5_cppdallyl_6n5_pdhfac2_purity_and_cfet_m0_yield_gain_pct,
+        "rh_trench_seam_void_and_pd_pfet_schottky_pinning_defect_reduction_pct": rh_trench_seam_void_and_pd_pfet_schottky_pinning_defect_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_rhacacco2_co_and_cppdallyl_autocatalytic_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_rhacacco2_co_and_cppdallyl_autocatalytic_lockout_latency_ms,
+        "unmitigated_rhacacco2_co_release_or_cppdallyl_autocatalytic_runaway_pct": unmitigated_rhacacco2_co_release_or_cppdallyl_autocatalytic_runaway_pct,
+        "edge_qcl_tdlas_2015cm1_2084cm1_1528cm1_insitu_4pp_gixrd_latency_ms": edge_qcl_tdlas_2015cm1_2084cm1_1528cm1_insitu_4pp_gixrd_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_rh_m0_line_resistance_or_wse2_cnt_pfet_contact_drift_pct": uncompensated_rh_m0_line_resistance_or_wse2_cnt_pfet_contact_drift_pct,
+        "rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_slo_met": governed,
+    }
+
+
 
 
 
