@@ -295,6 +295,7 @@ from agent_infra_sizer import (
     simulate_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_sandbox,
     simulate_wco6_btbmdmaw_dtbdse_teb_10a_cfet_2d_wse2_pfet_dram_bwl_alpha_w_and_sot_mram_beta_w_ald_sil3_sandbox,
     simulate_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_sandbox,
+    simulate_tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6233,6 +6234,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_amorphous_bn_defect_or_off_stoichiometric_nial_resistivity_pct"], 3.0)
         self.assertTrue(gov["b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_slo_met"])
         self.assertFalse(raw["b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_slo_met"])
+
+    def test_tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_sil3_sandbox(self) -> None:
+        gov = simulate_tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_sil3_sandbox(
+            tesn_tdmasn_ge2h6_tdmasb_trains=8,
+            governance_mode="pinn_mpc_tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_sil3_edge",
+        )
+        raw = simulate_tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_sil3_sandbox(
+            tesn_tdmasn_ge2h6_tdmasb_trains=8,
+            governance_mode="unmanaged_open_loop_sncl4_hcl_etch_beta_sn_segregation_and_euv_bridge",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_tesn_tdmasn_gesn_laser_euv_mor_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_tesn_6n5_tdmasn_6n5_ge2h6_6n5_tdmasb_purity_and_gesn_laser_euv_mor_yield_gain_pct"], 74.4)
+        self.assertEqual(gov["beta_sn_segregation_euv_stochastic_bridge_and_gesn_schottky_barrier_reduction_pct"], 95.2)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_germane_organotin_stibine_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_germane_stibine_or_neurotoxic_organotin_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_germane_stibine_or_neurotoxic_organotin_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2110cm1_582cm1_1894cm1_insitu_hrxrd_rheed_euv_scatterometry_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_sn_droplet_precipitation_or_euv_mor_line_collapse_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_sn_droplet_precipitation_or_euv_mor_line_collapse_pct"], 3.0)
+        self.assertTrue(gov["tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_slo_met"])
+        self.assertFalse(raw["tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_slo_met"])
 
 
 if __name__ == "__main__":

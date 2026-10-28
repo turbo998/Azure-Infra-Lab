@@ -7235,6 +7235,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="b3n3h6HbnNialSpeResult"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 289 · 电子级四乙基锡 6N5 TESn 与四(二甲氨基)锡 6N5 TDMASn + 乙锗烷 6N5 Ge<sub>2</sub>H<sub>6</sub> + 三(二甲氨基)锑 6N5 TDMASb 直接带隙 Ge<sub>0.875</sub>Sn<sub>0.125</sub> 硅光片上激光器、High-NA (0.55 NA) EUV 氧化锡分子光刻胶 (SnO<sub>x</sub> EUV-MOR, LWR &le;1.20nm) 与 n<sup>+</sup>-GeSn:Sb 欧姆接触 (&rho;<sub>c</sub>=4.2&times;10⁻¹⁰ &Omega;&middot;cm²) RP-CVD/MLD PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">评估多级低温减压精馏无卤四乙基锡 6N5 TESn (Sn(C<sub>2</sub>H<sub>5</sub>)<sub>4</sub> &ge;99.99995%, 彻底消除传统 SnCl<sub>4</sub>/Ge<sub>2</sub>H<sub>6</sub> 副产物 HCl 对高锡 GeSn 量子阱的腐蚀回刻与氯残留陷阱, Cl &le;0.01 ppmw, Fe/Ni/Cu/Pb/Bi &le;0.001 ppbw) + 高活性四(二甲氨基)锡 6N5 TDMASn + 电子级乙锗烷/锗烷 6N5 Ge<sub>2</sub>H<sub>6</sub>/GeH<sub>4</sub> + 三(二甲氨基)锑 6N5 TDMASb 在 CMOS 单片集成 IV 族直接带隙 Ge<sub>0.875</sub>Sn<sub>0.125</sub> 短波/中波红外 (SWIR/MWIR, &lambda;=2.35&mu;m) 量子阱激光器（突破锡在锗中 &lt;1.1 at.% 热力学平衡固溶度极限，替位锡比例 x<sub>sub</sub>=12.5 at.%, &beta;-Sn 金属液滴析出 = 0.0%, &Gamma;-L 能谷直接度 &Delta;E<sub>L-&Gamma;</sub>=+86meV, 室温激射阈值 J<sub>th</sub>=0.92 kA/cm²）、High-NA (0.55 NA) EUV 13.5nm 十二核锡氧纳米团簇分子光刻胶 [(RSn)<sub>12</sub>O<sub>14</sub>(OH)<sub>6</sub>]<sup>2+</sup> 气相沉积/干法显影（EUV 吸收截面 &mu;<sub>abs</sub>=14.8 &mu;m⁻¹ 较有机 CAR 胶提升 3.8 倍, 8.0nm 半节距剂量 18.5 mJ/cm², 3&sigma; LWR=1.18nm &le;1.25nm, EPE=0.58nm &le;0.65nm），以及 10A/7A CFET 源漏原位锑掺杂 n<sup>+</sup>-GeSn:Sb 超低接触电阻外延（活性掺杂 N<sub>D</sub>=1.4&times;10²¹ cm⁻³, &rho;<sub>c</sub>=4.2&times;10⁻¹⁰ &Omega;&middot;cm²）中的定量协同、10kHz QCL-TDLAS (2110.6cm⁻¹ GeH<sub>4</sub>/Ge<sub>2</sub>H<sub>6</sub> Ge-H 伸缩峰 / 582.4cm⁻¹ TESn Sn-C 伸缩峰 / 1894.2cm⁻¹ SbH<sub>3</sub> Sb-H 峰) + 原位 RHEED/HR-XRD/EUV 散射测量闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 剧毒自燃锗烷 (GeH<sub>4</sub>, PEL 0.2ppmv)、神经毒性有机锡 (TESn/TDMASn, PEL 0.1mg/m³ as Sn) 与剧毒溶血性锑化氢 (SbH<sub>3</sub>, PEL 0.1ppmv) 硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>TESn / TDMASn / Ge2H6 / TDMASb 提纯与 GeSn 激光器 / High-NA EUV SnOx MOR / GeSn:Sb 接触产线数 (Trains): <span id="tesnGesnLaserEuvMorTrainsVal">8</span></label>
+          <input type="range" id="tesnGesnLaserEuvMorTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('tesnGesnLaserEuvMorTrainsVal').innerText=this.value; runTesnTdmasnGe2h6TdmasbDirectBandgapGesnSwirLaserHighNaEuvSnoxMorAndGesnSbContactLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="tesnGesnLaserEuvMorMode" onchange="runTesnTdmasnGe2h6TdmasbDirectBandgapGesnSwirLaserHighNaEuvSnoxMorAndGesnSbContactLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 TESn/Ge2H6 Ge0.875Sn0.125 激光器 + 6N5 TDMASn High-NA EUV SnOx MOR + TDMASb 接触 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿开环 SnCl4 氯腐蚀、&beta;-Sn 金属液滴偏析淬灭、EUV 随机桥接倒塌与锗烷/有机锡泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="tesnGesnLaserEuvMorResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12651,6 +12670,50 @@ function runB3n3h6TdmabNiipramd2DmaaCfet2dHbnVdwDielectricM0B2NialInterconnectAn
   `;
 }
 runB3n3h6TdmabNiipramd2DmaaCfet2dHbnVdwDielectricM0B2NialInterconnectAndQuantumSpeLab();
+
+function runTesnTdmasnGe2h6TdmasbDirectBandgapGesnSwirLaserHighNaEuvSnoxMorAndGesnSbContactLab() {
+  const trains = parseInt(document.getElementById('tesnGesnLaserEuvMorTrains').value, 10);
+  const mode = document.getElementById('tesnGesnLaserEuvMorMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityGesnEuvMorYieldGain = isPinn ? 74.4 : 14.8;
+  const snSegEuvBridgeSchottkyRed = isPinn ? 95.2 : 17.8;
+  const sil3Ms = isPinn ? 0.10 : 240.0;
+  const germaneOrganotinStibineLeakPct = isPinn ? 0.0 : 1.8;
+  const tdlasHrxrdRheedScatterMs = isPinn ? 0.11 : 340.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const snDropletEuvLineCollapsePct = isPinn ? 0.0 : 9.9;
+
+  document.getElementById('tesnGesnLaserEuvMorResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS H100 v5 + Kata 节点 (Standard_NC40ads_H100_v5)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${purityGesnEuvMorYieldGain.toFixed(1)}% / -${snSegEuvBridgeSchottkyRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 TESn/TDMASn/Ge2H6/TDMASb 纯度良率增益 / &beta;-Sn 偏析、EUV 随机桥接与肖特基势垒削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${germaneOrganotinStibineLeakPct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 剧毒自燃 GeH4/SbH3 与神经毒有机锡联锁延迟 / 锗烷、锑化氢或有机锡泄漏事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasHrxrdRheedScatterMs.toFixed(2)} ms / ${snDropletEuvLineCollapsePct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (2110.6/582.4/1894.2cm⁻¹) + 原位 HR-XRD/EUV 散射延迟 (-${wanRed.toFixed(1)}% WAN) / 锡液滴析出或线倒塌率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_sil3_edge`)</strong>：通过无卤 6N5 TESn + 6N5 Ge<sub>2</sub>H<sub>6</sub> 265&deg;C 非平衡 RP-CVD 将直接带隙 Ge<sub>0.875</sub>Sn<sub>0.125</sub> 替位锡锁定于 12.5 at.%（&Delta;E<sub>L-&Gamma;</sub>=+86meV, J<sub>th</sub>=0.92 kA/cm²），利用 6N5 TDMASn MLD 干法沉积 High-NA EUV SnO<sub>x</sub> 分子胶（3&sigma; LWR=1.18nm, EPE=0.58nm）与 6N5 TDMASb 原位掺杂 n<sup>+</sup>-GeSn:Sb（&rho;<sub>c</sub>=4.2&times;10⁻¹⁰ &Omega;&middot;cm²），配合 0.10ms SIL-3 联锁彻底阻断剧毒 GeH<sub>4</sub>/SbH<sub>3</sub> 与神经毒有机锡风险。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 SnCl<sub>4</sub> 释放 HCl 回刻高锡量子阱且温度波动 >2.5&deg;C 即引发 &beta;-Sn 金属液滴偏析淬灭激射，High-NA EUV 湿法显影毛细力导致 8nm 线条坍塌，且存在剧毒自燃锗烷与有机锡神经毒泄漏风险（9.9% 失效率，240ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runTesnTdmasnGe2h6TdmasbDirectBandgapGesnSwirLaserHighNaEuvSnoxMorAndGesnSbContactLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

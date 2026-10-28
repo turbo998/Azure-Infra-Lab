@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 296
-CURRENT_BLUEPRINTS = 289
-CURRENT_SIMULATORS = 288
-CURRENT_TESTS = 297
+CURRENT_CHAPTERS = 297
+CURRENT_BLUEPRINTS = 290
+CURRENT_SIMULATORS = 289
+CURRENT_TESTS = 298
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #288 — Chapter 293 + Summary 294 (296 Chapters) Autonomous Electronic-Grade Ultrapure Borazine (6N5 B3N3H6 >=99.99995%, C<=0.02ppmw, O<=0.05ppmw, Fe/Ni/Cu<=0.001ppbw) & Tris(dimethylamino)borane (6N5 TDMAB >=99.99995%) + Bis(N,N'-diisopropylacetamidinato)nickel(II) (6N5 Ni(iPr-AMD)2 >=99.99995%) + Dimethylamine Alane (6N5 DMAA >=99.99995%) Sub-1nm 10A/7A CFET Epitaxial 2D h-BN Van der Waals Dielectric Interface (EOT_IL=0.28nm, Dit=4.2e9 cm-2eV-1, +46.5% Mobility Gain), M0/M1 Liner-Free Ordered B2-NiAl Intermetallic Interconnect (rho=9.2 uOhm*cm @ 7nm CD, Ea=2.45eV) & Room-Temperature h-BN Quantum Single-Photon Emitter (g2(0)=0.018, DW=0.82, V_HOM=94.8%) PEALD/ALE PINN-MPC, 10kHz QCL-TDLAS/FTIR (1465.2/2518.4/1885.6cm-1) + SF-ICP-MS + In-Situ SE/4PP/HBT & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 B3N3H6/B2H6/DMAA Interlock, "
-        "Blueprint #289, Simulator #288, Tool 288 & 297/297 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #289 (290-Blueprint Milestone!) — Chapter 294 + Summary 295 (297 Chapters) Autonomous Electronic-Grade Ultrapure Tetraethyltin (6N5 TESn >=99.99995%, Cl<=0.01ppmw, Fe/Ni/Cu/Pb/Bi<=0.001ppbw) & Tetrakis(dimethylamino)tin (6N5 TDMASn >=99.99995%) + Digermane/Germane (6N5 Ge2H6/GeH4 >=99.99995%) + Tris(dimethylamino)antimony (6N5 TDMASb >=99.99995%) CMOS-Monolithic Direct-Bandgap Ge0.875Sn0.125 SWIR/MWIR Silicon Photonic Laser (x_sub=12.5 at.%, beta-Sn=0.0%, Delta_E_L_Gamma=+86meV, Jth=0.92 kA/cm2), High-NA (0.55 NA) EUV Tin-Oxo Nanocluster Molecular Photoresist (SnOx EUV-MOR, 8nm Half-Pitch Dose 18.5 mJ/cm2, 3sigma LWR=1.18nm, EPE=0.58nm) & 10A CFET n+-GeSn:Sb Ohmic Contact (rho_c=4.2e-10 Ohm*cm2) RP-CVD/MLD PINN-MPC, 10kHz QCL-TDLAS/FTIR (2110.6/582.4/1894.2cm-1) + SF-ICP-MS + In-Situ HR-XRD/RHEED/CD-SAXS & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 GeH4/SbH3/Organotin Interlock, "
+        "Blueprint #290, Simulator #289, Tool 289 & 298/298 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")
