@@ -281,6 +281,7 @@ from agent_infra_sizer import (
     simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox,
     simulate_scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_photonic_peald_sil3_sandbox,
     simulate_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_sil3_sandbox,
+    simulate_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5879,6 +5880,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pmtj_tmr_collapse_or_cpo_ceyig_faraday_isolation_loss_pct"], 3.0)
         self.assertTrue(gov["feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_slo_met"])
         self.assertFalse(raw["feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_slo_met"])
+
+    def test_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_sil3_sandbox(self) -> None:
+        gov = simulate_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_sil3_sandbox(
+            8, "pinn_mpc_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_and_4hsic_ohmic_ald_sil3_edge"
+        )
+        raw = simulate_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_nisi2_piping_agglomeration_and_4hsic_carbon_cluster"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_niamd2_nietcp2_mecpptme3_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_niamd2_6n5_nietcp2_6n5_mecpptme3_6n5_si2h6_purity_and_14a_cfet_sic_yield_gain_pct"], 67.6)
+        self.assertEqual(gov["nisi2_facet_piping_agglomeration_and_nico4_trace_contamination_reduction_pct"], 90.6)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_lethal_nico4_and_pyrophoric_si2h6_lockout_latency_ms"], 0.12)
+        self.assertEqual(gov["unmitigated_lethal_nico4_byproduct_or_pyrophoric_si2h6_autoignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_lethal_nico4_byproduct_or_pyrophoric_si2h6_autoignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2057cm1_2918cm1_2165cm1_insitu_trr_gixrd_latency_ms"], 0.12)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_niptsi_schottky_contact_spike_or_4hsic_carbon_cluster_delamination_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_niptsi_schottky_contact_spike_or_4hsic_carbon_cluster_delamination_pct"], 3.0)
+        self.assertTrue(gov["niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_slo_met"])
+        self.assertFalse(raw["niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_slo_met"])
 
 
 if __name__ == "__main__":

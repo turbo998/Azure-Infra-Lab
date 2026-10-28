@@ -15068,6 +15068,53 @@ def simulate_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_si
     }
 
 
+def simulate_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_sil3_sandbox(
+    niamd2_nietcp2_mecpptme3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_and_4hsic_ohmic_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(niamd2_nietcp2_mecpptme3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_and_4hsic_ohmic_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_niamd2_nietcp2_mecpptme3_pods = trains * 4
+    electronic_6n5_niamd2_6n5_nietcp2_6n5_mecpptme3_6n5_si2h6_purity_and_14a_cfet_sic_yield_gain_pct = (
+        67.6 if governed else 15.9
+    )
+    nisi2_facet_piping_agglomeration_and_nico4_trace_contamination_reduction_pct = (
+        90.6 if governed else 20.6
+    )
+    semi_s2_nfpa704_osha_psm_sil3_lethal_nico4_and_pyrophoric_si2h6_lockout_latency_ms = (
+        0.12 if governed else 508.0
+    )
+    unmitigated_lethal_nico4_byproduct_or_pyrophoric_si2h6_autoignition_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_2057cm1_2918cm1_2165cm1_insitu_trr_gixrd_latency_ms = (
+        0.12 if governed else 300.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_niptsi_schottky_contact_spike_or_4hsic_carbon_cluster_delamination_pct = (
+        0.0 if governed else 7.9
+    )
+    return {
+        "niamd2_nietcp2_mecpptme3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_niamd2_nietcp2_mecpptme3_pods": active_niamd2_nietcp2_mecpptme3_pods,
+        "electronic_6n5_niamd2_6n5_nietcp2_6n5_mecpptme3_6n5_si2h6_purity_and_14a_cfet_sic_yield_gain_pct": electronic_6n5_niamd2_6n5_nietcp2_6n5_mecpptme3_6n5_si2h6_purity_and_14a_cfet_sic_yield_gain_pct,
+        "nisi2_facet_piping_agglomeration_and_nico4_trace_contamination_reduction_pct": nisi2_facet_piping_agglomeration_and_nico4_trace_contamination_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_lethal_nico4_and_pyrophoric_si2h6_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_lethal_nico4_and_pyrophoric_si2h6_lockout_latency_ms,
+        "unmitigated_lethal_nico4_byproduct_or_pyrophoric_si2h6_autoignition_pct": unmitigated_lethal_nico4_byproduct_or_pyrophoric_si2h6_autoignition_pct,
+        "edge_qcl_tdlas_2057cm1_2918cm1_2165cm1_insitu_trr_gixrd_latency_ms": edge_qcl_tdlas_2057cm1_2918cm1_2165cm1_insitu_trr_gixrd_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_niptsi_schottky_contact_spike_or_4hsic_carbon_cluster_delamination_pct": uncompensated_niptsi_schottky_contact_spike_or_4hsic_carbon_cluster_delamination_pct,
+        "niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_slo_met": governed,
+    }
+
+
 
 
 
