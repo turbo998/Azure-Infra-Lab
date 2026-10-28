@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 297
-CURRENT_BLUEPRINTS = 290
-CURRENT_SIMULATORS = 289
-CURRENT_TESTS = 298
+CURRENT_CHAPTERS = 298
+CURRENT_BLUEPRINTS = 291
+CURRENT_SIMULATORS = 290
+CURRENT_TESTS = 299
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #289 (290-Blueprint Milestone!) — Chapter 294 + Summary 295 (297 Chapters) Autonomous Electronic-Grade Ultrapure Tetraethyltin (6N5 TESn >=99.99995%, Cl<=0.01ppmw, Fe/Ni/Cu/Pb/Bi<=0.001ppbw) & Tetrakis(dimethylamino)tin (6N5 TDMASn >=99.99995%) + Digermane/Germane (6N5 Ge2H6/GeH4 >=99.99995%) + Tris(dimethylamino)antimony (6N5 TDMASb >=99.99995%) CMOS-Monolithic Direct-Bandgap Ge0.875Sn0.125 SWIR/MWIR Silicon Photonic Laser (x_sub=12.5 at.%, beta-Sn=0.0%, Delta_E_L_Gamma=+86meV, Jth=0.92 kA/cm2), High-NA (0.55 NA) EUV Tin-Oxo Nanocluster Molecular Photoresist (SnOx EUV-MOR, 8nm Half-Pitch Dose 18.5 mJ/cm2, 3sigma LWR=1.18nm, EPE=0.58nm) & 10A CFET n+-GeSn:Sb Ohmic Contact (rho_c=4.2e-10 Ohm*cm2) RP-CVD/MLD PINN-MPC, 10kHz QCL-TDLAS/FTIR (2110.6/582.4/1894.2cm-1) + SF-ICP-MS + In-Situ HR-XRD/RHEED/CD-SAXS & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 GeH4/SbH3/Organotin Interlock, "
-        "Blueprint #290, Simulator #289, Tool 289 & 298/298 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #290 (290-Cycle & 290-Simulator Double Milestone!) — Chapter 295 + Summary 296 (298 Chapters) Autonomous Electronic-Grade Ultrapure Trimethylgallium/Triethylgallium (6N5 TMGa/TEGa >=99.99995%, Si/Fe/Mg/Zn<=0.001ppbw, Alkoxide<=0.01ppmw) & Solution-Trimethylindium (6N5 TMIn >=99.99995%) + Tertiarybutylarsine/Tertiarybutylphosphine (6N5 TBAs/TBP >=99.99995%) + Diethylzinc (6N5 DEZn >=99.99995%) Ultra-Wide-Bandgap beta-Ga2O3 (Eg=4.88eV, E_crit=8.15MV/cm, BFOM=3440x Si, R_on_sp=0.42 mOhm*cm2 @ 2400V) 800V AI Rack Power FinFET, Monolithic 3D BEOL (<=320C) Crystalline c-Axis Aligned CAAC-IGZO (mu_FE=42.5cm2/Vs, I_off=1.2e-22 A/um, Capacitorless 2T0C DRAM Retention tau_ret=4850s @ 85C) & 3.2T/6.4T CPO Heteroepitaxial O-Band 1.31um InAs/GaAs Quantum-Dot Comb Laser on 300mm Si(001) (TDD=1.4e6cm-2, 64x100GHz Comb, WPE=28.4%, RIN=-158.5dB/Hz) MOCVD/PEALD PINN-MPC, 10kHz QCL-TDLAS/FTIR (592.4/2118.6/746.2cm-1) + SF-ICP-MS + In-Situ EpiCurveTT/HR-XRD/Comb-OSA & SEMI S2/NFPA 704/OSHA 1910.1018/SIL-3 AsH3/TBAs/Pyrophoric Organometallic Interlock, "
+        "Blueprint #291, Simulator #290, Tool 290 & 299/299 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")
