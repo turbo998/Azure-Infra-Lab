@@ -5,7 +5,7 @@
 Public Azure infrastructure engineering playbooks, interactive H5 simulators, and partner workshops:
 
 1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure` · Bilingual EN/中文)](workshops/azure-agent-infra/README.en.md)**:
-   - **284 Chapters · 277 Production IaC Blueprints · 276 Deterministic Physics Simulators · 285/285 Unit Tests Passing**
+   - **285 Chapters · 278 Production IaC Blueprints · 277 Deterministic Physics Simulators · 286/286 Unit Tests Passing**
    - **Live GitHub Pages (Bilingual `EN / 中文` Toggle)**:
      - [Interactive Playbook Atlas (`index.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html)
      - [Live Dual-Track Simulator (`demo.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html)

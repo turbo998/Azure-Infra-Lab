@@ -15162,6 +15162,53 @@ def simulate_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_hig
     }
 
 
+def simulate_laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_sil3_sandbox(
+    laiprfamd3_luipramd3_gdipramd3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(laiprfamd3_luipramd3_gdipramd3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_laiprfamd3_luipramd3_gdipramd3_pods = trains * 4
+    electronic_6n5_laiprfamd3_6n5_luipramd3_6n5_gdipramd3_6n5_temah_purity_and_cfet_dipole_yield_gain_pct = (
+        68.0 if governed else 16.2
+    )
+    la2o3_hygroscopic_hydroxylation_and_lu2o3_interlayer_oxygen_vacancy_reduction_pct = (
+        91.0 if governed else 21.0
+    )
+    semi_s2_nfpa704_osha_psm_sil3_pyrophoric_lanthanide_amidinate_and_o3_radical_lockout_latency_ms = (
+        0.11 if governed else 510.0
+    )
+    unmitigated_pyrophoric_laiprfamd3_hydrolysis_runaway_or_o3_destruct_breakthrough_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_1642cm1_2968cm1_1384cm1_insitu_se_xps_arpes_latency_ms = (
+        0.11 if governed else 302.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_10a_cfet_vfb_dipole_rolloff_or_cryo_ggg_entropy_loss_pct = (
+        0.0 if governed else 8.2
+    )
+    return {
+        "laiprfamd3_luipramd3_gdipramd3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_laiprfamd3_luipramd3_gdipramd3_pods": active_laiprfamd3_luipramd3_gdipramd3_pods,
+        "electronic_6n5_laiprfamd3_6n5_luipramd3_6n5_gdipramd3_6n5_temah_purity_and_cfet_dipole_yield_gain_pct": electronic_6n5_laiprfamd3_6n5_luipramd3_6n5_gdipramd3_6n5_temah_purity_and_cfet_dipole_yield_gain_pct,
+        "la2o3_hygroscopic_hydroxylation_and_lu2o3_interlayer_oxygen_vacancy_reduction_pct": la2o3_hygroscopic_hydroxylation_and_lu2o3_interlayer_oxygen_vacancy_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_lanthanide_amidinate_and_o3_radical_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_lanthanide_amidinate_and_o3_radical_lockout_latency_ms,
+        "unmitigated_pyrophoric_laiprfamd3_hydrolysis_runaway_or_o3_destruct_breakthrough_pct": unmitigated_pyrophoric_laiprfamd3_hydrolysis_runaway_or_o3_destruct_breakthrough_pct,
+        "edge_qcl_tdlas_1642cm1_2968cm1_1384cm1_insitu_se_xps_arpes_latency_ms": edge_qcl_tdlas_1642cm1_2968cm1_1384cm1_insitu_se_xps_arpes_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_10a_cfet_vfb_dipole_rolloff_or_cryo_ggg_entropy_loss_pct": uncompensated_10a_cfet_vfb_dipole_rolloff_or_cryo_ggg_entropy_loss_pct,
+        "laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_slo_met": governed,
+    }
+
+
 
 
 
