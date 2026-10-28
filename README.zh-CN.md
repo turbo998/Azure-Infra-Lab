@@ -1,9 +1,20 @@
 # Azure Infra Lab
 
-> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.zh-CN.md)](README.zh-CN.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.zh-CN.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📊 7-Card Report (EN)](workshops/azure-agent-infra/test-report.en.md)** | **[🎬 FabCon & SQLCon 2026 视频简报 H5](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)**
+> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.md)](README.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📊 7-Card Report (EN)](workshops/azure-agent-infra/test-report.en.md)** | **[🎬 FabCon & SQLCon 2026 视频简报 H5](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)**
+
+> **📌 Executive Overview Summary / 核心架构总览**
+> - **AI Agent Infrastructure on Azure (`AKSClaw × E2B`)**：构建生产级 6 层 Agent 基础设施参考架构（`Build · Run · Ground · Govern`），实测 **`80 ms` Firecracker MicroVM 冷启动 / `108 ms` UFFD 快照恢复**（对比 Kata Pod VM `1,420 ms` 冷启动），单集群 **261 台 `Standard_D96as_v7`（AMD EPYC Turin）** 稳态承载 **100,000 并发沙箱**（优化后月度 TCO **`~$148K/mo`**，结合 Nomad 心跳监控与优雅 Drain 实现 `99.4%+` 会话存活），配套运行时与存储选型矩阵（ACA Dynamic Sessions vs AKS+Kata vs E2B vs Daytona；Azure Files NFS v4.1 vs Managed Lustre vs Blob FUSE2）及 **288 章半导体/AI Factory 与智能体工程百科**（[`docs/full-monograph-archive.md`](workshops/azure-agent-infra/docs/full-monograph-archive.md)）。
+> - **FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub**：收录 5 支微软官方 1080p/720p 实机演示视频、六大战略技术支柱与 18 项 GA/Preview 状态矩阵（Fabric IQ、Power BI Agentic App Creation、OneLake IQ Sharing、Osmos、SQL Hyperscale DiskANN）。
+> - **Azure VM Modernization & FinOps Partner Workshop**：同页三语（简/繁/英）7 模块课程、6 个模拟案例与浏览器本地 TCO/约束评估器。
+
+### 核心架构图谱速览（Core Architecture Visuals）
+
+![Azure AI Agent Infra 6-Layer Reference Architecture](workshops/azure-agent-infra/assets/svg/01-six-layer-architecture.svg)
+
+![100K Concurrent Sandbox Topology & 5-Step Execution Flow](workshops/azure-agent-infra/assets/svg/08-100k-sandbox-topology.svg)
 
 面向伙伴、架构师与技术团队的公开 Azure 基础设施实战 Workshop 与技术手册。当前收录三大核心专题：
-1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)](workshops/azure-agent-infra/README.md)**：从四层全栈架构（Build · Run · Ground · Govern）、六大计算运行时光谱到 AKS 多租户 Kata 隔离与 10 万+ 并发 Firecracker MicroVM 云端沙箱底座。
+1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)](workshops/azure-agent-infra/README.md)**：从六层全栈参考架构（Build · Run · Ground · Govern）、六大计算运行时光谱到 AKS 多租户 Kata 隔离与 10 万+ 并发 Firecracker MicroVM 云端沙箱底座。
 2. **[Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub](workshops/fabcon-sqlcon-2026/README.md)**：Microsoft Fabric 与 SQL 2026 巴塞罗那峰会全量创新解析、5 支微软官方 1080p/720p 实机演示视频内嵌播放器与直链、六大技术支柱及 18 项 GA/Preview 状态速查矩阵（中英双语切换）。
 3. **[Compute / Azure VM Modernization & FinOps](workshops/azure-vm-modernization/README.md)**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
 

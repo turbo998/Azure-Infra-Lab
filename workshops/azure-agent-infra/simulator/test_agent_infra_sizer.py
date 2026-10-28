@@ -379,19 +379,21 @@ class TestAgentInfraSizer(unittest.TestCase):
         for svg in svg_files:
             ET.fromstring(svg.read_text(encoding="utf-8"))
         for h5_name in ("index.html", "demo.html", "selector.html", "cards.html"):
-            p = bundle_dir / "h5" / h5_name
+            p = bundle_dir / h5_name
             self.assertTrue(p.exists(), f"Missing H5 file {h5_name}")
             self.assertGreater(p.stat().st_size, 20_000)
         for doc_name in (
             "README.md",
+            "README.en.md",
             "workshop-runbook.md",
             "test-report.md",
-            "test-report-cards.html",
+            "cards.html",
             "report.json",
             "evidence.json",
             "review.md",
         ):
             self.assertTrue((bundle_dir / doc_name).exists(), f"Missing {doc_name}")
+        self.assertTrue((bundle_dir / "docs" / "full-monograph-archive.md").exists(), "Missing full-monograph-archive.md")
         for bp_name in (
             "aksclaw-kata-fleet.yaml",
             "e2b-apim-per-host-policy.xml",
