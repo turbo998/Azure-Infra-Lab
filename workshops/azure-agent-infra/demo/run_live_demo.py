@@ -290,6 +290,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
     simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
     simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox,
+    simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1868,6 +1869,10 @@ def build_full_demo_bundle() -> Dict[str, Any]:
         "demo_270_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy": {
             "governed_cp2mg_tega_tmin_tma_8_trains": simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(8, "pinn_mpc_cp2mg_tega_tmin_tma_mg_memory_suppression_and_gan_hemt_microled_mocvd_sil3_edge"),
             "raw_cp2mg_tega_tmin_tma_8_trains": simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(8, "raw_cloud_uncompensated_cp2mg_memory_tail_tmal_nh3_adduct_and_dynamic_ron_collapse"),
+        },
+        "demo_271_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox": {
+            "governed_dezn_dmzn_tmin_tbas_tbp_8_trains": simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(8, "pinn_mpc_dezn_dmzn_tmin_tbas_tbp_kickout_diffusion_suppression_and_inp_cpo_eml_igzo_m3d_sil3_edge"),
+            "raw_dezn_dmzn_tmin_tbas_tbp_8_trains": simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(8, "raw_cloud_uncompensated_zn_interstitial_kickout_diffusion_mqw_poisoning_and_igzo_vo_vth_drift"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

@@ -283,6 +283,7 @@ from agent_infra_sizer import (
     simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
     simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
     simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox,
+    simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2140,6 +2141,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(8, "raw_cloud_uncompensated_cp2mg_memory_tail_tmal_nh3_adduct_and_dynamic_ron_collapse"),
     ]
 
+    dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_profiles = [
+        simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(8, "pinn_mpc_dezn_dmzn_tmin_tbas_tbp_kickout_diffusion_suppression_and_inp_cpo_eml_igzo_m3d_sil3_edge"),
+        simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(32, "pinn_mpc_dezn_dmzn_tmin_tbas_tbp_kickout_diffusion_suppression_and_inp_cpo_eml_igzo_m3d_sil3_edge"),
+        simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(8, "raw_cloud_uncompensated_zn_interstitial_kickout_diffusion_mqw_poisoning_and_igzo_vo_vth_drift"),
+    ]
+
     wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_profiles = [
         simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
         simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(32, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
@@ -2416,6 +2423,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_profiles": coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_profiles,
         "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles": nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles,
         "cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_profiles": cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_profiles,
+        "dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_profiles": dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_profiles,
     }
 
 

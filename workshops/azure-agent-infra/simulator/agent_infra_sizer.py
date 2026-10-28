@@ -14880,6 +14880,53 @@ def simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox(
     }
 
 
+def simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(
+    dezn_dmzn_tmin_tbas_tbp_trains: int = 8,
+    governance_mode: str = "pinn_mpc_dezn_dmzn_tmin_tbas_tbp_kickout_diffusion_suppression_and_inp_cpo_eml_igzo_m3d_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(dezn_dmzn_tmin_tbas_tbp_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_dezn_dmzn_tmin_tbas_tbp_kickout_diffusion_suppression_and_inp_cpo_eml_igzo_m3d_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_dezn_dmzn_tmin_tbas_tbp_pods = trains * 4
+    electronic_6n5_dezn_6n5_dmzn_6n5_tmin_6n5_tbas_tbp_purity_and_cpo_eml_igzo_yield_gain_pct = (
+        66.8 if governed else 15.3
+    )
+    zn_interstitial_kickout_diffusion_mqw_intermixing_and_igzo_vo_vth_drift_reduction_pct = (
+        89.9 if governed else 19.9
+    )
+    semi_s2_nfpa704_osha_psm_sil3_pyrophoric_dezn_dmzn_and_toxic_tbas_tbp_ash3_ph3_lockout_latency_ms = (
+        0.13 if governed else 492.0
+    )
+    unmitigated_pyrophoric_dezn_dmzn_autoignition_or_toxic_hydride_tbas_tbp_release_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_uv_epison_213nm_qcl_tdlas_2115cm1_2323cm1_laytec_epitt_se_latency_ms = (
+        0.13 if governed else 288.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_eml_chirp_extinction_degradation_or_2t0c_igzo_dram_retention_loss_pct = (
+        0.0 if governed else 7.5
+    )
+    return {
+        "dezn_dmzn_tmin_tbas_tbp_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_dezn_dmzn_tmin_tbas_tbp_pods": active_dezn_dmzn_tmin_tbas_tbp_pods,
+        "electronic_6n5_dezn_6n5_dmzn_6n5_tmin_6n5_tbas_tbp_purity_and_cpo_eml_igzo_yield_gain_pct": electronic_6n5_dezn_6n5_dmzn_6n5_tmin_6n5_tbas_tbp_purity_and_cpo_eml_igzo_yield_gain_pct,
+        "zn_interstitial_kickout_diffusion_mqw_intermixing_and_igzo_vo_vth_drift_reduction_pct": zn_interstitial_kickout_diffusion_mqw_intermixing_and_igzo_vo_vth_drift_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_dezn_dmzn_and_toxic_tbas_tbp_ash3_ph3_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_dezn_dmzn_and_toxic_tbas_tbp_ash3_ph3_lockout_latency_ms,
+        "unmitigated_pyrophoric_dezn_dmzn_autoignition_or_toxic_hydride_tbas_tbp_release_pct": unmitigated_pyrophoric_dezn_dmzn_autoignition_or_toxic_hydride_tbas_tbp_release_pct,
+        "edge_uv_epison_213nm_qcl_tdlas_2115cm1_2323cm1_laytec_epitt_se_latency_ms": edge_uv_epison_213nm_qcl_tdlas_2115cm1_2323cm1_laytec_epitt_se_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_eml_chirp_extinction_degradation_or_2t0c_igzo_dram_retention_loss_pct": uncompensated_eml_chirp_extinction_degradation_or_2t0c_igzo_dram_retention_loss_pct,
+        "dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

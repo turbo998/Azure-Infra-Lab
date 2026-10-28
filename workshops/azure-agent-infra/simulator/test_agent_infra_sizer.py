@@ -277,6 +277,7 @@ from agent_infra_sizer import (
     simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
     simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
     simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox,
+    simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5791,6 +5792,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pgan_vth_shift_2deg_collapse_or_microled_wavelength_drift_pct"], 3.0)
         self.assertTrue(gov["cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_slo_met"])
         self.assertFalse(raw["cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_slo_met"])
+
+    def test_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(self) -> None:
+        gov = simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(
+            8, "pinn_mpc_dezn_dmzn_tmin_tbas_tbp_kickout_diffusion_suppression_and_inp_cpo_eml_igzo_m3d_sil3_edge"
+        )
+        raw = simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_zn_interstitial_kickout_diffusion_mqw_poisoning_and_igzo_vo_vth_drift"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_dezn_dmzn_tmin_tbas_tbp_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_dezn_6n5_dmzn_6n5_tmin_6n5_tbas_tbp_purity_and_cpo_eml_igzo_yield_gain_pct"], 66.8)
+        self.assertEqual(gov["zn_interstitial_kickout_diffusion_mqw_intermixing_and_igzo_vo_vth_drift_reduction_pct"], 89.9)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_pyrophoric_dezn_dmzn_and_toxic_tbas_tbp_ash3_ph3_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_pyrophoric_dezn_dmzn_autoignition_or_toxic_hydride_tbas_tbp_release_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_dezn_dmzn_autoignition_or_toxic_hydride_tbas_tbp_release_pct"], 1.0)
+        self.assertEqual(gov["edge_uv_epison_213nm_qcl_tdlas_2115cm1_2323cm1_laytec_epitt_se_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_eml_chirp_extinction_degradation_or_2t0c_igzo_dram_retention_loss_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_eml_chirp_extinction_degradation_or_2t0c_igzo_dram_retention_loss_pct"], 3.0)
+        self.assertTrue(gov["dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_slo_met"])
+        self.assertFalse(raw["dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_slo_met"])
 
 
 if __name__ == "__main__":
