@@ -7387,6 +7387,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="wco6Wse2PfetResult"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 297 · 电子级三甲基铋/三(甲氧基甲基丙氧基)铋 6N5 TMBi / Bi(mmp)<sub>3</sub> 与三(二甲氨基)锑/三乙基锑 6N5 TDMASb / TESb + 二乙基碲/二异丙基碲 6N5 DETe / DIPTe + 二甲基硒 6N5 DMSe 300mm A10/A7 2D CFET 零肖特基半金属 Bi(0112)/Sb(0112) 量子极限欧姆接触 (R<sub>c,n</sub>=29 &Omega;&middot;&mu;m)、拓扑绝缘体 (Bi<sub>1-x</sub>Sb<sub>x</sub>)<sub>2</sub>Te<sub>3</sub> 狄拉克表面态 SOT-MRAM (|&theta;<sub>SH</sub><sup>eff</sup>|=3.2, J<sub>c0</sub>=1.8&times;10⁵ A/cm²) 与超晶格 [Bi<sub>2</sub>Te<sub>3</sub>/Sb<sub>2</sub>Te<sub>3</sub>]<sub>N</sub> 3D-IC 珀尔帖热点冷却器 (ZT=2.15, 680 W/cm²) MBE/MOCVD/PEALD PINN-MPC + SIL-3 评估器（305-Chapter Milestone!）</h3>
+      <p class="muted">评估多级真空精馏电子级三甲基铋与三(1-甲氧基-2-甲基-2-丙氧基)铋 6N5 TMBi / Bi(mmp)<sub>3</sub> (&ge;99.99995%, 痕量金属 Pb/Ag/Cu/Fe/Ni/Na/U/Th &le;0.05 ppb, &alpha; 粒子发射率 &le;0.0001 counts/cm²&middot;hr) 与三(二甲氨基)锑/三乙基锑 6N5 TDMASb / TESb (&ge;99.99995%) + 电子级二乙基碲/二异丙基碲 6N5 DETe / DIPTe (&ge;99.99995%) + 电子级二甲基硒 6N5 DMSe (&ge;99.99995%) 在 300mm 晶圆级 A10/A7 亚 1nm 二维 CFET 零肖特基势垒半金属 Bi(0112)/Sb(0112) 范德华欧姆接触 (利用半金属费米面接近零的态密度彻底抑制金属诱导能隙态 MIGS, 接触电阻逼近量子极限达 R<sub>c,n</sub>=29 &Omega;&middot;&mu;m @ n<sub>2D</sub>=1.5&times;10¹³ cm⁻², 且 Sb 合金化将耐热去润湿温度从 271&deg;C 提升至 &gt;450&deg;C BEOL 兼容)、拓扑绝缘体 (Bi<sub>0.38</sub>Sb<sub>0.62</sub>)<sub>2</sub>Te<sub>3</sub> / Bi<sub>2</sub>Se<sub>3</sub> 狄拉克表面态自旋-动量锁定 SOT-MRAM (室温有效自旋霍尔角 |&theta;<sub>SH</sub><sup>eff</sup>|=3.2, 临界翻转电流密度 J<sub>c0</sub>=1.8&times;10⁵ A/cm², 较重金属 &beta;-W 降低 89%) 以及 3D-IC HBM4/Logic 芯片内集成 [Bi<sub>2</sub>Te<sub>3</sub> (1.0nm) / Sb<sub>2</sub>Te<sub>3</sub> (5.0nm)]<sub>N</sub> 声子阻断/电子透射超晶格薄膜珀尔帖微冷却器 (室温热电优值 ZT=2.15, 峰值主动抽热热流密度 q''<sub>max</sub>=680 W/cm², 消除 14.5 K 局部算力热点) 中的定量协同、10kHz 在线 QCL-CRDS (585.4cm⁻¹ TMBi Bi–C 峰 / 1894.2cm⁻¹ SbH<sub>3</sub> 副产物峰 / 612.8cm⁻¹ DETe Te–C 峰) + 原位角分辨光电子能谱 ARPES (锁定狄拉克点能量 E<sub>D</sub> 与费米面重合 &Delta;E<sub>F-D</sub>&le;8 meV) / RHEED / ST-FMR / 时域热反射 TDTR 闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 剧毒自燃三甲基铋/三乙基锑 (TMBi/TESb, NFPA 704 3-4-2) 与剧毒溶血性锑化氢/有机碲硒烷硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>TMBi / Bi(mmp)<sub>3</sub> / TDMASb / DETe / DMSe 提纯与 A10 半金属 Bi/Sb 接触 / 拓扑 BST SOT-MRAM 产线数 (Trains): <span id="tmbiBiSbBstTrainsVal">8</span></label>
+          <input type="range" id="tmbiBiSbBstTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('tmbiBiSbBstTrainsVal').innerText=this.value; runTmbiTdmasbDeteDmseA102dCfetSemimetallicBiSbQuantumLimitContactTopologicalBstSotMramAnd3dicPeltierCoolerLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="tmbiBiSbBstMode" onchange="runTmbiTdmasbDeteDmseA102dCfetSemimetallicBiSbQuantumLimitContactTopologicalBstSotMramAnd3dicPeltierCoolerLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 TMBi/TDMASb/DETe/DMSe A10 半金属 Bi/Sb 量子极限接触 (Rc=29&Omega;&middot;&mu;m) + 拓扑 BST SOT-MRAM (|&theta;SH|=3.2) + ZT=2.15 珀尔帖冷却 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环纯铋 271&deg;C 团聚去润湿、MIGS 钉扎、拓扑绝缘体碲空位体态分流与自燃 TMBi/剧毒碲锑烷泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="tmbiBiSbBstResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13153,6 +13172,49 @@ function runWco6Wcl5Wntbu2nme22DtbdseB2h6A102dWse2PfetFfreeAlphaW1000lNandAndBet
   `;
 }
 runWco6Wcl5Wntbu2nme22DtbdseB2h6A102dWse2PfetFfreeAlphaW1000lNandAndBetaWSotMramLab();
+
+function runTmbiTdmasbDeteDmseA102dCfetSemimetallicBiSbQuantumLimitContactTopologicalBstSotMramAnd3dicPeltierCoolerLab() {
+  const trains = parseInt(document.getElementById('tmbiBiSbBstTrains').value, 10);
+  const mode = document.getElementById('tmbiBiSbBstMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const pods = trains * 4;
+  const yieldGain = isPinn ? 77.6 : 16.2;
+  const defectRed = isPinn ? 96.8 : 19.4;
+  const sil3Ms = isPinn ? 0.10 : 275.0;
+  const leakRisk = isPinn ? 0.0 : 1.9;
+  const metroMs = isPinn ? 0.11 : 375.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.8;
+  document.getElementById('tmbiBiSbBstResult').innerHTML = `
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:10px;">
+        <div class="stat">
+          <div class="val">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS GPU 规模 (Standard_NC40ads_H100_v5)</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 TMBi/TDMASb/DETe/DMSe 半金属接触与拓扑 BST 良率增益 / MIGS 钉扎、体态分流与界面热阻削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 自燃 TMBi / TESb 与剧毒 SbH<sub>3</sub> / DETe 联锁延迟 / 自燃与泄漏事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (585.4/1894.2cm⁻¹) + 原位 ARPES/RHEED/ST-FMR/TDTR 延迟 (-${wanRed.toFixed(1)}% WAN) / 铋团聚去润湿或体态分流失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_edge`)</strong>：通过 6N5 TMBi/Bi(mmp)<sub>3</sub> + TDMASb 外延择优取向半金属 Bi(0112)/Sb(0112) 消除 MIGS 实现量子极限接触电阻 R<sub>c,n</sub>=29 &Omega;&middot;&mu;m，利用 6N5 DETe/DMSe 精确补偿 (Bi<sub>0.38</sub>Sb<sub>0.62</sub>)<sub>2</sub>Te<sub>3</sub> 拓扑表面态实现 |&theta;<sub>SH</sub><sup>eff</sup>|=3.2 超低功耗 SOT-MRAM，并通过 [Bi<sub>2</sub>Te<sub>3</sub>/Sb<sub>2</sub>Te<sub>3</sub>]<sub>N</sub> 超晶格实现 ZT=2.15 3D-IC 热点主动抽热。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：纯金属铋熔点仅 271.4&deg;C，在 BEOL 400&deg;C 退火下极易发生球化团聚去润湿导致接触开路；且开环生长 (Bi,Sb)<sub>2</sub>Te<sub>3</sub> 易产生高浓度反位缺陷与碲空位使费米能级落入体导带，丧失拓扑表面态自旋转换效率（10.8% 失效率，275ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runTmbiTdmasbDeteDmseA102dCfetSemimetallicBiSbQuantumLimitContactTopologicalBstSotMramAnd3dicPeltierCoolerLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

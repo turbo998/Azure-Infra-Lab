@@ -303,6 +303,7 @@ from agent_infra_sizer import (
     simulate_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_sandbox,
     simulate_moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_sil3_sandbox,
     simulate_wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_sil3_sandbox,
+    simulate_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6433,6 +6434,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_p_wse2_multilayer_or_1000l_nand_wordline_void_failure_pct"], 3.0)
         self.assertTrue(gov["wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_slo_met"])
         self.assertFalse(raw["wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_slo_met"])
+
+    def test_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_sandbox(self) -> None:
+        gov = simulate_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_sandbox(
+            tmbi_tdmasb_dete_dmse_trains=8,
+            governance_mode="pinn_mpc_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_edge",
+        )
+        raw = simulate_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_sandbox(
+            tmbi_tdmasb_dete_dmse_trains=8,
+            governance_mode="unmanaged_open_loop_bi_dewetting_migs_pinning_and_bst_tellurium_vacancy_shunt",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_bi_sb_contact_topological_bst_peltier_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_tmbi_6n5_tdmasb_6n5_dete_6n5_dmse_purity_and_2d_contact_bst_yield_gain_pct"], 77.6)
+        self.assertEqual(gov["migs_fermi_pinning_bulk_shunt_and_interfacial_thermal_resistance_reduction_pct"], 96.8)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tmbi_tesb_stibine_telluride_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_tmbi_tesb_autoignition_or_toxic_stibine_telluride_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_tmbi_tesb_autoignition_or_toxic_stibine_telluride_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_585cm1_1894cm1_insitu_arpes_rheed_stfmr_tdtr_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bi_dewetting_agglomeration_or_bst_bulk_conduction_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bi_dewetting_agglomeration_or_bst_bulk_conduction_failure_pct"], 3.0)
+        self.assertTrue(gov["tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_slo_met"])
+        self.assertFalse(raw["tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_slo_met"])
 
 
 if __name__ == "__main__":
