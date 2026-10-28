@@ -274,6 +274,7 @@ from agent_infra_sizer import (
     simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox,
     simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
     simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
+    simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5725,6 +5726,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_2d_mos2_wse2_bilayer_island_or_fepinning_rc_degradation_pct"], 3.0)
         self.assertTrue(gov["btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_slo_met"])
         self.assertFalse(raw["btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_slo_met"])
+
+    def test_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox(self) -> None:
+        gov = simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox(
+            8, "pinn_mpc_coetcp2_coamd2_co2co8_cuhfacvtms_disproportionation_and_bspdn_m0_m1_co_cu_reflow_ald_sil3_edge"
+        )
+        raw = simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_cuhfacvtms_disproportionation_and_bspdn_ntsv_keyhole_void"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_coetcp2_coamd2_co2co8_cuhfacvtms_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_coetcp2_6n5_coamd2_6n5_co2co8_6n5_cuhfacvtms_purity_and_bspdn_yield_gain_pct"], 66.2)
+        self.assertEqual(gov["cu_disproportionation_co4co12_cluster_and_ntsv_seam_void_reduction_pct"], 89.5)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_pyrophoric_co_toxic_coco3no_and_cu_disproportionation_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_pyrophoric_co_autoignition_toxic_coco3no_release_or_cu_ampoule_plugging_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_co_autoignition_toxic_coco3no_release_or_cu_ampoule_plugging_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2024cm1_1796cm1_1625cm1_1255cm1_gcicpms_4pp_sonar_ebsd_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct"], 3.0)
+        self.assertTrue(gov["coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_slo_met"])
+        self.assertFalse(raw["coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_slo_met"])
 
 
 if __name__ == "__main__":

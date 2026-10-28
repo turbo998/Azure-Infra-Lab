@@ -14708,6 +14708,69 @@ def simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_si
     }
 
 
+def simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox(
+    coetcp2_coamd2_co2co8_cuhfacvtms_trains: int = 8,
+    governance_mode: str = "pinn_mpc_coetcp2_coamd2_co2co8_cuhfacvtms_disproportionation_and_bspdn_m0_m1_co_cu_reflow_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Bis(ethylcyclopentadienyl)cobalt (6N5 Co(EtCp)2 Co(C2H5C5H4)2 >= 99.99995%,
+    b.p. 78 C @ 0.5 Torr, Ferrocene Fe(Cp)2 <= 0.02 ppmw, Nickelocene Ni(Cp)2 <= 0.02 ppmw, Cl <= 0.05 ppmw,
+    U/Th <= 0.001 ppbw) & Bis(N,N'-diisopropylacetamidinato)cobalt(II) (6N5 Co(iPr-AMD)2
+    Co[(i-C3H7N)2CCH3]2 >= 99.99995%, Sublimation 65 C @ 0.2 Torr, Oxygen-Free O = 0 at.%) +
+    Tricobalt Nitrosyl Carbonyl / Dicobalt Octacarbonyl (6N5 Co(CO)3NO / Co2(CO)8 >= 99.99995%,
+    Stabilized CO Overpressure Suppressing Pyrophoric Co4(CO)12 Decomposition <= 0.03 ppmw) +
+    1,1,1,5,5,5-Hexafluoro-2,4-pentanedionato(vinyltrimethylsilane)copper(I) (6N5 Cu(hfac)(VTMS)
+    Cu(C5HF6O2)(CH2=CHSi(CH3)3) >= 99.99995%, Disproportionation Cu0 Colloid <= 0.02 ppmw) for 2nm GAA / A14
+    Backside Power Delivery Network (BSPDN Nano-TSV nTSV CD < 35 nm, AR > 12:1 & Buried Power Rail BPR) &
+    M0 / M1 Dual-Damascene Barrierless Cobalt (Co Bulk Fill, rho < 6.2 uOhm-cm) / Ultrathin Cobalt-Liner
+    (1.0 nm Co Wetting Layer for Void-Free Cu Reflow, Electromigration t50 > 10 yr @ J = 5e6 A/cm^2)
+    Selective CVD / PEALD Vacuum Fractional Distillation, Disproportionation Suppression & PINN-MPC,
+    Online 10 kHz QCL-TDLAS / FTIR (2024cm-1 & 2068cm-1 Co-CO / 1796cm-1 Co-NO / 1625cm-1 N=C-N Amidinato /
+    1255cm-1 C-F hfac / 2143cm-1 Free CO) + GC-ICP-MS + In-Situ 4PP / Picosecond Ultrasonic Sonar / XRR /
+    EBSD Metrology & SEMI S2 / SEMI C3 / NFPA 704 / OSHA PSM / IEC 61511 SIL-3 Pyrophoric Cobaltocene,
+    Acutely Toxic Co(CO)3NO / CO (TLV 25 ppmv) & Cu(hfac)(VTMS) Disproportionation (>62 C) Hard Interlock.
+    """
+    trains = max(1, int(coetcp2_coamd2_co2co8_cuhfacvtms_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_coetcp2_coamd2_co2co8_cuhfacvtms_disproportionation_and_bspdn_m0_m1_co_cu_reflow_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_coetcp2_coamd2_co2co8_cuhfacvtms_pods = trains * 4
+
+    if governed:
+        electronic_6n5_coetcp2_6n5_coamd2_6n5_co2co8_6n5_cuhfacvtms_purity_and_bspdn_yield_gain_pct = 66.2
+        cu_disproportionation_co4co12_cluster_and_ntsv_seam_void_reduction_pct = 89.5
+        semi_s2_nfpa704_osha_psm_sil3_pyrophoric_co_toxic_coco3no_and_cu_disproportionation_lockout_latency_ms = 0.13
+        unmitigated_pyrophoric_co_autoignition_toxic_coco3no_release_or_cu_ampoule_plugging_pct = 0.0
+        edge_qcl_tdlas_2024cm1_1796cm1_1625cm1_1255cm1_gcicpms_4pp_sonar_ebsd_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct = 0.0
+    else:
+        electronic_6n5_coetcp2_6n5_coamd2_6n5_co2co8_6n5_cuhfacvtms_purity_and_bspdn_yield_gain_pct = 15.1
+        cu_disproportionation_co4co12_cluster_and_ntsv_seam_void_reduction_pct = 19.6
+        semi_s2_nfpa704_osha_psm_sil3_pyrophoric_co_toxic_coco3no_and_cu_disproportionation_lockout_latency_ms = 485.0
+        unmitigated_pyrophoric_co_autoignition_toxic_coco3no_release_or_cu_ampoule_plugging_pct = 1.9
+        edge_qcl_tdlas_2024cm1_1796cm1_1625cm1_1255cm1_gcicpms_4pp_sonar_ebsd_latency_ms = 284.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct = 7.2
+
+    return {
+        "coetcp2_coamd2_co2co8_cuhfacvtms_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_coetcp2_coamd2_co2co8_cuhfacvtms_pods": active_coetcp2_coamd2_co2co8_cuhfacvtms_pods,
+        "electronic_6n5_coetcp2_6n5_coamd2_6n5_co2co8_6n5_cuhfacvtms_purity_and_bspdn_yield_gain_pct": electronic_6n5_coetcp2_6n5_coamd2_6n5_co2co8_6n5_cuhfacvtms_purity_and_bspdn_yield_gain_pct,
+        "cu_disproportionation_co4co12_cluster_and_ntsv_seam_void_reduction_pct": cu_disproportionation_co4co12_cluster_and_ntsv_seam_void_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_co_toxic_coco3no_and_cu_disproportionation_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_co_toxic_coco3no_and_cu_disproportionation_lockout_latency_ms,
+        "unmitigated_pyrophoric_co_autoignition_toxic_coco3no_release_or_cu_ampoule_plugging_pct": unmitigated_pyrophoric_co_autoignition_toxic_coco3no_release_or_cu_ampoule_plugging_pct,
+        "edge_qcl_tdlas_2024cm1_1796cm1_1625cm1_1255cm1_gcicpms_4pp_sonar_ebsd_latency_ms": edge_qcl_tdlas_2024cm1_1796cm1_1625cm1_1255cm1_gcicpms_4pp_sonar_ebsd_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct": uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct,
+        "coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

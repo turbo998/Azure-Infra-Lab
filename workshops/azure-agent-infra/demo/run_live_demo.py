@@ -287,6 +287,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox,
     simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
     simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
+    simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1853,6 +1854,10 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "btbmmo_btbmw_dtbs_dese_tmbi_8_trains": simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(8, "pinn_mpc_btbmmo_btbmw_dtbs_dese_tmbi_beta_hydride_and_2d_tmd_cfet_bi_contact_ald_sil3_edge"),
             "btbmmo_btbmw_dtbs_dese_tmbi_32_trains": simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(32, "pinn_mpc_btbmmo_btbmw_dtbs_dese_tmbi_beta_hydride_and_2d_tmd_cfet_bi_contact_ald_sil3_edge"),
             "raw_btbmmo_btbmw_dtbs_dese_tmbi_8_trains": simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(8, "raw_cloud_uncompensated_btbmmo_carbon_soot_and_2d_tmd_bilayer_schottky_pinning"),
+        },
+        "demo_268_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald": {
+            "governed_coetcp2_coamd2_co2co8_cuhfacvtms_8_trains": simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox(8, "pinn_mpc_coetcp2_coamd2_co2co8_cuhfacvtms_disproportionation_and_bspdn_m0_m1_co_cu_reflow_ald_sil3_edge"),
+            "raw_coetcp2_coamd2_co2co8_cuhfacvtms_8_trains": simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox(8, "raw_cloud_uncompensated_cuhfacvtms_disproportionation_and_bspdn_ntsv_keyhole_void"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
