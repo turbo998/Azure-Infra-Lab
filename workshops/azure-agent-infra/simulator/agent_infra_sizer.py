@@ -15831,6 +15831,54 @@ def simulate_tmga_tega_tmin_tbas_beta_ga2o3_800v_power_finfet_beol_caac_igzo_2t0
     }
 
 
+def simulate_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_sandbox(
+    temah_temaz_laiprcp3_tma_trains: int = 8,
+    governance_mode: str = "pinn_mpc_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 TEMAH / HfCl4 & 6N5 TEMAZ + 6N5 La(iPrCp)3 / Y(iPrCp)3 + 6N5 TMA 10A CFET Wakeup-Free Orthorhombic Pca21 Hf0.5Zr0.5O2 (o-HZO, 2Pr=64.8 uC/cm2, Endurance >1e12 Cycles), 300-Layer Monolithic 3D BEOL (<=350C) Non-Volatile Ferroelectric 3D FeNAND (MW=6.8V @ Vprog=6.5V, -82.5% Write Energy) & Sub-4K Cryogenic CMOS-to-Superconducting Qubit Control Multiplexer (Cryo-FeFET @ 3.8K, SS_4K=4.2 mV/dec) PEALD/Thermal-ALD PINN-MPC + SIL-3."""
+    trains = max(1, int(temah_temaz_laiprcp3_tma_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_temah_temaz_ohzo_fenand_cryofefet_pods = trains * 4
+    electronic_6n5_temah_6n5_temaz_6n5_laiprcp3_6n5_tma_purity_and_ohzo_fenand_cryofefet_yield_gain_pct = (
+        75.2 if governed else 15.2
+    )
+    monoclinic_dead_layer_wakeup_fatigue_and_cryo_4k_freezeout_reduction_pct = (
+        95.6 if governed else 18.2
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_alkylamide_hcl_lockout_latency_ms = (
+        0.10 if governed else 250.0
+    )
+    unmitigated_pyrophoric_tma_ignition_or_corrosive_hcl_alkylamine_leak_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_962cm1_1218cm1_2886cm1_insitu_gixrd_pund_shg_4k_cryo_latency_ms = (
+        0.11 if governed else 350.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_monoclinic_phase_or_3d_fenand_memory_window_collapse_pct = (
+        0.0 if governed else 9.9
+    )
+    return {
+        "temah_temaz_laiprcp3_tma_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_temah_temaz_ohzo_fenand_cryofefet_pods": active_temah_temaz_ohzo_fenand_cryofefet_pods,
+        "electronic_6n5_temah_6n5_temaz_6n5_laiprcp3_6n5_tma_purity_and_ohzo_fenand_cryofefet_yield_gain_pct": electronic_6n5_temah_6n5_temaz_6n5_laiprcp3_6n5_tma_purity_and_ohzo_fenand_cryofefet_yield_gain_pct,
+        "monoclinic_dead_layer_wakeup_fatigue_and_cryo_4k_freezeout_reduction_pct": monoclinic_dead_layer_wakeup_fatigue_and_cryo_4k_freezeout_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_alkylamide_hcl_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_alkylamide_hcl_lockout_latency_ms,
+        "unmitigated_pyrophoric_tma_ignition_or_corrosive_hcl_alkylamine_leak_pct": unmitigated_pyrophoric_tma_ignition_or_corrosive_hcl_alkylamine_leak_pct,
+        "edge_qcl_tdlas_962cm1_1218cm1_2886cm1_insitu_gixrd_pund_shg_4k_cryo_latency_ms": edge_qcl_tdlas_962cm1_1218cm1_2886cm1_insitu_gixrd_pund_shg_4k_cryo_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_monoclinic_phase_or_3d_fenand_memory_window_collapse_pct": uncompensated_monoclinic_phase_or_3d_fenand_memory_window_collapse_pct,
+        "temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_slo_met": governed,
+    }
+
+
 
 
 

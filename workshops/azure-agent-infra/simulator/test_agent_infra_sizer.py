@@ -297,6 +297,7 @@ from agent_infra_sizer import (
     simulate_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_sandbox,
     simulate_tesn_tdmasn_ge2h6_tdmasb_direct_bandgap_gesn_swir_laser_high_na_euv_snox_mor_and_gesn_sb_contact_rpcvd_mld_sil3_sandbox,
     simulate_tmga_tega_tmin_tbas_beta_ga2o3_800v_power_finfet_beol_caac_igzo_2t0c_dram_and_inas_qd_comb_laser_mocvd_peald_sil3_sandbox,
+    simulate_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6283,6 +6284,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_tmin_sublimation_drift_or_2t0c_dram_retention_failure_pct"], 3.0)
         self.assertTrue(gov["tmga_tega_tmin_tbas_beta_ga2o3_800v_power_finfet_beol_caac_igzo_2t0c_dram_and_inas_qd_comb_laser_mocvd_peald_slo_met"])
         self.assertFalse(raw["tmga_tega_tmin_tbas_beta_ga2o3_800v_power_finfet_beol_caac_igzo_2t0c_dram_and_inas_qd_comb_laser_mocvd_peald_slo_met"])
+
+    def test_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_sandbox(self) -> None:
+        gov = simulate_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_sandbox(
+            temah_temaz_laiprcp3_tma_trains=8,
+            governance_mode="pinn_mpc_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_edge",
+        )
+        raw = simulate_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_sandbox(
+            temah_temaz_laiprcp3_tma_trains=8,
+            governance_mode="unmanaged_open_loop_monoclinic_m_phase_wakeup_fatigue_and_4k_freezeout",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_temah_temaz_ohzo_fenand_cryofefet_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_temah_6n5_temaz_6n5_laiprcp3_6n5_tma_purity_and_ohzo_fenand_cryofefet_yield_gain_pct"], 75.2)
+        self.assertEqual(gov["monoclinic_dead_layer_wakeup_fatigue_and_cryo_4k_freezeout_reduction_pct"], 95.6)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_alkylamide_hcl_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_tma_ignition_or_corrosive_hcl_alkylamine_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_tma_ignition_or_corrosive_hcl_alkylamine_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_962cm1_1218cm1_2886cm1_insitu_gixrd_pund_shg_4k_cryo_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_monoclinic_phase_or_3d_fenand_memory_window_collapse_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_monoclinic_phase_or_3d_fenand_memory_window_collapse_pct"], 3.0)
+        self.assertTrue(gov["temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_slo_met"])
+        self.assertFalse(raw["temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_slo_met"])
 
 
 if __name__ == "__main__":
