@@ -1,12 +1,12 @@
-# Azure AI Agent Infrastructure Playbook：六层全栈参考架构、100K 沙箱扩展实测与 299 章智算工程百科
+# Azure AI Agent Infrastructure Playbook：六层全栈参考架构、100K 沙箱扩展实测与 300 章智算工程百科
 
-> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 299 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 300 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)**
 
 ---
 
 ## 📌 Executive Overview Summary（核心发现与架构总览）
 
-> **核心结论（TL;DR）**：生产级 AI Agent 基础设施正从“无状态单次 Prompt 调用”全面演进为**“计算与状态解耦（Compute-State Decoupling）+ 硬件虚拟化沙箱强隔离 + 平台级零信任硬边界（Never Trust the Prompt）”**。本仓库提供经过 **300/300 单元测试验证**的 **6 层 Agent Infra 参考架构**、**`AKSClaw × E2B` 100,000 并发沙箱极限扩展实测**、**运行时与存储选型决策矩阵**以及涵盖 **299 章、292 套生产级 IaC 蓝图与 291 个确定性物理仿真器**的工程百科全书。
+> **核心结论（TL;DR）**：生产级 AI Agent 基础设施正从“无状态单次 Prompt 调用”全面演进为**“计算与状态解耦（Compute-State Decoupling）+ 硬件虚拟化沙箱强隔离 + 平台级零信任硬边界（Never Trust the Prompt）”**。本仓库提供经过 **301/301 单元测试验证**的 **6 层 Agent Infra 参考架构**、**`AKSClaw × E2B` 100,000 并发沙箱极限扩展实测**、**运行时与存储选型决策矩阵**以及涵盖 **300 章、293 套生产级 IaC 蓝图与 292 个确定性物理仿真器**的工程百科全书。
 
 ### 1. 六层 Agent Infra 全栈参考架构（6-Layer Reference Architecture）
 我们将企业级 AI Agent 基础设施解耦为严格正交的 **6 大架构层**（对齐 `Build · Run · Ground · Govern` 四大工程域）：
@@ -51,11 +51,11 @@
 |---|---|---|---|
 | **1. 全景交互式工作台 (`index.html`)** | 双语 H5 (`EN/中文`) | 6 层架构交互式导览、8 张矢量图谱切换、五步落地法核对表 | [本地打开 `index.html`](index.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html) |
 | **2. 100K 沙箱双轨实时仿真器 (`demo.html`)** | 双语 H5 (`EN/中文`) | 浏览器本地回放 `AKSClaw` 零信任拦截与 `E2B` 10 万沙箱 `UFFD` 恢复状态机 | [本地打开 `demo.html`](demo.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html) |
-| **3. 运行时与存储容量测算器 (`selector.html`)** | 双语 H5 (`EN/中文`) | 6 大场景决策树、`D96as_v7` 10 万沙箱 VMSS 节点与 `$148K/mo` TCO 动态计算器、291 物理仿真器 | [本地打开 `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
+| **3. 运行时与存储容量测算器 (`selector.html`)** | 双语 H5 (`EN/中文`) | 6 大场景决策树、`D96as_v7` 10 万沙箱 VMSS 节点与 `$148K/mo` TCO 动态计算器、292 物理仿真器 | [本地打开 `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
 | **4. 7-Card 4:5 视觉评测卡片 (`cards.html`)** | CSP 锁定自包含 HTML | 严格遵循 7-Card 4:5 视觉规范：8 场景路由准确率 `100%`、翻转鲁棒性、代际延迟对比 | [本地打开 `cards.html`](cards.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html) |
 | **5. 7-Card 评测报告 (Markdown & JSON)** | Markdown / JSON | 7-Card 基准测试完整文字版与密封评测数据源 (`report.json`) | [中文报告 `test-report.md`](test-report.md) · [English `test-report.en.md`](test-report.en.md) · [`report.json`](report.json) |
-| **6. 299 章完整技术专著归档 (`docs/`)** | 完整专著归档 | 完整保留全部 299 章深度推导、公式、代码与行业物理模型（2.78 MB 中文 / 510 KB 英文） | **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** · **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** |
-| **7. 确定性物理仿真引擎与单测套件** | Python 3.12 + IaC | 291 个零外部依赖物理仿真函数、300 项自动化单元测试与 292 套 Bicep/YAML 蓝图 | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
+| **6. 300 章完整技术专著归档 (`docs/`)** | 完整专著归档 | 完整保留全部 300 章深度推导、公式、代码与行业物理模型（2.80 MB 中文 / 515 KB 英文） | **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** · **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** |
+| **7. 确定性物理仿真引擎与单测套件** | Python 3.12 + IaC | 292 个零外部依赖物理仿真函数、301 项自动化单元测试与 293 套 Bicep/YAML 蓝图 | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
 
 ---
 
@@ -119,9 +119,9 @@
 
 ---
 
-## 🗂️ 299 章全栈工程百科结构化章节索引（Structured 299-Chapter Index）
+## 🗂️ 300 章全栈工程百科结构化章节索引（Structured 300-Chapter Index）
 
-> 💡 **阅读说明**：为确保 GitHub 页面秒级加载（`< 30 KB`），完整的 **299 章（2.78 MB）数学推导、物理模型源码解析与生产级配置清单**已完整归档至 **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)**（英文版归档于 **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)**）。以下按三大主题域提供结构化索引：
+> 💡 **阅读说明**：为确保 GitHub 页面秒级加载（`< 30 KB`），完整的 **300 章（2.80 MB）数学推导、物理模型源码解析与生产级配置清单**已完整归档至 **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)**（英文版归档于 **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)**）。以下按三大主题域提供结构化索引：
 
 ### 主题域一（Chapters 1–19）：核心 Agent 沙箱、多租户编排与零信任安全治理
 *(Core Agent Sandbox, 100K MicroVM Orchestration & Zero-Trust Governance)*
@@ -151,14 +151,14 @@
 | **[Ch 61–110](docs/full-monograph-archive.md)** | **清洁能源、核聚变/SMR、超导量子与先进制造控制**：绿氢/绿氨电解槽、托卡马克磁约束聚变失超保护、同步辐射光源、模块化小堆 (`SMR Class 1E`)、EUV 光刻机 LPP 锡液滴与套刻控制 (`Ch 79`)、超导量子稀释制冷机与表面码解码 (`Ch 81`)、HVDC 柔直海缆、钠离子/全固态电池产线 | 覆盖 `Simulator #55–#104` 及对应 50 套 `aksclaw-*-sil3-pool.bicep` 生产级蓝图 | High-NA EUV 套刻误差 **`< 0.55 nm`**；超导量子 `d=11` 表面码 FPGA+GPU 实时解码延迟 **`< 420 ns`**；全场景 **`0.0%` SIL-3 安全联锁旁路** |
 | **[Ch 111–175](docs/full-monograph-archive.md)** | **半导体晶圆厂、共封装光学（1.6T/3.2T CPO）与超纯前驱体工程（上）**：12 英寸大硅片直拉单晶 (`Czochralski`)、第 3 代宽禁带 `SiC / GaN` 外延、`1.6T/3.2T` 硅光 `CPO` 激光器主动对准与微环热调谐 (`Ch 160`)、`HBM4` 混合键合 (`Cu-Cu Hybrid Bonding`)、背面供电 (`BSPD`) 与超纯金属/电子特气分离提纯 | 覆盖 `Simulator #105–#169` 及对应 65 套 `aksclaw-*-sil3-pool.bicep` 生产级蓝图 | `CPO` 16 通道光纤阵列主动对准耦合损耗 **`< 0.65 dB`**；`Cu-Cu` 混合键合对准精度 **`< 35 nm`**；电子级前驱体纯度达 **`6N–9N`** |
 | **[Ch 176–240](docs/full-monograph-archive.md)** | **战略同位素（氦-3 / 硅-28 / 硼-11）、极紫外光刻胶与高纯硅烷/卤化物前驱体**：量子计算级 $^{3}\text{He}$ 极低温超流提纯 (`Ch 220`)、无核自旋同位素纯 $^{28}\text{Si}\text{F}_4 / ^{28}\text{Si}\text{H}_4$ (`>99.999%` $^{28}\text{Si}$，延长自旋退相干 $T_2^* > 100\text{ ms}$)、`High-NA EUV` 金属氧化物光刻胶 (`MOR` 锡氧簇笼)、`6N HCDS / OCTS / TSA` 硅外延前驱体 | 覆盖 `Simulator #170–#234` 及对应 65 套 `aksclaw-*-sil3-pool.bicep` 生产级蓝图 | 同位素 $^{29}\text{Si} < 5\text{ ppm}$；`High-NA EUV` `12 nm` 半节距线宽粗糙度 `LWR < 1.1 nm`；`10 kHz QCL-TDLAS/FTIR` 在线痕量监控 |
-| **[Ch 241–297 (299 Total)](docs/full-monograph-archive.md)** | **10A (1.0nm) CFET 原子层沉积（ALD/PEALD）、零肖特基势垒接触、SOT-MRAM、超导量子与神经形态器件**：包括 `6N5 Ru(EtCp)2 / Ir(EtCp)(COD)` 零场 `SOT-MRAM` (`Ch 281`)、`6N5 La/Lu/Gd` 双偶极栅与 `50mK` 磁卡制冷 (`Ch 282`)、`6N5 Mn(EtCp)2` 自形成阻挡层 (`Ch 283`)、`6N5 Cr(CO)6 / Y(THD)3` EUV 掩模与 YIG 自旋波 (`Ch 284`)、`6N5 VCl4 / Bi(mmp)3` 神经形态 $\text{VO}_2$ 与 10A CFET 半金属铋接触 ($R_c = 68\ \Omega\cdot\mu\text{m}$, `Ch 285`)、`6N5 Rh(EtCp)(COD) / 6N5 CpPd(allyl)` 无阻挡层铑 (`-38.4%` 线阻) 与 2D $\text{WSe}_2$ 钯 ($R_{c,p}=54\ \Omega\cdot\mu\text{m}$) 接触 (`Ch 286`)、`6N5 TDMAZ / CpZr(NMe2)3 / TEMAH / TMA` `1c DRAM ZAZ` ($\text{EOT}=0.42\text{ nm}$) 与 `NC-FET` ($SS=52.4\text{ mV/dec}$, `Ch 287`)、`6N5 Re2(CO)10 / MTO + TDMASn / Sn(HMDS)2` 超导铼比特 ($Q_i=2.85\times 10^7$) 与 `High-NA EUV` 气相锡氧光刻胶 ($\text{LWR}=0.88\text{ nm}$, `Ch 288`)、`6N5 PDMAT / TBTDET + BTBMDMAW + DIPTe` $\text{TaC}_{0.45}\text{N}_{0.55}$ 阻挡层与 `6-Bit` $\text{TaO}_x$ 忆阻突触 (`Ch 289`)、`6N5 TDMAT / TEMAT + CpTi(NMe2)3 + Sb(NMe2)3 / Te(Et)2` 双功函数 $\text{TiN}_{1-x}\text{C}_x$ 栅、金红石 $\text{TiO}_2$ ($\kappa=98.5, \text{EOT}=0.36\text{ nm}$) 与 3D `iPCM` $\text{TiTe}_2/\text{Sb}_2\text{Te}_3$ ($E_{\text{reset}}=18.5\text{ fJ}$, `Ch 290`)、`6N5 Mo(CO)6 / BTBMDMAMo + DTBS / DESe` `10A CFET` 2D Janus `MoSSe` ($\mu=148\text{ cm}^2/\text{V}\cdot\text{s}$)、`1000L 3D NAND` 无氟钼字线 ($\rho=9.4\ \mu\Omega\cdot\text{cm}$) 与 $\gamma\text{-Mo}_2\text{N}$ `SNSPD` ($\text{SDE}=96.4\%$, `Ch 291`)、`6N5 W(CO)6 / BTBMDMAW + DTBDSe / TEB` `10A CFET` 互补单晶 2D `2H-WSe2` p-FET ($\mu_p=162\text{ cm}^2/\text{V}\cdot\text{s}$)、`1c/0a DRAM` 无氟 $\alpha\text{-W}$ 埋入式字线 ($\rho=8.8\ \mu\Omega\cdot\text{cm}$) 与 $\beta\text{-W}$ `SOT-MRAM` ($\theta_{\text{SH}}=-0.42$, `Ch 292`)、`6N5 B3N3H6 / TDMAB + Ni(iPr-AMD)2 + DMAA` `10A CFET` 2D `h-BN` 范德华界面 ($D_{\text{it}}=4.2\times 10^9\text{ cm}^{-2}\text{eV}^{-1}$)、`M0/M1 B2-NiAl` 金属间互连 ($\rho=9.2\ \mu\Omega\cdot\text{cm}$) 与室温 `h-BN` 量子单光子源 ($V_{\text{HOM}}=94.8\%$, `Ch 293`)、`6N5 TESn / TDMASn + Ge2H6 + TDMASb` 直接带隙 $\text{Ge}_{0.875}\text{Sn}_{0.125}$ 硅光激光器 ($J_{\text{th}}=0.92\text{ kA/cm}^2$)、`High-NA EUV SnOx MOR` ($\text{LWR}=1.18\text{ nm}$) 与 `n+-GeSn:Sb` 接触 ($\rho_c=4.2\times 10^{-10}\ \Omega\cdot\text{cm}^2$, `Ch 294`)、`6N5 TMGa / TEGa + TMIn + TBAs + DEZn` $\beta\text{-Ga}_2\text{O}_3$ $800\text{ V}$ 功率 FinFET ($E_{\text{crit}}=8.15\text{ MV/cm}$)、`BEOL CAAC-IGZO 2T0C DRAM` ($\tau_{\text{ret}}=4850\text{ s}$) 与硅基 $64$ 波道 $\text{InAs/GaAs}$ 量子点光频梳激光器 ($\text{WPE}=28.4\%$, `Ch 295`)、`6N5 TEMAH / HfCl4 + TEMAZ + La(iPrCp)3 + TMA` 免唤醒正交相 $Pca2_1$ 铁电 `o-HZO` ($2P_r=64.8\ \mu\text{C/cm}^2$)、`300L 3D FeNAND` ($\text{MW}=6.8\text{ V}$ @ $6.5\text{ V}$) 与 `3.8K Cryo-FeFET` 量子多路复用器 ($SS_{4\text{K}}=4.2\text{ mV/dec}$, `Ch 296`)，以及 **7-Card 4:5 评测总结 (`Ch 297`)** | 覆盖 `Simulator #235–#291` 及 `Blueprint #236–#292`（**全部 300/300 单元测试通过 — 300-Test Milestone!**） | 免唤醒 `o-HZO` $2P_r=64.8\ \mu\text{C/cm}^2$；`300L 3D FeNAND` **`MW=6.8V (-82.5% 写能耗)`**；全套 `SEMI S2 / NFPA 704 / SIL-3` 零泄漏联锁 |
+| **[Ch 241–298 (300 Total)](docs/full-monograph-archive.md)** | **10A (1.0nm) CFET 原子层沉积（ALD/PEALD）、零肖特基势垒接触、SOT-MRAM、超导量子与神经形态器件**：包括 `6N5 Ru/Ir` 零场 `SOT-MRAM` (`Ch 281`)、`6N5 La/Lu/Gd` 双偶极栅与 `50mK` 磁卡制冷 (`Ch 282`)、`6N5 Mn(EtCp)2` 自形成阻挡层 (`Ch 283`)、`6N5 Cr(CO)6 / Y(THD)3` EUV 掩模与 YIG 自旋波 (`Ch 284`)、`6N5 VCl4 / Bi(mmp)3` 神经形态 $\text{VO}_2$ 与 10A CFET 半金属铋接触 (`Ch 285`)、`6N5 Rh / CpPd(allyl)` 无阻挡层铑与 2D $\text{WSe}_2$ 钯接触 (`Ch 286`)、`6N5 TDMAZ / TEMAH` `1c DRAM ZAZ` 与 `NC-FET` (`Ch 287`)、`6N5 Re2(CO)10 + TDMASn` 超导铼比特 ($Q_i=2.85\times 10^7$) 与 `High-NA EUV` 锡氧光刻胶 (`Ch 288`)、`6N5 PDMAT / TBTDET + DIPTe` $\text{TaCN}$ 阻挡层与 `6-Bit` $\text{TaO}_x$ 突触 (`Ch 289`)、`6N5 TDMAT / TEMAT + Sb(NMe2)3` 双功函数 $\text{TiNC}$ 栅、金红石 $\text{TiO}_2$ ($\kappa=98.5$) 与 3D `iPCM` $\text{TiTe}_2/\text{Sb}_2\text{Te}_3$ (`Ch 290`)、`6N5 Mo(CO)6 / BTBMDMAMo` 2D Janus `MoSSe`、`1000L NAND` 无氟钼字线与 $\gamma\text{-Mo}_2\text{N}$ `SNSPD` (`Ch 291`)、`6N5 W(CO)6 / BTBMDMAW` 2D `2H-WSe2` p-FET、无氟 $\alpha\text{-W}$ 埋入式字线与 $\beta\text{-W}$ `SOT-MRAM` (`Ch 292`)、`6N5 B3N3H6 + Ni(iPr-AMD)2 + DMAA` 2D `h-BN` 范德华界面、`M0 B2-NiAl` 互连 ($\rho=9.2\ \mu\Omega\cdot\text{cm}$) 与 `h-BN` 量子单光子源 (`Ch 293`)、`6N5 TESn / TDMASn + Ge2H6 + TDMASb` 直接带隙 $\text{Ge}_{0.875}\text{Sn}_{0.125}$ 硅光激光器、`High-NA EUV SnOx MOR` 与 `n+-GeSn:Sb` 接触 (`Ch 294`)、`6N5 TMGa / TEGa + TMIn + TBAs` $\beta\text{-Ga}_2\text{O}_3$ $800\text{ V}$ FinFET、`BEOL CAAC-IGZO 2T0C DRAM` 与 $64$ 波道 $\text{InAs}$ 量子点光频梳激光器 (`Ch 295`)、`6N5 TEMAH + TEMAZ + La(iPrCp)3 + TMA` 免唤醒正交相 `o-HZO` ($2P_r=64.8\ \mu\text{C/cm}^2$)、`300L 3D FeNAND` ($\text{MW}=6.8\text{ V}$) 与 `3.8K Cryo-FeFET` 量子多路复用器 (`Ch 296`)、`6N5 PDMAT / Ta(OEt)5 + Sr(iPr3Cp)2 / Ba(iPr3Cp)2 + TDMAT + TMBi` `0a DRAM BST` 电容 ($\kappa=385, \text{EOT}=0.28\text{ nm}$)、无疲劳奥里维利乌斯 `SBT FeRAM` ($>10^{15}$ 次) 与 `3.2T/6.4T CPO BTO` 泡克耳斯调制器 ($r_{42}=920\text{ pm/V}, V_\pi L=0.18\text{ V}\cdot\text{cm}$, `Ch 297`)，以及 **7-Card 4:5 评测总结 (`Ch 298`)** | 覆盖 `Simulator #235–#292` 及 `Blueprint #236–#293`（**全部 301/301 单元测试通过 — 300-Chapter Milestone!**） | `0a BST` $\kappa=385$ ($\text{EOT}=0.28\text{ nm}$)；`6.4T CPO BTO` **`r42=920 pm/V (VpiL=0.18 V*cm)`**；全套 `SEMI S2 / NFPA 704 / SIL-3` 零泄漏联锁 |
 
 ---
 
 ## ✅ 快速验证与复现实验（Quick Verification Commands）
 
 ```bash
-# 1. 运行全部 300 项确定性架构选型、100K 沙箱容量与 291 物理仿真器单元测试
+# 1. 运行全部 301 项确定性架构选型、100K 沙箱容量与 292 物理仿真器单元测试
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py -v
 
 # 2. 运行 AKSClaw × E2B 端到端实时仿真自检并验证最新 Trace

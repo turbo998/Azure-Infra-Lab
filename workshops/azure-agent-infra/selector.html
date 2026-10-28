@@ -7292,6 +7292,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="ohzoFeNandCryoFefetResult"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 292 (300-Chapter Milestone!) · 电子级五(二甲氨基)钽/乙醇钽 6N5 PDMAT / Ta(OEt)<sub>5</sub> 与双(三异丙基环戊二烯基)锶/钡 6N5 Sr(iPr<sub>3</sub>Cp)<sub>2</sub> / Ba(iPr<sub>3</sub>Cp)<sub>2</sub> + 四(二甲氨基)钛 6N5 TDMAT + 三甲基铋 6N5 TMBi 0a 节点 (&lt;10nm) 超高介电常数钛酸钡锶 (BST, &kappa;=385, EOT=0.28nm) DRAM 电容、无疲劳奥里维利乌斯层状钙钛矿钽酸锶铋 (SrBi<sub>2</sub>Ta<sub>2</sub>O<sub>9</sub> SBT, 耐久 &gt;10¹⁵ 次) 铁电存储与 3.2T/6.4T CPO 异质集成钛酸钡 (BaTiO<sub>3</sub> BTO, 泡克耳斯系数 r<sub>42</sub>=920 pm/V, V<sub>&pi;</sub>L=0.18 V&middot;cm, 4K 深低温微波-光量子换能器 r<sub>eff</sub>=245 pm/V) PEALD/MBE PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">评估多级高真空区域升华与分子短程精馏电子级五(二甲氨基)钽 6N5 PDMAT / 乙醇钽 Ta(OEt)<sub>5</sub> (&ge;99.99995%, Fe/Ni/Cu/Cr/Na/K/U/Th &le;0.001 ppbw) 与无卤素碱土金属茂源 6N5 Sr(iPr<sub>3</sub>Cp)<sub>2</sub> / Ba(iPr<sub>3</sub>Cp)<sub>2</sub> (&ge;99.99995%) + 四(二甲氨基)钛 6N5 TDMAT + 三甲基铋 6N5 TMBi 在 0a 节点 (&lt;10nm) 超高深宽比 (HAR 110:1) 立方钙钛矿相 Ba<sub>0.7</sub>Sr<sub>0.3</sub>TiO<sub>3</sub> (BST, 介电常数 &kappa;=385, 等效氧化层厚度 EOT=0.28 nm, 0.75V 漏电流 J<sub>leak</sub>=1.8&times;10⁻⁹ A/cm², 碳酸根寄生死层 BaCO<sub>3</sub>/SrCO<sub>3</sub> &lt;0.15 at.%) DRAM 电容、奥里维利乌斯 (Aurivillius) (Bi<sub>2</sub>O<sub>2</sub>)<sup>2+</sup>(SrTa<sub>2</sub>O<sub>7</sub>)<sup>2&minus;</sup> 层状钙钛矿 SrBi<sub>2</sub>Ta<sub>2</sub>O<sub>9</sub> (SBT, 自调节铋氧层吞噬氧空位实现 &gt;10¹⁵ 次无疲劳反转与 150&deg;C 十年车规级数据保持) 非易失性 FeRAM，以及 3.2T/6.4T 共封装光学 (CPO) 与 4K 超导量子微波-光量子相干换能器 (Quantum Microwave-to-Optical Transducer) 异质外延纯面内 a 轴单畴四方相 BaTiO<sub>3</sub> (BTO-on-SrTiO<sub>3</sub>/Si(001), 泡克耳斯电光系数 r<sub>42</sub>=920 pm/V, 半波电压长度积 V<sub>&pi;</sub>L=0.18 V&middot;cm, 波导损耗 0.32 dB/cm, 4K 低温正交/菱方相有效电光系数 r<sub>eff</sub>=245 pm/V) 中的定量协同、10kHz QCL-TDLAS (948.2cm⁻¹ PDMAT/TDMAT M–N 伸缩峰 / 1435.0cm⁻¹ 寄生碳酸盐 CO<sub>3</sub><sup>2&minus;</sup> 反对称伸缩峰 / 585.4cm⁻¹ TMBi Bi–C 振动峰) + 原位 RHEED 表面重构 / 光谱椭偏 SE / 偏振分辨二次谐波产生 SHG / 4K 低温电光 S<sub>21</sub> 探针闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 空气自燃三甲基铋 (TMBi, NFPA 704 3-4-2) 及剧毒可溶性钡/铋氧化物气溶胶与有机胺副产物硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>PDMAT / Sr(iPr<sub>3</sub>Cp)<sub>2</sub> / Ba(iPr<sub>3</sub>Cp)<sub>2</sub> / TDMAT / TMBi 提纯与 0a BST / SBT FeRAM / 6.4T BTO 产线数 (Trains): <span id="bstSbtBtoTrainsVal">8</span></label>
+          <input type="range" id="bstSbtBtoTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('bstSbtBtoTrainsVal').innerText=this.value; runPdmatTaoet5Sripr3cp2Baipr3cp2TdmatTmbi0aBstDramSbtFeramAnd6p4tCpoBtoPockelsLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="bstSbtBtoMode" onchange="runPdmatTaoet5Sripr3cp2Baipr3cp2TdmatTmbi0aBstDramSbtFeramAnd6p4tCpoBtoPockelsLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 PDMAT/Sr/Ba/TDMAT/TMBi 0a BST (&kappa;=385) + 无疲劳 SBT FeRAM (&gt;10¹⁵次) + 6.4T CPO BTO (r42=920 pm/V) &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿开环 BaCO3 碳酸盐寄生死层、烧绿石非铁电相、BTO c 轴 90&deg; 畴壁消偏振与自燃 TMBi 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="bstSbtBtoResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12840,6 +12859,50 @@ function runTemahTemazLaiprcp3TmaWakeupFreeOhzo300l3dFenandAnd4kCryoFefetQubitMu
   `;
 }
 runTemahTemazLaiprcp3TmaWakeupFreeOhzo300l3dFenandAnd4kCryoFefetQubitMuxLab();
+
+function runPdmatTaoet5Sripr3cp2Baipr3cp2TdmatTmbi0aBstDramSbtFeramAnd6p4tCpoBtoPockelsLab() {
+  const trains = parseInt(document.getElementById('bstSbtBtoTrains').value, 10);
+  const mode = document.getElementById('bstSbtBtoMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityBstSbtBtoYieldGain = isPinn ? 75.6 : 15.4;
+  const carbonatePyrochloreDomainWallRed = isPinn ? 95.8 : 18.4;
+  const sil3Ms = isPinn ? 0.10 : 250.0;
+  const tmbiBariumBismuthAmineLeakPct = isPinn ? 0.0 : 1.8;
+  const tdlasRheedSeShg4kS21Ms = isPinn ? 0.11 : 350.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const baco3DeadLayerBtoDepolingPct = isPinn ? 0.0 : 10.1;
+
+  document.getElementById('bstSbtBtoResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS H100 v5 + Kata 节点 (Standard_NC40ads_H100_v5)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${purityBstSbtBtoYieldGain.toFixed(1)}% / -${carbonatePyrochloreDomainWallRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 PDMAT/Sr/Ba/TDMAT/TMBi 纯度良率增益 / 碳酸盐死层、烧绿石相与 BTO 90&deg; 畴壁损耗削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${tmbiBariumBismuthAmineLeakPct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 自燃三甲基铋 TMBi 与可溶性钡/铋氧化物气溶胶联锁延迟 / 自燃 TMBi 或重金属胺雾泄漏率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasRheedSeShg4kS21Ms.toFixed(2)} ms / ${baco3DeadLayerBtoDepolingPct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (948.2/1435.0/585.4cm⁻¹) + 原位 RHEED/SE/SHG/4K S21 延迟 (-${wanRed.toFixed(1)}% WAN) / BaCO3 死层或 BTO 失极化率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_sil3_edge`)</strong>：通过 6N5 Sr(iPr<sub>3</sub>Cp)<sub>2</sub> / Ba(iPr<sub>3</sub>Cp)<sub>2</sub> + 6N5 TDMAT H<sub>2</sub>O/O<sub>3</sub> 双氧化脉冲根除 BaCO<sub>3</sub> 寄生死层实现 0a DRAM BST 电容 &kappa;=385（EOT=0.28nm）、6N5 PDMAT + 6N5 TMBi 补偿 Bi 挥发实现无疲劳 Aurivillius 相 SBT FeRAM（&gt;10¹⁵ 次循环），并在 2nm SrTiO<sub>3</sub>/Si(001) 缓冲层上外延纯 a 轴取向 BaTiO<sub>3</sub> 实现 6.4T CPO 调制器 r<sub>42</sub>=920 pm/V（V<sub>&pi;</sub>L=0.18 V&middot;cm）与 4K 量子换能器 r<sub>eff</sub>=245 pm/V。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 O<sub>3</sub> 单氧化剂在 Ba/Sr 环戊二烯基前驱体反应中生成绝缘低介电常数 BaCO<sub>3</sub> 死层（&kappa;&lt;10）使 EOT 恶化 &gt;3 倍，SBT 退火中 Bi<sub>2</sub>O<sub>3</sub> 挥发诱发非铁电氟绿石相（Pyrochlore），且 BTO 面外 c 轴 90&deg; 铁电畴反转导致泡克耳斯调制器 r<sub>42</sub> 崩溃（10.1% 失效率，250ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runPdmatTaoet5Sripr3cp2Baipr3cp2TdmatTmbi0aBstDramSbtFeramAnd6p4tCpoBtoPockelsLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

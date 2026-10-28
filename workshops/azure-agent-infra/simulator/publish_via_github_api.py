@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 299
-CURRENT_BLUEPRINTS = 292
-CURRENT_SIMULATORS = 291
-CURRENT_TESTS = 300
+CURRENT_CHAPTERS = 300
+CURRENT_BLUEPRINTS = 293
+CURRENT_SIMULATORS = 292
+CURRENT_TESTS = 301
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:

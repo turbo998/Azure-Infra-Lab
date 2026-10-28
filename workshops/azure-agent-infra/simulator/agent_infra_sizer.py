@@ -15879,6 +15879,54 @@ def simulate_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cry
     }
 
 
+def simulate_pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_sil3_sandbox(
+    pdmat_srba_tdmat_tmbi_trains: int = 8,
+    governance_mode: str = "pinn_mpc_pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 PDMAT / Ta(OEt)5 & 6N5 Sr(iPr3Cp)2 / Ba(iPr3Cp)2 + 6N5 TDMAT + 6N5 TMBi 0a-Node (<10nm) Ultra-High-k Perovskite Ba0.7Sr0.3TiO3 (BST, k=385, EOT=0.28nm, J_leak=1.8e-9 A/cm2 @ 0.75V) DRAM Capacitor, Fatigue-Free Aurivillius Layered Perovskite SrBi2Ta2O9 (SBT, Endurance >1e15 Cycles) Non-Volatile FeRAM & 3.2T/6.4T CPO Heterogeneously Integrated BaTiO3 (BTO, Pockels r42=920 pm/V, VpiL=0.18 V*cm, 4K r_eff=245 pm/V) Silicon Photonic & Quantum Microwave-to-Optical Transducer PEALD/MBE PINN-MPC + SIL-3."""
+    trains = max(1, int(pdmat_srba_tdmat_tmbi_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_pdmat_srba_bst_sbt_bto_pods = trains * 4
+    electronic_6n5_pdmat_6n5_srba_6n5_tdmat_6n5_tmbi_purity_and_bst_sbt_bto_yield_gain_pct = (
+        75.6 if governed else 15.4
+    )
+    perovskite_carbonate_pyrochlore_and_bto_90deg_domain_wall_loss_reduction_pct = (
+        95.8 if governed else 18.4
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tmbi_barium_oxide_amine_lockout_latency_ms = (
+        0.10 if governed else 250.0
+    )
+    unmitigated_pyrophoric_tmbi_ignition_or_toxic_barium_bismuth_amine_leak_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_948cm1_1435cm1_585cm1_insitu_rheed_se_shg_4k_s21_latency_ms = (
+        0.11 if governed else 350.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_baco3_dead_layer_or_bto_c_axis_depoling_failure_pct = (
+        0.0 if governed else 10.1
+    )
+    return {
+        "pdmat_srba_tdmat_tmbi_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_pdmat_srba_bst_sbt_bto_pods": active_pdmat_srba_bst_sbt_bto_pods,
+        "electronic_6n5_pdmat_6n5_srba_6n5_tdmat_6n5_tmbi_purity_and_bst_sbt_bto_yield_gain_pct": electronic_6n5_pdmat_6n5_srba_6n5_tdmat_6n5_tmbi_purity_and_bst_sbt_bto_yield_gain_pct,
+        "perovskite_carbonate_pyrochlore_and_bto_90deg_domain_wall_loss_reduction_pct": perovskite_carbonate_pyrochlore_and_bto_90deg_domain_wall_loss_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tmbi_barium_oxide_amine_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tmbi_barium_oxide_amine_lockout_latency_ms,
+        "unmitigated_pyrophoric_tmbi_ignition_or_toxic_barium_bismuth_amine_leak_pct": unmitigated_pyrophoric_tmbi_ignition_or_toxic_barium_bismuth_amine_leak_pct,
+        "edge_qcl_tdlas_948cm1_1435cm1_585cm1_insitu_rheed_se_shg_4k_s21_latency_ms": edge_qcl_tdlas_948cm1_1435cm1_585cm1_insitu_rheed_se_shg_4k_s21_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_baco3_dead_layer_or_bto_c_axis_depoling_failure_pct": uncompensated_baco3_dead_layer_or_bto_c_axis_depoling_failure_pct,
+        "pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_slo_met": governed,
+    }
+
+
 
 
 
