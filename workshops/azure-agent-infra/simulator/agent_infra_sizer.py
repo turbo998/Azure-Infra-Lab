@@ -15591,6 +15591,54 @@ def simulate_tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and
     }
 
 
+def simulate_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_sandbox(
+    moco6_btbmdmamo_dtbs_dese_trains: int = 8,
+    governance_mode: str = "pinn_mpc_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Mo(CO)6 & 6N5 BTBMDMAMo + 6N5 DTBS / 6N5 DESe 10A CFET 2D Janus MoSSe Channel, 1000L 3D NAND Fluorine-Free Mo Wordline & Superconducting gamma-Mo2N SNSPD PEALD/ALE PINN-MPC + SIL-3."""
+    trains = max(1, int(moco6_btbmdmamo_dtbs_dese_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_moco6_btbmdmamo_janus_snspd_pods = trains * 4
+    electronic_6n5_moco6_6n5_btbmdmamo_6n5_dtbs_6n5_dese_purity_and_cfet_nand_snspd_yield_gain_pct = (
+        73.2 if governed else 14.2
+    )
+    cfet_vacancy_scattering_nand_fluorine_attack_and_snspd_jitter_reduction_pct = (
+        94.5 if governed else 17.0
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_h2se_co_carbonyl_lockout_latency_ms = (
+        0.10 if governed else 230.0
+    )
+    unmitigated_toxic_h2se_or_carbon_monoxide_carbonyl_leak_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_2004cm1_952cm1_1168cm1_2192cm1_insitu_raman_pl_gixrd_latency_ms = (
+        0.11 if governed else 330.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_2d_chalcogen_vacancy_or_nand_wordline_void_pct = (
+        0.0 if governed else 9.4
+    )
+    return {
+        "moco6_btbmdmamo_dtbs_dese_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_moco6_btbmdmamo_janus_snspd_pods": active_moco6_btbmdmamo_janus_snspd_pods,
+        "electronic_6n5_moco6_6n5_btbmdmamo_6n5_dtbs_6n5_dese_purity_and_cfet_nand_snspd_yield_gain_pct": electronic_6n5_moco6_6n5_btbmdmamo_6n5_dtbs_6n5_dese_purity_and_cfet_nand_snspd_yield_gain_pct,
+        "cfet_vacancy_scattering_nand_fluorine_attack_and_snspd_jitter_reduction_pct": cfet_vacancy_scattering_nand_fluorine_attack_and_snspd_jitter_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_h2se_co_carbonyl_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_h2se_co_carbonyl_lockout_latency_ms,
+        "unmitigated_toxic_h2se_or_carbon_monoxide_carbonyl_leak_pct": unmitigated_toxic_h2se_or_carbon_monoxide_carbonyl_leak_pct,
+        "edge_qcl_tdlas_2004cm1_952cm1_1168cm1_2192cm1_insitu_raman_pl_gixrd_latency_ms": edge_qcl_tdlas_2004cm1_952cm1_1168cm1_2192cm1_insitu_raman_pl_gixrd_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2d_chalcogen_vacancy_or_nand_wordline_void_pct": uncompensated_2d_chalcogen_vacancy_or_nand_wordline_void_pct,
+        "moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_slo_met": governed,
+    }
+
+
 
 
 

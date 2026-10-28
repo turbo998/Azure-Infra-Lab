@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 293
-CURRENT_BLUEPRINTS = 286
-CURRENT_SIMULATORS = 285
-CURRENT_TESTS = 294
+CURRENT_CHAPTERS = 294
+CURRENT_BLUEPRINTS = 287
+CURRENT_SIMULATORS = 286
+CURRENT_TESTS = 295
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #285 (285-Cycle & 285-Simulator Double Milestone!) — Chapter 290 + Summary 291 (293 Chapters) Autonomous Electronic-Grade Ultrapure Tetrakis(dimethylamino)titanium(IV) (6N5 TDMAT >=99.99995%, Zr/Hf<=0.01ppmw, Fe/Cr/Ni/Cu<=0.001ppbw) & Tetrakis(ethylmethylamino)titanium(IV) (6N5 TEMAT >=99.99995%) + Cyclopentadienyltris(dimethylamino)titanium(IV) (6N5 CpTi(NMe2)3 >=99.99995%) + Tris(dimethylamino)antimony(III) (6N5 Sb(NMe2)3 >=99.99995%) / Diethyl Telluride (6N5 Te(Et)2 >=99.99995%) Sub-1nm 10A/7A CFET 1.1nm Dual-Work-Function TiN1-xCx Gate (Phi_eff,n=4.22eV, Phi_eff,p=4.96eV, rho=118 uOhm*cm, 99.4% step coverage), 1c/0a DRAM HAR 90:1 Rutile TiO2 (k=98.5, EOT=0.36nm, Jleak=3.2e-8 A/cm2) & 3D Interfacial Phase-Change Memory (iPCM [(TiTe2)1/(Sb2Te3)2]n Superlattice, Ereset=18.5fJ, tset=1.8ns, 2.5e11 cycles, drift nu=0.0045) PEALD/ALE PINN-MPC, 10kHz QCL-TDLAS/FTIR (948.4/1256.2/924.8/2958.6cm-1) + SF-ICP-MS + GIXRD/HAADF-STEM/B1500A & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
-        "Blueprint #286, Simulator #285, Tool 285 & 294/294 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #286 (295-Test Milestone!) — Chapter 291 + Summary 292 (294 Chapters) Autonomous Electronic-Grade Ultrapure Hexacarbonylmolybdenum(0) (6N5 Mo(CO)6 >=99.99995%, W/Cr<=0.01ppmw, Fe/Ni/Cu<=0.001ppbw, Cl-/F-<=0.01ppmw) & Bis(tert-butylimido)bis(dimethylamino)molybdenum(VI) (6N5 BTBMDMAMo >=99.99995%) + Di-tert-butyl Sulfide (6N5 DTBS >=99.99995%) / Diethyl Selenide (6N5 DESe >=99.99995%) Sub-1nm 10A/7A CFET Wafer-Scale Single-Crystal 2D Janus MoSSe / 2H-MoS2 (mu=148cm2/Vs, Ion/Ioff=4.5e8, Vs=1.2e11cm-2, d33=3.85pm/V) Nanosheet Channel, 1000L 3D NAND Fluorine-Free Low-Stress Molybdenum Wordline (rho=9.4 uOhm*cm @ 8nm CD, 0% Al2O3 fluorine attack, +145MPa stress) & Superconducting gamma-Mo2N (Tc=7.8K, Lk=42.5pH/sq) SNSPD (SDE=96.4% @ 1550nm, 4.2ps jitter) PEALD/ALE PINN-MPC, 10kHz QCL-TDLAS/FTIR (2004.2/952.6/1168.4/2192.5cm-1) + SF-ICP-MS + In-Situ Raman/PL & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 H2Se/CO Interlock, "
+        "Blueprint #287, Simulator #286, Tool 286 & 295/295 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")

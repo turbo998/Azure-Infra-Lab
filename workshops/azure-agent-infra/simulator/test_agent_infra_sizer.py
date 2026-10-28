@@ -292,6 +292,7 @@ from agent_infra_sizer import (
     simulate_re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_sil3_sandbox,
     simulate_pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_sil3_sandbox,
     simulate_tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_sil3_sandbox,
+    simulate_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6158,6 +6159,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_anatase_phase_or_ipcm_resistance_drift_pct"], 3.0)
         self.assertTrue(gov["tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_slo_met"])
         self.assertFalse(raw["tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_slo_met"])
+
+    def test_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_sandbox(self) -> None:
+        gov = simulate_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_sandbox(
+            moco6_btbmdmamo_dtbs_dese_trains=8,
+            governance_mode="pinn_mpc_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_edge",
+        )
+        raw = simulate_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_sandbox(
+            moco6_btbmdmamo_dtbs_dese_trains=8,
+            governance_mode="unmanaged_open_loop_mof6_wf6_fluorine_attack_and_defective_cvd_mos2",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_moco6_btbmdmamo_janus_snspd_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_moco6_6n5_btbmdmamo_6n5_dtbs_6n5_dese_purity_and_cfet_nand_snspd_yield_gain_pct"], 73.2)
+        self.assertEqual(gov["cfet_vacancy_scattering_nand_fluorine_attack_and_snspd_jitter_reduction_pct"], 94.5)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_h2se_co_carbonyl_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_toxic_h2se_or_carbon_monoxide_carbonyl_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_toxic_h2se_or_carbon_monoxide_carbonyl_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2004cm1_952cm1_1168cm1_2192cm1_insitu_raman_pl_gixrd_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_2d_chalcogen_vacancy_or_nand_wordline_void_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_2d_chalcogen_vacancy_or_nand_wordline_void_pct"], 3.0)
+        self.assertTrue(gov["moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_slo_met"])
+        self.assertFalse(raw["moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_slo_met"])
 
 
 if __name__ == "__main__":

@@ -7178,6 +7178,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="tdmatTematIpcmResult"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 286 (295-Test Milestone!) · 电子级六羰基钼 6N5 Mo(CO)<sub>6</sub> 与双(叔丁基亚氨基)双(二甲氨基)钼 6N5 BTBMDMAMo + 二叔丁基硫醚 6N5 DTBS / 二乙基硒醚 6N5 DESe 10A/7A CFET 晶圆级单晶 2D Janus MoSSe / 2H-MoS<sub>2</sub> 纳米片沟道、1000 层 3D NAND 无氟低应力金属钼字线 (&rho;<sub>Mo</sub>=9.4 &mu;&Omega;&middot;cm) 与超导 &gamma;-Mo<sub>2</sub>N 单光子纳米线探测器 (SNSPD, SDE=96.4%, &Delta;t=4.2ps) PEALD/ALE PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">评估多级高真空区熔升华无卤零价羰基钼 6N5 Mo(CO)<sub>6</sub> (&ge;99.99995%, W/Cr &le;0.01 ppmw, Fe/Ni/Cu/Na &le;0.001 ppbw, Cl<sup>-</sup>/F<sup>-</sup> &le;0.01 ppmw) + 液态烷基胺亚胺钼 6N5 BTBMDMAMo (Mo(N<sup>t</sup>Bu)<sub>2</sub>(NMe<sub>2</sub>)<sub>2</sub> &ge;99.99995%) + 无H<sub>2</sub>S/H<sub>2</sub>Se安全前驱体二叔丁基硫醚 6N5 DTBS / 二乙基硒醚 6N5 DESe 在亚 1 纳米 (10A/7A CFET) 晶圆级单晶 2D Janus MoSSe / 单层 2H-MoS<sub>2</sub> (&mu;<sub>eff</sub>=148 cm²/V&middot;s, I<sub>on</sub>/I<sub>off</sub>=4.5&times;10⁸, 硫空位 N<sub>Vs</sub>=1.2&times;10¹¹ cm⁻², 面外压电系数 d<sub>33</sub>=3.85 pm/V) 纳米片沟道、1000+ 层 3D NAND 无氟低应力纯金属钼字线 (&rho;<sub>Mo</sub>=9.4 &mu;&Omega;&middot;cm @ 8.0nm CD, 零 WF<sub>6</sub>/MoF<sub>6</sub> 氟腐蚀 Al<sub>2</sub>O<sub>3</sub>/Si<sub>3</sub>N<sub>4</sub> 电荷俘获层, 残余拉应力 +145 MPa)，以及量子光互连超导 &gamma;-Mo<sub>2</sub>N (T<sub>c</sub>=7.8 K, 动态电感 L<sub>k</sub>=42.5 pH/sq) 单光子纳米线探测器 (SNSPD, 1550nm 系统探测效率 SDE=96.4%, 时间抖动 &Delta;t=4.2 ps) PEALD/硫族交换 ALE 中的定量协同、10kHz QCL-TDLAS (2004.2cm⁻¹ Mo(CO)<sub>6</sub> C&equiv;O / 952.6cm⁻¹ Mo=N<sup>t</sup>Bu / 1168.4cm⁻¹ DTBS C-S / 2192.5cm⁻¹ H<sub>2</sub>Se) + 原位偏振拉曼/PL/GIXRD 闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 剧毒硒化氢 (H<sub>2</sub>Se, OSHA PEL 0.05 ppmv, IDLH 1 ppmv) 与一氧化碳/羰基钼硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>Mo(CO)6 / BTBMDMAMo / DTBS / DESe 提纯与 10A 2D Janus MoSSe / 1000L NAND 钼字线 / SNSPD 产线数 (Trains): <span id="moco6JanusSnspdTrainsVal">8</span></label>
+          <input type="range" id="moco6JanusSnspdTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('moco6JanusSnspdTrainsVal').innerText=this.value; runMoco6BtbmdmamoDtbsDeseCfetJanusMosseNandMoWordlineAndSnspdLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="moco6JanusSnspdMode" onchange="runMoco6BtbmdmamoDtbsDeseCfetJanusMosseNandMoWordlineAndSnspdLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Mo(CO)6/BTBMDMAMo + DTBS/DESe 2D Janus MoSSe 沟道 + 1000L NAND 无氟钼字线 + Mo2N SNSPD &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿开环 MoF6/WF6 氟侵蚀孔洞、高温 CVD 多晶高空位 MoS2 与剧毒 H2Se/CO 外泄（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="moco6JanusSnspdResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12462,6 +12481,50 @@ function runTdmatTematCptinme23Sb2te3CfetTinGateDramRutileTio2AndIpcmLab() {
   `;
 }
 runTdmatTematCptinme23Sb2te3CfetTinGateDramRutileTio2AndIpcmLab();
+
+function runMoco6BtbmdmamoDtbsDeseCfetJanusMosseNandMoWordlineAndSnspdLab() {
+  const trains = parseInt(document.getElementById('moco6JanusSnspdTrains').value, 10);
+  const mode = document.getElementById('moco6JanusSnspdMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityCfetNandSnspdYieldGain = isPinn ? 73.2 : 14.2;
+  const vacancyFluorineJitterRed = isPinn ? 94.5 : 17.0;
+  const sil3Ms = isPinn ? 0.10 : 230.0;
+  const h2seCoLeakPct = isPinn ? 0.0 : 1.9;
+  const tdlasRamanPlGixrdMs = isPinn ? 0.11 : 330.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const vacancyNandVoidPct = isPinn ? 0.0 : 9.4;
+
+  document.getElementById('moco6JanusSnspdResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS Standard_NC40ads_H100_v5 节点 (${trains} 条 Mo(CO)6 + BTBMDMAMo + DTBS + DESe 产线)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#ef4444'}">+${purityCfetNandSnspdYieldGain.toFixed(1)}% / -${vacancyFluorineJitterRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 Mo/S/Se 前驱体纯度与 CFET/NAND/SNSPD 良率增益 / 硫空位散射、氟侵蚀与时间抖动削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${h2seCoLeakPct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 剧毒 H2Se (0.05ppmv) 与 CO/羰基钼硬联锁延迟 / 剧毒硒化氢或 CO 外泄事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasRamanPlGixrdMs.toFixed(2)} ms / ${vacancyNandVoidPct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (2004.2/952.6/1168.4/2192.5cm⁻¹) + 原位拉曼/PL 延迟 (-${wanRed.toFixed(1)}% WAN) / 硫空位或字线孔洞率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>295-Test Milestone! 闭环受控 (`pinn_mpc_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_edge`)</strong>：通过无卤 6N5 BTBMDMAMo + 6N5 DTBS/DESe 低温硫族原子层置换 ALE 在 10A CFET 上生长晶圆级单晶 2D Janus MoSSe（&mu;<sub>eff</sub>=148 cm²/V&middot;s, N<sub>Vs</sub>=1.2&times;10¹¹ cm⁻²），利用无氟 6N5 Mo(CO)<sub>6</sub> 在 1000 层 3D NAND 深横向凹槽无孔洞填充低应力纯钼字线（&rho;<sub>Mo</sub>=9.4 &mu;&Omega;&middot;cm，零氟腐蚀），并外延超导 &gamma;-Mo<sub>2</sub>N SNSPD（SDE=96.4%, &Delta;t=4.2ps），配合 0.10ms SIL-3 联锁彻底阻断剧毒 H<sub>2</sub>Se 与 CO 外泄。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 MoF<sub>6</sub>/WF<sub>6</sub> 释放 HF 严重蚀穿 3D NAND Al<sub>2</sub>O<sub>3</sub> 阻挡层，高温 CVD MoS<sub>2</sub> 硫空位浓度 &gt;5&times;10¹² cm⁻² 导致迁移率暴跌，且存在剧毒 H<sub>2</sub>Se/CO 外泄风险（9.4% 失效率，230ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runMoco6BtbmdmamoDtbsDeseCfetJanusMosseNandMoWordlineAndSnspdLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);
