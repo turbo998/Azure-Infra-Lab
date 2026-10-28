@@ -288,6 +288,7 @@ from agent_infra_sizer import (
     simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox,
     simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox,
     simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox,
+    simulate_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6058,6 +6059,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_rh_m0_line_resistance_or_wse2_cnt_pfet_contact_drift_pct"], 3.0)
         self.assertTrue(gov["rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_slo_met"])
         self.assertFalse(raw["rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_slo_met"])
+
+    def test_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_sandbox(self) -> None:
+        gov = simulate_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_sandbox(
+            tdmaz_cpzrnme23_temah_trains=8,
+            governance_mode="pinn_mpc_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_edge",
+        )
+        raw = simulate_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_sandbox(
+            tdmaz_cpzrnme23_temah_trains=8,
+            governance_mode="unmanaged_open_loop_tdmaz_o3_thermal_ald_without_cp_ligand_stabilization",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_tdmaz_cpzrnme23_temah_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_tdmaz_6n5_cpzrnme23_6n5_temah_6n5_tma_purity_and_har85_dram_ncfet_yield_gain_pct"], 71.6)
+        self.assertEqual(gov["har85_zaz_step_coverage_void_and_ncfet_monoclinic_dead_layer_reduction_pct"], 93.4)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_and_alkylamide_amine_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_tma_ignition_or_alkylamide_thermal_runaway_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_tma_ignition_or_alkylamide_thermal_runaway_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2782cm1_2864cm1_1456cm1_insitu_gixrd_pfm_cv_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_dram_zaz_eot_leakage_or_ncfet_subthreshold_swing_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_dram_zaz_eot_leakage_or_ncfet_subthreshold_swing_drift_pct"], 3.0)
+        self.assertTrue(gov["tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_slo_met"])
+        self.assertFalse(raw["tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_slo_met"])
 
 
 if __name__ == "__main__":

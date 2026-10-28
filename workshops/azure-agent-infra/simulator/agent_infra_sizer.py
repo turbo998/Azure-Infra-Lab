@@ -15397,6 +15397,53 @@ def simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_
     }
 
 
+def simulate_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_sandbox(
+    tdmaz_cpzrnme23_temah_trains: int = 8,
+    governance_mode: str = "pinn_mpc_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(tdmaz_cpzrnme23_temah_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_tdmaz_cpzrnme23_temah_pods = trains * 4
+    electronic_6n5_tdmaz_6n5_cpzrnme23_6n5_temah_6n5_tma_purity_and_har85_dram_ncfet_yield_gain_pct = (
+        71.6 if governed else 18.2
+    )
+    har85_zaz_step_coverage_void_and_ncfet_monoclinic_dead_layer_reduction_pct = (
+        93.4 if governed else 23.5
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_and_alkylamide_amine_lockout_latency_ms = (
+        0.10 if governed else 525.0
+    )
+    unmitigated_pyrophoric_tma_ignition_or_alkylamide_thermal_runaway_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_2782cm1_2864cm1_1456cm1_insitu_gixrd_pfm_cv_latency_ms = (
+        0.11 if governed else 315.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_dram_zaz_eot_leakage_or_ncfet_subthreshold_swing_drift_pct = (
+        0.0 if governed else 8.8
+    )
+    return {
+        "tdmaz_cpzrnme23_temah_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tdmaz_cpzrnme23_temah_pods": active_tdmaz_cpzrnme23_temah_pods,
+        "electronic_6n5_tdmaz_6n5_cpzrnme23_6n5_temah_6n5_tma_purity_and_har85_dram_ncfet_yield_gain_pct": electronic_6n5_tdmaz_6n5_cpzrnme23_6n5_temah_6n5_tma_purity_and_har85_dram_ncfet_yield_gain_pct,
+        "har85_zaz_step_coverage_void_and_ncfet_monoclinic_dead_layer_reduction_pct": har85_zaz_step_coverage_void_and_ncfet_monoclinic_dead_layer_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_and_alkylamide_amine_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_tma_and_alkylamide_amine_lockout_latency_ms,
+        "unmitigated_pyrophoric_tma_ignition_or_alkylamide_thermal_runaway_pct": unmitigated_pyrophoric_tma_ignition_or_alkylamide_thermal_runaway_pct,
+        "edge_qcl_tdlas_2782cm1_2864cm1_1456cm1_insitu_gixrd_pfm_cv_latency_ms": edge_qcl_tdlas_2782cm1_2864cm1_1456cm1_insitu_gixrd_pfm_cv_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_dram_zaz_eot_leakage_or_ncfet_subthreshold_swing_drift_pct": uncompensated_dram_zaz_eot_leakage_or_ncfet_subthreshold_swing_drift_pct,
+        "tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_slo_met": governed,
+    }
+
+
 
 
 

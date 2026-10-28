@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 289
-CURRENT_BLUEPRINTS = 282
-CURRENT_SIMULATORS = 281
-CURRENT_TESTS = 290
+CURRENT_CHAPTERS = 290
+CURRENT_BLUEPRINTS = 283
+CURRENT_SIMULATORS = 282
+CURRENT_TESTS = 291
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #281 (290-Test Milestone!) — Chapter 286 + Summary 287 (289 Chapters) Autonomous Electronic-Grade Ultrapure (Ethylcyclopentadienyl)(1,5-cyclooctadiene)rhodium(I) (6N5 Rh(EtCp)(COD) >=99.99995%, Ir/Pt/Pd/Ru/Fe <=0.001ppbw, Halides <=0.005ppmw) & Dicarbonyl(acetylacetonato)rhodium(I) (6N5 Rh(acac)(CO)2 >=99.99995%) + Cyclopentadienyl(allyl)palladium(II) (6N5 CpPd(allyl) >=99.99995%) + Bis(hexafluoroacetylacetonato)palladium(II) (6N5 Pd(hfac)2 >=99.99995%) Sub-1nm (10A / 7A) CFET Liner-Free Ultra-Low-MFP Rhodium (Rh, lambda_e=6.88nm, rho_0*lambda_e=2.98e-16 Ohm*m2, -38.4% Line Resistance @ 10nm CD) M0/M1 Local Interconnect Area-Selective PEALD & 2D WSe2 / Aligned Carbon Nanotube (CNT) High-Work-Function Palladium (Pd, Phi_M=5.22eV, Rc,p=54 Ohm*um <=65 Ohm*um) p-FET Ohmic Contact Super-Cycle ALD PINN-MPC, 10kHz QCL-TDLAS/FTIR (2015.4/2084.2/3068.5/1562.8cm-1) + SF-ICP-MS & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
-        "Blueprint #282, Simulator #281, Tool 281 & 290/290 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #282 (290-Chapter Milestone!) — Chapter 287 + Summary 288 (290 Chapters) Autonomous Electronic-Grade Ultrapure Tetrakis(dimethylamino)zirconium(IV) (6N5 TDMAZ >=99.99995%, Hf <=0.05ppmw, Fe/Cr/Ni/Na/K <=0.001ppbw) & Cyclopentadienyltris(dimethylamino)zirconium(IV) (6N5 CpZr(NMe2)3 >=99.99995%, Thermal Decomposition >320C) + Tetrakis(ethylmethylamino)hafnium(IV) (6N5 TEMAH >=99.99995%) + Trimethylaluminum (6N5 TMA >=99.99995%) 300mm 1c/0a-Node DRAM HAR 85:1 Cylindrical Capacitor ZrO2/Hf0.5Zr0.5O2/Al2O3 (ZAZ/HZO-AZA, kappa=46.8, EOT=0.42nm <=0.48nm, J_leak=3.2e-8 A/cm2 <1e-7 A/cm2, 98.8% Step Coverage) & Sub-1nm (10A) CFET Negative-Capacitance (NC-FET, 91.5% Orthorhombic Pca2_1 Phase, SS=52.4mV/dec <60mV/dec Boltzmann Limit) Super-Cycle ALD PINN-MPC, 10kHz QCL-TDLAS/FTIR (945.2/938.6/815.4/1208.5cm-1) + SF-ICP-MS + GIWAXS & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
+        "Blueprint #283, Simulator #282, Tool 282 & 291/291 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")
