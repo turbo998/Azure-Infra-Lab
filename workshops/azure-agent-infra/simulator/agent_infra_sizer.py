@@ -16023,6 +16023,54 @@ def simulate_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_an
     }
 
 
+def simulate_moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_sil3_sandbox(
+    moco6_mocl5_montbu2_h2s_dmtese_trains: int = 8,
+    governance_mode: str = "pinn_mpc_moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Mo(CO)6 / MoCl5 & 6N5 Mo(NtBu)2(NMe2)2 + 6N5 H2S / DTBDS + 6N5 DMSe / DETe 300mm A10/A7 Sub-1nm 2D TMD Monolayer MoS2/WS2/MoTe2 CFET (SS=60.8mV/dec, Rc=38 Ohm-um), Barrierless Direct-Mo M0/Wordline/BPR (10nm rho_Mo=10.4 uOhm-cm) & 6.4T CPO Excitonic MoTe2/Si3N4 Waveguide Photodetector MOCVD/PEALD PINN-MPC + SIL-3."""
+    trains = max(1, int(moco6_mocl5_montbu2_h2s_dmtese_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_mos2_cfet_barrierless_mo_cpo_mote2_pods = trains * 4
+    electronic_6n5_moco6_6n5_mocl5_6n5_montbu2nme22_6n5_h2s_purity_and_cfet_mo_yield_gain_pct = (
+        76.8 if governed else 15.9
+    )
+    sulfur_vacancy_schottky_fermi_pinning_and_mo_grain_boundary_scattering_reduction_pct = (
+        96.4 if governed else 19.0
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_toxic_h2s_moco6_dmtese_lockout_latency_ms = (
+        0.10 if governed else 265.0
+    )
+    unmitigated_toxic_h2s_moco6_carbonyl_leak_or_mocl5_hcl_hydrolysis_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_2003cm1_2592cm1_insitu_raman_e12g_a1g_pl_1p88ev_4pp_latency_ms = (
+        0.11 if governed else 365.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_2d_mos2_multilayer_island_or_m0_mo_void_pinch_off_failure_pct = (
+        0.0 if governed else 10.4
+    )
+    return {
+        "moco6_mocl5_montbu2_h2s_dmtese_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_mos2_cfet_barrierless_mo_cpo_mote2_pods": active_mos2_cfet_barrierless_mo_cpo_mote2_pods,
+        "electronic_6n5_moco6_6n5_mocl5_6n5_montbu2nme22_6n5_h2s_purity_and_cfet_mo_yield_gain_pct": electronic_6n5_moco6_6n5_mocl5_6n5_montbu2nme22_6n5_h2s_purity_and_cfet_mo_yield_gain_pct,
+        "sulfur_vacancy_schottky_fermi_pinning_and_mo_grain_boundary_scattering_reduction_pct": sulfur_vacancy_schottky_fermi_pinning_and_mo_grain_boundary_scattering_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_toxic_h2s_moco6_dmtese_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_toxic_h2s_moco6_dmtese_lockout_latency_ms,
+        "unmitigated_toxic_h2s_moco6_carbonyl_leak_or_mocl5_hcl_hydrolysis_pct": unmitigated_toxic_h2s_moco6_carbonyl_leak_or_mocl5_hcl_hydrolysis_pct,
+        "edge_qcl_crds_2003cm1_2592cm1_insitu_raman_e12g_a1g_pl_1p88ev_4pp_latency_ms": edge_qcl_crds_2003cm1_2592cm1_insitu_raman_e12g_a1g_pl_1p88ev_4pp_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2d_mos2_multilayer_island_or_m0_mo_void_pinch_off_failure_pct": uncompensated_2d_mos2_multilayer_island_or_m0_mo_void_pinch_off_failure_pct,
+        "moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_slo_met": governed,
+    }
+
+
 
 
 

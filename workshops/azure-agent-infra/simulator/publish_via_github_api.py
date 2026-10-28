@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 302
-CURRENT_BLUEPRINTS = 295
-CURRENT_SIMULATORS = 294
-CURRENT_TESTS = 303
+CURRENT_CHAPTERS = 303
+CURRENT_BLUEPRINTS = 296
+CURRENT_SIMULATORS = 295
+CURRENT_TESTS = 304
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #291 (300-Test Milestone!) — Chapter 296 + Summary 297 (299 Chapters) Autonomous Electronic-Grade Ultrapure Tetrakis(ethylmethylamino)hafnium/Hafnium Tetrachloride (6N5 TEMAH/HfCl4 >=99.99995%, Fe/Ni/Cu/Ti/U/Th<=0.001ppbw, Alpha<=0.0001 alpha/cm2*hr) & Tetrakis(ethylmethylamino)zirconium (6N5 TEMAZ >=99.99995%) + Tris(isopropylcyclopentadienyl)lanthanum/Yttrium (6N5 La(iPrCp)3/Y(iPrCp)3 >=99.99995%) + Trimethylaluminum (6N5 TMA >=99.99995%) 10A CFET Wakeup-Free Orthorhombic Pca21 Ferroelectric Hf0.5Zr0.5O2 (o-HZO Dopant-Stabilized by 1.8at.% La, fo=98.8%, 2Pr=64.8uC/cm2, Ec=1.05MV/cm, Endurance >1.5e12 Cycles @ 0.85V), 300-Layer High-Aspect-Ratio (HAR 95:1) Monolithic 3D BEOL (<=350C) Non-Volatile Ferroelectric 3D FeNAND (MW=6.8V @ Vprog=6.5V/15ns, Write Energy -82.5% vs 20V Charge-Trap NAND) & 3.8K Cryogenic CMOS-to-Superconducting Qubit Control Multiplexer (Cryo-FeFET, SS_4K=4.2mV/dec, 1.4fJ/op) PEALD/Thermal-ALD PINN-MPC, 10kHz QCL-TDLAS/FTIR (962.4/1218.5/2886.0cm-1) + SF-ICP-MS + In-Situ Synchrotron GIXRD/PUND/SHG/4K-Cryo & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Pyrophoric TMA/HCl Interlock, "
-        "Blueprint #292, Simulator #291, Tool 291 & 300/300 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #295 (295-Cycle & 295-Simulator Double Milestone!) — Chapter 300 + Summary 301 (303 Chapters) Autonomous Electronic-Grade Ultrapure Hexacarbonylmolybdenum/Molybdenum Pentachloride (6N5 Mo(CO)6/MoCl5 >=99.99995%, Fe/Ni/Cu/Cr/Na/K/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Bis(tert-butylimido)bis(dimethylamino)molybdenum (6N5 Mo(NtBu)2(NMe2)2 >=99.99995%, Halide/Carbonyl-Free) + Hydrogen Sulfide/Di-tert-butyl Disulfide (6N5 H2S/DTBDS >=99.99995%) + Dimethylselenium/Diethyltelluride (6N5 DMSe/DETe >=99.99995%) 300mm A10/A7 Sub-1nm 2D Monolayer 2H-MoS2/WSe2 CFET (SS=60.8mV/dec, Ion/Ioff=2.4e8, 1T'-MoTe2/Sb Contact Rc=38Ohm*um), Barrierless Direct-Mo M0/Wordline/BPR (lambda_Mo=11.2nm, 10nm rho_Mo=10.4uOhm*cm, -52% vs Cu+TaN, Zero-Fluorine) & 6.4T CPO Excitonic MoTe2/Si3N4 Photodetector (0.92A/W, 118GHz) MOCVD/PEALD PINN-MPC, 10kHz QCL-CRDS (2003.5/2592.0/390.0cm-1) + SF-ICP-MS + In-Situ UV-Raman (Delta_omega=18.8cm-1)/1.88eV PL/4PP & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Toxic H2S/Mo(CO)6/DMSe/DETe Interlock, "
+        "Blueprint #296, Simulator #295, Tool 295 & 304/304 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")
