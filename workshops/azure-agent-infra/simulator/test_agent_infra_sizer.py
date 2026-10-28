@@ -302,6 +302,7 @@ from agent_infra_sizer import (
     simulate_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_sandbox,
     simulate_28si2h6_3dmas_hcds_nd3_ph3_28si_spin_qubit_10a_cfet_siocn_spacer_and_6p4t_cpo_deuterated_sin_rpcvd_peald_sil3_sandbox,
     simulate_moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_sil3_sandbox,
+    simulate_wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6408,6 +6409,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_2d_mos2_multilayer_island_or_m0_mo_void_pinch_off_failure_pct"], 3.0)
         self.assertTrue(gov["moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_slo_met"])
         self.assertFalse(raw["moco6_mocl5_montbu2nme22_h2s_dmtese_a10_2d_mos2_cfet_barrierless_mo_m0_bpr_and_6p4t_cpo_mote2_mocvd_peald_slo_met"])
+
+    def test_wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_sil3_sandbox(self) -> None:
+        gov = simulate_wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_sil3_sandbox(
+            wco6_wcl5_wntbu2_dtbdse_b2h6_trains=8,
+            governance_mode="pinn_mpc_wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_sil3_edge",
+        )
+        raw = simulate_wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_sil3_sandbox(
+            wco6_wcl5_wntbu2_dtbdse_b2h6_trains=8,
+            governance_mode="unmanaged_open_loop_wse2_selenium_vacancy_and_wf6_fluorine_attack_or_phase_mixing",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_wse2_pfet_alpha_w_beta_w_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_wco6_6n5_wcl5_6n5_wntbu2nme22_6n5_dtbdse_purity_and_p_wse2_w_yield_gain_pct"], 77.2)
+        self.assertEqual(gov["selenium_vacancy_p_schottky_barrier_and_alpha_beta_w_phase_impurity_reduction_pct"], 96.6)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_b2h6_teb_wco6_dtbdse_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_b2h6_teb_ignition_or_toxic_dtbdse_wco6_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_b2h6_teb_ignition_or_toxic_dtbdse_wco6_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_1998cm1_1602cm1_insitu_raman_250cm1_pl_1p65ev_xrd_stfmr_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_p_wse2_multilayer_or_1000l_nand_wordline_void_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_p_wse2_multilayer_or_1000l_nand_wordline_void_failure_pct"], 3.0)
+        self.assertTrue(gov["wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_slo_met"])
+        self.assertFalse(raw["wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_slo_met"])
 
 
 if __name__ == "__main__":
