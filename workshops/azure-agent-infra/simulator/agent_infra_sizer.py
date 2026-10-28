@@ -14974,6 +14974,53 @@ def simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto
     }
 
 
+def simulate_scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_photonic_peald_sil3_sandbox(
+    scmecp3_sciprcp3_tma_eriprcp3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_peald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(scmecp3_sciprcp3_tma_eriprcp3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_peald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_scmecp3_sciprcp3_tma_eriprcp3_pods = trains * 4
+    electronic_6n5_scmecp3_6n5_sciprcp3_6n5_tma_6n5_eriprcp3_purity_and_alscn_ery2o3_yield_gain_pct = (
+        67.2 if governed else 15.6
+    )
+    aog_abnormal_grain_er_clustering_and_oxygen_impurity_leakage_reduction_pct = (
+        90.3 if governed else 20.3
+    )
+    semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tma_lanthanide_cp_and_nh3_n2_plasma_lockout_latency_ms = (
+        0.13 if governed else 500.0
+    )
+    unmitigated_pyrophoric_tma_rare_earth_metallocene_autoignition_or_ampoule_overtemp_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_2965cm1_968cm1_3580cm1_insitu_rheed_hrxrd_1536nm_pl_latency_ms = (
+        0.13 if governed else 295.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_alscn_2pr_ferroelectric_fatigue_or_1536nm_quantum_coherence_t2_quench_pct = (
+        0.0 if governed else 7.7
+    )
+    return {
+        "scmecp3_sciprcp3_tma_eriprcp3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_scmecp3_sciprcp3_tma_eriprcp3_pods": active_scmecp3_sciprcp3_tma_eriprcp3_pods,
+        "electronic_6n5_scmecp3_6n5_sciprcp3_6n5_tma_6n5_eriprcp3_purity_and_alscn_ery2o3_yield_gain_pct": electronic_6n5_scmecp3_6n5_sciprcp3_6n5_tma_6n5_eriprcp3_purity_and_alscn_ery2o3_yield_gain_pct,
+        "aog_abnormal_grain_er_clustering_and_oxygen_impurity_leakage_reduction_pct": aog_abnormal_grain_er_clustering_and_oxygen_impurity_leakage_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tma_lanthanide_cp_and_nh3_n2_plasma_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tma_lanthanide_cp_and_nh3_n2_plasma_lockout_latency_ms,
+        "unmitigated_pyrophoric_tma_rare_earth_metallocene_autoignition_or_ampoule_overtemp_pct": unmitigated_pyrophoric_tma_rare_earth_metallocene_autoignition_or_ampoule_overtemp_pct,
+        "edge_qcl_tdlas_2965cm1_968cm1_3580cm1_insitu_rheed_hrxrd_1536nm_pl_latency_ms": edge_qcl_tdlas_2965cm1_968cm1_3580cm1_insitu_rheed_hrxrd_1536nm_pl_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_alscn_2pr_ferroelectric_fatigue_or_1536nm_quantum_coherence_t2_quench_pct": uncompensated_alscn_2pr_ferroelectric_fatigue_or_1536nm_quantum_coherence_t2_quench_pct,
+        "scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_photonic_peald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
