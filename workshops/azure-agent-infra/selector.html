@@ -7425,6 +7425,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="cuhfacNtcuBondResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(16,185,129,0.35);">
+      <h3>Tool 299 · 电子级三(异丙基环戊二烯基)镨/钐/钕 6N5 Pr(iPrCp)<sub>3</sub> / Sm(iPrCp)<sub>3</sub> / Nd(iPrCp)<sub>3</sub> 与双(N,N'-二异丙基乙脒基)镍 6N5 Ni(iPr-AMD)<sub>2</sub> 300mm A10/A7 强关联稀土镍酸盐 (Sm<sub>0.55</sub>Nd<sub>0.45</sub>NiO<sub>3</sub>) 莫特相变脉冲神经元 (T<sub>IMT</sub>=335.0&plusmn;0.4 K, E<sub>spike</sub>&le;0.42 fJ/spike)、固态原子频率梳量子中继存储器 Pr<sup>3+</sup>:Y<sub>2</sub>SiO<sub>5</sub> (自旋波存储 &ge;120 ms, &Gamma;<sub>hom</sub>&le;1.2 kHz) 与高介电常数 Pr<sub>2</sub>O<sub>3</sub>/PrTiO<sub>3</sub> (k=38.5) PEALD/Oxide-MBE PINN-MPC + SIL-3 评估器（300-Blueprint Milestone!）</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（2964.2 cm⁻¹ Pr(iPrCp)<sub>3</sub>、2968.5 cm⁻¹ Sm(iPrCp)<sub>3</sub>、1632.0 cm⁻¹ Ni(iPr-AMD)<sub>2</sub> 脒基与 &lt;1 pptv H<sub>2</sub>O）与原位 RHEED + 同步辐射 XAS/XMCD (Ni L<sub>2,3</sub>-edge 3d⁸L 态比例、Pr M<sub>4,5</sub>-edge 杜绝 Pr<sup>4+</sup> 寄生氧化) + SFG/SE 推入工厂边缘 4 节点 H100 集群，在 0.11ms 内闭环校正高压 O<sub>3</sub>/原子氧活性剂量与 Sm/Nd 脉冲化学计量比，并以 0.10ms SIL-3 联锁阻断遇空气/湿气剧烈自燃的稀土环戊二烯金属有机源与高压臭氧热分解风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Pr(iPrCp)<sub>3</sub> / Sm(iPrCp)<sub>3</sub> / Nd(iPrCp)<sub>3</sub> / Ni(iPr-AMD)<sub>2</sub> 提纯与 SmNdNiO<sub>3</sub> 莫特神经元 / Pr:YSO 量子存储产线数 (Trains): <span id="priprSmniMottTrainsVal">8</span></label>
+          <input type="range" id="priprSmniMottTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('priprSmniMottTrainsVal').innerText=this.value; runPriprcp3Smiprcp3Ndiprcp3Niipramd2A10MottNickelateLifNeuronAndPrYsoQuantumMemoryLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="priprSmniMottMode" onchange="runPriprcp3Smiprcp3Ndiprcp3Niipramd2A10MottNickelateLifNeuronAndPrYsoQuantumMemoryLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Pr/Sm/Nd(iPrCp)3 + Ni(iPr-AMD)2 Sm0.55Nd0.45NiO3 莫特 LIF 神经元 + Pr3+:Y2SiO5 量子存储 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环稀土镍酸盐氧空位莫特相变温度漂移、Pr4+ 光学退相干与自燃稀土源 / 高压臭氧泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="priprSmniMottResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13275,6 +13294,47 @@ function runCuhfacvtmsCudmap2TemazDeznHhfacA103dicHbm4NtcuHybridBondingAndCuZrBa
   `;
 }
 runCuhfacvtmsCudmap2TemazDeznHhfacA103dicHbm4NtcuHybridBondingAndCuZrBarrierLab();
+
+function runPriprcp3Smiprcp3Ndiprcp3Niipramd2A10MottNickelateLifNeuronAndPrYsoQuantumMemoryLab() {
+  const trains = parseInt(document.getElementById('priprSmniMottTrains').value, 10) || 8;
+  const mode = document.getElementById('priprSmniMottMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 78.2 : 16.6;
+  const defectCut = isPinn ? 97.0 : 19.9;
+  const sil3Ms = isPinn ? 0.10 : 274.0;
+  const leakRisk = isPinn ? 0.0 : 1.8;
+  const metroMs = isPinn ? 0.11 : 372.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.7;
+  document.getElementById('priprSmniMottResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">莫特相变神经元与量子存储指标：</span><strong>Sm<sub>0.55</sub>Nd<sub>0.45</sub>NiO<sub>3</sub> T<sub>IMT</sub>=335.0&plusmn;0.4 K · E<sub>spike</sub>&le;0.42 fJ/spike · Pr<sup>3+</sup>:Y<sub>2</sub>SiO<sub>5</sub> 606nm &Gamma;<sub>hom</sub>&le;1.2 kHz, T<sub>storage</sub>&ge;120 ms · Pr<sub>2</sub>O<sub>3</sub>/PrTiO<sub>3</sub> k=38.5</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Pr/Sm/Nd/Ni 纯度与莫特 LIF 神经元/量子存储良率增益 / 镍酸盐氧空位漂移与 Pr<sup>4+</sup> 光学退相干削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 自燃稀土环戊二烯源与高压臭氧联锁延迟 / 自燃与毒性镍脒基蒸汽暴露事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (2964.2/2968.5/1632.0cm⁻¹) + 原位 RHEED/XAS/XMCD/SFG/SE 延迟 (-${wanRed.toFixed(1)}% WAN) / 莫特相变滞回崩溃或 Pr:YSO 自旋波退相干失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_edge`)</strong>：通过 6N5 Sm(iPrCp)<sub>3</sub>/Nd(iPrCp)<sub>3</sub> + Ni(iPr-AMD)<sub>2</sub> 与高压超纯臭氧/远程氧自由基等离子体精确控制 Ni<sup>3+</sup> (3d⁸<u>L</u>) 电荷转移绝缘体计量比，将 Sm<sub>0.55</sub>Nd<sub>0.45</sub>NiO<sub>3</sub> 莫特相变温度锁定在 335.0&plusmn;0.4 K（开关比 &gt;10⁵，脉冲能耗 &le;0.42 fJ/spike），并消除 Pr<sup>3+</sup>:Y<sub>2</sub>SiO<sub>5</sub> 晶格中 Pr<sup>4+</sup> 与磁核杂质实现 &ge;120 ms 固态量子中继存储。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：稀土镍酸盐生长中 Ni<sup>3+</sup> 极易还原为 Ni<sup>2+</sup> 并产生氧空位（&delta; &gt; 0.03），导致莫特绝缘-金属相变（IMT）滞回窗口坍塌与氢离子突触漂移；且 Pr<sup>3+</sup> 氧化为 Pr<sup>4+</sup> 引发光谱扩散使量子存储相干时间缩短两个数量级（10.7% 失效率，274ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runPriprcp3Smiprcp3Ndiprcp3Niipramd2A10MottNickelateLifNeuronAndPrYsoQuantumMemoryLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

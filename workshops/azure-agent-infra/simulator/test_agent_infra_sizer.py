@@ -305,6 +305,7 @@ from agent_infra_sizer import (
     simulate_wco6_wcl5_wntbu2nme22_dtbdse_b2h6_a10_2d_wse2_pfet_ffree_alpha_w_1000l_nand_and_beta_w_sot_mram_mocvd_peald_sil3_sandbox,
     simulate_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_sandbox,
     simulate_cuhfacvtms_cudmap2_temaz_dezn_hhfac_a10_3dic_hbm4_ntcu_hybrid_bonding_and_cu_zr_barrier_peald_ale_sil3_sandbox,
+    simulate_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6483,6 +6484,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_hybrid_bond_void_or_cu_electromigration_early_failure_pct"], 3.0)
         self.assertTrue(gov["cuhfacvtms_cudmap2_temaz_dezn_hhfac_a10_3dic_hbm4_ntcu_hybrid_bonding_and_cu_zr_barrier_peald_ale_slo_met"])
         self.assertFalse(raw["cuhfacvtms_cudmap2_temaz_dezn_hhfac_a10_3dic_hbm4_ntcu_hybrid_bonding_and_cu_zr_barrier_peald_ale_slo_met"])
+
+    def test_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_sandbox(self) -> None:
+        gov = simulate_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_sandbox(
+            priprcp3_smiprcp3_ndiprcp3_niipramd2_trains=8,
+            governance_mode="pinn_mpc_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_edge",
+        )
+        raw = simulate_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_sandbox(
+            priprcp3_smiprcp3_ndiprcp3_niipramd2_trains=8,
+            governance_mode="unmanaged_open_loop_oxygen_vacancy_mott_drift_and_pr4_optical_decoherence",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_mott_nickelate_lif_pr_yso_quantum_memory_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_priprcp3_6n5_smiprcp3_6n5_ndiprcp3_6n5_niipramd2_purity_and_mott_lif_quantum_memory_yield_gain_pct"], 78.2)
+        self.assertEqual(gov["nickelate_oxygen_vacancy_drift_and_pr4_optical_decoherence_reduction_pct"], 97.0)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_lanthanide_and_high_pressure_ozone_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_lanthanide_autoignition_or_toxic_nickel_amidinato_vapor_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_lanthanide_autoignition_or_toxic_nickel_amidinato_vapor_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_2964cm1_2968cm1_1632cm1_insitu_rheed_xas_xmcd_sfg_se_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_mott_imt_hysteresis_collapse_or_pr_yso_spin_wave_decoherence_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_mott_imt_hysteresis_collapse_or_pr_yso_spin_wave_decoherence_failure_pct"], 3.0)
+        self.assertTrue(gov["priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_slo_met"])
+        self.assertFalse(raw["priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_slo_met"])
 
 
 if __name__ == "__main__":

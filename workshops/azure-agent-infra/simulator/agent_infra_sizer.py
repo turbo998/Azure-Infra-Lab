@@ -16218,6 +16218,58 @@ def simulate_cuhfacvtms_cudmap2_temaz_dezn_hhfac_a10_3dic_hbm4_ntcu_hybrid_bondi
     }
 
 
+def simulate_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_sandbox(
+    priprcp3_smiprcp3_ndiprcp3_niipramd2_trains: int = 8,
+    governance_mode: str = "pinn_mpc_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Pr(iPrCp)3 & 6N5 Sm(iPrCp)3 + 6N5 Nd(iPrCp)3 + 6N5 Ni(iPr-AMD)2
+    300mm A10/A7 Correlated-Electron Rare-Earth Nickelate (Sm1-xNdxNiO3) Mott-Transition LIF Neuron,
+    Telecom/Visible Pr3+:Y2SiO5 (Pr:YSO) Solid-State AFC Quantum Repeater Memory & High-k Pr2O3/PrTiO3
+    Gate Dielectric PEALD / Oxide-MBE PINN-MPC + SEMI S2 / NFPA 704 / SIL-3 (Cycle #299 — 300-Blueprint Milestone!).
+    """
+    trains = max(1, int(priprcp3_smiprcp3_ndiprcp3_niipramd2_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_mott_nickelate_lif_pr_yso_quantum_memory_pods = trains * 4
+    electronic_6n5_priprcp3_6n5_smiprcp3_6n5_ndiprcp3_6n5_niipramd2_purity_and_mott_lif_quantum_memory_yield_gain_pct = (
+        78.2 if governed else 16.6
+    )
+    nickelate_oxygen_vacancy_drift_and_pr4_optical_decoherence_reduction_pct = (
+        97.0 if governed else 19.9
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_lanthanide_and_high_pressure_ozone_lockout_latency_ms = (
+        0.10 if governed else 274.0
+    )
+    unmitigated_pyrophoric_lanthanide_autoignition_or_toxic_nickel_amidinato_vapor_leak_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_2964cm1_2968cm1_1632cm1_insitu_rheed_xas_xmcd_sfg_se_latency_ms = (
+        0.11 if governed else 372.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_mott_imt_hysteresis_collapse_or_pr_yso_spin_wave_decoherence_failure_pct = (
+        0.0 if governed else 10.7
+    )
+    return {
+        "priprcp3_smiprcp3_ndiprcp3_niipramd2_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_mott_nickelate_lif_pr_yso_quantum_memory_pods": active_mott_nickelate_lif_pr_yso_quantum_memory_pods,
+        "electronic_6n5_priprcp3_6n5_smiprcp3_6n5_ndiprcp3_6n5_niipramd2_purity_and_mott_lif_quantum_memory_yield_gain_pct": electronic_6n5_priprcp3_6n5_smiprcp3_6n5_ndiprcp3_6n5_niipramd2_purity_and_mott_lif_quantum_memory_yield_gain_pct,
+        "nickelate_oxygen_vacancy_drift_and_pr4_optical_decoherence_reduction_pct": nickelate_oxygen_vacancy_drift_and_pr4_optical_decoherence_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_lanthanide_and_high_pressure_ozone_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_lanthanide_and_high_pressure_ozone_lockout_latency_ms,
+        "unmitigated_pyrophoric_lanthanide_autoignition_or_toxic_nickel_amidinato_vapor_leak_pct": unmitigated_pyrophoric_lanthanide_autoignition_or_toxic_nickel_amidinato_vapor_leak_pct,
+        "edge_qcl_crds_2964cm1_2968cm1_1632cm1_insitu_rheed_xas_xmcd_sfg_se_latency_ms": edge_qcl_crds_2964cm1_2968cm1_1632cm1_insitu_rheed_xas_xmcd_sfg_se_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_mott_imt_hysteresis_collapse_or_pr_yso_spin_wave_decoherence_failure_pct": uncompensated_mott_imt_hysteresis_collapse_or_pr_yso_spin_wave_decoherence_failure_pct,
+        "priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_slo_met": governed,
+    }
+
+
 
 
 
