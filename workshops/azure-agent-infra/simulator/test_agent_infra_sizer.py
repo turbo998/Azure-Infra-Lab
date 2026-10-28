@@ -278,6 +278,7 @@ from agent_infra_sizer import (
     simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
     simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox,
     simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox,
+    simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5813,6 +5814,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_eml_chirp_extinction_degradation_or_2t0c_igzo_dram_retention_loss_pct"], 3.0)
         self.assertTrue(gov["dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_slo_met"])
         self.assertFalse(raw["dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_slo_met"])
+
+    def test_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox(self) -> None:
+        gov = simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox(
+            8, "pinn_mpc_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_and_sto_0a_dram_ald_mbe_sil3_edge"
+        )
+        raw = simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox(
+            8, "raw_cloud_uncompensated_baco3_srco3_parasitic_carbonate_ti_nonstoichiometry_and_pockels_domain_loss"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_sripr3cp2_baipr3cp2_ttip_tdmat_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_sripr3cp2_6n5_baipr3cp2_6n5_ttip_tdmat_purity_and_bto_sto_yield_gain_pct"], 67.0)
+        self.assertEqual(gov["baco3_srco3_parasitic_carbonate_ti_nonstoichiometry_and_pockels_domain_loss_reduction_pct"], 90.1)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_pyrophoric_metallocene_and_heated_ampoule_overtemp_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_alkaline_earth_metallocene_autoignition_or_ampoule_thermal_runaway_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_alkaline_earth_metallocene_autoignition_or_ampoule_thermal_runaway_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2962cm1_618cm1_2349cm1_insitu_rheed_hrxrd_pfm_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_bto_pockels_r42_collapse_or_0a_dram_sto_capacitor_leakage_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_bto_pockels_r42_collapse_or_0a_dram_sto_capacitor_leakage_pct"], 3.0)
+        self.assertTrue(gov["sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_slo_met"])
+        self.assertFalse(raw["sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_slo_met"])
 
 
 if __name__ == "__main__":

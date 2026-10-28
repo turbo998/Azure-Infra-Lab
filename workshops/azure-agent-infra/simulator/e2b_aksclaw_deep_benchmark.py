@@ -284,6 +284,7 @@ from agent_infra_sizer import (
     simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
     simulate_cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_sil3_sandbox,
     simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox,
+    simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2147,6 +2148,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_sandbox(8, "raw_cloud_uncompensated_zn_interstitial_kickout_diffusion_mqw_poisoning_and_igzo_vo_vth_drift"),
     ]
 
+    sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_profiles = [
+        simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox(8, "pinn_mpc_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_and_sto_0a_dram_ald_mbe_sil3_edge"),
+        simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox(32, "pinn_mpc_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_and_sto_0a_dram_ald_mbe_sil3_edge"),
+        simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox(8, "raw_cloud_uncompensated_baco3_srco3_parasitic_carbonate_ti_nonstoichiometry_and_pockels_domain_loss"),
+    ]
+
     wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_profiles = [
         simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
         simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(32, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
@@ -2424,6 +2431,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles": nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles,
         "cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_profiles": cp2mg_tega_tmin_tma_gan_hemt_microled_mocvd_epitaxy_profiles,
         "dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_profiles": dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_profiles,
+        "sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_profiles": sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_profiles,
     }
 
 

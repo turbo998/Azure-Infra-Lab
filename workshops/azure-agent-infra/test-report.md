@@ -1,6 +1,8 @@
-# Azure AI Agent Infrastructure Playbook：6 大运行时与 12 场景架构基准评测报告（7 页 4:5 视觉卡片版）
+# Azure AI Agent Infrastructure Playbook：6 大运行时与 12 场景架构基准评测报告（7 页 4:5 视觉卡片版 · 中英双语）
 
-**来源性质：** `anonymized_reported + deterministic_architecture_verifier (independently_reproduced=false)`，基于 Microsoft Azure AI Infra 一手架构材料（`Agent Runtime Customer Pitch`、`AKSClaw Multi-Tenant Kubernetes`、`Agent Infra Playbook`、`E2B on Azure CheckRide v2 / Deep Dive v0.2` 及脱敏 `Selection Logic` 方法论）与本地确定性容量/选型核验器 `simulator/agent_infra_sizer.py` 生成。所有内部客户名单与敏感财务行已在提取前严格物理剥离。
+> 🌐 **Language / 语言切换**: **[🇨🇳 中文版 (test-report.md)](test-report.md)** | **[🇬🇧 English Version (test-report.en.md)](test-report.en.md)** | **[📘 Playbook 中文版](README.zh-CN.md)** | **[📘 Playbook English](README.en.md)** | **[🖼️ 7-Card HTML (CSP Locked)](test-report-cards.html)**
+
+**来源性质：** `anonymized_reported + deterministic_architecture_verifier (independently_reproduced=false)`，基于 Microsoft Azure AI Infra 一手架构材料（`Agent Runtime Customer Pitch`、`AKSClaw Multi-Tenant Kubernetes`、`Agent Infra Playbook`、`E2B on Azure CheckRide v2 / Deep Dive v0.2` 及脱敏 `Selection Logic` 方法论）与本地确定性容量/选型核验器 `simulator/agent_infra_sizer.py`（涵盖 **280 章 — 280-Chapter Milestone!、273 套 Bicep/Terraform/YAML 蓝图、272 项物理仿真器、281/281 单元测试**）生成。所有内部客户名单与敏感财务行已在提取前严格物理剥离。
 
 结构化数据与可离线预览工件：
 - [7 页 4:5 视觉评测卡片 HTML（CSP 锁定自包含）](test-report-cards.html)

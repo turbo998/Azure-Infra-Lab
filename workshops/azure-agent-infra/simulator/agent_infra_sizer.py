@@ -14927,6 +14927,53 @@ def simulate_dezn_dmzn_tmin_tbas_tbp_inp_eml_cpo_laser_igzo_m3d_mocvd_ald_sil3_s
     }
 
 
+def simulate_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_sil3_sandbox(
+    sripr3cp2_baipr3cp2_ttip_tdmat_trains: int = 8,
+    governance_mode: str = "pinn_mpc_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_and_sto_0a_dram_ald_mbe_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(sripr3cp2_baipr3cp2_ttip_tdmat_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_and_sto_0a_dram_ald_mbe_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_sripr3cp2_baipr3cp2_ttip_tdmat_pods = trains * 4
+    electronic_6n5_sripr3cp2_6n5_baipr3cp2_6n5_ttip_tdmat_purity_and_bto_sto_yield_gain_pct = (
+        67.0 if governed else 15.4
+    )
+    baco3_srco3_parasitic_carbonate_ti_nonstoichiometry_and_pockels_domain_loss_reduction_pct = (
+        90.1 if governed else 20.1
+    )
+    semi_s2_nfpa704_osha_psm_sil3_pyrophoric_metallocene_and_heated_ampoule_overtemp_lockout_latency_ms = (
+        0.13 if governed else 495.0
+    )
+    unmitigated_alkaline_earth_metallocene_autoignition_or_ampoule_thermal_runaway_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_2962cm1_618cm1_2349cm1_insitu_rheed_hrxrd_pfm_latency_ms = (
+        0.13 if governed else 290.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_bto_pockels_r42_collapse_or_0a_dram_sto_capacitor_leakage_pct = (
+        0.0 if governed else 7.6
+    )
+    return {
+        "sripr3cp2_baipr3cp2_ttip_tdmat_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_sripr3cp2_baipr3cp2_ttip_tdmat_pods": active_sripr3cp2_baipr3cp2_ttip_tdmat_pods,
+        "electronic_6n5_sripr3cp2_6n5_baipr3cp2_6n5_ttip_tdmat_purity_and_bto_sto_yield_gain_pct": electronic_6n5_sripr3cp2_6n5_baipr3cp2_6n5_ttip_tdmat_purity_and_bto_sto_yield_gain_pct,
+        "baco3_srco3_parasitic_carbonate_ti_nonstoichiometry_and_pockels_domain_loss_reduction_pct": baco3_srco3_parasitic_carbonate_ti_nonstoichiometry_and_pockels_domain_loss_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_metallocene_and_heated_ampoule_overtemp_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_metallocene_and_heated_ampoule_overtemp_lockout_latency_ms,
+        "unmitigated_alkaline_earth_metallocene_autoignition_or_ampoule_thermal_runaway_pct": unmitigated_alkaline_earth_metallocene_autoignition_or_ampoule_thermal_runaway_pct,
+        "edge_qcl_tdlas_2962cm1_618cm1_2349cm1_insitu_rheed_hrxrd_pfm_latency_ms": edge_qcl_tdlas_2962cm1_618cm1_2349cm1_insitu_rheed_hrxrd_pfm_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_bto_pockels_r42_collapse_or_0a_dram_sto_capacitor_leakage_pct": uncompensated_bto_pockels_r42_collapse_or_0a_dram_sto_capacitor_leakage_pct,
+        "sripr3cp2_baipr3cp2_ttip_tdmat_bto_pockels_cpo_quantum_photonic_sto_0a_dram_ald_mbe_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
