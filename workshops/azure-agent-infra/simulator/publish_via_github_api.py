@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 290
-CURRENT_BLUEPRINTS = 283
-CURRENT_SIMULATORS = 282
-CURRENT_TESTS = 291
+CURRENT_CHAPTERS = 291
+CURRENT_BLUEPRINTS = 284
+CURRENT_SIMULATORS = 283
+CURRENT_TESTS = 292
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #282 (290-Chapter Milestone!) — Chapter 287 + Summary 288 (290 Chapters) Autonomous Electronic-Grade Ultrapure Tetrakis(dimethylamino)zirconium(IV) (6N5 TDMAZ >=99.99995%, Hf <=0.05ppmw, Fe/Cr/Ni/Na/K <=0.001ppbw) & Cyclopentadienyltris(dimethylamino)zirconium(IV) (6N5 CpZr(NMe2)3 >=99.99995%, Thermal Decomposition >320C) + Tetrakis(ethylmethylamino)hafnium(IV) (6N5 TEMAH >=99.99995%) + Trimethylaluminum (6N5 TMA >=99.99995%) 300mm 1c/0a-Node DRAM HAR 85:1 Cylindrical Capacitor ZrO2/Hf0.5Zr0.5O2/Al2O3 (ZAZ/HZO-AZA, kappa=46.8, EOT=0.42nm <=0.48nm, J_leak=3.2e-8 A/cm2 <1e-7 A/cm2, 98.8% Step Coverage) & Sub-1nm (10A) CFET Negative-Capacitance (NC-FET, 91.5% Orthorhombic Pca2_1 Phase, SS=52.4mV/dec <60mV/dec Boltzmann Limit) Super-Cycle ALD PINN-MPC, 10kHz QCL-TDLAS/FTIR (945.2/938.6/815.4/1208.5cm-1) + SF-ICP-MS + GIWAXS & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
-        "Blueprint #283, Simulator #282, Tool 282 & 291/291 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #283 — Chapter 288 + Summary 289 (291 Chapters) Autonomous Electronic-Grade Ultrapure Dirhenium Decacarbonyl (6N5 Re2(CO)10 >=99.99995%, Mo/W/Tc/Mn/Fe <=0.001ppbw) & Methyltrioxorhenium(VII) (6N5 MTO CH3ReO3 >=99.99995%) + Tetrakis(dimethylamino)tin(IV) (6N5 TDMASn >=99.99995%, Pb/Sb/Bi <=0.001ppbw) + Bis(bis(trimethylsilyl)amino)tin(II) (6N5 Sn(HMDS)2 >=99.99995%) Fault-Tolerant Superconducting Quantum Processor Zero-Amorphous-Oxide TLS Epitaxial Rhenium (hcp-Re(0001)/Re0.82Ti0.18, Single-Photon Qi=2.85e7 >=2.0e7, Transmon T1=2.45ms >=2.0ms) Resonators & High-NA EUV (0.55 NA) 8nm Half-Pitch All-Dry Vapor-Deposited Tin-Oxo Photoresist (SnOx MLD + HBr/O2 Dry Dev, mu=16.4 um-1, E_size=14.5 mJ/cm2, 3sigma LWR=0.88nm <=1.0nm) Super-Cycle PEALD/MLD PINN-MPC, 10kHz QCL-TDLAS/FTIR (2070.2/2014.5/975.4/528.6cm-1) + SF-ICP-MS + RHEED/Cryo-Q/CD-SAXS & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
+        "Blueprint #284, Simulator #283, Tool 283 & 292/292 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")

@@ -289,6 +289,7 @@ from agent_infra_sizer import (
     simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox,
     simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox,
     simulate_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_sandbox,
+    simulate_re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6083,6 +6084,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_dram_zaz_eot_leakage_or_ncfet_subthreshold_swing_drift_pct"], 3.0)
         self.assertTrue(gov["tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_slo_met"])
         self.assertFalse(raw["tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_slo_met"])
+
+    def test_re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_sil3_sandbox(self) -> None:
+        gov = simulate_re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_sil3_sandbox(
+            re2co10_mto_tdmasn_trains=8,
+            governance_mode="pinn_mpc_re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_sil3_edge",
+        )
+        raw = simulate_re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_sil3_sandbox(
+            re2co10_mto_tdmasn_trains=8,
+            governance_mode="unmanaged_open_loop_nb_al_oxide_qubit_and_spin_coated_car_euv_resist",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_re2co10_mto_tdmasn_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_re2co10_6n5_mto_6n5_tdmasn_6n5_snhmds2_purity_and_re_qubit_euv_snox_yield_gain_pct"], 72.0)
+        self.assertEqual(gov["amorphous_oxide_tls_loss_and_euv_8nm_stochastic_bridge_break_defect_reduction_pct"], 93.6)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_carbonyl_co_and_neurotoxic_organotin_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_re2co10_co_desorption_or_neurotoxic_organotin_vapor_exposure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_re2co10_co_desorption_or_neurotoxic_organotin_vapor_exposure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2070cm1_2014cm1_975cm1_insitu_rheed_cryo_q_euv_cd_saxs_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_qubit_tls_qi_degradation_or_euv_snox_lwr_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_qubit_tls_qi_degradation_or_euv_snox_lwr_drift_pct"], 3.0)
+        self.assertTrue(gov["re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_slo_met"])
+        self.assertFalse(raw["re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_slo_met"])
 
 
 if __name__ == "__main__":
