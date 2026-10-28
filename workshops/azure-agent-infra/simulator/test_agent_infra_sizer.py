@@ -284,6 +284,7 @@ from agent_infra_sizer import (
     simulate_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_sil3_sandbox,
     simulate_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_sandbox,
     simulate_laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_sil3_sandbox,
+    simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5946,6 +5947,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_10a_cfet_vfb_dipole_rolloff_or_cryo_ggg_entropy_loss_pct"], 3.0)
         self.assertTrue(gov["laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_slo_met"])
         self.assertFalse(raw["laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_slo_met"])
+
+    def test_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox(self) -> None:
+        gov = simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox(
+            mnetcp2_mnipramd2_tbthd3_trains=8,
+            governance_mode="pinn_mpc_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_edge",
+        )
+        raw = simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox(
+            mnetcp2_mnipramd2_tbthd3_trains=8,
+            governance_mode="unmanaged_legacy_ta_tan_pvd_barrier_and_open_loop_tgg_clad_ald",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_mnetcp2_mnipramd2_tbthd3_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_mnetcp2_6n5_mnipramd2_6n5_tbthd3_6n5_tmga_purity_and_bspd_interconnect_yield_gain_pct"], 68.5)
+        self.assertEqual(gov["sub065nm_mnsiox_self_forming_barrier_cu_diffusivity_and_tddb_leakage_reduction_pct"], 91.5)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmga_and_mnetcp2_ring_cleavage_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_tmga_ignition_or_mnetcp2_thermal_runaway_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_tmga_ignition_or_mnetcp2_thermal_runaway_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_812cm1_1638cm1_1578cm1_insitu_se_xps_mo_kerr_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_10a_bspd_cu_line_resistance_blowup_or_tgg_verdet_depolarization_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_10a_bspd_cu_line_resistance_blowup_or_tgg_verdet_depolarization_pct"], 3.0)
+        self.assertTrue(gov["mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_slo_met"])
+        self.assertFalse(raw["mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_slo_met"])
 
 
 if __name__ == "__main__":

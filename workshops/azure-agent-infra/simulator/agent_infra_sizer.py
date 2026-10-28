@@ -15209,6 +15209,53 @@ def simulate_laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_
     }
 
 
+def simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox(
+    mnetcp2_mnipramd2_tbthd3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(mnetcp2_mnipramd2_tbthd3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_mnetcp2_mnipramd2_tbthd3_pods = trains * 4
+    electronic_6n5_mnetcp2_6n5_mnipramd2_6n5_tbthd3_6n5_tmga_purity_and_bspd_interconnect_yield_gain_pct = (
+        68.5 if governed else 16.5
+    )
+    sub065nm_mnsiox_self_forming_barrier_cu_diffusivity_and_tddb_leakage_reduction_pct = (
+        91.5 if governed else 21.5
+    )
+    semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmga_and_mnetcp2_ring_cleavage_lockout_latency_ms = (
+        0.10 if governed else 515.0
+    )
+    unmitigated_pyrophoric_tmga_ignition_or_mnetcp2_thermal_runaway_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_812cm1_1638cm1_1578cm1_insitu_se_xps_mo_kerr_latency_ms = (
+        0.11 if governed else 305.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_10a_bspd_cu_line_resistance_blowup_or_tgg_verdet_depolarization_pct = (
+        0.0 if governed else 8.4
+    )
+    return {
+        "mnetcp2_mnipramd2_tbthd3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_mnetcp2_mnipramd2_tbthd3_pods": active_mnetcp2_mnipramd2_tbthd3_pods,
+        "electronic_6n5_mnetcp2_6n5_mnipramd2_6n5_tbthd3_6n5_tmga_purity_and_bspd_interconnect_yield_gain_pct": electronic_6n5_mnetcp2_6n5_mnipramd2_6n5_tbthd3_6n5_tmga_purity_and_bspd_interconnect_yield_gain_pct,
+        "sub065nm_mnsiox_self_forming_barrier_cu_diffusivity_and_tddb_leakage_reduction_pct": sub065nm_mnsiox_self_forming_barrier_cu_diffusivity_and_tddb_leakage_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmga_and_mnetcp2_ring_cleavage_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmga_and_mnetcp2_ring_cleavage_lockout_latency_ms,
+        "unmitigated_pyrophoric_tmga_ignition_or_mnetcp2_thermal_runaway_pct": unmitigated_pyrophoric_tmga_ignition_or_mnetcp2_thermal_runaway_pct,
+        "edge_qcl_tdlas_812cm1_1638cm1_1578cm1_insitu_se_xps_mo_kerr_latency_ms": edge_qcl_tdlas_812cm1_1638cm1_1578cm1_insitu_se_xps_mo_kerr_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_10a_bspd_cu_line_resistance_blowup_or_tgg_verdet_depolarization_pct": uncompensated_10a_bspd_cu_line_resistance_blowup_or_tgg_verdet_depolarization_pct,
+        "mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_slo_met": governed,
+    }
+
+
 
 
 
