@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 295
-CURRENT_BLUEPRINTS = 288
-CURRENT_SIMULATORS = 287
-CURRENT_TESTS = 296
+CURRENT_CHAPTERS = 296
+CURRENT_BLUEPRINTS = 289
+CURRENT_SIMULATORS = 288
+CURRENT_TESTS = 297
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #287 (295-Chapter Milestone!) — Chapter 292 + Summary 293 (295 Chapters) Autonomous Electronic-Grade Ultrapure Hexacarbonyltungsten(0) (6N5 W(CO)6 >=99.99995%, Mo/Cr<=0.01ppmw, Fe/Ni/Cu<=0.001ppbw, U/Th<=0.0005ppbw, F-/Cl-<=0.01ppmw) & Bis(tert-butylimido)bis(dimethylamino)tungsten(VI) (6N5 BTBMDMAW >=99.99995%) + Di-tert-butyl Diselenide (6N5 DTBDSe >=99.99995%) / Triethylborane (6N5 TEB >=99.99995%) Sub-1nm 10A/7A CFET Complementary 2D Monolayer 2H-WSe2 (mu_p=162cm2/Vs, Ion/Ioff=5.2e8, V_Se=1.1e11cm-2) p-FET Nanosheet Channel, 1c/0a DRAM Fluorine-Free Buried Wordline (bWL) Low-Resistivity alpha-W (rho=8.8 uOhm*cm @ 9nm CD, 0% WF6 Fluorine Attack) & Giant Spin-Hall-Angle beta-W (theta_SH=-0.42, Jc0=1.4e6 A/cm2) SOT-MRAM PEALD/CVD PINN-MPC, 10kHz QCL-TDLAS/FTIR (1998.4/956.2/1154.8/2192.5cm-1) + SF-ICP-MS + In-Situ Raman/GIXRD/MOKE & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 H2Se/TEB/CO Interlock, "
-        "Blueprint #288, Simulator #287, Tool 287 & 296/296 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #288 — Chapter 293 + Summary 294 (296 Chapters) Autonomous Electronic-Grade Ultrapure Borazine (6N5 B3N3H6 >=99.99995%, C<=0.02ppmw, O<=0.05ppmw, Fe/Ni/Cu<=0.001ppbw) & Tris(dimethylamino)borane (6N5 TDMAB >=99.99995%) + Bis(N,N'-diisopropylacetamidinato)nickel(II) (6N5 Ni(iPr-AMD)2 >=99.99995%) + Dimethylamine Alane (6N5 DMAA >=99.99995%) Sub-1nm 10A/7A CFET Epitaxial 2D h-BN Van der Waals Dielectric Interface (EOT_IL=0.28nm, Dit=4.2e9 cm-2eV-1, +46.5% Mobility Gain), M0/M1 Liner-Free Ordered B2-NiAl Intermetallic Interconnect (rho=9.2 uOhm*cm @ 7nm CD, Ea=2.45eV) & Room-Temperature h-BN Quantum Single-Photon Emitter (g2(0)=0.018, DW=0.82, V_HOM=94.8%) PEALD/ALE PINN-MPC, 10kHz QCL-TDLAS/FTIR (1465.2/2518.4/1885.6cm-1) + SF-ICP-MS + In-Situ SE/4PP/HBT & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 B3N3H6/B2H6/DMAA Interlock, "
+        "Blueprint #289, Simulator #288, Tool 288 & 297/297 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")

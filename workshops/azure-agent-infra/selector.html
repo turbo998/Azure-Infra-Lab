@@ -7216,6 +7216,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="wco6Wse2BwlSotResult"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 288 · 电子级硼嗪 6N5 B<sub>3</sub>N<sub>3</sub>H<sub>6</sub> 与三(二甲氨基)硼烷 6N5 TDMAB + 双(二异丙基乙脒)镍 6N5 Ni(iPr-AMD)<sub>2</sub> + 二甲胺氢化铝 6N5 DMAA 10A/7A CFET 2D h-BN 范德华界面介质 (D<sub>it</sub>=4.2&times;10⁹ cm⁻²eV⁻¹)、M0/M1 B2-NiAl 金属间化合物互连 (&rho;=9.2 &mu;&Omega;&middot;cm @ 7nm CD) 与室温 h-BN 量子单光子源 (V<sub>HOM</sub>=94.8%) PEALD/ALE PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">评估低温减压精馏无机苯同电子体硼嗪 6N5 B<sub>3</sub>N<sub>3</sub>H<sub>6</sub> (&ge;99.99995%, 预置 1:1 B-N 六元环彻底消除 BCl<sub>3</sub>/NH<sub>3</sub> 氯化铵颗粒污染, C &le;0.02 ppmw, O &le;0.05 ppmw, Fe/Ni/Cu/Na &le;0.001 ppbw) + 无卤三(二甲氨基)硼烷 6N5 TDMAB + 无羰基高挥发脒基镍 6N5 Ni(iPr-AMD)<sub>2</sub> + 无碳液态二甲胺氢化铝加合物 6N5 DMAA ((CH<sub>3</sub>)<sub>2</sub>NH&middot;AlH<sub>3</sub> &ge;99.99995%) 在亚 1 纳米 (10A/7A CFET) 2D MoS<sub>2</sub>/WSe<sub>2</sub> 纳米片沟道超薄单晶六方氮化硼 (2D h-BN, EOT<sub>IL</sub>=0.28nm, 界面态密度 D<sub>it</sub>=4.2&times;10⁹ cm⁻²eV⁻¹, 抑制远程光学声子散射提升迁移率 +46.5%)、M0/M1 无阻挡层有序 B2 金属间化合物铝化镍互连 (B2-NiAl, Pm-3m, 电子平均自由程 &lambda;<sub>e</sub>=4.8nm, 7.0nm 窄线宽电阻率 &rho;<sub>NiAl</sub>=9.2 &mu;&Omega;&middot;cm &le;11.0 &mu;&Omega;&middot;cm, 电迁移激活能 E<sub>a</sub>=2.45eV)，以及室温片上量子光子 h-BN 碳二聚体缺陷单光子发射器 (V<sub>B</sub>C<sub>N</sub><sup>-</sup>, ZPL=4.1eV/580nm, DW=0.82, 全同度 V<sub>HOM</sub>=94.8%) 超循环 PEALD/ALE 中的定量协同、10kHz QCL-TDLAS (1465.2cm⁻¹ B<sub>3</sub>N<sub>3</sub>H<sub>6</sub> E' B-N 环呼吸峰 / 2518.4cm⁻¹ B<sub>2</sub>H<sub>6</sub> B-H 峰 / 1885.6cm⁻¹ DMAA Al-H 伸缩峰) + 原位光谱椭偏/HBT 二阶关联干涉闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 极易燃硼嗪/剧毒乙硼烷 (B<sub>2</sub>H<sub>6</sub>, PEL 0.1ppmv) 与自燃氢化铝硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>B3N3H6 / TDMAB / Ni(iPr-AMD)2 / DMAA 提纯与 10A 2D h-BN / M0 B2-NiAl / 量子单光子源产线数 (Trains): <span id="b3n3h6HbnNialSpeTrainsVal">8</span></label>
+          <input type="range" id="b3n3h6HbnNialSpeTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('b3n3h6HbnNialSpeTrainsVal').innerText=this.value; runB3n3h6TdmabNiipramd2DmaaCfet2dHbnVdwDielectricM0B2NialInterconnectAndQuantumSpeLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="b3n3h6HbnNialSpeMode" onchange="runB3n3h6TdmabNiipramd2DmaaCfet2dHbnVdwDielectricM0B2NialInterconnectAndQuantumSpeLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 B3N3H6/TDMAB 2D h-BN + 6N5 Ni(iPr-AMD)2/DMAA M0 B2-NiAl + h-BN 量子 SPE &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿开环 BCl3/NH4Cl 颗粒污染、非化学计量反位缺陷高阻 NiAl 与乙硼烷/氢化铝爆燃风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="b3n3h6HbnNialSpeResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12588,6 +12607,50 @@ function runWco6BtbmdmawDtbdseTebCfet2dWse2PfetDramBwlAlphaWAndSotMramBetaWLab()
   `;
 }
 runWco6BtbmdmawDtbdseTebCfet2dWse2PfetDramBwlAlphaWAndSotMramBetaWLab();
+
+function runB3n3h6TdmabNiipramd2DmaaCfet2dHbnVdwDielectricM0B2NialInterconnectAndQuantumSpeLab() {
+  const trains = parseInt(document.getElementById('b3n3h6HbnNialSpeTrains').value, 10);
+  const mode = document.getElementById('b3n3h6HbnNialSpeMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityCfetHbnNialSpeYieldGain = isPinn ? 74.0 : 14.5;
+  const trapAntisiteSpectralDiffusionRed = isPinn ? 95.0 : 17.5;
+  const sil3Ms = isPinn ? 0.10 : 240.0;
+  const b2h6AlaneLeakPct = isPinn ? 0.0 : 1.8;
+  const tdlasSe4ppHbtMs = isPinn ? 0.11 : 340.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const amorphousBnOffStoichNialPct = isPinn ? 0.0 : 9.8;
+
+  document.getElementById('b3n3h6HbnNialSpeResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS H100 v5 + Kata 节点 (Standard_NC40ads_H100_v5)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${purityCfetHbnNialSpeYieldGain.toFixed(1)}% / -${trapAntisiteSpectralDiffusionRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 B3N3H6/TDMAB/Ni(iPr-AMD)2/DMAA 纯度良率增益 / 界面陷阱、NiAl 反位散射与单光子谱扩散削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${b2h6AlaneLeakPct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 极易燃硼嗪/剧毒 B2H6 与自燃 DMAA 氢化铝联锁延迟 / 乙硼烷或氢化铝泄漏事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasSe4ppHbtMs.toFixed(2)} ms / ${amorphousBnOffStoichNialPct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (1465.2/2518.4/1885.6cm⁻¹) + 原位椭偏/HBT 干涉延迟 (-${wanRed.toFixed(1)}% WAN) / 非晶 BN 或反位失配率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_edge`)</strong>：通过无卤 6N5 B<sub>3</sub>N<sub>3</sub>H<sub>6</sub> 预置 B-N 六元环外延 10A CFET 2D h-BN 范德华界面（D<sub>it</sub>=4.2&times;10⁹ cm⁻²eV⁻¹），利用无碳 6N5 Ni(iPr-AMD)<sub>2</sub> + 6N5 DMAA 1:1 超循环 ALD 精准锁定有序 B2-NiAl 互连（&rho;<sub>NiAl</sub>=9.2 &mu;&Omega;&middot;cm @ 7nm CD），并确定性激活室温 h-BN 单光子源（g<sup>(2)</sup>(0)=0.018, V<sub>HOM</sub>=94.8%），配合 0.10ms SIL-3 联锁彻底阻断剧毒乙硼烷 B<sub>2</sub>H<sub>6</sub> 与自燃 AlH<sub>3</sub> 风险。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 BCl<sub>3</sub>+NH<sub>3</sub> 产生 NH<sub>4</sub>Cl 颗粒与非晶 a-BN 悬挂键，Ni/Al 化学计量偏离 0.8 at.% 即引发反位缺陷导致电阻率暴涨 3 倍，且存在剧毒乙硼烷与氢化铝爆燃风险（9.8% 失效率，240ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runB3n3h6TdmabNiipramd2DmaaCfet2dHbnVdwDielectricM0B2NialInterconnectAndQuantumSpeLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

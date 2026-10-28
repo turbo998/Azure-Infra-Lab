@@ -294,6 +294,7 @@ from agent_infra_sizer import (
     simulate_tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_sil3_sandbox,
     simulate_moco6_btbmdmamo_dtbs_dese_10a_cfet_2d_janus_mosse_1000l_nand_mo_wordline_and_mo2n_snspd_ald_sil3_sandbox,
     simulate_wco6_btbmdmaw_dtbdse_teb_10a_cfet_2d_wse2_pfet_dram_bwl_alpha_w_and_sot_mram_beta_w_ald_sil3_sandbox,
+    simulate_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6208,6 +6209,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_wse2_grain_boundary_or_dram_bwl_high_resistivity_pct"], 3.0)
         self.assertTrue(gov["wco6_btbmdmaw_dtbdse_teb_10a_cfet_2d_wse2_pfet_dram_bwl_alpha_w_and_sot_mram_beta_w_ald_slo_met"])
         self.assertFalse(raw["wco6_btbmdmaw_dtbdse_teb_10a_cfet_2d_wse2_pfet_dram_bwl_alpha_w_and_sot_mram_beta_w_ald_slo_met"])
+
+    def test_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_sandbox(self) -> None:
+        gov = simulate_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_sandbox(
+            b3n3h6_tdmab_niipramd2_dmaa_trains=8,
+            governance_mode="pinn_mpc_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_edge",
+        )
+        raw = simulate_b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_sil3_sandbox(
+            b3n3h6_tdmab_niipramd2_dmaa_trains=8,
+            governance_mode="unmanaged_open_loop_bcl3_nh4cl_particulate_and_disordered_nial",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_b3n3h6_tdmab_hbn_nial_spe_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_b3n3h6_6n5_tdmab_6n5_niipramd2_6n5_dmaa_purity_and_cfet_hbn_nial_spe_yield_gain_pct"], 74.0)
+        self.assertEqual(gov["hbn_interface_trap_m0_nial_antisite_scattering_and_spe_spectral_diffusion_reduction_pct"], 95.0)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_borazine_diborane_alane_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_borazine_diborane_hydrolysis_or_pyrophoric_alane_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_borazine_diborane_hydrolysis_or_pyrophoric_alane_ignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1465cm1_2518cm1_1885cm1_insitu_ellipsometry_4pp_hbt_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_amorphous_bn_defect_or_off_stoichiometric_nial_resistivity_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_amorphous_bn_defect_or_off_stoichiometric_nial_resistivity_pct"], 3.0)
+        self.assertTrue(gov["b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_slo_met"])
+        self.assertFalse(raw["b3n3h6_tdmab_niipramd2_dmaa_10a_cfet_2d_hbn_vdw_dielectric_m0_b2_nial_interconnect_and_quantum_spe_ald_slo_met"])
 
 
 if __name__ == "__main__":
