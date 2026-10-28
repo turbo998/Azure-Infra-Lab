@@ -286,6 +286,7 @@ from agent_infra_sizer import (
     simulate_laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_sil3_sandbox,
     simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox,
     simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox,
+    simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5996,6 +5997,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_highna_euv_hv_bias_or_yig_fmr_linewidth_broadening_pct"], 3.0)
         self.assertTrue(gov["crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_slo_met"])
         self.assertFalse(raw["crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_slo_met"])
+
+    def test_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox(self) -> None:
+        gov = simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox(
+            vcl4_vtip_tdeav_bimmp3_trains=8,
+            governance_mode="pinn_mpc_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_edge",
+        )
+        raw = simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox(
+            vcl4_vtip_tdeav_bimmp3_trains=8,
+            governance_mode="unmanaged_legacy_v2o5_reactive_sputtering_and_pvd_bismuth_contact",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_vcl4_vtip_tdeav_bimmp3_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_vcl4_6n5_vtip_6n5_tdeav_6n5_bimmp3_purity_and_vo2_mott_onn_yield_gain_pct"], 70.5)
+        self.assertEqual(gov["vo2_v2o5_overoxidation_and_bismuth_dewetting_schottky_defect_reduction_pct"], 92.5)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_vcl4_corrosive_hcl_and_v2o5_aerosol_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_vcl4_hydrolysis_fuming_or_tdeav_thermal_runaway_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_vcl4_hydrolysis_fuming_or_tdeav_thermal_runaway_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2886cm1_1035cm1_985cm1_insitu_raman_ellipsometry_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_vo2_imt_hysteresis_drift_or_cfet_bi_contact_resistance_spike_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_vo2_imt_hysteresis_drift_or_cfet_bi_contact_resistance_spike_pct"], 3.0)
+        self.assertTrue(gov["vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_slo_met"])
+        self.assertFalse(raw["vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_slo_met"])
 
 
 if __name__ == "__main__":

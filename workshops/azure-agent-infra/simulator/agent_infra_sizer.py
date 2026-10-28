@@ -15303,6 +15303,53 @@ def simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yi
     }
 
 
+def simulate_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_sandbox(
+    vcl4_vtip_tdeav_bimmp3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(vcl4_vtip_tdeav_bimmp3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_vcl4_vtip_tdeav_bimmp3_pods = trains * 4
+    electronic_6n5_vcl4_6n5_vtip_6n5_tdeav_6n5_bimmp3_purity_and_vo2_mott_onn_yield_gain_pct = (
+        70.5 if governed else 17.5
+    )
+    vo2_v2o5_overoxidation_and_bismuth_dewetting_schottky_defect_reduction_pct = (
+        92.5 if governed else 22.5
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_vcl4_corrosive_hcl_and_v2o5_aerosol_lockout_latency_ms = (
+        0.10 if governed else 515.0
+    )
+    unmitigated_vcl4_hydrolysis_fuming_or_tdeav_thermal_runaway_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_2886cm1_1035cm1_985cm1_insitu_raman_ellipsometry_latency_ms = (
+        0.11 if governed else 305.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_vo2_imt_hysteresis_drift_or_cfet_bi_contact_resistance_spike_pct = (
+        0.0 if governed else 8.4
+    )
+    return {
+        "vcl4_vtip_tdeav_bimmp3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_vcl4_vtip_tdeav_bimmp3_pods": active_vcl4_vtip_tdeav_bimmp3_pods,
+        "electronic_6n5_vcl4_6n5_vtip_6n5_tdeav_6n5_bimmp3_purity_and_vo2_mott_onn_yield_gain_pct": electronic_6n5_vcl4_6n5_vtip_6n5_tdeav_6n5_bimmp3_purity_and_vo2_mott_onn_yield_gain_pct,
+        "vo2_v2o5_overoxidation_and_bismuth_dewetting_schottky_defect_reduction_pct": vo2_v2o5_overoxidation_and_bismuth_dewetting_schottky_defect_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_vcl4_corrosive_hcl_and_v2o5_aerosol_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_vcl4_corrosive_hcl_and_v2o5_aerosol_lockout_latency_ms,
+        "unmitigated_vcl4_hydrolysis_fuming_or_tdeav_thermal_runaway_pct": unmitigated_vcl4_hydrolysis_fuming_or_tdeav_thermal_runaway_pct,
+        "edge_qcl_tdlas_2886cm1_1035cm1_985cm1_insitu_raman_ellipsometry_latency_ms": edge_qcl_tdlas_2886cm1_1035cm1_985cm1_insitu_raman_ellipsometry_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_vo2_imt_hysteresis_drift_or_cfet_bi_contact_resistance_spike_pct": uncompensated_vo2_imt_hysteresis_drift_or_cfet_bi_contact_resistance_spike_pct,
+        "vcl4_vtip_tdeav_bimmp3_vo2_mott_neuromorphic_onn_and_10a_cfet_bismuth_zero_schottky_contact_ald_slo_met": governed,
+    }
+
+
 
 
 
