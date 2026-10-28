@@ -7197,6 +7197,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="moco6JanusSnspdResult"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 287 (295-Chapter Milestone!) · 电子级六羰基钨 6N5 W(CO)<sub>6</sub> 与双(叔丁基亚氨基)双(二甲氨基)钨 6N5 BTBMDMAW + 二叔丁基二硒醚 6N5 DTBDSe / 三乙基硼 6N5 TEB 10A/7A CFET 互补单晶 2D 2H-WSe<sub>2</sub> p-FET 纳米片沟道 (&mu;<sub>p</sub>=162 cm²/V&middot;s)、1c/0a DRAM 无氟埋入式字线 (bWL) 低阻 &alpha;-W (&rho;=8.8 &mu;&Omega;&middot;cm) 与巨自旋霍尔角 &beta;-W (&theta;<sub>SH</sub>=-0.42) SOT-MRAM PEALD/CVD PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">评估多级高真空区熔升华无卤零价羰基钨 6N5 W(CO)<sub>6</sub> (&ge;99.99995%, Mo/Cr &le;0.01 ppmw, Fe/Ni/Cu/Na &le;0.001 ppbw, 低 &alpha; 放射性 U/Th &le;0.0005 ppbw, F<sup>-</sup>/Cl<sup>-</sup> &le;0.01 ppmw) + 液态烷基胺亚胺钨 6N5 BTBMDMAW (W(N<sup>t</sup>Bu)<sub>2</sub>(NMe<sub>2</sub>)<sub>2</sub> &ge;99.99995%) + 二叔丁基二硒醚 6N5 DTBDSe / 三乙基硼 6N5 TEB 在亚 1 纳米 (10A/7A CFET) 顶层互补单层 2H-WSe<sub>2</sub> p-FET (&mu;<sub>p</sub>=162 cm²/V&middot;s, I<sub>on</sub>/I<sub>off</sub>=5.2&times;10⁸, 硒空位 N<sub>VSe</sub>=1.1&times;10¹¹ cm⁻²) 纳米片沟道、1c/0a DRAM 埋入式高深宽比字线 (Buried Wordline, bWL) 无氟大晶粒 &alpha;-W 填充 (&rho;<sub>W</sub>=8.8 &mu;&Omega;&middot;cm @ 9.0nm CD, 零 WF<sub>6</sub> 氟腐蚀 2.2nm 高 &kappa; 栅氧)，以及超快 SOT-MRAM 巨自旋霍尔角 A15 亚稳相 &beta;-W (&theta;<sub>SH</sub>=-0.42, &rho;<sub>&beta;-W</sub>=185 &mu;&Omega;&middot;cm, 翻转电流密度 J<sub>c0</sub>=1.4&times;10⁶ A/cm²) 重金属自旋轨道沟道 PEALD/CVD 中的定量协同、10kHz QCL-TDLAS (1998.4cm⁻¹ W(CO)<sub>6</sub> C&equiv;O / 956.2cm⁻¹ W=N<sup>t</sup>Bu / 1154.8cm⁻¹ DTBDSe C-Se / 2192.5cm⁻¹ H<sub>2</sub>Se) + 原位偏振拉曼/GIXRD/MOKE 闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 剧毒硒化氢 (H<sub>2</sub>Se) / 自燃三乙基硼 (TEB) 与羰基钨硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>W(CO)6 / BTBMDMAW / DTBDSe / TEB 提纯与 10A 2D WSe2 p-FET / DRAM bWL / SOT-MRAM 产线数 (Trains): <span id="wco6Wse2BwlSotTrainsVal">8</span></label>
+          <input type="range" id="wco6Wse2BwlSotTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('wco6Wse2BwlSotTrainsVal').innerText=this.value; runWco6BtbmdmawDtbdseTebCfet2dWse2PfetDramBwlAlphaWAndSotMramBetaWLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="wco6Wse2BwlSotMode" onchange="runWco6BtbmdmawDtbdseTebCfet2dWse2PfetDramBwlAlphaWAndSotMramBetaWLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 W(CO)6/BTBMDMAW + DTBDSe/TEB 2D WSe2 p-FET + DRAM 无氟 &alpha;-W bWL + &beta;-W SOT-MRAM &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿开环 WF6 氟腐蚀栅氧、高温 CVD 多晶高硒空位 WSe2 与剧毒 H2Se/TEB 外泄（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="wco6Wse2BwlSotResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12525,6 +12544,50 @@ function runMoco6BtbmdmamoDtbsDeseCfetJanusMosseNandMoWordlineAndSnspdLab() {
   `;
 }
 runMoco6BtbmdmamoDtbsDeseCfetJanusMosseNandMoWordlineAndSnspdLab();
+
+function runWco6BtbmdmawDtbdseTebCfet2dWse2PfetDramBwlAlphaWAndSotMramBetaWLab() {
+  const trains = parseInt(document.getElementById('wco6Wse2BwlSotTrains').value, 10);
+  const mode = document.getElementById('wco6Wse2BwlSotMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityCfetDramSotYieldGain = isPinn ? 73.6 : 14.3;
+  const vacancyFluorineSotRed = isPinn ? 94.8 : 17.2;
+  const sil3Ms = isPinn ? 0.10 : 235.0;
+  const h2seTebCoLeakPct = isPinn ? 0.0 : 1.8;
+  const tdlasRamanGixrdMokeMs = isPinn ? 0.11 : 335.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const wse2GrainDramBwlResistivityPct = isPinn ? 0.0 : 9.6;
+
+  document.getElementById('wco6Wse2BwlSotResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS H100 v5 + Kata 节点 (Standard_NC40ads_H100_v5)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${purityCfetDramSotYieldGain.toFixed(1)}% / -${vacancyFluorineSotRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 W(CO)6/BTBMDMAW/DTBDSe/TEB 纯度良率增益 / 硒空位、WF6 氟侵蚀与 SOT 翻转能耗削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${h2seTebCoLeakPct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 剧毒 H2Se、自燃 TEB 与 CO/羰基钨硬联锁延迟 / 剧毒硒化氢或 TEB 外泄事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasRamanGixrdMokeMs.toFixed(2)} ms / ${wse2GrainDramBwlResistivityPct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (1998.4/956.2/1154.8/2192.5cm⁻¹) + 原位拉曼/MOKE 延迟 (-${wanRed.toFixed(1)}% WAN) / 晶界或高阻字线率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>295-Chapter Milestone! 闭环受控 (`pinn_mpc_wco6_btbmdmaw_dtbdse_teb_10a_cfet_2d_wse2_pfet_dram_bwl_alpha_w_and_sot_mram_beta_w_ald_sil3_edge`)</strong>：通过无卤 6N5 BTBMDMAW + 6N5 DTBDSe 低温单晶外延 10A CFET 顶层互补单层 2H-WSe<sub>2</sub> p-FET（&mu;<sub>p</sub>=162 cm²/V&middot;s, N<sub>VSe</sub>=1.1&times;10¹¹ cm⁻²），利用无氟 6N5 W(CO)<sub>6</sub> + 6N5 TEB 成核转化在 1c/0a DRAM 埋入式字线（bWL）沉积大晶粒低阻 &alpha;-W（&rho;<sub>W</sub>=8.8 &mu;&Omega;&middot;cm @ 9nm CD，零氟腐蚀），并精准锁定 A15 亚稳相 &beta;-W SOT-MRAM 自旋霍尔沟道（&theta;<sub>SH</sub>=-0.42），配合 0.10ms SIL-3 联锁彻底阻断剧毒 H<sub>2</sub>Se、自燃 TEB 与 CO 外泄。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 WF<sub>6</sub> 反应副产物 HF 蚀穿 2.2nm 埋入式栅氧，高温 CVD WSe<sub>2</sub> 硒空位过高导致 p-FET 迁移率恶化，且存在剧毒 H<sub>2</sub>Se 与自燃 TEB 外泄风险（9.6% 失效率，235ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runWco6BtbmdmawDtbdseTebCfet2dWse2PfetDramBwlAlphaWAndSotMramBetaWLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

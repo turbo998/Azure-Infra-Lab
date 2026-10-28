@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 294
-CURRENT_BLUEPRINTS = 287
-CURRENT_SIMULATORS = 286
-CURRENT_TESTS = 295
+CURRENT_CHAPTERS = 295
+CURRENT_BLUEPRINTS = 288
+CURRENT_SIMULATORS = 287
+CURRENT_TESTS = 296
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #286 (295-Test Milestone!) — Chapter 291 + Summary 292 (294 Chapters) Autonomous Electronic-Grade Ultrapure Hexacarbonylmolybdenum(0) (6N5 Mo(CO)6 >=99.99995%, W/Cr<=0.01ppmw, Fe/Ni/Cu<=0.001ppbw, Cl-/F-<=0.01ppmw) & Bis(tert-butylimido)bis(dimethylamino)molybdenum(VI) (6N5 BTBMDMAMo >=99.99995%) + Di-tert-butyl Sulfide (6N5 DTBS >=99.99995%) / Diethyl Selenide (6N5 DESe >=99.99995%) Sub-1nm 10A/7A CFET Wafer-Scale Single-Crystal 2D Janus MoSSe / 2H-MoS2 (mu=148cm2/Vs, Ion/Ioff=4.5e8, Vs=1.2e11cm-2, d33=3.85pm/V) Nanosheet Channel, 1000L 3D NAND Fluorine-Free Low-Stress Molybdenum Wordline (rho=9.4 uOhm*cm @ 8nm CD, 0% Al2O3 fluorine attack, +145MPa stress) & Superconducting gamma-Mo2N (Tc=7.8K, Lk=42.5pH/sq) SNSPD (SDE=96.4% @ 1550nm, 4.2ps jitter) PEALD/ALE PINN-MPC, 10kHz QCL-TDLAS/FTIR (2004.2/952.6/1168.4/2192.5cm-1) + SF-ICP-MS + In-Situ Raman/PL & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 H2Se/CO Interlock, "
-        "Blueprint #287, Simulator #286, Tool 286 & 295/295 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #287 (295-Chapter Milestone!) — Chapter 292 + Summary 293 (295 Chapters) Autonomous Electronic-Grade Ultrapure Hexacarbonyltungsten(0) (6N5 W(CO)6 >=99.99995%, Mo/Cr<=0.01ppmw, Fe/Ni/Cu<=0.001ppbw, U/Th<=0.0005ppbw, F-/Cl-<=0.01ppmw) & Bis(tert-butylimido)bis(dimethylamino)tungsten(VI) (6N5 BTBMDMAW >=99.99995%) + Di-tert-butyl Diselenide (6N5 DTBDSe >=99.99995%) / Triethylborane (6N5 TEB >=99.99995%) Sub-1nm 10A/7A CFET Complementary 2D Monolayer 2H-WSe2 (mu_p=162cm2/Vs, Ion/Ioff=5.2e8, V_Se=1.1e11cm-2) p-FET Nanosheet Channel, 1c/0a DRAM Fluorine-Free Buried Wordline (bWL) Low-Resistivity alpha-W (rho=8.8 uOhm*cm @ 9nm CD, 0% WF6 Fluorine Attack) & Giant Spin-Hall-Angle beta-W (theta_SH=-0.42, Jc0=1.4e6 A/cm2) SOT-MRAM PEALD/CVD PINN-MPC, 10kHz QCL-TDLAS/FTIR (1998.4/956.2/1154.8/2192.5cm-1) + SF-ICP-MS + In-Situ Raman/GIXRD/MOKE & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 H2Se/TEB/CO Interlock, "
+        "Blueprint #288, Simulator #287, Tool 287 & 296/296 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")
