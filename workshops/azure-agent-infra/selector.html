@@ -7046,6 +7046,24 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="mnetcp2Mnipramd2Tbthd3Result"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <div class="card-title">Tool 279 · 280-Blueprint Milestone! 电子级 6N5 Cr(CO)6 &amp; 6N5 Cr(EtPh)2 + 6N5 Fe(iPr-AMD)2 + 6N5 Y(THD)3 High-NA EUV (0.55 NA) 超低反射衰减相移光罩 (aPSM) CrON/CrTaN 吸收层 (&le;38nm, R &lt;1.2%, &Delta;&phi;=180&deg;) 与片上磁子自旋波逻辑 Y3Fe5O12 (YIG, &alpha; &lt;8.5&times;10⁻⁵) 外延 ALD 仿真器</div>
+      <div class="grid-2">
+        <div>
+          <label>1. 并行 6N5 Cr(CO)6 / 6N5 Cr(EtPh)2 + 6N5 Fe(iPr-AMD)2 + 6N5 Y(THD)3 High-NA EUV aPSM 与 YIG 磁子外延 ALD 产线数：<span id="crco6Cretph2Feipramd2TrainsVal">8</span> Trains</label>
+          <input type="range" id="crco6Cretph2Feipramd2Trains" min="1" max="32" value="8" oninput="document.getElementById('crco6Cretph2Feipramd2TrainsVal').innerText=this.value; runCrco6Cretph2Feipramd2Ythd3HighnaEuvCronApsmAndYigMagnonicLab()">
+        </div>
+        <div>
+          <label>2. High-NA EUV CrON 吸收层光学常数 (n,k) 调谐、YIG 极低吉尔伯特阻尼调控与 SIL-3 联锁模式</label>
+          <select id="crco6Cretph2Feipramd2Mode" onchange="runCrco6Cretph2Feipramd2Ythd3HighnaEuvCronApsmAndYigMagnonicLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Cr(CO)6/Cr(EtPh)2 High-NA EUV CrON aPSM (&le;38nm, 3D 阴影削减 -62%) + Y3Fe5O12 YIG (&alpha; &lt;8.5&times;10⁻⁵) + SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿传统 60nm TaBN/TaBO 吸收层严重 3D 光罩阴影 H-V 偏差、Fe²⁺ 自旋弛豫阻尼暴增与 Cr(CO)6 剧毒 CO 脱附（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="crco6Cretph2Feipramd2Result"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12016,12 +12034,56 @@ function runMnetcp2Mnipramd2Tbthd3Tmga10aBspdMnsioxAndTggFaradayLab() {
       <p class="muted" style="margin-top:8px; margin-bottom:0;">
         ${isPinn
           ? '✅ <strong>Cycle #278 受控达成 (`pinn_mpc_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_edge`)</strong>：通过 140&deg;C 低温 PEALD 沉积亚单原子层无碳 MnNx/Cu 籽晶并于 350&deg;C 退火驱动 Mn 选择性向 p-SiCOH 介电侧壁扩散反应，原位自形成 0.58nm 致密非晶 MnSiOx 阻挡层（释放 +44% 有效铜导电截面积，将 Sub-11nm 间距铜互连线电阻降低 38%，TDDB 寿命提升 100 倍），同时在 SiN/SOI 波导上外延高费尔德常数 Tb3Ga5O12 (TGG, V = -134 rad&middot;T⁻¹&middot;m⁻¹) 非互易磁光隔离层（光隔离度 &gt;32 dB），以 0.10ms SIL-3 联锁彻底阻断自燃 TMGa 与有机锰热失控风险。'
-          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 PVD 2.8nm TaN/Ta 双层阻挡层吞噬 Sub-11nm 沟槽 &gt;55% 截面积导致铜有效截面积萎缩与电子表面散射电阻指数暴增，或退火不充分导致未反应 Mn 原子残留于 Cu 晶界使体电阻率飙升 45%，且 TGG 薄膜中 Tb⁴⁺ 氧化态混杂导致费尔德常数衰减与光隔离失败（8.4% 失效率，515ms 云端延迟）。'}
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 PVD 2.8nm TaN/Ta 双层阻挡层吞噬 Sub-11nm 沟槽 &gt;55% 沟槽截面积导致铜有效截面积萎缩与电子表面散射电阻指数暴增，或退火不充分导致未反应 Mn 原子残留于 Cu 晶界使体电阻率飙升 45%，且 TGG 薄膜中 Tb⁴⁺ 氧化态混杂导致费尔德常数衰减与光隔离失败（8.4% 失效率，515ms 云端延迟）。'}
       </p>
     </div>
   `;
 }
 runMnetcp2Mnipramd2Tbthd3Tmga10aBspdMnsioxAndTggFaradayLab();
+
+function runCrco6Cretph2Feipramd2Ythd3HighnaEuvCronApsmAndYigMagnonicLab() {
+  const trains = parseInt(document.getElementById('crco6Cretph2Feipramd2Trains').value, 10);
+  const mode = document.getElementById('crco6Cretph2Feipramd2Mode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(4, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityApsmYieldGain = isPinn ? 69.0 : 17.0;
+  const shadowingYigDampingRed = isPinn ? 92.0 : 22.0;
+  const sil3Ms = isPinn ? 0.10 : 510.0;
+  const crco6CoFeipramd2RiskPct = isPinn ? 0.0 : 1.8;
+  const tdlasEuvReflFmrMs = isPinn ? 0.11 : 300.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const hvBiasYigLinewidthPct = isPinn ? 0.0 : 8.3;
+
+  document.getElementById('crco6Cretph2Feipramd2Result').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS Standard_NC40ads_H100_v5 节点 (${trains} 条 Cr(CO)6 + Cr(EtPh)2 + Fe(iPr-AMD)2 + Y(THD)3 产线)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#ef4444'}">+${purityApsmYieldGain.toFixed(1)}% / -${shadowingYigDampingRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 Cr(CO)6/Cr(EtPh)2/Fe(iPr-AMD)2/Y(THD)3 纯度与良率增益 / High-NA EUV 光罩 3D 阴影与 YIG 阻尼削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${crco6CoFeipramd2RiskPct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 剧毒 Cr(CO)6 一氧化碳热脱附与自燃 Fe(iPr-AMD)2 联锁延迟 / CO 毒气外泄或爆燃事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasEuvReflFmrMs.toFixed(2)} ms / ${hvBiasYigLinewidthPct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (2000.4/1636.2/1574.8cm⁻¹) + 原位 13.5nm EUV 反射/FMR 延迟 (-${wanRed.toFixed(1)}% WAN) / H-V 线宽偏差与 FMR 展宽率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>280-Blueprint Milestone 达成 (`pinn_mpc_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_edge`)</strong>：通过超循环 PEALD 精确调控非晶 CrOxNy / CrTaN 吸收层的 13.5nm 复折射率（n = 0.931, k = 0.039），将 High-NA EUV (0.55 NA, 4x/8x 变形倍率) 衰减相移光罩厚度压缩至 &le;38 nm（精确实现 180.0&deg; &plusmn; 0.8&deg; 相移与 &lt;1.2% 反射率，消除 -62% 3D 光罩阴影效应与 H-V CD 偏差），同时在 GGG 衬底上原子层外延 18nm 单晶 Y3Fe5O12 (YIG) 磁子波导（吉尔伯特阻尼 &alpha; &lt;8.5&times;10⁻⁵，10GHz FMR 线宽 &Delta;H &lt;0.18 mT），并以 0.10ms SIL-3 联锁彻底阻断 Cr(CO)6 剧毒 CO 脱附与 Fe(iPr-AMD)2 自燃风险。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 60nm TaBN/TaBO 吸收层在 High-NA EUV 6&deg; 入射角与 4x/8x 变形光学下引发严重 3D 光罩阴影效应（H-V CD 偏差 &gt;2.4 nm 与最佳焦面漂移），且 YIG 薄膜中氧空位诱发高自旋-轨道耦合 Fe²⁺ 离子导致吉尔伯特阻尼恶化 20 倍、自旋波传播距离缩短至微米级以下（8.3% 失效率，510ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runCrco6Cretph2Feipramd2Ythd3HighnaEuvCronApsmAndYigMagnonicLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

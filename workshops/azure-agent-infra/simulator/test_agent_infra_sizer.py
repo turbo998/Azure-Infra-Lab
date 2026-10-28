@@ -285,6 +285,7 @@ from agent_infra_sizer import (
     simulate_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_sandbox,
     simulate_laiprfamd3_luipramd3_gdipramd3_temah_10a_cfet_dual_dipole_gate_and_cryo_ggg_magnetocaloric_ald_sil3_sandbox,
     simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_sil3_sandbox,
+    simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5971,6 +5972,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_10a_bspd_cu_line_resistance_blowup_or_tgg_verdet_depolarization_pct"], 3.0)
         self.assertTrue(gov["mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_slo_met"])
         self.assertFalse(raw["mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_and_tgg_faraday_isolator_ald_slo_met"])
+
+    def test_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox(self) -> None:
+        gov = simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox(
+            crco6_cretph2_feipramd2_trains=8,
+            governance_mode="pinn_mpc_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_edge",
+        )
+        raw = simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox(
+            crco6_cretph2_feipramd2_trains=8,
+            governance_mode="unmanaged_legacy_tan_pvd_euv_mask_absorber_and_open_loop_yig_pld",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_crco6_cretph2_feipramd2_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_crco6_6n5_cretph2_6n5_feipramd2_6n5_ythd3_purity_and_highna_euv_apsm_yield_gain_pct"], 69.0)
+        self.assertEqual(gov["highna_euv_3d_shadowing_and_yig_gilbert_damping_defect_reduction_pct"], 92.0)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_crco6_toxic_co_and_pyrophoric_feipramd2_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_crco6_co_offgassing_or_pyrophoric_feipramd2_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_crco6_co_offgassing_or_pyrophoric_feipramd2_ignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2000cm1_1636cm1_1574cm1_insitu_euv_reflectometry_fmr_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_highna_euv_hv_bias_or_yig_fmr_linewidth_broadening_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_highna_euv_hv_bias_or_yig_fmr_linewidth_broadening_pct"], 3.0)
+        self.assertTrue(gov["crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_slo_met"])
+        self.assertFalse(raw["crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_slo_met"])
 
 
 if __name__ == "__main__":

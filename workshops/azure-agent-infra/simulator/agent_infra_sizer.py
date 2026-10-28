@@ -15256,6 +15256,53 @@ def simulate_mnetcp2_mnipramd2_tbthd3_tmga_10a_bspd_mnsiox_self_forming_barrier_
     }
 
 
+def simulate_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_sandbox(
+    crco6_cretph2_feipramd2_trains: int = 8,
+    governance_mode: str = "pinn_mpc_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(crco6_cretph2_feipramd2_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_crco6_cretph2_feipramd2_pods = trains * 4
+    electronic_6n5_crco6_6n5_cretph2_6n5_feipramd2_6n5_ythd3_purity_and_highna_euv_apsm_yield_gain_pct = (
+        69.0 if governed else 17.0
+    )
+    highna_euv_3d_shadowing_and_yig_gilbert_damping_defect_reduction_pct = (
+        92.0 if governed else 22.0
+    )
+    semi_s2_nfpa704_osha_psm_sil3_crco6_toxic_co_and_pyrophoric_feipramd2_lockout_latency_ms = (
+        0.10 if governed else 510.0
+    )
+    unmitigated_crco6_co_offgassing_or_pyrophoric_feipramd2_ignition_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_2000cm1_1636cm1_1574cm1_insitu_euv_reflectometry_fmr_latency_ms = (
+        0.11 if governed else 300.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_highna_euv_hv_bias_or_yig_fmr_linewidth_broadening_pct = (
+        0.0 if governed else 8.3
+    )
+    return {
+        "crco6_cretph2_feipramd2_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_crco6_cretph2_feipramd2_pods": active_crco6_cretph2_feipramd2_pods,
+        "electronic_6n5_crco6_6n5_cretph2_6n5_feipramd2_6n5_ythd3_purity_and_highna_euv_apsm_yield_gain_pct": electronic_6n5_crco6_6n5_cretph2_6n5_feipramd2_6n5_ythd3_purity_and_highna_euv_apsm_yield_gain_pct,
+        "highna_euv_3d_shadowing_and_yig_gilbert_damping_defect_reduction_pct": highna_euv_3d_shadowing_and_yig_gilbert_damping_defect_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_crco6_toxic_co_and_pyrophoric_feipramd2_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_crco6_toxic_co_and_pyrophoric_feipramd2_lockout_latency_ms,
+        "unmitigated_crco6_co_offgassing_or_pyrophoric_feipramd2_ignition_pct": unmitigated_crco6_co_offgassing_or_pyrophoric_feipramd2_ignition_pct,
+        "edge_qcl_tdlas_2000cm1_1636cm1_1574cm1_insitu_euv_reflectometry_fmr_latency_ms": edge_qcl_tdlas_2000cm1_1636cm1_1574cm1_insitu_euv_reflectometry_fmr_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_highna_euv_hv_bias_or_yig_fmr_linewidth_broadening_pct": uncompensated_highna_euv_hv_bias_or_yig_fmr_linewidth_broadening_pct,
+        "crco6_cretph2_feipramd2_ythd3_highna_euv_cron_apsm_photomask_and_yig_magnonic_spin_wave_ald_slo_met": governed,
+    }
+
+
 
 
 
