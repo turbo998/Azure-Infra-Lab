@@ -299,6 +299,7 @@ from agent_infra_sizer import (
     simulate_tmga_tega_tmin_tbas_beta_ga2o3_800v_power_finfet_beol_caac_igzo_2t0c_dram_and_inas_qd_comb_laser_mocvd_peald_sil3_sandbox,
     simulate_temah_temaz_laiprcp3_tma_wakeup_free_ohzo_300l_3d_fenand_and_4k_cryo_fefet_qubit_mux_peald_sil3_sandbox,
     simulate_pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_sil3_sandbox,
+    simulate_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6333,6 +6334,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_baco3_dead_layer_or_bto_c_axis_depoling_failure_pct"], 3.0)
         self.assertTrue(gov["pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_slo_met"])
         self.assertFalse(raw["pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_and_6p4t_cpo_bto_pockels_peald_slo_met"])
+
+    def test_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_sandbox(self) -> None:
+        gov = simulate_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_sandbox(
+            nbnme25_cp2mg_tma_dtbdse_trains=8,
+            governance_mode="pinn_mpc_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_edge",
+        )
+        raw = simulate_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_sandbox(
+            nbnme25_cp2mg_tma_dtbdse_trains=8,
+            governance_mode="unmanaged_open_loop_nb2o5_tls_dielectric_loss_mgo_pinhole_and_h2se_vacancy_drift",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_nbnme25_cp2mg_nbse2_jofet_aqfp_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_nbnme25_6n5_cp2mg_6n5_tma_6n5_dtbdse_purity_and_jofet_aqfp_yield_gain_pct"], 76.0)
+        self.assertEqual(gov["nb2o5_two_level_system_mgo_pinhole_and_2h_nbse2_selenium_vacancy_reduction_pct"], 96.0)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_toxic_h2se_pyrophoric_tma_cp2mg_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_toxic_h2se_hydride_leak_or_pyrophoric_tma_cp2mg_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_toxic_h2se_hydride_leak_or_pyrophoric_tma_cp2mg_ignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2348cm1_618cm1_485cm1_insitu_rheed_arpes_4k_icrn_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_mgo_tunnel_barrier_pinhole_or_aqfp_flux_trapping_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_mgo_tunnel_barrier_pinhole_or_aqfp_flux_trapping_failure_pct"], 3.0)
+        self.assertTrue(gov["nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_slo_met"])
+        self.assertFalse(raw["nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_slo_met"])
 
 
 if __name__ == "__main__":

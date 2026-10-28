@@ -15927,6 +15927,54 @@ def simulate_pdmat_taoet5_sripr3cp2_baipr3cp2_tdmat_tmbi_0a_bst_dram_sbt_feram_a
     }
 
 
+def simulate_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_sandbox(
+    nbnme25_cp2mg_tma_dtbdse_trains: int = 8,
+    governance_mode: str = "pinn_mpc_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Nb(NMe2)5 / TBTDEN & 6N5 Cp2Mg + 6N5 TMA + 6N5 DTBDSe / H2Se 10A-Node 2D Superconducting-Semiconducting Van der Waals Josephson Field-Effect Transistor (NbSe2/WSe2/NbSe2 2D JoFET, IcRn=1.42mV), Epitaxial Single-Crystal Spin-Filtering NbN/MgO/NbN Josephson Junction (4K Cryo-SFQ / 48GHz AQFP Logic, Switching Energy EJ=0.08aJ) & Monolithic 300mm Cryo-to-Optical EOM Interface PEALD/MBE PINN-MPC + SIL-3."""
+    trains = max(1, int(nbnme25_cp2mg_tma_dtbdse_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_nbnme25_cp2mg_nbse2_jofet_aqfp_pods = trains * 4
+    electronic_6n5_nbnme25_6n5_cp2mg_6n5_tma_6n5_dtbdse_purity_and_jofet_aqfp_yield_gain_pct = (
+        76.0 if governed else 15.6
+    )
+    nb2o5_two_level_system_mgo_pinhole_and_2h_nbse2_selenium_vacancy_reduction_pct = (
+        96.0 if governed else 18.6
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_toxic_h2se_pyrophoric_tma_cp2mg_lockout_latency_ms = (
+        0.10 if governed else 255.0
+    )
+    unmitigated_toxic_h2se_hydride_leak_or_pyrophoric_tma_cp2mg_ignition_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_2348cm1_618cm1_485cm1_insitu_rheed_arpes_4k_icrn_latency_ms = (
+        0.11 if governed else 355.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_mgo_tunnel_barrier_pinhole_or_aqfp_flux_trapping_failure_pct = (
+        0.0 if governed else 10.2
+    )
+    return {
+        "nbnme25_cp2mg_tma_dtbdse_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nbnme25_cp2mg_nbse2_jofet_aqfp_pods": active_nbnme25_cp2mg_nbse2_jofet_aqfp_pods,
+        "electronic_6n5_nbnme25_6n5_cp2mg_6n5_tma_6n5_dtbdse_purity_and_jofet_aqfp_yield_gain_pct": electronic_6n5_nbnme25_6n5_cp2mg_6n5_tma_6n5_dtbdse_purity_and_jofet_aqfp_yield_gain_pct,
+        "nb2o5_two_level_system_mgo_pinhole_and_2h_nbse2_selenium_vacancy_reduction_pct": nb2o5_two_level_system_mgo_pinhole_and_2h_nbse2_selenium_vacancy_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_toxic_h2se_pyrophoric_tma_cp2mg_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_toxic_h2se_pyrophoric_tma_cp2mg_lockout_latency_ms,
+        "unmitigated_toxic_h2se_hydride_leak_or_pyrophoric_tma_cp2mg_ignition_pct": unmitigated_toxic_h2se_hydride_leak_or_pyrophoric_tma_cp2mg_ignition_pct,
+        "edge_qcl_tdlas_2348cm1_618cm1_485cm1_insitu_rheed_arpes_4k_icrn_latency_ms": edge_qcl_tdlas_2348cm1_618cm1_485cm1_insitu_rheed_arpes_4k_icrn_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_mgo_tunnel_barrier_pinhole_or_aqfp_flux_trapping_failure_pct": uncompensated_mgo_tunnel_barrier_pinhole_or_aqfp_flux_trapping_failure_pct,
+        "nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_slo_met": governed,
+    }
+
+
 
 
 

@@ -7311,6 +7311,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="bstSbtBtoResult"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 293 · 电子级五(二甲氨基)铌/叔丁基亚氨基三(二乙氨基)铌 6N5 Nb(NMe<sub>2</sub>)<sub>5</sub> / TBTDEN 与双(环戊二烯基)镁 6N5 Cp<sub>2</sub>Mg + 三甲基铝 6N5 TMA + 二叔丁基二硒醚/硒化氢 6N5 DTBDSe / H<sub>2</sub>Se 10A 节点 (1.0nm) 二维超导-半导体范德华约瑟夫森场效应管 (NbSe<sub>2</sub>/WSe<sub>2</sub>/NbSe<sub>2</sub> 2D JoFET, I<sub>c</sub>R<sub>n</sub>=1.42 mV)、单晶自旋过滤外延 NbN/MgO/NbN 约瑟夫森结 (4K 48GHz 绝热量子磁通参变器 AQFP / SFQ 超导逻辑, 单门翻转能耗 E<sub>J</sub>=0.08 aJ) 与 300mm 深低温超导-硅光调制器接口 PEALD/MBE PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">评估多级高真空区域升华与短程分子精馏电子级五(二甲氨基)铌 6N5 Nb(NMe<sub>2</sub>)<sub>5</sub> / 叔丁基亚氨基三(二乙氨基)铌 TBTDEN (&ge;99.99995%, 顺磁杂质 Fe/Ni/Co/Cr/Mn &le;0.001 ppbw) 与电子级双(环戊二烯基)镁 6N5 Cp<sub>2</sub>Mg (&ge;99.99995%) + 三甲基铝 6N5 TMA + 二叔丁基二硒醚 6N5 DTBDSe / H<sub>2</sub>Se 在 10A 节点 (1.0nm) 二维超导-半导体范德华异质结约瑟夫森场效应管 (2H-NbSe<sub>2</sub>/2H-WSe<sub>2</sub>/2H-NbSe<sub>2</sub> 2D JoFET, 邻近效应诱导超导能隙 &Delta;<sub>ind</sub>=1.18 meV, 特征电压乘积 I<sub>c</sub>R<sub>n</sub>=1.42 mV, 栅控开关比 &gt;10⁵)、4K 深低温超导数字逻辑 (48GHz 绝热量子磁通参变器 Adiabatic Quantum-Flux-Parametron AQFP 与快速单磁通量子 RSFQ/ERSFQ, 外延单晶立方相 &delta;-NbN(100)/MgO(100)/&delta;-NbN(100) 隧道结 T<sub>c</sub>=16.4 K, J<sub>c</sub> 晶圆级离散度 &sigma;<sub>Jc</sub>&lt;1.2%, 单门翻转能耗 E<sub>J</sub>=0.08 aJ, 较 4K Cryo-CMOS 降低 99.8%) 以及 300mm 晶圆级 SFQ-to-Optical 超导脉冲直驱薄膜铌酸锂/钛酸钡电光调制器中的定量协同、10kHz QCL-TDLAS (2348.4cm⁻¹ H<sub>2</sub>Se/DTBDSe Se–H 伸缩峰 / 618.2cm⁻¹ &delta;-NbN Nb–N 振动模 / 485.0cm⁻¹ MgO 纵光学声子模) + 原位 RHEED 表面重构 / 角分辨光电子能谱 ARPES / 4K 低温在线约瑟夫森 I<sub>c</sub>R<sub>n</sub> 探针闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 剧毒硒化氢 (H<sub>2</sub>Se, OSHA PEL 0.05 ppmv, IDLH 1 ppmv) 及空气自燃三甲基铝/二茂镁 (TMA/Cp<sub>2</sub>Mg, NFPA 704 W-3-4) 硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>Nb(NMe<sub>2</sub>)<sub>5</sub> / TBTDEN / Cp<sub>2</sub>Mg / TMA / DTBDSe 提纯与 2D JoFET / 48GHz AQFP 产线数 (Trains): <span id="nbse2JofetAqfpTrainsVal">8</span></label>
+          <input type="range" id="nbse2JofetAqfpTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('nbse2JofetAqfpTrainsVal').innerText=this.value; runNbnme25TbtdenCp2mgTmaDtbdse10a2dNbse2Jofet48ghzAqfpNbnMgoAndCryoSfqLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="nbse2JofetAqfpMode" onchange="runNbnme25TbtdenCp2mgTmaDtbdse10a2dNbse2Jofet48ghzAqfpNbnMgoAndCryoSfqLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Nb(NMe2)5/Cp2Mg/DTBDSe 2D NbSe2 JoFET (IcRn=1.42 mV) + 48GHz AQFP (EJ=0.08 aJ) &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿开环 Nb2O5 双能级系统 (TLS) 介电损耗、MgO 势垒针孔短路、2H-NbSe2 硒空位与剧毒 H2Se 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="nbse2JofetAqfpResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12903,6 +12922,50 @@ function runPdmatTaoet5Sripr3cp2Baipr3cp2TdmatTmbi0aBstDramSbtFeramAnd6p4tCpoBto
   `;
 }
 runPdmatTaoet5Sripr3cp2Baipr3cp2TdmatTmbi0aBstDramSbtFeramAnd6p4tCpoBtoPockelsLab();
+
+function runNbnme25TbtdenCp2mgTmaDtbdse10a2dNbse2Jofet48ghzAqfpNbnMgoAndCryoSfqLab() {
+  const trains = parseInt(document.getElementById('nbse2JofetAqfpTrains').value, 10);
+  const mode = document.getElementById('nbse2JofetAqfpMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const pods = trains * 4;
+  const yieldGain = isPinn ? 76.0 : 15.6;
+  const defectRed = isPinn ? 96.0 : 18.6;
+  const sil3Ms = isPinn ? 0.10 : 255.0;
+  const leakRisk = isPinn ? 0.0 : 1.8;
+  const metroMs = isPinn ? 0.11 : 355.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.2;
+
+  document.getElementById('nbse2JofetAqfpResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS Standard_NC40ads_H100_v5 节点 (${trains} 条 6N5 Nb(NMe2)5/Cp2Mg/DTBDSe 2D JoFET &amp; 48GHz AQFP 产线)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#ef4444'}">+${yieldGain.toFixed(1)}% / -${defectRed.toFixed(1)}%</div>
+          <div class="lbl">2D NbSe2 JoFET / NbN-MgO AQFP 良率增益 / Nb2O5 TLS 损耗、MgO 针孔与 Se 空位削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / OSHA 1910.1000 / SIL-3 剧毒 H2Se 与自燃 TMA/Cp2Mg 联锁延迟 / 泄漏事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (2348.4/618.2/485.0cm⁻¹) + 原位 RHEED/ARPES/4K IcRn 延迟 (-${wanRed.toFixed(1)}% WAN) / 结区针孔或磁通俘获失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_nbnme25_tbtden_cp2mg_tma_dtbdse_10a_2d_nbse2_jofet_48ghz_aqfp_nbn_mgo_and_cryo_sfq_peald_sil3_edge`)</strong>：通过 6N5 Nb(NMe<sub>2</sub>)<sub>5</sub> + 6N5 DTBDSe 范德华外延无悬挂键 2H-NbSe<sub>2</sub>/WSe<sub>2</sub>/NbSe<sub>2</sub> 2D JoFET（I<sub>c</sub>R<sub>n</sub>=1.42 mV），并在单晶 &delta;-NbN(100) 上原子层沉积零针孔 1.05nm MgO(100) 隧道势垒，实现 4K 48GHz AQFP 超导逻辑单门翻转能耗 0.08 aJ（较 4K CMOS 降低 99.8%）。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统溅射 Al/AlO<sub>x</sub>/Al 结在 >4.2K 完全失超，且开环 NbN/MgO 沉积中界面残留亚氧化物 NbO/Nb<sub>2</sub>O<sub>5</sub> 形成高密度双能级系统（TLS）与势垒针孔引起 J<sub>c</sub> 晶圆级离散度 >18% 及 AQFP 磁通俘获逻辑错误（10.2% 失效率，255ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runNbnme25TbtdenCp2mgTmaDtbdse10a2dNbse2Jofet48ghzAqfpNbnMgoAndCryoSfqLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);
