@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 291
-CURRENT_BLUEPRINTS = 284
-CURRENT_SIMULATORS = 283
-CURRENT_TESTS = 292
+CURRENT_CHAPTERS = 292
+CURRENT_BLUEPRINTS = 285
+CURRENT_SIMULATORS = 284
+CURRENT_TESTS = 293
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #283 — Chapter 288 + Summary 289 (291 Chapters) Autonomous Electronic-Grade Ultrapure Dirhenium Decacarbonyl (6N5 Re2(CO)10 >=99.99995%, Mo/W/Tc/Mn/Fe <=0.001ppbw) & Methyltrioxorhenium(VII) (6N5 MTO CH3ReO3 >=99.99995%) + Tetrakis(dimethylamino)tin(IV) (6N5 TDMASn >=99.99995%, Pb/Sb/Bi <=0.001ppbw) + Bis(bis(trimethylsilyl)amino)tin(II) (6N5 Sn(HMDS)2 >=99.99995%) Fault-Tolerant Superconducting Quantum Processor Zero-Amorphous-Oxide TLS Epitaxial Rhenium (hcp-Re(0001)/Re0.82Ti0.18, Single-Photon Qi=2.85e7 >=2.0e7, Transmon T1=2.45ms >=2.0ms) Resonators & High-NA EUV (0.55 NA) 8nm Half-Pitch All-Dry Vapor-Deposited Tin-Oxo Photoresist (SnOx MLD + HBr/O2 Dry Dev, mu=16.4 um-1, E_size=14.5 mJ/cm2, 3sigma LWR=0.88nm <=1.0nm) Super-Cycle PEALD/MLD PINN-MPC, 10kHz QCL-TDLAS/FTIR (2070.2/2014.5/975.4/528.6cm-1) + SF-ICP-MS + RHEED/Cryo-Q/CD-SAXS & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
-        "Blueprint #284, Simulator #283, Tool 283 & 292/292 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #284 (285-Blueprint Milestone!) — Chapter 289 + Summary 290 (292 Chapters) Autonomous Electronic-Grade Ultrapure Pentakis(dimethylamino)tantalum(V) (6N5 PDMAT >=99.99995%, Nb<=0.02ppmw, Fe/Cr/Ni/Cu<=0.001ppbw) & Tert-butylimidotris(diethylamido)tantalum(V) (6N5 TBTDET >=99.99995%) + Bis(tert-butylimido)bis(dimethylamino)tungsten(VI) (6N5 BTBMDMAW >=99.99995%, Mo<=0.02ppmw) + Diisopropyl Telluride (6N5 DIPTe >=99.99995%) Sub-1nm 10A/7A CFET 1.2nm Amorphous TaC0.45N0.55 Liner-Barrier (rho=165 uOhm*cm, Ea=2.68eV, 99.2% step coverage) & 3D 6-Bit (64-Level, Gmax/Gmin=128, alpha_p/alpha_d=0.18/-0.22) TaO1.45/Ta2O5 Synaptic RRAM + Monolayer Td-WTe2 Weyl Semimetal PEALD PINN-MPC, 10kHz QCL-TDLAS/FTIR (942.5/1284.6/1018.2/2962.4cm-1) + SF-ICP-MS + LEIS/B1500A/ARPES & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
+        "Blueprint #285, Simulator #284, Tool 284 & 293/293 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")

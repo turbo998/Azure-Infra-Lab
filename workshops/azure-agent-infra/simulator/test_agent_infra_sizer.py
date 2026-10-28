@@ -290,6 +290,7 @@ from agent_infra_sizer import (
     simulate_rhetcpcod_rhacacco2_cppdallyl_10a_cfet_rhodium_interconnect_and_pd_pfet_contact_ald_sil3_sandbox,
     simulate_tdmaz_cpzrnme23_temah_1c_dram_har_zaz_hzo_capacitor_and_10a_cfet_ncfet_ald_sil3_sandbox,
     simulate_re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_sil3_sandbox,
+    simulate_pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6108,6 +6109,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_qubit_tls_qi_degradation_or_euv_snox_lwr_drift_pct"], 3.0)
         self.assertTrue(gov["re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_slo_met"])
         self.assertFalse(raw["re2co10_mto_tdmasn_snhmds2_superconducting_rhenium_qubit_and_highna_euv_snox_dry_resist_ald_slo_met"])
+
+    def test_pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_sil3_sandbox(self) -> None:
+        gov = simulate_pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_sil3_sandbox(
+            pdmat_tbtdet_btbmdmaw_dipte_trains=8,
+            governance_mode="pinn_mpc_pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_sil3_edge",
+        )
+        raw = simulate_pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_sil3_sandbox(
+            pdmat_tbtdet_btbmdmaw_dipte_trains=8,
+            governance_mode="unmanaged_open_loop_tacl5_wf6_halide_barrier_and_nonlinear_rram",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_pdmat_tbtdet_wte2_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_pdmat_6n5_tbtdet_6n5_btbmdmaw_6n5_dipte_purity_and_cfet_tacn_wte2_synapse_yield_gain_pct"], 72.3)
+        self.assertEqual(gov["cu_diffusion_barrier_breakdown_and_rram_nonlinearity_te_vacancy_reduction_pct"], 93.8)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_organotellurium_and_amine_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_toxic_organotellurium_exposure_or_alkylamide_hydrolysis_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_toxic_organotellurium_exposure_or_alkylamide_hydrolysis_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_952cm1_1284cm1_582cm1_insitu_arpes_xps_4pp_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_tacn_cu_migration_or_synapse_weight_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_tacn_cu_migration_or_synapse_weight_drift_pct"], 3.0)
+        self.assertTrue(gov["pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_slo_met"])
+        self.assertFalse(raw["pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neuromorphic_synapse_ald_slo_met"])
 
 
 if __name__ == "__main__":
