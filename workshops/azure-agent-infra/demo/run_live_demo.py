@@ -286,6 +286,7 @@ from agent_infra_sizer import (  # noqa: E402
     simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox,
     simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox,
     simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
+    simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -1847,6 +1848,11 @@ def build_full_demo_bundle() -> Dict[str, Any]:
             "btmste_btmsse_tdmasb_tdmage_8_trains": simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(8, "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"),
             "btmste_btmsse_tdmasb_tdmage_32_trains": simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(32, "pinn_mpc_btmste_btmsse_tdmasb_tdmage_silyl_elimination_and_3d_pcm_gst225_ots_ald_sil3_edge"),
             "raw_btmste_btmsse_tdmasb_tdmage_8_trains": simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox(8, "raw_cloud_uncompensated_btmste_te_colloid_and_gst225_stoichiometry_drift"),
+        },
+        "demo_267_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald": {
+            "btbmmo_btbmw_dtbs_dese_tmbi_8_trains": simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(8, "pinn_mpc_btbmmo_btbmw_dtbs_dese_tmbi_beta_hydride_and_2d_tmd_cfet_bi_contact_ald_sil3_edge"),
+            "btbmmo_btbmw_dtbs_dese_tmbi_32_trains": simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(32, "pinn_mpc_btbmmo_btbmw_dtbs_dese_tmbi_beta_hydride_and_2d_tmd_cfet_bi_contact_ald_sil3_edge"),
+            "raw_btbmmo_btbmw_dtbs_dese_tmbi_8_trains": simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(8, "raw_cloud_uncompensated_btbmmo_carbon_soot_and_2d_tmd_bilayer_schottky_pinning"),
         },
     }
     canonical = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")

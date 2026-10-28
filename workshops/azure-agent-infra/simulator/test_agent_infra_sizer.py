@@ -273,6 +273,7 @@ from agent_infra_sizer import (
     simulate_tdmat_ticl4_teal_gaa_tialc_tin_workfunction_gate_and_dram_electrode_ald_sil3_sandbox,
     simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox,
     simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
+    simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5703,6 +5704,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_3d_pcm_gst225_void_delamination_or_ots_vth_drift_pct"], 3.0)
         self.assertTrue(gov["btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met"])
         self.assertFalse(raw["btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_slo_met"])
+
+    def test_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(self) -> None:
+        gov = simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(
+            8, "pinn_mpc_btbmmo_btbmw_dtbs_dese_tmbi_beta_hydride_and_2d_tmd_cfet_bi_contact_ald_sil3_edge"
+        )
+        raw = simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_btbmmo_carbon_soot_and_2d_tmd_bilayer_schottky_pinning"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_btbmmo_btbmw_dtbs_dese_tmbi_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_btbmmo_6n5_btbmw_6n5_dtbs_6n5_dese_6n5_tmbi_purity_and_cfet_yield_gain_pct"], 66.1)
+        self.assertEqual(gov["sp2_carbon_soot_chalcogen_vacancy_and_bi_contact_schottky_reduction_pct"], 89.4)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmbi_h2se_co_and_bi_dewetting_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_tmbi_autoignition_h2se_co_release_or_bi_contact_dewetting_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_tmbi_autoignition_h2se_co_release_or_bi_contact_dewetting_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_1986cm1_1248cm1_1162cm1_568cm1_gcicpms_raman_pl_rheed_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_2d_mos2_wse2_bilayer_island_or_fepinning_rc_degradation_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_2d_mos2_wse2_bilayer_island_or_fepinning_rc_degradation_pct"], 3.0)
+        self.assertTrue(gov["btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_slo_met"])
+        self.assertFalse(raw["btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_slo_met"])
 
 
 if __name__ == "__main__":

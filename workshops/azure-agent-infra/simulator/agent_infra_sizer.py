@@ -14644,6 +14644,70 @@ def simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_
     }
 
 
+def simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox(
+    btbmmo_btbmw_dtbs_dese_tmbi_trains: int = 8,
+    governance_mode: str = "pinn_mpc_btbmmo_btbmw_dtbs_dese_tmbi_beta_hydride_and_2d_tmd_cfet_bi_contact_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Bis(tert-butylimido)bis(dimethylamino)molybdenum (6N5 BTBMMo
+    (t-C4H9N)2Mo[N(CH3)2]2 >= 99.99995%, Halide-Free 0% Cl, b.p. 72 C @ 0.2 Torr, W <= 0.02 ppmw,
+    Fe/Cr/Ni <= 0.05 ppbw, U/Th <= 0.001 ppbw) & Bis(tert-butylimido)bis(dimethylamino)tungsten
+    (6N5 BTBMW (t-C4H9N)2W[N(CH3)2]2 >= 99.99995%, b.p. 80 C @ 0.2 Torr, Mo <= 0.02 ppmw) +
+    Di-tert-butyl Sulfide (6N5 DTBS [(CH3)3C]2S >= 99.99995%, b.p. 149 C, Disulfide <= 0.05 ppmw) &
+    Diethyl Selenide (6N5 DESe (C2H5)2Se >= 99.99995%, b.p. 108 C, Se0 Colloid <= 0.02 ppmw) +
+    Trimethylbismuth (6N5 TMBi Bi(CH3)3 >= 99.99995%, b.p. 110 C, Pb/Sb <= 0.02 ppmw) for Sub-1nm
+    (A10 / A7) Monolithic 3D CFET Wafer-Scale (300 mm) Single-Crystal Monolayer 2D Transition Metal
+    Dichalcogenide (1L-MoS2 n-FET d=0.65 nm & 1L-WSe2 p-FET d=0.67 nm, Step-Edge Unidirectional
+    0/60 deg Grain Alignment > 99.6%, Vacancy Density VS/VSe < 1.2e11 cm^-2) Channel Epitaxy &
+    Ultralow-Schottky Semimetal Bismuth/Antimony (Bi/Sb Rc < 95 Ohm-um, Ion > 1150 uA/um @ Vds=0.65 V)
+    Contact Low-Temperature (<= 420 C) Cyclic MOCVD/ALD Fractional Vacuum Distillation, Beta-Hydride
+    Carbon-Free Elimination & PINN-MPC, Online 10 kHz QCL-TDLAS / FTIR (1986cm-1 Mo(CO)6 / 1248cm-1
+    C-N / 1162cm-1 DTBS t-Bu / 568cm-1 C-Se / 2184cm-1 CO / 2345cm-1 H2Se) + GC-ICP-MS + In-Situ
+    Raman (MoS2 E12g 384.2cm-1 & A1g 403.0cm-1 Delta=18.8cm-1; WSe2 250.4cm-1) / PL (1.88 eV / 1.65 eV) /
+    SE / RHEED Metrology & SEMI S2 / SEMI C3 / NFPA 704 / OSHA PSM / IEC 61511 SIL-3 Pyrophoric TMBi,
+    Toxic H2Se/H2S/CO & Bi Contact Dewetting (>245 C) Hard Interlock.
+    """
+    trains = max(1, int(btbmmo_btbmw_dtbs_dese_tmbi_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_btbmmo_btbmw_dtbs_dese_tmbi_beta_hydride_and_2d_tmd_cfet_bi_contact_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_btbmmo_btbmw_dtbs_dese_tmbi_pods = trains * 4
+
+    if governed:
+        electronic_6n5_btbmmo_6n5_btbmw_6n5_dtbs_6n5_dese_6n5_tmbi_purity_and_cfet_yield_gain_pct = 66.1
+        sp2_carbon_soot_chalcogen_vacancy_and_bi_contact_schottky_reduction_pct = 89.4
+        semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmbi_h2se_co_and_bi_dewetting_lockout_latency_ms = 0.13
+        unmitigated_tmbi_autoignition_h2se_co_release_or_bi_contact_dewetting_pct = 0.0
+        edge_qcl_tdlas_1986cm1_1248cm1_1162cm1_568cm1_gcicpms_raman_pl_rheed_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_2d_mos2_wse2_bilayer_island_or_fepinning_rc_degradation_pct = 0.0
+    else:
+        electronic_6n5_btbmmo_6n5_btbmw_6n5_dtbs_6n5_dese_6n5_tmbi_purity_and_cfet_yield_gain_pct = 15.2
+        sp2_carbon_soot_chalcogen_vacancy_and_bi_contact_schottky_reduction_pct = 19.8
+        semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmbi_h2se_co_and_bi_dewetting_lockout_latency_ms = 482.0
+        unmitigated_tmbi_autoignition_h2se_co_release_or_bi_contact_dewetting_pct = 1.9
+        edge_qcl_tdlas_1986cm1_1248cm1_1162cm1_568cm1_gcicpms_raman_pl_rheed_latency_ms = 281.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_2d_mos2_wse2_bilayer_island_or_fepinning_rc_degradation_pct = 7.1
+
+    return {
+        "btbmmo_btbmw_dtbs_dese_tmbi_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_btbmmo_btbmw_dtbs_dese_tmbi_pods": active_btbmmo_btbmw_dtbs_dese_tmbi_pods,
+        "electronic_6n5_btbmmo_6n5_btbmw_6n5_dtbs_6n5_dese_6n5_tmbi_purity_and_cfet_yield_gain_pct": electronic_6n5_btbmmo_6n5_btbmw_6n5_dtbs_6n5_dese_6n5_tmbi_purity_and_cfet_yield_gain_pct,
+        "sp2_carbon_soot_chalcogen_vacancy_and_bi_contact_schottky_reduction_pct": sp2_carbon_soot_chalcogen_vacancy_and_bi_contact_schottky_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmbi_h2se_co_and_bi_dewetting_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_tmbi_h2se_co_and_bi_dewetting_lockout_latency_ms,
+        "unmitigated_tmbi_autoignition_h2se_co_release_or_bi_contact_dewetting_pct": unmitigated_tmbi_autoignition_h2se_co_release_or_bi_contact_dewetting_pct,
+        "edge_qcl_tdlas_1986cm1_1248cm1_1162cm1_568cm1_gcicpms_raman_pl_rheed_latency_ms": edge_qcl_tdlas_1986cm1_1248cm1_1162cm1_568cm1_gcicpms_raman_pl_rheed_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_2d_mos2_wse2_bilayer_island_or_fepinning_rc_degradation_pct": uncompensated_2d_mos2_wse2_bilayer_island_or_fepinning_rc_degradation_pct,
+        "btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [
