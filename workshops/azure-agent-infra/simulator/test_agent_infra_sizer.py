@@ -275,6 +275,7 @@ from agent_infra_sizer import (
     simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
     simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
     simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
+    simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5747,6 +5748,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct"], 3.0)
         self.assertTrue(gov["coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_slo_met"])
         self.assertFalse(raw["coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_slo_met"])
+
+    def test_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(self) -> None:
+        gov = simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(
+            8, "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge"
+        )
+        raw = simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_nbocl3_nb2o5_tls_dielectric_loss_and_jj_ic_spread"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_nbcl5_tbtden_temav_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct"], 66.4)
+        self.assertEqual(gov["nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct"], 89.6)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms"], 0.13)
+        self.assertEqual(gov["unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms"], 0.13)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct"], 3.0)
+        self.assertTrue(gov["nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met"])
+        self.assertFalse(raw["nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met"])
 
 
 if __name__ == "__main__":

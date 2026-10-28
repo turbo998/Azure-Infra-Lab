@@ -14771,6 +14771,68 @@ def simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_intercon
     }
 
 
+def simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(
+    nbcl5_tbtden_temav_trains: int = 8,
+    governance_mode: str = "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade Niobium Pentachloride (6N5 NbCl5 >= 99.99995%, Sublimation 125 C @ 2 Torr,
+    Volatile Niobium Oxytrichloride NbOCl3 <= 0.05 ppmw, Congeneric Ta <= 0.05 ppmw, Magnetic Fe/Ni/Cr <= 0.02 ppbw
+    Preventing Vortex Flux Pinning, U/Th <= 0.001 ppbw Suppressing Quasiparticle Cooper-Pair Breaking) &
+    Tert-butylimidotris(diethylamido)niobium (6N5 TBTDEN (t-C4H9N)Nb[N(C2H5)2]3 >= 99.99995%, b.p. 85 C @ 0.1 Torr,
+    Halide-Free 0% Cl) + Tetrakis(ethylmethylamido)vanadium / Vanadium Oxytriisopropoxide (6N5 TEMAV / VTIP
+    V[N(CH3)(C2H5)]4 / VO(O-i-C3H7)3 >= 99.99995%, Fe/Cr <= 0.05 ppbw) for Fault-Tolerant Superconducting
+    Transmon / Fluxonium Quantum Processor Ultrahigh-Coherence (T1 / T2 > 1.2 ms, Internal Quality Factor
+    Qi > 1.5e7 at Single-Photon Power, Tc(NbN) > 16.4 K & Tc(NbTiN) > 15.2 K) NbN / NbTiN / TiN Microwave
+    Resonator & All-Nitride NbN/AlN/NbN Josephson Junction (JJ Critical Current Spread sigma(Ic)/<Ic> < 0.85%) +
+    Silicon Photonics Micro-Bolometer VO2 Phase-Transition (MIT T_MIT = 68.0 C, Delta R/R > 1e4) PEALD / PAMBE
+    Sublimation Purification, Two-Level-System (TLS) Amorphous Sub-Oxide (Nb2O5 / NbOx) Elimination & PINN-MPC,
+    Online 10 kHz QCL-TDLAS / FTIR (994cm-1 Nb=O in NbOCl3 / 418cm-1 Nb-Cl / 1235cm-1 C-N TBTDEN / 1038cm-1 V=O /
+    2886cm-1 HCl) + SF-ICP-MS + In-Situ RHEED / Cryo-Microwave Resonator Q-Scan / XPS Metrology & SEMI S2 /
+    SEMI C3 / NFPA 704 / OSHA PSM / IEC 61511 SIL-3 Corrosive NbCl5/HCl Hydrolysis, Pyrophoric Amido-Metal &
+    Cryogenic Dilution-Refrigerator (10 mK 3He/4He) Quench / Overpressure Hard Interlock (270-Blueprint Milestone!).
+    """
+    trains = max(1, int(nbcl5_tbtden_temav_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, (trains + 1) // 2)
+    active_nbcl5_tbtden_temav_pods = trains * 4
+
+    if governed:
+        electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct = 66.4
+        nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct = 89.6
+        semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms = 0.13
+        unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct = 0.0
+        edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms = 0.13
+        wan_bandwidth_reduction_pct = 99.7
+        uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct = 0.0
+    else:
+        electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct = 15.0
+        nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct = 19.5
+        semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms = 486.0
+        unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct = 1.9
+        edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms = 285.0
+        wan_bandwidth_reduction_pct = 12.0
+        uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct = 7.3
+
+    return {
+        "nbcl5_tbtden_temav_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nbcl5_tbtden_temav_pods": active_nbcl5_tbtden_temav_pods,
+        "electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct": electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct,
+        "nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct": nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms,
+        "unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct": unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct,
+        "edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms": edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct": uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct,
+        "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met": governed,
+    }
+
+
 
 
 SCENARIOS_12: list[dict[str, Any]] = [

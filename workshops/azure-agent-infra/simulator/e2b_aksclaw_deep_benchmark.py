@@ -281,6 +281,7 @@ from agent_infra_sizer import (
     simulate_btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_sil3_sandbox,
     simulate_btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_sil3_sandbox,
     simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox,
+    simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -2126,6 +2127,12 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         simulate_coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_sil3_sandbox(8, "raw_cloud_uncompensated_cuhfacvtms_disproportionation_and_bspdn_ntsv_keyhole_void"),
     ]
 
+    nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles = [
+        simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(8, "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge"),
+        simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(32, "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge"),
+        simulate_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_sil3_sandbox(8, "raw_cloud_uncompensated_nbocl3_nb2o5_tls_dielectric_loss_and_jj_ic_spread"),
+    ]
+
     wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_profiles = [
         simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(8, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
         simulate_wcl5_wcl6_pdmat_tbtdet_ffree_tungsten_mol_3dnand_and_tan_barrier_ald_sil3_sandbox(32, "pinn_mpc_wcl5_wcl6_pdmat_tbtdet_wocl4_stripping_and_ffree_w_mol_3dnand_tan_barrier_ald_sil3_edge"),
@@ -2400,6 +2407,7 @@ def generate_deep_benchmark_summary() -> Dict[str, object]:
         "btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_profiles": btmste_btmsse_tdmasb_tdmage_3d_pcm_gst225_and_ots_cxl_scm_ald_profiles,
         "btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_profiles": btbmmo_btbmw_dtbs_dese_tmbi_2d_tmd_mos2_wse2_monolithic_cfet_ald_profiles,
         "coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_profiles": coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_profiles,
+        "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles": nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles,
     }
 
 

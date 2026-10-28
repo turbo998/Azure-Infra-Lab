@@ -15086,6 +15086,53 @@
         "uncompensated_bspdn_ntsv_keyhole_void_or_m0_m1_em_early_failure_pct": 7.2,
         "coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_slo_met": false
       }
+    ],
+    "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_profiles": [
+      {
+        "nbcl5_tbtden_temav_trains": 8,
+        "governance_mode": "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nbcl5_tbtden_temav_pods": 32,
+        "electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct": 66.4,
+        "nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct": 89.6,
+        "semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms": 0.13,
+        "unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct": 0.0,
+        "edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct": 0.0,
+        "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met": true
+      },
+      {
+        "nbcl5_tbtden_temav_trains": 32,
+        "governance_mode": "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge",
+        "gpu_nodes": 16,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nbcl5_tbtden_temav_pods": 128,
+        "electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct": 66.4,
+        "nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct": 89.6,
+        "semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms": 0.13,
+        "unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct": 0.0,
+        "edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms": 0.13,
+        "wan_bandwidth_reduction_pct": 99.7,
+        "uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct": 0.0,
+        "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met": true
+      },
+      {
+        "nbcl5_tbtden_temav_trains": 8,
+        "governance_mode": "raw_cloud_uncompensated_nbocl3_nb2o5_tls_dielectric_loss_and_jj_ic_spread",
+        "gpu_nodes": 4,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_nbcl5_tbtden_temav_pods": 32,
+        "electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct": 15.0,
+        "nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct": 19.5,
+        "semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms": 486.0,
+        "unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct": 1.9,
+        "edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms": 285.0,
+        "wan_bandwidth_reduction_pct": 12.0,
+        "uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct": 7.3,
+        "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met": false
+      }
     ]
   },
   "demo_5_multiregion_dr": {
@@ -28531,5 +28578,37 @@
       "coetcp2_coamd2_co2co8_cuhfacvtms_2nm_gaa_bspdn_m0_m1_co_cu_interconnect_ald_slo_met": false
     }
   },
-  "trace_sha256": "8b00fe4bf8f5bf48c8a15b5b1285b475d0ed1f7b9f833cc1b895b91e31e604f4"
+  "demo_269_nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald": {
+    "governed_nbcl5_tbtden_temav_8_trains": {
+      "nbcl5_tbtden_temav_trains": 8,
+      "governance_mode": "pinn_mpc_nbcl5_tbtden_temav_nbocl3_stripping_and_superconducting_qubit_nbn_jj_tls_free_ald_sil3_edge",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_nbcl5_tbtden_temav_pods": 32,
+      "electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct": 66.4,
+      "nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct": 89.6,
+      "semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms": 0.13,
+      "unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct": 0.0,
+      "edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms": 0.13,
+      "wan_bandwidth_reduction_pct": 99.7,
+      "uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct": 0.0,
+      "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met": true
+    },
+    "raw_nbcl5_tbtden_temav_8_trains": {
+      "nbcl5_tbtden_temav_trains": 8,
+      "governance_mode": "raw_cloud_uncompensated_nbocl3_nb2o5_tls_dielectric_loss_and_jj_ic_spread",
+      "gpu_nodes": 4,
+      "node_sku": "Standard_NC40ads_H100_v5",
+      "active_nbcl5_tbtden_temav_pods": 32,
+      "electronic_6n5_nbcl5_6n5_tbtden_6n5_temav_purity_and_qubit_coherence_t1_yield_gain_pct": 15.0,
+      "nbocl3_magnetic_impurity_tls_dielectric_loss_and_jj_ic_spread_reduction_pct": 19.5,
+      "semi_s2_nfpa704_osha_psm_sil3_nbcl5_hcl_hydrolysis_pyrophoric_amido_and_cryo_quench_lockout_latency_ms": 486.0,
+      "unmitigated_nbcl5_hcl_corrosive_release_pyrophoric_autoignition_or_3he_cryo_overpressure_pct": 1.9,
+      "edge_qcl_tdlas_994cm1_418cm1_1235cm1_1038cm1_sficpms_rheed_xps_cryoq_latency_ms": 285.0,
+      "wan_bandwidth_reduction_pct": 12.0,
+      "uncompensated_nb2o5_tls_decoherence_or_vo2_mit_hysteresis_drift_pct": 7.3,
+      "nbcl5_tbtden_temav_superconducting_qubit_nbn_nbtin_josephson_junction_ald_slo_met": false
+    }
+  },
+  "trace_sha256": "387dd18fcc8e2dd833e2b3f8984ffa5818c0b2a46f1a0d989cc3b439ce08ca26"
 }
