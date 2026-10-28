@@ -15115,6 +15115,53 @@ def simulate_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_oh
     }
 
 
+def simulate_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_sandbox(
+    iretcpcod_mnetcp2_pdhfac2_trains: int = 8,
+    governance_mode: str = "pinn_mpc_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_edge",
+) -> dict[str, Any]:
+    trains = max(1, int(iretcpcod_mnetcp2_pdhfac2_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_edge"
+    )
+    gpu_nodes = max(4, math.ceil(trains / 2))
+    active_iretcpcod_mnetcp2_pdhfac2_pods = trains * 4
+    electronic_6n5_iretcpcod_6n5_mnetcp2_6n5_pdhfac2_6n5_ruetcp2_purity_and_sot_mram_euv_yield_gain_pct = (
+        67.8 if governed else 16.0
+    )
+    mn_outdiffusion_mgo_poisoning_and_euv_snh4_mirror_blistering_reduction_pct = (
+        90.8 if governed else 20.8
+    )
+    semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mnetcp2_and_hf_exhaust_lockout_latency_ms = (
+        0.12 if governed else 512.0
+    )
+    unmitigated_pyrophoric_mnetcp2_autoignition_or_euv_h2_radical_overpressure_pct = (
+        0.0 if governed else 1.9
+    )
+    edge_qcl_tdlas_2964cm1_3081cm1_1604cm1_insitu_gixrd_stfmr_latency_ms = (
+        0.12 if governed else 305.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_l12_irmn3_exchange_bias_loss_or_highna_euv_reflectance_drop_pct = (
+        0.0 if governed else 8.1
+    )
+    return {
+        "iretcpcod_mnetcp2_pdhfac2_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_iretcpcod_mnetcp2_pdhfac2_pods": active_iretcpcod_mnetcp2_pdhfac2_pods,
+        "electronic_6n5_iretcpcod_6n5_mnetcp2_6n5_pdhfac2_6n5_ruetcp2_purity_and_sot_mram_euv_yield_gain_pct": electronic_6n5_iretcpcod_6n5_mnetcp2_6n5_pdhfac2_6n5_ruetcp2_purity_and_sot_mram_euv_yield_gain_pct,
+        "mn_outdiffusion_mgo_poisoning_and_euv_snh4_mirror_blistering_reduction_pct": mn_outdiffusion_mgo_poisoning_and_euv_snh4_mirror_blistering_reduction_pct,
+        "semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mnetcp2_and_hf_exhaust_lockout_latency_ms": semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mnetcp2_and_hf_exhaust_lockout_latency_ms,
+        "unmitigated_pyrophoric_mnetcp2_autoignition_or_euv_h2_radical_overpressure_pct": unmitigated_pyrophoric_mnetcp2_autoignition_or_euv_h2_radical_overpressure_pct,
+        "edge_qcl_tdlas_2964cm1_3081cm1_1604cm1_insitu_gixrd_stfmr_latency_ms": edge_qcl_tdlas_2964cm1_3081cm1_1604cm1_insitu_gixrd_stfmr_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_l12_irmn3_exchange_bias_loss_or_highna_euv_reflectance_drop_pct": uncompensated_l12_irmn3_exchange_bias_loss_or_highna_euv_reflectance_drop_pct,
+        "iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_slo_met": governed,
+    }
+
+
 
 
 

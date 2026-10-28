@@ -282,6 +282,7 @@ from agent_infra_sizer import (
     simulate_scmecp3_sciprcp3_tma_eriprcp3_ymecp3_alscn_3d_fefet_6g_baw_and_er_y2o3_quantum_photonic_peald_sil3_sandbox,
     simulate_feco5_feamd2_mgcp2_teb_mram_pmtj_mgo_ceyig_photonic_isolator_ald_sil3_sandbox,
     simulate_niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_sil3_sandbox,
+    simulate_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -5901,6 +5902,27 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_niptsi_schottky_contact_spike_or_4hsic_carbon_cluster_delamination_pct"], 3.0)
         self.assertTrue(gov["niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_slo_met"])
         self.assertFalse(raw["niamd2_nietcp2_mecpptme3_si2h6_14a_cfet_niptsi_contact_and_4hsic_ohmic_ald_slo_met"])
+
+    def test_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_sandbox(self) -> None:
+        gov = simulate_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_sandbox(
+            8, "pinn_mpc_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_edge"
+        )
+        raw = simulate_iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_sil3_sandbox(
+            8, "raw_cloud_uncompensated_mn_mgo_outdiffusion_and_euv_snh4_blistering"
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["active_iretcpcod_mnetcp2_pdhfac2_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_iretcpcod_6n5_mnetcp2_6n5_pdhfac2_6n5_ruetcp2_purity_and_sot_mram_euv_yield_gain_pct"], 67.8)
+        self.assertEqual(gov["mn_outdiffusion_mgo_poisoning_and_euv_snh4_mirror_blistering_reduction_pct"], 90.8)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_psm_sil3_pyrophoric_mnetcp2_and_hf_exhaust_lockout_latency_ms"], 0.12)
+        self.assertEqual(gov["unmitigated_pyrophoric_mnetcp2_autoignition_or_euv_h2_radical_overpressure_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_mnetcp2_autoignition_or_euv_h2_radical_overpressure_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_tdlas_2964cm1_3081cm1_1604cm1_insitu_gixrd_stfmr_latency_ms"], 0.12)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_l12_irmn3_exchange_bias_loss_or_highna_euv_reflectance_drop_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_l12_irmn3_exchange_bias_loss_or_highna_euv_reflectance_drop_pct"], 3.0)
+        self.assertTrue(gov["iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_slo_met"])
+        self.assertFalse(raw["iretcpcod_mnetcp2_pdhfac2_ruetcp2_field_free_sot_mram_irmn3_and_highna_euv_ruir_cap_ald_slo_met"])
 
 
 if __name__ == "__main__":
