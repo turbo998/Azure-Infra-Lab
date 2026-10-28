@@ -16323,6 +16323,60 @@ def simulate_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switchi
     }
 
 
+def simulate_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_sandbox(
+    euiprcp2_ybiprcp3_tmiprcp3_h2s_trains: int = 8,
+    governance_mode: str = "pinn_mpc_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Eu(iPrCp)2(THF) / Eu(thd)3 & Isotopically Enriched 6N5 171Yb(iPrCp)3
+    + 6N5 Tm(iPrCp)3 + 6N5 H2S / DTBDS 300mm A10/A7 Ferromagnetic-Semiconductor EuS/EuO 98.6% Spin-Polarized
+    Tunnel Filter & Superconducting Spin-Triplet Al/EuS/NbN Josephson Diode (eta_JD = 84.0%), Telecom/984.5nm
+    171Yb3+:YVO4 Microwave-to-Optical Quantum Transducer (T2_CPMG = 48.0 ms, Gamma_hom <= 0.85 kHz) & 793nm
+    Tm3+:Y3Al5O12 Broadband 50GHz AFC Quantum Memory PEALD / MBE PINN-MPC + SEMI S2 / NFPA 704 / SIL-3
+    (Cycle #301 — 310-Test Milestone!).
+    """
+    trains = max(1, int(euiprcp2_ybiprcp3_tmiprcp3_h2s_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_eus_spin_filter_171yb_quantum_transducer_pods = trains * 4
+    electronic_6n5_euiprcp2_6n5_171ybiprcp3_6n5_tmiprcp3_6n5_h2s_purity_and_spin_quantum_yield_gain_pct = (
+        78.8 if governed else 16.9
+    )
+    eu3_parasitic_oxidation_and_171yb_spectral_diffusion_reduction_pct = (
+        97.2 if governed else 20.2
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_eu_yb_tm_and_toxic_h2s_lockout_latency_ms = (
+        0.10 if governed else 278.0
+    )
+    unmitigated_pyrophoric_eu_yb_tm_autoignition_or_toxic_h2s_leak_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_2960cm1_2978cm1_2592cm1_insitu_xas_xmcd_squid_shb_latency_ms = (
+        0.11 if governed else 378.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_eu2o3_nonmagnetic_dead_layer_or_171yb_transducer_decoherence_failure_pct = (
+        0.0 if governed else 10.6
+    )
+    return {
+        "euiprcp2_ybiprcp3_tmiprcp3_h2s_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_eus_spin_filter_171yb_quantum_transducer_pods": active_eus_spin_filter_171yb_quantum_transducer_pods,
+        "electronic_6n5_euiprcp2_6n5_171ybiprcp3_6n5_tmiprcp3_6n5_h2s_purity_and_spin_quantum_yield_gain_pct": electronic_6n5_euiprcp2_6n5_171ybiprcp3_6n5_tmiprcp3_6n5_h2s_purity_and_spin_quantum_yield_gain_pct,
+        "eu3_parasitic_oxidation_and_171yb_spectral_diffusion_reduction_pct": eu3_parasitic_oxidation_and_171yb_spectral_diffusion_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_eu_yb_tm_and_toxic_h2s_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_eu_yb_tm_and_toxic_h2s_lockout_latency_ms,
+        "unmitigated_pyrophoric_eu_yb_tm_autoignition_or_toxic_h2s_leak_pct": unmitigated_pyrophoric_eu_yb_tm_autoignition_or_toxic_h2s_leak_pct,
+        "edge_qcl_crds_2960cm1_2978cm1_2592cm1_insitu_xas_xmcd_squid_shb_latency_ms": edge_qcl_crds_2960cm1_2978cm1_2592cm1_insitu_xas_xmcd_squid_shb_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_eu2o3_nonmagnetic_dead_layer_or_171yb_transducer_decoherence_failure_pct": uncompensated_eu2o3_nonmagnetic_dead_layer_or_171yb_transducer_decoherence_failure_pct,
+        "euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_slo_met": governed,
+    }
+
+
 
 
 

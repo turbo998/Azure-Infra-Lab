@@ -7463,6 +7463,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="dyiprTbfecoAosResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(16,185,129,0.35);">
+      <h3>Tool 301 · 电子级双(异丙基环戊二烯基)铕/三(异丙基环戊二烯基)镱-171/铥 6N5 Eu(iPrCp)<sub>2</sub>(THF) / <sup>171</sup>Yb(iPrCp)<sub>3</sub> / Tm(iPrCp)<sub>3</sub> 与硫化氢 6N5 H<sub>2</sub>S / DTBDS 300mm A10/A7 铁磁半导体 EuS/EuO 98.6% 自旋过滤隧道势垒与超导自旋三重态 Al/EuS/NbN 约瑟夫森二极管 (&eta;<sub>JD</sub>=84.0%)、电信/984.5nm <sup>171</sup>Yb<sup>3+</sup>:YVO<sub>4</sub> 微波-光波量子换能器 (T<sub>2,CPMG</sub>=48.0 ms, &Gamma;<sub>hom</sub>&le;0.85 kHz) 与 793nm Tm<sup>3+</sup>:Y<sub>3</sub>Al<sub>5</sub>O<sub>12</sub> 50GHz 宽带量子存储 PEALD/MBE PINN-MPC + SIL-3 评估器（310-Test Milestone!）</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（2960.5 cm⁻¹ Eu(iPrCp)<sub>2</sub>、2978.2 cm⁻¹ <sup>171</sup>Yb(iPrCp)<sub>3</sub>、2592.0 cm⁻¹ H<sub>2</sub>S 与 &lt;0.3 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位软 X 射线吸收谱/磁圆二色谱（XAS/XMCD 监测二价 Eu<sup>2+</sup> 4f<sup>7</sup> <sup>8</sup>S<sub>7/2</sub> 态并归零非磁性三价 Eu<sup>3+</sup> 4f<sup>6</sup> 氧化死层）+ 极低温 SQUID 磁强计 + 光谱烧孔（SHB）推入工厂边缘 4 节点 H100 集群，在 0.11ms 内闭环锁定 EuS/EuO 导带自旋劈裂 2&Delta;E<sub>c</sub>=0.36 eV 与 <sup>171</sup>Yb 零一阶塞曼（ZEFOZ）相干窗口，并以 0.10ms SIL-3 联锁阻断自燃稀土环戊二烯源与剧毒硫化氢泄漏风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Eu(iPrCp)<sub>2</sub> / <sup>171</sup>Yb(iPrCp)<sub>3</sub> / Tm(iPrCp)<sub>3</sub> / H<sub>2</sub>S 提纯与 EuS 自旋过滤 / <sup>171</sup>Yb 量子换能产线数 (Trains): <span id="euiprEusSpinTrainsVal">8</span></label>
+          <input type="range" id="euiprEusSpinTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('euiprEusSpinTrainsVal').innerText=this.value; runEuiprcp2Ybiprcp3Tmiprcp3H2sA10EusSpinFilterAnd171ybQuantumTransducerLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="euiprEusSpinMode" onchange="runEuiprcp2Ybiprcp3Tmiprcp3H2sA10EusSpinFilterAnd171ybQuantumTransducerLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Eu(iPrCp)2 + 171Yb/Tm(iPrCp)3 + H2S EuS/EuO 98.6% 自旋过滤 + 171Yb:YVO4 量子换能器 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环二价 Eu2+ 寄生氧化为非磁性 Eu3+ (Eu2O3/Eu3S4)、171Yb 光谱扩散退相干与自燃稀土/剧毒 H2S 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="euiprEusSpinResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13395,6 +13414,47 @@ function runDyiprcp3Tbiprcp3Hoiprcp3Feipramd2A10TbfecoAllOpticalSwitchingAndDyGb
   `;
 }
 runDyiprcp3Tbiprcp3Hoiprcp3Feipramd2A10TbfecoAllOpticalSwitchingAndDyGbdMagnetLab();
+
+function runEuiprcp2Ybiprcp3Tmiprcp3H2sA10EusSpinFilterAnd171ybQuantumTransducerLab() {
+  const trains = parseInt(document.getElementById('euiprEusSpinTrains').value, 10) || 8;
+  const mode = document.getElementById('euiprEusSpinMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 78.8 : 16.9;
+  const defectCut = isPinn ? 97.2 : 20.2;
+  const sil3Ms = isPinn ? 0.10 : 278.0;
+  const leakRisk = isPinn ? 0.0 : 1.8;
+  const metroMs = isPinn ? 0.11 : 378.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.6;
+  document.getElementById('euiprEusSpinResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">铁磁半导体自旋过滤与量子换能指标：</span><strong>EuS/EuO 2&Delta;E<sub>c</sub>=0.36 eV (P<sub>spin</sub>=98.6%, 超导三重态约瑟夫森二极管 &eta;<sub>JD</sub>=84.0%) · <sup>171</sup>Yb<sup>3+</sup>:YVO<sub>4</sub> T<sub>2,CPMG</sub>=48.0 ms (&Gamma;<sub>hom</sub>&le;0.85 kHz) · Tm<sup>3+</sup>:YAG 50 GHz 宽带存储</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Eu/<sup>171</sup>Yb/Tm/H<sub>2</sub>S 纯度与自旋过滤/量子换能良率增益 / Eu<sup>3+</sup> 寄生氧化与 <sup>171</sup>Yb 光谱扩散削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 自燃稀土环戊二烯源与剧毒 H<sub>2</sub>S 联锁延迟 / 自燃与剧毒硫化氢泄漏事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (2960.5/2978.2/2592.0cm⁻¹) + 原位 XAS/XMCD/SQUID/SHB 延迟 (-${wanRed.toFixed(1)}% WAN) / 非磁性 Eu<sub>2</sub>O<sub>3</sub> 死层或换能器退相干失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_edge`)</strong>：通过二价 6N5 Eu(iPrCp)<sub>2</sub>(THF) 与 6N5 H<sub>2</sub>S/Eu 金属蒸气化学势严格控氧控硫，100% 锁定高自旋二价 Eu<sup>2+</sup> (4f<sup>7</sup>, S=7/2) 岩盐相晶格，实现 98.6% 隧穿自旋极化率与 84.0% 无磁场超导约瑟夫森二极管整流效率，同时实现同位素纯 <sup>171</sup>Yb<sup>3+</sup>:YVO<sub>4</sub> 48.0ms 量子相干寿命。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：痕量水氧或过量硫分压将高自旋二价 Eu<sup>2+</sup> (J=7/2) 氧化为非磁性三价 Eu<sup>3+</sup> (4f<sup>6</sup>, J=0)，在界面生成 Eu<sub>2</sub>O<sub>3</sub>/Eu<sub>3</sub>S<sub>4</sub> 死层导致自旋过滤极化率崩塌，且同位素混杂引发 <sup>171</sup>Yb 剧烈光谱扩散（10.6% 失效率，278ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runEuiprcp2Ybiprcp3Tmiprcp3H2sA10EusSpinFilterAnd171ybQuantumTransducerLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

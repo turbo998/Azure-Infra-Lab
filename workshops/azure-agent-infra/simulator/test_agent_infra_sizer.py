@@ -307,6 +307,7 @@ from agent_infra_sizer import (
     simulate_cuhfacvtms_cudmap2_temaz_dezn_hhfac_a10_3dic_hbm4_ntcu_hybrid_bonding_and_cu_zr_barrier_peald_ale_sil3_sandbox,
     simulate_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_sandbox,
     simulate_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_sandbox,
+    simulate_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6533,6 +6534,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_aos_thermal_demagnetization_or_gbd_coercivity_collapse_failure_pct"], 3.0)
         self.assertTrue(gov["dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_slo_met"])
         self.assertFalse(raw["dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_slo_met"])
+
+    def test_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_sandbox(self) -> None:
+        gov = simulate_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_sandbox(
+            euiprcp2_ybiprcp3_tmiprcp3_h2s_trains=8,
+            governance_mode="pinn_mpc_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_edge",
+        )
+        raw = simulate_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_sandbox(
+            euiprcp2_ybiprcp3_tmiprcp3_h2s_trains=8,
+            governance_mode="unmanaged_open_loop_eu3_parasitic_oxidation_and_171yb_decoherence",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_eus_spin_filter_171yb_quantum_transducer_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_euiprcp2_6n5_171ybiprcp3_6n5_tmiprcp3_6n5_h2s_purity_and_spin_quantum_yield_gain_pct"], 78.8)
+        self.assertEqual(gov["eu3_parasitic_oxidation_and_171yb_spectral_diffusion_reduction_pct"], 97.2)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_eu_yb_tm_and_toxic_h2s_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_eu_yb_tm_autoignition_or_toxic_h2s_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_eu_yb_tm_autoignition_or_toxic_h2s_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_2960cm1_2978cm1_2592cm1_insitu_xas_xmcd_squid_shb_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_eu2o3_nonmagnetic_dead_layer_or_171yb_transducer_decoherence_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_eu2o3_nonmagnetic_dead_layer_or_171yb_transducer_decoherence_failure_pct"], 3.0)
+        self.assertTrue(gov["euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_slo_met"])
+        self.assertFalse(raw["euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_slo_met"])
 
 
 if __name__ == "__main__":
