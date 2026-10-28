@@ -16270,6 +16270,59 @@ def simulate_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_
     }
 
 
+def simulate_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_sandbox(
+    dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_trains: int = 8,
+    governance_mode: str = "pinn_mpc_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Dy(iPrCp)3 & 6N5 Tb(iPrCp)3 + 6N5 Ho(iPrCp)3 + 6N5 Fe/Co(iPr-AMD)2
+    300mm A10/A7 Ferrimagnetic Compensation-Point Tb0.22Fe0.68Co0.10 / Dy0.24Co0.76 3.2ps Single-Shot
+    All-Optical Helicity-Independent Switching (AO-HITS) Photonic-Spintronic Memory, Vapor Dy/Tb
+    Grain-Boundary Diffusion (Dy/Tb-GBD) High-Coercivity Nd2Fe14B Magnet & Single-Atom Ho/MgO(100)
+    Spin Memory PEALD / MBE PINN-MPC + SEMI S2 / NFPA 704 / SIL-3 (Cycle #300 — 300-Cycle & 300-Simulator Double Milestone!).
+    """
+    trains = max(1, int(dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_tbfeco_aos_dy_gbd_ho_spin_pods = trains * 4
+    electronic_6n5_dyiprcp3_6n5_tbiprcp3_6n5_hoiprcp3_6n5_feipramd2_purity_and_aos_gbd_yield_gain_pct = (
+        78.5 if governed else 16.8
+    )
+    compensation_temp_drift_and_heavy_rare_earth_core_overdiffusion_reduction_pct = (
+        97.1 if governed else 20.0
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_heavy_lanthanide_and_fe_co_amidinato_lockout_latency_ms = (
+        0.10 if governed else 276.0
+    )
+    unmitigated_pyrophoric_dy_tb_ho_autoignition_or_metal_amidinato_vapor_leak_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_2971cm1_2974cm1_1628cm1_insitu_fs_tr_moke_xmcd_sp_stm_latency_ms = (
+        0.11 if governed else 375.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_aos_thermal_demagnetization_or_gbd_coercivity_collapse_failure_pct = (
+        0.0 if governed else 10.8
+    )
+    return {
+        "dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tbfeco_aos_dy_gbd_ho_spin_pods": active_tbfeco_aos_dy_gbd_ho_spin_pods,
+        "electronic_6n5_dyiprcp3_6n5_tbiprcp3_6n5_hoiprcp3_6n5_feipramd2_purity_and_aos_gbd_yield_gain_pct": electronic_6n5_dyiprcp3_6n5_tbiprcp3_6n5_hoiprcp3_6n5_feipramd2_purity_and_aos_gbd_yield_gain_pct,
+        "compensation_temp_drift_and_heavy_rare_earth_core_overdiffusion_reduction_pct": compensation_temp_drift_and_heavy_rare_earth_core_overdiffusion_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_heavy_lanthanide_and_fe_co_amidinato_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_heavy_lanthanide_and_fe_co_amidinato_lockout_latency_ms,
+        "unmitigated_pyrophoric_dy_tb_ho_autoignition_or_metal_amidinato_vapor_leak_pct": unmitigated_pyrophoric_dy_tb_ho_autoignition_or_metal_amidinato_vapor_leak_pct,
+        "edge_qcl_crds_2971cm1_2974cm1_1628cm1_insitu_fs_tr_moke_xmcd_sp_stm_latency_ms": edge_qcl_crds_2971cm1_2974cm1_1628cm1_insitu_fs_tr_moke_xmcd_sp_stm_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_aos_thermal_demagnetization_or_gbd_coercivity_collapse_failure_pct": uncompensated_aos_thermal_demagnetization_or_gbd_coercivity_collapse_failure_pct,
+        "dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_slo_met": governed,
+    }
+
+
 
 
 

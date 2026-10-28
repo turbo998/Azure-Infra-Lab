@@ -7444,6 +7444,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="priprSmniMottResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(16,185,129,0.35);">
+      <h3>Tool 300 · 电子级三(异丙基环戊二烯基)镝/铽/钬 6N5 Dy(iPrCp)<sub>3</sub> / Tb(iPrCp)<sub>3</sub> / Ho(iPrCp)<sub>3</sub> 与双(N,N'-二异丙基乙脒基)铁/钴 6N5 Fe(iPr-AMD)<sub>2</sub> / Co(iPr-AMD)<sub>2</sub> 300mm A10/A7 亚铁磁角动量补偿点稀土-过渡金属 (Tb<sub>0.22</sub>Fe<sub>0.68</sub>Co<sub>0.10</sub> / Dy<sub>0.24</sub>Co<sub>0.76</sub>) 3.2ps 单脉冲全光非螺旋性偏振无关磁翻转 (AO-HITS, E<sub>sw</sub>&le;1.8 fJ/bit, v<sub>DW</sub>=5.4 km/s)、气相镝/铽晶界扩散 (Dy/Tb-GBD) 高矫顽力 Nd<sub>2</sub>Fe<sub>14</sub>B 片上微磁体 (H<sub>cj</sub>=34.5 kOe, 重稀土用量 -72%) 与单原子 Ho/MgO(100) 表面自旋存储 PEALD/MBE PINN-MPC + SIL-3 评估器（300-Cycle &amp; 300-Simulator Double Milestone!）</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（2971.4 cm⁻¹ Dy(iPrCp)<sub>3</sub>、2974.8 cm⁻¹ Tb(iPrCp)<sub>3</sub>、1628.5 cm⁻¹ Fe/Co(iPr-AMD)<sub>2</sub> 脒基与 &lt;0.5 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位飞秒时间分辨磁光克尔效应（fs-TR-MOKE 监测 3.2ps 亚皮秒退磁与角动量补偿点 T<sub>A</sub>=305.0&plusmn;0.5 K）+ 同步辐射 XMCD (Tb/Dy M<sub>4,5</sub> 与 Fe/Co L<sub>2,3</sub> 反平行亚晶格自旋磁矩) + 自旋极化扫描隧道显微镜（SP-STM）推入工厂边缘 4 节点 H100 集群，在 0.11ms 内闭环锁定重稀土/过渡金属原子计量比与晶界扩散梯度，并以 0.10ms SIL-3 联锁阻断遇空气/湿气剧烈自燃的重稀土环戊二烯金属有机源与过渡金属脒基蒸气暴露风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Dy(iPrCp)<sub>3</sub> / Tb(iPrCp)<sub>3</sub> / Ho(iPrCp)<sub>3</sub> / Fe(iPr-AMD)<sub>2</sub> 提纯与 TbFeCo 全光磁翻转 / Dy-GBD 产线数 (Trains): <span id="dyiprTbfecoAosTrainsVal">8</span></label>
+          <input type="range" id="dyiprTbfecoAosTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('dyiprTbfecoAosTrainsVal').innerText=this.value; runDyiprcp3Tbiprcp3Hoiprcp3Feipramd2A10TbfecoAllOpticalSwitchingAndDyGbdMagnetLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="dyiprTbfecoAosMode" onchange="runDyiprcp3Tbiprcp3Hoiprcp3Feipramd2A10TbfecoAllOpticalSwitchingAndDyGbdMagnetLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Dy/Tb/Ho(iPrCp)3 + Fe/Co(iPr-AMD)2 Tb0.22Fe0.68Co0.10 3.2ps 全光磁翻转 + Dy/Tb-GBD 晶界扩散 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环亚铁磁角动量补偿点 T_A 漂移致多畴热退磁、晶粒内部重稀土过扩散与自燃重稀土源泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="dyiprTbfecoAosResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13335,6 +13354,47 @@ function runPriprcp3Smiprcp3Ndiprcp3Niipramd2A10MottNickelateLifNeuronAndPrYsoQu
   `;
 }
 runPriprcp3Smiprcp3Ndiprcp3Niipramd2A10MottNickelateLifNeuronAndPrYsoQuantumMemoryLab();
+
+function runDyiprcp3Tbiprcp3Hoiprcp3Feipramd2A10TbfecoAllOpticalSwitchingAndDyGbdMagnetLab() {
+  const trains = parseInt(document.getElementById('dyiprTbfecoAosTrains').value, 10) || 8;
+  const mode = document.getElementById('dyiprTbfecoAosMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 78.5 : 16.8;
+  const defectCut = isPinn ? 97.1 : 20.0;
+  const sil3Ms = isPinn ? 0.10 : 276.0;
+  const leakRisk = isPinn ? 0.0 : 1.8;
+  const metroMs = isPinn ? 0.11 : 375.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.8;
+  document.getElementById('dyiprTbfecoAosResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">亚铁磁全光翻转与晶界扩散指标：</span><strong>Tb<sub>0.22</sub>Fe<sub>0.68</sub>Co<sub>0.10</sub> T<sub>A</sub>=305.0&plusmn;0.5 K · 3.2 ps 单脉冲 AO-HITS (E<sub>sw</sub>&le;1.8 fJ/bit, v<sub>DW</sub>=5.4 km/s) · Dy/Tb-GBD H<sub>cj</sub>=34.5 kOe · Ho/MgO(100) 单原子自旋存储</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Dy/Tb/Ho/Fe/Co 纯度与全光磁翻转/GBD 磁体良率增益 / 补偿温度 T<sub>A</sub> 漂移与重稀土晶内过扩散削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 自燃重稀土环戊二烯源与铁/钴脒基联锁延迟 / 自燃与毒性金属有机蒸气暴露事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (2971.4/2974.8/1628.5cm⁻¹) + 原位 fs-TR-MOKE/XMCD/SP-STM 延迟 (-${wanRed.toFixed(1)}% WAN) / 全光翻转热退磁或 GBD 矫顽力崩塌失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_edge`)</strong>：通过 6N5 Tb(iPrCp)<sub>3</sub>/Dy(iPrCp)<sub>3</sub> 与 Fe/Co(iPr-AMD)<sub>2</sub> 原子级交替沉积将亚铁磁角动量补偿温度锁定在 305.0&plusmn;0.5 K（成分偏差 &lt;&plusmn;0.15 at.%），实现 6.4T CPO 光脉冲直驱 3.2ps 非易失自旋翻转（&le;1.8 fJ/bit）及 5.4 km/s 零沃克击穿畴壁移动，并通过气相 Dy/Tb 晶界扩散构建 2.5nm 核壳晶界层实现 34.5 kOe 矫顽力（节省 72% 重稀土）。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：稀土成分偏差 &gt;0.8 at.% 或痕量氧污染导致角动量补偿温度 T<sub>A</sub> 漂移超过 &plusmn;18 K，飞秒激光脉冲无法触发动量交换翻转而退化为随机多畴热退磁；且气相晶界扩散退火失控导致 Dy/Tb 渗入主相晶粒内部使剩磁 B<sub>r</sub> 下降 18%（10.8% 失效率，276ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runDyiprcp3Tbiprcp3Hoiprcp3Feipramd2A10TbfecoAllOpticalSwitchingAndDyGbdMagnetLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

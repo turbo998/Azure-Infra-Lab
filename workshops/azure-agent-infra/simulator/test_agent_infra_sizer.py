@@ -306,6 +306,7 @@ from agent_infra_sizer import (
     simulate_tmbi_tdmasb_dete_dmse_a10_2d_cfet_semimetallic_bi_sb_quantum_limit_contact_topological_bst_sot_mram_and_3dic_peltier_cooler_mbe_peald_sil3_sandbox,
     simulate_cuhfacvtms_cudmap2_temaz_dezn_hhfac_a10_3dic_hbm4_ntcu_hybrid_bonding_and_cu_zr_barrier_peald_ale_sil3_sandbox,
     simulate_priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_sil3_sandbox,
+    simulate_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6508,6 +6509,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_mott_imt_hysteresis_collapse_or_pr_yso_spin_wave_decoherence_failure_pct"], 3.0)
         self.assertTrue(gov["priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_slo_met"])
         self.assertFalse(raw["priprcp3_smiprcp3_ndiprcp3_niipramd2_a10_mott_nickelate_lif_neuron_and_pr_yso_quantum_memory_peald_slo_met"])
+
+    def test_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_sandbox(self) -> None:
+        gov = simulate_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_sandbox(
+            dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_trains=8,
+            governance_mode="pinn_mpc_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_edge",
+        )
+        raw = simulate_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_sandbox(
+            dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_trains=8,
+            governance_mode="unmanaged_open_loop_compensation_temp_drift_and_rare_earth_oxidation",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_tbfeco_aos_dy_gbd_ho_spin_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_dyiprcp3_6n5_tbiprcp3_6n5_hoiprcp3_6n5_feipramd2_purity_and_aos_gbd_yield_gain_pct"], 78.5)
+        self.assertEqual(gov["compensation_temp_drift_and_heavy_rare_earth_core_overdiffusion_reduction_pct"], 97.1)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_heavy_lanthanide_and_fe_co_amidinato_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_dy_tb_ho_autoignition_or_metal_amidinato_vapor_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_dy_tb_ho_autoignition_or_metal_amidinato_vapor_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_2971cm1_2974cm1_1628cm1_insitu_fs_tr_moke_xmcd_sp_stm_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_aos_thermal_demagnetization_or_gbd_coercivity_collapse_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_aos_thermal_demagnetization_or_gbd_coercivity_collapse_failure_pct"], 3.0)
+        self.assertTrue(gov["dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_slo_met"])
+        self.assertFalse(raw["dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_slo_met"])
 
 
 if __name__ == "__main__":
