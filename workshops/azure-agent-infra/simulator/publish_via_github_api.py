@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 292
-CURRENT_BLUEPRINTS = 285
-CURRENT_SIMULATORS = 284
-CURRENT_TESTS = 293
+CURRENT_CHAPTERS = 293
+CURRENT_BLUEPRINTS = 286
+CURRENT_SIMULATORS = 285
+CURRENT_TESTS = 294
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #284 (285-Blueprint Milestone!) — Chapter 289 + Summary 290 (292 Chapters) Autonomous Electronic-Grade Ultrapure Pentakis(dimethylamino)tantalum(V) (6N5 PDMAT >=99.99995%, Nb<=0.02ppmw, Fe/Cr/Ni/Cu<=0.001ppbw) & Tert-butylimidotris(diethylamido)tantalum(V) (6N5 TBTDET >=99.99995%) + Bis(tert-butylimido)bis(dimethylamino)tungsten(VI) (6N5 BTBMDMAW >=99.99995%, Mo<=0.02ppmw) + Diisopropyl Telluride (6N5 DIPTe >=99.99995%) Sub-1nm 10A/7A CFET 1.2nm Amorphous TaC0.45N0.55 Liner-Barrier (rho=165 uOhm*cm, Ea=2.68eV, 99.2% step coverage) & 3D 6-Bit (64-Level, Gmax/Gmin=128, alpha_p/alpha_d=0.18/-0.22) TaO1.45/Ta2O5 Synaptic RRAM + Monolayer Td-WTe2 Weyl Semimetal PEALD PINN-MPC, 10kHz QCL-TDLAS/FTIR (942.5/1284.6/1018.2/2962.4cm-1) + SF-ICP-MS + LEIS/B1500A/ARPES & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
-        "Blueprint #285, Simulator #284, Tool 284 & 293/293 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #285 (285-Cycle & 285-Simulator Double Milestone!) — Chapter 290 + Summary 291 (293 Chapters) Autonomous Electronic-Grade Ultrapure Tetrakis(dimethylamino)titanium(IV) (6N5 TDMAT >=99.99995%, Zr/Hf<=0.01ppmw, Fe/Cr/Ni/Cu<=0.001ppbw) & Tetrakis(ethylmethylamino)titanium(IV) (6N5 TEMAT >=99.99995%) + Cyclopentadienyltris(dimethylamino)titanium(IV) (6N5 CpTi(NMe2)3 >=99.99995%) + Tris(dimethylamino)antimony(III) (6N5 Sb(NMe2)3 >=99.99995%) / Diethyl Telluride (6N5 Te(Et)2 >=99.99995%) Sub-1nm 10A/7A CFET 1.1nm Dual-Work-Function TiN1-xCx Gate (Phi_eff,n=4.22eV, Phi_eff,p=4.96eV, rho=118 uOhm*cm, 99.4% step coverage), 1c/0a DRAM HAR 90:1 Rutile TiO2 (k=98.5, EOT=0.36nm, Jleak=3.2e-8 A/cm2) & 3D Interfacial Phase-Change Memory (iPCM [(TiTe2)1/(Sb2Te3)2]n Superlattice, Ereset=18.5fJ, tset=1.8ns, 2.5e11 cycles, drift nu=0.0045) PEALD/ALE PINN-MPC, 10kHz QCL-TDLAS/FTIR (948.4/1256.2/924.8/2958.6cm-1) + SF-ICP-MS + GIXRD/HAADF-STEM/B1500A & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Interlock, "
+        "Blueprint #286, Simulator #285, Tool 285 & 294/294 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")

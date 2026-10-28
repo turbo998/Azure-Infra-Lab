@@ -7159,6 +7159,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="pdmatTbtdetWte2Result"></div>
     </div>
+
+    <div class="card" style="margin-top:1rem; border-color:#10b981;">
+      <h3>Tool 285 (285-Cycle &amp; 285-Simulator Double Milestone!) · 电子级四(二甲氨基)钛 6N5 TDMAT 与四(乙基甲基氨基)钛 6N5 TEMAT + 环戊二烯基三(二甲氨基)钛 6N5 CpTi(NMe<sub>2</sub>)<sub>3</sub> + 三(二甲氨基)锑 6N5 Sb(NMe<sub>2</sub>)<sub>3</sub> / 二乙基碲 6N5 Te(Et)<sub>2</sub> 10A/7A CFET 1.1nm 双功函数碳氮化钛 (TiN<sub>1-x</sub>C<sub>x</sub>) 纳米片栅极、1c/0a DRAM HAR 90:1 金红石相二氧化钛 (&kappa;=98.5, EOT=0.36nm) 电容与 3D 界面相变存储器 (iPCM TiTe<sub>2</sub>/Sb<sub>2</sub>Te<sub>3</sub> 超晶格, E<sub>reset</sub>=18.5fJ) 超循环 PEALD/ALE PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">评估多级高真空精馏提纯无氯液态烷基胺钛 6N5 TDMAT (Ti(NMe<sub>2</sub>)<sub>4</sub> &ge;99.99995%, Zr/Hf &le;0.01 ppmw, Fe/Cr/Ni/Cu/Na &le;0.001 ppbw, Cl<sup>-</sup> &le;0.05 ppmw) + 高热稳定性不对称烷基胺钛 6N5 TEMAT (Ti(NMeEt)<sub>4</sub> &ge;99.99995%, T<sub>decomp</sub> &gt;275&deg;C) + 杂配环戊二烯基钛 6N5 CpTi(NMe<sub>2</sub>)<sub>3</sub> (&ge;99.99995%) + 三(二甲氨基)锑 6N5 Sb(NMe<sub>2</sub>)<sub>3</sub> / 二乙基碲 6N5 Te(Et)<sub>2</sub> 在亚 1 纳米 (10A/7A CFET) 垂直堆叠纳米片栅极 1.1nm 超薄双功函数碳氮化钛 (TiN<sub>1-x</sub>C<sub>x</sub>, &Phi;<sub>eff,n</sub>=4.22 eV, &Phi;<sub>eff,p</sub>=4.96 eV, &rho;=118 &mu;&Omega;&middot;cm, 台阶覆盖率 99.4%, 彻底消除 TiCl<sub>4</sub> 氯残留引发的栅氧 TDDB 退化)、1c/0a 节点 DRAM 深宽比 90:1 金红石相 Rutile-TiO<sub>2</sub> (&kappa;=98.5, EOT=0.36 nm, 漏电流 J<sub>leak</sub>=3.2&times;10⁻⁸ A/cm²) 高介电电容，以及 3D Cross-Point 界面相变存储器 (iPCM [(TiTe<sub>2</sub>)<sub>1</sub>/(Sb<sub>2</sub>Te<sub>3</sub>)<sub>2</sub>]<sub>n</sub> 范德华超晶格，复习能量 E<sub>reset</sub>=18.5 fJ &le;30 fJ，切换速度 1.8 ns，寿命 2.5&times;10¹¹ 次，电阻漂移指数 &nu;=0.0045) 超循环 PEALD/ALE 中的定量协同、10kHz QCL-TDLAS (948.4cm⁻¹ TDMAT Ti-N-C / 1262.8cm⁻¹ TEMAT C-N / 1024.5cm⁻¹ CpTi C-H / 2182.6cm⁻¹ SbH<sub>3</sub>) + 原位 RHEED/SE/B1500A 闭环与 SEMI S2 / NFPA 704 / OSHA 29 CFR 1910.1000 / IEC 61511 SIL-3 剧毒溶血性锑化氢 (SbH<sub>3</sub>, TLV-TWA 0.1 ppm) 与有机碲/烷基胺水解硬联锁延迟。</p>
+      <div class="row">
+        <div>
+          <label>TDMAT / TEMAT / CpTi(NMe2)3 / Sb2Te3 提纯与 10A TiN / DRAM TiO2 / iPCM 产线数 (Trains): <span id="tdmatTematIpcmTrainsVal">8</span></label>
+          <input type="range" id="tdmatTematIpcmTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('tdmatTematIpcmTrainsVal').innerText=this.value; runTdmatTematCptinme23Sb2te3CfetTinGateDramRutileTio2AndIpcmLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="tdmatTematIpcmMode" onchange="runTdmatTematCptinme23Sb2te3CfetTinGateDramRutileTio2AndIpcmLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 TDMAT/TEMAT 10A CFET 双功函数 TiN 栅 + 6N5 CpTi(NMe2)3 金红石 TiO2 + iPCM 超晶格 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端非补偿开环 TiCl4 氯腐蚀 TDDB、锐钛矿低 &kappa; 相变与体相 GST225 高能耗熔融相变（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="tdmatTematIpcmResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -12399,6 +12418,50 @@ function runPdmatTbtdetBtbmdmawDipte10aCfetTacnBarrierAndTao2Wte2SynapseLab() {
   `;
 }
 runPdmatTbtdetBtbmdmawDipte10aCfetTacnBarrierAndTao2Wte2SynapseLab();
+
+function runTdmatTematCptinme23Sb2te3CfetTinGateDramRutileTio2AndIpcmLab() {
+  const trains = parseInt(document.getElementById('tdmatTematIpcmTrains').value, 10);
+  const mode = document.getElementById('tdmatTematIpcmMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.floor((trains + 1) / 2));
+  const pods = trains * 4;
+  const purityCfetDramIpcmYieldGain = isPinn ? 72.6 : 13.8;
+  const wfLeakageResetEnergyRed = isPinn ? 94.0 : 16.5;
+  const sil3Ms = isPinn ? 0.10 : 225.0;
+  const sbh3TellurideExposurePct = isPinn ? 0.0 : 1.8;
+  const tdlasRheedSeB1500aMs = isPinn ? 0.11 : 325.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const anataseIpcmDriftPct = isPinn ? 0.0 : 9.2;
+
+  document.getElementById('tdmatTematIpcmResult').innerHTML = `
+    <div class="card" style="margin-bottom:0; background:#0b1220;">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">${gpuNodes} Nodes / ${pods} Pods</div>
+          <div class="lbl">AKS Standard_NC40ads_H100_v5 节点 (${trains} 条 TDMAT + TEMAT + CpTi(NMe2)3 + Sb2Te3 产线)</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#ef4444'}">+${purityCfetDramIpcmYieldGain.toFixed(1)}% / -${wfLeakageResetEnergyRed.toFixed(1)}%</div>
+          <div class="lbl">6N5 Ti/Sb/Te 前驱体纯度与 CFET/DRAM/iPCM 良率增益 / 功函数漂移、电容漏电与 iPCM 擦写能耗削减</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${sbh3TellurideExposurePct.toFixed(1)}%</div>
+          <div class="lbl">SIL-3 剧毒溶血性 SbH3 (0.1ppm) 与有机碲/烷基胺硬联锁延迟 / SbH3 外泄或胺水解事故率</div>
+        </div>
+        <div class="kpi">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${tdlasRheedSeB1500aMs.toFixed(2)} ms / ${anataseIpcmDriftPct.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-TDLAS (948.4/1262.8/1024.5/2182.6cm⁻¹) + 原位 RHEED/SE 延迟 (-${wanRed.toFixed(1)}% WAN) / 锐钛矿相变或 iPCM 电阻漂移率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>285-Cycle &amp; 285-Simulator Double Milestone! 闭环受控 (`pinn_mpc_tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_sil3_edge`)</strong>：通过无氯 6N5 TDMAT / 6N5 TEMAT 在 10A CFET 纳米片包覆沉积 1.1nm 双功函数 TiN<sub>1-x</sub>C<sub>x</sub> 栅极（&Phi;<sub>eff,n</sub>=4.22eV, &Phi;<sub>eff,p</sub>=4.96eV），利用 6N5 CpTi(NMe<sub>2</sub>)<sub>3</sub> 在 1c/0a DRAM HAR 90:1 深孔外延金红石相 Rutile-TiO<sub>2</sub>（&kappa;=98.5, EOT=0.36nm），并在 3D iPCM 中构筑 TiTe<sub>2</sub>/Sb<sub>2</sub>Te<sub>3</sub> 范德华超晶格（E<sub>reset</sub>=18.5fJ, &nu;=0.0045），配合 0.10ms SIL-3 联锁彻底阻断剧毒 SbH<sub>3</sub> 与有机碲外泄。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：传统 TiCl<sub>4</sub> 残留氯腐蚀高 &kappa; 栅氧诱发 TDDB 早期击穿，TiO<sub>2</sub> 退化为低介电锐钛矿相（&kappa;&approx;38），体相 GST<sub>225</sub> 熔融复位能耗高达 320fJ 且电阻漂移显著（9.2% 失效率，225ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runTdmatTematCptinme23Sb2te3CfetTinGateDramRutileTio2AndIpcmLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

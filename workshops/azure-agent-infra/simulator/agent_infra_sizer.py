@@ -15543,6 +15543,54 @@ def simulate_pdmat_tbtdet_btbmdmaw_dipte_10a_cfet_tacn_barrier_and_tao2_wte2_neu
     }
 
 
+def simulate_tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_sil3_sandbox(
+    tdmat_temat_cptinme23_sb2te3_trains: int = 8,
+    governance_mode: str = "pinn_mpc_tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 TDMAT & 6N5 TEMAT + 6N5 CpTi(NMe2)3 + 6N5 Sb(NMe2)3 / 6N5 Te(Et)2 10A CFET Dual-WF TiN Gate, 1c/0a DRAM HAR 90:1 Rutile-TiO2 & 3D iPCM Superlattice PEALD/ALE PINN-MPC + SIL-3."""
+    trains = max(1, int(tdmat_temat_cptinme23_sb2te3_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_tdmat_temat_ipcm_pods = trains * 4
+    electronic_6n5_tdmat_6n5_temat_6n5_cptinme23_6n5_sbnme23_purity_and_cfet_dram_ipcm_yield_gain_pct = (
+        72.6 if governed else 13.8
+    )
+    cfet_wf_drift_dram_tio2_leakage_and_ipcm_reset_energy_reduction_pct = (
+        94.0 if governed else 16.5
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_stibine_organotellurium_lockout_latency_ms = (
+        0.10 if governed else 225.0
+    )
+    unmitigated_toxic_stibine_sbh3_or_organotellurium_hydrolysis_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_tdlas_948cm1_1262cm1_1024cm1_insitu_rheed_se_b1500a_latency_ms = (
+        0.11 if governed else 325.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_anatase_phase_or_ipcm_resistance_drift_pct = (
+        0.0 if governed else 9.2
+    )
+    return {
+        "tdmat_temat_cptinme23_sb2te3_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_tdmat_temat_ipcm_pods": active_tdmat_temat_ipcm_pods,
+        "electronic_6n5_tdmat_6n5_temat_6n5_cptinme23_6n5_sbnme23_purity_and_cfet_dram_ipcm_yield_gain_pct": electronic_6n5_tdmat_6n5_temat_6n5_cptinme23_6n5_sbnme23_purity_and_cfet_dram_ipcm_yield_gain_pct,
+        "cfet_wf_drift_dram_tio2_leakage_and_ipcm_reset_energy_reduction_pct": cfet_wf_drift_dram_tio2_leakage_and_ipcm_reset_energy_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_stibine_organotellurium_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_stibine_organotellurium_lockout_latency_ms,
+        "unmitigated_toxic_stibine_sbh3_or_organotellurium_hydrolysis_pct": unmitigated_toxic_stibine_sbh3_or_organotellurium_hydrolysis_pct,
+        "edge_qcl_tdlas_948cm1_1262cm1_1024cm1_insitu_rheed_se_b1500a_latency_ms": edge_qcl_tdlas_948cm1_1262cm1_1024cm1_insitu_rheed_se_b1500a_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_anatase_phase_or_ipcm_resistance_drift_pct": uncompensated_anatase_phase_or_ipcm_resistance_drift_pct,
+        "tdmat_temat_cptinme23_sb2te3_10a_cfet_tin_gate_dram_rutile_tio2_and_ipcm_superlattice_ald_slo_met": governed,
+    }
+
+
 
 
 
