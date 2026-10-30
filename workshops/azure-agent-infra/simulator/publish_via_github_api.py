@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 314
-CURRENT_BLUEPRINTS = 307
-CURRENT_SIMULATORS = 306
-CURRENT_TESTS = 315
+CURRENT_CHAPTERS = 315
+CURRENT_BLUEPRINTS = 308
+CURRENT_SIMULATORS = 307
+CURRENT_TESTS = 316
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,10 +504,10 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #306 — Chapter 311 + Summary 312 (314 Chapters) "
-        "Electronic-Grade 6N5 Pt(MeCp)Me3/Pt(hfac)2 + 6N5 TDMASn + 6N5 DESe + 6N5 TMA "
-        "A5 PtSe2/MoS2 VdW Contact, Pt Nanowire Plasmonic Interconnect & SnSe PCM "
-        "PEALD PINN-MPC + SIL-3, Blueprint #307, Simulator #306, Tool 306, 315/315 tests, bilingual sync"
+        "feat(azure-agent-infra): Cycle #307 — Chapter 312 + Summary 313 (315 Chapters) "
+        "Electronic-Grade 6N5 Ir(MeCp)(COD)/Ir(acac)3 + 6N5 TDMAHf + 6N5 DETe + 6N5 TMA "
+        "A3 IrSe2/WS2 VdW Contact, Au Nanorod Plasmonic Interconnect & HfSe PCM "
+        "PEALD PINN-MPC + SIL-3, Blueprint #308, Simulator #307, Tool 307, 316/316 tests, bilingual sync"
     )
 
     infra_lab = Path.home() / "ai-infra-lab"

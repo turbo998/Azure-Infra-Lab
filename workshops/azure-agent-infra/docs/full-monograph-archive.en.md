@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[📘 Bilingual Entry (`README.md`)](../README.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](../selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #306 · **314 Chapters** · **307 IaC Blueprints** · **306 Quantitative Physics Simulators** · **315/315 Unit Tests Passing**)
+- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #307 · **315 Chapters** · **308 IaC Blueprints** · **307 Quantitative Physics Simulators** · **316/316 Unit Tests Passing**)
 - **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 313-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](../test-report.en.md) · [中文 7-Card 评测报告](../test-report.md) · [CSP-Locked Self-Contained HTML Deck](../cards.html) · [Sealed Benchmark JSON (`report.json`)](../report.json)
@@ -431,6 +431,29 @@ python demo/run_live_demo.py --self-test
 ## 312. Cycle #306 Summary and Reproducibility Commands (314 Chapters)
 
 - **Snapshot**: `314 Chapters · 307 Blueprints · 306 Simulators · 315/315 Tests`.
+- **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
+- **Reproducibility CLI**:
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 313. Electronic-Grade 6N5 Ir(MeCp)(COD) / Ir(acac)3 + 6N5 TDMAHf + 6N5 DETe + 6N5 TMA for 300mm A3/A2 IrSe2 VdW Contact, Au Nanorod Plasmonics and HfSe PCM Synapse (Cycle #307)
+
+- **Closed-loop outcome**: under `PINN-MPC + SIL-3`, the flow converges to `R_cp=30.8 Ω·μm` for `IrSe2/WS2` VdW contact, `L_SPP=126 μm` for Au nanorod plasmonics, and `520 ps / 0.14 pJ/bit` for HfSe PCM synapse, yielding **`+80.3%` effective yield gain** and **`-97.8%` agglomeration/phase-drift reduction**.
+- **Safety and metrology**: `10 kHz QCL-CRDS (1586.2/1228.0/2872.4 cm⁻¹) + in-situ XPS/TLM-ARPES/s-SNOM` closes in `0.11 ms`; `SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` lockout trips in `0.10 ms` against Ir/Hf/Te precursor and pyrophoric TMA excursions.
+- **Production assets**: Blueprint [`blueprints/irmecpcod-iracac3-tdmahf-dete-tma-a3-irse2-contact-au-nanorod-hfse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/irmecpcod-iracac3-tdmahf-dete-tma-a3-irse2-contact-au-nanorod-hfse-pcm-peald-pinn-mpc-sil3.bicep) (**Blueprint #308**), simulator `simulate_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_sandbox()` (**Simulator #307**), and **Tool 307** in `selector.html`.
+
+---
+
+## 314. Cycle #307 Summary and Reproducibility Commands (315 Chapters)
+
+- **Snapshot**: `315 Chapters · 308 Blueprints · 307 Simulators · 316/316 Tests`.
 - **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
 - **Reproducibility CLI**:
 

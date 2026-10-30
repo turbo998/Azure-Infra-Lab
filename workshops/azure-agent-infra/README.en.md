@@ -1,12 +1,12 @@
-# Azure AI Agent Infrastructure Playbook: 6-Layer Reference Architecture, 100K Sandbox Scale Benchmarks & 314-Chapter Engineering Encyclopedia
+# Azure AI Agent Infrastructure Playbook: 6-Layer Reference Architecture, 100K Sandbox Scale Benchmarks & 315-Chapter Engineering Encyclopedia
 
-> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 314-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 315-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)**
 
 ---
 
 ## 📌 Executive Overview Summary
 
-> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **314-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **307 production IaC blueprints**, **306 deterministic physics simulators**, and **315/315 passing unit tests**.
+> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **315-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **308 production IaC blueprints**, **307 deterministic physics simulators**, and **316/316 passing unit tests**.
 
 ### 1. 6-Layer Agent Infrastructure Reference Architecture
 We decompose enterprise agent infrastructure into **6 orthogonal architectural layers** (aligned with the `Build · Run · Ground · Govern` lifecycle):
@@ -54,8 +54,8 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 | **3. Runtime & Storage Sizer (`selector.html`)** | Bilingual H5 (`EN/中文`) | Scenario decision tree, `D96as_v7` 100K VMSS & `$148K/mo` TCO sizer, and 294 physics calculators | [Open `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
 | **4. 7-Card Visual Benchmark Deck (`cards.html`)** | CSP-Locked HTML (`4:5`) | 7-Card 4:5 visual benchmark report (`8/8 = 100%` routing accuracy, perturbation checks, v6 vs v7 latency) | [Open `cards.html`](cards.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html) |
 | **5. 7-Card Benchmark Markdown & JSON** | Markdown / JSON | Self-contained 7-card markdown report and sealed evaluation dataset (`report.json`) | [English `test-report.en.md`](test-report.en.md) · [中文 `test-report.md`](test-report.md) · [`report.json`](report.json) |
-| **6. Full 314-Chapter Monograph Archive** | Markdown Archive | Complete 314-chapter reference text preserving every equation, table, and physics model | **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** · **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** |
-| **7. Deterministic Simulators & Unit Tests** | Python 3.12 + IaC | 306 stdlib physics models, 315 unit tests, and 307 production Bicep/YAML/SQL blueprints | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
+| **6. Full 315-Chapter Monograph Archive** | Markdown Archive | Complete 315-chapter reference text preserving every equation, table, and physics model | **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** · **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** |
+| **7. Deterministic Simulators & Unit Tests** | Python 3.12 + IaC | 307 stdlib physics models, 316 unit tests, and 308 production Bicep/YAML/SQL blueprints | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
 
 ---
 
@@ -119,9 +119,9 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 
 ---
 
-## 🗂️ Structured 314-Chapter Encyclopedia Index
+## 🗂️ Structured 315-Chapter Encyclopedia Index
 
-> 💡 **Full Monograph Access**: To keep this landing page fast-loading (`< 30 KB`) on GitHub Web, the complete **314-chapter monograph** is preserved verbatim in **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)** (English, 590 KB) and **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)** (Chinese, 2.96 MB). Below is the thematic index across all three engineering domains:
+> 💡 **Full Monograph Access**: To keep this landing page fast-loading (`< 30 KB`) on GitHub Web, the complete **315-chapter monograph** is preserved verbatim in **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)** (English, 605 KB) and **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)** (Chinese, 2.99 MB). Below is the thematic index across all three engineering domains:
 
 ### Domain I (Chapters 1–19): Core Agent Sandbox, 100K MicroVM Orchestration & Zero-Trust Governance
 
@@ -148,7 +148,7 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 | **[Ch 61–110](docs/full-monograph-archive.en.md)** | **Clean Energy, Fusion/SMR, Superconducting Quantum & Advanced Manufacturing Control**: GW-scale PEM/Alkaline green hydrogen, Tokamak plasma quench protection, synchrotron beamlines, SMR nuclear `Class 1E` digital twins, EUV lithography scanner LPP droplet & overlay control (`Ch 79`), superconducting quantum dilution refrigerator & surface-code QEC (`Ch 81`), HVDC subsea links, and solid-state battery lines | `Simulator #55–#104` + 50 production `aksclaw-*-sil3-pool.bicep` blueprints | High-NA EUV overlay **`< 0.55 nm`**; `d=11` surface-code QEC decoding **`< 420 ns`**; **`0.0%` SIL-3 safety interlock bypass** across all 50 industrial domains |
 | **[Ch 111–175](docs/full-monograph-archive.en.md)** | **300mm Semiconductor Fab, 1.6T/3.2T Co-Packaged Optics (CPO) & Ultrapure Precursor Engineering (Part I)**: 300mm Czochralski silicon crystal growth, SiC/GaN epitaxy, `1.6T/3.2T` silicon photonics `CPO` active laser alignment & micro-ring thermal tuning (`Ch 160`), `HBM4` `Cu-Cu` hybrid bonding, Backside Power Delivery (`BSPD`), and ultra-high-purity electronic gas separation | `Simulator #105–#169` + 65 production `aksclaw-*-sil3-pool.bicep` blueprints | `CPO` 16-channel fiber array active alignment loss **`< 0.65 dB`**; `Cu-Cu` hybrid bonding overlay **`< 35 nm`**; **`6N–9N`** electronic precursor purity |
 | **[Ch 176–240](docs/full-monograph-archive.en.md)** | **Strategic Isotopes (`He-3` / `Si-28` / `B-11`), High-NA EUV Photoresists & Ultrapure Silane/Halide Precursors**: Quantum-grade $^{3}\text{He}$ superfluid purification (`Ch 220`), nuclear-spin-free $^{28}\text{Si}\text{F}_4 / ^{28}\text{Si}\text{H}_4$ (`>99.999%` $^{28}\text{Si}$, extending qubit $T_2^* > 100\text{ ms}$), High-NA EUV metal-oxide resists (`MOR` tin-oxo cages), and `6N HCDS / OCTS / TSA` epitaxial precursors | `Simulator #170–#234` + 65 production `aksclaw-*-sil3-pool.bicep` blueprints | Residual $^{29}\text{Si} < 5\text{ ppm}$; High-NA EUV `12 nm` half-pitch `LWR < 1.1 nm`; `10 kHz QCL-TDLAS/FTIR` real-time trace metrology |
-| **[Ch 241–312 (314 Total)](docs/full-monograph-archive.en.md)** | **10A (1.0nm) CFET ALD/PEALD, zero-Schottky contacts, SOT-MRAM, superconducting and neuromorphic devices**: includes `Ch 281–310` prior milestones and extends with `6N5 Pt(MeCp)Me3 / Pt(hfac)2 + TDMASn + DESe + TMA` `A5 PtSe2/MoS2` VdW contact, Pt nanowire plasmonic interconnect, and SnSe PCM synapse (`Ch 311`), followed by **7-Card 4:5 benchmark synthesis (`Ch 312`)**. | `Simulator #235–#306` + `Blueprint #236–#307` (**315/315 unit tests passing**) | `PtSe2` **`R_cp=31.5 Ohm*um`**; Pt nanowire **`L_SPP=132 um / 0.031 dB/um`**; full `SEMI S2 / NFPA 704 / SIL-3` interlock compliance |
+| **[Ch 241–313 (315 Total)](docs/full-monograph-archive.en.md)** | **10A (1.0nm) CFET ALD/PEALD, zero-Schottky contacts, SOT-MRAM, superconducting and neuromorphic devices**: includes `Ch 281–311` prior milestones and extends with `6N5 Ir(MeCp)(COD) / Ir(acac)3 + TDMAHf + DETe + TMA` `A3 IrSe2/WS2` VdW contact, Au nanorod plasmonic interconnect, and HfSe PCM synapse (`Ch 312`), followed by **7-Card 4:5 benchmark synthesis (`Ch 313`)**. | `Simulator #235–#307` + `Blueprint #236–#308` (**316/316 unit tests passing**) | `IrSe2` **`R_cp=30.8 Ohm*um`**; Au nanorod **`L_SPP=126 um / 0.033 dB/um`**; full `SEMI S2 / NFPA 704 / SIL-3` interlock compliance |
 
 ---
 

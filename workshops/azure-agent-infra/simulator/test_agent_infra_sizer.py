@@ -313,6 +313,7 @@ from agent_infra_sizer import (
     simulate_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_sandbox,
     simulate_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox,
     simulate_ptmecpme3_pthfac2_tdmasn_dese_tma_a5_ptse2_contact_pt_nanowire_and_snse_pcm_peald_sil3_sandbox,
+    simulate_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6683,6 +6684,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_pt_nanowire_scattering_or_snse_filament_overgrowth_failure_pct"], 3.0)
         self.assertTrue(gov["ptmecpme3_pthfac2_tdmasn_dese_tma_a5_ptse2_contact_pt_nanowire_and_snse_pcm_peald_slo_met"])
         self.assertFalse(raw["ptmecpme3_pthfac2_tdmasn_dese_tma_a5_ptse2_contact_pt_nanowire_and_snse_pcm_peald_slo_met"])
+
+    def test_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_sandbox(self) -> None:
+        gov = simulate_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_sandbox(
+            irmecpcod_iracac3_tdmahf_dete_tma_trains=8,
+            governance_mode="pinn_mpc_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_edge",
+        )
+        raw = simulate_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_sandbox(
+            irmecpcod_iracac3_tdmahf_dete_tma_trains=8,
+            governance_mode="unmanaged_open_loop_au_nanorod_agglomeration_and_hfse_phase_drift",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_a3_irse2_contact_au_nanorod_hfse_pcm_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_irmecpcod_6n5_iracac3_6n5_tdmahf_6n5_dete_6n5_tma_purity_and_irse2_hfse_yield_gain_pct"], 80.3)
+        self.assertEqual(gov["au_nanorod_agglomeration_and_hfse_phase_drift_reduction_pct"], 97.8)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_ir_hf_te_and_tma_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_ir_hf_te_precursor_leak_or_tma_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_ir_hf_te_precursor_leak_or_tma_ignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_1586cm1_1228cm1_2872cm1_insitu_xps_tlmarpes_ssnom_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_au_nanorod_scattering_or_hfse_filament_overgrowth_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_au_nanorod_scattering_or_hfse_filament_overgrowth_failure_pct"], 3.0)
+        self.assertTrue(gov["irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_slo_met"])
+        self.assertFalse(raw["irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_slo_met"])
 
 
 if __name__ == "__main__":

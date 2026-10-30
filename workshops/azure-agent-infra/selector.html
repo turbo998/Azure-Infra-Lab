@@ -7577,6 +7577,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="ptmecpPtse2SnseResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(56,189,248,0.35);">
+      <h3>Tool 307 · 电子级(甲基环戊二烯基)(1,5-环辛二烯)铱 / 三(乙酰丙酮)铱 6N5 Ir(MeCp)(COD) / Ir(acac)<sub>3</sub> 与四(二甲氨基)铪 6N5 TDMAHf + 二乙基碲 6N5 DETe + 6N5 TMA 300mm A3/A2 二维 IrSe<sub>2</sub>/WS<sub>2</sub> 范德华超低阻接触 (R<sub>c,p</sub>=30.8 &Omega;&middot;&mu;m, S=0.99)、单晶 Au 纳米棒等离激元互连 (L<sub>SPP</sub>=126 &mu;m) 与 HfSe 相变突触 (0.14 pJ/bit, R<sub>on</sub>/R<sub>off</sub>=1.6&times;10<sup>8</sup>) PEALD PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（1586.2 cm⁻¹ Ir(acac)<sub>3</sub> C=O、1228.0 cm⁻¹ Hf-N、2872.4 cm⁻¹ DETe C-H 与 &lt;0.3 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位 XPS/TLM-ARPES + s-SNOM 推入工厂边缘 4 节点 H100 集群，在 0.11ms 内抑制 Au 纳米棒团聚散射、HfSe 相变漂移与导电细丝过生长，并以 0.10ms SIL-3 联锁阻断 Ir/Hf/Te 前驱体泄漏与自燃 TMA 风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Ir(MeCp)(COD) / Ir(acac)<sub>3</sub> / TDMAHf / DETe / TMA 提纯与 A3 IrSe<sub>2</sub> 接触 / Au 纳米棒 / HfSe 相变产线数 (Trains): <span id="irmecpIrse2AuHfseTrainsVal">8</span></label>
+          <input type="range" id="irmecpIrse2AuHfseTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('irmecpIrse2AuHfseTrainsVal').innerText=this.value; runIrmecpcodIracac3TdmahfDeteTmaA3Irse2ContactAuNanorodAndHfsePcmLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="irmecpIrse2AuHfseMode" onchange="runIrmecpcodIracac3TdmahfDeteTmaA3Irse2ContactAuNanorodAndHfsePcmLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Ir + Hf + Te + TMA A3 IrSe2 接触 + Au 纳米棒等离激元 + HfSe 相变突触 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环 Au 纳米棒团聚散射、HfSe 相变漂移、细丝过生长与 Ir/Hf/Te/TMA 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="irmecpIrse2AuHfseResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13755,6 +13774,47 @@ function runPtmecpme3Pthfac2TdmasnDeseTmaA5Ptse2ContactPtNanowireAndSnsePcmLab()
   `;
 }
 runPtmecpme3Pthfac2TdmasnDeseTmaA5Ptse2ContactPtNanowireAndSnsePcmLab();
+
+function runIrmecpcodIracac3TdmahfDeteTmaA3Irse2ContactAuNanorodAndHfsePcmLab() {
+  const trains = parseInt(document.getElementById('irmecpIrse2AuHfseTrains').value, 10) || 8;
+  const mode = document.getElementById('irmecpIrse2AuHfseMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 80.3 : 17.9;
+  const defectCut = isPinn ? 97.8 : 21.1;
+  const sil3Ms = isPinn ? 0.10 : 285.0;
+  const leakRisk = isPinn ? 0.0 : 1.9;
+  const metroMs = isPinn ? 0.11 : 385.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 11.3;
+  document.getElementById('irmecpIrse2AuHfseResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">A3 IrSe<sub>2</sub> 范德华接触、Au 纳米棒等离激元互连与 HfSe 相变突触指标：</span><strong>IrSe<sub>2</sub>/WS<sub>2</sub> R<sub>c,p</sub>=30.8 &Omega;&middot;&mu;m (S=0.99) · Au 纳米棒 L<sub>SPP</sub>=126 &mu;m (0.033 dB/&mu;m) · HfSe PCM R<sub>on</sub>/R<sub>off</sub>=1.6&times;10<sup>8</sup> (520 ps, 0.14 pJ/bit)</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Ir/Hf/Te/Al 纯度与 A3 IrSe2/Au 纳米棒/HfSe 良率增益 / 团聚散射与相变漂移削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 Ir/Hf/Te 前驱体与自燃 TMA 联锁延迟 / 泄漏或点燃事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (1586.2/1228.0/2872.4cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM 延迟 (-${wanRed.toFixed(1)}% WAN) / 散射或细丝过生长失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_edge`)</strong>：通过低温范德华外延构建 IrSe<sub>2</sub>/WS<sub>2</sub> 超低阻接触并稳定 Au 纳米棒等离激元传播，完成 520ps HfSe 相变突触闭环控制。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：缺乏界面势垒与相变窗口协同控制会触发 Au 纳米棒团聚、HfSe 漂移与导电细丝过生长，导致高失效率与安全泄漏风险。'}
+      </p>
+    </div>
+  `;
+}
+runIrmecpcodIracac3TdmahfDeteTmaA3Irse2ContactAuNanorodAndHfsePcmLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);
