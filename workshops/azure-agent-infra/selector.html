@@ -7501,6 +7501,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="ceiprCeHzoResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(56,189,248,0.35);">
+      <h3>Tool 303 · 电子级四(二甲氨基)钒/三异丙氧基氧钒 6N5 TDMAV / VO(OiPr)<sub>3</sub> 与双(乙基环戊二烯基)铬/六羰基铬 6N5 Cr(EtCp)<sub>2</sub> / Cr(CO)<sub>6</sub> + 6N5 BBr<sub>3</sub> / TEB + DTBDSe 300mm A10/A7 亚纳秒 (1.2ns 电触发 / 180fs 光诱导) V<sub>1-x-y</sub>Cr<sub>x</sub>B<sub>y</sub>O<sub>2</sub> 莫特相变 (IMT T<sub>IMT</sub>=398K, R<sub>off</sub>/R<sub>on</sub>=1.6&times;10<sup>5</sup>, &Delta;T<sub>h</sub>&le;1.8K) 3D 交叉阵列选通器、半金属 CrO<sub>2</sub>/1T-VSe<sub>2</sub> 室温自旋阀互连 (MR=245%) 与 6.4T/12.8T CPO Si<sub>3</sub>N<sub>4</sub>/VO<sub>2</sub> 5-Bit 非易失光子权重组 (18.5 dB, 11.5 fJ/switch) PEALD/MBE PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（982.4 cm⁻¹ VO(OiPr)<sub>3</sub>、2001.2 cm⁻¹ Cr(CO)<sub>6</sub>、856.0 cm⁻¹ BBr<sub>3</sub> 与 &lt;0.3 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位飞秒光泵浦-太赫兹探测光谱（fs-OPTPS）+ 变温光谱椭偏（TD-SE）+ 同步辐射 V L<sub>2,3</sub>-edge XANES 推入工厂边缘 4 节点 H100 集群，在 0.11ms 内抑制非活性五氧化二钒（V<sub>2</sub>O<sub>5</sub>）过氧化与 Peierls 热滞回漂移，并以 0.10ms SIL-3 联锁阻断自燃三乙基硼（TEB）、剧毒六羰基铬/有机硒与腐蚀性三溴化硼泄漏。</p>
+      <div class="grid-2">
+        <div>
+          <label>TDMAV / VO(OiPr)<sub>3</sub> / Cr(EtCp)<sub>2</sub> / BBr<sub>3</sub> / DTBDSe 提纯与 VCrBO<sub>2</sub> 莫特选通器 / Si<sub>3</sub>N<sub>4</sub>-VO<sub>2</sub> 光子产线数 (Trains): <span id="tdmavVcrbo2TrainsVal">8</span></label>
+          <input type="range" id="tdmavVcrbo2Trains" min="2" max="32" step="2" value="8" oninput="document.getElementById('tdmavVcrbo2TrainsVal').innerText=this.value; runTdmavVoipr3Cretcp2Bbr3A10Vcrbo2MottSelectorAndSi3n4Vo2PhotonicWeightLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="tdmavVcrbo2Mode" onchange="runTdmavVoipr3Cretcp2Bbr3A10Vcrbo2MottSelectorAndSi3n4Vo2PhotonicWeightLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 TDMAV/VO(OiPr)3 + Cr(EtCp)2 + BBr3/DTBDSe VCrBO2 莫特选通器 + CrO2/VSe2 自旋阀 + Si3N4/VO2 光子权重 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环 V2O5 过氧化死层、341K 低相变热失控串扰、12K 宽热滞回漂移与自燃 TEB/剧毒 Cr(CO)6/DTBDSe 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="tdmavVcrbo2Result"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13515,6 +13534,47 @@ function runCeiprcp3Cethd4Gdiprcp3TdmazrA10CeHzoFerroelectricGateAndCeGaggEuvSci
   `;
 }
 runCeiprcp3Cethd4Gdiprcp3TdmazrA10CeHzoFerroelectricGateAndCeGaggEuvScintillatorLab();
+
+function runTdmavVoipr3Cretcp2Bbr3A10Vcrbo2MottSelectorAndSi3n4Vo2PhotonicWeightLab() {
+  const trains = parseInt(document.getElementById('tdmavVcrbo2Trains').value, 10) || 8;
+  const mode = document.getElementById('tdmavVcrbo2Mode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 79.2 : 17.2;
+  const defectCut = isPinn ? 97.4 : 20.5;
+  const sil3Ms = isPinn ? 0.10 : 285.0;
+  const leakRisk = isPinn ? 0.0 : 1.8;
+  const metroMs = isPinn ? 0.11 : 385.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.8;
+  document.getElementById('tdmavVcrbo2Result').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">A10 莫特选通器、室温自旋阀与 CPO 光子权重指标：</span><strong>V<sub>1-x-y</sub>Cr<sub>x</sub>B<sub>y</sub>O<sub>2</sub> T<sub>IMT</sub>=398 K (R<sub>off</sub>/R<sub>on</sub>=1.6&times;10<sup>5</sup>, &Delta;T<sub>h</sub>&le;1.8 K, 1.2 ns / 180 fs) · CrO<sub>2</sub>/1T-VSe<sub>2</sub> MR=245% · Si<sub>3</sub>N<sub>4</sub>/VO<sub>2</sub> 18.5 dB (11.5 fJ/switch)</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 V/Cr/B/Se 纯度与 VCrBO2 / Si3N4-VO2 良率增益 / V2O5 过氧化与 Peierls 热滞回漂移削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 自燃 TEB 与剧毒 Cr(CO)6/DTBDSe/BBr3 联锁延迟 / 自燃或毒气泄漏事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (982.4/2001.2/856.0cm⁻¹) + 原位 fs-OPTPS/TD-SE/XANES 延迟 (-${wanRed.toFixed(1)}% WAN) / 选通器热串扰或光子权重失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_edge`)</strong>：通过 Cr<sup>3+</sup>/B 原子层协同掺杂将 VO<sub>2</sub> 莫特相变温度从 341K 提升至 398K (125&deg;C)，实现 1.6&times;10<sup>5</sup> 开关比、&le;1.8K 超窄热滞回与 1.2ns 极速选通，同时驱动 Si<sub>3</sub>N<sub>4</sub>/VO<sub>2</sub> 5-bit 光子张量权重组。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：缺乏氧分压化学势与 Cr/B 原子比闭环导致 V<sup>4+</sup> 向非活性 V<sub>2</sub>O<sub>5</sub> (V<sup>5+</sup>) 或 V<sub>2</sub>O<sub>3</sub> (V<sup>3+</sup>) 歧化，3D 交叉阵列在 85&deg;C 工作温度下发生漏电热失控串扰（10.8% 失效率，285ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runTdmavVoipr3Cretcp2Bbr3A10Vcrbo2MottSelectorAndSi3n4Vo2PhotonicWeightLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

@@ -309,6 +309,7 @@ from agent_infra_sizer import (
     simulate_dyiprcp3_tbiprcp3_hoiprcp3_feipramd2_a10_tbfeco_all_optical_switching_and_dy_gbd_magnet_peald_sil3_sandbox,
     simulate_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_sandbox,
     simulate_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_sandbox,
+    simulate_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6583,6 +6584,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_ce_hzo_fatigue_breakdown_or_ce_gagg_antisite_trapping_failure_pct"], 3.0)
         self.assertTrue(gov["ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_slo_met"])
         self.assertFalse(raw["ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_slo_met"])
+
+    def test_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_sandbox(self) -> None:
+        gov = simulate_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_sandbox(
+            tdmav_voipr3_cretcp2_bbr3_trains=8,
+            governance_mode="pinn_mpc_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_edge",
+        )
+        raw = simulate_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_sandbox(
+            tdmav_voipr3_cretcp2_bbr3_trains=8,
+            governance_mode="unmanaged_open_loop_v2o5_overoxidation_and_peierls_hysteresis",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_vcrbo2_mott_selector_cro2_vse2_si3n4_vo2_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_tdmav_6n5_cretcp2_6n5_bbr3_6n5_dtbdse_purity_and_vcrbo2_mott_yield_gain_pct"], 79.2)
+        self.assertEqual(gov["v2o5_overoxidation_and_peierls_hysteresis_drift_reduction_pct"], 97.4)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_teb_and_toxic_crco6_dtbdse_bbr3_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_pyrophoric_teb_ignition_or_toxic_crco6_dtbdse_bbr3_leak_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_pyrophoric_teb_ignition_or_toxic_crco6_dtbdse_bbr3_leak_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_982cm1_2001cm1_856cm1_insitu_fsoptps_tdse_xanes_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_vo2_selector_thermal_runaway_or_photonic_weight_relaxation_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_vo2_selector_thermal_runaway_or_photonic_weight_relaxation_failure_pct"], 3.0)
+        self.assertTrue(gov["tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_slo_met"])
+        self.assertFalse(raw["tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_slo_met"])
 
 
 if __name__ == "__main__":

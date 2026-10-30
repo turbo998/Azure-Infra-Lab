@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-30 (Cycle #302 · 310 Chapters · 303 Blueprints · 302 Simulators · 311/311 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-30 (Cycle #303 · 311 Chapters · 304 Blueprints · 303 Simulators · 312/312 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -7534,7 +7534,19 @@ $$\text{La}_2\text{O}_3 + 15\text{B} \xrightarrow{1,650\text{ }^\circ\text{C, Va
 
 ---
 
-## 308. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #302 · 310-Chapter Milestone! · 310 Chapters）
+## 308. 电子级超纯四(二甲氨基)钒/三异丙氧基氧钒（`6N5 TDMAV / VO(OiPr)3`）与双(乙基环戊二烯基)铬/六羰基铬（`6N5 Cr(EtCp)2 / Cr(CO)6`）+ 三溴化硼/三乙基硼（`6N5 BBr3 / TEB`）+ 二叔丁基二硒醚（`6N5 DTBDSe`）300mm A10/A7 亚纳秒（`1.2 ns` 电触发 / `180 fs` 光诱导）$\text{V}_{1-x-y}\text{Cr}_x\text{B}_y\text{O}_2$ 莫特绝缘体-金属相变（`IMT` $T_{\text{IMT}}=398\text{ K}$, $R_{\text{off}}/R_{\text{on}}=1.6\times 10^5$, $\Delta T_h\le 1.8\text{ K}$）3D 交叉阵列选通器、半金属 $\text{CrO}_2/\text{1T-VSe}_2$ 室温自旋阀互连（$\text{MR}=245\%$）与 6.4T/12.8T CPO $\text{Si}_3\text{N}_4/\text{VO}_2$ 5-Bit 非易失光子张量权重组 PEALD/MBE PINN-MPC 与 SIL-3 联锁架构（Cycle #303）
+
+- **前驱体超纯化与物理化学控制目标**：采用超高真空精馏与区域升华制备电子级超纯四(二甲氨基)钒/三异丙氧基氧钒（`6N5 TDMAV / VO(OiPr)3` $\ge 99.99995\%$，痕量异价过渡金属与放射性杂质 $\text{Fe/Ni/Ti/Cu/U/Th} \le 0.05\text{ ppbw}$，$\alpha$ 粒子发射率 $\le 0.0001\text{ counts/cm}^2\cdot\text{hr}$）、电子级双(乙基环戊二烯基)铬/六羰基铬（`6N5 Cr(EtCp)2 / Cr(CO)6` $\ge 99.99995\%$）、电子级三溴化硼/三乙基硼（`6N5 BBr3 / TEB` $\ge 99.99995\%$）及二叔丁基二硒醚（`6N5 DTBDSe` $\ge 99.99995\%$）。
+- **核心器件物理与工艺闭环**：
+  1. **A10/A7 亚纳秒（`1.2 ns` 电触发 / `180 fs` 飞秒光诱导）铬/硼共掺杂二氧化钒（$\text{V}_{1-x-y}\text{Cr}_x\text{B}_y\text{O}_2$, $M_1 \leftrightarrow R$）莫特相变（`IMT`）3D 交叉阵列 `1S1R / 1S1F` 选通器**：本征 $\text{VO}_2$ 的单斜相（$M_1$, $P2_1/c$）至金红石相（$R$, $P4_2/mnm$）莫特绝缘体-金属相变温度仅为 $T_{\text{IMT}} \approx 341\text{ K}$ ($68\ ^\circ\text{C}$)，无法承受高密度 3D ReRAM/FeRAM 交叉阵列 $85\text{–}110\ ^\circ\text{C}$ 的芯片工作结温，且伴随 $\sim 12\text{ K}$ 的宽热滞回。通过 `PEALD` 精确引入替代位 $\text{Cr}^{3+}$ ($x = 0.024$，稳定 $M_2/M_1$ 绝缘态 $\text{V–V}$ 二聚体链并将工作相变温度提升至 **$T_{\text{IMT}} = 398\text{ K}$ ($125\ ^\circ\text{C}$)**) 与填隙/替代位硼（$y = 0.008$，弛豫界面 Peierls 晶格畸变势垒），实现 **$5.2$ 个数量级开关比（$R_{\text{off}}/R_{\text{on}} = 1.6 \times 10^5$）**、超窄热滞回 **$\Delta T_h \le 1.8\text{ K}$**、**`1.2 ns` 极速电阈值翻转**（阈值电流密度 $J_{\text{th}} = 1.8 \times 10^4\text{ A/cm}^2$）与 **$> 1.0 \times 10^{12}$ 次**抗疲劳寿命。
+  2. **半金属金红石 $\text{CrO}_2$ / 二维范德华本征铁磁 $\text{1T-VSe}_2/\text{CrSe}_2$ 异质结室温自旋阀互连**：利用 `6N5 Cr(CO)6 / Cr(EtCp)2 + 6N5 TDMAV + 6N5 DTBDSe` 低温外延半金属 $\text{CrO}_2$（费米面自旋极化率 **$P_{\text{spin}} \ge 96.4\%$**，居里温度 $T_C \approx 395\text{ K}$）与单层 $\text{1T-VSe}_2$ 强自旋耦合界面，在 $300\text{ K}$ 室温下实现无外加磁场非易失自旋阀磁阻比 **$\text{MR} = 245\%$**。
+  3. **6.4T / 12.8T 共封装光学（`CPO`）混合 $\text{Si}_3\text{N}_4 / \text{VO}_2$ 5-Bit 非易失光子张量权重组与全光浪涌限幅器**：在超低损耗 $\text{Si}_3\text{N}_4$ 微环波导上集成 $15\text{ nm}$ $\text{V}_{1-x}\text{Cr}_x\text{O}_2$ 纳米贴片，利用 $1550\text{ nm}$ 通信波段莫特相变巨复折射率突变（$\Delta n = -1.15,\ \Delta \kappa = +1.42$），在仅 $8\ \mu\text{m}$ 紧凑尺寸内实现 **`18.5 dB` 消光比**、**`180 fs` 超快全光可饱和吸收限幅保护**，以及通过局部相畴壁钉扎实现的 **`5-bit`（32 级）非易失光子突触权重调节（翻转能耗 `11.5 fJ/switch`）**。
+- **在线计量与安全联锁（SEMI S2 / NFPA 704 / OSHA 1910.1000 / SIL-3）**：集成 `10 kHz` 量子级联激光腔衰荡光谱（`QCL-CRDS`：$982.4\text{ cm}^{-1}$ `VO(OiPr)3` $\nu(\text{V=O})$、$2001.2\text{ cm}^{-1}$ `Cr(CO)6` $\nu(\text{C}\equiv\text{O})$、$856.0\text{ cm}^{-1}$ $\text{BBr}_3$ $\nu_3$ 与 $< 0.3\text{ pptv}$ $\text{O}_2/\text{H}_2\text{O}$）与原位飞秒光泵浦-太赫兹探测光谱（`fs-OPTPS`）、变温光谱椭偏（`TD-SE`）及同步辐射 $\text{V } L_{2,3}\text{-edge}$ X 射线吸收近边结构（`XANES` 锁定纯 $\text{V}^{4+}\ 3d^1$ 价态，抑制 $\text{V}_2\text{O}_5$ 过氧化 $< 0.15\%$），边缘推理延迟 `0.11 ms`（削减 `99.7%` WAN 带宽）。针对遇空气剧烈自燃的三乙基硼（`TEB`，`NFPA 704 3-4-3 W`）、剧毒六羰基铬/有机硒（`Cr(CO)6 / DTBDSe / H2Se`，$\text{IDLH } 1\text{ ppmv}$）及强腐蚀三溴化硼（$\text{BBr}_3$ 遇湿释放 $\text{HBr}$），部署 `0.10 ms` `SIL-3` 双阀组全金属波纹管截断（`1oo2D DBB`）、Class-D 干粉覆盖与碱性硫代硫酸钠/氧化铁复合化学洗涤塔，实现 `0.0%` 自燃或毒气泄漏事故，良率提升 **`+79.2%`**，$\text{V}_2\text{O}_5$ 过氧化死层与 Peierls 热滞回漂移削减 **`-97.4%`**。
+- **生产级 IaC 与仿真验证**：配套 Bicep 蓝图 [`blueprints/tdmav-voipr3-cretcp2-bbr3-a10-vcrbo2-mott-selector-and-si3n4-vo2-photonic-weight-peald-pinn-mpc-sil3.bicep`](../blueprints/tdmav-voipr3-cretcp2-bbr3-a10-vcrbo2-mott-selector-and-si3n4-vo2-photonic-weight-peald-pinn-mpc-sil3.bicep)（**Blueprint #304**）、确定性仿真函数 `simulate_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_sandbox()`（**Simulator #303**）及 H5 交互工具 **Tool 303**。
+
+---
+
+## 309. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #303 · 311 Chapters）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

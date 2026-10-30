@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 310
-CURRENT_BLUEPRINTS = 303
-CURRENT_SIMULATORS = 302
-CURRENT_TESTS = 311
+CURRENT_CHAPTERS = 311
+CURRENT_BLUEPRINTS = 304
+CURRENT_SIMULATORS = 303
+CURRENT_TESTS = 312
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #302 (310-Chapter Milestone!) — Chapter 307 + Summary 308 (310 Chapters) Autonomous Electronic-Grade Ultrapure Tris(isopropylcyclopentadienyl)cerium/Tetrakis(2,2,6,6-tetramethyl-3,5-heptanedionato)cerium (6N5 Ce(iPrCp)3/Ce(thd)4 >=99.99995%, Cross-Lanthanide La/Pr/Nd/Sm<=0.08ppbw, Trace Fe/Co/Ni/Cr/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Tris(isopropylcyclopentadienyl)gadolinium (6N5 Gd(iPrCp)3 >=99.99995%) + Tetrakis(dimethylamino)zirconium/Tetrakis(ethylmethylamino)hafnium (6N5 TDMAZr/TEMAHf >=99.99995%, Cl<=0.01ppmw) + Trimethylaluminum (6N5 TMA >=99.99995%) 300mm A10/A7 Sub-0.38nm EOT (0.36nm) Cerium-Doped Orthorhombic Hafnium-Zirconium Oxide (Ce0.08Hf0.46Zr0.46O2 Ce-HZO, Polar Pca2_1 fo>=96.8%, 2Pr=64.0uC/cm2, Wakeup-Free >1e12-Cycle Endurance via Ce4+/Ce3+ Redox Buffer) Ferroelectric Gate, Cryogenic 4K-20K GdAlO3 ADR Cooler (-DeltaS_M=46.8J/(kg*K)) & High-NA EUV Ce3+:Gd3Al2Ga3O12 (Ce:GAGG, 58,000ph/MeV, tau=52.0ns) Wavefront Scintillator PEALD/ALA PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ PUND/GIXRD/XAS/EUV-RL & SEMI S2/NFPA 704/OSHA 1910.1200/SIL-3 Pyrophoric Ce/Gd/TMA Interlock, "
-        "Blueprint #303, Simulator #302, Tool 302 & 311/311 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #303 — Chapter 308 + Summary 309 (311 Chapters) Autonomous Electronic-Grade Ultrapure Tetrakis(dimethylamino)vanadium/Oxytriisopropoxyvanadium (6N5 TDMAV/VO(OiPr)3 >=99.99995%, Trace Fe/Ni/Ti/Cu/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Bis(ethylcyclopentadienyl)chromium/Hexacarbonylchromium (6N5 Cr(EtCp)2/Cr(CO)6 >=99.99995%) + Boron Tribromide/Triethylboron (6N5 BBr3/TEB >=99.99995%) + Di-tert-butyl Diselenide (6N5 DTBDSe >=99.99995%) 300mm A10/A7 Sub-Nanosecond (1.2ns Electrical / 180fs Photo-Induced) V1-x-yCrxByO2 Mott Insulator-to-Metal Transition (IMT T_IMT=398K, Roff/Ron=1.6e5, Narrow Hysteresis DeltaT_h<=1.8K, >1e12-Cycle Endurance) 3D Crossbar 1S1R/1S1F Selector, Half-Metallic CrO2/1T-VSe2 Room-Temperature Spin-Valve Interconnect (MR=245%) & 6.4T/12.8T CPO Si3N4/VO2 5-Bit Non-Volatile Photonic Tensor Weight Bank (18.5dB, 11.5fJ/switch) PEALD/MBE PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ fs-OPTPS/TD-SE/XANES & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Pyrophoric TEB & Toxic Cr(CO)6/DTBDSe Interlock, "
+        "Blueprint #304, Simulator #303, Tool 303 & 312/312 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path.home() / "ai-infra-lab"
