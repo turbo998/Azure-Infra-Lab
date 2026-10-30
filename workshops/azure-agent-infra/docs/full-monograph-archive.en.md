@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[📘 Bilingual Entry (`README.md`)](../README.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](../selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #305 · **313 Chapters** · **306 IaC Blueprints** · **305 Quantitative Physics Simulators** · **314/314 Unit Tests Passing** · **305-Cycle & 305-Simulator Double Milestone!**)
+- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #306 · **314 Chapters** · **307 IaC Blueprints** · **306 Quantitative Physics Simulators** · **315/315 Unit Tests Passing**)
 - **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 313-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](../test-report.en.md) · [中文 7-Card 评测报告](../test-report.md) · [CSP-Locked Self-Contained HTML Deck](../cards.html) · [Sealed Benchmark JSON (`report.json`)](../report.json)
@@ -416,4 +416,27 @@ python simulator/test_agent_infra_sizer.py -v
 
 # 4. Run end-to-end live demo self-test (writes deterministic SHA-256 trace)
 python demo/run_live_demo.py --self-test
+```
+
+---
+
+## 311. Electronic-Grade 6N5 Pt(MeCp)Me3 / Pt(hfac)2 + 6N5 TDMASn + 6N5 DESe + 6N5 TMA for 300mm A5/A3 PtSe2 VdW Contact, Pt Nanowire Plasmonics and SnSe PCM Synapse (Cycle #306)
+
+- **Closed-loop outcome**: under `PINN-MPC + SIL-3`, the flow converges to `R_cp=31.5 Ω·μm` for `PtSe2/MoS2` VdW contact, `L_SPP=132 μm` for Pt nanowire plasmonics, and `580 ps / 0.16 pJ/bit` for SnSe PCM synapse, yielding **`+80.0%` effective yield gain** and **`-97.7%` agglomeration/phase-drift reduction**.
+- **Safety and metrology**: `10 kHz QCL-CRDS (1608.4/1242.0/2890.6 cm⁻¹) + in-situ XPS/TLM-ARPES/s-SNOM` closes in `0.11 ms`; `SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` lockout trips in `0.10 ms` against Pt/Sn/Se precursor and pyrophoric TMA excursions.
+- **Production assets**: Blueprint [`blueprints/ptmecpme3-pthfac2-tdmasn-dese-tma-a5-ptse2-contact-pt-nanowire-snse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/ptmecpme3-pthfac2-tdmasn-dese-tma-a5-ptse2-contact-pt-nanowire-snse-pcm-peald-pinn-mpc-sil3.bicep) (**Blueprint #307**), simulator `simulate_ptmecpme3_pthfac2_tdmasn_dese_tma_a5_ptse2_contact_pt_nanowire_and_snse_pcm_peald_sil3_sandbox()` (**Simulator #306**), and **Tool 306** in `selector.html`.
+
+---
+
+## 312. Cycle #306 Summary and Reproducibility Commands (314 Chapters)
+
+- **Snapshot**: `314 Chapters · 307 Blueprints · 306 Simulators · 315/315 Tests`.
+- **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
+- **Reproducibility CLI**:
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
 ```

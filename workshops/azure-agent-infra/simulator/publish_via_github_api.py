@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 313
-CURRENT_BLUEPRINTS = 306
-CURRENT_SIMULATORS = 305
-CURRENT_TESTS = 314
+CURRENT_CHAPTERS = 314
+CURRENT_BLUEPRINTS = 307
+CURRENT_SIMULATORS = 306
+CURRENT_TESTS = 315
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,10 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #305 (305-Cycle & 305-Simulator Double Milestone!) — Chapter 310 + Summary 311 (313 Chapters) Autonomous Electronic-Grade Ultrapure Hexafluoroacetylacetonato(1,5-cyclooctadiene)silver(I)/Trimethylphosphine(hexafluoroacetylacetonato)silver(I) (6N5 Ag(hfac)(COD)/Ag(hfac)(PMe3) >=99.99995%, Trace Cu/Au/Pd/Fe/Ni/Na/K/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Bis(hexafluoroacetylacetonato)palladium(II)/Allyl(cyclopentadienyl)palladium(II) (6N5 Pd(hfac)2/Pd(allyl)(Cp) >=99.99995%) + Tellurium Diethyldithiocarbamate/Diisopropyl Telluride (6N5 Te(dedtc)2/iPr2Te >=99.99995%) + Trimethylaluminum (6N5 TMA >=99.99995%) 300mm A7/A5 2D 1T-PdTe2/1L-WSe2 Type-II Dirac Semimetal Van der Waals Ultralow-Resistance p-CFET Contact (R_cp=34.0 Ohm*um, S=0.97, VdW gap 0.19nm), Atomically Smooth Single-Crystal Silver (Ag(111) on 1.2nm Al2O3/Pd seed, RMS<=0.12nm, L_SPP=148um at 1310nm, loss 0.028dB/um) 6.4T/12.8T CPO Hybrid Plasmonic Waveguide & Sub-Picojoule (0.18pJ/bit, Ron/Roff=1.2e8, 650ps) Ag/Ag2Te/HfO2 Conductive-Bridge Synapse (CBRAM) PEALD/VDW-Epitaxy PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ TLM-ARPES/KPFM/s-SNOM & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Organotellurium (iPr2Te), HF Byproduct & Pyrophoric TMA Interlock, "
-        "Blueprint #306, Simulator #305, Tool 305 & 314/314 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #306 — Chapter 311 + Summary 312 (314 Chapters) "
+        "Electronic-Grade 6N5 Pt(MeCp)Me3/Pt(hfac)2 + 6N5 TDMASn + 6N5 DESe + 6N5 TMA "
+        "A5 PtSe2/MoS2 VdW Contact, Pt Nanowire Plasmonic Interconnect & SnSe PCM "
+        "PEALD PINN-MPC + SIL-3, Blueprint #307, Simulator #306, Tool 306, 315/315 tests, bilingual sync"
     )
 
     infra_lab = Path.home() / "ai-infra-lab"

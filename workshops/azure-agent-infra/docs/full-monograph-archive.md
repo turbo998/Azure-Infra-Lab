@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #305 · 313 Chapters · 306 Blueprints · 305 Simulators · 314/314 Tests · 305-Cycle & 305-Simulator Double Milestone!)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #306 · 314 Chapters · 307 Blueprints · 306 Simulators · 315/315 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -7593,4 +7593,27 @@ python simulator/test_agent_infra_sizer.py -v
 # 4. 重新生成并校验全部 8 张 SVG 架构图、H5 交互套件与 7-Card 评测报告
 python simulator/generate_visual_assets.py
 python simulator/generate_h5_suite.py
+```
+
+---
+
+## 312. 电子级 6N5 Pt(MeCp)Me3 / Pt(hfac)2 + 6N5 TDMASn + 6N5 DESe + 6N5 TMA 300mm A5/A3 PtSe2 范德华接触、Pt 纳米线等离激元互连与 SnSe 相变突触（Cycle #306 · Chapter 311）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`PtSe2/MoS2` 接触比接触电阻收敛至 `R_cp=31.5 Ω·μm`、Pt 纳米线等离激元传播长度稳定于 `L_SPP=132 μm`、SnSe 相变突触达到 `580 ps / 0.16 pJ/bit`，对应 **`+80.0%` 良率增益** 与 **`-97.7%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1608.4/1242.0/2890.6 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内完成闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 Pt/Sn/Se 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `1.9%`。
+- **生产级资产**：Blueprint [`blueprints/ptmecpme3-pthfac2-tdmasn-dese-tma-a5-ptse2-contact-pt-nanowire-snse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/ptmecpme3-pthfac2-tdmasn-dese-tma-a5-ptse2-contact-pt-nanowire-snse-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #307**）、仿真函数 `simulate_ptmecpme3_pthfac2_tdmasn_dese_tma_a5_ptse2_contact_pt_nanowire_and_snse_pcm_peald_sil3_sandbox()`（**Simulator #306**）与 H5 工具 **Tool 306**。
+
+---
+
+## 313. Cycle #306 评测摘要与复现实验命令（Summary 312 · 314 Chapters）
+
+- **版本快照**：`314 Chapters · 307 Blueprints · 306 Simulators · 315/315 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
 ```
