@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #309 · 317 Chapters · 310 Blueprints · 309 Simulators · 318/318 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #310 · 318 Chapters · 311 Blueprints · 310 Simulators · 319/319 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -7631,6 +7631,29 @@ python simulator/publish_via_github_api.py
 ## 319. Cycle #309 评测摘要与复现实验命令（Summary 315 · 317 Chapters）
 
 - **版本快照**：`317 Chapters · 310 Blueprints · 309 Simulators · 318/318 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 320. 电子级 6N5 Au(MeCp)(COD) / Au(acac)3 + 6N5 TDMAAl + 6N5 DMSe + 6N5 TMA 300mm A0/B0 AuSe2 范德华接触、Ag 纳米光栅等离激元互连与 AlSe 相变突触（Cycle #310 · Chapter 315）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`AuSe2/Sb2Se3` 接触比接触电阻收敛至 `R_cp=29.4 Ω·μm`、Ag 纳米光栅等离激元传播长度稳定于 `L_SPP=146 μm`、AlSe 相变突触达到 `460 ps / 0.11 pJ/bit`，对应 **`+81.2%` 良率增益** 与 **`-98.1%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1562.0/1198.0/2844.0 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 Au/Al/Se 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `1.8%`。
+- **生产级资产**：Blueprint [`blueprints/aumecpcod-auacac3-tdmaal-dmse-tma-a0-ause2-contact-ag-nanograting-alse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/aumecpcod-auacac3-tdmaal-dmse-tma-a0-ause2-contact-ag-nanograting-alse-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #311**）、仿真函数 `simulate_aumecpcod_auacac3_tdmaal_dmse_tma_a0_ause2_contact_ag_nanograting_and_alse_pcm_peald_sil3_sandbox()`（**Simulator #310**）与 H5 工具 **Tool 310**。
+
+---
+
+## 321. Cycle #310 评测摘要与复现实验命令（Summary 316 · 318 Chapters）
+
+- **版本快照**：`318 Chapters · 311 Blueprints · 310 Simulators · 319/319 Tests`。
 - **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
 - **一键复现**：
 

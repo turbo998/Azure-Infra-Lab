@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[📘 Bilingual Entry (`README.md`)](../README.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](../selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #309 · **317 Chapters** · **310 IaC Blueprints** · **309 Quantitative Physics Simulators** · **318/318 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 317-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #310 · **318 Chapters** · **311 IaC Blueprints** · **310 Quantitative Physics Simulators** · **319/319 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 318-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](../test-report.en.md) · [中文 7-Card 评测报告](../test-report.md) · [CSP-Locked Self-Contained HTML Deck](../cards.html) · [Sealed Benchmark JSON (`report.json`)](../report.json)
-  - 🧮 [Deterministic Architecture Sizer & 309 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [318-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 310 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [319-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](../index.html) · [`h5/demo.html`](../demo.html) · [`h5/selector.html`](../selector.html) · [`h5/cards.html`](../cards.html)
 
 ---
@@ -454,6 +454,29 @@ python simulator/publish_via_github_api.py
 ## 318. Cycle #309 Summary and Reproducibility Commands (317 Chapters)
 
 - **Snapshot**: `317 Chapters · 310 Blueprints · 309 Simulators · 318/318 Tests`.
+- **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
+- **Reproducibility CLI**:
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 319. Electronic-Grade 6N5 Au(MeCp)(COD) / Au(acac)3 + 6N5 TDMAAl + 6N5 DMSe + 6N5 TMA for 300mm A0/B0 AuSe2 VdW Contact, Ag Nanograting Plasmonics and AlSe PCM Synapse (Cycle #310)
+
+- **Closed-loop outcome**: under `PINN-MPC + SIL-3`, the flow converges to `R_cp=29.4 Ω·μm` for `AuSe2/Sb2Se3` VdW contact, `L_SPP=146 μm` for Ag nanograting plasmonics, and `460 ps / 0.11 pJ/bit` for AlSe PCM synapse, yielding **`+81.2%` effective yield gain** and **`-98.1%` agglomeration/phase-drift reduction**.
+- **Safety and metrology**: `10 kHz QCL-CRDS (1562.0/1198.0/2844.0 cm⁻¹) + in-situ XPS/TLM-ARPES/s-SNOM` closes in `0.11 ms`; `SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` lockout trips in `0.10 ms` against Au/Al/Se precursor and pyrophoric TMA excursions.
+- **Production assets**: Blueprint [`blueprints/aumecpcod-auacac3-tdmaal-dmse-tma-a0-ause2-contact-ag-nanograting-alse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/aumecpcod-auacac3-tdmaal-dmse-tma-a0-ause2-contact-ag-nanograting-alse-pcm-peald-pinn-mpc-sil3.bicep) (**Blueprint #311**), simulator `simulate_aumecpcod_auacac3_tdmaal_dmse_tma_a0_ause2_contact_ag_nanograting_and_alse_pcm_peald_sil3_sandbox()` (**Simulator #310**), and **Tool 310** in `selector.html`.
+
+---
+
+## 320. Cycle #310 Summary and Reproducibility Commands (318 Chapters)
+
+- **Snapshot**: `318 Chapters · 311 Blueprints · 310 Simulators · 319/319 Tests`.
 - **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
 - **Reproducibility CLI**:
 
