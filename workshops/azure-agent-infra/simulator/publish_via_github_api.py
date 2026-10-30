@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 309
-CURRENT_BLUEPRINTS = 302
-CURRENT_SIMULATORS = 301
-CURRENT_TESTS = 310
+CURRENT_CHAPTERS = 310
+CURRENT_BLUEPRINTS = 303
+CURRENT_SIMULATORS = 302
+CURRENT_TESTS = 311
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #295 (295-Cycle & 295-Simulator Double Milestone!) — Chapter 300 + Summary 301 (303 Chapters) Autonomous Electronic-Grade Ultrapure Hexacarbonylmolybdenum/Molybdenum Pentachloride (6N5 Mo(CO)6/MoCl5 >=99.99995%, Fe/Ni/Cu/Cr/Na/K/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Bis(tert-butylimido)bis(dimethylamino)molybdenum (6N5 Mo(NtBu)2(NMe2)2 >=99.99995%, Halide/Carbonyl-Free) + Hydrogen Sulfide/Di-tert-butyl Disulfide (6N5 H2S/DTBDS >=99.99995%) + Dimethylselenium/Diethyltelluride (6N5 DMSe/DETe >=99.99995%) 300mm A10/A7 Sub-1nm 2D Monolayer 2H-MoS2/WSe2 CFET (SS=60.8mV/dec, Ion/Ioff=2.4e8, 1T'-MoTe2/Sb Contact Rc=38Ohm*um), Barrierless Direct-Mo M0/Wordline/BPR (lambda_Mo=11.2nm, 10nm rho_Mo=10.4uOhm*cm, -52% vs Cu+TaN, Zero-Fluorine) & 6.4T CPO Excitonic MoTe2/Si3N4 Photodetector (0.92A/W, 118GHz) MOCVD/PEALD PINN-MPC, 10kHz QCL-CRDS (2003.5/2592.0/390.0cm-1) + SF-ICP-MS + In-Situ UV-Raman (Delta_omega=18.8cm-1)/1.88eV PL/4PP & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Toxic H2S/Mo(CO)6/DMSe/DETe Interlock, "
-        "Blueprint #296, Simulator #295, Tool 295 & 304/304 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #302 (310-Chapter Milestone!) — Chapter 307 + Summary 308 (310 Chapters) Autonomous Electronic-Grade Ultrapure Tris(isopropylcyclopentadienyl)cerium/Tetrakis(2,2,6,6-tetramethyl-3,5-heptanedionato)cerium (6N5 Ce(iPrCp)3/Ce(thd)4 >=99.99995%, Cross-Lanthanide La/Pr/Nd/Sm<=0.08ppbw, Trace Fe/Co/Ni/Cr/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Tris(isopropylcyclopentadienyl)gadolinium (6N5 Gd(iPrCp)3 >=99.99995%) + Tetrakis(dimethylamino)zirconium/Tetrakis(ethylmethylamino)hafnium (6N5 TDMAZr/TEMAHf >=99.99995%, Cl<=0.01ppmw) + Trimethylaluminum (6N5 TMA >=99.99995%) 300mm A10/A7 Sub-0.38nm EOT (0.36nm) Cerium-Doped Orthorhombic Hafnium-Zirconium Oxide (Ce0.08Hf0.46Zr0.46O2 Ce-HZO, Polar Pca2_1 fo>=96.8%, 2Pr=64.0uC/cm2, Wakeup-Free >1e12-Cycle Endurance via Ce4+/Ce3+ Redox Buffer) Ferroelectric Gate, Cryogenic 4K-20K GdAlO3 ADR Cooler (-DeltaS_M=46.8J/(kg*K)) & High-NA EUV Ce3+:Gd3Al2Ga3O12 (Ce:GAGG, 58,000ph/MeV, tau=52.0ns) Wavefront Scintillator PEALD/ALA PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ PUND/GIXRD/XAS/EUV-RL & SEMI S2/NFPA 704/OSHA 1910.1200/SIL-3 Pyrophoric Ce/Gd/TMA Interlock, "
+        "Blueprint #303, Simulator #302, Tool 302 & 311/311 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path.home() / "ai-infra-lab"

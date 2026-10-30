@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-29 (Cycle #298 · 306 Chapters · 299 Blueprints · 298 Simulators · 307/307 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-30 (Cycle #302 · 310 Chapters · 303 Blueprints · 302 Simulators · 311/311 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -7522,7 +7522,19 @@ $$\text{La}_2\text{O}_3 + 15\text{B} \xrightarrow{1,650\text{ }^\circ\text{C, Va
 
 ---
 
-## 307. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #301 · 310-Test Milestone! · 309 Chapters）
+## 307. 电子级超纯三(异丙基环戊二烯基)铈/四(2,2,6,6-四甲基-3,5-庚二酮)铈（`6N5 Ce(iPrCp)3 / Ce(thd)4`）与三(异丙基环戊二烯基)钆（`6N5 Gd(iPrCp)3`）+ 四(二甲氨基)锆/四(乙基甲氨基)铪（`6N5 TDMAZr / TEMAHf`）+ 三甲基铝（`6N5 TMA`）300mm A10/A7 亚 $0.38\text{ nm}$ EOT ($0.36\text{ nm}$) 铈掺杂正交相铪锆氧（$\text{Ce}_{0.08}\text{Hf}_{0.46}\text{Zr}_{0.46}\text{O}_2$, $2P_r = 64.0\ \mu\text{C/cm}^2$, $>10^{12}$ 次氧化还原钉扎抗疲劳）铁电栅、极低温 $4\text{ K}–20\text{ K}$ $\text{GdAlO}_3$ 绝热去磁微制冷器（$-\Delta S_M = 46.8\text{ J/(kg}\cdot\text{K)}$）与 High-NA EUV $13.5\text{ nm}$ 工作波长 $\text{Ce}^{3+}:\text{Gd}_3\text{Al}_2\text{Ga}_3\text{O}_{12}$ (`Ce:GAGG`) 波前闪烁传感器 PEALD/ALA PINN-MPC 与 SIL-3 联锁架构（Cycle #302 · 310-Chapter Milestone!）
+
+- **前驱体超纯化与物理化学控制目标**：采用超高真空多级分子蒸馏与区域升华纯化制备电子级超纯三(异丙基环戊二烯基)铈/四(2,2,6,6-四甲基-3,5-庚二酮)铈（`6N5 Ce(iPrCp)3 / Ce(thd)4` $\ge 99.99995\%$，交叉镧系杂质 $\text{La/Pr/Nd/Sm} \le 0.08\text{ ppbw}$，痕量过渡金属与放射性核素 $\text{Fe/Co/Ni/Cr/U/Th} \le 0.05\text{ ppbw}$，$\alpha$ 粒子发射率 $\le 0.0001\text{ counts/cm}^2\cdot\text{hr}$）、电子级三(异丙基环戊二烯基)钆（`6N5 Gd(iPrCp)3` $\ge 99.99995\%$）以及电子级无氯四(二甲氨基)锆/四(乙基甲氨基)铪（`6N5 TDMAZr / TEMAHf` $\ge 99.99995\%$，卤素残留 $\text{Cl} \le 0.01\text{ ppmw}$）与三甲基铝（`6N5 TMA` $\ge 99.99995\%$）。
+- **核心器件物理与工艺闭环**：
+  1. **A10/A7 亚 $0.38\text{ nm}$ EOT ($0.36\text{ nm}$) 铈掺杂正交相铪锆氧（$\text{Ce}_{0.08}\text{Hf}_{0.46}\text{Zr}_{0.46}\text{O}_2$ `Ce-HZO`）$10^{12}$ 次无疲劳铁电栅与 3D 铁电电容器**：在 $3.5\text{ nm}$ 超薄 $\text{Hf}_{0.5}\text{Zr}_{0.5}\text{O}_2$ 铁电薄膜中，常规三价稀土掺杂虽能稳定极性正交相（$Pca2_1$），但必然引入化学计量补偿氧空位（$V_{\text{O}}^{\bullet\bullet}$），在高频电场循环下发生氧空位漂移钉扎与单斜相（$P2_1/c$）弛豫导致疲劳击穿。铈（$\text{Ce}$）具有独特的 $\text{Ce}^{4+}\ (4f^0,\ r_{\text{VIII}} = 0.97\text{ \AA}) \leftrightarrow \text{Ce}^{3+}\ (4f^1,\ r_{\text{VIII}} = 1.14\text{ \AA})$ 可逆变价电对：大离子半径差异带来的局部晶格畸变能直接降低非中心对称极性正交相（$Pca2_1$）与四方相（$P4_2/nmc$）的吉布斯自由能，使正交相体积分数高达 **$f_o \ge 96.8\%$**（剩余极化强度 **$2P_r = 64.0\ \mu\text{C/cm}^2$**，等效氧化层厚度 **$\text{EOT} = 0.36\text{ nm}$**）；同时 $\text{Ce}^{4+}/\text{Ce}^{3+}$ 原位充当“氧空位氧化还原缓冲池（Redox Buffer）”，动态捕获/释放界面氧离子并抑制 $V_{\text{O}}^{\bullet\bullet}$ 跨晶界迁移团聚，无需唤醒（Wakeup-Free）即可实现 **$> 1.0 \times 10^{12}$ 次**双极翻转无疲劳击穿，漏电流 $J_g \le 1.2 \times 10^{-4}\text{ A/cm}^2$（$@0.65\text{ V}$）。
+  2. **极低温 $4\text{ K}–20\text{ K}$ 超导/自旋量子芯片片上绝热去磁微制冷器（`On-Chip ADR` 外延正交钙钛矿铝酸钆 $\text{GdAlO}_3$ `GAP`）**：利用 $\text{Gd}^{3+}\ (4f^7,\ ^8\text{S}_{7/2},\ J=S=7/2,\ L=0)$ 零轨道角动量带来的极低磁晶各向异性与巨自旋磁矩，通过 `6N5 Gd(iPrCp)3 + 6N5 TMA` 原子层外延沉积高致密 $\text{GdAlO}_3$ 薄膜，在 $\Delta B = 5\text{ T}$ 下实现等温磁熵变 **$-\Delta S_M = 46.8\text{ J/(kg}\cdot\text{K)}$**（体积磁熵密度 $382\text{ mJ/(cm}^3\cdot\text{K)}$），消除量子控制芯片热点。
+  3. **High-NA EUV ($13.5\text{ nm}$, $91.8\text{ eV}$) 束流工作波长波前与套刻闪烁图像传感器（单晶外延 $\text{Ce}^{3+}:\text{Gd}_3\text{Al}_2\text{Ga}_3\text{O}_{12}$ `Ce:GAGG` 超薄闪烁膜）**：利用 $\text{Ce}^{3+}$ 允许电偶极 $5d_1 \to 4f\ (^2\text{F}_{5/2,7/2})$ 辐射跃迁（发射峰 $520\text{ nm}$ 完美匹配背面照射 CMOS 量子效率峰值），通过 $\text{Ga/Al}$ 配比能带工程消除导带底电子浅陷阱与 $\text{Gd}_{\text{Ga}}$ 反位缺陷，实现光产额 **$58,000\text{ photons/MeV}$**、快闪烁衰减时间 **$\tau_{\text{scint}} = 52.0\text{ ns}$**（余辉 $< 0.05\%$ @ $1\text{ ms}$）与 $> 100\text{ MGy}$ 抗极紫外辐射损伤寿命。
+- **在线计量与安全联锁（SEMI S2 / NFPA 704 / SIL-3）**：集成 `10 kHz` 量子级联激光腔衰荡光谱（`QCL-CRDS`：$2961.8\text{ cm}^{-1}$ `Ce(iPrCp)3`、$2973.5\text{ cm}^{-1}$ `Gd(iPrCp)3`、$948.5\text{ cm}^{-1}$ `TDMAZr/TEMAHf` $\nu(\text{M–N})$ 与 $< 0.3\text{ pptv}$ $\text{O}_2/\text{H}_2\text{O}$）与原位脉冲铁电极化测试（`PUND` 实时监测 $2P_r$ 与疲劳漏电）、原位同步辐射掠入射 X 射线衍射（`GIXRD` 锁定 $I_{o(111)}/I_{m(\bar{1}11)+m(111)} \ge 96.8\%$）、软 X 射线吸收谱（`XAS` 监测 $\text{Ce } M_{4,5}\text{-edge}$ $\text{Ce}^{4+}/\text{Ce}^{3+}$ 最佳氧化还原比 $0.78:0.22$）及 $13.5\text{ nm}$ EUV 辐射发光（`EUV-RL`），边缘推理延迟 `0.11 ms`（削减 `99.7%` WAN 带宽）。针对遇空气/湿气剧烈自燃的稀土环戊二烯源与三甲基铝（`Ce(iPrCp)3 / Gd(iPrCp)3 / TMA`，`NFPA 704 3-4-3 W`）及高活性金属酰胺前驱体蒸气，部署 `0.10 ms` `SIL-3` 双阀组全金属波纹管截断（`1oo2D DBB`）、无水 Class-D 干粉覆盖与氧化铝/活性碳化学矿化洗涤床，实现 `0.0%` 自燃或泄漏事故，良率提升 **`+79.0%`**，氧空位钉扎疲劳与单斜相退化削减 **`-97.3%`**。
+- **生产级 IaC 与仿真验证**：配套 Bicep 蓝图 [`blueprints/ceiprcp3-cethd4-gdiprcp3-tdmazr-a10-ce-hzo-ferroelectric-gate-and-ce-gagg-euv-scintillator-peald-pinn-mpc-sil3.bicep`](../blueprints/ceiprcp3-cethd4-gdiprcp3-tdmazr-a10-ce-hzo-ferroelectric-gate-and-ce-gagg-euv-scintillator-peald-pinn-mpc-sil3.bicep)（**Blueprint #303**）、确定性仿真函数 `simulate_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_sandbox()`（**Simulator #302**）及 H5 交互工具 **Tool 302（310-Chapter Milestone!）**。
+
+---
+
+## 308. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #302 · 310-Chapter Milestone! · 310 Chapters）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

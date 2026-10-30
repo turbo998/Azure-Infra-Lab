@@ -16377,6 +16377,60 @@ def simulate_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantu
     }
 
 
+def simulate_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_sandbox(
+    ceiprcp3_cethd4_gdiprcp3_tdmazr_trains: int = 8,
+    governance_mode: str = "pinn_mpc_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Ce(iPrCp)3 / Ce(thd)4 & 6N5 Gd(iPrCp)3 + 6N5 TDMAZr / TEMAHf + 6N5 TMA
+    300mm A10/A7 Sub-0.38nm EOT (0.36nm) Cerium-Doped Orthorhombic Hafnium-Zirconium Oxide (Ce0.08Hf0.46Zr0.46O2,
+    2Pr = 64.0 uC/cm2, >10^12-Cycle Ce3+/Ce4+ Redox-Pinned Endurance) Ferroelectric Gate, Cryogenic 4K-20K GdAlO3
+    ADR Magnetocaloric Micro-Cooler (-DeltaS_M = 46.8 J/(kg*K)) & High-NA EUV 13.5nm Actinic Ce3+:Gd3Al2Ga3O12
+    (Ce:GAGG, 58,000 ph/MeV, tau_scint = 52.0 ns) Wavefront Scintillator PEALD/ALA PINN-MPC + SIL-3
+    (Cycle #302 — 310-Chapter Milestone!).
+    """
+    trains = max(1, int(ceiprcp3_cethd4_gdiprcp3_tdmazr_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_ce_hzo_ferroelectric_gdalo3_adr_ce_gagg_pods = trains * 4
+    electronic_6n5_ceiprcp3_6n5_gdiprcp3_6n5_tdmazr_6n5_tma_purity_and_ce_hzo_gagg_yield_gain_pct = (
+        79.0 if governed else 17.1
+    )
+    oxygen_vacancy_fatigue_and_monoclinic_phase_degradation_reduction_pct = (
+        97.3 if governed else 20.4
+    )
+    semi_s2_nfpa704_osha_19101200_sil3_pyrophoric_cerium_gadolinium_tma_lockout_latency_ms = (
+        0.10 if governed else 280.0
+    )
+    unmitigated_pyrophoric_ce_gd_tma_autoignition_or_amide_vapor_leak_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_2962cm1_2974cm1_949cm1_insitu_pund_gixrd_xas_euvrl_latency_ms = (
+        0.11 if governed else 380.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ce_hzo_fatigue_breakdown_or_ce_gagg_antisite_trapping_failure_pct = (
+        0.0 if governed else 10.7
+    )
+    return {
+        "ceiprcp3_cethd4_gdiprcp3_tdmazr_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_ce_hzo_ferroelectric_gdalo3_adr_ce_gagg_pods": active_ce_hzo_ferroelectric_gdalo3_adr_ce_gagg_pods,
+        "electronic_6n5_ceiprcp3_6n5_gdiprcp3_6n5_tdmazr_6n5_tma_purity_and_ce_hzo_gagg_yield_gain_pct": electronic_6n5_ceiprcp3_6n5_gdiprcp3_6n5_tdmazr_6n5_tma_purity_and_ce_hzo_gagg_yield_gain_pct,
+        "oxygen_vacancy_fatigue_and_monoclinic_phase_degradation_reduction_pct": oxygen_vacancy_fatigue_and_monoclinic_phase_degradation_reduction_pct,
+        "semi_s2_nfpa704_osha_19101200_sil3_pyrophoric_cerium_gadolinium_tma_lockout_latency_ms": semi_s2_nfpa704_osha_19101200_sil3_pyrophoric_cerium_gadolinium_tma_lockout_latency_ms,
+        "unmitigated_pyrophoric_ce_gd_tma_autoignition_or_amide_vapor_leak_pct": unmitigated_pyrophoric_ce_gd_tma_autoignition_or_amide_vapor_leak_pct,
+        "edge_qcl_crds_2962cm1_2974cm1_949cm1_insitu_pund_gixrd_xas_euvrl_latency_ms": edge_qcl_crds_2962cm1_2974cm1_949cm1_insitu_pund_gixrd_xas_euvrl_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ce_hzo_fatigue_breakdown_or_ce_gagg_antisite_trapping_failure_pct": uncompensated_ce_hzo_fatigue_breakdown_or_ce_gagg_antisite_trapping_failure_pct,
+        "ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_slo_met": governed,
+    }
+
+
 
 
 

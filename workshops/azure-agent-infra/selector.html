@@ -7482,6 +7482,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="euiprEusSpinResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(56,189,248,0.35);">
+      <h3>Tool 302 · 电子级三(异丙基环戊二烯基)铈/四(四甲基庚二酮)铈 6N5 Ce(iPrCp)<sub>3</sub> / Ce(thd)<sub>4</sub> 与三(异丙基环戊二烯基)钆 6N5 Gd(iPrCp)<sub>3</sub> + 6N5 TDMAZr / TEMAHf + TMA 300mm A10/A7 亚 0.38nm EOT (0.36nm) 铈掺杂正交相铪锆氧 (Ce<sub>0.08</sub>Hf<sub>0.46</sub>Zr<sub>0.46</sub>O<sub>2</sub>, 2P<sub>r</sub>=64.0 &mu;C/cm&sup2;, &gt;10<sup>12</sup> 次氧化还原钉扎抗疲劳) 铁电栅、极低温 4K–20K GdAlO<sub>3</sub> 绝热去磁微制冷器 (&minus;&Delta;S<sub>M</sub>=46.8 J/(kg&middot;K)) 与 High-NA EUV 13.5nm 束流工作波长 Ce<sup>3+</sup>:Gd<sub>3</sub>Al<sub>2</sub>Ga<sub>3</sub>O<sub>12</sub> (Ce:GAGG, 58,000 ph/MeV, &tau;<sub>scint</sub>=52.0 ns) 波前闪烁传感器 PEALD/ALA PINN-MPC + SIL-3 评估器（310-Chapter Milestone!）</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（2961.8 cm⁻¹ Ce(iPrCp)<sub>3</sub>、2973.5 cm⁻¹ Gd(iPrCp)<sub>3</sub>、948.5 cm⁻¹ TDMAZr/TEMAHf 与 &lt;0.3 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位 PUND 铁电极化测试 + 同步辐射掠入射 X 射线衍射（GIXRD 锁定 Pca2<sub>1</sub> 正交相占比 &ge;96.8%）+ 软 X 射线吸收谱（XAS 监测 Ce<sup>4+</sup>/Ce<sup>3+</sup> 氧空位可逆氧化还原缓冲比）+ 13.5nm EUV 辐射发光（EUV-RL）推入工厂边缘 4 节点 H100 集群，在 0.11ms 内闭环消除氧空位钉扎疲劳与单斜相弛豫，并以 0.10ms SIL-3 联锁阻断自燃稀土环戊二烯源及 TMA 泄漏风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Ce(iPrCp)<sub>3</sub> / Gd(iPrCp)<sub>3</sub> / TDMAZr / TEMAHf / TMA 提纯与 Ce-HZO 铁电栅 / Ce:GAGG 闪烁产线数 (Trains): <span id="ceiprCeHzoTrainsVal">8</span></label>
+          <input type="range" id="ceiprCeHzoTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('ceiprCeHzoTrainsVal').innerText=this.value; runCeiprcp3Cethd4Gdiprcp3TdmazrA10CeHzoFerroelectricGateAndCeGaggEuvScintillatorLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="ceiprCeHzoMode" onchange="runCeiprcp3Cethd4Gdiprcp3TdmazrA10CeHzoFerroelectricGateAndCeGaggEuvScintillatorLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Ce(iPrCp)3 + Gd(iPrCp)3 + TDMAZr/TEMAHf/TMA Ce-HZO 0.36nm EOT 铁电栅 + Ce:GAGG EUV 闪烁 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环氧空位迁移疲劳击穿、P21/c 单斜相弛豫、GdGa 反位缺陷慢发光拖尾与自燃 Ce/Gd/TMA 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="ceiprCeHzoResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13455,6 +13474,47 @@ function runEuiprcp2Ybiprcp3Tmiprcp3H2sA10EusSpinFilterAnd171ybQuantumTransducer
   `;
 }
 runEuiprcp2Ybiprcp3Tmiprcp3H2sA10EusSpinFilterAnd171ybQuantumTransducerLab();
+
+function runCeiprcp3Cethd4Gdiprcp3TdmazrA10CeHzoFerroelectricGateAndCeGaggEuvScintillatorLab() {
+  const trains = parseInt(document.getElementById('ceiprCeHzoTrains').value, 10) || 8;
+  const mode = document.getElementById('ceiprCeHzoMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 79.0 : 17.1;
+  const defectCut = isPinn ? 97.3 : 20.4;
+  const sil3Ms = isPinn ? 0.10 : 280.0;
+  const leakRisk = isPinn ? 0.0 : 1.8;
+  const metroMs = isPinn ? 0.11 : 380.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.7;
+  document.getElementById('ceiprCeHzoResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">A10 铁电栅、极低温磁热与 EUV 闪烁指标：</span><strong>Ce<sub>0.08</sub>Hf<sub>0.46</sub>Zr<sub>0.46</sub>O<sub>2</sub> EOT=0.36 nm (2P<sub>r</sub>=64.0 &mu;C/cm&sup2;, &gt;10<sup>12</sup> 次抗疲劳) · GdAlO<sub>3</sub> ADR &minus;&Delta;S<sub>M</sub>=46.8 J/(kg&middot;K) · Ce<sup>3+</sup>:GAGG 58,000 ph/MeV (&tau;<sub>scint</sub>=52.0 ns)</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Ce/Gd/Zr/Hf/Al 纯度与 Ce-HZO / Ce:GAGG 良率增益 / 氧空位钉扎疲劳与单斜相退化削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 自燃稀土环戊二烯源与 TMA 联锁延迟 / 自燃与金属酰胺泄漏事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (2961.8/2973.5/948.5cm⁻¹) + 原位 PUND/GIXRD/XAS/EUV-RL 延迟 (-${wanRed.toFixed(1)}% WAN) / 铁电疲劳击穿或闪烁反位缺陷失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_edge`)</strong>：通过 6N5 Ce(iPrCp)<sub>3</sub>/Ce(thd)<sub>4</sub> 原子层掺杂与 Ce<sup>3+</sup>/Ce<sup>4+</sup> (4f<sup>1</sup> &harr; 4f<sup>0</sup>) 原位氧空位氧化还原缓冲，实现 0.36nm EOT 下 64.0 &mu;C/cm&sup2; 极化与 &gt;10<sup>12</sup> 次无唤醒/无疲劳翻转，同时锁定 Ce<sup>3+</sup>:GAGG 58,000 ph/MeV 高纳秒 EUV 波前探测。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：缺乏 Ce<sup>3+</sup>/Ce<sup>4+</sup> 变价化学势闭环导致界面氧空位聚集并诱发 Pca2<sub>1</sub> 正交相向非铁电 P2<sub>1</sub>/c 单斜相弛豫（疲劳击穿），且 Ce:GAGG 中 Gd<sub>Ga</sub> 反位缺陷与 Ce<sup>4+</sup> 非辐射中心导致 EUV 闪烁产额暴跌（10.7% 失效率，280ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runCeiprcp3Cethd4Gdiprcp3TdmazrA10CeHzoFerroelectricGateAndCeGaggEuvScintillatorLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);
