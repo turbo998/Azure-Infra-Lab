@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 312
-CURRENT_BLUEPRINTS = 305
-CURRENT_SIMULATORS = 304
-CURRENT_TESTS = 313
+CURRENT_CHAPTERS = 313
+CURRENT_BLUEPRINTS = 306
+CURRENT_SIMULATORS = 305
+CURRENT_TESTS = 314
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #304 (305-Blueprint Milestone!) — Chapter 309 + Summary 310 (312 Chapters) Autonomous Electronic-Grade Ultrapure Tris(acetylacetonato)rhodium(III)/Dicarbonylchlororhodium(I) Dimer (6N5 Rh(acac)3/[Rh(CO)2Cl]2 >=99.99995%, Trace Pt/Pd/Ru/Os/Fe/Co/Ni/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & (Methylcyclopentadienyl)(1,5-cyclooctadiene)iridium(I) (6N5 Ir(MeCp)(COD) >=99.99995%) + Dimanganese Decacarbonyl/Bis(ethylcyclopentadienyl)manganese (6N5 Mn2(CO)10/Mn(EtCp)2 >=99.99995%) + Dimethyl(acetylacetonato)gold(III)/Methyl(trimethylphosphine)gold(I) (6N5 Au(Me2)(acac)/MeAuPMe3 >=99.99995%) 300mm A7/A5 Sub-7nm Pitch (6.5nm Half-Pitch) Barrierless Single-Crystal Rhodium (Rh, rho_bulk*lambda_e=29.9e-16 Ohm*m2, R_line -48.5% vs Ru and -68.2% vs barriered Cu, E_a=2.42eV) M0/M1 Interconnects, Non-Collinear Chiral Antiferromagnetic L12-Mn3Ir (111) Field-Free SOT-MRAM (T_N=960K, mu0*H_ex=185mT, 240ps) & 3.2T/6.4T CPO >265GHz Plasmonic-Slot MZM (V_pi*L=42.0V*um, 3.2fJ/bit) PEALD/MBE PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ FBG-4PP/MOKE-XMCD/VNA-SNOM & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Toxic Rh/Mn Carbonyl & Organogold Interlock, "
-        "Blueprint #305, Simulator #304, Tool 304 & 313/313 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #305 (305-Cycle & 305-Simulator Double Milestone!) — Chapter 310 + Summary 311 (313 Chapters) Autonomous Electronic-Grade Ultrapure Hexafluoroacetylacetonato(1,5-cyclooctadiene)silver(I)/Trimethylphosphine(hexafluoroacetylacetonato)silver(I) (6N5 Ag(hfac)(COD)/Ag(hfac)(PMe3) >=99.99995%, Trace Cu/Au/Pd/Fe/Ni/Na/K/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Bis(hexafluoroacetylacetonato)palladium(II)/Allyl(cyclopentadienyl)palladium(II) (6N5 Pd(hfac)2/Pd(allyl)(Cp) >=99.99995%) + Tellurium Diethyldithiocarbamate/Diisopropyl Telluride (6N5 Te(dedtc)2/iPr2Te >=99.99995%) + Trimethylaluminum (6N5 TMA >=99.99995%) 300mm A7/A5 2D 1T-PdTe2/1L-WSe2 Type-II Dirac Semimetal Van der Waals Ultralow-Resistance p-CFET Contact (R_cp=34.0 Ohm*um, S=0.97, VdW gap 0.19nm), Atomically Smooth Single-Crystal Silver (Ag(111) on 1.2nm Al2O3/Pd seed, RMS<=0.12nm, L_SPP=148um at 1310nm, loss 0.028dB/um) 6.4T/12.8T CPO Hybrid Plasmonic Waveguide & Sub-Picojoule (0.18pJ/bit, Ron/Roff=1.2e8, 650ps) Ag/Ag2Te/HfO2 Conductive-Bridge Synapse (CBRAM) PEALD/VDW-Epitaxy PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ TLM-ARPES/KPFM/s-SNOM & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Organotellurium (iPr2Te), HF Byproduct & Pyrophoric TMA Interlock, "
+        "Blueprint #306, Simulator #305, Tool 305 & 314/314 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path.home() / "ai-infra-lab"

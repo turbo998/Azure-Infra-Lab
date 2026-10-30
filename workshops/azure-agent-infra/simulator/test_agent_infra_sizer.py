@@ -311,6 +311,7 @@ from agent_infra_sizer import (
     simulate_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_sandbox,
     simulate_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_sandbox,
     simulate_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_sandbox,
+    simulate_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6633,6 +6634,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_rh_grain_scattering_or_plasmonic_slot_au_islanding_failure_pct"], 3.0)
         self.assertTrue(gov["rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_slo_met"])
         self.assertFalse(raw["rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_slo_met"])
+
+    def test_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox(self) -> None:
+        gov = simulate_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox(
+            aghfaccod_pdhfac2_ipr2te_tma_trains=8,
+            governance_mode="pinn_mpc_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_edge",
+        )
+        raw = simulate_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox(
+            aghfaccod_pdhfac2_ipr2te_tma_trains=8,
+            governance_mode="unmanaged_open_loop_ag_dewetting_and_wse2_fermi_pinning",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_a7_pdte2_contact_ag111_plasmonic_ag2te_cbram_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_aghfaccod_6n5_pdhfac2_6n5_ipr2te_6n5_tma_purity_and_pdte2_ag111_yield_gain_pct"], 79.8)
+        self.assertEqual(gov["ag_dewetting_island_roughness_and_wse2_tellurium_vacancy_reduction_pct"], 97.6)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_organotellurium_hfac_hf_and_pyrophoric_tma_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_organotellurium_ipr2te_leak_or_pyrophoric_tma_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_organotellurium_ipr2te_leak_or_pyrophoric_tma_ignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_1258cm1_1642cm1_2965cm1_insitu_tlmarpes_kpfm_ssnom_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_ag111_plasmonic_scattering_or_cbram_filament_overgrowth_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_ag111_plasmonic_scattering_or_cbram_filament_overgrowth_failure_pct"], 3.0)
+        self.assertTrue(gov["aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_slo_met"])
+        self.assertFalse(raw["aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_slo_met"])
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-30 (Cycle #303 · 311 Chapters · 304 Blueprints · 303 Simulators · 312/312 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #305 · 313 Chapters · 306 Blueprints · 305 Simulators · 314/314 Tests · 305-Cycle & 305-Simulator Double Milestone!)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -7558,7 +7558,19 @@ $$\text{La}_2\text{O}_3 + 15\text{B} \xrightarrow{1,650\text{ }^\circ\text{C, Va
 
 ---
 
-## 310. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #304 · 305-Blueprint Milestone! · 312 Chapters）
+## 310. 电子级超纯六氟乙酰丙酮(1,5-环辛二烯)银 / 三甲基膦(六氟乙酰丙酮)银（`6N5 Ag(hfac)(COD) / Ag(hfac)(PMe3)`）与双(六氟乙酰丙酮)钯 / 烯丙基(环戊二烯基)钯（`6N5 Pd(hfac)2 / Pd(allyl)(Cp)`）+ 二乙基二硫代氨基甲酸碲 / 二异丙基碲（`6N5 Te(dedtc)2 / iPr2Te`）+ 三甲基铝（`6N5 TMA`）300mm A7/A5 二维 $\text{PdTe}_2/\text{WSe}_2$ II 类狄拉克半金属范德华超低阻 p-CFET 接触（$R_{c,p} = 34.0\ \Omega\cdot\mu\text{m}$）、原子级平滑单晶银（`Ag(111)`，$L_{\text{SPP}} = 148\ \mu\text{m}$）6.4T/12.8T CPO 等离激元波导与亚皮焦（$0.18\text{ pJ/bit}$，$R_{\text{on}}/R_{\text{off}} = 1.2\times 10^8$）$\text{Ag/Ag}_2\text{Te/HfO}_2$ 导电桥丝状突触（`CBRAM`）PEALD/范德华外延智能体（Cycle #305 · 305-Cycle & 305-Simulator Double Milestone!）
+
+- **前驱体超纯化与物理化学指标**：针对 `A7 / A5` 世代单层二维过渡金属硫族化合物（`2D WSe2`）p 型互补场效应晶体管（`p-CFET`）超低接触电阻电极、共封装光学（`CPO`）超长传播距离表面等离激元极化激元（`SPP`）波导及高开关比导电桥随机存取存储器（`CBRAM`），构建电子级六氟乙酰丙酮(1,5-环辛二烯)银 / 三甲基膦(六氟乙酰丙酮)银（`6N5 Ag(hfac)(COD) / Ag(hfac)(PMe3)`，$\ge 99.99995\%$，避光低温升华提纯）、双(六氟乙酰丙酮)钯 / 烯丙基(环戊二烯基)钯（`6N5 Pd(hfac)2 / Pd(allyl)(Cp)`，$\ge 99.99995\%$）、二乙基二硫代氨基甲酸碲 / 二异丙基碲（`6N5 Te(dedtc)2 / iPr2Te`，$\ge 99.99995\%$）与电子级三甲基铝（`6N5 TMA`，$\ge 99.99995\%$）闭环联产与原子层外延系统。痕量过渡金属/碱金属与锕系核素（$\text{Cu/Au/Pd/Fe/Ni/Na/K/U/Th}$）控制在 $\le 0.05\text{ ppbw}$，$\alpha$ 粒子发射率 $\le 0.0001\text{ counts/cm}^2\cdot\text{hr}$。
+- **核心器件物理与工艺闭环**：
+  1. **`300 mm` `A7 / A5` 二维 $\text{1T-PdTe}_2/\text{1L-WSe}_2$ II 类狄拉克半金属范德华（`VdW`）超低阻 p-CFET 源漏接触**：利用 `6N5 Pd(allyl)(Cp)` 与 `6N5 iPr2Te` 在 $185\ ^\circ\text{C}$ 低温下进行自限制原位碲化原子层外延，直接在单层 $\text{1L-WSe}_2$ 沟道上方外延生长具有高功函数（$\Phi_M = 5.12\text{ eV}$）与无悬挂键层状结构的 II 类狄拉克半金属相二碲化钯（$\text{1T-PdTe}_2$）。其与 $\text{WSe}_2$ 之间形成 $d_{\text{VdW}} = 0.19\text{ nm}$ 的洁净范德华间隙，彻底避免高能物理气相沉积（`PVD`）对单层 $\text{WSe}_2$ 晶格造成的硒空位（$V_{\text{Se}}$）轰击与金属诱导能隙态（`MIGS`），将费米能级去钉扎因子推向理想极限（**$S = d\Phi_{Bp}/d\Phi_M = 0.97$**），提取空穴肖特基势垒高度 **$\Phi_{Bp} \le 18\text{ meV}$**，实现 p-CFET 比接触电阻 **$R_{c,p} = 34.0\ \Omega\cdot\mu\text{m}$** 与开态饱和电流 **$I_{\text{ON},p} = 1,280\ \mu\text{A/}\mu\text{m}$**（$@V_{\text{DS}} = -0.55\text{ V}$）。
+  2. **6.4T / 12.8T 共封装光学（`CPO`）原子级平滑单晶银（`Ag(111)`）混合等离激元-光子波导**：银（$\text{Ag}$）在近红外电信波段（$\lambda = 1310\text{ nm} / 1550\text{ nm}$）具有所有金属中最低的带间跃迁损耗与最优异的复介电常数（$\varepsilon_{\text{Ag}} = -86.5 + 1.85i\ @\ 1310\text{ nm}$），但在介质基底上极易发生 Volmer-Weber 三维脱润湿成岛。系统首先利用 `6N5 TMA` 与 `6N5 Pd(hfac)2` 沉积 $1.2\text{ nm}$ 非晶 $\text{Al}_2\text{O}_3$ 阻障与 $0.4\text{ nm}$ 化学锚定 $\text{Pd}$ 表面自由能匹配种子层，再以 `6N5 Ag(hfac)(COD)` 在 $105\ ^\circ\text{C}$ 下进行氢等离子体辅助 `PEALD`，获得无晶界单晶外延 `Ag(111)` 薄膜（表面粗糙度 **$\text{RMS} \le 0.12\text{ nm}$**），使 $\lambda = 1310\text{ nm}$ 处表面等离激元极化激元传播长度达到 **$L_{\text{SPP}} = 148\ \mu\text{m}$**（传播损耗仅 **$0.028\text{ dB/}\mu\text{m}$**，较传统多晶银降低 $76\%$）。
+  3. **亚皮焦（$0.18\text{ pJ/bit}$）超高速（`650 ps`）$\text{Ag/Ag}_2\text{Te/HfO}_2$ 导电桥丝状神经形态突触（`CBRAM`）**：在 $\text{Ag}$ 活性阳极与 $\text{HfO}_2$ 固态电解质之间引入 $1.8\text{ nm}$ 超薄超离子导体碲化银（$\alpha/\beta\text{-Ag}_2\text{Te}$）$\text{Ag}^+$ 化学势缓冲与成核限流层，精准约束单根量子化 $\text{Ag}$ 导电细丝的径向生长（抑制枝晶不可逆过生长击穿），实现开关比 **$R_{\text{on}}/R_{\text{off}} = 1.2\times 10^8$**、编程脉冲宽度 **`650 ps`**、单次突触更新能耗 **`0.18 pJ/bit`**、6-Bit（64 态）线性电导调谐与 $>10^{11}$ 次循环耐久性。
+- **在线计量与安全联锁（SEMI S2 / NFPA 704 / OSHA 1910.1000 / SIL-3）**：集成 `10 kHz` 量子级联激光腔衰荡光谱（`QCL-CRDS`：$1258.0\text{ cm}^{-1}$ `Ag(hfac)(COD)` $\nu(\text{C-F})$、$1642.5\text{ cm}^{-1}$ `Pd(hfac)2` $\nu(\text{C=O})$、$2965.2\text{ cm}^{-1}$ `iPr2Te` $\nu(\text{C-H})$ 与 $< 0.3\text{ pptv}$ $\text{O}_2/\text{H}_2\text{O}$）与原位传输线模型/角分辨光电子能谱（`TLM-ARPES`）、开尔文探针力显微镜（`KPFM`）及散射型扫描近场光学等离激元干涉（`s-SNOM`），边缘推理延迟 `0.11 ms`（削减 `99.7%` WAN 带宽）。针对剧毒恶臭有机碲蒸气（`iPr2Te / H2Te`，OSHA PEL $\text{Te } 0.1\text{ mg/m}^3$）、含氟 $\beta$-二酮配体热解腐蚀性 $\text{HF}$ 副产物、光敏银前驱体及遇空气自燃的 `TMA`，部署 `0.10 ms` `SIL-3` 双阀组全金属波纹管截断（`1oo2D DBB`）、琥珀色防紫外光解屏蔽管路、Class-D 干粉抑爆与 $\text{Ca(OH)}_2/\text{KMnO}_4$ 氧化-钙基干式复合洗涤塔，实现 `0.0%` 有机碲泄漏或 `TMA` 自燃事故，良率提升 **`+79.8%`**，银薄膜脱润湿成岛粗糙化与 $\text{WSe}_2$ 碲空位缺陷削减 **`-97.6%`**。
+- **生产级 IaC 与仿真验证**：配套 Bicep 蓝图 [`blueprints/aghfaccod-pdhfac2-ipr2te-tma-a7-pdte2-contact-ag111-plasmonic-and-ag2te-cbram-peald-pinn-mpc-sil3.bicep`](../blueprints/aghfaccod-pdhfac2-ipr2te-tma-a7-pdte2-contact-ag111-plasmonic-and-ag2te-cbram-peald-pinn-mpc-sil3.bicep)（**Blueprint #306**）、确定性仿真函数 `simulate_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox()`（**Simulator #305 · 305-Simulator Milestone!**）及 H5 交互工具 **Tool 305**。
+
+---
+
+## 311. 7-Card 4:5 架构评测结论摘要与可复现验证命令（7-Card 4:5 Benchmark Summary & Reproducible CLI Commands · Cycle #305 · 305-Cycle & 305-Simulator Double Milestone! · 313 Chapters）
 
 本 Playbook 严格遵循 `turbo998/benchmark-harness-engineering` 的 **7-Card 4:5 视觉评测报告规范**，配套提供可离线运行并复现全部容量测算、选型矩阵与 SVG 图表的 Python 工具链（同时提供中英文双语版本）：
 

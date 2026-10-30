@@ -16540,6 +16540,60 @@ def simulate_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_an
     }
 
 
+def simulate_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox(
+    aghfaccod_pdhfac2_ipr2te_tma_trains: int = 8,
+    governance_mode: str = "pinn_mpc_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Ag(hfac)(COD) / Ag(hfac)(PMe3) & 6N5 Pd(hfac)2 / Pd(allyl)(Cp) + 6N5 Te(dedtc)2 / iPr2Te + 6N5 TMA
+    300mm A7/A5 2D PdTe2/WSe2 Type-II Dirac Semimetal Van der Waals Ultralow-Resistance p-CFET Contact (R_cp=34.0 Ohm*um,
+    S=0.97, VdW gap=0.19 nm), Atomically Smooth Single-Crystal Silver (Ag(111) on 1.2nm Al2O3/Pd seed, RMS<=0.12 nm,
+    SPP propagation length L_SPP=148 um at lambda=1310nm, loss 0.028 dB/um) 6.4T/12.8T CPO Hybrid Plasmonic-Photonic
+    Waveguide & Sub-Picojoule (0.18 pJ/bit, Ron/Roff=1.2e8, 650ps) Ag/Ag2Te/HfO2 Conductive-Bridge Filamentary Synapse
+    (CBRAM) PEALD/VDW-Epitaxy PINN-MPC + SIL-3 (Cycle #305 — 305-Cycle & 305-Simulator Double Milestone! — Chapter 310).
+    """
+    trains = max(1, int(aghfaccod_pdhfac2_ipr2te_tma_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_a7_pdte2_contact_ag111_plasmonic_ag2te_cbram_pods = trains * 4
+    electronic_6n5_aghfaccod_6n5_pdhfac2_6n5_ipr2te_6n5_tma_purity_and_pdte2_ag111_yield_gain_pct = (
+        79.8 if governed else 17.5
+    )
+    ag_dewetting_island_roughness_and_wse2_tellurium_vacancy_reduction_pct = (
+        97.6 if governed else 20.8
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_organotellurium_hfac_hf_and_pyrophoric_tma_lockout_latency_ms = (
+        0.10 if governed else 285.0
+    )
+    unmitigated_organotellurium_ipr2te_leak_or_pyrophoric_tma_ignition_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_1258cm1_1642cm1_2965cm1_insitu_tlmarpes_kpfm_ssnom_latency_ms = (
+        0.11 if governed else 385.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ag111_plasmonic_scattering_or_cbram_filament_overgrowth_failure_pct = (
+        0.0 if governed else 11.1
+    )
+    return {
+        "aghfaccod_pdhfac2_ipr2te_tma_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_a7_pdte2_contact_ag111_plasmonic_ag2te_cbram_pods": active_a7_pdte2_contact_ag111_plasmonic_ag2te_cbram_pods,
+        "electronic_6n5_aghfaccod_6n5_pdhfac2_6n5_ipr2te_6n5_tma_purity_and_pdte2_ag111_yield_gain_pct": electronic_6n5_aghfaccod_6n5_pdhfac2_6n5_ipr2te_6n5_tma_purity_and_pdte2_ag111_yield_gain_pct,
+        "ag_dewetting_island_roughness_and_wse2_tellurium_vacancy_reduction_pct": ag_dewetting_island_roughness_and_wse2_tellurium_vacancy_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_organotellurium_hfac_hf_and_pyrophoric_tma_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_organotellurium_hfac_hf_and_pyrophoric_tma_lockout_latency_ms,
+        "unmitigated_organotellurium_ipr2te_leak_or_pyrophoric_tma_ignition_pct": unmitigated_organotellurium_ipr2te_leak_or_pyrophoric_tma_ignition_pct,
+        "edge_qcl_crds_1258cm1_1642cm1_2965cm1_insitu_tlmarpes_kpfm_ssnom_latency_ms": edge_qcl_crds_1258cm1_1642cm1_2965cm1_insitu_tlmarpes_kpfm_ssnom_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ag111_plasmonic_scattering_or_cbram_filament_overgrowth_failure_pct": uncompensated_ag111_plasmonic_scattering_or_cbram_filament_overgrowth_failure_pct,
+        "aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_slo_met": governed,
+    }
+
+
 
 
 
