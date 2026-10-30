@@ -1,12 +1,12 @@
-# Azure AI Agent Infrastructure Playbook: 6-Layer Reference Architecture, 100K Sandbox Scale Benchmarks & 331-Chapter Engineering Encyclopedia
+# Azure AI Agent Infrastructure Playbook: 6-Layer Reference Architecture, 100K Sandbox Scale Benchmarks & 332-Chapter Engineering Encyclopedia
 
-> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 331-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 332-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)**
 
 ---
 
 ## 📌 Executive Overview Summary
 
-> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **331-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **324 production IaC blueprints**, **323 deterministic physics simulators**, and **332/332 passing unit tests**.
+> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **332-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **325 production IaC blueprints**, **324 deterministic physics simulators**, and **333/333 passing unit tests**.
 
 ### 1. 6-Layer Agent Infrastructure Reference Architecture
 We decompose enterprise agent infrastructure into **6 orthogonal architectural layers** (aligned with the `Build · Run · Ground · Govern` lifecycle):
@@ -152,10 +152,12 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 
 ---
 
+> **Cycle #324 incremental snapshot**: added `Chapter 329` (6N5 V(MeCp)(COD)/V(acac)3 + TDMAHf + DESe + TMA, O1/N1 VSe2/HfSe2 contact + Pd nanomesh + HfSe PCM) and `Summary 330`; totals are now **332 Chapters · 325 Blueprints · 324 Simulators · 333/333 Tests**.
+
 ## ✅ Reproducible Verification Commands
 
 ```bash
-# 1. Run all 332 unit tests covering runtime routing, 100K VMSS sizing, and 323 physics simulators
+# 1. Run all 333 unit tests covering runtime routing, 100K VMSS sizing, and 324 physics simulators
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py -v
 
 # 2. Run the AKSClaw × E2B live simulator self-test and verify deterministic trace output
