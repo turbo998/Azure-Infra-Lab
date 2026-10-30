@@ -179,7 +179,7 @@ def update_doc_counters_and_links(
 
 def build_video_explainers_extra_files() -> Dict[str, bytes]:
     video_docs_dir = Path(
-        r"C:\Users\qichen2\.copilot\session-state\67c83ca3-0d61-4be8-bded-76acc7c78fb3\files\repo-video-docs"
+        str(Path.home() / ".copilot" / "session-state" / "67c83ca3-0d61-4be8-bded-76acc7c78fb3" / "files" / "repo-video-docs")
     )
     extra: Dict[str, bytes] = {}
     if video_docs_dir.exists():
@@ -235,7 +235,7 @@ def sync_local_working_trees() -> None:
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
 
-    infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")
+    infra_lab = Path.home() / "ai-infra-lab"
     if infra_lab.exists():
         copy_bundle_to(infra_lab / "docs" / "azure-agent-infra")
         copy_bundle_to(infra_lab / "workshops" / "azure-agent-infra")
@@ -244,7 +244,7 @@ def sync_local_working_trees() -> None:
             dst_p.parent.mkdir(parents=True, exist_ok=True)
             dst_p.write_bytes(raw_b)
 
-    az_lab = Path(r"C:\Users\qichen2\Azure-Infra-Lab")
+    az_lab = Path.home() / "Azure-Infra-Lab"
     if az_lab.exists():
         for stale_root_html in ("index.html", "demo.html", "selector.html", "cards.html", "benchmark-cards.html"):
             stale_path = az_lab / stale_root_html
@@ -256,7 +256,7 @@ def sync_local_working_trees() -> None:
             dst_p.parent.mkdir(parents=True, exist_ok=True)
             dst_p.write_bytes(raw_b)
 
-    res_pub = Path(r"C:\Users\qichen2\ai-research-public")
+    res_pub = Path.home() / "ai-research-public"
     if res_pub.exists():
         copy_bundle_to(
             res_pub / "docs" / "research" / "azure-agent-infra",
@@ -283,7 +283,7 @@ def sync_local_working_trees() -> None:
             dst_p.parent.mkdir(parents=True, exist_ok=True)
             dst_p.write_bytes(raw_b)
 
-    res_lab = Path(r"C:\Users\qichen2\ai-research-lab")
+    res_lab = Path.home() / "ai-research-lab"
     if res_lab.exists():
         copy_bundle_to(res_lab / "docs" / "research" / "azure-agent-infra")
         for rel_p, raw_b in build_repo_doc_files(
@@ -294,7 +294,7 @@ def sync_local_working_trees() -> None:
             dst_p.parent.mkdir(parents=True, exist_ok=True)
             dst_p.write_bytes(raw_b)
 
-    kee = Path(r"C:\Users\qichen2\turbo998.github.io")
+    kee = Path.home() / "turbo998.github.io"
     if kee.exists():
         copy_bundle_to(kee / "workshops" / "azure-agent-infra")
         for rel_p, raw_b in build_repo_doc_files(
@@ -508,7 +508,7 @@ def main() -> int:
         "Blueprint #296, Simulator #295, Tool 295 & 304/304 tests + Chinese/English bilingual sync"
     )
 
-    infra_lab = Path(r"C:\Users\qichen2\ai-infra-lab")
+    infra_lab = Path.home() / "ai-infra-lab"
     sha_infra_lab = publish_to_repo(
         repo="turbo998/ai-infra-lab",
         target_prefix="docs/azure-agent-infra",
@@ -519,7 +519,7 @@ def main() -> int:
     )
     print(f"Published turbo998/ai-infra-lab main @ {sha_infra_lab}")
 
-    res_pub = Path(r"C:\Users\qichen2\ai-research-public")
+    res_pub = Path.home() / "ai-research-public"
     sha_research_pub = publish_to_repo(
         repo="turbo998/ai-research-public",
         target_prefix="docs/research/azure-agent-infra",
@@ -546,7 +546,7 @@ def main() -> int:
     )
     print(f"Published turbo998/ai-research-public main @ {sha_research_pub}")
 
-    az_lab = Path(r"C:\Users\qichen2\Azure-Infra-Lab")
+    az_lab = Path.home() / "Azure-Infra-Lab"
     sha_azure_infra_lab = publish_to_repo(
         repo="turbo998/Azure-Infra-Lab",
         target_prefix="workshops/azure-agent-infra",
@@ -556,7 +556,7 @@ def main() -> int:
     )
     print(f"Published turbo998/Azure-Infra-Lab main @ {sha_azure_infra_lab}")
 
-    res_lab = Path(r"C:\Users\qichen2\ai-research-lab")
+    res_lab = Path.home() / "ai-research-lab"
     sha_research_lab = publish_to_repo(
         repo="turbo998/ai-research-lab",
         target_prefix="docs/research/azure-agent-infra",
@@ -569,7 +569,7 @@ def main() -> int:
     )
     print(f"Published turbo998/ai-research-lab main @ {sha_research_lab}")
 
-    kee = Path(r"C:\Users\qichen2\turbo998.github.io")
+    kee = Path.home() / "turbo998.github.io"
     sha_kee_assets = publish_to_repo(
         repo="turbo998/Kee-Tech-Assets",
         target_prefix="workshops/azure-agent-infra",
