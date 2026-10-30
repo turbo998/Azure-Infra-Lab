@@ -314,6 +314,7 @@ from agent_infra_sizer import (
     simulate_aghfaccod_pdhfac2_ipr2te_tma_a7_pdte2_contact_ag111_plasmonic_and_ag2te_cbram_peald_sil3_sandbox,
     simulate_ptmecpme3_pthfac2_tdmasn_dese_tma_a5_ptse2_contact_pt_nanowire_and_snse_pcm_peald_sil3_sandbox,
     simulate_irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_sil3_sandbox,
+    simulate_rhmecpcod_rhacac3_tdmati_dese_tma_a2_rhse2_contact_cu_nanoribbon_and_tise_pcm_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6708,6 +6709,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_au_nanorod_scattering_or_hfse_filament_overgrowth_failure_pct"], 3.0)
         self.assertTrue(gov["irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_slo_met"])
         self.assertFalse(raw["irmecpcod_iracac3_tdmahf_dete_tma_a3_irse2_contact_au_nanorod_and_hfse_pcm_peald_slo_met"])
+
+    def test_rhmecpcod_rhacac3_tdmati_dese_tma_a2_rhse2_contact_cu_nanoribbon_and_tise_pcm_peald_sil3_sandbox(self) -> None:
+        gov = simulate_rhmecpcod_rhacac3_tdmati_dese_tma_a2_rhse2_contact_cu_nanoribbon_and_tise_pcm_peald_sil3_sandbox(
+            rhmecpcod_rhacac3_tdmati_dese_tma_trains=8,
+            governance_mode="pinn_mpc_rhmecpcod_rhacac3_tdmati_dese_tma_a2_rhse2_contact_cu_nanoribbon_and_tise_pcm_peald_sil3_edge",
+        )
+        raw = simulate_rhmecpcod_rhacac3_tdmati_dese_tma_a2_rhse2_contact_cu_nanoribbon_and_tise_pcm_peald_sil3_sandbox(
+            rhmecpcod_rhacac3_tdmati_dese_tma_trains=8,
+            governance_mode="unmanaged_open_loop_cu_nanoribbon_agglomeration_and_tise_phase_drift",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_a2_rhse2_contact_cu_nanoribbon_tise_pcm_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_rhmecpcod_6n5_rhacac3_6n5_tdmati_6n5_dese_6n5_tma_purity_and_rhse2_tise_yield_gain_pct"], 80.6)
+        self.assertEqual(gov["cu_nanoribbon_agglomeration_and_tise_phase_drift_reduction_pct"], 97.9)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_rh_ti_se_and_tma_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_rh_ti_se_precursor_leak_or_tma_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_rh_ti_se_precursor_leak_or_tma_ignition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_1578cm1_1216cm1_2860cm1_insitu_xps_tlmarpes_ssnom_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_cu_nanoribbon_scattering_or_tise_filament_overgrowth_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_cu_nanoribbon_scattering_or_tise_filament_overgrowth_failure_pct"], 3.0)
+        self.assertTrue(gov["rhmecpcod_rhacac3_tdmati_dese_tma_a2_rhse2_contact_cu_nanoribbon_and_tise_pcm_peald_slo_met"])
+        self.assertFalse(raw["rhmecpcod_rhacac3_tdmati_dese_tma_a2_rhse2_contact_cu_nanoribbon_and_tise_pcm_peald_slo_met"])
 
 
 if __name__ == "__main__":
