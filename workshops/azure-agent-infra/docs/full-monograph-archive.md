@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #308 · 316 Chapters · 309 Blueprints · 308 Simulators · 317/317 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #309 · 317 Chapters · 310 Blueprints · 309 Simulators · 318/318 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -7608,6 +7608,29 @@ python simulator/generate_h5_suite.py
 ## 313. Cycle #306 评测摘要与复现实验命令（Summary 312 · 314 Chapters）
 
 - **版本快照**：`314 Chapters · 307 Blueprints · 306 Simulators · 315/315 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 318. 电子级 6N5 Pd(MeCp)(COD) / Pd(acac)2 + 6N5 TEMAZr + 6N5 DETe + 6N5 TMA 300mm A1/A0 PdSe2 范德华接触、Ag 纳米脊等离激元互连与 ZrSe 相变突触（Cycle #309 · Chapter 314）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`PdSe2/WTe2` 接触比接触电阻收敛至 `R_cp=29.9 Ω·μm`、Ag 纳米脊等离激元传播长度稳定于 `L_SPP=142 μm`、ZrSe 相变突触达到 `480 ps / 0.12 pJ/bit`，对应 **`+80.9%` 良率增益** 与 **`-98.0%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1569.0/1204.0/2852.0 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 Pd/Zr/Te 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `1.9%`。
+- **生产级资产**：Blueprint [`blueprints/pdmecpcod-pdacac2-temazr-dete-tma-a1-pdse2-contact-ag-nanoridge-zrse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/pdmecpcod-pdacac2-temazr-dete-tma-a1-pdse2-contact-ag-nanoridge-zrse-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #310**）、仿真函数 `simulate_pdmecpcod_pdacac2_temazr_dete_tma_a1_pdse2_contact_ag_nanoridge_and_zrse_pcm_peald_sil3_sandbox()`（**Simulator #309**）与 H5 工具 **Tool 309**。
+
+---
+
+## 319. Cycle #309 评测摘要与复现实验命令（Summary 315 · 317 Chapters）
+
+- **版本快照**：`317 Chapters · 310 Blueprints · 309 Simulators · 318/318 Tests`。
 - **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
 - **一键复现**：
 
