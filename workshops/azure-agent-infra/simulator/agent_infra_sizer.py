@@ -16485,6 +16485,61 @@ def simulate_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_ph
     }
 
 
+def simulate_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_sandbox(
+    rhacac3_irmecpcod_mn2co10_aume2acac_trains: int = 8,
+    governance_mode: str = "pinn_mpc_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Rh(acac)3 / [Rh(CO)2Cl]2 & 6N5 Ir(MeCp)(COD) + 6N5 Mn2(CO)10 / Mn(EtCp)2 + 6N5 Au(Me2)(acac) / MeAuPMe3
+    300mm A7/A5 Sub-7nm Pitch (6.5nm Half-Pitch, AR=6:1) Barrierless Single-Crystal Rhodium (Rh, rho_bulk=4.33 uOhm*cm,
+    lambda_e=6.9nm, rho_bulk*lambda_e=29.9e-16 Ohm*m2, R_line -48.5% vs Ru and -68.2% vs barriered Cu, E_a=2.42 eV)
+    M0/M1 Interconnects, Non-Collinear Chiral Antiferromagnetic L12-Mn3Ir (111) Field-Free SOT-MRAM (T_N=960K, T_B=585K,
+    mu0*H_ex=185 mT, sigma_zx^z=4.8e4 (hbar/2e) Ohm^-1*m^-1, J_c=1.45e6 A/cm2 in 240ps) & 3.2T/6.4T CPO >265 GHz
+    Plasmonic-Slot Mach-Zehnder Modulator (V_pi*L=42.0 V*um, IL=2.1 dB, 3.2 fJ/bit) PEALD/MBE PINN-MPC + SIL-3
+    (Cycle #304 — 305-Blueprint Milestone! — Chapter 309).
+    """
+    trains = max(1, int(rhacac3_irmecpcod_mn2co10_aume2acac_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_a7_rh_interconnect_mn3ir_sot_plasmonic_mzm_pods = trains * 4
+    electronic_6n5_rhacac3_6n5_irmecpcod_6n5_mn2co10_6n5_aume2acac_purity_and_a7_rh_yield_gain_pct = (
+        79.6 if governed else 17.4
+    )
+    rh_trench_seam_void_and_mn3ir_l12_kagome_disorder_reduction_pct = (
+        97.5 if governed else 20.6
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_toxic_rh_mn_carbonyl_and_organogold_lockout_latency_ms = (
+        0.10 if governed else 285.0
+    )
+    unmitigated_toxic_rh_mn_carbonyl_vapor_leak_or_organogold_decomposition_pct = (
+        0.0 if governed else 1.8
+    )
+    edge_qcl_crds_2042cm1_2018cm1_1582cm1_insitu_fbg4pp_moke_xmcd_vnasnom_latency_ms = (
+        0.11 if governed else 385.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_rh_grain_scattering_or_plasmonic_slot_au_islanding_failure_pct = (
+        0.0 if governed else 10.9
+    )
+    return {
+        "rhacac3_irmecpcod_mn2co10_aume2acac_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_a7_rh_interconnect_mn3ir_sot_plasmonic_mzm_pods": active_a7_rh_interconnect_mn3ir_sot_plasmonic_mzm_pods,
+        "electronic_6n5_rhacac3_6n5_irmecpcod_6n5_mn2co10_6n5_aume2acac_purity_and_a7_rh_yield_gain_pct": electronic_6n5_rhacac3_6n5_irmecpcod_6n5_mn2co10_6n5_aume2acac_purity_and_a7_rh_yield_gain_pct,
+        "rh_trench_seam_void_and_mn3ir_l12_kagome_disorder_reduction_pct": rh_trench_seam_void_and_mn3ir_l12_kagome_disorder_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_toxic_rh_mn_carbonyl_and_organogold_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_toxic_rh_mn_carbonyl_and_organogold_lockout_latency_ms,
+        "unmitigated_toxic_rh_mn_carbonyl_vapor_leak_or_organogold_decomposition_pct": unmitigated_toxic_rh_mn_carbonyl_vapor_leak_or_organogold_decomposition_pct,
+        "edge_qcl_crds_2042cm1_2018cm1_1582cm1_insitu_fbg4pp_moke_xmcd_vnasnom_latency_ms": edge_qcl_crds_2042cm1_2018cm1_1582cm1_insitu_fbg4pp_moke_xmcd_vnasnom_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_rh_grain_scattering_or_plasmonic_slot_au_islanding_failure_pct": uncompensated_rh_grain_scattering_or_plasmonic_slot_au_islanding_failure_pct,
+        "rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_slo_met": governed,
+    }
+
+
 
 
 

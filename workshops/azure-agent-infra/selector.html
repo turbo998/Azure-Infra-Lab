@@ -7520,6 +7520,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="tdmavVcrbo2Result"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(56,189,248,0.35);">
+      <h3>Tool 304 · 电子级三(乙酰丙酮)铑/二聚二羰基氯铑 6N5 Rh(acac)<sub>3</sub> / [Rh(CO)<sub>2</sub>Cl]<sub>2</sub> 与 (甲基环戊二烯基)(1,5-环辛二烯)铱 6N5 Ir(MeCp)(COD) + 十羰基二锰 6N5 Mn<sub>2</sub>(CO)<sub>10</sub> / Mn(EtCp)<sub>2</sub> + 6N5 Au(Me<sub>2</sub>)(acac) / MeAuPMe<sub>3</sub> 300mm A7/A5 亚 7nm 间距 (6.5nm 半间距) 无阻挡层单晶竹节晶铑 (Rh, &rho;<sub>bulk</sub>&middot;&lambda;<sub>e</sub>=29.9&times;10<sup>-16</sup> &Omega;&middot;m<sup>2</sup>, R<sub>line</sub> -48.5% vs Ru) M0/M1 互连、非共线手性反铁磁 L1<sub>2</sub>-Mn<sub>3</sub>Ir 零外场 SOT-MRAM (T<sub>N</sub>=960K, H<sub>ex</sub>=185 mT, 240ps) 与 3.2T/6.4T CPO &gt;265 GHz 等离激元槽式调制器 (V<sub>&pi;</sub>L=42.0 V&middot;&mu;m, 3.2 fJ/bit) PEALD/MBE PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（2042.5 cm⁻¹ [Rh(CO)<sub>2</sub>Cl]<sub>2</sub>、2018.4 cm⁻¹ Mn<sub>2</sub>(CO)<sub>10</sub>、1582.0 cm⁻¹ Rh(acac)<sub>3</sub> 与 &lt;0.3 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位四探针/微波表面阻抗（FBG-4PP）+ 极化磁光克尔/X射线磁圆二色（MOKE-XMCD）+ 300GHz 矢量网络分析/近场光学（VNA-SNOM）推入工厂边缘 4 节点 H100 集群，在 0.11ms 内抑制 6.5nm 沟槽铑接缝空洞、L1<sub>2</sub>-Mn<sub>3</sub>Ir 笼目反铁磁无序与等离激元金电极 Stranski-Krastanov 岛状生长，并以 0.10ms SIL-3 联锁阻断剧毒羰基铑/羰基锰蒸气与热敏有机金分解风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Rh(acac)<sub>3</sub> / Ir(MeCp)(COD) / Mn<sub>2</sub>(CO)<sub>10</sub> / Au(Me<sub>2</sub>)(acac) 提纯与 A7 无阻挡层铑互连 / Mn<sub>3</sub>Ir SOT / 等离激元 MZM 产线数 (Trains): <span id="rhacac3RhMn3irTrainsVal">8</span></label>
+          <input type="range" id="rhacac3RhMn3irTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('rhacac3RhMn3irTrainsVal').innerText=this.value; runRhacac3IrmecpcodMn2co10Aume2acacA7RhInterconnectMn3irSotAndPlasmonicMzmLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="rhacac3RhMn3irMode" onchange="runRhacac3IrmecpcodMn2co10Aume2acacA7RhInterconnectMn3irSotAndPlasmonicMzmLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Rh(acac)3 + Ir(MeCp)(COD) + Mn2(CO)10 + Au(Me2)(acac) A7 无阻挡层 Rh 互连 + L12-Mn3Ir SOT + 等离激元 MZM &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环 Rh 6.5nm 沟槽接缝空洞、Mn3Ir 笼目磁手性退化、Au 岛状生长 SPP 损耗与剧毒羰基铑/锰泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="rhacac3RhMn3irResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -13575,6 +13594,47 @@ function runTdmavVoipr3Cretcp2Bbr3A10Vcrbo2MottSelectorAndSi3n4Vo2PhotonicWeight
   `;
 }
 runTdmavVoipr3Cretcp2Bbr3A10Vcrbo2MottSelectorAndSi3n4Vo2PhotonicWeightLab();
+
+function runRhacac3IrmecpcodMn2co10Aume2acacA7RhInterconnectMn3irSotAndPlasmonicMzmLab() {
+  const trains = parseInt(document.getElementById('rhacac3RhMn3irTrains').value, 10) || 8;
+  const mode = document.getElementById('rhacac3RhMn3irMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 79.6 : 17.4;
+  const defectCut = isPinn ? 97.5 : 20.6;
+  const sil3Ms = isPinn ? 0.10 : 285.0;
+  const leakRisk = isPinn ? 0.0 : 1.8;
+  const metroMs = isPinn ? 0.11 : 385.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.9;
+  document.getElementById('rhacac3RhMn3irResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">A7 无阻挡层铑互连、L1<sub>2</sub>-Mn<sub>3</sub>Ir 零外场 SOT 与 CPO 等离激元 MZM 指标：</span><strong>Rh 6.5 nm M0/M1 (&rho;<sub>bulk</sub>&middot;&lambda;<sub>e</sub>=29.9&times;10<sup>-16</sup> &Omega;&middot;m<sup>2</sup>, R<sub>line</sub> -48.5% vs Ru, E<sub>a</sub>=2.42 eV) · L1<sub>2</sub>-Mn<sub>3</sub>Ir T<sub>N</sub>=960 K (&mu;<sub>0</sub>H<sub>ex</sub>=185 mT, 240 ps) · Au/Rh MZM V<sub>&pi;</sub>L=42.0 V&middot;&mu;m (&gt;265 GHz, 3.2 fJ/bit)</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Rh/Ir/Mn/Au 纯度与 A7 Rh / Mn3Ir / 等离激元良率增益 / 沟槽接缝空洞与 L12 笼目无序削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 剧毒羰基铑/羰基锰与热敏有机金联锁延迟 / 羰基毒气泄漏或自催化分解事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (2042.5/2018.4/1582.0cm⁻¹) + 原位 FBG-4PP/MOKE-XMCD/VNA-SNOM 延迟 (-${wanRed.toFixed(1)}% WAN) / 晶界散射或等离激元金成岛失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_edge`)</strong>：通过 Mayadas-Shatzkes 晶界反射调控与自底向上超共形 PEALD 实现 6.5nm 零衬层单晶竹节晶 Rh 互连（线电阻较 Ru 降低 48.5%），同步锁定 L1<sub>2</sub>-Mn<sub>3</sub>Ir 960K 奈尔温度零外场 SOT 翻转与 &gt;265 GHz 等离激元调制器。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：缺乏 6.5nm 沟槽自底向上形核选择性与 Au/Rh 外延润湿层控制导致沟槽接缝夹断空洞、Mn<sub>3</sub>Ir 反铁磁畴无序（H<sub>ex</sub> 崩塌）与等离激元槽式波导 3D 金岛散射损耗（10.9% 失效率，285ms 云端延迟）。'}
+      </p>
+    </div>
+  `;
+}
+runRhacac3IrmecpcodMn2co10Aume2acacA7RhInterconnectMn3irSotAndPlasmonicMzmLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);

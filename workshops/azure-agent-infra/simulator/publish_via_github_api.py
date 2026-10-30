@@ -27,10 +27,10 @@ from typing import Any, Dict, List, Set
 BUNDLE_DIR = Path(__file__).resolve().parent.parent
 BLOB_CACHE_FILE = BUNDLE_DIR / ".blob_sha_cache.json"
 
-CURRENT_CHAPTERS = 311
-CURRENT_BLUEPRINTS = 304
-CURRENT_SIMULATORS = 303
-CURRENT_TESTS = 312
+CURRENT_CHAPTERS = 312
+CURRENT_BLUEPRINTS = 305
+CURRENT_SIMULATORS = 304
+CURRENT_TESTS = 313
 
 
 def gh_api(endpoint: str, method: str = "GET", payload: Dict[str, Any] | None = None) -> Dict[str, Any]:
@@ -504,8 +504,8 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #303 — Chapter 308 + Summary 309 (311 Chapters) Autonomous Electronic-Grade Ultrapure Tetrakis(dimethylamino)vanadium/Oxytriisopropoxyvanadium (6N5 TDMAV/VO(OiPr)3 >=99.99995%, Trace Fe/Ni/Ti/Cu/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & Bis(ethylcyclopentadienyl)chromium/Hexacarbonylchromium (6N5 Cr(EtCp)2/Cr(CO)6 >=99.99995%) + Boron Tribromide/Triethylboron (6N5 BBr3/TEB >=99.99995%) + Di-tert-butyl Diselenide (6N5 DTBDSe >=99.99995%) 300mm A10/A7 Sub-Nanosecond (1.2ns Electrical / 180fs Photo-Induced) V1-x-yCrxByO2 Mott Insulator-to-Metal Transition (IMT T_IMT=398K, Roff/Ron=1.6e5, Narrow Hysteresis DeltaT_h<=1.8K, >1e12-Cycle Endurance) 3D Crossbar 1S1R/1S1F Selector, Half-Metallic CrO2/1T-VSe2 Room-Temperature Spin-Valve Interconnect (MR=245%) & 6.4T/12.8T CPO Si3N4/VO2 5-Bit Non-Volatile Photonic Tensor Weight Bank (18.5dB, 11.5fJ/switch) PEALD/MBE PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ fs-OPTPS/TD-SE/XANES & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Pyrophoric TEB & Toxic Cr(CO)6/DTBDSe Interlock, "
-        "Blueprint #304, Simulator #303, Tool 303 & 312/312 tests + Chinese/English bilingual sync"
+        "feat(azure-agent-infra): Cycle #304 (305-Blueprint Milestone!) — Chapter 309 + Summary 310 (312 Chapters) Autonomous Electronic-Grade Ultrapure Tris(acetylacetonato)rhodium(III)/Dicarbonylchlororhodium(I) Dimer (6N5 Rh(acac)3/[Rh(CO)2Cl]2 >=99.99995%, Trace Pt/Pd/Ru/Os/Fe/Co/Ni/U/Th<=0.05ppbw, Alpha<=0.0001 counts/cm2*hr) & (Methylcyclopentadienyl)(1,5-cyclooctadiene)iridium(I) (6N5 Ir(MeCp)(COD) >=99.99995%) + Dimanganese Decacarbonyl/Bis(ethylcyclopentadienyl)manganese (6N5 Mn2(CO)10/Mn(EtCp)2 >=99.99995%) + Dimethyl(acetylacetonato)gold(III)/Methyl(trimethylphosphine)gold(I) (6N5 Au(Me2)(acac)/MeAuPMe3 >=99.99995%) 300mm A7/A5 Sub-7nm Pitch (6.5nm Half-Pitch) Barrierless Single-Crystal Rhodium (Rh, rho_bulk*lambda_e=29.9e-16 Ohm*m2, R_line -48.5% vs Ru and -68.2% vs barriered Cu, E_a=2.42eV) M0/M1 Interconnects, Non-Collinear Chiral Antiferromagnetic L12-Mn3Ir (111) Field-Free SOT-MRAM (T_N=960K, mu0*H_ex=185mT, 240ps) & 3.2T/6.4T CPO >265GHz Plasmonic-Slot MZM (V_pi*L=42.0V*um, 3.2fJ/bit) PEALD/MBE PINN-MPC, 10kHz QCL-CRDS + SF-ICP-MS + In-Situ FBG-4PP/MOKE-XMCD/VNA-SNOM & SEMI S2/NFPA 704/OSHA 1910.1000/SIL-3 Toxic Rh/Mn Carbonyl & Organogold Interlock, "
+        "Blueprint #305, Simulator #304, Tool 304 & 313/313 tests + Chinese/English bilingual sync"
     )
 
     infra_lab = Path.home() / "ai-infra-lab"

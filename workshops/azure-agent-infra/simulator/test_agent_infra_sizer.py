@@ -310,6 +310,7 @@ from agent_infra_sizer import (
     simulate_euiprcp2_ybiprcp3_tmiprcp3_h2s_a10_eus_spin_filter_and_171yb_quantum_transducer_peald_sil3_sandbox,
     simulate_ceiprcp3_cethd4_gdiprcp3_tdmazr_a10_ce_hzo_ferroelectric_gate_and_ce_gagg_euv_scintillator_peald_sil3_sandbox,
     simulate_tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_sil3_sandbox,
+    simulate_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -6608,6 +6609,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_vo2_selector_thermal_runaway_or_photonic_weight_relaxation_failure_pct"], 3.0)
         self.assertTrue(gov["tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_slo_met"])
         self.assertFalse(raw["tdmav_voipr3_cretcp2_bbr3_a10_vcrbo2_mott_selector_and_si3n4_vo2_photonic_weight_peald_slo_met"])
+
+    def test_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_sandbox(self) -> None:
+        gov = simulate_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_sandbox(
+            rhacac3_irmecpcod_mn2co10_aume2acac_trains=8,
+            governance_mode="pinn_mpc_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_edge",
+        )
+        raw = simulate_rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_sil3_sandbox(
+            rhacac3_irmecpcod_mn2co10_aume2acac_trains=8,
+            governance_mode="unmanaged_open_loop_rh_seam_void_and_au_sk_islanding",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_a7_rh_interconnect_mn3ir_sot_plasmonic_mzm_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_rhacac3_6n5_irmecpcod_6n5_mn2co10_6n5_aume2acac_purity_and_a7_rh_yield_gain_pct"], 79.6)
+        self.assertEqual(gov["rh_trench_seam_void_and_mn3ir_l12_kagome_disorder_reduction_pct"], 97.5)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_toxic_rh_mn_carbonyl_and_organogold_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_toxic_rh_mn_carbonyl_vapor_leak_or_organogold_decomposition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_toxic_rh_mn_carbonyl_vapor_leak_or_organogold_decomposition_pct"], 1.0)
+        self.assertEqual(gov["edge_qcl_crds_2042cm1_2018cm1_1582cm1_insitu_fbg4pp_moke_xmcd_vnasnom_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_rh_grain_scattering_or_plasmonic_slot_au_islanding_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_rh_grain_scattering_or_plasmonic_slot_au_islanding_failure_pct"], 3.0)
+        self.assertTrue(gov["rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_slo_met"])
+        self.assertFalse(raw["rhacac3_irmecpcod_mn2co10_aume2acac_a7_rh_interconnect_mn3ir_sot_and_plasmonic_mzm_peald_slo_met"])
 
 
 if __name__ == "__main__":
