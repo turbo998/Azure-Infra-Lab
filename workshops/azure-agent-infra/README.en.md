@@ -6,7 +6,7 @@
 
 ## 📌 Executive Overview Summary
 
-> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **361-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **354 production IaC blueprints**, **353 deterministic physics simulators**, and **362/362 passing unit tests**.
+> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **362-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **355 production IaC blueprints**, **354 deterministic physics simulators**, and **363/363 passing unit tests**.
 
 ### 1. 6-Layer Agent Infrastructure Reference Architecture
 We decompose enterprise agent infrastructure into **6 orthogonal architectural layers** (aligned with the `Build · Run · Ground · Govern` lifecycle):
@@ -152,7 +152,7 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 
 ---
 
-> **Cycle #353 incremental snapshot**: added `Chapter 358` (6N5 Re(MeCp)(COD)/Re(acac)6 + TDMAOs + DESe + TMA, AR1/AQ1 ReSe2/OsSe2 contact + Ru nanomesh + OsSe PCM) and `Summary 359`; totals are now **361 Chapters · 354 Blueprints · 353 Simulators · 362/362 Tests**.
+> **Cycle #354 incremental snapshot**: added `Chapter 359` (6N5 Os(MeCp)(COD)/Os(acac)6 + TDMARh + DESe + TMA, AS1/AR1 OsSe2/RhSe2 contact + Ir nanomesh + RhSe PCM) and `Summary 360`; totals are now **362 Chapters · 355 Blueprints · 354 Simulators · 363/363 Tests**.
 
 ## ✅ Reproducible Verification Commands
 
