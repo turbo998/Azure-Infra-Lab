@@ -1,12 +1,12 @@
-# Azure AI Agent Infrastructure Playbook: 6-Layer Reference Architecture, 100K Sandbox Scale Benchmarks & 350-Chapter Engineering Encyclopedia
+# Azure AI Agent Infrastructure Playbook: 6-Layer Reference Architecture, 100K Sandbox Scale Benchmarks & 351-Chapter Engineering Encyclopedia
 
-> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 350-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 351-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)**
 
 ---
 
 ## 📌 Executive Overview Summary
 
-> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **350-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **343 production IaC blueprints**, **342 deterministic physics simulators**, and **351/351 passing unit tests**.
+> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **351-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **344 production IaC blueprints**, **343 deterministic physics simulators**, and **352/352 passing unit tests**.
 
 ### 1. 6-Layer Agent Infrastructure Reference Architecture
 We decompose enterprise agent infrastructure into **6 orthogonal architectural layers** (aligned with the `Build · Run · Ground · Govern` lifecycle):
@@ -51,11 +51,11 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 |---|---|---|---|
 | **1. Interactive Playbook Hub (`index.html`)** | Bilingual H5 (`EN/中文`) | 6-layer interactive architecture tour, 8 SVG diagram switcher, and 5-step field checklist | [Open `index.html`](index.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html) |
 | **2. 100K Sandbox Simulator (`demo.html`)** | Bilingual H5 (`EN/中文`) | Dual-track live state machine for `AKSClaw` zero-trust enforcement and `E2B` 100K `UFFD` restore | [Open `demo.html`](demo.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html) |
-| **3. Runtime & Storage Sizer (`selector.html`)** | Bilingual H5 (`EN/中文`) | Scenario decision tree, `D96as_v7` 100K VMSS & `$148K/mo` TCO sizer, and 342 physics calculators | [Open `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
+| **3. Runtime & Storage Sizer (`selector.html`)** | Bilingual H5 (`EN/中文`) | Scenario decision tree, `D96as_v7` 100K VMSS & `$148K/mo` TCO sizer, and 343 physics calculators | [Open `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
 | **4. 7-Card Visual Benchmark Deck (`cards.html`)** | CSP-Locked HTML (`4:5`) | 7-Card 4:5 visual benchmark report (`8/8 = 100%` routing accuracy, perturbation checks, v6 vs v7 latency) | [Open `cards.html`](cards.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html) |
 | **5. 7-Card Benchmark Markdown & JSON** | Markdown / JSON | Self-contained 7-card markdown report and sealed evaluation dataset (`report.json`) | [English `test-report.en.md`](test-report.en.md) · [中文 `test-report.md`](test-report.md) · [`report.json`](report.json) |
-| **6. Full 350-Chapter Monograph Archive** | Markdown Archive | Complete 350-chapter reference text preserving every equation, table, and physics model | **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** · **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** |
-| **7. Deterministic Simulators & Unit Tests** | Python 3.12 + IaC | 342 stdlib physics models, 351 unit tests, and 343 production Bicep/YAML/SQL blueprints | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
+| **6. Full 351-Chapter Monograph Archive** | Markdown Archive | Complete 351-chapter reference text preserving every equation, table, and physics model | **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** · **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** |
+| **7. Deterministic Simulators & Unit Tests** | Python 3.12 + IaC | 343 stdlib physics models, 352 unit tests, and 344 production Bicep/YAML/SQL blueprints | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
 
 ---
 
@@ -119,7 +119,7 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 
 ---
 
-## 🗂️ Structured 350-Chapter Encyclopedia Index
+## 🗂️ Structured 351-Chapter Encyclopedia Index
 
 > 💡 **Full Monograph Access**: To keep this landing page fast-loading (`< 30 KB`) on GitHub Web, the complete **349-chapter monograph** is preserved verbatim in **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)** (English, 605 KB) and **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)** (Chinese, 2.99 MB). Below is the thematic index across all three engineering domains:
 
@@ -152,12 +152,12 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 
 ---
 
-> **Cycle #342 incremental snapshot**: added `Chapter 347` (6N5 Tb(MeCp)(COD)/Tb(acac)3 + TDMADy + DESe + TMA, AG1/AF1 TbSe2/DySe2 contact + V nanomesh + DySe PCM) and `Summary 348`; totals are now **350 Chapters · 343 Blueprints · 342 Simulators · 351/351 Tests**.
+> **Cycle #343 incremental snapshot**: added `Chapter 348` (6N5 Dy(MeCp)(COD)/Dy(acac)3 + TDMAHo + DESe + TMA, AH1/AG1 DySe2/HoSe2 contact + Cr nanomesh + HoSe PCM) and `Summary 349`; totals are now **351 Chapters · 344 Blueprints · 343 Simulators · 352/352 Tests**.
 
 ## ✅ Reproducible Verification Commands
 
 ```bash
-# 1. Run all 351 unit tests covering runtime routing, 100K VMSS sizing, and 342 physics simulators
+# 1. Run all 352 unit tests covering runtime routing, 100K VMSS sizing, and 343 physics simulators
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py -v
 
 # 2. Run the AKSClaw × E2B live simulator self-test and verify deterministic trace output
