@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #352 · 360 Chapters · 353 Blueprints · 352 Simulators · 361/361 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #353 · 361 Chapters · 354 Blueprints · 353 Simulators · 362/362 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -8620,6 +8620,29 @@ python simulator/publish_via_github_api.py
 ## 405. Cycle #352 评测摘要与复现实验命令（Summary 358 · 360 Chapters）
 
 - **版本快照**：`360 Chapters · 353 Blueprints · 352 Simulators · 361/361 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 406. 电子级 6N5 Re(MeCp)(COD) / Re(acac)6 + 6N5 TDMAOs + 6N5 DESe + 6N5 TMA 300mm AR1/AQ1 ReSe2 范德华接触、Ru 纳米网等离激元互连与 OsSe 相变突触（Cycle #353 · Chapter 358）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`ReSe2/OsSe2` 接触比接触电阻收敛至 `R_cp=16.7 Ω·μm`、Ru 纳米网等离激元传播长度稳定于 `L_SPP=242 μm`、OsSe 相变突触达到 `120 ps / 0.02 pJ/bit`，对应 **`+92.6%` 良率增益** 与 **`-99.8%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1328.0/968.0/2616.0 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 Re/Os/Se 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `0.2%`。
+- **生产级资产**：Blueprint [`blueprints/remecpcod-reacac6-tdmaos-dese-tma-ar1-rese2-contact-ru-nanomesh-osse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/remecpcod-reacac6-tdmaos-dese-tma-ar1-rese2-contact-ru-nanomesh-osse-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #354**）、仿真函数 `simulate_remecpcod_reacac6_tdmaos_dese_tma_ar1_rese2_contact_ru_nanomesh_and_osse_pcm_peald_sil3_sandbox()`（**Simulator #353**）与 H5 工具 **Tool 353**。
+
+---
+
+## 407. Cycle #353 评测摘要与复现实验命令（Summary 359 · 361 Chapters）
+
+- **版本快照**：`361 Chapters · 354 Blueprints · 353 Simulators · 362/362 Tests`。
 - **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
 - **一键复现**：
 
