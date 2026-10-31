@@ -1,12 +1,12 @@
-# Azure AI Agent Infrastructure Playbook：六层参考架构与 354 章智算工程百科
+# Azure AI Agent Infrastructure Playbook：六层参考架构与 355 章智算工程百科
 
-> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 354 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 355 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)**
 
 ---
 
 ## 📌 Executive Overview Summary（核心发现与架构总览）
 
-> **核心结论（TL;DR）**：生产级 AI Agent 基础设施正从“无状态单次 Prompt 调用”全面演进为**“计算与状态解耦（Compute-State Decoupling）+ 硬件虚拟化沙箱强隔离 + 平台级零信任硬边界（Never Trust the Prompt）”**。本仓库提供经过 **355/355 单元测试验证**的 **6 层 Agent Infra 参考架构**、**`AKSClaw × E2B` 100,000 并发沙箱极限扩展实测**、**运行时与存储选型决策矩阵**以及涵盖 **354 章、347 套生产级 IaC 蓝图与 346 个确定性物理仿真器**的工程百科全书。
+> **核心结论（TL;DR）**：生产级 AI Agent 基础设施正从“无状态单次 Prompt 调用”全面演进为**“计算与状态解耦（Compute-State Decoupling）+ 硬件虚拟化沙箱强隔离 + 平台级零信任硬边界（Never Trust the Prompt）”**。本仓库提供经过 **356/356 单元测试验证**的 **6 层 Agent Infra 参考架构**、**`AKSClaw × E2B` 100,000 并发沙箱极限扩展实测**、**运行时与存储选型决策矩阵**以及涵盖 **355 章、348 套生产级 IaC 蓝图与 347 个确定性物理仿真器**的工程百科全书。
 
 ### 1. 六层 Agent Infra 全栈参考架构（6-Layer Reference Architecture）
 我们将企业级 AI Agent 基础设施解耦为严格正交的 **6 大架构层**（对齐 `Build · Run · Ground · Govern` 四大工程域）：
@@ -51,11 +51,11 @@
 |---|---|---|---|
 | **1. 全景交互式工作台 (`index.html`)** | 双语 H5 (`EN/中文`) | 6 层架构交互式导览、8 张矢量图谱切换、五步落地法核对表 | [本地打开 `index.html`](index.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html) |
 | **2. 100K 沙箱双轨实时仿真器 (`demo.html`)** | 双语 H5 (`EN/中文`) | 浏览器本地回放 `AKSClaw` 零信任拦截与 `E2B` 10 万沙箱 `UFFD` 恢复状态机 | [本地打开 `demo.html`](demo.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html) |
-| **3. 运行时与存储容量测算器 (`selector.html`)** | 双语 H5 (`EN/中文`) | 6 大场景决策树、`D96as_v7` 10 万沙箱 VMSS 节点与 `$148K/mo` TCO 动态计算器、346 物理仿真器 | [本地打开 `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
+| **3. 运行时与存储容量测算器 (`selector.html`)** | 双语 H5 (`EN/中文`) | 6 大场景决策树、`D96as_v7` 10 万沙箱 VMSS 节点与 `$148K/mo` TCO 动态计算器、347 物理仿真器 | [本地打开 `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
 | **4. 7-Card 4:5 视觉评测卡片 (`cards.html`)** | CSP 锁定自包含 HTML | 严格遵循 7-Card 4:5 视觉规范：8 场景路由准确率 `100%`、翻转鲁棒性、代际延迟对比 | [本地打开 `cards.html`](cards.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html) |
 | **5. 7-Card 评测报告 (Markdown & JSON)** | Markdown / JSON | 7-Card 基准测试完整文字版与密封评测数据源 (`report.json`) | [中文报告 `test-report.md`](test-report.md) · [English `test-report.en.md`](test-report.en.md) · [`report.json`](report.json) |
-| **6. 354 章完整技术专著归档 (`docs/`)** | 完整专著归档 | 完整保留全部 354 章深度推导、公式、代码与行业物理模型（2.99 MB 中文 / 605 KB 英文） | **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** · **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** |
-| **7. 确定性物理仿真引擎与单测套件** | Python 3.12 + IaC | 346 个零外部依赖物理仿真函数、355 项自动化单元测试与 347 套 Bicep/YAML 蓝图 | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
+| **6. 355 章完整技术专著归档 (`docs/`)** | 完整专著归档 | 完整保留全部 355 章深度推导、公式、代码与行业物理模型（2.99 MB 中文 / 605 KB 英文） | **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** · **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** |
+| **7. 确定性物理仿真引擎与单测套件** | Python 3.12 + IaC | 347 个零外部依赖物理仿真函数、356 项自动化单元测试与 348 套 Bicep/YAML 蓝图 | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
 
 ---
 
@@ -119,9 +119,9 @@
 
 ---
 
-## 🗂️ 354 章全栈工程百科结构化章节索引（Structured 354-Chapter Index）
+## 🗂️ 355 章全栈工程百科结构化章节索引（Structured 355-Chapter Index）
 
-> 💡 **阅读说明**：为确保 GitHub 页面秒级加载（`< 30 KB`），完整的 **354 章（2.99 MB）数学推导、物理模型源码解析与生产级配置清单**已完整归档至 **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)**（英文版归档于 **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)**）。以下按三大主题域提供结构化索引：
+> 💡 **阅读说明**：为确保 GitHub 页面秒级加载（`< 30 KB`），完整的 **355 章（2.99 MB）数学推导、物理模型源码解析与生产级配置清单**已完整归档至 **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)**（英文版归档于 **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)**）。以下按三大主题域提供结构化索引：
 
 ### 主题域一（Chapters 1–19）：核心 Agent 沙箱、多租户编排与零信任安全治理
 *(Core Agent Sandbox, 100K MicroVM Orchestration & Zero-Trust Governance)*
@@ -158,7 +158,7 @@
 ## ✅ 快速验证与复现实验（Quick Verification Commands）
 
 ```bash
-# 1. 运行全部 355 项确定性架构选型、100K 沙箱容量与 346 物理仿真器单元测试
+# 1. 运行全部 356 项确定性架构选型、100K 沙箱容量与 347 物理仿真器单元测试
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py -v
 
 # 2. 运行 AKSClaw × E2B 端到端实时仿真自检并验证最新 Trace
