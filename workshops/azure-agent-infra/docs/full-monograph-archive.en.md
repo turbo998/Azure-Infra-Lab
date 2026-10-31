@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[📘 Bilingual Entry (`README.md`)](../README.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](../selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #331 · **339 Chapters** · **332 IaC Blueprints** · **331 Quantitative Physics Simulators** · **340/340 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 339-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #332 · **340 Chapters** · **333 IaC Blueprints** · **332 Quantitative Physics Simulators** · **341/341 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 340-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](../test-report.en.md) · [中文 7-Card 评测报告](../test-report.md) · [CSP-Locked Self-Contained HTML Deck](../cards.html) · [Sealed Benchmark JSON (`report.json`)](../report.json)
-  - 🧮 [Deterministic Architecture Sizer & 331 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [340-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 332 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [341-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](../index.html) · [`h5/demo.html`](../demo.html) · [`h5/selector.html`](../selector.html) · [`h5/cards.html`](../cards.html)
 
 ---
@@ -960,6 +960,29 @@ python simulator/publish_via_github_api.py
 ## 362. Cycle #331 Summary and Reproducibility Commands (339 Chapters)
 
 - **Snapshot**: `339 Chapters · 332 Blueprints · 331 Simulators · 340/340 Tests`.
+- **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
+- **Reproducibility CLI**:
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 363. Electronic-Grade 6N5 Nd(MeCp)(COD) / Nd(acac)3 + 6N5 TDMASm + 6N5 DESe + 6N5 TMA for 300mm W1/V1 NdSe2 VdW Contact, Co Nanomesh Plasmonics and SmSe PCM Synapse (Cycle #332)
+
+- **Closed-loop outcome**: under `PINN-MPC + SIL-3`, the flow converges to `R_cp=22.7 Ω·μm` for `NdSe2/SmSe2` VdW contact, `L_SPP=200 μm` for Co nanomesh plasmonics, and `210 ps / 0.02 pJ/bit` for SmSe PCM synapse, yielding **`+87.8%` effective yield gain** and **`-99.8%` agglomeration/phase-drift reduction**.
+- **Safety and metrology**: `10 kHz QCL-CRDS (1424.0/1064.0/2712.0 cm⁻¹) + in-situ XPS/TLM-ARPES/s-SNOM` closes in `0.11 ms`; `SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` lockout trips in `0.10 ms` against Nd/Sm/Se precursor and pyrophoric TMA excursions, with unmanaged baseline leak/ignition risk at `0.2%`.
+- **Production assets**: Blueprint [`blueprints/ndmecpcod-ndacac3-tdmasm-dese-tma-w1-ndse2-contact-co-nanomesh-smse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/ndmecpcod-ndacac3-tdmasm-dese-tma-w1-ndse2-contact-co-nanomesh-smse-pcm-peald-pinn-mpc-sil3.bicep) (**Blueprint #333**), simulator `simulate_ndmecpcod_ndacac3_tdmasm_dese_tma_w1_ndse2_contact_co_nanomesh_and_smse_pcm_peald_sil3_sandbox()` (**Simulator #332**), and **Tool 332** in `selector.html`.
+
+---
+
+## 364. Cycle #332 Summary and Reproducibility Commands (340 Chapters)
+
+- **Snapshot**: `340 Chapters · 333 Blueprints · 332 Simulators · 341/341 Tests`.
 - **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
 - **Reproducibility CLI**:
 

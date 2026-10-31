@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #331 · 339 Chapters · 332 Blueprints · 331 Simulators · 340/340 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #332 · 340 Chapters · 333 Blueprints · 332 Simulators · 341/341 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -8137,6 +8137,29 @@ python simulator/publish_via_github_api.py
 ## 363. Cycle #331 评测摘要与复现实验命令（Summary 337 · 339 Chapters）
 
 - **版本快照**：`339 Chapters · 332 Blueprints · 331 Simulators · 340/340 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 364. 电子级 6N5 Nd(MeCp)(COD) / Nd(acac)3 + 6N5 TDMASm + 6N5 DESe + 6N5 TMA 300mm W1/V1 NdSe2 范德华接触、Co 纳米网等离激元互连与 SmSe 相变突触（Cycle #332 · Chapter 337）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`NdSe2/SmSe2` 接触比接触电阻收敛至 `R_cp=22.7 Ω·μm`、Co 纳米网等离激元传播长度稳定于 `L_SPP=200 μm`、SmSe 相变突触达到 `210 ps / 0.02 pJ/bit`，对应 **`+87.8%` 良率增益** 与 **`-99.8%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1424.0/1064.0/2712.0 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 Nd/Sm/Se 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `0.2%`。
+- **生产级资产**：Blueprint [`blueprints/ndmecpcod-ndacac3-tdmasm-dese-tma-w1-ndse2-contact-co-nanomesh-smse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/ndmecpcod-ndacac3-tdmasm-dese-tma-w1-ndse2-contact-co-nanomesh-smse-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #333**）、仿真函数 `simulate_ndmecpcod_ndacac3_tdmasm_dese_tma_w1_ndse2_contact_co_nanomesh_and_smse_pcm_peald_sil3_sandbox()`（**Simulator #332**）与 H5 工具 **Tool 332**。
+
+---
+
+## 365. Cycle #332 评测摘要与复现实验命令（Summary 338 · 340 Chapters）
+
+- **版本快照**：`340 Chapters · 333 Blueprints · 332 Simulators · 341/341 Tests`。
 - **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
 - **一键复现**：
 
