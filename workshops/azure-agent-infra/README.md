@@ -1,12 +1,12 @@
-# Azure AI Agent Infrastructure Playbook：六层参考架构与 375 章智算工程百科
+# Azure AI Agent Infrastructure Playbook：六层参考架构与 376 章智算工程百科
 
-> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 375 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 376 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)**
 
 ---
 
 ## 📌 Executive Overview Summary（核心发现与架构总览）
 
-> **核心结论（TL;DR）**：生产级 AI Agent 基础设施正从“无状态单次 Prompt 调用”全面演进为**“计算与状态解耦（Compute-State Decoupling）+ 硬件虚拟化沙箱强隔离 + 平台级零信任硬边界（Never Trust the Prompt）”**。本仓库提供经过 **376/376 单元测试验证**的 **6 层 Agent Infra 参考架构**、**`AKSClaw × E2B` 100,000 并发沙箱极限扩展实测**、**运行时与存储选型决策矩阵**以及涵盖 **375 章、368 套生产级 IaC 蓝图与 367 个确定性物理仿真器**的工程百科全书。
+> **核心结论（TL;DR）**：生产级 AI Agent 基础设施正从“无状态单次 Prompt 调用”全面演进为**“计算与状态解耦（Compute-State Decoupling）+ 硬件虚拟化沙箱强隔离 + 平台级零信任硬边界（Never Trust the Prompt）”**。本仓库提供经过 **377/377 单元测试验证**的 **6 层 Agent Infra 参考架构**、**`AKSClaw × E2B` 100,000 并发沙箱极限扩展实测**、**运行时与存储选型决策矩阵**以及涵盖 **376 章、369 套生产级 IaC 蓝图与 368 个确定性物理仿真器**的工程百科全书。
 
 ### 1. 六层 Agent Infra 全栈参考架构（6-Layer Reference Architecture）
 我们将企业级 AI Agent 基础设施解耦为严格正交的 **6 大架构层**（对齐 `Build · Run · Ground · Govern` 四大工程域）：
