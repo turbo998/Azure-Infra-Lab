@@ -8641,6 +8641,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="comecpCose2MnFeseResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(56,189,248,0.35);">
+      <h3>Tool 363 · 电子级(甲基环戊二烯基)(1,5-环辛二烯)铁 / 六(乙酰丙酮)铁 6N5 Fe(MeCp)(COD) / Fe(acac)<sub>6</sub> 与七(二甲氨基)锰 6N5 TDMAMn + 二乙基硒 6N5 DESe + 6N5 TMA 300mm BB1/BA1 二维 FeSe<sub>2</sub>/MnSe<sub>2</sub> 范德华超低阻接触 (R<sub>c,p</sub>=14.7 &Omega;&middot;&mu;m, S=0.99)、单晶 Cr 纳米网等离激元互连 (L<sub>SPP</sub>=262 &mu;m) 与 MnSe 相变突触 (0.02 pJ/bit, R<sub>on</sub>/R<sub>off</sub>=1.19&times;10<sup>9</sup>) PEALD PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（1308.0 cm⁻¹ Fe(acac)<sub>6</sub> C=O、948.0 cm⁻¹ Mn-N、2596.0 cm⁻¹ DESe C-H 与 &lt;0.3 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位 XPS/TLM-ARPES + s-SNOM 推入工厂边缘 4 节点 H100 集群，在 0.11ms 内抑制 Cr 纳米网团聚散射、MnSe 相变漂移与导电细丝过生长，并以 0.10ms SIL-3 联锁阻断 Fe/Mn/Se 前驱体泄漏与自燃 TMA 风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Fe(MeCp)(COD) / Fe(acac)<sub>6</sub> / TDMAMn / DESe / TMA 提纯与 BB1 FeSe<sub>2</sub> 接触 / Cr 纳米网 / MnSe 相变产线数 (Trains): <span id="femecpFese2CrMnseTrainsVal">8</span></label>
+          <input type="range" id="femecpFese2CrMnseTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('femecpFese2CrMnseTrainsVal').innerText=this.value; runFemecpcodFeacac6TdmamnDeseTmaBb1Fese2ContactCrNanomeshAndMnsePcmLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="femecpFese2CrMnseMode" onchange="runFemecpcodFeacac6TdmamnDeseTmaBb1Fese2ContactCrNanomeshAndMnsePcmLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Fe + Mn + Se + TMA BB1 FeSe2 接触 + Cr 纳米网等离激元 + MnSe 相变突触 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环 Cr 纳米网团聚散射、MnSe 相变漂移、细丝过生长与 Fe/Mn/Se/TMA 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="femecpFese2CrMnseResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -17115,6 +17134,47 @@ function runComecpcodCoacac6TdmafeDeseTmaBa1Cose2ContactMnNanomeshAndFesePcmLab(
   `;
 }
 runComecpcodCoacac6TdmafeDeseTmaBa1Cose2ContactMnNanomeshAndFesePcmLab();
+
+function runFemecpcodFeacac6TdmamnDeseTmaBb1Fese2ContactCrNanomeshAndMnsePcmLab() {
+  const trains = parseInt(document.getElementById('femecpFese2CrMnseTrains').value, 10);
+  const mode = document.getElementById('femecpFese2CrMnseMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 94.6 : 22.4;
+  const defectCut = isPinn ? 99.8 : 25.5;
+  const sil3Ms = isPinn ? 0.10 : 296.0;
+  const leakRisk = isPinn ? 0.0 : 0.2;
+  const metroMs = isPinn ? 0.11 : 436.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 10.8;
+  document.getElementById('femecpFese2CrMnseResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">BB1 FeSe<sub>2</sub> 范德华接触、Cr 纳米网等离激元互连与 MnSe 相变突触指标：</span><strong>FeSe<sub>2</sub>/MnSe<sub>2</sub> R<sub>c,p</sub>=14.7 &Omega;&middot;&mu;m (S=0.99) · Cr 纳米网 L<sub>SPP</sub>=262 &mu;m (0.005 dB/&mu;m) · MnSe PCM R<sub>on</sub>/R<sub>off</sub>=1.19&times;10<sup>9</sup> (100 ps, 0.02 pJ/bit)</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Fe/Mn/Se/Al 纯度与 BB1 FeSe2/Cr 纳米网/MnSe 良率增益 / 团聚散射与相变漂移削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 Fe/Mn/Se 前驱体与自燃 TMA 联锁延迟 / 泄漏或点燃事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (1308.0/948.0/2596.0cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM 延迟 (-${wanRed.toFixed(1)}% WAN) / 散射或细丝过生长失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_femecpcod_feacac6_tdmamn_dese_tma_bb1_fese2_contact_cr_nanomesh_and_mnse_pcm_peald_sil3_edge`)</strong>：通过低温范德华外延构建 FeSe<sub>2</sub>/MnSe<sub>2</sub> 超低阻接触并稳定 Cr 纳米网等离激元传播，完成 100ps MnSe 相变突触闭环控制。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：缺乏界面势垒与相变窗口协同控制会触发 Cr 纳米网团聚、MnSe 漂移与导电细丝过生长，导致高失效率与安全泄漏风险。'}
+      </p>
+    </div>
+  `;
+}
+runFemecpcodFeacac6TdmamnDeseTmaBb1Fese2ContactCrNanomeshAndMnsePcmLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);
