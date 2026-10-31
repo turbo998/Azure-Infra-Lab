@@ -6,7 +6,7 @@
 
 ## 📌 Executive Overview Summary
 
-> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **365-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **358 production IaC blueprints**, **357 deterministic physics simulators**, and **366/366 passing unit tests**.
+> **Executive Takeaway (TL;DR)**: Production AI Agent infrastructure is shifting from stateless single-turn prompt wrappers to **Compute-State Decoupling, hardware-virtualized micro-sandboxes, and non-bypassable platform zero-trust boundaries (`Never Trust the Prompt`)**. This playbook delivers a **verified 6-Layer Agent Infra Reference Architecture**, **`AKSClaw × E2B` 100,000-sandbox scale benchmarks**, a **Runtime & Storage Decision Matrix**, and a **366-Chapter AI Factory & Semiconductor/Agent Infrastructure Encyclopedia** backed by **359 production IaC blueprints**, **358 deterministic physics simulators**, and **367/367 passing unit tests**.
 
 ### 1. 6-Layer Agent Infrastructure Reference Architecture
 We decompose enterprise agent infrastructure into **6 orthogonal architectural layers** (aligned with the `Build · Run · Ground · Govern` lifecycle):
@@ -152,7 +152,7 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 
 ---
 
-> **Cycle #357 incremental snapshot**: added `Chapter 362` (6N5 Pt(MeCp)(COD)/Pt(acac)6 + TDMAAu + DESe + TMA, AV1/AU1 PtSe2/AuSe2 contact + Ag nanomesh + AuSe PCM) and `Summary 363`; totals are now **365 Chapters · 358 Blueprints · 357 Simulators · 366/366 Tests**.
+> **Cycle #358 incremental snapshot**: added `Chapter 363` (6N5 Au(MeCp)(COD)/Au(acac)6 + TDMAAg + DESe + TMA, AW1/AV1 AuSe2/AgSe2 contact + Cu nanomesh + AgSe PCM) and `Summary 364`; totals are now **366 Chapters · 359 Blueprints · 358 Simulators · 367/367 Tests**.
 
 ## ✅ Reproducible Verification Commands
 
