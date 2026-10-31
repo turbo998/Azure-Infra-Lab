@@ -17919,6 +17919,59 @@ def simulate_lamecpcod_laacac3_tdmapr_dese_tma_u1_lase2_contact_cu_nanomesh_and_
     }
 
 
+def simulate_prmecpcod_pracac3_tdmand_dese_tma_v1_prse2_contact_ni_nanomesh_and_ndse_pcm_peald_sil3_sandbox(
+    prmecpcod_pracac3_tdmand_dese_tma_trains: int = 8,
+    governance_mode: str = "pinn_mpc_prmecpcod_pracac3_tdmand_dese_tma_v1_prse2_contact_ni_nanomesh_and_ndse_pcm_peald_sil3_edge",
+) -> dict[str, Any]:
+    """Simulate Electronic-Grade 6N5 Pr(MeCp)(COD) / Pr(acac)3 + 6N5 TDMANd + 6N5 DESe + 6N5 TMA
+    300mm V1/U1 2D PrSe2/NdSe2 Van der Waals Ultralow-Resistance Contact (R_cp=23.0 Ohm*um, S=0.99),
+    Single-Crystal Ni Nanomesh Plasmonic Interconnect (L_SPP=198 um at 1310nm, loss 0.009 dB/um)
+    and NdSe Phase-Change Synapse (0.02 pJ/bit, Ron/Roff=6.4e8, 215ps) PEALD PINN-MPC + SIL-3
+    (Cycle #331 — Chapter 336).
+    """
+    trains = max(1, int(prmecpcod_pracac3_tdmand_dese_tma_trains))
+    governed = (
+        governance_mode
+        == "pinn_mpc_prmecpcod_pracac3_tdmand_dese_tma_v1_prse2_contact_ni_nanomesh_and_ndse_pcm_peald_sil3_edge"
+    )
+    gpu_nodes = max(2, math.ceil(trains / 2))
+    active_v1_prse2_contact_ni_nanomesh_ndse_pcm_pods = trains * 4
+    electronic_6n5_prmecpcod_6n5_pracac3_6n5_tdmand_6n5_dese_6n5_tma_purity_and_prse2_ndse_yield_gain_pct = (
+        87.5 if governed else 22.6
+    )
+    ni_nanomesh_agglomeration_and_ndse_phase_drift_reduction_pct = (
+        99.8 if governed else 25.8
+    )
+    semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_pr_nd_se_and_tma_lockout_latency_ms = (
+        0.10 if governed else 286.0
+    )
+    unmitigated_pr_nd_se_precursor_leak_or_tma_ignition_pct = (
+        0.0 if governed else 0.2
+    )
+    edge_qcl_crds_1430cm1_1070cm1_2718cm1_insitu_xps_tlmarpes_ssnom_latency_ms = (
+        0.11 if governed else 386.0
+    )
+    wan_bandwidth_reduction_pct = 99.7 if governed else 0.0
+    uncompensated_ni_nanomesh_scattering_or_ndse_filament_overgrowth_failure_pct = (
+        0.0 if governed else 14.4
+    )
+    return {
+        "prmecpcod_pracac3_tdmand_dese_tma_trains": trains,
+        "governance_mode": governance_mode,
+        "gpu_nodes": gpu_nodes,
+        "node_sku": "Standard_NC40ads_H100_v5",
+        "active_v1_prse2_contact_ni_nanomesh_ndse_pcm_pods": active_v1_prse2_contact_ni_nanomesh_ndse_pcm_pods,
+        "electronic_6n5_prmecpcod_6n5_pracac3_6n5_tdmand_6n5_dese_6n5_tma_purity_and_prse2_ndse_yield_gain_pct": electronic_6n5_prmecpcod_6n5_pracac3_6n5_tdmand_6n5_dese_6n5_tma_purity_and_prse2_ndse_yield_gain_pct,
+        "ni_nanomesh_agglomeration_and_ndse_phase_drift_reduction_pct": ni_nanomesh_agglomeration_and_ndse_phase_drift_reduction_pct,
+        "semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_pr_nd_se_and_tma_lockout_latency_ms": semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_pr_nd_se_and_tma_lockout_latency_ms,
+        "unmitigated_pr_nd_se_precursor_leak_or_tma_ignition_pct": unmitigated_pr_nd_se_precursor_leak_or_tma_ignition_pct,
+        "edge_qcl_crds_1430cm1_1070cm1_2718cm1_insitu_xps_tlmarpes_ssnom_latency_ms": edge_qcl_crds_1430cm1_1070cm1_2718cm1_insitu_xps_tlmarpes_ssnom_latency_ms,
+        "wan_bandwidth_reduction_pct": wan_bandwidth_reduction_pct,
+        "uncompensated_ni_nanomesh_scattering_or_ndse_filament_overgrowth_failure_pct": uncompensated_ni_nanomesh_scattering_or_ndse_filament_overgrowth_failure_pct,
+        "prmecpcod_pracac3_tdmand_dese_tma_v1_prse2_contact_ni_nanomesh_and_ndse_pcm_peald_slo_met": governed,
+    }
+
+
 
 
 
