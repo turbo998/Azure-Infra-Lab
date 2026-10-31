@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[📘 Bilingual Entry (`README.md`)](../README.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](../selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-11-01 (Cycle #375 · **383 Chapters** · **376 IaC Blueprints** · **375 Quantitative Physics Simulators** · **384/384 Unit Tests Passing**)
-- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 383-chapter industry engineering playbook.
+- **Research Date**: 2026-10-18 – 2026-11-01 (Cycle #376 · **384 Chapters** · **377 IaC Blueprints** · **376 Quantitative Physics Simulators** · **385/385 Unit Tests Passing**)
+- **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 384-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](../test-report.en.md) · [中文 7-Card 评测报告](../test-report.md) · [CSP-Locked Self-Contained HTML Deck](../cards.html) · [Sealed Benchmark JSON (`report.json`)](../report.json)
-  - 🧮 [Deterministic Architecture Sizer & 375 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [384-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 376 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [385-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](../index.html) · [`h5/demo.html`](../demo.html) · [`h5/selector.html`](../selector.html) · [`h5/cards.html`](../cards.html)
 
 ---
@@ -1903,6 +1903,29 @@ python simulator/publish_via_github_api.py
 ## 450. Cycle #375 Summary and Reproducibility Commands (383 Chapters)
 
 - **Snapshot**: `383 Chapters · 376 Blueprints · 375 Simulators · 384/384 Tests`.
+- **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
+- **Reproducibility CLI**:
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 451. Electronic-Grade 6N5 Pt(MeCp)(COD) / Pt(acac)6 + 6N5 TDMAAu + 6N5 DESe + 6N5 TMA for 300mm BO1/BN1 PtSe2 VdW Contact, Au Nanomesh Plasmonics and AuSe PCM Synapse (Cycle #376)
+
+- **Closed-loop outcome**: under `PINN-MPC + SIL-3`, the flow converges to `R_cp=12.1 Ω·μm` for `PtSe2/AuSe2` VdW contact, `L_SPP=288 μm` for Au nanomesh plasmonics, and `74 ps / 0.02 pJ/bit` for AuSe PCM synapse, yielding **`+97.2%` effective yield gain** and **`-99.8%` agglomeration/phase-drift reduction**.
+- **Safety and metrology**: `10 kHz QCL-CRDS (1282.0/922.0/2570.0 cm⁻¹) + in-situ XPS/TLM-ARPES/s-SNOM` closes in `0.11 ms`; `SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` lockout trips in `0.10 ms` against Pt/Au/Se precursor and pyrophoric TMA excursions, with unmanaged baseline leak/ignition risk at `0.2%`.
+- **Production assets**: Blueprint [`blueprints/ptmecpcod-ptacac6-tdmaau-dese-tma-bo1-ptse2-contact-au-nanomesh-ause-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/ptmecpcod-ptacac6-tdmaau-dese-tma-bo1-ptse2-contact-au-nanomesh-ause-pcm-peald-pinn-mpc-sil3.bicep) (**Blueprint #377**), simulator `simulate_ptmecpcod_ptacac6_tdmaau_dese_tma_bo1_ptse2_contact_au_nanomesh_and_ause_pcm_peald_sil3_sandbox()` (**Simulator #376**), and **Tool 376** in `selector.html`.
+
+---
+
+## 452. Cycle #376 Summary and Reproducibility Commands (384 Chapters)
+
+- **Snapshot**: `384 Chapters · 377 Blueprints · 376 Simulators · 385/385 Tests`.
 - **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
 - **Reproducibility CLI**:
 
