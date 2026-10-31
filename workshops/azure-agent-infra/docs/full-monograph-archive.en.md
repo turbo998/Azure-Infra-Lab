@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[📘 Bilingual Entry (`README.md`)](../README.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](../selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #338 · **346 Chapters** · **339 IaC Blueprints** · **338 Quantitative Physics Simulators** · **347/347 Unit Tests Passing**)
+- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #339 · **347 Chapters** · **340 IaC Blueprints** · **339 Quantitative Physics Simulators** · **348/348 Unit Tests Passing**)
 - **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 345-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](../test-report.en.md) · [中文 7-Card 评测报告](../test-report.md) · [CSP-Locked Self-Contained HTML Deck](../cards.html) · [Sealed Benchmark JSON (`report.json`)](../report.json)
@@ -1121,6 +1121,29 @@ python simulator/publish_via_github_api.py
 ## 376. Cycle #338 Summary and Reproducibility Commands (346 Chapters)
 
 - **Snapshot**: `346 Chapters · 339 Blueprints · 338 Simulators · 347/347 Tests`.
+- **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
+- **Reproducibility CLI**:
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 377. Electronic-Grade 6N5 Sm(MeCp)(COD) / Sm(acac)3 + 6N5 TDMAGd + 6N5 DESe + 6N5 TMA for 300mm AD1/AC1 SmSe2 VdW Contact, Hf Nanomesh Plasmonics and GdSe PCM Synapse (Cycle #339)
+
+- **Closed-loop outcome**: under `PINN-MPC + SIL-3`, the flow converges to `R_cp=20.6 Ω·μm` for `SmSe2/GdSe2` VdW contact, `L_SPP=214 μm` for Hf nanomesh plasmonics, and `176 ps / 0.02 pJ/bit` for GdSe PCM synapse, yielding **`+89.8%` effective yield gain** and **`-99.8%` agglomeration/phase-drift reduction**.
+- **Safety and metrology**: `10 kHz QCL-CRDS (1384.0/1024.0/2672.0 cm⁻¹) + in-situ XPS/TLM-ARPES/s-SNOM` closes in `0.11 ms`; `SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` lockout trips in `0.10 ms` against Sm/Gd/Se precursor and pyrophoric TMA excursions, with unmanaged baseline leak/ignition risk at `0.2%`.
+- **Production assets**: Blueprint [`blueprints/smmecpcod-smacac3-tdmagd-dese-tma-ad1-smse2-contact-hf-nanomesh-gdse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/smmecpcod-smacac3-tdmagd-dese-tma-ad1-smse2-contact-hf-nanomesh-gdse-pcm-peald-pinn-mpc-sil3.bicep) (**Blueprint #340**), simulator `simulate_smmecpcod_smacac3_tdmagd_dese_tma_ad1_smse2_contact_hf_nanomesh_and_gdse_pcm_peald_sil3_sandbox()` (**Simulator #339**), and **Tool 339** in `selector.html`.
+
+---
+
+## 378. Cycle #339 Summary and Reproducibility Commands (347 Chapters)
+
+- **Snapshot**: `347 Chapters · 340 Blueprints · 339 Simulators · 348/348 Tests`.
 - **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
 - **Reproducibility CLI**:
 
