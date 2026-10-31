@@ -8280,6 +8280,25 @@ pre.code-box {
       </div>
       <div class="card" style="background:#070b14;margin-bottom:0;" id="dymecpDyse2CrHoseResult"></div>
     </div>
+
+    <div class="card" style="margin-top:16px; border-color: rgba(56,189,248,0.35);">
+      <h3>Tool 344 · 电子级(甲基环戊二烯基)(1,5-环辛二烯)钬 / 三(乙酰丙酮)钬 6N5 Ho(MeCp)(COD) / Ho(acac)<sub>3</sub> 与三(二甲氨基)铒 6N5 TDMAEr + 二乙基硒 6N5 DESe + 6N5 TMA 300mm AI1/AH1 二维 HoSe<sub>2</sub>/ErSe<sub>2</sub> 范德华超低阻接触 (R<sub>c,p</sub>=19.1 &Omega;&middot;&mu;m, S=0.99)、单晶 Mn 纳米网等离激元互连 (L<sub>SPP</sub>=224 &mu;m) 与 ErSe 相变突触 (0.02 pJ/bit, R<sub>on</sub>/R<sub>off</sub>=9.1&times;10<sup>8</sup>) PEALD PINN-MPC + SIL-3 评估器</h3>
+      <p class="muted">将 10kHz 双光梳 QCL-CRDS 气相痕量分析（1364.0 cm⁻¹ Ho(acac)<sub>3</sub> C=O、1004.0 cm⁻¹ Er-N、2652.0 cm⁻¹ DESe C-H 与 &lt;0.3 pptv O<sub>2</sub>/H<sub>2</sub>O）与原位 XPS/TLM-ARPES + s-SNOM 推入工厂边缘 4 节点 H100 集群，在 0.11ms 内抑制 Mn 纳米网团聚散射、ErSe 相变漂移与导电细丝过生长，并以 0.10ms SIL-3 联锁阻断 Ho/Er/Se 前驱体泄漏与自燃 TMA 风险。</p>
+      <div class="grid-2">
+        <div>
+          <label>Ho(MeCp)(COD) / Ho(acac)<sub>3</sub> / TDMAEr / DESe / TMA 提纯与 AI1 HoSe<sub>2</sub> 接触 / Mn 纳米网 / ErSe 相变产线数 (Trains): <span id="homecpHose2MnErseTrainsVal">8</span></label>
+          <input type="range" id="homecpHose2MnErseTrains" min="2" max="32" step="2" value="8" oninput="document.getElementById('homecpHose2MnErseTrainsVal').innerText=this.value; runHomecpcodHoacac3TdmaerDeseTmaAi1Hose2ContactMnNanomeshAndErsePcmLab();" />
+        </div>
+        <div>
+          <label>协同控制与联锁架构 (Governance Mode)</label>
+          <select id="homecpHose2MnErseMode" onchange="runHomecpcodHoacac3TdmaerDeseTmaAi1Hose2ContactMnNanomeshAndErsePcmLab()">
+            <option value="pinn" selected>PINN-MPC 6N5 Ho + Er + Se + TMA AI1 HoSe2 接触 + Mn 纳米网等离激元 + ErSe 相变突触 &amp; SIL-3 联锁（推荐）</option>
+            <option value="raw">云端开环 Mn 纳米网团聚散射、ErSe 相变漂移、细丝过生长与 Ho/Er/Se/TMA 泄漏风险（对比基线）</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" style="background:#070b14;margin-bottom:0;" id="homecpHose2MnErseResult"></div>
+    </div>
   </section>
 
   <footer class="footer-note">
@@ -15975,6 +15994,47 @@ function runDymecpcodDyacac3TdmahoDeseTmaAh1Dyse2ContactCrNanomeshAndHosePcmLab(
   `;
 }
 runDymecpcodDyacac3TdmahoDeseTmaAh1Dyse2ContactCrNanomeshAndHosePcmLab();
+
+function runHomecpcodHoacac3TdmaerDeseTmaAi1Hose2ContactMnNanomeshAndErsePcmLab() {
+  const trains = parseInt(document.getElementById('homecpHose2MnErseTrains').value, 10);
+  const mode = document.getElementById('homecpHose2MnErseMode').value;
+  const isPinn = mode === 'pinn';
+  const gpuNodes = Math.max(2, Math.ceil(trains / 2));
+  const activePods = trains * 4;
+  const yieldGain = isPinn ? 90.8 : 22.8;
+  const defectCut = isPinn ? 99.8 : 26.0;
+  const sil3Ms = isPinn ? 0.10 : 298.0;
+  const leakRisk = isPinn ? 0.0 : 0.2;
+  const metroMs = isPinn ? 0.11 : 398.0;
+  const wanRed = isPinn ? 99.7 : 0.0;
+  const failRisk = isPinn ? 0.0 : 14.6;
+  document.getElementById('homecpHose2MnErseResult').innerHTML = `
+    <div class="kv">
+      <div><span class="muted">GPU 节点 / 活跃 Pod：</span><strong>${gpuNodes}x Standard_NC40ads_H100_v5 / ${activePods} Pods</strong></div>
+      <div><span class="muted">AI1 HoSe<sub>2</sub> 范德华接触、Mn 纳米网等离激元互连与 ErSe 相变突触指标：</span><strong>HoSe<sub>2</sub>/ErSe<sub>2</sub> R<sub>c,p</sub>=19.1 &Omega;&middot;&mu;m (S=0.99) · Mn 纳米网 L<sub>SPP</sub>=224 &mu;m (0.008 dB/&mu;m) · ErSe PCM R<sub>on</sub>/R<sub>off</sub>=9.1&times;10<sup>8</sup> (156 ps, 0.02 pJ/bit)</strong></div>
+      <div class="grid-3" style="margin-top:8px;">
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#10b981' : '#f59e0b'}">+${yieldGain.toFixed(1)}% / -${defectCut.toFixed(1)}%</div>
+          <div class="lbl">6N5 Ho/Er/Se/Al 纯度与 AI1 HoSe2/Mn 纳米网/ErSe 良率增益 / 团聚散射与相变漂移削减</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#38bdf8' : '#ef4444'}">${sil3Ms.toFixed(2)} ms / ${leakRisk.toFixed(1)}%</div>
+          <div class="lbl">SEMI S2 / NFPA 704 / SIL-3 Ho/Er/Se 前驱体与自燃 TMA 联锁延迟 / 泄漏或点燃事故率</div>
+        </div>
+        <div class="stat">
+          <div class="val" style="color:${isPinn ? '#a78bfa' : '#ef4444'}">${metroMs.toFixed(2)} ms / ${failRisk.toFixed(1)}%</div>
+          <div class="lbl">10kHz QCL-CRDS (1364.0/1004.0/2652.0cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM 延迟 (-${wanRed.toFixed(1)}% WAN) / 散射或细丝过生长失效率</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px; margin-bottom:0;">
+        ${isPinn
+          ? '✅ <strong>PINN-MPC 闭环受控 (`pinn_mpc_homecpcod_hoacac3_tdmaer_dese_tma_ai1_hose2_contact_mn_nanomesh_and_erse_pcm_peald_sil3_edge`)</strong>：通过低温范德华外延构建 HoSe<sub>2</sub>/ErSe<sub>2</sub> 超低阻接触并稳定 Mn 纳米网等离激元传播，完成 156ps ErSe 相变突触闭环控制。'
+          : '⚠️ <strong>非补偿云端基线风险</strong>：缺乏界面势垒与相变窗口协同控制会触发 Mn 纳米网团聚、ErSe 漂移与导电细丝过生长，导致高失效率与安全泄漏风险。'}
+      </p>
+    </div>
+  `;
+}
+runHomecpcodHoacac3TdmaerDeseTmaAi1Hose2ContactMnNanomeshAndErsePcmLab();
 
 function runCctbaEbechruCobaltRutheniumGaaSub12nmLinerlessInterconnectLab() {
   const trains = parseInt(document.getElementById('rng_cctba_ebechru_trains').value, 10);
