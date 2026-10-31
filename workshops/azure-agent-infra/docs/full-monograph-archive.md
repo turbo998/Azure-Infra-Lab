@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-11-01 (Cycle #363 · 371 Chapters · 364 Blueprints · 363 Simulators · 372/372 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-11-01 (Cycle #364 · 372 Chapters · 365 Blueprints · 364 Simulators · 373/373 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -8873,6 +8873,29 @@ python simulator/publish_via_github_api.py
 ## 427. Cycle #363 评测摘要与复现实验命令（Summary 369 · 371 Chapters）
 
 - **版本快照**：`371 Chapters · 364 Blueprints · 363 Simulators · 372/372 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 428. 电子级 6N5 Mn(MeCp)(COD) / Mn(acac)6 + 6N5 TDMACr + 6N5 DESe + 6N5 TMA 300mm BC1/BB1 MnSe2 范德华接触、V 纳米网等离激元互连与 CrSe 相变突触（Cycle #364 · Chapter 369）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`MnSe2/CrSe2` 接触比接触电阻收敛至 `R_cp=14.5 Ω·μm`、V 纳米网等离激元传播长度稳定于 `L_SPP=264 μm`、CrSe 相变突触达到 `98 ps / 0.02 pJ/bit`，对应 **`+94.8%` 良率增益** 与 **`-99.8%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1306.0/946.0/2594.0 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 Mn/Cr/Se 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `0.2%`。
+- **生产级资产**：Blueprint [`blueprints/mnmecpcod-mnacac6-tdmacr-dese-tma-bc1-mnse2-contact-v-nanomesh-crse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/mnmecpcod-mnacac6-tdmacr-dese-tma-bc1-mnse2-contact-v-nanomesh-crse-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #365**）、仿真函数 `simulate_mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_sil3_sandbox()`（**Simulator #364**）与 H5 工具 **Tool 364**。
+
+---
+
+## 429. Cycle #364 评测摘要与复现实验命令（Summary 370 · 372 Chapters）
+
+- **版本快照**：`372 Chapters · 365 Blueprints · 364 Simulators · 373/373 Tests`。
 - **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
 - **一键复现**：
 

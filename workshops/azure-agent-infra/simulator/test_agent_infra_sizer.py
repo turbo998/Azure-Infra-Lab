@@ -370,6 +370,7 @@ from agent_infra_sizer import (
     simulate_nimecpcod_niacac6_tdmaco_dese_tma_az1_nise2_contact_fe_nanomesh_and_cose_pcm_peald_sil3_sandbox,
     simulate_comecpcod_coacac6_tdmafe_dese_tma_ba1_cose2_contact_mn_nanomesh_and_fese_pcm_peald_sil3_sandbox,
     simulate_femecpcod_feacac6_tdmamn_dese_tma_bb1_fese2_contact_cr_nanomesh_and_mnse_pcm_peald_sil3_sandbox,
+    simulate_mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_sil3_sandbox,
     simulate_webrtc_voice_video_media_sandbox,
     simulate_zero_downtime_canary_live_migration,
 )
@@ -8108,6 +8109,30 @@ class TestAgentInfraSizer(unittest.TestCase):
         self.assertGreater(raw["uncompensated_cr_nanomesh_scattering_or_mnse_filament_overgrowth_failure_pct"], 3.0)
         self.assertTrue(gov["femecpcod_feacac6_tdmamn_dese_tma_bb1_fese2_contact_cr_nanomesh_and_mnse_pcm_peald_slo_met"])
         self.assertFalse(raw["femecpcod_feacac6_tdmamn_dese_tma_bb1_fese2_contact_cr_nanomesh_and_mnse_pcm_peald_slo_met"])
+
+    def test_mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_sil3_sandbox(self) -> None:
+        gov = simulate_mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_sil3_sandbox(
+            mnmecpcod_mnacac6_tdmacr_dese_tma_trains=8,
+            governance_mode="pinn_mpc_mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_sil3_edge",
+        )
+        raw = simulate_mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_sil3_sandbox(
+            mnmecpcod_mnacac6_tdmacr_dese_tma_trains=8,
+            governance_mode="unmanaged_open_loop_v_nanomesh_agglomeration_and_crse_phase_drift",
+        )
+        self.assertEqual(gov["gpu_nodes"], 4)
+        self.assertEqual(gov["node_sku"], "Standard_NC40ads_H100_v5")
+        self.assertEqual(gov["active_bc1_mnse2_contact_v_nanomesh_crse_pcm_pods"], 32)
+        self.assertEqual(gov["electronic_6n5_mnmecpcod_6n5_mnacac6_6n5_tdmacr_6n5_dese_6n5_tma_purity_and_mnse2_crse2_yield_gain_pct"], 94.8)
+        self.assertEqual(gov["v_nanomesh_agglomeration_and_crse_phase_drift_reduction_pct"], 99.8)
+        self.assertEqual(gov["semi_s2_nfpa704_osha_19101000_sil3_pyrophoric_mn_cr_se_and_tma_lockout_latency_ms"], 0.10)
+        self.assertEqual(gov["unmitigated_mn_cr_se_precursor_leak_or_tma_ignition_pct"], 0.0)
+        self.assertGreater(raw["unmitigated_mn_cr_se_precursor_leak_or_tma_ignition_pct"], 0.1)
+        self.assertEqual(gov["edge_qcl_crds_1306cm1_946cm1_2594cm1_insitu_xps_tlmarpes_ssnom_latency_ms"], 0.11)
+        self.assertEqual(gov["wan_bandwidth_reduction_pct"], 99.7)
+        self.assertEqual(gov["uncompensated_v_nanomesh_scattering_or_crse_filament_overgrowth_failure_pct"], 0.0)
+        self.assertGreater(raw["uncompensated_v_nanomesh_scattering_or_crse_filament_overgrowth_failure_pct"], 3.0)
+        self.assertTrue(gov["mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_slo_met"])
+        self.assertFalse(raw["mnmecpcod_mnacac6_tdmacr_dese_tma_bc1_mnse2_contact_v_nanomesh_and_crse_pcm_peald_slo_met"])
 
 
 if __name__ == "__main__":
