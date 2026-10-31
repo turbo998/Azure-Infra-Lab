@@ -504,10 +504,10 @@ def publish_to_repo(
 def main() -> int:
     sync_local_working_trees()
     commit_msg = (
-        "feat(azure-agent-infra): Cycle #345 — Chapter 350 + Summary 351 (353 Chapters) "
-        "Electronic-Grade 6N5 Er(MeCp)(COD)/Er(acac)3 + 6N5 TDMATm + 6N5 DESe + 6N5 TMA "
-        "AJ1 ErSe2/TmSe2 VdW Contact, Fe Nanomesh Plasmonic Interconnect & TmSe PCM "
-        "PEALD PINN-MPC + SIL-3, Blueprint #346, Simulator #345, Tool 345, 354/354 tests, bilingual sync"
+        "feat(azure-agent-infra): Cycle #346 — Chapter 351 + Summary 352 (354 Chapters) "
+        "Electronic-Grade 6N5 Tm(MeCp)(COD)/Tm(acac)3 + 6N5 TDMAYb + 6N5 DESe + 6N5 TMA "
+        "AK1 TmSe2/YbSe2 VdW Contact, Co Nanomesh Plasmonic Interconnect & YbSe PCM "
+        "PEALD PINN-MPC + SIL-3, Blueprint #347, Simulator #346, Tool 346, 355/355 tests, bilingual sync"
     )
 
     infra_lab = Path.home() / "ai-infra-lab"
