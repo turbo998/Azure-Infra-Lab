@@ -2,11 +2,11 @@
 
 > 🌐 **Language / 语言切换**: **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[📘 Bilingual Entry (`README.md`)](../README.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[🖥️ Interactive H5 Workbench (EN/中文)](../selector.html)**
 
-- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #326 · **334 Chapters** · **327 IaC Blueprints** · **326 Quantitative Physics Simulators** · **335/335 Unit Tests Passing**)
+- **Research Date**: 2026-10-18 – 2026-10-31 (Cycle #327 · **335 Chapters** · **328 IaC Blueprints** · **327 Quantitative Physics Simulators** · **336/336 Unit Tests Passing**)
 - **Scope & Positioning**: Principal AI Infrastructure Architect reference architecture, runtime decision matrix, generational silicon benchmarks (`AMD EPYC Turin v7` vs `Genoa v6` vs `Intel Emerald Rapids v6`), multi-tenant zero-trust governance, and 331-chapter industry engineering playbook.
 - **Interactive Assets & Verifiable Benchmark Suite**:
   - 📊 [7-Card 4:5 Visual Benchmark Report (English Markdown)](../test-report.en.md) · [中文 7-Card 评测报告](../test-report.md) · [CSP-Locked Self-Contained HTML Deck](../cards.html) · [Sealed Benchmark JSON (`report.json`)](../report.json)
-  - 🧮 [Deterministic Architecture Sizer & 326 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [335-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
+  - 🧮 [Deterministic Architecture Sizer & 327 Physics Simulators (`simulator/agent_infra_sizer.py`)](../simulator/agent_infra_sizer.py) · [336-Test Verification Suite (`simulator/test_agent_infra_sizer.py`)](../simulator/test_agent_infra_sizer.py)
   - 🌐 Interactive Bilingual (`EN / 中文`) H5 Playbook & Sizer Suite: [`h5/index.html`](../index.html) · [`h5/demo.html`](../demo.html) · [`h5/selector.html`](../selector.html) · [`h5/cards.html`](../cards.html)
 
 ---
@@ -845,6 +845,29 @@ python simulator/publish_via_github_api.py
 ## 352. Cycle #326 Summary and Reproducibility Commands (334 Chapters)
 
 - **Snapshot**: `334 Chapters · 327 Blueprints · 326 Simulators · 335/335 Tests`.
+- **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
+- **Reproducibility CLI**:
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 353. Electronic-Grade 6N5 Hf(MeCp)(COD) / Hf(acac)4 + 6N5 TDMALu + 6N5 DESe + 6N5 TMA for 300mm R1/Q1 HfSe2 VdW Contact, Ir Nanomesh Plasmonics and LuSe PCM Synapse (Cycle #327)
+
+- **Closed-loop outcome**: under `PINN-MPC + SIL-3`, the flow converges to `R_cp=24.2 Ω·μm` for `HfSe2/LuSe2` VdW contact, `L_SPP=190 μm` for Ir nanomesh plasmonics, and `235 ps / 0.02 pJ/bit` for LuSe PCM synapse, yielding **`+86.3%` effective yield gain** and **`-99.8%` agglomeration/phase-drift reduction**.
+- **Safety and metrology**: `10 kHz QCL-CRDS (1454.0/1094.0/2742.0 cm⁻¹) + in-situ XPS/TLM-ARPES/s-SNOM` closes in `0.11 ms`; `SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` lockout trips in `0.10 ms` against Hf/Lu/Se precursor and pyrophoric TMA excursions.
+- **Production assets**: Blueprint [`blueprints/hfmecpcod-hfacac4-tdmalu-dese-tma-r1-hfse2-contact-ir-nanomesh-luse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/hfmecpcod-hfacac4-tdmalu-dese-tma-r1-hfse2-contact-ir-nanomesh-luse-pcm-peald-pinn-mpc-sil3.bicep) (**Blueprint #328**), simulator `simulate_hfmecpcod_hfacac4_tdmalu_dese_tma_r1_hfse2_contact_ir_nanomesh_and_luse_pcm_peald_sil3_sandbox()` (**Simulator #327**), and **Tool 327** in `selector.html`.
+
+---
+
+## 354. Cycle #327 Summary and Reproducibility Commands (335 Chapters)
+
+- **Snapshot**: `335 Chapters · 328 Blueprints · 327 Simulators · 336/336 Tests`.
 - **Bilingual sync**: `README.md` / `README.en.md`, `docs/full-monograph-archive.md` / `.en.md`, `cards.html`, `selector.html`, `workshop-runbook.md`, and `review.md` are aligned.
 - **Reproducibility CLI**:
 
