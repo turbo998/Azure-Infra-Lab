@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #348 · 356 Chapters · 349 Blueprints · 348 Simulators · 357/357 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #349 · 357 Chapters · 350 Blueprints · 349 Simulators · 358/358 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -8528,6 +8528,29 @@ python simulator/publish_via_github_api.py
 ## 397. Cycle #348 评测摘要与复现实验命令（Summary 354 · 356 Chapters）
 
 - **版本快照**：`356 Chapters · 349 Blueprints · 348 Simulators · 357/357 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 398. 电子级 6N5 Hf(MeCp)(COD) / Hf(acac)4 + 6N5 TDMATa + 6N5 DESe + 6N5 TMA 300mm AN1/AM1 HfSe2 范德华接触、Ag 纳米网等离激元互连与 TaSe 相变突触（Cycle #349 · Chapter 354）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`HfSe2/TaSe2` 接触比接触电阻收敛至 `R_cp=17.6 Ω·μm`、Ag 纳米网等离激元传播长度稳定于 `L_SPP=234 μm`、TaSe 相变突触达到 `136 ps / 0.02 pJ/bit`，对应 **`+91.8%` 良率增益** 与 **`-99.8%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1344.0/984.0/2632.0 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 Hf/Ta/Se 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `0.2%`。
+- **生产级资产**：Blueprint [`blueprints/hfmecpcod-hfacac4-tdmata-dese-tma-an1-hfse2-contact-ag-nanomesh-tase-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/hfmecpcod-hfacac4-tdmata-dese-tma-an1-hfse2-contact-ag-nanomesh-tase-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #350**）、仿真函数 `simulate_hfmecpcod_hfacac4_tdmata_dese_tma_an1_hfse2_contact_ag_nanomesh_and_tase_pcm_peald_sil3_sandbox()`（**Simulator #349**）与 H5 工具 **Tool 349**。
+
+---
+
+## 399. Cycle #349 评测摘要与复现实验命令（Summary 355 · 357 Chapters）
+
+- **版本快照**：`357 Chapters · 350 Blueprints · 349 Simulators · 358/358 Tests`。
 - **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
 - **一键复现**：
 
