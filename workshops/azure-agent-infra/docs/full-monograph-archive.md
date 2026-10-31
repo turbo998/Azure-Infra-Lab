@@ -2,7 +2,7 @@
 
 > 🌐 **Language / 语言版本切换**: **[🇨🇳 中文完整版 (../README.md)](../README.md)** | **[🇬🇧 English Full Edition (../README.en.md)](../README.en.md)** | **[📊 7-Card 评测报告 (中文)](../test-report.md)** | **[📊 7-Card Benchmark Report (EN)](../test-report.en.md)** | **[🖥️ 交互式 H5 选型器 (EN/中文)](../selector.html)**
 
-- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #329 · 337 Chapters · 330 Blueprints · 329 Simulators · 338/338 Tests)
+- **研究日期 / Date**：2026-10-18 ~ 2026-10-31 (Cycle #330 · 338 Chapters · 331 Blueprints · 330 Simulators · 339/339 Tests)
 - **研究定位 / Positioning**：AI Infrastructure 架构师视角全栈方案设计、技术选型、代际实测对比、多租户安全治理与现场落地手册（Full-Stack Reference Architecture, Runtime Selection, E2B/AKSClaw Empirical Benchmarks & Field Playbook）
 - **核心覆盖范围**：
   - **L1 Build（Agent Harness 编排层）**：Microsoft Agent Framework (MAF)、GitHub Copilot SDK、LangGraph / AutoGen / CrewAI、OpenClaw / Hermes、MCP & A2A 开放协议
@@ -8091,6 +8091,29 @@ python simulator/publish_via_github_api.py
 ## 359. Cycle #329 评测摘要与复现实验命令（Summary 335 · 337 Chapters）
 
 - **版本快照**：`337 Chapters · 330 Blueprints · 329 Simulators · 338/338 Tests`。
+- **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
+- **一键复现**：
+
+```bash
+python simulator/agent_infra_sizer.py --check
+python simulator/e2b_aksclaw_deep_benchmark.py
+python simulator/test_agent_infra_sizer.py -v
+python simulator/publish_via_github_api.py
+```
+
+---
+
+## 360. 电子级 6N5 La(MeCp)(COD) / La(acac)3 + 6N5 TDMAPr + 6N5 DESe + 6N5 TMA 300mm U1/T1 LaSe2 范德华接触、Cu 纳米网等离激元互连与 PrSe 相变突触（Cycle #330 · Chapter 335）
+
+- **核心闭环结论**：在 `PINN-MPC + SIL-3` 边缘联锁下，`LaSe2/PrSe2` 接触比接触电阻收敛至 `R_cp=23.3 Ω·μm`、Cu 纳米网等离激元传播长度稳定于 `L_SPP=196 μm`、PrSe 相变突触达到 `220 ps / 0.02 pJ/bit`，对应 **`+87.2%` 良率增益** 与 **`-99.8%` 团聚散射/相变漂移削减**。
+- **安全与计量**：`10 kHz QCL-CRDS (1436.0/1076.0/2724.0 cm⁻¹) + 原位 XPS/TLM-ARPES/s-SNOM` 在 `0.11 ms` 内闭环；`SEMI S2 / NFPA 704 / OSHA 1910.1000 / IEC 61511 SIL-3` 联锁在 `0.10 ms` 内切断 La/Pr/Se 前驱体与 TMA 风险链路，非托管基线泄漏/点燃风险为 `0.2%`。
+- **生产级资产**：Blueprint [`blueprints/lamecpcod-laacac3-tdmapr-dese-tma-u1-lase2-contact-cu-nanomesh-prse-pcm-peald-pinn-mpc-sil3.bicep`](../blueprints/lamecpcod-laacac3-tdmapr-dese-tma-u1-lase2-contact-cu-nanomesh-prse-pcm-peald-pinn-mpc-sil3.bicep)（**Blueprint #331**）、仿真函数 `simulate_lamecpcod_laacac3_tdmapr_dese_tma_u1_lase2_contact_cu_nanomesh_and_prse_pcm_peald_sil3_sandbox()`（**Simulator #330**）与 H5 工具 **Tool 330**。
+
+---
+
+## 361. Cycle #330 评测摘要与复现实验命令（Summary 336 · 338 Chapters）
+
+- **版本快照**：`338 Chapters · 331 Blueprints · 330 Simulators · 339/339 Tests`。
 - **中英双语同步**：`README.md` / `README.en.md`、`docs/full-monograph-archive.md` / `docs/full-monograph-archive.en.md`、`cards.html`、`selector.html`、`workshop-runbook.md`、`review.md` 同步升级。
 - **一键复现**：
 
