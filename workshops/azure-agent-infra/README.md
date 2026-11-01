@@ -1,6 +1,6 @@
 # Azure AI Agent Infrastructure Playbook：六层参考架构与 384 章智算工程百科
 
-> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 384 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **🇨🇳 中文主页 (`README.md`)** | **[🇬🇧 English Edition (`README.en.md`)](README.en.md)** | **[📚 384 章完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** | **[📊 7-Card 评测报告 (`cards.html`)](cards.html)** | **[🖥️ 交互式全景工作台 (`index.html`)](index.html)** | **[🧪 Cycle #377 卡组 (`benchmark-cards.html`)](benchmark-cards.html)** | **[📘 Cycle #377 日报](daily-report-2026-11-01.md)**
 
 ---
 
@@ -53,9 +53,10 @@
 | **2. 100K 沙箱双轨实时仿真器 (`demo.html`)** | 双语 H5 (`EN/中文`) | 浏览器本地回放 `AKSClaw` 零信任拦截与 `E2B` 10 万沙箱 `UFFD` 恢复状态机 | [本地打开 `demo.html`](demo.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html) |
 | **3. 运行时与存储容量测算器 (`selector.html`)** | 双语 H5 (`EN/中文`) | 6 大场景决策树、`D96as_v7` 10 万沙箱 VMSS 节点与 `$148K/mo` TCO 动态计算器、376 物理仿真器 | [本地打开 `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
 | **4. 7-Card 4:5 视觉评测卡片 (`cards.html`)** | CSP 锁定自包含 HTML | 严格遵循 7-Card 4:5 视觉规范：8 场景路由准确率 `100%`、翻转鲁棒性、代际延迟对比 | [本地打开 `cards.html`](cards.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html) |
-| **5. 7-Card 评测报告 (Markdown & JSON)** | Markdown / JSON | 7-Card 基准测试完整文字版与密封评测数据源 (`report.json`) | [中文报告 `test-report.md`](test-report.md) · [English `test-report.en.md`](test-report.en.md) · [`report.json`](report.json) |
-| **6. 384 章完整技术专著归档 (`docs/`)** | 完整专著归档 | 完整保留全部 384 章深度推导、公式、代码与行业物理模型（2.99 MB 中文 / 605 KB 英文） | **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** · **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** |
-| **7. 确定性物理仿真引擎与单测套件** | Python 3.12 + IaC | 376 个零外部依赖物理仿真函数、385 项自动化单元测试与 377 套 Bicep/YAML 蓝图 | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
+| **5. Cycle #377 7-Card 双语卡组与证据** | CSP 锁定自包含 HTML + JSON/CSV | 2026 官方/release 证据优先，严格 7-card 4:5（Card1~7）结构化呈现 | [`benchmark-cards.html`](benchmark-cards.html) · [`benchmark-cards.en.html`](benchmark-cards.en.html) · [`evidence/cycle-377-benchmark.json`](evidence/cycle-377-benchmark.json) |
+| **6. Cycle #377 交互工作台与日报** | 双语 H5 + Markdown | 可复现实验浏览器工作台、双语日报、当日突破 SVG 一图流 | [`workbench-cycle-377.html`](workbench-cycle-377.html) · [`daily-report-2026-11-01.md`](daily-report-2026-11-01.md) · [`daily-report-2026-11-01.en.md`](daily-report-2026-11-01.en.md) · [`assets/09-cycle-377-daily-breakthroughs.svg`](assets/09-cycle-377-daily-breakthroughs.svg) |
+| **7. 384 章完整技术专著归档 (`docs/`)** | 完整专著归档 | 完整保留全部 384 章深度推导、公式、代码与行业物理模型（2.99 MB 中文 / 605 KB 英文） | **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** · **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** · [`docs/full-monograph-cycle-377.md`](docs/full-monograph-cycle-377.md) |
+| **8. 确定性物理仿真引擎与单测套件** | Python 3.12 + IaC | 376 个零外部依赖物理仿真函数、385 项自动化单元测试与 377 套 Bicep/YAML 蓝图 | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
 
 ---
 

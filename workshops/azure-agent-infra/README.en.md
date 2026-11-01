@@ -1,6 +1,6 @@
 # Azure AI Agent Infrastructure Playbook: 6-Layer Reference Architecture, 100K Sandbox Scale Benchmarks & 384-Chapter Engineering Encyclopedia
 
-> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 384-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)**
+> 🌐 **Language / 语言切换**: **[🇨🇳 中文主页 (`README.md`)](README.md)** | **🇬🇧 English Edition (`README.en.md`)** | **[📚 Full 384-Chapter Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** | **[📊 7-Card Benchmark Deck (`cards.html`)](cards.html)** | **[🖥️ Interactive Hub (`index.html`)](index.html)** | **[🧪 Cycle #377 Deck (`benchmark-cards.en.html`)](benchmark-cards.en.html)** | **[📘 Cycle #377 Daily Report](daily-report-2026-11-01.en.md)**
 
 ---
 
@@ -53,9 +53,10 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 | **2. 100K Sandbox Simulator (`demo.html`)** | Bilingual H5 (`EN/中文`) | Dual-track live state machine for `AKSClaw` zero-trust enforcement and `E2B` 100K `UFFD` restore | [Open `demo.html`](demo.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html) |
 | **3. Runtime & Storage Sizer (`selector.html`)** | Bilingual H5 (`EN/中文`) | Scenario decision tree, `D96as_v7` 100K VMSS & `$148K/mo` TCO sizer, and 376 physics calculators | [Open `selector.html`](selector.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html) |
 | **4. 7-Card Visual Benchmark Deck (`cards.html`)** | CSP-Locked HTML (`4:5`) | 7-Card 4:5 visual benchmark report (`8/8 = 100%` routing accuracy, perturbation checks, v6 vs v7 latency) | [Open `cards.html`](cards.html) · [GitHub Pages ↗](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html) |
-| **5. 7-Card Benchmark Markdown & JSON** | Markdown / JSON | Self-contained 7-card markdown report and sealed evaluation dataset (`report.json`) | [English `test-report.en.md`](test-report.en.md) · [中文 `test-report.md`](test-report.md) · [`report.json`](report.json) |
-| **6. Full 384-Chapter Monograph Archive** | Markdown Archive | Complete 384-chapter reference text preserving every equation, table, and physics model | **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** · **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** |
-| **7. Deterministic Simulators & Unit Tests** | Python 3.12 + IaC | 376 stdlib physics models, 385 unit tests, and 377 production Bicep/YAML/SQL blueprints | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
+| **5. Cycle #377 bilingual deck + evidence bundle** | CSP-locked HTML + JSON/CSV | 2026 official/release-first evidence and strict 7-card 4:5 structure (Card 1~7 archetypes) | [`benchmark-cards.html`](benchmark-cards.html) · [`benchmark-cards.en.html`](benchmark-cards.en.html) · [`evidence/cycle-377-benchmark.json`](evidence/cycle-377-benchmark.json) |
+| **6. Cycle #377 workbench + daily reports** | Bilingual H5 + Markdown | Browser-runnable benchmark workbench, bilingual daily reports, and breakthrough SVG one-pager | [`workbench-cycle-377.html`](workbench-cycle-377.html) · [`daily-report-2026-11-01.md`](daily-report-2026-11-01.md) · [`daily-report-2026-11-01.en.md`](daily-report-2026-11-01.en.md) · [`assets/09-cycle-377-daily-breakthroughs.svg`](assets/09-cycle-377-daily-breakthroughs.svg) |
+| **7. Full 384-Chapter Monograph Archive** | Markdown Archive | Complete 384-chapter reference text preserving every equation, table, and physics model | **[📗 English Archive (`docs/full-monograph-archive.en.md`)](docs/full-monograph-archive.en.md)** · **[📘 中文完整专著归档 (`docs/full-monograph-archive.md`)](docs/full-monograph-archive.md)** · [`docs/full-monograph-cycle-377.en.md`](docs/full-monograph-cycle-377.en.md) |
+| **8. Deterministic Simulators & Unit Tests** | Python 3.12 + IaC | 376 stdlib physics models, 385 unit tests, and 377 production Bicep/YAML/SQL blueprints | [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py) · [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py) · [`blueprints/`](blueprints) |
 
 ---
 
@@ -193,7 +194,7 @@ Informed by **2+ billion agent runs** and **tens of billions of execution traces
 
 ---
 
-> **Cycle #376 incremental snapshot**: added `Chapter 381` (6N5 Pt(MeCp)(COD)/Pt(acac)6 + TDMAAu + DESe + TMA, BO1/BN1 PtSe2/AuSe2 contact + Au nanomesh + AuSe PCM) and `Summary 382`; totals are now **384 Chapters · 377 Blueprints · 376 Simulators · 385/385 Tests**.
+> **Cycle #377 snapshot (2026-11-01)**: added cloud-native Agent Infra benchmark assets (`benchmark-cards.html`, `benchmark-cards.en.html`, `workbench-cycle-377.html`, bilingual daily reports, SVG one-pager, and monograph addendum) with official/release-first evidence tags (`measured/synthetic/anonymized_reported`).
 
 ## ✅ Reproducible Verification Commands
 

@@ -472,8 +472,11 @@ class TestAgentInfraSizer(unittest.TestCase):
         bundle_dir = Path(__file__).resolve().parent.parent
         svg_files = sorted((bundle_dir / "assets").glob("*.svg"))
         svg_subdir_files = sorted((bundle_dir / "assets" / "svg").glob("*.svg"))
-        self.assertEqual(len(svg_files), 8)
+        self.assertGreaterEqual(len(svg_files), 8)
         self.assertEqual(len(svg_subdir_files), 8)
+        self.assertTrue(
+            (bundle_dir / "assets" / "09-cycle-377-daily-breakthroughs.svg").exists()
+        )
         for svg in svg_files + svg_subdir_files:
             ET.fromstring(svg.read_text(encoding="utf-8"))
         for h5_name in ("index.html", "demo.html", "selector.html", "cards.html"):
