@@ -64,6 +64,46 @@
       "status": "read",
       "read_method": "excel_com_methodology_sheet_only_extraction",
       "excerpt_summary": "Specifies the 4 technical foundations across 14 Azure service families, the 5-month observation window, the non-model persistence gate (>=3 of 5 months including the latest 2 consecutive months), the $10,000/month Jun-Aug Foundry Models signal gate with strict Signal-vs-Amount separation, the dual Strong ACR qualification routes (Specific Anchor vs General + >=3 foundations), and the 5 Potential Gates. All customer account rows and financial figures were excluded."
+    },
+    {
+      "id": "e2b-sandbox-resilience-nomad-heartbeats-2026",
+      "title": "Improving E2B Sandbox Resilience During Nomad Server Outages (Part 1 & Part 2 — Robin Su, 2026-04-12)",
+      "url": "https://robinsujob.github.io/p/e2b-sandbox-resilience-nomad-heartbeats/",
+      "type": "primary_production_chaos_experiment",
+      "verified_at": "2026-11-01",
+      "status": "read",
+      "read_method": "full_html_fetch_and_log_timeline_verification",
+      "excerpt_summary": "Demonstrates on a 3-Server + 20-Client Nomad cluster that stopping 1 non-Leader Nomad Server triggers a yamux (v0.1.2) silent TCP drop detection window of 10s-40s (30s keepalive + 10s pong timeout), losing the race against Nomad's default 20-30s heartbeat expiration (10-20s TTL + 10s heartbeat_grace). Baseline results in 7/20 (35%) healthy Orchestrator & session-proxy replacements, 2/3 client-proxy replacements, and a +53.85% placement load spike on the remaining 13 nodes. Dual-layer remediation: (1) Task Group disconnect block (lost_after='50s', replace=false, reconcile='keep_original') achieves 0 replacements, 10/10 sandbox PID/memory/file continuity, and 23/23 NDJSON streams intact; (2) Nomad Server heartbeat_grace='50s' (60-70s total budget > 40s yamux max) keeps 20/20 (100%) client nodes ready with 0% placement capacity drop."
+    },
+    {
+      "id": "e2b-clickup-enterprise-case-study",
+      "title": "How ClickUp Runs AI Code on Sensitive Data at Enterprise Scale | E2B",
+      "url": "https://e2b.dev/customers/clickup",
+      "type": "primary_enterprise_customer_case_study",
+      "verified_at": "2026-11-01",
+      "status": "read",
+      "read_method": "web_fetch_extraction",
+      "excerpt_summary": "ClickUp Brain2 serves regulated enterprise workspaces (85% of Fortune 500, SOC 2 & HIPAA compliant) by uploading large sales datasets, spreadsheets, and screen-recording videos directly into isolated E2B Firecracker MicroVMs instead of stuffing raw data into the LLM prompt, achieving 10x-20x effective context window expansion. Uses pre-built custom templates with 68 pre-installed CLI/Python/media tools plus role-specific templates (engineering, sales, finance, leadership, marketing, GTM), bursting to thousands of sandboxes within 60 seconds at the 9 a.m. workday peak with 15-30 minute stateful Pause & Resume lifecycles."
+    },
+    {
+      "id": "e2b-byoc-architecture-and-azure-docs",
+      "title": "BYOC (Bring Your Own Cloud) - E2B Docs (AWS, GCP & Azure VNet Deployment Architecture)",
+      "url": "https://docs.e2b.dev/byoc",
+      "type": "official_architecture_documentation",
+      "verified_at": "2026-11-01",
+      "status": "read",
+      "read_method": "web_fetch_extraction",
+      "excerpt_summary": "Defines E2B's three deployment tiers (E2B Cloud on GCP, E2B BYOC in customer's AWS/GCP/Azure subscription, and E2B Embed Apache-2.0 single-host runtime) and the 4 core BYOC cluster components (Orchestrator, Edge Controller, Monitoring, Storage). Details Azure BYOC onboarding: dedicated Azure Subscription, zero-credential Terraform provisioning via Microsoft Entra ID app (requires Subscription Owner + Cloud Application Administrator), proactive regional vCPU quota requests, Azure Internal Load Balancer (ILB) exposed via Azure Private Link Service + Private Endpoint / VNet Peering, and V1 horizontal autoscaling boundaries."
+    },
+    {
+      "id": "e2b-sandboxes-are-dead-agent-driven-private-cloud",
+      "title": "Sandboxes are dead | E2B — The Evolution Toward an Agent-Driven Private Cloud",
+      "url": "https://e2b.dev/resources/sandboxes-are-dead",
+      "type": "architectural_manifesto_and_roadmap",
+      "verified_at": "2026-11-01",
+      "status": "read",
+      "read_method": "web_fetch_extraction",
+      "excerpt_summary": "Traces the 4 waves of agent runtime infrastructure across 2+ billion E2B agent runs and tens of billions of execution traces: Wave 1 (2024 Copilots running short Python snippets), Wave 2 (2025 App-Building Agents running full Linux VMs, Docker, and K8s), Wave 3 (2026 Computer-Running Agents requiring full operating platforms with storage, egress firewalls, inter-sandbox networking, observability, on-the-fly CPU/RAM scaling, browsers, and secret stores), and Wave 4 (Agent-Driven Private Cloud that predicts required tools, runtime, CPU/RAM footprint, and network policies from trace taxonomy to assemble a custom private cloud per agent)."
     }
   ]
 }

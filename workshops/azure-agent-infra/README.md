@@ -119,6 +119,47 @@
 
 ---
 
+## 🏆 E2B 深度专题研究与 E2B on Azure 六大生产最佳实践（E2B Deep-Dive & 6-Pillar Best Practices on Azure）
+
+> 基于四份一手核心文献——**[Nomad Server 故障期间的 E2B 沙箱韧性演进 (Robin Su, 2026)](https://robinsujob.github.io/p/e2b-sandbox-resilience-nomad-heartbeats/)**、**[ClickUp 企业级敏感数据 AI 代码执行案例](https://e2b.dev/customers/clickup)**、**[E2B BYOC (Bring Your Own Cloud) 官方架构文档](https://docs.e2b.dev/byoc)** 以及 **[《Sandboxes are dead》：迈向智能体驱动的私有云 (E2B, 2026)](https://e2b.dev/resources/sandboxes-are-dead)**——我们在 AI Infra 层面将 E2B 沙箱底座补充归纳为 **演进四阶段分类学**、**三大部署模式对比** 与 **E2B on Azure 六大工程最佳实践**（配套 [7-Card 基准报告](./cards.html) 与 [Nomad 心跳韧性专项评测](https://turbo998.github.io/workshops/benchmarks/e2b-nomad-cards.html)）。
+
+### 1. 从“单次代码沙箱”到“智能体驱动私有云”（Four Waves of Agentic Compute Infrastructure）
+基于 E2B 累计 **20 亿+ 次 Agent 运行（2B+ Agent Runs）** 与 **数百亿条执行轨迹（Tens of Billions of Traces）** 的生产分类学（Taxonomy of Agentic Work），Agent 基础设施已完成四代范式跃迁：
+- **Wave 1 · 2024（Copilots · 片段代码解释器）**：以 `E2B Code Interpreter` 为代表，执行数秒级的短周期 Python 数据分析与图表绘制片段。
+- **Wave 2 · 2025（Agents That Build Apps · 全栈应用构建者）**：需要完整 Linux MicroVM，在沙箱内构建全栈 React 应用、启动本地 Docker 容器甚至嵌套运行 Kubernetes 集群。
+- **Wave 3 · 2026（Agents That Run Computers · 端到端操作整台计算机）**：支撑个人助理、商业分析师、AI 视频剪辑、生物医药、红队安全测试与 PPT 生成等 **15–30 分钟至数小时长周期任务**。单一沙箱已不足够，必须演进为包含 **持久化存储、细粒度出向防火墙、跨沙箱内网互联、运行时可观测性、CPU/RAM 在线热扩缩、无头浏览器与凭据保险箱** 的完整操作平台。
+- **Wave 4 · Next Chapter（Agent-Driven Private Cloud · 智能体驱动的动态私有云）**：利用历史轨迹分类学在任务启动前**预测所需工具链、平均/峰值运行时长、CPU/RAM 水位、下游依赖服务与网络白名单**，按需为每一个 Agent 实时组装专属的微型私有云。
+
+### 2. E2B 三大部署模式与四大集群组件（E2B Cloud vs. E2B BYOC vs. E2B Embed）
+
+| 部署模式 | 控制面与数据面归属 | 核心架构组件（4 大模块） | 适用场景与合规边界 |
+|---|---|---|---|
+| **E2B Cloud**（全托管 SaaS） | 运行于 E2B 官方 GCP 账户；E2B 全权运维 | 由 E2B 统一托管多租户集群 | 快速原型验证、初创团队与非受监管通用 AI 应用 |
+| **E2B BYOC**（自带云 · 企业级） | 控制面与数据面部署在**客户自有 Azure Subscription (VNet) / AWS / GCP**；Terraform 零凭据交付 | **① Orchestrator**（管理 Firecracker 沙箱与可选模板构建）· **② Edge Controller**（沙箱流量路由、集群管理 API 与 gRPC 控制面代理）· **③ Monitoring**（本地采集日志/指标，仅通过 TLS 向 E2B Cloud 发送**匿名 CPU/内存指标**）· **④ Storage**（持久化存储模板、快照、运行日志与容器镜像仓库） | **金融、医疗（SOC 2 / HIPAA）与大型企业**：模板源码、内存快照、运行日志与沙箱流量 **100% 不出客户 Azure VNet** |
+| **E2B Embed**（`Apache-2.0` 开源单机） | 打包在**单台 Linux 机器**（裸金属 KVM、云 VM 或 K8s Node）内由客户自运维 | 单节点一体化开源运行时 | 气隙隔离环境（Air-gapped）、本地开发测试或轻量级单节点自托管 |
+
+### 3. E2B on Azure 六大生产最佳实践（6-Pillar Best Practices for E2B on Azure）
+
+1. **支柱一：Azure BYOC 零凭据落地与前置配额治理（Zero-Credential Terraform & Quota Governance）**
+   - **独立订阅与最小权限交付**：为 E2B BYOC 规划**独立的 Azure Subscription**；客户在本地执行 E2B 提供的 Terraform 模块，向 E2B 自动化部署应用授予受限访问权限（**全程零密钥/零人工凭据交换**）。执行 Terraform 需具备订阅 **`Owner`** 角色及 Microsoft Entra ID **`Cloud Application Administrator`**（或等效应用注册权限）。
+   - **前置区域 vCPU 配额申请**：新创建的 Azure 订阅默认配额较低，需提前向 Azure 提交目标区域（如 East US 2 / Central US）的高密度宿主 SKU（首选 **`Standard_D96as_v7`** AMD EPYC Turin，`108 ms` Base / `132 ms` Code-Interpreter 恢复；备选 `Standard_D96s_v6` Intel Emerald Rapids，`116 ms / 159 ms`）vCPU 配额审批。
+2. **支柱二：Azure Private Link 与 Internal Load Balancer 私网零暴露互联（Zero-Public-IP VNet Peering）**
+   - E2B BYOC 集群通过 **Azure Internal Load Balancer (ILB)** 暴露内部入口（Edge Controller）。企业应用所在的业务 VNet 应在自有订阅内创建 **Azure Private Link Service + Private Endpoint**（或通过 **VNet Peering**）直连 E2B ILB，结合 APIM AI Gateway 动态子域名路由（`*.sandbox.domain`）与 `169.254.169.254` IMDS 封禁，确保敏感数据全程走 Azure 骨干私网。
+3. **支柱三：Nomad 控制面双层心跳防抖配置，消除 `yamux` 静默断连引发的 35% 误杀风暴（Nomad Heartbeat Resilience）**
+   - **故障机理**：当某台非 Leader Nomad Server 宕机（无 TCP FIN/RST）时，底层 `hashicorp/yamux@v0.1.2` 连接池检测静默丢包需 **`10s–40s`**（`30s` Keepalive 周期 + `10s` Pong 超时），慢于 Nomad 默认心跳判定窗口（`10–20s` TTL + `10s` `heartbeat_grace` = `20–30s`）。这会导致 Leader 将健康宿主机误判为 `down` 并下发 `killTasks()`，在 20 节点实测集群中造成 **`7/20 (35%)` 健康 Orchestrator 与 `session-proxy` 被强制重启**、剩余 13 节点新建沙箱负载激增 **`+53.85%`**。
+   - **双层必选加固配置**：
+     - **Client 任务组级（保护存量运行中沙箱）**：在 `orchestrator`、`session-proxy` 与 `client-proxy` 的 Nomad Job Group 中显式配置 `disconnect { lost_after = "50s", replace = false, reconcile = "keep_original" }`。实测验证：Server 宕机期间 **`0` 实例被替换**，**`10/10` 沙箱进程 PID / 内存变量 / 本地文件 100% 存活**，**`23/23` 条长连接 HTTP NDJSON 流零中断**，**`12,581` 次短请求 `0` 报错**。
+     - **Server 集群级（保护新建沙箱调度容量池）**：在 Nomad Server 配置中设置 `server { heartbeat_grace = "50s" }`（使总容忍窗口达 `60–70s > 40s yamux` 上限）。实测验证：**`20/20 (100%)` 宿主机全程保持 `ready`**，消除 35% 容量塌陷；宿主机真实宕机的快速发现则交由 E2B API 层的毫秒级主动 gRPC 健康探测兜底。
+4. **支柱四：上下文卸载（Context Offloading）实现 `10x–20x` 等效上下文扩容（ClickUp `Brain²` 范式）**
+   - 借鉴 ClickUp 服务 85% 财富 500 强客户（SOC 2 & HIPAA 合规）的生产实践：严禁将百兆级销售表格、CSV 数据集或屏幕录像视频直接塞入 LLM Prompt。应将原始大文件挂载或上传至隔离的 E2B 沙箱，由 Agent 编写并执行 Python/FFmpeg/Pandas 脚本在沙箱内完成清洗、抽帧、转录与聚合，**仅将精炼计算结果返回给模型上下文**，从而在不触发上下文截断的前提下实现 **`10x–20x` 等效上下文扩容** 并大幅降低 Token 成本。
+5. **支柱五：黄金模板预烘焙（68+ 工具链）与早 9 点潮汐波峰容量调度（Pre-baked Templates & 9 a.m. Burst Scaling）**
+   - **68+ 工具预装黄金镜像**：参考 ClickUp 架构，在基础模板中预烘焙 **68 个常用工具**（数据分析、可视化、Office 文档/表格处理、音视频帧解析、PDF 报告生成），并按工程、销售、财务、管理层、市场与 GTM 划分领域专属模板，结合 Firecracker **`UFFD` 按需缺页流式恢复** 消除运行时 `pip/npm install` 等待。
+   - **潮汐预热与 V1/V2 弹性边界**：针对企业每早 9:00 定时自动化与站会报告触发的**“1 分钟内数千沙箱并发拉起”**潮汐波峰，鉴于 E2B BYOC V1 自动扩缩容尚未对 Orchestrator 宿主机进行动态扩缩（V2 规划中）且宿主机 `HugePages` 恒定占用 `85%+`，应采用 **定时预置 Orchestrator 节点池 + `60% CPU` 扩容水位 + 15–30 分钟会话 `Pause & Resume` 休眠复用** 策略。
+6. **支柱六：面向 Wave 3 / Wave 4 的分层状态持久化与可观测性闭环（State & Telemetry Architecture）**
+   - 将 E2B 的 **`UFFD + NBD` 沙箱内存/磁盘增量快照**（保存进程树与文件系统现场，L1 本地 NVMe + L2 Azure Blob Storage）与 **Azure HorizonDB / PostgreSQL + PgBouncer**（保存 LangGraph/MAF 结构化检查点，`100K → 1,200` 连接复用，P99 `4.8 ms`）深度配对；同时遵循 BYOC 隐私边界，在客户 Azure VNet 内闭环留存全部模板源码、快照与运行日志，仅向控制面导出匿名系统健康指标。
+
+---
+
 ## 🗂️ 384 章全栈工程百科结构化章节索引（Structured 384-Chapter Index）
 
 > 💡 **阅读说明**：为确保 GitHub 页面秒级加载（`< 30 KB`），完整的 **384 章（2.99 MB）数学推导、物理模型源码解析与生产级配置清单**已完整归档至 **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)**（英文版归档于 **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)**）。以下按三大主题域提供结构化索引：

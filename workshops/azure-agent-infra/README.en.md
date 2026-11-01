@@ -119,6 +119,47 @@ We decompose enterprise agent infrastructure into **6 orthogonal architectural l
 
 ---
 
+## 🏆 E2B Deep-Dive Synthesis & 6-Pillar Best Practices on Azure
+
+> Grounded in four canonical E2B engineering sources — **[Improving E2B Sandbox Resilience During Nomad Server Outages (Robin Su, 2026)](https://robinsujob.github.io/p/e2b-sandbox-resilience-nomad-heartbeats/)**, **[How ClickUp Runs AI Code on Sensitive Data at Enterprise Scale](https://e2b.dev/customers/clickup)**, **[BYOC (Bring Your Own Cloud) - E2B Docs](https://docs.e2b.dev/byoc)**, and **[Sandboxes are dead: Toward an Agent-Driven Private Cloud (E2B, 2026)](https://e2b.dev/resources/sandboxes-are-dead)** — this section synthesizes E2B's **4-Wave Infrastructure Taxonomy**, **3 Deployment Models**, and **6 Production Best Practices for E2B on Azure** (paired with the [7-Card Benchmark Deck](./cards.html) and [E2B Nomad Heartbeat Resilience 7-Card Deck](https://turbo998.github.io/workshops/benchmarks/e2b-nomad-cards.html)).
+
+### 1. From Ephemeral Code Sandboxes to an Agent-Driven Private Cloud (4 Waves of Agentic Compute)
+Informed by **2+ billion agent runs** and **tens of billions of execution traces**, E2B's taxonomy of agentic work defines four distinct infrastructure generations:
+- **Wave 1 · 2024 (Copilots · Short Code Snippets)**: Exemplified by `E2B Code Interpreter`, executing short-lived Python data science and plotting snippets inside notebook-style sessions.
+- **Wave 2 · 2025 (Agents That Build Apps)**: Full Linux MicroVMs capable of building React web apps, running Docker containers, and spinning up nested Kubernetes clusters inside the sandbox.
+- **Wave 3 · 2026 (Agents That Run Computers)**: End-to-end tasks lasting **15–30 minutes to multi-hour workflows** across personal assistants, business analysts, AI video editors, biotech, red-team security, and slide generation. Sandboxes alone are no longer sufficient; agents require a full operating platform with **dedicated storage, egress firewalls, inter-sandbox networking, runtime observability, on-the-fly CPU/RAM scaling, headless browsers, and secret stores**.
+- **Wave 4 · Next Chapter (Agent-Driven Private Cloud)**: Using trace taxonomy to **predict required tools, average/peak runtime, CPU/RAM footprint, downstream services, and network policies before execution**, dynamically assembling a custom private cloud for every single agent.
+
+### 2. E2B Deployment Tiers & 4 Core BYOC Cluster Components (`E2B Cloud` vs. `E2B BYOC` vs. `E2B Embed`)
+
+| Deployment Tier | Control & Data Plane Ownership | 4 Core Cluster Components | Target Workloads & Sovereignty Boundary |
+|---|---|---|---|
+| **E2B Cloud** (Managed SaaS) | Hosted in E2B's GCP account; fully operated by E2B | Multi-tenant cloud control & compute plane | Fast prototyping, startups, and general-purpose AI products |
+| **E2B BYOC** (Bring Your Own Cloud · Enterprise) | Provisioned inside the **customer's own Azure Subscription (VNet), AWS account, or GCP project** via zero-credential Terraform | **① Orchestrator** (manages Firecracker sandboxes + optional template builder) · **② Edge Controller** (routes sandbox traffic, exposes cluster management API & gRPC proxy) · **③ Monitoring** (collects logs/metrics locally; forwards **only anonymized CPU/memory metrics** to E2B Cloud over TLS) · **④ Storage** (persistent templates, snapshots, runtime logs & container registry) | **Regulated Enterprises (SOC 2 / HIPAA, Financial & Healthcare)**: templates, snapshots, runtime logs, build sources, and sandbox traffic **never leave the customer's Azure VNet** |
+| **E2B Embed** (`Apache-2.0` Self-Hosted) | Packaged to run on **one Linux machine** (bare-metal KVM, cloud VM, or K8s node) operated by the user | Single-host open-source runtime | Air-gapped environments, local dev/test, or lightweight single-node deployments |
+
+### 3. Six Production Best Practices for E2B on Azure (6-Pillar Architecture Guide)
+
+1. **Pillar 1: Zero-Credential Azure BYOC Onboarding & Proactive Regional Quota Governance**
+   - **Dedicated Subscription & Scoped Terraform**: Provision E2B BYOC in a **dedicated Azure Subscription**. Apply E2B's Terraform module locally to grant scoped access to E2B's provisioning app (**zero credentials or secrets exchanged**). Applying the Terraform module requires **`Owner`** on the Azure Subscription and **`Cloud Application Administrator`** (or equivalent app-registration permissions) in **Microsoft Entra ID**.
+   - **Early vCPU Quota Requests**: Because newly created Azure subscriptions have low default quotas, request regional vCPU quota early in East US 2 / Central US for **`Standard_D96as_v7`** (5th-Gen AMD EPYC Turin + Azure Boost: **`108 ms` Base / `132 ms` Code-Interpreter V1** restore) or **`Standard_D96s_v6`** (Intel Emerald Rapids: `116 ms / 159 ms`).
+2. **Pillar 2: Private-Only VNet Connectivity via Azure Internal Load Balancer (ILB) & Private Link**
+   - E2B BYOC exposes its Edge Controller through an **Azure Internal Load Balancer (ILB)**. Connect application workloads from your enterprise VNet by creating an **Azure Private Link Service + Private Endpoint** in your subscription (or via **VNet Peering**), paired with APIM dynamic per-Host rate limiting (`*.sandbox.domain`) and `169.254.169.254` IMDS blocking so sensitive traffic never traverses the public internet.
+3. **Pillar 3: Dual-Layer Nomad Heartbeat Resilience to Eliminate `yamux` Silent-Drop Replacement Storms**
+   - **Root Cause**: When a non-Leader Nomad Server is forcibly stopped (silent packet drop with no TCP `FIN/RST`), `hashicorp/yamux@v0.1.2` requires **`10s–40s`** (`30s` keepalive interval + `10s` pong timeout) to detect the dead connection — losing the race against Nomad's default **`20–30s`** heartbeat expiration window (`10–20s` TTL + `10s` `heartbeat_grace`). In a 3-Server, 20-Client testbed, a single non-Leader outage caused **`7/20 (35%)` healthy `Orchestrator` and `session-proxy` replacements**, `2/3` `client-proxy` replacements, and a **`+53.85%` placement load spike** on the remaining 13 nodes.
+   - **Mandatory Dual-Layer Configuration**:
+     - **Client Task Group Layer (Protects Running Sandboxes)**: Configure `disconnect { lost_after = "50s", replace = false, reconcile = "keep_original" }` on `orchestrator`, `session-proxy`, and `client-proxy`. Verified outcome: **`0` replacements**, **`10/10` sandbox PIDs/memory/files preserved**, **`23/23` HTTP NDJSON streams uninterrupted**, and **`12,581` short requests with `0` errors**.
+     - **Server Cluster Layer (Protects New Sandbox Placement Capacity)**: Configure `server { heartbeat_grace = "50s" }` on Nomad Servers (extending the total leader budget to `60–70s > 40s yamux` max). Verified outcome: **`20/20 (100%)` client nodes remain `ready`** with `0%` placement capacity drop, while real host crashes are caught immediately by application-level gRPC health probes.
+4. **Pillar 4: Context Offloading for `10x–20x` Effective Context Expansion (ClickUp `Brain²` Pattern)**
+   - Following ClickUp's production architecture for regulated enterprises (85% of Fortune 500, **SOC 2 & HIPAA** compliant): instead of stuffing large spreadsheets, CRM exports, or screen-recording videos into the LLM prompt, upload raw files directly into the E2B sandbox. Let the agent write and execute Python/FFmpeg/Pandas code inside the sandbox to inspect, transcribe, and aggregate the data, returning only compact results to the model and expanding effective context capacity by **`10x–20x`**.
+5. **Pillar 5: Pre-Baked Golden Templates (68+ Tools) & 9 a.m. Workday Burst Scheduling**
+   - **Pre-Built Domain Templates**: Bake a base template with **68 pre-installed tools** (data analysis, charting, document/spreadsheet processing, media/video frame analysis, PDF generation) plus role-specific templates (engineering, sales, finance, leadership, marketing, GTM) so Firecracker **`UFFD` lazy page-fault streaming** restores ready-to-run environments in `~108–132 ms` with zero runtime `pip/npm` install latency.
+   - **9 a.m. Burst Pre-Provisioning & V1 Autoscaling Boundary**: ClickUp spins up **thousands of sandboxes within a minute** at 9 a.m. for scheduled standups and automations, with **15–30 minute** stateful lifecycles using **Pause & Resume (`UFFD + NBD`)**. Because E2B BYOC V1 autoscaling does not yet dynamically autoscale Orchestrator nodes (planned for V2) and `HugePages` pre-allocate `85%+` of host RAM, combine **scheduled pre-provisioning for morning bursts + `60% CPU` scale-out rules + explicit `HugePages` drain gates on scale-in**.
+6. **Pillar 6: Dual-Layer State Continuity & Sovereign Telemetry Governance**
+   - Pair E2B **`UFFD + NBD` memory/disk delta snapshots** (L1 local NVMe + L2 Azure Blob Storage for process and filesystem continuity) with **Azure HorizonDB / PostgreSQL + PgBouncer** (`100K → 1,200` connection multiplexing at `4.8 ms` P99 for structured LangGraph/MAF checkpoints), while keeping all build sources, snapshots, and runtime logs strictly inside the customer's Azure VNet.
+
+---
+
 ## 🗂️ Structured 384-Chapter Encyclopedia Index
 
 > 💡 **Full Monograph Access**: To keep this landing page fast-loading (`< 30 KB`) on GitHub Web, the complete **384-chapter monograph** is preserved verbatim in **[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)** (English, 605 KB) and **[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)** (Chinese, 2.99 MB). Below is the thematic index across all three engineering domains:

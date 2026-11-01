@@ -487,6 +487,78 @@ pre.code-box {
     </div>
   </section>
 
+  <!-- Section 5: E2B Deep Dive & 6-Pillar Best Practices on Azure -->
+  <section class="card">
+    <span class="pill pill-teal">E2B DEEP DIVE · 4 WAVES &amp; 6-PILLAR AZURE BEST PRACTICES</span>
+    <h2 data-i18n="sec5_title">五、E2B 深度研究：四阶段演进范式、BYOC 架构与 E2B on Azure 六大生产最佳实践</h2>
+    <div class="sub" data-i18n="sec5_sub">整合 E2B 四份一手核心资料：Nomad 心跳韧性混沌工程 (Robin Su, 2026)、ClickUp Brain² 企业级敏感数据沙箱实践、E2B BYOC (Azure/AWS/GCP) 架构规范，以及《Sandboxes are dead》迈向智能体驱动的动态私有云。</div>
+
+    <div class="kpi-strip" style="margin-top:0;margin-bottom:1.15rem;">
+      <div class="kpi-card"><div class="kpi-val">2B+ Runs</div><div class="kpi-lbl">E2B 生产轨迹分类学 (Wave 1 → Wave 4 动态私有云)</div></div>
+      <div class="kpi-card"><div class="kpi-val">0 误杀 / 100% Ready</div><div class="kpi-lbl">Nomad lost_after=50s + heartbeat_grace=50s 消除 35% 误替换</div></div>
+      <div class="kpi-card"><div class="kpi-val">10x–20x</div><div class="kpi-lbl">ClickUp Brain² 上下文卸载 (Context Offloading) 等效扩容</div></div>
+      <div class="kpi-card"><div class="kpi-val">68 Pre-installed</div><div class="kpi-lbl">黄金模板预烘焙工具链 + 9 a.m. 每分钟数千沙箱脉冲</div></div>
+      <div class="kpi-card"><div class="kpi-val">Zero-Credential</div><div class="kpi-lbl">Azure BYOC Terraform 交付 + ILB / Private Link 私网闭环</div></div>
+    </div>
+
+    <div style="overflow-x:auto;margin-bottom:1.15rem;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>演进阶段 / 部署模式</th>
+            <th>核心定位与控制面归属</th>
+            <th>关键架构组件与边界</th>
+            <th>生产实测指标与典型场景</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Wave 1 → Wave 4 演进</strong><br><span class="pill pill-blue">Sandboxes are dead</span></td>
+            <td>从 2024 短代码片段 (Wave 1)、2025 全栈应用容器/K8s (Wave 2)、2026 运行整台电脑 (Wave 3) 迈向 <strong>Agent-Driven Private Cloud (Wave 4)</strong></td>
+            <td>专用持久存储 · 出向防火墙 · 跨沙箱内网 · 可观测性 · CPU/RAM 在线热扩缩 · 无头浏览器 · 凭据保险箱</td>
+            <td>基于 <strong>20 亿+ 次运行与数百亿条轨迹</strong>，在任务启动前预测所需工具、时长、CPU/RAM 与网络白名单并实时组装私有云</td>
+          </tr>
+          <tr>
+            <td><strong>E2B BYOC (Enterprise)</strong><br><span class="pill pill-teal">Azure Subscription / VNet</span></td>
+            <td>部署在<strong>客户自有 Azure Subscription (VNet)</strong>、AWS 或 GCP；E2B Cloud 仅接收 TLS 匿名 CPU/内存指标</td>
+            <td><strong>① Orchestrator</strong> · <strong>② Edge Controller</strong> · <strong>③ Monitoring</strong> · <strong>④ Storage</strong></td>
+            <td><strong>模板、内存快照、运行日志与沙箱流量 100% 不出客户 Azure VNet</strong>；满足金融与医疗 SOC 2 / HIPAA 强合规</td>
+          </tr>
+          <tr>
+            <td><strong>E2B Cloud vs. E2B Embed</strong><br><span class="pill pill-amber">SaaS vs. Apache-2.0</span></td>
+            <td><strong>E2B Cloud</strong> 运行于 E2B 官方 GCP 账户；<strong>E2B Embed</strong> 为 <code>Apache-2.0</code> 单 Linux 宿主机开源包</td>
+            <td>Cloud 提供零运维多租户 SaaS；Embed 适配单台 KVM 裸机、云 VM 或 K8s Node</td>
+            <td>按合规等级平滑切换：原型期用 E2B Cloud，单机实验用 Embed，大规模生产上 <strong>Azure BYOC / VMSS</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3">
+      <div class="card" style="margin-bottom:0;background:#0f172a;">
+        <span class="pill pill-blue">PILLAR 1 &amp; 2 · AZURE BYOC &amp; PRIVATE LINK</span>
+        <h3 style="margin-top:0.5rem;">零凭据 Terraform 交付与 ILB 私网互联</h3>
+        <p style="font-size:0.84rem;color:#cbd5e1;margin:0;">
+          规划<strong>独立 Azure Subscription</strong>，本地执行 E2B Terraform 模块（需订阅 <code>Owner</code> + Entra ID <code>Cloud Application Administrator</code>，<strong>全程零密钥交换</strong>）。提前申请目标区域 <code>Standard_D96as_v7</code> (108ms/132ms) vCPU 配额；通过 <strong>Azure Internal Load Balancer (ILB) + Private Link Service / Private Endpoint</strong>（或 VNet Peering）与 APIM 动态 Host 网关私网直连。
+        </p>
+      </div>
+      <div class="card" style="margin-bottom:0;background:#0f172a;">
+        <span class="pill pill-teal">PILLAR 3 · NOMAD HEARTBEAT RESILIENCE</span>
+        <h3 style="margin-top:0.5rem;">消除 yamux 静默断连引发的 35% 误杀风暴</h3>
+        <p style="font-size:0.84rem;color:#cbd5e1;margin:0;">
+          非 Leader Nomad Server 静默宕机时，<code>yamux@v0.1.2</code> 需 <code>10s–40s</code> 探知断连，慢于默认 <code>20–30s</code> 心跳超时，导致 <code>7/20 (35%)</code> 健康节点被误杀、剩余节点负载激增 <code>+53.85%</code>。必须双层加固：(1) Job Group 配置 <code>lost_after="50s", replace=false, reconcile="keep_original"</code>（<strong>0 替换、10/10 沙箱与 23/23 NDJSON 流完好</strong>）；(2) Server 配置 <code>heartbeat_grace="50s"</code>（<strong>20/20 节点 100% ready</strong>）。
+        </p>
+      </div>
+      <div class="card" style="margin-bottom:0;background:#0f172a;">
+        <span class="pill pill-amber">PILLAR 4, 5 &amp; 6 · CLICKUP BRAIN² PATTERN</span>
+        <h3 style="margin-top:0.5rem;">10x–20x 上下文卸载与 9 a.m. 潮汐预热</h3>
+        <p style="font-size:0.84rem;color:#cbd5e1;margin:0;">
+          借鉴 ClickUp（服务 85% 财富 500 强，SOC 2 &amp; HIPAA）：将大表格与录像直接上传沙箱由代码解析，仅回传结果实现 <strong>10x–20x 等效上下文扩容</strong>；预烘焙含 <strong>68 个工具</strong>的黄金模板 + 6 大职能模板；结合 <strong>定时预热池 + 60% CPU 扩容 + 15–30 分钟 Pause/Resume (`UFFD+NBD`) + HorizonDB 检查点</strong> 应对早 9 点每分钟数千沙箱洪峰。
+        </p>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <span>Azure AI Agent Infrastructure Playbook · Synthesized from Primary Field Engineering Assets (Zero Customer PII)</span>
     <span><a href="demo.html">Next: Live Simulator Demo →</a></span>
@@ -512,9 +584,9 @@ const LAYER_DATA = [
     points: [
       "绝不一刀切：从平台全托管 Foundry Hosted Agents，到 Hyper-V 隔离的 ACA Dynamic Sessions (~210ms)，再到支持显式 pause/resume 快照的 ACA Sandboxes (Preview)。",
       "多租户平台级控制：AKS 原生集成 Kata Containers Pod VM (kata-mshv-vm-isolation)，为每个 Agent Pod 提供独立 Guest Kernel。",
-      "极致规模与速度：在 Standard_D96as_v7 (5th Gen AMD EPYC Turin + Azure Boost) 上自建 E2B Firecracker 集群，实测 Base 沙箱 108ms 启动、Code-Interpreter 132ms 启动。"
+      "极致规模与速度：在 Standard_D96as_v7 (5th Gen AMD EPYC Turin + Azure Boost) 上部署 E2B BYOC / VMSS 集群（实测 Base 108ms / CI 132ms），配合 Nomad 双层心跳防抖 (lost_after=50s + heartbeat_grace=50s) 与 ClickUp 68 工具黄金模板 + 10x–20x 上下文卸载。"
     ],
-    code: "Standard_D96as_v7 (Turin): Base Sandbox = 108 ms | Code-Interpreter V1 = 132 ms\nStandard_D96s_v6  (Intel): Base Sandbox = 116 ms | Code-Interpreter V1 = 159 ms ($4.838/hr)\nStandard_D96as_v6 (Genoa): Base Sandbox = 239 ms | Code-Interpreter V1 = 255 ms"
+    code: "Standard_D96as_v7 (Turin): Base = 108 ms | CI V1 = 132 ms | Nomad lost_after=50s + heartbeat_grace=50s (0 Replacements, 20/20 Ready)\nStandard_D96s_v6  (Intel): Base = 116 ms | CI V1 = 159 ms ($4.838/hr) | E2B BYOC ILB + Private Link (Zero-Credential Terraform)"
   },
   {
     title: "Layer 3 · Ground (模型、知识检索与三层状态记忆底座)",
