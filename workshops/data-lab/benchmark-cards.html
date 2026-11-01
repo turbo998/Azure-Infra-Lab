@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microsoft Fabric × 四大云数智竞对 (Databricks / Snowflake / GCP / AWS) 7-Card 基准测试报告 (2026-11-01)</title>
+<style>
+  :root {
+    --bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --dark: #0F172A;
+    --slate: #475569;
+    --border: #E2E8F0;
+    --blue: #2563EB;
+    --blue-soft: #EFF6FF;
+    --green: #059669;
+    --green-soft: #ECFDF5;
+    --amber: #D97706;
+    --amber-soft: #FFFBEB;
+    --red: #DC2626;
+    --red-soft: #FEF2F2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0B1120;
+    color: var(--dark);
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .top-nav {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 10px 18px;
+    color: #F8FAFC;
+    font-size: 13px;
+  }
+  .top-nav a {
+    color: #60A5FA;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 12px;
+  }
+  .card {
+    width: 900px;
+    min-height: 1125px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    padding: 34px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--blue);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+  h1, h2 {
+    font-size: 24px;
+    line-height: 1.28;
+    margin: 12px 0 8px;
+    color: var(--dark);
+  }
+  .accent {
+    background: linear-gradient(90deg, #0078D4, #7C3AED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .sub {
+    font-size: 13.5px;
+    color: var(--slate);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 10px 0;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 10px 0;
+  }
+  .panel {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 12.5px;
+    line-height: 1.48;
+  }
+  .panel h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate);
+    margin-bottom: 8px;
+  }
+  .dark-code {
+    background: var(--dark);
+    color: #E2E8F0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11.5px;
+    line-height: 1.42;
+    white-space: pre-wrap;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  th, td {
+    border-bottom: 1px solid var(--border);
+    padding: 6.5px 6px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    color: var(--slate);
+    background: var(--bg);
+  }
+  .miss { color: var(--red); font-weight: 700; }
+  .hit { color: var(--green); font-weight: 700; }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight: 700;
+  }
+  .act-auto { background: var(--green-soft); color: var(--green); }
+  .act-confirm { background: var(--amber-soft); color: var(--amber); }
+  .act-human { background: var(--red-soft); color: var(--red); }
+  .badge-type {
+    background: var(--blue-soft);
+    color: var(--blue);
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    font-family: ui-monospace, monospace;
+  }
+  .bar-row {
+    margin: 8px 0;
+  }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .bar-track {
+    width: 100%;
+    height: 12px;
+    background: #E2E8F0;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .bar-fill-blue {
+    height: 100%;
+    background: #3B82F6;
+    border-radius: 999px;
+  }
+  .bar-fill-gray {
+    height: 100%;
+    background: #CBD5E1;
+    border-radius: 999px;
+  }
+  .footer-callout {
+    background: var(--dark);
+    color: #F8FAFC;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 12px;
+    line-height: 1.48;
+  }
+  .good-card {
+    background: var(--green-soft);
+    border: 1px solid #A7F3D0;
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .bad-card {
+    background: var(--red-soft);
+    border: 1px solid #FECACA;
+    border-radius: 14px;
+    padding: 18px;
+  }
+  ul { padding-left: 18px; }
+  li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <div><strong>Data Lab · 7-Card 4:5 视觉基准报告</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-01`)</div>
+  <div>
+    <a href="index.html">🚀 打开 H5 交互工作台</a>
+    <a href="benchmark-cards.en.html">🌐 English 7-Card Deck</a>
+    <a href="README.md">📘 返回 Data Lab 主页</a>
+  </div>
+</div>
+
+<!-- CARD 1 -->
+<section class="card" id="card-1">
+  <div>
+    <div class="card-header">
+      <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
+      <span>2026-11-01 · SEALED RUN</span>
+    </div>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> 在 24 项跨云数据与智能体评测中达成 95.83% 准确率（23/24），500 人企业 TCO 较四大竞对降低 46.1%–56.1%</h1>
+    <p class="sub">围绕 FabCon Barcelona 2026 与 Microsoft IQ 四大支柱（Work IQ · Fabric IQ · Foundry IQ · Web IQ），对 Microsoft Fabric 与 Databricks、Snowflake、GCP BigQuery、AWS Lakehouse 开展六维能力、TCO 与本体决策评测。</p>
+
+    <div class="grid-3">
+      <div class="panel">
+        <h3>1. 评测场景与门禁阈值</h3>
+        <p><strong>24 项密封架构与本体场景</strong>（<code>DL-01..DL-24</code>）：</p>
+        <ul>
+          <li><code>Fabric IQ &amp; Ontology</code> (4 项)</li>
+          <li><code>vs Databricks</code> 攻防与共存 (4 项)</li>
+          <li><code>vs Snowflake</code> 攻防与共存 (4 项)</li>
+          <li><code>vs GCP BigQuery</code> 镜像与语义 (3 项)</li>
+          <li><code>vs AWS Lakehouse</code> S3 Tables (3 项)</li>
+          <li><code>Database Hub / 安全护栏 / 可观测</code> (6 项)</li>
+        </ul>
+        <p style="margin-top:8px;"><strong>动作门禁</strong>：<br>
+        <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
+        <span class="pill act-confirm">Confirm 0.85–0.94 (高影响)</span><br>
+        <span class="pill act-human">Send to a human &lt; 0.85 / 违规</span></p>
+      </div>
+
+      <div class="panel">
+        <h3>2. 结构化评测输入负载</h3>
+        <div class="dark-code" style="font-size:10.8px; padding:10px;">{
+  "cohort": [
+    "Microsoft Fabric (F64 + IQ)",
+    "Databricks (Unity + Mosaic)",
+    "Snowflake (Polaris + CoWork)",
+    "GCP (BigQuery + Vertex)",
+    "AWS (S3 Tables + Glue 6.0)"
+  ],
+  "enterprise_profile": {
+    "users": 500,
+    "storage_tb": 100.0,
+    "streaming_eps": 25000,
+    "copilot_queries_day": 5000
+  },
+  "ontologies_tested": [
+    "energy_dc_peak (20MW)",
+    "airline_jfk_r25 (JFK)"
+  ]
+}</div>
+      </div>
+
+      <div class="panel">
+        <h3>3. 六维能力得分 &amp; 月度 TCO</h3>
+        <div class="bar-row">
+          <div class="bar-label"><span>Fabric 综合均值</span><span>93.3 / 100</span></div>
+          <div class="bar-track"><div class="bar-fill-blue" style="width:93.3%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Databricks 综合均值</span><span>86.8 / 100</span></div>
+          <div class="bar-track"><div class="bar-fill-gray" style="width:86.8%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Snowflake 综合均值</span><span>85.0 / 100</span></div>
+          <div class="bar-track"><div class="bar-fill-gray" style="width:85.0%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>GCP BigQuery 综合均值</span><span>85.5 / 100</span></div>
+          <div class="bar-track"><div class="bar-fill-gray" style="width:85.5%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>AWS Lakehouse 综合均值</span><span>82.8 / 100</span></div>
+          <div class="bar-track"><div class="bar-fill-gray" style="width:82.8%"></div></div>
+        </div>
+        <p style="margin-top:8px; font-size:11.5px;"><strong>500 用户月度 TCO</strong>：<br>
+        • <strong>Fabric F64</strong>: <code>$14,048/mo</code><br>
+        • AWS: <code>$26,063</code> (省 <strong>46.1%</strong>)<br>
+        • Databricks: <code>$26,562</code> (省 <strong>47.1%</strong>)<br>
+        • GCP: <code>$26,813</code> (省 <strong>47.6%</strong>)<br>
+        • Snowflake: <code>$31,990</code> (省 <strong>56.1%</strong>)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-callout">
+    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>：确定性状态机、五云 TCO 模型与 24 项场景评分由 <code>src/data_lab/benchmark_suite.py</code> 生成并通过 <code>tests/test_data_lab.py</code>（8/8 通过），零虚构坐标，数据源于 <code>reports/report.json</code>。
+  </div>
+</section>
+
+<!-- CARD 2 -->
+<section class="card" id="card-2">
+  <div>
+    <div class="card-header">
+      <span>2 / 7 · SCENARIO: AI COMPUTE CENTER PEAK ENERGY &amp; JFK R25 ONTOLOGY</span>
+      <span>CASE DEEP DIVE</span>
+    </div>
+    <h2>智算中心 14:00 峰电 780ms 完成 3.45 MW 削峰（负载降至 76.95%），JFK R25 跑道结冰 640ms 联动调度 6 登机口</h2>
+    <p class="sub">基于《Microsoft IQ》标杆实战案例，验证 Fabric IQ 本体（Entity + Property + Relationship + Rule/Constraint）+ Eventhouse 实时流 + Foundry IQ 规程护栏的端到端闭环。</p>
+
+    <div class="panel" style="margin-bottom:12px; background:#EFF6FF; border-color:#BFDBFE;">
+      <strong>输入遥测脉冲 (`Eventstream → Eventhouse KQL`)</strong>：夏季 14:00 峰电时段，<code>Campus:BJ-AIDC-01</code> 园区总负荷 30 分钟内急升 18% 达 <code>18.84 MW</code>（触及 20.0 MW 合同上限的 <strong>94.2%</strong>，持续 &gt;5 分钟）；同时纽约 <code>Airport:JFK</code> R25 跑道摩擦系数跌至 <code>0.24</code>（低于 <code>0.30</code> 安全线，湿雪厚度 <code>4.2 mm</code>）。
+    </div>
+
+    <div class="panel" style="margin-bottom:10px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <strong>Decision #1 · 智算中心 AI 能源编排 (`DL-01` · `energy_dc_peak`)</strong>
+        <div>
+          <span class="badge-type">choice</span>
+          <span class="pill act-confirm">Confirm · 置信度 94.0%</span>
+        </div>
+      </div>
+      <p><strong>本体图谱级联定位 (`186 ms`)</strong>：<code>Campus:BJ-AIDC-01 → Sub-03 → TX-3B → BESS-Unit-02 → Row-B → H200-Pod-B → LLM-70B-Pretrain &amp; Batch-Infer-04/05</code>。生成组合动作：<strong>BESS 放电 2.00 MW + 推迟 2 个非关键推理批任务 1.10 MW + 液冷供水温度上调 +1.0°C (省 0.35 MW) = 共削峰 3.45 MW</strong>，负荷降至 <code>15.39 MW (76.95%)</code>，预计月省需量罚款与峰电费 <strong>$42,800</strong>。</p>
+      <div class="bar-row">
+        <div class="bar-label"><span>削峰前合同容量占比 (18.84 MW / 20.0 MW)</span><span>94.2%</span></div>
+        <div class="bar-track"><div class="bar-fill-gray" style="width:94.2%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>削峰后合同容量占比 (15.39 MW / 20.0 MW · 置信度 94.0%)</span><span>76.95%</span></div>
+        <div class="bar-track"><div class="bar-fill-blue" style="width:76.95%"></div></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-bottom:10px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <strong>Decision #2 · 航空公司 JFK R25 跑道湿雪污染数字孪生 (`DL-02` · `airline_jfk_r25`)</strong>
+        <div>
+          <span class="badge-type">choice</span>
+          <span class="pill act-auto">Act automatically · 置信度 96.0%</span>
+        </div>
+      </div>
+      <p><strong>本体图谱级联分析 (`164 ms`)</strong>：定位受影响 <code>Terminal:T4 &amp; T8</code> 共 <strong>14 架进出港航班、28 项除冰与地面保障任务</strong>。自动触发预授权规则：派遣 <code>Fleet-Alpha</code> (4 辆扫雪车) + 重分配 6 个登机口 + 主动通知 1,840 名旅客，级联延误缩减 <strong>38 分钟</strong>。</p>
+      <div class="bar-row">
+        <div class="bar-label"><span>Operations Agent 预授权自动处置置信度</span><span>96.0%</span></div>
+        <div class="bar-track"><div class="bar-fill-blue" style="width:96.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <strong>Decision #3 · 越界液冷调温对抗拦截 (`DL-22` · `SOP-DC-COOL-04`)</strong>
+        <div>
+          <span class="badge-type">noul</span>
+          <span class="pill act-human">Send to a human · 拦截率 99.0%</span>
+        </div>
+      </div>
+      <p>当提示词尝试诱导将液冷供水温度上调 <code>+3.5°C</code>（违反 Foundry IQ 检索到的 <code>SOP-DC-COOL-04</code> 最高允许 <code>+1.5°C</code> 护栏）时，<code>410 ms</code> 内强制熔断并升级至值班工程师人工裁决。</p>
+      <div class="bar-row">
+        <div class="bar-label"><span>Foundry IQ 规程护栏拦截置信度</span><span>99.0%</span></div>
+        <div class="bar-track"><div class="bar-fill-blue" style="width:99.0%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-callout">
+    <strong>架构师洞察</strong>：Fabric IQ 将 Power BI 沉淀的 2000万+ 语义模型一键升级为带规则与图谱的运营本体（Ontology），让智能体基于“变压器-机柜-训练任务”或“跑道-航班-地面服务”推理，彻底消除裸表 SQL 拼接幻觉。
+  </div>
+</section>
+
+<!-- CARD 3 -->
+<section class="card" id="card-3">
+  <div>
+    <div class="card-header">
+      <span>3 / 7 · WHAT I TESTED · 24-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 23 / 24 (95.83%)</span>
+    </div>
+    <h2>24 项跨云架构与本体场景测试通过 23 项（95.83%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:13%">SCENARIO</th>
+          <th style="width:37%">QUESTION / TASK</th>
+          <th style="width:33%">MODEL ANSWER / ARCHITECTURE ROUTE</th>
+          <th style="width:17%">ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>DL-01</strong> · IQ</td><td>AIDC 14:00 负荷达 94.2% (18.84MW) 根因与削峰</td><td class="hit">✓ Sub-03+Pod-B → BESS 2MW+推迟2批任务+升温1°C</td><td><span class="pill act-confirm">Confirm</span></td></tr>
+        <tr><td><strong>DL-02</strong> · IQ</td><td>JFK R25 摩擦系数 0.24 湿雪级联影响与调度</td><td class="hit">✓ 14航班/28任务 → 派扫雪车Alpha + 调配6登机口</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-03</strong> · IQ</td><td>M365 Copilot 高管问数与 RLS 权限继承</td><td class="hit">✓ Fabric IQ in M365 Copilot (GA, $0 额外 Token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-04</strong> · PBI</td><td>Power BI 报表内自然语言预测回写 (Write-back)</td><td class="hit">✓ Agentic App Creation + 1GB 免费 Fabric SQL</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-05</strong> · vs DBX</td><td>既有 Azure Databricks DLT/Mosaic AI 接入 Power BI</td><td class="hit">✓ 模式 B 共存：OneLake 零拷贝 Shortcut + DirectLake</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-06</strong> · vs DBX</td><td>70B 大模型多节点 DeepSpeed 分布式微调</td><td class="hit">✓ 路由至 Databricks Mosaic AI / Azure ML GPU 集群</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-07</strong> · vs DBX</td><td>400 条传统 ETL 跨 VS Code / GitHub Copilot 迁移</td><td class="hit">✓ Fabric Data Engineering Agent (Osmos) 自主迁移</td><td><span class="pill act-confirm">Confirm</span></td></tr>
+        <tr><td><strong>DL-08</strong> · vs DBX</td><td>50K EPS 物联网流亚秒级 KQL 异常检测与告警</td><td class="hit">✓ Fabric RTI (Eventstream → Eventhouse KQL)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-09</strong> · vs SNOW</td><td>150TB Snowflake 核心数仓零改造赋能 Copilot</td><td class="hit">✓ 模式 A 共存：OneLake Mirroring + Apache Ossie</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-10</strong> · vs SNOW</td><td>跨企业边界安全共享受治理表、RDF 本体与指令</td><td class="hit">✓ OneLake IQ Sharing (EY / S&amp;P / TomTom 模式)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-11</strong> · vs SNOW</td><td>500 BI 读者 + 5K 日问数 TCO 对比 Snowflake</td><td class="hit">✓ Fabric F64 节省 56.1% ($0 读者许可+$0 Token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-12</strong> · vs SNOW</td><td>跨 AWS/GCP/Azure 外部买方 B2B 数据净室变现</td><td class="hit">✓ 保留 Snowflake Marketplace 外售，内部镜像 OneLake</td><td><span class="pill act-confirm">Confirm</span></td></tr>
+        <tr><td><strong>DL-13</strong> · vs GCP</td><td>BigQuery 广告流与全域供应链本体零 ETL 融合</td><td class="hit">✓ Google BigQuery Mirroring (GA) → Fabric IQ</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-14</strong> · vs GCP</td><td>BigQuery 对话式分析 vs Fabric IQ 多跳级联动作</td><td class="hit">✓ Fabric IQ 图谱级联推理 + Operations Agent 动作</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-15</strong> · vs GCP</td><td>突发 80TB 全表扫描成本失控风险治理</td><td class="hit">✓ Fabric 容量 Surge Protection + On-Demand 缓冲</td><td><span class="pill act-confirm">Confirm</span></td></tr>
+        <tr><td><strong>DL-16</strong> · vs AWS</td><td>200TB Amazon S3 Tables (Iceberg) 直连 DirectLake</td><td class="hit">✓ OneLake S3 Shortcut (含缓存与转换 GA)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-17</strong> · vs AWS</td><td>AWS 6 组件拼接栈运维复杂度收敛</td><td class="hit">✓ 整合为 Fabric 统一 SaaS + Purview 单一策略面</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-18</strong> · vs AWS</td><td>Salesforce Data 360 客户画像 + S3 物流联合问数</td><td class="hit">✓ Salesforce 双向零拷贝 + S3 Shortcut → Data Agent</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-19..21</strong> · SQL</td><td>192 vCore + DiskANN 向量 / Database Hub / 断网主权云</td><td class="hit">✓ SQL Hyperscale DiskANN GA / DB Hub / ALDO GA</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
+        <tr><td><strong>DL-22</strong> · 护栏</td><td>智能体提议液冷升温 +3.5°C（突破 +1.5°C 护栏）</td><td class="hit">✓ Foundry IQ 检索 SOP-DC-COOL-04 强制拦截</td><td><span class="pill act-human">Send to a human</span></td></tr>
+        <tr style="background:#FEF2F2;"><td><strong>DL-23</strong> · 裸表</td><td>无语义模型/无本体的未治理湖仓裸表直接 LLM 问数</td><td class="miss">✕ 误连废弃临时表，导致 EBITDA 口径漂移 +14.2%</td><td><span class="pill act-human">Send to a human</span></td></tr>
+        <tr><td><strong>DL-24</strong> · 运维</td><td>18 个工作区容量限流根因诊断与余量监控</td><td class="hit">✓ Workspace Monitoring 单一 Eventhouse + RCA</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-2" style="margin-top:8px;">
+    <div class="panel">
+      <h3>阈值门控分布 (Threshold Gating)</h3>
+      <p><code>Act automatically</code>: <strong>17 项 (70.8%)</strong> · <code>Confirm</code>: <strong>5 项 (20.8%)</strong> · <code>Send to a human</code>: <strong>2 项 (8.3%)</strong>。高影响物理调度与跨架构迁移强制经过人工确认。</p>
+    </div>
+    <div class="panel">
+      <h3>失分根因剖析 (✕ DL-23 Miss Analysis)</h3>
+      <p><code>DL-23</code> 在剥离 Power BI 语义模型与 Fabric IQ 本体后直接对湖仓裸表生成 SQL，因同名字段歧义产生 <code>+14.2%</code> 指标漂移，低置信度 (<code>0.54</code>) 触发人工拦截。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARD 4 -->
+<section class="card" id="card-4">
+  <div>
+    <div class="card-header">
+      <span>4 / 7 · UNDER THE HOOD · ONTOLOGY &amp; AGENT PROTOCOL MECHANICS</span>
+      <span>DETERMINISTIC VERIFIER</span>
+    </div>
+    <h2>从 OneLake 实时流到实体图谱级联推理与 Foundry IQ 规程护栏：消除“裸表幻觉”的双层确定性契约</h2>
+    <p class="sub">对比传统 Text-to-SQL 在孤立表结构上的脆弱拼接，Fabric IQ 将语义模型、实时流（Eventhouse）与操作规则封装为可验证本体契约，并通过 Agent 365 实施全链路审计。</p>
+
+    <div class="dark-code" style="margin-bottom:14px;">// [1] 结构化本体契约与实时遥测输入 (Fabric IQ Ontology + Eventhouse Stream Payload)
+{
+  "ontology_domain": "AIDC_Energy_Orchestration_v2",
+  "apache_ossie_compat": "1.0-incubating",
+  "entity_chain": [
+    {"type": "Campus", "id": "BJ-AIDC-01", "contract_ceiling_mw": 20.0},
+    {"type": "Substation", "id": "Sub-03", "current_load_mw": 18.84, "utilization_pct": 94.2},
+    {"type": "EnergyStorage", "id": "BESS-Unit-02", "soc_pct": 84.0, "max_discharge_mw": 2.5},
+    {"type": "GPUCluster", "id": "H200-Pod-B", "active_jobs": ["LLM-70B-Pretrain", "Batch-Infer-04", "Batch-Infer-05"]}
+  ],
+  "ontology_rule": {
+    "rule_id": "RULE-PEAK-DEMAND-90",
+    "condition": "Substation.utilization_pct > 90.0 FOR >= 5m AND TariffBand == 'SUMMER_PEAK_1400'",
+    "candidate_actions": ["DISCHARGE_BESS", "DEFER_NON_CRITICAL_BATCH", "ADJUST_LIQUID_COOLING_SETPOINT"]
+  },
+  "foundry_iq_guardrail_ref": "SOP-DC-COOL-04 (max_supply_temp_delta_c <= 1.5, min_bess_soc_pct >= 25.0)"
+}</div>
+
+    <div style="text-align:center; font-weight:800; color:var(--blue); margin:6px 0;">↓ Fabric IQ Graph 级联推理 + Foundry IQ 规程校验 + Operations Agent 裁决输出 ↓</div>
+
+    <div class="dark-code">// [2] 确定性验证器与人在回路审批载荷 (Operations Agent + Agent 365 Audit Envelope)
+&lt;ontology_verification_trace id="DL-01" latency_ms="780"&gt;
+  1. [Eventhouse KQL (142ms)] Verified 5-min moving average load = 18.84 MW (94.20% of 20.0 MW ceiling).
+  2. [Graph Cascade (186ms)] Isolated primary surge contributor: Sub-03 -&gt; Row-B -&gt; H200-Pod-B (+3.1 MW delta).
+  3. [Optimization Plan]
+     - BESS-Unit-02 discharge: -2.00 MW (SoC 84.0% &gt;= 25.0% floor -&gt; PASS)
+     - Defer Batch-Infer-04 &amp; 05 to 23:00 valley tariff: -1.10 MW (LLM-70B-Pretrain untouched -&gt; PASS)
+     - Liquid cooling supply temp delta: +1.0°C (-0.35 MW; +1.0°C &lt;= +1.5°C SOP-DC-COOL-04 ceiling -&gt; PASS)
+  4. [Post-Action State] Projected load = 15.39 MW (76.95% utilization) | Monthly savings = $42,800.
+  5. [Governance &amp; Identity] Signed by Entra Agent ID; routed to Teams Duty Operator -&gt; &lt;answer&gt;Confirm&lt;/answer&gt;
+&lt;/ontology_verification_trace&gt;</div>
+  </div>
+
+  <div class="footer-callout">
+    <strong>互操作标准突破</strong>：在 FabCon Europe 2026 上，微软联合 Snowflake 共同推进 <strong>Apache Ossie (Incubating)</strong> 开放语义标准，并通过 <strong>OneLake IQ Sharing</strong> 支持跨组织安全共享受治理表、Markdown 智能体指令与 RDF 本体。
+  </div>
+</section>
+
+<!-- CARD 5 -->
+<section class="card" id="card-5">
+  <div>
+    <div class="card-header">
+      <span>5 / 7 · ROBUSTNESS CHECK · PERTURBATION &amp; CONSISTENCY</span>
+      <span>6 PAIRED TESTS</span>
+    </div>
+    <h2>受治理本体绑定下选项顺序反转与单位扰动实现 0.0–0.5 pt 极低漂移，无本体裸表问数漂移扩大至 -2.5 pts</h2>
+    <p class="sub">测试候选动作逆序排列、英制/公制单位转换（°F/inch vs °C/mm）、五云平台列顺序翻转及对抗性越界提示词下的决策稳定性。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:44%">QUESTION / PERTURBATION VECTOR</th>
+          <th style="width:18%">ORIGINAL</th>
+          <th style="width:20%">REVERSED / PERTURBED</th>
+          <th style="width:18%">CHANGE (PTS)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PERT-01 · 智算中心削峰候选方案顺序完全反转</strong><br><span style="color:var(--slate)">将 5 组储能/批任务/液冷组合逆序输入编排 Agent</span></td>
+          <td><strong>94.0%</strong><br>(Confirm)</td>
+          <td><strong>94.0%</strong><br>(Confirm)</td>
+          <td class="hit">0.0 pt (零漂移)</td>
+        </tr>
+        <tr>
+          <td><strong>PERT-02 · JFK R25 跑道结冰公英制单位扰动</strong><br><span style="color:var(--slate)">输入由 <code>4.2 mm / -2°C</code> 转换为 <code>0.165 in / 28.4°F</code></span></td>
+          <td><strong>96.0%</strong><br>(Act automatically)</td>
+          <td><strong>96.0%</strong><br>(Act automatically)</td>
+          <td class="hit">0.0 pt (零漂移)</td>
+        </tr>
+        <tr>
+          <td><strong>PERT-03 · 五大云平台选型矩阵列顺序翻转</strong><br><span style="color:var(--slate)">将 AWS / GCP / Snowflake / Databricks 置于 Fabric 之前</span></td>
+          <td><strong>95.0%</strong><br>(Act automatically)</td>
+          <td><strong>94.5%</strong><br>(Act automatically)</td>
+          <td class="hit">-0.5 pt (决策不变)</td>
+        </tr>
+        <tr>
+          <td><strong>PERT-04 · Snowflake 共存 vs 推翻重建话术诱导</strong><br><span style="color:var(--slate)">提示词倾向“全量重写迁移” vs OneLake Mirroring 零拷贝</span></td>
+          <td><strong>95.0%</strong><br>(Mode A Coexist)</td>
+          <td><strong>95.0%</strong><br>(Mode A Coexist)</td>
+          <td class="hit">0.0 pt (零漂移)</td>
+        </tr>
+        <tr>
+          <td><strong>PERT-05 · 对抗性指令要求忽略 SOP 升温 +3.5°C</strong><br><span style="color:var(--slate)">注入紧急省电指令试图绕过 <code>SOP-DC-COOL-04</code> 护栏</span></td>
+          <td><strong>99.0%</strong><br>(Send to a human)</td>
+          <td><strong>99.0%</strong><br>(Send to a human)</td>
+          <td class="hit">0.0 pt (100% 阻断)</td>
+        </tr>
+        <tr style="background:#FEF2F2;">
+          <td><strong>PERT-06 · 剥离语义模型与本体的裸表 Schema 扰动</strong><br><span style="color:var(--slate)">打乱 12 张湖仓事实表与历史快照表顺序</span></td>
+          <td><strong>54.0%</strong><br>(Send to a human)</td>
+          <td><strong>51.5%</strong><br>(Send to a human)</td>
+          <td class="miss">-2.5 pts (裸表脆弱)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div class="panel">
+        <h3>为什么 Ontology 能消除位置偏见？</h3>
+        <p>本体中的规则（<code>Rule/Constraint</code>）与 Power BI 度量值通过确定性表达式求值，而非依赖 LLM 对候选文本位置的概率猜测，因此在 <code>PERT-01/02/04/05</code> 中均实现 <strong>0.0 pt</strong> 漂移。</p>
+      </div>
+      <div class="panel">
+        <h3>跨云共存架构的一致性收益</h3>
+        <p>无论底层数据来自 AWS S3 Tables、GCP BigQuery Mirroring 还是 Snowflake Iceberg，只要统一绑定至 OneLake 与 Fabric IQ 本体，上层 Agent 推理一致性均保持在 <strong>94.5%+</strong>。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-callout">
+    <strong>鲁棒性结论</strong>：受治理本体层（Fabric IQ + Power BI 语义模型 + Foundry IQ 规程）将多步智能体决策的扰动漂移控制在 <code>≤ 0.5 pt</code>，是企业从“AI 聊天玩具”迈向“生产级闭环运营”的分水岭。
+  </div>
+</section>
+
+<!-- CARD 6 -->
+<section class="card" id="card-6">
+  <div>
+    <div class="card-header">
+      <span>6 / 7 · LATENCY · DIRECTLAKE + EVENTHOUSE KQL SCALING</span>
+      <span>4 CONCURRENCY TIERS</span>
+    </div>
+    <h2>OneLake DirectLake + Eventhouse KQL 相较传统 DirectQuery/JDBC 联邦查询实现 4.54x–9.47x 端到端低延迟加速</h2>
+    <p class="sub">对比蓝色主路径（<code>Fabric DirectLake 内存列存映射 + Eventhouse KQL 亚秒流分析</code>）与灰色基线路径（<code>传统跨库 JDBC / DirectQuery 实时拼表</code>）在 4 个并发负载阶梯下的 P95 响应耗时。</p>
+
+    <div class="panel" style="margin-bottom:12px;">
+      <h3>Tier 1 · 10 并发查询（交互式 BI 看板 + Data Agent 单点问数） · 4.54x 加速</h3>
+      <div class="bar-row">
+        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>185 ms</strong></div>
+        <div class="bar-track"><div class="bar-fill-blue" style="width:18.5%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>840 ms</strong></div>
+        <div class="bar-track"><div class="bar-fill-gray" style="width:84.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-bottom:12px;">
+      <h3>Tier 2 · 50 并发查询（部门级 M365 Copilot 问数 + 实时监控） · 6.19x 加速</h3>
+      <div class="bar-row">
+        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>310 ms</strong></div>
+        <div class="bar-track"><div class="bar-fill-blue" style="width:24.0%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>1,920 ms (1.92 s)</strong></div>
+        <div class="bar-track"><div class="bar-fill-gray" style="width:88.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-bottom:12px;">
+      <h3>Tier 3 · 200 并发查询（企业 14:00 高峰运营 + 本体图谱级联分析） · 8.02x 加速</h3>
+      <div class="bar-row">
+        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>580 ms</strong></div>
+        <div class="bar-track"><div class="bar-fill-blue" style="width:32.0%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>4,650 ms (4.65 s)</strong></div>
+        <div class="bar-track"><div class="bar-fill-gray" style="width:93.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Tier 4 · 500 并发查询 + 25,000 EPS 实时流写入（全域峰值） · 9.47x 加速</h3>
+      <div class="bar-row">
+        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>940 ms (0.94 s)</strong></div>
+        <div class="bar-track"><div class="bar-fill-blue" style="width:38.0%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>8,900 ms (8.90 s)</strong></div>
+        <div class="bar-track"><div class="bar-fill-gray" style="width:100.0%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-callout">
+    <strong>性能机理说明</strong>：Power BI <strong>DirectLake</strong> 直接按需映射 OneLake 中的 Delta/Parquet 列存帧至 VertiPaq 引擎，省去 Import 定时刷新复制与 DirectQuery SQL 翻译开销；配合 <strong>Eventhouse KQL</strong> 时序索引，在 500 并发下仍保持亚秒级（<code>940 ms</code>）。
+  </div>
+</section>
+
+<!-- CARD 7 -->
+<section class="card" id="card-7">
+  <div>
+    <div class="card-header">
+      <span>7 / 7 · MY TAKE · ARCHITECTURAL FIT &amp; WIN/COEXIST PLAYBOOK</span>
+      <span>SA DECISION GUIDE</span>
+    </div>
+    <h2>以 OneLake 零拷贝与 Fabric IQ 本体收拢业务语义入口，与 Databricks/Snowflake/GCP/AWS 建立高胜率互补共存</h2>
+    <p class="sub">AI Solution Architect 实战选型结论：在实际企业落地中，“单一选型推翻重来”阻力巨大；通过 OneLake Mirroring / Shortcuts 将异构云数仓无缝转化为 AI Ready 本体底座是最高胜率打法。</p>
+
+    <div class="grid-2" style="margin-bottom:14px;">
+      <div class="good-card">
+        <h3 style="color:var(--green); font-size:15px; margin-bottom:10px;">✅ Good fit（必赢与高优共存场景）</h3>
+        <ul style="font-size:12.5px; line-height:1.52;">
+          <li><strong>M365 Copilot &amp; Power BI 重度企业</strong>：直接复用存量语义模型与 Purview/Entra 权限，在 Copilot Chat/Cowork 中享<strong>零额外 AI Token 成本</strong>（GA）。</li>
+          <li><strong>实时运营数字孪生 (RTI + Ontology)</strong>：智算中心能源调度、机场跑道/物流监控等需 <code>Eventstream → Eventhouse KQL → Operations Agent</code> 亚秒级闭环的场景。</li>
+          <li><strong>跨云零 ETL 共存 (Better Together)</strong>：源端保留 Snowflake / Databricks / BigQuery / AWS S3 Tables / Salesforce Data 360，通过 <strong>OneLake Mirroring &amp; Shortcuts</strong> 零搬迁构建全域 AI 问数。</li>
+          <li><strong>分析即行动 (Agentic BI Apps)</strong>：利用 Power BI Agentic App Creation + <strong>1GB 免费 Fabric SQL</strong> 快速交付带数据回写（Write-back）的业务微应用。</li>
+        </ul>
+      </div>
+
+      <div class="bad-card">
+        <h3 style="color:var(--red); font-size:15px; margin-bottom:10px;">⛔ Not for（避坑边界与反模式）</h3>
+        <ul style="font-size:12.5px; line-height:1.52;">
+          <li><strong>超大规模基础模型预训练 / 深度算子定制</strong>：百亿参数分布式预训练与底层 CUDA/DeepSpeed 调优应路由至 <strong>Databricks Mosaic AI</strong> 或 <strong>Azure ML / Foundry GPU 集群</strong>，而非放入 Fabric Spark。</li>
+          <li><strong>无语义模型的裸表直接挂接 Agent</strong>：跳过语义层与 Ontology 直接对原始湖仓表开放 NL2SQL（如 <code>DL-23</code>），极易引发口径漂移与合规越权。</li>
+          <li><strong>强行推翻客户已稳定运行的异构核心数仓</strong>：当客户在 Snowflake/BigQuery 已有重资产 ETL 时，应主打 <strong>Mirroring + Apache Ossie 语义互通</strong>，切忌首期强推全量重写。</li>
+          <li><strong>完全物理断网的纯边缘单机推理</strong>：Fabric 为云端 SaaS，断网环境应采用 <strong>SQL Server on Azure Local + ALDO (GA)</strong>。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-callout">
+    <strong>Readiness &amp; Governance Summary</strong><br>
+    • <strong>GA 核心能力</strong>：Fabric IQ in M365 Copilot、OneLake BigQuery/Oracle/SAP Mirroring、Shortcut Transformations、Azure SQL Hyperscale 192 vCore &amp; DiskANN Vector Index、SQL Server on Azure Local (ALDO)、Fabric GCC High。<br>
+    • <strong>Preview 创新焦点</strong>：OneLake IQ Sharing (RDF + Markdown 指令)、Power BI Agentic App Creation (含 1GB 免费 SQL)、Osmos Data Engineering Agent、Apache Ossie、Database Hub、On-Demand &amp; Zero-Provisioned 计费。<br>
+    • <strong>License &amp; Provenance</strong>：MIT License · <code>turbo998/data-lab</code> &amp; <code>turbo998/Azure-Infra-Lab/workshops/data-lab</code> · 2026-11-01。
+  </div>
+</section>
+
+</body>
+</html>

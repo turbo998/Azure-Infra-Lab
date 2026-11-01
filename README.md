@@ -1,22 +1,26 @@
 # Azure Infra Lab
 
-> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.md)](README.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📊 7-Card Report (EN)](workshops/azure-agent-infra/test-report.en.md)** | **[🎬 FabCon & SQLCon 2026 视频简报 H5](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)**
+> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.md)](README.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[🔬 Data Lab: Fabric × 四大云竞对实验室](workshops/data-lab/README.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📊 7-Card Report (EN)](workshops/azure-agent-infra/test-report.en.md)** | **[🎬 FabCon & SQLCon 2026 视频简报 H5](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)**
 
 > **📌 Executive Overview Summary / 核心架构总览**
+> - **Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度研究与实战实验室**：融合 **FabCon & SQLCon Barcelona 2026** 与 **Microsoft IQ 四大智能底座（Work IQ / Fabric IQ / Foundry IQ / Web IQ + Agent 365）**，完成 24 场景五云评测（`23/24 = 95.83%` 通过率，六维均分 **Fabric `93.3`** vs Databricks `86.8` vs GCP `85.5` vs Snowflake `85.0` vs AWS `82.8`）、500 用户月度 TCO 精算（Fabric **`$14,048/mo`**，综合节省 **`46.1%–56.1%`**）、**智算中心 14:00 尖峰能源编排 (`-3.45 MW` / `780 ms`)** 与 **纽约 JFK R25 跑道湿雪数字孪生 (`640 ms`)** 实时仿真台及双语 **7-Card 4:5 视觉评测报告**（[`workshops/data-lab/benchmark-cards.html`](workshops/data-lab/benchmark-cards.html)）。
 > - **AI Agent Infrastructure on Azure (`AKSClaw × E2B`)**：构建生产级 6 层 Agent 基础设施参考架构（`Build · Run · Ground · Govern`），实测 **`80 ms` Firecracker MicroVM 冷启动 / `108 ms` UFFD 快照恢复**（对比 Kata Pod VM `1,420 ms` 冷启动），单集群 **261 台 `Standard_D96as_v7`（AMD EPYC Turin）** 稳态承载 **100,000 并发沙箱**（优化后月度 TCO **`~$148K/mo`**，结合 Nomad 心跳监控与优雅 Drain 实现 `99.4%+` 会话存活），配套运行时与存储选型矩阵（ACA Dynamic Sessions vs AKS+Kata vs E2B vs Daytona；Azure Files NFS v4.1 vs Managed Lustre vs Blob FUSE2）及 **316 章半导体/AI Factory 与智能体工程百科**（[`docs/full-monograph-archive.md`](workshops/azure-agent-infra/docs/full-monograph-archive.md)）。
 > - **FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub**：收录 5 支微软官方 1080p/720p 实机演示视频、六大战略技术支柱与 18 项 GA/Preview 状态矩阵（Fabric IQ、Power BI Agentic App Creation、OneLake IQ Sharing、Osmos、SQL Hyperscale DiskANN）。
 > - **Azure VM Modernization & FinOps Partner Workshop**：同页三语（简/繁/英）7 模块课程、6 个模拟案例与浏览器本地 TCO/约束评估器。
 
 ### 核心架构图谱速览（Core Architecture Visuals）
 
+![Data Lab Executive Visual Summary](workshops/data-lab/assets/svg/01-data-lab-executive-summary-2026-11-01.svg)
+
 ![Azure AI Agent Infra 6-Layer Reference Architecture](workshops/azure-agent-infra/assets/svg/01-six-layer-architecture.svg)
 
 ![100K Concurrent Sandbox Topology & 5-Step Execution Flow](workshops/azure-agent-infra/assets/svg/08-100k-sandbox-topology.svg)
 
-面向伙伴、架构师与技术团队的公开 Azure 基础设施实战 Workshop 与技术手册。当前收录三大核心专题：
-1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)](workshops/azure-agent-infra/README.md)**：从六层全栈参考架构（Build · Run · Ground · Govern）、六大计算运行时光谱到 AKS 多租户 Kata 隔离与 10 万+ 并发 Firecracker MicroVM 云端沙箱底座。
-2. **[Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub](workshops/fabcon-sqlcon-2026/README.md)**：Microsoft Fabric 与 SQL 2026 巴塞罗那峰会全量创新解析、5 支微软官方 1080p/720p 实机演示视频内嵌播放器与直链、六大技术支柱及 18 项 GA/Preview 状态速查矩阵（中英双语切换）。
-3. **[Compute / Azure VM Modernization & FinOps](workshops/azure-vm-modernization/README.md)**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
+面向伙伴、架构师与技术团队的公开 Azure 基础设施实战 Workshop 与技术手册。当前收录四大核心专题：
+1. **[Data & AI / Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）实战实验室](workshops/data-lab/README.md)**：涵盖每日能力突破追踪、五云六维竞对 Battlecards、交互式 TCO 精算器、Fabric IQ 智算中心能源编排与航空跑道数字孪生仿真台、双语 7-Card 4:5 评测报告及跨云零拷贝共存 Playbook。
+2. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)](workshops/azure-agent-infra/README.md)**：从六层全栈参考架构（Build · Run · Ground · Govern）、六大计算运行时光谱到 AKS 多租户 Kata 隔离与 10 万+ 并发 Firecracker MicroVM 云端沙箱底座。
+3. **[Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub](workshops/fabcon-sqlcon-2026/README.md)**：Microsoft Fabric 与 SQL 2026 巴塞罗那峰会全量创新解析、5 支微软官方 1080p/720p 实机演示视频内嵌播放器与直链、六大技术支柱及 18 项 GA/Preview 状态速查矩阵（中英双语切换）。
+4. **[Compute / Azure VM Modernization & FinOps](workshops/azure-vm-modernization/README.md)**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
 
 Public Azure infrastructure workshops and architectural playbooks for partners, architects, and technical teams:
 1. **AI Agent Infrastructure on Azure (`AKSClaw × E2B on Azure`)** — Four-layer reference architecture, 6-tier runtime spectrum, interactive live simulator, 100K sandbox VMSS sizer, and 7-card 4:5 benchmark deck.

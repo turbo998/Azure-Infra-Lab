@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="iqHeader" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg2)"/>
+  <rect x="20" y="18" width="1360" height="784" rx="18" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Title -->
+  <rect x="40" y="34" width="1320" height="68" rx="12" fill="url(#iqHeader)"/>
+  <text x="70" y="64" fill="#FFFFFF" font-size="20" font-weight="800">Microsoft IQ × Fabric IQ 企业级语义本体与多智能体闭环架构 (5-Layer Reference Architecture)</text>
+  <text x="70" y="88" fill="#E0E7FF" font-size="12.5">融合 Work IQ (员工协作) · Fabric IQ (业务运营本体) · Foundry IQ (智能体 RAG 护栏) · Web IQ (p95 164ms 外部情报) · Agent 365 统一治理</text>
+
+  <!-- Top Bar: Microsoft IQ 4 Pillars -->
+  <rect x="40" y="116" width="318" height="78" rx="10" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="56" y="140" fill="#60A5FA" font-size="13" font-weight="800">Work IQ · 员工如何工作 (GA)</text>
+  <text x="56" y="160" fill="#E2E8F0" font-size="11">Chat / Context / Tools / Workspaces</text>
+  <text x="56" y="178" fill="#34D399" font-size="11" font-weight="700">Token 消耗减 80% · 吞吐 2x · REST/A2A/MCP</text>
+
+  <rect x="374" y="116" width="318" height="78" rx="10" fill="#172554" stroke="#60A5FA" stroke-width="2"/>
+  <text x="390" y="140" fill="#93C5FD" font-size="13" font-weight="800">Fabric IQ · 业务如何运营 (核心底座)</text>
+  <text x="390" y="160" fill="#FFFFFF" font-size="11">OneLake + 20M+ 语义模型 + Ontology 本体图谱</text>
+  <text x="390" y="178" fill="#34D399" font-size="11" font-weight="700">M365 Copilot Chat/Cowork GA ($0 额外 Token)</text>
+
+  <rect x="708" y="116" width="318" height="78" rx="10" fill="#111C33" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="724" y="140" fill="#C4B5FD" font-size="13" font-weight="800">Foundry IQ · 智能体如何释放知识</text>
+  <text x="724" y="160" fill="#E2E8F0" font-size="11">点选式可复用知识库 + 智能体 RAG 引擎</text>
+  <text x="724" y="178" fill="#34D399" font-size="11" font-weight="700">响应相关性提升 +36% · 遵循 Purview 标签</text>
+
+  <rect x="1042" y="116" width="318" height="78" rx="10" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1058" y="140" fill="#6EE7B7" font-size="13" font-weight="800">Web IQ · 连接权威 Web 智能</text>
+  <text x="1058" y="160" fill="#E2E8F0" font-size="11">网页 / 新闻 / 图片 / 视频多模态段落级排序</text>
+  <text x="1058" y="178" fill="#34D399" font-size="11" font-weight="700">p95 延迟 164ms (&lt;200ms) · GSDAT +3 pts</text>
+
+  <!-- 5-Column Pipeline Flow (AIDC Energy & JFK R25 Closed Loop) -->
+  <!-- Column 1 -->
+  <rect x="40" y="212" width="248" height="476" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="54" y="226" width="220" height="32" rx="6" fill="#1E293B"/>
+  <text x="164" y="247" fill="#93C5FD" font-size="12.5" font-weight="800" text-anchor="middle">① 全域数据源 (OT · IT · 跨云)</text>
+
+  <rect x="56" y="272" width="216" height="68" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="68" y="294" fill="#F8FAFC" font-size="12" font-weight="700">配电 SCADA / EMS / 跑道传感器</text>
+  <text x="68" y="312" fill="#94A3B8" font-size="11">变压器、UPS、BESS、摩擦系数</text>
+  <text x="68" y="328" fill="#94A3B8" font-size="11">DCIM 液冷温控、PUE 秒级遥测</text>
+
+  <rect x="56" y="352" width="216" height="68" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="68" y="374" fill="#F8FAFC" font-size="12" font-weight="700">GPU 集群调度 &amp; 核心业务库</text>
+  <text x="68" y="392" fill="#94A3B8" font-size="11">K8s / Slurm 训练队列与功耗</text>
+  <text x="68" y="408" fill="#94A3B8" font-size="11">SQL Hyperscale (DiskANN GA)</text>
+
+  <rect x="56" y="432" width="216" height="68" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="68" y="454" fill="#F8FAFC" font-size="12" font-weight="700">跨云异构数据湖仓 (零拷贝)</text>
+  <text x="68" y="472" fill="#94A3B8" font-size="11">Snowflake / Databricks / BigQuery</text>
+  <text x="68" y="488" fill="#94A3B8" font-size="11">AWS S3 Tables / Salesforce 360</text>
+
+  <rect x="56" y="512" width="216" height="68" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="68" y="534" fill="#F8FAFC" font-size="12" font-weight="700">SOP 规程文档 &amp; 外部行情</text>
+  <text x="68" y="552" fill="#94A3B8" font-size="11">应急预案手册 (Foundry IQ 索引)</text>
+  <text x="68" y="568" fill="#94A3B8" font-size="11">分时电价、需量合同、气象碳因子</text>
+
+  <rect x="56" y="592" width="216" height="80" rx="8" fill="#172554" stroke="#3B82F6"/>
+  <text x="68" y="614" fill="#93C5FD" font-size="12" font-weight="700">Osmos 数据工程智能体</text>
+  <text x="68" y="632" fill="#E2E8F0" font-size="11">跨 VS Code / GitHub Copilot</text>
+  <text x="68" y="648" fill="#E2E8F0" font-size="11">自主规划平台迁移与 ETL 调优</text>
+
+  <!-- Column 2 -->
+  <rect x="308" y="212" width="248" height="476" rx="12" fill="#0F172A" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="322" y="226" width="220" height="32" rx="6" fill="#1D4ED8"/>
+  <text x="432" y="247" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">② 统一数据底座 OneLake</text>
+
+  <rect x="324" y="272" width="216" height="86" rx="8" fill="#111C33" stroke="#3B82F6"/>
+  <text x="336" y="294" fill="#60A5FA" font-size="12" font-weight="700">Real-Time Intelligence (RTI)</text>
+  <text x="336" y="312" fill="#E2E8F0" font-size="11">Eventstream → Eventhouse KQL</text>
+  <text x="336" y="330" fill="#34D399" font-size="11" font-weight="700">142ms 亚秒级时序异常检测</text>
+  <text x="336" y="346" fill="#94A3B8" font-size="10.5">Copilot for RTI 实时看板与调优</text>
+
+  <rect x="324" y="370" width="216" height="86" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="336" y="392" fill="#F8FAFC" font-size="12" font-weight="700">OneLake Shortcuts &amp; Mirroring</text>
+  <text x="336" y="410" fill="#E2E8F0" font-size="11">Delta + Apache Iceberg v3 互通</text>
+  <text x="336" y="428" fill="#E2E8F0" font-size="11">BigQuery / Oracle / SAP 镜像 GA</text>
+  <text x="336" y="444" fill="#94A3B8" font-size="10.5">Shortcut Transformations GA</text>
+
+  <rect x="324" y="468" width="216" height="92" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="336" y="490" fill="#F8FAFC" font-size="12" font-weight="700">Power BI 语义模型 (DirectLake)</text>
+  <text x="336" y="508" fill="#E2E8F0" font-size="11">3500万+ 用户 · 2000万+ 语义模型</text>
+  <text x="336" y="526" fill="#34D399" font-size="11" font-weight="700">DirectLake 较 JDBC 快 4.5x–9.5x</text>
+  <text x="336" y="544" fill="#94A3B8" font-size="10.5">联合 Snowflake 共建 Apache Ossie</text>
+
+  <rect x="324" y="572" width="216" height="100" rx="8" fill="#172554" stroke="#60A5FA"/>
+  <text x="336" y="594" fill="#93C5FD" font-size="12" font-weight="700">OneLake IQ Sharing (Preview)</text>
+  <text x="336" y="612" fill="#E2E8F0" font-size="11">跨组织共享受治理表 + 文件</text>
+  <text x="336" y="630" fill="#E2E8F0" font-size="11">+ Markdown 智能体指令 + RDF 本体</text>
+  <text x="336" y="648" fill="#34D399" font-size="10.5" font-weight="700">EY · S&amp;P Global · TomTom 生态</text>
+
+  <!-- Column 3 -->
+  <rect x="576" y="212" width="268" height="476" rx="12" fill="#131F38" stroke="#60A5FA" stroke-width="2"/>
+  <rect x="590" y="226" width="240" height="32" rx="6" fill="url(#iqHeader)"/>
+  <text x="710" y="247" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">③ Fabric IQ 语义智能与本体层</text>
+
+  <rect x="592" y="272" width="236" height="108" rx="8" fill="#0F172A" stroke="#60A5FA"/>
+  <text x="604" y="294" fill="#93C5FD" font-size="12.5" font-weight="800">Ontology 业务本体 + Digital Twin</text>
+  <text x="604" y="314" fill="#F8FAFC" font-size="11">Entity + Property + Relationship + Rule</text>
+  <text x="604" y="332" fill="#CBD5E1" font-size="11">• 园区→配电室→变压器→BESS→机柜→GPU</text>
+  <text x="604" y="350" fill="#CBD5E1" font-size="11">• 航线→JFK机场→R25跑道→航班→除冰任务</text>
+  <text x="604" y="368" fill="#34D399" font-size="11" font-weight="700">从 2000万+ 语义模型一键升级创建</text>
+
+  <rect x="592" y="392" width="236" height="88" rx="8" fill="#0F172A" stroke="#3B82F6"/>
+  <text x="604" y="414" fill="#60A5FA" font-size="12" font-weight="800">Graph 关系图谱与级联影响分析</text>
+  <text x="604" y="434" fill="#E2E8F0" font-size="11">实时追踪故障/过载在业务拓扑中的传导</text>
+  <text x="604" y="452" fill="#E2E8F0" font-size="11">• 3号配电室过载 → 锁定 B区训练任务</text>
+  <text x="604" y="468" fill="#34D399" font-size="11" font-weight="700">• R25 湿雪 → 锁定 14 航班 / 28 地面任务</text>
+
+  <rect x="592" y="492" width="236" height="86" rx="8" fill="#0F172A" stroke="#10B981"/>
+  <text x="604" y="514" fill="#34D399" font-size="12" font-weight="800">Rules &amp; Actions (内嵌规则护栏)</text>
+  <text x="604" y="534" fill="#E2E8F0" font-size="11">需量 &gt; 合同上限 90% 持续 5m → 触发</text>
+  <text x="604" y="552" fill="#E2E8F0" font-size="11">跑道摩擦系数 &lt; 0.30 → 自动触发调度</text>
+  <text x="604" y="568" fill="#94A3B8" font-size="10.5">自然语言定义规则，复用 Power BI 度量值</text>
+
+  <rect x="592" y="590" width="236" height="82" rx="8" fill="#172554" stroke="#93C5FD"/>
+  <text x="604" y="612" fill="#FFFFFF" font-size="12" font-weight="800">Data Agent &amp; Operations Agent</text>
+  <text x="604" y="630" fill="#E2E8F0" font-size="11">• Data Agent：自然语言问数 + 术语表接地</text>
+  <text x="604" y="648" fill="#E2E8F0" font-size="11">• Operations Agent：7×24 监控 + RCA 根因</text>
+  <text x="604" y="664" fill="#34D399" font-size="10.5" font-weight="700">支持预授权修复动作 (Pre-approved actions)</text>
+
+  <!-- Column 4 -->
+  <rect x="864" y="212" width="236" height="476" rx="12" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <rect x="878" y="226" width="208" height="32" rx="6" fill="#6D28D9"/>
+  <text x="982" y="247" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">④ Foundry 多智能体编排</text>
+
+  <rect x="880" y="272" width="204" height="92" rx="8" fill="#111C33" stroke="#8B5CF6"/>
+  <text x="892" y="294" fill="#C4B5FD" font-size="12" font-weight="700">主控编排 Agent (Orchestrator)</text>
+  <text x="892" y="314" fill="#E2E8F0" font-size="11">对齐多目标：成本 · 可靠性 · 碳排</text>
+  <text x="892" y="332" fill="#E2E8F0" font-size="11">通过 A2A / MCP 协同子智能体</text>
+  <text x="892" y="350" fill="#94A3B8" font-size="10.5">Microsoft Agent Factory 统一计划</text>
+
+  <rect x="880" y="378" width="204" height="102" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="892" y="400" fill="#F8FAFC" font-size="12" font-weight="700">物理与调度优化 Agent</text>
+  <text x="892" y="420" fill="#E2E8F0" font-size="11">• BESS 储能放电 2.00 MW</text>
+  <text x="892" y="438" fill="#E2E8F0" font-size="11">• 推迟 2 个批推理任务 (1.10 MW)</text>
+  <text x="892" y="456" fill="#E2E8F0" font-size="11">• 液冷供水温度 +1.0°C (0.35 MW)</text>
+  <text x="892" y="472" fill="#34D399" font-size="11" font-weight="700">合计削峰 3.45 MW → 76.95%</text>
+
+  <rect x="880" y="494" width="204" height="178" rx="8" fill="#1E1B4B" stroke="#A78BFA"/>
+  <text x="892" y="518" fill="#DDD6FE" font-size="12" font-weight="800">SOP 合规护栏 Agent (Foundry IQ)</text>
+  <text x="892" y="538" fill="#E2E8F0" font-size="11">检索《SOP-DC-COOL-04》与预案：</text>
+  <text x="892" y="558" fill="#34D399" font-size="11" font-weight="700">✓ +1.0°C ≤ +1.5°C 上限 (放行)</text>
+  <text x="892" y="578" fill="#34D399" font-size="11" font-weight="700">✓ BESS SoC 84% ≥ 25% (放行)</text>
+  <text x="892" y="602" fill="#F87171" font-size="11" font-weight="700">✕ 若提议 +3.5°C 越界 → 410ms</text>
+  <text x="892" y="620" fill="#F87171" font-size="11" font-weight="700">强制熔断并升级人工 (DL-22)</text>
+  <text x="892" y="646" fill="#94A3B8" font-size="10.5">规则即护栏：杜绝 AI 越权下发指令</text>
+
+  <!-- Column 5 -->
+  <rect x="1120" y="212" width="240" height="476" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="1134" y="226" width="212" height="32" rx="6" fill="#059669"/>
+  <text x="1240" y="247" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">⑤ 人在回路 · 执行 · 治理</text>
+
+  <rect x="1136" y="272" width="208" height="106" rx="8" fill="#111C33" stroke="#10B981"/>
+  <text x="1148" y="294" fill="#6EE7B7" font-size="12" font-weight="700">Teams / Power BI Agentic App</text>
+  <text x="1148" y="314" fill="#E2E8F0" font-size="11">推送自适应决策卡片至值班员：</text>
+  <text x="1148" y="332" fill="#E2E8F0" font-size="11">• 预计节省：$42,800 / 月</text>
+  <text x="1148" y="350" fill="#34D399" font-size="11.5" font-weight="800">[✓ 批准执行]   [✕ 驳回修改]</text>
+  <text x="1148" y="368" fill="#94A3B8" font-size="10.5">内置 1GB 免费 Fabric SQL 状态持久化</text>
+
+  <rect x="1136" y="392" width="208" height="92" rx="8" fill="#111C33" stroke="#334155"/>
+  <text x="1148" y="414" fill="#F8FAFC" font-size="12" font-weight="700">指令下发与本体回写 (Write-back)</text>
+  <text x="1148" y="434" fill="#E2E8F0" font-size="11">下发 EMS / BESS / K8s / 机场调度</text>
+  <text x="1148" y="452" fill="#E2E8F0" font-size="11">支持一键安全回滚 (Rollback)</text>
+  <text x="1148" y="470" fill="#34D399" font-size="11" font-weight="700">执行结果实时回写 Ontology 持续学习</text>
+
+  <rect x="1136" y="498" width="208" height="174" rx="8" fill="#172554" stroke="#3B82F6"/>
+  <text x="1148" y="520" fill="#93C5FD" font-size="12" font-weight="800">Microsoft Agent 365 控制平面</text>
+  <text x="1148" y="540" fill="#E2E8F0" font-size="11">• 观测 (Observe)：单一 Eventhouse</text>
+  <text x="1148" y="558" fill="#E2E8F0" font-size="11">  汇聚跨工作区遥测 + 容量余量</text>
+  <text x="1148" y="578" fill="#E2E8F0" font-size="11">• 治理 (Govern)：Entra Agent ID</text>
+  <text x="1148" y="596" fill="#E2E8F0" font-size="11">  + Purview 敏感度标签端到端继承</text>
+  <text x="1148" y="616" fill="#E2E8F0" font-size="11">• 保护 (Protect)：Defender + Sentinel</text>
+  <text x="1148" y="636" fill="#34D399" font-size="10.5" font-weight="700">决策 100% 可追溯至源头业务信号</text>
+
+  <!-- Bottom Banner: Core Value -->
+  <rect x="40" y="704" width="1320" height="80" rx="12" fill="#111C33" stroke="#2563EB" stroke-width="1.2"/>
+  <text x="64" y="732" fill="#60A5FA" font-size="13.5" font-weight="800">Fabric IQ 四大架构级价值：</text>
+  <text x="250" y="732" fill="#F8FAFC" font-size="12.5">① 共享业务语言（消除老师傅经验壁垒） · ② 可信实体上下文（准确率 95.83%，告别裸表幻觉） · ③ 规则即护栏（SOP 内嵌本体） · ④ 一次建模全域复用（BI/问数/运营智能体）</text>
+  <text x="64" y="762" fill="#94A3B8" font-size="12">数据源与复现实验：workshops/data-lab/src/data_lab/benchmark_suite.py · 7-Card 报告：workshops/data-lab/benchmark-cards.html · 2026-11-01</text>
+</svg>

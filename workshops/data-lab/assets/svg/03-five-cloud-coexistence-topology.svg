@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="centerHub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg3)"/>
+  <rect x="20" y="18" width="1360" height="724" rx="18" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="40" y="34" width="1320" height="64" rx="12" fill="#131F38" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="64" y="62" fill="#F8FAFC" font-size="20" font-weight="800">OneLake 跨云零拷贝共存拓扑：Microsoft Fabric × Databricks × Snowflake × GCP × AWS</text>
+  <text x="64" y="84" fill="#94A3B8" font-size="12.5">Zero-Copy Multi-Cloud Coexistence Blueprint · 不推翻存量数仓，通过 Mirroring / Shortcuts / Apache Ossie / IQ Sharing 统一赋能 AI 智能体</text>
+
+  <!-- Left 4 Competitor / Partner Clouds -->
+  <!-- 1. Databricks -->
+  <rect x="44" y="120" width="360" height="136" rx="12" fill="#111C33" stroke="#F97316" stroke-width="1.5"/>
+  <text x="64" y="146" fill="#F97316" font-size="14" font-weight="800">1. Azure Databricks / 多云 Databricks</text>
+  <text x="64" y="168" fill="#E2E8F0" font-size="11.5">• 核心负载：Spark DLT 声明式管道 (Lakeflow)、Mosaic AI 70B+ 训练</text>
+  <text x="64" y="188" fill="#E2E8F0" font-size="11.5">• 互联机制：ADLS Gen2 共享存储 + Unity Catalog 双向零拷贝 Shortcut</text>
+  <text x="64" y="208" fill="#E2E8F0" font-size="11.5">• 表格式互通：Delta Lake + Managed Iceberg v3 (UniForm)</text>
+  <text x="64" y="232" fill="#34D399" font-size="11.5" font-weight="700">→ 共存模式 B：Databricks 做重 ML 工厂，Fabric 做本体与全员 BI/Agent</text>
+
+  <!-- 2. Snowflake -->
+  <rect x="44" y="272" width="360" height="136" rx="12" fill="#111C33" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="64" y="298" fill="#38BDF8" font-size="14" font-weight="800">2. Snowflake AI Data Cloud</text>
+  <text x="64" y="320" fill="#E2E8F0" font-size="11.5">• 核心负载：高并发核心企业数仓 (System of Record)、B2B 数据净室</text>
+  <text x="64" y="340" fill="#E2E8F0" font-size="11.5">• 互联机制：OneLake Snowflake Mirroring (支持 CDC 与视图) + Iceberg</text>
+  <text x="64" y="360" fill="#E2E8F0" font-size="11.5">• 语义层互通：微软与 Snowflake 联合共建 Apache Ossie (Incubating)</text>
+  <text x="64" y="384" fill="#34D399" font-size="11.5" font-weight="700">→ 共存模式 A：零 ETL 镜像至 OneLake，享 M365 Copilot $0 额外 Token</text>
+
+  <!-- 3. GCP BigQuery -->
+  <rect x="44" y="424" width="360" height="136" rx="12" fill="#111C33" stroke="#34D399" stroke-width="1.5"/>
+  <text x="64" y="450" fill="#34D399" font-size="14" font-weight="800">3. Google Cloud (BigQuery &amp; BigLake)</text>
+  <text x="64" y="472" fill="#E2E8F0" font-size="11.5">• 核心负载：Google Ads / GA4 营销归因流、BigLake Managed Iceberg</text>
+  <text x="64" y="492" fill="#E2E8F0" font-size="11.5">• 互联机制：OneLake Mirroring for Google BigQuery (FabCon 正式 GA)</text>
+  <text x="64" y="512" fill="#E2E8F0" font-size="11.5">• 快捷映射：GCS Shortcuts + Iceberg REST Catalog 跨云表发现</text>
+  <text x="64" y="536" fill="#34D399" font-size="11.5" font-weight="700">→ 共存模式 C：广告转化数据零搬迁融入 Fabric IQ 供应链本体</text>
+
+  <!-- 4. AWS & SaaS Estates -->
+  <rect x="44" y="576" width="360" height="142" rx="12" fill="#111C33" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="64" y="602" fill="#FBBF24" font-size="14" font-weight="800">4. AWS Lakehouse (S3 Tables) &amp; Salesforce 360</text>
+  <text x="64" y="624" fill="#E2E8F0" font-size="11.5">• 核心负载：Amazon S3 Tables (原生 Iceberg) + Redshift + Salesforce CRM</text>
+  <text x="64" y="644" fill="#E2E8F0" font-size="11.5">• 互联机制：OneLake S3 Shortcuts (带缓存与 Shortcut Transformations GA)</text>
+  <text x="64" y="664" fill="#E2E8F0" font-size="11.5">• SaaS 互联：Salesforce Data 360 双向零拷贝 (Preview) + Oracle/SAP GA</text>
+  <text x="64" y="688" fill="#34D399" font-size="11.5" font-weight="700">→ 共存模式 D：免除跨云 Egress 复制，直接构建 DirectLake 与问数 Agent</text>
+
+  <!-- Center Hub: Microsoft OneLake + Fabric IQ -->
+  <rect x="448" y="120" width="496" height="598" rx="16" fill="url(#centerHub)" stroke="#60A5FA" stroke-width="2.5"/>
+  <text x="696" y="154" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">Microsoft OneLake + Fabric IQ 统一智能中枢</text>
+  <text x="696" y="176" fill="#93C5FD" font-size="12" text-anchor="middle">Single Logical Data Lake · Zero-ETL Federation · Governed Ontology Engine</text>
+
+  <!-- Layer 1 inside Hub -->
+  <rect x="472" y="196" width="448" height="114" rx="10" fill="#0F172A" stroke="#3B82F6"/>
+  <text x="490" y="220" fill="#60A5FA" font-size="13.5" font-weight="800">A. 开放存储与零拷贝联邦层 (OneLake Open Format Plane)</text>
+  <text x="490" y="242" fill="#E2E8F0" font-size="11.5">• 统一开放表格式：Delta Lake &lt;-&gt; Apache Iceberg v3 双向元数据自动映射</text>
+  <text x="490" y="262" fill="#E2E8F0" font-size="11.5">• Shortcut Transformations (GA)：在快捷方式上直接执行转换，无需物理搬迁</text>
+  <text x="490" y="282" fill="#34D399" font-size="11.5" font-weight="700">• OneLake IQ Sharing (Preview)：跨组织安全共享表 + Markdown 指令 + RDF 本体</text>
+
+  <!-- Layer 2 inside Hub -->
+  <rect x="472" y="324" width="448" height="118" rx="10" fill="#0F172A" stroke="#60A5FA"/>
+  <text x="490" y="348" fill="#93C5FD" font-size="13.5" font-weight="800">B. 统一语义与业务本体层 (Power BI + Fabric IQ + Apache Ossie)</text>
+  <text x="490" y="370" fill="#E2E8F0" font-size="11.5">• DirectLake 极速引擎：零导入刷新，500 并发下 P95 仅 940ms (快 9.47x)</text>
+  <text x="490" y="390" fill="#E2E8F0" font-size="11.5">• Ontology 建模：实体 + 属性 + 关系 + 规则/约束 + Graph 级联影响分析</text>
+  <text x="490" y="410" fill="#34D399" font-size="11.5" font-weight="700">• Apache Ossie 开放语义标准：跨 Fabric 与 Snowflake 对齐度量值与业务口径</text>
+
+  <!-- Layer 3 inside Hub -->
+  <rect x="472" y="456" width="448" height="118" rx="10" fill="#0F172A" stroke="#10B981"/>
+  <text x="490" y="480" fill="#34D399" font-size="13.5" font-weight="800">C. 实时情报与数据库控制平面 (RTI Eventhouse + Database Hub)</text>
+  <text x="490" y="502" fill="#E2E8F0" font-size="11.5">• Eventstream + Eventhouse KQL：亚秒级时序流处理与跨工作区可观测汇聚</text>
+  <text x="490" y="522" fill="#E2E8F0" font-size="11.5">• Database Hub (Preview)：统一治理 SQL Server / Azure SQL / PG / Cosmos DB</text>
+  <text x="490" y="542" fill="#34D399" font-size="11.5" font-weight="700">• Azure SQL Hyperscale 192 vCore (GA) + 原生 DiskANN 向量索引 (GA)</text>
+
+  <!-- Layer 4 inside Hub -->
+  <rect x="472" y="588" width="448" height="110" rx="10" fill="#172554" stroke="#A78BFA"/>
+  <text x="490" y="612" fill="#DDD6FE" font-size="13.5" font-weight="800">D. 统一安全、合规与弹性计费底座 (Purview + F0 / On-Demand)</text>
+  <text x="490" y="634" fill="#E2E8F0" font-size="11.5">• Microsoft Purview 敏感度标签与行级/列级安全 (RLS/CLS) 端到端自动继承</text>
+  <text x="490" y="654" fill="#E2E8F0" font-size="11.5">• Fabric Policies 精细化管控 Copilot 可读取的语义模型范围与审计日志</text>
+  <text x="490" y="674" fill="#34D399" font-size="11.5" font-weight="700">• Fabric Zero-Provisioned &amp; On-Demand 按需计费：零前期容量承诺起步</text>
+
+  <!-- Right Column: AI & Business Consumption Surfaces -->
+  <rect x="984" y="120" width="372" height="598" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1170" y="152" fill="#34D399" font-size="16" font-weight="800" text-anchor="middle">业务消费与智能体行动界面</text>
+  <text x="1170" y="172" fill="#94A3B8" font-size="11.5" text-anchor="middle">Enterprise AI &amp; Agentic Consumption Surfaces</text>
+
+  <rect x="1004" y="196" width="332" height="112" rx="10" fill="#0F172A" stroke="#3B82F6"/>
+  <text x="1020" y="220" fill="#60A5FA" font-size="13" font-weight="800">1. Microsoft 365 Copilot (Chat &amp; Cowork GA)</text>
+  <text x="1020" y="242" fill="#E2E8F0" font-size="11.5">• 员工在 Teams / Word / Excel / Copilot 中直接问数</text>
+  <text x="1020" y="262" fill="#34D399" font-size="11.5" font-weight="700">• 零额外 AI Token 成本 ($0 Extra Token Cost)</text>
+  <text x="1020" y="282" fill="#94A3B8" font-size="11">• 自动结合 Work IQ 人员会议上下文与 Fabric IQ 指标</text>
+
+  <rect x="1004" y="324" width="332" height="118" rx="10" fill="#0F172A" stroke="#10B981"/>
+  <text x="1020" y="348" fill="#34D399" font-size="13" font-weight="800">2. Power BI Agentic App &amp; Rayfin 全栈应用</text>
+  <text x="1020" y="370" fill="#E2E8F0" font-size="11.5">• 自然语言构建支持数据回写 (Write-back) 的业务应用</text>
+  <text x="1020" y="390" fill="#34D399" font-size="11.5" font-weight="700">• 向 Pro/PPU/Fabric 用户免费附赠 1GB Fabric SQL</text>
+  <text x="1020" y="410" fill="#94A3B8" font-size="11">• 开源 Rayfin SDK/CLI 支持 TS 后端函数与 PG</text>
+
+  <rect x="1004" y="458" width="332" height="118" rx="10" fill="#0F172A" stroke="#8B5CF6"/>
+  <text x="1020" y="482" fill="#C4B5FD" font-size="13" font-weight="800">3. Fabric Operations Agent &amp; Foundry 智能体</text>
+  <text x="1020" y="504" fill="#E2E8F0" font-size="11.5">• 7×24 监控实时流与本体规则，自动根因诊断 (RCA)</text>
+  <text x="1020" y="524" fill="#E2E8F0" font-size="11.5">• 结合 Foundry IQ 检索 SOP 合规护栏防越界</text>
+  <text x="1020" y="544" fill="#34D399" font-size="11.5" font-weight="700">• 通过 Fabric IQ MCP 赋能 VS Code / 外部智能体</text>
+
+  <rect x="1004" y="592" width="332" height="106" rx="10" fill="#172554" stroke="#60A5FA"/>
+  <text x="1020" y="616" fill="#93C5FD" font-size="13" font-weight="800">4. Microsoft Agent 365 全生命周期管控</text>
+  <text x="1020" y="638" fill="#E2E8F0" font-size="11.5">• 统一身份 (Entra Agent ID) 与最小权限控制</text>
+  <text x="1020" y="658" fill="#E2E8F0" font-size="11.5">• Defender 威胁防护 + Purview 防泄漏 + Sentinel</text>
+  <text x="1020" y="678" fill="#34D399" font-size="11.5" font-weight="700">• 500 用户场景综合节省 46.1%–56.1% 月度 TCO</text>
+</svg>

@@ -1,0 +1,115 @@
+"""Unit test suite for Data Lab (Microsoft Fabric x 4-Cloud Competitive Benchmark & Ontology Simulator)."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+import sys
+import unittest
+
+ROOT = Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
+
+from data_lab import (  # noqa: E402
+    COMPETITIVE_DIMENSIONS,
+    PLATFORMS,
+    build_sealed_report,
+    calculate_five_cloud_tco,
+    evaluate_perturbation_robustness,
+    evaluate_scaling_latency,
+    evaluate_scenario_matrix,
+    simulate_ontology_incident,
+)
+
+
+class TestDataLabBenchmarkSuite(unittest.TestCase):
+    def test_five_platforms_and_six_dimensions_complete(self) -> None:
+        expected_platforms = {"fabric", "databricks", "snowflake", "gcp", "aws"}
+        self.assertEqual(set(PLATFORMS.keys()), expected_platforms)
+        for pid, pdata in PLATFORMS.items():
+            scores = pdata["scores"]
+            for dim in COMPETITIVE_DIMENSIONS:
+                self.assertIn(dim, scores, f"Missing dimension {dim} in {pid}")
+                self.assertGreaterEqual(scores[dim], 0.0)
+                self.assertLessEqual(scores[dim], 100.0)
+
+    def test_fabric_leads_semantic_bi_and_databricks_leads_ml(self) -> None:
+        self.assertGreater(
+            PLATFORMS["fabric"]["scores"]["semantic_ontology_grounding"],
+            PLATFORMS["databricks"]["scores"]["semantic_ontology_grounding"],
+        )
+        self.assertGreater(
+            PLATFORMS["fabric"]["scores"]["bi_agentic_app_writeback"],
+            PLATFORMS["snowflake"]["scores"]["bi_agentic_app_writeback"],
+        )
+        self.assertGreater(
+            PLATFORMS["databricks"]["scores"]["ml_training_data_engineering"],
+            PLATFORMS["fabric"]["scores"]["ml_training_data_engineering"],
+        )
+
+    def test_five_cloud_tco_calculator_invariants(self) -> None:
+        tco = calculate_five_cloud_tco(
+            users=500,
+            storage_tb=100.0,
+            streaming_eps=25000,
+            copilot_queries_per_day=5000,
+            m365_e5_or_copilot_licensed=True,
+        )
+        totals = tco["monthly_totals_usd"]
+        self.assertEqual(tco["breakdown"]["fabric"]["ai_token_usd"], 0.0)
+        self.assertEqual(tco["breakdown"]["fabric"]["bi_license_usd"], 0.0)
+        self.assertLess(totals["fabric"], totals["databricks"])
+        self.assertLess(totals["fabric"], totals["snowflake"])
+        self.assertLess(totals["fabric"], totals["gcp"])
+        self.assertLess(totals["fabric"], totals["aws"])
+        self.assertGreater(tco["savings_vs_competitors_pct"]["vs_snowflake"], 35.0)
+
+    def test_energy_dc_ontology_simulation_physics_and_guardrail(self) -> None:
+        sim = simulate_ontology_incident("energy_dc_peak")
+        self.assertEqual(sim["telemetry"]["initial_load_mw"], 18.84)
+        self.assertEqual(sim["multi_agent_plan"]["total_shaved_mw"], 3.45)
+        self.assertEqual(sim["multi_agent_plan"]["final_load_mw"], 15.39)
+        self.assertLess(sim["multi_agent_plan"]["utilization_after_pct"], 80.0)
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+
+    def test_airline_jfk_r25_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("airline_jfk_r25")
+        self.assertLess(sim["telemetry"]["friction_coefficient"], sim["telemetry"]["min_safe_friction"])
+        self.assertEqual(sim["multi_agent_plan"]["gates_reallocated"], 6)
+        self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
+
+    def test_scenario_matrix_24_cases_and_explicit_miss(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        self.assertEqual(matrix["total_scenarios"], 24)
+        self.assertEqual(matrix["passed_scenarios"], 23)
+        self.assertEqual(matrix["failed_scenarios"], 1)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 95.83, places=2)
+        misses = [s for s in matrix["scenarios"] if not s["correct"]]
+        self.assertEqual(len(misses), 1)
+        self.assertEqual(misses[0]["id"], "DL-23")
+
+    def test_perturbation_and_scaling_latency(self) -> None:
+        pert = evaluate_perturbation_robustness()
+        self.assertEqual(len(pert), 6)
+        # First 4 governed ontology cases have <= 0.5 pt drift
+        for row in pert[:5]:
+            self.assertLessEqual(abs(row["change_pts"]), 0.5)
+        scaling = evaluate_scaling_latency()
+        self.assertEqual(len(scaling), 4)
+        for tier in scaling:
+            self.assertGreater(tier["speedup_x"], 4.0)
+
+    def test_sealed_report_persistence(self) -> None:
+        out_path = ROOT / "reports" / "report.json"
+        report = build_sealed_report(out_path)
+        self.assertTrue(out_path.exists())
+        loaded = json.loads(out_path.read_text(encoding="utf-8"))
+        self.assertEqual(loaded["report_id"], report["report_id"])
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 23)
+
+
+if __name__ == "__main__":
+    unittest.main()

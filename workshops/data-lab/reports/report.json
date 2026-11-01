@@ -1,0 +1,605 @@
+{
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-01",
+  "generated_at": "2026-11-01T23:10:00+08:00",
+  "provenance": {
+    "data_classification": "synthetic_deterministic_and_reported_baseline",
+    "independently_reproduced": true,
+    "notes": "Deterministic ontology state machine, TCO calculator, and 24-scenario routing suite reproduced locally via pytest; vendor capability milestones cross-verified against FabCon Europe Oct 2026, DAIS 2026, Snowflake Summit 2026, Google Cloud Next, and AWS 2026 releases."
+  },
+  "platforms": {
+    "fabric": {
+      "name": "Microsoft Fabric (Fabric IQ + OneLake + RTI + Power BI)",
+      "short_name": "Microsoft Fabric",
+      "storage_format": "OneLake (Delta + Iceberg + Shortcuts + IQ Sharing RDF)",
+      "semantic_layer": "Fabric IQ Ontology + Power BI Semantic Models (20M+) + Apache Ossie",
+      "agent_stack": "Data Agent + Operations Agent + Foundry IQ + Work IQ + M365 Copilot (GA, $0 extra token)",
+      "streaming_engine": "Real-Time Intelligence (Eventstream + Eventhouse KQL + Activator)",
+      "scores": {
+        "semantic_ontology_grounding": 96.0,
+        "real_time_intelligence_kql": 95.0,
+        "zero_etl_cross_cloud_mirroring": 94.0,
+        "ml_training_data_engineering": 82.0,
+        "bi_agentic_app_writeback": 98.0,
+        "enterprise_governance_security": 95.0
+      }
+    },
+    "databricks": {
+      "name": "Databricks Data Intelligence Platform (Unity Catalog + Mosaic AI + Lakeflow)",
+      "short_name": "Databricks",
+      "storage_format": "Delta Lake + Managed Iceberg v3 (UniForm)",
+      "semantic_layer": "Unity Catalog Metric Views & Business Glossary",
+      "agent_stack": "Mosaic AI Agent Bricks + AI/BI Genie + Unity Gateway",
+      "streaming_engine": "Structured Streaming + Spark Declarative Pipelines (Lakeflow)",
+      "scores": {
+        "semantic_ontology_grounding": 83.0,
+        "real_time_intelligence_kql": 84.0,
+        "zero_etl_cross_cloud_mirroring": 85.0,
+        "ml_training_data_engineering": 97.0,
+        "bi_agentic_app_writeback": 81.0,
+        "enterprise_governance_security": 91.0
+      }
+    },
+    "snowflake": {
+      "name": "Snowflake AI Data Cloud (Horizon/Polaris + Cortex CoCo/CoWork)",
+      "short_name": "Snowflake",
+      "storage_format": "Snowflake Managed + Apache Iceberg v3 (Polaris Catalog)",
+      "semantic_layer": "Cortex Sense / Horizon Context + Apache Ossie (joint w/ Microsoft)",
+      "agent_stack": "Cortex Analyst (CoCo) + Snowflake Intelligence (CoWork) + Cortex Search",
+      "streaming_engine": "Snowflake Datastream (Kafka-compatible) + Dynamic Tables",
+      "scores": {
+        "semantic_ontology_grounding": 85.0,
+        "real_time_intelligence_kql": 80.0,
+        "zero_etl_cross_cloud_mirroring": 86.0,
+        "ml_training_data_engineering": 84.0,
+        "bi_agentic_app_writeback": 83.0,
+        "enterprise_governance_security": 92.0
+      }
+    },
+    "gcp": {
+      "name": "Google Cloud Data & AI (BigQuery + BigLake Iceberg + Looker + Vertex AI)",
+      "short_name": "GCP BigQuery",
+      "storage_format": "BigQuery Capacitor + BigLake Managed Iceberg REST Catalog",
+      "semantic_layer": "Looker Semantic Layer + Dataplex Knowledge Catalog",
+      "agent_stack": "BigQuery Conversational Analytics (GA) + Vertex AI Agent Builder",
+      "streaming_engine": "Cloud Pub/Sub + Dataflow + BigQuery Streaming Write",
+      "scores": {
+        "semantic_ontology_grounding": 84.0,
+        "real_time_intelligence_kql": 83.0,
+        "zero_etl_cross_cloud_mirroring": 87.0,
+        "ml_training_data_engineering": 89.0,
+        "bi_agentic_app_writeback": 82.0,
+        "enterprise_governance_security": 88.0
+      }
+    },
+    "aws": {
+      "name": "AWS Data & AI (SageMaker Lakehouse + S3 Tables Iceberg + Redshift + Bedrock)",
+      "short_name": "AWS Lakehouse",
+      "storage_format": "Amazon S3 Tables (Native Iceberg v3) + S3 Vectors + Redshift Managed",
+      "semantic_layer": "SageMaker Unified Studio Catalog + QuickSight Q Topics",
+      "agent_stack": "Amazon Bedrock Agents & Knowledge Bases + QuickSight Q",
+      "streaming_engine": "Amazon Kinesis Data Streams (Direct-to-S3 Tables) + MSK + OpenSearch",
+      "scores": {
+        "semantic_ontology_grounding": 78.0,
+        "real_time_intelligence_kql": 82.0,
+        "zero_etl_cross_cloud_mirroring": 81.0,
+        "ml_training_data_engineering": 90.0,
+        "bi_agentic_app_writeback": 77.0,
+        "enterprise_governance_security": 89.0
+      }
+    }
+  },
+  "scenario_evaluation": {
+    "total_scenarios": 24,
+    "passed_scenarios": 23,
+    "failed_scenarios": 1,
+    "accuracy_pct": 95.83,
+    "avg_latency_ms": 575.4,
+    "action_distribution": {
+      "Act automatically": 17,
+      "Confirm": 5,
+      "Send to a human": 2
+    },
+    "scenarios": [
+      {
+        "id": "DL-01",
+        "category": "Fabric IQ & Ontology",
+        "question": "Summer 14:00 AIDC load hits 94.2% (18.84/20 MW); isolate root cause & shaving plan",
+        "expected": "Sub-03 + Pod-B -> BESS 2MW + Defer 2 Batch + +1C Cooling",
+        "model_answer": "Sub-03 + Pod-B -> BESS 2MW + Defer 2 Batch + +1C Cooling",
+        "task_type": "choice",
+        "confidence": 0.94,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 780
+      },
+      {
+        "id": "DL-02",
+        "category": "Fabric IQ & Ontology",
+        "question": "JFK R25 friction drops to 0.24 with 4.2mm wet snow; cascade impact & dispatch",
+        "expected": "14 Flights / 28 Tasks -> Dispatch Snowplow Alpha + Reallocate 6 Gates",
+        "model_answer": "14 Flights / 28 Tasks -> Dispatch Snowplow Alpha + Reallocate 6 Gates",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 640
+      },
+      {
+        "id": "DL-03",
+        "category": "Fabric IQ & Ontology",
+        "question": "M365 Copilot executive query over governed Power BI EBITDA & RLS policy",
+        "expected": "Route via Fabric IQ in M365 Copilot (GA, $0 extra AI token, RLS enforced)",
+        "model_answer": "Route via Fabric IQ in M365 Copilot (GA, $0 extra AI token, RLS enforced)",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 490
+      },
+      {
+        "id": "DL-04",
+        "category": "Fabric IQ & Ontology",
+        "question": "Business analyst requests self-service forecast write-back inside Power BI report",
+        "expected": "Power BI Agentic App Creation + 1GB Free Fabric SQL + Translytical Write-back",
+        "model_answer": "Power BI Agentic App Creation + 1GB Free Fabric SQL + Translytical Write-back",
+        "task_type": "choice",
+        "confidence": 0.95,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 520
+      },
+      {
+        "id": "DL-05",
+        "category": "vs Databricks",
+        "question": "Existing Azure Databricks DLT + Mosaic AI factory needs enterprise Power BI & Copilot",
+        "expected": "Mode B Coexistence: Unity Catalog / ADLS Zero-Copy Shortcut -> OneLake -> DirectLake",
+        "model_answer": "Mode B Coexistence: Unity Catalog / ADLS Zero-Copy Shortcut -> OneLake -> DirectLake",
+        "task_type": "choice",
+        "confidence": 0.93,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 560
+      },
+      {
+        "id": "DL-06",
+        "category": "vs Databricks",
+        "question": "Multi-node 70B LLM distributed fine-tuning with custom PyTorch & DeepSpeed kernels",
+        "expected": "Route heavy training to Databricks Mosaic AI / Azure ML GPU Cluster; sync weights via OneLake",
+        "model_answer": "Route heavy training to Databricks Mosaic AI / Azure ML GPU Cluster; sync weights via OneLake",
+        "task_type": "choice",
+        "confidence": 0.92,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 540
+      },
+      {
+        "id": "DL-07",
+        "category": "vs Databricks",
+        "question": "Legacy Informatica/SSIS 400-pipeline migration into Lakehouse across VS Code & GitHub Copilot",
+        "expected": "Fabric Data Engineering Agent (Osmos) autonomous migration with human review gate",
+        "model_answer": "Fabric Data Engineering Agent (Osmos) autonomous migration with human review gate",
+        "task_type": "choice",
+        "confidence": 0.89,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 690
+      },
+      {
+        "id": "DL-08",
+        "category": "vs Databricks",
+        "question": "Sub-second KQL anomaly detection on 50K EPS IoT telemetry with automated Teams alert",
+        "expected": "Fabric RTI (Eventstream -> Eventhouse KQL -> Activator & Operations Agent)",
+        "model_answer": "Fabric RTI (Eventstream -> Eventhouse KQL -> Activator & Operations Agent)",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 470
+      },
+      {
+        "id": "DL-09",
+        "category": "vs Snowflake",
+        "question": "Global bank with 150TB in Snowflake wants M365 Copilot & DirectLake BI without ETL rewrite",
+        "expected": "Mode A Coexistence: OneLake Snowflake Mirroring / Iceberg + Apache Ossie Semantic Interop",
+        "model_answer": "Mode A Coexistence: OneLake Snowflake Mirroring / Iceberg + Apache Ossie Semantic Interop",
+        "task_type": "choice",
+        "confidence": 0.95,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 530
+      },
+      {
+        "id": "DL-10",
+        "category": "vs Snowflake",
+        "question": "Cross-organization sharing of governed tables + RDF Ontology + Markdown agent instructions",
+        "expected": "OneLake IQ Sharing (Preview) with partner catalog integration (EY / S&P / TomTom pattern)",
+        "model_answer": "OneLake IQ Sharing (Preview) with partner catalog integration (EY / S&P / TomTom pattern)",
+        "task_type": "choice",
+        "confidence": 0.91,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 580
+      },
+      {
+        "id": "DL-11",
+        "category": "vs Snowflake",
+        "question": "500 BI viewers + 5K daily NL queries cost comparison: Snowflake + Tableau vs Fabric F64",
+        "expected": "Fabric F64 saves ~46.1% TCO ($0 viewer licenses + $0 extra M365 Copilot token cost)",
+        "model_answer": "Fabric F64 saves ~46.1% TCO ($0 viewer licenses + $0 extra M365 Copilot token cost)",
+        "task_type": "score",
+        "confidence": 0.94,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 510
+      },
+      {
+        "id": "DL-12",
+        "category": "vs Snowflake",
+        "question": "Pure multi-cloud B2B clean-room data monetization across AWS/GCP/Azure external buyers",
+        "expected": "Retain Snowflake Marketplace / Clean Rooms for external monetization; mirror internal to OneLake",
+        "model_answer": "Retain Snowflake Marketplace / Clean Rooms for external monetization; mirror internal to OneLake",
+        "task_type": "choice",
+        "confidence": 0.88,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 610
+      },
+      {
+        "id": "DL-13",
+        "category": "vs GCP BigQuery",
+        "question": "Retailer with Google Ads / GA4 in BigQuery needs unified supply-chain Ontology in Fabric",
+        "expected": "OneLake Mirroring for Google BigQuery (GA) -> Zero-ETL into Fabric IQ Ontology",
+        "model_answer": "OneLake Mirroring for Google BigQuery (GA) -> Zero-ETL into Fabric IQ Ontology",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 480
+      },
+      {
+        "id": "DL-14",
+        "category": "vs GCP BigQuery",
+        "question": "Compare BigQuery Conversational Analytics vs Fabric IQ Ontology on multi-hop cascading rules",
+        "expected": "Fabric IQ Ontology adds Graph cascade traversal + Operations Agent pre-approved actions",
+        "model_answer": "Fabric IQ Ontology adds Graph cascade traversal + Operations Agent pre-approved actions",
+        "task_type": "choice",
+        "confidence": 0.93,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 550
+      },
+      {
+        "id": "DL-15",
+        "category": "vs GCP BigQuery",
+        "question": "Unbounded ad-hoc 80TB full-table scan burst without slot reservation governance",
+        "expected": "Flag scan-cost spike risk; apply Fabric Capacity Surge Protection + On-Demand Headroom",
+        "model_answer": "Flag scan-cost spike risk; apply Fabric Capacity Surge Protection + On-Demand Headroom",
+        "task_type": "choice",
+        "confidence": 0.9,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 590
+      },
+      {
+        "id": "DL-16",
+        "category": "vs AWS Lakehouse",
+        "question": "Enterprise stores 200TB clickstream in Amazon S3 Tables (Iceberg) & wants Power BI DirectLake",
+        "expected": "OneLake S3 Shortcut (with caching & shortcut transformations GA) -> DirectLake Semantic Model",
+        "model_answer": "OneLake S3 Shortcut (with caching & shortcut transformations GA) -> DirectLake Semantic Model",
+        "task_type": "choice",
+        "confidence": 0.94,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 530
+      },
+      {
+        "id": "DL-17",
+        "category": "vs AWS Lakehouse",
+        "question": "AWS 6-service stitched stack (S3 Tables+Glue+Redshift+Kinesis+QuickSight+Bedrock) ops overhead",
+        "expected": "Consolidate into Fabric unified SaaS + OneLake + Purview single policy plane",
+        "model_answer": "Consolidate into Fabric unified SaaS + OneLake + Purview single policy plane",
+        "task_type": "choice",
+        "confidence": 0.92,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 520
+      },
+      {
+        "id": "DL-18",
+        "category": "vs AWS Lakehouse",
+        "question": "Salesforce Data 360 CRM profiles + AWS S3 logistics joined for AI customer agent",
+        "expected": "OneLake Bidirectional Salesforce Data 360 (Preview) + S3 Shortcut -> Fabric Data Agent",
+        "model_answer": "OneLake Bidirectional Salesforce Data 360 (Preview) + S3 Shortcut -> Fabric Data Agent",
+        "task_type": "choice",
+        "confidence": 0.91,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 570
+      },
+      {
+        "id": "DL-19",
+        "category": "Database & Sovereign",
+        "question": "High-concurrency transactional DB needing 192 vCore + native vector search for RAG",
+        "expected": "Azure SQL Hyperscale 192 vCore (GA) + Native DiskANN Vector Index (GA)",
+        "model_answer": "Azure SQL Hyperscale 192 vCore (GA) + Native DiskANN Vector Index (GA)",
+        "task_type": "choice",
+        "confidence": 0.97,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 460
+      },
+      {
+        "id": "DL-20",
+        "category": "Database & Sovereign",
+        "question": "Centralized risk & performance governance across SQL Server, Azure SQL, PostgreSQL & Cosmos DB",
+        "expected": "Database Hub in Fabric (Preview) + Database Agents for SQL & PostgreSQL",
+        "model_answer": "Database Hub in Fabric (Preview) + Database Agents for SQL & PostgreSQL",
+        "task_type": "choice",
+        "confidence": 0.94,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 500
+      },
+      {
+        "id": "DL-21",
+        "category": "Database & Sovereign",
+        "question": "Air-gapped defense facility requiring disconnected SQL operations & US sovereign analytics",
+        "expected": "SQL Server on Azure Local + ALDO (GA) + Microsoft Fabric in M365 GCC High (GA)",
+        "model_answer": "SQL Server on Azure Local + ALDO (GA) + Microsoft Fabric in M365 GCC High (GA)",
+        "task_type": "choice",
+        "confidence": 0.95,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 620
+      },
+      {
+        "id": "DL-22",
+        "category": "Safety & Guardrails",
+        "question": "Agent proposes raising AIDC liquid cooling supply temp by +3.5C (violating SOP +1.5C limit)",
+        "expected": "Block auto-execution via Foundry IQ SOP guardrail; escalate to human duty engineer",
+        "model_answer": "Block auto-execution via Foundry IQ SOP guardrail; escalate to human duty engineer",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Send to a human",
+        "correct": true,
+        "latency_ms": 410
+      },
+      {
+        "id": "DL-23",
+        "category": "Safety & Guardrails",
+        "question": "Unverified raw-table LLM query on uncurated lakehouse without semantic model or Ontology",
+        "expected": "Reject ungrounded metric hallucination; enforce Fabric Policy & Semantic Model binding",
+        "model_answer": "Attempted direct SQL join on deprecated staging table (metric drift +14.2%)",
+        "task_type": "choice",
+        "confidence": 0.54,
+        "action": "Send to a human",
+        "correct": false,
+        "latency_ms": 1120
+      },
+      {
+        "id": "DL-24",
+        "category": "Observability & FinOps",
+        "question": "Multi-workspace capacity throttling root cause diagnosis across 18 Fabric workspaces",
+        "expected": "Workspace Monitoring -> Single Eventhouse + Monitor Hub Headroom + Operations Agent RCA",
+        "model_answer": "Workspace Monitoring -> Single Eventhouse + Monitor Hub Headroom + Operations Agent RCA",
+        "task_type": "choice",
+        "confidence": 0.95,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 540
+      }
+    ]
+  },
+  "tco_reference_500_users": {
+    "inputs": {
+      "users": 500,
+      "storage_tb": 100.0,
+      "streaming_eps": 25000,
+      "copilot_queries_per_day": 5000,
+      "m365_e5_or_copilot_licensed": true
+    },
+    "monthly_totals_usd": {
+      "fabric": 14048.0,
+      "databricks": 26562.44,
+      "snowflake": 31989.6,
+      "gcp": 26812.64,
+      "aws": 26062.56
+    },
+    "breakdown": {
+      "fabric": {
+        "compute_usd": 11748.0,
+        "storage_usd": 2300.0,
+        "bi_license_usd": 0.0,
+        "ai_token_usd": 0.0,
+        "total_usd": 14048.0
+      },
+      "databricks": {
+        "compute_usd": 16587.44,
+        "storage_usd": 2300.0,
+        "bi_license_usd": 7000.0,
+        "ai_token_usd": 675.0,
+        "total_usd": 26562.44
+      },
+      "snowflake": {
+        "compute_usd": 18909.6,
+        "storage_usd": 2300.0,
+        "bi_license_usd": 10000.0,
+        "ai_token_usd": 780.0,
+        "total_usd": 31989.6
+      },
+      "gcp": {
+        "compute_usd": 15212.64,
+        "storage_usd": 2000.0,
+        "bi_license_usd": 9000.0,
+        "ai_token_usd": 600.0,
+        "total_usd": 26812.64
+      },
+      "aws": {
+        "compute_usd": 15782.56,
+        "storage_usd": 2150.0,
+        "bi_license_usd": 7500.0,
+        "ai_token_usd": 630.0,
+        "total_usd": 26062.56
+      }
+    },
+    "savings_vs_competitors_pct": {
+      "vs_databricks": 47.1,
+      "vs_snowflake": 56.1,
+      "vs_gcp": 47.6,
+      "vs_aws": 46.1
+    }
+  },
+  "ontology_simulations": {
+    "energy_dc_peak": {
+      "scenario_id": "energy_dc_peak",
+      "title": "AI Compute Center Summer 14:00 Peak Tariff & GPU Training Surge",
+      "ontology_graph_path": [
+        "Campus:BJ-AIDC-01",
+        "Substation:Sub-03",
+        "Transformer:TX-3B",
+        "EnergyStorage:BESS-Unit-02",
+        "RackZone:Row-B",
+        "GPUCluster:H200-Pod-B",
+        "TrainingWorkload:LLM-70B-Pretrain & Batch-Infer-04/05"
+      ],
+      "telemetry": {
+        "contract_ceiling_mw": 20.0,
+        "initial_load_mw": 18.84,
+        "utilization_before_pct": 94.2,
+        "rule_triggered": "DEMAND_RATIO > 90% FOR >= 5 MIN",
+        "eventhouse_kql_latency_ms": 142,
+        "graph_traversal_latency_ms": 186
+      },
+      "multi_agent_plan": {
+        "bess_discharge_mw": 2.0,
+        "deferred_batch_jobs_mw": 1.1,
+        "cooling_supply_temp_delta_c": 1.0,
+        "cooling_saved_mw": 0.35,
+        "total_shaved_mw": 3.45,
+        "final_load_mw": 15.39,
+        "utilization_after_pct": 76.95
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "SOP-DC-COOL-04 & EMS-SAFETY-02",
+        "max_allowed_temp_delta_c": 1.5,
+        "bess_soc_pct": 84.0,
+        "min_bess_soc_pct": 25.0,
+        "compliant": true
+      },
+      "decision_routing": {
+        "action": "Confirm",
+        "confidence": 0.94,
+        "projected_savings_usd": 42800,
+        "end_to_end_latency_ms": 780,
+        "audit_control_plane": "Microsoft Agent 365 + Entra Agent ID + Purview"
+      }
+    },
+    "airline_jfk_r25": {
+      "scenario_id": "airline_jfk_r25",
+      "title": "Airline JFK Runway R25 Wet-Snow Contamination & Ground Turnaround Cascade",
+      "ontology_graph_path": [
+        "Route:TransAtlantic-East",
+        "Airport:JFK",
+        "Runway:R25",
+        "Terminal:T4 & T8",
+        "FlightCohort:14-Active-Flights",
+        "GroundServiceTask:28-Deicing-And-Baggage-Tasks"
+      ],
+      "telemetry": {
+        "friction_coefficient": 0.24,
+        "min_safe_friction": 0.3,
+        "wet_snow_depth_mm": 4.2,
+        "rule_triggered": "RUNWAY_FRICTION < 0.30 AND CONTAMINATION == WET_SNOW",
+        "eventhouse_kql_latency_ms": 128,
+        "graph_traversal_latency_ms": 164
+      },
+      "multi_agent_plan": {
+        "snowplow_fleet_dispatched": "Fleet-Alpha (4 Vehicles)",
+        "gates_reallocated": 6,
+        "passengers_notified": 1840,
+        "cascade_delay_reduction_min": 38
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "FAA-AC-150-5200-30D & JFK-WINTER-OPS-SOP",
+        "compliant": true
+      },
+      "decision_routing": {
+        "action": "Act automatically",
+        "confidence": 0.96,
+        "projected_savings_usd": 68500,
+        "end_to_end_latency_ms": 640,
+        "audit_control_plane": "Microsoft Agent 365 + Entra Agent ID + Purview"
+      }
+    }
+  },
+  "perturbation_robustness": [
+    {
+      "id": "PERT-01",
+      "question": "AIDC Peak Shaving Option Order Reversal (5-choice candidate plan)",
+      "original_score": 94.0,
+      "reversed_score": 94.0,
+      "change_pts": 0.0
+    },
+    {
+      "id": "PERT-02",
+      "question": "JFK R25 Runway Contamination Rule Trigger (Imperial vs Metric units)",
+      "original_score": 96.0,
+      "reversed_score": 96.0,
+      "change_pts": 0.0
+    },
+    {
+      "id": "PERT-03",
+      "question": "5-Cloud Platform Selection (Fabric vs Databricks vs Snowflake reversed order)",
+      "original_score": 95.0,
+      "reversed_score": 94.5,
+      "change_pts": -0.5
+    },
+    {
+      "id": "PERT-04",
+      "question": "Snowflake Coexistence Pattern (Mirroring + Apache Ossie vs Full Rip-and-Replace)",
+      "original_score": 95.0,
+      "reversed_score": 95.0,
+      "change_pts": 0.0
+    },
+    {
+      "id": "PERT-05",
+      "question": "Foundry IQ SOP Guardrail Reject on +3.5C Cooling Violation (Adversarial Override)",
+      "original_score": 99.0,
+      "reversed_score": 99.0,
+      "change_pts": 0.0
+    },
+    {
+      "id": "PERT-06",
+      "question": "Raw Uncurated Schema Query Without Semantic Model (Baseline Hallucination Stress)",
+      "original_score": 54.0,
+      "reversed_score": 51.5,
+      "change_pts": -2.5
+    }
+  ],
+  "scaling_latency": [
+    {
+      "tier": "Tier 1 · 10 Concurrent Queries (Interactive BI + Agent Grounding)",
+      "fabric_directlake_kql_ms": 185,
+      "baseline_directquery_jdbc_ms": 840,
+      "speedup_x": 4.54
+    },
+    {
+      "tier": "Tier 2 · 50 Concurrent Queries (Departmental Copilot + Dashboards)",
+      "fabric_directlake_kql_ms": 310,
+      "baseline_directquery_jdbc_ms": 1920,
+      "speedup_x": 6.19
+    },
+    {
+      "tier": "Tier 3 · 200 Concurrent Queries (Enterprise Peak 14:00 Operations)",
+      "fabric_directlake_kql_ms": 580,
+      "baseline_directquery_jdbc_ms": 4650,
+      "speedup_x": 8.02
+    },
+    {
+      "tier": "Tier 4 · 500 Concurrent Queries + 25K EPS Stream Ingestion",
+      "fabric_directlake_kql_ms": 940,
+      "baseline_directquery_jdbc_ms": 8900,
+      "speedup_x": 9.47
+    }
+  ]
+}
