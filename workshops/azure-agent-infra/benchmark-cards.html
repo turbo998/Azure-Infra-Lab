@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
-<title>Azure Agent Infra Cycle #377 · 7 页基准卡组</title>
+<title>Azure Agent Infra Cycle #378 · 7 页基准卡组</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;padding:20px;background:#e5e7eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;color:#0f172a}
@@ -58,15 +58,15 @@ ul{margin:8px 0 0 18px;padding:0}
     <section class="pane pane-dark">
       <h3>结构化输入</h3>
       <div class="code">{
-  "cycle": 377,
+  "cycle": 378,
   "inputs": {
     "runtime_paths": 4,
     "throughput_paths": 4,
     "policy_checks": 3,
     "labels": "measured / synthetic / anonymized_reported"
   },
-  "fetched_date": "2026-11-01",
-  "sources": ["AI Gateway Learn", "APIM 2026-06 changelog", "Firecracker/Kata/Wasmtime/E2B releases"]
+  "fetched_date": "2026-11-02",
+          "sources": ["AI Gateway Learn", "APIM 2026-06 changelog", "Firecracker/Kata/Wasmtime/E2B releases", "Cloudflare Browser Rendering docs"]
 }
 ↓
 rendered_prompt = benchmark_harness/cards.py contract payload</div>
@@ -77,8 +77,9 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
       <ul><li>Coding Sandbox: Act automatically (synthetic)</li><li>Multi-tenant SaaS Gateway: Confirm (measured)</li><li>Financial Zero-Trust: Confirm (measured)</li></ul>
     </section>
   </div>
-  <div class="readiness">溯源: fetched 2026-11-01 · labels measured / synthetic / anonymized_reported · source file evidence/cycle-377-benchmark.json</div>
-  <div class="footer"><span>Azure Agent Infra Cycle #377 · 7 页基准卡组</span><span>1 / 7</span></div>
+  <div class="readiness">溯源: fetched 2026-11-02 · labels measured / synthetic / anonymized_reported · source file evidence/cycle-378-benchmark.json</div>
+  <section class="readiness"><strong>2026-11-02 增量影响</strong><ul><li>Gateway plane impact: APIM AI Gateway MCP/A2A controls are promoted from optional observability to mandatory production admission gates in L4 governance.</li><li>Runtime selection impact: Browser/CUA workloads now branch first on edge-browser execution requirements before generic sandbox latency optimization.</li><li>Competitive scoring impact: GCP Agent Engine secure execution and memory semantics are weighted directly in the isolation boundary and compliance fit dimensions.</li></ul></section>
+  <div class="footer"><span>Azure Agent Infra Cycle #378 · 7 页基准卡组</span><span>1 / 7</span></div>
 </article>
 
 <article class="card">
@@ -86,7 +87,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
   <h2>零信任策略链将置信度维持在 91% 以上，并对低裕度决策自动升级。</h2>
   <div class="quote">输入引用："租户需要 MCP/A2A 治理、策略拦截与编码流 200ms 内热恢复。"</div>
   <div class='decision-card'><div class='decision-head'><strong>IMDS block (169.254.169.254) + egress allowlist</strong><span class='pill pill-green'>自动执行</span></div><div class='decision-meta'>置信度: 96.0% · measured</div><div class='bar-track'><div class='bar-fill' style='width:96.0%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>APIM token budget hard circuit breaker</strong><span class='pill pill-amber'>确认后执行</span></div><div class='decision-meta'>置信度: 91.0% · measured</div><div class='bar-track'><div class='bar-fill' style='width:91.0%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>MCP tool scope and content-safety policy chain</strong><span class='pill pill-amber'>确认后执行</span></div><div class='decision-meta'>置信度: 91.7% · measured</div><div class='bar-track'><div class='bar-fill' style='width:91.7%'></div></div></div>
-  <div class="footer"><span>Azure Agent Infra Cycle #377 · 7 页基准卡组</span><span>2 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #378 · 7 页基准卡组</span><span>2 / 7</span></div>
 </article>
 
 <article class="card">
@@ -96,7 +97,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
     <thead><tr><th>SCENARIO</th><th>QUESTION/TASK</th><th>MODEL ANSWER</th><th>ACTION</th></tr></thead>
     <tbody><tr><td>Coding Sandbox</td><td>Need restore under 150ms and tool isolation for generated code?</td><td>Select E2B Firecracker path with APIM governance</td><td>✓ Act automatically</td></tr><tr><td>Multi-tenant SaaS Gateway</td><td>Need tenant budget/rate control and MCP telemetry?</td><td>Select APIM AI Gateway + AKSClaw policy chain</td><td>✓ Confirm</td></tr><tr><td>Financial Zero-Trust</td><td>Need auditable egress control + hard isolation boundary?</td><td>Select Kata/Firecracker + private networking + attestation</td><td>✓ Confirm</td></tr><tr><td>Edge Browser Cluster</td><td>Reverse options and prefer lowest ops-only score?</td><td>Modal first decision in reversed option order</td><td>✕ Send to a human</td></tr></tbody>
   </table>
-  <div class="footer"><span>Azure Agent Infra Cycle #377 · 7 页基准卡组</span><span>3 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #378 · 7 页基准卡组</span><span>3 / 7</span></div>
 </article>
 
 <article class="card">
@@ -104,27 +105,27 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
   <h2>契约输入到校验流程全程确定性，所有坐标均可追溯。</h2>
   <div class="grid2">
     <section class="pane pane-dark"><h3>契约输入 ↓ 渲染提示</h3><div class="code">{
-  "cycle": 377,
+  "cycle": 378,
   "inputs": {
     "runtime_paths": 4,
     "throughput_paths": 4,
     "policy_checks": 3,
     "labels": "measured / synthetic / anonymized_reported"
   },
-  "fetched_date": "2026-11-01",
-  "sources": ["AI Gateway Learn", "APIM 2026-06 changelog", "Firecracker/Kata/Wasmtime/E2B releases"]
+  "fetched_date": "2026-11-02",
+          "sources": ["AI Gateway Learn", "APIM 2026-06 changelog", "Firecracker/Kata/Wasmtime/E2B releases", "Cloudflare Browser Rendering docs"]
 }
 ↓
 rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
     <section class="pane pane-dark"><h3>校验流程</h3><div class="code">verify(card_coordinates):
-  load evidence/cycle-377-benchmark.json
+  load evidence/cycle-378-benchmark.json
   assert all bars width = value/max(value_set)
   assert misses carry ✕ in Card 3 matrix
   assert paired latency bars use latency_load_tiers
   assert labels in {measured, synthetic, anonymized_reported}
   assert csp == "default-src 'none'; style-src 'unsafe-inline'"</div></section>
   </div>
-  <div class="footer"><span>Azure Agent Infra Cycle #377 · 7 页基准卡组</span><span>4 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #378 · 7 页基准卡组</span><span>4 / 7</span></div>
 </article>
 
 <article class="card">
@@ -136,7 +137,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   </table>
   <h3>单会话成本参考</h3>
   <table><thead><tr><th>路径</th><th>美元/会话</th><th>Label</th></tr></thead><tbody><tr><td>E2B D96as_v7 Firecracker</td><td>$0.00490</td><td>synthetic</td></tr><tr><td>AKS Kata Pod VM fleet</td><td>$0.00996</td><td>synthetic</td></tr><tr><td>ACA Dynamic Sessions</td><td>$0.01100</td><td>synthetic</td></tr><tr><td>Wasm component sandbox</td><td>$0.00222</td><td>synthetic</td></tr></tbody></table>
-  <div class="footer"><span>Azure Agent Infra Cycle #377 · 7 页基准卡组</span><span>5 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #378 · 7 页基准卡组</span><span>5 / 7</span></div>
 </article>
 
 <article class="card">
@@ -144,7 +145,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   <h2>主路径在 10x 负载下保持亚 200ms，基线路径仍高于 1.4s。</h2>
   <div class='lat-row'><div class='lat-tier'>1x load · anonymized_reported</div><div class='pair'><span>主路径 108ms</span><div class='pair-track'><div class='pair-primary' style='width:7.61%'></div></div></div><div class='pair'><span>基线路径 920ms</span><div class='pair-track'><div class='pair-base' style='width:64.79%'></div></div></div></div><div class='lat-row'><div class='lat-tier'>5x load · synthetic</div><div class='pair'><span>主路径 146ms</span><div class='pair-track'><div class='pair-primary' style='width:10.28%'></div></div></div><div class='pair'><span>基线路径 1120ms</span><div class='pair-track'><div class='pair-base' style='width:78.87%'></div></div></div></div><div class='lat-row'><div class='lat-tier'>10x load · anonymized_reported</div><div class='pair'><span>主路径 178ms</span><div class='pair-track'><div class='pair-primary' style='width:12.54%'></div></div></div><div class='pair'><span>基线路径 1420ms</span><div class='pair-track'><div class='pair-base' style='width:100.00%'></div></div></div></div>
   <div class="readiness">成对柱形坐标 = value / max(latency_load_tiers)，直接取自证据数据。</div>
-  <div class="footer"><span>Azure Agent Infra Cycle #377 · 7 页基准卡组</span><span>6 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #378 · 7 页基准卡组</span><span>6 / 7</span></div>
 </article>
 
 <article class="card">
@@ -158,8 +159,8 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
     <strong>就绪度 / 许可 / 溯源</strong><br>
     就绪度：具备策略门控与人工兜底的生产候选方案。<br>
     许可：仓库自有仿真产物，无外部脚本与字体依赖。<br>
-    溯源：抓取日期 2026-11-01，标签 measured / synthetic / anonymized_reported。
+    溯源：抓取日期 2026-11-02，标签 measured / synthetic / anonymized_reported。
   </section>
-  <div class="footer"><span>Azure Agent Infra Cycle #377 · 7 页基准卡组</span><span>7 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #378 · 7 页基准卡组</span><span>7 / 7</span></div>
 </article>
 </main></body></html>
