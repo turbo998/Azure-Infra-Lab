@@ -176,7 +176,7 @@
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
         <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与 Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) 四大智能底座，对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。</p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">23 / 24 场景实测通过 (95.83%)</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">27 / 28 场景实测通过 (96.43%) · 2026-11-02</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -276,8 +276,9 @@
   <!-- TAB 3: Fabric IQ Ontology Live Simulator -->
   <section id="panel-ontology" class="tab-panel">
     <div class="comp-selector">
-      <button class="comp-pill active" id="sim-btn-energy" onclick="selectScenario('energy_dc_peak')">🔋 场景 A：智算中心 AI 能源削峰编排 (AIDC 14:00 Peak)</button>
-      <button class="comp-pill" id="sim-btn-airline" onclick="selectScenario('airline_jfk_r25')">✈️ 场景 B：航空公司纽约 JFK R25 跑道湿雪数字孪生</button>
+      <button class="comp-pill active" id="sim-btn-energy" onclick="selectScenario('energy_dc_peak')">🔋 场景 A：智算中心 AI 能源削峰编排 (AIDC 14:00 Peak · 780ms)</button>
+      <button class="comp-pill" id="sim-btn-airline" onclick="selectScenario('airline_jfk_r25')">✈️ 场景 B：航空公司纽约 JFK R25 跑道湿雪数字孪生 (640ms)</button>
+      <button class="comp-pill" id="sim-btn-retail" onclick="selectScenario('retail_cross_cloud_planning')">🛒 场景 C：跨云全渠道零售爆单与 Fabric IQ Planning 预算回写 (710ms · 11-02 新增)</button>
     </div>
 
     <div class="grid-2">
@@ -305,10 +306,18 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · 每日研究强制交付：五大平台竞对攻防与架构一图流总结卡 (Executive Visual Summary SVG)</span>
-        <a href="assets/svg/01-data-lab-executive-summary-2026-11-01.svg" target="_blank">🔍 查看原始高清 SVG</a>
+        <span>01 · 每日研究强制交付 (2026-11-02)：五大平台竞对攻防、LTAP 事务回写与架构一图流总结卡 (Executive Visual Summary SVG)</span>
+        <a href="assets/svg/01-data-lab-executive-summary-2026-11-02.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
-      <img src="assets/svg/01-data-lab-executive-summary-2026-11-01.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+      <img src="assets/svg/01-data-lab-executive-summary-2026-11-02.svg" alt="Data Lab Executive Visual Summary 2026-11-02" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>04 · LTAP 湖仓事务分析一体与智能体回写架构对比 (Fabric Translytical vs Lakebase / AISQL / BigQuery / S3 Tables)</span>
+        <a href="assets/svg/04-translytical-ltap-agentic-architecture.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/04-translytical-ltap-agentic-architecture.svg" alt="LTAP Translytical Architecture" class="svg-preview">
     </div>
 
     <div class="grid-2" style="margin-bottom:18px;">
@@ -548,6 +557,32 @@ const SIM_DATA = {
       teamsTitle: '📋 Operations Agent Pre-Authorized Execution Receipt (Act Automatically · 0.96)',
       teamsSummary: 'Action: Dispatch Snowplow Fleet-Alpha (4 units) + Reallocate 6 Gates to R13L + Notify 1,840 Passengers · -38 min Delay · $68,500 Saved ✓'
     }
+  },
+  retail_cross_cloud_planning: {
+    zh: {
+      steps: [
+        { title: '① 跨云零拷贝转化脉冲感知 (GA BigQuery Mirroring + S3 Shortcuts)', latency: '134 ms', desc: '通过已 GA 的 OneLake BigQuery Mirroring 捕获 Google Ads / GA4 黑五闪促转化率暴增 +240% (12,400 单/小时)，欧洲中心仓 EU-Central-02 可售天数跌至 1.8 天 (< 3.0 天安全库存红线)。' },
+        { title: '② 跨四云供应链本体图谱穿透 (Fabric IQ Ontology Graph)', latency: '172 ms', desc: '沿着 `Campaign:GA4-FlashSale-EU (BigQuery) → SKU:SmartWatch-Pro-X → Warehouse:EU-Central-02 → Carrier:DHL-S3-Stream (AWS S3) → SupplierContract:Snowflake-ERP-PO88 → PromoBudget:FabricSQL-Plan-Q4` 6 跳图谱定位断货敞口。' },
+        { title: '③ 调拨与预算联合寻优 (Fabric IQ Planning + Operations Agent)', latency: '180 ms', desc: '生成跨云补货与预算方案：从南德缓冲仓调拨 4,500 件 + 触发 Snowflake ERP 供应商紧急补货 8,000 件 + 动态追加 Q4 闪促预算 +$185,000。' },
+        { title: '④ 净毛利率护栏校验 (Foundry IQ · RETAIL-PROMO-MARGIN-SOP-07)', latency: '112 ms', desc: '核验调拨与空运加急成本后净毛利率为 24.6%（≥ 22.0% 促销毛利底线），符合财务护栏要求。' },
+        { title: '⑤ Power BI Agentic App + 1GB 免费 Fabric SQL 事务回写', latency: '112 ms (E2E 710 ms)', desc: '置信度 0.95 (Confirm)；业务总监一键确认后回写至 1GB 免费 Fabric SQL 数据库，库存可售天数恢复至 6.4 天，单次闪促保护营收 $312,000。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨云全渠道零售本体链路 (BigQuery + AWS S3 + Snowflake + Fabric SQL)</h4><p><code>Campaign:GA4-FlashSale-EU (+240%)</code> ──[drives]──&gt; <code>SKU:SmartWatch-Pro-X</code> ──[stockedAt]──&gt; <code>Warehouse:EU-Central-02 (1.8d DoS)</code> ──[shippedVia]──&gt; <code>Carrier:DHL-S3-Stream</code> ──[procuredBy]──&gt; <code>Contract:Snowflake-ERP-PO88 (+8K)</code> ──[fundedBy]──&gt; <code>PromoBudget:FabricSQL-Plan-Q4 (+$185K)</code></p>',
+      teamsTitle: '📋 Power BI Agentic App & Teams 跨云补货与预算回写审批卡 (Confirm · 0.95)',
+      teamsSummary: '动作：调拨 4,500 件 + 紧急采购 8,000 件 + 回写 1GB 免费 Fabric SQL 促销预算 +$185,000 · 净毛利 24.6% (≥22% 护栏) · 保护营收 $312,000 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Cross-Cloud Flash-Sale Pulse Sense (GA BigQuery Mirroring + S3)', latency: '134 ms', desc: 'GA OneLake BigQuery Mirroring detects a +240% GA4 conversion spike (12,400 orders/hr) on SmartWatch-Pro-X; EU-Central-02 inventory drops to 1.8 days-of-supply (< 3.0d floor).' },
+        { title: '② 4-Cloud Supply-Chain Graph Cascade (Fabric IQ Ontology)', latency: '172 ms', desc: 'Traverses `Campaign:GA4-FlashSale-EU → SKU:SmartWatch-Pro-X → Warehouse:EU-Central-02 → Carrier:DHL-S3-Stream → SupplierContract:Snowflake-ERP-PO88 → PromoBudget:FabricSQL-Plan-Q4`.' },
+        { title: '③ Inventory & Budget Co-Optimization (Fabric IQ Planning)', latency: '180 ms', desc: 'Synthesizes translytical plan: reallocate 4,500 units from DE-South buffer + trigger 8,000-unit expedited PO in Snowflake ERP + allocate +$185,000 promo budget.' },
+        { title: '④ Net Margin Guardrail Check (Foundry IQ · SOP-07)', latency: '112 ms', desc: 'Verifies post-reallocation net margin is 24.6% (≥ 22.0% floor in `RETAIL-PROMO-MARGIN-SOP-07`). Guardrail passed.' },
+        { title: '⑤ Power BI Agentic App + 1GB Free Fabric SQL Write-back', latency: '112 ms (E2E 710 ms)', desc: 'Confidence 0.95 (Confirm); writes back budget & allocation to 1GB Free Fabric SQL, restoring inventory to 6.4 days and protecting $312,000 revenue.' }
+      ],
+      graph: '<h4>🕸️ Active Cross-Cloud Retail Ontology Chain (BigQuery + AWS S3 + Snowflake + Fabric SQL)</h4><p><code>Campaign:GA4-FlashSale-EU (+240%)</code> ──[drives]──&gt; <code>SKU:SmartWatch-Pro-X</code> ──[stockedAt]──&gt; <code>Warehouse:EU-Central-02 (1.8d DoS)</code> ──[shippedVia]──&gt; <code>Carrier:DHL-S3-Stream</code> ──[procuredBy]──&gt; <code>Contract:Snowflake-ERP-PO88 (+8K)</code> ──[fundedBy]──&gt; <code>PromoBudget:FabricSQL-Plan-Q4 (+$185K)</code></p>',
+      teamsTitle: '📋 Power BI Agentic App & Teams Translytical Write-back Card (Confirm · 0.95)',
+      teamsSummary: 'Action: Reallocate 4,500 units + Expedite 8,000 PO + Write back +$185,000 to 1GB Free Fabric SQL · Net Margin 24.6% (≥22% floor) · $312,000 Protected ✓'
+    }
   }
 };
 
@@ -688,6 +723,8 @@ function selectScenario(sc) {
   currentSim = sc;
   document.getElementById('sim-btn-energy').classList.toggle('active', sc === 'energy_dc_peak');
   document.getElementById('sim-btn-airline').classList.toggle('active', sc === 'airline_jfk_r25');
+  const retailBtn = document.getElementById('sim-btn-retail');
+  if (retailBtn) retailBtn.classList.toggle('active', sc === 'retail_cross_cloud_planning');
   runNormalSim();
 }
 

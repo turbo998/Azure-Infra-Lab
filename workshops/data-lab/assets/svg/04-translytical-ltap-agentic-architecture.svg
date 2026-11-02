@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="headGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="860" fill="url(#bg4)"/>
+  <rect x="24" y="20" width="1392" height="820" rx="20" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="44" y="38" width="1352" height="82" rx="14" fill="#131F38" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="64" y="54" width="230" height="24" rx="12" fill="url(#headGrad4)"/>
+  <text x="179" y="70" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">LTAP &amp; TRANSLYTICAL ARCHITECTURE</text>
+  <text x="310" y="71" fill="#F8FAFC" font-size="21" font-weight="800">湖仓事务分析一体 (LTAP) 与智能体回写架构对比：Fabric Translytical vs 四大云竞对</text>
+  <text x="64" y="102" fill="#94A3B8" font-size="13">打通「实时感知 → 本体推理 → 预算/计划仿真 → 事务库回写 → DirectLake 秒级刷新」完整闭环 (2026-11-02)</text>
+
+  <!-- Left Main Box: Microsoft Fabric Translytical & Planning Closed Loop -->
+  <rect x="44" y="138" width="760" height="450" rx="14" fill="#111C33" stroke="#2563EB" stroke-width="1.8"/>
+  <text x="64" y="168" fill="#60A5FA" font-size="15" font-weight="800">A · Microsoft Fabric 原生 Translytical 闭环架构 (人 + 智能体 + 事务回写零割裂)</text>
+
+  <!-- Step 1: Multi-Cloud Zero-ETL Ingress -->
+  <rect x="64" y="186" width="215" height="175" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="80" y="210" fill="#93C5FD" font-size="12.5" font-weight="800">① 跨云零拷贝与实时流接入</text>
+  <text x="80" y="232" fill="#E2E8F0" font-size="11.5">• OneLake BigQuery Mirroring (GA)</text>
+  <text x="80" y="252" fill="#E2E8F0" font-size="11.5">• Snowflake Mirroring + Ossie</text>
+  <text x="80" y="272" fill="#E2E8F0" font-size="11.5">• S3 Shortcuts + Unity Catalog 直读</text>
+  <text x="80" y="292" fill="#E2E8F0" font-size="11.5">• Eventstream → Eventhouse KQL</text>
+  <text x="80" y="316" fill="#34D399" font-size="11" font-weight="700">✓ OneLake 行/列/表细粒度安全 GA</text>
+  <text x="80" y="336" fill="#34D399" font-size="11" font-weight="700">✓ Materialized Lake Views GA</text>
+
+  <!-- Step 2: Fabric IQ Ontology & Planning -->
+  <rect x="298" y="186" width="230" height="175" rx="10" fill="#172554" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="314" y="210" fill="#60A5FA" font-size="12.5" font-weight="800">② Fabric IQ 本体与 Planning 引擎</text>
+  <text x="314" y="232" fill="#F8FAFC" font-size="11.5">• 2000万+ Power BI 语义模型一键升级</text>
+  <text x="314" y="252" fill="#F8FAFC" font-size="11.5">• Entity + Relationship + Rule 图谱</text>
+  <text x="314" y="272" fill="#C084FC" font-size="11.5" font-weight="700">• Fabric IQ Planning (Preview)：</text>
+  <text x="314" y="290" fill="#E2E8F0" font-size="11">  统一历史实绩、实时流与预算/预测目标</text>
+  <text x="314" y="314" fill="#34D399" font-size="11" font-weight="700">✓ Foundry IQ SOP 护栏 (净毛利/温度)</text>
+  <text x="314" y="334" fill="#34D399" font-size="11" font-weight="700">✓ M365 Copilot Chat/Cowork $0 Token</text>
+
+  <!-- Step 3: Translytical Write-back & Execution -->
+  <rect x="546" y="186" width="238" height="175" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="562" y="210" fill="#34D399" font-size="12.5" font-weight="800">③ 事务回写与全栈应用闭环</text>
+  <text x="562" y="232" fill="#F8FAFC" font-size="11.5">• Power BI Agentic App Creation</text>
+  <text x="562" y="252" fill="#34D399" font-size="11.5" font-weight="700">• 附赠 1GB 免费 Fabric SQL 数据库</text>
+  <text x="562" y="272" fill="#F8FAFC" font-size="11.5">• 开源 Rayfin SDK/CLI (TS + PG)</text>
+  <text x="562" y="292" fill="#F8FAFC" font-size="11.5">• Azure SQL Hyperscale 192 vCore</text>
+  <text x="562" y="312" fill="#F8FAFC" font-size="11.5">  + 原生 DiskANN 向量索引 (GA)</text>
+  <text x="562" y="336" fill="#60A5FA" font-size="11" font-weight="700">✓ 自动镜像回 OneLake → DirectLake</text>
+
+  <!-- Closed-Loop Feedback Banner inside Fabric Box -->
+  <rect x="64" y="378" width="720" height="192" rx="10" fill="#0B1324" stroke="#4F46E5" stroke-width="1.2"/>
+  <text x="82" y="404" fill="#C7D2FE" font-size="13" font-weight="800">🔄 端到端 710ms 跨云零售爆单与预算回写实测轨迹 (`DL-26` · `retail_cross_cloud_planning`)</text>
+  <text x="82" y="428" fill="#E2E8F0" font-size="11.5">1. [感知 134ms] BigQuery Mirroring 捕获海外大促 GA4 转化率暴增 +240% (12,400 单/小时)，EU-Central-02 仓存跌至 1.8 天 (&lt; 3.0 天阈值)</text>
+  <text x="82" y="450" fill="#E2E8F0" font-size="11.5">2. [图谱 172ms] Ontology 穿透关联 Snowflake ERP 采购合同 PO88 与 AWS S3 物流轨迹，识别 DE-South 缓冲仓有 4,500 件可调拨库存</text>
+  <text x="82" y="472" fill="#E2E8F0" font-size="11.5">3. [规划与护栏 284ms] Operations Agent 联合 Fabric IQ Planning 生成方案：调拨 4,500 件 + 紧急补单 8,000 件 + 追加 Q4 促销预算 +$185,000</text>
+  <text x="82" y="494" fill="#E2E8F0" font-size="11.5">   Foundry IQ 检索《RETAIL-PROMO-MARGIN-SOP-07》校验调拨后净毛利率 24.6% ≥ 22.0% 红线，合规通过</text>
+  <text x="82" y="518" fill="#34D399" font-size="11.5" font-weight="700">4. [回写与审计 120ms] 业务总监在 Power BI Agentic App 一键批准 → 写入 1GB 免费 Fabric SQL → DirectLake 秒级刷新库存恢复至 6.4 天 (护航 $312K 营收)</text>
+  <text x="82" y="546" fill="#94A3B8" font-size="11">治理平面：Microsoft Agent 365 + Entra Agent ID + Purview 细粒度行/列标签贯通 Power BI / Excel / Teams</text>
+
+  <!-- Right Box: 4 Competitors LTAP & Operational Architecture Comparison -->
+  <rect x="820" y="138" width="576" height="450" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="840" y="168" fill="#F97316" font-size="15" font-weight="800">B · 四大竞对 LTAP 与业务回写能力横向拆解</text>
+
+  <!-- Databricks Lakebase -->
+  <rect x="840" y="186" width="536" height="92" rx="9" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="856" y="208" fill="#F97316" font-size="12.5" font-weight="800">Databricks · Azure Databricks Lakebase (GA) + Agent Bricks</text>
+  <text x="856" y="228" fill="#E2E8F0" font-size="11">• 核心亮点：基于 Serverless Postgres 的 LTAP 数据库，支持像 Git 一样分支克隆 (Branching) 供 Agent 实验状态管理</text>
+  <text x="856" y="246" fill="#E2E8F0" font-size="11">• 短板边界：偏向代码开发者构建自定义 Python Agent Memory；缺乏面向业务人员的无代码报表内嵌预算回写与免费 1GB SQL</text>
+  <text x="856" y="264" fill="#34D399" font-size="11" font-weight="700">→ 架构师策略：用 Lakebase 做复杂代码 Agent 状态沙盒；用 Fabric SQL + Power BI Agentic App 做全员业务审批与计划回写</text>
+
+  <!-- Snowflake AISQL & Hybrid Tables -->
+  <rect x="840" y="288" width="536" height="92" rx="9" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="856" y="310" fill="#38BDF8" font-size="12.5" font-weight="800">Snowflake · Cortex AISQL (GA) + Semantic View Autopilot + Hybrid Tables</text>
+  <text x="856" y="330" fill="#E2E8F0" font-size="11">• 核心亮点：AISQL 支持在 SQL 中直接处理文本/图像/音频，Semantic Studio 提供 Verified Queries 审计</text>
+  <text x="856" y="348" fill="#E2E8F0" font-size="11">• 短板边界：Streamlit + Hybrid Tables 常驻运行持续消耗高额 Credit；缺乏原生亚秒级 KQL 时序库与 M365 免 Token 入口</text>
+  <text x="856" y="366" fill="#34D399" font-size="11" font-weight="700">→ 架构师策略：通过 Apache Ossie 接入 Snowflake 语义视图，在 Fabric 侧以 $0 额外 Copilot Token 加上 1GB 免费 SQL 完成回写</text>
+
+  <!-- GCP BigQuery Fluid Scaling -->
+  <rect x="840" y="390" width="536" height="88" rx="9" fill="#0F172A" stroke="#34D399" stroke-width="1.2"/>
+  <text x="856" y="412" fill="#34D399" font-size="12.5" font-weight="800">GCP · BigQuery Fluid Scaling + Conversational Analytics API + Spanner/AlloyDB</text>
+  <text x="856" y="432" fill="#E2E8F0" font-size="11">• 核心亮点：Fluid Scaling 实现按秒自动扩缩容，Conversational API 支持 dbt/MetricFlow 元数据与 HIPAA</text>
+  <text x="856" y="450" fill="#E2E8F0" font-size="11">• 短板边界：BigQuery 本身无低延迟行级 OLTP 回写，需跨服务联邦 AlloyDB/Spanner 并手工编码写回逻辑</text>
+  <text x="856" y="466" fill="#34D399" font-size="11" font-weight="700">→ 架构师策略：用已 GA 的 OneLake BigQuery Mirroring 零拷贝吸入营销数据，在 Fabric IQ Planning 内闭环回写</text>
+
+  <!-- AWS S3 Tables + Redshift -->
+  <rect x="840" y="488" width="536" height="84" rx="9" fill="#0F172A" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="856" y="510" fill="#FBBF24" font-size="12.5" font-weight="800">AWS · S3 Tables (Lake Formation) + Redshift Serverless + Aurora Zero-ETL</text>
+  <text x="856" y="530" fill="#E2E8F0" font-size="11">• 核心亮点：S3 Tables 原生托管 Iceberg/Hudi/Delta，Redshift Serverless 支持按秒扩缩容与 SageMaker 双向推理</text>
+  <text x="856" y="548" fill="#E2E8F0" font-size="11">• 短板边界：Aurora → Redshift Zero-ETL 是单向只读复制，无法从 QuickSight 报表直接安全回写业务事务并同步本体</text>
+
+  <!-- Bottom Row: LTAP & Translytical Selection Matrix -->
+  <rect x="44" y="604" width="1352" height="216" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="64" y="632" fill="#60A5FA" font-size="14" font-weight="800">C · AI Solution Architect 事务分析一体 (LTAP) 选型速查矩阵 (DL-19 / DL-20 / DL-25 / DL-26)</text>
+
+  <rect x="64" y="646" width="318" height="154" rx="10" fill="#0F172A" stroke="#2563EB" stroke-width="1.2"/>
+  <text x="80" y="668" fill="#60A5FA" font-size="12.5" font-weight="800">1. 业务报表内嵌审批、预测与预算调整</text>
+  <text x="80" y="690" fill="#34D399" font-size="11.5" font-weight="700">推荐：Power BI Agentic App + 1GB 免费 Fabric SQL</text>
+  <text x="80" y="710" fill="#E2E8F0" font-size="11">• 配套 Fabric IQ Planning 双向回写语义层</text>
+  <text x="80" y="728" fill="#E2E8F0" font-size="11">• Pro/PPU/Fabric 用户享 1GB 免费 SQL 容量</text>
+  <text x="80" y="746" fill="#94A3B8" font-size="11">• 零代码/自然语言即可生成带权限护栏的业务应用</text>
+
+  <rect x="396" y="646" width="318" height="154" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="412" y="668" fill="#C084FC" font-size="12.5" font-weight="800">2. 全栈企业级定制数据智能体应用</text>
+  <text x="412" y="690" fill="#34D399" font-size="11.5" font-weight="700">推荐：开源 Rayfin SDK/CLI + Fabric SQL / PG</text>
+  <text x="412" y="710" fill="#E2E8F0" font-size="11">• 支持 GitHub Copilot / Claude Code 一条命令脚手架</text>
+  <text x="412" y="728" fill="#E2E8F0" font-size="11">• 内置 TypeScript 后端函数、Secret Store 与 PG 状态</text>
+  <text x="412" y="746" fill="#94A3B8" font-size="11">• 适合软件工程团队交付生产级多租户 SaaS 数据应用</text>
+
+  <rect x="728" y="646" width="318" height="154" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="744" y="668" fill="#34D399" font-size="12.5" font-weight="800">3. 超高并发核心交易库 + 亿级向量 RAG</text>
+  <text x="744" y="690" fill="#34D399" font-size="11.5" font-weight="700">推荐：Azure SQL Hyperscale 192 vCore + DiskANN</text>
+  <text x="744" y="710" fill="#E2E8F0" font-size="11">• 192 vCore 算力上限与原生 DiskANN 向量索引双双 GA</text>
+  <text x="744" y="728" fill="#E2E8F0" font-size="11">• 由 Fabric Database Hub (Preview) 统一监控风险与性能</text>
+  <text x="744" y="746" fill="#94A3B8" font-size="11">• 实时同步至 OneLake，兼顾严苛 ACID 事务与湖仓分析</text>
+
+  <rect x="1060" y="646" width="316" height="154" rx="10" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1076" y="668" fill="#F97316" font-size="12.5" font-weight="800">4. 代码优先多 Agent 实验分支与特征沙盒</text>
+  <text x="1076" y="690" fill="#F97316" font-size="11.5" font-weight="700">推荐：Azure Databricks Lakebase + OneLake 共存</text>
+  <text x="1076" y="710" fill="#E2E8F0" font-size="11">• 利用 Lakebase Postgres Branching 隔离多路实验状态</text>
+  <text x="1076" y="728" fill="#E2E8F0" font-size="11">• 利用 Unity Catalog 直读 OneLake (Preview) 共享底座</text>
+  <text x="1076" y="746" fill="#94A3B8" font-size="11">• 避免用高成本 DBU 承载全员日常 BI 报表与普通表单回写</text>
+</svg>

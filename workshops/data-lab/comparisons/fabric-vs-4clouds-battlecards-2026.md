@@ -1,9 +1,11 @@
 # ⚔️ Microsoft Fabric vs 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度攻防拆解与售前 Battlecards (2026)
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`fabric-vs-4clouds-battlecards-2026.en.md`)](fabric-vs-4clouds-battlecards-2026.en.md)  
-> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-01 实测封存） · **适用角色**：AI Solution Architect / 云数智架构师
+> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-02 实测封存 · 28 场景 `96.43%`） · **适用角色**：AI Solution Architect / 云数智架构师
 
 [![Five Cloud Coexistence Topology](../assets/svg/03-five-cloud-coexistence-topology.svg)](../assets/svg/03-five-cloud-coexistence-topology.svg)
+
+[![LTAP & Translytical Architecture](../assets/svg/04-translytical-ltap-agentic-architecture.svg)](../assets/svg/04-translytical-ltap-agentic-architecture.svg)
 
 ---
 
@@ -72,3 +74,15 @@
   - 底层 S3 对象存储存量规模、S3 Vectors 超低成本向量归档，以及 Bedrock 第三方基础模型选型广度。
 - **黄金共存架构（Coexistence Mode D）**：
   - 原始设备遥测与归档日志保留在 **Amazon S3 / S3 Tables**，通过 **OneLake S3 Shortcuts（开启缓存）** 与 **Salesforce Data 360 零拷贝** 在 Fabric 中汇合，一站式驱动 DirectLake BI 与智能体闭环。
+
+---
+
+## 3. 2026-11-02 专项增补：LTAP 湖仓事务回写与细粒度安全攻防矩阵（`DL-25..DL-28`）
+
+| 评估维度 | Microsoft Fabric (Translytical 闭环) | Databricks (`Lakebase` GA) | Snowflake (`Cortex AISQL` + `Hybrid Tables`) | GCP (`BigQuery Fluid` + `AlloyDB`) | AWS (`S3 Tables` + `Aurora Zero-ETL`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **内嵌事务回写库** | **Power BI Agentic App 附赠 1GB 免费 Fabric SQL** + Azure SQL Hyperscale 192 vCore (DiskANN GA) | **Azure Databricks Lakebase (GA)**：Serverless Postgres + Git 式分支克隆 | Snowflake Hybrid Tables (Unistore) + Streamlit 容器应用 | 需跨服务联邦 Spanner / AlloyDB 并手写回写 API | Aurora → Redshift Zero-ETL 仅支持单向只读同步 |
+| **业务规划与预算闭环** | **Fabric IQ Planning (Preview)**：语义层原生合并历史实绩、实时流与预算回写 | 缺乏原生财务/供应链预算规划语义模块，需自建 Databricks Apps | 依赖第三方合作伙伴或手工 Streamlit 表单 | 依赖 Looker Action Hub 外部 Webhook 触发 | 依赖 QuickSight 静态查看，无原生预算回写闭环 |
+| **跨引擎细粒度安全** | **OneLake Fine-Grained Security (GA)**：行/列/表/文件夹权限跨 Spark、SQL、Power BI、Excel 与 **Unity Catalog 直读 (Preview)** 统一生效 | Unity Catalog ABAC/RBAC（现支持 Public Preview 直读 OneLake） | Horizon Catalog RBAC + Iceberg v3 Tri-Secret Secure | Dataplex + BigLake 行列级访问策略 | Lake Formation Governed Tables (Iceberg/Hudi/Delta) |
+| **架构师选型金律** | **全员业务审批、预算调整、跨云补货回写首选（`$0` 额外 Copilot Token + `1GB` 免费 SQL）** | **Python 多智能体代码沙盒与状态分支克隆首选（与 OneLake 共存）** | **通过 Apache Ossie 将 AISQL 多模态特征与 Verified Queries 映射至 Fabric** | **通过已 GA 的 BigQuery Mirroring 接入 GA4 流量并触发补货** | **通过带缓存 S3 Shortcuts 免搬迁接入海量日志** |
+

@@ -30,13 +30,13 @@
 
 ---
 
-### 场景三：跨云全渠道零售与出海电商（GCP BigQuery + Snowflake + Fabric 共存）
-- **客户痛点**：海外广告投放数据在 **GCP BigQuery (Google Ads / GA4)**，财务结算在 **Snowflake**，而供应链与全球 2,000 名业务人员日常办公在 **Microsoft 365 / Teams / Power BI**。各部门指标口径打架，跨云 ETL 管道脆弱且昂贵。
-- **推荐架构（共存模式 A + C）**：
-  - 启用 **已正式 GA 的 OneLake BigQuery Mirroring** 与 **OneLake Snowflake Mirroring**，零 ETL 将营销转化与财务结算镜像至 OneLake。
-  - 利用 **Apache Ossie** 开放语义标准对齐 GMV、净毛利与库存周转天数口径。
-  - 业务人员在 **M365 Copilot Chat / Cowork** 中以 **`$0` 额外 Token 成本**直接跨云问数，并利用 **Power BI Agentic App** 构建促销调价回写应用。
-- **量化业务 ROI**：省去 80% 跨云 ETL 维护工作量，500+ 用户月度 TCO 降低 **`47.6%–56.1%`**。
+### 场景三：跨云全渠道零售爆单与 Fabric IQ Planning 事务回写闭环（GCP BigQuery + Snowflake + AWS S3 + Fabric）
+- **客户痛点**：海外黑五闪促广告投放数据在 **GCP BigQuery (Google Ads / GA4)**，采购合同与财务结算在 **Snowflake**，跨境物流轨迹在 **AWS S3 Tables**，而全球 2,000 名业务人员日常办公在 **Microsoft 365 / Teams / Power BI**。大促爆单时库存断货响应滞后，跨云 ETL 管道脆弱且无法从报表直接修改预算。
+- **推荐架构（共存模式 A + C + D，对应仿真 `retail_cross_cloud_planning` / `DL-26`）**：
+  1. **跨云零拷贝感知 (`134 ms`)**：启用 **已正式 GA 的 OneLake BigQuery Mirroring**、**OneLake Snowflake Mirroring** 与 **S3 Shortcuts**，捕获旗舰单品 `SmartWatch-Pro-X` 转化率暴增 **`+240%`**（`12,400 单/小时`），欧洲中心仓可售天数跌至 **`1.8 天`**（`< 3.0 天` 阈值）。
+  2. **跨云本体穿透与 Planning 寻优 (`352 ms`)**：**Fabric IQ Ontology** 穿透 6 跳跨云实体链路，联合 **Fabric IQ Planning (Preview)** 生成方案：从南德缓冲仓调拨 **`4,500 件`** + 触发 Snowflake ERP 合同 `PO88` 紧急加单 **`8,000 件`** + 动态追加 Q4 促销预算 **`+$185,000`**。
+  3. **利润率护栏与 1GB 免费 SQL 回写 (`224 ms`)**：**Foundry IQ** 校验调拨后净毛利率 **`24.6% ≥ 22.0%`** 红线；业务总监在 **Power BI Agentic App** 中一键确认，直接回写至 **1GB 免费 Fabric SQL 数据库** 并通过 DirectLake 秒级刷新全员看板。
+- **量化业务 ROI**：端到端闭环 **`710 ms`**，可售库存恢复至 **`6.4 天`**，单次闪促规避断货损失 **`$312,000`**，500+ 用户月度 TCO 降低 **`47.6%–56.1%`**。
 
 ---
 

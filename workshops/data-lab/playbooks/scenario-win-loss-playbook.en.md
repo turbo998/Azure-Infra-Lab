@@ -30,13 +30,13 @@
 
 ---
 
-### Scenario 3: Cross-Cloud Omnichannel Retail (GCP BigQuery + Snowflake + Fabric Coexistence)
-- **Business Pain**: Marketing attribution lives in **GCP BigQuery (Google Ads / GA4)**, financial accounting lives in **Snowflake**, and 2,000 business users collaborate in **Microsoft 365 / Teams / Power BI**.
-- **Reference Architecture (Coexistence Modes A + C)**:
-  - Enable **GA OneLake BigQuery Mirroring** and **OneLake Snowflake Mirroring** for zero-ETL federation.
-  - Align metric definitions across engines using **Apache Ossie**.
-  - Empower employees to query governed metrics in **M365 Copilot Chat/Cowork at `$0` extra token cost** and build promotional write-back apps with **Power BI Agentic App Creation**.
-- **Quantified ROI**: Eliminates 80% of cross-cloud ETL maintenance and reduces 500-user monthly TCO by **`47.6%–56.1%`**.
+### Scenario 3: Cross-Cloud Omnichannel Retail Flash-Sale & Fabric IQ Planning Write-back (BigQuery + Snowflake + AWS S3 + Fabric)
+- **Business Pain**: Flash-sale marketing attribution lives in **GCP BigQuery (Google Ads / GA4)**, supplier POs and financial accounting live in **Snowflake**, carrier telemetry lives in **AWS S3 Tables**, and 2,000 business users operate in **Microsoft 365 / Teams / Power BI**.
+- **Reference Architecture (Coexistence Modes A + C + D · Simulation `retail_cross_cloud_planning` / `DL-26`)**:
+  1. **Zero-ETL Sense (`134 ms`)**: **GA OneLake BigQuery Mirroring**, **Snowflake Mirroring**, and **S3 Shortcuts** detect a **`+240%`** conversion surge (`12,400 orders/hr`) on `SmartWatch-Pro-X`, dropping `EU-Central-02` inventory to **`1.8 days-of-supply`** (`< 3.0d` floor).
+  2. **Ontology Graph & Planning Optimization (`352 ms`)**: **Fabric IQ Ontology** traverses the 6-hop cross-cloud graph and pairs with **Fabric IQ Planning (Preview)** to reallocate **`4,500 units`** from `DE-South`, trigger an **`8,000-unit`** emergency PO in Snowflake ERP, and allocate **`+$185,000`** in Q4 promo budget.
+  3. **Margin Guardrail & 1GB Free SQL Write-back (`224 ms`)**: **Foundry IQ** verifies post-reallocation net margin (**`24.6% >= 22.0%`**); merchandising lead approves in **Power BI Agentic App**, writing back to **1GB Free Fabric SQL** and refreshing DirectLake visuals.
+- **Quantified ROI**: **`710 ms`** end-to-end resolution, inventory restored to **`6.4 days`**, **`$312,000`** revenue protected per flash sale, and **`47.6%–56.1%`** lower 500-user monthly TCO.
 
 ---
 

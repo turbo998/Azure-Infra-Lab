@@ -81,20 +81,39 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["multi_agent_plan"]["gates_reallocated"], 6)
         self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
 
-    def test_scenario_matrix_24_cases_and_explicit_miss(self) -> None:
+    def test_retail_cross_cloud_planning_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("retail_cross_cloud_planning")
+        self.assertLess(sim["telemetry"]["days_of_supply_remaining"], sim["telemetry"]["min_safe_days_of_supply"])
+        self.assertEqual(sim["multi_agent_plan"]["reallocated_units_from_de_south"], 4500)
+        self.assertEqual(sim["multi_agent_plan"]["promo_budget_writeback_usd"], 185000)
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+
+    def test_scenario_matrix_28_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 24)
-        self.assertEqual(matrix["passed_scenarios"], 23)
+        self.assertEqual(matrix["total_scenarios"], 28)
+        self.assertEqual(matrix["passed_scenarios"], 27)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 95.83, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 96.43, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
 
+    def test_ltap_and_cross_cloud_2026_11_02_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-25", "DL-26", "DL-27", "DL-28"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Lakebase", by_id["DL-25"]["expected"])
+        self.assertIn("Fabric IQ Planning", by_id["DL-26"]["expected"])
+        self.assertIn("OneLake Fine-Grained Security", by_id["DL-27"]["expected"])
+        self.assertIn("Apache Ossie", by_id["DL-28"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
-        # First 4 governed ontology cases have <= 0.5 pt drift
+        # First 5 governed ontology cases have <= 0.5 pt drift
         for row in pert[:5]:
             self.assertLessEqual(abs(row["change_pts"]), 0.5)
         scaling = evaluate_scaling_latency()
@@ -108,7 +127,8 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 23)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 27)
+        self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

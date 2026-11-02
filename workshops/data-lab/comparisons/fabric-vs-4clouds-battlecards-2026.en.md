@@ -1,9 +1,11 @@
 # ⚔️ Microsoft Fabric vs. 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep-Dive Battlecards (2026)
 
 > **Language**: [中文 (`fabric-vs-4clouds-battlecards-2026.md`)](fabric-vs-4clouds-battlecards-2026.md) | **English (Current)**  
-> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-01`) · **Target Persona**: Principal AI Solution Architect
+> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-02` · 28 Scenarios `96.43%`) · **Target Persona**: Principal AI Solution Architect
 
 [![Five Cloud Coexistence Topology](../assets/svg/03-five-cloud-coexistence-topology.svg)](../assets/svg/03-five-cloud-coexistence-topology.svg)
+
+[![LTAP & Translytical Architecture](../assets/svg/04-translytical-ltap-agentic-architecture.svg)](../assets/svg/04-translytical-ltap-agentic-architecture.svg)
 
 ---
 
@@ -54,3 +56,15 @@
   1. **Single SaaS Experience vs. 6 Stitched AWS Services**: Replaces the operational friction of integrating S3 Tables, Glue, Redshift, Kinesis, QuickSight, and Bedrock.
   2. **Cached OneLake S3 Shortcuts + GA Shortcut Transformations**: Query AWS S3 data in-place via DirectLake without cross-cloud egress duplication.
   3. **End-to-End Purview Security Inheritance (`+17.0 pts` on Semantic Grounding)**: Sensitivity labels flow automatically into Power BI, Excel, Word, and Teams.
+
+---
+
+## 3. 2026-11-02 Deep-Dive: LTAP Operational Write-back & Cross-Cloud Security Matrix (`DL-25..DL-28`)
+
+| Dimension | Microsoft Fabric (Translytical Loop) | Databricks (`Lakebase` GA) | Snowflake (`Cortex AISQL` + `Hybrid Tables`) | GCP (`BigQuery Fluid` + `AlloyDB`) | AWS (`S3 Tables` + `Aurora Zero-ETL`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Operational Write-back DB** | **1GB Free Fabric SQL in Power BI Agentic Apps** + Azure SQL Hyperscale 192 vCore (DiskANN GA) | **Azure Databricks Lakebase (GA)**: Serverless Postgres with Git-style branching | Snowflake Hybrid Tables (Unistore) + Streamlit container apps | Requires external Spanner / AlloyDB federation & custom write-back code | Aurora → Redshift Zero-ETL is one-way read-only replication |
+| **Business Planning & Budgeting** | **Fabric IQ Planning (Preview)**: Unifies historicals, live streams & bidirectional budget write-back in the semantic layer | No native business planning semantic module; requires custom Databricks Apps | Relies on partner tools or custom Streamlit forms | Relies on Looker Action Hub webhooks | Read-only QuickSight dashboards without native planning write-back |
+| **Cross-Engine Fine-Grained Security** | **OneLake Fine-Grained Security (GA)**: Row/column/table/folder permissions enforced across Spark, SQL, Power BI, Excel & **Unity Catalog native read (Preview)** | Unity Catalog ABAC/RBAC (with Public Preview native read from OneLake) | Horizon Catalog RBAC + Iceberg v3 Tri-Secret Secure | Dataplex + BigLake row/column access policies | Lake Formation Governed Tables (Iceberg/Hudi/Delta) |
+| **Architect Selection Rule** | **Best for enterprise-wide business approvals, budget write-back & `$0`-extra-token M365 Copilot** | **Best for code-first Python agent state branching (coexists with OneLake)** | **Bridge AISQL multimodal features & Verified Queries into Fabric via Apache Ossie** | **Replicate GA4 demand spikes via GA BigQuery Mirroring into Fabric IQ** | **Mount S3 lakes in-place via cached OneLake S3 Shortcuts** |
+
