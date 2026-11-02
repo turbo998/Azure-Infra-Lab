@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="headerGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="860" fill="url(#bgGrad5)"/>
+  <rect x="24" y="20" width="1392" height="820" rx="20" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="44" y="36" width="1352" height="82" rx="14" fill="#131F38" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="64" y="50" width="236" height="24" rx="12" fill="url(#headerGrad5)"/>
+  <text x="182" y="66" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">ARCHITECTURE PILLAR 05 · 2026</text>
+  <text x="314" y="68" fill="#F8FAFC" font-size="20.5" font-weight="800">Project Osmos 自主数据工程 × 跨云 OBO 智能体身份 × Apache Ossie 开放语义互操作架构</text>
+  <text x="64" y="100" fill="#94A3B8" font-size="12.5">Autonomous Data Engineering (Osmos) · Agent 365 &amp; Databricks Supervisor OBO · Snowflake Semantic View Autopilot &amp; Apache Ossie YAML · Borderless Iceberg REST</text>
+
+  <!-- 3 Architectural Planes -->
+  <!-- Plane 1: Autonomous Data Engineering & Schema Healing -->
+  <rect x="44" y="136" width="436" height="450" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="64" y="154" width="396" height="34" rx="8" fill="#172554"/>
+  <text x="262" y="176" fill="#60A5FA" font-size="13.5" font-weight="800" text-anchor="middle">Plane 1 · 自主数据工程与漂移修复 (Project Osmos)</text>
+
+  <rect x="64" y="202" width="396" height="82" rx="10" fill="#0F172A" stroke="#2563EB" stroke-width="1.2"/>
+  <text x="80" y="224" fill="#93C5FD" font-size="12.5" font-weight="800">1. 多端协同入口 (Fabric · VS Code · GitHub Copilot · Claude Code)</text>
+  <text x="80" y="244" fill="#E2E8F0" font-size="11.5">• 工程师声明目标状态 + 质量护栏（而非手写百条 Spark 脚本）</text>
+  <text x="80" y="264" fill="#34D399" font-size="11" font-weight="700">• 支持跨小时/跨天长周期状态持久化，自动转换 Informatica/SSIS/CDC</text>
+
+  <rect x="64" y="296" width="396" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="80" y="318" fill="#34D399" font-size="12.5" font-weight="800">2. 实时 Schema 漂移自愈 (152ms ISO-20022 自动对齐)</text>
+  <text x="80" y="338" fill="#E2E8F0" font-size="11.5">• 捕获上游 AWS S3 / Kafka 字段漂移（如新增 `ultmtDbtrId`）</text>
+  <text x="80" y="356" fill="#E2E8F0" font-size="11.5">• 在 Custom Live Pools 上自动推导映射、执行回归校验并热更新</text>
+  <text x="80" y="374" fill="#60A5FA" font-size="11" font-weight="700">• 写入 OneLake Materialized Lake Views (GA 增量刷新与删除传播)</text>
+
+  <rect x="64" y="398" width="396" height="82" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="80" y="420" fill="#F97316" font-size="12.5" font-weight="800">3. 对比四大竞对 ETL 自动化能力</text>
+  <text x="80" y="440" fill="#CBD5E1" font-size="11">• vs Databricks Lakeflow Connect (1亿行/日免费层，偏向声明式 SQL/Py)</text>
+  <text x="80" y="458" fill="#CBD5E1" font-size="11">• vs Snowflake Openflow GA (NiFi 内核连接器，缺乏跨 IDE 自主修复 Agent)</text>
+  <text x="80" y="498" fill="#93C5FD" font-size="11.5" font-weight="700">核心优势：Osmos 共享 Lakehouse 权限 + 跨 Copilot/Codex/Claude 协同</text>
+  <rect x="64" y="514" width="396" height="54" rx="8" fill="#172554"/>
+  <text x="80" y="535" fill="#F8FAFC" font-size="11.5" font-weight="700">基准验证 (DL-29 &amp; 场景 D)：</text>
+  <text x="80" y="553" fill="#34D399" font-size="11">152ms 完成 ISO-20022 报文漂移修复，零中断支撑 $4.85M 反洗钱拦截</text>
+
+  <!-- Plane 2: Open Semantic & Catalog Interop -->
+  <rect x="502" y="136" width="436" height="450" rx="14" fill="#111C33" stroke="#A855F7" stroke-width="1.5"/>
+  <rect x="522" y="154" width="396" height="34" rx="8" fill="#2E1065"/>
+  <text x="720" y="176" fill="#C084FC" font-size="13.5" font-weight="800" text-anchor="middle">Plane 2 · 开放语义与跨云目录联邦 (Apache Ossie &amp; Iceberg v3)</text>
+
+  <rect x="522" y="202" width="396" height="88" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="538" y="224" fill="#C084FC" font-size="12.5" font-weight="800">1. Apache Ossie (原 OSI) 跨平台语义 YAML 互操作</text>
+  <text x="538" y="244" fill="#E2E8F0" font-size="11.5">• Snowflake Semantic View Autopilot (GA) 自动提炼共识指标</text>
+  <text x="538" y="262" fill="#E2E8F0" font-size="11.5">• 导出标准 Apache Ossie YAML → 一键映射至 Fabric IQ Ontology</text>
+  <text x="538" y="280" fill="#34D399" font-size="11" font-weight="700">• 终结多云 KPI 口径漂移（对比裸表直查 +14.2% 误差，Ossie 漂移 0.0%）</text>
+
+  <rect x="522" y="302" width="396" height="90" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="538" y="324" fill="#38BDF8" font-size="12.5" font-weight="800">2. Borderless Iceberg v3 REST Catalog 四方互通</text>
+  <text x="538" y="344" fill="#E2E8F0" font-size="11.5">• OneLake Table Read API (Preview) ↔ Unity Catalog 直读 OneLake</text>
+  <text x="538" y="362" fill="#E2E8F0" font-size="11.5">• AWS S3 Tables (Iceberg) ↔ GCP BigLake REST Catalog ↔ OneLake</text>
+  <text x="538" y="380" fill="#34D399" font-size="11" font-weight="700">• OneLake Outbound Access Protection：阻断外部快捷方式数据越权外泄</text>
+
+  <rect x="522" y="404" width="396" height="84" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="538" y="426" fill="#FBBF24" font-size="12.5" font-weight="800">3. OneLake IQ Sharing 跨组织智能体资产共享</text>
+  <text x="538" y="446" fill="#CBD5E1" font-size="11">• 不仅共享 Delta/Iceberg 表，同步共享 RDF 本体 + Markdown 指令</text>
+  <text x="538" y="464" fill="#CBD5E1" font-size="11">• 外部伙伴（EY / S&amp;P Global / TomTom）零 ETL 注入外部风险信号</text>
+
+  <rect x="522" y="514" width="396" height="54" rx="8" fill="#2E1065"/>
+  <text x="538" y="535" fill="#F8FAFC" font-size="11.5" font-weight="700">基准验证 (DL-31 &amp; DL-32)：</text>
+  <text x="538" y="553" fill="#C084FC" font-size="11">500ms 同步 Snowflake Verified Queries；540ms 跨 S3/BigLake/OneLake 治理</text>
+
+  <!-- Plane 3: Zero-Trust Agent Identity & Translytical Execution -->
+  <rect x="960" y="136" width="436" height="450" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="980" y="154" width="396" height="34" rx="8" fill="#064E3B"/>
+  <text x="1178" y="176" fill="#34D399" font-size="13.5" font-weight="800" text-anchor="middle">Plane 3 · 零信任智能体身份与向量回写 (Agent 365 &amp; DiskANN)</text>
+
+  <rect x="980" y="202" width="396" height="88" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="996" y="224" fill="#34D399" font-size="12.5" font-weight="800">1. Microsoft Agent 365 × Databricks Supervisor OBO 联邦</text>
+  <text x="996" y="244" fill="#E2E8F0" font-size="11.5">• Entra Agent ID + On-Behalf-Of (OBO) 委托认证：智能体始终继承调用者权限</text>
+  <text x="996" y="262" fill="#E2E8F0" font-size="11.5">• OneLake Fine-Grained Security (GA) 行/列掩码自动穿透至 MCP 工具调用</text>
+  <text x="996" y="280" fill="#60A5FA" font-size="11" font-weight="700">• 杜绝“高权限 Service Principal 智能体越权读取全库工资/反洗钱表”</text>
+
+  <rect x="980" y="302" width="396" height="90" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="996" y="324" fill="#60A5FA" font-size="12.5" font-weight="800">2. Azure SQL Hyperscale 192 vCore + DiskANN 向量回写</text>
+  <text x="996" y="344" fill="#E2E8F0" font-size="11.5">• 原生 DiskANN 向量索引 (GA) 毫秒级匹配历史相似欺诈团伙子图</text>
+  <text x="996" y="362" fill="#E2E8F0" font-size="11.5">• Database Hub (Preview) 统一监控 SQL / Postgres / Cosmos DB 健康度</text>
+  <text x="996" y="380" fill="#34D399" font-size="11" font-weight="700">• Power BI Agentic App + 1GB 免费 Fabric SQL 实时写入 SAR 冻结工单</text>
+
+  <rect x="980" y="404" width="396" height="84" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="996" y="426" fill="#F8FAFC" font-size="12.5" font-weight="800">3. Foundry IQ 规程护栏 + Microsoft Purview 端到端防泄漏</text>
+  <text x="996" y="446" fill="#CBD5E1" font-size="11">• 强制核验《FIN-AML-SAR-SOP-12》误报率 &lt; 3.0%（实测 1.4%）</text>
+  <text x="996" y="464" fill="#CBD5E1" font-size="11">• Purview 敏感度标签从 OneLake 自动继承至 Teams 审批卡与 Office 报告</text>
+
+  <rect x="980" y="514" width="396" height="54" rx="8" fill="#064E3B"/>
+  <text x="996" y="535" fill="#F8FAFC" font-size="11.5" font-weight="700">基准验证 (DL-19, DL-30 &amp; 场景 D)：</text>
+  <text x="996" y="553" fill="#34D399" font-size="11">660ms 端到端冻结 38 账户 $4.85M 可疑跨境电汇，挽回净损失 $4.62M</text>
+
+  <!-- Bottom Flow Bar: Scenario D End-to-End 5-Stage Trace -->
+  <rect x="44" y="604" width="1352" height="216" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <text x="64" y="632" fill="#34D399" font-size="14" font-weight="800">场景 D 端到端闭环实测轨迹：多云金融实时跨境电汇反欺诈与 Project Osmos 管道自愈 (`financial_multi_cloud_fraud` · 660ms · 挽回 $4,620,000)</text>
+
+  <rect x="64" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="78" y="670" fill="#60A5FA" font-size="12" font-weight="800">Stage 1 · KQL + S3 感知 (118ms)</text>
+  <text x="78" y="690" fill="#E2E8F0" font-size="11">• Eventhouse KQL 捕获 90 秒内 38 个</text>
+  <text x="78" y="706" fill="#E2E8F0" font-size="11">  合成身份账户突发 $4.85M 电汇</text>
+  <text x="78" y="724" fill="#E2E8F0" font-size="11">• OneLake S3 Shortcut (带出站保护)</text>
+  <text x="78" y="740" fill="#E2E8F0" font-size="11">  关联设备指纹，发现上游报文漂移</text>
+  <text x="78" y="776" fill="#34D399" font-size="11" font-weight="700">异常得分 0.97 (&gt; 0.85 阈值)</text>
+
+  <rect x="330" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="344" y="670" fill="#C084FC" font-size="12" font-weight="800">Stage 2 · Osmos 漂移自愈 (152ms)</text>
+  <text x="344" y="690" fill="#E2E8F0" font-size="11">• Project Osmos 自动识别 ISO-20022</text>
+  <text x="344" y="706" fill="#E2E8F0" font-size="11">  新增字段 `ultmtDbtrId`</text>
+  <text x="344" y="724" fill="#E2E8F0" font-size="11">• 自动修复 Delta/Iceberg 映射并刷新</text>
+  <text x="344" y="740" fill="#E2E8F0" font-size="11">  Materialized Lake Views</text>
+  <text x="344" y="776" fill="#C084FC" font-size="11" font-weight="700">零人工停机 · 管道自愈率 100%</text>
+
+  <rect x="596" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="610" y="670" fill="#F97316" font-size="12" font-weight="800">Stage 3 · 跨四云图谱穿透 (160ms)</text>
+  <text x="610" y="690" fill="#E2E8F0" font-size="11">• 穿透 AWS S3 设备流 → Eventhouse</text>
+  <text x="610" y="706" fill="#E2E8F0" font-size="11">  → Databricks UC 特征 (OBO 认证)</text>
+  <text x="610" y="724" fill="#E2E8F0" font-size="11">  → Snowflake 核心账本 (Ossie 对齐)</text>
+  <text x="610" y="740" fill="#E2E8F0" font-size="11">• DiskANN 匹配 4 起历史洗钱团伙拓扑</text>
+  <text x="610" y="776" fill="#F97316" font-size="11" font-weight="700">6 跳跨云实体关系定位完成</text>
+
+  <rect x="862" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="876" y="670" fill="#38BDF8" font-size="12" font-weight="800">Stage 4 · OBO 与合规护栏 (112ms)</text>
+  <text x="876" y="690" fill="#E2E8F0" font-size="11">• Foundry IQ 检索《FIN-AML-SAR-SOP-12》</text>
+  <text x="876" y="706" fill="#E2E8F0" font-size="11">• 验证误报风险 1.4% ≤ 3.0% 上限</text>
+  <text x="876" y="724" fill="#E2E8F0" font-size="11">• Agent 365 + Unity Gateway OBO</text>
+  <text x="876" y="740" fill="#E2E8F0" font-size="11">  核验风控官权限与 Purview 标签</text>
+  <text x="876" y="776" fill="#38BDF8" font-size="11" font-weight="700">零越权合规校验通过 ✓</text>
+
+  <rect x="1128" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1142" y="670" fill="#34D399" font-size="12" font-weight="800">Stage 5 · 自动冻结与回写 (118ms)</text>
+  <text x="1142" y="690" fill="#E2E8F0" font-size="11">• 预授权自动拦截 (`Act automatically`)</text>
+  <text x="1142" y="706" fill="#E2E8F0" font-size="11">  冻结 38 笔跨境电汇 ($4.85M 敞口)</text>
+  <text x="1142" y="724" fill="#E2E8F0" font-size="11">• 回写 Azure SQL Hyperscale 192 vCore</text>
+  <text x="1142" y="740" fill="#E2E8F0" font-size="11">  与 1GB 免费 Fabric SQL SAR 审计表</text>
+  <text x="1142" y="776" fill="#34D399" font-size="11" font-weight="800">置信度 0.97 · 挽回净损失 $4.62M</text>
+</svg>

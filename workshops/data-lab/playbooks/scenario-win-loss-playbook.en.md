@@ -40,10 +40,13 @@
 
 ---
 
-### Scenario 4: Multi-Cloud Financial Fraud & Connected Vehicle Telemetry (AWS S3 + Databricks + Fabric)
-- **Reference Architecture (Coexistence Modes B + D)**:
-  - Mount raw telemetry in **Amazon S3 / S3 Tables** via **cached OneLake S3 Shortcuts** and connect **Azure Databricks Unity Catalog** feature tables via zero-copy shortcuts.
-  - Stream live events into **Eventhouse KQL** and trigger Purview-governed fraud/maintenance actions via **Fabric IQ Operations Agent**.
+### Scenario 4: Multi-Cloud Financial Real-Time Wire Fraud Ring & Project Osmos Autonomous Schema Remediation (AWS S3 + Databricks + Snowflake + Fabric)
+- **Business Pain**: Mobile device telemetry lives in **AWS S3 Tables**, GNN fraud features run in **Azure Databricks (Unity Catalog)**, and core customer ledgers sit in **Snowflake**. Upstream ISO-20022 payment schema changes frequently break cross-cloud ETL, leaving fraud ops unable to block coordinated synthetic-identity wire bursts in sub-second windows.
+- **Reference Architecture (Coexistence Modes A + B + D · Simulation `financial_multi_cloud_fraud` / `DL-29 & DL-30`)**:
+  1. **Real-Time KQL Sense & Project Osmos Self-Healing (`270 ms`)**: **Eventhouse KQL** and an outbound-protected **OneLake S3 Shortcut** detect **38 synthetic-identity accounts** initiating **`$4.85M`** in cross-border wires within 90s (`score 0.97 > 0.85`), while **Fabric Data Engineering Agent (Project Osmos)** autonomously repairs an unmapped `ultmtDbtrId` schema drift in `152 ms`.
+  2. **6-Hop Cross-Cloud Graph Traversal + DiskANN Vector Match (`160 ms`)**: **Fabric IQ Ontology** traverses AWS S3, Eventhouse, **Databricks UC (via Supervisor OBO)**, and **Snowflake (via Apache Ossie YAML)** while matching **4 historical fraud ring subgraphs** on **Azure SQL Hyperscale (192 vCore + native DiskANN vector index GA)**.
+  3. **Foundry IQ AML Guardrail & Dual-DB Write-back (`230 ms`)**: Validates `FIN-AML-SAR-SOP-12` (`1.4% <= 3.0%` false-positive ceiling), automatically holds all 38 wires (`Act automatically`, confidence `0.97`), and writes back the SAR case to **Azure SQL Hyperscale** and **1GB Free Fabric SQL**.
+- **Quantified ROI**: **`660 ms`** end-to-end resolution, **`$4,620,000`** net fraud loss prevented per coordinated ring attack, and **zero-downtime** schema drift remediation.
 
 ---
 

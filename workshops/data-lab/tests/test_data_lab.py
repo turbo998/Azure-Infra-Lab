@@ -89,12 +89,22 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
         self.assertEqual(sim["decision_routing"]["action"], "Confirm")
 
-    def test_scenario_matrix_28_cases_and_explicit_miss(self) -> None:
+    def test_financial_multi_cloud_fraud_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("financial_multi_cloud_fraud")
+        self.assertGreater(sim["telemetry"]["fraud_anomaly_score"], sim["telemetry"]["anomaly_threshold"])
+        self.assertTrue(sim["telemetry"]["schema_drift_fixed_by_osmos"])
+        self.assertEqual(sim["multi_agent_plan"]["payments_held_count"], 38)
+        self.assertEqual(sim["multi_agent_plan"]["held_exposure_usd"], 4850000)
+        self.assertTrue(sim["foundry_iq_guardrail"]["obo_identity_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
+
+    def test_scenario_matrix_32_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 28)
-        self.assertEqual(matrix["passed_scenarios"], 27)
+        self.assertEqual(matrix["total_scenarios"], 32)
+        self.assertEqual(matrix["passed_scenarios"], 31)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 96.43, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 96.88, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -109,6 +119,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Fabric IQ Planning", by_id["DL-26"]["expected"])
         self.assertIn("OneLake Fine-Grained Security", by_id["DL-27"]["expected"])
         self.assertIn("Apache Ossie", by_id["DL-28"]["expected"])
+
+    def test_osmos_obo_ossie_and_borderless_iceberg_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-29", "DL-30", "DL-31", "DL-32"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Project Osmos", by_id["DL-29"]["expected"])
+        self.assertIn("Agent Bricks Supervisor", by_id["DL-30"]["expected"])
+        self.assertIn("Apache Ossie YAML", by_id["DL-31"]["expected"])
+        self.assertIn("Outbound Access Protection", by_id["DL-32"]["expected"])
 
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
@@ -127,8 +148,9 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 27)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 31)
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
+        self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

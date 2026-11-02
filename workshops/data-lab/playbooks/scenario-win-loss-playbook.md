@@ -40,11 +40,13 @@
 
 ---
 
-### 场景四：多云金融实时反欺诈与車企遥测湖仓（AWS S3 + Azure Databricks + Fabric）
-- **客户痛点**：数以百 TB 计的历史日志与车联网原始包存放在 **AWS S3**，数据科学团队在 **Azure Databricks** 上训练风控模型，但一线风控运营人员缺乏毫秒级监控台与合规审计闭环。
-- **推荐架构（共存模式 B + D）**：
-  - 通过 **带智能缓存的 OneLake S3 Shortcuts** 挂载 AWS S3 数据，配合 **Unity Catalog 零拷贝 Shortcut** 接入 Databricks 特征表。
-  - 实时交易流接入 **Eventhouse KQL**，由 **Fabric IQ Operations Agent** 结合 **Microsoft Purview 敏感度标签**触发可疑交易拦截工单。
+### 场景四：多云金融实时跨境电汇反欺诈与 Project Osmos 管道自愈闭环（AWS S3 + Azure Databricks + Snowflake + Fabric）
+- **客户痛点**：数以百 TB 计的移动端设备日志存放在 **AWS S3 Tables**，图神经网络（GNN）欺诈特征工程跑在 **Azure Databricks (Unity Catalog)**，核心总账在 **Snowflake**；上游 ISO-20022 报文一旦发生字段升级即导致跨云管道中断，且一线风控团队缺乏亚秒级跨云团伙阻断与可疑活动报告（SAR）双库回写闭环。
+- **推荐架构（共存模式 A + B + D，对应仿真 `financial_multi_cloud_fraud` / `DL-29 & DL-30`）**：
+  1. **实时流感知与 Project Osmos 管道自愈 (`270 ms`)**：**Eventhouse KQL** 配合带出站访问保护的 **OneLake S3 Shortcut** 捕获 90 秒内 **38 个合成身份账户**突发 `$4.85M` 跨境电汇（团伙风险分 `0.97 > 0.85`）；同时 **Fabric Data Engineering Agent (Project Osmos)** 在 `152 ms` 内自动修复上游新增字段 `ultmtDbtrId` 引发的 Schema 漂移。
+  2. **跨四云 6 跳图谱穿透 + DiskANN 向量匹配 (`160 ms`)**：**Fabric IQ Ontology** 结合 **Databricks Agent Bricks Supervisor (OBO 委托认证)** 与 **Snowflake Apache Ossie YAML** 穿透 6 跳团伙链路，并调用 **Azure SQL Hyperscale (192 vCore + 原生 DiskANN 向量索引 GA)** 匹配到 4 起历史洗钱团伙拓扑。
+  3. **Foundry IQ 规程校验与双库回写 (`230 ms`)**：校验《`FIN-AML-SAR-SOP-12`》（误报率 `1.4% ≤ 3.0%` 红线），以 `0.97` 置信度预授权自动冻结 `$4.85M` 电汇，并将 SAR 审计案卷同步回写至 **Azure SQL Hyperscale** 与 **1GB 免费 Fabric SQL**。
+- **量化业务 ROI**：端到端闭环 **`660 ms`**，单次跨境团伙攻击挽回净欺诈损失 **`$4,620,000`**，跨云 Schema 漂移实现**零停机自愈**。
 
 ---
 

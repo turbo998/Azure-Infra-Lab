@@ -1,9 +1,11 @@
 # ⚔️ Microsoft Fabric vs 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度攻防拆解与售前 Battlecards (2026)
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`fabric-vs-4clouds-battlecards-2026.en.md`)](fabric-vs-4clouds-battlecards-2026.en.md)  
-> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-02 实测封存 · 28 场景 `96.43%`） · **适用角色**：AI Solution Architect / 云数智架构师
+> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-03 实测封存 · 32 场景 `96.88%`） · **适用角色**：AI Solution Architect / 云数智架构师
 
 [![Five Cloud Coexistence Topology](../assets/svg/03-five-cloud-coexistence-topology.svg)](../assets/svg/03-five-cloud-coexistence-topology.svg)
+
+[![Project Osmos & Cross-Cloud OBO Architecture](../assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg)](../assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg)
 
 [![LTAP & Translytical Architecture](../assets/svg/04-translytical-ltap-agentic-architecture.svg)](../assets/svg/04-translytical-ltap-agentic-architecture.svg)
 
@@ -85,4 +87,16 @@
 | **业务规划与预算闭环** | **Fabric IQ Planning (Preview)**：语义层原生合并历史实绩、实时流与预算回写 | 缺乏原生财务/供应链预算规划语义模块，需自建 Databricks Apps | 依赖第三方合作伙伴或手工 Streamlit 表单 | 依赖 Looker Action Hub 外部 Webhook 触发 | 依赖 QuickSight 静态查看，无原生预算回写闭环 |
 | **跨引擎细粒度安全** | **OneLake Fine-Grained Security (GA)**：行/列/表/文件夹权限跨 Spark、SQL、Power BI、Excel 与 **Unity Catalog 直读 (Preview)** 统一生效 | Unity Catalog ABAC/RBAC（现支持 Public Preview 直读 OneLake） | Horizon Catalog RBAC + Iceberg v3 Tri-Secret Secure | Dataplex + BigLake 行列级访问策略 | Lake Formation Governed Tables (Iceberg/Hudi/Delta) |
 | **架构师选型金律** | **全员业务审批、预算调整、跨云补货回写首选（`$0` 额外 Copilot Token + `1GB` 免费 SQL）** | **Python 多智能体代码沙盒与状态分支克隆首选（与 OneLake 共存）** | **通过 Apache Ossie 将 AISQL 多模态特征与 Verified Queries 映射至 Fabric** | **通过已 GA 的 BigQuery Mirroring 接入 GA4 流量并触发补货** | **通过带缓存 S3 Shortcuts 免搬迁接入海量日志** |
+
+---
+
+## 4. 2026-11-03 专项增补：自主数据工程 (Project Osmos)、跨云 OBO 智能体身份与开放语义矩阵（`DL-29..DL-32`）
+
+| 评估维度 | Microsoft Fabric (`Project Osmos` + `Agent 365`) | Databricks (`Lakeflow` + `Supervisor OBO`) | Snowflake (`Openflow GA` + `Semantic Autopilot`) | GCP (`BigLake Iceberg REST`) | AWS (`S3 Tables` + `Lake Formation FGAC`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **自主数据工程与自愈** | **Data Engineering Agent (Project Osmos)**：跨小时/跨天自主规划、Schema 漂移自愈（`152ms`），跨 Fabric/VS Code/GitHub Copilot/Claude Code 协同 | **Lakeflow Connect (1亿条/天免费) + 声明式管道 GA**：高可靠流水线，但破坏性 Schema 变更仍需人工改码 | **Snowflake Openflow (2026.10 GA)**：基于 Apache NiFi 的多模态连接器，缺乏自主代码修复智能体 | Dataflow (Beam) + BigQuery Data Transfer，缺乏跨 IDE 自主自愈 Agent | AWS Glue 6.0 (Spark 4.1)，依赖手工或静态 Schema Registry |
+| **跨云智能体委托认证** | **Microsoft Agent 365 (Entra Agent ID) + Purview 标签继承 + OneLake 细粒度安全 GA** | **Agent Bricks Supervisor Agent (OBO 委托认证 GA)** + Mirrored Unity Catalog in OneLake | Cortex Agent Lineage (GA) + Horizon RBAC | Vertex AI Agent Builder + Dataplex IAM | Bedrock Agents + IAM Role 扮演 |
+| **开放语义与无边界目录** | **Fabric IQ Ontology + Apache Ossie YAML 双向互操作 (`0.0%` 漂移)** + OneLake Table Read API | Unity Catalog Metric Views + Iceberg REST | **Semantic View Autopilot (GA)**：自动提炼共识视图并原生导出 **Apache Ossie YAML** | **BigLake Iceberg REST Catalog**：直查 AWS S3 Tables | **Lake Formation Credential Vending**：向外部引擎签发临时行列级令牌 |
+| **架构师选型金律** | **跨云管道自动自愈 + 金融/零售实时图谱拦截 + 双库事务回写首选** | **保留 Databricks 跑 GNN/ML 特征，通过 Supervisor OBO + Mirrored UC 安全联防** | **将 Semantic View Autopilot 共识指标导出为 Apache Ossie YAML 零漂移接入 Fabric IQ** | **通过已 GA 的 BigQuery Mirroring 统一归集营销与跨云 Iceberg 表** | **通过带出站保护与缓存的 OneLake S3 Shortcut 免搬迁挂载 S3 Tables** |
+
 
