@@ -1,10 +1,10 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-03",
-  "generated_at": "2026-11-02T23:55:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-04",
+  "generated_at": "2026-11-03T23:15:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
-    "notes": "Deterministic ontology state machine (4 industry scenarios), TCO calculator, and 32-scenario routing suite reproduced locally via unittest; vendor capability milestones cross-verified against FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Project Osmos Data Engineering Agent, Databricks Agent Bricks Supervisor OBO GA & Lakebase GA, Snowflake Semantic View Autopilot GA & Openflow GA, BigQuery BigLake Iceberg REST Catalog, and AWS S3 Tables Lake Formation 2026 releases."
+    "notes": "Deterministic ontology state machine (5 industry scenarios), TCO calculator, and 36-scenario routing suite reproduced locally via unittest; vendor capability milestones cross-verified against FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakeflow Real-Time Mode GA & Agent Bricks Supervisor OBO GA, Snowflake Horizon Context & Semantic View Autopilot GA, BigQuery ObjectRefs/GQL/Caching GA, and AWS Bedrock GraphRAG & Redshift Serverless AI-Driven Scaling 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -89,14 +89,14 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 32,
-    "passed_scenarios": 31,
+    "total_scenarios": 36,
+    "passed_scenarios": 35,
     "failed_scenarios": 1,
-    "accuracy_pct": 96.88,
-    "avg_latency_ms": 570.6,
+    "accuracy_pct": 97.22,
+    "avg_latency_ms": 565.3,
     "action_distribution": {
-      "Act automatically": 23,
-      "Confirm": 7,
+      "Act automatically": 26,
+      "Confirm": 8,
       "Send to a human": 2
     },
     "scenarios": [
@@ -483,6 +483,54 @@
         "action": "Act automatically",
         "correct": true,
         "latency_ms": 540
+      },
+      {
+        "id": "DL-33",
+        "category": "Fabric IQ & Ontology",
+        "question": "Build production full-stack agentic app with TypeScript backend functions, Secret Store, private-by-default access & 1GB free SQL write-back",
+        "expected": "Open-Source Rayfin SDK & CLI (Fabric Apps) + Power BI Agentic App Creation with 1GB Free Fabric SQL",
+        "model_answer": "Open-Source Rayfin SDK & CLI (Fabric Apps) + Power BI Agentic App Creation with 1GB Free Fabric SQL",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 490
+      },
+      {
+        "id": "DL-34",
+        "category": "vs Databricks",
+        "question": "Compare Databricks Lakeflow Real-Time Mode (GA) + Pipelines System Tables vs Fabric 18-workspace capacity surge RCA & remediation",
+        "expected": "Workspace Monitoring -> Single Eventhouse + Monitor Hub Headroom + Operations Agent Pre-Approved RCA + On-Demand Billing",
+        "model_answer": "Workspace Monitoring -> Single Eventhouse + Monitor Hub Headroom + Operations Agent Pre-Approved RCA + On-Demand Billing",
+        "task_type": "choice",
+        "confidence": 0.95,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 520
+      },
+      {
+        "id": "DL-35",
+        "category": "vs GCP BigQuery",
+        "question": "Compare BigQuery ObjectRefs (GA) + ISO GQL Graph + Cross-Cloud Lakehouse Caching vs Fabric multimodal & graph reasoning",
+        "expected": "Fabric IQ Ontology Graph + Foundry IQ Multimodal RAG + OneLake BigQuery Mirroring (GA) & Cached S3 Shortcuts",
+        "model_answer": "Fabric IQ Ontology Graph + Foundry IQ Multimodal RAG + OneLake BigQuery Mirroring (GA) & Cached S3 Shortcuts",
+        "task_type": "choice",
+        "confidence": 0.94,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 530
+      },
+      {
+        "id": "DL-36",
+        "category": "vs AWS Lakehouse",
+        "question": "Compare Amazon Bedrock Knowledge Bases GraphRAG + Redshift Serverless AI-Driven Scaling vs Fabric semantic & FinOps stack",
+        "expected": "Fabric IQ Ontology (upgraded from 20M+ Power BI models) + Operations Agent + Fabric Zero-Provisioned & On-Demand Billing",
+        "model_answer": "Fabric IQ Ontology (upgraded from 20M+ Power BI models) + Operations Agent + Fabric Zero-Provisioned & On-Demand Billing",
+        "task_type": "choice",
+        "confidence": 0.93,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 550
       }
     ]
   },
@@ -711,6 +759,50 @@
         "projected_savings_usd": 4620000,
         "end_to_end_latency_ms": 660,
         "audit_control_plane": "Microsoft Agent 365 + Databricks Unity Gateway OBO + Purview Sensitivity Labels"
+      }
+    },
+    "finops_rayfin_observability": {
+      "scenario_id": "finops_rayfin_observability",
+      "title": "Cross-Workspace Eventhouse Observability, FinOps Capacity Surge RCA & Rayfin Agentic App Remediation",
+      "ontology_graph_path": [
+        "Capacity:F64-Prod-Cluster (114.8% CU Surge)",
+        "MonitorHub:Single-Eventhouse-18-Workspaces",
+        "RunawayJob:WS-FIN-PROD-07/Q-8841-CrossJoin",
+        "PartnerContext:OneLake-IQ-Sharing-SPGlobal-RDF",
+        "DatabaseAgent:Fabric-SQL-DiskANN-IndexHint",
+        "AgenticApp:Rayfin-SDK-Treasury-Portal (1GB Free SQL Write-back)"
+      ],
+      "telemetry": {
+        "monitored_workspaces_count": 18,
+        "capacity_utilization_before_pct": 114.8,
+        "throttle_threshold_pct": 95.0,
+        "runaway_query_id": "Q-8841",
+        "on_demand_burst_cu_added": 16,
+        "rule_triggered": "CAPACITY_CU_PCT > 95% AND SLA_CRITICAL_APPS_IMPACTED >= 1",
+        "eventhouse_kql_latency_ms": 108,
+        "graph_traversal_latency_ms": 144
+      },
+      "multi_agent_plan": {
+        "surge_protection_throttled_query": "Q-8841 (Ad-hoc unindexed cross-join)",
+        "database_agent_optimization": "Applied DiskANN vector + composite index hint on Fabric SQL",
+        "on_demand_headroom_window_min": 25,
+        "rayfin_ts_function_invoked": "fn_remediateCapacityAndLogAudit()",
+        "capacity_utilization_after_pct": 71.2,
+        "cu_reduction_pct_pts": 43.6
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "FINOPS-SURGE-SOP-09 & AGENT-365-PREAPPROVED-RCA",
+        "burst_cost_usd": 48.5,
+        "max_preapproved_burst_usd": 250.0,
+        "private_by_default_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "action": "Act automatically",
+        "confidence": 0.97,
+        "projected_savings_usd": 28400,
+        "end_to_end_latency_ms": 590,
+        "audit_control_plane": "Microsoft Agent 365 + Monitor Hub + Rayfin Secret Store + Purview"
       }
     }
   },

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="headerGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="860" fill="url(#bgGrad6)"/>
+  <rect x="24" y="20" width="1392" height="820" rx="20" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="44" y="36" width="1352" height="82" rx="14" fill="#131F38" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="64" y="50" width="236" height="24" rx="12" fill="url(#headerGrad6)"/>
+  <text x="182" y="66" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">ARCHITECTURE PILLAR 06 · 2026</text>
+  <text x="314" y="68" fill="#F8FAFC" font-size="20" font-weight="800">Rayfin SDK 全栈智能体应用 × 跨工作区 Eventhouse 可观测性 × OneLake IQ Sharing 架构</text>
+  <text x="64" y="100" fill="#94A3B8" font-size="12.5">Rayfin SDK/CLI (TS Functions + Secret Store + Private-by-Default) · Single Eventhouse 18-Workspace FinOps RCA · OneLake IQ Sharing RDF · vs Lakeflow RT / Horizon Context / BigQuery GQL / Bedrock GraphRAG</text>
+
+  <!-- Plane 1: Rayfin SDK & Power BI Agentic App Stack -->
+  <rect x="44" y="136" width="436" height="450" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="64" y="154" width="396" height="34" rx="8" fill="#172554"/>
+  <text x="262" y="176" fill="#60A5FA" font-size="13.5" font-weight="800" text-anchor="middle">Plane 1 · Rayfin SDK 全栈应用 &amp; 1GB 免费 SQL</text>
+
+  <rect x="64" y="202" width="396" height="86" rx="10" fill="#0F172A" stroke="#2563EB" stroke-width="1.2"/>
+  <text x="80" y="224" fill="#93C5FD" font-size="12.5" font-weight="800">1. 开源 Rayfin SDK &amp; CLI (Fabric Apps 生产就绪)</text>
+  <text x="80" y="244" fill="#E2E8F0" font-size="11.5">• 新增 TypeScript 后端函数、Secret Store、PostgreSQL/SQL 直连</text>
+  <text x="80" y="264" fill="#34D399" font-size="11" font-weight="700">• 默认私有访问 (Private-by-Default) + 免容器托管一键部署</text>
+
+  <rect x="64" y="300" width="396" height="88" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="80" y="322" fill="#34D399" font-size="12.5" font-weight="800">2. Power BI Agentic App Creation + 1GB 免费 SQL</text>
+  <text x="80" y="342" fill="#E2E8F0" font-size="11.5">• 从 2000万+ 语义模型用自然语言一键生成带 Write-back 业务应用</text>
+  <text x="80" y="360" fill="#E2E8F0" font-size="11.5">• 向 Pro / PPU / Fabric 容量用户免费附赠最高 1GB Fabric SQL</text>
+  <text x="80" y="378" fill="#60A5FA" font-size="11" font-weight="700">• 终结“看报表 → 导出 Excel → 切系统手填”的流程断层</text>
+
+  <rect x="64" y="400" width="396" height="92" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="80" y="422" fill="#F97316" font-size="12.5" font-weight="800">3. 对比四大竞对应用开发与语义连接栈</text>
+  <text x="80" y="442" fill="#CBD5E1" font-size="11">• vs Databricks Apps + Lakebase (偏向 Python/研发态，缺免费业务 SQL)</text>
+  <text x="80" y="460" fill="#CBD5E1" font-size="11">• vs Snowflake Horizon Context (预览期连接器，缺原生 Write-back 应用)</text>
+  <text x="80" y="478" fill="#CBD5E1" font-size="11">• vs AWS QuickSight Q + Bedrock (无内置免费 OLTP 回写库)</text>
+
+  <rect x="64" y="514" width="396" height="54" rx="8" fill="#172554"/>
+  <text x="80" y="535" fill="#F8FAFC" font-size="11.5" font-weight="700">基准验证 (DL-04, DL-33 &amp; 场景 E)：</text>
+  <text x="80" y="553" fill="#34D399" font-size="11">490ms 完成 Rayfin TS 后端函数路由与 1GB Fabric SQL 审计回写</text>
+
+  <!-- Plane 2: Cross-Workspace Eventhouse Observability & FinOps -->
+  <rect x="502" y="136" width="436" height="450" rx="14" fill="#111C33" stroke="#A855F7" stroke-width="1.5"/>
+  <rect x="522" y="154" width="396" height="34" rx="8" fill="#2E1065"/>
+  <text x="720" y="176" fill="#C084FC" font-size="13.5" font-weight="800" text-anchor="middle">Plane 2 · 跨工作区 Eventhouse 可观测与按需弹性</text>
+
+  <rect x="522" y="202" width="396" height="86" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="538" y="224" fill="#C084FC" font-size="12.5" font-weight="800">1. Workspace Monitoring → 单一 Eventhouse 汇聚</text>
+  <text x="538" y="244" fill="#E2E8F0" font-size="11.5">• 18+ 生产工作区遥测、CU 消耗与慢查询统一汇入单一 Eventhouse</text>
+  <text x="538" y="264" fill="#34D399" font-size="11" font-weight="700">• Monitor Hub 容量余量 (Capacity Headroom) + Activator 秒级告警</text>
+
+  <rect x="522" y="300" width="396" height="88" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="538" y="322" fill="#38BDF8" font-size="12.5" font-weight="800">2. Operations Agent RCA + Database Agent 联合调优</text>
+  <text x="538" y="342" fill="#E2E8F0" font-size="11.5">• Operations Agent 自动定位 114.8% CU 过载元凶 (Q-8841 笛卡尔积)</text>
+  <text x="538" y="360" fill="#E2E8F0" font-size="11.5">• Database Agent for SQL 自动注入 DiskANN 向量与复合索引提示</text>
+  <text x="538" y="378" fill="#34D399" font-size="11" font-weight="700">• On-Demand Billing 按需突发 (+16 CU) + Zero-Provisioned 零预置</text>
+
+  <rect x="522" y="400" width="396" height="92" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="538" y="422" fill="#FBBF24" font-size="12.5" font-weight="800">3. 对比四大竞对可观测性与弹性计费</text>
+  <text x="538" y="442" fill="#CBD5E1" font-size="11">• vs Databricks Lakeflow System Tables GA (仅限流水线表，缺 BI/SQL 统一余量)</text>
+  <text x="538" y="460" fill="#CBD5E1" font-size="11">• vs GCP BigQuery Fluid Scaling (缺预授权 RCA 修复智能体)</text>
+  <text x="538" y="478" fill="#CBD5E1" font-size="11">• vs AWS Redshift AI-Driven Scaling (单组件扩缩，缺跨湖仓全栈视图)</text>
+
+  <rect x="522" y="514" width="396" height="54" rx="8" fill="#2E1065"/>
+  <text x="538" y="535" fill="#F8FAFC" font-size="11.5" font-weight="700">基准验证 (DL-24, DL-34 &amp; 场景 E)：</text>
+  <text x="538" y="553" fill="#C084FC" font-size="11">590ms 将 F64 容量负载从 114.8% 压降至 71.2% (-43.6%)，规避 $28.4K 罚金</text>
+
+  <!-- Plane 3: OneLake IQ Sharing RDF & Multimodal Graph Interop -->
+  <rect x="960" y="136" width="436" height="450" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="980" y="154" width="396" height="34" rx="8" fill="#064E3B"/>
+  <text x="1178" y="176" fill="#34D399" font-size="13.5" font-weight="800" text-anchor="middle">Plane 3 · OneLake IQ Sharing &amp; 多模态图谱对标</text>
+
+  <rect x="980" y="202" width="396" height="86" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="996" y="224" fill="#34D399" font-size="12.5" font-weight="800">1. OneLake IQ Sharing 跨组织语义生态网络</text>
+  <text x="996" y="244" fill="#E2E8F0" font-size="11.5">• 共享受治理表 + 文件 + Markdown 智能体指令 + RDF 本体</text>
+  <text x="996" y="264" fill="#60A5FA" font-size="11" font-weight="700">• EY、S&amp;P Global、TomTom、Financial Fabric、xMentium 首批集成</text>
+
+  <rect x="980" y="300" width="396" height="88" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="996" y="322" fill="#60A5FA" font-size="12.5" font-weight="800">2. Fabric IQ Ontology Graph vs BigQuery GQL / Bedrock GraphRAG</text>
+  <text x="996" y="342" fill="#E2E8F0" font-size="11.5">• BigQuery ObjectRefs + GQL 与 Bedrock GraphRAG 聚焦检索侧建图</text>
+  <text x="996" y="360" fill="#E2E8F0" font-size="11.5">• Fabric IQ 直接从 2000万+ Power BI 模型升级实体+关系+规则+动作</text>
+  <text x="996" y="378" fill="#34D399" font-size="11" font-weight="700">• 联合 Foundry IQ 多模态 RAG (+36% 相关性) 与 Work IQ (-80% Token)</text>
+
+  <rect x="980" y="400" width="396" height="92" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="996" y="422" fill="#F8FAFC" font-size="12.5" font-weight="800">3. 选择性分支 CI/CD 与细粒度 Git 治理 (GA/Preview)</text>
+  <text x="996" y="442" fill="#CBD5E1" font-size="11">• Selective Branching + 文件级 Git Commit + Item 级权限隔离</text>
+  <text x="996" y="460" fill="#CBD5E1" font-size="11">• Enhanced Catalog Search API 支持跨语义模型表与本体实体检索</text>
+  <text x="996" y="478" fill="#CBD5E1" font-size="11">• 主权云全面 GA：SQL on Azure Local + ALDO + Fabric GCC High</text>
+
+  <rect x="980" y="514" width="396" height="54" rx="8" fill="#064E3B"/>
+  <text x="996" y="535" fill="#F8FAFC" font-size="11.5" font-weight="700">基准验证 (DL-35 &amp; DL-36)：</text>
+  <text x="996" y="553" fill="#34D399" font-size="11">530ms–550ms 完成跨云多模态图谱推理与零预置 FinOps 选型路由</text>
+
+  <!-- Bottom Flow Bar: Scenario E End-to-End 5-Stage Trace -->
+  <rect x="44" y="604" width="1352" height="216" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="64" y="632" fill="#60A5FA" font-size="14" font-weight="800">场景 E 端到端闭环实测轨迹：18 工作区容量尖峰 RCA 与 Rayfin 全栈智能体应用自愈 (`finops_rayfin_observability` · 590ms · 省 $28,400)</text>
+
+  <rect x="64" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="78" y="670" fill="#60A5FA" font-size="12" font-weight="800">Stage 1 · 跨区遥测感知 (108ms)</text>
+  <text x="78" y="690" fill="#E2E8F0" font-size="11">• 18 个工作区日志汇入单一 Eventhouse</text>
+  <text x="78" y="706" fill="#E2E8F0" font-size="11">• Monitor Hub 捕获 F64 容量突增至</text>
+  <text x="78" y="724" fill="#E2E8F0" font-size="11">  114.8% (&gt; 95% 限流红线)</text>
+  <text x="78" y="740" fill="#E2E8F0" font-size="11">• 锁定 WS-FIN-PROD-07 慢查询 Q-8841</text>
+  <text x="78" y="776" fill="#34D399" font-size="11" font-weight="700">KQL 聚合延迟仅 108ms</text>
+
+  <rect x="330" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="344" y="670" fill="#C084FC" font-size="12" font-weight="800">Stage 2 · 本体与伙伴图谱 (144ms)</text>
+  <text x="344" y="690" fill="#E2E8F0" font-size="11">• 穿透 F64 容量 → WS-FIN-PROD-07</text>
+  <text x="344" y="706" fill="#E2E8F0" font-size="11">  → OneLake IQ Sharing (S&amp;P RDF)</text>
+  <text x="344" y="724" fill="#E2E8F0" font-size="11">  → Rayfin 资金门户与 3 张高管看板</text>
+  <text x="344" y="740" fill="#E2E8F0" font-size="11">• 识别 SLA 违约风险敞口 $28,400</text>
+  <text x="344" y="776" fill="#C084FC" font-size="11" font-weight="700">6 跳跨工作区影响定位</text>
+
+  <rect x="596" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="610" y="670" fill="#F97316" font-size="12" font-weight="800">Stage 3 · RCA 与弹性寻优 (138ms)</text>
+  <text x="610" y="690" fill="#E2E8F0" font-size="11">• Surge Protection 限流 Q-8841 笛卡尔积</text>
+  <text x="610" y="706" fill="#E2E8F0" font-size="11">• Database Agent 注入 DiskANN 与复合</text>
+  <text x="610" y="724" fill="#E2E8F0" font-size="11">  索引提示，重写低效 SQL</text>
+  <text x="610" y="740" fill="#E2E8F0" font-size="11">• 挂载 On-Demand +16 CU 突发缓冲 25m</text>
+  <text x="610" y="776" fill="#F97316" font-size="11" font-weight="700">双智能体协同调优方案</text>
+
+  <rect x="862" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="876" y="670" fill="#38BDF8" font-size="12" font-weight="800">Stage 4 · FinOps 护栏核验 (98ms)</text>
+  <text x="876" y="690" fill="#E2E8F0" font-size="11">• Foundry IQ 检索《FINOPS-SURGE-SOP-09》</text>
+  <text x="876" y="706" fill="#E2E8F0" font-size="11">• 按需突发成本 $48.50 ≤ $250 预批上限</text>
+  <text x="876" y="724" fill="#E2E8F0" font-size="11">• 验证 Rayfin Secret Store 与默认私有</text>
+  <text x="876" y="740" fill="#E2E8F0" font-size="11">  网络边界 (Private-by-Default)</text>
+  <text x="876" y="776" fill="#38BDF8" font-size="11" font-weight="700">合规与成本护栏通过 ✓</text>
+
+  <rect x="1128" y="648" width="248" height="150" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1142" y="670" fill="#34D399" font-size="12" font-weight="800">Stage 5 · Rayfin 回写闭环 (102ms)</text>
+  <text x="1142" y="690" fill="#E2E8F0" font-size="11">• 预授权自动执行 (`Act automatically`)</text>
+  <text x="1142" y="706" fill="#E2E8F0" font-size="11">• 调用 Rayfin TS 函数回写 1GB 免费</text>
+  <text x="1142" y="724" fill="#E2E8F0" font-size="11">  Fabric SQL 运维审计表</text>
+  <text x="1142" y="740" fill="#E2E8F0" font-size="11">• 容量水位从 114.8% 降至 71.2% (-43.6%)</text>
+  <text x="1142" y="776" fill="#34D399" font-size="11" font-weight="800">置信度 0.97 · 规避损失 $28,400</text>
+</svg>

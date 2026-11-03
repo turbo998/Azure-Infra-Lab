@@ -7,7 +7,7 @@
 
 ---
 
-## 1. Four Flagship Industry Reference Solutions
+## 1. Five Flagship Industry Reference Solutions
 
 ### Scenario 1: AI Compute Center (AIDC) Peak Energy Orchestration & Shaving
 - **Business Pain**: 10,000-GPU training clusters experience sharp power spikes during summer peak tariffs, risking 2x demand-charge penalties when approaching the `20.0 MW` utility cap. OT systems (SCADA, DCIM liquid cooling, BESS batteries) and IT schedulers (Kubernetes/Slurm) are siloed.
@@ -47,6 +47,16 @@
   2. **6-Hop Cross-Cloud Graph Traversal + DiskANN Vector Match (`160 ms`)**: **Fabric IQ Ontology** traverses AWS S3, Eventhouse, **Databricks UC (via Supervisor OBO)**, and **Snowflake (via Apache Ossie YAML)** while matching **4 historical fraud ring subgraphs** on **Azure SQL Hyperscale (192 vCore + native DiskANN vector index GA)**.
   3. **Foundry IQ AML Guardrail & Dual-DB Write-back (`230 ms`)**: Validates `FIN-AML-SAR-SOP-12` (`1.4% <= 3.0%` false-positive ceiling), automatically holds all 38 wires (`Act automatically`, confidence `0.97`), and writes back the SAR case to **Azure SQL Hyperscale** and **1GB Free Fabric SQL**.
 - **Quantified ROI**: **`660 ms`** end-to-end resolution, **`$4,620,000`** net fraud loss prevented per coordinated ring attack, and **zero-downtime** schema drift remediation.
+
+---
+
+### Scenario 5: 18-Workspace Capacity Surge RCA & Rayfin SDK Full-Stack Agentic App Remediation (`finops_rayfin_observability`)
+- **Customer Pain Point**: Enterprise platform teams managing 18+ departmental workspaces face sudden F64 capacity throttling (`>110% CU`) caused by unindexed ad-hoc cross-join queries, threatening executive SLA dashboards and treasury apps that consume external partner ontologies.
+- **Reference Architecture (Simulation `finops_rayfin_observability` / `DL-33 & DL-34`)**:
+  1. **Cross-Workspace Single Eventhouse Sense (`108 ms`)**: **Workspace Monitoring** streams telemetry from 18 production workspaces into a **single Eventhouse**; **Monitor Hub Capacity Headroom** flags a **`114.8%`** F64 surge and isolates query `Q-8841` in `WS-FIN-PROD-07`.
+  2. **6-Hop Impact Graph & Dual-Agent Optimization (`282 ms`)**: **Fabric IQ Ontology** traces impact across **OneLake IQ Sharing (S&P Global RDF Ontology)** and the **Rayfin SDK Treasury Portal**; **Operations Agent** throttles `Q-8841`, **Database Agent for SQL** injects **DiskANN + composite index hints**, and **On-Demand Billing** attaches **`+16 CU` burst headroom** for 25 minutes (`$48.50 <= $250` guardrail).
+  3. **Rayfin TypeScript Function Execution & 1GB Free SQL Write-back (`200 ms`)**: After verifying `FINOPS-SURGE-SOP-09` and **Private-by-Default / Secret Store** policies via **Foundry IQ**, the **Rayfin SDK** backend function `fn_remediateCapacityAndLogAudit()` writes the audit record to **1GB Free Fabric SQL**.
+- **Quantified ROI**: **`590 ms`** end-to-end remediation, capacity utilization reduced from **`114.8%` to `71.2%` (`-43.6%`)**, and **`$28,400`** in avoided SLA penalties per surge event.
 
 ---
 

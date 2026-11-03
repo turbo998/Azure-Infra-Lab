@@ -1,9 +1,11 @@
 # ⚔️ Microsoft Fabric vs 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度攻防拆解与售前 Battlecards (2026)
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`fabric-vs-4clouds-battlecards-2026.en.md`)](fabric-vs-4clouds-battlecards-2026.en.md)  
-> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-03 实测封存 · 32 场景 `96.88%`） · **适用角色**：AI Solution Architect / 云数智架构师
+> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-04 实测封存 · 36 场景 `97.22%`） · **适用角色**：AI Solution Architect / 云数智架构师
 
 [![Five Cloud Coexistence Topology](../assets/svg/03-five-cloud-coexistence-topology.svg)](../assets/svg/03-five-cloud-coexistence-topology.svg)
+
+[![Rayfin SDK & Cross-Workspace Eventhouse Observability Architecture](../assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg)](../assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg)
 
 [![Project Osmos & Cross-Cloud OBO Architecture](../assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg)](../assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg)
 
@@ -98,5 +100,17 @@
 | **跨云智能体委托认证** | **Microsoft Agent 365 (Entra Agent ID) + Purview 标签继承 + OneLake 细粒度安全 GA** | **Agent Bricks Supervisor Agent (OBO 委托认证 GA)** + Mirrored Unity Catalog in OneLake | Cortex Agent Lineage (GA) + Horizon RBAC | Vertex AI Agent Builder + Dataplex IAM | Bedrock Agents + IAM Role 扮演 |
 | **开放语义与无边界目录** | **Fabric IQ Ontology + Apache Ossie YAML 双向互操作 (`0.0%` 漂移)** + OneLake Table Read API | Unity Catalog Metric Views + Iceberg REST | **Semantic View Autopilot (GA)**：自动提炼共识视图并原生导出 **Apache Ossie YAML** | **BigLake Iceberg REST Catalog**：直查 AWS S3 Tables | **Lake Formation Credential Vending**：向外部引擎签发临时行列级令牌 |
 | **架构师选型金律** | **跨云管道自动自愈 + 金融/零售实时图谱拦截 + 双库事务回写首选** | **保留 Databricks 跑 GNN/ML 特征，通过 Supervisor OBO + Mirrored UC 安全联防** | **将 Semantic View Autopilot 共识指标导出为 Apache Ossie YAML 零漂移接入 Fabric IQ** | **通过已 GA 的 BigQuery Mirroring 统一归集营销与跨云 Iceberg 表** | **通过带出站保护与缓存的 OneLake S3 Shortcut 免搬迁挂载 S3 Tables** |
+
+---
+
+## 5. 2026-11-04 专项增补：Rayfin 全栈智能体应用、跨工作区可观测性与多模态图谱矩阵（`DL-33..DL-36`）
+
+| 评估维度 | Microsoft Fabric (`Rayfin SDK` + `Single Eventhouse`) | Databricks (`Apps` + `Lakeflow System Tables`) | Snowflake (`Streamlit` + `Horizon Context`) | GCP (`BigQuery ObjectRefs` + `GQL GA`) | AWS (`Bedrock GraphRAG` + `Redshift AI`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **全栈智能体应用开发** | **开源 Rayfin SDK/CLI (TS 后端函数 + Secret Store + 默认私有网络) + Power BI Agentic App (1GB 免费 Fabric SQL)** | Databricks Apps + Lakebase (需单独计费 Serverless Postgres 实例) | Snowflake Native Apps / Streamlit + Hybrid Tables (按常驻计算 Credit 计费) | Vertex AI Agent Builder + Cloud Run + AlloyDB (需手动拼装) | Bedrock Agents + App Runner + Aurora (6 组件拼装) |
+| **跨工作区可观测与自愈** | **Workspace Monitoring → Single Eventhouse + Monitor Hub 容量余量 + Operations Agent RCA + On-Demand 按需突发 (`590ms`)** | **Lakeflow Pipelines System Tables GA + Maintenance Windows**（偏重管道级遥测） | Snowsight Account Usage + Resource Monitors（缺乏跨 BI/流/SQL 实时 KQL 根因智能体） | Cloud Monitoring + BigQuery Information Schema | CloudWatch + Redshift Serverless AI-Driven Scaling |
+| **多模态图谱与外部生态** | **Fabric IQ Ontology (2000万+ PBI 模型一键升级 + Rules + Actions) + OneLake IQ Sharing (RDF 本体共享：EY/S&P/TomTom)** | Unity Catalog Metric Views + Mosaic AI Agentic Code Converter GA | **Horizon Context (连接 Power BI/Tableau/dbt)** + AI Readiness Scores | **BigQuery ObjectRefs GA + 原生 ISO GQL 图查询** + Cross-Cloud Caching GA | **Bedrock Knowledge Bases GraphRAG & SQL 增强** |
+| **架构师选型金律** | **零容器快速上线生产级智能体回写应用 + 跨 18+ 工作区容量尖峰自动自愈首选** | **重度 Spark 流批一体迁移用 Agentic Code Converter，上层应用走 Fabric Rayfin** | **借力 Horizon Context + Apache Ossie 将语义资产统一汇入 Fabric IQ** | **通过 OneLake BigQuery Mirroring 融合多模态特征并触发主动运营动作** | **用 Fabric IQ + Foundry IQ (+36% 相关性) 替代手工拼装的 6 组件 GraphRAG** |
+
 
 

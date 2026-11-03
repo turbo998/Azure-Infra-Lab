@@ -176,7 +176,7 @@
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
         <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与 Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) 四大智能底座，对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。</p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">31 / 32 场景实测通过 (96.88%) · 2026-11-03</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">35 / 36 场景实测通过 (97.22%) · 2026-11-03 / 11-04</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -190,9 +190,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Copilot 额外 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">四大跨云本体闭环延迟</div>
-        <div class="val">640ms – 780ms</div>
-        <div class="sub" id="kpi3-sub">AIDC 削峰 3.45MW · 零售 +$312K · 金融反欺诈挽回 $4.62M</div>
+        <div class="label" id="kpi3-lbl">五大跨云本体闭环延迟</div>
+        <div class="val">590ms – 780ms</div>
+        <div class="sub" id="kpi3-sub">AIDC 3.45MW · 零售 +$312K · 反欺诈 $4.62M · 跨区自愈 $28.4K</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -279,7 +279,8 @@
       <button class="comp-pill active" id="sim-btn-energy" onclick="selectScenario('energy_dc_peak')">🔋 场景 A：智算中心 AI 能源削峰编排 (780ms)</button>
       <button class="comp-pill" id="sim-btn-airline" onclick="selectScenario('airline_jfk_r25')">✈️ 场景 B：纽约 JFK R25 跑道湿雪数字孪生 (640ms)</button>
       <button class="comp-pill" id="sim-btn-retail" onclick="selectScenario('retail_cross_cloud_planning')">🛒 场景 C：跨云零售爆单与 Planning 预算回写 (710ms)</button>
-      <button class="comp-pill" id="sim-btn-fraud" onclick="selectScenario('financial_multi_cloud_fraud')">🛡️ 场景 D：多云金融反欺诈与 Project Osmos 管道自愈 (660ms · 11-03 新增)</button>
+      <button class="comp-pill" id="sim-btn-fraud" onclick="selectScenario('financial_multi_cloud_fraud')">🛡️ 场景 D：多云金融反欺诈与 Project Osmos 管道自愈 (660ms)</button>
+      <button class="comp-pill" id="sim-btn-finops" onclick="selectScenario('finops_rayfin_observability')">📈 场景 E：18 工作区容量尖峰 RCA 与 Rayfin 全栈自愈 (590ms · 新增)</button>
     </div>
 
     <div class="grid-2">
@@ -307,15 +308,23 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · 每日研究强制交付 (2026-11-03)：五大平台竞对攻防、Project Osmos、OBO 身份与四本体一图流总结卡 (Executive Visual Summary SVG)</span>
+        <span>01 · 每日研究强制交付 (2026-11-03 / 11-04)：五大平台竞对攻防、Rayfin 全栈应用、跨区可观测性与五本体一图流总结卡 (Executive Visual Summary SVG)</span>
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-03.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
-      <img src="assets/svg/01-data-lab-executive-summary-2026-11-03.svg" alt="Data Lab Executive Visual Summary 2026-11-03" class="svg-preview">
+      <img src="assets/svg/01-data-lab-executive-summary-2026-11-03.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>05 · Project Osmos 自主数据工程 × 跨云 OBO 智能体身份 × Apache Ossie 语义互操作架构 (2026-11-03 新增)</span>
+        <span>06 · 开源 Rayfin SDK 全栈智能体应用 × 跨 18 工作区 Eventhouse 可观测性 × OneLake IQ Sharing 架构 (新增)</span>
+        <a href="assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg" alt="Rayfin SDK & Cross-Workspace Eventhouse Observability Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>05 · Project Osmos 自主数据工程 × 跨云 OBO 智能体身份 × Apache Ossie 语义互操作架构</span>
         <a href="assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg" alt="Project Osmos & Cross-Cloud OBO Architecture" class="svg-preview">
@@ -618,6 +627,32 @@ const SIM_DATA = {
       teamsTitle: '📋 Operations Agent &amp; Agent 365 Pre-Authorized Fraud Hold Receipt (Act Automatically · 0.97)',
       teamsSummary: 'Action: Project Osmos healed ultmtDbtrId drift + Auto-held 38 wires ($4.85M) + Wrote SAR to SQL Hyperscale DiskANN & 1GB Free Fabric SQL · $4,620,000 Net Loss Prevented ✓'
     }
+  },
+  finops_rayfin_observability: {
+    zh: {
+      steps: [
+        { title: '① 跨 18 工作区单一 Eventhouse 遥测汇聚感知 (Monitor Hub)', latency: '108 ms', desc: 'Workspace Monitoring 将全企业 18 个生产工作区指标实时汇入单一 Eventhouse；Monitor Hub 检测到核心 F64 容量池利用率飙升至 114.8% (> 95.0% 红线)，并锁定 WS-FIN-PROD-07 的未加索引笛卡尔积慢查询 Q-8841。' },
+        { title: '② Fabric IQ 本体与 OneLake IQ Sharing 伙伴图谱穿透', latency: '144 ms', desc: '穿透 `Capacity:F64-Prod-Cluster → MonitorHub:18-Workspaces → RunawayJob:Q-8841 → PartnerContext:OneLake-IQ-Sharing-SPGlobal-RDF → DatabaseAgent:Fabric-SQL-DiskANN → AgenticApp:Rayfin-SDK-Treasury-Portal`，识别 3 分钟内违反 SLA 风险 ($28,400)。' },
+        { title: '③ Operations Agent + Database Agent 联合调优与按需突发', latency: '138 ms', desc: '通过 Surge Protection 限流慢查询 Q-8841，由 Database Agent for SQL 自动注入 DiskANN 向量与复合索引提示，并开启 On-Demand Billing 按需突发缓冲 (+16 CU 持续 25 分钟)。' },
+        { title: '④ Foundry IQ FinOps 成本护栏与默认私网核验 (SOP-09)', latency: '98 ms', desc: '核验《FINOPS-SURGE-SOP-09》：本次按需突发花费仅 $48.50（≤ $250.00 预授权上限），且确认 Rayfin 后端函数处于 Private-by-Default 与 Secret Store 保护下。' },
+        { title: '⑤ Rayfin TS 后端函数自愈与 1GB 免费 SQL 审计回写', latency: '102 ms (E2E 590 ms)', desc: '置信度 0.97 (Act automatically)；调用 Rayfin TypeScript 函数 fn_remediateCapacityAndLogAudit() 回写至 1GB 免费 Fabric SQL，F64 利用率压降至 71.2% (-43.6%)，规避 SLA 罚金 $28,400。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨 18 工作区可观测性、OneLake IQ Sharing 与 Rayfin 全栈自愈本体链路</h4><p><code>Capacity:F64-Prod (114.8% → 71.2%)</code> ──[monitoredBy]──&gt; <code>SingleEventhouse:18-Workspaces</code> ──[isolates]──&gt; <code>RunawayQuery:Q-8841</code> ──[impacts]──&gt; <code>OneLakeIQSharing:SPGlobal-RDF</code> ──[optimizedBy]──&gt; <code>DatabaseAgent:DiskANN + OnDemand(+16CU)</code> ──[writesBack]──&gt; <code>RayfinSDK:fn_remediateCapacity (1GB-FabricSQL)</code></p>',
+      teamsTitle: '📋 Rayfin SDK 全栈智能体应用 & Monitor Hub 跨区容量自愈回执 (Act Automatically · 0.97)',
+      teamsSummary: '动作：限流 Q-8841 + Database Agent 注入 DiskANN 索引提示 + On-Demand 突发 +16 CU ($48.50) + Rayfin TS 函数回写 1GB 免费 SQL · 压降负载 -43.6%，规避 SLA 罚金 $28,400 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Cross-Workspace Single Eventhouse Telemetry Sense (Monitor Hub)', latency: '108 ms', desc: 'Workspace Monitoring streams telemetry from 18 production workspaces into a single Eventhouse; Monitor Hub flags an F64 capacity surge to 114.8% (> 95.0% threshold) and isolates unindexed query Q-8841 in WS-FIN-PROD-07.' },
+        { title: '② Ontology & OneLake IQ Sharing Partner Graph Traversal', latency: '144 ms', desc: 'Traverses `Capacity:F64-Prod-Cluster → MonitorHub:18-Workspaces → RunawayJob:Q-8841 → PartnerContext:OneLake-IQ-Sharing-SPGlobal-RDF → DatabaseAgent:Fabric-SQL-DiskANN → AgenticApp:Rayfin-SDK-Treasury-Portal`, identifying $28,400 in SLA penalty risk.' },
+        { title: '③ Operations Agent + Database Agent Index & Burst Remediation', latency: '138 ms', desc: 'Throttles Q-8841 via Surge Protection, injects DiskANN + composite index hints via Database Agent for SQL, and attaches +16 CU On-Demand Billing burst headroom for 25 minutes.' },
+        { title: '④ Foundry IQ FinOps Guardrail & Private-by-Default Check (SOP-09)', latency: '98 ms', desc: 'Verifies `FINOPS-SURGE-SOP-09` ($48.50 burst cost ≤ $250.00 ceiling) and confirms Rayfin Private-by-Default networking and Secret Store policies.' },
+        { title: '⑤ Rayfin TypeScript Function Execution & 1GB Free SQL Write-back', latency: '102 ms (E2E 590 ms)', desc: 'Confidence 0.97 (Act automatically); executes Rayfin TS function fn_remediateCapacityAndLogAudit() and logs RCA to 1GB Free Fabric SQL, dropping F64 utilization to 71.2% (-43.6%) and saving $28,400.' }
+      ],
+      graph: '<h4>🕸️ Active 18-Workspace Observability, OneLake IQ Sharing &amp; Rayfin Full-Stack Remediation Chain</h4><p><code>Capacity:F64-Prod (114.8% → 71.2%)</code> ──[monitoredBy]──&gt; <code>SingleEventhouse:18-Workspaces</code> ──[isolates]──&gt; <code>RunawayQuery:Q-8841</code> ──[impacts]──&gt; <code>OneLakeIQSharing:SPGlobal-RDF</code> ──[optimizedBy]──&gt; <code>DatabaseAgent:DiskANN + OnDemand(+16CU)</code> ──[writesBack]──&gt; <code>RayfinSDK:fn_remediateCapacity (1GB-FabricSQL)</code></p>',
+      teamsTitle: '📋 Rayfin SDK Full-Stack App &amp; Monitor Hub Auto-Remediation Receipt (Act Automatically · 0.97)',
+      teamsSummary: 'Action: Throttled Q-8841 + Injected DiskANN Index Hint + Attached +16 CU On-Demand Burst ($48.50) + Rayfin TS Write-back to 1GB Free Fabric SQL · -43.6% Load, $28,400 Saved ✓'
+    }
   }
 };
 
@@ -762,6 +797,8 @@ function selectScenario(sc) {
   if (retailBtn) retailBtn.classList.toggle('active', sc === 'retail_cross_cloud_planning');
   const fraudBtn = document.getElementById('sim-btn-fraud');
   if (fraudBtn) fraudBtn.classList.toggle('active', sc === 'financial_multi_cloud_fraud');
+  const finopsBtn = document.getElementById('sim-btn-finops');
+  if (finopsBtn) finopsBtn.classList.toggle('active', sc === 'finops_rayfin_observability');
   runNormalSim();
 }
 

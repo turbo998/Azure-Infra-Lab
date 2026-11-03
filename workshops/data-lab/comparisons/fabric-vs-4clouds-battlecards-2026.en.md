@@ -1,9 +1,11 @@
 # ⚔️ Microsoft Fabric vs. 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep-Dive Battlecards (2026)
 
 > **Language**: [中文 (`fabric-vs-4clouds-battlecards-2026.md`)](fabric-vs-4clouds-battlecards-2026.md) | **English (Current)**  
-> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-03` · 32 Scenarios `96.88%`) · **Target Persona**: Principal AI Solution Architect
+> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-04` · 36 Scenarios `97.22%`) · **Target Persona**: Principal AI Solution Architect
 
 [![Five Cloud Coexistence Topology](../assets/svg/03-five-cloud-coexistence-topology.svg)](../assets/svg/03-five-cloud-coexistence-topology.svg)
+
+[![Rayfin SDK & Cross-Workspace Eventhouse Observability Architecture](../assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg)](../assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg)
 
 [![Project Osmos & Cross-Cloud OBO Architecture](../assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg)](../assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg)
 
@@ -80,5 +82,17 @@
 | **Cross-Cloud Delegated Agent Auth** | **Microsoft Agent 365 (Entra Agent ID) + Purview label inheritance + OneLake Fine-Grained Security GA** | **Agent Bricks Supervisor Agent (OBO Auth GA)** + Mirrored Unity Catalog in OneLake | Cortex Agent Lineage (GA) + Horizon RBAC | Vertex AI Agent Builder + Dataplex IAM | Bedrock Agents + IAM Role assumption |
 | **Open Semantics & Borderless Catalog** | **Fabric IQ Ontology + Apache Ossie YAML bidirectional interop (`0.0%` drift)** + OneLake Table Read API | Unity Catalog Metric Views + Iceberg REST | **Semantic View Autopilot (GA)**: Extracts consensus semantic views & exports **Apache Ossie YAML** | **BigLake Iceberg REST Catalog**: Queries AWS S3 Tables directly | **Lake Formation Credential Vending**: Issues scoped row/column tokens to external engines |
 | **Architect Selection Rule** | **Best for autonomous schema self-healing, real-time graph fraud holds & dual-DB write-back** | **Retain Databricks for GNN/ML features and federate via Supervisor OBO + Mirrored UC** | **Export Semantic View Autopilot consensus KPIs via Apache Ossie YAML into Fabric IQ** | **Consolidate GA4 & cross-cloud Iceberg tables via GA BigQuery Mirroring** | **Mount S3 Tables via outbound-protected cached OneLake S3 Shortcuts** |
+
+---
+
+## 5. 2026-11-04 Addendum: Rayfin Full-Stack Agentic Apps, Cross-Workspace Observability & Multimodal Graph Matrix (`DL-33..DL-36`)
+
+| Dimension | Microsoft Fabric (`Rayfin SDK` + `Single Eventhouse`) | Databricks (`Apps` + `Lakeflow System Tables`) | Snowflake (`Streamlit` + `Horizon Context`) | GCP (`BigQuery ObjectRefs` + `GQL GA`) | AWS (`Bedrock GraphRAG` + `Redshift AI`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Full-Stack Agentic Apps** | **Open-Source Rayfin SDK/CLI (TS functions + Secret Store + Private-by-Default) + Power BI Agentic App (1GB Free Fabric SQL)** | Databricks Apps + Lakebase (separately billed Serverless Postgres) | Snowflake Native Apps / Streamlit + Hybrid Tables (consumes active compute credits) | Vertex AI Agent Builder + Cloud Run + AlloyDB (manual multi-service wiring) | Bedrock Agents + App Runner + Aurora (6-service integration) |
+| **Cross-Workspace Observability** | **Workspace Monitoring → Single Eventhouse + Monitor Hub Headroom + Operations Agent RCA + On-Demand Burst (`590ms`)** | **Lakeflow Pipelines System Tables GA + Maintenance Windows** (pipeline-scoped telemetry) | Account Usage + Resource Monitors (lacks sub-second KQL RCA & SQL index auto-remediation) | Cloud Monitoring + INFORMATION_SCHEMA | CloudWatch + Redshift Serverless AI-Driven Scaling |
+| **Multimodal Graph & Partner Sharing** | **Fabric IQ Ontology (20M+ PBI models + Rules + Actions) + OneLake IQ Sharing (RDF ontologies with EY/S&P/TomTom)** | Unity Catalog Metric Views + Mosaic AI Agentic Code Converter GA | **Horizon Context (Power BI/Tableau/dbt connectors)** + AI Readiness Scores | **BigQuery ObjectRefs GA + Native ISO GQL Graph** + Cross-Cloud Caching GA | **Bedrock Knowledge Bases GraphRAG & SQL Augmentation** |
+| **Architect Selection Rule** | **Best for containerless full-stack write-back apps & automated FinOps RCA across 18+ workspaces** | **Use Agentic Code Converter for Spark migration; build business write-back apps on Fabric Rayfin** | **Bridge Horizon Context & Apache Ossie YAML into Fabric IQ for `$0`-token Copilot** | **Mirror BigQuery tables to OneLake to bind active Rules & Operations Agents** | **Replace 6-service DIY GraphRAG stitching with governed Fabric IQ + Foundry IQ (+36% relevance)** |
+
 
 

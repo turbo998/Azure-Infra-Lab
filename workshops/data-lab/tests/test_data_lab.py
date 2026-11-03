@@ -99,12 +99,24 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
         self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
 
-    def test_scenario_matrix_32_cases_and_explicit_miss(self) -> None:
+    def test_finops_rayfin_observability_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("finops_rayfin_observability")
+        self.assertGreater(
+            sim["telemetry"]["capacity_utilization_before_pct"],
+            sim["telemetry"]["throttle_threshold_pct"],
+        )
+        self.assertEqual(sim["telemetry"]["monitored_workspaces_count"], 18)
+        self.assertEqual(sim["multi_agent_plan"]["capacity_utilization_after_pct"], 71.2)
+        self.assertTrue(sim["foundry_iq_guardrail"]["private_by_default_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
+
+    def test_scenario_matrix_36_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 32)
-        self.assertEqual(matrix["passed_scenarios"], 31)
+        self.assertEqual(matrix["total_scenarios"], 36)
+        self.assertEqual(matrix["passed_scenarios"], 35)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 96.88, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 97.22, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -131,6 +143,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Apache Ossie YAML", by_id["DL-31"]["expected"])
         self.assertIn("Outbound Access Protection", by_id["DL-32"]["expected"])
 
+    def test_rayfin_observability_objectrefs_graphrag_2026_11_04_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-33", "DL-34", "DL-35", "DL-36"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Rayfin SDK", by_id["DL-33"]["expected"])
+        self.assertIn("Single Eventhouse", by_id["DL-34"]["expected"])
+        self.assertIn("Fabric IQ Ontology Graph", by_id["DL-35"]["expected"])
+        self.assertIn("Zero-Provisioned", by_id["DL-36"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -148,9 +171,10 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 31)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 35)
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
         self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
+        self.assertIn("finops_rayfin_observability", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@
 
 ---
 
-## 1. 四大高价值行业场景端到端方案（Industry Reference Solutions）
+## 1. 五大高价值行业场景端到端方案（Industry Reference Solutions）
 
 ### 场景一：智算中心（AIDC）AI 能源编排与削峰填谷闭环
 - **客户痛点**：单园区万卡 GPU 集群功耗剧烈波动，夏季尖峰时段极易突破电网需量合同上限（触发 2 倍罚款）；配电 SCADA、液冷 BMS、储能 BESS 与 K8s/Slurm 算力调度各自孤立，过度依赖退休老师傅经验。
@@ -47,6 +47,16 @@
   2. **跨四云 6 跳图谱穿透 + DiskANN 向量匹配 (`160 ms`)**：**Fabric IQ Ontology** 结合 **Databricks Agent Bricks Supervisor (OBO 委托认证)** 与 **Snowflake Apache Ossie YAML** 穿透 6 跳团伙链路，并调用 **Azure SQL Hyperscale (192 vCore + 原生 DiskANN 向量索引 GA)** 匹配到 4 起历史洗钱团伙拓扑。
   3. **Foundry IQ 规程校验与双库回写 (`230 ms`)**：校验《`FIN-AML-SAR-SOP-12`》（误报率 `1.4% ≤ 3.0%` 红线），以 `0.97` 置信度预授权自动冻结 `$4.85M` 电汇，并将 SAR 审计案卷同步回写至 **Azure SQL Hyperscale** 与 **1GB 免费 Fabric SQL**。
 - **量化业务 ROI**：端到端闭环 **`660 ms`**，单次跨境团伙攻击挽回净欺诈损失 **`$4,620,000`**，跨云 Schema 漂移实现**零停机自愈**。
+
+---
+
+### 场景五：跨 18 工作区容量尖峰 RCA 与 Rayfin SDK 全栈智能体应用自愈闭环（FinOps & Enterprise Platform Ops）
+- **客户痛点**：集团级数据平台拥有 18+ 个部门工作区与上千张高管报表，某部门分析师提交的未加索引笛卡尔积慢查询极易瞬间打满 F64 容量池（>110% CU），导致调用外部伙伴本体的核心资金门户限流报错；传统运维排查需跨多个团队耗时 30 分钟以上。
+- **推荐架构（对应仿真 `finops_rayfin_observability` / `DL-33 & DL-34`）**：
+  1. **跨工作区单一 Eventhouse 感知 (`108 ms`)**：通过 **Workspace Monitoring** 将 18 个生产工作区遥测实时汇入**单一 Eventhouse**，**Monitor Hub Capacity Headroom** 秒级告警 F64 利用率飙升至 **`114.8%`** 并定位 `WS-FIN-PROD-07` 的慢查询 `Q-8841`。
+  2. **6 跳图谱穿透与双智能体联合寻优 (`282 ms`)**：**Fabric IQ Ontology** 穿透受影响的 **OneLake IQ Sharing（标普全球 S&P Global RDF 本体）** 与资金门户应用；**Operations Agent** 自动限流慢查询，联合 **Database Agent for SQL** 注入 **DiskANN 向量与复合索引提示**，并按需开启 **On-Demand Billing 突发缓冲（`+16 CU` 25 分钟，花费 `$48.50 ≤ $250` 护栏）**。
+  3. **Rayfin TS 函数执行与 1GB 免费 SQL 审计回写 (`200 ms`)**：校验 **Foundry IQ**《`FINOPS-SURGE-SOP-09`》与 **Private-by-Default / Secret Store** 策略后，调用开源 **Rayfin SDK** 编写的 TypeScript 后端函数 `fn_remediateCapacityAndLogAudit()` 将处置记录回写至 **1GB 免费 Fabric SQL**。
+- **量化业务 ROI**：端到端闭环 **`590 ms`**，F64 容量利用率从 **`114.8%` 压降至 `71.2%`（`-43.6%`）**，单次规避高管看板与资金门户 SLA 违约罚金 **`$28,400`**。
 
 ---
 
