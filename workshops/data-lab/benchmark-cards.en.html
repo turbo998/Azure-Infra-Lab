@@ -223,22 +223,22 @@
   <div>
     <div class="card-header">
       <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-03 / 11-04 · SEALED RUN</span>
+      <span>2026-11-04 / 11-05 · SEALED RUN</span>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> Achieves 97.22% Routing &amp; Grounding Accuracy (35/36) Across 5 Clouds, Rayfin Full-Stack Apps, Observability &amp; Osmos While Cutting TCO by 46.1%–56.1%</h1>
-    <p class="sub">Synthesizing FabCon Barcelona 2026, the Microsoft IQ 4-Pillar Stack, and latest breakthroughs (Open-Source Rayfin SDK/CLI, 18-Workspace Single Eventhouse Observability, OneLake IQ Sharing RDF vs. Databricks Lakeflow Real-Time GA, Snowflake Horizon Context, BigQuery ObjectRefs/GQL GA, and AWS Bedrock GraphRAG).</p>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> Achieves 97.50% Routing &amp; Grounding Accuracy (39/40) Across 5 Clouds, Database Hub, Hyperscale 192-vCore DiskANN, Rayfin &amp; Osmos While Cutting TCO by 46.1%–56.1%</h1>
+    <p class="sub">Synthesizing FabCon Barcelona 2026, the Microsoft IQ 4-Pillar Stack, and latest breakthroughs (Database Hub + Database Agents, Azure SQL Hyperscale 192 vCore + Native SSD DiskANN Vector Index GA, Open-Source Rayfin SDK/CLI vs. Databricks Lakebase Search GA, Snowflake Unistore Hybrid Tables, GCP AlloyDB ScaNN + Spanner Graph ISO GQL, and AWS Aurora Zero-ETL to S3 Tables).</p>
 
     <div class="grid-3">
       <div class="panel">
         <h3>1. Scenarios &amp; Action Gates</h3>
-        <p><strong>36 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-36</code>):</p>
+        <p><strong>40 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-40</code>):</p>
         <ul>
           <li><code>Fabric IQ &amp; Rayfin Apps</code> (7 cases)</li>
-          <li><code>vs Databricks (+ Lakeflow/OBO)</code> (8 cases)</li>
-          <li><code>vs Snowflake (+ Horizon/Ossie)</code> (6 cases)</li>
-          <li><code>vs GCP BigQuery (+ ObjectRefs/GQL)</code> (5 cases)</li>
-          <li><code>vs AWS Lakehouse (+ GraphRAG)</code> (4 cases)</li>
-          <li><code>Database Hub / Safety / Ops</code> (6 cases)</li>
+          <li><code>vs Databricks (+ Lakebase/OBO)</code> (9 cases)</li>
+          <li><code>vs Snowflake (+ Unistore/Ossie)</code> (7 cases)</li>
+          <li><code>vs GCP BigQuery (+ ScaNN/GQL)</code> (6 cases)</li>
+          <li><code>vs AWS Lakehouse (+ Zero-ETL)</code> (5 cases)</li>
+          <li><code>Database Hub / DiskANN / Safety</code> (6 cases)</li>
         </ul>
         <p style="margin-top:8px;"><strong>Action Bands</strong>:<br>
         <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
@@ -250,11 +250,11 @@
         <h3>2. Structured Input Contract</h3>
         <div class="dark-code" style="font-size:10.5px; padding:10px;">{
   "cohort": [
-    "Microsoft Fabric (F64 + IQ + Rayfin)",
-    "Databricks (Unity + Lakeflow + OBO)",
-    "Snowflake (Horizon + AISQL + Ossie)",
-    "GCP (BigQuery ObjectRefs + GQL)",
-    "AWS (S3 Tables + Bedrock GraphRAG)"
+    "Microsoft Fabric (F64 + IQ + DB Hub)",
+    "Databricks (Unity + Lakebase Search)",
+    "Snowflake (Unistore + Cortex Search)",
+    "GCP (AlloyDB ScaNN + Spanner Graph)",
+    "AWS (Aurora Zero-ETL + S3 Tables)"
   ],
   "enterprise_profile": {
     "users": 500,
@@ -267,7 +267,8 @@
     "airline_jfk_r25 (JFK)",
     "retail_cross_cloud_planning",
     "financial_multi_cloud_fraud",
-    "finops_rayfin_observability"
+    "finops_rayfin_observability",
+    "healthcare_clinical_supply_diskann"
   ]
 }</div>
       </div>
@@ -305,7 +306,7 @@
   </div>
 
   <div class="footer-callout">
-    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>: All bar widths, TCO figures, 5 Ontology simulations, and 36 scenario scores are generated deterministically by <code>src/data_lab/benchmark_suite.py</code> and verified by <code>tests/test_data_lab.py</code> (14/14 passing) via <code>reports/report.json</code>.
+    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>: All bar widths, TCO figures, 6 Ontology simulations, and 40 scenario scores are generated deterministically by <code>src/data_lab/benchmark_suite.py</code> and verified by <code>tests/test_data_lab.py</code> (16/16 passing) via <code>reports/report.json</code>.
   </div>
 </section>
 
@@ -382,10 +383,10 @@
 <section class="card" id="card-3">
   <div>
     <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 36-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 35 / 36 (97.22%)</span>
+      <span>3 / 7 · WHAT I TESTED · 40-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 39 / 40 (97.50%) · MEAN 558.0 MS</span>
     </div>
-    <h2>35 of 36 Cross-Cloud, Rayfin Full-Stack, Observability &amp; Osmos/OBO Ontology Scenarios Pass (97.22%); Single Miss (✕ DL-23) Exposes +14.2% Metric Drift on Ungrounded Raw Tables</h2>
+    <h2>39 of 40 Cross-Cloud, Database Hub, Hyperscale 192-vCore DiskANN, Rayfin &amp; Osmos/OBO Ontology Scenarios Pass (97.50%); Single Miss (✕ DL-23) Exposes +14.2% Metric Drift on Ungrounded Raw Tables</h2>
 
     <table>
       <thead>
@@ -429,14 +430,16 @@
         <tr><td><strong>DL-32</strong> · Iceberg</td><td>GCP BigLake Iceberg REST on AWS S3 Tables to OneLake</td><td class="hit">✓ Outbound-protected S3 Shortcut + BigQuery Mirroring</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-33..34</strong> · Rayfin</td><td>Rayfin SDK Full-Stack App (1GB SQL) + 18-WS FinOps RCA (590ms)</td><td class="hit">✓ Cuts F64 load -43.6% + DiskANN hint + saves $28.4K</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
         <tr><td><strong>DL-35..36</strong> · Graph</td><td>BigQuery ObjectRefs/GQL &amp; Bedrock GraphRAG vs Fabric IQ</td><td class="hit">✓ 20M+ PBI models to Ontology + Foundry IQ (+36% rel)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-37..38</strong> · DiskANN</td><td>Clinical Cold-Chain Oracle/BQ Mirror + Hyperscale DiskANN (560ms)</td><td class="hit">✓ 18M vectors 19ms/98.4% recall + 420 vials ($640K saved)</td><td><span class="pill act-confirm">Confirm / Act</span></td></tr>
+        <tr><td><strong>DL-39..40</strong> · LTAP</td><td>AlloyDB ScaNN / Spanner Graph / Unistore / Aurora Zero-ETL</td><td class="hit">✓ Unified Hyperscale DiskANN + 1GB Free Fabric SQL wins</td><td><span class="pill act-auto">Act automatically</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="grid-2" style="margin-top:8px;">
     <div class="panel">
-      <h3>Threshold Gating Distribution (36 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>26 (72.2%)</strong> · <code>Confirm</code>: <strong>8 (22.2%)</strong> · <code>Send to a human</code>: <strong>2 (5.6%)</strong>. Physical grid dispatch, cross-cloud budget write-back, and schema evolution enforce human-in-the-loop confirmation.</p>
+      <h3>Threshold Gating Distribution (40 Cases)</h3>
+      <p><code>Act automatically</code>: <strong>30 (75.0%)</strong> · <code>Confirm</code>: <strong>8 (20.0%)</strong> · <code>Send to a human</code>: <strong>2 (5.0%)</strong>. Physical grid dispatch, clinical cold-chain lot quarantine, and cross-cloud budget write-back enforce human-in-the-loop confirmation.</p>
     </div>
     <div class="panel">
       <h3>Failure Root Cause (✕ DL-23 Miss Analysis)</h3>

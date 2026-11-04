@@ -176,7 +176,7 @@
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
         <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与 Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) 四大智能底座，对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。</p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">35 / 36 场景实测通过 (97.22%) · 2026-11-03 / 11-04</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">39 / 40 场景实测通过 (97.50%) · 2026-11-04 / 11-05</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -190,9 +190,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Copilot 额外 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">五大跨云本体闭环延迟</div>
-        <div class="val">590ms – 780ms</div>
-        <div class="sub" id="kpi3-sub">AIDC 3.45MW · 零售 +$312K · 反欺诈 $4.62M · 跨区自愈 $28.4K</div>
+        <div class="label" id="kpi3-lbl">六大跨云本体闭环延迟</div>
+        <div class="val">560ms – 780ms</div>
+        <div class="sub" id="kpi3-sub">AIDC 3.45MW · 零售 +$312K · 反欺诈 $4.62M · 医药冷链 $640K</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -280,7 +280,8 @@
       <button class="comp-pill" id="sim-btn-airline" onclick="selectScenario('airline_jfk_r25')">✈️ 场景 B：纽约 JFK R25 跑道湿雪数字孪生 (640ms)</button>
       <button class="comp-pill" id="sim-btn-retail" onclick="selectScenario('retail_cross_cloud_planning')">🛒 场景 C：跨云零售爆单与 Planning 预算回写 (710ms)</button>
       <button class="comp-pill" id="sim-btn-fraud" onclick="selectScenario('financial_multi_cloud_fraud')">🛡️ 场景 D：多云金融反欺诈与 Project Osmos 管道自愈 (660ms)</button>
-      <button class="comp-pill" id="sim-btn-finops" onclick="selectScenario('finops_rayfin_observability')">📈 场景 E：18 工作区容量尖峰 RCA 与 Rayfin 全栈自愈 (590ms · 新增)</button>
+      <button class="comp-pill" id="sim-btn-finops" onclick="selectScenario('finops_rayfin_observability')">📈 场景 E：18 工作区容量尖峰 RCA 与 Rayfin 全栈自愈 (590ms)</button>
+      <button class="comp-pill" id="sim-btn-clinical" onclick="selectScenario('healthcare_clinical_supply_diskann')">🧬 场景 F：跨云医药冷链 × Database Hub × Hyperscale 192核 DiskANN (560ms · 新增)</button>
     </div>
 
     <div class="grid-2">
@@ -308,15 +309,23 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · 每日研究强制交付 (2026-11-03 / 11-04)：五大平台竞对攻防、Rayfin 全栈应用、跨区可观测性与五本体一图流总结卡 (Executive Visual Summary SVG)</span>
-        <a href="assets/svg/01-data-lab-executive-summary-2026-11-03.svg" target="_blank">🔍 查看原始高清 SVG</a>
+        <span>01 · 每日研究强制交付 (2026-11-04 / 11-05)：五大平台竞对攻防、Database Hub + DiskANN、Rayfin 与六大本体一图流总结卡 (Executive Visual Summary SVG)</span>
+        <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
-      <img src="assets/svg/01-data-lab-executive-summary-2026-11-03.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+      <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>06 · 开源 Rayfin SDK 全栈智能体应用 × 跨 18 工作区 Eventhouse 可观测性 × OneLake IQ Sharing 架构 (新增)</span>
+        <span>07 · Database Hub × Azure SQL Hyperscale 192核 DiskANN × 跨云零 ETL Mirroring 架构 (2026-11-04 / 11-05 新增)</span>
+        <a href="assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg" alt="Database Hub & Hyperscale 192 vCore DiskANN Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>06 · 开源 Rayfin SDK 全栈智能体应用 × 跨 18 工作区 Eventhouse 可观测性 × OneLake IQ Sharing 架构</span>
         <a href="assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg" alt="Rayfin SDK & Cross-Workspace Eventhouse Observability Architecture" class="svg-preview">
@@ -653,6 +662,32 @@ const SIM_DATA = {
       teamsTitle: '📋 Rayfin SDK Full-Stack App &amp; Monitor Hub Auto-Remediation Receipt (Act Automatically · 0.97)',
       teamsSummary: 'Action: Throttled Q-8841 + Injected DiskANN Index Hint + Attached +16 CU On-Demand Burst ($48.50) + Rayfin TS Write-back to 1GB Free Fabric SQL · -43.6% Load, $28,400 Saved ✓'
     }
+  },
+  healthcare_clinical_supply_diskann: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse IoT 冷链遥测超温感知 (LOT-BIO-209)', latency: '104 ms', desc: 'Eventhouse KQL 检测到生物制剂批次 LOT-BIO-209 在跨国运输途中箱温升至 6.8°C（突破 2.0°C 上限 +4.8°C 持续 42 分钟），触发 COLD_CHAIN_TEMP_C > 2.0C FOR >= 30_MIN 实时告警。' },
+        { title: '② 跨 Oracle ERP + BigQuery 临床注册库零拷贝本体穿透', latency: '138 ms', desc: '穿透 `ColdChainSensor:Eventhouse-IoT → ERPInventory:Oracle-OneLake-Mirroring (420 Vials At-Risk) → ClinicalRegistry:BigQuery-Mirroring-GA (128 Phase-III Patients) → ProtocolVectorStore:Hyperscale-192vCore-DiskANN → DatabaseHub:Fabric-Database-Agent → ReplenishmentApp:Rayfin-SDK`。' },
+        { title: '③ Azure SQL Hyperscale 192核 DiskANN 检索与 Database Hub 自愈', latency: '168 ms', desc: '在 1,800 万条稳定性曲线向量库上通过原生 SSD DiskANN (省 90% 内存) 以 19ms P99 / 98.4% 召回率匹配 SOP-FDA-21CFR11-BIO-08；Database Hub (监控 64 套数据库) 自动解除 Oracle 镜像表阻塞行锁。' },
+        { title: '④ Foundry IQ 法规护栏强制拦截失效批次放行 (SOP-BIO-08)', latency: '72 ms', desc: 'Foundry IQ 核验确认 +4.8°C 持续 42 分钟已超出动力学稳定性窗口，强制阻断 (Block) 任何对该批次的直接给药放行。' },
+        { title: '⑤ Rayfin 临床门户一键隔离与备仓调拨回写 (Confirm · 560 ms)', latency: '78 ms (E2E 560 ms)', desc: '置信度 0.96 (Confirm)；通过 Rayfin SDK 将 LOT-BIO-209 420 支制剂状态回写为 QUARANTINED (1GB 免费 Fabric SQL)，并从苏黎世备仓调拨 420 支合格制剂，确保 128 名患者 100% 不断药，止损 $640,000。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨云医药冷链、Database Hub 与 Hyperscale 192核 DiskANN 本体链路 (Oracle + BigQuery + Hyperscale + Fabric)</h4><p><code>ColdChainSensor:LOT-BIO-209 (6.8°C)</code> ──[impacts]──&gt; <code>OracleMirroring:420-Vials-AtRisk</code> ──[allocatedTo]──&gt; <code>BigQueryMirroring:128-Phase3-Patients</code> ──[matchedBy]──&gt; <code>Hyperscale-192vCore:DiskANN-18M (19ms/98.4%)</code> ──[governedBy]──&gt; <code>DatabaseHub:64-DBs-LockHealed</code> ──[writesBack]──&gt; <code>RayfinClinicalPortal:DEPOT-ZRH-02 (+420 Vials)</code></p>',
+      teamsTitle: '📋 Rayfin 临床供应门户 &amp; Database Hub 批次隔离调拨审批卡 (Confirm · 0.96)',
+      teamsSummary: '动作：隔离 LOT-BIO-209 (420 支) + Database Agent 解除 Oracle 镜像锁 + Hyperscale 192核 DiskANN 匹配 SOP-BIO-08 + 苏黎世备仓调拨 420 支 · 128 名患者 100% 不断药，止损 $640,000 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse IoT Cold-Chain Excursion Sense (LOT-BIO-209)', latency: '104 ms', desc: 'Eventhouse KQL detects biologics lot LOT-BIO-209 at 6.8°C (+4.8°C above the 2.0°C ceiling for 42 min), triggering COLD_CHAIN_TEMP_C > 2.0C FOR >= 30_MIN.' },
+        { title: '② Cross-Cloud Oracle ERP + BigQuery Clinical Graph Traversal', latency: '138 ms', desc: 'Traverses `ColdChainSensor:Eventhouse-IoT → ERPInventory:Oracle-OneLake-Mirroring (420 Vials At-Risk) → ClinicalRegistry:BigQuery-Mirroring-GA (128 Phase-III Patients) → ProtocolVectorStore:Hyperscale-192vCore-DiskANN → DatabaseHub:Fabric-Database-Agent → ReplenishmentApp:Rayfin-SDK`.' },
+        { title: '③ Hyperscale 192-vCore DiskANN Search & Database Hub Lock Healing', latency: '168 ms', desc: 'Queries 18M stability vectors via native SSD DiskANN (10x lower RAM, 19ms P99, 98.4% recall) to match SOP-FDA-21CFR11-BIO-08; Database Hub (64 monitored DBs) resolves blocking lock on the Oracle-mirrored ledger.' },
+        { title: '④ Foundry IQ Regulatory Guardrail Block (SOP-BIO-08)', latency: '72 ms', desc: 'Foundry IQ confirms the +4.8°C excursion exceeds kinetic stability limits and blocks direct patient administration of the compromised lot.' },
+        { title: '⑤ Rayfin Clinical Portal Quarantine & Backup Re-dispatch (560 ms)', latency: '78 ms (E2E 560 ms)', desc: 'Confidence 0.96 (Confirm); writes QUARANTINED for 420 vials to 1GB Free Fabric SQL via Rayfin SDK and dispatches 420 replacement vials from Zurich depot DEPOT-ZRH-02, protecting 128 patients (100% continuity) and saving $640,000.' }
+      ],
+      graph: '<h4>🕸️ Active Cross-Cloud Clinical Cold-Chain, Database Hub &amp; Hyperscale 192-vCore DiskANN Chain</h4><p><code>ColdChainSensor:LOT-BIO-209 (6.8°C)</code> ──[impacts]──&gt; <code>OracleMirroring:420-Vials-AtRisk</code> ──[allocatedTo]──&gt; <code>BigQueryMirroring:128-Phase3-Patients</code> ──[matchedBy]──&gt; <code>Hyperscale-192vCore:DiskANN-18M (19ms/98.4%)</code> ──[governedBy]──&gt; <code>DatabaseHub:64-DBs-LockHealed</code> ──[writesBack]──&gt; <code>RayfinClinicalPortal:DEPOT-ZRH-02 (+420 Vials)</code></p>',
+      teamsTitle: '📋 Rayfin Clinical Portal &amp; Database Hub Quarantine Card (Confirm · 0.96)',
+      teamsSummary: 'Action: Quarantine LOT-BIO-209 (420 vials) + Heal Oracle Mirror Lock + Hyperscale DiskANN SOP Match + Re-dispatch 420 Vials from Zurich · 100% Patient Continuity, $640,000 Saved ✓'
+    }
   }
 };
 
@@ -799,6 +834,8 @@ function selectScenario(sc) {
   if (fraudBtn) fraudBtn.classList.toggle('active', sc === 'financial_multi_cloud_fraud');
   const finopsBtn = document.getElementById('sim-btn-finops');
   if (finopsBtn) finopsBtn.classList.toggle('active', sc === 'finops_rayfin_observability');
+  const clinicalBtn = document.getElementById('sim-btn-clinical');
+  if (clinicalBtn) clinicalBtn.classList.toggle('active', sc === 'healthcare_clinical_supply_diskann');
   runNormalSim();
 }
 

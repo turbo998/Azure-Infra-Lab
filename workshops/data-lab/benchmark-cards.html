@@ -233,22 +233,22 @@
   <div>
     <div class="card-header">
       <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-03 / 11-04 · SEALED RUN</span>
+      <span>2026-11-04 / 11-05 · SEALED RUN</span>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> 在 36 项跨云数据、Rayfin 全栈智能体、跨区可观测性与 Project Osmos 自愈评测中达成 97.22% 准确率（35/36），500 人企业 TCO 降低 46.1%–56.1%</h1>
-    <p class="sub">融合 FabCon Barcelona 2026、Microsoft IQ 四大支柱与最新迭代（开源 Rayfin SDK/CLI 全栈智能体应用、18 工作区单一 Eventhouse 可观测性、OneLake IQ Sharing RDF vs Databricks Lakeflow Real-Time GA、Snowflake Horizon Context、BigQuery ObjectRefs/GQL GA、AWS Bedrock GraphRAG）。</p>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> 在 40 项跨云数据、Database Hub、Hyperscale 192核 DiskANN、Rayfin 与 Osmos 自愈评测中达成 97.50% 准确率（39/40），500 人企业 TCO 降低 46.1%–56.1%</h1>
+    <p class="sub">融合 FabCon Barcelona 2026、Microsoft IQ 四大支柱与最新迭代（Database Hub + Database Agents、Azure SQL Hyperscale 192 vCore + 原生 SSD DiskANN 向量索引 GA、开源 Rayfin SDK/CLI vs Databricks Lakebase Search GA、Snowflake Unistore Hybrid Tables、GCP AlloyDB ScaNN + Spanner Graph ISO GQL、AWS Aurora Zero-ETL to S3 Tables）。</p>
 
     <div class="grid-3">
       <div class="panel">
         <h3>1. 评测场景与门禁阈值</h3>
-        <p><strong>36 项密封架构与本体场景</strong>（<code>DL-01..DL-36</code>）：</p>
+        <p><strong>40 项密封架构与本体场景</strong>（<code>DL-01..DL-40</code>）：</p>
         <ul>
           <li><code>Fabric IQ &amp; Rayfin 全栈应用</code> (7 项)</li>
-          <li><code>vs Databricks (含 Lakeflow/OBO)</code> (8 项)</li>
-          <li><code>vs Snowflake (含 Horizon/Ossie)</code> (6 项)</li>
-          <li><code>vs GCP BigQuery (含 GQL/ObjectRefs)</code> (5 项)</li>
-          <li><code>vs AWS Lakehouse (含 GraphRAG)</code> (4 项)</li>
-          <li><code>Database Hub / 安全护栏 / 可观测</code> (6 项)</li>
+          <li><code>vs Databricks (含 Lakebase/OBO)</code> (9 项)</li>
+          <li><code>vs Snowflake (含 Unistore/Ossie)</code> (7 项)</li>
+          <li><code>vs GCP BigQuery (含 ScaNN/GQL)</code> (6 项)</li>
+          <li><code>vs AWS Lakehouse (含 Zero-ETL)</code> (5 项)</li>
+          <li><code>Database Hub / DiskANN / 安全护栏</code> (6 项)</li>
         </ul>
         <p style="margin-top:8px;"><strong>动作门禁</strong>：<br>
         <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
@@ -260,11 +260,11 @@
         <h3>2. 结构化评测输入负载</h3>
         <div class="dark-code" style="font-size:10.5px; padding:10px;">{
   "cohort": [
-    "Microsoft Fabric (F64 + IQ + Rayfin)",
-    "Databricks (Unity + Lakeflow + OBO)",
-    "Snowflake (Horizon + AISQL + Ossie)",
-    "GCP (BigQuery ObjectRefs + GQL)",
-    "AWS (S3 Tables + Bedrock GraphRAG)"
+    "Microsoft Fabric (F64 + IQ + DB Hub)",
+    "Databricks (Unity + Lakebase Search)",
+    "Snowflake (Unistore + Cortex Search)",
+    "GCP (AlloyDB ScaNN + Spanner Graph)",
+    "AWS (Aurora Zero-ETL + S3 Tables)"
   ],
   "enterprise_profile": {
     "users": 500,
@@ -277,7 +277,8 @@
     "airline_jfk_r25 (JFK)",
     "retail_cross_cloud_planning",
     "financial_multi_cloud_fraud",
-    "finops_rayfin_observability"
+    "finops_rayfin_observability",
+    "healthcare_clinical_supply_diskann"
   ]
 }</div>
       </div>
@@ -315,7 +316,7 @@
   </div>
 
   <div class="footer-callout">
-    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>：确定性状态机、五云 TCO 模型、5 大 Ontology 仿真与 36 项场景评分由 <code>src/data_lab/benchmark_suite.py</code> 生成并通过 <code>tests/test_data_lab.py</code>（14/14 通过），零虚构坐标，数据源于 <code>reports/report.json</code>。
+    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>：确定性状态机、五云 TCO 模型、6 大 Ontology 仿真与 40 项场景评分由 <code>src/data_lab/benchmark_suite.py</code> 生成并通过 <code>tests/test_data_lab.py</code>（16/16 通过），零虚构坐标，数据源于 <code>reports/report.json</code>。
   </div>
 </section>
 
@@ -392,10 +393,10 @@
 <section class="card" id="card-3">
   <div>
     <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 36-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 35 / 36 (97.22%)</span>
+      <span>3 / 7 · WHAT I TESTED · 40-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 39 / 40 (97.50%) · MEAN 558.0 MS</span>
     </div>
-    <h2>36 项跨云架构、Rayfin 全栈应用、跨区可观测性与 Osmos/OBO 本体场景测试通过 35 项（97.22%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
+    <h2>40 项跨云架构、Database Hub、Hyperscale 192核 DiskANN、Rayfin 与 Osmos/OBO 本体场景测试通过 39 项（97.50%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
 
     <table>
       <thead>
@@ -439,14 +440,16 @@
         <tr><td><strong>DL-32</strong> · Iceberg</td><td>GCP BigLake Iceberg REST 直查 AWS S3 Tables 汇聚至 OneLake</td><td class="hit">✓ S3 Shortcut (出站保护) + BigQuery Mirroring 零 Egress</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-33..34</strong> · Rayfin</td><td>Rayfin SDK 全栈应用 (1GB SQL) + 18 工作区容量尖峰自愈 (590ms)</td><td class="hit">✓ 压降 F64 负载 -43.6% + DiskANN 索引提示 + 规避 $28.4K</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
         <tr><td><strong>DL-35..36</strong> · Graph</td><td>BigQuery ObjectRefs/GQL 与 AWS Bedrock GraphRAG vs Fabric IQ</td><td class="hit">✓ 2000万 PBI 模型升维本体 + Foundry IQ (+36% 相关性)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-37..38</strong> · DiskANN</td><td>医药冷链 Oracle/BQ Mirroring + Hyperscale 192核 DiskANN (560ms)</td><td class="hit">✓ 18M 向量 19ms/98.4% 召回 + 隔离 420 支止损 $640K</td><td><span class="pill act-confirm">Confirm / Act</span></td></tr>
+        <tr><td><strong>DL-39..40</strong> · LTAP</td><td>AlloyDB ScaNN / Spanner Graph / Unistore / Aurora Zero-ETL 对标</td><td class="hit">✓ 单引擎 Hyperscale DiskANN + 1GB 免费 Fabric SQL 胜出</td><td><span class="pill act-auto">Act automatically</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="grid-2" style="margin-top:8px;">
     <div class="panel">
-      <h3>阈值门控分布 (Threshold Gating · 36 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>26 项 (72.2%)</strong> · <code>Confirm</code>: <strong>8 项 (22.2%)</strong> · <code>Send to a human</code>: <strong>2 项 (5.6%)</strong>。高影响物理调度、跨云闪促预算回写与生产 Schema 演化经过人工确认。</p>
+      <h3>阈值门控分布 (Threshold Gating · 40 Cases)</h3>
+      <p><code>Act automatically</code>: <strong>30 项 (75.0%)</strong> · <code>Confirm</code>: <strong>8 项 (20.0%)</strong> · <code>Send to a human</code>: <strong>2 项 (5.0%)</strong>。高影响物理调度、医药冷链批次隔离与跨云闪促预算回写经过人工确认。</p>
     </div>
     <div class="panel">
       <h3>失分根因剖析 (✕ DL-23 Miss Analysis)</h3>

@@ -1,7 +1,9 @@
 # ⚔️ Microsoft Fabric vs. 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep-Dive Battlecards (2026)
 
 > **Language**: [中文 (`fabric-vs-4clouds-battlecards-2026.md`)](fabric-vs-4clouds-battlecards-2026.md) | **English (Current)**  
-> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-04` · 36 Scenarios `97.22%`) · **Target Persona**: Principal AI Solution Architect
+> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-04 / 11-05` · 40 Scenarios `97.50%`) · **Target Persona**: Principal AI Solution Architect
+
+[![Database Hub & Hyperscale 192 vCore DiskANN Architecture](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)
 
 [![Five Cloud Coexistence Topology](../assets/svg/03-five-cloud-coexistence-topology.svg)](../assets/svg/03-five-cloud-coexistence-topology.svg)
 
@@ -93,6 +95,17 @@
 | **Cross-Workspace Observability** | **Workspace Monitoring → Single Eventhouse + Monitor Hub Headroom + Operations Agent RCA + On-Demand Burst (`590ms`)** | **Lakeflow Pipelines System Tables GA + Maintenance Windows** (pipeline-scoped telemetry) | Account Usage + Resource Monitors (lacks sub-second KQL RCA & SQL index auto-remediation) | Cloud Monitoring + INFORMATION_SCHEMA | CloudWatch + Redshift Serverless AI-Driven Scaling |
 | **Multimodal Graph & Partner Sharing** | **Fabric IQ Ontology (20M+ PBI models + Rules + Actions) + OneLake IQ Sharing (RDF ontologies with EY/S&P/TomTom)** | Unity Catalog Metric Views + Mosaic AI Agentic Code Converter GA | **Horizon Context (Power BI/Tableau/dbt connectors)** + AI Readiness Scores | **BigQuery ObjectRefs GA + Native ISO GQL Graph** + Cross-Cloud Caching GA | **Bedrock Knowledge Bases GraphRAG & SQL Augmentation** |
 | **Architect Selection Rule** | **Best for containerless full-stack write-back apps & automated FinOps RCA across 18+ workspaces** | **Use Agentic Code Converter for Spark migration; build business write-back apps on Fabric Rayfin** | **Bridge Horizon Context & Apache Ossie YAML into Fabric IQ for `$0`-token Copilot** | **Mirror BigQuery tables to OneLake to bind active Rules & Operations Agents** | **Replace 6-service DIY GraphRAG stitching with governed Fabric IQ + Foundry IQ (+36% relevance)** |
+
+---
+
+## 6. 2026-11-04 / 11-05 Nightly Addendum: Database Hub, Azure SQL Hyperscale 192-vCore DiskANN & 5-Cloud Operational Vector Matrix (`DL-37..DL-40`)
+
+| Dimension | Microsoft Fabric (`Database Hub` + `Hyperscale DiskANN`) | Databricks (`Lakebase Search GA`) | Snowflake (`Unistore Hybrid Tables` + `Cortex Search`) | GCP (`AlloyDB ScaNN` + `Spanner Graph`) | AWS (`Aurora Zero-ETL` + `OpenSearch Vector`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Estate-Wide DB Posture & Tuning** | **Fabric Database Hub (Preview) + Database Agents**: Centralizes posture across 64+ SQL Server, Azure SQL, PostgreSQL, Cosmos DB & mirrored Oracle/BigQuery DBs with auto lock/index remediation (`149ms`) | Lakebase Serverless Postgres covers managed Postgres instances only; no cross-engine SQL Server/Oracle/Cosmos DB hub | Snowsight monitors internal Snowflake objects only; no heterogeneous OLTP lock remediation | Cloud SQL / AlloyDB System Insights scoped to GCP databases | RDS Performance Insights + DevOps Guru (per-instance siloed alerts) |
+| **Operational + Vector Engine** | **Azure SQL Hyperscale 192 vCore + Native SSD DiskANN GA + Fabric SQL**: **10× (90%) lower RAM** than HNSW, **`19ms` P99 at `98.4%` recall**, single T-SQL statement joining ACID rows, RLS & `VECTOR_SEARCH()` | **Lakebase Search GA (`lakebase_vector` + `lakebase_text`)**: 97% recall at 71ms P99 on 100M vectors + Synced Tables, but no 1GB free embedded BI SQL | **Unistore Hybrid Tables + Cortex Search Multi-Index RAG**: Row + columnar joins, but requires dedicated compute credits | **AlloyDB ScaNN + Columnar Vector Acceleration** (4× faster queries, 3–4× lower RAM vs HNSW) + **Spanner Graph ISO GQL** | **Aurora + S3 Tables + OpenSearch Serverless Zero-ETL**: Spans 3 services & billing meters with sync lag and ACL drift risk |
+| **Architect Selection Rule** | **Best for heterogeneous DB governance, low-RAM 100M+ vector ACID/RLS joins & 1GB free SQL write-back** | **Use Lakebase Search for Python agent state; drive enterprise BI & write-back on Fabric** | **Keep Snowflake core ledgers; mirror to OneLake + Hyperscale 50-DB pools instead of costly Unistore** | **Mirror BigQuery & Oracle to OneLake + Hyperscale DiskANN for closed-loop clinical/supply actions** | **Replace 3-service Aurora+OpenSearch+S3 Tables stitching with unified Hyperscale DiskANN + Fabric SQL** |
+
 
 
 

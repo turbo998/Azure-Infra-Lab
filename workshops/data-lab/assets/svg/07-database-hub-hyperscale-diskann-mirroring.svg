@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0D1627"/>
+      <stop offset="100%" stop-color="#111C35"/>
+    </linearGradient>
+    <linearGradient id="headGrad7" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="diskannGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="860" fill="url(#bgGrad7)"/>
+  <rect x="24" y="20" width="1392" height="820" rx="20" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="44" y="38" width="1352" height="84" rx="14" fill="#131F38" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="64" y="54" width="248" height="26" rx="13" fill="url(#headGrad7)"/>
+  <text x="188" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="0.8">LTAP + VECTOR ESTATE · 2026-11-04/05</text>
+  <text x="328" y="72" fill="#F8FAFC" font-size="20" font-weight="800">Fabric Database Hub × Hyperscale 192 vCore DiskANN × 多云零 ETL Mirroring 架构蓝图</text>
+  <text x="64" y="102" fill="#94A3B8" font-size="13">Unified Operational + Analytical + Vector Estate · 对标 Databricks Lakebase Search / Snowflake Unistore / GCP AlloyDB ScaNN / AWS Aurora Zero-ETL</text>
+
+  <!-- Left Column: Heterogeneous Operational & Multicloud Sources -->
+  <rect x="44" y="138" width="380" height="420" rx="14" fill="#111C33" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="64" y="166" fill="#60A5FA" font-size="14" font-weight="800">01 · 全域事务库与跨云零 ETL 接入 (64+ DBs)</text>
+
+  <rect x="64" y="182" width="340" height="78" rx="10" fill="url(#diskannGrad)" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="80" y="204" fill="#38BDF8" font-size="12.5" font-weight="800">Azure SQL Hyperscale 192 vCore + DiskANN (GA)</text>
+  <text x="80" y="222" fill="#F8FAFC" font-size="11">• 最大 192 vCore 计算弹性 + 高密度池 (50 DBs/Pool) + 自动暂停</text>
+  <text x="80" y="238" fill="#CBD5E1" font-size="11">• SSD 原生 DiskANN 向量索引：较 HNSW 内存降 10× · 19ms P99</text>
+  <text x="80" y="252" fill="#34D399" font-size="10.5" font-weight="700">• 单条 T-SQL 融合事务 ACID + VECTOR_SEARCH() + 行级 RLS</text>
+
+  <rect x="64" y="272" width="340" height="68" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="80" y="294" fill="#34D399" font-size="12.5" font-weight="800">Fabric SQL (含 1GB Free) &amp; Azure SQL DB / MI</text>
+  <text x="80" y="312" fill="#E2E8F0" font-size="11">• Power BI Agentic App 默认绑定 1GB 免费 Fabric SQL 事务库</text>
+  <text x="80" y="328" fill="#94A3B8" font-size="11">• SQL Server on Azure Local (ALDO 断网主权云) 统一纳管</text>
+
+  <rect x="64" y="352" width="340" height="68" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="80" y="374" fill="#FBBF24" font-size="12.5" font-weight="800">PostgreSQL &amp; Azure Cosmos DB (NoSQL + 向量)</text>
+  <text x="80" y="392" fill="#E2E8F0" font-size="11">• Rayfin SDK 原生支持 PostgreSQL / Fabric SQL 双引擎</text>
+  <text x="80" y="408" fill="#94A3B8" font-size="11">• Cosmos DB 实时 operational 镜像直通 OneLake Delta</text>
+
+  <rect x="64" y="432" width="340" height="108" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="80" y="454" fill="#C084FC" font-size="12.5" font-weight="800">跨云异构零 ETL Mirroring (Oracle / BigQuery / Snowflake)</text>
+  <text x="80" y="472" fill="#E2E8F0" font-size="11">• Oracle ERP / 临床批号账本 → OneLake Mirroring 秒级 CDC</text>
+  <text x="80" y="488" fill="#E2E8F0" font-size="11">• Google BigQuery Mirroring (GA) → 零搬迁同步临床/营销表</text>
+  <text x="80" y="504" fill="#E2E8F0" font-size="11">• AWS S3 Tables (Iceberg) → 带缓存与出站保护 Shortcut</text>
+  <text x="80" y="524" fill="#34D399" font-size="10.5" font-weight="700">✓ 免自建 Debezium/Kafka，自动转换开放 Delta/Iceberg</text>
+
+  <!-- Center Column: Database Hub + Database Agents + Fabric IQ Ontology -->
+  <rect x="444" y="138" width="512" height="420" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <text x="464" y="166" fill="#34D399" font-size="14" font-weight="800">02 · Fabric Database Hub 与自主 Database Agent 治理中枢</text>
+
+  <rect x="464" y="182" width="472" height="114" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.3"/>
+  <text x="480" y="204" fill="#38BDF8" font-size="12.5" font-weight="800">Database Hub (Preview) · 跨云数据库统一风险与性能态势</text>
+  <text x="480" y="224" fill="#E2E8F0" font-size="11">• 全域资产视图：统一监控 64+ 套 SQL Server、Azure SQL、PostgreSQL、Cosmos DB</text>
+  <text x="480" y="242" fill="#E2E8F0" font-size="11">• 慢查询与死锁透视：实时捕捉跨 Oracle Mirroring 与 Hyperscale 阻塞锁</text>
+  <text x="480" y="260" fill="#E2E8F0" font-size="11">• 合规与敏感度基线：自动扫描缺失加密、越权访问并同步 Microsoft Purview</text>
+  <text x="480" y="280" fill="#34D399" font-size="11" font-weight="700">• 遥测汇聚：与 18 工作区单一 Eventhouse 联动，104ms KQL 级联定位</text>
+
+  <rect x="464" y="308" width="472" height="114" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.3"/>
+  <text x="480" y="330" fill="#34D399" font-size="12.5" font-weight="800">Database Agents for SQL &amp; PostgreSQL · 自主诊断与 DiskANN 调优</text>
+  <text x="480" y="350" fill="#E2E8F0" font-size="11">• 自动索引建议与注入：识别高维向量 + 关系过滤混合查询，自动构建 DiskANN</text>
+  <text x="480" y="368" fill="#E2E8F0" font-size="11">• 弹性池扩缩容编排：临床冷链/大促高峰自动将 Hyperscale 推升至 192 vCore</text>
+  <text x="480" y="386" fill="#E2E8F0" font-size="11">• Schema 协同：配合 Project Osmos 自动修复上游 CDC 字段漂移</text>
+  <text x="480" y="406" fill="#60A5FA" font-size="11" font-weight="700">• 人在回路/预授权：通过 Microsoft Agent 365 审计全链路 DDL/DML 变更</text>
+
+  <rect x="464" y="434" width="472" height="106" rx="10" fill="#172554" stroke="#60A5FA" stroke-width="1.3"/>
+  <text x="480" y="456" fill="#93C5FD" font-size="12.5" font-weight="800">Fabric IQ Ontology + Foundry IQ 混合向量接地</text>
+  <text x="480" y="476" fill="#F8FAFC" font-size="11">• 将 Hyperscale DiskANN 向量召回 (98.4% recall) 与 Ontology 实体图谱直接绑定</text>
+  <text x="480" y="494" fill="#F8FAFC" font-size="11">• 杜绝外部独立向量库导致的权限脱节（ACL Drift）与同步延迟（Sync Lag）</text>
+  <text x="480" y="514" fill="#34D399" font-size="11" font-weight="700">• 最终动作由 Rayfin SDK 应用回写至 1GB Free Fabric SQL / Hyperscale</text>
+
+  <!-- Right Column: Scenario F Live Closed-Loop Trace -->
+  <rect x="976" y="138" width="420" height="420" rx="14" fill="#111C33" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="996" y="166" fill="#C084FC" font-size="14" font-weight="800">03 · 场景 F 闭环：跨云医药冷链与临床试验</text>
+
+  <rect x="996" y="182" width="380" height="358" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="1012" y="206" fill="#F8FAFC" font-size="12" font-weight="800">端到端 560ms · 护航 128 名 III 期患者 ($640K 止损)</text>
+  <text x="1012" y="230" fill="#38BDF8" font-size="11" font-weight="700">[Step 1 · 104ms] Eventhouse IoT 捕获冷链超温</text>
+  <text x="1012" y="246" fill="#CBD5E1" font-size="10.5">批次 LOT-BIO-209 达 6.8°C (超 2.0°C 阈值 +4.8°C 持续 42m)</text>
+
+  <text x="1012" y="272" fill="#C084FC" font-size="11" font-weight="700">[Step 2 · 138ms] 跨 Oracle + BigQuery 零拷贝图谱级联</text>
+  <text x="1012" y="288" fill="#CBD5E1" font-size="10.5">定位 3 仓 420 支受影响生物制剂 &amp; BigQuery 128 名待给药患者</text>
+
+  <text x="1012" y="314" fill="#34D399" font-size="11" font-weight="700">[Step 3 · 19ms] Hyperscale 192 vCore DiskANN 检索</text>
+  <text x="1012" y="330" fill="#CBD5E1" font-size="10.5">在 1800 万条稳定性向量中 98.4% 召回匹配 FDA 21CFR11 SOP-08</text>
+
+  <text x="1012" y="356" fill="#FBBF24" font-size="11" font-weight="700">[Step 4 · 149ms] Database Agent + Foundry IQ 护栏</text>
+  <text x="1012" y="372" fill="#CBD5E1" font-size="10.5">自动解除 Oracle 镜像表行锁；拦截超温批次直接给药请求</text>
+
+  <text x="1012" y="398" fill="#60A5FA" font-size="11" font-weight="700">[Step 5 · 150ms] Rayfin SDK 临床门户一键调拨回写</text>
+  <text x="1012" y="414" fill="#CBD5E1" font-size="10.5">自动冻结 LOT-BIO-209 420 支 + 从苏黎世备仓调拨 420 支</text>
+
+  <rect x="1012" y="434" width="348" height="90" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1"/>
+  <text x="1026" y="456" fill="#93C5FD" font-size="11.5" font-weight="800">仿真验证指标 (Scenario F Verified Metrics)</text>
+  <text x="1026" y="476" fill="#F8FAFC" font-size="11">• DiskANN 延迟 / 召回：19 ms P99 / 98.4% (18M Vectors)</text>
+  <text x="1026" y="494" fill="#F8FAFC" font-size="11">• 给药连续性保障：100.0% (128 / 128 名患者零断药)</text>
+  <text x="1026" y="512" fill="#34D399" font-size="11" font-weight="700">• 避免批次报废与临床队列重做损失：$640,000</text>
+
+  <!-- Bottom Row: 5-Cloud LTAP + Operational Vector Search Competitive Matrix -->
+  <rect x="44" y="576" width="1352" height="244" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="64" y="604" fill="#60A5FA" font-size="14" font-weight="800">04 · 五大平台「事务 LTAP + 原生向量检索 + 跨云零 ETL」横向攻防矩阵 (2026-11-04/05 Battlecard)</text>
+
+  <rect x="64" y="618" width="256" height="184" rx="10" fill="#172554" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="80" y="640" fill="#38BDF8" font-size="12.5" font-weight="800">Microsoft Fabric + SQL</text>
+  <text x="80" y="660" fill="#F8FAFC" font-size="11">• Hyperscale 192 vCore + 50-DB 池</text>
+  <text x="80" y="678" fill="#F8FAFC" font-size="11">• SSD DiskANN GA (省 90% 内存)</text>
+  <text x="80" y="696" fill="#F8FAFC" font-size="11">• Database Hub + Database Agents</text>
+  <text x="80" y="714" fill="#F8FAFC" font-size="11">• 1GB Free Fabric SQL 嵌入式回写</text>
+  <text x="80" y="736" fill="#34D399" font-size="11" font-weight="700">★ 优势：OLTP+向量+BI 本体零割裂</text>
+  <text x="80" y="756" fill="#93C5FD" font-size="10.5">Oracle/BigQuery/S3 原生零 ETL</text>
+
+  <rect x="332" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="348" y="640" fill="#F97316" font-size="12.5" font-weight="800">Databricks Lakebase</text>
+  <text x="348" y="660" fill="#E2E8F0" font-size="11">• Serverless Postgres + Git 分支</text>
+  <text x="348" y="678" fill="#E2E8F0" font-size="11">• Lakebase Search GA (ANN+BM25)</text>
+  <text x="348" y="696" fill="#E2E8F0" font-size="11">• 1 亿向量 97% 召回 / 71ms P99</text>
+  <text x="348" y="714" fill="#E2E8F0" font-size="11">• Synced Tables 反向同步 UC 表</text>
+  <text x="348" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：无跨异构库 Database Hub</text>
+  <text x="348" y="756" fill="#94A3B8" font-size="10.5">适合 Python Agent 状态与特征服</text>
+
+  <rect x="600" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="616" y="640" fill="#38BDF8" font-size="12.5" font-weight="800">Snowflake Unistore</text>
+  <text x="616" y="660" fill="#E2E8F0" font-size="11">• Hybrid Tables 行存 + PK/FK 约束</text>
+  <text x="616" y="678" fill="#E2E8F0" font-size="11">• Cortex Search 多索引混合检索</text>
+  <text x="616" y="696" fill="#E2E8F0" font-size="11">• Openflow CDC 实时入湖</text>
+  <text x="616" y="714" fill="#E2E8F0" font-size="11">• Horizon Context 外部 BI 连接</text>
+  <text x="616" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：Hybrid Table 常驻 Credit 高</text>
+  <text x="616" y="756" fill="#94A3B8" font-size="10.5">缺乏免费内嵌 1GB 业务回写库</text>
+
+  <rect x="868" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#34D399" stroke-width="1.2"/>
+  <text x="884" y="640" fill="#34D399" font-size="12.5" font-weight="800">GCP AlloyDB + Spanner</text>
+  <text x="884" y="660" fill="#E2E8F0" font-size="11">• AlloyDB ScaNN + 列存向量加速</text>
+  <text x="884" y="678" fill="#E2E8F0" font-size="11">• 较 HNSW 查询快 4× / 内存省 3-4×</text>
+  <text x="884" y="696" fill="#E2E8F0" font-size="11">• BigQuery ↔ AlloyDB 零 ETL 联邦</text>
+  <text x="884" y="714" fill="#E2E8F0" font-size="11">• Spanner Graph ISO GQL + 向量</text>
+  <text x="884" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：AlloyDB/Spanner 与 Office 割裂</text>
+  <text x="884" y="756" fill="#94A3B8" font-size="10.5">需额外 Looker 席位与独立运维</text>
+
+  <rect x="1136" y="618" width="240" height="184" rx="10" fill="#0F172A" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="1152" y="640" fill="#FBBF24" font-size="12.5" font-weight="800">AWS Aurora + S3 Tables</text>
+  <text x="1152" y="660" fill="#E2E8F0" font-size="11">• Aurora Zero-ETL → S3 Tables</text>
+  <text x="1152" y="678" fill="#E2E8F0" font-size="11">• OpenSearch Serverless 向量索引</text>
+  <text x="1152" y="696" fill="#E2E8F0" font-size="11">• Redshift Serverless AI 扩缩容</text>
+  <text x="1152" y="714" fill="#E2E8F0" font-size="11">• Bedrock KB GraphRAG</text>
+  <text x="1152" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：Aurora+S3+OS 三套计费</text>
+  <text x="1152" y="756" fill="#94A3B8" font-size="10.5">向量同步存在跨服务延迟与权限差</text>
+</svg>

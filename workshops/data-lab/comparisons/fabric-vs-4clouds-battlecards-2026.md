@@ -1,7 +1,9 @@
 # ⚔️ Microsoft Fabric vs 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度攻防拆解与售前 Battlecards (2026)
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`fabric-vs-4clouds-battlecards-2026.en.md`)](fabric-vs-4clouds-battlecards-2026.en.md)  
-> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-04 实测封存 · 36 场景 `97.22%`） · **适用角色**：AI Solution Architect / 云数智架构师
+> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-04 / 11-05 实测封存 · 40 场景 `97.50%`） · **适用角色**：AI Solution Architect / 云数智架构师
+
+[![Database Hub & Hyperscale 192 vCore DiskANN Architecture](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)
 
 [![Five Cloud Coexistence Topology](../assets/svg/03-five-cloud-coexistence-topology.svg)](../assets/svg/03-five-cloud-coexistence-topology.svg)
 
@@ -111,6 +113,17 @@
 | **跨工作区可观测与自愈** | **Workspace Monitoring → Single Eventhouse + Monitor Hub 容量余量 + Operations Agent RCA + On-Demand 按需突发 (`590ms`)** | **Lakeflow Pipelines System Tables GA + Maintenance Windows**（偏重管道级遥测） | Snowsight Account Usage + Resource Monitors（缺乏跨 BI/流/SQL 实时 KQL 根因智能体） | Cloud Monitoring + BigQuery Information Schema | CloudWatch + Redshift Serverless AI-Driven Scaling |
 | **多模态图谱与外部生态** | **Fabric IQ Ontology (2000万+ PBI 模型一键升级 + Rules + Actions) + OneLake IQ Sharing (RDF 本体共享：EY/S&P/TomTom)** | Unity Catalog Metric Views + Mosaic AI Agentic Code Converter GA | **Horizon Context (连接 Power BI/Tableau/dbt)** + AI Readiness Scores | **BigQuery ObjectRefs GA + 原生 ISO GQL 图查询** + Cross-Cloud Caching GA | **Bedrock Knowledge Bases GraphRAG & SQL 增强** |
 | **架构师选型金律** | **零容器快速上线生产级智能体回写应用 + 跨 18+ 工作区容量尖峰自动自愈首选** | **重度 Spark 流批一体迁移用 Agentic Code Converter，上层应用走 Fabric Rayfin** | **借力 Horizon Context + Apache Ossie 将语义资产统一汇入 Fabric IQ** | **通过 OneLake BigQuery Mirroring 融合多模态特征并触发主动运营动作** | **用 Fabric IQ + Foundry IQ (+36% 相关性) 替代手工拼装的 6 组件 GraphRAG** |
+
+---
+
+## 6. 2026-11-04 / 11-05 夜间增补：Database Hub、Azure SQL Hyperscale 192核 DiskANN 与跨云 LTAP 向量攻防矩阵 (`DL-37..DL-40`)
+
+| 对标维度 | Microsoft Fabric (`Database Hub` + `Hyperscale DiskANN`) | Databricks (`Lakebase Search GA`) | Snowflake (`Unistore Hybrid Tables` + `Cortex Search`) | GCP (`AlloyDB ScaNN` + `Spanner Graph`) | AWS (`Aurora Zero-ETL` + `OpenSearch Vector`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **全域数据库态势与自主调优** | **Fabric Database Hub (预览) + Database Agents**：统一监控 64+ 套 SQL Server、Azure SQL、PostgreSQL、Cosmos DB 与 Oracle/BigQuery 镜像库，自动解除阻塞锁与注入索引 (`149ms`) | Lakebase Serverless Postgres 仅覆盖托管 Postgres 实例，缺乏跨 SQL Server/Oracle/Cosmos DB 的统一态势治理 | Snowsight 仅监控 Snowflake 内部对象，不支持异构事务库态势统一与自动锁修复 | Cloud SQL / AlloyDB System Insights 仅限 GCP 内部实例 | RDS Performance Insights + DevOps Guru（按实例分散告警） |
+| **事务+向量混合引擎 (Operational Vector)** | **Azure SQL Hyperscale 192 vCore + 原生 SSD DiskANN GA + Fabric SQL**：较内存型 HNSW **省 90% 内存（10×）**，亿级向量 **`19ms` P99 / `98.4%` 召回**，单条 T-SQL 内联 ACID 事务与 RLS | **Lakebase Search GA (`lakebase_vector` + `lakebase_text`)**：1 亿向量 97% 召回 / 71ms P99 + Synced Tables，但不提供 1GB 免费 BI 内嵌 SQL | **Unistore Hybrid Tables + Cortex Search 多索引 RAG**：行存+列存联查，但需常驻专属计算 Credit | **AlloyDB ScaNN + 列存向量加速**（较 HNSW 快 4×、省 3–4× 内存）+ **Spanner Graph ISO GQL** | **Aurora + S3 Tables + OpenSearch Serverless 零 ETL 同步**：跨 3 套服务与计费，存在同步延迟与 ACL 裂缝 |
+| **架构师选型金律** | **跨异构数据库统一治理 + 亿级向量低内存高并发 ACID/RLS 联查 + 1GB 免费 SQL 业务回写首选** | **Python 智能体会话状态用 Lakebase Search，全域企业语义与 BI 回写走 Fabric** | **保留 Snowflake 存量账本，通过 Mirroring + Hyperscale 50-DB 高密度池替代高价 Unistore** | **用 OneLake BigQuery/Oracle Mirroring 联合 Hyperscale DiskANN 打通临床/供应链闭环** | **用单引擎 Hyperscale DiskANN + Fabric SQL 替代 Aurora+OpenSearch+S3 Tables 多组件拼装** |
+
 
 
 

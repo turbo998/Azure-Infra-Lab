@@ -24,40 +24,40 @@
   <rect x="44" y="38" width="1352" height="86" rx="14" fill="#131F38" stroke="#2563EB" stroke-width="1.5"/>
   <rect x="64" y="54" width="210" height="26" rx="13" fill="url(#accentGrad)"/>
   <text x="169" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">DATA LAB · 2026-11-04</text>
-  <text x="290" y="72" fill="#F8FAFC" font-size="21" font-weight="800">Microsoft Fabric × 四大云数智竞对：Rayfin 全栈、跨区可观测、Osmos 与五本体闭环一图流</text>
-  <text x="64" y="104" fill="#94A3B8" font-size="13">Executive Visual Summary · Fabric IQ / Rayfin / Osmos vs Databricks Lakeflow RT/OBO vs Snowflake Horizon Context/Ossie · 五大本体仿真 · 36 场景评测</text>
+  <text x="290" y="72" fill="#F8FAFC" font-size="20.5" font-weight="800">Microsoft Fabric × 四大云数智竞对：Database Hub、192核 DiskANN、Rayfin 与六本体闭环一图流</text>
+  <text x="64" y="104" fill="#94A3B8" font-size="13">Executive Visual Summary · Fabric IQ / Database Hub / DiskANN / Rayfin vs Lakebase Search vs Unistore vs AlloyDB ScaNN · 六大本体 · 40 场景评测</text>
   <rect x="1180" y="52" width="196" height="56" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
-  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">36 场景基准得分</text>
-  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">35 / 36 (97.22%)</text>
+  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">40 场景基准得分</text>
+  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">39 / 40 (97.50%)</text>
 
-  <!-- Row 1 Left: 2026-11-03 Daily Breakthroughs across 5 Clouds -->
+  <!-- Row 1 Left: 2026-11-04 Daily Breakthroughs across 5 Clouds -->
   <rect x="44" y="140" width="664" height="270" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
-  <text x="64" y="168" fill="#60A5FA" font-size="14" font-weight="800" letter-spacing="0.5">01 · 今日五大平台能力突破追踪 (2026-11-03 / 11-04 Breakthrough Radar)</text>
+  <text x="64" y="168" fill="#60A5FA" font-size="14" font-weight="800" letter-spacing="0.5">01 · 今日五大平台能力突破追踪 (2026-11-04 / 11-05 Breakthrough Radar)</text>
 
   <rect x="64" y="182" width="624" height="40" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1"/>
   <text x="78" y="200" fill="#93C5FD" font-size="12" font-weight="800">Microsoft Fabric</text>
-  <text x="198" y="200" fill="#F8FAFC" font-size="11.5">Rayfin SDK/CLI (TS 函数/Secret Store/默认私有) · 跨工作区单一 Eventhouse 可观测性 ·</text>
-  <text x="198" y="216" fill="#CBD5E1" font-size="11">Project Osmos 自主工程智能体 · OneLake IQ Sharing (RDF 本体) · On-Demand / Zero-Provisioned</text>
+  <text x="198" y="200" fill="#F8FAFC" font-size="11.5">Database Hub + Database Agents · Azure SQL Hyperscale 192 vCore + DiskANN 向量 GA ·</text>
+  <text x="198" y="216" fill="#CBD5E1" font-size="11">Oracle/BigQuery OneLake Mirroring · Rayfin SDK/CLI · 18 工作区单一 Eventhouse · Osmos</text>
 
   <rect x="64" y="228" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
   <text x="78" y="246" fill="#F97316" font-size="12" font-weight="800">Databricks</text>
-  <text x="198" y="246" fill="#F8FAFC" font-size="11.5">Lakeflow Real-Time Mode GA &amp; Pipelines System Tables GA · Agent Bricks Supervisor OBO GA ·</text>
-  <text x="198" y="260" fill="#94A3B8" font-size="11">Agentic Code Converter GA · Unity Gateway ABAC · Mirrored Unity Catalog in OneLake</text>
+  <text x="198" y="246" fill="#F8FAFC" font-size="11.5">Lakebase Search GA (lakebase_vector ANN + BM25, 1亿向量 71ms P99) · Synced Tables ·</text>
+  <text x="198" y="260" fill="#94A3B8" font-size="11">Lakeflow Real-Time Mode GA · Agent Bricks Supervisor OBO GA · Mirrored UC in OneLake</text>
 
   <rect x="64" y="272" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
   <text x="78" y="290" fill="#38BDF8" font-size="12" font-weight="800">Snowflake</text>
-  <text x="198" y="290" fill="#F8FAFC" font-size="11.5">Horizon Context (Preview, Power BI/Tableau/dbt 元数据连接) + AI Readiness Scores ·</text>
-  <text x="198" y="304" fill="#94A3B8" font-size="11">Semantic View Autopilot GA (导出 Apache Ossie YAML) · Agentic Document Analytics GA</text>
+  <text x="198" y="290" fill="#F8FAFC" font-size="11.5">Unistore Hybrid Tables (行存事务+分析单 SQL 联查) · Cortex Search 多索引混合 RAG ·</text>
+  <text x="198" y="304" fill="#94A3B8" font-size="11">Horizon Context (Power BI/dbt 元数据连接) · Semantic View Autopilot GA (Apache Ossie)</text>
 
   <rect x="64" y="316" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
   <text x="78" y="334" fill="#34D399" font-size="12" font-weight="800">GCP BigQuery</text>
-  <text x="198" y="334" fill="#F8FAFC" font-size="11.5">BigQuery ObjectRefs GA (结构化 Iceberg + 非结构化多模态统一) · ISO GQL 原生图查询 ·</text>
-  <text x="198" y="348" fill="#94A3B8" font-size="11">Lakehouse Cross-Cloud Caching GA (Nov 2026) · Continuous Write to Managed Iceberg</text>
+  <text x="198" y="334" fill="#F8FAFC" font-size="11.5">AlloyDB ScaNN + 列存向量加速 (查询快 4×/内存省 3-4×) · BigQuery ↔ AlloyDB 零 ETL ·</text>
+  <text x="198" y="348" fill="#94A3B8" font-size="11">Spanner Graph ISO GQL + 向量检索 · BigQuery ObjectRefs GA · Cross-Cloud Caching GA</text>
 
   <rect x="64" y="360" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
   <text x="78" y="378" fill="#FBBF24" font-size="12" font-weight="800">AWS Lakehouse</text>
-  <text x="198" y="378" fill="#F8FAFC" font-size="11.5">Amazon Bedrock Knowledge Bases GraphRAG &amp; SQL Augmentation · S3 Tables FGAC 凭证分发 ·</text>
-  <text x="198" y="392" fill="#94A3B8" font-size="11">Redshift Serverless AI-Driven Scaling 默认开启 + 预测性分区洞察 · Glue 6.0 (Spark 4.1)</text>
+  <text x="198" y="378" fill="#F8FAFC" font-size="11.5">Aurora &amp; SaaS Zero-ETL 直通 S3 Tables (Iceberg) &amp; Redshift · OpenSearch 零 ETL 向量 ·</text>
+  <text x="198" y="392" fill="#94A3B8" font-size="11">Bedrock KB GraphRAG &amp; SQL Augmentation · Redshift Serverless AI-Driven Scaling</text>
 
   <!-- Row 1 Right: 6-Dimension Competitive Scoring Matrix -->
   <rect x="728" y="140" width="668" height="270" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
@@ -121,34 +121,42 @@
   <text x="1270" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">85.5</text>
   <text x="1340" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">82.8</text>
 
-  <!-- Row 2 Left: 5 Flagship Ontology, Osmos & Rayfin Simulation Results -->
+  <!-- Row 2 Left: 6 Flagship Ontology, Osmos, Rayfin & DiskANN Simulation Results -->
   <rect x="44" y="426" width="664" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
-  <text x="64" y="448" fill="#60A5FA" font-size="13.5" font-weight="800" letter-spacing="0.4">03 · Fabric IQ 五大行业本体与 Osmos / Rayfin 闭环仿真 (5 Live Sim Suites)</text>
+  <text x="64" y="446" fill="#60A5FA" font-size="13.5" font-weight="800" letter-spacing="0.4">03 · Fabric IQ 六大行业本体与 Osmos / Rayfin / DiskANN 闭环仿真 (6 Suites)</text>
 
-  <!-- Scenario A Box -->
-  <rect x="64" y="456" width="624" height="42" rx="7" fill="#0F172A" stroke="#2563EB" stroke-width="1.1"/>
-  <text x="78" y="472" fill="#60A5FA" font-size="11.5" font-weight="800">场景 A · 智算中心 AI 能源编排 (18.84/20 MW 尖峰 → 780ms 闭环削峰 3.45 MW · 月省 $42,800)</text>
-  <text x="78" y="488" fill="#E2E8F0" font-size="10.5">• BESS 放电 2.00 MW + 推迟 2 批任务 1.10 MW + 液冷 +1.0°C (0.35 MW) → 15.39 MW (76.95%) · SOP-DC-COOL-04 通过</text>
+  <!-- Scenario A & B Row -->
+  <rect x="64" y="454" width="306" height="72" rx="7" fill="#0F172A" stroke="#2563EB" stroke-width="1.1"/>
+  <text x="76" y="471" fill="#60A5FA" font-size="11" font-weight="800">场景 A · 智算中心 20MW 削峰 (780ms · 省 $42.8K)</text>
+  <text x="76" y="487" fill="#E2E8F0" font-size="10">• 18.84MW → 削峰 3.45MW 至 15.39MW (76.95%)</text>
+  <text x="76" y="502" fill="#94A3B8" font-size="10">• BESS 2MW + 延后批任务 + 液冷 +1°C (SOP 通过)</text>
 
-  <!-- Scenario B Box -->
-  <rect x="64" y="502" width="624" height="42" rx="7" fill="#0F172A" stroke="#10B981" stroke-width="1.1"/>
-  <text x="78" y="518" fill="#34D399" font-size="11.5" font-weight="800">场景 B · 航司纽约 JFK R25 跑道湿雪数字孪生 (摩擦系数 0.24 &lt; 0.30 → 640ms 闭环 · 省 $68,500)</text>
-  <text x="78" y="534" fill="#E2E8F0" font-size="10.5">• Power BI 模型一键生成 Ontology → 识别 14 架航班/28 项任务 → 自动派 Alpha 扫雪车队 + 重分配 6 登机口 (-38m)</text>
+  <rect x="382" y="454" width="306" height="72" rx="7" fill="#0F172A" stroke="#10B981" stroke-width="1.1"/>
+  <text x="394" y="471" fill="#34D399" font-size="11" font-weight="800">场景 B · 航司 JFK R25 除冰 (640ms · 省 $68.5K)</text>
+  <text x="394" y="487" fill="#E2E8F0" font-size="10">• 摩擦系数 0.24 &lt; 0.30 → 识别 14 航班 / 28 地面任务</text>
+  <text x="394" y="502" fill="#94A3B8" font-size="10">• 自动派 Alpha 扫雪车 + 重分配 6 登机口 (-38m)</text>
 
-  <!-- Scenario C Box -->
-  <rect x="64" y="548" width="624" height="42" rx="7" fill="#0F172A" stroke="#A855F7" stroke-width="1.1"/>
-  <text x="78" y="564" fill="#C084FC" font-size="11.5" font-weight="800">场景 C · 跨云零售爆单与 Fabric IQ Planning 回写 (BigQuery +240% → 710ms 闭环 · 护航 $312,000)</text>
-  <text x="78" y="580" fill="#E2E8F0" font-size="10.5">• 跨 Snowflake ERP + AWS S3 调拨 4,500 件 + 补单 8,000 件 → Power BI Agentic App + 1GB 免费 SQL 回写 +$185K</text>
+  <!-- Scenario C & D Row -->
+  <rect x="64" y="532" width="306" height="72" rx="7" fill="#0F172A" stroke="#A855F7" stroke-width="1.1"/>
+  <text x="76" y="549" fill="#C084FC" font-size="11" font-weight="800">场景 C · 跨云零售 LTAP 回写 (710ms · $312K)</text>
+  <text x="76" y="565" fill="#E2E8F0" font-size="10">• BigQuery +240% 爆单 → 跨 Snowflake/S3 调拨 4,500 件</text>
+  <text x="76" y="580" fill="#94A3B8" font-size="10">• Power BI Agentic App + 1GB 免费 SQL 回写 +$185K</text>
 
-  <!-- Scenario D Box -->
-  <rect x="64" y="594" width="624" height="42" rx="7" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
-  <text x="78" y="610" fill="#FBBF24" font-size="11.5" font-weight="800">场景 D · 多云金融反欺诈与 Project Osmos 管道自愈 (660ms 闭环 · 冻结 $4.85M · 挽回 $4.62M)</text>
-  <text x="78" y="626" fill="#E2E8F0" font-size="10.5">• Osmos 152ms 自愈 ISO-20022 漂移 → 跨 S3/Databricks OBO/Snowflake Ossie 冻结 38 账户 → DiskANN + 1GB SQL</text>
+  <rect x="382" y="532" width="306" height="72" rx="7" fill="#0F172A" stroke="#F59E0B" stroke-width="1.1"/>
+  <text x="394" y="549" fill="#FBBF24" font-size="11" font-weight="800">场景 D · 金融反欺诈与 Osmos (660ms · $4.62M)</text>
+  <text x="394" y="565" fill="#E2E8F0" font-size="10">• Osmos 152ms 自愈 ISO-20022 漂移 · OBO 零信任</text>
+  <text x="394" y="580" fill="#94A3B8" font-size="10">• 冻结 38 个合成骡子账户 ($4.85M) → 写入 DiskANN</text>
 
-  <!-- Scenario E Box -->
-  <rect x="64" y="640" width="624" height="44" rx="7" fill="#0F172A" stroke="#38BDF8" stroke-width="1.4"/>
-  <text x="78" y="656" fill="#38BDF8" font-size="11.5" font-weight="800">场景 E [NEW] · 18 工作区容量尖峰 RCA 与 Rayfin 全栈应用自愈 (590ms 闭环 · 规避 $28,400 罚金)</text>
-  <text x="78" y="673" fill="#E2E8F0" font-size="10.5">• 单一 Eventhouse 捕获 114.8% CU 过载 → Database Agent DiskANN 优化 + On-Demand +16 CU → Rayfin 回写降至 71.2%</text>
+  <!-- Scenario E & F Row -->
+  <rect x="64" y="610" width="306" height="74" rx="7" fill="#0F172A" stroke="#38BDF8" stroke-width="1.3"/>
+  <text x="76" y="627" fill="#38BDF8" font-size="11" font-weight="800">场景 E · 18 工作区容量自愈 (590ms · 省 $28.4K)</text>
+  <text x="76" y="643" fill="#E2E8F0" font-size="10">• 单一 Eventhouse 捕获 F64 114.8% 过载 (Q-8841)</text>
+  <text x="76" y="658" fill="#94A3B8" font-size="10">• DiskANN 索引提示 + On-Demand +16 CU → 71.2%</text>
+
+  <rect x="382" y="610" width="306" height="74" rx="7" fill="#172554" stroke="#34D399" stroke-width="1.4"/>
+  <text x="394" y="627" fill="#34D399" font-size="11" font-weight="800">场景 F [NEW] · 医药冷链与 DiskANN (560ms · $640K)</text>
+  <text x="394" y="643" fill="#F8FAFC" font-size="10">• 跨 Oracle/BigQuery 镜像 + Hyperscale 192核 DiskANN (19ms)</text>
+  <text x="394" y="658" fill="#93C5FD" font-size="10">• 隔离 420 支超温制剂 + 备仓调拨，128 名患者 100% 不断药</text>
 
   <!-- Row 2 Right: 500-User Monthly TCO & LTAP Comparison -->
   <rect x="728" y="426" width="668" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>

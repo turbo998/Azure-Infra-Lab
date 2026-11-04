@@ -111,12 +111,25 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
         self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
 
-    def test_scenario_matrix_36_cases_and_explicit_miss(self) -> None:
+    def test_healthcare_clinical_supply_diskann_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("healthcare_clinical_supply_diskann")
+        self.assertGreater(
+            sim["telemetry"]["excursion_temp_c"],
+            sim["telemetry"]["max_safe_temp_c"],
+        )
+        self.assertEqual(sim["telemetry"]["affected_biologic_vials"], 420)
+        self.assertEqual(sim["telemetry"]["database_hub_monitored_dbs"], 64)
+        self.assertEqual(sim["multi_agent_plan"]["patient_dosing_continuity_pct"], 100.0)
+        self.assertTrue(sim["foundry_iq_guardrail"]["auto_administer_excursed_lot_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+
+    def test_scenario_matrix_40_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 36)
-        self.assertEqual(matrix["passed_scenarios"], 35)
+        self.assertEqual(matrix["total_scenarios"], 40)
+        self.assertEqual(matrix["passed_scenarios"], 39)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 97.22, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 97.50, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -154,6 +167,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Fabric IQ Ontology Graph", by_id["DL-35"]["expected"])
         self.assertIn("Zero-Provisioned", by_id["DL-36"]["expected"])
 
+    def test_database_hub_diskann_lakebase_scann_unistore_2026_11_05_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-37", "DL-38", "DL-39", "DL-40"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Database Hub", by_id["DL-37"]["expected"])
+        self.assertIn("DiskANN", by_id["DL-38"]["expected"])
+        self.assertIn("OneLake BigQuery/Oracle Mirroring", by_id["DL-39"]["expected"])
+        self.assertIn("Hybrid Table credit premium", by_id["DL-40"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -171,10 +195,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 35)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 39)
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
         self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
         self.assertIn("finops_rayfin_observability", loaded["ontology_simulations"])
+        self.assertIn("healthcare_clinical_supply_diskann", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
