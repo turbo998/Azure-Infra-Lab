@@ -1,30 +1,33 @@
 # 🔬 Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度研究与 AI Solution Architect 实战实验室
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`README.en.md`)](README.en.md)  
-> **最新研究日期 / Latest Daily Run**: [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `39 / 40 (97.50%)` · **单元测试**: `16 / 16 通过 (100%)`
+> **最新研究日期 / Latest Daily Run**: [`2026-11-06`](research/daily/2026-11-06.md) · [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `43 / 44 (97.73%)` · **单元测试**: `18 / 18 通过 (100%)`
 
-[![Data Lab Executive Visual Summary](assets/svg/01-data-lab-executive-summary-2026-11-04.svg)](assets/svg/01-data-lab-executive-summary-2026-11-04.svg)
+[![Data Lab Executive Visual Summary](assets/svg/01-data-lab-executive-summary-2026-11-06.svg)](assets/svg/01-data-lab-executive-summary-2026-11-06.svg)
 
 ---
 
 ## 🎯 实验室定位与六大核心能力支柱
 
-**Data Lab** 以资深 **AI Solution Architect（AI 解决方案架构师）** 视角构建，围绕 **Microsoft Fabric（Fabric IQ、Fabric IQ Planning、Project Osmos 自主工程智能体、开源 Rayfin SDK/CLI 全栈智能体应用、Database Hub + Database Agents、Azure SQL Hyperscale 192 vCore + 原生 DiskANN 向量索引 GA、OneLake 与 IQ Sharing、Real-Time Intelligence 与跨区可观测性、Power BI 语义模型与 Agentic App 1GB 免费 SQL）** 与四大核心云数智竞对——**Databricks、Snowflake、Google Cloud (BigQuery / AlloyDB / Spanner Graph / Vertex AI)、AWS (SageMaker Lakehouse / S3 Tables / Aurora Zero-ETL / Bedrock)**——开展每日能力突破追踪、深度竞对拆解、架构设计、交互式 Demo 开发、可复现基准测评（7-Card 4:5 视觉报告）与行业场景打单 Playbook。
+**Data Lab** 以资深 **AI Solution Architect（AI 解决方案架构师）** 视角构建，围绕 **Microsoft Fabric（Fabric IQ、Digital Twin Builder、Lakehouse Streaming Tables、On-Demand Pay-Per-Job & Zero-Provisioned Compute、Project Osmos 自主工程智能体、开源 Rayfin SDK/CLI 全栈智能体应用、Database Hub + Database Agents、Azure SQL Hyperscale 192 vCore + 原生 DiskANN 向量索引 GA、OneLake 与 IQ Sharing、Real-Time Intelligence 与跨区可观测性、Power BI 语义模型与 Agentic App 1GB 免费 SQL）** 与四大核心云数智竞对——**Databricks、Snowflake、Google Cloud (BigQuery / AlloyDB / Spanner Graph / Vertex AI)、AWS (SageMaker Lakehouse / S3 Tables / IoT SiteWise / Aurora Zero-ETL / Bedrock)**——开展每日能力突破追踪、深度竞对拆解、架构设计、交互式 Demo 开发、可复现基准测评（7-Card 4:5 视觉报告）与行业场景打单 Playbook。
 
-| 支柱编号 | 核心任务模块 | 关键交付物入口 | 核心量化结论 (`2026-11-04 / 11-05`) |
+| 支柱编号 | 核心任务模块 | 关键交付物入口 | 核心量化结论 (`2026-11-05 / 11-06`) |
 | :--- | :--- | :--- | :--- |
-| **Pillar 0** | **每日最热门能力突破追踪** | [`2026-11-05.md`](research/daily/2026-11-05.md) · [`11-04.md`](research/daily/2026-11-04.md) · [`EN`](research/daily/2026-11-04.en.md) · [`11-03`](research/daily/2026-11-03.md) · [`11-02`](research/daily/2026-11-02.md) | 追踪 Database Hub + Database Agents、Hyperscale 192 vCore + 原生 SSD DiskANN 向量索引 GA、Oracle/BigQuery Mirroring、开源 Rayfin SDK vs Databricks Lakebase Search GA、Snowflake Unistore Hybrid Tables、GCP AlloyDB ScaNN + Spanner Graph ISO GQL、AWS Aurora Zero-ETL to S3 Tables |
-| **Pillar 1** | **专项子任务：四大竞对深度攻防拆解** | [`comparisons/fabric-vs-4clouds-battlecards-2026.md`](comparisons/fabric-vs-4clouds-battlecards-2026.md) · [`EN`](comparisons/fabric-vs-4clouds-battlecards-2026.en.md) | 六维综合均分：**Fabric `93.3`** vs Databricks `86.8` vs GCP `85.5` vs Snowflake `85.0` vs AWS `82.8` + Database Hub / DiskANN / Rayfin / Osmos 攻防矩阵 |
-| **Pillar 2** | **架构设计（Microsoft IQ × 五云共存 × Database Hub/Rayfin/Osmos）** | [`07-dbhub-diskann.svg`](assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg) · [`06-rayfin-obs.svg`](assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg) · [`05-osmos-obo.svg`](assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg) · [`04-ltap.svg`](assets/svg/04-translytical-ltap-agentic-architecture.svg) · [`02-iq.svg`](assets/svg/02-microsoft-iq-fabric-iq-architecture.svg) | Work IQ + Fabric IQ + Foundry IQ + Web IQ + Agent 365 闭环、四大跨云共存模式（A/B/C/D）、Database Hub + Hyperscale 192核 DiskANN 与 Rayfin 全栈应用架构 |
-| **Pillar 3** | **交互式 H5 工作台与六大本体实时仿真台** | [`index.html` (中文)](index.html) · [`live-demo.en.html` (EN)](live-demo.en.html) | 集成五云攻防罗盘、动态 TCO 精算器、智算中心能源 (`780ms`)、JFK R25 跑道 (`640ms`)、跨云零售 (`710ms`)、多云金融反欺诈 (`660ms`)、18 区容量尖峰 Rayfin 自愈 (`590ms`) 与跨云医药冷链 DiskANN 仿真 (`560ms` 止损 `$640K`) |
-| **Pillar 4** | **可复现 Benchmark 与 7-Card 4:5 视觉报告** | [`benchmark-cards.html` (中文)](benchmark-cards.html) · [`benchmark-cards.en.html` (EN)](benchmark-cards.en.html) · [`report.json`](reports/report.json) | 40 场景 `97.50%` (`39/40`) 通过率（`558.0ms` 均值）；500 用户月省 `46.1%–56.1%` TCO；DirectLake + KQL 高并发快 `4.54x–9.47x` |
-| **Pillar 5** | **业务场景方案与 Win/Loss 打单 Playbook** | [`playbooks/scenario-win-loss-playbook.md`](playbooks/scenario-win-loss-playbook.md) · [`EN`](playbooks/scenario-win-loss-playbook.en.md) | 梳理六大标杆场景（智算中心能源编排、航空数字孪生、跨云零售爆单 Planning 回写、多云金融反欺诈与 Osmos 自愈、18 工作区容量尖峰与 Rayfin 自愈、跨云医药冷链与临床试验 DiskANN 闭环）必赢策略与避坑红线 |
+| **Pillar 0** | **每日最热门能力突破追踪** | [`2026-11-06.md`](research/daily/2026-11-06.md) · [`11-05.md`](research/daily/2026-11-05.md) · [`11-04.md`](research/daily/2026-11-04.md) · [`11-03`](research/daily/2026-11-03.md) · [`11-02`](research/daily/2026-11-02.md) | 追踪 Digital Twin Builder、Lakehouse Streaming Tables、Eventstream Private Link & CMK、On-Demand & Zero-Provisioned Compute vs Databricks Serverless/Lakeflow、Snowflake Dynamic Tables、GCP BigQuery Slot Autoscaling、AWS IoT SiteWise & Redshift Serverless |
+| **Pillar 1** | **专项子任务：四大竞对深度攻防拆解** | [`comparisons/fabric-vs-4clouds-battlecards-2026.md`](comparisons/fabric-vs-4clouds-battlecards-2026.md) · [`EN`](comparisons/fabric-vs-4clouds-battlecards-2026.en.md) | 六维综合均分：**Fabric `93.3`** vs Databricks `86.8` vs GCP `85.5` vs Snowflake `85.0` vs AWS `82.8` + Digital Twin / Zero-Provisioned / Database Hub / DiskANN / Rayfin / Osmos 攻防矩阵 |
+| **Pillar 2** | **架构设计（Microsoft IQ × 五云共存 × Digital Twin/Zero-Provisioned/Database Hub）** | [`08-twin-zeroprov.svg`](assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg) · [`07-dbhub-diskann.svg`](assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg) · [`06-rayfin-obs.svg`](assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg) · [`05-osmos-obo.svg`](assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg) · [`02-iq.svg`](assets/svg/02-microsoft-iq-fabric-iq-architecture.svg) | Work IQ + Fabric IQ + Foundry IQ + Web IQ + Agent 365 闭环、四大跨云共存模式（A/B/C/D）、Digital Twin Builder + Zero-Provisioned、Database Hub + Hyperscale 192核 DiskANN 与 Rayfin 全栈应用架构 |
+| **Pillar 3** | **交互式 H5 工作台与七大本体实时仿真台** | [`index.html` (中文)](index.html) · [`live-demo.en.html` (EN)](live-demo.en.html) | 集成五云攻防罗盘、动态 TCO 精算器、智算中心能源 (`780ms`)、JFK R25 跑道 (`640ms`)、跨云零售 (`710ms`)、多云金融反欺诈 (`660ms`)、18 区容量尖峰 Rayfin 自愈 (`590ms`)、跨云医药冷链 DiskANN (`560ms` 止损 `$640K`) 与 300mm 晶圆厂 Digital Twin Builder (`530ms` 止损 `$920K`) |
+| **Pillar 4** | **可复现 Benchmark 与 7-Card 4:5 视觉报告** | [`benchmark-cards.html` (中文)](benchmark-cards.html) · [`benchmark-cards.en.html` (EN)](benchmark-cards.en.html) · [`report.json`](reports/report.json) | 44 场景 `97.73%` (`43/44`) 通过率（`550.5ms` 均值）；500 用户月省 `46.1%–56.1%` TCO；DirectLake + KQL 高并发快 `4.54x–9.47x` |
+| **Pillar 5** | **业务场景方案与 Win/Loss 打单 Playbook** | [`playbooks/scenario-win-loss-playbook.md`](playbooks/scenario-win-loss-playbook.md) · [`EN`](playbooks/scenario-win-loss-playbook.en.md) | 梳理七大标杆场景（智算中心能源编排、航空数字孪生、跨云零售爆单 Planning 回写、多云金融反欺诈与 Osmos 自愈、18 工作区容量尖峰与 Rayfin 自愈、跨云医药冷链 DiskANN 闭环、300mm 晶圆厂数字孪生与 Zero-Provisioned 弹性）必赢策略与避坑红线 |
 
 ---
 
 ## 🖼️ 核心架构图集（SVG 自包含矢量图）
 
-### 1. Database Hub × Azure SQL Hyperscale 192核 DiskANN × 跨云零 ETL Mirroring 架构（`2026-11-04 / 11-05` 新增）
+### 1. Digital Twin Builder × Lakehouse Streaming Tables × On-Demand / Zero-Provisioned 架构（`2026-11-05 / 11-06` 新增）
+[![Digital Twin Builder & Zero-Provisioned Elastic Compute Architecture](assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)](assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)
+
+### 2. Database Hub × Azure SQL Hyperscale 192核 DiskANN × 跨云零 ETL Mirroring 架构（`2026-11-04 / 11-05`）
 [![Database Hub & Hyperscale 192 vCore DiskANN Architecture](assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)](assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)
 
 ### 2. 开源 Rayfin SDK 全栈智能体应用 × 跨工作区 Eventhouse 可观测性 × OneLake IQ Sharing 架构（`2026-11-04`）

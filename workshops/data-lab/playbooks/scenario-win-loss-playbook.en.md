@@ -70,6 +70,16 @@
 
 ---
 
+### Scenario 7: 300mm Semiconductor Fab Digital Twin Builder × Lakehouse Streaming Tables × Zero-Provisioned Elastic Burst (`manufacturing_digital_twin_zeroprov`)
+- **Customer Pain Point**: 300mm semiconductor fabs stream **85,000 EPS** of OPC-UA telemetry from EUV lithography scanners (`EUV-Scanner-04`, requiring Managed Private Link and CMK encryption), while spare parts inventory sits in **AWS S3**, wafer die-map defect catalogs sit in **GCP BigQuery**, and heavy Monte Carlo thermal yield simulations run only in 15-minute bursts every 4 hours.
+- **Reference Architecture (Simulation `manufacturing_digital_twin_zeroprov` / `DL-41..DL-44`)**:
+  1. **Private-Link Stream Sense & Sub-Second Streaming Table (`96 ms`)**: **Eventstream (Managed Private Link + CMK)** ingests 85K EPS into a **OneLake Lakehouse Streaming Table** (**`210 ms` lag**, immediately queryable via DirectLake), detecting overlay drift at **`1.85 nm > 0.90 nm`** across 75 300mm wafers.
+  2. **Digital Twin Builder Graph Cascade & Zero-Provisioned Burst (`286 ms`)**: **Digital Twin Builder** traverses AWS S3 Cached Shortcuts and GA BigQuery Mirroring die maps, then wakes a **Zero-Provisioned On-Demand** pool (**`+24 CU` burst** at **`$14.20` pay-per-job cost** with **`0.0%` base F64 throttling**) to compute the optimal **`-0.42°C` chuck thermal offset** and `180s` micro-purge cycle.
+  3. **Foundry IQ Process Guardrail & Rayfin Fab-Ops Write-back (`148 ms`)**: **Foundry IQ** validates compliance against `SOP-SEMI-EUV-14` (`±0.60°C` pre-authorized envelope) and writes the calibration receipt to **1GB Free Fabric SQL** via **Rayfin SDK**.
+- **Quantified ROI**: **`530 ms`** end-to-end resolution, overlay restored to **`0.58 nm`**, **`99.4%` wafer yield preserved across 75 wafers**, and **`$920,000`** saved in avoided wafer scrap.
+
+---
+
 ## 2. Presales Decision Matrix: Win Themes vs. Coexistence vs. Anti-Patterns
 
 | Category | Customer Signals & Workload Profile | Recommended Architect Play |

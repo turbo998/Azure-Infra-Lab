@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0C172B"/>
+      <stop offset="100%" stop-color="#101D38"/>
+    </linearGradient>
+    <linearGradient id="headGrad8" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="twinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="860" fill="url(#bgGrad8)"/>
+  <rect x="24" y="20" width="1392" height="820" rx="20" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="44" y="38" width="1352" height="84" rx="14" fill="#131F38" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="64" y="54" width="268" height="26" rx="13" fill="url(#headGrad8)"/>
+  <text x="198" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="0.8">DIGITAL TWIN + ZERO-PROV · 2026-11-05/06</text>
+  <text x="348" y="72" fill="#F8FAFC" font-size="20" font-weight="800">Fabric Digital Twin Builder × Lakehouse Streaming Tables × Zero-Provisioned 弹性按需计算架构</text>
+  <text x="64" y="102" fill="#94A3B8" font-size="13">Real-Time OT/IT Ontology Twins &amp; Serverless FinOps · 对标 Databricks Serverless DBU / Snowflake Dynamic Tables / GCP BigQuery Autoscaling / AWS SiteWise + Redshift</text>
+
+  <!-- Left Column: OT/IT High-Throughput Streaming & Cross-Cloud Ingestion -->
+  <rect x="44" y="138" width="380" height="420" rx="14" fill="#111C33" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="64" y="166" fill="#38BDF8" font-size="14" font-weight="800">01 · 85K EPS OT/IT 实时流与跨云零拷贝接入</text>
+
+  <rect x="64" y="182" width="340" height="86" rx="10" fill="url(#twinGrad)" stroke="#10B981" stroke-width="1.4"/>
+  <text x="80" y="204" fill="#34D399" font-size="12.5" font-weight="800">Eventstream Private Link &amp; CMK + OPC-UA/MQTT</text>
+  <text x="80" y="222" fill="#F8FAFC" font-size="11">• 工业洁净室 / EUV 光刻机 OPC-UA、MQTT、Kafka 85K EPS</text>
+  <text x="80" y="238" fill="#CBD5E1" font-size="11">• 私有端点 (Private Link) + 客户自管密钥 (CMK) 零公网暴露</text>
+  <text x="80" y="256" fill="#38BDF8" font-size="10.5" font-weight="700">• 无代码/专业代码复杂事件处理 (CEP) 直通 Eventhouse KQL</text>
+
+  <rect x="64" y="280" width="340" height="78" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="80" y="302" fill="#38BDF8" font-size="12.5" font-weight="800">Lakehouse Streaming Tables (亚秒级流批一体表)</text>
+  <text x="80" y="320" fill="#E2E8F0" font-size="11">• 210ms 端到端流式写入 OneLake Delta/Iceberg 开放表</text>
+  <text x="80" y="336" fill="#94A3B8" font-size="11">• Power BI DirectLake 与 KQL 共享同一份 OneLake 物理存储</text>
+  <text x="80" y="350" fill="#34D399" font-size="10.5" font-weight="700">✓ 终结流表与批表双写冗余，零额外 ETL 搬运延迟</text>
+
+  <rect x="64" y="370" width="340" height="80" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="80" y="392" fill="#FBBF24" font-size="12.5" font-weight="800">AWS IoT SiteWise → S3 Tables Cached Shortcut</text>
+  <text x="80" y="410" fill="#E2E8F0" font-size="11">• 厂务 HVAC 与超纯水 (UPW) 时序归档保留在 AWS S3 Tables</text>
+  <text x="80" y="426" fill="#94A3B8" font-size="11">• OneLake S3 Shortcut 智能缓存 + Outbound Access Protection</text>
+  <text x="80" y="442" fill="#34D399" font-size="10.5" font-weight="700">✓ 零 AWS 跨云 Egress 重复制，28ms 命中本地热缓存</text>
+
+  <rect x="64" y="462" width="340" height="80" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="80" y="484" fill="#C084FC" font-size="12.5" font-weight="800">GCP BigQuery Mirroring (GA) · 晶圆良率 Die Map</text>
+  <text x="80" y="502" fill="#E2E8F0" font-size="11">• 300mm 晶圆批次 LOT-WAF-812 测试良率表原地镜像入湖</text>
+  <text x="80" y="518" fill="#94A3B8" font-size="11">• 与本地 MES/ERP (Fabric SQL / Hyperscale) 自动实体对齐</text>
+  <text x="80" y="534" fill="#34D399" font-size="10.5" font-weight="700">✓ 物理机台遥测 × 良率矩阵 × 财务订单成本三合一</text>
+
+  <!-- Center Column: Digital Twin Builder + Zero-Provisioned On-Demand Engine -->
+  <rect x="444" y="138" width="512" height="420" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <text x="464" y="166" fill="#34D399" font-size="14" font-weight="800">02 · Digital Twin Builder × Zero-Provisioned 按需弹性中枢</text>
+
+  <rect x="464" y="182" width="472" height="122" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.3"/>
+  <text x="480" y="204" fill="#34D399" font-size="12.5" font-weight="800">Digital Twin Builder (Preview) · 本体驱动的物理-数字实时映射</text>
+  <text x="480" y="224" fill="#E2E8F0" font-size="11">• 低代码/专业代码构建资产本体：Equipment (EUV-04) → Process → WaferLot → SLA</text>
+  <text x="480" y="242" fill="#E2E8F0" font-size="11">• 状态实时绑定：Eventhouse 96ms KQL 窗口聚合直刷数字孪生实体属性</text>
+  <text x="480" y="260" fill="#E2E8F0" font-size="11">• 级联影响推演 (132ms Graph GQL)：1.85nm 激光套刻漂移 → 锁定 75 片受威胁晶圆</text>
+  <text x="480" y="280" fill="#38BDF8" font-size="11" font-weight="700">• 跨团队共享本体：与 Power BI 语义模型、M365 Copilot、Operations Agent 同源</text>
+
+  <rect x="464" y="316" width="472" height="118" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.3"/>
+  <text x="480" y="338" fill="#38BDF8" font-size="12.5" font-weight="800">On-Demand Pay-Per-Job &amp; Zero-Provisioned 零预置弹性计算</text>
+  <text x="480" y="358" fill="#E2E8F0" font-size="11">• 零预置冷启动：突发性数字孪生蒙特卡洛仿真/重算任务无需预留常驻 F-SKU</text>
+  <text x="480" y="376" fill="#E2E8F0" font-size="11">• 混合削峰架构：稳态 BI + Copilot 走 F64 预留池；突发 +24 CU 走 On-Demand 按作业计费</text>
+  <text x="480" y="394" fill="#E2E8F0" font-size="11">• 单次晶圆批次重对准仿真仅耗费 $14.20，主容量池保持 0% 节流 (Zero Throttling)</text>
+  <text x="480" y="414" fill="#34D399" font-size="11" font-weight="700">• 相比 Databricks Serverless 突发 DBU 与 Snowflake 1分钟刷表省 48%+ 峰值成本</text>
+
+  <rect x="464" y="446" width="472" height="94" rx="10" fill="#172554" stroke="#60A5FA" stroke-width="1.3"/>
+  <text x="480" y="468" fill="#93C5FD" font-size="12.5" font-weight="800">Foundry IQ OT 安全护栏 + Rayfin SDK SEMI-E10 状态回写</text>
+  <text x="480" y="488" fill="#F8FAFC" font-size="11">• 严格拦截未签名 PLC 固件写入，仅放行 SEMI-S2 认证的 -0.42°C 卡盘微温补偿</text>
+  <text x="480" y="508" fill="#34D399" font-size="11" font-weight="700">• Rayfin SDK 晶圆门户将机台状态与重测工单回写至 1GB Free Fabric SQL</text>
+
+  <!-- Right Column: Scenario G Live Closed-Loop Trace -->
+  <rect x="976" y="138" width="420" height="420" rx="14" fill="#111C33" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="996" y="166" fill="#C084FC" font-size="14" font-weight="800">03 · 场景 G 闭环：300mm 晶圆厂 EUV 数字孪生</text>
+
+  <rect x="996" y="182" width="380" height="358" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="1012" y="206" fill="#F8FAFC" font-size="12" font-weight="800">端到端 530ms · 保护 75 片 3nm 晶圆 ($920K 止损)</text>
+  <text x="1012" y="230" fill="#38BDF8" font-size="11" font-weight="700">[Step 1 · 96ms] Eventstream Private Link 捕获漂移</text>
+  <text x="1012" y="246" fill="#CBD5E1" font-size="10.5">EUV-Scanner-04 套刻误差达 1.85nm (超 0.90nm 阈值 +0.95nm)</text>
+
+  <text x="1012" y="272" fill="#C084FC" font-size="11" font-weight="700">[Step 2 · 132ms] Digital Twin Builder 跨云图谱级联</text>
+  <text x="1012" y="288" fill="#CBD5E1" font-size="10.5">关联 S3 洁净室微振与 BigQuery Die Map，锁定 LOT-WAF-812 (75片)</text>
+
+  <text x="1012" y="314" fill="#34D399" font-size="11" font-weight="700">[Step 3 · 112ms] Zero-Provisioned +24 CU 弹性仿真</text>
+  <text x="1012" y="330" fill="#CBD5E1" font-size="10.5">按需池瞬时完成热力学补偿计算 ($14.20)，计算出 -0.42°C 补偿值</text>
+
+  <text x="1012" y="356" fill="#FBBF24" font-size="11" font-weight="700">[Step 4 · 92ms] Foundry IQ SEMI-S2 工业安全护栏</text>
+  <text x="1012" y="372" fill="#CBD5E1" font-size="10.5">拦截越权 PLC 寄存器覆盖，签发受控热补偿与批次重对准指令</text>
+
+  <text x="1012" y="398" fill="#60A5FA" font-size="11" font-weight="700">[Step 5 · 98ms] Rayfin SDK 门户 + 1GB SQL 回写</text>
+  <text x="1012" y="414" fill="#CBD5E1" font-size="10.5">自动触发卡盘微调 + 挂起 LOT-WAF-812 送纳米量测复检</text>
+
+  <rect x="1012" y="434" width="348" height="90" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1"/>
+  <text x="1026" y="456" fill="#93C5FD" font-size="11.5" font-weight="800">仿真验证指标 (Scenario G Verified Metrics)</text>
+  <text x="1026" y="476" fill="#F8FAFC" font-size="11">• 流表同步 / 孪生延迟：210 ms Lag / 530 ms E2E</text>
+  <text x="1026" y="494" fill="#F8FAFC" font-size="11">• 300mm 晶圆批次良率保全：99.4% (75 片免报废)</text>
+  <text x="1026" y="512" fill="#34D399" font-size="11" font-weight="700">• 单次拦截避免晶圆报废损失：$920,000 (作业费仅 $14.20)</text>
+
+  <!-- Bottom Row: 5-Cloud Digital Twin + Serverless Elastic Billing Competitive Matrix -->
+  <rect x="44" y="576" width="1352" height="244" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <text x="64" y="604" fill="#34D399" font-size="14" font-weight="800">04 · 五大平台「实时数字孪生 + 流批一体表 + 零预置按需计费」横向攻防矩阵 (2026-11-05/06 Battlecard)</text>
+
+  <rect x="64" y="618" width="256" height="184" rx="10" fill="#172554" stroke="#34D399" stroke-width="1.4"/>
+  <text x="80" y="640" fill="#34D399" font-size="12.5" font-weight="800">Microsoft Fabric RTI + IQ</text>
+  <text x="80" y="660" fill="#F8FAFC" font-size="11">• Digital Twin Builder 本体建模</text>
+  <text x="80" y="678" fill="#F8FAFC" font-size="11">• Lakehouse Streaming Tables</text>
+  <text x="80" y="696" fill="#F8FAFC" font-size="11">• Eventstream Private Link &amp; CMK</text>
+  <text x="80" y="714" fill="#F8FAFC" font-size="11">• Zero-Provisioned + On-Demand</text>
+  <text x="80" y="736" fill="#34D399" font-size="11" font-weight="700">★ 优势：OT流+孪生图谱+按需弹性一体</text>
+  <text x="80" y="756" fill="#93C5FD" font-size="10.5">F64 保底 + 突发按作业计费零节流</text>
+
+  <rect x="332" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="348" y="640" fill="#F97316" font-size="12.5" font-weight="800">Databricks Serverless</text>
+  <text x="348" y="660" fill="#E2E8F0" font-size="11">• Serverless SQL &amp; Jobs 自动扩缩</text>
+  <text x="348" y="678" fill="#E2E8F0" font-size="11">• Lakeflow Real-Time Mode 流处理</text>
+  <text x="348" y="696" fill="#E2E8F0" font-size="11">• Delta Live Tables 增量物化</text>
+  <text x="348" y="714" fill="#E2E8F0" font-size="11">• 强于复杂 PySpark 自定义流算子</text>
+  <text x="348" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：无原生 Digital Twin Builder</text>
+  <text x="348" y="756" fill="#94A3B8" font-size="10.5">高并发 BI/Agent 下 DBU 易飙升 2.1×</text>
+
+  <rect x="600" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="616" y="640" fill="#38BDF8" font-size="12.5" font-weight="800">Snowflake Dynamic Tables</text>
+  <text x="616" y="660" fill="#E2E8F0" font-size="11">• Snowpipe Streaming + Dynamic 表</text>
+  <text x="616" y="678" fill="#E2E8F0" font-size="11">• 声明式 TARGET_LAG 自动刷新</text>
+  <text x="616" y="696" fill="#E2E8F0" font-size="11">• Serverless Tasks 弹性调度</text>
+  <text x="616" y="714" fill="#E2E8F0" font-size="11">• Openflow 托管连接器入仓</text>
+  <text x="616" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：亚分钟 Lag 持续烧 Credit</text>
+  <text x="616" y="756" fill="#94A3B8" font-size="10.5">无亚秒级 KQL 时序引擎与设备孪生</text>
+
+  <rect x="868" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#34D399" stroke-width="1.2"/>
+  <text x="884" y="640" fill="#34D399" font-size="12.5" font-weight="800">GCP BigQuery + Dataflow</text>
+  <text x="884" y="660" fill="#E2E8F0" font-size="11">• Editions Slot Autoscaling (50槽步进)</text>
+  <text x="884" y="678" fill="#E2E8F0" font-size="11">• Pub/Sub + Dataflow Apache Beam</text>
+  <text x="884" y="696" fill="#E2E8F0" font-size="11">• BigQuery Continuous Queries</text>
+  <text x="884" y="714" fill="#E2E8F0" font-size="11">• Spanner Graph 图查询</text>
+  <text x="884" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：Pub/Sub+Dataflow+BQ 需拼接</text>
+  <text x="884" y="756" fill="#94A3B8" font-size="10.5">缺乏低代码数字孪生本体与 Teams 闭环</text>
+
+  <rect x="1136" y="618" width="240" height="184" rx="10" fill="#0F172A" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="1152" y="640" fill="#FBBF24" font-size="12.5" font-weight="800">AWS SiteWise + Redshift</text>
+  <text x="1152" y="660" fill="#E2E8F0" font-size="11">• IoT SiteWise + TwinMaker 建模</text>
+  <text x="1152" y="678" fill="#E2E8F0" font-size="11">• Kinesis + Managed Flink 流计算</text>
+  <text x="1152" y="696" fill="#E2E8F0" font-size="11">• Redshift Serverless (8 RPU 步进)</text>
+  <text x="1152" y="714" fill="#E2E8F0" font-size="11">• S3 Tables Iceberg 存储</text>
+  <text x="1152" y="736" fill="#FBBF24" font-size="11" font-weight="700">▲ 短板：5 套独立服务拼接与计费</text>
+  <text x="1152" y="756" fill="#94A3B8" font-size="10.5">TwinMaker 与数仓/BI 语义层完全割裂</text>
+</svg>

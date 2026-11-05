@@ -70,6 +70,16 @@
 
 ---
 
+### 场景七：300mm 晶圆厂 Digital Twin Builder × Lakehouse 流式表 × Zero-Provisioned 零预置弹性爆发闭环（AWS S3 + GCP BigQuery + Fabric）
+- **客户痛点**：半导体 300mm 晶圆厂 EUV 光刻机（`EUV-Scanner-04`）每秒产生 **85,000 EPS** OPC-UA 腔体与温控遥测（需托管私网与客户自管密钥 CMK），备件库存存放在 **AWS S3**，光学晶圆 Die Map 存放在 **GCP BigQuery**；一旦吸盘热膨胀导致套刻漂移（Overlay Drift）突破 `0.90 nm`，每 4 小时又需要突发运行高算力蒙特卡洛良率仿真，若长期预留高规格容量则平峰算力闲置浪费严重。
+- **推荐架构（对应仿真 `manufacturing_digital_twin_zeroprov` / `DL-41..DL-44`）**：
+  1. **托管私网采集与亚秒级流式表 (`96 ms`)**：**Eventstream (Managed Private Link + CMK)** 采集 85K EPS 遥测并直写 **OneLake Lakehouse Streaming Table**（端到端滞后仅 **`210 ms`**，即刻供 DirectLake 零拷贝消费），捕获套刻漂移升至 **`1.85 nm > 0.90 nm`**（75 片晶圆面临报废风险）。
+  2. **Digital Twin Builder 跨云图谱穿透与 Zero-Provisioned 弹性爆发 (`286 ms`)**：**Digital Twin Builder** 穿透 AWS S3 缓存快捷方式与 BigQuery Mirroring 晶圆图谱，并自动唤醒 **Zero-Provisioned On-Demand** 弹性池（爆发 **`+24 CU`** 运行蒙特卡洛热补偿寻优，单次按作业计费仅 **`$14.20`**，基础 F64 容量节流率 **`0.0%`**），求解出吸盘水温微调 **`-0.42°C`** 与 `180 秒`微吹扫方案。
+  3. **Foundry IQ 工艺护栏与 Rayfin Fab-Ops 门户回写 (`148 ms`)**：**Foundry IQ** 核验《`SOP-SEMI-EUV-14`》（`±0.60°C` 安全包络内），通过 **Rayfin SDK** 自动下发校准参数并回写 **1GB 免费 Fabric SQL**。
+- **量化业务 ROI**：端到端闭环 **`530 ms`**，套刻误差压回 **`0.58 nm`**，保住 75 片 300mm 晶圆 **`99.4%` 良率**，单次规避晶圆报废损失 **`$920,000`**。
+
+---
+
 ## 2. 选型决策树：必赢场景（Win） vs 混合共存（Coexist） vs 避坑红线（Anti-Patterns）
 
 | 评估分类 | 典型客户信号与场景特征 | 架构师标准打法 |

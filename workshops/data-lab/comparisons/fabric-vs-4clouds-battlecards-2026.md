@@ -1,7 +1,9 @@
 # ⚔️ Microsoft Fabric vs 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度攻防拆解与售前 Battlecards (2026)
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`fabric-vs-4clouds-battlecards-2026.en.md`)](fabric-vs-4clouds-battlecards-2026.en.md)  
-> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-04 / 11-05 实测封存 · 40 场景 `97.50%`） · **适用角色**：AI Solution Architect / 云数智架构师
+> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-05 / 11-06 实测封存 · 44 场景 `97.73%`） · **适用角色**：AI Solution Architect / 云数智架构师
+
+[![Digital Twin Builder & Zero-Provisioned Elastic Compute Architecture](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)
 
 [![Database Hub & Hyperscale 192 vCore DiskANN Architecture](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)
 

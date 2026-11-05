@@ -1,7 +1,9 @@
 # ⚔️ Microsoft Fabric vs. 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep-Dive Battlecards (2026)
 
 > **Language**: [中文 (`fabric-vs-4clouds-battlecards-2026.md`)](fabric-vs-4clouds-battlecards-2026.md) | **English (Current)**  
-> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-04 / 11-05` · 40 Scenarios `97.50%`) · **Target Persona**: Principal AI Solution Architect
+> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-05 / 11-06` · 44 Scenarios `97.73%`) · **Target Persona**: Principal AI Solution Architect
+
+[![Digital Twin Builder & Zero-Provisioned Elastic Compute Architecture](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)
 
 [![Database Hub & Hyperscale 192 vCore DiskANN Architecture](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)](../assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg)
 

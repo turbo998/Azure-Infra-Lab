@@ -176,7 +176,7 @@
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
         <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与 Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) 四大智能底座，对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。</p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">39 / 40 场景实测通过 (97.50%) · 2026-11-04 / 11-05</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">43 / 44 场景实测通过 (97.73%) · 2026-11-05 / 11-06</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -190,9 +190,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Copilot 额外 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">六大跨云本体闭环延迟</div>
-        <div class="val">560ms – 780ms</div>
-        <div class="sub" id="kpi3-sub">AIDC 3.45MW · 零售 +$312K · 反欺诈 $4.62M · 医药冷链 $640K</div>
+        <div class="label" id="kpi3-lbl">七大跨云本体闭环延迟</div>
+        <div class="val">530ms – 780ms</div>
+        <div class="sub" id="kpi3-sub">AIDC 3.45MW · 反欺诈 $4.62M · 医药冷链 $640K · 晶圆孪生 $920K</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -281,7 +281,8 @@
       <button class="comp-pill" id="sim-btn-retail" onclick="selectScenario('retail_cross_cloud_planning')">🛒 场景 C：跨云零售爆单与 Planning 预算回写 (710ms)</button>
       <button class="comp-pill" id="sim-btn-fraud" onclick="selectScenario('financial_multi_cloud_fraud')">🛡️ 场景 D：多云金融反欺诈与 Project Osmos 管道自愈 (660ms)</button>
       <button class="comp-pill" id="sim-btn-finops" onclick="selectScenario('finops_rayfin_observability')">📈 场景 E：18 工作区容量尖峰 RCA 与 Rayfin 全栈自愈 (590ms)</button>
-      <button class="comp-pill" id="sim-btn-clinical" onclick="selectScenario('healthcare_clinical_supply_diskann')">🧬 场景 F：跨云医药冷链 × Database Hub × Hyperscale 192核 DiskANN (560ms · 新增)</button>
+      <button class="comp-pill" id="sim-btn-clinical" onclick="selectScenario('healthcare_clinical_supply_diskann')">🧬 场景 F：跨云医药冷链 × Database Hub × Hyperscale 192核 DiskANN (560ms)</button>
+      <button class="comp-pill" id="sim-btn-fab" onclick="selectScenario('manufacturing_digital_twin_zeroprov')">🏭 场景 G：300mm 晶圆厂 Digital Twin Builder × Lakehouse 流式表 × Zero-Provisioned 弹性 (530ms · 新增)</button>
     </div>
 
     <div class="grid-2">
@@ -309,15 +310,23 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · 每日研究强制交付 (2026-11-04 / 11-05)：五大平台竞对攻防、Database Hub + DiskANN、Rayfin 与六大本体一图流总结卡 (Executive Visual Summary SVG)</span>
-        <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 查看原始高清 SVG</a>
+        <span>01 · 每日研究强制交付 (2026-11-05 / 11-06)：五大平台竞对攻防、Digital Twin Builder、Zero-Provisioned 与七大本体一图流总结卡 (Executive Visual Summary SVG)</span>
+        <a href="assets/svg/01-data-lab-executive-summary-2026-11-06.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
-      <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+      <img src="assets/svg/01-data-lab-executive-summary-2026-11-06.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>07 · Database Hub × Azure SQL Hyperscale 192核 DiskANN × 跨云零 ETL Mirroring 架构 (2026-11-04 / 11-05 新增)</span>
+        <span>08 · Digital Twin Builder × Lakehouse Streaming Tables × On-Demand / Zero-Provisioned 架构 (2026-11-05 / 11-06 新增)</span>
+        <a href="assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg" alt="Digital Twin Builder & Zero-Provisioned Elastic Compute Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>07 · Database Hub × Azure SQL Hyperscale 192核 DiskANN × 跨云零 ETL Mirroring 架构</span>
         <a href="assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg" alt="Database Hub & Hyperscale 192 vCore DiskANN Architecture" class="svg-preview">
@@ -688,6 +697,32 @@ const SIM_DATA = {
       teamsTitle: '📋 Rayfin Clinical Portal &amp; Database Hub Quarantine Card (Confirm · 0.96)',
       teamsSummary: 'Action: Quarantine LOT-BIO-209 (420 vials) + Heal Oracle Mirror Lock + Hyperscale DiskANN SOP Match + Re-dispatch 420 Vials from Zurich · 100% Patient Continuity, $640,000 Saved ✓'
     }
+  },
+  manufacturing_digital_twin_zeroprov: {
+    zh: {
+      steps: [
+        { title: '① Eventstream 托管私网 + CMK 感知与 Lakehouse 流式表写入', latency: '96 ms', desc: 'Eventstream (Managed Private Link + CMK) 采集 85,000 EPS OPC-UA 遥测并写入 OneLake Lakehouse Streaming Table (端到端滞后仅 210 ms)，捕获 EUV-Scanner-04 套刻漂移达 1.85 nm (> 0.90 nm 阈值)，75 片 300mm 晶圆面临报废风险。' },
+        { title: '② Digital Twin Builder 无代码 6 跳跨云实体拓扑穿透', latency: '132 ms', desc: '沿着 `OPCUATelemetry:Eventstream-PrivateLink-CMK (85K EPS) → StreamingTable:OneLake-SubSecond-Delta (210ms Lag) → DigitalTwinNode:EUV-Scanner-04 (Drift 1.85nm) → SpareInventory:AWS-S3-Cached-Shortcut → DefectClassifier:BigQuery-Mirroring-DieMap → ElasticSim:Zero-Provisioned-OnDemand-Pool (+24 CU)` 定位热膨胀耦合源。' },
+        { title: '③ Zero-Provisioned 零预置按需弹性爆发 +24 CU 蒙特卡洛寻优', latency: '154 ms', desc: '自动唤醒 Zero-Provisioned On-Demand 弹性池（按作业付费仅 $14.20，基础 F64 容量节流率 0%），求解出吸盘水温微调 -0.42°C 与 180 秒微吹扫的最优补偿方案。' },
+        { title: '④ Foundry IQ 半导体工艺护栏核验 (SOP-SEMI-EUV-14)', latency: '74 ms', desc: '核验《SOP-SEMI-EUV-14》确认 -0.42°C 仍在 ±0.60°C 授权区间内，无需停机等待大修，满足预授权自动闭环标准。' },
+        { title: '⑤ Rayfin SDK 写回 1GB 免费 Fabric SQL 与良率恢复闭环', latency: '74 ms (E2E 530 ms)', desc: '置信度 0.97 (Act automatically)；自动下发校准配方至 EUV-Scanner-04 并写回 1GB 免费 Fabric SQL，套刻误差压回 0.58 nm，保住 75 片晶圆 99.4% 良率，单次规避晶圆报废损失 $920,000。' }
+      ],
+      graph: '<h4>🕸️ 激活的 300mm 晶圆厂 Digital Twin Builder × Lakehouse 流式表 × Zero-Provisioned 链路</h4><p><code>Eventstream:PrivateLink-CMK (85K EPS)</code> ──[streamsTo]──&gt; <code>LakehouseStreamingTable:210ms-Lag</code> ──[twins]──&gt; <code>DigitalTwinBuilder:EUV-Scanner-04 (1.85nm)</code> ──[joins]──&gt; <code>S3CachedShortcut &amp; BigQueryDieMap</code> ──[bursts]──&gt; <code>ZeroProvisioned:+24-CU ($14.20 / 0% Throttle)</code> ──[writesBack]──&gt; <code>RayfinFabOps:1GB-FabricSQL (99.4% Yield · $920K Saved)</code></p>',
+      teamsTitle: '📋 Digital Twin Builder &amp; Rayfin Fab-Ops 预授权自动校准回执 (Act Automatically · 0.97)',
+      teamsSummary: '动作：Zero-Provisioned 爆发 +24 CU ($14.20) + 吸盘温控补偿 -0.42°C + 180s 微吹扫 + 回写 1GB 免费 Fabric SQL · 保住 75 片晶圆 99.4% 良率 · 规避报废损失 $920,000 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventstream Private Link + CMK & Lakehouse Streaming Table', latency: '96 ms', desc: 'Eventstream (Managed Private Link + CMK) ingests 85,000 EPS OPC-UA telemetry into a OneLake Lakehouse Streaming Table (210 ms lag), detecting EUV-Scanner-04 overlay drift at 1.85 nm (> 0.90 nm threshold) across 75 300mm wafers.' },
+        { title: '② Digital Twin Builder 6-Hop Cross-Cloud Graph Traversal', latency: '132 ms', desc: 'Traverses `OPCUATelemetry:Eventstream-PrivateLink-CMK → StreamingTable:OneLake-SubSecond-Delta → DigitalTwinNode:EUV-Scanner-04 → SpareInventory:AWS-S3-Cached-Shortcut → DefectClassifier:BigQuery-Mirroring-DieMap → ElasticSim:Zero-Provisioned-OnDemand-Pool (+24 CU)`.' },
+        { title: '③ Zero-Provisioned On-Demand +24 CU Monte Carlo Burst', latency: '154 ms', desc: 'Spins up Zero-Provisioned On-Demand pool (+24 CU burst at $14.20 pay-per-job cost, 0% base F64 throttling) to compute the optimal -0.42°C chuck offset and 180s micro-purge cycle.' },
+        { title: '④ Foundry IQ Process Guardrail Check (SOP-SEMI-EUV-14)', latency: '74 ms', desc: 'Validates against `SOP-SEMI-EUV-14`: -0.42°C offset is within the ±0.60°C pre-authorized thermal envelope.' },
+        { title: '⑤ Rayfin SDK Write-back to 1GB Free Fabric SQL (530 ms)', latency: '74 ms (E2E 530 ms)', desc: 'Confidence 0.97 (Act automatically); dispatches recipe to EUV-Scanner-04 and writes audit record to 1GB Free Fabric SQL, restoring 0.58 nm overlay and 99.4% wafer yield across 75 wafers ($920,000 saved).' }
+      ],
+      graph: '<h4>🕸️ Active 300mm Semiconductor Digital Twin Builder × Lakehouse Streaming Table × Zero-Provisioned Chain</h4><p><code>Eventstream:PrivateLink-CMK (85K EPS)</code> ──[streamsTo]──&gt; <code>LakehouseStreamingTable:210ms-Lag</code> ──[twins]──&gt; <code>DigitalTwinBuilder:EUV-Scanner-04 (1.85nm)</code> ──[joins]──&gt; <code>S3CachedShortcut &amp; BigQueryDieMap</code> ──[bursts]──&gt; <code>ZeroProvisioned:+24-CU ($14.20 / 0% Throttle)</code> ──[writesBack]──&gt; <code>RayfinFabOps:1GB-FabricSQL (99.4% Yield · $920K Saved)</code></p>',
+      teamsTitle: '📋 Digital Twin Builder &amp; Rayfin Fab-Ops Auto-Calibration Receipt (Act Automatically · 0.97)',
+      teamsSummary: 'Action: Zero-Provisioned +24 CU Burst ($14.20) + Chuck Offset -0.42°C + 180s Micro-Purge + 1GB Free Fabric SQL Write-back · 99.4% Yield on 75 Wafers · $920,000 Scrap Saved ✓'
+    }
   }
 };
 
@@ -836,6 +871,8 @@ function selectScenario(sc) {
   if (finopsBtn) finopsBtn.classList.toggle('active', sc === 'finops_rayfin_observability');
   const clinicalBtn = document.getElementById('sim-btn-clinical');
   if (clinicalBtn) clinicalBtn.classList.toggle('active', sc === 'healthcare_clinical_supply_diskann');
+  const fabBtn = document.getElementById('sim-btn-fab');
+  if (fabBtn) fabBtn.classList.toggle('active', sc === 'manufacturing_digital_twin_zeroprov');
   runNormalSim();
 }
 
