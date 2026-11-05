@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #380 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-380.html](workbench-cycle-380.html) · [daily-report-2026-11-04.en.md](daily-report-2026-11-04.en.md)
+> 🔎 **Cycle #381 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-381.html](workbench-cycle-381.html) · [daily-report-2026-11-05.en.md](daily-report-2026-11-05.en.md)
 
 ---
 
-## 1) Cycle #380 release summary (2026-11-04)
+## 1) Cycle #381 release summary (2026-11-05)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,9 +26,9 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #380 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #380 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #380 workbench** | Interactive benchmark surface | [`workbench-cycle-380.html`](workbench-cycle-380.html) |
+| **Cycle #381 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #381 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #381 workbench** | Interactive benchmark surface | [`workbench-cycle-381.html`](workbench-cycle-381.html) |
 
 ---
 
@@ -46,11 +46,11 @@
 
 ## 4) Reports and visuals
 
-- Daily report (EN): [`daily-report-2026-11-04.en.md`](daily-report-2026-11-04.en.md)
-- Daily report (ZH): [`daily-report-2026-11-04.md`](daily-report-2026-11-04.md)
-- One-page SVG: [`assets/12-cycle-380-daily-breakthroughs.svg`](assets/12-cycle-380-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-380.en.md`](docs/full-monograph-cycle-380.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-380.md`](docs/full-monograph-cycle-380.md)
+- Daily report (EN): [`daily-report-2026-11-05.en.md`](daily-report-2026-11-05.en.md)
+- Daily report (ZH): [`daily-report-2026-11-05.md`](daily-report-2026-11-05.md)
+- One-page SVG: [`assets/13-cycle-381-daily-breakthroughs.svg`](assets/13-cycle-381-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-381.en.md`](docs/full-monograph-cycle-381.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-381.md`](docs/full-monograph-cycle-381.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -73,6 +73,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
+
 
 
 
