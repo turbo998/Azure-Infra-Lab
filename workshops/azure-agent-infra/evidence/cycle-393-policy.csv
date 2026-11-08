@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+IMDS block (169.254.169.254) + egress allowlist,192,200,0.96,measured,demo simulation trace + deterministic replay
+APIM token budget hard circuit breaker,173,190,0.9105,measured,policy replay logs
+MCP tool scope and content-safety policy chain,165,180,0.9167,measured,MCP policy replay logs
