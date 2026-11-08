@@ -1,0 +1,58 @@
+{
+  "round": 46,
+  "cycle": 427,
+  "status": "completed",
+  "topic_slug": "agent-gateway-semantic-cache-ttl-governance-selection-faq",
+  "source_worktree_commit": "4aaf49d5d9d31c07800a1547c34d3b3a953fd34d",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "7a8a29802351f1b82fba34921dea43b234e0e537",
+    "Azure-Infra-Lab": "eeb03a3ad7412a008d7f7b920b96a45d7d43a193",
+    "ai-research-public": "c6be25e355910b26cbb73e2c9868df55f743bb51",
+    "ai-research-lab": "3054eecebc5472d3fa53ef7126bc1565a5b17349",
+    "turbo998.github.io": "7e2ffaa95d1e834ec540c77e20d84a8ab28b6c11"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "7a8a29802351f1b82fba34921dea43b234e0e537",
+    "Azure-Infra-Lab": "eeb03a3ad7412a008d7f7b920b96a45d7d43a193",
+    "ai-research-public": "c6be25e355910b26cbb73e2c9868df55f743bb51",
+    "ai-research-lab": "3054eecebc5472d3fa53ef7126bc1565a5b17349",
+    "turbo998.github.io": "6359140828442abf1142a517dd6ac5fb4df92577"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "7a8a29802351f1b82fba34921dea43b234e0e537",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "eeb03a3ad7412a008d7f7b920b96a45d7d43a193",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "c6be25e355910b26cbb73e2c9868df55f743bb51",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "3054eecebc5472d3fa53ef7126bc1565a5b17349",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "7e2ffaa95d1e834ec540c77e20d84a8ab28b6c11",
+      "delivery_only": 0,
+      "current_only": 1
+    }
+  },
+  "homepage": {
+    "origin_main": "6359140828442abf1142a517dd6ac5fb4df92577",
+    "pages_main": "6359140828442abf1142a517dd6ac5fb4df92577",
+    "receipt_vs_pages": {
+      "merge_base": "7e2ffaa95d1e834ec540c77e20d84a8ab28b6c11",
+      "delivery_only": 0,
+      "current_only": 1
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:06:39+08:00"
+}
