@@ -210,12 +210,13 @@
 <body>
 
 <div class="top-nav">
-  <div><strong>Data Lab · 7-Card 4:5 Benchmark Deck</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-09-r3`)</div>
+  <div><strong>Data Lab · 7-Card 4:5 Benchmark Deck</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-09-r4`)</div>
   <div>
     <a href="index.html?lang=en">🚀 Interactive H5 Workbench</a>
     <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md">🧭 R1: Zero-Copy FAQ</a>
     <a href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md">⚡ R2: Streaming FAQ</a>
     <a href="comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md">🔄 R3: Mirroring vs. CDC FAQ</a>
+    <a href="comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.en.md">🧊 R4: Iceberg/Delta FAQ</a>
     <a href="benchmark-cards.html">🇨🇳 中文 7-Card 报告</a>
     <a href="README.en.md">📘 Data Lab Overview</a>
   </div>
@@ -226,22 +227,22 @@
   <div>
     <div class="card-header">
       <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-08 / 11-09 · SEALED RUN (R3 · 56 CASES)</span>
+      <span>2026-11-08 / 11-09 · SEALED RUN (R4 · 60 CASES)</span>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake + Eventhouse + Mirroring</span> Achieves 98.21% Routing &amp; Grounding Accuracy (55/56) Across 5 Clouds, Eventhouse (142ms) vs. Dynamic Tables (60s), &amp; Zero-ETL Mirroring ($0 Compute) vs. CDC While Cutting Modeled TCO by 46.1%–56.1%</h1>
-    <p class="sub">Synthesizing tonight's 3 deep-dive selection guides: R1 Cross-Cloud Zero-Copy &amp; OneLake IQ Sharing, R2 Real-Time Eventhouse KQL (142ms target) vs. Snowflake Dynamic Tables (60s min lag), and R3 Database &amp; Open Mirroring ($0 replication compute + free capacity-matched storage vs. Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect, cutting modeled CDC TCO by 87.7%).</p>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake XTable + Eventhouse + Mirroring</span> Achieves 98.33% Routing &amp; Grounding Accuracy (59/60) Across 5 Clouds, Eventhouse (142ms) vs. Dynamic Tables (60s), Zero-ETL Mirroring ($0 Compute) vs. CDC, &amp; Iceberg ↔ Delta Virtualization ($0 Compute) While Cutting Modeled TCO by 46.1%–56.1%</h1>
+    <p class="sub">Synthesizing tonight's 4 deep-dive selection guides: R1 Cross-Cloud Zero-Copy &amp; OneLake IQ Sharing, R2 Real-Time Eventhouse KQL (142ms target) vs. Snowflake Dynamic Tables (60s min lag), R3 Database &amp; Open Mirroring ($0 replication compute, cutting modeled CDC TCO by 87.7%), and R4 OneLake XTable Bidirectional Virtualization ($0 format conversion compute, cutting dual-format ETL TCO by 90.9%).</p>
 
     <div class="grid-3">
       <div class="panel">
         <h3>1. Scenarios &amp; Action Gates</h3>
-        <p><strong>56 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-56</code>):</p>
+        <p><strong>60 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-60</code>):</p>
         <ul>
-          <li><code>Fabric IQ &amp; Eventhouse RTI</code> (10 cases)</li>
-          <li><code>vs Databricks (Lakeflow/Connect)</code> (13 cases)</li>
-          <li><code>vs Snowflake (Dynamic/Openflow)</code> (10 cases)</li>
-          <li><code>vs GCP BigQuery (Streaming/Mirror)</code> (8 cases)</li>
-          <li><code>vs AWS Lakehouse (Aurora/S3 Tables)</code> (7 cases)</li>
-          <li><code>Open Mirroring / DiskANN / ALDO</code> (8 cases)</li>
+          <li><code>Fabric IQ &amp; Eventhouse RTI</code> (11 cases)</li>
+          <li><code>vs Databricks (Lakeflow/UniForm)</code> (14 cases)</li>
+          <li><code>vs Snowflake (Dynamic/Polaris)</code> (11 cases)</li>
+          <li><code>vs GCP BigQuery (BigLake/Mirror)</code> (8 cases)</li>
+          <li><code>vs AWS Lakehouse (Aurora/S3 Tables)</code> (8 cases)</li>
+          <li><code>Open Mirroring / XTable / ALDO</code> (8 cases)</li>
         </ul>
         <p style="margin-top:8px;"><strong>Action Bands</strong>:<br>
         <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
@@ -253,11 +254,11 @@
         <h3>2. Structured Input Contract</h3>
         <div class="dark-code" style="font-size:10.0px; padding:9px;">{
   "cohort": [
-    "Microsoft Fabric (F64 + Mirroring $0 + Eventhouse)",
-    "Databricks (Lakeflow Connect + DLT + UC)",
-    "Snowflake (Dynamic Tables 60s + Openflow + Horizon)",
-    "GCP (BigQuery Datastream + Continuous + BigLake)",
-    "AWS (Aurora Zero-ETL + DMS + S3 Tables)"
+    "Microsoft Fabric (F64 + XTable + Mirroring $0 + RTI)",
+    "Databricks (Delta UniForm + Lakeflow + UC)",
+    "Snowflake (Polaris Iceberg + Dynamic 60s + Openflow)",
+    "GCP (BigLake Iceberg + BigQuery Continuous)",
+    "AWS (S3 Tables Iceberg REST + Aurora Zero-ETL)"
   ],
   "enterprise_profile": {
     "users": 500,
@@ -275,7 +276,8 @@
     "manufacturing_digital_twin_zeroprov",
     "supply_chain_iq_sharing_salesforce",
     "telecom_5g_eventhouse_vs_dynamic_tables",
-    "core_banking_oracle_open_mirroring_cdc"
+    "core_banking_oracle_open_mirroring_cdc",
+    "omni_channel_snowflake_iceberg_onelake_xtable"
   ]
 }</div>
       </div>
@@ -313,7 +315,7 @@
   </div>
 
   <div class="footer-callout">
-    <strong>Provenance &amp; Scope Disclosure (`measured_local_harness` + `synthetic_scenario_model` + `vendor_published_spec_as_of_2026`)</strong>: <code>55/56 (98.21%)</code> routing verdicts and <code>24/24</code> unit tests are executed locally (<code>measured_local_harness</code>); F64 <code>$0</code> viewer seats, Mirroring <code>$0</code> replication compute, and Snowflake Dynamic Tables <code>60s</code> min lag are official specs (<code>vendor_published_spec_as_of_2026</code>); the 10 Ontology loop latencies (<code>480ms–780ms</code>), TCO models (<code>$14,048/mo</code>, CDC <code>$1,600/mo</code>), and SLA risk exposures (<code>$1.15M/$1.48M/$2.35M</code>) are deterministic architectural reference simulations sealed in <code>reports/report.json</code> (<code>synthetic_scenario_model</code>); live multi-cloud cluster stress runs are marked <code>not_measured</code>.
+    <strong>Provenance, Dual-Denominator &amp; Official Source Disclosure (`measured_local_harness` + `synthetic_scenario_model` + `vendor_published_spec_as_of_2026`)</strong>: <code>59/60 (98.33%)</code> routing verdicts and <code>26/26</code> unit tests are executed locally (<code>measured_local_harness</code>); F64 <code>$0</code> viewer seats (<a href="https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/" style="color:#93C5FD;">Azure Pricing</a>), Mirroring <code>$0</code> replication compute (<a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview" style="color:#93C5FD;">MS Learn</a>), OneLake XTable Iceberg <code>$0</code> conversion compute (<a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables" style="color:#93C5FD;">MS Learn</a>), Snowflake Dynamic Tables <code>60s</code> min lag (<a href="https://docs.snowflake.com/en/user-guide/dynamic-tables-about" style="color:#93C5FD;">Snowflake Docs</a>), and Databricks UniForm (<a href="https://docs.databricks.com/en/delta/uniform.html" style="color:#93C5FD;">DBX Docs</a>) are official vendor specs (<code>as_of: 2026-11-08</code>); two modeled latency denominators are explicitly separated: <strong>(1) n=60 routing matrix modeled mean = <code>526.5 ms</code></strong> (R3 n=56 was <code>532.0 ms</code>), and <strong>(2) n=11 Ontology closed-loop simulation modeled mean = <code>584.09 ms</code></strong> (<code>[780,640,710,660,590,560,530,515,495,480,465]ms</code>; R3 n=10 was <code>596.0 ms</code>), along with TCO models and SLA exposures (<code>$1.15M/$1.48M/$2.35M/$1.62M</code>) sealed in <code>reports/report.json</code> (<code>synthetic_scenario_model</code>); live multi-cloud cluster stress runs are marked <code>not_measured</code>.
   </div>
 </section>
 
@@ -390,10 +392,10 @@
 <section class="card" id="card-3">
   <div>
     <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 56-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 55 / 56 (98.21%) · MODEL MEAN 532.0 MS</span>
+      <span>3 / 7 · WHAT I TESTED · 60-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 59 / 60 (98.33%) · MATRIX MEAN (n=60) 526.5 MS · ONTOLOGY SIM MEAN (n=11) 584.09 MS</span>
     </div>
-    <h2>55 of 56 Cross-Cloud, OneLake IQ Sharing, Real-Time Eventhouse (142ms) vs. Dynamic Tables (60s) &amp; Zero-ETL Mirroring ($0 Compute) vs. CDC Scenarios Pass (98.21%); Single Miss (✕ DL-23) Exposes +14.2% Metric Drift on Ungrounded Raw Tables</h2>
+    <h2>59 of 60 Cross-Cloud, OneLake IQ Sharing, Real-Time Eventhouse (142ms) vs. Dynamic Tables (60s), Zero-ETL Mirroring ($0 Compute) vs. CDC, &amp; OneLake XTable (Iceberg↔Delta $0 Compute) Scenarios Pass (98.33%); Single Miss (✕ DL-23) Exposes +14.2% Drift on Raw Tables</h2>
 
     <table>
       <thead>
@@ -444,14 +446,15 @@
         <tr><td><strong>DL-45..48</strong> · IQ Share/Edge</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce Zero-Copy + Azure Local ALDO GA</td><td class="hit">✓ Protects 42 accounts ($1.15M modeled SLA) + air-gapped SQL edge &amp; GCC High</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
         <tr><td><strong>DL-49..52</strong> · Streaming RTI</td><td>Eventhouse KQL (142ms) vs Dynamic Tables (60s)/Lakeflow + 5G URLLC (495ms)</td><td class="hit">✓ Dual Projection (-48.5% compute) + Amsterdam SRv6 ($1.48M modeled SLA)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-53..56</strong> · Zero-ETL Mirror</td><td>Database &amp; Open Mirroring ($0 compute) vs Fivetran/Openflow/Lakeflow (480ms)</td><td class="hit">✓ Cuts CDC TCO -87.7% ($1.6K vs $13K) + Banking ledger zero-downtime ($2.35M modeled)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
+        <tr><td><strong>DL-57..60</strong> · Iceberg/XTable</td><td>OneLake XTable Virtualization ($0 compute) vs UniForm/Polaris/S3 Tables (465ms)</td><td class="hit">✓ Cuts dual-format ETL -90.9% ($966 vs $10.5K) + Retail margin defense ($1.62M modeled)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="grid-2" style="margin-top:8px;">
     <div class="panel">
-      <h3>Threshold Gating Distribution (56 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>43 (76.8%)</strong> · <code>Confirm</code>: <strong>11 (19.6%)</strong> · <code>Send to a human</code>: <strong>2 (3.6%)</strong>. Physical grid dispatch, cross-org supply-chain allocation, core banking regulatory ledger reconciliation, and sovereign edge sync enforce human confirmation.</p>
+      <h3>Threshold Gating Distribution (60 Cases)</h3>
+      <p><code>Act automatically</code>: <strong>47 (78.3%)</strong> · <code>Confirm</code>: <strong>11 (18.3%)</strong> · <code>Send to a human</code>: <strong>2 (3.3%)</strong>. Physical grid dispatch, cross-org supply-chain allocation, core banking regulatory ledger reconciliation, and sovereign edge sync enforce human confirmation.</p>
     </div>
     <div class="panel">
       <h3>Failure Root Cause (✕ DL-23 Miss Analysis)</h3>

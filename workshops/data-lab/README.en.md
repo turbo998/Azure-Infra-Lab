@@ -1,16 +1,24 @@
 # 🔬 Data Lab — Microsoft Fabric × 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep Research & AI Solution Architect Lab
 
 > **Language**: [中文 (`README.md`)](README.md) | **English (Current)**  
-> **Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.en.md) · [`2026-11-06`](research/daily/2026-11-06.en.md) · [`2026-11-05`](research/daily/2026-11-05.en.md) · [`2026-11-04`](research/daily/2026-11-04.en.md) · [`2026-11-03`](research/daily/2026-11-03.en.md) (includes [`2026-11-02`](research/daily/2026-11-02.en.md) & [`2026-11-01`](research/daily/2026-11-01.en.md) baselines) · **Benchmark Pass Rate**: `55 / 56 (98.21%)` (`532.0ms` modeled mean) · **Unit Tests**: `24 / 24 Passed (100%)`  
+> **Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.en.md) · [`2026-11-06`](research/daily/2026-11-06.en.md) · [`2026-11-05`](research/daily/2026-11-05.en.md) · [`2026-11-04`](research/daily/2026-11-04.en.md) · [`2026-11-03`](research/daily/2026-11-03.en.md) (includes [`2026-11-02`](research/daily/2026-11-02.en.md) & [`2026-11-01`](research/daily/2026-11-01.en.md) baselines) · **Benchmark Pass Rate**: `59 / 60 (98.33%)` (`n=60` matrix mean `526.5ms` · `n=11` ontology sim mean `584.09ms`) · **Unit Tests**: `26 / 26 Passed (100%)`  
 > **🌟 Flagship Architect Selection FAQs (Modeled on `ib-vs-ethernet-roce-selection-faq.md`)**:  
 > - **Round 1 (Zero-Copy & Ontology Selection)**: [`comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md` (OneLake Zero-Copy × Fabric IQ Ontology vs. 4 Clouds Selection FAQ)](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md)  
 > - **Round 2 (Real-Time Streaming Selection)**: [`comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md` (Eventhouse KQL 142ms vs. Snowflake Dynamic Tables 60s vs. Databricks Lakeflow FAQ)](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md)  
-> - **Round 3 (Zero-ETL Mirroring vs. CDC Selection)**: [`comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md` (Fabric Mirroring & Open Mirroring $0 Compute vs. Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect FAQ)](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md)
+> - **Round 3 (Zero-ETL Mirroring vs. CDC Selection)**: [`comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md` (Fabric Mirroring & Open Mirroring $0 Compute vs. Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect FAQ)](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md)  
+> - **Round 4 (Open Table Format & Catalog Selection)**: [`comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.en.md` (OneLake Iceberg↔Delta XTable $0 Virtualization vs. Databricks Delta UniForm vs. Snowflake Polaris vs. AWS S3 Tables vs. GCP BigLake FAQ)](comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md)
 >
-> 🔍 **Data Provenance & Scope Disclosure**:
-> - **`measured_local_harness`**: 56-scenario routing matrix (`55/56 = 98.21%` accuracy, explicit miss `DL-23` capturing `+14.2%` raw-table drift) and `24/24` Python unit tests executed locally.
-> - **`vendor_published_spec_as_of_2026`**: Fabric F64+ `$0` Power BI viewer seats, `$0` Mirroring replication compute + `64TB` free mirrored storage on F64, `1GB` Free Fabric SQL in Power BI Agentic App, and Snowflake Dynamic Tables `60s` min lag.
-> - **`synthetic_scenario_model`**: The 10 industry ontology loop latencies (`480ms–780ms`), 500-user TCO model (`$14,048/mo`), CDC TCO comparison (`$1,600/mo` vs. `$13,000/mo`), and SLA risk exposures (`$1.15M`/`$1.48M`/`$2.35M`) are deterministic architectural reference simulations sealed in `reports/report.json`; live multi-cloud cluster stress runs are marked `not_measured`.
+> 🔍 **Data Provenance, Official URLs & Dual-Denominator Scope Disclosure**:
+> - **`measured_local_harness`**: 60-scenario routing matrix (`59/60 = 98.33%` accuracy, explicit miss `DL-23` capturing `+14.2%` raw-table drift) and `26/26` Python unit tests executed locally (`0.020s`).
+> - **`vendor_published_spec_as_of_2026` (Verified Official URLs `as_of: 2026-11-08`)**:
+>   - [Fabric Pricing & F64 `$0` Viewer Seats](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/) · [Fabric Licenses](https://learn.microsoft.com/en-us/fabric/enterprise/licenses)
+>   - [Fabric Mirroring `$0` Compute & Free Storage Quota](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview) · [Open Mirroring](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/open-mirroring)
+>   - [OneLake Iceberg ↔ Delta XTable Virtualization (`$0`)](https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables) · [OneLake Shortcuts](https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts)
+>   - [Snowflake Dynamic Tables `60s` Min Lag](https://docs.snowflake.com/en/user-guide/dynamic-tables-about) · [Snowflake Iceberg Tables](https://docs.snowflake.com/en/user-guide/tables-iceberg) · [Databricks Delta UniForm](https://docs.databricks.com/en/delta/uniform.html) · [AWS S3 Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables.html) · [GCP BigLake Iceberg](https://cloud.google.com/bigquery/docs/iceberg-tables)
+> - **`synthetic_scenario_model` (Deterministic Reference Model with Strictly Separated Denominators)**:
+>   - **Denominator A — Routing Matrix Evaluation Mean (`scenario_evaluation.avg_latency_ms`)**: R4 **`n=60` (`DL-01..DL-60`) arithmetic mean = `526.5 ms`** (R3 historical snapshot `n=56` mean = `532.0 ms`).
+>   - **Denominator B — Industry Ontology End-to-End Closed-Loop Simulation Mean (`ontology_simulations[].end_to_end_latency_ms`)**: R4 **`n=11` (Scenarios A..K: `[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465] ms`, range `465–780 ms`) arithmetic mean = `584.09 ms`** (R3 historical snapshot `n=10` Scenarios A..J mean = `596.0 ms`).
+>   - The 500-user TCO model (`$14,048/mo`), CDC/format-conversion TCO comparisons, and SLA/margin risk exposures (`$1.15M`/`$1.48M`/`$2.35M`/`$1.62M`) are deterministic reference simulations sealed in `reports/report.json`; live multi-cloud cluster stress runs are marked `not_measured`.
 
 [![Data Lab Executive Visual Summary](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)
 
@@ -43,7 +51,10 @@
 
 ## 🖼️ Core Architecture Diagrams (Self-Contained SVGs)
 
-### 1. Fabric Database Mirroring & Open Mirroring ($0 Compute) vs. Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect FAQ Architecture (`2026-11-08 / 11-09 R3` New)
+### 1. OneLake Iceberg↔Delta XTable ($0 Virtualization) vs. Databricks Delta UniForm vs. Snowflake Polaris vs. AWS S3 Tables vs. GCP BigLake Open Format FAQ Architecture (`2026-11-08 / 11-09 R4` New)
+[![OneLake Iceberg Delta XTable vs UniForm Polaris S3 Tables BigLake FAQ Architecture](assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg)](assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg)
+
+### 2. Fabric Database Mirroring & Open Mirroring ($0 Compute) vs. Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect FAQ Architecture (`2026-11-08 / 11-09 R3` New)
 [![Fabric Mirroring & Open Mirroring vs CDC Openflow Lakeflow FAQ Architecture](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)
 
 ### 2. Fabric Eventhouse (KQL 142ms) + Lakehouse Streaming Tables (210ms) vs. Snowflake Dynamic Tables (60s) vs. Databricks Lakeflow Streaming FAQ Architecture (`2026-11-08 / 11-09 R2` New)

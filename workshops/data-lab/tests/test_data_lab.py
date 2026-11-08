@@ -176,12 +176,22 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
         self.assertEqual(sim["decision_routing"]["action"], "Confirm")
 
-    def test_scenario_matrix_56_cases_and_explicit_miss(self) -> None:
+    def test_omni_channel_snowflake_iceberg_onelake_xtable_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("omni_channel_snowflake_iceberg_onelake_xtable")
+        self.assertEqual(sim["telemetry"]["active_skus_evaluated"], 85000)
+        self.assertEqual(sim["telemetry"]["onelake_xtable_metadata_translation_ms"], 14)
+        self.assertEqual(sim["multi_agent_plan"]["format_conversion_compute_cost_usd"], 0)
+        self.assertTrue(sim["foundry_iq_guardrail"]["minimum_advertised_price_floor_enforced"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 1620000)
+
+    def test_scenario_matrix_60_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 56)
-        self.assertEqual(matrix["passed_scenarios"], 55)
+        self.assertEqual(matrix["total_scenarios"], 60)
+        self.assertEqual(matrix["passed_scenarios"], 59)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 98.21, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 98.33, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -274,6 +284,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("1GB Free Fabric SQL", by_id["DL-55"]["expected"])
         self.assertIn("Save $2.35M Default", by_id["DL-56"]["expected"])
 
+    def test_onelake_iceberg_delta_uniform_polaris_s3tables_2026_11_09_r4_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-57", "DL-58", "DL-59", "DL-60"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("OneLake XTable Bidirectional Virtualization", by_id["DL-57"]["expected"])
+        self.assertIn("Delta UniForm", by_id["DL-58"]["expected"])
+        self.assertIn("AWS S3 Tables", by_id["DL-59"]["expected"])
+        self.assertIn("Protect $1.62M Margin", by_id["DL-60"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -291,7 +312,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 55)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 59)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 60)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 526.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 11)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 584.09)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
+        refs = loaded["provenance"]["vendor_published_spec_references"]
+        self.assertEqual(len(refs), 7)
+        for ref in refs:
+            self.assertTrue(ref["official_url"].startswith("https://"))
+            self.assertEqual(ref["as_of"], "2026-11-08")
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
         self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
         self.assertIn("finops_rayfin_observability", loaded["ontology_simulations"])
@@ -300,6 +331,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("supply_chain_iq_sharing_salesforce", loaded["ontology_simulations"])
         self.assertIn("telecom_5g_eventhouse_vs_dynamic_tables", loaded["ontology_simulations"])
         self.assertIn("core_banking_oracle_open_mirroring_cdc", loaded["ontology_simulations"])
+        self.assertIn("omni_channel_snowflake_iceberg_onelake_xtable", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

@@ -1,16 +1,24 @@
 # 🔬 Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度研究与 AI Solution Architect 实战实验室
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`README.en.md`)](README.en.md)  
-> **最新研究日期 / Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.md) · [`2026-11-06`](research/daily/2026-11-06.md) · [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `55 / 56 (98.21%)` (`532.0ms` 建模均值) · **单元测试**: `24 / 24 通过 (100%)`  
-> **🌟 架构师必读三大独立 FAQ 选型指南（严格对标 `ib-vs-ethernet-roce-selection-faq.md` 六段式范式）**:  
+> **最新研究日期 / Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.md) · [`2026-11-06`](research/daily/2026-11-06.md) · [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `59 / 60 (98.33%)` (`n=60` 路由矩阵均值 `526.5ms` · `n=11` 本体仿真均值 `584.09ms`) · **单元测试**: `26 / 26 通过 (100%)`  
+> **🌟 架构师必读四大独立 FAQ 选型指南（严格对标 `ib-vs-ethernet-roce-selection-faq.md` 六段式范式）**:  
 > - **Round 1（跨云零拷贝与本体选型）**：[`comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md`（OneLake 零拷贝 × Fabric IQ 本体 vs 四大云竞对选型 FAQ）](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [`English FAQ`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md)  
 > - **Round 2（实时流与亚秒级闭环选型）**：[`comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md`（Eventhouse KQL 142ms vs Snowflake Dynamic Tables 60s vs Databricks Lakeflow 选型 FAQ）](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [`English FAQ`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md)  
-> - **Round 3（零 ETL 数据库镜像 vs 传统 CDC 选型）**：[`comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md`（Fabric Mirroring & Open Mirroring $0 算力 vs Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect 选型 FAQ）](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md) · [`English FAQ`](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md)
+> - **Round 3（零 ETL 数据库镜像 vs 传统 CDC 选型）**：[`comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md`（Fabric Mirroring & Open Mirroring $0 算力 vs Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect 选型 FAQ）](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md) · [`English FAQ`](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md)  
+> - **Round 4（开放表格式与跨云目录选型）**：[`comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md`（OneLake Iceberg↔Delta XTable $0 双向虚拟化 vs Databricks Delta UniForm vs Snowflake Polaris vs AWS S3 Tables vs GCP BigLake 选型 FAQ）](comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md) · [`English FAQ`](comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.en.md)
 >
-> 🔍 **数据溯源与适用范围声明（Data Provenance & Scope Disclosure）**：
-> - **`measured_local_harness`（本地确定性引擎实测）**：56 场景路由矩阵（`55/56 = 98.21%` 通过率，显式反例 `DL-23` 捕获 `+14.2%` 裸表漂移）与 `24/24` Python 单元测试本地执行通过。
-> - **`vendor_published_spec_as_of_2026`（官方发布规约）**：Fabric F64+ 免收 Power BI 读者许可费（`$0`）、Mirroring 复制算力 `$0` 免费 + F64 赠送 `64TB` 镜像存储、Power BI Agentic App 附赠 `1GB` 免费 Fabric SQL、Snowflake Dynamic Tables `60s` 最小滞后。
-> - **`synthetic_scenario_model`（确定性架构参考仿真模型）**：10 大行业本体闭环耗时（`480ms–780ms`）、500 用户月度 TCO（`$14,048/mo`）、CDC 复制月度成本对比（`$1,600/mo` vs `$13,000/mo`）及 SLA 风险敞口（`$1.15M`/`$1.48M`/`$2.35M`）为封存于 `reports/report.json` 的架构设计参考模型，跨云物理集群压测标记为 `not_measured`。
+> 🔍 **数据溯源、官方链接与双分母口径声明（Data Provenance, Official URLs & Dual-Denominator Scope Disclosure）**：
+> - **`measured_local_harness`（本地确定性引擎实测）**：60 场景路由矩阵（`59/60 = 98.33%` 通过率，显式反例 `DL-23` 捕获 `+14.2%` 裸表漂移）与 `26/26` Python 单元测试本地执行通过（`0.020s`）。
+> - **`vendor_published_spec_as_of_2026`（附官方文档链接，核验截至 `as_of: 2026-11-08`）**：
+>   - [Fabric Pricing & F64 `$0` Viewer Seats](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/) · [Fabric Licenses](https://learn.microsoft.com/en-us/fabric/enterprise/licenses)
+>   - [Fabric Mirroring `$0` Compute & Free Storage Quota](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview) · [Open Mirroring](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/open-mirroring)
+>   - [OneLake Iceberg ↔ Delta XTable Virtualization (`$0`)](https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables) · [OneLake Shortcuts](https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts)
+>   - [Snowflake Dynamic Tables `60s` Min Lag](https://docs.snowflake.com/en/user-guide/dynamic-tables-about) · [Snowflake Iceberg Tables](https://docs.snowflake.com/en/user-guide/tables-iceberg) · [Databricks Delta UniForm](https://docs.databricks.com/en/delta/uniform.html) · [AWS S3 Tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables.html) · [GCP BigLake Iceberg](https://cloud.google.com/bigquery/docs/iceberg-tables)
+> - **`synthetic_scenario_model`（确定性架构参考仿真模型，严格区分两大延迟分母）**：
+>   - **分母 A — 场景路由评估矩阵建模均值（`scenario_evaluation.avg_latency_ms`）**：R4 **`n=60`（`DL-01..DL-60`）算术均值 = `526.5 ms`**（R3 历史快照 `n=56` 均值 = `532.0 ms`）。
+>   - **分母 B — 行业本体端到端闭环仿真均值（`ontology_simulations[].end_to_end_latency_ms`）**：R4 **`n=11`（场景 A..K：`[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465] ms`，范围 `465–780 ms`）算术均值 = `584.09 ms`**（R3 历史快照 `n=10` 场景 A..J 均值 = `596.0 ms`）。
+>   - 500 用户月度 TCO（`$14,048/mo`）、CDC/双格式转换成本对比及 SLA/毛利风险敞口（`$1.15M`/`$1.48M`/`$2.35M`/`$1.62M`）均为封存于 `reports/report.json` 的架构参考仿真模型，跨云物理集群压测标记为 `not_measured`。
 
 [![Data Lab Executive Visual Summary](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)
 
@@ -43,7 +51,10 @@
 
 ## 🖼️ 核心架构图集（SVG 自包含矢量图）
 
-### 1. Fabric 数据库镜像 & Open Mirroring ($0 算力) vs Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect 选型 FAQ 架构图（`2026-11-08 / 11-09 R3` 新增）
+### 1. OneLake Iceberg↔Delta XTable ($0 虚拟化) vs Databricks Delta UniForm vs Snowflake Polaris vs AWS S3 Tables vs GCP BigLake 开放表格式选型 FAQ 架构图（`2026-11-08 / 11-09 R4` 新增）
+[![OneLake Iceberg Delta XTable vs UniForm Polaris S3 Tables BigLake FAQ Architecture](assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg)](assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg)
+
+### 2. Fabric 数据库镜像 & Open Mirroring ($0 算力) vs Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect 选型 FAQ 架构图（`2026-11-08 / 11-09 R3` 新增）
 [![Fabric Mirroring & Open Mirroring vs CDC Openflow Lakeflow FAQ Architecture](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)
 
 ### 2. Fabric Eventhouse (KQL 142ms) + Lakehouse 流式表 (210ms) vs Snowflake Dynamic Tables (60s) vs Databricks Lakeflow 实时流选型 FAQ 架构图（`2026-11-08 / 11-09 R2` 新增）

@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="100%" height="100%" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="50%" stop-color="#0D162C"/>
+      <stop offset="100%" stop-color="#091E3A"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabricCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B2948"/>
+      <stop offset="100%" stop-color="#0E3A5E"/>
+    </linearGradient>
+    <linearGradient id="compCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E1B38"/>
+      <stop offset="100%" stop-color="#141D33"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1000" fill="url(#bgGrad)"/>
+
+  <!-- Top Banner -->
+  <rect x="30" y="22" width="1540" height="92" rx="14" fill="url(#headerGrad)" filter="url(#shadow)"/>
+  <text x="56" y="58" font-size="24" font-weight="800" fill="#FFFFFF">Data Lab Round 4 FAQ · OneLake Iceberg v3 ↔ Delta 双向虚拟化 (XTable) vs. 四大云开放表格式选型指南</text>
+  <text x="56" y="86" font-size="14" fill="#E0F2FE" font-weight="500">
+    物理 Parquet 零拷贝一份存 · OneLake XTable 14ms 自动双格式元数据互译 ($0 转换算力) · vs. Databricks Delta UniForm · vs. Snowflake Polaris · vs. AWS S3 Tables
+  </text>
+  <rect x="1220" y="36" width="330" height="62" rx="10" fill="#061224" fill-opacity="0.82" stroke="#7DD3FC" stroke-width="1.5"/>
+  <text x="1385" y="61" font-size="14" font-weight="700" fill="#38BDF8" text-anchor="middle">2026-11-09 R4 · 59/60 (98.33%) 实测通过</text>
+  <text x="1385" y="83" font-size="12" fill="#A7F3D0" text-anchor="middle">26/26 Unittest · Provenance: Local + Model</text>
+
+  <!-- Section 1: Left Column - First-Principles Format Comparison -->
+  <rect x="30" y="132" width="755" height="425" rx="14" fill="url(#fabricCard)" stroke="#0EA5E9" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="54" y="166" font-size="19" font-weight="800" fill="#38BDF8">1. 第一性原理：为什么 Delta 与 Iceberg 本质只是“同一批 Parquet 的两本目录账本”？</text>
+  <text x="54" y="190" font-size="13" fill="#BAE6FD">底层数据 99% 都是列式 Apache Parquet 文件；所谓格式之争，本质只是顶层 JSON/Avro 事务清单（Metadata Log）语法不同</text>
+
+  <!-- Physical Parquet Layer -->
+  <rect x="52" y="206" width="710" height="64" rx="10" fill="#07192E" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="407" y="231" font-size="14" font-weight="700" fill="#7DD3FC" text-anchor="middle">📦 底层共享物理存储层：单份 Apache Parquet 列式数据文件（42 TB 零售全渠道订单与库存文件，0 双份拷贝）</text>
+  <text x="407" y="253" font-size="12" fill="#E2E8F0" text-anchor="middle">传统痛点：为了同时给 Snowflake (Iceberg) 和 Power BI/Databricks (Delta) 用，每天跑 Spark 转换复制两份 Parquet，白花 $9,600/月 [synthetic_scenario_model]</text>
+
+  <!-- Two Virtual Metadata Lenses -->
+  <rect x="52" y="282" width="346" height="122" rx="10" fill="#06223A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="68" y="308" font-size="14" font-weight="700" fill="#34D399">📘 账本 A：Delta Lake 事务日志 (_delta_log)</text>
+  <text x="68" y="330" font-size="12" fill="#E2E8F0">• 格式：00001.json + Checkpoint Parquet</text>
+  <text x="68" y="350" font-size="12" fill="#E2E8F0">• 原生消费引擎：Power BI DirectLake (22ms)、</text>
+  <text x="68" y="370" font-size="12" fill="#E2E8F0">  Fabric Spark、Databricks Photon、Fabric SQL</text>
+  <text x="68" y="390" font-size="12" fill="#6EE7B7" font-weight="700">• 优势：DirectLake 内存列帧直投 + V-Order 极速读取</text>
+
+  <rect x="416" y="282" width="346" height="122" rx="10" fill="#06223A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="432" y="308" font-size="14" font-weight="700" fill="#38BDF8">🧊 账本 B：Apache Iceberg v3 元数据树 (metadata/)</text>
+  <text x="432" y="330" font-size="12" fill="#E2E8F0">• 格式：v1.metadata.json → Manifest List → Manifest</text>
+  <text x="432" y="350" font-size="12" fill="#E2E8F0">• 原生消费引擎：Snowflake (External Volume 直写)、</text>
+  <text x="432" y="370" font-size="12" fill="#E2E8F0">  AWS S3 Tables / Athena、GCP BigLake、Trino/Flink</text>
+  <text x="432" y="390" font-size="12" fill="#7DD3FC" font-weight="700">• 优势：跨云异构 SQL 引擎开放 REST 目录标准</text>
+
+  <!-- OneLake XTable Bridge -->
+  <rect x="52" y="416" width="710" height="124" rx="10" fill="#042F2E" stroke="#10B981" stroke-width="1.5"/>
+  <text x="70" y="442" font-size="15" font-weight="800" fill="#34D399">🔄 OneLake XTable 双向自动元数据虚拟化（$0 格式转换算力 · [vendor_published_spec_as_of_2026]）</text>
+  <text x="70" y="465" font-size="12.5" fill="#ECFDF5">• 正向（Delta → Iceberg）：Fabric / Databricks 写入 Delta 表，OneLake 自动实时暴露虚拟 Iceberg REST 元数据供 Snowflake/Athena 直读</text>
+  <text x="70" y="486" font-size="12.5" fill="#ECFDF5">• 反向（Iceberg → Delta）：Snowflake 在 OneLake 直接创建/写入 Iceberg 表（或 Shortcut 挂载 S3 Tables），OneLake 14ms 自动投影 _delta_log</text>
+  <text x="70" y="507" font-size="12.5" fill="#A7F3D0" font-weight="700">• 架构收益：Power BI DirectLake 直接毫秒级消费 Snowflake Iceberg 表，省去 100% 雙格式转换 ETL 管道与双份存储费！</text>
+  <text x="70" y="527" font-size="11.5" fill="#6EE7B7">Provenance: $0 转换算力与双向虚拟化为 Microsoft Learn 2026 官方规约；14ms 元数据延迟与 $9,600/月节省为 Scenario K 参考模型 [synthetic_scenario_model]</text>
+
+  <!-- Section 2: Right Column - Decision Tree & Coexistence Patterns -->
+  <rect x="805" y="132" width="765" height="425" rx="14" fill="url(#compCard)" stroke="#818CF8" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="829" y="166" font-size="19" font-weight="800" fill="#A5B4FC">2. 架构师选型决策树：四大跨引擎开放表格式共存模式（Better Together）</text>
+  <text x="829" y="190" font-size="13" fill="#C7D2FE">按主力写入引擎（Writer）与主消费端（Reader）精准匹配最优开放目录与虚拟化链路</text>
+
+  <!-- Pattern 1 -->
+  <rect x="827" y="206" width="720" height="76" rx="10" fill="#131C38" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="845" y="230" font-size="14" font-weight="700" fill="#38BDF8">模式 A：Snowflake 主力写 Iceberg + Power BI DirectLake / M365 Copilot 消费（DL-57）</text>
+  <text x="845" y="251" font-size="12.5" fill="#E2E8F0">• 架构路径：将 Snowflake External Volume 直接指向 OneLake → Snowflake 写 Iceberg → OneLake XTable 自动生成 _delta_log</text>
+  <text x="845" y="270" font-size="12" fill="#7DD3FC" font-weight="600">• 为什么这么选：零跨云 Egress 出网费 + Power BI 免 Import 刷新直连 DirectLake + 500 人免 PBI 读者许可费</text>
+
+  <!-- Pattern 2 -->
+  <rect x="827" y="292" width="720" height="76" rx="10" fill="#131C38" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="845" y="316" font-size="14" font-weight="700" fill="#FBBF24">模式 B：Databricks Unity Catalog 主力写 Delta + 外部 Iceberg/Fabric 消费（DL-58）</text>
+  <text x="845" y="337" font-size="12.5" fill="#E2E8F0">• 架构路径：开启 Databricks Delta UniForm（生成 Iceberg 元数据）+ OneLake ADLS Shortcut 零拷贝挂载 → 挂载 Fabric IQ 本体</text>
+  <text x="845" y="356" font-size="12" fill="#FDE68A" font-weight="600">• 为什么这么选：保留 Databricks Photon/Mosaic AI 特征工厂，同时让 Snowflake (Iceberg REST) 与 Fabric DirectLake 共享同一份 Parquet</text>
+
+  <!-- Pattern 3 -->
+  <rect x="827" y="378" width="720" height="76" rx="10" fill="#131C38" stroke="#10B981" stroke-width="1.2"/>
+  <text x="845" y="402" font-size="14" font-weight="700" fill="#34D399">模式 C：AWS S3 Tables / GCP BigLake 存量 Iceberg 表 + 跨云 Fabric 分析（DL-59）</text>
+  <text x="845" y="423" font-size="12.5" fill="#E2E8F0">• 架构路径：OneLake Iceberg Shortcut 挂载 S3 Tables / BigLake + 开启 24h Shortcut Caching + XTable 自动投影 _delta_log</text>
+  <text x="845" y="442" font-size="12" fill="#6EE7B7" font-weight="600">• 为什么这么选：AWS S3 Tables 自动后台压缩小文件，OneLake 缓存命中时 $0 跨云 S3/GCS 出网流量费，DirectLake 毫秒级响应</text>
+
+  <!-- Pattern 4 -->
+  <rect x="827" y="464" width="720" height="76" rx="10" fill="#131C38" stroke="#C084FC" stroke-width="1.2"/>
+  <text x="845" y="488" font-size="14" font-weight="700" fill="#C084FC">模式 D：纯开源多引擎（Flink + Trino + Spark）无厂商绑定目录（Snowflake Polaris / UC OSS）</text>
+  <text x="845" y="509" font-size="12.5" fill="#E2E8F0">• 架构路径：采用 Apache Polaris (Incubating) 或 Unity Catalog OSS Iceberg REST 作为独立中立目录，OneLake 通过 REST Federation 接入</text>
+  <text x="845" y="528" font-size="12" fill="#E9D5FF" font-weight="600">• 为什么这么选：满足金融监管“核心元数据目录可容器化私有部署”要求，同时不丧失 Fabric IQ 语义层与 Copilot 能力</text>
+
+  <!-- Section 3: Bottom Left - 5-Platform Open Table Format Matrix -->
+  <rect x="30" y="575" width="910" height="395" rx="14" fill="#0B1528" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="54" y="608" font-size="18" font-weight="800" fill="#F8FAFC">3. 五大云平台开放表格式与跨引擎目录能力横评矩阵（2026 架构师速查表）</text>
+  <text x="54" y="629" font-size="12" fill="#94A3B8">数据溯源：产品架构特性依据各厂商 2026 官方文档 [vendor_published_spec_as_of_2026]；42TB 双格式 ETL 成本为参考模型 [synthetic_scenario_model]</text>
+
+  <!-- Table Header -->
+  <rect x="48" y="642" width="874" height="34" rx="6" fill="#1E293B"/>
+  <text x="62" y="664" font-size="12.5" font-weight="700" fill="#38BDF8">评估维度</text>
+  <text x="225" y="664" font-size="12.5" font-weight="700" fill="#34D399">MS Fabric OneLake</text>
+  <text x="375" y="664" font-size="12.5" font-weight="700" fill="#FBBF24">Databricks UC</text>
+  <text x="515" y="664" font-size="12.5" font-weight="700" fill="#60A5FA">Snowflake Polaris</text>
+  <text x="665" y="664" font-size="12.5" font-weight="700" fill="#A78BFA">GCP BigLake</text>
+  <text x="795" y="664" font-size="12.5" font-weight="700" fill="#F472B6">AWS S3 Tables</text>
+
+  <!-- Row 1 -->
+  <line x1="48" y1="716" x2="922" y2="716" stroke="#1E293B" stroke-width="1"/>
+  <text x="62" y="698" font-size="12" font-weight="600" fill="#E2E8F0">核心双向互通机制</text>
+  <text x="225" y="698" font-size="12" fill="#6EE7B7" font-weight="700">XTable 双向自动虚拟化</text>
+  <text x="375" y="698" font-size="12" fill="#FDE68A">Delta UniForm + Iceberg</text>
+  <text x="515" y="698" font-size="12" fill="#93C5FD">Polaris Iceberg REST</text>
+  <text x="665" y="698" font-size="12" fill="#DDD6FE">BigLake Metastore</text>
+  <text x="795" y="698" font-size="12" fill="#FBCFE8">S3 Tables Iceberg REST</text>
+
+  <!-- Row 2 -->
+  <line x1="48" y1="758" x2="922" y2="758" stroke="#1E293B" stroke-width="1"/>
+  <text x="62" y="740" font-size="12" font-weight="600" fill="#E2E8F0">原生读/写开放格式</text>
+  <text x="225" y="740" font-size="12" fill="#6EE7B7" font-weight="700">Delta 读写 + Iceberg 双向</text>
+  <text x="375" y="740" font-size="12" fill="#E2E8F0">Delta + Managed Iceberg</text>
+  <text x="515" y="740" font-size="12" fill="#E2E8F0">Iceberg 读写 + 只读 Delta</text>
+  <text x="665" y="740" font-size="12" fill="#E2E8F0">Iceberg 读写 + Delta 读</text>
+  <text x="795" y="740" font-size="12" fill="#E2E8F0">Managed Iceberg 专用</text>
+
+  <!-- Row 3 -->
+  <line x1="48" y1="800" x2="922" y2="800" stroke="#1E293B" stroke-width="1"/>
+  <text x="62" y="782" font-size="12" font-weight="600" fill="#E2E8F0">格式转换算力成本</text>
+  <text x="225" y="782" font-size="12" fill="#6EE7B7" font-weight="700">$0 免费平台后台虚拟化</text>
+  <text x="375" y="782" font-size="12" fill="#E2E8F0">消耗集群异步 DBU 算力</text>
+  <text x="515" y="782" font-size="12" fill="#E2E8F0">消耗 Warehouse Credit</text>
+  <text x="665" y="782" font-size="12" fill="#E2E8F0">消耗 BigQuery Slot</text>
+  <text x="795" y="782" font-size="12" fill="#E2E8F0">按压缩请求与存储计费</text>
+
+  <!-- Row 4 -->
+  <line x1="48" y1="842" x2="922" y2="842" stroke="#1E293B" stroke-width="1"/>
+  <text x="62" y="824" font-size="12" font-weight="600" fill="#E2E8F0">BI 与 AI 语义直连</text>
+  <text x="225" y="824" font-size="12" fill="#6EE7B7" font-weight="700">DirectLake (22ms) + 本体</text>
+  <text x="375" y="824" font-size="12" fill="#E2E8F0">SQL Warehouse + Genie</text>
+  <text x="515" y="824" font-size="12" fill="#E2E8F0">Cortex Analyst + 虚拟仓</text>
+  <text x="665" y="824" font-size="12" fill="#E2E8F0">Looker + BigQuery BI</text>
+  <text x="795" y="824" font-size="12" fill="#E2E8F0">Athena / QuickSight</text>
+
+  <!-- Row 5 -->
+  <line x1="48" y1="884" x2="922" y2="884" stroke="#1E293B" stroke-width="1"/>
+  <text x="62" y="866" font-size="12" font-weight="600" fill="#E2E8F0">跨云缓存免出网费</text>
+  <text x="225" y="866" font-size="12" fill="#6EE7B7" font-weight="700">OneLake Shortcut 24h 缓存</text>
+  <text x="375" y="866" font-size="12" fill="#E2E8F0">Delta Cache (需挂集群)</text>
+  <text x="515" y="866" font-size="12" fill="#E2E8F0">Warehouse 本地 SSD 缓存</text>
+  <text x="665" y="866" font-size="12" fill="#E2E8F0">BigLake 缓存 (同云优先)</text>
+  <text x="795" y="866" font-size="12" fill="#E2E8F0">仅限 AWS S3 同云内部</text>
+
+  <!-- Row 6 -->
+  <text x="62" y="912" font-size="12" font-weight="600" fill="#E2E8F0">42TB 双引擎月度成本</text>
+  <text x="225" y="912" font-size="12" fill="#6EE7B7" font-weight="700">$966/月 (单份+免费虚拟化)</text>
+  <text x="375" y="912" font-size="12" fill="#FDE68A">$3,450/月 (含 UniForm DBU)</text>
+  <text x="515" y="912" font-size="12" fill="#93C5FD">$4,120/月 (含目录同步算力)</text>
+  <text x="665" y="912" font-size="12" fill="#DDD6FE">$3,890/月 (含跨云读取槽)</text>
+  <text x="795" y="912" font-size="12" fill="#FBCFE8">$10,566/月 (传统双份 ETL)</text>
+
+  <text x="62" y="948" font-size="11.5" fill="#94A3B8">* 注：42TB 双引擎月度成本对比基于单份 OneLake 存储 ($23/TB) vs 传统双格式 Spark 转换 + 双份存储 ($9,600/月 ETL 冗余) 架构参考模型 [synthetic_scenario_model]。</text>
+
+  <!-- Section 4: Bottom Right - Scenario K Simulation Trace -->
+  <rect x="960" y="575" width="610" height="395" rx="14" fill="#0B1E36" stroke="#10B981" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="984" y="608" font-size="18" font-weight="800" fill="#34D399">4. Scenario K 仿真：全渠道零售定价毛利保卫战（DL-60）</text>
+  <text x="984" y="630" font-size="12" fill="#A7F3D0">Snowflake Iceberg 直写 OneLake + Databricks UniForm 弹性特征 · [synthetic_scenario_model]</text>
+
+  <rect x="982" y="644" width="566" height="82" rx="8" fill="#071526" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="998" y="666" font-size="13" font-weight="700" fill="#38BDF8">📥 跨引擎零拷贝输入（85,000 个在售 SKU · 42 TB 跨云表）</text>
+  <text x="998" y="688" font-size="12" fill="#E2E8F0">• Snowflake 将全渠道促销流水以 Iceberg 格式直写 OneLake（OneLake XTable 14ms 投影 _delta_log）</text>
+  <text x="998" y="708" font-size="12" fill="#E2E8F0">• Databricks Unity Catalog 通过 Delta UniForm 共享价格弹性特征 + AWS S3 Tables 库存 Shortcut</text>
+
+  <rect x="982" y="736" width="566" height="82" rx="8" fill="#071526" stroke="#F59E0B" stroke-width="1"/>
+  <text x="998" y="758" font-size="13" font-weight="700" fill="#FBBF24">🧠 Fabric IQ 本体规则触发（465ms 端到端建模闭环）</text>
+  <text x="998" y="780" font-size="12" fill="#E2E8F0">• 规则：GROSS_MARGIN_PCT &lt; 24.5% AND PROMO_CANNIBALIZATION &gt; 18.0%（精准命中 312 个高损耗 SKU）</text>
+  <text x="998" y="800" font-size="12" fill="#E2E8F0">• Foundry IQ 护栏：强制校验《RETAIL-MAP-ANTITRUST-SOP-11》最低广告限价（MAP）并拦截民生商品涨价</text>
+
+  <rect x="982" y="828" width="566" height="122" rx="8" fill="#042F2E" stroke="#10B981" stroke-width="1.2"/>
+  <text x="998" y="852" font-size="13.5" font-weight="800" fill="#34D399">✅ 自治回写与建模收益（Act Automatically · 置信度 0.98）</text>
+  <text x="998" y="874" font-size="12" fill="#ECFDF5">• 动作：通过 Power BI Agentic App (1GB 免费 Fabric SQL) 将 312 个 SKU 自动切换为会员积分捆绑阶梯价</text>
+  <text x="998" y="894" font-size="12" fill="#ECFDF5">• 建模财务保护：修复 +4.8% 综合毛利率，单季建模保住 $1,620,000 毛利并省下 $9,600/月双格式转换 ETL</text>
+  <text x="998" y="916" font-size="11.5" fill="#6EE7B7" font-weight="600">• 溯源声明：Scenario K (465ms) 及 n=11 本体均值 584.09ms 属参考仿真 [synthetic_scenario_model]；实机压测 not_measured</text>
+  <text x="998" y="936" font-size="11.5" fill="#A7F3D0">• 实测验证：本地引擎 n=60 矩阵 59/60 (98.33% · 均值 526.5ms) · 26/26 Unittest 全绿 [measured_local_harness]</text>
+</svg>

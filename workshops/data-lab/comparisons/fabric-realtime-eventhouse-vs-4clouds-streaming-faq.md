@@ -2,14 +2,14 @@
 
 > **Language / 语言**: **中文 (Chinese)** | [English (`fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md`)](./fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md)  
 > **定位**：面向 AI Solution Architect（AI 解决方案架构师）与企业 CTO / 数据与平台负责人的**实时流与事件驱动智能体（Event-Driven Agentic AI）选型实战指南**（对标 `ib-vs-ethernet-roce-selection-faq.md` 深入浅出 FAQ 范式，3 分钟抓准延迟分水岭，10 分钟掌握售前攻防与共存架构）。  
-> **关联评测与交互工作台**：[交互式五维选型工作台 (`../index.html`)](../index.html) · [7-Card 4:5 视觉评测报告 (`../benchmark-cards.html`)](../benchmark-cards.html) · [R1 零拷贝与本体选型 FAQ (`./fabric-onelake-iq-vs-4clouds-selection-faq.md`)](./fabric-onelake-iq-vs-4clouds-selection-faq.md) · [R3 零 ETL 镜像与 CDC 选型 FAQ (`./fabric-mirroring-zero-etl-vs-cdc-faq.md`)](./fabric-mirroring-zero-etl-vs-cdc-faq.md)
+> **关联评测与交互工作台**：[交互式五维选型工作台 (`../index.html`)](../index.html) · [7-Card 4:5 视觉评测报告 (`../benchmark-cards.html`)](../benchmark-cards.html) · [R1 零拷贝与本体选型 FAQ (`./fabric-onelake-iq-vs-4clouds-selection-faq.md`)](./fabric-onelake-iq-vs-4clouds-selection-faq.md) · [R3 零 ETL 镜像与 CDC 选型 FAQ (`./fabric-mirroring-zero-etl-vs-cdc-faq.md`)](./fabric-mirroring-zero-etl-vs-cdc-faq.md) · [R4 Iceberg/Delta 双向虚拟化 FAQ (`./fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md`)](./fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md)
 
 ![Fabric Eventhouse vs Dynamic Tables vs Lakeflow vs BigQuery Streaming FAQ Summary](../assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg)
 
 > 🔍 **数据溯源与适用范围声明（Data Provenance & Scope Disclosure）**：
-> - **官方发布规格与架构限制（`vendor_published_spec_as_of_2026`）**：Snowflake Dynamic Tables 最小刷新滞后 `TARGET_LAG = 1 minute (60s)`（Snowflake 官方文档，as of 2026）；Fabric Eventstreams 支持同时路由至 Eventhouse KQL 与 Lakehouse Streaming Tables（Microsoft Learn，as of 2026）。
-> - **本地确定性评测引擎实测（`measured_local_harness`）**：全量路由评测矩阵（`55 / 56 = 98.21%` 通过率）与 `24 / 24` Python 单元测试本地执行通过。
-> - **架构参考仿真与成本模型（`synthetic_scenario_model`）**：文中的 **Eventhouse `142 ms` P99 与 Lakehouse Streaming Tables `210 ms` 参考延迟目标**、**流计算月度成本对比（`$4,850/mo` vs `$9,420/mo`，省 `48.5%`）** 以及 **场景 I（`telecom_5g_eventhouse_vs_dynamic_tables`：`495 ms` 建模闭环、`$1,850` 冗余带宽费规避 `$1,480,000` 专网 SLA 违约风险敞口）** 均为封存于 `reports/report.json` 的确定性架构参考仿真模型，并非已上线客户的真实财务报表；跨云多租户生产集群物理高压压测标记为 `not_measured`。
+> - **官方发布规格与架构限制（`vendor_published_spec_as_of_2026`，`as_of: 2026-11-08`）**：Snowflake Dynamic Tables 最小刷新滞后 `TARGET_LAG = 1 minute (60s)`（[Snowflake Dynamic Tables Docs](https://docs.snowflake.com/en/user-guide/dynamic-tables-about)）；Fabric Eventstreams 支持同时路由至 Eventhouse KQL 与 Lakehouse Streaming Tables（[Microsoft Learn Fabric RTI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/overview)）；GCP BigQuery Continuous Queries（[Google Cloud Docs](https://cloud.google.com/bigquery/docs/continuous-queries-introduction)）。
+> - **本地确定性评测引擎实测（`measured_local_harness`）**：全量路由评测矩阵（R4 `59 / 60 = 98.33%` 通过率，R3 `55 / 56 = 98.21%`）与 `26 / 26` Python 单元测试本地执行通过。
+> - **架构参考仿真与成本模型（`synthetic_scenario_model` · 双分母显式披露）**：严格区分两套建模延迟分母——**① `n=60` 路由矩阵建模均值 = `526.5 ms`**（R3 `n=56` 为 `532.0 ms`，R2 `n=52` 为 `537.7 ms`）；**② `n=11` 行业本体端到端闭环建模均值 = `584.09 ms`**（`[780,640,710,660,590,560,530,515,495,480,465]ms`；R3 `n=10` 为 `596.0 ms`）。文中的 **Eventhouse `142 ms` P99 与 Lakehouse Streaming Tables `210 ms` 参考延迟目标**、**流计算月度成本对比（`$4,850/mo` vs `$9,420/mo`，省 `48.5%`）** 以及 **场景 I（`telecom_5g_eventhouse_vs_dynamic_tables`：`495 ms` 建模闭环、`$1,850` 冗余带宽费规避 `$1,480,000` 专网 SLA 违约风险敞口）** 均为封存于 `reports/report.json` 的确定性架构参考仿真模型，并非已上线客户的真实财务报表；跨云多租户生产集群物理高压压测标记为 `not_measured`。
 
 ---
 

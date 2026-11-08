@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -164,6 +164,7 @@
     <a class="btn" href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md" id="link-faq">🧭 R1: 零拷贝+本体 FAQ</a>
     <a class="btn" href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md" id="link-faq-r2">⚡ R2: 实时流选型 FAQ</a>
     <a class="btn" href="comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md" id="link-faq-r3">🔄 R3: 零ETL镜像 vs CDC FAQ</a>
+    <a class="btn" href="comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md" id="link-faq-r4">🧊 R4: Iceberg/Delta 互通 FAQ</a>
     <a class="btn" href="benchmark-cards.html" id="link-cards-zh">📊 7-Card 评测报告 (中文)</a>
     <a class="btn" href="benchmark-cards.en.html" id="link-cards-en">📊 7-Card Deck (EN)</a>
     <a class="btn" href="../fabcon-sqlcon-2026/index.html">🎬 FabCon 2026 展厅</a>
@@ -177,9 +178,9 @@
     <div class="hero-top">
       <div>
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
-        <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与今晚三大深度选型专题（R1 跨云零拷贝与 IQ Sharing、R2 实时流 Eventhouse vs Dynamic Tables、R3 零 ETL 镜像 $0 算力 vs 传统 CDC），对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。<i>（数据溯源声明：<code>55/56</code> 路由与 <code>24/24</code> 单测为 <code>measured_local_harness</code>；<code>$0</code> 镜像算力/<code>$0</code> 读者费/<code>60s</code> 滞后为 <code>vendor_published_spec_as_of_2026</code>；十大本体耗时与 TCO/SLA 风险敞口为封存架构参考仿真模型 <code>synthetic_scenario_model</code>）</i></p>
+        <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与今晚四大深度选型专题（R1 跨云零拷贝与 IQ Sharing、R2 实时流 Eventhouse vs Dynamic Tables、R3 零 ETL 镜像 $0 算力 vs 传统 CDC、R4 OneLake Iceberg↔Delta XTable $0 双向虚拟化），对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。<i>（数据溯源与双分母口径声明：<code>59/60</code> 路由与 <code>26/26</code> 单测为 <code>measured_local_harness</code>；<code>$0</code> 镜像算力/<code>$0</code> XTable 虚拟化/<code>$0</code> 读者费/<code>60s</code> 滞后为附官方链接的 <code>vendor_published_spec_as_of_2026</code>；<b>n=60 路由矩阵建模均值 <code>526.5ms</code></b> 与 <b>n=11 行业本体闭环仿真均值 <code>584.09ms</code> (范围 <code>465–780ms</code>)</b> 及 TCO/SLA 风险敞口严格区分并标注为 <code>synthetic_scenario_model</code>）</i></p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">55 / 56 场景实测通过 (98.21%) · 2026-11-08 / 11-09 (R3)</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">59 / 60 场景实测通过 (98.33%) · 2026-11-08 / 11-09 (R4)</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -190,12 +191,12 @@
       <div class="kpi-card">
         <div class="label" id="kpi2-lbl">500 用户月度建模 TCO 节省</div>
         <div class="val">46.1% – 56.1%</div>
-        <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirroring 复制算力)</div>
+        <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirroring/XTable 算力)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">十大跨云本体建模闭环延迟</div>
-        <div class="val">480ms – 780ms</div>
-        <div class="sub" id="kpi3-sub">银行镜像 $2.35M · 5G 切片 $1.48M · 供应链 $1.15M · 反欺诈 $4.62M</div>
+        <div class="label" id="kpi3-lbl">双分母建模延迟 (n=60 / n=11)</div>
+        <div class="val">526.5ms / 584.09ms</div>
+        <div class="sub" id="kpi3-sub">n=60 路由均值 526.5ms · n=11 本体均值 584.09ms (465–780ms)</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -288,7 +289,8 @@
       <button class="comp-pill" id="sim-btn-fab" onclick="selectScenario('manufacturing_digital_twin_zeroprov')">🏭 场景 G：300mm 晶圆厂 Digital Twin Builder × Lakehouse 流式表 × Zero-Provisioned 弹性 (530ms)</button>
       <button class="comp-pill" id="sim-btn-supply" onclick="selectScenario('supply_chain_iq_sharing_salesforce')">🌐 场景 H：跨企供应链 × OneLake IQ Sharing × Salesforce Data 360 零拷贝 × 断网车间 (515ms · R1)</button>
       <button class="comp-pill" id="sim-btn-telecom" onclick="selectScenario('telecom_5g_eventhouse_vs_dynamic_tables')">📡 场景 I：5G URLLC 专网切片 Eventhouse KQL (142ms) vs Dynamic Tables (60s) × SRv6 自动导流 (495ms · R2)</button>
-      <button class="comp-pill" id="sim-btn-banking" onclick="selectScenario('core_banking_oracle_open_mirroring_cdc')">🏦 场景 J：跨国银行总账 Oracle + DB2 Open Mirroring ($0 算力) vs 传统 CDC × Osmos 漂移自愈 (480ms · R3 新增)</button>
+      <button class="comp-pill" id="sim-btn-banking" onclick="selectScenario('core_banking_oracle_open_mirroring_cdc')">🏦 场景 J：跨国银行总账 Oracle + DB2 Open Mirroring ($0 算力) vs 传统 CDC × Osmos 漂移自愈 (480ms · R3)</button>
+      <button class="comp-pill" id="sim-btn-iceberg" onclick="selectScenario('omni_channel_snowflake_iceberg_onelake_xtable')">🧊 场景 K：全渠道零售 Snowflake Iceberg × OneLake XTable ($0 虚拟化) × PBI Agentic App 毛利保护 (465ms · R4 新增)</button>
     </div>
 
     <div class="grid-2">
@@ -316,10 +318,18 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · 每日研究强制交付 (2026-11-08 / 11-09 R3)：五大平台选型决策、零拷贝、实时流与零 ETL 镜像 ($0 算力) 十大本体一图流总结卡 (Executive Visual Summary SVG)</span>
+        <span>01 · 每日研究强制交付 (2026-11-08 / 11-09 R4)：五大平台选型决策、零拷贝、实时流、零 ETL 镜像与 Iceberg/Delta 双向虚拟化 ($0 算力) 十一大本体一图流总结卡 (Executive Visual Summary SVG)</span>
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>12 · OneLake Iceberg↔Delta XTable ($0 虚拟化) vs Databricks Delta UniForm vs Snowflake Polaris vs AWS S3 Tables vs BigLake 开放表格式选型 FAQ 架构图 (R4 新增)</span>
+        <a href="assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg" alt="OneLake Iceberg Delta XTable vs UniForm Polaris S3 Tables BigLake FAQ Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -431,7 +441,7 @@
 </main>
 
 <script>
-let currentLang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'zh';
+let currentLang = new URLSearchParams(window.location.search).get('lang') === 'zh' ? 'zh' : 'en';
 let currentComp = 'databricks';
 let currentSim = 'energy_dc_peak';
 
@@ -839,6 +849,36 @@ const SIM_DATA = {
       teamsTitle: '🏦 Operations Agent · Basel-IV Intraday Liquidity & Open Mirroring Card (Confirm · 0.97)',
       teamsSummary: 'Action: Project Osmos 138ms Basel-IV schema evolution + $45M HQLA repo transfer ($1,420 cost) + Write back to 1GB Free Fabric SQL · LCR 97.4% -> 104.2%, -87.7% CDC TCO, $2,350,000 Modeled Regulatory Risk Mitigated ✓'
     }
+  },
+  omni_channel_snowflake_iceberg_onelake_xtable: {
+    zh: {
+      steps: [
+        { title: '① Snowflake Iceberg + Databricks Delta UniForm → OneLake XTable ($0 算力) 双向虚拟化', latency: '78 ms', desc: '全渠道零售大促期间 (85,000 个在售 SKU · 42 TB 跨云表)，Snowflake 将门店促销表以 Iceberg v2 直写或挂载至 OneLake，OneLake XTable 在 14ms 内零拷贝虚拟化为 `_delta_log` 供 DirectLake BI 秒读，并同步结合 Databricks Unity Catalog 的价格弹性特征，省去 $9,600/月双格式转换 ETL。' },
+        { title: '② Fabric IQ 跨 3 源开放表格式本体图谱穿透 + 毛利侵蚀定位', latency: '104 ms', desc: '沿着 `PromoTable:Snowflake-Iceberg-OneLake-XTable ($0 Virtualization) → ElasticityML:Databricks-Unity-Delta-UniForm → StoreInventory:AWS-S3-Tables-Iceberg-Shortcut → MarginOntology:Fabric-IQ-OmniChannel-Pricing` 穿透，检出 312 个大促 SKU 综合毛利率跌至 19.7% (< 24.5% 警戒线)，跨渠道促销蚕食率高达 22.4%。' },
+        { title: '③ Fabric IQ 条件-动作规则生成会员积分捆绑阶梯价预案', latency: '96 ms', desc: '自动合成促销纠偏策略：暂停 312 个高损耗 SKU 的无门槛满减券，切换为“会员双倍积分 + 高毛利配件捆绑阶梯价”，预计修复 +4.8% 综合毛利率（恢复至 24.5%）。' },
+        { title: '④ Foundry IQ 最低广告限价 (MAP) 与民生商品反暴利护栏 (SOP-11)', latency: '92 ms', desc: '强制校验《RETAIL-MAP-ANTITRUST-SOP-11》：确认 100% 符合品牌商最低广告限价 (MAP Verified) 且严禁在应急期上调民生必需品价格，同时通过 Purview 跨 Delta/Iceberg 屏蔽供应商底价返点列。' },
+        { title: '⑤ Power BI Agentic App (1GB 免费 Fabric SQL) 自治回写与毛利保护 (465 ms)', latency: '95 ms (E2E 465 ms)', desc: '置信度 0.98 触发 Act automatically；将新阶梯促销规则自动回写至 1GB 免费 Fabric SQL 并同步 POS/电商引擎，端到端建模耗时 465ms (n=11 本体均值 584.09ms)，单季建模规避 $1,620,000 毛利侵蚀风险。' }
+      ],
+      graph: `<h4>🕸️ 全渠道零售 × Snowflake Iceberg × OneLake XTable ($0 虚拟化) × PBI Agentic App 6 跳图谱 (synthetic_scenario_model)</h4>
+        <p><code>Snowflake:Horizon-Iceberg-Table</code> ➔ <code>OneLake:XTable-14ms-Delta-Projection ($0 Compute)</code> + <code>Databricks:Unity-Delta-UniForm</code> + <code>AWS:S3-Tables-Shortcut</code> ➔ <code>FabricIQ:Margin-Ontology (312 SKUs &lt; 24.5%)</code> ➔ <code>PBIAgenticApp:1GB-FabricSQL-Writeback</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>开放表格式虚拟化胜出原因：</b>OneLake XTable 双向无感生成 `_delta_log` 与 Iceberg `metadata.json` (`vendor_published_spec_as_of_2026`)，消灭 42TB 双存与 $9,600/mo 格式转换 Spark 任务（省 90.9%）。</p>`,
+      teamsTitle: '🧊 Operations Agent · 全渠道大促毛利保护与 OneLake XTable 零拷贝审计卡 (Act automatically · 0.98)',
+      teamsSummary: '已自动执行 (Act automatically · 置信度 98%)：OneLake XTable 14ms 虚拟化 Snowflake Iceberg + 312 个高蚕食 SKU 切换会员积分捆绑阶梯价 + 回写 1GB 免费 Fabric SQL · 毛利率恢复 +4.8%，省 $9,600/月格式 ETL，单季建模保住 $1,620,000 毛利 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Snowflake Iceberg + Databricks Delta UniForm → OneLake XTable ($0 Compute) Virtualization', latency: '78 ms', desc: 'During omni-channel flash promos (85,000 active SKUs · 42 TB cross-cloud tables), Snowflake writes/mounts store promo tables in Iceberg v2 on OneLake; OneLake XTable projects `_delta_log` in 14ms at $0 compute for DirectLake BI while joining Databricks Unity Catalog elasticity features, eliminating $9,600/mo in format-conversion ETL.' },
+        { title: '② Fabric IQ 3-Source Open Format Graph Traversal & Margin Check', latency: '104 ms', desc: 'Traverses `PromoTable:Snowflake-Iceberg-OneLake-XTable ($0 Virtualization) → ElasticityML:Databricks-Unity-Delta-UniForm → StoreInventory:AWS-S3-Tables-Iceberg-Shortcut → MarginOntology:Fabric-IQ-OmniChannel-Pricing`, isolating 312 SKUs where gross margin dropped to 19.7% (< 24.5% floor) with 22.4% promo cannibalization.' },
+        { title: '③ Fabric IQ Condition-Action Rule Tiered Loyalty Bundle Plan', latency: '96 ms', desc: 'Synthesizes promo remediation: pauses stackable flat coupons on 312 cannibalized SKUs and switches to a Loyalty Double-Points + High-Margin Accessory Tiered Bundle, restoring +4.8% blended gross margin (to 24.5%).' },
+        { title: '④ Foundry IQ MAP & Essential-Goods Anti-Gouging Guardrail (SOP-11)', latency: '92 ms', desc: 'Verifies `RETAIL-MAP-ANTITRUST-SOP-11`: enforces Minimum Advertised Price (MAP) floors and blocks emergency price hikes on essential household goods while Purview masks `Supplier_Rebate_Basis` across both Delta and Iceberg readers.' },
+        { title: '⑤ Power BI Agentic App (1GB Free Fabric SQL) Autonomous Write-back (465 ms)', latency: '95 ms (E2E 465 ms)', desc: 'Confidence 0.98 triggers Act automatically; commits updated promo tiers to 1GB Free Fabric SQL and POS/e-commerce engines in 465ms modeled E2E (n=11 ontology mean 584.09ms), protecting $1,620,000 modeled quarterly gross margin.' }
+      ],
+      graph: `<h4>🕸️ Omni-Channel Retail × Snowflake Iceberg × OneLake XTable ($0 Virtualization) × PBI Agentic App 6-Hop Graph (synthetic_scenario_model)</h4>
+        <p><code>Snowflake:Horizon-Iceberg-Table</code> ➔ <code>OneLake:XTable-14ms-Delta-Projection ($0 Compute)</code> + <code>Databricks:Unity-Delta-UniForm</code> + <code>AWS:S3-Tables-Shortcut</code> ➔ <code>FabricIQ:Margin-Ontology (312 SKUs &lt; 24.5%)</code> ➔ <code>PBIAgenticApp:1GB-FabricSQL-Writeback</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>Why OneLake XTable Wins:</b> Bidirectional zero-compute `_delta_log` ↔ Iceberg `metadata.json` virtualization (`vendor_published_spec_as_of_2026`), eliminating 42TB duplicate Parquet storage and $9,600/mo Spark conversion jobs (-90.9%).</p>`,
+      teamsTitle: '🧊 Operations Agent · Omni-Channel Margin Guard & OneLake XTable Card (Act automatically · 0.98)',
+      teamsSummary: 'Executed Automatically (Confidence 98%): OneLake XTable 14ms Snowflake Iceberg projection + 312 cannibalized SKUs switched to Loyalty Tiered Bundle + Written back to 1GB Free Fabric SQL · +4.8% margin restored, -$9,600/mo format ETL, $1,620,000 Modeled Quarterly Margin Protected ✓'
+    }
   }
 };
 
@@ -995,6 +1035,8 @@ function selectScenario(sc) {
   if (telecomBtn) telecomBtn.classList.toggle('active', sc === 'telecom_5g_eventhouse_vs_dynamic_tables');
   const bankingBtn = document.getElementById('sim-btn-banking');
   if (bankingBtn) bankingBtn.classList.toggle('active', sc === 'core_banking_oracle_open_mirroring_cdc');
+  const icebergBtn = document.getElementById('sim-btn-iceberg');
+  if (icebergBtn) icebergBtn.classList.toggle('active', sc === 'omni_channel_snowflake_iceberg_onelake_xtable');
   runNormalSim();
 }
 

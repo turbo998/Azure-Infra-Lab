@@ -1,14 +1,14 @@
 # 企业级 AI 数据底座选型与“零拷贝 + 语义本体（OneLake × Fabric IQ）”核心原理 FAQ：Microsoft Fabric vs. Databricks / Snowflake / GCP / AWS
 
 > 🌐 **Language / 语言**: **中文 (Chinese)** | **[English (`fabric-onelake-iq-vs-4clouds-selection-faq.en.md`)](fabric-onelake-iq-vs-4clouds-selection-faq.en.md)**
-> 🔗 **关联专题 (Related Deep Dives)**: [《R2: 实时流 Eventhouse vs 四大云 FAQ》](fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [《R3: 零 ETL 镜像 vs 传统 CDC FAQ》](fabric-mirroring-zero-etl-vs-cdc-faq.md) · [四大云竞对全景攻防 Battlecards](fabric-vs-4clouds-battlecards-2026.md) · [十行业场景打单 Playbook](../playbooks/scenario-win-loss-playbook.md) · [7-Card 4:5 基准测试报告](../benchmark-cards.html) · [交互式全景工作台 (`index.html`)](../index.html)
+> 🔗 **关联专题 (Related Deep Dives)**: [《R2: 实时流 Eventhouse vs 四大云 FAQ》](fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [《R3: 零 ETL 镜像 vs 传统 CDC FAQ》](fabric-mirroring-zero-etl-vs-cdc-faq.md) · [《R4: Iceberg/Delta 双向虚拟化 FAQ》](fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md) · [四大云竞对全景攻防 Battlecards](fabric-vs-4clouds-battlecards-2026.md) · [十行业场景打单 Playbook](../playbooks/scenario-win-loss-playbook.md) · [7-Card 4:5 基准测试报告](../benchmark-cards.html) · [交互式全景工作台 (`index.html`)](../index.html)
 
 [![OneLake Zero-Copy & Fabric IQ Ontology FAQ Architecture](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)
 
 > 🔍 **数据溯源与适用范围声明（Data Provenance & Scope Disclosure）**：
-> - **官方发布规格与许可规则（`vendor_published_spec_as_of_2026`）**：Fabric F64+ 容量免收 Power BI 仅查看读者许可费（`$0` Viewer Seat）、Power BI Agentic App 附赠 **1GB 免费 Fabric SQL**、OneLake Mirroring 复制算力 `$0` 免费、OneLake IQ Sharing 支持同时共享表 + `.rdf` 本体 + `.md` 智能体指令（均源于 FabCon/SQLCon 2026 及 Microsoft Learn 官方文档）。
-> - **本地确定性评测引擎实测（`measured_local_harness`）**：56 场景路由评测矩阵（`55 / 56 = 98.21%` 通过率，显式反例 `DL-23` 捕获裸表 Text-to-SQL `+14.2%` 漂移）与 `24 / 24` Python 单元测试本地执行通过。
-> - **架构参考仿真与成本模型（`synthetic_scenario_model`）**：文中的 **500 用户月度 TCO 精算模型（`$14,048/mo` vs `$26,063–$31,990/mo`）**、**OneLake 缓存 `28 ms` 参考指标** 以及 **场景 H（跨企供应链 `515 ms` 端到端闭环、规避 `$1,150,000` SLA 违约风险敞口）** 均为封存于 `reports/report.json` 的确定性架构参考仿真模型，并非已上线客户的真实财务报表；跨云多租户生产集群物理高压压测标记为 `not_measured`。
+> - **官方发布规格与许可规则（`vendor_published_spec_as_of_2026`，`as_of: 2026-11-08`）**：Fabric F64+ 容量免收 Power BI 仅查看读者许可费（`$0` Viewer Seat，详见 [Azure Fabric Pricing](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/) 与 [Fabric Licenses](https://learn.microsoft.com/en-us/fabric/enterprise/licenses)）、Power BI Agentic App 附赠 **1GB 免费 Fabric SQL**、OneLake Mirroring 复制算力 `$0` 免费（[Microsoft Learn Mirroring](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview)）、OneLake XTable 双向虚拟化 `$0` 转换算力（[OneLake Iceberg Tables](https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables)）、OneLake IQ Sharing 支持同时共享表 + `.rdf` 本体 + `.md` 智能体指令。
+> - **本地确定性评测引擎实测（`measured_local_harness`）**：全量路由评测矩阵（R4 达 `59 / 60 = 98.33%` 通过率，R3 为 `55 / 56 = 98.21%`，显式反例 `DL-23` 捕获裸表 Text-to-SQL `+14.2%` 漂移）与 `26 / 26` Python 单元测试本地执行通过。
+> - **架构参考仿真与成本模型（`synthetic_scenario_model` · 双分母显式披露）**：严格区分两套建模延迟分母——**① `n=60` 路由矩阵建模均值 = `526.5 ms`**（R3 `n=56` 为 `532.0 ms`）；**② `n=11` 行业本体端到端闭环建模均值 = `584.09 ms`**（`[780,640,710,660,590,560,530,515,495,480,465]ms`；R3 `n=10` 为 `596.0 ms`）。文中的 **500 用户月度 TCO 精算模型（`$14,048/mo` vs `$26,063–$31,990/mo`）**、**OneLake 缓存 `28 ms` 参考指标** 以及 **场景 H（跨企供应链 `515 ms` 端到端闭环、规避 `$1,150,000` SLA 违约风险敞口）** 均为封存于 `reports/report.json` 的确定性架构参考仿真模型，并非已上线客户的真实财务报表；跨云多租户生产集群物理高压压测标记为 `not_measured`。
 
 ---
 
