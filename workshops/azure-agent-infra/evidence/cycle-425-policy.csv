@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Output chunk-size budget gate,188,200,0.94,measured,chunk-window control replay + deterministic verification
+Chunk boundary integrity guard,183,190,0.9632,measured,chunk-boundary integrity logs
+Tenant chunk-window authorization fence,172,180,0.9556,measured,MCP policy replay logs
