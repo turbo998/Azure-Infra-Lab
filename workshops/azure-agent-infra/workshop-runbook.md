@@ -1,20 +1,20 @@
 # Azure AI Agent Infrastructure — Step 04 Validate: Customer Workshop & Architecture Design Session Runbook (Bilingual EN / 中文)
 
-> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #400 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #400 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #400 Daily Report](daily-report-2026-11-14.md)**
+> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #401 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #401 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #401 Daily Report](daily-report-2026-11-14.md)**
 >
 > **Purpose**: Actionable field delivery guide for **Step 04 Validate (1/2-Day or 1-Day Hands-On Workshop + Target Architecture Whiteboard Session)** from the *Agent Infra Playbook* (`Agent_Infra_Playbook.pptx`, Slides 14–18).
 > **定位**：面向架构师与现场交付团队的 **Step 04 Validate（半天/全天动手工作坊 + 目标架构白板共创）** 落地执行手册（覆盖 384 章行业模型、377 套 IaC 蓝图与 376 项定量仿真器，385/385 项单测全绿）。
 
 ---
 
-## 0. Cycle #400 publish bundle (2026-11-14)
+## 0. Cycle #401 publish bundle (2026-11-14)
 
 - **7-card visual deck (4:5)**: [`benchmark-cards.html`](benchmark-cards.html) / [`benchmark-cards.en.html`](benchmark-cards.en.html)
-- **Interactive benchmark workbench**: [`workbench-cycle-400.html`](workbench-cycle-400.html)
-- **Daily breakthroughs one-pager SVG**: [`assets/30-cycle-400-daily-breakthroughs.svg`](assets/30-cycle-400-daily-breakthroughs.svg)
-- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-400-benchmark.json`](evidence/cycle-400-benchmark.json)
-- **Monograph addendum**: [`docs/full-monograph-cycle-400.md`](docs/full-monograph-cycle-400.md) / [`docs/full-monograph-cycle-400.en.md`](docs/full-monograph-cycle-400.en.md)
-- **Selection FAQ (ZH/EN)**: [`a2a-idempotency-key-selection-faq.md`](a2a-idempotency-key-selection-faq.md) / [`a2a-idempotency-key-selection-faq.en.md`](a2a-idempotency-key-selection-faq.en.md)
+- **Interactive benchmark workbench**: [`workbench-cycle-401.html`](workbench-cycle-401.html)
+- **Daily breakthroughs one-pager SVG**: [`assets/31-cycle-401-daily-breakthroughs.svg`](assets/31-cycle-401-daily-breakthroughs.svg)
+- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-401-benchmark.json`](evidence/cycle-401-benchmark.json)
+- **Monograph addendum**: [`docs/full-monograph-cycle-401.md`](docs/full-monograph-cycle-401.md) / [`docs/full-monograph-cycle-401.en.md`](docs/full-monograph-cycle-401.en.md)
+- **Selection FAQ (ZH/EN)**: [`mcp-timeout-budget-selection-faq.md`](mcp-timeout-budget-selection-faq.md) / [`mcp-timeout-budget-selection-faq.en.md`](mcp-timeout-budget-selection-faq.en.md)
 
 ---
 
