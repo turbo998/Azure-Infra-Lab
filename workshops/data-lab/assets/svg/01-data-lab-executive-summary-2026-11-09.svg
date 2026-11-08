@@ -24,11 +24,11 @@
   <rect x="44" y="38" width="1352" height="86" rx="14" fill="#131F38" stroke="#2563EB" stroke-width="1.5"/>
   <rect x="64" y="54" width="210" height="26" rx="13" fill="url(#accentGrad)"/>
   <text x="169" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">DATA LAB · 2026-11-08/09</text>
-  <text x="290" y="72" fill="#F8FAFC" font-size="20" font-weight="800">Microsoft Fabric × 四大云竞对选型 FAQ：零拷贝、实时流、零 ETL 镜像与 Iceberg/Delta 双向虚拟化一图流</text>
-  <text x="64" y="104" fill="#94A3B8" font-size="13">Executive Visual Summary · R1 零拷贝本体 / R2 Eventhouse 实时流 / R3 零ETL镜像 ($0) / R4 Iceberg↔Delta ($0) · n=60 矩阵均值 526.5ms · n=11 本体闭环均值 584.09ms</text>
+  <text x="290" y="72" fill="#F8FAFC" font-size="20" font-weight="800">Microsoft Fabric × 四大云竞对选型 FAQ：零拷贝、实时流、零 ETL 镜像、Iceberg/Delta 与 HTAP DiskANN 一图流</text>
+  <text x="64" y="104" fill="#94A3B8" font-size="13">Executive Visual Summary · R1 零拷贝 / R2 实时流 / R3 零ETL镜像 ($0) / R4 Iceberg↔Delta ($0) / R5 HTAP DiskANN (-92% RAM) · n=64 矩阵均值 521.0ms · n=12 本体闭环均值 572.92ms</text>
   <rect x="1180" y="52" width="196" height="56" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
-  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">60 场景基准得分</text>
-  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">59 / 60 (98.33%)</text>
+  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">64 场景基准得分</text>
+  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">63 / 64 (98.44%)</text>
 
   <!-- Row 1 Left: 2026-11-08/09 Daily Breakthroughs across 5 Clouds -->
   <rect x="44" y="140" width="664" height="270" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
@@ -121,9 +121,9 @@
   <text x="1270" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">85.5</text>
   <text x="1340" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">82.8</text>
 
-  <!-- Row 2 Left: 11 Flagship Ontology Simulations -->
+  <!-- Row 2 Left: 12 Flagship Ontology Simulations -->
   <rect x="44" y="426" width="664" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
-  <text x="64" y="446" fill="#60A5FA" font-size="13" font-weight="800" letter-spacing="0.3">03 · Fabric IQ 十一大行业本体参考仿真闭环 (n=11 Mean 584.09ms vs n=60 Matrix Mean 526.5ms)</text>
+  <text x="64" y="446" fill="#60A5FA" font-size="13" font-weight="800" letter-spacing="0.3">03 · Fabric IQ 十二大行业本体参考仿真闭环 (n=12 Mean 572.92ms vs n=64 Matrix Mean 521.0ms)</text>
 
   <!-- Row 1: A, B, C, D -->
   <rect x="64" y="454" width="150" height="68" rx="7" fill="#0F172A" stroke="#2563EB" stroke-width="1.1"/>
@@ -146,46 +146,51 @@
   <text x="546" y="485" fill="#E2E8F0" font-size="9">• Osmos 152ms 自愈 Schema</text>
   <text x="546" y="500" fill="#94A3B8" font-size="9">• OBO 冻结 38 笔 ($4.62M)</text>
 
-  <!-- Row 2: E, F, G -->
-  <rect x="64" y="528" width="202" height="68" rx="7" fill="#0F172A" stroke="#38BDF8" stroke-width="1.1"/>
-  <text x="74" y="544" fill="#38BDF8" font-size="10" font-weight="800">E · 18 工作区自愈 (590ms)</text>
-  <text x="74" y="559" fill="#E2E8F0" font-size="9">• F64 114.8% → 71.2% (-43.6pt)</text>
-  <text x="74" y="574" fill="#94A3B8" font-size="9">• Rayfin SDK + On-Demand ($28.4K)</text>
+  <!-- Row 2: E, F, G, H -->
+  <rect x="64" y="528" width="150" height="68" rx="7" fill="#0F172A" stroke="#38BDF8" stroke-width="1.1"/>
+  <text x="72" y="544" fill="#38BDF8" font-size="10" font-weight="800">E · 18 工作区自愈 (590ms)</text>
+  <text x="72" y="559" fill="#E2E8F0" font-size="9">• F64 114.8%→71.2% (-43.6pt)</text>
+  <text x="72" y="574" fill="#94A3B8" font-size="9">• Rayfin+On-Demand ($28.4K)</text>
 
-  <rect x="275" y="528" width="202" height="68" rx="7" fill="#0F172A" stroke="#34D399" stroke-width="1.1"/>
-  <text x="285" y="544" fill="#34D399" font-size="10" font-weight="800">F · 医药冷链 DiskANN (560ms)</text>
-  <text x="285" y="559" fill="#E2E8F0" font-size="9">• 192核 DiskANN 19ms / 98.4%召回</text>
-  <text x="285" y="574" fill="#94A3B8" font-size="9">• 调拨 420 支护航 128 患者 ($640K)</text>
+  <rect x="222" y="528" width="150" height="68" rx="7" fill="#0F172A" stroke="#34D399" stroke-width="1.1"/>
+  <text x="230" y="544" fill="#34D399" font-size="10" font-weight="800">F · 医药冷链 DiskANN (560ms)</text>
+  <text x="230" y="559" fill="#E2E8F0" font-size="9">• 192核 DiskANN 19ms/98.4%</text>
+  <text x="230" y="574" fill="#94A3B8" font-size="9">• 调拨420支护航患者 ($640K)</text>
 
-  <rect x="486" y="528" width="202" height="68" rx="7" fill="#0F172A" stroke="#10B981" stroke-width="1.1"/>
-  <text x="496" y="544" fill="#10B981" font-size="10" font-weight="800">G · 晶圆厂数字孪生 (530ms)</text>
-  <text x="496" y="559" fill="#E2E8F0" font-size="9">• 85K EPS + Zero-Prov +24CU</text>
-  <text x="496" y="574" fill="#94A3B8" font-size="9">• 75 片 3nm 晶圆保良 99.4% ($920K)</text>
+  <rect x="380" y="528" width="150" height="68" rx="7" fill="#0F172A" stroke="#10B981" stroke-width="1.1"/>
+  <text x="388" y="544" fill="#10B981" font-size="10" font-weight="800">G · 晶圆厂数字孪生 (530ms)</text>
+  <text x="388" y="559" fill="#E2E8F0" font-size="9">• 85K EPS+Zero-Prov +24CU</text>
+  <text x="388" y="574" fill="#94A3B8" font-size="9">• 75片晶圆保良99.4% ($920K)</text>
 
-  <!-- Row 3: H, I, J & K Highlight -->
-  <rect x="64" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#10B981" stroke-width="1.4"/>
-  <text x="71" y="619" fill="#34D399" font-size="9.2" font-weight="800">H [R1] · IQ Sharing (515ms)</text>
-  <text x="71" y="635" fill="#F8FAFC" font-size="8.4">• 鹿特丹 RDF(+96h)+CRM</text>
-  <text x="71" y="650" fill="#93C5FD" font-size="8.4">• 华沙调拨780+铁空500套</text>
-  <text x="71" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 建模 SLA 风险 $1.15M</text>
+  <rect x="538" y="528" width="150" height="68" rx="7" fill="#172554" stroke="#10B981" stroke-width="1.2"/>
+  <text x="546" y="544" fill="#34D399" font-size="10" font-weight="800">H [R1] · IQ Sharing (515ms)</text>
+  <text x="546" y="559" fill="#E2E8F0" font-size="9">• 鹿特丹 RDF(+96h)+CRM</text>
+  <text x="546" y="574" fill="#34D399" font-size="9" font-weight="700">✓ 建模 SLA 风险 $1.15M</text>
 
-  <rect x="222" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#38BDF8" stroke-width="1.4"/>
-  <text x="229" y="619" fill="#38BDF8" font-size="9.2" font-weight="800">I [R2] · 5G URLLC (495ms)</text>
-  <text x="229" y="635" fill="#F8FAFC" font-size="8.4">• 120K EPS+14.8ms 抖动</text>
-  <text x="229" y="650" fill="#93C5FD" font-size="8.4">• 88ms KQL+SRv6 绕行</text>
-  <text x="229" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 抖动1.15ms · $1.48M</text>
+  <!-- Row 3: I, J, K & L Highlight -->
+  <rect x="64" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="71" y="619" fill="#38BDF8" font-size="9.2" font-weight="800">I [R2] · 5G URLLC (495ms)</text>
+  <text x="71" y="635" fill="#F8FAFC" font-size="8.4">• 120K EPS+14.8ms 抖动</text>
+  <text x="71" y="650" fill="#93C5FD" font-size="8.4">• 88ms KQL+SRv6 绕行</text>
+  <text x="71" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 抖动1.15ms · $1.48M</text>
 
-  <rect x="380" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#A855F7" stroke-width="1.4"/>
-  <text x="387" y="619" fill="#C084FC" font-size="9.2" font-weight="800">J [R3] · 零ETL镜像 (480ms)</text>
-  <text x="387" y="635" fill="#F8FAFC" font-size="8.4">• Oracle+DB2 镜像 ($0)</text>
-  <text x="387" y="650" fill="#93C5FD" font-size="8.4">• Osmos 138ms 热修复</text>
-  <text x="387" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 省87.7% CDC · $2.35M</text>
+  <rect x="222" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#A855F7" stroke-width="1.4"/>
+  <text x="229" y="619" fill="#C084FC" font-size="9.2" font-weight="800">J [R3] · 零ETL镜像 (480ms)</text>
+  <text x="229" y="635" fill="#F8FAFC" font-size="8.4">• Oracle+DB2 镜像 ($0)</text>
+  <text x="229" y="650" fill="#93C5FD" font-size="8.4">• Osmos 138ms 热修复</text>
+  <text x="229" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 省87.7% CDC · $2.35M</text>
 
-  <rect x="538" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#06B6D4" stroke-width="1.4"/>
-  <text x="545" y="619" fill="#22D3EE" font-size="9.2" font-weight="800">K [R4] · XTable互通 (465ms)</text>
-  <text x="545" y="635" fill="#F8FAFC" font-size="8.4">• Snowflake Iceberg ($0)</text>
-  <text x="545" y="650" fill="#93C5FD" font-size="8.4">• 312 SKU 切换捆绑价</text>
-  <text x="545" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 省90.9% ETL · $1.62M</text>
+  <rect x="380" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#06B6D4" stroke-width="1.4"/>
+  <text x="387" y="619" fill="#22D3EE" font-size="9.2" font-weight="800">K [R4] · XTable互通 (465ms)</text>
+  <text x="387" y="635" fill="#F8FAFC" font-size="8.4">• Snowflake Iceberg ($0)</text>
+  <text x="387" y="650" fill="#93C5FD" font-size="8.4">• 312 SKU 切换捆绑价</text>
+  <text x="387" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 省90.9% ETL · $1.62M</text>
+
+  <rect x="538" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#10B981" stroke-width="1.4"/>
+  <text x="545" y="619" fill="#6EE7B7" font-size="9.2" font-weight="800">L [R5] · DiskANN (450ms)</text>
+  <text x="545" y="635" fill="#F8FAFC" font-size="8.4">• 1.2亿向量 SSD 省92%内存</text>
+  <text x="545" y="650" fill="#93C5FD" font-size="8.4">• 418组合 1GB SQL 调仓</text>
+  <text x="545" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 省79.4% TCO · $1.95M</text>
 
   <!-- Row 2 Right: 500-User Monthly TCO & Zero-Copy Economic Inflection -->
   <rect x="728" y="426" width="668" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>

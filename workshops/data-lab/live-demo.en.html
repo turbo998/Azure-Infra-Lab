@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -165,6 +165,7 @@
     <a class="btn" href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md" id="link-faq-r2">⚡ R2: 实时流选型 FAQ</a>
     <a class="btn" href="comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md" id="link-faq-r3">🔄 R3: 零ETL镜像 vs CDC FAQ</a>
     <a class="btn" href="comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md" id="link-faq-r4">🧊 R4: Iceberg/Delta 互通 FAQ</a>
+    <a class="btn" href="comparisons/fabric-htap-vector-sql-cosmos-vs-lakebase-unistore-faq.md" id="link-faq-r5">🗄️ R5: HTAP &amp; DiskANN FAQ</a>
     <a class="btn" href="benchmark-cards.html" id="link-cards-zh">📊 7-Card 评测报告 (中文)</a>
     <a class="btn" href="benchmark-cards.en.html" id="link-cards-en">📊 7-Card Deck (EN)</a>
     <a class="btn" href="../fabcon-sqlcon-2026/index.html">🎬 FabCon 2026 展厅</a>
@@ -178,9 +179,9 @@
     <div class="hero-top">
       <div>
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
-        <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与今晚四大深度选型专题（R1 跨云零拷贝与 IQ Sharing、R2 实时流 Eventhouse vs Dynamic Tables、R3 零 ETL 镜像 $0 算力 vs 传统 CDC、R4 OneLake Iceberg↔Delta XTable $0 双向虚拟化），对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。<i>（数据溯源与双分母口径声明：<code>59/60</code> 路由与 <code>26/26</code> 单测为 <code>measured_local_harness</code>；<code>$0</code> 镜像算力/<code>$0</code> XTable 虚拟化/<code>$0</code> 读者费/<code>60s</code> 滞后为附官方链接的 <code>vendor_published_spec_as_of_2026</code>；<b>n=60 路由矩阵建模均值 <code>526.5ms</code></b> 与 <b>n=11 行业本体闭环仿真均值 <code>584.09ms</code> (范围 <code>465–780ms</code>)</b> 及 TCO/SLA 风险敞口严格区分并标注为 <code>synthetic_scenario_model</code>）</i></p>
+        <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与今晚五大深度选型专题（R1 跨云零拷贝与 IQ Sharing、R2 实时流 Eventhouse vs Dynamic Tables、R3 零 ETL 镜像 $0 算力 vs 传统 CDC、R4 OneLake Iceberg↔Delta XTable $0 双向虚拟化、R5 Fabric SQL + Cosmos DB SSD DiskANN 省 92% 内存 vs Lakebase/Unistore），对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。<i>（数据溯源与双分母口径声明：<code>63/64</code> 路由与 <code>28/28</code> 单测为 <code>measured_local_harness</code>；<code>$0</code> 镜像算力/<code>$0</code> XTable 虚拟化/SSD <code>DiskANN</code>/<code>$0</code> 读者费/<code>60s</code> 滞后为附官方链接的 <code>vendor_published_spec_as_of_2026</code>；<b>n=64 路由矩阵建模均值 <code>521.0ms</code></b> 与 <b>n=12 行业本体闭环仿真均值 <code>572.92ms</code> (范围 <code>450–780ms</code>)</b> 及 TCO/SLA 风险敞口严格区分并标注为 <code>synthetic_scenario_model</code>）</i></p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">59 / 60 场景实测通过 (98.33%) · 2026-11-08 / 11-09 (R4)</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">63 / 64 场景实测通过 (98.44%) · 2026-11-08 / 11-09 (R5)</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -191,12 +192,12 @@
       <div class="kpi-card">
         <div class="label" id="kpi2-lbl">500 用户月度建模 TCO 节省</div>
         <div class="val">46.1% – 56.1%</div>
-        <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirroring/XTable 算力)</div>
+        <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirroring/XTable + SSD DiskANN)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">双分母建模延迟 (n=60 / n=11)</div>
-        <div class="val">526.5ms / 584.09ms</div>
-        <div class="sub" id="kpi3-sub">n=60 路由均值 526.5ms · n=11 本体均值 584.09ms (465–780ms)</div>
+        <div class="label" id="kpi3-lbl">双分母建模延迟 (n=64 / n=12)</div>
+        <div class="val">521.0ms / 572.92ms</div>
+        <div class="sub" id="kpi3-sub">n=64 路由均值 521.0ms · n=12 本体均值 572.92ms (450–780ms)</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -290,7 +291,8 @@
       <button class="comp-pill" id="sim-btn-supply" onclick="selectScenario('supply_chain_iq_sharing_salesforce')">🌐 场景 H：跨企供应链 × OneLake IQ Sharing × Salesforce Data 360 零拷贝 × 断网车间 (515ms · R1)</button>
       <button class="comp-pill" id="sim-btn-telecom" onclick="selectScenario('telecom_5g_eventhouse_vs_dynamic_tables')">📡 场景 I：5G URLLC 专网切片 Eventhouse KQL (142ms) vs Dynamic Tables (60s) × SRv6 自动导流 (495ms · R2)</button>
       <button class="comp-pill" id="sim-btn-banking" onclick="selectScenario('core_banking_oracle_open_mirroring_cdc')">🏦 场景 J：跨国银行总账 Oracle + DB2 Open Mirroring ($0 算力) vs 传统 CDC × Osmos 漂移自愈 (480ms · R3)</button>
-      <button class="comp-pill" id="sim-btn-iceberg" onclick="selectScenario('omni_channel_snowflake_iceberg_onelake_xtable')">🧊 场景 K：全渠道零售 Snowflake Iceberg × OneLake XTable ($0 虚拟化) × PBI Agentic App 毛利保护 (465ms · R4 新增)</button>
+      <button class="comp-pill" id="sim-btn-iceberg" onclick="selectScenario('omni_channel_snowflake_iceberg_onelake_xtable')">🧊 场景 K：全渠道零售 Snowflake Iceberg × OneLake XTable ($0 虚拟化) × PBI Agentic App 毛利保护 (465ms · R4)</button>
+      <button class="comp-pill" id="sim-btn-wealth" onclick="selectScenario('wealth_advisory_htap_diskann_vs_lakebase_unistore')">🗄️ 场景 L：智能财富投顾 Cosmos DB + SQL DiskANN (省 92% 内存) vs Lakebase/Unistore × 418 组合调仓 (450ms · R5 新增)</button>
     </div>
 
     <div class="grid-2">
@@ -318,7 +320,7 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · 每日研究强制交付 (2026-11-08 / 11-09 R4)：五大平台选型决策、零拷贝、实时流、零 ETL 镜像与 Iceberg/Delta 双向虚拟化 ($0 算力) 十一大本体一图流总结卡 (Executive Visual Summary SVG)</span>
+        <span>01 · 每日研究强制交付 (2026-11-08 / 11-09 R5)：五大平台选型决策、零拷贝、实时流、零 ETL 镜像、Iceberg/Delta XTable 与 HTAP DiskANN (-92% 内存) 十二大本体一图流总结卡 (Executive Visual Summary SVG)</span>
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
@@ -326,7 +328,15 @@
 
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>12 · OneLake Iceberg↔Delta XTable ($0 虚拟化) vs Databricks Delta UniForm vs Snowflake Polaris vs AWS S3 Tables vs BigLake 开放表格式选型 FAQ 架构图 (R4 新增)</span>
+        <span>13 · Fabric SQL DB + Cosmos DB SSD DiskANN (省 92% 内存) vs Databricks Lakebase vs Snowflake Unistore vs GCP AlloyDB ScaNN vs AWS Aurora HTAP 选型 FAQ 架构图 (R5 新增)</span>
+        <a href="assets/svg/13-htap-vector-diskann-vs-lakebase-unistore-scann-faq.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/13-htap-vector-diskann-vs-lakebase-unistore-scann-faq.svg" alt="Fabric HTAP & DiskANN vs Lakebase Unistore AlloyDB ScaNN Aurora FAQ Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>12 · OneLake Iceberg↔Delta XTable ($0 虚拟化) vs Databricks Delta UniForm vs Snowflake Polaris vs AWS S3 Tables vs BigLake 开放表格式选型 FAQ 架构图 (R4)</span>
         <a href="assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/12-onelake-iceberg-delta-uniform-polaris-s3tables-faq.svg" alt="OneLake Iceberg Delta XTable vs UniForm Polaris S3 Tables BigLake FAQ Architecture" class="svg-preview">
@@ -879,6 +889,36 @@ const SIM_DATA = {
       teamsTitle: '🧊 Operations Agent · Omni-Channel Margin Guard & OneLake XTable Card (Act automatically · 0.98)',
       teamsSummary: 'Executed Automatically (Confidence 98%): OneLake XTable 14ms Snowflake Iceberg projection + 312 cannibalized SKUs switched to Loyalty Tiered Bundle + Written back to 1GB Free Fabric SQL · +4.8% margin restored, -$9,600/mo format ETL, $1,620,000 Modeled Quarterly Margin Protected ✓'
     }
+  },
+  wealth_advisory_htap_diskann_vs_lakebase_unistore: {
+    zh: {
+      steps: [
+        { title: '① Cosmos DB in Fabric + SQL SSD 级 DiskANN (1.2 亿向量 16ms 检索 · 省 92% 内存)', latency: '74 ms', desc: '智能财富投顾与信贷调仓闭环 (1.2 亿条 SEC/财报向量 · 4,800 TPS)，通过 Cosmos DB in Fabric 与 SQL Database 的 SSD 级 Vamana DiskANN 图索引，仅用 64 bytes/向量内存完成 16ms P95 混合向量+RRF 检索 (Recall@10=98.6%)，省去全内存 HNSW 高昂 DRAM 集群与专用向量库同步税（省 79.4% TCO）。' },
+        { title: '② Fabric SQL Database → OneLake ($0 算力自动同步) + Databricks Lakebase OBO 联接', latency: '98 ms', desc: '沿着 `VectorIndex:CosmosDB-Fabric-DiskANN-120M-Vectors (16ms P95, -92% RAM) → OperationalDB:Fabric-SQL-DB-Zero-ETL-OneLake ($0 Sync) → AgentState:Databricks-Lakebase-PG-Branch-OBO → RiskOntology:Fabric-IQ-Wealth-Suitability-Graph` 穿透，检出 418 个高净值组合久期风险漂移至 1.38x (> 1.15x 上限)。' },
+        { title: '③ Fabric IQ 条件-动作规则生成 18% 短久期国债对冲调仓预案', latency: '92 ms', desc: '自动合成调仓预案：对 418 个超限组合将 18% 高波动科技信用债切换为短久期国债 ETF 对冲，预计将久期敞口从 1.38x 压降至 1.04x。' },
+        { title: '④ Foundry IQ SEC Reg-BI 投资者适当性与 20% 集中度护栏 (SOP-09)', latency: '90 ms', desc: '强制校验《SEC-REG-BI-SUITABILITY-SOP-09》：确认 100% 匹配每位客户风险承受等级且单一行业集中度 <= 20%，大额调仓 (>$250K) 生成 Teams 投顾确认卡。' },
+        { title: '⑤ 1GB 免费 Fabric SQL ACID 原子调仓回写与零 ETL 刷新 (450 ms)', latency: '96 ms (E2E 450 ms)', desc: '置信度 0.96 触发 Confirm 投顾批准后，在 9ms P99 内原子回写 1GB 免费 Fabric SQL 并零 ETL 刷新 DirectLake 投顾看板，端到端建模耗时 450ms (n=12 本体均值 572.92ms)，单季建模规避 $1,950,000 久期回撤与适当性违规风险。' }
+      ],
+      graph: `<h4>🕸️ 智能财富投顾 × Cosmos DB &amp; SQL SSD DiskANN (-92% RAM) × Lakebase OBO × 1GB 免费 SQL 6 跳图谱 (synthetic_scenario_model)</h4>
+        <p><code>CosmosDB-Fabric:DiskANN-120M-Vectors (16ms P95)</code> + <code>FabricSQL:Zero-ETL-OneLake ($0 Sync)</code> + <code>Databricks:Lakebase-PG-Branch-OBO</code> ➔ <code>FabricIQ:Wealth-Suitability-Ontology (418 Portfolios &gt; 1.15x)</code> ➔ <code>FabricSQL:1GB-Free-ACID-Rebalance (9ms P99)</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>HTAP + 向量一体胜出原因：</b>SSD 级 Vamana DiskANN 将每向量内存从 6.5KB (HNSW) 压降至 64B (`vendor_published_spec_as_of_2026`)，配合 1GB 免费 Fabric SQL 回写，月度建模 TCO 从 $10,880 降至 $2,240（省 79.4%）。</p>`,
+      teamsTitle: '🗄️ Operations Agent · 智能财富投顾 DiskANN 检索与 ACID 调仓审批卡 (Confirm · 0.96)',
+      teamsSummary: '建议执行：Cosmos DB + SQL DiskANN 16ms 检索 (Recall 98.6%) + 418 个组合 18% 短债对冲调仓 + 9ms P99 原子回写 1GB 免费 Fabric SQL · 久期风险 1.38x -> 1.04x，省 79.4% 向量+HTAP TCO，单季建模规避 $1,950,000 风险 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Cosmos DB in Fabric + SQL SSD DiskANN (120M Vectors in 16ms · -92% RAM)', latency: '74 ms', desc: 'In wealth advisory & credit rebalancing (120M SEC/research vectors · 4,800 TPS), SSD-backed Vamana DiskANN in Cosmos DB in Fabric and SQL DB executes 16ms P95 hybrid vector+RRF search (Recall@10=98.6%) using 64B RAM/vector, eliminating DRAM-heavy HNSW clusters and external vector DB sync ETL (-79.4% TCO).' },
+        { title: '② Fabric SQL DB → OneLake ($0 Auto-Sync) + Databricks Lakebase OBO Join', latency: '98 ms', desc: 'Traverses `VectorIndex:CosmosDB-Fabric-DiskANN-120M-Vectors (16ms P95, -92% RAM) → OperationalDB:Fabric-SQL-DB-Zero-ETL-OneLake ($0 Sync) → AgentState:Databricks-Lakebase-PG-Branch-OBO → RiskOntology:Fabric-IQ-Wealth-Suitability-Graph`, isolating 418 portfolios with 1.38x duration drift (> 1.15x cap).' },
+        { title: '③ Fabric IQ Condition-Action Rule 18% Short-Duration Treasury Hedge Plan', latency: '92 ms', desc: 'Synthesizes portfolio rebalancing plan: rotates 18% of high-beta tech credit into short-duration Treasury ETFs across 418 portfolios, reducing duration exposure from 1.38x to 1.04x.' },
+        { title: '④ Foundry IQ SEC Reg-BI Suitability & 20% Concentration Guardrail (SOP-09)', latency: '90 ms', desc: 'Verifies `SEC-REG-BI-SUITABILITY-SOP-09`: enforces client risk tolerance profiles and <= 20% single-sector concentration cap; orders >$250K generate a Teams advisor confirmation card.' },
+        { title: '⑤ 1GB Free Fabric SQL ACID Rebalance Write-back & Zero-ETL Refresh (450 ms)', latency: '96 ms (E2E 450 ms)', desc: 'Confidence 0.96 triggers Confirm advisor approval; commits ACID rebalance orders to 1GB Free Fabric SQL in 9ms P99 with instant OneLake DirectLake refresh in 450ms modeled E2E (n=12 ontology mean 572.92ms), mitigating $1,950,000 modeled quarterly drawdown risk.' }
+      ],
+      graph: `<h4>🕸️ Wealth Advisory × Cosmos DB &amp; SQL SSD DiskANN (-92% RAM) × Lakebase OBO × 1GB Free SQL 6-Hop Graph (synthetic_scenario_model)</h4>
+        <p><code>CosmosDB-Fabric:DiskANN-120M-Vectors (16ms P95)</code> + <code>FabricSQL:Zero-ETL-OneLake ($0 Sync)</code> + <code>Databricks:Lakebase-PG-Branch-OBO</code> ➔ <code>FabricIQ:Wealth-Suitability-Ontology (418 Portfolios &gt; 1.15x)</code> ➔ <code>FabricSQL:1GB-Free-ACID-Rebalance (9ms P99)</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>Why Fabric HTAP + DiskANN Wins:</b> SSD-backed Vamana DiskANN shrinks vector RAM from 6.5KB (HNSW) to 64B (`vendor_published_spec_as_of_2026`), paired with 1GB Free Fabric SQL write-back to cut modeled monthly TCO from $10,880 to $2,240 (-79.4%).</p>`,
+      teamsTitle: '🗄️ Operations Agent · Wealth Advisory DiskANN & ACID Rebalance Card (Confirm · 0.96)',
+      teamsSummary: 'Recommended Action: Cosmos DB + SQL DiskANN 16ms search (98.6% recall) + 418 portfolios 18% short-duration Treasury hedge + 9ms P99 ACID write-back to 1GB Free Fabric SQL · Duration risk 1.38x -> 1.04x, -79.4% vector+HTAP TCO, $1,950,000 Modeled Quarterly Risk Mitigated ✓'
+    }
   }
 };
 
@@ -1037,6 +1077,8 @@ function selectScenario(sc) {
   if (bankingBtn) bankingBtn.classList.toggle('active', sc === 'core_banking_oracle_open_mirroring_cdc');
   const icebergBtn = document.getElementById('sim-btn-iceberg');
   if (icebergBtn) icebergBtn.classList.toggle('active', sc === 'omni_channel_snowflake_iceberg_onelake_xtable');
+  const wealthBtn = document.getElementById('sim-btn-wealth');
+  if (wealthBtn) wealthBtn.classList.toggle('active', sc === 'wealth_advisory_htap_diskann_vs_lakebase_unistore');
   runNormalSim();
 }
 
