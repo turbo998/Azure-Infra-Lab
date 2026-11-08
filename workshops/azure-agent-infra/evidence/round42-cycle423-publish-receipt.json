@@ -1,0 +1,49 @@
+{
+  "generated_at_utc": "2026-11-08T19:38:54.398405+00:00",
+  "round": 42,
+  "cycle": 423,
+  "topic_slug": "agent-sandbox-filesystem-snapshot-gc-selection-faq",
+  "publish_scope": "path_scoped_incremental",
+  "guardrails": {
+    "staged_deletion_gate": "enforced",
+    "unauthorized_deletions_found": 0,
+    "force_push_used": false
+  },
+  "repos": {
+    "ai-infra-lab": {
+      "pre_sha": "02c9dc1fc9762d5865e8df2dc35d9e1605ccf031",
+      "receipt_sha": "fe12567ead2e8e6ce5c9b545cd8bd80fb98b5b23",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "Azure-Infra-Lab": {
+      "pre_sha": "cc6705e5cd83571eaac4678004669600ebaf003a",
+      "receipt_sha": "3c426dfbf648dbaa0df2c9ac5a4b51606cab5746",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "ai-research-public": {
+      "pre_sha": "4ee57fa7c39d63e6e63e8b89ff36a08511d54c77",
+      "receipt_sha": "923891bb55dcc0a4197cf5d471d873d2497472f7",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "ai-research-lab": {
+      "pre_sha": "2eeac964f129f9cd8464d829a3943734bd5227c5",
+      "receipt_sha": "3b2fb66d489d6b7e52976d3589fbf061e86983ec",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "turbo998.github.io": {
+      "pre_sha": "1a307f0277797047519eedf7190e179a38769987",
+      "receipt_sha": "5a83f91b5a442a240cdbc8ba1198427f837d9446",
+      "staged_count": 29,
+      "deleted_in_staged": 0,
+      "origin_main": "5a83f91b5a442a240cdbc8ba1198427f837d9446",
+      "pages_main": "5a83f91b5a442a240cdbc8ba1198427f837d9446",
+      "local_head": "5a83f91b5a442a240cdbc8ba1198427f837d9446",
+      "parallel_uplift_after_receipt": false,
+      "homepage_remote_model": "origin/main + pages(main on remote 'pages')"
+    }
+  }
+}
