@@ -1,35 +1,37 @@
-# Azure Infra Lab (`turbo998/Azure-Infra-Lab`) — English Edition
+# AI Infra Lab (`turbo998/ai-infra-lab`) — English Edition
 
-> 🌐 **Language / 语言版本切换**: **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[🇨🇳 中文主页 (README.md)](README.md)** | **[🔬 Data Lab: Fabric × 4-Cloud Competitors (EN)](workshops/data-lab/README.en.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.md)** | **[🎬 FabCon & SQLCon 2026 Video Hub H5](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html?lang=en)**
+> 🌐 **Language / 语言版本切换**: **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[🇨🇳 中文主页 (README.md)](README.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.md)**
 
 > **📌 Executive Overview Summary**
-> - **Data & AI / Data Lab — Microsoft Fabric × 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep Research & Ontology Lab (`2026-11-08 / 11-09`)**: Synthesizes **FabCon & SQLCon Barcelona 2026** and **Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ + Agent 365)** into a first-principles **[OneLake Zero-Copy & Fabric IQ Ontology vs. 4 Clouds Selection FAQ Guide](workshops/data-lab/comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md)**, a 48-scenario reproducible benchmark (`47/48 = 97.92%` accuracy, `544.5 ms` mean latency; 6-dimension mean **Fabric `93.3`** vs Databricks `86.8` vs GCP `85.5` vs Snowflake `85.0` vs AWS `82.8`), OneLake IQ Sharing (`.rdf` + `.md`), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder, Lakehouse Streaming Tables (`210 ms` lag), On-Demand & Zero-Provisioned compute, Database Hub + SQL Hyperscale 192-vCore Native DiskANN GA, Open-Source Rayfin SDK Full-Stack Apps, a 500-user TCO model (**`$14,048/mo`**, saving **`46.1%–56.1%`**), 8 live Ontology simulations (adding **Cross-Enterprise Supply Chain IQ Sharing × Salesforce Zero-Copy `515 ms` saving `$1.15M` SLA**), and bilingual **7-Card 4:5 Benchmark Decks** ([`workshops/data-lab/benchmark-cards.en.html`](workshops/data-lab/benchmark-cards.en.html)).
-> - **AI Agent Infrastructure on Azure (`AKSClaw × E2B`)**: Defines a 6-Layer Agent Infra Reference Architecture (`Build · Run · Ground · Govern`), empirical **100K Sandbox Scale Benchmarks** (**`80 ms` Firecracker microVM cold start / `108 ms` UFFD restore** on 5th-Gen AMD EPYC Turin `Standard_D96as_v7` vs **`1,420 ms` Kata VM cold boot**, **`~$148K/mo` optimized TCO** across 261 client nodes at 100K sandboxes, and Nomad heartbeat drain resilience), a **Runtime & Storage Decision Matrix** (ACA Dynamic Sessions vs AKS + Kata vs E2B vs Daytona; Azure Files NFS v4.1 vs Managed Lustre vs Blob FUSE2), and a **316-Chapter Semiconductor/AI Factory & Agent Infrastructure Encyclopedia** ([`docs/full-monograph-archive.en.md`](workshops/azure-agent-infra/docs/full-monograph-archive.en.md)).
-> - **Data & AI / FabCon & SQLCon Barcelona 2026 Video Hub**: Interactive bilingual briefing with 5 official Microsoft 1080p/720p demo videos, 6 strategic pillars, and an 18-item GA/Preview release matrix.
-> - **Compute / Azure VM Modernization & FinOps**: Trilingual partner workshop (`zh-CN` / `zh-TW` / `en`), 6 synthetic assessment cases, and browser-local TCO calculator.
+> - **AI Agent Infrastructure on Azure (`AKSClaw × E2B`)**: Defines a 6-Layer Agent Infra Reference Architecture (`Build · Run · Ground · Govern`), empirical **100K Sandbox Scale Benchmarks** (**`80 ms` Firecracker microVM cold start / `108 ms` UFFD restore** on 5th-Gen AMD EPYC Turin `Standard_D96as_v7` vs **`1,420 ms` Kata VM cold boot**, **`~$148K/mo` optimized TCO** across 261 client nodes at 100K sandboxes, and Nomad heartbeat drain resilience), a **Runtime & Storage Decision Matrix** (ACA Dynamic Sessions vs AKS + Kata vs E2B vs Daytona; Azure Files NFS v4.1 vs Managed Lustre vs Blob FUSE2), and a **316-Chapter Semiconductor/AI Factory & Agent Infrastructure Encyclopedia** ([`workshops/azure-agent-infra/docs/full-monograph-archive.en.md`](workshops/azure-agent-infra/docs/full-monograph-archive.en.md)).
+> - **Alibaba Cloud AI Infrastructure (`Tong-Yun-Ge` Full-Stack Analysis)**: Covers T-Head PPU accelerators (Zhenwu 810E → J900), Panjiu AL128 supernode 5-chip datapath, HPN 7.0 dual-plane networking (SIGCOMM 2024), and PAI Lingjun tidal scheduling.
 
 ### Core Architecture Diagrams
-
-![Data Lab Executive Visual Summary](workshops/data-lab/assets/svg/01-data-lab-executive-summary-2026-11-08.svg)
 
 ![Azure AI Agent Infra 6-Layer Reference Architecture](workshops/azure-agent-infra/assets/svg/01-six-layer-architecture.svg)
 
 ![100K Concurrent Sandbox Topology & 5-Step Execution Flow](workshops/azure-agent-infra/assets/svg/08-100k-sandbox-topology.svg)
 
-Public Azure infrastructure engineering playbooks, interactive H5 simulators, and partner workshops:
+Full-stack AI Infrastructure architecture evaluations, runtime benchmarks, and visual atlases for **Principal AI Infrastructure Architects**, covering **AI Silicon (GPU / PPU / ASIC / CPU / Switch / SmartNIC)**, **Scale-Up & Scale-Out Cluster Networking (RDMA / RoCE / CXL / ICN)**, **Heterogeneous Scheduling**, and **Enterprise AI Agent Runtimes & Hardware-Virtualized Sandbox Infrastructure (`Azure AI Agent Infra`)**.
 
-1. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure` · Bilingual EN/中文)](workshops/azure-agent-infra/README.en.md)**:
-   - **316 Chapters · 309 Production IaC Blueprints · 308 Deterministic Physics Simulators · 317/317 Unit Tests Passing**
-   - **Live GitHub Pages (Bilingual `EN / 中文` Toggle)**:
-     - [Interactive Playbook Atlas (`index.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html)
-     - [Live Dual-Track Simulator (`demo.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html)
-     - [Decision Engine, 100K Sandbox Sizer & 308 Domain Simulators (`selector.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html)
-     - [7-Card 4:5 Benchmark Deck (`cards.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html)
-   - **Documentation**: [English Playbook (`README.en.md`)](workshops/azure-agent-infra/README.en.md) · [中文 Playbook (`README.md`)](workshops/azure-agent-infra/README.md) · [Full 316-Chapter Archive (`docs/full-monograph-archive.md`)](workshops/azure-agent-infra/docs/full-monograph-archive.md) · [English 7-Card Report (`test-report.en.md`)](workshops/azure-agent-infra/test-report.en.md) · [中文 7-Card 报告 (`test-report.md`)](workshops/azure-agent-infra/test-report.md)
-2. **[Data & AI / FabCon & SQLCon Barcelona 2026 Executive Briefing & Interactive Video Hub (Bilingual EN/中文)](workshops/fabcon-sqlcon-2026/README.en.md)**:
-   - **5 Embedded Official Microsoft CDN 1080p/720p Product Demo Videos · 6 Strategic Pillars · 18-Capability GA/Preview Filterable Matrix · 8 Companion Deep-Dive Blogs**
-   - **Live GitHub Pages (Bilingual `EN / 中文` Toggle)**:
-     - [Interactive Video Briefing H5 — English (`index.html?lang=en`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html?lang=en)
-     - [交互式双语视频简报 H5 — 中文 (`index.html`)](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)
-   - **Documentation**: [English Full Briefing (`README.en.md`)](workshops/fabcon-sqlcon-2026/README.en.md) · [中文完整简报 (`README.zh-CN.md`)](workshops/fabcon-sqlcon-2026/README.zh-CN.md) · [Bilingual Overview (`README.md`)](workshops/fabcon-sqlcon-2026/README.md)
-3. **[Compute / Azure VM Modernization & FinOps Partner Workshop](workshops/azure-vm-modernization/README.md)** — Trilingual course (`zh-CN` / `zh-TW` / `en`), six synthetic cases, browser-local calculator, and standalone exports.
+---
+
+## 📚 Research & Architecture Evaluations (Bilingual EN / 中文)
+
+| Research Deliverable | Core Scope | Visual Assets (`SVG` + `H5` + `7-Card`) | Evidence Ledger | Review Log | Updated |
+|---|---|---|---|---|---|
+| **[Azure AI Agent Infrastructure Playbook (English Edition)](workshops/azure-agent-infra/README.en.md)** · **[中文版](workshops/azure-agent-infra/README.md)** | **L1–L6 Full-Stack Reference** (MAF · GitHub Copilot SDK · LangGraph · OpenClaw · Hermes · MCP/A2A) · **6-Tier Runtime Spectrum** (Foundry Hosted Agents · Durable Functions · ACA Dynamic Sessions · ACA Sandboxes Preview · AKS + Kata `AKSClaw` · E2B on Azure VMSS `Standard_D96as_v7` `80ms/108ms`) · **Storage & State** (Azure Files NFS v4.1 + Managed Lustre + Blob FUSE2 + HorizonDB + Firecracker UFFD/NBD Snapshot) · **Zero-Trust Control Plane** (Entra Agent ID · Unified AI Gateway · `169.254.169.254` IMDS Block · 5 Hard Boundaries) · **316 Chapters, 309 IaC Blueprints & 308 Physics Simulators (`317/317` Unit Tests Passing)** | 8 Verified SVG Diagrams + [7-Card Benchmark Report (EN)](workshops/azure-agent-infra/test-report.en.md) / [中文](workshops/azure-agent-infra/test-report.md) + [4-Page Bilingual H5 Suite](workshops/azure-agent-infra/index.html) + [316-Chapter Archive](workshops/azure-agent-infra/docs/full-monograph-archive.en.md) + [Live Demo](workshops/azure-agent-infra/demo/run_live_demo.py) | [`evidence.json`](workshops/azure-agent-infra/evidence.json) | [`review.md`](workshops/azure-agent-infra/review.md) | 2026-10-28 |
+| **[Alibaba Cloud AI Infra Full-Stack Evaluation](docs/alibaba-cloud-ai-infra/README.md)** | **L0 T-Head Silicon** (Hanguang 800, Zhenwu PPU, Yitian 710/750, ICN Switch) · **L1 Panjiu AL128 Supernode, CIPU & HPN 7.0 Dual-Plane RDMA** · **L2 PAI Platform** · **L3 Model Studio (Bailian)** | 6 SVG Diagrams + 2 Mermaid Decision Trees | [`evidence.json`](docs/alibaba-cloud-ai-infra/evidence.json) | [`review.md`](docs/alibaba-cloud-ai-infra/review.md) | 2026-10-14 |
+
+---
+
+## 📊 Quick Links — Azure AI Agent Infrastructure Playbook
+
+- **Documentation (Bilingual)**: [English Playbook (`README.en.md`)](workshops/azure-agent-infra/README.en.md) · [中文 Playbook (`README.md`)](workshops/azure-agent-infra/README.md) · [Full 316-Chapter Archive (`docs/full-monograph-archive.md`)](workshops/azure-agent-infra/docs/full-monograph-archive.md) · [English 7-Card Report (`test-report.en.md`)](workshops/azure-agent-infra/test-report.en.md) · [中文 7-Card 报告 (`test-report.md`)](workshops/azure-agent-infra/test-report.md) · [Cycle #407 Deck (`benchmark-cards.en.html`)](workshops/azure-agent-infra/benchmark-cards.en.html) · [Cycle #407 Chinese Deck (`benchmark-cards.html`)](workshops/azure-agent-infra/benchmark-cards.html) · [Cycle #407 Workbench (`workbench-cycle-407.html`)](workshops/azure-agent-infra/workbench-cycle-407.html) · [Cycle #407 Daily Report](workshops/azure-agent-infra/daily-report-2026-11-14.en.md) · [Agent Trace Retention Window Selection FAQ (EN)](workshops/azure-agent-infra/agent-trace-retention-selection-faq.en.md) · [Agent 追踪保留窗口选型 FAQ（中文）](workshops/azure-agent-infra/agent-trace-retention-selection-faq.md) · [CSP-Locked 7-Card HTML (`cards.html`)](workshops/azure-agent-infra/cards.html)
+- **Interactive Bilingual H5 Workbench (`EN / 中文`)**: [Playbook Atlas (`index.html`)](workshops/azure-agent-infra/index.html) · [Live Simulator (`demo.html`)](workshops/azure-agent-infra/demo.html) · [Decision Engine, 100K Sizer & 280 Simulators (`selector.html`)](workshops/azure-agent-infra/selector.html) · [281 Production Blueprints (`blueprints/`)](workshops/azure-agent-infra/blueprints)
+
+
+
+
+
+

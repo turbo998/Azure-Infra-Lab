@@ -1,146 +1,82 @@
-# Azure Infra Lab
+# AI Infra Lab (`turbo998/ai-infra-lab`) · 中英双语版 (Bilingual Edition)
 
-> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.md)](README.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[🔬 Data Lab: Fabric × 四大云竞对实验室](workshops/data-lab/README.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)** | **[📊 7-Card Report (EN)](workshops/azure-agent-infra/test-report.en.md)** | **[🎬 FabCon & SQLCon 2026 视频简报 H5](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)**
+> 🌐 **Language / 语言版本切换**: **[🇨🇳 中文主页 (README.md)](README.md)** | **[🇬🇧 English Homepage (README.en.md)](README.en.md)** | **[📘 Azure Agent Infra Playbook (中文)](workshops/azure-agent-infra/README.md)** | **[📘 Azure Agent Infra Playbook (English)](workshops/azure-agent-infra/README.en.md)**
 
 > **📌 Executive Overview Summary / 核心架构总览**
-> - **Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度研究与实战实验室（`2026-11-08 / 11-09`）**：融合 **FabCon & SQLCon Barcelona 2026** 与 **Microsoft IQ 四大智能底座（Work IQ / Fabric IQ / Foundry IQ / Web IQ + Agent 365）**，输出深入浅出的 **[《OneLake 零拷贝与 Fabric IQ 本体 vs 四大云竞对选型 FAQ 指南》](workshops/data-lab/comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md)**，完成 48 场景五云评测（`47/48 = 97.92%` 通过率，均延 `544.5 ms`，六维均分 **Fabric `93.3`** vs Databricks `86.8` vs GCP `85.5` vs Snowflake `85.0` vs AWS `82.8`）、OneLake IQ Sharing 跨企语义共享 (`.rdf` + `.md`)、Salesforce Data 360 零拷贝快捷方式、Fabric IQ 本体条件-动作规则、SQL Server on Azure Local (ALDO) 断网控制面 & GCC High GA、Digital Twin Builder、Lakehouse Streaming Tables (`210 ms`)、On-Demand & Zero-Provisioned 零预置弹性、Database Hub + SQL Hyperscale 192 vCore DiskANN GA、开源 Rayfin SDK 全栈应用、500 用户月度 TCO 精算（Fabric **`$14,048/mo`**，综合节省 **`46.1%–56.1%`**）、八大本体实时仿真台（新增**跨企供应链 IQ Sharing × Salesforce 零拷贝 `515 ms` 保住 `$1.15M` SLA**）及双语 **7-Card 4:5 视觉评测报告**（[`workshops/data-lab/benchmark-cards.html`](workshops/data-lab/benchmark-cards.html)）。
-> - **AI Agent Infrastructure on Azure (`AKSClaw × E2B`)**：构建生产级 6 层 Agent 基础设施参考架构（`Build · Run · Ground · Govern`），实测 **`80 ms` Firecracker MicroVM 冷启动 / `108 ms` UFFD 快照恢复**（对比 Kata Pod VM `1,420 ms` 冷启动），单集群 **261 台 `Standard_D96as_v7`（AMD EPYC Turin）** 稳态承载 **100,000 并发沙箱**（优化后月度 TCO **`~$148K/mo`**，结合 Nomad 心跳监控与优雅 Drain 实现 `99.4%+` 会话存活），配套运行时与存储选型矩阵（ACA Dynamic Sessions vs AKS+Kata vs E2B vs Daytona；Azure Files NFS v4.1 vs Managed Lustre vs Blob FUSE2）及 **316 章半导体/AI Factory 与智能体工程百科**（[`docs/full-monograph-archive.md`](workshops/azure-agent-infra/docs/full-monograph-archive.md)）。
-> - **FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub**：收录 5 支微软官方 1080p/720p 实机演示视频、六大战略技术支柱与 18 项 GA/Preview 状态矩阵（Fabric IQ、Power BI Agentic App Creation、OneLake IQ Sharing、Osmos、SQL Hyperscale DiskANN）。
-> - **Azure VM Modernization & FinOps Partner Workshop**：同页三语（简/繁/英）7 模块课程、6 个模拟案例与浏览器本地 TCO/约束评估器。
+> - **Azure AI Agent Infra 全栈参考架构与 100K 沙箱压测 (`AKSClaw × E2B`)**：定义 6 层生产级智能体工程栈（`Build · Run · Ground · Govern`），基于第五代 AMD EPYC Turin (`Standard_D96as_v7`) 实测 **Firecracker MicroVM `80 ms` 冷启动 / `108 ms` UFFD 快照恢复**（对比 Kata Pod VM `1,420 ms` 冷启动），单集群 **261 台 Client 节点稳态承载 100,000 并发沙箱**（优化后月度 TCO **`~$148K/mo`**，结合 Nomad 心跳监控与优雅 Drain 实现 `99.4%+` 会话存活率），配套运行时与存储选型矩阵（ACA Dynamic Sessions vs AKS+Kata vs E2B vs Daytona；Azure Files NFS v4.1 vs Managed Lustre vs Blob FUSE2）及 **316 章半导体/AI Factory 与智能体工程百科**（[`workshops/azure-agent-infra/docs/full-monograph-archive.md`](workshops/azure-agent-infra/docs/full-monograph-archive.md)）。
+> - **阿里云“通-云-哥”（通义大模型 × 阿里云 AI Infra × 平头哥芯片）全栈工程体系**：覆盖平头哥真武 PPU 四代演进、磐久 AL128 超节点五芯自研通路、HPN 7.0 双平面网络、PAI 灵骏潮汐调度与百炼 Serverless 算力选型矩阵。
 
-### 核心架构图谱速览（Core Architecture Visuals）
+### 核心架构图谱速览（Core Agent Infra Reference Visuals）
 
-![Data Lab Executive Visual Summary](workshops/data-lab/assets/svg/01-data-lab-executive-summary-2026-11-08.svg)
+![Azure AI Agent Infra 六层全栈参考架构图](workshops/azure-agent-infra/assets/svg/01-six-layer-architecture.svg)
 
-![Azure AI Agent Infra 6-Layer Reference Architecture](workshops/azure-agent-infra/assets/svg/01-six-layer-architecture.svg)
+![100K 并发沙箱生产拓扑与五步落地工作流](workshops/azure-agent-infra/assets/svg/08-100k-sandbox-topology.svg)
 
-![100K Concurrent Sandbox Topology & 5-Step Execution Flow](workshops/azure-agent-infra/assets/svg/08-100k-sandbox-topology.svg)
-
-面向伙伴、架构师与技术团队的公开 Azure 基础设施实战 Workshop 与技术手册。当前收录四大核心专题：
-1. **[Data & AI / Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）实战实验室](workshops/data-lab/README.md)**：涵盖每日能力突破追踪、五云六维竞对 Battlecards、交互式 TCO 精算器、Fabric IQ 智算中心能源编排与航空跑道数字孪生仿真台、双语 7-Card 4:5 评测报告及跨云零拷贝共存 Playbook。
-2. **[AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)](workshops/azure-agent-infra/README.md)**：从六层全栈参考架构（Build · Run · Ground · Govern）、六大计算运行时光谱到 AKS 多租户 Kata 隔离与 10 万+ 并发 Firecracker MicroVM 云端沙箱底座。
-3. **[Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub](workshops/fabcon-sqlcon-2026/README.md)**：Microsoft Fabric 与 SQL 2026 巴塞罗那峰会全量创新解析、5 支微软官方 1080p/720p 实机演示视频内嵌播放器与直链、六大技术支柱及 18 项 GA/Preview 状态速查矩阵（中英双语切换）。
-4. **[Compute / Azure VM Modernization & FinOps](workshops/azure-vm-modernization/README.md)**：从联合课程、六个模拟案例到浏览器本地评估与可分享报告。
-
-Public Azure infrastructure workshops and architectural playbooks for partners, architects, and technical teams:
-1. **AI Agent Infrastructure on Azure (`AKSClaw × E2B on Azure`)** — Four-layer reference architecture, 6-tier runtime spectrum, interactive live simulator, 100K sandbox VMSS sizer, and 7-card 4:5 benchmark deck.
-2. **Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub** — Bilingual interactive H5 briefing with 5 embedded official 1080p/720p product demo videos, 6 strategic pillars, and an 18-item GA/Preview release matrix covering Fabric IQ, Power BI Agentic App Creation, Rayfin, OneLake IQ Sharing, Data Engineering Agents (Osmos), and Azure SQL Hyperscale.
-3. **Compute / Azure VM Modernization & FinOps** — Trilingual course, six synthetic cases, browser-local calculator, and standalone reports.
+面向 **AI Infra 架构师** 的云厂商与智算基础设施全栈技术深度测评与可视化图谱仓库，覆盖 **AI 算力芯片（GPU / PPU / ASIC / CPU / Switch / SmartNIC / SSD 主控）**、**超节点与 Scale-Up/Scale-Out 智算网络（RDMA / RoCE / CXL / ICN）**、**异构算力调度平台**、**云原生分布式训推平台** 与 **企业级 MaaS / AI Agent 运行时与安全沙箱基础设施（Azure AI Agent Infra）**。
 
 ---
 
-## 专题一：AI Agent Infrastructure on Azure Playbook & Interactive Simulator (`AKSClaw × E2B on Azure`)
+## 📚 深度测评报告目录（Research & Architecture Evaluations · Bilingual EN/中文）
 
-- **[全景 Playbook H5 / Interactive Playbook](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/index.html)** · **[实时仿真 Demo / Live Simulator (AKSClaw × E2B)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/demo.html)** · **[架构选型与 10万沙箱计算器 / Decision & Sizer](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/selector.html)** · **[7-Card 4:5 基准报告 / 7-Card Deck](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-agent-infra/cards.html)** · **[完整技术手册 / Markdown Playbook](workshops/azure-agent-infra/README.md)** · **[源码与测试 / Simulator & Tests](workshops/azure-agent-infra/simulator)**
-
-围绕 **“计算与状态解耦（Compute-State Decoupling）”** 与 **“平台级零信任硬边界（Never Trust the Prompt）”** 两大核心公理，系统拆解在 Azure 上构建生产级 AI Agent 的全栈方案设计、代际实测基准与现场五步落地法：
-
-| 模块 / Module | 核心内容与技术资产 / Capabilities & Assets |
-| --- | --- |
-| **1. 四层全栈架构 & 8 张高清 SVG 图谱** | 覆盖 **Build**（MAF / Copilot SDK / LangGraph / OpenClaw / MCP & A2A）、**Run**（6 级运行时光谱）、**Ground**（HorizonDB Preview + Cosmos DB + `UFFD/NBD` 沙箱快照）、**Govern**（Entra Agent ID + Unified AI Gateway APIM）；内嵌 8 张通过 XML 严格校验的高清矢量架构图与工作流图（[`workshops/azure-agent-infra/assets/`](workshops/azure-agent-infra/assets)） |
-| **2. 实时仿真 Demo (`AKSClaw × E2B`)** | 浏览器本地双轨状态机仿真：支持一键自动回放与单步推进 **AKSClaw 多租户 K8s Agent**（Entra Agent ID 签发 → Kata Pod VM 280ms 隔离 → APIM 零密钥注入与 IMDS `169.254.169.254` 阻断 → HorizonDB 11ms Checkpoint）与 **Manus × E2B 10万并发云端电脑**（`Standard_D96as_v7` + `UFFD` 缺页流式恢复 108ms → `NBD` 增量块快照 → L1/L2 热冷分层回收） |
-| **3. 双阶段架构选型决策器 & 10万沙箱计算器** | 覆盖 6 大企业与原生场景预设（知识助手、跨天审批、不可信代码池、Coding/Browser 沙箱、AKSClaw 多租户舰队、10万并发云端电脑）；实时联动 Azure `D96as_v7`（AMD Turin，`108ms` Base / `132ms` Code-Interpreter，`$4.608/hr`）vs `D96as_v6` vs `D96s_v6` 实测数据，动态测算 `85% HugePages` 与 `60% CPU` 水位下的 VMSS 节点数与月度 TCO（10万并发 = **261 台 `D96as_v7`**） |
-| **4. 7-Card 4:5 基准评测卡片 (`cards.html`)** | 严格遵循 7-Card 4:5 视觉报告规范，自包含 CSP 锁定（`default-src 'none'; style-src 'unsafe-inline'`），呈现 8 场景路由准确率（`8/8 = 100%`）、协议/评分机理、翻转与扰动鲁棒性检验、代际启动延迟对比与适用边界（同步提供 [Markdown 版](workshops/azure-agent-infra/test-report.md) 与 [`report.json`](workshops/azure-agent-infra/report.json)） |
-| **5. 现场五步落地法 (Field Playbook)** | 完整的四大技术底座（14 个 Azure 服务家族）资质筛查评分卡、`$10,000` 模型消费信号门禁，以及 **Screening → Discovery → Define → Validate → Implement** 五步交付清单与 Bicep/YAML 生产模板 |
+| 专题报告 | 核心覆盖范围 | 可视化图表 (`SVG` + `H5` + `7-Card`) | 证据台账 | 审校记录 | 更新日期 |
+|---|---|---|---|---|---|
+| **[Azure AI Agent Infra 全栈方案设计、技术选型与架构师 Playbook (中文)](workshops/azure-agent-infra/README.md)** · **[English Edition](workshops/azure-agent-infra/README.en.md)** | **L1–L6 全栈参考架构**（MAF · GitHub Copilot SDK · LangGraph · OpenClaw · Hermes · MCP/A2A）· **六大运行时光谱**（Foundry Hosted Agents · Durable Functions · ACA Dynamic Sessions · ACA Sandboxes Preview · AKS + Kata `AKSClaw` · E2B on Azure VMSS `D96as_v7` `80ms/108ms`）· **状态与存储底座**（Azure Files NFS v4.1 + Managed Lustre + Blob FUSE2 + HorizonDB + Firecracker UFFD/NBD Snapshot）· **零信任控制面**（Entra Agent ID · Unified AI Gateway · 169.254.169.254 IMDS 封禁 · 5 道平台硬边界）· **316 章行业物理模型、309 套 IaC 蓝图与 308 项交互式测算器（317/317 单测全绿）** | 8 张高清矢量架构图 + [7-Card 基准报告 (中文)](workshops/azure-agent-infra/test-report.md) / [English](workshops/azure-agent-infra/test-report.en.md) + [4 页交互式双语 H5 套件](workshops/azure-agent-infra/index.html) + [316章完整归档](workshops/azure-agent-infra/docs/full-monograph-archive.md) + [可运行 Demo](workshops/azure-agent-infra/demo/run_live_demo.py) | [`evidence.json`](workshops/azure-agent-infra/evidence.json)（5 份核心工程资产 + 官方信源） | [`review.md`](workshops/azure-agent-infra/review.md) | 2026-10-28 |
+| **[阿里云 AI Infra 全栈架构深度测评报告](docs/alibaba-cloud-ai-infra/README.md)** | **L0 平头哥芯片**（含光 800、真武 810E / M890 / V900 / J900、倚天 710/750、ICN Switch 1.0、磐脉 920、镇岳 510）· **L1 智算底座与网络**（磐久 AL128 超节点、CIPU、HPN 7.0 双上联×多轨×双平面、Solar-RDMA、eRDMA、ACCL、CPFS）· **L1.5 灵骏智算**（`hz` 亲和性调度、双平面网卡）· **L2 人工智能平台 PAI（“Pi平台”）**（DSW / DLC AIMaster+EasyCKPT / EAS Prefix-Cache 路由+EP/PD 分离 / 父子配额潮汐抢占）· **L3 百炼平台（Model Studio）**（Token / PTU / DTU / MU 四大算力阶梯与后训练流水线） | 6 张高清矢量架构图 + 2 幅交互式 Mermaid 决策图 | [`evidence.json`](docs/alibaba-cloud-ai-infra/evidence.json)（21 篇一手信源） | [`review.md`](docs/alibaba-cloud-ai-infra/review.md) | 2026-10-14 |
 
 ---
 
-## 专题二：Data & AI / FabCon & SQLCon Barcelona 2026 Briefing & Interactive Video Hub
+## 📊 Azure AI Agent Infra 核心可视化图谱速览（Visual Atlas）
 
-- **[🎬 交互式双语视频简报 H5 (中文默认)](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html)** · **[🎬 Interactive Video Hub (English)](https://turbo998.github.io/Azure-Infra-Lab/workshops/fabcon-sqlcon-2026/index.html?lang=en)** · **[📘 双语总入口 (`README.md`)](workshops/fabcon-sqlcon-2026/README.md)** · **[🇨🇳 中文完整简报 (`README.zh-CN.md`)](workshops/fabcon-sqlcon-2026/README.zh-CN.md)** · **[🇬🇧 English Briefing (`README.en.md`)](workshops/fabcon-sqlcon-2026/README.en.md)**
+- **核心技术资产入口（中英双语 / Bilingual）**：[Playbook 中文版 (`README.md`)](workshops/azure-agent-infra/README.md) · [English Playbook (`README.en.md`)](workshops/azure-agent-infra/README.en.md) · [316章完整百科归档 (`docs/full-monograph-archive.md`)](workshops/azure-agent-infra/docs/full-monograph-archive.md) · [7-Card 4:5 基准评测报告 (中文)](workshops/azure-agent-infra/test-report.md) · [7-Card Benchmark Report (EN)](workshops/azure-agent-infra/test-report.en.md) · [Cycle #407 卡组 (`benchmark-cards.html`)](workshops/azure-agent-infra/benchmark-cards.html) · [Cycle #407 English Deck (`benchmark-cards.en.html`)](workshops/azure-agent-infra/benchmark-cards.en.html) · [Cycle #407 工作台 (`workbench-cycle-407.html`)](workshops/azure-agent-infra/workbench-cycle-407.html) · [Cycle #407 日报](workshops/azure-agent-infra/daily-report-2026-11-14.md) · [Agent 追踪保留窗口选型 FAQ（中文）](workshops/azure-agent-infra/agent-trace-retention-selection-faq.md) · [Agent Trace Retention Window Selection FAQ (EN)](workshops/azure-agent-infra/agent-trace-retention-selection-faq.en.md) · [交互式 H5 全景手册 (`index.html`)](workshops/azure-agent-infra/index.html) · [AKSClaw × E2B 实时仿真台 (`demo.html`)](workshops/azure-agent-infra/demo.html) · [选型决策与 10万沙箱计算器 (`selector.html`)](workshops/azure-agent-infra/selector.html) · [309 套 IaC 与网关策略蓝图 (`blueprints/`)](workshops/azure-agent-infra/blueprints)
 
-围绕微软 Azure Data 执行副总裁 Arun Ulag 发布的 **[FabCon and SQLCon 2026: Explore Microsoft Fabric and SQL innovations](https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/)**，完整梳理“为 Microsoft Copilot 与智能体构建可信企业数据底座”的全栈创新：
+### 1. Azure AI Agent Infra 四层全栈参考架构全景图（Build · Run · Ground · Govern）
+![Azure AI Agent Infra 四层全栈参考架构全景图](docs/azure-agent-infra/assets/01-azure-agent-infra-4layer-panorama.svg)
 
-| 模块 / Module | 核心内容与技术资产 / Capabilities & Assets |
-| --- | --- |
-| **1. 5 支微软官方 1080p/720p 实机演示视频中心** | 页面内嵌 `<video>` 直接播放并提供多码率 MP4（1080p/720p/540p/360p）、TTML 字幕与文稿下载：① **Fabric IQ in M365 Copilot (GA)**、② **Power BI Agentic App Creation (Preview)**、③ **Fabric Apps & Rayfin SDK (Available)**、④ **OneLake IQ Sharing (Preview)**、⑤ **End-to-End Observability in Fabric (Preview)** |
-| **2. 六大战略技术支柱深度拆解** | 覆盖 **Fabric IQ 赋能 Copilot（零额外 AI Token 成本）**、**Power BI 自然语言构建支持 Write-back 与 1GB 免费 Fabric SQL 的全栈应用**、**OneLake IQ Sharing 跨组织共享 Markdown 指令与 RDF 本体**、**Osmos 自主数据工程智能体**、**Apache Ossie 开放语义标准与按需计费**、**Database Hub 与 SQL Hyperscale 192 vCore / DiskANN 向量索引 GA** |
-| **3. 18 项特性 GA / Preview 交互式矩阵** | 支持按 **全部 (18)** / **正式可用 GA (7)** / **预览与即将推出 (11)** 实时筛选，并提供全部 8 篇微软官方配套深度博客直达索引 |
+### 2. Azure 六大 Agent Runtime 责任边界、隔离机制与恢复延迟对比矩阵
+![Azure 六大 Agent Runtime 对比矩阵](docs/azure-agent-infra/assets/02-runtime-spectrum-6tier-matrix.svg)
+
+### 3. AI Agent Infra on Azure 双阶段架构选型决策树与数据底座配对图
+![双阶段架构选型决策树](docs/azure-agent-infra/assets/03-scenario-decision-tree-and-routing.svg)
+
+### 4. AKSClaw 多租户 Kubernetes Agent 平台参考架构（六大支柱与五道平台硬边界）
+![AKSClaw 多租户 Kubernetes Agent 平台参考架构](docs/azure-agent-infra/assets/04-aksclaw-multi-tenant-k8s-architecture.svg)
+
+### 5. E2B on Azure VMSS 生产级参考架构图（Manus × E2B 10万+ 并发云端沙箱底座）
+![E2B on Azure VMSS 生产级参考架构图](docs/azure-agent-infra/assets/05-e2b-on-azure-vmss-reference-architecture.svg)
+
+### 6. Firecracker MicroVM 沙箱内部机理（UFFD + NBD）与 Azure v6/v7 实测启动延迟对比
+![Firecracker MicroVM 内部机理与实测延迟对比](docs/azure-agent-infra/assets/06-e2b-microvm-internals-and-vm-benchmark.svg)
+
+### 7. 多智能体协同工作流（MAF × Copilot SDK × Durable）与状态持久化选型矩阵
+![多智能体协同工作流与状态持久化矩阵](docs/azure-agent-infra/assets/07-multi-agent-workflow-and-state-checkpoint.svg)
+
+### 8. Azure Agent Infra Playbook 六大高优场景、四维资质筛查与五步落地工作流
+![Playbook 六大场景与五步落地工作流](docs/azure-agent-infra/assets/08-field-playbook-5step-execution-flow.svg)
 
 ---
 
-## 专题三：Compute / Azure VM Modernization & FinOps
+## 📊 阿里云 AI Infra 核心可视化图谱速览（Visual Atlas）
 
-**[立即体验 / Live Demo](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/demo.html)** · **[课程 / Course](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/workshop.html)** · **[计算器 / Calculator](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/calculator.html)** · **[下载离线包 / Download ZIP](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/Azure-VM-Partner-Workshop.zip)** · **[源码 / Source](workshops/azure-vm-modernization/source)**
+### 1. “通-云-哥” L0–L3 全栈垂直整合架构与三大跨层协同闭环
+![阿里云 AI Infra 全栈垂直整合架构图](docs/alibaba-cloud-ai-infra/assets/01-tong-yun-ge-architecture.svg)
 
-## Azure VM 伙伴 Workshop / Partner Workshop
+### 2. 平头哥真武 PPU 四代演进（810E → M890 → V900 → J900）与主流 GPU 关键指标对比
+![真武 PPU 四代演进与主流 GPU 对比](docs/alibaba-cloud-ai-infra/assets/02-zhenwu-ppu-vs-gpu-comparison.svg)
 
-不是只有幻灯片：把生命周期与迁移讨论、用量与价格校验、候选约束和报告导出串成一个可离线使用的体验。
+### 3. 磐久 AL128 高密超节点“算-存-网”平头哥五芯全自研数据通路图
+![磐久 AL128 超节点五芯数据通路图](docs/alibaba-cloud-ai-infra/assets/03-panjiu-al128-five-chip-datapath.svg)
 
-| 内容 / Experience | 能力 / Capabilities |
-| --- | --- |
-| 联合课程 / Course | 7 个模块、角色分工、互动案例、6 道测验、讲师模式与打印讲义 / Seven modules, role-based discussion, interactive cases, quizzes, presenter mode, and printable handouts |
-| 同页三语 / Three languages | 简体中文、繁體中文、English 原地切换，保留课程进度、答案、数据与结果 / Switch languages on the same page without losing progress or results |
-| 本地评估 / Local analysis | CSV/XLSX 导入、列映射、补充资料、校验、D/E 候选与约束分析 / Browser-local imports, mapping, enrichment, validation, and constrained candidate analysis |
-| 教学案例 / Demo cases | 六个虚构案例与模拟价格，覆盖有条件缩容、RI/临时盘、EA 上限、排除项、HPC 和指标缺失 / Six synthetic cases, not customer records |
-| 可分享输出 / Exports | 标准 CSV、建议明细、自包含 HTML 报告；通过浏览器打印保存 PDF / CSV exports, standalone HTML reports, and print-to-PDF |
-| 离线使用 / Offline use | 解压后直接打开 HTML，无需服务器、登录、Azure 权限或联网 / Open the extracted HTML files without a server, sign-in, Azure permissions, or network access |
+### 4. 阿里云 HPN 7.0（SIGCOMM 2024）双上联 × 多轨 × 双平面网络架构与实测收益
+![阿里云 HPN 7.0 双平面网络拓扑与性能收益](docs/alibaba-cloud-ai-infra/assets/04-hpn7-dual-plane-topology.svg)
 
-### 谁适合参加 / Role audiences
+### 5. PAI 训推一体潮汐配额树与 PAI-EAS Prefix-Cache 智能路由官方实测加速比
+![PAI 潮汐抢占与 EAS Prefix-Cache 实测对比](docs/alibaba-cloud-ai-infra/assets/05-pai-tidal-preemption-and-eas-benchmark.svg)
 
-| 角色 / Role | Workshop 关注点 / Focus |
-| --- | --- |
-| Sales / 销售 | 识别现代化机会、澄清客户目标与商务假设 / Identify modernization opportunities and clarify business assumptions |
-| Presales / 售前 | 核验适用范围、指标与价格依据，解释候选和约束 / Validate scope, metrics, pricing evidence, and candidate constraints |
-| Service / 服务交付 | 制定验证、迁移与回退安排，交付可审查报告 / Plan validation, migration, rollback, and reviewable outputs |
+### 6. 百炼平台四大算力阶梯对比与 AI Infra 架构师 6 大核心场景选型矩阵
+![百炼四大算力模式与架构师选型矩阵](docs/alibaba-cloud-ai-infra/assets/06-bailian-resource-modes-and-architect-matrix.svg)
 
-## 三分钟 Demo 路线 / A short Demo journey
 
-1. 打开 **[Demo](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/demo.html)**，选择简体 / 繁體 / English，点击“开始自动演示” / “Start automatic demo”。
-2. 自动载入六个模拟案例与价格并分析；依次观察 A 的有条件缩容、B 的 RI/临时盘、C 的 EA 上限、D 的排除项、E 的 HPC 专项与 F 的指标缺失。
-3. 在结果页切换语言，展开候选和约束；切换“客户价格依据”模式可看到模拟价格被拒绝，而不是被当作合同净价。
-4. 下载 HTML 报告并独立打开，或打印保存 PDF；需要动手练习时，使用 [三语样例](workshops/azure-vm-modernization/sample-data) 和 [CSV/XLSX 模板](workshops/azure-vm-modernization/templates)。
 
-Start the Demo, inspect the six cases and their constraints, switch languages without resetting the analysis, then export a standalone report. Customer-pricing mode rejects synthetic demo prices.
 
-## 实际界面 / Real screenshots
 
-以下图片来自交付包的真实浏览器截图，使用虚构教学数据；不是设计稿或实测客户节省证明。
 
-### Demo：从入口直接进入六案例分析
-
-[![Simplified Chinese Demo page with language choices and the automatic six-case demonstration entry](workshops/azure-vm-modernization/screenshots/demo-zh-CN-desktop.png)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/demo.html)
-
-*Demo entry: choose a language and launch the synthetic-case analysis.*
-
-### Workshop：Sales / Presales / Service 联合课程
-
-[![Workshop role cards describing the Sales, Presales, and Service audiences in Simplified Chinese](workshops/azure-vm-modernization/screenshots/workshop-zh-CN-roles.png)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/workshop.html)
-
-*Role-based course: align commercial discovery, technical assessment, and delivery.*
-
-### Calculator：结果、候选与约束一起看
-
-[![Simplified Chinese calculator results for synthetic VM cases, showing analysis summaries and expandable recommendations](workshops/azure-vm-modernization/screenshots/calculator-zh-CN-results.png)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/calculator.html?demo=1&lang=zh-CN)
-
-*Local calculator: inspect the evidence and constraints behind each recommendation.*
-
-### Report：可独立打开与打印的报告
-
-[![Standalone Simplified Chinese report summarizing synthetic VM analysis with anonymized identifiers and technical conclusions](workshops/azure-vm-modernization/screenshots/report-zh-CN-desktop.png)](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/sample-data/zh-CN/live-demo-report.html)
-
-*Standalone HTML report: review before sharing, or print to PDF.*
-
-## 数据、价格与建议边界 / Important boundaries
-
-**所有案例中的客户名称、价格和用量均为虚构教学数据，不是 Azure 官方报价，也不代表已实现的节省。** 原邮件材料涉及的具体涨幅、日期与商务处理规则仍是**未经充分公开佐证的培训情景，不是已确认的 Azure 政策**。客户评估应使用适用合同、购买安排和评估日期的有效价格依据。
-
-**All names, prices, and usage in the examples are synthetic. Detailed price increases, dates, and commercial rules derived from the original mail remain unverified training scenarios, not confirmed Azure policy or official quotes.** Conditional compute-cost differences are not measured savings or total-bill savings.
-
-CSV/XLSX 在浏览器本地解析，数据不上传、不默认写入 localStorage/IndexedDB，也没有保存客户数据的后端。刷新或关闭页面会丢失未导出的状态；外部资料仅在主动点击时联网。报告默认省略客户/VM 名称、资源/订阅标识、文件名与原始价格依据标题，但保留 SKU、区域等技术信息，外发前仍需审查。
-
-Imported data stays in the browser and is not uploaded or persisted by default. Review reports before sharing. Missing prices, metrics, or commitment information remain unknown rather than being treated as zero; region/zone availability, quota, capacity, application performance, and rollback still require validation.
-
-完整口径、容量限制、价格模式、RI/EA 约束与维护说明见 **[Workshop 使用说明 / Detailed guide](workshops/azure-vm-modernization/README.md)**。
-
-## 离线包与源码 / Offline package and source
-
-下载 [原始 ZIP](https://turbo998.github.io/Azure-Infra-Lab/workshops/azure-vm-modernization/Azure-VM-Partner-Workshop.zip)，解压后打开 `demo.html`、`workshop.html` 或 `calculator.html`，保留目录结构即可。运行交付页面不需要 Node.js；源码和维护命令位于 [source](workshops/azure-vm-modernization/source) 与 [使用说明](workshops/azure-vm-modernization/README.md)。
-
-The public directory preserves all 256 original package files and the original ZIP unchanged. Its 37 PNG screenshots, language-specific samples, templates, HTML/PDF reports, source, and tests remain together.
-
-ZIP SHA-256: `ba996b06697fcf0c926d9fdbf14ec67c5d76a2729cac291a2bd65648391332b5`
-
-第三方声明与许可证原样保留：[THIRD_PARTY_NOTICES.txt](workshops/azure-vm-modernization/THIRD_PARTY_NOTICES.txt) · [third-party-licenses](workshops/azure-vm-modernization/third-party-licenses)。公开发布不新增或变更许可证。
-
-Third-party notices and licenses are retained as supplied. Publication does not add or change a license.
