@@ -1,20 +1,20 @@
 # Azure AI Agent Infrastructure — Step 04 Validate: Customer Workshop & Architecture Design Session Runbook (Bilingual EN / 中文)
 
-> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #412 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #412 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #412 Daily Report](daily-report-2026-11-14.md)**
+> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #413 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #413 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #413 Daily Report](daily-report-2026-11-14.md)**
 >
 > **Purpose**: Actionable field delivery guide for **Step 04 Validate (1/2-Day or 1-Day Hands-On Workshop + Target Architecture Whiteboard Session)** from the *Agent Infra Playbook* (`Agent_Infra_Playbook.pptx`, Slides 14–18).
 > **定位**：面向架构师与现场交付团队的 **Step 04 Validate（半天/全天动手工作坊 + 目标架构白板共创）** 落地执行手册（覆盖 384 章行业模型、377 套 IaC 蓝图与 376 项定量仿真器，385/385 项单测全绿）。
 
 ---
 
-## 0. Cycle #412 publish bundle (2026-11-14)
+## 0. Cycle #413 publish bundle (2026-11-14)
 
 - **7-card visual deck (4:5)**: [`benchmark-cards.html`](benchmark-cards.html) / [`benchmark-cards.en.html`](benchmark-cards.en.html)
-- **Interactive benchmark workbench**: [`workbench-cycle-412.html`](workbench-cycle-412.html)
-- **Daily breakthroughs one-pager SVG**: [`assets/34-cycle-412-daily-breakthroughs.svg`](assets/34-cycle-412-daily-breakthroughs.svg)
-- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-412-benchmark.json`](evidence/cycle-412-benchmark.json)
-- **Monograph addendum**: [`docs/full-monograph-cycle-412.md`](docs/full-monograph-cycle-412.md) / [`docs/full-monograph-cycle-412.en.md`](docs/full-monograph-cycle-412.en.md)
-- **Selection FAQ (ZH/EN)**: [`agent-circuit-breaker-budget-selection-faq.md`](agent-circuit-breaker-budget-selection-faq.md) / [`agent-circuit-breaker-budget-selection-faq.en.md`](agent-circuit-breaker-budget-selection-faq.en.md)
+- **Interactive benchmark workbench**: [`workbench-cycle-413.html`](workbench-cycle-413.html)
+- **Daily breakthroughs one-pager SVG**: [`assets/34-cycle-413-daily-breakthroughs.svg`](assets/34-cycle-413-daily-breakthroughs.svg)
+- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-413-benchmark.json`](evidence/cycle-413-benchmark.json)
+- **Monograph addendum**: [`docs/full-monograph-cycle-413.md`](docs/full-monograph-cycle-413.md) / [`docs/full-monograph-cycle-413.en.md`](docs/full-monograph-cycle-413.en.md)
+- **Selection FAQ (ZH/EN)**: [`agent-observability-sampling-selection-faq.md`](agent-observability-sampling-selection-faq.md) / [`agent-observability-sampling-selection-faq.en.md`](agent-observability-sampling-selection-faq.en.md)
 
 ---
 
