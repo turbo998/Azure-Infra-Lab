@@ -1,0 +1,58 @@
+{
+  "round": 50,
+  "cycle": 431,
+  "status": "completed",
+  "topic_slug": "agent-gateway-route-fallback-order-selection-faq",
+  "source_worktree_commit": "b4b76cda8d5991b9ebd57ee83c01898168089353",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "d003480b5daf23e777002a47dae3e7e014f94c38",
+    "Azure-Infra-Lab": "4d8f9a4adefeaa53231c11d712d1132a02fb7438",
+    "ai-research-public": "729202eab5d14042b06aab96e88f987525a5548c",
+    "ai-research-lab": "b2867d79d28db231bfd9aa6699eba280d9d78112",
+    "turbo998.github.io": "013ac98de6e8b919eef25c045a543de0786586a8"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "d003480b5daf23e777002a47dae3e7e014f94c38",
+    "Azure-Infra-Lab": "4d8f9a4adefeaa53231c11d712d1132a02fb7438",
+    "ai-research-public": "729202eab5d14042b06aab96e88f987525a5548c",
+    "ai-research-lab": "b2867d79d28db231bfd9aa6699eba280d9d78112",
+    "turbo998.github.io": "013ac98de6e8b919eef25c045a543de0786586a8"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "d003480b5daf23e777002a47dae3e7e014f94c38",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "4d8f9a4adefeaa53231c11d712d1132a02fb7438",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "729202eab5d14042b06aab96e88f987525a5548c",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "b2867d79d28db231bfd9aa6699eba280d9d78112",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "013ac98de6e8b919eef25c045a543de0786586a8",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "013ac98de6e8b919eef25c045a543de0786586a8",
+    "pages_main": "013ac98de6e8b919eef25c045a543de0786586a8",
+    "receipt_vs_pages": {
+      "merge_base": "013ac98de6e8b919eef25c045a543de0786586a8",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:34:28+08:00"
+}
