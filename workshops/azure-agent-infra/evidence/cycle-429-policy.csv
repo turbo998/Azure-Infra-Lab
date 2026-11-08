@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Region-affinity placement policy gate,188,200,0.94,measured,region-affinity replay + deterministic verification
+Cross-region failover budget guard,183,190,0.9632,measured,cross-region failover integrity logs
+Tenant region-access authorization fence,172,180,0.9556,measured,MCP policy replay logs
