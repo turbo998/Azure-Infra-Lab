@@ -220,11 +220,12 @@
 <body>
 
 <div class="top-nav">
-  <div><strong>Data Lab · 7-Card 4:5 视觉基准报告</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-08-r2`)</div>
+  <div><strong>Data Lab · 7-Card 4:5 视觉基准报告</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-09-r3`)</div>
   <div>
     <a href="index.html">🚀 打开 H5 交互工作台</a>
-    <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md">🧭 零拷贝选型 FAQ</a>
-    <a href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md">⚡ 实时流选型 FAQ</a>
+    <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md">🧭 R1: 零拷贝选型 FAQ</a>
+    <a href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md">⚡ R2: 实时流选型 FAQ</a>
+    <a href="comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md">🔄 R3: 零ETL镜像 vs CDC FAQ</a>
     <a href="benchmark-cards.en.html">🌐 English 7-Card Deck</a>
     <a href="README.md">📘 返回 Data Lab 主页</a>
   </div>
@@ -235,22 +236,22 @@
   <div>
     <div class="card-header">
       <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-08 / 11-09 · SEALED RUN (R2)</span>
+      <span>2026-11-08 / 11-09 · SEALED RUN (R3 · 56 CASES)</span>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake + Eventhouse</span> 在 52 项跨云零拷贝、OneLake IQ Sharing、实时流 Eventhouse (142ms) vs Dynamic Tables (60s) 与主权边缘评测中达成 98.08% 准确率（51/52），500 人企业 TCO 降低 46.1%–56.1%</h1>
-    <p class="sub">融合 FabCon Barcelona 2026、Microsoft IQ 四大支柱与最新迭代（Eventhouse KQL 142ms P99 + Lakehouse 流式表 210ms 一水双流 vs Snowflake Dynamic Tables 60s 最小滞后、OneLake IQ Sharing 共享表+RDF本体+指令、Salesforce Data 360 零拷贝、SQL Server on Azure Local ALDO 断网控制面 &amp; GCC High GA vs Databricks Lakeflow/OpenSharing、GCP BigQuery Continuous Queries、AWS S3 Tables）。</p>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake + Eventhouse + Mirroring</span> 在 56 项跨云零拷贝、实时流 Eventhouse vs Dynamic Tables、零 ETL 镜像 ($0 算力) vs 传统 CDC 与主权边缘评测中达成 98.21% 准确率（55/56），500 人企业建模 TCO 降低 46.1%–56.1%</h1>
+    <p class="sub">融合今晚三大深度选型专题：R1 跨云零拷贝与 OneLake IQ Sharing、R2 实时流 Eventhouse KQL (142ms 参考目标) vs Snowflake Dynamic Tables (60s 最小滞后)、R3 数据库镜像与 Open Mirroring ($0 免费复制算力 + 容量等额免费存储 vs Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect，节省 87.7% CDC 账单)。</p>
 
     <div class="grid-3">
       <div class="panel">
         <h3>1. 评测场景与门禁阈值</h3>
-        <p><strong>52 项密封架构与本体场景</strong>（<code>DL-01..DL-52</code>）：</p>
+        <p><strong>56 项密封架构与本体场景</strong>（<code>DL-01..DL-56</code>）：</p>
         <ul>
           <li><code>Fabric IQ &amp; Eventhouse RTI</code> (10 项)</li>
-          <li><code>vs Databricks (Lakeflow/OpenSharing)</code> (12 项)</li>
-          <li><code>vs Snowflake (Dynamic Tables/Horizon)</code> (9 项)</li>
+          <li><code>vs Databricks (Lakeflow/Connect)</code> (13 项)</li>
+          <li><code>vs Snowflake (Dynamic/Openflow)</code> (10 项)</li>
           <li><code>vs GCP BigQuery (Streaming/Mirror)</code> (8 项)</li>
-          <li><code>vs AWS Lakehouse (S3 Tables/Kinesis)</code> (6 项)</li>
-          <li><code>Database Hub / DiskANN / Azure Local</code> (7 项)</li>
+          <li><code>vs AWS Lakehouse (Aurora/S3 Tables)</code> (7 项)</li>
+          <li><code>Open Mirroring / DiskANN / ALDO</code> (8 项)</li>
         </ul>
         <p style="margin-top:8px;"><strong>动作门禁</strong>：<br>
         <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
@@ -260,13 +261,13 @@
 
       <div class="panel">
         <h3>2. 结构化评测输入负载</h3>
-        <div class="dark-code" style="font-size:10.5px; padding:10px;">{
+        <div class="dark-code" style="font-size:10.0px; padding:9px;">{
   "cohort": [
-    "Microsoft Fabric (F64 + Eventhouse + IQ Sharing)",
-    "Databricks (Lakeflow DLT + OpenSharing + UC)",
-    "Snowflake (Dynamic Tables 60s + Horizon + Ossie)",
-    "GCP (BigQuery Continuous + BigLake)",
-    "AWS (Kinesis + S3 Tables + DataZone)"
+    "Microsoft Fabric (F64 + Mirroring $0 + Eventhouse)",
+    "Databricks (Lakeflow Connect + DLT + UC)",
+    "Snowflake (Dynamic Tables 60s + Openflow + Horizon)",
+    "GCP (BigQuery Datastream + Continuous + BigLake)",
+    "AWS (Aurora Zero-ETL + DMS + S3 Tables)"
   ],
   "enterprise_profile": {
     "users": 500,
@@ -283,7 +284,8 @@
     "healthcare_clinical_supply_diskann",
     "manufacturing_digital_twin_zeroprov",
     "supply_chain_iq_sharing_salesforce",
-    "telecom_5g_eventhouse_vs_dynamic_tables"
+    "telecom_5g_eventhouse_vs_dynamic_tables",
+    "core_banking_oracle_open_mirroring_cdc"
   ]
 }</div>
       </div>
@@ -321,7 +323,7 @@
   </div>
 
   <div class="footer-callout">
-    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>：确定性状态机、五云 TCO 模型、9 大 Ontology 仿真与 52 项场景评分由 <code>src/data_lab/benchmark_suite.py</code> 生成并通过 <code>tests/test_data_lab.py</code>（22/22 通过），零虚构坐标，数据源于 <code>reports/report.json</code>。
+    <strong>Provenance &amp; Scope Disclosure (`measured_local_harness` + `synthetic_scenario_model` + `vendor_published_spec_as_of_2026`)</strong>：<code>55/56 (98.21%)</code> 路由判定与 <code>24/24</code> 单元测试为本地实测（<code>measured_local_harness</code>）；F64 <code>$0</code> 读者许可、Mirroring <code>$0</code> 复制算力、Snowflake Dynamic Tables <code>60s</code> 最小滞后为官方公开规格（<code>vendor_published_spec_as_of_2026</code>）；10 大行业本体闭环耗时（<code>480ms–780ms</code>）、TCO 精算（<code>$14,048/mo</code>、CDC <code>$1,600/mo</code>）及 SLA 风险敞口（<code>$1.15M/$1.48M/$2.35M</code>）为封存于 <code>reports/report.json</code> 的确定性架构参考仿真模型（<code>synthetic_scenario_model</code>），跨云物理集群压测标记为 <code>not_measured</code>。
   </div>
 </section>
 
@@ -398,10 +400,10 @@
 <section class="card" id="card-3">
   <div>
     <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 52-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 51 / 52 (98.08%) · MEAN 537.7 MS</span>
+      <span>3 / 7 · WHAT I TESTED · 56-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 55 / 56 (98.21%) · MODEL MEAN 532.0 MS</span>
     </div>
-    <h2>52 项跨云架构、OneLake IQ Sharing、实时流 Eventhouse (142ms) vs Dynamic Tables (60s) 与 5G URLLC 切片自愈场景通过 51 项（98.08%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
+    <h2>56 项跨云架构、OneLake IQ Sharing、实时流 Eventhouse (142ms) vs Dynamic Tables (60s) 与零 ETL 镜像 ($0 算力) vs CDC 场景通过 55 项（98.21%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
 
     <table>
       <thead>
@@ -449,16 +451,17 @@
         <tr><td><strong>DL-39..40</strong> · LTAP</td><td>AlloyDB ScaNN / Spanner Graph / Unistore / Aurora Zero-ETL 对标</td><td class="hit">✓ 单引擎 Hyperscale DiskANN + 1GB 免费 Fabric SQL 胜出</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-41..42</strong> · Twin</td><td>300mm 晶圆 EUV Digital Twin Builder + Zero-Provisioned +24 CU (530ms)</td><td class="hit">✓ 210ms 流式表 + $14.20 弹性作业 + 保住 99.4% 良率 ($920K)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-43..44</strong> · Stream</td><td>Lakehouse 流式表 (Private Link+CMK) vs Dynamic Tables / BigQuery</td><td class="hit">✓ 210ms 单一 Delta 流式表直连 DirectLake 零物化双份税</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-45..48</strong> · IQ Share/主权</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce 零拷贝 + Azure Local ALDO GA</td><td class="hit">✓ 护航 42 大客户 ($1.15M SLA) + 断网车间控制面 &amp; GCC High GA</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-49..52</strong> · 实时流 RTI</td><td>Eventhouse KQL (142ms) vs Dynamic Tables (60s)/Lakeflow + 5G URLLC (495ms)</td><td class="hit">✓ 一水双流省 48.5% 流计算 + 阿姆斯特丹 SRv6 绕行保住 $1.48M SLA</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-45..48</strong> · IQ Share/主权</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce 零拷贝 + Azure Local ALDO GA</td><td class="hit">✓ 护航 42 大客户 ($1.15M 建模 SLA) + 断网车间控制面 &amp; GCC High GA</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
+        <tr><td><strong>DL-49..52</strong> · 实时流 RTI</td><td>Eventhouse KQL (142ms) vs Dynamic Tables (60s)/Lakeflow + 5G URLLC (495ms)</td><td class="hit">✓ 一水双流省 48.5% 流计算 + 阿姆斯特丹 SRv6 绕行 ($1.48M 建模 SLA)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-53..56</strong> · 零ETL镜像</td><td>Database &amp; Open Mirroring ($0 算力) vs Fivetran/Openflow/Lakeflow (480ms)</td><td class="hit">✓ 省 87.7% CDC 账单 ($1.6K vs $13K) + 银行总账零停机自愈 ($2.35M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="grid-2" style="margin-top:8px;">
     <div class="panel">
-      <h3>阈值门控分布 (Threshold Gating · 52 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>40 项 (76.9%)</strong> · <code>Confirm</code>: <strong>10 项 (19.2%)</strong> · <code>Send to a human</code>: <strong>2 项 (3.8%)</strong>。高影响物理调度、跨企供应链大客户调拨、医药冷链隔离与主权断网策略经过人工确认。</p>
+      <h3>阈值门控分布 (Threshold Gating · 56 Cases)</h3>
+      <p><code>Act automatically</code>: <strong>43 项 (76.8%)</strong> · <code>Confirm</code>: <strong>11 项 (19.6%)</strong> · <code>Send to a human</code>: <strong>2 项 (3.6%)</strong>。高影响物理调度、跨企供应链调拨、银行核心总账对账与主权断网策略经过人工确认。</p>
     </div>
     <div class="panel">
       <h3>失分根因剖析 (✕ DL-23 Miss Analysis)</h3>

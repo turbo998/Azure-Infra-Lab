@@ -24,7 +24,7 @@
   <rect x="64" y="54" width="276" height="26" rx="13" fill="url(#headGrad9)"/>
   <text x="202" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="0.8">FAQ ARCHITECTURE · 2026-11-08/09</text>
   <text x="356" y="72" fill="#F8FAFC" font-size="19.5" font-weight="800">OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 本体 vs 四大云数据共享架构</text>
-  <text x="64" y="102" fill="#94A3B8" font-size="13">第一性原理图解：为什么「只共享裸表」会让 AI 产生 +14.2% 口径幻觉？如何用 OneLake IQ Sharing + Salesforce Data 360 + Azure Local 构建 515ms 跨企闭环</text>
+  <text x="64" y="102" fill="#94A3B8" font-size="12.5">第一性原理图解：裸表问数 +14.2% 漂移 (measured_local_harness) · OneLake IQ Sharing 跨企 515ms 闭环与 $1.15M 风险敞口 (synthetic_scenario_model)</text>
 
   <!-- Left Column: OneLake Zero-Copy Trio & Sovereign Edge -->
   <rect x="44" y="138" width="390" height="420" rx="14" fill="#111C33" stroke="#0EA5E9" stroke-width="1.5"/>
