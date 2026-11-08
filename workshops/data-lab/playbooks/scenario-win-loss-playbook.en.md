@@ -80,6 +80,16 @@
 
 ---
 
+### Scenario 8: Cross-Enterprise Supply Chain Resilience × OneLake IQ Sharing (RDF Ontology) × Salesforce Data 360 Zero-Copy × Azure Local Air-Gapped Plant (`supply_chain_iq_sharing_salesforce`)
+- **Customer Pain Point**: A global AI hardware manufacturer manages **42 strategic enterprise accounts (`$18.4M ARR`, `1,280` liquid-cooled AI rack orders)** in **Salesforce Data 360**, receives external port congestion and tier-2 supplier solvency feeds from **TomTom** and **S&P Global**, and operates an **air-gapped** final assembly plant in Budapest. When Red Sea rerouting triggers a **`+96-hour` delay (`> 24h` safe threshold)** at the Port of Rotterdam, legacy SFTP CSV imports take 48+ hours and risk leaking confidential customer contract pricing to external freight forwarders.
+- **Reference Architecture (Simulation `supply_chain_iq_sharing_salesforce` / `DL-45..DL-48`)**:
+  1. **Context-Aware Zero-Copy Sense & Disconnected Edge Sync (`92 ms`)**: **OneLake IQ Sharing** ingests external partner **tables + `.rdf` ontologies + `.md` agent instructions** zero-copy alongside **SQL Server on Azure Local (ALDO disconnected control plane)** plant WIP syncs, with **Eventhouse KQL** flagging the `+96h` delay breach in `92 ms`.
+  2. **Salesforce Data 360 Zero-Copy Graph & Condition-Action Rule Solving (`234 ms`)**: **Fabric IQ Ontology** traverses **Salesforce Data 360 Zero-Copy Shortcuts** and **Snowflake Mirroring (Apache Ossie)** in `126 ms` to isolate all 42 affected accounts and `1,280` rack orders, then evaluates rule `PORT_DELAY > 24h AND ARR_AT_RISK >= $1M` (`108 ms`) to reallocate **`780 units`** from the Warsaw bonded hub and expedite **`500 units`** via rail-air intermodal (`$34,500 <= $60,000` freight cap).
+  3. **Purview Contract Price Masking & Rayfin Dual Write-back (`189 ms`)**: **Foundry IQ** validates `GLOBAL-SUPPLY-SLA-SOP-15` while **Microsoft Purview** automatically blocks external carriers from reading Salesforce `Net_Contract_Price` (`Highly Confidential`); **Rayfin SDK** (`95 ms`) writes the allocation order to **1GB Free Fabric SQL** and updates the live Salesforce CSM alert card.
+- **Quantified ROI**: **`515 ms`** end-to-end resolution, **`99.6%` on-time delivery** preserved across 42 accounts, and **`$1,150,000`** saved in avoided SLA penalties and churn.
+
+---
+
 ## 2. Presales Decision Matrix: Win Themes vs. Coexistence vs. Anti-Patterns
 
 | Category | Customer Signals & Workload Profile | Recommended Architect Play |

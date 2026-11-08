@@ -1,7 +1,10 @@
 # ⚔️ Microsoft Fabric vs 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度攻防拆解与售前 Battlecards (2026)
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`fabric-vs-4clouds-battlecards-2026.en.md`)](fabric-vs-4clouds-battlecards-2026.en.md)  
-> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-05 / 11-06 实测封存 · 44 场景 `97.73%`） · **适用角色**：AI Solution Architect / 云数智架构师
+> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-08 / 11-09 实测封存 · 48 场景 `97.92%`） · **适用角色**：AI Solution Architect / 云数智架构师  
+> **🔥 必读 FAQ 选型指南**：[《企业级 AI 数据底座选型与“零拷贝 + 语义本体（OneLake × Fabric IQ）”核心原理 FAQ》](fabric-onelake-iq-vs-4clouds-selection-faq.md)
+
+[![OneLake Zero-Copy & Fabric IQ Ontology FAQ Architecture](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)
 
 [![Digital Twin Builder & Zero-Provisioned Elastic Compute Architecture](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)
 
@@ -125,6 +128,19 @@
 | **全域数据库态势与自主调优** | **Fabric Database Hub (预览) + Database Agents**：统一监控 64+ 套 SQL Server、Azure SQL、PostgreSQL、Cosmos DB 与 Oracle/BigQuery 镜像库，自动解除阻塞锁与注入索引 (`149ms`) | Lakebase Serverless Postgres 仅覆盖托管 Postgres 实例，缺乏跨 SQL Server/Oracle/Cosmos DB 的统一态势治理 | Snowsight 仅监控 Snowflake 内部对象，不支持异构事务库态势统一与自动锁修复 | Cloud SQL / AlloyDB System Insights 仅限 GCP 内部实例 | RDS Performance Insights + DevOps Guru（按实例分散告警） |
 | **事务+向量混合引擎 (Operational Vector)** | **Azure SQL Hyperscale 192 vCore + 原生 SSD DiskANN GA + Fabric SQL**：较内存型 HNSW **省 90% 内存（10×）**，亿级向量 **`19ms` P99 / `98.4%` 召回**，单条 T-SQL 内联 ACID 事务与 RLS | **Lakebase Search GA (`lakebase_vector` + `lakebase_text`)**：1 亿向量 97% 召回 / 71ms P99 + Synced Tables，但不提供 1GB 免费 BI 内嵌 SQL | **Unistore Hybrid Tables + Cortex Search 多索引 RAG**：行存+列存联查，但需常驻专属计算 Credit | **AlloyDB ScaNN + 列存向量加速**（较 HNSW 快 4×、省 3–4× 内存）+ **Spanner Graph ISO GQL** | **Aurora + S3 Tables + OpenSearch Serverless 零 ETL 同步**：跨 3 套服务与计费，存在同步延迟与 ACL 裂缝 |
 | **架构师选型金律** | **跨异构数据库统一治理 + 亿级向量低内存高并发 ACID/RLS 联查 + 1GB 免费 SQL 业务回写首选** | **Python 智能体会话状态用 Lakebase Search，全域企业语义与 BI 回写走 Fabric** | **保留 Snowflake 存量账本，通过 Mirroring + Hyperscale 50-DB 高密度池替代高价 Unistore** | **用 OneLake BigQuery/Oracle Mirroring 联合 Hyperscale DiskANN 打通临床/供应链闭环** | **用单引擎 Hyperscale DiskANN + Fabric SQL 替代 Aurora+OpenSearch+S3 Tables 多组件拼装** |
+
+---
+
+## 7. 2026-11-08 / 11-09 专项增补：OneLake IQ Sharing 跨组织本体共享 × Salesforce Data 360 零拷贝 × 混合主权边缘攻防矩阵 (`DL-45..DL-48`)
+
+| 对标维度 | Microsoft Fabric (`OneLake IQ Sharing` + `Fabric IQ Rules`) | Databricks (`OpenSharing` + `Metric View Relationships`) | Snowflake (`Horizon Consuming Delta Shares GA` + `Ossie`) | GCP (`BigQuery Analytics Hub` + `BigLake Iceberg REST`) | AWS (`S3 Tables` + `DataZone` + `Lake Formation`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **跨组织共享粒度与语义携带** | **OneLake IQ Sharing (预览)**：跨企零拷贝共享 **受治理数据表 + `.rdf` 本体图谱 + `.md` 智能体指令**（EY/S&P Global/TomTom 已采用，未来直通 Fabric IQ 本体） | **OpenSharing（原 Delta Sharing）**：支持共享表、特征、模型与 Lakebase 流，但缺乏内嵌 RDF 业务本体与条件动作规则包 | **Horizon 原生消费外部 Delta Shares (GA)** + Snowflake Data Sharing / Clean Rooms | **BigQuery Analytics Hub**：发布/订阅数据集，需接收方在 LookML 中重新定义业务语义 | AWS DataZone + Lake Formation 跨账号凭证签发，仅限表/文件级元数据 |
+| **CRM 与跨云业务系统零拷贝闭环** | **Salesforce Data 360 零拷贝 Shortcut + Fabric IQ 条件-动作规则 (Rules) + 1GB 免费 SQL 回写 (`515ms`)** | 需配置 Lakeflow Connect 同步 Salesforce 并手写 Python Agent 回写逻辑 | 存在 Salesforce 零拷贝共享，但缺乏免额外 Token 的 M365 Copilot 与 1GB 免费内嵌事务回写库 | 需通过 Data Fusion / BigQuery Data Transfer 批处理同步 CRM 数据 | 需组合 AppFlow + Glue + S3 Tables，无原生语义本体规则触发器 |
+| **语义关联 vs 业务本体规则** | **2000万+ Power BI 模型一键升维 Ontology**（含 `Entity + Relationship + Condition-Action Rule + Action`） | **Unity Catalog Metric View Relationships (Beta)** + ABAC 显式 `DENY`（仍偏重只读 SQL JOIN 路径推断） | **Semantic View Autopilot GA** + 原生导出 **Apache Ossie YAML**（与 Fabric IQ `0.0%` 漂移互通） | Looker LookML + BigQuery Conversational Analytics GA | QuickSight Q 主题命名实体 |
+| **断网车间与国防主权云合规** | **SQL Server on Azure Local (ALDO 本地 Appliance-VM 断网控制面) GA + Fabric M365 GCC High GA** | 无官方本地物理机断网 Appliance 控制面（强依赖云端 Control Plane 连接） | 纯公有云 SaaS 架构，不支持断网车间本地自治部署 | 依赖公有云 Region，无对标 ALDO SQL 2025 的断网本地数据底座 | Outposts 仍需定期回连 AWS Region 控制面 |
+| **架构师选型金律** | **跨企供应链带本体零拷贝协同 + Salesforce 大客户实时保供回写 + 断网工厂主权合规首选** | **保留 Databricks 特征工程与 ABAC `DENY` 表护栏，上层语义规则与全员消费走 Fabric IQ** | **利用 Horizon 消费 Delta Share 与 Apache Ossie YAML 零漂移打通 Snowflake 与 Fabric** | **用 GA BigQuery Mirroring 零 ETL 汇入 OneLake，免去手写 Dataflow** | **用带 28ms 缓存的 OneLake S3 Shortcut 原地挂载 S3 Tables** |
+
 
 
 

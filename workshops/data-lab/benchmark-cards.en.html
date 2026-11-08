@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Microsoft Fabric vs. Databricks / Snowflake / GCP / AWS — 7-Card Benchmark Report (2026-11-02)</title>
+<title>Microsoft Fabric vs. Databricks / Snowflake / GCP / AWS — 7-Card Benchmark Report (2026-11-08)</title>
 <style>
   :root {
     --bg: #F8FAFC;
@@ -210,9 +210,10 @@
 <body>
 
 <div class="top-nav">
-  <div><strong>Data Lab · 7-Card 4:5 Benchmark Deck</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-04`)</div>
+  <div><strong>Data Lab · 7-Card 4:5 Benchmark Deck</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-08`)</div>
   <div>
     <a href="index.html?lang=en">🚀 Interactive H5 Workbench</a>
+    <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md">🧭 Selection FAQ Guide</a>
     <a href="benchmark-cards.html">🇨🇳 中文 7-Card 报告</a>
     <a href="README.en.md">📘 Data Lab Overview</a>
   </div>
@@ -223,26 +224,26 @@
   <div>
     <div class="card-header">
       <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-05 / 11-06 · SEALED RUN</span>
+      <span>2026-11-08 / 11-09 · SEALED RUN</span>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> Achieves 97.73% Routing &amp; Grounding Accuracy (43/44) Across 5 Clouds, Digital Twin Builder, Streaming Tables, Zero-Provisioned &amp; DiskANN While Cutting TCO by 46.1%–56.1%</h1>
-    <p class="sub">Synthesizing FabCon Barcelona 2026, the Microsoft IQ 4-Pillar Stack, and latest breakthroughs (Digital Twin Builder, Lakehouse Streaming Tables, Eventstream Private Link &amp; CMK, On-Demand Pay-Per-Job &amp; Zero-Provisioned Compute, Database Hub, SQL Hyperscale 192-vCore DiskANN vs. Databricks Serverless/Lakeflow, Snowflake Dynamic Tables, GCP BigQuery Slot Autoscaling, and AWS IoT SiteWise/Redshift Serverless).</p>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> Achieves 97.92% Routing &amp; Grounding Accuracy (47/48) Across 5 Clouds, OneLake IQ Sharing, Salesforce Data 360 Zero-Copy &amp; Sovereign Edge While Cutting TCO by 46.1%–56.1%</h1>
+    <p class="sub">Synthesizing FabCon Barcelona 2026, the Microsoft IQ 4-Pillar Stack, and latest breakthroughs (OneLake IQ Sharing of tables + RDF ontologies + agent instructions, Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Condition-Action Rules, SQL Server on Azure Local ALDO disconnected control plane &amp; M365 GCC High GA vs. Databricks OpenSharing &amp; Metric View Relationships, Snowflake Horizon Consuming Delta Shares GA, GCP BigQuery Analytics Hub, and AWS S3 Tables).</p>
 
     <div class="grid-3">
       <div class="panel">
         <h3>1. Scenarios &amp; Action Gates</h3>
-        <p><strong>44 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-44</code>):</p>
+        <p><strong>48 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-48</code>):</p>
         <ul>
-          <li><code>Fabric IQ &amp; Digital Twin Builder</code> (8 cases)</li>
-          <li><code>vs Databricks (+ Lakeflow/Serverless)</code> (10 cases)</li>
-          <li><code>vs Snowflake (+ Dynamic Tables)</code> (8 cases)</li>
-          <li><code>vs GCP BigQuery (+ Slot Autoscaling)</code> (7 cases)</li>
-          <li><code>vs AWS Lakehouse (+ SiteWise/Redshift)</code> (5 cases)</li>
-          <li><code>Database Hub / DiskANN / Safety</code> (6 cases)</li>
+          <li><code>Fabric IQ &amp; OneLake IQ Sharing</code> (9 cases)</li>
+          <li><code>vs Databricks (OpenSharing/Metric Rel)</code> (11 cases)</li>
+          <li><code>vs Snowflake (Horizon/Apache Ossie)</code> (8 cases)</li>
+          <li><code>vs GCP BigQuery (Analytics Hub/Mirror)</code> (7 cases)</li>
+          <li><code>vs AWS Lakehouse (S3 Tables/SiteWise)</code> (6 cases)</li>
+          <li><code>Database Hub / DiskANN / Azure Local</code> (7 cases)</li>
         </ul>
         <p style="margin-top:8px;"><strong>Action Bands</strong>:<br>
         <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
-        <span class="pill act-confirm">Confirm 0.85–0.95 (High-Impact)</span><br>
+        <span class="pill act-confirm">Confirm 0.85–0.97 (High-Impact)</span><br>
         <span class="pill act-human">Send to a human &lt; 0.85 / Policy</span></p>
       </div>
 
@@ -250,11 +251,11 @@
         <h3>2. Structured Input Contract</h3>
         <div class="dark-code" style="font-size:10.5px; padding:10px;">{
   "cohort": [
-    "Microsoft Fabric (F64 + IQ + Twin + ZeroProv)",
-    "Databricks (Unity + Lakeflow + Serverless)",
-    "Snowflake (Dynamic Tables + Cortex Search)",
-    "GCP (BigQuery Autoscaling + Spanner Graph)",
-    "AWS (IoT SiteWise + Redshift Serverless)"
+    "Microsoft Fabric (F64 + IQ Sharing + Rules)",
+    "Databricks (OpenSharing + Metric View Rel)",
+    "Snowflake (Horizon Delta Share + Ossie)",
+    "GCP (BigQuery Analytics Hub + BigLake)",
+    "AWS (S3 Tables + Zero-ETL + DataZone)"
   ],
   "enterprise_profile": {
     "users": 500,
@@ -269,7 +270,8 @@
     "financial_multi_cloud_fraud",
     "finops_rayfin_observability",
     "healthcare_clinical_supply_diskann",
-    "manufacturing_digital_twin_zeroprov"
+    "manufacturing_digital_twin_zeroprov",
+    "supply_chain_iq_sharing_salesforce"
   ]
 }</div>
       </div>
@@ -307,7 +309,7 @@
   </div>
 
   <div class="footer-callout">
-    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>: All bar widths, TCO figures, 7 Ontology simulations, and 44 scenario scores are generated deterministically by <code>src/data_lab/benchmark_suite.py</code> and verified by <code>tests/test_data_lab.py</code> (18/18 passing) via <code>reports/report.json</code>.
+    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>: All bar widths, TCO figures, 8 Ontology simulations, and 48 scenario scores are generated deterministically by <code>src/data_lab/benchmark_suite.py</code> and verified by <code>tests/test_data_lab.py</code> (20/20 passing) via <code>reports/report.json</code>.
   </div>
 </section>
 
@@ -384,10 +386,10 @@
 <section class="card" id="card-3">
   <div>
     <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 44-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 43 / 44 (97.73%) · MEAN 550.5 MS</span>
+      <span>3 / 7 · WHAT I TESTED · 48-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 47 / 48 (97.92%) · MEAN 544.5 MS</span>
     </div>
-    <h2>43 of 44 Cross-Cloud, Digital Twin Builder, Streaming Tables, Zero-Provisioned, Database Hub &amp; 192-vCore DiskANN Scenarios Pass (97.73%); Single Miss (✕ DL-23) Exposes +14.2% Metric Drift on Ungrounded Raw Tables</h2>
+    <h2>47 of 48 Cross-Cloud, OneLake IQ Sharing, Salesforce Data 360 Zero-Copy, Digital Twin Builder, Zero-Provisioned &amp; Sovereign Edge Scenarios Pass (97.92%); Single Miss (✕ DL-23) Exposes +14.2% Metric Drift on Ungrounded Raw Tables</h2>
 
     <table>
       <thead>
@@ -435,14 +437,16 @@
         <tr><td><strong>DL-39..40</strong> · LTAP</td><td>AlloyDB ScaNN / Spanner Graph / Unistore / Aurora Zero-ETL</td><td class="hit">✓ Unified Hyperscale DiskANN + 1GB Free Fabric SQL wins</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-41..42</strong> · Twin</td><td>300mm EUV Digital Twin Builder + Zero-Provisioned +24 CU (530ms)</td><td class="hit">✓ 210ms Streaming Table + $14.20 Burst + 99.4% Yield ($920K)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-43..44</strong> · Stream</td><td>Lakehouse Streaming Tables (Private Link+CMK) vs Dynamic Tables</td><td class="hit">✓ 210ms unified Delta Streaming Table to DirectLake</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
+        <tr><td><strong>DL-45..46</strong> · IQ Share</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce Zero-Copy + Rules (515ms)</td><td class="hit">✓ Protects 42 accounts / 1,280 racks + Purview masking ($1.15M SLA)</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
+        <tr><td><strong>DL-47..48</strong> · Sovereign</td><td>Databricks Metric View Rel/ABAC DENY + Azure Local ALDO &amp; GCC High GA</td><td class="hit">✓ 240 PBI models 1-click to Ontology + air-gapped SQL edge</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="grid-2" style="margin-top:8px;">
     <div class="panel">
-      <h3>Threshold Gating Distribution (44 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>33 (75.0%)</strong> · <code>Confirm</code>: <strong>9 (20.5%)</strong> · <code>Send to a human</code>: <strong>2 (4.5%)</strong>. Physical grid dispatch, clinical cold-chain lot quarantine, and cross-cloud budget write-back enforce human-in-the-loop confirmation.</p>
+      <h3>Threshold Gating Distribution (48 Cases)</h3>
+      <p><code>Act automatically</code>: <strong>36 (75.0%)</strong> · <code>Confirm</code>: <strong>10 (20.8%)</strong> · <code>Send to a human</code>: <strong>2 (4.2%)</strong>. Physical grid dispatch, cross-org supply-chain allocation, clinical lot quarantine, and sovereign edge sync enforce human confirmation.</p>
     </div>
     <div class="panel">
       <h3>Failure Root Cause (✕ DL-23 Miss Analysis)</h3>

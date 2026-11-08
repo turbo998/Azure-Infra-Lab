@@ -80,6 +80,16 @@
 
 ---
 
+### 场景八：跨企业供应链抗毁 × OneLake IQ Sharing (RDF 本体共享) × Salesforce Data 360 零拷贝 × Azure Local 断网车间闭环（TomTom / S&P + Salesforce + Snowflake + Fabric）
+- **客户痛点**：跨国高端装备制造企业的 **42 家战略大客户合同（`$18.4M ARR`，待交付 `1,280 台` AI 液冷机柜）** 存放在 **Salesforce Data 360**；全球海运港口实时拥堵与二级供应商信用风险来自外部合作伙伴 **TomTom** 与 **S&P Global**；而位于匈牙利布达佩斯的总装车间因合规要求处于 **断网（Air-Gapped）** 状态。当红海改道引发鹿特丹港突发拥堵（延误 **`+96 小时 > 24 小时`** 安全红线）时，传统 SFTP CSV 导入与人工跨系统核查耗时超过 48 小时，且向外部承运商派单时极易泄露客户合同净底价。
+- **推荐架构（对应仿真 `supply_chain_iq_sharing_salesforce` / `DL-45..DL-48`）**：
+  1. **跨企带本体零拷贝感知与断网边缘同步 (`92 ms`)**：通过 **OneLake IQ Sharing** 直接订阅外部伙伴共享的 **受治理数据表 + `.rdf` 本体图谱 + `.md` 智能体指令**，结合 **SQL Server on Azure Local（配备 ALDO 本地 Appliance-VM 断网控制面）** 的布达佩斯车间在制品同步流，由 **Eventhouse KQL** 毫秒级捕获 `+96h` 延误越界。
+  2. **Salesforce Data 360 零拷贝穿透与条件规则求解 (`234 ms`)**：**Fabric IQ Ontology** 通过 **Salesforce Data 360 零拷贝 Shortcut** 与 **Snowflake 镜像（Apache Ossie YAML）** 在 `126 ms` 内锁定受影响的 42 家战略大客户与 `1,280 台` 机柜订单；触发本体条件-动作规则 `PORT_DELAY > 24h AND ARR_AT_RISK >= $1M`（`108 ms`），自动生成最优保供方案：从华沙保税仓调拨 **`780 台`** + 启用中欧铁空联运加急 **`500 台`**（加急运费 `$34,500 ≤ $60,000` 上限）。
+  3. **Purview 合同底价脱敏拦截与 Rayfin 双端回写 (`189 ms`)**：**Foundry IQ** 核验《`GLOBAL-SUPPLY-SLA-SOP-15`》并由 **Microsoft Purview** 自动拦截（`Block`）外部物流承运商读取 Salesforce `Net_Contract_Price`（Highly Confidential）；供应链 VP 确认后，**Rayfin SDK** 在 `95 ms` 内将调拨单回写至 **1GB 免费 Fabric SQL** 并同步刷新 Salesforce 客户成功经理（CSM）预警卡。
+- **量化业务 ROI**：端到端闭环 **`515 ms`**，战略大客户准时交付率保持 **`99.6%`**，单次港口停摆危机规避 SLA 违约金与续约流失 **`$1,150,000`**。
+
+---
+
 ## 2. 选型决策树：必赢场景（Win） vs 混合共存（Coexist） vs 避坑红线（Anti-Patterns）
 
 | 评估分类 | 典型客户信号与场景特征 | 架构师标准打法 |

@@ -1,7 +1,10 @@
 # ⚔️ Microsoft Fabric vs. 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep-Dive Battlecards (2026)
 
 > **Language**: [中文 (`fabric-vs-4clouds-battlecards-2026.md`)](fabric-vs-4clouds-battlecards-2026.md) | **English (Current)**  
-> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-05 / 11-06` · 44 Scenarios `97.73%`) · **Target Persona**: Principal AI Solution Architect
+> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-08 / 11-09` · 48 Scenarios `97.92%`) · **Target Persona**: Principal AI Solution Architect  
+> **🔥 Flagship FAQ Selection Guide**: [Enterprise AI Data Foundation Selection & "Zero-Copy + Semantic Ontology (OneLake × Fabric IQ)" FAQ](fabric-onelake-iq-vs-4clouds-selection-faq.en.md)
+
+[![OneLake Zero-Copy & Fabric IQ Ontology FAQ Architecture](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)
 
 [![Digital Twin Builder & Zero-Provisioned Elastic Compute Architecture](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)](../assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg)
 
@@ -107,6 +110,19 @@
 | **Estate-Wide DB Posture & Tuning** | **Fabric Database Hub (Preview) + Database Agents**: Centralizes posture across 64+ SQL Server, Azure SQL, PostgreSQL, Cosmos DB & mirrored Oracle/BigQuery DBs with auto lock/index remediation (`149ms`) | Lakebase Serverless Postgres covers managed Postgres instances only; no cross-engine SQL Server/Oracle/Cosmos DB hub | Snowsight monitors internal Snowflake objects only; no heterogeneous OLTP lock remediation | Cloud SQL / AlloyDB System Insights scoped to GCP databases | RDS Performance Insights + DevOps Guru (per-instance siloed alerts) |
 | **Operational + Vector Engine** | **Azure SQL Hyperscale 192 vCore + Native SSD DiskANN GA + Fabric SQL**: **10× (90%) lower RAM** than HNSW, **`19ms` P99 at `98.4%` recall**, single T-SQL statement joining ACID rows, RLS & `VECTOR_SEARCH()` | **Lakebase Search GA (`lakebase_vector` + `lakebase_text`)**: 97% recall at 71ms P99 on 100M vectors + Synced Tables, but no 1GB free embedded BI SQL | **Unistore Hybrid Tables + Cortex Search Multi-Index RAG**: Row + columnar joins, but requires dedicated compute credits | **AlloyDB ScaNN + Columnar Vector Acceleration** (4× faster queries, 3–4× lower RAM vs HNSW) + **Spanner Graph ISO GQL** | **Aurora + S3 Tables + OpenSearch Serverless Zero-ETL**: Spans 3 services & billing meters with sync lag and ACL drift risk |
 | **Architect Selection Rule** | **Best for heterogeneous DB governance, low-RAM 100M+ vector ACID/RLS joins & 1GB free SQL write-back** | **Use Lakebase Search for Python agent state; drive enterprise BI & write-back on Fabric** | **Keep Snowflake core ledgers; mirror to OneLake + Hyperscale 50-DB pools instead of costly Unistore** | **Mirror BigQuery & Oracle to OneLake + Hyperscale DiskANN for closed-loop clinical/supply actions** | **Replace 3-service Aurora+OpenSearch+S3 Tables stitching with unified Hyperscale DiskANN + Fabric SQL** |
+
+---
+
+## 7. 2026-11-08 / 11-09 Nightly Addendum: OneLake IQ Sharing Cross-Org Ontology × Salesforce Data 360 Zero-Copy × Sovereign Disconnected Edge Matrix (`DL-45..DL-48`)
+
+| Dimension | Microsoft Fabric (`OneLake IQ Sharing` + `Fabric IQ Rules`) | Databricks (`OpenSharing` + `Metric View Relationships`) | Snowflake (`Horizon Consuming Delta Shares GA` + `Ossie`) | GCP (`BigQuery Analytics Hub` + `BigLake Iceberg REST`) | AWS (`S3 Tables` + `DataZone` + `Lake Formation`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Cross-Org Context & Ontology Sharing** | **OneLake IQ Sharing (Preview)**: Zero-copy shares **governed tables + `.rdf` ontologies + `.md` agent instructions** (adopted by EY, S&P Global, TomTom) | **OpenSharing (formerly Delta Sharing)**: Shares tables, models & Lakebase feeds, but lacks bundled RDF business ontologies and condition-action rules | **Horizon Consuming Delta Shares (GA)** + Snowflake Data Sharing / Clean Rooms | **BigQuery Analytics Hub**: Publishes datasets, requiring recipients to rebuild LookML semantics manually | AWS DataZone + Lake Formation credential vending (table/file metadata only) |
+| **CRM & Multi-Cloud Operational Loop** | **Salesforce Data 360 Zero-Copy Shortcut + Fabric IQ Condition-Action Rules + 1GB Free SQL Write-back (`515ms`)** | Requires Lakeflow Connect ingestion + custom Python agent write-back code | Supports Salesforce zero-copy sharing, but lacks `$0`-token M365 Copilot & 1GB free embedded write-back SQL | Requires Data Fusion / BigQuery Data Transfer batch sync | Requires AppFlow + Glue + S3 Tables stitching without ontology rules |
+| **Semantic Joins vs. Ontology Rules** | **1-Click Upgrade of 20M+ Power BI Models into Ontology** (`Entity + Relationship + Condition-Action Rule + Action`) | **Unity Catalog Metric View Relationships (Beta)** + ABAC explicit `DENY` (read-only SQL join inference) | **Semantic View Autopilot GA** + native **Apache Ossie YAML** export (`0.0%` drift into Fabric IQ) | Looker LookML + BigQuery Conversational Analytics GA | QuickSight Q Topics |
+| **Air-Gapped Edge & Sovereign Cloud** | **SQL Server on Azure Local (ALDO Disconnected Control Plane) GA + Fabric M365 GCC High GA** | No disconnected local appliance control plane (requires cloud control-plane connectivity) | Cloud-only SaaS architecture; no air-gapped shop-floor deployment | Public-cloud region dependent; no ALDO disconnected SQL equivalent | Outposts requires periodic AWS Region control-plane connectivity |
+| **Architect Selection Rule** | **Best for context-aware cross-org sharing, Salesforce SLA write-back & air-gapped sovereign edge** | **Retain Databricks ETL + ABAC `DENY`; upgrade 20M+ PBI models 1-click into Fabric IQ** | **Bridge Snowflake and Fabric via Horizon Delta Shares & Apache Ossie YAML (`0.0%` drift)** | **Replicate BigQuery zero-ETL via GA OneLake BigQuery Mirroring** | **Mount S3 Tables in-place via cached OneLake S3 Shortcuts (`28ms`)** |
+
 
 
 

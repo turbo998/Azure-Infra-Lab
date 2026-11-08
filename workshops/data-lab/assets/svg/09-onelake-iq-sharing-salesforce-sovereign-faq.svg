@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0C172B"/>
+      <stop offset="100%" stop-color="#101D38"/>
+    </linearGradient>
+    <linearGradient id="headGrad9" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="iqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="860" fill="url(#bgGrad9)"/>
+  <rect x="24" y="20" width="1392" height="820" rx="20" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="44" y="38" width="1352" height="84" rx="14" fill="#131F38" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="64" y="54" width="276" height="26" rx="13" fill="url(#headGrad9)"/>
+  <text x="202" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="0.8">FAQ ARCHITECTURE · 2026-11-08/09</text>
+  <text x="356" y="72" fill="#F8FAFC" font-size="19.5" font-weight="800">OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 本体 vs 四大云数据共享架构</text>
+  <text x="64" y="102" fill="#94A3B8" font-size="13">第一性原理图解：为什么「只共享裸表」会让 AI 产生 +14.2% 口径幻觉？如何用 OneLake IQ Sharing + Salesforce Data 360 + Azure Local 构建 515ms 跨企闭环</text>
+
+  <!-- Left Column: OneLake Zero-Copy Trio & Sovereign Edge -->
+  <rect x="44" y="138" width="390" height="420" rx="14" fill="#111C33" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="64" y="166" fill="#38BDF8" font-size="14" font-weight="800">01 · OneLake 零拷贝三剑客与断网边缘接入</text>
+
+  <rect x="64" y="182" width="350" height="88" rx="10" fill="url(#iqGrad)" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="80" y="204" fill="#38BDF8" font-size="12.5" font-weight="800">① OneLake IQ Sharing (Preview) · 跨企业带脑子共享</text>
+  <text x="80" y="222" fill="#F8FAFC" font-size="11">• 不止共享 Parquet 表，连同 RDF 本体 (.rdf) 与智能体</text>
+  <text x="80" y="238" fill="#CBD5E1" font-size="11">  指令 (.md) 一起跨组织零拷贝共享 (TomTom / S&amp;P / EY)</text>
+  <text x="80" y="256" fill="#34D399" font-size="10.5" font-weight="700">✓ 接收方 Agent 开箱即懂业务关系与行业红线，零二次建模</text>
+
+  <rect x="64" y="280" width="350" height="82" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="80" y="302" fill="#34D399" font-size="12.5" font-weight="800">② OneLake Shortcuts · Salesforce Data 360 &amp; AWS S3</text>
+  <text x="80" y="320" fill="#E2E8F0" font-size="11">• 原地指针直连 Salesforce Data 360 客户画像与 S3 Tables</text>
+  <text x="80" y="336" fill="#94A3B8" font-size="11">• 智能缓存 (28ms 命中) + Outbound Access Protection 防泄露</text>
+  <text x="80" y="352" fill="#34D399" font-size="10.5" font-weight="700">✓ 0 字节物理搬运、0 夜间定时 ETL、省 100% 重复跨云流量费</text>
+
+  <rect x="64" y="372" width="350" height="82" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="80" y="394" fill="#C084FC" font-size="12.5" font-weight="800">③ OneLake Mirroring (GA) · BigQuery / Snowflake / Oracle</text>
+  <text x="80" y="412" fill="#E2E8F0" font-size="11">• 自动监听源库 CDC 事务日志，近实时映射为 OneLake Delta</text>
+  <text x="80" y="428" fill="#94A3B8" font-size="11">• 联合 Apache Ossie YAML 将外部 Verified Queries 无损带入</text>
+  <text x="80" y="444" fill="#34D399" font-size="10.5" font-weight="700">✓ 彻底替代脆弱昂贵的第三方 CDC 与双写管道</text>
+
+  <rect x="64" y="464" width="350" height="80" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="80" y="486" fill="#FBBF24" font-size="12.5" font-weight="800">④ SQL Server on Azure Local (ALDO) &amp; GCC High (GA)</text>
+  <text x="80" y="504" fill="#E2E8F0" font-size="11">• 本地 Appliance-VM 断网控制面支撑涉密厂区与军工主权云</text>
+  <text x="80" y="520" fill="#94A3B8" font-size="11">• 断网窗口期本地自治，恢复连接后差分增量同步至 OneLake</text>
+  <text x="80" y="536" fill="#34D399" font-size="10.5" font-weight="700">✓ 解决纯公有云数仓无法落地的车间/国防断网合规盲区</text>
+
+  <!-- Center Column: Fabric IQ Ontology Condition-Action Engine vs Raw Table Query -->
+  <rect x="454" y="138" width="502" height="420" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="474" y="166" fill="#60A5FA" font-size="14" font-weight="800">02 · 核心原理解析：裸表 Text-to-SQL vs Fabric IQ 本体接地</text>
+
+  <rect x="474" y="182" width="462" height="106" rx="10" fill="#1F1224" stroke="#EF4444" stroke-width="1.3"/>
+  <text x="490" y="204" fill="#F87171" font-size="12.5" font-weight="800">⛔ 传统模式痛点：只共享裸表 + 大模型直接拼 SQL (反例 DL-23)</text>
+  <text x="490" y="224" fill="#E2E8F0" font-size="11">• 外部伙伴通过传统共享发来 50 张缩写列名表 (如 `tbl_ord_v2_tmp`)</text>
+  <text x="490" y="242" fill="#E2E8F0" font-size="11">• LLM 缺乏业务口径，误连废弃中间表，导致毛利/风险算错 +14.2%</text>
+  <text x="490" y="260" fill="#FCA5A5" font-size="11" font-weight="700">• 仅能回答被动图表问题，无法自动判断违约阈值或安全回写业务系统</text>
+
+  <rect x="474" y="300" width="462" height="134" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.4"/>
+  <text x="490" y="322" fill="#34D399" font-size="12.5" font-weight="800">✅ Fabric IQ Ontology 升维：实体 + 多跳关系 + 条件动作规则 (Rules)</text>
+  <text x="490" y="342" fill="#E2E8F0" font-size="11">• 一键从 2000万+ Power BI 语义模型与 IQ Sharing RDF 生成统一业务本体</text>
+  <text x="490" y="360" fill="#E2E8F0" font-size="11">• 内嵌 Condition-Action 规则：如 `PortDelay &gt; 24h AND ARR_At_Risk &gt;= $1M`</text>
+  <text x="490" y="378" fill="#E2E8F0" font-size="11">• 结合 Microsoft IQ 四大支柱：Work IQ (省 80% Token) + Foundry IQ (+36% 相关性)</text>
+  <text x="490" y="396" fill="#E2E8F0" font-size="11">• Purview 标签自动继承：向外部物流派单时自动掩码 Salesforce 合同底价</text>
+  <text x="490" y="416" fill="#38BDF8" font-size="11" font-weight="700">• 实测 48 场景准确率达 97.92% (47/48)，选项逆序扰动漂移 &lt;= 0.5 pt</text>
+
+  <rect x="474" y="446" width="462" height="94" rx="10" fill="#172554" stroke="#60A5FA" stroke-width="1.3"/>
+  <text x="490" y="468" fill="#93C5FD" font-size="12.5" font-weight="800">M365 Copilot ($0 额外 Token) + Rayfin SDK + 1GB 免费 SQL 闭环</text>
+  <text x="490" y="488" fill="#F8FAFC" font-size="11">• 业务高管在 Teams / M365 Copilot 中零额外 Token 随时追问跨企供应链状态</text>
+  <text x="490" y="508" fill="#34D399" font-size="11" font-weight="700">• Rayfin TS 函数一键回写 1GB 免费 Fabric SQL 并推送 Salesforce 续约预警卡</text>
+
+  <!-- Right Column: Scenario H Live Closed-Loop Trace -->
+  <rect x="976" y="138" width="420" height="420" rx="14" fill="#111C33" stroke="#10B981" stroke-width="1.5"/>
+  <text x="996" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 场景 H 闭环：跨企供应链 × Salesforce 零拷贝</text>
+
+  <rect x="996" y="182" width="380" height="358" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+  <text x="1012" y="206" fill="#F8FAFC" font-size="12" font-weight="800">端到端 515ms · 护航 42 家大客户 ($1.15M SLA 止损)</text>
+
+  <text x="1012" y="230" fill="#38BDF8" font-size="11" font-weight="700">[Step 1 · 92ms] OneLake IQ Sharing 外部本体感知</text>
+  <text x="1012" y="246" fill="#CBD5E1" font-size="10.5">订阅 TomTom 鹿特丹港 RDF 本体，捕获航线拥堵延误 +96 小时</text>
+
+  <text x="1012" y="272" fill="#C084FC" font-size="11" font-weight="700">[Step 2 · 126ms] Salesforce Data 360 + Azure Local 穿透</text>
+  <text x="1012" y="288" fill="#CBD5E1" font-size="10.5">零拷贝联查 42 家大客户 ($18.4M ARR) 合同与匈牙利工厂 WIP</text>
+
+  <text x="1012" y="314" fill="#34D399" font-size="11" font-weight="700">[Step 3 · 108ms] Ontology Condition-Action 规则求解</text>
+  <text x="1012" y="330" fill="#CBD5E1" font-size="10.5">华沙保税仓调拨 780 套 + 中欧铁空联运加急 500 套 (运费 $34.5K)</text>
+
+  <text x="1012" y="356" fill="#FBBF24" font-size="11" font-weight="700">[Step 4 · 94ms] Foundry IQ + Purview 跨企主权护栏</text>
+  <text x="1012" y="372" fill="#CBD5E1" font-size="10.5">拦截向外部承运商泄露 Salesforce 合同底价，仅下发脱敏交期</text>
+
+  <text x="1012" y="398" fill="#60A5FA" font-size="11" font-weight="700">[Step 5 · 95ms] Rayfin 门户 + 1GB SQL &amp; CRM 回写</text>
+  <text x="1012" y="414" fill="#CBD5E1" font-size="10.5">回写 1GB 免费 Fabric SQL 并刷新 Salesforce CSM 客户预警卡</text>
+
+  <rect x="1012" y="434" width="348" height="90" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1"/>
+  <text x="1026" y="456" fill="#93C5FD" font-size="11.5" font-weight="800">仿真验证指标 (Scenario H Verified Metrics)</text>
+  <text x="1026" y="476" fill="#F8FAFC" font-size="11">• 跨企零拷贝联查延迟：92ms KQL + 126ms Graph (515ms E2E)</text>
+  <text x="1026" y="494" fill="#F8FAFC" font-size="11">• 1,280 台 AI 机柜订单准时交付率：99.6% (42 家大客户)</text>
+  <text x="1026" y="512" fill="#34D399" font-size="11" font-weight="700">• 单次规避 SLA 违约罚金与续约流失：$1,150,000</text>
+
+  <!-- Bottom Row: 5-Cloud Data & Context Sharing Competitive Matrix -->
+  <rect x="44" y="576" width="1352" height="244" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="64" y="604" fill="#60A5FA" font-size="14" font-weight="800">04 · 五大平台「跨企数据/语义共享 + CRM 零拷贝 + 主权边缘」横向攻防矩阵 (2026-11-08/09 FAQ Matrix)</text>
+
+  <rect x="64" y="618" width="256" height="184" rx="10" fill="#172554" stroke="#34D399" stroke-width="1.4"/>
+  <text x="80" y="640" fill="#34D399" font-size="12.5" font-weight="800">Microsoft Fabric + OneLake</text>
+  <text x="80" y="660" fill="#F8FAFC" font-size="11">• OneLake IQ Sharing (表+RDF+指令)</text>
+  <text x="80" y="678" fill="#F8FAFC" font-size="11">• Salesforce Data 360 零拷贝 Shortcut</text>
+  <text x="80" y="696" fill="#F8FAFC" font-size="11">• Ontology 条件-动作规则 (Rules)</text>
+  <text x="80" y="714" fill="#F8FAFC" font-size="11">• SQL Server Azure Local + GCC High</text>
+  <text x="80" y="736" fill="#34D399" font-size="11" font-weight="700">★ 优势：带业务上下文共享+公私全覆盖</text>
+  <text x="80" y="756" fill="#93C5FD" font-size="10.5">M365 Copilot $0 额外 Token 直接调用</text>
+
+  <rect x="332" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="348" y="640" fill="#F97316" font-size="12.5" font-weight="800">Databricks OpenSharing</text>
+  <text x="348" y="660" fill="#E2E8F0" font-size="11">• OpenSharing (原 Delta Sharing)</text>
+  <text x="348" y="678" fill="#E2E8F0" font-size="11">• 支持表、AI模型、Lakebase 流共享</text>
+  <text x="348" y="696" fill="#E2E8F0" font-size="11">• UC Metric View 关系定义 (Beta)</text>
+  <text x="348" y="714" fill="#94A3B8" font-size="11">• 痛点：缺业务级条件-动作规则与</text>
+  <text x="348" y="732" fill="#94A3B8" font-size="11">  断网本地控制面，需另付 BI/Token</text>
+  <text x="348" y="756" fill="#F97316" font-size="10.5" font-weight="700">建议：OpenSharing 表挂载入 OneLake</text>
+
+  <rect x="600" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="616" y="640" fill="#38BDF8" font-size="12.5" font-weight="800">Snowflake Horizon + Polaris</text>
+  <text x="616" y="660" fill="#E2E8F0" font-size="11">• Horizon 消费 Delta Shares (GA)</text>
+  <text x="616" y="678" fill="#E2E8F0" font-size="11">• Polaris 开源 Iceberg REST 目录</text>
+  <text x="616" y="696" fill="#E2E8F0" font-size="11">• 与微软共建 Apache Ossie 标准</text>
+  <text x="616" y="714" fill="#94A3B8" font-size="11">• 痛点：纯云端架构不支持车间断网</text>
+  <text x="616" y="732" fill="#94A3B8" font-size="11">  部署，高频问数 Credit 成本高 56%</text>
+  <text x="616" y="756" fill="#38BDF8" font-size="10.5" font-weight="700">建议：Mirroring + Ossie 零漂移接入</text>
+
+  <rect x="868" y="618" width="256" height="184" rx="10" fill="#0F172A" stroke="#34D399" stroke-width="1.2"/>
+  <text x="884" y="640" fill="#34D399" font-size="12.5" font-weight="800">GCP Analytics Hub + BigLake</text>
+  <text x="884" y="660" fill="#E2E8F0" font-size="11">• Analytics Hub 跨组织数据集发布</text>
+  <text x="884" y="678" fill="#E2E8F0" font-size="11">• BigLake Managed Iceberg REST</text>
+  <text x="884" y="696" fill="#E2E8F0" font-size="11">• Conversational Analytics GA</text>
+  <text x="884" y="714" fill="#94A3B8" font-size="11">• 痛点：仅共享静态数据集，缺乏跨</text>
+  <text x="884" y="732" fill="#94A3B8" font-size="11">  组织 RDF 本体指令与原生回写库</text>
+  <text x="884" y="756" fill="#34D399" font-size="10.5" font-weight="700">建议：启用 OneLake BigQuery 镜像 GA</text>
+
+  <rect x="1136" y="618" width="240" height="184" rx="10" fill="#0F172A" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="1152" y="640" fill="#FBBF24" font-size="12.5" font-weight="800">AWS S3 Tables + DataZone</text>
+  <text x="1152" y="660" fill="#E2E8F0" font-size="11">• S3 Tables 原生 Iceberg + Zero-ETL</text>
+  <text x="1152" y="678" fill="#E2E8F0" font-size="11">• Lake Formation 临时凭证签发</text>
+  <text x="1152" y="696" fill="#E2E8F0" font-size="11">• DataZone 业务目录共享</text>
+  <text x="1152" y="714" fill="#94A3B8" font-size="11">• 痛点：与 Salesforce / Office 割裂，</text>
+  <text x="1152" y="732" fill="#94A3B8" font-size="11">  需拼装 6 套组件且缺统一语义本体</text>
+  <text x="1152" y="756" fill="#FBBF24" font-size="10.5" font-weight="700">建议：S3 Cached Shortcut 原地纳管</text>
+</svg>

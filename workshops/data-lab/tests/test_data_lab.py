@@ -138,12 +138,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
         self.assertEqual(sim["decision_routing"]["action"], "Confirm")
 
-    def test_scenario_matrix_44_cases_and_explicit_miss(self) -> None:
+    def test_supply_chain_iq_sharing_salesforce_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("supply_chain_iq_sharing_salesforce")
+        self.assertGreater(
+            sim["telemetry"]["port_delay_hours"],
+            sim["telemetry"]["max_safe_delay_hours"],
+        )
+        self.assertEqual(sim["telemetry"]["impacted_enterprise_accounts"], 42)
+        self.assertEqual(sim["telemetry"]["affected_rack_orders"], 1280)
+        self.assertEqual(sim["multi_agent_plan"]["on_time_delivery_preserved_pct"], 99.6)
+        self.assertTrue(sim["foundry_iq_guardrail"]["purview_confidential_net_price_masked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["external_partner_raw_crm_leak_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+
+    def test_scenario_matrix_48_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 44)
-        self.assertEqual(matrix["passed_scenarios"], 43)
+        self.assertEqual(matrix["total_scenarios"], 48)
+        self.assertEqual(matrix["passed_scenarios"], 47)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 97.73, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 97.92, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -203,6 +217,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Eventstream/Eventhouse", by_id["DL-43"]["expected"])
         self.assertIn("OneLake S3 Shortcut", by_id["DL-44"]["expected"])
 
+    def test_iq_sharing_opensharing_salesforce_sovereign_2026_11_08_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-45", "DL-46", "DL-47", "DL-48"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("OneLake IQ Sharing", by_id["DL-45"]["expected"])
+        self.assertIn("Apache Ossie YAML", by_id["DL-46"]["expected"])
+        self.assertIn("Salesforce Data 360 Shortcut", by_id["DL-47"]["expected"])
+        self.assertIn("SQL Server on Azure Local", by_id["DL-48"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -220,12 +245,13 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 43)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 47)
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
         self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
         self.assertIn("finops_rayfin_observability", loaded["ontology_simulations"])
         self.assertIn("healthcare_clinical_supply_diskann", loaded["ontology_simulations"])
         self.assertIn("manufacturing_digital_twin_zeroprov", loaded["ontology_simulations"])
+        self.assertIn("supply_chain_iq_sharing_salesforce", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

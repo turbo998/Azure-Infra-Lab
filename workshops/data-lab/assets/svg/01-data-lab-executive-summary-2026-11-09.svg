@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 980" width="1440" height="980" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabricBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="980" fill="url(#bgGrad)"/>
+  <rect x="24" y="20" width="1392" height="940" rx="20" fill="#0B1324" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Top Header Banner -->
+  <rect x="44" y="38" width="1352" height="86" rx="14" fill="#131F38" stroke="#2563EB" stroke-width="1.5"/>
+  <rect x="64" y="54" width="210" height="26" rx="13" fill="url(#accentGrad)"/>
+  <text x="169" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">DATA LAB · 2026-11-08/09</text>
+  <text x="290" y="72" fill="#F8FAFC" font-size="20" font-weight="800">Microsoft Fabric × 四大云竞对选型 FAQ：OneLake 零拷贝、IQ Sharing 与八大本体闭环一图流</text>
+  <text x="64" y="104" fill="#94A3B8" font-size="13">Executive Visual Summary · OneLake IQ Sharing / Salesforce Data 360 / Azure Local vs OpenSharing / Horizon / BigQuery / S3 Tables · 48 场景评测 (544.5ms)</text>
+  <rect x="1180" y="52" width="196" height="56" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">48 场景基准得分</text>
+  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">47 / 48 (97.92%)</text>
+
+  <!-- Row 1 Left: 2026-11-08/09 Daily Breakthroughs across 5 Clouds -->
+  <rect x="44" y="140" width="664" height="270" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="64" y="168" fill="#60A5FA" font-size="14" font-weight="800" letter-spacing="0.5">01 · 今日五大平台能力突破追踪 (2026-11-08 / 11-09 Breakthrough Radar)</text>
+
+  <rect x="64" y="182" width="624" height="40" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1"/>
+  <text x="78" y="200" fill="#93C5FD" font-size="12" font-weight="800">Microsoft Fabric</text>
+  <text x="198" y="200" fill="#F8FAFC" font-size="11.5">OneLake IQ Sharing (RDF 本体+Markdown 指令跨企共享) · Salesforce Data 360 零拷贝 ·</text>
+  <text x="198" y="216" fill="#CBD5E1" font-size="11">Fabric IQ Ontology 条件-动作规则 · SQL Server on Azure Local (ALDO 断网控制面) &amp; GCC High GA</text>
+
+  <rect x="64" y="228" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <text x="78" y="246" fill="#F97316" font-size="12" font-weight="800">Databricks</text>
+  <text x="198" y="246" fill="#F8FAFC" font-size="11.5">Delta Sharing 演进为 OpenSharing (表+AI模型+Agent技能共享) · UC Metric View 关系 (Beta) ·</text>
+  <text x="198" y="260" fill="#94A3B8" font-size="11">Lakebase 实时数据流共享 + ABAC DENY 策略 · 仍缺乏内嵌业务动作规则与 $0 Copilot Token</text>
+
+  <rect x="64" y="272" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <text x="78" y="290" fill="#38BDF8" font-size="12" font-weight="800">Snowflake</text>
+  <text x="198" y="290" fill="#F8FAFC" font-size="11.5">Horizon Catalog 原生消费 Delta Shares (GA 自动转 Iceberg) · Polaris 开源 Iceberg 目录 ·</text>
+  <text x="198" y="304" fill="#94A3B8" font-size="11">与微软共建 Apache Ossie 开放语义标准 · 高并发问数与 1 分钟 Dynamic Tables 仍有 Credit 溢价</text>
+
+  <rect x="64" y="316" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <text x="78" y="334" fill="#34D399" font-size="12" font-weight="800">GCP BigQuery</text>
+  <text x="198" y="334" fill="#F8FAFC" font-size="11.5">Analytics Hub + BigLake Managed Iceberg REST Catalog · Conversational Analytics GA ·</text>
+  <text x="198" y="348" fill="#94A3B8" font-size="11">OneLake BigQuery Mirroring 正式 GA：无需 Dataflow 即可将 GA4 流量零 ETL 接入 Fabric IQ</text>
+
+  <rect x="64" y="360" width="624" height="38" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <text x="78" y="378" fill="#FBBF24" font-size="12" font-weight="800">AWS Lakehouse</text>
+  <text x="198" y="378" fill="#F8FAFC" font-size="11.5">S3 Tables (原生 Iceberg v3) + Glue Zero-ETL + DataZone / Lake Formation 凭证签发 ·</text>
+  <text x="198" y="392" fill="#94A3B8" font-size="11">OneLake S3 Cached Shortcut + Salesforce Data 360 零拷贝免搬迁终结 6 组件拼装</text>
+
+  <!-- Row 1 Right: 6-Dimension Competitive Scoring Matrix -->
+  <rect x="728" y="140" width="668" height="270" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="748" y="168" fill="#60A5FA" font-size="14" font-weight="800" letter-spacing="0.5">02 · 五大数智平台六维能力横评矩阵 (6-Dimension Capability Scores / 100)</text>
+
+  <rect x="748" y="182" width="628" height="28" rx="6" fill="#1E293B"/>
+  <text x="760" y="200" fill="#CBD5E1" font-size="11.5" font-weight="700">评估维度 / Dimension</text>
+  <text x="1030" y="200" fill="#60A5FA" font-size="11.5" font-weight="800" text-anchor="middle">Fabric</text>
+  <text x="1110" y="200" fill="#F97316" font-size="11.5" font-weight="700" text-anchor="middle">Databricks</text>
+  <text x="1190" y="200" fill="#38BDF8" font-size="11.5" font-weight="700" text-anchor="middle">Snowflake</text>
+  <text x="1270" y="200" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">GCP</text>
+  <text x="1340" y="200" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">AWS</text>
+
+  <text x="760" y="228" fill="#F8FAFC" font-size="12">1. 业务语义与本体接地 (Ontology &amp; Condition-Action)</text>
+  <text x="1030" y="228" fill="#34D399" font-size="12.5" font-weight="800" text-anchor="middle">96.0 ★</text>
+  <text x="1110" y="228" fill="#E2E8F0" font-size="12" text-anchor="middle">83.0</text>
+  <text x="1190" y="228" fill="#E2E8F0" font-size="12" text-anchor="middle">85.0</text>
+  <text x="1270" y="228" fill="#E2E8F0" font-size="12" text-anchor="middle">84.0</text>
+  <text x="1340" y="228" fill="#94A3B8" font-size="12" text-anchor="middle">78.0</text>
+
+  <text x="760" y="256" fill="#F8FAFC" font-size="12">2. 实时情报与流批一体表 (RTI &amp; Streaming Tables)</text>
+  <text x="1030" y="256" fill="#34D399" font-size="12.5" font-weight="800" text-anchor="middle">95.0 ★</text>
+  <text x="1110" y="256" fill="#E2E8F0" font-size="12" text-anchor="middle">84.0</text>
+  <text x="1190" y="256" fill="#94A3B8" font-size="12" text-anchor="middle">80.0</text>
+  <text x="1270" y="256" fill="#E2E8F0" font-size="12" text-anchor="middle">83.0</text>
+  <text x="1340" y="256" fill="#E2E8F0" font-size="12" text-anchor="middle">82.0</text>
+
+  <text x="760" y="284" fill="#F8FAFC" font-size="12">3. 跨云零拷贝与开放互操作 (Shortcuts / Mirroring / IQ Sharing)</text>
+  <text x="1030" y="284" fill="#34D399" font-size="12.5" font-weight="800" text-anchor="middle">94.0 ★</text>
+  <text x="1110" y="284" fill="#E2E8F0" font-size="12" text-anchor="middle">85.0</text>
+  <text x="1190" y="284" fill="#E2E8F0" font-size="12" text-anchor="middle">86.0</text>
+  <text x="1270" y="284" fill="#E2E8F0" font-size="12" text-anchor="middle">87.0</text>
+  <text x="1340" y="284" fill="#94A3B8" font-size="12" text-anchor="middle">81.0</text>
+
+  <text x="760" y="312" fill="#F8FAFC" font-size="12">4. 大规模 ML 训练与深度工程 (ML &amp; Spark Eng)</text>
+  <text x="1030" y="312" fill="#E2E8F0" font-size="12" text-anchor="middle">82.0</text>
+  <text x="1110" y="312" fill="#F97316" font-size="12.5" font-weight="800" text-anchor="middle">97.0 ★</text>
+  <text x="1190" y="312" fill="#E2E8F0" font-size="12" text-anchor="middle">84.0</text>
+  <text x="1270" y="312" fill="#E2E8F0" font-size="12" text-anchor="middle">89.0</text>
+  <text x="1340" y="312" fill="#E2E8F0" font-size="12" text-anchor="middle">90.0</text>
+
+  <text x="760" y="340" fill="#F8FAFC" font-size="12">5. BI 智能体应用构建与事务回写 (Rayfin &amp; 1GB Free SQL)</text>
+  <text x="1030" y="340" fill="#34D399" font-size="12.5" font-weight="800" text-anchor="middle">98.0 ★</text>
+  <text x="1110" y="340" fill="#94A3B8" font-size="12" text-anchor="middle">81.0</text>
+  <text x="1190" y="340" fill="#E2E8F0" font-size="12" text-anchor="middle">83.0</text>
+  <text x="1270" y="340" fill="#E2E8F0" font-size="12" text-anchor="middle">82.0</text>
+  <text x="1340" y="340" fill="#94A3B8" font-size="12" text-anchor="middle">77.0</text>
+
+  <text x="760" y="368" fill="#F8FAFC" font-size="12">6. 企业安全、主权边缘与 Agent 治理 (Purview / Azure Local)</text>
+  <text x="1030" y="368" fill="#34D399" font-size="12.5" font-weight="800" text-anchor="middle">95.0 ★</text>
+  <text x="1110" y="368" fill="#E2E8F0" font-size="12" text-anchor="middle">91.0</text>
+  <text x="1190" y="368" fill="#E2E8F0" font-size="12" text-anchor="middle">92.0</text>
+  <text x="1270" y="368" fill="#E2E8F0" font-size="12" text-anchor="middle">88.0</text>
+  <text x="1340" y="368" fill="#E2E8F0" font-size="12" text-anchor="middle">89.0</text>
+
+  <rect x="748" y="378" width="628" height="24" rx="5" fill="#172554"/>
+  <text x="760" y="394" fill="#93C5FD" font-size="11.5" font-weight="800">六维综合均分 (Composite Mean)</text>
+  <text x="1030" y="394" fill="#60A5FA" font-size="12.5" font-weight="800" text-anchor="middle">93.3</text>
+  <text x="1110" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">86.8</text>
+  <text x="1190" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">85.0</text>
+  <text x="1270" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">85.5</text>
+  <text x="1340" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">82.8</text>
+
+  <!-- Row 2 Left: 8 Flagship Ontology Simulations -->
+  <rect x="44" y="426" width="664" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="64" y="446" fill="#60A5FA" font-size="13.5" font-weight="800" letter-spacing="0.4">03 · Fabric IQ 八大行业本体与跨企 IQ Sharing / Digital Twin 闭环仿真 (8 Suites)</text>
+
+  <!-- Row 1: A, B, C, D -->
+  <rect x="64" y="454" width="150" height="68" rx="7" fill="#0F172A" stroke="#2563EB" stroke-width="1.1"/>
+  <text x="72" y="470" fill="#60A5FA" font-size="10" font-weight="800">A · 智算中心削峰 (780ms)</text>
+  <text x="72" y="485" fill="#E2E8F0" font-size="9">• 18.84→15.39MW (-3.45MW)</text>
+  <text x="72" y="500" fill="#94A3B8" font-size="9">• BESS+液冷+1°C ($42.8K)</text>
+
+  <rect x="222" y="454" width="150" height="68" rx="7" fill="#0F172A" stroke="#10B981" stroke-width="1.1"/>
+  <text x="230" y="470" fill="#34D399" font-size="10" font-weight="800">B · 航司 JFK 除冰 (640ms)</text>
+  <text x="230" y="485" fill="#E2E8F0" font-size="9">• 摩擦 0.24 → 14 航班级联</text>
+  <text x="230" y="500" fill="#94A3B8" font-size="9">• 派扫雪车+6登机口 ($68.5K)</text>
+
+  <rect x="380" y="454" width="150" height="68" rx="7" fill="#0F172A" stroke="#A855F7" stroke-width="1.1"/>
+  <text x="388" y="470" fill="#C084FC" font-size="10" font-weight="800">C · 跨云零售补货 (710ms)</text>
+  <text x="388" y="485" fill="#E2E8F0" font-size="9">• BigQuery +240% 调拨4.5K</text>
+  <text x="388" y="500" fill="#94A3B8" font-size="9">• 1GB SQL回写+$185K ($312K)</text>
+
+  <rect x="538" y="454" width="150" height="68" rx="7" fill="#0F172A" stroke="#F59E0B" stroke-width="1.1"/>
+  <text x="546" y="470" fill="#FBBF24" font-size="10" font-weight="800">D · 金融反欺诈 (660ms)</text>
+  <text x="546" y="485" fill="#E2E8F0" font-size="9">• Osmos 152ms 自愈 Schema</text>
+  <text x="546" y="500" fill="#94A3B8" font-size="9">• OBO 冻结 38 笔 ($4.62M)</text>
+
+  <!-- Row 2: E, F, G -->
+  <rect x="64" y="528" width="202" height="68" rx="7" fill="#0F172A" stroke="#38BDF8" stroke-width="1.1"/>
+  <text x="74" y="544" fill="#38BDF8" font-size="10" font-weight="800">E · 18 工作区自愈 (590ms)</text>
+  <text x="74" y="559" fill="#E2E8F0" font-size="9">• F64 114.8% → 71.2% (-43.6pt)</text>
+  <text x="74" y="574" fill="#94A3B8" font-size="9">• Rayfin SDK + On-Demand ($28.4K)</text>
+
+  <rect x="275" y="528" width="202" height="68" rx="7" fill="#0F172A" stroke="#34D399" stroke-width="1.1"/>
+  <text x="285" y="544" fill="#34D399" font-size="10" font-weight="800">F · 医药冷链 DiskANN (560ms)</text>
+  <text x="285" y="559" fill="#E2E8F0" font-size="9">• 192核 DiskANN 19ms / 98.4%召回</text>
+  <text x="285" y="574" fill="#94A3B8" font-size="9">• 调拨 420 支护航 128 患者 ($640K)</text>
+
+  <rect x="486" y="528" width="202" height="68" rx="7" fill="#0F172A" stroke="#10B981" stroke-width="1.1"/>
+  <text x="496" y="544" fill="#10B981" font-size="10" font-weight="800">G · 晶圆厂数字孪生 (530ms)</text>
+  <text x="496" y="559" fill="#E2E8F0" font-size="9">• 85K EPS + Zero-Prov +24CU</text>
+  <text x="496" y="574" fill="#94A3B8" font-size="9">• 75 片 3nm 晶圆保良 99.4% ($920K)</text>
+
+  <!-- Row 3: H Full-Width Highlight -->
+  <rect x="64" y="602" width="624" height="80" rx="7" fill="#172554" stroke="#10B981" stroke-width="1.5"/>
+  <text x="78" y="620" fill="#34D399" font-size="11" font-weight="800">场景 H [NEW] · 跨企供应链 OneLake IQ Sharing × Salesforce Data 360 零拷贝 × Azure Local (515ms · 保住 $1.15M SLA)</text>
+  <text x="78" y="638" fill="#F8FAFC" font-size="10">• 订阅 TomTom 港口拥堵 RDF 本体 (+96h 延误) + Azure Local 匈牙利断网工厂 WIP + Salesforce Data 360 零拷贝 (42 家大客户 $18.4M ARR)</text>
+  <text x="78" y="654" fill="#93C5FD" font-size="10">• 触发本体 Condition-Action 规则：华沙保税仓调拨 780 套 + 中欧铁空联运 500 套 + Purview 自动脱敏底价，准时率 99.6%</text>
+  <text x="78" y="670" fill="#34D399" font-size="9.5" font-weight="700">✓ 零 ETL 搬运 · 端到端 515ms 闭环 · Rayfin 门户回写 1GB 免费 Fabric SQL 与 Salesforce CSM 续约预警卡</text>
+
+  <!-- Row 2 Right: 500-User Monthly TCO & Zero-Copy Economic Inflection -->
+  <rect x="728" y="426" width="668" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="748" y="454" fill="#60A5FA" font-size="14" font-weight="800" letter-spacing="0.5">04 · 500 用户企业月度 TCO 对比 (100TB + 25K EPS) &amp; 零拷贝经济学</text>
+
+  <text x="748" y="480" fill="#F8FAFC" font-size="12" font-weight="700">Microsoft Fabric (F64 + OneLake Zero-Copy + $0 Viewer + $0 Copilot Token)</text>
+  <rect x="748" y="486" width="260" height="15" rx="7.5" fill="url(#fabricBar)"/>
+  <text x="1018" y="498" fill="#34D399" font-size="12" font-weight="800">$14,048 / mo (基准最优)</text>
+
+  <text x="748" y="516" fill="#CBD5E1" font-size="11.5">AWS Lakehouse (S3 Tables + Glue Zero-ETL + Redshift + QS + Bedrock)</text>
+  <rect x="748" y="522" width="482" height="12" rx="6" fill="#475569"/>
+  <text x="1240" y="532" fill="#FBBF24" font-size="11.5" font-weight="700">$26,063 (省 46.1%)</text>
+
+  <text x="748" y="550" fill="#CBD5E1" font-size="11.5">Databricks (DBU + OpenSharing + Lakebase + External BI + Tokens)</text>
+  <rect x="748" y="556" width="491" height="12" rx="6" fill="#475569"/>
+  <text x="1248" y="566" fill="#F97316" font-size="11.5" font-weight="700">$26,562 (省 47.1%)</text>
+
+  <text x="748" y="584" fill="#CBD5E1" font-size="11.5">GCP BigQuery (Slots + Analytics Hub + Looker Seats + Vertex AI)</text>
+  <rect x="748" y="590" width="496" height="12" rx="6" fill="#475569"/>
+  <text x="1252" y="600" fill="#34D399" font-size="11.5" font-weight="700">$26,813 (省 47.6%)</text>
+
+  <text x="748" y="618" fill="#CBD5E1" font-size="11.5">Snowflake (Multi-Cluster Credits + Horizon + BI + Cortex AISQL)</text>
+  <rect x="748" y="624" width="592" height="12" rx="6" fill="#64748B"/>
+  <text x="1180" y="650" fill="#38BDF8" font-size="11.5" font-weight="700">$31,990 / mo (Fabric 省 56.1%)</text>
+
+  <rect x="748" y="658" width="628" height="24" rx="6" fill="#172554"/>
+  <text x="760" y="674" fill="#93C5FD" font-size="11" font-weight="700">选型铁律：存量竞品数据绝不推倒重建搬迁，用 OneLake 零拷贝挂载 + Fabric IQ 本体立省 70% 交付周期与 46%+ TCO</text>
+
+  <!-- Row 3 Bottom Full-Width: AI Solution Architect Coexistence & Decision Playbook -->
+  <rect x="44" y="708" width="1352" height="232" rx="14" fill="#111C33" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="64" y="736" fill="#60A5FA" font-size="14" font-weight="800" letter-spacing="0.5">05 · AI Solution Architect 选型决策树与四大跨云零拷贝共存打单模式 (FAQ Selection &amp; Better Together Playbook)</text>
+
+  <rect x="64" y="750" width="318" height="172" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="80" y="772" fill="#60A5FA" font-size="13" font-weight="800">模式 A · vs Snowflake (Horizon + Apache Ossie)</text>
+  <text x="80" y="792" fill="#E2E8F0" font-size="11.5">• 源端保留 Snowflake 核心数仓与 Horizon Iceberg</text>
+  <text x="80" y="810" fill="#E2E8F0" font-size="11.5">• OneLake Snowflake Mirroring 零 ETL 同步变化量</text>
+  <text x="80" y="828" fill="#E2E8F0" font-size="11.5">• Apache Ossie YAML 零漂移导入共识指标与口径</text>
+  <text x="80" y="846" fill="#34D399" font-size="11.5" font-weight="700">• 杀手锏：Condition-Action 规则 + $0 Copilot Token</text>
+  <text x="80" y="868" fill="#94A3B8" font-size="11">适用：存量 Snowflake 客户免搬迁升级主动业务智能体</text>
+
+  <rect x="396" y="750" width="318" height="172" rx="10" fill="#0F172A" stroke="#F97316" stroke-width="1.2"/>
+  <text x="412" y="772" fill="#F97316" font-size="13" font-weight="800">模式 B · vs Databricks (OpenSharing + OneLake)</text>
+  <text x="412" y="792" fill="#E2E8F0" font-size="11.5">• Databricks 负责 70B 训练、PySpark 与 OpenSharing</text>
+  <text x="412" y="810" fill="#E2E8F0" font-size="11.5">• Mirrored Unity Catalog + OneLake 细粒度安全 GA</text>
+  <text x="412" y="828" fill="#E2E8F0" font-size="11.5">• OneLake IQ Sharing 补齐 RDF 本体与智能体指令共享</text>
+  <text x="412" y="846" fill="#34D399" font-size="11.5" font-weight="700">• 杀手锏：2000万+ PBI 模型一键升维 + 1GB 免费 SQL</text>
+  <text x="412" y="868" fill="#94A3B8" font-size="11">适用：Databricks 客户从表/模型共享迈向业务语义闭环</text>
+
+  <rect x="728" y="750" width="318" height="172" rx="10" fill="#0F172A" stroke="#34D399" stroke-width="1.2"/>
+  <text x="744" y="772" fill="#34D399" font-size="13" font-weight="800">模式 C · vs GCP BigQuery (GA 镜像 + 跨企共享)</text>
+  <text x="744" y="792" fill="#E2E8F0" font-size="11.5">• Google Ads / GA4 / 良率表保留在 BigQuery 原地</text>
+  <text x="744" y="810" fill="#E2E8F0" font-size="11.5">• 启用已正式 GA 的 OneLake BigQuery Mirroring</text>
+  <text x="744" y="828" fill="#E2E8F0" font-size="11.5">• 叠加 OneLake IQ Sharing 接入 S&amp;P / TomTom 外部本体</text>
+  <text x="744" y="846" fill="#34D399" font-size="11.5" font-weight="700">• 杀手锏：免 Dataflow 胶水，515ms 跨企供应链自愈</text>
+  <text x="744" y="868" fill="#94A3B8" font-size="11">适用：跨国零售/高科技制造打通外部伙伴与内部履约</text>
+
+  <rect x="1060" y="750" width="316" height="172" rx="10" fill="#0F172A" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="1076" y="772" fill="#FBBF24" font-size="13" font-weight="800">模式 D · vs AWS &amp; Salesforce (S3 + CRM 零拷贝)</text>
+  <text x="1076" y="792" fill="#E2E8F0" font-size="11.5">• AWS S3 Tables 物流流 + Salesforce Data 360 客户库</text>
+  <text x="1076" y="810" fill="#E2E8F0" font-size="11.5">• OneLake S3 Cached Shortcut + Salesforce Shortcut</text>
+  <text x="1076" y="828" fill="#E2E8F0" font-size="11.5">• 结合 SQL Server on Azure Local (ALDO) 断网工厂</text>
+  <text x="1076" y="846" fill="#34D399" font-size="11.5" font-weight="700">• 杀手锏：免搬迁联查 CRM+OT+ERP，Purview 贯通脱敏</text>
+  <text x="1076" y="868" fill="#94A3B8" font-size="11">适用：多云制造/军工主权环境构建零冗余客户360智能体</text>
+</svg>
