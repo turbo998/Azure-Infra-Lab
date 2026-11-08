@@ -1,19 +1,20 @@
 # Azure AI Agent Infrastructure — Step 04 Validate: Customer Workshop & Architecture Design Session Runbook (Bilingual EN / 中文)
 
-> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #381 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #381 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #381 Daily Report](daily-report-2026-11-05.md)**
+> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #382 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #382 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #382 Daily Report](daily-report-2026-11-08.md)**
 >
 > **Purpose**: Actionable field delivery guide for **Step 04 Validate (1/2-Day or 1-Day Hands-On Workshop + Target Architecture Whiteboard Session)** from the *Agent Infra Playbook* (`Agent_Infra_Playbook.pptx`, Slides 14–18).
 > **定位**：面向架构师与现场交付团队的 **Step 04 Validate（半天/全天动手工作坊 + 目标架构白板共创）** 落地执行手册（覆盖 384 章行业模型、377 套 IaC 蓝图与 376 项定量仿真器，385/385 项单测全绿）。
 
 ---
 
-## 0. Cycle #381 publish bundle (2026-11-05)
+## 0. Cycle #382 publish bundle (2026-11-08)
 
 - **7-card visual deck (4:5)**: [`benchmark-cards.html`](benchmark-cards.html) / [`benchmark-cards.en.html`](benchmark-cards.en.html)
-- **Interactive benchmark workbench**: [`workbench-cycle-381.html`](workbench-cycle-381.html)
-- **Daily breakthroughs one-pager SVG**: [`assets/13-cycle-381-daily-breakthroughs.svg`](assets/13-cycle-381-daily-breakthroughs.svg)
-- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-378-benchmark.json`](evidence/cycle-378-benchmark.json)
-- **Monograph addendum**: [`docs/full-monograph-cycle-381.md`](docs/full-monograph-cycle-381.md) / [`docs/full-monograph-cycle-381.en.md`](docs/full-monograph-cycle-381.en.md)
+- **Interactive benchmark workbench**: [`workbench-cycle-382.html`](workbench-cycle-382.html)
+- **Daily breakthroughs one-pager SVG**: [`assets/14-cycle-382-daily-breakthroughs.svg`](assets/14-cycle-382-daily-breakthroughs.svg)
+- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-382-benchmark.json`](evidence/cycle-382-benchmark.json)
+- **Monograph addendum**: [`docs/full-monograph-cycle-382.md`](docs/full-monograph-cycle-382.md) / [`docs/full-monograph-cycle-382.en.md`](docs/full-monograph-cycle-382.en.md)
+- **Selection FAQ (ZH/EN)**: [`apim-genai-gateway-selection-faq.md`](apim-genai-gateway-selection-faq.md) / [`apim-genai-gateway-selection-faq.en.md`](apim-genai-gateway-selection-faq.en.md)
 
 ---
 
