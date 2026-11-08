@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #401 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-401.html](workbench-cycle-401.html) · [daily-report-2026-11-14.en.md](daily-report-2026-11-14.en.md)
+> 🔎 **Cycle #402 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-402.html](workbench-cycle-402.html) · [daily-report-2026-11-14.en.md](daily-report-2026-11-14.en.md)
 
 ---
 
-## 1) Cycle #401 release summary (2026-11-14)
+## 1) Cycle #402 release summary (2026-11-14)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #401 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #401 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #401 workbench** | Interactive benchmark surface | [`workbench-cycle-401.html`](workbench-cycle-401.html) |
+| **Cycle #402 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #402 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #402 workbench** | Interactive benchmark surface | [`workbench-cycle-402.html`](workbench-cycle-402.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-401-benchmark.json`](evidence/cycle-401-benchmark.json)
-- Source ledger: [`evidence/cycle-401-sources.json`](evidence/cycle-401-sources.json)
+- Canonical payload: [`evidence/cycle-402-benchmark.json`](evidence/cycle-402-benchmark.json)
+- Source ledger: [`evidence/cycle-402-sources.json`](evidence/cycle-402-sources.json)
 - Metric CSV files:
-  - [`cycle-401-latency.csv`](evidence/cycle-401-latency.csv)
-  - [`cycle-401-throughput.csv`](evidence/cycle-401-throughput.csv)
-  - [`cycle-401-policy.csv`](evidence/cycle-401-policy.csv)
-  - [`cycle-401-cost.csv`](evidence/cycle-401-cost.csv)
+  - [`cycle-402-latency.csv`](evidence/cycle-402-latency.csv)
+  - [`cycle-402-throughput.csv`](evidence/cycle-402-throughput.csv)
+  - [`cycle-402-policy.csv`](evidence/cycle-402-policy.csv)
+  - [`cycle-402-cost.csv`](evidence/cycle-402-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-14.en.md`](daily-report-2026-11-14.en.md)
 - Daily report (ZH): [`daily-report-2026-11-14.md`](daily-report-2026-11-14.md)
-- One-page SVG: [`assets/31-cycle-401-daily-breakthroughs.svg`](assets/31-cycle-401-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-401.en.md`](docs/full-monograph-cycle-401.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-401.md`](docs/full-monograph-cycle-401.md)
-- Selection FAQ (EN): [`mcp-timeout-budget-selection-faq.en.md`](mcp-timeout-budget-selection-faq.en.md)
-- Selection FAQ (ZH): [`mcp-timeout-budget-selection-faq.md`](mcp-timeout-budget-selection-faq.md)
+- One-page SVG: [`assets/32-cycle-402-daily-breakthroughs.svg`](assets/32-cycle-402-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-402.en.md`](docs/full-monograph-cycle-402.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-402.md`](docs/full-monograph-cycle-402.md)
+- Selection FAQ (EN): [`a2a-dead-letter-selection-faq.en.md`](a2a-dead-letter-selection-faq.en.md)
+- Selection FAQ (ZH): [`a2a-dead-letter-selection-faq.md`](a2a-dead-letter-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
