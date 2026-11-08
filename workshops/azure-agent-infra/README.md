@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook（精简版）
 
 > 🌐 **Language / 语言切换**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
-> 🔎 **Cycle #396 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-396.html](workbench-cycle-396.html) · [daily-report-2026-11-14.md](daily-report-2026-11-14.md)
+> 🔎 **Cycle #397 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-397.html](workbench-cycle-397.html) · [daily-report-2026-11-14.md](daily-report-2026-11-14.md)
 
 ---
 
-## 一、Cycle #396 发布摘要（2026-11-14）
+## 一、Cycle #397 发布摘要（2026-11-14）
 
 - **主题**：云原生 Agent Infra（Runtime/Sandbox、AI Gateway、MCP/A2A 编排与可观测）
 - **当日证据口径**：2026 官方文档 / changelog / release notes 优先
@@ -26,21 +26,21 @@
 | 双轨仿真 Demo | AKSClaw × E2B | [`demo.html`](demo.html) |
 | 选型与容量测算 | 决策树 + 10 万沙箱估算 | [`selector.html`](selector.html) |
 | 历史 7-card 卡组 | 既有可视化入口 | [`cards.html`](cards.html) |
-| **Cycle #396 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #396 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #396 工作台** | 新增交互实验台 | [`workbench-cycle-396.html`](workbench-cycle-396.html) |
+| **Cycle #397 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #397 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #397 工作台** | 新增交互实验台 | [`workbench-cycle-397.html`](workbench-cycle-397.html) |
 
 ---
 
 ## 三、可复现实验与证据
 
-- 基准主文件：[`evidence/cycle-396-benchmark.json`](evidence/cycle-396-benchmark.json)
-- 来源台账：[`evidence/cycle-396-sources.json`](evidence/cycle-396-sources.json)
+- 基准主文件：[`evidence/cycle-397-benchmark.json`](evidence/cycle-397-benchmark.json)
+- 来源台账：[`evidence/cycle-397-sources.json`](evidence/cycle-397-sources.json)
 - 指标 CSV：
-  - [`cycle-396-latency.csv`](evidence/cycle-396-latency.csv)
-  - [`cycle-396-throughput.csv`](evidence/cycle-396-throughput.csv)
-  - [`cycle-396-policy.csv`](evidence/cycle-396-policy.csv)
-  - [`cycle-396-cost.csv`](evidence/cycle-396-cost.csv)
+  - [`cycle-397-latency.csv`](evidence/cycle-397-latency.csv)
+  - [`cycle-397-throughput.csv`](evidence/cycle-397-throughput.csv)
+  - [`cycle-397-policy.csv`](evidence/cycle-397-policy.csv)
+  - [`cycle-397-cost.csv`](evidence/cycle-397-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - 日报（中文）：[`daily-report-2026-11-14.md`](daily-report-2026-11-14.md)
 - 日报（英文）：[`daily-report-2026-11-14.en.md`](daily-report-2026-11-14.en.md)
-- 一图流 SVG：[`assets/27-cycle-396-daily-breakthroughs.svg`](assets/27-cycle-396-daily-breakthroughs.svg)
-- 专著增补（中文）：[`docs/full-monograph-cycle-396.md`](docs/full-monograph-cycle-396.md)
-- 专著增补（英文）：[`docs/full-monograph-cycle-396.en.md`](docs/full-monograph-cycle-396.en.md)
-- 选型 FAQ（中文）：[`sandbox-attestation-selection-faq.md`](sandbox-attestation-selection-faq.md)
-- 选型 FAQ（英文）：[`sandbox-attestation-selection-faq.en.md`](sandbox-attestation-selection-faq.en.md)
+- 一图流 SVG：[`assets/27-cycle-397-daily-breakthroughs.svg`](assets/27-cycle-397-daily-breakthroughs.svg)
+- 专著增补（中文）：[`docs/full-monograph-cycle-397.md`](docs/full-monograph-cycle-397.md)
+- 专著增补（英文）：[`docs/full-monograph-cycle-397.en.md`](docs/full-monograph-cycle-397.en.md)
+- 选型 FAQ（中文）：[`sandbox-egress-control-selection-faq.md`](sandbox-egress-control-selection-faq.md)
+- 选型 FAQ（英文）：[`sandbox-egress-control-selection-faq.en.md`](sandbox-egress-control-selection-faq.en.md)
 - 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 - 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 
