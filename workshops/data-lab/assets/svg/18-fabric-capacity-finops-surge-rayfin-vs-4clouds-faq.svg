@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" width="1600" height="1040">
+  <defs>
+    <linearGradient id="bgR10" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="headerR10" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="cardDark10" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1040" fill="url(#bgR10)"/>
+
+  <!-- Header Banner -->
+  <rect x="30" y="24" width="1540" height="96" rx="16" fill="url(#cardDark10)" stroke="#334155" stroke-width="1.5"/>
+  <rect x="30" y="24" width="1540" height="6" rx="3" fill="url(#headerR10)"/>
+  <text x="56" y="64" fill="#F8FAFC" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="25" font-weight="800">
+    Round 10 · Fabric Capacity FinOps, Surge Protection &amp; Rayfin Chargeback vs. 4 Clouds Selection FAQ
+  </text>
+  <text x="56" y="96" fill="#94A3B8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14.5">
+    [Vendor Spec as-of 2026-11-08 &amp; Synthetic Scenario Q] Fabric Surge Protection (75% Background Cap) + 24h CU Smoothing + Rayfin vs. Snowflake Resource Monitors / Databricks Budget Policies
+  </text>
+  <rect x="1245" y="44" width="300" height="54" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1395" y="67" text-anchor="middle" fill="#A7F3D0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    SEALED BENCHMARK (2026-11-09 R10)
+  </text>
+  <text x="1395" y="88" text-anchor="middle" fill="#ECFDF5" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13.5" font-weight="700">
+    n=84: 496.0ms | n=17 Sims: 527.0ms
+  </text>
+
+  <!-- Section 1: Left Architecture Comparison (Noisy-Neighbor & Pay-Per-Query Spikes vs Fabric Surge Protection) -->
+  <rect x="30" y="138" width="755" height="420" rx="14" fill="url(#cardDark10)" stroke="#334155" stroke-width="1.5"/>
+  <text x="54" y="172" fill="#38BDF8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18" font-weight="700">
+    1. First-Principles FinOps Mechanics: Unprotected Pool / Credit Spikes vs. Fabric Surge Protection
+  </text>
+
+  <!-- Legacy / Unprotected Box -->
+  <rect x="52" y="190" width="710" height="156" rx="10" fill="#1F1224" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="72" y="216" fill="#FDA4AF" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="700">
+    ⛔ Pain Point A (Noisy Neighbor) &amp; Pain Point B (Uncapped Serverless Bill Shock): $24,800/mo Modeled
+  </text>
+  <text x="72" y="242" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13">
+    • Shared Pool Without Surge Protection: 1 runaway self-service Spark cross-join consumes &gt;100% CU -&gt; throttles 37 Executive BI workspaces
+  </text>
+  <text x="72" y="266" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13">
+    • Pure Serverless Pay-Per-Query (Uncapped DBU / $6.25 per TB Scan): Runaway loop or ad-hoc AI agent burns $14,000+ in 2 hours
+  </text>
+  <text x="72" y="290" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13">
+    • Coarse Warehouse Hard-Stop (Snowflake Resource Monitor 100% Suspend): Halts ALL queries in that warehouse, including CEO dashboards
+  </text>
+  <text x="72" y="318" fill="#FB7185" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Result: Either 34.5% Executive BI Timeout Rate under load OR $13,380/mo surprise overage bills across 38 Business Units
+  </text>
+
+  <!-- Fabric FinOps & Surge Protection Box -->
+  <rect x="52" y="362" width="710" height="178" rx="10" fill="#082F29" stroke="#10B981" stroke-width="1.4"/>
+  <text x="72" y="388" fill="#6EE7B7" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="15" font-weight="700">
+    ✅ Fabric F128 1-Yr RI + Surge Protection (75% Cap) + Autoscale Spark + Rayfin Chargeback ($11,420/mo)
+  </text>
+  <text x="72" y="414" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13">
+    • 24h Background CU Smoothing + 75% Surge Protection Cap: Caps background batch/refresh before interactive DirectLake BI is touched
+  </text>
+  <text x="72" y="438" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13">
+    • Workspace-Level Caps + Mission-Critical Exemption: Quarantines only the noisy self-service workspace; 37 Executive workspaces stay at 182ms P95
+  </text>
+  <text x="72" y="462" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13">
+    • Elastic Offload via Autoscale Billing for Spark: Burst ad-hoc Spark/AI jobs to isolated serverless Azure meter outside base F-SKU
+  </text>
+  <text x="72" y="486" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13">
+    • Rayfin + Workspace Monitoring Eventhouse + 1GB Free Fabric SQL: 99.6% automated 38-BU CU/DBU/Slot chargeback attribution
+  </text>
+  <text x="72" y="518" fill="#34D399" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Result: 100% Executive BI SLA (182ms P95) | 54.0% Lower Modeled Monthly Cost ($11,420 vs $24,800) | 399ms Auto-Quarantine
+  </text>
+
+  <!-- Section 2: Right Decision Tree & Coexistence Boundary -->
+  <rect x="805" y="138" width="765" height="420" rx="14" fill="url(#cardDark10)" stroke="#334155" stroke-width="1.5"/>
+  <text x="829" y="172" fill="#A78BFA" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18" font-weight="700">
+    2. Architect Decision Matrix: When to Pick Fabric FinOps vs. 4-Cloud Cost Controls
+  </text>
+
+  <!-- Decision Cards -->
+  <rect x="827" y="192" width="720" height="80" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="847" y="216" fill="#38BDF8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="700">
+    Path A · Shared Multi-BU BI + ETL + AI Capacity Requiring Predictable CFO Spend &amp; Zero BI Throttling
+  </text>
+  <text x="847" y="238" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    → Choose Microsoft Fabric Reserved F-SKU (~40.5% RI discount) + Surge Protection (75% background cap) + Workspace-Level Caps.
+  </text>
+  <text x="847" y="258" fill="#94A3B8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Separates Interactive DirectLake priority from Background batch jobs; $0 Power BI viewer licenses on F64+.
+  </text>
+
+  <rect x="827" y="282" width="720" height="80" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="847" y="306" fill="#FBBF24" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="700">
+    Path B · Physically Isolated SQL Warehouses Requiring Hard-Stop Credit Suspension per Department
+  </text>
+  <text x="847" y="328" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    → Choose Snowflake Virtual Warehouses + Resource Monitors (NOTIFY at 80%, SUSPEND at 100%) + 60s Auto-Suspend.
+  </text>
+  <text x="847" y="348" fill="#94A3B8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Coexistence: Export Snowflake ACCOUNT_USAGE.METERING_HISTORY to Fabric Eventhouse for unified cross-cloud FinOps ledger.
+  </text>
+
+  <rect x="827" y="372" width="720" height="80" rx="10" fill="#0F172A" stroke="#EC4899" stroke-width="1.2"/>
+  <text x="847" y="396" fill="#F472B6" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="700">
+    Path C · Elastic Serverless Spark / AI Model Training Requiring Custom Tag Attribution &amp; DBU Quotas
+  </text>
+  <text x="847" y="418" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    → Choose Databricks Serverless Budget Policies + Unity Catalog system.billing.usage + Fabric Autoscale Billing for Spark.
+  </text>
+  <text x="847" y="438" fill="#94A3B8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Coexistence: Ingest system.billing.usage via OneLake Shortcut into Rayfin FinOps App (1GB Free Fabric SQL write-back).
+  </text>
+
+  <rect x="827" y="462" width="720" height="78" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="847" y="486" fill="#34D399" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="700">
+    Path D · BigQuery Slot Autoscaling Reservations &amp; AWS Redshift Serverless RPU Caps
+  </text>
+  <text x="847" y="508" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    → Use BigQuery Editions Slot Reservations (capped max_slots) or Redshift Serverless Max RPU-Hours per day/week; mirror Gold KPIs to OneLake.
+  </text>
+  <text x="847" y="528" fill="#94A3B8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Prevents $6.25/TB ad-hoc scan runaway while serving 500+ enterprise M365 Copilot / Power BI viewers at $0 per-viewer license fee.
+  </text>
+
+  <!-- Section 3: Bottom Scenario Q Closed-Loop Trace & Dual-Denominator Provenance Table -->
+  <rect x="30" y="576" width="1540" height="436" rx="14" fill="url(#cardDark10)" stroke="#334155" stroke-width="1.5"/>
+  <text x="54" y="610" fill="#F8FAFC" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18" font-weight="700">
+    3. Scenario Q Closed-Loop Simulation (399ms E2E) &amp; Five-Platform FinOps Comparison (Synthetic Model + Vendor Specs as-of 2026-11-08)
+  </text>
+
+  <!-- 5-Step Flow Boxes for Scenario Q -->
+  <rect x="54" y="628" width="282" height="106" rx="10" fill="#1E1B4B" stroke="#6366F1" stroke-width="1.2"/>
+  <text x="68" y="652" fill="#A5B4FC" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Step 1 · 09:05 UTC Surge Trigger
+  </text>
+  <text x="68" y="674" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    BU-Marketing runaway Spark cross-join
+  </text>
+  <text x="68" y="694" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    hits 78% 24h background CU cap on
+  </text>
+  <text x="68" y="714" fill="#6EE7B7" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" font-weight="700">
+    shared F128 (80ms KQL detect)
+  </text>
+
+  <rect x="354" y="628" width="282" height="106" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="368" y="652" fill="#38BDF8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Step 2 · Surge Protection Quarantine
+  </text>
+  <text x="368" y="674" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Workspace-level cap blocks only new
+  </text>
+  <text x="368" y="694" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    BU-Marketing background jobs; 37 BUs
+  </text>
+  <text x="368" y="714" fill="#6EE7B7" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" font-weight="700">
+    100% exempt (124ms enforcement)
+  </text>
+
+  <rect x="654" y="628" width="282" height="106" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="668" y="652" fill="#34D399" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Step 3 · Autoscale Spark Reroute
+  </text>
+  <text x="668" y="674" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Fabric IQ Ontology routes ad-hoc burst
+  </text>
+  <text x="668" y="694" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Spark to BU-Marketing Autoscale meter;
+  </text>
+  <text x="668" y="714" fill="#6EE7B7" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" font-weight="700">
+    DirectLake P95 = 182ms (115ms)
+  </text>
+
+  <rect x="954" y="628" width="282" height="106" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="968" y="652" fill="#FBBF24" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Step 4 · Foundry IQ CFO Guardrail
+  </text>
+  <text x="968" y="674" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Blocks unapproved F128-&gt;F256 capacity
+  </text>
+  <text x="968" y="694" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    upscale; enforces ENTERPRISE-FINOPS-
+  </text>
+  <text x="968" y="714" fill="#6EE7B7" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" font-weight="700">
+    SOP-10 &amp; 99.6% attribution
+  </text>
+
+  <rect x="1254" y="628" width="292" height="106" rx="10" fill="#082F29" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1268" y="652" fill="#6EE7B7" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Step 5 · Rayfin 1GB SQL Write-Back
+  </text>
+  <text x="1268" y="674" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Writes $13,380/mo savings &amp; BU charge-
+  </text>
+  <text x="1268" y="694" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    back entry into 1GB Free Fabric SQL
+  </text>
+  <text x="1268" y="714" fill="#34D399" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" font-weight="700">
+    Total Modeled E2E = 399ms (80ms)
+  </text>
+
+  <!-- Comparison Table -->
+  <rect x="54" y="750" width="1492" height="240" rx="10" fill="#0B1120" stroke="#334155" stroke-width="1"/>
+  <text x="74" y="778" fill="#38BDF8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13.5" font-weight="700">
+    Platform FinOps Mechanism
+  </text>
+  <text x="420" y="778" fill="#38BDF8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13.5" font-weight="700">
+    Interactive BI vs. Background Isolation
+  </text>
+  <text x="800" y="778" fill="#38BDF8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13.5" font-weight="700">
+    Chargeback &amp; Observability Store
+  </text>
+  <text x="1150" y="778" fill="#38BDF8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13.5" font-weight="700">
+    38-BU Modeled TCO &amp; SLA (Synthetic)
+  </text>
+  <line x1="54" y1="790" x2="1546" y2="790" stroke="#334155" stroke-width="1"/>
+
+  <text x="74" y="818" fill="#6EE7B7" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Microsoft Fabric (F128 RI + Surge Protection)
+  </text>
+  <text x="420" y="818" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    75% Background Cap + 24h Smoothing + Mission-Critical Exempt
+  </text>
+  <text x="800" y="818" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    Workspace Monitoring Eventhouse + Rayfin 1GB Free SQL
+  </text>
+  <text x="1150" y="818" fill="#34D399" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5" font-weight="700">
+    $11,420/mo | 182ms DirectLake P95 | 399ms E2E
+  </text>
+
+  <text x="74" y="852" fill="#F8FAFC" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Snowflake (Virtual Warehouses + Monitors)
+  </text>
+  <text x="420" y="852" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    Separate BI vs ETL Warehouses; Resource Monitor Hard Suspend
+  </text>
+  <text x="800" y="852" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    ACCOUNT_USAGE.METERING_HISTORY + Object Tagging
+  </text>
+  <text x="1150" y="852" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    $21,600/mo | Hard-stop halts WH at 100% quota
+  </text>
+
+  <text x="74" y="886" fill="#F8FAFC" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    Databricks (Serverless Budget Policies)
+  </text>
+  <text x="420" y="886" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    Isolated SQL Warehouses vs Job Clusters; Serverless DBU Quotas
+  </text>
+  <text x="800" y="886" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    Unity Catalog system.billing.usage + Custom Tags
+  </text>
+  <text x="1150" y="886" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    $24,800/mo (Uncapped burst) | $18,900/mo (Capped)
+  </text>
+
+  <text x="74" y="920" fill="#F8FAFC" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    GCP BigQuery &amp; AWS Redshift Serverless
+  </text>
+  <text x="420" y="920" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    BigQuery Slot Reservations (max_slots) / Redshift Max RPU-Hours
+  </text>
+  <text x="800" y="920" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    INFORMATION_SCHEMA.JOBS / AWS Cost Explorer &amp; SYS_QUERY
+  </text>
+  <text x="1150" y="920" fill="#E2E8F0" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12.5">
+    $19,400–$22,100/mo | 50-slot / 8-RPU step scaling
+  </text>
+
+  <line x1="54" y1="938" x2="1546" y2="938" stroke="#334155" stroke-width="1"/>
+  <text x="74" y="968" fill="#94A3B8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12">
+    Provenance Disclosure: Denominator A (n=84 Routing Matrix Mean = 496.0ms, 83/84 = 98.81%) is strictly separated from Denominator B (n=17 Ontology Simulations Mean = 527.0ms; R9 n=16=535.0ms; R8 n=15=543.0ms). Live cloud = not_measured.
+  </text>
+</svg>

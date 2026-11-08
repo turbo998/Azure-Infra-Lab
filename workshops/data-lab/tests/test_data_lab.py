@@ -252,13 +252,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 415)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 2900000)
 
-    def test_scenario_matrix_80_cases_and_explicit_miss(self) -> None:
+    def test_global_conglomerate_finops_surge_rayfin_vs_dbu_credits_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_conglomerate_finops_surge_rayfin_vs_dbu_credits")
+        self.assertEqual(sim["telemetry"]["governed_business_unit_workspaces"], 38)
+        self.assertEqual(sim["telemetry"]["background_cu_rejection_threshold_pct"], 75.0)
+        self.assertEqual(sim["telemetry"]["executive_directlake_p95_latency_under_surge_ms"], 182)
+        self.assertEqual(sim["multi_agent_plan"]["protected_mission_critical_bi_workspaces"], 37)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_finops_overage_saved_usd"], 13380)
+        self.assertTrue(sim["foundry_iq_guardrail"]["unapproved_capacity_upscale_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["mission_critical_bi_throttling_blocked"])
+        self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 399)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 160560)
+
+    def test_scenario_matrix_84_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 80)
-        self.assertEqual(matrix["passed_scenarios"], 79)
+        self.assertEqual(matrix["total_scenarios"], 84)
+        self.assertEqual(matrix["passed_scenarios"], 83)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 98.75, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 501.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 98.81, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 496.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -417,6 +430,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Materialized Lake Views", by_id["DL-79"]["expected"])
         self.assertIn("Protect $2.90M Black Friday Orders", by_id["DL-80"]["expected"])
 
+    def test_fabric_capacity_finops_surge_rayfin_vs_4clouds_2026_11_09_r10_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-81", "DL-82", "DL-83", "DL-84"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Fabric Surge Protection (75% Background CU Cap)", by_id["DL-81"]["expected"])
+        self.assertIn("Snowflake Resource Monitors", by_id["DL-82"]["expected"])
+        self.assertIn("Databricks Serverless Budget Policy", by_id["DL-83"]["expected"])
+        self.assertIn("182ms DirectLake P95", by_id["DL-84"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -434,11 +458,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 79)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 80)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 501.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 16)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 535.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 83)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 84)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 496.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 17)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 527.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r9_16_simulation_mean_modeled_latency_ms"], 535.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r8_15_simulation_mean_modeled_latency_ms"], 543.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r7_14_simulation_mean_modeled_latency_ms"], 552.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r6_13_simulation_mean_modeled_latency_ms"], 562.0)
@@ -446,7 +471,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 12)
+        self.assertEqual(len(refs), 13)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertEqual(ref["as_of"], "2026-11-08")
@@ -464,6 +489,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("auto_telematics_gluten_velox_autoscale_vs_photon", loaded["ontology_simulations"])
         self.assertIn("global_pharma_fabric_data_agent_vs_genie_cortex", loaded["ontology_simulations"])
         self.assertIn("retail_supply_osmos_medallion_healing_vs_lakeflow", loaded["ontology_simulations"])
+        self.assertIn("global_conglomerate_finops_surge_rayfin_vs_dbu_credits", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
