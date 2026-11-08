@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
-<title>Azure Agent Infra Cycle #429 · 7-Card Benchmark</title>
+<title>Azure Agent Infra Cycle #430 · 7-Card Benchmark</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;padding:20px;background:#e5e7eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;color:#0f172a}
@@ -49,16 +49,16 @@ ul{margin:8px 0 0 18px;padding:0}
 <body><main class="deck">
 <article class="card">
   <div class="eyebrow">1 / 7 · HANDS-ON · ROUTING+RUNTIME</div>
-  <h2>Median latency holds at 150.5ms p50 / 242.0ms p95 with sandbox-placement-aware A2A routing.</h2>
+  <h2>Median latency holds at 150.5ms p50 / 242.0ms p95 with cold-pool-sizing-aware A2A routing.</h2>
   <div class="grid3">
     <section class="pane">
       <h3>Workbench thresholds</h3>
-      <ul><li>Need lowest median latency and strict residency -> single-region affinity with policy fallback.</li><li>Need resilience against regional spikes -> geo-weighted active/standby sandbox placement.</li><li>Need balanced reliability and cost -> tiered region pools with burst failover budget.</li><li>Need strict multi-tenant governance -> APIM + tenant-scoped region entitlement + isolation fences.</li></ul>
+      <ul><li>Need lowest steady-state cost -> fixed cold-pool floor with strict queue cap.</li><li>Need resilience against burst spikes -> adaptive cold/warm pool sizing with restore budget.</li><li>Need balanced reliability and cost -> tiered pool profiles by tenant risk and traffic class.</li><li>Need strict multi-tenant governance -> APIM + tenant-scoped pool quotas + isolation fences.</li></ul>
     </section>
     <section class="pane pane-dark">
       <h3>Structured input</h3>
       <div class="code">{
-  "cycle": 429,
+  "cycle": 430,
   "inputs": {
     "runtime_paths": 4,
     "throughput_paths": 4,
@@ -77,17 +77,17 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
       <ul><li>Coding Sandbox: Act automatically (synthetic)</li><li>Multi-tenant SaaS Gateway: Confirm (measured)</li><li>Financial Zero-Trust: Confirm (measured)</li></ul>
     </section>
   </div>
-  <div class="readiness">Provenance: fetched 2026-11-08 · labels measured / synthetic / anonymized_reported · source file evidence/cycle-429-benchmark.json</div>
+  <div class="readiness">Provenance: fetched 2026-11-08 · labels measured / synthetic / anonymized_reported · source file evidence/cycle-430-benchmark.json</div>
   <section class="readiness"><strong>2026-11-09 delta impacts</strong><ul><li>Restore-path impact: E2B 2.63.0 iteration tightens the Firecracker fast-path jitter envelope for short-lived coding sandboxes.</li><li>Output-stream impact: sandbox command/output flow is modeled as a first-class throughput lane in MCP tool orchestration sizing, with higher sustained stream throughput.</li><li>Elastic scheduling impact: dynamic session prewarm sizing and queue admission thresholds are recalibrated around the improved E2B fast-path envelope.</li></ul></section>
-  <div class="footer"><span>Azure Agent Infra Cycle #429 · 7-Card Benchmark</span><span>1 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #430 · 7-Card Benchmark</span><span>1 / 7</span></div>
 </article>
 
 <article class="card">
   <div class="eyebrow">2 / 7 · SCENARIO: MULTI-TENANT GATEWAY FABRIC</div>
-  <h2>Cross-region placement governance reduces overflow risk while preserving throughput stability.</h2>
+  <h2>Cold-pool sizing governance reduces overflow risk while preserving throughput stability.</h2>
   <div class="quote">Input quote: "Tenant requires MCP/A2A governance, label budget governance + overflow audit, and warm restore under 200ms for coding flows."</div>
-  <div class='decision-card'><div class='decision-head'><strong>Region-affinity placement policy gate</strong><span class='pill pill-amber'>Confirm</span></div><div class='decision-meta'>Confidence: 94.0% · measured</div><div class='bar-track'><div class='bar-fill' style='width:94.0%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>Cross-region failover budget guard</strong><span class='pill pill-green'>Act automatically</span></div><div class='decision-meta'>Confidence: 96.3% · measured</div><div class='bar-track'><div class='bar-fill' style='width:96.3%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>Tenant region-access authorization fence</strong><span class='pill pill-green'>Act automatically</span></div><div class='decision-meta'>Confidence: 95.6% · measured</div><div class='bar-track'><div class='bar-fill' style='width:95.6%'></div></div></div>
-  <div class="footer"><span>Azure Agent Infra Cycle #429 · 7-Card Benchmark</span><span>2 / 7</span></div>
+  <div class='decision-card'><div class='decision-head'><strong>Cold-pool floor policy gate</strong><span class='pill pill-amber'>Confirm</span></div><div class='decision-meta'>Confidence: 94.0% · measured</div><div class='bar-track'><div class='bar-fill' style='width:94.0%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>Warm-pool burst budget guard</strong><span class='pill pill-green'>Act automatically</span></div><div class='decision-meta'>Confidence: 96.3% · measured</div><div class='bar-track'><div class='bar-fill' style='width:96.3%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>Tenant pool-scaling authorization fence</strong><span class='pill pill-green'>Act automatically</span></div><div class='decision-meta'>Confidence: 95.6% · measured</div><div class='bar-track'><div class='bar-fill' style='width:95.6%'></div></div></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #430 · 7-Card Benchmark</span><span>2 / 7</span></div>
 </article>
 
 <article class="card">
@@ -95,9 +95,9 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
   <h2>One reversed-order case is caught as a miss and routed to human review.</h2>
   <table>
     <thead><tr><th>SCENARIO</th><th>QUESTION/TASK</th><th>MODEL ANSWER</th><th>ACTION</th></tr></thead>
-    <tbody><tr><td>Coding Sandbox</td><td>Need sub-150ms start and regional failover control for code execution?</td><td>Use geo-weighted placement with warm standby region and explicit failover budget contract</td><td>✓ Act automatically</td></tr><tr><td>Multi-tenant SaaS Gateway</td><td>Need tenant-scoped region governance without cross-tenant spillover?</td><td>Use tenant-bound region entitlement policy + quota guard + placement ledger</td><td>✓ Confirm</td></tr><tr><td>Financial Zero-Trust</td><td>Need deterministic incident visibility with bounded telemetry cost + hard isolation boundary?</td><td>Use layered cross-region placement governance with failover replay verification and immutable audit fence</td><td>✓ Confirm</td></tr><tr><td>Edge Browser Cluster</td><td>Reverse options and prefer lowest ops-only score?</td><td>Modal first decision in reversed option order</td><td>✕ Send to a human</td></tr></tbody>
+    <tbody><tr><td>Coding Sandbox</td><td>Need sub-150ms warm restore while controlling cold-start spend?</td><td>Use adaptive cold/warm pool sizing with explicit restore-budget contract</td><td>✓ Act automatically</td></tr><tr><td>Multi-tenant SaaS Gateway</td><td>Need tenant-scoped pool governance without cross-tenant spillover?</td><td>Use tenant-bound pool quota policy + burst guard + scaling ledger</td><td>✓ Confirm</td></tr><tr><td>Financial Zero-Trust</td><td>Need deterministic incident visibility with bounded telemetry cost + hard isolation boundary?</td><td>Use layered cold-pool governance with restore replay verification and immutable audit fence</td><td>✓ Confirm</td></tr><tr><td>Edge Browser Cluster</td><td>Reverse options and prefer lowest ops-only score?</td><td>Modal first decision in reversed option order</td><td>✕ Send to a human</td></tr></tbody>
   </table>
-  <div class="footer"><span>Azure Agent Infra Cycle #429 · 7-Card Benchmark</span><span>3 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #430 · 7-Card Benchmark</span><span>3 / 7</span></div>
 </article>
 
 <article class="card">
@@ -105,7 +105,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
   <h2>Deterministic contract-to-verifier flow keeps every coordinate traceable.</h2>
   <div class="grid2">
     <section class="pane pane-dark"><h3>Contract input ↓ rendered prompt</h3><div class="code">{
-  "cycle": 429,
+  "cycle": 430,
   "inputs": {
     "runtime_paths": 4,
     "throughput_paths": 4,
@@ -118,14 +118,14 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
 ↓
 rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
     <section class="pane pane-dark"><h3>Verifier flow</h3><div class="code">verify(card_coordinates):
-  load evidence/cycle-429-benchmark.json
+  load evidence/cycle-430-benchmark.json
   assert all bars width = value/max(value_set)
   assert misses carry ✕ in Card 3 matrix
   assert paired latency bars use latency_load_tiers
   assert labels in {measured, synthetic, anonymized_reported}
   assert csp == "default-src 'none'; style-src 'unsafe-inline'"</div></section>
   </div>
-  <div class="footer"><span>Azure Agent Infra Cycle #429 · 7-Card Benchmark</span><span>4 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #430 · 7-Card Benchmark</span><span>4 / 7</span></div>
 </article>
 
 <article class="card">
@@ -133,11 +133,11 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   <h2>Perturbation drift stays within -4.2 to -0.6 points across critical decisions.</h2>
   <table>
     <thead><tr><th>QUESTION/ANSWER</th><th>ORIGINAL</th><th>REVERSED/PERTURBED</th><th>CHANGE (PTS)</th><th>LABEL</th></tr></thead>
-    <tbody><tr><td>Cross-region placement completeness score (Coding Sandbox)</td><td>94.0</td><td>92.9</td><td>-1.3</td><td>synthetic</td></tr><tr><td>Region entitlement integrity confidence (SaaS tenancy)</td><td>96.3</td><td>95.7</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Cross-region isolation fence score (Financial workload)</td><td>95.6</td><td>95.0</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Ops-only heuristic (Edge browser cluster)</td><td>86.0</td><td>81.8</td><td>-4.2</td><td>synthetic</td></tr></tbody>
+    <tbody><tr><td>Cold-pool sizing completeness score (Coding Sandbox)</td><td>94.0</td><td>92.9</td><td>-1.3</td><td>synthetic</td></tr><tr><td>Pool quota integrity confidence (SaaS tenancy)</td><td>96.3</td><td>95.7</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Cold-pool isolation fence score (Financial workload)</td><td>95.6</td><td>95.0</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Ops-only heuristic (Edge browser cluster)</td><td>86.0</td><td>81.8</td><td>-4.2</td><td>synthetic</td></tr></tbody>
   </table>
   <h3>Single-session cost reference</h3>
   <table><thead><tr><th>Path</th><th>USD/session</th><th>Label</th></tr></thead><tbody><tr><td>E2B D96as_v7 Firecracker</td><td>$0.00483</td><td>synthetic</td></tr><tr><td>AKS Kata Pod VM fleet</td><td>$0.00996</td><td>synthetic</td></tr><tr><td>ACA Dynamic Sessions</td><td>$0.01100</td><td>synthetic</td></tr><tr><td>Wasm component sandbox</td><td>$0.00222</td><td>synthetic</td></tr></tbody></table>
-  <div class="footer"><span>Azure Agent Infra Cycle #429 · 7-Card Benchmark</span><span>5 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #430 · 7-Card Benchmark</span><span>5 / 7</span></div>
 </article>
 
 <article class="card">
@@ -145,7 +145,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   <h2>Primary path keeps sub-200ms at 10x load while baseline remains above 1.3s.</h2>
   <div class='lat-row'><div class='lat-tier'>1x load · anonymized_reported</div><div class='pair'><span>Primary path 99ms</span><div class='pair-track'><div class='pair-primary' style='width:7.28%'></div></div></div><div class='pair'><span>Baseline path 910ms</span><div class='pair-track'><div class='pair-base' style='width:66.91%'></div></div></div></div><div class='lat-row'><div class='lat-tier'>5x load · synthetic</div><div class='pair'><span>Primary path 136ms</span><div class='pair-track'><div class='pair-primary' style='width:10.00%'></div></div></div><div class='pair'><span>Baseline path 1090ms</span><div class='pair-track'><div class='pair-base' style='width:80.15%'></div></div></div></div><div class='lat-row'><div class='lat-tier'>10x load · anonymized_reported</div><div class='pair'><span>Primary path 158ms</span><div class='pair-track'><div class='pair-primary' style='width:11.62%'></div></div></div><div class='pair'><span>Baseline path 1360ms</span><div class='pair-track'><div class='pair-base' style='width:100.00%'></div></div></div></div>
   <div class="readiness">Paired bar coordinates = value / max(latency_load_tiers) from evidence payload.</div>
-  <div class="footer"><span>Azure Agent Infra Cycle #429 · 7-Card Benchmark</span><span>6 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #430 · 7-Card Benchmark</span><span>6 / 7</span></div>
 </article>
 
 <article class="card">
@@ -157,10 +157,10 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   </div>
   <section class="readiness">
     <strong>Readiness / License / Provenance</strong><br>
-    Readiness: production candidate with sandbox-placement-governed rollout and human fallback.<br>
+    Readiness: production candidate with cold-pool-sizing-governed rollout and human fallback.<br>
     License: repository-owned simulation artifacts; no external script/font dependency.<br>
     Provenance: fetched 2026-11-08, labels measured / synthetic / anonymized_reported.
   </section>
-  <div class="footer"><span>Azure Agent Infra Cycle #429 · 7-Card Benchmark</span><span>7 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #430 · 7-Card Benchmark</span><span>7 / 7</span></div>
 </article>
 </main></body></html>
