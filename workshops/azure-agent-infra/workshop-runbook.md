@@ -1,20 +1,20 @@
 # Azure AI Agent Infrastructure — Step 04 Validate: Customer Workshop & Architecture Design Session Runbook (Bilingual EN / 中文)
 
-> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #384 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #384 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #384 Daily Report](daily-report-2026-11-10.md)**
+> 🌐 **Language / 语言导航**: **[📘 Playbook 中文版 (`README.md`)](README.md)** | **[📘 Playbook English (`README.en.md`)](README.en.md)** | **[📊 7-Card Report (ZH)](test-report.md)** | **[📊 7-Card Report (EN)](test-report.en.md)** | **[🧪 Cycle #385 Deck (ZH)](benchmark-cards.html)** | **[🧪 Cycle #385 Deck (EN)](benchmark-cards.en.html)** | **[📘 Cycle #385 Daily Report](daily-report-2026-11-11.md)**
 >
 > **Purpose**: Actionable field delivery guide for **Step 04 Validate (1/2-Day or 1-Day Hands-On Workshop + Target Architecture Whiteboard Session)** from the *Agent Infra Playbook* (`Agent_Infra_Playbook.pptx`, Slides 14–18).
 > **定位**：面向架构师与现场交付团队的 **Step 04 Validate（半天/全天动手工作坊 + 目标架构白板共创）** 落地执行手册（覆盖 384 章行业模型、377 套 IaC 蓝图与 376 项定量仿真器，385/385 项单测全绿）。
 
 ---
 
-## 0. Cycle #384 publish bundle (2026-11-10)
+## 0. Cycle #385 publish bundle (2026-11-11)
 
 - **7-card visual deck (4:5)**: [`benchmark-cards.html`](benchmark-cards.html) / [`benchmark-cards.en.html`](benchmark-cards.en.html)
-- **Interactive benchmark workbench**: [`workbench-cycle-384.html`](workbench-cycle-384.html)
-- **Daily breakthroughs one-pager SVG**: [`assets/15-cycle-384-daily-breakthroughs.svg`](assets/15-cycle-384-daily-breakthroughs.svg)
-- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-384-benchmark.json`](evidence/cycle-384-benchmark.json)
-- **Monograph addendum**: [`docs/full-monograph-cycle-384.md`](docs/full-monograph-cycle-384.md) / [`docs/full-monograph-cycle-384.en.md`](docs/full-monograph-cycle-384.en.md)
-- **Selection FAQ (ZH/EN)**: [`mcp-a2a-observability-selection-faq.md`](mcp-a2a-observability-selection-faq.md) / [`mcp-a2a-observability-selection-faq.en.md`](mcp-a2a-observability-selection-faq.en.md)
+- **Interactive benchmark workbench**: [`workbench-cycle-385.html`](workbench-cycle-385.html)
+- **Daily breakthroughs one-pager SVG**: [`assets/16-cycle-385-daily-breakthroughs.svg`](assets/16-cycle-385-daily-breakthroughs.svg)
+- **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-385-benchmark.json`](evidence/cycle-385-benchmark.json)
+- **Monograph addendum**: [`docs/full-monograph-cycle-385.md`](docs/full-monograph-cycle-385.md) / [`docs/full-monograph-cycle-385.en.md`](docs/full-monograph-cycle-385.en.md)
+- **Selection FAQ (ZH/EN)**: [`semantic-cache-routing-selection-faq.md`](semantic-cache-routing-selection-faq.md) / [`semantic-cache-routing-selection-faq.en.md`](semantic-cache-routing-selection-faq.en.md)
 
 ---
 
@@ -77,6 +77,8 @@ In the 5-step Azure Agent Infra Playbook (`Initial Screening → Discovery → D
 | **Credential Hygiene** | Zero raw LLM API keys or database connection strings inside sandbox env | `OPENAI_BASE_URL` points to internal AI Gateway (`Keyless Pod`) | `[ ]` |
 | **Token Budget Guard** | Per-Agent / Per-Team TPM & Daily USD hard circuit breaker active at gateway | Automatic `HTTP 429` before runaway loop exhausts subscription quota | `[ ]` |
 | **State & Retention** | Durable checkpointer (`HorizonDB + PgBouncer` or `Cosmos DB`) + 30-day TTL | PgBouncer handoff `~5ms`; 30-day ZSTD hot retention `< 128 TB` | `[ ]` |
+
+
 
 
 
