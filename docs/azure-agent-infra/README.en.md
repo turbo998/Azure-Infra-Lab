@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #422 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-422.html](workbench-cycle-422.html) · [daily-report-2026-11-09.en.md](daily-report-2026-11-09.en.md)
+> 🔎 **Cycle #423 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-423.html](workbench-cycle-423.html) · [daily-report-2026-11-09.en.md](daily-report-2026-11-09.en.md)
 
 ---
 
-## 1) Cycle #422 release summary (2026-11-09)
+## 1) Cycle #423 release summary (2026-11-09)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,9 +26,9 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #422 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #422 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #422 workbench** | Interactive benchmark surface | [`workbench-cycle-422.html`](workbench-cycle-422.html) |
+| **Cycle #423 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #423 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #423 workbench** | Interactive benchmark surface | [`workbench-cycle-423.html`](workbench-cycle-423.html) |
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-09.en.md`](daily-report-2026-11-09.en.md)
 - Daily report (ZH): [`daily-report-2026-11-09.md`](daily-report-2026-11-09.md)
-- One-page SVG: [`assets/34-cycle-422-daily-breakthroughs.svg`](assets/34-cycle-422-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-422.en.md`](docs/full-monograph-cycle-422.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-422.md`](docs/full-monograph-cycle-422.md)
-- Selection FAQ (EN, Cancellation Propagation): [`agent-mcp-tool-cancellation-propagation-selection-faq.en.md`](agent-mcp-tool-cancellation-propagation-selection-faq.en.md)
-- Selection FAQ (ZH, Cancellation Propagation): [`agent-mcp-tool-cancellation-propagation-selection-faq.md`](agent-mcp-tool-cancellation-propagation-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-423-daily-breakthroughs.svg`](assets/34-cycle-423-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-423.en.md`](docs/full-monograph-cycle-423.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-423.md`](docs/full-monograph-cycle-423.md)
+- Selection FAQ (EN, Snapshot GC): [`agent-sandbox-filesystem-snapshot-gc-selection-faq.en.md`](agent-sandbox-filesystem-snapshot-gc-selection-faq.en.md)
+- Selection FAQ (ZH, Snapshot GC): [`agent-sandbox-filesystem-snapshot-gc-selection-faq.md`](agent-sandbox-filesystem-snapshot-gc-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_422_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_422_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_423_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_423_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,10 +71,11 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_422_pipeline.py`](simulator/cycle_422_pipeline.py)
+- Generator pipeline: [`simulator/cycle_423_pipeline.py`](simulator/cycle_423_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
+
 
 
 

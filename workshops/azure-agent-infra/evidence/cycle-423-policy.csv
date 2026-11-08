@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Snapshot GC freshness gate,188,200,0.94,measured,snapshot GC replay + deterministic verification
+Snapshot restore-hit guard,183,190,0.9632,measured,snapshot restore integrity logs
+Snapshot tenant-isolation quota fence,172,180,0.9556,measured,MCP policy replay logs

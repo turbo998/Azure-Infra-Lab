@@ -1,8 +1,8 @@
-# Azure AI Agent Infra Playbook · 日报 · Cycle #422（2026-11-09）
+# Azure AI Agent Infra Playbook · 日报 · Cycle #423（2026-11-09）
 
 > Window (BJT): 2026-11-09 03:28 ~ 2026-11-09 05:30  
 > Focus: Cloud-native Agent Infra only (no semiconductor/ALD topics)  
-> Generated at (UTC): 2026-11-08T19:30:37.746525+00:00
+> Generated at (UTC): 2026-11-08T19:36:58.728528+00:00
 
 ## 1) Daily hottest breakthroughs (2026 official/release-first)
 
@@ -23,23 +23,23 @@
 ### Source ledger (with fetch date and labels)
 | Source | Published date | Label | URL | Fetched at (UTC) |
 |---|---|---|---|---|
-| AI Gateway overview (Microsoft Learn) | 2026-10-23 | `measured` | https://learn.microsoft.com/en-us/azure/ai-gateway/overview | 2026-11-08T19:30:37.746525+00:00 |
-| Azure API Management service changelog (June 2026) | 2026-06-16 commit 02b1448 | `measured` | https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md | 2026-11-08T19:30:37.746525+00:00 |
-| Azure Container Apps dynamic sessions docs | 2026-03-31 | `measured` | https://learn.microsoft.com/en-us/azure/container-apps/sessions | 2026-11-08T19:30:37.746525+00:00 |
-| ACA Dynamic Sessions GA blog (historical maturity context) | 2024-11-19 | `anonymized_reported` | https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561 | 2026-11-08T19:30:37.746525+00:00 |
-| Firecracker release v1.17.0 | 2026-09-10 | `measured` | https://github.com/firecracker-microvm/firecracker/releases/tag/v1.17.0 | 2026-11-08T19:30:37.746525+00:00 |
-| Kata Containers release 4.3.1 | 2026-10-21 | `measured` | https://github.com/kata-containers/kata-containers/releases/tag/4.3.1 | 2026-11-08T19:30:37.746525+00:00 |
-| Wasmtime release v50.0.1 | 2026-10-29 | `measured` | https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1 | 2026-11-08T19:30:37.746525+00:00 |
-| E2B release e2b@2.63.0 | 2026-11-04 16:41:49 | `measured` | https://github.com/e2b-dev/E2B/releases/tag/e2b%402.63.0 | 2026-11-08T19:30:37.746525+00:00 |
-| Azure AI Foundry Agent Service docs | timestamp_unverified (official docs page) | `measured` | https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview | 2026-11-08T19:30:37.746525+00:00 |
-| AWS AgentCore overview | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html | 2026-11-08T19:30:37.746525+00:00 |
-| AWS Bedrock Agents classic notice | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html | 2026-11-08T19:30:37.746525+00:00 |
-| Cloudflare Workers docs | last updated 2026-10-08 | `measured` | https://developers.cloudflare.com/workers/ | 2026-11-08T19:30:37.746525+00:00 |
-| Cloudflare Workers AI docs | last updated 2026-04-21 | `measured` | https://developers.cloudflare.com/workers-ai/ | 2026-11-08T19:30:37.746525+00:00 |
-| Cloudflare Workflows docs | last updated 2026-09-18 | `measured` | https://developers.cloudflare.com/workflows/ | 2026-11-08T19:30:37.746525+00:00 |
-| Cloudflare Browser Rendering docs | timestamp_unverified (official docs page) | `measured` | https://developers.cloudflare.com/browser-rendering/ | 2026-11-08T19:30:37.746525+00:00 |
-| Modal official guide | timestamp_unverified (official docs page) | `measured` | https://modal.com/docs/guide | 2026-11-08T19:30:37.746525+00:00 |
-| GCP Vertex AI Agent Engine overview | timestamp_unverified (official docs page; redirected) | `measured` | https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview | 2026-11-08T19:30:37.746525+00:00 |
+| AI Gateway overview (Microsoft Learn) | 2026-10-23 | `measured` | https://learn.microsoft.com/en-us/azure/ai-gateway/overview | 2026-11-08T19:36:58.728528+00:00 |
+| Azure API Management service changelog (June 2026) | 2026-06-16 commit 02b1448 | `measured` | https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md | 2026-11-08T19:36:58.728528+00:00 |
+| Azure Container Apps dynamic sessions docs | 2026-03-31 | `measured` | https://learn.microsoft.com/en-us/azure/container-apps/sessions | 2026-11-08T19:36:58.728528+00:00 |
+| ACA Dynamic Sessions GA blog (historical maturity context) | 2024-11-19 | `anonymized_reported` | https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561 | 2026-11-08T19:36:58.728528+00:00 |
+| Firecracker release v1.17.0 | 2026-09-10 | `measured` | https://github.com/firecracker-microvm/firecracker/releases/tag/v1.17.0 | 2026-11-08T19:36:58.728528+00:00 |
+| Kata Containers release 4.3.1 | 2026-10-21 | `measured` | https://github.com/kata-containers/kata-containers/releases/tag/4.3.1 | 2026-11-08T19:36:58.728528+00:00 |
+| Wasmtime release v50.0.1 | 2026-10-29 | `measured` | https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1 | 2026-11-08T19:36:58.728528+00:00 |
+| E2B release e2b@2.63.0 | 2026-11-04 16:41:49 | `measured` | https://github.com/e2b-dev/E2B/releases/tag/e2b%402.63.0 | 2026-11-08T19:36:58.728528+00:00 |
+| Azure AI Foundry Agent Service docs | timestamp_unverified (official docs page) | `measured` | https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview | 2026-11-08T19:36:58.728528+00:00 |
+| AWS AgentCore overview | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html | 2026-11-08T19:36:58.728528+00:00 |
+| AWS Bedrock Agents classic notice | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html | 2026-11-08T19:36:58.728528+00:00 |
+| Cloudflare Workers docs | last updated 2026-10-08 | `measured` | https://developers.cloudflare.com/workers/ | 2026-11-08T19:36:58.728528+00:00 |
+| Cloudflare Workers AI docs | last updated 2026-04-21 | `measured` | https://developers.cloudflare.com/workers-ai/ | 2026-11-08T19:36:58.728528+00:00 |
+| Cloudflare Workflows docs | last updated 2026-09-18 | `measured` | https://developers.cloudflare.com/workflows/ | 2026-11-08T19:36:58.728528+00:00 |
+| Cloudflare Browser Rendering docs | timestamp_unverified (official docs page) | `measured` | https://developers.cloudflare.com/browser-rendering/ | 2026-11-08T19:36:58.728528+00:00 |
+| Modal official guide | timestamp_unverified (official docs page) | `measured` | https://modal.com/docs/guide | 2026-11-08T19:36:58.728528+00:00 |
+| GCP Vertex AI Agent Engine overview | timestamp_unverified (official docs page; redirected) | `measured` | https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview | 2026-11-08T19:36:58.728528+00:00 |
 
 ## 2) Production Azure reference architecture + competitor matrix
 
@@ -60,26 +60,26 @@ Layered decoupling baseline for this cycle:
 
 ## 3) Reproducible benchmark outputs
 
-- Cold/warm start: see `evidence/cycle-422-latency.csv`
-- Throughput: see `evidence/cycle-422-throughput.csv`
-- Policy interception: see `evidence/cycle-422-policy.csv`
-- Single-session cost: see `evidence/cycle-422-cost.csv`
-- Canonical benchmark payload: `evidence/cycle-422-benchmark.json`
+- Cold/warm start: see `evidence/cycle-423-latency.csv`
+- Throughput: see `evidence/cycle-423-throughput.csv`
+- Policy interception: see `evidence/cycle-423-policy.csv`
+- Single-session cost: see `evidence/cycle-423-cost.csv`
+- Canonical benchmark payload: `evidence/cycle-423-benchmark.json`
 
 ## 4) Business scenario solution set (Good fit vs Not for)
 
 | Scenario | Good fit | Not for |
 |---|---|---|
-| Coding Agent sandbox | ACA Dynamic Sessions for managed fast isolation; E2B when deep runtime control needed | Tool chains without cancel-token propagation and cancel-ack audit trails |
+| Coding Agent sandbox | ACA Dynamic Sessions for managed fast isolation; E2B when deep runtime control needed | Sandboxes without snapshot TTL discipline or deterministic garbage-collection windows |
 | Browser/CUA cluster | ACA Sandboxes or E2B with explicit pause/resume and WebSocket routing | Returning screenshot/video payloads as inline JSON blobs in LLM context |
-| Multi-tenant SaaS Agent Gateway | APIM AI Gateway + AKSClaw hard boundaries + Entra Agent ID | A2A/MCP calls that expose cancel tokens across tenants or skip expiry controls |
-| Financial zero-trust execution | Kata/Firecracker isolation + private networking + deterministic policy audit | Abort-sensitive workflows without immutable cancel ledger and replay suppression |
+| Multi-tenant SaaS Agent Gateway | APIM AI Gateway + AKSClaw hard boundaries + Entra Agent ID | A2A/MCP flows that share snapshot namespaces across tenants or skip quota fences |
+| Financial zero-trust execution | Kata/Firecracker isolation + private networking + deterministic policy audit | Regulated workloads without immutable snapshot-audit lineage and restore verification |
 
 ### Selection decision tree
-1. Need fast user-abort semantics -> explicit cancel-token propagation across gateway/orchestrator/tool hops.
-2. Need to stop downstream side-effects on abort -> deterministic cancellation acknowledgement and retry suppression.
-3. Need balanced reliability and operability -> layered cancellation contract with bounded fallback behavior.
-4. Need strict multi-tenant governance -> APIM + tenant-scoped cancel budget + cancel-token policy fences.
+1. Need high restore-hit with bounded storage -> tiered snapshot retention + deterministic GC windows.
+2. Need stable disk pressure under burst tenants -> snapshot aging + quota-aware eviction + restore-index compaction.
+3. Need balanced reliability and operability -> layered snapshot policy with cold-fallback restoration behavior.
+4. Need strict multi-tenant governance -> APIM + tenant-scoped snapshot quotas + isolation fences.
 
 ### ROI model
 - Baseline manual hours/week: `1200`
@@ -90,17 +90,17 @@ Layered decoupling baseline for this cycle:
 
 ## 5) Five-step rollout guide
 1. Screening: classify workload by isolation, state, compliance, and concurrency.
-2. Design: choose cancellation strategy with explicit token boundaries and expiry trust policy.
-3. Pilot: run benchmark harness for orphan-stop precision, cancel-ack integrity, latency impact, and throughput stability.
-4. Harden: enforce identity, cancellation governance fences, MCP/A2A controls, and observability contracts.
-5. Scale: rollout with cancellation policy, chaos drills, and ROI review loop.
+2. Design: choose snapshot retention strategy with explicit TTL boundaries and GC trust policy.
+3. Pilot: run benchmark harness for disk-pressure control, restore-hit integrity, latency impact, and throughput stability.
+4. Harden: enforce identity, snapshot governance fences, MCP/A2A controls, and observability contracts.
+5. Scale: rollout with snapshot-GC policy, chaos drills, and ROI review loop.
 
 ## 6) Visual deliverables
 
-- Summary SVG: `assets/34-cycle-422-daily-breakthroughs.svg`
+- Summary SVG: `assets/34-cycle-423-daily-breakthroughs.svg`
 - 7-card deck (ZH): `benchmark-cards.html`
 - 7-card deck (EN): `benchmark-cards.en.html`
-- Interactive workbench H5: `workbench-cycle-422.html`
+- Interactive workbench H5: `workbench-cycle-423.html`
 
 ## 7) Traceability labels
 
