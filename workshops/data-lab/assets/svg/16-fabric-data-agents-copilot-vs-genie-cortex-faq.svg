@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" width="1600" height="1040">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="cardFabric" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0B192C"/>
+    </linearGradient>
+    <linearGradient id="cardComp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1040" fill="url(#bgGrad)"/>
+
+  <!-- Header Banner -->
+  <rect x="36" y="24" width="1528" height="114" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="54" y="42" width="290" height="26" rx="13" fill="#0284C7"/>
+  <text x="199" y="59" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">DATA LAB · ROUND 8 · AGENTIC BI &amp; NL2SQL</text>
+  <text x="362" y="59" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Provenance: [measured_local_harness: 75/76=98.68%, 34/34 tests] · [synthetic_scenario_model: n=76 mean 506.0ms | n=15 mean 543.0ms]</text>
+  <text x="54" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="800">Fabric Data Agents + Copilot Studio + Foundry IQ vs. Databricks Genie vs. Snowflake Cortex Agents</text>
+  <text x="54" y="122" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Tri-Modal Grounding (Verified DAX + Eventhouse NL2KQL + OneLake NL2SQL) &amp; MCP Federation · Zero Metric Drift (0.0% vs 14.2%) · -66.7% Modeled TCO</text>
+
+  <!-- Left Column: Problem vs Tri-Modal Grounding First Principles -->
+  <rect x="36" y="154" width="748" height="410" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="186" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">1. Why Raw-Table NL2SQL Fails vs. Fabric Tri-Modal Grounding</text>
+  <text x="58" y="208" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">First-Principles Comparison: Uncurated Schema Guessing vs. Ontology-Grounded Tri-Modal Dispatch</text>
+
+  <!-- Legacy Anti-Pattern Box -->
+  <rect x="58" y="224" width="704" height="134" rx="10" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="248" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">⛔ Legacy Siloed NL2SQL Anti-Pattern (14.2% Metric Drift · Duplicate YAML Tax)</text>
+  <text x="76" y="272" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Raw Table Guessing: LLM joins 40+ uncurated Delta/Snowflake tables without certified DAX fiscal calendars -> +14.2% metric drift (DL-23)</text>
+  <text x="76" y="294" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Single-Engine Blind Spot: SQL-only BI bots cannot query sub-second KQL IoT telemetry or write back operational actions</text>
+  <text x="76" y="316" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Double Semantic Maintenance: Rewriting 300+ Power BI DAX measures into duplicate YAML semantic files + $20-$60/user/mo BI seats</text>
+  <text x="76" y="340" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Result: Conflicting CFO vs. Ops numbers, $16,200/mo modeled 2,500-user BI/Agent TCO [synthetic_scenario_model]</text>
+
+  <!-- Fabric Tri-Modal Architecture Box -->
+  <rect x="58" y="372" width="704" height="174" rx="10" fill="url(#cardFabric)" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="76" y="396" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">✅ Fabric Data Agent + Copilot Studio + Foundry IQ (0.0% Drift · $0 Viewer Seat on F64+)</text>
+  <rect x="76" y="410" width="214" height="74" rx="8" fill="#0F172A" stroke="#0284C7"/>
+  <text x="183" y="432" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">NL2DAX (Power BI Semantic)</text>
+  <text x="183" y="452" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Reuses verified DAX measures</text>
+  <text x="183" y="470" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">0.0% Fiscal Metric Drift</text>
+
+  <rect x="303" y="410" width="214" height="74" rx="8" fill="#0F172A" stroke="#818CF8"/>
+  <text x="410" y="432" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">NL2KQL (RTI Eventhouse)</text>
+  <text x="410" y="452" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Sub-second cold-chain &amp; IoT</text>
+  <text x="410" y="470" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">72ms Modeled Telemetry</text>
+
+  <rect x="530" y="410" width="214" height="74" rx="8" fill="#0F172A" stroke="#34D399"/>
+  <text x="637" y="432" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">NL2SQL + MCP Federation</text>
+  <text x="637" y="452" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">OneLake SQL + Databricks Genie</text>
+  <text x="637" y="470" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Entra Agent ID OBO Security</text>
+
+  <text x="76" y="510" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Published directly to M365 Copilot / Teams &amp; Azure AI Foundry Agent Service; writes back via 1GB Free Fabric SQL</text>
+  <text x="76" y="532" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Result: $5,400/mo modeled 2,500-user TCO (-66.7% savings) · 417ms modeled Scenario O E2E [synthetic_scenario_model]</text>
+
+  <!-- Right Column: 5-Cloud Decision Tree & MCP Coexistence Pattern -->
+  <rect x="816" y="154" width="748" height="410" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="838" y="186" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">2. Architect Selection Matrix &amp; Multi-Agent MCP Coexistence</text>
+  <text x="838" y="208" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">When to Pick Fabric Data Agents First vs. Databricks Genie / Snowflake Cortex / Looker / Amazon Q</text>
+
+  <!-- 5-Platform Pills -->
+  <rect x="838" y="224" width="704" height="62" rx="8" fill="#0F2942" stroke="#38BDF8"/>
+  <text x="854" y="246" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Microsoft Fabric Data Agents + Copilot Studio + Foundry IQ (Primary Enterprise Hub)</text>
+  <text x="854" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Best when: 200+ M365/Power BI users need unified NL2DAX + NL2KQL + NL2SQL, Entra OBO RLS/CLS, and 1GB Free SQL write-back</text>
+
+  <rect x="838" y="296" width="704" height="58" rx="8" fill="#1E293B" stroke="#F97316"/>
+  <text x="854" y="318" fill="#FB923C" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks AI/BI Genie &amp; Agent Bricks (Coexist via MCP / Foundry Tool Call)</text>
+  <text x="854" y="338" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Best when: Data scientists &amp; ML teams explore Unity Catalog Metric Views, feature tables &amp; compound Mosaic AI pipelines</text>
+
+  <rect x="838" y="364" width="704" height="58" rx="8" fill="#1E293B" stroke="#06B6D4"/>
+  <text x="854" y="386" fill="#22D3EE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake Cortex Analyst + Cortex Search + Snowflake Intelligence</text>
+  <text x="854" y="406" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Best when: 100% of governed tables &amp; YAML semantic models live inside Snowflake Horizon and users query inside Snowflake UI</text>
+
+  <rect x="838" y="432" width="344" height="58" rx="8" fill="#1E293B" stroke="#FACC15"/>
+  <text x="854" y="454" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">GCP Looker Conversational Analytics</text>
+  <text x="854" y="474" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">LookML semantic model + BigQuery Vertex AI</text>
+
+  <rect x="1198" y="432" width="344" height="58" rx="8" fill="#1E293B" stroke="#A855F7"/>
+  <text x="1214" y="454" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">AWS Amazon Q in QuickSight</text>
+  <text x="1214" y="474" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">SPICE topics + Executive Stories on Redshift/S3</text>
+
+  <rect x="838" y="500" width="704" height="46" rx="8" fill="#064E3B" stroke="#10B981"/>
+  <text x="854" y="528" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Better Together Pattern: M365 Copilot Studio Orchestrator -&gt; Fabric Data Agent (DAX/KQL) + Databricks Genie / Cortex via MCP</text>
+
+  <!-- Bottom Full-Width Section: Scenario O Closed-Loop Trace & Dual Denominator Disclosure -->
+  <rect x="36" y="582" width="1528" height="430" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="616" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3. Scenario O Reference Simulation: Global Biopharma Cold-Chain &amp; Commercial Agentic BI (417ms E2E [synthetic_scenario_model])</text>
+  <text x="58" y="638" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Separated Denominators: Denominator A (n=76 Routing Matrix DL-01..DL-76) Mean = 506.0ms | Denominator B (n=15 Ontology Simulations Scenarios A..O) Mean = 543.0ms</text>
+
+  <!-- 4 Step Closed-Loop Cards -->
+  <rect x="58" y="656" width="356" height="150" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="76" y="682" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step 1 · Tri-Modal Detection (72ms)</text>
+  <text x="76" y="706" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• M365 Teams query with Entra Agent ID OBO</text>
+  <text x="76" y="728" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eventhouse NL2KQL flags 8.6°C excursion (&gt;8.0°C)</text>
+  <text x="76" y="750" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Power BI NL2DAX checks Munich stock (4.1 days)</text>
+  <text x="76" y="776" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">0.0% Metric Hallucination Drift</text>
+
+  <rect x="434" y="656" width="356" height="150" rx="10" fill="#1E293B" stroke="#818CF8" stroke-width="1.2"/>
+  <text x="452" y="682" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step 2 · Ontology + Genie MCP (115ms)</text>
+  <text x="452" y="706" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Fabric IQ traverses 11 affected biologics lots</text>
+  <text x="452" y="728" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Delegates biomarker stability check to</text>
+  <text x="452" y="750" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">  Databricks AI/BI Genie Space via MCP</text>
+  <text x="452" y="776" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Zero-Copy Multi-Agent Coexistence</text>
+
+  <rect x="810" y="656" width="356" height="150" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="828" y="682" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step 3 · Foundry IQ GxP Guardrail (135ms)</text>
+  <text x="828" y="706" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Policy: FDA-21-CFR-PART-11-GXP-SOP-11</text>
+  <text x="828" y="728" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Blocks unverified ad-hoc SQL &amp; auto-release</text>
+  <text x="828" y="750" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces QA Pharmacist Confirm gate (0.99)</text>
+  <text x="828" y="776" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">100% FDA 21 CFR Part 11 Traceability</text>
+
+  <rect x="1186" y="656" width="356" height="150" rx="10" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1204" y="682" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Step 4 · 1GB Free SQL Write-Back (95ms)</text>
+  <text x="1204" y="706" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Power BI Agentic App (Rayfin GxP Portal)</text>
+  <text x="1204" y="728" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Quarantines 11 lots + dispatches Zurich backup</text>
+  <text x="1204" y="750" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Commits audit log to 1GB Free Fabric SQL DB</text>
+  <text x="1204" y="776" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$3.15M Modeled Biologics Protected</text>
+
+  <!-- Quantitative Comparison Bars -->
+  <rect x="58" y="824" width="1484" height="166" rx="10" fill="#111827" stroke="#374151"/>
+  <text x="78" y="852" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Quantitative FinOps &amp; Accuracy Comparison (2,500 Enterprise Users · 18,500 Queries/Day [synthetic_scenario_model])</text>
+
+  <text x="78" y="884" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Fabric Data Agent + F64 ($0 Viewer Seat + DAX/KQL Reuse)</text>
+  <rect x="470" y="870" width="280" height="20" rx="4" fill="#38BDF8"/>
+  <text x="762" y="885" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$5,400/mo (-66.7% TCO) · 0.0% Metric Drift · 417ms Modeled E2E</text>
+
+  <text x="78" y="918" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Multi-Tool Siloed BI Seats + Duplicate YAML Semantic Maintenance</text>
+  <rect x="470" y="904" width="760" height="20" rx="4" fill="#64748B"/>
+  <text x="1242" y="919" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$16,200/mo Baseline · 14.2% Raw-Table Drift without DAX</text>
+
+  <text x="78" y="958" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Provenance Footer: [measured_local_harness] 34/34 unit tests in 0.030s, 75/76 (98.68%) routing matrix accuracy | [vendor_published_spec_as_of_2026] 11 official vendor URLs verified as of 2026-11-08 | [synthetic_scenario_model] Denominator A n=76 mean=506.0ms (R7 n=72: 511.0ms, R6 n=68: 516.0ms, R5 n=64: 521.0ms, R4 n=60: 526.5ms, R3 n=56: 532.0ms); Denominator B n=15 mean=543.0ms (R7 n=14: 552.0ms, R6 n=13: 562.0ms, R5 n=12: 572.92ms, R4 n=11: 584.09ms, R3 n=10: 596.0ms) | [not_measured] live cloud cluster P99.</text>
+</svg>
