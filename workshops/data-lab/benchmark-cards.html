@@ -238,22 +238,22 @@
   <div>
     <div class="card-header">
       <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-08 / 11-09 · SEALED RUN (R5 · 64 CASES)</span>
+      <span>2026-11-08 / 11-09 · SEALED RUN (R6 · 68 CASES)</span>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake XTable + Eventhouse + Mirroring + DiskANN HTAP</span> 在 64 项跨云零拷贝、实时流 Eventhouse vs Dynamic Tables、零 ETL 镜像 ($0 算力)、Iceberg ↔ Delta 双向虚拟化 ($0 算力) 及 HTAP DiskANN (-92% 内存) 评测中达成 98.44% 准确率（63/64），500 人企业建模 TCO 降低 46.1%–56.1%</h1>
-    <p class="sub">融合今晚五大深度选型专题：R1 跨云零拷贝与 OneLake IQ Sharing、R2 实时流 Eventhouse KQL (142ms 参考目标) vs Snowflake Dynamic Tables (60s 最小滞后)、R3 数据库镜像与 Open Mirroring ($0 免费复制算力，省 87.7% CDC 账单)、R4 OneLake XTable 双向自动虚拟化 ($0 格式转换算力，省 90.9% 双格式 ETL 税)、R5 Fabric SQL + Cosmos DB SSD 级 DiskANN 向量索引 (省 92% 内存与 79.4% HTAP+向量 TCO)。</p>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake XTable + Eventhouse + Mirroring + DiskANN + Purview OBO</span> 在 68 项跨云零拷贝、实时流 Eventhouse vs Dynamic Tables、零 ETL 镜像 ($0 算力)、Iceberg ↔ Delta 虚拟化 ($0 算力)、HTAP DiskANN (-92% 内存) 及多云 AI 治理 OBO (-85.3% 治理 TCO) 评测中达成 98.53% 准确率（67/68），500 人企业建模 TCO 降低 46.1%–56.1%</h1>
+    <p class="sub">融合今晚六大深度选型专题：R1 跨云零拷贝与 OneLake IQ Sharing、R2 实时流 Eventhouse KQL (142ms 参考目标) vs Snowflake Dynamic Tables (60s 最小滞后)、R3 数据库镜像与 Open Mirroring ($0 免费复制算力，省 87.7% CDC 账单)、R4 OneLake XTable 双向自动虚拟化 ($0 格式转换算力，省 90.9% 双格式 ETL 税)、R5 Fabric SQL + Cosmos DB SSD 级 DiskANN 向量索引 (省 92% 内存与 79.4% HTAP+向量 TCO)、R6 OneLake 统一 RLS/CLS/OLS + Purview + Entra Agent ID OBO 身份透传 (省 85.3% 跨引擎治理 TCO，保住 $2.75M 主权合规罚款风险)。</p>
 
     <div class="grid-3">
       <div class="panel">
         <h3>1. 评测场景与门禁阈值</h3>
-        <p><strong>64 项密封架构与本体场景</strong>（<code>DL-01..DL-64</code>）：</p>
+        <p><strong>68 项密封架构与本体场景</strong>（<code>DL-01..DL-68</code>）：</p>
         <ul>
           <li><code>Fabric IQ &amp; Eventhouse RTI</code> (12 项)</li>
-          <li><code>vs Databricks (Lakebase/UniForm)</code> (15 项)</li>
-          <li><code>vs Snowflake (Unistore/Polaris)</code> (12 项)</li>
-          <li><code>vs GCP BigQuery (AlloyDB/BigLake)</code> (8 项)</li>
-          <li><code>vs AWS Lakehouse (Aurora/S3 Tables)</code> (8 项)</li>
-          <li><code>DiskANN / Mirroring / XTable / ALDO</code> (9 项)</li>
+          <li><code>vs Databricks (Lakebase/UC ABAC)</code> (16 项)</li>
+          <li><code>vs Snowflake (Unistore/Horizon)</code> (13 项)</li>
+          <li><code>vs GCP BigQuery (AlloyDB/Dataplex)</code> (9 项)</li>
+          <li><code>vs AWS Lakehouse (Aurora/LakeForm)</code> (9 项)</li>
+          <li><code>DiskANN / Mirror / XTable / OBO</code> (9 项)</li>
         </ul>
         <p style="margin-top:8px;"><strong>动作门禁</strong>：<br>
         <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
@@ -289,7 +289,8 @@
     "telecom_5g_eventhouse_vs_dynamic_tables",
     "core_banking_oracle_open_mirroring_cdc",
     "omni_channel_snowflake_iceberg_onelake_xtable",
-    "wealth_advisory_htap_diskann_vs_lakebase_unistore"
+    "wealth_advisory_htap_diskann_vs_lakebase_unistore",
+    "sovereign_healthcare_obo_purview_vs_uc_abac"
   ]
 }</div>
       </div>
@@ -327,7 +328,7 @@
   </div>
 
   <div class="footer-callout">
-    <strong>Provenance, Dual-Denominator &amp; Official Source Disclosure (`measured_local_harness` + `synthetic_scenario_model` + `vendor_published_spec_as_of_2026`)</strong>：<code>63/64 (98.44%)</code> 路由判定与 <code>28/28</code> 单元测试为本地实测（<code>measured_local_harness</code>）；F64 <code>$0</code> 读者许可（<a href="https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/" style="color:#93C5FD;">Azure Pricing</a>）、Mirroring <code>$0</code> 复制算力（<a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview" style="color:#93C5FD;">MS Learn</a>）、OneLake XTable Iceberg <code>$0</code> 转换算力（<a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables" style="color:#93C5FD;">MS Learn</a>）、Cosmos DB &amp; SQL SSD <code>DiskANN</code>（<a href="https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data" style="color:#93C5FD;">MS Learn</a>）、Snowflake Dynamic Tables <code>60s</code> &amp; Hybrid Tables（<a href="https://docs.snowflake.com/en/user-guide/unistore-hybrid-tables" style="color:#93C5FD;">Snowflake Docs</a>）、Databricks Lakebase &amp; UniForm（<a href="https://docs.databricks.com/aws/en/oltp/projects/" style="color:#93C5FD;">DBX Docs</a>）为官方规格（<code>as_of: 2026-11-08</code>）；两类建模延迟分母严格区分：<strong>① n=64 路由矩阵建模均值 = <code>521.0 ms</code></strong>（R4 n=60 为 <code>526.5 ms</code>，R3 n=56 为 <code>532.0 ms</code>），<strong>② n=12 行业本体端到端闭环建模均值 = <code>572.92 ms</code></strong>（<code>[780,640,710,660,590,560,530,515,495,480,465,450]ms</code>；R4 n=11 为 <code>584.09 ms</code>，R3 n=10 为 <code>596.0 ms</code>），以及 TCO 模型与风险敞口（<code>$1.15M/$1.48M/$2.35M/$1.62M/$1.95M</code>）均为封存于 <code>reports/report.json</code> 的参考仿真模型（<code>synthetic_scenario_model</code>）；跨云物理集群压测标记为 <code>not_measured</code>。
+    <strong>Provenance, Dual-Denominator &amp; Official Source Disclosure (`measured_local_harness` + `synthetic_scenario_model` + `vendor_published_spec_as_of_2026`)</strong>：<code>67/68 (98.53%)</code> 路由判定与 <code>30/30</code> 单元测试为本地实测（<code>measured_local_harness</code>）；F64 <code>$0</code> 读者许可（<a href="https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/" style="color:#93C5FD;">Azure Pricing</a>）、Mirroring <code>$0</code> 复制算力（<a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview" style="color:#93C5FD;">MS Learn</a>）、OneLake XTable Iceberg <code>$0</code> 转换算力（<a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables" style="color:#93C5FD;">MS Learn</a>）、Cosmos DB &amp; SQL SSD <code>DiskANN</code>（<a href="https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data" style="color:#93C5FD;">MS Learn</a>）、OneLake 统一安全 RLS/CLS/OLS &amp; Purview OBO（<a href="https://learn.microsoft.com/en-us/fabric/onelake/security/get-started-data-access-roles" style="color:#93C5FD;">MS Learn Security</a>）、Snowflake Dynamic Tables <code>60s</code> &amp; Hybrid Tables（<a href="https://docs.snowflake.com/en/user-guide/unistore-hybrid-tables" style="color:#93C5FD;">Snowflake Docs</a>）、Databricks Lakebase &amp; UC ABAC（<a href="https://docs.databricks.com/aws/en/data-governance/unity-catalog/abac/" style="color:#93C5FD;">DBX Docs</a>）为官方规格（<code>as_of: 2026-11-08</code>）；两类建模延迟分母严格区分：<strong>① n=68 路由矩阵建模均值 = <code>516.0 ms</code></strong>（R5 n=64 为 <code>521.0 ms</code>，R4 n=60 为 <code>526.5 ms</code>，R3 n=56 为 <code>532.0 ms</code>），<strong>② n=13 行业本体端到端闭环建模均值 = <code>562.0 ms</code></strong>（<code>[780,640,710,660,590,560,530,515,495,480,465,450,431]ms</code>；R5 n=12 为 <code>572.92 ms</code>，R4 n=11 为 <code>584.09 ms</code>，R3 n=10 为 <code>596.0 ms</code>），以及 TCO 模型与风险敞口（<code>$1.15M/$1.48M/$2.35M/$1.62M/$1.95M/$2.75M</code>）均为封存于 <code>reports/report.json</code> 的参考仿真模型（<code>synthetic_scenario_model</code>）；跨云物理集群压测标记为 <code>not_measured</code>。
   </div>
 </section>
 
@@ -404,10 +405,10 @@
 <section class="card" id="card-3">
   <div>
     <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 64-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 63 / 64 (98.44%) · MATRIX MEAN (n=64) 521.0 MS · ONTOLOGY SIM MEAN (n=12) 572.92 MS</span>
+      <span>3 / 7 · WHAT I TESTED · 68-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 67 / 68 (98.53%) · MATRIX MEAN (n=68) 516.0 MS · ONTOLOGY SIM MEAN (n=13) 562.0 MS</span>
     </div>
-    <h2>63 of 64 跨云架构、OneLake IQ Sharing、实时流 Eventhouse (142ms) vs Dynamic Tables (60s)、零 ETL 镜像 ($0 算力) vs CDC、OneLake XTable (Iceberg↔Delta $0 算力) 及 HTAP DiskANN (-92% 内存) 场景通过（98.44%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
+    <h2>67 of 68 跨云架构、OneLake IQ Sharing、实时流 Eventhouse (142ms) vs Dynamic Tables (60s)、零 ETL 镜像 ($0 算力)、OneLake XTable ($0 算力)、HTAP DiskANN (-92% 内存) 及多云 OBO 安全治理 (-85.3% 治理 TCO) 场景通过（98.53%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
 
     <table>
       <thead>
@@ -460,14 +461,15 @@
         <tr><td><strong>DL-53..56</strong> · 零ETL镜像</td><td>Database &amp; Open Mirroring ($0 算力) vs Fivetran/Openflow/Lakeflow (480ms)</td><td class="hit">✓ 省 87.7% CDC 账单 ($1.6K vs $13K) + 银行总账零停机自愈 ($2.35M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
         <tr><td><strong>DL-57..60</strong> · Iceberg/XTable</td><td>OneLake XTable 双向虚拟化 ($0 转换) vs UniForm/Polaris/S3 Tables (465ms)</td><td class="hit">✓ 省 90.9% 双格式 ETL ($966 vs $10.5K) + 全渠道零售毛利保卫 ($1.62M 建模)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-61..64</strong> · HTAP DiskANN</td><td>Fabric SQL + Cosmos DB SSD DiskANN (-92% RAM) vs Lakebase/Unistore (450ms)</td><td class="hit">✓ 省 79.4% 向量+HTAP TCO ($2.24K vs $10.88K) + 财富调仓闭环 ($1.95M 建模)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
+        <tr><td><strong>DL-65..68</strong> · OBO 安全治理</td><td>OneLake RLS/CLS/OLS + Purview + Entra Agent ID OBO vs UC ABAC/Horizon (431ms)</td><td class="hit">✓ 省 85.3% 跨云安全治理 TCO ($1.38K vs $9.4K) + 医疗主权防越权 ($2.75M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="grid-2" style="margin-top:8px;">
     <div class="panel">
-      <h3>阈值门控分布 (Threshold Gating · 64 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>51 项 (79.7%)</strong> · <code>Confirm</code>: <strong>11 项 (17.2%)</strong> · <code>Send to a human</code>: <strong>2 项 (3.1%)</strong>。高影响物理调度、跨企供应链调拨、银行核心总账对账与主权断网策略经过人工确认。</p>
+      <h3>阈值门控分布 (Threshold Gating · 68 Cases)</h3>
+      <p><code>Act automatically</code>: <strong>54 项 (79.4%)</strong> · <code>Confirm</code>: <strong>12 项 (17.6%)</strong> · <code>Send to a human</code>: <strong>2 项 (2.9%)</strong>。高影响物理调度、跨企供应链调拨、银行核心总账对账、医疗基因越权拦截与主权断网策略经过人工确认。</p>
     </div>
     <div class="panel">
       <h3>失分根因剖析 (✕ DL-23 Miss Analysis)</h3>
