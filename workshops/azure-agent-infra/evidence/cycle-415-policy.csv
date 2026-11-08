@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Request-key dedupe gate,188,200,0.94,measured,idempotency replay + deterministic verification
+Session-key replay integrity gate,183,190,0.9632,measured,session replay integrity logs
+MCP/A2A cross-hop idempotency authorization fence,172,180,0.9556,measured,MCP policy replay logs
