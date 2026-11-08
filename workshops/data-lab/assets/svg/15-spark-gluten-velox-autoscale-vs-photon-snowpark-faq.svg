@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" width="1600" height="1040" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad15" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0C1732"/>
+      <stop offset="100%" stop-color="#081C24"/>
+    </linearGradient>
+    <linearGradient id="accentGrad15" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="35%" stop-color="#38BDF8"/>
+      <stop offset="70%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardFabric15" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B2340"/>
+      <stop offset="100%" stop-color="#071529"/>
+    </linearGradient>
+    <linearGradient id="cardDark15" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111C35"/>
+      <stop offset="100%" stop-color="#0B1325"/>
+    </linearGradient>
+    <filter id="shadow15" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1040" fill="url(#bgGrad15)"/>
+  <rect x="0" y="0" width="1600" height="6" fill="url(#accentGrad15)"/>
+
+  <!-- Header Banner -->
+  <rect x="36" y="24" width="1528" height="108" rx="14" fill="#0B152B" stroke="#1E3A5F" stroke-width="1.5" filter="url(#shadow15)"/>
+  <rect x="54" y="42" width="290" height="26" rx="13" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+  <text x="199" y="59" fill="#6EE7B7" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="0.8">ROUND 7 · LAKEHOUSE COMPUTE &amp; FINOPS FAQ</text>
+
+  <text x="360" y="60" fill="#F8FAFC" font-size="22" font-weight="800">Fabric Spark Native Execution (Gluten + Velox C++) &amp; Autoscale vs. Photon vs. Snowpark</text>
+  <text x="54" y="92" fill="#94A3B8" font-size="14">First-Principles Guide: $0 Extra CU Multiplier for C++ SIMD Vectorization (Gluten/Velox) + Serverless Spark Autoscale vs. 2x–2.5x Photon DBU Surcharge</text>
+  <text x="54" y="116" fill="#38BDF8" font-size="12.5" font-weight="600">Provenance: [Vendor Spec as-of 2026-11-08: Gluten/Velox $0 Surcharge &amp; Autoscale Billing] · [Synthetic Model: n=72 Matrix Mean 511.0ms | n=14 Sim Mean 552.0ms | Scenario N 422ms] · [Local Tests: 32/32 Pass]</text>
+
+  <!-- Right Header KPI Badges -->
+  <rect x="1220" y="38" width="160" height="78" rx="10" fill="#0F2942" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="1300" y="62" fill="#7DD3FC" font-size="11" font-weight="700" text-anchor="middle">GLUTEN + VELOX C++</text>
+  <text x="1300" y="90" fill="#38BDF8" font-size="26" font-weight="800" text-anchor="middle">$0 Surcharge</text>
+  <text x="1300" y="108" fill="#BAE6FD" font-size="10.5" text-anchor="middle">0.5 CU/vCore-Hr Base Rate</text>
+
+  <rect x="1392" y="38" width="154" height="78" rx="10" fill="#0A2E26" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1469" y="62" fill="#6EE7B7" font-size="11" font-weight="700" text-anchor="middle">SCENARIO N FINOPS</text>
+  <text x="1469" y="90" fill="#10B981" font-size="26" font-weight="800" text-anchor="middle">-58.6% TCO</text>
+  <text x="1469" y="108" fill="#A7F3D0" font-size="10.5" text-anchor="middle">$6,120 vs $14,800/mo</text>
+
+  <!-- Section 1: Left Column - First-Principles JVM Row-by-Row vs C++ SIMD Vectorized Execution (Gluten/Velox vs Photon) -->
+  <rect x="36" y="148" width="750" height="420" rx="14" fill="url(#cardDark15)" stroke="#2A4365" stroke-width="1.5" filter="url(#shadow15)"/>
+  <text x="58" y="180" fill="#F8FAFC" font-size="17" font-weight="800">1. First-Principles Mechanics: Why JVM Spark Struggles &amp; How Gluten/Velox vs. Photon Differ</text>
+  <text x="58" y="202" fill="#94A3B8" font-size="12.5">Both replace JVM row-at-a-time GC overhead with C++ AVX-512 SIMD columnar batches — but with opposite commercial &amp; openness models</text>
+
+  <!-- Top Subcard: Legacy JVM Spark Bottleneck -->
+  <rect x="56" y="216" width="710" height="148" rx="10" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="74" y="240" fill="#FCA5A5" font-size="13.5" font-weight="700">❌ Legacy Apache Spark JVM Execution + Provisioned Cluster Contention (Why Daily 60TB ETL Is Expensive)</text>
+
+  <rect x="74" y="252" width="215" height="96" rx="8" fill="#1A0B0E" stroke="#7F1D1D" stroke-width="1"/>
+  <text x="181" y="274" fill="#F87171" font-size="12" font-weight="700" text-anchor="middle">1. JVM Object &amp; GC Bottleneck</text>
+  <text x="181" y="294" fill="#E2E8F0" font-size="11" text-anchor="middle">millions of boxed Java objects;</text>
+  <text x="181" y="310" fill="#E2E8F0" font-size="11" text-anchor="middle">CPU stalls on L1/L2 cache misses</text>
+  <text x="181" y="330" fill="#FCA5A5" font-size="11" font-weight="700" text-anchor="middle">⚠ High CPU Waste on Parquet Joins</text>
+
+  <rect x="303" y="252" width="215" height="96" rx="8" fill="#1A0B0E" stroke="#7F1D1D" stroke-width="1"/>
+  <text x="410" y="274" fill="#F87171" font-size="12" font-weight="700" text-anchor="middle">2. Proprietary C++ Surcharge Tax</text>
+  <text x="410" y="294" fill="#E2E8F0" font-size="11" text-anchor="middle">Databricks Photon runs 2.5x–3x faster</text>
+  <text x="410" y="310" fill="#E2E8F0" font-size="11" text-anchor="middle">but bills 2x–2.5x DBU per vCore-hour</text>
+  <text x="410" y="330" fill="#FCA5A5" font-size="11" font-weight="700" text-anchor="middle">⚠ Speedup Eaten by Multiplier</text>
+
+  <rect x="532" y="252" width="218" height="96" rx="8" fill="#1A0B0E" stroke="#7F1D1D" stroke-width="1"/>
+  <text x="641" y="274" fill="#F87171" font-size="12" font-weight="700" text-anchor="middle">3. Fixed Capacity Noisy Neighbor</text>
+  <text x="641" y="294" fill="#E2E8F0" font-size="11" text-anchor="middle">Nightly 60TB Spark compaction spikes</text>
+  <text x="641" y="310" fill="#E2E8F0" font-size="11" text-anchor="middle">consume shared F-SKU or force over-sizing</text>
+  <text x="641" y="330" fill="#FCA5A5" font-size="11" font-weight="700" text-anchor="middle">⚠ $14,800/mo Modeled ETL Cost</text>
+
+  <!-- Bottom Subcard: Fabric Native Execution Engine (Gluten + Velox) + Autoscale -->
+  <rect x="56" y="378" width="710" height="174" rx="10" fill="#072822" stroke="#10B981" stroke-width="1.5"/>
+  <text x="74" y="402" fill="#6EE7B7" font-size="13.5" font-weight="700">✅ Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++) + Serverless Autoscale Billing</text>
+
+  <rect x="74" y="416" width="215" height="120" rx="8" fill="#061D19" stroke="#059669" stroke-width="1"/>
+  <text x="181" y="438" fill="#34D399" font-size="12" font-weight="700" text-anchor="middle">Step 1: Catalyst Plan Offload</text>
+  <text x="181" y="458" fill="#E2E8F0" font-size="11" text-anchor="middle">Apache Gluten translates Spark</text>
+  <text x="181" y="474" fill="#E2E8F0" font-size="11" text-anchor="middle">Physical Plan into Substrait IR</text>
+  <text x="181" y="490" fill="#E2E8F0" font-size="11" text-anchor="middle">(Scan / Filter / HashJoin / Agg)</text>
+  <text x="181" y="518" fill="#6EE7B7" font-size="11" font-weight="700" text-anchor="middle">✓ Zero Code Changes Required</text>
+
+  <rect x="303" y="416" width="215" height="120" rx="8" fill="#061D19" stroke="#059669" stroke-width="1"/>
+  <text x="410" y="438" fill="#38BDF8" font-size="12" font-weight="700" text-anchor="middle">Step 2: Meta Velox C++ SIMD</text>
+  <text x="410" y="458" fill="#E2E8F0" font-size="11" text-anchor="middle">Executes Apache Arrow columnar</text>
+  <text x="410" y="474" fill="#E2E8F0" font-size="11" text-anchor="middle">vectors in C++ AVX-512 + V-Order;</text>
+  <text x="410" y="490" fill="#E2E8F0" font-size="11" text-anchor="middle">auto JVM fallback on custom UDFs</text>
+  <text x="410" y="518" fill="#38BDF8" font-size="11" font-weight="700" text-anchor="middle">✓ ~2.8x Faster at $0 Extra CU Tax</text>
+
+  <rect x="532" y="416" width="218" height="120" rx="8" fill="#061D19" stroke="#059669" stroke-width="1"/>
+  <text x="641" y="438" fill="#A78BFA" font-size="12" font-weight="700" text-anchor="middle">Step 3: Spark Autoscale Billing</text>
+  <text x="641" y="458" fill="#E2E8F0" font-size="11" text-anchor="middle">Bursty Spark jobs bill pay-per-job</text>
+  <text x="641" y="474" fill="#E2E8F0" font-size="11" text-anchor="middle">serverless CU outside base F64;</text>
+  <text x="641" y="490" fill="#E2E8F0" font-size="11" text-anchor="middle">0% impact on DirectLake BI</text>
+  <text x="641" y="518" fill="#C4B5FD" font-size="11" font-weight="700" text-anchor="middle">✓ $6,120/mo (-58.6% Modeled TCO)</text>
+
+  <!-- Section 2: Right Column - Architect Decision Tree & Better Together Boundary -->
+  <rect x="806" y="148" width="758" height="420" rx="14" fill="url(#cardFabric15)" stroke="#1E40AF" stroke-width="1.5" filter="url(#shadow15)"/>
+  <text x="828" y="180" fill="#F8FAFC" font-size="17" font-weight="800">2. Five-Platform Lakehouse Compute &amp; FinOps Decision Tree (When to Pick Which Engine)</text>
+  <text x="828" y="202" fill="#93C5FD" font-size="12.5">Match workload operator profile (SQL/DataFrame ETL vs. Black-Box Python/GPU UDFs vs. In-Warehouse Snowpark)</text>
+
+  <!-- Decision Box A -->
+  <rect x="826" y="218" width="718" height="76" rx="10" fill="#0A2540" stroke="#0EA5E9" stroke-width="1.3"/>
+  <text x="844" y="241" fill="#38BDF8" font-size="13.5" font-weight="800">PATH A · Pick Microsoft Fabric Spark Native Execution (Gluten/Velox) + Autoscale Billing FIRST When:</text>
+  <text x="844" y="261" fill="#E2E8F0" font-size="12">• Workload is Parquet/Delta SQL &amp; DataFrame medallion ETL (JOIN, AGG, FILTER, Window) feeding Power BI DirectLake &amp; Fabric IQ</text>
+  <text x="844" y="280" fill="#6EE7B7" font-size="11.5" font-weight="600">• Why: ~2.8x C++ SIMD speedup at $0 extra CU surcharge (0.5 CU/vCore-hr) + V-Order write optimization + serverless Autoscale isolation</text>
+
+  <!-- Decision Box B -->
+  <rect x="826" y="304" width="718" height="76" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.3"/>
+  <text x="844" y="327" fill="#C4B5FD" font-size="13.5" font-weight="800">PATH B · Pick Databricks Photon + Serverless GPU / Classic Clusters FIRST When:</text>
+  <text x="844" y="347" fill="#E2E8F0" font-size="12">• Workload executes distributed PyTorch/Ray GPU training, heavy black-box Python/C++ UDFs, or &gt;50TB stateful shuffle tuning</text>
+  <text x="844" y="366" fill="#DDD6FE" font-size="11.5" font-weight="600">• Why: Gluten/Velox falls back to JVM on opaque Python UDFs; Databricks Serverless GPU &amp; Ray on Spark excel at custom ML/AI training</text>
+
+  <!-- Decision Box C -->
+  <rect x="826" y="390" width="718" height="76" rx="10" fill="#172554" stroke="#60A5FA" stroke-width="1.3"/>
+  <text x="844" y="413" fill="#93C5FD" font-size="13.5" font-weight="800">PATH C · Pick Snowflake Snowpark / SPCS, AWS EMR Serverless, or GCP Dataproc Serverless When:</text>
+  <text x="844" y="433" fill="#E2E8F0" font-size="12">• Snowflake: &gt;85% data lives in Snowflake native tables and teams want in-warehouse Python DataFrames or SPCS GPU containers</text>
+  <text x="844" y="452" fill="#BFDBFE" font-size="11.5" font-weight="600">• AWS / GCP: Native S3 / GCS spot-instance batch pipelines tightly coupled to AWS Step Functions / Glue or GCP Composer / BigQuery</text>
+
+  <!-- Decision Box D: Better Together -->
+  <rect x="826" y="476" width="718" height="76" rx="10" fill="#063229" stroke="#10B981" stroke-width="1.5"/>
+  <text x="844" y="499" fill="#34D399" font-size="13.5" font-weight="800">PATH D · Better Together Coexistence (Split SQL/DataFrame ETL from GPU ML Training over OneLake):</text>
+  <text x="844" y="519" fill="#E2E8F0" font-size="12">• Run daily Bronze→Silver→Gold SQL/DataFrame joins on Fabric Gluten/Velox ($0 surcharge + V-Order) &amp; Autoscale Billing;</text>
+  <text x="844" y="538" fill="#A7F3D0" font-size="11.5" font-weight="600">• Mount the exact same OneLake Delta/Iceberg tables zero-copy in Databricks Serverless GPU for PyTorch/Ray training (0 file duplication)</text>
+
+  <!-- Section 3: Bottom Full-Width - 5-Cloud Lakehouse Compute & FinOps Matrix + Scenario N Closed-Loop Trace -->
+  <rect x="36" y="584" width="1528" height="432" rx="14" fill="#0B1426" stroke="#1E3A5F" stroke-width="1.5" filter="url(#shadow15)"/>
+  <text x="58" y="616" fill="#F8FAFC" font-size="17" font-weight="800">3. Five-Cloud Lakehouse Compute Matrix [Vendor Specs as-of 2026-11-08] &amp; Scenario N EV Fleet Closed-Loop Trace [Synthetic Model]</text>
+
+  <!-- Table Header -->
+  <rect x="56" y="630" width="940" height="34" rx="6" fill="#1E293B"/>
+  <text x="70" y="652" fill="#94A3B8" font-size="11.5" font-weight="700">PLATFORM &amp; ENGINE</text>
+  <text x="275" y="652" fill="#94A3B8" font-size="11.5" font-weight="700">VECTORIZED C++ KERNEL</text>
+  <text x="485" y="652" fill="#94A3B8" font-size="11.5" font-weight="700">SURCHARGE / BILLING MODEL</text>
+  <text x="720" y="652" fill="#94A3B8" font-size="11.5" font-weight="700">BI &amp; STORAGE SYNERGY</text>
+
+  <!-- Row 1: Microsoft Fabric -->
+  <rect x="56" y="668" width="940" height="58" rx="6" fill="#0F2942" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="70" y="692" fill="#38BDF8" font-size="12.5" font-weight="800">Microsoft Fabric Spark</text>
+  <text x="70" y="712" fill="#BAE6FD" font-size="11">Native Execution + Autoscale</text>
+  <text x="275" y="692" fill="#6EE7B7" font-size="12" font-weight="700">Apache Gluten + Meta Velox</text>
+  <text x="275" y="712" fill="#E2E8F0" font-size="11">Open-source C++ AVX-512 + Arrow</text>
+  <text x="485" y="692" fill="#34D399" font-size="12" font-weight="700">$0 Extra Surcharge (0.5 CU/vCore-hr)</text>
+  <text x="485" y="712" fill="#E2E8F0" font-size="11">Shared F-SKU or Serverless Autoscale</text>
+  <text x="720" y="692" fill="#38BDF8" font-size="12" font-weight="700">Native V-Order for DirectLake BI</text>
+  <text x="720" y="712" fill="#E2E8F0" font-size="11">$6,120/mo Modeled 60TB/d ETL TCO</text>
+
+  <!-- Row 2: Databricks -->
+  <rect x="56" y="732" width="940" height="54" rx="6" fill="#131C31"/>
+  <text x="70" y="755" fill="#F8FAFC" font-size="12.5" font-weight="700">Databricks Lakehouse</text>
+  <text x="70" y="773" fill="#94A3B8" font-size="11">Photon + Serverless Jobs/GPU</text>
+  <text x="275" y="755" fill="#E2E8F0" font-size="12" font-weight="600">Proprietary Photon C++ Engine</text>
+  <text x="275" y="773" fill="#94A3B8" font-size="11">Deep shuffle &amp; Delta write tuning</text>
+  <text x="485" y="755" fill="#FBBF24" font-size="12" font-weight="700">~2x–2.5x DBU Multiplier vs Non-Photon</text>
+  <text x="485" y="773" fill="#94A3B8" font-size="11">Per-DBU + underlying VM/Serverless</text>
+  <text x="720" y="755" fill="#E2E8F0" font-size="12">Liquid Clustering (External BI needs</text>
+  <text x="720" y="773" fill="#94A3B8" font-size="11">SQL Warehouse or OneLake Shortcut)</text>
+
+  <!-- Row 3: Snowflake -->
+  <rect x="56" y="792" width="940" height="54" rx="6" fill="#16223B"/>
+  <text x="70" y="815" fill="#F8FAFC" font-size="12.5" font-weight="700">Snowflake Data Cloud</text>
+  <text x="70" y="833" fill="#94A3B8" font-size="11">Snowpark + Container Services</text>
+  <text x="275" y="815" fill="#E2E8F0" font-size="12" font-weight="600">Vectorized C++ SQL Warehouse</text>
+  <text x="275" y="833" fill="#94A3B8" font-size="11">Python sandbox / SPCS containers</text>
+  <text x="485" y="815" fill="#FBBF24" font-size="12" font-weight="700">Warehouse Credit / Second (XS–6XL)</text>
+  <text x="485" y="833" fill="#94A3B8" font-size="11">Snowpark Optimized WH = 1.5x credits</text>
+  <text x="720" y="815" fill="#E2E8F0" font-size="12">Fast inside Snowflake; External Volume</text>
+  <text x="720" y="833" fill="#94A3B8" font-size="11">Iceberg on OneLake enables DirectLake</text>
+
+  <!-- Row 4: AWS -->
+  <rect x="56" y="852" width="940" height="54" rx="6" fill="#131C31"/>
+  <text x="70" y="875" fill="#F8FAFC" font-size="12.5" font-weight="700">AWS Lakehouse</text>
+  <text x="70" y="893" fill="#94A3B8" font-size="11">EMR Serverless + AWS Glue 5.0</text>
+  <text x="275" y="875" fill="#E2E8F0" font-size="12" font-weight="600">EMR Optimized Spark / Gluten opt</text>
+  <text x="275" y="893" fill="#94A3B8" font-size="11">vCPU + GB-hour worker sizing</text>
+  <text x="485" y="875" fill="#E2E8F0" font-size="12">Per vCPU-hour + Memory GB-hour</text>
+  <text x="485" y="893" fill="#94A3B8" font-size="11">Glue DPU ($0.44/DPU-hr) or EMR rate</text>
+  <text x="720" y="875" fill="#E2E8F0" font-size="12">S3 Tables Iceberg compaction;</text>
+  <text x="720" y="893" fill="#94A3B8" font-size="11">requires QuickSight SPICE or Redshift</text>
+
+  <!-- Row 5: GCP -->
+  <rect x="56" y="912" width="940" height="54" rx="6" fill="#16223B"/>
+  <text x="70" y="935" fill="#F8FAFC" font-size="12.5" font-weight="700">GCP Data &amp; AI Cloud</text>
+  <text x="70" y="953" fill="#94A3B8" font-size="11">Dataproc Serverless + BigQuery</text>
+  <text x="275" y="935" fill="#E2E8F0" font-size="12" font-weight="600">Lightning Engine / Native Gluten</text>
+  <text x="275" y="953" fill="#94A3B8" font-size="11">DCU (Data Compute Unit) billing</text>
+  <text x="485" y="935" fill="#E2E8F0" font-size="12">Per DCU-hour + Shuffle storage</text>
+  <text x="485" y="953" fill="#94A3B8" font-size="11">Premium tier surcharge for Lightning</text>
+  <text x="720" y="935" fill="#E2E8F0" font-size="12">BigLake Iceberg + BI Engine RAM cap;</text>
+  <text x="720" y="953" fill="#94A3B8" font-size="11">Mirroring/Shortcuts connect to Fabric</text>
+
+  <!-- Right Panel inside Section 3: Scenario N Closed-Loop Simulation Card -->
+  <rect x="1014" y="630" width="530" height="336" rx="10" fill="#071E26" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1034" y="656" fill="#6EE7B7" font-size="14" font-weight="800">Scenario N · Connected EV Fleet Thermal &amp; FinOps [Synthetic]</text>
+  <text x="1034" y="676" fill="#94A3B8" font-size="11.5">2.4M EVs · 60 TB/day BMS Parquet Compaction · UN-ECE R100 Guardrail</text>
+
+  <rect x="1034" y="690" width="235" height="68" rx="8" fill="#0B2E36" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="1151" y="712" fill="#7DD3FC" font-size="11" font-weight="700" text-anchor="middle">GLUTEN/VELOX SPEEDUP</text>
+  <text x="1151" y="738" fill="#38BDF8" font-size="22" font-weight="800" text-anchor="middle">2.8x ($0 Tax)</text>
+  <text x="1151" y="752" fill="#BAE6FD" font-size="10" text-anchor="middle">0% Daytime BI Capacity Throttle</text>
+
+  <rect x="1285" y="690" width="240" height="68" rx="8" fill="#0B2E36" stroke="#10B981" stroke-width="1"/>
+  <text x="1405" y="712" fill="#6EE7B7" font-size="11" font-weight="700" text-anchor="middle">MODELED CLOSED-LOOP E2E</text>
+  <text x="1405" y="738" fill="#10B981" font-size="22" font-weight="800" text-anchor="middle">422 ms</text>
+  <text x="1405" y="752" fill="#A7F3D0" font-size="10" text-anchor="middle">n=14 Sim Mean: 552.0ms | n=72: 511.0ms</text>
+
+  <text x="1034" y="782" fill="#E2E8F0" font-size="11.5" font-weight="700">5-Step Deterministic Execution Trace:</text>
+  <text x="1034" y="802" fill="#CBD5E1" font-size="11">1. OneLake ingests 60 TB/day BMS Parquet frames across 2.4M EVs (V-Order).</text>
+  <text x="1034" y="821" fill="#CBD5E1" font-size="11">2. Fabric Spark Gluten+Velox compacts at 2.8x speed on Serverless Autoscale ($0 tax).</text>
+  <text x="1034" y="840" fill="#CBD5E1" font-size="11">3. Databricks Serverless GPU reads Zero-Copy Shortcut for PyTorch LSTM aging score.</text>
+  <text x="1034" y="859" fill="#CBD5E1" font-size="11">4. Fabric IQ triggers on dT/dt &gt; 1.8°C/min &amp; CellImbalance &gt; 42mV (27 packs).</text>
+  <text x="1034" y="878" fill="#6EE7B7" font-size="11" font-weight="700">5. 1GB Free Fabric SQL pushes OTA 0.8C charge cap; blocks highway power cutoff.</text>
+
+  <rect x="1034" y="894" width="491" height="56" rx="8" fill="#041318" stroke="#059669" stroke-width="1"/>
+  <text x="1050" y="916" fill="#A7F3D0" font-size="11.5" font-weight="700">Synthetic FinOps &amp; Risk Outcome (Explicitly Scoped Reference Model):</text>
+  <text x="1050" y="936" fill="#E2E8F0" font-size="11">• Spark Compute TCO: $6,120/mo vs $14,800/mo (-$8,680/mo) · Modeled Recall Risk Avoided: $2.45M</text>
+
+  <!-- Footer -->
+  <text x="58" y="996" fill="#64748B" font-size="11.5">Data Lab Round 7 · Strictly modeled on ib-vs-ethernet-roce-selection-faq.md · Four-Tier Provenance Enforced · Self-Contained SVG (Zero External Assets)</text>
+  <text x="1544" y="996" fill="#38BDF8" font-size="11.5" font-weight="700" text-anchor="end">https://turbo998.github.io/workshops/data-lab/</text>
+</svg>

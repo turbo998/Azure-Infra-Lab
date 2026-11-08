@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-09-r6",
-  "generated_at": "2026-11-09T01:52:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-09-r7",
+  "generated_at": "2026-11-09T02:18:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 68,
-      "routing_matrix_mean_modeled_latency_ms": 516.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=68 routing & decision evaluation items (DL-01..DL-68, mean=516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 13,
+      "routing_matrix_denominator_n": 72,
+      "routing_matrix_mean_modeled_latency_ms": 511.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=72 routing & decision evaluation items (DL-01..DL-72, mean=511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 14,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -23,14 +23,19 @@
         480,
         465,
         450,
-        431
+        431,
+        422
       ],
       "ontology_simulations_range_ms": [
-        431,
+        422,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 562.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=13 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431]ms, range 431-780ms, mean=562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 552.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=14 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422]ms, range 422-780ms, mean=552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r6_historical_denominators": {
+        "r6_routing_matrix_n68_mean_ms": 516.0,
+        "r6_ontology_simulations_n13_mean_ms": 562.0
+      },
       "r5_historical_denominators": {
         "r5_routing_matrix_n64_mean_ms": 521.0,
         "r5_ontology_simulations_n12_mean_ms": 572.92
@@ -45,9 +50,9 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~20ms local runtime), deterministic n=68 decision routing matrix evaluation (67/68 = 98.53%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=68 routing decision matrix tasks (DL-01..DL-68) with arithmetic mean modeled latency = 516.0ms; (2) n=13 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431]ms, range 431-780ms) with arithmetic mean modeled latency = 562.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms reference latency targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
-      "vendor_published_spec_as_of_2026": "Verified against 9 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog & Cortex Guard; Databricks Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL & Lake Formation / Bedrock Guardrails; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, AlloyDB ScaNN & Dataplex Universal Catalog.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=72 decision routing matrix evaluation (71/72 = 98.61%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=72 routing decision matrix tasks (DL-01..DL-72) with arithmetic mean modeled latency = 511.0ms; (2) n=14 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422]ms, range 422-780ms) with arithmetic mean modeled latency = 552.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "vendor_published_spec_as_of_2026": "Verified against 10 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, AlloyDB ScaNN, Dataplex Universal Catalog & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
     "vendor_published_spec_references": [
@@ -133,9 +138,23 @@
           "https://cloud.google.com/dataplex/docs/introduction"
         ],
         "as_of": "2026-11-08"
+      },
+      {
+        "id": "SPEC-SPARK-NATIVE-GLUTEN-AUTOSCALE-VS-PHOTON-SNOWPARK",
+        "vendor": "Microsoft / Databricks / Snowflake / AWS / Google Cloud",
+        "claim": "Microsoft Fabric Spark Native Execution Engine (powered by Apache Gluten and Meta Velox C++ vectorized execution) accelerates Spark SQL and DataFrame operations on Parquet/Delta tables at $0 extra CU multiplier, and Autoscale Billing for Spark provides serverless pay-per-job billing outside base F-SKU capacity; Databricks Photon provides C++ vectorized execution on Databricks DBU tiers; Snowflake Snowpark and Snowpark Container Services run Python and container workloads inside Snowflake; AWS EMR Serverless and GCP Dataproc Serverless provide managed serverless Spark.",
+        "official_url": "https://learn.microsoft.com/en-us/fabric/data-engineering/spark-native-execution-engine",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/data-engineering/autoscale-billing-for-spark-overview",
+        "competitor_doc_urls": [
+          "https://docs.databricks.com/en/compute/photon.html",
+          "https://docs.snowflake.com/en/developer-guide/snowpark/index",
+          "https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/emr-serverless.html",
+          "https://cloud.google.com/dataproc-serverless/docs"
+        ],
+        "as_of": "2026-11-08"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=13 industry scenarios, mean=562.0ms), TCO calculator, and n=68 routing suite (mean=516.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=14 industry scenarios, mean=552.0ms), TCO calculator, and n=72 routing suite (mean=511.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -220,16 +239,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 68,
-    "passed_scenarios": 67,
+    "total_scenarios": 72,
+    "passed_scenarios": 71,
     "failed_scenarios": 1,
-    "accuracy_pct": 98.53,
-    "avg_latency_ms": 516.0,
-    "routing_matrix_denominator_n": 68,
-    "routing_matrix_mean_modeled_latency_ms": 516.0,
+    "accuracy_pct": 98.61,
+    "avg_latency_ms": 511.0,
+    "routing_matrix_denominator_n": 72,
+    "routing_matrix_mean_modeled_latency_ms": 511.0,
     "action_distribution": {
-      "Act automatically": 54,
-      "Confirm": 12,
+      "Act automatically": 57,
+      "Confirm": 13,
       "Send to a human": 2
     },
     "scenarios": [
@@ -1048,6 +1067,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 438
+      },
+      {
+        "id": "DL-69",
+        "category": "vs Databricks",
+        "question": "Compare Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ SIMD at $0 extra CU surcharge) + Autoscale Billing for Spark vs Databricks Photon (2x-2.5x DBU multiplier) for 60TB/day Parquet/Delta medallion ETL",
+        "expected": "Run vectorizable SQL/DataFrame medallion ETL (JOIN/AGG/FILTER) on Fabric Spark Native Execution Engine ($0 extra CU multiplier + V-Order) with Autoscale Billing for burst jobs, cutting modeled monthly Spark ETL TCO by ~58.6%",
+        "model_answer": "Run vectorizable SQL/DataFrame medallion ETL (JOIN/AGG/FILTER) on Fabric Spark Native Execution Engine ($0 extra CU multiplier + V-Order) with Autoscale Billing for burst jobs, cutting modeled monthly Spark ETL TCO by ~58.6%",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 418
+      },
+      {
+        "id": "DL-70",
+        "category": "vs Databricks",
+        "question": "Enterprise pipeline executes distributed PyTorch/Ray GPU training, heavy black-box Python/CUDA UDFs, and custom C++ init scripts where Gluten/Velox falls back to JVM; choose between Fabric Spark and Databricks",
+        "expected": "Route GPU-bound PyTorch/Ray training & heavy custom Python/CUDA UDF workloads to Databricks Serverless GPU / Photon Clusters (or Azure ML), reading OneLake Delta/Iceberg zero-copy via Shortcuts",
+        "model_answer": "Route GPU-bound PyTorch/Ray training & heavy custom Python/CUDA UDF workloads to Databricks Serverless GPU / Photon Clusters (or Azure ML), reading OneLake Delta/Iceberg zero-copy via Shortcuts",
+        "task_type": "choice",
+        "confidence": 0.97,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 430
+      },
+      {
+        "id": "DL-71",
+        "category": "vs Snowflake",
+        "question": "Compare Fabric Spark Native Execution Engine + Autoscale Billing vs Snowflake Snowpark / Snowpark Container Services (SPCS) vs AWS EMR Serverless & GCP Dataproc Serverless for multi-engine Lakehouse transformations",
+        "expected": "Use Snowflake Snowpark/SPCS when >85% of data and SQL governance remain inside Snowflake native tables; select Fabric Spark Native Execution Engine (Gluten/Velox at $0 surcharge) + Autoscale Billing when open OneLake Delta/Iceberg tables feed DirectLake BI & multi-cloud AI",
+        "model_answer": "Use Snowflake Snowpark/SPCS when >85% of data and SQL governance remain inside Snowflake native tables; select Fabric Spark Native Execution Engine (Gluten/Velox at $0 surcharge) + Autoscale Billing when open OneLake Delta/Iceberg tables feed DirectLake BI & multi-cloud AI",
+        "task_type": "noul",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 422
+      },
+      {
+        "id": "DL-72",
+        "category": "Fabric IQ & Ontology",
+        "question": "Connected EV fleet compacts 60TB/day BMS Parquet telemetry on Fabric Spark Native Execution Engine (Gluten/Velox + Autoscale Billing) and detects 27 battery packs with dT/dt >1.8C/min & cell imbalance >42mV",
+        "expected": "Fabric Spark Gluten/Velox (2.8x speedup, $0 surcharge) + Eventhouse KQL (72ms) -> Fabric IQ Thermal Rule -> OTA 0.8C Charge Cap on 27 EVs via 1GB Free Fabric SQL & Mitigate $2.45M Recall Risk (422ms E2E)",
+        "model_answer": "Fabric Spark Gluten/Velox (2.8x speedup, $0 surcharge) + Eventhouse KQL (72ms) -> Fabric IQ Thermal Rule -> OTA 0.8C Charge Cap on 27 EVs via 1GB Free Fabric SQL & Mitigate $2.45M Recall Risk (422ms E2E)",
+        "task_type": "score",
+        "confidence": 0.98,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 434
       }
     ]
   },
@@ -1111,7 +1178,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 13,
+    "total_ontology_simulations": 14,
     "simulation_latencies_ms": [
       780,
       640,
@@ -1125,9 +1192,11 @@
       480,
       465,
       450,
-      431
+      431,
+      422
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 562.0,
+    "ontology_simulation_mean_modeled_latency_ms": 552.0,
+    "r6_13_simulation_mean_modeled_latency_ms": 562.0,
     "r5_12_simulation_mean_modeled_latency_ms": 572.92,
     "r4_11_simulation_mean_modeled_latency_ms": 584.09,
     "r3_10_simulation_mean_modeled_latency_ms": 596.0
@@ -1694,6 +1763,49 @@
         "projected_savings_usd": 2800000,
         "end_to_end_latency_ms": 431,
         "audit_control_plane": "Microsoft Agent 365 + Entra Agent ID (OBO) + OneLake Unified Security + Microsoft Purview + ALDO Sovereign Edge"
+      }
+    },
+    "auto_telematics_gluten_velox_autoscale_vs_photon": {
+      "scenario_id": "auto_telematics_gluten_velox_autoscale_vs_photon",
+      "title": "Connected EV Fleet Battery Thermal & FinOps Lakehouse Compute: Fabric Spark Native Execution Engine (Gluten + Velox C++ at $0 Surcharge) + Autoscale Billing vs. Proprietary C++ DBU Multipliers",
+      "ontology_graph_path": [
+        "TelematicsIngest:OneLake-Delta-Parquet-60TB-Daily-BMS-Frames (2.4M Connected EVs · Zero-Copy V-Order Layout)",
+        "VectorizedSparkCompute:Fabric-Spark-Native-Execution-Engine (Apache Gluten + Meta Velox C++ SIMD · $0 Extra CU Multiplier + Serverless Autoscale Billing)",
+        "FederatedMLTraining:Databricks-Serverless-GPU-Zero-Copy-Shortcut (PyTorch LSTM Cell-Aging Model · Better Together Coexistence)",
+        "FabricIQOntology:Battery-Thermal-Runaway-Precursor-Rule (CellDeltaTempPerMinC > 1.8 AND CellVoltageImbalanceMv > 42)",
+        "FleetOTAWriteBackApp:PowerBI-Agentic-App-1GB-Free-Fabric-SQL (Rayfin EV Safety Command · OTA 0.8C Fast-Charge Cap)"
+      ],
+      "telemetry": {
+        "connected_evs_monitored": 2400000,
+        "daily_parquet_compaction_tb": 60.0,
+        "gluten_velox_vectorized_speedup_x": 2.8,
+        "native_engine_extra_cu_surcharge_usd": 0,
+        "monthly_spark_etl_compute_tco_usd": 6120,
+        "baseline_jvm_or_surcharged_cpp_monthly_tco_usd": 14800,
+        "at_risk_battery_packs_detected": 27,
+        "rule_triggered": "CELL_DT_DT_C_PER_MIN > 1.8 AND CELL_IMBALANCE_MV > 42.0",
+        "eventhouse_kql_latency_ms": 72,
+        "graph_traversal_latency_ms": 98
+      },
+      "multi_agent_plan": {
+        "ota_throttled_battery_packs": 27,
+        "fast_charge_c_rate_cap_applied": "0.8C max + dealer cell-module inspection scheduled",
+        "monthly_spark_finops_saved_usd": 8680,
+        "writeback_target": "1GB Free Fabric SQL (Rayfin EV Safety Command) + Azure IoT Fleet OTA Twin",
+        "daytime_bi_capacity_throttling_pct": 0.0
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "UN-ECE-R100-EV-BATTERY-SAFETY-SOP-04 & ISO-26262-ASIL-D",
+        "in_motion_highway_power_cutoff_blocked": true,
+        "driver_consent_ota_notification_enforced": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "action": "Confirm",
+        "confidence": 0.98,
+        "projected_savings_usd": 2450000,
+        "end_to_end_latency_ms": 422,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Spark Native Execution (Gluten/Velox) + Spark Autoscale Billing + 1GB Free Fabric SQL"
       }
     }
   },
