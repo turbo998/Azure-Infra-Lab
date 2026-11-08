@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" width="1600" height="1040" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0B1426"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="headerGrad17" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabricAccent17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0B1F38"/>
+    </linearGradient>
+    <linearGradient id="barBlue17" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1040" fill="url(#bgGrad17)"/>
+  <rect x="20" y="18" width="1560" height="1004" rx="20" fill="#091120" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Top Header Banner -->
+  <rect x="40" y="36" width="1520" height="92" rx="14" fill="#111D36" stroke="#0284C7" stroke-width="1.5"/>
+  <rect x="60" y="52" width="248" height="28" rx="14" fill="url(#headerGrad17)"/>
+  <text x="184" y="71" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="0.8">ROUND 9 · AUTONOMOUS DATAOPS FAQ</text>
+  <text x="324" y="72" fill="#F8FAFC" font-size="20" font-weight="800">Fabric Data Factory + Project Osmos vs. Databricks Lakeflow vs. Snowflake Tasks vs. Composer / Glue</text>
+  <text x="60" y="106" fill="#94A3B8" font-size="13">企业级 Medallion 管道编排、Schema Drift 自主修复与 Git CI/CD 治理选型指南 · 38s 自动合成 PR (vs 4.2h 人工排障) · 省 67.4% 编排 TCO ($4,850 vs $14,900/mo)</text>
+  <rect x="1318" y="48" width="222" height="66" rx="10" fill="#0B1324" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1429" y="70" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">R9 基准验证 (Measured Harness)</text>
+  <text x="1429" y="92" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">79 / 80 (98.75%)</text>
+  <text x="1429" y="108" fill="#93C5FD" font-size="10.5" text-anchor="middle">n=80: 501.0ms | n=16: 535.0ms</text>
+
+  <!-- Section 1 Left: Legacy Brittle DAGs vs Fabric Data Factory + Project Osmos + Materialized Lake Views -->
+  <rect x="40" y="144" width="750" height="390" rx="14" fill="#0E182C" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="172" fill="#60A5FA" font-size="14.5" font-weight="800">01 · 第一性原理对比：传统脆弱 Airflow/Cron 拼装栈 vs. Fabric Data Factory + Project Osmos 自愈栈</text>
+
+  <!-- Left Box: Legacy Brittle Stack -->
+  <rect x="60" y="188" width="345" height="328" rx="10" fill="#1A121B" stroke="#EF4444" stroke-width="1.3"/>
+  <text x="76" y="212" fill="#F87171" font-size="13" font-weight="800">❌ 传统割裂编排栈 (Airflow + ADF + dbt + 手工排障)</text>
+  <text x="76" y="236" fill="#FCA5A5" font-size="11.5" font-weight="700">痛点 1：上游字段微调即引发凌晨 2 点“连环炸管”</text>
+  <text x="76" y="254" fill="#E2E8F0" font-size="11">• SAP/CRM 新增或重命名 3 个 JSON 字段 → 银层/金层断流</text>
+  <text x="76" y="272" fill="#E2E8F0" font-size="11">• 值班工程师翻查 4 套日志平均耗时 4.2 小时 (252 min)</text>
+
+  <text x="76" y="300" fill="#FCA5A5" font-size="11.5" font-weight="700">痛点 2：常驻 Airflow (Cloud Composer/MWAA) 空转税</text>
+  <text x="76" y="318" fill="#E2E8F0" font-size="11">• K8s 控制面 + Worker 节点 24×7 常驻 ($900–$2,400/mo)</text>
+  <text x="76" y="336" fill="#E2E8F0" font-size="11">• Snowflake Dynamic Tables 高频刷新另有常驻 Credit 溢价</text>
+
+  <text x="76" y="364" fill="#FCA5A5" font-size="11.5" font-weight="700">痛点 3：数据管道与 Power BI 语义层脱节</text>
+  <text x="76" y="382" fill="#E2E8F0" font-size="11">• 外部调度器不知晓 DirectLake 帧对齐与 DAX 度量依赖</text>
+  <text x="76" y="400" fill="#E2E8F0" font-size="11">• 表刷完一半报表已暴露，引发高管晨会脏数据事故</text>
+
+  <rect x="76" y="422" width="313" height="78" rx="8" fill="#2A1215" stroke="#DC2626" stroke-width="1"/>
+  <text x="90" y="444" fill="#FCA5A5" font-size="11.5" font-weight="800">420 条企业管道基准代价 [synthetic_scenario_model]：</text>
+  <text x="90" y="464" fill="#F8FAFC" font-size="11">• 月度编排与运维 TCO：$14,900 / mo</text>
+  <text x="90" y="482" fill="#F8FAFC" font-size="11">• Schema 漂移恢复 MTTR：252 分钟 (4.2 小时)</text>
+
+  <!-- Right Box: Fabric + Project Osmos + Materialized Lake Views -->
+  <rect x="425" y="188" width="345" height="328" rx="10" fill="url(#fabricAccent17)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="441" y="212" fill="#34D399" font-size="13" font-weight="800">✅ Fabric Data Factory + Project Osmos + 物化湖视图</text>
+  <text x="441" y="236" fill="#6EE7B7" font-size="11.5" font-weight="700">突破 1：Project Osmos 自主数据工程智能体 (38s 自愈)</text>
+  <text x="441" y="254" fill="#E2E8F0" font-size="11">• 自动解析上游 AST 与 Schema Diff，定位受影响银/金层节点</text>
+  <text x="441" y="272" fill="#E2E8F0" font-size="11">• 38 秒自动生成 PySpark/SQL 补丁 + 单元测试并提 GitHub PR</text>
+
+  <text x="441" y="300" fill="#6EE7B7" font-size="11.5" font-weight="700">突破 2：Materialized Lake Views (声明式铜→银→金血缘)</text>
+  <text x="441" y="318" fill="#E2E8F0" font-size="11">• SQL 声明增量物化视图 + 内置数据质量预期 (Expectations)</text>
+  <text x="441" y="336" fill="#E2E8F0" font-size="11">• 脏数据自动隔离至 DLQ，0 常驻调度器空转费 (复用 F64)</text>
+
+  <text x="441" y="364" fill="#6EE7B7" font-size="11.5" font-weight="700">突破 3：端到端事务级绑定 OneLake 与 DirectLake BI</text>
+  <text x="441" y="382" fill="#E2E8F0" font-size="11">• 镜像/管道 → 物化湖视图 → Power BI 语义模型原子级联动</text>
+  <text x="441" y="400" fill="#E2E8F0" font-size="11">• Git CI/CD + Deployment Pipelines 阻断未审批 DROP COLUMN</text>
+
+  <rect x="441" y="422" width="313" height="78" rx="8" fill="#06281E" stroke="#10B981" stroke-width="1"/>
+  <text x="455" y="444" fill="#34D399" font-size="11.5" font-weight="800">Fabric 自主数据工程收益 [synthetic_scenario_model]：</text>
+  <text x="455" y="464" fill="#F8FAFC" font-size="11">• 月度编排与运维 TCO：$4,850 / mo (立省 67.4% / -$10,050)</text>
+  <text x="455" y="482" fill="#F8FAFC" font-size="11">• 端到端告警+PR 审批闭环：415 ms (黑五保住 $2.90M 订单)</text>
+
+  <!-- Section 2 Right: 5-Cloud Medallion Orchestration & Autonomous DataOps Matrix -->
+  <rect x="810" y="144" width="750" height="390" rx="14" fill="#0E182C" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="830" y="172" fill="#60A5FA" font-size="14.5" font-weight="800">02 · 五大云 Medallion 管道编排与自主 DataOps 能力横评矩阵</text>
+
+  <rect x="830" y="188" width="710" height="30" rx="6" fill="#1E293B"/>
+  <text x="844" y="208" fill="#CBD5E1" font-size="11.5" font-weight="700">架构维度 / Dimension</text>
+  <text x="1080" y="208" fill="#38BDF8" font-size="11.5" font-weight="800" text-anchor="middle">Fabric + Osmos</text>
+  <text x="1205" y="208" fill="#F97316" font-size="11.5" font-weight="700" text-anchor="middle">Databricks DLT</text>
+  <text x="1320" y="208" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">Snowflake Tasks</text>
+  <text x="1425" y="208" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">GCP Composer</text>
+  <text x="1505" y="208" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">AWS Glue</text>
+
+  <!-- Row 1 -->
+  <text x="844" y="240" fill="#F8FAFC" font-size="11.5">声明式 Medallion 物化引擎</text>
+  <text x="1080" y="240" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">Materialized Views ★</text>
+  <text x="1205" y="240" fill="#F97316" font-size="11.5" font-weight="800" text-anchor="middle">Lakeflow DLT ★</text>
+  <text x="1320" y="240" fill="#E2E8F0" font-size="11" text-anchor="middle">Dynamic Tables</text>
+  <text x="1425" y="240" fill="#E2E8F0" font-size="11" text-anchor="middle">Dataform SQLX</text>
+  <text x="1505" y="240" fill="#94A3B8" font-size="11" text-anchor="middle">手写 Glue Spark</text>
+
+  <!-- Row 2 -->
+  <text x="844" y="274" fill="#F8FAFC" font-size="11.5">AI 自主迁移与 Schema 自愈</text>
+  <text x="1080" y="274" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">Project Osmos (38s) ★</text>
+  <text x="1205" y="274" fill="#E2E8F0" font-size="11" text-anchor="middle">Assistant 辅助</text>
+  <text x="1320" y="274" fill="#E2E8F0" font-size="11" text-anchor="middle">Copilot 辅助编写</text>
+  <text x="1425" y="274" fill="#E2E8F0" font-size="11" text-anchor="middle">Gemini 辅助</text>
+  <text x="1505" y="274" fill="#E2E8F0" font-size="11" text-anchor="middle">Q Developer</text>
+
+  <!-- Row 3 -->
+  <text x="844" y="308" fill="#F8FAFC" font-size="11.5">调度控制面常驻空转费</text>
+  <text x="1080" y="308" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">$0 常驻集群税 ★</text>
+  <text x="1205" y="308" fill="#34D399" font-size="11" font-weight="700" text-anchor="middle">$0 工作流调度费</text>
+  <text x="1320" y="308" fill="#FBBF24" font-size="11" text-anchor="middle">Serverless Task Credits</text>
+  <text x="1425" y="308" fill="#F87171" font-size="11" text-anchor="middle">$900-$2.4K/mo 常驻</text>
+  <text x="1505" y="308" fill="#E2E8F0" font-size="11" text-anchor="middle">按状态转换计费</text>
+
+  <!-- Row 4 -->
+  <text x="844" y="342" fill="#F8FAFC" font-size="11.5">BI 语义层与动作闭环原生联动</text>
+  <text x="1080" y="342" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">DirectLake + Ontology ★</text>
+  <text x="1205" y="342" fill="#94A3B8" font-size="11" text-anchor="middle">需外部 Webhook</text>
+  <text x="1320" y="342" fill="#94A3B8" font-size="11" text-anchor="middle">仅限仓内 SQL</text>
+  <text x="1425" y="342" fill="#94A3B8" font-size="11" text-anchor="middle">需配 Looker API</text>
+  <text x="1505" y="342" fill="#94A3B8" font-size="11" text-anchor="middle">需配 EventBridge</text>
+
+  <!-- Row 5 -->
+  <text x="844" y="376" fill="#F8FAFC" font-size="11.5">420 条管道月度综合 TCO (建模)</text>
+  <text x="1080" y="376" fill="#34D399" font-size="12" font-weight="800" text-anchor="middle">$4,850 / mo ★</text>
+  <text x="1205" y="376" fill="#F97316" font-size="11.5" font-weight="700" text-anchor="middle">$9,420 / mo</text>
+  <text x="1320" y="376" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">$12,680 / mo</text>
+  <text x="1425" y="376" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">$11,350 / mo</text>
+  <text x="1505" y="376" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">$10,890 / mo</text>
+
+  <!-- TCO Bar Comparison -->
+  <rect x="830" y="396" width="710" height="120" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1"/>
+  <text x="846" y="418" fill="#93C5FD" font-size="12" font-weight="800">420 条企业级 Medallion 管道月度编排 + 增量计算 + 排障人力 TCO 对比 [synthetic_scenario_model]</text>
+
+  <text x="846" y="440" fill="#34D399" font-size="11" font-weight="700">Fabric Data Factory + Osmos</text>
+  <rect x="1030" y="430" width="145" height="12" rx="6" fill="url(#barBlue17)"/>
+  <text x="1185" y="440" fill="#34D399" font-size="11" font-weight="800">$4,850/mo (基准最优，省 67.4% vs 传统拼装栈)</text>
+
+  <text x="846" y="460" fill="#F97316" font-size="11">Databricks Lakeflow / DLT</text>
+  <rect x="1030" y="450" width="282" height="11" rx="5.5" fill="#F97316"/>
+  <text x="1322" y="460" fill="#F8FAFC" font-size="11">$9,420/mo (Fabric 省 48.5%)</text>
+
+  <text x="846" y="480" fill="#60A5FA" font-size="11">Snowflake Tasks + Dynamic</text>
+  <rect x="1030" y="470" width="380" height="11" rx="5.5" fill="#38BDF8"/>
+  <text x="1420" y="480" fill="#F8FAFC" font-size="11">$12,680/mo (Fabric 省 61.8%)</text>
+
+  <text x="846" y="500" fill="#F87171" font-size="11">传统 Airflow + ADF + dbt 栈</text>
+  <rect x="1030" y="490" width="446" height="11" rx="5.5" fill="#EF4444"/>
+  <text x="1484" y="500" fill="#FCA5A5" font-size="11" font-weight="700">$14,900/mo</text>
+
+  <!-- Section 3 Bottom: Scenario P End-to-End Closed-Loop Flow & Decision Tree -->
+  <rect x="40" y="550" width="1520" height="452" rx="14" fill="#0E182C" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="60" y="580" fill="#38BDF8" font-size="15" font-weight="800">03 · 场景 P 实战推演：全球零售黑五大促 SAP 订单 Schema 漂移 38s 自动合成 PR 与 415ms 闭环恢复 [synthetic_scenario_model]</text>
+
+  <!-- 5-Step Pipeline Cards -->
+  <rect x="60" y="600" width="282" height="190" rx="10" fill="#0B1324" stroke="#F59E0B" stroke-width="1.4"/>
+  <text x="76" y="624" fill="#FBBF24" font-size="12.5" font-weight="800">Step 1 · 凌晨 02:15 上游破坏性变更</text>
+  <text x="76" y="646" fill="#E2E8F0" font-size="11">• SAP S/4HANA 升级改名 3 个订单字段</text>
+  <text x="76" y="664" fill="#E2E8F0" font-size="11">• 嵌套税率 Struct 变化冲击银层视图</text>
+  <text x="76" y="682" fill="#E2E8F0" font-size="11">• 24,600 笔黑五订单面临履约积压</text>
+  <text x="76" y="706" fill="#34D399" font-size="11" font-weight="700">✓ Materialized Lake View 拦截脏数据入 DLQ</text>
+  <text x="76" y="726" fill="#94A3B8" font-size="10.5">• Eventhouse KQL 68ms 捕获异常告警</text>
+
+  <rect x="358" y="600" width="282" height="190" rx="10" fill="#0B1324" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="374" y="624" fill="#38BDF8" font-size="12.5" font-weight="800">Step 2 · Project Osmos 38s 合成补丁</text>
+  <text x="374" y="646" fill="#E2E8F0" font-size="11">• 解析 Open Mirroring 与银层 AST 血缘差异</text>
+  <text x="374" y="664" fill="#E2E8F0" font-size="11">• 自动修复 3 个 PySpark/SQL 物化湖视图</text>
+  <text x="374" y="682" fill="#E2E8F0" font-size="11">• 自动在沙盒跑通 100% 数据质量断言</text>
+  <text x="374" y="706" fill="#34D399" font-size="11" font-weight="700">✓ 38 秒向 GitHub 提交可审计修复 PR</text>
+  <text x="374" y="726" fill="#94A3B8" font-size="10.5">• 相比传统人工 252 分钟排障提速 397 倍</text>
+
+  <rect x="656" y="600" width="282" height="190" rx="10" fill="#0B1324" stroke="#A855F7" stroke-width="1.4"/>
+  <text x="672" y="624" fill="#C084FC" font-size="12.5" font-weight="800">Step 3 · Databricks Lakeflow 协同共存</text>
+  <text x="672" y="646" fill="#E2E8F0" font-size="11">• 存量 Databricks DLT 负责深度特征流</text>
+  <text x="672" y="664" fill="#E2E8F0" font-size="11">• Fabric Data Factory 统一编排跨云依赖</text>
+  <text x="672" y="682" fill="#E2E8F0" font-size="11">• OneLake 零拷贝共享银层/金层 Delta 表</text>
+  <text x="672" y="706" fill="#34D399" font-size="11" font-weight="700">✓ 无需推倒重写已有 Spark DLT 资产</text>
+  <text x="672" y="726" fill="#94A3B8" font-size="10.5">• Better Together 跨平台零拷贝编排</text>
+
+  <rect x="954" y="600" width="282" height="190" rx="10" fill="#0B1324" stroke="#EC4899" stroke-width="1.4"/>
+  <text x="970" y="624" fill="#F472B6" font-size="12.5" font-weight="800">Step 4 · Foundry IQ SOX 变更护栏</text>
+  <text x="970" y="646" fill="#E2E8F0" font-size="11">• 严禁 AI 智能体绕过 Git 直接改生产库</text>
+  <text x="970" y="664" fill="#E2E8F0" font-size="11">• 严禁未审批执行破坏性 DROP COLUMN</text>
+  <text x="970" y="682" fill="#E2E8F0" font-size="11">• 强制 Deployment Pipeline 沙盒验证通过</text>
+  <text x="970" y="706" fill="#34D399" font-size="11" font-weight="700">✓ 100% 满足 SOX / 企业 DataOps 审计</text>
+  <text x="970" y="726" fill="#94A3B8" font-size="10.5">• 路由至 Confirm (置信度 0.98)</text>
+
+  <rect x="1252" y="600" width="288" height="190" rx="10" fill="#06281E" stroke="#10B981" stroke-width="1.6"/>
+  <text x="1268" y="624" fill="#34D399" font-size="12.5" font-weight="800">Step 5 · 1GB Free SQL 审批与 DLQ 重放</text>
+  <text x="1268" y="646" fill="#E2E8F0" font-size="11">• 值班架构师在 Power BI/Teams 一键批准</text>
+  <text x="1268" y="664" fill="#E2E8F0" font-size="11">• 审批记录写回 1GB 免费 Fabric SQL</text>
+  <text x="1268" y="682" fill="#E2E8F0" font-size="11">• 自动合并 PR 并 100% 无损重放 DLQ 订单</text>
+  <text x="1268" y="706" fill="#6EE7B7" font-size="11.5" font-weight="800">✓ 415ms 评估闭环 · 保住 $2.90M 黑五订单</text>
+  <text x="1268" y="726" fill="#93C5FD" font-size="10.5">• 金层 신선度滞后恢复至 1.8 分钟</text>
+
+  <!-- Bottom Architect Selection Rules -->
+  <rect x="60" y="808" width="1480" height="174" rx="10" fill="#0B1324" stroke="#334155" stroke-width="1.2"/>
+  <text x="80" y="834" fill="#60A5FA" font-size="13.5" font-weight="800">04 · AI Solution Architect 售前打单三大黄金选型法则 (Architect Selection Rules &amp; Coexistence Boundaries)</text>
+
+  <text x="80" y="862" fill="#34D399" font-size="12" font-weight="800">法则 1 · 何时首选 Fabric Data Factory + Materialized Lake Views + Project Osmos：</text>
+  <text x="80" y="882" fill="#E2E8F0" font-size="11.5">当客户希望终结 Informatica/SSIS/Airflow 多工具割裂税、用 SQL/PySpark 声明式维护铜→银→金层、并用 AI 智能体自动将老旧 ETL 迁移或修复 Schema 漂移时，首选 Fabric（省 67.4% TCO）。</text>
+
+  <text x="80" y="910" fill="#F97316" font-size="12" font-weight="800">法则 2 · 何时选择 Fabric Data Factory × Databricks Lakeflow / Snowflake Tasks 混合编排 (Better Together)：</text>
+  <text x="80" y="930" fill="#E2E8F0" font-size="11.5">若数据科学团队已在 Databricks DLT 或 Snowflake Dynamic Tables 沉淀核心清洗逻辑，切勿推倒重写！用 Fabric Data Factory 原生调用 Databricks/Snowflake 作业并联动 OneLake 零拷贝与 DirectLake 刷新。</text>
+
+  <text x="80" y="958" fill="#FBBF24" font-size="12" font-weight="800">法则 3 · 严守生产 Git CI/CD 护栏（避坑边界）：</text>
+  <text x="415" y="958" fill="#E2E8F0" font-size="11.5">任何由 Project Osmos 或 AI 生成的管道补丁严禁直接覆盖生产分支；必须走 Git PR + Deployment Pipeline 自动化数据质量断言 + 人类一键审批合并。</text>
+</svg>
