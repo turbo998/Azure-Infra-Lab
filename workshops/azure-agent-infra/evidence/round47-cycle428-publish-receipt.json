@@ -1,0 +1,58 @@
+{
+  "round": 47,
+  "cycle": 428,
+  "status": "completed",
+  "topic_slug": "agent-a2a-idempotency-window-selection-faq",
+  "source_worktree_commit": "203beb08224a443a9d4f6692173c16ce036cce2f",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "eef5a314e9d31c21151b58f318002e5378eb4f62",
+    "Azure-Infra-Lab": "2587de844ae1ea7454ed6a070864f416194412aa",
+    "ai-research-public": "46bfe0edac02d5a9f140cf66b7a8b4721bdecdf4",
+    "ai-research-lab": "61279a26f11fdf3265bb70bd646a106d8300c7ea",
+    "turbo998.github.io": "b21de22bc9ca510cf8e96de2ab4794dc9e9169fc"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "eef5a314e9d31c21151b58f318002e5378eb4f62",
+    "Azure-Infra-Lab": "2587de844ae1ea7454ed6a070864f416194412aa",
+    "ai-research-public": "46bfe0edac02d5a9f140cf66b7a8b4721bdecdf4",
+    "ai-research-lab": "61279a26f11fdf3265bb70bd646a106d8300c7ea",
+    "turbo998.github.io": "b21de22bc9ca510cf8e96de2ab4794dc9e9169fc"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "eef5a314e9d31c21151b58f318002e5378eb4f62",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "2587de844ae1ea7454ed6a070864f416194412aa",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "46bfe0edac02d5a9f140cf66b7a8b4721bdecdf4",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "61279a26f11fdf3265bb70bd646a106d8300c7ea",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "b21de22bc9ca510cf8e96de2ab4794dc9e9169fc",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "b21de22bc9ca510cf8e96de2ab4794dc9e9169fc",
+    "pages_main": "b21de22bc9ca510cf8e96de2ab4794dc9e9169fc",
+    "receipt_vs_pages": {
+      "merge_base": "b21de22bc9ca510cf8e96de2ab4794dc9e9169fc",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:11:29+08:00"
+}
