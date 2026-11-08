@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Primary route timeout gate,188,200,0.94,measured,primary-route timeout replay + deterministic verification
+Fallback order integrity guard,183,190,0.9632,measured,fallback-order integrity logs
+Tenant route-tier authorization fence,172,180,0.9556,measured,MCP policy replay logs
