@@ -51,8 +51,8 @@
 - 一图流 SVG：[`assets/34-cycle-413-daily-breakthroughs.svg`](assets/34-cycle-413-daily-breakthroughs.svg)
 - 专著增补（中文）：[`docs/full-monograph-cycle-413.md`](docs/full-monograph-cycle-413.md)
 - 专著增补（英文）：[`docs/full-monograph-cycle-413.en.md`](docs/full-monograph-cycle-413.en.md)
-- 选型 FAQ（中文）：[`agent-observability-sampling-selection-faq.md`](agent-observability-sampling-selection-faq.md)
-- 选型 FAQ（英文）：[`agent-observability-sampling-selection-faq.en.md`](agent-observability-sampling-selection-faq.en.md)
+- 选型 FAQ（中文）：[`agent-large-tool-result-offload-selection-faq.md`](agent-large-tool-result-offload-selection-faq.md)
+- 选型 FAQ（英文）：[`agent-large-tool-result-offload-selection-faq.en.md`](agent-large-tool-result-offload-selection-faq.en.md)
 - 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 - 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 

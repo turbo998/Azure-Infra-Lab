@@ -1,4 +1,4 @@
 policy,blocked,total,intercept_rate,source_label,source_ref
-Head sampling baseline coverage gate,188,200,0.94,measured,demo sampling replay + deterministic verification
-Tail sampling anomaly capture gate,183,190,0.9632,measured,tail-priority trace replay logs
-MCP/A2A incident trace retention fence,172,180,0.9556,measured,MCP policy replay logs
+Inline payload context-budget gate,188,200,0.94,measured,inline payload replay + deterministic verification
+Object-store hash integrity gate,183,190,0.9632,measured,offload hash replay logs
+MCP/A2A expiry and re-fetch authorization fence,172,180,0.9556,measured,MCP policy replay logs

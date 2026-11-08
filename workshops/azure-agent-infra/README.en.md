@@ -51,8 +51,8 @@
 - One-page SVG: [`assets/34-cycle-413-daily-breakthroughs.svg`](assets/34-cycle-413-daily-breakthroughs.svg)
 - Monograph addendum (EN): [`docs/full-monograph-cycle-413.en.md`](docs/full-monograph-cycle-413.en.md)
 - Monograph addendum (ZH): [`docs/full-monograph-cycle-413.md`](docs/full-monograph-cycle-413.md)
-- Selection FAQ (EN, Observability Sampling): [`agent-observability-sampling-selection-faq.en.md`](agent-observability-sampling-selection-faq.en.md)
-- Selection FAQ (ZH, Observability Sampling): [`agent-observability-sampling-selection-faq.md`](agent-observability-sampling-selection-faq.md)
+- Selection FAQ (EN, Large Result Offload): [`agent-large-tool-result-offload-selection-faq.en.md`](agent-large-tool-result-offload-selection-faq.en.md)
+- Selection FAQ (ZH, Large Result Offload): [`agent-large-tool-result-offload-selection-faq.md`](agent-large-tool-result-offload-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 

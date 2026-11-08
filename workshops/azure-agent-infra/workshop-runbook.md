@@ -14,7 +14,7 @@
 - **Daily breakthroughs one-pager SVG**: [`assets/34-cycle-413-daily-breakthroughs.svg`](assets/34-cycle-413-daily-breakthroughs.svg)
 - **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-413-benchmark.json`](evidence/cycle-413-benchmark.json)
 - **Monograph addendum**: [`docs/full-monograph-cycle-413.md`](docs/full-monograph-cycle-413.md) / [`docs/full-monograph-cycle-413.en.md`](docs/full-monograph-cycle-413.en.md)
-- **Selection FAQ (ZH/EN)**: [`agent-observability-sampling-selection-faq.md`](agent-observability-sampling-selection-faq.md) / [`agent-observability-sampling-selection-faq.en.md`](agent-observability-sampling-selection-faq.en.md)
+- **Selection FAQ (ZH/EN)**: [`agent-large-tool-result-offload-selection-faq.md`](agent-large-tool-result-offload-selection-faq.md) / [`agent-large-tool-result-offload-selection-faq.en.md`](agent-large-tool-result-offload-selection-faq.en.md)
 
 ---
 

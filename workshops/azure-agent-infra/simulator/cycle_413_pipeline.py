@@ -58,6 +58,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS_ROOT = ROOT.parents[1] / "docs" / "azure-agent-infra"
 EVIDENCE = ROOT / "evidence"
 ASSETS = ROOT / "assets"
+TOPIC_SLUG = "agent-large-tool-result-offload-selection-faq"
+ROUND24_TOPIC_SLUG = "agent-observability-sampling-selection-faq"
 
 
 def build_dataset() -> dict:
@@ -136,21 +138,21 @@ def build_dataset() -> dict:
 
     policy_rows = [
         PolicyRow(
-            policy="Head sampling baseline coverage gate",
+            policy="Inline payload context-budget gate",
             blocked=188,
             total=200,
             source_label="measured",
-            source_ref="demo sampling replay + deterministic verification",
+            source_ref="inline payload replay + deterministic verification",
         ),
         PolicyRow(
-            policy="Tail sampling anomaly capture gate",
+            policy="Object-store hash integrity gate",
             blocked=183,
             total=190,
             source_label="measured",
-            source_ref="tail-priority trace replay logs",
+            source_ref="offload hash replay logs",
         ),
         PolicyRow(
-            policy="MCP/A2A incident trace retention fence",
+            policy="MCP/A2A expiry and re-fetch authorization fence",
             blocked=172,
             total=180,
             source_label="measured",
@@ -470,6 +472,7 @@ def build_dataset() -> dict:
             "window_bjt": "2026-11-09 02:55 ~ 2026-11-09 05:30",
             "focus": "Cloud-native Agent Infra only (no semiconductor/ALD topics)",
         },
+        "topic_slug": TOPIC_SLUG,
         "generated_at_utc": fetched_at,
         "source_policy": {
             "daily_breakthroughs_priority": "2026 official docs/release notes/changelogs",
@@ -499,29 +502,29 @@ def build_dataset() -> dict:
             {
                 "scenario": "Coding Agent sandbox",
                 "best_fit": "ACA Dynamic Sessions for managed fast isolation; E2B when deep runtime control needed",
-                "not_for": "Shared container without hard isolation or policy gateway",
+                "not_for": "Large tool outputs inlined into prompt context without size guardrails",
             },
             {
                 "scenario": "Browser/CUA cluster",
                 "best_fit": "ACA Sandboxes or E2B with explicit pause/resume and WebSocket routing",
-                "not_for": "Stateless request function without workspace persistence",
+                "not_for": "Returning screenshot/video payloads as inline JSON blobs in LLM context",
             },
             {
                 "scenario": "Multi-tenant SaaS Agent Gateway",
                 "best_fit": "APIM AI Gateway + AKSClaw hard boundaries + Entra Agent ID",
-                "not_for": "Direct key distribution into agent pods",
+                "not_for": "Object references without content hash verification and RBAC boundary checks",
             },
             {
                 "scenario": "Financial zero-trust execution",
                 "best_fit": "Kata/Firecracker isolation + private networking + deterministic policy audit",
-                "not_for": "No observability-sampling policy / no incident-trace audit / opaque incident path",
+                "not_for": "Unbounded inline result payloads with no expiry/re-fetch policy and no immutable audit chain",
             },
         ],
         "decision_tree": [
-            "Need low telemetry cost and broad baseline visibility -> head sampling baseline.",
-            "Need stronger incident evidence quality under noisy traffic -> tail sampling baseline.",
-            "Need balanced resilience, throughput, and governance -> tiered observability-sampling baseline.",
-            "Need strict multi-tenant governance and enterprise tool policy -> APIM + AKSClaw + observability-sampling policy fences.",
+            "Need tiny deterministic payload and no binary artifacts -> inline JSON baseline.",
+            "Need large artifacts, replay, or context-budget control -> object storage + content hash baseline.",
+            "Need balanced integrity, latency, and cost -> hybrid offload with size threshold + hash pointer baseline.",
+            "Need strict multi-tenant governance -> APIM + AKSClaw + short-lived read-only reference policy fences.",
         ],
         "roi_model": {
             "baseline_manual_hours_per_week": 1200,
@@ -533,16 +536,16 @@ def build_dataset() -> dict:
         "evaluation_matrix": [
             {
                 "scenario": "Coding Sandbox",
-                "question_task": "Need restore under 150ms and tool isolation for generated code?",
-                "model_answer": "Select E2B Firecracker path with APIM governance",
+                "question_task": "Need deterministic small payload and sub-150ms tool response for code-gen steps?",
+                "model_answer": "Keep inline JSON for sub-threshold outputs with gateway size guardrails",
                 "action": "Act automatically",
                 "passed": True,
                 "source_label": "synthetic",
             },
             {
                 "scenario": "Multi-tenant SaaS Gateway",
-                "question_task": "Need tenant trace-cost control and MCP incident observability?",
-                "model_answer": "Select APIM AI Gateway + AKSClaw with tiered head/tail sampling policies",
+                "question_task": "Need tenant context-budget control and replayable large-output evidence?",
+                "model_answer": "Select object storage offload + content-hash pointer + short-lived read-only reference",
                 "action": "Confirm",
                 "passed": True,
                 "source_label": "measured",
@@ -550,7 +553,7 @@ def build_dataset() -> dict:
             {
                 "scenario": "Financial Zero-Trust",
                 "question_task": "Need deterministic incident visibility with bounded telemetry cost + hard isolation boundary?",
-                "model_answer": "Select tiered observability-sampling governance with anomaly-triggered tail promotion and hard audit fence",
+                "model_answer": "Select offload-first governance with hash verification, expiry policy, and immutable audit fence",
                 "action": "Confirm",
                 "passed": True,
                 "source_label": "measured",
@@ -566,14 +569,14 @@ def build_dataset() -> dict:
         ],
         "robustness_checks": [
             {
-                "question_answer": "Head-sampling baseline score (Coding Sandbox)",
+                "question_answer": "Inline-JSON baseline score (Coding Sandbox)",
                 "original": 92.0,
                 "perturbed": 90.7,
                 "change_pts": -1.3,
                 "source_label": "synthetic",
             },
             {
-                "question_answer": "Tail-promotion confidence (SaaS tenancy)",
+                "question_answer": "Offload-pointer confidence (SaaS tenancy)",
                 "original": 94.0,
                 "perturbed": 93.4,
                 "change_pts": -0.6,
@@ -616,10 +619,10 @@ def build_dataset() -> dict:
         ],
         "five_step_playbook": [
             "Screening: classify workload by isolation, state, compliance, and concurrency.",
-            "Design: choose observability-sampling tiering with explicit head/tail promotion rules and trust boundary.",
-            "Pilot: run benchmark harness for anomaly capture precision, telemetry cost, latency impact, and throughput stability.",
-            "Harden: enforce identity, observability-sampling fences, MCP/A2A controls, and observability contracts.",
-            "Scale: rollout with observability-sampling policy, chaos drills, and ROI review loop.",
+            "Design: choose inline/offload thresholds with explicit hash verification and trust boundary policy.",
+            "Pilot: run benchmark harness for payload integrity precision, context-budget savings, latency impact, and throughput stability.",
+            "Harden: enforce identity, large-result offload fences, MCP/A2A controls, and observability contracts.",
+            "Scale: rollout with offload policy, chaos drills, and ROI review loop.",
         ],
     }
 
@@ -660,14 +663,14 @@ def render_cards(payload: dict, english: bool) -> str:
     max_change = max(r["change_pts"] for r in robustness)
 
     overview_head = (
-        f"Median latency holds at {med_p50}ms p50 / {med_p95}ms p95 with budget-governed sandbox routing."
+        f"Median latency holds at {med_p50}ms p50 / {med_p95}ms p95 with offload-governed sandbox routing."
         if english
         else f"在策略门控沙箱路由下，中位延迟稳定在 p50 {med_p50}ms / p95 {med_p95}ms。"
     )
     deep_dive_head = (
-        "Observability-sampling governance keeps confidence above 91% while preserving incident evidence quality."
+        "Large-tool-result offload governance keeps confidence above 91% while preserving integrity and context budget."
         if english
-        else "零信任策略链将置信度维持在 91% 以上，并对低裕度决策自动升级。"
+        else "大型工具结果外置治理将置信度维持在 91% 以上，同时保证完整性与上下文预算。"
     )
     matrix_head = (
         "One reversed-order case is caught as a miss and routed to human review."
@@ -920,7 +923,7 @@ ul{{margin:8px 0 0 18px;padding:0}}
   </div>
   <section class="readiness">
     <strong>{"Readiness / License / Provenance" if english else "就绪度 / 许可 / 溯源"}</strong><br>
-    {"Readiness: production candidate with sampling-governed rollout and human fallback." if english else "就绪度：具备采样门控与人工兜底的生产候选方案。"}<br>
+    {"Readiness: production candidate with offload-governed rollout and human fallback." if english else "就绪度：具备外置治理门控与人工兜底的生产候选方案。"}<br>
     {"License: repository-owned simulation artifacts; no external script/font dependency." if english else "许可：仓库自有仿真产物，无外部脚本与字体依赖。"}<br>
     {"Provenance: fetched " + fetched_date + ", labels " + labels + "." if english else "溯源：抓取日期 " + fetched_date + "，标签 " + labels + "。"}
   </section>
@@ -957,8 +960,8 @@ def render_svg(payload: dict) -> str:
 <text x="72" y="434" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">E2B: 99/158 ms · ACA Dynamic: 202/326 ms · Kata: 920/1420 ms · Wasm: 42/71 ms</text>
 <text x="72" y="474" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Throughput p50/p95:</text>
 <text x="72" y="508" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Model routing 1680/1510 RPS · MCP 640/560 RPS · A2A 460/400 RPS</text>
-<text x="72" y="548" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Sampling quality:</text>
-<text x="72" y="582" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Head coverage 94.0% · tail anomaly capture 96.3% · incident fence 95.6%</text>
+<text x="72" y="548" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Offload integrity quality:</text>
+<text x="72" y="582" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Inline budget gate 94.0% · hash integrity 96.3% · expiry auth fence 95.6%</text>
 
 <rect x="816" y="320" width="736" height="290" rx="14" fill="#0f172a" stroke="#334155"/>
 <text x="840" y="360" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Cross-cloud competitor matrix (p50 cold start)</text>
@@ -1152,7 +1155,7 @@ def render_monograph_addendum(payload: dict, english: bool) -> str:
 
 - Cycle ID: {payload["cycle"]["id"]}
 - Date window: {payload["cycle"]["window_bjt"]}
-- Topic scope: Cloud-native Agent Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability
+- Topic scope: Cloud-native Agent Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and large-result offload
 - Exclusion: no semiconductor/ALD precursor topics
 
 ## Chapter 441 · 2026 Official Breakthrough Synthesis
@@ -1170,7 +1173,7 @@ This addendum captures the 2026 official release trajectory:
 - Runtime governance: APIM MCP/A2A telemetry and content-safety controls become mandatory L4 admission constraints.
 - Cost/throughput: E2B branch keeps stronger rps-per-cluster while absorbing explicit policy-governance overhead in TCO scoring.
 
-Summary 442: In production architecture terms, platform hard boundaries and sampling-governed gateway paths are now first-class primitives for large-scale autonomous workloads.
+Summary 442: In production architecture terms, platform hard boundaries and offload-governed gateway paths are now first-class primitives for large-scale autonomous workloads.
 """
     return f"""# Cycle #413 专著增补（云原生 Agent Infra）
 
@@ -1194,7 +1197,7 @@ Summary 442: In production architecture terms, platform hard boundaries and samp
 - 运行时治理：APIM 的 MCP/A2A 遥测与内容安全从“可选观测”提升为 L4 准入硬门槛。
 - 成本与吞吐：E2B 分支在纳入治理开销后仍保持高于 Kata 硬隔离路径的集群吞吐效率。
 
-Summary 442：在生产架构层面，平台硬边界与采样门控的网关闭环已经成为大规模自治工作负载的基础原语。
+Summary 442：在生产架构层面，平台硬边界与外置治理门控的网关闭环已经成为大规模自治工作负载的基础原语。
 """
 
 
@@ -1313,10 +1316,24 @@ def run_checks() -> None:
         raise FileNotFoundError(f"Missing {benchmark}")
     payload = json.loads(benchmark.read_text(encoding="utf-8"))
     assert payload["cycle"]["id"] == 413
+    assert payload.get("topic_slug") == TOPIC_SLUG
+    assert payload.get("topic_slug") != ROUND24_TOPIC_SLUG
     assert len(payload["latency"]) >= 4
     assert len(payload["throughput"]) >= 4
     assert len(payload["policy"]) >= 3
     assert all(x["source_label"] in {"measured", "synthetic", "anonymized_reported"} for x in payload["sources"])
+
+    # Guardrail: verify round24 immutable evidence is still intact and not overwritten.
+    round24_benchmark = EVIDENCE / "cycle-405-benchmark.json"
+    round24_sources = EVIDENCE / "cycle-405-sources.json"
+    if not round24_benchmark.exists() or not round24_sources.exists():
+        raise FileNotFoundError("Missing preserved round24 evidence bundle (cycle-405-benchmark/sources).")
+    round24_payload = json.loads(round24_benchmark.read_text(encoding="utf-8"))
+    assert round24_payload["cycle"]["id"] in {404, 405}
+    round24_faq = ROOT / f"{ROUND24_TOPIC_SLUG}.md"
+    if not round24_faq.exists():
+        raise FileNotFoundError(f"Missing preserved round24 FAQ: {round24_faq}")
+    assert "可观测性采样" in round24_faq.read_text(encoding="utf-8")
 
 
 def main() -> None:

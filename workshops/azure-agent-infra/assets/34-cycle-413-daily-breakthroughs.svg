@@ -24,8 +24,8 @@
 <text x="72" y="434" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">E2B: 99/158 ms · ACA Dynamic: 202/326 ms · Kata: 920/1420 ms · Wasm: 42/71 ms</text>
 <text x="72" y="474" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Throughput p50/p95:</text>
 <text x="72" y="508" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Model routing 1680/1510 RPS · MCP 640/560 RPS · A2A 460/400 RPS</text>
-<text x="72" y="548" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Sampling quality:</text>
-<text x="72" y="582" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Head coverage 94.0% · tail anomaly capture 96.3% · incident fence 95.6%</text>
+<text x="72" y="548" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Offload integrity quality:</text>
+<text x="72" y="582" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Inline budget gate 94.0% · hash integrity 96.3% · expiry auth fence 95.6%</text>
 
 <rect x="816" y="320" width="736" height="290" rx="14" fill="#0f172a" stroke="#334155"/>
 <text x="840" y="360" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Cross-cloud competitor matrix (p50 cold start)</text>
