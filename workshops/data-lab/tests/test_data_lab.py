@@ -152,12 +152,26 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
         self.assertEqual(sim["decision_routing"]["action"], "Confirm")
 
-    def test_scenario_matrix_48_cases_and_explicit_miss(self) -> None:
+    def test_telecom_5g_eventhouse_vs_dynamic_tables_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("telecom_5g_eventhouse_vs_dynamic_tables")
+        self.assertGreater(
+            sim["telemetry"]["slice_jitter_ms"],
+            sim["telemetry"]["max_sla_jitter_ms"],
+        )
+        self.assertEqual(sim["telemetry"]["streaming_ingest_eps"], 120000)
+        self.assertEqual(sim["telemetry"]["impacted_enterprise_slices"], 18500)
+        self.assertEqual(sim["multi_agent_plan"]["jitter_after_reroute_ms"], 1.15)
+        self.assertTrue(sim["foundry_iq_guardrail"]["e911_emergency_voice_slice_protected"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["unverified_bgp_blackhole_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
+
+    def test_scenario_matrix_52_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 48)
-        self.assertEqual(matrix["passed_scenarios"], 47)
+        self.assertEqual(matrix["total_scenarios"], 52)
+        self.assertEqual(matrix["passed_scenarios"], 51)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 97.92, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 98.08, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -228,6 +242,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Salesforce Data 360 Shortcut", by_id["DL-47"]["expected"])
         self.assertIn("SQL Server on Azure Local", by_id["DL-48"]["expected"])
 
+    def test_realtime_eventhouse_vs_dynamic_tables_dlt_2026_11_08_r2_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-49", "DL-50", "DL-51", "DL-52"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Snowflake Dynamic Tables", by_id["DL-49"]["expected"])
+        self.assertIn("Databricks Lakeflow", by_id["DL-50"]["expected"])
+        self.assertIn("Eventhouse KQL", by_id["DL-51"]["expected"])
+        self.assertIn("Amsterdam-IXP SRv6 Steer", by_id["DL-52"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -245,13 +270,14 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 47)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 51)
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
         self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
         self.assertIn("finops_rayfin_observability", loaded["ontology_simulations"])
         self.assertIn("healthcare_clinical_supply_diskann", loaded["ontology_simulations"])
         self.assertIn("manufacturing_digital_twin_zeroprov", loaded["ontology_simulations"])
         self.assertIn("supply_chain_iq_sharing_salesforce", loaded["ontology_simulations"])
+        self.assertIn("telecom_5g_eventhouse_vs_dynamic_tables", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

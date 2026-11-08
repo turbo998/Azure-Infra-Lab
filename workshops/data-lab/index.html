@@ -161,7 +161,8 @@
     <h1 id="ui-title">Microsoft Fabric × 四大云数智竞对实战实验室</h1>
   </div>
   <div class="nav-actions">
-    <a class="btn" href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md" id="link-faq">🧭 零拷贝+本体选型 FAQ</a>
+    <a class="btn" href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md" id="link-faq">🧭 零拷贝+本体 FAQ</a>
+    <a class="btn" href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md" id="link-faq-r2">⚡ 实时流选型 FAQ (R2)</a>
     <a class="btn" href="benchmark-cards.html" id="link-cards-zh">📊 7-Card 评测报告 (中文)</a>
     <a class="btn" href="benchmark-cards.en.html" id="link-cards-en">📊 7-Card Deck (EN)</a>
     <a class="btn" href="../fabcon-sqlcon-2026/index.html">🎬 FabCon 2026 展厅</a>
@@ -177,7 +178,7 @@
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
         <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与 Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) 四大智能底座，对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。</p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">47 / 48 场景实测通过 (97.92%) · 2026-11-08 / 11-09</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">51 / 52 场景实测通过 (98.08%) · 2026-11-08 / 11-09 (R2)</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -191,9 +192,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Copilot 额外 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">八大跨云本体闭环延迟</div>
-        <div class="val">515ms – 780ms</div>
-        <div class="sub" id="kpi3-sub">跨企供应链 $1.15M · 晶圆孪生 $920K · 反欺诈 $4.62M · 冷链 $640K</div>
+        <div class="label" id="kpi3-lbl">九大跨云本体闭环延迟</div>
+        <div class="val">495ms – 780ms</div>
+        <div class="sub" id="kpi3-sub">5G URLLC 切片 $1.48M · 供应链 $1.15M · 晶圆 $920K · 反欺诈 $4.62M</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -284,7 +285,8 @@
       <button class="comp-pill" id="sim-btn-finops" onclick="selectScenario('finops_rayfin_observability')">📈 场景 E：18 工作区容量尖峰 RCA 与 Rayfin 全栈自愈 (590ms)</button>
       <button class="comp-pill" id="sim-btn-clinical" onclick="selectScenario('healthcare_clinical_supply_diskann')">🧬 场景 F：跨云医药冷链 × Database Hub × Hyperscale 192核 DiskANN (560ms)</button>
       <button class="comp-pill" id="sim-btn-fab" onclick="selectScenario('manufacturing_digital_twin_zeroprov')">🏭 场景 G：300mm 晶圆厂 Digital Twin Builder × Lakehouse 流式表 × Zero-Provisioned 弹性 (530ms)</button>
-      <button class="comp-pill" id="sim-btn-supply" onclick="selectScenario('supply_chain_iq_sharing_salesforce')">🌐 场景 H：跨企供应链 × OneLake IQ Sharing × Salesforce Data 360 零拷贝 × 断网车间 (515ms · 新增)</button>
+      <button class="comp-pill" id="sim-btn-supply" onclick="selectScenario('supply_chain_iq_sharing_salesforce')">🌐 场景 H：跨企供应链 × OneLake IQ Sharing × Salesforce Data 360 零拷贝 × 断网车间 (515ms · R1)</button>
+      <button class="comp-pill" id="sim-btn-telecom" onclick="selectScenario('telecom_5g_eventhouse_vs_dynamic_tables')">📡 场景 I：5G URLLC 专网切片 Eventhouse KQL (142ms) vs Dynamic Tables (60s) × SRv6 自动导流 (495ms · R2 新增)</button>
     </div>
 
     <div class="grid-2">
@@ -312,7 +314,7 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · 每日研究强制交付 (2026-11-08 / 11-09)：五大平台选型决策、OneLake IQ Sharing、Salesforce 零拷贝与八大本体一图流总结卡 (Executive Visual Summary SVG)</span>
+        <span>01 · 每日研究强制交付 (2026-11-08 / 11-09 R2)：五大平台选型决策、OneLake IQ Sharing、实时流 Eventhouse 与九大本体一图流总结卡 (Executive Visual Summary SVG)</span>
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
@@ -320,7 +322,15 @@
 
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>09 · OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 条件-动作规则 × 混合主权边缘选型 FAQ 架构图 (2026-11-08 / 11-09 新增)</span>
+        <span>10 · Fabric Eventhouse (KQL 142ms) + Lakehouse 流式表 (210ms) vs Snowflake Dynamic Tables (60s) vs Databricks Lakeflow 实时流选型 FAQ 架构图 (R2 新增)</span>
+        <a href="assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg" alt="Fabric Eventhouse vs Dynamic Tables vs Lakeflow Streaming FAQ Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>09 · OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 条件-动作规则 × 混合主权边缘选型 FAQ 架构图 (R1 新增)</span>
         <a href="assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg" target="_blank">🔍 查看原始高清 SVG</a>
       </h3>
       <img src="assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg" alt="OneLake IQ Sharing & Fabric IQ Selection FAQ Architecture" class="svg-preview">
@@ -759,6 +769,36 @@ const SIM_DATA = {
       teamsTitle: '📋 Cross-Enterprise Supply Chain &amp; Purview Price-Masking Card (Confirm · 0.97)',
       teamsSummary: 'Action: Reallocate 780 Warsaw units + Expedite 500 Rail-Air units ($34.5K) + Purview Net-Price Masking + Write back to 1GB Free SQL & Salesforce · 99.6% OTD, $1,150,000 SLA Saved ✓'
     }
+  },
+  telecom_5g_eventhouse_vs_dynamic_tables: {
+    zh: {
+      steps: [
+        { title: '① Eventstream (120K EPS) → Eventhouse KQL 亚秒级滑动窗口检测', latency: '88 ms', desc: '法兰克福 IXP AS64512 突发 BGP 路由泄露，URLLC-AutoFactory-Slice-09 切片抖动飙升至 14.8ms (> 2.0ms SLA 红线)，丢包率 1.85% 持续 >=3 秒；若用 Snowflake Dynamic Tables (60s 最小滞后) 将导致 450 台焊装机器人急停断线。Eventhouse 88ms 检出异常并 210ms 同步落盘 OneLake Delta。' },
+        { title: '② Fabric IQ 跨云 6 跳本体图谱遍历 (Eventhouse + Databricks + Salesforce)', latency: '118 ms', desc: '沿着 RANTelemetry → Eventhouse-KQL → URLLC-Slice-09 → Databricks-Lakeflow-BGP-ML → Salesforce-Data-360 (18,500 个政企切片，$42M ARR) → Operator-Nexus-SDN 6 跳定位 $1.48M 汽车制造 SLA 违约风险。' },
+        { title: '③ Activator + Fabric IQ 条件-动作规则生成 SRv6 绕行预案', latency: '104 ms', desc: '自动合成 SRv6 策略 (Frankfurt-Core-02 -> Amsterdam-IXP-Redundant, SID 2001:db8:a1::99)，突发冗余带宽成本仅 $1,850，预计抖动压回 1.15ms (-92.2%)。' },
+        { title: '④ Foundry IQ 3GPP 安全护栏 (TELECOM-3GPP-TS28530-URLLC-SOP-19)', latency: '92 ms', desc: '强制保护 E911 紧急语音切片不受路由变更影响 (e911_emergency_voice_slice_protected=true)，拦截未验证的 BGP 黑洞丢弃指令，校验 Agent 365 OBO 权限。' },
+        { title: '⑤ 毫秒级自动回写 Azure Operator Nexus SDN 与 1GB 免费 Fabric SQL', latency: '93 ms', desc: '置信度 0.98 触发 Act automatically，下发 SRv6 流表并回写 Rayfin NOC 门户 (1GB 免费 Fabric SQL)，端到端总耗时 495ms，保住 99.999% SLA 与 $1,480,000！' }
+      ],
+      graph: `<h4>🕸️ 5G URLLC 专网切片 × 跨云本体拓扑影响链 (6-Hop Graph)</h4>
+        <p><code>RANTelemetry:120K-EPS-PrivateLink</code> ➔ <code>Eventhouse:KQL-142ms + OneLake-Delta-210ms</code> ➔ <code>Slice:URLLC-AutoFactory-09 (14.8ms Jitter)</code> ➔ <code>Databricks:Lakeflow-BGP-Anomaly</code> ➔ <code>Salesforce:Data-360-ZeroCopy (18.5K Slices · $42M ARR)</code> ➔ <code>SDN:Operator-Nexus + Rayfin-1GB-SQL</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>实时流架构胜出原因：</b>Eventhouse 88ms 检出 + 495ms 闭环 vs Snowflake Dynamic Tables 60,000ms 最小刷新滞后（快 121 倍，流计算省 48.5%）。</p>`,
+      teamsTitle: '🤖 Operations Agent · 5G URLLC 切片 SRv6 自动导流审计卡 (Entra Agent ID: agt-5g-noc-19)',
+      teamsSummary: '已自动执行 (Act automatically · 置信度 98%)：Frankfurt-Core-02 切换至 Amsterdam-IXP SRv6 冗余隧道 ($1,850) + E911 切片零扰动保护 + 回写 1GB 免费 Fabric SQL · 抖动 14.8ms -> 1.15ms (-92.2%)，规避 $1,480,000 汽车产线停机罚款 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventstream (120K EPS) → Eventhouse KQL Sub-Second Sliding Window', latency: '88 ms', desc: 'Frankfurt IXP AS64512 suffers a BGP route leak; URLLC-AutoFactory-Slice-09 jitter spikes to 14.8ms (> 2.0ms SLA ceiling) with 1.85% packet loss for >=3s. Waiting 60s for Snowflake Dynamic Tables would trip 450 robotic welding arms. Eventhouse detects in 88ms and dual-writes OneLake Delta in 210ms.' },
+        { title: '② Fabric IQ 6-Hop Multi-Cloud Ontology Graph Traversal', latency: '118 ms', desc: 'Traverses RANTelemetry → Eventhouse-KQL → URLLC-Slice-09 → Databricks-Lakeflow-BGP-ML → Salesforce-Data-360 (18,500 enterprise slices, $42M ARR) → Operator-Nexus-SDN to quantify $1.48M SLA penalty risk.' },
+        { title: '③ Activator + Fabric IQ Condition-Action Rule SRv6 Plan', latency: '104 ms', desc: 'Synthesizes SRv6 policy (Frankfurt-Core-02 -> Amsterdam-IXP-Redundant, SID 2001:db8:a1::99) at $1,850 transit burst cost, projecting jitter drop to 1.15ms (-92.2%).' },
+        { title: '④ Foundry IQ 3GPP Guardrail (TELECOM-3GPP-TS28530-URLLC-SOP-19)', latency: '92 ms', desc: 'Protects E911 emergency voice slices from route mutation (e911_emergency_voice_slice_protected=true), blocks unverified BGP blackholing, and validates Agent 365 OBO scope.' },
+        { title: '⑤ Autonomous SDN Write-Back to Operator Nexus & 1GB Free Fabric SQL', latency: '93 ms', desc: 'Confidence 0.98 triggers Act automatically: commits SRv6 policy and logs audit state to Rayfin NOC portal (1GB Free Fabric SQL) in 495ms E2E, preserving 99.999% SLA & saving $1,480,000!' }
+      ],
+      graph: `<h4>🕸️ 5G URLLC Slice × Multi-Cloud Ontology Cascade Path (6-Hop Graph)</h4>
+        <p><code>RANTelemetry:120K-EPS-PrivateLink</code> ➔ <code>Eventhouse:KQL-142ms + OneLake-Delta-210ms</code> ➔ <code>Slice:URLLC-AutoFactory-09 (14.8ms Jitter)</code> ➔ <code>Databricks:Lakeflow-BGP-Anomaly</code> ➔ <code>Salesforce:Data-360-ZeroCopy (18.5K Slices · $42M ARR)</code> ➔ <code>SDN:Operator-Nexus + Rayfin-1GB-SQL</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>Why Fabric RTI Wins:</b> 88ms KQL detection + 495ms closed loop vs. Snowflake Dynamic Tables 60,000ms minimum target lag (121x faster, -48.5% streaming compute).</p>`,
+      teamsTitle: '🤖 Operations Agent · 5G URLLC Slice SRv6 Autonomous Steering Card (Entra Agent ID: agt-5g-noc-19)',
+      teamsSummary: 'Executed Automatically (Confidence 98%): Steered Frankfurt-Core-02 to Amsterdam-IXP SRv6 tunnel ($1,850) + E911 slice protected + Written back to 1GB Free Fabric SQL · Jitter 14.8ms -> 1.15ms (-92.2%), $1,480,000 SLA Penalty Saved ✓'
+    }
   }
 };
 
@@ -911,6 +951,8 @@ function selectScenario(sc) {
   if (fabBtn) fabBtn.classList.toggle('active', sc === 'manufacturing_digital_twin_zeroprov');
   const supplyBtn = document.getElementById('sim-btn-supply');
   if (supplyBtn) supplyBtn.classList.toggle('active', sc === 'supply_chain_iq_sharing_salesforce');
+  const telecomBtn = document.getElementById('sim-btn-telecom');
+  if (telecomBtn) telecomBtn.classList.toggle('active', sc === 'telecom_5g_eventhouse_vs_dynamic_tables');
   runNormalSim();
 }
 

@@ -2,8 +2,1051 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=index.html">
-<title>Redirecting to Data Lab Workbench (ZH)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Lab Workbench · Microsoft Fabric × Databricks / Snowflake / GCP / AWS (2026)</title>
+<style>
+  :root {
+    --bg: #070B14;
+    --panel: #0F172A;
+    --panel-2: #131F38;
+    --border: #1E293B;
+    --accent: #3B82F6;
+    --accent-2: #8B5CF6;
+    --green: #10B981;
+    --amber: #F59E0B;
+    --red: #EF4444;
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at 15% 0%, #172554 0%, #070B14 55%);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  a { color: #60A5FA; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 19, 36, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 28px;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .badge-pill {
+    background: linear-gradient(90deg, #0078D4, #3B82F6, #8B5CF6);
+    color: #fff; font-size: 11px; font-weight: 800; padding: 4px 11px; border-radius: 999px; letter-spacing: 0.06em;
+  }
+  .brand h1 { font-size: 18px; font-weight: 800; color: #F8FAFC; }
+  .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    background: #1E293B; color: #E2E8F0; border: 1px solid #334155;
+    padding: 7px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 700; cursor: pointer;
+    transition: all 0.18s;
+  }
+  .btn:hover { border-color: #60A5FA; color: #fff; }
+  .btn.primary { background: linear-gradient(90deg, #2563EB, #4F46E5); border-color: #3B82F6; color: #fff; }
+  .btn.success { background: #065F46; border-color: #10B981; color: #D1FAE5; }
+  .btn.danger { background: #7F1D1D; border-color: #EF4444; color: #FEE2E2; }
+
+  .container { max-width: 1380px; margin: 0 auto; padding: 24px 24px 64px; }
+
+  /* Hero KPIs */
+  .hero {
+    background: linear-gradient(135deg, rgba(30,58,138,0.45), rgba(15,23,42,0.92));
+    border: 1px solid #2563EB; border-radius: 16px; padding: 22px 26px; margin-bottom: 22px;
+  }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+  .hero h2 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+  .hero p { color: #CBD5E1; font-size: 13.5px; max-width: 920px; }
+  .kpi-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 18px;
+  }
+  .kpi-card {
+    background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px;
+  }
+  .kpi-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+  .kpi-card .val { font-size: 22px; font-weight: 800; color: #60A5FA; margin: 3px 0; }
+  .kpi-card .sub { font-size: 11.5px; color: #34D399; }
+
+  /* Module Tabs */
+  .tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn {
+    background: #0F172A; color: #94A3B8; border: 1px solid var(--border);
+    padding: 10px 18px; border-radius: 10px; font-size: 13.5px; font-weight: 800; cursor: pointer;
+  }
+  .tab-btn.active {
+    background: #172554; color: #FFFFFF; border-color: #3B82F6;
+    box-shadow: 0 0 0 1px rgba(59,130,246,0.4);
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Grid helpers */
+  .grid-2 { display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 1024px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 20px;
+  }
+  .card h3 { font-size: 16px; font-weight: 800; margin-bottom: 12px; color: #93C5FD; display: flex; justify-content: space-between; align-items: center; }
+
+  /* Platform selector buttons */
+  .comp-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .comp-pill {
+    padding: 7px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 700;
+    background: #1E293B; color: #CBD5E1; border: 1px solid #334155; cursor: pointer;
+  }
+  .comp-pill.active { background: #2563EB; color: #fff; border-color: #60A5FA; }
+
+  /* Score bar rows */
+  .dim-row { margin-bottom: 12px; }
+  .dim-head { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .dual-bars { display: flex; flex-direction: column; gap: 4px; }
+  .bar-track { background: #1E293B; height: 10px; border-radius: 999px; overflow: hidden; position: relative; }
+  .bar-fill-fabric { background: linear-gradient(90deg, #2563EB, #06B6D4); height: 100%; border-radius: 999px; }
+  .bar-fill-comp { background: #F97316; height: 100%; border-radius: 999px; }
+
+  .battle-section {
+    background: #131F38; border: 1px solid #2563EB; border-radius: 10px; padding: 13px 15px; margin-bottom: 11px;
+  }
+  .battle-section h4 { font-size: 12.5px; font-weight: 800; color: #60A5FA; margin-bottom: 5px; }
+  .battle-section p, .battle-section li { font-size: 12.5px; color: #E2E8F0; }
+  .battle-section ul { padding-left: 18px; }
+
+  /* Sliders */
+  .slider-group { margin-bottom: 14px; }
+  .slider-group label { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 700; margin-bottom: 5px; color: #E2E8F0; }
+  .slider-group input[type=range] { width: 100%; accent-color: #3B82F6; cursor: pointer; }
+  .tco-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 10px; }
+  .tco-table th { text-align: left; padding: 8px 10px; background: #1E293B; color: #93C5FD; font-size: 11.5px; }
+  .tco-table td { padding: 9px 10px; border-bottom: 1px solid #1E293B; }
+  .tco-highlight { background: rgba(37, 99, 235, 0.16); font-weight: 700; }
+
+  /* Ontology Simulator */
+  .step-list { display: flex; flex-direction: column; gap: 10px; }
+  .step-item {
+    background: #111C33; border: 1px solid #1E293B; border-radius: 10px; padding: 12px 14px;
+    transition: all 0.2s;
+  }
+  .step-item.active { border-color: #3B82F6; background: #172554; }
+  .step-item.blocked { border-color: #EF4444; background: rgba(127, 29, 29, 0.35); }
+  .step-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+  .step-meta { font-size: 11px; color: #34D399; font-family: Consolas, monospace; }
+  .step-body { font-size: 12px; color: #CBD5E1; }
+
+  .teams-card {
+    background: #1E1B4B; border: 1.5px solid #6366F1; border-radius: 12px; padding: 16px; margin-top: 14px;
+  }
+  .teams-card h4 { font-size: 13.5px; color: #C7D2FE; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .log-console {
+    background: #050811; border: 1px solid #1E293B; border-radius: 10px; padding: 12px;
+    font-family: Consolas, monospace; font-size: 11.5px; color: #A7F3D0; min-height: 150px; max-height: 240px; overflow-y: auto; margin-top: 12px;
+  }
+  .svg-preview {
+    width: 100%; border-radius: 10px; border: 1px solid #334155; margin-top: 8px; background: #070B14;
+  }
+</style>
 </head>
-<body><p>Redirecting to <a href="index.html">Data Lab Interactive Workbench (中文)</a>...</p></body>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="badge-pill">DATA LAB · 2026</span>
+    <h1 id="ui-title">Microsoft Fabric × 四大云数智竞对实战实验室</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="btn" href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md" id="link-faq">🧭 零拷贝+本体 FAQ</a>
+    <a class="btn" href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md" id="link-faq-r2">⚡ 实时流选型 FAQ (R2)</a>
+    <a class="btn" href="benchmark-cards.html" id="link-cards-zh">📊 7-Card 评测报告 (中文)</a>
+    <a class="btn" href="benchmark-cards.en.html" id="link-cards-en">📊 7-Card Deck (EN)</a>
+    <a class="btn" href="../fabcon-sqlcon-2026/index.html">🎬 FabCon 2026 展厅</a>
+    <button class="btn primary" onclick="toggleLang()" id="lang-btn">🌐 Switch to English</button>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Hero Overview -->
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
+        <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与 Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) 四大智能底座，对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。</p>
+      </div>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">51 / 52 场景实测通过 (98.08%) · 2026-11-08 / 11-09 (R2)</span>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="label" id="kpi1-lbl">Fabric 六维综合均分</div>
+        <div class="val">93.3 / 100</div>
+        <div class="sub" id="kpi1-sub">领先 Databricks (86.8) / GCP (85.5) / Snowflake (85.0)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label" id="kpi2-lbl">500 用户月度 TCO 节省</div>
+        <div class="val">46.1% – 56.1%</div>
+        <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Copilot 额外 Token)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label" id="kpi3-lbl">九大跨云本体闭环延迟</div>
+        <div class="val">495ms – 780ms</div>
+        <div class="sub" id="kpi3-sub">5G URLLC 切片 $1.48M · 供应链 $1.15M · 晶圆 $920K · 反欺诈 $4.62M</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
+        <div class="val">4.54x – 9.47x</div>
+        <div class="sub" id="kpi4-sub">500 并发 + 25K EPS 下 P95 仅 940ms (对比 8,900ms)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('compass')" id="tab-compass">🧭 1. 五云竞对攻防罗盘 (Battlecards)</button>
+    <button class="tab-btn" onclick="switchTab('tco')" id="tab-tco">💰 2. 交互式五云 TCO 与容量计算器</button>
+    <button class="tab-btn" onclick="switchTab('ontology')" id="tab-ontology">⚡ 3. Fabric IQ 本体与 Operations Agent 仿真台</button>
+    <button class="tab-btn" onclick="switchTab('visuals')" id="tab-visuals">🖼️ 4. 可视化架构图集与 FabCon 实机视频</button>
+  </div>
+
+  <!-- TAB 1: 5-Cloud Competitive Compass -->
+  <section id="panel-compass" class="tab-panel active">
+    <div class="comp-selector">
+      <button class="comp-pill active" onclick="selectCompetitor('databricks')" id="pill-databricks">vs Databricks (86.8)</button>
+      <button class="comp-pill" onclick="selectCompetitor('snowflake')" id="pill-snowflake">vs Snowflake (85.0)</button>
+      <button class="comp-pill" onclick="selectCompetitor('gcp')" id="pill-gcp">vs GCP BigQuery (85.5)</button>
+      <button class="comp-pill" onclick="selectCompetitor('aws')" id="pill-aws">vs AWS Lakehouse (82.8)</button>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>
+          <span id="comp-chart-title">Microsoft Fabric (93.3) vs Databricks (86.8) 六维实测对比</span>
+          <span style="font-size:11.5px; color:#34D399;">数据来源: sealed report.json</span>
+        </h3>
+        <div id="dim-bars-container"></div>
+      </div>
+
+      <div class="card">
+        <h3 id="battlecard-title">售前架构师攻防话术卡 (AI SA Battlecard)</h3>
+        <div id="battlecard-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: Interactive 5-Cloud TCO Calculator -->
+  <section id="panel-tco" class="tab-panel">
+    <div class="grid-2">
+      <div class="card">
+        <h3 id="tco-input-title">企业负载参数调节 (实时重算五云月度账单)</h3>
+        <div class="slider-group">
+          <label><span id="lbl-users">BI 与智能体活跃用户数 (Active Users)</span> <span id="val-users">500</span></label>
+          <input type="range" id="inp-users" min="50" max="2000" step="50" value="500" oninput="updateTCO()">
+        </div>
+        <div class="slider-group">
+          <label><span id="lbl-storage">受治理湖仓热数据规模 (Storage TB)</span> <span id="val-storage">100 TB</span></label>
+          <input type="range" id="inp-storage" min="10" max="500" step="10" value="100" oninput="updateTCO()">
+        </div>
+        <div class="slider-group">
+          <label><span id="lbl-eps">实时遥测流吞吐率 (Streaming EPS)</span> <span id="val-eps">25,000 EPS</span></label>
+          <input type="range" id="inp-eps" min="1000" max="100000" step="1000" value="25000" oninput="updateTCO()">
+        </div>
+        <div class="slider-group">
+          <label><span id="lbl-queries">每日自然语言/Copilot 问数次数 (Queries/Day)</span> <span id="val-queries">5,000</span></label>
+          <input type="range" id="inp-queries" min="500" max="50000" step="500" value="5000" oninput="updateTCO()">
+        </div>
+        <div class="slider-group" style="display:flex; align-items:center; gap:10px; margin-top:14px;">
+          <input type="checkbox" id="inp-m365" checked onchange="updateTCO()" style="width:18px; height:18px;">
+          <label for="inp-m365" id="lbl-m365" style="margin:0; cursor:pointer;">企业已部署 Microsoft 365 Copilot（享 Fabric IQ Chat/Cowork $0 额外 Token 消耗）</label>
+        </div>
+        <div class="battle-section" style="margin-top:16px;">
+          <h4 id="tco-insight-title">💡 TCO 精算洞察</h4>
+          <p id="tco-insight-body">在 F64 及以上容量下，Power BI 报表消费用户免除按人头 Viewer 许可费，且 M365 Copilot 调用 Fabric IQ 语义模型与 Ontology 零额外 AI Token 计费。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 id="tco-result-title">五大云数智平台月度总拥有成本 (Monthly TCO Breakdown)</h3>
+        <div id="tco-table-wrap"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: Fabric IQ Ontology Live Simulator -->
+  <section id="panel-ontology" class="tab-panel">
+    <div class="comp-selector">
+      <button class="comp-pill active" id="sim-btn-energy" onclick="selectScenario('energy_dc_peak')">🔋 场景 A：智算中心 AI 能源削峰编排 (780ms)</button>
+      <button class="comp-pill" id="sim-btn-airline" onclick="selectScenario('airline_jfk_r25')">✈️ 场景 B：纽约 JFK R25 跑道湿雪数字孪生 (640ms)</button>
+      <button class="comp-pill" id="sim-btn-retail" onclick="selectScenario('retail_cross_cloud_planning')">🛒 场景 C：跨云零售爆单与 Planning 预算回写 (710ms)</button>
+      <button class="comp-pill" id="sim-btn-fraud" onclick="selectScenario('financial_multi_cloud_fraud')">🛡️ 场景 D：多云金融反欺诈与 Project Osmos 管道自愈 (660ms)</button>
+      <button class="comp-pill" id="sim-btn-finops" onclick="selectScenario('finops_rayfin_observability')">📈 场景 E：18 工作区容量尖峰 RCA 与 Rayfin 全栈自愈 (590ms)</button>
+      <button class="comp-pill" id="sim-btn-clinical" onclick="selectScenario('healthcare_clinical_supply_diskann')">🧬 场景 F：跨云医药冷链 × Database Hub × Hyperscale 192核 DiskANN (560ms)</button>
+      <button class="comp-pill" id="sim-btn-fab" onclick="selectScenario('manufacturing_digital_twin_zeroprov')">🏭 场景 G：300mm 晶圆厂 Digital Twin Builder × Lakehouse 流式表 × Zero-Provisioned 弹性 (530ms)</button>
+      <button class="comp-pill" id="sim-btn-supply" onclick="selectScenario('supply_chain_iq_sharing_salesforce')">🌐 场景 H：跨企供应链 × OneLake IQ Sharing × Salesforce Data 360 零拷贝 × 断网车间 (515ms · R1)</button>
+      <button class="comp-pill" id="sim-btn-telecom" onclick="selectScenario('telecom_5g_eventhouse_vs_dynamic_tables')">📡 场景 I：5G URLLC 专网切片 Eventhouse KQL (142ms) vs Dynamic Tables (60s) × SRv6 自动导流 (495ms · R2 新增)</button>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>
+          <span id="sim-pipeline-title">Fabric IQ × Foundry 多智能体 5 步闭环流水线</span>
+          <div style="display:flex; gap:8px;">
+            <button class="btn primary" onclick="runNormalSim()" id="btn-run-sim">▶ 运行标准闭环</button>
+            <button class="btn danger" onclick="runAdversarialSim()" id="btn-run-adv">⚠️ 注入越界指令 (+3.5°C)</button>
+          </div>
+        </h3>
+        <div class="step-list" id="sim-steps-container"></div>
+      </div>
+
+      <div class="card">
+        <h3 id="sim-action-title">本体拓扑影响图谱 · Teams 人在回路审批与回写控制台</h3>
+        <div class="battle-section" id="sim-graph-box"></div>
+        <div class="teams-card" id="sim-teams-box"></div>
+        <div class="log-console" id="sim-console"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 4: Visual Summary SVGs & FabCon Video Hub -->
+  <section id="panel-visuals" class="tab-panel">
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>01 · 每日研究强制交付 (2026-11-08 / 11-09 R2)：五大平台选型决策、OneLake IQ Sharing、实时流 Eventhouse 与九大本体一图流总结卡 (Executive Visual Summary SVG)</span>
+        <a href="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>10 · Fabric Eventhouse (KQL 142ms) + Lakehouse 流式表 (210ms) vs Snowflake Dynamic Tables (60s) vs Databricks Lakeflow 实时流选型 FAQ 架构图 (R2 新增)</span>
+        <a href="assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg" alt="Fabric Eventhouse vs Dynamic Tables vs Lakeflow Streaming FAQ Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>09 · OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 条件-动作规则 × 混合主权边缘选型 FAQ 架构图 (R1 新增)</span>
+        <a href="assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg" alt="OneLake IQ Sharing & Fabric IQ Selection FAQ Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>08 · Digital Twin Builder × Lakehouse Streaming Tables × On-Demand / Zero-Provisioned 架构</span>
+        <a href="assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg" alt="Digital Twin Builder & Zero-Provisioned Elastic Compute Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>07 · Database Hub × Azure SQL Hyperscale 192核 DiskANN × 跨云零 ETL Mirroring 架构</span>
+        <a href="assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg" alt="Database Hub & Hyperscale 192 vCore DiskANN Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>06 · 开源 Rayfin SDK 全栈智能体应用 × 跨 18 工作区 Eventhouse 可观测性 × OneLake IQ Sharing 架构</span>
+        <a href="assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg" alt="Rayfin SDK & Cross-Workspace Eventhouse Observability Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>05 · Project Osmos 自主数据工程 × 跨云 OBO 智能体身份 × Apache Ossie 语义互操作架构</span>
+        <a href="assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/05-osmos-autonomous-engineering-ossie-interop.svg" alt="Project Osmos & Cross-Cloud OBO Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>04 · LTAP 湖仓事务分析一体与智能体回写架构对比 (Fabric Translytical vs Lakebase / AISQL / BigQuery / S3 Tables)</span>
+        <a href="assets/svg/04-translytical-ltap-agentic-architecture.svg" target="_blank">🔍 查看原始高清 SVG</a>
+      </h3>
+      <img src="assets/svg/04-translytical-ltap-agentic-architecture.svg" alt="LTAP Translytical Architecture" class="svg-preview">
+    </div>
+
+    <div class="grid-2" style="margin-bottom:18px;">
+      <div class="card">
+        <h3>
+          <span>02 · Microsoft IQ × Fabric IQ 五层参考架构图</span>
+          <a href="assets/svg/02-microsoft-iq-fabric-iq-architecture.svg" target="_blank">🔍 高清 SVG</a>
+        </h3>
+        <img src="assets/svg/02-microsoft-iq-fabric-iq-architecture.svg" alt="Microsoft IQ Architecture" class="svg-preview">
+      </div>
+      <div class="card">
+        <h3>
+          <span>03 · OneLake 五云零拷贝共存拓扑图</span>
+          <a href="assets/svg/03-five-cloud-coexistence-topology.svg" target="_blank">🔍 高清 SVG</a>
+        </h3>
+        <img src="assets/svg/03-five-cloud-coexistence-topology.svg" alt="Five Cloud Coexistence Topology" class="svg-preview">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🎬 FabCon &amp; SQLCon Barcelona 2026 五支官方实机演示直通车 (Microsoft CDN MP4)</h3>
+      <div class="grid-3" style="margin-top:10px;">
+        <div class="battle-section">
+          <h4>1. Fabric IQ in M365 Copilot (GA)</h4>
+          <p>在 M365 Copilot Chat 与 Cowork 中零额外 Token 直接对话企业语义模型与本体。</p>
+          <p style="margin-top:6px;"><a href="https://powerbi.microsoft.com/wp-content/uploads/2026/03/Copilot-Chat-Fabric-Data-Agent.mp4" target="_blank">▶ 播放官方实机视频 (MP4)</a></p>
+        </div>
+        <div class="battle-section">
+          <h4>2. Power BI Agentic App + 1GB 免费 SQL</h4>
+          <p>自然语言对话构建带 Write-back 回写能力的交互式业务应用，附赠 1GB Fabric SQL。</p>
+          <p style="margin-top:6px;"><a href="https://powerbi.microsoft.com/wp-content/uploads/2026/03/Org-Apps-Creation.mp4" target="_blank">▶ 播放官方实机视频 (MP4)</a></p>
+        </div>
+        <div class="battle-section">
+          <h4>3. 开源 Rayfin SDK/CLI + OneLake IQ + Osmos</h4>
+          <p>全栈智能体数据应用脚手架、跨组织 RDF 本体共享与 Osmos 自主数据工程智能体。</p>
+          <p style="margin-top:6px;">
+            <a href="https://fabric.microsoft.com/wp-content/uploads/2026/03/Data-Apps.mp4" target="_blank">▶ Rayfin</a> ·
+            <a href="https://fabric.microsoft.com/wp-content/uploads/2026/03/IQ-Sharing.mp4" target="_blank">▶ IQ Sharing</a> ·
+            <a href="https://fabric.microsoft.com/wp-content/uploads/2026/03/Osmos.mp4" target="_blank">▶ Osmos</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+let currentLang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'zh';
+let currentComp = 'databricks';
+let currentSim = 'energy_dc_peak';
+
+const DIMS = [
+  { key: 'semantic', zh: '1. 业务语义与本体接地 (Ontology & Grounding)', en: '1. Semantic & Ontology Grounding', fabric: 96.0 },
+  { key: 'rti', zh: '2. 实时情报与亚秒级时序流 (RTI & KQL)', en: '2. Real-Time Intelligence & KQL', fabric: 95.0 },
+  { key: 'zero_etl', zh: '3. 跨云零拷贝与开放互操作 (Zero-ETL Mirroring)', en: '3. Cross-Cloud Zero-ETL & Open Formats', fabric: 94.0 },
+  { key: 'ml_eng', zh: '4. 大规模 ML 训练与深度工程 (ML & Spark Eng)', en: '4. Large-Scale ML & Spark Engineering', fabric: 82.0 },
+  { key: 'bi_app', zh: '5. BI 智能体应用构建与回写 (DirectLake & Writeback)', en: '5. BI, Agentic Apps & Write-back', fabric: 98.0 },
+  { key: 'gov', zh: '6. 企业安全、合规标签与 Agent 治理 (Purview/Agent365)', en: '6. Enterprise Security & Agent Governance', fabric: 95.0 }
+];
+
+const COMP_DATA = {
+  databricks: {
+    name: 'Databricks (Lakehouse + Mosaic AI)',
+    mean: 86.8,
+    scores: { semantic: 83.0, rti: 84.0, zero_etl: 85.0, ml_eng: 97.0, bi_app: 81.0, gov: 91.0 },
+    zh: {
+      breakthrough: 'Unity Gateway 实时智能体/工具审计治理、Managed Iceberg v3 GA 与 Delta UniForm 双格式、Lakeflow 声明式流管道 GA、AI/BI Genie App Builder、Lakebase OLTP 协同。',
+      fabricWins: [
+        '业务语义与本体层领先 (+13 pts)：一键从 2000万+ Power BI 语义模型升级 Ontology 实体图谱与 Operations Agent，而 Genie 仍偏向 SQL 问答。',
+        '全员 BI 与 M365 Copilot 零额外 Token：F64+ 免除 hundreds of BI Viewer 席位费，M365 Copilot 直接零额外 Token 消费。',
+        '亚秒级时序 KQL 与自主 ETL 现代化：Eventhouse KQL 在高频遥测检索上快于 Spark Streaming，且 Osmos 智能体大幅缩短遗留数仓迁移周期。'
+      ],
+      compLeads: [
+        '超大规模分布式机器学习与底层 Spark C++ Photon 调优 (97.0 vs 82.0)：70B+ 参数模型分布式预训练与复杂特征工程仍是 Databricks 强项。'
+      ],
+      coexist: '【Better Together 模式 B】保留 Azure Databricks 处理重度 Spark DLT 与 Mosaic AI 模型训练，通过 OneLake 双向零拷贝 Shortcut 接入 ADLS/Unity Catalog，由 Fabric 统一承载 DirectLake BI、Eventhouse KQL 与 Fabric IQ 运营本体。',
+      objection: '客户问：“我们已经有 Databricks Unity Catalog 和 Genie，为什么还要 Fabric IQ？” → 答：“Genie 解决了分析师在单表/多表上的 Text-to-SQL，但企业运营决策需要跨 OT/IT 的关系图谱级联推理、SOP 护栏与 Teams/M365 全员免 Token 闭环，两者通过零拷贝 Shortcut 天然互补。”'
+    },
+    en: {
+      breakthrough: 'Unity Gateway real-time agent/tool governance, Managed Iceberg v3 GA + Delta UniForm, Lakeflow Declarative Pipelines GA, AI/BI Genie App Builder, Lakebase OLTP synergy.',
+      fabricWins: [
+        'Semantic & Ontology lead (+13 pts): One-click Ontology creation from 20M+ Power BI semantic models with Graph cascade & Operations Agent vs SQL-centric Genie.',
+        'Zero extra M365 Copilot token cost & $0 BI Viewer seats on F64+: Massive TCO advantage (47.1% lower monthly cost for 500 users).',
+        'Sub-second Eventhouse KQL + Osmos Agent: Faster ad-hoc time-series telemetry slicing and autonomous legacy pipeline modernization.'
+      ],
+      compLeads: [
+        'Ultra-large distributed ML & low-level Spark/Photon tuning (97.0 vs 82.0): Best suited for 70B+ custom foundation model training.'
+      ],
+      coexist: '[Better Together Mode B] Keep Azure Databricks for heavy Spark DLT & Mosaic AI training; connect via bidirectional Zero-Copy OneLake Shortcuts to Unity Catalog/ADLS, and run DirectLake BI, Eventhouse KQL, and Fabric IQ Ontology on Fabric.',
+      objection: 'Customer asks: "We already use Unity Catalog and AI/BI Genie—why Fabric IQ?" → Answer: "Genie handles analyst SQL queries, whereas Fabric IQ models cross-system Entity/Relationship/Rule graphs with Foundry IQ SOP guardrails and $0-extra-token M365 Copilot distribution."'
+    }
+  },
+  snowflake: {
+    name: 'Snowflake (AI Data Cloud + Cortex)',
+    mean: 85.0,
+    scores: { semantic: 85.0, rti: 80.0, zero_etl: 86.0, ml_eng: 84.0, bi_app: 83.0, gov: 92.0 },
+    zh: {
+      breakthrough: 'Cortex Code (CoCo) 智能体工作流、Snowflake Intelligence (CoWork)、Horizon/Polaris Catalog Iceberg v3 双向读写、Snowflake Datastream (Kafka 兼容流)、与微软联合发起 Apache Ossie。',
+      fabricWins: [
+        '500 用户月度 TCO 节省高达 56.1% ($14,048 vs $31,990)：终结高并发 BI 与 AI 问答触发的多集群 Warehouse Credit 飙升。',
+        'Apache Ossie 开放语义标准反客为主：微软与 Snowflake 联合共建 Apache Ossie，使存量 Snowflake 语义可直接被 Fabric IQ 与 Power BI DirectLake 无缝消费。',
+        '原生实时流 KQL + 1GB 免费 SQL 回写应用：无需额外部署外部流引擎即可实现毫秒级监控与带 Write-back 的业务内嵌应用。'
+      ],
+      compLeads: [
+        '跨云极简純 SQL 数仓自治体验与成熟 B2B Data Clean Rooms 生态。'
+      ],
+      coexist: '【夺取 AI/BI 层模式 A】核心财务/ERP 数仓继续保留在 Snowflake，启用 OneLake Snowflake Mirroring (支持 CDC 与视图) 或 Iceberg 零拷贝，通过 Apache Ossie 对齐语义，在 Fabric 上零额外 Token 交付 M365 Copilot 与 Operations Agent。',
+      objection: '客户问：“Snowflake Cortex Analyst 也能配 YAML 语义文件，和 Fabric IQ 有何区别？” → 答：“手工维护 YAML 难以覆盖全企业，而企业已有数以万计经过财务审计的 Power BI 语义模型；通过 Apache Ossie 与 Mirroring，您无需搬迁 Snowflake 即可在 Teams/Copilot 免费唤醒这些资产。”'
+    },
+    en: {
+      breakthrough: 'Cortex Code (CoCo) & Snowflake Intelligence (CoWork), Horizon/Polaris Iceberg v3 read/write, Snowflake Datastream (Kafka-compatible), and joint Apache Ossie standard with Microsoft.',
+      fabricWins: [
+        '56.1% lower monthly TCO for 500 users ($14,048 vs $31,990): Eliminates multi-cluster warehouse credit spikes during peak BI and AI chat bursts.',
+        'Apache Ossie semantic interoperability: Joint open standard allows Snowflake models to plug directly into Fabric IQ and Power BI DirectLake.',
+        'Native RTI Eventhouse KQL & 1GB free Fabric SQL write-back apps: Built-in real-time observability and operational write-back.'
+      ],
+      compLeads: [
+        'Turnkey pure-SQL warehouse operations and mature cross-enterprise B2B Data Clean Rooms.'
+      ],
+      coexist: '[Coexistence Mode A] Keep core financial DW in Snowflake; enable OneLake Snowflake Mirroring (CDC + views) or Iceberg shortcuts, unify semantics via Apache Ossie, and serve M365 Copilot & Operations Agents from Fabric.',
+      objection: 'Customer asks: "Why not just use Snowflake Cortex Analyst YAML files?" → Answer: "Instead of hand-coding new YAML files and paying per-query Cortex credits, Fabric IQ upgrades your existing audited Power BI semantic models into a live Ontology with $0 extra M365 Copilot token cost."'
+    }
+  },
+  gcp: {
+    name: 'GCP (BigQuery + Looker + Vertex AI)',
+    mean: 85.5,
+    scores: { semantic: 84.0, rti: 83.0, zero_etl: 87.0, ml_eng: 89.0, bi_app: 82.0, gov: 88.0 },
+    zh: {
+      breakthrough: 'BigQuery Conversational Analytics GA、BigLake Managed Iceberg REST Catalog、Dataplex Knowledge Catalog 自动化元数据、BigQuery Arrow 高速返回与 Git 集成 GA。',
+      fabricWins: [
+        'OneLake Mirroring for Google BigQuery 已正式 GA：无需 Dataflow 搬运，即可把 GCP 上的 Google Ads / GA4 转化数据零拷贝镜像至 OneLake。',
+        'Ontology 图谱级联与主动动作 vs 被动 BI 问答：Fabric IQ 不仅能回答“转化率是多少”，更能通过 Graph 传导分析库存断货并由 Operations Agent 触发补货审批。',
+        'Power BI 3500万月活生态 vs Looker 高昂席位成本：省去昂贵的 Looker 开发者/查看者订阅与按扫描量计费不可控风险。'
+      ],
+      compLeads: [
+        'Serverless PB 级全表即席扫描弹性与 Google 营销广告原生数据源 (GA4/Ads) 深度绑定。'
+      ],
+      coexist: '【全域融合模式 C】保留 Google Ads / GA4 在 BigQuery 原地不动，开启已正式 GA 的 OneLake BigQuery Mirroring，将营销流与 Azure 上的 ERP/供应链数据合并建模为 Fabric IQ 全域零售本体。',
+      objection: '客户问：“我们的广告数据全在 BigQuery，用 Conversational Analytics 不就够了吗？” → 答：“广告只是前半截，真正的利润受制于库存、履约与财务回款；通过已 GA 的 BigQuery 零拷贝镜像，Fabric IQ 把广告流与供应链本体打通，实现端到端经营闭环。”'
+    },
+    en: {
+      breakthrough: 'BigQuery Conversational Analytics GA, BigLake Managed Iceberg REST Catalog, Dataplex Knowledge Catalog, Arrow high-speed result delivery, and Git integration GA.',
+      fabricWins: [
+        'OneLake Mirroring for Google BigQuery is now GA: Zero-ETL replication of Google Ads/GA4 into OneLake without Dataflow pipelines.',
+        'Ontology Graph cascade & active Operations Agent vs passive Q&A: Connects marketing demand signals directly to supply chain actions.',
+        'Predictable capacity TCO (47.6% savings): Avoids unpredictable per-TB scan spikes and expensive Looker seat licensing.'
+      ],
+      compLeads: [
+        'Serverless petabyte-scale ad-hoc scan elasticity and native Google Ads / GA4 ingestion.'
+      ],
+      coexist: '[Coexistence Mode C] Leave Google Ads / GA4 in BigQuery; activate GA OneLake BigQuery Mirroring to combine marketing attribution with ERP/supply-chain data in a unified Fabric IQ Ontology.',
+      objection: 'Customer asks: "Our marketing data is in BigQuery—why not just use BigQuery Conversational Analytics?" → Answer: "Marketing analytics alone cannot prevent stockouts; GA BigQuery Mirroring merges ad signals with ERP inventory in Fabric IQ at zero ETL cost."'
+    }
+  },
+  aws: {
+    name: 'AWS (SageMaker Lakehouse + S3 Tables + Redshift)',
+    mean: 82.8,
+    scores: { semantic: 78.0, rti: 82.0, zero_etl: 81.0, ml_eng: 90.0, bi_app: 77.0, gov: 89.0 },
+    zh: {
+      breakthrough: 'Amazon S3 Tables (原生托管 Iceberg 达 3x 查询加速) + S3 Vectors、AWS Glue 6.0 (降价 30% + Spark 4.1)、Kinesis 直写 S3 Tables 自动小文件合并、SageMaker Unified Studio。',
+      fabricWins: [
+        '端到端单一 SaaS 体验 vs 6 组件拼装复杂性：终结 S3 Tables + Glue + Redshift + Kinesis + QuickSight + Bedrock 跨服务 IAM/VPC/账单割裂。',
+        'OneLake S3 Shortcuts (带缓存与 Shortcut Transformations GA)：AWS S3 湖数据无需物理搬迁即可在 Fabric 中以 DirectLake 毫秒级查询。',
+        '企业级语义本体与安全标签贯通 (+17 pts 语义领先)：Purview 敏感度标签从 OneLake 自动继承至 Power BI 与 Office 文档，远超 Lake Formation 单点表级权限。'
+      ],
+      compLeads: [
+        '底层 S3 对象存储规模经济、S3 Vectors 海量低成本向量存储与 Bedrock 模型家族广度。'
+      ],
+      coexist: '【S3 零搬迁模式 D】海量原始遥测与日志继续存放在 Amazon S3 / S3 Tables，通过 OneLake S3 Shortcuts（开启智能缓存加速，消除重复跨云 Egress 费用）加上 Shortcut Transformations GA，在 Fabric 侧一站式交付 DirectLake BI、Ontology 图谱与 M365 Copilot。',
+      objection: '客户问：“AWS 刚发布了 S3 Tables 和 Glue 6.0 降价 30%，我们为什么不在 AWS 上自己搭？” → 答：“底层存储降价不等于业务交付提速；在 AWS 上拼装 6 个服务做智能体闭环需要数月胶水代码，而 OneLake S3 Shortcut 5 分钟零搬迁即可接入 S3，直接生成业务本体与 Agentic App。”'
+    },
+    en: {
+      breakthrough: 'Amazon S3 Tables (native managed Iceberg) + S3 Vectors, AWS Glue 6.0 (30% price cut + Spark 4.1), Kinesis direct streaming to S3 Tables, and SageMaker Unified Studio.',
+      fabricWins: [
+        'Single cohesive SaaS platform vs stitching 6 AWS services (S3 Tables + Glue + Redshift + Kinesis + QuickSight + Bedrock).',
+        'OneLake S3 Shortcuts with caching & GA Shortcut Transformations: Query S3 data in-place via DirectLake without cross-cloud egress duplication.',
+        'End-to-end semantic Ontology & Purview security inheritance (+17 pts on semantic grounding): Tags flow seamlessly into Office/Teams.'
+      ],
+      compLeads: [
+        'Raw S3 object storage scale, low-cost S3 Vectors, and Bedrock foundation model breadth.'
+      ],
+      coexist: '[Coexistence Mode D] Keep raw telemetry in Amazon S3 / S3 Tables; mount via cached OneLake S3 Shortcuts with GA Shortcut Transformations to power DirectLake BI, Fabric IQ Ontology, and M365 Copilot.',
+      objection: 'Customer asks: "With S3 Tables and Glue 6.0 30% cheaper, why not build on AWS?" → Answer: "Cheaper Spark primitives still leave you stitching IAM, QuickSight, and Bedrock manually; OneLake S3 Shortcuts connect to your S3 lake in 5 minutes with zero migration."'
+    }
+  }
+};
+
+const SIM_DATA = {
+  energy_dc_peak: {
+    zh: {
+      steps: [
+        { title: '① 实时遥测感知 (Eventstream → Eventhouse KQL)', latency: '142 ms', desc: '夏季 14:00 尖峰电价时段，B区 H200 大模型训练集群功耗突增 +18%，全园负荷升至 18.84 MW / 20.0 MW (达合同上限 94.2%，逼近 2x 罚款红线)。' },
+        { title: '② 本体图谱级联影响分析 (Fabric IQ Ontology Graph)', latency: '186 ms', desc: '沿着 `Campus:BJ-AIDC-01 → Sub-03 → TX-3B → BESS-Unit-02 → Row-B → H200-Pod-B` 6 跳图谱传导，锁定 3号配电室过载源头及可弹性调节资产。' },
+        { title: '③ 多智能体协同寻优 (Foundry Multi-Agent Orchestrator)', latency: '212 ms', desc: '生成组合削峰方案：BESS-Unit-02 放电 2.00 MW + 推迟 2 个非关键推理批任务 (BATCH-INF-104/109) 释放 1.10 MW + 液冷供水温度上调 +1.0°C 省电 0.35 MW。' },
+        { title: '④ SOP 规程合规护栏校验 (Foundry IQ Knowledge Base)', latency: '124 ms', desc: '自动检索《智算中心冷却安全规程 SOP-DC-COOL-04》：验证 +1.0°C 温升 ≤ 最高允许阈值 (+1.5°C)，且 BESS SoC (84%) ≥ 25% 备电红线，合规通过。' },
+        { title: '⑤ Teams 人在回路审批与本体回写 (HITL + Write-back)', latency: '116 ms (E2E 780 ms)', desc: '合计削峰 3.45 MW，负荷降至 15.39 MW (76.95%)，置信度 0.94；推送自适应卡片至值班经理审批并写入 1GB Fabric SQL 审计表。' }
+      ],
+      graph: '<h4>🕸️ 激活的 Ontology 实体与关系链路 (6 节点级联)</h4><p><code>Campus:BJ-AIDC-01</code> ──[powers]──&gt; <code>Substation:Sub-03 (94.2% Load)</code> ──[feeds]──&gt; <code>Transformer:TX-3B</code> + <code>Battery:BESS-Unit-02 (SoC 84%)</code> ──[cools/powers]──&gt; <code>RackRow:Row-B (+1.0°C)</code> ──[hosts]──&gt; <code>GPUCluster:H200-Pod-B (Defer 2 Batch Jobs)</code></p>',
+      teamsTitle: '📋 Microsoft Teams 智能运维审批卡 (Operations Agent -> 值班长)',
+      teamsSummary: '动作：BESS 放电 2.00 MW + 推迟 2 个批任务 (1.10 MW) + 液冷 +1.0°C (0.35 MW) = 削峰 3.45 MW · 预计月省 $42,800 · SOP-DC-COOL-04 校验通过 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Real-Time Telemetry Sense (Eventstream → Eventhouse KQL)', latency: '142 ms', desc: 'At 14:00 summer peak tariff, Zone-B H200 training power surges +18%; campus load hits 18.84 MW / 20.0 MW (94.2% of contract cap).' },
+        { title: '② Ontology Graph Cascade Analysis (Fabric IQ Ontology)', latency: '186 ms', desc: 'Traverses `Campus:BJ-AIDC-01 → Sub-03 → TX-3B → BESS-Unit-02 → Row-B → H200-Pod-B` to isolate Substation #3 overload and flexible loads.' },
+        { title: '③ Multi-Agent Optimization (Foundry Orchestrator)', latency: '212 ms', desc: 'Synthesizes composite plan: 2.00 MW BESS discharge + defer 2 batch inference jobs (1.10 MW) + raise liquid cooling supply temp by +1.0°C (0.35 MW).' },
+        { title: '④ SOP Guardrail Verification (Foundry IQ RAG)', latency: '124 ms', desc: 'Verifies against `SOP-DC-COOL-04`: +1.0°C delta ≤ +1.5°C safety ceiling and BESS SoC (84%) ≥ 25% reserve floor. Guardrail passed.' },
+        { title: '⑤ Teams Human-in-the-Loop Approval & Write-back', latency: '116 ms (E2E 780 ms)', desc: 'Total peak shaved: 3.45 MW → load drops to 15.39 MW (76.95%), confidence 0.94; routes Adaptive Card to duty manager and writes back to Fabric SQL.' }
+      ],
+      graph: '<h4>🕸️ Active Ontology Entity &amp; Relationship Chain (6 Nodes)</h4><p><code>Campus:BJ-AIDC-01</code> ──[powers]──&gt; <code>Substation:Sub-03 (94.2% Load)</code> ──[feeds]──&gt; <code>Transformer:TX-3B</code> + <code>Battery:BESS-Unit-02 (SoC 84%)</code> ──[cools/powers]──&gt; <code>RackRow:Row-B (+1.0°C)</code> ──[hosts]──&gt; <code>GPUCluster:H200-Pod-B (Defer 2 Batch Jobs)</code></p>',
+      teamsTitle: '📋 Microsoft Teams Adaptive Approval Card (Operations Agent -> Duty Lead)',
+      teamsSummary: 'Action: 2.00 MW BESS + 1.10 MW Batch Deferral + 0.35 MW Cooling (+1.0°C) = 3.45 MW Shaved · Est. Savings $42,800/mo · SOP-DC-COOL-04 Passed ✓'
+    }
+  },
+  airline_jfk_r25: {
+    zh: {
+      steps: [
+        { title: '① 跑道气象与传感器实时感知 (Eventhouse KQL)', latency: '128 ms', desc: '纽约 JFK 机场 R25 跑道湿雪堆积达 4.2mm，道面摩擦系数骤降至 0.24（跌破 0.30 安全起降阈值），触发本体规则告警。' },
+        { title: '② 航班与地面保障图谱级联穿透 (Ontology Graph)', latency: '164 ms', desc: '从既有 Power BI 航班语义模型生成的 Ontology 自动穿透：`Airport:JFK → Runway:R25 → Terminal:T4/T8 → 14 架进出港航班 → 28 项除冰/行李任务`。' },
+        { title: '③ 地面调度与除冰资源协同规划 (Operations Agent)', latency: '190 ms', desc: '自动编排 Alpha 扫雪车队（4 辆除冰车）优先清理 R25，并将 6 架宽体机动态重分配至 R13L 跑道与相邻登机口。' },
+        { title: '④ FAA 跑道安全规程护栏校验 (Foundry IQ)', latency: '92 ms', desc: '核验《FAA 冬季跑道运行手册 SOP-AIR-SNOW-02》：属于预授权安全重排动作，无需等待人工审批即可自动触发。' },
+        { title: '⑤ 预授权自动执行与旅客通知闭环 (Act Automatically)', latency: '66 ms (E2E 640 ms)', desc: '置信度 0.96（≥ 0.90 阈值），自动下发地面工单并通知 1,840 名中转旅客，级联延误时间缩短 38 分钟，单次规避损失 $68,500。' }
+      ],
+      graph: '<h4>🕸️ 激活的航空数字孪生本体链路 (从 Power BI 语义模型一键生成)</h4><p><code>Airport:JFK</code> ──[operates]──&gt; <code>Runway:R25 (Friction 0.24)</code> ──[impacts]──&gt; <code>Terminal:T4 &amp; T8</code> ──[schedules]──&gt; <code>FlightGroup:14-Active-Flights</code> ──[requires]──&gt; <code>GroundOps:28-Deicing-Baggage-Tasks</code></p>',
+      teamsTitle: '📋 Operations Agent 预授权自动执行回执 (Act Automatically · Confidence 0.96)',
+      teamsSummary: '动作：派遣 Alpha 扫雪车队 (4 车) + 重分配 6 登机口至 R13L + 通知 1,840 名旅客 · 减少级联延误 38 分钟 · 规避成本 $68,500 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Runway Weather & Friction Sense (Eventhouse KQL)', latency: '128 ms', desc: 'JFK Runway R25 wet-snow depth reaches 4.2mm; friction coefficient drops to 0.24 (< 0.30 safety threshold), triggering Ontology rule.' },
+        { title: '② Flight & Ground-Ops Graph Cascade (Ontology Graph)', latency: '164 ms', desc: 'Ontology upgraded from Power BI model traces `Airport:JFK → Runway:R25 → Terminal:T4/T8 → 14 Active Flights → 28 De-icing/Baggage Tasks`.' },
+        { title: '③ Ground Crew & Gate Reallocation Plan (Operations Agent)', latency: '190 ms', desc: 'Dispatches Snowplow Fleet-Alpha (4 vehicles) to R25 and reallocates 6 wide-body gates to Runway R13L.' },
+        { title: '④ FAA Winter Runway SOP Verification (Foundry IQ)', latency: '92 ms', desc: 'Validates against `SOP-AIR-SNOW-02`: pre-authorized remediation within safety envelope.' },
+        { title: '⑤ Pre-Authorized Execution & Write-back (Act Automatically)', latency: '66 ms (E2E 640 ms)', desc: 'Confidence 0.96 (≥ 0.90); auto-dispatches ground crews and notifies 1,840 connecting passengers, cutting cascade delay by 38 mins ($68,500 saved).' }
+      ],
+      graph: '<h4>🕸️ Active Airline Digital Twin Ontology Chain (Bootstrapped from Power BI Model)</h4><p><code>Airport:JFK</code> ──[operates]──&gt; <code>Runway:R25 (Friction 0.24)</code> ──[impacts]──&gt; <code>Terminal:T4 &amp; T8</code> ──[schedules]──&gt; <code>FlightGroup:14-Active-Flights</code> ──[requires]──&gt; <code>GroundOps:28-Deicing-Baggage-Tasks</code></p>',
+      teamsTitle: '📋 Operations Agent Pre-Authorized Execution Receipt (Act Automatically · 0.96)',
+      teamsSummary: 'Action: Dispatch Snowplow Fleet-Alpha (4 units) + Reallocate 6 Gates to R13L + Notify 1,840 Passengers · -38 min Delay · $68,500 Saved ✓'
+    }
+  },
+  retail_cross_cloud_planning: {
+    zh: {
+      steps: [
+        { title: '① 跨云零拷贝转化脉冲感知 (GA BigQuery Mirroring + S3 Shortcuts)', latency: '134 ms', desc: '通过已 GA 的 OneLake BigQuery Mirroring 捕获 Google Ads / GA4 黑五闪促转化率暴增 +240% (12,400 单/小时)，欧洲中心仓 EU-Central-02 可售天数跌至 1.8 天 (< 3.0 天安全库存红线)。' },
+        { title: '② 跨四云供应链本体图谱穿透 (Fabric IQ Ontology Graph)', latency: '172 ms', desc: '沿着 `Campaign:GA4-FlashSale-EU (BigQuery) → SKU:SmartWatch-Pro-X → Warehouse:EU-Central-02 → Carrier:DHL-S3-Stream (AWS S3) → SupplierContract:Snowflake-ERP-PO88 → PromoBudget:FabricSQL-Plan-Q4` 6 跳图谱定位断货敞口。' },
+        { title: '③ 调拨与预算联合寻优 (Fabric IQ Planning + Operations Agent)', latency: '180 ms', desc: '生成跨云补货与预算方案：从南德缓冲仓调拨 4,500 件 + 触发 Snowflake ERP 供应商紧急补货 8,000 件 + 动态追加 Q4 闪促预算 +$185,000。' },
+        { title: '④ 净毛利率护栏校验 (Foundry IQ · RETAIL-PROMO-MARGIN-SOP-07)', latency: '112 ms', desc: '核验调拨与空运加急成本后净毛利率为 24.6%（≥ 22.0% 促销毛利底线），符合财务护栏要求。' },
+        { title: '⑤ Power BI Agentic App + 1GB 免费 Fabric SQL 事务回写', latency: '112 ms (E2E 710 ms)', desc: '置信度 0.95 (Confirm)；业务总监一键确认后回写至 1GB 免费 Fabric SQL 数据库，库存可售天数恢复至 6.4 天，单次闪促保护营收 $312,000。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨云全渠道零售本体链路 (BigQuery + AWS S3 + Snowflake + Fabric SQL)</h4><p><code>Campaign:GA4-FlashSale-EU (+240%)</code> ──[drives]──&gt; <code>SKU:SmartWatch-Pro-X</code> ──[stockedAt]──&gt; <code>Warehouse:EU-Central-02 (1.8d DoS)</code> ──[shippedVia]──&gt; <code>Carrier:DHL-S3-Stream</code> ──[procuredBy]──&gt; <code>Contract:Snowflake-ERP-PO88 (+8K)</code> ──[fundedBy]──&gt; <code>PromoBudget:FabricSQL-Plan-Q4 (+$185K)</code></p>',
+      teamsTitle: '📋 Power BI Agentic App & Teams 跨云补货与预算回写审批卡 (Confirm · 0.95)',
+      teamsSummary: '动作：调拨 4,500 件 + 紧急采购 8,000 件 + 回写 1GB 免费 Fabric SQL 促销预算 +$185,000 · 净毛利 24.6% (≥22% 护栏) · 保护营收 $312,000 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Cross-Cloud Flash-Sale Pulse Sense (GA BigQuery Mirroring + S3)', latency: '134 ms', desc: 'GA OneLake BigQuery Mirroring detects a +240% GA4 conversion spike (12,400 orders/hr) on SmartWatch-Pro-X; EU-Central-02 inventory drops to 1.8 days-of-supply (< 3.0d floor).' },
+        { title: '② 4-Cloud Supply-Chain Graph Cascade (Fabric IQ Ontology)', latency: '172 ms', desc: 'Traverses `Campaign:GA4-FlashSale-EU → SKU:SmartWatch-Pro-X → Warehouse:EU-Central-02 → Carrier:DHL-S3-Stream → SupplierContract:Snowflake-ERP-PO88 → PromoBudget:FabricSQL-Plan-Q4`.' },
+        { title: '③ Inventory & Budget Co-Optimization (Fabric IQ Planning)', latency: '180 ms', desc: 'Synthesizes translytical plan: reallocate 4,500 units from DE-South buffer + trigger 8,000-unit expedited PO in Snowflake ERP + allocate +$185,000 promo budget.' },
+        { title: '④ Net Margin Guardrail Check (Foundry IQ · SOP-07)', latency: '112 ms', desc: 'Verifies post-reallocation net margin is 24.6% (≥ 22.0% floor in `RETAIL-PROMO-MARGIN-SOP-07`). Guardrail passed.' },
+        { title: '⑤ Power BI Agentic App + 1GB Free Fabric SQL Write-back', latency: '112 ms (E2E 710 ms)', desc: 'Confidence 0.95 (Confirm); writes back budget & allocation to 1GB Free Fabric SQL, restoring inventory to 6.4 days and protecting $312,000 revenue.' }
+      ],
+      graph: '<h4>🕸️ Active Cross-Cloud Retail Ontology Chain (BigQuery + AWS S3 + Snowflake + Fabric SQL)</h4><p><code>Campaign:GA4-FlashSale-EU (+240%)</code> ──[drives]──&gt; <code>SKU:SmartWatch-Pro-X</code> ──[stockedAt]──&gt; <code>Warehouse:EU-Central-02 (1.8d DoS)</code> ──[shippedVia]──&gt; <code>Carrier:DHL-S3-Stream</code> ──[procuredBy]──&gt; <code>Contract:Snowflake-ERP-PO88 (+8K)</code> ──[fundedBy]──&gt; <code>PromoBudget:FabricSQL-Plan-Q4 (+$185K)</code></p>',
+      teamsTitle: '📋 Power BI Agentic App & Teams Translytical Write-back Card (Confirm · 0.95)',
+      teamsSummary: 'Action: Reallocate 4,500 units + Expedite 8,000 PO + Write back +$185,000 to 1GB Free Fabric SQL · Net Margin 24.6% (≥22% floor) · $312,000 Protected ✓'
+    }
+  },
+  financial_multi_cloud_fraud: {
+    zh: {
+      steps: [
+        { title: '① 实时电汇流与跨云快捷方式感知 (Eventhouse KQL + S3 Shortcut)', latency: '118 ms', desc: 'Eventhouse KQL 结合带出站保护的 OneLake S3 Shortcut 检测到 90 秒内 38 个合成身份账户发起突发跨境电汇（敞口 $4,850,000，团伙风险分 0.97 > 0.85），同时发现上游 ISO-20022 报文新增未映射字段 ultmtDbtrId。' },
+        { title: '② Project Osmos 自主 Schema 漂移自愈 (Data Engineering Agent)', latency: '152 ms', desc: 'Fabric Data Engineering Agent (Project Osmos) 在 Custom Live Pools 上自动识别 ultmtDbtrId 语义并热更新 OneLake Delta/Iceberg 映射与物化湖视图，实现零停机自愈。' },
+        { title: '③ 跨四云 6 跳图谱穿透 + DiskANN 向量匹配 (Ontology + SQL 192 vCore)', latency: '160 ms', desc: '穿透 `AWS S3 设备指纹 → Eventhouse 电汇流 → 38 骡子账户团伙 → Databricks UC 特征库 (OBO) → Snowflake 总账敞口 ($4.85M)`，并通过 Azure SQL Hyperscale (192 vCore + 原生 DiskANN 向量索引) 匹配到 4 起历史洗钱团伙拓扑。' },
+        { title: '④ Foundry IQ 反洗钱护栏与 OBO 零信任身份核验 (SOP-12)', latency: '112 ms', desc: '核验《FIN-AML-SAR-SOP-12》：误报风险率仅 1.4%（≤ 3.0% 批量冻结红线），且通过 Agent 365 与 Databricks Unity Gateway OBO 验证委托权限。' },
+        { title: '⑤ 预授权批量冻结与双库事务回写 (Act Automatically · 660 ms)', latency: '118 ms (E2E 660 ms)', desc: '置信度 0.97 (Act automatically)；自动冻结 38 笔跨境电汇并将 SAR 案卷同步回写至 Azure SQL Hyperscale (DiskANN) 与 1GB 免费 Fabric SQL，挽回净欺诈损失 $4,620,000。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨四云金融反欺诈与管道自愈本体链路 (AWS S3 + Eventhouse + Databricks OBO + Snowflake Ossie + SQL DiskANN)</h4><p><code>DeviceTelemetry:AWS-S3-Tables (Osmos Healed ultmtDbtrId)</code> ──[initiates]──&gt; <code>PaymentStream:Eventhouse-ISO20022 (Score 0.97)</code> ──[linksTo]──&gt; <code>AccountRing:38-Synthetic-Mules</code> ──[scoredBy]──&gt; <code>FeatureStore:Databricks-UC-OBO</code> ──[settlesIn]──&gt; <code>CoreLedger:Snowflake-Ossie ($4.85M)</code> ──[writesSAR]──&gt; <code>AuditDB:AzureSQL-192vCore-DiskANN &amp; 1GB-FabricSQL</code></p>',
+      teamsTitle: '📋 Operations Agent & Agent 365 跨境反欺诈自动冻结与 SAR 回执 (Act Automatically · 0.97)',
+      teamsSummary: '动作：Project Osmos 修复 ultmtDbtrId 漂移 + 自动冻结 38 笔高危跨境电汇 ($4.85M) + 回写 SAR 案卷至 SQL Hyperscale DiskANN & 1GB Fabric SQL · 挽回净损失 $4,620,000 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Real-Time KQL & S3 Shortcut Sense (Eventhouse + S3 Tables)', latency: '118 ms', desc: 'Eventhouse KQL & outbound-protected OneLake S3 Shortcut detect 38 synthetic-identity accounts initiating $4.85M in cross-border wires within 90s (score 0.97 > 0.85), while flagging an unmapped upstream ISO-20022 field (ultmtDbtrId).' },
+        { title: '② Project Osmos Autonomous Schema Healing (Data Eng Agent)', latency: '152 ms', desc: 'Fabric Data Engineering Agent (Project Osmos) autonomously maps ultmtDbtrId into OneLake Delta/Iceberg and refreshes Materialized Lake Views on Custom Live Pools with zero downtime.' },
+        { title: '③ 6-Hop 4-Cloud Graph Traversal + DiskANN Vector Match', latency: '160 ms', desc: 'Traverses `AWS S3 Device Telemetry → Eventhouse ISO-20022 → 38-Mule Ring → Databricks UC Features (OBO) → Snowflake Core Ledger ($4.85M)` and matches 4 historical fraud ring subgraphs via Azure SQL Hyperscale (192 vCore + native DiskANN GA).' },
+        { title: '④ Foundry IQ AML Guardrail & OBO Identity Check (SOP-12)', latency: '112 ms', desc: 'Verifies `FIN-AML-SAR-SOP-12` (false-positive risk 1.4% ≤ 3.0% ceiling) and enforces user-scoped OBO identity via Agent 365 + Databricks Unity Gateway.' },
+        { title: '⑤ Pre-Authorized Hold & Dual-DB Write-back (Act Automatically)', latency: '118 ms (E2E 660 ms)', desc: 'Confidence 0.97 (Act automatically); holds all 38 wires and writes SAR audit case to Azure SQL Hyperscale (DiskANN) & 1GB Free Fabric SQL, preventing $4,620,000 net fraud loss.' }
+      ],
+      graph: '<h4>🕸️ Active 4-Cloud Financial Anti-Fraud &amp; Osmos Self-Healing Ontology Chain</h4><p><code>DeviceTelemetry:AWS-S3-Tables (Osmos Healed ultmtDbtrId)</code> ──[initiates]──&gt; <code>PaymentStream:Eventhouse-ISO20022 (Score 0.97)</code> ──[linksTo]──&gt; <code>AccountRing:38-Synthetic-Mules</code> ──[scoredBy]──&gt; <code>FeatureStore:Databricks-UC-OBO</code> ──[settlesIn]──&gt; <code>CoreLedger:Snowflake-Ossie ($4.85M)</code> ──[writesSAR]──&gt; <code>AuditDB:AzureSQL-192vCore-DiskANN &amp; 1GB-FabricSQL</code></p>',
+      teamsTitle: '📋 Operations Agent &amp; Agent 365 Pre-Authorized Fraud Hold Receipt (Act Automatically · 0.97)',
+      teamsSummary: 'Action: Project Osmos healed ultmtDbtrId drift + Auto-held 38 wires ($4.85M) + Wrote SAR to SQL Hyperscale DiskANN & 1GB Free Fabric SQL · $4,620,000 Net Loss Prevented ✓'
+    }
+  },
+  finops_rayfin_observability: {
+    zh: {
+      steps: [
+        { title: '① 跨 18 工作区单一 Eventhouse 遥测汇聚感知 (Monitor Hub)', latency: '108 ms', desc: 'Workspace Monitoring 将全企业 18 个生产工作区指标实时汇入单一 Eventhouse；Monitor Hub 检测到核心 F64 容量池利用率飙升至 114.8% (> 95.0% 红线)，并锁定 WS-FIN-PROD-07 的未加索引笛卡尔积慢查询 Q-8841。' },
+        { title: '② Fabric IQ 本体与 OneLake IQ Sharing 伙伴图谱穿透', latency: '144 ms', desc: '穿透 `Capacity:F64-Prod-Cluster → MonitorHub:18-Workspaces → RunawayJob:Q-8841 → PartnerContext:OneLake-IQ-Sharing-SPGlobal-RDF → DatabaseAgent:Fabric-SQL-DiskANN → AgenticApp:Rayfin-SDK-Treasury-Portal`，识别 3 分钟内违反 SLA 风险 ($28,400)。' },
+        { title: '③ Operations Agent + Database Agent 联合调优与按需突发', latency: '138 ms', desc: '通过 Surge Protection 限流慢查询 Q-8841，由 Database Agent for SQL 自动注入 DiskANN 向量与复合索引提示，并开启 On-Demand Billing 按需突发缓冲 (+16 CU 持续 25 分钟)。' },
+        { title: '④ Foundry IQ FinOps 成本护栏与默认私网核验 (SOP-09)', latency: '98 ms', desc: '核验《FINOPS-SURGE-SOP-09》：本次按需突发花费仅 $48.50（≤ $250.00 预授权上限），且确认 Rayfin 后端函数处于 Private-by-Default 与 Secret Store 保护下。' },
+        { title: '⑤ Rayfin TS 后端函数自愈与 1GB 免费 SQL 审计回写', latency: '102 ms (E2E 590 ms)', desc: '置信度 0.97 (Act automatically)；调用 Rayfin TypeScript 函数 fn_remediateCapacityAndLogAudit() 回写至 1GB 免费 Fabric SQL，F64 利用率压降至 71.2% (-43.6%)，规避 SLA 罚金 $28,400。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨 18 工作区可观测性、OneLake IQ Sharing 与 Rayfin 全栈自愈本体链路</h4><p><code>Capacity:F64-Prod (114.8% → 71.2%)</code> ──[monitoredBy]──&gt; <code>SingleEventhouse:18-Workspaces</code> ──[isolates]──&gt; <code>RunawayQuery:Q-8841</code> ──[impacts]──&gt; <code>OneLakeIQSharing:SPGlobal-RDF</code> ──[optimizedBy]──&gt; <code>DatabaseAgent:DiskANN + OnDemand(+16CU)</code> ──[writesBack]──&gt; <code>RayfinSDK:fn_remediateCapacity (1GB-FabricSQL)</code></p>',
+      teamsTitle: '📋 Rayfin SDK 全栈智能体应用 & Monitor Hub 跨区容量自愈回执 (Act Automatically · 0.97)',
+      teamsSummary: '动作：限流 Q-8841 + Database Agent 注入 DiskANN 索引提示 + On-Demand 突发 +16 CU ($48.50) + Rayfin TS 函数回写 1GB 免费 SQL · 压降负载 -43.6%，规避 SLA 罚金 $28,400 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Cross-Workspace Single Eventhouse Telemetry Sense (Monitor Hub)', latency: '108 ms', desc: 'Workspace Monitoring streams telemetry from 18 production workspaces into a single Eventhouse; Monitor Hub flags an F64 capacity surge to 114.8% (> 95.0% threshold) and isolates unindexed query Q-8841 in WS-FIN-PROD-07.' },
+        { title: '② Ontology & OneLake IQ Sharing Partner Graph Traversal', latency: '144 ms', desc: 'Traverses `Capacity:F64-Prod-Cluster → MonitorHub:18-Workspaces → RunawayJob:Q-8841 → PartnerContext:OneLake-IQ-Sharing-SPGlobal-RDF → DatabaseAgent:Fabric-SQL-DiskANN → AgenticApp:Rayfin-SDK-Treasury-Portal`, identifying $28,400 in SLA penalty risk.' },
+        { title: '③ Operations Agent + Database Agent Index & Burst Remediation', latency: '138 ms', desc: 'Throttles Q-8841 via Surge Protection, injects DiskANN + composite index hints via Database Agent for SQL, and attaches +16 CU On-Demand Billing burst headroom for 25 minutes.' },
+        { title: '④ Foundry IQ FinOps Guardrail & Private-by-Default Check (SOP-09)', latency: '98 ms', desc: 'Verifies `FINOPS-SURGE-SOP-09` ($48.50 burst cost ≤ $250.00 ceiling) and confirms Rayfin Private-by-Default networking and Secret Store policies.' },
+        { title: '⑤ Rayfin TypeScript Function Execution & 1GB Free SQL Write-back', latency: '102 ms (E2E 590 ms)', desc: 'Confidence 0.97 (Act automatically); executes Rayfin TS function fn_remediateCapacityAndLogAudit() and logs RCA to 1GB Free Fabric SQL, dropping F64 utilization to 71.2% (-43.6%) and saving $28,400.' }
+      ],
+      graph: '<h4>🕸️ Active 18-Workspace Observability, OneLake IQ Sharing &amp; Rayfin Full-Stack Remediation Chain</h4><p><code>Capacity:F64-Prod (114.8% → 71.2%)</code> ──[monitoredBy]──&gt; <code>SingleEventhouse:18-Workspaces</code> ──[isolates]──&gt; <code>RunawayQuery:Q-8841</code> ──[impacts]──&gt; <code>OneLakeIQSharing:SPGlobal-RDF</code> ──[optimizedBy]──&gt; <code>DatabaseAgent:DiskANN + OnDemand(+16CU)</code> ──[writesBack]──&gt; <code>RayfinSDK:fn_remediateCapacity (1GB-FabricSQL)</code></p>',
+      teamsTitle: '📋 Rayfin SDK Full-Stack App &amp; Monitor Hub Auto-Remediation Receipt (Act Automatically · 0.97)',
+      teamsSummary: 'Action: Throttled Q-8841 + Injected DiskANN Index Hint + Attached +16 CU On-Demand Burst ($48.50) + Rayfin TS Write-back to 1GB Free Fabric SQL · -43.6% Load, $28,400 Saved ✓'
+    }
+  },
+  healthcare_clinical_supply_diskann: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse IoT 冷链遥测超温感知 (LOT-BIO-209)', latency: '104 ms', desc: 'Eventhouse KQL 检测到生物制剂批次 LOT-BIO-209 在跨国运输途中箱温升至 6.8°C（突破 2.0°C 上限 +4.8°C 持续 42 分钟），触发 COLD_CHAIN_TEMP_C > 2.0C FOR >= 30_MIN 实时告警。' },
+        { title: '② 跨 Oracle ERP + BigQuery 临床注册库零拷贝本体穿透', latency: '138 ms', desc: '穿透 `ColdChainSensor:Eventhouse-IoT → ERPInventory:Oracle-OneLake-Mirroring (420 Vials At-Risk) → ClinicalRegistry:BigQuery-Mirroring-GA (128 Phase-III Patients) → ProtocolVectorStore:Hyperscale-192vCore-DiskANN → DatabaseHub:Fabric-Database-Agent → ReplenishmentApp:Rayfin-SDK`。' },
+        { title: '③ Azure SQL Hyperscale 192核 DiskANN 检索与 Database Hub 自愈', latency: '168 ms', desc: '在 1,800 万条稳定性曲线向量库上通过原生 SSD DiskANN (省 90% 内存) 以 19ms P99 / 98.4% 召回率匹配 SOP-FDA-21CFR11-BIO-08；Database Hub (监控 64 套数据库) 自动解除 Oracle 镜像表阻塞行锁。' },
+        { title: '④ Foundry IQ 法规护栏强制拦截失效批次放行 (SOP-BIO-08)', latency: '72 ms', desc: 'Foundry IQ 核验确认 +4.8°C 持续 42 分钟已超出动力学稳定性窗口，强制阻断 (Block) 任何对该批次的直接给药放行。' },
+        { title: '⑤ Rayfin 临床门户一键隔离与备仓调拨回写 (Confirm · 560 ms)', latency: '78 ms (E2E 560 ms)', desc: '置信度 0.96 (Confirm)；通过 Rayfin SDK 将 LOT-BIO-209 420 支制剂状态回写为 QUARANTINED (1GB 免费 Fabric SQL)，并从苏黎世备仓调拨 420 支合格制剂，确保 128 名患者 100% 不断药，止损 $640,000。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨云医药冷链、Database Hub 与 Hyperscale 192核 DiskANN 本体链路 (Oracle + BigQuery + Hyperscale + Fabric)</h4><p><code>ColdChainSensor:LOT-BIO-209 (6.8°C)</code> ──[impacts]──&gt; <code>OracleMirroring:420-Vials-AtRisk</code> ──[allocatedTo]──&gt; <code>BigQueryMirroring:128-Phase3-Patients</code> ──[matchedBy]──&gt; <code>Hyperscale-192vCore:DiskANN-18M (19ms/98.4%)</code> ──[governedBy]──&gt; <code>DatabaseHub:64-DBs-LockHealed</code> ──[writesBack]──&gt; <code>RayfinClinicalPortal:DEPOT-ZRH-02 (+420 Vials)</code></p>',
+      teamsTitle: '📋 Rayfin 临床供应门户 &amp; Database Hub 批次隔离调拨审批卡 (Confirm · 0.96)',
+      teamsSummary: '动作：隔离 LOT-BIO-209 (420 支) + Database Agent 解除 Oracle 镜像锁 + Hyperscale 192核 DiskANN 匹配 SOP-BIO-08 + 苏黎世备仓调拨 420 支 · 128 名患者 100% 不断药，止损 $640,000 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse IoT Cold-Chain Excursion Sense (LOT-BIO-209)', latency: '104 ms', desc: 'Eventhouse KQL detects biologics lot LOT-BIO-209 at 6.8°C (+4.8°C above the 2.0°C ceiling for 42 min), triggering COLD_CHAIN_TEMP_C > 2.0C FOR >= 30_MIN.' },
+        { title: '② Cross-Cloud Oracle ERP + BigQuery Clinical Graph Traversal', latency: '138 ms', desc: 'Traverses `ColdChainSensor:Eventhouse-IoT → ERPInventory:Oracle-OneLake-Mirroring (420 Vials At-Risk) → ClinicalRegistry:BigQuery-Mirroring-GA (128 Phase-III Patients) → ProtocolVectorStore:Hyperscale-192vCore-DiskANN → DatabaseHub:Fabric-Database-Agent → ReplenishmentApp:Rayfin-SDK`.' },
+        { title: '③ Hyperscale 192-vCore DiskANN Search & Database Hub Lock Healing', latency: '168 ms', desc: 'Queries 18M stability vectors via native SSD DiskANN (10x lower RAM, 19ms P99, 98.4% recall) to match SOP-FDA-21CFR11-BIO-08; Database Hub (64 monitored DBs) resolves blocking lock on the Oracle-mirrored ledger.' },
+        { title: '④ Foundry IQ Regulatory Guardrail Block (SOP-BIO-08)', latency: '72 ms', desc: 'Foundry IQ confirms the +4.8°C excursion exceeds kinetic stability limits and blocks direct patient administration of the compromised lot.' },
+        { title: '⑤ Rayfin Clinical Portal Quarantine & Backup Re-dispatch (560 ms)', latency: '78 ms (E2E 560 ms)', desc: 'Confidence 0.96 (Confirm); writes QUARANTINED for 420 vials to 1GB Free Fabric SQL via Rayfin SDK and dispatches 420 replacement vials from Zurich depot DEPOT-ZRH-02, protecting 128 patients (100% continuity) and saving $640,000.' }
+      ],
+      graph: '<h4>🕸️ Active Cross-Cloud Clinical Cold-Chain, Database Hub &amp; Hyperscale 192-vCore DiskANN Chain</h4><p><code>ColdChainSensor:LOT-BIO-209 (6.8°C)</code> ──[impacts]──&gt; <code>OracleMirroring:420-Vials-AtRisk</code> ──[allocatedTo]──&gt; <code>BigQueryMirroring:128-Phase3-Patients</code> ──[matchedBy]──&gt; <code>Hyperscale-192vCore:DiskANN-18M (19ms/98.4%)</code> ──[governedBy]──&gt; <code>DatabaseHub:64-DBs-LockHealed</code> ──[writesBack]──&gt; <code>RayfinClinicalPortal:DEPOT-ZRH-02 (+420 Vials)</code></p>',
+      teamsTitle: '📋 Rayfin Clinical Portal &amp; Database Hub Quarantine Card (Confirm · 0.96)',
+      teamsSummary: 'Action: Quarantine LOT-BIO-209 (420 vials) + Heal Oracle Mirror Lock + Hyperscale DiskANN SOP Match + Re-dispatch 420 Vials from Zurich · 100% Patient Continuity, $640,000 Saved ✓'
+    }
+  },
+  manufacturing_digital_twin_zeroprov: {
+    zh: {
+      steps: [
+        { title: '① Eventstream 托管私网 + CMK 感知与 Lakehouse 流式表写入', latency: '96 ms', desc: 'Eventstream (Managed Private Link + CMK) 采集 85,000 EPS OPC-UA 遥测并写入 OneLake Lakehouse Streaming Table (端到端滞后仅 210 ms)，捕获 EUV-Scanner-04 套刻漂移达 1.85 nm (> 0.90 nm 阈值)，75 片 300mm 晶圆面临报废风险。' },
+        { title: '② Digital Twin Builder 无代码 6 跳跨云实体拓扑穿透', latency: '132 ms', desc: '沿着 `OPCUATelemetry:Eventstream-PrivateLink-CMK (85K EPS) → StreamingTable:OneLake-SubSecond-Delta (210ms Lag) → DigitalTwinNode:EUV-Scanner-04 (Drift 1.85nm) → SpareInventory:AWS-S3-Cached-Shortcut → DefectClassifier:BigQuery-Mirroring-DieMap → ElasticSim:Zero-Provisioned-OnDemand-Pool (+24 CU)` 定位热膨胀耦合源。' },
+        { title: '③ Zero-Provisioned 零预置按需弹性爆发 +24 CU 蒙特卡洛寻优', latency: '154 ms', desc: '自动唤醒 Zero-Provisioned On-Demand 弹性池（按作业付费仅 $14.20，基础 F64 容量节流率 0%），求解出吸盘水温微调 -0.42°C 与 180 秒微吹扫的最优补偿方案。' },
+        { title: '④ Foundry IQ 半导体工艺护栏核验 (SOP-SEMI-EUV-14)', latency: '74 ms', desc: '核验《SOP-SEMI-EUV-14》确认 -0.42°C 仍在 ±0.60°C 授权区间内，无需停机等待大修，满足预授权自动闭环标准。' },
+        { title: '⑤ Rayfin SDK 写回 1GB 免费 Fabric SQL 与良率恢复闭环', latency: '74 ms (E2E 530 ms)', desc: '置信度 0.97 (Act automatically)；自动下发校准配方至 EUV-Scanner-04 并写回 1GB 免费 Fabric SQL，套刻误差压回 0.58 nm，保住 75 片晶圆 99.4% 良率，单次规避晶圆报废损失 $920,000。' }
+      ],
+      graph: '<h4>🕸️ 激活的 300mm 晶圆厂 Digital Twin Builder × Lakehouse 流式表 × Zero-Provisioned 链路</h4><p><code>Eventstream:PrivateLink-CMK (85K EPS)</code> ──[streamsTo]──&gt; <code>LakehouseStreamingTable:210ms-Lag</code> ──[twins]──&gt; <code>DigitalTwinBuilder:EUV-Scanner-04 (1.85nm)</code> ──[joins]──&gt; <code>S3CachedShortcut &amp; BigQueryDieMap</code> ──[bursts]──&gt; <code>ZeroProvisioned:+24-CU ($14.20 / 0% Throttle)</code> ──[writesBack]──&gt; <code>RayfinFabOps:1GB-FabricSQL (99.4% Yield · $920K Saved)</code></p>',
+      teamsTitle: '📋 Digital Twin Builder &amp; Rayfin Fab-Ops 预授权自动校准回执 (Act Automatically · 0.97)',
+      teamsSummary: '动作：Zero-Provisioned 爆发 +24 CU ($14.20) + 吸盘温控补偿 -0.42°C + 180s 微吹扫 + 回写 1GB 免费 Fabric SQL · 保住 75 片晶圆 99.4% 良率 · 规避报废损失 $920,000 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventstream Private Link + CMK & Lakehouse Streaming Table', latency: '96 ms', desc: 'Eventstream (Managed Private Link + CMK) ingests 85,000 EPS OPC-UA telemetry into a OneLake Lakehouse Streaming Table (210 ms lag), detecting EUV-Scanner-04 overlay drift at 1.85 nm (> 0.90 nm threshold) across 75 300mm wafers.' },
+        { title: '② Digital Twin Builder 6-Hop Cross-Cloud Graph Traversal', latency: '132 ms', desc: 'Traverses `OPCUATelemetry:Eventstream-PrivateLink-CMK → StreamingTable:OneLake-SubSecond-Delta → DigitalTwinNode:EUV-Scanner-04 → SpareInventory:AWS-S3-Cached-Shortcut → DefectClassifier:BigQuery-Mirroring-DieMap → ElasticSim:Zero-Provisioned-OnDemand-Pool (+24 CU)`.' },
+        { title: '③ Zero-Provisioned On-Demand +24 CU Monte Carlo Burst', latency: '154 ms', desc: 'Spins up Zero-Provisioned On-Demand pool (+24 CU burst at $14.20 pay-per-job cost, 0% base F64 throttling) to compute the optimal -0.42°C chuck offset and 180s micro-purge cycle.' },
+        { title: '④ Foundry IQ Process Guardrail Check (SOP-SEMI-EUV-14)', latency: '74 ms', desc: 'Validates against `SOP-SEMI-EUV-14`: -0.42°C offset is within the ±0.60°C pre-authorized thermal envelope.' },
+        { title: '⑤ Rayfin SDK Write-back to 1GB Free Fabric SQL (530 ms)', latency: '74 ms (E2E 530 ms)', desc: 'Confidence 0.97 (Act automatically); dispatches recipe to EUV-Scanner-04 and writes audit record to 1GB Free Fabric SQL, restoring 0.58 nm overlay and 99.4% wafer yield across 75 wafers ($920,000 saved).' }
+      ],
+      graph: '<h4>🕸️ Active 300mm Semiconductor Digital Twin Builder × Lakehouse Streaming Table × Zero-Provisioned Chain</h4><p><code>Eventstream:PrivateLink-CMK (85K EPS)</code> ──[streamsTo]──&gt; <code>LakehouseStreamingTable:210ms-Lag</code> ──[twins]──&gt; <code>DigitalTwinBuilder:EUV-Scanner-04 (1.85nm)</code> ──[joins]──&gt; <code>S3CachedShortcut &amp; BigQueryDieMap</code> ──[bursts]──&gt; <code>ZeroProvisioned:+24-CU ($14.20 / 0% Throttle)</code> ──[writesBack]──&gt; <code>RayfinFabOps:1GB-FabricSQL (99.4% Yield · $920K Saved)</code></p>',
+      teamsTitle: '📋 Digital Twin Builder &amp; Rayfin Fab-Ops Auto-Calibration Receipt (Act Automatically · 0.97)',
+      teamsSummary: 'Action: Zero-Provisioned +24 CU Burst ($14.20) + Chuck Offset -0.42°C + 180s Micro-Purge + 1GB Free Fabric SQL Write-back · 99.4% Yield on 75 Wafers · $920,000 Scrap Saved ✓'
+    }
+  },
+  supply_chain_iq_sharing_salesforce: {
+    zh: {
+      steps: [
+        { title: '① OneLake IQ Sharing 跨企 RDF 本体订阅 + 断网边缘同步', latency: '92 ms', desc: '通过 OneLake IQ Sharing 零拷贝接收 TomTom 港口拥堵 RDF 本体与 S&P Global 智能体指令 (.md)，结合 SQL Server on Azure Local (ALDO 断网控制面) 同步的布达佩斯车间 WIP 库存，Eventhouse KQL 捕获鹿特丹港延误达 +96h (> 24h 安全红线)。' },
+        { title: '② Salesforce Data 360 零拷贝快捷方式 + Snowflake 镜像 6 跳图谱穿透', latency: '126 ms', desc: '沿着 `ExternalPartner:TomTom-SPGlobal-IQ-Sharing (RDF+MD) → PortNode:Rotterdam-Terminal-02 (+96h Delay) → EdgePlant:AzureLocal-SQL2025-ALDO-Budapest → CRM:Salesforce-Data360-ZeroCopy-Shortcut (42 Accounts / $18.4M ARR) → ERP:Snowflake-Mirroring-Ossie (1,280 Racks)` 定位违约敞口。' },
+        { title: '③ Fabric IQ 本体条件-动作规则 (Condition-Action Rule) 自动求解', latency: '108 ms', desc: '触发规则 PORT_DELAY_HOURS > 24 AND STRATEGIC_ARR_AT_RISK_USD >= 1000000：自动从华沙保税仓调拨 780 台现货机柜，并启用中欧铁空联运加急发运其余 500 台（加急运费 $34,500 ≤ $60,000 上限）。' },
+        { title: '④ Foundry IQ 规程核验 + Purview 合同净底价脱敏拦截 (SOP-15)', latency: '94 ms', desc: '核验《GLOBAL-SUPPLY-SLA-SOP-15》通过；Microsoft Purview 自动拦截 (Block) 向外部承运商外泄 Salesforce 合同净底价 (Highly Confidential)，仅开放脱敏交期与件数。' },
+        { title: '⑤ Rayfin SDK 双端回写 1GB 免费 Fabric SQL 与 Salesforce 预警卡', latency: '95 ms (E2E 515 ms)', desc: '置信度 0.97 (Confirm)；供应链 VP 一键确认后回写 1GB 免费 Fabric SQL 并刷新 Salesforce 客户成功经理预警卡，42 家战略大客户准时交付率保持 99.6%，保住 $1,150,000 SLA 营收。' }
+      ],
+      graph: '<h4>🕸️ 激活的跨企供应链 OneLake IQ Sharing × Salesforce Data 360 零拷贝 × Azure Local 本体链路</h4><p><code>OneLakeIQSharing:TomTom-SPGlobal (.rdf+.md)</code> ──[alerts]──&gt; <code>Port:Rotterdam (+96h Delay)</code> ──[syncsWith]──&gt; <code>AzureLocalALDO:Budapest-Plant</code> ──[joinsZeroCopy]──&gt; <code>SalesforceData360:42-Accounts ($18.4M ARR)</code> ──[triggersRule]──&gt; <code>WarsawHub(780) + RailAir(500)</code> ──[writesBack]──&gt; <code>RayfinSDK:1GB-FabricSQL &amp; SalesforceCSM ($1.15M Saved)</code></p>',
+      teamsTitle: '📋 跨企供应链保供 &amp; Purview 底价脱敏审批卡 (Confirm · 0.97)',
+      teamsSummary: '动作：华沙保税仓调拨 780 台 + 铁空联运加急 500 台 ($34.5K) + Purview 自动脱敏合同底价 + 回写 1GB 免费 SQL 与 Salesforce · 保住 99.6% 准时率与 $1,150,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① OneLake IQ Sharing RDF Ontology + Disconnected Edge Sync', latency: '92 ms', desc: 'OneLake IQ Sharing ingests TomTom port congestion RDF ontology & S&P Global agent instructions (.md) alongside SQL Server on Azure Local (ALDO) Budapest plant WIP syncs; Eventhouse KQL flags Rotterdam delay at +96h (> 24h threshold).' },
+        { title: '② Salesforce Data 360 Zero-Copy Shortcut + Snowflake 6-Hop Graph', latency: '126 ms', desc: 'Traverses `ExternalPartner:TomTom-SPGlobal-IQ-Sharing → PortNode:Rotterdam-Terminal-02 (+96h) → EdgePlant:AzureLocal-SQL2025-ALDO → CRM:Salesforce-Data360-ZeroCopy-Shortcut (42 Accounts / $18.4M ARR) → ERP:Snowflake-Mirroring-Ossie (1,280 Racks)`.' },
+        { title: '③ Fabric IQ Condition-Action Rule Evaluation', latency: '108 ms', desc: 'Evaluates rule PORT_DELAY_HOURS > 24 AND STRATEGIC_ARR_AT_RISK_USD >= 1000000: reallocates 780 units from Warsaw bonded hub and expedites 500 units via rail-air intermodal ($34,500 ≤ $60,000 freight cap).' },
+        { title: '④ Foundry IQ SOP Check + Purview Net-Price Masking (SOP-15)', latency: '94 ms', desc: 'Verifies `GLOBAL-SUPPLY-SLA-SOP-15`; Microsoft Purview automatically blocks external carriers from reading Salesforce Highly Confidential Net_Contract_Price.' },
+        { title: '⑤ Rayfin SDK Dual Write-back to 1GB Free SQL & Salesforce (515 ms)', latency: '95 ms (E2E 515 ms)', desc: 'Confidence 0.97 (Confirm); writes allocation order to 1GB Free Fabric SQL and updates Salesforce CSM alert card, preserving 99.6% on-time delivery and saving $1,150,000 in SLA penalties.' }
+      ],
+      graph: '<h4>🕸️ Active Cross-Enterprise OneLake IQ Sharing × Salesforce Data 360 Zero-Copy × Azure Local Chain</h4><p><code>OneLakeIQSharing:TomTom-SPGlobal (.rdf+.md)</code> ──[alerts]──&gt; <code>Port:Rotterdam (+96h Delay)</code> ──[syncsWith]──&gt; <code>AzureLocalALDO:Budapest-Plant</code> ──[joinsZeroCopy]──&gt; <code>SalesforceData360:42-Accounts ($18.4M ARR)</code> ──[triggersRule]──&gt; <code>WarsawHub(780) + RailAir(500)</code> ──[writesBack]──&gt; <code>RayfinSDK:1GB-FabricSQL &amp; SalesforceCSM ($1.15M Saved)</code></p>',
+      teamsTitle: '📋 Cross-Enterprise Supply Chain &amp; Purview Price-Masking Card (Confirm · 0.97)',
+      teamsSummary: 'Action: Reallocate 780 Warsaw units + Expedite 500 Rail-Air units ($34.5K) + Purview Net-Price Masking + Write back to 1GB Free SQL & Salesforce · 99.6% OTD, $1,150,000 SLA Saved ✓'
+    }
+  },
+  telecom_5g_eventhouse_vs_dynamic_tables: {
+    zh: {
+      steps: [
+        { title: '① Eventstream (120K EPS) → Eventhouse KQL 亚秒级滑动窗口检测', latency: '88 ms', desc: '法兰克福 IXP AS64512 突发 BGP 路由泄露，URLLC-AutoFactory-Slice-09 切片抖动飙升至 14.8ms (> 2.0ms SLA 红线)，丢包率 1.85% 持续 >=3 秒；若用 Snowflake Dynamic Tables (60s 最小滞后) 将导致 450 台焊装机器人急停断线。Eventhouse 88ms 检出异常并 210ms 同步落盘 OneLake Delta。' },
+        { title: '② Fabric IQ 跨云 6 跳本体图谱遍历 (Eventhouse + Databricks + Salesforce)', latency: '118 ms', desc: '沿着 RANTelemetry → Eventhouse-KQL → URLLC-Slice-09 → Databricks-Lakeflow-BGP-ML → Salesforce-Data-360 (18,500 个政企切片，$42M ARR) → Operator-Nexus-SDN 6 跳定位 $1.48M 汽车制造 SLA 违约风险。' },
+        { title: '③ Activator + Fabric IQ 条件-动作规则生成 SRv6 绕行预案', latency: '104 ms', desc: '自动合成 SRv6 策略 (Frankfurt-Core-02 -> Amsterdam-IXP-Redundant, SID 2001:db8:a1::99)，突发冗余带宽成本仅 $1,850，预计抖动压回 1.15ms (-92.2%)。' },
+        { title: '④ Foundry IQ 3GPP 安全护栏 (TELECOM-3GPP-TS28530-URLLC-SOP-19)', latency: '92 ms', desc: '强制保护 E911 紧急语音切片不受路由变更影响 (e911_emergency_voice_slice_protected=true)，拦截未验证的 BGP 黑洞丢弃指令，校验 Agent 365 OBO 权限。' },
+        { title: '⑤ 毫秒级自动回写 Azure Operator Nexus SDN 与 1GB 免费 Fabric SQL', latency: '93 ms', desc: '置信度 0.98 触发 Act automatically，下发 SRv6 流表并回写 Rayfin NOC 门户 (1GB 免费 Fabric SQL)，端到端总耗时 495ms，保住 99.999% SLA 与 $1,480,000！' }
+      ],
+      graph: `<h4>🕸️ 5G URLLC 专网切片 × 跨云本体拓扑影响链 (6-Hop Graph)</h4>
+        <p><code>RANTelemetry:120K-EPS-PrivateLink</code> ➔ <code>Eventhouse:KQL-142ms + OneLake-Delta-210ms</code> ➔ <code>Slice:URLLC-AutoFactory-09 (14.8ms Jitter)</code> ➔ <code>Databricks:Lakeflow-BGP-Anomaly</code> ➔ <code>Salesforce:Data-360-ZeroCopy (18.5K Slices · $42M ARR)</code> ➔ <code>SDN:Operator-Nexus + Rayfin-1GB-SQL</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>实时流架构胜出原因：</b>Eventhouse 88ms 检出 + 495ms 闭环 vs Snowflake Dynamic Tables 60,000ms 最小刷新滞后（快 121 倍，流计算省 48.5%）。</p>`,
+      teamsTitle: '🤖 Operations Agent · 5G URLLC 切片 SRv6 自动导流审计卡 (Entra Agent ID: agt-5g-noc-19)',
+      teamsSummary: '已自动执行 (Act automatically · 置信度 98%)：Frankfurt-Core-02 切换至 Amsterdam-IXP SRv6 冗余隧道 ($1,850) + E911 切片零扰动保护 + 回写 1GB 免费 Fabric SQL · 抖动 14.8ms -> 1.15ms (-92.2%)，规避 $1,480,000 汽车产线停机罚款 ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventstream (120K EPS) → Eventhouse KQL Sub-Second Sliding Window', latency: '88 ms', desc: 'Frankfurt IXP AS64512 suffers a BGP route leak; URLLC-AutoFactory-Slice-09 jitter spikes to 14.8ms (> 2.0ms SLA ceiling) with 1.85% packet loss for >=3s. Waiting 60s for Snowflake Dynamic Tables would trip 450 robotic welding arms. Eventhouse detects in 88ms and dual-writes OneLake Delta in 210ms.' },
+        { title: '② Fabric IQ 6-Hop Multi-Cloud Ontology Graph Traversal', latency: '118 ms', desc: 'Traverses RANTelemetry → Eventhouse-KQL → URLLC-Slice-09 → Databricks-Lakeflow-BGP-ML → Salesforce-Data-360 (18,500 enterprise slices, $42M ARR) → Operator-Nexus-SDN to quantify $1.48M SLA penalty risk.' },
+        { title: '③ Activator + Fabric IQ Condition-Action Rule SRv6 Plan', latency: '104 ms', desc: 'Synthesizes SRv6 policy (Frankfurt-Core-02 -> Amsterdam-IXP-Redundant, SID 2001:db8:a1::99) at $1,850 transit burst cost, projecting jitter drop to 1.15ms (-92.2%).' },
+        { title: '④ Foundry IQ 3GPP Guardrail (TELECOM-3GPP-TS28530-URLLC-SOP-19)', latency: '92 ms', desc: 'Protects E911 emergency voice slices from route mutation (e911_emergency_voice_slice_protected=true), blocks unverified BGP blackholing, and validates Agent 365 OBO scope.' },
+        { title: '⑤ Autonomous SDN Write-Back to Operator Nexus & 1GB Free Fabric SQL', latency: '93 ms', desc: 'Confidence 0.98 triggers Act automatically: commits SRv6 policy and logs audit state to Rayfin NOC portal (1GB Free Fabric SQL) in 495ms E2E, preserving 99.999% SLA & saving $1,480,000!' }
+      ],
+      graph: `<h4>🕸️ 5G URLLC Slice × Multi-Cloud Ontology Cascade Path (6-Hop Graph)</h4>
+        <p><code>RANTelemetry:120K-EPS-PrivateLink</code> ➔ <code>Eventhouse:KQL-142ms + OneLake-Delta-210ms</code> ➔ <code>Slice:URLLC-AutoFactory-09 (14.8ms Jitter)</code> ➔ <code>Databricks:Lakeflow-BGP-Anomaly</code> ➔ <code>Salesforce:Data-360-ZeroCopy (18.5K Slices · $42M ARR)</code> ➔ <code>SDN:Operator-Nexus + Rayfin-1GB-SQL</code></p>
+        <p style="margin-top:6px; color:#34D399;"><b>Why Fabric RTI Wins:</b> 88ms KQL detection + 495ms closed loop vs. Snowflake Dynamic Tables 60,000ms minimum target lag (121x faster, -48.5% streaming compute).</p>`,
+      teamsTitle: '🤖 Operations Agent · 5G URLLC Slice SRv6 Autonomous Steering Card (Entra Agent ID: agt-5g-noc-19)',
+      teamsSummary: 'Executed Automatically (Confidence 98%): Steered Frankfurt-Core-02 to Amsterdam-IXP SRv6 tunnel ($1,850) + E911 slice protected + Written back to 1GB Free Fabric SQL · Jitter 14.8ms -> 1.15ms (-92.2%), $1,480,000 SLA Penalty Saved ✓'
+    }
+  }
+};
+
+function switchTab(tab) {
+  ['compass', 'tco', 'ontology', 'visuals'].forEach(t => {
+    document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+    document.getElementById('panel-' + t).classList.toggle('active', t === tab);
+  });
+}
+
+function selectCompetitor(comp) {
+  currentComp = comp;
+  ['databricks', 'snowflake', 'gcp', 'aws'].forEach(c => {
+    document.getElementById('pill-' + c).classList.toggle('active', c === comp);
+  });
+  renderCompass();
+}
+
+function renderCompass() {
+  const c = COMP_DATA[currentComp];
+  const isEn = currentLang === 'en';
+  document.getElementById('comp-chart-title').textContent = isEn
+    ? `Microsoft Fabric (93.3) vs ${c.name} (${c.mean}) — 6-Dimension Benchmark`
+    : `Microsoft Fabric (93.3) vs ${c.name} (${c.mean}) 六维实测对比`;
+
+  const barsHtml = DIMS.map(d => {
+    const compScore = c.scores[d.key];
+    const diff = (d.fabric - compScore).toFixed(1);
+    const diffBadge = diff >= 0
+      ? `<span style="color:#34D399;">Fabric +${diff}</span>`
+      : `<span style="color:#F97316;">Competitor +${Math.abs(diff)}</span>`;
+    return `
+      <div class="dim-row">
+        <div class="dim-head">
+          <span>${isEn ? d.en : d.zh}</span>
+          <span>Fabric <b>${d.fabric}</b> vs <b>${compScore}</b> (${diffBadge})</span>
+        </div>
+        <div class="dual-bars">
+          <div class="bar-track"><div class="bar-fill-fabric" style="width:${d.fabric}%"></div></div>
+          <div class="bar-track"><div class="bar-fill-comp" style="width:${compScore}%"></div></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('dim-bars-container').innerHTML = barsHtml;
+
+  const langObj = isEn ? c.en : c.zh;
+  document.getElementById('battlecard-title').textContent = isEn
+    ? `AI Solution Architect Battlecard · Fabric vs ${c.name}`
+    : `售前架构师攻防话术卡 · Fabric vs ${c.name}`;
+
+  document.getElementById('battlecard-content').innerHTML = `
+    <div class="battle-section">
+      <h4>🔥 ${isEn ? '2026 Latest Capability Breakthroughs' : '2026 最新迭代与能力突破'}</h4>
+      <p>${langObj.breakthrough}</p>
+    </div>
+    <div class="battle-section">
+      <h4>✅ ${isEn ? 'Where Microsoft Fabric Wins (Core Differentiators)' : 'Microsoft Fabric 必赢差异化优势 (Win Themes)'}</h4>
+      <ul>${langObj.fabricWins.map(w => `<li>${w}</li>`).join('')}</ul>
+    </div>
+    <div class="battle-section">
+      <h4>⚖️ ${isEn ? 'Where Competitor Leads & Coexistence Pattern' : '竞对优势边界与跨云零拷贝共存模式 (Coexistence)'}</h4>
+      <p style="margin-bottom:6px;"><b>${isEn ? 'Competitor Sweet Spot:' : '竞对甜点区：'}</b> ${langObj.compLeads.join(' ')}</p>
+      <p style="color:#6EE7B7;">${langObj.coexist}</p>
+    </div>
+    <div class="battle-section">
+      <h4>💬 ${isEn ? 'Presales Objection Handling Script' : '高频售前异议应对话术 (Objection Handling)'}</h4>
+      <p>${langObj.objection}</p>
+    </div>
+  `;
+}
+
+function updateTCO() {
+  const users = parseInt(document.getElementById('inp-users').value, 10);
+  const storage = parseInt(document.getElementById('inp-storage').value, 10);
+  const eps = parseInt(document.getElementById('inp-eps').value, 10);
+  const queries = parseInt(document.getElementById('inp-queries').value, 10);
+  const m365 = document.getElementById('inp-m365').checked;
+
+  document.getElementById('val-users').textContent = users.toLocaleString();
+  document.getElementById('val-storage').textContent = storage + ' TB';
+  document.getElementById('val-eps').textContent = eps.toLocaleString() + ' EPS';
+  document.getElementById('val-queries').textContent = queries.toLocaleString();
+
+  // Exact same deterministic formula as src/data_lab/benchmark_suite.py
+  const baseCu = 64 + Math.floor(storage / 50) * 16 + Math.floor(eps / 10000) * 16 + Math.floor(users / 400) * 16;
+  const fabricCompute = Math.round(baseCu * 0.18 * 730 * 0.65);
+  const fabricStorage = Math.round(storage * 23.0);
+  const fabricBi = baseCu >= 64 ? 0 : users * 14.0;
+  const fabricAi = m365 ? 0 : Math.round(queries * 30 * 0.004);
+  const fabricTotal = fabricCompute + fabricStorage + fabricBi + fabricAi;
+
+  const dbxTotal = Math.round((fabricCompute * 1.18 + eps * 0.09) + (storage * 23.0) + (users * 14.0 * 0.7) + (queries * 30 * 0.015));
+  const snowTotal = Math.round((fabricCompute * 1.34 + users * 4.5 + eps * 0.11) + (storage * 23.0) + (users * 15.0 * 0.8) + (queries * 30 * 0.018));
+  const gcpTotal = Math.round((fabricCompute * 1.12 + eps * 0.10) + (storage * 20.0) + (users * 18.0 * 0.75) + (queries * 30 * 0.014));
+  const awsTotal = Math.round((fabricCompute * 1.15 + eps * 0.085) + (storage * 23.5) + (users * 12.0 * 0.8) + (queries * 30 * 0.013));
+
+  const rows = [
+    { name: `Microsoft Fabric (F${baseCu} Reserved)`, compute: fabricCompute, storage: fabricStorage, bi: fabricBi, ai: fabricAi, total: fabricTotal, best: true },
+    { name: 'AWS (S3 Tables + Glue 6.0 + Redshift + QS + Bedrock)', compute: Math.round(fabricCompute * 1.15 + eps * 0.085), storage: Math.round(storage * 23.5), bi: Math.round(users * 12.0 * 0.8), ai: Math.round(queries * 30 * 0.013), total: awsTotal },
+    { name: 'Databricks (DBU + Photon + Streaming + BI + Genie)', compute: Math.round(fabricCompute * 1.18 + eps * 0.09), storage: Math.round(storage * 23.0), bi: Math.round(users * 14.0 * 0.7), ai: Math.round(queries * 30 * 0.015), total: dbxTotal },
+    { name: 'GCP (BigQuery Slots + Dataflow + Looker + Vertex)', compute: Math.round(fabricCompute * 1.12 + eps * 0.10), storage: Math.round(storage * 20.0), bi: Math.round(users * 18.0 * 0.75), ai: Math.round(queries * 30 * 0.014), total: gcpTotal },
+    { name: 'Snowflake (Multi-Cluster Credits + BI + Cortex)', compute: Math.round(fabricCompute * 1.34 + users * 4.5 + eps * 0.11), storage: Math.round(storage * 23.0), bi: Math.round(users * 15.0 * 0.8), ai: Math.round(queries * 30 * 0.018), total: snowTotal }
+  ];
+
+  const isEn = currentLang === 'en';
+  let html = `<table class="tco-table">
+    <thead>
+      <tr>
+        <th>${isEn ? 'Platform' : '云数智平台'}</th>
+        <th>${isEn ? 'Compute' : '计算'}</th>
+        <th>${isEn ? 'Storage' : '存储'}</th>
+        <th>${isEn ? 'BI Seats' : 'BI 席位'}</th>
+        <th>${isEn ? 'AI Tokens' : 'AI Token'}</th>
+        <th>${isEn ? 'Monthly Total' : '月度总计'}</th>
+        <th>${isEn ? 'Fabric Savings' : 'Fabric 节省比例'}</th>
+      </tr>
+    </thead>
+    <tbody>`;
+
+  rows.forEach(r => {
+    const savePct = r.best ? '—' : (((r.total - fabricTotal) / r.total) * 100).toFixed(1) + '%';
+    html += `<tr class="${r.best ? 'tco-highlight' : ''}">
+      <td>${r.name}</td>
+      <td>$${r.compute.toLocaleString()}</td>
+      <td>$${r.storage.toLocaleString()}</td>
+      <td>$${r.bi.toLocaleString()}</td>
+      <td>$${r.ai.toLocaleString()}</td>
+      <td style="color:${r.best ? '#34D399' : '#F8FAFC'}; font-weight:800;">$${r.total.toLocaleString()}/mo</td>
+      <td style="color:#34D399; font-weight:800;">${r.best ? (isEn ? 'Baseline Best' : '基准最优') : (isEn ? 'Save ' : '省 ') + savePct}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  document.getElementById('tco-table-wrap').innerHTML = html;
+}
+
+function selectScenario(sc) {
+  currentSim = sc;
+  document.getElementById('sim-btn-energy').classList.toggle('active', sc === 'energy_dc_peak');
+  document.getElementById('sim-btn-airline').classList.toggle('active', sc === 'airline_jfk_r25');
+  const retailBtn = document.getElementById('sim-btn-retail');
+  if (retailBtn) retailBtn.classList.toggle('active', sc === 'retail_cross_cloud_planning');
+  const fraudBtn = document.getElementById('sim-btn-fraud');
+  if (fraudBtn) fraudBtn.classList.toggle('active', sc === 'financial_multi_cloud_fraud');
+  const finopsBtn = document.getElementById('sim-btn-finops');
+  if (finopsBtn) finopsBtn.classList.toggle('active', sc === 'finops_rayfin_observability');
+  const clinicalBtn = document.getElementById('sim-btn-clinical');
+  if (clinicalBtn) clinicalBtn.classList.toggle('active', sc === 'healthcare_clinical_supply_diskann');
+  const fabBtn = document.getElementById('sim-btn-fab');
+  if (fabBtn) fabBtn.classList.toggle('active', sc === 'manufacturing_digital_twin_zeroprov');
+  const supplyBtn = document.getElementById('sim-btn-supply');
+  if (supplyBtn) supplyBtn.classList.toggle('active', sc === 'supply_chain_iq_sharing_salesforce');
+  const telecomBtn = document.getElementById('sim-btn-telecom');
+  if (telecomBtn) telecomBtn.classList.toggle('active', sc === 'telecom_5g_eventhouse_vs_dynamic_tables');
+  runNormalSim();
+}
+
+function runNormalSim() {
+  const isEn = currentLang === 'en';
+  const data = SIM_DATA[currentSim][isEn ? 'en' : 'zh'];
+  document.getElementById('sim-steps-container').innerHTML = data.steps.map(s => `
+    <div class="step-item active">
+      <div class="step-head"><span>${s.title}</span><span class="step-meta">${s.latency}</span></div>
+      <div class="step-body">${s.desc}</div>
+    </div>
+  `).join('');
+  document.getElementById('sim-graph-box').innerHTML = data.graph;
+  document.getElementById('sim-teams-box').innerHTML = `
+    <h4><span>${data.teamsTitle}</span><span class="badge-pill">Purview Label: Confidential</span></h4>
+    <p style="font-size:12.5px; color:#E2E8F0; margin-bottom:10px;">${data.teamsSummary}</p>
+    <div style="display:flex; gap:10px;">
+      <button class="btn success" onclick="approveAction(true)">✓ ${isEn ? 'Approve & Execute Write-back' : '批准执行并回写 Ontology'}</button>
+      <button class="btn danger" onclick="approveAction(false)">✕ ${isEn ? 'Reject & Request Re-plan' : '驳回并要求重新寻优'}</button>
+    </div>
+  `;
+  logConsole(isEn
+    ? `[INFO] Loaded scenario '${currentSim}'. Ontology graph verified. Ready for execution.`
+    : `[INFO] 已加载场景 '${currentSim}'，Ontology 实体关系图谱与 SOP 护栏核验通过。`);
+}
+
+function runAdversarialSim() {
+  const isEn = currentLang === 'en';
+  const stepsHtml = `
+    <div class="step-item active">
+      <div class="step-head"><span>${isEn ? '① Adversarial Override Injected' : '① 注入激进越界指令测试 (Adversarial Prompt)'}</span><span class="step-meta">85 ms</span></div>
+      <div class="step-body">${isEn ? 'External prompt requests raising liquid cooling temperature by +3.5°C to save an extra 1.2 MW.' : '模拟某个未受控 Agent 提议将液冷供水温度大幅上调 +3.5°C 以额外激进省电 1.2 MW。'}</div>
+    </div>
+    <div class="step-item blocked">
+      <div class="step-head"><span style="color:#FCA5A5;">${isEn ? '② Foundry IQ + Ontology Rule Hard Block (DL-22)' : '② Foundry IQ + 本体规则强制熔断拦截 (DL-22)'}</span><span class="step-meta" style="color:#FCA5A5;">410 ms · BLOCKED</span></div>
+      <div class="step-body" style="color:#FECACA;">${isEn ? 'VIOLATION DETECTED: Proposed +3.5°C exceeds SOP-DC-COOL-04 maximum allowed delta (+1.5°C) and risks H200 thermal throttling. Automatic execution blocked; routed to Send to a human (Confidence 0.62).' : '检测到严重违规：提议升温 +3.5°C 超出《SOP-DC-COOL-04》最高允许阈值 (+1.5°C)，存在 H200 节点热降频风险！已强制拦截自动下发，路由至人工专家复核 (Send to a human · 置信度 0.62)。'}</div>
+    </div>
+  `;
+  document.getElementById('sim-steps-container').innerHTML = stepsHtml;
+  logConsole(isEn
+    ? `[GUARDRAIL BLOCK] Action rejected in 410ms by SOP-DC-COOL-04 (+3.5°C > +1.5°C max). Escalated to human safety officer.`
+    : `[护栏熔断] 410ms 内被 SOP-DC-COOL-04 规则拦截 (+3.5°C > +1.5°C 安全上限)，严禁下发 BMS，已转交安全工程师复核。`);
+}
+
+function approveAction(approved) {
+  const isEn = currentLang === 'en';
+  const ts = new Date().toISOString().slice(11, 19);
+  if (approved) {
+    logConsole(isEn
+      ? `[${ts} WRITE-BACK SUCCESS] Approved via Teams. Commands dispatched to EMS/BESS/GroundOps. Audit row committed to Fabric SQL (1GB Free Tier) & Ontology graph updated.`
+      : `[${ts} 回写成功] 值班长已通过 Teams 批准！指令已下发至控制系统，审计记录已持久化至 1GB 免费 Fabric SQL 数据库并更新 Ontology 状态。`);
+  } else {
+    logConsole(isEn
+      ? `[${ts} REJECTED] Operator rejected plan. Foundry Orchestrator re-optimizing with stricter constraints...`
+      : `[${ts} 已驳回] 值班长驳回当前组合，Foundry 编排智能体已收紧约束重新计算替代方案...`);
+  }
+}
+
+function logConsole(msg) {
+  const el = document.getElementById('sim-console');
+  el.innerHTML = `<div>&gt; ${msg}</div>` + el.innerHTML;
+}
+
+function toggleLang() {
+  currentLang = currentLang === 'zh' ? 'en' : 'zh';
+  const isEn = currentLang === 'en';
+  document.getElementById('lang-btn').textContent = isEn ? '🌐 切换为中文' : '🌐 Switch to English';
+  document.getElementById('ui-title').textContent = isEn
+    ? 'Microsoft Fabric × 4-Cloud Competitive & Ontology Lab'
+    : 'Microsoft Fabric × 四大云数智竞对实战实验室';
+  document.getElementById('hero-heading').textContent = isEn
+    ? 'AI Solution Architect Workbench: Fabric IQ Ontology · 5-Cloud Battlecards · Live TCO · Sim'
+    : 'AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真';
+  document.getElementById('hero-desc').textContent = isEn
+    ? 'Integrating FabCon & SQLCon Barcelona 2026 breakthroughs and Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) against Databricks, Snowflake, GCP BigQuery, and AWS Lakehouse.'
+    : '融合 FabCon & SQLCon Barcelona 2026 最新发布与 Microsoft IQ (Work IQ / Fabric IQ / Foundry IQ / Web IQ) 四大智能底座，对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。';
+  document.getElementById('tab-compass').textContent = isEn ? '🧭 1. 5-Cloud Battlecards' : '🧭 1. 五云竞对攻防罗盘 (Battlecards)';
+  document.getElementById('tab-tco').textContent = isEn ? '💰 2. Interactive 5-Cloud TCO Calculator' : '💰 2. 交互式五云 TCO 与容量计算器';
+  document.getElementById('tab-ontology').textContent = isEn ? '⚡ 3. Fabric IQ Ontology Simulator' : '⚡ 3. Fabric IQ 本体与 Operations Agent 仿真台';
+  document.getElementById('tab-visuals').textContent = isEn ? '🖼️ 4. Visual Summary SVGs & Videos' : '🖼️ 4. 可视化架构图集与 FabCon 实机视频';
+  renderCompass();
+  updateTCO();
+  runNormalSim();
+}
+
+// Init
+if (currentLang === 'en') {
+  currentLang = 'zh';
+  toggleLang();
+} else {
+  renderCompass();
+  updateTCO();
+  runNormalSim();
+}
+</script>
+</body>
 </html>

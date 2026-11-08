@@ -210,10 +210,11 @@
 <body>
 
 <div class="top-nav">
-  <div><strong>Data Lab · 7-Card 4:5 Benchmark Deck</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-08`)</div>
+  <div><strong>Data Lab · 7-Card 4:5 Benchmark Deck</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-08-r2`)</div>
   <div>
     <a href="index.html?lang=en">🚀 Interactive H5 Workbench</a>
-    <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md">🧭 Selection FAQ Guide</a>
+    <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md">🧭 Zero-Copy FAQ</a>
+    <a href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md">⚡ Real-Time Streaming FAQ</a>
     <a href="benchmark-cards.html">🇨🇳 中文 7-Card 报告</a>
     <a href="README.en.md">📘 Data Lab Overview</a>
   </div>
@@ -224,21 +225,21 @@
   <div>
     <div class="card-header">
       <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-08 / 11-09 · SEALED RUN</span>
+      <span>2026-11-08 / 11-09 · SEALED RUN (R2)</span>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake</span> Achieves 97.92% Routing &amp; Grounding Accuracy (47/48) Across 5 Clouds, OneLake IQ Sharing, Salesforce Data 360 Zero-Copy &amp; Sovereign Edge While Cutting TCO by 46.1%–56.1%</h1>
-    <p class="sub">Synthesizing FabCon Barcelona 2026, the Microsoft IQ 4-Pillar Stack, and latest breakthroughs (OneLake IQ Sharing of tables + RDF ontologies + agent instructions, Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Condition-Action Rules, SQL Server on Azure Local ALDO disconnected control plane &amp; M365 GCC High GA vs. Databricks OpenSharing &amp; Metric View Relationships, Snowflake Horizon Consuming Delta Shares GA, GCP BigQuery Analytics Hub, and AWS S3 Tables).</p>
+    <h1><span class="accent">Microsoft Fabric IQ + OneLake + Eventhouse</span> Achieves 98.08% Routing &amp; Grounding Accuracy (51/52) Across 5 Clouds, Real-Time Eventhouse (142ms) vs. Dynamic Tables (60s), IQ Sharing &amp; Sovereign Edge While Cutting TCO by 46.1%–56.1%</h1>
+    <p class="sub">Synthesizing FabCon Barcelona 2026, the Microsoft IQ 4-Pillar Stack, and latest breakthroughs (Fabric Eventhouse KQL 142ms P99 + Lakehouse Streaming Tables 210ms Dual Projection vs. Snowflake Dynamic Tables 60s min lag, OneLake IQ Sharing of tables + RDF ontologies + agent instructions, Salesforce Data 360 Zero-Copy Shortcuts, SQL Server on Azure Local ALDO &amp; M365 GCC High GA vs. Databricks Lakeflow/OpenSharing, GCP BigQuery Continuous Queries, and AWS S3 Tables).</p>
 
     <div class="grid-3">
       <div class="panel">
         <h3>1. Scenarios &amp; Action Gates</h3>
-        <p><strong>48 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-48</code>):</p>
+        <p><strong>52 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-52</code>):</p>
         <ul>
-          <li><code>Fabric IQ &amp; OneLake IQ Sharing</code> (9 cases)</li>
-          <li><code>vs Databricks (OpenSharing/Metric Rel)</code> (11 cases)</li>
-          <li><code>vs Snowflake (Horizon/Apache Ossie)</code> (8 cases)</li>
-          <li><code>vs GCP BigQuery (Analytics Hub/Mirror)</code> (7 cases)</li>
-          <li><code>vs AWS Lakehouse (S3 Tables/SiteWise)</code> (6 cases)</li>
+          <li><code>Fabric IQ &amp; Eventhouse RTI</code> (10 cases)</li>
+          <li><code>vs Databricks (Lakeflow/OpenSharing)</code> (12 cases)</li>
+          <li><code>vs Snowflake (Dynamic Tables/Horizon)</code> (9 cases)</li>
+          <li><code>vs GCP BigQuery (Streaming/Mirror)</code> (8 cases)</li>
+          <li><code>vs AWS Lakehouse (S3 Tables/Kinesis)</code> (6 cases)</li>
           <li><code>Database Hub / DiskANN / Azure Local</code> (7 cases)</li>
         </ul>
         <p style="margin-top:8px;"><strong>Action Bands</strong>:<br>
@@ -251,11 +252,11 @@
         <h3>2. Structured Input Contract</h3>
         <div class="dark-code" style="font-size:10.5px; padding:10px;">{
   "cohort": [
-    "Microsoft Fabric (F64 + IQ Sharing + Rules)",
-    "Databricks (OpenSharing + Metric View Rel)",
-    "Snowflake (Horizon Delta Share + Ossie)",
-    "GCP (BigQuery Analytics Hub + BigLake)",
-    "AWS (S3 Tables + Zero-ETL + DataZone)"
+    "Microsoft Fabric (F64 + Eventhouse + IQ Sharing)",
+    "Databricks (Lakeflow DLT + OpenSharing + UC)",
+    "Snowflake (Dynamic Tables 60s + Horizon + Ossie)",
+    "GCP (BigQuery Continuous + BigLake)",
+    "AWS (Kinesis + S3 Tables + DataZone)"
   ],
   "enterprise_profile": {
     "users": 500,
@@ -271,7 +272,8 @@
     "finops_rayfin_observability",
     "healthcare_clinical_supply_diskann",
     "manufacturing_digital_twin_zeroprov",
-    "supply_chain_iq_sharing_salesforce"
+    "supply_chain_iq_sharing_salesforce",
+    "telecom_5g_eventhouse_vs_dynamic_tables"
   ]
 }</div>
       </div>
@@ -309,7 +311,7 @@
   </div>
 
   <div class="footer-callout">
-    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>: All bar widths, TCO figures, 8 Ontology simulations, and 48 scenario scores are generated deterministically by <code>src/data_lab/benchmark_suite.py</code> and verified by <code>tests/test_data_lab.py</code> (20/20 passing) via <code>reports/report.json</code>.
+    <strong>Provenance &amp; Reproducibility (`synthetic_deterministic_and_reported_baseline` · `independently_reproduced=true`)</strong>: All bar widths, TCO figures, 9 Ontology simulations, and 52 scenario scores are generated deterministically by <code>src/data_lab/benchmark_suite.py</code> and verified by <code>tests/test_data_lab.py</code> (22/22 passing) via <code>reports/report.json</code>.
   </div>
 </section>
 
@@ -386,10 +388,10 @@
 <section class="card" id="card-3">
   <div>
     <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 48-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 47 / 48 (97.92%) · MEAN 544.5 MS</span>
+      <span>3 / 7 · WHAT I TESTED · 52-SCENARIO EVALUATION MATRIX</span>
+      <span>SCORE: 51 / 52 (98.08%) · MEAN 537.7 MS</span>
     </div>
-    <h2>47 of 48 Cross-Cloud, OneLake IQ Sharing, Salesforce Data 360 Zero-Copy, Digital Twin Builder, Zero-Provisioned &amp; Sovereign Edge Scenarios Pass (97.92%); Single Miss (✕ DL-23) Exposes +14.2% Metric Drift on Ungrounded Raw Tables</h2>
+    <h2>51 of 52 Cross-Cloud, OneLake IQ Sharing, Real-Time Eventhouse (142ms) vs. Dynamic Tables (60s) &amp; 5G URLLC Slice Steering Scenarios Pass (98.08%); Single Miss (✕ DL-23) Exposes +14.2% Metric Drift on Ungrounded Raw Tables</h2>
 
     <table>
       <thead>
@@ -437,16 +439,16 @@
         <tr><td><strong>DL-39..40</strong> · LTAP</td><td>AlloyDB ScaNN / Spanner Graph / Unistore / Aurora Zero-ETL</td><td class="hit">✓ Unified Hyperscale DiskANN + 1GB Free Fabric SQL wins</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-41..42</strong> · Twin</td><td>300mm EUV Digital Twin Builder + Zero-Provisioned +24 CU (530ms)</td><td class="hit">✓ 210ms Streaming Table + $14.20 Burst + 99.4% Yield ($920K)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
         <tr><td><strong>DL-43..44</strong> · Stream</td><td>Lakehouse Streaming Tables (Private Link+CMK) vs Dynamic Tables</td><td class="hit">✓ 210ms unified Delta Streaming Table to DirectLake</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-45..46</strong> · IQ Share</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce Zero-Copy + Rules (515ms)</td><td class="hit">✓ Protects 42 accounts / 1,280 racks + Purview masking ($1.15M SLA)</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-47..48</strong> · Sovereign</td><td>Databricks Metric View Rel/ABAC DENY + Azure Local ALDO &amp; GCC High GA</td><td class="hit">✓ 240 PBI models 1-click to Ontology + air-gapped SQL edge</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
+        <tr><td><strong>DL-45..48</strong> · IQ Share/Edge</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce Zero-Copy + Azure Local ALDO GA</td><td class="hit">✓ Protects 42 accounts ($1.15M SLA) + air-gapped SQL edge &amp; GCC High</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
+        <tr><td><strong>DL-49..52</strong> · Streaming RTI</td><td>Eventhouse KQL (142ms) vs Dynamic Tables (60s)/Lakeflow + 5G URLLC (495ms)</td><td class="hit">✓ Dual Projection (-48.5% compute) + Amsterdam SRv6 saves $1.48M SLA</td><td><span class="pill act-auto">Act automatically</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="grid-2" style="margin-top:8px;">
     <div class="panel">
-      <h3>Threshold Gating Distribution (48 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>36 (75.0%)</strong> · <code>Confirm</code>: <strong>10 (20.8%)</strong> · <code>Send to a human</code>: <strong>2 (4.2%)</strong>. Physical grid dispatch, cross-org supply-chain allocation, clinical lot quarantine, and sovereign edge sync enforce human confirmation.</p>
+      <h3>Threshold Gating Distribution (52 Cases)</h3>
+      <p><code>Act automatically</code>: <strong>40 (76.9%)</strong> · <code>Confirm</code>: <strong>10 (19.2%)</strong> · <code>Send to a human</code>: <strong>2 (3.8%)</strong>. Physical grid dispatch, cross-org supply-chain allocation, clinical lot quarantine, and sovereign edge sync enforce human confirmation.</p>
     </div>
     <div class="panel">
       <h3>Failure Root Cause (✕ DL-23 Miss Analysis)</h3>

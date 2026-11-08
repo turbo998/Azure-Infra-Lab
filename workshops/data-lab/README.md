@@ -1,8 +1,10 @@
 # 🔬 Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度研究与 AI Solution Architect 实战实验室
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`README.en.md`)](README.en.md)  
-> **最新研究日期 / Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.md) · [`2026-11-06`](research/daily/2026-11-06.md) · [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `47 / 48 (97.92%)` (`544.5ms` 均值) · **单元测试**: `20 / 20 通过 (100%)`  
-> **🌟 架构师必读 FAQ 选型指南**: [`comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md`（OneLake 零拷贝 × Fabric IQ 本体 vs 四大云竞对选型 FAQ）](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [`English FAQ`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md)
+> **最新研究日期 / Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.md) · [`2026-11-06`](research/daily/2026-11-06.md) · [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `51 / 52 (98.08%)` (`537.7ms` 均值) · **单元测试**: `22 / 22 通过 (100%)`  
+> **🌟 架构师必读 FAQ 选型指南**:  
+> - **Round 1（跨云零拷贝与本体选型）**：[`comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md`（OneLake 零拷贝 × Fabric IQ 本体 vs 四大云竞对选型 FAQ）](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [`English FAQ`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md)  
+> - **Round 2（实时流与亚秒级闭环选型）**：[`comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md`（Eventhouse KQL 142ms vs Snowflake Dynamic Tables 60s vs Databricks Lakeflow 选型 FAQ）](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [`English FAQ`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md)
 
 [![Data Lab Executive Visual Summary](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)
 
@@ -25,17 +27,20 @@
 | 支柱编号 | 核心任务模块 | 关键交付物入口 | 核心量化结论 (`2026-11-08 / 11-09`) |
 | :--- | :--- | :--- | :--- |
 | **Pillar 0** | **每日最热门能力突破追踪（大白话 + 第一性原理）** | [`2026-11-08.md`](research/daily/2026-11-08.md) · [`11-09.md`](research/daily/2026-11-09.md) · [`11-06.md`](research/daily/2026-11-06.md) · [`11-05.md`](research/daily/2026-11-05.md) | 深度解读 OneLake IQ Sharing (`.rdf` + `.md`)、Salesforce Data 360 零拷贝、Fabric IQ 条件-动作规则、SQL Server on Azure Local (ALDO) & GCC High GA vs Databricks OpenSharing/UC Metric Relationships/ABAC `DENY`、Snowflake Delta Shares/Polaris v3 |
-| **Pillar 1** | **专项子任务：四大竞对深度攻防 FAQ 与 Battlecards** | [`fabric-onelake-iq-vs-4clouds-selection-faq.md`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [`battlecards-2026.md`](comparisons/fabric-vs-4clouds-battlecards-2026.md) | 六维综合均分：**Fabric `93.3`** vs Databricks `86.8` vs GCP `85.5` vs Snowflake `85.0` vs AWS `82.8` + 选型决策树 + 四大零拷贝共存蓝图（A/B/C/D） |
-| **Pillar 2** | **架构设计（OneLake 零拷贝三剑客 × Fabric IQ 本体 × 混合主权边缘）** | [`09-iq-sharing-faq.svg`](assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg) · [`08-twin-zeroprov.svg`](assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg) · [`07-dbhub-diskann.svg`](assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg) · [`06-rayfin-obs.svg`](assets/svg/06-rayfin-agentic-apps-eventhouse-observability.svg) | OneLake Shortcuts / Mirroring / IQ Sharing 三剑客分工、Fabric IQ 本体条件-动作规则、Salesforce Data 360 零拷贝与 Azure Local ALDO 断网边缘闭环 |
-| **Pillar 3** | **交互式 H5 工作台与八大本体实时仿真台** | [`index.html` (中文)](index.html) · [`live-demo.en.html` (EN)](live-demo.en.html) | 集成五云攻防罗盘、动态 TCO 精算器与八大跨云本体闭环：智算中心能源 (`780ms`)、JFK 跑道 (`640ms`)、跨云零售 (`710ms`)、金融反欺诈 (`660ms` 挽回 `$4.62M`)、18 区 FinOps 自愈 (`590ms`)、医药冷链 DiskANN (`560ms` 止损 `$640K`)、300mm 晶圆孪生 (`530ms` 止损 `$920K`)、跨企供应链 IQ Sharing × Salesforce (`515ms` 保住 `$1.15M` SLA) |
-| **Pillar 4** | **可复现 Benchmark 与 7-Card 4:5 视觉报告** | [`benchmark-cards.html` (中文)](benchmark-cards.html) · [`benchmark-cards.en.html` (EN)](benchmark-cards.en.html) · [`report.json`](reports/report.json) | 48 场景 **`97.92%` (`47/48`)** 通过率（`544.5ms` 均值）；500 用户月省 `46.1%–56.1%` TCO；DirectLake + KQL 高并发快 `4.54x–9.47x` |
-| **Pillar 5** | **业务场景方案与 Win/Loss 打单 Playbook** | [`playbooks/scenario-win-loss-playbook.md`](playbooks/scenario-win-loss-playbook.md) · [`EN`](playbooks/scenario-win-loss-playbook.en.md) | 梳理八大标杆场景（新增场景 8：跨企供应链 × OneLake IQ Sharing × Salesforce Data 360 零拷贝 × 断网边缘车间保供闭环）必赢策略、共存边界与售前核验 Checklist |
+| **Pillar 1** | **专项子任务：四大竞对深度攻防 FAQ 与 Battlecards** | [`fabric-onelake-iq-vs-4clouds-selection-faq.md`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [`fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [`battlecards-2026.md`](comparisons/fabric-vs-4clouds-battlecards-2026.md) | 六维综合均分：**Fabric `93.3`** vs Databricks `86.8` vs GCP `85.5` vs Snowflake `85.0` vs AWS `82.8` + 零拷贝与实时流双专题选型决策树 |
+| **Pillar 2** | **架构设计（OneLake 零拷贝 × Eventhouse 一水双流 × Fabric IQ 本体）** | [`10-realtime-faq.svg`](assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg) · [`09-iq-sharing-faq.svg`](assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg) · [`08-twin-zeroprov.svg`](assets/svg/08-digital-twin-builder-on-demand-zero-provisioned.svg) · [`07-dbhub-diskann.svg`](assets/svg/07-database-hub-hyperscale-diskann-mirroring.svg) | Eventhouse KQL (`142ms`) + Lakehouse 流式表 (`210ms`) 一水双流 vs Snowflake Dynamic Tables (`60s` 最小滞后)、OneLake IQ Sharing、Salesforce Data 360 零拷贝与 Azure Local ALDO 断网边缘闭环 |
+| **Pillar 3** | **交互式 H5 工作台与九大本体实时仿真台** | [`index.html` (中文)](index.html) · [`live-demo.en.html` (EN)](live-demo.en.html) | 集成五云攻防罗盘、动态 TCO 精算器与九大跨云本体闭环：智算中心能源 (`780ms`)、JFK 跑道 (`640ms`)、跨云零售 (`710ms`)、金融反欺诈 (`660ms` 挽回 `$4.62M`)、18 区 FinOps 自愈 (`590ms`)、医药冷链 DiskANN (`560ms` 止损 `$640K`)、300mm 晶圆孪生 (`530ms` 止损 `$920K`)、跨企供应链 IQ Sharing × Salesforce (`515ms` 保住 `$1.15M` SLA)、5G URLLC 专网切片 Eventhouse SRv6 导流 (`495ms` 保住 `$1.48M` SLA) |
+| **Pillar 4** | **可复现 Benchmark 与 7-Card 4:5 视觉报告** | [`benchmark-cards.html` (中文)](benchmark-cards.html) · [`benchmark-cards.en.html` (EN)](benchmark-cards.en.html) · [`report.json`](reports/report.json) | 52 场景 **`98.08%` (`51/52`)** 通过率（`537.7ms` 均值）；500 用户月省 `46.1%–56.1%` TCO；流计算专项省 `48.5%` |
+| **Pillar 5** | **业务场景方案与 Win/Loss 打单 Playbook** | [`playbooks/scenario-win-loss-playbook.md`](playbooks/scenario-win-loss-playbook.md) · [`EN`](playbooks/scenario-win-loss-playbook.en.md) | 梳理九大标杆场景（新增场景 8 跨企供应链 IQ Sharing 与场景 9 5G URLLC 专网切片 Eventhouse 实时自愈）必赢策略、共存边界与售前核验 Checklist |
 
 ---
 
 ## 🖼️ 核心架构图集（SVG 自包含矢量图）
 
-### 1. OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 条件-动作规则 × 混合主权边缘选型 FAQ 架构图（`2026-11-08 / 11-09` 新增）
+### 1. Fabric Eventhouse (KQL 142ms) + Lakehouse 流式表 (210ms) vs Snowflake Dynamic Tables (60s) vs Databricks Lakeflow 实时流选型 FAQ 架构图（`2026-11-08 / 11-09 R2` 新增）
+[![Fabric Eventhouse vs Dynamic Tables vs Lakeflow Streaming FAQ Architecture](assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg)](assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg)
+
+### 2. OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 条件-动作规则 × 混合主权边缘选型 FAQ 架构图（`2026-11-08 / 11-09 R1` 新增）
 [![OneLake IQ Sharing & Fabric IQ Selection FAQ Architecture](assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)](assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)
 
 ### 2. Digital Twin Builder × Lakehouse Streaming Tables × On-Demand / Zero-Provisioned 架构（`2026-11-05 / 11-06`）

@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgR2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B19"/>
+      <stop offset="50%" stop-color="#0D1730"/>
+      <stop offset="100%" stop-color="#081C24"/>
+    </linearGradient>
+    <linearGradient id="accentR2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="cardR2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="shadowR2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bgR2)"/>
+  <rect x="0" y="0" width="1600" height="6" fill="url(#accentR2)"/>
+
+  <!-- Header -->
+  <g transform="translate(48, 36)">
+    <rect x="0" y="0" width="380" height="32" rx="16" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+    <text x="190" y="21" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" fill="#A7F3D0" text-anchor="middle">DATA LAB ROUND 2 FAQ · STREAMING SELECTION</text>
+    <text x="400" y="22" font-family="Segoe UI, Inter, sans-serif" font-size="14" fill="#94A3B8">Sub-Second Operational Closed Loop vs. Near-Real-Time Warehouse Micro-Batch</text>
+
+    <text x="0" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="30" font-weight="800" fill="#F8FAFC">Fabric Eventhouse (KQL) vs. Snowflake Dynamic Tables vs. Databricks Lakeflow vs. BigQuery</text>
+    <text x="0" y="96" font-family="Segoe UI, Inter, sans-serif" font-size="15" fill="#CBD5E1">Why 142ms KQL + 210ms Lakehouse Streaming Tables beat 60-second warehouse refresh loops—and when to combine Eventhouse with Databricks DLT</text>
+  </g>
+
+  <!-- KPI Banner -->
+  <g transform="translate(48, 152)" filter="url(#shadowR2)">
+    <rect x="0" y="0" width="360" height="96" rx="14" fill="url(#cardR2)" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="24" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#38BDF8">STREAMING BENCHMARK SCORE (52 CASES)</text>
+    <text x="24" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">51 / 52 (98.08%)</text>
+    <text x="24" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">Mean closed-loop latency: 537.7 ms · 1 explicit miss (DL-23)</text>
+
+    <rect x="382" y="0" width="360" height="96" rx="14" fill="url(#cardR2)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="406" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#34D399">INGEST-TO-QUERY P99 LATENCY GAP</text>
+    <text x="406" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">142 ms vs. ≥60 s</text>
+    <text x="406" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">Eventhouse KQL (142ms) vs. Snowflake Dynamic Tables (60s min lag)</text>
+
+    <rect x="764" y="0" width="360" height="96" rx="14" fill="url(#cardR2)" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="788" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#FBBF24">SCENARIO I · 5G URLLC SLICE STEERING</text>
+    <text x="788" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">495 ms · $1.48M</text>
+    <text x="788" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">120K EPS Frankfurt IXP BGP leak -> Amsterdam SRv6 (1.15ms jitter)</text>
+
+    <rect x="1146" y="0" width="358" height="96" rx="14" fill="url(#cardR2)" stroke="#A855F7" stroke-width="1.5"/>
+    <text x="1170" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#C084FC">STREAMING + BI TCO SAVINGS</text>
+    <text x="1170" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">-48.5% Compute</text>
+    <text x="1170" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">Avoids 24×7 warehouse wake-ups + DirectLake $0 BI viewer tax</text>
+  </g>
+
+  <!-- Left Panel: Latency & Architecture Spectrum Across 5 Clouds -->
+  <g transform="translate(48, 272)" filter="url(#shadowR2)">
+    <rect x="0" y="0" width="735" height="390" rx="16" fill="url(#cardR2)" stroke="#334155" stroke-width="1.5"/>
+    <text x="26" y="36" font-family="Segoe UI, Inter, sans-serif" font-size="18" font-weight="700" fill="#38BDF8">1. First-Principles Latency Spectrum: Why Warehouse Refresh != Real-Time</text>
+    <text x="26" y="58" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#94A3B8">Comparing end-to-end event arrival -> indexed query -> automated action across 5 cloud architectures</text>
+
+    <!-- Row 1: Fabric Eventhouse -->
+    <rect x="26" y="76" width="683" height="54" rx="10" fill="#064E3B" fill-opacity="0.45" stroke="#10B981" stroke-width="1.4"/>
+    <text x="42" y="98" font-family="Segoe UI, Inter, sans-serif" font-size="13.5" font-weight="700" fill="#6EE7B7">Microsoft Fabric RTI (Eventstream -> Eventhouse KQL + Lakehouse Streaming Tables + Activator)</text>
+    <text x="42" y="118" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#E2E8F0">142 ms P99 KQL query · 210 ms OneLake Delta dual-projection · 495 ms autonomous agent action (Sub-Second Tier)</text>
+    <rect x="590" y="86" width="104" height="28" rx="14" fill="#10B981"/>
+    <text x="642" y="105" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="800" fill="#062E22" text-anchor="middle">142–495 ms</text>
+
+    <!-- Row 2: Databricks Lakeflow / DLT -->
+    <rect x="26" y="140" width="683" height="54" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2"/>
+    <text x="42" y="162" font-family="Segoe UI, Inter, sans-serif" font-size="13.5" font-weight="700" fill="#7DD3FC">Databricks Lakeflow Declarative Pipelines / Delta Live Tables + Structured Streaming</text>
+    <text x="42" y="182" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#CBD5E1">300 ms–2 s in-memory Spark Real-Time Mode; 2–30 s typical Delta table commit + Photon SQL warehouse query</text>
+    <rect x="590" y="150" width="104" height="28" rx="14" fill="#0284C7"/>
+    <text x="642" y="169" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="800" fill="#F8FAFC" text-anchor="middle">2 – 30 sec</text>
+
+    <!-- Row 3: Snowflake Dynamic Tables -->
+    <rect x="26" y="204" width="683" height="54" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+    <text x="42" y="226" font-family="Segoe UI, Inter, sans-serif" font-size="13.5" font-weight="700" fill="#FCD34D">Snowflake Snowpipe Streaming (~5s base ingest) + Dynamic Tables (Minimum Target Lag = 60s)</text>
+    <text x="42" y="246" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#CBD5E1">Great for declarative warehouse SQL pipelines, but ≥60 s minimum target lag + continuous warehouse credit burn</text>
+    <rect x="590" y="214" width="104" height="28" rx="14" fill="#D97706"/>
+    <text x="642" y="233" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="800" fill="#F8FAFC" text-anchor="middle">≥ 60 sec</text>
+
+    <!-- Row 4: GCP BigQuery -->
+    <rect x="26" y="268" width="683" height="54" rx="10" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.2"/>
+    <text x="42" y="290" font-family="Segoe UI, Inter, sans-serif" font-size="13.5" font-weight="700" fill="#C4B5FD">GCP Pub/Sub + BigQuery Storage Write API + Continuous Queries / Materialized Views</text>
+    <text x="42" y="310" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#CBD5E1">2–5 s Storage Write buffer; 30–120 s typical Materialized View refresh; requires Bigtable/Dataflow for sub-second</text>
+    <rect x="590" y="278" width="104" height="28" rx="14" fill="#7C3AED"/>
+    <text x="642" y="297" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="800" fill="#F8FAFC" text-anchor="middle">30 – 120 sec</text>
+
+    <!-- Row 5: AWS Kinesis + S3 Tables -->
+    <rect x="26" y="332" width="683" height="46" rx="10" fill="#1E293B" stroke="#64748B" stroke-width="1.2"/>
+    <text x="42" y="352" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" fill="#E2E8F0">AWS Kinesis + Managed Flink + Firehose -> Amazon S3 Tables (Iceberg) + OpenSearch</text>
+    <text x="42" y="369" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" fill="#94A3B8">1–5 s in Flink/OpenSearch; 60–300 s Iceberg compaction buffer to S3 Tables (5-service operational stitching)</text>
+    <rect x="590" y="338" width="104" height="28" rx="14" fill="#475569"/>
+    <text x="642" y="357" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="800" fill="#F8FAFC" text-anchor="middle">60 – 300 sec</text>
+  </g>
+
+  <!-- Right Panel: Scenario I 5G URLLC Closed Loop -->
+  <g transform="translate(811, 272)" filter="url(#shadowR2)">
+    <rect x="0" y="0" width="741" height="390" rx="16" fill="url(#cardR2)" stroke="#334155" stroke-width="1.5"/>
+    <text x="26" y="36" font-family="Segoe UI, Inter, sans-serif" font-size="18" font-weight="700" fill="#34D399">2. Scenario I Deep Dive: 5G URLLC Slice SRv6 Steering (495 ms E2E)</text>
+    <text x="26" y="58" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#94A3B8">Frankfurt IXP BGP route leak spikes jitter to 14.8ms (&gt;2.0ms SLA) across 18,500 slices ($42M ARR)</text>
+
+    <!-- 5 Step Boxes -->
+    <g transform="translate(26, 76)">
+      <rect x="0" y="0" width="689" height="52" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+      <text x="16" y="22" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" fill="#38BDF8">[Step 1 · 88 ms] Eventstream (120K EPS Private Link) + Eventhouse KQL Sliding-Window Detection</text>
+      <text x="16" y="41" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#CBD5E1">Detects URLLC-AutoFactory-Slice-09 jitter = 14.8 ms (&gt;2.0 ms SLA) &amp; packet loss = 1.85% in 88 ms; dual-writes OneLake Delta in 210 ms</text>
+
+      <rect x="0" y="62" width="689" height="52" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+      <text x="16" y="84" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" fill="#34D399">[Step 2 · 118 ms] Fabric IQ 6-Hop Multi-Cloud Ontology Graph Traversal</text>
+      <text x="16" y="103" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#CBD5E1">Joins Eventhouse UPF telemetry + Databricks Lakeflow BGP anomaly score + Salesforce Data 360 SLA tier ($1.48M penalty risk)</text>
+
+      <rect x="0" y="124" width="689" height="52" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+      <text x="16" y="146" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" fill="#FBBF24">[Step 3 · 104 ms] Activator + Fabric IQ Condition-Action Rule Evaluation</text>
+      <text x="16" y="165" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#CBD5E1">Synthesizes SRv6 bypass policy (Frankfurt-Core-02 -&gt; Amsterdam-IXP-Redundant, SID 2001:db8:a1::99) at $1,850 transit burst cost</text>
+
+      <rect x="0" y="186" width="689" height="52" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+      <text x="16" y="208" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" fill="#C084FC">[Step 4 · 92 ms] Foundry IQ Guardrail (TELECOM-3GPP-TS28530-URLLC-SOP-19)</text>
+      <text x="16" y="227" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#CBD5E1">Blocks unverified BGP blackholing; protects E911 emergency voice slices; validates Agent 365 On-Behalf-Of operator scope</text>
+
+      <rect x="0" y="248" width="689" height="52" rx="10" fill="#064E3B" fill-opacity="0.55" stroke="#34D399" stroke-width="1.4"/>
+      <text x="16" y="270" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" fill="#6EE7B7">[Step 5 · 93 ms] Autonomous SDN Write-Back (Azure Operator Nexus + Rayfin 1GB Free Fabric SQL)</text>
+      <text x="16" y="289" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#E2E8F0">Commits SRv6 path in 495 ms total · Jitter drops 14.8 ms -&gt; 1.15 ms (-92.2%) · Preserves 99.999% SLA &amp; saves $1,480,000</text>
+    </g>
+  </g>
+
+  <!-- Bottom Panel: Architect Selection Playbook & Better Together Rules -->
+  <g transform="translate(48, 686)" filter="url(#shadowR2)">
+    <rect x="0" y="0" width="1504" height="266" rx="16" fill="url(#cardR2)" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="28" y="36" font-family="Segoe UI, Inter, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">3. Architect Decision Playbook: When to Choose Fabric Eventhouse vs. Coexistence vs. Competitors</text>
+
+    <!-- Column 1 -->
+    <rect x="28" y="54" width="470" height="190" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="1.3"/>
+    <text x="46" y="80" font-family="Segoe UI, Inter, sans-serif" font-size="14.5" font-weight="700" fill="#34D399">✅ Choose Fabric RTI (Eventhouse + Streaming Tables) First</text>
+    <text x="46" y="106" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Sub-second (&lt;500 ms) telemetry, IoT/OT, 5G RAN, SIEM logs, APM</text>
+    <text x="46" y="128" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Dual need: KQL sub-second search + Zero-Copy OneLake Delta for BI</text>
+    <text x="46" y="150" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Event-driven Condition-Action rules (Activator + Operations Agent)</text>
+    <text x="46" y="172" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Eliminating 24×7 warehouse wake-up credit spikes (-48.5% TCO)</text>
+    <text x="46" y="218" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#6EE7B7">Sweet Spot: 10K–1M+ EPS · &lt;1s SLA · 500+ Power BI / Copilot users</text>
+
+    <!-- Column 2 -->
+    <rect x="517" y="54" width="470" height="190" rx="12" fill="#0F172A" stroke="#38BDF8" stroke-width="1.3"/>
+    <text x="535" y="80" font-family="Segoe UI, Inter, sans-serif" font-size="14.5" font-weight="700" fill="#38BDF8">🤝 Choose "Better Together" Hybrid Streaming Coexistence</text>
+    <text x="535" y="106" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Fabric Eventhouse (&lt;500 ms alerting/BI) + Databricks Lakeflow/DLT</text>
+    <text x="535" y="128" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">  for heavy stateful Python/Spark ML feature joins via OneLake Delta</text>
+    <text x="535" y="150" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Snowflake Dynamic Tables (≥60 s core ERP/finance mart refresh) +</text>
+    <text x="535" y="172" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">  OneLake Iceberg Shortcut into Fabric DirectLake + M365 Copilot</text>
+    <text x="535" y="218" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#7DD3FC">Zero-Copy Bridge: OneLake Delta/Iceberg Dual Projection (0 ETL Tax)</text>
+
+    <!-- Column 3 -->
+    <rect x="1006" y="54" width="470" height="190" rx="12" fill="#0F172A" stroke="#F59E0B" stroke-width="1.3"/>
+    <text x="1024" y="80" font-family="Segoe UI, Inter, sans-serif" font-size="14.5" font-weight="700" fill="#FBBF24">⚠️ Competitor Native Fit &amp; Anti-Pattern Guardrails</text>
+    <text x="1024" y="106" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Snowflake Dynamic Tables: Best when ≥1–5 min lag is fine &amp; 100% of</text>
+    <text x="1024" y="128" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">  sources already sit in Snowflake SQL without sub-second OT alerting</text>
+    <text x="1024" y="150" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Databricks Lakeflow: Best for complex multi-stream watermark joins</text>
+    <text x="1024" y="172" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" fill="#CBD5E1">• Anti-Pattern: Never force Dynamic Tables to poll every 60s for IoT logs</text>
+    <text x="1024" y="218" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#FCD34D">Guardrail: Always match engine physics (KQL vs. SQL MV) to SLA lag</text>
+  </g>
+</svg>
