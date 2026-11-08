@@ -1,0 +1,58 @@
+{
+  "round": 48,
+  "cycle": 429,
+  "status": "completed",
+  "topic_slug": "agent-cross-region-sandbox-placement-selection-faq",
+  "source_worktree_commit": "b4b76cda8d5991b9ebd57ee83c01898168089353",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "6501ed408897be8c1c229155c736e3e57554a437",
+    "Azure-Infra-Lab": "883e39f652819f59e8a0162afac9b8b32b5f951a",
+    "ai-research-public": "9f4f99c1fa15dc1ada0a4e95153f6503750734fb",
+    "ai-research-lab": "515547852d0f9375c36129c1b43c21848c3f4bc5",
+    "turbo998.github.io": "ee3c70898bdc953dae962dcaa09c21ffba7d5a9d"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "6501ed408897be8c1c229155c736e3e57554a437",
+    "Azure-Infra-Lab": "883e39f652819f59e8a0162afac9b8b32b5f951a",
+    "ai-research-public": "9f4f99c1fa15dc1ada0a4e95153f6503750734fb",
+    "ai-research-lab": "515547852d0f9375c36129c1b43c21848c3f4bc5",
+    "turbo998.github.io": "ff436d7ae6e7db5d004c6a628b533da12d662438"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "6501ed408897be8c1c229155c736e3e57554a437",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "883e39f652819f59e8a0162afac9b8b32b5f951a",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "9f4f99c1fa15dc1ada0a4e95153f6503750734fb",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "515547852d0f9375c36129c1b43c21848c3f4bc5",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "ee3c70898bdc953dae962dcaa09c21ffba7d5a9d",
+      "delivery_only": 0,
+      "current_only": 3
+    }
+  },
+  "homepage": {
+    "origin_main": "ff436d7ae6e7db5d004c6a628b533da12d662438",
+    "pages_main": "ff436d7ae6e7db5d004c6a628b533da12d662438",
+    "receipt_vs_pages": {
+      "merge_base": "ee3c70898bdc953dae962dcaa09c21ffba7d5a9d",
+      "delivery_only": 0,
+      "current_only": 3
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:20:29+08:00"
+}
