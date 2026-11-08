@@ -1,0 +1,58 @@
+{
+  "round": 51,
+  "cycle": 432,
+  "status": "completed",
+  "topic_slug": "agent-mcp-session-lease-heartbeat-selection-faq",
+  "source_worktree_commit": "349a99f848aa6ff3adb6d5e8a5ece3f1055c9b85",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "349a99f848aa6ff3adb6d5e8a5ece3f1055c9b85",
+    "Azure-Infra-Lab": "694add43829a7de7442de9404035a6dbb6956fe2",
+    "ai-research-public": "b0846e4757c331693218440d179e01f0cbd9548b",
+    "ai-research-lab": "1118c4efa2bd0c165e7ae17a108f0d96028fcdb5",
+    "turbo998.github.io": "a525e1f494011627d676a32ac1e087a0ed2a6b92"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "349a99f848aa6ff3adb6d5e8a5ece3f1055c9b85",
+    "Azure-Infra-Lab": "694add43829a7de7442de9404035a6dbb6956fe2",
+    "ai-research-public": "b0846e4757c331693218440d179e01f0cbd9548b",
+    "ai-research-lab": "1118c4efa2bd0c165e7ae17a108f0d96028fcdb5",
+    "turbo998.github.io": "902de41907d10eb54b334424f6dd0bbd42bd5778"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "349a99f848aa6ff3adb6d5e8a5ece3f1055c9b85",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "694add43829a7de7442de9404035a6dbb6956fe2",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "b0846e4757c331693218440d179e01f0cbd9548b",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "1118c4efa2bd0c165e7ae17a108f0d96028fcdb5",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "a525e1f494011627d676a32ac1e087a0ed2a6b92",
+      "delivery_only": 0,
+      "current_only": 2
+    }
+  },
+  "homepage": {
+    "origin_main": "902de41907d10eb54b334424f6dd0bbd42bd5778",
+    "pages_main": "902de41907d10eb54b334424f6dd0bbd42bd5778",
+    "receipt_vs_pages": {
+      "merge_base": "a525e1f494011627d676a32ac1e087a0ed2a6b92",
+      "delivery_only": 0,
+      "current_only": 2
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:43:16+08:00"
+}
