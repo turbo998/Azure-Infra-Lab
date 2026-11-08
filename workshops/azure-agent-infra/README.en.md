@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #403 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-403.html](workbench-cycle-403.html) · [daily-report-2026-11-14.en.md](daily-report-2026-11-14.en.md)
+> 🔎 **Cycle #404 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-404.html](workbench-cycle-404.html) · [daily-report-2026-11-14.en.md](daily-report-2026-11-14.en.md)
 
 ---
 
-## 1) Cycle #403 release summary (2026-11-14)
+## 1) Cycle #404 release summary (2026-11-14)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #403 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #403 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #403 workbench** | Interactive benchmark surface | [`workbench-cycle-403.html`](workbench-cycle-403.html) |
+| **Cycle #404 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #404 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #404 workbench** | Interactive benchmark surface | [`workbench-cycle-404.html`](workbench-cycle-404.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-403-benchmark.json`](evidence/cycle-403-benchmark.json)
-- Source ledger: [`evidence/cycle-403-sources.json`](evidence/cycle-403-sources.json)
+- Canonical payload: [`evidence/cycle-404-benchmark.json`](evidence/cycle-404-benchmark.json)
+- Source ledger: [`evidence/cycle-404-sources.json`](evidence/cycle-404-sources.json)
 - Metric CSV files:
-  - [`cycle-403-latency.csv`](evidence/cycle-403-latency.csv)
-  - [`cycle-403-throughput.csv`](evidence/cycle-403-throughput.csv)
-  - [`cycle-403-policy.csv`](evidence/cycle-403-policy.csv)
-  - [`cycle-403-cost.csv`](evidence/cycle-403-cost.csv)
+  - [`cycle-404-latency.csv`](evidence/cycle-404-latency.csv)
+  - [`cycle-404-throughput.csv`](evidence/cycle-404-throughput.csv)
+  - [`cycle-404-policy.csv`](evidence/cycle-404-policy.csv)
+  - [`cycle-404-cost.csv`](evidence/cycle-404-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-14.en.md`](daily-report-2026-11-14.en.md)
 - Daily report (ZH): [`daily-report-2026-11-14.md`](daily-report-2026-11-14.md)
-- One-page SVG: [`assets/33-cycle-403-daily-breakthroughs.svg`](assets/33-cycle-403-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-403.en.md`](docs/full-monograph-cycle-403.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-403.md`](docs/full-monograph-cycle-403.md)
-- Selection FAQ (EN): [`model-routing-fallback-selection-faq.en.md`](model-routing-fallback-selection-faq.en.md)
-- Selection FAQ (ZH): [`model-routing-fallback-selection-faq.md`](model-routing-fallback-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-404-daily-breakthroughs.svg`](assets/34-cycle-404-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-404.en.md`](docs/full-monograph-cycle-404.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-404.md`](docs/full-monograph-cycle-404.md)
+- Selection FAQ (EN): [`semantic-cache-poisoning-guard-selection-faq.en.md`](semantic-cache-poisoning-guard-selection-faq.en.md)
+- Selection FAQ (ZH): [`semantic-cache-poisoning-guard-selection-faq.md`](semantic-cache-poisoning-guard-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
