@@ -1,0 +1,58 @@
+{
+  "round": 54,
+  "cycle": 435,
+  "status": "completed",
+  "topic_slug": "agent-session-checkpoint-compaction-selection-faq",
+  "source_worktree_commit": "b1899d0338f12281a1b9c7c854bc2821daed3b24",
+  "delivery_receipt_sha": {
+    "ai-research-lab": "76f2a9707ea129ca7125d515418b4ebff3c77858",
+    "ai-research-public": "a1127935a628ea3bdc559d43ef4cbbe7f570787c",
+    "turbo998.github.io": "bc0edc1263b98545191d31ce1e146941f08de7d0",
+    "Azure-Infra-Lab": "d9e9f23b2da2e37ac642432ecc850ed9de005df9",
+    "ai-infra-lab": "b1899d0338f12281a1b9c7c854bc2821daed3b24"
+  },
+  "current_remote_origin_main": {
+    "ai-research-lab": "76f2a9707ea129ca7125d515418b4ebff3c77858",
+    "ai-infra-lab": "b1899d0338f12281a1b9c7c854bc2821daed3b24",
+    "turbo998.github.io": "24a26b0fc88e0169147a1af496fe5ee08402f042",
+    "Azure-Infra-Lab": "d9e9f23b2da2e37ac642432ecc850ed9de005df9",
+    "ai-research-public": "a1127935a628ea3bdc559d43ef4cbbe7f570787c"
+  },
+  "receipt_vs_current": {
+    "ai-research-lab": {
+      "merge_base": "76f2a9707ea129ca7125d515418b4ebff3c77858",
+      "current_only": 0,
+      "delivery_only": 0
+    },
+    "ai-infra-lab": {
+      "merge_base": "b1899d0338f12281a1b9c7c854bc2821daed3b24",
+      "current_only": 0,
+      "delivery_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "bc0edc1263b98545191d31ce1e146941f08de7d0",
+      "current_only": 5,
+      "delivery_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "d9e9f23b2da2e37ac642432ecc850ed9de005df9",
+      "current_only": 0,
+      "delivery_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "a1127935a628ea3bdc559d43ef4cbbe7f570787c",
+      "current_only": 0,
+      "delivery_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "24a26b0fc88e0169147a1af496fe5ee08402f042",
+    "pages_main": "24a26b0fc88e0169147a1af496fe5ee08402f042",
+    "receipt_vs_pages": {
+      "merge_base": "bc0edc1263b98545191d31ce1e146941f08de7d0",
+      "delivery_only": 0,
+      "current_only": 5
+    }
+  },
+  "observed_at_bjt": "2026-11-09T05:07:48+08:00"
+}
