@@ -1,49 +1,64 @@
-# Agent 策略灰度发布选型 FAQ（一次性全量切换 vs 分阶段 Canary Rollout）
+# Agent 策略灰度门禁阈值选型 FAQ（固定比例放量 vs SLO 触发自动回滚）
 
-## 0) 一句话结论
-- **生产默认选分阶段 Canary Rollout**：把策略误杀/漏拦截影响限制在小流量窗口。
-- **一次性全量切换只适合低风险、可快速回滚的小系统**。
-- **多租户高合规必须把灰度比例、回滚阈值、审计证据自动化联动**。
+> **与 Round17 的关系**：Round17 决策“是否采用灰度发布”；本轮聚焦其子题——采用灰度后，门禁阈值该用固定比例还是用 SLO 动态回滚。
 
-## 1) 这道题在选什么
-你在选择“策略变更如何上线”：
-- 全量切换：快，但出错就是全域影响。
-- Canary：慢一点，但可观测、可回退、可逐租户放量。
+## 1) 核心结论（先给负责人）
+- **多租户生产默认用“SLO 触发自动回滚”**，不是只盯放量百分比。
+- **固定比例放量只适合低风险策略**，一旦误杀规则上线，损失会被放量放大。
+- **门禁必须绑定三类指标**：拦截误报率、下游 5xx、租户投诉率；缺一不可。
 
-## 2) 何时还能用一次性切换
-- 内部低风险环境
-- 规则简单、影响面小
-- 已有强回滚并可在分钟级完成
+## 2) Q1 / Q2 / Q3（术语先通俗解释）
+- **放量比例**：把新策略先给 1%/5%/10% 流量试跑。
+- **SLO 门禁**：若关键指标越过阈值，系统自动停止继续放量并回滚。
 
-## 3) 何时必须 Canary
-- 涉及内容安全/越权拦截
-- 租户分层 SLA 不一致
-- 需要审计证据证明“何时、对谁、生效比例”
+### Q1：为什么“只看放量比例”不够？
+第一性原理：比例只是“影响范围”，不是“质量好坏”。质量要看误报、延迟、错误率三类结果指标。
 
-## 4) Mermaid 架构
+### Q2：什么情况下固定比例仍可接受？
+当策略只影响低风险路径，且可在分钟级快速回滚；否则建议改成 SLO 动态门禁。
+
+### Q3：SLO 动态门禁的最小闭环是什么？
+发布批次 -> 观测窗口 -> 阈值判断 -> 自动暂停/回滚 -> 形成审计回执；这一闭环必须自动化。
+
+## 3) Mermaid（门禁执行路径）
 ```mermaid
 flowchart LR
-  PolicyRepo[Policy Repo] --> CI[Policy CI]
-  CI --> GW[APIM AI Gateway]
-  GW --> Ring0[Canary Ring 1%]
-  GW --> Ring1[Canary Ring 10%]
-  GW --> Ring2[Full Rollout 100%]
-  GW --> Obs[Telemetry & Alerts]
-  Obs --> AutoRB[Auto Rollback Guard]
+  PR[Policy Release] --> Ring1[Canary 1%]
+  Ring1 --> Obs[Observe SLO Window]
+  Obs --> Judge{SLO Breach?}
+  Judge -->|No| RingN[Increase to Next Ring]
+  Judge -->|Yes| Rollback[Auto Rollback + Freeze]
+  Rollback --> Audit[Write Audit Receipt]
 ```
 
-## 5) 决策矩阵
-| 维度 | 全量切换 | Canary Rollout |
+## 4) 决策矩阵（本轮子题边界）
+| 维度 | 固定比例放量 | SLO 动态门禁 |
 |---|---|---|
-| 上线速度 | 高 | 中 |
-| 事故半径 | 高 | 低 |
-| 可观测回滚 | 中 | 高 |
+| 配置复杂度 | 低 | 中 |
+| 风险收敛速度 | 中 | 高 |
+| 误报止损能力 | 低 | 高 |
 | 合规可解释性 | 中 | 高 |
-| 长期稳定性 | 中 | 高 |
+| 适用默认 | 非关键低风险 | 多租户生产默认 |
 
-## 6) 可复算算例
-假设月均策略发布 12 次，单次故障影响成本 100 单位：
-- 全量切换故障率 6%，预期成本 `12*0.06*100=72`
-- Canary 故障率 2%，且事故半径降 60%，成本 `12*0.02*40=9.6`
+## 5) 数据证据与可复算算例（含 n/分母/来源）
+> 本节百分比均为 **synthetic_assumed**，生产真实流量标记为 **not_measured**。  
+> 合同字段见：`workshops/azure-agent-infra/evidence/cycle-416-benchmark.json` 的 `percentage_contract`。
 
-预期故障成本下降约 **86.7%**。
+- 指标 A（误报回滚触发率）  
+  - 定义：`n_triggered / n_releases`  
+  - 假设：`n_triggered=9`, `n_releases=120` -> `7.5%`  
+  - 路径：`percentage_contract.policy_gate_false_positive_trigger_rate`
+- 指标 B（固定比例下事故扩散率）  
+  - 定义：`n_incidents_spread / n_incidents_total`  
+  - 假设：`31/120` -> `25.8%`  
+  - 路径：`percentage_contract.fixed_rollout_blast_spread_rate`
+- 指标 C（SLO 门禁下事故扩散率）  
+  - 定义：`n_incidents_spread / n_incidents_total`  
+  - 假设：`11/120` -> `9.2%`  
+  - 路径：`percentage_contract.slo_gate_blast_spread_rate`
+
+## 6) 生产 Checklist（是否可上线）
+- [ ] 已定义三类门禁指标：误报率、5xx、投诉率  
+- [ ] 每个门禁指标都有阈值、观测窗口、自动动作  
+- [ ] 回滚路径可在 5 分钟内完成且留有审计回执  
+- [ ] 本轮数据标记为 `synthetic_assumed`，生产验证状态为 `not_measured`  

@@ -84,26 +84,32 @@
     {
       "title": "Azure AI Foundry Agent Service docs",
       "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
-      "published_or_doc_date": "official docs page (fetched 2026-11-14)",
+      "published_or_doc_date": "official docs page (timestamp_unverified)",
       "fetched_at_utc": "2026-11-08T18:59:46.369825+00:00",
       "source_label": "measured",
-      "notes": "Managed multi-agent runtime baseline for Agent-Native control plane comparison."
+      "notes": "Managed multi-agent runtime baseline for Agent-Native control plane comparison.",
+      "verification_label": "legacy_timestamp_unverified",
+      "verification_notes": "Inherited template previously embedded a future fetched date string; timestamp claim removed pending independently verified fetch evidence."
     },
     {
       "title": "AWS AgentCore overview",
       "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
-      "published_or_doc_date": "official docs page (fetched 2026-11-14)",
+      "published_or_doc_date": "official docs page (timestamp_unverified)",
       "fetched_at_utc": "2026-11-08T18:59:46.369825+00:00",
       "source_label": "measured",
-      "notes": "AgentCore modular runtime/memory/gateway/identity/policy/observability baseline."
+      "notes": "AgentCore modular runtime/memory/gateway/identity/policy/observability baseline.",
+      "verification_label": "legacy_timestamp_unverified",
+      "verification_notes": "Inherited template previously embedded a future fetched date string; timestamp claim removed pending independently verified fetch evidence."
     },
     {
       "title": "AWS Bedrock Agents classic notice",
       "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
-      "published_or_doc_date": "official docs page (fetched 2026-11-14)",
+      "published_or_doc_date": "official docs page (timestamp_unverified)",
       "fetched_at_utc": "2026-11-08T18:59:46.369825+00:00",
       "source_label": "measured",
-      "notes": "Classic mode maintenance position and AgentCore new-customer direction."
+      "notes": "Classic mode maintenance position and AgentCore new-customer direction.",
+      "verification_label": "legacy_timestamp_unverified",
+      "verification_notes": "Inherited template previously embedded a future fetched date string; timestamp claim removed pending independently verified fetch evidence."
     },
     {
       "title": "Cloudflare Workers docs",
@@ -132,26 +138,32 @@
     {
       "title": "Cloudflare Browser Rendering docs",
       "url": "https://developers.cloudflare.com/browser-rendering/",
-      "published_or_doc_date": "official docs page (fetched 2026-11-14)",
+      "published_or_doc_date": "official docs page (timestamp_unverified)",
       "fetched_at_utc": "2026-11-08T18:59:46.369825+00:00",
       "source_label": "measured",
-      "notes": "Browser Run/CUA execution substrate reference for competitor sandbox paths."
+      "notes": "Browser Run/CUA execution substrate reference for competitor sandbox paths.",
+      "verification_label": "legacy_timestamp_unverified",
+      "verification_notes": "Inherited template previously embedded a future fetched date string; timestamp claim removed pending independently verified fetch evidence."
     },
     {
       "title": "Modal official guide",
       "url": "https://modal.com/docs/guide",
-      "published_or_doc_date": "official docs page (fetched 2026-11-14)",
+      "published_or_doc_date": "official docs page (timestamp_unverified)",
       "fetched_at_utc": "2026-11-08T18:59:46.369825+00:00",
       "source_label": "measured",
-      "notes": "Serverless sandbox and operational baseline for competitor matrix."
+      "notes": "Serverless sandbox and operational baseline for competitor matrix.",
+      "verification_label": "legacy_timestamp_unverified",
+      "verification_notes": "Inherited template previously embedded a future fetched date string; timestamp claim removed pending independently verified fetch evidence."
     },
     {
       "title": "GCP Vertex AI Agent Engine overview",
       "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview",
-      "published_or_doc_date": "official docs page (fetched 2026-11-14; redirected)",
+      "published_or_doc_date": "official docs page (timestamp_unverified)",
       "fetched_at_utc": "2026-11-08T18:59:46.369825+00:00",
       "source_label": "measured",
-      "notes": "Fully managed runtime, sessions + memory bank, secure sandbox execution, enterprise security matrix."
+      "notes": "Fully managed runtime, sessions + memory bank, secure sandbox execution, enterprise security matrix.",
+      "verification_label": "legacy_timestamp_unverified",
+      "verification_notes": "Inherited template previously embedded a future fetched date string; timestamp claim removed pending independently verified fetch evidence."
     }
   ],
   "breakthrough_focus": [
@@ -536,5 +548,49 @@
     "Pilot: run benchmark harness for duplicate-block precision, replay integrity, latency impact, and throughput stability.",
     "Harden: enforce identity, idempotency governance fences, MCP/A2A controls, and observability contracts.",
     "Scale: rollout with idempotency policy, chaos drills, and ROI review loop."
-  ]
+  ],
+  "percentage_contract": {
+    "log_only_first_pass_attribution_rate": {
+      "metric": "log_only_first_pass_attribution_rate",
+      "numerator": 25,
+      "denominator": 40,
+      "percentage": 62.5,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-tool-output-hash-attestation-selection-faq.md#5-数据证据与可复算算例",
+      "production_validation": "not_measured",
+      "assumption_kind": "hypothetical_example"
+    },
+    "attested_first_pass_attribution_rate": {
+      "metric": "attested_first_pass_attribution_rate",
+      "numerator": 37,
+      "denominator": 40,
+      "percentage": 92.5,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-tool-output-hash-attestation-selection-faq.md#5-数据证据与可复算算例",
+      "production_validation": "not_measured",
+      "assumption_kind": "hypothetical_example"
+    },
+    "attested_gain_vs_log_only": {
+      "metric": "attested_gain_vs_log_only",
+      "numerator": 12,
+      "denominator": 40,
+      "percentage": 30.0,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-tool-output-hash-attestation-selection-faq.md#5-数据证据与可复算算例",
+      "production_validation": "not_measured",
+      "assumption_kind": "hypothetical_example"
+    }
+  },
+  "contract_notes": {
+    "percentage_fields": "All percentage metrics include numerator, denominator, source_path, source_label, and production_validation.",
+    "attested_attribution_examples": "Cycle 418 attribution percentages are synthetic_assumed hypothetical examples (25/40, 37/40); they are not external anonymized reported measurements."
+  },
+  "source_attribution_quality": {
+    "legacy_future_fetch_claim_removed": true,
+    "status": "partially_unverified_timestamps_marked",
+    "note": "Some official-doc entries had legacy future-date attribution from template inheritance; converted to timestamp_unverified with explicit legacy marker."
+  }
 }

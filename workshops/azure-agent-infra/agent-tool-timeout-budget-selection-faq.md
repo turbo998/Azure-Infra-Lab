@@ -1,47 +1,65 @@
-# Agent 工具超时预算选型 FAQ（统一全局超时 vs 分层超时预算）
+# Agent 工具超时预算分配选型 FAQ（静态配比 vs 队列年龄动态配比）
 
-## 0) 一句话结论
-- **生产默认选分层超时预算**（网关/编排/工具三级），比全局单阈值更稳。
-- **统一全局超时只适合简单链路**，在多工具编排下会放大尾延迟与重试风暴。
-- **高并发场景要把超时预算和熔断、重试次数、队列背压联动**。
+> **与 Round20 的关系**：Round20 决策“全局超时 vs 分层预算”；本轮是其子题——分层预算已确定后，工具层预算如何分配（静态配比 vs 动态配比）。
 
-## 1) 你在选什么
-- 全局超时：配置简单，但无法区分慢工具与关键路径。
-- 分层预算：治理更复杂，但能精准控制每跳耗时与回退策略。
+## 1) 核心结论（先给值班架构师）
+- **高并发生产默认选“队列年龄动态配比”**，可显著降低尾延迟挤压。
+- **静态配比适合低波动链路**，但在突发峰值时容易让关键调用饥饿。
+- **预算策略必须和重试上限、队列背压、熔断门槛联动**，否则只会把失败后移。
 
-## 2) 全局超时适用场景
-- 单工具、短链路
-- 延迟分布窄
-- 故障后果可接受
+## 2) Q1 / Q2 / Q3（术语先通俗解释）
+- **静态配比**：每个工具固定拿到 40%/30%/30% 超时预算。
+- **队列年龄动态配比**：排队越久的请求，优先获得更多预算或更快回退。
 
-## 3) 必须分层预算的场景
-- A2A + MCP 多跳工具链
-- 浏览器/CUA任务与代码执行混合
-- 金融/合规场景需要确定性回退
+### Q1：为什么“总预算固定”仍会失败？
+第一性原理：同样的总预算，在排队抖动下会被低价值慢调用抢占，关键路径超时概率上升。
 
-## 4) Mermaid
+### Q2：静态配比什么时候够用？
+调用链长度稳定、流量波动小、工具时延分布窄时，静态配比有更低治理成本。
+
+### Q3：动态配比的最小实现要求？
+必须有“队列年龄信号 + 优先级策略 + 回退动作”，并把预算变化写入审计字段。
+
+## 3) Mermaid（预算分配闭环）
 ```mermaid
 flowchart LR
-  U[User Request] --> G[Gateway Timeout Budget]
-  G --> O[Orchestrator Timeout Budget]
-  O --> T1[Tool A Budget]
-  O --> T2[Tool B Budget]
-  O --> T3[Tool C Budget]
-  O --> F[Fallback / Circuit Breaker]
+  Req[Incoming Request] --> Queue[Queue + Age]
+  Queue --> Alloc{Budget Allocator}
+  Alloc -->|Static| T1[Tool Budget A/B/C Fixed]
+  Alloc -->|Dynamic| T2[Budget by Queue Age & Priority]
+  T1 --> Eval[SLO Evaluation]
+  T2 --> Eval
+  Eval --> Fallback[Retry Cap / Circuit Breaker]
 ```
 
-## 5) 决策矩阵
-| 维度 | 全局超时 | 分层预算 |
+## 4) 决策矩阵（本轮子题边界）
+| 维度 | 静态配比 | 队列年龄动态配比 |
 |---|---|---|
-| 配置复杂度 | 低 | 中 |
-| 尾延迟控制 | 弱 | 强 |
-| 故障隔离 | 弱 | 强 |
-| 可审计性 | 中 | 高 |
-| 长期稳定性 | 中 | 高 |
+| 配置复杂度 | 低 | 中-高 |
+| 尾延迟抗抖动 | 低 | 高 |
+| 关键路径保障 | 中 | 高 |
+| 审计可解释性 | 中 | 高（需记录预算轨迹） |
+| 适用默认 | 低波动业务 | 多租户高并发业务 |
 
-## 6) 可复算算例
-假设 3 跳链路，预算总额 3000ms：
-- 全局超时：任一慢跳可能占满预算，成功率 91%
-- 分层预算：网关400 + 编排600 + 工具(1200/500/300)，成功率 96%
+## 5) 数据证据与可复算算例（含 n/分母/来源）
+> 本节百分比均为 **synthetic_assumed**；生产真实超时链路验证为 **not_measured**。  
+> 合同字段见：`workshops/azure-agent-infra/evidence/cycle-417-benchmark.json` 的 `percentage_contract`。
 
-在该假设下，分层预算提升成功率 **5 个百分点**。
+- 指标 A（静态配比超时率）  
+  - 定义：`n_timeout_static / n_requests`  
+  - 假设：`273/3000 = 9.1%`  
+  - 路径：`percentage_contract.static_allocation_timeout_rate`
+- 指标 B（动态配比超时率）  
+  - 定义：`n_timeout_dynamic / n_requests`  
+  - 假设：`120/3000 = 4.0%`  
+  - 路径：`percentage_contract.dynamic_allocation_timeout_rate`
+- 指标 C（成功率提升）  
+  - 定义：`(n_success_dynamic - n_success_static) / n_requests`  
+  - 假设：`(2880-2727)/3000 = 5.1%`  
+  - 路径：`percentage_contract.dynamic_vs_static_success_gain`
+
+## 6) 生产 Checklist（可上线前置）
+- [ ] 工具预算策略有版本号与回滚版本  
+- [ ] 请求队列年龄可观测且写入 trace 标签  
+- [ ] 重试上限与熔断门槛联动验证完成  
+- [ ] 本轮数据标记 `synthetic_assumed`，生产状态 `not_measured`  

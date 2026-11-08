@@ -1,49 +1,64 @@
-# Agent Policy Canary Rollout Selection FAQ (Big-Bang Switch vs Phased Canary)
+# Agent Policy Canary Gate FAQ (Fixed Ramp Ratio vs SLO-Triggered Auto-Rollback)
 
-## 0) Executive takeaway
-- **Default to phased canary rollout in production** to cap blast radius of false positives/false negatives.
-- **Big-bang switch is acceptable only for low-risk, fast-rollback systems**.
-- **For regulated multi-tenant workloads, rollout ratio, rollback threshold, and audit evidence must be coupled automatically**.
+> **Relation to Round17**: Round17 answered whether to use canary rollout at all. This round is a scoped extension: once canary is chosen, should release gates be fixed ratios or SLO-driven auto-rollback?
 
-## 1) What this decision means
-You are choosing policy release semantics:
-- Big-bang: fast, but failures hit everyone.
-- Canary: slightly slower, but observable, reversible, and tenant-ramp friendly.
+## 1) Core conclusions
+- **Use SLO-triggered auto-rollback by default in multi-tenant production** rather than ratio-only ramping.
+- **Fixed-ratio ramping is only acceptable for low-risk policy changes** where rollback is immediate.
+- **Gate automation must combine three signals**: false-positive interception rate, downstream 5xx rate, and tenant complaint rate.
 
-## 2) When big-bang can still work
-- low-risk internal environments
-- narrow policy scope
-- strong rollback path in minutes
+## 2) Q1 / Q2 / Q3 (plain-language terms first)
+- **Ramp ratio**: gradually exposing a new policy to 1%/5%/10% traffic.
+- **SLO gate**: stopping promotion (or rolling back) when key quality indicators cross thresholds.
 
-## 3) When canary is mandatory
-- content-safety or privilege boundaries involved
-- tenant tiers have different SLA/risk appetite
-- audit evidence is required for who/when/rollout percentage
+### Q1: Why is ratio-only gating insufficient?
+First principle: ratio controls blast radius only; it does not tell you whether policy quality is acceptable. Quality requires outcome metrics.
 
-## 4) Architecture sketch
+### Q2: When is fixed-ratio gating still acceptable?
+Only for low-risk paths with minute-level rollback and no high-impact compliance implications.
+
+### Q3: What is the minimal SLO gate control loop?
+Release batch -> observation window -> threshold evaluation -> auto pause/rollback -> audit receipt.
+
+## 3) Mermaid (gate execution path)
 ```mermaid
 flowchart LR
-  PolicyRepo[Policy Repo] --> CI[Policy CI]
-  CI --> GW[APIM AI Gateway]
-  GW --> Ring0[Canary Ring 1%]
-  GW --> Ring1[Canary Ring 10%]
-  GW --> Ring2[Full Rollout 100%]
-  GW --> Obs[Telemetry & Alerts]
-  Obs --> AutoRB[Auto Rollback Guard]
+  PR[Policy Release] --> Ring1[Canary 1%]
+  Ring1 --> Obs[Observe SLO Window]
+  Obs --> Judge{SLO Breach?}
+  Judge -->|No| RingN[Increase to Next Ring]
+  Judge -->|Yes| Rollback[Auto Rollback + Freeze]
+  Rollback --> Audit[Write Audit Receipt]
 ```
 
-## 5) Decision matrix
-| Dimension | Big-bang switch | Canary rollout |
+## 4) Decision matrix (scope of this round)
+| Dimension | Fixed-ratio ramp | SLO-driven gate |
 |---|---|---|
-| Release speed | High | Medium |
-| Incident blast radius | High | Low |
-| Observable rollback | Medium | High |
+| Configuration complexity | Low | Medium |
+| Risk convergence speed | Medium | High |
+| False-positive containment | Low | High |
 | Compliance explainability | Medium | High |
-| Long-term stability | Medium | High |
+| Default fit | Low-risk non-critical paths | Multi-tenant production |
 
-## 6) Recomputable example
-Assume 12 policy releases/month and failure impact cost=100:
-- Big-bang failure rate 6% => `12*0.06*100 = 72`
-- Canary failure rate 2% and 60% lower blast => `12*0.02*40 = 9.6`
+## 5) Evidence contract + recomputable example (with n/denominator/source)
+> All percentages in this section are **synthetic_assumed**; production traffic validation is **not_measured**.  
+> Field contract path: `workshops/azure-agent-infra/evidence/cycle-416-benchmark.json` -> `percentage_contract`.
 
-Expected failure cost reduction is **86.7%**.
+- Metric A (false-positive rollback trigger rate)  
+  - Formula: `n_triggered / n_releases`  
+  - Assumed values: `9/120 = 7.5%`  
+  - Path: `percentage_contract.policy_gate_false_positive_trigger_rate`
+- Metric B (incident spread under fixed-ratio ramp)  
+  - Formula: `n_incidents_spread / n_incidents_total`  
+  - Assumed values: `31/120 = 25.8%`  
+  - Path: `percentage_contract.fixed_rollout_blast_spread_rate`
+- Metric C (incident spread under SLO gate)  
+  - Formula: `n_incidents_spread / n_incidents_total`  
+  - Assumed values: `11/120 = 9.2%`  
+  - Path: `percentage_contract.slo_gate_blast_spread_rate`
+
+## 6) Production checklist
+- [ ] Gate thresholds are set for false-positive rate, 5xx rate, and complaint rate  
+- [ ] Each threshold has a window, trigger, and automated action  
+- [ ] Rollback path completes within 5 minutes with auditable receipts  
+- [ ] This round is labeled `synthetic_assumed`; production validation remains `not_measured`  
