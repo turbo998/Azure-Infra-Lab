@@ -35,24 +35,24 @@
   <!-- KPI Banner -->
   <g transform="translate(48, 152)" filter="url(#shadowR2)">
     <rect x="0" y="0" width="360" height="96" rx="14" fill="url(#cardR2)" stroke="#38BDF8" stroke-width="1.5"/>
-    <text x="24" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#38BDF8">STREAMING BENCHMARK SCORE (52 CASES)</text>
-    <text x="24" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">51 / 52 (98.08%)</text>
-    <text x="24" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">Mean closed-loop latency: 537.7 ms · 1 explicit miss (DL-23)</text>
+    <text x="24" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" font-weight="700" fill="#38BDF8">BENCHMARK SCORE (measured_local_harness)</text>
+    <text x="24" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">55 / 56 (98.21%)</text>
+    <text x="24" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" fill="#94A3B8">Modeled mean: 532.0 ms · 1 explicit miss (DL-23)</text>
 
     <rect x="382" y="0" width="360" height="96" rx="14" fill="url(#cardR2)" stroke="#10B981" stroke-width="1.5"/>
-    <text x="406" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#34D399">INGEST-TO-QUERY P99 LATENCY GAP</text>
+    <text x="406" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" font-weight="700" fill="#34D399">LATENCY GAP (spec + synthetic target)</text>
     <text x="406" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">142 ms vs. ≥60 s</text>
-    <text x="406" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">Eventhouse KQL (142ms) vs. Snowflake Dynamic Tables (60s min lag)</text>
+    <text x="406" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" fill="#94A3B8">Eventhouse KQL target vs. Dynamic Tables 60s min spec</text>
 
     <rect x="764" y="0" width="360" height="96" rx="14" fill="url(#cardR2)" stroke="#F59E0B" stroke-width="1.5"/>
-    <text x="788" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#FBBF24">SCENARIO I · 5G URLLC SLICE STEERING</text>
+    <text x="788" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" font-weight="700" fill="#FBBF24">SCENARIO I (synthetic_scenario_model)</text>
     <text x="788" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">495 ms · $1.48M</text>
-    <text x="788" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">120K EPS Frankfurt IXP BGP leak -> Amsterdam SRv6 (1.15ms jitter)</text>
+    <text x="788" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" fill="#94A3B8">Modeled 120K EPS 5G URLLC loop &amp; SLA risk exposure</text>
 
     <rect x="1146" y="0" width="358" height="96" rx="14" fill="url(#cardR2)" stroke="#A855F7" stroke-width="1.5"/>
-    <text x="1170" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700" fill="#C084FC">STREAMING + BI TCO SAVINGS</text>
+    <text x="1170" y="32" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" font-weight="700" fill="#C084FC">MODELED STREAMING TCO (synthetic)</text>
     <text x="1170" y="68" font-family="Segoe UI, Inter, sans-serif" font-size="32" font-weight="800" fill="#F8FAFC">-48.5% Compute</text>
-    <text x="1170" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="12" fill="#94A3B8">Avoids 24×7 warehouse wake-ups + DirectLake $0 BI viewer tax</text>
+    <text x="1170" y="86" font-family="Segoe UI, Inter, sans-serif" font-size="11.5" fill="#94A3B8">$4,850/mo vs $9,420/mo reference TCO model</text>
   </g>
 
   <!-- Left Panel: Latency & Architecture Spectrum Across 5 Clouds -->

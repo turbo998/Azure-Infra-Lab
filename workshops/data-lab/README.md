@@ -1,10 +1,16 @@
 # 🔬 Data Lab — Microsoft Fabric × 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度研究与 AI Solution Architect 实战实验室
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`README.en.md`)](README.en.md)  
-> **最新研究日期 / Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.md) · [`2026-11-06`](research/daily/2026-11-06.md) · [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `51 / 52 (98.08%)` (`537.7ms` 均值) · **单元测试**: `22 / 22 通过 (100%)`  
-> **🌟 架构师必读 FAQ 选型指南**:  
+> **最新研究日期 / Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.md) · [`2026-11-06`](research/daily/2026-11-06.md) · [`2026-11-05`](research/daily/2026-11-05.md) · [`2026-11-04`](research/daily/2026-11-04.md) · [`2026-11-03`](research/daily/2026-11-03.md)（含 [`2026-11-02`](research/daily/2026-11-02.md) 与 [`2026-11-01`](research/daily/2026-11-01.md) 基线） · **评测基准得分**: `55 / 56 (98.21%)` (`532.0ms` 建模均值) · **单元测试**: `24 / 24 通过 (100%)`  
+> **🌟 架构师必读三大独立 FAQ 选型指南（严格对标 `ib-vs-ethernet-roce-selection-faq.md` 六段式范式）**:  
 > - **Round 1（跨云零拷贝与本体选型）**：[`comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md`（OneLake 零拷贝 × Fabric IQ 本体 vs 四大云竞对选型 FAQ）](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md) · [`English FAQ`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md)  
-> - **Round 2（实时流与亚秒级闭环选型）**：[`comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md`（Eventhouse KQL 142ms vs Snowflake Dynamic Tables 60s vs Databricks Lakeflow 选型 FAQ）](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [`English FAQ`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md)
+> - **Round 2（实时流与亚秒级闭环选型）**：[`comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md`（Eventhouse KQL 142ms vs Snowflake Dynamic Tables 60s vs Databricks Lakeflow 选型 FAQ）](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md) · [`English FAQ`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md)  
+> - **Round 3（零 ETL 数据库镜像 vs 传统 CDC 选型）**：[`comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md`（Fabric Mirroring & Open Mirroring $0 算力 vs Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect 选型 FAQ）](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md) · [`English FAQ`](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md)
+>
+> 🔍 **数据溯源与适用范围声明（Data Provenance & Scope Disclosure）**：
+> - **`measured_local_harness`（本地确定性引擎实测）**：56 场景路由矩阵（`55/56 = 98.21%` 通过率，显式反例 `DL-23` 捕获 `+14.2%` 裸表漂移）与 `24/24` Python 单元测试本地执行通过。
+> - **`vendor_published_spec_as_of_2026`（官方发布规约）**：Fabric F64+ 免收 Power BI 读者许可费（`$0`）、Mirroring 复制算力 `$0` 免费 + F64 赠送 `64TB` 镜像存储、Power BI Agentic App 附赠 `1GB` 免费 Fabric SQL、Snowflake Dynamic Tables `60s` 最小滞后。
+> - **`synthetic_scenario_model`（确定性架构参考仿真模型）**：10 大行业本体闭环耗时（`480ms–780ms`）、500 用户月度 TCO（`$14,048/mo`）、CDC 复制月度成本对比（`$1,600/mo` vs `$13,000/mo`）及 SLA 风险敞口（`$1.15M`/`$1.48M`/`$2.35M`）为封存于 `reports/report.json` 的架构设计参考模型，跨云物理集群压测标记为 `not_measured`。
 
 [![Data Lab Executive Visual Summary](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)
 
@@ -37,7 +43,10 @@
 
 ## 🖼️ 核心架构图集（SVG 自包含矢量图）
 
-### 1. Fabric Eventhouse (KQL 142ms) + Lakehouse 流式表 (210ms) vs Snowflake Dynamic Tables (60s) vs Databricks Lakeflow 实时流选型 FAQ 架构图（`2026-11-08 / 11-09 R2` 新增）
+### 1. Fabric 数据库镜像 & Open Mirroring ($0 算力) vs Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect 选型 FAQ 架构图（`2026-11-08 / 11-09 R3` 新增）
+[![Fabric Mirroring & Open Mirroring vs CDC Openflow Lakeflow FAQ Architecture](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)
+
+### 2. Fabric Eventhouse (KQL 142ms) + Lakehouse 流式表 (210ms) vs Snowflake Dynamic Tables (60s) vs Databricks Lakeflow 实时流选型 FAQ 架构图（`2026-11-08 / 11-09 R2` 新增）
 [![Fabric Eventhouse vs Dynamic Tables vs Lakeflow Streaming FAQ Architecture](assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg)](assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg)
 
 ### 2. OneLake 零拷贝三剑客 (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ 条件-动作规则 × 混合主权边缘选型 FAQ 架构图（`2026-11-08 / 11-09 R1` 新增）

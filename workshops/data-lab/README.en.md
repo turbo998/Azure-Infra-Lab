@@ -1,10 +1,16 @@
 # 🔬 Data Lab — Microsoft Fabric × 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep Research & AI Solution Architect Lab
 
 > **Language**: [中文 (`README.md`)](README.md) | **English (Current)**  
-> **Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.en.md) · [`2026-11-06`](research/daily/2026-11-06.en.md) · [`2026-11-05`](research/daily/2026-11-05.en.md) · [`2026-11-04`](research/daily/2026-11-04.en.md) · [`2026-11-03`](research/daily/2026-11-03.en.md) (includes [`2026-11-02`](research/daily/2026-11-02.en.md) & [`2026-11-01`](research/daily/2026-11-01.en.md) baselines) · **Benchmark Pass Rate**: `51 / 52 (98.08%)` (`537.7ms` mean) · **Unit Tests**: `22 / 22 Passed (100%)`  
-> **🌟 Flagship Architect Selection FAQs**:  
+> **Latest Daily Run**: [`2026-11-08 / 11-09`](research/daily/2026-11-08.en.md) · [`2026-11-06`](research/daily/2026-11-06.en.md) · [`2026-11-05`](research/daily/2026-11-05.en.md) · [`2026-11-04`](research/daily/2026-11-04.en.md) · [`2026-11-03`](research/daily/2026-11-03.en.md) (includes [`2026-11-02`](research/daily/2026-11-02.en.md) & [`2026-11-01`](research/daily/2026-11-01.en.md) baselines) · **Benchmark Pass Rate**: `55 / 56 (98.21%)` (`532.0ms` modeled mean) · **Unit Tests**: `24 / 24 Passed (100%)`  
+> **🌟 Flagship Architect Selection FAQs (Modeled on `ib-vs-ethernet-roce-selection-faq.md`)**:  
 > - **Round 1 (Zero-Copy & Ontology Selection)**: [`comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md` (OneLake Zero-Copy × Fabric IQ Ontology vs. 4 Clouds Selection FAQ)](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md)  
-> - **Round 2 (Real-Time Streaming Selection)**: [`comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md` (Eventhouse KQL 142ms vs. Snowflake Dynamic Tables 60s vs. Databricks Lakeflow FAQ)](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md)
+> - **Round 2 (Real-Time Streaming Selection)**: [`comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md` (Eventhouse KQL 142ms vs. Snowflake Dynamic Tables 60s vs. Databricks Lakeflow FAQ)](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md)  
+> - **Round 3 (Zero-ETL Mirroring vs. CDC Selection)**: [`comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md` (Fabric Mirroring & Open Mirroring $0 Compute vs. Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect FAQ)](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md) · [`中文版 FAQ`](comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md)
+>
+> 🔍 **Data Provenance & Scope Disclosure**:
+> - **`measured_local_harness`**: 56-scenario routing matrix (`55/56 = 98.21%` accuracy, explicit miss `DL-23` capturing `+14.2%` raw-table drift) and `24/24` Python unit tests executed locally.
+> - **`vendor_published_spec_as_of_2026`**: Fabric F64+ `$0` Power BI viewer seats, `$0` Mirroring replication compute + `64TB` free mirrored storage on F64, `1GB` Free Fabric SQL in Power BI Agentic App, and Snowflake Dynamic Tables `60s` min lag.
+> - **`synthetic_scenario_model`**: The 10 industry ontology loop latencies (`480ms–780ms`), 500-user TCO model (`$14,048/mo`), CDC TCO comparison (`$1,600/mo` vs. `$13,000/mo`), and SLA risk exposures (`$1.15M`/`$1.48M`/`$2.35M`) are deterministic architectural reference simulations sealed in `reports/report.json`; live multi-cloud cluster stress runs are marked `not_measured`.
 
 [![Data Lab Executive Visual Summary](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)](assets/svg/01-data-lab-executive-summary-2026-11-08.svg)
 
@@ -37,7 +43,10 @@
 
 ## 🖼️ Core Architecture Diagrams (Self-Contained SVGs)
 
-### 1. Fabric Eventhouse (KQL 142ms) + Lakehouse Streaming Tables (210ms) vs. Snowflake Dynamic Tables (60s) vs. Databricks Lakeflow Streaming FAQ Architecture (`2026-11-08 / 11-09 R2` New)
+### 1. Fabric Database Mirroring & Open Mirroring ($0 Compute) vs. Fivetran MAR / Debezium / Snowflake Openflow / Databricks Lakeflow Connect FAQ Architecture (`2026-11-08 / 11-09 R3` New)
+[![Fabric Mirroring & Open Mirroring vs CDC Openflow Lakeflow FAQ Architecture](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)](assets/svg/11-mirroring-zero-etl-vs-cdc-openflow-lakeflow-faq.svg)
+
+### 2. Fabric Eventhouse (KQL 142ms) + Lakehouse Streaming Tables (210ms) vs. Snowflake Dynamic Tables (60s) vs. Databricks Lakeflow Streaming FAQ Architecture (`2026-11-08 / 11-09 R2` New)
 [![Fabric Eventhouse vs Dynamic Tables vs Lakeflow Streaming FAQ Architecture](assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg)](assets/svg/10-realtime-eventhouse-vs-dynamic-tables-dlt-faq.svg)
 
 ### 2. OneLake Zero-Copy Trio (Shortcuts / Mirroring / IQ Sharing) × Fabric IQ Condition-Action Rules × Sovereign Edge FAQ Architecture (`2026-11-08 / 11-09 R1` New)

@@ -166,12 +166,22 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
         self.assertEqual(sim["decision_routing"]["action"], "Act automatically")
 
-    def test_scenario_matrix_52_cases_and_explicit_miss(self) -> None:
+    def test_core_banking_oracle_open_mirroring_cdc_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("core_banking_oracle_open_mirroring_cdc")
+        self.assertEqual(sim["telemetry"]["fabric_mirroring_replication_compute_cost_usd"], 0)
+        self.assertEqual(sim["telemetry"]["oltp_change_rate_tps"], 48000)
+        self.assertEqual(sim["multi_agent_plan"]["cdc_pipeline_monthly_tco_saved_usd"], 11400)
+        self.assertTrue(sim["foundry_iq_guardrail"]["pan_cvv_column_level_masked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["retail_payroll_account_freeze_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+
+    def test_scenario_matrix_56_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 52)
-        self.assertEqual(matrix["passed_scenarios"], 51)
+        self.assertEqual(matrix["total_scenarios"], 56)
+        self.assertEqual(matrix["passed_scenarios"], 55)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 98.08, places=2)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 98.21, places=2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -253,6 +263,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Eventhouse KQL", by_id["DL-51"]["expected"])
         self.assertIn("Amsterdam-IXP SRv6 Steer", by_id["DL-52"]["expected"])
 
+    def test_mirroring_zero_etl_vs_cdc_openflow_lakeflow_2026_11_09_r3_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-53", "DL-54", "DL-55", "DL-56"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("$0 replication compute", by_id["DL-53"]["expected"])
+        self.assertIn("Oracle GoldenGate 23ai", by_id["DL-54"]["expected"])
+        self.assertIn("1GB Free Fabric SQL", by_id["DL-55"]["expected"])
+        self.assertIn("Save $2.35M Default", by_id["DL-56"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -270,7 +291,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 51)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 55)
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
         self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
         self.assertIn("finops_rayfin_observability", loaded["ontology_simulations"])
@@ -278,6 +299,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("manufacturing_digital_twin_zeroprov", loaded["ontology_simulations"])
         self.assertIn("supply_chain_iq_sharing_salesforce", loaded["ontology_simulations"])
         self.assertIn("telecom_5g_eventhouse_vs_dynamic_tables", loaded["ontology_simulations"])
+        self.assertIn("core_banking_oracle_open_mirroring_cdc", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
