@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 780" width="1280" height="780" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad20" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accentGrad20" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="fabricCard20" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0A192F"/>
+    </linearGradient>
+    <linearGradient id="compCard20" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="780" fill="url(#bgGrad20)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accentGrad20)"/>
+
+  <!-- Header -->
+  <g transform="translate(36, 26)">
+    <rect x="0" y="0" width="320" height="28" rx="14" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+    <text x="160" y="18" fill="#6EE7B7" font-size="12" font-weight="700" text-anchor="middle">DATA LAB ROUND 12 · ZERO-TRUST NETSEC FAQ</text>
+    <text x="336" y="19" fill="#94A3B8" font-size="12" font-weight="600">PROVENANCE: [measured_local_harness] 42/42 tests | [vendor_published_spec_as_of_2026] 15 URLs | [synthetic_scenario_model] Separated n=92 vs n=19</text>
+    <text x="0" y="54" fill="#F8FAFC" font-size="23" font-weight="800">Fabric Workspace Private Link + Managed VNet Spark + OAP + TWA vs. 4 Clouds</text>
+    <text x="0" y="78" fill="#CBD5E1" font-size="13.5">Zero-Trust Inbound Isolation &amp; Default-Deny Outbound Exfiltration Defense ($0 NAT/Firewall Tax) vs. VNet Injection &amp; Snowflake Business Critical (1.5x)</text>
+  </g>
+
+  <!-- Left Column: Decision Tree & Architecture Comparison -->
+  <g transform="translate(36, 120)">
+    <rect x="0" y="0" width="600" height="390" rx="14" fill="url(#fabricCard20)" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#38BDF8" font-size="15" font-weight="700">1. Zero-Trust Perimeter Architecture: Legacy VNet/Firewall Tax vs. Fabric Managed VNet + OAP</text>
+
+    <!-- Top Box: Legacy Custom VNet Injection + Business Critical Tier Tax -->
+    <rect x="20" y="44" width="560" height="145" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1.2"/>
+    <text x="34" y="66" fill="#FDA4AF" font-size="13" font-weight="700">❌ Pain Point A/B: Custom VNet Injection NetOps Tax &amp; Snowflake Business Critical 1.5x Tier Tax</text>
+    <text x="34" y="88" fill="#E2E8F0" font-size="12">• Classic VNet Injection: Requires customer-managed /22 subnets, NAT Gateways, &amp; Azure Firewall ($8K+/mo)</text>
+    <text x="34" y="108" fill="#E2E8F0" font-size="12">• Open Outbound Spark Egress: Malicious PyPI wheels or rogue notebooks can POST data to external IPs</text>
+    <text x="34" y="128" fill="#E2E8F0" font-size="12">• Edition Gatekeeping: Snowflake requires upgrading to Business Critical (~1.5x credit cost) just for PrivateLink</text>
+    <text x="34" y="148" fill="#FCA5A5" font-size="12" font-weight="700">• Modeled 22-Workspace Sovereign NetSec TCO [synthetic_scenario_model]: $27,600/mo (+$18,900/mo penalty)</text>
+    <text x="34" y="168" fill="#94A3B8" font-size="11">• Storage Firewall Dilemma: Opening ADLS Gen2 public access just so cross-workspace analytics can read tables</text>
+
+    <!-- Bottom Box: Fabric Zero-Trust Managed VNet + OAP + MPE + TWA -->
+    <rect x="20" y="204" width="560" height="170" rx="10" fill="#062E26" stroke="#10B981" stroke-width="1.4"/>
+    <text x="34" y="226" fill="#6EE7B7" font-size="13" font-weight="700">✅ Fabric Workspace Private Link + Managed VNet + OAP + MPE + Trusted Workspace Access</text>
+    <text x="34" y="248" fill="#E2E8F0" font-size="12">• Workspace-Level Private Link: Per-workspace inbound isolation on standard F-SKUs (0 public endpoints)</text>
+    <text x="34" y="268" fill="#E2E8F0" font-size="12">• Outbound Access Protection (OAP): Default-deny all Spark/Notebook egress; block rogue PyPI POST (0 bytes leaked)</text>
+    <text x="34" y="288" fill="#E2E8F0" font-size="12">• Managed Private Endpoints (MPE): Admin-approved PrivateLink tunnels to Azure SQL, Snowflake, &amp; ADLS Gen2</text>
+    <text x="34" y="308" fill="#E2E8F0" font-size="12">• Trusted Workspace Access (TWA): Resource-instance backbone bypass into firewall-locked ADLS Gen2 vaults</text>
+    <text x="34" y="330" fill="#34D399" font-size="12.5" font-weight="700">• Modeled 22-Workspace Sovereign NetSec TCO [synthetic_scenario_model]: $8,700/mo (-68.5% / Save $18,900/mo)</text>
+    <text x="34" y="352" fill="#A7F3D0" font-size="11.5">• Better Together: Use Databricks Classic VNet Injection for custom L7 DPI appliances + Fabric Private Link for BI/Agents</text>
+  </g>
+
+  <!-- Right Column: 5-Cloud Zero-Trust Network Security Matrix & Modeled Scenario S -->
+  <g transform="translate(656, 120)">
+    <rect x="0" y="0" width="588" height="390" rx="14" fill="url(#compCard20)" stroke="#A855F7" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#E9D5FF" font-size="15" font-weight="700">2. Five-Cloud Zero-Trust Network Security Matrix &amp; Scenario S (367ms)</text>
+
+    <!-- Table Header -->
+    <rect x="18" y="42" width="552" height="28" rx="6" fill="#334155"/>
+    <text x="28" y="60" fill="#F8FAFC" font-size="11.5" font-weight="700">Platform</text>
+    <text x="155" y="60" fill="#F8FAFC" font-size="11.5" font-weight="700">Inbound PrivateLink</text>
+    <text x="305" y="60" fill="#F8FAFC" font-size="11.5" font-weight="700">Outbound Egress Guard</text>
+    <text x="455" y="60" fill="#F8FAFC" font-size="11.5" font-weight="700">22-WS NetSec TCO*</text>
+
+    <!-- Row 1: Fabric -->
+    <rect x="18" y="74" width="552" height="34" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1"/>
+    <text x="28" y="95" fill="#6EE7B7" font-size="12" font-weight="700">Microsoft Fabric</text>
+    <text x="155" y="95" fill="#F8FAFC" font-size="11.5">Tenant + Workspace PL (F-SKU)</text>
+    <text x="305" y="95" fill="#6EE7B7" font-size="11.5" font-weight="700">OAP + MPE + TWA ($0 Tax)</text>
+    <text x="455" y="95" fill="#34D399" font-size="12" font-weight="700">$8,700 / mo</text>
+
+    <!-- Row 2: Databricks -->
+    <rect x="18" y="112" width="552" height="32" rx="6" fill="#1E293B"/>
+    <text x="28" y="132" fill="#FCA5A5" font-size="12" font-weight="700">Databricks</text>
+    <text x="155" y="132" fill="#E2E8F0" font-size="11.5">Front-End/Back-End PL (Enterprise)</text>
+    <text x="305" y="132" fill="#E2E8F0" font-size="11.5">Serverless NCC / Classic VNet</text>
+    <text x="455" y="132" fill="#FCA5A5" font-size="12" font-weight="700">$21,400 / mo</text>
+
+    <!-- Row 3: Snowflake -->
+    <rect x="18" y="148" width="552" height="32" rx="6" fill="#1E293B"/>
+    <text x="28" y="168" fill="#7DD3FC" font-size="12" font-weight="700">Snowflake</text>
+    <text x="155" y="168" fill="#FDE047" font-size="11.5">Business Critical Req. (~1.5x)</text>
+    <text x="305" y="168" fill="#E2E8F0" font-size="11.5">External Access + Outbound PL</text>
+    <text x="455" y="168" fill="#FDE047" font-size="12" font-weight="700">$27,600 / mo</text>
+
+    <!-- Row 4: GCP -->
+    <rect x="18" y="184" width="552" height="32" rx="6" fill="#1E293B"/>
+    <text x="28" y="204" fill="#FDBA74" font-size="12" font-weight="700">GCP BigQuery</text>
+    <text x="155" y="204" fill="#E2E8F0" font-size="11.5">Private Service Connect (PSC)</text>
+    <text x="305" y="204" fill="#E2E8F0" font-size="11.5">VPC Service Controls (VPC-SC)</text>
+    <text x="455" y="204" fill="#E2E8F0" font-size="12" font-weight="700">$19,200 / mo</text>
+
+    <!-- Row 5: AWS -->
+    <rect x="18" y="220" width="552" height="32" rx="6" fill="#1E293B"/>
+    <text x="28" y="240" fill="#FDE047" font-size="12" font-weight="700">AWS Lakehouse</text>
+    <text x="155" y="240" fill="#E2E8F0" font-size="11.5">AWS PrivateLink Interface EP</text>
+    <text x="305" y="240" fill="#E2E8F0" font-size="11.5">Customer VPC + Network Firewall</text>
+    <text x="455" y="240" fill="#E2E8F0" font-size="12" font-weight="700">$23,100 / mo</text>
+
+    <!-- Scenario S Trace Box -->
+    <rect x="18" y="262" width="552" height="114" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+    <text x="30" y="284" fill="#38BDF8" font-size="12.5" font-weight="700">Scenario S [synthetic_scenario_model]: Sovereign Wealth DORA/NIS2 Exfiltration Defense (367ms)</text>
+    <text x="30" y="304" fill="#E2E8F0" font-size="11.5">1. Workspace Private Link Verify (88ms) → 2. Managed VNet OAP Default-Deny Block (96ms, 0 Bytes Leaked)</text>
+    <text x="30" y="324" fill="#E2E8F0" font-size="11.5">3. Trusted Workspace Access Guardrail (98ms) → 4. Purview/1GB Free Fabric SQL Quarantine Commit (85ms)</text>
+    <text x="30" y="346" fill="#34D399" font-size="12" font-weight="700">Result: 14/14 Rogue PySpark Egress Calls Blocked | 0 Public Endpoints | Protect $4.20M EU DORA Fine</text>
+    <text x="30" y="366" fill="#94A3B8" font-size="10.5">*TCO values are deterministic [synthetic_scenario_model] for a 22-workspace sovereign wealth platform (F64 + Private Link endpoints).</text>
+  </g>
+
+  <!-- Bottom Full-Width Dual-Denominator Provenance & Governance Banner -->
+  <g transform="translate(36, 528)">
+    <rect x="0" y="0" width="1208" height="222" rx="14" fill="#0F172A" stroke="#64748B" stroke-width="1.5"/>
+    <text x="22" y="28" fill="#F8FAFC" font-size="15" font-weight="800">3. Strict Dual-Denominator Latency Accounting &amp; Four-Tier Data Provenance Audit (Round 12 Sealed Report)</text>
+
+    <!-- Denominator A Card -->
+    <rect x="22" y="42" width="570" height="84" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2"/>
+    <text x="36" y="64" fill="#38BDF8" font-size="13" font-weight="700">Denominator A: Routing Decision Matrix (`scenario_evaluation`, n = 92 Tasks)</text>
+    <text x="36" y="86" fill="#F8FAFC" font-size="12.5" font-weight="700">• Accuracy: 91 / 92 (98.91%) [measured_local_harness] | 1 Intentional Boundary Miss (DL-23)</text>
+    <text x="36" y="108" fill="#CBD5E1" font-size="11.5">• Mean Modeled Routing Latency: 486.0 ms [synthetic_scenario_model] (R11 n=88: 491.0ms | R10 n=84: 496.0ms | R3 n=56: 532.0ms)</text>
+
+    <!-- Denominator B Card -->
+    <rect x="614" y="42" width="572" height="84" rx="10" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+    <text x="628" y="64" fill="#6EE7B7" font-size="13" font-weight="700">Denominator B: Industry Ontology Closed-Loop (`ontology_simulations`, n = 19 Cases)</text>
+    <text x="628" y="86" fill="#F8FAFC" font-size="12.5" font-weight="700">• Mean Modeled Closed-Loop Latency: 511.0 ms (Range: 367–780 ms) [synthetic_scenario_model]</text>
+    <text x="628" y="108" fill="#CBD5E1" font-size="11.5">• Scenario S = 367 ms | Historical: R11 n=18 = 519.0ms | R10 n=17 = 527.0ms | R4 n=11 = 584.09ms | R3 n=10 = 596.0ms</text>
+
+    <!-- Four-Tier Provenance Strip -->
+    <rect x="22" y="138" width="1164" height="68" rx="8" fill="#090D16" stroke="#334155" stroke-width="1"/>
+    <text x="36" y="160" fill="#6EE7B7" font-size="11.5" font-weight="700">[measured_local_harness]</text>
+    <text x="200" y="160" fill="#CBD5E1" font-size="11.5">42/42 Python unit tests pass locally (0.082s); deterministic verifier over DL-01..DL-92 &amp; Scenarios A..S.</text>
+    <text x="36" y="180" fill="#38BDF8" font-size="11.5" font-weight="700">[vendor_published_spec_as_of_2026]</text>
+    <text x="260" y="180" fill="#CBD5E1" font-size="11.5">15 verified official doc URLs (as_of: 2026-11-08): Microsoft Learn Private Links / OAP / MPE / TWA, Databricks NCC, Snowflake PrivateLink, GCP VPC-SC.</text>
+    <text x="36" y="198" fill="#FBBF24" font-size="11.5" font-weight="700">[synthetic_scenario_model] &amp; [not_measured]</text>
+    <text x="310" y="198" fill="#94A3B8" font-size="11.5">All latencies (486.0ms, 511.0ms, 367ms), TCO ($8,700 vs $27,600/mo), and $4.20M DORA figures are modeled architecture simulations; live cloud stress tests = not_measured.</text>
+  </g>
+</svg>

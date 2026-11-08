@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-09-r11",
-  "generated_at": "2026-11-09T04:12:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-09-r12",
+  "generated_at": "2026-11-09T04:36:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 88,
-      "routing_matrix_mean_modeled_latency_ms": 491.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=88 routing & decision evaluation items (DL-01..DL-88, mean=491.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 18,
+      "routing_matrix_denominator_n": 92,
+      "routing_matrix_mean_modeled_latency_ms": 486.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=92 routing & decision evaluation items (DL-01..DL-92, mean=486.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 19,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -28,14 +28,19 @@
         417,
         415,
         399,
-        383
+        383,
+        367
       ],
       "ontology_simulations_range_ms": [
-        383,
+        367,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 519.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=18 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383]ms, range 383-780ms, mean=519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 511.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=19 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367]ms, range 367-780ms, mean=511.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r11_historical_denominators": {
+        "r11_routing_matrix_n88_mean_ms": 491.0,
+        "r11_ontology_simulations_n18_mean_ms": 519.0
+      },
       "r10_historical_denominators": {
         "r10_routing_matrix_n84_mean_ms": 496.0,
         "r10_ontology_simulations_n17_mean_ms": 527.0
@@ -70,8 +75,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=88 decision routing matrix evaluation (87/88 = 98.86%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=88 routing decision matrix tasks (DL-01..DL-88) with arithmetic mean modeled latency = 491.0ms; (2) n=18 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383]ms, range 383-780ms) with arithmetic mean modeled latency = 519.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=92 decision routing matrix evaluation (91/92 = 98.91%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=92 routing decision matrix tasks (DL-01..DL-92) with arithmetic mean modeled latency = 486.0ms; (2) n=19 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367]ms, range 367-780ms) with arithmetic mean modeled latency = 511.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -229,9 +234,23 @@
           "https://cloud.google.com/dataform/docs/overview"
         ],
         "as_of": "2026-11-08"
+      },
+      {
+        "id": "SPEC-FABRIC-PRIVATE-LINK-MANAGED-VNET-OAP",
+        "vendor": "Microsoft / Databricks / Snowflake / Google Cloud / AWS",
+        "claim": "Microsoft Fabric supports Tenant- and Workspace-Level Private Links for inbound isolation, Managed Virtual Network for Spark with Outbound Access Protection (OAP) and Managed Private Endpoints (MPE) for default-deny outbound exfiltration control, and Trusted Workspace Access (TWA) to firewall-enabled Azure Storage; Databricks provides Classic VNet Injection and Serverless Network Connectivity Configurations (NCC); Snowflake PrivateLink requires Business Critical edition (or higher); GCP VPC Service Controls (VPC-SC) and AWS PrivateLink / VPC Endpoints isolate cloud analytics perimeters.",
+        "official_url": "https://learn.microsoft.com/en-us/fabric/security/security-private-links-overview",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/security/workspace-outbound-access-protection",
+        "competitor_doc_urls": [
+          "https://learn.microsoft.com/en-us/fabric/security/security-managed-private-endpoints-overview",
+          "https://docs.databricks.com/en/security/network/serverless-network-security/index.html",
+          "https://docs.snowflake.com/en/user-guide/admin-security-privatelink",
+          "https://cloud.google.com/vpc-service-controls/docs/overview"
+        ],
+        "as_of": "2026-11-08"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=18 industry scenarios, mean=519.0ms), TCO calculator, and n=88 routing suite (mean=491.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=19 industry scenarios, mean=511.0ms), TCO calculator, and n=92 routing suite (mean=486.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -316,16 +335,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 88,
-    "passed_scenarios": 87,
+    "total_scenarios": 92,
+    "passed_scenarios": 91,
     "failed_scenarios": 1,
-    "accuracy_pct": 98.86,
-    "avg_latency_ms": 491.0,
-    "routing_matrix_denominator_n": 88,
-    "routing_matrix_mean_modeled_latency_ms": 491.0,
+    "accuracy_pct": 98.91,
+    "avg_latency_ms": 486.0,
+    "routing_matrix_denominator_n": 92,
+    "routing_matrix_mean_modeled_latency_ms": 486.0,
     "action_distribution": {
-      "Act automatically": 68,
-      "Confirm": 18,
+      "Act automatically": 70,
+      "Confirm": 20,
       "Send to a human": 2
     },
     "scenarios": [
@@ -1384,6 +1403,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 390
+      },
+      {
+        "id": "DL-89",
+        "category": "Architecture & Governance",
+        "question": "Isolate 22 sovereign deal-room workspaces from public internet ingress and block unauthorized PySpark data exfiltration without managing custom VNet subnets, NAT Gateways, or Azure Firewalls",
+        "expected": "Fabric Workspace-Level Private Link + Managed Virtual Network for Spark + Outbound Access Protection (OAP) + Managed Private Endpoints (MPE) + Trusted Workspace Access (TWA)",
+        "model_answer": "Fabric Workspace-Level Private Link + Managed Virtual Network for Spark + Outbound Access Protection (OAP) + Managed Private Endpoints (MPE) + Trusted Workspace Access (TWA)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 374
+      },
+      {
+        "id": "DL-90",
+        "category": "vs Databricks",
+        "question": "Compare Microsoft Fabric Managed VNet + Outbound Access Protection (OAP) + Trusted Workspace Access vs Databricks Classic VNet Injection (Customer Subnet/NAT/Firewall) & Serverless NCC",
+        "expected": "Use Databricks Classic VNet Injection when custom UDR appliances or third-party L7 DPI firewalls are mandated; use Fabric Managed VNet + OAP + MPE for zero-NetOps default-deny exfiltration defense",
+        "model_answer": "Use Databricks Classic VNet Injection when custom UDR appliances or third-party L7 DPI firewalls are mandated; use Fabric Managed VNet + OAP + MPE for zero-NetOps default-deny exfiltration defense",
+        "task_type": "choice",
+        "confidence": 0.97,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 378
+      },
+      {
+        "id": "DL-91",
+        "category": "vs Snowflake",
+        "question": "Compare Fabric Workspace-Level Private Link + Managed Private Endpoints (Included on F-SKUs) vs Snowflake PrivateLink (Requires Business Critical Edition ~1.5x Credit Multiplier) vs GCP VPC-SC & AWS PrivateLink",
+        "expected": "Avoid Snowflake Business Critical 1.5x tier surcharge for BI/Agent workloads by terminating Private Link in Fabric F-SKU workspaces and connecting to Snowflake/ADLS via Managed Private Endpoints & Trusted Workspace Access",
+        "model_answer": "Avoid Snowflake Business Critical 1.5x tier surcharge for BI/Agent workloads by terminating Private Link in Fabric F-SKU workspaces and connecting to Snowflake/ADLS via Managed Private Endpoints & Trusted Workspace Access",
+        "task_type": "score",
+        "confidence": 0.96,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 375
+      },
+      {
+        "id": "DL-92",
+        "category": "Architecture & Governance",
+        "question": "Malicious Python wheel in quantitative Spark notebook attempts unauthorized HTTPS POST of sovereign portfolio weights to an external IP under EU DORA/NIS2 mandate",
+        "expected": "Fabric Workspace Private Link Verify (88ms) + Managed VNet OAP Default-Deny Block (96ms, 0 Bytes Leaked) + Trusted Workspace Access Guardrail (98ms) + Purview/SQL Quarantine Commit (85ms = 367ms E2E, Protect $4.20M DORA Fine)",
+        "model_answer": "Fabric Workspace Private Link Verify (88ms) + Managed VNet OAP Default-Deny Block (96ms, 0 Bytes Leaked) + Trusted Workspace Access Guardrail (98ms) + Purview/SQL Quarantine Commit (85ms = 367ms E2E, Protect $4.20M DORA Fine)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 377
       }
     ]
   },
@@ -1447,7 +1514,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 18,
+    "total_ontology_simulations": 19,
     "simulation_latencies_ms": [
       780,
       640,
@@ -1466,9 +1533,11 @@
       417,
       415,
       399,
-      383
+      383,
+      367
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 519.0,
+    "ontology_simulation_mean_modeled_latency_ms": 511.0,
+    "r11_18_simulation_mean_modeled_latency_ms": 519.0,
     "r10_17_simulation_mean_modeled_latency_ms": 527.0,
     "r9_16_simulation_mean_modeled_latency_ms": 535.0,
     "r8_15_simulation_mean_modeled_latency_ms": 543.0,
@@ -2288,6 +2357,77 @@
         "projected_savings_usd": 2120000,
         "end_to_end_latency_ms": 383,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Git Integration (PBIP/TMDL) + Variable Libraries + Terraform Provider microsoft/fabric"
+      }
+    },
+    "sovereign_wealth_private_link_managed_vnet_exfil_defense": {
+      "scenario_id": "sovereign_wealth_private_link_managed_vnet_exfil_defense",
+      "title": "Sovereign Wealth 22-Workspace Zero-Trust Network Isolation & Exfiltration Defense (Fabric Workspace Private Link + Managed VNet + OAP + TWA vs. VNet Injection / Business Critical PrivateLink)",
+      "provenance_type": "synthetic_scenario_model",
+      "telemetry": {
+        "timestamp": "2026-11-09T04:36:00Z",
+        "sovereign_regulated_workspaces": 22,
+        "public_internet_ingress_exposure_endpoints": 0,
+        "unauthorized_outbound_exfiltration_attempts_blocked": 14,
+        "workspace_private_link_ingress_verify_ms": 88,
+        "managed_vnet_oap_mpe_inspection_ms": 96,
+        "trusted_workspace_access_adls_guardrail_ms": 98,
+        "purview_netsec_quarantine_sql_commit_ms": 85,
+        "customer_managed_nat_firewall_surcharge_usd": 0,
+        "legacy_vnet_firewall_bc_monthly_netsec_tco_usd": 27600,
+        "fabric_managed_vnet_pl_monthly_netsec_tco_usd": 8700
+      },
+      "ontology_graph_traversal": {
+        "root_entity": "SecEvent-PySpark-Unauthorized-Egress-Attempt-2026Q4",
+        "hops": 6,
+        "affected_entities": [
+          "WorkspacePrivateLink: SovereignAlphaDealRoom-PL (0 Public Ingress)",
+          "ManagedVNetSpark: OutboundAccessProtection-OAP (Default-Deny Egress)",
+          "ManagedPrivateEndpoint: Approved-MPE-AzureSQL-Snowflake-Core",
+          "TrustedWorkspaceAccess: Firewall-Enabled-ADLS-Gen2-TreasuryVault",
+          "Rayfin-TS-WriteBack: SecOps-Quarantine-Audit-Ledger"
+        ],
+        "root_cause": "Third-party Python wheel in quantitative notebook attempted unauthorized outbound HTTPS POST of sovereign portfolio weights to an external IP; intercepted at 0 bytes by Fabric Outbound Access Protection (OAP)"
+      },
+      "multi_agent_plan": {
+        "isolated_sovereign_workspaces": 22,
+        "exfiltration_bytes_leaked": 0,
+        "monthly_netsec_tco_saved_usd": 18900,
+        "netsec_tco_savings_pct": 68.5,
+        "actions": [
+          {
+            "step": 1,
+            "agent": "Fabric Workspace-Level Private Link & Inbound Isolation Verifier",
+            "operation": "Enforce dedicated Azure Private Link ingress per sovereign deal-room workspace while blocking all public internet access (88ms)",
+            "impact_metric": "0 public endpoints across 22 sovereign workspaces; no Snowflake Business Critical 1.5x credit tier upgrade required"
+          },
+          {
+            "step": 2,
+            "agent": "Fabric Managed VNet Spark + Outbound Access Protection (OAP) Guard",
+            "operation": "Block unauthorized outbound PySpark socket/HTTP calls by default while permitting only admin-approved Managed Private Endpoints (MPE) to Azure SQL & Snowflake (96ms)",
+            "impact_metric": "14/14 exfiltration attempts blocked (0 bytes leaked); $0 customer-managed NAT Gateway / Azure Firewall appliance tax"
+          },
+          {
+            "step": 3,
+            "agent": "Trusted Workspace Access (TWA) & Purview SecOps Quarantine Commit",
+            "operation": "Verify resource-instance Trusted Workspace Access to firewall-locked ADLS Gen2 + Foundry IQ DORA/NIS2 policy (98ms) and commit quarantine audit to 1GB Free Fabric SQL (85ms)",
+            "impact_metric": "367ms E2E zero-trust containment; -$18,900/mo (-68.5%) NetOps/SecOps TCO; $4.20M DORA/NIS2 regulatory penalty avoided"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "FIN-DORA-NIS2-ZERO-TRUST-NETSEC-SOP-019",
+        "hard_constraint": "Never allow outbound Spark/Notebook traffic to unapproved internet domains or open public storage firewalls for cross-workspace shortcuts",
+        "proposed_change": "Enforce Workspace Private Link + Outbound Access Protection (OAP) + Managed Private Endpoints (MPE) + Trusted Workspace Access (TWA)",
+        "unapproved_outbound_internet_egress_blocked": true,
+        "public_storage_firewall_bypass_blocked": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 4200000,
+        "end_to_end_latency_ms": 367,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Workspace Private Link + Managed VNet OAP/MPE + Trusted Workspace Access + 1GB Free Fabric SQL"
       }
     }
   },
