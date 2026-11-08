@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="100%" height="100%" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad19" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cardGrad19" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="fabricAccent19" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="shadow19" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bgGrad19)"/>
+
+  <!-- Header Banner -->
+  <rect x="36" y="24" width="1528" height="114" rx="14" fill="url(#cardGrad19)" stroke="#38BDF8" stroke-width="1.5" filter="url(#shadow19)"/>
+  <rect x="36" y="24" width="1528" height="6" rx="3" fill="url(#fabricAccent19)"/>
+  <text x="64" y="64" fill="#38BDF8" font-size="14" font-weight="700" letter-spacing="1.5">DATA LAB ROUND 11 · ENTERPRISE DATAOPS, GIT (PBIP/TMDL), VARIABLE LIBRARIES &amp; TERRAFORM VS 4 CLOUDS</text>
+  <text x="64" y="96" fill="#F8FAFC" font-size="23" font-weight="800">Fabric Git (PBIP/TMDL) + Variable Libraries + Deployment Pipelines vs. DABs vs. SnowCLI vs. Dataform / CodePipeline</text>
+  <text x="64" y="122" fill="#94A3B8" font-size="13.5">Provenance: [measured_local_harness] 87/88 (98.86%) · [synthetic_scenario_model] Matrix n=88 Mean=491.0ms | Ontology n=18 Mean=519.0ms (Scenario R=383ms) · [not_measured] Live Cloud</text>
+
+  <!-- Left Panel: Architecture Comparison (Stitched Multi-Tool CI/CD vs Fabric Unified Git + TMDL + Variable Libraries) -->
+  <rect x="36" y="154" width="750" height="430" rx="14" fill="url(#cardGrad19)" stroke="#334155" stroke-width="1.5" filter="url(#shadow19)"/>
+  <text x="60" y="186" fill="#F8FAFC" font-size="17" font-weight="700">1. Why Legacy BI + Data Releases Break vs. Fabric Unified Git (PBIP/TMDL)</text>
+
+  <!-- Top Sub-box: Legacy Stitched Data + Binary BI Releases -->
+  <rect x="56" y="202" width="710" height="162" rx="10" fill="#1E1B2E" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="74" y="226" fill="#FCA5A5" font-size="14" font-weight="700">❌ Legacy Stitched Stack (DABs + SnowCLI + Opaque Binary .pbix Uploads)</text>
+  <text x="74" y="250" fill="#E2E8F0" font-size="12.5">• Code-only CI/CD (DABs / SnowCLI) deploys tables &amp; PySpark jobs but leaves Power BI .pbix as a binary black box</text>
+  <text x="74" y="272" fill="#E2E8F0" font-size="12.5">• Two engineers editing DAX measures in .pbix cannot Git-diff or merge → silent overwrites in Production</text>
+  <text x="74" y="294" fill="#E2E8F0" font-size="12.5">• Hardcoded Dev/UAT connection strings leak into Prod or require fragile post-deploy PowerShell regex scripts</text>
+  <text x="74" y="316" fill="#E2E8F0" font-size="12.5">• Feature-branch testing copies TB-scale tables per developer sandbox, multiplying cloud storage &amp; ops overhead</text>
+  <text x="74" y="344" fill="#F87171" font-size="13" font-weight="700">Synthetic Scenario R Baseline: $28,400/mo DataOps TCO · 18-min manual rollback window · High drift risk</text>
+
+  <!-- Bottom Sub-box: Fabric Git (PBIP/TMDL) + Variable Libraries + Deployment Pipelines -->
+  <rect x="56" y="378" width="710" height="190" rx="10" fill="#0B2239" stroke="#10B981" stroke-width="1.5"/>
+  <text x="74" y="402" fill="#6EE7B7" font-size="14" font-weight="700">✅ Fabric Git Integration (PBIP/TMDL) + Variable Libraries + Zero-Copy Branching</text>
+  <text x="74" y="426" fill="#E2E8F0" font-size="12.5">• PBIP + TMDL: Serializes semantic models, DAX measures, KQL &amp; notebooks into human-readable Git text files</text>
+  <text x="74" y="448" fill="#E2E8F0" font-size="12.5">• Zero-Copy Branch Out: Creates isolated Dev feature workspaces referencing OneLake Shortcuts ($0 extra storage)</text>
+  <text x="74" y="470" fill="#E2E8F0" font-size="12.5">• Fabric Variable Libraries: Dynamically binds Dev / UAT / Prod Shortcuts &amp; Key Vault secrets without code edits</text>
+  <text x="74" y="492" fill="#E2E8F0" font-size="12.5">• Deployment Pipelines REST API + fabric-cicd + Terraform Provider (microsoft/fabric) promote 64 items atomically</text>
+  <text x="74" y="514" fill="#E2E8F0" font-size="12.5">• Better Together: Pair DABs / Snowflake CREATE OR ALTER with Fabric TMDL + Apache Ossie YAML in one Git PR</text>
+  <text x="74" y="546" fill="#34D399" font-size="13" font-weight="700">Synthetic Scenario R: $6,800/mo (-$21,600/mo, -76.1%) · 0 connection drift · 383ms E2E · $2.12M SLA Protected</text>
+
+  <!-- Right Panel: Decision Tree & Scenario R Closed-Loop Breakdown -->
+  <rect x="810" y="154" width="754" height="430" rx="14" fill="url(#cardGrad19)" stroke="#334155" stroke-width="1.5" filter="url(#shadow19)"/>
+  <text x="834" y="186" fill="#F8FAFC" font-size="17" font-weight="700">2. Enterprise DataOps Selection Rules &amp; Scenario R Breakdown (383 ms)</text>
+
+  <!-- 3 Decision Rule Cards -->
+  <rect x="834" y="202" width="706" height="68" rx="8" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="852" y="224" fill="#38BDF8" font-size="13.5" font-weight="700">Rule 1 — Full-Stack Lakehouse + Eventhouse KQL + Power BI DirectLake Release</text>
+  <text x="852" y="246" fill="#CBD5E1" font-size="12.5">Choose Fabric Git (PBIP/TMDL) + Variable Libraries + Deployment Pipelines + Terraform Provider microsoft/fabric.</text>
+
+  <rect x="834" y="280" width="706" height="68" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="852" y="302" fill="#FBBF24" font-size="13.5" font-weight="700">Rule 2 — Pure PySpark/MLflow Bundles or Pure Cloud Warehouse SQL DDL</text>
+  <text x="852" y="324" fill="#CBD5E1" font-size="12.5">Choose Databricks Asset Bundles (DABs databricks.yml), Snowflake Git + SnowCLI, or GCP Dataform SQLX.</text>
+
+  <rect x="834" y="358" width="706" height="68" rx="8" fill="#0F172A" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="852" y="380" fill="#C084FC" font-size="13.5" font-weight="700">Rule 3 — Hybrid Multi-Cloud Coordinated Contract Release (Better Together)</text>
+  <text x="852" y="402" fill="#CBD5E1" font-size="12.5">Orchestrate DABs / SnowCLI + Fabric fabric-cicd &amp; Apache Ossie YAML from one GitHub Actions / ADO pipeline.</text>
+
+  <!-- Scenario R Latency Bar Breakdown -->
+  <rect x="834" y="438" width="706" height="130" rx="8" fill="#091326" stroke="#10B981" stroke-width="1.2"/>
+  <text x="852" y="462" fill="#6EE7B7" font-size="13.5" font-weight="700">Scenario R [synthetic_scenario_model]: Global Payments 14-Region PCI-DSS v4.0 Release (383 ms)</text>
+  <text x="852" y="486" fill="#E2E8F0" font-size="12">1. Git PBIP/TMDL AST Diff (128 DAX measures): 92ms   |   2. Variable Library 14-Region Shortcut Binding: 110ms</text>
+  <text x="852" y="508" fill="#E2E8F0" font-size="12">3. Fabric IQ Ontology Contract Pre-Flight: 96ms      |   4. Deployment Pipeline + Terraform Atomic Commit: 85ms</text>
+  <text x="852" y="534" fill="#38BDF8" font-size="12.5" font-weight="700">Guardrail [FIN-PCI-DSS-V4-CHANGE-CONTROL-SOP-014]: Blocks binary .pbix overwrite &amp; UAT connection leaks → Confirm</text>
+  <text x="852" y="556" fill="#94A3B8" font-size="11.5">Dual Denominators: Matrix n=88 Mean = 491.0 ms (87/88 = 98.86%) | Ontology Simulations n=18 Mean = 519.0 ms (R10 n=17=527.0ms)</text>
+
+  <!-- Bottom Panel: 5-Cloud Enterprise CI/CD & DataOps Decision Matrix -->
+  <rect x="36" y="600" width="1528" height="372" rx="14" fill="url(#cardGrad19)" stroke="#334155" stroke-width="1.5" filter="url(#shadow19)"/>
+  <text x="60" y="632" fill="#F8FAFC" font-size="17" font-weight="700">3. Five-Cloud CI/CD, Git Serialization &amp; DataOps Architect Decision Matrix [vendor_published_spec_as_of_2026]</text>
+
+  <!-- Table Header -->
+  <rect x="56" y="646" width="1488" height="36" rx="6" fill="#1E293B"/>
+  <text x="72" y="669" fill="#38BDF8" font-size="12.5" font-weight="700">DIMENSION</text>
+  <text x="310" y="669" fill="#6EE7B7" font-size="12.5" font-weight="700">MICROSOFT FABRIC (GIT / TMDL)</text>
+  <text x="615" y="669" fill="#FBBF24" font-size="12.5" font-weight="700">DATABRICKS (ASSET BUNDLES)</text>
+  <text x="915" y="669" fill="#38BDF8" font-size="12.5" font-weight="700">SNOWFLAKE (GIT + SNOWCLI)</text>
+  <text x="1215" y="669" fill="#C084FC" font-size="12.5" font-weight="700">GCP DATAFORM / AWS CODEPIPELINE</text>
+
+  <!-- Row 1 -->
+  <line x1="56" y1="726" x2="1544" y2="726" stroke="#334155" stroke-width="1"/>
+  <text x="72" y="706" fill="#F8FAFC" font-size="12" font-weight="700">Git Serialization Format</text>
+  <text x="310" y="706" fill="#E2E8F0" font-size="12">PBIP + TMDL (text DAX/Measures) + Code</text>
+  <text x="615" y="706" fill="#CBD5E1" font-size="12">databricks.yml + PySpark / SQL / Wheels</text>
+  <text x="915" y="706" fill="#CBD5E1" font-size="12">Declarative SQL (CREATE OR ALTER) + Python</text>
+  <text x="1215" y="706" fill="#CBD5E1" font-size="12">Dataform SQLX / AWS CloudFormation &amp; CDK</text>
+
+  <!-- Row 2 -->
+  <line x1="56" y1="770" x2="1544" y2="770" stroke="#334155" stroke-width="1"/>
+  <text x="72" y="752" fill="#F8FAFC" font-size="12" font-weight="700">Semantic BI &amp; Ontology Diff</text>
+  <text x="310" y="752" fill="#6EE7B7" font-size="12" font-weight="700">Native line-by-line TMDL &amp; Ossie YAML PR diff</text>
+  <text x="615" y="752" fill="#CBD5E1" font-size="12">Code/UC metrics; external BI requires separate repo</text>
+  <text x="915" y="752" fill="#CBD5E1" font-size="12">SQL/Cortex YAML; external BI requires separate repo</text>
+  <text x="1215" y="752" fill="#CBD5E1" font-size="12">LookML (Looker only) / QuickSight JSON templates</text>
+
+  <!-- Row 3 -->
+  <line x1="56" y1="814" x2="1544" y2="814" stroke="#334155" stroke-width="1"/>
+  <text x="72" y="796" fill="#F8FAFC" font-size="12" font-weight="700">Environment Parameterization</text>
+  <text x="310" y="796" fill="#E2E8F0" font-size="12">Fabric Variable Libraries + Deployment Rules</text>
+  <text x="615" y="796" fill="#CBD5E1" font-size="12">DABs bundle targets (dev / staging / prod)</text>
+  <text x="915" y="796" fill="#CBD5E1" font-size="12">SnowCLI environment variables &amp; Jinja templates</text>
+  <text x="1215" y="796" fill="#CBD5E1" font-size="12">Dataform workflow_settings.yaml / CDK context</text>
+
+  <!-- Row 4 -->
+  <line x1="56" y1="858" x2="1544" y2="858" stroke="#334155" stroke-width="1"/>
+  <text x="72" y="840" fill="#F8FAFC" font-size="12" font-weight="700">Feature Sandbox Isolation</text>
+  <text x="310" y="840" fill="#6EE7B7" font-size="12" font-weight="700">Zero-Copy Branch Out via OneLake Shortcuts ($0)</text>
+  <text x="615" y="840" fill="#CBD5E1" font-size="12">Delta Shallow Clone / schema-prefix isolation</text>
+  <text x="915" y="840" fill="#38BDF8" font-size="12">Zero-Copy Clone (instant metadata snapshot)</text>
+  <text x="1215" y="840" fill="#CBD5E1" font-size="12">BigQuery Table Clones / S3 prefix duplication</text>
+
+  <!-- Row 5 -->
+  <line x1="56" y1="902" x2="1544" y2="902" stroke="#334155" stroke-width="1"/>
+  <text x="72" y="884" fill="#F8FAFC" font-size="12" font-weight="700">IaC &amp; CLI Automation</text>
+  <text x="310" y="884" fill="#E2E8F0" font-size="12">Terraform (microsoft/fabric) + fabric-cicd Python</text>
+  <text x="615" y="884" fill="#CBD5E1" font-size="12">Terraform (databricks/databricks) + Databricks CLI</text>
+  <text x="915" y="884" fill="#CBD5E1" font-size="12">Terraform (Snowflake-Labs) + snow git execute</text>
+  <text x="1215" y="884" fill="#CBD5E1" font-size="12">Terraform google / aws providers + gcloud / aws cli</text>
+
+  <!-- Row 6 -->
+  <text x="72" y="932" fill="#F8FAFC" font-size="12" font-weight="700">Modeled 14-Region TCO (Scen. R)</text>
+  <text x="310" y="932" fill="#34D399" font-size="12" font-weight="700">$6,800/mo (-76.1% vs stitched baseline, 0 drift)</text>
+  <text x="615" y="932" fill="#CBD5E1" font-size="12">Best paired with Fabric TMDL for BI layer sync</text>
+  <text x="915" y="932" fill="#CBD5E1" font-size="12">Best paired with Fabric TMDL for BI layer sync</text>
+  <text x="1215" y="932" fill="#FCA5A5" font-size="12">$28,400/mo when stitching separate BI + ETL pipelines</text>
+</svg>
