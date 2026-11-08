@@ -14,7 +14,7 @@
 - **Daily breakthroughs one-pager SVG**: [`assets/34-cycle-404-daily-breakthroughs.svg`](assets/34-cycle-404-daily-breakthroughs.svg)
 - **Evidence payload + reproducible CSV/JSON**: [`evidence/cycle-404-benchmark.json`](evidence/cycle-404-benchmark.json)
 - **Monograph addendum**: [`docs/full-monograph-cycle-404.md`](docs/full-monograph-cycle-404.md) / [`docs/full-monograph-cycle-404.en.md`](docs/full-monograph-cycle-404.en.md)
-- **Selection FAQ (ZH/EN)**: [`semantic-cache-poisoning-guard-selection-faq.md`](semantic-cache-poisoning-guard-selection-faq.md) / [`semantic-cache-poisoning-guard-selection-faq.en.md`](semantic-cache-poisoning-guard-selection-faq.en.md)
+- **Selection FAQ (ZH/EN)**: [`agent-state-checkpoint-selection-faq.md`](agent-state-checkpoint-selection-faq.md) / [`agent-state-checkpoint-selection-faq.en.md`](agent-state-checkpoint-selection-faq.en.md)
 
 ---
 
@@ -77,7 +77,6 @@ In the 5-step Azure Agent Infra Playbook (`Initial Screening → Discovery → D
 | **Credential Hygiene** | Zero raw LLM API keys or database connection strings inside sandbox env | `OPENAI_BASE_URL` points to internal AI Gateway (`Keyless Pod`) | `[ ]` |
 | **Token Budget Guard** | Per-Agent / Per-Team TPM & Daily USD hard circuit breaker active at gateway | Automatic `HTTP 429` before runaway loop exhausts subscription quota | `[ ]` |
 | **State & Retention** | Durable checkpointer (`HorizonDB + PgBouncer` or `Cosmos DB`) + 30-day TTL | PgBouncer handoff `~5ms`; 30-day ZSTD hot retention `< 128 TB` | `[ ]` |
-
 
 
 

@@ -51,8 +51,8 @@
 - 一图流 SVG：[`assets/34-cycle-404-daily-breakthroughs.svg`](assets/34-cycle-404-daily-breakthroughs.svg)
 - 专著增补（中文）：[`docs/full-monograph-cycle-404.md`](docs/full-monograph-cycle-404.md)
 - 专著增补（英文）：[`docs/full-monograph-cycle-404.en.md`](docs/full-monograph-cycle-404.en.md)
-- 选型 FAQ（中文）：[`semantic-cache-poisoning-guard-selection-faq.md`](semantic-cache-poisoning-guard-selection-faq.md)
-- 选型 FAQ（英文）：[`semantic-cache-poisoning-guard-selection-faq.en.md`](semantic-cache-poisoning-guard-selection-faq.en.md)
+- 选型 FAQ（中文）：[`agent-state-checkpoint-selection-faq.md`](agent-state-checkpoint-selection-faq.md)
+- 选型 FAQ（英文）：[`agent-state-checkpoint-selection-faq.en.md`](agent-state-checkpoint-selection-faq.en.md)
 - 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 - 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 
@@ -61,8 +61,8 @@
 ## 五、验证命令（发布门禁）
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_396_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_396_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_404_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_404_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,11 +71,10 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 六、实现与运行脚本
 
-- 生成管线：[`simulator/cycle_396_pipeline.py`](simulator/cycle_396_pipeline.py)
+- 生成管线：[`simulator/cycle_404_pipeline.py`](simulator/cycle_404_pipeline.py)
 - 运行时测算器：[`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - 测试集：[`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - 现场执行手册：[`workshop-runbook.md`](workshop-runbook.md)
-
 
 
 

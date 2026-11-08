@@ -20,4 +20,4 @@ This addendum captures the 2026 official release trajectory:
 - Runtime governance: APIM MCP/A2A telemetry and content-safety controls become mandatory L4 admission constraints.
 - Cost/throughput: E2B branch keeps stronger rps-per-cluster while absorbing explicit policy-governance overhead in TCO scoring.
 
-Summary 434: In production architecture terms, platform hard boundaries and cache-guard-gated gateway paths are now first-class primitives for large-scale autonomous workloads.
+Summary 434: In production architecture terms, platform hard boundaries and checkpoint-fenced gateway paths are now first-class primitives for large-scale autonomous workloads.

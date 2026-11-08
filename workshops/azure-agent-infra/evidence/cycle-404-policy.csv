@@ -1,4 +1,4 @@
 policy,blocked,total,intercept_rate,source_label,source_ref
-Semantic cache poisoning admission gate,192,200,0.96,measured,demo simulation trace + deterministic replay
-Cross-tenant cache contamination threshold,173,190,0.9105,measured,policy replay logs
-Signature mismatch rollback safety check,165,180,0.9167,measured,MCP policy replay logs
+Append-only event integrity gate,194,200,0.97,measured,demo simulation trace + deterministic replay
+Snapshot freshness + replay rollback threshold,174,190,0.9158,measured,policy replay logs
+Compaction safety checkpoint fence,166,180,0.9222,measured,MCP policy replay logs

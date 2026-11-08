@@ -136,22 +136,22 @@ def build_dataset() -> dict:
 
     policy_rows = [
         PolicyRow(
-            policy="Semantic cache poisoning admission gate",
-            blocked=192,
+            policy="Append-only event integrity gate",
+            blocked=194,
             total=200,
             source_label="measured",
             source_ref="demo simulation trace + deterministic replay",
         ),
         PolicyRow(
-            policy="Cross-tenant cache contamination threshold",
-            blocked=173,
+            policy="Snapshot freshness + replay rollback threshold",
+            blocked=174,
             total=190,
             source_label="measured",
             source_ref="policy replay logs",
         ),
         PolicyRow(
-            policy="Signature mismatch rollback safety check",
-            blocked=165,
+            policy="Compaction safety checkpoint fence",
+            blocked=166,
             total=180,
             source_label="measured",
             source_ref="MCP policy replay logs",
@@ -514,14 +514,14 @@ def build_dataset() -> dict:
             {
                 "scenario": "Financial zero-trust execution",
                 "best_fit": "Kata/Firecracker isolation + private networking + deterministic policy audit",
-                "not_for": "No tenant partition / no signature audit / opaque cache path",
+                "not_for": "No checkpoint fence / no replay audit / opaque state recovery path",
             },
         ],
         "decision_tree": [
-            "Need restore under 150ms at 10K+ concurrency -> E2B Firecracker path.",
-            "Need managed low-ops untrusted code execution -> ACA Dynamic Sessions.",
-            "Need long-running stateful workspace with pause/resume -> ACA Sandboxes/AKS Kata.",
-            "Need strict multi-tenant governance and enterprise tool policy -> APIM + AKSClaw.",
+            "Need complete replay/audit lineage with strict forensics -> append-only event log baseline.",
+            "Need low storage overhead with bounded restore SLO -> snapshot + compaction baseline.",
+            "Need long-running stateful workspace with pause/resume -> combine append-only write-ahead log + periodic snapshots.",
+            "Need strict multi-tenant governance and enterprise tool policy -> APIM + AKSClaw + checkpoint fences.",
         ],
         "roi_model": {
             "baseline_manual_hours_per_week": 1200,
@@ -549,8 +549,8 @@ def build_dataset() -> dict:
             },
             {
                 "scenario": "Financial Zero-Trust",
-                "question_task": "Need deterministic semantic-cache poisoning guard + hard isolation boundary?",
-                "model_answer": "Select tenant-partition cache + signature SLO gates + token budget policy",
+                "question_task": "Need deterministic replay with immutable audit + hard isolation boundary?",
+                "model_answer": "Select append-only event log with signed checkpoints + compaction fence policy",
                 "action": "Confirm",
                 "passed": True,
                 "source_label": "measured",
@@ -566,14 +566,14 @@ def build_dataset() -> dict:
         ],
         "robustness_checks": [
             {
-                "question_answer": "Runtime choice score (Coding Sandbox)",
+                "question_answer": "Checkpoint strategy score (Coding Sandbox)",
                 "original": 92.0,
                 "perturbed": 90.7,
                 "change_pts": -1.3,
                 "source_label": "synthetic",
             },
             {
-                "question_answer": "Gateway policy confidence (SaaS tenancy)",
+                "question_answer": "Replay audit confidence (SaaS tenancy)",
                 "original": 94.0,
                 "perturbed": 93.4,
                 "change_pts": -0.6,
@@ -616,10 +616,10 @@ def build_dataset() -> dict:
         ],
         "five_step_playbook": [
             "Screening: classify workload by isolation, state, compliance, and concurrency.",
-            "Design: choose runtime + gateway + state plane with explicit SLO and trust boundary.",
-            "Pilot: run benchmark harness for cold/hot start, throughput, MCP tool authorization, and cost.",
-            "Harden: enforce identity, cache-poisoning gates, MCP/A2A controls, and observability contracts.",
-            "Scale: rollout with cache-guard policy, chaos drills, and ROI review loop.",
+            "Design: choose append-only versus snapshot+compaction with explicit RPO/RTO and trust boundary.",
+            "Pilot: run benchmark harness for cold/hot restore, throughput, checkpoint replay, and cost.",
+            "Harden: enforce identity, checkpoint fences, MCP/A2A controls, and observability contracts.",
+            "Scale: rollout with compaction policy, chaos drills, and ROI review loop.",
         ],
     }
 
@@ -660,12 +660,12 @@ def render_cards(payload: dict, english: bool) -> str:
     max_change = max(r["change_pts"] for r in robustness)
 
     overview_head = (
-        f"Median latency holds at {med_p50}ms p50 / {med_p95}ms p95 with cache-guard-gated sandbox routing."
+        f"Median latency holds at {med_p50}ms p50 / {med_p95}ms p95 with checkpoint-fenced sandbox routing."
         if english
         else f"在策略门控沙箱路由下，中位延迟稳定在 p50 {med_p50}ms / p95 {med_p95}ms。"
     )
     deep_dive_head = (
-        "Idempotency control chain keeps confidence above 91% and escalates low-margin decisions."
+        "Checkpoint governance chain keeps confidence above 91% and escalates low-margin decisions."
         if english
         else "零信任策略链将置信度维持在 91% 以上，并对低裕度决策自动升级。"
     )
@@ -866,7 +866,7 @@ ul{{margin:8px 0 0 18px;padding:0}}
 <article class="card">
   <div class="eyebrow">2 / 7 · {"SCENARIO: MULTI-TENANT GATEWAY FABRIC" if english else "场景：多租户网关与沙箱织网"}</div>
   <h2>{deep_dive_head}</h2>
-  <div class="quote">{"Input quote: \"Tenant requires MCP/A2A governance, semantic-cache guard rollout, and warm restore under 200ms for coding flows.\"" if english else "输入引用：\"租户需要 MCP/A2A 治理、语义缓存防护发布与编码流 200ms 内热恢复。\""}</div>
+  <div class="quote">{"Input quote: \"Tenant requires MCP/A2A governance, append-only replay audit, and warm restore under 200ms for coding flows.\"" if english else "输入引用：\"租户需要 MCP/A2A 治理、追加日志回放审计与编码流 200ms 内热恢复。\""}</div>
   {policy_cards_html}
   <div class="footer"><span>{title}</span><span>2 / 7</span></div>
 </article>
@@ -920,7 +920,7 @@ ul{{margin:8px 0 0 18px;padding:0}}
   </div>
   <section class="readiness">
     <strong>{"Readiness / License / Provenance" if english else "就绪度 / 许可 / 溯源"}</strong><br>
-    {"Readiness: production candidate with cache-guard-gated rollout and human fallback." if english else "就绪度：具备缓存防护门控与人工兜底的生产候选方案。"}<br>
+    {"Readiness: production candidate with checkpoint-fenced rollout and human fallback." if english else "就绪度：具备检查点门控与人工兜底的生产候选方案。"}<br>
     {"License: repository-owned simulation artifacts; no external script/font dependency." if english else "许可：仓库自有仿真产物，无外部脚本与字体依赖。"}<br>
     {"Provenance: fetched " + fetched_date + ", labels " + labels + "." if english else "溯源：抓取日期 " + fetched_date + "，标签 " + labels + "。"}
   </section>
@@ -958,7 +958,7 @@ def render_svg(payload: dict) -> str:
 <text x="72" y="474" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Throughput p50/p95:</text>
 <text x="72" y="508" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Model routing 1680/1510 RPS · MCP 640/560 RPS · A2A 460/400 RPS</text>
 <text x="72" y="548" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Policy interception:</text>
-<text x="72" y="582" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Cache guard 96.0% · signature pass 91.1% · MCP/content-safety 91.7%</text>
+<text x="72" y="582" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">Append-only gate 97.0% · replay fence 91.6% · compaction safety 92.2%</text>
 
 <rect x="816" y="320" width="736" height="290" rx="14" fill="#0f172a" stroke="#334155"/>
 <text x="840" y="360" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Cross-cloud competitor matrix (p50 cold start)</text>
@@ -1170,7 +1170,7 @@ This addendum captures the 2026 official release trajectory:
 - Runtime governance: APIM MCP/A2A telemetry and content-safety controls become mandatory L4 admission constraints.
 - Cost/throughput: E2B branch keeps stronger rps-per-cluster while absorbing explicit policy-governance overhead in TCO scoring.
 
-Summary 434: In production architecture terms, platform hard boundaries and cache-guard-gated gateway paths are now first-class primitives for large-scale autonomous workloads.
+Summary 434: In production architecture terms, platform hard boundaries and checkpoint-fenced gateway paths are now first-class primitives for large-scale autonomous workloads.
 """
     return f"""# Cycle #404 专著增补（云原生 Agent Infra）
 
@@ -1194,7 +1194,7 @@ Summary 434: In production architecture terms, platform hard boundaries and cach
 - 运行时治理：APIM 的 MCP/A2A 遥测与内容安全从“可选观测”提升为 L4 准入硬门槛。
 - 成本与吞吐：E2B 分支在纳入治理开销后仍保持高于 Kata 硬隔离路径的集群吞吐效率。
 
-Summary 434：在生产架构层面，平台硬边界与 缓存防护门控的网关闭环已经成为大规模自治工作负载的基础原语。
+Summary 434：在生产架构层面，平台硬边界与检查点门控的网关闭环已经成为大规模自治工作负载的基础原语。
 """
 
 
@@ -1342,6 +1342,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
 
 
