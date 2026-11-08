@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #404 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-404.html](workbench-cycle-404.html) · [daily-report-2026-11-14.en.md](daily-report-2026-11-14.en.md)
+> 🔎 **Cycle #405 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-405.html](workbench-cycle-405.html) · [daily-report-2026-11-14.en.md](daily-report-2026-11-14.en.md)
 
 ---
 
-## 1) Cycle #404 release summary (2026-11-14)
+## 1) Cycle #405 release summary (2026-11-14)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #404 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #404 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #404 workbench** | Interactive benchmark surface | [`workbench-cycle-404.html`](workbench-cycle-404.html) |
+| **Cycle #405 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #405 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #405 workbench** | Interactive benchmark surface | [`workbench-cycle-405.html`](workbench-cycle-405.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-404-benchmark.json`](evidence/cycle-404-benchmark.json)
-- Source ledger: [`evidence/cycle-404-sources.json`](evidence/cycle-404-sources.json)
+- Canonical payload: [`evidence/cycle-405-benchmark.json`](evidence/cycle-405-benchmark.json)
+- Source ledger: [`evidence/cycle-405-sources.json`](evidence/cycle-405-sources.json)
 - Metric CSV files:
-  - [`cycle-404-latency.csv`](evidence/cycle-404-latency.csv)
-  - [`cycle-404-throughput.csv`](evidence/cycle-404-throughput.csv)
-  - [`cycle-404-policy.csv`](evidence/cycle-404-policy.csv)
-  - [`cycle-404-cost.csv`](evidence/cycle-404-cost.csv)
+  - [`cycle-405-latency.csv`](evidence/cycle-405-latency.csv)
+  - [`cycle-405-throughput.csv`](evidence/cycle-405-throughput.csv)
+  - [`cycle-405-policy.csv`](evidence/cycle-405-policy.csv)
+  - [`cycle-405-cost.csv`](evidence/cycle-405-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-14.en.md`](daily-report-2026-11-14.en.md)
 - Daily report (ZH): [`daily-report-2026-11-14.md`](daily-report-2026-11-14.md)
-- One-page SVG: [`assets/34-cycle-404-daily-breakthroughs.svg`](assets/34-cycle-404-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-404.en.md`](docs/full-monograph-cycle-404.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-404.md`](docs/full-monograph-cycle-404.md)
-- Selection FAQ (EN): [`agent-state-checkpoint-selection-faq.en.md`](agent-state-checkpoint-selection-faq.en.md)
-- Selection FAQ (ZH): [`agent-state-checkpoint-selection-faq.md`](agent-state-checkpoint-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-405-daily-breakthroughs.svg`](assets/34-cycle-405-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-405.en.md`](docs/full-monograph-cycle-405.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-405.md`](docs/full-monograph-cycle-405.md)
+- Selection FAQ (EN): [`agent-observability-sampling-selection-faq.en.md`](agent-observability-sampling-selection-faq.en.md)
+- Selection FAQ (ZH): [`agent-observability-sampling-selection-faq.md`](agent-observability-sampling-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_404_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_404_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_405_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_405_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,12 +71,10 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_404_pipeline.py`](simulator/cycle_404_pipeline.py)
+- Generator pipeline: [`simulator/cycle_405_pipeline.py`](simulator/cycle_405_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
-
-
 
 
 
