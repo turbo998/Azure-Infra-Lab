@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #443 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-443.html](workbench-cycle-443.html) · [daily-report-2026-11-09.en.md](daily-report-2026-11-09.en.md)
+> 🔎 **Cycle #444 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-444.html](workbench-cycle-444.html) · [daily-report-2026-11-09.en.md](daily-report-2026-11-09.en.md)
 
 ---
 
-## 1) Cycle #443 release summary (2026-11-09)
+## 1) Cycle #444 release summary (2026-11-09)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #443 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #443 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #443 workbench** | Interactive benchmark surface | [`workbench-cycle-443.html`](workbench-cycle-443.html) |
+| **Cycle #444 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #444 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #444 workbench** | Interactive benchmark surface | [`workbench-cycle-444.html`](workbench-cycle-444.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-443-benchmark.json`](evidence/cycle-443-benchmark.json)
-- Source ledger: [`evidence/cycle-443-sources.json`](evidence/cycle-443-sources.json)
+- Canonical payload: [`evidence/cycle-444-benchmark.json`](evidence/cycle-444-benchmark.json)
+- Source ledger: [`evidence/cycle-444-sources.json`](evidence/cycle-444-sources.json)
 - Metric CSV files:
-  - [`cycle-443-latency.csv`](evidence/cycle-443-latency.csv)
-  - [`cycle-443-throughput.csv`](evidence/cycle-443-throughput.csv)
-  - [`cycle-443-policy.csv`](evidence/cycle-443-policy.csv)
-  - [`cycle-443-cost.csv`](evidence/cycle-443-cost.csv)
+  - [`cycle-444-latency.csv`](evidence/cycle-444-latency.csv)
+  - [`cycle-444-throughput.csv`](evidence/cycle-444-throughput.csv)
+  - [`cycle-444-policy.csv`](evidence/cycle-444-policy.csv)
+  - [`cycle-444-cost.csv`](evidence/cycle-444-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-09.en.md`](daily-report-2026-11-09.en.md)
 - Daily report (ZH): [`daily-report-2026-11-09.md`](daily-report-2026-11-09.md)
-- One-page SVG: [`assets/34-cycle-443-daily-breakthroughs.svg`](assets/34-cycle-443-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-443.en.md`](docs/full-monograph-cycle-443.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-443.md`](docs/full-monograph-cycle-443.md)
-- Selection FAQ (EN, Semantic Cache Invalidation Governance): [`agent-ai-gateway-semantic-cache-invalidation-selection-faq.en.md`](agent-ai-gateway-semantic-cache-invalidation-selection-faq.en.md)
-- Selection FAQ (ZH, Semantic Cache Invalidation Governance): [`agent-ai-gateway-semantic-cache-invalidation-selection-faq.md`](agent-ai-gateway-semantic-cache-invalidation-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-444-daily-breakthroughs.svg`](assets/34-cycle-444-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-444.en.md`](docs/full-monograph-cycle-444.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-444.md`](docs/full-monograph-cycle-444.md)
+- Selection FAQ (EN, MCP/A2A Observability Sampling Governance): [`agent-mcp-a2a-observability-sampling-selection-faq.en.md`](agent-mcp-a2a-observability-sampling-selection-faq.en.md)
+- Selection FAQ (ZH, MCP/A2A Observability Sampling Governance): [`agent-mcp-a2a-observability-sampling-selection-faq.md`](agent-mcp-a2a-observability-sampling-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_443_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_443_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_444_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_444_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_443_pipeline.py`](simulator/cycle_443_pipeline.py)
+- Generator pipeline: [`simulator/cycle_444_pipeline.py`](simulator/cycle_444_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
