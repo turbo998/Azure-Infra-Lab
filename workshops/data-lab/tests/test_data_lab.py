@@ -377,13 +377,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 271)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 5400000)
 
-    def test_scenario_matrix_116_cases_and_explicit_miss(self) -> None:
+    def test_global_bank_onelake_purview_catalog_federation_vs_unity_polaris_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_bank_onelake_purview_catalog_federation_vs_unity_polaris")
+        self.assertEqual(sim["telemetry"]["federated_data_products_count"], 4200)
+        self.assertEqual(sim["telemetry"]["end_to_end_column_lineage_hops"], 14)
+        self.assertEqual(sim["telemetry"]["column_lineage_coverage_pct"], 100.0)
+        self.assertEqual(sim["telemetry"]["metadata_federation_replication_compute_usd"], 0)
+        self.assertEqual(sim["telemetry"]["uncertified_shadow_tables_blocked"], 3)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_catalog_governance_tco_saved_usd"], 28500)
+        self.assertTrue(sim["foundry_iq_guardrail"]["uncertified_shadow_table_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["mnpi_office_encryption_enforced"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 255)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 5750000)
+
+    def test_scenario_matrix_120_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 116)
-        self.assertEqual(matrix["passed_scenarios"], 115)
+        self.assertEqual(matrix["total_scenarios"], 120)
+        self.assertEqual(matrix["passed_scenarios"], 119)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.14, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 456.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.17, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 451.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -641,6 +656,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Databricks Lakebridge", by_id["DL-115"]["expected"])
         self.assertIn("Protect $5.40M SLA", by_id["DL-116"]["expected"])
 
+    def test_fabric_onelake_catalog_purview_vs_unity_polaris_dataplex_2026_11_10_r19_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-117", "DL-118", "DL-119", "DL-120"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("14-Hop Source-to-DAX-to-Office Lineage", by_id["DL-117"]["expected"])
+        self.assertIn("-74.4% catalog TCO", by_id["DL-118"]["expected"])
+        self.assertIn("Apache Polaris", by_id["DL-119"]["expected"])
+        self.assertIn("Protect $5.75M SLA", by_id["DL-120"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -658,11 +684,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 115)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 116)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 456.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 25)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 463.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 119)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 120)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 451.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 26)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 455.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r18_25_simulation_mean_modeled_latency_ms"], 463.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r17_24_simulation_mean_modeled_latency_ms"], 471.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r16_23_simulation_mean_modeled_latency_ms"], 479.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r15_22_simulation_mean_modeled_latency_ms"], 487.0)
@@ -679,7 +706,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 21)
+        self.assertEqual(len(refs), 22)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10"))
@@ -706,6 +733,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_reinsurance_ai_functions_multimodal_claims_vs_cortex_mosaic", loaded["ontology_simulations"])
         self.assertIn("gigafactory_digital_twin_builder_iot_ot_vs_sitewise_lakeflow", loaded["ontology_simulations"])
         self.assertIn("global_telco_synapse_teradata_migration_vs_snowconvert_lakebridge", loaded["ontology_simulations"])
+        self.assertIn("global_bank_onelake_purview_catalog_federation_vs_unity_polaris", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

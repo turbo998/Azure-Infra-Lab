@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg27" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr27" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="fabCard27" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg27)"/>
+  <rect x="24" y="20" width="1352" height="820" rx="18" fill="#0B1528" stroke="#1E293B" stroke-width="2"/>
+  <rect x="24" y="20" width="1352" height="8" rx="4" fill="url(#hdr27)"/>
+
+  <!-- Header -->
+  <text x="52" y="64" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">DATA LAB · ROUND 19 ARCHITECTURE &amp; BENCHMARK VISUAL SUMMARY (DL-117..DL-120 · SCENARIO Z)</text>
+  <text x="52" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800">Open Data Catalog &amp; Federation: Fabric OneLake Catalog &amp; Purview vs. Unity Catalog / Polaris / Dataplex</text>
+  <text x="52" y="122" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">5-Cloud Zero-Copy Metadata Federation (UC Shortcut + Polaris XTable + Apache Ossie) · 14-Hop BCBS 239 Column Lineage to DAX &amp; Office · -74.4% Catalog TCO ($9.8K vs $38.3K/mo)</text>
+
+  <rect x="1088" y="46" width="260" height="66" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1218" y="72" text-anchor="middle" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ROUND 19 SEALED VERDICT</text>
+  <text x="1218" y="96" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">255ms · -74.4% TCO · 119/120</text>
+
+  <!-- Left Column: Legacy Siloed Catalogs + Bolt-on Crawler -->
+  <rect x="48" y="144" width="632" height="310" rx="14" fill="#1E111A" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="70" y="174" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">❌ Legacy: 5 Siloed Catalogs + 3rd-Party Bolt-On Crawler ($38,300/mo · Broken BI Lineage)</text>
+
+  <rect x="70" y="190" width="588" height="68" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="213" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. Third-Party Bolt-On Catalog License &amp; Crawler Tax ($18,500 + $11,800 = $30,300/mo)</text>
+  <text x="86" y="233" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Scraping Unity Catalog, Horizon, Glue, and Dataplex via nightly jobs lags by 12–24 hours.</text>
+  <text x="86" y="250" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Passive catalog tags do not automatically enforce engine-level RLS/CLS or encrypt exported Excel files.</text>
+
+  <rect x="70" y="268" width="588" height="78" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="291" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Lineage Blind Spot in the Last 100 Meters (Power BI DAX &amp; M365 Office)</text>
+  <text x="86" y="311" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Lakehouse registries (Unity Catalog / Polaris) stop at the table boundary; DAX measures &amp; Excel cells break lineage.</text>
+  <text x="86" y="330" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• BCBS 239 &amp; EU AI Act audits require 14 days of manual SQL/DAX archaeology ($8,000/mo audit ops).</text>
+
+  <rect x="70" y="356" width="588" height="82" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="379" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. Unendorsed Shadow Tables Cause Agent Hallucination (+14.2% Metric Drift)</text>
+  <text x="86" y="399" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Technical catalogs expose 18 raw tables with `revenue` or `rwa` columns without semantic endorsement.</text>
+  <text x="86" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• AI agents join uncertified staging tables (`DL-23` failure mode), risking $5.75M regulatory penalties.</text>
+
+  <!-- Right Column: Fabric OneLake Catalog + Purview Unified Catalog -->
+  <rect x="708" y="144" width="644" height="310" rx="14" fill="url(#fabCard27)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="730" y="174" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">✅ Fabric OneLake Catalog + Purview Unified Catalog ($9,800/mo · Save 74.4%)</text>
+
+  <rect x="730" y="190" width="600" height="68" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="213" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. Zero-Copy 5-Cloud Metadata Federation ($0 Replication Compute · 4,200 Data Products)</text>
+  <text x="746" y="233" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Native OneLake Shortcuts to Unity Catalog + OneLake XTable for Snowflake Polaris / S3 Iceberg.</text>
+  <text x="746" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Apache Ossie synchronizes Snowflake Semantic Views directly into Fabric IQ Ontologies.</text>
+
+  <rect x="730" y="268" width="600" height="78" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="291" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Unbroken 14-Hop Column Lineage (Source DB → OneLake → DAX → M365 Office)</text>
+  <text x="746" y="311" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traces every RWA &amp; CET1 figure from Oracle/Snowflake/UC through Power BI DAX to Excel/Word filings.</text>
+  <text x="746" y="330" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Purview `Highly Confidential - MNPI` labels auto-inherit and encrypt downstream BI &amp; Office files.</text>
+
+  <rect x="730" y="356" width="600" height="82" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="379" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. Embedded Explore / Govern / Secure + Certified Agent Grounding (0.0% Drift)</text>
+  <text x="746" y="399" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• OneLake Catalog `Certified` badges + Foundry IQ deterministically block 3 unendorsed shadow tables.</text>
+  <text x="746" y="418" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Cuts monthly catalog &amp; governance TCO by 74.4% ($9,800 vs. $38,300/mo, saving $342,000/yr).</text>
+
+  <!-- Middle Section: Scenario Z 4-Step 255ms Closed-Loop Pipeline -->
+  <rect x="48" y="472" width="1304" height="156" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="70" y="500" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">⚡ Scenario Z (`global_bank_onelake_purview_catalog_federation_vs_unity_polaris`): 4,200 Data Products × BCBS 239 Lineage Loop (255 ms E2E)</text>
+
+  <rect x="70" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#0284C7"/>
+  <text x="84" y="536" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">① 5-Cloud Catalog Federation (60 ms)</text>
+  <text x="84" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">UC Shortcut + Polaris XTable + Ossie</text>
+  <text x="84" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Federates 4,200 data products at $0</text>
+  <text x="84" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Locks Certified CET1 Ontology</text>
+
+  <rect x="390" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#10B981"/>
+  <text x="404" y="536" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">② 14-Hop Column Lineage DAG (64 ms)</text>
+  <text x="404" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Source DB → OneLake → DAX → M365</text>
+  <text x="404" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">100.0% column-level lineage coverage</text>
+  <text x="404" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">0.0000% RWA Lineage Gap</text>
+
+  <rect x="710" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#F59E0B"/>
+  <text x="724" y="536" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">③ Foundry IQ BCBS 239 Gate (65 ms)</text>
+  <text x="724" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">BANK-BCBS239-CATALOG-SOP-026</text>
+  <text x="724" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Blocks 3 uncertified shadow tables</text>
+  <text x="724" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Verifies MNPI Office Encryption</text>
+
+  <rect x="1030" y="514" width="300" height="96" rx="10" fill="#1E293B" stroke="#8B5CF6"/>
+  <text x="1044" y="536" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Rayfin Grant &amp; SQL Audit (66 ms)</text>
+  <text x="1044" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">CDO Teams Approval + 1GB Free SQL</text>
+  <text x="1044" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Commits BCBS 239 audit certificate</text>
+  <text x="1044" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Protects $5.75M Audit SLA (255ms)</text>
+
+  <!-- Bottom Section: 5-Cloud Decision Matrix -->
+  <rect x="48" y="644" width="1304" height="176" rx="14" fill="#0B1324" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="672" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">📊 5-Cloud Open Data Catalog, Lineage &amp; Semantic Governance Comparison (4,200 Data Products · BCBS 239 Audit)</text>
+
+  <text x="70" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">PLATFORM &amp; CATALOG STACK</text>
+  <text x="410" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">LINEAGE BOUNDARY</text>
+  <text x="690" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">OFFICE DLP &amp; CERTIFIED GROUNDING</text>
+  <text x="990" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">MONTHLY TCO</text>
+  <text x="1145" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ARCHITECT VERDICT</text>
+
+  <rect x="62" y="710" width="1276" height="28" rx="6" fill="#064E3B" fill-opacity="0.55"/>
+  <text x="70" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Microsoft Fabric (OneLake Catalog + Purview)</text>
+  <text x="410" y="729" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Source → OneLake → DAX → M365 (14-hop)</text>
+  <text x="690" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Auto MNPI Excel DLP + Certified Ontology</text>
+  <text x="990" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$9,800 / mo (-74.4%)</text>
+  <text x="1145" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Best Full-Stack &amp; BCBS 239 Hub</text>
+
+  <text x="70" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Databricks (Unity Catalog + 3rd-Party BI Catalog)</text>
+  <text x="410" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Lakehouse Tables / Volumes / MLflow (64%)</text>
+  <text x="690" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">UC Tags inside DBX; federate via Shortcut</text>
+  <text x="990" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$29,400 / mo</text>
+  <text x="1145" y="756" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Coexist via OneLake UC Shortcut</text>
+
+  <text x="70" y="780" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Snowflake (Horizon + Apache Polaris + Bolt-On)</text>
+  <text x="410" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Snowflake SQL + Iceberg REST Tables</text>
+  <text x="690" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Sync Semantic Views via Apache Ossie</text>
+  <text x="990" y="780" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$31,200 / mo</text>
+  <text x="1145" y="780" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Coexist via XTable + Apache Ossie</text>
+
+  <text x="70" y="804" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Legacy 5-Catalog + Commercial Crawler Stack</text>
+  <text x="410" y="804" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Breaks at Power BI DAX &amp; Office (58%)</text>
+  <text x="690" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">Passive UI tags · 12–24h crawler lag</text>
+  <text x="990" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$38,300 / mo</text>
+  <text x="1145" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">Replace Bolt-On Crawler Tax</text>
+</svg>
