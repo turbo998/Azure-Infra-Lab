@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg35" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr35" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="fabCard35" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg35)"/>
+  <rect x="24" y="20" width="1352" height="820" rx="18" fill="#0B1528" stroke="#1E293B" stroke-width="2"/>
+  <rect x="24" y="20" width="1352" height="8" rx="4" fill="url(#hdr35)"/>
+
+  <!-- Header -->
+  <text x="52" y="64" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">DATA LAB · ROUND 27 ARCHITECTURE &amp; BENCHMARK VISUAL SUMMARY (DL-149..DL-152 · SCENARIO AH)</text>
+  <text x="52" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800">Enterprise Data Science, Cost-Frugal FLAML AutoML &amp; In-Lake PREDICT: Fabric vs. 4 Clouds</text>
+  <text x="52" y="122" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">MSR FLAML (-75% Tuning Compute) · Vectorized In-Lake PREDICT ($0 Idle Endpoint Tax) · -80.1% MLOps TCO ($7.6K vs $38.2K/mo)</text>
+
+  <rect x="1088" y="46" width="260" height="66" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1218" y="72" text-anchor="middle" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ROUND 27 SEALED VERDICT</text>
+  <text x="1218" y="96" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">127ms · -80.1% TCO · 151/152</text>
+
+  <!-- Left Column: Legacy 24/7 Idle Endpoints + Brute-Force Grid Search -->
+  <rect x="48" y="144" width="632" height="310" rx="14" fill="#1E111A" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="70" y="174" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">❌ Legacy: 24/7 Idle REST Endpoints + Brute-Force Grid Search ($38,200/mo)</text>
+
+  <rect x="70" y="190" width="588" height="68" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="213" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. $24,000/mo Burned on 24/7 Always-On Inference Containers for Tabular ML</text>
+  <text x="86" y="233" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 85%+ of enterprise ML (churn, credit risk, demand) is batch/micro-batch over tables.</text>
+  <text x="86" y="250" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Keeping 24/7 HTTPS inference endpoints &amp; online feature stores alive wastes $24K+/mo.</text>
+
+  <rect x="70" y="268" width="588" height="78" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="291" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Brute-Force Grid Search AutoML Wastes 5x Training Compute ($14,200/mo)</text>
+  <text x="86" y="311" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Exhaustive grid search launches 100+ parallel trials on full-size datasets blindly.</text>
+  <text x="86" y="330" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Separate feature-prep instances (SageMaker Wrangler / Dataprep) bill per hour.</text>
+
+  <rect x="70" y="356" width="588" height="82" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="379" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. Training-Serving Skew &amp; Black-Box Churn Scores Miss 480 B2B Accounts ($8.55M)</text>
+  <text x="86" y="399" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Exporting CSVs between ML silos and BI warehouses causes 24-hour scoring lag.</text>
+  <text x="86" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Account managers ignore unexplainable churn probabilities without SHAP root causes.</text>
+
+  <!-- Right Column: Fabric Data Science (FLAML + MLflow + PREDICT) -->
+  <rect x="708" y="144" width="644" height="310" rx="14" fill="url(#fabCard35)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="730" y="174" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">✅ Fabric Data Science (Wrangler + FLAML + PREDICT) ($7,600/mo · Save 80.1%)</text>
+
+  <rect x="730" y="190" width="600" height="68" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="213" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. Data Wrangler ($0 Fee) &amp; MSR FLAML Cost-Frugal AutoML (-75% Tuning CU)</text>
+  <text x="746" y="233" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Interactive Data Wrangler generates auditable PySpark directly over OneLake Delta.</text>
+  <text x="746" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• FLAML cost-frugal search converges in 1/5th the compute of brute-force Grid Search.</text>
+
+  <rect x="730" y="268" width="600" height="78" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="291" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Vectorized In-Lake PREDICT (28ms · $0 Always-On Endpoint Tax)</text>
+  <text x="746" y="311" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Evaluates MLflow LightGBM models in-place over OneLake Delta via Spark Gluten C++.</text>
+  <text x="746" y="330" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Flags 480 at-risk B2B enterprise accounts ($8.55M ARR) in 28ms and scales to zero.</text>
+
+  <rect x="730" y="356" width="600" height="82" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="379" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. TreeSHAP Attribution + DirectLake + Teams Retention Loop (127ms E2E)</text>
+  <text x="746" y="399" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Attributes churn to `East-09` 5G jitter + P1 tickets (32ms) &amp; dispatches QoS + 15% credit.</text>
+  <text x="746" y="418" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Cuts monthly MLOps TCO by 80.1% ($7,600 vs. $38,200/mo, protecting $8.55M ARR SLA).</text>
+
+  <!-- Middle Section: Scenario AH 4-Step 127ms Closed-Loop Pipeline -->
+  <rect x="48" y="472" width="1304" height="156" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="70" y="500" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">⚡ Scenario AH (`global_telecom_churn_fabric_automl_flaml_mlflow_predict_vs_4clouds`): 42K-B2B Churn Loop (127 ms E2E)</text>
+
+  <rect x="70" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#0284C7"/>
+  <text x="84" y="536" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">① Vectorized PREDICT (28 ms)</text>
+  <text x="84" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">5G KQL Jitter + CRM Renewal Features</text>
+  <text x="84" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0 always-on inference endpoint tax</text>
+  <text x="84" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Flags 480 B2B Accounts ($8.55M ARR)</text>
+
+  <rect x="390" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#10B981"/>
+  <text x="404" y="536" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">② TreeSHAP &amp; 6-Hop Graph (32 ms)</text>
+  <text x="404" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Account → Churn 0.89 → East-09 gNB</text>
+  <text x="404" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Isolates 5G slice jitter + P1 delay</text>
+  <text x="404" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Explainable Top-3 SHAP Drivers</text>
+
+  <rect x="710" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#F59E0B"/>
+  <text x="724" y="536" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">③ LTV/CAC &amp; Fairness Gate (33 ms)</text>
+  <text x="724" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">TELCO-B2B-RETENTION-MARGIN-SOP-034</text>
+  <text x="724" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Post-credit LTV/CAC = 6.4x (&gt;=4.0x)</text>
+  <text x="724" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Fairness Disparity &lt; 1.2% Verified</text>
+
+  <rect x="1030" y="514" width="300" height="96" rx="10" fill="#1E293B" stroke="#8B5CF6"/>
+  <text x="1044" y="536" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Sales VP Teams &amp; SQL Lock (34 ms)</text>
+  <text x="1044" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">QoS Priority Boost + 15% Credit</text>
+  <text x="1044" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Commits 480 offers to 1GB Free SQL</text>
+  <text x="1044" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Protects $8.55M ARR SLA (127ms)</text>
+
+  <!-- Bottom Section: 5-Cloud Decision Matrix -->
+  <rect x="48" y="644" width="1304" height="176" rx="14" fill="#0B1324" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="672" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">📊 5-Cloud Enterprise Data Science, AutoML &amp; Batch Scoring Comparison (65M Subscribers · 42,000 B2B Accounts)</text>
+
+  <text x="70" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">PLATFORM &amp; MLOPS STACK</text>
+  <text x="410" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">AUTOML &amp; BATCH SCORING ENGINE</text>
+  <text x="690" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">BI &amp; RETENTION ACTION LOOP</text>
+  <text x="990" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">MONTHLY TCO</text>
+  <text x="1145" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ARCHITECT VERDICT</text>
+
+  <rect x="62" y="710" width="1276" height="28" rx="6" fill="#064E3B" fill-opacity="0.55"/>
+  <text x="70" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Microsoft Fabric (FLAML + MLflow + PREDICT)</text>
+  <text x="410" y="729" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">FLAML (-75% CU) + $0 Gluten PREDICT</text>
+  <text x="690" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">DirectLake $0 Viewer + Teams Cards</text>
+  <text x="990" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$7,600 / mo (-80.1%)</text>
+  <text x="1145" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Best Tabular ML &amp; Action Loop</text>
+
+  <text x="70" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Databricks (Mosaic AI + AutoML + UC Features)</text>
+  <text x="410" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Optuna Trials + Photon (2x DBU)</text>
+  <text x="690" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Strongest on 70B+ LLM &amp; &lt;10ms KV</text>
+  <text x="990" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$31,200 / mo</text>
+  <text x="1145" y="756" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Use for LLM / Online KV</text>
+
+  <text x="70" y="780" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Snowflake ML / GCP Vertex AI AutoML</text>
+  <text x="410" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Snowpark XL Credits / Vertex Nodes</text>
+  <text x="690" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Warehouse polling + BI seat fees</text>
+  <text x="990" y="780" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$34.6K–$35.8K/mo</text>
+  <text x="1145" y="780" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Mount via XTable / Mirroring</text>
+
+  <text x="70" y="804" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">AWS (SageMaker Wrangler + 24/7 Endpoints)</text>
+  <text x="410" y="804" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Per-Hour Wrangler + Idle Endpoints</text>
+  <text x="690" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$24K/mo idle containers + S3 copy</text>
+  <text x="990" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$38,200 / mo</text>
+  <text x="1145" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">Retire Idle Batch Endpoints</text>
+</svg>
