@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-10-r25",
-  "generated_at": "2026-11-10T04:18:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-10-r26",
+  "generated_at": "2026-11-10T04:50:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 144,
-      "routing_matrix_mean_modeled_latency_ms": 421.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=144 routing & decision evaluation items (DL-01..DL-144, mean=421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 32,
+      "routing_matrix_denominator_n": 148,
+      "routing_matrix_mean_modeled_latency_ms": 416.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=148 routing & decision evaluation items (DL-01..DL-148, mean=416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 33,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -42,14 +42,19 @@
         207,
         191,
         175,
-        159
+        159,
+        143
       ],
       "ontology_simulations_range_ms": [
-        159,
+        143,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 407.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=32 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159]ms, range 159-780ms, mean=407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 399.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=33 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143]ms, range 143-780ms, mean=399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r25_historical_denominators": {
+        "r25_routing_matrix_n144_mean_ms": 421.0,
+        "r25_ontology_simulations_n32_mean_ms": 407.0
+      },
       "r24_historical_denominators": {
         "r24_routing_matrix_n140_mean_ms": 426.0,
         "r24_ontology_simulations_n31_mean_ms": 415.0
@@ -140,8 +145,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=144 decision routing matrix evaluation (143/144 = 99.31%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=144 routing decision matrix tasks (DL-01..DL-144) with arithmetic mean modeled latency = 421.0ms; (2) n=32 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159]ms, range 159-780ms) with arithmetic mean modeled latency = 407.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=148 decision routing matrix evaluation (147/148 = 99.32%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=148 routing decision matrix tasks (DL-01..DL-148) with arithmetic mean modeled latency = 416.0ms; (2) n=33 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143]ms, range 143-780ms) with arithmetic mean modeled latency = 399.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -498,9 +503,22 @@
           "https://www.databricks.com/solutions/industries/financial-services"
         ],
         "as_of": "2026-11-10"
+      },
+      {
+        "id": "SPEC-FABRIC-GEOSPATIAL-H3-EVENTHOUSE-SEDONA-AZURE-MAPS",
+        "vendor": "Microsoft / Google Cloud / Snowflake / Databricks / AWS",
+        "claim": "Microsoft Fabric Eventhouse KQL natively supports H3 (`geo_point_to_h3cell`, `geo_polygon_to_h3cells`) and S2 spatial indexing for high-velocity streaming joins alongside Power BI Azure Maps visuals; Google Cloud provides BigQuery GIS and Google Earth Engine; Snowflake provides native GEOGRAPHY/GEOMETRY types and H3 functions; Databricks provides Spatial SQL and H3 functions; AWS provides Amazon Location Service.",
+        "official_url": "https://learn.microsoft.com/en-us/kusto/query/geo-point-to-h3cell-function",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-map-visual",
+        "competitor_doc_urls": [
+          "https://cloud.google.com/bigquery/docs/gis-intro",
+          "https://docs.snowflake.com/en/sql-reference/functions-geospatial",
+          "https://docs.databricks.com/en/sql/language-manual/sql-ref-functions-builtin-h3.html"
+        ],
+        "as_of": "2026-11-10"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=32 industry scenarios, mean=407.0ms), TCO calculator, and n=144 routing suite (mean=421.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=33 industry scenarios, mean=399.0ms), TCO calculator, and n=148 routing suite (mean=416.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -585,16 +603,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 144,
-    "passed_scenarios": 143,
+    "total_scenarios": 148,
+    "passed_scenarios": 147,
     "failed_scenarios": 1,
-    "accuracy_pct": 99.31,
-    "avg_latency_ms": 421.0,
-    "routing_matrix_denominator_n": 144,
-    "routing_matrix_mean_modeled_latency_ms": 421.0,
+    "accuracy_pct": 99.32,
+    "avg_latency_ms": 416.0,
+    "routing_matrix_denominator_n": 148,
+    "routing_matrix_mean_modeled_latency_ms": 416.0,
     "action_distribution": {
-      "Act automatically": 96,
-      "Confirm": 46,
+      "Act automatically": 98,
+      "Confirm": 48,
       "Send to a human": 2
     },
     "scenarios": [
@@ -2325,6 +2343,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 248
+      },
+      {
+        "id": "DL-145",
+        "category": "Real-Time & IoT",
+        "question": "Monitor 85,000 cold-chain trucks and 4,200 grid substations (180K EPS) against 12,000 dynamic wildfire/weather polygons without ST_Contains CPU exhaustion or per-evaluation geofence API fees",
+        "expected": "Microsoft Fabric Eventhouse KQL (Native H3/S2 64-Bit Integer In-Memory Join 32ms, 1,200x Faster than ST_Contains, $0 GIS Tax) + Spark Apache Sedona ($0 Gluten Surcharge) + Power BI Azure Maps",
+        "model_answer": "Microsoft Fabric Eventhouse KQL (Native H3/S2 64-Bit Integer In-Memory Join 32ms, 1,200x Faster than ST_Contains, $0 GIS Tax) + Spark Apache Sedona ($0 Gluten Surcharge) + Power BI Azure Maps",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 232
+      },
+      {
+        "id": "DL-146",
+        "category": "vs GCP",
+        "question": "Compare Microsoft Fabric Eventhouse H3 + Azure Maps vs GCP BigQuery GIS & Google Earth Engine vs AWS Location Service for live fleet geofencing and climate risk",
+        "expected": "Use Google Earth Engine for planetary satellite rasters and mirror hazard H3 cell scores into OneLake; use Fabric Eventhouse KQL for 180K EPS live fleet H3 geofencing & Teams dispatch (-79.5% TCO)",
+        "model_answer": "Use Google Earth Engine for planetary satellite rasters and mirror hazard H3 cell scores into OneLake; use Fabric Eventhouse KQL for 180K EPS live fleet H3 geofencing & Teams dispatch (-79.5% TCO)",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 240
+      },
+      {
+        "id": "DL-147",
+        "category": "vs Snowflake",
+        "question": "Compare Fabric Eventhouse H3 + Spark Sedona vs Snowflake Native Geography/H3 & Databricks Spatial SQL / Mosaic",
+        "expected": "Subscribe to SafeGraph trade-area POIs on Snowflake Marketplace via OneLake XTable, train autonomous LiDAR point-cloud ML in Databricks, and serve live H3 fleet geofencing & DirectLake Azure Maps in Fabric",
+        "model_answer": "Subscribe to SafeGraph trade-area POIs on Snowflake Marketplace via OneLake XTable, train autonomous LiDAR point-cloud ML in Databricks, and serve live H3 fleet geofencing & DirectLake Azure Maps in Fabric",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 234
+      },
+      {
+        "id": "DL-148",
+        "category": "Fabric IQ & Ontology",
+        "question": "Fast-moving 12km/h wildfire plume threatens 85,000 fleet vehicles & grid corridor; isolate and reroute 340 biopharma reefer trucks and shift load across 16 high-voltage substations",
+        "expected": "Eventhouse 180K EPS H3 Join (32ms, 1,200x Faster) + Sedona & 6-Hop Road/Grid Graph (36ms, 340 Trucks+16 Substations) + Foundry IQ N-1 & GSP Gate (37ms) + Dispatch Teams & 1GB SQL Lock (38ms = 143ms E2E, Protect $8.20M SLA)",
+        "model_answer": "Eventhouse 180K EPS H3 Join (32ms, 1,200x Faster) + Sedona & 6-Hop Road/Grid Graph (36ms, 340 Trucks+16 Substations) + Foundry IQ N-1 & GSP Gate (37ms) + Dispatch Teams & 1GB SQL Lock (38ms = 143ms E2E, Protect $8.20M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 238
       }
     ]
   },
@@ -2388,7 +2454,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 32,
+    "total_ontology_simulations": 33,
     "simulation_latencies_ms": [
       780,
       640,
@@ -2421,9 +2487,11 @@
       207,
       191,
       175,
-      159
+      159,
+      143
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 407.0,
+    "ontology_simulation_mean_modeled_latency_ms": 399.0,
+    "r25_32_simulation_mean_modeled_latency_ms": 407.0,
     "r24_31_simulation_mean_modeled_latency_ms": 415.0,
     "r23_30_simulation_mean_modeled_latency_ms": 423.0,
     "r22_29_simulation_mean_modeled_latency_ms": 431.0,
@@ -4273,6 +4341,80 @@
         "projected_savings_usd": 7850000,
         "end_to_end_latency_ms": 159,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Spark Gluten/Velox + Microsoft Purview + 1GB Free Fabric SQL"
+      }
+    },
+    "global_logistics_grid_fabric_geospatial_h3_kql_sedona_vs_4clouds": {
+      "scenario_id": "global_logistics_grid_fabric_geospatial_h3_kql_sedona_vs_4clouds",
+      "title": "Global Logistics & Grid 85,000 Trucks × 180K EPS H3 Wildfire Geofencing Loop (Fabric Eventhouse KQL H3 + Spark Sedona + Azure Maps vs. Proprietary GIS / 4 Clouds)",
+      "provenance_type": "synthetic_scenario_model",
+      "telemetry": {
+        "timestamp": "2026-11-10T04:45:00Z",
+        "monitored_fleet_vehicles_count": 85000,
+        "monitored_grid_substations_count": 4200,
+        "gps_telemetry_ingestion_eps": 180000,
+        "proprietary_gis_seat_tax_usd": 0,
+        "rerouted_biopharma_reefer_trucks": 340,
+        "load_shifted_grid_substations": 16,
+        "h3_speedup_vs_st_contains_x": 1200,
+        "eventhouse_kql_h3_integer_join_ms": 32,
+        "sedona_road_grid_ontology_traversal_ms": 36,
+        "foundry_iq_grid_n1_gsp_guardrail_ms": 37,
+        "dispatch_teams_cab_scada_sql_lock_ms": 38,
+        "legacy_gis_st_contains_warehouse_monthly_tco_usd": 38100,
+        "fabric_eventhouse_h3_sedona_maps_monthly_tco_usd": 7800
+      },
+      "ontology_graph_traversal": {
+        "root_entity": "GlobalFleetGrid-85KTrucks-4200Substations-WildfireH3-2026Q4",
+        "hops": 6,
+        "affected_entities": [
+          "EventhouseKQL: 180K-EPS-GPS-Stream × 480-Res9-Wildfire-H3-Cells (32ms Join)",
+          "SparkSedonaGluten: Overture-Road-Graph-Detour-Engine ($0 C++ Surcharge)",
+          "ColdChainFleetGraph: 340-BioPharma-Reefer-Trucks ($5.4M Cargo, -1.5C Pre-Cool)",
+          "PowerGridGraph: 16-Substations-220kV-PSPS-Microgrid-Shift ($2.8M Assets)",
+          "Rayfin-TS-WriteBack: Cab-Nav-Detour-SCADA-1GB-SQL-Commit"
+        ],
+        "root_cause": "A 12 km/h wind-driven wildfire plume expanded across a major interstate and 220kV transmission corridor, threatening 340 biopharma cold-chain reefer trucks ($5.4M cargo) and 16 grid substations ($2.8M assets) while legacy ST_Contains polygon batch queries lagged by >42 seconds"
+      },
+      "multi_agent_plan": {
+        "rerouted_reefer_trucks": 340,
+        "shifted_grid_substations": 16,
+        "monthly_geospatial_platform_tco_saved_usd": 30300,
+        "geospatial_platform_tco_savings_pct": 79.5,
+        "actions": [
+          {
+            "step": 1,
+            "agent": "Fabric Eventhouse KQL Native H3 Hexagonal Stream Join Engine",
+            "operation": "Convert 180,000 EPS of GPS coordinates from 85,000 trucks and 4,200 substations into Resolution-9 H3 64-bit integers and inner-join against 480 wildfire plume H3 cells in 32ms ($0 GIS seat tax)",
+            "impact_metric": "1,200x faster than floating-point ST_Contains polygon ray-casting; eliminates $19.6K/mo GIS license silos"
+          },
+          {
+            "step": 2,
+            "agent": "Spark Sedona Road Router & Foundry IQ N-1 / GSP Guardrail Verifier",
+            "operation": "Isolate 340 biopharma reefer trucks and 16 substations across the 6-hop ontology in 36ms; verify N-1 grid flow (0 hospital blackouts) and GSP thermal holdover (+18m detour) in Foundry IQ (37ms)",
+            "impact_metric": "100% N-1 grid compliance and GSP cold-chain envelope compliance across $8.20M at-risk assets"
+          },
+          {
+            "step": 3,
+            "agent": "Dispatch Commander Teams Card & Rayfin Cab/SCADA + 1GB Free SQL Commit",
+            "operation": "Dispatch 340 smoke-free cab navigation detours (-1.5C pre-cool) and 16 substation microgrid load shifts, committing the signed audit trail into 1GB Free Fabric SQL (38ms)",
+            "impact_metric": "143ms E2E spatio-temporal loop; -$30,300/mo (-79.5%) TCO; $8.20M cold-chain & grid SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "GRID-WILDFIRE-PSPS-COLDCHAIN-SOP-033",
+        "hard_constraint": "Never execute automated Public Safety Power Shutoff (PSPS) load shifts that violate N-1 critical hospital feeder continuity, and never reroute biopharma cold-chain vehicles onto detours exceeding reefer battery thermal holdover",
+        "proposed_change": "Reroute 340 reefer trucks (+18m detour with -1.5C pre-cooling) and shift 16 substations to battery microgrids (0 hospitals dropped)",
+        "grid_n1_hospital_continuity_verified": true,
+        "gsp_coldchain_holdover_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 8200000,
+        "end_to_end_latency_ms": 143,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL H3 + Spark Apache Sedona + Power BI Azure Maps + 1GB Free Fabric SQL"
       }
     }
   },

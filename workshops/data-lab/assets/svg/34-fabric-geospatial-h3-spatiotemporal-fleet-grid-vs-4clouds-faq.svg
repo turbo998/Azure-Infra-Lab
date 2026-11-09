@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg34" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr34" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="fabCard34" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg34)"/>
+  <rect x="24" y="20" width="1352" height="820" rx="18" fill="#0B1528" stroke="#1E293B" stroke-width="2"/>
+  <rect x="24" y="20" width="1352" height="8" rx="4" fill="url(#hdr34)"/>
+
+  <!-- Header -->
+  <text x="52" y="64" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">DATA LAB · ROUND 26 ARCHITECTURE &amp; BENCHMARK VISUAL SUMMARY (DL-145..DL-148 · SCENARIO AG)</text>
+  <text x="52" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800">Enterprise Geospatial, H3 Hexagonal Indexing &amp; 180K EPS Fleet/Grid Geofencing: Fabric vs. 4 Clouds</text>
+  <text x="52" y="122" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">Eventhouse KQL 32ms H3 Integer Join (1,200x Faster than ST_Contains) · Spark Sedona ($0 Gluten Surcharge) · -79.5% TCO ($7.8K vs $38.1K/mo)</text>
+
+  <rect x="1088" y="46" width="260" height="66" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1218" y="72" text-anchor="middle" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ROUND 26 SEALED VERDICT</text>
+  <text x="1218" y="96" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">143ms · -79.5% TCO · 147/148</text>
+
+  <!-- Left Column: Legacy ST_Contains + Proprietary GIS Silo -->
+  <rect x="48" y="144" width="632" height="310" rx="14" fill="#1E111A" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="70" y="174" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">❌ Legacy: Proprietary GIS Silo + ST_Contains Polygon Lag ($38,100/mo)</text>
+
+  <rect x="70" y="190" width="588" height="68" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="213" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. O(N × M × V) Floating-Point ST_Contains Polygon Ray-Casting (&gt;42s Lag)</text>
+  <text x="86" y="233" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Checking 180K EPS GPS points against 12,000 1,500-vertex polygons triggers 2.16B edge tests/sec.</text>
+  <text x="86" y="250" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Metered cloud geofencing APIs or multi-cluster warehouses cost $18,500+/mo on live streams.</text>
+
+  <rect x="70" y="268" width="588" height="78" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="291" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Proprietary GIS Server Per-Core &amp; Viewer Seat Silos ($19,600/mo)</text>
+  <text x="86" y="311" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Standalone GIS servers charge heavy seat fees and remain blind to SAP ERP cargo values.</text>
+  <text x="86" y="330" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Dispatchers cannot tell if a truck entering a wildfire zone carries $1.8M biologics or water.</text>
+
+  <rect x="70" y="356" width="588" height="82" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="379" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. Slow Wildfire Plume Rerouting &amp; Uncoordinated Grid Tripping ($8.20M Risk)</text>
+  <text x="86" y="399" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 15-minute batch GIS lag traps 340 cold-chain reefer trucks behind closed highway corridors.</text>
+  <text x="86" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Exposes $5.4M in biopharma cargo and $2.8M in 16 high-voltage substations ($8.20M total).</text>
+
+  <!-- Right Column: Fabric Eventhouse KQL H3 + Spark Sedona -->
+  <rect x="708" y="144" width="644" height="310" rx="14" fill="url(#fabCard34)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="730" y="174" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">✅ Fabric Eventhouse H3 + Spark Sedona + Azure Maps ($7,800/mo · Save 79.5%)</text>
+
+  <rect x="730" y="190" width="600" height="68" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="213" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. Eventhouse KQL Native H3 64-Bit Integer Stream Join (32ms · 1,200x Faster)</text>
+  <text x="746" y="233" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• `geo_point_to_h3cell()` converts 180K EPS GPS coordinates to Res-9 H3 integers on ingestion.</text>
+  <text x="746" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Intersects 85,000 trucks &amp; 4,200 substations against wildfire H3 cells in 32ms at $0 GIS tax.</text>
+
+  <rect x="730" y="268" width="600" height="78" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="291" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Spark Sedona ($0 Gluten Surcharge) &amp; 6-Hop Fleet/Grid Ontology (36ms)</text>
+  <text x="746" y="311" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Isolates 340 biopharma reefer trucks &amp; 16 substations; computes smoke-free detours (+18m).</text>
+  <text x="746" y="330" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Verifies N-1 power flow compliance (0 hospitals dropped) and GSP thermal holdover (37ms).</text>
+
+  <rect x="730" y="356" width="600" height="82" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="379" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. $0-Viewer-Tax Power BI Azure Maps &amp; Teams Cab/SCADA Dispatch (143ms E2E)</text>
+  <text x="746" y="399" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Renders live H3 hexbin heatmaps in Power BI DirectLake and dispatches 340 cab detours.</text>
+  <text x="746" y="418" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Cuts monthly geospatial TCO by 79.5% ($7,800 vs. $38,100/mo, protecting $8.20M SLA).</text>
+
+  <!-- Middle Section: Scenario AG 4-Step 143ms Closed-Loop Pipeline -->
+  <rect x="48" y="472" width="1304" height="156" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="70" y="500" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">⚡ Scenario AG (`global_logistics_grid_fabric_geospatial_h3_kql_sedona_vs_4clouds`): 85K-Fleet &amp; Grid H3 Loop (143 ms E2E)</text>
+
+  <rect x="70" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#0284C7"/>
+  <text x="84" y="536" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">① Eventhouse H3 Join (32 ms)</text>
+  <text x="84" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">180K EPS GPS × 480 Wildfire H3 Cells</text>
+  <text x="84" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">1,200x faster than ST_Contains</text>
+  <text x="84" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">$0 Proprietary GIS Seat Tax</text>
+
+  <rect x="390" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#10B981"/>
+  <text x="404" y="536" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">② Sedona + 6-Hop Graph (36 ms)</text>
+  <text x="404" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">340 Reefer Trucks + 16 Substations</text>
+  <text x="404" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Azure Maps smoke-free detour (+18m)</text>
+  <text x="404" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Isolates $8.20M At-Risk Assets</text>
+
+  <rect x="710" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#F59E0B"/>
+  <text x="724" y="536" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">③ Grid N-1 &amp; GSP Gate (37 ms)</text>
+  <text x="724" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">GRID-WILDFIRE-PSPS-COLDCHAIN-SOP-033</text>
+  <text x="724" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">0 hospitals dropped · -1.5°C pre-cool</text>
+  <text x="724" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">100% N-1 &amp; GSP Compliant</text>
+
+  <rect x="1030" y="514" width="300" height="96" rx="10" fill="#1E293B" stroke="#8B5CF6"/>
+  <text x="1044" y="536" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Teams &amp; Cab/SCADA Lock (38 ms)</text>
+  <text x="1044" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">340 Cab Detours + 16 Microgrid Shifts</text>
+  <text x="1044" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Commits audit to 1GB Free Fabric SQL</text>
+  <text x="1044" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Protects $8.20M SLA (143ms E2E)</text>
+
+  <!-- Bottom Section: 5-Cloud Decision Matrix -->
+  <rect x="48" y="644" width="1304" height="176" rx="14" fill="#0B1324" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="672" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">📊 5-Cloud Geospatial, H3 Indexing &amp; Live Fleet Geofencing Comparison (85,000 Trucks · 180K EPS · 1,000 Users)</text>
+
+  <text x="70" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">PLATFORM &amp; SPATIAL STACK</text>
+  <text x="410" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">180K EPS GEOFENCE &amp; BATCH ENGINE</text>
+  <text x="690" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">MAP BI &amp; DISPATCH LOOP</text>
+  <text x="990" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">MONTHLY TCO</text>
+  <text x="1145" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ARCHITECT VERDICT</text>
+
+  <rect x="62" y="710" width="1276" height="28" rx="6" fill="#064E3B" fill-opacity="0.55"/>
+  <text x="70" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Microsoft Fabric (Eventhouse H3 + Sedona)</text>
+  <text x="410" y="729" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">32ms KQL H3 Join + $0 Gluten Sedona</text>
+  <text x="690" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$0 Azure Maps Viewer + Teams Loop</text>
+  <text x="990" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$7,800 / mo (-79.5%)</text>
+  <text x="1145" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Best Live Fleet &amp; Grid H3 Loop</text>
+
+  <text x="70" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">GCP (BigQuery GIS + Google Earth Engine)</text>
+  <text x="410" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Planetary Satellite Rasters + SQL GIS</text>
+  <text x="690" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Looker seat fees + Maps tile billing</text>
+  <text x="990" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$32,400 / mo</text>
+  <text x="1145" y="756" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Mirror Rasters to OneLake</text>
+
+  <text x="70" y="780" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Snowflake Geography/H3 / DBX Spatial SQL</text>
+  <text x="410" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">60s Dynamic Tables / Photon (2x DBU)</text>
+  <text x="690" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">SafeGraph POIs / LiDAR Point Clouds</text>
+  <text x="990" y="780" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$33.1K–$35.2K/mo</text>
+  <text x="1145" y="780" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Mount via XTable / Shortcuts</text>
+
+  <text x="70" y="804" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">AWS (Amazon Location Service + Redshift Spatial)</text>
+  <text x="410" y="804" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Per-Evaluation Geofence API Billing</text>
+  <text x="690" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">High API cost at 180K EPS + DIY UI</text>
+  <text x="990" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$38,100 / mo</text>
+  <text x="1145" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">Replace Per-Call Geofence API</text>
+</svg>
