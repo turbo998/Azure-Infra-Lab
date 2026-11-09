@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" width="1600" height="980">
+  <defs>
+    <linearGradient id="bg23" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#09152B"/>
+    </linearGradient>
+    <linearGradient id="accent23" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric23" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D2847"/>
+      <stop offset="100%" stop-color="#0A192F"/>
+    </linearGradient>
+    <linearGradient id="cardComp23" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B38"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="980" fill="url(#bg23)"/>
+  <rect x="28" y="22" width="1544" height="936" rx="20" fill="#0B1325" stroke="#1E293B" stroke-width="2"/>
+  <rect x="28" y="22" width="1544" height="8" rx="4" fill="url(#accent23)"/>
+
+  <!-- Header -->
+  <text x="60" y="68" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="700" letter-spacing="1.5">
+    DATA LAB · ROUND 15 ARCHITECT FAQ VISUAL SUMMARY · CLOUD DATA WAREHOUSE (EDW) &amp; HIGH-CONCURRENCY BI
+  </text>
+  <text x="60" y="104" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="24.5" font-weight="800">
+    Microsoft Fabric Warehouse (T-SQL + V-Order + DirectLake) vs. Snowflake Multi-Cluster / Databricks SQL Serverless
+  </text>
+  <text x="60" y="132" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="14">
+    Provenance: [synthetic_scenario_model] Denominator A Routing Matrix n=104 (103/104 = 99.04%, Mean 471.0ms) · Denominator B Ontology Sims n=22 (Mean 487.0ms; Scenario V = 319ms) · Live Cloud = not_measured
+  </text>
+
+  <!-- 3 Executive Takeaways Banner -->
+  <rect x="60" y="150" width="1480" height="106" rx="12" fill="#0F1D36" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="84" y="176" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="700">
+    📌 EXECUTIVE SUMMARY — 3 CORE ARCHITECTURAL TAKEAWAYS (CLOUD EDW &amp; HIGH-CONCURRENCY BI SELECTION)
+  </text>
+  <text x="84" y="200" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="13">
+    1. Open OneLake Delta + V-Order + DirectLake SQL-Bypass: Writes via distributed T-SQL into open Delta Parquet; 1,800 concurrent BI users read via DirectLake ($0 Multi-Cluster spin-up tax).
+  </text>
+  <text x="84" y="222" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="13">
+    2. Clear Internal SQL Trio: Lakehouse (PySpark + read-only T-SQL) for Bronze/Silver; Fabric Warehouse (multi-table ACID + 3-part cross-DB joins) for Gold EDW; SQL DB (1GB Free) for OLTP write-back.
+  </text>
+  <text x="84" y="244" fill="#10B981" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    3. Quantified Scenario V (65TB Retail EDW × 1,800 Buyers [synthetic_scenario_model]): 319ms E2E Loop (194ms P95 BI) · -$23,400/mo (-67.2% EDW+BI TCO: $11,400 vs $34,800) · $4.45M Pricing SLA Protected.
+  </text>
+
+  <!-- Left Panel: Legacy Multi-Cluster DW Concurrency Tax vs Fabric Warehouse + V-Order + DirectLake -->
+  <rect x="60" y="274" width="725" height="360" rx="14" fill="url(#cardFabric23)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="84" y="304" fill="#10B981" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    🧭 ARCHITECTURE PARADIGM: MULTI-CLUSTER BI TAX vs. FABRIC V-ORDER + DIRECTLAKE
+  </text>
+
+  <!-- Top Box: Legacy Multi-Cluster DW -->
+  <rect x="84" y="320" width="677" height="132" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="102" y="344" fill="#FDA4AF" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    ⛔ Traditional Cloud DW Concurrency Stack ($34,800/mo Modeled TCO · 4–8 Cluster Morning Spin-Up)
+  </text>
+  <text x="102" y="368" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Coupled SQL Compute Bottleneck: Every Power BI / Tableau slicer click sends SQL queries to warehouse compute nodes
+  </text>
+  <text x="102" y="390" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Monday 09:00 Multi-Cluster Spin-Up Tax: 1,800 concurrent buyers trigger 4–8 parallel XL Virtual Warehouses burning credits
+  </text>
+  <text x="102" y="412" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Proprietary Format Silo or Import Lag: Data locked in micro-partitions or delayed 2–6h by scheduled BI Import refreshes
+  </text>
+  <text x="102" y="434" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    Result: 1,850ms P95 under peak load · +$23,400/mo multi-cluster concurrency tax · No native 1GB Free SQL write-back
+  </text>
+
+  <!-- Bottom Box: Fabric Warehouse + V-Order + DirectLake -->
+  <rect x="84" y="468" width="677" height="148" rx="10" fill="#0B263B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="102" y="492" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    ✅ Microsoft Fabric Warehouse + V-Order + DirectLake ($11,400/mo Modeled TCO · -67.2% Savings)
+  </text>
+  <text x="102" y="516" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 1 (Distributed T-SQL &amp; Cross-DB Joins): Multi-table BEGIN TRAN...COMMIT, stored procs &amp; 3-part name zero-copy joins
+  </text>
+  <text x="102" y="538" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 2 (Open OneLake Delta + Auto V-Order): Writes native Delta Parquet with 30%–50% RLE/dictionary columnar compression
+  </text>
+  <text x="102" y="560" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 3 (DirectLake SQL Bypass): 1,800 buyers read OneLake frames directly into memory (194ms P95, $0 multi-cluster tax)
+  </text>
+  <text x="102" y="582" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 4 (Translytical Price-Lock Write-Back): Rayfin SDK + 1GB Free Fabric SQL commits store price locks &amp; replenishments
+  </text>
+  <text x="102" y="604" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    Result: 319ms E2E Loop (76ms T-SQL/V-Order + 82ms DirectLake Frame + 81ms Guardrail + 80ms SQL Commit) · 9.5x Faster P95
+  </text>
+
+  <!-- Right Panel: 5-Cloud EDW & High-Concurrency BI Decision Matrix -->
+  <rect x="805" y="274" width="735" height="360" rx="14" fill="url(#cardComp23)" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="829" y="304" fill="#A5B4FC" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    📊 5-CLOUD ENTERPRISE DATA WAREHOUSE &amp; BI CONCURRENCY MATRIX (2026)
+  </text>
+
+  <!-- Table Header -->
+  <rect x="825" y="320" width="695" height="32" rx="6" fill="#1E293B"/>
+  <text x="838" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">PLATFORM</text>
+  <text x="975" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">DEFAULT STORAGE &amp; ACID SQL</text>
+  <text x="1210" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">1,800-USER BI CONCURRENCY</text>
+  <text x="1395" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">MODELED TCO</text>
+
+  <!-- Row 1: Fabric Warehouse -->
+  <rect x="825" y="358" width="695" height="48" rx="6" fill="#0F2942" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="838" y="379" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Fabric Warehouse</text>
+  <text x="838" y="396" fill="#93C5FD" font-family="Segoe UI, Inter, sans-serif" font-size="10">T-SQL + V-Order + DirectLake</text>
+  <text x="975" y="379" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Open OneLake Delta + V-Order</text>
+  <text x="975" y="396" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="10">Full T-SQL procs + 3-part cross-DB join</text>
+  <text x="1210" y="379" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">DirectLake SQL-Bypass</text>
+  <text x="1210" y="396" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">194ms P95 · $0 spin-up tax</text>
+  <text x="1395" y="379" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">$11,400 / mo</text>
+  <text x="1395" y="396" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="10">-67.2% vs Legacy</text>
+
+  <!-- Row 2: Snowflake -->
+  <rect x="825" y="412" width="695" height="48" rx="6" fill="#161F33"/>
+  <text x="838" y="433" fill="#60A5FA" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Snowflake DW</text>
+  <text x="838" y="450" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Multi-Cluster + QAS</text>
+  <text x="975" y="433" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Proprietary Micro-Partitions</text>
+  <text x="975" y="450" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">Snowflake Scripting + 90d Time Travel</text>
+  <text x="1210" y="433" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">Multi-Cluster (2–10x)</text>
+  <text x="1210" y="450" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="10">Linear credit multiplier on peak</text>
+  <text x="1395" y="433" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">$34,800 / mo</text>
+  <text x="1395" y="450" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">4-Cluster XL peak</text>
+
+  <!-- Row 3: Databricks SQL -->
+  <rect x="825" y="466" width="695" height="48" rx="6" fill="#1B2234"/>
+  <text x="838" y="487" fill="#F97316" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Databricks SQL</text>
+  <text x="838" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Photon + Liquid Clustering</text>
+  <text x="975" y="487" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Open Delta + Liquid Clustering</text>
+  <text x="975" y="504" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">ANSI SQL Scripting + Predictive I/O</text>
+  <text x="1210" y="487" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">Serverless Autoscale</text>
+  <text x="1210" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Spins up extra Serverless DBUs</text>
+  <text x="1395" y="487" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">$27,900 / mo</text>
+  <text x="1395" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">DBU + BI seats</text>
+
+  <!-- Row 4: GCP BigQuery -->
+  <rect x="825" y="520" width="695" height="48" rx="6" fill="#161F33"/>
+  <text x="838" y="541" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">GCP BigQuery</text>
+  <text x="838" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Slots + BI Engine</text>
+  <text x="975" y="541" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Capacitor + BigLake Iceberg</text>
+  <text x="975" y="558" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">GoogleSQL Procedural Language</text>
+  <text x="1210" y="541" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="11">BI Engine + Slot Scale</text>
+  <text x="1210" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Overflow burns Autoscale Slots</text>
+  <text x="1395" y="541" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">$26,400 / mo</text>
+  <text x="1395" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Slots + Looker</text>
+
+  <!-- Row 5: AWS Redshift -->
+  <rect x="825" y="574" width="695" height="48" rx="6" fill="#1B2234"/>
+  <text x="838" y="595" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">AWS Redshift</text>
+  <text x="838" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Serverless RPU / RA3</text>
+  <text x="975" y="595" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">RMS Blocks + S3 Spectrum</text>
+  <text x="975" y="612" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">PL/pgSQL Stored Procedures</text>
+  <text x="1210" y="595" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11">Concurrency Scaling</text>
+  <text x="1210" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Per-second RPU burst charges</text>
+  <text x="1395" y="595" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">$29,200 / mo</text>
+  <text x="1395" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">RPU + QuickSight</text>
+
+  <!-- Bottom Panel: Quantitative Scenario V Breakdown & Dual Denominator Seal -->
+  <rect x="60" y="652" width="1480" height="284" rx="14" fill="#0D192E" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="84" y="684" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    🧪 QUANTITATIVE BENCHMARK &amp; PROVENANCE SEAL — SCENARIO V (65TB RETAIL EDW × 1,800 MONDAY 09:00 BUYERS)
+  </text>
+
+  <!-- Step Latency Pipeline -->
+  <rect x="84" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="102" y="726" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 1 · CROSS-DB T-SQL &amp; V-ORDER</text>
+  <text x="102" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">76 ms <tspan font-size="13" fill="#34D399">(Open Delta)</tspan></text>
+  <text x="102" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">3-part name ACID proc + 40% V-Order compression</text>
+
+  <rect x="438" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#10B981" stroke-width="1.2"/>
+  <text x="456" y="726" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 2 · DIRECTLAKE FRAME BYPASS</text>
+  <text x="456" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">82 ms <tspan font-size="13" fill="#34D399">($0 Spin-Up Tax)</tspan></text>
+  <text x="456" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">Maps OneLake column segments without SQL queue</text>
+
+  <rect x="792" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="810" y="726" fill="#C084FC" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 3 · 1,800-BUYER MARGIN GUARD</text>
+  <text x="810" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">81 ms <tspan font-size="13" fill="#C084FC">(194ms P95 BI)</tspan></text>
+  <text x="810" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">9.5x faster than 1,850ms 4-cluster DirectQuery</text>
+
+  <rect x="1146" y="702" width="370" height="92" rx="10" fill="#112240" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1164" y="726" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 4 · RAYFIN 1GB SQL PRICE LOCK</text>
+  <text x="1164" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">80 ms → <tspan fill="#34D399">319 ms E2E</tspan></text>
+  <text x="1164" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">Commits 420 SKU price locks ($4.45M SLA protected)</text>
+
+  <!-- Dual Denominator & Provenance Footer Box -->
+  <rect x="84" y="810" width="1432" height="108" rx="10" fill="#091326" stroke="#334155" stroke-width="1"/>
+  <text x="104" y="835" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    🔒 STRICT DUAL-DENOMINATOR &amp; FOUR-TIER PROVENANCE DISCLOSURE (REPORT ID: data-lab-fabric-vs-4clouds-2026-11-09-r15)
+  </text>
+  <text x="104" y="859" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    • Denominator A (Routing Matrix Evaluation Mean, n=104): 471.0 ms (103/104 = 99.04% accuracy; DL-101=342ms, DL-102=350ms, DL-103=344ms, DL-104=348ms; R14 n=100 was 476.0ms)
+  </text>
+  <text x="104" y="881" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    • Denominator B (Industry Ontology Closed-Loop Mean, n=22): 487.0 ms across [780..351, 335, 319]ms (Scenario V = 319ms; R14 n=21 was 495.0ms; R13 n=20 was 503.0ms)
+  </text>
+  <text x="104" y="903" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">
+    • Official Vendor References (as_of: 2026-11-09): learn.microsoft.com/fabric/data-warehouse/data-warehousing · delta-optimization-and-v-order · docs.snowflake.com/en/user-guide/warehouses-multicluster
+  </text>
+</svg>

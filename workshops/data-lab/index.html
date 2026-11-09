@@ -175,6 +175,7 @@
     <a class="btn" href="comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.en.md" id="link-faq-r12">🛡️ R12: Private Link &amp; OAP FAQ</a>
     <a class="btn" href="comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.en.md" id="link-faq-r13">🌐 R13: BCDR &amp; CMK FAQ</a>
     <a class="btn" href="comparisons/fabric-external-data-sharing-clean-room-vs-4clouds-faq.en.md" id="link-faq-r14">🤝 R14: External Share &amp; Clean Room FAQ</a>
+    <a class="btn" href="comparisons/fabric-warehouse-tsql-vorder-directlake-vs-4clouds-faq.en.md" id="link-faq-r15">🏛️ R15: Warehouse T-SQL &amp; V-Order FAQ</a>
     <a class="btn" href="benchmark-cards.html" id="link-cards-zh">📊 7-Card 评测报告 (中文)</a>
     <a class="btn" href="benchmark-cards.en.html" id="link-cards-en">📊 7-Card Deck (EN)</a>
     <a class="btn" href="../fabcon-sqlcon-2026/index.html">🎬 FabCon 2026 展厅</a>
@@ -188,9 +189,9 @@
     <div class="hero-top">
       <div>
         <h2 id="hero-heading">AI Solution Architect 全景工作台：Fabric IQ 本体 · 五云攻防 · TCO 测算 · 实时仿真</h2>
-        <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与十四大深度选型专题（R1 跨云零拷贝与 IQ Sharing、R2 实时流 Eventhouse vs Dynamic Tables、R3 零 ETL 镜像 $0 算力 vs 传统 CDC、R4 OneLake Iceberg↔Delta XTable $0 双向虚拟化、R5 Fabric SQL + Cosmos DB SSD DiskANN 省 92% 内存 vs Lakebase/Unistore、R6 OneLake 统一 RLS/CLS/OLS + Purview + Entra Agent ID OBO 省 85.3% 治理 TCO、R7 Fabric Spark Gluten+Velox C++ $0 溢价 + Autoscale 省 58.6% ETL 成本、R8 Fabric Data Agents + Copilot Studio + Foundry IQ $0 M365 Token 省 82.6% 问数 TCO、R9 Fabric Data Factory + Project Osmos + 物化湖视图 MLV 152ms 自愈省 71.1% 编排 TCO、R10 Fabric Capacity Surge Protection + 24h 平滑 + Rayfin 多工作区 FinOps 省 54.0% 超支、R11 Fabric Git Integration PBIP/TMDL + Variable Libraries + Terraform 省 76.1% DataOps TCO、R12 Fabric Workspace Private Link + Managed VNet Spark + OAP 默认拒绝防外泄 + Trusted Workspace Access 省 68.5% 网络与版本 TCO、R13 Fabric OneLake BCDR 存储级跨区域复制 + ZRS + Workspace CMK $0 版本税 + Variable Library 全栈切流省 70.7% 容灾与加密 TCO、R14 Fabric External Data Sharing + OneLake IQ Sharing $0 提供方算力 + .rdf/.md 打包共享省 72.4% B2B 共享 TCO），对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。<i>（数据溯源与双分母口径声明：<code>99/100</code> 路由与 <code>46/46</code> 单测为 <code>measured_local_harness</code>；<code>$0</code> 镜像算力/<code>$0</code> XTable 虚拟化/SSD <code>DiskANN</code>/OneLake OBO 安全/Spark <code>Gluten $0 溢价</code>/Data Agents <code>$0 M365 Token</code>/Data Factory <code>MLV &amp; Osmos</code>/<code>Surge Protection &amp; 24h Smoothing</code>/<code>Git PBIP/TMDL &amp; Variable Libraries</code>/<code>Workspace Private Link &amp; OAP/MPE/TWA</code>/<code>OneLake BCDR &amp; Workspace CMK $0 版本税</code>/<code>External &amp; IQ Sharing $0 提供方算力</code>/<code>$0</code> 读者费/<code>60s</code> 滞后为附 17 条官方链接的 <code>vendor_published_spec_as_of_2026</code>；<b>n=100 路由矩阵建模均值 <code>476.0ms</code></b> 与 <b>n=21 行业本体闭环仿真均值 <code>495.0ms</code> (范围 <code>335–780ms</code>)</b> 及 TCO/SLA 风险敞口严格区分并标注为 <code>synthetic_scenario_model</code>）</i></p>
+        <p id="hero-desc">融合 FabCon &amp; SQLCon Barcelona 2026 最新发布与十五大深度选型专题（R1 跨云零拷贝与 IQ Sharing、R2 实时流 Eventhouse vs Dynamic Tables、R3 零 ETL 镜像 $0 算力 vs 传统 CDC、R4 OneLake Iceberg↔Delta XTable $0 双向虚拟化、R5 Fabric SQL + Cosmos DB SSD DiskANN 省 92% 内存 vs Lakebase/Unistore、R6 OneLake 统一 RLS/CLS/OLS + Purview + Entra Agent ID OBO 省 85.3% 治理 TCO、R7 Fabric Spark Gluten+Velox C++ $0 溢价 + Autoscale 省 58.6% ETL 成本、R8 Fabric Data Agents + Copilot Studio + Foundry IQ $0 M365 Token 省 82.6% 问数 TCO、R9 Fabric Data Factory + Project Osmos + 物化湖视图 MLV 152ms 自愈省 71.1% 编排 TCO、R10 Fabric Capacity Surge Protection + 24h 平滑 + Rayfin 多工作区 FinOps 省 54.0% 超支、R11 Fabric Git Integration PBIP/TMDL + Variable Libraries + Terraform 省 76.1% DataOps TCO、R12 Fabric Workspace Private Link + Managed VNet Spark + OAP 默认拒绝防外泄 + Trusted Workspace Access 省 68.5% 网络与版本 TCO、R13 Fabric OneLake BCDR 存储级跨区域复制 + ZRS + Workspace CMK $0 版本税 + Variable Library 全栈切流省 70.7% 容灾与加密 TCO、R14 Fabric External Data Sharing + OneLake IQ Sharing $0 提供方算力 + .rdf/.md 打包共享省 72.4% B2B 共享 TCO、R15 Fabric Warehouse 分布式 T-SQL + 自动 V-Order 压缩 + DirectLake 绕过 SQL 节点抗 1,800 并发省 67.2% 数仓/BI TCO），对标 Databricks、Snowflake、GCP BigQuery 与 AWS Lakehouse。<i>（数据溯源与双分母口径声明：<code>103/104</code> 路由与 <code>48/48</code> 单测为 <code>measured_local_harness</code>；<code>$0</code> 镜像算力/<code>$0</code> XTable 虚拟化/SSD <code>DiskANN</code>/OneLake OBO 安全/Spark <code>Gluten $0 溢价</code>/Data Agents <code>$0 M365 Token</code>/Data Factory <code>MLV &amp; Osmos</code>/<code>Surge Protection &amp; 24h Smoothing</code>/<code>Git PBIP/TMDL &amp; Variable Libraries</code>/<code>Workspace Private Link &amp; OAP/MPE/TWA</code>/<code>OneLake BCDR &amp; Workspace CMK $0 版本税</code>/<code>External &amp; IQ Sharing $0 提供方算力</code>/<code>Warehouse T-SQL &amp; V-Order DirectLake</code>/<code>$0</code> 读者费/<code>60s</code> 滞后为附 18 条官方链接的 <code>vendor_published_spec_as_of_2026</code>；<b>n=104 路由矩阵建模均值 <code>471.0ms</code></b> 与 <b>n=22 行业本体闭环仿真均值 <code>487.0ms</code> (范围 <code>319–780ms</code>)</b> 及 TCO/SLA 风险敞口严格区分并标注为 <code>synthetic_scenario_model</code>）</i></p>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">99 / 100 Scenarios Passed (99.0%) · 2026-11-09 / 11-10 (R14)</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">103 / 104 Scenarios Passed (99.04%) · 2026-11-09 / 11-10 (R15)</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -204,9 +205,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=100 / n=21)</div>
-        <div class="val">476.0ms / 495.0ms</div>
-        <div class="sub" id="kpi3-sub">n=100 Matrix Mean 476.0ms · n=21 Ontology Mean 495.0ms (335–780ms)</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=104 / n=22)</div>
+        <div class="val">471.0ms / 487.0ms</div>
+        <div class="sub" id="kpi3-sub">n=104 Matrix Mean 471.0ms · n=22 Ontology Mean 487.0ms (319–780ms)</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -310,7 +311,8 @@
       <button class="comp-pill" id="sim-btn-cicd" onclick="selectScenario('global_payments_cicd_git_tmdl_deployment_vs_dabs_snowcli')">🔄 Scenario R: Global Payments 14-Region PCI-DSS v4.0 Release Fabric Git (PBIP/TMDL) + Variable Libraries + Terraform vs DABs/SnowCLI (383ms · R11)</button>
       <button class="comp-pill" id="sim-btn-netsec" onclick="selectScenario('sovereign_wealth_private_link_managed_vnet_exfil_defense')">🛡️ Scenario S: Sovereign Wealth 22-Workspace EU DORA/NIS2 Zero-Trust Workspace Private Link + Managed VNet OAP + TWA vs VNet Injection/Business Critical (367ms · R12)</button>
       <button class="comp-pill" id="sim-btn-bcdr" onclick="selectScenario('global_clearing_bank_bcdr_cmk_regional_failover')">🌐 Scenario T: Global Clearing Bank 180TB Cross-Region BCDR + ZRS + Workspace CMK ($0 Tier Tax) + Variable Library Failover vs Snowflake Tri-Secret BC / Databricks DEEP CLONE (351ms · R13)</button>
-      <button class="comp-pill" id="sim-btn-rmn" onclick="selectScenario('b2b_retail_media_iq_sharing_clean_room_monetization')">🤝 Scenario U: Global Retail Media 45TB × 68 CPG Brands External + OneLake IQ Sharing ($0 Provider CU + .rdf/.md) vs Snowflake Clean Rooms / OpenSharing (335ms · R14 NEW)</button>
+      <button class="comp-pill" id="sim-btn-rmn" onclick="selectScenario('b2b_retail_media_iq_sharing_clean_room_monetization')">🤝 Scenario U: Global Retail Media 45TB × 68 CPG Brands External + OneLake IQ Sharing ($0 Provider CU + .rdf/.md) vs Snowflake Clean Rooms / OpenSharing (335ms · R14)</button>
+      <button class="comp-pill" id="sim-btn-dwh" onclick="selectScenario('global_retail_dwh_tsql_vorder_directlake_vs_snowflake_dbsql')">🏛️ Scenario V: Global Retail 65TB EDW × 1,800 Buyers Fabric Warehouse (T-SQL + V-Order + DirectLake Bypass) vs Snowflake Multi-Cluster / DBSQL (319ms · R15 NEW)</button>
     </div>
 
     <div class="grid-2">
@@ -338,7 +340,7 @@
   <section id="panel-visuals" class="tab-panel">
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>01 · Mandatory Nightly Visual Summary (2026-11-09 / 11-10 R14): 5-Cloud Decision Matrix, Zero-Copy, Streaming, Mirroring, XTable, DiskANN, OBO Governance, Spark Gluten, Data Agents, Osmos, Surge FinOps, Git CI/CD TMDL, Zero-Trust Private Link/OAP, Cross-Region BCDR/CMK &amp; B2B External/IQ Sharing 21-Ontology Summary Card (SVG)</span>
+        <span>01 · Mandatory Nightly Visual Summary (2026-11-09 / 11-10 R15): 5-Cloud Decision Matrix, Zero-Copy, Streaming, Mirroring, XTable, DiskANN, OBO Governance, Spark Gluten, Data Agents, Osmos, Surge FinOps, Git CI/CD TMDL, Zero-Trust Private Link/OAP, Cross-Region BCDR/CMK, B2B External/IQ Sharing &amp; Cloud EDW V-Order/DirectLake 22-Ontology Summary Card (SVG)</span>
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-08.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
@@ -346,7 +348,15 @@
 
     <div class="card" style="margin-bottom:18px;">
       <h3>
-        <span>22 · Fabric Cross-Tenant External Data Sharing &amp; OneLake IQ Sharing ($0 Provider Compute + .rdf Ontology &amp; .md Agent Rules, 335ms RMN Monetization Loop across 68 CPG Brands, 0.0% Drift, -72.4% B2B Sharing TCO) vs. Snowflake Data Clean Rooms / Databricks OpenSharing FAQ Architecture (R14 NEW)</span>
+        <span>23 · Fabric Cloud Data Warehouse (Distributed T-SQL + Open OneLake Delta + Auto V-Order + DirectLake SQL-Bypass for 1,800 Concurrent Users, 319ms Loop, 194ms P95 BI, -67.2% EDW+BI TCO) vs. Snowflake Multi-Cluster / Databricks SQL Serverless FAQ Architecture (R15 NEW)</span>
+        <a href="assets/svg/23-fabric-warehouse-tsql-vorder-directlake-vs-4clouds-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/23-fabric-warehouse-tsql-vorder-directlake-vs-4clouds-faq.svg" alt="Fabric Warehouse Distributed T-SQL V-Order DirectLake vs Snowflake Multi-Cluster Databricks SQL Serverless FAQ Architecture" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>22 · Fabric Cross-Tenant External Data Sharing &amp; OneLake IQ Sharing ($0 Provider Compute + .rdf Ontology &amp; .md Agent Rules, 335ms RMN Monetization Loop across 68 CPG Brands, 0.0% Drift, -72.4% B2B Sharing TCO) vs. Snowflake Data Clean Rooms / Databricks OpenSharing FAQ Architecture (R14)</span>
         <a href="assets/svg/22-fabric-external-data-sharing-clean-room-vs-4clouds-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/22-fabric-external-data-sharing-clean-room-vs-4clouds-faq.svg" alt="Fabric External Data Sharing OneLake IQ Sharing Purview OBO vs Snowflake Clean Rooms Databricks OpenSharing FAQ Architecture" class="svg-preview">
@@ -1247,6 +1257,30 @@ const SIM_DATA = {
       teamsTitle: 'Teams Global Retail Media Network CDO & Brand Partner Card · 45TB × 68 CPG Monetization (DL-97..100)',
       teamsSummary: '335ms Cross-Tenant Zero-Copy Monetization Ready: 45TB POS across 68 CPG brands with 0 bytes moved + $0 provider compute + .rdf/.md 0.0% drift + k>=50 PII guard · -72.4% B2B Sharing TCO ($20,500/mo saved), $3,900,000 RMN ARR Protected ✓'
     }
+  },
+  global_retail_dwh_tsql_vorder_directlake_vs_snowflake_dbsql: {
+    zh: {
+      steps: [
+        { title: '① Fabric Warehouse 跨库 3 部分名称 T-SQL ACID 事务与自动 V-Order 落盘', latency: '76 ms', desc: '通过 db.schema.table 零拷贝联查 65TB Silver Lakehouse 与 Gold Warehouse，执行存储过程 sp_ComputeWeeklyMargin 并自动完成 V-Order 列存排序压缩（体积缩小 42%，100% 开放 OneLake Delta 格式）。' },
+        { title: '② DirectLake 内存列存帧直读分流 ($0 Multi-Cluster 横向扩容税)', latency: '82 ms', desc: 'OneLake Delta 事务日志提交后即刻按需映射 V-Order 列存帧至内存，完全绕过 T-SQL 计算节点队列，消除传统云数仓早高峰拉起 4~8 台 XL 集群的并发扩容税。' },
+        { title: '③ 周一早高峰 1,800 买手并发核价 (194ms P95) 与 Foundry IQ 毛利护栏', latency: '81 ms', desc: '支撑全球 1,800 名买手与 Data Agent 并发查询（P95 仅 194ms，较 4 集群 DirectQuery 提速 9.5x），并校验 420 个高优 SKU 锁价方案符合净毛利率 >= 21.5% 红线。' },
+        { title: '④ Rayfin SDK 门店动态锁价与 1GB Free Fabric SQL 补货账本落库', latency: '80 ms', desc: '商品 VP 一键批准早会锁价单，Rayfin 将 420 个 SKU 门店锁价与安全库存补货单写入 1GB 免费 Fabric SQL（端到端 319ms，月省 67.2% 数仓与 BI 并发 TCO 即 -$23,400/月，守护 $4.45M 早高峰调价 SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>MondayPeak:1800_Buyers → FabricWarehouse:sp_ComputeWeeklyMargin_65TB_VOrder (76ms) → DirectLakeBypass:Zero_SQL_Queue_SpinUp ($0 Multi-Cluster Tax, 82ms) → FoundryIQ:NetMargin_21.5Pct_194ms_P95 (81ms) → Free_1GB_FabricSQL:420_SKU_PriceLock_Commit (319ms E2E)</code>',
+      teamsTitle: 'Teams 全球零售商品 VP 与首席数据架构师早高峰审批卡 · 65TB 数仓 × 1,800 并发锁价 (DL-101..104)',
+      teamsSummary: '319ms 数仓 ACID 结账与 1,800 并发买手锁价就绪：V-Order 压缩 42% + DirectLake 194ms P95 ($0 多集群扩容税) + 420 SKU 毛利达标 · 月省 67.2% 数仓/BI TCO ($23,400/月)，守护 $4,450,000 调价 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Fabric Warehouse 3-Part Cross-DB T-SQL ACID & Automatic V-Order Write', latency: '76 ms', desc: 'Executes sp_ComputeWeeklyMargin across 65TB Silver Lakehouse and Gold Warehouse via 3-part names, writing open OneLake Delta Parquet with 42% V-Order columnar compression.' },
+        { title: '② DirectLake In-Memory Columnar Framing ($0 Multi-Cluster Spin-Up Tax)', latency: '82 ms', desc: 'Maps V-Order Parquet column segments directly into memory upon Delta commit, completely bypassing T-SQL compute queues and avoiding 4-to-8 XL warehouse cluster spin-ups.' },
+        { title: '③ Monday 09:00 1,800-Buyer Peak (194ms P95) & Foundry IQ Margin Guard', latency: '81 ms', desc: 'Serves 1,800 concurrent buyers and Data Agents at 194ms P95 (9.5x faster than 1,850ms 4-cluster DirectQuery) and validates 420 SKU price locks against Net_Margin >= 21.5%.' },
+        { title: '④ Rayfin SDK Store Price-Lock & 1GB Free Fabric SQL Replenishment Commit', latency: '80 ms', desc: 'Merchandising VP approves Monday morning price locks; Rayfin commits 420 SKU price and replenishment orders to 1GB Free Fabric SQL in 80ms (319ms E2E, saving $23,400/mo or -67.2% EDW+BI TCO and protecting $4.45M pricing SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>MondayPeak:1800_Buyers → FabricWarehouse:sp_ComputeWeeklyMargin_65TB_VOrder (76ms) → DirectLakeBypass:Zero_SQL_Queue_SpinUp ($0 Multi-Cluster Tax, 82ms) → FoundryIQ:NetMargin_21.5Pct_194ms_P95 (81ms) → Free_1GB_FabricSQL:420_SKU_PriceLock_Commit (319ms E2E)</code>',
+      teamsTitle: 'Teams Global Retail Merchandising VP & Chief Data Architect Card · 65TB EDW × 1,800 Buyers (DL-101..104)',
+      teamsSummary: '319ms Cloud EDW ACID Close & 1,800-Buyer Concurrency Ready: 42% V-Order compression + DirectLake 194ms P95 ($0 multi-cluster spin-up tax) + 420 SKU price locks · -67.2% EDW+BI TCO ($23,400/mo saved), $4,450,000 Pricing SLA Protected ✓'
+    }
   }
 };
 
@@ -1425,6 +1459,8 @@ function selectScenario(sc) {
   if (bcdrBtn) bcdrBtn.classList.toggle('active', sc === 'global_clearing_bank_bcdr_cmk_regional_failover');
   const rmnBtn = document.getElementById('sim-btn-rmn');
   if (rmnBtn) rmnBtn.classList.toggle('active', sc === 'b2b_retail_media_iq_sharing_clean_room_monetization');
+  const dwhBtn = document.getElementById('sim-btn-dwh');
+  if (dwhBtn) dwhBtn.classList.toggle('active', sc === 'global_retail_dwh_tsql_vorder_directlake_vs_snowflake_dbsql');
   runNormalSim();
 }
 
