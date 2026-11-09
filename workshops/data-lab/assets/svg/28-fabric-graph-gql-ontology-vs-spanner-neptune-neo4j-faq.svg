@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg28" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr28" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="fabCard28" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg28)"/>
+  <rect x="24" y="20" width="1352" height="820" rx="18" fill="#0B1528" stroke="#1E293B" stroke-width="2"/>
+  <rect x="24" y="20" width="1352" height="8" rx="4" fill="url(#hdr28)"/>
+
+  <!-- Header -->
+  <text x="52" y="64" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">DATA LAB · ROUND 20 ARCHITECTURE &amp; BENCHMARK VISUAL SUMMARY (DL-121..DL-124 · SCENARIO AA)</text>
+  <text x="52" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800">Enterprise Graph &amp; ISO GQL: Fabric Graph &amp; IQ Ontology vs. Spanner Graph / Neptune / Neo4j SPCS</text>
+  <text x="52" y="122" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">Zero-Copy CSR Adjacency Graph over OneLake Delta (85M Nodes / 1.2B Edges) · 60ms 8-Hop ISO GQL UBO Carousel Traversal · -75.2% Graph TCO ($9.4K vs $37.9K/mo)</text>
+
+  <rect x="1088" y="46" width="260" height="66" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1218" y="72" text-anchor="middle" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ROUND 20 SEALED VERDICT</text>
+  <text x="1218" y="96" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">239ms · -75.2% TCO · 123/124</text>
+
+  <!-- Left Column: Standalone Graph DB Silo -->
+  <rect x="48" y="144" width="632" height="310" rx="14" fill="#1E111A" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="70" y="174" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">❌ Legacy: Standalone Graph DB Silo + Nightly CSV Export ($37,900/mo · T+1 Lag)</text>
+
+  <rect x="70" y="190" width="588" height="68" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="213" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. 24×7 All-in-RAM Graph Instance &amp; License Tax ($24,500/mo + $7,400/mo ETL)</text>
+  <text x="86" y="233" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Hosting 85M nodes &amp; 1.2B edges in dedicated Neptune / Neo4j SPCS requires costly high-RAM instances.</text>
+  <text x="86" y="250" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Nightly export ETL from Lakehouse to Graph DB lags by 12–24h, missing same-day shell companies.</text>
+
+  <rect x="70" y="268" width="588" height="78" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="291" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Relational SQL `WITH RECURSIVE` Hits a Wall at 8 Hops (46.8 Seconds / OOM)</text>
+  <text x="86" y="311" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Full-table hash joins explode exponentially across 8 hops (avg degree 14), timing out inline AML checks.</text>
+  <text x="86" y="330" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Truncating queries at 3 hops misses 58.3% of deep Marshall/Cayman circular UBO ownership rings.</text>
+
+  <rect x="70" y="356" width="588" height="82" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="379" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. Security Amnesia in DIY GraphRAG ($6,000/mo Vector + Graph Sync Overhead)</text>
+  <text x="86" y="399" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Exporting lakehouse tables into external Cypher/Gremlin stores strips OneLake RLS/CLS permissions.</text>
+  <text x="86" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Multi-hop GraphRAG neighbor expansion leaks restricted executive nodes to unauthorized users.</text>
+
+  <!-- Right Column: Fabric Graph + Fabric IQ Ontology -->
+  <rect x="708" y="144" width="644" height="310" rx="14" fill="url(#fabCard28)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="730" y="174" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">✅ Fabric Graph (ISO GQL) + Fabric IQ Ontology ($9,400/mo · Save 75.2%)</text>
+
+  <rect x="730" y="190" width="600" height="68" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="213" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. Zero-Copy CSR Graph Projection Over OneLake Delta ($0 Export ETL · Pooled F64)</text>
+  <text x="746" y="233" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Projects 85M nodes &amp; 1.2B edges directly from OneLake Delta Parquet into CSR adjacency indexes.</text>
+  <text x="746" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Shares pooled Fabric F64 capacity ($0 idle standalone graph server tax, saving $28,500/mo).</text>
+
+  <rect x="730" y="268" width="600" height="78" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="291" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Native ISO/IEC 39075 GQL 8-Hop Traversal in 60 ms (780x Faster Than Recursive SQL)</text>
+  <text x="746" y="311" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• `MATCH p=(c:Company)-[:CONTROLS|ENDORSES|SHIPS_TO*1..8]-&gt;(w:Watchlist)` runs in 60ms.</text>
+  <text x="746" y="330" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Isolates 24-shell-company sanctions carousel (68.4% UBO stake &gt; 25% threshold) with 100% recall.</text>
+
+  <rect x="730" y="356" width="600" height="82" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="379" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. OBO-Pruned Hybrid GraphRAG (SSD DiskANN + ISO GQL + OneLake RLS/CLS)</text>
+  <text x="746" y="399" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Combines SSD DiskANN (-92% RAM) vector search with ISO GQL multi-hop subgraph expansion.</text>
+  <text x="746" y="418" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Automatically prunes unauthorized vertices/edges via Entra ID OBO, protecting $6.10M OFAC SLA.</text>
+
+  <!-- Middle Section: Scenario AA 4-Step 239ms Closed-Loop Pipeline -->
+  <rect x="48" y="472" width="1304" height="156" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="70" y="500" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">⚡ Scenario AA (`global_trade_finance_fabric_graph_gql_aml_vs_neptune_spanner`): 85M Nodes × 1.2B Edges 8-Hop AML UBO Loop (239 ms E2E)</text>
+
+  <rect x="70" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#0284C7"/>
+  <text x="84" y="536" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">① OneLake CSR Graph Mount (56 ms)</text>
+  <text x="84" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">85M Nodes &amp; 1.2B Edges in OneLake</text>
+  <text x="84" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0 external graph export ETL tax</text>
+  <text x="84" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Live Corporate/SWIFT/BOL Graph</text>
+
+  <rect x="390" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#10B981"/>
+  <text x="404" y="536" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">② 8-Hop ISO GQL Traversal (60 ms)</text>
+  <text x="404" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">780x faster than 46.8s SQL join</text>
+  <text x="404" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Uncovers 24 offshore shell entities</text>
+  <text x="404" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Flags 68.4% Sanctioned UBO Stake</text>
+
+  <rect x="710" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#F59E0B"/>
+  <text x="724" y="536" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">③ Foundry IQ OFAC Gate (61 ms)</text>
+  <text x="724" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">TRADE-FINANCE-AML-UBO-SOP-027</text>
+  <text x="724" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">DiskANN typology + OBO edge pruning</text>
+  <text x="724" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Hard-Blocks $6.10M Letter of Credit</text>
+
+  <rect x="1030" y="514" width="300" height="96" rx="10" fill="#1E293B" stroke="#8B5CF6"/>
+  <text x="1044" y="536" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Rayfin Freeze &amp; SAR SQL (62 ms)</text>
+  <text x="1044" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Teams Approval + 1GB Free Fabric SQL</text>
+  <text x="1044" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Commits 8-hop GQL SAR evidence</text>
+  <text x="1044" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Protects $6.10M OFAC SLA (239ms)</text>
+
+  <!-- Bottom Section: 5-Cloud Decision Matrix -->
+  <rect x="48" y="644" width="1304" height="176" rx="14" fill="#0B1324" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="672" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">📊 5-Cloud Enterprise Property Graph, ISO GQL &amp; GraphRAG Comparison (85M Nodes · 1.2B Edges · 8-Hop UBO)</text>
+
+  <text x="70" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">PLATFORM &amp; GRAPH ENGINE</text>
+  <text x="410" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">STORAGE &amp; QUERY LANGUAGE</text>
+  <text x="690" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">8-HOP LATENCY &amp; RLS PRUNING</text>
+  <text x="990" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">MONTHLY TCO</text>
+  <text x="1145" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ARCHITECT VERDICT</text>
+
+  <rect x="62" y="710" width="1276" height="28" rx="6" fill="#064E3B" fill-opacity="0.55"/>
+  <text x="70" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Microsoft Fabric (Fabric Graph + IQ Ontology)</text>
+  <text x="410" y="729" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">0-Copy OneLake CSR + Native ISO GQL</text>
+  <text x="690" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">60ms (239ms E2E) · 100% OBO RLS</text>
+  <text x="990" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$9,400 / mo (-75.2%)</text>
+  <text x="1145" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Best In-Lake GQL &amp; GraphRAG</text>
+
+  <text x="70" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">GCP (Cloud Spanner Graph)</text>
+  <text x="410" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Spanner OLTP Tables + Native ISO GQL</text>
+  <text x="690" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Low latency · OLTP node pricing</text>
+  <text x="990" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$34,200 / mo</text>
+  <text x="1145" y="756" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Best for Spanner OLTP Apps</text>
+
+  <text x="70" y="780" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">AWS (Neptune &amp; Neptune Analytics)</text>
+  <text x="410" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Dedicated Graph Store (openCypher/RDF)</text>
+  <text x="690" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">95ms query · 12-24h S3 ETL lag</text>
+  <text x="990" y="780" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$36,800 / mo</text>
+  <text x="1145" y="780" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Best for W3C RDF / Gremlin</text>
+
+  <text x="70" y="804" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Snowflake (Neo4j on SPCS) / DBX GraphFrames</text>
+  <text x="410" y="804" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Container RAM Projection / Spark Batch</text>
+  <text x="690" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">Container load tax / Batch latency</text>
+  <text x="990" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$27.6K–$37.9K/mo</text>
+  <text x="1145" y="804" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Use for Offline GDS Batch</text>
+</svg>

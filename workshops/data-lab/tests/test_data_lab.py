@@ -392,13 +392,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 255)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 5750000)
 
-    def test_scenario_matrix_120_cases_and_explicit_miss(self) -> None:
+    def test_global_trade_finance_fabric_graph_gql_aml_vs_neptune_spanner_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_trade_finance_fabric_graph_gql_aml_vs_neptune_spanner")
+        self.assertEqual(sim["telemetry"]["graph_entity_nodes_count"], 85000000)
+        self.assertEqual(sim["telemetry"]["graph_relationship_edges_count"], 1200000000)
+        self.assertEqual(sim["telemetry"]["iso_gql_traversal_hops"], 8)
+        self.assertEqual(sim["telemetry"]["external_graph_export_etl_compute_usd"], 0)
+        self.assertEqual(sim["telemetry"]["shell_companies_in_carousel"], 24)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_graph_analytics_tco_saved_usd"], 28500)
+        self.assertTrue(sim["foundry_iq_guardrail"]["sanctioned_ubo_carousel_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["obo_graph_edge_pruning_enforced"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 239)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 6100000)
+
+    def test_scenario_matrix_124_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 120)
-        self.assertEqual(matrix["passed_scenarios"], 119)
+        self.assertEqual(matrix["total_scenarios"], 124)
+        self.assertEqual(matrix["passed_scenarios"], 123)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.17, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 451.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.19, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 446.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -667,6 +682,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Apache Polaris", by_id["DL-119"]["expected"])
         self.assertIn("Protect $5.75M SLA", by_id["DL-120"]["expected"])
 
+    def test_fabric_graph_gql_ontology_vs_spanner_neptune_neo4j_2026_11_10_r20_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-121", "DL-122", "DL-123", "DL-124"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("ISO/IEC 39075 GQL", by_id["DL-121"]["expected"])
+        self.assertIn("-75.2% graph TCO", by_id["DL-122"]["expected"])
+        self.assertIn("OneLake OBO edge pruning", by_id["DL-123"]["expected"])
+        self.assertIn("Protect $6.10M SLA", by_id["DL-124"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -684,11 +710,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 119)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 120)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 451.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 26)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 455.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 123)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 124)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 446.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 27)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 447.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r19_26_simulation_mean_modeled_latency_ms"], 455.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r18_25_simulation_mean_modeled_latency_ms"], 463.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r17_24_simulation_mean_modeled_latency_ms"], 471.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r16_23_simulation_mean_modeled_latency_ms"], 479.0)
@@ -706,7 +733,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 22)
+        self.assertEqual(len(refs), 23)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10"))
@@ -734,6 +761,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("gigafactory_digital_twin_builder_iot_ot_vs_sitewise_lakeflow", loaded["ontology_simulations"])
         self.assertIn("global_telco_synapse_teradata_migration_vs_snowconvert_lakebridge", loaded["ontology_simulations"])
         self.assertIn("global_bank_onelake_purview_catalog_federation_vs_unity_polaris", loaded["ontology_simulations"])
+        self.assertIn("global_trade_finance_fabric_graph_gql_aml_vs_neptune_spanner", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
