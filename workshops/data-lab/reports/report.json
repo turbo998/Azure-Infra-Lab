@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-10-r23",
-  "generated_at": "2026-11-10T03:16:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-10-r24",
+  "generated_at": "2026-11-10T03:48:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 136,
-      "routing_matrix_mean_modeled_latency_ms": 431.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=136 routing & decision evaluation items (DL-01..DL-136, mean=431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 30,
+      "routing_matrix_denominator_n": 140,
+      "routing_matrix_mean_modeled_latency_ms": 426.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=140 routing & decision evaluation items (DL-01..DL-140, mean=426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 31,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -40,14 +40,19 @@
         239,
         223,
         207,
-        191
+        191,
+        175
       ],
       "ontology_simulations_range_ms": [
-        191,
+        175,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 423.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=30 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191]ms, range 191-780ms, mean=423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 415.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=31 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175]ms, range 175-780ms, mean=415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r23_historical_denominators": {
+        "r23_routing_matrix_n136_mean_ms": 431.0,
+        "r23_ontology_simulations_n30_mean_ms": 423.0
+      },
       "r22_historical_denominators": {
         "r22_routing_matrix_n132_mean_ms": 436.0,
         "r22_ontology_simulations_n29_mean_ms": 431.0
@@ -130,8 +135,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=136 decision routing matrix evaluation (135/136 = 99.26%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=136 routing decision matrix tasks (DL-01..DL-136) with arithmetic mean modeled latency = 431.0ms; (2) n=30 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191]ms, range 191-780ms) with arithmetic mean modeled latency = 423.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=140 decision routing matrix evaluation (139/140 = 99.29%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=140 routing decision matrix tasks (DL-01..DL-140) with arithmetic mean modeled latency = 426.0ms; (2) n=31 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175]ms, range 175-780ms) with arithmetic mean modeled latency = 415.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -462,9 +467,22 @@
           "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html"
         ],
         "as_of": "2026-11-10"
+      },
+      {
+        "id": "SPEC-FABRIC-RETAIL-DATA-SOLUTIONS-OMNICHANNEL-ATP",
+        "vendor": "Microsoft / Google Cloud / Snowflake / Databricks / AWS",
+        "claim": "Microsoft Fabric Retail Data Solutions (RDS) deploys a first-party managed 200+ table Retail Industry Data Model (Bronze-Silver-Gold), Site Transaction Cart Abandonment pipelines, and Frequent Itemset affinity templates integrated with Eventhouse KQL and Microsoft Teams; Google Cloud provides Vertex AI Search for Retail; Snowflake provides Retail Data Cloud Marketplace feeds; Databricks provides open-source Retail Solution Accelerator notebooks; AWS provides AWS Supply Chain and Amazon Personalize.",
+        "official_url": "https://learn.microsoft.com/en-us/industry/retail/retail-data-solutions/overview",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/retail/retail-data-solutions/retail-industry-data-model-overview",
+        "competitor_doc_urls": [
+          "https://cloud.google.com/solutions/retail-product-discovery",
+          "https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/what-is-service.html",
+          "https://www.databricks.com/solutions/industries/retail"
+        ],
+        "as_of": "2026-11-10"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=30 industry scenarios, mean=423.0ms), TCO calculator, and n=136 routing suite (mean=431.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=31 industry scenarios, mean=415.0ms), TCO calculator, and n=140 routing suite (mean=426.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -549,16 +567,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 136,
-    "passed_scenarios": 135,
+    "total_scenarios": 140,
+    "passed_scenarios": 139,
     "failed_scenarios": 1,
-    "accuracy_pct": 99.26,
-    "avg_latency_ms": 431.0,
-    "routing_matrix_denominator_n": 136,
-    "routing_matrix_mean_modeled_latency_ms": 431.0,
+    "accuracy_pct": 99.29,
+    "avg_latency_ms": 426.0,
+    "routing_matrix_denominator_n": 140,
+    "routing_matrix_mean_modeled_latency_ms": 426.0,
     "action_distribution": {
-      "Act automatically": 92,
-      "Confirm": 42,
+      "Act automatically": 94,
+      "Confirm": 44,
       "Send to a human": 2
     },
     "scenarios": [
@@ -2193,6 +2211,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 268
+      },
+      {
+        "id": "DL-137",
+        "category": "Retail & CPG",
+        "question": "Unify 4,800 store POS/RFID streams, D365 ERP inventory, and e-commerce orders to eliminate 8.4% Phantom Inventory BOPIS cancellations and empower frontline store managers",
+        "expected": "Microsoft Fabric Retail Data Solutions (First-Party Managed 200+ Retail Industry Tables + Eventhouse KQL 40ms Live ATP + Frontline Teams Adaptive Cards + 1GB Free Fabric SQL)",
+        "model_answer": "Microsoft Fabric Retail Data Solutions (First-Party Managed 200+ Retail Industry Tables + Eventhouse KQL 40ms Live ATP + Frontline Teams Adaptive Cards + 1GB Free Fabric SQL)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 252
+      },
+      {
+        "id": "DL-138",
+        "category": "vs GCP",
+        "question": "Compare Microsoft Fabric Retail Data Solutions (RDS) vs GCP Vertex AI Search for Retail + BigQuery for consumer storefront search ranking and real-time store inventory fulfillment",
+        "expected": "Use GCP Vertex AI Search for Retail for consumer mobile app search bar ranking, and mirror cart events into Fabric RDS via BigQuery Mirroring for 40ms store ATP & Teams execution (-78.3% TCO)",
+        "model_answer": "Use GCP Vertex AI Search for Retail for consumer mobile app search bar ranking, and mirror cart events into Fabric RDS via BigQuery Mirroring for 40ms store ATP & Teams execution (-78.3% TCO)",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 260
+      },
+      {
+        "id": "DL-139",
+        "category": "vs Snowflake",
+        "question": "Compare Fabric Retail Data Solutions + OneLake IQ Sharing vs Snowflake Retail Data Cloud & Databricks Retail Solution Accelerators",
+        "expected": "Subscribe to syndicated NielsenIQ / Circana POS feeds on Snowflake Marketplace via OneLake XTable, train custom PySpark forecasts in Databricks, and serve 1,500 buyers via Fabric RDS DirectLake ($0 Viewer Tax)",
+        "model_answer": "Subscribe to syndicated NielsenIQ / Circana POS feeds on Snowflake Marketplace via OneLake XTable, train custom PySpark forecasts in Databricks, and serve 1,500 buyers via Fabric RDS DirectLake ($0 Viewer Tax)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 254
+      },
+      {
+        "id": "DL-140",
+        "category": "Fabric IQ & Ontology",
+        "question": "Global retailer across 4,800 stores & 120M members detects Flagship #108 Phantom Inventory, reroutes 14,800 BOPIS units across 5km sister stores, and marks down 3,200 perishable trays by -25%",
+        "expected": "RDS 200+ Table & KQL POS Ingest (40ms) + Phantom Stock & 5km Sister Graph (44ms, 14,800 Units) + Foundry IQ 23.4% Margin Gate (45ms, 0.48% Cancel) + Store Teams & 1GB SQL/ESL Lock (46ms = 175ms E2E, Protect $7.50M SLA)",
+        "model_answer": "RDS 200+ Table & KQL POS Ingest (40ms) + Phantom Stock & 5km Sister Graph (44ms, 14,800 Units) + Foundry IQ 23.4% Margin Gate (45ms, 0.48% Cancel) + Store Teams & 1GB SQL/ESL Lock (46ms = 175ms E2E, Protect $7.50M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 258
       }
     ]
   },
@@ -2256,7 +2322,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 30,
+    "total_ontology_simulations": 31,
     "simulation_latencies_ms": [
       780,
       640,
@@ -2287,9 +2353,11 @@
       239,
       223,
       207,
-      191
+      191,
+      175
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 423.0,
+    "ontology_simulation_mean_modeled_latency_ms": 415.0,
+    "r23_30_simulation_mean_modeled_latency_ms": 423.0,
     "r22_29_simulation_mean_modeled_latency_ms": 431.0,
     "r21_28_simulation_mean_modeled_latency_ms": 439.0,
     "r20_27_simulation_mean_modeled_latency_ms": 447.0,
@@ -3990,6 +4058,79 @@
         "projected_savings_usd": 7150000,
         "end_to_end_latency_ms": 191,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Sustainability Data Solutions (SDS) + Microsoft Purview + Fabric IQ Ontology + 1GB Free Fabric SQL"
+      }
+    },
+    "global_retail_omnichannel_rds_pos_inventory_agent_vs_4clouds": {
+      "scenario_id": "global_retail_omnichannel_rds_pos_inventory_agent_vs_4clouds",
+      "title": "Global Retail 4,800 Stores × 120M Members Omnichannel Phantom Stock & Perishable Loop (Fabric Retail Data Solutions 200+ Tables + Eventhouse KQL + Teams vs. T+1 Batch / 4 Clouds)",
+      "provenance_type": "synthetic_scenario_model",
+      "telemetry": {
+        "timestamp": "2026-11-10T03:45:00Z",
+        "physical_retail_stores_count": 4800,
+        "loyalty_members_millions": 120,
+        "prebuilt_retail_standard_tables_count": 200,
+        "rerouted_bopis_units_count": 14800,
+        "dynamic_esl_markdown_perishable_trays": 3200,
+        "bopis_stockout_cancellation_rate_pct": 0.48,
+        "rds_200_table_pos_rfid_ingest_ms": 40,
+        "phantom_stock_sister_store_graph_ms": 44,
+        "foundry_iq_margin_atp_guardrail_ms": 45,
+        "store_teams_esl_sql_writeback_ms": 46,
+        "legacy_stitched_retail_omnichannel_monthly_tco_usd": 36400,
+        "fabric_rds_eventhouse_teams_monthly_tco_usd": 7900
+      },
+      "ontology_graph_traversal": {
+        "root_entity": "GlobalRetail-4800Stores-120MMembers-Omnichannel-ATP-2026Q4",
+        "hops": 6,
+        "affected_entities": [
+          "FabricRDS: 200-Prebuilt-Retail-Tables + Cart-Abandonment-Models",
+          "EventhouseKQL: 4800-Store-POS-RFID-Stream (Flagship-108 Phantom Stock)",
+          "SisterStoreGraph: 12-Stores-Within-5km (14800-Reallocatable-Units)",
+          "PerishableShelfGraph: 3200-RainSlowed-Organic-Trays (-25% ESL Markdown)",
+          "Rayfin-TS-WriteBack: Store-Manager-Teams-Card-1GB-SQL-ESL-Commit"
+        ],
+        "root_cause": "Online cart additions surged +310% during a regional rainstorm while Flagship Store #108 showed 18 units in ERP but recorded 45 minutes of zero POS scans and 0 RFID reads (Phantom Inventory), threatening an 8.4% BOPIS cancellation rate and 6.8% perishable spoilage"
+      },
+      "multi_agent_plan": {
+        "rerouted_bopis_units": 14800,
+        "markdown_perishable_trays": 3200,
+        "monthly_retail_platform_tco_saved_usd": 28500,
+        "retail_platform_tco_savings_pct": 78.3,
+        "actions": [
+          {
+            "step": 1,
+            "agent": "Fabric Retail Data Solutions (RDS) 200+ Table & Eventhouse KQL POS Engine",
+            "operation": "Unify D365 ERP inventory, Salesforce orders, BigQuery GA4 clickstreams, and 4,800-store KQL POS/RFID streams into RDS Silver/Gold tables (40ms)",
+            "impact_metric": "Eliminates 8 months of custom ARTS/NRF retail schema coding across 4,800 stores"
+          },
+          {
+            "step": 2,
+            "agent": "Fabric IQ Phantom Stock Detector & Foundry IQ Margin Guardrail Verifier",
+            "operation": "Isolate Flagship #108 phantom stock and traverse 12 sister stores within 5km in 44ms; validate 23.4% net margin (>=21.0% floor) in Foundry IQ (45ms)",
+            "impact_metric": "Cuts BOPIS cancellation rate from 8.4% to 0.48%; locks 14,800 units & 3,200 perishable trays"
+          },
+          {
+            "step": 3,
+            "agent": "Frontline Store Manager Teams Card & Rayfin 1GB Free SQL / ESL Dispatch",
+            "operation": "Push 1-click Teams mobile approval to store managers, dispatch -25% ESL price markdowns on 3,200 trays, and commit 14,800 BOPIS reroutes to 1GB Free Fabric SQL (46ms)",
+            "impact_metric": "175ms E2E omnichannel loop; -$28,500/mo (-78.3%) TCO; $7.50M fulfillment & spoilage SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "RETAIL-OMNI-ATP-MARGIN-SOP-031",
+        "hard_constraint": "Never expose unverified store inventory to BOPIS checkout when POS/RFID velocity diverges for >30m, and never execute automated perishable ESL markdowns that drop category net margin below 21.0%",
+        "proposed_change": "Suppress Flagship #108 phantom ATP, reroute 14,800 BOPIS units to 5km sister stores, and apply -25% ESL markdown (23.4% net margin)",
+        "phantom_inventory_suppressed": true,
+        "category_margin_floor_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 7500000,
+        "end_to_end_latency_ms": 175,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Retail Data Solutions (RDS) + Eventhouse KQL + Microsoft Teams + 1GB Free Fabric SQL"
       }
     }
   },
