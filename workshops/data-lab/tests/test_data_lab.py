@@ -463,13 +463,27 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 175)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 7500000)
 
-    def test_scenario_matrix_140_cases_and_explicit_miss(self) -> None:
+    def test_global_investment_bank_fabric_frtb_tick_kql_gluten_vs_finspace_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_investment_bank_fabric_frtb_tick_kql_gluten_vs_finspace_4clouds")
+        self.assertEqual(sim["telemetry"]["trading_desks_monitored_count"], 18)
+        self.assertEqual(sim["telemetry"]["market_tick_ingestion_eps"], 250000)
+        self.assertEqual(sim["telemetry"]["proprietary_kdb_license_tax_usd"], 0)
+        self.assertEqual(sim["telemetry"]["gluten_cpp_simd_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_capital_markets_tco_saved_usd"], 30300)
+        self.assertTrue(sim["foundry_iq_guardrail"]["nmrf_capital_penalty_prevented"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["mifid2_best_execution_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 159)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 7850000)
+
+    def test_scenario_matrix_144_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 140)
-        self.assertEqual(matrix["passed_scenarios"], 139)
+        self.assertEqual(matrix["total_scenarios"], 144)
+        self.assertEqual(matrix["passed_scenarios"], 143)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.29, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 426.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.31, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 421.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -793,6 +807,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("NielsenIQ", by_id["DL-139"]["expected"])
         self.assertIn("Protect $7.50M SLA", by_id["DL-140"]["expected"])
 
+    def test_fabric_financial_basel3_frtb_tick_kql_iso20022_vs_4clouds_2026_11_10_r25_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-141", "DL-142", "DL-143", "DL-144"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("$0 kdb+ Tax", by_id["DL-141"]["expected"])
+        self.assertIn("-78.9% TCO", by_id["DL-142"]["expected"])
+        self.assertIn("FactSet / LSEG", by_id["DL-143"]["expected"])
+        self.assertIn("Protect $7.85M SLA", by_id["DL-144"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -810,11 +835,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 139)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 140)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 426.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 31)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 415.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 143)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 144)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 421.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 32)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 407.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r24_31_simulation_mean_modeled_latency_ms"], 415.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r23_30_simulation_mean_modeled_latency_ms"], 423.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r22_29_simulation_mean_modeled_latency_ms"], 431.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r21_28_simulation_mean_modeled_latency_ms"], 439.0)
@@ -837,7 +863,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 27)
+        self.assertEqual(len(refs), 28)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10"))
@@ -870,6 +896,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_oncology_trial_fabric_hds_fhir_dicom_omop_vs_healthlake", loaded["ontology_simulations"])
         self.assertIn("global_auto_oem_fabric_sds_esg_csrd_scope3_cbam_vs_custom_lake", loaded["ontology_simulations"])
         self.assertIn("global_retail_omnichannel_rds_pos_inventory_agent_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_investment_bank_fabric_frtb_tick_kql_gluten_vs_finspace_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
