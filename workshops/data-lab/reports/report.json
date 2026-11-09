@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-10-r21",
-  "generated_at": "2026-11-10T02:18:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-10-r22",
+  "generated_at": "2026-11-10T02:44:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 128,
-      "routing_matrix_mean_modeled_latency_ms": 441.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=128 routing & decision evaluation items (DL-01..DL-128, mean=441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 28,
+      "routing_matrix_denominator_n": 132,
+      "routing_matrix_mean_modeled_latency_ms": 436.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=132 routing & decision evaluation items (DL-01..DL-132, mean=436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 29,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -38,14 +38,19 @@
         271,
         255,
         239,
-        223
+        223,
+        207
       ],
       "ontology_simulations_range_ms": [
-        223,
+        207,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 439.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=28 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223]ms, range 223-780ms, mean=439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 431.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=29 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207]ms, range 207-780ms, mean=431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r21_historical_denominators": {
+        "r21_routing_matrix_n128_mean_ms": 441.0,
+        "r21_ontology_simulations_n28_mean_ms": 439.0
+      },
       "r20_historical_denominators": {
         "r20_routing_matrix_n124_mean_ms": 446.0,
         "r20_ontology_simulations_n27_mean_ms": 447.0
@@ -120,8 +125,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=128 decision routing matrix evaluation (127/128 = 99.22%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=128 routing decision matrix tasks (DL-01..DL-128) with arithmetic mean modeled latency = 441.0ms; (2) n=28 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223]ms, range 223-780ms) with arithmetic mean modeled latency = 439.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=132 decision routing matrix evaluation (131/132 = 99.24%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=132 routing decision matrix tasks (DL-01..DL-132) with arithmetic mean modeled latency = 436.0ms; (2) n=29 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207]ms, range 207-780ms) with arithmetic mean modeled latency = 431.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -425,9 +430,23 @@
           "https://cloud.google.com/eventarc/docs/overview"
         ],
         "as_of": "2026-11-10"
+      },
+      {
+        "id": "SPEC-FABRIC-HEALTHCARE-DATA-SOLUTIONS-FHIR-DICOM-OMOP",
+        "vendor": "Microsoft / AWS / Google Cloud / Snowflake / Databricks",
+        "claim": "Microsoft Fabric Healthcare Data Solutions (HDS) provides first-party managed Bronze-Silver-Gold pipelines that ingest HL7 FHIR R4, DICOM medical imaging metadata, unstructured clinical notes, CMS CCLF claims, and SDoH datasets into open OneLake Delta tables and transform them into OHDSI OMOP CDM v5.4 (including `image_occurrence`); AWS provides HealthLake, HealthImaging, and HealthOmics; GCP provides Cloud Healthcare API; Snowflake provides Healthcare & Life Sciences Data Cloud; Databricks provides open-source Solution Accelerator notebooks.",
+        "official_url": "https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/overview",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/omop-analytics",
+        "competitor_doc_urls": [
+          "https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-amazon-healthlake.html",
+          "https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html",
+          "https://cloud.google.com/healthcare-api/docs/concepts/introduction",
+          "https://www.databricks.com/solutions/accelerators/omop-common-data-model"
+        ],
+        "as_of": "2026-11-10"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=28 industry scenarios, mean=439.0ms), TCO calculator, and n=128 routing suite (mean=441.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=29 industry scenarios, mean=431.0ms), TCO calculator, and n=132 routing suite (mean=436.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -512,16 +531,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 128,
-    "passed_scenarios": 127,
+    "total_scenarios": 132,
+    "passed_scenarios": 131,
     "failed_scenarios": 1,
-    "accuracy_pct": 99.22,
-    "avg_latency_ms": 441.0,
-    "routing_matrix_denominator_n": 128,
-    "routing_matrix_mean_modeled_latency_ms": 441.0,
+    "accuracy_pct": 99.24,
+    "avg_latency_ms": 436.0,
+    "routing_matrix_denominator_n": 132,
+    "routing_matrix_mean_modeled_latency_ms": 436.0,
     "action_distribution": {
-      "Act automatically": 88,
-      "Confirm": 38,
+      "Act automatically": 90,
+      "Confirm": 40,
       "Send to a human": 2
     },
     "scenarios": [
@@ -2060,6 +2079,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 288
+      },
+      {
+        "id": "DL-129",
+        "category": "Fabric IQ & Ontology",
+        "question": "Unify 2.4M Epic/Cerner HL7 FHIR R4 patient records, 18M chest DICOM CT imaging slices, and unstructured pathology notes into OMOP CDM v5.4 without 6-9 months of custom PySpark ETL or $270/TB proprietary FHIR storage fees",
+        "expected": "Microsoft Fabric Healthcare Data Solutions (First-Party Managed Bronze-Silver-Gold FHIR R4 + DICOM + SDoH -> OMOP CDM v5.4 Pipelines on $23/TB OneLake Delta + HIPAA Safe Harbor Date Shifting)",
+        "model_answer": "Microsoft Fabric Healthcare Data Solutions (First-Party Managed Bronze-Silver-Gold FHIR R4 + DICOM + SDoH -> OMOP CDM v5.4 Pipelines on $23/TB OneLake Delta + HIPAA Safe Harbor Date Shifting)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 272
+      },
+      {
+        "id": "DL-130",
+        "category": "vs AWS",
+        "question": "Compare Microsoft Fabric Healthcare Data Solutions (HDS on OneLake) vs AWS HealthLake ($0.27/GB) + HealthImaging + HealthOmics for multimodal clinical trial cohort discovery",
+        "expected": "Use AWS HealthOmics Workflows for raw secondary genomic sequencing (FASTQ -> BAM -> VCF) and mount VCF tables via OneLake Shortcut; use Fabric HDS on $23/TB OneLake to eliminate $270/TB HealthLake surcharges (-76.9% TCO) and unify FHIR+DICOM into OMOP v5.4",
+        "model_answer": "Use AWS HealthOmics Workflows for raw secondary genomic sequencing (FASTQ -> BAM -> VCF) and mount VCF tables via OneLake Shortcut; use Fabric HDS on $23/TB OneLake to eliminate $270/TB HealthLake surcharges (-76.9% TCO) and unify FHIR+DICOM into OMOP v5.4",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 280
+      },
+      {
+        "id": "DL-131",
+        "category": "vs Databricks",
+        "question": "Compare Fabric Healthcare Data Solutions (First-Party Managed OMOP + HIPAA Date Shifting) vs Databricks Solution Accelerator Notebooks & GCP Cloud Healthcare API / Snowflake HLS",
+        "expected": "Use Databricks Glow for custom PySpark GWAS statistical genetics; rely on Microsoft-managed Fabric HDS pipelines for production FHIR/DICOM-to-OMOP schema maintenance, DirectLake BI, and Teams CRC collaboration",
+        "model_answer": "Use Databricks Glow for custom PySpark GWAS statistical genetics; rely on Microsoft-managed Fabric HDS pipelines for production FHIR/DICOM-to-OMOP schema maintenance, DirectLake BI, and Teams CRC collaboration",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 274
+      },
+      {
+        "id": "DL-132",
+        "category": "Fabric IQ & Ontology",
+        "question": "Global Phase-III oncology trial screens 2.4M FHIR patients & 18M DICOM CT slices across 28 sites to recruit 384 Stage IIIB/IV EGFR-mutant NSCLC patients under HIPAA & FDA 21 CFR Part 11 rules",
+        "expected": "HDS OMOP v5.4 Unification (48ms, $0 FHIR Markup) + Multimodal OMOP & DiskANN CT Match (52ms, 384 Patients, +78.6% Recall) + Foundry IQ HIPAA Date-Shift & OBO Gate (53ms) + Site PI Teams & 1GB SQL 21 CFR Part 11 Lock (54ms = 207ms E2E, Protect $6.80M SLA)",
+        "model_answer": "HDS OMOP v5.4 Unification (48ms, $0 FHIR Markup) + Multimodal OMOP & DiskANN CT Match (52ms, 384 Patients, +78.6% Recall) + Foundry IQ HIPAA Date-Shift & OBO Gate (53ms) + Site PI Teams & 1GB SQL 21 CFR Part 11 Lock (54ms = 207ms E2E, Protect $6.80M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 278
       }
     ]
   },
@@ -2123,7 +2190,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 28,
+    "total_ontology_simulations": 29,
     "simulation_latencies_ms": [
       780,
       640,
@@ -2152,9 +2219,11 @@
       271,
       255,
       239,
-      223
+      223,
+      207
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 439.0,
+    "ontology_simulation_mean_modeled_latency_ms": 431.0,
+    "r21_28_simulation_mean_modeled_latency_ms": 439.0,
     "r20_27_simulation_mean_modeled_latency_ms": 447.0,
     "r19_26_simulation_mean_modeled_latency_ms": 455.0,
     "r18_25_simulation_mean_modeled_latency_ms": 463.0,
@@ -3707,6 +3776,79 @@
         "projected_savings_usd": 6450000,
         "end_to_end_latency_ms": 223,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Activator (Reflex) + Power Automate / Teams + 1GB Free Fabric SQL"
+      }
+    },
+    "global_oncology_trial_fabric_hds_fhir_dicom_omop_vs_healthlake": {
+      "scenario_id": "global_oncology_trial_fabric_hds_fhir_dicom_omop_vs_healthlake",
+      "title": "Global Phase-III Oncology Trial 2.4M Patients × 18M DICOM CT Slices Cohort Discovery (Fabric HDS OMOP CDM v5.4 + HIPAA Date Shifting + SSD DiskANN vs. AWS HealthLake / GCP Healthcare API)",
+      "provenance_type": "synthetic_scenario_model",
+      "telemetry": {
+        "timestamp": "2026-11-10T02:40:00Z",
+        "fhir_r4_patient_bundles_count": 2400000,
+        "dicom_ct_imaging_slices_count": 18000000,
+        "proprietary_fhir_storage_markup_usd": 0,
+        "matched_eligible_nsclc_patients": 384,
+        "participating_clinical_trial_sites": 28,
+        "cohort_recall_gain_vs_icd_only_pct": 78.6,
+        "hds_omop_cdm_v54_unification_ms": 48,
+        "multimodal_omop_diskann_cohort_match_ms": 52,
+        "foundry_iq_hipaa_21cfr11_guardrail_ms": 53,
+        "teams_site_pi_sql_enrollment_lock_ms": 54,
+        "legacy_proprietary_healthlake_silos_monthly_tco_usd": 37200,
+        "fabric_hds_omop_onelake_monthly_tco_usd": 8600
+      },
+      "ontology_graph_traversal": {
+        "root_entity": "OncologyTrial-PhaseIII-NSCLC-EGFR-2.4MPatients-28Sites",
+        "hops": 6,
+        "affected_entities": [
+          "FabricHDS: 2.4M-FHIR-R4 + 18M-DICOM-CT + VCF -> OMOP-CDM-v5.4 ($23/TB)",
+          "MultimodalCohort: 384-Eligible-EGFR+-Patients (+78.6% Recall via DiskANN)",
+          "HIPAASafeHarbor: 18-PHI-Redacted + Longitudinal-Date-Shifting",
+          "OneLakeSecurityOBO: 28-Site-PI-Sovereign-Isolation (0 Sponsor PII)",
+          "Rayfin-TS-WriteBack: FDA-21CFR11-SHA256-Enrollment-1GB-SQL"
+        ],
+        "root_cause": "Recruiting 384 Stage IIIB/IV EGFR-mutant NSCLC patients across 28 clinical sites stalled for 5.5 months because FHIR EHRs, DICOM CT scans, and VCF genomics lived in 3 disconnected silos with $270/TB proprietary storage markups"
+      },
+      "multi_agent_plan": {
+        "matched_eligible_patients": 384,
+        "clinical_trial_sites": 28,
+        "monthly_healthcare_platform_tco_saved_usd": 28600,
+        "healthcare_platform_tco_savings_pct": 76.9,
+        "actions": [
+          {
+            "step": 1,
+            "agent": "Fabric Healthcare Data Solutions (HDS) OMOP CDM v5.4 Unification Engine",
+            "operation": "Flatten 2.4M FHIR R4 patient bundles, 18M DICOM CT imaging tags, and S3/ADLS VCF variant shortcuts into OneLake OMOP CDM v5.4 tables at $23/TB standard storage (48ms)",
+            "impact_metric": "Eliminates $270/TB HealthLake markup (-91.5% storage cost) and 6-9 months of custom PySpark ETL"
+          },
+          {
+            "step": 2,
+            "agent": "Multimodal OMOP + SSD DiskANN Cohort Matcher & HIPAA Safe Harbor Verifier",
+            "operation": "Match Stage IIIB/IV NSCLC + EGFR L858R/Exon19del + 16ms DiskANN CT lesion vectors to isolate 384 eligible patients (52ms) and verify HIPAA date-shifted de-identification in Foundry IQ (53ms)",
+            "impact_metric": "+78.6% cohort recall vs ICD-only queries; 100.0% HIPAA 18-PHI compliance; 0 sponsor PII exposure"
+          },
+          {
+            "step": 3,
+            "agent": "Site PI Teams Approval & Rayfin 1GB Free Fabric SQL 21 CFR Part 11 Commit",
+            "operation": "Notify 28 Site PIs via Teams, lock 384 trial enrollment slots, and commit SHA-256 signed FDA 21 CFR Part 11 audit log into 1GB Free Fabric SQL (54ms)",
+            "impact_metric": "207ms E2E cohort lock; -$28,600/mo (-76.9%) platform TCO; $6.80M Phase-III trial milestone SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "ONCOLOGY-TRIAL-HIPAA-21CFR11-SOP-029",
+        "hard_constraint": "Never expose unshifted calendar dates or raw patient identifiers to pharmaceutical trial sponsors, and require cryptographic 21 CFR Part 11 electronic signatures for site enrollment locks",
+        "proposed_change": "Enforce HDS longitudinal date shifting, OneLake OBO site isolation, and SHA-256 signed SQL audit logging",
+        "hipaa_safe_harbor_date_shift_verified": true,
+        "fda_21cfr11_esignature_recorded": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 6800000,
+        "end_to_end_latency_ms": 207,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Healthcare Data Solutions (HDS) + OMOP CDM v5.4 + SSD DiskANN + 1GB Free Fabric SQL"
       }
     }
   },
