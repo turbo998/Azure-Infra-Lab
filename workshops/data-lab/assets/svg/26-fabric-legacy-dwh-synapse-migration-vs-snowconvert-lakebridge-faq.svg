@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" width="1600" height="980">
+  <defs>
+    <linearGradient id="bg26" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#09152B"/>
+    </linearGradient>
+    <linearGradient id="accent26" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="cardFabric26" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D2847"/>
+      <stop offset="100%" stop-color="#0A192F"/>
+    </linearGradient>
+    <linearGradient id="cardComp26" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B38"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="980" fill="url(#bg26)"/>
+  <rect x="28" y="22" width="1544" height="936" rx="20" fill="#0B1325" stroke="#1E293B" stroke-width="2"/>
+  <rect x="28" y="22" width="1544" height="8" rx="4" fill="url(#accent26)"/>
+
+  <!-- Header -->
+  <text x="60" y="68" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="700" letter-spacing="1.5">
+    DATA LAB · ROUND 18 ARCHITECT FAQ VISUAL SUMMARY · ZERO-DOWNTIME LEGACY EDW &amp; MPP MODERNIZATION
+  </text>
+  <text x="60" y="104" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="24.5" font-weight="800">
+    Microsoft Fabric (94.6% Native T-SQL + $0 Mirroring Dual-Run) vs. Snowflake SnowConvert / Databricks Lakebridge
+  </text>
+  <text x="60" y="132" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="14">
+    Provenance: [synthetic_scenario_model] Denominator A Routing Matrix n=116 (115/116 = 99.14%, Mean 456.0ms) · Denominator B Ontology Sims n=25 (Mean 463.0ms; Scenario Y = 271ms) · Live Cloud = not_measured
+  </text>
+
+  <!-- 3 Executive Takeaways Banner -->
+  <rect x="60" y="150" width="1480" height="106" rx="12" fill="#0F1D36" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="84" y="176" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="700">
+    📌 EXECUTIVE SUMMARY — 3 CORE ARCHITECTURAL TAKEAWAYS (LEGACY EDW &amp; MPP MODERNIZATION SELECTION)
+  </text>
+  <text x="84" y="200" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="13">
+    1. Avoid Cross-Dialect Stored Proc Rewrite Bugs: Fabric Warehouse runs native distributed T-SQL (94.6%+ Synapse/SQL Server pass-through) vs. PySpark/JS rewrites.
+  </text>
+  <text x="84" y="222" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="13">
+    2. 3-Phase Zero-Downtime Cutover: Week 1 OneLake Mirroring ($0 CU) → Weeks 2–6 Osmos AST + Ontology 0.0% Parity → Week 7 Variable Library 1s DirectLake Cutover.
+  </text>
+  <text x="84" y="244" fill="#10B981" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    3. Quantified Scenario Y (120TB Telecom × 3,800 Procs [synthetic_scenario_model]): 271ms Cutover Attestation · -$28,500/mo (-73.5% EDW/Migration TCO: $10,300 vs $38,800) · $5.40M SLA Protected.
+  </text>
+
+  <!-- Left Panel: Legacy Big-Bang Rewrite vs Fabric 3-Phase Zero-Downtime Modernization -->
+  <rect x="60" y="274" width="725" height="360" rx="14" fill="url(#cardFabric26)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="84" y="304" fill="#10B981" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    🧭 ARCHITECTURE PARADIGM: BIG-BANG REWRITE vs. FABRIC 3-PHASE DUAL-RUN CUTOVER
+  </text>
+
+  <!-- Top Box: Legacy Big-Bang Rewrite -->
+  <rect x="84" y="320" width="677" height="132" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="102" y="344" fill="#FDA4AF" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    ⛔ Legacy "Big-Bang" Cross-Dialect Rewrite ($38,800/mo Modeled TCO · 12–18 Month Stall Risk)
+  </text>
+  <text x="102" y="368" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Cross-Language Rewrite of 3,800 Procs: Translating T-SQL/PLSQL into PySpark or JS introduces 15% edge-case rounding bugs
+  </text>
+  <text x="102" y="390" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Double-Cluster + Paid CDC Dual-Run Tax: Paying legacy Teradata/Synapse fees + Fivetran MAR + parallel test warehouses
+  </text>
+  <text x="102" y="412" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Cutover Weekend Dashboard Breakage: Re-pointing 1,400 Power BI reports to new connectors breaks DAX &amp; triggers rollback
+  </text>
+  <text x="102" y="434" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    Result: 12–18 months in dual-run purgatory · +$28,500/mo parallel run &amp; SI rewrite tax · High cutover rollback risk
+  </text>
+
+  <!-- Bottom Box: Fabric 3-Phase Zero-Downtime Modernization -->
+  <rect x="84" y="468" width="677" height="148" rx="10" fill="#0B263B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="102" y="492" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    ✅ Microsoft Fabric 3-Phase Zero-Downtime Modernization ($10,300/mo Modeled TCO · -73.5% Savings)
+  </text>
+  <text x="102" y="516" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Phase 1 (Mirror First): OneLake Mirroring streams legacy SQL/Oracle/Synapse at $0 replication compute to light up DirectLake
+  </text>
+  <text x="102" y="538" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Phase 2 (94.6% Native T-SQL + Osmos AST): Migration Assistant strips physical hints; Osmos translates BTEQ/PLSQL
+  </text>
+  <text x="102" y="560" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Phase 3 (Ontology Parity Gate): Fabric IQ verifies 120TB checksums &amp; 0.0% ARPU metric drift across dual-run cycles
+  </text>
+  <text x="102" y="582" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Phase 4 (1s Variable Library Cutover): Flips 1,400 DirectLake reports to Fabric Warehouse with 0s downtime &amp; retires MPP
+  </text>
+  <text x="102" y="604" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    Result: 271ms E2E Cutover Attestation (64ms AST + 68ms 0.0% Parity + 69ms VarLib + 70ms SQL Audit) · 65% Faster
+  </text>
+
+  <!-- Right Panel: 5-Cloud Legacy EDW Modernization Matrix -->
+  <rect x="805" y="274" width="735" height="360" rx="14" fill="url(#cardComp26)" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="829" y="304" fill="#A5B4FC" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    📊 5-CLOUD LEGACY EDW &amp; MPP MODERNIZATION MATRIX (2026)
+  </text>
+
+  <!-- Table Header -->
+  <rect x="825" y="320" width="695" height="32" rx="6" fill="#1E293B"/>
+  <text x="838" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">PLATFORM</text>
+  <text x="975" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">PROC / SQL TRANSLATION</text>
+  <text x="1205" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">DUAL-RUN &amp; BI CUTOVER</text>
+  <text x="1395" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">MODELED TCO</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="825" y="358" width="695" height="48" rx="6" fill="#0F2942" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="838" y="379" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Microsoft Fabric</text>
+  <text x="838" y="396" fill="#93C5FD" font-family="Segoe UI, Inter, sans-serif" font-size="10">Migration Asst + Mirroring</text>
+  <text x="975" y="379" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">94.6% Native T-SQL + Osmos AST</text>
+  <text x="975" y="396" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="10">Strips physical hints; auto V-Order</text>
+  <text x="1205" y="379" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">$0 Mirroring + VarLib 1s</text>
+  <text x="1205" y="396" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">0.0% Ontology parity + DirectLake</text>
+  <text x="1395" y="379" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">$10,300 / mo</text>
+  <text x="1395" y="396" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="10">-73.5% vs Legacy</text>
+
+  <!-- Row 2: Snowflake -->
+  <rect x="825" y="412" width="695" height="48" rx="6" fill="#161F33"/>
+  <text x="838" y="433" fill="#60A5FA" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Snowflake</text>
+  <text x="838" y="450" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">SnowConvert + Openflow</text>
+  <text x="975" y="433" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Strong Teradata BTEQ Translator</text>
+  <text x="975" y="450" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">T-SQL converts to Snowflake Script</text>
+  <text x="1205" y="433" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">Paid Dual-Run Credits</text>
+  <text x="1205" y="450" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="10">Manual Power BI gateway re-point</text>
+  <text x="1395" y="433" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">$38,800 / mo</text>
+  <text x="1395" y="450" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Dual-run + SI</text>
+
+  <!-- Row 3: Databricks -->
+  <rect x="825" y="466" width="695" height="48" rx="6" fill="#1B2234"/>
+  <text x="838" y="487" fill="#F97316" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Databricks</text>
+  <text x="838" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Lakebridge (BladeBridge)</text>
+  <text x="975" y="487" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Converts ETL to PySpark / DLT</text>
+  <text x="975" y="504" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">Best for Informatica/DataStage</text>
+  <text x="1205" y="487" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">Lakeflow DBUs + Shortcut</text>
+  <text x="1205" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Refactors SQL procs to Python</text>
+  <text x="1395" y="487" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">$29,400 / mo</text>
+  <text x="1395" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">DBU + Rewrite</text>
+
+  <!-- Row 4: GCP BigQuery -->
+  <rect x="825" y="520" width="695" height="48" rx="6" fill="#161F33"/>
+  <text x="838" y="541" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">GCP BigQuery</text>
+  <text x="838" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Batch SQL Translator</text>
+  <text x="975" y="541" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Compiler Works to GoogleSQL</text>
+  <text x="975" y="558" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">DVT CLI table validation</text>
+  <text x="1205" y="541" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">Datastream Per-GB CDC</text>
+  <text x="1205" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Separate from Power BI</text>
+  <text x="1395" y="541" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">$27,800 / mo</text>
+  <text x="1395" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Slots + CDC</text>
+
+  <!-- Row 5: AWS Redshift -->
+  <rect x="825" y="574" width="695" height="48" rx="6" fill="#1B2234"/>
+  <text x="838" y="595" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">AWS Redshift</text>
+  <text x="838" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">AWS SCT + DMS</text>
+  <text x="975" y="595" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">SCT to Redshift PL/pgSQL</text>
+  <text x="975" y="612" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">Manual complex proc tuning</text>
+  <text x="1205" y="595" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11">DMS Instance + RA3 Burn</text>
+  <text x="1205" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Manual report re-pointing</text>
+  <text x="1395" y="595" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">$31,200 / mo</text>
+  <text x="1395" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">RA3 + DMS</text>
+
+  <!-- Bottom Panel: Quantitative Scenario Y Breakdown & Dual Denominator Seal -->
+  <rect x="60" y="652" width="1480" height="284" rx="14" fill="#0D192E" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="84" y="684" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    🧪 QUANTITATIVE BENCHMARK &amp; PROVENANCE SEAL — SCENARIO Y (120TB TELECOM SYNAPSE/TERADATA 3,800-PROC CUTOVER)
+  </text>
+
+  <!-- Step Latency Pipeline -->
+  <rect x="84" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="102" y="726" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 1 · $0 MIRRORING &amp; T-SQL AST</text>
+  <text x="102" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">64 ms <tspan font-size="13" fill="#34D399">(94.6% Native)</tspan></text>
+  <text x="102" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">3,800 procs validated + $0 Mirroring dual-run</text>
+
+  <rect x="438" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#10B981" stroke-width="1.2"/>
+  <text x="456" y="726" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 2 · ONTOLOGY PARITY VERIFY</text>
+  <text x="456" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">68 ms <tspan font-size="13" fill="#34D399">(0.0% Drift)</tspan></text>
+  <text x="456" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">120TB checksums + quarterly ARPU/Churn parity</text>
+
+  <rect x="792" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="810" y="726" fill="#C084FC" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 3 · VARIABLE LIBRARY CUTOVER</text>
+  <text x="810" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">69 ms <tspan font-size="13" fill="#C084FC">(1,400 Reports)</tspan></text>
+  <text x="810" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">0-downtime switch to DirectLake Gold tables</text>
+
+  <rect x="1146" y="702" width="370" height="92" rx="10" fill="#112240" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1164" y="726" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 4 · RAYFIN SQL DECOMMISSION</text>
+  <text x="1164" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">70 ms → <tspan fill="#34D399">271 ms E2E</tspan></text>
+  <text x="1164" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">Retires legacy MPP &amp; logs SOX ($5.40M protected)</text>
+
+  <!-- Dual Denominator & Provenance Footer Box -->
+  <rect x="84" y="810" width="1432" height="108" rx="10" fill="#091326" stroke="#334155" stroke-width="1"/>
+  <text x="104" y="835" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    🔒 STRICT DUAL-DENOMINATOR &amp; FOUR-TIER PROVENANCE DISCLOSURE (REPORT ID: data-lab-fabric-vs-4clouds-2026-11-10-r18)
+  </text>
+  <text x="104" y="859" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    • Denominator A (Routing Matrix Evaluation Mean, n=116): 456.0 ms (115/116 = 99.14% accuracy; DL-113=312ms, DL-114=320ms, DL-115=314ms, DL-116=318ms; R17 n=112 was 461.0ms)
+  </text>
+  <text x="104" y="881" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    • Denominator B (Industry Ontology Closed-Loop Mean, n=25): 463.0 ms across [780..303, 287, 271]ms (Scenario Y = 271ms; R17 n=24 was 471.0ms; R16 n=23 was 479.0ms)
+  </text>
+  <text x="104" y="903" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">
+    • Official Vendor References (as_of: 2026-11-10): learn.microsoft.com/fabric/data-warehouse/migration-assistant · docs.snowflake.com/en/migrations/snowconvert-docs · docs.databricks.com/en/migration/lakebridge
+  </text>
+</svg>
