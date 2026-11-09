@@ -348,13 +348,27 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 303)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 4800000)
 
-    def test_scenario_matrix_108_cases_and_explicit_miss(self) -> None:
+    def test_gigafactory_digital_twin_builder_iot_ot_vs_sitewise_lakeflow_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("gigafactory_digital_twin_builder_iot_ot_vs_sitewise_lakeflow")
+        self.assertEqual(sim["telemetry"]["monitored_battery_coating_lines"], 36)
+        self.assertEqual(sim["telemetry"]["shop_floor_opcua_mqtt_eps"], 140000)
+        self.assertEqual(sim["telemetry"]["per_property_tag_metering_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["protected_electrode_coils"], 18)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_digital_twin_tco_saved_usd"], 26400)
+        self.assertTrue(sim["foundry_iq_guardrail"]["unsafe_mechanical_roll_jump_blocked"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["aldo_air_gapped_edge_fallback_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 287)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 5100000)
+
+    def test_scenario_matrix_112_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 108)
-        self.assertEqual(matrix["passed_scenarios"], 107)
+        self.assertEqual(matrix["total_scenarios"], 112)
+        self.assertEqual(matrix["passed_scenarios"], 111)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.07, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 466.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.11, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 461.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -590,6 +604,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("Databricks Mosaic AI", by_id["DL-107"]["expected"])
         self.assertIn("Protect $4.80M SLA", by_id["DL-108"]["expected"])
 
+    def test_fabric_digital_twin_builder_iot_ot_vs_sitewise_4clouds_2026_11_10_r17_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-109", "DL-110", "DL-111", "DL-112"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("No-Code Digital Twin Builder Ontology ($0 Per-Property Fee)", by_id["DL-109"]["expected"])
+        self.assertIn("eliminate SiteWise per-property/per-alarm fees (-71.5% TCO)", by_id["DL-110"]["expected"])
+        self.assertIn("Snowflake 60s Dynamic Tables", by_id["DL-111"]["expected"])
+        self.assertIn("Protect $5.10M Yield", by_id["DL-112"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -607,11 +632,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 107)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 108)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 466.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 23)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 479.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 111)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 112)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 461.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 24)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 471.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r16_23_simulation_mean_modeled_latency_ms"], 479.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r15_22_simulation_mean_modeled_latency_ms"], 487.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r14_21_simulation_mean_modeled_latency_ms"], 495.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r13_20_simulation_mean_modeled_latency_ms"], 503.0)
@@ -626,7 +652,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 19)
+        self.assertEqual(len(refs), 20)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10"))
@@ -651,6 +677,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("b2b_retail_media_iq_sharing_clean_room_monetization", loaded["ontology_simulations"])
         self.assertIn("global_retail_dwh_tsql_vorder_directlake_vs_snowflake_dbsql", loaded["ontology_simulations"])
         self.assertIn("global_reinsurance_ai_functions_multimodal_claims_vs_cortex_mosaic", loaded["ontology_simulations"])
+        self.assertIn("gigafactory_digital_twin_builder_iot_ot_vs_sitewise_lakeflow", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

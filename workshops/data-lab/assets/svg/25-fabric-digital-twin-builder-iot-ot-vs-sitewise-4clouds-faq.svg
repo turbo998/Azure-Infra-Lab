@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" width="1600" height="980">
+  <defs>
+    <linearGradient id="bg25" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#09152B"/>
+    </linearGradient>
+    <linearGradient id="accent25" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric25" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D2847"/>
+      <stop offset="100%" stop-color="#0A192F"/>
+    </linearGradient>
+    <linearGradient id="cardComp25" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B38"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="980" fill="url(#bg25)"/>
+  <rect x="28" y="22" width="1544" height="936" rx="20" fill="#0B1325" stroke="#1E293B" stroke-width="2"/>
+  <rect x="28" y="22" width="1544" height="8" rx="4" fill="url(#accent25)"/>
+
+  <!-- Header -->
+  <text x="60" y="68" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="700" letter-spacing="1.5">
+    DATA LAB · ROUND 17 ARCHITECT FAQ VISUAL SUMMARY · INDUSTRIAL DIGITAL TWIN BUILDER &amp; IT/OT EDGE CONVERGENCE
+  </text>
+  <text x="60" y="104" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="24.5" font-weight="800">
+    Microsoft Fabric Digital Twin Builder + Eventhouse + IoT Ops vs. AWS IoT SiteWise / Databricks Lakeflow
+  </text>
+  <text x="60" y="132" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="14">
+    Provenance: [synthetic_scenario_model] Denominator A Routing Matrix n=112 (111/112 = 99.11%, Mean 461.0ms) · Denominator B Ontology Sims n=24 (Mean 471.0ms; Scenario X = 287ms) · Live Cloud = not_measured
+  </text>
+
+  <!-- 3 Executive Takeaways Banner -->
+  <rect x="60" y="150" width="1480" height="106" rx="12" fill="#0F1D36" stroke="#10B981" stroke-width="1.5"/>
+  <text x="84" y="176" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="700">
+    📌 EXECUTIVE SUMMARY — 3 CORE ARCHITECTURAL TAKEAWAYS (INDUSTRIAL DIGITAL TWIN &amp; IT/OT SELECTION)
+  </text>
+  <text x="84" y="200" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="13">
+    1. End Per-Property Industrial Cloud Metering: Fabric Digital Twin Builder + Eventhouse KQL run on pooled F-SKU capacity ($0 per-property/per-alarm fees) vs. AWS IoT SiteWise stacked metering.
+  </text>
+  <text x="84" y="222" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="13">
+    2. No-Code IT/OT Ontology + Air-Gapped Edge (ALDO): Bind live OPC-UA streams with mirrored SAP ERP &amp; S3 vision in OneLake, backed by Azure IoT Operations + SQL on Azure Local (ALDO GA).
+  </text>
+  <text x="84" y="244" fill="#10B981" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    3. Quantified Scenario X (36 Battery Lines · 140K EPS [synthetic_scenario_model]): 287ms E2E Calibration Loop · -$26,400/mo (-71.5% Twin TCO: $10,500 vs $36,900) · $5.10M Yield SLA Protected.
+  </text>
+
+  <!-- Left Panel: Legacy Per-Property Industrial Silo vs Fabric Digital Twin Builder + Eventhouse -->
+  <rect x="60" y="274" width="725" height="360" rx="14" fill="url(#cardFabric25)" stroke="#10B981" stroke-width="1.5"/>
+  <text x="84" y="304" fill="#10B981" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    🧭 ARCHITECTURE PARADIGM: SILOED IOT METERING vs. FABRIC DIGITAL TWIN BUILDER
+  </text>
+
+  <!-- Top Box: Legacy Stack -->
+  <rect x="84" y="320" width="677" height="132" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="102" y="344" fill="#FDA4AF" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    ⛔ Legacy Siloed Industrial Cloud &amp; 3D Twin Stack ($36,900/mo Modeled TCO · Per-Property Tax)
+  </text>
+  <text x="102" y="368" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Per-Property, Per-Message &amp; Per-Alarm Metering: 36 lines at 140K EPS trigger stacked SiteWise ingestion &amp; alarm charges
+  </text>
+  <text x="102" y="390" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Hand-Coded DTDL &amp; OT/IT Disconnect: Time-series silo cannot join SAP ERP slurry batches or S3 defect imagery in-place
+  </text>
+  <text x="102" y="412" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Cloud-Only Fragility: WAN fiber cuts blind cloud rules; no IEC-62443 mechanical envelope or free SQL write-back
+  </text>
+  <text x="102" y="434" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    Result: 40+ min manual SAP/historian correlation · +$26,400/mo per-tag metering tax · Scrapped electrode coils
+  </text>
+
+  <!-- Bottom Box: Fabric Digital Twin Builder + Eventhouse + IoT Operations -->
+  <rect x="84" y="468" width="677" height="148" rx="10" fill="#0B263B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="102" y="492" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    ✅ Microsoft Fabric Digital Twin Builder + Eventhouse + IoT Ops ($10,500/mo Modeled TCO · -71.5% Savings)
+  </text>
+  <text x="102" y="516" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 1 (Azure IoT Operations + Azure Local ALDO): 140K EPS edge MQTT/OPC-UA ingest with air-gapped shop-floor autonomy
+  </text>
+  <text x="102" y="538" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 2 (Dual-Projection RTI): Eventstream feeds Eventhouse KQL (142ms) &amp; Lakehouse Streaming Tables (210ms DirectLake)
+  </text>
+  <text x="102" y="560" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 3 (No-Code Digital Twin Builder): Visually binds OPC-UA tags + SAP slurry batches + S3 vision ($0 per-property fee)
+  </text>
+  <text x="102" y="582" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">
+    • Layer 4 (IEC-62443 Guardrail &amp; Write-Back): Verifies ±3.0μm envelope &amp; commits -1.8μm roll trim to 1GB Free Fabric SQL
+  </text>
+  <text x="102" y="604" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    Result: 287ms E2E Loop (68ms Edge/KQL + 72ms Twin Graph + 73ms IEC-62443 Guard + 74ms SQL/OPC-UA) · 18 Coils Saved
+  </text>
+
+  <!-- Right Panel: 5-Cloud Industrial Digital Twin & IT/OT Matrix -->
+  <rect x="805" y="274" width="735" height="360" rx="14" fill="url(#cardComp25)" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="829" y="304" fill="#A5B4FC" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    📊 5-CLOUD INDUSTRIAL DIGITAL TWIN &amp; IT/OT CONVERGENCE MATRIX (2026)
+  </text>
+
+  <!-- Table Header -->
+  <rect x="825" y="320" width="695" height="32" rx="6" fill="#1E293B"/>
+  <text x="838" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">PLATFORM</text>
+  <text x="975" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">TWIN ONTOLOGY &amp; LATENCY</text>
+  <text x="1205" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">EDGE AUTONOMY &amp; IT/OT</text>
+  <text x="1395" y="341" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">MODELED TCO</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="825" y="358" width="695" height="48" rx="6" fill="#0F2942" stroke="#0EA5E9" stroke-width="1"/>
+  <text x="838" y="379" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Microsoft Fabric</text>
+  <text x="838" y="396" fill="#93C5FD" font-family="Segoe UI, Inter, sans-serif" font-size="10">Twin Builder + RTI + IoT Ops</text>
+  <text x="975" y="379" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">No-Code Twin Builder + KQL</text>
+  <text x="975" y="396" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="10">142ms KQL + 210ms Streaming Table</text>
+  <text x="1205" y="379" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">Azure Local ALDO + 0-Copy</text>
+  <text x="1205" y="396" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">$0 per-property fee + SAP/S3 join</text>
+  <text x="1395" y="379" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">$10,500 / mo</text>
+  <text x="1395" y="396" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="10">-71.5% vs Legacy</text>
+
+  <!-- Row 2: AWS -->
+  <rect x="825" y="412" width="695" height="48" rx="6" fill="#161F33"/>
+  <text x="838" y="433" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">AWS Industrial</text>
+  <text x="838" y="450" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">SiteWise + TwinMaker</text>
+  <text x="975" y="433" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">3D TwinMaker + SiteWise</text>
+  <text x="975" y="450" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">Hot tier + S3/Athena export</text>
+  <text x="1205" y="433" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">Per-Property Metering</text>
+  <text x="1205" y="450" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="10">Extra ETL to join Redshift ERP</text>
+  <text x="1395" y="433" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="700">$36,900 / mo</text>
+  <text x="1395" y="450" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">36 lines · 140K EPS</text>
+
+  <!-- Row 3: Databricks -->
+  <rect x="825" y="466" width="695" height="48" rx="6" fill="#1B2234"/>
+  <text x="838" y="487" fill="#F97316" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Databricks</text>
+  <text x="838" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Lakeflow Streaming + ML</text>
+  <text x="975" y="487" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Code-First Spark Streaming</text>
+  <text x="975" y="504" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">Best for GPU RUL deep learning</text>
+  <text x="1205" y="487" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">Cloud Control Plane</text>
+  <text x="1205" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">No native no-code twin builder</text>
+  <text x="1395" y="487" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">$24,800 / mo</text>
+  <text x="1395" y="504" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">24×7 Photon DBUs</text>
+
+  <!-- Row 4: Snowflake -->
+  <rect x="825" y="520" width="695" height="48" rx="6" fill="#161F33"/>
+  <text x="838" y="541" fill="#60A5FA" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">Snowflake</text>
+  <text x="838" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Snowpipe + Dynamic Tables</text>
+  <text x="975" y="541" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">60s Min Lag Dynamic Tables</text>
+  <text x="975" y="558" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="10">Too slow for sub-second OT loops</text>
+  <text x="1205" y="541" fill="#FB7185" font-family="Segoe UI, Inter, sans-serif" font-size="11">Cloud-Only SaaS</text>
+  <text x="1205" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">No shop-floor edge runtime</text>
+  <text x="1395" y="541" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">$28,400 / mo</text>
+  <text x="1395" y="558" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">1-min refresh credits</text>
+
+  <!-- Row 5: GCP -->
+  <rect x="825" y="574" width="695" height="48" rx="6" fill="#1B2234"/>
+  <text x="838" y="595" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">GCP Cloud</text>
+  <text x="838" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Pub/Sub + Spanner Graph</text>
+  <text x="975" y="595" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">Dataflow + Spanner Graph GQL</text>
+  <text x="975" y="612" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="10">1–3s streaming pipeline</text>
+  <text x="1205" y="595" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="11">Custom GQL Schema</text>
+  <text x="1205" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">24×7 Dataflow worker vCPUs</text>
+  <text x="1395" y="595" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11">$25,600 / mo</text>
+  <text x="1395" y="612" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="10">Dataflow + Spanner</text>
+
+  <!-- Bottom Panel: Quantitative Scenario X Breakdown & Dual Denominator Seal -->
+  <rect x="60" y="652" width="1480" height="284" rx="14" fill="#0D192E" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="84" y="684" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="800">
+    🧪 QUANTITATIVE BENCHMARK &amp; PROVENANCE SEAL — SCENARIO X (36 BATTERY COATING LINES · 140K EPS DIGITAL TWIN)
+  </text>
+
+  <!-- Step Latency Pipeline -->
+  <rect x="84" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="102" y="726" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 1 · IOT OPS &amp; EVENTHOUSE KQL</text>
+  <text x="102" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">68 ms <tspan font-size="13" fill="#34D399">(140K EPS)</tspan></text>
+  <text x="102" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">Flags +2.85 g/m² drift on Line-12 ($0 tag tax)</text>
+
+  <rect x="438" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#10B981" stroke-width="1.2"/>
+  <text x="456" y="726" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 2 · NO-CODE TWIN IT/OT GRAPH</text>
+  <text x="456" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">72 ms <tspan font-size="13" fill="#34D399">(18 Coils)</tspan></text>
+  <text x="456" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">Joins SAP slurry Batch-NMP-882 &amp; S3 vision</text>
+
+  <rect x="792" y="702" width="335" height="92" rx="10" fill="#112240" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="810" y="726" fill="#C084FC" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 3 · IEC-62443 &amp; ALDO GUARD</text>
+  <text x="810" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">73 ms <tspan font-size="13" fill="#C084FC">(±3.0μm Safe)</tspan></text>
+  <text x="810" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">Verifies -1.8μm roll trim &amp; ALDO edge readiness</text>
+
+  <rect x="1146" y="702" width="370" height="92" rx="10" fill="#112240" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1164" y="726" fill="#FBBF24" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">STEP 4 · RAYFIN SQL &amp; OPC-UA TRIM</text>
+  <text x="1164" y="752" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">74 ms → <tspan fill="#34D399">287 ms E2E</tspan></text>
+  <text x="1164" y="776" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">Commits MES ledger &amp; roll trim ($5.10M protected)</text>
+
+  <!-- Dual Denominator & Provenance Footer Box -->
+  <rect x="84" y="810" width="1432" height="108" rx="10" fill="#091326" stroke="#334155" stroke-width="1"/>
+  <text x="104" y="835" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">
+    🔒 STRICT DUAL-DENOMINATOR &amp; FOUR-TIER PROVENANCE DISCLOSURE (REPORT ID: data-lab-fabric-vs-4clouds-2026-11-10-r17)
+  </text>
+  <text x="104" y="859" fill="#38BDF8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    • Denominator A (Routing Matrix Evaluation Mean, n=112): 461.0 ms (111/112 = 99.11% accuracy; DL-109=322ms, DL-110=330ms, DL-111=324ms, DL-112=328ms; R16 n=108 was 466.0ms)
+  </text>
+  <text x="104" y="881" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">
+    • Denominator B (Industry Ontology Closed-Loop Mean, n=24): 471.0 ms across [780..319, 303, 287]ms (Scenario X = 287ms; R16 n=23 was 479.0ms; R15 n=22 was 487.0ms)
+  </text>
+  <text x="104" y="903" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="11">
+    • Official Vendor References (as_of: 2026-11-10): learn.microsoft.com/fabric/real-time-intelligence/digital-twin-builder/overview · azure/iot-operations/overview-iot-operations · docs.aws.amazon.com/iot-sitewise
+  </text>
+</svg>
