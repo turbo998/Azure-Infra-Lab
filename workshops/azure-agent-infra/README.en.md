@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #456 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-456.html](workbench-cycle-456.html) · [daily-report-2026-11-09.en.md](daily-report-2026-11-09.en.md)
+> 🔎 **Cycle #457 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-457.html](workbench-cycle-457.html) · [daily-report-2026-11-09.en.md](daily-report-2026-11-09.en.md)
 
 ---
 
-## 1) Cycle #456 release summary (2026-11-09)
+## 1) Cycle #457 release summary (2026-11-09)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #456 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #456 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #456 workbench** | Interactive benchmark surface | [`workbench-cycle-456.html`](workbench-cycle-456.html) |
+| **Cycle #457 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #457 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #457 workbench** | Interactive benchmark surface | [`workbench-cycle-457.html`](workbench-cycle-457.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-456-benchmark.json`](evidence/cycle-456-benchmark.json)
-- Source ledger: [`evidence/cycle-456-sources.json`](evidence/cycle-456-sources.json)
+- Canonical payload: [`evidence/cycle-457-benchmark.json`](evidence/cycle-457-benchmark.json)
+- Source ledger: [`evidence/cycle-457-sources.json`](evidence/cycle-457-sources.json)
 - Metric CSV files:
-  - [`cycle-456-latency.csv`](evidence/cycle-456-latency.csv)
-  - [`cycle-456-throughput.csv`](evidence/cycle-456-throughput.csv)
-  - [`cycle-456-policy.csv`](evidence/cycle-456-policy.csv)
-  - [`cycle-456-cost.csv`](evidence/cycle-456-cost.csv)
+  - [`cycle-457-latency.csv`](evidence/cycle-457-latency.csv)
+  - [`cycle-457-throughput.csv`](evidence/cycle-457-throughput.csv)
+  - [`cycle-457-policy.csv`](evidence/cycle-457-policy.csv)
+  - [`cycle-457-cost.csv`](evidence/cycle-457-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-09.en.md`](daily-report-2026-11-09.en.md)
 - Daily report (ZH): [`daily-report-2026-11-09.md`](daily-report-2026-11-09.md)
-- One-page SVG: [`assets/34-cycle-456-daily-breakthroughs.svg`](assets/34-cycle-456-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-456.en.md`](docs/full-monograph-cycle-456.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-456.md`](docs/full-monograph-cycle-456.md)
-- Selection FAQ (EN, Session Replay Fsync Batching Governance): [`agent-session-replay-fsync-batching-selection-faq.en.md`](agent-session-replay-fsync-batching-selection-faq.en.md)
-- Selection FAQ (ZH, Session Replay Fsync Batching Governance): [`agent-session-replay-fsync-batching-selection-faq.md`](agent-session-replay-fsync-batching-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-457-daily-breakthroughs.svg`](assets/34-cycle-457-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-457.en.md`](docs/full-monograph-cycle-457.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-457.md`](docs/full-monograph-cycle-457.md)
+- Selection FAQ (EN, Session Replay Checksum Verification Governance): [`agent-session-replay-checksum-inline-vs-sidecar-selection-faq.en.md`](agent-session-replay-checksum-inline-vs-sidecar-selection-faq.en.md)
+- Selection FAQ (ZH, Session Replay Checksum Verification Governance): [`agent-session-replay-checksum-inline-vs-sidecar-selection-faq.md`](agent-session-replay-checksum-inline-vs-sidecar-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_456_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_456_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_457_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_457_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_456_pipeline.py`](simulator/cycle_456_pipeline.py)
+- Generator pipeline: [`simulator/cycle_457_pipeline.py`](simulator/cycle_457_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
