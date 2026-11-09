@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
-<title>Azure Agent Infra Cycle #457 · 7 页基准卡组</title>
+<title>Azure Agent Infra Cycle #458 · 7 页基准卡组</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;padding:20px;background:#e5e7eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;color:#0f172a}
@@ -53,12 +53,12 @@ ul{margin:8px 0 0 18px;padding:0}
   <div class="grid3">
     <section class="pane">
       <h3>工作台阈值带</h3>
-      <ul><li>Need strictest durability with low throughput -> inline checksum per replay record.</li><li>Need higher tenant packing efficiency -> sidecar verification queues with adaptive class admission.</li><li>Need balanced reliability and cost -> checksum-governance profiles by tenant risk and workload class.</li><li>Need strict multi-tenant governance -> APIM + tenant-scoped burst-quota backoff entitlements + isolation fences.</li></ul>
+      <ul><li>Need fastest hardening with minimal config drift -> strict global seccomp allowlist (short-term only).</li><li>Need lower false-block risk under mixed toolchains -> tiered seccomp profiles by tenant risk class.</li><li>Need balanced reliability and cost -> profile governance with admission controls and rollback policy.</li><li>Need strict multi-tenant governance -> APIM + tenant-scoped burst-quota backoff entitlements + isolation fences.</li></ul>
     </section>
     <section class="pane pane-dark">
       <h3>结构化输入</h3>
       <div class="code">{
-  "cycle": 457,
+  "cycle": 458,
   "inputs": {
     "runtime_paths": 4,
     "throughput_paths": 4,
@@ -77,17 +77,17 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
       <ul><li>Coding Sandbox: Act automatically (synthetic)</li><li>Multi-tenant SaaS Gateway: Confirm (measured)</li><li>Financial Zero-Trust: Confirm (measured)</li></ul>
     </section>
   </div>
-  <div class="readiness">溯源: fetched 2026-11-09 · labels measured / synthetic / anonymized_reported · source file evidence/cycle-457-benchmark.json</div>
-  <section class="readiness"><strong>2026-11-09 增量影响</strong><ul><li>Restore-path impact: E2B 2.63.0 iteration tightens the Firecracker fast-path jitter envelope for short-lived coding sandboxes.</li><li>Output-stream impact: sandbox command/output flow is modeled as a first-class throughput lane in MCP tool orchestration sizing, with higher sustained stream throughput.</li><li>Elastic scheduling impact: dynamic session memory sizing and session checkpoint compaction admission thresholds are recalibrated around the improved E2B fast-path envelope.</li></ul></section>
-  <div class="footer"><span>Azure Agent Infra Cycle #457 · 7 页基准卡组</span><span>1 / 7</span></div>
+  <div class="readiness">溯源: fetched 2026-11-09 · labels measured / synthetic / anonymized_reported · source file evidence/cycle-458-benchmark.json</div>
+  <section class="readiness"><strong>2026-11-09 增量影响</strong><ul><li>Restore-path impact: E2B 2.63.0 iteration tightens the Firecracker fast-path jitter envelope for short-lived coding sandboxes.</li><li>Output-stream impact: sandbox command/output flow is modeled as a first-class throughput lane in MCP tool orchestration sizing, with higher sustained stream throughput.</li><li>Elastic scheduling impact: dynamic session memory sizing and sandbox seccomp profile admission thresholds are recalibrated around the improved E2B fast-path envelope.</li></ul></section>
+  <div class="footer"><span>Azure Agent Infra Cycle #458 · 7 页基准卡组</span><span>1 / 7</span></div>
 </article>
 
 <article class="card">
   <div class="eyebrow">2 / 7 · 场景：多租户网关与沙箱织网</div>
-  <h2>工具组件冷启动路径背压治理降低会话过期风险，并保持吞吐稳定。</h2>
+  <h2>分层 seccomp 治理降低误拦截风险，并保持吞吐稳定。</h2>
   <div class="quote">输入引用："租户需要 MCP/A2A 治理、标签预算门禁与溢出审计，同时保证编码流 200ms 内热恢复。"</div>
   <div class='decision-card'><div class='decision-head'><strong>Queue cap overflow gate</strong><span class='pill pill-amber'>确认后执行</span></div><div class='decision-meta'>置信度: 94.0% · measured</div><div class='bar-track'><div class='bar-fill' style='width:94.0%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>Prewarm interval integrity guard</strong><span class='pill pill-green'>自动执行</span></div><div class='decision-meta'>置信度: 96.3% · measured</div><div class='bar-track'><div class='bar-fill' style='width:96.3%'></div></div></div><div class='decision-card'><div class='decision-head'><strong>Tenant stream-scope authorization fence</strong><span class='pill pill-green'>自动执行</span></div><div class='decision-meta'>置信度: 95.6% · measured</div><div class='bar-track'><div class='bar-fill' style='width:95.6%'></div></div></div>
-  <div class="footer"><span>Azure Agent Infra Cycle #457 · 7 页基准卡组</span><span>2 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #458 · 7 页基准卡组</span><span>2 / 7</span></div>
 </article>
 
 <article class="card">
@@ -95,9 +95,9 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
   <h2>反转选项顺序场景被识别为 miss，并正确转入人工复核。</h2>
   <table>
     <thead><tr><th>SCENARIO</th><th>QUESTION/TASK</th><th>MODEL ANSWER</th><th>ACTION</th></tr></thead>
-    <tbody><tr><td>Coding Sandbox</td><td>Need stable replay continuity while controlling queue pressure?</td><td>Use adaptive sidecar verification queues with explicit rollback contracts</td><td>✓ Act automatically</td></tr><tr><td>Multi-tenant SaaS Gateway</td><td>Need tenant-scoped replay verification without cross-tenant checksum spillover?</td><td>Use tenant-scoped sidecar classes + quota backoff entitlement + replay ledger</td><td>✓ Confirm</td></tr><tr><td>Financial Zero-Trust</td><td>Need deterministic incident visibility with bounded telemetry cost + hard isolation boundary?</td><td>Use layered checksum governance with replay verification and immutable audit fence</td><td>✓ Confirm</td></tr><tr><td>Edge Browser Cluster</td><td>Reverse options and prefer lowest ops-only score?</td><td>Modal first decision in reversed option order</td><td>✕ Send to a human</td></tr></tbody>
+    <tbody><tr><td>Coding Sandbox</td><td>Need low false-block rate while preserving sandbox throughput?</td><td>Use tiered seccomp profiles with syscall telemetry and rollback contracts</td><td>✓ Act automatically</td></tr><tr><td>Multi-tenant SaaS Gateway</td><td>Need tenant-scoped syscall controls without cross-tenant policy spillover?</td><td>Use tenant-tier seccomp policy classes + quota backoff entitlement + audit ledger</td><td>✓ Confirm</td></tr><tr><td>Financial Zero-Trust</td><td>Need deterministic incident visibility with bounded telemetry cost + hard isolation boundary?</td><td>Use layered seccomp governance with immutable policy attestation and audit fence</td><td>✓ Confirm</td></tr><tr><td>Edge Browser Cluster</td><td>Reverse options and prefer lowest ops-only score?</td><td>Modal first decision in reversed option order</td><td>✕ Send to a human</td></tr></tbody>
   </table>
-  <div class="footer"><span>Azure Agent Infra Cycle #457 · 7 页基准卡组</span><span>3 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #458 · 7 页基准卡组</span><span>3 / 7</span></div>
 </article>
 
 <article class="card">
@@ -105,7 +105,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
   <h2>契约输入到校验流程全程确定性，所有坐标均可追溯。</h2>
   <div class="grid2">
     <section class="pane pane-dark"><h3>契约输入 ↓ 渲染提示</h3><div class="code">{
-  "cycle": 457,
+  "cycle": 458,
   "inputs": {
     "runtime_paths": 4,
     "throughput_paths": 4,
@@ -118,14 +118,14 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div>
 ↓
 rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
     <section class="pane pane-dark"><h3>校验流程</h3><div class="code">verify(card_coordinates):
-  load evidence/cycle-457-benchmark.json
+  load evidence/cycle-458-benchmark.json
   assert all bars width = value/max(value_set)
   assert misses carry ✕ in Card 3 matrix
   assert paired latency bars use latency_load_tiers
   assert labels in {measured, synthetic, anonymized_reported}
   assert csp == "default-src 'none'; style-src 'unsafe-inline'"</div></section>
   </div>
-  <div class="footer"><span>Azure Agent Infra Cycle #457 · 7 页基准卡组</span><span>4 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #458 · 7 页基准卡组</span><span>4 / 7</span></div>
 </article>
 
 <article class="card">
@@ -133,11 +133,11 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   <h2>关键决策在扰动下漂移区间为 -4.2 到 -0.6 分。</h2>
   <table>
     <thead><tr><th>QUESTION/ANSWER</th><th>ORIGINAL</th><th>REVERSED/PERTURBED</th><th>CHANGE (PTS)</th><th>LABEL</th></tr></thead>
-    <tbody><tr><td>Disk-quota saturation resilience score (Coding Sandbox)</td><td>94.0</td><td>92.9</td><td>-1.3</td><td>synthetic</td></tr><tr><td>Spill-bucket entitlement integrity confidence (SaaS tenancy)</td><td>96.3</td><td>95.7</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Ephemeral-disk isolation fence score (Financial workload)</td><td>95.6</td><td>95.0</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Ops-only heuristic (Edge browser cluster)</td><td>86.0</td><td>81.8</td><td>-4.2</td><td>synthetic</td></tr></tbody>
+    <tbody><tr><td>Strict allowlist false-block resilience score (Coding Sandbox)</td><td>94.0</td><td>92.9</td><td>-1.3</td><td>synthetic</td></tr><tr><td>Tenant-tier seccomp assignment integrity confidence (SaaS tenancy)</td><td>96.3</td><td>95.7</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Policy rollback determinism score (Financial workload)</td><td>95.6</td><td>95.0</td><td>-0.6</td><td>synthetic</td></tr><tr><td>Ops-only heuristic (Edge browser cluster)</td><td>86.0</td><td>81.8</td><td>-4.2</td><td>synthetic</td></tr></tbody>
   </table>
   <h3>单会话成本参考</h3>
   <table><thead><tr><th>路径</th><th>美元/会话</th><th>Label</th></tr></thead><tbody><tr><td>E2B D96as_v7 Firecracker</td><td>$0.00483</td><td>synthetic</td></tr><tr><td>AKS Kata Pod VM fleet</td><td>$0.00996</td><td>synthetic</td></tr><tr><td>ACA Dynamic Sessions</td><td>$0.01100</td><td>synthetic</td></tr><tr><td>Wasm component sandbox</td><td>$0.00222</td><td>synthetic</td></tr></tbody></table>
-  <div class="footer"><span>Azure Agent Infra Cycle #457 · 7 页基准卡组</span><span>5 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #458 · 7 页基准卡组</span><span>5 / 7</span></div>
 </article>
 
 <article class="card">
@@ -145,7 +145,7 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   <h2>主路径在 10x 负载下保持亚 200ms，基线路径仍高于 1.3s。</h2>
   <div class='lat-row'><div class='lat-tier'>1x load · anonymized_reported</div><div class='pair'><span>主路径 99ms</span><div class='pair-track'><div class='pair-primary' style='width:7.28%'></div></div></div><div class='pair'><span>基线路径 910ms</span><div class='pair-track'><div class='pair-base' style='width:66.91%'></div></div></div></div><div class='lat-row'><div class='lat-tier'>5x load · synthetic</div><div class='pair'><span>主路径 136ms</span><div class='pair-track'><div class='pair-primary' style='width:10.00%'></div></div></div><div class='pair'><span>基线路径 1090ms</span><div class='pair-track'><div class='pair-base' style='width:80.15%'></div></div></div></div><div class='lat-row'><div class='lat-tier'>10x load · anonymized_reported</div><div class='pair'><span>主路径 158ms</span><div class='pair-track'><div class='pair-primary' style='width:11.62%'></div></div></div><div class='pair'><span>基线路径 1360ms</span><div class='pair-track'><div class='pair-base' style='width:100.00%'></div></div></div></div>
   <div class="readiness">成对柱形坐标 = value / max(latency_load_tiers)，直接取自证据数据。</div>
-  <div class="footer"><span>Azure Agent Infra Cycle #457 · 7 页基准卡组</span><span>6 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #458 · 7 页基准卡组</span><span>6 / 7</span></div>
 </article>
 
 <article class="card">
@@ -153,14 +153,14 @@ rendered_prompt = benchmark_harness/cards.py contract payload</div></section>
   <h2>受治理运行时具备生产就绪度，容器内明文密钥模式仍不适用。</h2>
   <div class="grid2">
     <section class="good"><strong>✅ Good fit</strong><ul><li>Coding Agent sandbox: ACA Dynamic Sessions for managed fast isolation; E2B when deep runtime control needed</li><li>Browser/CUA cluster: ACA Sandboxes or E2B with explicit pause/resume and WebSocket routing</li><li>Multi-tenant SaaS Agent Gateway: APIM AI Gateway + AKSClaw hard boundaries + Entra Agent ID</li><li>Financial zero-trust execution: Kata/Firecracker isolation + private networking + deterministic policy audit</li></ul></section>
-    <section class="bad"><strong>⛔ Not for</strong><ul><li>Coding Agent sandbox: Sandboxes without stable cache-key namespaces, collision controls, or miss-budget governance</li><li>Browser/CUA cluster: Returning screenshot/video payloads as inline JSON blobs in LLM memory</li><li>Multi-tenant SaaS Agent Gateway: A2A/MCP flows that share cache-key policies across tenants or skip quota fences</li><li>Financial zero-trust execution: Regulated workloads without immutable cache-audit lineage and replay verification</li></ul></section>
+    <section class="bad"><strong>⛔ Not for</strong><ul><li>Coding Agent sandbox: Sandboxes without stable cache-key namespaces, collision controls, or miss-budget governance</li><li>Browser/CUA cluster: Returning screenshot/video payloads as inline JSON blobs in LLM memory</li><li>Multi-tenant SaaS Agent Gateway: A2A/MCP flows that share cache-key policies across tenants or skip quota fences</li><li>Financial zero-trust execution: Regulated workloads without immutable seccomp-audit lineage and policy replay verification</li></ul></section>
   </div>
   <section class="readiness">
     <strong>就绪度 / 许可 / 溯源</strong><br>
-    就绪度：具备工具组件冷启动路径背压治理门控与人工兜底的生产候选方案。<br>
+    就绪度：具备seccomp 策略分层门控与人工兜底的生产候选方案。<br>
     许可：仓库自有仿真产物，无外部脚本与字体依赖。<br>
     溯源：抓取日期 2026-11-09，标签 measured / synthetic / anonymized_reported。
   </section>
-  <div class="footer"><span>Azure Agent Infra Cycle #457 · 7 页基准卡组</span><span>7 / 7</span></div>
+  <div class="footer"><span>Azure Agent Infra Cycle #458 · 7 页基准卡组</span><span>7 / 7</span></div>
 </article>
 </main></body></html>
