@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #588 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-588.html](workbench-cycle-588.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #589 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-589.html](workbench-cycle-589.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #588 release summary (2026-11-11)
+## 1) Cycle #589 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #588 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #588 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #588 workbench** | Interactive benchmark surface | [`workbench-cycle-588.html`](workbench-cycle-588.html) |
+| **Cycle #589 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #589 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #589 workbench** | Interactive benchmark surface | [`workbench-cycle-589.html`](workbench-cycle-589.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-588-benchmark.json`](evidence/cycle-588-benchmark.json)
-- Source ledger: [`evidence/cycle-588-sources.json`](evidence/cycle-588-sources.json)
+- Canonical payload: [`evidence/cycle-589-benchmark.json`](evidence/cycle-589-benchmark.json)
+- Source ledger: [`evidence/cycle-589-sources.json`](evidence/cycle-589-sources.json)
 - Metric CSV files:
-  - [`cycle-588-latency.csv`](evidence/cycle-588-latency.csv)
-  - [`cycle-588-throughput.csv`](evidence/cycle-588-throughput.csv)
-  - [`cycle-588-policy.csv`](evidence/cycle-588-policy.csv)
-  - [`cycle-588-cost.csv`](evidence/cycle-588-cost.csv)
+  - [`cycle-589-latency.csv`](evidence/cycle-589-latency.csv)
+  - [`cycle-589-throughput.csv`](evidence/cycle-589-throughput.csv)
+  - [`cycle-589-policy.csv`](evidence/cycle-589-policy.csv)
+  - [`cycle-589-cost.csv`](evidence/cycle-589-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-588-daily-breakthroughs.svg`](assets/34-cycle-588-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-588.en.md`](docs/full-monograph-cycle-588.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-588.md`](docs/full-monograph-cycle-588.md)
-- Selection FAQ (EN, CosmosDB Memory Hot Partition Split Threshold): [`agent-cosmosdb-memory-hot-partition-split-threshold-selection-faq.en.md`](agent-cosmosdb-memory-hot-partition-split-threshold-selection-faq.en.md)
-- Selection FAQ (ZH, CosmosDB Memory Hot Partition Split Threshold): [`agent-cosmosdb-memory-hot-partition-split-threshold-selection-faq.md`](agent-cosmosdb-memory-hot-partition-split-threshold-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-589-daily-breakthroughs.svg`](assets/34-cycle-589-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-589.en.md`](docs/full-monograph-cycle-589.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-589.md`](docs/full-monograph-cycle-589.md)
+- Selection FAQ (EN, ACA Dynamic Sessions Pool TTL Ladder): [`agent-aca-dynamic-sessions-pool-ttl-ladder-selection-faq.en.md`](agent-aca-dynamic-sessions-pool-ttl-ladder-selection-faq.en.md)
+- Selection FAQ (ZH, ACA Dynamic Sessions Pool TTL Ladder): [`agent-aca-dynamic-sessions-pool-ttl-ladder-selection-faq.md`](agent-aca-dynamic-sessions-pool-ttl-ladder-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
