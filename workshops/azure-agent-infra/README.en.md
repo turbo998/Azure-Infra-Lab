@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #613 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-613.html](workbench-cycle-613.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #614 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-614.html](workbench-cycle-614.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #613 release summary (2026-11-11)
+## 1) Cycle #614 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #613 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #613 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #613 workbench** | Interactive benchmark surface | [`workbench-cycle-613.html`](workbench-cycle-613.html) |
+| **Cycle #614 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #614 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #614 workbench** | Interactive benchmark surface | [`workbench-cycle-614.html`](workbench-cycle-614.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-613-benchmark.json`](evidence/cycle-613-benchmark.json)
-- Source ledger: [`evidence/cycle-613-sources.json`](evidence/cycle-613-sources.json)
+- Canonical payload: [`evidence/cycle-614-benchmark.json`](evidence/cycle-614-benchmark.json)
+- Source ledger: [`evidence/cycle-614-sources.json`](evidence/cycle-614-sources.json)
 - Metric CSV files:
-  - [`cycle-613-latency.csv`](evidence/cycle-613-latency.csv)
-  - [`cycle-613-throughput.csv`](evidence/cycle-613-throughput.csv)
-  - [`cycle-613-policy.csv`](evidence/cycle-613-policy.csv)
-  - [`cycle-613-cost.csv`](evidence/cycle-613-cost.csv)
+  - [`cycle-614-latency.csv`](evidence/cycle-614-latency.csv)
+  - [`cycle-614-throughput.csv`](evidence/cycle-614-throughput.csv)
+  - [`cycle-614-policy.csv`](evidence/cycle-614-policy.csv)
+  - [`cycle-614-cost.csv`](evidence/cycle-614-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-613-daily-breakthroughs.svg`](assets/34-cycle-613-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-613.en.md`](docs/full-monograph-cycle-613.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-613.md`](docs/full-monograph-cycle-613.md)
-- Selection FAQ (EN, MCP A2A Tool Timeout Budget Envelope): [`agent-mcp-a2a-tool-timeout-budget-envelope-selection-faq.en.md`](agent-mcp-a2a-tool-timeout-budget-envelope-selection-faq.en.md)
-- Selection FAQ (ZH, MCP A2A Tool Timeout Budget Envelope): [`agent-mcp-a2a-tool-timeout-budget-envelope-selection-faq.md`](agent-mcp-a2a-tool-timeout-budget-envelope-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-614-daily-breakthroughs.svg`](assets/34-cycle-614-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-614.en.md`](docs/full-monograph-cycle-614.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-614.md`](docs/full-monograph-cycle-614.md)
+- Selection FAQ (EN, APIM Model Router Token Budget Waterline): [`agent-apim-model-router-token-budget-waterline-selection-faq.en.md`](agent-apim-model-router-token-budget-waterline-selection-faq.en.md)
+- Selection FAQ (ZH, APIM Model Router Token Budget Waterline): [`agent-apim-model-router-token-budget-waterline-selection-faq.md`](agent-apim-model-router-token-budget-waterline-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
