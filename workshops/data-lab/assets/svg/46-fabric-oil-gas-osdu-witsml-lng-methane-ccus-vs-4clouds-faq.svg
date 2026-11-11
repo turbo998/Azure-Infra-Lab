@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad46" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="50%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#081C24"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad46" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad46)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad46)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 38 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="19" font-weight="800">能源油气 OSDU 随钻 WITSML、LNG 管网光纤测漏与 CCUS 碳封存湖仓选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">420 座井场 + 28,000km LNG 管网 + 12 座 CCUS 封存库 · Eventhouse 600K EPS (10ms) + ADME (OSDU) 零拷贝 + SSD DiskANN 3,200万测井匹配 (11ms) · 43ms 闭环省 84.6% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario AS · 195/196 (99.49%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">43ms · 省 84.6% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统油气与低碳三大痛点 ($109.2K/月 · 45min 延迟)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 深水随钻 WITSML 与 OSDU 地震/LAS 孤岛盲钻</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 盐下高压层井涌 (+14.5 bbl 溢流) 需 20–45min 人工查邻井曲线</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 泥浆过重压漏套管鞋、过轻引发井涌，深水停钻日损 $850,000</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ OSDU 科学沙盒与井控 Historian、SAP JVA 财务完全割裂</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 28,000km 管网 DAS 声学光纤 600K EPS 按测点/GB 税</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 传统 Historian 按 Tag 计费 + 云流按 GB 计费月烧 $65,000+</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 法兰针孔甲烷泄漏 (0.42 kg/hr) 漏检导致欧洲 LNG 买方拒收</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 无法自动生成 UN OGMP 2.0 Level 5 实测甲烷强度证书</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ CCUS 超临界 CO2 封存盖层微震与 45Q 抵免失效</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 注入压力逼近页岩盖层破裂梯度 90% 缺乏毫秒级闭环降压</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 一旦断层活化泄漏将丧失 $85/吨 IRC 45Q 税收抵免与 ETS 配额</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 季度手工 Excel 汇总无法满足 EPA Class VI 实时监管</text>
+
+  <!-- Center Column: Fabric 43ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric + ADME (OSDU) 43ms 闭环架构</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (10ms) · Eventhouse KQL 600K EPS 井涌与 DAS 声学感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税 (12:1 压缩) 捕获 DW-Perdido-09 4,890m +14.5 bbl 溢流 (+680 psi)</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 18kHz DAS 光纤锁定 CS-Permian-14 下游 142.8km 处 0.42 kg/hr 甲烷针孔泄漏</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (11ms) · ADME (OSDU) 零拷贝 + SSD DiskANN 3,200万测井匹配</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 512维随钻 GR/电阻率/声波向量匹配邻井 DW-Perdido-04 (0.98 相似，省 92% 内存)</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 算出精准压井泥浆密度 +0.4 ppg (13.2→13.6 ppg) + 隔离 BV-14B + CCUS 降压 -12 bar</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (11ms) · Foundry IQ API RP 53 / OGMP 2.0 / Class VI 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-045：ECD 13.85 ppg 低于套管鞋破裂梯度 14.10 ppg (留足 0.25 ppg 裕度)</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• CCUS-Sleipner-04 井底压力降至盖层破裂极限 81.5% (&lt; 90.0% 法定红线)</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (11ms) · ALDO 海上平台节流回压 + 管网关阀 + SAP JVA 锁库</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 钻井总监与管网总调 Teams 联签 Confirm → ALDO 调大 MPD 节流回压并关断 BV-14B</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 43ms 自愈 · 守护 $12.40M 深水防井喷、LNG 船期与 45Q 碳税抵免 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric + ADME (OSDU)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 600K EPS WITSML 随钻 + DAS 声学光纤 ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 3,200万段 OSDU 测井 SSD DiskANN 检索 + SAP JVA 零拷贝</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 海上平台 VSAT 断网自治 + 1,600 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + Databricks GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 500TB 原始地震炮集 FWI / RTM 反演 → Azure CycleCloud / AWS Batch</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 三维油藏/CCUS 多相流 PINN/FNO 神经算子 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 反演 OpenVDS 地震体与 ONNX 模型通过 OneLake 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁将 600K EPS DAS 光纤塞入按 Tag 计费 Historian 或 60s 数仓</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁在无套管鞋破裂梯度护栏下让 AI 直接下发压井泥浆密度</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将 PB 级 OSDU 地震体用 ETL 重复拷贝至多个云分析仓库</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (420 井场 + 28,000km 管网 + 12 CCUS · 600K EPS · 1,600 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + ADME 零拷贝 + DiskANN + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $16,800/月 · 500人归一化: $7,800/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 84.6% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $89,600/月 · 500人归一化: $41,400/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (EDI + IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $109,200/月 · 500人归一化: $50,400/月 (按 Tag 与流量双重计费 + 跨库复制 + BI 席位费)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $12.40M 风险敞口保护拆解 (Scenario AS 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 避免 DW-Perdido-09 深水井涌停钻 6 天与卡钻侧钻：$5.80M · 保住 17 万方欧洲 LNG 船货免遭甲烷超标拒收：$3.90M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 保护 CCUS-Sleipner-04 页岩盖层完整性与 180 万吨 CO2 封存 IRC 45Q ($85/吨) 税收抵免：$2.70M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R38) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-12 R38)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=196 (DL-01..196) 均值 = 356.0 ms (195/196 = 99.49%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=45 (场景 A..AS，范围 5–780ms) 均值 = 307.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario AS 端到端延迟 = 43 ms (10ms 感知 + 11ms OSDU/DiskANN + 11ms RP53/ClassVI 护栏 + 11ms 回写) · 94/94 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. WITSML v2.1 / PRODML 实时流：井场泥浆脉冲与 DAS 光纤直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. ADME (OSDU) 零拷贝挂载：通过 OneLake Shortcut 零拷贝读取井筒轨迹、LAS 测井曲线与地震断层网格</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos SSD DiskANN 测井向量库：3,200 万段邻井 50m 窗口多变量曲线建索引，P99 检索 &lt; 15ms</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 海上平台 ALDO 断网自治：部署 SQL Server on Azure Local 保障 VSAT 卫星中断期间本地节流回压</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. API RP 53 / OGMP 2.0 / EPA Class VI 护栏 (SOP-045)：套管鞋留足 0.25 ppg 裕度，CCUS 压力 &lt; 90% 破裂极限</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (94/94) · reports/report.json</text>
+</svg>
