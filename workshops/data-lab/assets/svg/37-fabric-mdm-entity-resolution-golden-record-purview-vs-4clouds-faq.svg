@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg37" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr37" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="fabCard37" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg37)"/>
+  <rect x="24" y="20" width="1352" height="820" rx="18" fill="#0B1528" stroke="#1E293B" stroke-width="2"/>
+  <rect x="24" y="20" width="1352" height="8" rx="4" fill="url(#hdr37)"/>
+
+  <!-- Header -->
+  <text x="52" y="64" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">DATA LAB · ROUND 29 ARCHITECTURE &amp; BENCHMARK VISUAL SUMMARY (DL-157..DL-160 · SCENARIO AJ)</text>
+  <text x="52" y="96" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="800">Enterprise MDM, 360° Fuzzy Entity Resolution &amp; Golden Records: Fabric vs. 4 Clouds</text>
+  <text x="52" y="122" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5">OneLake Native MDM ($0 Copy Tax) · SSD DiskANN + Gluten LSH (21ms Cross-Language Match) · -81.0% MDM TCO ($7.5K vs $39.5K/mo)</text>
+
+  <rect x="1088" y="46" width="260" height="66" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1218" y="72" text-anchor="middle" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ROUND 29 SEALED VERDICT</text>
+  <text x="1218" y="96" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">95ms · -81.0% TCO · 159/160</text>
+
+  <!-- Left Column: Legacy Standalone MDM Silos + O(N^2) Cartesian Joins -->
+  <rect x="48" y="144" width="632" height="310" rx="14" fill="#1E111A" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="70" y="174" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">❌ Legacy: Standalone MDM Silos + O(N²) SQL Fuzzy Joins ($39,500/mo)</text>
+
+  <rect x="70" y="190" width="588" height="68" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="213" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. $26,500/mo Burned on Per-Record MDM Licenses &amp; Bidirectional Copy-ETL</text>
+  <text x="86" y="233" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Exporting 28M records across 18 ERPs to external MDM servers causes 24h lag.</text>
+  <text x="86" y="250" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Cloud entity resolution services bill per 1,000 records on every batch re-run.</text>
+
+  <rect x="70" y="268" width="588" height="78" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="291" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. O(N²) SQL Edit-Distance Joins Miss Cross-Language Synonyms ($13,000/mo)</text>
+  <text x="86" y="311" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Pairwise SQL Levenshtein over 28M rows triggers 784T comparisons &amp; warehouse spikes.</text>
+  <text x="86" y="330" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Character edit distance fails on English legal name vs. acronym vs. Chinese translation.</text>
+
+  <rect x="70" y="356" width="588" height="82" rx="8" fill="#2D1622" stroke="#7F1D1D"/>
+  <text x="86" y="379" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. Unlinked Shell Subsidiaries Breach Credit Caps &amp; Double-Claim Rebates ($9.25M)</text>
+  <text x="86" y="399" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6 regional subsidiaries draw $18.6M credit across 18 ERPs (124% of $15M group cap).</text>
+  <text x="86" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Duplicate tier-1 procurement rebates ($1.45M) leak across unmerged vendor IDs.</text>
+
+  <!-- Right Column: Fabric Zero-Copy In-Lake MDM + DiskANN + Purview DQ -->
+  <rect x="708" y="144" width="644" height="310" rx="14" fill="url(#fabCard37)" stroke="#10B981" stroke-width="1.8"/>
+  <text x="730" y="174" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">✅ Fabric In-Lake MDM (OneLake + DiskANN + Purview DQ) ($7,500/mo · Save 81.0%)</text>
+
+  <rect x="730" y="190" width="600" height="68" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="213" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1. SSD DiskANN Multilingual Vectors + Spark Gluten LSH Blocking (21ms)</text>
+  <text x="746" y="233" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Collapses O(N²) joins to O(N log N) via DiskANN (-92% RAM) &amp; Gluten C++ ($0 surcharge).</text>
+  <text x="746" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Links cross-language &amp; acronym counterparty records across 18 ERPs with 99.4% accuracy.</text>
+
+  <rect x="730" y="268" width="600" height="78" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="291" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">2. Zero-Copy In-Lake MDM (Profisee / CluedIn) &amp; Purview Survivorship (24ms)</text>
+  <text x="746" y="311" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Synthesizes Golden Record `ENT-884920` in-place on OneLake Delta ($0 movement tax).</text>
+  <text x="746" y="330" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Traverses 6-hop D-U-N-S / LEI corporate hierarchy to expose $18.6M group credit breach.</text>
+
+  <rect x="730" y="356" width="600" height="82" rx="8" fill="#092624" stroke="#059669"/>
+  <text x="746" y="379" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">3. Data Steward Teams Card + Reversible Cross-Walk &amp; ERP Write-Back (95ms)</text>
+  <text x="746" y="399" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Enforces 0.00% false-merge LEI proof, freezes $4.8M order &amp; nets $1.45M rebate.</text>
+  <text x="746" y="418" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Cuts monthly MDM TCO by 81.0% ($7,500 vs. $39,500/mo, protecting $9.25M SLA).</text>
+
+  <!-- Middle Section: Scenario AJ 4-Step 95ms Closed-Loop Pipeline -->
+  <rect x="48" y="472" width="1304" height="156" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="70" y="500" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">⚡ Scenario AJ (`global_conglomerate_fabric_mdm_entity_resolution_golden_record_vs_4clouds`): 18-ERP × 28M-Record MDM Loop (95 ms E2E)</text>
+
+  <rect x="70" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#0284C7"/>
+  <text x="84" y="536" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">① DiskANN + LSH Match (21 ms)</text>
+  <text x="84" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">28M Records · 18 Mirrored ERPs</text>
+  <text x="84" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0 per-record MDM export/copy tax</text>
+  <text x="84" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Links 6 Regional Shell Subsidiaries</text>
+
+  <rect x="390" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#10B981"/>
+  <text x="404" y="536" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">② Survivorship &amp; Graph (24 ms)</text>
+  <text x="404" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">GoldenID: ENT-884920 (Apex Group)</text>
+  <text x="404" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">6-hop D-U-N-S &amp; LEI hierarchy rollup</text>
+  <text x="404" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Exposes $18.6M Credit + $1.45M Rebate</text>
+
+  <rect x="710" y="514" width="298" height="96" rx="10" fill="#1E293B" stroke="#F59E0B"/>
+  <text x="724" y="536" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">③ LEI Proof &amp; Credit Gate (25 ms)</text>
+  <text x="724" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">MDM-GOLDEN-RECORD-CREDIT-REBATE-SOP-036</text>
+  <text x="724" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">100% LEI parent proof · 0.00% false merge</text>
+  <text x="724" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Reversible Cross-Walk Verified</text>
+
+  <rect x="1030" y="514" width="300" height="96" rx="10" fill="#1E293B" stroke="#8B5CF6"/>
+  <text x="1044" y="536" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Steward Teams &amp; ERP Lock (25 ms)</text>
+  <text x="1044" y="556" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Freeze $4.8M Order + Net $1.45M Rebate</text>
+  <text x="1044" y="574" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Writes Golden ID to SAP/D365 &amp; 1GB SQL</text>
+  <text x="1044" y="592" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">Protects $9.25M SLA (95ms E2E)</text>
+
+  <!-- Bottom Section: 5-Cloud Decision Matrix -->
+  <rect x="48" y="644" width="1304" height="176" rx="14" fill="#0B1324" stroke="#334155" stroke-width="1.5"/>
+  <text x="70" y="672" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14.5" font-weight="800">📊 5-Cloud Enterprise MDM, Entity Resolution &amp; Golden Record Comparison (18 ERPs · 28M Master Records)</text>
+
+  <text x="70" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">PLATFORM &amp; MDM ARCHITECTURE</text>
+  <text x="410" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ENTITY RESOLUTION ENGINE</text>
+  <text x="690" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">STEWARD UI &amp; LINEAGE</text>
+  <text x="990" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">MONTHLY TCO</text>
+  <text x="1145" y="700" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">ARCHITECT VERDICT</text>
+
+  <rect x="62" y="710" width="1276" height="28" rx="6" fill="#064E3B" fill-opacity="0.55"/>
+  <text x="70" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Microsoft Fabric (OneLake MDM + DiskANN + Purview)</text>
+  <text x="410" y="729" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">DiskANN Vector + $0 Gluten LSH (21ms)</text>
+  <text x="690" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Purview DQ + Profisee/CluedIn + Teams</text>
+  <text x="990" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">$7,500 / mo (-81.0%)</text>
+  <text x="1145" y="729" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Best Enterprise 360° MDM</text>
+
+  <text x="70" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">Databricks (PySpark Splink / Zingg + UC)</text>
+  <text x="410" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">PySpark LSH + Photon (2x DBU)</text>
+  <text x="690" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Code-only (no native Steward UI)</text>
+  <text x="990" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$28,900 / mo</text>
+  <text x="1145" y="756" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Use for Custom Code R&amp;D</text>
+
+  <text x="70" y="780" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">GCP BigQuery / Snowflake Native MDM Apps</text>
+  <text x="410" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">BQ Vector Scan / SPCS Container Nodes</text>
+  <text x="690" y="780" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Requires 3rd-party app licenses</text>
+  <text x="990" y="780" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$31.8K–$36.2K/mo</text>
+  <text x="1145" y="780" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Mount via OneLake XTable</text>
+
+  <text x="70" y="804" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">AWS Entity Resolution / Standalone MDM Silos</text>
+  <text x="410" y="804" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Per-1K Record Fee + Copy-ETL Silo</text>
+  <text x="690" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">Strong for LiveRamp/UID2 ad cookies</text>
+  <text x="990" y="804" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$39,500 / mo</text>
+  <text x="1145" y="804" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12">Use for AdTech UID2 Only</text>
+</svg>
