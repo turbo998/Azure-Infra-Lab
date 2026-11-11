@@ -51,8 +51,8 @@
 - One-page SVG: [`assets/34-cycle-504-daily-breakthroughs.svg`](assets/34-cycle-504-daily-breakthroughs.svg)
 - Monograph addendum (EN): [`docs/full-monograph-cycle-504.en.md`](docs/full-monograph-cycle-504.en.md)
 - Monograph addendum (ZH): [`docs/full-monograph-cycle-504.md`](docs/full-monograph-cycle-504.md)
-- Selection FAQ (EN, Sandbox Monotonic Clock Fence): [`agent-runtime-entra-workload-identity-federation-selection-faq.en.md`](agent-runtime-entra-workload-identity-federation-selection-faq.en.md)
-- Selection FAQ (ZH, Sandbox Monotonic Clock Fence): [`agent-runtime-entra-workload-identity-federation-selection-faq.md`](agent-runtime-entra-workload-identity-federation-selection-faq.md)
+- Selection FAQ (EN, Entra Workload Identity Federation): [`agent-runtime-entra-workload-identity-federation-selection-faq.en.md`](agent-runtime-entra-workload-identity-federation-selection-faq.en.md)
+- Selection FAQ (ZH, Entra Workload Identity Federation): [`agent-runtime-entra-workload-identity-federation-selection-faq.md`](agent-runtime-entra-workload-identity-federation-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
