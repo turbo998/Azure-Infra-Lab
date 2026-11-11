@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 780" width="1280" height="780" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad40" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="50%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#111C35"/>
+    </linearGradient>
+    <linearGradient id="headerGrad40" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="fabricBox40" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="legacyBox40" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#450A0A" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="shadow40" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="780" fill="url(#bgGrad40)"/>
+
+  <!-- Top Header Banner -->
+  <rect x="24" y="18" width="1232" height="82" rx="12" fill="url(#headerGrad40)" filter="url(#shadow40)"/>
+  <text x="44" y="50" fill="#FFFFFF" font-size="21" font-weight="800">R32 · Aerospace &amp; Defense MRO Predictive Maintenance, Flight Twin &amp; GCC High / ITAR FAQ</text>
+  <text x="44" y="78" fill="#E0F2FE" font-size="13.5" font-weight="600">Microsoft Fabric (GCC High GA + Eventhouse KQL 320K EPS + Azure Local ALDO Hangar + Purview ITAR OBO) vs. AWS GovCloud / Databricks / Snowflake / GCP · 47ms · -82.6% TCO</text>
+  <rect x="1050" y="32" width="188" height="52" rx="8" fill="#0F172A" fill-opacity="0.82" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="1144" y="53" fill="#6EE7B7" font-size="13" font-weight="800" text-anchor="middle">Scenario AM · DL-169..172</text>
+  <text x="1144" y="73" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">171/172 (99.42%) · 82/82 Tests</text>
+
+  <!-- Left Column: Legacy Post-Flight T+1 MRO & Siloed Gov Cloud Stack -->
+  <rect x="24" y="114" width="596" height="310" rx="12" fill="url(#legacyBox40)" stroke="#EF4444" stroke-width="1.5" filter="url(#shadow40)"/>
+  <text x="44" y="142" fill="#FCA5A5" font-size="16" font-weight="800">❌ Legacy T+1 Batch MRO &amp; Siloed Gov Stack (12–24h Lag · $44,200/mo · 72h Outstation AOG)</text>
+
+  <rect x="44" y="156" width="556" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="58" y="178" fill="#FECACA" font-size="13.5" font-weight="700">1. Post-Flight T+1 Batch QAR Decoding Misses Rapid EGT Margin Collapse</text>
+  <text x="58" y="198" fill="#CBD5E1" font-size="12">• Waiting 12–24h after landing to batch-load QAR CSVs misses in-flight HPT blade thermal fatigue</text>
+  <text x="58" y="214" fill="#CBD5E1" font-size="12">• Aircraft departs to an outstation without spare HPT modules, triggering a 72h AOG ($2.10M loss)</text>
+
+  <rect x="44" y="234" width="556" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="58" y="256" fill="#FECACA" font-size="13.5" font-weight="700">2. 1.5x–2.0x Sovereign Cloud Surcharges &amp; Disconnected Hangar Blind Spots</text>
+  <text x="58" y="276" fill="#CBD5E1" font-size="12">• Stitching standalone TSDB + Gov warehouse + external BI costs $44,200/mo with 1–2 yr AI feature lag</text>
+  <text x="58" y="292" fill="#CBD5E1" font-size="12">• Pure cloud SaaS fails when tactical depots or remote hangars lose WAN/satcom connectivity</text>
+
+  <rect x="44" y="312" width="556" height="96" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="58" y="334" fill="#FECACA" font-size="13.5" font-weight="700">3. ITAR / EAR (`ECCN 9E003`) Dual-Use Hot-Section Blueprint Leakage Risk</text>
+  <text x="58" y="354" fill="#CBD5E1" font-size="12">• Dual-use turbofans mix commercial LRUs with ITAR-controlled HPT film-cooling CAD tolerances</text>
+  <text x="58" y="372" fill="#CBD5E1" font-size="12">• Un-gated AI maintenance agents risk exposing ECCN 9E003 drawings to non-US-Person overseas mechanics</text>
+  <text x="58" y="392" fill="#FCA5A5" font-size="12.5" font-weight="700">• Total Monthly Legacy Cost: $44,200/mo | Fault-to-Work-Order Latency: 12–24 Hours</text>
+
+  <!-- Right Column: Microsoft Fabric 47ms Zero-AOG & ITAR Closed-Loop -->
+  <rect x="636" y="114" width="620" height="310" rx="12" fill="url(#fabricBox40)" stroke="#10B981" stroke-width="1.5" filter="url(#shadow40)"/>
+  <text x="656" y="142" fill="#6EE7B7" font-size="16" font-weight="800">✅ Fabric GCC High + Eventhouse + ALDO Loop (47ms E2E · $7,700/mo · -82.6% TCO)</text>
+
+  <rect x="656" y="156" width="580" height="60" rx="8" fill="#0F172A" stroke="#34D399" stroke-width="1"/>
+  <text x="670" y="176" fill="#A7F3D0" font-size="13" font-weight="700">Step 1 (11 ms) · Eventhouse KQL 320K EPS ARINC-717/ACARS Stream ($0/GB Write Tax)</text>
+  <text x="670" y="195" fill="#E2E8F0" font-size="11.5">• KQL `series_fit_2lines()` flags Engine #ESN-894212 (Tail N789AX) EGT margin -14.2°C drop &amp; 2.8 ips HPT vibration</text>
+  <text x="670" y="210" fill="#6EE7B7" font-size="11.5" font-weight="600">• Detects HPT blade creep 18 flight cycles early; syncs with SQL on Azure Local (ALDO) disconnected hangars</text>
+
+  <rect x="656" y="224" width="580" height="58" rx="8" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+  <text x="670" y="244" fill="#BAE6FD" font-size="13" font-weight="700">Step 2 (12 ms) · Fabric IQ 6-Hop As-Flying BOM &amp; 14-Hub Rotable Spare Ontology</text>
+  <text x="670" y="262" fill="#E2E8F0" font-size="11.5">• Traverses `AircraftTail → TurbofanEngine → HPTBladeSerial → EGTMarginCurve → RotablePartPool → HangarSlotCrew`</text>
+  <text x="670" y="276" fill="#7DD3FC" font-size="11.5" font-weight="600">• Pre-positions zero-hour HPT blade kit at Frankfurt (EDDF) Bay 4 inside the scheduled 4h turnaround (0 AOG)</text>
+
+  <rect x="656" y="290" width="580" height="54" rx="8" fill="#0F172A" stroke="#A78BFA" stroke-width="1"/>
+  <text x="670" y="309" fill="#DDD6FE" font-size="13" font-weight="700">Step 3 (12 ms) · Foundry IQ FAA Part 145 Airworthiness &amp; Purview ITAR (`ECCN 9E003`) Gate</text>
+  <text x="670" y="327" fill="#E2E8F0" font-size="11.5">• Enforces `AERO-MRO-FAA145-ITAR-GCCHIGH-SOP-039`: B1.1 license verified + OBO masks ECCN 9E003 CAD for non-US staff</text>
+
+  <rect x="656" y="352" width="580" height="60" rx="8" fill="#0F172A" stroke="#FBBF24" stroke-width="1"/>
+  <text x="670" y="371" fill="#FDE68A" font-size="13" font-weight="700">Step 4 (12 ms) · MCC Director Teams Co-Sign + SAP PM / AMOS Lock + 1GB Free SQL</text>
+  <text x="670" y="389" fill="#E2E8F0" font-size="11.5">• Dispatches SAP PM/AMOS 4h turnaround blade swap, saves 18 downstream flights &amp; logs FAA 8130-3 in 12ms (47ms E2E)</text>
+  <text x="670" y="405" fill="#FCD34D" font-size="11.5" font-weight="700">• Saves $36,500/mo (-82.6% TCO) &amp; protects $10.30M AOG avoidance, dispatch reliability &amp; ITAR SLA</text>
+
+  <!-- Middle Section: 5-Cloud Aerospace MRO & Sovereign Cloud Decision Matrix -->
+  <rect x="24" y="438" width="1232" height="196" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5" filter="url(#shadow40)"/>
+  <text x="44" y="465" fill="#F8FAFC" font-size="15.5" font-weight="800">📊 5-Platform Aerospace MRO, Flight Digital Twin &amp; Sovereign Cloud Matrix (680 Aircraft × 1,360 Engines × 320K EPS)</text>
+
+  <!-- Table Header -->
+  <rect x="40" y="476" width="1200" height="26" rx="4" fill="#1E293B"/>
+  <text x="52" y="494" fill="#94A3B8" font-size="12" font-weight="700">Platform / Sovereign Tier</text>
+  <text x="290" y="494" fill="#94A3B8" font-size="12" font-weight="700">320K EPS QAR/ACARS Analytics</text>
+  <text x="545" y="494" fill="#94A3B8" font-size="12" font-weight="700">As-Flying BOM &amp; Hangar Edge</text>
+  <text x="795" y="494" fill="#94A3B8" font-size="12" font-weight="700">ITAR (`ECCN 9E003`) &amp; OBO Gate</text>
+  <text x="1030" y="494" fill="#94A3B8" font-size="12" font-weight="700">Monthly TCO &amp; Best Fit</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="40" y="505" width="1200" height="26" rx="4" fill="#064E3B" fill-opacity="0.55"/>
+  <text x="52" y="522" fill="#6EE7B7" font-size="12" font-weight="800">Microsoft Fabric (GCC High GA)</text>
+  <text x="290" y="522" fill="#6EE7B7" font-size="12" font-weight="700">11 ms KQL 2-Line Fit ($0/GB Tax)</text>
+  <text x="545" y="522" fill="#E2E8F0" font-size="11.5">Digital Twin + Azure Local ALDO GA</text>
+  <text x="795" y="522" fill="#E2E8F0" font-size="11.5">Purview + Entra OBO US-Person Mask</text>
+  <text x="1030" y="522" fill="#6EE7B7" font-size="12" font-weight="800">$7,700/mo (-82.6% · Zero-AOG MRO)</text>
+
+  <!-- Row 2: Databricks -->
+  <rect x="40" y="533" width="1200" height="24" rx="4" fill="#1E293B" fill-opacity="0.45"/>
+  <text x="52" y="549" fill="#FDBA74" font-size="12" font-weight="700">Databricks (FedRAMP High / IL5)</text>
+  <text x="290" y="549" fill="#CBD5E1" font-size="11.5">Spark Micro-Batch (15–45s Lag)</text>
+  <text x="545" y="549" fill="#CBD5E1" font-size="11.5">GraphFrames (No Air-Gapped SQL)</text>
+  <text x="795" y="549" fill="#CBD5E1" font-size="11.5">Unity Catalog ABAC</text>
+  <text x="1030" y="549" fill="#FDBA74" font-size="11.5">$39,600/mo (3D CFD &amp; Vision R&amp;D)</text>
+
+  <!-- Row 3: AWS -->
+  <rect x="40" y="559" width="1200" height="24" rx="4" fill="#0F172A"/>
+  <text x="52" y="575" fill="#FDE047" font-size="12" font-weight="700">AWS GovCloud (SiteWise + RPU)</text>
+  <text x="290" y="575" fill="#CBD5E1" font-size="11.5">SiteWise Property Fees + Kinesis</text>
+  <text x="545" y="575" fill="#CBD5E1" font-size="11.5">TwinMaker + Outposts Rack</text>
+  <text x="795" y="575" fill="#CBD5E1" font-size="11.5">Lake Formation + Custom IAM</text>
+  <text x="1030" y="575" fill="#FDE047" font-size="11.5">$41,800/mo (AWS Ground Test Rigs)</text>
+
+  <!-- Row 4: GCP -->
+  <rect x="40" y="585" width="1200" height="24" rx="4" fill="#1E293B" fill-opacity="0.45"/>
+  <text x="52" y="601" fill="#93C5FD" font-size="12" font-weight="700">GCP Assured Workloads</text>
+  <text x="290" y="601" fill="#CBD5E1" font-size="11.5">BigQuery Write API ($0.05/GB)</text>
+  <text x="545" y="601" fill="#CBD5E1" font-size="11.5">Spanner Graph + GDC Rack</text>
+  <text x="795" y="601" fill="#CBD5E1" font-size="11.5">Dataplex Policy Tags</text>
+  <text x="1030" y="601" fill="#93C5FD" font-size="11.5">$38,500/mo (Satellite Weather CAT)</text>
+
+  <!-- Row 5: Snowflake -->
+  <rect x="40" y="611" width="1200" height="20" rx="4" fill="#0F172A"/>
+  <text x="52" y="625" fill="#7DD3FC" font-size="12" font-weight="700">Snowflake Government</text>
+  <text x="290" y="625" fill="#FCA5A5" font-size="11.5">&gt;= 60,000 ms (Dynamic Table Lag)</text>
+  <text x="545" y="625" fill="#CBD5E1" font-size="11.5">Cloud-Only (No Disconnected Edge)</text>
+  <text x="795" y="625" fill="#CBD5E1" font-size="11.5">Horizon Masking (1.5x+ Gov Credit)</text>
+  <text x="1030" y="625" fill="#7DD3FC" font-size="11.5">$44,200/mo (Static Supplier Tables)</text>
+
+  <!-- Bottom Section: Dual-Denominator Reconciliation & Routing Verdicts -->
+  <rect x="24" y="646" width="1232" height="116" rx="12" fill="#091020" stroke="#0284C7" stroke-width="1.5" filter="url(#shadow40)"/>
+  <text x="44" y="672" fill="#38BDF8" font-size="14.5" font-weight="800">🧪 Sealed Benchmark &amp; Dual-Denominator Reconciliation (`reports/report.json` · Zero Fabricated Coordinates)</text>
+  <text x="44" y="694" fill="#E2E8F0" font-size="12">• <tspan fill="#6EE7B7" font-weight="700">DL-169 (Fabric Zero-AOG &amp; GCC High)</tspan>: 680 aircraft × 320K EPS KQL 11ms + ALDO + ITAR OBO (0.98, 172ms) | <tspan fill="#FDBA74" font-weight="700">DL-170 (Databricks CFD)</tspan>: 3D aerodynamic CFD mesh &amp; PyTorch (0.94, 180ms)</text>
+  <text x="44" y="714" fill="#E2E8F0" font-size="12">• <tspan fill="#93C5FD" font-weight="700">DL-171 (Better Together)</tspan>: Eventhouse 320K EPS + OneLake Zero-Copy SAP PM/AMOS + Databricks Vision + DirectLake (0.96, 174ms) | <tspan fill="#FCA5A5" font-weight="700">DL-172 (Anti-Pattern)</tspan>: T+1 batch AOG &amp; ITAR leak blocked (0.99, 178ms)</text>
+  <text x="44" y="736" fill="#A7F3D0" font-size="12" font-weight="700">• Denominator A (`n=172` Routing Matrix DL-01..DL-172): 171/172 (99.42%) Passed · Mean = 386.0 ms | Denominator B (`n=39` Ontology Simulations A..AM): Mean = 351.0 ms (Range 47–780 ms, Scenario AM = 47 ms)</text>
+  <text x="44" y="753" fill="#94A3B8" font-size="11">Provenance: `measured_local_harness` (171/172 routing, 82/82 unit tests) + `vendor_published_spec_as_of_2026` (35 official URLs incl. Fabric GCC High &amp; Azure Local ALDO) + `synthetic_scenario_model` ($10.30M SLA)</text>
+</svg>
