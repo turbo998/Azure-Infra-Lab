@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #615 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-615.html](workbench-cycle-615.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #616 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-616.html](workbench-cycle-616.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #615 release summary (2026-11-11)
+## 1) Cycle #616 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #615 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #615 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #615 workbench** | Interactive benchmark surface | [`workbench-cycle-615.html`](workbench-cycle-615.html) |
+| **Cycle #616 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #616 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #616 workbench** | Interactive benchmark surface | [`workbench-cycle-616.html`](workbench-cycle-616.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-615-benchmark.json`](evidence/cycle-615-benchmark.json)
-- Source ledger: [`evidence/cycle-615-sources.json`](evidence/cycle-615-sources.json)
+- Canonical payload: [`evidence/cycle-616-benchmark.json`](evidence/cycle-616-benchmark.json)
+- Source ledger: [`evidence/cycle-616-sources.json`](evidence/cycle-616-sources.json)
 - Metric CSV files:
-  - [`cycle-615-latency.csv`](evidence/cycle-615-latency.csv)
-  - [`cycle-615-throughput.csv`](evidence/cycle-615-throughput.csv)
-  - [`cycle-615-policy.csv`](evidence/cycle-615-policy.csv)
-  - [`cycle-615-cost.csv`](evidence/cycle-615-cost.csv)
+  - [`cycle-616-latency.csv`](evidence/cycle-616-latency.csv)
+  - [`cycle-616-throughput.csv`](evidence/cycle-616-throughput.csv)
+  - [`cycle-616-policy.csv`](evidence/cycle-616-policy.csv)
+  - [`cycle-616-cost.csv`](evidence/cycle-616-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-615-daily-breakthroughs.svg`](assets/34-cycle-615-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-615.en.md`](docs/full-monograph-cycle-615.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-615.md`](docs/full-monograph-cycle-615.md)
-- Selection FAQ (EN, ACA Sessions Snapshot Restore Cadence): [`agent-aca-sessions-snapshot-restore-cadence-selection-faq.en.md`](agent-aca-sessions-snapshot-restore-cadence-selection-faq.en.md)
-- Selection FAQ (ZH, ACA Sessions Snapshot Restore Cadence): [`agent-aca-sessions-snapshot-restore-cadence-selection-faq.md`](agent-aca-sessions-snapshot-restore-cadence-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-616-daily-breakthroughs.svg`](assets/34-cycle-616-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-616.en.md`](docs/full-monograph-cycle-616.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-616.md`](docs/full-monograph-cycle-616.md)
+- Selection FAQ (EN, Foundry Agent Memory Lane Sharding): [`agent-foundry-agent-memory-lane-sharding-selection-faq.en.md`](agent-foundry-agent-memory-lane-sharding-selection-faq.en.md)
+- Selection FAQ (ZH, Foundry Agent Memory Lane Sharding): [`agent-foundry-agent-memory-lane-sharding-selection-faq.md`](agent-foundry-agent-memory-lane-sharding-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
