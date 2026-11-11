@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook（精简版）
 
 > 🌐 **Language / 语言切换**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
-> 🔎 **Cycle #599 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-599.html](workbench-cycle-599.html) · [daily-report-2026-11-11.md](daily-report-2026-11-11.md)
+> 🔎 **Cycle #600 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-600.html](workbench-cycle-600.html) · [daily-report-2026-11-11.md](daily-report-2026-11-11.md)
 
 ---
 
-## 一、Cycle #599 发布摘要（2026-11-11）
+## 一、Cycle #600 发布摘要（2026-11-11）
 
 - **主题**：云原生 Agent Infra（Runtime/Sandbox、AI Gateway、MCP/A2A 编排与可观测）
 - **当日证据口径**：2026 官方文档 / changelog / release notes 优先
@@ -26,21 +26,21 @@
 | 双轨仿真 Demo | AKSClaw × E2B | [`demo.html`](demo.html) |
 | 选型与容量测算 | 决策树 + 10 万沙箱估算 | [`selector.html`](selector.html) |
 | 历史 7-card 卡组 | 既有可视化入口 | [`cards.html`](cards.html) |
-| **Cycle #599 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #599 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #599 工作台** | 新增交互实验台 | [`workbench-cycle-599.html`](workbench-cycle-599.html) |
+| **Cycle #600 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #600 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #600 工作台** | 新增交互实验台 | [`workbench-cycle-600.html`](workbench-cycle-600.html) |
 
 ---
 
 ## 三、可复现实验与证据
 
-- 基准主文件：[`evidence/cycle-599-benchmark.json`](evidence/cycle-599-benchmark.json)
-- 来源台账：[`evidence/cycle-599-sources.json`](evidence/cycle-599-sources.json)
+- 基准主文件：[`evidence/cycle-600-benchmark.json`](evidence/cycle-600-benchmark.json)
+- 来源台账：[`evidence/cycle-600-sources.json`](evidence/cycle-600-sources.json)
 - 指标 CSV：
-  - [`cycle-599-latency.csv`](evidence/cycle-599-latency.csv)
-  - [`cycle-599-throughput.csv`](evidence/cycle-599-throughput.csv)
-  - [`cycle-599-policy.csv`](evidence/cycle-599-policy.csv)
-  - [`cycle-599-cost.csv`](evidence/cycle-599-cost.csv)
+  - [`cycle-600-latency.csv`](evidence/cycle-600-latency.csv)
+  - [`cycle-600-throughput.csv`](evidence/cycle-600-throughput.csv)
+  - [`cycle-600-policy.csv`](evidence/cycle-600-policy.csv)
+  - [`cycle-600-cost.csv`](evidence/cycle-600-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - 日报（中文）：[`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
 - 日报（英文）：[`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
-- 一图流 SVG：[`assets/34-cycle-599-daily-breakthroughs.svg`](assets/34-cycle-599-daily-breakthroughs.svg)
-- 专著增补（中文）：[`docs/full-monograph-cycle-599.md`](docs/full-monograph-cycle-599.md)
-- 专著增补（英文）：[`docs/full-monograph-cycle-599.en.md`](docs/full-monograph-cycle-599.en.md)
-- 选型 FAQ（中文）：[`agent-apim-semantic-cache-staleness-burst-cap-selection-faq.md`](agent-apim-semantic-cache-staleness-burst-cap-selection-faq.md)
-- 选型 FAQ（英文）：[`agent-apim-semantic-cache-staleness-burst-cap-selection-faq.en.md`](agent-apim-semantic-cache-staleness-burst-cap-selection-faq.en.md)
+- 一图流 SVG：[`assets/34-cycle-600-daily-breakthroughs.svg`](assets/34-cycle-600-daily-breakthroughs.svg)
+- 专著增补（中文）：[`docs/full-monograph-cycle-600.md`](docs/full-monograph-cycle-600.md)
+- 专著增补（英文）：[`docs/full-monograph-cycle-600.en.md`](docs/full-monograph-cycle-600.en.md)
+- 选型 FAQ（中文）：[`agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.md`](agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.md)
+- 选型 FAQ（英文）：[`agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.en.md`](agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.en.md)
 - 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 - 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 
