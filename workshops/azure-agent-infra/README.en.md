@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #604 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-604.html](workbench-cycle-604.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #605 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-605.html](workbench-cycle-605.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #604 release summary (2026-11-11)
+## 1) Cycle #605 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #604 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #604 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #604 workbench** | Interactive benchmark surface | [`workbench-cycle-604.html`](workbench-cycle-604.html) |
+| **Cycle #605 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #605 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #605 workbench** | Interactive benchmark surface | [`workbench-cycle-605.html`](workbench-cycle-605.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-604-benchmark.json`](evidence/cycle-604-benchmark.json)
-- Source ledger: [`evidence/cycle-604-sources.json`](evidence/cycle-604-sources.json)
+- Canonical payload: [`evidence/cycle-605-benchmark.json`](evidence/cycle-605-benchmark.json)
+- Source ledger: [`evidence/cycle-605-sources.json`](evidence/cycle-605-sources.json)
 - Metric CSV files:
-  - [`cycle-604-latency.csv`](evidence/cycle-604-latency.csv)
-  - [`cycle-604-throughput.csv`](evidence/cycle-604-throughput.csv)
-  - [`cycle-604-policy.csv`](evidence/cycle-604-policy.csv)
-  - [`cycle-604-cost.csv`](evidence/cycle-604-cost.csv)
+  - [`cycle-605-latency.csv`](evidence/cycle-605-latency.csv)
+  - [`cycle-605-throughput.csv`](evidence/cycle-605-throughput.csv)
+  - [`cycle-605-policy.csv`](evidence/cycle-605-policy.csv)
+  - [`cycle-605-cost.csv`](evidence/cycle-605-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-604-daily-breakthroughs.svg`](assets/34-cycle-604-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-604.en.md`](docs/full-monograph-cycle-604.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-604.md`](docs/full-monograph-cycle-604.md)
-- Selection FAQ (EN, MCP A2A Trace Context Propagation): [`agent-mcp-a2a-trace-context-propagation-selection-faq.en.md`](agent-mcp-a2a-trace-context-propagation-selection-faq.en.md)
-- Selection FAQ (ZH, MCP A2A Trace Context Propagation): [`agent-mcp-a2a-trace-context-propagation-selection-faq.md`](agent-mcp-a2a-trace-context-propagation-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-605-daily-breakthroughs.svg`](assets/34-cycle-605-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-605.en.md`](docs/full-monograph-cycle-605.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-605.md`](docs/full-monograph-cycle-605.md)
+- Selection FAQ (EN, ACA Dynamic Sessions Idle Reaper Heartbeat): [`agent-aca-dynamic-sessions-idle-reaper-heartbeat-selection-faq.en.md`](agent-aca-dynamic-sessions-idle-reaper-heartbeat-selection-faq.en.md)
+- Selection FAQ (ZH, ACA Dynamic Sessions Idle Reaper Heartbeat): [`agent-aca-dynamic-sessions-idle-reaper-heartbeat-selection-faq.md`](agent-aca-dynamic-sessions-idle-reaper-heartbeat-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
