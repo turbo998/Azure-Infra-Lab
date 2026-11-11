@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #608 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-608.html](workbench-cycle-608.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #609 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-609.html](workbench-cycle-609.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #608 release summary (2026-11-11)
+## 1) Cycle #609 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #608 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #608 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #608 workbench** | Interactive benchmark surface | [`workbench-cycle-608.html`](workbench-cycle-608.html) |
+| **Cycle #609 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #609 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #609 workbench** | Interactive benchmark surface | [`workbench-cycle-609.html`](workbench-cycle-609.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-608-benchmark.json`](evidence/cycle-608-benchmark.json)
-- Source ledger: [`evidence/cycle-608-sources.json`](evidence/cycle-608-sources.json)
+- Canonical payload: [`evidence/cycle-609-benchmark.json`](evidence/cycle-609-benchmark.json)
+- Source ledger: [`evidence/cycle-609-sources.json`](evidence/cycle-609-sources.json)
 - Metric CSV files:
-  - [`cycle-608-latency.csv`](evidence/cycle-608-latency.csv)
-  - [`cycle-608-throughput.csv`](evidence/cycle-608-throughput.csv)
-  - [`cycle-608-policy.csv`](evidence/cycle-608-policy.csv)
-  - [`cycle-608-cost.csv`](evidence/cycle-608-cost.csv)
+  - [`cycle-609-latency.csv`](evidence/cycle-609-latency.csv)
+  - [`cycle-609-throughput.csv`](evidence/cycle-609-throughput.csv)
+  - [`cycle-609-policy.csv`](evidence/cycle-609-policy.csv)
+  - [`cycle-609-cost.csv`](evidence/cycle-609-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-608-daily-breakthroughs.svg`](assets/34-cycle-608-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-608.en.md`](docs/full-monograph-cycle-608.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-608.md`](docs/full-monograph-cycle-608.md)
-- Selection FAQ (EN, Foundry Model Router Fallback Bucket): [`agent-foundry-model-router-fallback-bucket-selection-faq.en.md`](agent-foundry-model-router-fallback-bucket-selection-faq.en.md)
-- Selection FAQ (ZH, Foundry Model Router Fallback Bucket): [`agent-foundry-model-router-fallback-bucket-selection-faq.md`](agent-foundry-model-router-fallback-bucket-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-609-daily-breakthroughs.svg`](assets/34-cycle-609-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-609.en.md`](docs/full-monograph-cycle-609.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-609.md`](docs/full-monograph-cycle-609.md)
+- Selection FAQ (EN, AKS Kata Pod Density Safety Margin): [`agent-aks-kata-pod-density-safety-margin-selection-faq.en.md`](agent-aks-kata-pod-density-safety-margin-selection-faq.en.md)
+- Selection FAQ (ZH, AKS Kata Pod Density Safety Margin): [`agent-aks-kata-pod-density-safety-margin-selection-faq.md`](agent-aks-kata-pod-density-safety-margin-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
