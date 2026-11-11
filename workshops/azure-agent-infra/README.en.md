@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #533 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-533.html](workbench-cycle-533.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #534 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-534.html](workbench-cycle-534.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #533 release summary (2026-11-11)
+## 1) Cycle #534 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #533 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #533 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #533 workbench** | Interactive benchmark surface | [`workbench-cycle-533.html`](workbench-cycle-533.html) |
+| **Cycle #534 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #534 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #534 workbench** | Interactive benchmark surface | [`workbench-cycle-534.html`](workbench-cycle-534.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-533-benchmark.json`](evidence/cycle-533-benchmark.json)
-- Source ledger: [`evidence/cycle-533-sources.json`](evidence/cycle-533-sources.json)
+- Canonical payload: [`evidence/cycle-534-benchmark.json`](evidence/cycle-534-benchmark.json)
+- Source ledger: [`evidence/cycle-534-sources.json`](evidence/cycle-534-sources.json)
 - Metric CSV files:
-  - [`cycle-532-latency.csv`](evidence/cycle-533-latency.csv)
-  - [`cycle-532-throughput.csv`](evidence/cycle-533-throughput.csv)
-  - [`cycle-532-policy.csv`](evidence/cycle-533-policy.csv)
-  - [`cycle-532-cost.csv`](evidence/cycle-533-cost.csv)
+  - [`cycle-532-latency.csv`](evidence/cycle-534-latency.csv)
+  - [`cycle-532-throughput.csv`](evidence/cycle-534-throughput.csv)
+  - [`cycle-532-policy.csv`](evidence/cycle-534-policy.csv)
+  - [`cycle-532-cost.csv`](evidence/cycle-534-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-533-daily-breakthroughs.svg`](assets/34-cycle-533-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-533.en.md`](docs/full-monograph-cycle-533.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-533.md`](docs/full-monograph-cycle-533.md)
-- Selection FAQ (EN, Semantic Cache Route-Key Entropy): [`agent-gateway-semantic-cache-route-key-entropy-selection-faq.en.md`](agent-gateway-semantic-cache-route-key-entropy-selection-faq.en.md)
-- Selection FAQ (ZH, Semantic Cache Route-Key Entropy): [`agent-gateway-semantic-cache-route-key-entropy-selection-faq.md`](agent-gateway-semantic-cache-route-key-entropy-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-534-daily-breakthroughs.svg`](assets/34-cycle-534-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-534.en.md`](docs/full-monograph-cycle-534.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-534.md`](docs/full-monograph-cycle-534.md)
+- Selection FAQ (EN, Tenant Noisy-Neighbor I/O Throttle): [`agent-runtime-tenant-noisy-neighbor-io-throttle-selection-faq.en.md`](agent-runtime-tenant-noisy-neighbor-io-throttle-selection-faq.en.md)
+- Selection FAQ (ZH, Tenant Noisy-Neighbor I/O Throttle): [`agent-runtime-tenant-noisy-neighbor-io-throttle-selection-faq.md`](agent-runtime-tenant-noisy-neighbor-io-throttle-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_533_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_533_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_534_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_534_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_533_pipeline.py`](simulator/cycle_533_pipeline.py)
+- Generator pipeline: [`simulator/cycle_534_pipeline.py`](simulator/cycle_534_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
