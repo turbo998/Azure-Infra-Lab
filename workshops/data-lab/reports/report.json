@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-10-r27",
-  "generated_at": "2026-11-10T05:22:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-11-r28",
+  "generated_at": "2026-11-11T23:25:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 152,
-      "routing_matrix_mean_modeled_latency_ms": 411.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=152 routing & decision evaluation items (DL-01..DL-152, mean=411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 34,
+      "routing_matrix_denominator_n": 156,
+      "routing_matrix_mean_modeled_latency_ms": 406.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=156 routing & decision evaluation items (DL-01..DL-156, mean=406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 35,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -44,14 +44,19 @@
         175,
         159,
         143,
-        127
+        127,
+        111
       ],
       "ontology_simulations_range_ms": [
-        127,
+        111,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 391.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=34 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127]ms, range 127-780ms, mean=391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 383.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=35 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111]ms, range 111-780ms, mean=383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r27_historical_denominators": {
+        "r27_routing_matrix_n152_mean_ms": 411.0,
+        "r27_ontology_simulations_n34_mean_ms": 391.0
+      },
       "r26_historical_denominators": {
         "r26_routing_matrix_n148_mean_ms": 416.0,
         "r26_ontology_simulations_n33_mean_ms": 399.0
@@ -150,8 +155,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=152 decision routing matrix evaluation (151/152 = 99.34%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=152 routing decision matrix tasks (DL-01..DL-152) with arithmetic mean modeled latency = 411.0ms; (2) n=34 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127]ms, range 127-780ms) with arithmetic mean modeled latency = 391.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=156 decision routing matrix evaluation (155/156 = 99.36%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=156 routing decision matrix tasks (DL-01..DL-156) with arithmetic mean modeled latency = 406.0ms; (2) n=35 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111]ms, range 111-780ms) with arithmetic mean modeled latency = 383.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -534,9 +539,22 @@
           "https://docs.snowflake.com/en/developer-guide/snowflake-ml/overview"
         ],
         "as_of": "2026-11-10"
+      },
+      {
+        "id": "SPEC-FABRIC-OBSERVABILITY-OPENTELEMETRY-EVENTHOUSE-SIEM",
+        "vendor": "Microsoft / Snowflake / Databricks / Google Cloud / AWS",
+        "claim": "Microsoft Fabric Eventhouse KQL provides automatic full-text term inverted indexing, schema-less `dynamic` JSON ingestion, OpenTelemetry (OTLP logs, metrics, traces) ingestion, native `autocluster()` / `diffpatterns()` root-cause mining, and OneLake Delta hot/cold tiering; Snowflake provides Snowflake Trail and Event Tables; Databricks provides Unity Catalog System Tables; Google Cloud provides Cloud Logging and Chronicle SecOps; AWS provides Amazon Security Lake (OCSF) and OpenSearch Serverless.",
+        "official_url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/opentelemetry-overview",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/kusto/query/autocluster-plugin",
+        "competitor_doc_urls": [
+          "https://docs.snowflake.com/en/developer-guide/logging-tracing/logging-tracing-overview",
+          "https://docs.databricks.com/en/admin/system-tables/index.html",
+          "https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html"
+        ],
+        "as_of": "2026-11-11"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=34 industry scenarios, mean=391.0ms), TCO calculator, and n=152 routing suite (mean=411.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=35 industry scenarios, mean=383.0ms), TCO calculator, and n=156 routing suite (mean=406.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -621,16 +639,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 152,
-    "passed_scenarios": 151,
+    "total_scenarios": 156,
+    "passed_scenarios": 155,
     "failed_scenarios": 1,
-    "accuracy_pct": 99.34,
-    "avg_latency_ms": 411.0,
-    "routing_matrix_denominator_n": 152,
-    "routing_matrix_mean_modeled_latency_ms": 411.0,
+    "accuracy_pct": 99.36,
+    "avg_latency_ms": 406.0,
+    "routing_matrix_denominator_n": 156,
+    "routing_matrix_mean_modeled_latency_ms": 406.0,
     "action_distribution": {
-      "Act automatically": 100,
-      "Confirm": 50,
+      "Act automatically": 102,
+      "Confirm": 52,
       "Send to a human": 2
     },
     "scenarios": [
@@ -2457,6 +2475,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 228
+      },
+      {
+        "id": "DL-153",
+        "category": "Real-Time & IoT",
+        "question": "Ingest 450 GB/day of OpenTelemetry logs, traces, and security telemetry across 12,000 microservices and AI agents without paying $42.5K/mo in per-GB commercial APM/SIEM indexing fees",
+        "expected": "Microsoft Fabric Eventhouse Observability (Eventstream OTLP + KQL Full-Text Inverted Index 24ms + 12:1 Compression at $0 Per-GB Tax + OneLake $23/TB 7-Year Tiering)",
+        "model_answer": "Microsoft Fabric Eventhouse Observability (Eventstream OTLP + KQL Full-Text Inverted Index 24ms + 12:1 Compression at $0 Per-GB Tax + OneLake $23/TB 7-Year Tiering)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 212
+      },
+      {
+        "id": "DL-154",
+        "category": "vs Snowflake",
+        "question": "Compare Fabric Eventhouse KQL (automatic term inverted index + autocluster/diffpatterns) vs Snowflake Event Tables / Trail & traditional warehouses on high-cardinality trace_id lookups",
+        "expected": "Use Fabric Eventhouse automatic term indexing and native KQL pattern mining for 24ms trace hunting, avoiding expensive Snowflake Search Optimization credit burn and full-table scans (-82.6% TCO)",
+        "model_answer": "Use Fabric Eventhouse automatic term indexing and native KQL pattern mining for 24ms trace hunting, avoiding expensive Snowflake Search Optimization credit burn and full-table scans (-82.6% TCO)",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 220
+      },
+      {
+        "id": "DL-155",
+        "category": "vs AWS",
+        "question": "Compare Fabric Eventhouse + Microsoft Sentinel vs AWS Security Lake (OCSF) + OpenSearch Serverless & Databricks System Tables for cross-cloud SIEM and observability",
+        "expected": "Mount AWS Security Lake OCSF tables zero-copy via OneLake S3 Shortcuts, unify with Databricks System Tables in Fabric Eventhouse for KQL hunting, and forward 0.5% high-severity alerts to Sentinel",
+        "model_answer": "Mount AWS Security Lake OCSF tables zero-copy via OneLake S3 Shortcuts, unify with Databricks System Tables in Fabric Eventhouse for KQL hunting, and forward 0.5% high-severity alerts to Sentinel",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 214
+      },
+      {
+        "id": "DL-156",
+        "category": "Fabric IQ & Ontology",
+        "question": "Global cloud SaaS payment platform (12,000 microservices × 450 GB/day OTel stream) detects checkout P99 spiking to 1,480ms, isolates a canary connection leak + HTTP/2 botnet flood, and auto-remediates",
+        "expected": "Eventhouse OTel Inverted-Index Scan (24ms, 12:1 Compression) + KQL diffpatterns & 6-Hop Merchant Graph (28ms, 640 Merchants) + Foundry IQ DORA Zero-False-Positive Gate (29ms) + SRE Teams & FluxCD/WAF/1GB SQL Lock (30ms = 111ms E2E, Protect $8.90M SLA)",
+        "model_answer": "Eventhouse OTel Inverted-Index Scan (24ms, 12:1 Compression) + KQL diffpatterns & 6-Hop Merchant Graph (28ms, 640 Merchants) + Foundry IQ DORA Zero-False-Positive Gate (29ms) + SRE Teams & FluxCD/WAF/1GB SQL Lock (30ms = 111ms E2E, Protect $8.90M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 218
       }
     ]
   },
@@ -2520,7 +2586,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 34,
+    "total_ontology_simulations": 35,
     "simulation_latencies_ms": [
       780,
       640,
@@ -2555,9 +2621,11 @@
       175,
       159,
       143,
-      127
+      127,
+      111
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 391.0,
+    "ontology_simulation_mean_modeled_latency_ms": 383.0,
+    "r27_34_simulation_mean_modeled_latency_ms": 391.0,
     "r26_33_simulation_mean_modeled_latency_ms": 399.0,
     "r25_32_simulation_mean_modeled_latency_ms": 407.0,
     "r24_31_simulation_mean_modeled_latency_ms": 415.0,
@@ -4556,6 +4624,81 @@
         "projected_savings_usd": 8550000,
         "end_to_end_latency_ms": 127,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Data Science (FLAML + MLflow + In-Lake PREDICT) + TreeSHAP + 1GB Free Fabric SQL"
+      }
+    },
+    "global_cloud_saas_fabric_eventhouse_otel_siem_observability_vs_splunk_4clouds": {
+      "scenario_id": "global_cloud_saas_fabric_eventhouse_otel_siem_observability_vs_splunk_4clouds",
+      "title": "Global Cloud SaaS 12,000 Microservices × 450 GB/Day OpenTelemetry & SIEM Auto-Remediation Loop (Fabric Eventhouse KQL Inverted Index + diffpatterns + OneLake vs. Per-GB APM/SIEM / 4 Clouds)",
+      "provenance_type": "synthetic_scenario_model",
+      "telemetry": {
+        "timestamp": "2026-11-11T23:20:00Z",
+        "monitored_microservices_count": 12000,
+        "daily_otel_siem_ingestion_gb": 450,
+        "otel_spans_and_logs_eps": 185000,
+        "per_gb_commercial_indexing_tax_usd": 0,
+        "eventhouse_compression_ratio_x": 12.0,
+        "impacted_enterprise_merchants_count": 640,
+        "in_flight_dropped_transactions_count": 0,
+        "merchant_cidr_false_positive_pct": 0.0,
+        "eventhouse_otel_inverted_index_scan_ms": 24,
+        "kql_diffpatterns_6hop_merchant_graph_ms": 28,
+        "foundry_iq_dora_waf_safety_gate_ms": 29,
+        "sre_teams_fluxcd_waf_sql_lock_ms": 30,
+        "legacy_per_gb_apm_siem_warehouse_monthly_tco_usd": 42500,
+        "fabric_eventhouse_otel_onelake_monthly_tco_usd": 7400
+      },
+      "ontology_graph_traversal": {
+        "root_entity": "GlobalCloudSaaS-12KServices-450GBDay-OTel-SIEM-2026Q4",
+        "hops": 6,
+        "affected_entities": [
+          "EventstreamOTLP: 185K-EPS-OTel-Spans-Logs (12:1 Compression, $0/GB Tax)",
+          "EventhouseKQL: checkout-orchestrator-v4.18.2-Canary (P99=1480ms, gRPC Pool Leak)",
+          "ThreatIntelXDR: Botnet-ASN-209401-HTTP2-RapidReset-Flood",
+          "MerchantImpactGraph: 640-Enterprise-Merchants ($8.90M Checkout SLA Exposure)",
+          "Rayfin-TS-WriteBack: FluxCD-Rollback-v4.18.1-WAF-ASN-Block-1GB-SQL"
+        ],
+        "root_cause": "Checkout P99 latency spiked from 42ms to 1,480ms across 640 enterprise merchants ($8.90M SLA) due to a gRPC connection-pool leak in canary build v4.18.2 compounded by an HTTP/2 Rapid Reset flood from botnet ASN-209401, while legacy per-GB APM/SIEM tools forced 1% sampling and warehouse regex queries lagged >28s"
+      },
+      "multi_agent_plan": {
+        "monitored_microservices": 12000,
+        "protected_enterprise_merchants": 640,
+        "monthly_observability_siem_tco_saved_usd": 35100,
+        "observability_siem_tco_savings_pct": 82.6,
+        "actions": [
+          {
+            "step": 1,
+            "agent": "Fabric Eventstream OTLP & Eventhouse KQL Full-Text Inverted-Index Engine",
+            "operation": "Ingest 450 GB/day (185,000 EPS) of OTel logs, traces, and WAF events at 12:1 compression ($0/GB tax), detecting the 1,480ms checkout P99 spike in 24ms",
+            "impact_metric": "Eliminates $31.5K/mo per-GB commercial APM/SIEM indexing taxes and restores 100% trace retention"
+          },
+          {
+            "step": 2,
+            "agent": "KQL diffpatterns() Root-Cause Miner & Foundry IQ DORA Guardrail Verifier",
+            "operation": "Isolate canary v4.18.2 gRPC leak + ASN-209401 flood across 640 merchants in 28ms; verify 0 in-flight tx drops and 0.00% merchant CIDR overlap in Foundry IQ (29ms)",
+            "impact_metric": "100% EU DORA incident audit compliance with 7-year $23/TB OneLake Delta cold tiering"
+          },
+          {
+            "step": 3,
+            "agent": "SRE Commander Teams Card & Rayfin FluxCD / Azure WAF / 1GB Free SQL Commit",
+            "operation": "Execute FluxCD canary rollback to v4.18.1 and edge WAF ASN-209401 block, committing the DORA forensic bundle into 1GB Free Fabric SQL (30ms)",
+            "impact_metric": "111ms E2E AIOps/SIEM loop; -$35,100/mo (-82.6%) TCO; $8.90M merchant checkout & DORA SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "CLOUD-OTEL-SIEM-AIOPS-DORA-SOP-035",
+        "hard_constraint": "Never execute automated canary rollbacks that drop in-flight payment transactions, and never push edge WAF ASN blocks that overlap with verified enterprise merchant office CIDR ranges",
+        "proposed_change": "Drain & roll back checkout-orchestrator canary to v4.18.1 (0 dropped tx) and block botnet ASN-209401 at edge WAF (0.00% merchant CIDR overlap)",
+        "zero_inflight_transaction_drop_verified": true,
+        "zero_merchant_cidr_false_positive_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 8900000,
+        "end_to_end_latency_ms": 111,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse (OTel + KQL Inverted Index) + OneLake DORA Tiering + 1GB Free Fabric SQL"
       }
     }
   },
