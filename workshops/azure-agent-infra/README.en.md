@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #639 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-639.html](workbench-cycle-639.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #640 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-640.html](workbench-cycle-640.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #639 release summary (2026-11-11)
+## 1) Cycle #640 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #639 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #639 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #639 workbench** | Interactive benchmark surface | [`workbench-cycle-639.html`](workbench-cycle-639.html) |
+| **Cycle #640 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #640 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #640 workbench** | Interactive benchmark surface | [`workbench-cycle-640.html`](workbench-cycle-640.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-639-benchmark.json`](evidence/cycle-639-benchmark.json)
-- Source ledger: [`evidence/cycle-639-sources.json`](evidence/cycle-639-sources.json)
+- Canonical payload: [`evidence/cycle-640-benchmark.json`](evidence/cycle-640-benchmark.json)
+- Source ledger: [`evidence/cycle-640-sources.json`](evidence/cycle-640-sources.json)
 - Metric CSV files:
-  - [`cycle-639-latency.csv`](evidence/cycle-639-latency.csv)
-  - [`cycle-639-throughput.csv`](evidence/cycle-639-throughput.csv)
-  - [`cycle-639-policy.csv`](evidence/cycle-639-policy.csv)
-  - [`cycle-639-cost.csv`](evidence/cycle-639-cost.csv)
+  - [`cycle-640-latency.csv`](evidence/cycle-640-latency.csv)
+  - [`cycle-640-throughput.csv`](evidence/cycle-640-throughput.csv)
+  - [`cycle-640-policy.csv`](evidence/cycle-640-policy.csv)
+  - [`cycle-640-cost.csv`](evidence/cycle-640-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-639-daily-breakthroughs.svg`](assets/34-cycle-639-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-639.en.md`](docs/full-monograph-cycle-639.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-639.md`](docs/full-monograph-cycle-639.md)
-- Selection FAQ (EN, Foundry Cross Region Readiness Score Fence): [`agent-foundry-cross-region-readiness-score-fence-selection-faq.en.md`](agent-foundry-cross-region-readiness-score-fence-selection-faq.en.md)
-- Selection FAQ (ZH, Foundry Cross Region Readiness Score Fence): [`agent-foundry-cross-region-readiness-score-fence-selection-faq.md`](agent-foundry-cross-region-readiness-score-fence-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-640-daily-breakthroughs.svg`](assets/34-cycle-640-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-640.en.md`](docs/full-monograph-cycle-640.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-640.md`](docs/full-monograph-cycle-640.md)
+- Selection FAQ (EN, ACA Dynamic Sessions Concurrency Stepup): [`agent-aca-dynamic-sessions-concurrency-stepup-selection-faq.en.md`](agent-aca-dynamic-sessions-concurrency-stepup-selection-faq.en.md)
+- Selection FAQ (ZH, ACA Dynamic Sessions Concurrency Stepup): [`agent-aca-dynamic-sessions-concurrency-stepup-selection-faq.md`](agent-aca-dynamic-sessions-concurrency-stepup-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
