@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #629 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-629.html](workbench-cycle-629.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #630 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-630.html](workbench-cycle-630.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #629 release summary (2026-11-11)
+## 1) Cycle #630 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #629 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #629 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #629 workbench** | Interactive benchmark surface | [`workbench-cycle-629.html`](workbench-cycle-629.html) |
+| **Cycle #630 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #630 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #630 workbench** | Interactive benchmark surface | [`workbench-cycle-630.html`](workbench-cycle-630.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-629-benchmark.json`](evidence/cycle-629-benchmark.json)
-- Source ledger: [`evidence/cycle-629-sources.json`](evidence/cycle-629-sources.json)
+- Canonical payload: [`evidence/cycle-630-benchmark.json`](evidence/cycle-630-benchmark.json)
+- Source ledger: [`evidence/cycle-630-sources.json`](evidence/cycle-630-sources.json)
 - Metric CSV files:
-  - [`cycle-629-latency.csv`](evidence/cycle-629-latency.csv)
-  - [`cycle-629-throughput.csv`](evidence/cycle-629-throughput.csv)
-  - [`cycle-629-policy.csv`](evidence/cycle-629-policy.csv)
-  - [`cycle-629-cost.csv`](evidence/cycle-629-cost.csv)
+  - [`cycle-630-latency.csv`](evidence/cycle-630-latency.csv)
+  - [`cycle-630-throughput.csv`](evidence/cycle-630-throughput.csv)
+  - [`cycle-630-policy.csv`](evidence/cycle-630-policy.csv)
+  - [`cycle-630-cost.csv`](evidence/cycle-630-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-629-daily-breakthroughs.svg`](assets/34-cycle-629-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-629.en.md`](docs/full-monograph-cycle-629.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-629.md`](docs/full-monograph-cycle-629.md)
-- Selection FAQ (EN, ACA Sessions Lease Renewal Jitter): [`agent-aca-sessions-lease-renewal-jitter-selection-faq.en.md`](agent-aca-sessions-lease-renewal-jitter-selection-faq.en.md)
-- Selection FAQ (ZH, ACA Sessions Lease Renewal Jitter): [`agent-aca-sessions-lease-renewal-jitter-selection-faq.md`](agent-aca-sessions-lease-renewal-jitter-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-630-daily-breakthroughs.svg`](assets/34-cycle-630-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-630.en.md`](docs/full-monograph-cycle-630.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-630.md`](docs/full-monograph-cycle-630.md)
+- Selection FAQ (EN, Cosmos Memory Read Repair Window): [`agent-cosmos-memory-read-repair-window-selection-faq.en.md`](agent-cosmos-memory-read-repair-window-selection-faq.en.md)
+- Selection FAQ (ZH, Cosmos Memory Read Repair Window): [`agent-cosmos-memory-read-repair-window-selection-faq.md`](agent-cosmos-memory-read-repair-window-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
