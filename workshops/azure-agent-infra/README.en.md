@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #622 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-622.html](workbench-cycle-622.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #623 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-623.html](workbench-cycle-623.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #622 release summary (2026-11-11)
+## 1) Cycle #623 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #622 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #622 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #622 workbench** | Interactive benchmark surface | [`workbench-cycle-622.html`](workbench-cycle-622.html) |
+| **Cycle #623 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #623 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #623 workbench** | Interactive benchmark surface | [`workbench-cycle-623.html`](workbench-cycle-623.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-622-benchmark.json`](evidence/cycle-622-benchmark.json)
-- Source ledger: [`evidence/cycle-622-sources.json`](evidence/cycle-622-sources.json)
+- Canonical payload: [`evidence/cycle-623-benchmark.json`](evidence/cycle-623-benchmark.json)
+- Source ledger: [`evidence/cycle-623-sources.json`](evidence/cycle-623-sources.json)
 - Metric CSV files:
-  - [`cycle-622-latency.csv`](evidence/cycle-622-latency.csv)
-  - [`cycle-622-throughput.csv`](evidence/cycle-622-throughput.csv)
-  - [`cycle-622-policy.csv`](evidence/cycle-622-policy.csv)
-  - [`cycle-622-cost.csv`](evidence/cycle-622-cost.csv)
+  - [`cycle-623-latency.csv`](evidence/cycle-623-latency.csv)
+  - [`cycle-623-throughput.csv`](evidence/cycle-623-throughput.csv)
+  - [`cycle-623-policy.csv`](evidence/cycle-623-policy.csv)
+  - [`cycle-623-cost.csv`](evidence/cycle-623-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-622-daily-breakthroughs.svg`](assets/34-cycle-622-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-622.en.md`](docs/full-monograph-cycle-622.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-622.md`](docs/full-monograph-cycle-622.md)
-- Selection FAQ (EN, ACA Session Pool Fragmentation Threshold): [`agent-aca-session-pool-fragmentation-threshold-selection-faq.en.md`](agent-aca-session-pool-fragmentation-threshold-selection-faq.en.md)
-- Selection FAQ (ZH, ACA Session Pool Fragmentation Threshold): [`agent-aca-session-pool-fragmentation-threshold-selection-faq.md`](agent-aca-session-pool-fragmentation-threshold-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-623-daily-breakthroughs.svg`](assets/34-cycle-623-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-623.en.md`](docs/full-monograph-cycle-623.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-623.md`](docs/full-monograph-cycle-623.md)
+- Selection FAQ (EN, Foundry Multi-Model Quota Bucket Smoothing): [`agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.en.md`](agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.en.md)
+- Selection FAQ (ZH, Foundry Multi-Model Quota Bucket Smoothing): [`agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.md`](agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 

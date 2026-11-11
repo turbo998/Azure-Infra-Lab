@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook（精简版）
 
 > 🌐 **Language / 语言切换**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
-> 🔎 **Cycle #622 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-622.html](workbench-cycle-622.html) · [daily-report-2026-11-11.md](daily-report-2026-11-11.md)
+> 🔎 **Cycle #623 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-623.html](workbench-cycle-623.html) · [daily-report-2026-11-11.md](daily-report-2026-11-11.md)
 
 ---
 
-## 一、Cycle #622 发布摘要（2026-11-11）
+## 一、Cycle #623 发布摘要（2026-11-11）
 
 - **主题**：云原生 Agent Infra（Runtime/Sandbox、AI Gateway、MCP/A2A 编排与可观测）
 - **当日证据口径**：2026 官方文档 / changelog / release notes 优先
@@ -26,21 +26,21 @@
 | 双轨仿真 Demo | AKSClaw × E2B | [`demo.html`](demo.html) |
 | 选型与容量测算 | 决策树 + 10 万沙箱估算 | [`selector.html`](selector.html) |
 | 历史 7-card 卡组 | 既有可视化入口 | [`cards.html`](cards.html) |
-| **Cycle #622 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #622 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #622 工作台** | 新增交互实验台 | [`workbench-cycle-622.html`](workbench-cycle-622.html) |
+| **Cycle #623 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #623 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #623 工作台** | 新增交互实验台 | [`workbench-cycle-623.html`](workbench-cycle-623.html) |
 
 ---
 
 ## 三、可复现实验与证据
 
-- 基准主文件：[`evidence/cycle-622-benchmark.json`](evidence/cycle-622-benchmark.json)
-- 来源台账：[`evidence/cycle-622-sources.json`](evidence/cycle-622-sources.json)
+- 基准主文件：[`evidence/cycle-623-benchmark.json`](evidence/cycle-623-benchmark.json)
+- 来源台账：[`evidence/cycle-623-sources.json`](evidence/cycle-623-sources.json)
 - 指标 CSV：
-  - [`cycle-622-latency.csv`](evidence/cycle-622-latency.csv)
-  - [`cycle-622-throughput.csv`](evidence/cycle-622-throughput.csv)
-  - [`cycle-622-policy.csv`](evidence/cycle-622-policy.csv)
-  - [`cycle-622-cost.csv`](evidence/cycle-622-cost.csv)
+  - [`cycle-623-latency.csv`](evidence/cycle-623-latency.csv)
+  - [`cycle-623-throughput.csv`](evidence/cycle-623-throughput.csv)
+  - [`cycle-623-policy.csv`](evidence/cycle-623-policy.csv)
+  - [`cycle-623-cost.csv`](evidence/cycle-623-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - 日报（中文）：[`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
 - 日报（英文）：[`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
-- 一图流 SVG：[`assets/34-cycle-622-daily-breakthroughs.svg`](assets/34-cycle-622-daily-breakthroughs.svg)
-- 专著增补（中文）：[`docs/full-monograph-cycle-622.md`](docs/full-monograph-cycle-622.md)
-- 专著增补（英文）：[`docs/full-monograph-cycle-622.en.md`](docs/full-monograph-cycle-622.en.md)
-- 选型 FAQ（中文）：[`agent-aca-session-pool-fragmentation-threshold-selection-faq.md`](agent-aca-session-pool-fragmentation-threshold-selection-faq.md)
-- 选型 FAQ（英文）：[`agent-aca-session-pool-fragmentation-threshold-selection-faq.en.md`](agent-aca-session-pool-fragmentation-threshold-selection-faq.en.md)
+- 一图流 SVG：[`assets/34-cycle-623-daily-breakthroughs.svg`](assets/34-cycle-623-daily-breakthroughs.svg)
+- 专著增补（中文）：[`docs/full-monograph-cycle-623.md`](docs/full-monograph-cycle-623.md)
+- 专著增补（英文）：[`docs/full-monograph-cycle-623.en.md`](docs/full-monograph-cycle-623.en.md)
+- 选型 FAQ（中文）：[`agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.md`](agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.md)
+- 选型 FAQ（英文）：[`agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.en.md`](agent-foundry-multi-model-quota-bucket-smoothing-selection-faq.en.md)
 - 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 - 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 
