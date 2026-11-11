@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #620 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-620.html](workbench-cycle-620.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #621 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-621.html](workbench-cycle-621.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #620 release summary (2026-11-11)
+## 1) Cycle #621 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #620 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #620 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #620 workbench** | Interactive benchmark surface | [`workbench-cycle-620.html`](workbench-cycle-620.html) |
+| **Cycle #621 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #621 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #621 workbench** | Interactive benchmark surface | [`workbench-cycle-621.html`](workbench-cycle-621.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-620-benchmark.json`](evidence/cycle-620-benchmark.json)
-- Source ledger: [`evidence/cycle-620-sources.json`](evidence/cycle-620-sources.json)
+- Canonical payload: [`evidence/cycle-621-benchmark.json`](evidence/cycle-621-benchmark.json)
+- Source ledger: [`evidence/cycle-621-sources.json`](evidence/cycle-621-sources.json)
 - Metric CSV files:
-  - [`cycle-620-latency.csv`](evidence/cycle-620-latency.csv)
-  - [`cycle-620-throughput.csv`](evidence/cycle-620-throughput.csv)
-  - [`cycle-620-policy.csv`](evidence/cycle-620-policy.csv)
-  - [`cycle-620-cost.csv`](evidence/cycle-620-cost.csv)
+  - [`cycle-621-latency.csv`](evidence/cycle-621-latency.csv)
+  - [`cycle-621-throughput.csv`](evidence/cycle-621-throughput.csv)
+  - [`cycle-621-policy.csv`](evidence/cycle-621-policy.csv)
+  - [`cycle-621-cost.csv`](evidence/cycle-621-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-620-daily-breakthroughs.svg`](assets/34-cycle-620-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-620.en.md`](docs/full-monograph-cycle-620.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-620.md`](docs/full-monograph-cycle-620.md)
-- Selection FAQ (EN, Cosmos Agent Session Hotkey Entropy): [`agent-cosmos-agent-session-hotkey-entropy-selection-faq.en.md`](agent-cosmos-agent-session-hotkey-entropy-selection-faq.en.md)
-- Selection FAQ (ZH, Cosmos Agent Session Hotkey Entropy): [`agent-cosmos-agent-session-hotkey-entropy-selection-faq.md`](agent-cosmos-agent-session-hotkey-entropy-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-621-daily-breakthroughs.svg`](assets/34-cycle-621-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-621.en.md`](docs/full-monograph-cycle-621.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-621.md`](docs/full-monograph-cycle-621.md)
+- Selection FAQ (EN, APIM MCP Response Size Watermark): [`agent-apim-mcp-response-size-watermark-selection-faq.en.md`](agent-apim-mcp-response-size-watermark-selection-faq.en.md)
+- Selection FAQ (ZH, APIM MCP Response Size Watermark): [`agent-apim-mcp-response-size-watermark-selection-faq.md`](agent-apim-mcp-response-size-watermark-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
