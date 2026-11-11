@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook（精简版）
 
 > 🌐 **Language / 语言切换**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
-> 🔎 **Cycle #503 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-503.html](workbench-cycle-503.html) · [daily-report-2026-11-09.md](daily-report-2026-11-09.md)
+> 🔎 **Cycle #504 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-504.html](workbench-cycle-504.html) · [daily-report-2026-11-11.md](daily-report-2026-11-11.md)
 
 ---
 
-## 一、Cycle #503 发布摘要（2026-11-09）
+## 一、Cycle #504 发布摘要（2026-11-11）
 
 - **主题**：云原生 Agent Infra（Runtime/Sandbox、AI Gateway、MCP/A2A 编排与可观测）
 - **当日证据口径**：2026 官方文档 / changelog / release notes 优先
@@ -26,33 +26,33 @@
 | 双轨仿真 Demo | AKSClaw × E2B | [`demo.html`](demo.html) |
 | 选型与容量测算 | 决策树 + 10 万沙箱估算 | [`selector.html`](selector.html) |
 | 历史 7-card 卡组 | 既有可视化入口 | [`cards.html`](cards.html) |
-| **Cycle #503 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #503 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #503 工作台** | 新增交互实验台 | [`workbench-cycle-503.html`](workbench-cycle-503.html) |
+| **Cycle #504 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #504 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #504 工作台** | 新增交互实验台 | [`workbench-cycle-504.html`](workbench-cycle-504.html) |
 
 ---
 
 ## 三、可复现实验与证据
 
-- 基准主文件：[`evidence/cycle-503-benchmark.json`](evidence/cycle-503-benchmark.json)
-- 来源台账：[`evidence/cycle-503-sources.json`](evidence/cycle-503-sources.json)
+- 基准主文件：[`evidence/cycle-504-benchmark.json`](evidence/cycle-504-benchmark.json)
+- 来源台账：[`evidence/cycle-504-sources.json`](evidence/cycle-504-sources.json)
 - 指标 CSV：
-  - [`cycle-503-latency.csv`](evidence/cycle-503-latency.csv)
-  - [`cycle-503-throughput.csv`](evidence/cycle-503-throughput.csv)
-  - [`cycle-503-policy.csv`](evidence/cycle-503-policy.csv)
-  - [`cycle-503-cost.csv`](evidence/cycle-503-cost.csv)
+  - [`cycle-504-latency.csv`](evidence/cycle-504-latency.csv)
+  - [`cycle-504-throughput.csv`](evidence/cycle-504-throughput.csv)
+  - [`cycle-504-policy.csv`](evidence/cycle-504-policy.csv)
+  - [`cycle-504-cost.csv`](evidence/cycle-504-cost.csv)
 
 ---
 
 ## 四、文档与图形交付
 
-- 日报（中文）：[`daily-report-2026-11-09.md`](daily-report-2026-11-09.md)
-- 日报（英文）：[`daily-report-2026-11-09.en.md`](daily-report-2026-11-09.en.md)
-- 一图流 SVG：[`assets/34-cycle-503-daily-breakthroughs.svg`](assets/34-cycle-503-daily-breakthroughs.svg)
-- 专著增补（中文）：[`docs/full-monograph-cycle-503.md`](docs/full-monograph-cycle-503.md)
-- 专著增补（英文）：[`docs/full-monograph-cycle-503.en.md`](docs/full-monograph-cycle-503.en.md)
-- 选型 FAQ（中文）：[`agent-gateway-tool-result-cache-ttl-fence-selection-faq.md`](agent-gateway-tool-result-cache-ttl-fence-selection-faq.md)
-- 选型 FAQ（英文）：[`agent-gateway-tool-result-cache-ttl-fence-selection-faq.en.md`](agent-gateway-tool-result-cache-ttl-fence-selection-faq.en.md)
+- 日报（中文）：[`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
+- 日报（英文）：[`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
+- 一图流 SVG：[`assets/34-cycle-504-daily-breakthroughs.svg`](assets/34-cycle-504-daily-breakthroughs.svg)
+- 专著增补（中文）：[`docs/full-monograph-cycle-504.md`](docs/full-monograph-cycle-504.md)
+- 专著增补（英文）：[`docs/full-monograph-cycle-504.en.md`](docs/full-monograph-cycle-504.en.md)
+- 选型 FAQ（中文）：[`agent-runtime-entra-workload-identity-federation-selection-faq.md`](agent-runtime-entra-workload-identity-federation-selection-faq.md)
+- 选型 FAQ（英文）：[`agent-runtime-entra-workload-identity-federation-selection-faq.en.md`](agent-runtime-entra-workload-identity-federation-selection-faq.en.md)
 - 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 - 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 
@@ -61,8 +61,8 @@
 ## 五、验证命令（发布门禁）
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_503_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_503_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_504_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_504_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 六、实现与运行脚本
 
-- 生成管线：[`simulator/cycle_503_pipeline.py`](simulator/cycle_503_pipeline.py)
+- 生成管线：[`simulator/cycle_504_pipeline.py`](simulator/cycle_504_pipeline.py)
 - 运行时测算器：[`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - 测试集：[`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - 现场执行手册：[`workshop-runbook.md`](workshop-runbook.md)
