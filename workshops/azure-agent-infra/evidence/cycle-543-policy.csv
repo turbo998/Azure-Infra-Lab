@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+replay drift saturation gate,172,184,0.9348,measured,replay journal mismatch replay + deterministic verification
+journal fence integrity guard,161,168,0.9583,measured,replay journal integrity logs
+tenant-scope replay-journal authorization fence,154,161,0.9565,measured,tenant replay-journal fairness replay logs
