@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #596 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-596.html](workbench-cycle-596.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #597 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-597.html](workbench-cycle-597.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #596 release summary (2026-11-11)
+## 1) Cycle #597 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #596 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #596 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #596 workbench** | Interactive benchmark surface | [`workbench-cycle-596.html`](workbench-cycle-596.html) |
+| **Cycle #597 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #597 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #597 workbench** | Interactive benchmark surface | [`workbench-cycle-597.html`](workbench-cycle-597.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-596-benchmark.json`](evidence/cycle-596-benchmark.json)
-- Source ledger: [`evidence/cycle-596-sources.json`](evidence/cycle-596-sources.json)
+- Canonical payload: [`evidence/cycle-597-benchmark.json`](evidence/cycle-597-benchmark.json)
+- Source ledger: [`evidence/cycle-597-sources.json`](evidence/cycle-597-sources.json)
 - Metric CSV files:
-  - [`cycle-596-latency.csv`](evidence/cycle-596-latency.csv)
-  - [`cycle-596-throughput.csv`](evidence/cycle-596-throughput.csv)
-  - [`cycle-596-policy.csv`](evidence/cycle-596-policy.csv)
-  - [`cycle-596-cost.csv`](evidence/cycle-596-cost.csv)
+  - [`cycle-597-latency.csv`](evidence/cycle-597-latency.csv)
+  - [`cycle-597-throughput.csv`](evidence/cycle-597-throughput.csv)
+  - [`cycle-597-policy.csv`](evidence/cycle-597-policy.csv)
+  - [`cycle-597-cost.csv`](evidence/cycle-597-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-596-daily-breakthroughs.svg`](assets/34-cycle-596-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-596.en.md`](docs/full-monograph-cycle-596.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-596.md`](docs/full-monograph-cycle-596.md)
-- Selection FAQ (EN, Foundry Region Failover Hysteresis Window): [`agent-foundry-region-failover-hysteresis-window-selection-faq.en.md`](agent-foundry-region-failover-hysteresis-window-selection-faq.en.md)
-- Selection FAQ (ZH, Foundry Region Failover Hysteresis Window): [`agent-foundry-region-failover-hysteresis-window-selection-faq.md`](agent-foundry-region-failover-hysteresis-window-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-597-daily-breakthroughs.svg`](assets/34-cycle-597-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-597.en.md`](docs/full-monograph-cycle-597.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-597.md`](docs/full-monograph-cycle-597.md)
+- Selection FAQ (EN, APIM Unified Model API Fallback Priority Bands): [`agent-apim-unified-model-api-fallback-priority-bands-selection-faq.en.md`](agent-apim-unified-model-api-fallback-priority-bands-selection-faq.en.md)
+- Selection FAQ (ZH, APIM Unified Model API Fallback Priority Bands): [`agent-apim-unified-model-api-fallback-priority-bands-selection-faq.md`](agent-apim-unified-model-api-fallback-priority-bands-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
