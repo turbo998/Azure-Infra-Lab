@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #617 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-617.html](workbench-cycle-617.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #618 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-618.html](workbench-cycle-618.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #617 release summary (2026-11-11)
+## 1) Cycle #618 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #617 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #617 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #617 workbench** | Interactive benchmark surface | [`workbench-cycle-617.html`](workbench-cycle-617.html) |
+| **Cycle #618 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #618 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #618 workbench** | Interactive benchmark surface | [`workbench-cycle-618.html`](workbench-cycle-618.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-617-benchmark.json`](evidence/cycle-617-benchmark.json)
-- Source ledger: [`evidence/cycle-617-sources.json`](evidence/cycle-617-sources.json)
+- Canonical payload: [`evidence/cycle-618-benchmark.json`](evidence/cycle-618-benchmark.json)
+- Source ledger: [`evidence/cycle-618-sources.json`](evidence/cycle-618-sources.json)
 - Metric CSV files:
-  - [`cycle-617-latency.csv`](evidence/cycle-617-latency.csv)
-  - [`cycle-617-throughput.csv`](evidence/cycle-617-throughput.csv)
-  - [`cycle-617-policy.csv`](evidence/cycle-617-policy.csv)
-  - [`cycle-617-cost.csv`](evidence/cycle-617-cost.csv)
+  - [`cycle-618-latency.csv`](evidence/cycle-618-latency.csv)
+  - [`cycle-618-throughput.csv`](evidence/cycle-618-throughput.csv)
+  - [`cycle-618-policy.csv`](evidence/cycle-618-policy.csv)
+  - [`cycle-618-cost.csv`](evidence/cycle-618-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-617-daily-breakthroughs.svg`](assets/34-cycle-617-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-617.en.md`](docs/full-monograph-cycle-617.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-617.md`](docs/full-monograph-cycle-617.md)
-- Selection FAQ (EN, MCP A2A Retry Jitter Window): [`agent-mcp-a2a-retry-jitter-window-selection-faq.en.md`](agent-mcp-a2a-retry-jitter-window-selection-faq.en.md)
-- Selection FAQ (ZH, MCP A2A Retry Jitter Window): [`agent-mcp-a2a-retry-jitter-window-selection-faq.md`](agent-mcp-a2a-retry-jitter-window-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-618-daily-breakthroughs.svg`](assets/34-cycle-618-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-618.en.md`](docs/full-monograph-cycle-618.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-618.md`](docs/full-monograph-cycle-618.md)
+- Selection FAQ (EN, AKS Sandbox Egress Policy Cache): [`agent-aks-sandbox-egress-policy-cache-selection-faq.en.md`](agent-aks-sandbox-egress-policy-cache-selection-faq.en.md)
+- Selection FAQ (ZH, AKS Sandbox Egress Policy Cache): [`agent-aks-sandbox-egress-policy-cache-selection-faq.md`](agent-aks-sandbox-egress-policy-cache-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
