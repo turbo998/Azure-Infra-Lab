@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #626 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-626.html](workbench-cycle-626.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #627 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-627.html](workbench-cycle-627.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #626 release summary (2026-11-11)
+## 1) Cycle #627 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #626 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #626 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #626 workbench** | Interactive benchmark surface | [`workbench-cycle-626.html`](workbench-cycle-626.html) |
+| **Cycle #627 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #627 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #627 workbench** | Interactive benchmark surface | [`workbench-cycle-627.html`](workbench-cycle-627.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-626-benchmark.json`](evidence/cycle-626-benchmark.json)
-- Source ledger: [`evidence/cycle-626-sources.json`](evidence/cycle-626-sources.json)
+- Canonical payload: [`evidence/cycle-627-benchmark.json`](evidence/cycle-627-benchmark.json)
+- Source ledger: [`evidence/cycle-627-sources.json`](evidence/cycle-627-sources.json)
 - Metric CSV files:
-  - [`cycle-626-latency.csv`](evidence/cycle-626-latency.csv)
-  - [`cycle-626-throughput.csv`](evidence/cycle-626-throughput.csv)
-  - [`cycle-626-policy.csv`](evidence/cycle-626-policy.csv)
-  - [`cycle-626-cost.csv`](evidence/cycle-626-cost.csv)
+  - [`cycle-627-latency.csv`](evidence/cycle-627-latency.csv)
+  - [`cycle-627-throughput.csv`](evidence/cycle-627-throughput.csv)
+  - [`cycle-627-policy.csv`](evidence/cycle-627-policy.csv)
+  - [`cycle-627-cost.csv`](evidence/cycle-627-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-626-daily-breakthroughs.svg`](assets/34-cycle-626-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-626.en.md`](docs/full-monograph-cycle-626.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-626.md`](docs/full-monograph-cycle-626.md)
-- Selection FAQ (EN, MCP A2A Fanout Concurrency Fence): [`agent-mcp-a2a-fanout-concurrency-fence-selection-faq.en.md`](agent-mcp-a2a-fanout-concurrency-fence-selection-faq.en.md)
-- Selection FAQ (ZH, MCP A2A Fanout Concurrency Fence): [`agent-mcp-a2a-fanout-concurrency-fence-selection-faq.md`](agent-mcp-a2a-fanout-concurrency-fence-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-627-daily-breakthroughs.svg`](assets/34-cycle-627-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-627.en.md`](docs/full-monograph-cycle-627.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-627.md`](docs/full-monograph-cycle-627.md)
+- Selection FAQ (EN, APIM MCP Tool Result Chunking Threshold): [`agent-apim-mcp-tool-result-chunking-threshold-selection-faq.en.md`](agent-apim-mcp-tool-result-chunking-threshold-selection-faq.en.md)
+- Selection FAQ (ZH, APIM MCP Tool Result Chunking Threshold): [`agent-apim-mcp-tool-result-chunking-threshold-selection-faq.md`](agent-apim-mcp-tool-result-chunking-threshold-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
