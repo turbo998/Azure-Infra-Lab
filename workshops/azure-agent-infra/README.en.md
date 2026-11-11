@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #600 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-600.html](workbench-cycle-600.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #601 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-601.html](workbench-cycle-601.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #600 release summary (2026-11-11)
+## 1) Cycle #601 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #600 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #600 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #600 workbench** | Interactive benchmark surface | [`workbench-cycle-600.html`](workbench-cycle-600.html) |
+| **Cycle #601 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #601 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #601 workbench** | Interactive benchmark surface | [`workbench-cycle-601.html`](workbench-cycle-601.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-600-benchmark.json`](evidence/cycle-600-benchmark.json)
-- Source ledger: [`evidence/cycle-600-sources.json`](evidence/cycle-600-sources.json)
+- Canonical payload: [`evidence/cycle-601-benchmark.json`](evidence/cycle-601-benchmark.json)
+- Source ledger: [`evidence/cycle-601-sources.json`](evidence/cycle-601-sources.json)
 - Metric CSV files:
-  - [`cycle-600-latency.csv`](evidence/cycle-600-latency.csv)
-  - [`cycle-600-throughput.csv`](evidence/cycle-600-throughput.csv)
-  - [`cycle-600-policy.csv`](evidence/cycle-600-policy.csv)
-  - [`cycle-600-cost.csv`](evidence/cycle-600-cost.csv)
+  - [`cycle-601-latency.csv`](evidence/cycle-601-latency.csv)
+  - [`cycle-601-throughput.csv`](evidence/cycle-601-throughput.csv)
+  - [`cycle-601-policy.csv`](evidence/cycle-601-policy.csv)
+  - [`cycle-601-cost.csv`](evidence/cycle-601-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-600-daily-breakthroughs.svg`](assets/34-cycle-600-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-600.en.md`](docs/full-monograph-cycle-600.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-600.md`](docs/full-monograph-cycle-600.md)
-- Selection FAQ (EN, Foundry Eval Shadow Traffic Sampling Ratio): [`agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.en.md`](agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.en.md)
-- Selection FAQ (ZH, Foundry Eval Shadow Traffic Sampling Ratio): [`agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.md`](agent-foundry-eval-shadow-traffic-sampling-ratio-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-601-daily-breakthroughs.svg`](assets/34-cycle-601-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-601.en.md`](docs/full-monograph-cycle-601.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-601.md`](docs/full-monograph-cycle-601.md)
+- Selection FAQ (EN, Entra Workload ID Token Refresh Jitter): [`agent-entra-workload-id-token-refresh-jitter-selection-faq.en.md`](agent-entra-workload-id-token-refresh-jitter-selection-faq.en.md)
+- Selection FAQ (ZH, Entra Workload ID Token Refresh Jitter): [`agent-entra-workload-id-token-refresh-jitter-selection-faq.md`](agent-entra-workload-id-token-refresh-jitter-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
