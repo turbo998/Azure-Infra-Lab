@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+MCP tool payload overrun amplification gate,188,200,0.94,measured,payload-overrun replay + deterministic verification
+Payload budget integrity guard,183,190,0.9632,measured,payload-budget integrity logs
+Tenant-scope payload-budget authorization fence,172,180,0.9556,measured,MCP policy replay logs
