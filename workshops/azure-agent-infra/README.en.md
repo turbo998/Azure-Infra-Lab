@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #592 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-592.html](workbench-cycle-592.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #593 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-593.html](workbench-cycle-593.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #592 release summary (2026-11-11)
+## 1) Cycle #593 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #592 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #592 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #592 workbench** | Interactive benchmark surface | [`workbench-cycle-592.html`](workbench-cycle-592.html) |
+| **Cycle #593 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #593 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #593 workbench** | Interactive benchmark surface | [`workbench-cycle-593.html`](workbench-cycle-593.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-592-benchmark.json`](evidence/cycle-592-benchmark.json)
-- Source ledger: [`evidence/cycle-592-sources.json`](evidence/cycle-592-sources.json)
+- Canonical payload: [`evidence/cycle-593-benchmark.json`](evidence/cycle-593-benchmark.json)
+- Source ledger: [`evidence/cycle-593-sources.json`](evidence/cycle-593-sources.json)
 - Metric CSV files:
-  - [`cycle-592-latency.csv`](evidence/cycle-592-latency.csv)
-  - [`cycle-592-throughput.csv`](evidence/cycle-592-throughput.csv)
-  - [`cycle-592-policy.csv`](evidence/cycle-592-policy.csv)
-  - [`cycle-592-cost.csv`](evidence/cycle-592-cost.csv)
+  - [`cycle-593-latency.csv`](evidence/cycle-593-latency.csv)
+  - [`cycle-593-throughput.csv`](evidence/cycle-593-throughput.csv)
+  - [`cycle-593-policy.csv`](evidence/cycle-593-policy.csv)
+  - [`cycle-593-cost.csv`](evidence/cycle-593-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-592-daily-breakthroughs.svg`](assets/34-cycle-592-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-592.en.md`](docs/full-monograph-cycle-592.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-592.md`](docs/full-monograph-cycle-592.md)
-- Selection FAQ (EN, AKS Nodepool Burst Buffer Ratio): [`agent-aks-nodepool-burst-buffer-ratio-selection-faq.en.md`](agent-aks-nodepool-burst-buffer-ratio-selection-faq.en.md)
-- Selection FAQ (ZH, AKS Nodepool Burst Buffer Ratio): [`agent-aks-nodepool-burst-buffer-ratio-selection-faq.md`](agent-aks-nodepool-burst-buffer-ratio-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-593-daily-breakthroughs.svg`](assets/34-cycle-593-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-593.en.md`](docs/full-monograph-cycle-593.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-593.md`](docs/full-monograph-cycle-593.md)
+- Selection FAQ (EN, ACA Dynamic Sessions Image Prewarm Bandwidth Cap): [`agent-aca-dynamic-sessions-image-prewarm-bandwidth-cap-selection-faq.en.md`](agent-aca-dynamic-sessions-image-prewarm-bandwidth-cap-selection-faq.en.md)
+- Selection FAQ (ZH, ACA Dynamic Sessions Image Prewarm Bandwidth Cap): [`agent-aca-dynamic-sessions-image-prewarm-bandwidth-cap-selection-faq.md`](agent-aca-dynamic-sessions-image-prewarm-bandwidth-cap-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
