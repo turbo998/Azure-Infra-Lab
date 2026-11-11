@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+hot-partition saturation gate,174,186,0.9355,measured,hot-partition replay + deterministic verification
+shard-rebalance integrity guard,164,171,0.9591,measured,hot-partition integrity logs
+tenant-scope shard authorization fence,157,164,0.9573,measured,tenant partition-fairness replay logs
