@@ -3010,6 +3010,85 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse FDC + Cosmos DB SSD DiskANN + SQL on Azure Local (ALDO) + Purview EAR 3E001 + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds":
+        # Scenario AR (2026-11-12 R37): Autonomous Driving 1.2M L3 Vehicles × 950K EPS CAN-FD, 65M-Clip Corner-Case & UNECE R155/R156 Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 3ms H3 Trigger Sense + Cosmos SSD DiskANN 3ms 65M-Clip Search + OneLake BOM/OTA Graph)
+        # vs Legacy Per-Signal Auto Cloud + In-Memory Vector + Siloed DW/BI Stack ($48.9K/mo vs $7.7K/mo = -84.3% TCO)
+        return {
+            "scenario_id": "global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds",
+            "title": "Autonomous Driving 1.2M L3 Vehicles × 950K EPS CAN-FD Shadow-Mode, 65M-Clip Corner-Case & UNECE R155/R156 OTA Loop (Fabric Eventhouse + SSD DiskANN vs. AWS FleetWise / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-12T04:28:00Z",
+                "connected_l3_sdv_vehicles_count": 1200000,
+                "canfd_someip_trigger_ingestion_eps": 950000,
+                "multimodal_mcap_clips_indexed_count": 65000000,
+                "per_signal_or_gb_write_surcharge_usd": 0,
+                "tunnel_phantom_braking_spike_multiplier_x": 42.0,
+                "false_positive_aeb_events_count": 380,
+                "retrieved_wet_glare_corner_case_clips": 1280,
+                "affected_c92_camera_batch_vehicles": 42000,
+                "eventhouse_kql_h3_phantom_brake_sense_ms": 3,
+                "fabric_iq_diskann_65m_clip_bom_graph_ms": 3,
+                "foundry_iq_unece_r155_r156_park_gate_ms": 3,
+                "adas_teams_ota_freeze_gpu_flywheel_commit_ms": 3,
+                "legacy_signal_cloud_ram_vector_monthly_tco_usd": 48900,
+                "fabric_eventhouse_diskann_onelake_monthly_tco_usd": 7700,
+            },
+            "ontology_graph_traversal": {
+                "root_entity": "AutoSDV-1.2MVehicles-950KEPS-65MClips-UNECER156-2026Q4",
+                "hops": 6,
+                "affected_entities": [
+                    "EventhouseH3Res9: 950K-EPS-CANFD-Triggers (42x Phantom-Brake Spike on Highway-Pilot v5.4.2)",
+                    "CosmosDiskANN_65MClips: 1,280-Wet-Tunnel-LED-Glare-MCAP-Clips (0.97 Cosine Sim)",
+                    "SAP_BOM_Genealogy: 42,000-VINs-Stereo-Camera-Batch-C92-Sunny (Anti-Reflective Coating)",
+                    "UNECER155_R156_Gate: RXSWIN-Homologation-Valid + Gear==PARK & SoC>=30% Flash Lock",
+                    "OTA_GPU_Flywheel: Freeze-438K-Rollout + 4D-Radar-Gated-Hotfix + Foundry-GPU-Retrain",
+                ],
+                "root_cause": "Canary rollout of Highway-Pilot v5.4.2 interacted with stereo camera lens coating batch #C92-Sunny under wet highway tunnel LED glare, causing 380 false-positive AEB hard-braking events (-6.8 m/s² while LiDAR showed >45m free space) and threatening a 480,000-vehicle morning rollout",
+            },
+            "multi_agent_plan": {
+                "monitored_l3_vehicles": 1200000,
+                "patched_camera_batch_vehicles": 42000,
+                "monthly_automotive_sdv_tco_saved_usd": 41200,
+                "automotive_sdv_tco_savings_pct": 84.3,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 950K EPS CAN-FD Shadow-Mode & H3 Road Anomaly Engine",
+                        "operation": "Ingest 950,000 EPS of CAN-FD/SOME-IP triggers at $0/signal tax, correlating AEB -6.8m/s² deceleration against LiDAR >45m free space across H3 Res-9 tunnel portals in 3ms",
+                        "impact_metric": "Flags 42x phantom-braking spike on v5.4.2 1,000x faster than T+7d warranty tickets",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ 6-Hop VIN-BOM-OTA Graph, Cosmos SSD DiskANN & Foundry IQ Gate",
+                        "operation": "Retrieve 1,280 wet-glare .mcap clips across 65M clips in SSD DiskANN & isolate 42,000 VINs with camera batch #C92-Sunny in 3ms; verify UNECE R156 RXSWIN & Gear==PARK/SoC>=30% in Foundry IQ (3ms)",
+                        "impact_metric": "Cuts vector RAM cost by 92% and prevents unhomologated or in-motion OTA flashing",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "ADAS VP Teams Card & OTA Freeze + 4D-Radar Hotfix + GPU Flywheel Commit",
+                        "operation": "Co-sign in Teams to halt 438K-car rollout, push radar-cross-checked v5.4.2-hotfix to 42,000 cars, mount 1,280 clips to GPU training, and log to 1GB Free Fabric SQL (3ms)",
+                        "impact_metric": "12ms E2E ADAS Corner-Case & UNECE R156 loop; -$41,200/mo (-84.3%) TCO; $12.05M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "AUTO-SDV-ADAS-CORNERCASE-UNECE-R155-SOP-044",
+                "hard_constraint": "Never dispatch ADAS OTA calibration or firmware updates without verified UNECE R156 RXSWIN type-approval compatibility, UNECE R155 HSM signature, and vehicle Gear == PARK with Battery SoC >= 30%, and require 100% face/license-plate/geodetic anonymization on ingested training clips",
+                "proposed_change": "Halt v5.4.2 rollout, dispatch RXSWIN-verified radar-gated v5.4.2-hotfix to 42,000 parked vehicles (SoC >= 30%), and mount 1,280 anonymized tunnel-glare .mcap clips for GPU fine-tuning",
+                "unece_r156_rxswin_park_soc_verified": True,
+                "mcap_face_plate_geodetic_privacy_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 12050000,
+                "end_to_end_latency_ms": 12,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse H3 + Cosmos DB SSD DiskANN + SAP S/4HANA BOM + UNECE R155/R156 SUMS + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -5270,6 +5349,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 138,
     },
+    {
+        "id": "DL-189",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 950K EPS of CAN-FD/SOME-IP shadow-mode triggers across 1.2M L3 vehicles and index 65M multimodal .mcap video/LiDAR clips for corner-case mining and UNECE R155/R156 OTA governance",
+        "expected": "Microsoft Fabric (Eventhouse KQL 3ms H3 Trigger Sense $0/Signal Tax + Cosmos DB SSD DiskANN 3ms 65M-Clip Search -92% RAM + OneLake SAP BOM & OTA Graph)",
+        "model_answer": "Microsoft Fabric (Eventhouse KQL 3ms H3 Trigger Sense $0/Signal Tax + Cosmos DB SSD DiskANN 3ms 65M-Clip Search -92% RAM + OneLake SAP BOM & OTA Graph)",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 122,
+    },
+    {
+        "id": "DL-190",
+        "category": "vs Databricks",
+        "question": "Compare Microsoft Fabric Eventhouse + SSD DiskANN Corner-Case Mining vs multi-node H200 GPU clusters (Azure AI Foundry / Databricks Mosaic AI) for End-to-End VLA driving model and 3DGS training",
+        "expected": "Mine and curate the 1,280 corner-case .mcap clips in Fabric SSD DiskANN; mount the curated OneLake dataset zero-copy into Azure AI Foundry / Databricks H200 GPU clusters for VLA/3DGS training",
+        "model_answer": "Mine and curate the 1,280 corner-case .mcap clips in Fabric SSD DiskANN; mount the curated OneLake dataset zero-copy into Azure AI Foundry / Databricks H200 GPU clusters for VLA/3DGS training",
+        "task_type": "choice",
+        "confidence": 0.95,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 130,
+    },
+    {
+        "id": "DL-191",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + SSD DiskANN + OneLake S3 Shortcuts + DirectLake vs per-signal automotive cloud ingestion & 600GB in-memory vector clusters for a 1.2M-car OEM with 1,100 engineers",
+        "expected": "Hybrid Better Together: Ingest 950K EPS triggers into Eventhouse ($0/signal tax), index 65M clips in SSD DiskANN (-92% RAM), mount raw .mcap via OneLake Shortcuts, and serve 1,100 engineers via DirectLake (-84.3% TCO)",
+        "model_answer": "Hybrid Better Together: Ingest 950K EPS triggers into Eventhouse ($0/signal tax), index 65M clips in SSD DiskANN (-92% RAM), mount raw .mcap via OneLake Shortcuts, and serve 1,100 engineers via DirectLake (-84.3% TCO)",
+        "task_type": "score",
+        "confidence": 0.96,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 124,
+    },
+    {
+        "id": "DL-192",
+        "category": "Fabric IQ & Ontology",
+        "question": "Global EV OEM across 1.2M L3 vehicles detects a 42x spike in wet-tunnel phantom braking (-6.8m/s², 380 events) after canary rollout of Highway-Pilot v5.4.2",
+        "expected": "Eventhouse H3 Phantom-Brake Sense (3ms, $0/Signal Tax) + 6-Hop SSD DiskANN 1,280-Clip Search & 42K-VIN Camera BOM Match (3ms) + Foundry IQ UNECE R156 RXSWIN & Park Gate (3ms) + Teams OTA Freeze & Radar Hotfix (3ms = 12ms E2E, Protect $12.05M SLA)",
+        "model_answer": "Eventhouse H3 Phantom-Brake Sense (3ms, $0/Signal Tax) + 6-Hop SSD DiskANN 1,280-Clip Search & 42K-VIN Camera BOM Match (3ms) + Foundry IQ UNECE R156 RXSWIN & Park Gate (3ms) + Teams OTA Freeze & Radar Hotfix (3ms = 12ms E2E, Protect $12.05M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 128,
+    },
 ]
 
 
@@ -5428,6 +5555,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     maritime_ais_sim = simulate_ontology_incident("global_maritime_shipping_fabric_ais_port_fueleu_ets_vs_4clouds")
     media_ott_sim = simulate_ontology_incident("global_media_ott_fabric_eventhouse_qoe_ssai_royalty_vs_4clouds")
     semicon_2nm_sim = simulate_ontology_incident("global_semiconductor_2nm_euv_stdf_wafer_yield_aldo_vs_4clouds")
+    auto_sdv_sim = simulate_ontology_incident("global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -5475,6 +5603,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_maritime_shipping_fabric_ais_port_fueleu_ets_vs_4clouds": maritime_ais_sim,
         "global_media_ott_fabric_eventhouse_qoe_ssai_royalty_vs_4clouds": media_ott_sim,
         "global_semiconductor_2nm_euv_stdf_wafer_yield_aldo_vs_4clouds": semicon_2nm_sim,
+        "global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds": auto_sdv_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -5544,6 +5673,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r34_ontology_sim_mean_ms = round(sum(r34_sim_latencies) / len(r34_sim_latencies), 2)
     r35_sim_latencies = sim_latencies[:42]
     r35_ontology_sim_mean_ms = round(sum(r35_sim_latencies) / len(r35_sim_latencies), 2)
+    r36_sim_latencies = sim_latencies[:43]
+    r36_ontology_sim_mean_ms = round(sum(r36_sim_latencies) / len(r36_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -6034,11 +6165,23 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-12",
         },
+        {
+            "id": "SPEC-FABRIC-AUTOMOTIVE-SDV-ADAS-CORNER-CASE-DISKANN-H3",
+            "vendor": "Microsoft / AWS / Databricks / Snowflake / Google Cloud",
+            "claim": "Microsoft Fabric Eventhouse KQL (including H3 spatial indexing) and Cosmos DB in Fabric DiskANN vector indexing support high-throughput connected-vehicle CAN-FD/SOME-IP telemetry, shadow-mode anomaly detection, and multimodal ADAS corner-case clip retrieval over OneLake Shortcuts; AWS provides AWS IoT FleetWise; Databricks provides Mosaic AI; Snowflake provides Automotive Data Cloud.",
+            "official_url": "https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/kusto/query/geo-point-to-h3cell-function",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/what-is-fleetwise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing/automotive",
+            ],
+            "as_of": "2026-11-12",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-12-r36",
-        "generated_at": "2026-11-12T04:05:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-12-r37",
+        "generated_at": "2026-11-12T04:32:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -6049,6 +6192,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R36 snapshot n=188 mean was 366.0ms; "
                     f"historical R35 snapshot n=184 mean was 371.0ms; "
                     f"historical R34 snapshot n=180 mean was 376.0ms; "
                     f"historical R33 snapshot n=176 mean was 381.0ms; "
@@ -6090,6 +6234,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R36 snapshot n=43 mean was {r36_ontology_sim_mean_ms}ms; "
                     f"historical R35 snapshot n=42 mean was {r35_ontology_sim_mean_ms}ms; "
                     f"historical R34 snapshot n=41 mean was {r34_ontology_sim_mean_ms}ms; "
                     f"historical R33 snapshot n=40 mean was {r33_ontology_sim_mean_ms}ms; "
@@ -6124,6 +6269,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r36_historical_denominators": {
+                    "r36_routing_matrix_n188_mean_ms": 366.0,
+                    "r36_ontology_simulations_n43_mean_ms": r36_ontology_sim_mean_ms,
+                },
                 "r35_historical_denominators": {
                     "r35_routing_matrix_n184_mean_ms": 371.0,
                     "r35_ontology_simulations_n42_mean_ms": r35_ontology_sim_mean_ms,
@@ -6322,6 +6471,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r36_43_simulation_mean_modeled_latency_ms": r36_ontology_sim_mean_ms,
             "r35_42_simulation_mean_modeled_latency_ms": r35_ontology_sim_mean_ms,
             "r34_41_simulation_mean_modeled_latency_ms": r34_ontology_sim_mean_ms,
             "r33_40_simulation_mean_modeled_latency_ms": r33_ontology_sim_mean_ms,
