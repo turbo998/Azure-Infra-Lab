@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Snapshot replication amplification gate,188,200,0.94,measured,snapshot-amplification replay + deterministic verification
+Dedup-index integrity fallback guard,183,190,0.9632,measured,dedup-index integrity logs
+Tenant-scope snapshot authorization fence,172,180,0.9556,measured,MCP policy replay logs

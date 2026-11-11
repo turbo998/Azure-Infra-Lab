@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #527 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-527.html](workbench-cycle-527.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #528 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-528.html](workbench-cycle-528.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #527 release summary (2026-11-11)
+## 1) Cycle #528 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #527 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #527 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #527 workbench** | Interactive benchmark surface | [`workbench-cycle-527.html`](workbench-cycle-527.html) |
+| **Cycle #528 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #528 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #528 workbench** | Interactive benchmark surface | [`workbench-cycle-528.html`](workbench-cycle-528.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-527-benchmark.json`](evidence/cycle-527-benchmark.json)
-- Source ledger: [`evidence/cycle-527-sources.json`](evidence/cycle-527-sources.json)
+- Canonical payload: [`evidence/cycle-528-benchmark.json`](evidence/cycle-528-benchmark.json)
+- Source ledger: [`evidence/cycle-528-sources.json`](evidence/cycle-528-sources.json)
 - Metric CSV files:
-  - [`cycle-527-latency.csv`](evidence/cycle-527-latency.csv)
-  - [`cycle-527-throughput.csv`](evidence/cycle-527-throughput.csv)
-  - [`cycle-527-policy.csv`](evidence/cycle-527-policy.csv)
-  - [`cycle-527-cost.csv`](evidence/cycle-527-cost.csv)
+  - [`cycle-528-latency.csv`](evidence/cycle-528-latency.csv)
+  - [`cycle-528-throughput.csv`](evidence/cycle-528-throughput.csv)
+  - [`cycle-528-policy.csv`](evidence/cycle-528-policy.csv)
+  - [`cycle-528-cost.csv`](evidence/cycle-528-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-527-daily-breakthroughs.svg`](assets/34-cycle-527-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-527.en.md`](docs/full-monograph-cycle-527.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-527.md`](docs/full-monograph-cycle-527.md)
-- Selection FAQ (EN, Semantic Cache Invalidation Epoch Fence): [`agent-gateway-semantic-cache-invalidation-epoch-fence-selection-faq.en.md`](agent-gateway-semantic-cache-invalidation-epoch-fence-selection-faq.en.md)
-- Selection FAQ (ZH, Semantic Cache Invalidation Epoch Fence): [`agent-gateway-semantic-cache-invalidation-epoch-fence-selection-faq.md`](agent-gateway-semantic-cache-invalidation-epoch-fence-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-528-daily-breakthroughs.svg`](assets/34-cycle-528-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-528.en.md`](docs/full-monograph-cycle-528.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-528.md`](docs/full-monograph-cycle-528.md)
+- Selection FAQ (EN, Memory Snapshot Dedup Compression): [`agent-runtime-memory-snapshot-dedup-compression-selection-faq.en.md`](agent-runtime-memory-snapshot-dedup-compression-selection-faq.en.md)
+- Selection FAQ (ZH, Memory Snapshot Dedup Compression): [`agent-runtime-memory-snapshot-dedup-compression-selection-faq.md`](agent-runtime-memory-snapshot-dedup-compression-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
