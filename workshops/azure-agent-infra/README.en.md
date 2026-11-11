@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #531 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-531.html](workbench-cycle-531.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #532 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-532.html](workbench-cycle-532.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #531 release summary (2026-11-11)
+## 1) Cycle #532 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #531 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #531 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #531 workbench** | Interactive benchmark surface | [`workbench-cycle-531.html`](workbench-cycle-531.html) |
+| **Cycle #532 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #532 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #532 workbench** | Interactive benchmark surface | [`workbench-cycle-532.html`](workbench-cycle-532.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-531-benchmark.json`](evidence/cycle-531-benchmark.json)
-- Source ledger: [`evidence/cycle-531-sources.json`](evidence/cycle-531-sources.json)
+- Canonical payload: [`evidence/cycle-532-benchmark.json`](evidence/cycle-532-benchmark.json)
+- Source ledger: [`evidence/cycle-532-sources.json`](evidence/cycle-532-sources.json)
 - Metric CSV files:
-  - [`cycle-531-latency.csv`](evidence/cycle-531-latency.csv)
-  - [`cycle-531-throughput.csv`](evidence/cycle-531-throughput.csv)
-  - [`cycle-531-policy.csv`](evidence/cycle-531-policy.csv)
-  - [`cycle-531-cost.csv`](evidence/cycle-531-cost.csv)
+  - [`cycle-532-latency.csv`](evidence/cycle-532-latency.csv)
+  - [`cycle-532-throughput.csv`](evidence/cycle-532-throughput.csv)
+  - [`cycle-532-policy.csv`](evidence/cycle-532-policy.csv)
+  - [`cycle-532-cost.csv`](evidence/cycle-532-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-531-daily-breakthroughs.svg`](assets/34-cycle-531-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-531.en.md`](docs/full-monograph-cycle-531.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-531.md`](docs/full-monograph-cycle-531.md)
-- Selection FAQ (EN, MCP Tool Result Size Budget): [`agent-gateway-mcp-tool-result-size-budget-selection-faq.en.md`](agent-gateway-mcp-tool-result-size-budget-selection-faq.en.md)
-- Selection FAQ (ZH, MCP Tool Result Size Budget): [`agent-gateway-mcp-tool-result-size-budget-selection-faq.md`](agent-gateway-mcp-tool-result-size-budget-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-532-daily-breakthroughs.svg`](assets/34-cycle-532-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-532.en.md`](docs/full-monograph-cycle-532.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-532.md`](docs/full-monograph-cycle-532.md)
+- Selection FAQ (EN, Multi-Model Tokenizer Version Pinning): [`agent-runtime-multi-model-tokenizer-version-pinning-selection-faq.en.md`](agent-runtime-multi-model-tokenizer-version-pinning-selection-faq.en.md)
+- Selection FAQ (ZH, Multi-Model Tokenizer Version Pinning): [`agent-runtime-multi-model-tokenizer-version-pinning-selection-faq.md`](agent-runtime-multi-model-tokenizer-version-pinning-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
