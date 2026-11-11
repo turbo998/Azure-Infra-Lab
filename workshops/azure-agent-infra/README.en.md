@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #609 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-609.html](workbench-cycle-609.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #610 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-610.html](workbench-cycle-610.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #609 release summary (2026-11-11)
+## 1) Cycle #610 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #609 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #609 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #609 workbench** | Interactive benchmark surface | [`workbench-cycle-609.html`](workbench-cycle-609.html) |
+| **Cycle #610 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #610 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #610 workbench** | Interactive benchmark surface | [`workbench-cycle-610.html`](workbench-cycle-610.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-609-benchmark.json`](evidence/cycle-609-benchmark.json)
-- Source ledger: [`evidence/cycle-609-sources.json`](evidence/cycle-609-sources.json)
+- Canonical payload: [`evidence/cycle-610-benchmark.json`](evidence/cycle-610-benchmark.json)
+- Source ledger: [`evidence/cycle-610-sources.json`](evidence/cycle-610-sources.json)
 - Metric CSV files:
-  - [`cycle-609-latency.csv`](evidence/cycle-609-latency.csv)
-  - [`cycle-609-throughput.csv`](evidence/cycle-609-throughput.csv)
-  - [`cycle-609-policy.csv`](evidence/cycle-609-policy.csv)
-  - [`cycle-609-cost.csv`](evidence/cycle-609-cost.csv)
+  - [`cycle-610-latency.csv`](evidence/cycle-610-latency.csv)
+  - [`cycle-610-throughput.csv`](evidence/cycle-610-throughput.csv)
+  - [`cycle-610-policy.csv`](evidence/cycle-610-policy.csv)
+  - [`cycle-610-cost.csv`](evidence/cycle-610-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-609-daily-breakthroughs.svg`](assets/34-cycle-609-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-609.en.md`](docs/full-monograph-cycle-609.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-609.md`](docs/full-monograph-cycle-609.md)
-- Selection FAQ (EN, AKS Kata Pod Density Safety Margin): [`agent-aks-kata-pod-density-safety-margin-selection-faq.en.md`](agent-aks-kata-pod-density-safety-margin-selection-faq.en.md)
-- Selection FAQ (ZH, AKS Kata Pod Density Safety Margin): [`agent-aks-kata-pod-density-safety-margin-selection-faq.md`](agent-aks-kata-pod-density-safety-margin-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-610-daily-breakthroughs.svg`](assets/34-cycle-610-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-610.en.md`](docs/full-monograph-cycle-610.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-610.md`](docs/full-monograph-cycle-610.md)
+- Selection FAQ (EN, APIM Semantic Cache Eviction Jitter): [`agent-apim-semantic-cache-eviction-jitter-selection-faq.en.md`](agent-apim-semantic-cache-eviction-jitter-selection-faq.en.md)
+- Selection FAQ (ZH, APIM Semantic Cache Eviction Jitter): [`agent-apim-semantic-cache-eviction-jitter-selection-faq.md`](agent-apim-semantic-cache-eviction-jitter-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
