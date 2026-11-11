@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+sidecar-cache-drift saturation gate,172,184,0.9348,measured,sidecar-cache mismatch replay + deterministic verification
+coherency fence integrity guard,161,168,0.9583,measured,sidecar-cache integrity logs
+tenant-scope sidecar-cache authorization fence,154,161,0.9565,measured,tenant sidecar-cache fairness replay logs
