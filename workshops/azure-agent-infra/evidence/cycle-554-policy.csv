@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+syscall-filter-violation saturation gate,172,184,0.9348,measured,syscall-profile-fence mismatch replay + deterministic verification
+syscall-profile-fence fence integrity guard,161,168,0.9583,measured,syscall-profile-fence integrity logs
+tenant-scope syscall-profile-fence authorization fence,154,161,0.9565,measured,tenant syscall-profile-fence fairness replay logs
