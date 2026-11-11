@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #598 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-598.html](workbench-cycle-598.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #599 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-599.html](workbench-cycle-599.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #598 release summary (2026-11-11)
+## 1) Cycle #599 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #598 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #598 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #598 workbench** | Interactive benchmark surface | [`workbench-cycle-598.html`](workbench-cycle-598.html) |
+| **Cycle #599 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #599 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #599 workbench** | Interactive benchmark surface | [`workbench-cycle-599.html`](workbench-cycle-599.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-598-benchmark.json`](evidence/cycle-598-benchmark.json)
-- Source ledger: [`evidence/cycle-598-sources.json`](evidence/cycle-598-sources.json)
+- Canonical payload: [`evidence/cycle-599-benchmark.json`](evidence/cycle-599-benchmark.json)
+- Source ledger: [`evidence/cycle-599-sources.json`](evidence/cycle-599-sources.json)
 - Metric CSV files:
-  - [`cycle-598-latency.csv`](evidence/cycle-598-latency.csv)
-  - [`cycle-598-throughput.csv`](evidence/cycle-598-throughput.csv)
-  - [`cycle-598-policy.csv`](evidence/cycle-598-policy.csv)
-  - [`cycle-598-cost.csv`](evidence/cycle-598-cost.csv)
+  - [`cycle-599-latency.csv`](evidence/cycle-599-latency.csv)
+  - [`cycle-599-throughput.csv`](evidence/cycle-599-throughput.csv)
+  - [`cycle-599-policy.csv`](evidence/cycle-599-policy.csv)
+  - [`cycle-599-cost.csv`](evidence/cycle-599-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-598-daily-breakthroughs.svg`](assets/34-cycle-598-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-598.en.md`](docs/full-monograph-cycle-598.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-598.md`](docs/full-monograph-cycle-598.md)
-- Selection FAQ (EN, ACA Dynamic Sessions Warm Slot Fragmentation): [`agent-aca-dynamic-sessions-warm-slot-fragmentation-selection-faq.en.md`](agent-aca-dynamic-sessions-warm-slot-fragmentation-selection-faq.en.md)
-- Selection FAQ (ZH, ACA Dynamic Sessions Warm Slot Fragmentation): [`agent-aca-dynamic-sessions-warm-slot-fragmentation-selection-faq.md`](agent-aca-dynamic-sessions-warm-slot-fragmentation-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-599-daily-breakthroughs.svg`](assets/34-cycle-599-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-599.en.md`](docs/full-monograph-cycle-599.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-599.md`](docs/full-monograph-cycle-599.md)
+- Selection FAQ (EN, APIM Semantic Cache Staleness Burst Cap): [`agent-apim-semantic-cache-staleness-burst-cap-selection-faq.en.md`](agent-apim-semantic-cache-staleness-burst-cap-selection-faq.en.md)
+- Selection FAQ (ZH, APIM Semantic Cache Staleness Burst Cap): [`agent-apim-semantic-cache-staleness-burst-cap-selection-faq.md`](agent-apim-semantic-cache-staleness-burst-cap-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
