@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 780" width="1280" height="780" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad42" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="50%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#111C35"/>
+    </linearGradient>
+    <linearGradient id="headerGrad42" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="50%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabricBox42" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="legacyBox42" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#450A0A" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="shadow42" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="780" fill="url(#bgGrad42)"/>
+
+  <!-- Top Header Banner -->
+  <rect x="24" y="18" width="1232" height="82" rx="12" fill="url(#headerGrad42)" filter="url(#shadow42)"/>
+  <text x="44" y="50" fill="#FFFFFF" font-size="21" font-weight="800">R34 · Global Maritime Shipping, Satellite AIS Twin, Port JIT &amp; FuelEU / EU ETS FAQ</text>
+  <text x="44" y="78" fill="#E0F2FE" font-size="13.5" font-weight="600">Microsoft Fabric (Eventhouse KQL H3 3ms AIS/Current Join + Port Berth Twin + SDS FuelEU/ETS Engine) vs. BigQuery GIS / AWS / Databricks / Snowflake · 15ms · -83.3% TCO</text>
+  <rect x="1050" y="32" width="188" height="52" rx="8" fill="#0F172A" fill-opacity="0.82" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="1144" y="53" fill="#6EE7B7" font-size="13" font-weight="800" text-anchor="middle">Scenario AO · DL-177..180</text>
+  <text x="1144" y="73" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">179/180 (99.44%) · 86/86 Tests</text>
+
+  <!-- Left Column: Legacy Noon-Report & Sail-Fast-Then-Wait Stack -->
+  <rect x="24" y="114" width="596" height="310" rx="12" fill="url(#legacyBox42)" stroke="#EF4444" stroke-width="1.5" filter="url(#shadow42)"/>
+  <text x="44" y="142" fill="#FCA5A5" font-size="16" font-weight="800">❌ Legacy Noon-Report &amp; Sail-Fast-Then-Wait Stack (24h Lag · $45,600/mo · Fuel Waste)</text>
+
+  <rect x="44" y="156" width="556" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="58" y="178" fill="#FECACA" font-size="13.5" font-weight="700">1. "Sail Fast, Then Wait" Cubic Propulsion Waste (4,850 MT VLSFO Burned)</text>
+  <text x="58" y="198" fill="#CBD5E1" font-size="12">• Blind to a 54h Rotterdam berth queue, 18 ULCVs steam at 19.8 kn only to wait 72h at anchorage</text>
+  <text x="58" y="214" fill="#CBD5E1" font-size="12">• Cubic law (P ∝ V³) wastes 4,850 MT of VLSFO bunker fuel + 15,100 MT CO2e in 100% EU ETS allowances</text>
+
+  <rect x="44" y="234" width="556" height="68" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="58" y="256" fill="#FECACA" font-size="13.5" font-weight="700">2. Manual T+1 Noon-Report Spreadsheets Miss "Cappuccino Bunker" Fraud &amp; FuelEU</text>
+  <text x="58" y="276" fill="#CBD5E1" font-size="12">• Daily manual email reports miss air-entrainment fuel short-delivery fraud during barge bunkering</text>
+  <text x="58" y="292" fill="#CBD5E1" font-size="12">• Unverified biofuel WtW intensity risks €2,400/MT FuelEU Maritime fines &amp; IMO CII Rating D/E</text>
+
+  <rect x="44" y="312" width="556" height="96" rx="8" fill="#1E293B" stroke="#F87171" stroke-width="1"/>
+  <text x="58" y="334" fill="#FECACA" font-size="13.5" font-weight="700">3. $45,600/mo Streaming Ingestion, GIS Polygon Scans &amp; Disconnected TOS</text>
+  <text x="58" y="354" fill="#CBD5E1" font-size="12">• Joining 280K EPS satellite AIS tracks with Copernicus ocean currents via ST_Intersects costs $28,400/mo</text>
+  <text x="58" y="372" fill="#CBD5E1" font-size="12">• Disconnected Navis N4 terminal TOS &amp; Veson IMOS chartering add $17,200/mo in SaaS &amp; BI seat taxes</text>
+  <text x="58" y="392" fill="#FCA5A5" font-size="12.5" font-weight="700">• Total Monthly Legacy Cost: $45,600/mo | Speed-Order &amp; Berth Sync Latency: 12–24 Hours</text>
+
+  <!-- Right Column: Microsoft Fabric 15ms Ship-to-Shore-to-Carbon Loop -->
+  <rect x="636" y="114" width="620" height="310" rx="12" fill="url(#fabricBox42)" stroke="#10B981" stroke-width="1.5" filter="url(#shadow42)"/>
+  <text x="656" y="142" fill="#6EE7B7" font-size="16" font-weight="800">✅ Fabric Eventhouse H3 + Port Twin + SDS Loop (15ms E2E · $7,600/mo · -83.3% TCO)</text>
+
+  <rect x="656" y="156" width="580" height="60" rx="8" fill="#0F172A" stroke="#34D399" stroke-width="1"/>
+  <text x="670" y="176" fill="#A7F3D0" font-size="13" font-weight="700">Step 1 (3 ms) · Eventhouse KQL 280K EPS Satellite AIS, Coriolis &amp; H3 Res-8 Join</text>
+  <text x="670" y="195" fill="#E2E8F0" font-size="11.5">• Ingests 280K EPS of NMEA-0183 AIS, shaft torque &amp; Coriolis fuel meters ($0/GB write tax, 12:1 compression)</text>
+  <text x="670" y="210" fill="#6EE7B7" font-size="11.5" font-weight="600">• Joins Copernicus ocean currents via H3 uint64 in 3ms; flags 54h Rotterdam berth queue across 18 ULCVs</text>
+
+  <rect x="656" y="224" width="580" height="58" rx="8" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+  <text x="670" y="244" fill="#BAE6FD" font-size="13" font-weight="700">Step 2 (4 ms) · Fabric IQ 6-Hop Vessel-Berth-Reefer &amp; FuelEU WtW Ontology</text>
+  <text x="670" y="262" fill="#E2E8F0" font-size="11.5">• Traverses `ULCVVessel → ShaftTorqueMeter → PortBerthCrane → ReeferSlot → BargeRail → EU_ETS_FuelEU_Ledger`</text>
+  <text x="670" y="276" fill="#7DD3FC" font-size="11.5" font-weight="600">• Computes 19.8→15.4 kn JIT slow-steaming (-31.8% fuel = -4,850 MT VLSFO) + 1,600 MT B30 biofuel blend</text>
+
+  <rect x="656" y="290" width="580" height="54" rx="8" fill="#0F172A" stroke="#A78BFA" stroke-width="1"/>
+  <text x="670" y="309" fill="#DDD6FE" font-size="13" font-weight="700">Step 3 (4 ms) · Foundry IQ IMO SOLAS Wave (&lt;=5.5m) &amp; FuelEU WtW (84.1) Gate</text>
+  <text x="670" y="327" fill="#E2E8F0" font-size="11.5">• Enforces `MARITIME-JIT-SOLAS-FUELEU-ETS-SOP-041`: storm-wave avoidance, 6,400 reefers safe &amp; ISCC PoS verified</text>
+
+  <rect x="656" y="352" width="580" height="60" rx="8" fill="#0F172A" stroke="#FBBF24" stroke-width="1"/>
+  <text x="670" y="371" fill="#FDE68A" font-size="13" font-weight="700">Step 4 (4 ms) · Fleet Director Teams Co-Sign + Bridge ECDIS Push &amp; EU THETIS-MRV</text>
+  <text x="670" y="389" fill="#E2E8F0" font-size="11.5">• Pushes JIT waypoints over Starlink to bridge ECDIS, updates Navis N4 cranes &amp; files EU THETIS-MRV in 4ms (15ms E2E)</text>
+  <text x="670" y="405" fill="#FCD34D" font-size="11.5" font-weight="700">• Saves $38,000/mo (-83.3% TCO) &amp; protects $11.00M bunker fuel, EU ETS / FuelEU &amp; demurrage SLA</text>
+
+  <!-- Middle Section: 5-Cloud Maritime AIS, Port Twin & Carbon Decision Matrix -->
+  <rect x="24" y="438" width="1232" height="196" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5" filter="url(#shadow42)"/>
+  <text x="44" y="465" fill="#F8FAFC" font-size="15.5" font-weight="800">📊 5-Platform Maritime AIS, Port Digital Twin &amp; FuelEU/ETS Matrix (740 ULCVs × 42 Terminals × 280K EPS)</text>
+
+  <!-- Table Header -->
+  <rect x="40" y="476" width="1200" height="26" rx="4" fill="#1E293B"/>
+  <text x="52" y="494" fill="#94A3B8" font-size="12" font-weight="700">Platform / Capability</text>
+  <text x="285" y="494" fill="#94A3B8" font-size="12" font-weight="700">280K EPS AIS &amp; Coriolis Stream</text>
+  <text x="545" y="494" fill="#94A3B8" font-size="12" font-weight="700">Ocean-Current × AIS Join</text>
+  <text x="785" y="494" fill="#94A3B8" font-size="12" font-weight="700">Port Twin &amp; FuelEU/ETS Engine</text>
+  <text x="1030" y="494" fill="#94A3B8" font-size="12" font-weight="700">Monthly TCO &amp; Best Fit</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="40" y="505" width="1200" height="26" rx="4" fill="#064E3B" fill-opacity="0.55"/>
+  <text x="52" y="522" fill="#6EE7B7" font-size="12" font-weight="800">Microsoft Fabric (Winner)</text>
+  <text x="285" y="522" fill="#E2E8F0" font-size="11.5">Shared F64 ($0/GB write tax, 12:1)</text>
+  <text x="545" y="522" fill="#6EE7B7" font-size="12" font-weight="700">3 ms H3 uint64 / 15 ms E2E</text>
+  <text x="785" y="522" fill="#E2E8F0" font-size="11.5">Digital Twin + SDS FuelEU/THETIS</text>
+  <text x="1030" y="522" fill="#6EE7B7" font-size="12" font-weight="800">$7,600/mo (-83.3% · JIT + FuelEU)</text>
+
+  <!-- Row 2: GCP -->
+  <rect x="40" y="533" width="1200" height="24" rx="4" fill="#1E293B" fill-opacity="0.45"/>
+  <text x="52" y="549" fill="#93C5FD" font-size="12" font-weight="700">GCP BigQuery GIS + GEE</text>
+  <text x="285" y="549" fill="#CBD5E1" font-size="11.5">Storage Write API ($0.05/GB) + Slots</text>
+  <text x="545" y="549" fill="#CBD5E1" font-size="11.5">3,500 ms (ST_Intersects Scan)</text>
+  <text x="785" y="549" fill="#CBD5E1" font-size="11.5">Custom Graph + Manual SQL MRV</text>
+  <text x="1030" y="549" fill="#93C5FD" font-size="11.5">$38,900/mo (Polar Sea-Ice R&amp;D)</text>
+
+  <!-- Row 3: Databricks -->
+  <rect x="40" y="559" width="1200" height="24" rx="4" fill="#0F172A"/>
+  <text x="52" y="575" fill="#FDBA74" font-size="12" font-weight="700">Databricks Sedona + CFD</text>
+  <text x="285" y="575" fill="#CBD5E1" font-size="11.5">Continuous DLT DBU + Storage API</text>
+  <text x="545" y="575" fill="#CBD5E1" font-size="11.5">16,000 ms (Spark Spatial Shuffle)</text>
+  <text x="785" y="575" fill="#CBD5E1" font-size="11.5">Custom GraphFrames + Notebooks</text>
+  <text x="1030" y="575" fill="#FDBA74" font-size="11.5">$40,500/mo (Bulbous-Bow 3D CFD)</text>
+
+  <!-- Row 4: AWS -->
+  <rect x="40" y="585" width="1200" height="24" rx="4" fill="#1E293B" fill-opacity="0.45"/>
+  <text x="52" y="601" fill="#FDE047" font-size="12" font-weight="700">AWS IoT + Location + RPU</text>
+  <text x="285" y="601" fill="#CBD5E1" font-size="11.5">IoT Message Fees + Kinesis Shards</text>
+  <text x="545" y="601" fill="#CBD5E1" font-size="11.5">11,000 ms (Redshift Spatial)</text>
+  <text x="785" y="601" fill="#CBD5E1" font-size="11.5">TwinMaker + Neptune Stitching</text>
+  <text x="1030" y="601" fill="#FDE047" font-size="11.5">$42,800/mo (Inland Barge GPS)</text>
+
+  <!-- Row 5: Snowflake -->
+  <rect x="40" y="611" width="1200" height="20" rx="4" fill="#0F172A"/>
+  <text x="52" y="625" fill="#7DD3FC" font-size="12" font-weight="700">Snowflake Geospatial</text>
+  <text x="285" y="625" fill="#CBD5E1" font-size="11.5">Snowpipe Streaming Credits</text>
+  <text x="545" y="625" fill="#FCA5A5" font-size="11.5">&gt;= 60,000 ms (Dynamic Table Lag)</text>
+  <text x="785" y="625" fill="#CBD5E1" font-size="11.5">3rd-Party Maritime ESG App</text>
+  <text x="1030" y="625" fill="#7DD3FC" font-size="11.5">$45,600/mo (Static Trade Tables)</text>
+
+  <!-- Bottom Section: Dual-Denominator Reconciliation & Routing Verdicts -->
+  <rect x="24" y="646" width="1232" height="116" rx="12" fill="#091020" stroke="#0284C7" stroke-width="1.5" filter="url(#shadow42)"/>
+  <text x="44" y="672" fill="#38BDF8" font-size="14.5" font-weight="800">🧪 Sealed Benchmark &amp; Dual-Denominator Reconciliation (`reports/report.json` · Zero Fabricated Coordinates)</text>
+  <text x="44" y="694" fill="#E2E8F0" font-size="12">• <tspan fill="#6EE7B7" font-weight="700">DL-177 (Fabric JIT &amp; FuelEU Loop)</tspan>: 740 ULCVs × 280K EPS H3 3ms + Port Twin + SDS (0.98, 152ms) | <tspan fill="#FDBA74" font-weight="700">DL-178 (Databricks Hull CFD)</tspan>: 3D bulbous-bow CFD mesh (0.94, 160ms)</text>
+  <text x="44" y="714" fill="#E2E8F0" font-size="12">• <tspan fill="#93C5FD" font-weight="700">DL-179 (Better Together)</tspan>: OneLake mounts Navis N4/Veson IMOS + vessel ALDO edge &amp; DirectLake (0.96, 154ms) | <tspan fill="#FCA5A5" font-weight="700">DL-180 (Anti-Pattern)</tspan>: 20.5kn anchorage waste &amp; FuelEU fine blocked (0.99, 158ms)</text>
+  <text x="44" y="736" fill="#A7F3D0" font-size="12" font-weight="700">• Denominator A (`n=180` Routing Matrix DL-01..DL-180): 179/180 (99.44%) Passed · Mean = 376.0 ms | Denominator B (`n=41` Ontology Simulations A..AO): Mean = 335.0 ms (Range 15–780 ms, Scenario AO = 15 ms)</text>
+  <text x="44" y="753" fill="#94A3B8" font-size="11">Provenance: `measured_local_harness` (179/180 routing, 86/86 unit tests) + `vendor_published_spec_as_of_2026` (37 official URLs incl. Eventhouse H3 &amp; SDS) + `synthetic_scenario_model` ($11.00M SLA)</text>
+</svg>
