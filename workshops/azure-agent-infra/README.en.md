@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #632 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-632.html](workbench-cycle-632.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
+> 🔎 **Cycle #633 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-633.html](workbench-cycle-633.html) · [daily-report-2026-11-11.en.md](daily-report-2026-11-11.en.md)
 
 ---
 
-## 1) Cycle #632 release summary (2026-11-11)
+## 1) Cycle #633 release summary (2026-11-11)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #632 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #632 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #632 workbench** | Interactive benchmark surface | [`workbench-cycle-632.html`](workbench-cycle-632.html) |
+| **Cycle #633 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #633 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #633 workbench** | Interactive benchmark surface | [`workbench-cycle-633.html`](workbench-cycle-633.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-632-benchmark.json`](evidence/cycle-632-benchmark.json)
-- Source ledger: [`evidence/cycle-632-sources.json`](evidence/cycle-632-sources.json)
+- Canonical payload: [`evidence/cycle-633-benchmark.json`](evidence/cycle-633-benchmark.json)
+- Source ledger: [`evidence/cycle-633-sources.json`](evidence/cycle-633-sources.json)
 - Metric CSV files:
-  - [`cycle-632-latency.csv`](evidence/cycle-632-latency.csv)
-  - [`cycle-632-throughput.csv`](evidence/cycle-632-throughput.csv)
-  - [`cycle-632-policy.csv`](evidence/cycle-632-policy.csv)
-  - [`cycle-632-cost.csv`](evidence/cycle-632-cost.csv)
+  - [`cycle-633-latency.csv`](evidence/cycle-633-latency.csv)
+  - [`cycle-633-throughput.csv`](evidence/cycle-633-throughput.csv)
+  - [`cycle-633-policy.csv`](evidence/cycle-633-policy.csv)
+  - [`cycle-633-cost.csv`](evidence/cycle-633-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-11.en.md`](daily-report-2026-11-11.en.md)
 - Daily report (ZH): [`daily-report-2026-11-11.md`](daily-report-2026-11-11.md)
-- One-page SVG: [`assets/34-cycle-632-daily-breakthroughs.svg`](assets/34-cycle-632-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-632.en.md`](docs/full-monograph-cycle-632.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-632.md`](docs/full-monograph-cycle-632.md)
-- Selection FAQ (EN, APIM Request Body Redaction Window): [`agent-apim-request-body-redaction-window-selection-faq.en.md`](agent-apim-request-body-redaction-window-selection-faq.en.md)
-- Selection FAQ (ZH, APIM Request Body Redaction Window): [`agent-apim-request-body-redaction-window-selection-faq.md`](agent-apim-request-body-redaction-window-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-633-daily-breakthroughs.svg`](assets/34-cycle-633-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-633.en.md`](docs/full-monograph-cycle-633.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-633.md`](docs/full-monograph-cycle-633.md)
+- Selection FAQ (EN, Foundry Agentic Cache Lease Fencing): [`agent-foundry-agentic-cache-lease-fencing-selection-faq.en.md`](agent-foundry-agentic-cache-lease-fencing-selection-faq.en.md)
+- Selection FAQ (ZH, Foundry Agentic Cache Lease Fencing): [`agent-foundry-agentic-cache-lease-fencing-selection-faq.md`](agent-foundry-agentic-cache-lease-fencing-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
