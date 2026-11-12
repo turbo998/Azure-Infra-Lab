@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cosmos-memory-ttl-compaction-watermark-violation saturation gate,172,184,0.9348,measured,cosmos-memory-ttl-compaction-watermark-fence mismatch replay + deterministic verification
+cosmos-memory-ttl-compaction-watermark-fence fence integrity guard,161,168,0.9583,measured,cosmos-memory-ttl-compaction-watermark-fence integrity logs
+tenant-scope cosmos-memory-ttl-compaction-watermark-fence authorization fence,154,161,0.9565,measured,tenant cosmos-memory-ttl-compaction-watermark-fence fairness replay logs
