@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #664 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-664.html](workbench-cycle-664.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
+> 🔎 **Cycle #665 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-665.html](workbench-cycle-665.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
 
 ---
 
-## 1) Cycle #664 release summary (2026-11-12)
+## 1) Cycle #665 release summary (2026-11-12)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #664 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #664 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #664 workbench** | Interactive benchmark surface | [`workbench-cycle-664.html`](workbench-cycle-664.html) |
+| **Cycle #665 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #665 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #665 workbench** | Interactive benchmark surface | [`workbench-cycle-665.html`](workbench-cycle-665.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-664-benchmark.json`](evidence/cycle-664-benchmark.json)
-- Source ledger: [`evidence/cycle-664-sources.json`](evidence/cycle-664-sources.json)
+- Canonical payload: [`evidence/cycle-665-benchmark.json`](evidence/cycle-665-benchmark.json)
+- Source ledger: [`evidence/cycle-665-sources.json`](evidence/cycle-665-sources.json)
 - Metric CSV files:
-  - [`cycle-664-latency.csv`](evidence/cycle-664-latency.csv)
-  - [`cycle-664-throughput.csv`](evidence/cycle-664-throughput.csv)
-  - [`cycle-664-policy.csv`](evidence/cycle-664-policy.csv)
-  - [`cycle-664-cost.csv`](evidence/cycle-664-cost.csv)
+  - [`cycle-665-latency.csv`](evidence/cycle-665-latency.csv)
+  - [`cycle-665-throughput.csv`](evidence/cycle-665-throughput.csv)
+  - [`cycle-665-policy.csv`](evidence/cycle-665-policy.csv)
+  - [`cycle-665-cost.csv`](evidence/cycle-665-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-12.en.md`](daily-report-2026-11-12.en.md)
 - Daily report (ZH): [`daily-report-2026-11-12.md`](daily-report-2026-11-12.md)
-- One-page SVG: [`assets/34-cycle-664-daily-breakthroughs.svg`](assets/34-cycle-664-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-664.en.md`](docs/full-monograph-cycle-664.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-664.md`](docs/full-monograph-cycle-664.md)
-- Selection FAQ (EN, APIM PTU PAYG Overflow Budget Guardrail): [`agent-apim-ptu-payg-overflow-budget-guardrail-selection-faq.en.md`](agent-apim-ptu-payg-overflow-budget-guardrail-selection-faq.en.md)
-- Selection FAQ (ZH, APIM PTU PAYG Overflow Budget Guardrail): [`agent-apim-ptu-payg-overflow-budget-guardrail-selection-faq.md`](agent-apim-ptu-payg-overflow-budget-guardrail-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-665-daily-breakthroughs.svg`](assets/34-cycle-665-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-665.en.md`](docs/full-monograph-cycle-665.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-665.md`](docs/full-monograph-cycle-665.md)
+- Selection FAQ (EN, Cosmos DB Agent Memory Partition Split-Ahead Threshold): [`agent-cosmosdb-memory-partition-split-ahead-threshold-selection-faq.en.md`](agent-cosmosdb-memory-partition-split-ahead-threshold-selection-faq.en.md)
+- Selection FAQ (ZH, Cosmos DB Agent Memory Partition Split-Ahead Threshold): [`agent-cosmosdb-memory-partition-split-ahead-threshold-selection-faq.md`](agent-cosmosdb-memory-partition-split-ahead-threshold-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_664_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_664_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_665_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_665_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_664_pipeline.py`](simulator/cycle_664_pipeline.py)
+- Generator pipeline: [`simulator/cycle_665_pipeline.py`](simulator/cycle_665_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
