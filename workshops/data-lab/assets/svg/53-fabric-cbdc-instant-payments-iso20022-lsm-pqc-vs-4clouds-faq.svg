@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad53" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="50%" stop-color="#111A36"/>
+      <stop offset="100%" stop-color="#0A2429"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad53" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad53)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#6366F1" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad53)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 45 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.2" font-weight="800">央行 RTGS 实时清算 (920K EPS ISO-20022)、多边解死锁 LSM、跨境 PvP 与后量子密码选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">28 家一级清算行 + 4 条跨境走廊 · Eventhouse KQL (3ms) + Fabric Graph ISO GQL 93.6% 净额解死锁 &amp; SSD DiskANN 6,200万钱骡匹配 (4ms) + ALDO 主权清算边缘 · 14ms 闭环省 86.3% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario AZ · 223/224 (99.55%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">14ms · 省 86.3% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统大额清算与司库三大痛点 ($138.0K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 28 家清算行 $4.82B 环形排队死锁 (Liquidity Gridlock)</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 14:30 高峰 A 等 B、B 等 C 致 1,420 笔 ($4.82B) 卡死队列</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 传统关系库导出至外部图库耗时数分钟，无法毫秒级解环</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 被迫向央行高息拆借 $4.51B 日间透支额度，年损失数千万</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 跨境赫斯塔特 (Herstatt) 时差违约 &amp; 3秒钱骡洗钱</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 跨时区双币种非原子交割存在单边本金违约敞口</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 7x24 秒级快付中洗钱团伙 3 秒内拆单扇出至 64 个钱骡账户</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 传统 T+1 反洗钱批处理发现时赃款早已跨国提现出境</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 920K EPS ISO-20022 解析税与量子计算破译威胁</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• pacs.008 嵌套报文体积暴增 8 倍，按 GB 流写入月烧 $61K+</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 传统 RSA/ECC 签名面临“先截获后量子破解”主权安全威胁</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 急需迁移至 NIST FIPS 204 (ML-DSA-87) 晶格后量子签名</text>
+
+  <!-- Center Column: Fabric 14ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 实时 LSM + PvP + PQC 14ms 闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (3ms) · Eventhouse KQL 920K EPS ISO-20022 流解析</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税解析 pacs.008，捕获 28 行 1,420 笔 ($4.82B) 队列死锁</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 滑动窗口同步锁定 64 个高频扇出 (Fan-out &gt; 45) 跨境分散转账节点</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (4ms) · Fabric Graph ISO GQL 多边解死锁 &amp; DiskANN 匹配</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 零拷贝 CSR 图求解 1,380 笔有向闭环：仅用 $310M 净头寸结清 $4.82B (省93.6%)</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• SSD DiskANN 检索 6,200万条洗钱子图 (0.99 相似，省92%内存) 剥离 64 个钱骡</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (4ms) · Foundry IQ BIS CPMI 零透支与 NIST PQC 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-052：28 行轧差后备付金 100% &gt;= $0.00 + mBridge HTLC PvP 原子锁</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 100% 批交割指令通过 NIST FIPS 204 ML-DSA-87 晶格后量子混合签名核验</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (3ms) · ALDO 主权清算机房 HSM 原子交割与钱骡冻结</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 清算总长 Teams 联签 Confirm → ALDO HSM 原子结清 $4.82B 并冻结 64 钱骡</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 14ms 自愈 · 守护 $14.85M 日间拆借利息、外汇本金与反洗钱 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + Graph + DiskANN)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 920K EPS ISO-20022 解析 ($0/GB 写入税) + 4ms ISO GQL 冲销</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 6,200万钱骡子图 SSD DiskANN 检索 + Open Mirroring ($0)</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 主权清算室断网自治 + 1,950 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 宏观金融传染蒙特卡洛压力测试 → CycleCloud / AWS Batch</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 百亿边图神经网络 (GraphSAGE/GAT) 离线训练 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 传染风险矩阵与节点 Embedding 通过 OneLake 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁在多边冲销批次中包含任何导致单家银行备付金 &lt; $0 的交易</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁在无哈希时间锁 (HTLC) PvP 保护下跨时区单边放行大额外汇</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将待清算队列跨网络导出至外部图库导致错过分钟级交割窗口</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (28 家清算行 + 4 跨境走廊 · 920K EPS · 1,950 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + Graph + DiskANN + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $18,900/月 · 500人归一化: $8,500/月 ($0/GB 写入税 + 零拷贝 CSR 图 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 86.3% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 独立图数据库 + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $112,000/月 · 500人归一化: $50,400/月 (常驻 Streaming DBU + 独立图库 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (Kinesis + Neptune + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $138,000/月 · 500人归一化: $62,100/月 (分片/Flink KPU + 独立图实例 + 内存向量)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $14.85M 风险敞口保护拆解 (Scenario AZ 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• $310M 净头寸解开 $4.82B 死锁省拆借利息：$6.50M · 跨境 HTLC PvP 消除赫斯塔特违约：$4.60M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 4ms 拦截 64 个钱骡洗钱账户并完成 NIST FIPS 204 ML-DSA-87 抗量子签名校验：$3.75M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R45) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-13 R45)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=224 (DL-01..224) 均值 = 321.0 ms (223/224 = 99.55%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=52 (场景 A..AZ，范围 5–780ms) 均值 = 269.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario AZ 端到端延迟 = 14 ms (3ms 感知 + 4ms ISO GQL/DiskANN + 4ms CPMI/PQC 护栏 + 3ms 回写) · 108/108 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. ISO-20022 支付流直通：920K EPS pacs.008/camt.053 直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Fabric Graph 零拷贝 ISO GQL 环路引擎：待清算队列表启用 CSR 投影 (Tarjan 解环 &lt; 5ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos SSD DiskANN 6,200万钱骡库：合成身份与扇出洗钱子图建索引 (P99 &lt; 5ms)</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 主权清算室 ALDO 断网自治：部署 SQL Server on Azure Local 直连本地后量子 HSM</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. BIS CPMI 与 NIST PQC 护栏 (SOP-052)：轧差余额 &gt;= $0、跨境 HTLC PvP、FIPS 204 ML-DSA-87 验签</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (108/108) · reports/report.json</text>
+</svg>
