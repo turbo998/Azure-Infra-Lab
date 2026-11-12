@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-ptu-payg-overflow-circuit-breaker-violation saturation gate,172,184,0.9348,measured,apim-ptu-payg-overflow-circuit-breaker-fence mismatch replay + deterministic verification
+apim-ptu-payg-overflow-circuit-breaker-fence fence integrity guard,161,168,0.9583,measured,apim-ptu-payg-overflow-circuit-breaker-fence integrity logs
+tenant-scope apim-ptu-payg-overflow-circuit-breaker-fence authorization fence,154,161,0.9565,measured,tenant apim-ptu-payg-overflow-circuit-breaker-fence fairness replay logs
