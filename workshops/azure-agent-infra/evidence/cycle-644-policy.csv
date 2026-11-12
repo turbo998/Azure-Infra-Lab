@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+tool-timeout-tiering-violation saturation gate,172,184,0.9348,measured,tool-timeout-tiering-fence mismatch replay + deterministic verification
+tool-timeout-tiering-fence fence integrity guard,161,168,0.9583,measured,tool-timeout-tiering-fence integrity logs
+tenant-scope tool-timeout-tiering-fence authorization fence,154,161,0.9565,measured,tenant tool-timeout-tiering-fence fairness replay logs
