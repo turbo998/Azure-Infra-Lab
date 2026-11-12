@@ -3333,6 +3333,87 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse H3 + Cosmos DB SSD DiskANN + Digital Twin Builder + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_biopharma_cgmp_fabric_raman_cart_ebr_vs_4clouds":
+        # Scenario AV (2026-11-13 R41): Global Biopharma 16 cGMP Plants (2,400 Bioreactors) + 4,500 CAR-T Lots × 680K EPS Raman PAT, RTRT & CoI Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 1ms Raman/Cryo Sense + SSD DiskANN 2ms 42M Golden-Batch Match + OneLake eBR + ALDO Cleanroom Edge)
+        # vs Legacy Per-Tag Historian + 4h Offline HPLC + 28-Day Paper Release Stack ($55.9K/mo vs $8.1K/mo = -85.5% TCO)
+        return {
+            "scenario_id": "global_biopharma_cgmp_fabric_raman_cart_ebr_vs_4clouds",
+            "title": "Biopharma 16 cGMP Plants (2,400 Bioreactors) + 4,500 CAR-T Lots × 680K EPS In-Line Raman PAT, RTRT Release & CoI Loop (Fabric Eventhouse + SSD DiskANN + ALDO vs. AWS SiteWise / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-13T01:40:00Z",
+                "cgmp_biologics_plants_count": 16,
+                "single_use_2000l_bioreactors_count": 2400,
+                "active_autologous_cart_patient_lots": 4500,
+                "raman_pat_cryo_ingestion_eps": 680000,
+                "per_tag_or_gb_write_surcharge_usd": 0,
+                "golden_batch_raman_spectra_indexed_count": 42000000,
+                "bioreactor_glucose_dip_g_l": 0.82,
+                "peristaltic_glucose_bolus_trim_ml_min": 14.5,
+                "post_trim_man5_glycoform_pct": 3.8,
+                "cart_cryo_shipper_temp_c": -178.0,
+                "eventhouse_kql_raman_cryo_sense_ms": 1,
+                "fabric_iq_diskann_42m_raman_ebr_graph_ms": 2,
+                "foundry_iq_ich_q8_coi_part11_gate_ms": 2,
+                "msat_qp_teams_aldo_pump_rtrt_commit_ms": 2,
+                "legacy_historian_hplc_paper_ebr_monthly_tco_usd": 55900,
+                "fabric_eventhouse_diskann_aldo_monthly_tco_usd": 8100,
+            },
+            "ontology_graph_traversal": {
+                "root_entity": "GlobalBiopharma-16Plants-2400Bioreactors-4500CART-680KEPS-2026Q4",
+                "hops": 6,
+                "affected_entities": [
+                    "EventhouseRaman_Cryo: 680K-EPS-Bioreactor-B09 (1125cm-1 Glucose 0.82g/L) & #LN2-Cryo-774 (-178C)",
+                    "CosmosDiskANN_42M_Raman: Golden-Batch-Match (0.99 Sim -> +14.5 mL/min Glucose Bolus Trim)",
+                    "GlycosylationShield: Restore-Glucose-2.50g/L & Keep-Man5-at-3.8Pct (Save $4.2M 2,000L mAb Batch)",
+                    "CART_VeinToVein_CoI: Verify-ISBT128-CoI-DIN-994821 & Dispatch-JFK-LN2-Recharge (< -150C Tg)",
+                    "ALDO-PASX-SAP-QM: Cleanroom-DeltaV-Trim-21CFR-Part11-RTRT-Release (28d -> 4h)",
+                ],
+                "root_cause": "Day-8 exponential CHO cell growth in Basel Bioreactor-2000L-B09 depleted glucose to 0.82 g/L (detected at 1125 cm-1 Raman wavenumber 240 minutes before offline HPLC), threatening a +6.8% High-Mannose Man5 excursion on a $4.20M bispecific mAb batch while Boston-bound CAR-T shipper #LN2-Cryo-774 warmed to -178C",
+            },
+            "multi_agent_plan": {
+                "monitored_bioreactors": 2400,
+                "monitored_cart_lots": 4500,
+                "monthly_biopharma_cgmp_tco_saved_usd": 47800,
+                "biopharma_cgmp_tco_savings_pct": 85.5,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 680K EPS In-Line Raman PAT & Cryo-Shipper Engine",
+                        "operation": "Ingest 680,000 EPS of 1,400-channel Raman spectra and cryo telemetry at $0/GB write tax, isolating B09 glucose depletion (0.82 g/L) and #LN2-Cryo-774 warming (-178C) in 1ms",
+                        "impact_metric": "Detects glycosylation drift precursor 240 minutes faster than 4-hour offline lab HPLC",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ 6-Hop PAS-X eBR Graph, Cosmos SSD DiskANN & Foundry IQ Gate",
+                        "operation": "Match 42M Golden-Batch Raman spectra in SSD DiskANN (0.99 sim -> +14.5 mL/min bolus), verify CoI-DIN-994821 & align PAS-X/LIMS eBR in 2ms; verify ICH Q8 space & 21 CFR Part 11 in Foundry IQ (2ms)",
+                        "impact_metric": "Locks Man5 at 3.8% (<5.0% spec) and compresses QA batch release from 28 days to 4 hours",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "MSAT & QP Teams Card & ALDO Cleanroom Feed Pump + SAP QM RTRT Commit",
+                        "operation": "Co-sign in Teams with 21 CFR Part 11 e-signatures to trim DeltaV pump via ALDO edge, dispatch JFK LN2 van, and release batch in SAP QM & 1GB Free Fabric SQL (2ms)",
+                        "impact_metric": "7ms E2E Biopharma Raman PAT, RTRT & CAR-T CoI loop; -$47,800/mo (-85.5%) TCO; $13.45M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "BIOPHARMA-CGMP-RAMAN-CART-EBR-SOP-048",
+                "hard_constraint": "Never adjust bioreactor nutrient feed rates outside the regulatory-approved ICH Q8 Multivariate Design Space (osmolality 280-320 mOsm/kg), never infuse autologous CAR-T therapies without a 100% 4-point ISBT 128 / DIN Chain-of-Identity (CoI) match and unbroken cryo log < -150C Tg, and require dual FDA 21 CFR Part 11 / EU Annex 11 e-signatures",
+                "proposed_change": "Trim Bioreactor-B09 glucose feed +14.5 mL/min (osmolality 298 mOsm/kg inside ICH Q8 space, Man5 = 3.8%), recharge #LN2-Cryo-774 at -178C with verified CoI-DIN-994821, and issue dual-signed RTRT release",
+                "ich_q8_design_space_and_part11_verified": True,
+                "cart_vein_to_vein_coi_and_cryo_tg_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 13450000,
+                "end_to_end_latency_ms": 7,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN + Werum PAS-X MES + SQL on Azure Local (ALDO) + SAP S/4HANA QM + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -5785,6 +5866,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 98,
     },
+    {
+        "id": "DL-205",
+        "category": "Real-Time Intelligence",
+        "question": "Biopharma CDMO with 2,400 single-use 2,000L bioreactors and 4,500 CAR-T lots must ingest 680K EPS of 1,400-channel In-Line Raman PAT spectra, match 42M Golden-Batch trajectories in <5ms, and execute Review-by-Exception RTRT release",
+        "expected": "Microsoft Fabric Eventhouse KQL 1ms Raman/Cryo Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 2ms 42M Golden-Batch Match (-92% RAM) + OneLake PAS-X/LIMS eBR + ALDO Cleanroom Edge (7ms E2E, -85.5% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL 1ms Raman/Cryo Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 2ms 42M Golden-Batch Match (-92% RAM) + OneLake PAS-X/LIMS eBR + ALDO Cleanroom Edge (7ms E2E, -85.5% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 84,
+    },
+    {
+        "id": "DL-206",
+        "category": "vs Databricks",
+        "question": "Biologics discovery team needs multi-node GPU AlphaFold3 / ESM-3 de-novo antibody structure folding alongside secondary FASTQ->VCF genomic alignment",
+        "expected": "Route de-novo protein folding to Databricks GPU / Azure CycleCloud and FASTQ->VCF alignment to AWS HealthOmics, mounting candidate antibody sequences and ONNX chemometric soft-sensors into Fabric OneLake via Zero-Copy Shortcuts",
+        "model_answer": "Route de-novo protein folding to Databricks GPU / Azure CycleCloud and FASTQ->VCF alignment to AWS HealthOmics, mounting candidate antibody sequences and ONNX chemometric soft-sensors into Fabric OneLake via Zero-Copy Shortcuts",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 88,
+    },
+    {
+        "id": "DL-207",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + SSD DiskANN + OneLake eBR + ALDO vs per-tag pharma historians & 28-day manual paper batch release across 16 cGMP plants with 1,650 MSAT scientists and QPs",
+        "expected": "Hybrid Better Together: Stream OPC-UA Raman PAT into Eventhouse ($0/GB tax), index 42M Golden-Batch spectra in SSD DiskANN (-92% RAM), unify PAS-X/LIMS/SAP QM for 4-hour RTRT release, and serve 1,650 users via DirectLake (-85.5% TCO)",
+        "model_answer": "Hybrid Better Together: Stream OPC-UA Raman PAT into Eventhouse ($0/GB tax), index 42M Golden-Batch spectra in SSD DiskANN (-92% RAM), unify PAS-X/LIMS/SAP QM for 4-hour RTRT release, and serve 1,650 users via DirectLake (-85.5% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 84,
+    },
+    {
+        "id": "DL-208",
+        "category": "Fabric IQ & Ontology",
+        "question": "Basel Bioreactor-2000L-B09 Raman 1125cm-1 peak detects glucose depletion to 0.82 g/L on a $4.2M mAb batch while Boston CAR-T shipper #LN2-Cryo-774 warms to -178C",
+        "expected": "Eventhouse Raman & Cryo Sense (1ms, $0/GB Tax) + 6-Hop 42M Golden-Batch DiskANN Match (+14.5 mL/min Feed & CoI-DIN-994821, 2ms) + Foundry IQ ICH Q8 & Part 11 Gate (2ms) + Teams ALDO Pump & 4h RTRT Commit (2ms = 7ms E2E, Protect $13.45M SLA)",
+        "model_answer": "Eventhouse Raman & Cryo Sense (1ms, $0/GB Tax) + 6-Hop 42M Golden-Batch DiskANN Match (+14.5 mL/min Feed & CoI-DIN-994821, 2ms) + Foundry IQ ICH Q8 & Part 11 Gate (2ms) + Teams ALDO Pump & 4h RTRT Commit (2ms = 7ms E2E, Protect $13.45M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 88,
+    },
 ]
 
 
@@ -5947,6 +6076,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     energy_osdu_sim = simulate_ontology_incident("global_energy_oil_gas_osdu_witsml_lng_methane_ccus_vs_4clouds")
     battery_bess_sim = simulate_ontology_incident("global_battery_bess_fabric_formation_eis_passport_vs_4clouds")
     leo_sat_sim = simulate_ontology_incident("global_leo_satellite_fabric_oisl_debris_beam_hopping_vs_4clouds")
+    biopharma_cgmp_sim = simulate_ontology_incident("global_biopharma_cgmp_fabric_raman_cart_ebr_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -5998,6 +6128,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_energy_oil_gas_osdu_witsml_lng_methane_ccus_vs_4clouds": energy_osdu_sim,
         "global_battery_bess_fabric_formation_eis_passport_vs_4clouds": battery_bess_sim,
         "global_leo_satellite_fabric_oisl_debris_beam_hopping_vs_4clouds": leo_sat_sim,
+        "global_biopharma_cgmp_fabric_raman_cart_ebr_vs_4clouds": biopharma_cgmp_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -6075,6 +6206,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r38_ontology_sim_mean_ms = round(sum(r38_sim_latencies) / len(r38_sim_latencies), 2)
     r39_sim_latencies = sim_latencies[:46]
     r39_ontology_sim_mean_ms = round(sum(r39_sim_latencies) / len(r39_sim_latencies), 2)
+    r40_sim_latencies = sim_latencies[:47]
+    r40_ontology_sim_mean_ms = round(sum(r40_sim_latencies) / len(r40_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -6613,11 +6746,23 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-12",
         },
+        {
+            "id": "SPEC-FABRIC-BIOPHARMA-CGMP-RAMAN-CART-EBR",
+            "vendor": "Microsoft / AWS / Databricks / Snowflake / Google Cloud",
+            "claim": "Microsoft Fabric Eventhouse KQL (`series_outliers`), Cosmos DB in Fabric SSD DiskANN vector indexing, OneLake Shortcuts, and SQL Server on Azure Local (ALDO) unify biopharma cGMP In-Line Raman PAT spectroscopy, mAb Real-Time Release Testing (RTRT), and autologous CAR-T Vein-to-Vein Chain of Identity (CoI); AWS provides IoT SiteWise & HealthOmics; Databricks provides HLS Lakehouse; Snowflake provides Healthcare & Life Sciences Data Cloud.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-outliers-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/healthcare-and-life-sciences",
+            ],
+            "as_of": "2026-11-12",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-13-r40",
-        "generated_at": "2026-11-13T01:10:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-13-r41",
+        "generated_at": "2026-11-13T01:45:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -6628,6 +6773,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R40 snapshot n=204 mean was 346.0ms; "
                     f"historical R39 snapshot n=200 mean was 351.0ms; "
                     f"historical R38 snapshot n=196 mean was 356.0ms; "
                     f"historical R37 snapshot n=192 mean was 361.0ms; "
@@ -6673,6 +6819,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R40 snapshot n=47 mean was {r40_ontology_sim_mean_ms}ms; "
                     f"historical R39 snapshot n=46 mean was {r39_ontology_sim_mean_ms}ms; "
                     f"historical R38 snapshot n=45 mean was {r38_ontology_sim_mean_ms}ms; "
                     f"historical R37 snapshot n=44 mean was {r37_ontology_sim_mean_ms}ms; "
@@ -6711,6 +6858,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r40_historical_denominators": {
+                    "r40_routing_matrix_n204_mean_ms": 346.0,
+                    "r40_ontology_simulations_n47_mean_ms": r40_ontology_sim_mean_ms,
+                },
                 "r39_historical_denominators": {
                     "r39_routing_matrix_n200_mean_ms": 351.0,
                     "r39_ontology_simulations_n46_mean_ms": r39_ontology_sim_mean_ms,
@@ -6925,6 +7076,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r40_47_simulation_mean_modeled_latency_ms": r40_ontology_sim_mean_ms,
             "r39_46_simulation_mean_modeled_latency_ms": r39_ontology_sim_mean_ms,
             "r38_45_simulation_mean_modeled_latency_ms": r38_ontology_sim_mean_ms,
             "r37_44_simulation_mean_modeled_latency_ms": r37_ontology_sim_mean_ms,

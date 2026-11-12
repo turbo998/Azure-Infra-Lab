@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad49" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060B19"/>
+      <stop offset="50%" stop-color="#0C192E"/>
+      <stop offset="100%" stop-color="#072227"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad49" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad49)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#14B8A6" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad49)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 41 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.5" font-weight="800">生物医药 cGMP 反应器拉曼 PAT (680K EPS)、单抗实时放行 RTRT 与 CAR-T 身份链选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">16 座 cGMP 基地 (2,400 台反应器) + 4,500 例 CAR-T · Eventhouse 680K EPS (1ms) + SSD DiskANN 4,200万黄金光谱匹配 (2ms) + ALDO 洁净室边缘 · 7ms 闭环省 85.5% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario AV · 207/208 (99.52%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">7ms · 省 85.5% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统生物制药与细胞治疗三大痛点 ($122.1K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 2,000L 反应器离线 HPLC 抽检滞后 4h 与按测点天价税</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 葡萄糖耗竭诱发高甘露糖 Man5 糖基化漂移，等 4h 化验已晚</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 1,400 波数通道在线拉曼光谱 (680K EPS) 按 Tag 计费月烧 $74K+</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单罐 2,000L 商业化双抗药液报废直接损失 $4.2M–$5.0M</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② QA 质检放行跨 4 套孤岛人工核对耗时 28 天</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• DeltaV DCS、PAS-X MES、LabWare LIMS 与 SAP QM 数据割裂</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 质量受权人 (QP) 需人工核对上千页批记录才敢签字放行</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 成品药在冷库积压 28 天，严重拖慢救命药上市与资金周转</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 自体 CAR-T 静脉到静脉身份链 (CoI) 与 -196°C 断链风险</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• “一人一批”自体细胞一旦在医院/MES/物流间混淆回输即致命</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 干式液氮罐若升温越过 -150°C 玻璃化转变温度 (Tg) 细胞即失活</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 缺乏端到端毫秒级液氮蒸发斜率预警与 ISBT 128 四重校验</text>
+
+  <!-- Center Column: Fabric 7ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric cGMP 智能制造 7ms 闭环架构</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (1ms) · Eventhouse KQL 680K EPS 在线拉曼与液氮感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税解耦 B09 反应器 1125cm-1 拉曼峰，捕获葡萄糖跌至 0.82g/L</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 早于离线 HPLC 240 分钟预警，同时捕获波士顿 CAR-T 罐 #LN2-774 升至 -178°C</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (2ms) · SSD DiskANN 4,200万黄金光谱匹配与 eBR 穿透</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 1,400维拉曼导数光谱匹配历史黄金批次 (0.99 相似，省92%内存)，算出 +14.5 mL/min 补糖</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 将 Man5 压回 3.8% (&lt;5.0%) + 调度 JFK 机场液氮补给车 + 穿透 PAS-X/LIMS 批记录</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (2ms) · Foundry IQ ICH Q8 设计空间与 21 CFR Part 11 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-048：补糖后渗透压 298 mOsm/kg 处于 ICH Q8 批准设计空间 (280–320)</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 核验 CoI-DIN-994821 四重签名 100% 匹配且液氮罐温度从未高于 -150°C 红线</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (2ms) · ALDO 洁净室补糖微调 + QP 4小时 RTRT 实时放行</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• MSAT 与质量受权人 (QP) Teams 双签 Confirm → ALDO 调泵并签发 SAP QM 放行</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 7ms 自愈 (放行 28天→4h) · 守护 $13.45M 单抗保批与 CAR-T 救命 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + ALDO)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 680K EPS 1,400波数在线拉曼 PAT + 液氮冷链 ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 4,200万黄金光谱 SSD DiskANN 检索 + PAS-X/LIMS 零拷贝 RTRT</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 无菌洁净室断网自治 + 1,650 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：Databricks GPU + HealthOmics</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• AlphaFold3 / ESM-3 从头抗体蛋白质设计 → Databricks GPU</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 原始测序 FASTQ→VCF 二级拼接 → AWS HealthOmics / CycleCloud</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 候选抗体序列与 PLS/ONNX 软测量模型通过 OneLake 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁将 1,400 波数通道高频拉曼流塞入按属性计费的 SiteWise</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁越过 ICH Q8 批准设计空间下发未经验证的反应器设定值</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁在缺少 FDA 21 CFR Part 11 双人电子签名下自动放行批次</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (16 座 cGMP 基地 + 4,500 例 CAR-T · 680K EPS · 1,650 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + OneLake eBR + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $17,700/月 · 500人归一化: $8,100/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 85.5% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方制药 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $98,800/月 · 500人归一化: $45,200/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $122,100/月 · 500人归一化: $55,900/月 (按 1,400 波数属性与流量计费 + 内存向量 + BI)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $13.45M 风险敞口保护拆解 (Scenario AV 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 挽救 2,000L 商业化双抗免于 Man5 糖基化报废：$6.80M · 守护 CAR-T 自体细胞零失活与 CoI 零差错：$3.95M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 将 QA 批次放行从 28 天压缩至 4 小时 (RTRT 例外审核) 释放营运资金并防缺货罚单：$2.70M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R41) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-13 R41)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=208 (DL-01..208) 均值 = 341.0 ms (207/208 = 99.52%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=48 (场景 A..AV，范围 5–780ms) 均值 = 289.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario AV 端到端延迟 = 7 ms (1ms 感知 + 2ms DiskANN/eBR + 2ms ICHQ8/Part11 护栏 + 2ms 回写) · 100/100 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 在线拉曼 PAT 与液氮流直通：1,400 波数光谱与冷链遥测直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 4,200万黄金光谱库：一阶/二阶导数光谱建索引，P99 检索 &lt; 5ms</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. PAS-X MES + LIMS + SAP QM 零拷贝本体：通过 OneLake Shortcut 构建支持例外审核的 RTRT 视图</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 无菌洁净室 ALDO 断网自治：部署 SQL Server on Azure Local 保障外网维护时本地蠕动泵闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. ICH Q8、CAR-T CoI 与 21 CFR Part 11 护栏 (SOP-048)：设计空间内调参，DIN 四重校验且温度 &lt; -150°C</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (100/100) · reports/report.json</text>
+</svg>
