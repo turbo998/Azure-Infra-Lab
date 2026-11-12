@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+mcp-output-stream-backpressure-violation saturation gate,172,184,0.9348,measured,mcp-output-stream-backpressure-fence mismatch replay + deterministic verification
+mcp-output-stream-backpressure-fence fence integrity guard,161,168,0.9583,measured,mcp-output-stream-backpressure-fence integrity logs
+tenant-scope mcp-output-stream-backpressure-fence authorization fence,154,161,0.9565,measured,tenant mcp-output-stream-backpressure-fence fairness replay logs
