@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad54" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04181C"/>
+      <stop offset="50%" stop-color="#0B2434"/>
+      <stop offset="100%" stop-color="#08281E"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad54" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad54)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad54)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 46 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.2" font-weight="800">绿氢 20 GW 电解槽 (760K EPS 防氧中氢爆炸)、柔性合成氨与欧盟 RFNBO 绿电溯源选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">12 座风光氢氨基地 (4,800 台电解槽 + 24 套合成氨) · Eventhouse KQL (14ms) + SSD DiskANN 5,000万极化/热力学匹配 (15ms) + SDS RFNBO 账本 + ALDO 边缘 · 57ms 闭环省 86.5% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BA · 227/228 (99.56%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">57ms · 省 86.5% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统风光氢氨一体化三大致命痛点 ($142.2K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 风光骤降致低负荷电解槽“氧中氢 (HTO)”穿膜爆轰</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 云团遮挡致风光 8 分钟暴跌 -62%，电解槽落入 &lt;20% 低电流区</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 氢气透过隔膜串入氧气侧逼近 1.60% vol 联锁线 (4.0% 爆炸下限)</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单台槽体穿膜爆炸或全厂 SIS 紧急泄压停机直接损失 $5.80M</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 上游波动制氢撞击下游刚性哈伯法 (Haber-Bosch) 合成氨</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 450°C / 200bar 合成氨塔进气骤降导致床层温降超过 15°C/h</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 价值 $5.20M 的铁基/钌基催化剂因剧烈热应力粉化永久报废</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 4,800 台槽百万小室电压测点按 Tag 收费月烧 $62,800+</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 欧盟 RFNBO 与美国 45V ($3/kg) 逐小时绿电审计作废</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 法规强制要求每小时制氢电量 100% 匹配同小时直连绿电 PPA</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 为保化工负荷误买高碳网电 (680 gCO2/kWh) 致整批绿氨失格</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 丧失欧盟 RFNBO 免关税溢价与美国 $3.00/kgH2 顶格补贴</text>
+
+  <!-- Center Column: Fabric 57ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 风-氢-储-氨-碳 57ms 自愈闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (14ms) · Eventhouse KQL 760K EPS 氧中氢 HTO 与风光感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税捕获 1.8GW 风光骤降 -62% 与 140 台槽 HTO 升至 1.48% vol</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 实时锁定外部电网碳强度飙升至 680 gCO2e/kWh 并触发网电零买入锁</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (15ms) · SSD DiskANN 5,000万极化/热力学匹配与球罐缓冲</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 5,000万条极化与变负荷轨迹 (0.99 相似，省92%内存)：140 槽切热待机</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 其余槽稳在 65% 安全区 + 球罐补气 +18,500 Nm³/h + 氨塔平滑降至 72% 负荷</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (14ms) · Foundry IQ ISO 22734 防爆与欧盟 RFNBO 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-053：HTO 压回 0.42% &lt; 1.60% 红线 + 氨塔温降 6.8°C/h &lt; 12.0°C/h</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认高碳网电下网 = 0.00 MWh，批次碳足迹锁定 0.38 kgCO2e/kgH2 合规</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (14ms) · ALDO 戈壁边缘 IGBT 轮休、球罐补气与绿氢签证</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 基地总调 Teams 联签 Confirm → ALDO 下发 ABB 整流器与 PCS7 球罐/氨塔指令</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 57ms 自愈 · 守护 $15.20M 电解槽防爆、合成氨催化剂与 RFNBO/45V 补贴</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + SDS)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 760K EPS 小室电压与 HTO 防爆 ($0/GB 写入税) + 氢氨孪生</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 5,000万极化/热力学 SSD DiskANN + SDS 逐小时 RFNBO 账本</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 戈壁基地断网自治 + 1,850 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 铱催化剂量子化学 DFT 与双相流流场 CFD → CycleCloud / AWS</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 72 小时风光气象大模型 (GraphCast/盘古) 微调 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 极化曲线与风光预测曲线通过 OneLake Shortcut 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁让全站电解槽同时在 &lt;20% 低负荷区长跑导致氧中氢爆轰</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁在无球罐补气缓冲下直接猛降哈伯合成氨塔进气 (&gt;12°C/h)</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁在绿氢认证批次内买入非直连高碳网电破坏逐小时合规</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (12 座氢氨基地 · 4,800 电解槽 · 760K EPS · 1,850 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + SDS + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $19,200/月 · 500人归一化: $8,600/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 86.5% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方化工 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $115,000/月 · 500人归一化: $51,500/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $142,200/月 · 500人归一化: $63,700/月 (按属性/分片计费 + 内存向量 + 碳软件)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $15.20M 风险敞口保护拆解 (Scenario BA 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 140 台槽切热待机将 HTO 压回 0.42% 防穿膜爆炸：$5.80M · 球罐补气护住合成氨催化剂：$5.20M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 0.00MWh 网电混入保住欧盟 RFNBO 绿氨溢价与美国 45V $3.00/kg 补贴：$4.20M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R46) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-13 R46)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=228 (DL-01..228) 均值 = 316.0 ms (227/228 = 99.56%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=53 (场景 A..BA，范围 5–780ms) 均值 = 265.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario BA 端到端延迟 = 57 ms (14ms 感知 + 15ms DiskANN/孪生 + 14ms ISO22734/RFNBO 护栏 + 14ms 回写) · 110/110 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 小室电压与氧中氢流直通：760K EPS 遥测直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 5,000万极化/热力学库：极化曲线与哈伯塔变负荷建索引 (P99 &lt; 15ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 风-氢-储-氨动态平衡本体：在 Digital Twin Builder 关联风机 PPA、IGBT、球罐与合成氨塔</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 戈壁基地 ALDO 断网自治：部署 SQL Server on Azure Local 保障沙尘暴断网期本地闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. ISO 22734 与欧盟 RFNBO 护栏 (SOP-053)：氧中氢 &lt; 1.60% vol，氨塔温降 &lt; 12°C/h，0 网电</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (110/110) · reports/report.json</text>
+</svg>
