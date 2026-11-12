@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook（精简版）
 
 > 🌐 **Language / 语言切换**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
-> 🔎 **Cycle #873 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-873.html](workbench-cycle-873.html) · [daily-report-2026-11-12.md](daily-report-2026-11-12.md)
+> 🔎 **Cycle #874 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-874.html](workbench-cycle-874.html) · [daily-report-2026-11-12.md](daily-report-2026-11-12.md)
 
 ---
 
-## 一、Cycle #873 发布摘要（2026-11-12）
+## 一、Cycle #874 发布摘要（2026-11-12）
 
 - **主题**：云原生 Agent Infra（Runtime/Sandbox、AI Gateway、MCP/A2A 编排与可观测）
 - **当日证据口径**：2026 官方文档 / changelog / release notes 优先
@@ -26,21 +26,21 @@
 | 双轨仿真 Demo | AKSClaw × E2B | [`demo.html`](demo.html) |
 | 选型与容量测算 | 决策树 + 10 万沙箱估算 | [`selector.html`](selector.html) |
 | 历史 7-card 卡组 | 既有可视化入口 | [`cards.html`](cards.html) |
-| **Cycle #873 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #873 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #873 工作台** | 新增交互实验台 | [`workbench-cycle-873.html`](workbench-cycle-873.html) |
+| **Cycle #874 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #874 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #874 工作台** | 新增交互实验台 | [`workbench-cycle-874.html`](workbench-cycle-874.html) |
 
 ---
 
 ## 三、可复现实验与证据
 
-- 基准主文件：[`evidence/cycle-873-benchmark.json`](evidence/cycle-873-benchmark.json)
-- 来源台账：[`evidence/cycle-873-sources.json`](evidence/cycle-873-sources.json)
+- 基准主文件：[`evidence/cycle-874-benchmark.json`](evidence/cycle-874-benchmark.json)
+- 来源台账：[`evidence/cycle-874-sources.json`](evidence/cycle-874-sources.json)
 - 指标 CSV：
-  - [`cycle-873-latency.csv`](evidence/cycle-873-latency.csv)
-  - [`cycle-873-throughput.csv`](evidence/cycle-873-throughput.csv)
-  - [`cycle-873-policy.csv`](evidence/cycle-873-policy.csv)
-  - [`cycle-873-cost.csv`](evidence/cycle-873-cost.csv)
+  - [`cycle-874-latency.csv`](evidence/cycle-874-latency.csv)
+  - [`cycle-874-throughput.csv`](evidence/cycle-874-throughput.csv)
+  - [`cycle-874-policy.csv`](evidence/cycle-874-policy.csv)
+  - [`cycle-874-cost.csv`](evidence/cycle-874-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - 日报（中文）：[`daily-report-2026-11-12.md`](daily-report-2026-11-12.md)
 - 日报（英文）：[`daily-report-2026-11-12.en.md`](daily-report-2026-11-12.en.md)
-- 一图流 SVG：[`assets/34-cycle-873-daily-breakthroughs.svg`](assets/34-cycle-873-daily-breakthroughs.svg)
-- 专著增补（中文）：[`docs/full-monograph-cycle-873.md`](docs/full-monograph-cycle-873.md)
-- 专著增补（英文）：[`docs/full-monograph-cycle-873.en.md`](docs/full-monograph-cycle-873.en.md)
-- 选型 FAQ（中文）：[`agent-entra-obo-claims-footprint-auto-cycle-873-selection-faq.md`](agent-entra-obo-claims-footprint-auto-cycle-873-selection-faq.md)
-- 选型 FAQ（英文）：[`agent-entra-obo-claims-footprint-auto-cycle-873-selection-faq.en.md`](agent-entra-obo-claims-footprint-auto-cycle-873-selection-faq.en.md)
+- 一图流 SVG：[`assets/34-cycle-874-daily-breakthroughs.svg`](assets/34-cycle-874-daily-breakthroughs.svg)
+- 专著增补（中文）：[`docs/full-monograph-cycle-874.md`](docs/full-monograph-cycle-874.md)
+- 专著增补（英文）：[`docs/full-monograph-cycle-874.en.md`](docs/full-monograph-cycle-874.en.md)
+- 选型 FAQ（中文）：[`agent-aca-session-pool-coldstart-burst-auto-cycle-874-selection-faq.md`](agent-aca-session-pool-coldstart-burst-auto-cycle-874-selection-faq.md)
+- 选型 FAQ（英文）：[`agent-aca-session-pool-coldstart-burst-auto-cycle-874-selection-faq.en.md`](agent-aca-session-pool-coldstart-burst-auto-cycle-874-selection-faq.en.md)
 - 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 - 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 
@@ -61,8 +61,8 @@
 ## 五、验证命令（发布门禁）
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_873_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_873_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_874_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_874_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 六、实现与运行脚本
 
-- 生成管线：[`simulator/cycle_873_pipeline.py`](simulator/cycle_873_pipeline.py)
+- 生成管线：[`simulator/cycle_874_pipeline.py`](simulator/cycle_874_pipeline.py)
 - 运行时测算器：[`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - 测试集：[`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - 现场执行手册：[`workshop-runbook.md`](workshop-runbook.md)
