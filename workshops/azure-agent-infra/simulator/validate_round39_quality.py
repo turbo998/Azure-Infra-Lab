@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = ROOT.parents[1]
 MANIFEST = Path(
-    r"C:\Users\qichen2\.copilot\session-state\587de17e-18a2-4ad2-a03e-5539fad5dab5\files\nightly-deliverables-2026-11-08.json"
+    r"C:\Users\user\.copilot\session-state\587de17e-18a2-4ad2-a03e-5539fad5dab5\files\nightly-deliverables-2026-11-08.json"
 )
 
 FAQ_CONTRACTS = {
