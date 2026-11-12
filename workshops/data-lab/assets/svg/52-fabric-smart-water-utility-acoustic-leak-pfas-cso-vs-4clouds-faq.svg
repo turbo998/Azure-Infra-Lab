@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad52" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#051329"/>
+      <stop offset="50%" stop-color="#0A2239"/>
+      <stop offset="100%" stop-color="#06282D"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad52" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad52)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad52)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 44 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.5" font-weight="800">智慧水务与地下生命线 (68,000km 管网 640K EPS 声学检漏)、EPA PFAS 与暴雨 CSO 选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">3,200 个 DMA 管网 + 48 座水厂 · Eventhouse KQL TDOA 互相关 (6ms, ±0.8m 定漏) + SSD DiskANN 4,600万声纹/水力匹配 (6ms) + ALDO 水厂边缘 · 24ms 闭环省 86.1% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario AY · 219/220 (99.55%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">24ms · 省 86.1% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统水务源-厂-网-河三大痛点 ($133.8K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 暗漏拖成 DN1200 主干管水锤爆管塌陷 &amp; 24% 产销差</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 15分钟 SCADA 轮询抓不到 465Hz 暗漏声波与 1,200m/s 水锤波</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 夜间泵阀启停引发 +4.8bar 水锤冲击暗漏点导致主干道塌陷</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单次主干管爆管抢修与停水索赔超 $3.80M，年漏损数千万吨</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 3,200 个 DMA 640K EPS 水听器与瞬变压力按点天价税</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 10kHz 水听器、200Hz 瞬变压力与水质测点按 Tag 月烧 $62K+</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 离线 EPANET 水力模拟需 15 分钟，来不及在线实时削峰抑制水锤</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 路面地铁/重车震动噪声导致传统阈值告警误报率高达 40%+</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ EPA PFAS &lt;4.0 ppt 饮用水新规与暴雨 CSO 污水溢流</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 原水 PFOA 突升至 6.8 ppt 时未及时切换再生活性炭塔致出厂超标</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 特大暴雨期深隧截流堰与泵站脱节导致雨污混合水直排河道</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单次违反 EPA 饮用水与 CSO 零溢流法令面临 $4.5M+ 重罚</text>
+
+  <!-- Center Column: Fabric 24ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 源-厂-网-河 24ms 自愈闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (6ms) · Eventhouse KQL 640K EPS 双水听器 TDOA 互相关</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税由 Δt=14.2ms 算得 DMA-108 暗漏距上游 184.2m (±0.8m)</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 同步捕获 +4.8bar 关阀水锤浪涌、二水厂 PFOA 6.8ppt 与深隧 91% 液位</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (6ms) · SSD DiskANN 4,600万声纹/EPANET 匹配与三联调度</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 4,600万条爆管声谱与水力方案 (0.99 相似，省92%内存)，确认胶圈微裂</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• PRV-108A 柔性降压 -1.4bar + 切再生炭塔 GAC-04 + 升起 CSO 充气堰蓄水 4.2万m³</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (6ms) · Foundry IQ EPA SDWA 防倒流与 PFAS 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-051：降压后儿童医院高点余压 34.2 psi &gt;= 20.0 psi 防负压倒流红线</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认切换活性炭塔后出厂 PFOA 降至 0.8 ppt &lt; 4.0 ppt 且河道 CSO 溢流 = 0 m³</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (6ms) · ALDO 水厂/泵站边缘调压、切塔与 SAP 听音开挖</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 水务总调度长 Teams 联签 Confirm → ALDO 下发 PRV、GAC 与 CSO 充气堰指令</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 24ms 自愈 · 守护 $14.50M 防爆管塌陷、降 NRW 漏损与 EPA 合规 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 640K EPS 水听器 TDOA 定漏 + 水锤抑制 ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 4,600万声纹/EPANET 瞬变 SSD DiskANN + 3,200-DMA 孪生</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 水厂/地下泵房断网自治 + 1,800 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 全城三维台风浅水方程 (2D/3D CFD) 内涝模拟 → CycleCloud / AWS</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 排水管网 CCTV 爬行机器人裂缝/树根 CV 训练 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 淹没风险栅格与 ONNX 缺陷模型通过 OneLake 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁在调低减压阀 PRV 时使管网高点余压跌破 20.0 psi (防负压倒流)</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁依赖 60s 批处理表捕捉 1,200 m/s 传播的儒可夫斯基水锤波</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将国家关键基础设施 (CII) 水厂联锁完全暴露于公网云端</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (68,000km 管网 · 3,200 个 DMA · 640K EPS · 1,800 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + Twin + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $18,600/月 · 500人归一化: $8,400/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 86.1% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方水务 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $108,000/月 · 500人归一化: $48,800/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $133,800/月 · 500人归一化: $60,400/月 (按属性/分片计费 + 内存向量 + BI 席位)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $14.50M 风险敞口保护拆解 (Scenario AY 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 提前 6h 拦截 DN1200 主干管爆管塌陷：$6.40M · 全网调压降低产销差 NRW 节水 4,200万吨：$3.60M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 切换再生炭塔将 PFOA 压至 0.8ppt (&lt;4.0ppt) 并深隧蓄水 4.2万m³ 规避 EPA 罚单：$4.50M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R44) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-13 R44)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=220 (DL-01..220) 均值 = 326.0 ms (219/220 = 99.55%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=51 (场景 A..AY，范围 5–780ms) 均值 = 274.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario AY 端到端延迟 = 24 ms (6ms 感知 + 6ms DiskANN/DMA + 6ms EPA SDWA 护栏 + 6ms 回写) · 106/106 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 水听器与瞬变压力流直通：640K EPS 遥测直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 4,600万声纹/水力库：暗漏声谱与 EPANET 瞬变建索引 (P99 &lt; 10ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 3,200-DMA 产销差统一本体：在 Digital Twin Builder 关联 GIS 管网、PRV 与 AMI 夜间流量</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 水厂/地下泵站 ALDO 断网自治：部署 SQL Server on Azure Local 保障台风断网期本地闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. EPA SDWA 正压与 PFAS 护栏 (SOP-051)：高点余压 &gt;= 20.0 psi 防倒流，出厂 PFAS &lt; 4.0 ppt</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (106/106) · reports/report.json</text>
+</svg>
