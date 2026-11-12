@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad47" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="50%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#062026"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad47" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad47)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad47)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 39 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.5" font-weight="800">动力电池化成 720K EPS、4,800万 EIS 阻抗谱、储能 BESS 防热失控与欧盟电池护照选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">8 座超级工厂 (36万化成通道) + 45 GWh 储能电站 · Eventhouse 720K EPS (7ms) + SSD DiskANN 4,800万 EIS 匹配 (8ms) + OneLake IQ Sharing 电池护照 · 31ms 闭环省 84.9% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario AT · 199/200 (99.50%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">31ms · 省 84.9% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统电池与储能三大痛点 ($113.1K/月 · 15min 盲区)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 36 万化成通道 720K EPS 按测点/GB 税与析锂漏检</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 传统 Historian 按 Tag + 云流按 GB 计费月烧 $68,000+</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 5min 降频均值漏检 dQ/dV 还原峰 +18.4mV 偏移 (局部析锂)</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 隐性微短路电芯流入整车 Pack，且需 14 天静置测压占压库存</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 电网级储能 BESS 锂枝晶内短路 15min 批处理滞后</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 锂枝晶刺穿隔膜先表现为内阻激增 +42% 与微秒级电压微跌</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 等 15min 数仓批处理或温度升至 60°C 告警时已产气爆燃</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 盲目切机还会触发澳洲 AEMO / 电网一次调频 (FCAS) 巨额罚款</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 2027 欧盟电池护照 (EU 2023/1542) 与电解液泄密冲突</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 强制要求二维码披露矿山→涂布→化成全链路碳足迹与 SoH</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 传统跨企数据拷贝极易泄露 VC/FEC 电解液添加剂核心配比</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 手工 Excel 核算无法应对欧洲主机厂百万电芯级实时核验</text>
+
+  <!-- Center Column: Fabric 31ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 化成-储能-电池护照 31ms 闭环架构</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (7ms) · Eventhouse KQL 720K EPS 化成 dQ/dV 与内阻感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税捕获 3号厂 Bay-18 1,280 颗 314Ah 电芯 dQ/dV +18.4mV 漂移</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 提前 18 分钟捕获墨尔本储能站 Rack-12B 调频放电内阻激增 +42% (软短路)</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (8ms) · SSD DiskANN 4,800万 EIS 阻抗谱匹配与涂布批次溯源</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 64频点 EIS Nyquist 向量匹配历史库 (0.98 相似，省92%内存)，溯源 #CMC-Li-409 浆料</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 重算欧盟电池护照碳足迹 51.8 kgCO2e/kWh + 规划其余 39 簇补发 +8.4MW 功率</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (8ms) · Foundry IQ UL 9540A 调频保供与 EU 2023/1542 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-046：39 个健康簇均摊 +0.215MW/簇，并网点 POI 功率波动 0.00%</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• H2 &lt; 10% LEL 仅启靶向液冷禁喷水 + 电池护照 100% 剥离电解液添加剂配比</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (8ms) · ALDO 分容拦截 + 储能 PCS 分闸 + 欧盟护照零拷贝签发</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 质量与储能总监 Teams 联签 Confirm → ALDO 机械手隔离 1,280 颗电芯并分闸 Rack-12B</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 31ms 自愈 · 守护 $12.75M 储能防爆燃、免召回与欧盟电池准入 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + SDS)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 720K EPS 化成 dQ/dV + 储能 BMS ($0/GB 写入税，缩减35%静置期)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 4,800万 EIS 阻抗谱 SSD DiskANN 检索 + OneLake IQ 电池护照</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 车间/变电站断网自治 + 1,700 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + Databricks GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 固态电解质量子化学 DFT / 分子动力学 MD → CycleCloud / AWS Batch</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• Newman P2D 电化学 PDE / PINN 寿命大模型 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 筛选材料参数与 RUL ONNX 模型通过 OneLake 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁将 36 万化成通道高频流塞入按属性计费 SiteWise 或 60s 数仓</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁在未核算同站其余电池簇功率裕度前盲目切机导致电网违约</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁向外部电池护照平台导出未脱敏的电解液/粘结剂配方明文</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (8 座超级工厂 + 45 GWh 储能 · 720K EPS · 1,700 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + SDS + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $17,100/月 · 500人归一化: $7,900/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 84.9% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方时序库 + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $92,400/月 · 500人归一化: $42,600/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $113,100/月 · 500人归一化: $52,200/月 (按属性/告警与分片计费 + 内存向量 + BI 席位)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $12.75M 风险敞口保护拆解 (Scenario AT 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 提前 18min 阻断墨尔本 5MWh 储能柜爆燃与 AEMO 调频违约：$6.20M · 拦截 1,280 颗析锂电芯免装车召回：$3.85M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 签发 Purview 配方脱敏欧盟数字电池护照 (51.8 kgCO2e/kWh) 保住 4.2 GWh 欧洲出口准入：$2.70M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R39) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-12 R39)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=200 (DL-01..200) 均值 = 351.0 ms (199/200 = 99.50%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=46 (场景 A..AT，范围 5–780ms) 均值 = 301.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario AT 端到端延迟 = 31 ms (7ms 感知 + 8ms EIS/DiskANN + 8ms UL9540A/护照护栏 + 8ms 回写) · 96/96 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 化成 dQ/dV 与 BMS 流直通：36 万通道脉冲与储能 IEC-61850 直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 4,800万 EIS 曲线库：64 频点 Nyquist 阻抗谱建索引，P99 检索 &lt; 10ms</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 涂布-卷绕-化成全链路批次图谱：通过 OneLake Shortcut 零拷贝关联 Opcenter MES 母卷码与 SAP 原材料批次</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 车间与变电站 ALDO 断网自治：部署 SQL Server on Azure Local 保障外网光纤中断时本地毫秒分闸</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. UL 9540A 调频保供与 EU 2023/1542 护照护栏 (SOP-046)：切机前健康簇等额补发功率，护照 100% 剥离电解液配比</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (96/96) · reports/report.json</text>
+</svg>

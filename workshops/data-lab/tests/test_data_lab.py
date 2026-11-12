@@ -659,13 +659,27 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 43)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 12400000)
 
-    def test_scenario_matrix_196_cases_and_explicit_miss(self) -> None:
+    def test_global_battery_bess_fabric_formation_eis_passport_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_battery_bess_fabric_formation_eis_passport_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["cell_formation_channels_count"], 360000)
+        self.assertEqual(sim["telemetry"]["dqdv_bms_eis_ingestion_eps"], 720000)
+        self.assertEqual(sim["telemetry"]["historical_cell_eis_spectra_indexed_count"], 48000000)
+        self.assertEqual(sim["telemetry"]["per_tag_or_gb_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_battery_bess_tco_saved_usd"], 44300)
+        self.assertTrue(sim["foundry_iq_guardrail"]["ul9540a_fcas_zero_poi_drift_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["eu_battery_passport_recipe_masking_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 31)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 12750000)
+
+    def test_scenario_matrix_200_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 196)
-        self.assertEqual(matrix["passed_scenarios"], 195)
+        self.assertEqual(matrix["total_scenarios"], 200)
+        self.assertEqual(matrix["passed_scenarios"], 199)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.49, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 356.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.50, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 351.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -1143,6 +1157,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-84.6% TCO", by_id["DL-195"]["expected"])
         self.assertIn("Protect $12.40M SLA", by_id["DL-196"]["expected"])
 
+    def test_fabric_battery_bess_cell_formation_eis_passport_vs_4clouds_2026_11_12_r39_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-197", "DL-198", "DL-199", "DL-200"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Eventhouse KQL 7ms dQ/dV", by_id["DL-197"]["expected"])
+        self.assertIn("100K-core ab-initio DFT/MD", by_id["DL-198"]["expected"])
+        self.assertIn("-84.9% TCO", by_id["DL-199"]["expected"])
+        self.assertIn("Protect $12.75M SLA", by_id["DL-200"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -1160,11 +1185,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 195)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 196)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 356.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 45)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 307.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 199)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 200)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 351.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 46)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 301.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r38_45_simulation_mean_modeled_latency_ms"], 307.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r37_44_simulation_mean_modeled_latency_ms"], 313.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r36_43_simulation_mean_modeled_latency_ms"], 320.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r35_42_simulation_mean_modeled_latency_ms"], 327.5)
@@ -1201,7 +1227,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 41)
+        self.assertEqual(len(refs), 42)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12"))
@@ -1248,6 +1274,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_semiconductor_2nm_euv_stdf_wafer_yield_aldo_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_energy_oil_gas_osdu_witsml_lng_methane_ccus_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_battery_bess_fabric_formation_eis_passport_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
