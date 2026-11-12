@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+obo-token-hop-limit-violation saturation gate,172,184,0.9348,measured,obo-token-hop-limit-fence mismatch replay + deterministic verification
+obo-token-hop-limit-fence fence integrity guard,161,168,0.9583,measured,obo-token-hop-limit-fence integrity logs
+tenant-scope obo-token-hop-limit-fence authorization fence,154,161,0.9565,measured,tenant obo-token-hop-limit-fence fairness replay logs
