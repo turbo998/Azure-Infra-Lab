@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+aca-dynamic-sessions-warm-pool-credit-bucket-violation saturation gate,172,184,0.9348,measured,aca-dynamic-sessions-warm-pool-credit-bucket-fence mismatch replay + deterministic verification
+aca-dynamic-sessions-warm-pool-credit-bucket-fence fence integrity guard,161,168,0.9583,measured,aca-dynamic-sessions-warm-pool-credit-bucket-fence integrity logs
+tenant-scope aca-dynamic-sessions-warm-pool-credit-bucket-fence authorization fence,154,161,0.9565,measured,tenant aca-dynamic-sessions-warm-pool-credit-bucket-fence fairness replay logs
