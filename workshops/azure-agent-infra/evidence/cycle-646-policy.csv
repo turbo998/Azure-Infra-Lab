@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+snapshot-layer-dedup-violation saturation gate,172,184,0.9348,measured,snapshot-layer-dedup-fence mismatch replay + deterministic verification
+snapshot-layer-dedup-fence fence integrity guard,161,168,0.9583,measured,snapshot-layer-dedup-fence integrity logs
+tenant-scope snapshot-layer-dedup-fence authorization fence,154,161,0.9565,measured,tenant snapshot-layer-dedup-fence fairness replay logs
