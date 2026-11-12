@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad51" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080B16"/>
+      <stop offset="50%" stop-color="#111C2D"/>
+      <stop offset="100%" stop-color="#0B2223"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad51" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad51)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad51)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 43 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.5" font-weight="800">智慧矿山 (2,200 台 400t 无人矿卡 820K EPS)、半自磨机防碎与尾矿库安全选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">14 座矿山 (2,200 台无人矿卡 + 36 台 SAG 磨机 + 18 座尾矿库) · Eventhouse KQL H3 820K EPS (8ms) + SSD DiskANN 5,200万高光谱岩芯匹配 (9ms) + ALDO 矿山边缘 · 34ms 闭环省 85.9% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario AX · 215/216 (99.54%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">34ms · 省 85.9% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统矿山采-选-尾三大孤岛痛点 ($129.8K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 采选割裂盲倒硅化硬矿致 SAG 磨机钢球砸裂衬板</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 钻孔地质库与选厂不通，高硬度斑岩 (BWI=22.8) 突袭半自磨机</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 料垫变薄致百吨钢球在 148° 直接砸裂衬板，停机 48h 损 $4.5M+</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 高滑石矿 (4.6%) 混入浮选槽导致铜金回收率瞬间暴跌 -6.4%</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 2,200 台 400t 无人矿卡 820K EPS 按测点税与巨胎爆胎</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 悬挂压力、皮带 XRF 与磨机声谱按 Tag/GB 计费月烧 $78,000+</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 运矿坡道落石未能毫秒级共享全车队，单条 59/80R63 巨胎损 $45K</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 4,500 米高海拔矿坑外网闪断时纯云端分析完全失联</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 尾矿库 (TSF) 孔隙水压力抬升与静态液化溃坝风险</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 排渗淤堵致坝体孔隙水压力比升至 ru=0.31 逼近 0.35 液化红线</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 传统人工巡检与选厂浓密机底流控制脱节，违反 GISTM 国际标准</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 一旦触发静态液化将面临吊销采矿权与数亿美元环境索赔</text>
+
+  <!-- Center Column: Fabric 34ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 采-选-尾 (Mine-to-Mill) 34ms 闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (8ms) · Eventhouse KQL H3 820K EPS 磨机声学与矿卡感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税捕获 SAG-Mill-02 2.4kHz 砸衬板声谱 (148°) 与皮带 XRF 滑石激增</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• H3 Res-10 锁定 #Haul-Ramp-07 坡道落石 + 尾矿坝 #VWP-03 渗压比升至 ru=0.31</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (9ms) · SSD DiskANN 5,200万高光谱岩芯匹配与 3:2 动态配矿</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 5,200万条钻孔 SWIR 高光谱 (0.98 相似，省92%内存)，改派 18 台矿卡 3:2 配软矿</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 磨机变频降速 -0.9 rpm 恢复 132° 料垫 + 粗选加 CMC 抑制剂 +45 g/t 保 91.8% 回收率</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (9ms) · Foundry IQ GISTM 尾矿安全与 ISO 17757 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-050：启动排渗泵 + 浓密机底流提至 68%，将 ru 压回 0.24 &lt; 0.35 (FoS=1.62)</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认 18 台 400t 无人矿卡改派与绕行落石期间保持 &gt;= 60m 防撞安全包络</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (8ms) · ALDO 矿坑边缘车铲调度、磨机降速与排渗泵启动</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 矿山总经理与总冶金师 Teams 联签 Confirm → ALDO 下发 AHS 配矿与 ABB 变频指令</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 34ms 自愈 · 守护 $14.15M 磨机衬板、铜金浮选回收率与尾矿坝 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse H3 + DiskANN)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 820K EPS 矿卡 H3 护胎 + XRF 配矿 + 磨机声学 ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 5,200万钻孔高光谱岩芯 SSD DiskANN 检索 + Mine-to-Mill 孪生</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 4,500m 高海拔矿坑断网自治 + 1,750 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 百万颗粒离散元 (Rocky DEM) 磨机衬板仿真 → CycleCloud / AWS Batch</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 浮选槽泡沫高速视频 CNN/ViT 视觉训练 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 衬板波形参数与 ONNX 泡沫模型通过 OneLake 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁在未关联钻孔岩芯硬度前盲目将单一电铲硬矿直倒半自磨机</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁在尾矿库孔隙水压力比 ru &gt;= 0.30 时继续向坝顶高负荷排尾</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将偏远高海拔矿山的安全联锁完全寄托于易中断的卫星公网</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (14 座矿山 · 2,200 台矿卡 + 36 磨机 · 820K EPS · 1,750 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse H3 + SSD DiskANN + Twin + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $18,300/月 · 500人归一化: $8,300/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 85.9% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方矿山 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $104,800/月 · 500人归一化: $47,600/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $129,800/月 · 500人归一化: $58,900/月 (按属性/分片计费 + 内存向量 + BI 席位)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $14.15M 风险敞口保护拆解 (Scenario AX 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 避免 SAG 磨机衬板砸裂停产 48h：$6.80M · 保住 91.8% 铜金浮选回收率与 42 条巨胎：$4.45M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 启动排渗泵将尾矿库孔隙水压力比压回 ru=0.24 (FoS=1.62) 规避 GISTM 停产罚单：$2.90M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R43) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-13 R43)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=216 (DL-01..216) 均值 = 331.0 ms (215/216 = 99.54%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=50 (场景 A..AX，范围 5–780ms) 均值 = 279.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario AX 端到端延迟 = 34 ms (8ms 感知 + 9ms DiskANN/配矿 + 9ms GISTM/AHS 护栏 + 8ms 回写) · 104/104 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 无人矿卡、皮带 XRF 与磨机流直通：820K EPS 遥测直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 5,200万高光谱岩芯库：1300-2500nm SWIR 光谱建索引 (P99 &lt; 10ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. Mine-to-Mill 统一本体：在 Digital Twin Builder 中关联 Leapfrog 矿块模型 H3 坐标与选厂 DCS</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 高海拔矿坑 ALDO 断网自治：部署 SQL Server on Azure Local 保障卫星/光缆中断期本地闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. GISTM 尾矿安全与 ISO 17757 护栏 (SOP-050)：孔隙水压力比 ru &lt; 0.35 (FoS&gt;=1.50)，矿卡间距 &gt;= 60m</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (104/104) · reports/report.json</text>
+</svg>
