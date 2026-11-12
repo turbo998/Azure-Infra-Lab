@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+entra-workload-id-obo-kv-envelope-rotation-ladder-violation saturation gate,172,184,0.9348,measured,entra-workload-id-obo-kv-envelope-rotation-ladder-fence mismatch replay + deterministic verification
+entra-workload-id-obo-kv-envelope-rotation-ladder-fence fence integrity guard,161,168,0.9583,measured,entra-workload-id-obo-kv-envelope-rotation-ladder-fence integrity logs
+tenant-scope entra-workload-id-obo-kv-envelope-rotation-ladder-fence authorization fence,154,161,0.9565,measured,tenant entra-workload-id-obo-kv-envelope-rotation-ladder-fence fairness replay logs
