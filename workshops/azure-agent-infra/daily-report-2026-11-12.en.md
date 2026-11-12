@@ -1,8 +1,8 @@
-# Azure AI Agent Infra Playbook · Daily Report · Cycle #647 (2026-11-12)
+# Azure AI Agent Infra Playbook · Daily Report · Cycle #648 (2026-11-12)
 
 > Window (BJT): 2026-11-12 23:00 ~ 2026-11-13 05:15  
 > Focus: Cloud-native Agent Infra only (no semiconductor/ALD topics)  
-> Generated at (UTC): 2026-11-12T17:07:41.896569+00:00
+> Generated at (UTC): 2026-11-12T17:18:50.337046+00:00
 
 ## 1) Daily hottest breakthroughs (2026 official/release-first)
 
@@ -23,31 +23,31 @@
 ### Source ledger (with fetch date and labels)
 | Source | Published date | Label | URL | Fetched at (UTC) |
 |---|---|---|---|---|
-| AI Gateway overview (Microsoft Learn) | 2026-10-23 | `measured` | https://learn.microsoft.com/en-us/azure/ai-gateway/overview | 2026-11-12T17:07:41.896569+00:00 |
-| Azure API Management service changelog (June 2026) | 2026-06-16 commit 02b1448 | `measured` | https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md | 2026-11-12T17:07:41.896569+00:00 |
-| Azure Container Apps dynamic sessions docs | 2026-03-31 | `measured` | https://learn.microsoft.com/en-us/azure/container-apps/sessions | 2026-11-12T17:07:41.896569+00:00 |
-| ACA Dynamic Sessions GA blog (historical maturity memory) | 2024-11-19 | `anonymized_reported` | https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561 | 2026-11-12T17:07:41.896569+00:00 |
-| Firecracker release v1.17.0 | 2026-09-10 | `measured` | https://github.com/firecracker-microvm/firecracker/releases/tag/v1.17.0 | 2026-11-12T17:07:41.896569+00:00 |
-| Kata Containers release 4.3.1 | 2026-10-21 | `measured` | https://github.com/kata-containers/kata-containers/releases/tag/4.3.1 | 2026-11-12T17:07:41.896569+00:00 |
-| Wasmtime release v50.0.1 | 2026-10-29 | `measured` | https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1 | 2026-11-12T17:07:41.896569+00:00 |
-| E2B release e2b@2.63.0 | 2026-11-04 16:41:49 | `measured` | https://github.com/e2b-dev/E2B/releases/tag/e2b%402.63.0 | 2026-11-12T17:07:41.896569+00:00 |
-| Microsoft Entra workload identities overview | timestamp_unverified (official docs page) | `measured` | https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview | 2026-11-12T17:07:41.896569+00:00 |
-| Azure AI Foundry Agent Service docs | timestamp_unverified (official docs page) | `measured` | https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview | 2026-11-12T17:07:41.896569+00:00 |
-| AWS AgentCore overview | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html | 2026-11-12T17:07:41.896569+00:00 |
-| AWS Bedrock Agents classic notice | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html | 2026-11-12T17:07:41.896569+00:00 |
-| Cloudflare Workers docs | last updated 2026-10-08 | `measured` | https://developers.cloudflare.com/workers/ | 2026-11-12T17:07:41.896569+00:00 |
-| Cloudflare Workers AI docs | last updated 2026-04-21 | `measured` | https://developers.cloudflare.com/workers-ai/ | 2026-11-12T17:07:41.896569+00:00 |
-| Cloudflare Workflows docs | last updated 2026-09-18 | `measured` | https://developers.cloudflare.com/workflows/ | 2026-11-12T17:07:41.896569+00:00 |
-| Cloudflare Browser Rendering docs | timestamp_unverified (official docs page) | `measured` | https://developers.cloudflare.com/browser-rendering/ | 2026-11-12T17:07:41.896569+00:00 |
-| Modal official guide | timestamp_unverified (official docs page) | `measured` | https://modal.com/docs/guide | 2026-11-12T17:07:41.896569+00:00 |
-| GCP Vertex AI Agent Engine overview | timestamp_unverified (official docs page; redirected) | `measured` | https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview | 2026-11-12T17:07:41.896569+00:00 |
+| AI Gateway overview (Microsoft Learn) | 2026-10-23 | `measured` | https://learn.microsoft.com/en-us/azure/ai-gateway/overview | 2026-11-12T17:18:50.337046+00:00 |
+| Azure API Management service changelog (June 2026) | 2026-06-16 commit 02b1448 | `measured` | https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md | 2026-11-12T17:18:50.337046+00:00 |
+| Azure Container Apps dynamic sessions docs | 2026-03-31 | `measured` | https://learn.microsoft.com/en-us/azure/container-apps/sessions | 2026-11-12T17:18:50.337046+00:00 |
+| ACA Dynamic Sessions GA blog (historical maturity memory) | 2024-11-19 | `anonymized_reported` | https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561 | 2026-11-12T17:18:50.337046+00:00 |
+| Firecracker release v1.17.0 | 2026-09-10 | `measured` | https://github.com/firecracker-microvm/firecracker/releases/tag/v1.17.0 | 2026-11-12T17:18:50.337046+00:00 |
+| Kata Containers release 4.3.1 | 2026-10-21 | `measured` | https://github.com/kata-containers/kata-containers/releases/tag/4.3.1 | 2026-11-12T17:18:50.337046+00:00 |
+| Wasmtime release v50.0.1 | 2026-10-29 | `measured` | https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1 | 2026-11-12T17:18:50.337046+00:00 |
+| E2B release e2b@2.63.0 | 2026-11-04 16:41:49 | `measured` | https://github.com/e2b-dev/E2B/releases/tag/e2b%402.63.0 | 2026-11-12T17:18:50.337046+00:00 |
+| Microsoft Entra workload identities overview | timestamp_unverified (official docs page) | `measured` | https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview | 2026-11-12T17:18:50.337046+00:00 |
+| Azure AI Foundry Agent Service docs | timestamp_unverified (official docs page) | `measured` | https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview | 2026-11-12T17:18:50.337046+00:00 |
+| AWS AgentCore overview | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html | 2026-11-12T17:18:50.337046+00:00 |
+| AWS Bedrock Agents classic notice | timestamp_unverified (official docs page) | `measured` | https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html | 2026-11-12T17:18:50.337046+00:00 |
+| Cloudflare Workers docs | last updated 2026-10-08 | `measured` | https://developers.cloudflare.com/workers/ | 2026-11-12T17:18:50.337046+00:00 |
+| Cloudflare Workers AI docs | last updated 2026-04-21 | `measured` | https://developers.cloudflare.com/workers-ai/ | 2026-11-12T17:18:50.337046+00:00 |
+| Cloudflare Workflows docs | last updated 2026-09-18 | `measured` | https://developers.cloudflare.com/workflows/ | 2026-11-12T17:18:50.337046+00:00 |
+| Cloudflare Browser Rendering docs | timestamp_unverified (official docs page) | `measured` | https://developers.cloudflare.com/browser-rendering/ | 2026-11-12T17:18:50.337046+00:00 |
+| Modal official guide | timestamp_unverified (official docs page) | `measured` | https://modal.com/docs/guide | 2026-11-12T17:18:50.337046+00:00 |
+| GCP Vertex AI Agent Engine overview | timestamp_unverified (official docs page; redirected) | `measured` | https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview | 2026-11-12T17:18:50.337046+00:00 |
 
 ## 2) Production Azure reference architecture + competitor matrix
 
 Layered decoupling baseline for this cycle:
 - L1 Orchestration: MAF/Copilot SDK/LangGraph + MCP/Gateway contracts
 - L2 Runtime substrate: ACA Dynamic Sessions, ACA Sandboxes, AKS+Kata, E2B Firecracker, Wasm component path
-- L3 State plane: HorizonDB/Cosmos + mcp-output-stream-backpressure-fence ledger + mcp-output-stream-backpressure-version budget governance policy index
+- L3 State plane: HorizonDB/Cosmos + cosmos-agent-memory-hot-partition-shard-fence-fence ledger + cosmos-agent-memory-hot-partition-shard-fence-version budget governance policy index
 - L4 Gateway/Governance: APIM AI Gateway, identity binding, policy enforcement, telemetry and queue-depth-cap-fence guardrails
 
 | Platform | Isolation boundary | Cold p50 (ms) | Cold p95 (ms) | Throughput (RPS) | TCO index (lower better) | Ops complexity | Label | Trust level | Source note |
@@ -61,11 +61,11 @@ Layered decoupling baseline for this cycle:
 
 ## 3) Reproducible benchmark outputs
 
-- Cold/warm start: see `evidence/cycle-647-latency.csv`
-- Throughput: see `evidence/cycle-647-throughput.csv`
-- Policy interception: see `evidence/cycle-647-policy.csv`
-- Single-session cost: see `evidence/cycle-647-cost.csv`
-- Canonical benchmark payload: `evidence/cycle-647-benchmark.json`
+- Cold/warm start: see `evidence/cycle-648-latency.csv`
+- Throughput: see `evidence/cycle-648-throughput.csv`
+- Policy interception: see `evidence/cycle-648-policy.csv`
+- Single-session cost: see `evidence/cycle-648-cost.csv`
+- Canonical benchmark payload: `evidence/cycle-648-benchmark.json`
 
 ## 4) Business scenario solution set (Good fit vs Not for)
 
@@ -77,10 +77,10 @@ Layered decoupling baseline for this cycle:
 | Financial zero-trust execution | Kata/Firecracker isolation + private networking + deterministic policy audit | Regulated workloads without immutable eviction-lineage and policy replay verification |
 
 ### Selection decision tree
-1. Need strict short-term simplicity and single-region stable traffic with low variant entropy -> unfenced mcp-output-stream-backpressure-fence rollout (temporary only).
-2. Need lower mcp-output-stream-backpressure-violation amplification risk across tenants -> mcp-output-stream-backpressure-fence fence + staged mcp-output-stream-backpressure gate.
+1. Need strict short-term simplicity and single-region stable traffic with low variant entropy -> unfenced cosmos-agent-memory-hot-partition-shard-fence-fence rollout (temporary only).
+2. Need lower cosmos-agent-memory-hot-partition-shard-fence-violation amplification risk across tenants -> cosmos-agent-memory-hot-partition-shard-fence-fence fence + staged cosmos-agent-memory-hot-partition-shard-fence gate.
 3. Need balanced reliability and cost -> cache-key governance with admission controls and rollback policy.
-4. Need strict multi-tenant governance -> APIM + tenant-scoped key contracts + lease-mcp-output-stream-backpressure fences.
+4. Need strict multi-tenant governance -> APIM + tenant-scoped key contracts + lease-cosmos-agent-memory-hot-partition-shard-fence fences.
 
 ### ROI model
 - Baseline manual hours/week: `1200`
@@ -98,10 +98,10 @@ Layered decoupling baseline for this cycle:
 
 ## 6) Visual deliverables
 
-- Summary SVG: `assets/34-cycle-647-daily-breakthroughs.svg`
+- Summary SVG: `assets/34-cycle-648-daily-breakthroughs.svg`
 - 7-card deck (ZH): `benchmark-cards.html`
 - 7-card deck (EN): `benchmark-cards.en.html`
-- Interactive workbench H5: `workbench-cycle-647.html`
+- Interactive workbench H5: `workbench-cycle-648.html`
 
 ## 7) Traceability labels
 

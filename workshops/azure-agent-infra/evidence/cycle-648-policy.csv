@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cosmos-agent-memory-hot-partition-shard-fence-violation saturation gate,172,184,0.9348,measured,cosmos-agent-memory-hot-partition-shard-fence-fence mismatch replay + deterministic verification
+cosmos-agent-memory-hot-partition-shard-fence-fence fence integrity guard,161,168,0.9583,measured,cosmos-agent-memory-hot-partition-shard-fence-fence integrity logs
+tenant-scope cosmos-agent-memory-hot-partition-shard-fence-fence authorization fence,154,161,0.9565,measured,tenant cosmos-agent-memory-hot-partition-shard-fence-fence fairness replay logs
