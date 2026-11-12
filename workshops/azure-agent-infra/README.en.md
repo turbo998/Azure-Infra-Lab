@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #926 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-926.html](workbench-cycle-926.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
+> 🔎 **Cycle #927 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-927.html](workbench-cycle-927.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
 
 ---
 
-## 1) Cycle #926 release summary (2026-11-12)
+## 1) Cycle #927 release summary (2026-11-12)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #926 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #926 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #926 workbench** | Interactive benchmark surface | [`workbench-cycle-926.html`](workbench-cycle-926.html) |
+| **Cycle #927 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #927 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #927 workbench** | Interactive benchmark surface | [`workbench-cycle-927.html`](workbench-cycle-927.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-926-benchmark.json`](evidence/cycle-926-benchmark.json)
-- Source ledger: [`evidence/cycle-926-sources.json`](evidence/cycle-926-sources.json)
+- Canonical payload: [`evidence/cycle-927-benchmark.json`](evidence/cycle-927-benchmark.json)
+- Source ledger: [`evidence/cycle-927-sources.json`](evidence/cycle-927-sources.json)
 - Metric CSV files:
-  - [`cycle-926-latency.csv`](evidence/cycle-926-latency.csv)
-  - [`cycle-926-throughput.csv`](evidence/cycle-926-throughput.csv)
-  - [`cycle-926-policy.csv`](evidence/cycle-926-policy.csv)
-  - [`cycle-926-cost.csv`](evidence/cycle-926-cost.csv)
+  - [`cycle-927-latency.csv`](evidence/cycle-927-latency.csv)
+  - [`cycle-927-throughput.csv`](evidence/cycle-927-throughput.csv)
+  - [`cycle-927-policy.csv`](evidence/cycle-927-policy.csv)
+  - [`cycle-927-cost.csv`](evidence/cycle-927-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-12.en.md`](daily-report-2026-11-12.en.md)
 - Daily report (ZH): [`daily-report-2026-11-12.md`](daily-report-2026-11-12.md)
-- One-page SVG: [`assets/34-cycle-926-daily-breakthroughs.svg`](assets/34-cycle-926-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-926.en.md`](docs/full-monograph-cycle-926.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-926.md`](docs/full-monograph-cycle-926.md)
-- Selection FAQ (EN, AKS Nodepool Rebalance Hysteresis Auto Cycle 926): [`agent-aks-nodepool-rebalance-hysteresis-auto-cycle-926-selection-faq.en.md`](agent-aks-nodepool-rebalance-hysteresis-auto-cycle-926-selection-faq.en.md)
-- Selection FAQ (ZH, AKS Nodepool Rebalance Hysteresis Auto Cycle 926): [`agent-aks-nodepool-rebalance-hysteresis-auto-cycle-926-selection-faq.md`](agent-aks-nodepool-rebalance-hysteresis-auto-cycle-926-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-927-daily-breakthroughs.svg`](assets/34-cycle-927-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-927.en.md`](docs/full-monograph-cycle-927.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-927.md`](docs/full-monograph-cycle-927.md)
+- Selection FAQ (EN, Cosmos DB Vector Index Write Budget Auto Cycle 927): [`agent-cosmosdb-vector-index-write-budget-auto-cycle-927-selection-faq.en.md`](agent-cosmosdb-vector-index-write-budget-auto-cycle-927-selection-faq.en.md)
+- Selection FAQ (ZH, Cosmos DB Vector Index Write Budget Auto Cycle 927): [`agent-cosmosdb-vector-index-write-budget-auto-cycle-927-selection-faq.md`](agent-cosmosdb-vector-index-write-budget-auto-cycle-927-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_926_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_926_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_927_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_927_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_926_pipeline.py`](simulator/cycle_926_pipeline.py)
+- Generator pipeline: [`simulator/cycle_927_pipeline.py`](simulator/cycle_927_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
