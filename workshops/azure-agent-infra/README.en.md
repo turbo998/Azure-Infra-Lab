@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #819 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-819.html](workbench-cycle-819.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
+> 🔎 **Cycle #820 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-820.html](workbench-cycle-820.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
 
 ---
 
-## 1) Cycle #819 release summary (2026-11-12)
+## 1) Cycle #820 release summary (2026-11-12)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #819 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #819 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #819 workbench** | Interactive benchmark surface | [`workbench-cycle-819.html`](workbench-cycle-819.html) |
+| **Cycle #820 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #820 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #820 workbench** | Interactive benchmark surface | [`workbench-cycle-820.html`](workbench-cycle-820.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-819-benchmark.json`](evidence/cycle-819-benchmark.json)
-- Source ledger: [`evidence/cycle-819-sources.json`](evidence/cycle-819-sources.json)
+- Canonical payload: [`evidence/cycle-820-benchmark.json`](evidence/cycle-820-benchmark.json)
+- Source ledger: [`evidence/cycle-820-sources.json`](evidence/cycle-820-sources.json)
 - Metric CSV files:
-  - [`cycle-819-latency.csv`](evidence/cycle-819-latency.csv)
-  - [`cycle-819-throughput.csv`](evidence/cycle-819-throughput.csv)
-  - [`cycle-819-policy.csv`](evidence/cycle-819-policy.csv)
-  - [`cycle-819-cost.csv`](evidence/cycle-819-cost.csv)
+  - [`cycle-820-latency.csv`](evidence/cycle-820-latency.csv)
+  - [`cycle-820-throughput.csv`](evidence/cycle-820-throughput.csv)
+  - [`cycle-820-policy.csv`](evidence/cycle-820-policy.csv)
+  - [`cycle-820-cost.csv`](evidence/cycle-820-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-12.en.md`](daily-report-2026-11-12.en.md)
 - Daily report (ZH): [`daily-report-2026-11-12.md`](daily-report-2026-11-12.md)
-- One-page SVG: [`assets/34-cycle-819-daily-breakthroughs.svg`](assets/34-cycle-819-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-819.en.md`](docs/full-monograph-cycle-819.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-819.md`](docs/full-monograph-cycle-819.md)
-- Selection FAQ (EN, ACA Sandbox Heartbeat Loss Recovery Auto Cycle 819): [`agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-819-selection-faq.en.md`](agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-819-selection-faq.en.md)
-- Selection FAQ (ZH, ACA Sandbox Heartbeat Loss Recovery Auto Cycle 819): [`agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-819-selection-faq.md`](agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-819-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-820-daily-breakthroughs.svg`](assets/34-cycle-820-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-820.en.md`](docs/full-monograph-cycle-820.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-820.md`](docs/full-monograph-cycle-820.md)
+- Selection FAQ (EN, APIM Timeout Tier Fallback Auto Cycle 820): [`agent-apim-timeout-tier-fallback-auto-cycle-820-selection-faq.en.md`](agent-apim-timeout-tier-fallback-auto-cycle-820-selection-faq.en.md)
+- Selection FAQ (ZH, APIM Timeout Tier Fallback Auto Cycle 820): [`agent-apim-timeout-tier-fallback-auto-cycle-820-selection-faq.md`](agent-apim-timeout-tier-fallback-auto-cycle-820-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_819_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_819_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_820_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_820_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_819_pipeline.py`](simulator/cycle_819_pipeline.py)
+- Generator pipeline: [`simulator/cycle_820_pipeline.py`](simulator/cycle_820_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
