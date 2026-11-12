@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad48" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0B162C"/>
+      <stop offset="100%" stop-color="#071F29"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad48" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#0891B2"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad48)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad48)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 40 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.5" font-weight="800">商业航天低轨星座 (6,400 星)、星间激光 850K EPS、空间碎片避碰与 H3 波束跳频选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">6,400 颗 LEO 卫星 + 140 座信关站 · Eventhouse KQL H3 850K EPS (4ms) + SSD DiskANN 5,400万轨控/频谱匹配 (5ms) + ALDO 极地站边缘 · 19ms 闭环省 85.2% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario AU · 203/204 (99.51%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">19ms · 省 85.2% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统低轨星座地面段三大痛点 ($117.6K/月 · T+6h 盲区)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 6,400 星 CCSDS 与 OISL 激光遥测 850K EPS 按 GB 税</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 星载姿态/电推进/激光微弧度误差 + 140 座信关站每秒 85 万事件</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 传统云流与时序库按写入 GB / 测点计费月烧 $72,000+</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 降频采样导致无法提前捕获星间激光 PAT 跟瞄机构微失锁</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② G4 太阳风暴大气阻力 +380% 致 T+6h 批处理定轨失准</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 热层膨胀致 SAT-4108 与火箭残骸交会缩至 62m (Pc = 4.2e-3)</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 等 6 小时批处理积分算完时卫星已飞出极地信关站上注弧段</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 一旦以 14 km/s 撞毁将损失 $6.5M 卫星并引发凯斯勒碎片云</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 变轨期间跨洋航空断网与 ITU-R 赤道 GSO 射频干扰</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 卫星偏转点火若不提前切流将中断 480 架跨洋客机宽带</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 相控阵波束跳频若切入赤道同步轨道 18° 禁区将导致 EPFD 超标</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 违反《ITU Radio Regulations Art.22》面临频谱停波重罚</text>
+
+  <!-- Center Column: Fabric 19ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 太空数字孪生 19ms 闭环架构</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (4ms) · Eventhouse KQL H3 850K EPS 大气阻尼与交会感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税融合双频 GPS 残差与 18th SDS CDM，反演大气阻力 +380%</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 锁定 SAT-4108 与残骸 #DEB-99204 62m 极近交会 (Pc = 4.2e-3 &gt;&gt; 1e-4)</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (5ms) · SSD DiskANN 5,400万摄动匹配与 OISL/H3 波束重路由</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 5,400万条轨道协方差向量检索 (0.98 相似，省92%内存)，算出 +0.18 m/s 变轨</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 480 架客机 OISL 激光流无感切至 SAT-4109/4208 + 重分配 84 个 H3 波束</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (5ms) · Foundry IQ NASA CARA 避碰与 ITU-R Art.22 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-047：抬轨 +320m 后交会扩至 2,850m (Pc=1.2e-7)，72h 零二次交会</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 84 个 Ka 波束相对赤道 GSO 隔离角 21.4° &gt;= 18.0° 红线 (EPFD 完全合规)</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (5ms) · 斯瓦尔巴极地站 ALDO 上注霍尔点火与波束掩码</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 飞控总师 Teams 联签 Confirm → ALDO 极地边缘赶在出站前上注 +0.18 m/s 点火</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 19ms 自愈 (0ms 航空断网) · 守护 $13.10M 卫星、航空 SLA 与频谱</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse H3 + DiskANN)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 850K EPS CCSDS 遥测 + OISL 激光 + CDM ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 原生 H3 64位整数波束连接 + 5,400万摄动 SSD DiskANN 检索</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 极地信关站海缆断网自治 + 1,800 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：AWS Ground Station + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 按分钟租用物理抛物面测控天线 → AWS Ground Station / Orbital</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 原始 SAR 合成孔径雷达 / 高光谱图像训练 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 解调 CCSDS 遥测流与视觉模型通过 OneLake 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁靠 T+6h 批处理定轨应对地磁暴期间的近地空间碎片告警</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁在未排空星间激光流量前直接偏转卫星姿态执行推进器点火</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁在未校验赤道 GSO 18° 隔离角前动态跳频相控阵波束</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (6,400 颗低轨卫星 + 140 信关站 · 850K EPS · 1,800 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse H3 + SSD DiskANN + Twin + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $17,400/月 · 500人归一化: $8,000/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 85.2% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方时序库 + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $95,400/月 · 500人归一化: $43,900/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (Kinesis + Timestream + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $117,600/月 · 500人归一化: $54,100/月 (按流量与时序点计费 + 内存向量 + BI 席位)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $13.10M 风险敞口保护拆解 (Scenario AU 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 规避 SAT-4108 撞击碎片损毁与补发成本：$6.50M · 守护北大西洋 480 架客机与 120 艘邮轮零断网 SLA：$3.80M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 严格控制 84 个跳频波束 GSO 隔离角 21.4° (&gt;=18°) 规避 ITU-R Art.22 频谱违规与停波罚单：$2.80M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R40) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-13 R40)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=204 (DL-01..204) 均值 = 346.0 ms (203/204 = 99.51%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=47 (场景 A..AU，范围 5–780ms) 均值 = 295.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario AU 端到端延迟 = 19 ms (4ms 感知 + 5ms DiskANN/光路由 + 5ms CARA/ITU 护栏 + 5ms 上注) · 98/98 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. CCSDS 与 CDM 流直通：6,400 星遥测与 18th SDS 交会报文直推 Eventhouse (12:1 压缩，$0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Eventhouse KQL H3 波束索引：用 geo_point_to_h3cell() 将相控阵波束与航空 ADS-B/海事 AIS 内存连接</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos SSD DiskANN 5,400万摄动库：地磁暴轨道协方差与射频干扰谱建索引，P99 检索 &lt; 8ms</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 极地信关站 ALDO 断网自治：斯瓦尔巴/阿拉斯加部署 SQL on Azure Local 保障海缆中断时本地上注</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. NASA CARA 与 ITU-R Art.22 护栏 (SOP-047)：72h 零二次碰撞 (Pc &lt;= 1e-6)，赤道 GSO 隔离角 &gt;= 18.0°</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (98/98) · reports/report.json</text>
+</svg>

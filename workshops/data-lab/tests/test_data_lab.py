@@ -673,13 +673,27 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 31)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 12750000)
 
-    def test_scenario_matrix_200_cases_and_explicit_miss(self) -> None:
+    def test_global_leo_satellite_fabric_oisl_debris_beam_hopping_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_leo_satellite_fabric_oisl_debris_beam_hopping_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["leo_broadband_satellites_count"], 6400)
+        self.assertEqual(sim["telemetry"]["ccsds_oisl_cdm_ingestion_eps"], 850000)
+        self.assertEqual(sim["telemetry"]["orbital_perturbation_rf_vectors_indexed_count"], 54000000)
+        self.assertEqual(sim["telemetry"]["per_gb_or_point_telemetry_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_leo_satellite_tco_saved_usd"], 46100)
+        self.assertTrue(sim["foundry_iq_guardrail"]["nasa_cara_zero_secondary_conjunction_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["itu_art22_gso_epfd_separation_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 19)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 13100000)
+
+    def test_scenario_matrix_204_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 200)
-        self.assertEqual(matrix["passed_scenarios"], 199)
+        self.assertEqual(matrix["total_scenarios"], 204)
+        self.assertEqual(matrix["passed_scenarios"], 203)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.50, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 351.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.51, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 346.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -1168,6 +1182,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-84.9% TCO", by_id["DL-199"]["expected"])
         self.assertIn("Protect $12.75M SLA", by_id["DL-200"]["expected"])
 
+    def test_fabric_leo_satellite_constellation_oisl_debris_beam_vs_4clouds_2026_11_13_r40_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-201", "DL-202", "DL-203", "DL-204"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("Eventhouse KQL H3 4ms", by_id["DL-201"]["expected"])
+        self.assertIn("AWS Ground Station", by_id["DL-202"]["expected"])
+        self.assertIn("-85.2% TCO", by_id["DL-203"]["expected"])
+        self.assertIn("Protect $13.10M SLA", by_id["DL-204"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -1185,11 +1210,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 199)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 200)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 351.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 46)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 301.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 203)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 204)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 346.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 47)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 295.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r39_46_simulation_mean_modeled_latency_ms"], 301.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r38_45_simulation_mean_modeled_latency_ms"], 307.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r37_44_simulation_mean_modeled_latency_ms"], 313.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r36_43_simulation_mean_modeled_latency_ms"], 320.0)
@@ -1227,7 +1253,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 42)
+        self.assertEqual(len(refs), 43)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12"))
@@ -1275,6 +1301,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_energy_oil_gas_osdu_witsml_lng_methane_ccus_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_battery_bess_fabric_formation_eis_passport_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_leo_satellite_fabric_oisl_debris_beam_hopping_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
