@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+egress-fqdn-policy-violation saturation gate,172,184,0.9348,measured,egress-fqdn-policy-fence mismatch replay + deterministic verification
+egress-fqdn-policy-fence fence integrity guard,161,168,0.9583,measured,egress-fqdn-policy-fence integrity logs
+tenant-scope egress-fqdn-policy-fence authorization fence,154,161,0.9565,measured,tenant egress-fqdn-policy-fence fairness replay logs
