@@ -1,11 +1,11 @@
 # Azure AI Agent Infrastructure Playbook (Compact)
 
 > 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #928 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-928.html](workbench-cycle-928.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
+> 🔎 **Cycle #929 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-929.html](workbench-cycle-929.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
 
 ---
 
-## 1) Cycle #928 release summary (2026-11-12)
+## 1) Cycle #929 release summary (2026-11-12)
 
 - **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
 - **Evidence policy**: 2026 official docs/changelogs/releases first
@@ -26,21 +26,21 @@
 | Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
 | Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
 | Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #928 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #928 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #928 workbench** | Interactive benchmark surface | [`workbench-cycle-928.html`](workbench-cycle-928.html) |
+| **Cycle #929 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
+| **Cycle #929 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
+| **Cycle #929 workbench** | Interactive benchmark surface | [`workbench-cycle-929.html`](workbench-cycle-929.html) |
 
 ---
 
 ## 3) Reproducible evidence bundle
 
-- Canonical payload: [`evidence/cycle-928-benchmark.json`](evidence/cycle-928-benchmark.json)
-- Source ledger: [`evidence/cycle-928-sources.json`](evidence/cycle-928-sources.json)
+- Canonical payload: [`evidence/cycle-929-benchmark.json`](evidence/cycle-929-benchmark.json)
+- Source ledger: [`evidence/cycle-929-sources.json`](evidence/cycle-929-sources.json)
 - Metric CSV files:
-  - [`cycle-928-latency.csv`](evidence/cycle-928-latency.csv)
-  - [`cycle-928-throughput.csv`](evidence/cycle-928-throughput.csv)
-  - [`cycle-928-policy.csv`](evidence/cycle-928-policy.csv)
-  - [`cycle-928-cost.csv`](evidence/cycle-928-cost.csv)
+  - [`cycle-929-latency.csv`](evidence/cycle-929-latency.csv)
+  - [`cycle-929-throughput.csv`](evidence/cycle-929-throughput.csv)
+  - [`cycle-929-policy.csv`](evidence/cycle-929-policy.csv)
+  - [`cycle-929-cost.csv`](evidence/cycle-929-cost.csv)
 
 ---
 
@@ -48,11 +48,11 @@
 
 - Daily report (EN): [`daily-report-2026-11-12.en.md`](daily-report-2026-11-12.en.md)
 - Daily report (ZH): [`daily-report-2026-11-12.md`](daily-report-2026-11-12.md)
-- One-page SVG: [`assets/34-cycle-928-daily-breakthroughs.svg`](assets/34-cycle-928-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-928.en.md`](docs/full-monograph-cycle-928.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-928.md`](docs/full-monograph-cycle-928.md)
-- Selection FAQ (EN, Entra Token Exchange Failure Budget Auto Cycle 928): [`agent-entra-token-exchange-failure-budget-auto-cycle-928-selection-faq.en.md`](agent-entra-token-exchange-failure-budget-auto-cycle-928-selection-faq.en.md)
-- Selection FAQ (ZH, Entra Token Exchange Failure Budget Auto Cycle 928): [`agent-entra-token-exchange-failure-budget-auto-cycle-928-selection-faq.md`](agent-entra-token-exchange-failure-budget-auto-cycle-928-selection-faq.md)
+- One-page SVG: [`assets/34-cycle-929-daily-breakthroughs.svg`](assets/34-cycle-929-daily-breakthroughs.svg)
+- Monograph addendum (EN): [`docs/full-monograph-cycle-929.en.md`](docs/full-monograph-cycle-929.en.md)
+- Monograph addendum (ZH): [`docs/full-monograph-cycle-929.md`](docs/full-monograph-cycle-929.md)
+- Selection FAQ (EN, ACA Sandbox Heartbeat Loss Recovery Auto Cycle 929): [`agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-929-selection-faq.en.md`](agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-929-selection-faq.en.md)
+- Selection FAQ (ZH, ACA Sandbox Heartbeat Loss Recovery Auto Cycle 929): [`agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-929-selection-faq.md`](agent-aca-sandbox-heartbeat-loss-recovery-auto-cycle-929-selection-faq.md)
 - Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
 - Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
 
@@ -61,8 +61,8 @@
 ## 5) Validation commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_928_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_928_pipeline.py --check
+python workshops/azure-agent-infra/simulator/cycle_929_pipeline.py --write
+python workshops/azure-agent-infra/simulator/cycle_929_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
 python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
 ```
@@ -71,7 +71,7 @@ python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.
 
 ## 6) Build and runtime scripts
 
-- Generator pipeline: [`simulator/cycle_928_pipeline.py`](simulator/cycle_928_pipeline.py)
+- Generator pipeline: [`simulator/cycle_929_pipeline.py`](simulator/cycle_929_pipeline.py)
 - Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
 - Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
 - Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
