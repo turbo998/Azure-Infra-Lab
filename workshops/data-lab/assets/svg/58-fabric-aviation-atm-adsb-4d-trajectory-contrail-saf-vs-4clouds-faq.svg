@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad58" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#051428"/>
+      <stop offset="50%" stop-color="#0D223C"/>
+      <stop offset="100%" stop-color="#062820"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad58" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad58)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad58)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 50 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.2" font-weight="800">全球空管 ATM 与航司 AOC (910K EPS 四维航迹、动态尾流 TBS、尾迹云规避与 SAF) 选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">42,000 架在飞航班 + 38 座枢纽机场 · Eventhouse H3 (6ms) + SSD DiskANN 6,800万尾流/尾迹匹配 (7ms) + SDS SAF 账本 + ALDO 塔台边缘 · 25ms 闭环省 87.3% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BE · 243/244 (99.59%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">25ms · 省 87.3% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统空管 ATM 与航司签派三大致命痛点 ($161.4K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 强顶风下固定距离尾流间隔致跑道吞吐腰斩与百机盘旋</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 46 节强顶风拉长固定距离着陆时间，跑道吞吐从 44 跌至 28 架/h</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 68 架进港航班空中画圈烧油，6 架宽体机燃油告急备降外场</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单次枢纽大面积备降与欧盟 EU261 赔偿直接损失 $7.40M</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 盲穿高空冰过饱和区 (ISSR) 拉出强温室凝结尾迹云</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 持久尾迹卷云占航空总气候变暖强迫 50%+，传统签派完全失明</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 缺乏毫秒级 6,800万条 ISSR 三维冰湿度与高空抖振包线匹配</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 910K EPS 全球 ADS-B 流与全内存向量节点月烧 $122.6K</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 欧盟 ReFuelEU SAF 航油账本割裂与塔台断网失联</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 强制 6% SAF 掺混与防超载带油 (Tankering) 缺乏逐航班核销</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 枢纽机场塔台与 AOC 运控中心在光纤闪断时无法靠纯公有云运行</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 欧盟非 CO2 气候附加费与 SAF 补贴作废风险达 $9.20M</text>
+
+  <!-- Center Column: Fabric 25ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 空-地-气-碳 25ms 自愈闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (6ms) · Eventhouse KQL H3 910K EPS 风廓线与冰云感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税反演终端区 46 节强顶风廓线与 68 架进港航班堆积</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 同步锁定北大西洋 H3 Res-6 内 34 架宽体机闯入 RHi=118% 冰过饱和层</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (7ms) · SSD DiskANN 6,800万 TBS 尾流与避尾迹变高匹配</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 6,800万向量 (0.99 相似，省92%内存)：RECAT-TBS 缩距至 3.6NM 恢复 42架/h</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 规划 34 架跨洋航班 +2,000ft 升至 FL380 消除 78.4% 尾迹云 (+0.06% 油耗)</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (6ms) · Foundry IQ ICAO 4444 间隔与 1.3g 抖振护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-057：RVSM &gt;= 1,000ft &amp; 雷达 3.6NM &gt;= 3.0NM + 抖振裕度 1.42g &gt;= 1.30g</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认欧盟 ReFuelEU 批次 SAF 掺混率 6.2% &gt;= 6.0% 且零违规超载带油</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (6ms) · ALDO 塔台/AOC 边缘 CPDLC 变高、TBS 排序与签证</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 总签派长 Teams 联签 Confirm → ALDO 下发 CPDLC 变高、AMAN 排序与 SAF 核销</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 25ms 自愈 (50轮里程碑) · 守护 $16.60M 防备降、尾迹减碳与 SAF SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + SDS)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 910K EPS 天基 ADS-B 与 Mode-S 风温 H3 ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 6,800万 TBS 尾流/尾迹 SSD DiskANN + SDS SAF 碳账本</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 塔台/AOC 断网自治 + 2,400 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 机翼气动与尾流涡耗散 RANS CFD → CycleCloud / AWS Batch</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 静止卫星红外尾迹云 CV 与延误 GNN 训练 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 尾流衰减曲线与气象网格通过 OneLake Shortcut 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁在不校核高空抖振裕度 (&lt;1.3g) 下让重型机盲目爬升避尾迹</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁突破 ICAO Doc 4444 终端区 3.0NM 最小雷达安全间隔底线</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将 910K EPS 全球 ADS-B 流写入按属性计费的 IoT SiteWise</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (42,000 架在飞航班 · 38 座枢纽 · 910K EPS · 2,400 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + SDS + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $20,500/月 · 500人归一化: $9,100/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 87.3% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方航空流引擎 + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $130,000/月 · 500人归一化: $57,700/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (Kinesis + SiteWise + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $161,400/月 · 500人归一化: $71,600/月 (按分片/属性计费 + 内存向量 + 碳软件)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $16.60M 风险敞口保护拆解 (Scenario BE · 50轮里程碑收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• RECAT-TBS 恢复 42架/h 吞吐防 6 机备降与 EU261：$7.40M · 34 机变高砍 78% 尾迹：$4.80M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 欧盟 ReFuelEU 6.2% SAF 逐航班核销与零 Tankering 合规：$4.40M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R50 里程碑) 与生产落地核验清单 (Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-14 R50)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=244 (DL-01..244) 均值 = 296.5 ms (243/244 = 99.59%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=57 (场景 A..BE，范围 5–780ms) 均值 = 249.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario BE 端到端延迟 = 25 ms (6ms 感知 + 7ms DiskANN/孪生 + 6ms ICAO/SAF 护栏 + 6ms 回写) · 118/118 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 天基 ADS-B 与 Mode-S 流直通：910K EPS 遥测直推 Eventhouse H3 ($0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 6,800万尾流/尾迹库：TBS 间隔与 ISSR 网格建索引 (P99 &lt; 7ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 航班-扇区-跑道-SAF动态孪生：在 Digital Twin Builder 关联全重、AMAN 与油单</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 塔台与 AOC 边缘 ALDO 自治：部署 SQL Server on Azure Local 保障断网期本地签派</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. ICAO 4444 与抖振护栏 (SOP-057)：RVSM &gt;= 1,000ft，间隔 &gt;= 3.0NM，抖振 &gt;= 1.3g</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (118/118) · reports/report.json</text>
+</svg>
