@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad56" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#041528"/>
+      <stop offset="50%" stop-color="#0A223A"/>
+      <stop offset="100%" stop-color="#062822"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad56" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad56)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad56)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 48 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.2" font-weight="800">深远海柔直风电与跨国海缆 (840K EPS 防锚害、尾流偏航与构网储能惯量) 选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">38 GW 海风 (2,400 台风机) + 14 条 ±525kV 海缆 · Eventhouse H3 (10ms) + SSD DiskANN 5,800万尾流/EMT匹配 (11ms) + ALDO 海上平台边缘 · 41ms 闭环省 86.9% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BC · 235/236 (99.58%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">41ms · 省 86.9% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统深远海风电与跨国海缆三大痛点 ($151.9K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 万吨货轮风暴走锚砸断 ±525kV 海缆 (停运 5 个月)</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 海底光纤声学 (DAS) 与卫星 AIS 船位孤立，无法提前识别走锚</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 等铁锚钩破海缆引发直流接地闭锁才告警，抢修耗时 4–6 个月</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单次海缆锚害抢修与跨国输电中断直接损失 $7.20M–$65M+</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 前排 18MW 风机尾流阴影吃掉后排 15% 发电量</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 单台风机各自迎风旋转，下风向尾流湍流致后排风机出力暴跌</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 10 分钟 SCADA 均值轮询无法在秒级风切变下实施协同偏航</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 840K EPS 光纤/换流阀流与 5,800万全内存向量月烧 $114.9K</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 阵风切变致低惯量电网 RoCoF &gt; 1.0Hz/s 濒临解列</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 风暴前锋致出力骤降 -620MW，受端电网频率变化率飙至 0.92Hz/s</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 缺乏毫秒级构网储能 (GFM-BESS) 虚拟惯量联动与海站断网自治</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 触发 ENTSO-E 电网违约罚款与 EPEX 15 分钟不平衡重罚</text>
+
+  <!-- Center Column: Fabric 41ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 风-缆-阀-储 41ms 自愈闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (10ms) · Eventhouse KQL H3 840K EPS 拖锚声纹与 RoCoF 感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税锁定 NS04 海缆 180m 外失控货轮 42Hz 刮擦海床声纹</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 同步捕获风暴切变 -620MW 出力跌落与受端电网 RoCoF = 0.92Hz/s</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (11ms) · SSD DiskANN 5,800万尾流/EMT匹配与储能惯量</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 5,800万向量 (0.99 相似，省92%内存)：NS04 海缆 480MW 切至 NS05</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• GFM-BESS 瞬时补 +420MW 惯量 + 前排 85 台风机 +6.5° 偏航增发 +145MW</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (10ms) · Foundry IQ ENTSO-E 稳定与 IEC 61400 载荷护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-055：电网 RoCoF 压回 0.34Hz/s &lt; 1.00Hz/s + 阀结温 98.4°C &lt; 115°C</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认前排 85 台风机偏航 +6.5° 后叶根极限挥舞弯矩 78.2% &lt; 85.0% 红线</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (10ms) · ALDO 海上平台边缘潮流转移、储能放电与偏航执行</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 海控总调 Teams 联签 Confirm → ALDO 下发 MMC 切流、BESS 惯量与风机偏航</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 41ms 自愈 · 守护 $15.90M 海缆防锚断、电网防解列与尾流增发 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + ALDO)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 840K EPS 海缆 DAS×AIS H3 碰撞与 RoCoF ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 5,800万尾流/EMT SSD DiskANN + 风-缆-阀-储动态孪生</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 海上换流站断网自治 + 1,900 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 十亿网格大气边界层大涡模拟 (SOWFA LES) → CycleCloud / AWS</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 欧洲 EPEX / Nord Pool 竞价强化学习训练 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 尾流查找表与竞价模型通过 OneLake Shortcut 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁将海缆 DAS 光纤与 AIS 船位割裂导致走锚砸缆无法提前转移</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁超过 IEC 61400 叶根弯矩上限 (&gt;85%) 强行下发过大偏航角</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁在离岸 120km 换流站仅靠公有云控制面而无本地 ALDO 自治</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (38 GW 海风 + 14 条海缆 · 840K EPS · 1,900 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + Twin + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $19,900/月 · 500人归一化: $8,900/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 86.9% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方风电 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $122,600/月 · 500人归一化: $55,000/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $151,900/月 · 500人归一化: $68,100/月 (按属性/分片计费 + 内存向量 + 交易软件)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $15.90M 风险敞口保护拆解 (Scenario BC 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 提前转移 480MW 潮流并拖轮拦截走锚商船护住海缆：$7.20M · 构网储能 +420MW 防解列：$4.90M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 85 台风机 +6.5° 协同偏航消除尾流多发 +145MW 免除 EPEX 不平衡罚款：$3.80M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R48) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-14 R48)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=236 (DL-01..236) 均值 = 306.0 ms (235/236 = 99.58%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=55 (场景 A..BC，范围 5–780ms) 均值 = 257.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario BC 端到端延迟 = 41 ms (10ms 感知 + 11ms DiskANN/孪生 + 10ms ENTSO-E 护栏 + 10ms 回写) · 114/114 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 海缆 DAS 光纤与 AIS 流直通：840K EPS 遥测直推 Eventhouse H3 ($0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 5,800万尾流/EMT库：三维偏航与暂态向量建索引 (P99 &lt; 11ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 风-缆-阀-储动态孪生：在 Digital Twin Builder 关联风机 PPC、柔直海缆与构网储能</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 海上换流站 ALDO 断网自治：部署 SQL Server on Azure Local 保障风暴断网期本地闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. ENTSO-E 与 IEC 61400 护栏 (SOP-055)：RoCoF &lt; 1.0Hz/s，阀结温 &lt; 115°C，载荷 &lt; 85%</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (114/114) · reports/report.json</text>
+</svg>
