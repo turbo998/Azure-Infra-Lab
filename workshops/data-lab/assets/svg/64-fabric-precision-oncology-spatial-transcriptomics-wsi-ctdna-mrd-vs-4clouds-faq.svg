@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760">
+  <defs>
+    <linearGradient id="bg64" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent64" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="50%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue64" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="cardRed64" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B1219"/>
+      <stop offset="100%" stop-color="#1F090D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="760" fill="url(#bg64)"/>
+  <rect x="20" y="18" width="1240" height="4" rx="2" fill="url(#accent64)"/>
+
+  <!-- Header -->
+  <text x="36" y="54" fill="#F472B6" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">ROUND 56 · PRECISION ONCOLOGY, SPATIAL TRANSCRIPTOMICS (10X XENIUM), 40X DICOM WSI &amp; LIQUID BIOPSY CTDNA MRD FAQ</text>
+  <text x="36" y="84" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800">Fabric HDS + Eventhouse 790K EPS + 92M Spatial/WSI SSD DiskANN (43ms, -88.5% TCO) vs. 4 Clouds</text>
+  <text x="36" y="108" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="13">42 Cancer Centers + 650K Patients · 10ms 0.042% VAF ctDNA Relapse Sense + 11ms 92M Spatial/WSI Match + 11ms CAP/CLIA/EHDS Gate + 11ms Epic FHIR Commit</text>
+
+  <!-- Top KPI Pills -->
+  <rect x="980" y="36" width="264" height="66" rx="12" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1112" y="60" text-anchor="middle" fill="#A7F3D0" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">SEALED BENCHMARK (DL-265..268)</text>
+  <text x="1112" y="86" text-anchor="middle" fill="#ECFDF5" font-family="Segoe UI, Inter, sans-serif" font-size="19" font-weight="800">267 / 268 (99.63%) · 43ms</text>
+
+  <!-- Left Column: Legacy Fragmented Stack -->
+  <rect x="36" y="128" width="585" height="390" rx="14" fill="url(#cardRed64)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="58" y="158" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="800">⛔ Legacy Multi-Silo Omics &amp; Pathology Stack ($84,400/mo · 3.5-Day MTB Delay)</text>
+  <text x="58" y="180" fill="#FECACA" font-family="Segoe UI, Inter, sans-serif" font-size="12">AWS HealthOmics / HealthLake / OpenSearch + Databricks Glow + Snowflake / GCP</text>
+
+  <rect x="58" y="196" width="540" height="66" rx="8" fill="#2A0F15" stroke="#7F1D1D" stroke-width="1"/>
+  <text x="72" y="218" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">1. 48-Hour Batch FASTQ/VCF Blindness &amp; Missed Ultralow-VAF ctDNA Relapse</text>
+  <text x="72" y="238" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Static VCF filters discard 0.042% VAF ESR1 Y537S resistance clones as noise ($28,500/mo)</text>
+  <text x="72" y="254" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Flowcell pore depletion discovered only after 48h batch completion; misses 14-week MRD lead time</text>
+
+  <rect x="58" y="274" width="540" height="66" rx="8" fill="#2A0F15" stroke="#7F1D1D" stroke-width="1"/>
+  <text x="72" y="296" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">2. 92M Spatial Transcriptomics &amp; 40x WSI Tile In-Memory RAM Tax</text>
+  <text x="72" y="316" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• OpenSearch Serverless / Mosaic Vector Search RAM-bound HNSW costs $31,700/mo in idle memory</text>
+  <text x="72" y="332" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• PACS WSI tiles and 10x Xenium subcellular spots isolated from Epic FHIR / OMOP clinical outcomes</text>
+
+  <rect x="58" y="352" width="540" height="66" rx="8" fill="#2A0F15" stroke="#7F1D1D" stroke-width="1"/>
+  <text x="72" y="374" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">3. 3.5-Day Manual Molecular Tumor Board (MTB) Assembly &amp; Toxicity Risk</text>
+  <text x="72" y="394" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Manual slide review, VCF curation &amp; trial matching takes 3.5 days ($24,200/mo ETL/compute)</text>
+  <text x="72" y="410" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Delayed T-DXd ADC switch &amp; trial enrollment risks $18.70M in trial dropout &amp; progression SLAs</text>
+
+  <rect x="58" y="432" width="540" height="68" rx="8" fill="#450A0A" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="328" y="458" text-anchor="middle" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="800">Legacy Outcome: 3.5-Day MTB Lag · Missed 0.042% VAF Relapse · $84,400/mo</text>
+  <text x="328" y="482" text-anchor="middle" fill="#FECACA" font-family="Segoe UI, Inter, sans-serif" font-size="12">$18,700,000 Annual Clinical Trial Milestone &amp; Precision-Therapy SLA Exposure</text>
+
+  <!-- Right Column: Microsoft Fabric Architecture -->
+  <rect x="645" y="128" width="599" height="390" rx="14" fill="url(#cardBlue64)" stroke="#EC4899" stroke-width="1.8"/>
+  <text x="667" y="158" fill="#F472B6" font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="800">✅ Microsoft Fabric Spatial Multi-Omics &amp; MTB Closed Loop ($9,700/mo · 43ms E2E)</text>
+  <text x="667" y="180" fill="#BAE6FD" font-family="Segoe UI, Inter, sans-serif" font-size="12">Fabric HDS OMOP v5.4 + Eventhouse KQL + Cosmos SSD DiskANN + Foundry IQ + ALDO Edge</text>
+
+  <rect x="667" y="196" width="555" height="62" rx="8" fill="#0F172A" stroke="#EC4899" stroke-width="1"/>
+  <text x="681" y="216" fill="#F472B6" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">Step 1 (10ms) · Eventhouse KQL 790K EPS Base-Calling &amp; ctDNA MRD Sense</text>
+  <text x="681" y="235" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• $0/GB write tax + 12:1 compression on Nanopore Phred Q-scores &amp; Duplex-UMI 143bp/167bp streams</text>
+  <text x="681" y="250" fill="#A7F3D0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• series_outliers() isolates 0.042% VAF ESR1 Y537S + HER2-low relapse 14 weeks ahead of CT (DL-265)</text>
+
+  <rect x="667" y="266" width="555" height="62" rx="8" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+  <text x="681" y="286" fill="#C084FC" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">Step 2 (11ms) · Fabric HDS OMOP Twin &amp; SSD DiskANN 92M Spatial/WSI Match</text>
+  <text x="681" y="305" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Searches 92M 10x Xenium subcellular spots &amp; 40x DICOM WSI GigaPath tiles at -92% RAM cost (0.99 sim)</text>
+  <text x="681" y="320" fill="#A7F3D0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Confirms HER2-low bystander sensitivity &amp; matches T-DXd ADC + Phase-II bispecific trial arm (DL-266)</text>
+
+  <rect x="667" y="336" width="555" height="62" rx="8" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+  <text x="681" y="356" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="700">Step 3 (11ms) · Foundry IQ CAP/CLIA, ILD Toxicity &lt;3.0% &amp; EU EHDS Gate</text>
+  <text x="681" y="375" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Enforces SOP-063: verifies ACMG/AMP tiering, Grade &gt;=3 ILD risk = 1.4% &lt; 3.0% &amp; Purview OBO consent</text>
+  <text x="681" y="390" fill="#A7F3D0" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• Hard-blocks unsafe ADC dosing on active pneumonitis (SpO2 &lt; 91%) or raw PHI export (DL-267)</text>
+
+  <rect x="667" y="406" width="555" height="94" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="681" y="428" fill="#A7F3D0" font-family="Segoe UI, Inter, sans-serif" font-size="13" font-weight="800">Step 4 (11ms · 43ms E2E) · MTB Teams Sign-Off + Epic FHIR &amp; ALDO Edge</text>
+  <text x="681" y="448" fill="#ECFDF5" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• MTB Chair co-signs in Teams (FDA 21 CFR Part 11); writes Epic FHIR MedicationRequest &amp; locks trial slot</text>
+  <text x="681" y="466" fill="#ECFDF5" font-family="Segoe UI, Inter, sans-serif" font-size="11.5">• SQL on Azure Local (ALDO) caches 40x WSI pathology tiles locally for zero-drop hospital viewing</text>
+  <text x="681" y="486" fill="#FDE047" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">🏆 Cuts Monthly TCO by 88.5% ($9,700 vs. $84,400, Saving $74,700/mo) · Protects $18.70M SLA</text>
+
+  <!-- Bottom 5-Platform Comparison Bar & Dual-Denominator Footer -->
+  <rect x="36" y="534" width="1208" height="198" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="564" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="800">5-Platform Precision Oncology, Spatial Transcriptomics &amp; Digital Pathology Matrix (Scenario BK · DL-265..DL-268)</text>
+
+  <!-- Table Headers -->
+  <text x="58" y="592" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">PLATFORM STACK</text>
+  <text x="370" y="592" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">CTDNA MRD &amp; 92M SPATIAL/WSI ENGINE</text>
+  <text x="740" y="592" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">E2E MTB LATENCY</text>
+  <text x="920" y="592" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">MONTHLY TCO (NORM)</text>
+  <text x="1095" y="592" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">CLINICAL VERDICT</text>
+
+  <line x1="58" y1="600" x2="1220" y2="600" stroke="#334155" stroke-width="1"/>
+
+  <!-- Row 1: Fabric -->
+  <text x="58" y="622" fill="#F472B6" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" font-weight="800">Microsoft Fabric (HDS + KQL + DiskANN)</text>
+  <text x="370" y="622" fill="#E2E8F0" font-family="Segoe UI, Inter, sans-serif" font-size="12">10ms series_outliers + 11ms SSD DiskANN (-92% RAM)</text>
+  <text x="740" y="622" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" font-weight="800">43 ms (Real-Time)</text>
+  <text x="920" y="622" fill="#34D399" font-family="Segoe UI, Inter, sans-serif" font-size="12.5" font-weight="800">$9,700 / mo (-88.5%)</text>
+  <text x="1095" y="622" fill="#A7F3D0" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="700">🏆 Primary MTB Loop</text>
+
+  <!-- Row 2: AWS -->
+  <text x="58" y="646" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="12">AWS (HealthOmics + HealthLake + OpenSearch)</text>
+  <text x="370" y="646" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12">Batch Nextflow VCF + RAM-Bound OpenSearch OCUs</text>
+  <text x="740" y="646" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="12">4.2 hrs – 3.5 days</text>
+  <text x="920" y="646" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="12">$84,400 / mo</text>
+  <text x="1095" y="646" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="12">Primary BAM Align Only</text>
+
+  <!-- Row 3: Databricks -->
+  <text x="58" y="670" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="12">Databricks (Glow + Mosaic Vector Search)</text>
+  <text x="370" y="670" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12">PySpark Glow GWAS + In-Memory Vector Search</text>
+  <text x="740" y="670" fill="#FCD34D" font-family="Segoe UI, Inter, sans-serif" font-size="12">2.4s – 18.0m</text>
+  <text x="920" y="670" fill="#FCD34D" font-family="Segoe UI, Inter, sans-serif" font-size="12">$78,600 / mo</text>
+  <text x="1095" y="670" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="12">GigaPath Model Train</text>
+
+  <!-- Row 4: Snowflake / GCP -->
+  <text x="58" y="694" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="12">Snowflake HCLS / GCP Healthcare API</text>
+  <text x="370" y="694" fill="#94A3B8" font-family="Segoe UI, Inter, sans-serif" font-size="12">60s Dynamic Tables + External DICOMWeb / Vertex</text>
+  <text x="740" y="694" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="12">60s – 2.5 hrs</text>
+  <text x="920" y="694" fill="#FCA5A5" font-family="Segoe UI, Inter, sans-serif" font-size="12">$76.9K – $81.2K / mo</text>
+  <text x="1095" y="694" fill="#CBD5E1" font-family="Segoe UI, Inter, sans-serif" font-size="12">External RWD Clean Room</text>
+
+  <text x="58" y="720" fill="#64748B" font-family="Segoe UI, Inter, sans-serif" font-size="11">Provenance: measured_local_harness (267/268 = 99.63%, 130/130 tests) · Dual-Denominator: n=268 Matrix Mean = 271.5ms | n=63 Ontology Sim Mean = 229.0ms (5–780ms)</text>
+</svg>

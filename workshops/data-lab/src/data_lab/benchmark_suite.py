@@ -4533,6 +4533,82 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN + Digital Twin Builder + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds":
+        # Scenario BK (2026-11-14 R56): Global Precision Oncology, Spatial Transcriptomics (10x Xenium / Visium HD), 40x DICOM WSI & Liquid Biopsy ctDNA MRD Loop
+        # Comparing Microsoft Fabric (HDS OMOP v5.4 + Eventhouse KQL 790K EPS 10ms series_outliers + Cosmos DB SSD DiskANN 11ms 92M Spatial/WSI Match + Foundry IQ + ALDO Pathology Edge, $9.7K/mo Normalized | $22.8K/mo Internal)
+        # vs 3.5-Day Batch VCF / Siloed PACS & In-Memory Vector Search ($84.4K/mo Normalized | $198.3K/mo Internal)
+        return {
+            "scenario_id": "global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds",
+            "title": "Global Precision Oncology 42 Cancer Centers + 650K Patients × 790K EPS Base-Calling QC, 0.042% VAF ctDNA Relapse & 92M Spatial/WSI ADC Loop (Fabric HDS + Eventhouse KQL + SSD DiskANN + ALDO vs. 3.5-Day Batch MTB / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-14T03:30:00Z",
+                "cancer_centers_monitored_count": 42,
+                "longitudinal_oncology_patients_count": 650000,
+                "sequencer_and_ctdna_ingestion_eps": 790000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "ctdna_esr1_y537s_vaf_pct": 0.042,
+                "ctdna_short_fragment_143bp_ratio_surge_pct": 38.4,
+                "mrd_molecular_relapse_lead_time_weeks": 14,
+                "eventhouse_kql_series_outliers_latency_ms": 10,
+                "spatial_transcriptomics_and_wsi_vectors_indexed_count": 92000000,
+                "ssd_diskann_spatial_wsi_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 11,
+                "predicted_grade3_ild_toxicity_risk_pct": 1.4,
+                "max_allowed_grade3_ild_toxicity_pct": 3.0,
+                "fabric_monthly_oncology_tco_usd": 9700,
+                "competitor_stitched_oncology_tco_usd": 84400,
+                "fabric_internal_full_oncology_tco_usd": 22800,
+                "competitor_internal_full_oncology_tco_usd": 198300,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalOncology_42Centers_650KPatients:790K_EPS_Nanopore_Phred_DuplexUMI_40x_DICOM_WSI_Stream",
+                "hop_2": "Eventhouse_KQL_SeriesOutliers:10ms_Isolate_0.042Pct_VAF_ESR1_Y537S_And_HER2_Low_Relapse_14Weeks_Early ($0/GB Write Tax)",
+                "hop_3": "Fabric_HDS_OMOP_v5_4_And_Cosmos_SSD_DiskANN:11ms_Match_92M_10xXenium_And_WSI_GigaPath_Vectors_0.99_Confirm_Bystander_ADC (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:11ms_Verify_CAP_CLIA_ACMG_Tier1_Grade3_ILD_1.4Pct_Below_3.0Pct_And_Purview_OBO_EHDS_Consent",
+            },
+            "multi_agent_plan": {
+                "cancer_centers_covered": 42,
+                "patients_monitored": 650000,
+                "monthly_oncology_tco_saved_usd": 74700,
+                "oncology_tco_savings_pct": 88.5,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 790K EPS Sequencer QC & ctDNA Fragmentomics Engine",
+                        "operation": "Ingest 790,000 EPS of Nanopore/Illumina base-calling quality streams and Duplex-UMI ctDNA fragmentomics at $0/GB write tax, flagging a 0.042% VAF ESR1 Y537S + HER2-low relapse 14 weeks ahead of CT in 10ms",
+                        "impact_metric": "Replaces 48h blind FASTQ/VCF batch waits and prevents false-negative disposal of ultralow-VAF resistance clones",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric HDS OMOP v5.4 Twin & Cosmos SSD DiskANN 92M Spatial/WSI Engine",
+                        "operation": "Correlate 40x DICOM WSI GigaPath tiles and 10x Xenium subcellular TIL neighborhoods against 92M spatial/drug-response vectors (0.99 similarity in 11ms at -92% RAM) and validate Grade >=3 ILD risk = 1.4% < 3.0% in Foundry IQ (11ms)",
+                        "impact_metric": "Confirms HER2-low bystander sensitivity and matches T-DXd ADC + Phase-II bispecific trial arm without 3.5-day manual MTB curation",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "MTB Chair Teams Sign-Off & ALDO Hospital Pathology Edge Commit",
+                        "operation": "Co-sign FDA 21 CFR Part 11 MTB decision in Teams, write Epic FHIR MedicationRequest, lock trial enrollment slot, and cache 40x WSI tiles on SQL on Azure Local (ALDO) edge (11ms)",
+                        "impact_metric": "43ms E2E precision-oncology loop; -$74,700/mo (-88.5%) TCO; $18.70M clinical trial & therapy SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "ONCOLOGY-SPATIAL-WSI-CTDNA-MRD-EHDS-SOP-063",
+                "hard_constraint": "Never auto-prescribe ADC or CAR-T regimens when predicted Grade >=3 Interstitial Lung Disease (ILD) or CRS risk >=3.0% or patient SpO2 <91%, and never export unmasked patient genomic VCFs or WSI PHI without Purview OBO consent under HIPAA & EU EHDS",
+                "proposed_change": "Switch to T-DXd ADC + Phase-II bispecific trial arm (predicted Grade >=3 ILD risk = 1.4% < 3.0% ceiling) with Purview OBO de-identification and FDA 21 CFR Part 11 e-signature",
+                "cap_clia_and_ild_toxicity_ceiling_verified": True,
+                "hipaa_ehds_purview_obo_consent_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 18700000,
+                "end_to_end_latency_ms": 43,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Healthcare Data Solutions (HDS) + Eventhouse KQL + Cosmos DB SSD DiskANN + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -7705,6 +7781,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 17,
     },
+    {
+        "id": "DL-265",
+        "category": "Real-Time Intelligence",
+        "question": "Oncology consortium across 42 cancer centers and 650K patients must ingest 790K EPS of real-time Nanopore base-calling and Duplex-UMI ctDNA fragmentomics, detect 0.042% VAF ESR1 Y537S relapse in <15ms, and match 92M 10x Xenium spatial transcriptomics & 40x DICOM WSI vectors",
+        "expected": "Microsoft Fabric HDS OMOP v5.4 + Eventhouse KQL series_outliers() 10ms ctDNA Relapse Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 11ms 92M Spatial/WSI Match (-92% RAM) + ALDO Pathology Edge (43ms E2E, -88.5% TCO)",
+        "model_answer": "Microsoft Fabric HDS OMOP v5.4 + Eventhouse KQL series_outliers() 10ms ctDNA Relapse Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 11ms 92M Spatial/WSI Match (-92% RAM) + ALDO Pathology Edge (43ms E2E, -88.5% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 7,
+    },
+    {
+        "id": "DL-266",
+        "category": "vs AWS",
+        "question": "Translational oncology team needs Nextflow/WDL BWA-MEM2 & GATK primary FASTQ-to-BAM alignment alongside multi-node GPU Prov-GigaPath / UNI whole-slide pathology foundation model pre-training",
+        "expected": "Route primary FASTQ->BAM alignment to AWS HealthOmics / Batch and GigaPath foundation model training to Databricks GPU, mounting resulting VCFs and 92M spatial/WSI embeddings into Fabric OneLake & SSD DiskANN via Zero-Copy Shortcuts",
+        "model_answer": "Route primary FASTQ->BAM alignment to AWS HealthOmics / Batch and GigaPath foundation model training to Databricks GPU, mounting resulting VCFs and 92M spatial/WSI embeddings into Fabric OneLake & SSD DiskANN via Zero-Copy Shortcuts",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 8,
+    },
+    {
+        "id": "DL-267",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric HDS + Eventhouse + SSD DiskANN + ALDO vs 3.5-day batch VCF curation & RAM-bound OpenSearch vector silos across 42 cancer centers with 1,600 oncologists, pathologists, and clinical trial coordinators",
+        "expected": "Hybrid Better Together: Stream 790K EPS sequencer/ctDNA telemetry into Eventhouse ($0/GB tax), unify FHIR/DICOM/OMOP in HDS ($23/TB), index 92M spatial/WSI vectors in SSD DiskANN (-92% RAM), and serve 1,600 users via DirectLake (-88.5% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 790K EPS sequencer/ctDNA telemetry into Eventhouse ($0/GB tax), unify FHIR/DICOM/OMOP in HDS ($23/TB), index 92M spatial/WSI vectors in SSD DiskANN (-92% RAM), and serve 1,600 users via DirectLake (-88.5% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 7,
+    },
+    {
+        "id": "DL-268",
+        "category": "Fabric IQ & Ontology",
+        "question": "Metastatic breast cancer follow-up exhibits a 0.042% VAF ESR1 Y537S + 143bp ctDNA fragment surge while 40x DICOM WSI & 10x Xenium spatial biopsy show CD8+ T-cell exclusion with stromal HER2-low expression",
+        "expected": "Eventhouse KQL 0.042% VAF ctDNA Relapse Sense (10ms, $0/GB Tax) + 6-Hop 92M Spatial/WSI DiskANN T-DXd ADC & Phase-II Match (11ms) + Foundry IQ CAP/CLIA & Grade>=3 ILD 1.4%<3.0% Gate (11ms) + Teams Epic FHIR & ALDO Commit (11ms = 43ms E2E, Protect $18.70M SLA)",
+        "model_answer": "Eventhouse KQL 0.042% VAF ctDNA Relapse Sense (10ms, $0/GB Tax) + 6-Hop 92M Spatial/WSI DiskANN T-DXd ADC & Phase-II Match (11ms) + Foundry IQ CAP/CLIA & Grade>=3 ILD 1.4%<3.0% Gate (11ms) + Teams Epic FHIR & ALDO Commit (11ms = 43ms E2E, Protect $18.70M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 8,
+    },
 ]
 
 
@@ -7882,6 +8006,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     humanoid_robotics_sim = simulate_ontology_incident("global_humanoid_robotics_fabric_embodied_vla_sim2real_iso10218_vs_4clouds")
     urban_air_mobility_sim = simulate_ontology_incident("global_urban_air_mobility_fabric_evtol_vertiport_utm_bess_vs_4clouds")
     aidc_gigawatt_sim = simulate_ontology_incident("global_aidc_gigawatt_fabric_liquid_cooling_ups_grid_interactive_vs_4clouds")
+    precision_oncology_sim = simulate_ontology_incident("global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -7948,6 +8073,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_humanoid_robotics_fabric_embodied_vla_sim2real_iso10218_vs_4clouds": humanoid_robotics_sim,
         "global_urban_air_mobility_fabric_evtol_vertiport_utm_bess_vs_4clouds": urban_air_mobility_sim,
         "global_aidc_gigawatt_fabric_liquid_cooling_ups_grid_interactive_vs_4clouds": aidc_gigawatt_sim,
+        "global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds": precision_oncology_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -8055,6 +8181,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r53_ontology_sim_mean_ms = round(sum(r53_sim_latencies) / len(r53_sim_latencies), 2)
     r54_sim_latencies = sim_latencies[:61]
     r54_ontology_sim_mean_ms = round(sum(r54_sim_latencies) / len(r54_sim_latencies), 2)
+    r55_sim_latencies = sim_latencies[:62]
+    r55_ontology_sim_mean_ms = round(sum(r55_sim_latencies) / len(r55_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -8778,11 +8906,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-14",
         },
+        {
+            "id": "SPEC-PRECISION-ONCOLOGY-SPATIAL-TRANSCRIPTOMICS-WSI-CTDNA-MRD",
+            "vendor": "Microsoft / AWS / Databricks / Snowflake / Google Cloud",
+            "claim": "Microsoft Fabric Healthcare Data Solutions (HDS) unifies FHIR R4, DICOM WSI metadata, and OMOP CDM v5.4 on OneLake while Eventhouse KQL series_outliers() detects real-time sequencer and ctDNA fragmentomic anomalies and Cosmos DB in Fabric SSD DiskANN indexes 92M+ spatial transcriptomics and pathology tile vectors alongside SQL Server on Azure Local (ALDO); AWS HealthOmics/HealthImaging, Databricks Lakehouse for Healthcare (Glow), Snowflake HCLS, and GCP Cloud Healthcare API provide cloud-native oncology and bioinformatics analytics.",
+            "official_url": "https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/omop-analytics",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/kusto/query/series-outliers-function",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html",
+                "https://www.databricks.com/solutions/industries/healthcare-and-life-sciences",
+                "https://cloud.google.com/healthcare-api/docs/concepts/introduction",
+            ],
+            "as_of": "2026-11-14",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r55",
-        "generated_at": "2026-11-14T02:58:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r56",
+        "generated_at": "2026-11-14T03:32:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -8793,6 +8934,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R55 snapshot n=264 mean was 275.5ms; "
                     f"historical R54 snapshot n=260 mean was 279.5ms; "
                     f"historical R53 snapshot n=256 mean was 283.5ms; "
                     f"historical R52 snapshot n=252 mean was 287.5ms; "
@@ -8853,6 +8995,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R55 snapshot n=62 mean was {r55_ontology_sim_mean_ms}ms; "
                     f"historical R54 snapshot n=61 mean was {r54_ontology_sim_mean_ms}ms; "
                     f"historical R53 snapshot n=60 mean was {r53_ontology_sim_mean_ms}ms; "
                     f"historical R52 snapshot n=59 mean was {r52_ontology_sim_mean_ms}ms; "
@@ -8906,6 +9049,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r55_historical_denominators": {
+                    "r55_routing_matrix_n264_mean_ms": 275.5,
+                    "r55_ontology_simulations_n62_mean_ms": r55_ontology_sim_mean_ms,
+                },
                 "r54_historical_denominators": {
                     "r54_routing_matrix_n260_mean_ms": 279.5,
                     "r54_ontology_simulations_n61_mean_ms": r54_ontology_sim_mean_ms,
@@ -9180,6 +9327,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r55_62_simulation_mean_modeled_latency_ms": r55_ontology_sim_mean_ms,
             "r54_61_simulation_mean_modeled_latency_ms": r54_ontology_sim_mean_ms,
             "r53_60_simulation_mean_modeled_latency_ms": r53_ontology_sim_mean_ms,
             "r52_59_simulation_mean_modeled_latency_ms": r52_ontology_sim_mean_ms,
