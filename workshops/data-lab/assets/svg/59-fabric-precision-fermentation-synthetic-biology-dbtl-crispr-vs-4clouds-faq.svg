@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad59" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#051B18"/>
+      <stop offset="50%" stop-color="#0B2236"/>
+      <stop offset="100%" stop-color="#08281E"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad59" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad59)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad59)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 51 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.2" font-weight="800">合成生物学与高通量生物铸造厂 (740K EPS DBTL 闭环、防产酸倒罐与 IGSC 筛查) 选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">6 座生物铸造厂 (1,600 台微型罐) + 48 台 200kL 工业罐 · Eventhouse (4ms) + SSD DiskANN 7,200万代谢通量匹配 (5ms) + DBTL 孪生 + ALDO 边缘 · 17ms 闭环省 87.5% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BF · 247/248 (99.60%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">17ms · 省 87.5% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统合成生物与工业发酵三大致命痛点 ($166.4K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 补糖过快触发“溢流代谢 (Crabtree)”产乙酸毒死工程菌</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 比生长速率越过 μ_crit (0.22h⁻¹) 致呼吸商飙至 RQ=1.28 疯狂产酸</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 离线 HPLC 数小时滞后，发现乙酸积累时质粒已丢失、蛋白归零</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 12 批 200,000L 重组胶原蛋白工业罐倒罐直接损失 $7.80M</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 250mL 微型罐到 200,000L 大罐“放大死亡之谷”</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 研发 LIMS 与生产 Historian 割裂，温室高产菌进大罐遭遇溶氧梯度</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 缺乏 7,200万条代谢通量平衡 (FBA) 与 LC-MS 质谱向量实时关联</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 740K EPS 发酵/微流控流与全内存向量节点月烧 $126.4K</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ IGSC 基因合成生物安全筛查与无菌车间断网风险</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• AI 自动生成引物若未拦截受控毒素/病原同源序列将触发重罚</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 工业无菌发酵车间在外部断网时无法依靠纯云端控制面调节补料</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 放大延期与生物安全合规风险敞口高达 $9.15M</text>
+
+  <!-- Center Column: Fabric 17ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 基因-微罐-大罐 17ms 自愈闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (4ms) · Eventhouse KQL 740K EPS 呼吸商 RQ 与溶氧感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税执行 series_fit_line() 锁定 12 台 200kL 大罐 RQ=1.28</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 同步捕获顶部补糖死区与局部溶氧跌至 19.4% 的溢流产酸前兆</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (5ms) · SSD DiskANN 7,200万代谢通量匹配与双环寻优</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 7,200万 FBA/LC-MS 向量 (0.99 相似，省92%内存)：补糖泵回调 -22%</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 自动生成下一轮 384 孔板 pdc1 启动子 CRISPRi 弱化质粒组装工单</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (4ms) · Foundry IQ 发酵动力学与 IGSC 生物安全护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-058：比生长速率压回 μ=0.18h⁻¹ &lt; 0.22h⁻¹ + 溶氧 28.5% &gt;= 25%</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认 384 条新设计寡核苷酸引物 0.0% 命中 IGSC 受控病原体/毒素库</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (4ms) · ALDO 车间边缘补糖回调与 Echo 声学移液派单</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 发酵总工 Teams 联签 Confirm → ALDO 调 DeltaV 补糖泵并派发 Echo 工单</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 17ms 自愈 · 守护 $16.95M 200kL 防倒罐、DBTL 放大与生物安全 SLA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + ALDO)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 740K EPS 尾气质谱 RQ、微型罐与移液流 ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 7,200万 FBA/LC-MS SSD DiskANN + 基因到大罐 DBTL 孪生</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 车间断网自治 + 1,750 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：Databricks GPU + CycleCloud HPC</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 百亿参数基因/蛋白质大模型 (Evo-2/ESM-3) → Databricks GPU</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 200,000L 搅拌桨多相流气泡破碎 CFD → CycleCloud / AWS</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 突变体特征与流场分室模型通过 OneLake Shortcut 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁跳过 IGSC 病原/毒素同源筛查直接向 DNA 合成仪发序列</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁靠天级离线 HPLC 监控高密度发酵导致溢流产酸倒罐</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将 1,600 台微型反应器流写入按属性计费的 IoT SiteWise</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (6 座铸造厂 + 48 台 200kL 大罐 · 740K EPS · 1,750 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + Twin + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $20,800/月 · 500人归一化: $9,200/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 87.5% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方发酵 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $134,200/月 · 500人归一化: $59,300/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (SiteWise + HealthOmics + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $166,400/月 · 500人归一化: $73,500/月 (按属性/分片计费 + 内存向量 + LIMS 接口)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $16.95M 风险敞口保护拆解 (Scenario BF 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 回调补糖 -22% 挽救 12 批 200kL 胶原蛋白罐：$7.80M · DBTL 放大提速 3.2x：$5.35M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 100% 通过 IGSC 生物安全筛查与 FDA GRAS / 21 CFR Part 11 审计：$3.80M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R51) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-14 R51)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=248 (DL-01..248) 均值 = 292.0 ms (247/248 = 99.60%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=58 (场景 A..BF，范围 5–780ms) 均值 = 245.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario BF 端到端延迟 = 17 ms (4ms 感知 + 5ms DiskANN/孪生 + 4ms IGSC/动力学护栏 + 4ms 回写) · 120/120 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 尾气质谱 RQ 与微罐流直通：740K EPS 遥测直推 Eventhouse ($0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 7,200万 FBA/质谱库：代谢通量向量建索引 (P99 &lt; 5ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 基因-微罐-200kL大罐-移液孪生：在 Digital Twin Builder 关联 DBTL 全链路</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 发酵车间与铸造厂 ALDO 自治：部署 SQL Server on Azure Local 保障本地闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. 发酵与 IGSC 护栏 (SOP-058)：μ &lt; 0.22h⁻¹，DO &gt;= 25%，合成序列 100% 筛查</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (120/120) · reports/report.json</text>
+</svg>
