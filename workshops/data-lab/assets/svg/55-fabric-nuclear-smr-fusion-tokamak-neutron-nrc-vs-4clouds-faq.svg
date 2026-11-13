@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad55" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#051329"/>
+      <stop offset="50%" stop-color="#0C1E38"/>
+      <stop offset="100%" stop-color="#062824"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad55" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad55)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad55)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 47 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.2" font-weight="800">新一代核能 SMR 小堆与托卡马克聚变 (880K EPS 防破裂/防停堆)、NRC 合规与超算 PPA 选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">68 座 SMR + 4 座聚变堆 · Eventhouse KQL FFT (12ms) + SSD DiskANN 5,600万 EFIT/DNBR 匹配 (13ms) + 核热电孪生 + ALDO 单向光闸边缘 · 49ms 闭环省 86.7% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BB · 231/232 (99.57%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">49ms · 省 86.7% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统核能 SMR 与聚变装置三大致命痛点 ($147.4K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 托卡马克 2/1 撕裂模破裂与 HTS 超导失超毫秒级毁第一壁</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 1.5 亿度等离子体 2/1 磁岛降频锁相或 REBCO 超导磁体局部失超</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 传统 Historian 分钟级轮询无法在毫秒级触发 ECCD 压制磁岛</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 逃逸电子束击穿钨铜偏滤器单次维修与停机直接损失 $6.80M</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② AI 超算突发甩负荷 -180MW 引发 SMR 氙毒死区停堆 36h</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 相连 500MW 智算中心保存 Checkpoint 瞬间甩负荷 -180MW</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 若直接下插控制棒急降功率，氙-135 毒物累积致 36h 无法满发</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 5,600万条 EFIT/DNBR 全内存向量库与 Tag 税月烧 $111,200+</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ NRC 10 CFR 73.54 单向光闸隔离与 24/7 无碳 PPA 断链</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 核电 1E 级安全仪控强制单向光闸输出，纯公有云架构无法落地</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 缺乏厂内 BOP 边缘与熔盐储热协同，痛失超算 24/7 CFE 溢价</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单次非计划停堆与超算 PPA 违约罚金合计超 $8.75M</text>
+
+  <!-- Center Column: Fabric 49ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 核-热-储-算 49ms 自愈闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (12ms) · Eventhouse KQL 880K EPS 磁岛 FFT 与甩负荷感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税执行 series_fft() 捕获托卡马克 2/1 撕裂模降至 380Hz</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 同步锁定 SMR-Unit-14 因 AI 超算甩负荷 -180MW 引发的蒸汽压力陡升</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (13ms) · SSD DiskANN 5,600万 EFIT/DNBR 匹配与熔盐储热</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 5,600万条磁平衡与热工向量 (0.99 相似，省92%内存)：4.5MW ECCD 压磁岛</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 开启 SMR 二回路 28% 蒸汽旁路导入熔盐储热罐 (TES)，保堆芯 92% 稳定热功率</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (12ms) · Foundry IQ NRC 10 CFR 50.59 / 73.54 硬护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-054：DNBR = 2.18 &gt;= 1.30 红线 + 超导温升 1.8K &lt; 4.5K 失超线</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认零向 1E 级 RPS 写指令 (单向光闸合规) &amp; IAEA 乏燃料数字指纹 100% 匹配</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (12ms) · ALDO 核厂边缘 ECCD 转向、熔盐储热与 CFE 签证</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 主控室 SRO 操纵员 Teams 联签 Confirm → ALDO 下发 ECCD 与 BOP 蒸汽旁路指令</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 49ms 自愈 · 守护 $15.55M 聚变第一壁、SMR 防氙毒停堆与超算 PPA</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + ALDO)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 880K EPS 中子 SPND 与 Mirnov 磁探针 FFT ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 5,600万 EFIT/DNBR SSD DiskANN + 核热电储算动态孪生</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 单向光闸外围自治 + 1,950 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：CycleCloud HPC + DBX GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 全堆芯蒙特卡洛中子输运 (OpenMC/MCNP6) → CycleCloud / AWS</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 磁流体撕裂模神经算子 (FNO) 代理模型训练 → Databricks GPU</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• EFIT 磁面库与燃耗截面通过 OneLake Shortcut 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁向核电 1E 级安全保护系统 (RPS) 建立任何反向网络连接</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁在 AI 超算短时甩负荷时猛插控制棒引发 36h 氙毒死区停堆</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将 880K EPS 高频磁探针流写入按属性计费的 IoT SiteWise</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (68 座 SMR + 4 座聚变堆 · 880K EPS · 1,950 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + SDS + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $19,600/月 · 500人归一化: $8,800/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 86.7% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 第三方核电 Historian + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $119,200/月 · 500人归一化: $53,500/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $147,400/月 · 500人归一化: $66,200/月 (按属性/分片计费 + 内存向量 + 合规软件)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $15.55M 风险敞口保护拆解 (Scenario BB 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 4.5MW ECCD 抑制 2/1 撕裂模护住钨偏滤器：$6.80M · 熔盐储热吃下 180MW 防氙毒停堆：$5.15M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• 守护 500MW AI 智算中心 24/7 无碳核电 PPA 与 NRC/IAEA 零违规：$3.60M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R47) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-13/14 R47)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=232 (DL-01..232) 均值 = 311.0 ms (231/232 = 99.57%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=54 (场景 A..BB，范围 5–780ms) 均值 = 261.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario BB 端到端延迟 = 49 ms (12ms 感知 + 13ms DiskANN/孪生 + 12ms NRC/IAEA 护栏 + 12ms 回写) · 112/112 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 单向光闸遥测直通：880K EPS 中子与 Mirnov 磁探针流直推 Eventhouse ($0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 5,600万 EFIT/DNBR 库：磁面平衡与热工向量建索引 (P99 &lt; 13ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 核-热-储-算动态孪生：在 Digital Twin Builder 关联堆芯、蒸汽旁路、熔盐储热与超算</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 核电厂 BOP 边缘 ALDO 自治：部署 SQL Server on Azure Local 保障单向隔离区本地闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. NRC 10 CFR 50.59 / 73.54 护栏 (SOP-054)：DNBR &gt;= 1.30，超导温升 &lt; 4.5K，零写 1E RPS</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (112/112) · reports/report.json</text>
+</svg>
