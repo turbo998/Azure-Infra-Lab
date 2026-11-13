@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad57" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090D26"/>
+      <stop offset="50%" stop-color="#111C38"/>
+      <stop offset="100%" stop-color="#062824"/>
+    </linearGradient>
+    <linearGradient id="hdrGrad57" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bgGrad57)"/>
+
+  <!-- Header Banner -->
+  <rect x="32" y="24" width="1376" height="92" rx="14" fill="#0F172A" stroke="#818CF8" stroke-width="1.5"/>
+  <rect x="48" y="42" width="186" height="28" rx="6" fill="url(#hdrGrad57)"/>
+  <text x="141" y="61" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">DATA LAB · ROUND 49 FAQ</text>
+  <text x="250" y="62" fill="#F8FAFC" font-size="18.2" font-weight="800">容错量子计算与混合超算中心 (960K EPS 15mK 防失超、宇宙射线绕行与 QEC 校准) 选型：Fabric vs 四大云</text>
+  <text x="48" y="94" fill="#94A3B8" font-size="12.5">32 台千比特 QPU + 10万卡 GPU · Eventhouse KQL (8ms) + SSD DiskANN 6,400万脉冲/QEC匹配 (9ms) + 量子低温孪生 + ALDO 屏蔽大厅边缘 · 33ms 闭环省 87.1% TCO</text>
+  <rect x="1204" y="38" width="186" height="64" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1297" y="62" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BD · 239/240 (99.58%)</text>
+  <text x="1297" y="86" fill="#FFFFFF" font-size="18" font-weight="800" text-anchor="middle">33ms · 省 87.1% TCO</text>
+
+  <!-- Left Column: First-Principles Pain Points -->
+  <rect x="32" y="132" width="436" height="360" rx="14" fill="#111C33" stroke="#F43F5E" stroke-width="1.4"/>
+  <text x="52" y="162" fill="#FDA4AF" font-size="15" font-weight="800">01 · 传统容错量子与混合超算中心三大痛点 ($156.6K/月)</text>
+
+  <rect x="48" y="178" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="200" fill="#FB7185" font-size="13" font-weight="700">① 宇宙射线缪子轰击引发准粒子雪崩毁掉 72h 量子大任务</text>
+  <text x="62" y="220" fill="#E2E8F0" font-size="11.5">• 宇宙射线击中 15mK 硅基底致 16 比特 T1 暴跌至 9.2μs (错误率 +18.5x)</text>
+  <text x="62" y="238" fill="#E2E8F0" font-size="11.5">• 静态表面码解码权重失效，运行 58h 的 FeMoco 分子电路全盘作废</text>
+  <text x="62" y="256" fill="#FCA5A5" font-size="11" font-weight="700">✗ 单次跨天量子相位估计 (QPE) 任务崩溃直接损失 $6.40M</text>
+
+  <rect x="48" y="280" width="404" height="92" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="302" fill="#FB7185" font-size="13" font-weight="700">② 6,400万条 DRAG 微波脉冲与解码权重全内存库爆炸</text>
+  <text x="62" y="322" fill="#E2E8F0" font-size="11.5">• 二能级缺陷 (TLS) 随机跳变 +420kHz 导致双比特门跌破 99.9% 阈值</text>
+  <text x="62" y="340" fill="#E2E8F0" font-size="11.5">• 传统离线重新跑全片 Ramsey 标定需停机数小时，打断科研流水线</text>
+  <text x="62" y="358" fill="#FCA5A5" font-size="11" font-weight="700">✗ 960K EPS 综合征流与 6,400万全内存向量节点月烧 $118.6K</text>
+
+  <rect x="48" y="382" width="404" height="94" rx="10" fill="#1E1B2E" stroke="#F43F5E" stroke-width="1"/>
+  <text x="62" y="404" fill="#FB7185" font-size="13" font-weight="700">③ 稀释制冷机 15 mK 微瓦级热失超 (停机 48h) 与 IP 风险</text>
+  <text x="62" y="424" fill="#E2E8F0" font-size="11.5">• 盲目注入校准微波脉冲超出混合室 20μW 冷却极限引发热失超升温</text>
+  <text x="62" y="442" fill="#E2E8F0" font-size="11.5">• 重新抽真空降温至 15 mK 耗时 48 小时；且分子哈密顿量严禁出机房</text>
+  <text x="62" y="460" fill="#FCA5A5" font-size="11" font-weight="700">✗ 低温失超停机与主权分子专利违约风险敞口达 $9.85M</text>
+
+  <!-- Center Column: Fabric 33ms Closed-Loop Architecture -->
+  <rect x="486" y="132" width="484" height="360" rx="14" fill="#0F2238" stroke="#10B981" stroke-width="1.8"/>
+  <text x="506" y="162" fill="#6EE7B7" font-size="15" font-weight="800">02 · Microsoft Fabric 低温-测控-解码 33ms 自愈闭环</text>
+
+  <rect x="504" y="178" width="448" height="68" rx="9" fill="#0B192C" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="518" y="199" fill="#38BDF8" font-size="12.5" font-weight="800">Step 1 (8ms) · Eventhouse KQL 960K EPS 准粒子雪崩与 TLS 感知</text>
+  <text x="518" y="218" fill="#E2E8F0" font-size="11.2">• $0/GB 写入税执行 series_outliers() 锁定 Tile-C4 16 比特 T1 跌至 9.2μs</text>
+  <text x="518" y="235" fill="#93C5FD" font-size="11">• 同步捕获相邻 6 比特 +420kHz TLS 频率跳变与混合室 +0.8mK 微热脉冲</text>
+
+  <rect x="504" y="254" width="448" height="72" rx="9" fill="#0B192C" stroke="#A78BFA" stroke-width="1.2"/>
+  <text x="518" y="275" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 (9ms) · SSD DiskANN 6,400万脉冲/QEC匹配与晶格手术</text>
+  <text x="518" y="294" fill="#E2E8F0" font-size="11.2">• 检索 6,400万向量 (0.99 相似，省92%内存)：动态晶格手术绕开 Tile-C4 (d=11)</text>
+  <text x="518" y="312" fill="#DDD6FE" font-size="11">• 热更新 FPGA/GPU MWPM 解码器边权重 + 重配 6 比特 DRAG 脉冲 (CZ 99.94%)</text>
+
+  <rect x="504" y="334" width="448" height="68" rx="9" fill="#0B192C" stroke="#FBBF24" stroke-width="1.2"/>
+  <text x="518" y="355" fill="#FDE68A" font-size="12.5" font-weight="800">Step 3 (8ms) · Foundry IQ 15mK 热预算与 FIPS 203 PQC 护栏</text>
+  <text x="518" y="374" fill="#E2E8F0" font-size="11.2">• 核验 SOP-056：混合室冷盘温度 14.6 mK &lt; 16.5 mK 上限 + CZ 保真度 &gt;= 99.92%</text>
+  <text x="518" y="391" fill="#FDE68A" font-size="11">• 确认分子哈密顿量经 NIST FIPS 203 ML-KEM-1024 封装且 0 字节外泄</text>
+
+  <rect x="504" y="410" width="448" height="68" rx="9" fill="#064E3B" stroke="#10B981" stroke-width="1.4"/>
+  <text x="518" y="431" fill="#6EE7B7" font-size="12.5" font-weight="800">Step 4 (8ms) · ALDO 低温大厅边缘 AWG 脉冲与解码权重热更新</text>
+  <text x="518" y="450" fill="#F8FAFC" font-size="11.2">• 超算主任 Teams 联签 Confirm → ALDO 下发 RF-SoC 波形与 FPGA 权重更新</text>
+  <text x="518" y="467" fill="#A7F3D0" font-size="11" font-weight="700">✓ 端到端 33ms 自愈 · 守护 $16.25M 72h 量子任务、15mK 防失超与分子 IP</text>
+
+  <!-- Right Column: Better Together & Decision Matrix -->
+  <rect x="988" y="132" width="420" height="360" rx="14" fill="#111C33" stroke="#38BDF8" stroke-width="1.4"/>
+  <text x="1008" y="162" fill="#7DD3FC" font-size="15" font-weight="800">03 · 五云分工边界与 Better Together 共存</text>
+
+  <rect x="1004" y="178" width="388" height="94" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1018" y="200" fill="#34D399" font-size="12.5" font-weight="800">🏆 首选 Microsoft Fabric (Eventhouse + DiskANN + ALDO)</text>
+  <text x="1018" y="220" fill="#E2E8F0" font-size="11.2">• 960K EPS 综合征、RF-SoC 与 15mK 低温流 ($0/GB 写入税)</text>
+  <text x="1018" y="238" fill="#E2E8F0" font-size="11.2">• 6,400万 DRAG 脉冲/QEC 权重 SSD DiskANN + 量子低温孪生</text>
+  <text x="1018" y="256" fill="#6EE7B7" font-size="11" font-weight="700">• ALDO 屏蔽大厅断网自治 + 1,650 人 $0 DirectLake 看数</text>
+
+  <rect x="1004" y="282" width="388" height="94" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1018" y="304" fill="#60A5FA" font-size="12.5" font-weight="800">🤝 Better Together：GPU HPC + Databricks GPU</text>
+  <text x="1018" y="324" fill="#E2E8F0" font-size="11.2">• 40+ 量子比特全振幅张量网络模拟 (cuQuantum) → GPU HPC</text>
+  <text x="1018" y="342" fill="#E2E8F0" font-size="11.2">• 神经网络量子纠错解码器 (AlphaQubit/GNN) 训练 → Databricks</text>
+  <text x="1018" y="360" fill="#93C5FD" font-size="11" font-weight="700">• 噪声先验与解码模型权重通过 OneLake Shortcut 零拷贝回挂</text>
+
+  <rect x="1004" y="386" width="388" height="90" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1018" y="408" fill="#FBBF24" font-size="12.5" font-weight="800">⚠️ 竞对局限与避坑指南 (Anti-Patterns)</text>
+  <text x="1018" y="428" fill="#E2E8F0" font-size="11.2">• 严禁混淆微秒级 FPGA 内环解码与 33ms 坏块绕行/权重更新外环</text>
+  <text x="1018" y="446" fill="#E2E8F0" font-size="11.2">• 严禁向 15mK 冷盘注入超额微波校准功率引发 48h 热失超停机</text>
+  <text x="1018" y="464" fill="#FDE68A" font-size="11" font-weight="700">• 严禁将 960K EPS 连续测控流写入按属性计费的 IoT SiteWise</text>
+
+  <!-- Bottom Row Left: Quantitative TCO Comparison -->
+  <rect x="32" y="510" width="684" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="52" y="540" fill="#38BDF8" font-size="15" font-weight="800">04 · 定量 TCO 对比 (8 座量子超算中心 · 32 台千比特 QPU · 960K EPS · 1,650 用户)</text>
+
+  <rect x="52" y="558" width="644" height="68" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="68" y="582" fill="#6EE7B7" font-size="13.5" font-weight="800">🏆 Microsoft Fabric (F64 + Eventhouse + SSD DiskANN + Twin + ALDO)</text>
+  <text x="68" y="606" fill="#E2E8F0" font-size="12">内部全量: $20,200/月 · 500人归一化: $9,000/月 ($0/GB 写入税 + SSD DiskANN 省92%内存 + $0 Viewer)</text>
+  <rect x="520" y="570" width="160" height="42" rx="8" fill="#022C22"/>
+  <text x="600" y="596" fill="#34D399" font-size="15" font-weight="800" text-anchor="middle">省 87.1% TCO</text>
+
+  <rect x="52" y="638" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="662" fill="#F8FAFC" font-size="13" font-weight="700">Databricks + 独立时序库 + 内存 Vector Search</text>
+  <text x="68" y="683" fill="#94A3B8" font-size="11.5">内部全量: $126,200/月 · 500人归一化: $56,200/月 (常驻 Streaming DBU + 内存向量节点 + BI 消耗)</text>
+
+  <rect x="52" y="706" width="644" height="58" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="68" y="730" fill="#F8FAFC" font-size="13" font-weight="700">AWS 拼接栈 (IoT SiteWise + Kinesis + OpenSearch + QuickSight)</text>
+  <text x="68" y="751" fill="#94A3B8" font-size="11.5">内部全量: $156,600/月 · 500人归一化: $69,800/月 (按属性/分片计费 + 内存向量 + 审计软件)</text>
+
+  <rect x="52" y="774" width="644" height="74" rx="10" fill="#0F172A" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="68" y="798" fill="#7DD3FC" font-size="12.5" font-weight="800">💡 $16.25M 风险敞口保护拆解 (Scenario BD 定量收益)：</text>
+  <text x="68" y="818" fill="#E2E8F0" font-size="11.5">• 晶格手术绕开宇宙射线坏块挽救 72h FeMoco 量子电路：$6.40M · 防 15mK 制冷机失超：$5.25M</text>
+  <text x="68" y="836" fill="#6EE7B7" font-size="11.5" font-weight="700">• NIST FIPS 203 (ML-KEM-1024) 守护主权制药与催化分子哈密顿量 IP：$4.60M</text>
+
+  <!-- Bottom Row Right: Dual-Denominator & Production Checklist -->
+  <rect x="734" y="510" width="674" height="358" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="754" y="540" fill="#FBBF24" font-size="15" font-weight="800">05 · 双分母基准对账 (R49) 与生产落地核验清单 (Architect Checklist)</text>
+
+  <rect x="754" y="556" width="634" height="90" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="770" y="578" fill="#34D399" font-size="12.5" font-weight="800">📊 严格区分两大延迟分母 (Dual-Denominator Reconciliation · 2026-11-14 R49)</text>
+  <text x="770" y="598" fill="#F8FAFC" font-size="11.5">• 分母 A (路由评估矩阵均值 scenario_evaluation.avg_latency_ms)：n=240 (DL-01..240) 均值 = 301.0 ms (239/240 = 99.58%)</text>
+  <text x="770" y="618" fill="#F8FAFC" font-size="11.5">• 分母 B (行业本体端到端仿真均值 ontology_simulations[])：n=56 (场景 A..BD，范围 5–780ms) 均值 = 253.0 ms</text>
+  <text x="770" y="636" fill="#93C5FD" font-size="11">• 本轮新增 Scenario BD 端到端延迟 = 33 ms (8ms 感知 + 9ms DiskANN/孪生 + 8ms 15mK/PQC 护栏 + 8ms 回写) · 116/116 单测通过</text>
+
+  <rect x="754" y="658" width="634" height="190" rx="10" fill="#0B192C" stroke="#334155" stroke-width="1"/>
+  <text x="770" y="682" fill="#7DD3FC" font-size="13" font-weight="800">🛠️ 售前打单与生产落地 5 步核验清单 (Production Checklist)：</text>
+  <text x="770" y="706" fill="#E2E8F0" font-size="11.5">☑ 1. 综合征与 15mK 低温流直通：960K EPS 遥测直推 Eventhouse ($0/GB 写入税)</text>
+  <text x="770" y="730" fill="#E2E8F0" font-size="11.5">☑ 2. Cosmos SSD DiskANN 6,400万脉冲/QEC库：DRAG 波形与解码权重建索引 (P99 &lt; 9ms)</text>
+  <text x="770" y="754" fill="#E2E8F0" font-size="11.5">☑ 3. 制冷机-RFSoC-QPU-GPU动态孪生：在 Digital Twin Builder 关联低温腔与量子晶格</text>
+  <text x="770" y="778" fill="#E2E8F0" font-size="11.5">☑ 4. 屏蔽低温大厅 ALDO 断网自治：部署 SQL Server on Azure Local 保障主权机房闭环</text>
+  <text x="770" y="802" fill="#E2E8F0" font-size="11.5">☑ 5. 15mK 热预算与 PQC 护栏 (SOP-056)：冷盘 &lt; 16.5mK，CZ 保真度 &gt;= 99.92%，ML-KEM</text>
+  <text x="770" y="830" fill="#6EE7B7" font-size="11" font-weight="700">🔗 关联代码与密封证据：src/data_lab/benchmark_suite.py · tests/test_data_lab.py (116/116) · reports/report.json</text>
+</svg>

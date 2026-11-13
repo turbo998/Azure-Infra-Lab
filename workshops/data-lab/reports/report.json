@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r48",
-  "generated_at": "2026-11-14T00:20:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r49",
+  "generated_at": "2026-11-14T00:50:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 236,
-      "routing_matrix_mean_modeled_latency_ms": 306.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=236 routing & decision evaluation items (DL-01..DL-236, mean=306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 55,
+      "routing_matrix_denominator_n": 240,
+      "routing_matrix_mean_modeled_latency_ms": 301.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=240 routing & decision evaluation items (DL-01..DL-240, mean=301.0ms; historical R48 snapshot n=236 mean was 306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 56,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -65,14 +65,19 @@
         14,
         57,
         49,
-        41
+        41,
+        33
       ],
       "ontology_simulations_range_ms": [
         5,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 257.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=55 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41]ms, range 5-780ms, mean=257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 253.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=56 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33]ms, range 5-780ms, mean=253.0ms; historical R48 snapshot n=55 mean was 257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r48_historical_denominators": {
+        "r48_routing_matrix_n236_mean_ms": 306.0,
+        "r48_ontology_simulations_n55_mean_ms": 257.0
+      },
       "r47_historical_denominators": {
         "r47_routing_matrix_n232_mean_ms": 311.0,
         "r47_ontology_simulations_n54_mean_ms": 261.0
@@ -255,8 +260,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=236 decision routing matrix evaluation (235/236 = 99.58%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=236 routing decision matrix tasks (DL-01..DL-236) with arithmetic mean modeled latency = 306.0ms; (2) n=55 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41]ms, range 5-780ms) with arithmetic mean modeled latency = 257.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=240 decision routing matrix evaluation (239/240 = 99.58%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=240 routing decision matrix tasks (DL-01..DL-240) with arithmetic mean modeled latency = 301.0ms; (2) n=56 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33]ms, range 5-780ms) with arithmetic mean modeled latency = 253.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -892,9 +897,21 @@
           "https://www.databricks.com/solutions/industries/energy-and-utilities"
         ],
         "as_of": "2026-11-13"
+      },
+      {
+        "id": "SPEC-FABRIC-QUANTUM-DATACENTER-CRYOGENIC-QEC-PQC",
+        "vendor": "Microsoft / AWS / Databricks / Snowflake / Google Cloud",
+        "claim": "Microsoft Fabric Eventhouse KQL (`series_outliers`), Cosmos DB in Fabric SSD DiskANN vector indexing, Digital Twin Builder, and SQL Server on Azure Local (ALDO) unify fault-tolerant quantum computing 15 mK dilution-refrigerator thermal-budget monitoring, cosmic-ray quasiparticle burst lattice bypass, surface-code QEC syndrome decoder weight updating, and DRAG microwave pulse calibration; AWS provides Braket & IoT SiteWise; Databricks provides Scientific Computing Lakehouse; GCP provides Quantum AI & BigQuery.",
+        "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-outliers-function",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data",
+        "competitor_doc_urls": [
+          "https://aws.amazon.com/braket/",
+          "https://www.databricks.com/product/data-science"
+        ],
+        "as_of": "2026-11-14"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=55 industry scenarios, mean=257.0ms), TCO calculator, and n=236 routing suite (mean=306.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=56 industry scenarios, mean=253.0ms), TCO calculator, and n=240 routing suite (mean=301.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -979,16 +996,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 236,
-    "passed_scenarios": 235,
+    "total_scenarios": 240,
+    "passed_scenarios": 239,
     "failed_scenarios": 1,
     "accuracy_pct": 99.58,
-    "avg_latency_ms": 306.0,
-    "routing_matrix_denominator_n": 236,
-    "routing_matrix_mean_modeled_latency_ms": 306.0,
+    "avg_latency_ms": 301.0,
+    "routing_matrix_denominator_n": 240,
+    "routing_matrix_mean_modeled_latency_ms": 301.0,
     "action_distribution": {
-      "Act automatically": 142,
-      "Confirm": 92,
+      "Act automatically": 144,
+      "Confirm": 94,
       "Send to a human": 2
     },
     "scenarios": [
@@ -3823,6 +3840,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 18
+      },
+      {
+        "id": "DL-237",
+        "category": "Real-Time Intelligence",
+        "question": "Quantum-HPC supercomputing center with 32 1,000-qubit QPUs and 100,000 GPUs must ingest 960K EPS of surface-code syndromes, RF-SoC telemetry, and 15 mK cryostat streams, match 64M DRAG pulse/QEC vectors in <10ms, and isolate cosmic-ray bursts",
+        "expected": "Microsoft Fabric Eventhouse KQL series_outliers() 8ms Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 9ms 64M DRAG/QEC Match (-92% RAM) + Digital Twin Cryo-QPU + ALDO Shielded Edge (33ms E2E, -87.1% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_outliers() 8ms Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 9ms 64M DRAG/QEC Match (-92% RAM) + Digital Twin Cryo-QPU + ALDO Shielded Edge (33ms E2E, -87.1% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 6
+      },
+      {
+        "id": "DL-238",
+        "category": "vs AWS",
+        "question": "Quantum algorithm and QEC research division needs 40+ qubit full state-vector / tensor-network classical simulation (cuQuantum) and multi-node GPU training for neural syndrome decoders (AlphaQubit / GNN)",
+        "expected": "Route 40+ qubit cuQuantum tensor-network simulations to Azure CycleCloud / AWS GPU HPC and AlphaQubit neural decoder training to Databricks GPU, mounting noise priors and weights into Fabric OneLake via Zero-Copy Shortcuts",
+        "model_answer": "Route 40+ qubit cuQuantum tensor-network simulations to Azure CycleCloud / AWS GPU HPC and AlphaQubit neural decoder training to Databricks GPU, mounting noise priors and weights into Fabric OneLake via Zero-Copy Shortcuts",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 6
+      },
+      {
+        "id": "DL-239",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + SSD DiskANN + Digital Twin Builder + ALDO vs per-tag stream ingestion & all-RAM vector clusters across 8 Quantum-HPC centers with 1,650 physicists, cryo engineers, and algorithm researchers",
+        "expected": "Hybrid Better Together: Stream 960K EPS syndrome/RF-SoC/15mK telemetry into Eventhouse ($0/GB tax), index 64M DRAG/MWPM vectors in SSD DiskANN (-92% RAM), enforce FIPS 203 ML-KEM-1024 seals, and serve 1,650 users via DirectLake (-87.1% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 960K EPS syndrome/RF-SoC/15mK telemetry into Eventhouse ($0/GB tax), index 64M DRAG/MWPM vectors in SSD DiskANN (-92% RAM), enforce FIPS 203 ML-KEM-1024 seals, and serve 1,650 users via DirectLake (-87.1% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 6
+      },
+      {
+        "id": "DL-240",
+        "category": "Fabric IQ & Ontology",
+        "question": "Cosmic-ray muon strikes Tile-C4 on QPU-CryoPod-07 at Hour 58 of a 72-hour FeMoco QPE run (16-qubit T1 drops to 9.2us, syndrome rate +18.5x) while 6 adjacent qubits suffer +420kHz TLS frequency drift",
+        "expected": "Eventhouse KQL Quasiparticle & TLS Sense (8ms, $0/GB Tax) + 6-Hop 64M DRAG/MWPM DiskANN Match, Tile-C4 Lattice Bypass & 6-Qubit DRAG Trim (9ms) + Foundry IQ <16.5mK Cryo & FIPS 203 Gate (8ms) + Teams ALDO AWG/FPGA Commit (8ms = 33ms E2E, Protect $16.25M SLA)",
+        "model_answer": "Eventhouse KQL Quasiparticle & TLS Sense (8ms, $0/GB Tax) + 6-Hop 64M DRAG/MWPM DiskANN Match, Tile-C4 Lattice Bypass & 6-Qubit DRAG Trim (9ms) + Foundry IQ <16.5mK Cryo & FIPS 203 Gate (8ms) + Teams ALDO AWG/FPGA Commit (8ms = 33ms E2E, Protect $16.25M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 6
       }
     ]
   },
@@ -3886,7 +3951,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 55,
+    "total_ontology_simulations": 56,
     "simulation_latencies_ms": [
       780,
       640,
@@ -3942,9 +4007,11 @@
       14,
       57,
       49,
-      41
+      41,
+      33
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 257.0,
+    "ontology_simulation_mean_modeled_latency_ms": 253.0,
+    "r48_55_simulation_mean_modeled_latency_ms": 257.0,
     "r47_54_simulation_mean_modeled_latency_ms": 261.0,
     "r46_53_simulation_mean_modeled_latency_ms": 265.0,
     "r45_52_simulation_mean_modeled_latency_ms": 269.0,
@@ -7547,6 +7614,81 @@
         "projected_savings_usd": 15900000,
         "end_to_end_latency_ms": 41,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL H3 + Cosmos DB SSD DiskANN + Digital Twin Builder + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_quantum_datacenter_fabric_cryogenic_qec_pqc_kms_vs_4clouds": {
+      "scenario_id": "global_quantum_datacenter_fabric_cryogenic_qec_pqc_kms_vs_4clouds",
+      "title": "Fault-Tolerant Quantum-HPC Datacenter 32 1,000-Qubit QPUs + 100,000 GPUs × 960K EPS 15 mK Cryogenic Protection, Cosmic-Ray Quasiparticle Bypass & Surface-Code QEC Calibration Loop (Fabric Eventhouse + SSD DiskANN + ALDO vs. AWS Braket / SiteWise / 4 Clouds)",
+      "provenance_type": "synthetic_scenario_model",
+      "telemetry": {
+        "timestamp": "2026-11-14T00:42:00Z",
+        "fault_tolerant_1000qubit_qpus_count": 32,
+        "coupled_classical_supercomputer_gpus_count": 100000,
+        "syndrome_rfsoc_cryo_15mk_ingestion_eps": 960000,
+        "per_tag_or_gb_write_surcharge_usd": 0,
+        "drag_pulse_and_mwpm_qec_vectors_indexed_count": 64000000,
+        "mixing_chamber_cryo_temperature_mk": 14.6,
+        "recalibrated_two_qubit_cz_fidelity_pct": 99.94,
+        "preserved_surface_code_distance_d": 11,
+        "eventhouse_kql_quasiparticle_tls_sense_ms": 8,
+        "fabric_iq_diskann_64m_pulse_qec_twin_ms": 9,
+        "foundry_iq_15mk_cryo_cz_fips203_gate_ms": 8,
+        "quantum_teams_aldo_awg_mwpm_commit_ms": 8,
+        "legacy_quantum_tsdb_ram_vector_monthly_tco_usd": 69800,
+        "fabric_eventhouse_diskann_aldo_twin_monthly_tco_usd": 9000
+      },
+      "ontology_graph_traversal": {
+        "root_entity": "GlobalQuantumHPC-8Centers-32QPUs-100KGPUs-960KEPS-2026Q4",
+        "hops": 6,
+        "affected_entities": [
+          "EventhouseOutliers: 960K-EPS-QPU-CryoPod-07 (Cosmic-Ray Muon Hit on Tile-C4: 16-Qubit T1 118us->9.2us) & 6-Qubit +420kHz TLS Shift",
+          "CosmosDiskANN_64M_Vectors: Lattice-Bypass-DRAG-Match (0.99 Sim -> Route LQ-12 Around Tile-C4 + Update MWPM Priors + 6-Qubit DRAG)",
+          "Cryo_RFSoC_QPU_GPU_Twin: Preserve-72h-FeMoco-QPE-Run-at-Hour-58 (Code Distance d=11, CZ Fidelity -> 99.94%)",
+          "Cryo15mK_FIPS203_Gate: Mixing-Chamber 14.6mK (< 16.5mK) & CZ 99.94% (>= 99.92%) & ML-KEM-1024 Hamiltonian Seal",
+          "ALDO-CryoHall-RFSoC-FPGA: Shielded-Hall-AWG-Waveform-MWPM-Weight-HotUpdate-1GB-SQL"
+        ],
+        "root_cause": "At Hour 58 of a 72-hour FeMoco nitrogen-fixation Quantum Phase Estimation (QPE) run on QPU-CryoPod-07, a high-energy cosmic-ray muon struck Tile-C4 (collapsing 16-qubit T1 from 118 us to 9.2 us and spiking correlated syndromes 18.5x) while 6 adjacent qubits suffered a +420 kHz Two-Level System (TLS) frequency jump"
+      },
+      "multi_agent_plan": {
+        "monitored_1000qubit_qpus": 32,
+        "bypassed_quasiparticle_qubits": 16,
+        "monthly_quantum_datacenter_tco_saved_usd": 60800,
+        "quantum_datacenter_tco_savings_pct": 87.1,
+        "actions": [
+          {
+            "step": 1,
+            "agent": "Fabric Eventhouse KQL 960K EPS Syndrome Error, RF-SoC & 15 mK Cryo Engine",
+            "operation": "Ingest 960,000 EPS of surface-code syndrome rates, RF-SoC mixer reflections, and 15 mK dilution-fridge sensors at $0/GB write tax, isolating the Tile-C4 16-qubit muon burst and +420 kHz TLS shift in 8ms",
+            "impact_metric": "Isolates spatial quasiparticle bursts in 8ms before logical qubit decoherence aborts a 72-hour QPE run"
+          },
+          {
+            "step": 2,
+            "agent": "Fabric IQ 6-Hop Cryo-QPU-GPU Twin, Cosmos SSD DiskANN & Foundry IQ Gate",
+            "operation": "Match 64M DRAG pulse and MWPM prior vectors in SSD DiskANN (0.99 sim), routing logical qubit LQ-12 around Tile-C4 (d=11), updating MWPM edge weights, and recalibrating 6 DRAG pulses in 9ms; verify <16.5 mK thermal budget & FIPS 203 in Foundry IQ (8ms)",
+            "impact_metric": "Restores two-qubit CZ fidelity to 99.94% while keeping mixing-chamber temperature at 14.6 mK (<16.5 mK)"
+          },
+          {
+            "step": 3,
+            "agent": "Quantum Director Teams Card & ALDO Cryo-Hall RF-SoC AWG + FPGA MWPM Commit",
+            "operation": "Co-sign in Teams to hot-update FPGA/GPU MWPM decoder weights, upload 6 DRAG waveforms to RF-SoC AWGs via ALDO shielded cryo-hall edge, and log to 1GB Free Fabric SQL (8ms)",
+            "impact_metric": "33ms E2E Quantum Cryo, Lattice Bypass & QEC loop; -$60,800/mo (-87.1%) TCO; $16.25M SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "QUANTUM-HPC-CRYO-QEC-PQC-SOP-056",
+        "hard_constraint": "Never allow 15 mK dilution-refrigerator mixing-chamber temperature to reach or exceed 16.5 mK under microwave recalibration load (preventing 48-hour thermal-runaway warmup), require recalibrated two-qubit CZ gate fidelity >= 99.92% for surface-code fault tolerance, and enforce NIST FIPS 203 (ML-KEM-1024) encryption on all molecular Hamiltonians",
+        "proposed_change": "Bypass Tile-C4 via dynamic lattice surgery (d=11 preserved), hot-update MWPM decoder weights, and upload 6 predistorted DRAG pulses (mixing chamber = 14.6 mK < 16.5 mK, CZ fidelity = 99.94% >= 99.92%, ML-KEM-1024 sealed)",
+        "cryo_15mk_thermal_budget_and_cz_fidelity_verified": true,
+        "nist_fips203_mlkem1024_hamiltonian_seal_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 16250000,
+        "end_to_end_latency_ms": 33,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN + Digital Twin Builder + SQL on Azure Local (ALDO) + PQC KMS + 1GB Free Fabric SQL"
       }
     }
   },
