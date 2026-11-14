@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg78" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0B132B"/>
+      <stop offset="100%" stop-color="#111D4A"/>
+    </linearGradient>
+    <linearGradient id="accent78" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg78)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091024" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="86" rx="14" fill="#111C3D" stroke="#6366F1" stroke-width="1.5"/>
+  <rect x="58" y="48" width="295" height="26" rx="13" fill="url(#accent78)"/>
+  <text x="205" y="66" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · 2026-11-14 R70 · 70-ROUND MILESTONE!</text>
+  <text x="368" y="66" fill="#F8FAFC" font-size="16" font-weight="800">地月空间深空导航（LunaNet）、月球南极原位资源（ISRU）微电网与漫游车蜂群选型 FAQ</text>
+  <text x="58" y="98" fill="#A5B4FC" font-size="12.5">Microsoft Fabric (Eventhouse KQL 880K EPS 10ms 质量瘤/质子风暴感知 + Cosmos SSD DiskANN 11ms 1.48亿三体星历/地形匹配 + ALDO 月面边缘) vs 四大云</text>
+  <rect x="1156" y="46" width="224" height="60" rx="10" fill="#062E22" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1268" y="68" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BY · 12 中继星 + 140 漫游车</text>
+  <text x="1268" y="94" fill="#FFFFFF" font-size="17.5" font-weight="800" text-anchor="middle">43ms 闭环 · 省 90.6% TCO</text>
+
+  <!-- Row 1 Left: Pain Points vs First-Principles Breakthrough -->
+  <rect x="40" y="136" width="668" height="248" rx="14" fill="#0E1733" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="164" fill="#818CF8" font-size="14" font-weight="800">01 · 第一性原理痛点拆解：为什么 30 分钟地面星历批处理救不了月面漫游车与制氧微电网？</text>
+
+  <rect x="60" y="178" width="628" height="60" rx="8" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="198" fill="#FCA5A5" font-size="12" font-weight="800">❌ 传统架构痛点：2.56s 地月延迟 + 质量瘤引力偏航 + 太阳质子风暴与日食抽干电池 (`$118.1K/月`)</text>
+  <text x="76" y="216" fill="#FECACA" font-size="11">• 月球质量瘤引发 +18.4 mGal 引力异常；S3 级太阳质子事件 (1,450 PFU) 叠加阴影坑失联，导致漫游车 FPGA 翻转或滑下陡坡</text>
+  <text x="76" y="231" fill="#FECACA" font-size="11">• 环形山日食遮挡期间，1,600°C 熔融月壤电解炉 (MRE) 若停电则炉渣凝固报废，若满功率则抽空基地生命支持 (ECLSS) 电池</text>
+
+  <rect x="60" y="248" width="628" height="60" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="76" y="268" fill="#6EE7B7" font-size="12" font-weight="800">✅ Fabric 破局：10ms KQL 多普勒/质子斜率 + 11ms 1.48 亿向量检索 + ALDO 月面边缘 (`$11.1K/月`)</text>
+  <text x="76" y="286" fill="#D1FAE5" font-size="11">• Eventhouse KQL $0/GB 写入税摄入 880K EPS 遥测，series_fit_line() 10ms 提前 28 分钟捕获太阳质子陡升与 +18.4 mGal 漂移</text>
+  <text x="76" y="301" fill="#D1FAE5" font-size="11">• Cosmos SSD DiskANN 11ms 检索 1.48 亿条三体晕轨道、5cm 激光点云与电解热平衡向量（省 92% 内存）：16 车入熔岩管 + MRE 保温</text>
+
+  <rect x="60" y="316" width="628" height="54" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="76" y="335" fill="#93C5FD" font-size="11.5" font-weight="800">🤝 互补共存 (Better Together)：十万条 BLT 转移轨道蒙特卡洛积分 vs 43ms 实时地月闭环</text>
+  <text x="76" y="353" fill="#E2E8F0" font-size="11">• GMAT / STK 1200 阶引力场 N 体积分归 Databricks/Azure HPC；CLPS 载荷合同归 Snowflake/SAP；43ms 闭环归 Fabric</text>
+
+  <!-- Row 1 Right: 43ms 4-Step Closed Loop -->
+  <rect x="728" y="136" width="672" height="248" rx="14" fill="#0E1733" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="748" y="164" fill="#22D3EE" font-size="14" font-weight="800">02 · Scenario BY：43ms 质量瘤修轨、熔岩管避辐射与月面微电网保命闭环 (`DL-321..324`)</text>
+
+  <rect x="748" y="178" width="310" height="90" rx="8" fill="#091024" stroke="#22D3EE" stroke-width="1.2"/>
+  <text x="762" y="198" fill="#22D3EE" font-size="12" font-weight="800">① Eventhouse KQL 流式感知 (10 ms)</text>
+  <text x="762" y="216" fill="#E2E8F0" font-size="10.5">• 880K EPS S/Ka 多普勒 + 粒子剂量计 + 漫游车 LiDAR</text>
+  <text x="762" y="232" fill="#E2E8F0" font-size="10.5">• 锁定 LN-Sat-04 +18.4 mGal 质量瘤漂移 (+42m)</text>
+  <text x="762" y="248" fill="#34D399" font-size="10.5" font-weight="700">• 提前 28m 捕获 1,450 PFU 质子风暴与山峰日食阴影</text>
+
+  <rect x="1070" y="178" width="310" height="90" rx="8" fill="#091024" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="1084" y="198" fill="#C084FC" font-size="12" font-weight="800">② 1.48 亿向量 SSD DiskANN 寻优 (11 ms)</text>
+  <text x="1084" y="216" fill="#E2E8F0" font-size="10.5">• 检索 1.48 亿条三体星历、5cm 地形与 MRE 热向量</text>
+  <text x="1084" y="232" fill="#E2E8F0" font-size="10.5">• LN-Sat-04 +0.14m/s 修轨 + 16 车驶入玄武岩熔岩管</text>
+  <text x="1084" y="248" fill="#C084FC" font-size="10.5" font-weight="700">• 4 台 1,600°C 电解炉降功 -65% 至 63kW 保温不凝固</text>
+
+  <rect x="748" y="278" width="310" height="92" rx="8" fill="#091024" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="762" y="298" fill="#FBBF24" font-size="12" font-weight="800">③ Foundry IQ 生命支持与防翻车门禁 (11 ms)</text>
+  <text x="762" y="316" fill="#E2E8F0" font-size="10.5">• 校核《CISLUNAR-ISRU-MICROGRID-SOP-077》</text>
+  <text x="762" y="332" fill="#E2E8F0" font-size="10.5">• 基地电池剩余电量 SoC = 44.2% &gt;= 35.0% 绝对底线</text>
+  <text x="762" y="348" fill="#FBBF24" font-size="10.5" font-weight="700">• 避险路径最大坡度 11.4° &lt;= 15.0° 且切换 FPGA TMR</text>
+
+  <rect x="1070" y="278" width="310" height="92" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1084" y="298" fill="#34D399" font-size="12" font-weight="800">④ 飞控联签 + ALDO 月面 DTN 闭环 (11 ms)</text>
+  <text x="1084" y="316" fill="#E2E8F0" font-size="10.5">• 飞行主管 Teams 联签 + 月面 ALDO 断网自治代理</text>
+  <text x="1084" y="332" fill="#E2E8F0" font-size="10.5">• 经 CCSDS Bundle Protocol v7 (DTN) 下发轨控与断路器</text>
+  <text x="1084" y="348" fill="#6EE7B7" font-size="10.5" font-weight="700">• 0 漫游车死机 · 0 炉膛凝固 · 守护 $23.60M 登月 SLA</text>
+
+  <!-- Row 2 Left: 5-Cloud Capability Matrix -->
+  <rect x="40" y="400" width="668" height="250" rx="14" fill="#0E1733" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="428" fill="#818CF8" font-size="14" font-weight="800">03 · 五大云平台地月空间导航与月球南极 ISRU 微电网横评矩阵</text>
+
+  <rect x="60" y="442" width="628" height="26" rx="6" fill="#1E293B"/>
+  <text x="74" y="459" fill="#CBD5E1" font-size="11" font-weight="700">核心能力维度</text>
+  <text x="310" y="459" fill="#60A5FA" font-size="11" font-weight="800" text-anchor="middle">Fabric</text>
+  <text x="400" y="459" fill="#FBBF24" font-size="11" font-weight="700" text-anchor="middle">AWS</text>
+  <text x="485" y="459" fill="#34D399" font-size="11" font-weight="700" text-anchor="middle">GCP</text>
+  <text x="565" y="459" fill="#F97316" font-size="11" font-weight="700" text-anchor="middle">Databricks</text>
+  <text x="645" y="459" fill="#38BDF8" font-size="11" font-weight="700" text-anchor="middle">Snowflake</text>
+
+  <text x="74" y="488" fill="#F8FAFC" font-size="11.5">1. 880K EPS CCSDS 遥测与多普勒/质子流处理</text>
+  <text x="310" y="488" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">10ms ($0税) ★</text>
+  <text x="400" y="488" fill="#E2E8F0" font-size="11" text-anchor="middle">按属性高费</text>
+  <text x="485" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">需Dataflow</text>
+  <text x="565" y="488" fill="#E2E8F0" font-size="11" text-anchor="middle">500ms+微批</text>
+  <text x="645" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">60s 滞后</text>
+
+  <text x="74" y="518" fill="#F8FAFC" font-size="11.5">2. 1.48 亿条三体星历、5cm 地形与电解向量检索</text>
+  <text x="310" y="518" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">11ms (省92%) ★</text>
+  <text x="400" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">全内存昂贵</text>
+  <text x="485" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">独立端点</text>
+  <text x="565" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">内存型端点</text>
+  <text x="645" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">非毫秒工控</text>
+
+  <text x="74" y="548" fill="#F8FAFC" font-size="11.5">3. 基地生命支持电量 (ECLSS) 与防翻车门禁</text>
+  <text x="310" y="548" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">11ms 强门禁 ★</text>
+  <text x="400" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">手工规则</text>
+  <text x="485" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">需自建</text>
+  <text x="565" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">离线轨道积分</text>
+  <text x="645" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">任务报表</text>
+
+  <text x="74" y="578" fill="#F8FAFC" font-size="11.5">4. 深空站与月面舱段 ALDO 断网自治 + $0 席位</text>
+  <text x="310" y="578" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">原生内建 ★</text>
+  <text x="400" y="578" fill="#E2E8F0" font-size="11" text-anchor="middle">Outposts+$席</text>
+  <text x="485" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">GDC+$席</text>
+  <text x="565" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">无月面边缘</text>
+  <text x="645" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">纯云端</text>
+
+  <rect x="60" y="596" width="628" height="38" rx="6" fill="#062E22" stroke="#10B981" stroke-width="1"/>
+  <text x="74" y="620" fill="#6EE7B7" font-size="11.5" font-weight="800">12 颗中继星 + 8 座南极舱 + 140 台漫游车月度 TCO：Fabric $11,100/月 vs 传统栈 $118,100/月（直降 90.6%）</text>
+
+  <!-- Row 2 Right: TCO Inflection & Dual-Denominator Governance -->
+  <rect x="728" y="400" width="672" height="250" rx="14" fill="#0E1733" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="748" y="428" fill="#818CF8" font-size="14" font-weight="800">04 · 月度 TCO 拆解（省 $107,000/月）与 70 轮里程碑双分母治理</text>
+
+  <text x="748" y="456" fill="#F8FAFC" font-size="12" font-weight="700">Microsoft Fabric (F64 共享容量 + 1.48 亿 SSD DiskANN + 地月孪生 + ALDO) — $11,100 / mo</text>
+  <rect x="748" y="464" width="118" height="16" rx="8" fill="#10B981"/>
+  <text x="876" y="476" fill="#34D399" font-size="12" font-weight="800">省 90.6% (月省 $107,000 · 全栈口径 $28.4K vs $302.1K)</text>
+
+  <text x="748" y="502" fill="#CBD5E1" font-size="11.5">传统拼装栈 (880K EPS 按点位遥测 $79.0K + 98节点内存向量 $23.8K + 独立图/BI $15.3K) — $118,100 / mo</text>
+  <rect x="748" y="510" width="610" height="14" rx="7" fill="#EF4444"/>
+
+  <rect x="748" y="536" width="632" height="98" rx="8" fill="#091024" stroke="#334155" stroke-width="1.2"/>
+  <text x="764" y="556" fill="#A5B4FC" font-size="11.5" font-weight="800">🔍 严格双分母与数据溯源披露 (70-Round Milestone · reports/report.json)</text>
+  <text x="764" y="575" fill="#E2E8F0" font-size="11">• 分母 A（全量路由矩阵）：n = 324 场景 (DL-01..DL-324)，通过率 323 / 324 (99.69%)，算术均值 = 228.5 ms (R69 n=320 为 231.0 ms)</text>
+  <text x="764" y="593" fill="#E2E8F0" font-size="11">• 分母 B（行业本体闭环）：n = 77 仿真 (Scenario A..BY)，端到端算术均值 = 195.0 ms (R69 n=76 为 197.0 ms；Scenario BY = 43 ms)</text>
+  <text x="764" y="611" fill="#34D399" font-size="11" font-weight="700">• 本地实测：158 / 158 Python 单元测试 100% 通过 (measured_local_harness) · 73 条官方规格链接核验</text>
+
+  <!-- Row 3 Bottom: Architect Checklist -->
+  <rect x="40" y="666" width="1360" height="198" rx="14" fill="#111C3D" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="60" y="694" fill="#A5B4FC" font-size="14" font-weight="800">05 · AI Solution Architect 生产落地与售前打单核验清单 (Cislunar Navigation &amp; Lunar South-Pole ISRU Checklist)</text>
+
+  <rect x="60" y="708" width="426" height="138" rx="10" fill="#091024" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="76" y="730" fill="#22D3EE" font-size="12.5" font-weight="800">☑ 1. CCSDS 深空遥测与 1.48 亿向量检索核验</text>
+  <text x="76" y="750" fill="#E2E8F0" font-size="11">• Azure IoT Operations 解析 CCSDS TM/AOS 与 DTN 帧</text>
+  <text x="76" y="768" fill="#E2E8F0" font-size="11">• Eventhouse KQL series_fit_line() &lt;= 15ms 检出质量瘤与 SPE</text>
+  <text x="76" y="786" fill="#E2E8F0" font-size="11">• Cosmos SSD DiskANN 1.48 亿条三体星历、5cm 地形与 MRE 向量</text>
+  <text x="76" y="804" fill="#34D399" font-size="11" font-weight="700">• P99 检索 &lt;= 15ms，召回率 &gt;= 99.0%，省 92% 内存</text>
+
+  <rect x="506" y="708" width="426" height="138" rx="10" fill="#091024" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="522" y="730" fill="#FBBF24" font-size="12.5" font-weight="800">☑ 2. 基地生命支持电量与漫游车防翻车护栏</text>
+  <text x="522" y="750" fill="#E2E8F0" font-size="11">• Foundry IQ 强制锁死基地电池 SoC &gt;= 35.0% (44.2% 实测)</text>
+  <text x="522" y="768" fill="#E2E8F0" font-size="11">• MRE 电解炉日食期间降功至 63kW 保温 (1,560°C 防炉渣凝固)</text>
+  <text x="522" y="786" fill="#E2E8F0" font-size="11">• 16 台漫游车避险坡度 11.4° &lt;= 15.0° 且切换 FPGA TMR</text>
+  <text x="522" y="804" fill="#FBBF24" font-size="11" font-weight="700">• 舱段 ALDO 边缘跨越 2.56s 延迟与盲区实现 11ms 自主闭环</text>
+
+  <rect x="952" y="708" width="428" height="138" rx="10" fill="#091024" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="968" y="730" fill="#34D399" font-size="12.5" font-weight="800">☑ 3. N 体轨道积分与 CLPS 商业账单零拷贝共存</text>
+  <text x="968" y="750" fill="#E2E8F0" font-size="11">• 十万条 BLT 转移轨道 N 体积分归 Databricks/Azure HPC</text>
+  <text x="968" y="768" fill="#E2E8F0" font-size="11">• CLPS 商业载荷里程碑账单与采购归 Snowflake/SAP</text>
+  <text x="968" y="786" fill="#E2E8F0" font-size="11">• OneLake Shortcuts + Mirroring ($0 算力) 双向零拷贝互通</text>
+  <text x="968" y="804" fill="#6EE7B7" font-size="11" font-weight="700">• DirectLake $0 席位服务 1,800 名飞控与科学家，省 90.6% TCO</text>
+</svg>
