@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg70" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#040D1A"/>
+      <stop offset="50%" stop-color="#0A1B32"/>
+      <stop offset="100%" stop-color="#071526"/>
+    </linearGradient>
+    <linearGradient id="accent70" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg70)"/>
+  <rect x="24" y="20" width="1392" height="860" rx="18" fill="#0B1629" stroke="#1E3A5F" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="44" y="38" width="1352" height="86" rx="12" fill="#10223D" stroke="#14B8A6" stroke-width="1.2"/>
+  <rect x="60" y="54" width="218" height="28" rx="6" fill="url(#accent70)"/>
+  <text x="169" y="73" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">2026-11-14 · R62 · 116M VECTORS</text>
+  <text x="294" y="72" fill="#F8FAFC" font-size="16.5" font-weight="800">Microsoft Fabric 全自动超级港口、岸桥/无人集卡（STS/AGV）孪生、冷链防断电与海铁联运 vs 四大云选型一图流</text>
+  <text x="60" y="104" fill="#94A3B8" font-size="12.5">32 座自动化码头 · 680 台岸桥 + 4,800 台 AGV + 8.5 万冷链箱 × 940K EPS · Eventhouse 2ms + Cosmos SSD DiskANN 2ms 1.16 亿向量 + ALDO 码头边缘 = 7ms 闭环 · 省 89.7% TCO</text>
+  <rect x="1182" y="50" width="196" height="58" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1280" y="72" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BQ · 1.16 亿向量</text>
+  <text x="1280" y="96" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">7ms · 省 89.7% TCO</text>
+
+  <!-- Left Column: Pain Points -->
+  <rect x="44" y="140" width="430" height="440" rx="14" fill="#111C33" stroke="#EF4444" stroke-width="1.3"/>
+  <text x="64" y="170" fill="#FCA5A5" font-size="15" font-weight="800">❌ 传统 15 分钟 TOS 批处理与公有云拼接栈三大痛点</text>
+
+  <rect x="64" y="188" width="390" height="114" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="212" fill="#FECACA" font-size="13" font-weight="700">1. 岸桥 22m/s 阵风摇摆与 48 台 AGV 十字路口环形死锁</text>
+  <text x="80" y="234" fill="#CBD5E1" font-size="11.5">• 传统 TOS 每 10–15 分钟跑一次批处理路径规划与堆场翻倒箱计划</text>
+  <text x="80" y="254" fill="#CBD5E1" font-size="11.5">• STS-14 吊具摆幅达 ±380mm 停机等待时，48 台 AGV 在海铁联运区死锁</text>
+  <text x="80" y="274" fill="#FCA5A5" font-size="11.5" font-weight="700">• 堆场二次翻倒箱率高达 24%，R-08 架 180 个医药/车厘子冷链箱断电超温</text>
+
+  <rect x="64" y="316" width="390" height="114" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="340" fill="#FECACA" font-size="13" font-weight="700">2. 940K EPS 岸桥防摇 LiDAR 与 AGV 20Hz 位姿流写入税</text>
+  <text x="80" y="362" fill="#CBD5E1" font-size="11.5">• 680 台岸桥 OPC-UA + 4,800 台 AGV VDA-5050 + 8.5 万冷链箱 = 940K EPS</text>
+  <text x="80" y="382" fill="#CBD5E1" font-size="11.5">• 公有云 IoT 按属性点/按 GB 双重计费，公网 >100ms 延迟无法做防摇控制</text>
+  <text x="80" y="402" fill="#FCA5A5" font-size="11.5" font-weight="700">• 仅流式摄入与空间路网扫描即月烧 $44,200/月 (Normalized)</text>
+
+  <rect x="64" y="444" width="390" height="120" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="468" fill="#FECACA" font-size="13" font-weight="700">3. 1.16 亿条船舶稳性配载与防摇向量全内存 HNSW 天价账单</text>
+  <text x="80" y="490" fill="#CBD5E1" font-size="11.5">• 1.16 亿条 (116M) 24,000-TEU BAPLIE 三维稳性配载、岸桥反向脉冲</text>
+  <text x="80" y="510" fill="#CBD5E1" font-size="11.5">  防摇频谱与 MAPF 无冲突路径向量若常驻全内存需 5.0TB DRAM</text>
+  <text x="80" y="532" fill="#FCA5A5" font-size="11.5" font-weight="700">• 仅全内存向量节点月费即达 $37,600/月，总拼接栈高达 $100,000/月</text>
+
+  <!-- Center/Right Column: Fabric 7ms Closed Loop -->
+  <rect x="492" y="140" width="904" height="440" rx="14" fill="#0F223D" stroke="#10B981" stroke-width="1.5"/>
+  <text x="514" y="170" fill="#6EE7B7" font-size="15.5" font-weight="800">✅ Microsoft Fabric 全自动超级港口、岸桥防摇与海铁直装 7ms 自治闭环（省 89.7% TCO · $10,300/月）</text>
+
+  <!-- Step 1 -->
+  <rect x="514" y="188" width="860" height="84" rx="10" fill="#132D50" stroke="#38BDF8" stroke-width="1.2"/>
+  <rect x="528" y="202" width="108" height="24" rx="5" fill="#0284C7"/>
+  <text x="582" y="218" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 1 · 2 ms</text>
+  <text x="648" y="218" fill="#F8FAFC" font-size="13.5" font-weight="800">Eventhouse KQL H3/FFT 940K EPS 岸桥防摇、AGV 位姿与冷链感知（$0/GB 写入税 · 12:1 压缩）</text>
+  <text x="528" y="242" fill="#BAE6FD" font-size="11.5">• 实时摄入 680 台岸桥、4,800 台 AGV 与 8.5 万冷链箱流，厘米级 H3 (Res-15) 网格与 series_fft() 毫秒级捕获异常</text>
+  <text x="528" y="260" fill="#34D399" font-size="11.5" font-weight="700">• 2ms 锁定 STS-14 横风摆幅 ±380mm、B 区 48 台 AGV 环形死锁苗头及 R-08 架 180 个医药/生鲜冷链箱断电升温 (+0.18°C/min)</text>
+
+  <!-- Step 2 -->
+  <rect x="514" y="282" width="860" height="90" rx="10" fill="#132D50" stroke="#818CF8" stroke-width="1.2"/>
+  <rect x="528" y="296" width="108" height="24" rx="5" fill="#4F46E5"/>
+  <text x="582" y="312" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 2 · 2 ms</text>
+  <text x="648" y="312" fill="#F8FAFC" font-size="13.5" font-weight="800">Fabric IQ 6 跳港口数字孪生 × Cosmos SSD DiskANN 1.16 亿向量（116M）检索（省 92% 内存）</text>
+  <text x="528" y="336" fill="#E0E7FF" font-size="11.5">• 2ms 在 NVMe SSD 上检索 1.16 亿条 BAPLIE 船舶稳性配载、岸桥反向脉冲防摇与 CBS 多智能体无冲突路径向量 (0.99 相似度)</text>
+  <text x="528" y="356" fill="#34D399" font-size="11.5" font-weight="700">• 注入反向阻尼压摆幅至 ±42mm (保 42.8 GMPH) + 重排 48 台 AGV 实现海铁直装“零翻箱” + 调度 4.2MW 移动储能车并网保 180 冷链箱</text>
+
+  <!-- Step 3 -->
+  <rect x="514" y="382" width="860" height="88" rx="10" fill="#132D50" stroke="#F59E0B" stroke-width="1.2"/>
+  <rect x="528" y="396" width="108" height="24" rx="5" fill="#D97706"/>
+  <text x="582" y="412" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 3 · 2 ms</text>
+  <text x="648" y="412" fill="#F8FAFC" font-size="13.5" font-weight="800">Foundry IQ IMO 船舶稳性（GM &gt;= 2.20m）与 SOLAS VGM / IMDG 危化品护栏（SOP-069）</text>
+  <text x="528" y="436" fill="#FEF3C7" font-size="11.5">• 强制校核海铁直装动态置换箱位后，24,000-TEU 巨轮初稳性高度 GM = 2.85 m (&gt;= 2.20 m 国际海事红线)，船体弯矩 &lt; 82% 许用值</text>
+  <text x="528" y="454" fill="#34D399" font-size="11.5" font-weight="700">• 确认 SOLAS VGM 称重偏差 &lt; ±500kg、IMDG 危化品隔离合规，且 180 个冷链箱核心温度锁死 -22.4°C (&lt;= -18.0°C)</text>
+
+  <!-- Step 4 -->
+  <rect x="514" y="480" width="860" height="84" rx="10" fill="#132D50" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="528" y="494" width="108" height="24" rx="5" fill="#059669"/>
+  <text x="582" y="510" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 4 · 1 ms</text>
+  <text x="648" y="510" fill="#F8FAFC" font-size="13.5" font-weight="800">码头中控长 Teams 联签 + ALDO 码头断网边缘 1ms 下发 + 1GB 免费 Fabric SQL 审计落盘</text>
+  <text x="528" y="534" fill="#D1FAE5" font-size="11.5">• 码头值班主任在 Teams 联签 Confirm，驱动中控室 SQL Server on Azure Local (ALDO) 1ms 下发岸桥 PLC 与 AGV VDA-5050 指令</text>
+  <text x="528" y="552" fill="#6EE7B7" font-size="11.5" font-weight="700">• 端到端 7ms 完成岸桥防摇、AGV 解死锁与冷链保鲜闭环，月省 $89,700 (-89.7% TCO)，守护 $20.80M 船期、冷链与海铁联运 SLA</text>
+
+  <!-- Bottom Row: 5-Cloud Matrix & Quantitative KPIs -->
+  <rect x="44" y="596" width="1352" height="264" rx="14" fill="#0E1B31" stroke="#334155" stroke-width="1.2"/>
+  <text x="64" y="624" fill="#F8FAFC" font-size="14.5" font-weight="800">📊 五大云平台自动化超级港口、1.16 亿向量检索与海铁联运选型对比矩阵（n=292 路由均值 251.0ms · n=69 本体均值 211.0ms）</text>
+
+  <rect x="64" y="638" width="420" height="204" rx="10" fill="#132642" stroke="#14B8A6" stroke-width="1.2"/>
+  <text x="80" y="662" fill="#5EEAD4" font-size="13" font-weight="800">🏆 Microsoft Fabric 必赢三大铁律</text>
+  <text x="80" y="686" fill="#F8FAFC" font-size="11.5">1. $0/GB 写入税 + 2ms KQL H3/FFT：940K EPS 岸桥/AGV/冷链</text>
+  <text x="80" y="704" fill="#94A3B8" font-size="11">   流直入 Eventhouse，厘米级 H3 车道碰撞比多边形快 1,200 倍</text>
+  <text x="80" y="728" fill="#F8FAFC" font-size="11.5">2. 1.16 亿向量 SSD DiskANN 2ms 检索：BAPLIE 配载、岸桥防摇</text>
+  <text x="80" y="746" fill="#94A3B8" font-size="11">   与 MAPF 路径驻留本地 NVMe SSD，省去 92% DRAM 硬件税</text>
+  <text x="80" y="770" fill="#F8FAFC" font-size="11.5">3. ALDO 码头 1ms 边缘 + F64 $0 读者税：外网闪断岸桥不趴窝，</text>
+  <text x="80" y="788" fill="#94A3B8" font-size="11">   1,800 名调度/配载/关务员 DirectLake 秒级看数 $0 Viewer 许可费</text>
+  <text x="80" y="818" fill="#34D399" font-size="12" font-weight="800">✓ 月度标准化 TCO：$10,300/月 vs 竞对 $100,000/月（立省 89.7%）</text>
+
+  <rect x="502" y="638" width="430" height="204" rx="10" fill="#132642" stroke="#64748B" stroke-width="1"/>
+  <text x="518" y="662" fill="#93C5FD" font-size="13" font-weight="800">🤝 四大云竞对定位与 OneLake 零拷贝共存边界</text>
+  <text x="518" y="688" fill="#E2E8F0" font-size="11.5">• Databricks GPU ($100.0K/mo)：适合多智能体强化学习 (MARL)</text>
+  <text x="518" y="706" fill="#94A3B8" font-size="11">  与 3D 激光点云离线训练，模型权重零拷贝写回 OneLake</text>
+  <text x="518" y="730" fill="#E2E8F0" font-size="11.5">• Snowflake ($103.8K/mo)：适合航运联盟 EDI 舱单 (BAPLIE/COPARN)</text>
+  <text x="518" y="748" fill="#94A3B8" font-size="11">  跨企共享与港口财务并表，OneLake $0 算力镜像对齐</text>
+  <text x="518" y="772" fill="#E2E8F0" font-size="11.5">• AWS SiteWise ($98.6K/mo)：940K EPS 按属性点写入与 1.16 亿</text>
+  <text x="518" y="790" fill="#94A3B8" font-size="11">  OpenSearch 全内存向量 OCU 账单高昂</text>
+  <text x="518" y="818" fill="#E2E8F0" font-size="11.5">• GCP BigQuery GIS ($99.4K/mo)：缺码头 1ms 断网 PLC/AGV 边缘</text>
+
+  <rect x="950" y="638" width="424" height="204" rx="10" fill="#092E26" stroke="#10B981" stroke-width="1.4"/>
+  <text x="966" y="662" fill="#6EE7B7" font-size="13" font-weight="800">📈 Scenario BQ 密封基准验证（DL-289..DL-292）</text>
+  <text x="966" y="688" fill="#F8FAFC" font-size="12" font-weight="700">• 评测矩阵得分：291 / 292 (99.66%) · 142/142 单测通过</text>
+  <text x="966" y="712" fill="#F8FAFC" font-size="11.5">• 岸桥防摇效率：STS-14 摆幅 ±380mm → ±42mm (保 42.8 GMPH)</text>
+  <text x="966" y="734" fill="#F8FAFC" font-size="11.5">• 海铁联运直装：48 台 AGV 解死锁直装班列，0 次堆场二次翻箱</text>
+  <text x="966" y="756" fill="#F8FAFC" font-size="11.5">• 船舶稳性护栏：IMO GM = 2.85 m (&gt;= 2.20 m 底线，SOLAS 合规)</text>
+  <text x="966" y="778" fill="#F8FAFC" font-size="11.5">• 冷链不断电保护：4.2MW 移动储能车保 180 个冷链箱 (-22.4°C)</text>
+  <text x="966" y="812" fill="#34D399" font-size="13" font-weight="800">🛡️ 守护 $20,800,000 巨轮船期、冷链与海铁联运 SLA</text>
+</svg>
