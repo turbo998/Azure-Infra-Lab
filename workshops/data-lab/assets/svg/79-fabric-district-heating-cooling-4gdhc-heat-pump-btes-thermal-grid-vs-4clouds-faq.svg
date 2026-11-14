@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg79" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07111E"/>
+      <stop offset="50%" stop-color="#0D1F33"/>
+      <stop offset="100%" stop-color="#132A46"/>
+    </linearGradient>
+    <linearGradient id="accent79" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg79)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#0A1729" stroke="#1E3A5F" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="86" rx="14" fill="#122642" stroke="#F97316" stroke-width="1.5"/>
+  <rect x="58" y="48" width="310" height="26" rx="13" fill="url(#accent79)"/>
+  <text x="213" y="66" fill="#FFFFFF" font-size="11.2" font-weight="800" text-anchor="middle" letter-spacing="0.6">DATA LAB · 2026-11-14 R71 · 160-TEST &amp; 99.70% MILESTONE</text>
+  <text x="382" y="66" fill="#F8FAFC" font-size="16" font-weight="800">城市级区域供热供冷热网（4GDHC/5GDHC）、算力余热回收与跨季节蓄热（BTES）选型 FAQ</text>
+  <text x="58" y="98" fill="#FDBA74" font-size="12.5">Microsoft Fabric (Eventhouse KQL 870K EPS 9ms 低温差/水锤感知 + Cosmos SSD DiskANN 10ms 1.52亿水力热力/BTES匹配 + SDS + ALDO 边缘) vs 四大云</text>
+  <rect x="1156" y="46" width="224" height="60" rx="10" fill="#062E22" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1268" y="68" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BZ · 28 城市热网 + 64万站</text>
+  <text x="1268" y="94" fill="#FFFFFF" font-size="17.5" font-weight="800" text-anchor="middle">39ms 闭环 · 省 90.7% TCO</text>
+
+  <!-- Row 1 Left: Pain Points vs First-Principles Breakthrough -->
+  <rect x="40" y="136" width="668" height="248" rx="14" fill="#0F2038" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="60" y="164" fill="#FB923C" font-size="14" font-weight="800">01 · 第一性原理痛点拆解：为什么 15 分钟 SCADA 轮询会逼热网烧高价燃气并排空算力余热？</text>
+
+  <rect x="60" y="178" width="628" height="60" rx="8" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="198" fill="#FCA5A5" font-size="12" font-weight="800">❌ 传统架构痛点：热水传输滞后 4 小时 + 低供回水温差阻塞算力余热 + 尖峰燃气碳税 (`$120.4K/月`)</text>
+  <text x="76" y="216" fill="#FECACA" font-size="11">• 热水流速仅 1.8m/s，25km 管道滞后 4h；-18°C 晨峰等 SCADA 看到掉温为时已晚，只能点燃高价天然气尖峰炉</text>
+  <text x="76" y="231" fill="#FECACA" font-size="11">• 二网大流量乱抽水致回水飙至 51.8°C，使邻近智算中心 48°C 免费液冷余热 (145 MWt) 无法并网被迫排向大气</text>
+
+  <rect x="60" y="248" width="628" height="60" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="76" y="268" fill="#6EE7B7" font-size="12" font-weight="800">✅ Fabric 破局：9ms KQL 温差/水锤感知 + 10ms 1.52 亿向量检索 + ALDO 热力站边缘 (`$11.2K/月`)</text>
+  <text x="76" y="286" fill="#D1FAE5" font-size="11">• Eventhouse KQL $0/GB 写入税摄入 870K EPS 遥测，series_fit_line() 9ms 锁定北区 19.4°C 低温差与 +0.38MPa 水锤波</text>
+  <text x="76" y="301" fill="#D1FAE5" font-size="11">• Cosmos SSD DiskANN 10ms 检索 1.52 亿条楼宇热惯性与 BTES 向量：压回水至 34.2°C 收 145MWt 余热 + 提前 3.5h 错峰蓄热</text>
+
+  <rect x="60" y="316" width="628" height="54" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="76" y="335" fill="#93C5FD" font-size="11.5" font-weight="800">🤝 互补共存 (Better Together)：十年期地下岩土三维有限元仿真 vs 39ms 实时水力热力闭环</text>
+  <text x="76" y="353" fill="#E2E8F0" font-size="11">• FEFLOW / COMSOL 十年期岩土热扩散仿真归 Databricks/Azure HPC；1,200万户热费账单归 Snowflake/SAP IS-U；39ms 闭环归 Fabric</text>
+
+  <!-- Row 1 Right: 39ms 4-Step Closed Loop -->
+  <rect x="728" y="136" width="672" height="248" rx="14" fill="#0F2038" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="748" y="164" fill="#38BDF8" font-size="14" font-weight="800">02 · Scenario BZ：39ms 提前 3.5h 蓄热、145MWt 余热并网与防军团菌闭环 (`DL-325..328`)</text>
+
+  <rect x="748" y="178" width="310" height="90" rx="8" fill="#0A1729" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="762" y="198" fill="#38BDF8" font-size="12" font-weight="800">① Eventhouse KQL 流式感知 (9 ms)</text>
+  <text x="762" y="216" fill="#E2E8F0" font-size="10.5">• 870K EPS 64万换热站超声热量表 + 光纤 DTS</text>
+  <text x="762" y="232" fill="#E2E8F0" font-size="10.5">• 检出北区 #12 温差塌缩至 19.4°C (回水 51.8°C)</text>
+  <text x="762" y="248" fill="#34D399" font-size="10.5" font-weight="700">• 同步锁定 -18°C 晨峰负荷冲击与 +0.38MPa 水锤前兆</text>
+
+  <rect x="1070" y="178" width="310" height="90" rx="8" fill="#0A1729" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="1084" y="198" fill="#C084FC" font-size="12" font-weight="800">② 1.52 亿向量 SSD DiskANN 寻优 (10 ms)</text>
+  <text x="1084" y="216" fill="#E2E8F0" font-size="10.5">• 检索 1.52 亿条水力-热力传递、楼宇热容与 BTES 向量</text>
+  <text x="1084" y="232" fill="#E2E8F0" font-size="10.5">• 4,200 站 180s S型缓闭 -28% 压回水至 34.2°C</text>
+  <text x="1084" y="248" fill="#C084FC" font-size="10.5" font-weight="700">• 全额并入 145MWt 智算余热 + 提前 3.5h 楼宇蓄热</text>
+
+  <rect x="748" y="278" width="310" height="92" rx="8" fill="#0A1729" stroke="#F97316" stroke-width="1.2"/>
+  <text x="762" y="298" fill="#FB923C" font-size="12" font-weight="800">③ Foundry IQ 防军团菌与防爆管门禁 (10 ms)</text>
+  <text x="762" y="316" fill="#E2E8F0" font-size="10.5">• 校核《DISTRICT-THERMAL-4GDHC-EED-SOP-078》</text>
+  <text x="762" y="332" fill="#E2E8F0" font-size="10.5">• 生活热水巴氏杀菌 62.4°C &gt;= 60.0°C，承压 1.28 &lt;= 1.6MPa</text>
+  <text x="762" y="348" fill="#FDBA74" font-size="10.5" font-weight="700">• 核算绿热与余热占比 84.6% &gt;= 75.0% 欧盟 EED 标准</text>
+
+  <rect x="1070" y="278" width="310" height="92" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1084" y="298" fill="#34D399" font-size="12" font-weight="800">④ Teams 联签 + ALDO 换热站边缘闭环 (10 ms)</text>
+  <text x="1084" y="316" fill="#E2E8F0" font-size="10.5">• 热网总调 Teams 联签 Confirm (0.99)</text>
+  <text x="1084" y="332" fill="#E2E8F0" font-size="10.5">• ALDO 边缘经 IEC-104/MBus 下发电动阀与热泵指令</text>
+  <text x="1084" y="348" fill="#6EE7B7" font-size="10.5" font-weight="700">• 0 尖峰燃气启动 · 守护 $23.95M 民生供暖与碳税 SLA</text>
+
+  <!-- Row 2 Left: 5-Cloud Capability Matrix -->
+  <rect x="40" y="400" width="668" height="250" rx="14" fill="#0F2038" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="60" y="428" fill="#60A5FA" font-size="14" font-weight="800">03 · 五大云平台城市级区域供热供冷热网（4GDHC/5GDHC）横评矩阵</text>
+
+  <rect x="60" y="442" width="628" height="26" rx="6" fill="#1E293B"/>
+  <text x="74" y="459" fill="#CBD5E1" font-size="11" font-weight="700">核心能力维度</text>
+  <text x="310" y="459" fill="#60A5FA" font-size="11" font-weight="800" text-anchor="middle">Fabric</text>
+  <text x="400" y="459" fill="#FBBF24" font-size="11" font-weight="700" text-anchor="middle">AWS</text>
+  <text x="485" y="459" fill="#34D399" font-size="11" font-weight="700" text-anchor="middle">GCP</text>
+  <text x="565" y="459" fill="#F97316" font-size="11" font-weight="700" text-anchor="middle">Databricks</text>
+  <text x="645" y="459" fill="#38BDF8" font-size="11" font-weight="700" text-anchor="middle">Snowflake</text>
+
+  <text x="74" y="488" fill="#F8FAFC" font-size="11.5">1. 870K EPS 64 万换热站温压与水锤流处理</text>
+  <text x="310" y="488" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">9ms ($0税) ★</text>
+  <text x="400" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">按属性高费</text>
+  <text x="485" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">需Dataflow</text>
+  <text x="565" y="488" fill="#E2E8F0" font-size="11" text-anchor="middle">500ms+微批</text>
+  <text x="645" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">60s 滞后</text>
+
+  <text x="74" y="518" fill="#F8FAFC" font-size="11.5">2. 1.52 亿条水力-热力传递与 BTES 向量检索</text>
+  <text x="310" y="518" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">10ms (省92%) ★</text>
+  <text x="400" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">全内存昂贵</text>
+  <text x="485" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">独立端点</text>
+  <text x="565" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">内存型端点</text>
+  <text x="645" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">非毫秒工控</text>
+
+  <text x="74" y="548" fill="#F8FAFC" font-size="11.5">3. 防军团菌杀菌门禁与欧盟 EED 余热碳账本</text>
+  <text x="310" y="548" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">SDS+10ms门禁 ★</text>
+  <text x="400" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">需自建</text>
+  <text x="485" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">需自建</text>
+  <text x="565" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">离线FEM训练</text>
+  <text x="645" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">月度热费表</text>
+
+  <text x="74" y="578" fill="#F8FAFC" font-size="11.5">4. 热力首站/换热站 ALDO 断网自治与 $0 席位</text>
+  <text x="310" y="578" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">原生内建 ★</text>
+  <text x="400" y="578" fill="#E2E8F0" font-size="11" text-anchor="middle">Outposts+$席</text>
+  <text x="485" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">GDC+$席</text>
+  <text x="565" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">无热力站边缘</text>
+  <text x="645" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">纯云端</text>
+
+  <rect x="60" y="596" width="628" height="38" rx="6" fill="#062E22" stroke="#10B981" stroke-width="1"/>
+  <text x="74" y="620" fill="#6EE7B7" font-size="11.5" font-weight="800">28 座特大城市智慧热网（64 万站）月度 TCO：Fabric $11,200/月 vs 传统栈 $120,400/月（直降 90.7%）</text>
+
+  <!-- Row 2 Right: TCO Inflection & Dual-Denominator Governance -->
+  <rect x="728" y="400" width="672" height="250" rx="14" fill="#0F2038" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="748" y="428" fill="#60A5FA" font-size="14" font-weight="800">04 · 月度 TCO 拆解（省 $109,200/月）与 160 单测 &amp; 99.70% 里程碑治理</text>
+
+  <text x="748" y="456" fill="#F8FAFC" font-size="12" font-weight="700">Microsoft Fabric (F64 共享容量 + 1.52 亿 SSD DiskANN + SDS + ALDO) — $11,200 / mo</text>
+  <rect x="748" y="464" width="116" height="16" rx="8" fill="#10B981"/>
+  <text x="874" y="476" fill="#34D399" font-size="12" font-weight="800">省 90.7% (月省 $109,200 · 全栈口径 $28.8K vs $309.6K)</text>
+
+  <text x="748" y="502" fill="#CBD5E1" font-size="11.5">传统拼装栈 (870K EPS 按点位 IoT $80.6K + 102节点内存向量 $24.4K + 独立 ESG/BI $15.4K) — $120,400 / mo</text>
+  <rect x="748" y="510" width="610" height="14" rx="7" fill="#EF4444"/>
+
+  <rect x="748" y="536" width="632" height="98" rx="8" fill="#0A1729" stroke="#334155" stroke-width="1.2"/>
+  <text x="764" y="556" fill="#FDBA74" font-size="11.5" font-weight="800">🔍 严格双分母与数据溯源披露 (160-Test &amp; 99.70% Milestone · reports/report.json)</text>
+  <text x="764" y="575" fill="#E2E8F0" font-size="11">• 分母 A（全量路由矩阵）：n = 328 场景 (DL-01..DL-328)，通过率 327 / 328 (99.70%)，算术均值 = 226.0 ms (R70 n=324 为 228.5 ms)</text>
+  <text x="764" y="593" fill="#E2E8F0" font-size="11">• 分母 B（行业本体闭环）：n = 78 仿真 (Scenario A..BZ)，端到端算术均值 = 193.0 ms (R70 n=77 为 195.0 ms；Scenario BZ = 39 ms)</text>
+  <text x="764" y="611" fill="#34D399" font-size="11" font-weight="700">• 本地实测：160 / 160 Python 单元测试 100% 通过 (measured_local_harness) · 74 条官方规格链接核验</text>
+
+  <!-- Row 3 Bottom: Architect Checklist -->
+  <rect x="40" y="666" width="1360" height="198" rx="14" fill="#122642" stroke="#F97316" stroke-width="1.5"/>
+  <text x="60" y="694" fill="#FDBA74" font-size="14" font-weight="800">05 · AI Solution Architect 生产落地与售前打单核验清单 (4GDHC/5GDHC Thermal Grid &amp; Seasonal BTES Checklist)</text>
+
+  <rect x="60" y="708" width="426" height="138" rx="10" fill="#0A1729" stroke="#1E3A5F" stroke-width="1.2"/>
+  <text x="76" y="730" fill="#38BDF8" font-size="12.5" font-weight="800">☑ 1. 64 万换热站与 1.52 亿向量检索核验</text>
+  <text x="76" y="750" fill="#E2E8F0" font-size="11">• Azure IoT Operations 汇聚 MBus/IEC-104 热量表与 DTS</text>
+  <text x="76" y="768" fill="#E2E8F0" font-size="11">• Eventhouse KQL series_fit_line() &lt;= 12ms 检出低温差与水锤</text>
+  <text x="76" y="786" fill="#E2E8F0" font-size="11">• Cosmos SSD DiskANN 1.52 亿条水力-热力传递与 BTES 向量</text>
+  <text x="76" y="804" fill="#34D399" font-size="11" font-weight="700">• P99 检索 &lt;= 12ms，召回率 &gt;= 99.0%，省 92% 内存</text>
+
+  <rect x="506" y="708" width="426" height="138" rx="10" fill="#0A1729" stroke="#1E3A5F" stroke-width="1.2"/>
+  <text x="522" y="730" fill="#FB923C" font-size="12.5" font-weight="800">☑ 2. 防军团菌杀菌与防爆管水锤硬护栏</text>
+  <text x="522" y="750" fill="#E2E8F0" font-size="11">• Foundry IQ 强制校验生活热水巴氏杀菌 62.4°C &gt;= 60.0°C</text>
+  <text x="522" y="768" fill="#E2E8F0" font-size="11">• 4,200 站阀门 180s S型斜坡缓闭，管网承压 1.28 &lt;= 1.60 MPa</text>
+  <text x="522" y="786" fill="#E2E8F0" font-size="11">• 压回水至 34.2°C 全额回收 145MWt 智算中心 48°C 液冷余热</text>
+  <text x="522" y="804" fill="#FDBA74" font-size="11" font-weight="700">• 提前 3.5h 楼宇热惯性蓄热，寒潮晨峰 0 启动尖峰燃气锅炉</text>
+
+  <rect x="952" y="708" width="428" height="138" rx="10" fill="#0A1729" stroke="#1E3A5F" stroke-width="1.2"/>
+  <text x="968" y="730" fill="#34D399" font-size="12.5" font-weight="800">☑ 3. FEFLOW 岩土仿真与 SAP IS-U 零拷贝共存</text>
+  <text x="968" y="750" fill="#E2E8F0" font-size="11">• 十年期三维地下岩层热扩散有限元归 Databricks/HPC</text>
+  <text x="968" y="768" fill="#E2E8F0" font-size="11">• 1,200 万户居民采暖账单与补贴归 Snowflake/SAP IS-U</text>
+  <text x="968" y="786" fill="#E2E8F0" font-size="11">• OneLake Shortcuts + Mirroring ($0 算力) 双向零拷贝互通</text>
+  <text x="968" y="804" fill="#6EE7B7" font-size="11" font-weight="700">• DirectLake $0 席位服务 2,600 名调度与审计员，省 90.7% TCO</text>
+</svg>
