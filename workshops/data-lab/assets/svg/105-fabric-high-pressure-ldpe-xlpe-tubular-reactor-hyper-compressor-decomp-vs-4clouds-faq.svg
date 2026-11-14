@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg97" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent97" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue97" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2447"/>
+      <stop offset="100%" stop-color="#0B1933"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg97)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="58" y="50" width="302" height="26" rx="13" fill="url(#accent97)"/>
+  <text x="209" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · 2026-11-15 R97 · 100-SPEC &amp; 105-SVG</text>
+  <text x="376" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">3,000 bar 超高压 LDPE &amp; 525kV 海缆超净 XLPE：乙烯分解防爆 (Decomp)、30MW 压缩机护柱塞与 2.56 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global 3,000-bar LDPE &amp; ±525kV HVDC XLPE (22 Complexes · 64 3,000-bar Reactors + 128 30MW Hyper-Compressors + 180 Cleanroom Lines) · 980K EPS · 256M DiskANN · 56ms Loop · -93.3% TCO</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1284" y="69" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">R97 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">177.5ms · 159.0ms</text>
+
+  <!-- Left Column: Physical 3,000-bar LDPE & HVDC XLPE Telemetry Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#FBBF24" font-size="14" font-weight="800">01 · 3,000 bar 超高压反应器与压缩机传感层 (980K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#FDE68A" font-size="12.5" font-weight="800">💥 64 套 3,000 bar (300 MPa) 超高压管式/釜式反应器</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 沿 2.5km 管线 320 支 1kHz 快响应热电偶与压力变送器</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 解卷积捕获 #07反应器 第3峰区 +18.4°C/s 指数抬头 (318.6°C)</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 比 335°C 静态阈值提前 850ms 拦截 1,200°C 乙烯分解放黑炮!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#93C5FD" font-size="12.5" font-weight="800">⚙️ 128 台 30MW 二次超高压往复压缩机 (碳化钨柱塞)</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 青铜-PTFE 填料函 50kHz 声发射 (AE) 与柱塞微位移涡流探头</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 捕获 #04压缩机 B2 缸碳化钨柱塞油膜干摩擦声发射 +14.2 dB</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 毫秒级增注高压白油，保住 $850K 脆性实心碳化钨柱塞零碎裂</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">⚡ 180 条百级洁净室 ±525 kV 海缆超净 XLPE 造粒线</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 20MHz 线阵 CCD 激光透射扫描切粒熔体中的微米级焦烧晶点</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 拦截 32–45μm 微黄点萌芽，确保 &gt;50μm 琥珀色焦烧 = 0.0 颗/kg</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 满足 CIGRE TB 852 直流体积电阻率 &gt;10^16 Ω·cm 严苛标准</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统 335°C 静态 ESD 阈值与云端全内存拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 高压护套滞后 200ms+，等读数到 335°C 时核心已超 550°C 炸裂爆破片</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 980K EPS 云端按属性写入税高达 $142.0K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.56 亿向量全内存常驻需 2.85TB+ DRAM (&gt;$52.0K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 56ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue97)" stroke="#3B82F6" stroke-width="2"/>
+  <text x="502" y="166" fill="#93C5FD" font-size="14" font-weight="800">02 · Microsoft Fabric 56ms 超高压防分解与超净闭环</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 14ms 热惯性解卷积与声发射感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 980,000 EPS 1kHz/50kHz 流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• series_fir() 14ms 锁定 #07反应器 +18.4°C/s &amp; #04压缩机 +14.2dB</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $137.1K/月写入费，提前 850ms 揪出阿伦尼乌斯自加速抬头</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 14ms 2.56亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 2^8M 里程碑：检索 256,000,000 条 Semenov 分岔、脉冲除垢与柱塞向量</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.5K vs $52.0K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：第3区过氧化物 -42% + 让压阀 LDV 微开 180ms + B2白油 +18%</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 非停机微脉冲冲走死区：峰温压回 298.4°C (0分解/0放黑炮/0停产)</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 超高压防爆与 CIGRE 超净护栏 (SOP-104 · 14ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验峰温 298.4°C &lt;= 312.0°C、0 爆破片起跳、柱塞声发射回落 -14.2dB</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验 &gt;50μm 琥珀色焦烧晶点 = 0.0 颗/kg，体积电阻率 &gt;10^16 Ω·cm</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断反应器分解爆炸与 525kV 海底电缆电树枝击穿风险</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总工确认 + ALDO 防爆墙边缘 &amp; ISCC 护照 (14ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 14ms 驱动引发剂切断与液压脉冲让压阀 LDV</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 CIGRE 超净与 ISCC PLUS 护照 (0.68 kgCO2e/kg)</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 56ms 端到端闭环 · 守护 $33.05M 超高压反应器防爆与海缆料 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.3%)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑 3,000 bar 超临界多相流 CFD</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  与长链支化 (LCB) 蒙特卡洛仿真，向 OneLake 写入 2.56 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留海缆巨头 CoA 放行与乙烯单体</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  质量平衡 ERP，经 OneLake Mirroring ($0 算力) 零拷贝互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 4,800 名聚合工程师与海缆质检员 DirectLake 看板 ($0 席位)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 22 座超高压基地月度 TCO 对比 (980K EPS · 256M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 256M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$13,800 / 月 (基准最优 · 省 93.3%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 2.85TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$206,000 / 月 (归一化) | $559,800 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $192,200 / 月 ($2.31M / 年) · 100项规格 &amp; 105张架构图!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#7DD3FC" font-size="12.5" font-weight="800">📊 Scenario CZ 实测成效与双分母披露 (R97 六冠里程碑!)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=432)：431 / 432 (99.77%) · 均值 177.5 ms</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=104)：159.0 ms (破 160ms! 本场景 CZ 仅 56 ms)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 反应器防爆：318.6°C (+18.4°C/s) → 298.4°C | 0 分解 · 0 爆破片</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 超净海缆料：&gt;50μm 焦烧晶点 = 0.0 颗/kg · 0.68 kgCO2e/kg</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避分解停产与海缆批次拒收损失：$33,050,000 ($33.05M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#FDE68A" font-size="14" font-weight="800">04 · AI Solution Architect 3,000 bar 超高压聚乙烯与海缆绝缘料打单金句与生产核验清单 (Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#FDE68A" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 3,000 bar 超高压聚乙烯反应器里，热电偶护套有 200ms 导热滞后，等读数爬到 335°C 静态阈值</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">时，核心早已冲破 550°C 炸穿爆破片放黑炮！Microsoft Fabric 用 Eventhouse 在 14ms 内对 320 支</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">1kHz 热电偶做解卷积算二阶温升导数（$0/GB 写入税），再用 SSD DiskANN 在 14ms 内匹配 2.56 亿</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">条热分解分岔与脉冲水锤向量，56ms 走 ALDO 防爆墙边缘削减引发剂并微开让压阀 180ms 冲走死区，</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">实现零分解、零碳化钨柱塞碎裂与 525kV 海缆料零焦烧晶点，月省 93.3% TCO！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 2.5km 管式反应器 320 支 1kHz 热电偶直推 Eventhouse，开启 series_fir() 护套滞后补偿</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. 30MW 二次超高压压缩机填料函 50kHz 声发射 (AE) 与高压白油注油泵 14ms 联锁</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.56 亿条 Semenov 分岔/脉冲水锤索引构建 (-92% 内存，P95 &lt;= 14ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-104 门禁：峰温 &lt;=312°C、0 爆破片起跳、&gt;50μm 焦烧晶点 = 0.0 颗/kg</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 防爆墙边缘驱动引发剂泵/让压阀，1GB 免费 SQL 签发 CIGRE + ISCC 0.68kgCO2e 证书</text>
+</svg>
