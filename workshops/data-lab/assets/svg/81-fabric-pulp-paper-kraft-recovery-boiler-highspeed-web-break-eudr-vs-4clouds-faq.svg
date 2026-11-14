@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg81" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051311"/>
+      <stop offset="50%" stop-color="#0A221E"/>
+      <stop offset="100%" stop-color="#0F312B"/>
+    </linearGradient>
+    <linearGradient id="accent81" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg81)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#071916" stroke="#134E4A" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="86" rx="14" fill="#0C2924" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="58" y="48" width="320" height="26" rx="13" fill="url(#accent81)"/>
+  <text x="218" y="66" fill="#051311" font-size="11.2" font-weight="800" text-anchor="middle" letter-spacing="0.6">DATA LAB · 2026-11-14 R73 · 80-ONTOLOGY &amp; 160M MILESTONE</text>
+  <text x="392" y="66" fill="#F8FAFC" font-size="16" font-weight="800">现代制浆造纸、碱回收炉（BLRB）防爆炸、2,000m/min 高速纸机防断纸与欧盟 EUDR 选型 FAQ</text>
+  <text x="58" y="98" fill="#6EE7B7" font-size="12.5">Microsoft Fabric (Eventhouse KQL 890K EPS 7ms 声纹/断纸感知 + Cosmos SSD DiskANN 8ms 1.60亿 NIR/QCS匹配 + SDS + ALDO 车间边缘) vs 四大云</text>
+  <rect x="1156" y="46" width="224" height="60" rx="10" fill="#062E22" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1268" y="68" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario CB · 32 基地 + 96 高速纸机</text>
+  <text x="1268" y="94" fill="#FFFFFF" font-size="17.5" font-weight="800" text-anchor="middle">31ms 闭环 · 省 90.9% TCO</text>
+
+  <!-- Row 1 Left: Pain Points vs First-Principles Breakthrough -->
+  <rect x="40" y="136" width="668" height="248" rx="14" fill="#0B221E" stroke="#134E4A" stroke-width="1.5"/>
+  <text x="60" y="164" fill="#34D399" font-size="14" font-weight="800">01 · 第一性原理痛点拆解：为什么 30s 扫描架与 10m 历史库拦不住 33.3m/s 断纸与碱炉爆炸？</text>
+
+  <rect x="60" y="178" width="628" height="60" rx="8" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="198" fill="#FCA5A5" font-size="12" font-weight="800">❌ 传统架构痛点：QCS 横扫 30s 盲区 + 1.5s 湿部断纸 + 850°C 熔融盐遇水爆炸 (`$125.3K/月`)</text>
+  <text x="76" y="216" fill="#FECACA" font-size="11">• 纸页以 33.3m/s 狂奔，QCS 探头横扫一趟需 30s；边缘水分 +1.4% 引发 18Hz 剥离颤振，1.5s 拉断纸幅损失 $45K</text>
+  <text x="76" y="231" fill="#FECACA" font-size="11">• 碱回收炉底积存 400 吨 850°C 熔融盐，水冷壁微渗若未秒级察觉滴入熔池将引发毁灭性物理爆炸；无坐标木片致海关扣货</text>
+
+  <rect x="60" y="248" width="628" height="60" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="76" y="268" fill="#6EE7B7" font-size="12" font-weight="800">✅ Fabric 破局：7ms KQL 声纹/颤振感知 + 8ms 1.60 亿向量检索 + ALDO 车间边缘 (`$11.4K/月`)</text>
+  <text x="76" y="286" fill="#D1FAE5" font-size="11">• Eventhouse KQL $0/GB 写入税摄入 890K EPS 流，series_fft() 7ms 锁定 18Hz 剥离颤振与 4.2kHz 省煤器微渗声纹</text>
+  <text x="76" y="301" fill="#D1FAE5" font-size="11">• Cosmos SSD DiskANN 8ms 检索 1.60 亿条 NIR 光谱与 400 区稀释水向量：调稀释水 -6.5% + 速差 +0.18% 实现 0 断纸</text>
+
+  <rect x="60" y="316" width="628" height="54" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="76" y="335" fill="#93C5FD" font-size="11.5" font-weight="800">🤝 互补共存 (Better Together)：流浆箱三维纤维湍流 CFD 仿真 vs 31ms 实时防断纸闭环</text>
+  <text x="76" y="353" fill="#E2E8F0" font-size="11">• Fluent 纤维取向 CFD 与桉树基因育种归 Databricks/HPC；10m 母卷分切套裁归 Snowflake/SAP；31ms 闭环归 Fabric</text>
+
+  <!-- Row 1 Right: 31ms 4-Step Closed Loop -->
+  <rect x="728" y="136" width="672" height="248" rx="14" fill="#0B221E" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="748" y="164" fill="#38BDF8" font-size="14" font-weight="800">02 · Scenario CB：31ms 高速纸机防断纸、碱炉微渗隔离与欧盟 EUDR 闭环 (`DL-333..336`)</text>
+
+  <rect x="748" y="178" width="310" height="90" rx="8" fill="#071916" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="762" y="198" fill="#38BDF8" font-size="12" font-weight="800">① Eventhouse KQL 流式感知 (7 ms)</text>
+  <text x="762" y="216" fill="#E2E8F0" font-size="10.5">• 890K EPS 25kHz 炉壁声学 + 全幅红外水分 + 张力</text>
+  <text x="762" y="232" fill="#E2E8F0" font-size="10.5">• 检出 PM-08 #312..328 区水分 +1.4% 与 18Hz 颤振</text>
+  <text x="762" y="248" fill="#34D399" font-size="10.5" font-weight="700">• 同步捕获 3# 碱炉省煤器 4.2kHz 微渗 (+0.18 kg/s)</text>
+
+  <rect x="1070" y="178" width="310" height="90" rx="8" fill="#071916" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="1084" y="198" fill="#C084FC" font-size="12" font-weight="800">② 1.60 亿向量 SSD DiskANN 寻优 (8 ms)</text>
+  <text x="1084" y="216" fill="#E2E8F0" font-size="10.5">• 检索 1.60 亿条 NIR 卡帕光谱、400 区 QCS 与声纹向量</text>
+  <text x="1084" y="232" fill="#E2E8F0" font-size="10.5">• 稀释水阀 -6.5% + 蒸汽箱 +4.2°C + 压榨速差 +0.18%</text>
+  <text x="1084" y="248" fill="#C084FC" font-size="10.5" font-weight="700">• 隔离 3# 碱炉上部省煤器回路 + 锁定 480t 异常木片</text>
+
+  <rect x="748" y="278" width="310" height="92" rx="8" fill="#071916" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="762" y="298" fill="#FBBF24" font-size="12" font-weight="800">③ Foundry IQ BLRBAC 与 EUDR 门禁 (8 ms)</text>
+  <text x="762" y="316" fill="#E2E8F0" font-size="10.5">• 校核《PULP-PAPER-BLRBAC-QCS-EUDR-SOP-080》</text>
+  <text x="762" y="332" fill="#E2E8F0" font-size="10.5">• 横幅水分 2σ = 0.14% &lt;= 0.20%，严禁炉膛吹灰喷水</text>
+  <text x="762" y="348" fill="#FBBF24" font-size="10.5" font-weight="700">• 冻结 480t 无 6 位小数坐标木片，100% 切 FSC 桉木</text>
+
+  <rect x="1070" y="278" width="310" height="92" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1084" y="298" fill="#34D399" font-size="12" font-weight="800">④ 总工联签 + ALDO 车间边缘闭环 (8 ms)</text>
+  <text x="1084" y="316" fill="#E2E8F0" font-size="10.5">• 造纸总工 Teams 联签 Confirm (0.99)</text>
+  <text x="1084" y="332" fill="#E2E8F0" font-size="10.5">• ALDO 边缘经 OPC-UA/Profinet 直驱稀释水阀与传动</text>
+  <text x="1084" y="348" fill="#6EE7B7" font-size="10.5" font-weight="700">• 0 高速断纸 · 0 碱炉爆炸 · 守护 $24.65M 产线 SLA</text>
+
+  <!-- Row 2 Left: 5-Cloud Capability Matrix -->
+  <rect x="40" y="400" width="668" height="250" rx="14" fill="#0B221E" stroke="#134E4A" stroke-width="1.5"/>
+  <text x="60" y="428" fill="#34D399" font-size="14" font-weight="800">03 · 五大云平台现代制浆造纸与碱回收炉防爆横评矩阵</text>
+
+  <rect x="60" y="442" width="628" height="26" rx="6" fill="#134E4A"/>
+  <text x="74" y="459" fill="#CBD5E1" font-size="11" font-weight="700">核心能力维度</text>
+  <text x="310" y="459" fill="#6EE7B7" font-size="11" font-weight="800" text-anchor="middle">Fabric</text>
+  <text x="400" y="459" fill="#FBBF24" font-size="11" font-weight="700" text-anchor="middle">AWS</text>
+  <text x="485" y="459" fill="#34D399" font-size="11" font-weight="700" text-anchor="middle">GCP</text>
+  <text x="565" y="459" fill="#F97316" font-size="11" font-weight="700" text-anchor="middle">Databricks</text>
+  <text x="645" y="459" fill="#38BDF8" font-size="11" font-weight="700" text-anchor="middle">Snowflake</text>
+
+  <text x="74" y="488" fill="#F8FAFC" font-size="11.5">1. 890K EPS 碱炉声学与 QCS 400 区流处理</text>
+  <text x="310" y="488" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">7ms ($0税) ★</text>
+  <text x="400" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">按属性高费</text>
+  <text x="485" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">需Dataflow</text>
+  <text x="565" y="488" fill="#E2E8F0" font-size="11" text-anchor="middle">500ms+微批</text>
+  <text x="645" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">60s 滞后</text>
+
+  <text x="74" y="518" fill="#F8FAFC" font-size="11.5">2. 1.60 亿条 NIR 光谱与 QCS 横幅向量检索</text>
+  <text x="310" y="518" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">8ms (省92%) ★</text>
+  <text x="400" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">全内存昂贵</text>
+  <text x="485" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">独立端点</text>
+  <text x="565" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">内存型端点</text>
+  <text x="645" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">非毫秒工控</text>
+
+  <text x="74" y="548" fill="#F8FAFC" font-size="11.5">3. BLRBAC 防爆门禁与欧盟 EUDR / FSC 账本</text>
+  <text x="310" y="548" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">SDS+8ms门禁 ★</text>
+  <text x="400" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">需自建</text>
+  <text x="485" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">需自建</text>
+  <text x="565" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">离线CFD训练</text>
+  <text x="645" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">原木库存表</text>
+
+  <text x="74" y="578" fill="#F8FAFC" font-size="11.5">4. 造纸车间 ALDO 断网边缘自治与 $0 席位</text>
+  <text x="310" y="578" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">原生内建 ★</text>
+  <text x="400" y="578" fill="#E2E8F0" font-size="11" text-anchor="middle">Outposts+$席</text>
+  <text x="485" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">GDC+$席</text>
+  <text x="565" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">无车间边缘</text>
+  <text x="645" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">纯云端</text>
+
+  <rect x="60" y="596" width="628" height="38" rx="6" fill="#062E22" stroke="#10B981" stroke-width="1"/>
+  <text x="74" y="620" fill="#6EE7B7" font-size="11.5" font-weight="800">32 座林浆纸基地（96 条高速纸机）月度 TCO：Fabric $11,400/月 vs 传统栈 $125,300/月（直降 90.9%）</text>
+
+  <!-- Row 2 Right: TCO Inflection & Dual-Denominator Governance -->
+  <rect x="728" y="400" width="672" height="250" rx="14" fill="#0B221E" stroke="#134E4A" stroke-width="1.5"/>
+  <text x="748" y="428" fill="#34D399" font-size="14" font-weight="800">04 · 月度 TCO 拆解（省 $113,900/月）与 80 本体 &amp; 1.60 亿向量里程碑治理</text>
+
+  <text x="748" y="456" fill="#F8FAFC" font-size="12" font-weight="700">Microsoft Fabric (F64 共享容量 + 1.60 亿 SSD DiskANN + SDS + ALDO) — $11,400 / mo</text>
+  <rect x="748" y="464" width="112" height="16" rx="8" fill="#10B981"/>
+  <text x="870" y="476" fill="#34D399" font-size="12" font-weight="800">省 90.9% (月省 $113,900 · 全栈口径 $29.6K vs $325.3K)</text>
+
+  <text x="748" y="502" fill="#CBD5E1" font-size="11.5">传统拼装栈 (890K EPS 按点位 IoT $83.8K + 108节点内存向量 $25.8K + 独立 ESG/BI $15.7K) — $125,300 / mo</text>
+  <rect x="748" y="510" width="610" height="14" rx="7" fill="#EF4444"/>
+
+  <rect x="748" y="536" width="632" height="98" rx="8" fill="#071916" stroke="#134E4A" stroke-width="1.2"/>
+  <text x="764" y="556" fill="#6EE7B7" font-size="11.5" font-weight="800">🔍 严格双分母与数据溯源披露 (80-Ontology &amp; 189.0ms Milestone · reports/report.json)</text>
+  <text x="764" y="575" fill="#E2E8F0" font-size="11">• 分母 A（全量路由矩阵）：n = 336 场景 (DL-01..DL-336)，通过率 335 / 336 (99.70%)，算术均值 = 221.0 ms (R72 n=332 为 223.5 ms)</text>
+  <text x="764" y="593" fill="#E2E8F0" font-size="11">• 分母 B（行业本体闭环）：n = 80 仿真 (Scenario A..CB)，端到端算术均值 = 189.0 ms (R72 n=79 为 191.0 ms；Scenario CB = 31 ms)</text>
+  <text x="764" y="611" fill="#34D399" font-size="11" font-weight="700">• 本地实测：164 / 164 Python 单元测试 100% 通过 (measured_local_harness) · 76 条官方规格链接核验</text>
+
+  <!-- Row 3 Bottom: Architect Checklist -->
+  <rect x="40" y="666" width="1360" height="198" rx="14" fill="#0C2924" stroke="#10B981" stroke-width="1.5"/>
+  <text x="60" y="694" fill="#6EE7B7" font-size="14" font-weight="800">05 · AI Solution Architect 生产落地与售前打单核验清单 (Pulp &amp; Paper BLRB Safety &amp; High-Speed QCS Checklist)</text>
+
+  <rect x="60" y="708" width="426" height="138" rx="10" fill="#071916" stroke="#134E4A" stroke-width="1.2"/>
+  <text x="76" y="730" fill="#38BDF8" font-size="12.5" font-weight="800">☑ 1. 碱炉声学与 1.60 亿向量检索核验</text>
+  <text x="76" y="750" fill="#E2E8F0" font-size="11">• Azure IoT Operations 桥接 25kHz 炉壁声学与全幅相机</text>
+  <text x="76" y="768" fill="#E2E8F0" font-size="11">• Eventhouse KQL series_fft() &lt;= 10ms 检出渗漏与剥离颤振</text>
+  <text x="76" y="786" fill="#E2E8F0" font-size="11">• Cosmos SSD DiskANN 1.60 亿条 NIR 光谱与 400 区 QCS 向量</text>
+  <text x="76" y="804" fill="#34D399" font-size="11" font-weight="700">• P99 检索 &lt;= 10ms，召回率 &gt;= 99.0%，省 92% 内存</text>
+
+  <rect x="506" y="708" width="426" height="138" rx="10" fill="#071916" stroke="#134E4A" stroke-width="1.2"/>
+  <text x="522" y="730" fill="#FBBF24" font-size="12.5" font-weight="800">☑ 2. BLRBAC 防爆与欧盟 EUDR 零毁林护栏</text>
+  <text x="522" y="750" fill="#E2E8F0" font-size="11">• Foundry IQ 强制校验横幅水分 2σ = 0.14% &lt;= 0.20%</text>
+  <text x="522" y="768" fill="#E2E8F0" font-size="11">• 严禁漏水时启动吹灰喷水，执行 BLRBAC 安全隔离</text>
+  <text x="522" y="786" fill="#E2E8F0" font-size="11">• 100% 校验 6 位小数林地坐标，冻结 480t 无坐标黑木片</text>
+  <text x="522" y="804" fill="#FBBF24" font-size="11" font-weight="700">• 车间 ALDO 边缘 8ms 直驱稀释水阀与压榨速差实现 0 断纸</text>
+
+  <rect x="952" y="708" width="428" height="138" rx="10" fill="#071916" stroke="#134E4A" stroke-width="1.2"/>
+  <text x="968" y="730" fill="#34D399" font-size="12.5" font-weight="800">☑ 3. 流浆箱 CFD 仿真与 SAP 套裁零拷贝共存</text>
+  <text x="968" y="750" fill="#E2E8F0" font-size="11">• 流浆箱纤维取向三维 CFD 与基因组育种归 Databricks/HPC</text>
+  <text x="968" y="768" fill="#E2E8F0" font-size="11">• 10m 母卷分切套裁与原木结算归 Snowflake/SAP Mill</text>
+  <text x="968" y="786" fill="#E2E8F0" font-size="11">• OneLake Shortcuts + Mirroring ($0 算力) 双向零拷贝互通</text>
+  <text x="968" y="804" fill="#6EE7B7" font-size="11" font-weight="700">• DirectLake $0 席位服务 2,900 名工艺与审计员，省 90.9% TCO</text>
+</svg>

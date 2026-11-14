@@ -24,11 +24,11 @@
   <rect x="44" y="38" width="1352" height="86" rx="14" fill="#131F38" stroke="#2563EB" stroke-width="1.5"/>
   <rect x="64" y="54" width="210" height="26" rx="13" fill="url(#accentGrad)"/>
   <text x="169" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">DATA LAB · 2026-11-11/12</text>
-  <text x="290" y="72" fill="#F8FAFC" font-size="15.5" font-weight="800">Microsoft Fabric × 四大云竞对选型 FAQ：零拷贝、实时流、零 ETL、XTable、DiskANN、OBO、Gluten、Agents、Osmos、FinOps、CI/CD、零信任、BCDR、共享、V-Order、AI、孪生、迁移、目录、图、Activator、医疗、ESG、零售、金融、时空、FLAML、OTel、MDM、SAP、游戏、航发、农业、航运、流媒体、半导体、智驾、油气、电池、低轨星座、生物制药、高铁、矿山、水务、央行支付、绿氢绿氨、核能聚变、深海风电、量子超算、全球空管、合成生物、主权税务、具身机器人、低空eVTOL、吉瓦AIDC、肿瘤组学、虚拟电厂V2G、机构资管、深海FPSO、直连卫星、巨灾再保、自动化港、特高压WAMS、盐湖提锂、地震海啸、海水淡化、零碳绿钢、DAC碳封存、快递航空分拣、地月深空导航、区域供热供冷与养老金LDI一图流</text>
-  <text x="64" y="104" fill="#94A3B8" font-size="12.5">Executive Visual Summary · R1..R71 + R72 Sovereign Pension LDI, Repo Liquidity, Longevity Swaps &amp; Infra Cash-Flow (156M Vectors · 80-SVG &amp; 75-Spec Milestone · -90.8% TCO) · n=332 矩阵均值 223.5ms · n=79 本体均值 191.0ms (Scenario CA = 35ms)</text>
+  <text x="290" y="72" fill="#F8FAFC" font-size="15.5" font-weight="800">Microsoft Fabric × 四大云竞对选型 FAQ：零拷贝、实时流、零 ETL、XTable、DiskANN、OBO、Gluten、Agents、Osmos、FinOps、CI/CD、零信任、BCDR、共享、V-Order、AI、孪生、迁移、目录、图、Activator、医疗、ESG、零售、金融、时空、FLAML、OTel、MDM、SAP、游戏、航发、农业、航运、流媒体、半导体、智驾、油气、电池、低轨星座、生物制药、高铁、矿山、水务、央行支付、绿氢绿氨、核能聚变、深海风电、量子超算、全球空管、合成生物、主权税务、具身机器人、低空eVTOL、吉瓦AIDC、肿瘤组学、虚拟电厂V2G、机构资管、深海FPSO、直连卫星、巨灾再保、自动化港、特高压WAMS、盐湖提锂、地震海啸、海水淡化、零碳绿钢、DAC碳封存、快递航空分拣、地月深空导航、区域供热供冷、养老金LDI与制浆造纸防断纸一图流</text>
+  <text x="64" y="104" fill="#94A3B8" font-size="12.5">Executive Visual Summary · R1..R72 + R73 Integrated Pulp &amp; Paper, Kraft Recovery Boiler BLRB, 2,000m/min Web-Break &amp; EU EUDR (160M Vectors · 80-Ontology &amp; 189.0ms Milestone · -90.9% TCO) · n=336 矩阵均值 221.0ms · n=80 本体均值 189.0ms (Scenario CB = 31ms)</text>
   <rect x="1180" y="52" width="196" height="56" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
-  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">332 场景基准得分</text>
-  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">331 / 332 (99.70%)</text>
+  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">336 场景基准得分</text>
+  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">335 / 336 (99.70%)</text>
 
   <!-- Row 1 Left: 2026-11-08/09 Daily Breakthroughs across 5 Clouds -->
   <rect x="44" y="140" width="664" height="270" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
@@ -121,9 +121,9 @@
   <text x="1270" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">85.5</text>
   <text x="1340" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">82.8</text>
 
-  <!-- Row 2 Left: 79 Flagship Ontology Simulations -->
+  <!-- Row 2 Left: 80 Flagship Ontology Simulations -->
   <rect x="44" y="426" width="664" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
-  <text x="64" y="446" fill="#60A5FA" font-size="13" font-weight="800" letter-spacing="0.3">03 · Fabric IQ 七十九大行业本体参考仿真闭环 (n=79 Mean 191.0ms vs n=332 Matrix Mean 223.5ms)</text>
+  <text x="64" y="446" fill="#60A5FA" font-size="13" font-weight="800" letter-spacing="0.3">03 · Fabric IQ 八十大行业本体参考仿真闭环 (n=80 Mean 189.0ms vs n=336 Matrix Mean 221.0ms)</text>
 
   <!-- Row 1: A, B, C, D -->
   <rect x="64" y="454" width="150" height="68" rx="7" fill="#0F172A" stroke="#2563EB" stroke-width="1.1"/>
@@ -187,10 +187,10 @@
   <text x="387" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 省90.9% ETL · $1.62M</text>
 
   <rect x="538" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#10B981" stroke-width="1.4"/>
-  <text x="543" y="618" fill="#6EE7B7" font-size="8.0" font-weight="800">L..CA: 区域供热/养老金LDI</text>
-  <text x="543" y="634" fill="#F8FAFC" font-size="8.0">• BZ:4GDHC算力余热&amp;1.52亿向量(39ms)</text>
-  <text x="543" y="649" fill="#93C5FD" font-size="8.0">• CA:养老金LDI免抛售&amp;1.56亿向量(35ms)</text>
-  <text x="543" y="665" fill="#34D399" font-size="8.0" font-weight="700">✓ 守护$24.30M·省90.8%</text>
+  <text x="543" y="618" fill="#6EE7B7" font-size="8.0" font-weight="800">L..CB: 养老金LDI/制浆造纸</text>
+  <text x="543" y="634" fill="#F8FAFC" font-size="8.0">• CA:养老金LDI免抛售&amp;1.56亿向量(35ms)</text>
+  <text x="543" y="649" fill="#93C5FD" font-size="8.0">• CB:碱炉防爆高速纸机&amp;1.60亿向量(31ms)</text>
+  <text x="543" y="665" fill="#34D399" font-size="8.0" font-weight="700">✓ 守护$24.65M·省90.9%</text>
 
   <!-- Row 2 Right: 500-User Monthly TCO & Zero-Copy Economic Inflection -->
   <rect x="728" y="426" width="668" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
