@@ -24,11 +24,11 @@
   <rect x="44" y="38" width="1352" height="86" rx="14" fill="#131F38" stroke="#2563EB" stroke-width="1.5"/>
   <rect x="64" y="54" width="210" height="26" rx="13" fill="url(#accentGrad)"/>
   <text x="169" y="72" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">DATA LAB · 2026-11-11/12</text>
-  <text x="290" y="72" fill="#F8FAFC" font-size="15.5" font-weight="800">Microsoft Fabric × 四大云竞对选型 FAQ：零拷贝、实时流、零 ETL、XTable、DiskANN、OBO、Gluten、Agents、Osmos、FinOps、CI/CD、零信任、BCDR、共享、V-Order、AI、孪生、迁移、目录、图、Activator、医疗、ESG、零售、金融、时空、FLAML、OTel、MDM、SAP、游戏、航发、农业、航运、流媒体、半导体、智驾、油气、电池、低轨星座、生物制药、高铁、矿山、水务、央行支付、绿氢绿氨、核能聚变、深海风电、量子超算、全球空管、合成生物、主权税务、具身机器人、低空eVTOL、吉瓦AIDC、肿瘤组学、虚拟电厂V2G、机构资管、深海FPSO、直连卫星、巨灾再保、自动化港、特高压WAMS、盐湖提锂、地震海啸、海水淡化、零碳绿钢与DAC碳封存一图流</text>
-  <text x="64" y="104" fill="#94A3B8" font-size="12.5">Executive Visual Summary · R1..R67 + R68 Direct Air Capture DAC, Supercritical CO2 Pipeline &amp; Class VI CCUS (140M Vectors · 75-Ontology &amp; 199.0ms Milestone · -90.4% TCO) · n=316 矩阵均值 233.5ms · n=75 本体均值 199.0ms (Scenario BW = 51ms)</text>
+  <text x="290" y="72" fill="#F8FAFC" font-size="15.5" font-weight="800">Microsoft Fabric × 四大云竞对选型 FAQ：零拷贝、实时流、零 ETL、XTable、DiskANN、OBO、Gluten、Agents、Osmos、FinOps、CI/CD、零信任、BCDR、共享、V-Order、AI、孪生、迁移、目录、图、Activator、医疗、ESG、零售、金融、时空、FLAML、OTel、MDM、SAP、游戏、航发、农业、航运、流媒体、半导体、智驾、油气、电池、低轨星座、生物制药、高铁、矿山、水务、央行支付、绿氢绿氨、核能聚变、深海风电、量子超算、全球空管、合成生物、主权税务、具身机器人、低空eVTOL、吉瓦AIDC、肿瘤组学、虚拟电厂V2G、机构资管、深海FPSO、直连卫星、巨灾再保、自动化港、特高压WAMS、盐湖提锂、地震海啸、海水淡化、零碳绿钢、DAC碳封存与快递航空分拣一图流</text>
+  <text x="64" y="104" fill="#94A3B8" font-size="12.5">Executive Visual Summary · R1..R68 + R69 Automated Parcel Sortation, Cross-Belt Sorters, DWS &amp; Air-Cargo ULD (144M Vectors · 320-Scenario Milestone · -90.5% TCO) · n=320 矩阵均值 231.0ms · n=76 本体均值 197.0ms (Scenario BX = 47ms)</text>
   <rect x="1180" y="52" width="196" height="56" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
-  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">316 场景基准得分</text>
-  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">315 / 316 (99.68%)</text>
+  <text x="1278" y="74" fill="#10B981" font-size="12" font-weight="700" text-anchor="middle">320 场景基准得分</text>
+  <text x="1278" y="98" fill="#F8FAFC" font-size="19" font-weight="800" text-anchor="middle">319 / 320 (99.69%)</text>
 
   <!-- Row 1 Left: 2026-11-08/09 Daily Breakthroughs across 5 Clouds -->
   <rect x="44" y="140" width="664" height="270" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
@@ -121,9 +121,9 @@
   <text x="1270" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">85.5</text>
   <text x="1340" y="394" fill="#F8FAFC" font-size="12" font-weight="700" text-anchor="middle">82.8</text>
 
-  <!-- Row 2 Left: 75 Flagship Ontology Simulations -->
+  <!-- Row 2 Left: 76 Flagship Ontology Simulations -->
   <rect x="44" y="426" width="664" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>
-  <text x="64" y="446" fill="#60A5FA" font-size="13" font-weight="800" letter-spacing="0.3">03 · Fabric IQ 七十五大行业本体参考仿真闭环 (n=75 Mean 199.0ms vs n=316 Matrix Mean 233.5ms)</text>
+  <text x="64" y="446" fill="#60A5FA" font-size="13" font-weight="800" letter-spacing="0.3">03 · Fabric IQ 七十六大行业本体参考仿真闭环 (n=76 Mean 197.0ms vs n=320 Matrix Mean 231.0ms)</text>
 
   <!-- Row 1: A, B, C, D -->
   <rect x="64" y="454" width="150" height="68" rx="7" fill="#0F172A" stroke="#2563EB" stroke-width="1.1"/>
@@ -187,10 +187,10 @@
   <text x="387" y="666" fill="#34D399" font-size="8.4" font-weight="700">✓ 省90.9% ETL · $1.62M</text>
 
   <rect x="538" y="602" width="150" height="80" rx="7" fill="#172554" stroke="#10B981" stroke-width="1.4"/>
-  <text x="543" y="618" fill="#6EE7B7" font-size="8.0" font-weight="800">L..BW: 零碳绿钢/DAC碳封存</text>
-  <text x="543" y="634" fill="#F8FAFC" font-size="8.0">• BV:氢冶金连铸&amp;1.36亿向量(55ms)</text>
-  <text x="543" y="649" fill="#93C5FD" font-size="8.0">• BW:DAC超临界CO2&amp;1.40亿向量(51ms)</text>
-  <text x="543" y="665" fill="#34D399" font-size="8.0" font-weight="700">✓ 守护$22.90M·省90.4%</text>
+  <text x="543" y="618" fill="#6EE7B7" font-size="8.0" font-weight="800">L..BX: DAC碳封存/快递航空分拣</text>
+  <text x="543" y="634" fill="#F8FAFC" font-size="8.0">• BW:DAC超临界CO2&amp;1.40亿向量(51ms)</text>
+  <text x="543" y="649" fill="#93C5FD" font-size="8.0">• BX:交叉带ULD重心&amp;1.44亿向量(47ms)</text>
+  <text x="543" y="665" fill="#34D399" font-size="8.0" font-weight="700">✓ 守护$23.25M·省90.5%</text>
 
   <!-- Row 2 Right: 500-User Monthly TCO & Zero-Copy Economic Inflection -->
   <rect x="728" y="426" width="668" height="266" rx="14" fill="#111C33" stroke="#1E293B" stroke-width="1.5"/>

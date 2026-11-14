@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg77" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060D1A"/>
+      <stop offset="50%" stop-color="#0B192C"/>
+      <stop offset="100%" stop-color="#102542"/>
+    </linearGradient>
+    <linearGradient id="accent77" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg77)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#0A1526" stroke="#1E3A5F" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="86" rx="14" fill="#10233F" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="58" y="48" width="295" height="26" rx="13" fill="url(#accent77)"/>
+  <text x="205" y="66" fill="#060D1A" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · 2026-11-14 R69 · 320-SCENARIO MILESTONE</text>
+  <text x="368" y="66" fill="#F8FAFC" font-size="16" font-weight="800">全球高速快递分拣中心、交叉带分拣机、DWS 视觉读码与航空货运 ULD 重心平衡选型 FAQ</text>
+  <text x="58" y="98" fill="#93C5FD" font-size="12.5">Microsoft Fabric (Eventhouse KQL 950K EPS 11ms 滑槽防爆格 + Cosmos SSD DiskANN 12ms 1.44亿 OCR/ULD重心匹配 + 枢纽孪生 + ALDO 边缘) vs 四大云</text>
+  <rect x="1156" y="46" width="224" height="60" rx="10" fill="#062E22" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1268" y="68" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BX · 48 超级枢纽 + 380 货机</text>
+  <text x="1268" y="94" fill="#FFFFFF" font-size="17.5" font-weight="800" text-anchor="middle">47ms 闭环 · 省 90.5% TCO</text>
+
+  <!-- Row 1 Left: Pain Points vs First-Principles Breakthrough -->
+  <rect x="40" y="136" width="668" height="248" rx="14" fill="#0F1E36" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="60" y="164" fill="#FBBF24" font-size="14" font-weight="800">01 · 第一性原理痛点拆解：为什么 15 分钟 WCS 轮询防不住交叉带爆格与货机延误？</text>
+
+  <rect x="60" y="178" width="628" height="60" rx="8" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="198" fill="#FCA5A5" font-size="12" font-weight="800">❌ 传统架构痛点：光电死开关 3s 滞后 + 污损面单进异常道 + 航空 ULD 重心偏心 (`$115.8K/月`)</text>
+  <text x="76" y="216" fill="#FECACA" font-size="11">• 小车以 3.2m/s 狂奔，光电开关被挡 3s 锁槽时已有 68 件在途包裹无处可落，引发整环 450 辆小车空转死锁</text>
+  <text x="76" y="231" fill="#FECACA" font-size="11">• 雨水污损面单踢入人工异常道（$4.80/件）；航空集装器 ULD 重心偏移 +4.6% 导致停机坪拆板重装，货机延误 90 分钟</text>
+
+  <rect x="60" y="248" width="628" height="60" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="76" y="268" fill="#6EE7B7" font-size="12" font-weight="800">✅ Fabric 破局：11ms KQL 滑槽体积积分 + 12ms 1.44 亿向量检索 + ALDO 车间边缘 (`$11.0K/月`)</text>
+  <text x="76" y="286" fill="#D1FAE5" font-size="11">• Eventhouse KQL $0/GB 写入税摄入 950K EPS 遥测，series_fit_line() 11ms 提前 18 秒锁定法兰克福 14# 滑槽 112% 爆格</text>
+  <text x="76" y="301" fill="#D1FAE5" font-size="11">• Cosmos SSD DiskANN 12ms 检索 1.44 亿条多语种 OCR 与 ULD 重心向量（省 92% 内存）：恢复 42 件污损单 + 切副滑槽 14B/14C</text>
+
+  <rect x="60" y="316" width="628" height="54" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="76" y="335" fill="#93C5FD" font-size="11.5" font-weight="800">🤝 互补共存 (Better Together)：万车 AGV 3D 物理碰撞仿真 vs 47ms 实时分拣配载闭环</text>
+  <text x="76" y="353" fill="#E2E8F0" font-size="11">• Omniverse / AnyLogic 3D 碰撞仿真归 Databricks/Azure HPC；SAP TM 运费与 CASS 清分归 Snowflake；47ms 闭环归 Fabric</text>
+
+  <!-- Row 1 Right: 47ms 4-Step Closed Loop -->
+  <rect x="728" y="136" width="672" height="248" rx="14" fill="#0F1E36" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="748" y="164" fill="#38BDF8" font-size="14" font-weight="800">02 · Scenario BX：47ms 滑槽防爆格、污损面单恢复与 777F ULD 重心闭环 (`DL-317..320`)</text>
+
+  <rect x="748" y="178" width="310" height="90" rx="8" fill="#0A1526" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="762" y="198" fill="#38BDF8" font-size="12" font-weight="800">① Eventhouse KQL 流式感知 (11 ms)</text>
+  <text x="762" y="216" fill="#E2E8F0" font-size="10.5">• 950K EPS 交叉带伺服 + 六面 DWS + 双能 X 光</text>
+  <text x="762" y="232" fill="#E2E8F0" font-size="10.5">• 检出 14# 滑槽 18s 后达 112% 爆格 (&gt;85% 上限)</text>
+  <text x="762" y="248" fill="#34D399" font-size="10.5" font-weight="700">• 同步锁定 42 件雨水污损单与 3 件高 Z_eff 异常件</text>
+
+  <rect x="1070" y="178" width="310" height="90" rx="8" fill="#0A1526" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="1084" y="198" fill="#C084FC" font-size="12" font-weight="800">② 1.44 亿向量 SSD DiskANN 寻优 (12 ms)</text>
+  <text x="1084" y="216" fill="#E2E8F0" font-size="10.5">• 检索 1.44 亿条多语种 OCR、3D 装箱与 ULD 重心向量</text>
+  <text x="1084" y="232" fill="#E2E8F0" font-size="10.5">• 42 件污损面单 99.4% 恢复法兰克福邮编 60549</text>
+  <text x="1084" y="248" fill="#C084FC" font-size="10.5" font-weight="700">• 启用副滑槽 14B/14C (50% 分流) + 配平 ULD-PMC-19</text>
+
+  <rect x="748" y="278" width="310" height="92" rx="8" fill="#0A1526" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="762" y="298" fill="#FBBF24" font-size="12" font-weight="800">③ Foundry IQ 适航重心与 DGR 门禁 (12 ms)</text>
+  <text x="762" y="316" fill="#E2E8F0" font-size="10.5">• 校核《PARCEL-SORTATION-ULD-DGR-SOP-076》</text>
+  <text x="762" y="332" fill="#E2E8F0" font-size="10.5">• 滑槽占用压回 58.0% &lt;= 85%，ULD 重心 +0.8% &lt;= ±2%</text>
+  <text x="762" y="348" fill="#FBBF24" font-size="10.5" font-weight="700">• 3 件疑似未申报 UN3480 锂电池 100% 踢入防爆滑道</text>
+
+  <rect x="1070" y="278" width="310" height="92" rx="8" fill="#062E22" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1084" y="298" fill="#34D399" font-size="12" font-weight="800">④ Teams 联签 + ALDO 车间边缘闭环 (12 ms)</text>
+  <text x="1084" y="316" fill="#E2E8F0" font-size="10.5">• 枢纽调度长 Teams 审批 Confirm (0.99)</text>
+  <text x="1084" y="332" fill="#E2E8F0" font-size="10.5">• ALDO 车间边缘直驱小车线性电机 LSM 与摆轮 PLC</text>
+  <text x="1084" y="348" fill="#6EE7B7" font-size="10.5" font-weight="700">• 签发 777F 电子舱单 · 守护 $23.25M 次日达/适航 SLA</text>
+
+  <!-- Row 2 Left: 5-Cloud Capability Matrix -->
+  <rect x="40" y="400" width="668" height="250" rx="14" fill="#0F1E36" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="60" y="428" fill="#60A5FA" font-size="14" font-weight="800">03 · 五大云平台自动化快递分拣与航空货运 ULD 横评矩阵</text>
+
+  <rect x="60" y="442" width="628" height="26" rx="6" fill="#1E293B"/>
+  <text x="74" y="459" fill="#CBD5E1" font-size="11" font-weight="700">核心能力维度</text>
+  <text x="310" y="459" fill="#60A5FA" font-size="11" font-weight="800" text-anchor="middle">Fabric</text>
+  <text x="400" y="459" fill="#FBBF24" font-size="11" font-weight="700" text-anchor="middle">AWS</text>
+  <text x="485" y="459" fill="#34D399" font-size="11" font-weight="700" text-anchor="middle">GCP</text>
+  <text x="565" y="459" fill="#F97316" font-size="11" font-weight="700" text-anchor="middle">Databricks</text>
+  <text x="645" y="459" fill="#38BDF8" font-size="11" font-weight="700" text-anchor="middle">Snowflake</text>
+
+  <text x="74" y="488" fill="#F8FAFC" font-size="11.5">1. 950K EPS 交叉带小车与六面 DWS 流处理</text>
+  <text x="310" y="488" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">11ms ($0税) ★</text>
+  <text x="400" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">按属性高费</text>
+  <text x="485" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">需Dataflow</text>
+  <text x="565" y="488" fill="#E2E8F0" font-size="11" text-anchor="middle">500ms+微批</text>
+  <text x="645" y="488" fill="#94A3B8" font-size="11" text-anchor="middle">60s 滞后</text>
+
+  <text x="74" y="518" fill="#F8FAFC" font-size="11.5">2. 1.44 亿条污损 OCR 与 ULD 重心向量检索</text>
+  <text x="310" y="518" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">12ms (省92%) ★</text>
+  <text x="400" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">全内存昂贵</text>
+  <text x="485" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">独立端点</text>
+  <text x="565" y="518" fill="#E2E8F0" font-size="11" text-anchor="middle">内存型端点</text>
+  <text x="645" y="518" fill="#94A3B8" font-size="11" text-anchor="middle">非毫秒工控</text>
+
+  <text x="74" y="548" fill="#F8FAFC" font-size="11.5">3. 航空 ULD 重心包线与 IATA DGR 锂电池门禁</text>
+  <text x="310" y="548" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">12ms 强门禁 ★</text>
+  <text x="400" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">手工规则</text>
+  <text x="485" y="548" fill="#94A3B8" font-size="11" text-anchor="middle">需自建</text>
+  <text x="565" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">离线RL训练</text>
+  <text x="645" y="548" fill="#E2E8F0" font-size="11" text-anchor="middle">准点率报表</text>
+
+  <text x="74" y="578" fill="#F8FAFC" font-size="11.5">4. 分拣车间 ALDO 断网边缘自治与 $0 BI 席位</text>
+  <text x="310" y="578" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">原生内建 ★</text>
+  <text x="400" y="578" fill="#E2E8F0" font-size="11" text-anchor="middle">Outposts+$席</text>
+  <text x="485" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">GDC+$席</text>
+  <text x="565" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">无车间边缘</text>
+  <text x="645" y="578" fill="#94A3B8" font-size="11" text-anchor="middle">纯云端</text>
+
+  <rect x="60" y="596" width="628" height="38" rx="6" fill="#062E22" stroke="#10B981" stroke-width="1"/>
+  <text x="74" y="620" fill="#6EE7B7" font-size="11.5" font-weight="800">48 座超级枢纽 + 380 架全货机月度 TCO：Fabric $11,000/月 vs 传统拼装栈 $115,800/月（直降 90.5%）</text>
+
+  <!-- Row 2 Right: TCO Inflection & Dual-Denominator Governance -->
+  <rect x="728" y="400" width="672" height="250" rx="14" fill="#0F1E36" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="748" y="428" fill="#60A5FA" font-size="14" font-weight="800">04 · 月度 TCO 拆解（省 $104,800/月）与 320 场景里程碑双分母治理</text>
+
+  <text x="748" y="456" fill="#F8FAFC" font-size="12" font-weight="700">Microsoft Fabric (F64 共享容量 + 1.44 亿 SSD DiskANN + 枢纽孪生 + ALDO) — $11,000 / mo</text>
+  <rect x="748" y="464" width="120" height="16" rx="8" fill="#10B981"/>
+  <text x="878" y="476" fill="#34D399" font-size="12" font-weight="800">省 90.5% (月省 $104,800 · 全栈口径 $28.0K vs $294.7K)</text>
+
+  <text x="748" y="502" fill="#CBD5E1" font-size="11.5">传统拼装栈 (950K EPS 按点位 IoT $77.4K + 96节点内存向量 $23.2K + 独立图/BI $15.2K) — $115,800 / mo</text>
+  <rect x="748" y="510" width="610" height="14" rx="7" fill="#EF4444"/>
+
+  <rect x="748" y="536" width="632" height="98" rx="8" fill="#0A1526" stroke="#334155" stroke-width="1.2"/>
+  <text x="764" y="556" fill="#93C5FD" font-size="11.5" font-weight="800">🔍 严格双分母与数据溯源披露 (320-Scenario Milestone · reports/report.json)</text>
+  <text x="764" y="575" fill="#E2E8F0" font-size="11">• 分母 A（全量路由矩阵）：n = 320 场景 (DL-01..DL-320)，通过率 319 / 320 (99.69%)，算术均值 = 231.0 ms (R68 n=316 为 233.5 ms)</text>
+  <text x="764" y="593" fill="#E2E8F0" font-size="11">• 分母 B（行业本体闭环）：n = 76 仿真 (Scenario A..BX)，端到端算术均值 = 197.0 ms (R68 n=75 为 199.0 ms；Scenario BX = 47 ms)</text>
+  <text x="764" y="611" fill="#34D399" font-size="11" font-weight="700">• 本地实测：156 / 156 Python 单元测试 100% 通过 (measured_local_harness) · 72 条官方规格链接核验</text>
+
+  <!-- Row 3 Bottom: Architect Checklist -->
+  <rect x="40" y="666" width="1360" height="198" rx="14" fill="#10233F" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="60" y="694" fill="#FBBF24" font-size="14" font-weight="800">05 · AI Solution Architect 生产落地与售前打单核验清单 (Automated Parcel Sortation &amp; Air-Cargo ULD Checklist)</text>
+
+  <rect x="60" y="708" width="426" height="138" rx="10" fill="#0A1526" stroke="#1E3A5F" stroke-width="1.2"/>
+  <text x="76" y="730" fill="#38BDF8" font-size="12.5" font-weight="800">☑ 1. 交叉带分拣与 1.44 亿向量检索核验</text>
+  <text x="76" y="750" fill="#E2E8F0" font-size="11">• Azure IoT Operations 桥接交叉带 PLC 与六面 DWS</text>
+  <text x="76" y="768" fill="#E2E8F0" font-size="11">• Eventhouse KQL series_fit_line() &lt;= 15ms 检出滑槽满溢斜率</text>
+  <text x="76" y="786" fill="#E2E8F0" font-size="11">• Cosmos SSD DiskANN 1.44 亿条多语种污损 OCR 与 ULD 重心向量</text>
+  <text x="76" y="804" fill="#34D399" font-size="11" font-weight="700">• P99 检索 &lt;= 15ms，恢复 99.4% 污损面单，省 92% 内存</text>
+
+  <rect x="506" y="708" width="426" height="138" rx="10" fill="#0A1526" stroke="#1E3A5F" stroke-width="1.2"/>
+  <text x="522" y="730" fill="#FBBF24" font-size="12.5" font-weight="800">☑ 2. 航空 ULD 重心包线与 IATA DGR 锂电池护栏</text>
+  <text x="522" y="750" fill="#E2E8F0" font-size="11">• Foundry IQ 强制校验 ULD 重心偏移 &lt;= ±2.0% (+0.8% 实测)</text>
+  <text x="522" y="768" fill="#E2E8F0" font-size="11">• 双能 X 光有效原子序数 Z_eff 100% 踢出未申报 UN3480 锂电池</text>
+  <text x="522" y="786" fill="#E2E8F0" font-size="11">• 车间 ALDO 边缘断网自治，12ms 下发小车线性电机分流指令</text>
+  <text x="522" y="804" fill="#FBBF24" font-size="11" font-weight="700">• 自动生成波音 777F 电子配载舱单，杜绝停机坪拆板延误</text>
+
+  <rect x="952" y="708" width="428" height="138" rx="10" fill="#0A1526" stroke="#1E3A5F" stroke-width="1.2"/>
+  <text x="968" y="730" fill="#34D399" font-size="12.5" font-weight="800">☑ 3. 3D 物理碰撞仿真与 SAP TM 零拷贝共存</text>
+  <text x="968" y="750" fill="#E2E8F0" font-size="11">• Omniverse / AnyLogic 万车 AGV 碰撞仿真归 Databricks/HPC</text>
+  <text x="968" y="768" fill="#E2E8F0" font-size="11">• SAP TM 干线运费与 IATA CASS 清分归 Snowflake/SAP</text>
+  <text x="968" y="786" fill="#E2E8F0" font-size="11">• OneLake Shortcuts + Mirroring ($0 算力) 双向零拷贝互通</text>
+  <text x="968" y="804" fill="#6EE7B7" font-size="11" font-weight="700">• DirectLake $0 席位服务 3,200 名场站与配载员，省 90.5% TCO</text>
+</svg>
