@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg85" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0B162C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent85" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="card85" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#13203B"/>
+      <stop offset="100%" stop-color="#0D172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg85)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091224" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111E38" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="58" y="50" width="276" height="26" rx="13" fill="url(#accent85)"/>
+  <text x="196" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">ROUND 77 · 80-SPEC &amp; 99.72% MILESTONE (-91.3% TCO)</text>
+  <text x="350" y="68" fill="#F8FAFC" font-size="16" font-weight="800">深远海浮式液化天然气 (FLNG)、主低温换热器 (MCHE) 防冻堵、-162°C 薄膜舱防翻滚与 OGMP 2.0 1.76 亿向量选型</text>
+  <text x="58" y="101" fill="#94A3B8" font-size="12.5">Offshore FLNG (18 Vessels · 54 MCHEs + 90 Invar Membrane Tanks + 140 BOG Compressors) · Eventhouse 3ms + 176M SSD DiskANN 4ms + SDS OGMP 2.0 + ALDO (15ms E2E · Save $123.8K/mo)</text>
+  <rect x="1186" y="48" width="194" height="58" rx="10" fill="#0B1324" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1283" y="70" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">SCENARIO CF · DL-349..352</text>
+  <text x="1283" y="94" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">15ms · $26.05M SLA</text>
+
+  <!-- Row 1 Left: 4-Step 15ms Closed-Loop Pipeline -->
+  <rect x="40" y="138" width="840" height="360" rx="14" fill="url(#card85)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#38BDF8" font-size="14" font-weight="800" letter-spacing="0.4">01 · 15ms -162°C 薄膜液舱防翻滚 × MCHE 防重烃冻堵 × 欧盟 OGMP 2.0 零放空闭环 (Scenario CF: 3ms + 4ms + 4ms + 4ms)</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="182" width="800" height="68" rx="10" fill="#0F1A30" stroke="#0EA5E9" stroke-width="1.2"/>
+  <rect x="74" y="196" width="86" height="40" rx="8" fill="#0C4A6E"/>
+  <text x="117" y="214" fill="#7DD3FC" font-size="11" font-weight="800" text-anchor="middle">STEP 1</text>
+  <text x="117" y="229" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">3 ms</text>
+  <text x="176" y="206" fill="#F8FAFC" font-size="13" font-weight="800">Eventhouse KQL 930K EPS 垂直 FBG 密度剖面、MCHE 微通道压差与 6-DoF 晃荡流感知 ($0/GB 写入税)</text>
+  <text x="176" y="226" fill="#CBD5E1" font-size="11.5">• 18 艘 FLNG 巨轮 (54 台 MCHE + 90 座殷瓦钢薄膜舱 + 140 台 BOG 压缩机) 实时入湖；免除每月 $91.1K 按属性工业云写入税</text>
+  <text x="176" y="242" fill="#38BDF8" font-size="11.5" font-weight="700">• series_fit_line() 3ms 锁定：Tank-04 上下层密度差缩至 0.35kg/m³ (即将翻滚) + MCHE-Train-2 重烃凝华压差 +2.4kPa/min</text>
+
+  <!-- Step 2 -->
+  <rect x="60" y="260" width="800" height="68" rx="10" fill="#0F1A30" stroke="#3B82F6" stroke-width="1.2"/>
+  <rect x="74" y="274" width="86" height="40" rx="8" fill="#1E3A8A"/>
+  <text x="117" y="292" fill="#93C5FD" font-size="11" font-weight="800" text-anchor="middle">STEP 2</text>
+  <text x="117" y="307" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">4 ms</text>
+  <text x="176" y="284" fill="#F8FAFC" font-size="13" font-weight="800">Fabric IQ 6 跳 FLNG 低温孪生 × Cosmos DB 1.76 亿向量 (176M) SSD DiskANN 检索 (省 92% 内存)</text>
+  <text x="176" y="304" fill="#CBD5E1" font-size="11.5">• 检索 1.76 亿条 GERG-2008 混合冷剂热力学相图、6-DoF 液舱晃荡水动力载荷谱与 BOG 防喘振向量 (0.99 相似，仅 $2,010/月)</text>
+  <text x="176" y="320" fill="#60A5FA" font-size="11.5" font-weight="700">• 生成 Tank-04 底抽顶喷 450m³/h 混舱、MCHE-Train-2 乙烷冷剂 +2.2% 微调与 BOG 压缩机入口导叶 IGV +6.5° 预开处方</text>
+
+  <!-- Step 3 -->
+  <rect x="60" y="338" width="800" height="68" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <rect x="74" y="352" width="86" height="40" rx="8" fill="#581C87"/>
+  <text x="117" y="370" fill="#E9D5FF" font-size="11" font-weight="800" text-anchor="middle">STEP 3</text>
+  <text x="117" y="385" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">4 ms</text>
+  <text x="176" y="362" fill="#F8FAFC" font-size="13" font-weight="800">Foundry IQ 低温液舱防翻滚、MCHE 防冻堵与欧盟 OGMP 2.0 Level 5 零放空护栏 (SOP-084)</text>
+  <text x="176" y="382" fill="#CBD5E1" font-size="11.5">• 强制核验《FLNG-MCHE-CRYOGENIC-ROLLOVER-OGMP-SOP-084》：确认上下层密度差归零至 0.02kg/m³ &lt;= 0.15kg/m³，舱压稳在 14.2kPag</text>
+  <text x="176" y="398" fill="#C084FC" font-size="11.5" font-weight="700">• 确认 MCHE 压差回落至 18.5kPa &lt;= 25.0kPa，且全船甲烷逃逸率 0.038% &lt;= 0.20% (0.0kg 常规冷放空)，符合欧盟进口新规</text>
+
+  <!-- Step 4 -->
+  <rect x="60" y="416" width="800" height="68" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="74" y="430" width="86" height="40" rx="8" fill="#064E3B"/>
+  <text x="117" y="448" fill="#6EE7B7" font-size="11" font-weight="800" text-anchor="middle">STEP 4</text>
+  <text x="117" y="463" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">4 ms</text>
+  <text x="176" y="440" fill="#F8FAFC" font-size="13" font-weight="800">FLNG 船长/OIM Teams 确认 + ALDO 船载机房边缘 PCS 下发 + 1GB 免费 SQL OGMP 落盘</text>
+  <text x="176" y="460" fill="#CBD5E1" font-size="11.5">• 海上设施总监 (OIM) 在 Teams 确认；船载 ALDO 边缘下发 OPC-UA PCS 低温泵阀设定值，并归档 OGMP 2.0 船货护照</text>
+  <text x="176" y="476" fill="#34D399" font-size="11.5" font-weight="700">• 端到端 15ms 闭环！避免 $11.4M MCHE 停产复温与 20 倍 BOG 翻滚放空，守护 $26.05M SLA，月省 $123,800 (-91.3% TCO)</text>
+
+  <!-- Row 1 Right: TCO & KPI Inflection Panel -->
+  <rect x="898" y="138" width="502" height="360" rx="14" fill="url(#card85)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="918" y="166" fill="#34D399" font-size="14" font-weight="800">02 · 18 艘 FLNG 巨轮月度 TCO 与双分母基准拐点</text>
+
+  <rect x="918" y="182" width="462" height="92" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <text x="934" y="204" fill="#94A3B8" font-size="11.5" font-weight="700">归一化月度 TCO 对比 (930K EPS + 176M Vectors + 3,300 Users)</text>
+  <text x="934" y="228" fill="#34D399" font-size="13" font-weight="800">Microsoft Fabric 一体化闭环: $11,800 / 月 (省 91.3% · 99.72% 里程碑！)</text>
+  <rect x="934" y="236" width="42" height="10" rx="5" fill="#10B981"/>
+  <text x="934" y="262" fill="#F87171" font-size="12" font-weight="700">传统按属性流 + 880GB 全内存向量栈: $135,600 / 月 (全栈 $358.8K)</text>
+
+  <rect x="918" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1030" y="308" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">路由矩阵均值 (Denominator A)</text>
+  <text x="1030" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">212.0 ms</text>
+  <text x="1030" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 352 (351/352 · 99.72%)</text>
+  <text x="1030" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R76 (214.0ms) 再降 2.0ms</text>
+
+  <rect x="1156" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="1268" y="308" fill="#38BDF8" font-size="11.5" font-weight="700" text-anchor="middle">本体仿真均值 (Denominator B)</text>
+  <text x="1268" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">181.0 ms</text>
+  <text x="1268" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 84 行业本体 (Scenario CF = 15ms)</text>
+  <text x="1268" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R76 (183.0ms) 再降 2.0ms</text>
+
+  <rect x="918" y="394" width="462" height="90" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="934" y="416" fill="#C084FC" font-size="12" font-weight="800">核心深海低温液化与减排收益 (Cryogenic &amp; EU OGMP 2.0 Impact)</text>
+  <text x="934" y="436" fill="#E2E8F0" font-size="11.5">• 薄膜舱防翻滚：450m³/h 顶底混舱消除分层 (0.02kg/m³，舱压稳在 14.2kPag)</text>
+  <text x="934" y="454" fill="#E2E8F0" font-size="11.5">• MCHE 防冻堵：乙烷冷剂 +2.2% 微调压降压差至 18.5kPa (保 $11.4M 产能)</text>
+  <text x="934" y="472" fill="#34D399" font-size="11.5" font-weight="700">• 欧盟 OGMP 2.0 Level 5：0.038% 甲烷逃逸率 (0.0kg 冷放空) + $26.05M SLA</text>
+
+  <!-- Row 2 Full Width: 5-Cloud Architecture Matrix & Coexistence -->
+  <rect x="40" y="514" width="1360" height="350" rx="14" fill="url(#card85)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="542" fill="#60A5FA" font-size="14" font-weight="800">03 · 五大云平台在深远海 FLNG 液化、低温防翻滚与 OGMP 2.0 场景的选型矩阵与 Better Together 共存打法</text>
+
+  <rect x="60" y="556" width="1320" height="30" rx="6" fill="#1E293B"/>
+  <text x="76" y="576" fill="#CBD5E1" font-size="11.5" font-weight="700">核心技术能力维度</text>
+  <text x="430" y="576" fill="#38BDF8" font-size="11.5" font-weight="800" text-anchor="middle">Microsoft Fabric (首选闭环)</text>
+  <text x="690" y="576" fill="#F97316" font-size="11.5" font-weight="700" text-anchor="middle">Databricks (3D 晃荡 CFD 互补)</text>
+  <text x="930" y="576" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">Snowflake (JKM/TTF 船货互补)</text>
+  <text x="1140" y="576" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">AWS SiteWise / OpenSearch</text>
+  <text x="1310" y="576" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">GCP BigQuery / Vertex</text>
+
+  <text x="76" y="606" fill="#F8FAFC" font-size="11.5">1. 930K EPS FBG 密度与 MCHE 流</text>
+  <text x="430" y="606" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 3ms KQL ($0/GB 写入税)</text>
+  <text x="690" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">350ms–2s (常驻 DBU 昂贵)</text>
+  <text x="930" y="606" fill="#94A3B8" font-size="11.5" text-anchor="middle">&gt;= 60s (Dynamic Tables 滞后)</text>
+  <text x="1140" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">250ms–2s ($91.1K/mo 属性税)</text>
+  <text x="1310" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">180ms–1.5s (按 MB 计费)</text>
+
+  <text x="76" y="636" fill="#F8FAFC" font-size="11.5">2. 1.76 亿 (176M) 相图/晃荡向量</text>
+  <text x="430" y="636" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 4ms SSD DiskANN ($2.01K/mo)</text>
+  <text x="690" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">22ms (Mosaic Vector 全内存)</text>
+  <text x="930" y="636" fill="#94A3B8" font-size="11.5" text-anchor="middle">35ms+ (Cortex 偏文档检索)</text>
+  <text x="1140" y="636" fill="#F87171" font-size="11.5" text-anchor="middle">24ms (880GB DRAM $33.8K/mo)</text>
+  <text x="1310" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">20ms (Vertex 内存节点昂贵)</text>
+
+  <text x="76" y="666" fill="#F8FAFC" font-size="11.5">3. 船载断网自治与 OGMP 2.0 账本</text>
+  <text x="430" y="666" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ ALDO 4ms 船载 + SDS 甲烷账本</text>
+  <text x="690" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于船体-液舱耦合 3D 晃荡 CFD</text>
+  <text x="930" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于 JKM/TTF 船货 ETRM 结算</text>
+  <text x="1140" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">需自建 Greengrass + 审计表</text>
+  <text x="1310" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">无深海船载断网 SQL 控制面</text>
+
+  <text x="76" y="696" fill="#F8FAFC" font-size="11.5">4. 3,300 人并发看数与月度 TCO</text>
+  <text x="430" y="696" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ $11,800/月 ($0 席位 · 省 91.3%)</text>
+  <text x="690" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$132,400 / 月</text>
+  <text x="930" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$137,500 / 月</text>
+  <text x="1140" y="696" fill="#F87171" font-size="11.5" text-anchor="middle">$135,600 / 月</text>
+  <text x="1310" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$129,900 / 月</text>
+
+  <!-- Coexistence Playbook Boxes -->
+  <rect x="60" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#F97316" stroke-width="1.2"/>
+  <text x="78" y="744" fill="#FB923C" font-size="12.5" font-weight="800">模式 B 共存 · Fabric × Azure HPC / Databricks GPU (3D 液舱晃荡 CFD 与混合冷剂模拟)</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">• 船体-液舱耦合三维破碎波晃荡 CFD 与混合冷剂 GERG-2008 热力学模拟保留在 Databricks GPU</text>
+  <text x="78" y="786" fill="#E2E8F0" font-size="11.5">• 产出的 1.76 亿条热力学相图、晃荡水动力与 BOG 防喘振向量通过 OneLake Shortcuts 零拷贝直通 SSD DiskANN</text>
+  <text x="78" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：免除 880GB 常驻内存向量税，4ms 匹配顶底混舱与乙烷冷剂配比，消除 20 倍 BOG 翻滚</text>
+
+  <rect x="732" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="750" y="744" fill="#38BDF8" font-size="12.5" font-weight="800">模式 A 共存 · Fabric × Snowflake / SAP S/4HANA ETRM (JKM/TTF 船货结算与 OGMP 2.0)</text>
+  <text x="750" y="766" fill="#E2E8F0" font-size="11.5">• 全球 JKM/TTF 液化天然气船货热值提单、纸货套期保值与欧洲买家合同保留在 Snowflake / SAP S/4HANA</text>
+  <text x="750" y="786" fill="#E2E8F0" font-size="11.5">• 通过 OneLake Zero-ETL Mirroring ($0 算力) 与 Fabric SDS 欧盟 OGMP 2.0 Level 5 甲烷账本无缝对齐</text>
+  <text x="750" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：15ms 船载断网 PCS 闭环并签发 0.038% 超低甲烷通关护照，3,300 名工程师享 $0 读者席位</text>
+</svg>

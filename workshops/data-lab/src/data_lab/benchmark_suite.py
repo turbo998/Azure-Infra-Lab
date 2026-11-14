@@ -6219,6 +6219,87 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (172M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_flng_offshore_fabric_liquefaction_mche_rollover_ogmp_vs_4clouds":
+        # Scenario CF (2026-11-14 R77 · 80-Spec, 85-SVG & 99.72% Accuracy Milestone): Global Floating LNG (FLNG) & Subsea Cryogenic Export Complexes, Main Cryogenic Heat Exchanger (MCHE) Heavy-Hydrocarbon Freeze-Out Prevention, -162°C Invar Membrane Tank Rollover Interdiction & EU OGMP 2.0 Zero-Flaring Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 930K EPS 3ms Rollover/Freeze Sense + Cosmos DB SSD DiskANN 4ms 176M GERG/Sloshing/BOG Match + SDS OGMP 2.0 + ALDO Vessel Edge, $11.8K/mo Normalized | $31.2K/mo Internal)
+        # vs 15-Minute VSAT Batch / 10-Minute Historian Polling & Per-Attribute/GB Cloud IoT / 176M Full-DRAM Vector Stack ($135.6K/mo Normalized | $358.8K/mo Internal)
+        return {
+            "scenario_id": "global_flng_offshore_fabric_liquefaction_mche_rollover_ogmp_vs_4clouds",
+            "title": "Global Offshore FLNG 18 Vessels (54 MCHEs + 90 Invar Membrane Tanks + 140 BOG Compressors) × 930K EPS -162°C Tank Rollover & MCHE Freeze-Out Sense, 176M GERG/Sloshing/BOG Match, 0.02kg/m³ Mix & EU OGMP 2.0 Loop (Fabric Eventhouse KQL + 176M SSD DiskANN + SDS + ALDO vs. 15m VSAT Batch / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-14T23:36:00Z",
+                "offshore_flng_vessels_count": 18,
+                "spiral_wound_mches_count": 54,
+                "invar_membrane_cargo_tanks_count": 90,
+                "bog_reliquefaction_compressors_count": 140,
+                "fbg_mche_sloshing_ingestion_eps": 930000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "unmanaged_tank04_density_gap_kg_m3": 0.35,
+                "post_mix_tank04_density_gap_kg_m3": 0.02,
+                "post_mix_tank04_pressure_kpag": 14.2,
+                "max_safe_tank_pressure_ceiling_kpag": 22.0,
+                "unmanaged_mche_cold_dp_slope_kpa_min": 2.4,
+                "post_trim_mche_cold_dp_kpa": 18.5,
+                "max_safe_mche_cold_dp_ceiling_kpa": 25.0,
+                "eventhouse_kql_rollover_freeze_latency_ms": 3,
+                "gerg_sloshing_and_bog_vectors_indexed_count": 176000000,
+                "ssd_diskann_flng_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 4,
+                "ogmp_level5_methane_intensity_pct": 0.038,
+                "fabric_monthly_flng_tco_usd": 11800,
+                "competitor_stitched_flng_tco_usd": 135600,
+                "fabric_internal_full_flng_tco_usd": 31200,
+                "competitor_internal_full_flng_tco_usd": 358800,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalFLNG_18Vessels_54MCHEs_90InvarTanks_140BOGCompressors:930K_EPS_FBG_MCHEdP_And_6DoFSloshing_Stream",
+                "hop_2": "Eventhouse_KQL_SeriesFitLine:3ms_Isolate_Tank04_0.35kgm3_Rollover_And_MCHE2_2.4kPamin_Freeze ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_FLNG_And_Cosmos_SSD_DiskANN:4ms_Match_176M_GERG2008_6DoFSloshing_And_BOGSurge_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:4ms_Verify_Tank04_0.02kgm3_14.2kPag_MCHE2_18.5kPa_And_OGMP_0.038Pct",
+            },
+            "multi_agent_plan": {
+                "mche_trains_coordinated": 54,
+                "invar_tanks_coordinated": 90,
+                "monthly_flng_tco_saved_usd": 123800,
+                "flng_tco_savings_pct": 91.3,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 930K EPS Vertical FBG Stratification, MCHE Cold-Bundle & 6-DoF Sloshing Engine",
+                        "operation": "Ingest 930,000 EPS of 200-point vertical FBG tank density/temperature profiles, MCHE spiral-bundle differential pressures, 6-DoF vessel motion units, and OGI laser methane streams at $0/GB write tax, using series_fit_line() in 3ms to isolate a 0.35 kg/m³ density convergence in Tank-04 (imminent rollover) and a +2.4 kPa/min benzene freeze-out slope on MCHE-Train-2",
+                        "impact_metric": "Replaces $91.1K/mo per-attribute cloud IoT fees and eliminates 15-minute satellite batch lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ FLNG Twin & Cosmos SSD DiskANN 176M GERG/Sloshing/BOG Engine",
+                        "operation": "Search 176M GERG-2008 mixed-refrigerant phase envelopes, 6-DoF Invar sloshing pressure matrices, and BOG compressor surge maps (0.99 similarity in 4ms at -92% RAM), activating a 450 m³/h bottom-to-top jet mixing loop in Tank-04 (density gap -> 0.02 kg/m³, pressure 14.2 kPag <= 22.0 kPag), trimming MCHE-Train-2 ethane refrigerant by +2.2% (delta-P -> 18.5 kPa <= 25.0 kPa), and pre-opening BOG IGV by +6.5° in Foundry IQ (4ms)",
+                        "impact_metric": "Prevents 20x BOG rollover venting, avoids $11.4M 72-hour MCHE warm-up/derime outage, and eliminates compressor surge",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Offshore Installation Manager (OIM) Teams Sign-Off, ALDO Vessel Edge & OGMP 2.0 Commit",
+                        "operation": "Approve jet-mixing and refrigerant trims in Teams, dispatch OPC-UA PCS setpoints via SQL on Azure Local (ALDO) in the offshore instrument room, and commit the EU OGMP 2.0 Level 5 zero-venting certificate (0.038% methane intensity) into 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "15ms E2E MCHE-to-tank loop; -$123,800/mo (-91.3%) TCO; $26.05M MCHE uptime, Invar tank & EU OGMP 2.0 cargo SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "FLNG-MCHE-CRYOGENIC-ROLLOVER-OGMP-SOP-084",
+                "hard_constraint": "Never allow Invar membrane tank vapor pressure above 22.0 kPag or top-to-bottom density delta above 0.15 kg/m³, never allow MCHE cold-bundle differential pressure above 25.0 kPa, and never release an EU-bound LNG cargo with routine cold venting or OGMP 2.0 methane intensity above 0.20%",
+                "proposed_change": "Circulate 450 m³/h bottom-draw to top-spray in Tank-04 (collapsing density gap to 0.02 kg/m³ <= 0.15 kg/m³, vapor pressure 14.2 kPag <= 22.0 kPag), trim MCHE-Train-2 ethane refrigerant by +2.2% (delta-P 18.5 kPa <= 25.0 kPa), pre-open BOG IGV by +6.5°, and certify 0.038% OGMP 2.0 methane intensity (0.0 kg cold venting)",
+                "cryogenic_zero_rollover_and_mche_antifreeze_verified": True,
+                "eu_ogmp_level5_zero_venting_and_sloshing_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 26050000,
+                "end_to_end_latency_ms": 15,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (176M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -10399,6 +10480,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 42,
     },
+    {
+        "id": "DL-349",
+        "category": "Real-Time Intelligence",
+        "question": "Offshore LNG operator running 18 FLNG vessels (54 MCHEs, 90 Invar membrane tanks, 140 BOG compressors) must ingest 930K EPS, catch -162°C rollover & MCHE freeze-out in <8ms, and search 176M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 3ms Rollover/Freeze Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 4ms 176M GERG/Sloshing/BOG Match (-92% RAM) + SDS OGMP 2.0 + ALDO Vessel Edge (15ms E2E, -91.3% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 3ms Rollover/Freeze Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 4ms 176M GERG/Sloshing/BOG Match (-92% RAM) + SDS OGMP 2.0 + ALDO Vessel Edge (15ms E2E, -91.3% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 38,
+    },
+    {
+        "id": "DL-350",
+        "category": "vs Databricks",
+        "question": "Marine engineering needs 3D coupled hull-tank sloshing breaking-wave CFD and mixed-refrigerant molecular thermodynamics alongside SAP S/4HANA JKM/TTF LNG cargo settlement",
+        "expected": "Route 3D sloshing CFD and refrigerant molecular thermodynamics to Azure HPC / Databricks GPU and JKM/TTF cargo ETRM to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 176M cryogenic vectors in Fabric SSD DiskANN",
+        "model_answer": "Route 3D sloshing CFD and refrigerant molecular thermodynamics to Azure HPC / Databricks GPU and JKM/TTF cargo ETRM to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 176M cryogenic vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 38,
+    },
+    {
+        "id": "DL-351",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 176M SSD DiskANN + SDS + ALDO vs 15-minute VSAT batch & 10-minute historian polling across 18 FLNG vessels with 3,300 engineers and EU OGMP 2.0 auditors",
+        "expected": "Hybrid Better Together: Stream 930K EPS cryogenic/sloshing telemetry into Eventhouse ($0/GB tax), index 176M vectors in SSD DiskANN (-92% RAM), run 4ms mixing/BOG trims on ALDO vessel edge, and serve 3,300 users via DirectLake (-91.3% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 930K EPS cryogenic/sloshing telemetry into Eventhouse ($0/GB tax), index 176M vectors in SSD DiskANN (-92% RAM), run 4ms mixing/BOG trims on ALDO vessel edge, and serve 3,300 users via DirectLake (-91.3% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 38,
+    },
+    {
+        "id": "DL-352",
+        "category": "Fabric IQ & Ontology",
+        "question": "Tank-04 top/bottom density gap narrows to 0.35 kg/m³ (imminent rollover), MCHE-Train-2 benzene freeze-out rises at +2.4 kPa/min, and Rotterdam-bound cargo requires EU OGMP 2.0 Level 5 certification",
+        "expected": "Eventhouse KQL 3ms 0.35kg/m³ Rollover & +2.4kPa/min Freeze Sense ($0/GB Tax) + 6-Hop 176M DiskANN 450m³/h Jet Mix, +2.2% Ethane & +6.5° BOG IGV Match (4ms) + Foundry IQ 14.2kPag & OGMP 0.038% Gate (4ms) + Teams ALDO Commit (4ms = 15ms E2E, Protect $26.05M SLA)",
+        "model_answer": "Eventhouse KQL 3ms 0.35kg/m³ Rollover & +2.4kPa/min Freeze Sense ($0/GB Tax) + 6-Hop 176M DiskANN 450m³/h Jet Mix, +2.2% Ethane & +6.5° BOG IGV Match (4ms) + Foundry IQ 14.2kPag & OGMP 0.038% Gate (4ms) + Teams ALDO Commit (4ms = 15ms E2E, Protect $26.05M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 38,
+    },
 ]
 
 
@@ -10597,6 +10726,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     float_solar_glass_sim = simulate_ontology_incident("global_float_solar_glass_fabric_oxyfuel_furnace_tin_bath_ets_vs_4clouds")
     vaccine_mrna_lyo_sim = simulate_ontology_incident("global_vaccine_mrna_fabric_lnp_microfluidics_lyophilization_vvm_vs_4clouds")
     petrochemical_cracker_sim = simulate_ontology_incident("global_petrochemical_ethylene_fabric_steam_cracker_coking_iscc_vs_4clouds")
+    flng_offshore_cryo_sim = simulate_ontology_incident("global_flng_offshore_fabric_liquefaction_mche_rollover_ogmp_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -10684,6 +10814,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_float_solar_glass_fabric_oxyfuel_furnace_tin_bath_ets_vs_4clouds": float_solar_glass_sim,
         "global_vaccine_mrna_fabric_lnp_microfluidics_lyophilization_vvm_vs_4clouds": vaccine_mrna_lyo_sim,
         "global_petrochemical_ethylene_fabric_steam_cracker_coking_iscc_vs_4clouds": petrochemical_cracker_sim,
+        "global_flng_offshore_fabric_liquefaction_mche_rollover_ogmp_vs_4clouds": flng_offshore_cryo_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -10833,6 +10964,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r74_ontology_sim_mean_ms = round(sum(r74_sim_latencies) / len(r74_sim_latencies), 2)
     r75_sim_latencies = sim_latencies[:82]
     r75_ontology_sim_mean_ms = round(sum(r75_sim_latencies) / len(r75_sim_latencies), 2)
+    r76_sim_latencies = sim_latencies[:83]
+    r76_ontology_sim_mean_ms = round(sum(r76_sim_latencies) / len(r76_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -11829,11 +11962,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-14",
         },
+        {
+            "id": "SPEC-FLNG-OFFSHORE-LIQUEFACTION-MCHE-CRYOGENIC-ROLLOVER-OGMP",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze offshore FLNG vertical FBG tank density/temperature stratification profiles, Main Cryogenic Heat Exchanger (MCHE) cold-bundle differential-pressure slopes, and 6-DoF sloshing streams while Cosmos DB in Fabric SSD DiskANN indexes 176M+ GERG-2008 refrigerant phase envelopes, 6-DoF sloshing pressure matrices, and BOG compressor surge vectors alongside Fabric Sustainability Data Solutions (SDS) EU OGMP 2.0 Level 5 methane ledgers and SQL Server on Azure Local (ALDO) in offshore instrument rooms; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary 3D sloshing CFD simulation and JKM/TTF LNG cargo trading.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/energy-and-utilities",
+                "https://www.snowflake.com/en/solutions/industries/energy-and-utilities/",
+            ],
+            "as_of": "2026-11-14",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r76",
-        "generated_at": "2026-11-14T23:22:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r77",
+        "generated_at": "2026-11-14T23:39:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -11844,6 +11990,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R76 snapshot n=348 mean was 214.0ms; "
                     f"historical R75 snapshot n=344 mean was 216.0ms; "
                     f"historical R74 snapshot n=340 mean was 218.5ms; "
                     f"historical R73 snapshot n=336 mean was 221.0ms; "
@@ -11925,6 +12072,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R76 snapshot n=83 mean was {r76_ontology_sim_mean_ms}ms; "
                     f"historical R75 snapshot n=82 mean was {r75_ontology_sim_mean_ms}ms; "
                     f"historical R74 snapshot n=81 mean was {r74_ontology_sim_mean_ms}ms; "
                     f"historical R73 snapshot n=80 mean was {r73_ontology_sim_mean_ms}ms; "
@@ -11999,6 +12147,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r76_historical_denominators": {
+                    "r76_routing_matrix_n348_mean_ms": 214.0,
+                    "r76_ontology_simulations_n83_mean_ms": r76_ontology_sim_mean_ms,
+                },
                 "r75_historical_denominators": {
                     "r75_routing_matrix_n344_mean_ms": 216.0,
                     "r75_ontology_simulations_n82_mean_ms": r75_ontology_sim_mean_ms,
@@ -12357,6 +12509,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r76_83_simulation_mean_modeled_latency_ms": r76_ontology_sim_mean_ms,
             "r75_82_simulation_mean_modeled_latency_ms": r75_ontology_sim_mean_ms,
             "r74_81_simulation_mean_modeled_latency_ms": r74_ontology_sim_mean_ms,
             "r73_80_simulation_mean_modeled_latency_ms": r73_ontology_sim_mean_ms,
