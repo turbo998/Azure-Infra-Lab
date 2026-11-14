@@ -6942,6 +6942,86 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (208M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_polysilicon_ingot_fabric_siemens_cvd_cz_mcz_pulling_wafer_vs_4clouds":
+        # Scenario CO (2026-11-15 R86 · 190-Test, 170.0ms Ontology Mean, $150.1K/mo Savings & 212M-Vector Milestone!): Global Polysilicon Siemens CVD Reactor & Czochralski (CZ/MCZ) 300mm / Solar Monocrystalline Ingot Pulling, Meniscus Dislocation Guard & 11N / Low-Carbon Silicon Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 990K EPS 18ms 200Hz Meniscus Wave & CVD Rod Sense + Cosmos DB SSD DiskANN 20ms 212M Voronkov-V/G/MCZ/CVD Match + SDS Low-Carbon Silicon + ALDO Hall Edge, $12.7K/mo Normalized | $34.2K/mo Internal)
+        # vs 5-Second CCD Low-Pass Filtering + 4-Hour Off-Line QC & Per-Attribute/GB Cloud IoT / 212M Full-DRAM Vector Stack ($162.8K/mo Normalized | $438.4K/mo Internal)
+        return {
+            "scenario_id": "global_polysilicon_ingot_fabric_siemens_cvd_cz_mcz_pulling_wafer_vs_4clouds",
+            "title": "Global Polysilicon & Monocrystalline Ingot 36 Complexes (1,400 Siemens CVDs + 8,400 CZ/MCZ Pullers + 320 Wire Saws) × 990K EPS 200Hz Meniscus Wave & CVD Rod Sense, 212M Voronkov-V/G/MCZ/CVD Match, 100% ZD & 11.4kgCO2e Loop (Fabric Eventhouse KQL + 212M SSD DiskANN + SDS + ALDO vs. 5s CCD Filter / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-15T02:06:00Z",
+                "silicon_mega_complexes_count": 36,
+                "siemens_cvd_reactors_count": 1400,
+                "cz_mcz_crystal_pullers_count": 8400,
+                "meniscus_cvd_saw_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_meniscus_ring_oscillation_mm": 1.42,
+                "post_trim_meniscus_ring_oscillation_mm": 0.12,
+                "max_safe_meniscus_oscillation_mm": 0.25,
+                "cusp_mcz_magnetic_field_gauss": 2850,
+                "pre_trim_cvd_rod_surface_temp_c": 1138.0,
+                "post_trim_cvd_rod_surface_temp_c": 1092.0,
+                "zero_dislocation_ingot_yield_pct": 100.0,
+                "eventhouse_kql_meniscus_fft_latency_ms": 18,
+                "voronkov_mcz_and_cvd_vectors_indexed_count": 212000000,
+                "ssd_diskann_silicon_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 20,
+                "low_carbon_silicon_kgco2_per_kg": 11.4,
+                "fabric_monthly_silicon_tco_usd": 12700,
+                "competitor_stitched_silicon_tco_usd": 162800,
+                "fabric_internal_full_silicon_tco_usd": 34200,
+                "competitor_internal_full_silicon_tco_usd": 438400,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalSilicon_36Complexes_1400CVD_8400MCZPullers:990K_EPS_200HzMeniscus_CVDPyrometer_And_50kHzSaw_Stream",
+                "hop_2": "Eventhouse_KQL_FFT:18ms_Isolate_Puller412_0.38Hz_1.42mm_Wave_And_CVD19_1138C ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_Crystal_And_Cosmos_SSD_DiskANN:20ms_Match_212M_VoronkovVG_MCZLorentz_And_CVDKinetics_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:20ms_Verify_Meniscus_0.12mm_100PctZD_CVD_1092C_And_11.4kgCO2e",
+            },
+            "multi_agent_plan": {
+                "cz_mcz_pullers_coordinated": 8400,
+                "siemens_cvd_reactors_coordinated": 1400,
+                "monthly_silicon_tco_saved_usd": 150100,
+                "silicon_tco_savings_pct": 92.2,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 990K EPS 200Hz Meniscus CCD, Siemens CVD Pyrometer & 50kHz Wire-Saw Engine",
+                        "operation": "Ingest 990,000 EPS of 200Hz CZ meniscus CCD optical ring streams, Siemens CVD two-color pyrometers, and 50kHz diamond-wire acoustic sensors at $0/GB write tax, using series_fft() in 18ms to isolate a 0.38Hz thermal convection wave (±1.42mm ring oscillation) on CZ-Puller-412 and a 1,138°C rod hotspot on CVD-Reactor-19",
+                        "impact_metric": "Replaces $110.8K/mo per-attribute cloud IoT fees and eliminates 5-second CCD low-pass filtering lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ Crystal-Growth Twin & Cosmos SSD DiskANN 212M Voronkov-V/G, MCZ & CVD Engine",
+                        "operation": "Search 212,000,000 Voronkov V/G point-defect boundaries, 3D Cusp-MCZ Lorentz melt-convection tensors, and SiHCl3 CVD deposition vectors (0.99 similarity in 20ms at -92% RAM), boosting Cusp-MCZ magnetic field to 2,850 Gauss (+18.8%) with -4.2% pull speed (meniscus -> ±0.12mm <= ±0.25mm, 100% Zero-Dislocation, Oi=11.2ppma) and trimming CVD-19 current -3.1% (rod -> 1,092°C <= 1,115°C, 11N purity) in Foundry IQ (20ms)",
+                        "impact_metric": "Prevents 48-hour monocrystalline ingot pop-out remelts, stops $65K crucible rupture, and prevents CVD popcorn silicon",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Crystal-Growth Director Teams Sign-Off, ALDO Hall Edge & 11N / Low-Carbon Silicon Commit",
+                        "operation": "Approve Cusp-MCZ boost, pull-speed trim, and CVD current adjustment in Teams, dispatch EtherCAT/OPC-UA magnet/servo/thyristor setpoints via SQL on Azure Local (ALDO) at the puller-hall edge, and mint the SEMI 11N CoA & Low-Carbon Silicon passport (11.4 kgCO2e/kg Si, 99.4% SiCl4 recycle) into 1GB Free Fabric SQL (20ms)",
+                        "impact_metric": "78ms E2E meniscus-to-magnet/servo loop; -$150,100/mo (-92.2%) TCO; $29.20M ingot, crucible & 11N SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "POLYSILICON-SIEMENS-CZ-MCZ-INGOT-WAFER-SOP-093",
+                "hard_constraint": "Never allow CZ solid-liquid meniscus ring oscillation above ±0.25 mm (Voronkov V/G dislocation pop-out limit) or interstitial oxygen outside 10.0-12.5 ppma, never allow Siemens CVD slim-rod surface temperature above 1,115.0°C (popcorn silicon threshold), and require <= 18.0 kgCO2e/kg Si carbon footprint",
+                "proposed_change": "Boost CZ-Puller-412 Cusp-MCZ field to 2,850 Gauss (+18.8%) and trim pull speed -4.2% to 1.13 mm/min (damping meniscus ring to ±0.12 mm <= ±0.25 mm, 100% Zero-Dislocation, Oi=11.2 ppma), trim CVD-19 molar ratio -5.4% and current -3.1% (rod -> 1,092.0°C <= 1,115.0°C, 11N purity), and certify 11.4 kgCO2e/kg Si",
+                "zero_dislocation_v_over_g_and_mcz_damping_verified": True,
+                "cvd_zero_popcorn_and_low_carbon_silicon_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 29200000,
+                "end_to_end_latency_ms": 78,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (212M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -11554,6 +11634,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 6,
     },
+    {
+        "id": "DL-385",
+        "category": "Real-Time Intelligence",
+        "question": "Semiconductor & solar silicon producer running 36 complexes (1,400 Siemens CVDs, 8,400 CZ/MCZ pullers, 320 wire saws) must ingest 990K EPS, catch meniscus waves & CVD hotspots in <20ms, and search 212M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fft() 18ms Meniscus/CVD Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 20ms 212M Voronkov-V/G/MCZ/CVD Match (-92% RAM) + SDS Low-Carbon Silicon + ALDO Hall Edge (78ms E2E, -92.2% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fft() 18ms Meniscus/CVD Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 20ms 212M Voronkov-V/G/MCZ/CVD Match (-92% RAM) + SDS Low-Carbon Silicon + ALDO Hall Edge (78ms E2E, -92.2% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 2,
+    },
+    {
+        "id": "DL-386",
+        "category": "vs Databricks",
+        "question": "Crystal-growth R&D needs 3D global radiative and Large-Eddy Simulation (LES) MCZ melt-convection CFD alongside SAP S/4HANA quartz crucible inventory and wafer order ERP",
+        "expected": "Route 3D global radiative and LES MCZ melt-convection CFD to Azure HPC / Databricks GPU and wafer order ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 212M Voronkov-V/G/MCZ vectors in Fabric SSD DiskANN",
+        "model_answer": "Route 3D global radiative and LES MCZ melt-convection CFD to Azure HPC / Databricks GPU and wafer order ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 212M Voronkov-V/G/MCZ vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 2,
+    },
+    {
+        "id": "DL-387",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 212M SSD DiskANN + SDS + ALDO vs 5-second CCD low-pass filtering & 4-hour off-line QC across 36 silicon complexes with 4,200 engineers and ECS carbon auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS meniscus/CVD/saw telemetry into Eventhouse ($0/GB tax), index 212M vectors in SSD DiskANN (-92% RAM), run 20ms MCZ/servo/CVD trims on ALDO hall edge, and serve 4,200 users via DirectLake (-92.2% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS meniscus/CVD/saw telemetry into Eventhouse ($0/GB tax), index 212M vectors in SSD DiskANN (-92% RAM), run 20ms MCZ/servo/CVD trims on ALDO hall edge, and serve 4,200 users via DirectLake (-92.2% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 2,
+    },
+    {
+        "id": "DL-388",
+        "category": "Fabric IQ & Ontology",
+        "question": "CZ-Puller-412 meniscus ring oscillates at ±1.42 mm (0.38Hz thermal wave threatening dislocation pop-out) while CVD-Reactor-19 rod surface hits 1,138°C under 11N purity and 18 kgCO2e/kg rules",
+        "expected": "Eventhouse KQL 18ms ±1.42mm Wave & 1,138°C CVD Sense ($0/GB Tax) + 6-Hop 212M DiskANN 2,850G MCZ, -4.2% Pull & -3.1% CVD Match (20ms) + Foundry IQ ±0.12mm 100% ZD Gate (20ms) + Teams ALDO Commit (20ms = 78ms E2E, Protect $29.20M SLA)",
+        "model_answer": "Eventhouse KQL 18ms ±1.42mm Wave & 1,138°C CVD Sense ($0/GB Tax) + 6-Hop 212M DiskANN 2,850G MCZ, -4.2% Pull & -3.1% CVD Match (20ms) + Foundry IQ ±0.12mm 100% ZD Gate (20ms) + Teams ALDO Commit (20ms = 78ms E2E, Protect $29.20M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 2,
+    },
 ]
 
 
@@ -11761,6 +11889,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     low_carbon_cement_sim = simulate_ontology_incident("global_low_carbon_cement_fabric_rotary_kiln_rdf_vrm_oxyfuel_ccus_vs_4clouds")
     aluminum_smelting_mhd_sim = simulate_ontology_incident("global_aluminum_smelting_fabric_hall_heroult_anode_effect_mhd_cbam_vs_4clouds")
     cryogenic_asu_mac_sim = simulate_ontology_incident("global_cryogenic_asu_fabric_mac_surge_reboiler_hydrocarbon_argon_vs_4clouds")
+    polysilicon_ingot_mcz_sim = simulate_ontology_incident("global_polysilicon_ingot_fabric_siemens_cvd_cz_mcz_pulling_wafer_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -11857,6 +11986,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_low_carbon_cement_fabric_rotary_kiln_rdf_vrm_oxyfuel_ccus_vs_4clouds": low_carbon_cement_sim,
         "global_aluminum_smelting_fabric_hall_heroult_anode_effect_mhd_cbam_vs_4clouds": aluminum_smelting_mhd_sim,
         "global_cryogenic_asu_fabric_mac_surge_reboiler_hydrocarbon_argon_vs_4clouds": cryogenic_asu_mac_sim,
+        "global_polysilicon_ingot_fabric_siemens_cvd_cz_mcz_pulling_wafer_vs_4clouds": polysilicon_ingot_mcz_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -12024,6 +12154,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r83_ontology_sim_mean_ms = round(sum(r83_sim_latencies) / len(r83_sim_latencies), 2)
     r84_sim_latencies = sim_latencies[:91]
     r84_ontology_sim_mean_ms = round(sum(r84_sim_latencies) / len(r84_sim_latencies), 2)
+    r85_sim_latencies = sim_latencies[:92]
+    r85_ontology_sim_mean_ms = round(sum(r85_sim_latencies) / len(r85_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -13137,11 +13269,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-14",
         },
+        {
+            "id": "SPEC-POLYSILICON-SIEMENS-CVD-CZOCHRALSKI-MCZ-INGOT-WAFER",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fft() and series_fit_line() analyze 200Hz Czochralski (CZ/MCZ) meniscus CCD optical ring oscillations, Siemens CVD two-color slim-rod pyrometers, and 50kHz diamond-wire acoustic-emission tension streams while Cosmos DB in Fabric SSD DiskANN indexes 212M+ Voronkov V/G point-defect boundaries, 3D Cusp-MCZ Lorentz melt-convection tensors, and SiHCl3 CVD deposition curves alongside Fabric Sustainability Data Solutions (SDS) EU ECS low-carbon silicon ledgers and SQL Server on Azure Local (ALDO) at puller-hall edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary 3D LES MCZ melt-convection CFD and wafer ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fft-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-14",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-15-r85",
-        "generated_at": "2026-11-15T01:55:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-15-r86",
+        "generated_at": "2026-11-15T02:10:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -13152,6 +13297,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R85 snapshot n=384 mean was 196.0ms; "
                     f"historical R84 snapshot n=380 mean was 198.0ms; "
                     f"historical R83 snapshot n=376 mean was 200.0ms; "
                     f"historical R82 snapshot n=372 mean was 202.0ms; "
@@ -13242,6 +13388,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R85 snapshot n=92 mean was {r85_ontology_sim_mean_ms}ms; "
                     f"historical R84 snapshot n=91 mean was {r84_ontology_sim_mean_ms}ms; "
                     f"historical R83 snapshot n=90 mean was {r83_ontology_sim_mean_ms}ms; "
                     f"historical R82 snapshot n=89 mean was {r82_ontology_sim_mean_ms}ms; "
@@ -13325,6 +13472,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r85_historical_denominators": {
+                    "r85_routing_matrix_n384_mean_ms": 196.0,
+                    "r85_ontology_simulations_n92_mean_ms": r85_ontology_sim_mean_ms,
+                },
                 "r84_historical_denominators": {
                     "r84_routing_matrix_n380_mean_ms": 198.0,
                     "r84_ontology_simulations_n91_mean_ms": r84_ontology_sim_mean_ms,
@@ -13719,6 +13870,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r85_92_simulation_mean_modeled_latency_ms": r85_ontology_sim_mean_ms,
             "r84_91_simulation_mean_modeled_latency_ms": r84_ontology_sim_mean_ms,
             "r83_90_simulation_mean_modeled_latency_ms": r83_ontology_sim_mean_ms,
             "r82_89_simulation_mean_modeled_latency_ms": r82_ontology_sim_mean_ms,

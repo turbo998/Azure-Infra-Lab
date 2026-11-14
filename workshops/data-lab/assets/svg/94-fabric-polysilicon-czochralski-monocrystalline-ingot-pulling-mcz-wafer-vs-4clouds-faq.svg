@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 960" width="100%" height="100%" style="background:#070b14;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="bg94" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#131129"/>
+      <stop offset="100%" stop-color="#0c192c"/>
+    </linearGradient>
+    <linearGradient id="hdr94" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="card94" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111c33"/>
+      <stop offset="100%" stop-color="#0a1222"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="960" fill="url(#bg94)"/>
+
+  <!-- Header -->
+  <rect x="28" y="22" width="1544" height="96" rx="16" fill="url(#hdr94)" opacity="0.94"/>
+  <text x="52" y="58" font-size="23" font-weight="800" fill="#ffffff">Data Lab R86 · Polysilicon Siemens CVD, Czochralski (CZ/MCZ) Ingot Pulling &amp; 11N Wafer vs. 4 Clouds</text>
+  <text x="52" y="86" font-size="14" font-weight="600" fill="#fef08a">190-Test, 170.0ms Ontology Mean, $150.1K/mo Savings &amp; 212M-Vector Milestone! · 36 Complexes (1,400 CVDs + 8,400 Pullers) · 990K EPS · 78ms Loop · $29.20M SLA</text>
+  <rect x="1318" y="38" width="232" height="64" rx="12" fill="#06152d" stroke="#a78bfa" stroke-width="2"/>
+  <text x="1434" y="64" font-size="13" font-weight="700" fill="#fde047" text-anchor="middle">SCENARIO CO · DL-385..388</text>
+  <text x="1434" y="86" font-size="18" font-weight="800" fill="#6ee7b7" text-anchor="middle">78ms E2E · 212M Vec</text>
+
+  <!-- Left Column: Problem & Legacy Bottleneck -->
+  <rect x="28" y="136" width="490" height="390" rx="14" fill="url(#card94)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="48" y="168" font-size="18" font-weight="800" fill="#f87171">1. Why 5s CCD Filtering &amp; 4h Off-Line QC Fail Silicon Pullers</text>
+  <text x="48" y="196" font-size="13" font-weight="700" fill="#fca5a5">• 1,425°C CZ Meniscus 0.38Hz Wave &amp; Dislocation Pop-Out:</text>
+  <text x="60" y="216" font-size="12" fill="#cbd5e1">Turbulent Marangoni/buoyancy convection in 450kg molten silicon</text>
+  <text x="60" y="234" font-size="12" fill="#cbd5e1">drives ±1.42mm meniscus oscillation, violating the Voronkov V/G</text>
+  <text x="60" y="252" font-size="12" fill="#cbd5e1">window and nucleating slip dislocations—forcing a 48h remelt of</text>
+  <text x="60" y="270" font-size="12" fill="#cbd5e1">a 300mm ingot and risking a $65,000 quartz crucible rupture.</text>
+
+  <text x="48" y="300" font-size="13" font-weight="700" fill="#fca5a5">• Siemens CVD 1,138°C Popcorn Silicon &amp; Core-Melting Collapse:</text>
+  <text x="60" y="320" font-size="12" fill="#cbd5e1">Overheated silicon slim-rods (&gt;1,135°C) nucleate porous popcorn</text>
+  <text x="60" y="338" font-size="12" fill="#cbd5e1">dust (ruining 11N electronic purity) and risk 1,414°C core-melting</text>
+  <text x="60" y="356" font-size="12" fill="#cbd5e1">rod collapse onto water-cooled reactor baseplates.</text>
+
+  <rect x="48" y="378" width="450" height="128" rx="10" fill="#1f1224" stroke="#f43f5e" stroke-width="1"/>
+  <text x="64" y="402" font-size="13" font-weight="800" fill="#fda4af">❌ Legacy 4-Cloud Stitched TCO: $162,800 / mo (Normalized)</text>
+  <text x="64" y="424" font-size="12" fill="#fecdd3">• Cloud IoT Per-Attribute/GB Ingest (990K EPS): $110,800 / mo</text>
+  <text x="64" y="444" font-size="12" fill="#fecdd3">• 212M-Vector RAM-Resident Cluster (3.1TB DRAM): $33,100 / mo</text>
+  <text x="64" y="464" font-size="12" fill="#fecdd3">• 4,200 Crystal Engineer &amp; ECS Auditor Viewer Seats: $18,900 / mo</text>
+  <text x="64" y="486" font-size="12" font-weight="700" fill="#fb7185">• Full Internal Enterprise Scope: $438,400 / mo (360s latency)</text>
+
+  <!-- Center Column: Microsoft Fabric 78ms Closed-Loop Architecture -->
+  <rect x="538" y="136" width="524" height="390" rx="14" fill="url(#card94)" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="558" y="168" font-size="18" font-weight="800" fill="#c4b5fd">2. Microsoft Fabric 78ms MCZ Ingot &amp; Siemens CVD Loop</text>
+
+  <rect x="558" y="184" width="484" height="72" rx="10" fill="#0f243c" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="574" y="206" font-size="13" font-weight="800" fill="#7dd3fc">Step 1 · Eventhouse KQL (18ms · $0/GB Stream Write Tax)</text>
+  <text x="574" y="226" font-size="12" fill="#e2e8f0">Ingests 990K EPS (200Hz meniscus CCD + CVD pyrometers + 50kHz saws).</text>
+  <text x="574" y="244" font-size="12" fill="#6ee7b7">series_fft() isolates 0.38Hz meniscus wave (±1.42mm) &amp; 1,138°C CVD rod</text>
+
+  <rect x="558" y="266" width="484" height="76" rx="10" fill="#132a2e" stroke="#10b981" stroke-width="1.2"/>
+  <text x="574" y="288" font-size="13" font-weight="800" fill="#6ee7b7">Step 2 · Fabric IQ + Cosmos SSD DiskANN (20ms · 212M Vectors)</text>
+  <text x="574" y="308" font-size="12" fill="#e2e8f0">Searches 212,000,000 Voronkov V/G defect boundaries, 3D Cusp-MCZ</text>
+  <text x="574" y="326" font-size="12" fill="#fde047">Lorentz melt-convection tensors &amp; SiHCl3 CVD vectors (0.99 sim, -92% RAM).</text>
+
+  <rect x="558" y="352" width="484" height="74" rx="10" fill="#1e223d" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="574" y="374" font-size="13" font-weight="800" fill="#d8b4fe">Step 3 · Foundry IQ Guardrail SOP-093 (20ms Hard Physics Gate)</text>
+  <text x="574" y="394" font-size="12" fill="#e2e8f0">Boosts Cusp-MCZ to 2,850G &amp; trims pull speed -4.2% (ring→±0.12mm, 100% ZD,</text>
+  <text x="574" y="412" font-size="12" fill="#6ee7b7">Oi 11.2ppma) &amp; trims CVD current -3.1% (rod→1,092°C, 11N purity).</text>
+
+  <rect x="558" y="436" width="484" height="74" rx="10" fill="#0d2818" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="574" y="458" font-size="13" font-weight="800" fill="#86efac">Step 4 · ALDO Puller-Hall Edge + SDS Silicon Commit (20ms)</text>
+  <text x="574" y="478" font-size="12" fill="#e2e8f0">Dispatches EtherCAT magnet/servo/CVD setpoints at hall edge &amp; mints</text>
+  <text x="574" y="496" font-size="12" fill="#fde047">11N CoA &amp; 11.4 kgCO2e/kg Si Low-Carbon Silicon passport into 1GB SQL.</text>
+
+  <!-- Right Column: Coexistence & Quantitative KPIs -->
+  <rect x="1082" y="136" width="490" height="390" rx="14" fill="url(#card94)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1102" y="168" font-size="18" font-weight="800" fill="#38bdf8">3. Better Together &amp; Benchmark Economics</text>
+
+  <rect x="1102" y="184" width="450" height="142" rx="10" fill="#0c1f38" stroke="#0284c7" stroke-width="1"/>
+  <text x="1118" y="208" font-size="13" font-weight="800" fill="#7dd3fc">🤝 Multi-Cloud Zero-Copy Coexistence Patterns</text>
+  <text x="1118" y="230" font-size="12" fill="#cbd5e1">• Azure HPC / Databricks GPU: Run 3D global radiative &amp; LES MCZ</text>
+  <text x="1118" y="248" font-size="12" fill="#cbd5e1">  melt-convection CFD sims; sync 212M Voronkov V/G &amp; oxygen</text>
+  <text x="1118" y="266" font-size="12" fill="#cbd5e1">  vectors to Fabric SSD DiskANN via OneLake zero-copy.</text>
+  <text x="1118" y="288" font-size="12" fill="#cbd5e1">• Snowflake / SAP S/4HANA: Keep quartz crucible inventory, wafer</text>
+  <text x="1118" y="306" font-size="12" fill="#cbd5e1">  order ERP &amp; French ECS carbon billing via OneLake Mirroring ($0).</text>
+
+  <rect x="1102" y="340" width="450" height="166" rx="10" fill="#092218" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1118" y="364" font-size="14" font-weight="800" fill="#6ee7b7">✅ Fabric Unified TCO: $12,700 / mo (-92.2% Savings!)</text>
+  <text x="1118" y="386" font-size="12" fill="#d1fae5">• Monthly Savings: -$150,100 / mo ($162.8K → $12.7K · $150K+ Milestone!)</text>
+  <text x="1118" y="406" font-size="12" fill="#d1fae5">• Internal Full Enterprise TCO: $34,200 vs $438,400 / mo</text>
+  <text x="1118" y="426" font-size="12" fill="#fde047">• Meniscus Ring &amp; ZD Yield: ±1.42→±0.12 mm · 100% Zero-Dislocation</text>
+  <text x="1118" y="446" font-size="12" fill="#fde047">• CVD Rod Temp &amp; Purity: 1,138→1,092°C · 11N Electronic Grade</text>
+  <text x="1118" y="466" font-size="12" fill="#6ee7b7">• Carbon &amp; Recycle: 11.4 kgCO2e/kg Si (99.4% SiCl4 Closed Loop)</text>
+  <text x="1118" y="488" font-size="13" font-weight="800" fill="#ffffff">• Protected Ingot, Crucible &amp; 11N SLA: $29,200,000 ($29.20M)</text>
+
+  <!-- Bottom Full-Width Table: 5-Cloud Decision Matrix -->
+  <rect x="28" y="544" width="1544" height="388" rx="14" fill="url(#card94)" stroke="#334155" stroke-width="1.5"/>
+  <text x="48" y="578" font-size="18" font-weight="800" fill="#f8fafc">4. Five-Cloud Selection Matrix for Polysilicon Siemens CVD, MCZ Ingot Pulling &amp; 11N Wafers (DL-385..DL-388)</text>
+
+  <rect x="48" y="594" width="1504" height="36" rx="8" fill="#1e293b"/>
+  <text x="64" y="617" font-size="12" font-weight="800" fill="#93c5fd">Capability / Workload Dimension</text>
+  <text x="410" y="617" font-size="12" font-weight="800" fill="#6ee7b7">Microsoft Fabric (F64 + ALDO)</text>
+  <text x="730" y="617" font-size="12" font-weight="800" fill="#fcd34d">AWS (SiteWise + OpenSearch)</text>
+  <text x="1010" y="617" font-size="12" font-weight="800" fill="#93c5fd">GCP (Pub/Sub + BigQuery)</text>
+  <text x="1270" y="617" font-size="12" font-weight="800" fill="#f9a8d4">Databricks / Snowflake</text>
+
+  <!-- Row 1 -->
+  <line x1="48" y1="676" x2="1552" y2="676" stroke="#1e293b"/>
+  <text x="64" y="654" font-size="12" font-weight="700" fill="#e2e8f0">1. 990K EPS 200Hz Meniscus CCD &amp; 50kHz Saw</text>
+  <text x="410" y="654" font-size="12" font-weight="700" fill="#6ee7b7">★ $0/GB Write Tax · 18ms KQL FFT/FitLine</text>
+  <text x="730" y="654" font-size="12" fill="#cbd5e1">$110.8K/mo per-attribute ingest fees</text>
+  <text x="1010" y="654" font-size="12" fill="#cbd5e1">Per-MB streaming insert charges</text>
+  <text x="1270" y="654" font-size="12" fill="#cbd5e1">DBX Photon DBU / Snow 60s lag</text>
+
+  <!-- Row 2 -->
+  <line x1="48" y1="726" x2="1552" y2="726" stroke="#1e293b"/>
+  <text x="64" y="704" font-size="12" font-weight="700" fill="#e2e8f0">2. 212M Voronkov-V/G, MCZ &amp; CVD Vectors</text>
+  <text x="410" y="704" font-size="12" font-weight="700" fill="#6ee7b7">★ Cosmos SSD DiskANN 20ms (-92% RAM)</text>
+  <text x="730" y="704" font-size="12" fill="#cbd5e1">$33.1K/mo RAM-heavy OpenSearch</text>
+  <text x="1010" y="704" font-size="12" fill="#cbd5e1">Vertex Vector node-hour billing</text>
+  <text x="1270" y="704" font-size="12" fill="#cbd5e1">Memory-indexed vector surcharges</text>
+
+  <!-- Row 3 -->
+  <line x1="48" y1="776" x2="1552" y2="776" stroke="#1e293b"/>
+  <text x="64" y="754" font-size="12" font-weight="700" fill="#e2e8f0">3. Cusp-MCZ &amp; Pull-Servo Closed Loop</text>
+  <text x="410" y="754" font-size="12" font-weight="700" fill="#6ee7b7">★ 78ms E2E (100% ZD, ±0.12mm, 11N Purity)</text>
+  <text x="730" y="754" font-size="12" fill="#cbd5e1">3–15s multi-hop Lambda glue</text>
+  <text x="1010" y="754" font-size="12" fill="#cbd5e1">Cloud-only analytics (no puller PLC)</text>
+  <text x="1270" y="754" font-size="12" fill="#cbd5e1">Batch/micro-batch (no 18ms edge)</text>
+
+  <!-- Row 4 -->
+  <line x1="48" y1="826" x2="1552" y2="826" stroke="#1e293b"/>
+  <text x="64" y="804" font-size="12" font-weight="700" fill="#e2e8f0">4. EU ECS Carbon &amp; 4,200 BI Viewers</text>
+  <text x="410" y="804" font-size="12" font-weight="700" fill="#6ee7b7">★ SDS 11.4kgCO2e/kg + $0 Viewer Seats</text>
+  <text x="730" y="804" font-size="12" fill="#cbd5e1">Custom ETL + QuickSight seat tax</text>
+  <text x="1010" y="804" font-size="12" fill="#cbd5e1">Custom SQL + Looker viewer tax</text>
+  <text x="1270" y="804" font-size="12" fill="#cbd5e1">Extra Warehouse / BI seat costs</text>
+
+  <!-- Footer Banner -->
+  <rect x="48" y="844" width="1504" height="68" rx="10" fill="#091e3a" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="68" y="870" font-size="13" font-weight="800" fill="#fde047">Architect Takeaway (Round 86 · 190-Test, 170.0ms Ontology Mean, $150.1K/mo Savings &amp; 212M-Vector Milestone!):</text>
+  <text x="68" y="894" font-size="12" fill="#e2e8f0">Keep 3D LES MCZ melt-convection CFD on Azure HPC/Databricks GPU and wafer ERP in Snowflake/SAP, while standardizing on Microsoft Fabric + ALDO for the 78ms zero-dislocation MCZ &amp; Siemens CVD loop (-92.2% TCO).</text>
+</svg>
