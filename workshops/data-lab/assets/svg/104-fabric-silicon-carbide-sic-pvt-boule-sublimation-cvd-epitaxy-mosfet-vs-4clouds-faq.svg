@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg96" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050B16"/>
+      <stop offset="50%" stop-color="#0A162C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent96" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue96" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2548"/>
+      <stop offset="100%" stop-color="#0B1933"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg96)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#06B6D4" stroke-width="1.5"/>
+  <rect x="58" y="50" width="302" height="26" rx="13" fill="url(#accent96)"/>
+  <text x="209" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · 2026-11-15 R96 · 252M &amp; SUB-180MS</text>
+  <text x="376" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">8英寸碳化硅 (200mm 4H-SiC)：2,300°C PVT 升华防微管/晶型翻转、CVD 外延防三角形缺陷与 2.52 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global 200mm 4H-SiC Sublimation &amp; Epitaxy (26 Fabs · 4,800 PVT Furnaces + 360 CVD Epi Reactors + 420 Laser Saws) · 990K EPS · 252M DiskANN (&gt;0.25B!) · 58ms Loop · -93.2% TCO</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1284" y="69" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">R96 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">179.0ms · 160.0ms</text>
+
+  <!-- Left Column: Physical 200mm 4H-SiC PVT & CVD Telemetry Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#22D3EE" font-size="14" font-weight="800">01 · 2,300°C PVT 黑匣子长晶与 CVD 外延传感 (990K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#67E8F9" font-size="12.5" font-weight="800">💎 4,800 台 200mm PVT 物理气相升华长晶炉 (2,300°C)</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 顶部/底部双色光纤高温计 + 10kHz 中频感应线圈谐波阻抗</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 反演捕获 #312炉 第86h 粉料石墨化致轴向温差飙至 24.8K/cm</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 提前拦截 19.4MPa 径向剪切应力诱发的 6H 多型夹杂与微管!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#93C5FD" font-size="12.5" font-weight="800">⚡ 360 台 1,650°C 温壁行星式 CVD 碳化硅外延炉</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 原位多波长激光反射率与气体质量流量计 (SiH4 / C3H8 / HCl)</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 捕获 #18外延炉 有效表面碳硅比 (C/Si) 跌至 0.94 台阶聚并前兆</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 阻断 3C-SiC 致命三角形缺陷，保住 $3,200/片 800V 车规外延片</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">🔬 420 台飞秒激光剥离 (Cold Split) 与全晶圆 PL/XRT</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 全晶圆光致发光 (PL) 与 X 射线貌相 (XRT) 扫描基面位错 BPD</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 激光改质剥离降低 45% 切片碳化硅损耗，联动 100% 绿电 PPA</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 严防 BPD 诱发新能源汽车 800V 主驱逆变器双极性退化失效</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统开环时间-功率曲线与云端全内存拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 140h 黑匣子盲烧看不见碳毡衰减与粉料烧结，6天后切片才知报废</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 990K EPS 云端按属性写入税高达 $138.8K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.52 亿向量全内存常驻需 2.80TB+ DRAM (&gt;$50.8K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 58ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue96)" stroke="#06B6D4" stroke-width="2"/>
+  <text x="502" y="166" fill="#67E8F9" font-size="14" font-weight="800">02 · Microsoft Fabric 58ms 碳化硅长晶与外延闭环</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 13ms 电磁阻抗层析与反射率感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 990,000 EPS 10kHz/光学流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• 13ms 反演锁定 #312炉 24.8K/cm &amp; 19.4MPa 与 #18外延炉 C/Si=0.94</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $133.9K/月写入费，终结 140 小时出炉切片后知后觉</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 15ms 2.52亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 突破 0.25B 大关：检索 252,000,000 条升华传质、BPD 位错与台阶流</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.5K vs $50.8K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：感应线圈下移 -4.5mm + 功率 -1.6% + 外延丙烷 MFC +9.2%</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 径向热应力压回 8.2MPa (99.98% 4H-SiC 零微管)，外延 C/Si=1.12</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 车规级 AEC-Q101 规程护栏 (SOP-103 · 15ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验径向应力 8.2MPa &lt;= 12.0MPa、0 微管、BPD 265/cm² &lt;= 350/cm²</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验外延致命三角形缺陷密度 0.18/cm² &lt;= 0.35/cm² 车规主驱红线</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断 6H 多型夹杂与 800V 主驱 MOSFET 栅氧击穿风险</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总工确认 + ALDO 洁净室边缘 &amp; 低碳SiC护照 (15ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 经 SECS/GEM &amp; EtherCAT 下发线圈与 MFC</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 AEC-Q101 车规低碳 SiC 护照 (28.4 kgCO2e/片)</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 58ms 端到端闭环 · 守护 $32.70M 800V 车规碳化硅晶圆良率 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.2%)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑 2,300°C 三维辐射-电磁-升华</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  (VR-PVT) 与 KMC 台阶流仿真，向 OneLake 写入 2.52 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留车企 800V 主驱芯片订单与籽晶</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  批次 ERP，经 OneLake Mirroring ($0 算力) 双向零拷贝互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 5,400 名长晶外延工程师与车企 SQE DirectLake 看板 ($0 席位)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 26 座碳化硅基地月度 TCO 对比 (990K EPS · 252M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 252M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$13,700 / 月 (基准最优 · 省 93.2%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 2.80TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$201,500 / 月 (归一化) | $547,400 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $187,800 / 月 ($2.25M / 年) · 突破 2.5 亿向量 &amp; Sub-180ms!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#7DD3FC" font-size="12.5" font-weight="800">📊 Scenario CY 实测成效与双分母披露 (R96 六冠里程碑!)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=428)：427 / 428 (99.77%!) · 均值 179.0 ms (&lt;180ms!)</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=103)：160.0 ms (本场景 CY 仅 58 ms E2E)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 晶锭品质：径向应力 19.4→8.2MPa | 99.98% 4H-SiC · 0 微管</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 外延品质：C/Si=1.12 · 三角形缺陷 0.18/cm² · 28.4kgCO2e/片</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避晶锭与车规外延报废损失：$32,700,000 ($32.70M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#67E8F9" font-size="14" font-weight="800">04 · AI Solution Architect 8英寸碳化硅长晶与外延打单金句与生产核验清单 (Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#67E8F9" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 2,300°C 黑匣子碳化硅 PVT 长晶炉里，靠固定时间-功率表盲烧 140 小时，看不见粉料石墨化</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">与碳毡衰减，等 6 天后切片才发现 6H 晶型夹杂与微管报废！Microsoft Fabric 用 Eventhouse 在</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">13ms 内通过 10kHz 感应线圈阻抗反演黑匣子温梯（$0/GB 写入税），再用 SSD DiskANN 在 15ms</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">内匹配 2.52 亿条升华传质与外延台阶流向量，58ms 走 ALDO 洁净室边缘微调线圈高度与碳硅比，</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">保住 99.98% 4H-SiC 零微管与 0.18/cm² 车规外延良率，月省 93.2% TCO！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 4,800 台 PVT 长晶炉 10kHz 感应线圈谐波阻抗与双色高温计流直推 Eventhouse</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. 360 台 CVD 外延炉原位多波长激光反射率与丙烷/硅烷 MFC 15ms 闭环联动</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.52 亿条升华传质/BPD/台阶流索引构建 (-92% 内存，P95 &lt;= 15ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-103 门禁：径向应力 &lt;=12MPa、0微管、外延三角形缺陷 &lt;=0.35/cm²</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 洁净室 SECS/GEM 下发线圈/MFC，1GB 免费 SQL 签发 28.4kgCO2e/片低碳护照</text>
+</svg>
