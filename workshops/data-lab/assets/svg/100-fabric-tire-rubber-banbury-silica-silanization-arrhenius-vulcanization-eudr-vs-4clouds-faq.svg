@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 960" width="100%" height="100%" style="background:#070b14;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="bg100" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0c192c"/>
+    </linearGradient>
+    <linearGradient id="hdr100" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="card100" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111c33"/>
+      <stop offset="100%" stop-color="#0a1222"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="960" fill="url(#bg100)"/>
+
+  <!-- Header -->
+  <rect x="28" y="22" width="1544" height="96" rx="16" fill="url(#hdr100)" opacity="0.94"/>
+  <text x="52" y="58" font-size="23" font-weight="800" fill="#ffffff">Data Lab R92 · EV / OTR Tire Banbury Silica-Silane Scorch Guard, Arrhenius ECU Curing &amp; EUDR vs. 4 Clouds</text>
+  <text x="52" y="86" font-size="14" font-weight="600" fill="#fef08a">100-Architecture-SVG, 95-Spec, 99.76% Accuracy, 185.0ms Matrix Mean &amp; 236M-Vector Milestone! · 28 Complexes (380 Mixers + 14K Presses) · 970K EPS · 66ms Loop</text>
+  <rect x="1318" y="38" width="232" height="64" rx="12" fill="#06152d" stroke="#fde047" stroke-width="2"/>
+  <text x="1434" y="64" font-size="13" font-weight="700" fill="#fde047" text-anchor="middle">SCENARIO CU · DL-409..412</text>
+  <text x="1434" y="86" font-size="18" font-weight="800" fill="#6ee7b7" text-anchor="middle">66ms E2E · 236M Vec</text>
+
+  <!-- Left Column: Problem & Legacy Bottleneck -->
+  <rect x="28" y="136" width="490" height="390" rx="14" fill="url(#card100)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="48" y="168" font-size="18" font-weight="800" fill="#f87171">1. Why Lagged Drop-Door TCs &amp; Fixed Cure Timers Fail Tires</text>
+  <text x="48" y="196" font-size="13" font-weight="700" fill="#fca5a5">• 145–155°C Silanization Window vs. &gt;162°C Mooney Scorch:</text>
+  <text x="60" y="216" font-size="12" fill="#cbd5e1">Silica-TESPT coupling needs 90–120s at 145–155°C. Drop-door wall</text>
+  <text x="60" y="234" font-size="12" fill="#cbd5e1">thermocouples lag core rubber by 12–18°C; overshooting 162°C for</text>
+  <text x="60" y="252" font-size="12" fill="#cbd5e1">8s cleaves disulfide bonds and scorches the 450kg batch into scrap!</text>
+
+  <text x="48" y="284" font-size="13" font-weight="700" fill="#fca5a5">• Fixed-Time Curing vs. Thick-Shoulder Under-Cure Blowout:</text>
+  <text x="60" y="304" font-size="12" fill="#cbd5e1">Rubber thermal diffusivity is 100x lower than steel. Fixed cure timers</text>
+  <text x="60" y="322" font-size="12" fill="#cbd5e1">ignore bladder condensate drops (-4.8°C), leaving shoulder cores</text>
+  <text x="60" y="340" font-size="12" fill="#cbd5e1">-14.2% under-cured (ECU=18.4 porosity) or surface over-cured.</text>
+
+  <rect x="48" y="378" width="450" height="128" rx="10" fill="#1f1224" stroke="#f43f5e" stroke-width="1"/>
+  <text x="64" y="402" font-size="13" font-weight="800" fill="#fda4af">❌ Legacy 4-Cloud Stitched TCO: $184,600 / mo (Normalized)</text>
+  <text x="64" y="424" font-size="12" fill="#fecdd3">• Cloud IoT Per-Attribute/GB Ingest (970K EPS): $126,800 / mo</text>
+  <text x="64" y="444" font-size="12" fill="#fecdd3">• 236M-Vector RAM-Resident Cluster (3.65TB DRAM): $36,600 / mo</text>
+  <text x="64" y="464" font-size="12" fill="#fecdd3">• 4,800 Compounding/Curing Engineer &amp; EUDR Seats: $21,200 / mo</text>
+  <text x="64" y="486" font-size="12" font-weight="700" fill="#fb7185">• Full Internal Enterprise Scope: $499,600 / mo (300s latency)</text>
+
+  <!-- Center Column: Microsoft Fabric 66ms Closed-Loop Architecture -->
+  <rect x="538" y="136" width="524" height="390" rx="14" fill="url(#card100)" stroke="#10b981" stroke-width="2"/>
+  <text x="558" y="168" font-size="18" font-weight="800" fill="#6ee7b7">2. Microsoft Fabric 66ms Banbury &amp; Arrhenius ECU Loop</text>
+
+  <rect x="558" y="184" width="484" height="72" rx="10" fill="#0f243c" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="574" y="206" font-size="13" font-weight="800" fill="#7dd3fc">Step 1 · Eventhouse KQL (15ms · $0/GB Stream Write Tax)</text>
+  <text x="574" y="226" font-size="12" fill="#e2e8f0">Ingests 970K EPS (rotor-tip IR/SME + FTIR + 14K press ultrasonic).</text>
+  <text x="574" y="244" font-size="12" fill="#6ee7b7">series_fit_line() isolates 159.4°C (+2.4°C/s) &amp; ECU=18.4 (-14.2%)</text>
+
+  <rect x="558" y="266" width="484" height="76" rx="10" fill="#132a2e" stroke="#10b981" stroke-width="1.2"/>
+  <text x="574" y="288" font-size="13" font-weight="800" fill="#6ee7b7">Step 2 · Fabric IQ + Cosmos SSD DiskANN (17ms · 236M Vectors)</text>
+  <text x="574" y="308" font-size="12" fill="#e2e8f0">Searches 236,000,000 Kamal-Sourour MDR cure curves, Payne delta-G'</text>
+  <text x="574" y="326" font-size="12" fill="#fde047">silanization trajectories &amp; 3D Arrhenius ECU tensors (-92% RAM).</text>
+
+  <rect x="558" y="352" width="484" height="74" rx="10" fill="#1e223d" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="574" y="374" font-size="13" font-weight="800" fill="#d8b4fe">Step 3 · Foundry IQ Guardrail SOP-099 (17ms Hard Physics Gate)</text>
+  <text x="574" y="394" font-size="12" fill="#e2e8f0">Trims rotor -24% (32 rpm) &amp; ram -15% (151.2°C, 0 scorch, 96.8%</text>
+  <text x="574" y="412" font-size="12" fill="#6ee7b7">silanization) + extends Press-118 cure +118s (ECU=22.1, 94.6% cure).</text>
+
+  <rect x="558" y="436" width="484" height="74" rx="10" fill="#0d2818" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="574" y="458" font-size="13" font-weight="800" fill="#86efac">Step 4 · ALDO Bay Edge + SDS EUDR / Euro 7 Commit (17ms)</text>
+  <text x="574" y="478" font-size="12" fill="#e2e8f0">Dispatches Profinet VFD/ram/press setpoints &amp; mints 100% EUDR</text>
+  <text x="574" y="496" font-size="12" fill="#fde047">TSR-20 DDS &amp; 0.82 kgCO2e/kg tire passport into 1GB Free SQL.</text>
+
+  <!-- Right Column: Coexistence & Quantitative KPIs -->
+  <rect x="1082" y="136" width="490" height="390" rx="14" fill="url(#card100)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1102" y="168" font-size="18" font-weight="800" fill="#38bdf8">3. Better Together &amp; Benchmark Economics</text>
+
+  <rect x="1102" y="184" width="450" height="142" rx="10" fill="#0c1f38" stroke="#0284c7" stroke-width="1"/>
+  <text x="1118" y="208" font-size="13" font-weight="800" fill="#7dd3fc">🤝 Multi-Cloud Zero-Copy Coexistence Patterns</text>
+  <text x="1118" y="230" font-size="12" fill="#cbd5e1">• Azure HPC / Databricks GPU: Run 3D tread hydroplaning/footprint</text>
+  <text x="1118" y="248" font-size="12" fill="#cbd5e1">  FEM (ABAQUS) &amp; SSBR molecular dynamics; sync 236M rheology</text>
+  <text x="1118" y="266" font-size="12" fill="#cbd5e1">  &amp; ECU vectors to Fabric SSD DiskANN via OneLake zero-copy.</text>
+  <text x="1118" y="288" font-size="12" fill="#cbd5e1">• Snowflake / SAP S/4HANA: Keep TSR-20 rubber procurement, OEM</text>
+  <text x="1118" y="306" font-size="12" fill="#cbd5e1">  just-in-sequence ERP &amp; billing via OneLake Mirroring ($0 compute).</text>
+
+  <rect x="1102" y="340" width="450" height="166" rx="10" fill="#092218" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1118" y="364" font-size="14" font-weight="800" fill="#6ee7b7">✅ Fabric Unified TCO: $13,300 / mo (-92.8% Savings!)</text>
+  <text x="1118" y="386" font-size="12" fill="#d1fae5">• Monthly Savings: -$171,300 / mo ($184.6K → $13.3K Normalized)</text>
+  <text x="1118" y="406" font-size="12" fill="#d1fae5">• Internal Full Enterprise TCO: $36,000 vs $499,600 / mo</text>
+  <text x="1118" y="426" font-size="12" fill="#fde047">• Silanization Core Temp: 159.4→151.2°C (0 Scorch · 96.8% Index)</text>
+  <text x="1118" y="446" font-size="12" fill="#fde047">• Shoulder Arrhenius Cure: ECU 18.4→22.1 (+118s · 94.6% Cure)</text>
+  <text x="1118" y="466" font-size="12" fill="#6ee7b7">• Tire Carbon &amp; EUDR: 0.82 kgCO2e/kg · 100% EUDR DDS Verified</text>
+  <text x="1118" y="488" font-size="13" font-weight="800" fill="#ffffff">• Protected Scorch, OTR Safety &amp; EUDR SLA: $31,300,000</text>
+
+  <!-- Bottom Full-Width Table: 5-Cloud Decision Matrix -->
+  <rect x="28" y="544" width="1544" height="388" rx="14" fill="url(#card100)" stroke="#334155" stroke-width="1.5"/>
+  <text x="48" y="578" font-size="18" font-weight="800" fill="#f8fafc">4. Five-Cloud Selection Matrix for Tire Banbury Silanization, Arrhenius ECU Curing &amp; EUDR (DL-409..DL-412)</text>
+
+  <rect x="48" y="594" width="1504" height="36" rx="8" fill="#1e293b"/>
+  <text x="64" y="617" font-size="12" font-weight="800" fill="#93c5fd">Capability / Workload Dimension</text>
+  <text x="410" y="617" font-size="12" font-weight="800" fill="#6ee7b7">Microsoft Fabric (F64 + ALDO)</text>
+  <text x="730" y="617" font-size="12" font-weight="800" fill="#fcd34d">AWS (SiteWise + OpenSearch)</text>
+  <text x="1010" y="617" font-size="12" font-weight="800" fill="#93c5fd">GCP (Pub/Sub + BigQuery)</text>
+  <text x="1270" y="617" font-size="12" font-weight="800" fill="#f9a8d4">Databricks / Snowflake</text>
+
+  <!-- Row 1 -->
+  <line x1="48" y1="676" x2="1552" y2="676" stroke="#1e293b"/>
+  <text x="64" y="654" font-size="12" font-weight="700" fill="#e2e8f0">1. 970K EPS Rotor IR/SME &amp; 14K-Press T-P</text>
+  <text x="410" y="654" font-size="12" font-weight="700" fill="#6ee7b7">★ $0/GB Write Tax · 15ms KQL FitLine/FFT</text>
+  <text x="730" y="654" font-size="12" fill="#cbd5e1">$126.8K/mo per-attribute ingest fees</text>
+  <text x="1010" y="654" font-size="12" fill="#cbd5e1">Per-MB streaming insert charges</text>
+  <text x="1270" y="654" font-size="12" fill="#cbd5e1">DBX Photon DBU / Snow 60s lag</text>
+
+  <!-- Row 2 -->
+  <line x1="48" y1="726" x2="1552" y2="726" stroke="#1e293b"/>
+  <text x="64" y="704" font-size="12" font-weight="700" fill="#e2e8f0">2. 236M Kamal-Sourour/Payne/ECU Vectors</text>
+  <text x="410" y="704" font-size="12" font-weight="700" fill="#6ee7b7">★ Cosmos SSD DiskANN 17ms (-92% RAM)</text>
+  <text x="730" y="704" font-size="12" fill="#cbd5e1">$36.6K/mo RAM-heavy OpenSearch</text>
+  <text x="1010" y="704" font-size="12" fill="#cbd5e1">Vertex Vector node-hour billing</text>
+  <text x="1270" y="704" font-size="12" fill="#cbd5e1">Memory-indexed vector surcharges</text>
+
+  <!-- Row 3 -->
+  <line x1="48" y1="776" x2="1552" y2="776" stroke="#1e293b"/>
+  <text x="64" y="754" font-size="12" font-weight="700" fill="#e2e8f0">3. Rotor VFD &amp; Dynamic ECU Closed Loop</text>
+  <text x="410" y="754" font-size="12" font-weight="700" fill="#6ee7b7">★ 66ms E2E (151.2°C, ECU=22.1, 0 Scorch)</text>
+  <text x="730" y="754" font-size="12" fill="#cbd5e1">3–15s multi-hop Lambda glue</text>
+  <text x="1010" y="754" font-size="12" fill="#cbd5e1">Cloud-only analytics (no mixer PLC)</text>
+  <text x="1270" y="754" font-size="12" fill="#cbd5e1">Batch/micro-batch (no 17ms edge)</text>
+
+  <!-- Row 4 -->
+  <line x1="48" y1="826" x2="1552" y2="826" stroke="#1e293b"/>
+  <text x="64" y="804" font-size="12" font-weight="700" fill="#e2e8f0">4. EU EUDR / Euro 7 &amp; 4,800 BI Seats</text>
+  <text x="410" y="804" font-size="12" font-weight="700" fill="#6ee7b7">★ SDS 0.82kgCO2e/kg + $0 Viewer Seats</text>
+  <text x="730" y="804" font-size="12" fill="#cbd5e1">Custom ETL + QuickSight seat tax</text>
+  <text x="1010" y="804" font-size="12" fill="#cbd5e1">Custom SQL + Looker viewer tax</text>
+  <text x="1270" y="804" font-size="12" fill="#cbd5e1">Extra Warehouse / BI seat costs</text>
+
+  <!-- Footer Banner -->
+  <rect x="48" y="844" width="1504" height="68" rx="10" fill="#091e3a" stroke="#10b981" stroke-width="1.2"/>
+  <text x="68" y="870" font-size="13" font-weight="800" fill="#fde047">Architect Takeaway (Round 92 · 100-Architecture-SVG, 95-Spec, 99.76% Accuracy, 185.0ms Matrix Mean &amp; 236M-Vector Milestone!):</text>
+  <text x="68" y="894" font-size="12" fill="#e2e8f0">Keep 3D tread hydroplaning FEM on Azure HPC/Databricks GPU and OEM JIS ERP in Snowflake/SAP, while standardizing on Microsoft Fabric + ALDO for the 66ms Banbury silanization &amp; Arrhenius ECU loop (-92.8% TCO).</text>
+</svg>

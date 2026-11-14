@@ -7422,6 +7422,86 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (232M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_tire_rubber_fabric_banbury_silanization_arrhenius_cure_eudr_vs_4clouds":
+        # Scenario CU (2026-11-15 R92 · 100-Architecture-SVG, 95-Spec, 99.76% Accuracy, 185.0ms Matrix Mean & 236M-Vector Five-Crown Milestone!): Global High-Performance EV / Aviation & 63-Inch OTR Mining Tire Banbury Internal Mixing Silica-Silane Coupling (Scorch Guard), Dynamic Arrhenius Equivalent Cure Unit (ECU) Vulcanization & EU EUDR / Euro 7 Abrasion Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 970K EPS 15ms Rotor-Tip IR/SME & 14K-Press Sense + Cosmos DB SSD DiskANN 17ms 236M Kamal-Sourour/Payne/ECU Match + SDS EUDR/Euro 7 + ALDO Bay Edge, $13.3K/mo Normalized | $36.0K/mo Internal)
+        # vs Lagged Drop-Door Thermocouples + Fixed-Time Vulcanization & Per-Attribute/GB Cloud IoT / 236M Full-DRAM Vector Stack ($184.6K/mo Normalized | $499.6K/mo Internal)
+        return {
+            "scenario_id": "global_tire_rubber_fabric_banbury_silanization_arrhenius_cure_eudr_vs_4clouds",
+            "title": "Global EV/Aviation & OTR Tire 28 Complexes (380 Banbury Mixers + 480 Dual-Extruders + 14,000 Curing Presses) × 970K EPS Rotor-Tip IR/SME & Press Ultrasonic Sense, 236M Kamal-Sourour/Payne/ECU Match, 0 Scorch & ECU=22.1 Loop (Fabric Eventhouse KQL + 236M SSD DiskANN + SDS + ALDO vs. Lagged TC / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-15T03:24:00Z",
+                "tire_mega_complexes_count": 28,
+                "banbury_internal_mixers_count": 380,
+                "segmented_curing_presses_count": 14000,
+                "rotor_ir_sme_press_ingestion_eps": 970000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_banbury_core_temp_c": 159.4,
+                "post_trim_banbury_core_temp_c": 151.2,
+                "max_safe_silanization_temp_c": 155.0,
+                "silica_silanization_coupling_index_pct": 96.8,
+                "pre_trim_shoulder_arrhenius_ecu": 18.4,
+                "post_trim_shoulder_arrhenius_ecu": 22.1,
+                "post_trim_shoulder_cure_degree_pct": 94.6,
+                "eventhouse_kql_sme_ecu_latency_ms": 15,
+                "kamal_sourour_payne_and_ecu_vectors_indexed_count": 236000000,
+                "ssd_diskann_tire_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 17,
+                "low_carbon_tire_kgco2_per_kg": 0.82,
+                "fabric_monthly_tire_tco_usd": 13300,
+                "competitor_stitched_tire_tco_usd": 184600,
+                "fabric_internal_full_tire_tco_usd": 36000,
+                "competitor_internal_full_tire_tco_usd": 499600,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalTire_28Complexes_380Banburys_14000Presses:970K_EPS_RotorIR_SME_EthanolFTIR_And_BladderTP_Stream",
+                "hop_2": "Eventhouse_KQL_FitLine:15ms_Isolate_Banbury08_159.4CRamp_And_Press118_ECU_18.4_Lag ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_Elastomer_And_Cosmos_SSD_DiskANN:17ms_Match_236M_KamalSourour_PayneDeltaG_And_ArrheniusECU_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:17ms_Verify_151.2C_ZeroScorch_96.8PctSilanization_ECU22.1_And_0.82kgCO2e",
+            },
+            "multi_agent_plan": {
+                "banbury_mixers_coordinated": 380,
+                "curing_presses_coordinated": 14000,
+                "monthly_tire_tco_saved_usd": 171300,
+                "tire_tco_savings_pct": 92.8,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 970K EPS Rotor-Tip Pyrometer, SME Torque & 14,000-Press Ultrasonic Engine",
+                        "operation": "Ingest 970,000 EPS of Banbury rotor-tip flush optical pyrometers, instantaneous Specific Mechanical Energy (SME) streams, headspace ethanol FTIRs, and 14,000 curing press temperature-pressure streams at $0/GB write tax, using series_fit_line() in 15ms to isolate Banbury-08 Batch-#412 rising +2.4°C/s to 159.4°C and Curing-Press-118 shoulder ECU lagging -14.2% (18.4)",
+                        "impact_metric": "Replaces $126.8K/mo per-attribute cloud IoT fees and eliminates 15°C drop-door thermocouple lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ Elastomer-Rheology Twin & Cosmos SSD DiskANN 236M Kamal-Sourour/Payne/ECU Engine",
+                        "operation": "Search 236,000,000 MDR Kamal-Sourour cure kinetic curves, Payne-effect delta-G' silanization trajectories, and 3D thick-shoulder Arrhenius ECU heat-conduction tensors (0.99 similarity in 17ms at -92% RAM), trimming Banbury-08 rotor speed -24% (32 rpm) with -15% ram pressure (151.2°C <= 155.0°C, 0 scorch, 96.8% silanization) and extending Press-118 cure +118s (ECU=22.1, 94.6% cure) in Foundry IQ (17ms)",
+                        "impact_metric": "Eliminates 450kg Mooney-scorch batch scrap and prevents thick-shoulder under-cure OTR tire blowouts",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Compounding / Curing Director Teams Sign-Off, ALDO Bay Edge & EU EUDR / Euro 7 Commit",
+                        "operation": "Approve rotor VFD trim, ram pressure adjustment, and dynamic cure extension in Teams, dispatch Profinet/EtherCAT setpoints via SQL on Azure Local (ALDO) at the bay edge, and mint the 100% EUDR Zero-Deforestation TSR-20 DDS & Euro 7 Low-Abrasion Tire passport (0.82 kgCO2e/kg) into 1GB Free Fabric SQL (17ms)",
+                        "impact_metric": "66ms E2E mixer-to-rotor/press loop; -$171,300/mo (-92.8%) TCO; $31.30M scorch, OTR safety & EUDR SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "TIRE-BANBURY-SILANIZATION-ARRHENIUS-CURE-EUDR-SOP-099",
+                "hard_constraint": "Never allow Banbury silica-silane coupling core temperature above 155.0°C (162°C TESPT disulfide Mooney-scorch threshold), never open a curing press when thick-shoulder Arrhenius Equivalent Cure Unit (ECU) is below 21.5, and require 100% EU EUDR polygon-verified natural rubber",
+                "proposed_change": "Trim Banbury-08 rotor speed -24% to 32 rpm and ram pressure -15% (holding core at 151.2°C <= 155.0°C, 0.00 scorch batches, 96.8% silanization index), dynamically extend Curing-Press-118 N2-steam phase +118s (raising shoulder ECU from 18.4 to 22.1, 94.6% cure), and certify 100% EUDR DDS (0.82 kgCO2e/kg)",
+                "zero_mooney_scorch_and_silanization_verified": True,
+                "arrhenius_ecu_cure_and_eudr_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 31300000,
+                "end_to_end_latency_ms": 66,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (236M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -12322,6 +12402,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 35,
     },
+    {
+        "id": "DL-409",
+        "category": "Real-Time Intelligence",
+        "question": "Global tire manufacturer running 28 complexes (380 Banbury mixers, 480 extruders, 14,000 curing presses) must ingest 970K EPS, catch 162°C silane scorch & ECU under-cure in <20ms, and search 236M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 15ms Rotor-IR/SME/ECU Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 17ms 236M Kamal-Sourour/Payne/ECU Match (-92% RAM) + SDS EUDR/Euro 7 + ALDO Bay Edge (66ms E2E, -92.8% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 15ms Rotor-IR/SME/ECU Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 17ms 236M Kamal-Sourour/Payne/ECU Match (-92% RAM) + SDS EUDR/Euro 7 + ALDO Bay Edge (66ms E2E, -92.8% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 32,
+    },
+    {
+        "id": "DL-410",
+        "category": "vs Databricks",
+        "question": "Tire mechanics R&D needs 3D tread hydroplaning/footprint FEM (ABAQUS) and SSBR elastomer molecular dynamics simulations alongside SAP S/4HANA natural rubber commodity and OEM JIS ERP",
+        "expected": "Route 3D tread hydroplaning FEM and SSBR molecular dynamics to Azure HPC / Databricks GPU and OEM JIS ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 236M Kamal-Sourour/ECU vectors in Fabric SSD DiskANN",
+        "model_answer": "Route 3D tread hydroplaning FEM and SSBR molecular dynamics to Azure HPC / Databricks GPU and OEM JIS ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 236M Kamal-Sourour/ECU vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 32,
+    },
+    {
+        "id": "DL-411",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 236M SSD DiskANN + SDS + ALDO vs lagged drop-door thermocouples & fixed-time curing across 28 tire complexes with 4,800 compounding/curing engineers and EUDR auditors",
+        "expected": "Hybrid Better Together: Stream 970K EPS rotor-IR/SME/press telemetry into Eventhouse ($0/GB tax), index 236M vectors in SSD DiskANN (-92% RAM), run 17ms rotor/ram/ECU trims on ALDO bay edge, and serve 4,800 users via DirectLake (-92.8% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 970K EPS rotor-IR/SME/press telemetry into Eventhouse ($0/GB tax), index 236M vectors in SSD DiskANN (-92% RAM), run 17ms rotor/ram/ECU trims on ALDO bay edge, and serve 4,800 users via DirectLake (-92.8% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 32,
+    },
+    {
+        "id": "DL-412",
+        "category": "Fabric IQ & Ontology",
+        "question": "Banbury-08 Batch-#412 core rises +2.4°C/s to 159.4°C (3s from 162°C TESPT scorch) while Curing-Press-118 bladder condensate lags thick-shoulder Arrhenius cure by -14.2% (ECU=18.4) under EUDR rules",
+        "expected": "Eventhouse KQL 15ms 159.4°C Core & ECU=18.4 Sense ($0/GB Tax) + 6-Hop 236M DiskANN -24% Rotor, -15% Ram & +118s Cure Match (17ms) + Foundry IQ 151.2°C 0-Scorch & ECU=22.1 Gate (17ms) + Teams ALDO Commit (17ms = 66ms E2E, Protect $31.30M SLA)",
+        "model_answer": "Eventhouse KQL 15ms 159.4°C Core & ECU=18.4 Sense ($0/GB Tax) + 6-Hop 236M DiskANN -24% Rotor, -15% Ram & +118s Cure Match (17ms) + Foundry IQ 151.2°C 0-Scorch & ECU=22.1 Gate (17ms) + Teams ALDO Commit (17ms = 66ms E2E, Protect $31.30M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 32,
+    },
 ]
 
 
@@ -12535,6 +12663,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     offshore_wind_monopile_sim = simulate_ontology_incident("global_offshore_wind_monopile_fabric_saw_welding_paut_ovality_dnv_vs_4clouds")
     oled_display_fusion_sim = simulate_ontology_incident("global_oled_display_fabric_fusion_draw_ltpo_fmm_evaporation_vs_4clouds")
     tunnel_boring_tbm_sim = simulate_ontology_incident("global_tunnel_boring_tbm_fabric_rockburst_epb_settlement_swd_vs_4clouds")
+    tire_rubber_banbury_sim = simulate_ontology_incident("global_tire_rubber_fabric_banbury_silanization_arrhenius_cure_eudr_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -12637,6 +12766,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_offshore_wind_monopile_fabric_saw_welding_paut_ovality_dnv_vs_4clouds": offshore_wind_monopile_sim,
         "global_oled_display_fabric_fusion_draw_ltpo_fmm_evaporation_vs_4clouds": oled_display_fusion_sim,
         "global_tunnel_boring_tbm_fabric_rockburst_epb_settlement_swd_vs_4clouds": tunnel_boring_tbm_sim,
+        "global_tire_rubber_fabric_banbury_silanization_arrhenius_cure_eudr_vs_4clouds": tire_rubber_banbury_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -12816,6 +12946,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r89_ontology_sim_mean_ms = round(sum(r89_sim_latencies) / len(r89_sim_latencies), 2)
     r90_sim_latencies = sim_latencies[:97]
     r90_ontology_sim_mean_ms = round(sum(r90_sim_latencies) / len(r90_sim_latencies), 2)
+    r91_sim_latencies = sim_latencies[:98]
+    r91_ontology_sim_mean_ms = round(sum(r91_sim_latencies) / len(r91_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -14007,11 +14139,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-14",
         },
+        {
+            "id": "SPEC-TIRE-RUBBER-BANBURY-SILICA-SILANIZATION-ARRHENIUS-EUDR",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze Banbury internal mixer rotor-tip flush optical pyrometers, instantaneous Specific Mechanical Energy (SME) torque integrals, headspace FTIR ethanol streams, and 14,000 segmented curing press ultrasonic streams while Cosmos DB in Fabric SSD DiskANN indexes 236M+ MDR Kamal-Sourour cure kinetic curves, Payne-effect delta-G' silanization trajectories, and 3D thick-shoulder Arrhenius Equivalent Cure Unit (ECU) tensors alongside Fabric Sustainability Data Solutions (SDS) EU EUDR natural rubber / Euro 7 abrasion ledgers and SQL Server on Azure Local (ALDO) at mixing/curing edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary 3D tread hydroplaning FEM and OEM JIS ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-14",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-15-r91",
-        "generated_at": "2026-11-15T03:14:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-15-r92",
+        "generated_at": "2026-11-15T03:28:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -14022,6 +14167,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R91 snapshot n=408 mean was 186.5ms; "
                     f"historical R90 snapshot n=404 mean was 188.0ms; "
                     f"historical R89 snapshot n=400 mean was 189.5ms; "
                     f"historical R88 snapshot n=396 mean was 191.0ms; "
@@ -14118,6 +14264,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R91 snapshot n=98 mean was {r91_ontology_sim_mean_ms}ms; "
                     f"historical R90 snapshot n=97 mean was {r90_ontology_sim_mean_ms}ms; "
                     f"historical R89 snapshot n=96 mean was {r89_ontology_sim_mean_ms}ms; "
                     f"historical R88 snapshot n=95 mean was {r88_ontology_sim_mean_ms}ms; "
@@ -14207,6 +14354,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r91_historical_denominators": {
+                    "r91_routing_matrix_n408_mean_ms": 186.5,
+                    "r91_ontology_simulations_n98_mean_ms": r91_ontology_sim_mean_ms,
+                },
                 "r90_historical_denominators": {
                     "r90_routing_matrix_n404_mean_ms": 188.0,
                     "r90_ontology_simulations_n97_mean_ms": r90_ontology_sim_mean_ms,
@@ -14625,6 +14776,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r91_98_simulation_mean_modeled_latency_ms": r91_ontology_sim_mean_ms,
             "r90_97_simulation_mean_modeled_latency_ms": r90_ontology_sim_mean_ms,
             "r89_96_simulation_mean_modeled_latency_ms": r89_ontology_sim_mean_ms,
             "r88_95_simulation_mean_modeled_latency_ms": r88_ontology_sim_mean_ms,
