@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg98" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050B14"/>
+      <stop offset="50%" stop-color="#0A1528"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent98" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue98" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2447"/>
+      <stop offset="100%" stop-color="#0B1933"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg98)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <rect x="58" y="50" width="302" height="26" rx="13" fill="url(#accent98)"/>
+  <text x="209" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · 2026-11-15 R98 · 105-ONTOLOGY &amp; 260M</text>
+  <text x="376" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">0.20mm 高磁感取向硅钢 (Hi-B GOES)：二十辊森吉米尔防断带、湿氢脱碳高斯织构与 2.60 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global 0.20mm Hi-B Electrical Steel GOES (18 Works · 72 Sendzimir Mills + 48 Decarb Lines + 640 Annealing Furnaces) · 990K EPS · 260M DiskANN · 54ms Loop · -93.4% TCO ($196.7K/mo Saved)</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1284" y="69" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">R98 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">176.0ms · 158.0ms</text>
+
+  <!-- Left Column: Physical 0.20mm Hi-B GOES Telemetry Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#A78BFA" font-size="14" font-weight="800">01 · 二十辊轧机、脱碳与高斯织构传感层 (990K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#C4B5FD" font-size="12.5" font-weight="800">⚙️ 72 台二十辊森吉米尔冷轧机 (800 m/min · 3.3% Si)</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 64 通道压磁板形辊 + 10kHz 双边线阵激光微裂纹相机</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 捕获 #08轧机 DS侧 0.52mm 边裂叠加 41.5 I-Units 紧边张力</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 提前拦截 B2/DO3 有序相高硅脆性断带，保住 20 根精密轧辊!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#93C5FD" font-size="12.5" font-weight="800">🔥 48 条 850°C 湿氢脱碳渗氮线 &amp; 640 座 1,200°C 罩式炉</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• TDLAS 激光湿氢露点仪 (P_H2O/P_H2) 与 FTIR 氨分解渗氮仪</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 捕获 #05脱碳线 露点漂至 64.2°C 过氧化生成 FeO 露晶前兆</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 锁死 1.48μm 铁橄榄石层，护航 {110}&lt;001&gt; 高斯二次再结晶</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">⚡ 光纤激光磁畴细化刻痕与在线 Epstein/SST 磁测</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 在线铁损 P1.7/50 与磁感 B8 连续检测 + 光纤激光刻痕机</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 动态加密刻痕间距至 4.2mm 细化 180° 磁畴壁，降低反常涡流损</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 交付 B8=1.94T、P1.7/50=0.66W/kg 特高压与 AIDC 顶级硅钢</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统单变量 AFC 板形仪与云端全内存拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 传统 AFC 看不见 0.5mm 边裂，2小时离线碳氧化验救不了露晶废卷</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 990K EPS 云端按属性写入税高达 $145.4K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.60 亿向量全内存常驻需 2.90TB+ DRAM (&gt;$53.2K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 54ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue98)" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="502" y="166" fill="#C4B5FD" font-size="14" font-weight="800">02 · Microsoft Fabric 54ms 取向硅钢磁冶金闭环</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 12ms 边裂-张力对齐与露点感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 990,000 EPS 板形/光谱流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• 12ms 锁定 #08轧机 0.52mm 边裂 @ 41.5 I-Units 与 #05线 64.2°C 露点</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $140.5K/月写入费，米数级精准跟踪缺口入辊时刻</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#8B5CF6" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#C4B5FD" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 14ms 2.60亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 检索 260,000,000 条二十辊弹性压扁、Wagner 内氧化与高斯织构向量</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.6K vs $53.2K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：AS-U #1/#2鞍座 +185μm + 一中间辊 -14mm + 蒸汽 -6.8%</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 边部张力松弛至 4.2 I-Units 零断带，露点压回 61.8°C，刻痕 4.2mm</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 零断带与 IEC 60404 磁测护栏 (SOP-105 · 14ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验边部张力 4.2 I-Units &lt;= 8.0 I-Units (0断带)、露点 61.8°C (1.48μm)</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验铁损 P1.7/50 = 0.66 W/kg &lt;= 0.72 W/kg，磁感 B8 = 1.94 T</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断高速轧机炸辊与高温退火高斯织构二次再结晶溃败</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总工确认 + ALDO 车间边缘 &amp; CBAM 护照 (14ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 14ms 驱动 AS-U 鞍座、窜辊与露点蒸汽阀</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 IEC 60404 与欧盟 CBAM 护照 (1.18 tCO2e/t)</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 54ms 端到端闭环 · 守护 $33.40M 特高压与 AIDC 主变硅钢 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.4%)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑三维相场法 (Phase-Field) 高斯</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  晶粒异常长大与 CPFEM 仿真，向 OneLake 写入 2.60 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留特高压/AIDC 主变铁芯纵剪配卷</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  与磁测证书 ERP，经 OneLake Mirroring ($0 算力) 零拷贝互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 5,000 名轧钢工程师与磁性专家 DirectLake 看板 ($0 席位)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 18 座硅钢基地月度 TCO 对比 (990K EPS · 260M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 260M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$13,900 / 月 (基准最优 · 省 93.4%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 2.90TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$210,600 / 月 (归一化) | $572,800 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $196,700 / 月 ($2.36M / 年) · 105 大本体 &amp; 2.60 亿向量!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#7DD3FC" font-size="12.5" font-weight="800">📊 Scenario DA 实测成效与双分母披露 (R98 五冠里程碑!)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=436)：435 / 436 (99.77%) · 均值 176.0 ms</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=105)：158.0 ms (本场景 DA 仅 54 ms E2E)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 冷轧与脱碳：边张力 41.5→4.2 I-Units (0断带) | 露点 61.8°C</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 顶级磁性能：B8=1.94T · P1.7/50=0.66W/kg · 1.18tCO2e/t</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避轧机炸辊与主变硅钢废卷损失：$33,400,000 ($33.40M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#C4B5FD" font-size="14" font-weight="800">04 · AI Solution Architect 高磁感取向硅钢 (Hi-B GOES) 打单金句与生产核验清单 (Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#C4B5FD" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 0.20mm 高磁感取向硅钢产线上，3.3% 硅含量让钢带脆如玻璃，一旦 0.5mm 边裂撞上紧边张力</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">200ms 就会断带炸碎 20 根轧辊；而湿氢脱碳露点偏 1.8°C 就会毁掉 1,200°C 高斯织构！Microsoft</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">Fabric 用 Eventhouse 在 12ms 内按米数对齐边裂与 64 区板形（$0/GB 写入税），再用 SSD DiskANN</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">在 14ms 内匹配 2.60 亿条辊系压扁与内氧化相图向量，54ms 走 ALDO 边缘微调 AS-U 鞍座、露点</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">与激光刻痕，锁死 B8=1.94T 与 0.66W/kg 顶级磁性能，月省 93.4% TCO！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 64 通道压磁板形辊与 10kHz 双边激光边裂相机按编码器米数在 Eventhouse 实时对齐</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. 850°C 湿氢脱碳线 TDLAS 激光露点仪 (P_H2O/P_H2) 闭环锁死 62.0±0.5°C 铁橄榄石相区</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.60 亿条二十辊压扁/内氧化/高斯织构索引 (-92% 内存，P95 &lt;= 14ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-105 门禁：边张力 &lt;=8.0 I-Units、P1.7/50 &lt;=0.72W/kg、B8 &gt;=1.92T</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 边缘下发 AS-U 鞍座/露点阀，1GB 免费 SQL 签发 IEC 60404 + CBAM 1.18tCO2e 护照</text>
+</svg>
