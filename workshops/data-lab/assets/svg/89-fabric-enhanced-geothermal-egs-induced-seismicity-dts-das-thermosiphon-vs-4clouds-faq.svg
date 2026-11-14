@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 960" width="100%" height="100%" style="background:#070b14;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="bg89" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#171426"/>
+      <stop offset="100%" stop-color="#0c192c"/>
+    </linearGradient>
+    <linearGradient id="hdr89" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="card89" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111c33"/>
+      <stop offset="100%" stop-color="#0a1222"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="960" fill="url(#bg89)"/>
+
+  <!-- Header -->
+  <rect x="28" y="22" width="1544" height="96" rx="16" fill="url(#hdr89)" opacity="0.94"/>
+  <text x="52" y="58" font-size="23" font-weight="800" fill="#ffffff">Data Lab R81 · Next-Gen Enhanced Geothermal (EGS), Induced-Seismicity TLP, 4,500m DTS/DAS &amp; 24/7 Firm CFE vs. 4 Clouds</text>
+  <text x="52" y="86" font-size="14" font-weight="600" fill="#fef3c7">180-Test &amp; 192M-Vector Milestone! · 28 EGS Fields (240 4,500m Doublets + 56 sCO2/ORC Blocks) · 970K EPS · 88ms Loop · -91.7% TCO · $27.45M SLA</text>
+  <rect x="1318" y="38" width="232" height="64" rx="12" fill="#06152d" stroke="#fbbf24" stroke-width="2"/>
+  <text x="1434" y="64" font-size="13" font-weight="700" fill="#fde68a" text-anchor="middle">SCENARIO CJ · DL-365..368</text>
+  <text x="1434" y="86" font-size="18" font-weight="800" fill="#6ee7b7" text-anchor="middle">88ms E2E · 192M Vec</text>
+
+  <!-- Left Column: Problem & Legacy Bottleneck -->
+  <rect x="28" y="136" width="490" height="390" rx="14" fill="url(#card89)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="48" y="168" font-size="18" font-weight="800" fill="#f87171">1. Why 15-Min Seismic Catalogs &amp; 4-Cloud Stitch Fail EGS</text>
+  <text x="48" y="196" font-size="13" font-weight="700" fill="#fca5a5">• Fault Pore-Pressure Diffusion &amp; Red-Light Shut-In (Mw ≥ 2.5):</text>
+  <text x="60" y="216" font-size="12" fill="#cbd5e1">High-pressure stimulation (85 L/s at 4,500m, 265°C granite) drives</text>
+  <text x="60" y="234" font-size="12" fill="#cbd5e1">Gutenberg-Richter b-value down from 1.15 to 0.68 in 15s. 15-min</text>
+  <text x="60" y="252" font-size="12" fill="#cbd5e1">surface seismic batches miss the precursor, triggering a regulatory</text>
+  <text x="60" y="270" font-size="12" fill="#cbd5e1">Red-Light field shut-in that strands a $450M geothermal asset.</text>
+
+  <text x="48" y="300" font-size="13" font-weight="700" fill="#fca5a5">• 36-Cluster Thermal Short-Circuiting &amp; Amorphous Silica Scaling:</text>
+  <text x="60" y="320" font-size="12" fill="#cbd5e1">Cluster-12 steals 41.5% of cold fluid (cooling rock 3x faster), while</text>
+  <text x="60" y="338" font-size="12" fill="#cbd5e1">cooled reinjection brine hits Silica Saturation Index SSI = 1.24 (&gt;1.00),</text>
+  <text x="60" y="356" font-size="12" fill="#cbd5e1">precipitating glassy SiO2 scale that permanently plugs the reservoir.</text>
+
+  <rect x="48" y="378" width="450" height="128" rx="10" fill="#1f1224" stroke="#f43f5e" stroke-width="1"/>
+  <text x="64" y="402" font-size="13" font-weight="800" fill="#fda4af">❌ Legacy 4-Cloud Stitched TCO: $146,800 / mo (Normalized)</text>
+  <text x="64" y="424" font-size="12" fill="#fecdd3">• Cloud IoT Per-Attribute/GB Ingest (970K EPS): $99,200 / mo</text>
+  <text x="64" y="444" font-size="12" fill="#fecdd3">• 192M-Vector RAM-Resident Cluster (2.6TB DRAM): $29,800 / mo</text>
+  <text x="64" y="464" font-size="12" fill="#fecdd3">• 3,700 Engineer &amp; Datacenter PPA Viewer Seats: $17,800 / mo</text>
+  <text x="64" y="486" font-size="12" font-weight="700" fill="#fb7185">• Full Internal Enterprise Scope: $393,200 / mo (480s latency)</text>
+
+  <!-- Center Column: Microsoft Fabric 88ms Closed-Loop Architecture -->
+  <rect x="538" y="136" width="524" height="390" rx="14" fill="url(#card89)" stroke="#f59e0b" stroke-width="2"/>
+  <text x="558" y="168" font-size="18" font-weight="800" fill="#fcd34d">2. Microsoft Fabric 88ms EGS Geomechanics &amp; CFE Loop</text>
+
+  <rect x="558" y="184" width="484" height="72" rx="10" fill="#0f243c" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="574" y="206" font-size="13" font-weight="800" fill="#7dd3fc">Step 1 · Eventhouse KQL (22ms · $0/GB Stream Write Tax)</text>
+  <text x="574" y="226" font-size="12" fill="#e2e8f0">Ingests 970K EPS (1kHz borehole geophones + 4,500m DTS/DAS + sCO2).</text>
+  <text x="574" y="244" font-size="12" fill="#6ee7b7">series_fit_line() isolates Well-Inj-04B b-value=0.68, Cluster-12 41.5% &amp; SSI=1.24</text>
+
+  <rect x="558" y="266" width="484" height="76" rx="10" fill="#132a2e" stroke="#10b981" stroke-width="1.2"/>
+  <text x="574" y="288" font-size="13" font-weight="800" fill="#6ee7b7">Step 2 · Fabric IQ + Cosmos SSD DiskANN (22ms · 192M Vectors)</text>
+  <text x="574" y="308" font-size="12" fill="#e2e8f0">Searches 192M 3D THM Coulomb stress (ΔCFS), DTS/DAS fracture-aperture</text>
+  <text x="574" y="326" font-size="12" fill="#fde68a">&amp; silica kinetics vectors (0.99 similarity at -92% DRAM cost).</text>
+
+  <rect x="558" y="352" width="484" height="74" rx="10" fill="#1e223d" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="574" y="374" font-size="13" font-weight="800" fill="#d8b4fe">Step 3 · Foundry IQ Guardrail SOP-088 (22ms Hard Physics Gate)</text>
+  <text x="574" y="394" font-size="12" fill="#e2e8f0">throttles pump -28% (85→61 L/s cyclic pulse: b→1.08, Mw=1.48≤2.00),</text>
+  <text x="574" y="412" font-size="12" fill="#6ee7b7">chokes ICD-Cluster-12 -34% (±4.1% flow) &amp; doses +18ppm inhibitor (SSI=0.94).</text>
+
+  <rect x="558" y="436" width="484" height="74" rx="10" fill="#0d2818" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="574" y="458" font-size="13" font-weight="800" fill="#86efac">Step 4 · ALDO Wellpad Edge + SDS 24/7 Firm CFE Commit (22ms)</text>
+  <text x="574" y="478" font-size="12" fill="#e2e8f0">Dispatches OPC-UA pump/e-ICD setpoints at wellpad edge &amp; mints</text>
+  <text x="574" y="496" font-size="12" fill="#fde047">3.8 gCO2e/kWh EnergyTag 24/7 CFE certificate into 1GB Free Fabric SQL.</text>
+
+  <!-- Right Column: Coexistence & Quantitative KPIs -->
+  <rect x="1082" y="136" width="490" height="390" rx="14" fill="url(#card89)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1102" y="168" font-size="18" font-weight="800" fill="#38bdf8">3. Better Together &amp; Benchmark Economics</text>
+
+  <rect x="1102" y="184" width="450" height="142" rx="10" fill="#0c1f38" stroke="#0284c7" stroke-width="1"/>
+  <text x="1118" y="208" font-size="13" font-weight="800" fill="#7dd3fc">🤝 Multi-Cloud Zero-Copy Coexistence Patterns</text>
+  <text x="1118" y="230" font-size="12" fill="#cbd5e1">• Azure HPC / Databricks GPU: Run 3D basin-scale coupled THMC</text>
+  <text x="1118" y="248" font-size="12" fill="#cbd5e1">  fracture-propagation sims &amp; raw DAS foundation models; sync</text>
+  <text x="1118" y="266" font-size="12" fill="#cbd5e1">  192M stress/aperture vectors to Fabric SSD DiskANN via OneLake.</text>
+  <text x="1118" y="288" font-size="12" fill="#cbd5e1">• Snowflake / SAP S/4HANA: Keep AI datacenter 24/7 PPA billing &amp;</text>
+  <text x="1118" y="306" font-size="12" fill="#cbd5e1">  well-casing ERP ledgers via OneLake Mirroring ($0 compute).</text>
+
+  <rect x="1102" y="340" width="450" height="166" rx="10" fill="#092218" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1118" y="364" font-size="14" font-weight="800" fill="#6ee7b7">✅ Fabric Unified TCO: $12,200 / mo (-91.7% Savings!)</text>
+  <text x="1118" y="386" font-size="12" fill="#d1fae5">• Monthly Savings: -$134,600 / mo ($146.8K → $12.2K Normalized)</text>
+  <text x="1118" y="406" font-size="12" fill="#d1fae5">• Internal Full Enterprise TCO: $32,700 vs $393,200 / mo</text>
+  <text x="1118" y="426" font-size="12" fill="#fde047">• Gutenberg-Richter b-Value: 0.68 → 1.08 (Peak Mw = 1.48 ≤ 2.00)</text>
+  <text x="1118" y="446" font-size="12" fill="#fde047">• 36-Cluster Flow Variance: ±4.1% (≤ ±8.0%) · SSI = 0.94 (0 Scale)</text>
+  <text x="1118" y="466" font-size="12" fill="#6ee7b7">• 24/7 Firm Baseload CFE: 3.8 gCO2e/kWh (100% NCG Reinjection)</text>
+  <text x="1118" y="488" font-size="13" font-weight="800" fill="#ffffff">• Protected Wellfield &amp; PPA SLA: $27,450,000 ($27.45M)</text>
+
+  <!-- Bottom Full-Width Table: 5-Cloud Decision Matrix -->
+  <rect x="28" y="544" width="1544" height="388" rx="14" fill="url(#card89)" stroke="#334155" stroke-width="1.5"/>
+  <text x="48" y="578" font-size="18" font-weight="800" fill="#f8fafc">4. Five-Cloud Selection Matrix for Next-Gen Enhanced Geothermal (EGS), TLP Seismicity &amp; 24/7 Firm CFE (DL-365..DL-368)</text>
+
+  <rect x="48" y="594" width="1504" height="36" rx="8" fill="#1e293b"/>
+  <text x="64" y="617" font-size="12" font-weight="800" fill="#93c5fd">Capability / Workload Dimension</text>
+  <text x="410" y="617" font-size="12" font-weight="800" fill="#6ee7b7">Microsoft Fabric (F64 + ALDO)</text>
+  <text x="730" y="617" font-size="12" font-weight="800" fill="#fcd34d">AWS (SiteWise + OpenSearch)</text>
+  <text x="1010" y="617" font-size="12" font-weight="800" fill="#93c5fd">GCP (Pub/Sub + BigQuery)</text>
+  <text x="1270" y="617" font-size="12" font-weight="800" fill="#f9a8d4">Databricks / Snowflake</text>
+
+  <!-- Row 1 -->
+  <line x1="48" y1="676" x2="1552" y2="676" stroke="#1e293b"/>
+  <text x="64" y="654" font-size="12" font-weight="700" fill="#e2e8f0">1. 970K EPS 1kHz Borehole Seismic &amp; DTS</text>
+  <text x="410" y="654" font-size="12" font-weight="700" fill="#6ee7b7">★ $0/GB Write Tax · 22ms KQL b-Value</text>
+  <text x="730" y="654" font-size="12" fill="#cbd5e1">$99.2K/mo per-attribute ingest fees</text>
+  <text x="1010" y="654" font-size="12" fill="#cbd5e1">Per-MB streaming insert charges</text>
+  <text x="1270" y="654" font-size="12" fill="#cbd5e1">DBX Photon DBU / Snow 60s lag</text>
+
+  <!-- Row 2 -->
+  <line x1="48" y1="726" x2="1552" y2="726" stroke="#1e293b"/>
+  <text x="64" y="704" font-size="12" font-weight="700" fill="#e2e8f0">2. 192M THM/DTS/Silica Vector Search</text>
+  <text x="410" y="704" font-size="12" font-weight="700" fill="#6ee7b7">★ Cosmos SSD DiskANN 22ms (-92% RAM)</text>
+  <text x="730" y="704" font-size="12" fill="#cbd5e1">$29.8K/mo RAM-heavy OpenSearch</text>
+  <text x="1010" y="704" font-size="12" fill="#cbd5e1">Vertex Vector node-hour billing</text>
+  <text x="1270" y="704" font-size="12" fill="#cbd5e1">Memory-indexed vector surcharges</text>
+
+  <!-- Row 3 -->
+  <line x1="48" y1="776" x2="1552" y2="776" stroke="#1e293b"/>
+  <text x="64" y="754" font-size="12" font-weight="700" fill="#e2e8f0">3. Traffic-Light (TLP) &amp; e-ICD Closed Loop</text>
+  <text x="410" y="754" font-size="12" font-weight="700" fill="#6ee7b7">★ 88ms E2E (b→1.08, ±4.1% Flow, 0 Scale)</text>
+  <text x="730" y="754" font-size="12" fill="#cbd5e1">3–15s multi-hop Lambda glue</text>
+  <text x="1010" y="754" font-size="12" fill="#cbd5e1">Cloud-only analytics (no wellpad PLC)</text>
+  <text x="1270" y="754" font-size="12" fill="#cbd5e1">Batch/micro-batch (no 22ms edge)</text>
+
+  <!-- Row 4 -->
+  <line x1="48" y1="826" x2="1552" y2="826" stroke="#1e293b"/>
+  <text x="64" y="804" font-size="12" font-weight="700" fill="#e2e8f0">4. EnergyTag 24/7 CFE &amp; 3,700 BI Viewers</text>
+  <text x="410" y="804" font-size="12" font-weight="700" fill="#6ee7b7">★ SDS 3.8g/kWh CFE + $0 Viewer Seats</text>
+  <text x="730" y="804" font-size="12" fill="#cbd5e1">Custom ETL + QuickSight seat tax</text>
+  <text x="1010" y="804" font-size="12" fill="#cbd5e1">Custom SQL + Looker viewer tax</text>
+  <text x="1270" y="804" font-size="12" fill="#cbd5e1">Extra Warehouse / BI seat costs</text>
+
+  <!-- Footer Banner -->
+  <rect x="48" y="844" width="1504" height="68" rx="10" fill="#091e3a" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="68" y="870" font-size="13" font-weight="800" fill="#fde68a">Architect Takeaway (Round 81 · 180-Unit-Test &amp; 192M-Vector Milestone):</text>
+  <text x="68" y="894" font-size="12" fill="#e2e8f0">Keep 3D basin-scale THMC reservoir simulations on Azure HPC/Databricks GPU and PPA billing in Snowflake/SAP, while standardizing on Microsoft Fabric + ALDO for the 88ms EGS Traffic-Light &amp; e-ICD loop (-91.7% TCO).</text>
+</svg>
