@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg87" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0B162C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent87" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="card87" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#13203B"/>
+      <stop offset="100%" stop-color="#0D172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg87)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091224" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111E38" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="58" y="50" width="276" height="26" rx="13" fill="url(#accent87)"/>
+  <text x="196" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">ROUND 79 · 360-SCENARIO &amp; 7MS MILESTONE (-91.5% TCO)</text>
+  <text x="350" y="68" fill="#F8FAFC" font-size="16" font-weight="800">千米深井钾盐矿 (Potash) 防透水微震、湿法磷酸 (WPA) 防结垢糊布、NPK 造粒与欧盟低镉 1.84 亿向量选型</text>
+  <text x="58" y="101" fill="#94A3B8" font-size="12.5">Deep-Shaft Potash &amp; Phosphate (24 Complexes · 140 1,100m Borers + 64 WPA Reactors + 120 NPK Drums) · Eventhouse 1ms + 184M SSD DiskANN 2ms + SDS EU FPR + ALDO (7ms E2E · Save $129.2K/mo)</text>
+  <rect x="1186" y="48" width="194" height="58" rx="10" fill="#0B1324" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1283" y="70" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">SCENARIO CH · DL-357..360</text>
+  <text x="1283" y="94" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">7ms · $26.75M SLA</text>
+
+  <!-- Row 1 Left: 4-Step 7ms Closed-Loop Pipeline -->
+  <rect x="40" y="138" width="840" height="360" rx="14" fill="url(#card87)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#34D399" font-size="14" font-weight="800" letter-spacing="0.4">01 · 7ms 地下 1,100m 钾矿防透水 × 湿法磷酸防细针晶糊布 × 欧盟低镉闭环 (Scenario CH: 1ms + 2ms + 2ms + 2ms)</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="182" width="800" height="68" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="74" y="196" width="86" height="40" rx="8" fill="#064E3B"/>
+  <text x="117" y="214" fill="#6EE7B7" font-size="11" font-weight="800" text-anchor="middle">STEP 1</text>
+  <text x="117" y="229" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">1 ms</text>
+  <text x="176" y="206" fill="#F8FAFC" font-size="13" font-weight="800">Eventhouse KQL 910K EPS 地下 1,100m 微震/瞬变电磁、在线拉曼游离酸与粒径流感知 ($0/GB 写入税)</text>
+  <text x="176" y="226" fill="#CBD5E1" font-size="11.5">• 24 座钾矿与磷复肥基地 (140 台深井采矿机 + 64 套磷酸槽 + 120 条造粒线) 实时入湖；免除每月 $95.2K 按属性工业云写入税</text>
+  <text x="176" y="242" fill="#34D399" font-size="11.5" font-weight="700">• series_fft() 1ms 锁定：Panel-14 顶板 180Hz 微震 (防水盐层缩至 26.2m) + WPA-03 反应槽游离硫酸根冲高至 3.42% (细针晶风险)</text>
+
+  <!-- Step 2 -->
+  <rect x="60" y="260" width="800" height="68" rx="10" fill="#0F1A30" stroke="#3B82F6" stroke-width="1.2"/>
+  <rect x="74" y="274" width="86" height="40" rx="8" fill="#1E3A8A"/>
+  <text x="117" y="292" fill="#93C5FD" font-size="11" font-weight="800" text-anchor="middle">STEP 2</text>
+  <text x="117" y="307" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">2 ms</text>
+  <text x="176" y="284" fill="#F8FAFC" font-size="13" font-weight="800">Fabric IQ 6 跳矿化孪生 × Cosmos DB 1.84 亿向量 (184M) SSD DiskANN 检索 (省 92% 内存)</text>
+  <text x="176" y="304" fill="#CBD5E1" font-size="11.5">• 检索 1.84 亿条盐岩微震矩张量、CaSO4-H3PO4-H2SO4 过饱和结晶相图与 NPK 转鼓种群平衡向量 (0.99 相似，仅 $2,070/月)</text>
+  <text x="176" y="320" fill="#60A5FA" font-size="11.5" font-weight="700">• 生成采矿机抬刀留设 32.0m 防水盐层、WPA-03 硫酸给料 -6.8% + 淡酸回流 +4.2% 及造粒蒸汽 -12% 处方</text>
+
+  <!-- Step 3 -->
+  <rect x="60" y="338" width="800" height="68" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <rect x="74" y="352" width="86" height="40" rx="8" fill="#581C87"/>
+  <text x="117" y="370" fill="#E9D5FF" font-size="11" font-weight="800" text-anchor="middle">STEP 3</text>
+  <text x="117" y="385" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">2 ms</text>
+  <text x="176" y="362" fill="#F8FAFC" font-size="13" font-weight="800">Foundry IQ 防水盐岩顶板、石膏粗晶防糊布与欧盟 EU FPR 2019/1009 低镉护栏 (SOP-086)</text>
+  <text x="176" y="382" fill="#CBD5E1" font-size="11.5">• 强制核验《FERTILIZER-POTASH-WPA-NPK-EUFPR-SOP-086》：确认防水盐岩厚度恢复至 32.0m &gt;= 28.0m (0.0 L/min 卤水渗漏)</text>
+  <text x="176" y="398" fill="#C084FC" font-size="11.5" font-weight="700">• 确认游离硫酸根回落至 2.42% (石膏 D50=92μm 零糊布)，NPK 成球率升至 89.4%，重金属镉 14.2 mg/kg P2O5 &lt;= 20mg/kg 绿标</text>
+
+  <!-- Step 4 -->
+  <rect x="60" y="416" width="800" height="68" rx="10" fill="#0F1A30" stroke="#F59E0B" stroke-width="1.2"/>
+  <rect x="74" y="430" width="86" height="40" rx="8" fill="#78350F"/>
+  <text x="117" y="448" fill="#FDE68A" font-size="11" font-weight="800" text-anchor="middle">STEP 4</text>
+  <text x="117" y="463" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">2 ms</text>
+  <text x="176" y="440" fill="#F8FAFC" font-size="13" font-weight="800">矿化总工 Teams 行动卡确认 + ALDO 地下 1,100m 硐室边缘 PLC 下发 + EU FPR 护照落盘</text>
+  <text x="176" y="460" fill="#CBD5E1" font-size="11.5">• 矿业与化工总工在 Teams 确认；井下与车间 ALDO 边缘下发 OPC-UA PLC 设定值，并归档欧盟 EU FPR 低镉护照</text>
+  <text x="176" y="476" fill="#FBBF24" font-size="11.5" font-weight="700">• 端到端 7ms 闭环！避免千米深井透水与 $8.2M 过滤机停产酸洗，守护 $26.75M SLA，月省 $129,200 (-91.5% TCO)</text>
+
+  <!-- Row 1 Right: TCO & KPI Inflection Panel -->
+  <rect x="898" y="138" width="502" height="360" rx="14" fill="url(#card87)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="918" y="166" fill="#34D399" font-size="14" font-weight="800">02 · 24 座矿化基地月度 TCO 与双分母基准拐点</text>
+
+  <rect x="918" y="182" width="462" height="92" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <text x="934" y="204" fill="#94A3B8" font-size="11.5" font-weight="700">归一化月度 TCO 对比 (910K EPS + 184M Vectors + 3,500 Users)</text>
+  <text x="934" y="228" fill="#34D399" font-size="13" font-weight="800">Microsoft Fabric 一体化闭环: $12,000 / 月 (省 91.5% · 360 场景里程碑！)</text>
+  <rect x="934" y="236" width="42" height="10" rx="5" fill="#10B981"/>
+  <text x="934" y="262" fill="#F87171" font-size="12" font-weight="700">传统按属性流 + 920GB 全内存向量栈: $141,200 / 月 (全栈 $376.5K)</text>
+
+  <rect x="918" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1030" y="308" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">路由矩阵均值 (Denominator A)</text>
+  <text x="1030" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">208.0 ms</text>
+  <text x="1030" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 360 (359/360 · 99.72%)</text>
+  <text x="1030" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R78 (210.0ms) 再降 2.0ms</text>
+
+  <rect x="1156" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1268" y="308" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">本体仿真均值 (Denominator B)</text>
+  <text x="1268" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">177.0 ms</text>
+  <text x="1268" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 86 行业本体 (Scenario CH = 7ms)</text>
+  <text x="1268" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R78 (179.0ms) 再降 2.0ms</text>
+
+  <rect x="918" y="394" width="462" height="90" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="934" y="416" fill="#C084FC" font-size="12" font-weight="800">核心深井安全与磷复肥提质收益 (Potash &amp; Phosphate Impact)</text>
+  <text x="934" y="436" fill="#E2E8F0" font-size="11.5">• 千米钾矿：留设 32.0m 完整防水盐层 (0 卤水突水，守护百亿矿井资产)</text>
+  <text x="934" y="454" fill="#E2E8F0" font-size="11.5">• 磷酸与造粒：游离酸稳在 2.42% (92μm 粗晶零糊布) + 成球率提至 89.4%</text>
+  <text x="934" y="472" fill="#34D399" font-size="11.5" font-weight="700">• 欧盟 EU FPR 2019/1009：14.2 mg/kg 低镉绿标护照 + $26.75M SLA</text>
+
+  <!-- Row 2 Full Width: 5-Cloud Architecture Matrix & Coexistence -->
+  <rect x="40" y="514" width="1360" height="350" rx="14" fill="url(#card87)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="542" fill="#60A5FA" font-size="14" font-weight="800">03 · 五大云平台在千米深井钾盐矿、湿法磷酸与 NPK 造粒场景的选型矩阵与 Better Together 共存打法</text>
+
+  <rect x="60" y="556" width="1320" height="30" rx="6" fill="#1E293B"/>
+  <text x="76" y="576" fill="#CBD5E1" font-size="11.5" font-weight="700">核心技术能力维度</text>
+  <text x="430" y="576" fill="#38BDF8" font-size="11.5" font-weight="800" text-anchor="middle">Microsoft Fabric (首选闭环)</text>
+  <text x="690" y="576" fill="#F97316" font-size="11.5" font-weight="700" text-anchor="middle">Databricks (盐丘蠕变模拟互补)</text>
+  <text x="930" y="576" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">Snowflake (MOP/DAP 长协互补)</text>
+  <text x="1140" y="576" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">AWS SiteWise / OpenSearch</text>
+  <text x="1310" y="576" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">GCP BigQuery / Vertex</text>
+
+  <text x="76" y="606" fill="#F8FAFC" font-size="11.5">1. 910K EPS 井下微震与拉曼流</text>
+  <text x="430" y="606" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 1ms KQL ($0/GB 写入税)</text>
+  <text x="690" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">350ms–2s (常驻 DBU 昂贵)</text>
+  <text x="930" y="606" fill="#94A3B8" font-size="11.5" text-anchor="middle">&gt;= 60s (Dynamic Tables 滞后)</text>
+  <text x="1140" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">250ms–2s ($95.2K/mo 属性税)</text>
+  <text x="1310" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">180ms–1.5s (按 MB 计费)</text>
+
+  <text x="76" y="636" fill="#F8FAFC" font-size="11.5">2. 1.84 亿 (184M) 结晶/造粒向量</text>
+  <text x="430" y="636" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 2ms SSD DiskANN ($2.07K/mo)</text>
+  <text x="690" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">23ms (Mosaic Vector 全内存)</text>
+  <text x="930" y="636" fill="#94A3B8" font-size="11.5" text-anchor="middle">35ms+ (Cortex 偏文档检索)</text>
+  <text x="1140" y="636" fill="#F87171" font-size="11.5" text-anchor="middle">25ms (920GB DRAM $35.1K/mo)</text>
+  <text x="1310" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">21ms (Vertex 内存节点昂贵)</text>
+
+  <text x="76" y="666" fill="#F8FAFC" font-size="11.5">3. 地下 1,100m 断网边缘与低镉账本</text>
+  <text x="430" y="666" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ ALDO 2ms 井下 + SDS EU FPR</text>
+  <text x="690" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于三维盐丘蠕变与包膜分子模拟</text>
+  <text x="930" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于全球 MOP/DAP 海运长协结算</text>
+  <text x="1140" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">需自建 Greengrass + 审计表</text>
+  <text x="1310" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">无地下千米矿井断网 SQL 控制面</text>
+
+  <text x="76" y="696" fill="#F8FAFC" font-size="11.5">4. 3,500 人并发看数与月度 TCO</text>
+  <text x="430" y="696" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ $12,000/月 ($0 席位 · 省 91.5%)</text>
+  <text x="690" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$137,800 / 月</text>
+  <text x="930" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$143,100 / 月</text>
+  <text x="1140" y="696" fill="#F87171" font-size="11.5" text-anchor="middle">$141,200 / 月</text>
+  <text x="1310" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$135,200 / 月</text>
+
+  <!-- Coexistence Playbook Boxes -->
+  <rect x="60" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#F97316" stroke-width="1.2"/>
+  <text x="78" y="744" fill="#FB923C" font-size="12.5" font-weight="800">模式 B 共存 · Fabric × Azure HPC / Databricks GPU (三维盐丘蠕变与控释包膜模拟)</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">• 三维盆地盐丘蠕变地质力学模型与生物基控释包膜高分子模拟保留在 Databricks GPU</text>
+  <text x="78" y="786" fill="#E2E8F0" font-size="11.5">• 产出的 1.84 亿条微震矩张量、磷酸石膏结晶相图与转鼓成球向量通过 OneLake Shortcuts 直通 SSD DiskANN</text>
+  <text x="78" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：免除 920GB 常驻内存向量税，2ms 匹配最优硫酸给料与采矿机姿态，消除过滤机糊布</text>
+
+  <rect x="732" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="750" y="744" fill="#38BDF8" font-size="12.5" font-weight="800">模式 A 共存 · Fabric × Snowflake / SAP S/4HANA ETRM (MOP/DAP 长协与欧盟低镉护照)</text>
+  <text x="750" y="766" fill="#E2E8F0" font-size="11.5">• 全球氯化钾 (MOP) / 磷酸二铵 (DAP) 海运长协、期货套期保值与贸易结算保留在 Snowflake / SAP</text>
+  <text x="750" y="786" fill="#E2E8F0" font-size="11.5">• 通过 OneLake Zero-ETL Mirroring ($0 算力) 与 Fabric SDS 欧盟 EU FPR 2019/1009 低镉账本无缝对齐</text>
+  <text x="750" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：7ms 井下与车间断网闭环并签发 14.2 mg/kg 低镉通关护照，3,500 名工程师享 $0 读者席位</text>
+</svg>
