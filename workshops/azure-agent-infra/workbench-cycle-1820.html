@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1820 · Priority Banding Workbench</title>
+<style>body{margin:0;background:#0b1024;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1820｜请求优先级分带工作台</h1>
+<div class="grid">
+<div class="card"><label>P0 保底份额(%)</label><input id="p0" type="range" min="10" max="80" value="38"><label>P1 弹性份额(%)</label><input id="p1" type="range" min="10" max="80" value="42"><label>P2 收缩阈值(%)</label><input id="p2" type="range" min="5" max="60" value="18"></div>
+<div class="card"><h3>分带稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先保障 P0，再调 P1，拥塞时优先收缩 P2。</div></div>
+<script>
+function evalS(){const a=+p0.value,b=+p1.value,c=+p2.value;const score=(a*0.25)+(b*0.18)-((c)*0.22)+10;if(score>19)state.textContent='关键链路保护充分';else if(score>14)state.textContent='可用但峰值风险偏高';else state.textContent='拥塞下存在关键链路退化风险';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['p0','p1','p2'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

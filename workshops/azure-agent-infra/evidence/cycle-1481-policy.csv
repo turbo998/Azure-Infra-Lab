@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cosmos-changefeed-checkpoint-lag-slo-violation saturation gate,172,184,0.9348,measured,cosmos-changefeed-checkpoint-lag-slo-fence mismatch replay + deterministic verification
+cosmos-changefeed-checkpoint-lag-slo-fence fence integrity guard,161,168,0.9583,measured,cosmos-changefeed-checkpoint-lag-slo-fence integrity logs
+tenant-scope cosmos-changefeed-checkpoint-lag-slo-fence dns-authorization fence,154,161,0.9565,measured,tenant cosmos-changefeed-checkpoint-lag-slo-fence fairness replay logs

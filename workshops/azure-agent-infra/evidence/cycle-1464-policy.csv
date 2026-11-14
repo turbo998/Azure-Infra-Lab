@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+mcp-sidecar-policy-version-skew-guard-violation saturation gate,172,184,0.9348,measured,mcp-sidecar-policy-version-skew-guard-fence mismatch replay + deterministic verification
+mcp-sidecar-policy-version-skew-guard-fence fence integrity guard,161,168,0.9583,measured,mcp-sidecar-policy-version-skew-guard-fence integrity logs
+tenant-scope mcp-sidecar-policy-version-skew-guard-fence dns-authorization fence,154,161,0.9565,measured,tenant mcp-sidecar-policy-version-skew-guard-fence fairness replay logs

@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1942 · APIM MCP Reentry Admission Budget Fairness</title>
+<style>body{margin:0;background:#09132a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1942｜MCP 重入准入预算公平工作台</h1>
+<div class="g"><div class="c">
+<label>重入抖振率(%)</label><input id="osc" type="range" min="0" max="30" value="4">
+<label>窗口 P95(ms)</label><input id="p95" type="range" min="120" max="1400" value="231">
+<label>信用回补滞后率(%)</label><input id="lag" type="range" min="0" max="40" value="4">
+</div><div class="c"><h3>Admission Budget 评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先压降重入抖振率，再收敛信用滞后，最后优化窗口 P95。</div></div>
+<script>
+function calc(){const o=+osc.value,l=+p95.value,g=+lag.value;const s=((30-o)*4.6)+((1400-l)*0.14)+((40-g)*3.1);state.textContent=s>312?'可生产：信用衰减与恢复编排稳定':(s>272?'可上线：建议继续压降滞后率':'风险偏高：需优化信用门限与配额策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['osc','p95','lag'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1856 · APIM Cost Breaker Workbench</title>
+<style>body{margin:0;background:#0b3054;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1856｜APIM 成本异常熔断工作台</h1>
+<div class="g">
+<div class="c"><label>成本斜率阈值</label><input id="s" type="range" min="1" max="30" value="9"><label>关键路径保留比例(%)</label><input id="k" type="range" min="40" max="100" value="92"><label>恢复冷却(min)</label><input id="c" type="range" min="1" max="60" value="16"></div>
+<div class="c"><h3>熔断策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先提升关键路径保留比例，再优化成本斜率阈值，最后调优冷却窗口。</div></div>
+<script>
+function calc(){const s=+document.getElementById('s').value,k=+document.getElementById('k').value,c=+document.getElementById('c').value;const v=((30-s)*1.1)+((k-40)*1.5)+((60-c)*0.9);if(v>120)state.textContent='止损与可用性平衡良好';else if(v>100)state.textContent='可上线，建议继续降低恢复抖动';else state.textContent='风险偏高，建议收紧分级熔断阈值';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['s','k','c'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

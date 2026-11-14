@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1880 · MCP Tool Catalog Consistency SLO Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1880｜MCP Tool Catalog Consistency 工作台</h1>
+<div class="g">
+<div class="c"><label>目录新鲜度 P95(ms)</label><input id="f95" type="range" min="20" max="3000" value="260"><label>版本错配率(%)</label><input id="mis" type="range" min="0" max="15" value="1"><label>补偿队列收敛时长(s)</label><input id="con" type="range" min="1" max="600" value="42"></div>
+<div class="c"><h3>目录一致性治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先降低错配率，再优化新鲜度与补偿收敛时长。</div></div>
+<script>
+function calc(){const f95=+document.getElementById('f95').value,mis=+document.getElementById('mis').value,con=+document.getElementById('con').value;const v=((3000-f95)*0.05)+((15-mis)*4.1)+((600-con)*0.18);if(v>188)state.textContent='可生产：目录一致性与收敛表现稳定';else if(v>158)state.textContent='可上线：建议继续缩短收敛时长';else state.textContent='风险偏高：需强化仲裁与补偿策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['f95','mis','con'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

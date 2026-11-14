@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+mcp-a2a-observability-correlation-lineage-violation saturation gate,172,184,0.9348,measured,mcp-a2a-observability-correlation-lineage-fence mismatch replay + deterministic verification
+mcp-a2a-observability-correlation-lineage-fence fence integrity guard,161,168,0.9583,measured,mcp-a2a-observability-correlation-lineage-fence integrity logs
+tenant-scope mcp-a2a-observability-correlation-lineage-fence dns-authorization fence,154,161,0.9565,measured,tenant mcp-a2a-observability-correlation-lineage-fence fairness replay logs

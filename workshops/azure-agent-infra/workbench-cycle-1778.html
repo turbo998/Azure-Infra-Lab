@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1778 · Snapshot Restore Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1778｜Snapshot Restore 与 Warm Pool 工作台</h1>
+<div class="grid"><div class="card"><label>warm pool 命中率（%）</label><input id="hit" type="range" min="0" max="100" value="69"><label>snapshot 恢复时延（ms）</label><input id="restore" type="range" min="50" max="5000" value="740"><label>峰值并发压力（0-100）</label><input id="burst" type="range" min="0" max="100" value="64"></div><div class="card"><h3>恢复链路判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先优化 restore 时延，再精调 warm 命中率与池规模。</div></div>
+<script>
+function evalRestore(){const h=+hit.value,r=+restore.value,b=+burst.value;const score=(h*0.5)+(1200/(r+80)*35)-(b*0.45);if(score>38){state.textContent='链路健康';detail.textContent=`恢复指数 ${score.toFixed(1)}`;}else if(score>24){state.textContent='临界';detail.textContent=`恢复指数 ${score.toFixed(1)}`;}else{state.textContent='高压';detail.textContent=`恢复指数 ${score.toFixed(1)}`;}}
+['hit','restore','burst'].forEach(id=>document.getElementById(id).addEventListener('input',evalRestore));evalRestore();
+</script></body></html>

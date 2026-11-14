@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1814 · Rollout Revert Budget Workbench</title>
+<style>body{margin:0;background:#0b1020;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1814｜发布回滚预算工作台</h1>
+<div class="grid">
+<div class="card"><label>阶段流量增量(%)</label><input id="step" type="range" min="1" max="50" value="10"><label>观测窗口(min)</label><input id="dwell" type="range" min="1" max="60" value="12"><label>错误预算阈值(%)</label><input id="burn" type="range" min="1" max="30" value="8"></div>
+<div class="card"><h3>预算门禁判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先收紧错误预算阈值，再调整每阶段流量增量，保持观测窗口可解释。</div></div>
+<script>
+function evalS(){const s=+step.value,d=+dwell.value,b=+burn.value;const risk=(s*0.9)+(12-d*0.3)+(b*1.1);if(risk<18)state.textContent='可推进';else if(risk<30)state.textContent='谨慎推进';else state.textContent='应触发回滚';detail.textContent=`风险分 ${risk.toFixed(2)}`;}
+['step','dwell','burn'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

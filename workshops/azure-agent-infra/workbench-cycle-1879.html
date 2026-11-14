@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1879 · Sandbox Egress Jitter Guardrails Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1879｜Sandbox Egress Jitter Guardrails 工作台</h1>
+<div class="g">
+<div class="c"><label>Jitter P95(ms)</label><input id="j95" type="range" min="1" max="500" value="42"><label>Jitter P99(ms)</label><input id="j99" type="range" min="1" max="1200" value="110"><label>抖动窗口成功率(%)</label><input id="succ" type="range" min="40" max="100" value="95"></div>
+<div class="c"><h3>出站抖动治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先压低 Jitter P99，再优化 Jitter P95，保持抖动窗口成功率高位。</div></div>
+<script>
+function calc(){const j95=+document.getElementById('j95').value,j99=+document.getElementById('j99').value,s=+document.getElementById('succ').value;const v=((500-j95)*0.22)+((1200-j99)*0.12)+((s-40)*1.45);if(v>188)state.textContent='可生产：抖动收敛与稳定性表现良好';else if(v>158)state.textContent='可上线：建议继续收敛 P99';else state.textContent='风险偏高：需强化旁路与重试调优';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['j95','j99','succ'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

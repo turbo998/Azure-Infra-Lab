@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+gateway_model_routing,APIM AI Gateway unified model API,1648,1431,synthetic,APIM service changelog 2026-06 + deterministic routing model
+mcp_tool_orchestration,APIM MCP server invocation path,682,600,synthetic,APIM + runtime I/O fairness policy release notes
+gateway_message_exchange,APIM Gateway + policy chain,636,569,synthetic,APIM Gateway GA changelog + deterministic load profile
+sandbox_terminal_stream,E2B streaming command/output path,1340,1174,synthetic,https://github.com/e2b-dev/e2b/releases/tag/e2b%402.63.0

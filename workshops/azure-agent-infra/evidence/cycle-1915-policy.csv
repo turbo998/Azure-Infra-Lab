@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+aca-kata-runtime-eviction-protection-ring-violation saturation gate,172,184,0.9348,measured,aca-kata-runtime-eviction-protection-ring-fence mismatch replay + deterministic verification
+aca-kata-runtime-eviction-protection-ring-fence fence integrity guard,161,168,0.9583,measured,aca-kata-runtime-eviction-protection-ring-fence integrity logs
+tenant-scope aca-kata-runtime-eviction-protection-ring-fence dns-authorization fence,154,161,0.9565,measured,tenant aca-kata-runtime-eviction-protection-ring-fence fairness replay logs

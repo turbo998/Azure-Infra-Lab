@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+a2a-idempotency-key-replay-protection-violation saturation gate,172,184,0.9348,measured,a2a-idempotency-key-replay-protection-fence mismatch replay + deterministic verification
+a2a-idempotency-key-replay-protection-fence fence integrity guard,161,168,0.9583,measured,a2a-idempotency-key-replay-protection-fence integrity logs
+tenant-scope a2a-idempotency-key-replay-protection-fence dns-authorization fence,154,161,0.9565,measured,tenant a2a-idempotency-key-replay-protection-fence fairness replay logs

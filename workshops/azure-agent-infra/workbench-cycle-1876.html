@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1876 · Tool Call Burst Smoothing Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1876｜Tool Call Burst Smoothing 工作台</h1>
+<div class="g">
+<div class="c"><label>P99 工具调用时延(ms)</label><input id="p99" type="range" min="50" max="2500" value="340"><label>关键任务成功率(%)</label><input id="succ" type="range" min="40" max="100" value="96"><label>下游超时率(%)</label><input id="to" type="range" min="0" max="20" value="2"></div>
+<div class="c"><h3>突发治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低超时率和 P99，再维持关键任务成功率高位。</div></div>
+<script>
+function calc(){const p99=+document.getElementById('p99').value,succ=+document.getElementById('succ').value,to=+document.getElementById('to').value;const v=((2500-p99)*0.07)+((succ-40)*1.35)+((20-to)*3.6);if(v>188)state.textContent='可生产：削峰与稳定性表现优秀';else if(v>158)state.textContent='可上线：建议继续优化 P99';else state.textContent='风险偏高：需强化平滑与回压联动';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['p99','succ','to'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

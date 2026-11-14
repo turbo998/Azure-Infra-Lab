@@ -1,0 +1,160 @@
+[
+  {
+    "title": "AI Gateway overview (Microsoft Learn)",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-gateway/overview",
+    "published_or_doc_date": "2026-10-23",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "APIM/AI Gateway product scope and MCP/Gateway governance semantics."
+  },
+  {
+    "title": "Azure API Management service changelog (June 2026)",
+    "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+    "published_or_doc_date": "2026-06-16 commit 02b1448",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Update changelog for June 2026 release (#71): Unified model API, Gateway GA, MCP observability/versioning, content safety for MCP/Gateway."
+  },
+  {
+    "title": "Azure Container Apps dynamic sessions docs",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "2026-03-31",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Hyper-V isolation, session pools, lifecycle and supported regions."
+  },
+  {
+    "title": "ACA Dynamic Sessions GA blog (historical maturity memory)",
+    "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561",
+    "published_or_doc_date": "2024-11-19",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "Background only; not counted as 2026 daily breakthrough evidence."
+  },
+  {
+    "title": "Firecracker release v1.17.0",
+    "url": "https://github.com/firecracker-microvm/firecracker/releases/tag/v1.17.0",
+    "published_or_doc_date": "2026-09-10",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Tiering API/huge pages/virtio updates for runtime efficiency."
+  },
+  {
+    "title": "Kata Containers release 4.3.1",
+    "url": "https://github.com/kata-containers/kata-containers/releases/tag/4.3.1",
+    "published_or_doc_date": "2026-10-21",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "runtime-rs track and storage/memory/network enhancements."
+  },
+  {
+    "title": "Wasmtime release v50.0.1",
+    "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1",
+    "published_or_doc_date": "2026-10-29",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Component model and security patch cadence relevant to Wasm sandbox paths."
+  },
+  {
+    "title": "E2B release e2b@2.63.0",
+    "url": "https://github.com/e2b-dev/E2B/releases/tag/e2b%402.63.0",
+    "published_or_doc_date": "2026-11-04 16:41:49",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Top1 daily runtime/sandbox signal: pipeline/output processing iteration with improved reliability envelope and stream path stability."
+  },
+  {
+    "title": "Microsoft Entra workload identities overview",
+    "url": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Zero-trust apim-mcp-latency-window-fence coherency baseline for APIM/AKS/ACA gateway-control lanes.",
+    "verification_label": "legacy_timestamp_unverified",
+    "verification_notes": "Official page timestamp was not independently pinned in this cycle."
+  },
+  {
+    "title": "Azure AI Foundry Agent Service docs",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Managed multi-agent runtime baseline for Agent-Native control plane comparison.",
+    "verification_label": "legacy_timestamp_unverified",
+    "verification_notes": "Official page timestamp was not independently pinned in this cycle."
+  },
+  {
+    "title": "AWS AgentCore overview",
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "AgentCore modular runtime/memory/gateway/identity/policy/observability baseline.",
+    "verification_label": "legacy_timestamp_unverified",
+    "verification_notes": "Official page timestamp was not independently pinned in this cycle."
+  },
+  {
+    "title": "AWS Bedrock Agents classic notice",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Classic mode maintenance position and AgentCore new-customer direction.",
+    "verification_label": "legacy_timestamp_unverified",
+    "verification_notes": "Official page timestamp was not independently pinned in this cycle."
+  },
+  {
+    "title": "Cloudflare Workers docs",
+    "url": "https://developers.cloudflare.com/workers/",
+    "published_or_doc_date": "last updated 2026-10-08",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Edge compute/isolation baseline for competitor comparison."
+  },
+  {
+    "title": "Cloudflare Workers AI docs",
+    "url": "https://developers.cloudflare.com/workers-ai/",
+    "published_or_doc_date": "last updated 2026-04-21",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Managed inference and edge model serving memory."
+  },
+  {
+    "title": "Cloudflare Workflows docs",
+    "url": "https://developers.cloudflare.com/workflows/",
+    "published_or_doc_date": "last updated 2026-09-18",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Workflow orchestration baseline for agent task lifecycles."
+  },
+  {
+    "title": "Cloudflare Browser Rendering docs",
+    "url": "https://developers.cloudflare.com/browser-rendering/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Browser Run/CUA execution substrate reference for competitor sandbox paths.",
+    "verification_label": "legacy_timestamp_unverified",
+    "verification_notes": "Official page timestamp was not independently pinned in this cycle."
+  },
+  {
+    "title": "Modal official guide",
+    "url": "https://modal.com/docs/guide",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Serverless sandbox and operational baseline for competitor matrix.",
+    "verification_label": "legacy_timestamp_unverified",
+    "verification_notes": "Official page timestamp was not independently pinned in this cycle."
+  },
+  {
+    "title": "GCP Vertex AI Agent Engine overview",
+    "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page; redirected)",
+    "fetched_at_utc": "2026-11-13T19:19:29.727118+00:00",
+    "source_label": "measured",
+    "notes": "Fully managed runtime, sessions + memory bank, secure sandbox execution, enterprise security matrix.",
+    "verification_label": "legacy_timestamp_unverified",
+    "verification_notes": "Official page timestamp was not independently pinned in this cycle."
+  }
+]

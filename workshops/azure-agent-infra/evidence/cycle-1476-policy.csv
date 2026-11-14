@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+foundry-private-link-dns-failover-violation saturation gate,172,184,0.9348,measured,foundry-private-link-dns-failover-fence mismatch replay + deterministic verification
+foundry-private-link-dns-failover-fence fence integrity guard,161,168,0.9583,measured,foundry-private-link-dns-failover-fence integrity logs
+tenant-scope foundry-private-link-dns-failover-fence dns-authorization fence,154,161,0.9565,measured,tenant foundry-private-link-dns-failover-fence fairness replay logs

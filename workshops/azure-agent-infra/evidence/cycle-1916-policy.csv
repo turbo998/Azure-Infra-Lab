@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-gateway-cache-poisoning-tenant-fence-violation saturation gate,172,184,0.9348,measured,apim-gateway-cache-poisoning-tenant-fence-fence mismatch replay + deterministic verification
+apim-gateway-cache-poisoning-tenant-fence-fence fence integrity guard,161,168,0.9583,measured,apim-gateway-cache-poisoning-tenant-fence-fence integrity logs
+tenant-scope apim-gateway-cache-poisoning-tenant-fence-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-gateway-cache-poisoning-tenant-fence-fence fairness replay logs

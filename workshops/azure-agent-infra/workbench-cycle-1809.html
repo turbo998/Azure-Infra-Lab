@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1809 · Tenant-Fair Retry Budget Workbench</title>
+<style>body{margin:0;background:#0a1322;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1809｜租户公平重试预算工作台</h1>
+<div class="grid"><div class="card"><label>高优租户预算(次)</label><input id="high" type="range" min="1" max="200" value="64"><label>低优租户预算(次)</label><input id="low" type="range" min="1" max="200" value="22"><label>全局退避窗口(ms)</label><input id="backoff" type="range" min="10" max="3000" value="360"></div><div class="card"><h3>公平稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先保障高优预算，再逐步收敛低优重试窗口。</div></div>
+<script>
+function evalR(){const h=+high.value,l=+low.value,b=+backoff.value;const score=(h*0.18)-(l*0.05)-(b*0.01)+12;if(score>12)state.textContent='稳态良好';else if(score>8)state.textContent='可优化';else state.textContent='风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['high','low','backoff'].forEach(id=>document.getElementById(id).addEventListener('input',evalR));evalR();
+</script></body></html>

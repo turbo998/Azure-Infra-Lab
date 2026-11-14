@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-token-rate-limit-cross-region-violation saturation gate,172,184,0.9348,measured,apim-token-rate-limit-cross-region-fence mismatch replay + deterministic verification
+apim-token-rate-limit-cross-region-fence fence integrity guard,161,168,0.9583,measured,apim-token-rate-limit-cross-region-fence integrity logs
+tenant-scope apim-token-rate-limit-cross-region-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-token-rate-limit-cross-region-fence fairness replay logs

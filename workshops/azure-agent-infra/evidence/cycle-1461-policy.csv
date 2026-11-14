@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+aks-gpu-fragmentation-binpack-defrag-violation saturation gate,172,184,0.9348,measured,aks-gpu-fragmentation-binpack-defrag-fence mismatch replay + deterministic verification
+aks-gpu-fragmentation-binpack-defrag-fence fence integrity guard,161,168,0.9583,measured,aks-gpu-fragmentation-binpack-defrag-fence integrity logs
+tenant-scope aks-gpu-fragmentation-binpack-defrag-fence dns-authorization fence,154,161,0.9565,measured,tenant aks-gpu-fragmentation-binpack-defrag-fence fairness replay logs

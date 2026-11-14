@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1756 · PTU Overflow Workbench</title>
+<style>
+body{font-family:Segoe UI,Microsoft YaHei,sans-serif;margin:0;background:#0b1220;color:#e2e8f0}
+.wrap{max-width:1100px;margin:0 auto;padding:24px} .card{background:#111827;border:1px solid #334155;border-radius:12px;padding:16px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px} label{display:block;margin:8px 0 4px} input{width:100%}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#1d4ed8} .ok{color:#86efac} .warn{color:#fbbf24} .bad{color:#fca5a5}
+</style></head><body><div class="wrap">
+<h1>Cycle 1756｜跨区 PTU 溢出与 APIM 智能回退工作台</h1>
+<div class="card"><span class="badge">Local Commit Only</span> Foundry/ACA 混合承载下，模拟主区 PTU 饱和后的跨区路由与回切门槛。</div>
+<div class="grid">
+<div class="card">
+<label>Primary PTU 利用率（%）</label><input id="ptu" type="range" min="40" max="100" value="82">
+<label>p95 延迟（ms）</label><input id="p95" type="range" min="120" max="1200" value="480">
+<label>5xx/429 异常率（%）</label><input id="err" type="range" min="0" max="20" value="7">
+</div>
+<div class="card">
+<h3>路由判定</h3>
+<p id="decision"></p>
+<p id="rationale"></p>
+<ul>
+<li>触发：PTU>80 且 p95 超预算且异常率上升</li>
+<li>回切：主区连续稳定 + 5% 探针成功</li>
+<li>冻结：回切失败后 10 分钟防抖</li>
+</ul>
+</div></div>
+<div class="card"><h3>证据引用</h3><p>cycle-1756-latency.csv / throughput.csv / policy.csv / benchmark.json</p></div>
+</div>
+<script>
+function evalRoute(){
+  const ptu=+document.getElementById('ptu').value;
+  const p95=+document.getElementById('p95').value;
+  const err=+document.getElementById('err').value;
+  const d=document.getElementById('decision');
+  const r=document.getElementById('rationale');
+  const overflow=(ptu>80 && p95>400 && err>5);
+  if(overflow){d.className='warn';d.textContent='建议进入跨区溢出（Canary 5% -> 20% -> 50%）';r.textContent=`触发因子: PTU=${ptu}%, p95=${p95}ms, err=${err}%`;}
+  else if(ptu<70 && p95<280 && err<2){d.className='ok';d.textContent='建议回切主区（Failback Window 可执行）';r.textContent='主区指标稳定，允许探针回切。';}
+  else{d.className='bad';d.textContent='保持当前路由并继续观察';r.textContent='指标未同时满足溢出或回切条件。';}
+}
+['ptu','p95','err'].forEach(id=>document.getElementById(id).addEventListener('input',evalRoute));
+evalRoute();
+</script></body></html>

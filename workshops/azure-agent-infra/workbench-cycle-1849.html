@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1849 · Session Resume Handoff Workbench</title>
+<style>body{margin:0;background:#0b2946;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1849｜ACA 会话恢复交接工作台</h1>
+<div class="g">
+<div class="c"><label>快照大小(KB)</label><input id="s" type="range" min="10" max="2000" value="220"><label>恢复 P95(ms)</label><input id="p" type="range" min="50" max="3000" value="680"><label>重放拦截率(%)</label><input id="r" type="range" min="50" max="100" value="96"></div>
+<div class="c"><h3>恢复链路健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先减小快照尺寸，再压缩恢复 P95，最后提升重放拦截率。</div></div>
+<script>
+function calc(){const s=+document.getElementById('s').value,p=+document.getElementById('p').value,r=+document.getElementById('r').value;const v=((2000-s)*0.05)+((3000-p)*0.025)+((r-50)*1.35);if(v>120)state.textContent='恢复效率与安全边界平衡良好';else if(v>100)state.textContent='可上线，建议继续压缩恢复时延';else state.textContent='风险偏高，建议收紧交接令牌与快照范围';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['s','p','r'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

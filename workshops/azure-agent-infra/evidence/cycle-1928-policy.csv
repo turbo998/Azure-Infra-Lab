@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-fallback-cooldown-hysteresis-fairness-violation saturation gate,186,198,0.9394,measured,apim-mcp-fallback-cooldown-hysteresis-fairness-guard mismatch replay + deterministic verification
+apim-mcp-fallback-cooldown-hysteresis-fairness-guard fence integrity guard,173,180,0.9611,measured,apim-mcp-fallback-cooldown-hysteresis-fairness-guard integrity logs
+tenant-scope apim-mcp-fallback-cooldown-hysteresis-fairness-guard dns-authorization fence,158,165,0.9576,measured,tenant apim-mcp-fallback-cooldown-hysteresis-fairness-guard fairness replay logs

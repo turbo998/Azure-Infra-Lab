@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-policy-bundle-signature-rollout-violation saturation gate,172,184,0.9348,measured,apim-policy-bundle-signature-rollout-fence mismatch replay + deterministic verification
+apim-policy-bundle-signature-rollout-fence fence integrity guard,161,168,0.9583,measured,apim-policy-bundle-signature-rollout-fence integrity logs
+tenant-scope apim-policy-bundle-signature-rollout-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-policy-bundle-signature-rollout-fence fairness replay logs

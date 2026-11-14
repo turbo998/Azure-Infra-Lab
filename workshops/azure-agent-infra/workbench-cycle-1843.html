@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1843 · KEDA Cold Pool Workbench</title>
+<style>body{margin:0;background:#0b233a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1843｜KEDA 冷池补位工作台</h1>
+<div class="g">
+<div class="c"><label>队列深度峰值</label><input id="q" type="range" min="10" max="500" value="170"><label>预热实例数</label><input id="c" type="range" min="0" max="80" value="22"><label>缩容冷却(min)</label><input id="d" type="range" min="1" max="60" value="12"></div>
+<div class="c"><h3>伸缩策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先增加预热实例，再按队列峰值校准阈值，最后优化缩容冷却。</div></div>
+<script>
+function calc(){const q=+document.getElementById('q').value,c=+document.getElementById('c').value,d=+document.getElementById('d').value;const s=((500-q)*0.12)+(c*0.95)+((60-d)*0.45);if(s>78)state.textContent='冷池补位与成本平衡良好';else if(s>62)state.textContent='可上线，建议继续压缩峰值排队';else state.textContent='风险偏高，建议回调阈值并扩容基线';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['q','c','d'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

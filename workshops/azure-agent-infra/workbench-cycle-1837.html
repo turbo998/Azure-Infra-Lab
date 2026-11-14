@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1837 · Canary Revert Threshold Workbench</title>
+<style>body{margin:0;background:#0a1c2e;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1837｜策略金丝雀回滚阈值工作台</h1>
+<div class="grid">
+<div class="card"><label>错误率阈值(%)</label><input id="err" type="range" min="1" max="30" value="6"><label>延迟阈值(ms)</label><input id="lat" type="range" min="50" max="3000" value="680"><label>观察窗口(min)</label><input id="win" type="range" min="1" max="60" value="8"></div>
+<div class="card"><h3>放量稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先收紧错误率阈值，再校准延迟阈值，最后优化观察窗口。</div></div>
+<script>
+function evalS(){const e=+err.value,l=+lat.value,w=+win.value;const score=((30-e)*0.5)+((3000-l)*0.002)+((60-w)*0.15)+10;if(score>22)state.textContent='门禁与回滚平衡良好';else if(score>16)state.textContent='可用但误判风险偏高';else state.textContent='放量风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['err','lat','win'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

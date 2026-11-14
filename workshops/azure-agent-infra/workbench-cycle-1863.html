@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1863 · North-South Egress Mesh Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1863｜ACA 南北向出口 Mesh 工作台</h1>
+<div class="g">
+<div class="c"><label>出口策略命中率(%)</label><input id="h" type="range" min="40" max="100" value="93"><label>P95出口时延(ms)</label><input id="p" type="range" min="10" max="1200" value="180"><label>回退触发率(%)</label><input id="f" type="range" min="0" max="20" value="2"></div>
+<div class="c"><h3>出口治理健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先提升策略命中率，再降低P95，最后收敛回退触发率。</div></div>
+<script>
+function calc(){const h=+document.getElementById('h').value,p=+document.getElementById('p').value,f=+document.getElementById('f').value;const v=((h-40)*1.5)+((1200-p)*0.08)+((20-f)*1.9);if(v>160)state.textContent='治理与可用性平衡良好';else if(v>132)state.textContent='可上线，建议继续降低出口时延';else state.textContent='风险偏高，建议收紧策略并优化回退';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['h','p','f'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

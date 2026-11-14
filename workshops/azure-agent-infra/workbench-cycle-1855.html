@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1855 · A2A Idempotency Window Workbench</title>
+<style>body{margin:0;background:#0b2f52;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1855｜A2A 幂等窗口工作台</h1>
+<div class="g">
+<div class="c"><label>交互窗口(min)</label><input id="i" type="range" min="1" max="60" value="12"><label>批处理窗口(min)</label><input id="b" type="range" min="10" max="720" value="180"><label>误拦截率(%)</label><input id="f" type="range" min="0" max="20" value="2"></div>
+<div class="c"><h3>幂等策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先降低误拦截率，再优化交互窗口，最后微调批处理窗口。</div></div>
+<script>
+function calc(){const i=+document.getElementById('i').value,b=+document.getElementById('b').value,f=+document.getElementById('f').value;const v=((60-i)*0.9)+((720-b)*0.08)+((20-f)*2.2);if(v>120)state.textContent='重放拦截与体验平衡良好';else if(v>100)state.textContent='可上线，建议继续收敛批处理窗口';else state.textContent='风险偏高，建议收紧策略并复测';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['i','b','f'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

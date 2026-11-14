@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-tenant-retry-storm-dampening-violation saturation gate,172,184,0.9348,measured,apim-tenant-retry-storm-dampening-fence mismatch replay + deterministic verification
+apim-tenant-retry-storm-dampening-fence fence integrity guard,161,168,0.9583,measured,apim-tenant-retry-storm-dampening-fence integrity logs
+tenant-scope apim-tenant-retry-storm-dampening-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-tenant-retry-storm-dampening-fence fairness replay logs

@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1770 · Gateway Budget Guardrails Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1770｜Gateway 成本护栏工作台</h1>
+<div class="grid"><div class="card"><label>会话预算（USD）</label><input id="sb" type="range" min="1" max="200" value="28"><label>租户预算（USD）</label><input id="tb" type="range" min="10" max="5000" value="960"><label>当前消耗率（%）</label><input id="burn" type="range" min="0" max="150" value="74"></div><div class="card"><h3>预算执行判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：消耗率超过 85% 时先对非关键路径降级，再评估预算扩容。</div></div>
+<script>
+function evalBudget(){const s=+sb.value,t=+tb.value,b=+burn.value;const score=(s/3)+(t/180)-(b*0.9);if(score>8){state.textContent='预算健康';detail.textContent=`护栏指数 ${score.toFixed(1)}`;}else if(score>0){state.textContent='临界，建议降级';detail.textContent=`护栏指数 ${score.toFixed(1)}`;}else{state.textContent='超压，触发强制策略';detail.textContent=`护栏指数 ${score.toFixed(1)}`;}}
+['sb','tb','burn'].forEach(id=>document.getElementById(id).addEventListener('input',evalBudget));evalBudget();
+</script></body></html>

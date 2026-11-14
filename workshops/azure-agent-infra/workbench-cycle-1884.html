@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1884 · Mesh Egress Fail-fast Routing Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1884｜Mesh Egress Fail-fast Routing 工作台</h1>
+<div class="g">
+<div class="c"><label>故障检测时延(ms)</label><input id="det" type="range" min="10" max="1500" value="140"><label>切换完成时延(ms)</label><input id="sw" type="range" min="20" max="3000" value="220"><label>切换抖动率(%)</label><input id="flap" type="range" min="0" max="20" value="2"></div>
+<div class="c"><h3>Fail-fast 路由评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先降低检测/切换时延，再压低抖动率。</div></div>
+<script>
+function calc(){const det=+document.getElementById('det').value,sw=+document.getElementById('sw').value,flap=+document.getElementById('flap').value;const v=((1500-det)*0.11)+((3000-sw)*0.05)+((20-flap)*3.5);if(v>188)state.textContent='可生产：故障收敛与切换稳定';else if(v>158)state.textContent='可上线：建议继续收敛切换时延';else state.textContent='风险偏高：需强化阈值与冷却窗口';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['det','sw','flap'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

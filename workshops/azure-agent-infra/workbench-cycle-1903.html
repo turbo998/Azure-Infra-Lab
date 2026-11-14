@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1903 · APIM Multi-Region Quota Jitter</title>
+<style>body{margin:0;background:#091226;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1903｜APIM Multi-Region Quota Jitter 工作台</h1>
+<div class="g"><div class="c">
+<label>切流拒绝峰值(%)</label><input id="peak" type="range" min="0" max="35" value="8">
+<label>配额偏差收敛时间(s)</label><input id="conv" type="range" min="5" max="300" value="54">
+<label>重试放大率(x)</label><input id="retry" type="range" min="1" max="8" value="2">
+</div><div class="c"><h3>跨区配额抖动治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先压低拒绝峰值，再缩短偏差收敛时间。</div></div>
+<script>
+function calc(){const p=+peak.value,c=+conv.value,r=+retry.value;const s=((35-p)*3.2)+((300-c)*0.7)+((8-r)*20);state.textContent=s>250?'可生产：跨区抖动控制稳定':(s>210?'可上线：建议继续收敛重试放大率':'风险偏高：需强化对账窗口与退避策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['peak','conv','retry'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

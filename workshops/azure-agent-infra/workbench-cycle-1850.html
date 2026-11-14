@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1850 · APIM Token Shaping Workbench</title>
+<style>body{margin:0;background:#0b2a48;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1850｜APIM Token Shaping 护栏工作台</h1>
+<div class="g">
+<div class="c"><label>租户预算利用率(%)</label><input id="u" type="range" min="20" max="150" value="82"><label>突发削顶强度</label><input id="c" type="range" min="1" max="20" value="9"><label>关键路径成功率(%)</label><input id="s" type="range" min="70" max="100" value="97"></div>
+<div class="c"><h3>护栏健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先提升关键路径成功率，再优化预算利用率，最后微调削顶强度。</div></div>
+<script>
+function calc(){const u=+document.getElementById('u').value,c=+document.getElementById('c').value,s=+document.getElementById('s').value;const v=((150-u)*0.55)+((20-c)*1.1)+((s-70)*1.8);if(v>110)state.textContent='成本与体验平衡良好';else if(v>92)state.textContent='可上线，建议继续优化预算波动';else state.textContent='风险偏高，建议收紧非关键流量';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['u','c','s'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

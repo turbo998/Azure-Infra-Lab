@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1773 · Entra OBO Boundary Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1773｜Entra OBO 边界工作台</h1>
+<div class="grid"><div class="card"><label>scope 粒度（0-100）</label><input id="scope" type="range" min="0" max="100" value="74"><label>委托跳数上限</label><input id="hop" type="range" min="1" max="5" value="1"><label>策略重检覆盖（%）</label><input id="recheck" type="range" min="0" max="100" value="82"></div><div class="card"><h3>边界治理判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：优先收紧 hop limit 与 scope，再调优性能。</div></div>
+<script>
+function evalObo(){const s=+scope.value,h=+hop.value,r=+recheck.value;const score=(s*0.45)+(r*0.5)-((h-1)*18);if(score>68){state.textContent='边界健康';detail.textContent=`治理指数 ${score.toFixed(1)}`;}else if(score>50){state.textContent='临界，建议加固';detail.textContent=`治理指数 ${score.toFixed(1)}`;}else{state.textContent='高风险，需收紧';detail.textContent=`治理指数 ${score.toFixed(1)}`;}}
+['scope','hop','recheck'].forEach(id=>document.getElementById(id).addEventListener('input',evalObo));evalObo();
+</script></body></html>

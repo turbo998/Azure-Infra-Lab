@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-tenant-fairshare-retry-budget-violation saturation gate,172,184,0.9348,measured,apim-tenant-fairshare-retry-budget-fence mismatch replay + deterministic verification
+apim-tenant-fairshare-retry-budget-fence fence integrity guard,161,168,0.9583,measured,apim-tenant-fairshare-retry-budget-fence integrity logs
+tenant-scope apim-tenant-fairshare-retry-budget-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-tenant-fairshare-retry-budget-fence fairness replay logs

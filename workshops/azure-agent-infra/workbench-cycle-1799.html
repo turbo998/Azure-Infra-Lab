@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1799 · MCP Session Affinity Workbench</title>
+<style>body{margin:0;background:#0a1224;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1799｜MCP 会话亲和工作台</h1>
+<div class="grid"><div class="card"><label>租约 TTL(秒)</label><input id="ttl" type="range" min="5" max="300" value="48"><label>迁移阈值(%)</label><input id="mig" type="range" min="10" max="90" value="62"><label>热点削峰比例(%)</label><input id="shed" type="range" min="0" max="60" value="18"></div><div class="card"><h3>亲和稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先保证迁移有序，再优化热点削峰阈值。</div></div>
+<script>
+function evalA(){const t=+ttl.value,m=+mig.value,s=+shed.value;const score=(t*0.11)+(m*0.09)-(s*0.14);if(score>11)state.textContent='稳态良好';else if(score>7)state.textContent='可优化';else state.textContent='风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['ttl','mig','shed'].forEach(id=>document.getElementById(id).addEventListener('input',evalA));evalA();
+</script></body></html>

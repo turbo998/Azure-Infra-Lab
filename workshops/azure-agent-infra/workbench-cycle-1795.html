@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1795 · Cross-Region Replay Workbench</title>
+<style>body{margin:0;background:#0a1122;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1795｜跨区域会话重放工作台</h1>
+<div class="grid"><div class="card"><label>复制延迟(ms)</label><input id="lag" type="range" min="10" max="2000" value="280"><label>快照间隔(秒)</label><input id="snap" type="range" min="5" max="600" value="60"><label>副作用调用占比(%)</label><input id="side" type="range" min="0" max="70" value="16"></div><div class="card"><h3>重放稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先压低复制延迟与快照间隔，再收敛副作用白名单。</div></div>
+<script>
+function evalR(){const l=+lag.value,s=+snap.value,x=+side.value;const score=22-(l*0.006)-(s*0.015)-(x*0.18);if(score>10)state.textContent='稳态良好';else if(score>5)state.textContent='可灰度';else state.textContent='高风险';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['lag','snap','side'].forEach(id=>document.getElementById(id).addEventListener('input',evalR));evalR();
+</script></body></html>

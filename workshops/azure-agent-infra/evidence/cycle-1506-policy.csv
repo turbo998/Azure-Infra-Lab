@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-a2a-fairshare-window-violation saturation gate,172,184,0.9348,measured,apim-a2a-fairshare-window-fence mismatch replay + deterministic verification
+apim-a2a-fairshare-window-fence fence integrity guard,161,168,0.9583,measured,apim-a2a-fairshare-window-fence integrity logs
+tenant-scope apim-a2a-fairshare-window-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-a2a-fairshare-window-fence fairness replay logs

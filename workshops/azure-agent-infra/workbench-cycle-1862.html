@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1862 · JWT Claim Shaping Workbench</title>
+<style>body{margin:0;background:#0b3660;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1862｜APIM JWT Claim Shaping 工作台</h1>
+<div class="g">
+<div class="c"><label>保留 Claim 数量</label><input id="c" type="range" min="2" max="40" value="11"><label>鉴权P95(ms)</label><input id="p" type="range" min="5" max="500" value="72"><label>敏感暴露指数</label><input id="e" type="range" min="1" max="100" value="18"></div>
+<div class="c"><h3>Claim 策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先降低敏感暴露指数，再减少保留 claim 数量，最后压缩鉴权P95。</div></div>
+<script>
+function calc(){const c=+document.getElementById('c').value,p=+document.getElementById('p').value,e=+document.getElementById('e').value;const v=((40-c)*1.5)+((500-p)*0.18)+((100-e)*1.15);if(v>190)state.textContent='安全与性能平衡良好';else if(v>160)state.textContent='可上线，建议继续收敛暴露面';else state.textContent='风险偏高，建议收紧claim投影';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['c','p','e'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

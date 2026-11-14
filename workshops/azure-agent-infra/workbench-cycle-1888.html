@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1888 · Token Window Fairness Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1888｜Token Window Fairness Admission 工作台</h1>
+<div class="g">
+<div class="c"><label>租户 token 方差(%)</label><input id="var" type="range" min="0" max="40" value="9"><label>关键路径保留命中率(%)</label><input id="hit" type="range" min="40" max="100" value="95"><label>债务回补触发率(%)</label><input id="debt" type="range" min="0" max="35" value="8"></div>
+<div class="c"><h3>公平准入治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低 token 方差，再优化债务回补触发率。</div></div>
+<script>
+function calc(){const v=+document.getElementById('var').value,h=+document.getElementById('hit').value,d=+document.getElementById('debt').value;const s=((40-v)*2.3)+((h-40)*1.2)+((35-d)*1.9);if(s>188)state.textContent='可生产：公平准入与关键保障稳定';else if(s>158)state.textContent='可上线：建议继续收敛租户方差';else state.textContent='风险偏高：需强化配额与债务策略';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['var','hit','debt'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1842 · Semantic Cache Eviction Workbench</title>
+<style>body{margin:0;background:#0b2238;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1842｜APIM 语义缓存逐出工作台</h1>
+<div class="g">
+<div class="c"><label>命中率(%)</label><input id="hit" type="range" min="20" max="95" value="72"><label>错误命中率(%)</label><input id="miss" type="range" min="0" max="25" value="5"><label>漂移阈值敏感度</label><input id="drift" type="range" min="1" max="20" value="9"></div>
+<div class="c"><h3>缓存策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先降低错误命中，再提升命中率，最后微调漂移阈值敏感度。</div></div>
+<script>
+function calc(){const h=+hit.value,m=+miss.value,d=+drift.value;const s=((h-20)*0.75)+((25-m)*1.1)+((20-d)*0.65);if(s>72)state.textContent='命中、正确性与成本平衡良好';else if(s>58)state.textContent='可上线，建议继续降低错误命中';else state.textContent='风险偏高，建议收紧逐出与失效策略';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['hit','miss','drift'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

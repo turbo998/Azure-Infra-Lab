@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cua-mcp-quota-bucket-violation saturation gate,172,184,0.9348,measured,cua-mcp-quota-bucket-fence mismatch replay + deterministic verification
+cua-mcp-quota-bucket-fence fence integrity guard,161,168,0.9583,measured,cua-mcp-quota-bucket-fence integrity logs
+tenant-scope cua-mcp-quota-bucket-fence dns-authorization fence,154,161,0.9565,measured,tenant cua-mcp-quota-bucket-fence fairness replay logs

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1859 · RAG Prompt Signature Cache Workbench</title>
+<style>body{margin:0;background:#0b335a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1859｜RAG Prompt Signature 缓存工作台</h1>
+<div class="g">
+<div class="c"><label>正确命中率(%)</label><input id="h" type="range" min="40" max="100" value="92"><label>误命中率(%)</label><input id="f" type="range" min="0" max="20" value="2"><label>签名粒度指数</label><input id="g" type="range" min="1" max="20" value="11"></div>
+<div class="c"><h3>签名缓存健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低误命中率，再提升正确命中率，最后微调签名粒度。</div></div>
+<script>
+function calc(){const h=+document.getElementById('h').value,f=+document.getElementById('f').value,g=+document.getElementById('g').value;const v=((h-40)*1.4)+((20-f)*2.0)+((20-g)*0.9);if(v>125)state.textContent='命中质量与成本收益平衡良好';else if(v>105)state.textContent='可上线，建议继续优化粒度';else state.textContent='风险偏高，建议收紧签名与校验策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['h','f','g'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

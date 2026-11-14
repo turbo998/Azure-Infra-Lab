@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1854 · Wasm Component Cache Workbench</title>
+<style>body{margin:0;background:#0b2e50;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1854｜Wasm Component 缓存层工作台</h1>
+<div class="g">
+<div class="c"><label>组件命中率(%)</label><input id="h" type="range" min="20" max="100" value="83"><label>误命中率(%)</label><input id="f" type="range" min="0" max="20" value="3"><label>冷启动 P95(ms)</label><input id="p" type="range" min="50" max="2500" value="540"></div>
+<div class="c"><h3>缓存层健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先降低误命中率，再提升命中率，最后压缩冷启动 P95。</div></div>
+<script>
+function calc(){const h=+document.getElementById('h').value,f=+document.getElementById('f').value,p=+document.getElementById('p').value;const v=((h-20)*1.2)+((20-f)*1.8)+((2500-p)*0.04);if(v>140)state.textContent='缓存一致性与性能平衡良好';else if(v>118)state.textContent='可上线，建议继续降低冷启动时延';else state.textContent='风险偏高，建议收紧失效与哈希校验';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['h','f','p'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

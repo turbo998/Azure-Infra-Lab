@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0b243c"/>
+<text x="56" y="88" fill="#e2e8f0" font-size="40" font-family="Segoe UI">Cycle 1844 · A2A WebSocket Backpressure</text>
+<rect x="56" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="86" y="210" fill="#93c5fd" font-size="28">Tiered Queues</text><text x="86" y="248" fill="#e2e8f0" font-size="22">control and data channel separation</text>
+<rect x="562" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="592" y="210" fill="#86efac" font-size="28">ACK Windows</text><text x="592" y="248" fill="#e2e8f0" font-size="22">inflight cap for slow-consumer control</text>
+<rect x="1068" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="1098" y="210" fill="#fbbf24" font-size="28">Throttle and Drop</text><text x="1098" y="248" fill="#e2e8f0" font-size="22">token shaping with graceful degradation</text>
+<text x="56" y="432" fill="#e2e8f0" font-size="30">Benchmark dimensions</text><text x="56" y="480" fill="#cbd5e1" font-size="24">connection survival · p95 message latency · timeout ratio · queue backlog</text>
+</svg>

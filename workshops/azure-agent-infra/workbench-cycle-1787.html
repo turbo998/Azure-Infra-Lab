@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1787 · Queue Fairness Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1787｜队列公平性与 Token Bucket 工作台</h1>
+<div class="grid"><div class="card"><label>租户A权重</label><input id="wa" type="range" min="1" max="10" value="4"><label>租户B权重</label><input id="wb" type="range" min="1" max="10" value="3"><label>Bucket 容量</label><input id="cap" type="range" min="10" max="2000" value="420"></div><div class="card"><h3>公平性判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先收敛权重差异，再调整 bucket 容量防止突发挤占。</div></div>
+<script>
+function evalFair(){const a=+wa.value,b=+wb.value,c=+cap.value;const ratio=Math.max(a,b)/Math.max(1,Math.min(a,b));const score=(c/40)-(ratio*6);if(score>20){state.textContent='公平可控';detail.textContent=`公平指数 ${score.toFixed(1)}`;}else if(score>10){state.textContent='临界';detail.textContent=`公平指数 ${score.toFixed(1)}`;}else{state.textContent='高风险';detail.textContent=`公平指数 ${score.toFixed(1)}`;}}
+['wa','wb','cap'].forEach(id=>document.getElementById(id).addEventListener('input',evalFair));evalFair();
+</script></body></html>

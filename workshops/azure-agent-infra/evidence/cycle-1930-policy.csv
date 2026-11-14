@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-admission-fallback-sticky-fairness-violation saturation gate,194,206,0.9417,measured,apim-mcp-admission-fallback-sticky-fairness-guard mismatch replay + deterministic verification
+apim-mcp-admission-fallback-sticky-fairness-guard fence integrity guard,180,187,0.9626,measured,apim-mcp-admission-fallback-sticky-fairness-guard integrity logs
+tenant-scope apim-mcp-admission-fallback-sticky-fairness-guard dns-authorization fence,165,172,0.9593,measured,tenant apim-mcp-admission-fallback-sticky-fairness-guard fairness replay logs

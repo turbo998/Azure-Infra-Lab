@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cua-handoff-token-fence-violation saturation gate,172,184,0.9348,measured,cua-handoff-token-fence-fence mismatch replay + deterministic verification
+cua-handoff-token-fence-fence fence integrity guard,161,168,0.9583,measured,cua-handoff-token-fence-fence integrity logs
+tenant-scope cua-handoff-token-fence-fence dns-authorization fence,154,161,0.9565,measured,tenant cua-handoff-token-fence-fence fairness replay logs

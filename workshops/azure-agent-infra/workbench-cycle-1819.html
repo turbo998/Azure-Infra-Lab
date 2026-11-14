@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1819 · Egress Policy Cost Guard Workbench</title>
+<style>body{margin:0;background:#0a1025;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1819｜出口策略成本守卫工作台</h1>
+<div class="grid">
+<div class="card"><label>每小时 egress 预算(单位)</label><input id="budget" type="range" min="50" max="1200" value="320"><label>整形限速比例(%)</label><input id="shape" type="range" min="5" max="95" value="38"><label>降级触发阈值(%)</label><input id="degrade" type="range" min="40" max="100" value="84"></div>
+<div class="card"><h3>守卫稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先设预算上限，再调整整形比例，最后收敛降级触发阈值。</div></div>
+<script>
+function evalS(){const b=+budget.value,s=+shape.value,d=+degrade.value;const score=(b*0.01)+(s*0.22)-((100-d)*0.2)+8;if(score>18)state.textContent='成本与可用性均衡';else if(score>13)state.textContent='可用但预算波动偏高';else state.textContent='存在超支或误降级风险';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['budget','shape','degrade'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

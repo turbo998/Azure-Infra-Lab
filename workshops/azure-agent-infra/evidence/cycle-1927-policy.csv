@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-degrade-lane-jitter-fairness-violation saturation gate,181,193,0.9378,measured,apim-mcp-degrade-lane-jitter-fairness-guard mismatch replay + deterministic verification
+apim-mcp-degrade-lane-jitter-fairness-guard fence integrity guard,170,177,0.9605,measured,apim-mcp-degrade-lane-jitter-fairness-guard integrity logs
+tenant-scope apim-mcp-degrade-lane-jitter-fairness-guard dns-authorization fence,153,160,0.9563,measured,tenant apim-mcp-degrade-lane-jitter-fairness-guard fairness replay logs

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-reentry-throttle-watermark-fairness-violation saturation gate,210,222,0.9459,measured,apim-mcp-reentry-throttle-watermark-fairness-guard mismatch replay + deterministic verification
+apim-mcp-reentry-throttle-watermark-fairness-guard fence integrity guard,196,203,0.9655,measured,apim-mcp-reentry-throttle-watermark-fairness-guard integrity logs
+tenant-scope apim-mcp-reentry-throttle-watermark-fairness-guard dns-authorization fence,180,187,0.9626,measured,tenant apim-mcp-reentry-throttle-watermark-fairness-guard fairness replay logs

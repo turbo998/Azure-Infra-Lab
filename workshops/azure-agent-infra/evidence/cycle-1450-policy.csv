@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+entra-obo-cross-tenant-kms-envelope-violation saturation gate,172,184,0.9348,measured,entra-obo-cross-tenant-kms-envelope-fence mismatch replay + deterministic verification
+entra-obo-cross-tenant-kms-envelope-fence fence integrity guard,161,168,0.9583,measured,entra-obo-cross-tenant-kms-envelope-fence integrity logs
+tenant-scope entra-obo-cross-tenant-kms-envelope-fence dns-authorization fence,154,161,0.9565,measured,tenant entra-obo-cross-tenant-kms-envelope-fence fairness replay logs

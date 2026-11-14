@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cosmos-diskann-hotpartition-ru-budget-violation saturation gate,172,184,0.9348,measured,cosmos-diskann-hotpartition-ru-budget-fence mismatch replay + deterministic verification
+cosmos-diskann-hotpartition-ru-budget-fence fence integrity guard,161,168,0.9583,measured,cosmos-diskann-hotpartition-ru-budget-fence integrity logs
+tenant-scope cosmos-diskann-hotpartition-ru-budget-fence dns-authorization fence,154,161,0.9565,measured,tenant cosmos-diskann-hotpartition-ru-budget-fence fairness replay logs

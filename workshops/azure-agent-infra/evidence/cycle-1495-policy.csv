@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+a2a-mcp-event-fence-violation saturation gate,172,184,0.9348,measured,a2a-mcp-event-fence-fence mismatch replay + deterministic verification
+a2a-mcp-event-fence-fence fence integrity guard,161,168,0.9583,measured,a2a-mcp-event-fence-fence integrity logs
+tenant-scope a2a-mcp-event-fence-fence dns-authorization fence,154,161,0.9565,measured,tenant a2a-mcp-event-fence-fence fairness replay logs

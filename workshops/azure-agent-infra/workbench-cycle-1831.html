@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1831 · Runtime Isolation Tier Audit Workbench</title>
+<style>body{margin:0;background:#0a152c;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1831｜运行时隔离等级审计工作台</h1>
+<div class="grid">
+<div class="card"><label>Tier A 覆盖率(%)</label><input id="a" type="range" min="5" max="80" value="28"><label>Tier B 覆盖率(%)</label><input id="b" type="range" min="5" max="90" value="46"><label>采样审计比例(%)</label><input id="s" type="range" min="1" max="40" value="14"></div>
+<div class="card"><h3>隔离稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先确保 Tier A 风险任务覆盖，再优化 Tier B，最后调采样比例。</div></div>
+<script>
+function evalS(){const a=+document.getElementById('a').value,b=+document.getElementById('b').value,s=+document.getElementById('s').value;const score=(a*0.25)+(b*0.18)+(s*0.12)+6;if(score>24)state.textContent='隔离与审计平衡良好';else if(score>17)state.textContent='可用但审计覆盖仍需优化';else state.textContent='高风险覆盖不足';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['a','b','s'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

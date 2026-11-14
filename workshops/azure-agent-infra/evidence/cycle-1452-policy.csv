@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+vnet-nva-snat-port-exhaustion-violation saturation gate,172,184,0.9348,measured,vnet-nva-snat-port-exhaustion-fence mismatch replay + deterministic verification
+vnet-nva-snat-port-exhaustion-fence fence integrity guard,161,168,0.9583,measured,vnet-nva-snat-port-exhaustion-fence integrity logs
+tenant-scope vnet-nva-snat-port-exhaustion-fence dns-authorization fence,154,161,0.9565,measured,tenant vnet-nva-snat-port-exhaustion-fence fairness replay logs

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+aca-dynamic-sessions-lease-fairness-violation saturation gate,172,184,0.9348,measured,aca-dynamic-sessions-lease-fairness-guard mismatch replay + deterministic verification
+aca-dynamic-sessions-lease-fairness-guard fence integrity guard,161,168,0.9583,measured,aca-dynamic-sessions-lease-fairness-guard integrity logs
+tenant-scope aca-dynamic-sessions-lease-fairness-guard dns-authorization fence,154,161,0.9565,measured,tenant aca-dynamic-sessions-lease-fairness-guard fairness replay logs

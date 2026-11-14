@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1847 · GPU Fairshare Workbench</title>
+<style>body{margin:0;background:#0b2742;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1847｜GPU 公平份额调度工作台</h1>
+<div class="g">
+<div class="c"><label>租户占用方差</label><input id="v" type="range" min="5" max="100" value="36"><label>高优会话 P95(ms)</label><input id="p" type="range" min="50" max="2500" value="620"><label>GPU 利用率(%)</label><input id="u" type="range" min="30" max="100" value="86"></div>
+<div class="c"><h3>公平调度健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先压低占用方差，再降低高优 P95，最后维持高利用率。</div></div>
+<script>
+function calc(){const v=+document.getElementById('v').value,p=+document.getElementById('p').value,u=+document.getElementById('u').value;const s=((100-v)*0.8)+((2500-p)*0.025)+((u-30)*0.95);if(s>120)state.textContent='公平性与效率平衡良好';else if(s>98)state.textContent='可上线，建议继续收敛方差';else state.textContent='风险偏高，建议重调配额和权重';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['v','p','u'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

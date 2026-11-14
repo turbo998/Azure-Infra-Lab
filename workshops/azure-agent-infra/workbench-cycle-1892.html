@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1892 · A2A Contract Budget Fencing</title>
+<style>body{margin:0;background:#0a0f1f;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1892｜A2A Contract Budget Fencing 工作台</h1>
+<div class="g"><div class="c">
+<label>预算命中率(%)</label><input id="hit" type="range" min="40" max="99" value="89">
+<label>超额熔断触发率(%)</label><input id="trip" type="range" min="0" max="40" value="7">
+<label>单任务成本P95(USD)</label><input id="cost" type="range" min="1" max="40" value="9">
+</div><div class="c"><h3>预算围栏治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：优先稳定预算命中率，再压低超额触发率。</div></div>
+<script>
+function calc(){const h=+hit.value,t=+trip.value,c=+cost.value;const s=(h*2.1)+((40-t)*2.8)+((40-c)*1.9);state.textContent=s>250?'可生产：预算围栏稳定且回退可控':(s>210?'可上线：建议继续收敛成本尾部':'风险偏高：需强化预算阈值与回退策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['hit','trip','cost'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

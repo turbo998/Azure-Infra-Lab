@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+gateway-tenant-fairshare-burst-credit-violation saturation gate,172,184,0.9348,measured,gateway-tenant-fairshare-burst-credit-fence mismatch replay + deterministic verification
+gateway-tenant-fairshare-burst-credit-fence fence integrity guard,161,168,0.9583,measured,gateway-tenant-fairshare-burst-credit-fence integrity logs
+tenant-scope gateway-tenant-fairshare-burst-credit-fence dns-authorization fence,154,161,0.9565,measured,tenant gateway-tenant-fairshare-burst-credit-fence fairness replay logs

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1839 · Entra OBO Scope Segmentation Workbench</title>
+<style>body{margin:0;background:#0a1d30;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1839｜Entra OBO Scope 分段工作台</h1>
+<div class="g">
+<div class="c"><label>高敏 scope 占比(%)</label><input id="hi" type="range" min="5" max="80" value="28"><label>令牌交换成功率(%)</label><input id="ok" type="range" min="70" max="100" value="95"><label>条件访问覆盖率(%)</label><input id="ca" type="range" min="30" max="100" value="82"></div>
+<div class="c"><h3>最小权限健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先下降高敏 scope 占比，再提升 CA 覆盖率，最后压实 token 交换成功率。</div></div>
+<script>
+function run(){const h=+hi.value,o=+ok.value,c=+ca.value;const s=((80-h)*0.34)+((o-70)*0.55)+((c-30)*0.28);if(s>40)state.textContent='最小权限与可用性平衡良好';else if(s>31)state.textContent='可上线但建议继续收敛高敏 scope';else state.textContent='风险偏高，建议回到策略调优';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['hi','ok','ca'].forEach(id=>document.getElementById(id).addEventListener('input',run));run();
+</script></body></html>

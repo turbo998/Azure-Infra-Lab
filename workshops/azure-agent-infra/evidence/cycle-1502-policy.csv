@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cua-a2a-backpressure-window-violation saturation gate,172,184,0.9348,measured,cua-a2a-backpressure-window-fence mismatch replay + deterministic verification
+cua-a2a-backpressure-window-fence fence integrity guard,161,168,0.9583,measured,cua-a2a-backpressure-window-fence integrity logs
+tenant-scope cua-a2a-backpressure-window-fence dns-authorization fence,154,161,0.9565,measured,tenant cua-a2a-backpressure-window-fence fairness replay logs

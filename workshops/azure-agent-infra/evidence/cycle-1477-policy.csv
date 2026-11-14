@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+aca-sandbox-ephemeral-disk-io-burst-violation saturation gate,172,184,0.9348,measured,aca-sandbox-ephemeral-disk-io-burst-fence mismatch replay + deterministic verification
+aca-sandbox-ephemeral-disk-io-burst-fence fence integrity guard,161,168,0.9583,measured,aca-sandbox-ephemeral-disk-io-burst-fence integrity logs
+tenant-scope aca-sandbox-ephemeral-disk-io-burst-fence dns-authorization fence,154,161,0.9565,measured,tenant aca-sandbox-ephemeral-disk-io-burst-fence fairness replay logs

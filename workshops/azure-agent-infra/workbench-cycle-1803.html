@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1803 · Cardinality Guard Workbench</title>
+<style>body{margin:0;background:#0a1221;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1803｜可观测性基数护栏工作台</h1>
+<div class="grid"><div class="card"><label>基数阈值</label><input id="th" type="range" min="100" max="50000" value="7800"><label>自动降维强度(%)</label><input id="agg" type="range" min="0" max="100" value="44"><label>回退采样率(%)</label><input id="fb" type="range" min="1" max="100" value="22"></div><div class="card"><h3>护栏稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先稳住阈值与聚合强度，再细调回退采样率。</div></div>
+<script>
+function evalG(){const t=+th.value,a=+agg.value,f=+fb.value;const score=(t/1400)+(a*0.11)-(f*0.08);if(score>12)state.textContent='稳态良好';else if(score>8)state.textContent='可优化';else state.textContent='风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['th','agg','fb'].forEach(id=>document.getElementById(id).addEventListener('input',evalG));evalG();
+</script></body></html>

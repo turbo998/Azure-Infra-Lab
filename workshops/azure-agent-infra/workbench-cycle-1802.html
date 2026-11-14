@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1802 · KV Coldstart Prewarm Workbench</title>
+<style>body{margin:0;background:#0a1223;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1802｜KV 冷启动预热工作台</h1>
+<div class="grid"><div class="card"><label>预热预算(单位)</label><input id="budget" type="range" min="10" max="500" value="140"><label>热点窗口(分钟)</label><input id="window" type="range" min="1" max="120" value="18"><label>回补阈值(%)</label><input id="refill" type="range" min="5" max="80" value="32"></div><div class="card"><h3>预热稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先固定预算上限，再调热点窗口与回补阈值。</div></div>
+<script>
+function evalP(){const b=+budget.value,w=+window.value,r=+refill.value;const score=(b/14)+(r*0.16)-(w*0.09);if(score>11)state.textContent='稳态良好';else if(score>7)state.textContent='可优化';else state.textContent='风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['budget','window','refill'].forEach(id=>document.getElementById(id).addEventListener('input',evalP));evalP();
+</script></body></html>

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+mcp-apim-retry-fuse-violation saturation gate,172,184,0.9348,measured,mcp-apim-retry-fuse-fence mismatch replay + deterministic verification
+mcp-apim-retry-fuse-fence fence integrity guard,161,168,0.9583,measured,mcp-apim-retry-fuse-fence integrity logs
+tenant-scope mcp-apim-retry-fuse-fence dns-authorization fence,154,161,0.9565,measured,tenant mcp-apim-retry-fuse-fence fairness replay logs

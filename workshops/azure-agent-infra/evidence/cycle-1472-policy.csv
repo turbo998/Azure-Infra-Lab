@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+aks-kata-confidential-gpu-proof-chain-violation saturation gate,172,184,0.9348,measured,aks-kata-confidential-gpu-proof-chain-fence mismatch replay + deterministic verification
+aks-kata-confidential-gpu-proof-chain-fence fence integrity guard,161,168,0.9583,measured,aks-kata-confidential-gpu-proof-chain-fence integrity logs
+tenant-scope aks-kata-confidential-gpu-proof-chain-fence dns-authorization fence,154,161,0.9565,measured,tenant aks-kata-confidential-gpu-proof-chain-fence fairness replay logs

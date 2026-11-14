@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1870 · CUA Visual Diff Quarantine Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1870｜CUA Visual Diff Quarantine 工作台</h1>
+<div class="g">
+<div class="c"><label>回放通过率(%)</label><input id="pass" type="range" min="40" max="100" value="90"><label>误操作率(%)</label><input id="mis" type="range" min="0" max="15" value="1"><label>人工审批占比(%)</label><input id="man" type="range" min="0" max="40" value="8"></div>
+<div class="c"><h3>视觉隔离治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低误操作率，再提升回放通过率，最后优化审批占比。</div></div>
+<script>
+function calc(){const pass=+document.getElementById('pass').value,mis=+document.getElementById('mis').value,man=+document.getElementById('man').value;const v=((pass-40)*1.4)+((15-mis)*4.0)+((40-man)*1.6);if(v>176)state.textContent='可生产：视觉风险被有效隔离';else if(v>146)state.textContent='可上线：建议继续收敛审批占比';else state.textContent='风险偏高：需加强差异阈值与签名策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['pass','mis','man'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

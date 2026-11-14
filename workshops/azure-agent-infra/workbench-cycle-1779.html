@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1779 · Dead-Letter Replay Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1779｜A2A Dead-Letter 回放治理工作台</h1>
+<div class="grid"><div class="card"><label>积压消息量（千）</label><input id="backlog" type="range" min="1" max="300" value="72"><label>回放速率上限（msg/s）</label><input id="rate" type="range" min="10" max="5000" value="780"><label>幂等覆盖率（%）</label><input id="idem" type="range" min="0" max="100" value="81"></div><div class="card"><h3>回放安全判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先提高幂等覆盖率，再提升回放速率。</div></div>
+<script>
+function evalReplay(){const b=+backlog.value,r=+rate.value,i=+idem.value;const score=(i*0.6)+(r/120)-(b*0.35);if(score>40){state.textContent='可控';detail.textContent=`治理指数 ${score.toFixed(1)}`;}else if(score>24){state.textContent='临界';detail.textContent=`治理指数 ${score.toFixed(1)}`;}else{state.textContent='高风险';detail.textContent=`治理指数 ${score.toFixed(1)}`;}}
+['backlog','rate','idem'].forEach(id=>document.getElementById(id).addEventListener('input',evalReplay));evalReplay();
+</script></body></html>

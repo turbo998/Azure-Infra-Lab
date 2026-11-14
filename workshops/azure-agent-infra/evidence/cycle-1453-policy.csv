@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+foundry-multiregion-dr-quota-governance-violation saturation gate,172,184,0.9348,measured,foundry-multiregion-dr-quota-governance-fence mismatch replay + deterministic verification
+foundry-multiregion-dr-quota-governance-fence fence integrity guard,161,168,0.9583,measured,foundry-multiregion-dr-quota-governance-fence integrity logs
+tenant-scope foundry-multiregion-dr-quota-governance-fence dns-authorization fence,154,161,0.9565,measured,tenant foundry-multiregion-dr-quota-governance-fence fairness replay logs

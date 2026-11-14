@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1838 · Crossplane Promotion Workbench</title>
+<style>body{margin:0;background:#0b1f33;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1838｜Crossplane 策略包晋级工作台</h1>
+<div class="g">
+<div class="c"><label>准入通过率(%)</label><input id="pass" type="range" min="70" max="100" value="93"><label>回滚阈值(分)</label><input id="rv" type="range" min="1" max="30" value="10"><label>观测窗口(min)</label><input id="dw" type="range" min="2" max="60" value="12"></div>
+<div class="c"><h3>晋级策略建议</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议顺序：先固定签名审批，再调优门禁阈值，最后压缩晋级时延。</div></div>
+<script>
+function calc(){const p=+pass.value,r=+rv.value,d=+dw.value;const s=(p-70)*0.7+(30-r)*0.45+(60-d)*0.12;if(s>26)state.textContent='可进入生产晋级窗口';else if(s>19)state.textContent='建议先做金丝雀簇验证';else state.textContent='暂缓晋级并回到测试环境';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['pass','rv','dw'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

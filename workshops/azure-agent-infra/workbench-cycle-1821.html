@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1821 · Checkpoint Compaction Safety Workbench</title>
+<style>body{margin:0;background:#0b1127;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1821｜检查点压缩安全工作台</h1>
+<div class="grid">
+<div class="card"><label>热层保留时长(小时)</label><input id="hot" type="range" min="1" max="48" value="12"><label>温层压缩比(%)</label><input id="warm" type="range" min="10" max="90" value="58"><label>抽样回放比例(%)</label><input id="replay" type="range" min="1" max="30" value="8"></div>
+<div class="card"><h3>压缩稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先提高抽样回放比例确保安全，再迭代温层压缩比控制成本。</div></div>
+<script>
+function evalS(){const h=+hot.value,w=+warm.value,r=+replay.value;const score=(h*0.2)+(w*0.12)+(r*0.35)+4;if(score>20)state.textContent='降本且可追溯稳定';else if(score>14)state.textContent='可用但需提升验证覆盖';else state.textContent='压缩风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['hot','warm','replay'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

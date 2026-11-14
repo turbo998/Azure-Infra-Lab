@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1861 · Workload Identity Hop Workbench</title>
+<style>body{margin:0;background:#0b355e;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1861｜Workload Identity 跳点治理工作台</h1>
+<div class="g">
+<div class="c"><label>平均跳点数</label><input id="h" type="range" min="1" max="8" value="3"><label>令牌TTL(min)</label><input id="t" type="range" min="1" max="120" value="12"><label>越界告警率(%)</label><input id="a" type="range" min="0" max="20" value="2"></div>
+<div class="c"><h3>跳点治理健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低越界告警率，再优化跳点数，最后微调令牌TTL。</div></div>
+<script>
+function calc(){const h=+document.getElementById('h').value,t=+document.getElementById('t').value,a=+document.getElementById('a').value;const v=((8-h)*8.0)+((120-t)*0.6)+((20-a)*2.2);if(v>120)state.textContent='身份链路与权限边界平衡良好';else if(v>98)state.textContent='可上线，建议继续收敛TTL';else state.textContent='风险偏高，建议减少跳点并强化权限映射';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['h','t','a'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1757 · Private Link Topology Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1100px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1757｜Private Link 全私网隔离工作台</h1>
+<div class="grid"><div class="card"><label>私网 DNS 一致性得分</label><input id="dns" type="range" min="0" max="100" value="78"><label>策略回放完整性</label><input id="ledger" type="range" min="0" max="100" value="82"><label>执行面身份隔离得分</label><input id="id" type="range" min="0" max="100" value="74"></div>
+<div class="card"><h3>就绪判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">证据: cycle-1757-benchmark/latency/policy/cost + private topology replay logs</div></div>
+<script>
+function evalReady(){const dns=+dnsEl.value,l=+ledgerEl.value,i=+idEl.value;const min=Math.min(dns,l,i);if(min>=85){state.textContent='可上线（全私网门槛通过）';detail.textContent='建议按租户灰度放量。';}else if(min>=70){state.textContent='可灰度（需补强薄弱项）';detail.textContent='优先补齐最低项并复测。';}else{state.textContent='不建议上线';detail.textContent='至少一项关键控制不足。';}}
+const dnsEl=document.getElementById('dns'),ledgerEl=document.getElementById('ledger'),idEl=document.getElementById('id'),state=document.getElementById('state'),detail=document.getElementById('detail');[dnsEl,ledgerEl,idEl].forEach(x=>x.addEventListener('input',evalReady));evalReady();
+</script></body></html>

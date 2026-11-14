@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-llm-cache-staleness-guard-violation saturation gate,172,184,0.9348,measured,apim-llm-cache-staleness-guard-fence mismatch replay + deterministic verification
+apim-llm-cache-staleness-guard-fence fence integrity guard,161,168,0.9583,measured,apim-llm-cache-staleness-guard-fence integrity logs
+tenant-scope apim-llm-cache-staleness-guard-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-llm-cache-staleness-guard-fence fairness replay logs

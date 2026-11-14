@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1816 · Memory Tiering Cost Workbench</title>
+<style>body{margin:0;background:#0a1224;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1816｜记忆分层成本工作台</h1>
+<div class="grid">
+<div class="card"><label>热层保留轮数</label><input id="hot" type="range" min="2" max="60" value="16"><label>温层摘要压缩率(%)</label><input id="warm" type="range" min="10" max="95" value="62"><label>冷层回放触发阈值</label><input id="cold" type="range" min="1" max="20" value="6"></div>
+<div class="card"><h3>成本-连续性判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先调热层保留上限，再提高温层压缩率，最后收敛冷层回放阈值。</div></div>
+<script>
+function evalS(){const h=+hot.value,w=+warm.value,c=+cold.value;const score=(h*0.18)+(w*0.11)-(c*0.35)+5; if(score>16)state.textContent='降本且连续性稳定'; else if(score>11)state.textContent='可用但需调优'; else state.textContent='成本或连续性风险偏高'; detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['hot','warm','cold'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

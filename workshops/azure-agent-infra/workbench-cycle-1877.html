@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1877 · Dynamic Session Rehydrate SLO Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1877｜Dynamic Session Rehydrate SLO 工作台</h1>
+<div class="g">
+<div class="c"><label>Rehydrate P95(ms)</label><input id="p95" type="range" min="50" max="2400" value="320"><label>Rehydrate P99(ms)</label><input id="p99" type="range" min="100" max="4000" value="680"><label>恢复成功率(%)</label><input id="succ" type="range" min="40" max="100" value="95"></div>
+<div class="c"><h3>恢复治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先收敛 P99，再降低 P95，并保持恢复成功率高位。</div></div>
+<script>
+function calc(){const p95=+document.getElementById('p95').value,p99=+document.getElementById('p99').value,succ=+document.getElementById('succ').value;const v=((2400-p95)*0.06)+((4000-p99)*0.035)+((succ-40)*1.55);if(v>188)state.textContent='可生产：重建时延与成功率表现稳定';else if(v>158)state.textContent='可上线：建议继续压缩 P99';else state.textContent='风险偏高：需加强节流和回退策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['p95','p99','succ'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

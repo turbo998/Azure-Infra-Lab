@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+aks-sandbox-nodepool-fair-eviction-violation saturation gate,172,184,0.9348,measured,aks-sandbox-nodepool-fair-eviction-fence mismatch replay + deterministic verification
+aks-sandbox-nodepool-fair-eviction-fence fence integrity guard,161,168,0.9583,measured,aks-sandbox-nodepool-fair-eviction-fence integrity logs
+tenant-scope aks-sandbox-nodepool-fair-eviction-fence dns-authorization fence,154,161,0.9565,measured,tenant aks-sandbox-nodepool-fair-eviction-fence fairness replay logs

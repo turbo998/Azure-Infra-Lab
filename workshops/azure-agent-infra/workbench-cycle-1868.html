@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1868 · MCP Contract Quarantine Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1868｜MCP Contract Quarantine 工作台</h1>
+<div class="g">
+<div class="c"><label>隔离回归通过率(%)</label><input id="pass" type="range" min="40" max="100" value="91"><label>放行后错误抬升(%)</label><input id="lift" type="range" min="0" max="20" value="2"><label>回退恢复时延(ms)</label><input id="rb" type="range" min="20" max="1500" value="180"></div>
+<div class="c"><h3>合同治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先压低放行后错误抬升，再提升回归通过率，最后优化回退时延。</div></div>
+<script>
+function calc(){const pass=+document.getElementById('pass').value,lift=+document.getElementById('lift').value,rb=+document.getElementById('rb').value;const v=((pass-40)*1.45)+((20-lift)*3.6)+((1500-rb)*0.07);if(v>178)state.textContent='可生产：合同漂移被有效圈定';else if(v>148)state.textContent='可上线：建议进一步优化回退时延';else state.textContent='风险偏高：需加强隔离回归与放行门控';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['pass','lift','rb'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

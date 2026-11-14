@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1845 · Foundry Failover Routing Workbench</title>
+<style>body{margin:0;background:#0b253e;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1845｜Foundry 跨区故障切换工作台</h1>
+<div class="g">
+<div class="c"><label>主区成功率(%)</label><input id="s" type="range" min="60" max="100" value="92"><label>次区成本倍率</label><input id="c" type="range" min="10" max="40" value="18"><label>回切冷却(min)</label><input id="f" type="range" min="1" max="60" value="14"></div>
+<div class="c"><h3>切换策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先提高主区可用性门限，再控制次区成本倍率，最后微调回切冷却窗口。</div></div>
+<script>
+function calc(){const s=+document.getElementById('s').value,c=+document.getElementById('c').value,f=+document.getElementById('f').value;const v=((s-60)*1.45)+((40-c)*1.1)+((60-f)*0.38);if(v>86)state.textContent='故障切换与成本控制平衡良好';else if(v>70)state.textContent='可上线，建议继续压低次区成本暴露';else state.textContent='风险偏高，建议收紧切换触发与回切策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['s','c','f'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

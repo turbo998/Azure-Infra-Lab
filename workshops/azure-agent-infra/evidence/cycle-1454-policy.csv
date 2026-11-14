@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+browser-cua-cluster-replay-isolation-violation saturation gate,172,184,0.9348,measured,browser-cua-cluster-replay-isolation-fence mismatch replay + deterministic verification
+browser-cua-cluster-replay-isolation-fence fence integrity guard,161,168,0.9583,measured,browser-cua-cluster-replay-isolation-fence integrity logs
+tenant-scope browser-cua-cluster-replay-isolation-fence dns-authorization fence,154,161,0.9565,measured,tenant browser-cua-cluster-replay-isolation-fence fairness replay logs

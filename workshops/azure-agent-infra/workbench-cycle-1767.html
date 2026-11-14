@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1767 · A2A Compatibility Gates Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1767｜A2A 兼容闸门工作台</h1>
+<div class="grid"><div class="card"><label>Schema 兼容得分</label><input id="schema" type="range" min="0" max="100" value="88"><label>Replay 通过率（%）</label><input id="replay" type="range" min="0" max="100" value="92"><label>Canary 错误率（%）</label><input id="canary" type="range" min="0" max="20" value="3"></div><div class="card"><h3>发布闸门判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：Canary 错误率上升优先回滚，不要仅靠 schema/replay 结果硬推进。</div></div>
+<script>
+function evalGate(){const s=+schema.value,r=+replay.value,c=+canary.value;const score=(s*0.35)+(r*0.45)-(c*2.5);if(score>70){state.textContent='可发布';detail.textContent=`闸门指数 ${score.toFixed(1)}`;}else if(score>55){state.textContent='可灰度';detail.textContent=`闸门指数 ${score.toFixed(1)}`;}else{state.textContent='阻断发布';detail.textContent=`闸门指数 ${score.toFixed(1)}`;}}
+['schema','replay','canary'].forEach(id=>document.getElementById(id).addEventListener('input',evalGate));evalGate();
+</script></body></html>

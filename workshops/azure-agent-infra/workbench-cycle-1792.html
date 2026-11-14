@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1792 · PTU Spillover Routing Workbench</title>
+<style>body{margin:0;background:#0a1322;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1792｜PTU 溢出路由工作台</h1>
+<div class="grid"><div class="card"><label>PTU 使用率(%)</label><input id="ptu" type="range" min="40" max="100" value="84"><label>溢出比例(%)</label><input id="ov" type="range" min="0" max="60" value="17"><label>按量单位成本(相对)</label><input id="cost" type="range" min="80" max="240" value="132"></div><div class="card"><h3>路由稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：优先保障 PTU 主路径稳定，再按 SLA 分层开放溢出窗口。</div></div>
+<script>
+function evalR(){const p=+ptu.value,o=+ov.value,c=+cost.value;const score=(p*0.12)+(o*0.08)-((c-100)*0.06);if(score>12)state.textContent='稳态可接受';else if(score>7)state.textContent='可灰度优化';else state.textContent='风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['ptu','ov','cost'].forEach(id=>document.getElementById(id).addEventListener('input',evalR));evalR();
+</script></body></html>

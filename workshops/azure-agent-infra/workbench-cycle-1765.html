@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1765 · Egress Policy Lattice Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1765｜Runtime 出口策略格工作台</h1>
+<div class="grid"><div class="card"><label>高风险工具占比（%）</label><input id="tool" type="range" min="0" max="100" value="36"><label>外网目标复杂度（0-100）</label><input id="dest" type="range" min="0" max="100" value="44"><label>策略精细度（0-100）</label><input id="policy" type="range" min="0" max="100" value="72"></div><div class="card"><h3>策略格健康判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：当高风险工具与目标复杂度同时上升时，优先提高策略精细度并收紧默认放行。</div></div>
+<script>
+function evalLattice(){const t=+tool.value,d=+dest.value,p=+policy.value;const score=p-(t*0.45+d*0.35);if(score>30){state.textContent='策略覆盖充分';detail.textContent=`安全裕度 ${score.toFixed(1)}`;}else if(score>10){state.textContent='临界，建议加固';detail.textContent=`安全裕度 ${score.toFixed(1)}`;}else{state.textContent='高风险，需立即收敛';detail.textContent=`安全裕度 ${score.toFixed(1)}`;}}
+['tool','dest','policy'].forEach(id=>document.getElementById(id).addEventListener('input',evalLattice));evalLattice();
+</script></body></html>

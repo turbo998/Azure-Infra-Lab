@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0b2b4a"/>
+<text x="56" y="88" fill="#e2e8f0" font-size="40" font-family="Segoe UI">Cycle 1851 · ACA Dynamic Sessions Prewarm</text>
+<rect x="56" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="86" y="210" fill="#93c5fd" font-size="28">Time Baselines</text><text x="86" y="248" fill="#e2e8f0" font-size="22">peak and off-peak warm capacity plans</text>
+<rect x="562" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="592" y="210" fill="#86efac" font-size="28">Forecast Refill</text><text x="592" y="248" fill="#e2e8f0" font-size="22">proactive refill before burst arrival</text>
+<rect x="1068" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="1098" y="210" fill="#fbbf24" font-size="28">Dual Reclaim</text><text x="1098" y="248" fill="#e2e8f0" font-size="22">high-water reclaim and low-water floor</text>
+<text x="56" y="432" fill="#e2e8f0" font-size="30">Benchmark dimensions</text><text x="56" y="480" fill="#cbd5e1" font-size="24">cold-start p95 · queue timeout ratio · idle cost ratio · session success rate</text>
+</svg>

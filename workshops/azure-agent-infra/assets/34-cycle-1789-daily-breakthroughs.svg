@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0b1220"/>
+<text x="60" y="90" fill="#e2e8f0" font-size="42" font-family="Segoe UI">Cycle 1789 · A2A Idempotency Key TTL Strategy</text>
+<rect x="60" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="90" y="210" fill="#93c5fd" font-size="28">Composite Keys</text><text x="90" y="248" fill="#e2e8f0" font-size="22">tenant/action/object-version</text>
+<rect x="560" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="590" y="210" fill="#86efac" font-size="28">Tiered TTL</text><text x="590" y="248" fill="#e2e8f0" font-size="22">action-specific retention windows</text>
+<rect x="1060" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="1090" y="210" fill="#fbbf24" font-size="28">Replay Guard</text><text x="1090" y="248" fill="#e2e8f0" font-size="22">post-expiry duplicate protection</text>
+<text x="60" y="430" fill="#e2e8f0" font-size="30">Evidence bundle</text><text x="60" y="480" fill="#cbd5e1" font-size="24">cycle-1789-benchmark / latency / throughput / policy / cost</text>
+</svg>

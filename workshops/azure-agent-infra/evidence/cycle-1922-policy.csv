@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-circuit-breaker-retry-budget-violation saturation gate,172,184,0.9348,measured,apim-mcp-circuit-breaker-retry-budget-guard mismatch replay + deterministic verification
+apim-mcp-circuit-breaker-retry-budget-guard fence integrity guard,161,168,0.9583,measured,apim-mcp-circuit-breaker-retry-budget-guard integrity logs
+tenant-scope apim-mcp-circuit-breaker-retry-budget-guard dns-authorization fence,154,161,0.9565,measured,tenant apim-mcp-circuit-breaker-retry-budget-guard fairness replay logs

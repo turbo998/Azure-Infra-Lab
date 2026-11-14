@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-route-hysteresis-backoff-fairness-violation saturation gate,190,202,0.9406,measured,apim-mcp-route-hysteresis-backoff-fairness-guard mismatch replay + deterministic verification
+apim-mcp-route-hysteresis-backoff-fairness-guard fence integrity guard,176,183,0.9617,measured,apim-mcp-route-hysteresis-backoff-fairness-guard integrity logs
+tenant-scope apim-mcp-route-hysteresis-backoff-fairness-guard dns-authorization fence,161,168,0.9583,measured,tenant apim-mcp-route-hysteresis-backoff-fairness-guard fairness replay logs

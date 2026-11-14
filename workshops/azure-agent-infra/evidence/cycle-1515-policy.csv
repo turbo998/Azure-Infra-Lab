@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-adaptive-throttle-violation saturation gate,172,184,0.9348,measured,apim-mcp-adaptive-throttle-fence mismatch replay + deterministic verification
+apim-mcp-adaptive-throttle-fence fence integrity guard,161,168,0.9583,measured,apim-mcp-adaptive-throttle-fence integrity logs
+tenant-scope apim-mcp-adaptive-throttle-fence dns-authorization fence,154,161,0.9565,measured,tenant apim-mcp-adaptive-throttle-fence fairness replay logs

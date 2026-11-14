@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-reentry-admission-budget-fairness-violation saturation gate,221,226,0.978,measured,apim-mcp-reentry-admission-budget-fairness-guard mismatch replay + deterministic verification
+apim-mcp-reentry-admission-budget-fairness-guard fence integrity guard,206,207,0.9952,measured,apim-mcp-reentry-admission-budget-fairness-guard integrity logs
+tenant-scope apim-mcp-reentry-admission-budget-fairness-guard dns-authorization fence,190,191,0.9948,measured,tenant apim-mcp-reentry-admission-budget-fairness-guard fairness replay logs

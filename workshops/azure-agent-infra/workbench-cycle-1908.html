@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1908 · ACA Multitenant Sandbox Eviction Lane</title>
+<style>body{margin:0;background:#09132a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1908｜ACA Multitenant Eviction Lane 工作台</h1>
+<div class="g"><div class="c">
+<label>关键车道中断率(%)</label><input id="crit" type="range" min="0" max="25" value="3">
+<label>车道公平性偏差(%)</label><input id="fair" type="range" min="0" max="40" value="10">
+<label>回补恢复P95(s)</label><input id="rec" type="range" min="1" max="240" value="37">
+</div><div class="c"><h3>驱逐车道治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先压低关键中断率，再收敛公平性偏差。</div></div>
+<script>
+function calc(){const c=+crit.value,f=+fair.value,r=+rec.value;const s=((25-c)*4.0)+((40-f)*2.8)+((240-r)*1.0);state.textContent=s>250?'可生产：车道驱逐与回补协同稳定':(s>210?'可上线：建议继续优化公平性偏差':'风险偏高：需强化权重模型与反向回补');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['crit','fair','rec'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>
