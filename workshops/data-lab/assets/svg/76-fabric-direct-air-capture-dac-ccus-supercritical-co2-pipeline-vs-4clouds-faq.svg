@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg76" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#040D18"/>
+      <stop offset="50%" stop-color="#081C30"/>
+      <stop offset="100%" stop-color="#051322"/>
+    </linearGradient>
+    <linearGradient id="accent76" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg76)"/>
+  <rect x="24" y="20" width="1392" height="860" rx="18" fill="#0B1629" stroke="#1E3A5F" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="44" y="38" width="1352" height="86" rx="12" fill="#10223D" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="60" y="54" width="218" height="28" rx="6" fill="url(#accent76)"/>
+  <text x="169" y="73" fill="#FFFFFF" font-size="11.8" font-weight="800" text-anchor="middle">2026-11-14 · R68 · 75 ONTOLOGIES</text>
+  <text x="294" y="72" fill="#F8FAFC" font-size="16.2" font-weight="800">Microsoft Fabric 直接空气捕集（DAC）、超临界 CO₂ 密相干线管网与深部咸水层碳封存（CCUS / 45Q）vs 四大云选型一图流</text>
+  <text x="60" y="104" fill="#94A3B8" font-size="12.5">14 座百万吨 CCUS 枢纽 · 2,800 组 DAC 吸附箱 + 12,000km 管网 + 96 口 Class VI 井 × 890K EPS · Eventhouse 12ms + SSD DiskANN 13ms 1.40 亿向量 + ALDO = 51ms · 省 90.4% TCO</text>
+  <rect x="1182" y="50" width="196" height="58" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1280" y="72" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BW · 1.40 亿向量</text>
+  <text x="1280" y="96" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">51ms · 省 90.4% TCO</text>
+
+  <!-- Left Column: Pain Points -->
+  <rect x="44" y="140" width="430" height="440" rx="14" fill="#111C33" stroke="#EF4444" stroke-width="1.3"/>
+  <text x="64" y="170" fill="#FCA5A5" font-size="15" font-weight="800">❌ 传统 15 分钟 SCADA 轮询与公有云拼接栈三大痛点</text>
+
+  <rect x="64" y="188" width="390" height="114" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="212" fill="#FECACA" font-size="13" font-weight="700">1. 15m 轮询对超临界 CO₂ 两相空化与碳酸腐蚀穿孔失明</text>
+  <text x="80" y="234" fill="#CBD5E1" font-size="11.5">• 脱水塔穿透令水分突破 142ppmv (&gt;50ppmv 红线)，酸蚀速率暴增 100 倍</text>
+  <text x="80" y="254" fill="#CBD5E1" font-size="11.5">• 管压跌近 7.38MPa 临界点引发两相闪蒸空化，几分钟打烂增压泵叶轮</text>
+  <text x="80" y="274" fill="#FCA5A5" font-size="11.5" font-weight="700">• 井底超压诱发微震面临 EPA Class VI 停产令，损失 $180/吨 45Q 补贴</text>
+
+  <rect x="64" y="316" width="390" height="114" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="340" fill="#FECACA" font-size="13" font-weight="700">2. 890K EPS 激光水分、TVSA 质谱与井下 DAS 写入税</text>
+  <text x="80" y="362" fill="#CBD5E1" font-size="11.5">• 2,800 组 DAC 解吸质谱 + 管网 TDLAS + 96 口井 DAS = 890K EPS</text>
+  <text x="80" y="382" fill="#CBD5E1" font-size="11.5">• 公有云 IoT 按属性点/按 GB 双重收费，戈壁沙尘暴断网易致井口失控</text>
+  <text x="80" y="402" fill="#FCA5A5" font-size="11.5" font-weight="700">• 仅遥测流摄入与微震定位即月烧 $50,500/月 (Normalized)</text>
+
+  <rect x="64" y="444" width="390" height="120" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="468" fill="#FECACA" font-size="13" font-weight="700">3. 1.40 亿条 TOUGHREACT 羽流与盖层应力全内存硬件税</text>
+  <text x="80" y="490" fill="#CBD5E1" font-size="11.5">• 1.40 亿条 (140M) TOUGHREACT 多相反应运移羽流、Span-Wagner</text>
+  <text x="80" y="510" fill="#CBD5E1" font-size="11.5">  相包络与盖层莫尔-库仑应力向量若常驻全内存需 6.2TB DRAM</text>
+  <text x="80" y="532" fill="#FCA5A5" font-size="11.5" font-weight="700">• 仅全内存向量集群月费即达 $43,600/月，总拼接栈高达 $113,500/月</text>
+
+  <!-- Center/Right Column: Fabric 51ms Closed Loop -->
+  <rect x="492" y="140" width="904" height="440" rx="14" fill="#0F223D" stroke="#10B981" stroke-width="1.5"/>
+  <text x="514" y="170" fill="#6EE7B7" font-size="15.5" font-weight="800">✅ Microsoft Fabric 直接空气捕集 DAC、超临界管网防酸蚀与深井封存 51ms 闭环（省 90.4% TCO · $10,900/月）</text>
+
+  <!-- Step 1 -->
+  <rect x="514" y="188" width="860" height="84" rx="10" fill="#132D50" stroke="#38BDF8" stroke-width="1.2"/>
+  <rect x="528" y="202" width="108" height="24" rx="5" fill="#0284C7"/>
+  <text x="582" y="218" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 1 · 12 ms</text>
+  <text x="648" y="218" fill="#F8FAFC" font-size="13.5" font-weight="800">Eventhouse KQL 890K EPS 管道 TDLAS 激光水分、TVSA 质谱与井下 DAS 微震感知（$0/GB 写入税）</text>
+  <text x="528" y="242" fill="#BAE6FD" font-size="11.5">• 实时摄入 14 座枢纽 2,800 组 DAC、12,000km 超临界管网与 96 口 Class VI 井流，series_fit_line() 追踪水分与相变裕度</text>
+  <text x="528" y="260" fill="#34D399" font-size="11.5" font-weight="700">• 12ms 锁定 4# 脱水撬后水分飙至 142ppmv (&gt;50ppmv 红线)、B段管压跌至 7.62MPa、Well-19 -1.1级微震及 TVSA #112 微漏氧</text>
+
+  <!-- Step 2 -->
+  <rect x="514" y="282" width="860" height="90" rx="10" fill="#132D50" stroke="#818CF8" stroke-width="1.2"/>
+  <rect x="528" y="296" width="108" height="24" rx="5" fill="#4F46E5"/>
+  <text x="582" y="312" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 2 · 13 ms</text>
+  <text x="648" y="312" fill="#F8FAFC" font-size="13.5" font-weight="800">Fabric IQ 6 跳碳封存孪生 × Cosmos SSD DiskANN 1.40 亿向量（140M）检索（省 92% 内存）</text>
+  <text x="528" y="336" fill="#E0E7FF" font-size="11.5">• 13ms 在 NVMe SSD 上检索 1.40 亿条 Span-Wagner 相包络、分子筛穿透与 TOUGHREACT 多相羽流向量 (0.99 相似)</text>
+  <text x="528" y="356" fill="#34D399" font-size="11.5" font-weight="700">• 秒切备用分子筛 4B (压水至 12ppmv 零酸蚀) + 提管压至 9.85MPa + 分流 140t/h 至邻井 #21..24 + 隔离 TVSA #112 护固态胺</text>
+
+  <!-- Step 3 -->
+  <rect x="514" y="382" width="860" height="88" rx="10" fill="#132D50" stroke="#F59E0B" stroke-width="1.2"/>
+  <rect x="528" y="396" width="108" height="24" rx="5" fill="#D97706"/>
+  <text x="582" y="412" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 3 · 13 ms</text>
+  <text x="648" y="412" fill="#F8FAFC" font-size="13.5" font-weight="800">Foundry IQ EPA Class VI 井底破裂压力（&lt;=85.0%）与 US 45Q / Puro.earth 护栏（SOP-075）</text>
+  <text x="528" y="436" fill="#FEF3C7" font-size="11.5">• 强制校核分流后 Inj-Well-19 井底孔隙水压 = 81.4% 地层破裂压力 (&lt;= 85.0% EPA Class VI 安全红线)，盖层零泄漏</text>
+  <text x="528" y="454" fill="#34D399" font-size="11.5" font-weight="700">• 扣除风光储绿电与蒸汽能耗后净碳移除率 = 91.8%，100% 满足美国税法 45Q ($180/t) 与 Puro.earth 千年期 CORC</text>
+
+  <!-- Step 4 -->
+  <rect x="514" y="480" width="860" height="84" rx="10" fill="#132D50" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="528" y="494" width="108" height="24" rx="5" fill="#059669"/>
+  <text x="582" y="510" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 4 · 13 ms</text>
+  <text x="648" y="510" fill="#F8FAFC" font-size="13.5" font-weight="800">封存总工 Teams 联签 + ALDO 戈壁井场断网边缘下发 + OneLake IQ CDR 权证签发</text>
+  <text x="528" y="534" fill="#D1FAE5" font-size="11.5">• 封存总工在 Teams 联签 Confirm，驱动戈壁井场 SQL Server on Azure Local (ALDO) 下发干燥塔/增压泵/井口节流阀指令</text>
+  <text x="528" y="552" fill="#6EE7B7" font-size="11.5" font-weight="700">• 端到端 51ms 保住超临界管网与 EPA Class VI 注入井安全，月省 $102,600 (-90.4% TCO)，守护 $22.90M SLA</text>
+
+  <!-- Bottom Row: 5-Cloud Matrix & Quantitative KPIs -->
+  <rect x="44" y="596" width="1352" height="264" rx="14" fill="#0E1B31" stroke="#334155" stroke-width="1.2"/>
+  <text x="64" y="624" fill="#F8FAFC" font-size="14.5" font-weight="800">📊 五大云平台直接空气捕集 DAC、1.40 亿向量检索与 45Q/CDR 签证对比矩阵（n=316 路由均值 233.5ms · n=75 本体均值 199.0ms 破 200ms！）</text>
+
+  <rect x="64" y="638" width="420" height="204" rx="10" fill="#132642" stroke="#10B981" stroke-width="1.2"/>
+  <text x="80" y="662" fill="#6EE7B7" font-size="13" font-weight="800">🏆 Microsoft Fabric 必赢三大铁律（省 90.4% TCO）</text>
+  <text x="80" y="686" fill="#F8FAFC" font-size="11.5">1. $0/GB 写入税 + 12ms KQL 相变/微震感知：890K EPS 激光水分</text>
+  <text x="80" y="704" fill="#94A3B8" font-size="11">   与井下 DAS 直入 Eventhouse，瞬間拦截碳酸穿孔与两相空化</text>
+  <text x="80" y="728" fill="#F8FAFC" font-size="11.5">2. 1.40 亿向量 SSD DiskANN 13ms 检索：TOUGHREACT 多相羽流</text>
+  <text x="80" y="746" fill="#94A3B8" font-size="11">   与 Span-Wagner 相图向量驻留 NVMe SSD，省去 92% DRAM 硬件税</text>
+  <text x="80" y="770" fill="#F8FAFC" font-size="11.5">3. ALDO 戈壁井场边缘 + SDS CDR 账本 + F64 $0 读者税：断网</text>
+  <text x="80" y="788" fill="#94A3B8" font-size="11">   不超压不闪蒸，2,100 名工艺/地质/MRV 审计师 $0 Viewer 费</text>
+  <text x="80" y="818" fill="#34D399" font-size="12" font-weight="800">✓ 月度标准化 TCO：$10,900/月 vs 竞对 $113,500/月（月省 $102.6K！）</text>
+
+  <rect x="502" y="638" width="430" height="204" rx="10" fill="#132642" stroke="#64748B" stroke-width="1"/>
+  <text x="518" y="662" fill="#93C5FD" font-size="13" font-weight="800">🤝 四大云竞对定位与 OneLake 零拷贝共存边界</text>
+  <text x="518" y="688" fill="#E2E8F0" font-size="11.5">• Databricks GPU ($113.5K/mo)：适合新型 MOF/固态胺量子化学</text>
+  <text x="518" y="706" fill="#94A3B8" font-size="11">  筛选与千年矿化模拟，等温线与羽流参数零拷贝写回 OneLake</text>
+  <text x="518" y="730" fill="#E2E8F0" font-size="11.5">• Snowflake ($117.6K/mo)：适合 Puro.earth 碳登记簿与 45Q</text>
+  <text x="518" y="748" fill="#94A3B8" font-size="11">  税务台账，60s Dynamic Tables 无法拦截管道两相空化</text>
+  <text x="518" y="772" fill="#E2E8F0" font-size="11.5">• AWS SiteWise ($111.8K/mo)：890K EPS 按点写入与 1.40 亿</text>
+  <text x="518" y="790" fill="#94A3B8" font-size="11">  OpenSearch 全内存向量 OCU 账单高昂</text>
+  <text x="518" y="818" fill="#E2E8F0" font-size="11.5">• GCP BigQuery ($112.7K/mo)：缺戈壁井场断网边缘与内置 45Q 表</text>
+
+  <rect x="950" y="638" width="424" height="204" rx="10" fill="#092E26" stroke="#10B981" stroke-width="1.4"/>
+  <text x="966" y="662" fill="#6EE7B7" font-size="13" font-weight="800">📈 Scenario BW 密封基准验证（75 本体 &amp; 199.0ms 里程碑 · DL-313..316）</text>
+  <text x="966" y="688" fill="#F8FAFC" font-size="12" font-weight="700">• 评测矩阵得分：315 / 316 (99.68%) · 154/154 单测通过</text>
+  <text x="966" y="712" fill="#F8FAFC" font-size="11.5">• 管网防蚀防空化：水分压回 12 ppmv (&lt;50) + 管压 9.85 MPa 单相</text>
+  <text x="966" y="734" fill="#F8FAFC" font-size="11.5">• EPA Class VI 护栏：分流 140t/h 锁井底压力 81.4% (&lt;=85% 破裂线)</text>
+  <text x="966" y="756" fill="#F8FAFC" font-size="11.5">• 固态胺防氧化：秒关 TVSA #112 微漏氧阀，保住吸附剂寿命</text>
+  <text x="966" y="778" fill="#F8FAFC" font-size="11.5">• 净碳移除效率：91.8% 净移除，符合 IRS 45Q ($180/t) 与 CORC</text>
+  <text x="966" y="812" fill="#34D399" font-size="13" font-weight="800">🛡️ 守护 $22,900,000 45Q 抵税、CDR 长协与管网封存 SLA</text>
+</svg>
