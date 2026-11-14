@@ -4769,6 +4769,85 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Fabric AI Functions + Cosmos DB SSD DiskANN (100M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_subsea_production_fabric_fpso_flowline_hydrate_riser_rov_vs_4clouds":
+        # Scenario BN (2026-11-14 R59): Global Ultra-Deepwater Subsea Production Systems (3,000m SPS · 480 Subsea Trees + 18 FPSOs + 140 e-ROVs) × 910K EPS Hydrate Plug Prevention, Riser VIV & Resident e-ROV Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 910K EPS 6ms Subcooling/FFT Sense + Cosmos DB SSD DiskANN 7ms 104M OLGA/VIV Match + Digital Twin Builder + ALDO FPSO Vessel Edge, $10.0K/mo Normalized | $24.0K/mo Internal)
+        # vs 15-30 Min Satellite Historians & Per-Property IoT SiteWise / 104M In-Memory Vector Stack ($91.7K/mo Normalized | $220.2K/mo Internal)
+        return {
+            "scenario_id": "global_subsea_production_fabric_fpso_flowline_hydrate_riser_rov_vs_4clouds",
+            "title": "Global Ultra-Deepwater Subsea Production 18 FPSOs + 480 Subsea Trees × 910K EPS +4.8°C Hydrate Subcooling Prevention, 104M OLGA/VIV Match & Resident e-ROV Loop (Fabric Eventhouse KQL + 104M SSD DiskANN + ALDO vs. 30-Min Satellite Batch / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-14T09:50:00Z",
+                "fpso_vessels_monitored_count": 18,
+                "subsea_christmas_trees_monitored_count": 480,
+                "resident_autonomous_erovs_count": 140,
+                "mdis_opcua_fbg_ingestion_eps": 910000,
+                "per_property_or_gb_write_surcharge_usd": 0,
+                "manifold_b04_hydrate_subcooling_c": 4.8,
+                "post_meg_effective_subcooling_c": -1.7,
+                "scr07_viv_lockin_frequency_hz": 0.42,
+                "eventhouse_kql_subcooling_fft_latency_ms": 6,
+                "olga_pvt_and_riser_viv_vectors_indexed_count": 104000000,
+                "ssd_diskann_pvt_viv_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 7,
+                "umbilical_lean_meg_boost_l_per_hr": 420.0,
+                "deh_heating_power_mw": 1.8,
+                "multiphase_mixture_velocity_m_per_s": 14.2,
+                "api_rp14e_erosional_velocity_ceiling_m_per_s": 18.5,
+                "fabric_monthly_subsea_tco_usd": 10000,
+                "competitor_stitched_subsea_tco_usd": 91700,
+                "fabric_internal_full_subsea_tco_usd": 24000,
+                "competitor_internal_full_subsea_tco_usd": 220200,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalSubsea_18FPSOs_480Trees_140eROVs:910K_EPS_MDIS_OPCUA_SandAcoustic_And_SCR_FBG_Stream",
+                "hop_2": "Eventhouse_KQL_FitLine_And_FFT:6ms_Isolate_ManifoldB04_4.8C_Subcooling_And_SCR07_0.42Hz_VIV ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_SPS_And_Cosmos_SSD_DiskANN:7ms_Match_104M_OLGA_PVT_And_VIV_Vectors_0.99_Dose_420Lhr_MEG_And_eROV12 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:6ms_Verify_API_RP17N_Erosional_Velocity_14.2ms_Below_18.5ms_And_Subcooling_Minus_1.7C",
+            },
+            "multi_agent_plan": {
+                "fpso_vessels_covered": 18,
+                "subsea_trees_covered": 480,
+                "monthly_subsea_tco_saved_usd": 81700,
+                "subsea_tco_savings_pct": 89.1,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 910K EPS Subsea Hydrate Subcooling & Riser VIV Engine",
+                        "operation": "Ingest 910,000 EPS of 3,000m Subsea Master Control Station (MDIS/OPC-UA), sand acoustic, and SCR riser FBG strain streams at $0/GB write tax, isolating Manifold-B04 +4.8°C hydrate subcooling and SCR-07 0.42 Hz VIV lock-in in 6ms",
+                        "impact_metric": "Replaces $58.4K/mo per-property historian fees and eliminates 15-30 minute satellite batch blindness",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ SPS Twin & Cosmos SSD DiskANN 104M OLGA PVT / Riser VIV Engine",
+                        "operation": "Match 3,000m P/T/sand state against 104M pre-solved OLGA multiphase PVT phase-envelope and OrcaFlex VIV vectors (0.99 similarity in 7ms at -92% RAM), prescribing +420 L/hr Lean MEG + 1.8 MW DEH + e-ROV-12 choke assist and verifying v_mix = 14.2 < 18.5 m/s in Foundry IQ (6ms)",
+                        "impact_metric": "Flips hydrate subcooling to -1.7°C ice-free margin and breaks 0.42 Hz riser VIV resonance without multi-hour onshore OLGA runs",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "FPSO OIM Teams Sign-Off & ALDO Vessel Air-Gapped Edge Commit",
+                        "operation": "Approve umbilical MEG dosing and e-ROV-12 intervention in Teams, dispatch MDIS commands via SQL on Azure Local (ALDO) onboard FPSO edge, and commit API RP 17N audit into 1GB Free Fabric SQL (6ms)",
+                        "impact_metric": "25ms E2E subsea flow-assurance loop; -$81,700/mo (-89.1%) TCO; $19.75M avoided 45-day flowline shut-in & riser SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SUBSEA-FPSO-HYDRATE-RISER-API17N-SOP-066",
+                "hard_constraint": "Never allow multiphase flowline mixture velocity to exceed API RP 14E / NORSOK M-506 erosional ceiling (18.5 m/s) or sand rate >=0.5 pptb, never exceed 345 bar umbilical chemical line pressure, and never bypass Underwater Safety Valve (USV) interlocks",
+                "proposed_change": "Boost Manifold-B04 Lean MEG by +420 L/hr and activate 1.8 MW DEH (shifting subcooling to -1.7°C at v_mix = 14.2 m/s < 18.5 m/s), dispatch e-ROV-12 to Tree-B04B, and trim FPSO turret heading +4.5°",
+                "api_rp14e_erosional_velocity_and_hydrate_margin_verified": True,
+                "iso13628_umbilical_pressure_and_usv_interlock_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 19750000,
+                "end_to_end_latency_ms": 25,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (104M Vectors) + Digital Twin Builder + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -8085,6 +8164,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 28,
     },
+    {
+        "id": "DL-277",
+        "category": "Real-Time Intelligence",
+        "question": "Deepwater operator across 18 FPSOs, 480 3,000m subsea trees, and 140 resident e-ROVs must ingest 910K EPS of MDIS/OPC-UA and riser FBG strain streams, detect +4.8C Joule-Thomson hydrate subcooling in <10ms, and search 104M OLGA PVT & VIV vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line()/series_fft() 6ms Subcooling/VIV Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 7ms 104M OLGA/VIV Match (-92% RAM) + Digital Twin SPS + ALDO FPSO Edge (25ms E2E, -89.1% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line()/series_fft() 6ms Subcooling/VIV Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 7ms 104M OLGA/VIV Match (-92% RAM) + Digital Twin SPS + ALDO FPSO Edge (25ms E2E, -89.1% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 18,
+    },
+    {
+        "id": "DL-278",
+        "category": "vs AWS",
+        "question": "Subsea engineering and ROV team needs 10,000-case FEED-stage transient multiphase OLGA and OrcaFlex hydrodynamic riser simulations alongside PyTorch subsea stereo-vision 3D point-cloud SLAM & corrosion model training",
+        "expected": "Route offline FEED OLGA/OrcaFlex simulations to AWS Batch / Azure CycleCloud HPC and subsea stereo-vision SLAM training to Databricks GPU, mounting 104M PVT/VIV vectors and ONNX weights into Fabric OneLake & FPSO ALDO edge",
+        "model_answer": "Route offline FEED OLGA/OrcaFlex simulations to AWS Batch / Azure CycleCloud HPC and subsea stereo-vision SLAM training to Databricks GPU, mounting 104M PVT/VIV vectors and ONNX weights into Fabric OneLake & FPSO ALDO edge",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 21,
+    },
+    {
+        "id": "DL-279",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 104M SSD DiskANN + Digital Twin Builder + ALDO vs 15-minute satellite batching & per-property IoT SiteWise fees across 18 FPSOs and 480 subsea trees with 1,500 flow-assurance engineers, OIMs, and ROV pilots",
+        "expected": "Hybrid Better Together: Stream 910K EPS subsea MDIS/FBG telemetry into Eventhouse ($0/GB tax), index 104M OLGA/VIV vectors in SSD DiskANN (-92% RAM), run cyclone-proof control on FPSO ALDO edge, and serve 1,500 users via DirectLake (-89.1% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 910K EPS subsea MDIS/FBG telemetry into Eventhouse ($0/GB tax), index 104M OLGA/VIV vectors in SSD DiskANN (-92% RAM), run cyclone-proof control on FPSO ALDO edge, and serve 1,500 users via DirectLake (-89.1% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 18,
+    },
+    {
+        "id": "DL-280",
+        "category": "Fabric IQ & Ontology",
+        "question": "At 3,000m seabed (4.0C, 285 bar) Manifold-B04 enters +4.8C Joule-Thomson hydrate subcooling (18.5C) while Steel Catenary Riser SCR-07 locks into a 0.42 Hz loop-current VIV resonance",
+        "expected": "Eventhouse KQL +4.8C Subcooling & 0.42Hz VIV Sense (6ms, $0/GB Tax) + 6-Hop 104M OLGA/VIV DiskANN +420L/hr MEG, 1.8MW DEH & e-ROV-12 Match (7ms) + Foundry IQ API 14E 14.2<18.5m/s Gate (6ms) + Teams ALDO FPSO Commit (6ms = 25ms E2E, Protect $19.75M SLA)",
+        "model_answer": "Eventhouse KQL +4.8C Subcooling & 0.42Hz VIV Sense (6ms, $0/GB Tax) + 6-Hop 104M OLGA/VIV DiskANN +420L/hr MEG, 1.8MW DEH & e-ROV-12 Match (7ms) + Foundry IQ API 14E 14.2<18.5m/s Gate (6ms) + Teams ALDO FPSO Commit (6ms = 25ms E2E, Protect $19.75M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 21,
+    },
 ]
 
 
@@ -8265,6 +8392,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     precision_oncology_sim = simulate_ontology_incident("global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds")
     virtual_power_plant_sim = simulate_ontology_incident("global_virtual_power_plant_fabric_v2g_derms_ferc2222_inertia_vs_4clouds")
     institutional_asset_mgmt_sim = simulate_ontology_incident("global_institutional_asset_mgmt_fabric_private_credit_ccp_margin_t1_vs_4clouds")
+    subsea_production_fpso_sim = simulate_ontology_incident("global_subsea_production_fabric_fpso_flowline_hydrate_riser_rov_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -8334,6 +8462,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds": precision_oncology_sim,
         "global_virtual_power_plant_fabric_v2g_derms_ferc2222_inertia_vs_4clouds": virtual_power_plant_sim,
         "global_institutional_asset_mgmt_fabric_private_credit_ccp_margin_t1_vs_4clouds": institutional_asset_mgmt_sim,
+        "global_subsea_production_fabric_fpso_flowline_hydrate_riser_rov_vs_4clouds": subsea_production_fpso_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -8447,6 +8576,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r56_ontology_sim_mean_ms = round(sum(r56_sim_latencies) / len(r56_sim_latencies), 2)
     r57_sim_latencies = sim_latencies[:64]
     r57_ontology_sim_mean_ms = round(sum(r57_sim_latencies) / len(r57_sim_latencies), 2)
+    r58_sim_latencies = sim_latencies[:65]
+    r58_ontology_sim_mean_ms = round(sum(r58_sim_latencies) / len(r58_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -9209,11 +9340,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-14",
         },
+        {
+            "id": "SPEC-SUBSEA-PRODUCTION-FPSO-FLOWLINE-HYDRATE-RISER-ROV",
+            "vendor": "Microsoft / AWS / Databricks / Snowflake / Google Cloud",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze high-frequency subsea Master Control Station (MDIS/OPC-UA) pressure/temperature and riser FBG strain telemetry while Cosmos DB in Fabric SSD DiskANN indexes 104M+ multiphase PVT phase-envelope and riser VIV fatigue vectors alongside Digital Twin Builder and SQL Server on Azure Local (ALDO) onboard FPSO vessels; AWS IoT SiteWise, Databricks Energy, Snowflake Energy, and GCP BigQuery provide cloud-native offshore energy analytics.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fft-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/digital-twin-builder/overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/energy-and-utilities",
+                "https://www.snowflake.com/en/solutions/industries/energy-and-utilities/",
+            ],
+            "as_of": "2026-11-14",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r58",
-        "generated_at": "2026-11-14T09:28:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r59",
+        "generated_at": "2026-11-14T09:52:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -9224,6 +9368,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R58 snapshot n=276 mean was 264.5ms; "
                     f"historical R57 snapshot n=272 mean was 268.0ms; "
                     f"historical R56 snapshot n=268 mean was 271.5ms; "
                     f"historical R55 snapshot n=264 mean was 275.5ms; "
@@ -9287,6 +9432,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R58 snapshot n=65 mean was {r58_ontology_sim_mean_ms}ms; "
                     f"historical R57 snapshot n=64 mean was {r57_ontology_sim_mean_ms}ms; "
                     f"historical R56 snapshot n=63 mean was {r56_ontology_sim_mean_ms}ms; "
                     f"historical R55 snapshot n=62 mean was {r55_ontology_sim_mean_ms}ms; "
@@ -9343,6 +9489,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r58_historical_denominators": {
+                    "r58_routing_matrix_n276_mean_ms": 264.5,
+                    "r58_ontology_simulations_n65_mean_ms": r58_ontology_sim_mean_ms,
+                },
                 "r57_historical_denominators": {
                     "r57_routing_matrix_n272_mean_ms": 268.0,
                     "r57_ontology_simulations_n64_mean_ms": r57_ontology_sim_mean_ms,
@@ -9629,6 +9779,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r58_65_simulation_mean_modeled_latency_ms": r58_ontology_sim_mean_ms,
             "r57_64_simulation_mean_modeled_latency_ms": r57_ontology_sim_mean_ms,
             "r56_63_simulation_mean_modeled_latency_ms": r56_ontology_sim_mean_ms,
             "r55_62_simulation_mean_modeled_latency_ms": r55_ontology_sim_mean_ms,
