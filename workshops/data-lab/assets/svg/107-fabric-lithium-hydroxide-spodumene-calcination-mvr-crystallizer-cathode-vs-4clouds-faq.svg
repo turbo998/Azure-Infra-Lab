@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg99" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050B16"/>
+      <stop offset="50%" stop-color="#0A162C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent99" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardBlue99" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2548"/>
+      <stop offset="100%" stop-color="#0B1933"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg99)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="58" y="50" width="302" height="26" rx="13" fill="url(#accent99)"/>
+  <text x="209" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · 2026-11-15 R99 · 440-SCENARIO &amp; &gt;$200K/MO</text>
+  <text x="376" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">硬岩锂辉石 1,050°C 转晶与电池级氢氧化锂 (LiOH·H2O)：回转窑防结圈、MVR 结晶防细晶与 2.64 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global Spodumene Calcination &amp; Battery-Grade LiOH·H2O (24 Refineries · 72 1,050°C Kilns + 144 MVR DTB Crystallizers + 280 Magnetic Trains) · 980K EPS · 264M DiskANN · 52ms Loop · -93.5% TCO ($201.4K/mo Saved!)</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1284" y="69" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">R99 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">174.5ms · 157.0ms</text>
+
+  <!-- Left Column: Physical Spodumene & LiOH Telemetry Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#34D399" font-size="14" font-weight="800">01 · 1,050°C 转晶窑与 MVR 结晶传感层 (980K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#FDE68A" font-size="12.5" font-weight="800">🔥 72 座 1,050°C 锂辉石 α→β 爆裂转晶回转窑</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 胴体红外热像扫描 + 主电机扭矩电流谐波 + 在线 XRF 脉石</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 捕获 #14转晶窑 22-28m 烧成带料温升至 1,091.4°C 偏心脉动</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 提前拦截长石脉石低共熔粘壁结成 400 吨玻璃态结圈!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#7DD3FC" font-size="12.5" font-weight="800">❄️ 144 台 MVR 导流筒挡板 (DTB) 连续真空结晶器</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 原位聚焦光束反射仪 (FBRM) 弦长分布 + ATR-FTIR 过饱和度</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 捕获 #09结晶器 &lt;40μm 细晶弦长计数率以 +340%/min 暴增</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 提前阻断越过介稳区 (MSZW) 的二次成核“细晶雪崩”</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">🧲 280 条 20,000 高斯高梯度电磁除铁与氮封包装线</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 在线 ICP-MS 与超高灵敏度磁感探头监测 Fe/Cr/Ni/Zn 异物</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 超纯氮气正压保护阻断空气 CO2 碳化生成碳酸锂混晶</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 锁死磁性异物 26 ppb &lt;= 50 ppb，严防刺穿动力电池隔膜</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统 4 小时离线 XRD/激光粒度与云端全内存拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 4h 离线化验看不见精矿脉石波动与细晶爆发，18h 粒度震荡降级</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 980K EPS 云端按属性写入税高达 $149.2K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.64 亿向量全内存常驻需 2.95TB+ DRAM (&gt;$54.5K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 52ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue99)" stroke="#10B981" stroke-width="2"/>
+  <text x="502" y="166" fill="#6EE7B7" font-size="14" font-weight="800">02 · Microsoft Fabric 52ms 锂辉石焙烧与结晶闭环</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 13ms 结圈扭矩与 FBRM 细晶感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 980,000 EPS 红外/弦长流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• 13ms 锁定 #14窑 1,091.4°C 粘壁前兆与 #09结晶器 +340%/min 细晶</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $144.3K/月写入费，终结 4 小时离线 XRD 与粒度仪盲区</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 13ms 2.64亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 检索 264,000,000 条四元低共熔相图、PBM 介稳区消晶与除铁向量</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.6K vs $54.5K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：烧嘴燃气 -4.2% + 旋流风 +3.5° + 细晶消除外循环 +24%</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 料温压回 1,064.0°C (β转晶率 98.8% 零结圈)，D50=448μm</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 电池级氢氧化锂规程护栏 (SOP-106 · 13ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验 β 转晶率 98.8% &gt;= 97.5%、0 结圈、晶体 D50=448μm 达标</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验磁性异物 26 ppb &lt;= 50 ppb 红线，CO3²- &lt; 0.21% 零碳化混晶</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断回转窑结圈停窑与高镍三元正极材料磁性异物击穿</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总工确认 + ALDO 车间边缘 &amp; 电池护照 (13ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 13ms 驱动烧嘴旋流风、消晶泵与除铁阀</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发欧盟电池护照低碳证书 (4.85 kgCO2e/kg)</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 52ms 端到端闭环 · 守护 $33.75M 电池级氢氧化锂长协交付 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.5% · 破$200K/月!)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑回转窑 DEM-CFD 颗粒传热</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  与三维 PBM-CFD 结晶仿真，向 OneLake 写入 2.64 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留西澳锂精矿海运结算与正极厂</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  寄售库存 ERP，经 OneLake Mirroring ($0 算力) 零拷贝互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 4,900 名冶金与结晶工程师 DirectLake 看板 ($0 读者税)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 24 座氢氧化锂基地月度 TCO 对比 (980K EPS · 264M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 264M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$14,000 / 月 (基准最优 · 省 93.5%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 2.95TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$215,400 / 月 (归一化) | $586,200 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $201,400 / 月 ($2.42M / 年) · 突破月省 $200K 大关!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#7DD3FC" font-size="12.5" font-weight="800">📊 Scenario DB 实测成效与双分母披露 (R99 五冠里程碑!)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=440)：439 / 440 (99.77%) · 均值 174.5 ms (&lt;175ms!)</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=106)：157.0 ms (本场景 DB 仅 52 ms E2E)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 转晶与结晶：1,064.0°C (β转晶率98.8% 0结圈) | D50=448μm</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 电池级纯度：磁性异物 26 ppb &lt;= 50 ppb · 4.85 kgCO2e/kg</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避回转窑结圈与批次降级损失：$33,750,000 ($33.75M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#10B981" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#6EE7B7" font-size="14" font-weight="800">04 · AI Solution Architect 硬岩锂辉石提锂与电池级氢氧化锂打单金句与生产核验清单 (Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 1,050°C 锂辉石转晶窑与 MVR 结晶器里，窗口窄到只有 ±15°C，靠 4 小时离线 XRD 与粒度仪</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">化验，不是结成 400 吨玻璃结圈停窑，就是爆发细晶雪崩包裹硫酸根废掉整批氢氧化锂！Microsoft</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">Fabric 用 Eventhouse 在 13ms 内算清窑扭矩谐波与原位 FBRM 细晶斜率（$0/GB 写入税），再用</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">SSD DiskANN 在 13ms 内匹配 2.64 亿条四元相图与 PBM 介稳区向量，52ms 走 ALDO 边缘微调旋流风</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">与消晶外循环，锁死 98.8% 转晶率、D50=448μm 与 26ppb 磁性异物，月省 $201.4K (93.5%)！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#7DD3FC" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 72 座转晶窑胴体红外、主电机扭矩与在线 XRF 精矿碱金属脉石流直推 Eventhouse</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. 144 台 MVR DTB 结晶器原位 FBRM 弦长与 ATR-FTIR 过饱和度 13ms 介稳区联锁</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.64 亿条四元相图/PBM/除铁索引构建 (-92% 内存，P95 &lt;= 13ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-106 门禁：β转晶率 &gt;=97.5%、D50 400-500μm、磁性异物 &lt;=50ppb</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 边缘驱动烧嘴/消晶泵，1GB 免费 SQL 签发欧盟电池护照 4.85kgCO2e/kg 证书</text>
+</svg>
