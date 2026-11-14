@@ -1,8 +1,8 @@
 # ⚔️ Microsoft Fabric vs. 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep-Dive Battlecards (2026)
 
 > **Language**: [中文 (`fabric-vs-4clouds-battlecards-2026.md`)](fabric-vs-4clouds-battlecards-2026.md) | **English (Current)**  
-> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-08 / 11-09` · 48 Scenarios `97.92%`) · **Target Persona**: Principal AI Solution Architect  
-> **🔥 Flagship FAQ Selection Guide**: [Enterprise AI Data Foundation Selection & "Zero-Copy + Semantic Ontology (OneLake × Fabric IQ)" FAQ](fabric-onelake-iq-vs-4clouds-selection-faq.en.md)
+> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-15 R100 Centennial` · 444 Scenarios `99.77%` · `173.0ms` Matrix Mean · 107 Ontologies `156.0ms` Mean) · **Target Persona**: Principal AI Solution Architect  
+> **🔥 Flagship FAQ Selection Guide**: [Enterprise AI Data Foundation Selection & "Zero-Copy + Semantic Ontology (OneLake × Fabric IQ)" FAQ](fabric-onelake-iq-vs-4clouds-selection-faq.en.md) · [R100 Centennial: 13.5nm EUV LPP 50kHz Tin-Droplet Source, Mo/Si Collector Mirror & 45nm CNT Pellicle FAQ](fabric-euv-source-tin-droplet-lpp-collector-mirror-cnt-pellicle-vs-4clouds-faq.en.md)
 
 [![OneLake Zero-Copy & Fabric IQ Ontology FAQ Architecture](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)
 

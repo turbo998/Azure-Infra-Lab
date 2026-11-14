@@ -1,8 +1,8 @@
 # ⚔️ Microsoft Fabric vs 四大云数智竞对（Databricks / Snowflake / GCP / AWS）深度攻防拆解与售前 Battlecards (2026)
 
 > **语言版本 / Language**: **中文 (当前)** | [English (`fabric-vs-4clouds-battlecards-2026.en.md`)](fabric-vs-4clouds-battlecards-2026.en.md)  
-> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-08 / 11-09 实测封存 · 48 场景 `97.92%`） · **适用角色**：AI Solution Architect / 云数智架构师  
-> **🔥 必读 FAQ 选型指南**：[《企业级 AI 数据底座选型与“零拷贝 + 语义本体（OneLake × Fabric IQ）”核心原理 FAQ》](fabric-onelake-iq-vs-4clouds-selection-faq.md)
+> **数据基准**：`workshops/data-lab/reports/report.json`（2026-11-15 R100 百轮实测封存 · 444 场景 `99.77%` · 矩阵均值 `173.0ms` · 107 大行业本体仿真均值 `156.0ms`） · **适用角色**：AI Solution Architect / 云数智架构师  
+> **🔥 必读 FAQ 选型指南**：[《企业级 AI 数据底座选型与“零拷贝 + 语义本体（OneLake × Fabric IQ）”核心原理 FAQ》](fabric-onelake-iq-vs-4clouds-selection-faq.md) · [《R100 百轮献礼：13.5nm EUV 极紫外 50kHz 锡液滴光源、Mo/Si 收集镜护镜与 CNT 防尘膜闭环 FAQ》](fabric-euv-source-tin-droplet-lpp-collector-mirror-cnt-pellicle-vs-4clouds-faq.md)
 
 [![OneLake Zero-Copy & Fabric IQ Ontology FAQ Architecture](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)
 

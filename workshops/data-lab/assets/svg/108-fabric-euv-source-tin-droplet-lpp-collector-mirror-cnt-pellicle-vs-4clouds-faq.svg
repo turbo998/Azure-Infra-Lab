@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg100" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="50%" stop-color="#0A1428"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent100" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue100" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2548"/>
+      <stop offset="100%" stop-color="#0B1933"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg100)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="58" y="50" width="310" height="26" rx="13" fill="url(#accent100)"/>
+  <text x="213" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">🏆 DATA LAB · R100 CENTENNIAL &amp; 105-FAQ!</text>
+  <text x="384" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">13.5nm 极紫外 (EUV) 50kHz 锡液滴光源、Mo/Si 收集镜氢除锡、45nm CNT 防尘膜与 2.68 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Centennial Round 100! Global 13.5nm EUV LPP Source, Collector &amp; CNT Pellicle (16 Fabs · 540 50kHz Vessels + 1,080 Collectors + 2,400 Bays) · 990K EPS · 268M DiskANN · 50ms Loop · -93.6% TCO ($206.3K/mo Saved)</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#F59E0B" stroke-width="1.8"/>
+  <text x="1284" y="69" fill="#FBBF24" font-size="11.5" font-weight="800" text-anchor="middle">🏆 R100 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">173.0ms · 156.0ms</text>
+
+  <!-- Left Column: Physical 13.5nm EUV LPP Source & CNT Pellicle Telemetry Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#FBBF24" font-size="14" font-weight="800">01 · 50kHz 锡液滴双脉冲与 CNT 防尘膜传感 (990K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#FDE68A" font-size="12.5" font-weight="800">⚡ 540 套 50,000 Hz 熔融锡 (Sn) 液滴双脉冲 LPP 光源</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 27μm 锡滴 80m/s 双正交激光阴影相机 + 30kW CO2 激光波前</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 捕获 #12光源腔 142kHz 压电边带致 1.42μm 抖动与 9.4° 靶倾角</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 提前拦截转换效率暴跌 (CE=4.25%) 与高能锡离子非对称轰击!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#7DD3FC" font-size="12.5" font-weight="800">🪞 1,080 面 $8.5M 40层钼/硅 (Mo/Si) 布拉格收集镜</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 远场 4 象限 EUV 能量探头 + 尾气甲锡烷 (SnH4) 质谱仪</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 氢自由基清洗反应 (Sn + 4H* → SnH4↑) 实时抑制镜面锡沉积</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 联合 Sub-Fab 钯膜纯化器实现 95.8% 9N 超高纯氢气闭环回收</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">🛡️ 2,400 个 45nm 悬空碳纳米管 (CNT) 光罩防尘膜工位</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 高速红外热像仪监测 500W EUV 源功率下 CNT 薄膜热斑</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 捕获 #07扫描台 CNT 中心温度升至 918.4°C (逼近 950°C 断裂线)</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 严防 CNT 在真空腔内热破裂污染 $450K 极紫外光罩 (Reticle)</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统孤立机台 FPGA 控制与云端全内存拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 单点 2D 转向镜看不见三维圆饼靶倾角，反而把锡碎屑引向收集镜</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 990K EPS 云端按属性写入税高达 $153.2K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.68 亿向量全内存常驻需 3.00TB+ DRAM (&gt;$55.8K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 50ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue100)" stroke="#F59E0B" stroke-width="2"/>
+  <text x="502" y="166" fill="#FDE68A" font-size="14" font-weight="800">02 · Microsoft Fabric 50ms 极紫外光源与光学闭环 (R100!)</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 12ms 声光互谱与靶倾角感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 990,000 EPS 50kHz/光学流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• series_fft() 12ms 锁定 #12腔 1.42μm / 9.4° 倾角与 #07台 918.4°C</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $148.3K/月写入费，毫秒级反演三维圆饼靶非对称倾角</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 12ms 2.68亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 百轮大关：检索 268,000,000 条 RMHD 双脉冲、氢吹扫与 CNT 散热向量</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.6K vs $55.8K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：压电抑振 -18dB + 预脉冲 +1.35μm + 主脉冲 +85ns + 氢吹扫 +14.5%</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 锡滴对准残差压至 0.18μm、CE 恢复 6.12%，CNT 降温至 784.0°C</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 极紫外光源与防尘膜护栏 (SOP-107 · 13ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验对准残差 0.18μm &lt;= 0.35μm、转换效率 CE = 6.12% &gt;= 5.80%</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验 CNT 防尘膜 784.0°C &lt;= 820.0°C 零破裂，9N 氢回收率 95.8%</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断 $8.5M 收集镜锡剥落与 $450K 极紫外光罩颗粒污染</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总监确认 + ALDO Sub-Fab 边缘 &amp; SEMI S23 (13ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 13ms 驱动压电转向镜、激光延迟与氢吹扫</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 SEMI S23 95.8% 绿氢循环与收集镜寿命账本</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 50ms 端到端闭环 (R100!) · 守护 $34.10M High-NA EUV 光刻 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.6% · R100!)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑三维辐射磁流体 (RMHD) 50万度</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  锡等离子体与多层膜布拉格仿真，向 OneLake 写入 2.68 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留 $8.5M 收集镜返厂镀膜周转与</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  CNT 防尘膜库存 ERP，经 OneLake Mirroring ($0 算力) 互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 5,600 名 EUV 光源与光刻工程师 DirectLake 看板 ($0 席位)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 16 座 EUV 基地月度 TCO 对比 (990K EPS · 268M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 268M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$14,100 / 月 (基准最优 · 省 93.6%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 3.00TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$220,400 / 月 (归一化) | $599,800 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $206,300 / 月 ($2.48M / 年) · 第 100 轮百轮大关里程碑!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#F59E0B" stroke-width="1.4"/>
+  <text x="1014" y="520" fill="#FDE68A" font-size="12.5" font-weight="800">🏆 Scenario DC 实测成效与双分母披露 (Centennial R100!)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=444)：443 / 444 (99.77%) · 均值 173.0 ms</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=107)：156.0 ms (本场景 DC 仅 50 ms E2E!)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 50kHz 双脉冲：残差 1.42→0.18μm | 转换效率 CE 4.25%→6.12%</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 光学与绿氢：CNT 784°C 零破裂 · 95.8% 9N-H2 钯膜闭环回收</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避收集镜/光罩损毁与停线损失：$34,100,000 ($34.10M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#FDE68A" font-size="14" font-weight="800">04 · AI Solution Architect 13.5nm EUV 光源与光学系统打单金句与生产核验清单 (Centennial R100 Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#FDE68A" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch · Round 100)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 13.5nm EUV 光源腔里，每秒要用双脉冲激光连打 50,000 颗飞行锡滴，单靠 2D 转向镜看不见</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">圆饼靶三维倾角，1.4μm 抖动就会把高能锡碎屑喷向 $8.5M 收集镜！Microsoft Fabric 用 Eventhouse</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">在 12ms 内反演 50kHz 声光互谱与 CNT 热斑（$0/GB 写入税），再用 SSD DiskANN 在 12ms 内匹配</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">2.68 亿条 RMHD 双脉冲与氢自由基吹扫向量，50ms 走 ALDO Sub-Fab 边缘恢复 6.12% 转换效率、</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">保住 45nm CNT 防尘膜与 $450K 光罩，月省 $206.3K (93.6% TCO)！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 540 套光源腔 50kHz 锡滴双正交阴影流与远场 4 象限 EUV 探头直推 Eventhouse</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. Mo/Si 收集镜分象限氢自由基 (H*→SnH4) 吹扫阀与尾气质谱 12ms 闭环联动</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.68 亿条 RMHD/布拉格反射/CNT 散热索引 (-92% 内存，P95 &lt;= 12ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-107 门禁：对准残差 &lt;=0.35μm、CE &gt;=5.80%、CNT 膜温 &lt;=820°C</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO Sub-Fab 边缘驱动 PZT 转向镜/延迟线，1GB 免费 SQL 签发 95.8% 9N-H2 循环凭证</text>
+</svg>
