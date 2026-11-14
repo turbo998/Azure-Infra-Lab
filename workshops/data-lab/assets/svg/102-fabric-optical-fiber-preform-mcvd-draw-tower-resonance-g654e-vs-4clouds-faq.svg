@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 960" width="100%" height="100%" style="background:#070b14;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <linearGradient id="bg102" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#091e2c"/>
+      <stop offset="100%" stop-color="#0c192c"/>
+    </linearGradient>
+    <linearGradient id="hdr102" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="card102" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111c33"/>
+      <stop offset="100%" stop-color="#0a1222"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="960" fill="url(#bg102)"/>
+
+  <!-- Header -->
+  <rect x="28" y="22" width="1544" height="96" rx="16" fill="url(#hdr102)" opacity="0.94"/>
+  <text x="52" y="58" font-size="23" font-weight="800" fill="#ffffff">Data Lab R94 · Subsea G.654.E &amp; AI Optical Fiber Preform MCVD, 3,000m/min Draw-Tower &amp; Coating vs. 4 Clouds</text>
+  <text x="52" y="86" font-size="14" font-weight="600" fill="#fef08a">420-Scenario (419/420 = 99.76%), -93.0% TCO Milestone, $32.00M SLA, 182.0ms Mean &amp; 244M-Vector Five-Crown Milestone! · 24 Complexes (420 Towers) · 990K EPS · 62ms Loop</text>
+  <rect x="1318" y="38" width="232" height="64" rx="12" fill="#06152d" stroke="#fde047" stroke-width="2"/>
+  <text x="1434" y="64" font-size="13" font-weight="700" fill="#fde047" text-anchor="middle">SCENARIO CW · DL-417..420</text>
+  <text x="1434" y="86" font-size="18" font-weight="800" fill="#6ee7b7" text-anchor="middle">62ms E2E · 244M Vec</text>
+
+  <!-- Left Column: Problem & Legacy Bottleneck -->
+  <rect x="28" y="136" width="490" height="390" rx="14" fill="url(#card102)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="48" y="168" font-size="18" font-weight="800" fill="#f87171">1. Why 10Hz PIDs &amp; Post-Spool OTDRs Fail 3,000m/min Towers</text>
+  <text x="48" y="196" font-size="13" font-weight="700" fill="#fca5a5">• 2,100°C Neck-Down 14.2Hz Draw-Resonance &amp; 50m/s Break:</text>
+  <text x="60" y="216" font-size="12" fill="#cbd5e1">At 3,000 m/min (50 m/s), a 14.2Hz Argon/Helium muffle vortex</text>
+  <text x="60" y="234" font-size="12" fill="#cbd5e1">excites neck-down meniscus resonance (±0.68μm ripple, 142g tension),</text>
+  <text x="60" y="252" font-size="12" fill="#cbd5e1">snapping 400km continuous subsea spools! 10Hz PIDs cannot track it.</text>
+
+  <text x="48" y="284" font-size="13" font-weight="700" fill="#fca5a5">• Fictive-Temp Rayleigh Loss (&gt;0.160 dB/km) &amp; Coating Shift:</text>
+  <text x="60" y="304" font-size="12" fill="#cbd5e1">Unrelaxed fictive temperature spikes 1550nm Rayleigh loss, while</text>
+  <text x="60" y="322" font-size="12" fill="#cbd5e1">3.4μm UV-coating eccentricity causes 400% deep-sea micro-bending.</text>
+  <text x="60" y="340" font-size="12" fill="#cbd5e1">8-hour post-spool OTDR tests discover loss only after 600km is wound.</text>
+
+  <rect x="48" y="378" width="450" height="128" rx="10" fill="#1f1224" stroke="#f43f5e" stroke-width="1"/>
+  <text x="64" y="402" font-size="13" font-weight="800" fill="#fda4af">❌ Legacy 4-Cloud Stitched TCO: $192,900 / mo (Normalized)</text>
+  <text x="64" y="424" font-size="12" fill="#fecdd3">• Cloud IoT Per-Attribute/GB Ingest (990K EPS): $132,800 / mo</text>
+  <text x="64" y="444" font-size="12" fill="#fecdd3">• 244M-Vector RAM-Resident Cluster (3.85TB DRAM): $38,000 / mo</text>
+  <text x="64" y="464" font-size="12" fill="#fecdd3">• 5,000 Photonics Engineer &amp; Subsea CoA Seats: $22,100 / mo</text>
+  <text x="64" y="486" font-size="12" font-weight="700" fill="#fb7185">• Full Internal Enterprise Scope: $522,800 / mo (8h OTDR lag)</text>
+
+  <!-- Center Column: Microsoft Fabric 62ms Closed-Loop Architecture -->
+  <rect x="538" y="136" width="524" height="390" rx="14" fill="url(#card102)" stroke="#10b981" stroke-width="2"/>
+  <text x="558" y="168" font-size="18" font-weight="800" fill="#6ee7b7">2. Microsoft Fabric 62ms Draw-Tower &amp; Sinter Loop</text>
+
+  <rect x="558" y="184" width="484" height="72" rx="10" fill="#0f243c" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="574" y="206" font-size="13" font-weight="800" fill="#7dd3fc">Step 1 · Eventhouse KQL (14ms · $0/GB Stream Write Tax)</text>
+  <text x="574" y="226" font-size="12" fill="#e2e8f0">Ingests 990K EPS (10kHz laser diameter + 5kHz coating + FTIR).</text>
+  <text x="574" y="244" font-size="12" fill="#6ee7b7">series_fft() isolates 14.2Hz (±0.68μm) ripple &amp; 3.4μm eccentricity</text>
+
+  <rect x="558" y="266" width="484" height="76" rx="10" fill="#132a2e" stroke="#10b981" stroke-width="1.2"/>
+  <text x="574" y="288" font-size="13" font-weight="800" fill="#6ee7b7">Step 2 · Fabric IQ + Cosmos SSD DiskANN (16ms · 244M Vectors)</text>
+  <text x="574" y="308" font-size="12" fill="#e2e8f0">Searches 244,000,000 Navier-Stokes neck-down meniscus profiles,</text>
+  <text x="574" y="326" font-size="12" fill="#fde047">fictive-temp Rayleigh curves &amp; UV-coating shear tensors (-92% RAM).</text>
+
+  <rect x="558" y="352" width="484" height="74" rx="10" fill="#1e223d" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="574" y="374" font-size="13" font-weight="800" fill="#d8b4fe">Step 3 · Foundry IQ Guardrail SOP-101 (16ms Hard Physics Gate)</text>
+  <text x="574" y="394" font-size="12" fill="#e2e8f0">Boosts iris gas +12.4%, 14.2Hz capstan lead &amp; +18°C anneal (±0.07μm,</text>
+  <text x="574" y="412" font-size="12" fill="#6ee7b7">0.141 dB/km, 0 breaks) + steers piezo die -2.9μm (0.42μm concentric).</text>
+
+  <rect x="558" y="436" width="484" height="74" rx="10" fill="#0d2818" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="574" y="458" font-size="13" font-weight="800" fill="#86efac">Step 4 · ALDO Tower Edge + SDS G.654.E / He Commit (16ms)</text>
+  <text x="574" y="478" font-size="12" fill="#e2e8f0">Dispatches EtherCAT capstan/piezo/MFC setpoints &amp; mints ITU-T</text>
+  <text x="574" y="496" font-size="12" fill="#fde047">G.654.E CoA &amp; 96.2% He-recycled 1.85 kgCO2e/fkm passport to SQL.</text>
+
+  <!-- Right Column: Coexistence & Quantitative KPIs -->
+  <rect x="1082" y="136" width="490" height="390" rx="14" fill="url(#card102)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1102" y="168" font-size="18" font-weight="800" fill="#38bdf8">3. Better Together &amp; Benchmark Economics</text>
+
+  <rect x="1102" y="184" width="450" height="142" rx="10" fill="#0c1f38" stroke="#0284c7" stroke-width="1"/>
+  <text x="1118" y="208" font-size="13" font-weight="800" fill="#7dd3fc">🤝 Multi-Cloud Zero-Copy Coexistence Patterns</text>
+  <text x="1118" y="230" font-size="12" fill="#cbd5e1">• Azure HPC / Databricks GPU: Run Hollow-Core HC-NANF full-vector</text>
+  <text x="1118" y="248" font-size="12" fill="#cbd5e1">  Maxwell FEM (COMSOL) &amp; radiative neck-down CFD; sync 244M</text>
+  <text x="1118" y="266" font-size="12" fill="#cbd5e1">  meniscus &amp; Rayleigh vectors to Fabric SSD DiskANN via OneLake.</text>
+  <text x="1118" y="288" font-size="12" fill="#cbd5e1">• Snowflake / SAP S/4HANA: Keep SiCl4/GeCl4 supply chain, subsea</text>
+  <text x="1118" y="306" font-size="12" fill="#cbd5e1">  consortium ERP &amp; AIDC fiber billing via OneLake Mirroring ($0).</text>
+
+  <rect x="1102" y="340" width="450" height="166" rx="10" fill="#092218" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1118" y="364" font-size="14" font-weight="800" fill="#6ee7b7">✅ Fabric Unified TCO: $13,500 / mo (-93.0% Milestone!)</text>
+  <text x="1118" y="386" font-size="12" fill="#d1fae5">• Monthly Savings: -$179,400 / mo ($192.9K → $13.5K Normalized)</text>
+  <text x="1118" y="406" font-size="12" fill="#d1fae5">• Internal Full Enterprise TCO: $36,600 vs $522,800 / mo</text>
+  <text x="1118" y="426" font-size="12" fill="#fde047">• Bare-Fiber Diameter: 125.00±0.07 μm (0 Breaks · 0.42μm Coat)</text>
+  <text x="1118" y="446" font-size="12" fill="#fde047">• 1550nm Rayleigh Loss: 0.162→0.141 dB/km (ITU-T G.654.E)</text>
+  <text x="1118" y="466" font-size="12" fill="#6ee7b7">• Carbon &amp; Helium: 1.85 kgCO2e/fkm · 96.2% He Closed-Loop</text>
+  <text x="1118" y="488" font-size="13" font-weight="800" fill="#ffffff">• Protected 400km Subsea &amp; AIDC SLA: $32,000,000 ($32.00M!)</text>
+
+  <!-- Bottom Full-Width Table: 5-Cloud Decision Matrix -->
+  <rect x="28" y="544" width="1544" height="388" rx="14" fill="url(#card102)" stroke="#334155" stroke-width="1.5"/>
+  <text x="48" y="578" font-size="18" font-weight="800" fill="#f8fafc">4. Five-Cloud Selection Matrix for Subsea G.654.E &amp; AI Optical Fiber Preform / 3,000m/min Draw (DL-417..DL-420)</text>
+
+  <rect x="48" y="594" width="1504" height="36" rx="8" fill="#1e293b"/>
+  <text x="64" y="617" font-size="12" font-weight="800" fill="#93c5fd">Capability / Workload Dimension</text>
+  <text x="410" y="617" font-size="12" font-weight="800" fill="#6ee7b7">Microsoft Fabric (F64 + ALDO)</text>
+  <text x="730" y="617" font-size="12" font-weight="800" fill="#fcd34d">AWS (SiteWise + OpenSearch)</text>
+  <text x="1010" y="617" font-size="12" font-weight="800" fill="#93c5fd">GCP (Pub/Sub + BigQuery)</text>
+  <text x="1270" y="617" font-size="12" font-weight="800" fill="#f9a8d4">Databricks / Snowflake</text>
+
+  <!-- Row 1 -->
+  <line x1="48" y1="676" x2="1552" y2="676" stroke="#1e293b"/>
+  <text x="64" y="654" font-size="12" font-weight="700" fill="#e2e8f0">1. 990K EPS 10kHz Diameter &amp; 5kHz Coating</text>
+  <text x="410" y="654" font-size="12" font-weight="700" fill="#6ee7b7">★ $0/GB Write Tax · 14ms KQL FFT/FitLine</text>
+  <text x="730" y="654" font-size="12" fill="#cbd5e1">$132.8K/mo per-attribute ingest fees</text>
+  <text x="1010" y="654" font-size="12" fill="#cbd5e1">Per-MB streaming insert charges</text>
+  <text x="1270" y="654" font-size="12" fill="#cbd5e1">DBX Photon DBU / Snow 60s lag</text>
+
+  <!-- Row 2 -->
+  <line x1="48" y1="726" x2="1552" y2="726" stroke="#1e293b"/>
+  <text x="64" y="704" font-size="12" font-weight="700" fill="#e2e8f0">2. 244M Meniscus/Rayleigh/Coating Vectors</text>
+  <text x="410" y="704" font-size="12" font-weight="700" fill="#6ee7b7">★ Cosmos SSD DiskANN 16ms (-92% RAM)</text>
+  <text x="730" y="704" font-size="12" fill="#cbd5e1">$38.0K/mo RAM-heavy OpenSearch</text>
+  <text x="1010" y="704" font-size="12" fill="#cbd5e1">Vertex Vector node-hour billing</text>
+  <text x="1270" y="704" font-size="12" fill="#cbd5e1">Memory-indexed vector surcharges</text>
+
+  <!-- Row 3 -->
+  <line x1="48" y1="776" x2="1552" y2="776" stroke="#1e293b"/>
+  <text x="64" y="754" font-size="12" font-weight="700" fill="#e2e8f0">3. 50m/s Capstan &amp; Piezo Closed Loop</text>
+  <text x="410" y="754" font-size="12" font-weight="700" fill="#6ee7b7">★ 62ms E2E (±0.07μm, 0.141dB/km, 0 Break)</text>
+  <text x="730" y="754" font-size="12" fill="#cbd5e1">3–15s multi-hop Lambda glue</text>
+  <text x="1010" y="754" font-size="12" fill="#cbd5e1">Cloud-only analytics (no tower PLC)</text>
+  <text x="1270" y="754" font-size="12" fill="#cbd5e1">Batch/micro-batch (no 16ms edge)</text>
+
+  <!-- Row 4 -->
+  <line x1="48" y1="826" x2="1552" y2="826" stroke="#1e293b"/>
+  <text x="64" y="804" font-size="12" font-weight="700" fill="#e2e8f0">4. G.654.E / 96.2% He &amp; 5,000 BI Seats</text>
+  <text x="410" y="804" font-size="12" font-weight="700" fill="#6ee7b7">★ SDS 1.85kgCO2e/fkm + $0 Viewer Seats</text>
+  <text x="730" y="804" font-size="12" fill="#cbd5e1">Custom ETL + QuickSight seat tax</text>
+  <text x="1010" y="804" font-size="12" fill="#cbd5e1">Custom SQL + Looker viewer tax</text>
+  <text x="1270" y="804" font-size="12" fill="#cbd5e1">Extra Warehouse / BI seat costs</text>
+
+  <!-- Footer Banner -->
+  <rect x="48" y="844" width="1504" height="68" rx="10" fill="#091e3a" stroke="#10b981" stroke-width="1.2"/>
+  <text x="68" y="870" font-size="13" font-weight="800" fill="#fde047">Architect Takeaway (Round 94 · 420-Scenario, -93.0% TCO Milestone, $32.00M SLA, 182.0ms Mean &amp; 244M-Vector Five-Crown Milestone!):</text>
+  <text x="68" y="894" font-size="12" fill="#e2e8f0">Keep Hollow-Core HC-NANF Maxwell FEM on Azure HPC/Databricks GPU and subsea consortium ERP in Snowflake/SAP, while standardizing on Microsoft Fabric + ALDO for the 62ms draw-resonance &amp; Rayleigh loop (-93.0% TCO).</text>
+</svg>

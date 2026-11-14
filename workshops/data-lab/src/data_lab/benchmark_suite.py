@@ -7581,6 +7581,86 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (240M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_optical_fiber_fabric_preform_mcvd_draw_resonance_g654e_vs_4clouds":
+        # Scenario CW (2026-11-15 R94 · 420-Scenario, -93.0% TCO Milestone, $32.00M SLA, 182.0ms Matrix Mean & 244M-Vector Five-Crown Milestone!): Global Ultra-Low-Loss Subsea (ITU-T G.654.E) & AI-Datacenter Optical Fiber Preform MCVD/VAD Sintering, 2,100°C High-Speed Draw-Tower (3,000m/min) Meniscus Draw-Resonance Guard, 0.141dB/km Rayleigh Attenuation & Low-Carbon Photonics Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 990K EPS 14ms 10kHz Laser Diameter, 5kHz Coating & FTIR Sense + Cosmos DB SSD DiskANN 16ms 244M Meniscus/Rayleigh/Coating Match + SDS 96.2% He-Recycled Fiber + ALDO Tower Edge, $13.5K/mo Normalized | $36.6K/mo Internal)
+        # vs 10-Hz Capstan PID + 8-Hour Post-Spooling OTDR & Per-Attribute/GB Cloud IoT / 244M Full-DRAM Vector Stack ($192.9K/mo Normalized | $522.8K/mo Internal)
+        return {
+            "scenario_id": "global_optical_fiber_fabric_preform_mcvd_draw_resonance_g654e_vs_4clouds",
+            "title": "Global Subsea & AI Optical Fiber 24 Complexes (640 Preform Lathes/Furnaces + 420 60m Draw Towers + 180 Subsea Stranding Lines) × 990K EPS 10kHz Diameter & 5kHz Coating Sense, 244M Meniscus/Rayleigh/Coating Match, ±0.07μm & 0.141dB/km Loop (Fabric Eventhouse KQL + 244M SSD DiskANN + SDS + ALDO vs. 10Hz PID / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-15T03:50:00Z",
+                "optical_fiber_complexes_count": 24,
+                "preform_mcvd_vad_furnaces_count": 640,
+                "high_speed_draw_towers_60m_count": 420,
+                "diameter_coating_ftir_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_cladding_diameter_ripple_um": 0.68,
+                "post_trim_cladding_diameter_ripple_um": 0.07,
+                "max_allowed_cladding_ripple_um": 0.15,
+                "pre_trim_rayleigh_attenuation_db_per_km": 0.162,
+                "post_trim_rayleigh_attenuation_db_per_km": 0.141,
+                "post_trim_coating_concentricity_um": 0.42,
+                "helium_closed_loop_recovery_pct": 96.2,
+                "eventhouse_kql_resonance_fft_latency_ms": 14,
+                "meniscus_rayleigh_and_coating_vectors_indexed_count": 244000000,
+                "ssd_diskann_fiber_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 16,
+                "low_carbon_fiber_kgco2_per_fkm": 1.85,
+                "fabric_monthly_optical_fiber_tco_usd": 13500,
+                "competitor_stitched_optical_fiber_tco_usd": 192900,
+                "fabric_internal_full_optical_fiber_tco_usd": 36600,
+                "competitor_internal_full_optical_fiber_tco_usd": 522800,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalOpticalFiber_24Complexes_640Preforms_420DrawTowers:990K_EPS_10kHzDiameter_5kHzCoating_And_FTIR_Stream",
+                "hop_2": "Eventhouse_KQL_FFT:14ms_Isolate_Tower19_14.2HzResonance_0.68umRipple_And_3.4umEccentricity ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_Photonics_And_Cosmos_SSD_DiskANN:16ms_Match_244M_NeckDownMeniscus_FictiveRayleigh_And_Coating_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:16ms_Verify_0.07umRipple_0.141dBkm_0.42umCoating_And_96.2PctHe",
+            },
+            "multi_agent_plan": {
+                "draw_towers_coordinated": 420,
+                "preform_furnaces_coordinated": 640,
+                "monthly_optical_fiber_tco_saved_usd": 179400,
+                "optical_fiber_tco_savings_pct": 93.0,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 990K EPS 10kHz Laser Diffraction, 5kHz Coating Scatter & Sinter FTIR Engine",
+                        "operation": "Ingest 990,000 EPS of 10kHz 4-axis laser bare-fiber diameter gauges, ultrasonic tension sensors, 5kHz UV-coating scatter detectors, and VAD sintering FTIR streams at $0/GB write tax, using series_fft() in 14ms to isolate Draw-Tower-19 14.2Hz muffle-gas resonance (±0.68μm ripple, 142g tension) and 3.4μm coating eccentricity",
+                        "impact_metric": "Replaces $132.8K/mo per-attribute cloud IoT fees and eliminates 10-Hz PID & 8-hour post-spool OTDR lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ Photonics-Draw Twin & Cosmos SSD DiskANN 244M Meniscus/Rayleigh/Coating Engine",
+                        "operation": "Search 244,000,000 Navier-Stokes neck-down meniscus profiles, fictive-temperature Rayleigh scattering curves, and UV-coating shear tensors (0.99 similarity in 16ms at -92% RAM), boosting top-iris laminar gas +12.4% with 14.2Hz capstan phase-lead and +18°C annealing tube (±0.07μm <= ±0.15μm, 0.141 dB/km <= 0.145, 0 breaks) and steering piezo die -2.9μm (0.42μm concentricity) in Foundry IQ (16ms)",
+                        "impact_metric": "Prevents 50m/s fiber breaks across 400km subsea spools and locks ITU-T G.654.E ultra-low attenuation",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Draw-Tower Director Teams Sign-Off, ALDO Tower Edge & ITU-T G.654.E / Helium Commit",
+                        "operation": "Approve iris gas, capstan damping, and piezo steering in Teams, dispatch EtherCAT setpoints via SQL on Azure Local (ALDO) at the cleanroom tower edge, and mint the ITU-T G.654.E CoA & 96.2% Helium-Recycled Low-Carbon Fiber passport (1.85 kgCO2e/fkm) into 1GB Free Fabric SQL (16ms)",
+                        "impact_metric": "62ms E2E gauge-to-capstan/piezo loop; -$179,400/mo (-93.0%) TCO; $32.00M subsea spool & AIDC SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "OPTICAL-FIBER-PREFORM-MCVD-DRAW-RESONANCE-G654E-SOP-101",
+                "hard_constraint": "Never allow 3,000m/min bare-fiber cladding diameter ripple above ±0.15 μm or UV-coating eccentricity above 1.50 μm (deep-sea micro-bending threshold), never allow 1550nm Rayleigh attenuation above 0.145 dB/km for G.654.E subsea spools, and require >= 92.0% Helium closed-loop recovery",
+                "proposed_change": "Boost Draw-Tower-19 top-iris laminar gas +12.4%, inject 14.2Hz capstan phase-lead damping, and raise slow-cooling annealing tube +18°C (clamping diameter ripple to ±0.07 μm <= ±0.15 μm, 0 breaks, 0.141 dB/km loss), steer primary coating die piezo-stage -2.9 μm (0.42 μm concentricity), and verify 96.2% He recovery (1.85 kgCO2e/fkm)",
+                "zero_draw_break_and_cladding_tolerance_verified": True,
+                "rayleigh_attenuation_and_helium_recovery_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 32000000,
+                "end_to_end_latency_ms": 62,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (244M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -12577,6 +12657,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 29,
     },
+    {
+        "id": "DL-417",
+        "category": "Real-Time Intelligence",
+        "question": "Optical-fiber producer running 24 complexes (640 preform furnaces, 420 60m 3,000m/min draw towers, 180 subsea lines) must ingest 990K EPS, catch 14.2Hz draw resonance & coating shifts in <20ms, and search 244M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fft() 14ms Diameter/Coating/FTIR Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 16ms 244M Meniscus/Rayleigh/Coating Match (-92% RAM) + SDS 96.2% He-Recycled + ALDO Tower Edge (62ms E2E, -93.0% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fft() 14ms Diameter/Coating/FTIR Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 16ms 244M Meniscus/Rayleigh/Coating Match (-92% RAM) + SDS 96.2% He-Recycled + ALDO Tower Edge (62ms E2E, -93.0% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 26,
+    },
+    {
+        "id": "DL-418",
+        "category": "vs Databricks",
+        "question": "Photonics R&D needs Hollow-Core Anti-Resonant Fiber (HC-NANF) full-vector Maxwell FEM (COMSOL) and radiative neck-down CFD simulations alongside SAP S/4HANA SiCl4/GeCl4 and subsea cable consortium ERP",
+        "expected": "Route Hollow-Core HC-NANF Maxwell FEM and radiative neck-down CFD to Azure HPC / Databricks GPU and subsea cable ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 244M meniscus/Rayleigh vectors in Fabric SSD DiskANN",
+        "model_answer": "Route Hollow-Core HC-NANF Maxwell FEM and radiative neck-down CFD to Azure HPC / Databricks GPU and subsea cable ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 244M meniscus/Rayleigh vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 26,
+    },
+    {
+        "id": "DL-419",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 244M SSD DiskANN + SDS + ALDO vs 10-Hz capstan PIDs & 8-hour post-spooling OTDR lab tests across 24 optical-fiber complexes with 5,000 photonics engineers and subsea CoA auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS diameter/coating/FTIR telemetry into Eventhouse ($0/GB tax), index 244M vectors in SSD DiskANN (-92% RAM), run 16ms capstan/piezo/iris trims on ALDO tower edge, and serve 5,000 users via DirectLake (-93.0% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS diameter/coating/FTIR telemetry into Eventhouse ($0/GB tax), index 244M vectors in SSD DiskANN (-92% RAM), run 16ms capstan/piezo/iris trims on ALDO tower edge, and serve 5,000 users via DirectLake (-93.0% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 26,
+    },
+    {
+        "id": "DL-420",
+        "category": "Fabric IQ & Ontology",
+        "question": "Draw-Tower-19 hits a 14.2Hz muffle vortex (±0.68μm diameter ripple, 142g tension) and 3.4μm coating eccentricity while VAD-Sinter-08 OH- creeps to 0.18ppm under ITU-T G.654.E (<=0.145 dB/km) rules",
+        "expected": "Eventhouse KQL 14ms 14.2Hz ±0.68μm Ripple & 3.4μm Coat Sense ($0/GB Tax) + 6-Hop 244M DiskANN +12.4% Iris, 14.2Hz Lead & -2.9μm Piezo Match (16ms) + Foundry IQ ±0.07μm 0.141dB/km Gate (16ms) + Teams ALDO Commit (16ms = 62ms E2E, Protect $32.00M SLA)",
+        "model_answer": "Eventhouse KQL 14ms 14.2Hz ±0.68μm Ripple & 3.4μm Coat Sense ($0/GB Tax) + 6-Hop 244M DiskANN +12.4% Iris, 14.2Hz Lead & -2.9μm Piezo Match (16ms) + Foundry IQ ±0.07μm 0.141dB/km Gate (16ms) + Teams ALDO Commit (16ms = 62ms E2E, Protect $32.00M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 26,
+    },
 ]
 
 
@@ -12792,6 +12920,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     tunnel_boring_tbm_sim = simulate_ontology_incident("global_tunnel_boring_tbm_fabric_rockburst_epb_settlement_swd_vs_4clouds")
     tire_rubber_banbury_sim = simulate_ontology_incident("global_tire_rubber_fabric_banbury_silanization_arrhenius_cure_eudr_vs_4clouds")
     titanium_var_ebchm_sim = simulate_ontology_incident("global_titanium_var_fabric_kroll_sponge_white_spot_hard_alpha_as9100_vs_4clouds")
+    optical_fiber_draw_sim = simulate_ontology_incident("global_optical_fiber_fabric_preform_mcvd_draw_resonance_g654e_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -12896,6 +13025,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_tunnel_boring_tbm_fabric_rockburst_epb_settlement_swd_vs_4clouds": tunnel_boring_tbm_sim,
         "global_tire_rubber_fabric_banbury_silanization_arrhenius_cure_eudr_vs_4clouds": tire_rubber_banbury_sim,
         "global_titanium_var_fabric_kroll_sponge_white_spot_hard_alpha_as9100_vs_4clouds": titanium_var_ebchm_sim,
+        "global_optical_fiber_fabric_preform_mcvd_draw_resonance_g654e_vs_4clouds": optical_fiber_draw_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -13079,6 +13209,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r91_ontology_sim_mean_ms = round(sum(r91_sim_latencies) / len(r91_sim_latencies), 2)
     r92_sim_latencies = sim_latencies[:99]
     r92_ontology_sim_mean_ms = round(sum(r92_sim_latencies) / len(r92_sim_latencies), 2)
+    r93_sim_latencies = sim_latencies[:100]
+    r93_ontology_sim_mean_ms = round(sum(r93_sim_latencies) / len(r93_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -14296,11 +14428,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-14",
         },
+        {
+            "id": "SPEC-OPTICAL-FIBER-PREFORM-MCVD-DRAW-TOWER-RESONANCE-G654E",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fft() and series_fit_line() analyze 10kHz 4-axis laser diffraction bare-fiber diameter streams, 5kHz UV-acrylate coating scatter streams, and MCVD/VAD sintering FTIR streams while Cosmos DB in Fabric SSD DiskANN indexes 244M+ 2,100°C Navier-Stokes neck-down meniscus profiles, fictive-temperature Rayleigh scattering curves, and coating shear tensors alongside Fabric Sustainability Data Solutions (SDS) 96.2% Helium-recycled low-carbon photonics ledgers and SQL Server on Azure Local (ALDO) at draw-tower edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary Hollow-Core Maxwell FEM and subsea cable ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fft-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-14",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-15-r93",
-        "generated_at": "2026-11-15T03:42:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-15-r94",
+        "generated_at": "2026-11-15T03:54:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -14311,6 +14456,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R93 snapshot n=416 mean was 183.5ms; "
                     f"historical R92 snapshot n=412 mean was 185.0ms; "
                     f"historical R91 snapshot n=408 mean was 186.5ms; "
                     f"historical R90 snapshot n=404 mean was 188.0ms; "
@@ -14409,6 +14555,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R93 snapshot n=100 mean was {r93_ontology_sim_mean_ms}ms; "
                     f"historical R92 snapshot n=99 mean was {r92_ontology_sim_mean_ms}ms; "
                     f"historical R91 snapshot n=98 mean was {r91_ontology_sim_mean_ms}ms; "
                     f"historical R90 snapshot n=97 mean was {r90_ontology_sim_mean_ms}ms; "
@@ -14500,6 +14647,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r93_historical_denominators": {
+                    "r93_routing_matrix_n416_mean_ms": 183.5,
+                    "r93_ontology_simulations_n100_mean_ms": r93_ontology_sim_mean_ms,
+                },
                 "r92_historical_denominators": {
                     "r92_routing_matrix_n412_mean_ms": 185.0,
                     "r92_ontology_simulations_n99_mean_ms": r92_ontology_sim_mean_ms,
@@ -14926,6 +15077,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r93_100_simulation_mean_modeled_latency_ms": r93_ontology_sim_mean_ms,
             "r92_99_simulation_mean_modeled_latency_ms": r92_ontology_sim_mean_ms,
             "r91_98_simulation_mean_modeled_latency_ms": r91_ontology_sim_mean_ms,
             "r90_97_simulation_mean_modeled_latency_ms": r90_ontology_sim_mean_ms,
