@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r74",
-  "generated_at": "2026-11-14T18:32:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-14-r75",
+  "generated_at": "2026-11-14T18:52:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 340,
-      "routing_matrix_mean_modeled_latency_ms": 218.5,
-      "routing_matrix_scope": "Arithmetic mean across all n=340 routing & decision evaluation items (DL-01..DL-340, mean=218.5ms; historical R73 snapshot n=336 mean was 221.0ms; historical R72 snapshot n=332 mean was 223.5ms; historical R71 snapshot n=328 mean was 226.0ms; historical R70 snapshot n=324 mean was 228.5ms; historical R69 snapshot n=320 mean was 231.0ms; historical R68 snapshot n=316 mean was 233.5ms; historical R67 snapshot n=312 mean was 236.0ms; historical R66 snapshot n=308 mean was 239.0ms; historical R65 snapshot n=304 mean was 242.0ms; historical R64 snapshot n=300 mean was 245.0ms; historical R63 snapshot n=296 mean was 248.0ms; historical R62 snapshot n=292 mean was 251.0ms; historical R61 snapshot n=288 mean was 254.0ms; historical R60 snapshot n=284 mean was 257.5ms; historical R59 snapshot n=280 mean was 261.0ms; historical R58 snapshot n=276 mean was 264.5ms; historical R57 snapshot n=272 mean was 268.0ms; historical R56 snapshot n=268 mean was 271.5ms; historical R55 snapshot n=264 mean was 275.5ms; historical R54 snapshot n=260 mean was 279.5ms; historical R53 snapshot n=256 mean was 283.5ms; historical R52 snapshot n=252 mean was 287.5ms; historical R51 snapshot n=248 mean was 292.0ms; historical R50 snapshot n=244 mean was 296.5ms; historical R49 snapshot n=240 mean was 301.0ms; historical R48 snapshot n=236 mean was 306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 81,
+      "routing_matrix_denominator_n": 344,
+      "routing_matrix_mean_modeled_latency_ms": 216.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=344 routing & decision evaluation items (DL-01..DL-344, mean=216.0ms; historical R74 snapshot n=340 mean was 218.5ms; historical R73 snapshot n=336 mean was 221.0ms; historical R72 snapshot n=332 mean was 223.5ms; historical R71 snapshot n=328 mean was 226.0ms; historical R70 snapshot n=324 mean was 228.5ms; historical R69 snapshot n=320 mean was 231.0ms; historical R68 snapshot n=316 mean was 233.5ms; historical R67 snapshot n=312 mean was 236.0ms; historical R66 snapshot n=308 mean was 239.0ms; historical R65 snapshot n=304 mean was 242.0ms; historical R64 snapshot n=300 mean was 245.0ms; historical R63 snapshot n=296 mean was 248.0ms; historical R62 snapshot n=292 mean was 251.0ms; historical R61 snapshot n=288 mean was 254.0ms; historical R60 snapshot n=284 mean was 257.5ms; historical R59 snapshot n=280 mean was 261.0ms; historical R58 snapshot n=276 mean was 264.5ms; historical R57 snapshot n=272 mean was 268.0ms; historical R56 snapshot n=268 mean was 271.5ms; historical R55 snapshot n=264 mean was 275.5ms; historical R54 snapshot n=260 mean was 279.5ms; historical R53 snapshot n=256 mean was 283.5ms; historical R52 snapshot n=252 mean was 287.5ms; historical R51 snapshot n=248 mean was 292.0ms; historical R50 snapshot n=244 mean was 296.5ms; historical R49 snapshot n=240 mean was 301.0ms; historical R48 snapshot n=236 mean was 306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 82,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -91,14 +91,19 @@
         39,
         35,
         31,
-        27
+        27,
+        23
       ],
       "ontology_simulations_range_ms": [
         5,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 187.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=81 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27]ms, range 5-780ms, mean=187.0ms; historical R73 snapshot n=80 mean was 189.0ms; historical R72 snapshot n=79 mean was 191.0ms; historical R71 snapshot n=78 mean was 193.0ms; historical R70 snapshot n=77 mean was 195.0ms; historical R69 snapshot n=76 mean was 197.0ms; historical R68 snapshot n=75 mean was 199.0ms; historical R67 snapshot n=74 mean was 201.0ms; historical R66 snapshot n=73 mean was 203.0ms; historical R65 snapshot n=72 mean was 205.0ms; historical R64 snapshot n=71 mean was 207.0ms; historical R63 snapshot n=70 mean was 209.0ms; historical R62 snapshot n=69 mean was 211.0ms; historical R61 snapshot n=68 mean was 214.0ms; historical R60 snapshot n=67 mean was 217.0ms; historical R59 snapshot n=66 mean was 220.0ms; historical R58 snapshot n=65 mean was 223.0ms; historical R57 snapshot n=64 mean was 226.0ms; historical R56 snapshot n=63 mean was 229.0ms; historical R55 snapshot n=62 mean was 232.0ms; historical R54 snapshot n=61 mean was 235.0ms; historical R53 snapshot n=60 mean was 238.0ms; historical R52 snapshot n=59 mean was 241.0ms; historical R51 snapshot n=58 mean was 245.0ms; historical R50 snapshot n=57 mean was 249.0ms; historical R49 snapshot n=56 mean was 253.0ms; historical R48 snapshot n=55 mean was 257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 185.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=82 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23]ms, range 5-780ms, mean=185.0ms; historical R74 snapshot n=81 mean was 187.0ms; historical R73 snapshot n=80 mean was 189.0ms; historical R72 snapshot n=79 mean was 191.0ms; historical R71 snapshot n=78 mean was 193.0ms; historical R70 snapshot n=77 mean was 195.0ms; historical R69 snapshot n=76 mean was 197.0ms; historical R68 snapshot n=75 mean was 199.0ms; historical R67 snapshot n=74 mean was 201.0ms; historical R66 snapshot n=73 mean was 203.0ms; historical R65 snapshot n=72 mean was 205.0ms; historical R64 snapshot n=71 mean was 207.0ms; historical R63 snapshot n=70 mean was 209.0ms; historical R62 snapshot n=69 mean was 211.0ms; historical R61 snapshot n=68 mean was 214.0ms; historical R60 snapshot n=67 mean was 217.0ms; historical R59 snapshot n=66 mean was 220.0ms; historical R58 snapshot n=65 mean was 223.0ms; historical R57 snapshot n=64 mean was 226.0ms; historical R56 snapshot n=63 mean was 229.0ms; historical R55 snapshot n=62 mean was 232.0ms; historical R54 snapshot n=61 mean was 235.0ms; historical R53 snapshot n=60 mean was 238.0ms; historical R52 snapshot n=59 mean was 241.0ms; historical R51 snapshot n=58 mean was 245.0ms; historical R50 snapshot n=57 mean was 249.0ms; historical R49 snapshot n=56 mean was 253.0ms; historical R48 snapshot n=55 mean was 257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "r74_historical_denominators": {
+        "r74_routing_matrix_n340_mean_ms": 218.5,
+        "r74_ontology_simulations_n81_mean_ms": 187.0
+      },
       "r73_historical_denominators": {
         "r73_routing_matrix_n336_mean_ms": 221.0,
         "r73_ontology_simulations_n80_mean_ms": 189.0
@@ -385,8 +390,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=340 decision routing matrix evaluation (339/340 = 99.71%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=340 routing decision matrix tasks (DL-01..DL-340) with arithmetic mean modeled latency = 218.5ms; (2) n=81 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27]ms, range 5-780ms) with arithmetic mean modeled latency = 187.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=344 decision routing matrix evaluation (343/344 = 99.71%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=344 routing decision matrix tasks (DL-01..DL-344) with arithmetic mean modeled latency = 216.0ms; (2) n=82 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23]ms, range 5-780ms) with arithmetic mean modeled latency = 185.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -1358,9 +1363,22 @@
           "https://www.snowflake.com/en/solutions/industries/manufacturing/"
         ],
         "as_of": "2026-11-14"
+      },
+      {
+        "id": "SPEC-VACCINE-MRNA-LNP-MICROFLUIDICS-LYOPHILIZATION-VVM-COLDCHAIN",
+        "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+        "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze microfluidic mRNA Lipid-Nanoparticle (LNP) in-line Dynamic Light Scattering (DLS) particle-size/PDI streams, lyophilizer Pirani vs. Capacitance Manometer sublimation differential streams, and 600-vials/min Automated Visual Inspection (AVI) trajectories while Cosmos DB in Fabric SSD DiskANN indexes 168M+ microfluidic Reynolds-mixing profiles, shelf sublimation mass-transfer curves, and AVI particle/bubble vectors alongside Fabric Healthcare Data Solutions (HDS) EU GMP Annex 1 / WHO VVM cold-chain ledgers and SQL Server on Azure Local (ALDO) in Grade-A isolator suites; Azure HPC/Databricks GPU, AWS HealthOmics, GCP BigQuery, and Snowflake/SAP ATTP provide complementary mRNA LinearDesign codon folding and DSCSA/FMD serialization.",
+        "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/overview",
+        "competitor_doc_urls": [
+          "https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html",
+          "https://www.databricks.com/solutions/industries/healthcare-and-life-sciences",
+          "https://www.snowflake.com/en/solutions/industries/healthcare-and-life-sciences/"
+        ],
+        "as_of": "2026-11-14"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=81 industry scenarios, mean=187.0ms), TCO calculator, and n=340 routing suite (mean=218.5ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=82 industry scenarios, mean=185.0ms), TCO calculator, and n=344 routing suite (mean=216.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -1445,16 +1463,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 340,
-    "passed_scenarios": 339,
+    "total_scenarios": 344,
+    "passed_scenarios": 343,
     "failed_scenarios": 1,
     "accuracy_pct": 99.71,
-    "avg_latency_ms": 218.5,
-    "routing_matrix_denominator_n": 340,
-    "routing_matrix_mean_modeled_latency_ms": 218.5,
+    "avg_latency_ms": 216.0,
+    "routing_matrix_denominator_n": 344,
+    "routing_matrix_mean_modeled_latency_ms": 216.0,
     "action_distribution": {
-      "Act automatically": 194,
-      "Confirm": 144,
+      "Act automatically": 196,
+      "Confirm": 146,
       "Send to a human": 2
     },
     "scenarios": [
@@ -5537,6 +5555,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 9
+      },
+      {
+        "id": "DL-341",
+        "category": "Real-Time Intelligence",
+        "question": "Vaccine manufacturer operating 24 cGMP complexes (640 microfluidic LNP mixers, 180 freeze-dryers, 1,200 600-vials/min AVI lines) must ingest 940K EPS, catch LNP size drift & cake collapse in <12ms, and search 168M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 5ms DLS/Pirani Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 6ms 168M LNP/Lyo/AVI Match (-92% RAM) + HDS Annex 1 + ALDO Isolator Edge (23ms E2E, -91.1% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 5ms DLS/Pirani Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 6ms 168M LNP/Lyo/AVI Match (-92% RAM) + HDS Annex 1 + ALDO Isolator Edge (23ms E2E, -91.1% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 3
+      },
+      {
+        "id": "DL-342",
+        "category": "vs Databricks",
+        "question": "Vaccine R&D needs mRNA LinearDesign codon secondary-structure folding and ionizable-lipid molecular dynamics alongside SAP ATTP / S/4HANA DSCSA & EU FMD unit serialization",
+        "expected": "Route mRNA codon folding and lipid molecular dynamics to Azure HPC / Databricks GPU / AWS HealthOmics and DSCSA/FMD serialization to Snowflake/SAP ATTP via OneLake Mirroring ($0 compute), indexing the 168M QC vectors in Fabric SSD DiskANN",
+        "model_answer": "Route mRNA codon folding and lipid molecular dynamics to Azure HPC / Databricks GPU / AWS HealthOmics and DSCSA/FMD serialization to Snowflake/SAP ATTP via OneLake Mirroring ($0 compute), indexing the 168M QC vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-343",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 168M SSD DiskANN + HDS + ALDO vs 45-minute off-line DLS & 10-minute historian polling across 24 vaccine plants with 3,100 QA/QP specialists and WHO VVM auditors",
+        "expected": "Hybrid Better Together: Stream 940K EPS microfluidic/lyo/AVI telemetry into Eventhouse ($0/GB tax), index 168M vectors in SSD DiskANN (-92% RAM), run 6ms pump/shelf control on ALDO edge, and serve 3,100 users via DirectLake (-91.1% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 940K EPS microfluidic/lyo/AVI telemetry into Eventhouse ($0/GB tax), index 168M vectors in SSD DiskANN (-92% RAM), run 6ms pump/shelf control on ALDO edge, and serve 3,100 users via DirectLake (-91.1% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 3
+      },
+      {
+        "id": "DL-344",
+        "category": "Fabric IQ & Ontology",
+        "question": "LNP-Mixer-18 ethanol pump 42Hz cavitation pushes particle size to 96 nm, Lyo-12 Shelf #4 approaches -32.4°C eutectic meltback, and AVI #08 flags rising micro-bubbles",
+        "expected": "Eventhouse KQL 5ms 96nm LNP, -32.4°C Lyo & Bubble Sense ($0/GB Tax) + 6-Hop 168M DiskANN +14mbar Backpressure, -2.5°C Shelf & 0.18% False-Reject Match (6ms) + Foundry IQ 79.4nm/-34.8°C & Annex 1/VVM Gate (6ms) + Teams ALDO Commit (6ms = 23ms E2E, Protect $25.35M SLA)",
+        "model_answer": "Eventhouse KQL 5ms 96nm LNP, -32.4°C Lyo & Bubble Sense ($0/GB Tax) + 6-Hop 168M DiskANN +14mbar Backpressure, -2.5°C Shelf & 0.18% False-Reject Match (6ms) + Foundry IQ 79.4nm/-34.8°C & Annex 1/VVM Gate (6ms) + Teams ALDO Commit (6ms = 23ms E2E, Protect $25.35M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -5600,7 +5666,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 81,
+    "total_ontology_simulations": 82,
     "simulation_latencies_ms": [
       780,
       640,
@@ -5682,9 +5748,11 @@
       39,
       35,
       31,
-      27
+      27,
+      23
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 187.0,
+    "ontology_simulation_mean_modeled_latency_ms": 185.0,
+    "r74_81_simulation_mean_modeled_latency_ms": 187.0,
     "r73_80_simulation_mean_modeled_latency_ms": 189.0,
     "r72_79_simulation_mean_modeled_latency_ms": 191.0,
     "r71_78_simulation_mean_modeled_latency_ms": 193.0,
@@ -11300,6 +11368,82 @@
         "projected_savings_usd": 25000000,
         "end_to_end_latency_ms": 27,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (164M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_vaccine_mrna_fabric_lnp_microfluidics_lyophilization_vvm_vs_4clouds": {
+      "scenario_id": "global_vaccine_mrna_fabric_lnp_microfluidics_lyophilization_vvm_vs_4clouds",
+      "title": "Global Vaccine cGMP Fill-Finish 24 Complexes (640 LNP Mixers + 180 Lyophilizers + 1,200 600-vials/min AVI Lines) × 940K EPS LNP Size & Lyo Anti-Collapse Sense, 168M Flow/Sublimation/AVI Match, 79.4nm LNP & WHO VVM Loop (Fabric Eventhouse KQL + 168M SSD DiskANN + HDS + ALDO vs. 45m Off-Line / 4 Clouds)",
+      "provenance_type": "synthetic_scenario_model",
+      "telemetry": {
+        "timestamp": "2026-11-14T18:48:00Z",
+        "cgmp_vaccine_complexes_count": 24,
+        "microfluidic_lnp_mixers_count": 640,
+        "industrial_lyophilizers_count": 180,
+        "highspeed_avi_inspection_lines_count": 1200,
+        "dls_pirani_avi_ingestion_eps": 940000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "unmanaged_lnp_hydrodynamic_diameter_nm": 96.0,
+        "post_trim_lnp_hydrodynamic_diameter_nm": 79.4,
+        "post_trim_lnp_pdi_index": 0.068,
+        "post_trim_lyo_product_temp_c": -34.8,
+        "eutectic_collapse_ceiling_temp_c": -32.0,
+        "eventhouse_kql_dls_pirani_latency_ms": 5,
+        "lnp_lyo_and_avi_vectors_indexed_count": 168000000,
+        "ssd_diskann_vaccine_similarity_score": 0.99,
+        "ssd_diskann_search_latency_ms": 6,
+        "post_filter_avi_false_reject_rate_pct": 0.18,
+        "who_vvm_remaining_stability_budget_pct": 89.2,
+        "fabric_monthly_vaccine_tco_usd": 11600,
+        "competitor_stitched_vaccine_tco_usd": 130300,
+        "fabric_internal_full_vaccine_tco_usd": 30400,
+        "competitor_internal_full_vaccine_tco_usd": 341600
+      },
+      "ontology_traversal": {
+        "hop_1": "GlobalVaccine_24Complexes_640LNPMixers_180Lyos_1200AVILines:940K_EPS_InLineDLS_PiraniCM_And_600vpmAVI_Stream",
+        "hop_2": "Eventhouse_KQL_SeriesFitLine:5ms_Isolate_LNPMixer18_42Hz_EthanolCavitation_96nm_And_Lyo12_Minus32.4C_Approach ($0/GB Write Tax)",
+        "hop_3": "DigitalTwin_Vaccine_And_Cosmos_SSD_DiskANN:6ms_Match_168M_ReynoldsMixing_Sublimation_And_AVITrajectory_Vectors_0.99 (-92% RAM)",
+        "hop_4": "FoundryIQ_PolicyGate:6ms_Verify_LNP_79.4nm_PDI_0.068_Lyo_Minus34.8C_Below_Minus32C_0.18Pct_FalseReject_And_89.2Pct_VVM"
+      },
+      "multi_agent_plan": {
+        "lnp_mixers_coordinated": 640,
+        "lyophilizers_coordinated": 180,
+        "monthly_vaccine_tco_saved_usd": 118700,
+        "vaccine_tco_savings_pct": 91.1,
+        "actions": [
+          {
+            "step": 1,
+            "agent": "Fabric Eventhouse KQL 940K EPS In-Line DLS, Pirani/CM Vacuum & 600-vials/min AVI Engine",
+            "operation": "Ingest 940,000 EPS of 1kHz microfluidic pressure/flow waveforms, in-line DLS autocorrelation decays, Pirani/Capacitance Manometer sublimation ratios, and laser headspace oxygen spectra at $0/GB write tax, using series_fit_line() in 5ms to isolate a 42Hz ethanol cavitation on LNP-Mixer-18 (size drifting to 96nm) and a -32.4°C eutectic approach on Lyo-12 Shelf #4",
+            "impact_metric": "Replaces $87.2K/mo per-attribute cloud IoT fees and eliminates 45-minute off-line DLS lab lag"
+          },
+          {
+            "step": 2,
+            "agent": "Fabric IQ Vaccine Twin & Cosmos SSD DiskANN 168M LNP/Lyo/AVI Engine",
+            "operation": "Search 168M microfluidic Reynolds/Peclet mixing profiles, lyophilization mass-transfer resistance curves, and 600-vials/min AVI spin trajectories (0.99 similarity in 6ms at -92% RAM), applying +14 mbar ethanol backpressure (LNP -> 79.4nm, PDI 0.068), cooling Lyo-12 Shelf #4 by -2.5°C at 85 mTorr (product -> -34.8°C <= -32.0°C), and filtering 98.4% rising micro-bubbles (false reject -> 0.18%) in Foundry IQ (6ms)",
+            "impact_metric": "Saves $9.2M mRNA bulk vessel from filter fouling, prevents 480,000-vial cake collapse, and saves 22,000 good vials/batch"
+          },
+          {
+            "step": 3,
+            "agent": "Qualified Person (QP) Teams 21 CFR Part 11 Sign-Off, ALDO Isolator Edge & RTRT Commit",
+            "operation": "Approve microfluidic/lyophilizer trims and Real-Time Release Testing (RTRT) in Teams, dispatch OPC-UA setpoints via SQL on Azure Local (ALDO) in the Grade-A isolator suite, and commit the 21 CFR Part 11 eBR and 89.2% WHO VVM stability ledger into 1GB Free Fabric SQL (6ms)",
+            "impact_metric": "23ms E2E mixer-to-cold-chain loop; -$118,700/mo (-91.1%) TCO; $25.35M mRNA bulk, lyophilized vial & WHO VVM SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "VACCINE-MRNA-LNP-LYO-VVM-ANNEX1-SOP-082",
+        "hard_constraint": "Never allow mRNA LNP hydrodynamic diameter outside 70-90nm or PDI above 0.10, never allow primary freeze-drying product temperature above -32.0°C (Tg'), and never release vials with headspace oxygen above 0.5% or WHO VVM stability budget below 80.0%",
+        "proposed_change": "Apply +14 mbar ethanol backpressure on LNP-Mixer-18 (restoring size to 79.4nm, PDI 0.068 <= 0.10, EE% 96.4%), trim Lyo-12 Shelf #4 by -2.5°C and chamber vacuum to 85 mTorr (cooling product to -34.8°C <= -32.0°C), and filter rising cavitation micro-bubbles on AVI #08 (false reject 0.18%, headspace O2 <= 0.5%, VVM budget 89.2% >= 80.0%)",
+        "lnp_encapsulation_and_lyo_zero_collapse_verified": true,
+        "eu_annex1_ccit_and_who_vvm_coldchain_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 25350000,
+        "end_to_end_latency_ms": 23,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (168M Vectors) + Healthcare Data Solutions (HDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
       }
     }
   },

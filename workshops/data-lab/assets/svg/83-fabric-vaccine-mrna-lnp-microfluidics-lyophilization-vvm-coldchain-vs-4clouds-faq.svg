@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg83" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0B162C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent83" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="card83" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#13203B"/>
+      <stop offset="100%" stop-color="#0D172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg83)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091224" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111E38" stroke="#06B6D4" stroke-width="1.5"/>
+  <rect x="58" y="50" width="276" height="26" rx="13" fill="url(#accent83)"/>
+  <text x="196" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">ROUND 75 · 75-ROUND MILESTONE! (-91.1% TCO)</text>
+  <text x="350" y="68" fill="#F8FAFC" font-size="16" font-weight="800">疫苗无菌灌装、mRNA 脂质纳米粒 (LNP) 微流控包封、冻干防塌陷与 WHO VVM 冷链 1.68 亿向量选型</text>
+  <text x="58" y="101" fill="#94A3B8" font-size="12.5">Vaccine cGMP Fill-Finish (24 Complexes · 640 LNP Mixers + 180 Lyophilizers + 1,200 AVI Lines) · Eventhouse 5ms + 168M SSD DiskANN 6ms + HDS Annex 1 + ALDO (23ms E2E · Save $118.7K/mo)</text>
+  <rect x="1186" y="48" width="194" height="58" rx="10" fill="#0B1324" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1283" y="70" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">SCENARIO CD · DL-341..344</text>
+  <text x="1283" y="94" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">23ms · $25.35M SLA</text>
+
+  <!-- Row 1 Left: 4-Step 23ms Closed-Loop Pipeline -->
+  <rect x="40" y="138" width="840" height="360" rx="14" fill="url(#card83)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#22D3EE" font-size="14" font-weight="800" letter-spacing="0.4">01 · 23ms mRNA 微流控稳粒径 × 冻干防塌陷 × 高速灯检防误剔闭环 (Scenario CD: 5ms + 6ms + 6ms + 6ms)</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="182" width="800" height="68" rx="10" fill="#0F1A30" stroke="#06B6D4" stroke-width="1.2"/>
+  <rect x="74" y="196" width="86" height="40" rx="8" fill="#164E63"/>
+  <text x="117" y="214" fill="#67E8F9" font-size="11" font-weight="800" text-anchor="middle">STEP 1</text>
+  <text x="117" y="229" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">5 ms</text>
+  <text x="176" y="206" fill="#F8FAFC" font-size="13" font-weight="800">Eventhouse KQL 940K EPS 在线 DLS 粒径、皮拉尼/电容规真空压差与 600瓶/分灯检流感知 ($0/GB 写入税)</text>
+  <text x="176" y="226" fill="#CBD5E1" font-size="11.5">• 640 套微流控混合器 + 180 台冻干机 + 1,200 条高速灯检线实时入湖；免除每月 $87.2K 按属性/按 GB 工业云写入税</text>
+  <text x="176" y="242" fill="#22D3EE" font-size="11.5" font-weight="700">• series_fit_line() 5ms 锁定：LNP-Mixer-18 乙醇流道 42Hz 气蚀 (粒径升至 96nm) + Lyo-12 第 4 层制品逼近 -32.4°C 共晶融化线</text>
+
+  <!-- Step 2 -->
+  <rect x="60" y="260" width="800" height="68" rx="10" fill="#0F1A30" stroke="#3B82F6" stroke-width="1.2"/>
+  <rect x="74" y="274" width="86" height="40" rx="8" fill="#1E3A8A"/>
+  <text x="117" y="292" fill="#93C5FD" font-size="11" font-weight="800" text-anchor="middle">STEP 2</text>
+  <text x="117" y="307" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">6 ms</text>
+  <text x="176" y="284" fill="#F8FAFC" font-size="13" font-weight="800">Fabric IQ 6 跳疫苗孪生 × Cosmos DB 1.68 亿向量 (168M) SSD DiskANN 检索 (省 92% 内存)</text>
+  <text x="176" y="304" fill="#CBD5E1" font-size="11.5">• 检索 1.68 亿条微流控雷诺数混合流场、冻干板层传质阻力曲线与旋瓶微气泡 vs 玻璃脱片轨迹 (0.99 相似，仅 $1,950/月 vs $32.6K/月)</text>
+  <text x="176" y="320" fill="#60A5FA" font-size="11.5" font-weight="700">• 生成乙醇背压 +14mbar 补偿、Lyo-12 板层 -2.5°C / 85mTorr 回调，并过滤 98.4% 假阳性微气泡 (误剔率 4.8% → 0.18%)</text>
+
+  <!-- Step 3 -->
+  <rect x="60" y="338" width="800" height="68" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <rect x="74" y="352" width="86" height="40" rx="8" fill="#581C87"/>
+  <text x="117" y="370" fill="#E9D5FF" font-size="11" font-weight="800" text-anchor="middle">STEP 3</text>
+  <text x="117" y="385" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">6 ms</text>
+  <text x="176" y="362" fill="#F8FAFC" font-size="13" font-weight="800">Foundry IQ EU GMP Annex 1 无菌顶空、共晶防塌陷与 WHO VVM 冷链热预算护栏 (SOP-082)</text>
+  <text x="176" y="382" fill="#CBD5E1" font-size="11.5">• 强制核验《VACCINE-MRNA-LNP-LYO-VVM-ANNEX1-SOP-082》：确认 LNP 粒径回归 79.4nm (PDI=0.068 &lt;= 0.10，包封率 96.4%)</text>
+  <text x="176" y="398" fill="#C084FC" font-size="11.5" font-weight="700">• 确认冻干制品降至 -34.8°C &lt;= -32.0°C (Tg')、激光顶空氧 &lt;= 0.5% (100% CCIT)，且 120 万剂冷链 WHO VVM 剩余寿命达 89.2%</text>
+
+  <!-- Step 4 -->
+  <rect x="60" y="416" width="800" height="68" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="74" y="430" width="86" height="40" rx="8" fill="#064E3B"/>
+  <text x="117" y="448" fill="#6EE7B7" font-size="11" font-weight="800" text-anchor="middle">STEP 4</text>
+  <text x="117" y="463" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">6 ms</text>
+  <text x="176" y="440" fill="#F8FAFC" font-size="13" font-weight="800">质量受权人 (QP) Teams 21 CFR Part 11 联签 + ALDO 无菌边缘下发 + 1GB 免费 SQL RTRT 放行</text>
+  <text x="176" y="460" fill="#CBD5E1" font-size="11.5">• 质量受权人 (QP) 在 Teams 完成电子签名；ALDO 无菌隔离器边缘下发 OPC-UA 微流控/冻干指令并归档电子批记录 (eBR)</text>
+  <text x="176" y="476" fill="#34D399" font-size="11.5" font-weight="700">• 端到端 23ms 闭环！保住 $9.2M mRNA 原液与 48 万瓶冻干批次，守护 $25.35M SLA，月省 $118,700 (-91.1% TCO · 75 轮里程碑！)</text>
+
+  <!-- Row 1 Right: TCO & KPI Inflection Panel -->
+  <rect x="898" y="138" width="502" height="360" rx="14" fill="url(#card83)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="918" y="166" fill="#34D399" font-size="14" font-weight="800">02 · 24 座疫苗基地月度 TCO 与双分母基准拐点</text>
+
+  <rect x="918" y="182" width="462" height="92" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <text x="934" y="204" fill="#94A3B8" font-size="11.5" font-weight="700">归一化月度 TCO 对比 (940K EPS + 168M Vectors + 3,100 Users)</text>
+  <text x="934" y="228" fill="#34D399" font-size="13" font-weight="800">Microsoft Fabric 一体化闭环: $11,600 / 月 (省 91.1% · 75 轮里程碑！)</text>
+  <rect x="934" y="236" width="42" height="10" rx="5" fill="#10B981"/>
+  <text x="934" y="262" fill="#F87171" font-size="12" font-weight="700">传统按属性流 + 840GB 全内存向量栈: $130,300 / 月 (全栈 $341.6K)</text>
+
+  <rect x="918" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1030" y="308" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">路由矩阵均值 (Denominator A)</text>
+  <text x="1030" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">216.0 ms</text>
+  <text x="1030" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 344 (343/344 · 99.71%)</text>
+  <text x="1030" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R74 (218.5ms) 再降 2.5ms</text>
+
+  <rect x="1156" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="1268" y="308" fill="#22D3EE" font-size="11.5" font-weight="700" text-anchor="middle">本体仿真均值 (Denominator B)</text>
+  <text x="1268" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">185.0 ms</text>
+  <text x="1268" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 82 行业本体 (Scenario CD = 23ms)</text>
+  <text x="1268" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R74 (187.0ms) 再降 2.0ms</text>
+
+  <rect x="918" y="394" width="462" height="90" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="934" y="416" fill="#C084FC" font-size="12" font-weight="800">核心生物制造与合规收益 (Biomanufacturing &amp; GxP Impact)</text>
+  <text x="934" y="436" fill="#E2E8F0" font-size="11.5">• mRNA 微流控：粒径 96→79.4nm (PDI=0.068, 包封率 96.4%, 保 $9.2M 原液)</text>
+  <text x="934" y="454" fill="#E2E8F0" font-size="11.5">• 冻干与灯检：制品 -34.8°C (0 塌陷) + 灯检误剔率 4.8%→0.18% (省 2.2万支)</text>
+  <text x="934" y="472" fill="#34D399" font-size="11.5" font-weight="700">• EU Annex 1 &amp; WHO VVM：100% 激光顶空 CCIT + 89.2% 热预算 + $25.35M SLA</text>
+
+  <!-- Row 2 Full Width: 5-Cloud Architecture Matrix & Coexistence -->
+  <rect x="40" y="514" width="1360" height="350" rx="14" fill="url(#card83)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="542" fill="#60A5FA" font-size="14" font-weight="800">03 · 五大云平台在疫苗无菌灌装与 mRNA/冻干场景的架构选型矩阵与 Better Together 共存打法</text>
+
+  <rect x="60" y="556" width="1320" height="30" rx="6" fill="#1E293B"/>
+  <text x="76" y="576" fill="#CBD5E1" font-size="11.5" font-weight="700">核心技术能力维度</text>
+  <text x="430" y="576" fill="#38BDF8" font-size="11.5" font-weight="800" text-anchor="middle">Microsoft Fabric (首选闭环)</text>
+  <text x="690" y="576" fill="#F97316" font-size="11.5" font-weight="700" text-anchor="middle">Databricks (mRNA 折叠互补)</text>
+  <text x="930" y="576" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">Snowflake (SAP ATTP 互补)</text>
+  <text x="1140" y="576" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">AWS SiteWise / HealthOmics</text>
+  <text x="1310" y="576" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">GCP BigQuery / Vertex</text>
+
+  <text x="76" y="606" fill="#F8FAFC" font-size="11.5">1. 940K EPS 在线 DLS 与冻干流</text>
+  <text x="430" y="606" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 5ms KQL ($0/GB 写入税)</text>
+  <text x="690" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">350ms–2s (常驻 DBU 昂贵)</text>
+  <text x="930" y="606" fill="#94A3B8" font-size="11.5" text-anchor="middle">&gt;= 60s (Dynamic Tables 滞后)</text>
+  <text x="1140" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">250ms–2s ($87.2K/mo 属性税)</text>
+  <text x="1310" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">180ms–1.5s (按 MB 计费)</text>
+
+  <text x="76" y="636" fill="#F8FAFC" font-size="11.5">2. 1.68 亿 (168M) 流场/灯检向量</text>
+  <text x="430" y="636" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 6ms SSD DiskANN ($1.95K/mo)</text>
+  <text x="690" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">21ms (Mosaic Vector 全内存)</text>
+  <text x="930" y="636" fill="#94A3B8" font-size="11.5" text-anchor="middle">35ms+ (Cortex 偏文档检索)</text>
+  <text x="1140" y="636" fill="#F87171" font-size="11.5" text-anchor="middle">22ms (840GB DRAM $32.6K/mo)</text>
+  <text x="1310" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">19ms (Vertex 内存节点昂贵)</text>
+
+  <text x="76" y="666" fill="#F8FAFC" font-size="11.5">3. 无菌隔离器边缘与 21 CFR Part 11</text>
+  <text x="430" y="666" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ ALDO 6ms 边缘 + HDS Annex 1</text>
+  <text x="690" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于 mRNA 序列折叠与脂质 MD</text>
+  <text x="930" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于 DSCSA/FMD 监管码共享</text>
+  <text x="1140" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">强于基因组管线，弱于毫秒 PLC</text>
+  <text x="1310" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">无车间断网 SQL 控制面</text>
+
+  <text x="76" y="696" fill="#F8FAFC" font-size="11.5">4. 3,100 人并发看数与月度 TCO</text>
+  <text x="430" y="696" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ $11,600/月 ($0 席位 · 省 91.1%)</text>
+  <text x="690" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$127,200 / 月</text>
+  <text x="930" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$132,100 / 月</text>
+  <text x="1140" y="696" fill="#F87171" font-size="11.5" text-anchor="middle">$130,300 / 月</text>
+  <text x="1310" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$124,800 / 月</text>
+
+  <!-- Coexistence Playbook Boxes -->
+  <rect x="60" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#F97316" stroke-width="1.2"/>
+  <text x="78" y="744" fill="#FB923C" font-size="12.5" font-weight="800">模式 B 共存 · Fabric × Azure HPC / Databricks GPU / HealthOmics (mRNA 序列与脂质设计)</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">• mRNA LinearDesign 密码子二级结构优化与可电离脂质分子动力学模拟保留在 Databricks GPU / HealthOmics</text>
+  <text x="78" y="786" fill="#E2E8F0" font-size="11.5">• 产出的 1.68 亿条微流控流场、升华曲线与灯检轨迹向量通过 OneLake Shortcuts 零拷贝直通 SSD DiskANN</text>
+  <text x="78" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：免除 840GB 常驻内存向量税，6ms 过滤 98.4% 假阳性微气泡并实时修正微流控背压</text>
+
+  <rect x="732" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="750" y="744" fill="#38BDF8" font-size="12.5" font-weight="800">模式 A 共存 · Fabric × Snowflake / SAP ATTP &amp; S/4HANA (全球 DSCSA/FMD 监管码与 WHO VVM)</text>
+  <text x="750" y="766" fill="#E2E8F0" font-size="11.5">• 全球药品三级序列化监管码 (DSCSA / EU FMD) 与世卫组织 UNICEF 采购合同保留在 Snowflake / SAP ATTP</text>
+  <text x="750" y="786" fill="#E2E8F0" font-size="11.5">• 通过 OneLake Zero-ETL Mirroring ($0 算力) 与 Eventhouse 实时阿伦尼乌斯 VVM 热积分账本无缝对齐</text>
+  <text x="750" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：QP 电子签名 23ms 实时放行 (RTRT)，3,100 名 QA/冷链专家享 DirectLake $0 读者席位</text>
+</svg>
