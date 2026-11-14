@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+  <defs>
+    <linearGradient id="bg69" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050B16"/>
+      <stop offset="50%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="accent69" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg69)"/>
+  <rect x="24" y="20" width="1392" height="860" rx="18" fill="#0B1528" stroke="#1E3A5F" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="44" y="38" width="1352" height="86" rx="12" fill="#10213A" stroke="#06B6D4" stroke-width="1.2"/>
+  <rect x="60" y="54" width="218" height="28" rx="6" fill="url(#accent69)"/>
+  <text x="169" y="73" fill="#FFFFFF" font-size="12.5" font-weight="800" text-anchor="middle">2026-11-14 · R61 · 112M VECTORS</text>
+  <text x="294" y="72" fill="#F8FAFC" font-size="16.5" font-weight="800">Microsoft Fabric 气象巨灾参数化再保险、AI 气象大模型（Aurora）与巨灾债券 ILS vs 四大云选型一图流</text>
+  <text x="60" y="104" fill="#94A3B8" font-size="12.5">420 部多普勒雷达 + 2,800 万承保建筑 × 880K EPS · Eventhouse KQL H3 3ms 碰撞 + Cosmos SSD DiskANN 4ms 1.12 亿向量匹配 + ALDO 防灾边缘 = 13ms 闭环 · 省 89.5% TCO</text>
+  <rect x="1182" y="50" width="196" height="58" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1280" y="72" fill="#6EE7B7" font-size="11.5" font-weight="700" text-anchor="middle">Scenario BP · 1.12 亿向量</text>
+  <text x="1280" y="96" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">13ms · 省 89.5% TCO</text>
+
+  <!-- Left Column: Pain Points -->
+  <rect x="44" y="140" width="430" height="440" rx="14" fill="#111C33" stroke="#EF4444" stroke-width="1.3"/>
+  <text x="64" y="170" fill="#FCA5A5" font-size="15" font-weight="800">❌ 传统 6 小时数值预报与公有云拼接栈三大痛点</text>
+
+  <rect x="64" y="188" width="390" height="114" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="212" fill="#FECACA" font-size="13" font-weight="700">1. 台风登陆前 90 分钟“眼壁北偏 28km”批处理失明</text>
+  <text x="80" y="234" fill="#CBD5E1" font-size="11.5">• 传统 NWP 超算每 6 小时跑一次，RMS/AIR 全组合定损需 4–8 小时</text>
+  <text x="80" y="254" fill="#CBD5E1" font-size="11.5">• 超强台风气压跌至 918hPa 突袭晶圆园区时，错失 $180M 临分对冲窗口</text>
+  <text x="80" y="274" fill="#FCA5A5" font-size="11.5" font-weight="700">• 园区未能在断电前预关 18 座防洪闸门，引发地下洁净室浸水停产</text>
+
+  <rect x="64" y="316" width="390" height="114" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="340" fill="#FECACA" font-size="13" font-weight="700">2. 880K EPS 雷达流写入税与 2,800 万保单多边形慢查询</text>
+  <text x="80" y="362" fill="#CBD5E1" font-size="11.5">• 420 部 NEXRAD 双偏振雷达 + GOES-R 卫星 + 验潮站 = 880,000 EPS</text>
+  <text x="80" y="382" fill="#CBD5E1" font-size="11.5">• 云数仓 ST_Intersects 球面多边形求交 2,800 万栋建筑需 18 分钟</text>
+  <text x="80" y="402" fill="#FCA5A5" font-size="11.5" font-weight="700">• 按 GB 流写入费 + 空间扫描算力月烧 $42,800/月 (Normalized)</text>
+
+  <rect x="64" y="444" width="390" height="120" rx="10" fill="#1E1B2E" stroke="#F87171" stroke-width="1"/>
+  <text x="80" y="468" fill="#FECACA" font-size="13" font-weight="700">3. 1.12 亿条脆弱性曲线与再保条约全内存 HNSW 天价账单</text>
+  <text x="80" y="490" fill="#CBD5E1" font-size="11.5">• 1.12 亿条 (112M) 历史风暴潮水深-损毁曲线、Aurora 集合预报</text>
+  <text x="80" y="510" fill="#CBD5E1" font-size="11.5">  与 Cat XL / ILS 巨灾债触发矩阵若常驻全内存 HNSW 需 4.8TB DRAM</text>
+  <text x="80" y="532" fill="#FCA5A5" font-size="11.5" font-weight="700">• 仅向量内存集群月费即高达 $36,400/月，總拼接栈 $97,100/月</text>
+
+  <!-- Center/Right Column: Fabric 13ms Closed Loop -->
+  <rect x="492" y="140" width="904" height="440" rx="14" fill="#0F223D" stroke="#10B981" stroke-width="1.5"/>
+  <text x="514" y="170" fill="#6EE7B7" font-size="15.5" font-weight="800">✅ Microsoft Fabric 星地气象、参数化巨灾债与防灾减损 13ms 自治闭环（省 89.5% TCO · $10,200/月）</text>
+
+  <!-- Step 1 -->
+  <rect x="514" y="188" width="860" height="84" rx="10" fill="#132D50" stroke="#38BDF8" stroke-width="1.2"/>
+  <rect x="528" y="202" width="108" height="24" rx="5" fill="#0284C7"/>
+  <text x="582" y="218" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 1 · 3 ms</text>
+  <text x="648" y="218" fill="#F8FAFC" font-size="13.5" font-weight="800">Eventhouse KQL H3 880K EPS 双偏振雷达与风暴潮感知（$0/GB 写入税 · 12:1 压缩）</text>
+  <text x="528" y="242" fill="#BAE6FD" font-size="11.5">• 实时摄入 420 部多普勒雷达、飓风猎人投落送与验潮站流，geo_point_to_h3cell() (Res-10) 将 2,800 万栋承保建筑碰撞提速 1,200 倍</text>
+  <text x="528" y="260" fill="#34D399" font-size="11.5" font-weight="700">• 3ms 锁定超强台风“海燕-II”中心气压跌至 918.0 hPa (&lt;=925hPa 触发线)，眼壁北偏 28km 覆盖半导体园 3,400 栋厂房 ($640M 敞口)</text>
+
+  <!-- Step 2 -->
+  <rect x="514" y="282" width="860" height="90" rx="10" fill="#132D50" stroke="#818CF8" stroke-width="1.2"/>
+  <rect x="528" y="296" width="108" height="24" rx="5" fill="#4F46E5"/>
+  <text x="582" y="312" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 2 · 4 ms</text>
+  <text x="648" y="312" fill="#F8FAFC" font-size="13.5" font-weight="800">Fabric IQ 6 跳再保孪生 × Cosmos SSD DiskANN 1.12 亿向量（112M）检索（省 92% 内存）</text>
+  <text x="528" y="336" fill="#E0E7FF" font-size="11.5">• 4ms 在 NVMe SSD 上检索 1.12 亿条 Microsoft Aurora 集合预报轨迹、建筑风洞/水深脆弱性曲线与再保条约向量 (0.99 相似度)</text>
+  <text x="528" y="356" fill="#34D399" font-size="11.5" font-weight="700">• 自动触发 $220M Series 2026-A 参数化巨灾债券 + 锁单 $180M 临分转分保 (Fac Retro) + 生成园区 18 座防洪闸预关与 85MW 微网预案</text>
+
+  <!-- Step 3 -->
+  <rect x="514" y="382" width="860" height="88" rx="10" fill="#132D50" stroke="#F59E0B" stroke-width="1.2"/>
+  <rect x="528" y="396" width="108" height="24" rx="5" fill="#D97706"/>
+  <text x="582" y="412" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 3 · 3 ms</text>
+  <text x="648" y="412" fill="#F8FAFC" font-size="13.5" font-weight="800">Foundry IQ 双独立气象预言机（Dual-Oracle）与 Solvency II 偿付能力护栏（SOP-068）</text>
+  <text x="528" y="436" fill="#FEF3C7" font-size="11.5">• 强制交叉核验 NOAA 投落送与 JMA 静止卫星反演气压均 &lt;= 925.0 hPa（杜绝单点传感器雷击故障误触发巨灾债）</text>
+  <text x="528" y="454" fill="#34D399" font-size="11.5" font-weight="700">• 确认对冲后集团净自留损失压降至 $240M，Solvency II 偿付能力充足率 SCR = 168.4% (&gt;= 150.0% 监管红线)</text>
+
+  <!-- Step 4 -->
+  <rect x="514" y="480" width="860" height="84" rx="10" fill="#132D50" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="528" y="494" width="108" height="24" rx="5" fill="#059669"/>
+  <text x="582" y="510" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle">Step 4 · 3 ms</text>
+  <text x="648" y="510" fill="#F8FAFC" font-size="13.5" font-weight="800">再保 CUO Teams 联签 + ALDO 园区断网边缘下发 + 1GB 免费 Fabric SQL 审计落盘</text>
+  <text x="528" y="534" fill="#D1FAE5" font-size="11.5">• 首席核保官 (CUO) 在 Teams 联签 Confirm，驱动园区 SQL Server on Azure Local (ALDO) 闭合 18 座防洪闸并启动 85MW 燃气黑启动</text>
+  <text x="528" y="552" fill="#6EE7B7" font-size="11.5" font-weight="700">• 端到端 13ms 完成 $400M 巨灾风险转移与防淹闭环，月省 $86,900 (-89.5% TCO)，守护 $20.45M 偿付能力与防灾减损 SLA</text>
+
+  <!-- Bottom Row: 5-Cloud Matrix & Quantitative KPIs -->
+  <rect x="44" y="596" width="1352" height="264" rx="14" fill="#0E1B31" stroke="#334155" stroke-width="1.2"/>
+  <text x="64" y="624" fill="#F8FAFC" font-size="14.5" font-weight="800">📊 五大云平台气象巨灾再保险、1.12 亿向量检索与参数化 ILS 选型对比矩阵（n=288 路由均值 254.0ms · n=68 本体均值 214.0ms）</text>
+
+  <rect x="64" y="638" width="420" height="204" rx="10" fill="#132642" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="80" y="662" fill="#67E8F9" font-size="13" font-weight="800">🏆 Microsoft Fabric 必赢三大铁律</text>
+  <text x="80" y="686" fill="#F8FAFC" font-size="11.5">1. $0/GB 写入税 + 3ms H3 uint64 连接：880K EPS 雷达流直入</text>
+  <text x="80" y="704" fill="#94A3B8" font-size="11">   Eventhouse，碰撞 2,800 万栋承保建筑比 ST_Intersects 快 1,200 倍</text>
+  <text x="80" y="728" fill="#F8FAFC" font-size="11.5">2. 1.12 亿向量 SSD DiskANN 4ms 检索：Aurora 集合轨迹、脆弱性</text>
+  <text x="80" y="746" fill="#94A3B8" font-size="11">   曲线与再保条约驻留本地 NVMe SSD，省去 92% DRAM 硬件税</text>
+  <text x="80" y="770" fill="#F8FAFC" font-size="11.5">3. ALDO 断网防灾边缘 + F64 $0 读者税：台风断网期本地关闸门，</text>
+  <text x="80" y="788" fill="#94A3B8" font-size="11">   1,750 名核保人/精算师 DirectLake 秒级看数 $0 Viewer 许可费</text>
+  <text x="80" y="818" fill="#34D399" font-size="12" font-weight="800">✓ 月度标准化 TCO：$10,200/月 vs 竞对 $97,100/月（立省 89.5%）</text>
+
+  <rect x="502" y="638" width="430" height="204" rx="10" fill="#132642" stroke="#64748B" stroke-width="1"/>
+  <text x="518" y="662" fill="#93C5FD" font-size="13" font-weight="800">🤝 四大云竞对定位与 OneLake 零拷贝共存边界</text>
+  <text x="518" y="688" fill="#E2E8F0" font-size="11.5">• Databricks Mosaic AI ($98.4K/mo)：适合全球 0.1° Aurora / GraphCast</text>
+  <text x="518" y="706" fill="#94A3B8" font-size="11">  多节点 GPU 离线训练，预报轨迹零拷贝写回 OneLake</text>
+  <text x="518" y="730" fill="#E2E8F0" font-size="11.5">• Snowflake Financial ($101.6K/mo)：适合季度 IFRS 17 / Solvency II</text>
+  <text x="518" y="748" fill="#94A3B8" font-size="11">  精算三角表与经纪人 Clean Room，OneLake $0 算力镜像融合</text>
+  <text x="518" y="772" fill="#E2E8F0" font-size="11.5">• GCP Earth Engine / BigQuery ($97.1K/mo)：适合十年期气候归因，</text>
+  <text x="518" y="790" fill="#94A3B8" font-size="11">  但 880K EPS 实时写入与多边形扫描贵，缺断网防洪边缘</text>
+  <text x="518" y="818" fill="#E2E8F0" font-size="11.5">• AWS ASDI / OpenSearch ($95.8K/mo)：1.12 亿全内存向量 OCU 极贵</text>
+
+  <rect x="950" y="638" width="424" height="204" rx="10" fill="#092E26" stroke="#10B981" stroke-width="1.4"/>
+  <text x="966" y="662" fill="#6EE7B7" font-size="13" font-weight="800">📈 Scenario BP 密封基准验证（DL-285..DL-288）</text>
+  <text x="966" y="688" fill="#F8FAFC" font-size="12" font-weight="700">• 评测矩阵得分：287 / 288 (99.65%) · 140/140 单测通过</text>
+  <text x="966" y="712" fill="#F8FAFC" font-size="11.5">• 台风中心气压：918.0 hPa (&lt;= 925.0 hPa 参数化红线，双源确认)</text>
+  <text x="966" y="734" fill="#F8FAFC" font-size="11.5">• 风险转移闭环：触发 $220M 巨灾债 + 锁单 $180M 临分转分保</text>
+  <text x="966" y="756" fill="#F8FAFC" font-size="11.5">• 偿付能力护栏：Solvency II SCR = 168.4% (&gt;= 150.0% 监管底线)</text>
+  <text x="966" y="778" fill="#F8FAFC" font-size="11.5">• 工业园防灾动作：预关 18 座液压防洪闸 + 启动 85MW 微网黑启动</text>
+  <text x="966" y="812" fill="#34D399" font-size="13" font-weight="800">🛡️ 守护 $20,450,000 再保偿付、巨灾债与防洪减损 SLA</text>
+</svg>
