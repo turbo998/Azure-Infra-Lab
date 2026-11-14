@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg82" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0B162C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent82" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="card82" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#13203B"/>
+      <stop offset="100%" stop-color="#0D172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg82)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091224" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111E38" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="58" y="50" width="276" height="26" rx="13" fill="url(#accent82)"/>
+  <text x="196" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">ROUND 74 · $25.00M SLA &amp; -91.0% TCO MILESTONE</text>
+  <text x="350" y="68" fill="#F8FAFC" font-size="16" font-weight="800">浮法与光伏玻璃 1,600°C 全氧熔窑大碹防烧穿、锡槽微氧防沾锡、硫化镍 (NiS) 激光探伤与欧盟 ETS 1.64 亿向量选型</text>
+  <text x="58" y="101" fill="#94A3B8" font-size="12.5">Float &amp; Solar Glass (28 Plants · 56 1,200t/d Furnaces + 112 Tin Baths + 3,400 Scanners) · Eventhouse 6ms + 164M SSD DiskANN 7ms + SDS EU ETS + ALDO (27ms E2E · Save $116.3K/mo)</text>
+  <rect x="1186" y="48" width="194" height="58" rx="10" fill="#0B1324" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1283" y="70" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">SCENARIO CC · DL-337..340</text>
+  <text x="1283" y="94" fill="#F8FAFC" font-size="18" font-weight="800" text-anchor="middle">27ms · $25.00M SLA</text>
+
+  <!-- Row 1 Left: 4-Step 27ms Closed-Loop Pipeline -->
+  <rect x="40" y="138" width="840" height="360" rx="14" fill="url(#card82)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#FBBF24" font-size="14" font-weight="800" letter-spacing="0.4">01 · 27ms 熔窑大碹防烧穿 × 锡槽防沾锡 × 硫化镍 (NiS) 激光剔除闭环 (Scenario CC: 6ms + 7ms + 7ms + 7ms)</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="182" width="800" height="68" rx="10" fill="#0F1A30" stroke="#F59E0B" stroke-width="1.2"/>
+  <rect x="74" y="196" width="86" height="40" rx="8" fill="#78350F"/>
+  <text x="117" y="214" fill="#FDE68A" font-size="11" font-weight="800" text-anchor="middle">STEP 1</text>
+  <text x="117" y="229" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">6 ms</text>
+  <text x="176" y="206" fill="#F8FAFC" font-size="13" font-weight="800">Eventhouse KQL 920K EPS 大碹红外热像、锡槽微氧/露点与 40μm 激光探伤流感知 ($0/GB 写入税)</text>
+  <text x="176" y="226" fill="#CBD5E1" font-size="11.5">• 56 座 1,600°C 熔窑 + 112 条锡槽 + 3,400 台激光探伤仪实时入湖；免除每月 $85.4K 按属性/按 GB 工业云写入税</text>
+  <text x="176" y="242" fill="#FBBF24" font-size="11.5" font-weight="700">• series_fit_line() 6ms 锁定：#04 窑 3R 大碹升至 1,618°C (+1.8°C/min) + 锡槽第 9 区微氧 11.4ppm + 冷端 95μm 高危散射斑</text>
+
+  <!-- Step 2 -->
+  <rect x="60" y="260" width="800" height="68" rx="10" fill="#0F1A30" stroke="#06B6D4" stroke-width="1.2"/>
+  <rect x="74" y="274" width="86" height="40" rx="8" fill="#164E63"/>
+  <text x="117" y="292" fill="#67E8F9" font-size="11" font-weight="800" text-anchor="middle">STEP 2</text>
+  <text x="117" y="307" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">7 ms</text>
+  <text x="176" y="284" fill="#F8FAFC" font-size="13" font-weight="800">Fabric IQ 6 跳玻璃基地孪生 × Cosmos DB 1.64 亿向量 (164M) SSD DiskANN 检索 (省 92% 内存)</text>
+  <text x="176" y="304" fill="#CBD5E1" font-size="11.5">• 检索 1.64 亿条池窑泡界线热对流图谱、冷端明暗场激光衍射向量与退火窑光弹应力曲线 (0.99 相似度，仅 $1,920/月 vs $31.9K/月)</text>
+  <text x="176" y="320" fill="#22D3EE" font-size="11.5" font-weight="700">• 确诊 95μm 夹杂物为 α-NiS 硫化镍自爆结石；生成 #04 窑 3R 烧枪氧燃比 -3.8%、锡槽第 9 区形成气 +15% 与 3.2m 横切剔除处方</text>
+
+  <!-- Step 3 -->
+  <rect x="60" y="338" width="800" height="68" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <rect x="74" y="352" width="86" height="40" rx="8" fill="#581C87"/>
+  <text x="117" y="370" fill="#E9D5FF" font-size="11" font-weight="800" text-anchor="middle">STEP 3</text>
+  <text x="117" y="385" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">7 ms</text>
+  <text x="176" y="362" fill="#F8FAFC" font-size="13" font-weight="800">Foundry IQ 硅砖软化点、锡槽零沾锡与欧盟 EU ETS 碳酸盐分解碳核查护栏 (SOP-081)</text>
+  <text x="176" y="382" fill="#CBD5E1" font-size="11.5">• 强制核验《FLOAT-SOLAR-GLASS-FURNACE-TIN-ETS-SOP-081》：确认大碹硅砖温度压回 1,592°C &lt;= 1,605°C 安全红线</text>
+  <text x="176" y="398" fill="#C084FC" font-size="11.5" font-weight="700">• 确认锡槽微氧降至 1.8ppm &lt;= 3.0ppm、含 NiS 结石的 3.2m 板段 100% 进碎玻璃槽，且掺入 36% 碎玻璃通过 EU ETS 碳酸盐分解核查</text>
+
+  <!-- Step 4 -->
+  <rect x="60" y="416" width="800" height="68" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <rect x="74" y="430" width="86" height="40" rx="8" fill="#064E3B"/>
+  <text x="117" y="448" fill="#6EE7B7" font-size="11" font-weight="800" text-anchor="middle">STEP 4</text>
+  <text x="117" y="463" fill="#FFFFFF" font-size="12" font-weight="800" text-anchor="middle">7 ms</text>
+  <text x="176" y="440" fill="#F8FAFC" font-size="13" font-weight="800">熔窑总工程师 Teams Confirm 联签 + SQL on Azure Local (ALDO) 边缘 PLC 执行 + 1GB 免费 SQL 落盘</text>
+  <text x="176" y="460" fill="#CBD5E1" font-size="11.5">• 熔窑总工在 Teams 审批卡一键联签；ALDO 窑炉车间断网控制面下发 Modbus-TCP/Profinet 烧枪阀门与冷端横切刀指令</text>
+  <text x="176" y="476" fill="#34D399" font-size="11.5" font-weight="700">• 端到端 27ms 闭环！零大碹鼠洞烧穿、零沾锡报废、零硫化镍自爆流出，守护 $25.00M SLA，月省 $116,300 (-91.0% TCO)</text>
+
+  <!-- Row 1 Right: TCO & KPI Inflection Panel -->
+  <rect x="898" y="138" width="502" height="360" rx="14" fill="url(#card82)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="918" y="166" fill="#34D399" font-size="14" font-weight="800">02 · 28 座玻璃基地月度 TCO 与双分母基准拐点</text>
+
+  <rect x="918" y="182" width="462" height="92" rx="10" fill="#0F1A30" stroke="#10B981" stroke-width="1.2"/>
+  <text x="934" y="204" fill="#94A3B8" font-size="11.5" font-weight="700">归一化月度 TCO 对比 (920K EPS + 164M Vectors + 2,800 Users)</text>
+  <text x="934" y="228" fill="#34D399" font-size="13" font-weight="800">Microsoft Fabric 一体化闭环: $11,500 / 月 (省 91.0% 里程碑！)</text>
+  <rect x="934" y="236" width="42" height="10" rx="5" fill="#10B981"/>
+  <text x="934" y="262" fill="#F87171" font-size="12" font-weight="700">传统按属性流 + 820GB 全内存向量栈: $127,800 / 月 (全栈 $333.3K)</text>
+
+  <rect x="918" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1030" y="308" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">路由矩阵均值 (Denominator A)</text>
+  <text x="1030" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">218.5 ms</text>
+  <text x="1030" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 340 (339/340 · 99.71%)</text>
+  <text x="1030" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R73 (221.0ms) 再降 2.5ms</text>
+
+  <rect x="1156" y="286" width="224" height="96" rx="10" fill="#0F1A30" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1268" y="308" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">本体仿真均值 (Denominator B)</text>
+  <text x="1268" y="338" fill="#F8FAFC" font-size="22" font-weight="800" text-anchor="middle">187.0 ms</text>
+  <text x="1268" y="360" fill="#94A3B8" font-size="11" text-anchor="middle">n = 81 行业本体 (Scenario CC = 27ms)</text>
+  <text x="1268" y="375" fill="#34D399" font-size="10.5" font-weight="700" text-anchor="middle">较 R73 (189.0ms) 再降 2.0ms</text>
+
+  <rect x="918" y="394" width="462" height="90" rx="10" fill="#0F1A30" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="934" y="416" fill="#C084FC" font-size="12" font-weight="800">核心物理与合规收益 (Physical &amp; Regulatory Impact)</text>
+  <text x="934" y="436" fill="#E2E8F0" font-size="11.5">• 大碹热点：1,618°C → 1,592°C (&lt;= 1,605°C 硅砖安全线，0 鼠洞烧穿)</text>
+  <text x="934" y="454" fill="#E2E8F0" font-size="11.5">• 锡槽与探伤：微氧 11.4→1.8ppm (0 沾锡) + 95μm α-NiS 结石 100% 剔除</text>
+  <text x="934" y="472" fill="#34D399" font-size="11.5" font-weight="700">• 欧盟 EU ETS：碎玻璃掺入比 28%→36%，碳酸盐分解碳排放直降 + $25.00M SLA</text>
+
+  <!-- Row 2 Full Width: 5-Cloud Architecture Matrix & Coexistence -->
+  <rect x="40" y="514" width="1360" height="350" rx="14" fill="url(#card82)" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="60" y="542" fill="#60A5FA" font-size="14" font-weight="800">03 · 五大云平台在浮法/光伏玻璃场景的架构选型矩阵与 Better Together 共存打法</text>
+
+  <rect x="60" y="556" width="1320" height="30" rx="6" fill="#1E293B"/>
+  <text x="76" y="576" fill="#CBD5E1" font-size="11.5" font-weight="700">核心技术能力维度</text>
+  <text x="430" y="576" fill="#38BDF8" font-size="11.5" font-weight="800" text-anchor="middle">Microsoft Fabric (首选闭环)</text>
+  <text x="690" y="576" fill="#F97316" font-size="11.5" font-weight="700" text-anchor="middle">Databricks (3D CFD 互补)</text>
+  <text x="930" y="576" fill="#60A5FA" font-size="11.5" font-weight="700" text-anchor="middle">Snowflake (SAP 经销互补)</text>
+  <text x="1140" y="576" fill="#FBBF24" font-size="11.5" font-weight="700" text-anchor="middle">AWS SiteWise / OpenSearch</text>
+  <text x="1310" y="576" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">GCP BigQuery / Vertex</text>
+
+  <text x="76" y="606" fill="#F8FAFC" font-size="11.5">1. 920K EPS 大碹热像与激光流</text>
+  <text x="430" y="606" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 6ms KQL ($0/GB 写入税)</text>
+  <text x="690" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">350ms–2s (常驻 DBU 昂贵)</text>
+  <text x="930" y="606" fill="#94A3B8" font-size="11.5" text-anchor="middle">&gt;= 60s (Dynamic Tables 滞后)</text>
+  <text x="1140" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">250ms–2s ($85.4K/mo 属性税)</text>
+  <text x="1310" y="606" fill="#E2E8F0" font-size="11.5" text-anchor="middle">180ms–1.5s (按 MB 计费)</text>
+
+  <text x="76" y="636" fill="#F8FAFC" font-size="11.5">2. 1.64 亿 (164M) NiS/热场向量</text>
+  <text x="430" y="636" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ 7ms SSD DiskANN ($1.92K/mo)</text>
+  <text x="690" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">21ms (Mosaic Vector 全内存)</text>
+  <text x="930" y="636" fill="#94A3B8" font-size="11.5" text-anchor="middle">35ms+ (Cortex 偏文档检索)</text>
+  <text x="1140" y="636" fill="#F87171" font-size="11.5" text-anchor="middle">22ms (820GB DRAM $31.9K/mo)</text>
+  <text x="1310" y="636" fill="#E2E8F0" font-size="11.5" text-anchor="middle">19ms (Vertex 内存节点昂贵)</text>
+
+  <text x="76" y="666" fill="#F8FAFC" font-size="11.5">3. 窑炉断网 PLC 控制与碳账本</text>
+  <text x="430" y="666" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ ALDO 7ms 边缘 + SDS EU ETS</text>
+  <text x="690" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于 3D 池窑磁流体 CFD 仿真</text>
+  <text x="930" y="666" fill="#E2E8F0" font-size="11.5" text-anchor="middle">强于光伏组件长协与财务合并</text>
+  <text x="1140" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">需拼装 SiteWise Edge + IPC</text>
+  <text x="1310" y="666" fill="#94A3B8" font-size="11.5" text-anchor="middle">无车间断网 SQL 控制面</text>
+
+  <text x="76" y="696" fill="#F8FAFC" font-size="11.5">4. 2,800 人并发看数与月度 TCO</text>
+  <text x="430" y="696" fill="#34D399" font-size="11.5" font-weight="800" text-anchor="middle">★ $11,500/月 ($0 席位 · 省 91.0%)</text>
+  <text x="690" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$124,600 / 月</text>
+  <text x="930" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$129,500 / 月</text>
+  <text x="1140" y="696" fill="#F87171" font-size="11.5" text-anchor="middle">$127,800 / 月</text>
+  <text x="1310" y="696" fill="#E2E8F0" font-size="11.5" text-anchor="middle">$122,400 / 月</text>
+
+  <!-- Coexistence Playbook Boxes -->
+  <rect x="60" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#F97316" stroke-width="1.2"/>
+  <text x="78" y="744" fill="#FB923C" font-size="12.5" font-weight="800">模式 B 共存 · Fabric × Azure HPC / Databricks GPU (3D 玻璃池窑对流 CFD 与减反镀膜)</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">• 1,200t/d 玻璃池窑三维气泡澄清热对流 CFD (Fluent/GFM) 与溶胶镀膜分子训练保留在 Databricks GPU</text>
+  <text x="78" y="786" fill="#E2E8F0" font-size="11.5">• 产出的 1.64 亿条泡界线热场与激光衍射向量通过 OneLake Shortcuts 零拷贝直通 Cosmos SSD DiskANN</text>
+  <text x="78" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：免除 820GB 常驻内存向量税，7ms 实时匹配 α-NiS 硫化镍结石与纯氧烧枪配风处方</text>
+
+  <rect x="732" y="720" width="648" height="126" rx="10" fill="#0F1A30" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="750" y="744" fill="#38BDF8" font-size="12.5" font-weight="800">模式 A 共存 · Fabric × Snowflake / SAP S/4HANA (光伏组件长协交割与欧盟 ETS 碳核查)</text>
+  <text x="750" y="766" fill="#E2E8F0" font-size="11.5">• 全球光伏组件厂双玻原片长协、幕墙工程订单与纯碱/石英砂采购保留在 Snowflake / SAP S/4HANA</text>
+  <text x="750" y="786" fill="#E2E8F0" font-size="11.5">• 通过 OneLake Zero-ETL Mirroring ($0 算力) 与 Fabric SDS 碳酸盐分解质量平衡表实时联邦</text>
+  <text x="750" y="806" fill="#34D399" font-size="11.5" font-weight="700">• 价值：36% 碎玻璃掺入比自动扣减 EU ETS 过程排放，2,800 名工程师享 DirectLake $0 读者席位</text>
+</svg>
