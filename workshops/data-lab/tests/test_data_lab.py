@@ -925,13 +925,27 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 37)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 19050000)
 
-    def test_scenario_matrix_272_cases_and_explicit_miss(self) -> None:
+    def test_global_institutional_asset_mgmt_fabric_private_credit_ccp_margin_t1_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_institutional_asset_mgmt_fabric_private_credit_ccp_margin_t1_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["institutional_mandates_monitored_count"], 24000)
+        self.assertEqual(sim["telemetry"]["fix_fpml_swift_ingestion_eps"], 870000)
+        self.assertEqual(sim["telemetry"]["ctd_collateral_and_covenant_vectors_indexed_count"], 100000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_asset_mgmt_tco_saved_usd"], 79300)
+        self.assertTrue(sim["foundry_iq_guardrail"]["erisa_client_segregation_and_lcr_floor_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["sec_rule_15c6_2_t1_affirmation_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 31)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 19400000)
+
+    def test_scenario_matrix_276_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 272)
-        self.assertEqual(matrix["passed_scenarios"], 271)
+        self.assertEqual(matrix["total_scenarios"], 276)
+        self.assertEqual(matrix["passed_scenarios"], 275)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.63, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 268.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.64, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 264.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -1618,6 +1632,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-88.7% TCO", by_id["DL-271"]["expected"])
         self.assertIn("Protect $19.05M SLA", by_id["DL-272"]["expected"])
 
+    def test_fabric_institutional_asset_management_private_credit_ccp_margin_t1_vs_4clouds_2026_11_14_r58_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-273", "DL-274", "DL-275", "DL-276"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("7ms SIMM/T+1 Sense", by_id["DL-273"]["expected"])
+        self.assertIn("Monte Carlo HJM", by_id["DL-274"]["expected"])
+        self.assertIn("-88.9% TCO", by_id["DL-275"]["expected"])
+        self.assertIn("Protect $19.40M SLA", by_id["DL-276"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -1635,11 +1660,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 271)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 272)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 268.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 64)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 226.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 275)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 276)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 264.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 65)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 223.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r57_64_simulation_mean_modeled_latency_ms"], 226.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r56_63_simulation_mean_modeled_latency_ms"], 229.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r55_62_simulation_mean_modeled_latency_ms"], 232.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r54_61_simulation_mean_modeled_latency_ms"], 235.0)
@@ -1695,7 +1721,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 60)
+        self.assertEqual(len(refs), 61)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14"))
@@ -1761,6 +1787,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_aidc_gigawatt_fabric_liquid_cooling_ups_grid_interactive_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_virtual_power_plant_fabric_v2g_derms_ferc2222_inertia_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_institutional_asset_mgmt_fabric_private_credit_ccp_margin_t1_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
