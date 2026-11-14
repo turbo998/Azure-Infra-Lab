@@ -1359,13 +1359,27 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 74)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 29900000)
 
-    def test_scenario_matrix_396_cases_and_explicit_miss(self) -> None:
+    def test_global_offshore_wind_monopile_fabric_saw_welding_paut_ovality_dnv_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_offshore_wind_monopile_fabric_saw_welding_paut_ovality_dnv_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["tandem_saw_welding_gantries_count"], 360)
+        self.assertEqual(sim["telemetry"]["saw_paut_laser_ovality_ingestion_eps"], 990000)
+        self.assertEqual(sim["telemetry"]["rosenthal_t85_saft_and_springback_vectors_indexed_count"], 224000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_monopile_tco_saved_usd"], 160400)
+        self.assertTrue(sim["foundry_iq_guardrail"]["in_pass_lof_remelt_and_t85_toughness_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["monopile_ovality_and_dnv_green_steel_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 72)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 30250000)
+
+    def test_scenario_matrix_400_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 396)
-        self.assertEqual(matrix["passed_scenarios"], 395)
+        self.assertEqual(matrix["total_scenarios"], 400)
+        self.assertEqual(matrix["passed_scenarios"], 399)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.75, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 191.0)
+        self.assertEqual(matrix["avg_latency_ms"], 189.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2393,6 +2407,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-92.4% TCO", by_id["DL-395"]["expected"])
         self.assertIn("Protect $29.90M SLA", by_id["DL-396"]["expected"])
 
+    def test_fabric_offshore_wind_monopile_heavy_plate_saw_welding_paut_dnv_vs_4clouds_2026_11_15_r89_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-397", "DL-398", "DL-399", "DL-400"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("18ms SAW/Hot-PAUT Sense", by_id["DL-397"]["expected"])
+        self.assertIn("3D TMM weld residual-stress FEM", by_id["DL-398"]["expected"])
+        self.assertIn("-92.5% TCO", by_id["DL-399"]["expected"])
+        self.assertIn("Protect $30.25M SLA", by_id["DL-400"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2410,11 +2435,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 395)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 396)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 191.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 95)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 168.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 399)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 400)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 189.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 96)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 167.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r88_95_simulation_mean_modeled_latency_ms"], 168.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r87_94_simulation_mean_modeled_latency_ms"], 169.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r86_93_simulation_mean_modeled_latency_ms"], 170.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r85_92_simulation_mean_modeled_latency_ms"], 171.0)
@@ -2495,7 +2521,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 91)
+        self.assertEqual(len(refs), 92)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14"))
@@ -2592,6 +2618,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_polysilicon_ingot_fabric_siemens_cvd_cz_mcz_pulling_wafer_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_carbon_fiber_fabric_pan_oxidation_carbonization_exotherm_rto_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_chlor_alkali_fabric_ion_membrane_electrolysis_h2_cl2_vcm_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_offshore_wind_monopile_fabric_saw_welding_paut_ovality_dnv_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
