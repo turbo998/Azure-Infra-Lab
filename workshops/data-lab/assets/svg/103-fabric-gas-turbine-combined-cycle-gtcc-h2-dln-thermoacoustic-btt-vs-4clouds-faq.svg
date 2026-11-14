@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg95" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060B16"/>
+      <stop offset="50%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent95" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue95" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2447"/>
+      <stop offset="100%" stop-color="#0B1933"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg95)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#F97316" stroke-width="1.5"/>
+  <rect x="58" y="50" width="298" height="26" rx="13" fill="url(#accent95)"/>
+  <text x="207" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · 2026-11-15 R95 · 95-ROUND &amp; 100-FAQ</text>
+  <text x="372" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">H/J级掺氢重型燃机联合循环 (GTCC)：1,650°C DLN 热声防回火、50kHz 叶尖定时 BTT 防颤振与 2.48 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global H/J-Class Hydrogen-Blended GTCC (32 Plants · 128 600MW Turbines + 2,048 DLN Cans + 64 HRSG/CCUS) · 980K EPS · 248M DiskANN · 60ms Loop · -93.1% TCO ($183.2K/mo Saved)</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1284" y="69" fill="#34D399" font-size="11.5" font-weight="700" text-anchor="middle">R95 路由准确率 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">99.76% · 161.0ms</text>
+
+  <!-- Left Column: Physical GTCC & H2 Combustor Telemetry Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#FB923C" font-size="14" font-weight="800">01 · 重型燃机掺氢燃烧与叶片传感层 (980K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🔥 2,048 个 1,650°C 干式低氮 (DLN) 掺氢燃烧筒</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 20kHz 高温压电动态压力传感器 (PCB) + OH* 紫外电离</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 捕获 #09燃机 38% 掺氢下 #11筒 285Hz / 34.2kPa 热声共振</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 喷嘴尖端 742°C 回火前兆 (H2 火焰速度 2.5m/s = 甲烷 7倍!)</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#7DD3FC" font-size="12.5" font-weight="800">🌀 128 台 600MW 燃机 50kHz 光纤叶尖定时 (BTT)</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 机匣周向 12 支光纤激光 BTT 探头测量纳秒级到达时间差</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 欠采样重构捕获压气机 R1 第 19 号叶片 1.82mm @ 412Hz</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 提前拦截非同步一阶弯曲颤振 (Flutter)，防高周疲劳断叶</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">🌿 64 套余热锅炉 (HRSG) SCR 脱硝与胺液碳捕集</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 尾部 CEMS 连续监测 NOx (&lt;=9.0 ppm) 与 SCR 氨逃逸 (&lt;=2ppm)</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 协调低压缸抽汽供给胺液再生釜，保持 94.5% CO2 捕集率</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 严防盲目切扩散火焰致 NOx 暴增与硫酸氢铵糊死空预器</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统燃机 TDM 保护盒与云端全内存拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 500ms 均方根 RMS 滤波看不见声火瑞利相位锁死，150ms 烧穿喷嘴</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 980K EPS 云端按属性写入税高达 $135.8K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.48 亿向量全内存常驻需 2.75TB+ DRAM (&gt;$49.5K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 60ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue95)" stroke="#0EA5E9" stroke-width="2"/>
+  <text x="502" y="166" fill="#7DD3FC" font-size="14" font-weight="800">02 · Microsoft Fabric 60ms 热声防回火与 BTT 防颤振闭环</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 15ms 互谱瑞利指数与 BTT 感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 980,000 EPS 20kHz/50kHz 流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• series_fft() 15ms 锁定 #11筒 285Hz/34.2kPa &amp; 742°C 与 R1#19 1.82mm</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $130.9K/月写入费，比 500ms 均方根滤波器快 33 倍</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 15ms 2.48亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 检索 248,000,000 条三维 FTF 瑞利相图、掺氢边界层回火与坎贝尔图</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.5K vs $49.5K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：主预混A路 -3.8% + 值班C路 +2.6% + 吹扫气 +8.5% + IGV -1.8°</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 错开声火相位并吹扫边界层：脉动压至 2.8kPa、喷嘴 418°C 零回火</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 规程护栏 (SOP-102 · 15ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验动态压力 2.8kPa &lt;= 8.0kPa、喷嘴 418°C 零回火、叶片振幅 0.24mm</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验出口 NOx = 7.4 ppm &lt;= 9.0 ppm 红线，SCR 氨逃逸 1.1 ppm 零糊堵</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断扩散火焰过量诱发的 NOx 超标与空预器 ABS 结垢</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 值长确认 + ALDO 电子间边缘 &amp; 低碳电凭证 (15ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 经反射内存网/EtherCAT 下发燃料阀与 IGV</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 38% 绿氢 + 94.5% CCUS 凭证 (112 gCO2e/kWh)</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 60ms 端到端闭环 · 守护 $32.35M 单晶透平热通道与调峰保电 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.1%)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑 5 亿网格三维大涡模拟 (LES)</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  掺氢反应流与透平流固耦合 FSI，向 OneLake 写入 2.48 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留电力现货报价与燃机长协大修</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  (LTSA EOH 寿命台账)，经 OneLake Mirroring ($0 算力) 互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 5,200 名热机工程师与交易员 DirectLake 看板 ($0 读者税)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 32 座重型燃机电厂月度 TCO 对比 (980K EPS · 248M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 248M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$13,600 / 月 (基准最优 · 省 93.1%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 2.75TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$196,800 / 月 (归一化) | $534,600 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $183,200 / 月 ($2.20M / 年) · 95轮 &amp; 100篇双语FAQ里程碑!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#38BDF8" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#7DD3FC" font-size="12.5" font-weight="800">📊 Scenario CX 实测成效与双分母披露 (R95)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=424)：423 / 424 (99.76%) · 均值 180.5 ms</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=102)：161.0 ms (本场景 CX 仅 60 ms E2E)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 热声脉动：34.2kPa → 2.8kPa | 喷嘴温度：742°C → 418°C (0回火)</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 叶片振幅：1.82mm → 0.24mm | 排放：NOx 7.4ppm · 112gCO2e/kWh</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避透平打叶与停机损失：$32,350,000 ($32.35M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#7DD3FC" font-size="14" font-weight="800">04 · AI Solution Architect 掺氢重型燃机与联合循环打单金句与生产核验清单 (Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#FDBA74" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 1,650°C 掺氢重型燃机里，氢气火焰速度是天然气的 7 倍，靠 500ms 均方根滤波器看动态</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">压力，等报警响起时 $4.5M 的燃料喷嘴早已被回火烧穿！Microsoft Fabric 用 Eventhouse 在 15ms</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">内算清 20kHz 声火瑞利相位与 50kHz 叶尖定时 BTT 颤振（$0/GB 写入税），再用 SSD DiskANN 在</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">15ms 内匹配 2.48 亿条火焰传递函数与坎贝尔图向量，60ms 走 ALDO 电子间边缘微调燃料分流与</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">可转导叶 IGV，实现零回火、零断叶且 NOx 锁在 7.4 ppm，月省 93.1% TCO！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 16–24 个 DLN 燃烧筒 20kHz 动态压力 PCB 与紫外电离探针 Arrow 批量直推 Eventhouse</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. KQL 50kHz 光纤叶尖定时 (BTT) 欠采样重构开启，实时分离同步共振与非同步气动颤振</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.48 亿条 FTF/回火/坎贝尔图索引构建 (-92% 内存，P95 &lt;= 15ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-102 门禁：压幅 &lt;=8.0kPa、零回火、NOx &lt;=9.0ppm、氨逃逸 &lt;=2.0ppm</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 电子间反射内存网下发燃料阀/IGV，1GB 免费 SQL 签发 38% 绿氢 + 112gCO2e 凭证</text>
+</svg>
