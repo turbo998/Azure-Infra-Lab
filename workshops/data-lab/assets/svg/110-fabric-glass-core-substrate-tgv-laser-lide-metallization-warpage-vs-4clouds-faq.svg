@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg102" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="50%" stop-color="#09152B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent102" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardBlue102" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2244"/>
+      <stop offset="100%" stop-color="#0A1830"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg102)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#06B6D4" stroke-width="2"/>
+  <rect x="58" y="50" width="310" height="26" rx="13" fill="url(#accent102)"/>
+  <text x="213" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · R102 170.0ms &amp; 110-SVG!</text>
+  <text x="384" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">510×515mm 玻璃芯基板 (GCS) 飞秒激光 LIDE 防裂、TGV 无空洞填铜与 2.76 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global Glass Core Substrate 510×515mm TGV Panel (16 Plants · 480 LIDE Lasers + 640 TGV Lines + 720 SS-OCTs) · 990K EPS · 276M DiskANN · 46ms Loop · -93.8% TCO ($213.5K/mo Saved)</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#06B6D4" stroke-width="1.8"/>
+  <text x="1284" y="69" fill="#22D3EE" font-size="11.5" font-weight="800" text-anchor="middle">R102 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">170.0ms · 154.0ms</text>
+
+  <!-- Left Column: Physical Glass Core Substrate LIDE & TGV Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#22D3EE" font-size="14" font-weight="800">01 · 飞秒 LIDE 贝塞尔光场与 TGV 电镀传感 (990K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#67E8F9" font-size="12.5" font-weight="800">⚡ 480 台 50kHz 飞秒贝塞尔激光诱导刻蚀 (LIDE) 机台</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 800μm 硼硅玻璃大板 120万孔/板改性 + SLM 空间光调制波前</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 捕获 #14号LIDE 锥透镜热畸变致孔壁微裂纹达 2.35μm (&gt;1.0μm)</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 提前拦截 ABF 热压合与 260°C 回流焊时整张 $12K 玻璃大板炸裂!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#93C5FD" font-size="12.5" font-weight="800">🧪 640 条 HF/KOH 刻蚀与反向脉冲电镀 (PPR) 填铜产线</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 720 台在线扫频 OCT 三维孔型仪 + 电镀阴极极化电位流</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 捕获 #09号TGV线 沙漏腰径比跌至 0.71 (蝴蝶形中心空洞高危!)</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 协同兆声波扫频与 PPR 阳极反向剥离实现 100% 自下而上填孔</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">♻️ 510×515mm 大板翘曲控制与 94.2% 氟石/铜闭环再生</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 四象限激光共聚焦实时锁死大板压合翘曲 38.0μm (&lt;=65.0μm)</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 流化床氟化钙 (CaF2) 合成氟石结晶 + 电沉积回收 94.2% 氟与铜</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 自动签发 SEMI S23 低碳 AI 玻璃芯基板数字护照</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统单机功率闭环、电镀安时计与云端拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 总功率恒定看不见 800μm 轴向焦深退化，固定电镀必出蝴蝶空洞</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 990K EPS 云端按属性写入税高达 $158.8K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.76 亿向量全内存常驻需 3.10TB+ DRAM (&gt;$57.8K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 46ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue102)" stroke="#06B6D4" stroke-width="2"/>
+  <text x="502" y="166" fill="#67E8F9" font-size="14" font-weight="800">02 · Microsoft Fabric 46ms 玻璃芯基板 TGV 闭环 (R102!)</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 11ms 微裂纹与孔腰感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 990,000 EPS 激光/OCT 流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• 11ms 锁定 #14台 2.35μm 微裂纹与 #09线 0.71 沙漏腰径比</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $153.9K/月写入费，毫秒级打通激光改性到湿法扩孔剖面</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 11ms 2.76亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 检索 276,000,000 条贝塞尔光丝、兆声波扩孔与 PPR 超填充向量</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.6K vs $57.8K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：SLM +0.42π 球差相图 + 1.8ps 子脉冲 + 兆声波 +16% + PPR剥离 +4.5%</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 微裂纹压至 0.32μm、腰径比恢复 0.88，中心蝴蝶空洞率 0.000%</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 腰径比与零蝴蝶空洞护栏 (SOP-109 · 12ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验微裂纹 0.32μm &lt;= 1.00μm、TGV 腰径比 0.88 &gt;= 0.82 安全线</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验蝴蝶空洞 0.000%、大板翘曲 38.0μm &lt;= 65.0μm，氟铜回收 94.2%</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断 510×515mm 玻璃基板回流焊爆板与 36 颗 GPU 基板报废</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总监确认 + ALDO 面板边缘 &amp; SEMI S23 (12ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 12ms 刷新 SLM 全息图与脉冲电镀整流器</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 SEMI S23 94.2% 氟石/铜再生与大板良率账本</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 46ms 端到端闭环 (170.0ms 均值里程碑!) · 守护 $34.80M 玻璃基板 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.8% · R102!)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑三维 NLSE 飞秒贝塞尔光丝与</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  SPS/PEG 电镀超填充 CFD 仿真，向 OneLake 写入 2.76 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留玻璃原片 (Corning/AGC/Schott)</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  与 ABF 膜材批次 ERP，经 OneLake Mirroring ($0 算力) 互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 5,800 名 FOPLP 封装与激光工程师 DirectLake 看板 ($0 席位)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 16 座玻璃基板厂月度 TCO 对比 (990K EPS · 276M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 276M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$14,100 / 月 (基准最优 · 省 93.8%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 3.10TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$227,600 / 月 (归一化) | $618,400 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $213,500 / 月 ($2.56M / 年) · 170.0ms 均值与 110-SVG 里程碑!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#67E8F9" font-size="12.5" font-weight="800">📊 Scenario DE 实测成效与双分母披露 (Round 102)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=452)：451 / 452 (99.78%) · 均值 170.0 ms (大关!)</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=109)：154.0 ms (本场景 DE 仅 46 ms E2E!)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 飞秒微裂纹：2.35→0.32μm | TGV 腰径比：0.71→0.88 (0 蝴蝶空洞)</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 大板翘曲与环保：38.0μm 翘曲 · 94.2% 氟化钙/铜离子闭环回收</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避 510×515mm 玻璃大板炸裂损失：$34,800,000 ($34.80M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#67E8F9" font-size="14" font-weight="800">04 · AI Solution Architect 玻璃芯基板 (GCS) 与 TGV 打单金句与生产核验清单 (R102 Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#FBBF24" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch · Round 102)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 510×515mm AI 玻璃芯基板上打 120 万个 TGV 通孔时，飞秒激光锥透镜轻微热漂移就会让孔壁</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">长出 2.35μm 微裂纹、刻蚀腰径比跌到 0.71，电镀时把药水封死在孔中间形成蝴蝶空洞，回流焊直接</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">炸裂整张大板！Microsoft Fabric 用 Eventhouse 11ms 联查激光波前与在线 OCT 孔腰（$0/GB 税），</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">再用 SSD DiskANN 11ms 匹配 2.76 亿条贝塞尔相图与脉冲电镀向量，46ms 走 ALDO 边缘恢复 0.88</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">腰径比与零空洞填铜，月省 $213.5K (93.8% TCO)！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 480 台飞秒 LIDE SLM 波前流与 720 台在线扫频 OCT 孔腰流直推 Eventhouse</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. 640 条 TGV 产线兆声波扫频功率与反向脉冲电镀 (PPR) 剥离占空比前馈联动</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.76 亿条贝塞尔光场/超填充索引 (-92% 内存，P95 &lt;= 11ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-109 门禁：微裂纹 &lt;=1.0μm、腰径比 &gt;=0.82、零空洞、翘曲 &lt;=65μm</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 面板边缘下发 SLM 全息图与整流器波形，1GB 免费 SQL 签发 94.2% 氟铜回收凭证</text>
+</svg>

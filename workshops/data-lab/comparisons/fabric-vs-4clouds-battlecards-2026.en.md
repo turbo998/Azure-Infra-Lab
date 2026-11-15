@@ -1,8 +1,8 @@
 # ⚔️ Microsoft Fabric vs. 4-Cloud Competitors (Databricks / Snowflake / GCP / AWS) Deep-Dive Battlecards (2026)
 
 > **Language**: [中文 (`fabric-vs-4clouds-battlecards-2026.md`)](fabric-vs-4clouds-battlecards-2026.md) | **English (Current)**  
-> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-16 R101` · 448 Scenarios `99.78%` · `171.5ms` Matrix Mean · 108 Ontologies `155.0ms` Mean) · **Target Persona**: Principal AI Solution Architect  
-> **🔥 Flagship FAQ Selection Guide**: [Enterprise AI Data Foundation Selection & "Zero-Copy + Semantic Ontology (OneLake × Fabric IQ)" FAQ](fabric-onelake-iq-vs-4clouds-selection-faq.en.md) · [R101: HBM4 16-High 3D TSV Cu-Cu Hybrid Bonding & Nanometer CMP Dishing FAQ](fabric-hbm4-16hi-tsv-cu-cu-hybrid-bonding-wafer-thinning-muf-vs-4clouds-faq.en.md) · [R100 Centennial: 13.5nm EUV LPP 50kHz Tin-Droplet Source, Mo/Si Collector Mirror & 45nm CNT Pellicle FAQ](fabric-euv-source-tin-droplet-lpp-collector-mirror-cnt-pellicle-vs-4clouds-faq.en.md)
+> **Data Source**: `workshops/data-lab/reports/report.json` (Sealed `2026-11-16 R102` · 452 Scenarios `99.78%` · `170.0ms` Matrix Mean · 109 Ontologies `154.0ms` Mean) · **Target Persona**: Principal AI Solution Architect  
+> **🔥 Flagship FAQ Selection Guide**: [Enterprise AI Data Foundation Selection & "Zero-Copy + Semantic Ontology (OneLake × Fabric IQ)" FAQ](fabric-onelake-iq-vs-4clouds-selection-faq.en.md) · [R102: 510×515mm Glass Core Substrate TGV, Femtosecond LIDE & Void-Free Cu Plating FAQ](fabric-glass-core-substrate-tgv-laser-lide-metallization-warpage-vs-4clouds-faq.en.md) · [R101: HBM4 16-High 3D TSV Cu-Cu Hybrid Bonding & Nanometer CMP Dishing FAQ](fabric-hbm4-16hi-tsv-cu-cu-hybrid-bonding-wafer-thinning-muf-vs-4clouds-faq.en.md) · [R100 Centennial: 13.5nm EUV LPP 50kHz Tin-Droplet Source, Mo/Si Collector Mirror & 45nm CNT Pellicle FAQ](fabric-euv-source-tin-droplet-lpp-collector-mirror-cnt-pellicle-vs-4clouds-faq.en.md)
 
 [![OneLake Zero-Copy & Fabric IQ Ontology FAQ Architecture](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)](../assets/svg/09-onelake-iq-sharing-salesforce-sovereign-faq.svg)
 
