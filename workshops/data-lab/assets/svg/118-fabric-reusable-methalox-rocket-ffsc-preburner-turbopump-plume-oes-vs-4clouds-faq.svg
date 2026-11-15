@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg118" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="50%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#091D26"/>
+    </linearGradient>
+    <linearGradient id="gold118" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg118)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="58" y="48" width="310" height="26" rx="13" fill="url(#gold118)"/>
+  <text x="213" y="66" fill="#040814" font-size="11.5" font-weight="900" text-anchor="middle" letter-spacing="0.8">🏆 R110 · #115 FAQ &amp; 30ms E2E MILESTONE!</text>
+  <text x="384" y="66" fill="#F8FAFC" font-size="16" font-weight="800">液氧甲烷 (Methalox) 全流量分级燃烧 (FFSC) 350bar 预燃室抑振、36,000RPM 涡轮泵防空化与尾焰 OES 防烧蚀 30ms 闭环</text>
+  <text x="58" y="100" fill="#94A3B8" font-size="12.5">Scenario DM · 12 座试车与发射基地 (360 台 FFSC 发动机 + 720 套深冷涡轮泵 + 480 套 100kHz 压电/OES 阵列) × 990K EPS · 3.08 亿向量 (308M!) · 1.42% Pc &amp; 618°C 零铜侵蚀 · 50 次复飞</text>
+
+  <rect x="1156" y="46" width="226" height="64" rx="10" fill="#064E3B" stroke="#F59E0B" stroke-width="1.8"/>
+  <text x="1269" y="68" fill="#FDE68A" font-size="11.5" font-weight="800" text-anchor="middle">R110 · #115 FAQ &amp; 146.0ms MEAN!</text>
+  <text x="1269" y="95" fill="#FFFFFF" font-size="19" font-weight="900" text-anchor="middle">308M Vectors · 30ms</text>
+
+  <!-- Left Column -->
+  <rect x="40" y="138" width="430" height="470" rx="14" fill="#131B2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="60" y="168" fill="#F87171" font-size="14.5" font-weight="800">01 · 350bar FFSC 火箭三大物理危机与传统死穴</text>
+
+  <rect x="58" y="184" width="394" height="126" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="206" fill="#FCA5A5" font-size="12.5" font-weight="800">① #19 发动机 2,450 Hz 第一阶切向 (1T) 热声振荡</text>
+  <text x="72" y="226" fill="#F8FAFC" font-size="11.5">• 变推力节流触发 Rayleigh 热声同相耦合 (Δφ = +12.4°)</text>
+  <text x="72" y="246" fill="#CBD5E1" font-size="11">• 1T 压力振幅在 15ms 内冲上 11.8% Pc (±41.3 bar &gt; 5.0% 上限)</text>
+  <text x="72" y="266" fill="#CBD5E1" font-size="11">• 横向激波剥离低温甲烷冷却气膜，壁面热流突破 185 MW/m²</text>
+  <text x="72" y="286" fill="#F87171" font-size="11" font-weight="700">• 痛点：传统死板红线关机在着陆点火段直接导致箭体坠毁！</text>
+
+  <rect x="58" y="322" width="394" height="132" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="344" fill="#FCA5A5" font-size="12.5" font-weight="800">② 尾焰绿光 Cu I 510.5nm 富金属烧蚀与诱导轮空化</text>
+  <text x="72" y="364" fill="#F8FAFC" font-size="11.5">• GRCop-42 铜铬铌喉部壁温冲至 794°C (&gt;680°C 蠕变上限)</text>
+  <text x="72" y="384" fill="#CBD5E1" font-size="11">• 尾焰 OES 铜原子谱线跃升至 14.8 SNR (&gt;2.0 SNR 零烧蚀上限)</text>
+  <text x="72" y="404" fill="#CBD5E1" font-size="11">• 36,000 RPM 液氧泵空化数跌至 σ=0.038 (&lt;0.055 旋转空化线)</text>
+  <text x="72" y="424" fill="#F87171" font-size="11" font-weight="700">• 痛点：距离 Engine-Rich 喷管烧穿爆炸解体仅剩 100 毫秒！</text>
+
+  <rect x="58" y="466" width="394" height="126" rx="10" fill="#0F172A" stroke="#475569" stroke-width="1"/>
+  <text x="72" y="488" fill="#FBBF24" font-size="12.5" font-weight="800">③ 四云拼装栈的三重税负 ($242.4K/月 vs $14.1K/月)</text>
+  <text x="72" y="508" fill="#E2E8F0" font-size="11.5">• 写入税：990K EPS 100kHz 压力与 OES 流月费高达 $171.8K</text>
+  <text x="72" y="528" fill="#E2E8F0" font-size="11.5">• 内存税：308M 全内存 DRAM 向量索引月耗 $36.0K</text>
+  <text x="72" y="548" fill="#E2E8F0" font-size="11.5">• 刷新税：Snowflake 60s 滞后 / 事后回放错失 30ms 救机窗口</text>
+  <text x="72" y="570" fill="#34D399" font-size="11.5" font-weight="700">• Fabric 破局：$0/GB 写入税 + SSD DiskANN 省 92% 内存</text>
+
+  <!-- Center Column -->
+  <rect x="488" y="138" width="494" height="470" rx="14" fill="#0D1F33" stroke="#F59E0B" stroke-width="2"/>
+  <text x="508" y="168" fill="#FDE68A" font-size="14.5" font-weight="800">02 · Microsoft Fabric 30ms 可复用火箭动力闭环 (R110!)</text>
+
+  <!-- Step 1 -->
+  <rect x="508" y="184" width="454" height="96" rx="10" fill="#112A45" stroke="#06B6D4" stroke-width="1.4"/>
+  <text x="524" y="205" fill="#67E8F9" font-size="12.5" font-weight="800">STEP 1 · Eventhouse KQL 990K EPS 热声 FFT &amp; 尾焰 OES (7 ms)</text>
+  <text x="524" y="225" fill="#F8FAFC" font-size="11.5">• $0/GB 写入税摄入 360 台发动机 100kHz 压电、涡轮泵与 OES 光谱流</text>
+  <text x="524" y="244" fill="#CBD5E1" font-size="11">• series_fft() 7ms 锁定 #19 机 2,450Hz 1T 振幅 11.8% Pc (Δφ=+12.4°)</text>
+  <text x="524" y="263" fill="#34D399" font-size="11" font-weight="700">• 同时捕获尾焰 Cu I 510.5nm 达 14.8 SNR (壁温 794°C) 与空化 σ=0.038</text>
+
+  <!-- Step 2 -->
+  <rect x="508" y="292" width="454" height="104" rx="10" fill="#132F2B" stroke="#10B981" stroke-width="1.8"/>
+  <text x="524" y="313" fill="#6EE7B7" font-size="12.5" font-weight="800">STEP 2 · 6 跳推进孪生 &amp; 3.08 亿向量 SSD DiskANN 检索 (8 ms)</text>
+  <text x="524" y="333" fill="#F8FAFC" font-size="11.5">• 检索 308,000,000 (R110 &amp; 115-FAQ!) 热声移频、超临界气膜与空化向量</text>
+  <text x="524" y="352" fill="#CBD5E1" font-size="11">• 相似度 0.99 (省 92% 内存)：富氧预燃室 O/F 混合比微调 -0.24 (移相+112°)</text>
+  <text x="524" y="371" fill="#FDE68A" font-size="11" font-weight="700">• 边区液膜冷却阀 +18.5% 重建保护膜 + 贮箱自生增压 +0.32 bar 消除空化</text>
+
+  <!-- Step 3 -->
+  <rect x="508" y="408" width="454" height="90" rx="10" fill="#172554" stroke="#3B82F6" stroke-width="1.4"/>
+  <text x="524" y="429" fill="#93C5FD" font-size="12.5" font-weight="800">STEP 3 · Foundry IQ 防烧蚀与涡轮泵物理护栏 SOP-117 (8 ms)</text>
+  <text x="524" y="449" fill="#F8FAFC" font-size="11.5">• 校验 1T 热声脉动压回 1.42% Pc &lt;= 5.0% 上限，声腔阻尼 +9.5%</text>
+  <text x="524" y="468" fill="#CBD5E1" font-size="11">• GRCop-42 喉部壁温拉回 618°C &lt;= 680°C (尾焰 Cu I=0.18 SNR 零侵蚀)</text>
+  <text x="524" y="485" fill="#34D399" font-size="11" font-weight="700">• 液氧泵空化数恢复 σ=0.074 &gt;= 0.055 · Bio-LCH4 碳减排达 -84.6%</text>
+
+  <!-- Step 4 -->
+  <rect x="508" y="510" width="454" height="84" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.4"/>
+  <text x="524" y="531" fill="#C4B5FD" font-size="12.5" font-weight="800">STEP 4 · Teams 推进总师确认 + ALDO 边缘 + FAA 复飞证 (7 ms)</text>
+  <text x="524" y="551" fill="#F8FAFC" font-size="11.5">• 发射台 ALDO 边缘下发 EtherCAT/1553B 液膜冷却与预燃室伺服阀指令</text>
+  <text x="524" y="570" fill="#34D399" font-size="11" font-weight="700">• 1GB 免费 SQL 签发 FAA 50次免大修复飞与 Bio-LCH4 零碳证 (30ms!)</text>
+
+  <!-- Right Column -->
+  <rect x="1000" y="138" width="400" height="470" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1020" y="168" fill="#60A5FA" font-size="14.5" font-weight="800">03 · 定量基准与五云零拷贝协同 (R110)</text>
+
+  <rect x="1018" y="184" width="364" height="142" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1032" y="206" fill="#34D399" font-size="12.5" font-weight="800">月度 TCO 对比 (省 94.1% · 净省 $228.3K/月!)</text>
+  <text x="1032" y="228" fill="#F8FAFC" font-size="11.5">• Microsoft Fabric 归一化：  $14,100 / 月 (基准最优)</text>
+  <rect x="1032" y="234" width="52" height="10" rx="5" fill="#10B981"/>
+  <text x="1032" y="258" fill="#CBD5E1" font-size="11.5">• 四云拼装栈归一化：         $242,400 / 月 (贵 17.2x)</text>
+  <rect x="1032" y="264" width="320" height="10" rx="5" fill="#EF4444"/>
+  <text x="1032" y="290" fill="#93C5FD" font-size="11">• 集团全量专用容量 (12 基地)：$39.4K vs $665.5K/月</text>
+  <text x="1032" y="310" fill="#FDE68A" font-size="11.5" font-weight="800">• 守护 SLA 风险敞口：        $37,600,000 (R110 里程碑!)</text>
+
+  <rect x="1018" y="338" width="364" height="126" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="1032" y="360" fill="#67E8F9" font-size="12.5" font-weight="800">双分母延迟基准 (sealed report.json R110)</text>
+  <text x="1032" y="382" fill="#F8FAFC" font-size="11.5">• 路由评估矩阵 (n=484)：      483 / 484 (99.79% 准确率)</text>
+  <text x="1032" y="402" fill="#34D399" font-size="11.5" font-weight="700">• 分母 A 路由矩阵算术均值：   162.0 ms (-1.0ms!)</text>
+  <text x="1032" y="422" fill="#34D399" font-size="11.5" font-weight="700">• 分母 B 117大行业本体均值：  146.0 ms (-1.0ms!)</text>
+  <text x="1032" y="442" fill="#CBD5E1" font-size="11">• Python 确定性单测套件：    238 / 238 (100% 通过)</text>
+
+  <rect x="1018" y="476" width="364" height="118" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1032" y="498" fill="#FBBF24" font-size="12.5" font-weight="800">Better Together 跨云零拷贝黄金分工</text>
+  <text x="1032" y="518" fill="#E2E8F0" font-size="11">• Azure HPC / Databricks：3D 超临界燃烧 LES &amp; CHT 仿真</text>
+  <text x="1032" y="538" fill="#E2E8F0" font-size="11">• Snowflake / SAP：GRCop-42 3D打印粉末与商业发射 ERP</text>
+  <text x="1032" y="558" fill="#34D399" font-size="11" font-weight="700">• Fabric：OneLake 零拷贝挂载 + 30ms 发射台实时控制面</text>
+  <text x="1032" y="578" fill="#94A3B8" font-size="10.5">• 官方规格引用：113 条 (新增 SPEC-METHALOX-ROCKET-R110)</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="624" width="1360" height="240" rx="14" fill="#0E192D" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="60" y="654" fill="#60A5FA" font-size="14.5" font-weight="800">04 · 液氧甲烷全流量分级燃烧 (FFSC) 三大物理护栏矩阵 (SOP-117 · R110 &amp; 115-FAQ Milestone)</text>
+
+  <rect x="60" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="76" y="694" fill="#67E8F9" font-size="13" font-weight="800">① 350bar 预燃室/主室 Rayleigh 热声移频抑振</text>
+  <text x="76" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：Rayleigh 积分 ∮ p'(t)·q'(t-τ) dt &gt; 0 自激耦合</text>
+  <text x="76" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：2,450Hz 1T 模态冲至 11.8% Pc (±41.3 bar)</text>
+  <text x="76" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：富氧预燃室 O/F -0.24 移相 + 声腔阻尼孔 +9.5%</text>
+  <text x="76" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：1T 压力振幅压回 1.42% Pc &lt;= 5.0%，避免着陆关机</text>
+  <text x="76" y="800" fill="#94A3B8" font-size="11">• 变推力窗口：40%–100% 深度节流全程热声稳定</text>
+
+  <rect x="506" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#10B981" stroke-width="1.2"/>
+  <text x="522" y="694" fill="#6EE7B7" font-size="13" font-weight="800">② GRCop-42 喉部超临界甲烷气膜 &amp; 尾焰 OES 闭环</text>
+  <text x="522" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：120 MW/m² 喉部极限热流与跨临界传热恶化 (HTD)</text>
+  <text x="522" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：壁温 794°C 且尾焰 Cu I 510.5nm 冲至 14.8 SNR</text>
+  <text x="522" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：边区液膜冷却阀 +18.5% 重建低温富燃边界层</text>
+  <text x="522" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：喉部壁温锁死 618°C，尾焰 Cu I 降至 0.18 SNR</text>
+  <text x="522" y="800" fill="#94A3B8" font-size="11">• 复飞寿命：单次发射 LCF 疲劳损耗 &lt;1.4%，支撑 50 次免大修</text>
+
+  <rect x="952" y="670" width="428" height="174" rx="10" fill="#091326" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="968" y="694" fill="#FBBF24" font-size="13" font-weight="800">③ 36,000 RPM 深冷涡轮泵防空化与 Bio-LCH4 护照</text>
+  <text x="968" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：诱导轮空化数 σ = (Pin - Pv)/(0.5·ρ·Utip²)</text>
+  <text x="968" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：σ 跌至 0.038 引发超同步旋转空化与流量脉动</text>
+  <text x="968" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：贮箱自生增压阀 +0.32 bar 恢复 σ=0.074 &gt;= 0.055</text>
+  <text x="968" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：零气蚀磨损，30 分钟快速复飞数字健康证签发</text>
+  <text x="968" y="800" fill="#FDE68A" font-size="11" font-weight="700">• 绿色航天：生物液态甲烷 Bio-LCH4 碳减排 -84.6% · 30ms 闭环</text>
+</svg>
