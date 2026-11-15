@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg126" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="50%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#072227"/>
+    </linearGradient>
+    <linearGradient id="cyan126" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg126)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#10213D" stroke="#06B6D4" stroke-width="2.2"/>
+  <rect x="58" y="48" width="356" height="26" rx="13" fill="url(#cyan126)"/>
+  <text x="236" y="66" fill="#040814" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="0.6">🏆 R118 · 99.81% ACC, #125 ONTOLOGY &amp; 14ms E2E!</text>
+  <text x="430" y="66" fill="#F8FAFC" font-size="16" font-weight="800">200mm/300mm 硅基氮化镓 (GaN-on-Si/QST) MOCVD 超晶格原位翘曲控制与动态导通电阻抑制 14ms 闭环</text>
+  <text x="58" y="100" fill="#94A3B8" font-size="12.5">Scenario DU · 16 座 GaN 功率外延基地 (560 台 MOCVD 反应腔 + 480 套原位曲率仪 + 640 台 2DEG 测试仪) × 990K EPS · 3.40 亿向量 (340M!) · +11.2μm 翘曲 &amp; 1.07x 动态 Rdson</text>
+
+  <rect x="1146" y="46" width="236" height="64" rx="10" fill="#064E3B" stroke="#F59E0B" stroke-width="2"/>
+  <text x="1264" y="68" fill="#FDE68A" font-size="11.5" font-weight="900" text-anchor="middle">515 / 516 = 99.81% (n=125!)</text>
+  <text x="1264" y="95" fill="#FFFFFF" font-size="19" font-weight="900" text-anchor="middle">340M Vectors · 14ms</text>
+
+  <!-- Left Column -->
+  <rect x="40" y="138" width="430" height="470" rx="14" fill="#131B2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="60" y="168" fill="#F87171" font-size="14.5" font-weight="800">01 · 硅基氮化镓外延三大物理危机与传统死穴</text>
+
+  <rect x="58" y="184" width="394" height="126" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="206" fill="#FCA5A5" font-size="12.5" font-weight="800">① #16 MOCVD 腔室 54% 热膨胀失配与 +88.5μm 翘曲裂片</text>
+  <text x="72" y="226" fill="#F8FAFC" font-size="11.5">• GaN 热膨胀系数比 Si 大 54%，从 1,050°C 降温产生 1.18GPa 拉应力</text>
+  <text x="72" y="246" fill="#CBD5E1" font-size="11">• 托盘边缘 +4.8°C 温差使第 42 周期超晶格压应力斜率跌落 -28%</text>
+  <text x="72" y="266" fill="#CBD5E1" font-size="11">• 冷却后晶圆翘曲冲上 +88.5 μm (&gt; ±25.0 μm 光刻吸盘极限)</text>
+  <text x="72" y="286" fill="#F87171" font-size="11" font-weight="700">• 痛点：出炉后才测曲率早已定型炸裂，整炉报废损失 &gt;$96K！</text>
+
+  <rect x="58" y="322" width="394" height="132" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="344" fill="#FCA5A5" font-size="12.5" font-weight="800">② C_N 深能级受主陷阱与 1.68x 动态 Rdson 电流崩塌</text>
+  <text x="72" y="364" fill="#F8FAFC" font-size="11.5">• 高耐压缓冲层残碳向上尾随侵入 UID GaN 沟道层 300nm 内</text>
+  <text x="72" y="384" fill="#CBD5E1" font-size="11">• 650V–1,200V 关断电场激发 C_N 陷阱 (Ev+0.9eV) 锁死 2DEG 电子</text>
+  <text x="72" y="404" fill="#CBD5E1" font-size="11">• 动态导通电阻飙至静态值的 1.68 倍 (&gt;1.20 倍 JEDEC JEP173 红线)</text>
+  <text x="72" y="424" fill="#F87171" font-size="11" font-weight="700">• 痛点：引发吉瓦级 AIDC 电源与 800V 电驱高频开关热击穿！</text>
+
+  <rect x="58" y="466" width="394" height="126" rx="10" fill="#0F172A" stroke="#475569" stroke-width="1"/>
+  <text x="72" y="488" fill="#FBBF24" font-size="12.5" font-weight="800">③ 四云拼装栈的三重税负 ($258.0K/月 vs $14.5K/月)</text>
+  <text x="72" y="508" fill="#E2E8F0" font-size="11.5">• 写入税：990K EPS 原位激光曲率/双波长干涉流月费 $184.6K</text>
+  <text x="72" y="528" fill="#E2E8F0" font-size="11.5">• 内存税：340M 全内存 DRAM 向量索引月耗 $40.0K</text>
+  <text x="72" y="548" fill="#E2E8F0" font-size="11.5">• 刷新税：Snowflake 60s 滞后 / 6h 出炉检测错失超晶格窗口</text>
+  <text x="72" y="570" fill="#34D399" font-size="11.5" font-weight="700">• Fabric 破局：$0/GB 写入税 + SSD DiskANN 省 92% 内存</text>
+
+  <!-- Center Column -->
+  <rect x="488" y="138" width="494" height="470" rx="14" fill="#0D1F33" stroke="#06B6D4" stroke-width="2.2"/>
+  <text x="508" y="168" fill="#67E8F9" font-size="14.5" font-weight="800">02 · Microsoft Fabric 14ms (&lt;15ms!) 外延闭环 (n=125!)</text>
+
+  <!-- Step 1 -->
+  <rect x="508" y="184" width="454" height="96" rx="10" fill="#112A45" stroke="#06B6D4" stroke-width="1.4"/>
+  <text x="524" y="205" fill="#67E8F9" font-size="12.5" font-weight="800">STEP 1 · Eventhouse KQL 990K EPS 曲率与干涉感知 (3 ms)</text>
+  <text x="524" y="225" fill="#F8FAFC" font-size="11.5">• $0/GB 写入税摄入 560 台 MOCVD 原位曲率、双波长干涉与高温计流</text>
+  <text x="524" y="244" fill="#CBD5E1" font-size="11">• series_fit_line() 3ms 捕获 #16 腔第 42 周期 dκ/dh 斜率跌落 -28%</text>
+  <text x="524" y="263" fill="#34D399" font-size="11" font-weight="700">• 同时识别托盘第 5 区 +4.8°C 径向温差与过渡区残碳超标前兆</text>
+
+  <!-- Step 2 -->
+  <rect x="508" y="292" width="454" height="104" rx="10" fill="#132F2B" stroke="#10B981" stroke-width="1.8"/>
+  <text x="524" y="313" fill="#6EE7B7" font-size="12.5" font-weight="800">STEP 2 · 6 跳外延孪生 &amp; 3.40 亿向量 SSD DiskANN 检索 (4 ms)</text>
+  <text x="524" y="333" fill="#F8FAFC" font-size="11.5">• 检索 340,000,000 (🏆 99.81%准确率&amp;125大本体!) Stoney/SL/2DEG 向量</text>
+  <text x="524" y="352" fill="#CBD5E1" font-size="11">• 相似度 0.99 (省 92% 内存)：第 43–60 周期 TMAl 占空比上调 +4.6%</text>
+  <text x="524" y="371" fill="#FDE68A" font-size="11" font-weight="700">• 第 5 区灯丝 -1.8% 抹平温差 + 沟道层 V/III 比 (NH3/TMGa) +14.0%</text>
+
+  <!-- Step 3 -->
+  <rect x="508" y="408" width="454" height="90" rx="10" fill="#172554" stroke="#3B82F6" stroke-width="1.4"/>
+  <text x="524" y="429" fill="#93C5FD" font-size="12.5" font-weight="800">STEP 3 · Foundry IQ 翘曲与 JEDEC JEP173 护栏 SOP-125 (4 ms)</text>
+  <text x="524" y="449" fill="#F8FAFC" font-size="11.5">• 校验出炉室温晶圆翘曲锁死 +11.2 μm &lt;= ±25.0 μm，0 边缘裂片</text>
+  <text x="524" y="468" fill="#CBD5E1" font-size="11">• 高压动态 Rdson 比值压至 1.07x &lt;= 1.20x，2DEG 迁移率 2,040 cm²/V·s</text>
+  <text x="524" y="485" fill="#34D399" font-size="11" font-weight="700">• 沟道残碳降至 4.2e15 cm⁻³，尾气氨气催化分解率达 99.6%</text>
+
+  <!-- Step 4 -->
+  <rect x="508" y="510" width="454" height="84" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.4"/>
+  <text x="524" y="531" fill="#C4B5FD" font-size="12.5" font-weight="800">STEP 4 · Teams 外延总监确认 + ALDO 边缘 + 钛金护照 (3 ms)</text>
+  <text x="524" y="551" fill="#F8FAFC" font-size="11.5">• 洁净室 ALDO 边缘下发高速 Run/Vent MFC 阀与红外温区指令</text>
+  <text x="524" y="570" fill="#34D399" font-size="11" font-weight="700">• 1GB 免费 SQL 签发 AIDC 98.4% 钛金电源芯片护照 (14ms &lt;15ms!)</text>
+
+  <!-- Right Column -->
+  <rect x="1000" y="138" width="400" height="470" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1020" y="168" fill="#60A5FA" font-size="14.5" font-weight="800">03 · 定量基准与五云零拷贝协同 (R118)</text>
+
+  <rect x="1018" y="184" width="364" height="142" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1032" y="206" fill="#34D399" font-size="12.5" font-weight="800">月度 TCO 对比 (省 94.4% · 净省 $243.5K/月!)</text>
+  <text x="1032" y="228" fill="#F8FAFC" font-size="11.5">• Microsoft Fabric 归一化：  $14,500 / 月 (基准最优)</text>
+  <rect x="1032" y="234" width="52" height="10" rx="5" fill="#10B981"/>
+  <text x="1032" y="258" fill="#CBD5E1" font-size="11.5">• 四云拼装栈归一化：         $258,000 / 月 (贵 17.8x)</text>
+  <rect x="1032" y="264" width="320" height="10" rx="5" fill="#EF4444"/>
+  <text x="1032" y="290" fill="#93C5FD" font-size="11">• 集团全量专用容量 (16 基地)：$41.8K vs $708.0K/月</text>
+  <text x="1032" y="310" fill="#FDE68A" font-size="11.5" font-weight="800">• 守护 SLA 风险敞口：        $40,400,000 ($40.40M)</text>
+
+  <rect x="1018" y="338" width="364" height="126" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1032" y="360" fill="#FDE68A" font-size="12.5" font-weight="900">🏆 99.81%准确率 &amp; 125大本体 &amp; 14ms (report.json R118)</text>
+  <text x="1032" y="382" fill="#FFFFFF" font-size="12" font-weight="800">• 路由评估矩阵 (n=516)：    515 / 516 (99.81% 历史新高!)</text>
+  <text x="1032" y="402" fill="#34D399" font-size="11.5" font-weight="700">• 分母 A 路由矩阵算术均值： 154.0 ms (正式跌破155ms!)</text>
+  <text x="1032" y="422" fill="#FDE68A" font-size="11.5" font-weight="800">• 分母 B 125大行业本体均值：138.0 ms (n=125 整数大关!)</text>
+  <text x="1032" y="442" fill="#CBD5E1" font-size="11">• Python 确定性单测套件：  254 / 254 (100% 通过)</text>
+
+  <rect x="1018" y="476" width="364" height="118" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="1032" y="498" fill="#67E8F9" font-size="12.5" font-weight="800">Better Together 跨云零拷贝黄金分工</text>
+  <text x="1032" y="518" fill="#E2E8F0" font-size="11">• Azure HPC / Databricks：Sentaurus TCAD 2DEG &amp; 腔室 CFD</text>
+  <text x="1032" y="538" fill="#E2E8F0" font-size="11">• Snowflake / SAP：Si/QST 衬底、MO 源与车规/电源订单 ERP</text>
+  <text x="1032" y="558" fill="#34D399" font-size="11" font-weight="700">• Fabric：OneLake 零拷贝挂载 + 14ms 洁净室实时控制面</text>
+  <text x="1032" y="578" fill="#94A3B8" font-size="10.5">• 官方规格引用：121 条 (新增 SPEC-GAN-MOCVD-EPITAXY-R118)</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="624" width="1360" height="240" rx="14" fill="#0E192D" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="60" y="654" fill="#60A5FA" font-size="14.5" font-weight="800">04 · 硅基氮化镓 (GaN-on-Si/QST) 超晶格应力、碳陷阱抑制与 2DEG 三大物理护栏矩阵 (SOP-125 · 99.81% Acc &amp; 14ms Milestone)</text>
+
+  <rect x="60" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="76" y="694" fill="#67E8F9" font-size="13" font-weight="800">① Stoney 原位激光曲率与超晶格压应力补偿</text>
+  <text x="76" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：∂κ/∂h_f = 6σ_f/(M_s·h_s²)，需预置 -1.22 GPa·μm 压应力</text>
+  <text x="76" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：#16 腔第 42 周期压应力斜率跌 -28% (预测 +88.5μm 翘曲)</text>
+  <text x="76" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：第 43–60 周期 TMAl +4.6% + 第 5 区灯丝 -1.8%</text>
+  <text x="76" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：室温翘曲锁死 +11.2 μm &lt;= ±25.0 μm，0 裂片</text>
+  <text x="76" y="800" fill="#94A3B8" font-size="11">• 光刻兼容：200mm/300mm 步进光刻机吸盘 100% 稳定吸附</text>
+
+  <rect x="506" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#10B981" stroke-width="1.2"/>
+  <text x="522" y="694" fill="#6EE7B7" font-size="13" font-weight="800">② V/III 比残碳清除与 1.07x 极低动态导通电阻</text>
+  <text x="522" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：活性 H* 将甲基转化为 CH4，阻断 C_N 深受主侵入沟道</text>
+  <text x="522" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：过渡区残碳尾随将致动态 Rdson 飙至 1.68x (&gt;1.20x)</text>
+  <text x="522" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：UID 沟道层 NH3/TMGa 比上调 +14.0% + 21.5nm 势垒层</text>
+  <text x="522" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：动态 Rdson 比值 1.07x，迁移率 2,040 cm²/V·s</text>
+  <text x="522" y="800" fill="#94A3B8" font-size="11">• 均匀性：2DEG 方块电阻 288 Ω/sq (全片非均匀性仅 0.85%)</text>
+
+  <rect x="952" y="670" width="428" height="174" rx="10" fill="#091326" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="968" y="694" fill="#FBBF24" font-size="13" font-weight="800">③ 吉瓦级 AIDC 98.4% 钛金电源与绿色外延护照</text>
+  <text x="968" y="716" fill="#E2E8F0" font-size="11.5">• 算力节能：12kW AI 服务器 PSU 效率从 94.2% 跃升至 98.4%</text>
+  <text x="968" y="736" fill="#E2E8F0" font-size="11.5">• 尾气减排：氨气催化裂解回收率达 99.6%，零 NOx 排放</text>
+  <text x="968" y="756" fill="#E2E8F0" font-size="11.5">• 车规溯源：AEC-Q101 与 JEDEC JEP173 全晶圆电学基因库</text>
+  <text x="968" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：1GB 免费 SQL 签发绿色算力电源与车规护照</text>
+  <text x="968" y="800" fill="#FDE68A" font-size="11" font-weight="700">• 里程碑：99.81%准确率 · 125大本体 · 14ms闭环 · 省94.4%</text>
+</svg>

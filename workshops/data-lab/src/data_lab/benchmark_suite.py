@@ -9562,6 +9562,82 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (336M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds":
+        return {
+            "scenario_id": "global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds",
+            "title": "Global 200mm/300mm GaN-on-Si & GaN-on-QST Power Semiconductor MOCVD Superlattice In-Situ Wafer-Bow Control (<=25um), Carbon-Doping Dynamic Rdson Current-Collapse Guard & 2DEG Mobility (990K EPS · 340M DiskANN · 14ms E2E · 99.81% Acc & n=125 Milestone)",
+            "telemetry": {
+                "gan_power_epitaxy_and_wafer_fabs_count": 16,
+                "planetary_mocvd_reactors_count": 560,
+                "insitu_laser_curvature_pyrometry_tools_count": 480,
+                "eddy_current_2deg_and_pulsed_rdson_testers_count": 640,
+                "curvature_interferometry_2deg_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "stoney_bow_sl_and_ctrap_vectors_indexed_count": 340000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "reactor16_uncontrolled_wafer_bow_um": 88.5,
+                "reactor16_clamped_wafer_bow_um": 11.2,
+                "semi_m1_wafer_bow_limit_um": 25.0,
+                "uncontrolled_dynamic_rdson_ratio": 1.68,
+                "governed_dynamic_rdson_ratio": 1.07,
+                "jedec_jep173_dynamic_rdson_limit": 1.20,
+                "channel_2deg_mobility_cm2_vs": 2040.0,
+                "channel_sheet_resistance_ohm_sq": 288.0,
+                "aidc_titanium_psu_efficiency_pct": 98.4,
+                "catalytic_nh3_abatement_efficiency_pct": 99.6,
+                "concurrent_epi_device_and_customer_users": 7100,
+            },
+            "ontology_traversal": [
+                "Fab-09 Cleanroom -> MOCVD-Reactor-16 (1,050°C AlGaN/AlN Superlattice Period-42) -> Eventhouse KQL series_fit_line() isolates -28% dκ/dh compressive slope loss (+4.8°C Zone-5 gradient predicting +88.5 um cooled bow > ±25.0 um limit) and transition-zone C tailing (predicting 1.68x dynamic Rdson > 1.20x JEDEC limit) in 3ms",
+                "MOCVD-Reactor-16 -> OneLake Zero-Copy Shortcut to Azure HPC Sentaurus TCAD 2DEG & 3D Chamber CFD + Zero-ETL Mirroring from Snowflake Si/QST Substrate & MO-Precursor ERP -> Correlates TMAl bubbler pick-up and UID-channel V/III ratio",
+                "Susceptor-Zone-5 -> Cosmos DB SSD DiskANN (340M Stoney thermo-elastic curvature, dislocation-bending & C_N trap-ionization vectors, -92% RAM) -> 4ms Top-K match (0.99 similarity): +4.6% SL Periods 43-60 TMAl duty cycle + -1.8% Zone-5 heater power + +14.0% UID-channel NH3/TMGa ratio",
+                "Stress-and-Trap Recipe -> Foundry IQ Guardrail (GAN-MOCVD-BOW-RDSON-JEP173-SOP-125) -> Verifies +11.2 um cooled wafer bow (<= ±25.0 um, 0 cracks), 1.07x dynamic Rdson ratio (<= 1.20x, 2,040 cm²/V·s 2DEG mobility), and 99.6% NH3 abatement in 4ms",
+                "Approved Recipe -> GaN Epitaxy Director Teams Card -> SQL on Azure Local (ALDO) cleanroom edge dispatches high-speed Run/Vent MFC and 5-zone IR lamp setpoints + Fabric SDS mints AIDC 98.4% Titanium PSU & AEC-Q101 Passport into 1GB Free Fabric SQL in 3ms (14ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_gan_mocvd_monthly_tco_usd": 14500,
+                "competitor_stitched_gan_monthly_tco_usd": 258000,
+                "monthly_gan_tco_saved_usd": 243500,
+                "monthly_gan_tco_savings_pct": 94.4,
+                "fabric_internal_full_stack_monthly_usd": 41800,
+                "competitor_internal_full_stack_monthly_usd": 708000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL In-Situ Multi-Beam Laser Curvature, Dual-Wavelength Interferometry & 2DEG Sensing Agent",
+                        "operation": "Run series_fit_line() across 990K EPS in-situ wafer curvature dκ/dh traces, 405nm/633nm reflectance interferograms, and pulsed Rdson streams at $0/GB write surcharge to isolate -28% SL Period-42 compressive slope loss and C-trap tailing in 3ms",
+                        "impact_metric": "3ms detection; $0/GB stream write surcharge saves $177,750/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 340M-Vector Stoney Thermo-Elastic Curvature, Superlattice & C_N Trap Agent",
+                        "operation": "Query 340,000,000 Stoney curvature trajectories, dislocation-bending tensors, and Schrödinger-Poisson 2DEG vectors in 4ms (0.99 cosine similarity at -92% RAM) to retrieve +4.6% SL TMAl duty cycle, -1.8% Zone-5 lamp trim, and +14.0% UID V/III ratio",
+                        "impact_metric": "4ms vector recall; $2,360/mo SSD DiskANN vs $40,000/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "GaN Epitaxy Director Teams Card, ALDO Cleanroom Edge & AIDC 98.4% Titanium PSU Passport Agent",
+                        "operation": "Verify SOP-125 guardrails (4ms) and dispatch Run/Vent MFC, 5-zone IR heater, and UID V/III commands via SQL on Azure Local (ALDO) plus AIDC 98.4% efficiency & AEC-Q101 passport to 1GB Free Fabric SQL (3ms)",
+                        "impact_metric": "14ms E2E loop; +11.2 um bow (0 cracks); 1.07x dynamic Rdson (2,040 cm²/V·s); -$243.5K/mo (-94.4%) TCO; $40.40M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "GAN-MOCVD-BOW-RDSON-JEP173-SOP-125",
+                "hard_constraint": "Never release 200mm/300mm GaN-on-Si or GaN-on-QST power wafers if room-temperature SEMI M1 wafer bow exceeds ±25.0 um or edge micro-cracks > 0, never pass a 650V/1200V HEMT lot if JEDEC JEP173 pulsed dynamic Rdson ratio exceeds 1.20x or 2DEG mobility falls below 1,950 cm²/V·s, and require >= 99.5% catalytic NH3 exhaust abatement",
+                "proposed_change": "Boost MOCVD-16 Superlattice Periods 43-60 TMAl pulse duty cycle +4.6% and trim Zone-5 heater power -1.8% (+11.2 um cooled wafer bow <= ±25.0 um, 0 cracks), raise UID-channel NH3/TMGa ratio +14.0% (4.2e15 cm⁻³ residual C, 1.07x dynamic Rdson <= 1.20x, 2,040 cm²/V·s mobility), and certify AIDC 98.4% PSU & 99.6% NH3 abatement passport in Fabric SDS",
+                "stoney_wafer_bow_and_superlattice_stress_verified": True,
+                "jedec_jep173_dynamic_rdson_and_2deg_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 40400000,
+                "end_to_end_latency_ms": 14,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (340M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -15710,6 +15786,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 28,
     },
+    {
+        "id": "DL-513",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS 1,050°C MOCVD in-situ laser curvature dκ/dh, 405nm/633nm Fabry-Pérot reflectance interferograms, and pulsed Rdson streams across 16 GaN power fabs without $184.6K/mo per-attribute cloud fees or 6-hour post-cooldown metrology delay",
+        "expected": "Route to Fabric Eventhouse KQL (3ms In-Situ Curvature, Dual-Wavelength Interferometry & 2DEG Sense + $0/GB Write Tax + 340M SSD DiskANN +4.6% SL TMAl, -1.8% Zone-5 & +14.0% V/III Match 4ms + ALDO Cleanroom Edge 3ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (3ms In-Situ Curvature, Dual-Wavelength Interferometry & 2DEG Sense + $0/GB Write Tax + 340M SSD DiskANN +4.6% SL TMAl, -1.8% Zone-5 & +14.0% V/III Match 4ms + ALDO Cleanroom Edge 3ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 26,
+    },
+    {
+        "id": "DL-514",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline Synopsys Sentaurus TCAD Schrödinger-Poisson 2DEG quantum-well band solvers and 3D MOCVD planetary reactor thermal-fluid CFD vs 14ms cleanroom wafer-bow & carbon-trap control",
+        "expected": "Route offline Sentaurus TCAD 2DEG band & 3D MOCVD chamber CFD simulations to Azure HPC / Databricks GPU and zero-copy Stoney curvature & C_N trap vectors to OneLake while keeping 14ms MOCVD loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline Sentaurus TCAD 2DEG band & 3D MOCVD chamber CFD simulations to Azure HPC / Databricks GPU and zero-copy Stoney curvature & C_N trap vectors to OneLake while keeping 14ms MOCVD loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 26,
+    },
+    {
+        "id": "DL-515",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 340M SSD DiskANN + OneLake IQ + SDS + ALDO vs 6-hour post-cooldown wafer metrology across 16 200mm/300mm GaN power fabs with 7,100 epi engineers, device physicists, and AIDC/EV reliability auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS in-situ curvature, interferometry & 2DEG telemetry into Eventhouse ($0/GB tax), index 340M vectors in SSD DiskANN (-92% RAM), run 3ms Run/Vent MFC & IR heater loops on ALDO cleanroom edge, and serve 7,100 users via DirectLake (-94.4% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS in-situ curvature, interferometry & 2DEG telemetry into Eventhouse ($0/GB tax), index 340M vectors in SSD DiskANN (-92% RAM), run 3ms Run/Vent MFC & IR heater loops on ALDO cleanroom edge, and serve 7,100 users via DirectLake (-94.4% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 26,
+    },
+    {
+        "id": "DL-516",
+        "category": "Fabric IQ & Ontology",
+        "question": "MOCVD-16 SL Period-42 compressive slope drops -28% (predicting +88.5um cooled wafer bow > ±25.0um limit) while transition-zone C tailing predicts 1.68x dynamic Rdson (>1.20x JEDEC JEP173 limit) under AIDC 98.4% PSU rules",
+        "expected": "Eventhouse KQL 3ms -28% dκ/dh & 1.68x Rdson Sense ($0/GB Tax) + 6-Hop 340M DiskANN +4.6% SL TMAl, -1.8% Zone-5 & +14.0% V/III Match (4ms) + Foundry IQ +11.2um Bow 1.07x Rdson Gate (4ms) + Teams ALDO Commit (3ms = 14ms E2E, Protect $40.40M SLA)",
+        "model_answer": "Eventhouse KQL 3ms -28% dκ/dh & 1.68x Rdson Sense ($0/GB Tax) + 6-Hop 340M DiskANN +4.6% SL TMAl, -1.8% Zone-5 & +14.0% V/III Match (4ms) + Foundry IQ +11.2um Bow 1.07x Rdson Gate (4ms) + Teams ALDO Commit (3ms = 14ms E2E, Protect $40.40M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 26,
+    },
 ]
 
 
@@ -15949,6 +16073,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     cryogenic_lh2_sim = simulate_ontology_incident("global_cryogenic_lh2_fabric_ortho_para_conversion_turboexpander_boiloff_vs_4clouds")
     green_emethanol_sim = simulate_ontology_incident("global_green_emethanol_fabric_co2_hydrogenation_sintering_distillation_vs_4clouds")
     ahss_galvanneal_lme_sim = simulate_ontology_incident("global_ahss_galvanneal_lme_fabric_dewpoint_xrd_spot_welding_vs_4clouds")
+    gan_mocvd_epitaxy_sim = simulate_ontology_incident("global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -16077,6 +16202,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_cryogenic_lh2_fabric_ortho_para_conversion_turboexpander_boiloff_vs_4clouds": cryogenic_lh2_sim,
         "global_green_emethanol_fabric_co2_hydrogenation_sintering_distillation_vs_4clouds": green_emethanol_sim,
         "global_ahss_galvanneal_lme_fabric_dewpoint_xrd_spot_welding_vs_4clouds": ahss_galvanneal_lme_sim,
+        "global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds": gan_mocvd_epitaxy_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -16308,6 +16434,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r115_ontology_sim_mean_ms = round(sum(r115_sim_latencies) / len(r115_sim_latencies), 2)
     r116_sim_latencies = sim_latencies[:123]
     r116_ontology_sim_mean_ms = round(sum(r116_sim_latencies) / len(r116_sim_latencies), 2)
+    r117_sim_latencies = sim_latencies[:124]
+    r117_ontology_sim_mean_ms = round(sum(r117_sim_latencies) / len(r117_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -17837,11 +17965,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-GAN-ON-SI-QST-MOCVD-EPITAXY-BOW-DYNAMIC-RDSON-340M-R118",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 200mm/300mm GaN-on-Si and GaN-on-QST MOCVD in-situ multi-beam laser curvature dκ/dh traces, 405nm/633nm Fabry-Pérot reflectance interferograms, and JEDEC JEP173 pulsed dynamic-Rdson streams while Cosmos DB in Fabric SSD DiskANN indexes 340M+ Stoney thermo-elastic curvature trajectories, superlattice dislocation-bending tensors, and Schrödinger-Poisson 2DEG vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) AIDC 98.4% PSU efficiency & NH3 abatement ledgers and SQL Server on Azure Local (ALDO) at cleanroom edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary Sentaurus TCAD / chamber CFD simulations and substrate/MO-source ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/cosmos-db/vector-search",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r117",
-        "generated_at": "2026-11-16T03:15:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r118",
+        "generated_at": "2026-11-16T03:30:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -17852,6 +17993,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R117 snapshot n=512 mean was 155.0ms; "
                     f"historical R116 snapshot n=508 mean was 156.0ms; "
                     f"historical R115 snapshot n=504 mean was 157.0ms; "
                     f"historical R114 snapshot n=500 mean was 158.0ms; "
@@ -17974,6 +18116,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R117 snapshot n=124 mean was {r117_ontology_sim_mean_ms}ms; "
                     f"historical R116 snapshot n=123 mean was {r116_ontology_sim_mean_ms}ms; "
                     f"historical R115 snapshot n=122 mean was {r115_ontology_sim_mean_ms}ms; "
                     f"historical R114 snapshot n=121 mean was {r114_ontology_sim_mean_ms}ms; "
@@ -18611,6 +18754,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r117_124_simulation_mean_modeled_latency_ms": r117_ontology_sim_mean_ms,
             "r116_123_simulation_mean_modeled_latency_ms": r116_ontology_sim_mean_ms,
             "r115_122_simulation_mean_modeled_latency_ms": r115_ontology_sim_mean_ms,
             "r114_121_simulation_mean_modeled_latency_ms": r114_ontology_sim_mean_ms,
