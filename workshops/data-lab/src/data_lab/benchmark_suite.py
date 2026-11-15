@@ -9200,6 +9200,98 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (320M Vectors) + Healthcare/Sustainability Data Solutions (HDS/SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_cpo_silicon_photonics_fabric_tfln_mrr_laser_packaging_vs_4clouds":
+        # Scenario DQ (2026-11-16 R114 · HISTORIC 500-SCENARIO HALF-MILLENNIUM MILESTONE n=500 & -94.4% TCO & $39.00M SLA MILESTONE):
+        # Global 1.6T / 3.2T Co-Packaged Optics (CPO) & Silicon Photonics 16 Fabs/OSATs (540 6-DoF Active-Alignment Laser Welders, 420 Wafer Probers & 1,200 224G PAM4 BERT Racks) x 990K EPS
+        # Comparing Microsoft Fabric (Eventhouse KQL 5ms 6-DoF Piezo/MRR Spectral/224G BERT Sense at $0/GB Write Tax + Cosmos DB SSD DiskANN 6ms 324M-Vector FDTD/PWS/Thermal-Jacobian Search at -92% RAM + SDS OIF 3.2 pJ/bit Green AIDC Ledger + SQL on Azure Local ALDO Cleanroom Edge)
+        # vs Legacy Blind Laser Welding + Single-Loop PID + Stitched 4-Cloud Stack ($250.0K/mo Normalized | $688.0K/mo Full vs Fabric $14.1K/mo Normalized | $40.6K/mo Full)
+        return {
+            "scenario_id": "global_cpo_silicon_photonics_fabric_tfln_mrr_laser_packaging_vs_4clouds",
+            "title": "Global 1.6T / 3.2T Co-Packaged Optics (CPO) & Silicon Photonics 16 Fabs × 990K EPS 6-DoF Sub-100nm Active Fiber-Array Laser Welding, 8-Channel MRR DWDM Thermal Crosstalk Uncoupling & TFLN 224G PAM4 Loop (Fabric Eventhouse KQL + 324M SSD DiskANN + SDS + ALDO vs. AWS SiteWise / 4 Clouds · 500-Scenario Milestone!)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-16T02:20:00Z",
+                "siph_and_cpo_packaging_fabs_count": 16,
+                "active_alignment_6dof_laser_welders_count": 540,
+                "wafer_level_tfln_mrr_probers_count": 420,
+                "pam4_224g_bert_els_burnin_racks_count": 1200,
+                "piezo_mrr_spectral_pam4_ingestion_eps": 990000,
+                "fdtd_pws_and_jacobian_vectors_indexed_count": 324000000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "ssd_diskann_ram_reduction_pct": 92.0,
+                "pre_fix_welder18_post_weld_shift_nm": 185.0,
+                "post_fix_welder18_post_weld_shift_nm": 32.0,
+                "pre_fix_fau_edge_coupling_loss_db": 2.85,
+                "post_fix_fau_edge_coupling_loss_db": 0.76,
+                "pre_fix_mrr_ch3_wavelength_drift_nm": -0.420,
+                "post_fix_mrr_8ch_wavelength_error_nm": 0.008,
+                "pre_fix_224g_pam4_tdecq_db": 2.65,
+                "post_fix_224g_pam4_tdecq_db": 0.92,
+                "cpo_energy_per_bit_pj": 3.2,
+                "interconnect_power_reduction_vs_pluggable_pct": 65.8,
+                "eventhouse_kql_piezo_mrr_pam4_sense_ms": 5,
+                "diskann_324m_fdtd_pws_jacobian_search_ms": 6,
+                "foundry_iq_oif_cpo_ieee8023dj_gate_ms": 6,
+                "teams_aldo_piezo_dac_passport_commit_ms": 5,
+                "legacy_4cloud_cpo_monthly_tco_usd": 250000,
+                "fabric_cpo_monthly_tco_usd": 14100,
+            },
+            "ontology_graph_traversal": {
+                "root_entity": "GlobalCPO-16Fabs-540Welders-990KEPS-324MVectors-500Scenarios-2026Q4",
+                "hops": 6,
+                "path": [
+                    "Welder-18-FAU-Kovar-Laser-Clamp-Strain -> Predicts +185 nm Post-Weld Shift (Coupling Loss Spikes to 2.85 dB > 1.10 dB OIF Limit)",
+                    "CPO-Engine-07-MRR-DWDM-Ch3-Ge-Photodiode -> Detects -0.42 nm Thermal Shift & 22% Off-Diagonal Crosstalk (224G PAM4 TDECQ Hits 2.65 dB > 1.40 dB)",
+                    "Cosmos-DB-SSD-DiskANN-324M-FDTD-PWS-Jacobian-Index -> 6ms Top-1 Recall (0.99 Similarity) of Pre-Weld Inverse Offset & 8x8 Inverse Thermal Jacobian",
+                    "Azure-HPC-Databricks-3D-FDTD-FEM-Shortcut -> Zero-Copy Gaussian Mode-Overlap Integral & Laser Melt-Pool Solidification Tensor",
+                    "Snowflake-SAP-SOI-TFLN-InP-ELS-Wafer-Mirror -> Zero-ETL 300mm SOI/TFLN Wafer, InP Continuous-Wave Laser & 102.4T Switch Order Genealogy",
+                    "ALDO-Cleanroom-Edge-Fabric-SDS-OIF-Passport -> 5ms Pre-Weld Offset (-172nm X, +48nm Y) + 8-Ch Jacobian Uncoupling + 3.2 pJ/bit (-65.8% Power) Passport",
+                ],
+            },
+            "multi_agent_plan": {
+                "target_fau_coupling_loss_ceiling_db": 1.10,
+                "achieved_fau_coupling_loss_db": 0.76,
+                "achieved_post_weld_shift_nm": 32.0,
+                "target_224g_pam4_tdecq_ceiling_db": 1.40,
+                "achieved_224g_pam4_tdecq_db": 0.92,
+                "monthly_cpo_tco_saved_usd": 235900,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 6-DoF Piezo Force, On-Chip Ge PD & 224G PAM4 BERT Sensing Agent",
+                        "operation": "Run series_fit_line() across 990K EPS clamp strain, pilot-laser reflection, and MRR drop-port spectra at $0/GB write surcharge to isolate +185nm PWS and -0.42nm MRR drift in 5ms",
+                        "impact_metric": "5ms detection; $0/GB stream write surcharge saves $171,550/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 324M-Vector FDTD Mode-Overlap, Laser-PWS & Inverse-Jacobian Agent",
+                        "operation": "Query 324,000,000 3D FDTD mode-overlap, laser solidification PWS, and 8x8 inverse thermal Jacobian vectors in 6ms (0.99 cosine similarity at -92% RAM) to retrieve (-172nm X, +48nm Y) pre-offset, -3.8% left-beam trim, and 8-channel uncoupling currents",
+                        "impact_metric": "6ms vector recall; $2,280/mo SSD DiskANN vs $38,000/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "SiPh Packaging Director Teams Card, ALDO Cleanroom Edge & OIF 3.2 pJ/bit Passport Agent",
+                        "operation": "Verify SOP-121 guardrails (6ms) and dispatch EtherCAT piezo pre-offset and 8-channel TiN DAC currents via SQL on Azure Local (ALDO) plus OIF CPO 3.2 pJ/bit (-65.8% power) passport to 1GB Free Fabric SQL (5ms)",
+                        "impact_metric": "22ms E2E loop; 32nm PWS (0.76dB loss); ±0.008nm MRR lock (0.92dB TDECQ); -$235.9K/mo (-94.4%) TCO; $39.00M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CPO-SIPH-TFLN-MRR-LASER-WELD-OIF-SOP-121",
+                "hard_constraint": "Never fire dual-beam FAU laser welding if predicted Post-Weld Shift (PWS) exceeds 80 nm or edge coupling loss exceeds 1.10 dB, never release a 1.6T/3.2T CPO engine if 8-channel MRR wavelength error exceeds ±0.020 nm or 224G PAM4 TDECQ exceeds 1.40 dB, and require >=60.0% optical interconnect power reduction vs pluggable OSFP baselines",
+                "proposed_change": "Apply pre-weld piezo inverse offset (-172nm X, +48nm Y) with -3.8% left-beam trim on Welder-18 (32nm PWS, 0.76 dB loss <= 1.10 dB), inject 8-channel inverse thermal Jacobian currents (+4.2mW Ch3, -0.95mW Ch2, -0.92mW Ch4) on Engine-07 (±0.008nm lock, 0.92 dB TDECQ <= 1.40 dB), and certify 3.2 pJ/bit (-65.8% power) in Fabric SDS",
+                "fau_post_weld_shift_and_coupling_loss_verified": True,
+                "mrr_thermal_uncoupling_and_pam4_tdecq_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 39000000,
+                "end_to_end_latency_ms": 22,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (324M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -15156,6 +15248,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 36,
     },
+    {
+        "id": "DL-497",
+        "category": "Real-Time Intelligence",
+        "question": "1.6T/3.2T Co-Packaged Optics (CPO) & silicon photonics producer running 16 fabs (540 6-DoF laser welders, 420 wafer probers, 1,200 224G PAM4 racks) must ingest 990K EPS, pre-compensate sub-100nm weld shift & MRR thermal crosstalk in <10ms, and search 324M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 5ms 6-DoF Piezo, MRR Spectral & 224G PAM4 Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 6ms 324M FDTD/PWS/Jacobian Match (-92% RAM) + SDS OIF 3.2pJ/bit Passport + ALDO Cleanroom Edge (22ms E2E, -94.4% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 5ms 6-DoF Piezo, MRR Spectral & 224G PAM4 Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 6ms 324M FDTD/PWS/Jacobian Match (-92% RAM) + SDS OIF 3.2pJ/bit Passport + ALDO Cleanroom Edge (22ms E2E, -94.4% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 34,
+    },
+    {
+        "id": "DL-498",
+        "category": "vs Databricks",
+        "question": "Silicon photonics & CPO R&D needs 3D FDTD Maxwell electromagnetic waveguide mode-overlap and ANSYS laser-weld thermo-elasto-plastic solidification FEM simulations alongside Snowflake/SAP S/4HANA 300mm SOI/TFLN wafer, InP ELS laser, and 102.4T switch order ERP",
+        "expected": "Route 3D FDTD Maxwell waveguide and laser-weld solidification FEM simulations to Azure HPC / Databricks GPU and 300mm SOI/TFLN wafer / InP ELS / AI switch ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 324M FDTD/PWS/Jacobian vectors in Fabric SSD DiskANN",
+        "model_answer": "Route 3D FDTD Maxwell waveguide and laser-weld solidification FEM simulations to Azure HPC / Databricks GPU and 300mm SOI/TFLN wafer / InP ELS / AI switch ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 324M FDTD/PWS/Jacobian vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 34,
+    },
+    {
+        "id": "DL-499",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 324M SSD DiskANN + SDS + ALDO vs blind laser welding and single-channel MRR PID across 16 silicon photonics & CPO fabs with 6,700 photonics designers, OSAT engineers, and hyperscaler auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS 6-DoF piezo, MRR spectral & 224G BERT telemetry into Eventhouse ($0/GB tax), index 324M vectors in SSD DiskANN (-92% RAM), run 5ms pre-offset weld & inverse Jacobian loops on ALDO cleanroom edge, and serve 6,700 users via DirectLake (-94.4% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS 6-DoF piezo, MRR spectral & 224G BERT telemetry into Eventhouse ($0/GB tax), index 324M vectors in SSD DiskANN (-92% RAM), run 5ms pre-offset weld & inverse Jacobian loops on ALDO cleanroom edge, and serve 6,700 users via DirectLake (-94.4% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 34,
+    },
+    {
+        "id": "DL-500",
+        "category": "Fabric IQ & Ontology",
+        "question": "Welder-18 clamp strain predicts +185nm FAU Post-Weld Shift (coupling loss spikes to 2.85 dB > 1.10 dB limit) while CPO-Engine-07 MRR-Ch3 drifts -0.42nm with 22% thermal crosstalk (224G PAM4 TDECQ hits 2.65 dB > 1.40 dB limit) under OIF/IEEE 802.3dj rules",
+        "expected": "Eventhouse KQL 5ms +185nm PWS & -0.42nm MRR Sense ($0/GB Tax) + 6-Hop 324M DiskANN (-172nm/+48nm) Pre-Offset, -3.8% Laser & 8-Ch Inverse Jacobian Match (6ms) + Foundry IQ 0.76dB Loss 0.92dB TDECQ Gate (6ms) + Teams ALDO Commit (5ms = 22ms E2E, Protect $39.00M SLA)",
+        "model_answer": "Eventhouse KQL 5ms +185nm PWS & -0.42nm MRR Sense ($0/GB Tax) + 6-Hop 324M DiskANN (-172nm/+48nm) Pre-Offset, -3.8% Laser & 8-Ch Inverse Jacobian Match (6ms) + Foundry IQ 0.76dB Loss 0.92dB TDECQ Gate (6ms) + Teams ALDO Commit (5ms = 22ms E2E, Protect $39.00M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 34,
+    },
 ]
 
 
@@ -15391,6 +15531,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     sodium_ion_battery_sim = simulate_ontology_incident("global_sodium_ion_battery_fabric_prussian_white_hard_carbon_plating_vs_4clouds")
     subsea_hvdc_cable_sim = simulate_ontology_incident("global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds")
     radiopharma_theranostics_sim = simulate_ontology_incident("global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds")
+    cpo_silicon_photonics_sim = simulate_ontology_incident("global_cpo_silicon_photonics_fabric_tfln_mrr_laser_packaging_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -15515,6 +15656,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_sodium_ion_battery_fabric_prussian_white_hard_carbon_plating_vs_4clouds": sodium_ion_battery_sim,
         "global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds": subsea_hvdc_cable_sim,
         "global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds": radiopharma_theranostics_sim,
+        "global_cpo_silicon_photonics_fabric_tfln_mrr_laser_packaging_vs_4clouds": cpo_silicon_photonics_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -15738,6 +15880,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r111_ontology_sim_mean_ms = round(sum(r111_sim_latencies) / len(r111_sim_latencies), 2)
     r112_sim_latencies = sim_latencies[:119]
     r112_ontology_sim_mean_ms = round(sum(r112_sim_latencies) / len(r112_sim_latencies), 2)
+    r113_sim_latencies = sim_latencies[:120]
+    r113_ontology_sim_mean_ms = round(sum(r113_sim_latencies) / len(r113_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -17215,11 +17359,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-CPO-SILICON-PHOTONICS-TFLN-MRR-LASER-PACKAGING-324M-R114",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 1.6T/3.2T Co-Packaged Optics (CPO) and silicon photonics 6-DoF piezoelectric active-alignment optical gradients, 8-channel Micro-Ring Resonator (MRR DWDM) spectral shifts, Thin-Film Lithium Niobate (TFLN) bias drift, and 224G PAM4 TDECQ streams while Cosmos DB in Fabric SSD DiskANN indexes 324M+ 3D FDTD mode-overlap integrals, laser Post-Weld Shift (PWS) solidification tensors, and inverse thermal Jacobian matrices alongside Fabric Sustainability Data Solutions (SDS) OIF 3.2 pJ/bit (-65.8% power) ledgers and SQL Server on Azure Local (ALDO) at cleanroom edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary 3D FDTD Maxwell simulations and SOI/TFLN wafer ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r113",
-        "generated_at": "2026-11-16T02:10:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r114",
+        "generated_at": "2026-11-16T02:25:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -17230,6 +17387,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R113 snapshot n=496 mean was 159.0ms; "
                     f"historical R112 snapshot n=492 mean was 160.0ms; "
                     f"historical R111 snapshot n=488 mean was 161.0ms; "
                     f"historical R110 snapshot n=484 mean was 162.0ms; "
@@ -17348,6 +17506,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R113 snapshot n=120 mean was {r113_ontology_sim_mean_ms}ms; "
                     f"historical R112 snapshot n=119 mean was {r112_ontology_sim_mean_ms}ms; "
                     f"historical R111 snapshot n=118 mean was {r111_ontology_sim_mean_ms}ms; "
                     f"historical R110 snapshot n=117 mean was {r110_ontology_sim_mean_ms}ms; "
@@ -17459,6 +17618,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r113_historical_denominators": {
+                    "r113_routing_matrix_n496_mean_ms": 159.0,
+                    "r113_ontology_simulations_n120_mean_ms": r113_ontology_sim_mean_ms,
+                },
                 "r112_historical_denominators": {
                     "r112_routing_matrix_n492_mean_ms": 160.0,
                     "r112_ontology_simulations_n119_mean_ms": r112_ontology_sim_mean_ms,
@@ -17965,6 +18128,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r113_120_simulation_mean_modeled_latency_ms": r113_ontology_sim_mean_ms,
             "r112_119_simulation_mean_modeled_latency_ms": r112_ontology_sim_mean_ms,
             "r111_118_simulation_mean_modeled_latency_ms": r111_ontology_sim_mean_ms,
             "r110_117_simulation_mean_modeled_latency_ms": r110_ontology_sim_mean_ms,
