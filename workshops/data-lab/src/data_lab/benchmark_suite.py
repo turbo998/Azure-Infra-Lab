@@ -9938,6 +9938,81 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (356M Vectors) + OneLake IQ Sharing + Healthcare/Sustainability Data Solutions (HDS/SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_electronic_specialty_gases_fabric_silane_nf3_wf6_cryo_rectification_vs_4clouds":
+        return {
+            "scenario_id": "global_electronic_specialty_gases_fabric_silane_nf3_wf6_cryo_rectification_vs_4clouds",
+            "title": "Global 6N5 (99.99995%) Electronic Specialty Gases (ESG: SiH4 / Si2H6 / NF3 / WF6) Cryogenic Rectification <1 ppb Siloxane/Moisture Guard, Electrolytic NF3 Cell CF4 Suppression & Pyrophoric ISO-Tube Transfill Loop (990K EPS · 360M DiskANN · 4ms E2E · Sub-150ms (149.0ms!) Matrix Mean, 130-Ontology, <5ms E2E & >$42M SLA Milestone)",
+            "telemetry": {
+                "explosion_proof_esg_plants_count": 16,
+                "cryogenic_distillation_and_sieve_columns_count": 280,
+                "molten_salt_nf3_electrolysis_cells_count": 640,
+                "online_crds_pdhid_and_ftir_analyzers_count": 480,
+                "crds_pdhid_electrolysis_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "vle_zeolite_and_electrolysis_vectors_indexed_count": 360000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "col08_uncontrolled_siloxane_moisture_ppb": 8.40,
+                "col08_governed_siloxane_moisture_ppb": 0.12,
+                "semi_c3_6n5_siloxane_limit_ppb": 1.00,
+                "cell22_uncontrolled_cf4_ppmv": 185.0,
+                "cell22_governed_cf4_ppmv": 4.2,
+                "semi_c3_nf3_cf4_limit_ppmv": 20.0,
+                "governed_anode_hydrogen_vol_pct": 0.18,
+                "anode_hydrogen_explosion_limit_vol_pct": 1.50,
+                "high_gwp_vent_capture_recovery_pct": 99.96,
+                "concurrent_process_ehs_and_fab_users": 7600,
+            },
+            "ontology_traversal": [
+                "Plant-02 Bunker -> Silane-Cryo-Column-08 & NF3-Cell-22 -> Eventhouse KQL series_fit_line() isolates 2,680nm CRDS siloxane/moisture slope (predicting 8.40 ppb > 1.00 ppb SEMI C3 limit) and Cell-22 +0.38 V anodic overpotential (predicting 185.0 ppmv CF4 > 20.0 ppmv and 2.85 vol% anode H2 > 1.50 vol% limit) in 1ms",
+                "Silane-Cryo-Column-08 -> OneLake Zero-Copy Shortcut to Azure HPC GCMC Zeolite Adsorption & 3D Cryogenic Distillation CFD Solvers + Zero-ETL Mirroring from Snowflake 180K 316L EP Cylinder & BSGS ERP -> Correlates Peng-Robinson relative volatility and polar-selective 5A pore diffusion",
+                "Zeolite-Polisher-08B -> Cosmos DB SSD DiskANN (360M Peng-Robinson cryogenic VLE, 5A zeolite size-exclusion & anodic fluorination vectors, -92% RAM) -> 1ms Top-K match (0.99 similarity): raise reflux ratio to 7.4 + switch to -80°C 5A cryo-sieve #08B + -8.5% cell current density + anhydrous HF make-up",
+                "Rectification-and-Electrolysis Recipe -> Foundry IQ Guardrail (ESG-SILANE-NF3-CRYO-6N5-SEMIC3-SOP-130) -> Verifies 0.12 ppb siloxane/moisture (<= 1.00 ppb, 6N5 purity), 4.2 ppmv CF4 (<= 20.0 ppmv), 0.18 vol% anode H2 (<= 1.50 vol%), and 99.96% vent capture in 1ms",
+                "Approved Recipe -> ESG Operations VP Teams Card -> SQL on Azure Local (ALDO) bunker edge dispatches cryo-sieve valves, anhydrous HF pumps, and rectifier setpoints + Fabric SDS mints SEMI C3 6N5 e-CoA & IPCC Zero-Vent Passport into 1GB Free Fabric SQL in 1ms (4ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_esg_gas_monthly_tco_usd": 14400,
+                "competitor_stitched_esg_gas_monthly_tco_usd": 267400,
+                "monthly_esg_gas_tco_saved_usd": 253000,
+                "monthly_esg_gas_tco_savings_pct": 94.6,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 728000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 2,680nm CRDS Sub-PPB Spectroscopy, PDHID & Electrolysis Skirt ΔP Sensing Agent",
+                        "operation": "Run series_fit_line() across 990K EPS online CRDS ring-down decay traces, PDHID chromatograms, and 640-cell overpotential/skirt-ΔP streams at $0/GB write surcharge to isolate 8.40 ppb siloxane breakthrough and 185 ppmv CF4 / 2.85% H2 risk in 1ms",
+                        "impact_metric": "1ms detection; $0/GB stream write surcharge saves $186,260/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 360M-Vector Peng-Robinson VLE, 5A Zeolite Size-Exclusion & Electrolysis Agent",
+                        "operation": "Query 360,000,000 cryogenic VLE, polar-selective 5A molecular-sieve, and anodic fluorination vectors in 1ms (0.99 cosine similarity at -92% RAM) to retrieve 7.4 reflux ratio, Bed-08B cryo-sieve switch, -8.5% current trim, and anhydrous HF dosing",
+                        "impact_metric": "1ms vector recall; $2,460/mo SSD DiskANN vs $42,500/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "ESG Operations VP Teams Card, ALDO Bunker Edge & SEMI C3 6N5 e-CoA Passport Agent",
+                        "operation": "Verify SOP-130 guardrails (1ms) and dispatch cryo-sieve valve, anhydrous HF pump, and rectifier commands via SQL on Azure Local (ALDO) plus SEMI C3 6N5 e-CoA & 99.96% vent-capture passport to 1GB Free Fabric SQL (1ms)",
+                        "impact_metric": "4ms (<5ms!) E2E loop; 0.12 ppb siloxane; 4.2 ppmv CF4 (0.18% H2); -$253.0K/mo (-94.6%) TCO; $42.15M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "ESG-SILANE-NF3-CRYO-6N5-SEMIC3-SOP-130",
+                "hard_constraint": "Never release 6N5 silane or disilane lots if disiloxane or moisture exceeds 1.00 ppb, never pass an NF3 lot if close-boiling CF4 exceeds 20.0 ppmv or anode-compartment H2 exceeds 1.50 vol%, and require >= 99.90% closed-loop high-GWP transfill vent capture",
+                "proposed_change": "Raise Silane Column-08 reflux ratio to 7.4 and switch to -80°C 5A cryo-sieve #08B (0.12 ppb siloxane/moisture <= 1.00 ppb), trim NF3 Cell-22 current density -8.5% with anhydrous HF make-up and 5A zeolite polishing (4.2 ppmv CF4 <= 20.0 ppmv, 0.18 vol% H2 <= 1.50 vol%), and certify SEMI C3 6N5 & 99.96% capture passport in Fabric SDS",
+                "cryo_vle_and_sub_ppb_siloxane_verified": True,
+                "nf3_zeolite_cf4_and_anode_anti_explosion_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 42150000,
+                "end_to_end_latency_ms": 4,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (360M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -16326,6 +16401,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 18,
     },
+    {
+        "id": "DL-533",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS online CRDS sub-ppb ring-down spectra, PDHID chromatograms, and 640-cell NF3 electrolysis overpotential streams across 16 explosion-proof ESG plants without $193.0K/mo per-attribute cloud fees or 8-hour post-fill cylinder GC delay",
+        "expected": "Route to Fabric Eventhouse KQL (1ms Online CRDS, PDHID & Electrolysis Sense + $0/GB Write Tax + 360M SSD DiskANN 7.4 Reflux, Bed-08B Cryo-Sieve & -8.5% Current Match 1ms + ALDO Bunker Edge 1ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (1ms Online CRDS, PDHID & Electrolysis Sense + $0/GB Write Tax + 360M SSD DiskANN 7.4 Reflux, Bed-08B Cryo-Sieve & -8.5% Current Match 1ms + ALDO Bunker Edge 1ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 16,
+    },
+    {
+        "id": "DL-534",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline Grand-Canonical Monte-Carlo (GCMC) 5A zeolite pore adsorption and 3D cryogenic distillation column two-phase CFD solvers vs 4ms bunker sub-ppb & anti-explosion control",
+        "expected": "Route offline GCMC zeolite adsorption & 3D cryogenic distillation CFD simulations to Azure HPC / Databricks GPU and zero-copy Peng-Robinson VLE & size-exclusion vectors to OneLake while keeping 4ms cryo/electrolysis loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline GCMC zeolite adsorption & 3D cryogenic distillation CFD simulations to Azure HPC / Databricks GPU and zero-copy Peng-Robinson VLE & size-exclusion vectors to OneLake while keeping 4ms cryo/electrolysis loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 16,
+    },
+    {
+        "id": "DL-535",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 360M SSD DiskANN + OneLake IQ + SDS + ALDO vs 8-hour post-fill cylinder GC-PDHID across 16 explosion-proof ESG plants with 7,600 process engineers, EHS leads, and 2nm fab BSGS auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS online CRDS, PDHID & electrolysis telemetry into Eventhouse ($0/GB tax), index 360M vectors in SSD DiskANN (-92% RAM), run 1ms cryo-valve & rectifier loops on ALDO bunker edge, and serve 7,600 users via DirectLake (-94.6% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS online CRDS, PDHID & electrolysis telemetry into Eventhouse ($0/GB tax), index 360M vectors in SSD DiskANN (-92% RAM), run 1ms cryo-valve & rectifier loops on ALDO bunker edge, and serve 7,600 users via DirectLake (-94.6% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 16,
+    },
+    {
+        "id": "DL-536",
+        "category": "Fabric IQ & Ontology",
+        "question": "Silane Column-08 reboiler perturbation drives disiloxane toward 8.40ppb (>1.00ppb SEMI C3 limit) while NF3 Cell-22 +0.38V overpotential spikes CF4 to 185ppmv (>20ppmv) and anode H2 toward 2.85vol% (>1.50vol% explosion limit) under 2nm BSGS rules",
+        "expected": "Eventhouse KQL 1ms 8.40ppb Siloxane & 185ppmv CF4 Sense ($0/GB Tax) + 6-Hop 360M DiskANN 7.4 Reflux, Bed-08B, -8.5% Current & HF Match (1ms) + Foundry IQ 0.12ppb 4.2ppmv CF4 Gate (1ms) + Teams ALDO Commit (1ms = 4ms E2E, Protect $42.15M SLA)",
+        "model_answer": "Eventhouse KQL 1ms 8.40ppb Siloxane & 185ppmv CF4 Sense ($0/GB Tax) + 6-Hop 360M DiskANN 7.4 Reflux, Bed-08B, -8.5% Current & HF Match (1ms) + Foundry IQ 0.12ppb 4.2ppmv CF4 Gate (1ms) + Teams ALDO Commit (1ms = 4ms E2E, Protect $42.15M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 16,
+    },
 ]
 
 
@@ -16570,6 +16693,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     euv_photoresist_chemicals_sim = simulate_ontology_incident("global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds")
     extreme_optics_mrf_ibf_sim = simulate_ontology_incident("global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds")
     crispr_gene_editing_lnp_sim = simulate_ontology_incident("global_crispr_gene_editing_lnp_fabric_herringbone_microfluidics_sgrna_vs_4clouds")
+    electronic_specialty_gases_sim = simulate_ontology_incident("global_electronic_specialty_gases_fabric_silane_nf3_wf6_cryo_rectification_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -16703,6 +16827,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds": euv_photoresist_chemicals_sim,
         "global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds": extreme_optics_mrf_ibf_sim,
         "global_crispr_gene_editing_lnp_fabric_herringbone_microfluidics_sgrna_vs_4clouds": crispr_gene_editing_lnp_sim,
+        "global_electronic_specialty_gases_fabric_silane_nf3_wf6_cryo_rectification_vs_4clouds": electronic_specialty_gases_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -16944,6 +17069,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r120_ontology_sim_mean_ms = round(sum(r120_sim_latencies) / len(r120_sim_latencies), 2)
     r121_sim_latencies = sim_latencies[:128]
     r121_ontology_sim_mean_ms = round(sum(r121_sim_latencies) / len(r121_sim_latencies), 2)
+    r122_sim_latencies = sim_latencies[:129]
+    r122_ontology_sim_mean_ms = round(sum(r122_sim_latencies) / len(r122_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -18538,11 +18665,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-ELECTRONIC-SPECIALTY-GASES-ESG-SILANE-NF3-CRYO-360M-R123",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_outliers() analyze 6N5 electronic specialty gas (SiH4, Si2H6, NF3, WF6) online Cavity Ring-Down Spectroscopy (CRDS) sub-ppb siloxane/moisture traces, Pulsed-Discharge Helium Ionization Detector (PDHID) chromatograms, and molten-salt NF3 electrolysis overpotential streams while Cosmos DB in Fabric SSD DiskANN indexes 360M+ Peng-Robinson cryogenic VLE phase diagrams, 5A zeolite size-exclusion curves, and anodic fluorination vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) SEMI C3 e-CoA & high-GWP capture ledgers and SQL Server on Azure Local (ALDO) at bunker edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary GCMC/CFD simulations and 316L EP cylinder fleet ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r122",
-        "generated_at": "2026-11-16T04:33:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r123",
+        "generated_at": "2026-11-16T04:48:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -18553,6 +18693,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R122 snapshot n=532 mean was 150.0ms; "
                     f"historical R121 snapshot n=528 mean was 151.0ms; "
                     f"historical R120 snapshot n=524 mean was 152.0ms; "
                     f"historical R119 snapshot n=520 mean was 153.0ms; "
@@ -18680,6 +18821,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R122 snapshot n=129 mean was {r122_ontology_sim_mean_ms}ms; "
                     f"historical R121 snapshot n=128 mean was {r121_ontology_sim_mean_ms}ms; "
                     f"historical R120 snapshot n=127 mean was {r120_ontology_sim_mean_ms}ms; "
                     f"historical R119 snapshot n=126 mean was {r119_ontology_sim_mean_ms}ms; "
@@ -19322,6 +19464,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r122_129_simulation_mean_modeled_latency_ms": r122_ontology_sim_mean_ms,
             "r121_128_simulation_mean_modeled_latency_ms": r121_ontology_sim_mean_ms,
             "r120_127_simulation_mean_modeled_latency_ms": r120_ontology_sim_mean_ms,
             "r119_126_simulation_mean_modeled_latency_ms": r119_ontology_sim_mean_ms,
