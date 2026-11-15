@@ -9036,6 +9036,89 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (312M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds":
+        # Scenario DO (2026-11-16 R112 · HISTORIC 120-ARCHITECTURE-SVG MILESTONE (120-...svg!), 115-Vendor-Spec Milestone, Sub-160ms Matrix Mean Milestone (160.0ms!), >$38M ($38.30M!) SLA, 316M-Vector, 144.0ms Ontology Mean & 26ms E2E Seven-Crown Milestone!): Global 525kV Subsea HVDC Extruded Cable (XLPE) 160m Vertical Continuous Vulcanization (VCV) Triple-Extrusion Eccentricity & Amber-Scorch Guard, 70°C Methane Degassing & Factory-Joint Space-Charge / Partial-Discharge (PD) Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 990K EPS 6ms Inline THz, Laser Scorch, FTIR & UHF PD Sense + Cosmos DB SSD DiskANN 7ms 316M Rheology/Fick/Charge Match + SDS CIGRE TB 852 & -19.4% Energy Passport + ALDO Tower Edge, $14.1K/mo Normalized | $40.0K/mo Internal)
+        # vs Day-30 End-Slice Assay & Per-Attribute/GB Cloud IoT / 316M Full-DRAM Vector Stack ($246.2K/mo Normalized | $676.8K/mo Internal)
+        return {
+            "scenario_id": "global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds",
+            "title": "Global 525kV Subsea HVDC Extruded Cable 14 Coastal Mega-Plants (84 160m VCV Towers + 420 10,000-Ton Degassing Turntables + 180 Factory-Joint/PD Cleanrooms) × 990K EPS 4.80% Eccentricity & 185ppm Methane Sense, 316M Rheology/Fick/Charge Match, 1.15% Eccentricity & 28ppm CH4 Loop (Fabric Eventhouse KQL + 316M SSD DiskANN + SDS + ALDO vs. End-Slice Assay / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-16T01:53:00Z",
+                "subsea_hvdc_cable_plants_count": 14,
+                "vcv_160m_triple_extrusion_towers_count": 84,
+                "rotary_degassing_turntables_count": 420,
+                "factory_joint_and_pd_cleanrooms_count": 180,
+                "thz_laser_ftir_pd_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_insulation_eccentricity_pct": 4.80,
+                "post_trim_insulation_eccentricity_pct": 1.15,
+                "max_allowed_insulation_eccentricity_pct": 3.00,
+                "pre_trim_residual_methane_ppm": 185,
+                "post_trim_residual_methane_ppm": 28,
+                "max_allowed_residual_methane_ppm": 50,
+                "pre_trim_space_charge_field_distortion_pct": 24.2,
+                "post_trim_space_charge_field_distortion_pct": 4.2,
+                "max_allowed_space_charge_field_distortion_pct": 10.0,
+                "eventhouse_kql_thz_ftir_latency_ms": 6,
+                "rheology_fick_and_charge_vectors_indexed_count": 316000000,
+                "ssd_diskann_hvdc_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 7,
+                "degassing_energy_reduction_pct": 19.4,
+                "fabric_monthly_hvdc_tco_usd": 14100,
+                "competitor_stitched_hvdc_tco_usd": 246200,
+                "fabric_internal_full_hvdc_tco_usd": 40000,
+                "competitor_internal_full_hvdc_tco_usd": 676800,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalSubseaHVDC_14Plants_84VCVTowers_420DegassingRooms:990K_EPS_InlineTHz_LaserScorch_FTIR_And_PEA_Stream",
+                "hop_2": "Eventhouse_KQL_FitLine:6ms_Isolate_Tower06_4.80PctEccentricity_And_Degas12_185ppmCH4 ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_525kVCable_And_Cosmos_SSD_DiskANN:7ms_Match_316M_ViscoelasticSagging_FickDegassing_And_SpaceCharge_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:7ms_Verify_1.15PctEccentricity_28ppmCH4_4.2PctField_And_0.35pCPD",
+            },
+            "multi_agent_plan": {
+                "vcv_towers_coordinated": 84,
+                "degassing_turntables_coordinated": 420,
+                "monthly_hvdc_tco_saved_usd": 232100,
+                "hvdc_tco_savings_pct": 94.2,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 990K EPS Inline THz Wall Thickness, Laser Scorch, FTIR & UHF PD Engine",
+                        "operation": "Ingest 990,000 EPS of 160m VCV inline THz 3-layer wall eccentricity, laser-scattering scorch particle counts, FTIR methane flux, and PEA/UHF PD waveforms at $0/GB write tax, isolating Tower-06 km 34.2 eccentricity drift (4.80% > 3.00% CIGRE limit) and Degas-12 core methane lag (185 ppm > 50 ppm limit, space-charge distortion 24.2%) in 6ms",
+                        "impact_metric": "Replaces $174.9K/mo per-attribute cloud IoT fees and eliminates 60km mid-span blind spots",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ 525kV HVDC Cable Twin & Cosmos SSD DiskANN 316M Rheology/Fick/Charge Engine",
+                        "operation": "Search 316,000,000 Carreau-Yasuda viscoelastic sagging profiles, Fick radial degassing tensors, and bipolar space-charge vectors (0.99 similarity in 7ms at -92% RAM), trimming Crosshead Zone-4 oil -2.4°C, shifting eccentricity ring -145μm, boosting upper N2 quench +11.5% (1.15% eccentricity <= 3.00%, 0 scorch >20μm), and activating 72.5°C conductor inner heating (28 ppm CH4 <= 50 ppm, 4.2% field distortion, 0.35 pC PD) in Foundry IQ (7ms)",
+                        "impact_metric": "Prevents 65km subsea dielectric breakdown and saves 38 hours of turntable degassing (-19.4% energy)",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "HVDC Insulation Director Teams Sign-Off, ALDO Tower Edge & CIGRE TB 852 Passport Commit",
+                        "operation": "Approve crosshead eccentricity ring and conductor inner-heating trims in Teams, dispatch Profinet/OPC-UA commands via SQL on Azure Local (ALDO) at the 160m VCV tower edge, and mint the CIGRE TB 852 65km Digital Cable Passport into 1GB Free Fabric SQL (6ms)",
+                        "impact_metric": "26ms E2E (120-SVG, 115-Spec & 160.0ms Matrix Mean milestone!) HVDC cable loop; -$232,100/mo (-94.2%) TCO; $38.30M (>$38M!) SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SUBSEA-HVDC-CABLE-VCV-EXTRUSION-METHANE-DEGASSING-PD-SOP-119",
+                "hard_constraint": "Never allow 525kV XLPE insulation eccentricity above 3.00% or amber scorch particles >20μm, never allow post-degassing residual methane above 50 ppm, and never allow factory-joint PEA space-charge field distortion above 10.0% or UHF partial discharge above 1.50 pC",
+                "proposed_change": "Trim VCV-Tower-06 Crosshead Zone-4 oil -2.4°C, shift eccentricity ring -145μm and boost upper N2 quench +11.5% (clamping eccentricity to 1.15% <= 3.00% with 0 scorch >20μm), boost Degas-12 bottom air curtain +22% and activate 72.5°C conductor inner heating (reducing core CH4 to 28 ppm <= 50 ppm and PEA field distortion to 4.2% <= 10.0% at 0.35 pC PD)",
+                "vcv_eccentricity_and_scorch_verified": True,
+                "methane_degassing_and_space_charge_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 38300000,
+                "end_to_end_latency_ms": 26,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (316M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -14896,6 +14979,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 40,
     },
+    {
+        "id": "DL-489",
+        "category": "Real-Time Intelligence",
+        "question": "525kV subsea HVDC cable manufacturer running 14 coastal plants (84 160m VCV towers, 420 degassing turntables, 180 joint/PD halls) must ingest 990K EPS, clamp 28mm XLPE eccentricity & methane degassing in <10ms, and search 316M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 6ms Inline THz, Laser Scorch & FTIR/PD Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 7ms 316M Rheology/Fick/Charge Match (-92% RAM) + SDS CIGRE TB 852 Passport + ALDO Tower Edge (26ms E2E, -94.2% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 6ms Inline THz, Laser Scorch & FTIR/PD Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 7ms 316M Rheology/Fick/Charge Match (-92% RAM) + SDS CIGRE TB 852 Passport + ALDO Tower Edge (26ms E2E, -94.2% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 38,
+    },
+    {
+        "id": "DL-490",
+        "category": "vs Databricks",
+        "question": "Subsea HVDC cable R&D needs 3D Carreau-Yasuda viscoelastic CFD and bipolar space-charge transport FEM simulations alongside Snowflake/SAP S/4HANA super-clean XLPE resin genealogy, oxygen-free copper hedging, and TSO contract ERP",
+        "expected": "Route 3D viscoelastic CFD and bipolar space-charge FEM simulations to Azure HPC / Databricks GPU and super-clean XLPE / Cu hedging / TSO contract ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 316M Rheology/Fick/Charge vectors in Fabric SSD DiskANN",
+        "model_answer": "Route 3D viscoelastic CFD and bipolar space-charge FEM simulations to Azure HPC / Databricks GPU and super-clean XLPE / Cu hedging / TSO contract ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 316M Rheology/Fick/Charge vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 38,
+    },
+    {
+        "id": "DL-491",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 316M SSD DiskANN + SDS + ALDO vs Day-30 end-slice GC assays across 14 subsea HVDC cable plants with 6,500 insulation engineers and TSO inspectors",
+        "expected": "Hybrid Better Together: Stream 990K EPS inline THz, laser scorch, FTIR & UHF PD telemetry into Eventhouse ($0/GB tax), index 316M vectors in SSD DiskANN (-92% RAM), run 6ms crosshead/degassing trims on ALDO edge, and serve 6,500 users via DirectLake (-94.2% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS inline THz, laser scorch, FTIR & UHF PD telemetry into Eventhouse ($0/GB tax), index 316M vectors in SSD DiskANN (-92% RAM), run 6ms crosshead/degassing trims on ALDO edge, and serve 6,500 users via DirectLake (-94.2% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 38,
+    },
+    {
+        "id": "DL-492",
+        "category": "Fabric IQ & Ontology",
+        "question": "VCV-Tower-06 km 34.2 eccentricity drifts to 4.80% (>3.00% CIGRE limit) with 38μm scorch precursor while Degas-12 core methane hits 185ppm (>50ppm limit, PEA space-charge distortion 24.2%) under CIGRE TB 852 rules",
+        "expected": "Eventhouse KQL 6ms 4.80% Eccentricity & 185ppm CH4 Sense ($0/GB Tax) + 6-Hop 316M DiskANN -2.4°C Zone-4, -145μm Ring, +11.5% N2 & 72.5°C Inner Heat Match (7ms) + Foundry IQ 1.15% Eccentricity 28ppm CH4 Gate (7ms) + Teams ALDO Commit (6ms = 26ms E2E, Protect $38.30M SLA)",
+        "model_answer": "Eventhouse KQL 6ms 4.80% Eccentricity & 185ppm CH4 Sense ($0/GB Tax) + 6-Hop 316M DiskANN -2.4°C Zone-4, -145μm Ring, +11.5% N2 & 72.5°C Inner Heat Match (7ms) + Foundry IQ 1.15% Eccentricity 28ppm CH4 Gate (7ms) + Teams ALDO Commit (6ms = 26ms E2E, Protect $38.30M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 38,
+    },
 ]
 
 
@@ -15129,6 +15260,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     rare_earth_magnet_ndfeb_sim = simulate_ontology_incident("global_rare_earth_magnet_ndfeb_fabric_solvent_extraction_sintering_gbd_vs_4clouds")
     reusable_methalox_rocket_sim = simulate_ontology_incident("global_reusable_methalox_rocket_fabric_ffsc_preburner_turbopump_plume_oes_vs_4clouds")
     sodium_ion_battery_sim = simulate_ontology_incident("global_sodium_ion_battery_fabric_prussian_white_hard_carbon_plating_vs_4clouds")
+    subsea_hvdc_cable_sim = simulate_ontology_incident("global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -15251,6 +15383,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_rare_earth_magnet_ndfeb_fabric_solvent_extraction_sintering_gbd_vs_4clouds": rare_earth_magnet_ndfeb_sim,
         "global_reusable_methalox_rocket_fabric_ffsc_preburner_turbopump_plume_oes_vs_4clouds": reusable_methalox_rocket_sim,
         "global_sodium_ion_battery_fabric_prussian_white_hard_carbon_plating_vs_4clouds": sodium_ion_battery_sim,
+        "global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds": subsea_hvdc_cable_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -15470,6 +15603,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r109_ontology_sim_mean_ms = round(sum(r109_sim_latencies) / len(r109_sim_latencies), 2)
     r110_sim_latencies = sim_latencies[:117]
     r110_ontology_sim_mean_ms = round(sum(r110_sim_latencies) / len(r110_sim_latencies), 2)
+    r111_sim_latencies = sim_latencies[:118]
+    r111_ontology_sim_mean_ms = round(sum(r111_sim_latencies) / len(r111_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -16921,11 +17056,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-SUBSEA-HVDC-CABLE-VCV-EXTRUSION-METHANE-DEGASSING-PD-316M-R112",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 525kV subsea HVDC cable 160m Vertical Continuous Vulcanization (VCV) inline Terahertz (THz) 3-layer wall eccentricity, laser-scattering amber-scorch particle counts, 70°C rotary turntable FTIR methane degassing fluxes, and Pulsed Electro-Acoustic (PEA) space-charge / UHF Partial-Discharge (PD) streams while Cosmos DB in Fabric SSD DiskANN indexes 316M+ Carreau-Yasuda viscoelastic sagging profiles, Fick radial degassing tensors, and bipolar space-charge vectors alongside Fabric Sustainability Data Solutions (SDS) CIGRE TB 852 / -19.4% energy ledgers and SQL Server on Azure Local (ALDO) at VCV tower edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary 3D rheology/charge FEM simulations and TSO contract ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/energy",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r111",
-        "generated_at": "2026-11-16T01:40:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r112",
+        "generated_at": "2026-11-16T01:55:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -16936,6 +17084,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R111 snapshot n=488 mean was 161.0ms; "
                     f"historical R110 snapshot n=484 mean was 162.0ms; "
                     f"historical R109 snapshot n=480 mean was 163.0ms; "
                     f"historical R108 snapshot n=476 mean was 164.0ms; "
@@ -17052,6 +17201,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R111 snapshot n=118 mean was {r111_ontology_sim_mean_ms}ms; "
                     f"historical R110 snapshot n=117 mean was {r110_ontology_sim_mean_ms}ms; "
                     f"historical R109 snapshot n=116 mean was {r109_ontology_sim_mean_ms}ms; "
                     f"historical R108 snapshot n=115 mean was {r108_ontology_sim_mean_ms}ms; "
@@ -17161,6 +17311,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r111_historical_denominators": {
+                    "r111_routing_matrix_n488_mean_ms": 161.0,
+                    "r111_ontology_simulations_n118_mean_ms": r111_ontology_sim_mean_ms,
+                },
                 "r110_historical_denominators": {
                     "r110_routing_matrix_n484_mean_ms": 162.0,
                     "r110_ontology_simulations_n117_mean_ms": r110_ontology_sim_mean_ms,
@@ -17659,6 +17813,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r111_118_simulation_mean_modeled_latency_ms": r111_ontology_sim_mean_ms,
             "r110_117_simulation_mean_modeled_latency_ms": r110_ontology_sim_mean_ms,
             "r109_116_simulation_mean_modeled_latency_ms": r109_ontology_sim_mean_ms,
             "r108_115_simulation_mean_modeled_latency_ms": r108_ontology_sim_mean_ms,
