@@ -8631,6 +8631,85 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (292M Vectors) + Healthcare & Sustainability Data Solutions (HDS/SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_esaf_aviation_fuel_fabric_rwgs_fischer_tropsch_hydrocracking_vs_4clouds":
+        # Scenario DJ (2026-11-16 R107 · Sub-150ms Ontology Mean Milestone (149.0ms <150ms!), 115-Architecture-SVG Milestone, 110-Vendor-Spec Milestone, -94.0% TCO Milestone, 296M-Vector, 165.0ms Matrix Mean & 36ms E2E Seven-Crown Milestone!): Global Power-to-Liquid Sustainable Aviation Fuel (e-SAF Green H2 + Captured CO2) 850°C Reverse Water-Gas Shift (RWGS) Boudouard Coking Guard, Exothermic Fischer-Tropsch (FT) Runaway Interdiction & -47°C Freeze-Point Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 990K EPS 9ms 8,000-Tube FBG Thermal & Inline Raman Syngas Sense + Cosmos DB SSD DiskANN 9ms 296M Semenov-Runaway/ASF-Alpha/Coking Match + SDS ReFuelEU/CORSIA PoS + ALDO Control-Room Edge, $14.1K/mo Normalized | $38.8K/mo Internal)
+        # vs Slow 20s DCS Steam-Drum PID & Per-Attribute/GB Cloud IoT / 296M Full-DRAM Vector Stack ($236.8K/mo Normalized | $648.0K/mo Internal)
+        return {
+            "scenario_id": "global_esaf_aviation_fuel_fabric_rwgs_fischer_tropsch_hydrocracking_vs_4clouds",
+            "title": "Global Power-to-Liquid e-SAF Aviation Fuel 18 Mega-Refineries (240 850°C RWGS Furnaces + 360 8,000-Tube FT/Hydrocrackers) × 990K EPS 8,000-Tube FBG & Raman Syngas Sense, 296M Semenov/ASF/Coking Match, 219.2°C Zero-Runaway & -52.4°C Freeze-Point Loop (Fabric Eventhouse KQL + 296M SSD DiskANN + SDS + ALDO vs. 20s DCS / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-16T00:40:00Z",
+                "esaf_ptl_refineries_count": 18,
+                "rwgs_syngas_furnaces_count": 240,
+                "fischer_tropsch_and_hydrocrackers_count": 360,
+                "fbg_raman_nir_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_ft_hotspot_temp_c": 238.4,
+                "post_trim_ft_hotspot_temp_c": 219.2,
+                "max_allowed_ft_hotspot_temp_c": 224.0,
+                "post_trim_asf_chain_growth_alpha": 0.918,
+                "post_trim_jet_freeze_point_c": -52.4,
+                "max_allowed_jet_freeze_point_c": -47.0,
+                "eventhouse_kql_fbg_syngas_latency_ms": 9,
+                "semenov_asf_and_coking_vectors_indexed_count": 296000000,
+                "ssd_diskann_esaf_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 9,
+                "lifecycle_ghg_reduction_pct": 87.4,
+                "fabric_monthly_esaf_tco_usd": 14100,
+                "competitor_stitched_esaf_tco_usd": 236800,
+                "fabric_internal_full_esaf_tco_usd": 38800,
+                "competitor_internal_full_esaf_tco_usd": 648000,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalESAF_18Refineries_240RWGS_360FTReactors:990K_EPS_8000TubeFBG_RamanSyngas_And_FTNIR_Stream",
+                "hop_2": "Eventhouse_KQL_FitLine:9ms_Isolate_FT07_238.4CHotspot_And_RWGS03_1.88Ratio ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_PtLRefinery_And_Cosmos_SSD_DiskANN:9ms_Match_296M_SemenovRunaway_ASFAlpha_And_Boudouard_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:9ms_Verify_219.2CPeak_0.918Alpha_Minus52.4CFreeze_And_87.4PctGHG",
+            },
+            "multi_agent_plan": {
+                "rwgs_furnaces_coordinated": 240,
+                "ft_hydrocrackers_coordinated": 360,
+                "monthly_esaf_tco_saved_usd": 222700,
+                "esaf_tco_savings_pct": 94.0,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 990K EPS 8,000-Tube FBG Thermal, Inline Raman Syngas & FT-NIR Engine",
+                        "operation": "Ingest 990,000 EPS of 8,000-tube FBG axial temperature profiles, inline laser Raman syngas streams, and FT-NIR freeze-point streams at $0/GB write tax, isolating FT-Reactor-07 Bundle-1420 +2.85°C/s hotspot (238.4°C > 224.0°C limit, CH4=16.8%) and RWGS-Furnace-03 H2/CO2 drop (1.88 < 2.15 coking floor) in 9ms",
+                        "impact_metric": "Replaces $166.8K/mo per-attribute cloud IoT fees and eliminates 20-second steam-drum pressure lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ e-SAF Refinery Twin & Cosmos SSD DiskANN 296M Semenov/ASF/Coking Engine",
+                        "operation": "Search 296,000,000 Semenov thermal-runaway bifurcation tensors, ASF α chain-growth curves, and zeolite hydroisomerization vectors (0.99 similarity in 9ms at -92% RAM), stepping down steam-drum backpressure -0.18 MPa, boosting cold tail-gas recycle +14.0%, and injecting buffer H2 to restore RWGS H2/CO2=2.42 (219.2°C peak <= 224.0°C, ASF α=0.918, -52.4°C freeze point <= -47.0°C) in Foundry IQ (9ms)",
+                        "impact_metric": "Prevents $14M cobalt FT catalyst sintering and RWGS carbon-whisker tube plugging",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "e-SAF Chief Dispatcher Teams Sign-Off, ALDO Control-Room Edge & ReFuelEU/CORSIA Commit",
+                        "operation": "Approve steam-drum flash, tail-gas recycle, and buffer-H2 setpoints in Teams, dispatch Modbus/Profinet commands via SQL on Azure Local (ALDO) at the control-room edge, and mint the ReFuelEU RFNBO & ICAO CORSIA 87.4% GHG Reduction PoS certificate into 1GB Free Fabric SQL (9ms)",
+                        "impact_metric": "36ms E2E (149.0ms ontology mean & -94.0% TCO milestone!) anti-runaway loop; -$222,700/mo (-94.0%) TCO; $36.55M e-SAF SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "ESAF-AVIATION-FUEL-RWGS-FISCHER-TROPSCH-HYDROCRACKING-SOP-114",
+                "hard_constraint": "Never allow Fischer-Tropsch catalyst tube peak temperature above 224.0°C or RWGS H2/CO2 molar ratio below 2.15, never allow ASTM D7566 jet freeze point above -47.0°C, and require >= 70.0% lifecycle GHG reduction under ReFuelEU/CORSIA",
+                "proposed_change": "Step down FT-Reactor-07 steam-drum backpressure -0.18 MPa and boost cold tail-gas recycle +14.0% while injecting buffer H2 into RWGS-03 to H2/CO2=2.42 (clamping FT hotspot to 219.2°C <= 224.0°C, ASF α=0.918, and freeze point to -52.4°C <= -47.0°C), and certify 87.4% GHG reduction",
+                "fischer_tropsch_zero_runaway_and_rwgs_verified": True,
+                "freeze_point_and_refueleu_corsia_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 36550000,
+                "end_to_end_latency_ms": 36,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (296M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -14251,6 +14330,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 50,
     },
+    {
+        "id": "DL-469",
+        "category": "Real-Time Intelligence",
+        "question": "Power-to-Liquid e-SAF producer running 18 refineries (240 850°C RWGS furnaces, 360 8,000-tube FT/hydrocrackers) must ingest 990K EPS, catch FT methanation runaway & RWGS coking in <15ms, and search 296M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 9ms 8,000-Tube FBG & Raman Syngas Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 9ms 296M Semenov/ASF/Coking Match (-92% RAM) + SDS ReFuelEU/CORSIA PoS + ALDO Control-Room Edge (36ms E2E, -94.0% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 9ms 8,000-Tube FBG & Raman Syngas Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 9ms 296M Semenov/ASF/Coking Match (-92% RAM) + SDS ReFuelEU/CORSIA PoS + ALDO Control-Room Edge (36ms E2E, -94.0% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 48,
+    },
+    {
+        "id": "DL-470",
+        "category": "vs Databricks",
+        "question": "e-SAF refinery R&D needs 8,000-tube trickle-bed multiphase CFD-DEM and Pt/ZSM-22 zeolite hydroisomerization simulations alongside Snowflake/SAP S/4HANA airline SAF offtake and Book-and-Claim carbon ERP",
+        "expected": "Route 8,000-tube multiphase CFD-DEM and zeolite hydroisomerization simulations to Azure HPC / Databricks GPU and airline offtake / airport blending / Book-and-Claim ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 296M FT/ASF vectors in Fabric SSD DiskANN",
+        "model_answer": "Route 8,000-tube multiphase CFD-DEM and zeolite hydroisomerization simulations to Azure HPC / Databricks GPU and airline offtake / airport blending / Book-and-Claim ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 296M FT/ASF vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 48,
+    },
+    {
+        "id": "DL-471",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 296M SSD DiskANN + SDS + ALDO vs 20-second lagged steam-drum PID loops across 18 e-SAF plants with 5,900 process engineers and carbon auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS 8,000-tube FBG, inline Raman & FT-NIR telemetry into Eventhouse ($0/GB tax), index 296M vectors in SSD DiskANN (-92% RAM), run 9ms steam-drum/recycle trims on ALDO edge, and serve 5,900 users via DirectLake (-94.0% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS 8,000-tube FBG, inline Raman & FT-NIR telemetry into Eventhouse ($0/GB tax), index 296M vectors in SSD DiskANN (-92% RAM), run 9ms steam-drum/recycle trims on ALDO edge, and serve 5,900 users via DirectLake (-94.0% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 48,
+    },
+    {
+        "id": "DL-472",
+        "category": "Fabric IQ & Ontology",
+        "question": "FT-Reactor-07 Bundle-1420 hits +2.85°C/s hotspot at 238.4°C (CH4=16.8%) while RWGS-03 H2/CO2 drops to 1.88 (<2.15 coking floor) under ASTM D7566 and ReFuelEU Aviation rules",
+        "expected": "Eventhouse KQL 9ms 238.4°C Hotspot & 1.88 Ratio Sense ($0/GB Tax) + 6-Hop 296M DiskANN -0.18MPa Drum Flash, +14% Recycle & 2.42 H2/CO2 Match (9ms) + Foundry IQ 219.2°C -52.4°C Freeze 87.4% GHG Gate (9ms) + Teams ALDO Commit (9ms = 36ms E2E, Protect $36.55M SLA)",
+        "model_answer": "Eventhouse KQL 9ms 238.4°C Hotspot & 1.88 Ratio Sense ($0/GB Tax) + 6-Hop 296M DiskANN -0.18MPa Drum Flash, +14% Recycle & 2.42 H2/CO2 Match (9ms) + Foundry IQ 219.2°C -52.4°C Freeze 87.4% GHG Gate (9ms) + Teams ALDO Commit (9ms = 36ms E2E, Protect $36.55M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 48,
+    },
 ]
 
 
@@ -14479,6 +14606,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     perovskite_silicon_tandem_sim = simulate_ontology_incident("global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds")
     high_temp_superconductor_sim = simulate_ontology_incident("global_high_temp_superconductor_fabric_rebco_pld_ibad_quench_magnet_vs_4clouds")
     circrna_mrna_biopharma_sim = simulate_ontology_incident("global_circrna_mrna_biopharma_fabric_enzymatic_ivt_dsrna_tff_lnp_vs_4clouds")
+    esaf_aviation_fuel_sim = simulate_ontology_incident("global_esaf_aviation_fuel_fabric_rwgs_fischer_tropsch_hydrocracking_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -14596,6 +14724,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds": perovskite_silicon_tandem_sim,
         "global_high_temp_superconductor_fabric_rebco_pld_ibad_quench_magnet_vs_4clouds": high_temp_superconductor_sim,
         "global_circrna_mrna_biopharma_fabric_enzymatic_ivt_dsrna_tff_lnp_vs_4clouds": circrna_mrna_biopharma_sim,
+        "global_esaf_aviation_fuel_fabric_rwgs_fischer_tropsch_hydrocracking_vs_4clouds": esaf_aviation_fuel_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -14805,6 +14934,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r104_ontology_sim_mean_ms = round(sum(r104_sim_latencies) / len(r104_sim_latencies), 2)
     r105_sim_latencies = sim_latencies[:112]
     r105_ontology_sim_mean_ms = round(sum(r105_sim_latencies) / len(r105_sim_latencies), 2)
+    r106_sim_latencies = sim_latencies[:113]
+    r106_ontology_sim_mean_ms = round(sum(r106_sim_latencies) / len(r106_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -16191,11 +16322,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-ESAF-AVIATION-FUEL-RWGS-FISCHER-TROPSCH-HYDROCRACKING-R107",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 8,000-tube Fiber Bragg Grating (FBG) axial temperature streams, inline laser Raman syngas (H2/CO/CO2/CH4) streams, and FT-NIR jet freeze-point streams while Cosmos DB in Fabric SSD DiskANN indexes 296M+ Semenov thermal-runaway bifurcation tensors, Anderson-Schulz-Flory (ASF) chain-growth curves, and Boudouard coking vectors alongside Fabric Sustainability Data Solutions (SDS) ReFuelEU Aviation RFNBO & ICAO CORSIA Proof-of-Sustainability ledgers and SQL Server on Azure Local (ALDO) at control-room edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary multiphase CFD-DEM simulations and airline Book-and-Claim ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/energy",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r106",
-        "generated_at": "2026-11-16T00:30:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r107",
+        "generated_at": "2026-11-16T00:44:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -16206,6 +16350,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R106 snapshot n=468 mean was 166.0ms; "
                     f"historical R105 snapshot n=464 mean was 167.0ms; "
                     f"historical R104 snapshot n=460 mean was 168.0ms; "
                     f"historical R103 snapshot n=456 mean was 169.0ms; "
@@ -16317,6 +16462,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R106 snapshot n=113 mean was {r106_ontology_sim_mean_ms}ms; "
                     f"historical R105 snapshot n=112 mean was {r105_ontology_sim_mean_ms}ms; "
                     f"historical R104 snapshot n=111 mean was {r104_ontology_sim_mean_ms}ms; "
                     f"historical R103 snapshot n=110 mean was {r103_ontology_sim_mean_ms}ms; "
@@ -16421,6 +16567,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r106_historical_denominators": {
+                    "r106_routing_matrix_n468_mean_ms": 166.0,
+                    "r106_ontology_simulations_n113_mean_ms": r106_ontology_sim_mean_ms,
+                },
                 "r105_historical_denominators": {
                     "r105_routing_matrix_n464_mean_ms": 167.0,
                     "r105_ontology_simulations_n112_mean_ms": r105_ontology_sim_mean_ms,
@@ -16899,6 +17049,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r106_113_simulation_mean_modeled_latency_ms": r106_ontology_sim_mean_ms,
             "r105_112_simulation_mean_modeled_latency_ms": r105_ontology_sim_mean_ms,
             "r104_111_simulation_mean_modeled_latency_ms": r104_ontology_sim_mean_ms,
             "r103_110_simulation_mean_modeled_latency_ms": r103_ontology_sim_mean_ms,

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg107" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="50%" stop-color="#09162B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent107" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardBlue107" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2444"/>
+      <stop offset="100%" stop-color="#0A172E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg107)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#0EA5E9" stroke-width="2"/>
+  <rect x="58" y="50" width="310" height="26" rx="13" fill="url(#accent107)"/>
+  <text x="213" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · R107 149.0ms &amp; -94.0% TCO!</text>
+  <text x="384" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">电制可持续航空燃料 (e-SAF) 850°C RWGS 防积碳、万管费托防飞温、-47°C 冰点与 2.96 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global Power-to-Liquid e-SAF Aviation Fuel (18 Plants · 240 RWGS Furnaces + 360 8,000-Tube FT/Hydrocrackers) · 990K EPS · 296M DiskANN · 36ms Loop · -94.0% TCO ($222.7K/mo Saved)</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#0EA5E9" stroke-width="1.8"/>
+  <text x="1284" y="69" fill="#38BDF8" font-size="11.5" font-weight="800" text-anchor="middle">R107 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">165.0ms · 149.0ms</text>
+
+  <!-- Left Column: Physical e-SAF RWGS, Fischer-Tropsch & Hydrocracking Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#38BDF8" font-size="14" font-weight="800">01 · 850°C RWGS、万管费托与加氢异构传感 (990K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#7DD3FC" font-size="12.5" font-weight="800">⚡ 240 套 850°C 电加热逆水煤气变换 (RWGS) 反应器</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 绿氢 + 捕集 CO2 在线激光拉曼合成气 (H2/CO/CO2/CH4) 监测</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 捕获 #03号RWGS 因风电出力波动致 H2/CO2 跌至 1.88 (&lt;2.15)</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 提前阻断布杜阿尔歧化积碳 (2CO→C+CO2) 长出碳晶须撑碎催化剂!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#FDE68A" font-size="12.5" font-weight="800">🔥 360 台万管级钴基费托合成 (FT) 与加氢异构反应器</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 8,000 根列管分布式光纤光栅 (FBG) 毫米级轴向温场 + FT-NIR</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 捕获 #07费托 第1420束管 +2.85°C/s 冲至 238.4°C (甲烷化飞温!)</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 汽包 -0.18MPa 闪蒸移热锁死 219.2°C、ASF α=0.918 与 -52.4°C 冰点</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">✈️ 欧盟 ReFuelEU Aviation &amp; ICAO CORSIA 87.4% 减排护照</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 逐小时风光绿电 PPA 时间戳与 DAC/生物质 CO2 质量流防篡改绑定</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 全生命周期碳强度低至 11.2 g CO2e/MJ (较传统航煤减排 87.4%)</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 自动签发欧盟 RED III RFNBO 与 CORSIA 可持续航空燃料证书</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统 1% 抽样热电偶、20s 汽包 PID 与云端拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 等汽包总压上升时，偏流列管早已冲过 350°C 烧结 $14M 钴催化剂</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 990K EPS 云端按属性写入税高达 $166.8K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.96 亿向量全内存常驻需 3.35TB+ DRAM (&gt;$61.5K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 36ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue107)" stroke="#0EA5E9" stroke-width="2"/>
+  <text x="502" y="166" fill="#7DD3FC" font-size="14" font-weight="800">02 · Microsoft Fabric 36ms 电制航煤防飞温闭环 (R107!)</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 9ms 万管热点与配比感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 990,000 EPS 光纤/光谱流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• 9ms 锁定 #07费托 238.4°C (+2.85°C/s) 与 #03炉 H2/CO2=1.88</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $161.9K/月写入费，毫秒级阻断甲烷化正反馈热失控</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 9ms 2.96亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 本体均值破150ms：检索 296,000,000 条 Semenov 飞温、ASF 与积碳向量</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.6K vs $61.5K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：汽包背压 -0.18MPa 闪蒸 + 冷尾气 +14% + 球罐补氢 H2/CO2=2.42</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ 床温压回 219.2°C、ASF α=0.918，航煤冰点锁死 -52.4°C</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 防飞温与冰点安全护栏 (SOP-114 · 9ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验费托峰值床温 219.2°C &lt;= 224.0°C、RWGS H2/CO2 = 2.42</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验 ASTM D7566 冰点 -52.4°C &lt;= -47.0°C，生命周期减排 87.4%</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断 $14M 钴催化剂烧结报废与万米高空航煤结蜡隐患</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总调确认 + ALDO 控制室边缘 &amp; CORSIA (9ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 9ms 驱动汽包闪蒸阀与循环压缩机</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 ReFuelEU RFNBO 与 CORSIA 87.4% 减排证书</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 36ms 端到端闭环 (115-SVG &amp; 110-Spec!) · 守护 $36.55M e-SAF SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-94.0% 大关 · R107!)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑万管固定床气液固三相 CFD-DEM</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  与分子筛择形异构裂化仿真，向 OneLake 写入 2.96 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留全球航司 SAF 提货合约、机场油库</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  掺混与 Book-and-Claim 碳信用 ERP，经 OneLake Mirroring 互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 5,900 名合成气工艺与碳交易员 DirectLake 看板 ($0 席位)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 18 座 e-SAF 基地月度 TCO 对比 (990K EPS · 296M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 296M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$14,100 / 月 (基准最优 · 首破 94.0% TCO!)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 3.35TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$236,800 / 月 (归一化) | $648,000 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $222,700 / 月 ($2.67M / 年) · 149.0ms 本体均值与 115-SVG!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#7DD3FC" font-size="12.5" font-weight="800">📊 Scenario DJ 实测成效与双分母披露 (Round 107)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=472)：471 / 472 (99.79%) · 均值 165.0 ms</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=114)：149.0 ms (&lt;150ms 大关! 本场景 36 ms!)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• 费托床温：238.4→219.2°C (α=0.918) | 航煤冰点：-52.4°C (&lt;=-47°C)</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 收率与减排：81.4% 航煤馏分收率 · 87.4% 全生命周期碳减排</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避 $14M 钴催化剂烧结与航司断供损失：$36,550,000 ($36.55M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#7DD3FC" font-size="14" font-weight="800">04 · AI Solution Architect 电制航空燃料 (e-SAF) 打单金句与生产核验清单 (R107 Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#FBBF24" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch · Round 107)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在万管费托合成反应器和 850°C RWGS 电炉里，绿电稍有波动就会诱发碳晶须积碳，而局部列管</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">一旦冲过 238°C 就会触发甲烷化正反馈飞温，几十秒烧废 $14M 钴催化剂！Microsoft Fabric 用</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">Eventhouse 9ms 联查万管光纤 FBG 温场与拉曼合成气（$0/GB 税），再用 SSD DiskANN 9ms 匹配</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">2.96 亿条 Semenov 飞温与 ASF 链增长向量，36ms 走 ALDO 边缘锁死 219.2°C 与 -52.4°C</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">冰点，月省 $222.7K (94.0% TCO)！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 360 台费托反应器万管 FBG 温场流与在线拉曼合成气流直推 Eventhouse</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. 汽包副产蒸汽背压阀 (-0.18MPa) 与 RWGS 储氢缓冲球罐跨工段前馈联动</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.96 亿条 Semenov 飞温/ASF 索引 (-92% 内存，P95 &lt;= 9ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-114 门禁：床温 &lt;=224°C、H2/CO2 &gt;=2.15、冰点 &lt;=-47°C</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 控制室边缘下发汽包与循环气阀门，1GB 免费 SQL 签发 ReFuelEU/CORSIA 证书</text>
+</svg>
