@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg127" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050914"/>
+      <stop offset="50%" stop-color="#0E172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="amber127" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg127)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#131F3A" stroke="#F59E0B" stroke-width="2.2"/>
+  <rect x="58" y="48" width="366" height="26" rx="13" fill="url(#amber127)"/>
+  <text x="241" y="66" fill="#050914" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="0.6">🏆 R119 · 256=2^8 TESTS, 520 CASES &amp; -94.5% TCO!</text>
+  <text x="440" y="66" fill="#F8FAFC" font-size="16" font-weight="800">航空发动机单晶高温合金涡轮叶片 (CMSX-4/Rene N5) 定向凝固防雀斑、固溶防初熔与 EB-PVD 涂层 12ms 闭环</text>
+  <text x="58" y="100" fill="#94A3B8" font-size="12.5">Scenario DV · 14 座单晶铸造与涂层基地 (420 台 LMC 定向凝固炉 + 360 座固溶炉 + 280 台 EB-PVD) × 990K EPS · 3.44 亿向量 (344M!) · Ra=0.42 零雀斑 &amp; 0.00% 初熔</text>
+
+  <rect x="1146" y="46" width="236" height="64" rx="10" fill="#064E3B" stroke="#F59E0B" stroke-width="2"/>
+  <text x="1264" y="68" fill="#FDE68A" font-size="11.5" font-weight="900" text-anchor="middle">519 / 520 = 99.81% (256 Tests!)</text>
+  <text x="1264" y="95" fill="#FFFFFF" font-size="19" font-weight="900" text-anchor="middle">344M Vectors · 12ms</text>
+
+  <!-- Left Column -->
+  <rect x="40" y="138" width="430" height="470" rx="14" fill="#131B2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="60" y="168" fill="#F87171" font-size="14.5" font-weight="800">01 · 单晶涡轮叶片三大物理危机与传统死穴</text>
+
+  <rect x="58" y="184" width="394" height="126" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="206" fill="#FCA5A5" font-size="12.5" font-weight="800">① #19 LMC 炉缘板变截面 Ra=2.85 雀斑链与杂晶危机</text>
+  <text x="72" y="226" fill="#F8FAFC" font-size="11.5">• 含 3-6wt% 铼(Re)单晶糊状区排出的富 Al/Ti 液相密度更轻</text>
+  <text x="72" y="246" fill="#CBD5E1" font-size="11">• 缘板区热梯度跌至 42°C/cm，枝晶间距粗化至 460μm，Ra=2.85 &gt; 1.0</text>
+  <text x="72" y="266" fill="#CBD5E1" font-size="11">• 热溶质浮力烟羽冲断枝晶形成等轴晶雀斑链，缘板角部滋生杂晶</text>
+  <text x="72" y="286" fill="#F87171" font-size="11" font-weight="700">• 痛点：18h 脱壳酸洗才发现雀斑，整炉含铼叶片报废损失 &gt;$336K！</text>
+
+  <rect x="58" y="322" width="394" height="132" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="344" fill="#FCA5A5" font-size="12.5" font-weight="800">② #07 固溶炉 &lt;10°C 死亡狭缝与 1,325.2°C 共晶初熔</text>
+  <text x="72" y="364" fill="#F8FAFC" font-size="11.5">• γ&apos; 全溶温度 (1,314°C) 与初熔温度 (1,324°C) 窗口不足 10°C</text>
+  <text x="72" y="384" fill="#CBD5E1" font-size="11">• 升温过快冲至 1,325.2°C 导致枝晶间局部融化产生 1.45vol% 微孔</text>
+  <text x="72" y="404" fill="#CBD5E1" font-size="11">• 1,700°C 燃气与 20,000G 离心力下高温持久蠕变寿命暴跌 85%</text>
+  <text x="72" y="424" fill="#F87171" font-size="11" font-weight="700">• 痛点：微米级初熔孔洞隐蔽极深，直接威胁宽体客机飞行安全！</text>
+
+  <rect x="58" y="466" width="394" height="126" rx="10" fill="#0F172A" stroke="#475569" stroke-width="1"/>
+  <text x="72" y="488" fill="#FBBF24" font-size="12.5" font-weight="800">③ 四云拼装栈的三重税负 ($259.8K/月 vs $14.4K/月)</text>
+  <text x="72" y="508" fill="#E2E8F0" font-size="11.5">• 写入税：990K EPS 凝固高温计/24区热电偶/电子束流月费 $186.2K</text>
+  <text x="72" y="528" fill="#E2E8F0" font-size="11.5">• 内存税：344M 全内存 DRAM 向量索引月耗 $40.5K</text>
+  <text x="72" y="548" fill="#E2E8F0" font-size="11.5">• 刷新税：Snowflake 60s 滞后 / 18h 酸洗检测错失糊状区窗口</text>
+  <text x="72" y="570" fill="#34D399" font-size="11.5" font-weight="700">• Fabric 破局：$0/GB 写入税 + SSD DiskANN 省 92% 内存</text>
+
+  <!-- Center Column -->
+  <rect x="488" y="138" width="494" height="470" rx="14" fill="#0D1F33" stroke="#F59E0B" stroke-width="2.2"/>
+  <text x="508" y="168" fill="#FDE68A" font-size="14.5" font-weight="800">02 · Microsoft Fabric 12ms 单晶叶片闭环 (256=2^8 Tests!)</text>
+
+  <!-- Step 1 -->
+  <rect x="508" y="184" width="454" height="96" rx="10" fill="#112A45" stroke="#06B6D4" stroke-width="1.4"/>
+  <text x="524" y="205" fill="#67E8F9" font-size="12.5" font-weight="800">STEP 1 · Eventhouse KQL 990K EPS 梯度与热电偶感知 (3 ms)</text>
+  <text x="524" y="225" fill="#F8FAFC" font-size="11.5">• $0/GB 写入税摄入 420 台 LMC 凝固炉、360 座固溶炉与 280 台 EB-PVD</text>
+  <text x="524" y="244" fill="#CBD5E1" font-size="11">• series_fit_line() 3ms 捕获 #19 炉缘板梯度跌至 42°C/cm (Ra=2.85)</text>
+  <text x="524" y="263" fill="#34D399" font-size="11" font-weight="700">• 同时识别 #07 固溶炉第 4 台阶升温逼近 1,325.2°C 初熔红线</text>
+
+  <!-- Step 2 -->
+  <rect x="508" y="292" width="454" height="104" rx="10" fill="#132F2B" stroke="#10B981" stroke-width="1.8"/>
+  <text x="524" y="313" fill="#6EE7B7" font-size="12.5" font-weight="800">STEP 2 · 6 跳热端孪生 &amp; 3.44 亿向量 SSD DiskANN 检索 (3 ms)</text>
+  <text x="524" y="333" fill="#F8FAFC" font-size="11.5">• 检索 344,000,000 (🏆 256单测&amp;520场景!) 瑞利数/铼扩散/涂层向量</text>
+  <text x="524" y="352" fill="#CBD5E1" font-size="11">• 相似度 0.99 (省 92% 内存)：抽拉提至 5.4 mm/min + 锡挡热环 -3.5mm</text>
+  <text x="524" y="371" fill="#FDE68A" font-size="11" font-weight="700">• 0.35T 直流电磁制动 EMBr + 固溶 1,320.5°C (0.15°C/min 微斜坡)</text>
+
+  <!-- Step 3 -->
+  <rect x="508" y="408" width="454" height="90" rx="10" fill="#172554" stroke="#3B82F6" stroke-width="1.4"/>
+  <text x="524" y="429" fill="#93C5FD" font-size="12.5" font-weight="800">STEP 3 · Foundry IQ 零雀斑与 AS9100 适航护栏 SOP-126 (3 ms)</text>
+  <text x="524" y="449" fill="#F8FAFC" font-size="11.5">• 校验热梯度恢复 94°C/cm，瑞利数 Ra=0.42 &lt; 1.0，0 雀斑与 0 杂晶</text>
+  <text x="524" y="468" fill="#CBD5E1" font-size="11">• 单晶 [001] 偏角 3.2° &lt;= 6.0°，初熔孔洞 0.00 vol% (共晶 0.35 vol%)</text>
+  <text x="524" y="485" fill="#34D399" font-size="11" font-weight="700">• EB-PVD 7YSZ 孔隙率锁死 14.8%，金属铼闭环回收率达 99.4%</text>
+
+  <!-- Step 4 -->
+  <rect x="508" y="510" width="454" height="84" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.4"/>
+  <text x="524" y="531" fill="#C4B5FD" font-size="12.5" font-weight="800">STEP 4 · Teams 铸造总监确认 + ALDO 边缘 + 适航护照 (3 ms)</text>
+  <text x="524" y="551" fill="#F8FAFC" font-size="11.5">• 车间 ALDO 边缘下发伺服抽拉、电磁制动与固溶炉多区温控指令</text>
+  <text x="524" y="570" fill="#34D399" font-size="11" font-weight="700">• 1GB 免费 SQL 签发 AS9100 Rev D / NADCAP 单晶适航护照 (12ms!)</text>
+
+  <!-- Right Column -->
+  <rect x="1000" y="138" width="400" height="470" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1020" y="168" fill="#60A5FA" font-size="14.5" font-weight="800">03 · 定量基准与五云零拷贝协同 (R119)</text>
+
+  <rect x="1018" y="184" width="364" height="142" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1032" y="206" fill="#34D399" font-size="12.5" font-weight="800">月度 TCO 对比 (🏆 省 94.5% 新高 · 净省 $245.4K/月!)</text>
+  <text x="1032" y="228" fill="#F8FAFC" font-size="11.5">• Microsoft Fabric 归一化：  $14,400 / 月 (基准最优)</text>
+  <rect x="1032" y="234" width="50" height="10" rx="5" fill="#10B981"/>
+  <text x="1032" y="258" fill="#CBD5E1" font-size="11.5">• 四云拼装栈归一化：         $259,800 / 月 (贵 18.0x)</text>
+  <rect x="1032" y="264" width="320" height="10" rx="5" fill="#EF4444"/>
+  <text x="1032" y="290" fill="#93C5FD" font-size="11">• 集团全量专用容量 (14 基地)：$42.0K vs $712.0K/月</text>
+  <text x="1032" y="310" fill="#FDE68A" font-size="11.5" font-weight="800">• 守护 SLA 风险敞口：        $40,750,000 ($40.75M)</text>
+
+  <rect x="1018" y="338" width="364" height="126" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1032" y="360" fill="#FDE68A" font-size="12.5" font-weight="900">🏆 256=2^8单测 &amp; 520场景 &amp; 省94.5% (report.json R119)</text>
+  <text x="1032" y="382" fill="#FFFFFF" font-size="12" font-weight="800">• 路由评估矩阵 (n=520!)：   519 / 520 (99.81% · 520场景大关!)</text>
+  <text x="1032" y="402" fill="#34D399" font-size="11.5" font-weight="700">• 分母 A 路由矩阵算术均值： 153.0 ms (零余数整数!)</text>
+  <text x="1032" y="422" fill="#FDE68A" font-size="11.5" font-weight="800">• 分母 B 126大行业本体均值：137.0 ms (12ms 端到端闭环!)</text>
+  <text x="1032" y="442" fill="#CBD5E1" font-size="11">• Python 确定性单测套件：  256 / 256 (🏆 2^8 整数里程碑!)</text>
+
+  <rect x="1018" y="476" width="364" height="118" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="1032" y="498" fill="#67E8F9" font-size="12.5" font-weight="800">Better Together 跨云零拷贝黄金分工</text>
+  <text x="1032" y="518" fill="#E2E8F0" font-size="11">• Azure HPC / Databricks：ProCAST 辐射场 &amp; CA 枝晶仿真</text>
+  <text x="1032" y="538" fill="#E2E8F0" font-size="11">• Snowflake / SAP：铼/镍母合金、发动机 ESN 与航司 MRO ERP</text>
+  <text x="1032" y="558" fill="#34D399" font-size="11" font-weight="700">• Fabric：OneLake 零拷贝挂载 + 12ms 铸造车间实时控制面</text>
+  <text x="1032" y="578" fill="#94A3B8" font-size="10.5">• 官方规格引用：122 条 (新增 SPEC-SINGLE-CRYSTAL-BLADE-R119)</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="624" width="1360" height="240" rx="14" fill="#0E192D" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="60" y="654" fill="#60A5FA" font-size="14.5" font-weight="800">04 · 单晶高温合金叶片 (CMSX-4/Rene N5) 定向凝固、固溶防初熔与 EB-PVD 三大物理护栏矩阵 (SOP-126 · 256-Test &amp; -94.5% TCO)</text>
+
+  <rect x="60" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="76" y="694" fill="#67E8F9" font-size="13" font-weight="800">① Pollock-Murphy 瑞利数与零雀斑定向凝固</text>
+  <text x="76" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：Ra ∝ Δρ·λ1²/(G^1.6·V^0.4)，需死守 Ra &lt; 1.0 稳态线</text>
+  <text x="76" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：#19 炉缘板梯度跌至 42°C/cm (Ra=2.85 触发雀斑烟羽)</text>
+  <text x="76" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：抽拉提至 5.4mm/min + 挡热环 -3.5mm + 0.35T EMBr</text>
+  <text x="76" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：梯度恢复 94°C/cm，Ra=0.42，0 雀斑与 0 杂晶</text>
+  <text x="76" y="800" fill="#94A3B8" font-size="11">• 取向精度：单晶 [001] 轴向偏角 3.2° &lt;= 6.0°，一次枝晶臂 215μm</text>
+
+  <rect x="506" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#10B981" stroke-width="1.2"/>
+  <text x="522" y="694" fill="#6EE7B7" font-size="13" font-weight="800">② DICTRA 铼均质化与 0.00% 零初熔阶梯固溶</text>
+  <text x="522" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：在 [1,314°C, 1,324°C] 窄窗内溶解共晶且严防局部初熔</text>
+  <text x="522" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：#07 炉升温逼近 1,325.2°C (将产生 1.45vol% 初熔孔洞)</text>
+  <text x="522" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：1,308→1,316→1,320.5°C (0.15°C/min 微斜坡保温)</text>
+  <text x="522" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：初熔孔洞 0.00 vol%，残余共晶仅 0.35 vol%</text>
+  <text x="522" y="800" fill="#94A3B8" font-size="11">• 高温蠕变：0.45μm 立方 γ&apos; 均匀析出，持久寿命提升 42%</text>
+
+  <rect x="952" y="670" width="428" height="174" rx="10" fill="#091326" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="968" y="694" fill="#FBBF24" font-size="13" font-weight="800">③ EB-PVD 7YSZ 热障涂层与 AS9100 适航护照</text>
+  <text x="968" y="716" fill="#E2E8F0" font-size="11.5">• 羽毛状柱状晶：1,250Hz 电子束扫描锁死 14.8% 应变容限孔隙率</text>
+  <text x="968" y="736" fill="#E2E8F0" font-size="11.5">• 战略金属循环：浇道冒口高纯铼 (Re) 真空重熔回收率达 99.4%</text>
+  <text x="968" y="756" fill="#E2E8F0" font-size="11.5">• 适航全链路溯源：叶片序列号绑定 Laue XRD 与三维 CT 无损图谱</text>
+  <text x="968" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：1GB 免费 SQL 签发 AS9100 Rev D / NADCAP 护照</text>
+  <text x="968" y="800" fill="#FDE68A" font-size="11" font-weight="700">• 里程碑：256单测2^8 · 520场景 · 省94.5% TCO · 12ms闭环</text>
+</svg>

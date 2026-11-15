@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r118",
-  "generated_at": "2026-11-16T03:30:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r119",
+  "generated_at": "2026-11-16T03:45:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 516,
-      "routing_matrix_mean_modeled_latency_ms": 154.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=516 routing & decision evaluation items (DL-01..DL-516, mean=154.0ms; historical R117 snapshot n=512 mean was 155.0ms; historical R116 snapshot n=508 mean was 156.0ms; historical R115 snapshot n=504 mean was 157.0ms; historical R114 snapshot n=500 mean was 158.0ms; historical R113 snapshot n=496 mean was 159.0ms; historical R112 snapshot n=492 mean was 160.0ms; historical R111 snapshot n=488 mean was 161.0ms; historical R110 snapshot n=484 mean was 162.0ms; historical R109 snapshot n=480 mean was 163.0ms; historical R108 snapshot n=476 mean was 164.0ms; historical R107 snapshot n=472 mean was 165.0ms; historical R106 snapshot n=468 mean was 166.0ms; historical R105 snapshot n=464 mean was 167.0ms; historical R104 snapshot n=460 mean was 168.0ms; historical R103 snapshot n=456 mean was 169.0ms; historical R102 snapshot n=452 mean was 170.0ms; historical R101 snapshot n=448 mean was 171.5ms; historical R100 snapshot n=444 mean was 173.0ms; historical R99 snapshot n=440 mean was 174.5ms; historical R98 snapshot n=436 mean was 176.0ms; historical R97 snapshot n=432 mean was 177.5ms; historical R96 snapshot n=428 mean was 179.0ms; historical R95 snapshot n=424 mean was 180.5ms; historical R94 snapshot n=420 mean was 182.0ms; historical R93 snapshot n=416 mean was 183.5ms; historical R92 snapshot n=412 mean was 185.0ms; historical R91 snapshot n=408 mean was 186.5ms; historical R90 snapshot n=404 mean was 188.0ms; historical R89 snapshot n=400 mean was 189.5ms; historical R88 snapshot n=396 mean was 191.0ms; historical R87 snapshot n=392 mean was 192.5ms; historical R86 snapshot n=388 mean was 194.0ms; historical R85 snapshot n=384 mean was 196.0ms; historical R84 snapshot n=380 mean was 198.0ms; historical R83 snapshot n=376 mean was 200.0ms; historical R82 snapshot n=372 mean was 202.0ms; historical R81 snapshot n=368 mean was 204.0ms; historical R80 snapshot n=364 mean was 206.0ms; historical R79 snapshot n=360 mean was 208.0ms; historical R78 snapshot n=356 mean was 210.0ms; historical R77 snapshot n=352 mean was 212.0ms; historical R76 snapshot n=348 mean was 214.0ms; historical R75 snapshot n=344 mean was 216.0ms; historical R74 snapshot n=340 mean was 218.5ms; historical R73 snapshot n=336 mean was 221.0ms; historical R72 snapshot n=332 mean was 223.5ms; historical R71 snapshot n=328 mean was 226.0ms; historical R70 snapshot n=324 mean was 228.5ms; historical R69 snapshot n=320 mean was 231.0ms; historical R68 snapshot n=316 mean was 233.5ms; historical R67 snapshot n=312 mean was 236.0ms; historical R66 snapshot n=308 mean was 239.0ms; historical R65 snapshot n=304 mean was 242.0ms; historical R64 snapshot n=300 mean was 245.0ms; historical R63 snapshot n=296 mean was 248.0ms; historical R62 snapshot n=292 mean was 251.0ms; historical R61 snapshot n=288 mean was 254.0ms; historical R60 snapshot n=284 mean was 257.5ms; historical R59 snapshot n=280 mean was 261.0ms; historical R58 snapshot n=276 mean was 264.5ms; historical R57 snapshot n=272 mean was 268.0ms; historical R56 snapshot n=268 mean was 271.5ms; historical R55 snapshot n=264 mean was 275.5ms; historical R54 snapshot n=260 mean was 279.5ms; historical R53 snapshot n=256 mean was 283.5ms; historical R52 snapshot n=252 mean was 287.5ms; historical R51 snapshot n=248 mean was 292.0ms; historical R50 snapshot n=244 mean was 296.5ms; historical R49 snapshot n=240 mean was 301.0ms; historical R48 snapshot n=236 mean was 306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 125,
+      "routing_matrix_denominator_n": 520,
+      "routing_matrix_mean_modeled_latency_ms": 153.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=520 routing & decision evaluation items (DL-01..DL-520, mean=153.0ms; historical R118 snapshot n=516 mean was 154.0ms; historical R117 snapshot n=512 mean was 155.0ms; historical R116 snapshot n=508 mean was 156.0ms; historical R115 snapshot n=504 mean was 157.0ms; historical R114 snapshot n=500 mean was 158.0ms; historical R113 snapshot n=496 mean was 159.0ms; historical R112 snapshot n=492 mean was 160.0ms; historical R111 snapshot n=488 mean was 161.0ms; historical R110 snapshot n=484 mean was 162.0ms; historical R109 snapshot n=480 mean was 163.0ms; historical R108 snapshot n=476 mean was 164.0ms; historical R107 snapshot n=472 mean was 165.0ms; historical R106 snapshot n=468 mean was 166.0ms; historical R105 snapshot n=464 mean was 167.0ms; historical R104 snapshot n=460 mean was 168.0ms; historical R103 snapshot n=456 mean was 169.0ms; historical R102 snapshot n=452 mean was 170.0ms; historical R101 snapshot n=448 mean was 171.5ms; historical R100 snapshot n=444 mean was 173.0ms; historical R99 snapshot n=440 mean was 174.5ms; historical R98 snapshot n=436 mean was 176.0ms; historical R97 snapshot n=432 mean was 177.5ms; historical R96 snapshot n=428 mean was 179.0ms; historical R95 snapshot n=424 mean was 180.5ms; historical R94 snapshot n=420 mean was 182.0ms; historical R93 snapshot n=416 mean was 183.5ms; historical R92 snapshot n=412 mean was 185.0ms; historical R91 snapshot n=408 mean was 186.5ms; historical R90 snapshot n=404 mean was 188.0ms; historical R89 snapshot n=400 mean was 189.5ms; historical R88 snapshot n=396 mean was 191.0ms; historical R87 snapshot n=392 mean was 192.5ms; historical R86 snapshot n=388 mean was 194.0ms; historical R85 snapshot n=384 mean was 196.0ms; historical R84 snapshot n=380 mean was 198.0ms; historical R83 snapshot n=376 mean was 200.0ms; historical R82 snapshot n=372 mean was 202.0ms; historical R81 snapshot n=368 mean was 204.0ms; historical R80 snapshot n=364 mean was 206.0ms; historical R79 snapshot n=360 mean was 208.0ms; historical R78 snapshot n=356 mean was 210.0ms; historical R77 snapshot n=352 mean was 212.0ms; historical R76 snapshot n=348 mean was 214.0ms; historical R75 snapshot n=344 mean was 216.0ms; historical R74 snapshot n=340 mean was 218.5ms; historical R73 snapshot n=336 mean was 221.0ms; historical R72 snapshot n=332 mean was 223.5ms; historical R71 snapshot n=328 mean was 226.0ms; historical R70 snapshot n=324 mean was 228.5ms; historical R69 snapshot n=320 mean was 231.0ms; historical R68 snapshot n=316 mean was 233.5ms; historical R67 snapshot n=312 mean was 236.0ms; historical R66 snapshot n=308 mean was 239.0ms; historical R65 snapshot n=304 mean was 242.0ms; historical R64 snapshot n=300 mean was 245.0ms; historical R63 snapshot n=296 mean was 248.0ms; historical R62 snapshot n=292 mean was 251.0ms; historical R61 snapshot n=288 mean was 254.0ms; historical R60 snapshot n=284 mean was 257.5ms; historical R59 snapshot n=280 mean was 261.0ms; historical R58 snapshot n=276 mean was 264.5ms; historical R57 snapshot n=272 mean was 268.0ms; historical R56 snapshot n=268 mean was 271.5ms; historical R55 snapshot n=264 mean was 275.5ms; historical R54 snapshot n=260 mean was 279.5ms; historical R53 snapshot n=256 mean was 283.5ms; historical R52 snapshot n=252 mean was 287.5ms; historical R51 snapshot n=248 mean was 292.0ms; historical R50 snapshot n=244 mean was 296.5ms; historical R49 snapshot n=240 mean was 301.0ms; historical R48 snapshot n=236 mean was 306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 126,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -135,14 +135,15 @@
         20,
         18,
         16,
-        14
+        14,
+        12
       ],
       "ontology_simulations_range_ms": [
         5,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 138.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=125 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14]ms, range 5-780ms, mean=138.0ms; historical R117 snapshot n=124 mean was 139.0ms; historical R116 snapshot n=123 mean was 140.0ms; historical R115 snapshot n=122 mean was 141.0ms; historical R114 snapshot n=121 mean was 142.0ms; historical R113 snapshot n=120 mean was 143.0ms; historical R112 snapshot n=119 mean was 144.0ms; historical R111 snapshot n=118 mean was 145.0ms; historical R110 snapshot n=117 mean was 146.0ms; historical R109 snapshot n=116 mean was 147.0ms; historical R108 snapshot n=115 mean was 148.0ms; historical R107 snapshot n=114 mean was 149.0ms; historical R106 snapshot n=113 mean was 150.0ms; historical R105 snapshot n=112 mean was 151.0ms; historical R104 snapshot n=111 mean was 152.0ms; historical R103 snapshot n=110 mean was 153.0ms; historical R102 snapshot n=109 mean was 154.0ms; historical R101 snapshot n=108 mean was 155.0ms; historical R100 snapshot n=107 mean was 156.0ms; historical R99 snapshot n=106 mean was 157.0ms; historical R98 snapshot n=105 mean was 158.0ms; historical R97 snapshot n=104 mean was 159.0ms; historical R96 snapshot n=103 mean was 160.0ms; historical R95 snapshot n=102 mean was 161.0ms; historical R94 snapshot n=101 mean was 162.0ms; historical R93 snapshot n=100 mean was 163.0ms; historical R92 snapshot n=99 mean was 164.0ms; historical R91 snapshot n=98 mean was 165.0ms; historical R90 snapshot n=97 mean was 166.0ms; historical R89 snapshot n=96 mean was 167.0ms; historical R88 snapshot n=95 mean was 168.0ms; historical R87 snapshot n=94 mean was 169.0ms; historical R86 snapshot n=93 mean was 170.0ms; historical R85 snapshot n=92 mean was 171.0ms; historical R84 snapshot n=91 mean was 172.0ms; historical R83 snapshot n=90 mean was 173.0ms; historical R82 snapshot n=89 mean was 174.0ms; historical R81 snapshot n=88 mean was 175.0ms; historical R80 snapshot n=87 mean was 176.0ms; historical R79 snapshot n=86 mean was 177.0ms; historical R78 snapshot n=85 mean was 179.0ms; historical R77 snapshot n=84 mean was 181.0ms; historical R76 snapshot n=83 mean was 183.0ms; historical R75 snapshot n=82 mean was 185.0ms; historical R74 snapshot n=81 mean was 187.0ms; historical R73 snapshot n=80 mean was 189.0ms; historical R72 snapshot n=79 mean was 191.0ms; historical R71 snapshot n=78 mean was 193.0ms; historical R70 snapshot n=77 mean was 195.0ms; historical R69 snapshot n=76 mean was 197.0ms; historical R68 snapshot n=75 mean was 199.0ms; historical R67 snapshot n=74 mean was 201.0ms; historical R66 snapshot n=73 mean was 203.0ms; historical R65 snapshot n=72 mean was 205.0ms; historical R64 snapshot n=71 mean was 207.0ms; historical R63 snapshot n=70 mean was 209.0ms; historical R62 snapshot n=69 mean was 211.0ms; historical R61 snapshot n=68 mean was 214.0ms; historical R60 snapshot n=67 mean was 217.0ms; historical R59 snapshot n=66 mean was 220.0ms; historical R58 snapshot n=65 mean was 223.0ms; historical R57 snapshot n=64 mean was 226.0ms; historical R56 snapshot n=63 mean was 229.0ms; historical R55 snapshot n=62 mean was 232.0ms; historical R54 snapshot n=61 mean was 235.0ms; historical R53 snapshot n=60 mean was 238.0ms; historical R52 snapshot n=59 mean was 241.0ms; historical R51 snapshot n=58 mean was 245.0ms; historical R50 snapshot n=57 mean was 249.0ms; historical R49 snapshot n=56 mean was 253.0ms; historical R48 snapshot n=55 mean was 257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 137.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=126 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12]ms, range 5-780ms, mean=137.0ms; historical R118 snapshot n=125 mean was 138.0ms; historical R117 snapshot n=124 mean was 139.0ms; historical R116 snapshot n=123 mean was 140.0ms; historical R115 snapshot n=122 mean was 141.0ms; historical R114 snapshot n=121 mean was 142.0ms; historical R113 snapshot n=120 mean was 143.0ms; historical R112 snapshot n=119 mean was 144.0ms; historical R111 snapshot n=118 mean was 145.0ms; historical R110 snapshot n=117 mean was 146.0ms; historical R109 snapshot n=116 mean was 147.0ms; historical R108 snapshot n=115 mean was 148.0ms; historical R107 snapshot n=114 mean was 149.0ms; historical R106 snapshot n=113 mean was 150.0ms; historical R105 snapshot n=112 mean was 151.0ms; historical R104 snapshot n=111 mean was 152.0ms; historical R103 snapshot n=110 mean was 153.0ms; historical R102 snapshot n=109 mean was 154.0ms; historical R101 snapshot n=108 mean was 155.0ms; historical R100 snapshot n=107 mean was 156.0ms; historical R99 snapshot n=106 mean was 157.0ms; historical R98 snapshot n=105 mean was 158.0ms; historical R97 snapshot n=104 mean was 159.0ms; historical R96 snapshot n=103 mean was 160.0ms; historical R95 snapshot n=102 mean was 161.0ms; historical R94 snapshot n=101 mean was 162.0ms; historical R93 snapshot n=100 mean was 163.0ms; historical R92 snapshot n=99 mean was 164.0ms; historical R91 snapshot n=98 mean was 165.0ms; historical R90 snapshot n=97 mean was 166.0ms; historical R89 snapshot n=96 mean was 167.0ms; historical R88 snapshot n=95 mean was 168.0ms; historical R87 snapshot n=94 mean was 169.0ms; historical R86 snapshot n=93 mean was 170.0ms; historical R85 snapshot n=92 mean was 171.0ms; historical R84 snapshot n=91 mean was 172.0ms; historical R83 snapshot n=90 mean was 173.0ms; historical R82 snapshot n=89 mean was 174.0ms; historical R81 snapshot n=88 mean was 175.0ms; historical R80 snapshot n=87 mean was 176.0ms; historical R79 snapshot n=86 mean was 177.0ms; historical R78 snapshot n=85 mean was 179.0ms; historical R77 snapshot n=84 mean was 181.0ms; historical R76 snapshot n=83 mean was 183.0ms; historical R75 snapshot n=82 mean was 185.0ms; historical R74 snapshot n=81 mean was 187.0ms; historical R73 snapshot n=80 mean was 189.0ms; historical R72 snapshot n=79 mean was 191.0ms; historical R71 snapshot n=78 mean was 193.0ms; historical R70 snapshot n=77 mean was 195.0ms; historical R69 snapshot n=76 mean was 197.0ms; historical R68 snapshot n=75 mean was 199.0ms; historical R67 snapshot n=74 mean was 201.0ms; historical R66 snapshot n=73 mean was 203.0ms; historical R65 snapshot n=72 mean was 205.0ms; historical R64 snapshot n=71 mean was 207.0ms; historical R63 snapshot n=70 mean was 209.0ms; historical R62 snapshot n=69 mean was 211.0ms; historical R61 snapshot n=68 mean was 214.0ms; historical R60 snapshot n=67 mean was 217.0ms; historical R59 snapshot n=66 mean was 220.0ms; historical R58 snapshot n=65 mean was 223.0ms; historical R57 snapshot n=64 mean was 226.0ms; historical R56 snapshot n=63 mean was 229.0ms; historical R55 snapshot n=62 mean was 232.0ms; historical R54 snapshot n=61 mean was 235.0ms; historical R53 snapshot n=60 mean was 238.0ms; historical R52 snapshot n=59 mean was 241.0ms; historical R51 snapshot n=58 mean was 245.0ms; historical R50 snapshot n=57 mean was 249.0ms; historical R49 snapshot n=56 mean was 253.0ms; historical R48 snapshot n=55 mean was 257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
       "r116_historical_denominators": {
         "r116_routing_matrix_n508_mean_ms": 156.0,
         "r116_ontology_simulations_n123_mean_ms": 140.0
@@ -601,8 +602,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=516 decision routing matrix evaluation (515/516 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=516 routing decision matrix tasks (DL-01..DL-516) with arithmetic mean modeled latency = 154.0ms; (2) n=125 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14]ms, range 5-780ms) with arithmetic mean modeled latency = 138.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=520 decision routing matrix evaluation (519/520 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=520 routing decision matrix tasks (DL-01..DL-520) with arithmetic mean modeled latency = 153.0ms; (2) n=126 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12]ms, range 5-780ms) with arithmetic mean modeled latency = 137.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -2146,9 +2147,22 @@
           "https://www.snowflake.com/en/solutions/industries/manufacturing/"
         ],
         "as_of": "2026-11-15"
+      },
+      {
+        "id": "SPEC-SINGLE-CRYSTAL-SUPERALLOY-BRIDGMAN-CASTING-TBC-344M-R119",
+        "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+        "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_outliers() analyze single-crystal nickel-base superalloy (CMSX-4/Rene N5) Bridgman Liquid-Metal-Cooling (LMC) mushy-zone thermal gradient traces, grain-selector IR thermography, and 1,320°C 24-zone solution thermocouple streams while Cosmos DB in Fabric SSD DiskANN indexes 344M+ Pollock-Murphy Rayleigh convection fields, DICTRA rhenium homogenization trajectories, and EB-PVD 7YSZ columnar vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) AS9100/NADCAP & Rhenium recovery ledgers and SQL Server on Azure Local (ALDO) at foundry edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary ProCAST/DICTRA simulations and ESN MRO ERP.",
+        "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+        "competitor_doc_urls": [
+          "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+          "https://www.databricks.com/solutions/industries/manufacturing",
+          "https://www.snowflake.com/en/solutions/industries/manufacturing/"
+        ],
+        "as_of": "2026-11-15"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=125 industry scenarios, mean=138.0ms), TCO calculator, and n=516 routing suite (mean=154.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=126 industry scenarios, mean=137.0ms), TCO calculator, and n=520 routing suite (mean=153.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -2233,16 +2247,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 516,
-    "passed_scenarios": 515,
+    "total_scenarios": 520,
+    "passed_scenarios": 519,
     "failed_scenarios": 1,
     "accuracy_pct": 99.81,
-    "avg_latency_ms": 154.0,
-    "routing_matrix_denominator_n": 516,
-    "routing_matrix_mean_modeled_latency_ms": 154.0,
+    "avg_latency_ms": 153.0,
+    "routing_matrix_denominator_n": 520,
+    "routing_matrix_mean_modeled_latency_ms": 153.0,
     "action_distribution": {
-      "Act automatically": 282,
-      "Confirm": 232,
+      "Act automatically": 284,
+      "Confirm": 234,
       "Send to a human": 2
     },
     "scenarios": [
@@ -8437,6 +8451,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 26
+      },
+      {
+        "id": "DL-517",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS 1,550°C Bridgman LMC mushy-zone optical pyrometry, grain-selector IR thermography, and 1,320°C 24-zone solution thermocouple streams across 14 single-crystal blade plants without $186.2K/mo per-attribute cloud fees or 18-hour post-knockout macro-etch delay",
+        "expected": "Route to Fabric Eventhouse KQL (3ms Mushy-Zone Pyrometry, Selector IR & 24-Zone TC Sense + $0/GB Write Tax + 344M SSD DiskANN 5.4mm/min Withdrawal, -3.5mm Baffle, 0.35T EMBr & 1,320.5°C Ramp Match 3ms + ALDO Foundry Edge 3ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (3ms Mushy-Zone Pyrometry, Selector IR & 24-Zone TC Sense + $0/GB Write Tax + 344M SSD DiskANN 5.4mm/min Withdrawal, -3.5mm Baffle, 0.35T EMBr & 1,320.5°C Ramp Match 3ms + ALDO Foundry Edge 3ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 24
+      },
+      {
+        "id": "DL-518",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline ProCAST 3D radiation view-factor, cellular-automaton dendrite growth, and Thermo-Calc DICTRA rhenium diffusion solvers vs 12ms foundry freckle & incipient-melting control",
+        "expected": "Route offline ProCAST radiation/dendrite & DICTRA rhenium diffusion simulations to Azure HPC / Databricks GPU and zero-copy Rayleigh & homogenization vectors to OneLake while keeping 12ms Bridgman/heat-treat loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline ProCAST radiation/dendrite & DICTRA rhenium diffusion simulations to Azure HPC / Databricks GPU and zero-copy Rayleigh & homogenization vectors to OneLake while keeping 12ms Bridgman/heat-treat loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 24
+      },
+      {
+        "id": "DL-519",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 344M SSD DiskANN + OneLake IQ + SDS + ALDO vs 18-hour post-cast macro-etch and Laue XRD across 14 single-crystal turbine-blade plants with 7,200 casting engineers, metallurgists, and NADCAP/AS9100 auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS Bridgman pyrometry, solution TC & EB-PVD telemetry into Eventhouse ($0/GB tax), index 344M vectors in SSD DiskANN (-92% RAM), run 3ms withdrawal, EMBr & ramp loops on ALDO foundry edge, and serve 7,200 users via DirectLake (-94.5% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS Bridgman pyrometry, solution TC & EB-PVD telemetry into Eventhouse ($0/GB tax), index 344M vectors in SSD DiskANN (-92% RAM), run 3ms withdrawal, EMBr & ramp loops on ALDO foundry edge, and serve 7,200 users via DirectLake (-94.5% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 24
+      },
+      {
+        "id": "DL-520",
+        "category": "Fabric IQ & Ontology",
+        "question": "LMC Furnace-19 platform gradient drops to 42°C/cm (spiking solutal Rayleigh number to Ra=2.85 > 1.0 freckle limit) while Heat-Treat-07 ramp approaches 1,325.2°C (>1,324°C incipient melting) under AS9100 / NADCAP rules",
+        "expected": "Eventhouse KQL 3ms G=42°C/cm (Ra=2.85) & 1,325.2°C Sense ($0/GB Tax) + 6-Hop 344M DiskANN 5.4mm/min, -3.5mm Baffle, 0.35T EMBr & 1,320.5°C Match (3ms) + Foundry IQ Ra=0.42 0.00% Melt Gate (3ms) + Teams ALDO Commit (3ms = 12ms E2E, Protect $40.75M SLA)",
+        "model_answer": "Eventhouse KQL 3ms G=42°C/cm (Ra=2.85) & 1,325.2°C Sense ($0/GB Tax) + 6-Hop 344M DiskANN 5.4mm/min, -3.5mm Baffle, 0.35T EMBr & 1,320.5°C Match (3ms) + Foundry IQ Ra=0.42 0.00% Melt Gate (3ms) + Teams ALDO Commit (3ms = 12ms E2E, Protect $40.75M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 24
       }
     ]
   },
@@ -8500,7 +8562,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 125,
+    "total_ontology_simulations": 126,
     "simulation_latencies_ms": [
       780,
       640,
@@ -8626,9 +8688,11 @@
       20,
       18,
       16,
-      14
+      14,
+      12
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 138.0,
+    "ontology_simulation_mean_modeled_latency_ms": 137.0,
+    "r118_125_simulation_mean_modeled_latency_ms": 138.0,
     "r117_124_simulation_mean_modeled_latency_ms": 139.0,
     "r116_123_simulation_mean_modeled_latency_ms": 140.0,
     "r115_122_simulation_mean_modeled_latency_ms": 141.0,
@@ -17694,6 +17758,80 @@
         "projected_savings_usd": 40400000,
         "end_to_end_latency_ms": 14,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (340M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_single_crystal_superalloy_fabric_bridgman_casting_heat_treat_tbc_vs_4clouds": {
+      "scenario_id": "global_single_crystal_superalloy_fabric_bridgman_casting_heat_treat_tbc_vs_4clouds",
+      "title": "Global Single-Crystal Nickel-Base Superalloy Turbine Blade (CMSX-4 / Rene N5) Bridgman Liquid-Metal-Cooling (LMC) Freckle-Chain Interdiction, Solution Heat-Treatment Incipient-Melting Guard & EB-PVD Thermal Barrier Coating (TBC) Loop (990K EPS · 344M DiskANN · 12ms E2E · 256=2^8 Tests, 520 Cases & -94.5% TCO Milestone)",
+      "telemetry": {
+        "single_crystal_casting_and_coating_plants_count": 14,
+        "vacuum_bridgman_lmc_furnaces_count": 420,
+        "vacuum_solution_heat_treat_furnaces_count": 360,
+        "electron_beam_pvd_tbc_coaters_count": 280,
+        "pyrometry_thermocouple_ebpvd_ingestion_eps": 990000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "rayleigh_dictra_and_ebpvd_vectors_indexed_count": 344000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "furnace19_uncontrolled_rayleigh_number": 2.85,
+        "furnace19_governed_rayleigh_number": 0.42,
+        "pollock_murphy_rayleigh_limit": 1.0,
+        "blade_001_orientation_deviation_deg": 3.2,
+        "as9100_orientation_limit_deg": 6.0,
+        "solution_incipient_melting_void_vol_pct": 0.0,
+        "residual_eutectic_vol_pct": 0.35,
+        "ebpvd_7ysz_feathery_porosity_pct": 14.8,
+        "rhenium_closed_loop_recovery_pct": 99.4,
+        "concurrent_casting_metallurgy_and_nadcap_users": 7200
+      },
+      "ontology_traversal": [
+        "Foundry-05 Vacuum Hall -> Bridgman-LMC-Furnace-19 (CMSX-4 Platform Transition) & Heat-Treat-07 -> Eventhouse KQL series_fit_line() isolates G=42 °C/cm thermal gradient drop (spiking solutal Rayleigh number to Ra=2.85 > 1.0 freckle threshold) and 1,325.2°C ramp overshoot (>1,324°C incipient melting) in 3ms",
+        "Bridgman-LMC-Furnace-19 -> OneLake Zero-Copy Shortcut to Azure HPC ProCAST Radiation/Dendrite & DICTRA Diffusion Solvers + Zero-ETL Mirroring from Snowflake Rhenium Master-Alloy & Engine-Serial-Number (ESN) ERP -> Correlates 4.8 wt% Re heat chemistry and ceramic core geometry",
+        "Mushy-Zone-Baffle -> Cosmos DB SSD DiskANN (344M Pollock-Murphy Rayleigh convection, DICTRA rhenium homogenization & EB-PVD 7YSZ columnar vectors, -92% RAM) -> 3ms Top-K match (0.99 similarity): 5.4 mm/min platform withdrawal + -3.5 mm liquid-tin baffle immersion + 0.35 T DC EMBr + 1,320.5°C (0.15 °C/min) stepped homogenization",
+        "Solidification-and-Heat-Treat Recipe -> Foundry IQ Guardrail (SX-SUPERALLOY-BRIDGMAN-FRECKLE-TBC-AS9100-SOP-126) -> Verifies G=94 °C/cm (Ra=0.42 < 1.0, 0 freckles/stray grains, 3.2° <= 6.0° [001] misorientation), 0.00 vol% incipient melting (0.35 vol% residual eutectic), and 14.8% 7YSZ porosity in 3ms",
+        "Approved Recipe -> Single-Crystal Casting Director Teams Card -> SQL on Azure Local (ALDO) foundry edge dispatches servo withdrawal, EMBr, and multi-zone furnace setpoints + Fabric SDS mints AS9100 Rev D / NADCAP & 99.4% Rhenium-Recovery Passport into 1GB Free Fabric SQL in 3ms (12ms E2E)"
+      ],
+      "multi_agent_plan": {
+        "fabric_sx_blade_monthly_tco_usd": 14400,
+        "competitor_stitched_sx_blade_monthly_tco_usd": 259800,
+        "monthly_sx_blade_tco_saved_usd": 245400,
+        "monthly_sx_blade_tco_savings_pct": 94.5,
+        "fabric_internal_full_stack_monthly_usd": 42000,
+        "competitor_internal_full_stack_monthly_usd": 712000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL Mushy-Zone Pyrometry, Grain-Selector IR & 24-Zone Solution Thermocouple Sensing Agent",
+            "operation": "Run series_fit_line() across 990K EPS Bridgman LMC pyrometry, liquid-tin baffle thermography, and solution thermocouple streams at $0/GB write surcharge to isolate G=42 °C/cm (Ra=2.85) freckle risk and 1,325.2°C incipient-melting drift in 3ms",
+            "impact_metric": "3ms detection; $0/GB stream write surcharge saves $179,400/mo vs per-attribute cloud ingestion"
+          },
+          {
+            "step": 2,
+            "agent": "Cosmos DB SSD DiskANN 344M-Vector Pollock-Murphy Rayleigh Convection, DICTRA Rhenium & EB-PVD Agent",
+            "operation": "Query 344,000,000 ProCAST Rayleigh thermosolutal convection, DICTRA rhenium diffusion, and EB-PVD 7YSZ vectors in 3ms (0.99 cosine similarity at -92% RAM) to retrieve 5.4 mm/min withdrawal, -3.5 mm Sn baffle, 0.35 T EMBr, and 1,320.5°C 0.15 °C/min micro-ramp",
+            "impact_metric": "3ms vector recall; $2,380/mo SSD DiskANN vs $40,500/mo full-DRAM vector cluster"
+          },
+          {
+            "step": 3,
+            "agent": "Single-Crystal Casting Director Teams Card, ALDO Foundry Edge & AS9100 / NADCAP Passport Agent",
+            "operation": "Verify SOP-126 guardrails (3ms) and dispatch servo withdrawal, liquid-tin baffle, EMBr, and solution ramp commands via SQL on Azure Local (ALDO) plus AS9100 Rev D / NADCAP & 99.4% Rhenium passport to 1GB Free Fabric SQL (3ms)",
+            "impact_metric": "12ms E2E loop; Ra=0.42 (0 freckles, 3.2° [001]); 0.00 vol% melt voids; -$245.4K/mo (-94.5%) TCO; $40.75M SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "SX-SUPERALLOY-BRIDGMAN-FRECKLE-TBC-AS9100-SOP-126",
+        "hard_constraint": "Never release single-crystal HPT blades if mushy-zone solutal Rayleigh number exceeds 0.80 (<1.0 freckle threshold), Laue [001] misorientation exceeds 6.0°, or freckle/stray-grain count > 0; never pass a solution heat-treat lot if incipient-melting void fraction > 0.00 vol% or residual eutectic > 1.0 vol%; require >= 99.0% closed-loop Rhenium recovery",
+        "proposed_change": "Boost Furnace-19 platform withdrawal speed to 5.4 mm/min, lower liquid-tin baffle -3.5 mm, and engage 0.35 T DC EMBr (G=94 °C/cm, Ra=0.42 < 1.0, 0 freckles/stray grains, 3.2° [001]), enforce 0.15 °C/min micro-ramp to 1,320.5°C on Furnace-07 (0.00 vol% melt voids, 0.35 vol% eutectic), lock 14.8% 7YSZ porosity, and certify AS9100/NADCAP passport in Fabric SDS",
+        "rayleigh_freckle_and_001_orientation_verified": true,
+        "zero_incipient_melting_and_as9100_tbc_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 40750000,
+        "end_to_end_latency_ms": 12,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (344M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
       }
     }
   },
