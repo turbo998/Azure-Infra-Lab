@@ -9119,6 +9119,87 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (316M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds":
+        # Scenario DP (2026-11-16 R113 · HISTORIC 120-ONTOLOGY SIMULATION MILESTONE (n=120!), Sub-160ms <160ms Matrix Mean Milestone (159.0ms!), -94.3% TCO Milestone ($234.0K/mo saved!), 320M-Vector, 143.0ms Ontology Mean & 24ms E2E Seven-Crown Milestone!): Global Targeted Alpha/Beta Radiopharmaceuticals (177Lu-PSMA-617 & 225Ac Actinium-225 RLT) Automated Hot-Cell DOTA Chelation Radiolysis Suppression, Inline Radio-HPLC (>=99.0% RCP) & Decay-Aware Patient Chain-of-Identity (CoI) Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 980K EPS 6ms Inline Radio-HPLC, HPGe & Flight Decay Sense + Cosmos DB SSD DiskANN 6ms 320M Radiolysis/HPGe/CoI Match + HDS/SDS FDA Part 212 RTRT + ALDO Hot-Cell Edge, $14.1K/mo Normalized | $40.3K/mo Internal)
+        # vs 4-Hour Offline iTLC Assay & Per-Attribute/GB Cloud IoT / 320M Full-DRAM Vector Stack ($248.1K/mo Normalized | $682.4K/mo Internal)
+        return {
+            "scenario_id": "global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds",
+            "title": "Global Targeted Radiopharmaceuticals (177Lu/225Ac RLT) 16 cGMP Hot-Cell Centers (420 Automated Hot Cells + 380 Inline Radio-HPLC/HPGe Units + 680 Clinics) × 980K EPS 94.2% RCP Radiolysis & 14h Flight-Delay Sense, 320M Radiolysis/HPGe/CoI Match, 99.35% RCP & 7.38GBq Bedside Loop (Fabric Eventhouse KQL + 320M SSD DiskANN + HDS/SDS + ALDO vs. 4h iTLC / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-16T02:08:00Z",
+                "cgmp_hotcell_centers_count": 16,
+                "automated_lead_hot_cells_count": 420,
+                "inline_radio_hplc_and_hpge_units_count": 380,
+                "nuclear_medicine_clinics_served_count": 680,
+                "radio_hplc_hpge_leadpig_ingestion_eps": 980000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_radiochemical_purity_rcp_pct": 94.20,
+                "post_trim_radiochemical_purity_rcp_pct": 99.35,
+                "min_allowed_radiochemical_purity_rcp_pct": 97.00,
+                "pre_trim_bedside_activity_gbq": 6.68,
+                "post_trim_bedside_activity_gbq": 7.38,
+                "min_allowed_bedside_activity_gbq": 6.80,
+                "max_allowed_bedside_activity_gbq": 8.00,
+                "eventhouse_kql_hplc_decay_latency_ms": 6,
+                "radiolysis_hpge_and_coi_vectors_indexed_count": 320000000,
+                "ssd_diskann_radiopharma_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 6,
+                "decay_tank_zero_release_compliance_pct": 99.98,
+                "fabric_monthly_radiopharma_tco_usd": 14100,
+                "competitor_stitched_radiopharma_tco_usd": 248100,
+                "fabric_internal_full_radiopharma_tco_usd": 40300,
+                "competitor_internal_full_radiopharma_tco_usd": 682400,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalRadiopharma_16Centers_420HotCells_380RadioHPLCs:980K_EPS_InlineRadioHPLC_HPGe_And_LeadPig_Stream",
+                "hop_2": "Eventhouse_KQL_FitLine:6ms_Isolate_HotCell11_94.2PctRCP_And_ZRHORD_6.68GBqDecay ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_RLTHotCell_And_Cosmos_SSD_DiskANN:6ms_Match_320M_DOTAChelation_Radiolysis_And_DecayCoI_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:6ms_Verify_99.35PctRCP_7.38GBqBedside_0PctWaste_And_Part212RTRT",
+            },
+            "multi_agent_plan": {
+                "hot_cells_coordinated": 420,
+                "patient_doses_rerouted": 18,
+                "monthly_radiopharma_tco_saved_usd": 234000,
+                "radiopharma_tco_savings_pct": 94.3,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 980K EPS Inline Radio-HPLC, HPGe Gamma & Lead-Pig Decay Engine",
+                        "operation": "Ingest 980,000 EPS of inline Radio-HPLC Cerenkov/UV peaks, HPGe gamma spectra, and global flight decay telemetry at $0/GB write tax, isolating Hot-Cell-11 1.85 GBq/mL radiolysis (RCP=94.20% < 97.00% floor) and ZRH->ORD 14h flight delay (18 doses decaying to 6.68 GBq < 6.80 GBq floor) in 6ms",
+                        "impact_metric": "Replaces $176.5K/mo per-attribute cloud/API fees and eliminates 4-hour offline iTLC assay lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ Radiopharma Twin & Cosmos SSD DiskANN 320M Radiolysis/HPGe/Decay-CoI Engine",
+                        "operation": "Search 320,000,000 DOTA-chelation, dual-scavenger radiolysis, and decay-aware CoI routing vectors (0.99 similarity in 6ms at -92% RAM), dosing +16.5% ascorbate/gentisic scavenger and diluting to 0.92 GBq/mL (restoring RCP to 99.35% >= 97.00%), and re-binding the Zurich vials to EU clinics while triggering Newark Hot-Cell-04 to dispense 18 US doses (7.38 GBq in [6.80, 8.00] GBq) in Foundry IQ (6ms)",
+                        "impact_metric": "Prevents bone-marrow off-target toxicity and saves $810K of scarce 177Lu/225Ac doses with 0.00% isotope waste",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Radiopharma QP Teams Sign-Off, ALDO Hot-Cell Edge & FDA Part 212 RTRT Commit",
+                        "operation": "Approve scavenger dosing and cross-continent CoI re-binding in Teams, dispatch OPC-UA microfluidic and laser-coding commands via SQL on Azure Local (ALDO) at the hot-cell edge, and mint the FDA 21 CFR Part 212 RTRT & 99.98% Decay-Tank certificate into 1GB Free Fabric SQL (6ms)",
+                        "impact_metric": "24ms E2E (Historic 120-Ontology, 159.0ms <160ms Matrix Mean & -94.3% TCO milestone!) RLT loop; -$234,000/mo (-94.3%) TCO; $38.65M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "RADIOPHARMA-THERANOSTICS-LU177-AC225-HOTCELL-COI-SOP-120",
+                "hard_constraint": "Never release 177Lu/225Ac radioligand doses with Radio-HPLC radiochemical purity (RCP) below 97.00% or 177mLu impurity above 0.01%, never allow patient bedside injection activity outside [6.80, 8.00] GBq, and require >= 99.95% hot-cell decay-tank zero-release compliance",
+                "proposed_change": "Dose Hot-Cell-11 +16.5% ascorbate/gentisic dual scavenger and dilute to 0.92 GBq/mL (restoring RCP to 99.35% >= 97.00% with 0.22% free Lu3+), re-bind delayed Zurich vials to EU clinics while dispensing 18 replacement US vials at Newark Hot-Cell-04 (locking bedside activity at 7.38 GBq within [6.80, 8.00] GBq), and certify 99.98% decay-tank retention",
+                "hotcell_radiochemical_purity_verified": True,
+                "decay_aware_bedside_coi_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 38650000,
+                "end_to_end_latency_ms": 24,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (320M Vectors) + Healthcare/Sustainability Data Solutions (HDS/SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -15027,6 +15108,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 38,
     },
+    {
+        "id": "DL-493",
+        "category": "Real-Time Intelligence",
+        "question": "Targeted radiopharma (177Lu/225Ac RLT) operator running 16 cGMP centers (420 automated hot cells, 380 inline Radio-HPLC/HPGe units, 680 clinics) must ingest 980K EPS, suppress radiolysis & reroute decaying doses in <10ms, and search 320M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 6ms Inline Radio-HPLC, HPGe & Flight Decay Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 6ms 320M Radiolysis/HPGe/CoI Match (-92% RAM) + HDS/SDS Part 212 RTRT + ALDO Hot-Cell Edge (24ms E2E, -94.3% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 6ms Inline Radio-HPLC, HPGe & Flight Decay Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 6ms 320M Radiolysis/HPGe/CoI Match (-92% RAM) + HDS/SDS Part 212 RTRT + ALDO Hot-Cell Edge (24ms E2E, -94.3% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 36,
+    },
+    {
+        "id": "DL-494",
+        "category": "vs Databricks",
+        "question": "Targeted radioligand therapy R&D needs Geant4/MCNP Monte Carlo 3D voxel-based internal radiation dosimetry and PSMA/FAPI ligand docking simulations alongside Snowflake/SAP S/4HANA enriched 176Yb/226Ra reactor target and hospital billing ERP",
+        "expected": "Route Geant4/MCNP voxel dosimetry and radioligand docking simulations to Azure HPC / Databricks GPU and 176Yb/226Ra target / lead-pig / hospital ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 320M Radiolysis/HPGe/CoI vectors in Fabric SSD DiskANN",
+        "model_answer": "Route Geant4/MCNP voxel dosimetry and radioligand docking simulations to Azure HPC / Databricks GPU and 176Yb/226Ra target / lead-pig / hospital ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 320M Radiolysis/HPGe/CoI vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 36,
+    },
+    {
+        "id": "DL-495",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 320M SSD DiskANN + HDS/SDS + ALDO vs 4-hour offline iTLC assays across 16 cGMP radiopharma hot-cell centers with 6,600 QPs and nuclear-medicine clinicians",
+        "expected": "Hybrid Better Together: Stream 980K EPS inline Radio-HPLC, HPGe & lead-pig telemetry into Eventhouse ($0/GB tax), index 320M vectors in SSD DiskANN (-92% RAM), run 6ms scavenger/CoI trims on ALDO edge, and serve 6,600 users via DirectLake (-94.3% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 980K EPS inline Radio-HPLC, HPGe & lead-pig telemetry into Eventhouse ($0/GB tax), index 320M vectors in SSD DiskANN (-92% RAM), run 6ms scavenger/CoI trims on ALDO edge, and serve 6,600 users via DirectLake (-94.3% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 36,
+    },
+    {
+        "id": "DL-496",
+        "category": "Fabric IQ & Ontology",
+        "question": "Hot-Cell-11 1.85GBq/mL activity triggers radiolysis (Radio-HPLC RCP drops to 94.20% < 97.00% floor) while ZRH->ORD 14h flight delay decays 18 patient doses to 6.68GBq (<6.80GBq therapeutic floor) under FDA Part 212 rules",
+        "expected": "Eventhouse KQL 6ms 94.20% RCP & 6.68GBq Decay Sense ($0/GB Tax) + 6-Hop 320M DiskANN +16.5% Scavenger, 0.92GBq/mL Dilution & Newark CoI Swap Match (6ms) + Foundry IQ 99.35% RCP 7.38GBq Gate (6ms) + Teams ALDO Commit (6ms = 24ms E2E, Protect $38.65M SLA)",
+        "model_answer": "Eventhouse KQL 6ms 94.20% RCP & 6.68GBq Decay Sense ($0/GB Tax) + 6-Hop 320M DiskANN +16.5% Scavenger, 0.92GBq/mL Dilution & Newark CoI Swap Match (6ms) + Foundry IQ 99.35% RCP 7.38GBq Gate (6ms) + Teams ALDO Commit (6ms = 24ms E2E, Protect $38.65M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 36,
+    },
 ]
 
 
@@ -15261,6 +15390,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     reusable_methalox_rocket_sim = simulate_ontology_incident("global_reusable_methalox_rocket_fabric_ffsc_preburner_turbopump_plume_oes_vs_4clouds")
     sodium_ion_battery_sim = simulate_ontology_incident("global_sodium_ion_battery_fabric_prussian_white_hard_carbon_plating_vs_4clouds")
     subsea_hvdc_cable_sim = simulate_ontology_incident("global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds")
+    radiopharma_theranostics_sim = simulate_ontology_incident("global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -15384,6 +15514,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_reusable_methalox_rocket_fabric_ffsc_preburner_turbopump_plume_oes_vs_4clouds": reusable_methalox_rocket_sim,
         "global_sodium_ion_battery_fabric_prussian_white_hard_carbon_plating_vs_4clouds": sodium_ion_battery_sim,
         "global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds": subsea_hvdc_cable_sim,
+        "global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds": radiopharma_theranostics_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -15605,6 +15736,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r110_ontology_sim_mean_ms = round(sum(r110_sim_latencies) / len(r110_sim_latencies), 2)
     r111_sim_latencies = sim_latencies[:118]
     r111_ontology_sim_mean_ms = round(sum(r111_sim_latencies) / len(r111_sim_latencies), 2)
+    r112_sim_latencies = sim_latencies[:119]
+    r112_ontology_sim_mean_ms = round(sum(r112_sim_latencies) / len(r112_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -17069,11 +17202,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-RADIOPHARMA-THERANOSTICS-LU177-AC225-HOTCELL-COI-320M-R113",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_decompose_anomalies() analyze targeted radiopharmaceutical (177Lu-PSMA-617 / 225Ac) automated hot-cell inline Radio-HPLC Cerenkov/UV radiochemical purity streams, HPGe gamma spectra, and exponential half-life flight-decay telemetry while Cosmos DB in Fabric SSD DiskANN indexes 320M+ DOTA-chelation kinetics, dual-scavenger radiolysis quenching vectors, and decay-aware Chain-of-Identity (CoI) routing tensors alongside Fabric Healthcare & Sustainability Data Solutions (HDS/SDS) FDA 21 CFR Part 212 RTRT ledgers and SQL Server on Azure Local (ALDO) at hot-cell edges; Azure HPC/Databricks GPU, AWS HealthLake/SiteWise, GCP Healthcare API, and Snowflake/SAP S/4HANA provide complementary Geant4 voxel dosimetry and isotope ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-amazon-healthlake.html",
+                "https://www.databricks.com/solutions/industries/healthcare-and-life-sciences",
+                "https://www.snowflake.com/en/solutions/industries/healthcare-and-life-sciences/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r112",
-        "generated_at": "2026-11-16T01:55:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r113",
+        "generated_at": "2026-11-16T02:10:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -17084,6 +17230,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R112 snapshot n=492 mean was 160.0ms; "
                     f"historical R111 snapshot n=488 mean was 161.0ms; "
                     f"historical R110 snapshot n=484 mean was 162.0ms; "
                     f"historical R109 snapshot n=480 mean was 163.0ms; "
@@ -17201,6 +17348,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R112 snapshot n=119 mean was {r112_ontology_sim_mean_ms}ms; "
                     f"historical R111 snapshot n=118 mean was {r111_ontology_sim_mean_ms}ms; "
                     f"historical R110 snapshot n=117 mean was {r110_ontology_sim_mean_ms}ms; "
                     f"historical R109 snapshot n=116 mean was {r109_ontology_sim_mean_ms}ms; "
@@ -17311,6 +17459,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r112_historical_denominators": {
+                    "r112_routing_matrix_n492_mean_ms": 160.0,
+                    "r112_ontology_simulations_n119_mean_ms": r112_ontology_sim_mean_ms,
+                },
                 "r111_historical_denominators": {
                     "r111_routing_matrix_n488_mean_ms": 161.0,
                     "r111_ontology_simulations_n118_mean_ms": r111_ontology_sim_mean_ms,
@@ -17813,6 +17965,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r112_119_simulation_mean_modeled_latency_ms": r112_ontology_sim_mean_ms,
             "r111_118_simulation_mean_modeled_latency_ms": r111_ontology_sim_mean_ms,
             "r110_117_simulation_mean_modeled_latency_ms": r110_ontology_sim_mean_ms,
             "r109_116_simulation_mean_modeled_latency_ms": r109_ontology_sim_mean_ms,

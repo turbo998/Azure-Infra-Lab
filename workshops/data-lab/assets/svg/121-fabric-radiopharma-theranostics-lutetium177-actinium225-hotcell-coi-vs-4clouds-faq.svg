@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg121" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="50%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#071F24"/>
+    </linearGradient>
+    <linearGradient id="gold121" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg121)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#10B981" stroke-width="2"/>
+  <rect x="58" y="48" width="320" height="26" rx="13" fill="url(#gold121)"/>
+  <text x="218" y="66" fill="#040814" font-size="11.5" font-weight="900" text-anchor="middle" letter-spacing="0.8">🏆 R113 · #120 ONTOLOGY &amp; 159.0ms (&lt;160ms!) MEAN</text>
+  <text x="394" y="66" fill="#F8FAFC" font-size="16" font-weight="800">靶向核药 (177Lu / 225Ac RLT) 铅屏蔽热室防辐射自解、在线 Radio-HPLC 与半衰期患者身份链 (CoI) 24ms 闭环</text>
+  <text x="58" y="100" fill="#94A3B8" font-size="12.5">Scenario DP · 16 座 cGMP 热室基地 (420 台全自动热室 + 380 套 Radio-HPLC/HPGe + 680 家核医学中心) × 980K EPS · 3.20 亿向量 (320M!) · 99.35% 放化纯度 &amp; 7.38GBq 精准给药</text>
+
+  <rect x="1156" y="46" width="226" height="64" rx="10" fill="#064E3B" stroke="#F59E0B" stroke-width="1.8"/>
+  <text x="1269" y="68" fill="#FDE68A" font-size="11.5" font-weight="800" text-anchor="middle">n=120 ONTOLOGIES &amp; 159.0ms!</text>
+  <text x="1269" y="95" fill="#FFFFFF" font-size="19" font-weight="900" text-anchor="middle">320M Vectors · 24ms</text>
+
+  <!-- Left Column -->
+  <rect x="40" y="138" width="430" height="470" rx="14" fill="#131B2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="60" y="168" fill="#F87171" font-size="14.5" font-weight="800">01 · 靶向核药 (RLT) 三大物理化学危机与传统死穴</text>
+
+  <rect x="58" y="184" width="394" height="126" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="206" fill="#FCA5A5" font-size="12.5" font-weight="800">① #11 铅屏蔽热室高活度辐射自解 (Radiolysis) 断链</text>
+  <text x="72" y="226" fill="#F8FAFC" font-size="11.5">• 活度浓度冲至 1.85 GBq/mL (&gt;1.10 上限)，水辐解产生海量 ·OH</text>
+  <text x="72" y="246" fill="#CBD5E1" font-size="11">• 羟基自由基打断 PSMA 多肽键，放化纯度 RCP 跌至 94.2% (&lt;97.0%)</text>
+  <text x="72" y="266" fill="#CBD5E1" font-size="11">• 游离 177Lu3+ / 225Ac3+ 注入体内直接富集骨髓引发重度骨髓衰竭</text>
+  <text x="72" y="286" fill="#F87171" font-size="11" font-weight="700">• 痛点：4 小时离线 iTLC 检验滞后直接错失当天唯一直飞航班！</text>
+
+  <rect x="58" y="322" width="394" height="132" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="344" fill="#FCA5A5" font-size="12.5" font-weight="800">② 指数衰变时钟 A(t)=A0·e^(-λt) 与跨洲航班延误失活</text>
+  <text x="72" y="364" fill="#F8FAFC" font-size="11.5">• 177Lu 半衰期仅 6.647 天 (保质期 72h)，每秒都在损失活度</text>
+  <text x="72" y="384" fill="#CBD5E1" font-size="11">• ZRH→ORD 航班延误 14 小时导致活度额外衰减 -5.90%</text>
+  <text x="72" y="404" fill="#CBD5E1" font-size="11">• 18 名患者床旁到院活度跌至 6.68 GBq (&lt;6.80 GBq 最低治疗窗)</text>
+  <text x="72" y="424" fill="#F87171" font-size="11" font-weight="700">• 痛点：$810K 救命孤儿核药直接沦为放射性废液，患者被迫停药！</text>
+
+  <rect x="58" y="466" width="394" height="126" rx="10" fill="#0F172A" stroke="#475569" stroke-width="1"/>
+  <text x="72" y="488" fill="#FBBF24" font-size="12.5" font-weight="800">③ 四云拼装栈的三重税负 ($248.1K/月 vs $14.1K/月)</text>
+  <text x="72" y="508" fill="#E2E8F0" font-size="11.5">• 写入税：980K EPS Radio-HPLC/HPGe/铅罐流月费 $176.5K</text>
+  <text x="72" y="528" fill="#E2E8F0" font-size="11.5">• 内存税：320M 全内存 DRAM 向量索引月耗 $37.5K</text>
+  <text x="72" y="548" fill="#E2E8F0" font-size="11.5">• 刷新税：Snowflake 60s 滞后 / 离线检验错失微流控抢救窗口</text>
+  <text x="72" y="570" fill="#34D399" font-size="11.5" font-weight="700">• Fabric 破局：$0/GB 写入税 + SSD DiskANN 省 92% 内存</text>
+
+  <!-- Center Column -->
+  <rect x="488" y="138" width="494" height="470" rx="14" fill="#0D1F33" stroke="#10B981" stroke-width="2"/>
+  <text x="508" y="168" fill="#34D399" font-size="14.5" font-weight="800">02 · Microsoft Fabric 24ms 核药防辐解与 CoI 闭环 (n=120!)</text>
+
+  <!-- Step 1 -->
+  <rect x="508" y="184" width="454" height="96" rx="10" fill="#112A45" stroke="#06B6D4" stroke-width="1.4"/>
+  <text x="524" y="205" fill="#67E8F9" font-size="12.5" font-weight="800">STEP 1 · Eventhouse KQL 980K EPS 色谱与衰变感知 (6 ms)</text>
+  <text x="524" y="225" fill="#F8FAFC" font-size="11.5">• $0/GB 写入税摄入 420 台热室、380 套 Radio-HPLC/HPGe 与铅罐流</text>
+  <text x="524" y="244" fill="#CBD5E1" font-size="11">• series_fit_line() 6ms 锁定 #11 热室 1.85 GBq/mL 辐解 (RCP=94.2%)</text>
+  <text x="524" y="263" fill="#34D399" font-size="11" font-weight="700">• 同时捕获 ZRH→ORD 延误 14h 使 18 份剂量预测活度跌至 6.68 GBq</text>
+
+  <!-- Step 2 -->
+  <rect x="508" y="292" width="454" height="104" rx="10" fill="#132F2B" stroke="#10B981" stroke-width="1.8"/>
+  <text x="524" y="313" fill="#6EE7B7" font-size="12.5" font-weight="800">STEP 2 · 6 跳核药孪生 &amp; 3.20 亿向量 SSD DiskANN 检索 (6 ms)</text>
+  <text x="524" y="333" fill="#F8FAFC" font-size="11.5">• 检索 320,000,000 (120大本体 &amp; 159.0ms均值!) 抗辐解与半衰期路由向量</text>
+  <text x="524" y="352" fill="#CBD5E1" font-size="11">• 相似度 0.99 (省 92% 内存)：抗坏血酸钠/龙胆酸双清除剂补加 +16.5%</text>
+  <text x="524" y="371" fill="#FDE68A" font-size="11" font-weight="700">• 稀释锁死 0.92 GBq/mL + 苏黎世批次转配欧洲 &amp; 纽瓦克 #04 热室补发</text>
+
+  <!-- Step 3 -->
+  <rect x="508" y="408" width="454" height="90" rx="10" fill="#172554" stroke="#3B82F6" stroke-width="1.4"/>
+  <text x="524" y="429" fill="#93C5FD" font-size="12.5" font-weight="800">STEP 3 · Foundry IQ FDA Part 212 放化与 CoI 护栏 SOP-120 (6 ms)</text>
+  <text x="524" y="449" fill="#F8FAFC" font-size="11.5">• 校验放化纯度 RCP 恢复 99.35% &gt;= 97.0% (游离核素 0.22%, 177mLu&lt;0.01%)</text>
+  <text x="524" y="468" fill="#CBD5E1" font-size="11">• 18 名美国患者床旁注射活度锁死 7.38 GBq ∈ [6.80, 8.00] GBq</text>
+  <text x="524" y="485" fill="#34D399" font-size="11" font-weight="700">• 0.00% 珍稀同位素报废 · 衰变池放射性废液零外排达标率 99.98%</text>
+
+  <!-- Step 4 -->
+  <rect x="508" y="510" width="454" height="84" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.4"/>
+  <text x="524" y="531" fill="#C4B5FD" font-size="12.5" font-weight="800">STEP 4 · Teams QP 受权人确认 + ALDO 边缘 + Part 212 RTRT (6 ms)</text>
+  <text x="524" y="551" fill="#F8FAFC" font-size="11.5">• 热室 ALDO 边缘下发 OPC-UA 微流泵补料与跨洲患者 CoI 激光重赋码</text>
+  <text x="524" y="570" fill="#34D399" font-size="11" font-weight="700">• 1GB 免费 SQL 签发 FDA Part 212 45min 实时放行证书 (24ms!)</text>
+
+  <!-- Right Column -->
+  <rect x="1000" y="138" width="400" height="470" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1020" y="168" fill="#60A5FA" font-size="14.5" font-weight="800">03 · 定量基准与五云零拷贝协同 (R113)</text>
+
+  <rect x="1018" y="184" width="364" height="142" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1032" y="206" fill="#34D399" font-size="12.5" font-weight="800">月度 TCO 对比 (省 94.3% · 净省 $234.0K/月!)</text>
+  <text x="1032" y="228" fill="#F8FAFC" font-size="11.5">• Microsoft Fabric 归一化：  $14,100 / 月 (基准最优)</text>
+  <rect x="1032" y="234" width="52" height="10" rx="5" fill="#10B981"/>
+  <text x="1032" y="258" fill="#CBD5E1" font-size="11.5">• 四云拼装栈归一化：         $248,100 / 月 (贵 17.6x)</text>
+  <rect x="1032" y="264" width="320" height="10" rx="5" fill="#EF4444"/>
+  <text x="1032" y="290" fill="#93C5FD" font-size="11">• 集团全量专用容量 (16 基地)：$40.3K vs $682.4K/月</text>
+  <text x="1032" y="310" fill="#FDE68A" font-size="11.5" font-weight="800">• 守护 SLA 风险敞口：        $38,650,000 (R113 里程碑!)</text>
+
+  <rect x="1018" y="338" width="364" height="126" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="1032" y="360" fill="#67E8F9" font-size="12.5" font-weight="800">双分母延迟基准 (sealed report.json R113)</text>
+  <text x="1032" y="382" fill="#F8FAFC" font-size="11.5">• 路由评估矩阵 (n=496)：     495 / 496 (99.80% 准确率)</text>
+  <text x="1032" y="402" fill="#FDE68A" font-size="11.5" font-weight="800">• 分母 A 路由矩阵算术均值：  159.0 ms (正式跌破160ms!)</text>
+  <text x="1032" y="422" fill="#FDE68A" font-size="11.5" font-weight="800">• 分母 B 120大行业本体均值： 143.0 ms (n=120 历史大关!)</text>
+  <text x="1032" y="442" fill="#CBD5E1" font-size="11">• Python 确定性单测套件：   244 / 244 (100% 通过)</text>
+
+  <rect x="1018" y="476" width="364" height="118" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1032" y="498" fill="#FBBF24" font-size="12.5" font-weight="800">Better Together 跨云零拷贝黄金分工</text>
+  <text x="1032" y="518" fill="#E2E8F0" font-size="11">• Azure HPC / Databricks：Geant4 蒙特卡洛体素剂量学仿真</text>
+  <text x="1032" y="538" fill="#E2E8F0" font-size="11">• Snowflake / SAP：176Yb/226Ra 靶材排期与医院结算 ERP</text>
+  <text x="1032" y="558" fill="#34D399" font-size="11" font-weight="700">• Fabric：OneLake 零拷贝挂载 + 24ms 热室与 CoI 实时控制面</text>
+  <text x="1032" y="578" fill="#94A3B8" font-size="10.5">• 官方规格引用：116 条 (新增 SPEC-RADIOPHARMA-RLT-R113)</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="624" width="1360" height="240" rx="14" fill="#0E192D" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="60" y="654" fill="#60A5FA" font-size="14.5" font-weight="800">04 · 靶向核药 (177Lu / 225Ac) 热室防辐解、能谱纯度与半衰期 CoI 三大物理护栏矩阵 (SOP-120 · 120-Ontology Milestone)</text>
+
+  <rect x="60" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="76" y="694" fill="#67E8F9" font-size="13" font-weight="800">① 铅屏蔽热室 DOTA 螯合与双清除剂抗辐射自解</text>
+  <text x="76" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：G(·OH)=2.8 水辐解自由基攻击 PSMA 靶向肽键</text>
+  <text x="76" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：1.85 GBq/mL 过浓使在线 Radio-HPLC RCP 跌至 94.2%</text>
+  <text x="76" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：抗坏血酸钠/龙胆酸 +16.5% + 稀释至 0.92 GBq/mL</text>
+  <text x="76" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：放化纯度锁死 99.35% &gt;= 97.0%，游离核素 0.22%</text>
+  <text x="76" y="800" fill="#94A3B8" font-size="11">• 放行提速：FDA Part 212 在线实时放行 (RTRT) 仅需 45 分钟</text>
+
+  <rect x="506" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#10B981" stroke-width="1.2"/>
+  <text x="522" y="694" fill="#6EE7B7" font-size="13" font-weight="800">② 半衰期衰变时钟 A(t)=A0·e^(-λt) 跨洲 CoI 重路由</text>
+  <text x="522" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：177Lu λ=0.00434 h⁻¹ 指数衰变不可逆倒计时</text>
+  <text x="522" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：ZRH→ORD 延误 14h 使 18 份剂量跌至 6.68 GBq</text>
+  <text x="522" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：苏黎世在途转配欧洲诊所 + 纽瓦克 #04 热室补发</text>
+  <text x="522" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：床旁注射活度精准命中 7.38 GBq ∈ [6.80, 8.00]</text>
+  <text x="522" y="800" fill="#94A3B8" font-size="11">• 资源效率：珍稀无载体 177Lu / 225Ac 核素 0.00% 延误报废</text>
+
+  <rect x="952" y="670" width="428" height="174" rx="10" fill="#091326" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="968" y="694" fill="#FBBF24" font-size="13" font-weight="800">③ HPGe 高纯锗能谱核纯度与衰变池零外排护照</text>
+  <text x="968" y="716" fill="#E2E8F0" font-size="11.5">• 核纯度核验：长半衰期亚稳态杂质 177mLu (160.4d) &lt; 0.005%</text>
+  <text x="968" y="736" fill="#E2E8F0" font-size="11.5">• 225Ac 核查：排除 227Ac (21.8y) 穿透以豁免医院长周期衰变池</text>
+  <text x="968" y="756" fill="#E2E8F0" font-size="11.5">• 负压安全：热室 -150Pa 压差与活性炭捕集 + 衰变池 99.98% 闭环</text>
+  <text x="968" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：1GB 免费 SQL 签发 NRC 与 Part 212 电子批记录</text>
+  <text x="968" y="800" fill="#FDE68A" font-size="11" font-weight="700">• 七冠里程碑：120 大本体 · 159.0ms 均值 · 省 94.3% TCO</text>
+</svg>

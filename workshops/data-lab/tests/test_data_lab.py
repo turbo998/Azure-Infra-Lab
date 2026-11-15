@@ -1695,13 +1695,27 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 26)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 38300000)
 
-    def test_scenario_matrix_492_cases_and_explicit_miss(self) -> None:
+    def test_global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["automated_lead_hot_cells_count"], 420)
+        self.assertEqual(sim["telemetry"]["radio_hplc_hpge_leadpig_ingestion_eps"], 980000)
+        self.assertEqual(sim["telemetry"]["radiolysis_hpge_and_coi_vectors_indexed_count"], 320000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_radiopharma_tco_saved_usd"], 234000)
+        self.assertTrue(sim["foundry_iq_guardrail"]["hotcell_radiochemical_purity_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["decay_aware_bedside_coi_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 24)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 38650000)
+
+    def test_scenario_matrix_496_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 492)
-        self.assertEqual(matrix["passed_scenarios"], 491)
+        self.assertEqual(matrix["total_scenarios"], 496)
+        self.assertEqual(matrix["passed_scenarios"], 495)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.80, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 160.0)
+        self.assertEqual(matrix["avg_latency_ms"], 159.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2993,6 +3007,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-94.2% TCO", by_id["DL-491"]["expected"])
         self.assertIn("Protect $38.30M SLA", by_id["DL-492"]["expected"])
 
+    def test_fabric_radiopharma_theranostics_lutetium177_actinium225_hotcell_coi_vs_4clouds_2026_11_16_r113_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-493", "DL-494", "DL-495", "DL-496"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("6ms Inline Radio-HPLC, HPGe & Flight Decay Sense", by_id["DL-493"]["expected"])
+        self.assertIn("Geant4/MCNP voxel dosimetry", by_id["DL-494"]["expected"])
+        self.assertIn("-94.3% TCO", by_id["DL-495"]["expected"])
+        self.assertIn("Protect $38.65M SLA", by_id["DL-496"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3010,11 +3035,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 491)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 492)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 160.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 119)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 144.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 495)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 496)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 159.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 120)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 143.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r112_119_simulation_mean_modeled_latency_ms"], 144.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r111_118_simulation_mean_modeled_latency_ms"], 145.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r110_117_simulation_mean_modeled_latency_ms"], 146.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r109_116_simulation_mean_modeled_latency_ms"], 147.0)
@@ -3119,7 +3145,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 115)
+        self.assertEqual(len(refs), 116)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15"))
@@ -3240,6 +3266,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_reusable_methalox_rocket_fabric_ffsc_preburner_turbopump_plume_oes_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_sodium_ion_battery_fabric_prussian_white_hard_carbon_plating_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_subsea_hvdc_cable_fabric_vcv_extrusion_methane_degassing_pd_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_radiopharma_theranostics_fabric_lutetium177_actinium225_hotcell_coi_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
