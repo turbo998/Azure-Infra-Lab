@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+community_path,Dynamic community selection path,1344,1220,synthetic,deterministic model
+mutation_path,Temporal mutation path,1256,1132,synthetic,deterministic model
+hybrid_path,Hybrid vector-graph path,1168,1043,synthetic,deterministic model
+baseline_path,Full-rebuild baseline path,905,793,synthetic,deterministic model

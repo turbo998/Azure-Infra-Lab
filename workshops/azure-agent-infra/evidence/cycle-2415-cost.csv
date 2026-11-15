@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Direct RFC pattern,1.04,1000000,1.04,synthetic,relative cost model
+Logic Apps Standard pattern,1.28,1000000,1.28,synthetic,relative cost model
+RPA fallback pattern,1.62,1000000,1.62,synthetic,relative cost model
+Manual baseline,1.0,1000000,1.0,anonymized_reported,legacy operations baseline

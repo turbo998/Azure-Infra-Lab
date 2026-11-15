@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Azure API Management policy reference",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-policies",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Cosmos DB hierarchical partition keys",
+    "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/hierarchical-partition-keys",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Search security trimming",
+    "url": "https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Key Vault customer managed keys",
+    "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/customer-managed-keys-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "AKS network policy",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/use-network-policies",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

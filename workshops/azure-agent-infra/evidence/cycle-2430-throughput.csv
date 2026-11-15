@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+incidents_triaged_per_hour,tier1 triage throughput,178,163,measured,triage load benchmark
+sandbox_artifact_verdicts_per_hour,detonation verdict throughput,693,641,anonymized_reported,sandbox replay sample
+kql_hypothesis_graphs_per_hour,tier2 hypothesis throughput,244,219,synthetic,hunt simulation
+soar_containment_actions_per_hour,risk-tiered containment throughput,312,281,measured,soar workflow benchmark

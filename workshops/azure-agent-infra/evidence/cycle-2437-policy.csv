@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+AC-OPF thermal/voltage violation hard block,200,200,1.0,measured,deterministic OPF constraint replay
+NERC-CIP ESP/DMZ boundary unauthorized control block,193,198,0.9747,measured,ESP boundary simulation replay
+market bid outlier dampening gate,166,173,0.9595,measured,bidding outlier replay set

@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+pmu_ami_ingest,Sub-second PMU + smart-meter ingest lane,13840,11780,anonymized_reported,anonymized ADX ingest replay
+acopf_solver_runs,Pandapower AC-OPF solver lane,1220,980,synthetic,deterministic OPF batch model
+market_bid_pipeline,Day-ahead + real-time bidding decision lane,2840,2310,synthetic,deterministic bidding replay profile
+outage_crew_dispatch,Outage crew routing recommendation lane,1720,1450,anonymized_reported,anonymized outage dispatch replay

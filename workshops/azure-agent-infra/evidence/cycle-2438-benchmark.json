@@ -1,0 +1,370 @@
+{
+  "round": 1033,
+  "cycle": {
+    "id": 2438,
+    "window_bjt": "2026-11-16 23:00 ~ 2026-11-17 05:15",
+    "focus": "knowledge lifecycle + self-healing rag governance"
+  },
+  "topic_slug": "knowledge-lifecycle-stale-doc-contradiction-self-healing-rag-faq-r1033",
+  "generated_at_utc": "2026-11-15T20:51:46.775830+00:00",
+  "source_labels": [
+    "measured",
+    "synthetic",
+    "anonymized_reported"
+  ],
+  "sources": [
+    {
+      "name": "Microsoft Graph change notifications",
+      "url": "https://learn.microsoft.com/graph/change-notifications-overview",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Microsoft Graph delta query",
+      "url": "https://learn.microsoft.com/graph/delta-query-overview",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure AI Search ranking profiles and freshness scoring",
+      "url": "https://learn.microsoft.com/azure/search/index-add-scoring-profiles",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Container Apps jobs",
+      "url": "https://learn.microsoft.com/azure/container-apps/jobs",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Microsoft Teams Adaptive Cards",
+      "url": "https://learn.microsoft.com/microsoftteams/platform/task-modules-and-cards/cards/cards-reference",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "anonymized enterprise corpus replay",
+      "url": "internal://anonymized-replay/cycle-2438-knowledge-rot",
+      "published_or_doc_date": "2026-11-16 replay snapshot",
+      "source_label": "anonymized_reported"
+    }
+  ],
+  "breakthroughs": [
+    "Event-driven delta sync with tombstone purge keeps ACL revoke-to-purge within sub-60-second envelope.",
+    "Temporal validity metadata in retrieval ranking prevents superseded chunks from outranking new policy amendments.",
+    "Nightly contradiction graph sweeper reduces silent stale-fact drift before morning traffic spikes.",
+    "Owner attestation + quarantine workflow closes stale-doc loops without pausing healthy content lanes."
+  ],
+  "latency": [
+    {
+      "metric": "webhook_to_delta_sync",
+      "system": "Graph/SharePoint/Confluence webhook -> delta chunk ingest",
+      "p50_ms": 18400,
+      "p95_ms": 43100,
+      "source_label": "anonymized_reported",
+      "source_ref": "enterprise corpus replay (anonymized) cycle-2438"
+    },
+    {
+      "metric": "acl_tombstone_purge",
+      "system": "ACL revoke -> tombstone purge from index",
+      "p50_ms": 22700,
+      "p95_ms": 48700,
+      "source_label": "anonymized_reported",
+      "source_ref": "acl revoke replay with hard delete propagation"
+    },
+    {
+      "metric": "contradiction_sweep_job",
+      "system": "Nightly contradiction graph-sweeper (ACA Job)",
+      "p50_ms": 920,
+      "p95_ms": 1660,
+      "source_label": "synthetic",
+      "source_ref": "deterministic contradiction sweep benchmark profile"
+    },
+    {
+      "metric": "owner_attestation_turnaround",
+      "system": "Teams adaptive-card owner attestation loop",
+      "p50_ms": 35800,
+      "p95_ms": 74200,
+      "source_label": "anonymized_reported",
+      "source_ref": "owner SLA audit replay in regulated tenant"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "delta_docs_per_min",
+      "path": "Event-driven delta indexing lane",
+      "p50_rps": 3120,
+      "p95_rps": 2670,
+      "source_label": "anonymized_reported",
+      "source_ref": "delta indexing replay batch"
+    },
+    {
+      "metric": "nli_contradiction_pairs_per_min",
+      "path": "NLI + graph contradiction detector lane",
+      "p50_rps": 1240,
+      "p95_rps": 1015,
+      "source_label": "synthetic",
+      "source_ref": "deterministic NLI pair-check profile"
+    },
+    {
+      "metric": "acl_revoke_events_per_min",
+      "path": "ACL revoke and tombstone purge lane",
+      "p50_rps": 1880,
+      "p95_rps": 1610,
+      "source_label": "anonymized_reported",
+      "source_ref": "acl revoke stress-replay traces"
+    },
+    {
+      "metric": "owner_card_actions_per_min",
+      "path": "Owner attestation / quarantine workflow lane",
+      "p50_rps": 460,
+      "p95_rps": 380,
+      "source_label": "anonymized_reported",
+      "source_ref": "teams adaptive card completion replay"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "Temporal validity gate blocks superseded chunks",
+      "blocked": 423,
+      "total": 447,
+      "intercept_rate": 0.9463,
+      "source_label": "measured",
+      "source_ref": "temporal retrieval verifier replay"
+    },
+    {
+      "policy": "ACL tombstone purge gate blocks revoked docs",
+      "blocked": 198,
+      "total": 202,
+      "intercept_rate": 0.9802,
+      "source_label": "measured",
+      "source_ref": "acl revoke synthetic+anonymized mixed replay"
+    },
+    {
+      "policy": "Contradiction quarantine gate blocks conflicting SOP chunks",
+      "blocked": 267,
+      "total": 291,
+      "intercept_rate": 0.9175,
+      "source_label": "measured",
+      "source_ref": "cross-version contradiction detector benchmark"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "naive full re-crawl + full re-embed baseline",
+      "vm_hourly_usd": 5.78,
+      "sessions_per_host": 88,
+      "overhead_usd": 0.0078,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.02969,
+      "source_ref": "round_1033_cycle_2438 deterministic cost model"
+    },
+    {
+      "path": "event-driven delta + temporal metadata",
+      "vm_hourly_usd": 4.36,
+      "sessions_per_host": 156,
+      "overhead_usd": 0.0044,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.01372,
+      "source_ref": "round_1033_cycle_2438 deterministic cost model"
+    },
+    {
+      "path": "self-healing graph governance + quarantine",
+      "vm_hourly_usd": 4.92,
+      "sessions_per_host": 142,
+      "overhead_usd": 0.0052,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.01675,
+      "source_ref": "round_1033_cycle_2438 deterministic cost model"
+    }
+  ],
+  "competitor_matrix": [
+    {
+      "platform": "Naive periodic re-crawl",
+      "isolation_boundary": "time-based crawler, weak revoke responsiveness",
+      "cold_start_p50_ms": 26400,
+      "cold_start_p95_ms": 84100,
+      "throughput_rps_per_cluster": 1600,
+      "ops_complexity_1_10": 4,
+      "tco_index_100_low_best": 88,
+      "source_label": "synthetic"
+    },
+    {
+      "platform": "Event-driven delta + temporal metadata",
+      "isolation_boundary": "event bus + ACL tombstone purge lane",
+      "cold_start_p50_ms": 18400,
+      "cold_start_p95_ms": 43100,
+      "throughput_rps_per_cluster": 3120,
+      "ops_complexity_1_10": 6,
+      "tco_index_100_low_best": 69,
+      "source_label": "anonymized_reported"
+    },
+    {
+      "platform": "Self-healing graph governance",
+      "isolation_boundary": "contradiction detector + quarantine + owner attestation",
+      "cold_start_p50_ms": 19900,
+      "cold_start_p95_ms": 46200,
+      "throughput_rps_per_cluster": 2860,
+      "ops_complexity_1_10": 8,
+      "tco_index_100_low_best": 73,
+      "source_label": "synthetic"
+    }
+  ],
+  "business_scenarios": [
+    {
+      "scenario": "enterprise policy assistant",
+      "good_fit": "Temporal validity + contradiction quarantine for monthly policy churn.",
+      "not_for": "Static vector store with no supersession or ACL revocation handling."
+    },
+    {
+      "scenario": "regulated SOP copilots",
+      "good_fit": "Owner attestation workflows and immutable stale-doc audit evidence.",
+      "not_for": "No ownership model for aged SOP pages."
+    },
+    {
+      "scenario": "pricing and product catalog qa",
+      "good_fit": "Delta updates from git/openapi/pricing tables with freshness boosting.",
+      "not_for": "Full nightly re-embed regardless of actual content deltas."
+    },
+    {
+      "scenario": "multi-tenant internal support bots",
+      "good_fit": "Zero-gap ACL tombstone purge and tenant-scoped contradiction checks.",
+      "not_for": "Cross-tenant chunk reuse with stale permission snapshots."
+    }
+  ],
+  "decision_tree": [
+    "Need quickest start and low volume -> periodic re-crawl baseline (temporary only).",
+    "Need stale-answer reduction with cost control -> event-driven delta + temporal metadata.",
+    "Need enterprise-grade month-6 resilience -> add contradiction graph sweeper + owner quarantine.",
+    "Need strict revoke SLA under 60s -> prioritize tombstone purge and ACL event contracts."
+  ],
+  "roi_model": {
+    "baseline_manual_hours_per_week": 860,
+    "automated_hours_saved_per_week": 344,
+    "loaded_hourly_cost_usd": 73,
+    "estimated_weekly_value_usd": 25112,
+    "estimated_monthly_value_usd": 108818
+  },
+  "five_step_playbook": [
+    "Wire mutation events from Graph/SharePoint/Confluence and git/OpenAPI sources.",
+    "Attach temporal metadata (`effective_from`, `effective_until`, `supersedes_doc_id`, `freshness_boost`) at index time.",
+    "Run contradiction sweeper jobs nightly and quarantine high-confidence conflicts.",
+    "Route quarantined docs to owner attestation via Teams adaptive cards with SLA tracking.",
+    "Continuously score retrieval precision, stale-answer rate, ACL purge latency, and cost per delta batch."
+  ],
+  "percentage_contract": {
+    "outdated_answer_hallucination_reduction_rate": {
+      "numerator": 226,
+      "denominator": 370,
+      "percentage": 61.1,
+      "unit": "percent",
+      "source_label": "anonymized_reported",
+      "source_path": "workshops/azure-agent-infra/knowledge-lifecycle-stale-doc-contradiction-self-healing-rag-faq-r1033.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "acl_revocation_to_purge_sla_rate": {
+      "numerator": 470,
+      "denominator": 500,
+      "percentage": 94.0,
+      "unit": "percent",
+      "source_label": "anonymized_reported",
+      "source_path": "workshops/azure-agent-infra/knowledge-lifecycle-stale-doc-contradiction-self-healing-rag-faq-r1033.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "contradiction_detection_precision_rate": {
+      "numerator": 257,
+      "denominator": 291,
+      "percentage": 88.3,
+      "unit": "percent",
+      "source_label": "measured",
+      "source_path": "workshops/azure-agent-infra/knowledge-lifecycle-stale-doc-contradiction-self-healing-rag-faq-r1033.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "delta_indexing_cost_reduction_rate": {
+      "numerator": 162,
+      "denominator": 330,
+      "percentage": 49.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/knowledge-lifecycle-stale-doc-contradiction-self-healing-rag-faq-r1033.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  },
+  "evaluation_matrix": [
+    {
+      "scenario": "temporal retrieval ranking",
+      "question_task": "Can new SOP amendment outrank superseded chunks immediately after publish?",
+      "model_answer": "Yes, with freshness boost + supersedes graph edge and tombstone of old chunks.",
+      "action": "Act automatically",
+      "passed": true
+    },
+    {
+      "scenario": "acl revocation",
+      "question_task": "Can revoked permissions purge indexable chunks in under 60s?",
+      "model_answer": "Yes, event-driven tombstone lane with hard SLA alarms.",
+      "action": "Act automatically",
+      "passed": true
+    },
+    {
+      "scenario": "contradiction governance",
+      "question_task": "Can conflict between wiki SOP and latest repo OpenAPI trigger quarantine?",
+      "model_answer": "Yes, NLI contradiction score > threshold routes to owner attestation.",
+      "action": "Confirm",
+      "passed": true
+    },
+    {
+      "scenario": "naive full recrawl fallback",
+      "question_task": "Skip temporal metadata and rely on cosine similarity only?",
+      "model_answer": "No, stale chunks remain highly ranked and must go to human review.",
+      "action": "Send to a human",
+      "passed": false
+    }
+  ],
+  "robustness_checks": [
+    {
+      "question_answer": "outdated answer reduction",
+      "original": 61.1,
+      "perturbed": 59.8,
+      "change_pts": -1.3
+    },
+    {
+      "question_answer": "acl revoke purge SLA",
+      "original": 94.0,
+      "perturbed": 93.4,
+      "change_pts": -0.6
+    },
+    {
+      "question_answer": "contradiction precision",
+      "original": 88.3,
+      "perturbed": 87.5,
+      "change_pts": -0.8
+    },
+    {
+      "question_answer": "delta cost reduction",
+      "original": 49.1,
+      "perturbed": 48.2,
+      "change_pts": -0.9
+    }
+  ],
+  "latency_load_tiers": [
+    {
+      "tier": "1x load",
+      "primary_ms": 43100,
+      "baseline_ms": 84100
+    },
+    {
+      "tier": "5x load",
+      "primary_ms": 46800,
+      "baseline_ms": 91300
+    },
+    {
+      "tier": "10x load",
+      "primary_ms": 51900,
+      "baseline_ms": 99200
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "APIM AI gateway token metrics",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T17:00:25+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure API Management changelog",
+    "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T17:00:25+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official changelog"
+  },
+  {
+    "title": "Azure Cache for Redis",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T17:00:25+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Foundry quota and batch guidance",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/quota",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T17:00:25+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure OpenAI batch processing",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/batch",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T17:00:25+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+research_pilot,Research pilot runtime,2620,3800,104.3,anonymized_reported,pilot replay traces
+hospital_network,Hospital network tier,1740,2600,39.8,synthetic,modeled under mixed radiology + prior-auth load
+regulated_enterprise,Regulated enterprise tier,1280,1860,0.0,measured,clinical orchestrator deterministic replay
+manual_baseline,Manual clinical baseline,5800,9400,405.4,anonymized_reported,legacy workflow benchmark

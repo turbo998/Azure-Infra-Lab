@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure Health Data Services overview",
+    "url": "https://learn.microsoft.com/en-us/azure/healthcare-apis/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:25:45.560643+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "FHIR service in Azure Health Data Services",
+    "url": "https://learn.microsoft.com/en-us/azure/healthcare-apis/fhir/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:25:45.560643+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "DICOM service in Azure Health Data Services",
+    "url": "https://learn.microsoft.com/en-us/azure/healthcare-apis/dicom/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:25:45.560643+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Health De-identification Service overview",
+    "url": "https://learn.microsoft.com/en-us/azure/healthcare-apis/deidentification/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:25:45.560643+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "SMART on FHIR authorization and scopes",
+    "url": "https://learn.microsoft.com/en-us/azure/healthcare-apis/fhir/smart-on-fhir",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:25:45.560643+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Microsoft healthcare AI model references",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:25:45.560643+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs and model catalog references"
+  }
+]

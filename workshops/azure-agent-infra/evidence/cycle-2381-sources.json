@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Kueue overview",
+    "url": "https://kueue.sigs.k8s.io/docs/overview/",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:08:32+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Kubernetes Service docs",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:08:32+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "AKS node auto provisioning / autoscaling guidance",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/cluster-autoscaler-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:08:32+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "KubeRay docs",
+    "url": "https://docs.ray.io/en/latest/cluster/kubernetes/index.html",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:08:32+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "vLLM repository",
+    "url": "https://github.com/vllm-project/vllm",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:08:32+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official repository"
+  },
+  {
+    "title": "NVIDIA MIG user guide",
+    "url": "https://docs.nvidia.com/datacenter/tesla/mig-user-guide/",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:08:32+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

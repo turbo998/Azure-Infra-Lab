@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+sell_side_research,Sell-side research desk runtime,910,1420,65.1,anonymized_reported,desk replay baseline
+buy_side_quant,Buy-side quant portfolio lane,690,1080,25.6,synthetic,modeled with deterministic verifier chain
+regulated_institution,Regulated institution tier,420,860,0.0,measured,event-driven quant pipeline replay
+manual_baseline,Manual research baseline,2700,4900,469.8,anonymized_reported,legacy workflow benchmark

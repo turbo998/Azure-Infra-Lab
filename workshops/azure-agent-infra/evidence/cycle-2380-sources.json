@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure Durable Functions overview",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:03:47+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure Cosmos DB documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:03:47+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Cache for Redis documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:03:47+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Functions reliability guidance",
+    "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-functions",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T16:03:47+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Cosmos DB reliability guidance",
+    "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-cosmos-db-nosql",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T16:03:47+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:03:47+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  }
+]

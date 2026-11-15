@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+batch verification accuracy,992,1000,0.992,measured,verification logs
+preemption recovery success,961,1000,0.961,measured,checkpoint replay logs
+overnight completion sla meet,953,1000,0.953,measured,orchestration logs

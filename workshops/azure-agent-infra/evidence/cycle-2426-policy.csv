@@ -1,0 +1,5 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+gpu-hour reduction vs brute-force,968,1000,0.968,measured,cost delta suite
+amlfs checkpoint throughput improvement,2140,1000,2.14,anonymized_reported,throughput benchmark
+invalid candidate rejection rate,957,1000,0.957,synthetic,validity gate benchmark
+slurm long-horizon resume reliability,982,1000,0.982,measured,resume reliability suite

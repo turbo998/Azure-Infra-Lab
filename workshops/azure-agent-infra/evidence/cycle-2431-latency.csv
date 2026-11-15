@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+edge_inference_latency,store-edge shelf VLM lane,82,168,0.0,anonymized_reported,edge replay benchmark
+oos_to_restock_loop_latency,detection to replenishment decision loop,124,212,0.0,synthetic,closed-loop simulation
+erp_gate_admission_latency,purchase-order gate lane,66,141,0.0,measured,erp gate replay suite
+legacy_cloud_only_latency,centralized vision baseline,290,670,0.0,anonymized_reported,legacy centralized baseline

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Microsoft Planetary Computer Pro",
+    "url": "https://planetarycomputer.microsoft.com/docs/overview/about/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "COG and TiTiler references",
+    "url": "https://developmentseed.org/titiler/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Database for PostgreSQL with PostGIS",
+    "url": "https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-postgis",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "H3 geospatial indexing",
+    "url": "https://h3geo.org/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Maps route service",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-maps/how-to-use-best-practices-for-routing",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "OR-Tools routing solver",
+    "url": "https://developers.google.com/optimization/routing",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  }
+]

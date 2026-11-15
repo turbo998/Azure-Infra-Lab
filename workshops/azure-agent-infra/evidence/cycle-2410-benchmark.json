@@ -1,0 +1,224 @@
+{
+  "cycle": {
+    "id": 2410,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "High-throughput batch and offline document/codebase sweeping agent swarms on Azure",
+    "generated_at_utc": "2026-11-15T18:10:06+00:00",
+    "topic_slug": "high-throughput-batch-sweeping-agent-swarms-acajobs-kueue-foundrybatch-faq-r1005"
+  },
+  "generated_at_utc": "2026-11-15T18:10:06+00:00",
+  "topic_slug": "high-throughput-batch-sweeping-agent-swarms-acajobs-kueue-foundrybatch-faq-r1005",
+  "breakthrough_focus": [
+    "Batch-first architecture can meet overnight 10M-item goals with lower unit cost",
+    "Queue-aware scaling plus verifier lag controls improves fan-out stability",
+    "Spot preemption overhead can be bounded through shard checkpoint leasing"
+  ],
+  "architecture_impacts": [
+    "Foundry batch and realtime spillover should be jointly policy-governed",
+    "Idempotent shard checkpoints are mandatory for spot-heavy fleets",
+    "Verification throughput is the dominant hidden bottleneck under burst loads"
+  ],
+  "sources": [
+    {
+      "title": "Azure OpenAI and Foundry Batch processing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/batch",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Container Apps jobs",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/jobs",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "KEDA scaling with Azure Service Bus",
+      "url": "https://keda.sh/docs/latest/scalers/azure-service-bus/",
+      "published_or_doc_date": "scaler reference",
+      "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+      "source_label": "measured",
+      "notes": "upstream keda docs"
+    },
+    {
+      "title": "Kueue batch scheduler",
+      "url": "https://kueue.sigs.k8s.io/docs/overview/",
+      "published_or_doc_date": "project docs",
+      "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+      "source_label": "synthetic",
+      "notes": "upstream docs"
+    },
+    {
+      "title": "AKS spot node pools",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/spot-node-pool",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "foundry_batch_primary",
+      "system": "Foundry Batch primary + realtime spillover",
+      "p50_ms": 4.2,
+      "p95_ms": 5.6,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "overnight drill"
+    },
+    {
+      "metric": "aks_kueue_spot",
+      "system": "AKS Kueue spot vLLM primary",
+      "p50_ms": 3.8,
+      "p95_ms": 4.9,
+      "overhead_pct_vs_target": -12.5,
+      "source_label": "anonymized_reported",
+      "source_ref": "drill+reported"
+    },
+    {
+      "metric": "aca_jobs_blend",
+      "system": "ACA Jobs queue-driven CPU/GPU blend",
+      "p50_ms": 4.8,
+      "p95_ms": 6.4,
+      "overhead_pct_vs_target": 14.3,
+      "source_label": "measured",
+      "source_ref": "overnight drill"
+    },
+    {
+      "metric": "legacy_fixed_workers",
+      "system": "Legacy fixed worker baseline",
+      "p50_ms": 8.9,
+      "p95_ms": 11.8,
+      "overhead_pct_vs_target": 110.7,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "foundry_batch_primary",
+      "path": "Foundry batch + spillover",
+      "p50_rps": 2120000,
+      "p95_rps": 1960000,
+      "source_label": "synthetic",
+      "source_ref": "modeled throughput"
+    },
+    {
+      "metric": "aks_kueue_spot",
+      "path": "AKS Kueue spot vLLM",
+      "p50_rps": 2420000,
+      "p95_rps": 2190000,
+      "source_label": "synthetic",
+      "source_ref": "modeled throughput"
+    },
+    {
+      "metric": "aca_jobs_blend",
+      "path": "ACA jobs blend",
+      "p50_rps": 1850000,
+      "p95_rps": 1720000,
+      "source_label": "synthetic",
+      "source_ref": "modeled throughput"
+    },
+    {
+      "metric": "legacy_fixed_workers",
+      "path": "Legacy fixed workers",
+      "p50_rps": 960000,
+      "p95_rps": 840000,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "batch verification accuracy",
+      "blocked": 992,
+      "total": 1000,
+      "intercept_rate": 0.992,
+      "source_label": "measured",
+      "source_ref": "verification logs"
+    },
+    {
+      "policy": "preemption recovery success",
+      "blocked": 961,
+      "total": 1000,
+      "intercept_rate": 0.961,
+      "source_label": "measured",
+      "source_ref": "checkpoint replay logs"
+    },
+    {
+      "policy": "overnight completion sla meet",
+      "blocked": 953,
+      "total": 1000,
+      "intercept_rate": 0.953,
+      "source_label": "measured",
+      "source_ref": "orchestration logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Foundry batch + spillover",
+      "compute_hour_usd": 360.64,
+      "resolved_queries_per_hour": 1960000,
+      "index_token_cost_per_1k_queries": 184.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "AKS Kueue spot vLLM",
+      "compute_hour_usd": 308.79,
+      "resolved_queries_per_hour": 2190000,
+      "index_token_cost_per_1k_queries": 141.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "ACA jobs blend",
+      "compute_hour_usd": 288.96,
+      "resolved_queries_per_hour": 1720000,
+      "index_token_cost_per_1k_queries": 168.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Legacy fixed workers",
+      "compute_hour_usd": 220.08,
+      "resolved_queries_per_hour": 840000,
+      "index_token_cost_per_1k_queries": 262.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "batch_verification_accuracy_rate": {
+      "numerator": 992,
+      "denominator": 1000,
+      "percentage": 99.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/high-throughput-batch-sweeping-agent-swarms-acajobs-kueue-foundrybatch-faq-r1005.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "preemption_recovery_success_rate": {
+      "numerator": 961,
+      "denominator": 1000,
+      "percentage": 96.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/high-throughput-batch-sweeping-agent-swarms-acajobs-kueue-foundrybatch-faq-r1005.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "overnight_completion_sla_meet_rate": {
+      "numerator": 953,
+      "denominator": 1000,
+      "percentage": 95.3,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/high-throughput-batch-sweeping-agent-swarms-acajobs-kueue-foundrybatch-faq-r1005.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

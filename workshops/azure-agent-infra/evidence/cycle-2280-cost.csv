@@ -1,0 +1,5 @@
+path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
+E2B D96as_v7 Firecracker,5.408,449,20,0.00079,0.0048,synthetic,deterministic cost model
+AKS Kata Pod VM fleet,3.21,149,20,0.00151,0.00869,synthetic,deterministic cost model
+ACA Dynamic Sessions,2.85,128,20,0.00105,0.00847,synthetic,deterministic cost model
+Wasm component sandbox,1.2,278,20,0.00038,0.00182,synthetic,deterministic cost model

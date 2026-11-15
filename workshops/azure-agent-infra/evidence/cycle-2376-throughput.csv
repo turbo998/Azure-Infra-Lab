@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+private_tool_calls,Private agent tool call lane,992,884,synthetic,deterministic model
+resolver_lane,Private DNS resolution lane,2640,2418,synthetic,deterministic model
+firewall_policy_lane,Firewall FQDN/TLS inspection lane,1234,1110,synthetic,deterministic model
+policy_guardlane,NSP perimeter governance lane,1178,1064,synthetic,deterministic model

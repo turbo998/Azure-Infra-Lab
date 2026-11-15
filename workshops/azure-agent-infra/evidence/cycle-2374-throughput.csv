@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+command_lane,Service Bus command lane,892,774,synthetic,deterministic model
+pull_lane,Event Grid Namespace pull lane,1262,1116,synthetic,deterministic model
+telemetry_lane,Event Hubs telemetry lane,3188,2974,synthetic,deterministic model
+policy_guardlane,KEDA + queue lag guardlane,1411,1238,synthetic,deterministic model

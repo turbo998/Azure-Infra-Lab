@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+framework_lane,Agent Framework deterministic graph lane,1018,894,synthetic,deterministic model
+threads_lane,Foundry managed threads lane,1268,1132,synthetic,deterministic model
+selfhost_lane,LangGraph self-hosted orchestration lane,842,736,synthetic,deterministic model
+policy_guardlane,Runtime policy custody guardlane,1177,1056,synthetic,deterministic model

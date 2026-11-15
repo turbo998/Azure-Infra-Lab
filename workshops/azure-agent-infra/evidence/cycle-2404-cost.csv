@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Target path,15.07,2634,5.72,synthetic,deterministic finops model
+No OT split path,12.68,2481,5.11,synthetic,deterministic finops model
+OPC relay path,11.9,1836,6.48,synthetic,deterministic finops model
+Historian baseline,8.97,904,9.92,synthetic,deterministic finops model

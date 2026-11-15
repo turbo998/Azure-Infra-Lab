@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Azure Event Grid MQTT broker overview",
+    "url": "https://learn.microsoft.com/azure/event-grid/mqtt-overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Maps Route API",
+    "url": "https://learn.microsoft.com/azure/azure-maps/how-to-use-best-practices-for-routing",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Data Explorer ingestion and query",
+    "url": "https://learn.microsoft.com/azure/data-explorer/ingest-data-overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "ISO 26262 and UNECE R155 safety/cyber controls mapping",
+    "url": "https://unece.org/transport/vehicle-regulations/wp29-introduction",
+    "published_or_doc_date": "regulatory overview (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "anonymized SDV fleet telemetry replay",
+    "url": "internal://anonymized-replay/cycle-2435-sdv",
+    "published_or_doc_date": "2026-11-16 replay snapshot",
+    "source_label": "anonymized_reported"
+  }
+]

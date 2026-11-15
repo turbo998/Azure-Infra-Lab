@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Microsoft Entra workload identities overview",
+    "url": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "OAuth 2.0 On-Behalf-Of flow",
+    "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure AI Search security trimming",
+    "url": "https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Key Vault Private Link",
+    "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/private-link-service",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure Private Link overview",
+    "url": "https://learn.microsoft.com/en-us/azure/private-link/private-link-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "E2B releases",
+    "url": "https://github.com/e2b-dev/e2b/releases",
+    "published_or_doc_date": "2026-11-04",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "release comparator"
+  },
+  {
+    "title": "Wasmtime releases",
+    "url": "https://github.com/bytecodealliance/wasmtime/releases",
+    "published_or_doc_date": "2026-10-29",
+    "fetched_at_utc": "2026-11-15T15:27:06+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "runtime comparator"
+  }
+]

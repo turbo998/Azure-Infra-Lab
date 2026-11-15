@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure API Management changelog",
+    "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+    "published_or_doc_date": "2026-06",
+    "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+    "source_label": "measured",
+    "notes": "official changelog"
+  },
+  {
+    "title": "MCP Protocol specification",
+    "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+    "published_or_doc_date": "2025-06-18",
+    "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official spec"
+  },
+  {
+    "title": "Agent2Agent protocol repository",
+    "url": "https://github.com/google/A2A",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official repository"
+  },
+  {
+    "title": "Azure Front Door WAF documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure Kubernetes Service documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  }
+]

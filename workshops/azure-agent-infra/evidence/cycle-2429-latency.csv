@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+failover_decision_latency,APIM regional failover lane,88,172,0.0,measured,failover replay suite
+state_replay_recovery_latency,event replay and session recovery lane,231,486,1.9,anonymized_reported,replay stress suite
+failback_settle_latency,policy gated failback lane,124,260,0.0,synthetic,deterministic failback simulation
+legacy_manual_recovery_latency,manual runbook baseline,410,1110,0.0,anonymized_reported,legacy incident baseline

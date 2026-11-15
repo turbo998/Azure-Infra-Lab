@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cross-org prompt injection block,967,1000,0.967,measured,quarantine attack replay
+a2a async task completion reliability,981,1000,0.981,measured,a2a completion replay
+dlp outbound leak prevention,972,1000,0.972,measured,egress leak simulation suite

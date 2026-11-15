@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+drain_path,Blue-green drain path,1318,1194,synthetic,deterministic model
+canary_path,Canary ramp path,1228,1106,synthetic,deterministic model
+pinning_path,Schema pinning path,1146,1022,synthetic,deterministic model
+nodrain_path,No-drain baseline path,904,792,synthetic,deterministic model

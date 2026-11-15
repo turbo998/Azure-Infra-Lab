@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+foundry_aca_durable_target_path,Foundry+ACA+Durable target path,1359,1246,synthetic,deterministic model
+foundry_aca_transition_path,Foundry+ACA transition path,1244,1138,synthetic,deterministic model
+shadow_dual_run_path,Shadow dual-run path,992,906,synthetic,deterministic model
+legacy_multicloud_baseline,Legacy multi-cloud baseline,793,721,synthetic,deterministic model

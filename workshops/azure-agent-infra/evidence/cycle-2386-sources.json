@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure AI Foundry model routing",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/openai/how-to/model-router",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:28:28+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "vLLM speculative decoding docs",
+    "url": "https://docs.vllm.ai/en/latest/features/spec_decode.html",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:28:28+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "vLLM project repository",
+    "url": "https://github.com/vllm-project/vllm",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:28:28+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official repository"
+  },
+  {
+    "title": "XGrammar repository",
+    "url": "https://github.com/mlc-ai/xgrammar",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:28:28+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official repository"
+  },
+  {
+    "title": "llguidance repository",
+    "url": "https://github.com/guidance-ai/llguidance",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:28:28+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official repository"
+  },
+  {
+    "title": "Azure API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:28:28+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  }
+]

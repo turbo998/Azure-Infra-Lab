@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+surrogate_screening_batch,Neural surrogate screening batch,1900,3600,0.0,measured,screening replay suite
+slurm_job_queue_to_start,Slurm queue wait to start,420000,980000,0.0,anonymized_reported,hpc queue traces
+amlfs_checkpoint_write,AMLFS checkpoint write,800,1700,0.0,measured,checkpoint replay
+long_horizon_resume,Long-horizon resume time,43000,91000,8.1,synthetic,resume simulation

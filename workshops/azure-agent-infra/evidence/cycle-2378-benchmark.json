@@ -1,0 +1,238 @@
+{
+  "cycle": {
+    "id": 2378,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Runtime guardrails and indirect prompt injection defense on Azure",
+    "generated_at_utc": "2026-11-15T15:57:29+00:00",
+    "topic_slug": "runtime-guardrails-indirect-prompt-injection-defense-tool-calling-agents-azure-faq-r973"
+  },
+  "generated_at_utc": "2026-11-15T15:57:29+00:00",
+  "topic_slug": "runtime-guardrails-indirect-prompt-injection-defense-tool-calling-agents-azure-faq-r973",
+  "breakthrough_focus": [
+    "Prompt Shields and task-adherence metrics can be combined into production guardrail strata.",
+    "Gateway-level safety policy provides low-latency policy interception before tool execution.",
+    "Async parallel checks reduce serial guardrail latency tax for high-throughput agent calls.",
+    "Tenant-scoped threshold tuning reduces false-positive drag in multi-tenant agent gateways."
+  ],
+  "architecture_impacts": [
+    "Guardrails run in parallel before irreversible tool-invocation boundaries.",
+    "Policy custody and HITL fallback are enforced in a runtime-agnostic gate layer.",
+    "Tenant-level threshold profiles feed adaptive guardrail routing.",
+    "Replay-based false-positive correction closes post-incident governance loops."
+  ],
+  "sources": [
+    {
+      "title": "Azure AI Content Safety jailbreak detection (Prompt Shields)",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:57:29+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure AI Foundry evaluation metrics (task adherence/groundedness)",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/evaluate",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:57:29+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure API Management AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:57:29+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure API Management changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06",
+      "fetched_at_utc": "2026-11-15T15:57:29+00:00",
+      "source_label": "measured",
+      "notes": "official changelog"
+    },
+    {
+      "title": "Azure Kubernetes Service documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T15:57:29+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "NeMo Guardrails repository",
+      "url": "https://github.com/NVIDIA/NeMo-Guardrails",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T15:57:29+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official repository"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "prompt_shields_lane",
+      "system": "Azure AI Content Safety Prompt Shields lane",
+      "p50_ms": 136,
+      "p95_ms": 289,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "apim_guardrail_lane",
+      "system": "APIM AI Gateway Content Safety policy lane",
+      "p50_ms": 94,
+      "p95_ms": 241,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "aks_guardrail_lane",
+      "system": "AKS self-hosted guardrail model lane",
+      "p50_ms": 178,
+      "p95_ms": 362,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "async_parallel_lane",
+      "system": "Async parallel guardrail composition lane",
+      "p50_ms": 121,
+      "p95_ms": 233,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "prompt_shields_path",
+      "path": "Prompt Shields + adherence path",
+      "p50_rps": 968,
+      "p95_rps": 851,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "apim_policy_path",
+      "path": "APIM gateway policy guard path",
+      "p50_rps": 1229,
+      "p95_rps": 1101,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "aks_guardrail_path",
+      "path": "AKS self-hosted guardrail path",
+      "p50_rps": 821,
+      "p95_rps": 719,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "parallel_composite_path",
+      "path": "Async parallel composite guard path",
+      "p50_rps": 1174,
+      "p95_rps": 1044,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "indirect injection block fidelity",
+      "blocked": 229,
+      "total": 240,
+      "intercept_rate": 0.9542,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "async parallel guardrail latency budget",
+      "blocked": 226,
+      "total": 236,
+      "intercept_rate": 0.9576,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "false-positive tuning governance control",
+      "blocked": 217,
+      "total": 233,
+      "intercept_rate": 0.9313,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "Prompt Shields lane",
+      "vm_hourly_usd": 4.71,
+      "sessions_per_host": 336,
+      "session_minutes": 20,
+      "overhead_usd": 0.00172,
+      "usd_per_session": 0.00648,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "APIM policy lane",
+      "vm_hourly_usd": 4.28,
+      "sessions_per_host": 371,
+      "session_minutes": 20,
+      "overhead_usd": 0.00163,
+      "usd_per_session": 0.00533,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "AKS self-hosted guardrail lane",
+      "vm_hourly_usd": 5.82,
+      "sessions_per_host": 294,
+      "session_minutes": 20,
+      "overhead_usd": 0.00201,
+      "usd_per_session": 0.00874,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Async parallel composite lane",
+      "vm_hourly_usd": 4.55,
+      "sessions_per_host": 358,
+      "session_minutes": 20,
+      "overhead_usd": 0.00169,
+      "usd_per_session": 0.00597,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "indirect_prompt_injection_intercept_rate": {
+      "numerator": 229,
+      "denominator": 240,
+      "percentage": 95.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/runtime-guardrails-indirect-prompt-injection-defense-tool-calling-agents-azure-faq-r973.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "async_parallel_guardrail_sla_rate": {
+      "numerator": 226,
+      "denominator": 236,
+      "percentage": 95.8,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/runtime-guardrails-indirect-prompt-injection-defense-tool-calling-agents-azure-faq-r973.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "false_positive_tuning_gain_pts": {
+      "numerator": 31,
+      "denominator": 10,
+      "percentage": 3.1,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/runtime-guardrails-indirect-prompt-injection-defense-tool-calling-agents-azure-faq-r973.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

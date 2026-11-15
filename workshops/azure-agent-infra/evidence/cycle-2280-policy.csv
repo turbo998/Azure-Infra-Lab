@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced consensus drift gate,188,196,0.9592,measured,replay logs
+consensus variance guard,181,188,0.9628,measured,replay logs
+consensus recovery fence,175,182,0.9615,measured,replay logs

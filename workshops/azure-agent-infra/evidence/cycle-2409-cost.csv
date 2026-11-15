@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Full BCDR target,556.0,7460000,74.6,synthetic,deterministic finops model
+PITR + alias no clean-room,476.4,7530000,63.2,synthetic,deterministic finops model
+Immutable-only periodic restore,288.1,6890000,41.8,synthetic,deterministic finops model
+Legacy baseline,187.2,5600000,33.4,synthetic,deterministic finops model

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Microsoft Sentinel overview",
+    "url": "https://learn.microsoft.com/en-us/azure/sentinel/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Defender XDR documentation",
+    "url": "https://learn.microsoft.com/en-us/defender-xdr/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Foundry Agents overview",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Security Copilot documentation",
+    "url": "https://learn.microsoft.com/en-us/copilot/security/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Logic Apps overview",
+    "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Container Apps sessions",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+    "source_label": "synthetic",
+    "notes": "sandbox execution reference"
+  }
+]

@@ -1,61 +1,64 @@
-# APIM MCP 重入突发信用公平选型 FAQ（Cycle 1935）
+# APIM MCP 重入突发授信公平选型 FAQ（Cycle 1947）
 
 ## 1) 3 分钟结论
-- **核心问题：** MCP 会话重入在高峰窗口若没有突发信用机制，会导致短时重入拥塞并挤压跨租户恢复通道。
-- **推荐方案：** “重入突发信用 + 分层配额 + 公平恢复编排”三层治理。
-- **目标：** 抑制重入突刺、稳定关键路径并提升恢复阶段租户公平性。
+- **核心问题：** 重入流量在突发窗口内会快速耗尽共享配额，导致租户恢复顺序不可控。
+- **推荐方案：** “突发授信配给 + 超额借授信回收 + 过载降档闸门”闭环治理。
+- **目标：** 在保持跨租户公平前提下，稳定关键授信会话的恢复吞吐。
 
 ## 2) Q1 / Q2 / Q3
-### Q1：为什么要做 reentry burst credit fairness？
-1) 固定重入速率无法吸收窗口内瞬时冲击；
-2) 无突发信用时高频租户在边界阶段长期占优；
-3) 无公平恢复编排时低频租户恢复滞后。
+### Q1：为什么要引入 burst credit 而不是固定信用桶？
+1) 固定信用桶缺少时间维度，无法表达租约到期与续租优先级；
+2) 仅按信用衰减会在边界时刻发生集中抢占；
+3) burst credit 让“额度+时效”同时参与调度决策。
 
-### Q2：生产级如何设计？
-- **信用层：** 为租户车道分配可衰减的重入突发信用；
-- **配额层：** 结合 tier 配额限制重入速率与信用透支；
-- **编排层：** 依据公平权重调度恢复顺序与回补节奏；
-- **审计层：** 记录信用消耗、重入动作与恢复结果。
+### Q2：生产分层应如何设计？
+- **配给层：** 每租户按优先级分发突发授信与续租预算；
+- **回收层：** 对超额借授信采用窗口化回收与抖振保护；
+- **降档层：** 在拥塞峰值触发降档闸门，保护核心会话；
+- **审计层：** 记录租约授予、续租、回收与降档动作。
 
 ### Q3：上线判据是什么？
-- 重入抖振率与超时率持续下降；
-- 峰值窗口关键吞吐保持稳定；
-- 信用/配额/恢复动作可审计、可重放、可复算。
+- 突发授信漂移率持续下降；
+- 高优先级租约成功率稳定；
+- 借授信回收与降档轨迹可租户级回放。
 
 ## 3) 架构图
 ```mermaid
 flowchart LR
-  A[MCP Ingress] --> B[Reentry Burst Credit Pool]
-  B --> C[Credit Decay + Watermark Guard]
-  C --> D[Tiered Reentry Quota]
-  D --> E[Fair Recovery Orchestrator]
-  E --> F[Primary Path Reentry]
-  C --> G[Audit Timeline]
+  A[MCP Reentry Ingress] --> B[Burst Credit Distributor]
+  B --> C[Overdraft Credit Reclaimer]
+  C --> D[Credit-Aware Scheduler]
+  D --> E[Overload Downgrade Gate]
+  E --> F[Primary Recovery Lane]
+  C --> G[Audit Replay Timeline]
   F --> H[Gateway Response]
-  H --> E
+  H --> D
 ```
 
 ## 4) 选型矩阵
-| 维度 | 固定重入速率 | Reentry Burst Credit Fairness（推荐） |
+| 维度 | 固定信用桶 | Burst Credit Fairness（推荐） |
 |---|---:|---:|
-| 关键路径稳定性 | 中 | 高 |
-| 重入突刺抑制 | 中 | 高 |
-| 租户恢复公平性 | 中 | 高 |
-| 运维可解释性 | 中 | 高 |
-| 实施复杂度 | 低 | 中 |
+| 租约恢复顺序稳定性 | 中 | 高 |
+| 边界抢占抖振抑制 | 中 | 高 |
+| 额度与时效耦合能力 | 低 | 高 |
+| 回放可解释性 | 中 | 高 |
+| 实施复杂度 | 中 | 中高 |
 
 ## 5) 数据证据与可复算算例（含 n 分母来源）
 - 证据文件：
-  - `workshops/azure-agent-infra/evidence/cycle-1935-benchmark.json`
-  - `workshops/azure-agent-infra/evidence/cycle-1935-latency.csv`
-  - `workshops/azure-agent-infra/evidence/cycle-1935-throughput.csv`
-  - `workshops/azure-agent-infra/evidence/cycle-1935-cost.csv`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-benchmark.json`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-latency.csv`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-throughput.csv`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-cost.csv`
+- 合同键：
+  - `percentage_contract.unfenced_reentry_burst_credit_drift_rate`
+  - `percentage_contract.reentry_burst_credit_variance_rate`
+  - `percentage_contract.reentry_burst_credit_recovery_gain_pts`
 - 标签：`measured / synthetic / anonymized_reported`。
-- 口径：固定采样窗口、固定重入信用策略、固定成本模型，可重复复算。
 
 ## 6) 生产检查清单
-- [ ] 重入突发信用与衰减函数通过回放验证。
-- [ ] 分层重入配额与租户边界一致。
-- [ ] 公平恢复编排支持灰度开关与回滚。
-- [ ] 信用/重入/恢复轨迹可按租户审计。
+- [ ] 突发授信授予/续租/回收在同窗口内可重放。
+- [ ] 超额借授信回收不会造成关键租户饥饿。
+- [ ] 降档闸门在 10x 峰值下保持单调收敛。
+- [ ] 审计链路可关联租户、租约等级与策略版本。
 - [ ] FAQ/H5/SVG/7-card/evidence 的 cycle/topic 一致。

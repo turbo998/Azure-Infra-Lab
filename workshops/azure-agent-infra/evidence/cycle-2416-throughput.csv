@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+trajectory_ingestion,OTel to Event Hubs ingestion,3220,2960,measured,ingestion stress replay
+scrubbing_pipeline,Purview + Presidio scrubbing,1840,1690,synthetic,de-identification model
+verifier_reward,deterministic verifier reward scoring,1380,1260,measured,reward pipeline logs
+shadow_eval,shadow canary evaluation,910,840,anonymized_reported,canary replay

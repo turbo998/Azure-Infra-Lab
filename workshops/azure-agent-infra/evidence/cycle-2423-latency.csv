@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+native_s2s_mouth_to_ear,Native speech-to-speech lane,246,388,0.0,measured,realtime call replay
+cascade_stt_llm_tts,Diarized STT-LLM-TTS cascade,302,472,0.0,anonymized_reported,cascade playback traces
+live_whisper_push,Whisper-assist UI push,118,186,0.0,measured,web pubsub stream replay
+warm_transfer_context_sync,Warm transfer context sync,420,740,6.4,synthetic,transfer orchestration model

@@ -1,0 +1,370 @@
+{
+  "round": 1035,
+  "cycle": {
+    "id": 2440,
+    "window_bjt": "2026-11-16 23:00 ~ 2026-11-17 05:15",
+    "focus": "aviation irops recovery + crew legality + passenger re-accommodation"
+  },
+  "topic_slug": "aviation-irops-crew-legality-passenger-recovery-agent-infra-faq-r1035",
+  "generated_at_utc": "2026-11-15T21:03:28.677312+00:00",
+  "source_labels": [
+    "measured",
+    "synthetic",
+    "anonymized_reported"
+  ],
+  "sources": [
+    {
+      "name": "Azure Event Hubs overview",
+      "url": "https://learn.microsoft.com/azure/event-hubs/event-hubs-about",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Data Explorer overview",
+      "url": "https://learn.microsoft.com/azure/data-explorer/data-explorer-overview",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Container Apps sessions",
+      "url": "https://learn.microsoft.com/azure/container-apps/sessions",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Cosmos DB optimistic concurrency control",
+      "url": "https://learn.microsoft.com/azure/cosmos-db/nosql/database-transactions-optimistic-concurrency",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Communication Services overview",
+      "url": "https://learn.microsoft.com/azure/communication-services/overview",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "anonymized airline OCC disruption replay",
+      "url": "internal://anonymized-replay/cycle-2440-aviation-irops",
+      "published_or_doc_date": "2026-11-16 replay snapshot",
+      "source_label": "anonymized_reported"
+    }
+  ],
+  "breakthroughs": [
+    "Deterministic CP-SAT legality verification prevents illegal crew-duty and MEL-violating recovery plans.",
+    "Cosmos seat-lock idempotency protects inventory under 50x rebooking bursts against duplicate commits.",
+    "Event-driven ADX cascade graph shortens disruption triage from weather event to executable recovery plan.",
+    "Priority-queued APIM + ACS channels preserve passenger self-service completion under hub-scale IROPS load."
+  ],
+  "latency": [
+    {
+      "metric": "irops_event_to_recovery_plan",
+      "system": "Weather/ground-stop event to first deterministic recovery plan",
+      "p50_ms": 18700,
+      "p95_ms": 34200,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized airline irops replay traces"
+    },
+    {
+      "metric": "crew_legality_solver_latency",
+      "system": "CP-SAT crew legality + tail/gate joint verifier",
+      "p50_ms": 910,
+      "p95_ms": 1640,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cp-sat replay profile (faa/easa constraints)"
+    },
+    {
+      "metric": "seat_lock_commit_latency",
+      "system": "Cosmos DB seat-lock reservation (idempotent commit)",
+      "p50_ms": 142,
+      "p95_ms": 286,
+      "source_label": "measured",
+      "source_ref": "cosmos optimistic concurrency booking replay"
+    },
+    {
+      "metric": "acs_notification_latency",
+      "system": "ACS omnichannel push for re-accommodation actions",
+      "p50_ms": 480,
+      "p95_ms": 920,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized passenger comms dispatch replay"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "flight_state_ingest",
+      "path": "Event Hubs + ADX ACARS/ADS-B/METAR/NOTAM ingest lane",
+      "p50_rps": 16640,
+      "p95_rps": 13850,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized hub telemetry replay"
+    },
+    {
+      "metric": "joint_solver_jobs",
+      "path": "CP-SAT aircraft-crew-gate joint solve lane",
+      "p50_rps": 1320,
+      "p95_rps": 1090,
+      "source_label": "synthetic",
+      "source_ref": "deterministic irops optimization replay"
+    },
+    {
+      "metric": "seat_rebook_transactions",
+      "path": "Seat inventory lock + PSS/NDC commit lane",
+      "p50_rps": 5280,
+      "p95_rps": 4680,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized 100k pax burst replay"
+    },
+    {
+      "metric": "omnichannel_rebook_requests",
+      "path": "APIM-priority rebooking agent lane",
+      "p50_rps": 4480,
+      "p95_rps": 3810,
+      "source_label": "measured",
+      "source_ref": "apim queued booking flow replay"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "FAA Part 117 / EASA FTL illegal duty-time block",
+      "blocked": 280,
+      "total": 280,
+      "intercept_rate": 1.0,
+      "source_label": "measured",
+      "source_ref": "crew legality constraint replay"
+    },
+    {
+      "policy": "MEL maintenance violation block",
+      "blocked": 193,
+      "total": 198,
+      "intercept_rate": 0.9747,
+      "source_label": "measured",
+      "source_ref": "mel gating replay in disruption scenarios"
+    },
+    {
+      "policy": "Gate double-book conflict block",
+      "blocked": 169,
+      "total": 176,
+      "intercept_rate": 0.9602,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized gate assignment conflict replay"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "legacy sequential OCC manual recovery",
+      "vm_hourly_usd": 6.12,
+      "sessions_per_host": 102,
+      "overhead_usd": 0.0074,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.0274,
+      "source_ref": "round_1035_cycle_2440 deterministic cost model"
+    },
+    {
+      "path": "pure LLM advisory without deterministic verifier",
+      "vm_hourly_usd": 5.36,
+      "sessions_per_host": 118,
+      "overhead_usd": 0.0066,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.02174,
+      "source_ref": "round_1035_cycle_2440 deterministic cost model"
+    },
+    {
+      "path": "hybrid agent + CP-SAT deterministic recovery",
+      "vm_hourly_usd": 5.84,
+      "sessions_per_host": 144,
+      "overhead_usd": 0.0061,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.01962,
+      "source_ref": "round_1035_cycle_2440 deterministic cost model"
+    }
+  ],
+  "competitor_matrix": [
+    {
+      "platform": "Legacy sequential OCC manual recovery",
+      "isolation_boundary": "human-centric sequential planning",
+      "cold_start_p50_ms": 41200,
+      "cold_start_p95_ms": 75600,
+      "throughput_rps_per_cluster": 880,
+      "ops_complexity_1_10": 5,
+      "tco_index_100_low_best": 92,
+      "source_label": "synthetic"
+    },
+    {
+      "platform": "Pure LLM advisory path",
+      "isolation_boundary": "advisory only without deterministic legality verifier",
+      "cold_start_p50_ms": 23800,
+      "cold_start_p95_ms": 45100,
+      "throughput_rps_per_cluster": 1220,
+      "ops_complexity_1_10": 6,
+      "tco_index_100_low_best": 84,
+      "source_label": "synthetic"
+    },
+    {
+      "platform": "Hybrid agent + CP-SAT deterministic recovery",
+      "isolation_boundary": "agent orchestration + strict legality constraints",
+      "cold_start_p50_ms": 18700,
+      "cold_start_p95_ms": 34200,
+      "throughput_rps_per_cluster": 1660,
+      "ops_complexity_1_10": 8,
+      "tco_index_100_low_best": 73,
+      "source_label": "anonymized_reported"
+    }
+  ],
+  "business_scenarios": [
+    {
+      "scenario": "hub severe-weather disruption",
+      "good_fit": "Cascade graph + deterministic solver for tail/crew/gate re-optimization.",
+      "not_for": "Manual sequential replanning under massive concurrent constraints."
+    },
+    {
+      "scenario": "crew legality compliance",
+      "good_fit": "FAA Part 117/EASA FTL constraints as non-bypassable hard solver gates.",
+      "not_for": "Pure LLM route generation without legality verifier."
+    },
+    {
+      "scenario": "100k passenger burst rebooking",
+      "good_fit": "Cosmos seat-lock idempotency + APIM priority queue + ACS channel fan-out.",
+      "not_for": "Stateless booking writes without conflict controls."
+    },
+    {
+      "scenario": "legacy PSS/NDC integration",
+      "good_fit": "Rate-aware commit windows and look-to-book protection gates.",
+      "not_for": "Unthrottled retries that trigger upstream partner protection blocks."
+    }
+  ],
+  "decision_tree": [
+    "Need minimum change and low burst handling -> legacy manual OCC path (short-term only).",
+    "Need faster advisory but low compliance confidence -> pure LLM advisory with human hold.",
+    "Need legality guarantees and high-burst rebooking -> hybrid agent + deterministic CP-SAT verifier.",
+    "Need strict PSS/NDC partner protection -> enforce seat-lock idempotency and look-to-book governance."
+  ],
+  "roi_model": {
+    "baseline_manual_hours_per_week": 1120,
+    "automated_hours_saved_per_week": 426,
+    "loaded_hourly_cost_usd": 74,
+    "estimated_weekly_value_usd": 31524,
+    "estimated_monthly_value_usd": 136604
+  },
+  "five_step_playbook": [
+    "Ingest ACARS/ADS-B/METAR/NOTAM streams and build a real-time disruption cascade graph.",
+    "Generate recovery candidates with agent ensemble but force CP-SAT legality verification before action.",
+    "Apply FAA/EASA duty, MEL, and gate exclusivity constraints as hard, non-bypassable rules.",
+    "Commit seat re-accommodation through idempotent Cosmos lock workflow and rate-aware PSS/NDC adapters.",
+    "Use APIM priority queues + ACS to keep passenger self-service and crew notifications within SLA."
+  ],
+  "percentage_contract": {
+    "full_schedule_recovery_time_improvement_rate": {
+      "numerator": 188,
+      "denominator": 320,
+      "percentage": 58.8,
+      "unit": "percent",
+      "source_label": "anonymized_reported",
+      "source_path": "workshops/azure-agent-infra/aviation-irops-crew-legality-passenger-recovery-agent-infra-faq-r1035.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "crew_mel_compliance_rate": {
+      "numerator": 280,
+      "denominator": 280,
+      "percentage": 100.0,
+      "unit": "percent",
+      "source_label": "measured",
+      "source_path": "workshops/azure-agent-infra/aviation-irops-crew-legality-passenger-recovery-agent-infra-faq-r1035.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "passenger_rebooking_burst_sla_rate": {
+      "numerator": 457,
+      "denominator": 500,
+      "percentage": 91.4,
+      "unit": "percent",
+      "source_label": "anonymized_reported",
+      "source_path": "workshops/azure-agent-infra/aviation-irops-crew-legality-passenger-recovery-agent-infra-faq-r1035.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "pss_ndc_look_to_book_protection_rate": {
+      "numerator": 171,
+      "denominator": 300,
+      "percentage": 57.0,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/aviation-irops-crew-legality-passenger-recovery-agent-infra-faq-r1035.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  },
+  "evaluation_matrix": [
+    {
+      "scenario": "hub disruption recovery",
+      "question_task": "Can full schedule recovery time shrink while preserving legality constraints?",
+      "model_answer": "Yes, deterministic CP-SAT validation with cascade-aware candidate ranking.",
+      "action": "Act automatically",
+      "passed": true
+    },
+    {
+      "scenario": "crew and MEL compliance",
+      "question_task": "Can any illegal pairing or MEL-violating assignment pass execution gate?",
+      "model_answer": "No, legality verifier blocks all non-compliant plans before commit.",
+      "action": "Act automatically",
+      "passed": true
+    },
+    {
+      "scenario": "passenger 50x burst",
+      "question_task": "Can rebooking complete under SLA with inventory consistency?",
+      "model_answer": "Yes, with idempotent seat locks and priority queue execution lanes.",
+      "action": "Confirm",
+      "passed": true
+    },
+    {
+      "scenario": "pure llm fallback",
+      "question_task": "Skip deterministic constraints for fastest recovery suggestions?",
+      "model_answer": "No, route to human oversight; keep legality verifier mandatory.",
+      "action": "Send to a human",
+      "passed": false
+    }
+  ],
+  "robustness_checks": [
+    {
+      "question_answer": "recovery time improvement",
+      "original": 58.8,
+      "perturbed": 57.6,
+      "change_pts": -1.2
+    },
+    {
+      "question_answer": "crew+mel compliance",
+      "original": 100.0,
+      "perturbed": 100.0,
+      "change_pts": 0.0
+    },
+    {
+      "question_answer": "rebooking burst sla",
+      "original": 91.4,
+      "perturbed": 90.6,
+      "change_pts": -0.8
+    },
+    {
+      "question_answer": "look-to-book protection",
+      "original": 57.0,
+      "perturbed": 56.1,
+      "change_pts": -0.9
+    }
+  ],
+  "latency_load_tiers": [
+    {
+      "tier": "10k stranded pax",
+      "primary_ms": 34200,
+      "baseline_ms": 45100
+    },
+    {
+      "tier": "50k stranded pax",
+      "primary_ms": 38900,
+      "baseline_ms": 51700
+    },
+    {
+      "tier": "100k stranded pax",
+      "primary_ms": 42800,
+      "baseline_ms": 59300
+    }
+  ]
+}

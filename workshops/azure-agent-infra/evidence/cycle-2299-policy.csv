@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced evidencelineageproof drift gate,193,201,0.9602,measured,replay logs
+evidencelineageproof variance guard,186,193,0.9637,measured,replay logs
+evidencelineageproof recovery fence,180,187,0.9626,measured,replay logs

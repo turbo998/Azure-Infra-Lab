@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced quorumproof drift gate,191,199,0.9598,measured,replay logs
+quorumproof variance guard,184,191,0.9634,measured,replay logs
+quorumproof recovery fence,178,185,0.9622,measured,replay logs

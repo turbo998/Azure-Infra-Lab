@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Microsoft 365 Agents SDK",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agents-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Teams Adaptive Cards overview",
+    "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Communication Services concepts",
+    "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Service Bus messaging",
+    "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "API Management policy reference",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Microsoft Entra External ID overview",
+    "url": "https://learn.microsoft.com/en-us/entra/external-id/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  }
+]

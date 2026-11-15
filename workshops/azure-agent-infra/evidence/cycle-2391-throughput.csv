@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+partitioned_layout,Partitioned layout ingestion path,1368,1242,synthetic,deterministic model
+diagram_ingestion,Diagram ingestion path,1245,1121,synthetic,deterministic model
+video_alignment,Video alignment path,1139,1014,synthetic,deterministic model
+nonpartitioned,Non-partitioned baseline path,912,801,synthetic,deterministic model

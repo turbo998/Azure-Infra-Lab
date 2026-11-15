@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Entra OBO audience/claim mismatch block,214,220,0.9727,measured,obo claim boundary verification replay
+Purview DLP + APIM sensitive tool-call block,187,196,0.9541,measured,dlp policy replay with plugin/tool invocations
+Cross-surface governance duplicate-path prevention,169,177,0.9548,anonymized_reported,hybrid federated agent orchestration replay

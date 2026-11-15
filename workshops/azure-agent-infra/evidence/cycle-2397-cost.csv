@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+S-LoRA hot-swap path,5.44,931,5.84,synthetic,deterministic finops model
+Lustre warm-mount path,5.71,849,6.73,synthetic,deterministic finops model
+Prompt-only frontier baseline,6.83,689,9.91,synthetic,deterministic finops model
+Dedicated model per tenant baseline,8.42,500,16.84,synthetic,deterministic finops model

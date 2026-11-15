@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Microsoft GraphRAG documentation",
+    "url": "https://microsoft.github.io/graphrag/",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T17:09:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Cosmos DB for Apache Gremlin",
+    "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T17:09:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Cosmos DB vector search",
+    "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/gen-ai/vector-search-overview",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T17:09:31+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Search hybrid search",
+    "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T17:09:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Search vector search overview",
+    "url": "https://learn.microsoft.com/en-us/azure/search/vector-search-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T17:09:31+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

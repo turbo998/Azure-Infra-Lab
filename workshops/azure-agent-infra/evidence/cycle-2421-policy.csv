@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+gco2e reduction per 10k tasks,346,1000,0.346,measured,carbon attribution ledger
+idle gpu waste elimination,783,1000,0.783,measured,idle pool audit
+joint cost and carbon reduction,228,1000,0.228,measured,finops-carbonops joined ledger

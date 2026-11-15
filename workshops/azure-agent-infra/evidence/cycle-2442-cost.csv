@@ -1,0 +1,4 @@
+path,vm_hourly_usd,sessions_per_host,overhead_usd,source_label,session_minutes,usd_per_session,source_ref
+manual quality board release workflow,5.74,92,0.0086,synthetic,20,0.0294,round_1037_cycle_2442 deterministic cost model
+pure llm quality-advisory workflow,4.98,109,0.0073,synthetic,20,0.02253,round_1037_cycle_2442 deterministic cost model
+hybrid agent + deterministic gxp verifier,5.36,142,0.0062,synthetic,20,0.01878,round_1037_cycle_2442 deterministic cost model

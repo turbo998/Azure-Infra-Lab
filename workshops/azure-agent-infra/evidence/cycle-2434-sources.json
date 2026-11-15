@@ -1,0 +1,38 @@
+[
+  {
+    "name": "OpenTelemetry Trace Context (W3C traceparent/baggage)",
+    "url": "https://opentelemetry.io/docs/specs/otel/trace/api/#context-propagation",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "OpenTelemetry GenAI semantic conventions",
+    "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Monitor OpenTelemetry overview",
+    "url": "https://learn.microsoft.com/azure/azure-monitor/app/opentelemetry-overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Data Explorer KQL overview",
+    "url": "https://learn.microsoft.com/azure/data-explorer/kusto/query/",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Service Bus + async worker patterns",
+    "url": "https://learn.microsoft.com/azure/architecture/guide/technology-choices/messaging",
+    "published_or_doc_date": "architecture guide (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Anonymized multi-agent tracing replay bundle",
+    "url": "internal://anonymized-replay/cycle-2434",
+    "published_or_doc_date": "2026-11-16 replay snapshot",
+    "source_label": "anonymized_reported"
+  }
+]

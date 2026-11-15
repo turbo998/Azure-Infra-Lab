@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_tasks_per_hour,usd_per_1k_resolved_tasks,source_label,source_ref
+Token-attribution path,5.08,701,7.25,synthetic,deterministic finops model
+Semantic-cache guarded path,5.41,659,8.21,synthetic,deterministic finops model
+Batch/PTU/PayGo routing path,5.84,612,9.54,synthetic,deterministic finops model
+Non-optimized baseline,4.95,431,11.49,synthetic,deterministic finops model

@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_nobreaker,source_label,source_ref
+quota_storm_breaker_path,429 quota storm with token-aware breaker,168,319,-39.7,measured,staging replay
+regional_latency_degradation_path,Cosmos regional latency spike degraded path,191,349,-27.4,anonymized_reported,official+reported
+tool_brownout_fallback_path,MCP tool brownout fallback path,226,437,-11.2,measured,staging replay
+nobreaker_baseline,No-breaker baseline path,448,938,0.0,anonymized_reported,reported baseline

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+kv cache staleness anomaly block,203,217,0.9355,measured,replay logs
+prefill/decode lane separation guard,212,217,0.977,measured,replay logs
+fabric-aware cache lane policy fence,206,214,0.9626,measured,replay logs

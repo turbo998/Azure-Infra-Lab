@@ -1,0 +1,224 @@
+{
+  "cycle": {
+    "id": 2398,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Enterprise coding-agent farm and Azure-hosted Copilot SDK infrastructure",
+    "generated_at_utc": "2026-11-15T17:20:14+00:00",
+    "topic_slug": "enterprise-coding-agent-farm-copilot-sdk-aca-aks-kata-faq-r993"
+  },
+  "generated_at_utc": "2026-11-15T17:20:14+00:00",
+  "topic_slug": "enterprise-coding-agent-farm-copilot-sdk-aca-aks-kata-faq-r993",
+  "breakthrough_focus": [
+    "Copilot SDK based coding swarm orchestration for issue-to-pr pipelines",
+    "ACA dynamic sessions plus AKS Kata isolation for trust-aware runtime lanes",
+    "Short-lived installation tokens and egress allowlists for credential and supply-chain safety"
+  ],
+  "architecture_impacts": [
+    "Token broker and runtime policy must be first-class controls",
+    "Build cache namespace design affects both speed and isolation",
+    "Firewall policy drift directly changes supply-chain risk envelope"
+  ],
+  "sources": [
+    {
+      "title": "GitHub Copilot Coding Agent docs",
+      "url": "https://docs.github.com/en/copilot/concepts/coding-agent/coding-agent",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:20:14+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Container Apps dynamic sessions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:20:14+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Kata Containers architecture",
+      "url": "https://github.com/kata-containers/kata-containers",
+      "published_or_doc_date": "timestamp_unverified (official repository)",
+      "fetched_at_utc": "2026-11-15T17:20:14+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official repository"
+    },
+    {
+      "title": "Azure Firewall overview",
+      "url": "https://learn.microsoft.com/en-us/azure/firewall/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:20:14+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Container Registry caching and tasks docs",
+      "url": "https://learn.microsoft.com/en-us/azure/container-registry/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:20:14+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "aca_managed_lane",
+      "system": "ACA managed coding swarm lane",
+      "p50_ms": 1240,
+      "p95_ms": 2310,
+      "overhead_pct_vs_aca_lane": 0.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "aks_kata_lane",
+      "system": "AKS Kata isolation lane",
+      "p50_ms": 1620,
+      "p95_ms": 3080,
+      "overhead_pct_vs_aca_lane": 33.3,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "mixed_fallback_lane",
+      "system": "Mixed fallback lane",
+      "p50_ms": 1930,
+      "p95_ms": 3740,
+      "overhead_pct_vs_aca_lane": 61.9,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "legacy_static_vm_baseline",
+      "system": "Legacy static VM baseline",
+      "p50_ms": 3950,
+      "p95_ms": 7920,
+      "overhead_pct_vs_aca_lane": 242.9,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "aca_managed_lane",
+      "path": "ACA managed lane",
+      "p50_rps": 1834,
+      "p95_rps": 1672,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "aks_kata_lane",
+      "path": "AKS Kata lane",
+      "p50_rps": 1538,
+      "p95_rps": 1394,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "mixed_fallback_lane",
+      "path": "Mixed fallback lane",
+      "p50_rps": 1329,
+      "p95_rps": 1216,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "legacy_static_vm_baseline",
+      "path": "Legacy static VM baseline",
+      "p50_rps": 611,
+      "p95_rps": 542,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "token scope and ttl guard",
+      "blocked": 233,
+      "total": 240,
+      "intercept_rate": 0.9708,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "runtime isolation policy",
+      "blocked": 236,
+      "total": 240,
+      "intercept_rate": 0.9833,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "egress allowlist conformance",
+      "blocked": 231,
+      "total": 240,
+      "intercept_rate": 0.9625,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "ACA managed lane",
+      "compute_hour_usd": 7.18,
+      "resolved_queries_per_hour": 3900,
+      "index_token_cost_per_1k_queries": 1.84,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "AKS Kata lane",
+      "compute_hour_usd": 7.95,
+      "resolved_queries_per_hour": 3600,
+      "index_token_cost_per_1k_queries": 2.21,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Mixed fallback lane",
+      "compute_hour_usd": 8.22,
+      "resolved_queries_per_hour": 3200,
+      "index_token_cost_per_1k_queries": 2.57,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Legacy static VM baseline",
+      "compute_hour_usd": 8.96,
+      "resolved_queries_per_hour": 1806,
+      "index_token_cost_per_1k_queries": 4.96,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "token_leakage_reduction_rate_vs_static_vm": {
+      "numerator": 149,
+      "denominator": 200,
+      "percentage": 74.5,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/enterprise-coding-agent-farm-copilot-sdk-aca-aks-kata-faq-r993.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "cache_hit_rate_for_build_layers": {
+      "numerator": 829,
+      "denominator": 1000,
+      "percentage": 82.9,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/enterprise-coding-agent-farm-copilot-sdk-aca-aks-kata-faq-r993.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "parallel_issue_to_pr_completion_gain_rate": {
+      "numerator": 273,
+      "denominator": 400,
+      "percentage": 68.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/enterprise-coding-agent-farm-copilot-sdk-aca-aks-kata-faq-r993.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

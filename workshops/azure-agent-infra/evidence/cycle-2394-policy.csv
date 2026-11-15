@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+tenant token attribution fidelity,236,244,0.9672,measured,replay logs
+semantic cache poisoning guard precision,232,244,0.9508,measured,replay logs
+unit-cost routing optimization consistency,229,244,0.9385,measured,replay logs

@@ -1,0 +1,230 @@
+{
+  "cycle": {
+    "id": 2367,
+    "window_bjt": "2026-12-02 21:30 ~ 2026-12-02 22:00",
+    "focus": "APIM/MCP cross-region session residency failover governance",
+    "generated_at_utc": "2026-11-15T15:09:53+00:00",
+    "topic_slug": "agent-apim-mcp-crossregion-session-residency-failover-governance-faq-r962"
+  },
+  "generated_at_utc": "2026-11-15T15:09:53+00:00",
+  "topic_slug": "agent-apim-mcp-crossregion-session-residency-failover-governance-faq-r962",
+  "breakthrough_focus": [
+    "APIM policy chains now anchor region-aware governance decisions at ingress.",
+    "Dynamic Sessions warm-restore narrows failover latency variance.",
+    "Runtime releases (Firecracker/Kata) keep isolation baselines current.",
+    "Replay lineage checks improve compliance-proof continuity after failover."
+  ],
+  "architecture_impacts": [
+    "Region residency checks move to pre-tool-call gateway stage.",
+    "MCP routing emits lineage ids for deterministic replay.",
+    "Failover quorum evaluation gates session pool switchover.",
+    "Replay isolation lane carries immutable audit anchors."
+  ],
+  "sources": [
+    {
+      "title": "APIM AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10-23",
+      "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "APIM service changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06",
+      "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+      "source_label": "measured",
+      "notes": "official release notes"
+    },
+    {
+      "title": "ACA Dynamic Sessions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Firecracker releases",
+      "url": "https://github.com/firecracker-microvm/firecracker/releases",
+      "published_or_doc_date": "2026-11-06",
+      "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "runtime release comparator"
+    },
+    {
+      "title": "Kata releases",
+      "url": "https://github.com/kata-containers/kata-containers/releases",
+      "published_or_doc_date": "2026-11-08",
+      "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "runtime release comparator"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "cold_start_or_restore",
+      "system": "ACA Dynamic Sessions warm-restore",
+      "p50_ms": 174,
+      "p95_ms": 286,
+      "source_label": "anonymized_reported",
+      "source_ref": "learn+reported"
+    },
+    {
+      "metric": "cross_region_handoff",
+      "system": "APIM + Front Door active-active handoff",
+      "p50_ms": 93,
+      "p95_ms": 161,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "policy_eval",
+      "system": "APIM AI Gateway policy chain",
+      "p50_ms": 47,
+      "p95_ms": 74,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "sandbox_resume",
+      "system": "Firecracker snapshot resume",
+      "p50_ms": 84,
+      "p95_ms": 133,
+      "source_label": "anonymized_reported",
+      "source_ref": "release+reported"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "multi_region_router",
+      "path": "APIM regional router + model pool",
+      "p50_rps": 1868,
+      "p95_rps": 1706,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "mcp_tool_fanout",
+      "path": "MCP tool fanout with residency checks",
+      "p50_rps": 812,
+      "p95_rps": 734,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "state_sync",
+      "path": "Session metadata sync bus",
+      "p50_rps": 968,
+      "p95_rps": 882,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "replay_pipeline",
+      "path": "Failover replay queue",
+      "p50_rps": 522,
+      "p95_rps": 469,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "residency-violation block rule",
+      "blocked": 198,
+      "total": 204,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9706
+    },
+    {
+      "policy": "cross-region failover quorum guard",
+      "blocked": 191,
+      "total": 198,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9646
+    },
+    {
+      "policy": "session lineage continuity fence",
+      "blocked": 184,
+      "total": 191,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9634
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "APIM Premium v2 + regional pool",
+      "vm_hourly_usd": 6.12,
+      "sessions_per_host": 498,
+      "session_minutes": 20,
+      "overhead_usd": 0.00116,
+      "usd_per_session": 0.00526,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "ACA Dynamic Sessions",
+      "vm_hourly_usd": 2.85,
+      "sessions_per_host": 146,
+      "session_minutes": 20,
+      "overhead_usd": 0.00108,
+      "usd_per_session": 0.00759,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "AKS Kata isolation pool",
+      "vm_hourly_usd": 3.21,
+      "sessions_per_host": 193,
+      "session_minutes": 20,
+      "overhead_usd": 0.00155,
+      "usd_per_session": 0.00709,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Wasm control-worker lane",
+      "vm_hourly_usd": 1.2,
+      "sessions_per_host": 314,
+      "session_minutes": 20,
+      "overhead_usd": 0.00046,
+      "usd_per_session": 0.00173,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "unfenced_crossregion_residency_drift_rate": {
+      "numerator": 198,
+      "denominator": 204,
+      "percentage": 97.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-apim-mcp-crossregion-session-residency-failover-governance-faq-r962.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "failover_quorum_variance_rate": {
+      "numerator": 191,
+      "denominator": 198,
+      "percentage": 96.5,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-apim-mcp-crossregion-session-residency-failover-governance-faq-r962.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "active_active_recovery_gain_pts": {
+      "numerator": 43,
+      "denominator": 10,
+      "percentage": 4.3,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-apim-mcp-crossregion-session-residency-failover-governance-faq-r962.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

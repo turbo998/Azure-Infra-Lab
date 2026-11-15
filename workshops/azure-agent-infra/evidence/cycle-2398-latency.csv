@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_aca_lane,source_label,source_ref
+aca_managed_lane,ACA managed coding swarm lane,1240,2310,0.0,measured,staging replay
+aks_kata_lane,AKS Kata isolation lane,1620,3080,33.3,anonymized_reported,official+reported
+mixed_fallback_lane,Mixed fallback lane,1930,3740,61.9,measured,staging replay
+legacy_static_vm_baseline,Legacy static VM baseline,3950,7920,242.9,anonymized_reported,reported baseline

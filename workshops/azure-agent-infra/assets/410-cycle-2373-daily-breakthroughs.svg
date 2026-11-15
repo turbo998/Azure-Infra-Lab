@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <rect x="40" y="40" width="1520" height="120" rx="14" fill="url(#g)"/>
+  <text x="70" y="102" fill="white" font-size="34" font-family="Segoe UI, Arial">Cycle 2373 · Agentic RAG + Multi-Tier Memory Selection</text>
+  <text x="70" y="142" fill="#dbeafe" font-size="22" font-family="Segoe UI, Arial">Search Agentic Retrieval | Cosmos DiskANN | Redis semantic/episodic cache</text>
+  <rect x="70" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="90" y="275" fill="#bfdbfe" font-size="22">Router</text>
+  <rect x="360" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="380" y="275" fill="#bfdbfe" font-size="22">Search Retrieval</text>
+  <rect x="650" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="670" y="275" fill="#bfdbfe" font-size="22">Cosmos DiskANN</text>
+  <rect x="940" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="960" y="275" fill="#bfdbfe" font-size="22">Redis Episodic</text>
+  <rect x="1230" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="1250" y="275" fill="#bfdbfe" font-size="22">Policy Ledger</text>
+  <path d="M330 280 L360 280 M620 280 L650 280 M910 280 L940 280 M1200 280 L1230 280" stroke="#93c5fd" stroke-width="4"/>
+  <rect x="70" y="390" width="1460" height="430" rx="16" fill="#0f172a" stroke="#334155"/>
+  <text x="95" y="445" fill="#e2e8f0" font-size="30">Daily capability highlights</text>
+  <text x="95" y="495" fill="#cbd5e1" font-size="24">• Agentic retrieval + semantic ranker improves relevance/freshness balance.</text>
+  <text x="95" y="540" fill="#cbd5e1" font-size="24">• Cosmos DiskANN supports operational memory writes with vector lookup.</text>
+  <text x="95" y="585" fill="#cbd5e1" font-size="24">• Redis semantic/episodic tier keeps interaction loops low-latency.</text>
+  <text x="95" y="630" fill="#cbd5e1" font-size="24">• RU/SU pressure guardlane prevents cost spikes under burst workload.</text>
+  <text x="95" y="710" fill="#94a3b8" font-size="18">labels: measured / synthetic / anonymized_reported</text>
+  <text x="95" y="740" fill="#94a3b8" font-size="18">fetched_at_utc: 2026-11-15T15:36:19+00:00</text>
+</svg>

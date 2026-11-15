@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+opcua_intent_to_action,OPC UA telemetry intent routing with edge cache,146,268,anonymized_reported,anonymized plant replay with edge historian traces
+modbus_legacy_bridge,Modbus RTU/TCP bridge normalized to cloud digital twin,184,329,anonymized_reported,anonymized OT bridge replay
+safety_interlock_policy_gate,Safety interlock and write-path approval gate,24,46,synthetic,deterministic policy engine replay
+predictive_maintenance_scoring,Predictive maintenance score and ticket trigger path,212,381,anonymized_reported,anonymized maintenance event replay

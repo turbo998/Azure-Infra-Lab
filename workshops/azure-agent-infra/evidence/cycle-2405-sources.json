@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Azure AI Foundry documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:50:09+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Container Apps Dynamic Sessions",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:50:09+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "APIM AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:50:09+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "OpenTelemetry with Azure Monitor",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:50:09+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "Microsoft Purview DSPM for AI",
+    "url": "https://learn.microsoft.com/en-us/purview/dspm-for-ai-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:50:09+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

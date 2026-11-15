@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+frame_anchor_verify_latency,SMPTE frame-anchor verification lane,38,91,0.0,measured,timecode verifier benchmark
+render_gate_latency,NVENC render and compliance gate lane,112,247,0.0,anonymized_reported,render compliance sample
+highlight_publish_latency,live sports highlight publish lane,15800,25400,1.8,synthetic,highlight pipeline simulation
+legacy_monolithic_latency,mixed-pool baseline lane,28600,46000,0.0,anonymized_reported,legacy baseline sample

@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+foundry_batch_primary,Foundry batch + spillover,2120000,1960000,synthetic,modeled throughput
+aks_kueue_spot,AKS Kueue spot vLLM,2420000,2190000,synthetic,modeled throughput
+aca_jobs_blend,ACA jobs blend,1850000,1720000,synthetic,modeled throughput
+legacy_fixed_workers,Legacy fixed workers,960000,840000,anonymized_reported,reported baseline

@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+preflight_verification_latency,yang and batfish preflight lane,79,164,0.0,measured,preflight benchmark suite
+canary_commit_latency,ring commit-confirm lane,103,201,0.0,anonymized_reported,canary rollout sample
+rollback_trigger_latency,kpi auto rollback lane,21000,44000,1.5,synthetic,rollback simulation
+legacy_manual_remediation_latency,manual noc baseline,52000,108000,0.0,anonymized_reported,legacy baseline sample

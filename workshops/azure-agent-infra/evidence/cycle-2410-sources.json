@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Azure OpenAI and Foundry Batch processing",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/batch",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Container Apps jobs",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/jobs",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "KEDA scaling with Azure Service Bus",
+    "url": "https://keda.sh/docs/latest/scalers/azure-service-bus/",
+    "published_or_doc_date": "scaler reference",
+    "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+    "source_label": "measured",
+    "notes": "upstream keda docs"
+  },
+  {
+    "title": "Kueue batch scheduler",
+    "url": "https://kueue.sigs.k8s.io/docs/overview/",
+    "published_or_doc_date": "project docs",
+    "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+    "source_label": "synthetic",
+    "notes": "upstream docs"
+  },
+  {
+    "title": "AKS spot node pools",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/spot-node-pool",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:10:06+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

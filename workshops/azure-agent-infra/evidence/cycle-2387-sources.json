@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure confidential VMs overview",
+    "url": "https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:32:43+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure confidential computing on AKS",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/confidential-computing",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:32:43+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Attestation overview",
+    "url": "https://learn.microsoft.com/en-us/azure/attestation/overview",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T16:32:43+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Secure key release with Managed HSM",
+    "url": "https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/secure-key-release",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:32:43+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Kata Containers releases",
+    "url": "https://github.com/kata-containers/kata-containers/releases",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:32:43+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official release feed"
+  },
+  {
+    "title": "Azure AI Foundry quota docs",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/quota",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:32:43+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

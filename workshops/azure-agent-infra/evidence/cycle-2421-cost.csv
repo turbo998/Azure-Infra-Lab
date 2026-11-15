@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Baseline fp16 fixed-region,1.0,1000000,1.0,anonymized_reported,baseline model
+Power-cap only,0.89,1000000,0.89,synthetic,tdp optimization model
+Carbon-aware + model optimization,0.77,1000000,0.77,synthetic,joint optimization model
+Full greenops optimized,0.72,1000000,0.72,synthetic,full stack model

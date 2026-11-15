@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Azure AI Content Understanding overview",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:47:34+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Document Intelligence layout model",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept-layout",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:47:34+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Event Hubs overview",
+    "url": "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:47:34+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Container Apps jobs",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/jobs",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:47:34+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Search vector search",
+    "url": "https://learn.microsoft.com/en-us/azure/search/vector-search-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:47:34+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  }
+]

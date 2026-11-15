@@ -1,0 +1,246 @@
+{
+  "cycle": {
+    "id": 2375,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "End-to-end OTel GenAI semantic conventions and agent observability on Azure",
+    "generated_at_utc": "2026-11-15T15:43:39+00:00",
+    "topic_slug": "otel-genai-semconv-agent-observability-foundry-tracing-appinsights-adx-kql-grafana-online-eval-faq-r970"
+  },
+  "generated_at_utc": "2026-11-15T15:43:39+00:00",
+  "topic_slug": "otel-genai-semconv-agent-observability-foundry-tracing-appinsights-adx-kql-grafana-online-eval-faq-r970",
+  "breakthrough_focus": [
+    "Foundry tracing and OpenTelemetry semantic conventions improve cross-agent span stitching fidelity.",
+    "ADX KQL lane enables scalable multi-agent correlation and online-eval signal extraction.",
+    "Tenant token FinOps attribution converts trace data into actionable cost governance.",
+    "Runaway tool-loop detectors reduce runaway spend and latency blowups in long chains."
+  ],
+  "architecture_impacts": [
+    "Trace context is propagated from coordinator to tool spans with semantic attributes.",
+    "Telemetry and evaluation paths are decoupled from command execution paths.",
+    "FinOps attribution dimensions are normalized at ingest for tenant-level reporting.",
+    "Online eval triggers feed policy circuit-break controls automatically."
+  ],
+  "sources": [
+    {
+      "title": "Azure AI Foundry tracing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/trace-applications",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:43:39+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Application Insights OpenTelemetry",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:43:39+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure Data Explorer KQL overview",
+      "url": "https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:43:39+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Managed Grafana overview",
+      "url": "https://learn.microsoft.com/en-us/azure/managed-grafana/overview",
+      "published_or_doc_date": "2026-09",
+      "fetched_at_utc": "2026-11-15T15:43:39+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "OpenTelemetry semantic conventions",
+      "url": "https://opentelemetry.io/docs/specs/semconv/",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T15:43:39+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "spec comparator"
+    },
+    {
+      "title": "Azure API Management AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:43:39+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure API Management changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06",
+      "fetched_at_utc": "2026-11-15T15:43:39+00:00",
+      "source_label": "measured",
+      "notes": "official changelog"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "trace_ingest",
+      "system": "Foundry tracing + App Insights ingest path",
+      "p50_ms": 168,
+      "p95_ms": 289,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "adx_query",
+      "system": "ADX KQL span-correlation query lane",
+      "p50_ms": 124,
+      "p95_ms": 214,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "grafana_panel",
+      "system": "Managed Grafana dashboard refresh lane",
+      "p50_ms": 97,
+      "p95_ms": 163,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "online_eval",
+      "system": "Online eval policy trigger lane",
+      "p50_ms": 53,
+      "p95_ms": 96,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "span_ingest",
+      "path": "Unified span ingest lane",
+      "p50_rps": 2810,
+      "p95_rps": 2554,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "kql_eval",
+      "path": "KQL correlation + evaluation lane",
+      "p50_rps": 1024,
+      "p95_rps": 908,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "finops_attr",
+      "path": "Tenant token FinOps attribution lane",
+      "p50_rps": 1312,
+      "p95_rps": 1176,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "loop_guard",
+      "path": "Runaway loop detection guardlane",
+      "p50_rps": 1194,
+      "p95_rps": 1086,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "multi-agent span-correlation integrity fence",
+      "blocked": 216,
+      "total": 230,
+      "intercept_rate": 0.9391,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "tenant token FinOps attribution guard",
+      "blocked": 220,
+      "total": 230,
+      "intercept_rate": 0.9565,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "runaway tool-loop circuit-break detector",
+      "blocked": 212,
+      "total": 220,
+      "intercept_rate": 0.9636,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "Foundry tracing + App Insights lane",
+      "vm_hourly_usd": 4.26,
+      "sessions_per_host": 344,
+      "session_minutes": 20,
+      "overhead_usd": 0.00178,
+      "usd_per_session": 0.00591,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "ADX KQL correlation lane",
+      "vm_hourly_usd": 5.84,
+      "sessions_per_host": 416,
+      "session_minutes": 20,
+      "overhead_usd": 0.00194,
+      "usd_per_session": 0.00662,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Managed Grafana + alert lane",
+      "vm_hourly_usd": 2.96,
+      "sessions_per_host": 508,
+      "session_minutes": 20,
+      "overhead_usd": 0.00113,
+      "usd_per_session": 0.00307,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Unified observability hybrid lane",
+      "vm_hourly_usd": 0.0,
+      "sessions_per_host": 1,
+      "session_minutes": 20,
+      "overhead_usd": 0.00169,
+      "usd_per_session": 0.00586,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "unfenced_span_correlation_drift_rate": {
+      "numerator": 216,
+      "denominator": 230,
+      "percentage": 93.9,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/otel-genai-semconv-agent-observability-foundry-tracing-appinsights-adx-kql-grafana-online-eval-faq-r970.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "tenant_token_finops_attribution_effective_rate": {
+      "numerator": 220,
+      "denominator": 230,
+      "percentage": 95.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/otel-genai-semconv-agent-observability-foundry-tracing-appinsights-adx-kql-grafana-online-eval-faq-r970.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "runaway_loop_detection_gain_pts": {
+      "numerator": 28,
+      "denominator": 10,
+      "percentage": 2.8,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/otel-genai-semconv-agent-observability-foundry-tracing-appinsights-adx-kql-grafana-online-eval-faq-r970.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

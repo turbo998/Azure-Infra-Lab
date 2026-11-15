@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+residency-violation block rule,198,204,0.9706,measured,replay logs
+cross-region failover quorum guard,191,198,0.9646,measured,replay logs
+session lineage continuity fence,184,191,0.9634,measured,replay logs

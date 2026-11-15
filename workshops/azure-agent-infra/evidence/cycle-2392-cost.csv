@@ -1,0 +1,5 @@
+path,compute_hour_usd,sessions_per_hour,usd_per_session,source_label,source_ref
+Breaker-protected path,5.16,682,0.00757,synthetic,deterministic finops model
+Degraded latency path,5.47,633,0.00864,synthetic,deterministic finops model
+Brownout fallback path,5.92,582,0.01017,synthetic,deterministic finops model
+No-breaker baseline,4.89,421,0.01162,synthetic,deterministic finops model

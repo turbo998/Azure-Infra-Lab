@@ -1,0 +1,5 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+untouched clause preservation integrity,1000,1000,1.0,measured,ast integrity suite
+nonstandard indemnity and lol recall,924,1000,0.924,anonymized_reported,clause recall benchmark
+vdr 5000 docs turnaround improvement,638,1000,0.638,synthetic,turnaround comparison model
+citation exactness,986,1000,0.986,measured,citation grounding suite

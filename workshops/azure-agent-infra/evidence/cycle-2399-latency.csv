@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+foundry_aca_durable_target_path,Foundry + ACA + Durable target path,442,812,0.0,measured,staging replay
+foundry_aca_transition_path,Foundry + ACA transition path,507,901,11.0,anonymized_reported,official+reported
+shadow_dual_run_path,Shadow dual-run parity path,676,1194,47.0,measured,staging replay
+legacy_multicloud_baseline,Legacy multi-cloud baseline,883,1548,90.6,anonymized_reported,reported baseline

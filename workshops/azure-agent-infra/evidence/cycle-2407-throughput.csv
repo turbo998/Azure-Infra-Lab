@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+postgres_unified,Postgres unified,6310,5980,synthetic,deterministic model
+cosmos_unified,Cosmos unified,6980,6640,synthetic,deterministic model
+split_stack,Split stack,7560,7210,synthetic,deterministic model
+legacy_dual_write,Legacy dual-write,4580,4310,synthetic,deterministic model

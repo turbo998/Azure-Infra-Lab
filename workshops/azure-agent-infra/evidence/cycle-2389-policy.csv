@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+read-only ast policy fidelity,231,239,0.9665,measured,replay logs
+entra obo identity boundary precision,227,239,0.9498,measured,replay logs
+cross-tenant exfiltration block coverage,224,239,0.9372,measured,replay logs

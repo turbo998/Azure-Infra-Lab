@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Azure IoT Operations overview",
+    "url": "https://learn.microsoft.com/azure/iot-operations/overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Digital Twins documentation",
+    "url": "https://learn.microsoft.com/azure/digital-twins/overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Data Explorer ingestion and analytics",
+    "url": "https://learn.microsoft.com/azure/data-explorer/ingest-data-overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "OPC UA and Modbus integration guidance",
+    "url": "https://learn.microsoft.com/azure/industrial-iot/",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "anonymized industrial telemetry replay",
+    "url": "internal://anonymized-replay/cycle-2436-industrial",
+    "published_or_doc_date": "2026-11-16 replay snapshot",
+    "source_label": "anonymized_reported"
+  }
+]

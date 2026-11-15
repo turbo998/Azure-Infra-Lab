@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+mqtt_eventstreams_activator_target,MQTT + Eventstreams + Activator target,462,688,0.0,measured,staging replay
+eventstreams_no_ot_split,Eventstreams without OT split,521,742,7.8,anonymized_reported,official+reported
+opcua_direct_cloud_relay,OPC UA direct cloud relay,662,981,42.6,measured,staging replay
+historian_polling_baseline,Historian polling baseline,1186,1864,170.9,anonymized_reported,reported baseline

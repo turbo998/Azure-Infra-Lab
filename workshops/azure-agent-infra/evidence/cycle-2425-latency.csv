@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+layout_clause_tree_parse,Layout parsing and clause tree build,890,1700,0.0,measured,layout replay suite
+ooxml_patch_synthesis,Deterministic OOXML redline synthesis,2300,4200,0.0,anonymized_reported,redline patch traces
+ast_untouched_verification,AST untouched-span integrity verifier,640,1180,0.0,measured,integrity check replay
+counsel_signoff_queue,Counsel sign-off queue start latency,8600,15200,7.4,synthetic,workflow queue simulation

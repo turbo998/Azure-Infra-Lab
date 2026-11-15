@@ -1,0 +1,242 @@
+{
+  "cycle": {
+    "id": 2385,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Computer-use and headless browser agent infrastructure on Azure",
+    "generated_at_utc": "2026-11-15T16:23:31+00:00",
+    "topic_slug": "computer-use-headless-browser-agent-infra-aca-sessions-aks-chromium-pools-faq-r980"
+  },
+  "generated_at_utc": "2026-11-15T16:23:31+00:00",
+  "topic_slug": "computer-use-headless-browser-agent-infra-aca-sessions-aks-chromium-pools-faq-r980",
+  "breakthrough_focus": [
+    "Dynamic browser sessions improve isolation guarantees for short-lived agent tasks.",
+    "A11y-tree first strategy materially lowers token cost versus screenshot-only loops.",
+    "MFA HITL handoff checkpoints reduce unsafe automation in regulated workflows.",
+    "Proxy-governed egress paths strengthen enterprise policy enforcement for browser agents."
+  ],
+  "architecture_impacts": [
+    "Primary lane uses isolated dynamic sessions for high-risk browser tasks.",
+    "Secondary lane uses pooled Chromium for throughput-oriented workloads.",
+    "Turn controller arbitrates tool calls with explicit lock states.",
+    "Compliance guardrails enforce MFA handoff and data-retention policy."
+  ],
+  "sources": [
+    {
+      "title": "Azure Container Apps sessions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:23:31+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "ACA Dynamic Sessions GA blog",
+      "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561",
+      "published_or_doc_date": "2024-11",
+      "fetched_at_utc": "2026-11-15T16:23:31+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official blog"
+    },
+    {
+      "title": "Playwright docs",
+      "url": "https://playwright.dev/docs/intro",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:23:31+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Chrome DevTools Protocol",
+      "url": "https://chromedevtools.github.io/devtools-protocol/",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:23:31+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Kubernetes Service docs",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:23:31+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Communication Services Call Automation",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/call-automation/call-automation",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:23:31+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "aca_dynamic_session_lane",
+      "system": "Playwright/CDP on ACA Dynamic Sessions lane",
+      "p50_ms": 104,
+      "p95_ms": 221,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "aks_chromium_pool_lane",
+      "system": "Autoscaled Chromium pool on AKS lane",
+      "p50_ms": 118,
+      "p95_ms": 239,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "proxy_mfa_handoff_lane",
+      "system": "Corporate proxy + HITL MFA handoff lane",
+      "p50_ms": 161,
+      "p95_ms": 289,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "unmanaged_browser_baseline",
+      "system": "Unmanaged browser automation baseline",
+      "p50_ms": 455,
+      "p95_ms": 915,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "aca_lane",
+      "path": "ACA dynamic session lane",
+      "p50_rps": 1377,
+      "p95_rps": 1241,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "aks_pool_lane",
+      "path": "AKS Chromium pool lane",
+      "p50_rps": 1294,
+      "p95_rps": 1168,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "proxy_handoff_lane",
+      "path": "Proxy + MFA handoff lane",
+      "p50_rps": 996,
+      "p95_rps": 878,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "a11y_first_lane",
+      "path": "Accessibility-tree first lane",
+      "p50_rps": 1422,
+      "p95_rps": 1289,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "session isolation custody fidelity",
+      "blocked": 225,
+      "total": 233,
+      "intercept_rate": 0.9657,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "mfa handoff lock precision",
+      "blocked": 222,
+      "total": 233,
+      "intercept_rate": 0.9528,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "a11y-first token efficiency guard",
+      "blocked": 219,
+      "total": 233,
+      "intercept_rate": 0.9399,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "token_cost": [
+    {
+      "path": "ACA dynamic session lane",
+      "vm_hourly_usd": 4.39,
+      "sessions_per_host": 402,
+      "session_minutes": 20,
+      "overhead_usd": 0.00166,
+      "vision_token_cost_usd": 0.00021,
+      "a11y_token_cost_usd": 7e-05,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "AKS Chromium pool lane",
+      "vm_hourly_usd": 4.87,
+      "sessions_per_host": 381,
+      "session_minutes": 20,
+      "overhead_usd": 0.00184,
+      "vision_token_cost_usd": 0.00019,
+      "a11y_token_cost_usd": 6e-05,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Proxy+MFA handoff lane",
+      "vm_hourly_usd": 5.16,
+      "sessions_per_host": 349,
+      "session_minutes": 20,
+      "overhead_usd": 0.00197,
+      "vision_token_cost_usd": 0.00023,
+      "a11y_token_cost_usd": 8e-05,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "A11y-first guard lane",
+      "vm_hourly_usd": 4.52,
+      "sessions_per_host": 417,
+      "session_minutes": 20,
+      "overhead_usd": 0.00171,
+      "vision_token_cost_usd": 0.00018,
+      "a11y_token_cost_usd": 5e-05,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "session_isolation_sla_rate": {
+      "numerator": 225,
+      "denominator": 233,
+      "percentage": 96.6,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/computer-use-headless-browser-agent-infra-aca-sessions-aks-chromium-pools-faq-r980.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "mfa_handoff_precision_rate": {
+      "numerator": 222,
+      "denominator": 233,
+      "percentage": 95.3,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/computer-use-headless-browser-agent-infra-aca-sessions-aks-chromium-pools-faq-r980.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "a11y_token_savings_gain_pts": {
+      "numerator": 24,
+      "denominator": 10,
+      "percentage": 2.4,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/computer-use-headless-browser-agent-infra-aca-sessions-aks-chromium-pools-faq-r980.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

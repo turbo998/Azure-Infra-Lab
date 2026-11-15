@@ -1,0 +1,232 @@
+{
+  "cycle": {
+    "id": 2415,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Legacy ERP, SAP S/4HANA and mainframe hybrid integration agent infrastructure on Azure",
+    "generated_at_utc": "2026-11-15T18:36:24.065830+00:00",
+    "topic_slug": "legacy-erp-sap-mainframe-hybrid-integration-agent-infra-faq-r1010"
+  },
+  "generated_at_utc": "2026-11-15T18:36:24.065830+00:00",
+  "topic_slug": "legacy-erp-sap-mainframe-hybrid-integration-agent-infra-faq-r1010",
+  "breakthrough_focus": [
+    "API-facade plus principal-propagation patterns improve auditability for brownfield agent mutations",
+    "TESTRUN-first two-phase gates significantly reduce invalid ERP commit leakage",
+    "Connection-pool protection prevents backend saturation during agent tool bursts"
+  ],
+  "architecture_impacts": [
+    "Hybrid ERP integrations require API-first contracts with strict fallback boundaries",
+    "Identity propagation should be treated as a release gate, not optional hardening",
+    "Dry-run and pool-protection controls must be part of default mutation pathways"
+  ],
+  "sources": [
+    {
+      "title": "Azure API Center overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-center/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure API Management import SOAP APIs",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/import-soap-api",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure API Management OData and policy capabilities",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Logic Apps Standard single-tenant and VNet integration",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/single-tenant-overview-compare",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Logic Apps connectors overview",
+      "url": "https://learn.microsoft.com/en-us/azure/connectors/introduction",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+      "source_label": "synthetic",
+      "notes": "official docs"
+    },
+    {
+      "title": "SAP BAPI test run semantics (BAPI_TRANSACTION_COMMIT/BAPI patterns)",
+      "url": "https://help.sap.com/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+      "source_label": "synthetic",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "direct_rfc",
+      "system": "Direct SAP RFC pattern",
+      "p50_ms": 880,
+      "p95_ms": 1320,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "sap gateway replay benchmark"
+    },
+    {
+      "metric": "logic_apps_standard",
+      "system": "Logic Apps Standard orchestrated path",
+      "p50_ms": 1210,
+      "p95_ms": 1760,
+      "overhead_pct_vs_target": 33.3,
+      "source_label": "measured",
+      "source_ref": "hybrid integration replay"
+    },
+    {
+      "metric": "rpa_fallback",
+      "system": "RPA fallback path",
+      "p50_ms": 2900,
+      "p95_ms": 4600,
+      "overhead_pct_vs_target": 248.5,
+      "source_label": "synthetic",
+      "source_ref": "legacy ui automation model"
+    },
+    {
+      "metric": "manual_baseline",
+      "system": "Manual baseline",
+      "p50_ms": 7900,
+      "p95_ms": 12800,
+      "overhead_pct_vs_target": 869.7,
+      "source_label": "anonymized_reported",
+      "source_ref": "ticket workflow benchmark"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "odata_bapi_wrapper",
+      "path": "OData/BAPI MCP wrapper",
+      "p50_rps": 940,
+      "p95_rps": 860,
+      "source_label": "measured",
+      "source_ref": "integration replay logs"
+    },
+    {
+      "metric": "logicapps_connector",
+      "path": "Logic Apps connector bus",
+      "p50_rps": 780,
+      "p95_rps": 710,
+      "source_label": "anonymized_reported",
+      "source_ref": "connector load audit"
+    },
+    {
+      "metric": "rpa_automation",
+      "path": "RPA computer-use fallback",
+      "p50_rps": 180,
+      "p95_rps": 140,
+      "source_label": "synthetic",
+      "source_ref": "ui automation replay"
+    },
+    {
+      "metric": "testrun_precommit",
+      "path": "TESTRUN simulation gate",
+      "p50_rps": 650,
+      "p95_rps": 620,
+      "source_label": "measured",
+      "source_ref": "dry-run gate replay"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "sap principal propagation audit coverage",
+      "blocked": 988,
+      "total": 1000,
+      "intercept_rate": 0.988,
+      "source_label": "measured",
+      "source_ref": "principal propagation verification suite"
+    },
+    {
+      "policy": "testrun precommit error catch",
+      "blocked": 952,
+      "total": 1000,
+      "intercept_rate": 0.952,
+      "source_label": "measured",
+      "source_ref": "bapi dry-run replay logs"
+    },
+    {
+      "policy": "backend connection pool protection",
+      "blocked": 961,
+      "total": 1000,
+      "intercept_rate": 0.961,
+      "source_label": "measured",
+      "source_ref": "gateway + connector storm tests"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Direct RFC pattern",
+      "compute_hour_usd": 1.04,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 1.04,
+      "source_label": "synthetic",
+      "source_ref": "relative cost model"
+    },
+    {
+      "path": "Logic Apps Standard pattern",
+      "compute_hour_usd": 1.28,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 1.28,
+      "source_label": "synthetic",
+      "source_ref": "relative cost model"
+    },
+    {
+      "path": "RPA fallback pattern",
+      "compute_hour_usd": 1.62,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 1.62,
+      "source_label": "synthetic",
+      "source_ref": "relative cost model"
+    },
+    {
+      "path": "Manual baseline",
+      "compute_hour_usd": 1.0,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 1.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "legacy operations baseline"
+    }
+  ],
+  "percentage_contract": {
+    "sap_principal_propagation_audit_coverage_rate": {
+      "numerator": 988,
+      "denominator": 1000,
+      "percentage": 98.8,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/legacy-erp-sap-mainframe-hybrid-integration-agent-infra-faq-r1010.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "testrun_precommit_error_catch_rate": {
+      "numerator": 952,
+      "denominator": 1000,
+      "percentage": 95.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/legacy-erp-sap-mainframe-hybrid-integration-agent-infra-faq-r1010.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "backend_connection_pool_protection_rate": {
+      "numerator": 961,
+      "denominator": 1000,
+      "percentage": 96.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/legacy-erp-sap-mainframe-hybrid-integration-agent-infra-faq-r1010.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  }
+}

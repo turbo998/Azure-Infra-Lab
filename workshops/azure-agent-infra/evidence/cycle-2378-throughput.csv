@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+prompt_shields_path,Prompt Shields + adherence path,968,851,synthetic,deterministic model
+apim_policy_path,APIM gateway policy guard path,1229,1101,synthetic,deterministic model
+aks_guardrail_path,AKS self-hosted guardrail path,821,719,synthetic,deterministic model
+parallel_composite_path,Async parallel composite guard path,1174,1044,synthetic,deterministic model

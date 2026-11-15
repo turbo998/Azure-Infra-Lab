@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+rto guard and ingress failover fidelity,224,233,0.9614,measured,replay logs
+rpo conflict-merge custody,221,233,0.9485,measured,replay logs
+quota spillover finops fence,219,233,0.9399,measured,replay logs

@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+vending_requests,IDP vending API path,126,114,measured,vending path load replay
+policy_evaluation,Policy engine decision path,980,910,synthetic,policy graph simulation
+identity_bootstrap,Foundry/APIM/Entra bootstrap workflow,88,73,anonymized_reported,platform bootstrap traces
+ttl_reclaim,Orphan sandbox reclaim automation,320,290,measured,lifecycle reclaim replay

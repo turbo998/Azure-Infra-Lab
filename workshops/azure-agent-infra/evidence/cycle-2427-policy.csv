@@ -1,0 +1,5 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cog range-read egress savings,894,1000,0.894,measured,egress delta suite
+postgis and h3 spatial precision,979,1000,0.979,anonymized_reported,spatial precision benchmark
+claim triage turnaround improvement,586,1000,0.586,synthetic,triage comparison model
+route sla preservation,961,1000,0.961,measured,route SLA suite

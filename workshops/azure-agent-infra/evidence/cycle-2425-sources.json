@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure AI Document Intelligence layout model",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept-layout",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:38:16.432004+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Purview double key encryption",
+    "url": "https://learn.microsoft.com/en-us/purview/double-key-encryption",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:38:16.432004+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "SharePoint Embedded overview",
+    "url": "https://learn.microsoft.com/en-us/sharepoint/dev/embedded/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:38:16.432004+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Open XML SDK docs",
+    "url": "https://learn.microsoft.com/en-us/office/open-xml/open-xml-sdk",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:38:16.432004+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "WordprocessingML tracked changes reference",
+    "url": "https://learn.microsoft.com/en-us/office/open-xml/word/how-to-accept-all-revisions-in-a-word-processing-document",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:38:16.432004+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Container Apps dynamic sessions",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:38:16.432004+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  }
+]

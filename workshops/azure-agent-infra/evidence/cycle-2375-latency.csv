@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+trace_ingest,Foundry tracing + App Insights ingest path,168,289,anonymized_reported,official+reported
+adx_query,ADX KQL span-correlation query lane,124,214,measured,staging replay
+grafana_panel,Managed Grafana dashboard refresh lane,97,163,anonymized_reported,official+reported
+online_eval,Online eval policy trigger lane,53,96,synthetic,deterministic model

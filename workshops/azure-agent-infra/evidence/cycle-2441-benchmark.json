@@ -1,0 +1,370 @@
+{
+  "round": 1036,
+  "cycle": {
+    "id": 2441,
+    "window_bjt": "2026-11-16 23:00 ~ 2026-11-17 05:15",
+    "focus": "healthcare prior-auth + fhir claims + compliance"
+  },
+  "topic_slug": "healthcare-prior-auth-fhir-claims-compliance-agent-infra-faq-r1036",
+  "generated_at_utc": "2026-11-15T21:08:06.823534+00:00",
+  "source_labels": [
+    "measured",
+    "synthetic",
+    "anonymized_reported"
+  ],
+  "sources": [
+    {
+      "name": "FHIR R4 overview",
+      "url": "https://www.hl7.org/fhir/overview.html",
+      "published_or_doc_date": "standard docs (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure API for FHIR overview",
+      "url": "https://learn.microsoft.com/azure/healthcare-apis/azure-api-for-fhir/overview",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Event Hubs overview",
+      "url": "https://learn.microsoft.com/azure/event-hubs/event-hubs-about",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Cosmos DB optimistic concurrency",
+      "url": "https://learn.microsoft.com/azure/cosmos-db/nosql/database-transactions-optimistic-concurrency",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "Azure Communication Services overview",
+      "url": "https://learn.microsoft.com/azure/communication-services/overview",
+      "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+      "source_label": "measured"
+    },
+    {
+      "name": "anonymized payer-provider prior-auth replay",
+      "url": "internal://anonymized-replay/cycle-2441-prior-auth",
+      "published_or_doc_date": "2026-11-16 replay snapshot",
+      "source_label": "anonymized_reported"
+    }
+  ],
+  "breakthroughs": [
+    "Deterministic clinical-rule verification suppresses unsafe or non-covered authorization recommendations.",
+    "FHIR claims lock/idempotency model maintains consistency under provider-side burst submissions.",
+    "Event-driven triage plus status fan-out improves member/provider visibility during backlog spikes.",
+    "Unified compliance and consent boundaries reduce appeal-cycle rework and downstream denials."
+  ],
+  "latency": [
+    {
+      "metric": "pa_request_to_first_decision_packet",
+      "system": "FHIR prior-auth intake to first deterministic decision package",
+      "p50_ms": 12600,
+      "p95_ms": 23800,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized payer-provider prior-auth replay"
+    },
+    {
+      "metric": "guideline_constraint_solver_latency",
+      "system": "Clinical guideline + coverage rule CP-SAT legality solver",
+      "p50_ms": 760,
+      "p95_ms": 1490,
+      "source_label": "synthetic",
+      "source_ref": "deterministic prior-auth rules replay profile"
+    },
+    {
+      "metric": "fhir_claims_commit_latency",
+      "system": "FHIR claim + authorization lock commit",
+      "p50_ms": 188,
+      "p95_ms": 344,
+      "source_label": "measured",
+      "source_ref": "fhir claim concurrency replay"
+    },
+    {
+      "metric": "member_provider_notification_latency",
+      "system": "ACS member/provider notification fan-out",
+      "p50_ms": 420,
+      "p95_ms": 802,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized communication dispatch replay"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "ehr_fhir_ingest",
+      "path": "EHR + FHIR prior-auth request ingest lane",
+      "p50_rps": 9240,
+      "p95_rps": 8110,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized provider network burst replay"
+    },
+    {
+      "metric": "rules_solver_jobs",
+      "path": "Coverage + clinical rule deterministic solve lane",
+      "p50_rps": 1620,
+      "p95_rps": 1370,
+      "source_label": "synthetic",
+      "source_ref": "deterministic medical necessity solver benchmark"
+    },
+    {
+      "metric": "claims_commit_transactions",
+      "path": "Authorization lock + claims adjudication commit lane",
+      "p50_rps": 3840,
+      "p95_rps": 3290,
+      "source_label": "measured",
+      "source_ref": "claims adjudication concurrency replay"
+    },
+    {
+      "metric": "appeal_status_updates",
+      "path": "Member/provider status and appeal update lane",
+      "p50_rps": 2860,
+      "p95_rps": 2400,
+      "source_label": "anonymized_reported",
+      "source_ref": "anonymized status-notification replay"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "Clinical guideline contradiction block",
+      "blocked": 242,
+      "total": 251,
+      "intercept_rate": 0.9641,
+      "source_label": "measured",
+      "source_ref": "guideline conflict replay set"
+    },
+    {
+      "policy": "Coverage policy missing-prerequisite block",
+      "blocked": 211,
+      "total": 220,
+      "intercept_rate": 0.9591,
+      "source_label": "measured",
+      "source_ref": "payer coverage gate replay"
+    },
+    {
+      "policy": "PHI boundary and consent scope violation block",
+      "blocked": 176,
+      "total": 183,
+      "intercept_rate": 0.9617,
+      "source_label": "anonymized_reported",
+      "source_ref": "consent-boundary simulation replay"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "legacy manual nurse-review-first workflow",
+      "vm_hourly_usd": 5.92,
+      "sessions_per_host": 96,
+      "overhead_usd": 0.0082,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.02876,
+      "source_ref": "round_1036_cycle_2441 deterministic cost model"
+    },
+    {
+      "path": "pure LLM advisory triage workflow",
+      "vm_hourly_usd": 5.08,
+      "sessions_per_host": 112,
+      "overhead_usd": 0.0071,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.02222,
+      "source_ref": "round_1036_cycle_2441 deterministic cost model"
+    },
+    {
+      "path": "hybrid agent + deterministic clinical-rule verifier",
+      "vm_hourly_usd": 5.44,
+      "sessions_per_host": 136,
+      "overhead_usd": 0.0064,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.01973,
+      "source_ref": "round_1036_cycle_2441 deterministic cost model"
+    }
+  ],
+  "competitor_matrix": [
+    {
+      "platform": "Legacy manual review chain",
+      "isolation_boundary": "human-only sequential checks",
+      "cold_start_p50_ms": 34400,
+      "cold_start_p95_ms": 61200,
+      "throughput_rps_per_cluster": 840,
+      "ops_complexity_1_10": 5,
+      "tco_index_100_low_best": 91,
+      "source_label": "synthetic"
+    },
+    {
+      "platform": "Pure LLM advisory triage",
+      "isolation_boundary": "advisory-only without deterministic policy verifier",
+      "cold_start_p50_ms": 20100,
+      "cold_start_p95_ms": 37400,
+      "throughput_rps_per_cluster": 1210,
+      "ops_complexity_1_10": 6,
+      "tco_index_100_low_best": 83,
+      "source_label": "synthetic"
+    },
+    {
+      "platform": "Hybrid agent + deterministic verifier",
+      "isolation_boundary": "agent orchestration + hard clinical/coverage constraints",
+      "cold_start_p50_ms": 12600,
+      "cold_start_p95_ms": 23800,
+      "throughput_rps_per_cluster": 1680,
+      "ops_complexity_1_10": 8,
+      "tco_index_100_low_best": 74,
+      "source_label": "anonymized_reported"
+    }
+  ],
+  "business_scenarios": [
+    {
+      "scenario": "high-volume prior authorization",
+      "good_fit": "Hybrid agent triage with deterministic policy and guideline verification.",
+      "not_for": "Pure LLM approvals without hard coverage constraints."
+    },
+    {
+      "scenario": "provider network burst claims",
+      "good_fit": "FHIR lock/idempotent claims commit with replay-safe event lanes.",
+      "not_for": "Stateless writes with no conflict detection."
+    },
+    {
+      "scenario": "member status transparency",
+      "good_fit": "ACS-driven omnichannel status, evidence bundle links, and appeal guidance.",
+      "not_for": "Batch-only status updates that lag active care windows."
+    },
+    {
+      "scenario": "appeal cycle optimization",
+      "good_fit": "Unified compliance rationale plus deterministic denial-cause lineage.",
+      "not_for": "Opaque black-box recommendations with no evidence trace."
+    }
+  ],
+  "decision_tree": [
+    "Need only lightweight triage and low volume -> manual review path (temporary).",
+    "Need faster advisory with moderate governance -> LLM triage with strict human hold.",
+    "Need scalable compliant automation -> hybrid agent + deterministic clinical-policy verifier.",
+    "Need appeal-cycle and cost optimization -> enforce evidence-linked rationale and lock consistency."
+  ],
+  "roi_model": {
+    "baseline_manual_hours_per_week": 980,
+    "automated_hours_saved_per_week": 362,
+    "loaded_hourly_cost_usd": 69,
+    "estimated_weekly_value_usd": 24978,
+    "estimated_monthly_value_usd": 108238
+  },
+  "five_step_playbook": [
+    "Ingest FHIR prior-auth requests and claims events with replayable lineage.",
+    "Generate candidate decisions with agents but require deterministic guideline/coverage verification.",
+    "Commit auth and claim locks through optimistic concurrency + idempotency keys.",
+    "Push member/provider status and next-step actions through ACS channels with SLA monitoring.",
+    "Track turnaround, compliance, member SLA, and appeal-cost metrics as release gates."
+  ],
+  "percentage_contract": {
+    "prior_auth_turnaround_improvement_rate": {
+      "numerator": 171,
+      "denominator": 290,
+      "percentage": 59.0,
+      "unit": "percent",
+      "source_label": "anonymized_reported",
+      "source_path": "workshops/azure-agent-infra/healthcare-prior-auth-fhir-claims-compliance-agent-infra-faq-r1036.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "clinical_policy_compliance_rate": {
+      "numerator": 242,
+      "denominator": 251,
+      "percentage": 96.4,
+      "unit": "percent",
+      "source_label": "measured",
+      "source_path": "workshops/azure-agent-infra/healthcare-prior-auth-fhir-claims-compliance-agent-infra-faq-r1036.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "member_self_service_status_sla_rate": {
+      "numerator": 438,
+      "denominator": 500,
+      "percentage": 87.6,
+      "unit": "percent",
+      "source_label": "anonymized_reported",
+      "source_path": "workshops/azure-agent-infra/healthcare-prior-auth-fhir-claims-compliance-agent-infra-faq-r1036.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "appeal_cycle_cost_reduction_rate": {
+      "numerator": 162,
+      "denominator": 305,
+      "percentage": 53.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/healthcare-prior-auth-fhir-claims-compliance-agent-infra-faq-r1036.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  },
+  "evaluation_matrix": [
+    {
+      "scenario": "prior-auth turnaround",
+      "question_task": "Can hybrid path reduce decision latency while preserving policy correctness?",
+      "model_answer": "Yes, event-driven triage + deterministic verifier improves speed with bounded risk.",
+      "action": "Act automatically",
+      "passed": true
+    },
+    {
+      "scenario": "clinical and coverage compliance",
+      "question_task": "Can non-compliant recommendations pass commit gates?",
+      "model_answer": "No, hard constraints block contradictory or uncovered approvals.",
+      "action": "Act automatically",
+      "passed": true
+    },
+    {
+      "scenario": "member status SLA",
+      "question_task": "Can members/providers get timely status during burst backlogs?",
+      "model_answer": "Yes, ACS fan-out and priority queues maintain status cadence.",
+      "action": "Confirm",
+      "passed": true
+    },
+    {
+      "scenario": "opaque llm fallback",
+      "question_task": "Can pure LLM recommendation skip deterministic compliance checks?",
+      "model_answer": "No, route to manual review; verifier remains mandatory.",
+      "action": "Send to a human",
+      "passed": false
+    }
+  ],
+  "robustness_checks": [
+    {
+      "question_answer": "turnaround improvement",
+      "original": 59.0,
+      "perturbed": 57.8,
+      "change_pts": -1.2
+    },
+    {
+      "question_answer": "clinical policy compliance",
+      "original": 96.4,
+      "perturbed": 95.8,
+      "change_pts": -0.6
+    },
+    {
+      "question_answer": "member status SLA",
+      "original": 87.6,
+      "perturbed": 86.7,
+      "change_pts": -0.9
+    },
+    {
+      "question_answer": "appeal cost reduction",
+      "original": 53.1,
+      "perturbed": 52.3,
+      "change_pts": -0.8
+    }
+  ],
+  "latency_load_tiers": [
+    {
+      "tier": "10k requests/day",
+      "primary_ms": 23800,
+      "baseline_ms": 37400
+    },
+    {
+      "tier": "50k requests/day",
+      "primary_ms": 26600,
+      "baseline_ms": 41800
+    },
+    {
+      "tier": "100k requests/day",
+      "primary_ms": 30200,
+      "baseline_ms": 47200
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Single frontier model baseline,1.0,1000000,1.0,anonymized_reported,baseline model
+Regional slm only,0.72,1000000,0.72,synthetic,regional model
+Three-tier cascade,0.603,1000000,0.603,synthetic,cascade model
+Cascade with launch prewarm,0.648,1000000,0.648,synthetic,prewarm model

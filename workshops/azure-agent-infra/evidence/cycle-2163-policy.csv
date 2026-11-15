@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+apim-mcp-reentry-credit-latencybucket-assuranceguardlane-fairness-violation saturation gate,266,275,0.9673,measured,apim-mcp-reentry-credit-latencybucket-assuranceguardlane-fairness-guard mismatch replay + deterministic verification
+apim-mcp-reentry-credit-latencybucket-assuranceguardlane-fairness-guard fence integrity guard,253,259,0.9768,measured,apim-mcp-reentry-credit-latencybucket-assuranceguardlane-fairness-guard integrity logs
+tenant-scope apim-mcp-reentry-credit-latencybucket-assuranceguardlane-fairness-guard dns-authorization fence,244,250,0.9760,measured,tenant apim-mcp-reentry-credit-latencybucket-assuranceguardlane-fairness-guard fairness replay logs

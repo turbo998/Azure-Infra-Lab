@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <rect x="40" y="40" width="1520" height="120" rx="14" fill="url(#g)"/>
+  <text x="70" y="102" fill="white" font-size="34" font-family="Segoe UI, Arial">Cycle 2392 · Agentic Chaos Engineering + Streaming Resilience Verification</text>
+  <text x="70" y="142" fill="#dbeafe" font-size="22" font-family="Segoe UI, Arial">Chaos Studio | Load Testing | APIM Breakers | Idempotency Ledger</text>
+  <rect x="70" y="220" width="240" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="90" y="275" fill="#bfdbfe" font-size="22">Load Streams</text>
+  <rect x="340" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="360" y="275" fill="#bfdbfe" font-size="22">APIM Breaker</text>
+  <rect x="620" y="220" width="240" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="640" y="275" fill="#bfdbfe" font-size="22">Model Lanes</text>
+  <rect x="890" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="910" y="275" fill="#bfdbfe" font-size="22">Tool Fallback</text>
+  <rect x="1170" y="220" width="340" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="1190" y="275" fill="#bfdbfe" font-size="22">Idempotency + Side-Effect Guard</text>
+  <path d="M310 280 L340 280 M590 280 L620 280 M860 280 L890 280 M1140 280 L1170 280" stroke="#93c5fd" stroke-width="4"/>
+  <rect x="70" y="390" width="1460" height="430" rx="16" fill="#0f172a" stroke="#334155"/>
+  <text x="95" y="445" fill="#e2e8f0" font-size="30">Daily capability highlights</text>
+  <text x="95" y="495" fill="#cbd5e1" font-size="24">• Chaos Studio fault domains validate degradation under realistic disturbances.</text>
+  <text x="95" y="540" fill="#cbd5e1" font-size="24">• Streaming load tests expose breaker and fallback behavior at sustained pressure.</text>
+  <text x="95" y="585" fill="#cbd5e1" font-size="24">• Token-aware APIM breakers reduce quota-storm amplification risk.</text>
+  <text x="95" y="630" fill="#cbd5e1" font-size="24">• Idempotency ledgers prevent duplicate side-effects during tool brownouts.</text>
+  <text x="95" y="710" fill="#94a3b8" font-size="18">labels: measured / synthetic / anonymized_reported</text>
+  <text x="95" y="740" fill="#94a3b8" font-size="18">fetched_at_utc: 2026-11-15T16:51:28+00:00</text>
+</svg>

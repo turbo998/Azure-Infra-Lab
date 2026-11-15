@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+realtime_webrtc_lane,Foundry realtime WebRTC lane,1328,1189,synthetic,deterministic model
+acs_sip_lane,ACS SIP automation lane,1044,918,synthetic,deterministic model
+speech_cascade_lane,Speech cascade lane,986,861,synthetic,deterministic model
+turn_lock_guard_lane,Turn-taking guard lane,1113,997,synthetic,deterministic model

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Azure AI Foundry pricing and throughput guidance",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:18:24+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "AKS KAITO overview",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:18:24+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "vLLM project releases",
+    "url": "https://github.com/vllm-project/vllm/releases",
+    "published_or_doc_date": "2026-11-12",
+    "fetched_at_utc": "2026-11-15T15:18:24+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "upstream release comparator"
+  },
+  {
+    "title": "API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10-23",
+    "fetched_at_utc": "2026-11-15T15:18:24+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  }
+]

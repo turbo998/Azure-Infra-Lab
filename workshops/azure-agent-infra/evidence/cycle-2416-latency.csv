@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+prompt_rag_baseline,Prompt/RAG baseline,1180,1940,60.3,anonymized_reported,production baseline replay
+lora_sft,LoRA SFT distilled model,760,1210,0.0,measured,shadow eval replay
+dpo,DPO aligned model,810,1260,4.1,synthetic,modeled from eval traces
+rft,RFT policy model,870,1340,10.7,anonymized_reported,canary policy replay

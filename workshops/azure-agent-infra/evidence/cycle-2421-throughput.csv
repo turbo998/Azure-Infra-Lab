@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+interactive_tps,Interactive class throughput,1210,1134,measured,interactive replay
+async_batch_tps,Deferrable async throughput,2280,2090,synthetic,async routing model
+gpu_utilization_effective,Effective GPU utilization,1780,1630,anonymized_reported,dcgm telemetry traces
+cache_hit_path,Prefix KV cache hit path,1940,1810,measured,cache replay

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Azure ND GB200 v6 VM sizes",
+    "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nd-family",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "AKS best practices for advanced scheduler features",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/operator-best-practices-advanced-scheduler",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "AKS GPU workload guide",
+    "url": "https://learn.microsoft.com/en-us/azure/aks/use-nvidia-gpu",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "vLLM project releases",
+    "url": "https://github.com/vllm-project/vllm/releases",
+    "published_or_doc_date": "release stream",
+    "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+    "source_label": "synthetic",
+    "notes": "upstream release reference"
+  },
+  {
+    "title": "SGLang project releases",
+    "url": "https://github.com/sgl-project/sglang/releases",
+    "published_or_doc_date": "release stream",
+    "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "upstream release reference"
+  }
+]

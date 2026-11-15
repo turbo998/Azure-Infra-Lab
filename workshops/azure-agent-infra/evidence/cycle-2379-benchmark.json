@@ -1,0 +1,238 @@
+{
+  "cycle": {
+    "id": 2379,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "A2A + streamable-HTTP MCP enterprise interoperability topology on Azure",
+    "generated_at_utc": "2026-11-15T16:00:33+00:00",
+    "topic_slug": "a2a-streamable-http-mcp-enterprise-interoperability-topology-azure-faq-r974"
+  },
+  "generated_at_utc": "2026-11-15T16:00:33+00:00",
+  "topic_slug": "a2a-streamable-http-mcp-enterprise-interoperability-topology-azure-faq-r974",
+  "breakthrough_focus": [
+    "Agent-card discovery with signed version chains improves federation safety boundaries.",
+    "Streamable-HTTP connection pooling reduces reconnect tax under high tenant churn.",
+    "Edge registry plus east-west mesh dual-plane topology improves resilience for enterprise agent interoperability.",
+    "Tenant-scoped federation policy reduces blast-radius during protocol version transitions."
+  ],
+  "architecture_impacts": [
+    "APIM registry governs external interoperability contracts and version onboarding.",
+    "Mesh mTLS governs internal east-west trust and service identity propagation.",
+    "Pool manager applies tenant-aware circuit breakers and retry budgets.",
+    "Federation guardrail routes overreach and downgrade attempts to human review."
+  ],
+  "sources": [
+    {
+      "title": "Azure API Management AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure API Management changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06",
+      "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+      "source_label": "measured",
+      "notes": "official changelog"
+    },
+    {
+      "title": "MCP Protocol specification",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+      "published_or_doc_date": "2025-06-18",
+      "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official spec"
+    },
+    {
+      "title": "Agent2Agent protocol repository",
+      "url": "https://github.com/google/A2A",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official repository"
+    },
+    {
+      "title": "Azure Front Door WAF documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview",
+      "published_or_doc_date": "2026-09",
+      "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure Kubernetes Service documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:00:33+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "apim_registry_frontdoor_path",
+      "system": "APIM Agent/MCP registry + Front Door WAF path",
+      "p50_ms": 141,
+      "p95_ms": 284,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "mesh_east_west_path",
+      "system": "Istio/Linkerd mTLS east-west mesh path on AKS/ACA",
+      "p50_ms": 176,
+      "p95_ms": 337,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "stream_pool_compose_path",
+      "system": "Streamable-HTTP pooled composite path",
+      "p50_ms": 128,
+      "p95_ms": 266,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "federation_isolation_path",
+      "system": "Cross-tenant federation isolation path",
+      "p50_ms": 153,
+      "p95_ms": 301,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "apim_registry_lane",
+      "path": "APIM registry edge lane",
+      "p50_rps": 1142,
+      "p95_rps": 1008,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "mesh_lane",
+      "path": "East-west mesh lane",
+      "p50_rps": 932,
+      "p95_rps": 818,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "stream_pool_lane",
+      "path": "Streamable-HTTP pooled lane",
+      "p50_rps": 1261,
+      "p95_rps": 1129,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "federation_guard_lane",
+      "path": "Cross-tenant federation guard lane",
+      "p50_rps": 1044,
+      "p95_rps": 919,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "agent-card discovery version custody",
+      "blocked": 221,
+      "total": 230,
+      "intercept_rate": 0.9609,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "streamable-http pool stability guard",
+      "blocked": 218,
+      "total": 232,
+      "intercept_rate": 0.9397,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "cross-tenant federation blast-radius fence",
+      "blocked": 223,
+      "total": 235,
+      "intercept_rate": 0.9489,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "APIM registry + Front Door WAF lane",
+      "vm_hourly_usd": 4.62,
+      "sessions_per_host": 348,
+      "session_minutes": 20,
+      "overhead_usd": 0.00176,
+      "usd_per_session": 0.00609,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Mesh east-west lane",
+      "vm_hourly_usd": 5.14,
+      "sessions_per_host": 318,
+      "session_minutes": 20,
+      "overhead_usd": 0.00191,
+      "usd_per_session": 0.00728,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Streamable-HTTP pooled lane",
+      "vm_hourly_usd": 4.37,
+      "sessions_per_host": 372,
+      "session_minutes": 20,
+      "overhead_usd": 0.00166,
+      "usd_per_session": 0.00556,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Federation isolation lane",
+      "vm_hourly_usd": 4.83,
+      "sessions_per_host": 339,
+      "session_minutes": 20,
+      "overhead_usd": 0.00184,
+      "usd_per_session": 0.00641,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "agent_card_version_custody_pass_rate": {
+      "numerator": 221,
+      "denominator": 230,
+      "percentage": 96.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/a2a-streamable-http-mcp-enterprise-interoperability-topology-azure-faq-r974.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "streamable_http_pool_sla_rate": {
+      "numerator": 218,
+      "denominator": 232,
+      "percentage": 94.0,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/a2a-streamable-http-mcp-enterprise-interoperability-topology-azure-faq-r974.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "cross_tenant_federation_isolation_gain_pts": {
+      "numerator": 24,
+      "denominator": 10,
+      "percentage": 2.4,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/a2a-streamable-http-mcp-enterprise-interoperability-topology-azure-faq-r974.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

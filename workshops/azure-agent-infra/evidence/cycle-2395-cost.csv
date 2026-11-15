@@ -1,0 +1,5 @@
+path,compute_hour_usd,incidents_resolved_per_hour,usd_per_incident,source_label,source_ref
+Read-only triage path,5.12,183,0.02798,synthetic,deterministic finops model
+JIT remediation path,5.45,172,0.03169,synthetic,deterministic finops model
+Alert dedup path,5.83,165,0.03533,synthetic,deterministic finops model
+Unmanaged baseline,4.98,126,0.03952,synthetic,deterministic finops model

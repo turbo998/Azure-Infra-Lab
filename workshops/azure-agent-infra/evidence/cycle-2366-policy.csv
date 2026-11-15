@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced evolvabilitycustodyproof drift gate,209,216,0.9676,measured,replay logs
+evolvabilitycustodyproof variance guard,202,209,0.9665,measured,replay logs
+evolvabilitycustodyproof recovery fence,196,203,0.9655,measured,replay logs

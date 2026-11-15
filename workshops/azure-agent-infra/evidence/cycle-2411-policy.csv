@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cross tenant context bleed prevention,991,1000,0.991,measured,isolation logs
+cmk offboarding crypto erase success,982,1000,0.982,measured,offboarding drills
+isolation audit pass,971,1000,0.971,measured,audit tests

@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+acs_active_call_channels,ACS active media channels,10240,9805,measured,call-capacity replay
+whisper_assist_streams,Whisper assist suggestion streams,11800,11120,anonymized_reported,agent desktop telemetry sample
+pci_pause_resume_transitions,PCI media pause/resume transitions,20400,19380,synthetic,pci flow simulation
+ivr_containment_per_1000_calls,IVR self-service containment per 1k calls,665,641,measured,containment replay

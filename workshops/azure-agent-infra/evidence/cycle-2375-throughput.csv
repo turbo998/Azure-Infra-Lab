@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+span_ingest,Unified span ingest lane,2810,2554,synthetic,deterministic model
+kql_eval,KQL correlation + evaluation lane,1024,908,synthetic,deterministic model
+finops_attr,Tenant token FinOps attribution lane,1312,1176,synthetic,deterministic model
+loop_guard,Runaway loop detection guardlane,1194,1086,synthetic,deterministic model

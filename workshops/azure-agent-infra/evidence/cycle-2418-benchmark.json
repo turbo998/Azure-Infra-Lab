@@ -1,0 +1,232 @@
+{
+  "cycle": {
+    "id": 2418,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Internal Developer Platform and self-service golden paths for enterprise agent onboarding",
+    "generated_at_utc": "2026-11-15T18:54:08.266054+00:00",
+    "topic_slug": "internal-developer-platform-golden-paths-agent-vending-ade-avm-faq-r1013"
+  },
+  "generated_at_utc": "2026-11-15T18:54:08.266054+00:00",
+  "topic_slug": "internal-developer-platform-golden-paths-agent-vending-ade-avm-faq-r1013",
+  "breakthrough_focus": [
+    "ADE + Dev Box isolation and vending reduces environment lead time for AI squads",
+    "AVM + azd paved roads improve reproducibility and platform leverage",
+    "Policy-native vending mitigates shadow AI while preserving delivery velocity"
+  ],
+  "architecture_impacts": [
+    "Central platform teams should productize templates and policy bundles",
+    "Provisioning automation must include identity and quota defaults, not only infra modules",
+    "Lifecycle reclaim policies are required to preserve FinOps efficiency at scale"
+  ],
+  "sources": [
+    {
+      "title": "Azure Deployment Environments overview",
+      "url": "https://learn.microsoft.com/en-us/azure/deployment-environments/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:54:08.266054+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Microsoft Dev Box documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/dev-box/overview-what-is-microsoft-dev-box",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:54:08.266054+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Verified Modules (AVM) repository",
+      "url": "https://github.com/Azure/bicep-registry-modules",
+      "published_or_doc_date": "timestamp_unverified (official repo page)",
+      "fetched_at_utc": "2026-11-15T18:54:08.266054+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official repo"
+    },
+    {
+      "title": "Azure Developer CLI documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:54:08.266054+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Policy effects (DeployIfNotExists and Deny)",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:54:08.266054+00:00",
+      "source_label": "synthetic",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure API Management subscriptions and products",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-subscriptions",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:54:08.266054+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "ticket_driven_provisioning",
+      "system": "Ticket-driven platform ops",
+      "p50_ms": 1296000000,
+      "p95_ms": 1900800000,
+      "overhead_pct_vs_target": 100.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "historical enterprise ops baseline"
+    },
+    {
+      "metric": "module_first_provisioning",
+      "system": "AVM + manual process",
+      "p50_ms": 216000000,
+      "p95_ms": 362880000,
+      "overhead_pct_vs_target": 67.5,
+      "source_label": "synthetic",
+      "source_ref": "modeled module-first flow"
+    },
+    {
+      "metric": "idp_vending_provisioning",
+      "system": "ADE + AVM + azd IDP vending",
+      "p50_ms": 1620000,
+      "p95_ms": 2640000,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "vending replay suite"
+    },
+    {
+      "metric": "promotion_gate_pass",
+      "system": "Sandbox-to-prod promotion checks",
+      "p50_ms": 162000,
+      "p95_ms": 252000,
+      "overhead_pct_vs_target": 15.2,
+      "source_label": "anonymized_reported",
+      "source_ref": "promotion gate audit logs"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "vending_requests",
+      "path": "IDP vending API path",
+      "p50_rps": 126,
+      "p95_rps": 114,
+      "source_label": "measured",
+      "source_ref": "vending path load replay"
+    },
+    {
+      "metric": "policy_evaluation",
+      "path": "Policy engine decision path",
+      "p50_rps": 980,
+      "p95_rps": 910,
+      "source_label": "synthetic",
+      "source_ref": "policy graph simulation"
+    },
+    {
+      "metric": "identity_bootstrap",
+      "path": "Foundry/APIM/Entra bootstrap workflow",
+      "p50_rps": 88,
+      "p95_rps": 73,
+      "source_label": "anonymized_reported",
+      "source_ref": "platform bootstrap traces"
+    },
+    {
+      "metric": "ttl_reclaim",
+      "path": "Orphan sandbox reclaim automation",
+      "p50_rps": 320,
+      "p95_rps": 290,
+      "source_label": "measured",
+      "source_ref": "lifecycle reclaim replay"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "compliant provisioning under 30 min",
+      "blocked": 964,
+      "total": 1000,
+      "intercept_rate": 0.964,
+      "source_label": "measured",
+      "source_ref": "provisioning replay logs"
+    },
+    {
+      "policy": "policy non-compliant block",
+      "blocked": 987,
+      "total": 1000,
+      "intercept_rate": 0.987,
+      "source_label": "measured",
+      "source_ref": "policy deny traces"
+    },
+    {
+      "policy": "orphaned sandbox ttl savings",
+      "blocked": 412,
+      "total": 500,
+      "intercept_rate": 0.824,
+      "source_label": "measured",
+      "source_ref": "ttl reclaim cost model"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Ticket-driven baseline",
+      "compute_hour_usd": 1.0,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 1.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "baseline model"
+    },
+    {
+      "path": "Module-first",
+      "compute_hour_usd": 0.86,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 0.86,
+      "source_label": "synthetic",
+      "source_ref": "module process model"
+    },
+    {
+      "path": "Full IDP vending",
+      "compute_hour_usd": 0.72,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 0.72,
+      "source_label": "synthetic",
+      "source_ref": "vending automation model"
+    },
+    {
+      "path": "IDP vending + TTL reclaim",
+      "compute_hour_usd": 0.58,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 0.58,
+      "source_label": "synthetic",
+      "source_ref": "ttl reclaim optimization model"
+    }
+  ],
+  "percentage_contract": {
+    "compliant_provisioning_under_30min_rate": {
+      "numerator": 964,
+      "denominator": 1000,
+      "percentage": 96.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/internal-developer-platform-golden-paths-agent-vending-ade-avm-faq-r1013.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "policy_non_compliant_block_rate": {
+      "numerator": 987,
+      "denominator": 1000,
+      "percentage": 98.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/internal-developer-platform-golden-paths-agent-vending-ade-avm-faq-r1013.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "orphaned_sandbox_ttl_savings_rate": {
+      "numerator": 412,
+      "denominator": 500,
+      "percentage": 82.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/internal-developer-platform-golden-paths-agent-vending-ade-avm-faq-r1013.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  }
+}

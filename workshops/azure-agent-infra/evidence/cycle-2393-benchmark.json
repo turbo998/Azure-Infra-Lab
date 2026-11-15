@@ -1,0 +1,226 @@
+{
+  "cycle": {
+    "id": 2393,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Zero-downtime blue-green and shadow/canary rollouts for stateful long-running agents on Azure",
+    "generated_at_utc": "2026-11-15T16:55:05+00:00",
+    "topic_slug": "zero-downtime-bluegreen-shadow-canary-stateful-agent-rollout-bicep-faq-r988"
+  },
+  "generated_at_utc": "2026-11-15T16:55:05+00:00",
+  "topic_slug": "zero-downtime-bluegreen-shadow-canary-stateful-agent-rollout-bicep-faq-r988",
+  "breakthrough_focus": [
+    "Blue-green plus canary sequencing can drain long-lived streams before full promotion.",
+    "Revision traffic splitting enables safer shadow validation under live-like load.",
+    "Prompt/tool-schema pinning reduces rollout-time behavioral skew risks.",
+    "Checkpoint-integrity gates prevent orphaned state during session migration."
+  ],
+  "architecture_impacts": [
+    "Drain windows are mandatory for long in-flight stream sessions before cutover.",
+    "Traffic promotion must be tied to explicit rollback criteria and stream SLOs.",
+    "Schema/config pinning should remain immutable through each rollout wave.",
+    "Checkpoint migration validation must be part of release governance."
+  ],
+  "sources": [
+    {
+      "title": "Bicep deployment stacks",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:55:05+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Container Apps revisions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:55:05+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Argo Rollouts",
+      "url": "https://argo-rollouts.readthedocs.io/en/stable/",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:55:05+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure App Configuration feature management",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-app-configuration/concept-feature-management",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:55:05+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure API Management traffic control",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-policies",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:55:05+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "bluegreen_drain_path",
+      "system": "Blue-green drain and handoff path",
+      "p50_ms": 173,
+      "p95_ms": 321,
+      "overhead_pct_vs_nodrain": -38.4,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "canary_ramp_path",
+      "system": "Canary ramp and rollback guard path",
+      "p50_ms": 196,
+      "p95_ms": 352,
+      "overhead_pct_vs_nodrain": -25.6,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "schema_pinning_path",
+      "system": "Prompt/tool schema pinning validation path",
+      "p50_ms": 231,
+      "p95_ms": 441,
+      "overhead_pct_vs_nodrain": -9.1,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "nodrain_cutover_baseline",
+      "system": "No-drain cutover baseline",
+      "p50_ms": 451,
+      "p95_ms": 941,
+      "overhead_pct_vs_nodrain": 0.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "drain_path",
+      "path": "Blue-green drain path",
+      "p50_rps": 1318,
+      "p95_rps": 1194,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "canary_path",
+      "path": "Canary ramp path",
+      "p50_rps": 1228,
+      "p95_rps": 1106,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "pinning_path",
+      "path": "Schema pinning path",
+      "p50_rps": 1146,
+      "p95_rps": 1022,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "nodrain_path",
+      "path": "No-drain baseline path",
+      "p50_rps": 904,
+      "p95_rps": 792,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "in-flight stream drain fidelity",
+      "blocked": 235,
+      "total": 243,
+      "intercept_rate": 0.9671,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "schema version pinning consistency",
+      "blocked": 231,
+      "total": 243,
+      "intercept_rate": 0.9506,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "checkpoint migration integrity precision",
+      "blocked": 228,
+      "total": 243,
+      "intercept_rate": 0.9383,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Blue-green drain path",
+      "compute_hour_usd": 5.22,
+      "sessions_per_hour": 671,
+      "usd_per_session": 0.00778,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Canary ramp path",
+      "compute_hour_usd": 5.53,
+      "sessions_per_hour": 624,
+      "usd_per_session": 0.00886,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Schema pinning path",
+      "compute_hour_usd": 5.94,
+      "sessions_per_hour": 578,
+      "usd_per_session": 0.01028,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "No-drain baseline",
+      "compute_hour_usd": 4.93,
+      "sessions_per_hour": 427,
+      "usd_per_session": 0.01155,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "stream_drain_success_rate": {
+      "numerator": 235,
+      "denominator": 243,
+      "percentage": 96.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/zero-downtime-bluegreen-shadow-canary-stateful-agent-rollout-bicep-faq-r988.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "schema_pinning_consistency_rate": {
+      "numerator": 231,
+      "denominator": 243,
+      "percentage": 95.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/zero-downtime-bluegreen-shadow-canary-stateful-agent-rollout-bicep-faq-r988.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "rollout_efficiency_gain_pts": {
+      "numerator": 37,
+      "denominator": 10,
+      "percentage": 3.7,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/zero-downtime-bluegreen-shadow-canary-stateful-agent-rollout-bicep-faq-r988.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

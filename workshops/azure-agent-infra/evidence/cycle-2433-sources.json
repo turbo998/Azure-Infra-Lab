@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure Operator Nexus overview",
+    "url": "https://learn.microsoft.com/en-us/azure/operator-nexus/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:16:30.440722+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Data Explorer overview",
+    "url": "https://learn.microsoft.com/en-us/azure/data-explorer/data-explorer-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:16:30.440722+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "OpenConfig and gNMI references",
+    "url": "https://github.com/openconfig/reference",
+    "published_or_doc_date": "timestamp_unverified (official reference repo)",
+    "fetched_at_utc": "2026-11-15T20:16:30.440722+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "open telemetry schema reference"
+  },
+  {
+    "title": "Batfish documentation",
+    "url": "https://batfish.readthedocs.io/en/latest/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:16:30.440722+00:00",
+    "source_label": "synthetic",
+    "notes": "reachability verification reference"
+  },
+  {
+    "title": "YANG RFC 7950",
+    "url": "https://www.rfc-editor.org/rfc/rfc7950",
+    "published_or_doc_date": "2016-08",
+    "fetched_at_utc": "2026-11-15T20:16:30.440722+00:00",
+    "source_label": "synthetic",
+    "notes": "schema verification reference"
+  },
+  {
+    "title": "Azure Container Apps sessions",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T20:16:30.440722+00:00",
+    "source_label": "measured",
+    "notes": "sandbox pre-verification lane reference"
+  }
+]

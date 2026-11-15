@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+m365_declarative_path_latency,M365 Declarative Agent + Graph Connector path,720,1240,anonymized_reported,enterprise M365 copilot replay traces
+foundry_custom_engine_path_latency,M365 -> APIM -> Foundry Pro-Code Agent path,980,1860,anonymized_reported,hybrid declarative+foundry handoff replay
+entra_obo_token_exchange,Entra OBO token acquisition and API audience exchange,164,332,measured,entra obo validation replay in staging tenant
+multi_step_dag_execution_window,Foundry/ACA deterministic multi-minute DAG+tools loop,2840,5120,synthetic,deterministic long-chain workflow benchmark profile

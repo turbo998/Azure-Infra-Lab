@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced evidenceclosureproof drift gate,195,203,0.9606,measured,replay logs
+evidenceclosureproof variance guard,188,195,0.9641,measured,replay logs
+evidenceclosureproof recovery fence,182,189,0.963,measured,replay logs

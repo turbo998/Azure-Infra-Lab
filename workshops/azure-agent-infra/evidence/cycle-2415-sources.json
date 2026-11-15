@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure API Center overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-center/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure API Management import SOAP APIs",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/import-soap-api",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure API Management OData and policy capabilities",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Logic Apps Standard single-tenant and VNet integration",
+    "url": "https://learn.microsoft.com/en-us/azure/logic-apps/single-tenant-overview-compare",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Logic Apps connectors overview",
+    "url": "https://learn.microsoft.com/en-us/azure/connectors/introduction",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "SAP BAPI test run semantics (BAPI_TRANSACTION_COMMIT/BAPI patterns)",
+    "url": "https://help.sap.com/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:36:24.065830+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  }
+]

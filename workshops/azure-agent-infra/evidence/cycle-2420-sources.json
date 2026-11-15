@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure API Center overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-center/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:07:21.879678+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure API Management policies",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:07:21.879678+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Microsoft Entra External ID overview",
+    "url": "https://learn.microsoft.com/en-us/entra/external-id/external-identities-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:07:21.879678+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Content Safety overview",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:07:21.879678+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "Microsoft Purview data loss prevention overview",
+    "url": "https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:07:21.879678+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "A2A protocol specification",
+    "url": "https://a2aprotocol.ai/",
+    "published_or_doc_date": "timestamp_unverified (official site)",
+    "fetched_at_utc": "2026-11-15T19:07:21.879678+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official specification site"
+  }
+]

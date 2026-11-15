@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+duplicate charge prevention,197,200,0.985,measured,replay logs
+erp inventory consistency,194,200,0.97,measured,replay logs
+refund hallucination guard,190,200,0.95,measured,replay logs

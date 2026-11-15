@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+foundry_batch_primary,Foundry Batch primary + realtime spillover,4.2,5.6,0.0,measured,overnight drill
+aks_kueue_spot,AKS Kueue spot vLLM primary,3.8,4.9,-12.5,anonymized_reported,drill+reported
+aca_jobs_blend,ACA Jobs queue-driven CPU/GPU blend,4.8,6.4,14.3,measured,overnight drill
+legacy_fixed_workers,Legacy fixed worker baseline,8.9,11.8,110.7,anonymized_reported,reported baseline

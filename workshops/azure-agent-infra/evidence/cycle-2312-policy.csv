@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced stabilitycustodyproof drift gate,202,210,0.9619,measured,replay logs
+stabilitycustodyproof variance guard,195,202,0.9653,measured,replay logs
+stabilitycustodyproof recovery fence,189,196,0.9643,measured,replay logs

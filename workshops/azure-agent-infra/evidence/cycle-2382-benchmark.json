@@ -1,0 +1,238 @@
+{
+  "cycle": {
+    "id": 2382,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "MCP tool-custody attestation with APIM + OPA + Key Vault HSM",
+    "generated_at_utc": "2026-11-15T16:12:42+00:00",
+    "topic_slug": "mcp-tool-custody-attestation-opa-rego-azure-policy-keyvault-signing-faq-r977"
+  },
+  "generated_at_utc": "2026-11-15T16:12:42+00:00",
+  "topic_slug": "mcp-tool-custody-attestation-opa-rego-azure-policy-keyvault-signing-faq-r977",
+  "breakthrough_focus": [
+    "Signed MCP card lineage reduces unauthorized tool onboarding risk.",
+    "Dual-layer gateway and sidecar policy checks improve denial precision with bounded latency.",
+    "Wave-based HSM key rotation reduces tenant disruption during cryptographic refresh.",
+    "Replay artifact requirements improve post-incident adjudication quality."
+  ],
+  "architecture_impacts": [
+    "APIM registry enforces signed-card onboarding and version policy.",
+    "Sidecar OPA/Rego checks enforce tenant runtime policy at execution edge.",
+    "Key Vault HSM signs/rotates card certificates with staged tenant rollout.",
+    "Custody guardrails quarantine bypass attempts and escalate to HITL."
+  ],
+  "sources": [
+    {
+      "title": "Azure API Management AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:12:42+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure API Management changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06",
+      "fetched_at_utc": "2026-11-15T16:12:42+00:00",
+      "source_label": "measured",
+      "notes": "official changelog"
+    },
+    {
+      "title": "Azure Key Vault documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:12:42+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Open Policy Agent documentation",
+      "url": "https://www.openpolicyagent.org/docs/latest/",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:12:42+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "MCP Protocol specification",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+      "published_or_doc_date": "2025-06-18",
+      "fetched_at_utc": "2026-11-15T16:12:42+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official spec"
+    },
+    {
+      "title": "Azure Kubernetes Service docs",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:12:42+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "apim_registry_attestation_lane",
+      "system": "APIM MCP registry attestation lane",
+      "p50_ms": 146,
+      "p95_ms": 287,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "opa_rego_sidecar_lane",
+      "system": "OPA/Rego sidecar policy lane on AKS/ACA",
+      "p50_ms": 121,
+      "p95_ms": 249,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "hsm_signing_rotation_lane",
+      "system": "Key Vault HSM signing/rotation lane",
+      "p50_ms": 171,
+      "p95_ms": 319,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "unmanaged_baseline_lane",
+      "system": "Unmanaged MCP tool path baseline",
+      "p50_ms": 488,
+      "p95_ms": 971,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "registry_lane",
+      "path": "APIM registry attestation lane",
+      "p50_rps": 1118,
+      "p95_rps": 996,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "sidecar_lane",
+      "path": "OPA/Rego sidecar lane",
+      "p50_rps": 1296,
+      "p95_rps": 1162,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "rotation_lane",
+      "path": "HSM rotation lane",
+      "p50_rps": 972,
+      "p95_rps": 849,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "custody_guard_lane",
+      "path": "Tool custody guard lane",
+      "p50_rps": 1048,
+      "p95_rps": 931,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "signed card attestation fidelity",
+      "blocked": 226,
+      "total": 233,
+      "intercept_rate": 0.9699,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "policy denial precision control",
+      "blocked": 222,
+      "total": 233,
+      "intercept_rate": 0.9528,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "key rotation custody guard",
+      "blocked": 219,
+      "total": 233,
+      "intercept_rate": 0.9399,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "Registry attestation lane",
+      "vm_hourly_usd": 4.75,
+      "sessions_per_host": 349,
+      "session_minutes": 20,
+      "overhead_usd": 0.00181,
+      "usd_per_session": 0.00614,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "OPA sidecar lane",
+      "vm_hourly_usd": 4.48,
+      "sessions_per_host": 371,
+      "session_minutes": 20,
+      "overhead_usd": 0.00172,
+      "usd_per_session": 0.00573,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "HSM rotation lane",
+      "vm_hourly_usd": 5.06,
+      "sessions_per_host": 332,
+      "session_minutes": 20,
+      "overhead_usd": 0.00194,
+      "usd_per_session": 0.00689,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Custody guard lane",
+      "vm_hourly_usd": 4.69,
+      "sessions_per_host": 356,
+      "session_minutes": 20,
+      "overhead_usd": 0.00179,
+      "usd_per_session": 0.00602,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "tool_custody_attestation_pass_rate": {
+      "numerator": 226,
+      "denominator": 233,
+      "percentage": 97.0,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/mcp-tool-custody-attestation-opa-rego-azure-policy-keyvault-signing-faq-r977.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "policy_denial_precision_rate": {
+      "numerator": 222,
+      "denominator": 233,
+      "percentage": 95.3,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/mcp-tool-custody-attestation-opa-rego-azure-policy-keyvault-signing-faq-r977.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "signed_card_rotation_gain_pts": {
+      "numerator": 26,
+      "denominator": 10,
+      "percentage": 2.6,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/mcp-tool-custody-attestation-opa-rego-azure-policy-keyvault-signing-faq-r977.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+mqtt_persistent_connections,1M persistent mTLS X.509 vehicle sessions,17200,14980,synthetic,deterministic broker sizing model for session expiry/backpressure
+dtc_diagnostics_ingestion,CAN/OBD-II telemetry ingest to ADX,11840,10220,anonymized_reported,anonymized ADX fleet telemetry replay
+ev_route_optimizer,EV routing + charger occupancy tool calls,3260,2870,synthetic,deterministic route optimization batch model
+ota_triage_queue,OTA campaign triage and action queue,2450,1980,anonymized_reported,anonymized OTA triage queue replay

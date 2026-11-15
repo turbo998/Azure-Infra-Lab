@@ -1,0 +1,58 @@
+[
+  {
+    "title": "AWS Bedrock Agents documentation",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:24:16+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "AWS Bedrock AgentCore documentation",
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:24:16+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Vertex AI Agent Engine overview",
+    "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:24:16+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Foundry Agent Service",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:24:16+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Container Apps dynamic sessions",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:24:16+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Durable Functions overview",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:24:16+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Search overview",
+    "url": "https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T17:24:16+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  }
+]

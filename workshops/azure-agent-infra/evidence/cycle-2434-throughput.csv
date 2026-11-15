@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+head_sampling_ingest,Head sampling baseline (20% keep),24100,19840,synthetic,deterministic ingestion model
+tail_sampling_ingest,Tail sampling (100% errors/high-latency/low-eval + 5% healthy),10320,9140,synthetic,deterministic sampling policy model
+pii_redaction_pipeline,Collector redaction throughput,11800,10110,anonymized_reported,anonymized redaction throughput replay
+adx_flamegraph_enrichment,ADX enrichment + flamegraph rendering path,3120,2680,anonymized_reported,anonymized ADX query workload replay

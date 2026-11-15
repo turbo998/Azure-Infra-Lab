@@ -1,0 +1,5 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+monthly waste reclaimed,316,1000,0.316,measured,finops monthly delta
+what-if destructive-change catch,972,1000,0.972,measured,guardrail suite
+finops review-time reduction,418,1000,0.418,synthetic,review process model
+iac-pr zero drift incident rate,1000,1000,1.0,anonymized_reported,drift incident ledger

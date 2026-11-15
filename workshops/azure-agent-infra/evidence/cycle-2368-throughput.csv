@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+orchestrator_events,Durable orchestrator event fan-in,1732,1588,synthetic,deterministic model
+checkpoint_writer,Cosmos checkpoint writer,1124,1011,synthetic,deterministic model
+resume_replayer,Replay resume processor,682,612,synthetic,deterministic model
+consistency_auditor,Lineage audit worker,944,851,synthetic,deterministic model

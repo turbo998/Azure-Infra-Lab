@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+mtls_only_handshake,mTLS handshake only,42,73,0.0,anonymized_reported,edge gateway baseline traces
+mtls_token_exchange,mTLS + OIDC token exchange,66,118,0.0,measured,federation replay benchmark
+mtls_token_quota_policy,mTLS + token + quota and policy checks,82,146,23.7,synthetic,policy-chain simulation
+a2a_async_completion_cycle,A2A async task completion,2450,4120,11.4,anonymized_reported,async completion traces

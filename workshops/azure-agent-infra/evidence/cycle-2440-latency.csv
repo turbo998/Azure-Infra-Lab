@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+irops_event_to_recovery_plan,Weather/ground-stop event to first deterministic recovery plan,18700,34200,anonymized_reported,anonymized airline irops replay traces
+crew_legality_solver_latency,CP-SAT crew legality + tail/gate joint verifier,910,1640,synthetic,deterministic cp-sat replay profile (faa/easa constraints)
+seat_lock_commit_latency,Cosmos DB seat-lock reservation (idempotent commit),142,286,measured,cosmos optimistic concurrency booking replay
+acs_notification_latency,ACS omnichannel push for re-accommodation actions,480,920,anonymized_reported,anonymized passenger comms dispatch replay

@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Prompt/RAG baseline,1.0,1000000,1.0,anonymized_reported,baseline cost model
+LoRA SFT,0.82,1000000,0.71,synthetic,distillation cost model
+DPO,0.9,1000000,0.76,synthetic,alignment cost model
+RFT,1.07,1000000,0.83,synthetic,policy optimization cost model

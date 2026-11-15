@@ -1,0 +1,222 @@
+{
+  "cycle": {
+    "id": 2370,
+    "window_bjt": "2026-12-02 23:00 ~ 2026-12-02 23:30",
+    "focus": "ACA Hyper-V vs E2B Firecracker vs AKS Kata Confidential sandbox execution",
+    "generated_at_utc": "2026-11-15T15:20:52+00:00",
+    "topic_slug": "agent-untrusted-sandbox-aca-hyperv-e2b-firecracker-aks-kata-confidential-selection-faq-r965"
+  },
+  "generated_at_utc": "2026-11-15T15:20:52+00:00",
+  "topic_slug": "agent-untrusted-sandbox-aca-hyperv-e2b-firecracker-aks-kata-confidential-selection-faq-r965",
+  "breakthrough_focus": [
+    "Firecracker lane sustains higher session density with low cold-start overhead.",
+    "ACA Dynamic Sessions keeps managed session orchestration simple.",
+    "Kata confidential lane provides strongest attestation boundary.",
+    "Tiered sandbox routing improves security-cost break-even outcomes."
+  ],
+  "architecture_impacts": [
+    "Admission router enforces risk-tier to sandbox mapping before execution.",
+    "Egress isolation policies become first-class routing constraints.",
+    "Attestation checks gate high-risk execution lanes.",
+    "Ledger telemetry drives adaptive FinOps routing decisions."
+  ],
+  "sources": [
+    {
+      "title": "ACA Dynamic Sessions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:20:52+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "E2B releases",
+      "url": "https://github.com/e2b-dev/e2b/releases",
+      "published_or_doc_date": "2026-11-04",
+      "fetched_at_utc": "2026-11-15T15:20:52+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "release comparator"
+    },
+    {
+      "title": "Kata releases",
+      "url": "https://github.com/kata-containers/kata-containers/releases",
+      "published_or_doc_date": "2026-11-08",
+      "fetched_at_utc": "2026-11-15T15:20:52+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "release comparator"
+    },
+    {
+      "title": "Confidential containers on AKS",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/confidential-containers-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:20:52+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "cold_start",
+      "system": "ACA Dynamic Sessions (Hyper-V)",
+      "p50_ms": 238,
+      "p95_ms": 401,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "cold_start",
+      "system": "E2B Firecracker on VMSS",
+      "p50_ms": 92,
+      "p95_ms": 151,
+      "source_label": "anonymized_reported",
+      "source_ref": "release+reported"
+    },
+    {
+      "metric": "cold_start",
+      "system": "AKS Kata Confidential Containers",
+      "p50_ms": 914,
+      "p95_ms": 1398,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported"
+    },
+    {
+      "metric": "warm_resume",
+      "system": "Prewarmed snapshot restore",
+      "p50_ms": 58,
+      "p95_ms": 94,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "sandbox_sessions",
+      "path": "ACA Hyper-V sessions",
+      "p50_rps": 842,
+      "p95_rps": 735,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "sandbox_sessions",
+      "path": "E2B Firecracker VMSS",
+      "p50_rps": 1584,
+      "p95_rps": 1397,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "sandbox_sessions",
+      "path": "AKS Kata confidential pool",
+      "p50_rps": 624,
+      "p95_rps": 538,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "policy_guardlane",
+      "path": "Unified isolation policy lane",
+      "p50_rps": 1169,
+      "p95_rps": 1032,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "untrusted code escape-risk block",
+      "blocked": 219,
+      "total": 227,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9648
+    },
+    {
+      "policy": "egress deny-list isolation consistency",
+      "blocked": 211,
+      "total": 219,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9635
+    },
+    {
+      "policy": "confidential attestation continuity fence",
+      "blocked": 203,
+      "total": 211,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9621
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "ACA Dynamic Sessions",
+      "vm_hourly_usd": 2.85,
+      "sessions_per_host": 141,
+      "session_minutes": 20,
+      "overhead_usd": 0.00113,
+      "usd_per_session": 0.00786,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "E2B Firecracker on VMSS",
+      "vm_hourly_usd": 5.408,
+      "sessions_per_host": 472,
+      "session_minutes": 20,
+      "overhead_usd": 0.001,
+      "usd_per_session": 0.00482,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "AKS Kata Confidential",
+      "vm_hourly_usd": 6.92,
+      "sessions_per_host": 198,
+      "session_minutes": 20,
+      "overhead_usd": 0.00208,
+      "usd_per_session": 0.01373,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Hybrid tiered lane average",
+      "vm_hourly_usd": 0.0,
+      "sessions_per_host": 1,
+      "session_minutes": 20,
+      "overhead_usd": 0.00179,
+      "usd_per_session": 0.00621,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "unfenced_untrusted_sandbox_escape_risk_rate": {
+      "numerator": 219,
+      "denominator": 227,
+      "percentage": 96.5,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-untrusted-sandbox-aca-hyperv-e2b-firecracker-aks-kata-confidential-selection-faq-r965.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "egress_isolation_policy_consistency_rate": {
+      "numerator": 211,
+      "denominator": 219,
+      "percentage": 96.3,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-untrusted-sandbox-aca-hyperv-e2b-firecracker-aks-kata-confidential-selection-faq-r965.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "confidential_sandbox_finops_breakeven_gain_pts": {
+      "numerator": 52,
+      "denominator": 10,
+      "percentage": 5.2,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-untrusted-sandbox-aca-hyperv-e2b-firecracker-aks-kata-confidential-selection-faq-r965.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

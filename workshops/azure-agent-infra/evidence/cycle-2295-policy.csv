@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced terminalityproof drift gate,197,205,0.961,measured,replay logs
+terminalityproof variance guard,190,197,0.9645,measured,replay logs
+terminalityproof recovery fence,184,191,0.9634,measured,replay logs

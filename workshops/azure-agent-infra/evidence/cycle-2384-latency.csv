@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+foundry_realtime_webrtc_lane,Foundry realtime audio WebRTC lane,112,233,measured,staging replay
+acs_sip_automation_lane,ACS Call Automation SIP trunk lane,149,287,anonymized_reported,official+reported
+speech_cascade_lane,Speech STT + Fast LLM + Neural HD TTS cascade,171,296,measured,staging replay
+unoptimized_voice_baseline,Unoptimized serial voice baseline,468,941,anonymized_reported,reported baseline

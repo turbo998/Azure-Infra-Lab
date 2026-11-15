@@ -1,0 +1,226 @@
+{
+  "cycle": {
+    "id": 2389,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Text-to-SQL and enterprise data agent security architecture on Azure",
+    "generated_at_utc": "2026-11-15T16:40:51+00:00",
+    "topic_slug": "text-to-sql-enterprise-data-agent-security-fabric-unitycatalog-obo-rls-faq-r984"
+  },
+  "generated_at_utc": "2026-11-15T16:40:51+00:00",
+  "topic_slug": "text-to-sql-enterprise-data-agent-security-fabric-unitycatalog-obo-rls-faq-r984",
+  "breakthrough_focus": [
+    "AST read-only SQL sandboxing reduces privileged query abuse risk.",
+    "Entra OBO identity pass-through strengthens tenant-isolated authorization.",
+    "Semantic metric-layer grounding lowers raw-schema overreach and hallucination risks.",
+    "Cross-tenant exfiltration detection enforces hard block before query execution."
+  ],
+  "architecture_impacts": [
+    "Fabric/OneLake and Databricks Unity Catalog governance can align with SQL RLS controls.",
+    "Identity chain binding must propagate from agent runtime to data plane queries.",
+    "Policy gates should combine AST class checks and tenant boundary checks.",
+    "Security telemetry should capture denied query trajectories and policy reasons."
+  ],
+  "sources": [
+    {
+      "title": "Fabric Data Agent overview",
+      "url": "https://learn.microsoft.com/en-us/fabric/data-science/data-agent-overview",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T16:40:51+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "OneLake shortcuts overview",
+      "url": "https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:40:51+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Unity Catalog docs",
+      "url": "https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:40:51+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure SQL row-level security",
+      "url": "https://learn.microsoft.com/en-us/sql/relational-databases/security/row-level-security",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:40:51+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Microsoft identity platform OBO flow",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:40:51+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "ast_readonly_gate",
+      "system": "AST read-only SQL gate path",
+      "p50_ms": 166,
+      "p95_ms": 291,
+      "overhead_pct_vs_ungated": 12.1,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "entra_obo_rls_gate",
+      "system": "Entra OBO plus SQL RLS gate path",
+      "p50_ms": 183,
+      "p95_ms": 347,
+      "overhead_pct_vs_ungated": 15.4,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "semantic_metric_grounding_gate",
+      "system": "Semantic metric-layer grounding path",
+      "p50_ms": 205,
+      "p95_ms": 382,
+      "overhead_pct_vs_ungated": 18.8,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "ungated_raw_sql_baseline",
+      "system": "Ungated raw-schema SQL baseline",
+      "p50_ms": 421,
+      "p95_ms": 918,
+      "overhead_pct_vs_ungated": 0.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "ast_gate",
+      "path": "AST read-only gate",
+      "p50_rps": 1314,
+      "p95_rps": 1191,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "obo_rls_gate",
+      "path": "Entra OBO plus RLS gate",
+      "p50_rps": 1227,
+      "p95_rps": 1104,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "metric_layer_gate",
+      "path": "Semantic metric-layer gate",
+      "p50_rps": 1145,
+      "p95_rps": 1021,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "ungated_path",
+      "path": "Ungated baseline path",
+      "p50_rps": 1498,
+      "p95_rps": 1374,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "read-only ast policy fidelity",
+      "blocked": 231,
+      "total": 239,
+      "intercept_rate": 0.9665,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "entra obo identity boundary precision",
+      "blocked": 227,
+      "total": 239,
+      "intercept_rate": 0.9498,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "cross-tenant exfiltration block coverage",
+      "blocked": 224,
+      "total": 239,
+      "intercept_rate": 0.9372,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "AST read-only gate path",
+      "compute_hour_usd": 5.21,
+      "sessions_per_hour": 598,
+      "usd_per_session": 0.00871,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Entra OBO + RLS gate path",
+      "compute_hour_usd": 5.78,
+      "sessions_per_hour": 551,
+      "usd_per_session": 0.01049,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Semantic metric grounding path",
+      "compute_hour_usd": 6.12,
+      "sessions_per_hour": 523,
+      "usd_per_session": 0.0117,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Ungated raw-schema baseline",
+      "compute_hour_usd": 4.69,
+      "sessions_per_hour": 664,
+      "usd_per_session": 0.00706,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "readonly_ast_gate_pass_rate": {
+      "numerator": 231,
+      "denominator": 239,
+      "percentage": 96.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/text-to-sql-enterprise-data-agent-security-fabric-unitycatalog-obo-rls-faq-r984.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "obo_rls_boundary_precision_rate": {
+      "numerator": 227,
+      "denominator": 239,
+      "percentage": 95.0,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/text-to-sql-enterprise-data-agent-security-fabric-unitycatalog-obo-rls-faq-r984.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "cross_tenant_exfiltration_block_gain_pts": {
+      "numerator": 29,
+      "denominator": 10,
+      "percentage": 2.9,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/text-to-sql-enterprise-data-agent-security-fabric-unitycatalog-obo-rls-faq-r984.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

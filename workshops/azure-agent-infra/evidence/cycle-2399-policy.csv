@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+identity mapping policy,176,180,0.9778,measured,replay logs
+shadow parity guard,174,180,0.9667,measured,replay logs
+drift mitigation gate,177,180,0.9833,measured,replay logs

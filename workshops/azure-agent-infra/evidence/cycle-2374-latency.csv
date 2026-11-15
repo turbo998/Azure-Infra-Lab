@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+session_lock_path,Service Bus session lock + renewal lane,156,274,anonymized_reported,official+reported
+pull_delivery_path,Event Grid Namespace pull-delivery lane,131,236,measured,staging replay
+telemetry_path,Event Hubs telemetry stream aggregation,88,162,anonymized_reported,official+reported
+replay_recovery,DLQ replay recovery warm path,43,79,synthetic,deterministic model

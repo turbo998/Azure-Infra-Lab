@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+ot interlock compliance,495,500,0.99,measured,replay logs
+subsecond triage target,965,1000,0.965,measured,replay logs
+boundary export correctness,493,500,0.986,measured,replay logs

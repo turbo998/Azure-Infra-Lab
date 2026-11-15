@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+topology locality hit,486,500,0.972,measured,replay logs
+reasoning slo meet,954,1000,0.954,measured,replay logs
+boundary policy,984,1000,0.984,measured,replay logs

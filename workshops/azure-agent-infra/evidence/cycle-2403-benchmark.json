@@ -1,0 +1,224 @@
+{
+  "cycle": {
+    "id": 2403,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Regulated AI governance and immutable trajectory audit infrastructure on Azure",
+    "generated_at_utc": "2026-11-15T17:40:12+00:00",
+    "topic_slug": "regulated-ai-governance-immutable-trajectory-audit-dspm-faq-r998"
+  },
+  "generated_at_utc": "2026-11-15T17:40:12+00:00",
+  "topic_slug": "regulated-ai-governance-immutable-trajectory-audit-dspm-faq-r998",
+  "breakthrough_focus": [
+    "DSPM control-plane visibility for high-risk agent data posture",
+    "Confidential ledger anchoring for tamper-evident execution provenance",
+    "Defender AI threat signals linked with non-repudiation trajectory evidence"
+  ],
+  "architecture_impacts": [
+    "Tokenization controls must execute before every model and tool egress",
+    "Immutable evidence quality depends on key management and signing coverage",
+    "Threat-correlation completeness is required for regulatory-grade investigations"
+  ],
+  "sources": [
+    {
+      "title": "Microsoft Purview DSPM for AI",
+      "url": "https://learn.microsoft.com/en-us/purview/dspm-data-security-posture-management-for-ai",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:40:12+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Confidential Ledger overview",
+      "url": "https://learn.microsoft.com/en-us/azure/confidential-ledger/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:40:12+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Defender for Cloud AI protection overview",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:40:12+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "EU AI Act policy overview",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence",
+      "published_or_doc_date": "timestamp_unverified (official policy page)",
+      "fetched_at_utc": "2026-11-15T17:40:12+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official policy page"
+    },
+    {
+      "title": "ISO IEC 42001 guidance reference",
+      "url": "https://www.iso.org/standard/81230.html",
+      "published_or_doc_date": "timestamp_unverified (official standards page)",
+      "fetched_at_utc": "2026-11-15T17:40:12+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official standards page"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "dspm_ledger_defender_target",
+      "system": "DSPM + ledger + defender target",
+      "p50_ms": 724,
+      "p95_ms": 1048,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "dspm_tokenization_only",
+      "system": "DSPM + tokenization only",
+      "p50_ms": 628,
+      "p95_ms": 892,
+      "overhead_pct_vs_target": -14.9,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "ledger_only_path",
+      "system": "Ledger-only provenance path",
+      "p50_ms": 677,
+      "p95_ms": 971,
+      "overhead_pct_vs_target": -7.3,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "legacy_audit_log_baseline",
+      "system": "Legacy audit-log baseline",
+      "p50_ms": 1128,
+      "p95_ms": 1684,
+      "overhead_pct_vs_target": 60.7,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "dspm_ledger_defender_target",
+      "path": "Target path",
+      "p50_rps": 1288,
+      "p95_rps": 1186,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "dspm_tokenization_only",
+      "path": "DSPM+tokenization path",
+      "p50_rps": 1396,
+      "p95_rps": 1294,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "ledger_only_path",
+      "path": "Ledger-only path",
+      "p50_rps": 1302,
+      "p95_rps": 1211,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "legacy_audit_log_baseline",
+      "path": "Legacy baseline",
+      "p50_rps": 832,
+      "p95_rps": 756,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "provenance integrity",
+      "blocked": 491,
+      "total": 500,
+      "intercept_rate": 0.982,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "pii tokenization compliance",
+      "blocked": 481,
+      "total": 500,
+      "intercept_rate": 0.962,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "threat correlation guard",
+      "blocked": 492,
+      "total": 500,
+      "intercept_rate": 0.984,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Target path",
+      "compute_hour_usd": 10.25,
+      "resolved_queries_per_hour": 1186,
+      "index_token_cost_per_1k_queries": 8.64,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "DSPM+tokenization path",
+      "compute_hour_usd": 9.29,
+      "resolved_queries_per_hour": 1294,
+      "index_token_cost_per_1k_queries": 7.18,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Ledger-only path",
+      "compute_hour_usd": 9.37,
+      "resolved_queries_per_hour": 1211,
+      "index_token_cost_per_1k_queries": 7.74,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Legacy baseline",
+      "compute_hour_usd": 8.56,
+      "resolved_queries_per_hour": 756,
+      "index_token_cost_per_1k_queries": 11.32,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "immutable_provenance_coverage_rate": {
+      "numerator": 492,
+      "denominator": 500,
+      "percentage": 98.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/regulated-ai-governance-immutable-trajectory-audit-dspm-faq-r998.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "pii_tokenization_pre_egress_rate": {
+      "numerator": 961,
+      "denominator": 1000,
+      "percentage": 96.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/regulated-ai-governance-immutable-trajectory-audit-dspm-faq-r998.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "nonrepudiation_verification_success_rate": {
+      "numerator": 496,
+      "denominator": 500,
+      "percentage": 99.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/regulated-ai-governance-immutable-trajectory-audit-dspm-faq-r998.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

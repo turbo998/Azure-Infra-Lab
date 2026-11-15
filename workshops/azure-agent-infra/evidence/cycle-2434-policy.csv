@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Collector payload-vault split enforcement,191,198,0.9646,measured,collector policy replay with deterministic deny rules
+Cross-tenant baggage key leak prevention,176,184,0.9565,measured,trace propagation replay with tenant-scope assertions
+Runaway token-loop hard stop gate,167,175,0.9543,measured,evaluation+usage threshold enforcement replay

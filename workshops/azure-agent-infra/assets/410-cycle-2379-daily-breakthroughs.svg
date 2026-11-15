@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <rect x="40" y="40" width="1520" height="120" rx="14" fill="url(#g)"/>
+  <text x="70" y="102" fill="white" font-size="34" font-family="Segoe UI, Arial">Cycle 2379 · A2A + Streamable-HTTP MCP Interoperability Topology</text>
+  <text x="70" y="142" fill="#dbeafe" font-size="22" font-family="Segoe UI, Arial">APIM Registry + Front Door WAF | East-West mTLS Mesh | Pooling | Federation Guardrails</text>
+  <rect x="70" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="90" y="275" fill="#bfdbfe" font-size="22">Front Door WAF</text>
+  <rect x="350" y="220" width="300" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="370" y="275" fill="#bfdbfe" font-size="22">APIM Agent/MCP Registry</text>
+  <rect x="680" y="220" width="300" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="700" y="275" fill="#bfdbfe" font-size="22">Stream Pool Manager</text>
+  <rect x="1010" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="1030" y="275" fill="#bfdbfe" font-size="22">mTLS Mesh</text>
+  <rect x="1300" y="220" width="240" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="1320" y="275" fill="#bfdbfe" font-size="22">Guardrails</text>
+  <path d="M320 280 L350 280 M650 280 L680 280 M980 280 L1010 280 M1270 280 L1300 280" stroke="#93c5fd" stroke-width="4"/>
+  <rect x="70" y="390" width="1460" height="430" rx="16" fill="#0f172a" stroke="#334155"/>
+  <text x="95" y="445" fill="#e2e8f0" font-size="30">Daily capability highlights</text>
+  <text x="95" y="495" fill="#cbd5e1" font-size="24">• Signed Agent Card version chains harden federation onboarding.</text>
+  <text x="95" y="540" fill="#cbd5e1" font-size="24">• Streamable-HTTP pooling lowers reconnect tax under bursty tenant traffic.</text>
+  <text x="95" y="585" fill="#cbd5e1" font-size="24">• APIM edge governance + mesh mTLS trust split improves policy clarity.</text>
+  <text x="95" y="630" fill="#cbd5e1" font-size="24">• Tenant-scoped federation guardrails reduce cross-tenant blast radius.</text>
+  <text x="95" y="710" fill="#94a3b8" font-size="18">labels: measured / synthetic / anonymized_reported</text>
+  <text x="95" y="740" fill="#94a3b8" font-size="18">fetched_at_utc: 2026-11-15T16:00:33+00:00</text>
+</svg>

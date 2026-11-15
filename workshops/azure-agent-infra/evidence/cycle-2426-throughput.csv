@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+candidates_screened_per_hour,Surrogate candidates screened per hour,128000,119500,measured,screening throughput bench
+hpc_verifications_per_hour,HPC physics verifications per hour,920,861,anonymized_reported,verification queue sample
+checkpoint_writes_per_hour,Checkpoint writes per hour,6020,5740,synthetic,checkpoint model
+valid_candidates_promoted_per_day,Valid candidates promoted per day,111,103,measured,promotion replay

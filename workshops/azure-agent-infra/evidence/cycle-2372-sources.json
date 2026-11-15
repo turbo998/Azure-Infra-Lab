@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Azure API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure API Management service changelog",
+    "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+    "published_or_doc_date": "2026-06",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "measured",
+    "notes": "official changelog"
+  },
+  {
+    "title": "Azure Managed Lustre",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure HPC InfiniBand support",
+    "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/hpc/enable-infiniband",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure accelerated networking",
+    "url": "https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-overview",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "vLLM releases",
+    "url": "https://github.com/vllm-project/vllm/releases",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "runtime comparator"
+  },
+  {
+    "title": "LMCache releases",
+    "url": "https://github.com/LMCache/LMCache/releases",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "cache comparator"
+  },
+  {
+    "title": "Mooncake releases",
+    "url": "https://github.com/kvcache-ai/Mooncake/releases",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "disaggregated cache comparator"
+  }
+]

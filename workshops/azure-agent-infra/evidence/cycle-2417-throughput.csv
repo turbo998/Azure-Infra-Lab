@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+tampered_blocking,Unsigned/tampered blocking,2420,2260,measured,policy replay
+referrer_verify,OCI referrer graph verification,1640,1510,synthetic,verification model
+copa_patch,Copa patch throughput,88,73,anonymized_reported,patch job traces
+drift_quarantine,Defender drift quarantine,540,510,measured,runtime alert replay

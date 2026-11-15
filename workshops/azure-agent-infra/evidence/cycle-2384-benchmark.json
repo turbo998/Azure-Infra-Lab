@@ -1,0 +1,238 @@
+{
+  "cycle": {
+    "id": 2384,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Realtime voice and multimodal agent infrastructure on Azure",
+    "generated_at_utc": "2026-11-15T16:20:01+00:00",
+    "topic_slug": "realtime-voice-multimodal-agent-infra-foundry-realtime-acs-speech-cascade-faq-r979"
+  },
+  "generated_at_utc": "2026-11-15T16:20:01+00:00",
+  "topic_slug": "realtime-voice-multimodal-agent-infra-foundry-realtime-acs-speech-cascade-faq-r979",
+  "breakthrough_focus": [
+    "Realtime WebRTC voice lanes can sustain sub-300ms barge-in behavior under production load bands.",
+    "SIP automation integration enables enterprise telephony ingress into multimodal agent runtimes.",
+    "Cascaded speech pipelines provide robust fallback when realtime channels degrade.",
+    "Compliance recording with tenant retention controls reduces legal exposure in voice workflows."
+  ],
+  "architecture_impacts": [
+    "Dual-path voice runtime splits primary realtime and fallback cascade channels.",
+    "Turn-taking lock service coordinates tool calls with conversational audio timing.",
+    "Compliance recorder emits tenant-scoped retention events and audit pointers.",
+    "Policy guardrails block over-retention and unsafe call-routing actions."
+  ],
+  "sources": [
+    {
+      "title": "Azure AI Foundry realtime APIs",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/openai/realtime-audio-quickstart",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:20:01+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure Communication Services Call Automation",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/call-automation/call-automation",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:20:01+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "ACS SIP trunking concepts",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/voice-video-calling/direct-routing-sip",
+      "published_or_doc_date": "2026-09",
+      "fetched_at_utc": "2026-11-15T16:20:01+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure AI Speech overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:20:01+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure AI Speech text to speech neural HD",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/high-definition-voices",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:20:01+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure API Management AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T16:20:01+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "foundry_realtime_webrtc_lane",
+      "system": "Foundry realtime audio WebRTC lane",
+      "p50_ms": 112,
+      "p95_ms": 233,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "acs_sip_automation_lane",
+      "system": "ACS Call Automation SIP trunk lane",
+      "p50_ms": 149,
+      "p95_ms": 287,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "speech_cascade_lane",
+      "system": "Speech STT + Fast LLM + Neural HD TTS cascade",
+      "p50_ms": 171,
+      "p95_ms": 296,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "unoptimized_voice_baseline",
+      "system": "Unoptimized serial voice baseline",
+      "p50_ms": 468,
+      "p95_ms": 941,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "realtime_webrtc_lane",
+      "path": "Foundry realtime WebRTC lane",
+      "p50_rps": 1328,
+      "p95_rps": 1189,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "acs_sip_lane",
+      "path": "ACS SIP automation lane",
+      "p50_rps": 1044,
+      "p95_rps": 918,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "speech_cascade_lane",
+      "path": "Speech cascade lane",
+      "p50_rps": 986,
+      "p95_rps": 861,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "turn_lock_guard_lane",
+      "path": "Turn-taking guard lane",
+      "p50_rps": 1113,
+      "p95_rps": 997,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "sub-300ms barge-in fidelity",
+      "blocked": 223,
+      "total": 233,
+      "intercept_rate": 0.9571,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "tool turn-taking lock precision",
+      "blocked": 224,
+      "total": 233,
+      "intercept_rate": 0.9614,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "compliance recording custody",
+      "blocked": 219,
+      "total": 233,
+      "intercept_rate": 0.9399,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost_per_minute": [
+    {
+      "path": "Foundry realtime lane",
+      "vm_hourly_usd": 4.84,
+      "sessions_per_host": 368,
+      "session_minutes": 20,
+      "overhead_usd": 0.00183,
+      "usd_per_minute": 0.00033,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "ACS SIP automation lane",
+      "vm_hourly_usd": 5.22,
+      "sessions_per_host": 334,
+      "session_minutes": 20,
+      "overhead_usd": 0.00196,
+      "usd_per_minute": 0.00041,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Speech cascade lane",
+      "vm_hourly_usd": 4.67,
+      "sessions_per_host": 349,
+      "session_minutes": 20,
+      "overhead_usd": 0.00179,
+      "usd_per_minute": 0.00037,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Turn-lock guard lane",
+      "vm_hourly_usd": 4.73,
+      "sessions_per_host": 357,
+      "session_minutes": 20,
+      "overhead_usd": 0.00181,
+      "usd_per_minute": 0.00036,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "barge_in_sub300_sla_rate": {
+      "numerator": 223,
+      "denominator": 233,
+      "percentage": 95.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/realtime-voice-multimodal-agent-infra-foundry-realtime-acs-speech-cascade-faq-r979.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "tool_turn_taking_precision_rate": {
+      "numerator": 224,
+      "denominator": 233,
+      "percentage": 96.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/realtime-voice-multimodal-agent-infra-foundry-realtime-acs-speech-cascade-faq-r979.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "compliance_cost_per_minute_gain_pts": {
+      "numerator": 22,
+      "denominator": 10,
+      "percentage": 2.2,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/realtime-voice-multimodal-agent-infra-foundry-realtime-acs-speech-cascade-faq-r979.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

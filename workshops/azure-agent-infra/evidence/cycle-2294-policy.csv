@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced stateconvergenceproof drift gate,198,206,0.9612,measured,replay logs
+stateconvergenceproof variance guard,191,198,0.9646,measured,replay logs
+stateconvergenceproof recovery fence,185,192,0.9635,measured,replay logs

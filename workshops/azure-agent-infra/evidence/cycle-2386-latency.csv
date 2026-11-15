@@ -1,0 +1,5 @@
+metric,system,ttft_ms,tpot_ms,p95_step_ms,source_label,source_ref
+foundry_router_draft_lane,Foundry model router draft tier lane,71,18,236,measured,staging replay
+aks_vllm_eagle_lane,AKS vLLM EAGLE-3 speculative lane,64,16,228,anonymized_reported,official+reported
+constrained_decode_lane,XGrammar/llguidance constrained decode lane,89,21,281,measured,staging replay
+unoptimized_baseline_lane,Unoptimized non-spec baseline,242,67,902,anonymized_reported,reported baseline

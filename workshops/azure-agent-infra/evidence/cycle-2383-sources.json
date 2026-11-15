@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure Front Door overview",
+    "url": "https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:16:23+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:16:23+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Azure API Management changelog",
+    "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+    "published_or_doc_date": "2026-06",
+    "fetched_at_utc": "2026-11-15T16:16:23+00:00",
+    "source_label": "measured",
+    "notes": "official changelog"
+  },
+  {
+    "title": "Azure Cosmos DB conflict resolution",
+    "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/how-to-manage-conflicts",
+    "published_or_doc_date": "2026-09",
+    "fetched_at_utc": "2026-11-15T16:16:23+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Foundry model deployment quotas",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/quota",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:16:23+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure reliability architecture",
+    "url": "https://learn.microsoft.com/en-us/azure/reliability/",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:16:23+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  }
+]

@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_nonoptimized,source_label,source_ref
+token_attribution_path,APIM token metric attribution path,169,314,-40.1,measured,staging replay
+semantic_cache_guard_path,Redis semantic cache guard path,188,344,-27.8,anonymized_reported,official+reported
+batch_ptu_paygo_routing_path,Batch/PTU/PayGo routing optimization path,221,432,-11.6,measured,staging replay
+nonoptimized_baseline,Non-optimized baseline path,444,933,0.0,anonymized_reported,reported baseline

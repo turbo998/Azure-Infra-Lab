@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+trace_context_continuity_check,W3C traceparent across APIM -> Service Bus -> Durable Task,184,362,anonymized_reported,internal replay bundle with tenant identifiers removed
+otel_collector_pii_redaction,AKS OTel Collector DaemonSet (regex+DLP policy),27,54,synthetic,deterministic replay model based on collector pipeline stages
+adx_critical_path_query,ADX KQL critical path + flamegraph materialization,428,880,anonymized_reported,anonymized KQL replay over multi-agent incident windows
+runaway_loop_alerting,gen_ai.usage loop detector + eval-score gate,119,233,synthetic,deterministic evaluator replay under fixed token growth thresholds

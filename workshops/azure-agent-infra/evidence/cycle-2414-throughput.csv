@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+mnpi_filtering_pipeline,Desk-scoped retrieval filter,1380,1260,measured,policy replay logs
+deterministic_quant_verify,Python verifier sandbox,620,560,synthetic,quant verifier load model
+earnings_signal_pipeline,Event Hubs + ADX signal path,2040,1870,measured,low-jitter feed ingestion replay
+worm_ledger_verify,WORM + ledger verification,1820,1710,anonymized_reported,compliance drill traces

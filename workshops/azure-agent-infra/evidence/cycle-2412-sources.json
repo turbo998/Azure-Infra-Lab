@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Azure Front Door overview",
+    "url": "https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:18:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Front Door private link origins",
+    "url": "https://learn.microsoft.com/en-us/azure/frontdoor/private-link",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:18:31+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "APIM multi-region deployment",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-deploy-multi-region",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:18:31+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure API Management WebSocket support",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/websocket-api",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:18:31+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "Cosmos DB multi-region writes",
+    "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/how-to-multi-master",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T18:18:31+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

@@ -1,0 +1,222 @@
+{
+  "cycle": {
+    "id": 2309,
+    "window_bjt": "2026-12-01 17:00 ~ 2026-12-01 17:30",
+    "focus": "APIM MCP assurancecustodyproof guardlane under reentry-credit and latency-bucket governance",
+    "generated_at_utc": "2026-11-15T06:00:20+00:00",
+    "topic_slug": "agent-apim-mcp-reentry-credit-latencybucket-assurancecustodyproofguardlane-fairness-faq-r904"
+  },
+  "generated_at_utc": "2026-11-15T06:00:20+00:00",
+  "topic_slug": "agent-apim-mcp-reentry-credit-latencybucket-assurancecustodyproofguardlane-fairness-faq-r904",
+  "breakthrough_focus": [
+    "APIM AI Gateway strengthens assurancecustodyproof-aware fallback gates in MCP policy chains.",
+    "ACA Dynamic Sessions keeps warm-restore assurancecustodyproof variance bounded for coding-agent bursts.",
+    "Firecracker/Kata/Wasmtime and E2B releases remain runtime baseline inputs.",
+    "Assurancecustodyproof guardlane reduces replay drift under burst pressure."
+  ],
+  "architecture_impacts": [
+    "Assurancecustodyproof checks are required before commit.",
+    "Reentry-credit writes include assurancecustodyproof-proof metadata.",
+    "Budget-exhausted paths route to fallback and replay queues.",
+    "Tenant fairness remains bounded under burst contention."
+  ],
+  "sources": [
+    {
+      "title": "APIM AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10-23",
+      "fetched_at_utc": "2026-11-15T06:00:20+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "APIM service changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06",
+      "fetched_at_utc": "2026-11-15T06:00:20+00:00",
+      "source_label": "measured",
+      "notes": "official release notes"
+    },
+    {
+      "title": "ACA Dynamic Sessions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T06:00:20+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "E2B releases",
+      "url": "https://github.com/e2b-dev/e2b/releases",
+      "published_or_doc_date": "2026-11-04",
+      "fetched_at_utc": "2026-11-15T06:00:20+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "release-track comparator"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "cold_start_or_restore",
+      "system": "E2B Firecracker",
+      "p50_ms": 96,
+      "p95_ms": 156,
+      "source_label": "anonymized_reported",
+      "source_ref": "release+reported"
+    },
+    {
+      "metric": "warm_pool_allocation",
+      "system": "ACA Dynamic Sessions",
+      "p50_ms": 206,
+      "p95_ms": 330,
+      "source_label": "anonymized_reported",
+      "source_ref": "learn+reported"
+    },
+    {
+      "metric": "pod_vm_cold_start",
+      "system": "AKS Kata Pod VM",
+      "p50_ms": 910,
+      "p95_ms": 1348,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported"
+    },
+    {
+      "metric": "component_worker_start",
+      "system": "Wasmtime component worker",
+      "p50_ms": 41,
+      "p95_ms": 65,
+      "source_label": "synthetic",
+      "source_ref": "release-derived model"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "gateway_model_routing",
+      "path": "APIM AI Gateway unified model API",
+      "p50_rps": 1892,
+      "p95_rps": 1713,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "mcp_tool_orchestration",
+      "path": "APIM MCP orchestration lane",
+      "p50_rps": 822,
+      "p95_rps": 723,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "gateway_message_exchange",
+      "path": "APIM policy chain",
+      "p50_rps": 548,
+      "p95_rps": 478,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "sandbox_terminal_stream",
+      "path": "E2B terminal stream",
+      "p50_rps": 1176,
+      "p95_rps": 1029,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "unfenced assurancecustodyproof drift gate",
+      "blocked": 199,
+      "total": 207,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9614
+    },
+    {
+      "policy": "assurancecustodyproof variance guard",
+      "blocked": 192,
+      "total": 199,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9648
+    },
+    {
+      "policy": "assurancecustodyproof recovery fence",
+      "blocked": 186,
+      "total": 193,
+      "source_label": "measured",
+      "source_ref": "replay logs",
+      "intercept_rate": 0.9637
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "E2B D96as_v7 Firecracker",
+      "vm_hourly_usd": 5.408,
+      "sessions_per_host": 440,
+      "overhead_usd": 0.00099,
+      "usd_per_session": 0.00509,
+      "session_minutes": 20,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "AKS Kata Pod VM fleet",
+      "vm_hourly_usd": 3.21,
+      "sessions_per_host": 166,
+      "overhead_usd": 0.00165,
+      "usd_per_session": 0.0081,
+      "session_minutes": 20,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "ACA Dynamic Sessions",
+      "vm_hourly_usd": 2.85,
+      "sessions_per_host": 123,
+      "overhead_usd": 0.00116,
+      "usd_per_session": 0.00888,
+      "session_minutes": 20,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Wasm component sandbox",
+      "vm_hourly_usd": 1.2,
+      "sessions_per_host": 273,
+      "overhead_usd": 0.00049,
+      "usd_per_session": 0.00196,
+      "session_minutes": 20,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "unfenced_reentry_assurancecustodyproofguardlane_drift_rate": {
+      "numerator": 199,
+      "denominator": 207,
+      "percentage": 96.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-apim-mcp-reentry-credit-latencybucket-assurancecustodyproofguardlane-fairness-faq-r904.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "reentry_assurancecustodyproofguardlane_variance_rate": {
+      "numerator": 192,
+      "denominator": 199,
+      "percentage": 96.5,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-apim-mcp-reentry-credit-latencybucket-assurancecustodyproofguardlane-fairness-faq-r904.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "reentry_assurancecustodyproofguardlane_recovery_gain_pts": {
+      "numerator": 41,
+      "denominator": 10,
+      "percentage": 4.1,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-apim-mcp-reentry-credit-latencybucket-assurancecustodyproofguardlane-fairness-faq-r904.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

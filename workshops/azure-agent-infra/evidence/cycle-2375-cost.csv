@@ -1,0 +1,5 @@
+path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
+Foundry tracing + App Insights lane,4.26,344,20,0.00178,0.00591,synthetic,deterministic cost model
+ADX KQL correlation lane,5.84,416,20,0.00194,0.00662,synthetic,deterministic cost model
+Managed Grafana + alert lane,2.96,508,20,0.00113,0.00307,synthetic,deterministic cost model
+Unified observability hybrid lane,0.0,1,20,0.00169,0.00586,synthetic,deterministic cost model

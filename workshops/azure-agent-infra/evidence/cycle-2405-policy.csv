@@ -1,0 +1,5 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+day0 capacity fit,487,500,0.974,measured,replay logs
+day1 scaleout success,958,1000,0.958,measured,replay logs
+day2 governance coverage,491,500,0.982,measured,replay logs
+global policy boundary,989,1000,0.989,measured,replay logs

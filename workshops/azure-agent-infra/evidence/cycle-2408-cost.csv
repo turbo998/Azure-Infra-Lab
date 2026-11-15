@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Target path,405.7,12840,31.6,synthetic,deterministic finops model
+Gateway-only,373.2,13620,27.4,synthetic,deterministic finops model
+Admission-only,339.3,11740,28.9,synthetic,deterministic finops model
+Legacy baseline,334.7,8410,39.8,synthetic,deterministic finops model

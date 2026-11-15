@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Microsoft Graph change notifications",
+    "url": "https://learn.microsoft.com/graph/change-notifications-overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Microsoft Graph delta query",
+    "url": "https://learn.microsoft.com/graph/delta-query-overview",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure AI Search ranking profiles and freshness scoring",
+    "url": "https://learn.microsoft.com/azure/search/index-add-scoring-profiles",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Azure Container Apps jobs",
+    "url": "https://learn.microsoft.com/azure/container-apps/jobs",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "Microsoft Teams Adaptive Cards",
+    "url": "https://learn.microsoft.com/microsoftteams/platform/task-modules-and-cards/cards/cards-reference",
+    "published_or_doc_date": "documentation page (fetched 2026-11-16)",
+    "source_label": "measured"
+  },
+  {
+    "name": "anonymized enterprise corpus replay",
+    "url": "internal://anonymized-replay/cycle-2438-knowledge-rot",
+    "published_or_doc_date": "2026-11-16 replay snapshot",
+    "source_label": "anonymized_reported"
+  }
+]

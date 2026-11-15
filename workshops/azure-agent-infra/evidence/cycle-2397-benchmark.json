@@ -1,0 +1,232 @@
+{
+  "cycle": {
+    "id": 2397,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Multi-LoRA hot-swapping and domain-distilled SLM agent fleet infrastructure on Azure",
+    "generated_at_utc": "2026-11-15T17:16:03+00:00",
+    "topic_slug": "multi-lora-hotswap-domain-distilled-slm-agent-fleet-vllm-slora-faq-r992"
+  },
+  "generated_at_utc": "2026-11-15T17:16:03+00:00",
+  "topic_slug": "multi-lora-hotswap-domain-distilled-slm-agent-fleet-vllm-slora-faq-r992",
+  "breakthrough_focus": [
+    "Foundry distillation + RFT for tenant-specialized adapters",
+    "AKS vLLM S-LoRA adapter multiplexing on shared H100/A100 pools",
+    "Blob + Managed Lustre adapter tiering for warm-path stability"
+  ],
+  "architecture_impacts": [
+    "Adapter provenance and tenant policy become first-class runtime controls",
+    "Hot-swap lifecycle must couple with cache and prewarm budget governance",
+    "Break-even gates are required to prevent hidden cost regressions"
+  ],
+  "sources": [
+    {
+      "title": "Azure AI Foundry fine-tuning overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/fine-tune-models",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:16:03+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure AI Foundry reinforcement fine-tuning concepts",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/fine-tuning",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:16:03+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "vLLM LoRA serving",
+      "url": "https://docs.vllm.ai/en/latest/features/lora.html",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:16:03+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "S-LoRA project",
+      "url": "https://github.com/S-LoRA/S-LoRA",
+      "published_or_doc_date": "timestamp_unverified (official repository)",
+      "fetched_at_utc": "2026-11-15T17:16:03+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official repository"
+    },
+    {
+      "title": "Azure Managed Lustre overview",
+      "url": "https://learn.microsoft.com/en-us/azure/managed-lustre/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:16:03+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Blob storage access tiers",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:16:03+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "slora_hotswap_path",
+      "system": "vLLM S-LoRA hot-swap path",
+      "p50_ms": 118,
+      "p95_ms": 226,
+      "overhead_pct_vs_prompt_only": -35.6,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "lustre_warm_mount_path",
+      "system": "Managed Lustre assisted warm-mount path",
+      "p50_ms": 152,
+      "p95_ms": 298,
+      "overhead_pct_vs_prompt_only": -15.1,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "prompt_only_frontier_baseline",
+      "system": "Prompt-only frontier baseline",
+      "p50_ms": 181,
+      "p95_ms": 351,
+      "overhead_pct_vs_prompt_only": 0.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "dedicated_model_per_tenant_baseline",
+      "system": "Dedicated model per tenant baseline",
+      "p50_ms": 427,
+      "p95_ms": 910,
+      "overhead_pct_vs_prompt_only": 159.3,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "slora_hotswap_path",
+      "path": "S-LoRA hot-swap path",
+      "p50_rps": 1492,
+      "p95_rps": 1368,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "lustre_warm_mount_path",
+      "path": "Lustre warm-mount path",
+      "p50_rps": 1326,
+      "p95_rps": 1212,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "prompt_only_frontier_baseline",
+      "path": "Prompt-only frontier baseline",
+      "p50_rps": 1094,
+      "p95_rps": 988,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "dedicated_model_per_tenant_baseline",
+      "path": "Dedicated model per tenant baseline",
+      "p50_rps": 618,
+      "p95_rps": 542,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "adapter signature and tenancy guard",
+      "blocked": 204,
+      "total": 210,
+      "intercept_rate": 0.9714,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "hot-swap lifecycle consistency",
+      "blocked": 201,
+      "total": 210,
+      "intercept_rate": 0.9571,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "cross-tenant adapter leakage prevention",
+      "blocked": 197,
+      "total": 210,
+      "intercept_rate": 0.9381,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "S-LoRA hot-swap path",
+      "compute_hour_usd": 5.44,
+      "resolved_queries_per_hour": 931,
+      "index_token_cost_per_1k_queries": 5.84,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Lustre warm-mount path",
+      "compute_hour_usd": 5.71,
+      "resolved_queries_per_hour": 849,
+      "index_token_cost_per_1k_queries": 6.73,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Prompt-only frontier baseline",
+      "compute_hour_usd": 6.83,
+      "resolved_queries_per_hour": 689,
+      "index_token_cost_per_1k_queries": 9.91,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Dedicated model per tenant baseline",
+      "compute_hour_usd": 8.42,
+      "resolved_queries_per_hour": 500,
+      "index_token_cost_per_1k_queries": 16.84,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "hotswap_success_rate_gain_vs_prompt_only": {
+      "numerator": 189,
+      "denominator": 210,
+      "percentage": 90.0,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/multi-lora-hotswap-domain-distilled-slm-agent-fleet-vllm-slora-faq-r992.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "adapter_cache_hit_rate": {
+      "numerator": 847,
+      "denominator": 1000,
+      "percentage": 84.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/multi-lora-hotswap-domain-distilled-slm-agent-fleet-vllm-slora-faq-r992.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "tenant_specialization_roi_improvement_rate": {
+      "numerator": 73,
+      "denominator": 120,
+      "percentage": 60.8,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/multi-lora-hotswap-domain-distilled-slm-agent-fleet-vllm-slora-faq-r992.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

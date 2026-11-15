@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+manual SOC baseline,1.0,1000,1.0,anonymized_reported,baseline model
+sanitized triage and hunt pipeline,0.82,1000,0.82,synthetic,pipeline cost model
+sandbox plus gated containment,0.76,1000,0.76,synthetic,containment model
+hybrid copilot plus foundry mode,0.68,1000,0.68,measured,hybrid benchmark run

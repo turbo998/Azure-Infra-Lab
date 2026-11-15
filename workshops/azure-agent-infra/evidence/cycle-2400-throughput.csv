@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+durable_saga_outbox_target,Durable saga + outbox target,1124,1012,synthetic,deterministic model
+saga_without_outbox,Saga without outbox,1018,924,synthetic,deterministic model
+outbox_without_saga,Outbox without saga,971,883,synthetic,deterministic model
+legacy_callback_baseline,Legacy callback baseline,704,621,synthetic,deterministic model

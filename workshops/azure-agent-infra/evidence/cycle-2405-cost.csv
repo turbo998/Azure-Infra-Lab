@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Target path,15.7,3192,4.92,synthetic,deterministic finops model
+No pooling path,14.78,2406,6.14,synthetic,deterministic finops model
+Monolith path,13.3,1712,7.77,synthetic,deterministic finops model
+Legacy baseline,10.62,982,10.81,synthetic,deterministic finops model

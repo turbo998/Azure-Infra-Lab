@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+session isolation custody fidelity,225,233,0.9657,measured,replay logs
+mfa handoff lock precision,222,233,0.9528,measured,replay logs
+a11y-first token efficiency guard,219,233,0.9399,measured,replay logs

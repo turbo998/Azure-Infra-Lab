@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Human whisper-only baseline,1.0,10000,1.0,anonymized_reported,baseline operations model
+Native s2s first,0.78,10000,0.78,synthetic,voice path model
+Cascade stt-llm-tts first,0.69,10000,0.69,synthetic,cascade cost model
+Hybrid routed plus whisper,0.616,10000,0.616,synthetic,hybrid route model

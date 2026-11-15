@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+interactive_dialogue_tps,Interactive NPC dialogue throughput,5230,4890,measured,dialogue replay
+world_sim_event_tps,Async world-sim event throughput,1280,1130,synthetic,event orchestration model
+authoritative_validation_tps,Rule-engine validation throughput,9100,8510,anonymized_reported,authoritative state traces
+agones_burst_scaling_tps,Agones burst scaling path,6410,5980,measured,agones scaling replay

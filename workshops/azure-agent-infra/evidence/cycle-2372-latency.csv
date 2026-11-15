@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+prefill_lane,Prefill lane on AKS GPU pool (vLLM/Dynamo path),312,498,anonymized_reported,official+reported
+decode_lane,Decode lane with local NVMe hot KV cache,121,226,anonymized_reported,official+reported
+remote_kv_fetch,Disaggregated KV fetch via Managed Lustre tier,84,147,measured,staging replay
+cache_rehydrate,LMCache rehydrate warm path,37,69,synthetic,deterministic model

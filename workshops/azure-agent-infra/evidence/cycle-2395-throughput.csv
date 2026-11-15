@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+readonly_path,Read-only triage path,1331,1208,synthetic,deterministic model
+jit_path,JIT remediation path,1239,1115,synthetic,deterministic model
+dedup_path,Alert dedup path,1154,1030,synthetic,deterministic model
+baseline_path,Unmanaged baseline path,899,787,synthetic,deterministic model

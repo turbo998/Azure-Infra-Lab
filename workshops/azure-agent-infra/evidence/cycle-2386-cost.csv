@@ -1,0 +1,5 @@
+path,input_token_usd,output_token_usd,avg_tokens_per_call,usd_per_call,source_label,source_ref
+Foundry router draft lane,0.00062,0.00148,912,0.00235,synthetic,deterministic finops model
+AKS EAGLE-3 lane,0.00055,0.00136,884,0.00211,synthetic,deterministic finops model
+Constrained decode lane,0.00069,0.00158,933,0.00252,synthetic,deterministic finops model
+Schema guard lane,0.00063,0.00149,901,0.00238,synthetic,deterministic finops model

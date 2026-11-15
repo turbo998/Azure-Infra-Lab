@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+prompt_shields_lane,Azure AI Content Safety Prompt Shields lane,136,289,measured,staging replay
+apim_guardrail_lane,APIM AI Gateway Content Safety policy lane,94,241,measured,staging replay
+aks_guardrail_lane,AKS self-hosted guardrail model lane,178,362,anonymized_reported,official+reported
+async_parallel_lane,Async parallel guardrail composition lane,121,233,synthetic,deterministic model

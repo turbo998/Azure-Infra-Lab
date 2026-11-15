@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+pa_request_to_first_decision_packet,FHIR prior-auth intake to first deterministic decision package,12600,23800,anonymized_reported,anonymized payer-provider prior-auth replay
+guideline_constraint_solver_latency,Clinical guideline + coverage rule CP-SAT legality solver,760,1490,synthetic,deterministic prior-auth rules replay profile
+fhir_claims_commit_latency,FHIR claim + authorization lock commit,188,344,measured,fhir claim concurrency replay
+member_provider_notification_latency,ACS member/provider notification fan-out,420,802,anonymized_reported,anonymized communication dispatch replay

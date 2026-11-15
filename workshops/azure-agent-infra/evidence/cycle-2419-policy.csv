@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+inline p99 under 50ms compliance,969,1000,0.969,measured,latency compliance suite
+false-positive friction reduction,312,1000,0.312,measured,friction benchmark model
+sar investigation time savings,487,1000,0.487,measured,sar efficiency suite

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+21 CFR Part 11 electronic signature boundary block,248,257,0.965,measured,qms e-sign compliance replay
+Cold-chain unresolved excursion release block,233,241,0.9668,measured,temperature excursion gate replay
+Chain-of-custody lineage gap block,174,181,0.9613,anonymized_reported,anonymized traceability-lapse simulation

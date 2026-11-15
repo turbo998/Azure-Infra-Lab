@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_ungated,source_label,source_ref
+offline_eval_gate_primary,Foundry evaluation gate primary path,158,268,11.4,measured,staging replay
+pyrit_redteam_gate,PyRIT adversarial gate path,177,332,15.0,anonymized_reported,official+reported
+online_sampling_rollback_gate,Application Insights online sampling rollback path,201,376,18.9,measured,staging replay
+ungated_release_baseline,Ungated release baseline,409,907,0.0,anonymized_reported,reported baseline

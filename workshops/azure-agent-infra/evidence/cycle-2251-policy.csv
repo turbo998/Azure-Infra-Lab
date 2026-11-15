@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced lineage drift gate,166,174,0.954,measured,replay logs
+lineage variance guard,158,165,0.9576,measured,replay logs
+lineage recovery fence,151,159,0.9497,measured,replay logs

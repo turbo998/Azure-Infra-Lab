@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Azure AI Foundry evaluations (official docs)",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/evaluate-sdk",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:37:30+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Microsoft PyRIT repository releases",
+    "url": "https://github.com/Azure/PyRIT/releases",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:37:30+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official release feed"
+  },
+  {
+    "title": "GitHub Actions workflow syntax",
+    "url": "https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:37:30+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Application Insights overview",
+    "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T16:37:30+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure OpenAI / Foundry quota docs",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/quota",
+    "published_or_doc_date": "2026-11",
+    "fetched_at_utc": "2026-11-15T16:37:30+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  }
+]

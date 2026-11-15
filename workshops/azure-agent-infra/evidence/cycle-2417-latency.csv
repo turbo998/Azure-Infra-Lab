@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+unsigned_baseline,No admission baseline,0,0,0.0,anonymized_reported,legacy baseline
+ratify_gatekeeper,Ratify + Gatekeeper,41,82,0.0,measured,admission replay benchmark
+full_chain_drift,Full chain + drift checks,53,96,17.1,synthetic,modeled runtime guardrail path
+full_rebuild_patch,Full image rebuild patch path,68,137,67.1,anonymized_reported,pipeline baseline

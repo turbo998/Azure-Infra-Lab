@@ -1,0 +1,224 @@
+{
+  "cycle": {
+    "id": 2411,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Zero-trust B2B SaaS multi-tenancy isolation models for enterprise agent platforms on Azure",
+    "generated_at_utc": "2026-11-15T18:14:53+00:00",
+    "topic_slug": "b2b-saas-multitenant-agent-isolation-silo-pool-bridge-faq-r1006"
+  },
+  "generated_at_utc": "2026-11-15T18:14:53+00:00",
+  "topic_slug": "b2b-saas-multitenant-agent-isolation-silo-pool-bridge-faq-r1006",
+  "breakthrough_focus": [
+    "Bridge model captures major p99 stability gains before full silo cost",
+    "CMK offboarding workflows can provide cryptographic tenant erasure assurance",
+    "Alias-sharded retrieval significantly improves isolation audit pass rates"
+  ],
+  "architecture_impacts": [
+    "Tiered isolation must align compute, retrieval, and state key boundaries",
+    "Quota fairness policies are required to prevent noisy-neighbor starvation",
+    "Isolation audit pass rate should be a release gate, not a postmortem metric"
+  ],
+  "sources": [
+    {
+      "title": "Azure API Management policy reference",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-policies",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Cosmos DB hierarchical partition keys",
+      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/hierarchical-partition-keys",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure AI Search security trimming",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Key Vault customer managed keys",
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/customer-managed-keys-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+      "source_label": "synthetic",
+      "notes": "official docs"
+    },
+    {
+      "title": "AKS network policy",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/use-network-policies",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:14:53+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "pool_shared",
+      "system": "Pool shared model",
+      "p50_ms": 812,
+      "p95_ms": 1280,
+      "overhead_pct_vs_target": 72.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "bridge_hybrid",
+      "system": "Bridge hybrid model",
+      "p50_ms": 566,
+      "p95_ms": 742,
+      "overhead_pct_vs_target": 23.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "drill+reported"
+    },
+    {
+      "metric": "silo_dedicated",
+      "system": "Silo dedicated model",
+      "p50_ms": 431,
+      "p95_ms": 511,
+      "overhead_pct_vs_target": 6.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "legacy_flat",
+      "system": "Legacy flat multi-tenant baseline",
+      "p50_ms": 1020,
+      "p95_ms": 1540,
+      "overhead_pct_vs_target": 130.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "pool_shared",
+      "path": "Pool shared",
+      "p50_rps": 3120,
+      "p95_rps": 2860,
+      "source_label": "synthetic",
+      "source_ref": "modeled throughput"
+    },
+    {
+      "metric": "bridge_hybrid",
+      "path": "Bridge hybrid",
+      "p50_rps": 2710,
+      "p95_rps": 2480,
+      "source_label": "synthetic",
+      "source_ref": "modeled throughput"
+    },
+    {
+      "metric": "silo_dedicated",
+      "path": "Silo dedicated",
+      "p50_rps": 2140,
+      "p95_rps": 1960,
+      "source_label": "synthetic",
+      "source_ref": "modeled throughput"
+    },
+    {
+      "metric": "legacy_flat",
+      "path": "Legacy flat",
+      "p50_rps": 2260,
+      "p95_rps": 2010,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "cross tenant context bleed prevention",
+      "blocked": 991,
+      "total": 1000,
+      "intercept_rate": 0.991,
+      "source_label": "measured",
+      "source_ref": "isolation logs"
+    },
+    {
+      "policy": "cmk offboarding crypto erase success",
+      "blocked": 982,
+      "total": 1000,
+      "intercept_rate": 0.982,
+      "source_label": "measured",
+      "source_ref": "offboarding drills"
+    },
+    {
+      "policy": "isolation audit pass",
+      "blocked": 971,
+      "total": 1000,
+      "intercept_rate": 0.971,
+      "source_label": "measured",
+      "source_ref": "audit tests"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Pool shared",
+      "compute_hour_usd": 38.0,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 38.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Bridge hybrid",
+      "compute_hour_usd": 74.0,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 74.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Silo dedicated",
+      "compute_hour_usd": 182.0,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 182.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Legacy flat",
+      "compute_hour_usd": 29.0,
+      "resolved_queries_per_hour": 1000000,
+      "index_token_cost_per_1k_queries": 29.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "cross_tenant_context_bleed_prevention_rate": {
+      "numerator": 991,
+      "denominator": 1000,
+      "percentage": 99.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/b2b-saas-multitenant-agent-isolation-silo-pool-bridge-faq-r1006.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "cmk_offboarding_crypto_erase_success_rate": {
+      "numerator": 982,
+      "denominator": 1000,
+      "percentage": 98.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/b2b-saas-multitenant-agent-isolation-silo-pool-bridge-faq-r1006.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "isolation_audit_pass_rate": {
+      "numerator": 971,
+      "denominator": 1000,
+      "percentage": 97.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/b2b-saas-multitenant-agent-isolation-silo-pool-bridge-faq-r1006.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  }
+}

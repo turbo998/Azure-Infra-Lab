@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+multi-agent span-correlation integrity fence,216,230,0.9391,measured,replay logs
+tenant token FinOps attribution guard,220,230,0.9565,measured,replay logs
+runaway tool-loop circuit-break detector,212,220,0.9636,measured,replay logs

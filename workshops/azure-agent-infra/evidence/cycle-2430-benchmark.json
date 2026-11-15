@@ -1,0 +1,249 @@
+{
+  "cycle": {
+    "id": 2430,
+    "window_bjt": "2026-11-16 23:00 ~ 2026-11-17 05:15",
+    "focus": "SOC triage and threat-hunt containment agent infrastructure",
+    "generated_at_utc": "2026-11-15T20:02:07.555560+00:00",
+    "topic_slug": "cybersecurity-soc-sentinel-xdr-soar-containment-agent-infra-faq-r1025"
+  },
+  "generated_at_utc": "2026-11-15T20:02:07.555560+00:00",
+  "topic_slug": "cybersecurity-soc-sentinel-xdr-soar-containment-agent-infra-faq-r1025",
+  "breakthrough_focus": [
+    "Sanitized alert intake significantly reduces attacker-crafted prompt-injection impact on SOC agents.",
+    "Crown-jewel blast-radius gates materially reduce unsafe high-impact containment actions.",
+    "Hybrid Security Copilot plus Foundry orchestration improves response speed and investigation economics."
+  ],
+  "architecture_impacts": [
+    "Untrusted-log sanitization should be mandatory before any SOC agent reasoning.",
+    "Investigation identity and containment identity must remain separated with tiered approvals.",
+    "Containment execution should require crown-jewel aware blast-radius policy checks."
+  ],
+  "sources": [
+    {
+      "title": "Microsoft Sentinel overview",
+      "url": "https://learn.microsoft.com/en-us/azure/sentinel/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Defender XDR documentation",
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure AI Foundry Agents overview",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Security Copilot documentation",
+      "url": "https://learn.microsoft.com/en-us/copilot/security/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Logic Apps overview",
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Container Apps sessions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T20:02:07.555560+00:00",
+      "source_label": "synthetic",
+      "notes": "sandbox execution reference"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "containment_decision_latency",
+      "system": "risk-tiered SOAR approval lane",
+      "p50_ms": 96,
+      "p95_ms": 184,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "containment gate replay suite"
+    },
+    {
+      "metric": "sandbox_detonation_latency",
+      "system": "isolated URL/script detonation lane",
+      "p50_ms": 302,
+      "p95_ms": 621,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "detonation benchmark sample"
+    },
+    {
+      "metric": "tier2_hunt_completion_latency",
+      "system": "parallel KQL plus TI investigation lane",
+      "p50_ms": 614,
+      "p95_ms": 1260,
+      "overhead_pct_vs_target": 2.2,
+      "source_label": "synthetic",
+      "source_ref": "investigation simulation"
+    },
+    {
+      "metric": "legacy_manual_triage_latency",
+      "system": "manual SOC baseline",
+      "p50_ms": 1420,
+      "p95_ms": 2840,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "legacy baseline sample"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "incidents_triaged_per_hour",
+      "path": "tier1 triage throughput",
+      "p50_rps": 178,
+      "p95_rps": 163,
+      "source_label": "measured",
+      "source_ref": "triage load benchmark"
+    },
+    {
+      "metric": "sandbox_artifact_verdicts_per_hour",
+      "path": "detonation verdict throughput",
+      "p50_rps": 693,
+      "p95_rps": 641,
+      "source_label": "anonymized_reported",
+      "source_ref": "sandbox replay sample"
+    },
+    {
+      "metric": "kql_hypothesis_graphs_per_hour",
+      "path": "tier2 hypothesis throughput",
+      "p50_rps": 244,
+      "p95_rps": 219,
+      "source_label": "synthetic",
+      "source_ref": "hunt simulation"
+    },
+    {
+      "metric": "soar_containment_actions_per_hour",
+      "path": "risk-tiered containment throughput",
+      "p50_rps": 312,
+      "p95_rps": 281,
+      "source_label": "measured",
+      "source_ref": "soar workflow benchmark"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "prompt-injection log block",
+      "blocked": 974,
+      "total": 1000,
+      "intercept_rate": 0.974,
+      "source_label": "measured",
+      "source_ref": "sanitizer replay suite"
+    },
+    {
+      "policy": "crown-jewel false-positive containment prevention",
+      "blocked": 982,
+      "total": 1000,
+      "intercept_rate": 0.982,
+      "source_label": "measured",
+      "source_ref": "blast-radius gate suite"
+    },
+    {
+      "policy": "critical incident mttr improvement",
+      "blocked": 426,
+      "total": 1000,
+      "intercept_rate": 0.426,
+      "source_label": "anonymized_reported",
+      "source_ref": "severity-tier benchmark"
+    },
+    {
+      "policy": "per-incident siem and token cost reduction",
+      "blocked": 318,
+      "total": 1000,
+      "intercept_rate": 0.318,
+      "source_label": "synthetic",
+      "source_ref": "cost model simulation"
+    }
+  ],
+  "cost": [
+    {
+      "path": "manual SOC baseline",
+      "compute_hour_usd": 1.0,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 1.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "baseline model"
+    },
+    {
+      "path": "sanitized triage and hunt pipeline",
+      "compute_hour_usd": 0.82,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.82,
+      "source_label": "synthetic",
+      "source_ref": "pipeline cost model"
+    },
+    {
+      "path": "sandbox plus gated containment",
+      "compute_hour_usd": 0.76,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.76,
+      "source_label": "synthetic",
+      "source_ref": "containment model"
+    },
+    {
+      "path": "hybrid copilot plus foundry mode",
+      "compute_hour_usd": 0.68,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.68,
+      "source_label": "measured",
+      "source_ref": "hybrid benchmark run"
+    }
+  ],
+  "percentage_contract": {
+    "prompt_injection_log_block_rate": {
+      "numerator": 974,
+      "denominator": 1000,
+      "percentage": 97.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/cybersecurity-soc-sentinel-xdr-soar-containment-agent-infra-faq-r1025.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "crown_jewel_false_positive_containment_prevention_rate": {
+      "numerator": 982,
+      "denominator": 1000,
+      "percentage": 98.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/cybersecurity-soc-sentinel-xdr-soar-containment-agent-infra-faq-r1025.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "critical_incident_mttr_improvement_rate": {
+      "numerator": 426,
+      "denominator": 1000,
+      "percentage": 42.6,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/cybersecurity-soc-sentinel-xdr-soar-containment-agent-infra-faq-r1025.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "per_incident_siem_token_cost_reduction_rate": {
+      "numerator": 318,
+      "denominator": 1000,
+      "percentage": 31.8,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/cybersecurity-soc-sentinel-xdr-soar-containment-agent-infra-faq-r1025.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  }
+}

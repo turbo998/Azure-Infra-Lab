@@ -1,0 +1,5 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+prompt-injection log block,974,1000,0.974,measured,sanitizer replay suite
+crown-jewel false-positive containment prevention,982,1000,0.982,measured,blast-radius gate suite
+critical incident mttr improvement,426,1000,0.426,anonymized_reported,severity-tier benchmark
+per-incident siem and token cost reduction,318,1000,0.318,synthetic,cost model simulation

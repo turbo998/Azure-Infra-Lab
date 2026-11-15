@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+all H100 monolithic pool,1.0,1000,1.0,anonymized_reported,monolithic baseline
+split A10 transcode plus H100 inference,0.615,1000,0.615,synthetic,split pool model
+hybrid split plus batch fallback,0.671,1000,0.671,anonymized_reported,hybrid run sample
+serverless batch only,0.744,1000,0.744,measured,batch baseline benchmark

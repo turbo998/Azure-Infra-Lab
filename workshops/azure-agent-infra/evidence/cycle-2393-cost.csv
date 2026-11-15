@@ -1,0 +1,5 @@
+path,compute_hour_usd,sessions_per_hour,usd_per_session,source_label,source_ref
+Blue-green drain path,5.22,671,0.00778,synthetic,deterministic finops model
+Canary ramp path,5.53,624,0.00886,synthetic,deterministic finops model
+Schema pinning path,5.94,578,0.01028,synthetic,deterministic finops model
+No-drain baseline,4.93,427,0.01155,synthetic,deterministic finops model

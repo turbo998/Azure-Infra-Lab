@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <rect x="40" y="40" width="1520" height="120" rx="14" fill="url(#g)"/>
+  <text x="70" y="102" fill="white" font-size="34" font-family="Segoe UI, Arial">Cycle 2395 · Autonomous SRE + Incident Response Agent Infrastructure</text>
+  <text x="70" y="142" fill="#dbeafe" font-size="22" font-family="Segoe UI, Arial">Action Groups | KQL RCA | PIM JIT | Blast-Radius Guard</text>
+  <rect x="70" y="220" width="230" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="90" y="275" fill="#bfdbfe" font-size="22">Alert Intake</text>
+  <rect x="330" y="220" width="240" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="350" y="275" fill="#bfdbfe" font-size="22">Read-Only Triage</text>
+  <rect x="600" y="220" width="230" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="620" y="275" fill="#bfdbfe" font-size="22">KQL RCA</text>
+  <rect x="860" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="880" y="275" fill="#bfdbfe" font-size="22">JIT Approval</text>
+  <rect x="1140" y="220" width="400" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="1160" y="275" fill="#bfdbfe" font-size="22">Bounded Remediation + Audit</text>
+  <path d="M300 280 L330 280 M570 280 L600 280 M830 280 L860 280 M1110 280 L1140 280" stroke="#93c5fd" stroke-width="4"/>
+  <rect x="70" y="390" width="1460" height="430" rx="16" fill="#0f172a" stroke="#334155"/>
+  <text x="95" y="445" fill="#e2e8f0" font-size="30">Daily capability highlights</text>
+  <text x="95" y="495" fill="#cbd5e1" font-size="24">• Read-only triage autonomy improves speed while containing mutation risk.</text>
+  <text x="95" y="540" fill="#cbd5e1" font-size="24">• JIT approval gates reduce high-impact remediation blast radius.</text>
+  <text x="95" y="585" fill="#cbd5e1" font-size="24">• Alert-storm deduplication increases operator signal-to-noise ratio.</text>
+  <text x="95" y="630" fill="#cbd5e1" font-size="24">• MTTR benchmarks guide controlled autonomy rollout maturity.</text>
+  <text x="95" y="710" fill="#94a3b8" font-size="18">labels: measured / synthetic / anonymized_reported</text>
+  <text x="95" y="740" fill="#94a3b8" font-size="18">fetched_at_utc: 2026-11-15T17:04:58+00:00</text>
+</svg>

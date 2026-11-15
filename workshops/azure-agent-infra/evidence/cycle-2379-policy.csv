@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+agent-card discovery version custody,221,230,0.9609,measured,replay logs
+streamable-http pool stability guard,218,232,0.9397,measured,replay logs
+cross-tenant federation blast-radius fence,223,235,0.9489,measured,replay logs

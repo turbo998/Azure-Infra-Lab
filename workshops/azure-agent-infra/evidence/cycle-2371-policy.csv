@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+obo delegated token replay anomaly block,217,231,0.9394,measured,replay logs
+document ACL and tenant filter enforcement,223,231,0.9654,measured,replay logs
+private-link egress deny blast-radius containment,209,219,0.9543,measured,replay logs

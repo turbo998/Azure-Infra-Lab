@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+phi de-identification precision,972,1000,0.972,measured,clinical phi guard tests
+fhir bundle grounding accuracy,958,1000,0.958,measured,grounding verifier logs
+unapproved ehr writeback block,997,1000,0.997,measured,citl gate replay logs

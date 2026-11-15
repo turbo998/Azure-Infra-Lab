@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+agent_framework_lane,Microsoft Agent Framework deterministic control lane,182,309,anonymized_reported,official+reported
+foundry_threads_lane,Foundry Agent Service managed-threads lane,147,262,measured,staging replay
+langgraph_selfhost_lane,Self-hosted LangGraph on ACA/AKS lane,211,354,anonymized_reported,official+reported
+copilot_sdk_lane,Azure-hosted GitHub Copilot SDK lane,164,281,synthetic,deterministic model

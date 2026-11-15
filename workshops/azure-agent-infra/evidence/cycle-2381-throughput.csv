@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+kueue_lane,Kueue fairness lane,1098,973,synthetic,deterministic model
+kuberay_lane,KubeRay/vLLM serving lane,1362,1228,synthetic,deterministic model
+fallback_lane,Spot fallback lane,1034,902,synthetic,deterministic model
+mig_partition_lane,MIG partition lane,1274,1137,synthetic,deterministic model

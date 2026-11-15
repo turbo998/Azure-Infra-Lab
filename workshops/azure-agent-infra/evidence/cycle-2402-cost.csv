@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Target path,8.27,2142,3.86,synthetic,deterministic finops model
+Direct worker path,6.88,1674,4.11,synthetic,deterministic finops model
+No replay-guard path,6.57,1830,3.59,synthetic,deterministic finops model
+Legacy baseline,5.71,911,6.27,synthetic,deterministic finops model

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure Communication Services Call Automation overview",
+    "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/call-automation/call-automation",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:23:45.956353+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "ACS media streaming in Call Automation",
+    "url": "https://learn.microsoft.com/en-us/azure/communication-services/how-tos/call-automation/media-streaming",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:23:45.956353+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Communication Services Direct Routing",
+    "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/telephony/direct-routing-concept",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:23:45.956353+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure OpenAI Realtime API via WebRTC",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/openai/how-to/realtime-audio-webrtc",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:23:45.956353+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure AI Speech text-to-speech and speech-to-text",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:23:45.956353+00:00",
+    "source_label": "synthetic",
+    "notes": "official docs"
+  },
+  {
+    "title": "PCI DSS v4.0 resources",
+    "url": "https://www.pcisecuritystandards.org/standards/pci-dss/",
+    "published_or_doc_date": "timestamp_unverified (official standard page)",
+    "fetched_at_utc": "2026-11-15T19:23:45.956353+00:00",
+    "source_label": "synthetic",
+    "notes": "standards reference"
+  }
+]

@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+ehr_fhir_ingest,EHR + FHIR prior-auth request ingest lane,9240,8110,anonymized_reported,anonymized provider network burst replay
+rules_solver_jobs,Coverage + clinical rule deterministic solve lane,1620,1370,synthetic,deterministic medical necessity solver benchmark
+claims_commit_transactions,Authorization lock + claims adjudication commit lane,3840,3290,measured,claims adjudication concurrency replay
+appeal_status_updates,Member/provider status and appeal update lane,2860,2400,anonymized_reported,anonymized status-notification replay

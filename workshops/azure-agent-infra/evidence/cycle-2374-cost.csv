@@ -1,0 +1,5 @@
+path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
+Service Bus session-lock lane,4.46,296,20,0.00161,0.00663,synthetic,deterministic cost model
+Event Grid pull-delivery lane,3.72,334,20,0.00137,0.00508,synthetic,deterministic cost model
+Event Hubs telemetry lane,5.14,622,20,0.00155,0.0043,synthetic,deterministic cost model
+Tiered async swarm hybrid lane,0.0,1,20,0.00174,0.00602,synthetic,deterministic cost model

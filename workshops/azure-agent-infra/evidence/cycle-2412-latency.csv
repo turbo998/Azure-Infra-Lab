@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+single_region,Single-region topology,124,186,104.4,measured,global replay
+active_passive,Active-passive topology,89,132,45.1,synthetic,modeled failover
+active_active,Active-active topology,64,91,0.0,anonymized_reported,regional drill
+legacy_public_lb,Legacy public LB baseline,166,244,168.1,anonymized_reported,reported baseline

@@ -1,0 +1,5 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+residency policy violation block,968,1000,0.968,measured,policy replay suite
+cross-border token denial,937,1000,0.937,anonymized_reported,identity exchange replay
+signed artifact non-repudiation,992,1000,0.992,measured,signature verification suite
+p0 data egress incident reduction,844,1000,0.844,synthetic,before-after risk model

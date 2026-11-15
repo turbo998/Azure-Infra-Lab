@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+kueue_cohort_lane,Kueue cohort lending/preemption lane,144,283,measured,staging replay
+kuberay_vllm_lane,KubeRay/vLLM inference lane,131,271,anonymized_reported,official+reported
+spot_fallback_lane,Spot-to-OnDemand fallback lane,166,312,measured,staging replay
+mig_dra_partition_lane,DRA + MIG fractional partition lane,119,247,synthetic,deterministic model

@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_fullrebuild,source_label,source_ref
+dynamic_community_selection_path,GraphRAG dynamic community selection path,165,307,-41.5,measured,staging replay
+temporal_graph_mutation_path,Temporal graph mutation delta path,184,341,-29.6,anonymized_reported,official+reported
+hybrid_vector_graph_path,Hybrid vector and graph retrieval path,219,426,-12.4,measured,staging replay
+full_rebuild_baseline,Full graph rebuild baseline,439,929,0.0,anonymized_reported,reported baseline

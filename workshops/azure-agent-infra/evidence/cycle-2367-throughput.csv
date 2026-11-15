@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+multi_region_router,APIM regional router + model pool,1868,1706,synthetic,deterministic model
+mcp_tool_fanout,MCP tool fanout with residency checks,812,734,synthetic,deterministic model
+state_sync,Session metadata sync bus,968,882,synthetic,deterministic model
+replay_pipeline,Failover replay queue,522,469,synthetic,deterministic model

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "APIM AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "2026-10-23",
+    "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "APIM service changelog",
+    "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+    "published_or_doc_date": "2026-06",
+    "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+    "source_label": "measured",
+    "notes": "official release notes"
+  },
+  {
+    "title": "ACA Dynamic Sessions",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "2026-10",
+    "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+    "source_label": "measured",
+    "notes": "official learn"
+  },
+  {
+    "title": "Firecracker releases",
+    "url": "https://github.com/firecracker-microvm/firecracker/releases",
+    "published_or_doc_date": "2026-11-06",
+    "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "runtime release comparator"
+  },
+  {
+    "title": "Kata releases",
+    "url": "https://github.com/kata-containers/kata-containers/releases",
+    "published_or_doc_date": "2026-11-08",
+    "fetched_at_utc": "2026-11-15T15:09:53+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "runtime release comparator"
+  }
+]

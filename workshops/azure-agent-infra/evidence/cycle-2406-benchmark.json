@@ -1,0 +1,224 @@
+{
+  "cycle": {
+    "id": 2406,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Rack-scale liquid-cooled GPU infrastructure for reasoning and MoE agents on Azure",
+    "generated_at_utc": "2026-11-15T17:54:21+00:00",
+    "topic_slug": "rack-scale-liquid-cooled-gpu-reasoning-moe-agents-r1001"
+  },
+  "generated_at_utc": "2026-11-15T17:54:21+00:00",
+  "topic_slug": "rack-scale-liquid-cooled-gpu-reasoning-moe-agents-r1001",
+  "breakthrough_focus": [
+    "Topology-aware placement improves expert routing locality under MoE traffic",
+    "Rack-local NVLink domains reduce latency variance at high swarm concurrency",
+    "Token-level finops reveals clear TCO separation across GPU generations"
+  ],
+  "architecture_impacts": [
+    "Expert routing strategy must align with rack-level network boundaries",
+    "Topology locality hit-rate is a first-class production gate",
+    "Million-token cost should be tracked together with latency SLO"
+  ],
+  "sources": [
+    {
+      "title": "Azure ND GB200 v6 VM sizes",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nd-family",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "AKS best practices for advanced scheduler features",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/operator-best-practices-advanced-scheduler",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "AKS GPU workload guide",
+      "url": "https://learn.microsoft.com/en-us/azure/aks/use-nvidia-gpu",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "vLLM project releases",
+      "url": "https://github.com/vllm-project/vllm/releases",
+      "published_or_doc_date": "release stream",
+      "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+      "source_label": "synthetic",
+      "notes": "upstream release reference"
+    },
+    {
+      "title": "SGLang project releases",
+      "url": "https://github.com/sgl-project/sglang/releases",
+      "published_or_doc_date": "release stream",
+      "fetched_at_utc": "2026-11-15T17:54:21+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "upstream release reference"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "gb200_nvl72_target",
+      "system": "GB200 NVL72 topology-aware target",
+      "p50_ms": 566,
+      "p95_ms": 812,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "h200_partial_locality",
+      "system": "H200 mixed topology with partial locality",
+      "p50_ms": 688,
+      "p95_ms": 967,
+      "overhead_pct_vs_target": 19.1,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "h100_no_topology_pinning",
+      "system": "H100 legacy cluster no topology pinning",
+      "p50_ms": 942,
+      "p95_ms": 1288,
+      "overhead_pct_vs_target": 58.6,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "non_moe_baseline",
+      "system": "Non-MoE baseline inference farm",
+      "p50_ms": 1264,
+      "p95_ms": 1714,
+      "overhead_pct_vs_target": 111.1,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "gb200_nvl72_target",
+      "path": "Target path",
+      "p50_rps": 15620,
+      "p95_rps": 14860,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "h200_partial_locality",
+      "path": "H200 path",
+      "p50_rps": 13140,
+      "p95_rps": 12340,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "h100_no_topology_pinning",
+      "path": "H100 path",
+      "p50_rps": 9680,
+      "p95_rps": 9050,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "non_moe_baseline",
+      "path": "Baseline path",
+      "p50_rps": 6640,
+      "p95_rps": 6180,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "topology locality hit",
+      "blocked": 486,
+      "total": 500,
+      "intercept_rate": 0.972,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "reasoning slo meet",
+      "blocked": 954,
+      "total": 1000,
+      "intercept_rate": 0.954,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "boundary policy",
+      "blocked": 984,
+      "total": 1000,
+      "intercept_rate": 0.984,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "GB200 target",
+      "compute_hour_usd": 790.2,
+      "resolved_queries_per_hour": 14860,
+      "index_token_cost_per_1k_queries": 53.2,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "H200 partial locality",
+      "compute_hour_usd": 762.4,
+      "resolved_queries_per_hour": 12340,
+      "index_token_cost_per_1k_queries": 61.8,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "H100 no pinning",
+      "compute_hour_usd": 674.2,
+      "resolved_queries_per_hour": 9050,
+      "index_token_cost_per_1k_queries": 74.5,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Non-MoE baseline",
+      "compute_hour_usd": 552.5,
+      "resolved_queries_per_hour": 6180,
+      "index_token_cost_per_1k_queries": 89.4,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "topology_locality_hit_rate": {
+      "numerator": 486,
+      "denominator": 500,
+      "percentage": 97.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/rack-scale-liquid-cooled-gpu-reasoning-moe-agents-r1001.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "reasoning_slo_meet_rate": {
+      "numerator": 954,
+      "denominator": 1000,
+      "percentage": 95.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/rack-scale-liquid-cooled-gpu-reasoning-moe-agents-r1001.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "token_tco_improvement_rate": {
+      "numerator": 286,
+      "denominator": 1000,
+      "percentage": 28.6,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/rack-scale-liquid-cooled-gpu-reasoning-moe-agents-r1001.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

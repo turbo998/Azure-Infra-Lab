@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+ptu_lane,Foundry PTU reserved capacity,2248,2054,synthetic,deterministic model
+paygo_lane,Foundry PayGo overflow,968,842,synthetic,deterministic model
+vllm_lane,AKS KAITO vLLM elastic pool,1288,1131,synthetic,deterministic model
+hybrid_aggregate,Hybrid aggregate under SLA governor,3896,3440,synthetic,deterministic model

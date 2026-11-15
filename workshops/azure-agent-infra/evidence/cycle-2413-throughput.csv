@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+fhir_bundle_grounding,FHIR grounding pipeline,420,360,measured,deterministic replay
+dicom_multimodal_parse,DICOM multimodal parsing,210,170,synthetic,modeled from reference deployment
+prior_auth_batch,Prior-auth batch adjudication,980,820,anonymized_reported,partner runbooks
+citl_attestation_verify,CITL attestation verification,520,470,measured,security gate replay logs

@@ -1,61 +1,64 @@
-# APIM MCP Reentry Burst Credit Fairness Selection FAQ (Cycle 1935)
+# APIM MCP Reentry Burst Credit Fairness Selection FAQ (Cycle 1947)
 
 ## 1) Three-minute decision
-- **Core issue:** without burst-credit controls, reentry traffic creates short spikes that squeeze cross-tenant recovery channels.
-- **Recommendation:** combine reentry burst credits, tiered quotas, and fair recovery orchestration.
-- **Goal:** suppress reentry spikes, stabilize critical paths, and improve tenant fairness during recovery.
+- **Core issue:** reentry bursts deplete shared quotas quickly and make tenant recovery order unstable.
+- **Recommendation:** use a closed loop of burst-credit allocation, overdraft-lease reclaim, and overload downgrade gates.
+- **Goal:** preserve tenant fairness while stabilizing recovery throughput for critical credit sessions.
 
 ## 2) Q1 / Q2 / Q3
-### Q1: Why enforce reentry burst credit fairness?
-1) fixed reentry rates cannot absorb in-window spikes,
-2) without burst credits, high-frequency tenants dominate at window boundaries,
-3) without fair orchestration, low-frequency tenants recover slower.
+### Q1: Why burst credit instead of fixed credit buckets?
+1) fixed credit lacks time semantics for lease expiration and renewal priority,
+2) pure credit decay still causes boundary-time contention spikes,
+3) burst credit let capacity and validity window co-drive scheduling.
 
-### Q2: How should production design work?
-- **Credit layer:** assign decaying reentry burst credits per tenant lane,
-- **Quota layer:** enforce tier quotas and cap credit overdraft rates,
-- **Orchestration layer:** schedule recovery by fairness weight and refill cadence,
-- **Audit layer:** persist credit spend, reentry actions, and recovery outcomes.
+### Q2: What is the production layering model?
+- **Allocation layer:** issue burst credit and renewal budgets per tenant/priority,
+- **Reclaim layer:** apply windowed overdraft reclaim with anti-oscillation limits,
+- **Downgrade layer:** trigger overload gates to protect critical sessions,
+- **Audit layer:** persist grant, renew, reclaim, and downgrade events.
 
 ### Q3: What is the go-live bar?
-- reentry oscillation and timeout rates continue to decline,
-- critical throughput stays stable at peak,
-- credit/quota/recovery actions are auditable, replayable, reproducible.
+- burst-credit drift rate keeps declining,
+- high-priority lease success remains stable,
+- reclaim and downgrade transitions are tenant-replayable.
 
 ## 3) Reference architecture
 ```mermaid
 flowchart LR
-  A[MCP Ingress] --> B[Reentry Burst Credit Pool]
-  B --> C[Credit Decay + Watermark Guard]
-  C --> D[Tiered Reentry Quota]
-  D --> E[Fair Recovery Orchestrator]
-  E --> F[Primary Path Reentry]
-  C --> G[Audit Timeline]
+  A[MCP Reentry Ingress] --> B[Burst Credit Distributor]
+  B --> C[Overdraft Credit Reclaimer]
+  C --> D[Credit-Aware Scheduler]
+  D --> E[Overload Downgrade Gate]
+  E --> F[Primary Recovery Lane]
+  C --> G[Audit Replay Timeline]
   F --> H[Gateway Response]
-  H --> E
+  H --> D
 ```
 
 ## 4) Decision matrix
-| Dimension | Fixed reentry rate | Reentry Burst Credit Fairness (Recommended) |
+| Dimension | Fixed credit bucket | Burst Credit Fairness (Recommended) |
 |---|---:|---:|
-| Critical-path stability | Medium | High |
-| Reentry spike suppression | Medium | High |
-| Tenant recovery fairness | Medium | High |
-| Operational explainability | Medium | High |
-| Implementation complexity | Low | Medium |
+| Lease-recovery order stability | Medium | High |
+| Boundary contention suppression | Medium | High |
+| Capacity+validity coupling | Low | High |
+| Replay explainability | Medium | High |
+| Implementation complexity | Medium | Medium-High |
 
 ## 5) Evidence and reproducibility
 - Evidence files:
-  - `workshops/azure-agent-infra/evidence/cycle-1935-benchmark.json`
-  - `workshops/azure-agent-infra/evidence/cycle-1935-latency.csv`
-  - `workshops/azure-agent-infra/evidence/cycle-1935-throughput.csv`
-  - `workshops/azure-agent-infra/evidence/cycle-1935-cost.csv`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-benchmark.json`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-latency.csv`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-throughput.csv`
+  - `workshops/azure-agent-infra/evidence/cycle-1947-cost.csv`
+- Contract keys:
+  - `percentage_contract.unfenced_reentry_burst_credit_drift_rate`
+  - `percentage_contract.reentry_burst_credit_variance_rate`
+  - `percentage_contract.reentry_burst_credit_recovery_gain_pts`
 - Labels: `measured / synthetic / anonymized_reported`.
-- Repro method: fixed sampling windows, fixed burst-credit policy, fixed cost model.
 
 ## 6) Production checklist
-- [ ] Reentry burst credits and decay function pass replay verification.
-- [ ] Tiered reentry quotas align with tenant boundaries.
-- [ ] Fair recovery orchestration supports staged rollout and rollback.
-- [ ] Credit/reentry/recovery trails are tenant-auditable.
+- [ ] Lease grant/renew/reclaim transitions are window-replayable.
+- [ ] Overdraft reclaim avoids starvation for critical tenants.
+- [ ] Downgrade gates converge monotonically at 10x load.
+- [ ] Audit trails bind tenant, credit class, and policy version deterministically.
 - [ ] FAQ/H5/SVG/7-card/evidence remain cycle-topic consistent.

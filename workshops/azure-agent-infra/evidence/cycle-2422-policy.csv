@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+sub-180ms ttft compliance,962,1000,0.962,measured,ttft compliance suite
+economy exploit block rate,991,1000,0.991,measured,exploit replay suite
+cogs reduction vs single model,397,1000,0.397,measured,cost model comparison

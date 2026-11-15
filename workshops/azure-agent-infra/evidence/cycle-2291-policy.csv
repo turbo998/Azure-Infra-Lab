@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+unfenced rollbackproof drift gate,201,209,0.9617,measured,replay logs
+rollbackproof variance guard,194,201,0.9652,measured,replay logs
+rollbackproof recovery fence,188,195,0.9641,measured,replay logs

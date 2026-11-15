@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+sub-300ms barge-in fidelity,223,233,0.9571,measured,replay logs
+tool turn-taking lock precision,224,233,0.9614,measured,replay logs
+compliance recording custody,219,233,0.9399,measured,replay logs

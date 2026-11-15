@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
+dspm_ledger_defender_target,DSPM + ledger + defender target,724,1048,0.0,measured,staging replay
+dspm_tokenization_only,DSPM + tokenization only,628,892,-14.9,anonymized_reported,official+reported
+ledger_only_path,Ledger-only provenance path,677,971,-7.3,measured,staging replay
+legacy_audit_log_baseline,Legacy audit-log baseline,1128,1684,60.7,anonymized_reported,reported baseline

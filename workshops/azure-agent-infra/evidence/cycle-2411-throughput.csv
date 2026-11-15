@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+pool_shared,Pool shared,3120,2860,synthetic,modeled throughput
+bridge_hybrid,Bridge hybrid,2710,2480,synthetic,modeled throughput
+silo_dedicated,Silo dedicated,2140,1960,synthetic,modeled throughput
+legacy_flat,Legacy flat,2260,2010,anonymized_reported,reported baseline

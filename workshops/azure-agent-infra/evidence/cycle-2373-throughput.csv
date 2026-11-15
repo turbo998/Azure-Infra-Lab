@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+retrieval_lane,Agentic retrieval query lane,954,846,synthetic,deterministic model
+diskann_lane,Cosmos DiskANN memory lane,786,694,synthetic,deterministic model
+redis_lane,Redis semantic/episodic cache lane,1748,1596,synthetic,deterministic model
+policy_guardlane,Memory-tier policy guardlane,1214,1088,synthetic,deterministic model

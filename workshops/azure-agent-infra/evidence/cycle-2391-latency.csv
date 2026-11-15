@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,overhead_pct_vs_nonpartitioned,source_label,source_ref
+content_understanding_layout_path,AI Content Understanding plus Layout v4 path,171,308,-41.8,measured,staging replay
+diagram_vectorization_path,Diagram region vectorization path,189,356,-28.4,anonymized_reported,official+reported
+video_keyframe_alignment_path,Video keyframe and transcript alignment path,224,429,-13.2,measured,staging replay
+nonpartitioned_baseline,Non-partitioned ingestion baseline,443,944,0.0,anonymized_reported,reported baseline

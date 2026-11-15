@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Minimal federation baseline,1.0,1000000,1.0,anonymized_reported,baseline model
+DMZ + federation controls,1.12,1000000,1.12,synthetic,federation control model
+DMZ + quarantine + dlp,1.24,1000000,1.24,synthetic,security hardening model
+Optimized federation operations,1.18,1000000,1.18,synthetic,ops optimization model

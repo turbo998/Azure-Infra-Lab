@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Clinical guideline contradiction block,242,251,0.9641,measured,guideline conflict replay set
+Coverage policy missing-prerequisite block,211,220,0.9591,measured,payer coverage gate replay
+PHI boundary and consent scope violation block,176,183,0.9617,anonymized_reported,consent-boundary simulation replay

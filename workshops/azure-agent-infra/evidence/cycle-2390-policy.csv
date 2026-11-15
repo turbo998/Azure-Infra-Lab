@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+local sub-50ms execution fidelity,232,240,0.9667,measured,replay logs
+wan store-forward replay consistency,228,240,0.95,measured,replay logs
+sovereign pii residency guard coverage,225,240,0.9375,measured,replay logs

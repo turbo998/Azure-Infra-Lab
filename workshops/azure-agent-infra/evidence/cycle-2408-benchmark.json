@@ -1,0 +1,224 @@
+{
+  "cycle": {
+    "id": 2408,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Deterministic MCP tool governance and runtime policy firewall on Azure",
+    "generated_at_utc": "2026-11-15T18:03:17+00:00",
+    "topic_slug": "deterministic-mcp-tool-governance-runtime-firewall-r1003"
+  },
+  "generated_at_utc": "2026-11-15T18:03:17+00:00",
+  "topic_slug": "deterministic-mcp-tool-governance-runtime-firewall-r1003",
+  "breakthrough_focus": [
+    "Signed contracts materially strengthen runtime tool-governance integrity",
+    "Gateway and admission policy layering improves intercept precision",
+    "Trace-linked governance lineage enables deterministic replay and audit"
+  ],
+  "architecture_impacts": [
+    "Policy controls should fail closed at both ingress and runtime layers",
+    "Tool schema/version drift must be treated as a first-class production risk",
+    "Audit coverage metrics should gate promotion decisions"
+  ],
+  "sources": [
+    {
+      "title": "APIM AI gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:03:17+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Policy for Kubernetes",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/policy-for-kubernetes",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:03:17+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Microsoft Entra OAuth and OBO flow",
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:03:17+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "OpenTelemetry with Azure Monitor overview",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T18:03:17+00:00",
+      "source_label": "synthetic",
+      "notes": "official docs"
+    },
+    {
+      "title": "Gatekeeper policy controller project",
+      "url": "https://github.com/open-policy-agent/gatekeeper",
+      "published_or_doc_date": "repository reference",
+      "fetched_at_utc": "2026-11-15T18:03:17+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "upstream policy controller reference"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "deterministic_firewall_target",
+      "system": "Full deterministic firewall target",
+      "p50_ms": 49,
+      "p95_ms": 74,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "gateway_only_policy",
+      "system": "Gateway-only policy path",
+      "p50_ms": 58,
+      "p95_ms": 89,
+      "overhead_pct_vs_target": 20.3,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "admission_only_policy",
+      "system": "Admission-only policy path",
+      "p50_ms": 64,
+      "p95_ms": 102,
+      "overhead_pct_vs_target": 37.8,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "legacy_coarse_rbac",
+      "system": "Legacy coarse RBAC baseline",
+      "p50_ms": 117,
+      "p95_ms": 161,
+      "overhead_pct_vs_target": 117.6,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "deterministic_firewall_target",
+      "path": "Target path",
+      "p50_rps": 13480,
+      "p95_rps": 12840,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "gateway_only_policy",
+      "path": "Gateway-only",
+      "p50_rps": 14190,
+      "p95_rps": 13620,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "admission_only_policy",
+      "path": "Admission-only",
+      "p50_rps": 12320,
+      "p95_rps": 11740,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "legacy_coarse_rbac",
+      "path": "Legacy baseline",
+      "p50_rps": 8810,
+      "p95_rps": 8410,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "signed contract enforcement",
+      "blocked": 992,
+      "total": 1000,
+      "intercept_rate": 0.992,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "policy firewall slo meet",
+      "blocked": 971,
+      "total": 1000,
+      "intercept_rate": 0.971,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "tool governance audit coverage",
+      "blocked": 984,
+      "total": 1000,
+      "intercept_rate": 0.984,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Target path",
+      "compute_hour_usd": 405.7,
+      "resolved_queries_per_hour": 12840,
+      "index_token_cost_per_1k_queries": 31.6,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Gateway-only",
+      "compute_hour_usd": 373.2,
+      "resolved_queries_per_hour": 13620,
+      "index_token_cost_per_1k_queries": 27.4,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Admission-only",
+      "compute_hour_usd": 339.3,
+      "resolved_queries_per_hour": 11740,
+      "index_token_cost_per_1k_queries": 28.9,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Legacy baseline",
+      "compute_hour_usd": 334.7,
+      "resolved_queries_per_hour": 8410,
+      "index_token_cost_per_1k_queries": 39.8,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "signed_contract_enforcement_rate": {
+      "numerator": 992,
+      "denominator": 1000,
+      "percentage": 99.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/deterministic-mcp-tool-governance-runtime-firewall-r1003.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "policy_firewall_slo_meet_rate": {
+      "numerator": 971,
+      "denominator": 1000,
+      "percentage": 97.1,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/deterministic-mcp-tool-governance-runtime-firewall-r1003.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "tool_governance_audit_coverage_rate": {
+      "numerator": 984,
+      "denominator": 1000,
+      "percentage": 98.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/deterministic-mcp-tool-governance-runtime-firewall-r1003.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

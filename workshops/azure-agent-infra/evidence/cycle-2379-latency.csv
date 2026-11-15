@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+apim_registry_frontdoor_path,APIM Agent/MCP registry + Front Door WAF path,141,284,measured,staging replay
+mesh_east_west_path,Istio/Linkerd mTLS east-west mesh path on AKS/ACA,176,337,anonymized_reported,official+reported
+stream_pool_compose_path,Streamable-HTTP pooled composite path,128,266,synthetic,deterministic model
+federation_isolation_path,Cross-tenant federation isolation path,153,301,measured,staging replay

@@ -1,0 +1,232 @@
+{
+  "cycle": {
+    "id": 2402,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Omnichannel enterprise IM agent gateway architecture on Azure",
+    "generated_at_utc": "2026-11-15T17:35:31+00:00",
+    "topic_slug": "omnichannel-enterprise-im-agent-gateway-apim-acs-faq-r997"
+  },
+  "generated_at_utc": "2026-11-15T17:35:31+00:00",
+  "topic_slug": "omnichannel-enterprise-im-agent-gateway-apim-acs-faq-r997",
+  "breakthrough_focus": [
+    "Sub-3s webhook ACK via gateway front-door plus async fanout",
+    "HMAC nonce replay protection for channel webhook hardening",
+    "Cross-channel identity convergence through Entra B2B/B2C linking"
+  ],
+  "architecture_impacts": [
+    "Ingress ACK and async workload separation is mandatory under burst",
+    "Replay defense quality depends on nonce lifecycle and key rotation",
+    "Identity linking determines policy consistency for proactive updates"
+  ],
+  "sources": [
+    {
+      "title": "Microsoft 365 Agents SDK",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agents-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Teams Adaptive Cards overview",
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Communication Services concepts",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Service Bus messaging",
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "API Management policy reference",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-policies",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Microsoft Entra External ID overview",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T17:35:31+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "apim_bus_acs_target",
+      "system": "APIM + Service Bus + ACS target",
+      "p50_ms": 516,
+      "p95_ms": 842,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "apim_direct_worker",
+      "system": "APIM + direct worker path",
+      "p50_ms": 880,
+      "p95_ms": 1421,
+      "overhead_pct_vs_target": 68.8,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "queue_without_replay_guard",
+      "system": "Queue path without replay guard",
+      "p50_ms": 792,
+      "p95_ms": 1262,
+      "overhead_pct_vs_target": 49.9,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "legacy_channel_silo_baseline",
+      "system": "Legacy channel-silo baseline",
+      "p50_ms": 1738,
+      "p95_ms": 2884,
+      "overhead_pct_vs_target": 242.5,
+      "source_label": "anonymized_reported",
+      "source_ref": "reported baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "apim_bus_acs_target",
+      "path": "Target path",
+      "p50_rps": 2280,
+      "p95_rps": 2142,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "apim_direct_worker",
+      "path": "Direct worker path",
+      "p50_rps": 1789,
+      "p95_rps": 1674,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "queue_without_replay_guard",
+      "path": "No replay-guard path",
+      "p50_rps": 1948,
+      "p95_rps": 1830,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "legacy_channel_silo_baseline",
+      "path": "Legacy baseline",
+      "p50_rps": 1002,
+      "p95_rps": 911,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "ack sla policy",
+      "blocked": 981,
+      "total": 992,
+      "intercept_rate": 0.9889,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "hmac replay guard",
+      "blocked": 486,
+      "total": 500,
+      "intercept_rate": 0.972,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "identity linking guard",
+      "blocked": 477,
+      "total": 500,
+      "intercept_rate": 0.954,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "cost": [
+    {
+      "path": "Target path",
+      "compute_hour_usd": 8.27,
+      "resolved_queries_per_hour": 2142,
+      "index_token_cost_per_1k_queries": 3.86,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Direct worker path",
+      "compute_hour_usd": 6.88,
+      "resolved_queries_per_hour": 1674,
+      "index_token_cost_per_1k_queries": 4.11,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "No replay-guard path",
+      "compute_hour_usd": 6.57,
+      "resolved_queries_per_hour": 1830,
+      "index_token_cost_per_1k_queries": 3.59,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    },
+    {
+      "path": "Legacy baseline",
+      "compute_hour_usd": 5.71,
+      "resolved_queries_per_hour": 911,
+      "index_token_cost_per_1k_queries": 6.27,
+      "source_label": "synthetic",
+      "source_ref": "deterministic finops model"
+    }
+  ],
+  "percentage_contract": {
+    "webhook_ack_sla_meet_rate": {
+      "numerator": 989,
+      "denominator": 1000,
+      "percentage": 98.9,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/omnichannel-enterprise-im-agent-gateway-apim-acs-faq-r997.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "hmac_replay_block_rate": {
+      "numerator": 486,
+      "denominator": 500,
+      "percentage": 97.2,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/omnichannel-enterprise-im-agent-gateway-apim-acs-faq-r997.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "cross_channel_identity_link_success_rate": {
+      "numerator": 477,
+      "denominator": 500,
+      "percentage": 95.4,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/omnichannel-enterprise-im-agent-gateway-apim-acs-faq-r997.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

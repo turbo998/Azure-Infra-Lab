@@ -1,0 +1,249 @@
+{
+  "cycle": {
+    "id": 2429,
+    "window_bjt": "2026-11-16 23:00 ~ 2026-11-17 05:15",
+    "focus": "Agentic chaos drills and multi-region RPO/RTO governance",
+    "generated_at_utc": "2026-11-15T19:58:01.594547+00:00",
+    "topic_slug": "agentic-chaos-drill-multiregion-rpo-rto-governance-agent-infra-faq-r1024"
+  },
+  "generated_at_utc": "2026-11-15T19:58:01.594547+00:00",
+  "topic_slug": "agentic-chaos-drill-multiregion-rpo-rto-governance-agent-infra-faq-r1024",
+  "breakthrough_focus": [
+    "Policy-consistent failover governance improves controlled recovery under region fault injection.",
+    "Replay-based warm standby reduces recovery latency versus manual runbook execution.",
+    "Failback stability windows materially reduce re-entry induced incident recurrence."
+  ],
+  "architecture_impacts": [
+    "Failover decisions should be policy-versioned and replay-auditable.",
+    "State replay and session recovery must be bounded by explicit RPO budgets.",
+    "Failback should be staged through stability windows before full traffic restoration."
+  ],
+  "sources": [
+    {
+      "title": "Azure API Management AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+      "source_label": "measured",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure API Management service changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "timestamp_unverified (official changelog page)",
+      "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+      "source_label": "measured",
+      "notes": "official changelog"
+    },
+    {
+      "title": "Azure Container Apps sessions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Azure Event Hubs documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
+      "published_or_doc_date": "timestamp_unverified (official docs page)",
+      "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "official docs"
+    },
+    {
+      "title": "Firecracker releases",
+      "url": "https://github.com/firecracker-microvm/firecracker/releases",
+      "published_or_doc_date": "timestamp_unverified (official release page)",
+      "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+      "source_label": "synthetic",
+      "notes": "release cadence evidence"
+    },
+    {
+      "title": "Kata Containers releases",
+      "url": "https://github.com/kata-containers/kata-containers/releases",
+      "published_or_doc_date": "timestamp_unverified (official release page)",
+      "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+      "source_label": "synthetic",
+      "notes": "release cadence evidence"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "failover_decision_latency",
+      "system": "APIM regional failover lane",
+      "p50_ms": 88,
+      "p95_ms": 172,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "measured",
+      "source_ref": "failover replay suite"
+    },
+    {
+      "metric": "state_replay_recovery_latency",
+      "system": "event replay and session recovery lane",
+      "p50_ms": 231,
+      "p95_ms": 486,
+      "overhead_pct_vs_target": 1.9,
+      "source_label": "anonymized_reported",
+      "source_ref": "replay stress suite"
+    },
+    {
+      "metric": "failback_settle_latency",
+      "system": "policy gated failback lane",
+      "p50_ms": 124,
+      "p95_ms": 260,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "synthetic",
+      "source_ref": "deterministic failback simulation"
+    },
+    {
+      "metric": "legacy_manual_recovery_latency",
+      "system": "manual runbook baseline",
+      "p50_ms": 410,
+      "p95_ms": 1110,
+      "overhead_pct_vs_target": 0.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "legacy incident baseline"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "policy_checks_per_second",
+      "path": "failover and failback policy lane",
+      "p50_rps": 2180,
+      "p95_rps": 2010,
+      "source_label": "measured",
+      "source_ref": "policy load bench"
+    },
+    {
+      "metric": "replay_commits_per_second",
+      "path": "event replay commit lane",
+      "p50_rps": 1360,
+      "p95_rps": 1230,
+      "source_label": "anonymized_reported",
+      "source_ref": "replay throughput sample"
+    },
+    {
+      "metric": "audit_events_per_second",
+      "path": "audit trace lane",
+      "p50_rps": 1640,
+      "p95_rps": 1490,
+      "source_label": "measured",
+      "source_ref": "audit workload bench"
+    },
+    {
+      "metric": "chaos_rounds_per_day",
+      "path": "continuous drill cadence",
+      "p50_rps": 26,
+      "p95_rps": 22,
+      "source_label": "synthetic",
+      "source_ref": "drill cadence model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "rto within slo recovery",
+      "blocked": 946,
+      "total": 1000,
+      "intercept_rate": 0.946,
+      "source_label": "measured",
+      "source_ref": "recovery compliance suite"
+    },
+    {
+      "policy": "rpo within budget",
+      "blocked": 928,
+      "total": 1000,
+      "intercept_rate": 0.928,
+      "source_label": "anonymized_reported",
+      "source_ref": "state replay verification"
+    },
+    {
+      "policy": "policy drift blocked",
+      "blocked": 987,
+      "total": 1000,
+      "intercept_rate": 0.987,
+      "source_label": "measured",
+      "source_ref": "policy lineage suite"
+    },
+    {
+      "policy": "failback stability window pass",
+      "blocked": 959,
+      "total": 1000,
+      "intercept_rate": 0.959,
+      "source_label": "synthetic",
+      "source_ref": "failback stability simulation"
+    }
+  ],
+  "cost": [
+    {
+      "path": "manual runbook recovery",
+      "compute_hour_usd": 1.0,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 1.0,
+      "source_label": "anonymized_reported",
+      "source_ref": "manual baseline"
+    },
+    {
+      "path": "warm-standby replay governance",
+      "compute_hour_usd": 0.74,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.74,
+      "source_label": "synthetic",
+      "source_ref": "warm replay model"
+    },
+    {
+      "path": "active-active governance",
+      "compute_hour_usd": 0.96,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.96,
+      "source_label": "synthetic",
+      "source_ref": "active active model"
+    },
+    {
+      "path": "audit replay integrated",
+      "compute_hour_usd": 0.79,
+      "resolved_queries_per_hour": 1000,
+      "index_token_cost_per_1k_queries": 0.79,
+      "source_label": "measured",
+      "source_ref": "audit replay benchmark"
+    }
+  ],
+  "percentage_contract": {
+    "rto_within_slo_recovery_rate": {
+      "numerator": 946,
+      "denominator": 1000,
+      "percentage": 94.6,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agentic-chaos-drill-multiregion-rpo-rto-governance-agent-infra-faq-r1024.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "rpo_within_budget_rate": {
+      "numerator": 928,
+      "denominator": 1000,
+      "percentage": 92.8,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agentic-chaos-drill-multiregion-rpo-rto-governance-agent-infra-faq-r1024.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "policy_drift_block_rate": {
+      "numerator": 987,
+      "denominator": 1000,
+      "percentage": 98.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agentic-chaos-drill-multiregion-rpo-rto-governance-agent-infra-faq-r1024.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    },
+    "failback_stability_window_pass_rate": {
+      "numerator": 959,
+      "denominator": 1000,
+      "percentage": 95.9,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agentic-chaos-drill-multiregion-rpo-rto-governance-agent-infra-faq-r1024.md#6-good-fit-vs-not-for-与百分比合约绑定",
+      "production_validation": "not_measured"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
+rule-only baseline,3.41,246,20,0.0018,0.00642,synthetic,round_1031_cycle_2436 deterministic cost model
+hybrid twin + predictive agent,4.08,222,20,0.0023,0.00843,synthetic,round_1031_cycle_2436 deterministic cost model
+hybrid + strict safety gate,4.26,216,20,0.0026,0.00917,synthetic,round_1031_cycle_2436 deterministic cost model

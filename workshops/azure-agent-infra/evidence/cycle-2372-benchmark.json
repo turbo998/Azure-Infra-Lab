@@ -1,0 +1,254 @@
+{
+  "cycle": {
+    "id": 2372,
+    "window_bjt": "2026-11-15 23:00 ~ 2026-11-16 05:15",
+    "focus": "Disaggregated KV cache and prefill/decode separation on AKS GPU clusters",
+    "generated_at_utc": "2026-11-15T15:31:18+00:00",
+    "topic_slug": "agent-aks-gpu-disaggregated-kv-cache-prefill-decode-separation-infini-band-rocev2-lustre-nvme-faq-r967"
+  },
+  "generated_at_utc": "2026-11-15T15:31:18+00:00",
+  "topic_slug": "agent-aks-gpu-disaggregated-kv-cache-prefill-decode-separation-infini-band-rocev2-lustre-nvme-faq-r967",
+  "breakthrough_focus": [
+    "Prefill/decode separation stabilizes interactive latency under long-context burst traffic.",
+    "Disaggregated KV cache with storage tiering improves cache hit continuity across multi-turn sessions.",
+    "InfiniBand and RoCEv2 lane policies materially affect remote KV fetch tail latency.",
+    "Fabric-aware policy guardlane reduces cache contamination risk in multi-tenant SaaS paths."
+  ],
+  "architecture_impacts": [
+    "Prefill and decode lanes use independent autoscaling and SLO budgets.",
+    "KV cache namespaces are tenant-scoped with TTL and lineage controls.",
+    "Managed Lustre and local NVMe are used as split cache tiers by workload class.",
+    "Policy gate enforces fabric-aware scheduling and fallback routing."
+  ],
+  "sources": [
+    {
+      "title": "Azure API Management AI Gateway overview",
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure API Management service changelog",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "measured",
+      "notes": "official changelog"
+    },
+    {
+      "title": "Azure Managed Lustre",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/",
+      "published_or_doc_date": "2026-10",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure HPC InfiniBand support",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/hpc/enable-infiniband",
+      "published_or_doc_date": "2026-09",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "Azure accelerated networking",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-overview",
+      "published_or_doc_date": "2026-09",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "measured",
+      "notes": "official learn"
+    },
+    {
+      "title": "vLLM releases",
+      "url": "https://github.com/vllm-project/vllm/releases",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "runtime comparator"
+    },
+    {
+      "title": "LMCache releases",
+      "url": "https://github.com/LMCache/LMCache/releases",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "cache comparator"
+    },
+    {
+      "title": "Mooncake releases",
+      "url": "https://github.com/kvcache-ai/Mooncake/releases",
+      "published_or_doc_date": "2026-11",
+      "fetched_at_utc": "2026-11-15T15:31:18+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "disaggregated cache comparator"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "prefill_lane",
+      "system": "Prefill lane on AKS GPU pool (vLLM/Dynamo path)",
+      "p50_ms": 312,
+      "p95_ms": 498,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "decode_lane",
+      "system": "Decode lane with local NVMe hot KV cache",
+      "p50_ms": 121,
+      "p95_ms": 226,
+      "source_label": "anonymized_reported",
+      "source_ref": "official+reported"
+    },
+    {
+      "metric": "remote_kv_fetch",
+      "system": "Disaggregated KV fetch via Managed Lustre tier",
+      "p50_ms": 84,
+      "p95_ms": 147,
+      "source_label": "measured",
+      "source_ref": "staging replay"
+    },
+    {
+      "metric": "cache_rehydrate",
+      "system": "LMCache rehydrate warm path",
+      "p50_ms": 37,
+      "p95_ms": 69,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "prefill_throughput",
+      "path": "Batch prefill lane (long context)",
+      "p50_rps": 688,
+      "p95_rps": 604,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "decode_throughput",
+      "path": "Interactive decode lane",
+      "p50_rps": 1428,
+      "p95_rps": 1284,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "kv_cache_lane",
+      "path": "Disaggregated KV cache service lane",
+      "p50_rps": 1196,
+      "p95_rps": 1062,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    },
+    {
+      "metric": "policy_guardlane",
+      "path": "Fabric-aware policy guardlane",
+      "p50_rps": 1317,
+      "p95_rps": 1174,
+      "source_label": "synthetic",
+      "source_ref": "deterministic model"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "kv cache staleness anomaly block",
+      "blocked": 203,
+      "total": 217,
+      "intercept_rate": 0.9355,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "prefill/decode lane separation guard",
+      "blocked": 212,
+      "total": 217,
+      "intercept_rate": 0.977,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    },
+    {
+      "policy": "fabric-aware cache lane policy fence",
+      "blocked": 206,
+      "total": 214,
+      "intercept_rate": 0.9626,
+      "source_label": "measured",
+      "source_ref": "replay logs"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "RoCEv2 + local NVMe lane",
+      "vm_hourly_usd": 7.88,
+      "sessions_per_host": 286,
+      "session_minutes": 20,
+      "overhead_usd": 0.00144,
+      "usd_per_session": 0.01062,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "InfiniBand + Managed Lustre lane",
+      "vm_hourly_usd": 9.36,
+      "sessions_per_host": 344,
+      "session_minutes": 20,
+      "overhead_usd": 0.00187,
+      "usd_per_session": 0.01094,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Hybrid prefill/decode split lane",
+      "vm_hourly_usd": 8.42,
+      "sessions_per_host": 412,
+      "session_minutes": 20,
+      "overhead_usd": 0.00161,
+      "usd_per_session": 0.00842,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    },
+    {
+      "path": "Shared unsplit baseline",
+      "vm_hourly_usd": 7.12,
+      "sessions_per_host": 238,
+      "session_minutes": 20,
+      "overhead_usd": 0.00122,
+      "usd_per_session": 0.01119,
+      "source_label": "synthetic",
+      "source_ref": "deterministic cost model"
+    }
+  ],
+  "percentage_contract": {
+    "unfenced_disaggregated_kv_cache_staleness_risk_rate": {
+      "numerator": 203,
+      "denominator": 217,
+      "percentage": 93.5,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-aks-gpu-disaggregated-kv-cache-prefill-decode-separation-infini-band-rocev2-lustre-nvme-faq-r967.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "prefill_decode_split_throughput_stability_rate": {
+      "numerator": 212,
+      "denominator": 217,
+      "percentage": 97.7,
+      "unit": "percent",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-aks-gpu-disaggregated-kv-cache-prefill-decode-separation-infini-band-rocev2-lustre-nvme-faq-r967.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    },
+    "infini_roce_fabric_lane_gain_pts": {
+      "numerator": 29,
+      "denominator": 10,
+      "percentage": 2.9,
+      "unit": "percentage_points",
+      "source_label": "synthetic_assumed",
+      "source_path": "workshops/azure-agent-infra/agent-aks-gpu-disaggregated-kv-cache-prefill-decode-separation-infini-band-rocev2-lustre-nvme-faq-r967.md#5-percentage-contract-bindings-nd",
+      "production_validation": "not_measured"
+    }
+  }
+}

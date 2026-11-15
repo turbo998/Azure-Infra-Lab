@@ -1,0 +1,5 @@
+path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
+Sell-side desk tier,1.08,1000000,1.08,synthetic,relative cost model
+Buy-side quant tier,1.36,1000000,1.36,synthetic,relative cost model
+Regulated institution tier,1.74,1000000,1.74,synthetic,relative cost model
+Manual baseline,1.0,1000000,1.0,anonymized_reported,legacy operations baseline

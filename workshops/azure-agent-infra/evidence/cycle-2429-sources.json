@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Azure API Management AI Gateway overview",
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+    "source_label": "measured",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure API Management service changelog",
+    "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+    "published_or_doc_date": "timestamp_unverified (official changelog page)",
+    "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+    "source_label": "measured",
+    "notes": "official changelog"
+  },
+  {
+    "title": "Azure Container Apps sessions",
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Azure Event Hubs documentation",
+    "url": "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
+    "published_or_doc_date": "timestamp_unverified (official docs page)",
+    "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+    "source_label": "anonymized_reported",
+    "notes": "official docs"
+  },
+  {
+    "title": "Firecracker releases",
+    "url": "https://github.com/firecracker-microvm/firecracker/releases",
+    "published_or_doc_date": "timestamp_unverified (official release page)",
+    "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+    "source_label": "synthetic",
+    "notes": "release cadence evidence"
+  },
+  {
+    "title": "Kata Containers releases",
+    "url": "https://github.com/kata-containers/kata-containers/releases",
+    "published_or_doc_date": "timestamp_unverified (official release page)",
+    "fetched_at_utc": "2026-11-15T19:58:01.594547+00:00",
+    "source_label": "synthetic",
+    "notes": "release cadence evidence"
+  }
+]

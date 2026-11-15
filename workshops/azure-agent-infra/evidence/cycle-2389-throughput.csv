@@ -1,0 +1,5 @@
+metric,path,p50_rps,p95_rps,source_label,source_ref
+ast_gate,AST read-only gate,1314,1191,synthetic,deterministic model
+obo_rls_gate,Entra OBO plus RLS gate,1227,1104,synthetic,deterministic model
+metric_layer_gate,Semantic metric-layer gate,1145,1021,synthetic,deterministic model
+ungated_path,Ungated baseline path,1498,1374,synthetic,deterministic model
