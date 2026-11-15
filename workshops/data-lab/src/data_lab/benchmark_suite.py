@@ -10013,6 +10013,80 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (360M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_cvd_diamond_wafer_fabric_mpcvd_plasma_oes_laser_liftoff_vs_4clouds":
+        return {
+            "scenario_id": "global_cvd_diamond_wafer_fabric_mpcvd_plasma_oes_laser_liftoff_vs_4clouds",
+            "title": "Global MPCVD Single-Crystal Diamond Wafer & 2,210 W/m·K AI GPU Thermal-Substrate Plasma C2/Hα OES Twin-Defect Guard, Pocket-Holder Rim-Overgrowth Control & Femtosecond Laser-Lift-Off (LLO) Graphitization Loop (990K EPS · 364M DiskANN · 2ms E2E · 540-Scenario, -94.7% TCO & 2ms E2E Milestone)",
+            "telemetry": {
+                "mpcvd_diamond_and_laser_plants_count": 14,
+                "cylindrical_cavity_mpcvd_reactors_count": 1200,
+                "insitu_oes_and_twocolor_pyrometers_count": 480,
+                "femtosecond_laser_liftoff_tools_count": 320,
+                "oes_pyrometry_raman_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "cavity_stepflow_and_llo_vectors_indexed_count": 364000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "reactor118_uncontrolled_rim_delta_t_c": 78.0,
+                "reactor118_governed_rim_delta_t_c": 6.2,
+                "step_flow_rim_delta_t_limit_c": 15.0,
+                "governed_c2_halpha_oes_ratio": 0.18,
+                "diamond_raman_1332_fwhm_cm_inv": 1.68,
+                "diamond_thermal_conductivity_w_mk": 2210.0,
+                "femtosecond_llo_kerf_loss_um": 16.5,
+                "palladium_membrane_h2_recycling_pct": 98.8,
+                "concurrent_epitaxy_thermal_and_packaging_users": 7700,
+            },
+            "ontology_traversal": [
+                "Plant-08 Reactor Hall -> MPCVD-Reactor-118 (Hour-160 Pocket-Holder Rim) & fs-LLO-12 -> Eventhouse KQL series_fit_line() isolates +78.0°C rim temperature spike (>15.0°C limit) and C2(516nm)/Hα(656nm)=0.48 (>0.25 limit, predicting twin defects and 1,180 W/m·K degradation) in 0.5ms",
+                "MPCVD-Reactor-118 -> OneLake Zero-Copy Shortcut to Azure HPC COMSOL 3D Maxwell-Plasma-Thermal & 38-Species Radical CFD Solvers + Zero-ETL Mirroring from Snowflake Type-IIa Seed & AI GPU CoWoS ERP -> Correlates plasma-sheath electron mean free path and birefringence stress maps",
+                "Cavity-Throttle-118 -> Cosmos DB SSD DiskANN (364M Maxwell-plasma-thermal cavity, CH3·/H* step-flow & SLM-compensated femtosecond LLO vectors, -92% RAM) -> 0.5ms Top-K match (0.99 similarity): -14 Torr chamber pressure trim + 4.1% CH4 + 0.15% O2 selective sp² etch + SLM phase compensation",
+                "Plasma-and-LLO Recipe -> Foundry IQ Guardrail (CVD-DIAMOND-MPCVD-OES-LLO-2200WMK-SOP-131) -> Verifies +6.2°C rim gradient (<= 15.0°C, C2/Hα=0.18 <= 0.25), 1.68 cm⁻¹ Raman FWHM (<= 2.20 cm⁻¹), 2,210 W/m·K thermal conductivity (>= 2,000 W/m·K), and 16.5 um LLO kerf loss in 0.5ms",
+                "Approved Recipe -> Diamond CVD Director Teams Card -> SQL on Azure Local (ALDO) reactor-hall edge dispatches throttle-valve, MFC, and SLM phase setpoints + Fabric SDS mints 2,210 W/m·K AI Thermal & 98.8% Green-H2 Passport into 1GB Free Fabric SQL in 0.5ms (2ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_cvd_diamond_monthly_tco_usd": 14400,
+                "competitor_stitched_diamond_monthly_tco_usd": 269300,
+                "monthly_diamond_tco_saved_usd": 254900,
+                "monthly_diamond_tco_savings_pct": 94.7,
+                "fabric_internal_full_stack_monthly_usd": 43000,
+                "competitor_internal_full_stack_monthly_usd": 732000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL Plasma C2/Hα OES, Two-Color Rim Pyrometry & Confocal Raman Sensing Agent",
+                        "operation": "Run series_fit_line() across 990K EPS 1,200-reactor C2/Hα radical emission traces, rim-to-center pyrometry gradients, and Raman 1,332 cm⁻¹ streams at $0/GB write surcharge to isolate +78°C rim spike and C2/Hα=0.48 twin risk in 0.5ms",
+                        "impact_metric": "0.5ms detection; $0/GB stream write surcharge saves $188,080/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 364M-Vector Maxwell-Plasma Cavity, Step-Flow & Femtosecond LLO Agent",
+                        "operation": "Query 364,000,000 3D Maxwell-plasma-thermal, CH3·/H* step-flow, and SLM-compensated femtosecond LLO vectors in 0.5ms (0.99 cosine similarity at -92% RAM) to retrieve -14 Torr pressure trim, 4.1% CH4, 0.15% O2 etch, and SLM phase map",
+                        "impact_metric": "0.5ms vector recall; $2,480/mo SSD DiskANN vs $43,000/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Diamond CVD Director Teams Card, ALDO Reactor Edge & 2,210 W/m·K Thermal Passport Agent",
+                        "operation": "Verify SOP-131 guardrails (0.5ms) and dispatch throttle-valve, trace-O2 MFC, and femtosecond SLM commands via SQL on Azure Local (ALDO) plus 2,210 W/m·K AI thermal & 98.8% H2 passport to 1GB Free Fabric SQL (0.5ms)",
+                        "impact_metric": "2ms E2E loop; +6.2°C rim (1.68 cm⁻¹ FWHM); 2,210 W/m·K; -$254.9K/mo (-94.7%) TCO; $42.50M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CVD-DIAMOND-MPCVD-OES-LLO-2200WMK-SOP-131",
+                "hard_constraint": "Never continue MPCVD single-crystal diamond growth if seed rim-to-center thermal gradient exceeds 15.0°C or OES C2(516nm)/Hα(656nm) ratio exceeds 0.25, never release an AI GPU diamond thermal substrate if Raman 1,332 cm⁻¹ FWHM exceeds 2.20 cm⁻¹ or thermal conductivity falls below 2,000 W/m·K, and require >= 98.0% Pd-membrane H2 recycling",
+                "proposed_change": "Lower Reactor-118 pressure -14 Torr, trim CH4 to 4.1%, and inject 0.15% O2 (+6.2°C rim gradient <= 15.0°C, C2/Hα=0.18 <= 0.25, 1.68 cm⁻¹ Raman FWHM, 2,210 W/m·K conductivity), apply SLM birefringence compensation on fs-LLO-12 (16.5 um kerf, 0 cracks), and certify 98.8% H2 passport in Fabric SDS",
+                "plasma_sheath_rim_and_c2_halpha_stepflow_verified": True,
+                "raman_fwhm_2210wmk_and_femtosecond_llo_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 42500000,
+                "end_to_end_latency_ms": 2,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (364M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -16449,6 +16523,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 16,
     },
+    {
+        "id": "DL-537",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS plasma-ball C2/Hα OES spectra, two-color pyrometry rim-to-center thermal gradients, and confocal Raman 1,332 cm⁻¹ streams across 1,200 MPCVD diamond reactors without $194.8K/mo per-attribute cloud fees or 200-hour post-growth Raman delay",
+        "expected": "Route to Fabric Eventhouse KQL (0.5ms Plasma C2/Hα OES, Rim-ΔT & Raman Sense + $0/GB Write Tax + 364M SSD DiskANN -14Torr Pressure, 4.1% CH4, 0.15% O2 & SLM Match 0.5ms + ALDO Reactor Edge 0.5ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (0.5ms Plasma C2/Hα OES, Rim-ΔT & Raman Sense + $0/GB Write Tax + 364M SSD DiskANN -14Torr Pressure, 4.1% CH4, 0.15% O2 & SLM Match 0.5ms + ALDO Reactor Edge 0.5ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 14,
+    },
+    {
+        "id": "DL-538",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline COMSOL 3D Maxwell microwave-cavity electromagnetics and 38-species plasma radical reaction-diffusion CFD solvers vs 2ms reactor-hall rim-overgrowth & laser-lift-off control",
+        "expected": "Route offline 3D Maxwell cavity & 38-species plasma radical CFD simulations to Azure HPC / Databricks GPU and zero-copy plasma-sheath & step-flow vectors to OneLake while keeping 2ms MPCVD/LLO loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline 3D Maxwell cavity & 38-species plasma radical CFD simulations to Azure HPC / Databricks GPU and zero-copy plasma-sheath & step-flow vectors to OneLake while keeping 2ms MPCVD/LLO loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 14,
+    },
+    {
+        "id": "DL-539",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 364M SSD DiskANN + OneLake IQ + SDS + ALDO vs 200-hour post-run Raman inspection across 14 MPCVD diamond wafer plants with 7,700 plasma physicists, laser engineers, and AI GPU thermal auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS plasma OES, pyrometry & Raman telemetry into Eventhouse ($0/GB tax), index 364M vectors in SSD DiskANN (-92% RAM), run 0.5ms throttle-valve, O2 & SLM loops on ALDO reactor edge, and serve 7,700 users via DirectLake (-94.7% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS plasma OES, pyrometry & Raman telemetry into Eventhouse ($0/GB tax), index 364M vectors in SSD DiskANN (-92% RAM), run 0.5ms throttle-valve, O2 & SLM loops on ALDO reactor edge, and serve 7,700 users via DirectLake (-94.7% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 14,
+    },
+    {
+        "id": "DL-540",
+        "category": "Fabric IQ & Ontology",
+        "question": "MPCVD-118 Hour-160 pocket-holder edge field spikes rim-ΔT to +78.0°C (>15.0°C limit) and C2/Hα to 0.48 (>0.25, predicting twin defects and 1,180 W/m·K degradation) under 2,200 W/m·K AI GPU substrate rules",
+        "expected": "Eventhouse KQL 0.5ms +78°C Rim & C2/Hα=0.48 Sense ($0/GB Tax) + 6-Hop 364M DiskANN -14Torr, 4.1% CH4, 0.15% O2 & SLM Match (0.5ms) + Foundry IQ +6.2°C 2,210W/m·K Gate (0.5ms) + Teams ALDO Commit (0.5ms = 2ms E2E, Protect $42.50M SLA)",
+        "model_answer": "Eventhouse KQL 0.5ms +78°C Rim & C2/Hα=0.48 Sense ($0/GB Tax) + 6-Hop 364M DiskANN -14Torr, 4.1% CH4, 0.15% O2 & SLM Match (0.5ms) + Foundry IQ +6.2°C 2,210W/m·K Gate (0.5ms) + Teams ALDO Commit (0.5ms = 2ms E2E, Protect $42.50M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 14,
+    },
 ]
 
 
@@ -16694,6 +16816,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     extreme_optics_mrf_ibf_sim = simulate_ontology_incident("global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds")
     crispr_gene_editing_lnp_sim = simulate_ontology_incident("global_crispr_gene_editing_lnp_fabric_herringbone_microfluidics_sgrna_vs_4clouds")
     electronic_specialty_gases_sim = simulate_ontology_incident("global_electronic_specialty_gases_fabric_silane_nf3_wf6_cryo_rectification_vs_4clouds")
+    cvd_diamond_wafer_sim = simulate_ontology_incident("global_cvd_diamond_wafer_fabric_mpcvd_plasma_oes_laser_liftoff_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -16828,6 +16951,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds": extreme_optics_mrf_ibf_sim,
         "global_crispr_gene_editing_lnp_fabric_herringbone_microfluidics_sgrna_vs_4clouds": crispr_gene_editing_lnp_sim,
         "global_electronic_specialty_gases_fabric_silane_nf3_wf6_cryo_rectification_vs_4clouds": electronic_specialty_gases_sim,
+        "global_cvd_diamond_wafer_fabric_mpcvd_plasma_oes_laser_liftoff_vs_4clouds": cvd_diamond_wafer_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -17071,6 +17195,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r121_ontology_sim_mean_ms = round(sum(r121_sim_latencies) / len(r121_sim_latencies), 2)
     r122_sim_latencies = sim_latencies[:129]
     r122_ontology_sim_mean_ms = round(sum(r122_sim_latencies) / len(r122_sim_latencies), 2)
+    r123_sim_latencies = sim_latencies[:130]
+    r123_ontology_sim_mean_ms = round(sum(r123_sim_latencies) / len(r123_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -18678,11 +18804,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-CVD-DIAMOND-WAFER-MPCVD-PLASMA-OES-LASER-LIFTOFF-364M-R124",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 1,200-reactor MPCVD single-crystal diamond plasma C2(516nm)/Hα(656nm) Optical Emission Spectroscopy (OES) streams, two-color pyrometry rim-to-center thermal gradients, and confocal Raman 1,332 cm⁻¹ traces while Cosmos DB in Fabric SSD DiskANN indexes 364M+ 3D Maxwell-plasma-thermal cavity fields, CH3·/H* step-flow growth kinetics, and SLM-compensated femtosecond Laser-Lift-Off (LLO) vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) 2,210 W/m·K thermal-substrate & Pd-membrane H2-recycling ledgers and SQL Server on Azure Local (ALDO) at reactor edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary COMSOL plasma simulations and Type-IIa seed ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/cosmos-db/vector-search",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r123",
-        "generated_at": "2026-11-16T04:48:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r124",
+        "generated_at": "2026-11-16T05:05:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -18693,6 +18832,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R123 snapshot n=536 mean was 149.0ms; "
                     f"historical R122 snapshot n=532 mean was 150.0ms; "
                     f"historical R121 snapshot n=528 mean was 151.0ms; "
                     f"historical R120 snapshot n=524 mean was 152.0ms; "
@@ -18821,6 +18961,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R123 snapshot n=130 mean was {r123_ontology_sim_mean_ms}ms; "
                     f"historical R122 snapshot n=129 mean was {r122_ontology_sim_mean_ms}ms; "
                     f"historical R121 snapshot n=128 mean was {r121_ontology_sim_mean_ms}ms; "
                     f"historical R120 snapshot n=127 mean was {r120_ontology_sim_mean_ms}ms; "
@@ -19464,6 +19605,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r123_130_simulation_mean_modeled_latency_ms": r123_ontology_sim_mean_ms,
             "r122_129_simulation_mean_modeled_latency_ms": r122_ontology_sim_mean_ms,
             "r121_128_simulation_mean_modeled_latency_ms": r121_ontology_sim_mean_ms,
             "r120_127_simulation_mean_modeled_latency_ms": r120_ontology_sim_mean_ms,
