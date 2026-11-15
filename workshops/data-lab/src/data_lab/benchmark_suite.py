@@ -8471,6 +8471,85 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (284M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_high_temp_superconductor_fabric_rebco_pld_ibad_quench_magnet_vs_4clouds":
+        # Scenario DH (2026-11-16 R105 · Historic 105-Round Milestone (R105!), 110-Bilingual-FAQ Milestone, 288M-Vector, 167.0ms Matrix Mean, 151.0ms Ontology Mean, 40ms E2E & -93.9% TCO Seven-Crown Milestone!): Global 2G High-Temperature Superconducting (REBCO Tape for 20T Compact Fusion Magnets & Gigawatt AIDC Busbars) Excimer Pulsed Laser Deposition (PLD) Plume Control, IBAD Biaxial RHEED Texture & Quench-Precursor Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 980K EPS 10ms 300Hz Plume ICCD & Inline RHEED Sense + Cosmos DB SSD DiskANN 10ms 288M Plume/IBAD/TDGL-Vortex Match + SDS 98.4% He Reliquefaction + ALDO Vacuum-Bay Edge, $14.1K/mo Normalized | $38.7K/mo Internal)
+        # vs Post-Run 8h Tapestar / External Pyrometer & Per-Attribute/GB Cloud IoT / 288M Full-DRAM Vector Stack ($233.0K/mo Normalized | $636.8K/mo Internal)
+        return {
+            "scenario_id": "global_high_temp_superconductor_fabric_rebco_pld_ibad_quench_magnet_vs_4clouds",
+            "title": "Global REBCO 2G-HTS Tape & 20T Fusion Magnet 12 Facilities (320 1km IBAD/PLD Lines + 240 Tapestar/20T Stands) × 980K EPS 300Hz Plume ICCD & Inline RHEED Sense, 288M Plume/IBAD/TDGL Match, 3.15° Biaxial Texture & 692A Zero-Dropout Loop (Fabric Eventhouse KQL + 288M SSD DiskANN + SDS + ALDO vs. 8h Tapestar / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-16T00:14:00Z",
+                "hts_superconductor_facilities_count": 12,
+                "kilometer_ibad_and_pld_lines_count": 320,
+                "tapestar_and_20t_magnet_stands_count": 240,
+                "plume_rheed_tapestar_ingestion_eps": 980000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_inplane_texture_delta_phi_deg": 4.45,
+                "post_trim_inplane_texture_delta_phi_deg": 3.15,
+                "max_allowed_inplane_texture_deg": 4.00,
+                "pre_trim_critical_current_20t_20k_amp": 310,
+                "post_trim_critical_current_20t_20k_amp": 692,
+                "min_required_critical_current_amp": 650,
+                "eventhouse_kql_plume_rheed_latency_ms": 10,
+                "plume_ibad_and_tdgl_vectors_indexed_count": 288000000,
+                "ssd_diskann_hts_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 10,
+                "closed_loop_helium_reliquefaction_pct": 98.4,
+                "fabric_monthly_hts_tco_usd": 14100,
+                "competitor_stitched_hts_tco_usd": 233000,
+                "fabric_internal_full_hts_tco_usd": 38700,
+                "competitor_internal_full_hts_tco_usd": 636800,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalHTS_12Plants_320IBADPLDLines_240TapestarStands:980K_EPS_300HzPlume_InlineRHEED_And_Tapestar_Stream",
+                "hop_2": "Eventhouse_KQL_FFT:10ms_Isolate_Line08_Meter642_WindowDrop11.2Pct_And_RHEED4.45Deg ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_HTSEpitaxy_And_Cosmos_SSD_DiskANN:10ms_Match_288M_PLDPlume_IBADBeam_And_TDGLPinning_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:10ms_Verify_3.15DegTexture_692AIc_ZeroDropout_And_98.4PctHeliumRecovery",
+            },
+            "multi_agent_plan": {
+                "ibad_pld_lines_coordinated": 320,
+                "tapestar_magnet_stands_coordinated": 240,
+                "monthly_hts_tco_saved_usd": 218900,
+                "hts_tco_savings_pct": 93.9,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 980K EPS 300Hz Plume ICCD/OES, Inline RHEED & Tapestar Engine",
+                        "operation": "Ingest 980,000 EPS of 300Hz PLD plasma-plume ICCD/OES spectra, inline RHEED spot FWHM, and Tapestar Hall-array streams at $0/GB write tax, isolating PLD-Line-08 meter-642 laser-window attenuation (-11.2%, Cu*/Ba+ < 0.82) and RHEED in-plane misorientation drift (4.45° > 4.00° limit) in 10ms",
+                        "impact_metric": "Replaces $163.5K/mo per-attribute cloud IoT fees and eliminates 8-hour post-run Tapestar lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ HTS Epitaxy Twin & Cosmos SSD DiskANN 288M Plume/IBAD/TDGL Engine",
+                        "operation": "Search 288,000,000 PLD shockwave plume tensors, IBAD-MgO RHEED texture maps, and 3D TDGL BaHfO3 vortex-pinning vectors (0.99 similarity in 10ms at -92% RAM), stepping up KrF excimer HV +1.45kV, indexing clean rotating window, and trimming IBAD RF ion beam +6.2% with +12mTorr O2 (3.15° Δφ <= 4.00°, 692A Ic >= 650A, 0 dropouts) in Foundry IQ (10ms)",
+                        "impact_metric": "Prevents 1,000m $65K spool chopping and $18M 20T fusion magnet coil quench burn-out",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "HTS Magnet Director Teams Sign-Off, ALDO Vacuum-Bay Edge & Cryo/Fusion Commit",
+                        "operation": "Approve excimer HV, rotating window, and IBAD/O2 trims in Teams, dispatch deterministic commands via SQL on Azure Local (ALDO) at the vacuum-bay edge, and mint the 98.4% Helium Reliquefaction & -94.5% AIDC Busbar Loss certificate into 1GB Free Fabric SQL (10ms)",
+                        "impact_metric": "40ms E2E (R105 & 110-FAQ milestone!) plume-to-epitaxy loop; -$218,900/mo (-93.9%) TCO; $35.85M HTS SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "HIGH-TEMP-SUPERCONDUCTOR-REBCO-PLD-IBAD-MAGNET-SOP-112",
+                "hard_constraint": "Never allow REBCO in-plane biaxial texture Δφ above 4.00°, never allow 20T/20K critical current Ic below 650 A/4mm or mid-spool dropouts above 0, and require >= 97.0% closed-loop Helium reliquefaction",
+                "proposed_change": "Step up PLD-Line-08 KrF excimer HV +1.45 kV, index clean laser window, and trim IBAD ion beam +6.2% with +12 mTorr O2 (restoring Δφ to 3.15° <= 4.00° and 20T/20K Ic to 692 A/4mm >= 650 A with 0 dropouts across 1,000m), and certify 98.4% Helium recovery",
+                "biaxial_texture_and_zero_ic_dropout_verified": True,
+                "helium_reliquefaction_and_fusion_passport_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 35850000,
+                "end_to_end_latency_ms": 40,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (288M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -13995,6 +14074,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 54,
     },
+    {
+        "id": "DL-461",
+        "category": "Real-Time Intelligence",
+        "question": "2G-HTS REBCO superconductor producer running 12 facilities (320 1km IBAD/PLD lines, 240 Tapestar/20T magnet stands) must ingest 980K EPS, catch 300Hz plume stoichiometry & RHEED Δφ drift in <15ms, and search 288M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fft() 10ms 300Hz Plume ICCD & Inline RHEED Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 10ms 288M Plume/IBAD/TDGL Match (-92% RAM) + SDS 98.4% He Recovery + ALDO Vacuum-Bay Edge (40ms E2E, -93.9% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fft() 10ms 300Hz Plume ICCD & Inline RHEED Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 10ms 288M Plume/IBAD/TDGL Match (-92% RAM) + SDS 98.4% He Recovery + ALDO Vacuum-Bay Edge (40ms E2E, -93.9% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 52,
+    },
+    {
+        "id": "DL-462",
+        "category": "vs Databricks",
+        "question": "Compact fusion magnet R&D needs 3D Time-Dependent Ginzburg-Landau (TDGL) BaHfO3 vortex-pinning and 20T non-insulated (NI) pancake coil quench simulations alongside Snowflake/SAP S/4HANA Hastelloy C-276 and rare-earth target ERP",
+        "expected": "Route 3D TDGL vortex-pinning and 20T NI-coil quench FEA to Azure HPC / Databricks GPU and Hastelloy / rare-earth target / coil ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 288M PLD/TDGL vectors in Fabric SSD DiskANN",
+        "model_answer": "Route 3D TDGL vortex-pinning and 20T NI-coil quench FEA to Azure HPC / Databricks GPU and Hastelloy / rare-earth target / coil ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 288M PLD/TDGL vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 52,
+    },
+    {
+        "id": "DL-463",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 288M SSD DiskANN + SDS + ALDO vs 8-hour lagged post-run Tapestar scans across 12 HTS plants with 5,600 superconductor physicists and fusion magnet auditors",
+        "expected": "Hybrid Better Together: Stream 980K EPS 300Hz plume ICCD, inline RHEED & Tapestar telemetry into Eventhouse ($0/GB tax), index 288M vectors in SSD DiskANN (-92% RAM), run 10ms excimer-HV/IBAD trims on ALDO edge, and serve 5,600 users via DirectLake (-93.9% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 980K EPS 300Hz plume ICCD, inline RHEED & Tapestar telemetry into Eventhouse ($0/GB tax), index 288M vectors in SSD DiskANN (-92% RAM), run 10ms excimer-HV/IBAD trims on ALDO edge, and serve 5,600 users via DirectLake (-93.9% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 52,
+    },
+    {
+        "id": "DL-464",
+        "category": "Fabric IQ & Ontology",
+        "question": "PLD-Line-08 at meter 642 hits -11.2% laser-window fouling (Cu*/Ba+ < 0.82) while inline RHEED in-plane texture drifts to 4.45° (>4.00° limit, 20T Ic dropping to 310A) under compact fusion coil rules",
+        "expected": "Eventhouse KQL 10ms -11.2% Window Drop & 4.45° RHEED Sense ($0/GB Tax) + 6-Hop 288M DiskANN +1.45kV KrF HV, Clean Window, +6.2% IBAD & +12mTorr O2 Match (10ms) + Foundry IQ 3.15° 692A Zero-Dropout Gate (10ms) + Teams ALDO Commit (10ms = 40ms E2E, Protect $35.85M SLA)",
+        "model_answer": "Eventhouse KQL 10ms -11.2% Window Drop & 4.45° RHEED Sense ($0/GB Tax) + 6-Hop 288M DiskANN +1.45kV KrF HV, Clean Window, +6.2% IBAD & +12mTorr O2 Match (10ms) + Foundry IQ 3.15° 692A Zero-Dropout Gate (10ms) + Teams ALDO Commit (10ms = 40ms E2E, Protect $35.85M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 52,
+    },
 ]
 
 
@@ -14221,6 +14348,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     glass_core_substrate_sim = simulate_ontology_incident("global_glass_core_substrate_fabric_tgv_laser_lide_metallization_warpage_vs_4clouds")
     solid_state_battery_sim = simulate_ontology_incident("global_solid_state_battery_fabric_sulfide_argyrodite_dry_electrode_h2s_wip_vs_4clouds")
     perovskite_silicon_tandem_sim = simulate_ontology_incident("global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds")
+    high_temp_superconductor_sim = simulate_ontology_incident("global_high_temp_superconductor_fabric_rebco_pld_ibad_quench_magnet_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -14336,6 +14464,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_glass_core_substrate_fabric_tgv_laser_lide_metallization_warpage_vs_4clouds": glass_core_substrate_sim,
         "global_solid_state_battery_fabric_sulfide_argyrodite_dry_electrode_h2s_wip_vs_4clouds": solid_state_battery_sim,
         "global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds": perovskite_silicon_tandem_sim,
+        "global_high_temp_superconductor_fabric_rebco_pld_ibad_quench_magnet_vs_4clouds": high_temp_superconductor_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -14541,6 +14670,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r102_ontology_sim_mean_ms = round(sum(r102_sim_latencies) / len(r102_sim_latencies), 2)
     r103_sim_latencies = sim_latencies[:110]
     r103_ontology_sim_mean_ms = round(sum(r103_sim_latencies) / len(r103_sim_latencies), 2)
+    r104_sim_latencies = sim_latencies[:111]
+    r104_ontology_sim_mean_ms = round(sum(r104_sim_latencies) / len(r104_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -15901,11 +16032,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-HIGH-TEMP-SUPERCONDUCTOR-REBCO-PLD-IBAD-MAGNET-R105",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fft() and series_fit_line() analyze 300Hz KrF excimer Pulsed Laser Deposition (PLD) plasma-plume ICCD/OES streams, inline RHEED biaxial texture diffraction streams, and Tapestar Hall-array critical-current streams while Cosmos DB in Fabric SSD DiskANN indexes 288M+ PLD shockwave plume tensors, IBAD-MgO RHEED maps, and 3D Time-Dependent Ginzburg-Landau (TDGL) BaHfO3 vortex-pinning vectors alongside Fabric Sustainability Data Solutions (SDS) 98.4% Helium reliquefaction ledgers and SQL Server on Azure Local (ALDO) at vacuum-bay edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary 3D TDGL/quench FEA simulations and Hastelloy/target ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fft-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r104",
-        "generated_at": "2026-11-16T00:05:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r105",
+        "generated_at": "2026-11-16T00:18:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -15916,6 +16060,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R104 snapshot n=460 mean was 168.0ms; "
                     f"historical R103 snapshot n=456 mean was 169.0ms; "
                     f"historical R102 snapshot n=452 mean was 170.0ms; "
                     f"historical R101 snapshot n=448 mean was 171.5ms; "
@@ -16025,6 +16170,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R104 snapshot n=111 mean was {r104_ontology_sim_mean_ms}ms; "
                     f"historical R103 snapshot n=110 mean was {r103_ontology_sim_mean_ms}ms; "
                     f"historical R102 snapshot n=109 mean was {r102_ontology_sim_mean_ms}ms; "
                     f"historical R101 snapshot n=108 mean was {r101_ontology_sim_mean_ms}ms; "
@@ -16127,6 +16273,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r104_historical_denominators": {
+                    "r104_routing_matrix_n460_mean_ms": 168.0,
+                    "r104_ontology_simulations_n111_mean_ms": r104_ontology_sim_mean_ms,
+                },
                 "r103_historical_denominators": {
                     "r103_routing_matrix_n456_mean_ms": 169.0,
                     "r103_ontology_simulations_n110_mean_ms": r103_ontology_sim_mean_ms,
@@ -16597,6 +16747,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r104_111_simulation_mean_modeled_latency_ms": r104_ontology_sim_mean_ms,
             "r103_110_simulation_mean_modeled_latency_ms": r103_ontology_sim_mean_ms,
             "r102_109_simulation_mean_modeled_latency_ms": r102_ontology_sim_mean_ms,
             "r101_108_simulation_mean_modeled_latency_ms": r101_ontology_sim_mean_ms,
