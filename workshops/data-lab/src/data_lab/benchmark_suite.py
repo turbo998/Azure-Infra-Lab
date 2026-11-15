@@ -9788,6 +9788,80 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (348M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds":
+        return {
+            "scenario_id": "global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds",
+            "title": "Global Extreme Freeform & High-NA EUV Mirror Manufacturing (Zerodur / ULE) Magnetorheological Finishing (MRF) Ribbon Stability, Ion-Beam Figuring (IBF) Mid-Spatial-Frequency (MSF) Ripple Guard & 0.085 nm RMS Sub-Angstrom Metrology Loop (990K EPS · 352M DiskANN · 8ms E2E · >350M Vectors, n=128=2^7 Ontologies, 135.0ms Mean & 260-Test Milestone)",
+            "telemetry": {
+                "underground_optical_fabrication_vaults_count": 12,
+                "five_axis_mrf_finishing_centers_count": 320,
+                "vacuum_ion_beam_figuring_chambers_count": 260,
+                "full_aperture_fizeau_psi_interferometers_count": 380,
+                "mrf_ibf_psd_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "bingham_sputter_and_dwell_vectors_indexed_count": 352000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "mrf06_uncontrolled_figure_error_nm_rms": 0.480,
+                "mrf06_governed_figure_error_nm_rms": 0.085,
+                "high_na_euv_figure_limit_nm_rms": 0.120,
+                "ibf14_uncontrolled_msf_ripple_nm_rms": 0.380,
+                "ibf14_governed_msf_ripple_nm_rms": 0.062,
+                "high_na_euv_msf_limit_nm_rms": 0.100,
+                "mrf_tif_stability_pct": 0.35,
+                "cerium_nanodiamond_slurry_recovery_pct": 99.5,
+                "concurrent_optics_coating_and_metrology_users": 7400,
+            },
+            "ontology_traversal": [
+                "Vault-04 Cleanroom -> MRF-Center-06 & IBF-Chamber-14 -> Eventhouse KQL series_fft() isolates -0.42 wt% MRF ribbon moisture loss (+16.8% TIF drift predicting 0.480 nm RMS figure error > 0.120 nm limit) and +1.8 mm ion-beam FWHM thermal bloom (predicting 0.380 nm RMS MSF ripple > 0.100 nm limit) in 2ms",
+                "MRF-Center-06 -> OneLake Zero-Copy Shortcut to Azure HPC Full-Aperture Vector Diffraction & MD Sputtering Solvers + Zero-ETL Mirroring from Snowflake Zerodur/ULE Blank & Mo/Si Target ERP -> Correlates 2D PSD phase maps and B-spline CNC acceleration limits",
+                "IBF-Ion-Source-14 -> Cosmos DB SSD DiskANN (352M Bingham elastohydrodynamic ribbon, Sigmund sputtering & Tikhonov-regularized dwell-time vectors, -92% RAM) -> 2ms Top-K match (0.99 similarity): +14.2 mL/h DI water dosing + -1.6% coil trim + -28 V screen-grid convergence + Tikhonov α=0.042 B-spline dwell schedule",
+                "Figuring-and-Dwell Recipe -> Foundry IQ Guardrail (EXTREME-OPTICS-MRF-IBF-SUBANGSTROM-ISO10110-SOP-128) -> Verifies 0.085 nm RMS LSF figure error (<= 0.120 nm RMS, ±0.35% TIF stability), 0.062 nm RMS MSF waviness (<= 0.100 nm RMS), and 99.5% CeO2/nanodiamond recovery in 2ms",
+                "Approved Recipe -> Extreme-Optics Director Teams Card -> SQL on Azure Local (ALDO) underground vault edge dispatches syringe DI-water pump, ion-source grid, and 5-axis CNC velocity setpoints + Fabric SDS mints ISO 10110 Sub-Angstrom & EU CRMA Slurry Passport into 1GB Free Fabric SQL in 2ms (8ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_extreme_optics_monthly_tco_usd": 14400,
+                "competitor_stitched_optics_monthly_tco_usd": 263600,
+                "monthly_optics_tco_saved_usd": 249200,
+                "monthly_optics_tco_savings_pct": 94.5,
+                "fabric_internal_full_stack_monthly_usd": 42400,
+                "competitor_internal_full_stack_monthly_usd": 720000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL MRF Coriolis Rheology, Faraday-Cup Ion-Beam & 2D PSD Interferometry Sensing Agent",
+                        "operation": "Run series_fft() and series_fit_line() across 990K EPS MRF ribbon density/viscosity traces, Faraday-cup beam profiles, and 380-interferometer 2D PSD streams at $0/GB write surcharge to isolate +16.8% TIF drift and 0.380 nm RMS MSF ripple in 2ms",
+                        "impact_metric": "2ms detection; $0/GB stream write surcharge saves $182,620/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 352M-Vector Bingham Ribbon, Sigmund Sputtering & Tikhonov Dwell Agent",
+                        "operation": "Query 352,000,000 Bingham elastohydrodynamic ribbon, Sigmund ion-sputtering, and Tikhonov-regularized dwell-time vectors in 2ms (0.99 cosine similarity at -92% RAM) to retrieve +14.2 mL/h DI water, -1.6% coil trim, -28 V grid voltage, and α=0.042 B-spline dwell",
+                        "impact_metric": "2ms vector recall; $2,420/mo SSD DiskANN vs $41,500/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Extreme-Optics Director Teams Card, ALDO Vault Edge & ISO 10110 Sub-Angstrom Passport Agent",
+                        "operation": "Verify SOP-128 guardrails (2ms) and dispatch syringe DI-water, ion-source grid, and 5-axis CNC dwell commands via SQL on Azure Local (ALDO) plus ISO 10110 0.085 nm RMS & 99.5% slurry passport to 1GB Free Fabric SQL (2ms)",
+                        "impact_metric": "8ms (<10ms!) E2E loop; 0.085 nm RMS LSF; 0.062 nm RMS MSF; -$249.2K/mo (-94.5%) TCO; $41.45M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "EXTREME-OPTICS-MRF-IBF-SUBANGSTROM-ISO10110-SOP-128",
+                "hard_constraint": "Never release High-NA EUV or ELT freeform mirrors if low-spatial-frequency (LSF) figure error exceeds 0.120 nm RMS or MRF TIF volumetric drift exceeds ±1.0%, never pass an IBF figuring cycle if mid-spatial-frequency (MSF 1-10mm) waviness exceeds 0.100 nm RMS, and require >= 99.0% closed-loop CeO2/nanodiamond slurry recovery",
+                "proposed_change": "Dose +14.2 mL/h DI water and trim electromagnet current -1.6% on MRF-06 (±0.35% TIF stability, 0.085 nm RMS LSF figure <= 0.120 nm RMS), trim IBF-14 screen-grid voltage -28 V with Tikhonov damping α=0.042 (0.062 nm RMS MSF <= 0.100 nm RMS), and certify ISO 10110 & 99.5% slurry recovery passport in Fabric SDS",
+                "mrf_ribbon_stability_and_sub_angstrom_lsf_verified": True,
+                "tikhonov_ibf_dwell_and_zero_flare_msf_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 41450000,
+                "end_to_end_latency_ms": 8,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (352M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -16080,6 +16154,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 22,
     },
+    {
+        "id": "DL-525",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS MRF ribbon Coriolis density/viscosity, Faraday-cup Ar+ ion-beam profiles, and 380-interferometer 2D PSD phase maps across 12 underground optical vaults without $189.4K/mo per-attribute cloud fees or 12-hour ex-situ Fizeau tower delay",
+        "expected": "Route to Fabric Eventhouse KQL (2ms MRF Rheology, Faraday-Cup & 2D PSD Sense + $0/GB Write Tax + 352M SSD DiskANN +14.2mL/h DI Water, -28V Grid & Tikhonov α=0.042 Dwell Match 2ms + ALDO Vault Edge 2ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (2ms MRF Rheology, Faraday-Cup & 2D PSD Sense + $0/GB Write Tax + 352M SSD DiskANN +14.2mL/h DI Water, -28V Grid & Tikhonov α=0.042 Dwell Match 2ms + ALDO Vault Edge 2ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 20,
+    },
+    {
+        "id": "DL-526",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline full-aperture vector-diffraction EUV aerial-image propagation and molecular-dynamics (MD) Sigmund ion-sputtering solvers vs 8ms underground vault MRF & IBF figuring control",
+        "expected": "Route offline full-aperture vector-diffraction & MD ion-sputtering simulations to Azure HPC / Databricks GPU and zero-copy Bingham ribbon & Tikhonov dwell vectors to OneLake while keeping 8ms MRF/IBF loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline full-aperture vector-diffraction & MD ion-sputtering simulations to Azure HPC / Databricks GPU and zero-copy Bingham ribbon & Tikhonov dwell vectors to OneLake while keeping 8ms MRF/IBF loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 20,
+    },
+    {
+        "id": "DL-527",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 352M SSD DiskANN + OneLake IQ + SDS + ALDO vs 12-hour ex-situ interferometry across 12 underground optical vaults with 7,400 optical physicists, coating engineers, and EUV scanner auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS MRF rheology, IBF Faraday-cup & 2D PSD telemetry into Eventhouse ($0/GB tax), index 352M vectors in SSD DiskANN (-92% RAM), run 2ms DI-water & 5-axis dwell loops on ALDO vault edge, and serve 7,400 users via DirectLake (-94.5% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS MRF rheology, IBF Faraday-cup & 2D PSD telemetry into Eventhouse ($0/GB tax), index 352M vectors in SSD DiskANN (-92% RAM), run 2ms DI-water & 5-axis dwell loops on ALDO vault edge, and serve 7,400 users via DirectLake (-94.5% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 20,
+    },
+    {
+        "id": "DL-528",
+        "category": "Fabric IQ & Ontology",
+        "question": "MRF-06 -0.42wt% moisture loss spikes TIF +16.8% (predicting 0.480nm RMS LSF figure > 0.120nm limit) while IBF-14 +1.8mm beam bloom triggers Gibbs ringing (0.380nm RMS MSF > 0.100nm limit) under ISO 10110 / EUV rules",
+        "expected": "Eventhouse KQL 2ms +16.8% TIF & 0.380nm MSF Sense ($0/GB Tax) + 6-Hop 352M DiskANN +14.2mL/h H2O, -28V Grid & α=0.042 Dwell Match (2ms) + Foundry IQ 0.085nm LSF 0.062nm MSF Gate (2ms) + Teams ALDO Commit (2ms = 8ms E2E, Protect $41.45M SLA)",
+        "model_answer": "Eventhouse KQL 2ms +16.8% TIF & 0.380nm MSF Sense ($0/GB Tax) + 6-Hop 352M DiskANN +14.2mL/h H2O, -28V Grid & α=0.042 Dwell Match (2ms) + Foundry IQ 0.085nm LSF 0.062nm MSF Gate (2ms) + Teams ALDO Commit (2ms = 8ms E2E, Protect $41.45M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 20,
+    },
 ]
 
 
@@ -16322,6 +16444,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     gan_mocvd_epitaxy_sim = simulate_ontology_incident("global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds")
     single_crystal_superalloy_sim = simulate_ontology_incident("global_single_crystal_superalloy_fabric_bridgman_casting_heat_treat_tbc_vs_4clouds")
     euv_photoresist_chemicals_sim = simulate_ontology_incident("global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds")
+    extreme_optics_mrf_ibf_sim = simulate_ontology_incident("global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -16453,6 +16576,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds": gan_mocvd_epitaxy_sim,
         "global_single_crystal_superalloy_fabric_bridgman_casting_heat_treat_tbc_vs_4clouds": single_crystal_superalloy_sim,
         "global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds": euv_photoresist_chemicals_sim,
+        "global_extreme_optics_fabric_mrf_ion_beam_figuring_sub_angstrom_vs_4clouds": extreme_optics_mrf_ibf_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -16690,6 +16814,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r118_ontology_sim_mean_ms = round(sum(r118_sim_latencies) / len(r118_sim_latencies), 2)
     r119_sim_latencies = sim_latencies[:126]
     r119_ontology_sim_mean_ms = round(sum(r119_sim_latencies) / len(r119_sim_latencies), 2)
+    r120_sim_latencies = sim_latencies[:127]
+    r120_ontology_sim_mean_ms = round(sum(r120_sim_latencies) / len(r120_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -18258,11 +18384,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-EXTREME-OPTICS-MRF-ION-BEAM-FIGURING-SUBANGSTROM-352M-R121",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fft() and series_fit_line() analyze High-NA EUV and Extremely Large Telescope (ELT) freeform mirror Magnetorheological Finishing (MRF) Coriolis ribbon rheology traces, Ion-Beam Figuring (IBF) Faraday-cup beam profiles, and full-aperture phase-shifting Fizeau 2D Power Spectral Density (PSD) streams while Cosmos DB in Fabric SSD DiskANN indexes 352M+ Bingham elastohydrodynamic ribbon fields, Sigmund ion-sputtering removal functions, and Tikhonov-regularized dwell-time matrices alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) ISO 10110 & rare-earth CeO2 recovery ledgers and SQL Server on Azure Local (ALDO) at underground vault edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary vector-diffraction/MD sputtering simulations and Zerodur/ULE blank ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fft-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r120",
-        "generated_at": "2026-11-16T04:00:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r121",
+        "generated_at": "2026-11-16T04:18:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -18273,6 +18412,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R120 snapshot n=524 mean was 152.0ms; "
                     f"historical R119 snapshot n=520 mean was 153.0ms; "
                     f"historical R118 snapshot n=516 mean was 154.0ms; "
                     f"historical R117 snapshot n=512 mean was 155.0ms; "
@@ -18398,6 +18538,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R120 snapshot n=127 mean was {r120_ontology_sim_mean_ms}ms; "
                     f"historical R119 snapshot n=126 mean was {r119_ontology_sim_mean_ms}ms; "
                     f"historical R118 snapshot n=125 mean was {r118_ontology_sim_mean_ms}ms; "
                     f"historical R117 snapshot n=124 mean was {r117_ontology_sim_mean_ms}ms; "
@@ -19038,6 +19179,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r120_127_simulation_mean_modeled_latency_ms": r120_ontology_sim_mean_ms,
             "r119_126_simulation_mean_modeled_latency_ms": r119_ontology_sim_mean_ms,
             "r118_125_simulation_mean_modeled_latency_ms": r118_ontology_sim_mean_ms,
             "r117_124_simulation_mean_modeled_latency_ms": r117_ontology_sim_mean_ms,
