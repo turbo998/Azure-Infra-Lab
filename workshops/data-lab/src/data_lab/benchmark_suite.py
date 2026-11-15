@@ -9713,6 +9713,81 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (344M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds":
+        return {
+            "scenario_id": "global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds",
+            "title": "Global High-NA EUV / 193i Photoresist & SEMI C12 G5 Ultra-Pure Electronic Chemicals <10 ppt Trace-Metal Ion-Exchange Breakthrough Guard, Photoacid Generator (PAG) Stochastic Line-Edge Roughness (LER) Tuning & 1nm Point-of-Use (POU) Gel-Bridge Loop (990K EPS · 348M DiskANN · 10ms E2E · R120, 125-FAQ, 128=2^7 SVG & >$41M SLA Milestone)",
+            "telemetry": {
+                "class100_synthesis_and_cds_plants_count": 16,
+                "pfa_reactors_and_chelation_beds_count": 380,
+                "online_icpms_ms_and_gpc_analyzers_count": 420,
+                "track_1nm_pou_nanofiltration_skids_count": 1600,
+                "icpms_gpc_pou_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "thomas_pag_and_pou_vectors_indexed_count": 348000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "line11_uncontrolled_trace_metal_ppt": 48.5,
+                "line11_governed_trace_metal_ppt": 1.4,
+                "semi_c12_g5_trace_metal_limit_ppt": 10.0,
+                "uncontrolled_16nm_pitch_ler_nm": 2.85,
+                "governed_16nm_pitch_ler_nm": 1.18,
+                "high_na_euv_ler_limit_nm": 1.60,
+                "pou_1nm_pulse_free_delta_p_kpa": 0.62,
+                "micro_bridge_defect_density_per_cm2": 0.00,
+                "pgmea_solvent_distillation_recovery_pct": 99.6,
+                "concurrent_chemist_track_and_fab_users": 7300,
+            },
+            "ontology_traversal": [
+                "Plant-03 Cleanroom -> Chelation-Purification-11 & EUV-Blender-04 -> Eventhouse KQL series_fit_line() isolates Thomas ion-exchange breakthrough slope (predicting 48.5 ppt Fe/Na > 10.0 ppt SEMI G5 limit) and 2.65 kPa 1nm POU differential-pressure pulse with PDI=1.38 (predicting 2.85 nm LER > 1.60 nm and micro-bridge shorts) in 2ms",
+                "Chelation-Purification-11 -> OneLake Zero-Copy Shortcut to Azure HPC Quantum-DFT PAG Photolysis & Stochastic Monte-Carlo Resist Solvers + Zero-ETL Mirroring from Snowflake Monomer/SnOx & RFID PFA Drum ERP -> Correlates PAG acid diffusion length and membrane pore tortuosity",
+                "POU-Skid-11 -> Cosmos DB SSD DiskANN (348M Thomas chelation breakthrough, EUV reaction-diffusion blur & asymmetric-membrane gel-extrusion vectors, -92% RAM) -> 3ms Top-K match (0.99 similarity): bumpless switch to Bed-11B + +3.8% PDB quencher + -0.35°C PEB offset + 0.62 kPa pulse-free piezoelectric filtration",
+                "Purification-and-Filtration Recipe -> Foundry IQ Guardrail (EUV-PHOTORESIST-G5-PPT-LER-POU-SOP-127) -> Verifies 1.4 ppt Fe/Na/Cu (<= 10.0 ppt SEMI G5), 1.18 nm 16nm-pitch LER (<= 1.60 nm, 0.00 /cm² micro-bridges at 0.62 kPa), and 99.6% PGMEA solvent recovery in 3ms",
+                "Approved Recipe -> Litho-Materials VP Teams Card -> SQL on Azure Local (ALDO) cleanroom edge dispatches PFA bed-switch valves and pulse-free piezoelectric dispense pumps + Fabric SDS mints SEMI C12 G5 e-CoA & REACH Solvent Passport into 1GB Free Fabric SQL in 2ms (10ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_euv_resist_monthly_tco_usd": 14400,
+                "competitor_stitched_euv_resist_monthly_tco_usd": 261700,
+                "monthly_euv_resist_tco_saved_usd": 247300,
+                "monthly_euv_resist_tco_savings_pct": 94.5,
+                "fabric_internal_full_stack_monthly_usd": 42200,
+                "competitor_internal_full_stack_monthly_usd": 716000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL Online ICP-MS/MS, Inline GPC Polydispersity & 1nm POU Differential-Pressure Sensing Agent",
+                        "operation": "Run series_fit_line() across 990K EPS online ICP-MS/MS 56Fe/23Na isotope streams, inline GPC PDI traces, and 1,600-skid 1nm POU differential-pressure streams at $0/GB write surcharge to isolate 48.5 ppt metal breakthrough and 2.65 kPa gel-extrusion pulse in 2ms",
+                        "impact_metric": "2ms detection; $0/GB stream write surcharge saves $181,000/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 348M-Vector Thomas Breakthrough, EUV Reaction-Diffusion & 1nm POU Gel-Extrusion Agent",
+                        "operation": "Query 348,000,000 Thomas ion-exchange breakthrough, Monte-Carlo photoacid diffusion, and viscoelastic gel-permeation vectors in 3ms (0.99 cosine similarity at -92% RAM) to retrieve Bed-11B switch, +3.8% PDB quencher, -0.35°C PEB offset, and 0.62 kPa pulse-free filtration",
+                        "impact_metric": "3ms vector recall; $2,400/mo SSD DiskANN vs $41,000/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Litho-Materials VP Teams Card, ALDO Cleanroom Edge & SEMI C12 G5 e-CoA Passport Agent",
+                        "operation": "Verify SOP-127 guardrails (3ms) and dispatch PFA chelation-valve, PDB quencher, and pulse-free piezoelectric pump commands via SQL on Azure Local (ALDO) plus SEMI C12 G5 e-CoA & 99.6% PGMEA passport to 1GB Free Fabric SQL (2ms)",
+                        "impact_metric": "10ms E2E loop; 1.4 ppt metal; 1.18 nm LER (0.00/cm² bridges); -$247.3K/mo (-94.5%) TCO; $41.10M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "EUV-PHOTORESIST-G5-PPT-LER-POU-SOP-127",
+                "hard_constraint": "Never release High-NA EUV photoresist or SEMI C12 G5 wet chemicals if any individual trace metal (Fe, Na, Cu, Ca, Ni) exceeds 10.0 ppt, never pass a resist lot if 16nm-pitch LER exceeds 1.60 nm or 1nm POU differential pressure exceeds 1.20 kPa (micro-bridge density > 0.00 /cm²), and require >= 99.0% closed-loop PGMEA solvent distillation recovery",
+                "proposed_change": "Bumplessly switch Purification Line-11 to fresh polishing chelation bed #11B (1.4 ppt Fe/Na/Cu <= 10.0 ppt), boost Blender-04 PDB quencher +3.8% with -0.35°C PEB offset and 0.62 kPa pulse-free 1nm POU filtration (1.18 nm LER <= 1.60 nm, 0.00 /cm² micro-bridges), and certify SEMI C12 G5 e-CoA & 99.6% PGMEA recovery passport in Fabric SDS",
+                "thomas_sub_ppt_chelation_and_semi_g5_verified": True,
+                "stochastic_ler_and_1nm_pou_zero_bridge_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 41100000,
+                "end_to_end_latency_ms": 10,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (348M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -15957,6 +16032,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 24,
     },
+    {
+        "id": "DL-521",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS online ICP-MS/MS sub-ppt metal counts, inline GPC polydispersity, and 1,600-skid 1nm POU differential-pressure streams across 16 EUV photoresist & G5 chemical plants without $187.8K/mo per-attribute cloud fees or 8-hour grab-sample ICP-MS delay",
+        "expected": "Route to Fabric Eventhouse KQL (2ms Online ICP-MS/MS, Inline GPC & 1nm POU Sense + $0/GB Write Tax + 348M SSD DiskANN Bed-11B Switch, +3.8% PDB & 0.62kPa POU Match 3ms + ALDO Cleanroom Edge 2ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (2ms Online ICP-MS/MS, Inline GPC & 1nm POU Sense + $0/GB Write Tax + 348M SSD DiskANN Bed-11B Switch, +3.8% PDB & 0.62kPa POU Match 3ms + ALDO Cleanroom Edge 2ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 22,
+    },
+    {
+        "id": "DL-522",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline quantum-DFT photoacid photolysis and stochastic Monte-Carlo EUV reaction-diffusion resist simulations vs 10ms cleanroom sub-ppt chelation & 1nm POU control",
+        "expected": "Route offline quantum-DFT PAG photolysis & Monte-Carlo stochastic resist simulations to Azure HPC / Databricks GPU and zero-copy Thomas breakthrough & POU vectors to OneLake while keeping 10ms purification/POU loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline quantum-DFT PAG photolysis & Monte-Carlo stochastic resist simulations to Azure HPC / Databricks GPU and zero-copy Thomas breakthrough & POU vectors to OneLake while keeping 10ms purification/POU loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 22,
+    },
+    {
+        "id": "DL-523",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 348M SSD DiskANN + OneLake IQ + SDS + ALDO vs 8-hour grab-sample ICP-MS and KLA wafer inspection across 16 EUV photoresist and G5 wet-chemical plants with 7,300 chemists, track engineers, and 2nm fab auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS online ICP-MS/MS, GPC & 1nm POU telemetry into Eventhouse ($0/GB tax), index 348M vectors in SSD DiskANN (-92% RAM), run 2ms PFA bed-switch & piezoelectric POU loops on ALDO cleanroom edge, and serve 7,300 users via DirectLake (-94.5% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS online ICP-MS/MS, GPC & 1nm POU telemetry into Eventhouse ($0/GB tax), index 348M vectors in SSD DiskANN (-92% RAM), run 2ms PFA bed-switch & piezoelectric POU loops on ALDO cleanroom edge, and serve 7,300 users via DirectLake (-94.5% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 22,
+    },
+    {
+        "id": "DL-524",
+        "category": "Fabric IQ & Ontology",
+        "question": "Purification Line-11 Thomas breakthrough slope predicts 48.5ppt Fe/Na (>10.0ppt SEMI G5 limit) while 2.65kPa 1nm POU pulse with PDI=1.38 predicts 2.85nm LER (>1.60nm limit) and micro-bridge shorts under 2nm EUV rules",
+        "expected": "Eventhouse KQL 2ms 48.5ppt & 2.65kPa POU Sense ($0/GB Tax) + 6-Hop 348M DiskANN Bed-11B, +3.8% PDB, -0.35°C PEB & 0.62kPa Match (3ms) + Foundry IQ 1.4ppt 1.18nm LER Gate (3ms) + Teams ALDO Commit (2ms = 10ms E2E, Protect $41.10M SLA)",
+        "model_answer": "Eventhouse KQL 2ms 48.5ppt & 2.65kPa POU Sense ($0/GB Tax) + 6-Hop 348M DiskANN Bed-11B, +3.8% PDB, -0.35°C PEB & 0.62kPa Match (3ms) + Foundry IQ 1.4ppt 1.18nm LER Gate (3ms) + Teams ALDO Commit (2ms = 10ms E2E, Protect $41.10M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 22,
+    },
 ]
 
 
@@ -16198,6 +16321,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     ahss_galvanneal_lme_sim = simulate_ontology_incident("global_ahss_galvanneal_lme_fabric_dewpoint_xrd_spot_welding_vs_4clouds")
     gan_mocvd_epitaxy_sim = simulate_ontology_incident("global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds")
     single_crystal_superalloy_sim = simulate_ontology_incident("global_single_crystal_superalloy_fabric_bridgman_casting_heat_treat_tbc_vs_4clouds")
+    euv_photoresist_chemicals_sim = simulate_ontology_incident("global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -16328,6 +16452,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_ahss_galvanneal_lme_fabric_dewpoint_xrd_spot_welding_vs_4clouds": ahss_galvanneal_lme_sim,
         "global_gan_on_si_qst_fabric_mocvd_epitaxy_wafer_bow_dynamic_rdson_vs_4clouds": gan_mocvd_epitaxy_sim,
         "global_single_crystal_superalloy_fabric_bridgman_casting_heat_treat_tbc_vs_4clouds": single_crystal_superalloy_sim,
+        "global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds": euv_photoresist_chemicals_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -16563,6 +16688,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r117_ontology_sim_mean_ms = round(sum(r117_sim_latencies) / len(r117_sim_latencies), 2)
     r118_sim_latencies = sim_latencies[:125]
     r118_ontology_sim_mean_ms = round(sum(r118_sim_latencies) / len(r118_sim_latencies), 2)
+    r119_sim_latencies = sim_latencies[:126]
+    r119_ontology_sim_mean_ms = round(sum(r119_sim_latencies) / len(r119_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -18118,11 +18245,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-EUV-PHOTORESIST-ULTRAPURE-CHEMICALS-PPT-PAG-POU-348M-R120",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_outliers() analyze High-NA EUV and 193i photoresist / SEMI C12 G5 wet-chemical online ICP-MS/MS sub-ppt trace-metal streams, inline GPC polydispersity traces, and 1,600-skid 1nm Point-of-Use (POU) differential-pressure streams while Cosmos DB in Fabric SSD DiskANN indexes 348M+ Thomas chelation-breakthrough curves, Monte-Carlo photoacid reaction-diffusion tensors, and asymmetric-membrane gel-extrusion vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) SEMI G5 e-CoA & PGMEA solvent-recovery ledgers and SQL Server on Azure Local (ALDO) at cleanroom edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary quantum-DFT/stochastic resist simulations and PFA-drum ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/cosmos-db/vector-search",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r119",
-        "generated_at": "2026-11-16T03:45:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r120",
+        "generated_at": "2026-11-16T04:00:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -18133,6 +18273,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R119 snapshot n=520 mean was 153.0ms; "
                     f"historical R118 snapshot n=516 mean was 154.0ms; "
                     f"historical R117 snapshot n=512 mean was 155.0ms; "
                     f"historical R116 snapshot n=508 mean was 156.0ms; "
@@ -18257,6 +18398,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R119 snapshot n=126 mean was {r119_ontology_sim_mean_ms}ms; "
                     f"historical R118 snapshot n=125 mean was {r118_ontology_sim_mean_ms}ms; "
                     f"historical R117 snapshot n=124 mean was {r117_ontology_sim_mean_ms}ms; "
                     f"historical R116 snapshot n=123 mean was {r116_ontology_sim_mean_ms}ms; "
@@ -18896,6 +19038,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r119_126_simulation_mean_modeled_latency_ms": r119_ontology_sim_mean_ms,
             "r118_125_simulation_mean_modeled_latency_ms": r118_ontology_sim_mean_ms,
             "r117_124_simulation_mean_modeled_latency_ms": r117_ontology_sim_mean_ms,
             "r116_123_simulation_mean_modeled_latency_ms": r116_ontology_sim_mean_ms,

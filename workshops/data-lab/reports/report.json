@@ -1,15 +1,15 @@
 {
-  "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r119",
-  "generated_at": "2026-11-16T03:45:00+08:00",
+  "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r120",
+  "generated_at": "2026-11-16T04:00:00+08:00",
   "provenance": {
     "data_classification": "synthetic_deterministic_and_reported_baseline",
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 520,
-      "routing_matrix_mean_modeled_latency_ms": 153.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=520 routing & decision evaluation items (DL-01..DL-520, mean=153.0ms; historical R118 snapshot n=516 mean was 154.0ms; historical R117 snapshot n=512 mean was 155.0ms; historical R116 snapshot n=508 mean was 156.0ms; historical R115 snapshot n=504 mean was 157.0ms; historical R114 snapshot n=500 mean was 158.0ms; historical R113 snapshot n=496 mean was 159.0ms; historical R112 snapshot n=492 mean was 160.0ms; historical R111 snapshot n=488 mean was 161.0ms; historical R110 snapshot n=484 mean was 162.0ms; historical R109 snapshot n=480 mean was 163.0ms; historical R108 snapshot n=476 mean was 164.0ms; historical R107 snapshot n=472 mean was 165.0ms; historical R106 snapshot n=468 mean was 166.0ms; historical R105 snapshot n=464 mean was 167.0ms; historical R104 snapshot n=460 mean was 168.0ms; historical R103 snapshot n=456 mean was 169.0ms; historical R102 snapshot n=452 mean was 170.0ms; historical R101 snapshot n=448 mean was 171.5ms; historical R100 snapshot n=444 mean was 173.0ms; historical R99 snapshot n=440 mean was 174.5ms; historical R98 snapshot n=436 mean was 176.0ms; historical R97 snapshot n=432 mean was 177.5ms; historical R96 snapshot n=428 mean was 179.0ms; historical R95 snapshot n=424 mean was 180.5ms; historical R94 snapshot n=420 mean was 182.0ms; historical R93 snapshot n=416 mean was 183.5ms; historical R92 snapshot n=412 mean was 185.0ms; historical R91 snapshot n=408 mean was 186.5ms; historical R90 snapshot n=404 mean was 188.0ms; historical R89 snapshot n=400 mean was 189.5ms; historical R88 snapshot n=396 mean was 191.0ms; historical R87 snapshot n=392 mean was 192.5ms; historical R86 snapshot n=388 mean was 194.0ms; historical R85 snapshot n=384 mean was 196.0ms; historical R84 snapshot n=380 mean was 198.0ms; historical R83 snapshot n=376 mean was 200.0ms; historical R82 snapshot n=372 mean was 202.0ms; historical R81 snapshot n=368 mean was 204.0ms; historical R80 snapshot n=364 mean was 206.0ms; historical R79 snapshot n=360 mean was 208.0ms; historical R78 snapshot n=356 mean was 210.0ms; historical R77 snapshot n=352 mean was 212.0ms; historical R76 snapshot n=348 mean was 214.0ms; historical R75 snapshot n=344 mean was 216.0ms; historical R74 snapshot n=340 mean was 218.5ms; historical R73 snapshot n=336 mean was 221.0ms; historical R72 snapshot n=332 mean was 223.5ms; historical R71 snapshot n=328 mean was 226.0ms; historical R70 snapshot n=324 mean was 228.5ms; historical R69 snapshot n=320 mean was 231.0ms; historical R68 snapshot n=316 mean was 233.5ms; historical R67 snapshot n=312 mean was 236.0ms; historical R66 snapshot n=308 mean was 239.0ms; historical R65 snapshot n=304 mean was 242.0ms; historical R64 snapshot n=300 mean was 245.0ms; historical R63 snapshot n=296 mean was 248.0ms; historical R62 snapshot n=292 mean was 251.0ms; historical R61 snapshot n=288 mean was 254.0ms; historical R60 snapshot n=284 mean was 257.5ms; historical R59 snapshot n=280 mean was 261.0ms; historical R58 snapshot n=276 mean was 264.5ms; historical R57 snapshot n=272 mean was 268.0ms; historical R56 snapshot n=268 mean was 271.5ms; historical R55 snapshot n=264 mean was 275.5ms; historical R54 snapshot n=260 mean was 279.5ms; historical R53 snapshot n=256 mean was 283.5ms; historical R52 snapshot n=252 mean was 287.5ms; historical R51 snapshot n=248 mean was 292.0ms; historical R50 snapshot n=244 mean was 296.5ms; historical R49 snapshot n=240 mean was 301.0ms; historical R48 snapshot n=236 mean was 306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
-      "ontology_simulations_denominator_n": 126,
+      "routing_matrix_denominator_n": 524,
+      "routing_matrix_mean_modeled_latency_ms": 152.0,
+      "routing_matrix_scope": "Arithmetic mean across all n=524 routing & decision evaluation items (DL-01..DL-524, mean=152.0ms; historical R119 snapshot n=520 mean was 153.0ms; historical R118 snapshot n=516 mean was 154.0ms; historical R117 snapshot n=512 mean was 155.0ms; historical R116 snapshot n=508 mean was 156.0ms; historical R115 snapshot n=504 mean was 157.0ms; historical R114 snapshot n=500 mean was 158.0ms; historical R113 snapshot n=496 mean was 159.0ms; historical R112 snapshot n=492 mean was 160.0ms; historical R111 snapshot n=488 mean was 161.0ms; historical R110 snapshot n=484 mean was 162.0ms; historical R109 snapshot n=480 mean was 163.0ms; historical R108 snapshot n=476 mean was 164.0ms; historical R107 snapshot n=472 mean was 165.0ms; historical R106 snapshot n=468 mean was 166.0ms; historical R105 snapshot n=464 mean was 167.0ms; historical R104 snapshot n=460 mean was 168.0ms; historical R103 snapshot n=456 mean was 169.0ms; historical R102 snapshot n=452 mean was 170.0ms; historical R101 snapshot n=448 mean was 171.5ms; historical R100 snapshot n=444 mean was 173.0ms; historical R99 snapshot n=440 mean was 174.5ms; historical R98 snapshot n=436 mean was 176.0ms; historical R97 snapshot n=432 mean was 177.5ms; historical R96 snapshot n=428 mean was 179.0ms; historical R95 snapshot n=424 mean was 180.5ms; historical R94 snapshot n=420 mean was 182.0ms; historical R93 snapshot n=416 mean was 183.5ms; historical R92 snapshot n=412 mean was 185.0ms; historical R91 snapshot n=408 mean was 186.5ms; historical R90 snapshot n=404 mean was 188.0ms; historical R89 snapshot n=400 mean was 189.5ms; historical R88 snapshot n=396 mean was 191.0ms; historical R87 snapshot n=392 mean was 192.5ms; historical R86 snapshot n=388 mean was 194.0ms; historical R85 snapshot n=384 mean was 196.0ms; historical R84 snapshot n=380 mean was 198.0ms; historical R83 snapshot n=376 mean was 200.0ms; historical R82 snapshot n=372 mean was 202.0ms; historical R81 snapshot n=368 mean was 204.0ms; historical R80 snapshot n=364 mean was 206.0ms; historical R79 snapshot n=360 mean was 208.0ms; historical R78 snapshot n=356 mean was 210.0ms; historical R77 snapshot n=352 mean was 212.0ms; historical R76 snapshot n=348 mean was 214.0ms; historical R75 snapshot n=344 mean was 216.0ms; historical R74 snapshot n=340 mean was 218.5ms; historical R73 snapshot n=336 mean was 221.0ms; historical R72 snapshot n=332 mean was 223.5ms; historical R71 snapshot n=328 mean was 226.0ms; historical R70 snapshot n=324 mean was 228.5ms; historical R69 snapshot n=320 mean was 231.0ms; historical R68 snapshot n=316 mean was 233.5ms; historical R67 snapshot n=312 mean was 236.0ms; historical R66 snapshot n=308 mean was 239.0ms; historical R65 snapshot n=304 mean was 242.0ms; historical R64 snapshot n=300 mean was 245.0ms; historical R63 snapshot n=296 mean was 248.0ms; historical R62 snapshot n=292 mean was 251.0ms; historical R61 snapshot n=288 mean was 254.0ms; historical R60 snapshot n=284 mean was 257.5ms; historical R59 snapshot n=280 mean was 261.0ms; historical R58 snapshot n=276 mean was 264.5ms; historical R57 snapshot n=272 mean was 268.0ms; historical R56 snapshot n=268 mean was 271.5ms; historical R55 snapshot n=264 mean was 275.5ms; historical R54 snapshot n=260 mean was 279.5ms; historical R53 snapshot n=256 mean was 283.5ms; historical R52 snapshot n=252 mean was 287.5ms; historical R51 snapshot n=248 mean was 292.0ms; historical R50 snapshot n=244 mean was 296.5ms; historical R49 snapshot n=240 mean was 301.0ms; historical R48 snapshot n=236 mean was 306.0ms; historical R47 snapshot n=232 mean was 311.0ms; historical R46 snapshot n=228 mean was 316.0ms; historical R45 snapshot n=224 mean was 321.0ms; historical R44 snapshot n=220 mean was 326.0ms; historical R43 snapshot n=216 mean was 331.0ms; historical R42 snapshot n=212 mean was 336.0ms; historical R41 snapshot n=208 mean was 341.0ms; historical R40 snapshot n=204 mean was 346.0ms; historical R39 snapshot n=200 mean was 351.0ms; historical R38 snapshot n=196 mean was 356.0ms; historical R37 snapshot n=192 mean was 361.0ms; historical R36 snapshot n=188 mean was 366.0ms; historical R35 snapshot n=184 mean was 371.0ms; historical R34 snapshot n=180 mean was 376.0ms; historical R33 snapshot n=176 mean was 381.0ms; historical R32 snapshot n=172 mean was 386.0ms; historical R31 snapshot n=168 mean was 391.0ms; historical R30 snapshot n=164 mean was 396.0ms; historical R29 snapshot n=160 mean was 401.0ms; historical R28 snapshot n=156 mean was 406.0ms; historical R27 snapshot n=152 mean was 411.0ms; historical R26 snapshot n=148 mean was 416.0ms; historical R25 snapshot n=144 mean was 421.0ms; historical R24 snapshot n=140 mean was 426.0ms; historical R23 snapshot n=136 mean was 431.0ms; historical R22 snapshot n=132 mean was 436.0ms; historical R21 snapshot n=128 mean was 441.0ms; historical R20 snapshot n=124 mean was 446.0ms; historical R19 snapshot n=120 mean was 451.0ms; historical R18 snapshot n=116 mean was 456.0ms; historical R17 snapshot n=112 mean was 461.0ms; historical R16 snapshot n=108 mean was 466.0ms; historical R15 snapshot n=104 mean was 471.0ms; historical R14 snapshot n=100 mean was 476.0ms; historical R13 snapshot n=96 mean was 481.0ms; historical R12 snapshot n=92 mean was 486.0ms; historical R11 snapshot n=88 mean was 491.0ms; historical R10 snapshot n=84 mean was 496.0ms; historical R9 snapshot n=80 mean was 501.0ms; historical R8 snapshot n=76 mean was 506.0ms; historical R7 snapshot n=72 mean was 511.0ms; historical R6 snapshot n=68 mean was 516.0ms; historical R5 snapshot n=64 mean was 521.0ms; historical R4 snapshot n=60 mean was 526.5ms; historical R3 snapshot n=56 mean was 532.0ms).",
+      "ontology_simulations_denominator_n": 127,
       "ontology_simulations_latencies_ms": [
         780,
         640,
@@ -136,14 +136,15 @@
         18,
         16,
         14,
-        12
+        12,
+        10
       ],
       "ontology_simulations_range_ms": [
         5,
         780
       ],
-      "ontology_simulations_mean_modeled_latency_ms": 137.0,
-      "ontology_simulations_scope": "Arithmetic mean across the n=126 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12]ms, range 5-780ms, mean=137.0ms; historical R118 snapshot n=125 mean was 138.0ms; historical R117 snapshot n=124 mean was 139.0ms; historical R116 snapshot n=123 mean was 140.0ms; historical R115 snapshot n=122 mean was 141.0ms; historical R114 snapshot n=121 mean was 142.0ms; historical R113 snapshot n=120 mean was 143.0ms; historical R112 snapshot n=119 mean was 144.0ms; historical R111 snapshot n=118 mean was 145.0ms; historical R110 snapshot n=117 mean was 146.0ms; historical R109 snapshot n=116 mean was 147.0ms; historical R108 snapshot n=115 mean was 148.0ms; historical R107 snapshot n=114 mean was 149.0ms; historical R106 snapshot n=113 mean was 150.0ms; historical R105 snapshot n=112 mean was 151.0ms; historical R104 snapshot n=111 mean was 152.0ms; historical R103 snapshot n=110 mean was 153.0ms; historical R102 snapshot n=109 mean was 154.0ms; historical R101 snapshot n=108 mean was 155.0ms; historical R100 snapshot n=107 mean was 156.0ms; historical R99 snapshot n=106 mean was 157.0ms; historical R98 snapshot n=105 mean was 158.0ms; historical R97 snapshot n=104 mean was 159.0ms; historical R96 snapshot n=103 mean was 160.0ms; historical R95 snapshot n=102 mean was 161.0ms; historical R94 snapshot n=101 mean was 162.0ms; historical R93 snapshot n=100 mean was 163.0ms; historical R92 snapshot n=99 mean was 164.0ms; historical R91 snapshot n=98 mean was 165.0ms; historical R90 snapshot n=97 mean was 166.0ms; historical R89 snapshot n=96 mean was 167.0ms; historical R88 snapshot n=95 mean was 168.0ms; historical R87 snapshot n=94 mean was 169.0ms; historical R86 snapshot n=93 mean was 170.0ms; historical R85 snapshot n=92 mean was 171.0ms; historical R84 snapshot n=91 mean was 172.0ms; historical R83 snapshot n=90 mean was 173.0ms; historical R82 snapshot n=89 mean was 174.0ms; historical R81 snapshot n=88 mean was 175.0ms; historical R80 snapshot n=87 mean was 176.0ms; historical R79 snapshot n=86 mean was 177.0ms; historical R78 snapshot n=85 mean was 179.0ms; historical R77 snapshot n=84 mean was 181.0ms; historical R76 snapshot n=83 mean was 183.0ms; historical R75 snapshot n=82 mean was 185.0ms; historical R74 snapshot n=81 mean was 187.0ms; historical R73 snapshot n=80 mean was 189.0ms; historical R72 snapshot n=79 mean was 191.0ms; historical R71 snapshot n=78 mean was 193.0ms; historical R70 snapshot n=77 mean was 195.0ms; historical R69 snapshot n=76 mean was 197.0ms; historical R68 snapshot n=75 mean was 199.0ms; historical R67 snapshot n=74 mean was 201.0ms; historical R66 snapshot n=73 mean was 203.0ms; historical R65 snapshot n=72 mean was 205.0ms; historical R64 snapshot n=71 mean was 207.0ms; historical R63 snapshot n=70 mean was 209.0ms; historical R62 snapshot n=69 mean was 211.0ms; historical R61 snapshot n=68 mean was 214.0ms; historical R60 snapshot n=67 mean was 217.0ms; historical R59 snapshot n=66 mean was 220.0ms; historical R58 snapshot n=65 mean was 223.0ms; historical R57 snapshot n=64 mean was 226.0ms; historical R56 snapshot n=63 mean was 229.0ms; historical R55 snapshot n=62 mean was 232.0ms; historical R54 snapshot n=61 mean was 235.0ms; historical R53 snapshot n=60 mean was 238.0ms; historical R52 snapshot n=59 mean was 241.0ms; historical R51 snapshot n=58 mean was 245.0ms; historical R50 snapshot n=57 mean was 249.0ms; historical R49 snapshot n=56 mean was 253.0ms; historical R48 snapshot n=55 mean was 257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
+      "ontology_simulations_mean_modeled_latency_ms": 136.0,
+      "ontology_simulations_scope": "Arithmetic mean across the n=127 multi-step industry Ontology closed-loop simulations ([780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10]ms, range 5-780ms, mean=136.0ms; historical R119 snapshot n=126 mean was 137.0ms; historical R118 snapshot n=125 mean was 138.0ms; historical R117 snapshot n=124 mean was 139.0ms; historical R116 snapshot n=123 mean was 140.0ms; historical R115 snapshot n=122 mean was 141.0ms; historical R114 snapshot n=121 mean was 142.0ms; historical R113 snapshot n=120 mean was 143.0ms; historical R112 snapshot n=119 mean was 144.0ms; historical R111 snapshot n=118 mean was 145.0ms; historical R110 snapshot n=117 mean was 146.0ms; historical R109 snapshot n=116 mean was 147.0ms; historical R108 snapshot n=115 mean was 148.0ms; historical R107 snapshot n=114 mean was 149.0ms; historical R106 snapshot n=113 mean was 150.0ms; historical R105 snapshot n=112 mean was 151.0ms; historical R104 snapshot n=111 mean was 152.0ms; historical R103 snapshot n=110 mean was 153.0ms; historical R102 snapshot n=109 mean was 154.0ms; historical R101 snapshot n=108 mean was 155.0ms; historical R100 snapshot n=107 mean was 156.0ms; historical R99 snapshot n=106 mean was 157.0ms; historical R98 snapshot n=105 mean was 158.0ms; historical R97 snapshot n=104 mean was 159.0ms; historical R96 snapshot n=103 mean was 160.0ms; historical R95 snapshot n=102 mean was 161.0ms; historical R94 snapshot n=101 mean was 162.0ms; historical R93 snapshot n=100 mean was 163.0ms; historical R92 snapshot n=99 mean was 164.0ms; historical R91 snapshot n=98 mean was 165.0ms; historical R90 snapshot n=97 mean was 166.0ms; historical R89 snapshot n=96 mean was 167.0ms; historical R88 snapshot n=95 mean was 168.0ms; historical R87 snapshot n=94 mean was 169.0ms; historical R86 snapshot n=93 mean was 170.0ms; historical R85 snapshot n=92 mean was 171.0ms; historical R84 snapshot n=91 mean was 172.0ms; historical R83 snapshot n=90 mean was 173.0ms; historical R82 snapshot n=89 mean was 174.0ms; historical R81 snapshot n=88 mean was 175.0ms; historical R80 snapshot n=87 mean was 176.0ms; historical R79 snapshot n=86 mean was 177.0ms; historical R78 snapshot n=85 mean was 179.0ms; historical R77 snapshot n=84 mean was 181.0ms; historical R76 snapshot n=83 mean was 183.0ms; historical R75 snapshot n=82 mean was 185.0ms; historical R74 snapshot n=81 mean was 187.0ms; historical R73 snapshot n=80 mean was 189.0ms; historical R72 snapshot n=79 mean was 191.0ms; historical R71 snapshot n=78 mean was 193.0ms; historical R70 snapshot n=77 mean was 195.0ms; historical R69 snapshot n=76 mean was 197.0ms; historical R68 snapshot n=75 mean was 199.0ms; historical R67 snapshot n=74 mean was 201.0ms; historical R66 snapshot n=73 mean was 203.0ms; historical R65 snapshot n=72 mean was 205.0ms; historical R64 snapshot n=71 mean was 207.0ms; historical R63 snapshot n=70 mean was 209.0ms; historical R62 snapshot n=69 mean was 211.0ms; historical R61 snapshot n=68 mean was 214.0ms; historical R60 snapshot n=67 mean was 217.0ms; historical R59 snapshot n=66 mean was 220.0ms; historical R58 snapshot n=65 mean was 223.0ms; historical R57 snapshot n=64 mean was 226.0ms; historical R56 snapshot n=63 mean was 229.0ms; historical R55 snapshot n=62 mean was 232.0ms; historical R54 snapshot n=61 mean was 235.0ms; historical R53 snapshot n=60 mean was 238.0ms; historical R52 snapshot n=59 mean was 241.0ms; historical R51 snapshot n=58 mean was 245.0ms; historical R50 snapshot n=57 mean was 249.0ms; historical R49 snapshot n=56 mean was 253.0ms; historical R48 snapshot n=55 mean was 257.0ms; historical R47 snapshot n=54 mean was 261.0ms; historical R46 snapshot n=53 mean was 265.0ms; historical R45 snapshot n=52 mean was 269.0ms; historical R44 snapshot n=51 mean was 274.0ms; historical R43 snapshot n=50 mean was 279.0ms; historical R42 snapshot n=49 mean was 284.0ms; historical R41 snapshot n=48 mean was 289.0ms; historical R40 snapshot n=47 mean was 295.0ms; historical R39 snapshot n=46 mean was 301.0ms; historical R38 snapshot n=45 mean was 307.0ms; historical R37 snapshot n=44 mean was 313.0ms; historical R36 snapshot n=43 mean was 320.0ms; historical R35 snapshot n=42 mean was 327.5ms; historical R34 snapshot n=41 mean was 335.0ms; historical R33 snapshot n=40 mean was 343.0ms; historical R32 snapshot n=39 mean was 351.0ms; historical R31 snapshot n=38 mean was 359.0ms; historical R30 snapshot n=37 mean was 367.0ms; historical R29 snapshot n=36 mean was 375.0ms; historical R28 snapshot n=35 mean was 383.0ms; historical R27 snapshot n=34 mean was 391.0ms; historical R26 snapshot n=33 mean was 399.0ms; historical R25 snapshot n=32 mean was 407.0ms; historical R24 snapshot n=31 mean was 415.0ms; historical R23 snapshot n=30 mean was 423.0ms; historical R22 snapshot n=29 mean was 431.0ms; historical R21 snapshot n=28 mean was 439.0ms; historical R20 snapshot n=27 mean was 447.0ms; historical R19 snapshot n=26 mean was 455.0ms; historical R18 snapshot n=25 mean was 463.0ms; historical R17 snapshot n=24 mean was 471.0ms; historical R16 snapshot n=23 mean was 479.0ms; historical R15 snapshot n=22 mean was 487.0ms; historical R14 snapshot n=21 mean was 495.0ms; historical R13 snapshot n=20 mean was 503.0ms; historical R12 snapshot n=19 mean was 511.0ms; historical R11 snapshot n=18 mean was 519.0ms; historical R10 snapshot n=17 mean was 527.0ms; historical R9 snapshot n=16 mean was 535.0ms; historical R8 snapshot n=15 mean was 543.0ms; historical R7 snapshot n=14 mean was 552.0ms; historical R6 snapshot n=13 mean was 562.0ms; historical R5 snapshot n=12 mean was 572.92ms; historical R4 snapshot n=11 mean was 584.09ms; historical R3 snapshot n=10 mean was 596.0ms).",
       "r116_historical_denominators": {
         "r116_routing_matrix_n508_mean_ms": 156.0,
         "r116_ontology_simulations_n123_mean_ms": 140.0
@@ -602,8 +603,8 @@
       }
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=520 decision routing matrix evaluation (519/520 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=520 routing decision matrix tasks (DL-01..DL-520) with arithmetic mean modeled latency = 153.0ms; (2) n=126 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12]ms, range 5-780ms) with arithmetic mean modeled latency = 137.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
+      "measured_local_harness": "Python unittest execution (~22ms local runtime), deterministic n=524 decision routing matrix evaluation (523/524 = 99.81%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "Two distinct modeled latency denominators are dynamically computed and separated: (1) n=524 routing decision matrix tasks (DL-01..DL-524) with arithmetic mean modeled latency = 152.0ms; (2) n=127 industry ontology end-to-end closed-loop simulations (latencies=[780, 640, 710, 660, 590, 560, 530, 515, 495, 480, 465, 450, 431, 422, 417, 415, 399, 383, 367, 351, 335, 319, 303, 287, 271, 255, 239, 223, 207, 191, 175, 159, 143, 127, 111, 95, 79, 63, 47, 31, 15, 20, 5, 12, 43, 31, 19, 7, 44, 34, 24, 14, 57, 49, 41, 33, 25, 17, 9, 61, 55, 49, 43, 37, 31, 25, 19, 13, 7, 71, 67, 63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19, 15, 11, 7, 90, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10]ms, range 5-780ms) with arithmetic mean modeled latency = 136.0ms; plus Eventhouse 142ms / Lakehouse Streaming Table 210ms / XTable 14ms / DiskANN 16ms / OneLake OBO RLS 11ms / Gluten-Velox 2.8x / Fabric Data Agent Tri-Modal 0.0% Metric Drift / Project Osmos 38s Autonomous PR Healing / Surge Protection 75% Background Cap reference performance targets, and 500-user TCO model ($14,048/mo vs $26,063-$31,990/mo). These are deterministic architectural reference models for presales/design evaluation, NOT live paid cloud cluster runs or realized customer financial statements.",
       "vendor_published_spec_as_of_2026": "Verified against 13 official vendor documentation & pricing sources (as_of 2026-11-08, listed in vendor_published_spec_references): Microsoft Fabric Surge Protection (capacity & workspace-level background CU caps), 24h CU smoothing, and Azure 1-Year Reserved Capacity (~40.5% discount); Microsoft Fabric Data Factory + Materialized Lake Views + Project Osmos Autonomous Data Engineering Agent; Microsoft Fabric Data Agents (tri-modal NL2DAX + NL2KQL + NL2SQL grounded on Fabric IQ Ontology) + Copilot Studio / Azure AI Foundry multi-agent publishing; Microsoft Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ vectorized execution at $0 extra CU surcharge) + Autoscale Billing for Spark; Microsoft Fabric OneLake Security unified RLS/CLS/OLS + Microsoft Entra ID On-Behalf-Of (OBO) identity passthrough + Microsoft Purview sensitivity labels; Cosmos DB in Fabric, Fabric SQL Database, and Azure SQL Hyperscale SSD-backed DiskANN vector indexing + Power BI Agentic App 1GB Free Fabric SQL; Microsoft Fabric OneLake bidirectional Delta Lake <-> Apache Iceberg metadata virtualization (XTable) & Snowflake Iceberg on OneLake at $0 format conversion compute; Microsoft Fabric Mirroring & Open Mirroring $0 replication compute and free OneLake replica storage up to capacity TB; Fabric F64+ $0 Power BI viewer seat licensing; Snowflake Dynamic Tables minimum TARGET_LAG = 60 seconds, Tasks & Streams, Resource Monitors, Open Catalog Polaris Iceberg REST, Unistore Hybrid Tables, Snowflake Postgres (pg_lake), Horizon Catalog, Cortex Guard & Snowpark / SPCS; Databricks Photon C++ engine, Lakeflow Jobs & Declarative Pipelines (DLT), Serverless Budget Policies, Unity Catalog ABAC, Mosaic AI Gateway, Delta UniForm, Managed Iceberg, Lakeflow Connect & Lakebase serverless Postgres; AWS S3 Tables native Apache Iceberg REST Catalog, Aurora Zero-ETL / DSQL, Lake Formation, Glue Workflows, Redshift RPU limits & EMR Serverless; GCP BigLake Apache Iceberg tables, BigQuery Continuous Queries, Slot Reservations, AlloyDB ScaNN, Dataplex Universal Catalog, Cloud Composer / Dataform & Dataproc Serverless.",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical 120K EPS / 48K TPS hardware load across Azure, AWS, GCP, Snowflake, and Databricks (requires paid multi-cloud cluster provisioning; explicitly marked not_measured per governance policy)."
     },
@@ -2160,9 +2161,22 @@
           "https://www.snowflake.com/en/solutions/industries/manufacturing/"
         ],
         "as_of": "2026-11-15"
+      },
+      {
+        "id": "SPEC-EUV-PHOTORESIST-ULTRAPURE-CHEMICALS-PPT-PAG-POU-348M-R120",
+        "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+        "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_outliers() analyze High-NA EUV and 193i photoresist / SEMI C12 G5 wet-chemical online ICP-MS/MS sub-ppt trace-metal streams, inline GPC polydispersity traces, and 1,600-skid 1nm Point-of-Use (POU) differential-pressure streams while Cosmos DB in Fabric SSD DiskANN indexes 348M+ Thomas chelation-breakthrough curves, Monte-Carlo photoacid reaction-diffusion tensors, and asymmetric-membrane gel-extrusion vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) SEMI G5 e-CoA & PGMEA solvent-recovery ledgers and SQL Server on Azure Local (ALDO) at cleanroom edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary quantum-DFT/stochastic resist simulations and PFA-drum ERP.",
+        "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/cosmos-db/vector-search",
+        "competitor_doc_urls": [
+          "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+          "https://www.databricks.com/solutions/industries/manufacturing",
+          "https://www.snowflake.com/en/solutions/industries/manufacturing/"
+        ],
+        "as_of": "2026-11-15"
       }
     ],
-    "notes": "Deterministic ontology state machine (n=126 industry scenarios, mean=137.0ms), TCO calculator, and n=520 routing suite (mean=153.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
+    "notes": "Deterministic ontology state machine (n=127 industry scenarios, mean=136.0ms), TCO calculator, and n=524 routing suite (mean=152.0ms) reproduced locally via unittest; vendor capability milestones cross-verified against official vendor documentation URLs (as_of 2026-11-08) and FabCon & SQLCon Barcelona 2026, Microsoft IQ deck, Cosmos DB in Fabric & Fabric SQL SSD-backed DiskANN vector indexing, OneLake Delta <-> Iceberg Bidirectional Virtualization (XTable & Snowflake Iceberg in OneLake), Fabric Database Mirroring & Open Mirroring ($0 replication compute + free storage up to capacity TB, Oracle GoldenGate 23ai), Fabric Real-Time Intelligence (Eventhouse KQL & Lakehouse Streaming Tables), OneLake IQ Sharing (RDF + Markdown Agent Instructions), Salesforce Data 360 Zero-Copy Shortcuts, Fabric IQ Ontology Condition-Action Rules, SQL Server on Azure Local (ALDO) & GCC High GA, Digital Twin Builder & Lakehouse Streaming Tables, On-Demand Pay-Per-Job & Zero-Provisioned Compute, Database Hub & Database Agents, Azure SQL Hyperscale 192 vCore & DiskANN GA, OneLake Mirroring for BigQuery/Oracle/Snowflake, Project Osmos Data Engineering Agent, Rayfin SDK/CLI, Cross-Workspace Eventhouse Observability, Databricks Lakebase (Neon Postgres) & Unity Catalog Managed Iceberg v3 & Delta UniForm & Lakeflow Connect & Lakeflow/DLT & OpenSharing, Snowflake Unistore Hybrid Tables & Snowflake Postgres (pg_lake) & Open Catalog Polaris Iceberg REST & Openflow (Apache NiFi) & Dynamic Tables (60s min lag) & Snowpipe Streaming & Horizon Catalog, GCP AlloyDB ScaNN & BigLake Iceberg Metastore & BigQuery Continuous Queries/Materialized Views & Analytics Hub, and AWS Aurora pgvector/DSQL & S3 Tables Iceberg REST & Aurora Zero-ETL & Kinesis/Managed Flink & DataZone 2026 releases."
   },
   "platforms": {
     "fabric": {
@@ -2247,16 +2261,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 520,
-    "passed_scenarios": 519,
+    "total_scenarios": 524,
+    "passed_scenarios": 523,
     "failed_scenarios": 1,
     "accuracy_pct": 99.81,
-    "avg_latency_ms": 153.0,
-    "routing_matrix_denominator_n": 520,
-    "routing_matrix_mean_modeled_latency_ms": 153.0,
+    "avg_latency_ms": 152.0,
+    "routing_matrix_denominator_n": 524,
+    "routing_matrix_mean_modeled_latency_ms": 152.0,
     "action_distribution": {
-      "Act automatically": 284,
-      "Confirm": 234,
+      "Act automatically": 286,
+      "Confirm": 236,
       "Send to a human": 2
     },
     "scenarios": [
@@ -8499,6 +8513,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 24
+      },
+      {
+        "id": "DL-521",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS online ICP-MS/MS sub-ppt metal counts, inline GPC polydispersity, and 1,600-skid 1nm POU differential-pressure streams across 16 EUV photoresist & G5 chemical plants without $187.8K/mo per-attribute cloud fees or 8-hour grab-sample ICP-MS delay",
+        "expected": "Route to Fabric Eventhouse KQL (2ms Online ICP-MS/MS, Inline GPC & 1nm POU Sense + $0/GB Write Tax + 348M SSD DiskANN Bed-11B Switch, +3.8% PDB & 0.62kPa POU Match 3ms + ALDO Cleanroom Edge 2ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (2ms Online ICP-MS/MS, Inline GPC & 1nm POU Sense + $0/GB Write Tax + 348M SSD DiskANN Bed-11B Switch, +3.8% PDB & 0.62kPa POU Match 3ms + ALDO Cleanroom Edge 2ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 22
+      },
+      {
+        "id": "DL-522",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline quantum-DFT photoacid photolysis and stochastic Monte-Carlo EUV reaction-diffusion resist simulations vs 10ms cleanroom sub-ppt chelation & 1nm POU control",
+        "expected": "Route offline quantum-DFT PAG photolysis & Monte-Carlo stochastic resist simulations to Azure HPC / Databricks GPU and zero-copy Thomas breakthrough & POU vectors to OneLake while keeping 10ms purification/POU loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline quantum-DFT PAG photolysis & Monte-Carlo stochastic resist simulations to Azure HPC / Databricks GPU and zero-copy Thomas breakthrough & POU vectors to OneLake while keeping 10ms purification/POU loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 22
+      },
+      {
+        "id": "DL-523",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 348M SSD DiskANN + OneLake IQ + SDS + ALDO vs 8-hour grab-sample ICP-MS and KLA wafer inspection across 16 EUV photoresist and G5 wet-chemical plants with 7,300 chemists, track engineers, and 2nm fab auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS online ICP-MS/MS, GPC & 1nm POU telemetry into Eventhouse ($0/GB tax), index 348M vectors in SSD DiskANN (-92% RAM), run 2ms PFA bed-switch & piezoelectric POU loops on ALDO cleanroom edge, and serve 7,300 users via DirectLake (-94.5% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS online ICP-MS/MS, GPC & 1nm POU telemetry into Eventhouse ($0/GB tax), index 348M vectors in SSD DiskANN (-92% RAM), run 2ms PFA bed-switch & piezoelectric POU loops on ALDO cleanroom edge, and serve 7,300 users via DirectLake (-94.5% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 22
+      },
+      {
+        "id": "DL-524",
+        "category": "Fabric IQ & Ontology",
+        "question": "Purification Line-11 Thomas breakthrough slope predicts 48.5ppt Fe/Na (>10.0ppt SEMI G5 limit) while 2.65kPa 1nm POU pulse with PDI=1.38 predicts 2.85nm LER (>1.60nm limit) and micro-bridge shorts under 2nm EUV rules",
+        "expected": "Eventhouse KQL 2ms 48.5ppt & 2.65kPa POU Sense ($0/GB Tax) + 6-Hop 348M DiskANN Bed-11B, +3.8% PDB, -0.35°C PEB & 0.62kPa Match (3ms) + Foundry IQ 1.4ppt 1.18nm LER Gate (3ms) + Teams ALDO Commit (2ms = 10ms E2E, Protect $41.10M SLA)",
+        "model_answer": "Eventhouse KQL 2ms 48.5ppt & 2.65kPa POU Sense ($0/GB Tax) + 6-Hop 348M DiskANN Bed-11B, +3.8% PDB, -0.35°C PEB & 0.62kPa Match (3ms) + Foundry IQ 1.4ppt 1.18nm LER Gate (3ms) + Teams ALDO Commit (2ms = 10ms E2E, Protect $41.10M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 22
       }
     ]
   },
@@ -8562,7 +8624,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 126,
+    "total_ontology_simulations": 127,
     "simulation_latencies_ms": [
       780,
       640,
@@ -8689,9 +8751,11 @@
       18,
       16,
       14,
-      12
+      12,
+      10
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 137.0,
+    "ontology_simulation_mean_modeled_latency_ms": 136.0,
+    "r119_126_simulation_mean_modeled_latency_ms": 137.0,
     "r118_125_simulation_mean_modeled_latency_ms": 138.0,
     "r117_124_simulation_mean_modeled_latency_ms": 139.0,
     "r116_123_simulation_mean_modeled_latency_ms": 140.0,
@@ -17832,6 +17896,80 @@
         "projected_savings_usd": 40750000,
         "end_to_end_latency_ms": 12,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (344M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds": {
+      "scenario_id": "global_euv_photoresist_ultrapure_chemicals_fabric_ppt_metal_pag_pou_vs_4clouds",
+      "title": "Global High-NA EUV / 193i Photoresist & SEMI C12 G5 Ultra-Pure Electronic Chemicals <10 ppt Trace-Metal Ion-Exchange Breakthrough Guard, Photoacid Generator (PAG) Stochastic Line-Edge Roughness (LER) Tuning & 1nm Point-of-Use (POU) Gel-Bridge Loop (990K EPS · 348M DiskANN · 10ms E2E · R120, 125-FAQ, 128=2^7 SVG & >$41M SLA Milestone)",
+      "telemetry": {
+        "class100_synthesis_and_cds_plants_count": 16,
+        "pfa_reactors_and_chelation_beds_count": 380,
+        "online_icpms_ms_and_gpc_analyzers_count": 420,
+        "track_1nm_pou_nanofiltration_skids_count": 1600,
+        "icpms_gpc_pou_ingestion_eps": 990000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "thomas_pag_and_pou_vectors_indexed_count": 348000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "line11_uncontrolled_trace_metal_ppt": 48.5,
+        "line11_governed_trace_metal_ppt": 1.4,
+        "semi_c12_g5_trace_metal_limit_ppt": 10.0,
+        "uncontrolled_16nm_pitch_ler_nm": 2.85,
+        "governed_16nm_pitch_ler_nm": 1.18,
+        "high_na_euv_ler_limit_nm": 1.6,
+        "pou_1nm_pulse_free_delta_p_kpa": 0.62,
+        "micro_bridge_defect_density_per_cm2": 0.0,
+        "pgmea_solvent_distillation_recovery_pct": 99.6,
+        "concurrent_chemist_track_and_fab_users": 7300
+      },
+      "ontology_traversal": [
+        "Plant-03 Cleanroom -> Chelation-Purification-11 & EUV-Blender-04 -> Eventhouse KQL series_fit_line() isolates Thomas ion-exchange breakthrough slope (predicting 48.5 ppt Fe/Na > 10.0 ppt SEMI G5 limit) and 2.65 kPa 1nm POU differential-pressure pulse with PDI=1.38 (predicting 2.85 nm LER > 1.60 nm and micro-bridge shorts) in 2ms",
+        "Chelation-Purification-11 -> OneLake Zero-Copy Shortcut to Azure HPC Quantum-DFT PAG Photolysis & Stochastic Monte-Carlo Resist Solvers + Zero-ETL Mirroring from Snowflake Monomer/SnOx & RFID PFA Drum ERP -> Correlates PAG acid diffusion length and membrane pore tortuosity",
+        "POU-Skid-11 -> Cosmos DB SSD DiskANN (348M Thomas chelation breakthrough, EUV reaction-diffusion blur & asymmetric-membrane gel-extrusion vectors, -92% RAM) -> 3ms Top-K match (0.99 similarity): bumpless switch to Bed-11B + +3.8% PDB quencher + -0.35°C PEB offset + 0.62 kPa pulse-free piezoelectric filtration",
+        "Purification-and-Filtration Recipe -> Foundry IQ Guardrail (EUV-PHOTORESIST-G5-PPT-LER-POU-SOP-127) -> Verifies 1.4 ppt Fe/Na/Cu (<= 10.0 ppt SEMI G5), 1.18 nm 16nm-pitch LER (<= 1.60 nm, 0.00 /cm² micro-bridges at 0.62 kPa), and 99.6% PGMEA solvent recovery in 3ms",
+        "Approved Recipe -> Litho-Materials VP Teams Card -> SQL on Azure Local (ALDO) cleanroom edge dispatches PFA bed-switch valves and pulse-free piezoelectric dispense pumps + Fabric SDS mints SEMI C12 G5 e-CoA & REACH Solvent Passport into 1GB Free Fabric SQL in 2ms (10ms E2E)"
+      ],
+      "multi_agent_plan": {
+        "fabric_euv_resist_monthly_tco_usd": 14400,
+        "competitor_stitched_euv_resist_monthly_tco_usd": 261700,
+        "monthly_euv_resist_tco_saved_usd": 247300,
+        "monthly_euv_resist_tco_savings_pct": 94.5,
+        "fabric_internal_full_stack_monthly_usd": 42200,
+        "competitor_internal_full_stack_monthly_usd": 716000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL Online ICP-MS/MS, Inline GPC Polydispersity & 1nm POU Differential-Pressure Sensing Agent",
+            "operation": "Run series_fit_line() across 990K EPS online ICP-MS/MS 56Fe/23Na isotope streams, inline GPC PDI traces, and 1,600-skid 1nm POU differential-pressure streams at $0/GB write surcharge to isolate 48.5 ppt metal breakthrough and 2.65 kPa gel-extrusion pulse in 2ms",
+            "impact_metric": "2ms detection; $0/GB stream write surcharge saves $181,000/mo vs per-attribute cloud ingestion"
+          },
+          {
+            "step": 2,
+            "agent": "Cosmos DB SSD DiskANN 348M-Vector Thomas Breakthrough, EUV Reaction-Diffusion & 1nm POU Gel-Extrusion Agent",
+            "operation": "Query 348,000,000 Thomas ion-exchange breakthrough, Monte-Carlo photoacid diffusion, and viscoelastic gel-permeation vectors in 3ms (0.99 cosine similarity at -92% RAM) to retrieve Bed-11B switch, +3.8% PDB quencher, -0.35°C PEB offset, and 0.62 kPa pulse-free filtration",
+            "impact_metric": "3ms vector recall; $2,400/mo SSD DiskANN vs $41,000/mo full-DRAM vector cluster"
+          },
+          {
+            "step": 3,
+            "agent": "Litho-Materials VP Teams Card, ALDO Cleanroom Edge & SEMI C12 G5 e-CoA Passport Agent",
+            "operation": "Verify SOP-127 guardrails (3ms) and dispatch PFA chelation-valve, PDB quencher, and pulse-free piezoelectric pump commands via SQL on Azure Local (ALDO) plus SEMI C12 G5 e-CoA & 99.6% PGMEA passport to 1GB Free Fabric SQL (2ms)",
+            "impact_metric": "10ms E2E loop; 1.4 ppt metal; 1.18 nm LER (0.00/cm² bridges); -$247.3K/mo (-94.5%) TCO; $41.10M SLA protected"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "EUV-PHOTORESIST-G5-PPT-LER-POU-SOP-127",
+        "hard_constraint": "Never release High-NA EUV photoresist or SEMI C12 G5 wet chemicals if any individual trace metal (Fe, Na, Cu, Ca, Ni) exceeds 10.0 ppt, never pass a resist lot if 16nm-pitch LER exceeds 1.60 nm or 1nm POU differential pressure exceeds 1.20 kPa (micro-bridge density > 0.00 /cm²), and require >= 99.0% closed-loop PGMEA solvent distillation recovery",
+        "proposed_change": "Bumplessly switch Purification Line-11 to fresh polishing chelation bed #11B (1.4 ppt Fe/Na/Cu <= 10.0 ppt), boost Blender-04 PDB quencher +3.8% with -0.35°C PEB offset and 0.62 kPa pulse-free 1nm POU filtration (1.18 nm LER <= 1.60 nm, 0.00 /cm² micro-bridges), and certify SEMI C12 G5 e-CoA & 99.6% PGMEA recovery passport in Fabric SDS",
+        "thomas_sub_ppt_chelation_and_semi_g5_verified": true,
+        "stochastic_ler_and_1nm_pou_zero_bridge_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 41100000,
+        "end_to_end_latency_ms": 10,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (348M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
       }
     }
   },
