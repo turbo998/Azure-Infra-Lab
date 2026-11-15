@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg104" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040814"/>
+      <stop offset="50%" stop-color="#0A162A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent104" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cardBlue104" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2343"/>
+      <stop offset="100%" stop-color="#0A1830"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="900" fill="url(#bg104)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#111F3A" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="58" y="50" width="310" height="26" rx="13" fill="url(#accent104)"/>
+  <text x="213" y="68" fill="#FFFFFF" font-size="11.5" font-weight="800" text-anchor="middle" letter-spacing="0.8">DATA LAB · R104 460-SCENARIO &amp; -93.9% TCO!</text>
+  <text x="384" y="68" fill="#F8FAFC" font-size="15.5" font-weight="800">钙钛矿-晶硅叠层光伏 (33.9%) 狭缝涂布、VASP 真空闪蒸成核、空间 ALD 与 2.84 亿向量 vs 四大云</text>
+  <text x="58" y="102" fill="#94A3B8" font-size="12.5">Global Perovskite-Silicon Tandem Solar 2.4×1.2m Module (20 GW-Plants · 520 Slot-Die/VASP Lines + 380 Spatial ALDs) · 990K EPS · 284M DiskANN · 42ms Loop · -93.9% TCO ($217.1K/mo Saved)</text>
+  <rect x="1186" y="47" width="196" height="60" rx="10" fill="#09152B" stroke="#F59E0B" stroke-width="1.8"/>
+  <text x="1284" y="69" fill="#FBBF24" font-size="11.5" font-weight="800" text-anchor="middle">R104 矩阵均值 / 本体均值</text>
+  <text x="1284" y="95" fill="#F8FAFC" font-size="16.5" font-weight="800" text-anchor="middle">168.0ms · 152.0ms</text>
+
+  <!-- Left Column: Physical Perovskite-Silicon Tandem Slot-Die, VASP & Spatial ALD Layer -->
+  <rect x="40" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="60" y="166" fill="#FBBF24" font-size="14" font-weight="800">01 · 2.4×1.2m 狭缝涂布、闪蒸成核与 PL 传感 (990K EPS)</text>
+
+  <rect x="58" y="182" width="384" height="104" rx="10" fill="#132342" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="74" y="204" fill="#FDE68A" font-size="12.5" font-weight="800">☀️ 520 条 2.4×1.2m 狭缝涂布与 VASP 真空闪蒸结晶线</text>
+  <text x="74" y="224" fill="#E2E8F0" font-size="11.5">• 550nm 宽带隙钙钛矿弯月面共聚焦 + 电容规毫秒级压降流</text>
+  <text x="74" y="242" fill="#E2E8F0" font-size="11.5">• 捕获 #11线 闪蒸压降放缓 -18.4% 偏离 2.5s LaMer 爆发成核窗</text>
+  <text x="74" y="260" fill="#34D399" font-size="11" font-weight="700">✓ 提前拦截黄色非活性 δ 死相析出与微米级针孔漏电短路!</text>
+
+  <rect x="58" y="298" width="384" height="104" rx="10" fill="#132342" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="74" y="320" fill="#7DD3FC" font-size="12.5" font-weight="800">🔬 线扫高光谱光致发光 (PL) 与 380 台空间 ALD 阻水机</text>
+  <text x="74" y="340" fill="#E2E8F0" font-size="11.5">• 高光谱 PL 捕获 742nm 主峰分裂出 788nm 富碘相肩峰 (Hoke 分相)</text>
+  <text x="74" y="358" fill="#E2E8F0" font-size="11.5">• 空间 ALD 沉积 22nm SnO2/Al2O3 阻水层 (WVTR=4.2e-5 g/m²·day)</text>
+  <text x="74" y="376" fill="#34D399" font-size="11" font-weight="700">✓ 消除 788nm 卤素相分离并将半高宽压回 34.2nm 单峰 (31.8% 效率)</text>
+
+  <rect x="58" y="414" width="384" height="104" rx="10" fill="#132342" stroke="#10B981" stroke-width="1.2"/>
+  <text x="74" y="436" fill="#6EE7B7" font-size="12.5" font-weight="800">♻️ 99.92% 铅离子 (Pb2+) 螯合闭环与欧盟 Ecodesign 碳护照</text>
+  <text x="74" y="456" fill="#E2E8F0" font-size="11.5">• 磺酸/磷酸盐螯合树脂塔回收 99.92% 模头清洗铅离子与 DMF/DMSO</text>
+  <text x="74" y="474" fill="#E2E8F0" font-size="11.5">• 组件全生命周期 RoHS 零铅泄漏，IEC 61215 DH1000 衰减 &lt;1.5%</text>
+  <text x="74" y="492" fill="#34D399" font-size="11" font-weight="700">✓ 自动签发法国 PPE2 / 欧盟 Ecodesign (&lt;310 g CO2e/Wp) 光伏护照</text>
+
+  <rect x="58" y="530" width="384" height="102" rx="10" fill="#1F122B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="74" y="552" fill="#FDA4AF" font-size="12" font-weight="800">⛔ 传统终端 IV 闪光测试、固定计量泵与云端拼接栈痛点</text>
+  <text x="74" y="572" fill="#FECDD3" font-size="11">• 终端 IV 滞后 4 小时，发现效率低时前道 800 张 2.4m 大板已涂废</text>
+  <text x="74" y="590" fill="#FECDD3" font-size="11">• 990K EPS 云端按属性写入税高达 $162.0K/月</text>
+  <text x="74" y="608" fill="#FECDD3" font-size="11">• 2.84 亿向量全内存常驻需 3.20TB+ DRAM (&gt;$59.2K/月)</text>
+
+  <!-- Center Column: Microsoft Fabric 42ms Closed Loop -->
+  <rect x="480" y="138" width="480" height="510" rx="14" fill="url(#cardBlue104)" stroke="#F59E0B" stroke-width="2"/>
+  <text x="502" y="166" fill="#FDE68A" font-size="14" font-weight="800">02 · Microsoft Fabric 42ms 叠层光伏成核闭环 (R104!)</text>
+
+  <rect x="500" y="182" width="440" height="102" rx="10" fill="#0B1933" stroke="#3B82F6" stroke-width="1.3"/>
+  <text x="516" y="204" fill="#60A5FA" font-size="12.5" font-weight="800">Step 1 · Eventhouse KQL 10ms PL 分峰与压降感知 ($0/GB)</text>
+  <text x="516" y="224" fill="#E2E8F0" font-size="11.5">• 共享 F64 容量池内 $0/GB 写入税摄入 990,000 EPS 光学/真空流</text>
+  <text x="516" y="242" fill="#E2E8F0" font-size="11.5">• 10ms 锁定 #11线 压降放缓 -18.4% 与 PL 788nm 卤素分相峰</text>
+  <text x="516" y="262" fill="#34D399" font-size="11" font-weight="700">✓ 立省 $157.1K/月写入费，在 2.5s 成核窗内毫秒级捕获结晶偏移</text>
+
+  <rect x="500" y="296" width="440" height="114" rx="10" fill="#0B1933" stroke="#06B6D4" stroke-width="1.3"/>
+  <text x="516" y="318" fill="#22D3EE" font-size="12.5" font-weight="800">Step 2 · Fabric IQ &amp; Cosmos SSD DiskANN 11ms 2.84亿向量匹配</text>
+  <text x="516" y="338" fill="#E2E8F0" font-size="11.5">• 检索 284,000,000 条毛细弯月面、LaMer 爆发成核与空间 ALD 向量</text>
+  <text x="516" y="356" fill="#E2E8F0" font-size="11.5">• NVMe SSD 索引省 92% 内存 ($1.6K vs $59.2K/月)，余弦相似度 0.99</text>
+  <text x="516" y="374" fill="#E2E8F0" font-size="11.5">• 输出：第4区压电模头 -3.2μm + VASP蝶阀提前 320ms + 风刀 +6.5°C</text>
+  <text x="516" y="394" fill="#34D399" font-size="11" font-weight="700">✓ PL 半高宽压回 34.2nm 单峰、0.00% δ 死相，组件效率锁死 31.8%</text>
+
+  <rect x="500" y="422" width="440" height="96" rx="10" fill="#0B1933" stroke="#F59E0B" stroke-width="1.3"/>
+  <text x="516" y="444" fill="#FBBF24" font-size="12.5" font-weight="800">Step 3 · Foundry IQ 零死相与 99.92% 除铅护栏 (SOP-111 · 11ms)</text>
+  <text x="516" y="464" fill="#E2E8F0" font-size="11.5">• 校验 PL FWHM 34.2nm &lt;= 40.0nm、针孔密度 0.00 /m²</text>
+  <text x="516" y="482" fill="#E2E8F0" font-size="11.5">• 校验组件效率 31.8% &gt;= 31.0%，铅离子螯合回收率 99.92%</text>
+  <text x="516" y="500" fill="#34D399" font-size="11" font-weight="700">✓ 100% 阻断户外暴晒 Hoke 卤素分相衰减与 RoHS 铅泄漏风险</text>
+
+  <rect x="500" y="530" width="440" height="102" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.3"/>
+  <text x="516" y="552" fill="#34D399" font-size="12.5" font-weight="800">Step 4 · Teams 总监确认 + ALDO 车间边缘 &amp; 低碳护照 (10ms)</text>
+  <text x="516" y="572" fill="#E2E8F0" font-size="11.5">• SQL on Azure Local (ALDO) 10ms 驱动压电模头与真空闪蒸蝶阀</text>
+  <text x="516" y="590" fill="#E2E8F0" font-size="11.5">• 1GB 免费 Fabric SQL 签发 99.92% 除铅与 &lt;310g/Wp 欧盟光伏护照</text>
+  <text x="516" y="610" fill="#34D399" font-size="11" font-weight="700">✓ 42ms 端到端闭环 (460 场景大关!) · 守护 $35.50M 叠层光伏 SLA</text>
+
+  <!-- Right Column: Multi-Cloud Coexistence & TCO -->
+  <rect x="980" y="138" width="420" height="510" rx="14" fill="#0E1B33" stroke="#334155" stroke-width="1.5"/>
+  <text x="1000" y="166" fill="#34D399" font-size="14" font-weight="800">03 · 四云零拷贝共存与 TCO 拐点 (-93.9% · R104!)</text>
+
+  <rect x="998" y="182" width="384" height="128" rx="10" fill="#132342" stroke="#F97316" stroke-width="1.2"/>
+  <text x="1014" y="204" fill="#FDBA74" font-size="12.5" font-weight="800">🤝 模式 B/A · HPC/Databricks &amp; Snowflake/SAP 共存</text>
+  <text x="1014" y="224" fill="#E2E8F0" font-size="11.5">• Azure HPC / Databricks GPU：跑 DFT 第一性原理 SAMs (Me-4PACz)</text>
+  <text x="1014" y="242" fill="#E2E8F0" font-size="11.5">  界面偶极与三维弯月面 CFD 仿真，向 OneLake 写入 2.84 亿向量</text>
+  <text x="1014" y="262" fill="#E2E8F0" font-size="11.5">• Snowflake / SAP S/4HANA：保留 HJT 硅片、ITO 靶材与 25年电站</text>
+  <text x="1014" y="280" fill="#E2E8F0" font-size="11.5">  线性功率质保 ERP，经 OneLake Mirroring ($0 算力) 双向互通</text>
+  <text x="1014" y="298" fill="#34D399" font-size="11" font-weight="700">✓ 6,000 名叠层光伏与薄膜工程师 DirectLake 看板 ($0 席位)</text>
+
+  <rect x="998" y="324" width="384" height="162" rx="10" fill="#0B1933" stroke="#10B981" stroke-width="1.4"/>
+  <text x="1014" y="346" fill="#6EE7B7" font-size="12.5" font-weight="800">💰 20 座叠层光伏厂月度 TCO 对比 (990K EPS · 284M 向量)</text>
+  <text x="1014" y="370" fill="#F8FAFC" font-size="11.5" font-weight="700">Microsoft Fabric (F64 + 284M SSD DiskANN + ALDO)</text>
+  <rect x="1014" y="378" width="42" height="14" rx="7" fill="#10B981"/>
+  <text x="1066" y="390" fill="#34D399" font-size="12" font-weight="800">$14,100 / 月 (基准最优 · 省 93.9%)</text>
+
+  <text x="1014" y="414" fill="#CBD5E1" font-size="11.5">四云拼接栈 (按属性写入 IoT + 3.20TB 全内存向量 + BI 席位)</text>
+  <rect x="1014" y="422" width="340" height="14" rx="7" fill="#EF4444"/>
+  <text x="1014" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">$231,200 / 月 (归一化) | $631,000 / 月 (全量内部栈)</text>
+  <text x="1014" y="474" fill="#34D399" font-size="11.5" font-weight="800">★ 净省 $217,100 / 月 ($2.61M / 年) · 460 场景与省 93.9% TCO 里程碑!</text>
+
+  <rect x="998" y="498" width="384" height="134" rx="10" fill="#132342" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="1014" y="520" fill="#FDE68A" font-size="12.5" font-weight="800">📊 Scenario DG 实测成效与双分母披露 (Round 104)</text>
+  <text x="1014" y="540" fill="#E2E8F0" font-size="11">• 路由评估矩阵 (n=460 大关!)：459 / 460 (99.78%) · 均值 168.0 ms</text>
+  <text x="1014" y="558" fill="#E2E8F0" font-size="11">• 本体仿真均值 (n=111)：152.0 ms (本场景 DG 仅 42 ms E2E!)</text>
+  <text x="1014" y="576" fill="#E2E8F0" font-size="11">• PL 光谱半高宽：52.8→34.2nm 单峰 | 组件转换效率：31.8% (0 针孔)</text>
+  <text x="1014" y="594" fill="#E2E8F0" font-size="11">• 阻水与环保：WVTR 4.2e-5 g/m²·d · 99.92% 铅离子螯合闭环回收</text>
+  <text x="1014" y="614" fill="#34D399" font-size="11" font-weight="700">✓ 单次规避叠层组件湿热衰减与废片损失：$35,500,000 ($35.50M SLA)</text>
+
+  <!-- Bottom Summary Playbook Banner -->
+  <rect x="40" y="664" width="1360" height="200" rx="14" fill="#0E1A32" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="60" y="692" fill="#FDE68A" font-size="14" font-weight="800">04 · AI Solution Architect 钙钛矿-晶硅叠层光伏打单金句与生产核验清单 (R104 Checklist)</text>
+
+  <rect x="60" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="78" y="728" fill="#FBBF24" font-size="12.5" font-weight="800">🎯 30 秒售前电梯演讲 (Elevator Pitch · Round 104)</text>
+  <text x="78" y="748" fill="#E2E8F0" font-size="11.5">“在 2.4×1.2m 钙钛矿-晶硅叠层产线上，真空闪蒸抽气只要慢 18%，2.5 秒内就会析出黄色 δ 死相与</text>
+  <text x="78" y="766" fill="#E2E8F0" font-size="11.5">788nm 卤素分相，等 4 小时后上 IV 测试台发现时 800 张大板早已报废！Microsoft Fabric 用</text>
+  <text x="78" y="784" fill="#E2E8F0" font-size="11.5">Eventhouse 10ms 联查原位高光谱 PL 与闪蒸压降（$0/GB 税），再用 SSD DiskANN 11ms 匹配</text>
+  <text x="78" y="802" fill="#E2E8F0" font-size="11.5">2.84 亿条弯月面与 LaMer 成核向量，42ms 走 ALDO 边缘锁死 31.8% 组件效率与 99.92%</text>
+  <text x="78" y="820" fill="#34D399" font-size="11.5" font-weight="700">铅回收，月省 $217.1K (93.9% TCO)！”</text>
+
+  <rect x="730" y="706" width="650" height="142" rx="10" fill="#091326" stroke="#1E293B" stroke-width="1.2"/>
+  <text x="748" y="728" fill="#6EE7B7" font-size="12.5" font-weight="800">🛠️ 生产落地五大核验项 (Production Verification Checklist)</text>
+  <text x="748" y="748" fill="#E2E8F0" font-size="11.5">☑ 1. 520 条产线高光谱 PL 光致发光流与 VASP 闪蒸压降流直推 Eventhouse</text>
+  <text x="748" y="766" fill="#E2E8F0" font-size="11.5">☑ 2. 狭缝模头多区压电唇口 (-3.2μm) 与真空闪蒸蝶阀 (+320ms) 毫秒级前馈联动</text>
+  <text x="748" y="784" fill="#E2E8F0" font-size="11.5">☑ 3. Cosmos DB SSD DiskANN 2.84 亿条弯月面/LaMer 成核索引 (-92% 内存，P95 &lt;= 11ms)</text>
+  <text x="748" y="802" fill="#E2E8F0" font-size="11.5">☑ 4. Foundry IQ SOP-111 门禁：PL FWHM &lt;=40nm、零针孔、铅回收率 &gt;=99.90%</text>
+  <text x="748" y="820" fill="#34D399" font-size="11.5" font-weight="700">☑ 5. ALDO 车间边缘下发模头与闪蒸阀，1GB 免费 SQL 签发 &lt;310g/Wp 欧盟光伏护照</text>
+</svg>

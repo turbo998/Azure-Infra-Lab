@@ -8392,6 +8392,85 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (280M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds":
+        # Scenario DG (2026-11-16 R104 · 460-Scenario Milestone (n=460!), 284M-Vector, 168.0ms Matrix Mean, 152.0ms Ontology Mean, 42ms E2E & -93.9% TCO Six-Crown Milestone!): Global Perovskite-Silicon Tandem Solar Module (33.9% Efficiency 2.4×1.2m GW-Scale) Slot-Die Meniscus Coating Pinhole Interdiction, Vacuum-Flash (VASP) LaMer Nucleation & Spatial ALD Moisture-Barrier Loop
+        # Comparing Microsoft Fabric (Eventhouse KQL 990K EPS 10ms Hyperspectral PL & VASP Vacuum Slope Sense + Cosmos DB SSD DiskANN 11ms 284M Capillary-Meniscus/LaMer-Nucleation/Spatial-ALD Match + SDS 99.92% Pb Recovery + ALDO Shop-Floor Edge, $14.1K/mo Normalized | $38.6K/mo Internal)
+        # vs End-of-Line IV Tester / Standalone PLC & Per-Attribute/GB Cloud IoT / 284M Full-DRAM Vector Stack ($231.2K/mo Normalized | $631.0K/mo Internal)
+        return {
+            "scenario_id": "global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds",
+            "title": "Global Perovskite-Silicon Tandem Solar 20 GW-Scale Plants (520 2.4×1.2m Slot-Die/VASP Lines + 380 Spatial ALD/Laser Tools) × 990K EPS Hyperspectral PL & VASP Slope Sense, 284M Meniscus/LaMer/ALD Match, 34.2nm Single-Peak PL & 31.8% Module Efficiency Loop (Fabric Eventhouse KQL + 284M SSD DiskANN + SDS + ALDO vs. 4h IV Tester / 4 Clouds)",
+            "provenance_type": "synthetic_scenario_model",
+            "telemetry": {
+                "timestamp": "2026-11-16T00:01:00Z",
+                "tandem_solar_gw_plants_count": 20,
+                "slot_die_and_vasp_flash_lines_count": 520,
+                "spatial_ald_and_laser_tools_count": 380,
+                "pl_vasp_meniscus_ingestion_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "pre_trim_pl_fwhm_nm": 52.8,
+                "post_trim_pl_fwhm_nm": 34.2,
+                "max_allowed_pl_fwhm_nm": 40.0,
+                "post_trim_delta_dead_phase_pct": 0.00,
+                "post_trim_tandem_module_efficiency_pct": 31.8,
+                "min_required_tandem_module_efficiency_pct": 31.0,
+                "eventhouse_kql_pl_vasp_latency_ms": 10,
+                "meniscus_lamer_and_ald_vectors_indexed_count": 284000000,
+                "ssd_diskann_tandem_similarity_score": 0.99,
+                "ssd_diskann_search_latency_ms": 11,
+                "closed_loop_lead_pb_recovery_pct": 99.92,
+                "fabric_monthly_tandem_tco_usd": 14100,
+                "competitor_stitched_tandem_tco_usd": 231200,
+                "fabric_internal_full_tandem_tco_usd": 38600,
+                "competitor_internal_full_tandem_tco_usd": 631000,
+            },
+            "ontology_traversal": {
+                "hop_1": "GlobalTandemPV_20GWPlants_520SlotDieVASPLines_380SpatialALDs:990K_EPS_HyperspectralPL_VASPVacuum_And_Meniscus_Stream",
+                "hop_2": "Eventhouse_KQL_FitLine:10ms_Isolate_Line11_VASPLag18.4Pct_And_PL788nmHalideSplit ($0/GB Write Tax)",
+                "hop_3": "DigitalTwin_TandemSolar_And_Cosmos_SSD_DiskANN:11ms_Match_284M_CapillaryMeniscus_LaMerNucleation_And_SpatialALD_Vectors_0.99 (-92% RAM)",
+                "hop_4": "FoundryIQ_PolicyGate:11ms_Verify_34.2nmFWHM_ZeroDeltaPhase_31.8PctEfficiency_And_99.92PctPbRecovery",
+            },
+            "multi_agent_plan": {
+                "slot_die_vasp_lines_coordinated": 520,
+                "spatial_ald_tools_coordinated": 380,
+                "monthly_tandem_tco_saved_usd": 217100,
+                "tandem_tco_savings_pct": 93.9,
+                "actions": [
+                    {
+                        "step": 1,
+                        "agent": "Fabric Eventhouse KQL 990K EPS Line-Scan Hyperspectral PL, VASP Vacuum & Meniscus Engine",
+                        "operation": "Ingest 990,000 EPS of line-scan hyperspectral PL spectra, VASP capacitance manometer curves, and confocal meniscus streams at $0/GB write tax, isolating Tandem-Line-11 VASP pump-down lag (-18.4%) and 788nm iodide-segregated PL shoulder (FWHM=52.8nm > 40.0nm limit) in 10ms",
+                        "impact_metric": "Replaces $162.0K/mo per-attribute cloud IoT fees and eliminates 4-hour end-of-line IV test lag",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Fabric IQ Tandem PV Twin & Cosmos SSD DiskANN 284M Meniscus/LaMer/ALD Engine",
+                        "operation": "Search 284,000,000 Landau-Levich meniscus tensors, DMF/DMSO azeotropic LaMer burst-nucleation curves, and Spatial ALD barrier vectors (0.99 similarity in 11ms at -92% RAM), trimming Zone-4 piezo lip -3.2μm, advancing VASP butterfly valve +320ms with +6.5°C N2 knife (34.2nm PL FWHM <= 40.0nm, 0.00% δ-phase, 31.8% module efficiency) in Foundry IQ (11ms)",
+                        "impact_metric": "Prevents Hoke halide phase segregation and pinhole shunts across 2.4×1.2m tandem modules",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Tandem PV Director Teams Sign-Off, ALDO Shop-Floor Edge & EU Ecodesign Commit",
+                        "operation": "Approve piezo-lip, VASP butterfly-valve, and Spatial ALD setpoints in Teams, dispatch EtherCAT commands via SQL on Azure Local (ALDO) at the shop-floor edge, and mint the 99.92% Pb Recovery & <310g/Wp EU Ecodesign Solar Passport into 1GB Free Fabric SQL (10ms)",
+                        "impact_metric": "42ms E2E (460-Scenario milestone!) coating-to-crystallization loop; -$217,100/mo (-93.9%) TCO; $35.50M Tandem PV SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "PEROVSKITE-SILICON-TANDEM-SLOT-DIE-VASP-ALD-SOP-111",
+                "hard_constraint": "Never allow perovskite-silicon tandem inline PL FWHM above 40.0 nm or yellow δ-phase above 0.00%, never allow pinhole density above 0.00 /m², and require >= 99.90% closed-loop Pb2+ chelation recovery",
+                "proposed_change": "Trim Tandem-Line-11 Zone-4 piezo lip -3.2 μm and advance VASP butterfly valve +320 ms with +6.5°C N2 knife (collapsing PL FWHM to 34.2 nm <= 40.0 nm, 0.00% δ-phase, 0.00/m² pinholes, and 31.8% module efficiency), and certify 99.92% Pb2+ recovery",
+                "lamer_burst_nucleation_and_zero_delta_verified": True,
+                "lead_chelation_and_ecodesign_passport_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 35500000,
+                "end_to_end_latency_ms": 42,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (284M Vectors) + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -13868,6 +13947,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 56,
     },
+    {
+        "id": "DL-457",
+        "category": "Real-Time Intelligence",
+        "question": "Perovskite-Silicon Tandem PV producer running 20 GW-scale plants (520 2.4×1.2m slot-die/VASP lines, 380 Spatial ALDs) must ingest 990K EPS, catch 2.5s LaMer crystallization & PL peak splitting in <15ms, and search 284M vectors",
+        "expected": "Microsoft Fabric Eventhouse KQL series_fit_line() 10ms Hyperspectral PL & VASP Vacuum Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 11ms 284M Meniscus/LaMer/ALD Match (-92% RAM) + SDS 99.92% Pb Recovery + ALDO Shop-Floor Edge (42ms E2E, -93.9% TCO)",
+        "model_answer": "Microsoft Fabric Eventhouse KQL series_fit_line() 10ms Hyperspectral PL & VASP Vacuum Sense ($0/GB Write Tax) + Cosmos DB SSD DiskANN 11ms 284M Meniscus/LaMer/ALD Match (-92% RAM) + SDS 99.92% Pb Recovery + ALDO Shop-Floor Edge (42ms E2E, -93.9% TCO)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 54,
+    },
+    {
+        "id": "DL-458",
+        "category": "vs Databricks",
+        "question": "Tandem solar R&D needs first-principles DFT carbazole SAM (Me-4PACz) dipole and 3D Landau-Levich slot-die meniscus CFD simulations alongside Snowflake/SAP S/4HANA HJT wafer, ITO target, and 25-year module warranty ERP",
+        "expected": "Route first-principles DFT SAM dipole and 3D meniscus CFD to Azure HPC / Databricks GPU and HJT wafer / ITO target / warranty ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 284M LaMer/ALD vectors in Fabric SSD DiskANN",
+        "model_answer": "Route first-principles DFT SAM dipole and 3D meniscus CFD to Azure HPC / Databricks GPU and HJT wafer / ITO target / warranty ERP to Snowflake/SAP S/4HANA via OneLake Mirroring ($0 compute), indexing the 284M LaMer/ALD vectors in Fabric SSD DiskANN",
+        "task_type": "choice",
+        "confidence": 0.96,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 54,
+    },
+    {
+        "id": "DL-459",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 284M SSD DiskANN + SDS + ALDO vs 4-hour lagged end-of-line IV flash testers across 20 tandem PV plants with 6,000 thin-film engineers and ESG auditors",
+        "expected": "Hybrid Better Together: Stream 990K EPS hyperspectral PL, VASP vacuum & meniscus telemetry into Eventhouse ($0/GB tax), index 284M vectors in SSD DiskANN (-92% RAM), run 10ms piezo-lip/butterfly-valve trims on ALDO edge, and serve 6,000 users via DirectLake (-93.9% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS hyperspectral PL, VASP vacuum & meniscus telemetry into Eventhouse ($0/GB tax), index 284M vectors in SSD DiskANN (-92% RAM), run 10ms piezo-lip/butterfly-valve trims on ALDO edge, and serve 6,000 users via DirectLake (-93.9% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 54,
+    },
+    {
+        "id": "DL-460",
+        "category": "Fabric IQ & Ontology",
+        "question": "Tandem-Line-11 VASP vacuum pump-down slope lags -18.4% while inline PL splits at 788nm (FWHM=52.8nm > 40.0nm limit, yellow δ-phase onset) under IEC 61215 damp-heat and EU Ecodesign rules",
+        "expected": "Eventhouse KQL 10ms -18.4% VASP Lag & 788nm PL Split Sense ($0/GB Tax) + 6-Hop 284M DiskANN -3.2μm Piezo Lip, +320ms Valve & +6.5°C N2 Match (11ms) + Foundry IQ 34.2nm FWHM 31.8% Eff 99.92% Pb Gate (11ms) + Teams ALDO Commit (10ms = 42ms E2E, Protect $35.50M SLA)",
+        "model_answer": "Eventhouse KQL 10ms -18.4% VASP Lag & 788nm PL Split Sense ($0/GB Tax) + 6-Hop 284M DiskANN -3.2μm Piezo Lip, +320ms Valve & +6.5°C N2 Match (11ms) + Foundry IQ 34.2nm FWHM 31.8% Eff 99.92% Pb Gate (11ms) + Teams ALDO Commit (10ms = 42ms E2E, Protect $35.50M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 54,
+    },
 ]
 
 
@@ -14093,6 +14220,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     hbm4_hybrid_bonding_sim = simulate_ontology_incident("global_hbm4_hybrid_bonding_fabric_16hi_tsv_cucu_cmp_dishing_muf_vs_4clouds")
     glass_core_substrate_sim = simulate_ontology_incident("global_glass_core_substrate_fabric_tgv_laser_lide_metallization_warpage_vs_4clouds")
     solid_state_battery_sim = simulate_ontology_incident("global_solid_state_battery_fabric_sulfide_argyrodite_dry_electrode_h2s_wip_vs_4clouds")
+    perovskite_silicon_tandem_sim = simulate_ontology_incident("global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -14207,6 +14335,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_hbm4_hybrid_bonding_fabric_16hi_tsv_cucu_cmp_dishing_muf_vs_4clouds": hbm4_hybrid_bonding_sim,
         "global_glass_core_substrate_fabric_tgv_laser_lide_metallization_warpage_vs_4clouds": glass_core_substrate_sim,
         "global_solid_state_battery_fabric_sulfide_argyrodite_dry_electrode_h2s_wip_vs_4clouds": solid_state_battery_sim,
+        "global_perovskite_silicon_tandem_fabric_slot_die_vasp_crystallization_ald_vs_4clouds": perovskite_silicon_tandem_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -14410,6 +14539,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r101_ontology_sim_mean_ms = round(sum(r101_sim_latencies) / len(r101_sim_latencies), 2)
     r102_sim_latencies = sim_latencies[:109]
     r102_ontology_sim_mean_ms = round(sum(r102_sim_latencies) / len(r102_sim_latencies), 2)
+    r103_sim_latencies = sim_latencies[:110]
+    r103_ontology_sim_mean_ms = round(sum(r103_sim_latencies) / len(r103_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -15757,11 +15888,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-15",
         },
+        {
+            "id": "SPEC-PEROVSKITE-SILICON-TANDEM-SOLAR-SLOT-DIE-VASP-ALD-R104",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 2.4×1.2m perovskite-silicon tandem line-scan hyperspectral Photoluminescence (PL) streams, VASP vacuum-flash capacitance manometer curves, and confocal slot-die meniscus streams while Cosmos DB in Fabric SSD DiskANN indexes 284M+ Landau-Levich meniscus tensors, DMF/DMSO LaMer burst-nucleation phase fields, and Spatial ALD SnO2/Al2O3 barrier vectors alongside Fabric Sustainability Data Solutions (SDS) 99.92% Pb2+ chelation and EU Ecodesign solar passports and SQL Server on Azure Local (ALDO) at shop-floor edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary DFT SAM interface/meniscus CFD simulations and wafer/warranty ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-15",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r103",
-        "generated_at": "2026-11-15T23:52:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-16-r104",
+        "generated_at": "2026-11-16T00:05:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -15772,6 +15916,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R103 snapshot n=456 mean was 169.0ms; "
                     f"historical R102 snapshot n=452 mean was 170.0ms; "
                     f"historical R101 snapshot n=448 mean was 171.5ms; "
                     f"historical R100 snapshot n=444 mean was 173.0ms; "
@@ -15880,6 +16025,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R103 snapshot n=110 mean was {r103_ontology_sim_mean_ms}ms; "
                     f"historical R102 snapshot n=109 mean was {r102_ontology_sim_mean_ms}ms; "
                     f"historical R101 snapshot n=108 mean was {r101_ontology_sim_mean_ms}ms; "
                     f"historical R100 snapshot n=107 mean was {r100_ontology_sim_mean_ms}ms; "
@@ -15981,6 +16127,10 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                     f"historical R4 snapshot n=11 mean was {r4_ontology_sim_mean_ms}ms; "
                     f"historical R3 snapshot n=10 mean was {r3_ontology_sim_mean_ms}ms)."
                 ),
+                "r103_historical_denominators": {
+                    "r103_routing_matrix_n456_mean_ms": 169.0,
+                    "r103_ontology_simulations_n110_mean_ms": r103_ontology_sim_mean_ms,
+                },
                 "r102_historical_denominators": {
                     "r102_routing_matrix_n452_mean_ms": 170.0,
                     "r102_ontology_simulations_n109_mean_ms": r102_ontology_sim_mean_ms,
@@ -16447,6 +16597,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r103_110_simulation_mean_modeled_latency_ms": r103_ontology_sim_mean_ms,
             "r102_109_simulation_mean_modeled_latency_ms": r102_ontology_sim_mean_ms,
             "r101_108_simulation_mean_modeled_latency_ms": r101_ontology_sim_mean_ms,
             "r100_107_simulation_mean_modeled_latency_ms": r100_ontology_sim_mean_ms,
