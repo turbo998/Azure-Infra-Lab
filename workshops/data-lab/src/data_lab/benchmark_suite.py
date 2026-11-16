@@ -11169,6 +11169,78 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (424M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_neuromorphic_event_vision_snn_fabric_dvs_aer_spike_memristor_drift_vs_4clouds":
+        return {
+            "scenario_id": "global_neuromorphic_event_vision_snn_fabric_dvs_aer_spike_memristor_drift_vs_4clouds",
+            "title": "Global Sub-Micron Neuromorphic Event-Based Vision (120dB HDR Dynamic Vision Sensor DVS & 3D Hybrid-Bonded RRAM Spiking Neural Network SNN) Address-Event-Representation (AER) Background-Avalanche Interdiction, Synaptic Conductance Drift Compensation & 18.4mW Obstacle Avoidance Loop (995K EPS · 428M DiskANN · 51ms E2E · Historic R140, 145 FAQs, 124.0ms Ontology Mean, 137.0ms Matrix Mean & >$48M SLA Milestone)",
+            "telemetry": {
+                "neuromorphic_autonomy_and_robotics_centers_count": 18,
+                "hybrid_bonded_3d_evs_snn_vision_pods_count": 18000,
+                "asynchronous_aer_edge_concentrators_count": 720,
+                "on_chip_rram_crossbar_conductance_monitors_count": 1440,
+                "aer_spike_density_and_rram_drift_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "spatiotemporal_time_surface_stdp_and_rram_vectors_count": 428000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "pod108_uncontrolled_aer_bus_saturation_pct": 94.8,
+                "pod108_governed_aer_bus_utilization_pct": 21.4,
+                "max_safe_aer_arbiter_utilization_pct": 45.0,
+                "governed_snn_lif_obstacle_recall_pct": 99.42,
+                "neuromorphic_vision_pod_power_mw": 18.4,
+                "uncorrelated_ban_glare_spikes_filtered_pct": 96.8,
+                "concurrent_neuromorphic_silicon_and_autonomy_engineers": 9000,
+            },
+            "ontology_traversal": [
+                "Autonomy-Hub-06 Sector-4 -> DroneSwarm-Pod-108 (3D Cu-Cu Hybrid-Bonded 1MP Prophesee/Sony DVS + HfO2 RRAM SNN Crossbar) -> Eventhouse KQL series_fit_line() & series_fft() isolate a specular solar-glint 82.4 MEPS Background-Activity-Noise (BAN) spike avalanche saturating the asynchronous AER row arbiter to 94.8% (>45.0% ceiling) while sub-threshold HfO2 filament relaxation drifts SNN Leaky-Integrate-and-Fire (LIF) recall down to 81.6% (<98.50% SOTIF floor) in 12ms",
+                "DroneSwarm-Pod-108 -> OneLake Zero-Copy Shortcut to Azure HPC Surrogate-Gradient Backpropagation-Through-Time (BPTT) SNN & Filamentary RRAM Langevin Drift Solvers + Zero-ETL Mirroring from Snowflake 300mm CIS+RRAM Wafer Binning & Autonomous Drone Fleet Mission ERP -> Correlates photoreceptor log-differencing bias V_diff/V_off with synaptic weight conductance G_ij",
+                "AER-and-SNN-108 -> Cosmos DB SSD DiskANN (428M spatio-temporal time-surface nearest-neighbor filtering, photoreceptor bias-DAC & 1.8ns RRAM conductance-refresh vectors, -92% RAM) -> 13ms Top-K match (0.99 similarity): +28 mV photoreceptor V_off threshold bias + 420 μs spatio-temporal refractory window + 1.8 ns write-verify synaptic refresh pulse",
+                "Bias-and-SNN Recipe -> Foundry IQ Guardrail (NEUROMORPHIC-EVENT-VISION-DVS-SNN-AER-SOP-147) -> Verifies AER arbiter bus utilization drops to 21.4% (<= 45.0%, stripping 96.8% uncorrelated BAN glare spikes), SNN LIF high-speed obstacle recall locks at 99.42% (>= 98.50%), and pod power holds at 18.4 mW in 13ms",
+                "Approved Recipe -> VP of Autonomous Perception Teams Card -> SQL on Azure Local (ALDO) corridor edge dispatches on-chip bias-DAC registers and RRAM refresh pulses + Fabric SDS mints 18.4mW ISO 21448 SOTIF Neuromorphic Safety Passport into 1GB Free Fabric SQL in 13ms (51ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_neuromorphic_monthly_tco_usd": 14200,
+                "competitor_stitched_neuromorphic_monthly_tco_usd": 299500,
+                "monthly_neuromorphic_tco_saved_usd": 285300,
+                "monthly_neuromorphic_tco_savings_pct": 95.2,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 805000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL Asynchronous AER Spike-Avalanche, Time-Surface Entropy & RRAM Drift Sensing Agent",
+                        "operation": "Run series_fit_line() and series_fft() across 995K EPS 18,000-pod asynchronous AER bus-occupancy, spatio-temporal time-surface entropy, and 1,440-monitor HfO2 RRAM synaptic conductance streams at $0/GB write surcharge to isolate 94.8% AER bus saturation and 81.6% LIF recall drop in 12ms",
+                        "impact_metric": "12ms detection; $0/GB stream write surcharge saves $210,680/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 428M-Vector Spatio-Temporal Refractory Filter, Surrogate-Gradient SNN & RRAM Refresh Agent",
+                        "operation": "Query 428,000,000 DVS photoreceptor bias-DAC, spatio-temporal nearest-neighbor refractory, and HfO2 memristor filament refresh vectors in 13ms (0.99 cosine similarity at -92% RAM) to retrieve +28mV V_off bias, 420μs refractory filter, and 1.8ns RRAM refresh setpoints",
+                        "impact_metric": "13ms vector recall; $2,480/mo SSD DiskANN vs $50,800/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Autonomous Perception VP Teams Card, ALDO Corridor Edge & 18.4mW SOTIF Neuromorphic Passport Agent",
+                        "operation": "Verify SOP-147 guardrails (13ms) and dispatch DVS bias-DAC registers, refractory filter LUTs, and 1.8ns RRAM refresh pulses via SQL on Azure Local (ALDO) plus 99.42% recall ISO 21448 SOTIF passport to 1GB Free Fabric SQL (13ms)",
+                        "impact_metric": "51ms E2E loop; 21.4% AER load & 99.42% recall (18.4 mW); -$285.3K/mo (-95.2%) TCO; $48.10M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "NEUROMORPHIC-EVENT-VISION-DVS-SNN-AER-SOP-147",
+                "hard_constraint": "Never allow asynchronous DVS Address-Event-Representation (AER) bus utilization to exceed 45.0% (arbiter deadlock risk) or SNN LIF obstacle-detection recall to fall below 98.50% under ISO 21448 SOTIF rules",
+                "proposed_change": "Shift DroneSwarm-Pod-108 photoreceptor V_off threshold +28 mV, enable 420 μs spatio-temporal nearest-neighbor refractory filtering, and trigger a 1.8 ns RRAM conductance refresh pulse (cutting AER bus load from 94.8% to 21.4% and restoring SNN recall to 99.42% at 18.4 mW), and certify SOTIF passport in Fabric SDS",
+                "aer_bus_214_pct_and_ban_glare_suppression_verified": True,
+                "snn_lif_9942_pct_recall_and_184_mw_sotif_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 48100000,
+                "end_to_end_latency_ms": 51,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (428M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -18373,6 +18445,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 63,
     },
+    {
+        "id": "DL-601",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 995K EPS asynchronous DVS Address-Event-Representation (AER) bus-occupancy, spatio-temporal time-surface entropy, and 3D HfO2 RRAM synaptic conductance drift streams across 18,000 neuromorphic vision pods without $210.7K/mo per-attribute cloud fees or arbiter deadlock",
+        "expected": "Route to Fabric Eventhouse KQL (12ms 94.8% AER Bus Saturation & 81.6% SNN Recall Drop Sense + $0/GB Write Tax + 428M SSD DiskANN +28mV V_off, 420us Refractory & 1.8ns RRAM Refresh Match 13ms + ALDO Edge 13ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (12ms 94.8% AER Bus Saturation & 81.6% SNN Recall Drop Sense + $0/GB Write Tax + 428M SSD DiskANN +28mV V_off, 420us Refractory & 1.8ns RRAM Refresh Match 13ms + ALDO Edge 13ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 62,
+    },
+    {
+        "id": "DL-602",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline Surrogate-Gradient Backpropagation-Through-Time (BPTT) Spiking Neural Network training and filamentary HfO2 RRAM Langevin drift solvers vs 51ms edge DVS bias-DAC & crossbar refresh control",
+        "expected": "Route offline Surrogate-Gradient SNN BPTT & RRAM filament Langevin simulations to Azure HPC / Databricks GPU and zero-copy 428M neuromorphic vectors to OneLake while keeping 51ms corridor loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline Surrogate-Gradient SNN BPTT & RRAM filament Langevin simulations to Azure HPC / Databricks GPU and zero-copy 428M neuromorphic vectors to OneLake while keeping 51ms corridor loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 62,
+    },
+    {
+        "id": "DL-603",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 428M SSD DiskANN + OneLake IQ + SDS + ALDO vs 30fps frame-camera cloud uploads across 18 neuromorphic robotics & drone autonomy centers with 9,000 silicon and perception engineers",
+        "expected": "Hybrid Better Together: Stream 995K EPS AER spike-density & RRAM drift telemetry into Eventhouse ($0/GB tax), index 428M vectors in SSD DiskANN (-92% RAM), run 13ms bias-DAC/RRAM loops on ALDO edge, and serve 9,000 users via DirectLake (-95.2% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 995K EPS AER spike-density & RRAM drift telemetry into Eventhouse ($0/GB tax), index 428M vectors in SSD DiskANN (-92% RAM), run 13ms bias-DAC/RRAM loops on ALDO edge, and serve 9,000 users via DirectLake (-95.2% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 62,
+    },
+    {
+        "id": "DL-604",
+        "category": "Fabric IQ & Ontology",
+        "question": "DroneSwarm-Pod-108 solar-glint 82.4 MEPS BAN spike storm saturates the asynchronous AER arbiter to 94.8% (>45.0% limit) while HfO2 RRAM relaxation drops SNN LIF obstacle recall to 81.6% (<98.50% SOTIF floor) under 18.4mW rules",
+        "expected": "Eventhouse KQL 12ms 94.8% AER & 81.6% Recall Sense ($0/GB Tax) + 6-Hop 428M DiskANN +28mV V_off, 420us Refractory & 1.8ns RRAM Match (13ms) + Foundry IQ 21.4% Bus 99.42% Recall Gate (13ms) + Teams ALDO Commit (13ms = 51ms E2E, Protect $48.10M SLA)",
+        "model_answer": "Eventhouse KQL 12ms 94.8% AER & 81.6% Recall Sense ($0/GB Tax) + 6-Hop 428M DiskANN +28mV V_off, 420us Refractory & 1.8ns RRAM Match (13ms) + Foundry IQ 21.4% Bus 99.42% Recall Gate (13ms) + Teams ALDO Commit (13ms = 51ms E2E, Protect $48.10M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 62,
+    },
 ]
 
 
@@ -18634,6 +18754,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     subsea_basalt_carbon_mineralization_sim = simulate_ontology_incident("global_subsea_basalt_carbon_mineralization_fabric_scco2_hydrate_das_seismic_vs_4clouds")
     neutral_atom_quantum_array_sim = simulate_ontology_incident("global_neutral_atom_quantum_array_fabric_optical_tweezer_aod_rydberg_erasure_qec_vs_4clouds")
     molten_oxide_electrolysis_steel_sim = simulate_ontology_incident("global_molten_oxide_electrolysis_steel_fabric_inert_anode_skull_ledge_o2_slag_vs_4clouds")
+    neuromorphic_event_vision_snn_sim = simulate_ontology_incident("global_neuromorphic_event_vision_snn_fabric_dvs_aer_spike_memristor_drift_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -18784,6 +18905,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_subsea_basalt_carbon_mineralization_fabric_scco2_hydrate_das_seismic_vs_4clouds": subsea_basalt_carbon_mineralization_sim,
         "global_neutral_atom_quantum_array_fabric_optical_tweezer_aod_rydberg_erasure_qec_vs_4clouds": neutral_atom_quantum_array_sim,
         "global_molten_oxide_electrolysis_steel_fabric_inert_anode_skull_ledge_o2_slag_vs_4clouds": molten_oxide_electrolysis_steel_sim,
+        "global_neuromorphic_event_vision_snn_fabric_dvs_aer_spike_memristor_drift_vs_4clouds": neuromorphic_event_vision_snn_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -19059,6 +19181,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r137_ontology_sim_mean_ms = round(sum(r137_sim_latencies) / len(r137_sim_latencies), 2)
     r138_sim_latencies = sim_latencies[:145]
     r138_ontology_sim_mean_ms = round(sum(r138_sim_latencies) / len(r138_sim_latencies), 2)
+    r139_sim_latencies = sim_latencies[:146]
+    r139_ontology_sim_mean_ms = round(sum(r139_sim_latencies) / len(r139_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -20874,11 +20998,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-17",
         },
+        {
+            "id": "SPEC-NEUROMORPHIC-EVENT-VISION-DVS-SNN-AER-428M-R140",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 18,000-pod 3D hybrid-bonded Dynamic Vision Sensor (DVS) and HfO2 RRAM Spiking Neural Network (SNN) asynchronous Address-Event-Representation (AER) bus-occupancy, spatio-temporal time-surface entropy, and crossbar conductance drift streams while Cosmos DB in Fabric SSD DiskANN indexes 428M+ photoreceptor V_off/V_refr bias-DAC, spatio-temporal nearest-neighbor refractory filtering, and Surrogate-Gradient SNN/RRAM refresh vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) 18.4mW ISO 21448 SOTIF ledgers and SQL Server on Azure Local (ALDO) at corridor edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary BPTT SNN training and CIS+RRAM wafer ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/cosmos-db/vector-search",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-17",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r139",
-        "generated_at": "2026-11-17T03:28:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r140",
+        "generated_at": "2026-11-17T03:44:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -20889,6 +21026,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R139 snapshot n=600 mean was 137.5ms; "
                     f"historical R138 snapshot n=596 mean was 138.0ms; "
                     f"historical R137 snapshot n=592 mean was 138.5ms; "
                     f"historical R136 snapshot n=588 mean was 139.0ms; "
@@ -21033,6 +21171,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R139 snapshot n=146 mean was {r139_ontology_sim_mean_ms}ms; "
                     f"historical R138 snapshot n=145 mean was {r138_ontology_sim_mean_ms}ms; "
                     f"historical R137 snapshot n=144 mean was {r137_ontology_sim_mean_ms}ms; "
                     f"historical R136 snapshot n=143 mean was {r136_ontology_sim_mean_ms}ms; "
@@ -21692,6 +21831,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r139_146_simulation_mean_modeled_latency_ms": r139_ontology_sim_mean_ms,
             "r138_145_simulation_mean_modeled_latency_ms": r138_ontology_sim_mean_ms,
             "r137_144_simulation_mean_modeled_latency_ms": r137_ontology_sim_mean_ms,
             "r136_143_simulation_mean_modeled_latency_ms": r136_ontology_sim_mean_ms,
