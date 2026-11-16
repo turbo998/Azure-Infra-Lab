@@ -2079,13 +2079,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 53)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 47400000)
 
-    def test_scenario_matrix_596_cases_and_explicit_miss(self) -> None:
+    def test_global_molten_oxide_electrolysis_steel_fabric_inert_anode_skull_ledge_o2_slag_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_molten_oxide_electrolysis_steel_fabric_inert_anode_skull_ledge_o2_slag_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["moe_320ka_1600c_electrolysis_cells_count"], 480)
+        self.assertEqual(sim["telemetry"]["anode_shunt_skull_heatflux_and_o2_eps"], 995000)
+        self.assertEqual(sim["telemetry"]["factsage_slag_spinel_passivation_and_mhd_skull_vectors_count"], 424000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_moe_tco_saved_usd"], 283400)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_moe_tco_savings_pct"], 95.2)
+        self.assertTrue(sim["foundry_iq_guardrail"]["inert_anode_spinel_passivation_and_086_acm2_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["frozen_skull_98_cm_and_zero_co2_cbam_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 52)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 47750000)
+
+    def test_scenario_matrix_600_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 596)
-        self.assertEqual(matrix["passed_scenarios"], 595)
+        self.assertEqual(matrix["total_scenarios"], 600)
+        self.assertEqual(matrix["passed_scenarios"], 599)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 138.0)
+        self.assertEqual(matrix["avg_latency_ms"], 137.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3663,6 +3678,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-95.1% TCO", by_id["DL-595"]["expected"])
         self.assertIn("Protect $47.40M SLA", by_id["DL-596"]["expected"])
 
+    def test_fabric_molten_oxide_electrolysis_moe_zero_carbon_steel_inert_anode_skull_ledge_vs_4clouds_2026_11_17_r139_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-597", "DL-598", "DL-599", "DL-600"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("13ms 1.28A/cm2 Anode Transpassive & 4.8cm Skull Thinning Sense", by_id["DL-597"]["expected"])
+        self.assertIn("FactSage slag thermodynamics & 3D MHD Stefan skull", by_id["DL-598"]["expected"])
+        self.assertIn("-95.2% TCO", by_id["DL-599"]["expected"])
+        self.assertIn("Protect $47.75M SLA", by_id["DL-600"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3680,11 +3706,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 595)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 596)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 138.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 145)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 125.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 599)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 600)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 137.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 146)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 124.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r138_145_simulation_mean_modeled_latency_ms"], 125.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r137_144_simulation_mean_modeled_latency_ms"], 125.5)
         self.assertEqual(loaded["ontology_simulations_summary"]["r136_143_simulation_mean_modeled_latency_ms"], 126.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r135_142_simulation_mean_modeled_latency_ms"], 126.5)
@@ -3815,7 +3842,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 141)
+        self.assertEqual(len(refs), 142)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17"))
@@ -3962,6 +3989,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_heterogeneous_iiiv_qd_laser_silicon_fabric_micro_transfer_printing_optical_io_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_subsea_basalt_carbon_mineralization_fabric_scco2_hydrate_das_seismic_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_neutral_atom_quantum_array_fabric_optical_tweezer_aod_rydberg_erasure_qec_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_molten_oxide_electrolysis_steel_fabric_inert_anode_skull_ledge_o2_slag_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
