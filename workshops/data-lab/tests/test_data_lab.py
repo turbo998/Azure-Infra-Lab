@@ -2049,13 +2049,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 55)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 46700000)
 
-    def test_scenario_matrix_588_cases_and_explicit_miss(self) -> None:
+    def test_global_subsea_basalt_carbon_mineralization_fabric_scco2_hydrate_das_seismic_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_subsea_basalt_carbon_mineralization_fabric_scco2_hydrate_das_seismic_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["subsea_scco2_and_seawater_injection_trees_count"], 380)
+        self.assertEqual(sim["telemetry"]["das_seismic_jt_temp_and_raman_ph_eps"], 995000)
+        self.assertEqual(sim["telemetry"]["toughreact_basalt_carbonation_coulomb_and_hydrate_vectors_count"], 416000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_basalt_tco_saved_usd"], 279600)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_basalt_tco_savings_pct"], 95.1)
+        self.assertTrue(sim["foundry_iq_guardrail"]["fault_coulomb_stability_and_mw_042_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["hydrate_free_wellhead_and_964_pct_mineralization_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 54)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 47050000)
+
+    def test_scenario_matrix_592_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 588)
-        self.assertEqual(matrix["passed_scenarios"], 587)
+        self.assertEqual(matrix["total_scenarios"], 592)
+        self.assertEqual(matrix["passed_scenarios"], 591)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 139.0)
+        self.assertEqual(matrix["avg_latency_ms"], 138.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3611,6 +3626,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-95.1% TCO", by_id["DL-587"]["expected"])
         self.assertIn("Protect $46.70M SLA", by_id["DL-588"]["expected"])
 
+    def test_fabric_subsea_basalt_carbon_mineralization_scco2_hydrate_das_seismic_cdr_vs_4clouds_2026_11_17_r137_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-589", "DL-590", "DL-591", "DL-592"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("13ms Mw=1.18 Fault-Slip & +1.2C Hydrate Sense", by_id["DL-589"]["expected"])
+        self.assertIn("3D TOUGHREACT basalt mineralization & Mohr-Coulomb", by_id["DL-590"]["expected"])
+        self.assertIn("-95.1% TCO", by_id["DL-591"]["expected"])
+        self.assertIn("Protect $47.05M SLA", by_id["DL-592"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3628,11 +3654,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 587)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 588)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 139.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 143)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 126.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 591)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 592)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 138.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 144)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 125.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r136_143_simulation_mean_modeled_latency_ms"], 126.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r135_142_simulation_mean_modeled_latency_ms"], 126.5)
         self.assertEqual(loaded["ontology_simulations_summary"]["r134_141_simulation_mean_modeled_latency_ms"], 127.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r133_140_simulation_mean_modeled_latency_ms"], 127.5)
@@ -3761,10 +3788,10 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 139)
+        self.assertEqual(len(refs), 140)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
-            self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16"))
+            self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17"))
         self.assertIn("retail_cross_cloud_planning", loaded["ontology_simulations"])
         self.assertIn("financial_multi_cloud_fraud", loaded["ontology_simulations"])
         self.assertIn("finops_rayfin_observability", loaded["ontology_simulations"])
@@ -3906,6 +3933,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_ferroelectric_hzo_fefet_fabric_300mm_ald_orthorhombic_wakeup_endurance_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_ar_mr_metasurface_waveguide_fabric_sic_jfil_nanoimprint_slanted_grating_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_heterogeneous_iiiv_qd_laser_silicon_fabric_micro_transfer_printing_optical_io_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_subsea_basalt_carbon_mineralization_fabric_scco2_hydrate_das_seismic_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
