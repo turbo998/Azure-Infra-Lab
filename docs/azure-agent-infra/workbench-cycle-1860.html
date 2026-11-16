@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1860 · Entra Scope Rotation Workbench</title>
+<style>body{margin:0;background:#0b345c;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1860｜Entra Agent ID Scope 轮换工作台</h1>
+<div class="g">
+<div class="c"><label>高敏轮换周期(h)</label><input id="h" type="range" min="1" max="72" value="8"><label>过渡窗口(min)</label><input id="w" type="range" min="1" max="120" value="18"><label>轮换错误峰值(%)</label><input id="e" type="range" min="0" max="20" value="3"></div>
+<div class="c"><h3>轮换策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低轮换错误峰值，再优化过渡窗口，最后调整高敏轮换周期。</div></div>
+<script>
+function calc(){const h=+document.getElementById('h').value,w=+document.getElementById('w').value,e=+document.getElementById('e').value;const v=((72-h)*0.8)+((120-w)*0.55)+((20-e)*2.0);if(v>120)state.textContent='安全与连续性平衡良好';else if(v>100)state.textContent='可上线，建议继续降低错误峰值';else state.textContent='风险偏高，建议收紧轮换和过渡策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['h','w','e'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

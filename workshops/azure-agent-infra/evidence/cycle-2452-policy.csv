@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+pci-dss-hsm-transaction-policy-violation saturation gate,172,184,0.9348,measured,cardholder-data-zone-fence mismatch replay + deterministic verification
+cardholder-data-zone-fence fence integrity guard,161,168,0.9583,measured,cardholder-data-zone-fence integrity logs
+tenant-scope cardholder-data-zone-fence authorization fence,154,161,0.9565,measured,tenant cardholder-data-zone-fence fairness replay logs

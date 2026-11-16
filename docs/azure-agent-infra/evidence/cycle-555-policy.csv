@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+dns-policy-violation saturation gate,172,184,0.9348,measured,dns-enforcement-fence mismatch replay + deterministic verification
+dns-enforcement-fence fence integrity guard,161,168,0.9583,measured,dns-enforcement-fence integrity logs
+tenant-scope dns-enforcement-fence authorization fence,154,161,0.9565,measured,tenant dns-enforcement-fence fairness replay logs

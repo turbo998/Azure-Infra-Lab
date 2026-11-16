@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1887 · Cross-region Retry Budget Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1887｜Cross-region Retry Budget 工作台</h1>
+<div class="g">
+<div class="c"><label>重试放大倍数(x)</label><input id="amp" type="range" min="1" max="8" value="2"><label>关键请求成功率(%)</label><input id="succ" type="range" min="40" max="100" value="95"><label>预算耗尽触发率(%)</label><input id="exh" type="range" min="0" max="40" value="9"></div>
+<div class="c"><h3>跨区重试治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先压低放大倍数，再降低耗尽触发率并维持高成功率。</div></div>
+<script>
+function calc(){const a=+document.getElementById('amp').value,s=+document.getElementById('succ').value,e=+document.getElementById('exh').value;const v=((8-a)*18)+((s-40)*1.2)+((40-e)*1.7);if(v>188)state.textContent='可生产：跨区重试放大控制稳定';else if(v>158)state.textContent='可上线：建议继续降低预算耗尽触发';else state.textContent='风险偏高：需强化预算分配与回退策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['amp','succ','exh'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

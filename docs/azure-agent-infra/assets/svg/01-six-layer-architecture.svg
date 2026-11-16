@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 740" width="1080" height="740">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#065F46" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4C1D95" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#6D28D9" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#B45309" stop-opacity="0.72"/>
+    </linearGradient>
+    <linearGradient id="roseGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7F1D1D" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#B91C1C" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="740" rx="16" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="1080" height="6" rx="3" fill="url(#headerGrad)"/>
+  <text x="32" y="40" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="21" font-weight="700">图 1 · Azure AI Agent Infra 四层全栈参考架构全景图 (Build · Run · Ground · Govern)</text>
+  <text x="32" y="64" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13">Agent Harness 编排层 × 六大计算运行时 (Managed → Serverless → Session/Sandbox → AKS → VM) × 记忆与状态底座 × 零信任控制面</text>
+
+  <!-- Layer 1: Build (Agent Harness) -->
+  <rect x="32" y="84" width="1016" height="114" rx="10" fill="url(#blueGrad)" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="48" y="108" fill="#93C5FD" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12" font-weight="700">LAYER 1 · BUILD (AGENT HARNESS &amp; ORCHESTRATION)</text>
+  <text x="455" y="108" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="14" font-weight="700">定义 Agent 规划、推理循环、工具调用、多智能体协同与人机回环</text>
+  <rect x="48" y="120" width="188" height="62" rx="6" fill="#0F172A" fill-opacity="0.72" stroke="#3B82F6"/>
+  <text x="142" y="142" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Microsoft Agent Framework</text>
+  <text x="142" y="160" text-anchor="middle" fill="#60A5FA" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">MAF · 跨运行时统一多 Agent 编排</text>
+  <text x="142" y="175" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">自动继承可观测 / 安全 / 治理</text>
+
+  <rect x="248" y="120" width="188" height="62" rx="6" fill="#0F172A" fill-opacity="0.72" stroke="#3B82F6"/>
+  <text x="342" y="142" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">GitHub Copilot SDK</text>
+  <text x="342" y="160" text-anchor="middle" fill="#60A5FA" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">生产级 Coding &amp; 操作执行内核</text>
+  <text x="342" y="175" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">多模型路由 · 原生工具/Shell/MCP</text>
+
+  <rect x="448" y="120" width="188" height="62" rx="6" fill="#0F172A" fill-opacity="0.72" stroke="#3B82F6"/>
+  <text x="542" y="142" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">LangGraph / AutoGen / CrewAI</text>
+  <text x="542" y="160" text-anchor="middle" fill="#60A5FA" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">有向状态图 &amp; Checkpoint 恢复</text>
+  <text x="542" y="175" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">无缝对接 HorizonDB / Durable</text>
+
+  <rect x="648" y="120" width="188" height="62" rx="6" fill="#0F172A" fill-opacity="0.72" stroke="#3B82F6"/>
+  <text x="742" y="142" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">OpenClaw / Hermes / Claude</text>
+  <text x="742" y="160" text-anchor="middle" fill="#60A5FA" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">BYO 开源 / 商业自主 Agent 框架</text>
+  <text x="742" y="175" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">AKSClaw 技能市场与沙箱托管</text>
+
+  <rect x="848" y="120" width="184" height="62" rx="6" fill="#0F172A" fill-opacity="0.72" stroke="#3B82F6"/>
+  <text x="940" y="142" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">开放互联协议 (A2A &amp; MCP)</text>
+  <text x="940" y="160" text-anchor="middle" fill="#60A5FA" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">Agent-to-Agent &amp; Model Context</text>
+  <text x="940" y="175" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">跨框架状态传递与工具标准化</text>
+
+  <!-- Layer 2: Run (Agent Runtime Spectrum) -->
+  <rect x="32" y="212" width="1016" height="170" rx="10" fill="url(#tealGrad)" stroke="#34D399" stroke-width="1.5"/>
+  <text x="48" y="236" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12" font-weight="700">LAYER 2 · RUN (AZURE 6-TIER COMPOSABLE AGENT RUNTIME SPECTRUM)</text>
+  <text x="535" y="236" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13" font-weight="700">左→右：平台托管省心度递减，底层基础设施/内核/网络/存储控制力递增</text>
+
+  <rect x="48" y="248" width="156" height="118" rx="6" fill="#0F172A" fill-opacity="0.76" stroke="#10B981"/>
+  <text x="126" y="268" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">1. Foundry Hosted</text>
+  <text x="126" y="286" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">平台托管 Agent 服务</text>
+  <text x="126" y="304" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 托管端点/会话/身份</text>
+  <text x="126" y="320" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 1,400+ MCP 工具箱</text>
+  <text x="126" y="336" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 零容器/集群运维</text>
+  <text x="126" y="354" text-anchor="middle" fill="#38BDF8" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">To-B 标准首选</text>
+
+  <rect x="214" y="248" width="156" height="118" rx="6" fill="#0F172A" fill-opacity="0.76" stroke="#10B981"/>
+  <text x="292" y="268" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">2. Durable Functions</text>
+  <text x="292" y="286" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">Serverless 持久编排</text>
+  <text x="292" y="304" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 事件驱动 Scale-to-0</text>
+  <text x="292" y="320" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 人工审批长周期挂起</text>
+  <text x="292" y="336" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 确定性重放与幂等重试</text>
+  <text x="292" y="354" text-anchor="middle" fill="#38BDF8" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">采购/财务/工单流</text>
+
+  <rect x="380" y="248" width="156" height="118" rx="6" fill="#0F172A" fill-opacity="0.76" stroke="#10B981"/>
+  <text x="458" y="268" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">3. ACA Dynamic Sessions</text>
+  <text x="458" y="286" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">Hyper-V 预热会话池</text>
+  <text x="458" y="304" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 硬件虚拟化强隔离</text>
+  <text x="458" y="320" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• Python解释器/自定义容器</text>
+  <text x="458" y="336" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 空闲自动回收 (~210ms)</text>
+  <text x="458" y="354" text-anchor="middle" fill="#38BDF8" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">短时不可信代码执行</text>
+
+  <rect x="546" y="248" width="156" height="118" rx="6" fill="#0F172A" fill-opacity="0.76" stroke="#10B981"/>
+  <text x="624" y="268" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">4. ACA Sandboxes</text>
+  <text x="624" y="286" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">有状态编程工作区 (Preview)</text>
+  <text x="624" y="304" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• create/pause/resume</text>
+  <text x="624" y="320" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 内存与磁盘快照恢复</text>
+  <text x="624" y="336" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• OCI 镜像 + 持久卷挂载</text>
+  <text x="624" y="354" text-anchor="middle" fill="#FBBF24" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">Coding / 浏览器自动化</text>
+
+  <rect x="712" y="248" width="156" height="118" rx="6" fill="#0F172A" fill-opacity="0.76" stroke="#10B981"/>
+  <text x="790" y="268" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">5. AKS + Kata (AKSClaw)</text>
+  <text x="790" y="286" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">多租户 K8s Agent 平台</text>
+  <text x="790" y="304" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• Kata Pod VM 内核隔离</text>
+  <text x="790" y="320" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• KEDA 弹性 + 共享技能库</text>
+  <text x="790" y="336" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 5 道平台硬边界强制拦截</text>
+  <text x="790" y="354" text-anchor="middle" fill="#38BDF8" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">企业级多租户 / SRE 舰队</text>
+
+  <rect x="878" y="248" width="154" height="118" rx="6" fill="#0F172A" fill-opacity="0.76" stroke="#10B981"/>
+  <text x="955" y="268" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">6. E2B on Azure VMSS</text>
+  <text x="955" y="286" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">Firecracker MicroVM 集群</text>
+  <text x="955" y="304" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• D96as_v7 (AMD Turin)</text>
+  <text x="955" y="320" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 108ms Base / 132ms Code</text>
+  <text x="955" y="336" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• UFFD + NBD 10万+ 并发</text>
+  <text x="955" y="354" text-anchor="middle" fill="#F43F5E" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">AI Native 虚拟电脑底座</text>
+
+  <!-- Layer 3: Ground (Models, Knowledge & Memory) -->
+  <rect x="32" y="396" width="1016" height="150" rx="10" fill="url(#purpleGrad)" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="48" y="420" fill="#C4B5FD" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12" font-weight="700">LAYER 3 · GROUND (MODELS, KNOWLEDGE &amp; STATE PERSISTENCE)</text>
+  <text x="485" y="420" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13" font-weight="700">支撑 Agent 推理、工具上下文、长短期记忆、Checkpoint 断点与审计溯源</text>
+
+  <rect x="48" y="432" width="236" height="100" rx="6" fill="#0F172A" fill-opacity="0.75" stroke="#8B5CF6"/>
+  <text x="166" y="454" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Foundry Models (11,000+)</text>
+  <text x="166" y="474" text-anchor="middle" fill="#C4B5FD" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">Azure OpenAI · Claude · DeepSeek · Llama</text>
+  <text x="166" y="492" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• PTU 预留吞吐 + 标准按量溢出</text>
+  <text x="166" y="508" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 模型路由与 Fine-Tuning 微调</text>
+
+  <rect x="296" y="432" width="236" height="100" rx="6" fill="#0F172A" fill-opacity="0.75" stroke="#8B5CF6"/>
+  <text x="414" y="454" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Foundry IQ &amp; AI Search</text>
+  <text x="414" y="474" text-anchor="middle" fill="#C4B5FD" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">企业知识检索引擎 + 1,400+ MCP 连接器</text>
+  <text x="414" y="492" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 混合向量 + 语义重排 + 权限裁剪</text>
+  <text x="414" y="508" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• Logic Apps 企业连接器即插即用</text>
+
+  <rect x="544" y="432" width="244" height="100" rx="6" fill="#0F172A" fill-opacity="0.75" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="666" y="454" text-anchor="middle" fill="#FBBF24" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Azure HorizonDB (Preview)</text>
+  <text x="666" y="474" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">AI 原生 PostgreSQL 状态与记忆引擎</text>
+  <text x="666" y="492" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 单库融合 ACID + JSONB + DiskANN 向量</text>
+  <text x="666" y="508" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 存算分离 · 15只读副本 · 原生 Checkpoint</text>
+  <text x="666" y="524" text-anchor="middle" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">对标 OpenAI 8亿用户 PG 架构范式</text>
+
+  <rect x="800" y="432" width="232" height="100" rx="6" fill="#0F172A" fill-opacity="0.75" stroke="#8B5CF6"/>
+  <text x="916" y="454" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Cosmos DB &amp; Storage</text>
+  <text x="916" y="474" text-anchor="middle" fill="#C4B5FD" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">全球分布式会话状态 + 快照存储</text>
+  <text x="916" y="492" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 毫秒级多活读写 (Commerzbank 3万+/月)</text>
+  <text x="916" y="508" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• Azure Blob / Files / Lustre 承载快照卷</text>
+
+  <!-- Layer 4: Control & Govern -->
+  <rect x="32" y="560" width="1016" height="148" rx="10" fill="url(#amberGrad)" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="48" y="584" fill="#FDE68A" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12" font-weight="700">LAYER 4 · CONTROL &amp; GOVERN (IDENTITY, AI GATEWAY &amp; FLEET SECURITY)</text>
+  <text x="530" y="584" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13" font-weight="700">不依赖 Agent 自觉：在平台层强制执行身份归属、密钥托管、配额硬熔断与合规审计</text>
+
+  <rect x="48" y="596" width="320" height="98" rx="6" fill="#0F172A" fill-opacity="0.78" stroke="#F59E0B"/>
+  <text x="208" y="618" text-anchor="middle" fill="#FDE68A" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Microsoft Entra Agent ID (一等公民身份)</text>
+  <text x="208" y="638" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">Agent Blueprint + 责任人 (Owner/Sponsor)</text>
+  <text x="208" y="656" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 严禁直接继承用户登录 Token，按动作签发短时凭证</text>
+  <text x="208" y="674" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 审计日志同时记录 User 发起方与 Agent 执行方双重身份</text>
+
+  <rect x="380" y="596" width="328" height="98" rx="6" fill="#0F172A" fill-opacity="0.78" stroke="#F59E0B"/>
+  <text x="544" y="618" text-anchor="middle" fill="#FDE68A" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Unified AI Gateway (APIM / AKSClaw Gateway)</text>
+  <text x="544" y="638" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">密钥不出网关 · 亲和路由 · 令牌硬熔断</text>
+  <text x="544" y="656" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 容器内零 LLM API Key；Prefix-Cache 亲和路由提速降本</text>
+  <text x="544" y="674" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 用户/团队/Agent 三级 RPM·TPM·预算硬上限 + MCP 白名单</text>
+
+  <rect x="720" y="596" width="312" height="98" rx="6" fill="#0F172A" fill-opacity="0.78" stroke="#F59E0B"/>
+  <text x="876" y="618" text-anchor="middle" fill="#FDE68A" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Defender · Purview · Network Hardening</text>
+  <text x="876" y="638" text-anchor="middle" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">平台级安全姿态与数据防泄漏闭环</text>
+  <text x="876" y="656" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 封禁 169.254.169.254 IMDS 节点元数据防凭据窃取</text>
+  <text x="876" y="674" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• OTel GenAI 全链路追踪 + Purview 敏感数据合规治理</text>
+</svg>

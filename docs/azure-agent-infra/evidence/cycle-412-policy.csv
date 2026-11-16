@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Fixed-threshold hard trip gate,191,200,0.955,measured,demo simulation trace + deterministic replay
+Adaptive error-budget slow-burn trip,176,190,0.9263,measured,policy replay logs
+MCP/A2A cascading-failure safety fence,168,180,0.9333,measured,MCP policy replay logs

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+confidential-attestation-skr-cleanroom-guard-violation saturation gate,172,184,0.9348,measured,confidential-attestation-skr-cleanroom-guard-fence mismatch replay + deterministic verification
+confidential-attestation-skr-cleanroom-guard-fence fence integrity guard,161,168,0.9583,measured,confidential-attestation-skr-cleanroom-guard-fence integrity logs
+tenant-scope confidential-attestation-skr-cleanroom-guard-fence authorization fence,154,161,0.9565,measured,tenant confidential-attestation-skr-cleanroom-guard-fence fairness replay logs

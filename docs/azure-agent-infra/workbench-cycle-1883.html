@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1883 · MCP Identity Rotation Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1883｜MCP Identity Bindings Rotation 工作台</h1>
+<div class="g">
+<div class="c"><label>轮换窗口成功率(%)</label><input id="succ" type="range" min="40" max="100" value="96"><label>旧绑定失效覆盖率(%)</label><input id="deact" type="range" min="40" max="100" value="94"><label>回滚完成时长(s)</label><input id="rb" type="range" min="1" max="900" value="48"></div>
+<div class="c"><h3>绑定轮换治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：维持高成功率与高失效覆盖率，继续压缩回滚时长。</div></div>
+<script>
+function calc(){const s=+document.getElementById('succ').value,d=+document.getElementById('deact').value,rb=+document.getElementById('rb').value;const v=((s-40)*1.35)+((d-40)*1.25)+((900-rb)*0.16);if(v>188)state.textContent='可生产：轮换连续性与安全收敛稳定';else if(v>158)state.textContent='可上线：建议继续缩短回滚时长';else state.textContent='风险偏高：需强化双槽切换与回收策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['succ','deact','rb'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

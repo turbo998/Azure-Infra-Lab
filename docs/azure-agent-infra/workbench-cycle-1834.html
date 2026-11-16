@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1834 · Tenant Credit Expiry Workbench</title>
+<style>body{margin:0;background:#0a192d;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1834｜租户配额积分到期工作台</h1>
+<div class="grid">
+<div class="card"><label>Tier A 有效期(天)</label><input id="a" type="range" min="7" max="365" value="120"><label>Tier B 有效期(天)</label><input id="b" type="range" min="7" max="365" value="90"><label>回收平滑窗口(天)</label><input id="w" type="range" min="1" max="30" value="7"></div>
+<div class="card"><h3>到期稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先设置高价值租户有效期，再调中层有效期与回收窗口。</div></div>
+<script>
+function evalS(){const a=+aEl.value,b=+bEl.value,w=+wEl.value;const score=(a*0.05)+(b*0.04)+(w*0.6)+8;if(score>24)state.textContent='到期治理稳定';else if(score>17)state.textContent='可用但体验波动风险偏高';else state.textContent='到期冲击风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+const aEl=document.getElementById('a');const bEl=document.getElementById('b');const wEl=document.getElementById('w');['a','b','w'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

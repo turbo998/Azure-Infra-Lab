@@ -1,0 +1,49 @@
+{
+  "generated_at_utc": "2026-11-08T19:34:02.080985+00:00",
+  "round": 41,
+  "cycle": 422,
+  "topic_slug": "agent-mcp-tool-cancellation-propagation-selection-faq",
+  "publish_scope": "path_scoped_incremental",
+  "guardrails": {
+    "staged_deletion_gate": "enforced",
+    "unauthorized_deletions_found": 0,
+    "force_push_used": false
+  },
+  "repos": {
+    "ai-infra-lab": {
+      "pre_sha": "1003e5c7111b0c64f3ca3dd5c61f4b09f2b493f5",
+      "receipt_sha": "da64b1eda7a0b740b1a50bbe127328c010188c0d",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "Azure-Infra-Lab": {
+      "pre_sha": "3f6a07530c5075b8509b968645741bce626ca63b",
+      "receipt_sha": "c18c6bdaa782c1784e28f32ff28ab2e4a184f138",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "ai-research-public": {
+      "pre_sha": "83f2d38b6ba378d4a4cb9e80304c1aaea65d43d6",
+      "receipt_sha": "54cd9289c3d285112e61ef9a63a24d56e2e59fdd",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "ai-research-lab": {
+      "pre_sha": "c88af0c64ee418dcdbf28941f11cb38eef048b48",
+      "receipt_sha": "a0bdb56872ccddfc28891bab73fa9758c10e0d7f",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "turbo998.github.io": {
+      "pre_sha": "c8188555de976f3f2380d705f4324b11129fd6c9",
+      "receipt_sha": "65104a848af5cc9bddb7d993d07d5a9bf64a3abb",
+      "staged_count": 29,
+      "deleted_in_staged": 0,
+      "origin_main": "65104a848af5cc9bddb7d993d07d5a9bf64a3abb",
+      "pages_main": "65104a848af5cc9bddb7d993d07d5a9bf64a3abb",
+      "local_head": "65104a848af5cc9bddb7d993d07d5a9bf64a3abb",
+      "parallel_uplift_after_receipt": false,
+      "homepage_remote_model": "origin/main + pages(main on remote 'pages')"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1911 · ACA Session Warmpool Fairshare Surge</title>
+<style>body{margin:0;background:#09132a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1911｜ACA Warmpool Fairshare Surge 工作台</h1>
+<div class="g"><div class="c">
+<label>峰值恢复 P95(ms)</label><input id="p95" type="range" min="80" max="900" value="242">
+<label>超额占位率(%)</label><input id="occ" type="range" min="0" max="50" value="12">
+<label>抢占冲突率(%)</label><input id="ctr" type="range" min="0" max="40" value="9">
+</div><div class="c"><h3>Warmpool 治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先收敛占位率，再降低冲突率，最后压低峰值恢复 P95。</div></div>
+<script>
+function calc(){const p=+p95.value,o=+occ.value,c=+ctr.value;const s=((900-p)*0.22)+((50-o)*3.1)+((40-c)*2.9);state.textContent=s>255?'可生产：公平份额与回收协同稳定':(s>210?'可上线：建议继续压降冲突':'风险偏高：需优化闸门参数与回收策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['p95','occ','ctr'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

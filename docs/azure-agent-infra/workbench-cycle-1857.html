@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1857 · CUA Browser Quarantine Workbench</title>
+<style>body{margin:0;background:#0b3156;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1857｜CUA Browser 检疫域工作台</h1>
+<div class="g">
+<div class="c"><label>高风险站点占比(%)</label><input id="r" type="range" min="1" max="70" value="28"><label>检疫池命中率(%)</label><input id="q" type="range" min="30" max="100" value="91"><label>误拦截率(%)</label><input id="f" type="range" min="0" max="20" value="3"></div>
+<div class="c"><h3>检疫策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低误拦截率，再提升检疫池命中率，最后优化高风险路由阈值。</div></div>
+<script>
+function calc(){const r=+document.getElementById('r').value,q=+document.getElementById('q').value,f=+document.getElementById('f').value;const v=((70-r)*0.55)+((q-30)*1.35)+((20-f)*2.1);if(v>130)state.textContent='检疫与可用性平衡良好';else if(v>108)state.textContent='可上线，建议继续优化误拦截';else state.textContent='风险偏高，建议收紧隔离与消毒策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['r','q','f'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

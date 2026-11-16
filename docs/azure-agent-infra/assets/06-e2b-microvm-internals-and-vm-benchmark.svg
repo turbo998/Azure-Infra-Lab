@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 740" width="1080" height="740">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#065F46" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4C1D95" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#6D28D9" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#78350F" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#B45309" stop-opacity="0.72"/>
+    </linearGradient>
+    <linearGradient id="roseGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7F1D1D" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#B91C1C" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="740" rx="16" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="1080" height="6" rx="3" fill="url(#headerGrad)"/>
+  <text x="32" y="40" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="21" font-weight="700">图 6 · Firecracker MicroVM 沙箱内部机理 (UFFD + NBD) 与 Azure v6/v7 实测启动延迟对比</text>
+  <text x="32" y="64" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13">左：KVM + virtio-net/blk + UFFD 缺页流式恢复 + envd/noVNC 内部链路 · 右：East US 2 / Central US 实测延迟与 Azure Boost 增益</text>
+
+  <!-- Left Panel: MicroVM Internals -->
+  <rect x="32" y="84" width="510" height="624" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="50" y="112" fill="#38BDF8" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="13" font-weight="700">INSIDE FIRECRACKER MICROVM &amp; HOST KERNEL DATAPATH</text>
+
+  <rect x="50" y="128" width="474" height="166" rx="8" fill="#1E293B" stroke="#60A5FA"/>
+  <text x="66" y="150" fill="#93C5FD" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">Guest MicroVM 内部环境 (Kernel + Rootfs + Desktop/Code Stack)</text>
+  <rect x="66" y="162" width="218" height="54" rx="6" fill="#0F172A" stroke="#3B82F6"/>
+  <text x="175" y="182" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11" font-weight="700">envd 守护进程 (:49982)</text>
+  <text x="175" y="200" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">Connect RPC · Shell/文件/指标流</text>
+
+  <rect x="294" y="162" width="214" height="54" rx="6" fill="#0F172A" stroke="#3B82F6"/>
+  <text x="401" y="182" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11" font-weight="700">Jupyter Server (:8888)</text>
+  <text x="401" y="200" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">Code-Interpreter V1 有状态内核</text>
+
+  <rect x="66" y="226" width="442" height="54" rx="6" fill="#0F172A" stroke="#10B981"/>
+  <text x="287" y="246" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11" font-weight="700">Computer-Use GUI 桌面栈 (E2B Desktop Sandbox)</text>
+  <text x="287" y="264" text-anchor="middle" fill="#E2E8F0" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">Xvfb + XFCE4 → x11vnc (:5900) → websockify/noVNC (:6080) + xdotool + ffmpeg</text>
+
+  <!-- Virtio & Network Namespace -->
+  <rect x="50" y="308" width="474" height="122" rx="8" fill="#1E293B" stroke="#34D399"/>
+  <text x="66" y="330" fill="#6EE7B7" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">1. 网络隔离链路：virtio-net + 独立 NetNS (ns-N)</text>
+  <text x="66" y="352" fill="#E2E8F0" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11">Guest eth0 ↔ tap0 ↔ veth-N (ns-N) ↔ Host Bridge ↔ WireGuard/VNet</text>
+  <text x="66" y="374" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 宿主机通过 iptables SNAT/DNAT 将外部会话流量精准映射至对应沙箱 ns-N</text>
+  <text x="66" y="394" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 沙箱间二层/三层默认完全隔离，出向流量受宿主机防火墙策略管控</text>
+  <text x="66" y="414" fill="#38BDF8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">• 编排器通过 169.254.0.21:49982 健康探针 (每 200ms) 监控 envd 状态</text>
+
+  <!-- UFFD & NBD Snapshot Engine -->
+  <rect x="50" y="444" width="474" height="246" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="66" y="468" fill="#FDE68A" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="12" font-weight="700">2. 108ms 极速恢复核心秘密：UFFD 内存按需缺页 + NBD 块差分快照</text>
+  <text x="66" y="492" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11" font-weight="700">• UFFD (userfaultfd) 懒加载内存恢复：</text>
+  <text x="78" y="510" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">恢复沙箱时无需把数 GB 内存镜像完整读入本地，Firecracker 立即恢复 vCPU 执行；</text>
+  <text x="78" y="526" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">当 Guest 访问未加载内存页触发 Page Fault 时，宿主机 UFFD Handler 从远端对象存储按需拉取对应 4KB/2MB 页。</text>
+  <text x="66" y="550" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11" font-weight="700">• NBD (Network Block Device) + Dirty Bitmap 增量存储：</text>
+  <text x="78" y="568" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">只读基础镜像 (rootfs.ext4) 多沙箱共享缓存；写操作落入本地差分层并用 Bitmap 记录脏块；</text>
+  <text x="78" y="584" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">Pause 快照仅上传 Dirty Pages 与 Dirty Blocks，大幅压缩快照体积与暂停耗时。</text>
+  <rect x="66" y="600" width="442" height="74" rx="6" fill="#0F172A" stroke="#F59E0B"/>
+  <text x="287" y="622" text-anchor="middle" fill="#FDE68A" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11" font-weight="700">Snapshot Restore Critical Path (108 ms on D96as_v7)</text>
+  <text x="287" y="642" text-anchor="middle" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="10">Create NetNS (18ms) → Attach NBD/UFFD (32ms) → Firecracker Resume (38ms) → envd Ready (20ms)</text>
+  <text x="287" y="660" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">对比传统容器冷启动 (1.6s~2.2s) 提速 12× ~ 20×</text>
+
+  <!-- Right Panel: Measured Benchmark Bars -->
+  <rect x="560" y="84" width="488" height="624" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="578" y="112" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="13" font-weight="700">MEASURED BENCHMARK · AZURE VM SERIES V6 VS V7 (SLIDE 18–19)</text>
+  <text x="578" y="132" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">测试区域：East US 2 &amp; Central US · 越短越好 (Lower is Faster)</text>
+
+  <!-- Chart 1: Base Sandbox Startup -->
+  <rect x="578" y="148" width="452" height="170" rx="8" fill="#1E293B" stroke="#334155"/>
+  <text x="594" y="172" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13" font-weight="700">A. Base Sandbox 启动耗时对比 (ms)</text>
+
+  <text x="594" y="204" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11" font-weight="700">D96as_v7 (AMD Turin)</text>
+  <rect x="760" y="190" width="118" height="20" rx="4" fill="#10B981"/>
+  <text x="886" y="205" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12" font-weight="700">108 ms ★ 最优 (-54.8% vs v6 AMD)</text>
+
+  <text x="594" y="242" fill="#93C5FD" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11">D96s_v6 (Intel v6)</text>
+  <rect x="760" y="228" width="127" height="20" rx="4" fill="#3B82F6"/>
+  <text x="895" y="243" fill="#93C5FD" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12">116 ms ($4.838/hr · $3,532/mo)</text>
+
+  <text x="594" y="280" fill="#FCA5A5" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11">D96as_v6 (AMD Genoa)</text>
+  <rect x="760" y="266" width="256" height="20" rx="4" fill="#64748B"/>
+  <text x="770" y="281" fill="#FFFFFF" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11" font-weight="700">239 ms (Baseline)</text>
+
+  <!-- Chart 2: Code-Interpreter V1 Startup -->
+  <rect x="578" y="332" width="452" height="170" rx="8" fill="#1E293B" stroke="#334155"/>
+  <text x="594" y="356" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13" font-weight="700">B. Code-Interpreter V1 (含 Jupyter 内核) 启动耗时 (ms)</text>
+
+  <text x="594" y="388" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11" font-weight="700">D96as_v7 (AMD Turin)</text>
+  <rect x="760" y="374" width="136" height="20" rx="4" fill="#10B981"/>
+  <text x="904" y="389" fill="#6EE7B7" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12" font-weight="700">132 ms ★ 最优 (-17.0% vs Intel)</text>
+
+  <text x="594" y="426" fill="#93C5FD" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11">D96s_v6 (Intel v6)</text>
+  <rect x="760" y="412" width="164" height="20" rx="4" fill="#3B82F6"/>
+  <text x="932" y="427" fill="#93C5FD" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="12">159 ms</text>
+
+  <text x="594" y="464" fill="#FCA5A5" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11">D96as_v6 (AMD Genoa)</text>
+  <rect x="760" y="450" width="256" height="20" rx="4" fill="#64748B"/>
+  <text x="770" y="465" fill="#FFFFFF" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11" font-weight="700">255 ms (Baseline)</text>
+
+  <!-- Chart 3: Dasv7 / Easv7 + Azure Boost Gains -->
+  <rect x="578" y="516" width="452" height="174" rx="8" fill="url(#tealGrad)" stroke="#34D399"/>
+  <text x="594" y="540" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="13" font-weight="700">C. Azure Dasv7 / Easv7 (5th Gen EPYC + Azure Boost) 硬件跃升</text>
+  <text x="594" y="564" fill="#D1FAE5" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">• 单机最高 160 vCPU / 1,280 GiB DDR5 (Easv7)，全核最高 4.5GHz，无超线程争抢</text>
+  <text x="594" y="584" fill="#D1FAE5" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11">• 性价比提升最高 +35% · 远端存储 IOPS +20% · 存储吞吐 +50% · 网络带宽 +75%</text>
+  <text x="594" y="604" fill="#FDE68A" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="11">典型负载实测增益：Java +25% | 内存缓存 +65% | 加密 +80% | Web服务 +130%</text>
+  <text x="594" y="628" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="11" font-weight="700">为什么 v7 对 MicroVM 沙箱至关重要？</text>
+  <text x="594" y="648" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">UFFD 缺页拉取与 NBD 块设备恢复高度依赖单核高频 IPC、L3 缓存局部性与 Azure Boost 网卡/存储卸载，</text>
+  <text x="594" y="666" fill="#E2E8F0" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="10">使 D96as_v7 相比上代 Genoa 将沙箱恢复延迟直接砍半 (239ms → 108ms)。</text>
+</svg>

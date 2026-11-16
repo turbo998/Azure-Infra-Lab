@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1858 · Change Feed Replay Workbench</title>
+<style>body{margin:0;background:#0b3258;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1858｜Cosmos Change Feed 回放工作台</h1>
+<div class="g">
+<div class="c"><label>回放分段大小</label><input id="s" type="range" min="100" max="10000" value="2200"><label>去重命中率(%)</label><input id="d" type="range" min="50" max="100" value="94"><label>恢复追平时间(min)</label><input id="t" type="range" min="1" max="180" value="28"></div>
+<div class="c"><h3>回放策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先提升去重命中率，再压缩追平时间，最后微调分段大小。</div></div>
+<script>
+function calc(){const s=+document.getElementById('s').value,d=+document.getElementById('d').value,t=+document.getElementById('t').value;const v=((10000-s)*0.006)+((d-50)*1.6)+((180-t)*0.75);if(v>130)state.textContent='回放效率与稳定性平衡良好';else if(v>108)state.textContent='可上线，建议继续降低追平时长';else state.textContent='风险偏高，建议收紧分段并强化去重';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['s','d','t'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

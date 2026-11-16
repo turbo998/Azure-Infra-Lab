@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1873 · Wasm Policy Bundle Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1873｜Wasm Policy Bundle 工作台</h1>
+<div class="g">
+<div class="c"><label>签名校验通过率(%)</label><input id="sig" type="range" min="40" max="100" value="95"><label>策略一致性得分(%)</label><input id="con" type="range" min="40" max="100" value="92"><label>回滚恢复时延(ms)</label><input id="rb" type="range" min="20" max="1500" value="140"></div>
+<div class="c"><h3>策略打包治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：保持签名通过率高位，继续缩短回滚恢复时延。</div></div>
+<script>
+function calc(){const sig=+document.getElementById('sig').value,con=+document.getElementById('con').value,rb=+document.getElementById('rb').value;const v=((sig-40)*1.3)+((con-40)*1.25)+((1500-rb)*0.08);if(v>186)state.textContent='可生产：策略一致性与回滚能力稳定';else if(v>156)state.textContent='可上线：建议继续优化恢复时延';else state.textContent='风险偏高：需强化 admission 与灰度策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['sig','con','rb'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

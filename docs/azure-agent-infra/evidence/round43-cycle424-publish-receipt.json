@@ -1,0 +1,49 @@
+{
+  "generated_at_utc": "2026-11-08T19:44:18.003607+00:00",
+  "round": 43,
+  "cycle": 424,
+  "topic_slug": "agent-sandbox-image-layer-cache-invalidation-selection-faq",
+  "publish_scope": "path_scoped_incremental",
+  "guardrails": {
+    "staged_deletion_gate": "enforced",
+    "unauthorized_deletions_found": 0,
+    "force_push_used": false
+  },
+  "repos": {
+    "ai-infra-lab": {
+      "pre_sha": "d858ecc0ea786dabee0c210fcd4f835f2eee9818",
+      "receipt_sha": "f6770559f46920ab8e98da025b5787d31360d3ab",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "Azure-Infra-Lab": {
+      "pre_sha": "d2d65b3fe87a0625bcc28d027e8d0635440d4865",
+      "receipt_sha": "6c1add31619fafbc31d6a0c373a999291d7da286",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "ai-research-public": {
+      "pre_sha": "a7a926542d4946b243413b80c90a433c2d69dc0f",
+      "receipt_sha": "030a1f2b0596ec38de35f9ef209623e319387995",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "ai-research-lab": {
+      "pre_sha": "c15dc16334e13cc02e843b4c301209b6860aab4d",
+      "receipt_sha": "99a1b3fa0efea43b586d077f448050c75ec1058e",
+      "staged_count": 29,
+      "deleted_in_staged": 0
+    },
+    "turbo998.github.io": {
+      "pre_sha": "61808cc73ddec577a6abbf21fe44665d4acbc1e1",
+      "receipt_sha": "fa3b10b30fd4ed56c0dcabfb60fb3d8d3b25935c",
+      "staged_count": 28,
+      "deleted_in_staged": 0,
+      "origin_main": "fa3b10b30fd4ed56c0dcabfb60fb3d8d3b25935c",
+      "pages_main": "fa3b10b30fd4ed56c0dcabfb60fb3d8d3b25935c",
+      "local_head": "fa3b10b30fd4ed56c0dcabfb60fb3d8d3b25935c",
+      "parallel_uplift_after_receipt": false,
+      "homepage_remote_model": "origin/main + pages(main on remote 'pages')"
+    }
+  }
+}

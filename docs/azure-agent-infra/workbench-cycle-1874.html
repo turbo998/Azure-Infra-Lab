@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1874 · Session Affinity Fairness Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1874｜Session Affinity Eviction Fairness 工作台</h1>
+<div class="g">
+<div class="c"><label>租户驱逐率方差(%)</label><input id="var" type="range" min="0" max="30" value="6"><label>会话恢复 P95(ms)</label><input id="p95" type="range" min="20" max="1800" value="220"><label>关键租户 SLA 偏差(%)</label><input id="sla" type="range" min="0" max="15" value="2"></div>
+<div class="c"><h3>公平驱逐治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先压低驱逐率方差和 SLA 偏差，再优化恢复 P95。</div></div>
+<script>
+function calc(){const v1=+document.getElementById('var').value,p95=+document.getElementById('p95').value,sla=+document.getElementById('sla').value;const v=((30-v1)*2.2)+((1800-p95)*0.06)+((15-sla)*4.1);if(v>188)state.textContent='可生产：公平性与恢复表现稳定';else if(v>158)state.textContent='可上线：建议继续收敛恢复时延';else state.textContent='风险偏高：需强化公平队列与预算策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['var','p95','sla'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

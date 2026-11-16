@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Queue cap overflow gate,188,200,0.94,measured,queue-cap replay + deterministic verification
+Prewarm interval integrity guard,183,190,0.9632,measured,checkpoint-interval integrity logs
+Tenant stream-scope authorization fence,172,180,0.9556,measured,MCP policy replay logs

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+DNS route drift saturation gate,180,192,0.9375,measured,DNS split-horizon replay + deterministic verification
+DNS policy-integrity guard,171,178,0.9607,measured,DNS policy integrity logs
+Tenant-scope DNS authorization fence,165,173,0.9538,measured,tenant DNS fairness replay logs

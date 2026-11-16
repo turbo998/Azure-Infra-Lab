@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+foundry-eval-shadow-canary-gate-violation saturation gate,172,184,0.9348,measured,foundry-eval-shadow-canary-gate-fence mismatch replay + deterministic verification
+foundry-eval-shadow-canary-gate-fence fence integrity guard,161,168,0.9583,measured,foundry-eval-shadow-canary-gate-fence integrity logs
+tenant-scope foundry-eval-shadow-canary-gate-fence authorization fence,154,161,0.9565,measured,tenant foundry-eval-shadow-canary-gate-fence fairness replay logs

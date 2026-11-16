@@ -1,0 +1,7 @@
+tier_label,optimized_ms,baseline_ms,optimized_label,baseline_label,source_note
+E2B Base Sandbox Restore (D96as_v7 Turin vs D96as_v6 Genoa),108,239,108 ms (AMD v7 Turin + UFFD),239 ms (AMD v6 Genoa),Measured in E2B_CheckRide_Reordered_v2.pdf Slide 19
+E2B Base Sandbox Restore (D96as_v7 Turin vs D96s_v6 Intel),108,116,108 ms (AMD v7 Turin),116 ms (Intel v6 Emerald Rapids),Measured in E2B_CheckRide_Reordered_v2.pdf Slide 19
+E2B Code-Interpreter V1 Startup (D96as_v7 Turin vs D96as_v6 Genoa),132,255,132 ms (AMD v7 Turin + Jupyter/envd),255 ms (AMD v6 Genoa),Measured in E2B_CheckRide_Reordered_v2.pdf Slide 19
+E2B Code-Interpreter V1 Startup (D96as_v7 Turin vs D96s_v6 Intel),132,159,132 ms (AMD v7 Turin),159 ms (Intel v6 Emerald Rapids),Measured in E2B_CheckRide_Reordered_v2.pdf Slide 19
+ACA Dynamic Sessions Allocation (Pre-Warmed Pool vs Cold Container),210,2200,~210 ms (Pre-Warmed Hyper-V Pool),"~2,200 ms (Unwarmed Container Cold Start)",Architecture reference model (Pitch Slide 8 pre-warmed pool)
+ACA Sandboxes Workspace Recovery (Memory/Disk Snapshot vs Full Rebuild),320,1650,~320 ms (Snapshot Resume),"~1,650 ms (Cold OCI + Volume Init)",Architecture reference model (Pitch Slide 9 snapshot restore)

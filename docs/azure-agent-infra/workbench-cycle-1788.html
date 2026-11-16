@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1788 · Router Hysteresis Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1788｜预算感知滞回路由工作台</h1>
+<div class="grid"><div class="card"><label>延迟预算阈值（ms）</label><input id="lat" type="range" min="100" max="5000" value="980"><label>成本预算阈值（$/k req）</label><input id="cost" type="range" min="1" max="200" value="42"><label>最短驻留时间（s）</label><input id="dwell" type="range" min="1" max="600" value="120"></div><div class="card"><h3>路由稳定性判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：优先拉开进入/退出阈值，再增加驻留时间。</div></div>
+<script>
+function evalRouter(){const l=+lat.value,c=+cost.value,d=+dwell.value;const score=(d*0.08)+(l/80)+(c/4);if(score>42){state.textContent='稳定';detail.textContent=`滞回指数 ${score.toFixed(1)}`;}else if(score>28){state.textContent='临界';detail.textContent=`滞回指数 ${score.toFixed(1)}`;}else{state.textContent='易抖动';detail.textContent=`滞回指数 ${score.toFixed(1)}`;}}
+['lat','cost','dwell'].forEach(id=>document.getElementById(id).addEventListener('input',evalRouter));evalRouter();
+</script></body></html>

@@ -1,0 +1,133 @@
+# AKSClaw Multi-Tenant Kubernetes Agent Platform Reference Blueprint
+# Enforces all 5 Platform Hard Boundaries:
+#   1. Kata Containers Pod VM Hypervisor Isolation (runtimeClassName: kata-mshv-vm-isolation)
+#   2. Dual-Volume Contract: Shared Read-Only /skills + Isolated Read-Write /workspace
+#   3. NetworkPolicy blocking Azure IMDS (169.254.169.254/32) and locking down egress
+#   4. Zero raw LLM API keys in agent containers (routed via Unified AI Gateway)
+#   5. Microsoft Entra Agent ID Workload Identity binding with human Owner/Sponsor tags
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aksclaw-fleet
+  labels:
+    platform.azure.com/agent-governance: "enforced"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: aksclaw-sre-agent-sa
+  namespace: aksclaw-fleet
+  annotations:
+    azure.workload.identity/client-id: "00000000-0000-0000-0000-000000000001"
+    entra.microsoft.com/agent-blueprint-id: "aksclaw-sre-triage-v1"
+    entra.microsoft.com/human-owner: "oncall-sre-lead@contoso.com"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: shared-skills-ReadOnlyMany
+  namespace: aksclaw-fleet
+spec:
+  accessModes:
+    - ReadOnlyMany
+  storageClassName: azurefile-csi-premium
+  resources:
+    requests:
+      storage: 50Gi
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: aksclaw-engineer-agent
+  namespace: aksclaw-fleet
+spec:
+  serviceName: aksclaw-agent
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aksclaw-agent
+  template:
+    metadata:
+      labels:
+        app: aksclaw-agent
+        azure.workload.identity/use: "true"
+    spec:
+      runtimeClassName: kata-mshv-vm-isolation
+      serviceAccountName: aksclaw-sre-agent-sa
+      automountServiceAccountToken: false
+      containers:
+        - name: agent-harness
+          image: mcr.microsoft.com/aksclaw/agent-harness:2026.10
+          env:
+            - name: OPENAI_BASE_URL
+              value: "http://unified-ai-gateway.platform-system.svc.cluster.local:8080/v1"
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://otel-collector.platform-system.svc.cluster.local:4317"
+          resources:
+            requests:
+              cpu: "1000m"
+              memory: "2Gi"
+            limits:
+              cpu: "4000m"
+              memory: "8Gi"
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+          volumeMounts:
+            - name: shared-skills
+              mountPath: /skills
+              readOnly: true
+            - name: isolated-workspace
+              mountPath: /workspace
+              readOnly: false
+      volumes:
+        - name: shared-skills
+          persistentVolumeClaim:
+            claimName: shared-skills-ReadOnlyMany
+  volumeClaimTemplates:
+    - metadata:
+        name: isolated-workspace
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: managed-csi-premium
+        resources:
+          requests:
+            storage: 32Gi
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: aksclaw-hard-boundary-netpol
+  namespace: aksclaw-fleet
+spec:
+  podSelector:
+    matchLabels:
+      app: aksclaw-agent
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: platform-system
+  egress:
+    # Allow DNS resolution
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+      ports:
+        - protocol: UDP
+          port: 53
+    # Allow Unified AI Gateway & Credential Proxy only (explicitly blocks 169.254.169.254/32 IMDS)
+    - to:
+        - ipBlock:
+            cidr: 10.240.0.0/16
+            except:
+              - 169.254.169.254/32
+      ports:
+        - protocol: TCP
+          port: 8080
+        - protocol: TCP
+          port: 4317

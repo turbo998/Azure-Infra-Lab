@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1912 · APIM Semantic Cache Tenant TTL Drift</title>
+<style>body{margin:0;background:#09132a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1912｜APIM Semantic Cache TTL Drift 工作台</h1>
+<div class="g"><div class="c">
+<label>新鲜度偏差(%)</label><input id="fr" type="range" min="0" max="40" value="11">
+<label>TTL 漂移率(%)</label><input id="dr" type="range" min="0" max="50" value="16">
+<label>失配重算比例(%)</label><input id="rc" type="range" min="0" max="35" value="8">
+</div><div class="c"><h3>TTL 漂移治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：优先压低 TTL 漂移率，再收敛新鲜度偏差，最后优化重算比例。</div></div>
+<script>
+function calc(){const f=+fr.value,d=+dr.value,r=+rc.value;const s=((40-f)*3.2)+((50-d)*2.8)+((35-r)*2.4);state.textContent=s>250?'可生产：TTL 分层与漂移守卫协同稳定':(s>210?'可上线：建议继续收敛漂移':'风险偏高：需优化 guard 阈值与回填策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['fr','dr','rc'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

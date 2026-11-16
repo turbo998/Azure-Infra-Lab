@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0a1020"/>
+<text x="60" y="90" fill="#e2e8f0" font-size="40" font-family="Segoe UI">Cycle 1790 · KV Cache Eviction Guardrails</text>
+<rect x="60" y="150" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="90" y="210" fill="#93c5fd" font-size="28">Tenant Quotas</text><text x="90" y="248" fill="#e2e8f0" font-size="22">hard capacity envelope per tenant</text>
+<rect x="565" y="150" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="595" y="210" fill="#86efac" font-size="28">TTL Classes</text><text x="595" y="248" fill="#e2e8f0" font-size="22">short/medium/long session retention</text>
+<rect x="1070" y="150" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="1100" y="210" fill="#fbbf24" font-size="28">Sensitive Context Guard</text><text x="1100" y="248" fill="#e2e8f0" font-size="22">forced early eviction with audit logs</text>
+<text x="60" y="430" fill="#e2e8f0" font-size="30">Benchmark inputs</text><text x="60" y="478" fill="#cbd5e1" font-size="24">P50/P95 latency, throughput, policy intercept, session cost</text>
+</svg>

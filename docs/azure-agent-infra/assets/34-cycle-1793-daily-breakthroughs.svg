@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0b1220"/>
+<text x="60" y="92" fill="#e2e8f0" font-size="40" font-family="Segoe UI">Cycle 1793 · SBOM Enforcement for Agent Toolchain</text>
+<rect x="60" y="150" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="90" y="212" fill="#93c5fd" font-size="28">Signed SBOM</text><text x="90" y="250" fill="#e2e8f0" font-size="22">build-time manifest integrity anchor</text>
+<rect x="565" y="150" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="595" y="212" fill="#86efac" font-size="28">Admission Policy</text><text x="595" y="250" fill="#e2e8f0" font-size="22">CVE/license/source trust enforcement</text>
+<rect x="1070" y="150" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="1100" y="212" fill="#fbbf24" font-size="28">Exception Governance</text><text x="1100" y="250" fill="#e2e8f0" font-size="22">time-bound waivers with approvals</text>
+<text x="60" y="430" fill="#e2e8f0" font-size="30">Benchmark dimensions</text><text x="60" y="478" fill="#cbd5e1" font-size="24">intercept rate · latency overhead · throughput · session cost</text>
+</svg>

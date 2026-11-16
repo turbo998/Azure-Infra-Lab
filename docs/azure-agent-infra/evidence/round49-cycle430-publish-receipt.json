@@ -1,0 +1,58 @@
+{
+  "round": 49,
+  "cycle": 430,
+  "status": "completed",
+  "topic_slug": "agent-runtime-cold-pool-sizing-selection-faq",
+  "source_worktree_commit": "b4b76cda8d5991b9ebd57ee83c01898168089353",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "19eef8c464db0a29dc3a9a175a1f2c43ebc718f1",
+    "Azure-Infra-Lab": "c01500cf4d34d6919425a6f04f338f6905c9b2c5",
+    "ai-research-public": "3a1747e9d89a891b91962f3370c4d994b68839ac",
+    "ai-research-lab": "fdce606c1090a04750f05ee09b1754fc58f73304",
+    "turbo998.github.io": "b34bce41d6196e0c29b17b97b206b9b970c92444"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "19eef8c464db0a29dc3a9a175a1f2c43ebc718f1",
+    "Azure-Infra-Lab": "c01500cf4d34d6919425a6f04f338f6905c9b2c5",
+    "ai-research-public": "3a1747e9d89a891b91962f3370c4d994b68839ac",
+    "ai-research-lab": "fdce606c1090a04750f05ee09b1754fc58f73304",
+    "turbo998.github.io": "b34bce41d6196e0c29b17b97b206b9b970c92444"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "19eef8c464db0a29dc3a9a175a1f2c43ebc718f1",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "c01500cf4d34d6919425a6f04f338f6905c9b2c5",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "3a1747e9d89a891b91962f3370c4d994b68839ac",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "fdce606c1090a04750f05ee09b1754fc58f73304",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "b34bce41d6196e0c29b17b97b206b9b970c92444",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "b34bce41d6196e0c29b17b97b206b9b970c92444",
+    "pages_main": "b34bce41d6196e0c29b17b97b206b9b970c92444",
+    "receipt_vs_pages": {
+      "merge_base": "b34bce41d6196e0c29b17b97b206b9b970c92444",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:28:13+08:00"
+}

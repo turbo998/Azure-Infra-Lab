@@ -1,0 +1,58 @@
+{
+  "round": 52,
+  "cycle": 433,
+  "status": "completed",
+  "topic_slug": "agent-mcp-tool-output-stream-backpressure-selection-faq",
+  "source_worktree_commit": "8827f631eedee17c6e4765341c6ae3b457537201",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "8827f631eedee17c6e4765341c6ae3b457537201",
+    "Azure-Infra-Lab": "6fab9e373a788a2ac182f2c9c1af9379cdd00643",
+    "ai-research-public": "8072179b1c78472225662ff6a0b2c70ee298a7b0",
+    "ai-research-lab": "443b4de69627be6ea97683bbac2b02d3f1230a2f",
+    "turbo998.github.io": "28bdc357468fde1be19cbc89b80394016de152c9"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "8827f631eedee17c6e4765341c6ae3b457537201",
+    "Azure-Infra-Lab": "6fab9e373a788a2ac182f2c9c1af9379cdd00643",
+    "ai-research-public": "e2cd6927ffdce2715a729d44229d23c98261d3a6",
+    "ai-research-lab": "443b4de69627be6ea97683bbac2b02d3f1230a2f",
+    "turbo998.github.io": "4a2d16f01c4a1d99128064deeab702d9f5404d92"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "8827f631eedee17c6e4765341c6ae3b457537201",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "6fab9e373a788a2ac182f2c9c1af9379cdd00643",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "8072179b1c78472225662ff6a0b2c70ee298a7b0",
+      "delivery_only": 0,
+      "current_only": 1
+    },
+    "ai-research-lab": {
+      "merge_base": "443b4de69627be6ea97683bbac2b02d3f1230a2f",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "28bdc357468fde1be19cbc89b80394016de152c9",
+      "delivery_only": 0,
+      "current_only": 4
+    }
+  },
+  "homepage": {
+    "origin_main": "4a2d16f01c4a1d99128064deeab702d9f5404d92",
+    "pages_main": "4a2d16f01c4a1d99128064deeab702d9f5404d92",
+    "receipt_vs_pages": {
+      "merge_base": "28bdc357468fde1be19cbc89b80394016de152c9",
+      "delivery_only": 0,
+      "current_only": 4
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:51:21+08:00"
+}

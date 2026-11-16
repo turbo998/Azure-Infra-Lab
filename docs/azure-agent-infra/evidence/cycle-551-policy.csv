@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+checkpoint-restore-divergence saturation gate,172,184,0.9348,measured,restore-consistency-fence mismatch replay + deterministic verification
+restore-consistency-fence fence integrity guard,161,168,0.9583,measured,restore-consistency-fence integrity logs
+tenant-scope restore-consistency-fence authorization fence,154,161,0.9565,measured,tenant restore-consistency-fence fairness replay logs

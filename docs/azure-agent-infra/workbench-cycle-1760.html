@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1760 · MCP/A2A Observability Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1760｜MCP/A2A 可观测性工作台</h1>
+<div class="grid"><div class="card"><label>Trace 覆盖率（%）</label><input id="trace" type="range" min="0" max="100" value="78"><label>策略可解释率（%）</label><input id="policy" type="range" min="0" max="100" value="72"><label>回放成功率（%）</label><input id="replay" type="range" min="0" max="100" value="70"></div><div class="card"><h3>编排可运营度</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议阈值：trace>=85, policy>=80, replay>=80 后再扩大流量。</div></div>
+<script>
+function evalObs(){const t=+trace.value,p=+policy.value,r=+replay.value;const min=Math.min(t,p,r);if(min>=85){state.textContent='可放量';detail.textContent=`最低项 ${min}%`;}else if(min>=70){state.textContent='可灰度，需补强';detail.textContent=`最低项 ${min}%`;}else{state.textContent='不建议放量';detail.textContent=`最低项 ${min}%`;}}
+['trace','policy','replay'].forEach(id=>document.getElementById(id).addEventListener('input',evalObs));evalObs();
+</script></body></html>

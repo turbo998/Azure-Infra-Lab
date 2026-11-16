@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0b1220"/>
+<text x="60" y="90" fill="#e2e8f0" font-size="42" font-family="Segoe UI">Cycle 1758 · Cosmos DB Agent State Partitioning &amp; RU Cost</text>
+<rect x="60" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="90" y="210" fill="#93c5fd" font-size="28">Partition Key</text><text x="90" y="248" fill="#e2e8f0" font-size="22">tenant_id + session_id</text>
+<rect x="560" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="590" y="210" fill="#86efac" font-size="28">Hot/Cold Tier</text><text x="590" y="248" fill="#e2e8f0" font-size="22">short-window hot + TTL cold archive</text>
+<rect x="1060" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="1090" y="210" fill="#fbbf24" font-size="28">Policy Ledger</text><text x="1090" y="248" fill="#e2e8f0" font-size="22">replayable routing + retention decisions</text>
+<text x="60" y="420" fill="#e2e8f0" font-size="30">RU control levers</text><text x="60" y="470" fill="#cbd5e1" font-size="24">• Cross-partition query ratio • Index width • Session write density</text>
+<text x="60" y="515" fill="#cbd5e1" font-size="24">• Evidence bundle: cycle-1758-benchmark/latency/throughput/policy/cost</text></svg>

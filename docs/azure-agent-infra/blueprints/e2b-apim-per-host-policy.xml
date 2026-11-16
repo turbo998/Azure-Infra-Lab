@@ -1,0 +1,42 @@
+<!--
+  E2B on Azure VMSS — Azure API Management (APIM) Per-Host Rate-Limit Policy
+  Enforces per-sandbox rate limiting across 100,000+ concurrent dynamic subdomains
+  (<port>-<sandboxId>.e2b.contoso.com) and loops back to Application Gateway WAF v2
+  Private Frontend IP (:8080) for backend routing to the E2B API / Client Pool.
+-->
+<policies>
+  <inbound>
+    <base />
+    <choose>
+      <when condition="@(string.IsNullOrEmpty(context.Request.Headers.GetValueOrDefault(&quot;Host&quot;, &quot;&quot;)))">
+        <return-response>
+          <set-status code="400" reason="Missing Host Header" />
+        </return-response>
+      </when>
+    </choose>
+
+    <!-- Per-Sandbox Subdomain Rate Limit (isolates noisy sandboxes across 100K+ sessions) -->
+    <rate-limit-by-key calls="300"
+                       renewal-period="60"
+                       counter-key="@(context.Request.Headers.GetValueOrDefault(&quot;Host&quot;, &quot;unknown-host&quot;))"
+                       increment-condition="@(context.Response.StatusCode >= 200 &amp;&amp; context.Response.StatusCode &lt; 500)"
+                       remaining-calls-header-name="X-E2B-Remaining-Calls" />
+
+    <!-- Preserve original dynamic Host header for Nomad/Client Pool envd (:49982) routing -->
+    <set-header name="X-Forwarded-Host" exists-action="override">
+      <value>@(context.Request.Headers.GetValueOrDefault("Host", ""))</value>
+    </set-header>
+
+    <!-- Route back to Application Gateway WAF v2 Private Frontend IP (:8080) -->
+    <set-backend-service base-url="http://10.240.0.10:8080" />
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+  </on-error>
+</policies>

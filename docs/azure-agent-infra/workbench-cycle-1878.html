@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1878 · Tool Circuit Tiering Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1878｜Tool Circuit Tiering 工作台</h1>
+<div class="g">
+<div class="c"><label>关键工具可用性(%)</label><input id="avail" type="range" min="40" max="100" value="97"><label>故障扩散范围(%)</label><input id="blast" type="range" min="0" max="30" value="5"><label>恢复后重试风暴指数</label><input id="storm" type="range" min="0" max="100" value="18"></div>
+<div class="c"><h3>熔断分层治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先继续压低扩散范围与重试风暴指数，保持关键工具高可用。</div></div>
+<script>
+function calc(){const a=+document.getElementById('avail').value,b=+document.getElementById('blast').value,s=+document.getElementById('storm').value;const v=((a-40)*1.45)+((30-b)*2.1)+((100-s)*0.78);if(v>188)state.textContent='可生产：分层熔断稳定抑制故障扩散';else if(v>158)state.textContent='可上线：建议继续优化恢复震荡';else state.textContent='风险偏高：需强化分层阈值与探测策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['avail','blast','storm'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

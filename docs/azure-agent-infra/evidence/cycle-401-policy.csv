@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Layered timeout-budget admission gate,192,200,0.96,measured,demo simulation trace + deterministic replay
+Global timeout storm threshold,173,190,0.9105,measured,policy replay logs
+Timeout fallback rollback check,165,180,0.9167,measured,MCP policy replay logs

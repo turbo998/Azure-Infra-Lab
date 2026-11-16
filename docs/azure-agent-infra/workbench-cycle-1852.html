@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1852 · Kata Firecracker Boundary Workbench</title>
+<style>body{margin:0;background:#0b2c4c;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1852｜Kata 与 Firecracker 边界选型工作台</h1>
+<div class="g">
+<div class="c"><label>高风险任务占比(%)</label><input id="r" type="range" min="1" max="80" value="24"><label>冷启动预算(ms)</label><input id="c" type="range" min="50" max="3000" value="780"><label>隔离告警率(%)</label><input id="a" type="range" min="0" max="20" value="3"></div>
+<div class="c"><h3>边界策略健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低隔离告警率，再优化冷启动预算，最后校准高风险任务映射占比。</div></div>
+<script>
+function calc(){const r=+document.getElementById('r').value,c=+document.getElementById('c').value,a=+document.getElementById('a').value;const v=((80-r)*0.45)+((3000-c)*0.035)+((20-a)*2.4);if(v>125)state.textContent='隔离与性能平衡良好';else if(v>104)state.textContent='可上线，建议继续优化冷启动';else state.textContent='风险偏高，建议提升高风险隔离比例';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['r','c','a'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

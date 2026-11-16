@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1825 · Model Fallback Consistency Workbench</title>
+<style>body{margin:0;background:#0a1229;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1825｜模型回退一致性工作台</h1>
+<div class="grid">
+<div class="card"><label>回退触发阈值(ms)</label><input id="lat" type="range" min="50" max="3000" value="480"><label>关键字段一致率下限(%)</label><input id="cons" type="range" min="70" max="100" value="92"><label>回切采样比例(%)</label><input id="sample" type="range" min="1" max="40" value="12"></div>
+<div class="card"><h3>一致性稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先保障一致率下限，再优化触发阈值与回切采样。</div></div>
+<script>
+function evalS(){const l=+lat.value,c=+cons.value,s=+sample.value;const score=(c*0.22)+(s*0.25)-((l/1000)*2.0)+8;if(score>22)state.textContent='回退一致性稳定';else if(score>16)state.textContent='可用但回切风险偏高';else state.textContent='一致性漂移风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['lat','cons','sample'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

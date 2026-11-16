@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1890 · Kata VM Class Rightsizing Catalog</title>
+<style>body{margin:0;background:#111827;color:#e5e7eb;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1890｜Kata VM Class Rightsizing 工作台</h1>
+<div class="g"><div class="c">
+<label>成本下降率(%)</label><input id="cost" type="range" min="0" max="45" value="18">
+<label>尾延迟改善(ms)</label><input id="tail" type="range" min="0" max="800" value="240">
+<label>class 命中率(%)</label><input id="hit" type="range" min="45" max="99" value="87">
+</div><div class="c"><h3>规格编目治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先稳定 class 命中率，再逐步压降成本。</div>
+</div><script>
+function calc(){const c=+cost.value,t=+tail.value,h=+hit.value;const s=(c*2.8)+(t/5)+(h*1.4);state.textContent=s>230?'可生产：目录治理与成本表现均稳定':(s>190?'可上线：建议继续优化尾延迟':'风险偏高：需收敛匹配与预算策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['cost','tail','hit'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

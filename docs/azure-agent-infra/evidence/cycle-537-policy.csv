@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+prewarm fingerprint drift saturation gate,178,190,0.9368,measured,prewarm fingerprint replay + deterministic verification
+prewarm fingerprint integrity guard,169,176,0.9602,measured,prewarm fingerprint integrity logs
+tenant-scope prewarm authorization fence,162,170,0.9529,measured,tenant prewarm fairness replay logs

@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1811 · Deterministic Replay Budget Workbench</title>
+<style>body{margin:0;background:#0a1224;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1811｜确定性回放预算工作台</h1>
+<div class="grid"><div class="card"><label>关键回放预算(单位)</label><input id="hi" type="range" min="10" max="500" value="180"><label>普通回放预算(单位)</label><input id="mid" type="range" min="10" max="500" value="90"><label>采样回放比例(%)</label><input id="sample" type="range" min="1" max="100" value="24"></div><div class="card"><h3>回放稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：优先保障关键回放预算，再收敛低优采样比例。</div></div>
+<script>
+function evalR(){const h=+hi.value,m=+mid.value,s=+sample.value;const score=(h*0.06)+(m*0.03)-(s*0.11)+10;if(score>12)state.textContent='稳态良好';else if(score>8)state.textContent='可优化';else state.textContent='风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['hi','mid','sample'].forEach(id=>document.getElementById(id).addEventListener('input',evalR));evalR();
+</script></body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1872 · Oversubscription Guardrails Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1872｜Oversubscription Guardrails 工作台</h1>
+<div class="g">
+<div class="c"><label>CPU 超配比(%)</label><input id="cpu" type="range" min="100" max="260" value="170"><label>内存超配比(%)</label><input id="mem" type="range" min="100" max="220" value="145"><label>P99 尾延迟(ms)</label><input id="p99" type="range" min="20" max="2000" value="260"></div>
+<div class="c"><h3>护栏治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先压低 P99，再优化 CPU/内存超配比协同。</div></div>
+<script>
+function calc(){const cpu=+document.getElementById('cpu').value,mem=+document.getElementById('mem').value,p99=+document.getElementById('p99').value;const cpuScore=(260-Math.abs(cpu-175))*0.65;const memScore=(220-Math.abs(mem-150))*0.62;const latScore=(2000-p99)*0.06;const v=cpuScore+memScore+latScore;if(v>188)state.textContent='可生产：超配收益与尾延迟平衡稳定';else if(v>158)state.textContent='可上线：建议继续收敛尾延迟';else state.textContent='风险偏高：需加强抢占保护与回填策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['cpu','mem','p99'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

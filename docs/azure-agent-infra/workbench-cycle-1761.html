@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1761 · Browser/CUA Scheduling Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1761｜Browser/CUA 集群调度治理工作台</h1>
+<div class="grid"><div class="card"><label>并发会话数</label><input id="ccu" type="range" min="20" max="800" value="220"><label>长尾会话占比（%）</label><input id="tail" type="range" min="0" max="90" value="34"><label>隔离池容量占比（%）</label><input id="iso" type="range" min="0" max="60" value="18"></div><div class="card"><h3>调度健康判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议阈值：长尾占比<40%，隔离池>=15%，关键队列等待<预算。</div></div>
+<script>
+function evalSched(){const c=+ccu.value,t=+tail.value,i=+iso.value;const pressure=(c/12)+(t*1.4)-(i*1.2);if(pressure<45){state.textContent='健康';detail.textContent=`压力指数 ${pressure.toFixed(1)}`;}else if(pressure<75){state.textContent='可灰度';detail.textContent=`压力指数 ${pressure.toFixed(1)}`;}else{state.textContent='高压，需限流/扩容';detail.textContent=`压力指数 ${pressure.toFixed(1)}`;}}
+['ccu','tail','iso'].forEach(id=>document.getElementById(id).addEventListener('input',evalSched));evalSched();
+</script></body></html>

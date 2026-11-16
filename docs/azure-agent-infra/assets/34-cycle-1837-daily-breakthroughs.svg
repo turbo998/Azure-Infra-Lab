@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0a1c2e"/>
+<text x="56" y="88" fill="#e2e8f0" font-size="40" font-family="Segoe UI">Cycle 1837 · Policy Canary Revert Threshold</text>
+<rect x="56" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="86" y="210" fill="#93c5fd" font-size="28">Staged Rollout</text><text x="86" y="248" fill="#e2e8f0" font-size="22">progressive canary traffic escalation</text>
+<rect x="562" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="592" y="210" fill="#86efac" font-size="28">Threshold Gate</text><text x="592" y="248" fill="#e2e8f0" font-size="22">multi-signal pass fail decisioning</text>
+<rect x="1068" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="1098" y="210" fill="#fbbf24" font-size="28">Auto Revert</text><text x="1098" y="248" fill="#e2e8f0" font-size="22">rollback and cooldown stabilization</text>
+<text x="56" y="432" fill="#e2e8f0" font-size="30">Benchmark dimensions</text><text x="56" y="480" fill="#cbd5e1" font-size="24">rollout completion · revert latency · misfire rate · post-rollback recovery</text>
+</svg>

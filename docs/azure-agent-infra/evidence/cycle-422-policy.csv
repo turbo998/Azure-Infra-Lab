@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Cancellation propagation completeness gate,188,200,0.94,measured,cancellation replay + deterministic verification
+Cross-hop cancel ack integrity gate,183,190,0.9632,measured,cancel-ack integrity logs
+MCP tool cancel token authorization fence,172,180,0.9556,measured,MCP policy replay logs

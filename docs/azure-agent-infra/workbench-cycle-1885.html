@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1885 · A2A Latency Tier Admission Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1885｜A2A Latency Tier Admission 工作台</h1>
+<div class="g">
+<div class="c"><label>L0 P95(ms)</label><input id="l0" type="range" min="10" max="1200" value="120"><label>L1 排队时长(ms)</label><input id="l1" type="range" min="10" max="3000" value="360"><label>降级触发率(%)</label><input id="dg" type="range" min="0" max="30" value="5"></div>
+<div class="c"><h3>准入分层治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先稳定 L0 P95，再压低 L1 排队与降级触发率。</div></div>
+<script>
+function calc(){const l0=+document.getElementById('l0').value,l1=+document.getElementById('l1').value,dg=+document.getElementById('dg').value;const v=((1200-l0)*0.1)+((3000-l1)*0.04)+((30-dg)*3.0);if(v>188)state.textContent='可生产：分层准入稳定保障关键时延';else if(v>158)state.textContent='可上线：建议继续收敛排队时长';else state.textContent='风险偏高：需强化门限与降级策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['l0','l1','dg'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

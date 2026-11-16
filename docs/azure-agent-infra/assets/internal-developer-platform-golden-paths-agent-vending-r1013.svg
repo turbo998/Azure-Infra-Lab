@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <style>
+      .t{font:20px 'Segoe UI',Arial,sans-serif;fill:#cbd5e1}
+      .h{font:700 28px 'Segoe UI',Arial,sans-serif;fill:#f8fafc}
+      .k{font:700 22px 'Segoe UI',Arial,sans-serif;fill:#38bdf8}
+      .s{font:600 16px 'Segoe UI',Arial,sans-serif;fill:#94a3b8}
+    </style>
+  </defs>
+  <rect width="1600" height="960" fill="url(#bg)"/>
+  <text x="80" y="86" class="h">Cycle 2418 · Internal Developer Platform Agent Vending Machine on Azure</text>
+  <text x="80" y="124" class="t">ADE + AVM + azd + Foundry/APIM/Entra vending + Azure Policy DINE/Deny</text>
+
+  <rect x="80" y="170" rx="16" ry="16" width="420" height="220" fill="url(#panel)" stroke="#38bdf8"/>
+  <text x="106" y="208" class="h">Squad Self-Service</text>
+  <text x="106" y="242" class="t">azd template launch</text>
+  <text x="106" y="272" class="t">Dev Box isolated workspace</text>
+  <text x="106" y="302" class="t">ADE environment vending</text>
+  <text x="106" y="342" class="k">Provisioning median: 27 min</text>
+
+  <rect x="580" y="170" rx="16" ry="16" width="420" height="220" fill="url(#panel)" stroke="#38bdf8"/>
+  <text x="606" y="208" class="h">Platform CoE Baseline</text>
+  <text x="606" y="242" class="t">AVM Bicep/Terraform paved roads</text>
+  <text x="606" y="272" class="t">Policy-as-code guardrail packs</text>
+  <text x="606" y="302" class="t">Quota + identity defaults</text>
+  <text x="606" y="342" class="k">Leverage: 26 squads/engineer</text>
+
+  <rect x="1080" y="170" rx="16" ry="16" width="440" height="220" fill="url(#panel)" stroke="#38bdf8"/>
+  <text x="1106" y="208" class="h">Control Plane</text>
+  <text x="1106" y="242" class="t">Foundry Project provisioning</text>
+  <text x="1106" y="272" class="t">APIM subscription + quota wiring</text>
+  <text x="1106" y="302" class="t">Entra Agent Identity vending</text>
+  <text x="1106" y="342" class="k">Policy block rate: 98.7%</text>
+
+  <rect x="330" y="468" rx="14" ry="14" width="440" height="220" fill="url(#panel)" stroke="#10b981"/>
+  <text x="352" y="504" class="h">Governance Plane</text>
+  <text x="352" y="534" class="t">Zero public endpoint denial</text>
+  <text x="352" y="562" class="t">Mandatory content safety enforcement</text>
+  <text x="352" y="590" class="t">FinOps tags auto-injection</text>
+  <text x="352" y="628" class="k">Guardrail pass rate: 96.1%</text>
+
+  <rect x="850" y="468" rx="14" ry="14" width="440" height="220" fill="url(#panel)" stroke="#10b981"/>
+  <text x="872" y="504" class="h">Lifecycle &amp; Cost Plane</text>
+  <text x="872" y="534" class="t">Sandbox-to-prod promotion gates</text>
+  <text x="872" y="562" class="t">Orphan sandbox TTL reclamation</text>
+  <text x="872" y="590" class="t">Drift detection and remediation</text>
+  <text x="872" y="628" class="k">TTL savings: 82.4%</text>
+
+  <line x1="500" y1="282" x2="580" y2="282" stroke="#60a5fa" stroke-width="4"/>
+  <line x1="1000" y1="282" x2="1080" y2="282" stroke="#60a5fa" stroke-width="4"/>
+  <line x1="1296" y1="392" x2="1296" y2="468" stroke="#34d399" stroke-width="4"/>
+  <line x1="796" y1="392" x2="796" y2="468" stroke="#34d399" stroke-width="4"/>
+  <line x1="770" y1="578" x2="850" y2="578" stroke="#34d399" stroke-width="4"/>
+
+  <text x="80" y="742" class="s">Daily hottest breakthroughs (fetched 2026-11-15 UTC): ADE+Dev Box docs updates, AVM module growth, azd platform templates.</text>
+  <text x="80" y="774" class="s">Provenance labels: measured / synthetic / anonymized_reported. No fabricated coordinate claims outside evidence files.</text>
+  <text x="80" y="838" class="k">Round 1013 · Topic: internal-developer-platform-golden-paths-agent-vending-ade-avm-faq-r1013</text>
+  <text x="80" y="878" class="t">Source of truth: evidence/cycle-2418-benchmark.json and evidence/cycle-2418-sources.json</text>
+</svg>

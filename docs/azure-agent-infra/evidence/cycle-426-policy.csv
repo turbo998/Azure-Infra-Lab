@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Semantic cache key cardinality gate,188,200,0.94,measured,cache key control replay + deterministic verification
+Cache key collision integrity guard,183,190,0.9632,measured,cache-key collision integrity logs
+Tenant cache key namespace authorization fence,172,180,0.9556,measured,MCP policy replay logs

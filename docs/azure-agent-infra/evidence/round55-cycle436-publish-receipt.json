@@ -1,0 +1,58 @@
+{
+  "round": 55,
+  "cycle": 436,
+  "status": "completed",
+  "topic_slug": "agent-context-window-truncation-governance-selection-faq",
+  "source_worktree_commit": "0266e2aa814ebc2b0bcb4d112435af768621e3e6",
+  "delivery_receipt_sha": {
+    "ai-research-lab": "0366fe4cedd020dfec2bd7cccf27cac141febd37",
+    "ai-infra-lab": "0266e2aa814ebc2b0bcb4d112435af768621e3e6",
+    "Azure-Infra-Lab": "99d67614b734722c9d9213cfd956d536e001f943",
+    "turbo998.github.io": "ca6864dcdd337920cdb4c2949aaec2a4666fc755",
+    "ai-research-public": "a004224816fbca866d051540a81895a3a9f67dea"
+  },
+  "current_remote_origin_main": {
+    "ai-research-lab": "0366fe4cedd020dfec2bd7cccf27cac141febd37",
+    "ai-infra-lab": "0266e2aa814ebc2b0bcb4d112435af768621e3e6",
+    "Azure-Infra-Lab": "99d67614b734722c9d9213cfd956d536e001f943",
+    "turbo998.github.io": "ca6864dcdd337920cdb4c2949aaec2a4666fc755",
+    "ai-research-public": "a004224816fbca866d051540a81895a3a9f67dea"
+  },
+  "receipt_vs_current": {
+    "ai-research-lab": {
+      "merge_base": "0366fe4cedd020dfec2bd7cccf27cac141febd37",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-infra-lab": {
+      "merge_base": "0266e2aa814ebc2b0bcb4d112435af768621e3e6",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "99d67614b734722c9d9213cfd956d536e001f943",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "ca6864dcdd337920cdb4c2949aaec2a4666fc755",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "a004224816fbca866d051540a81895a3a9f67dea",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "ca6864dcdd337920cdb4c2949aaec2a4666fc755",
+    "pages_main": "4961d4d9483f3cc3b0191f610f7b6efcc8c0682e",
+    "receipt_vs_pages": {
+      "merge_base": "ca6864dcdd337920cdb4c2949aaec2a4666fc755",
+      "delivery_only": 0,
+      "current_only": 3
+    }
+  },
+  "observed_at_bjt": "2026-11-09T05:14:57+08:00"
+}

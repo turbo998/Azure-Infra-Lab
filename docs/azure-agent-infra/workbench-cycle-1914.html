@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1914 · APIM MCP Tool Call Budget Jitter</title>
+<style>body{margin:0;background:#09132a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1914｜MCP Tool Call Budget Jitter 工作台</h1>
+<div class="g"><div class="c">
+<label>预算抖动幅度(%)</label><input id="jit" type="range" min="0" max="60" value="18">
+<label>调用冲突率(%)</label><input id="conf" type="range" min="0" max="45" value="12">
+<label>峰值成功率损失(%)</label><input id="loss" type="range" min="0" max="30" value="7">
+</div><div class="c"><h3>预算抖动治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先压低抖动幅度，再降低冲突率，最后修复峰值成功率损失。</div></div>
+<script>
+function calc(){const j=+jit.value,c=+conf.value,l=+loss.value;const s=((60-j)*2.6)+((45-c)*2.8)+((30-l)*3.4);state.textContent=s>255?'可生产：预算平滑与回补门禁协同稳定':(s>215?'可上线：建议继续降低冲突':'风险偏高：需优化预算阈值与回补策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['jit','conf','loss'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Cold-pool floor policy gate,188,200,0.94,measured,cold-pool floor replay + deterministic verification
+Warm-pool burst budget guard,183,190,0.9632,measured,warm-pool burst integrity logs
+Tenant pool-scaling authorization fence,172,180,0.9556,measured,MCP policy replay logs

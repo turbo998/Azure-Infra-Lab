@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1875 · A2A Fingerprint Routing Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1875｜A2A Contract Fingerprint Routing 工作台</h1>
+<div class="g">
+<div class="c"><label>指纹命中率(%)</label><input id="hit" type="range" min="40" max="100" value="93"><label>回退成功率(%)</label><input id="fb" type="range" min="40" max="100" value="95"><label>漂移告警提前量(min)</label><input id="lead" type="range" min="0" max="120" value="34"></div>
+<div class="c"><h3>指纹路由治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：保持高命中与高回退成功率，同时持续提高漂移预警提前量。</div></div>
+<script>
+function calc(){const hit=+document.getElementById('hit').value,fb=+document.getElementById('fb').value,lead=+document.getElementById('lead').value;const v=((hit-40)*1.4)+((fb-40)*1.25)+(lead*0.9);if(v>186)state.textContent='可生产：路由精度与兼容性稳定';else if(v>156)state.textContent='可上线：建议增强漂移预警';else state.textContent='风险偏高：需加强映射与回退策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['hit','fb','lead'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

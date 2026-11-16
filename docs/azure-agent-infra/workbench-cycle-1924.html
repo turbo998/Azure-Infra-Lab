@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1924 · APIM Tenant Cache Quota Fairness Surge</title>
+<style>body{margin:0;background:#09132a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1924｜Tenant Cache Quota Fairness Surge 工作台</h1>
+<div class="g"><div class="c">
+<label>配额不公平率(%)</label><input id="unfair" type="range" min="0" max="30" value="6">
+<label>缓存窗口 P95(ms)</label><input id="p95" type="range" min="120" max="1400" value="289">
+<label>突发回退率(%)</label><input id="deny" type="range" min="0" max="40" value="8">
+</div><div class="c"><h3>Cache Quota 治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先降低配额不公平率，再收敛突发回退率，最后优化缓存窗口 P95。</div></div>
+<script>
+function calc(){const u=+unfair.value,l=+p95.value,d=+deny.value;const s=((30-u)*3.5)+((1400-l)*0.15)+((40-d)*2.7);state.textContent=s>268?'可生产：缓存配额分层与突发回退协同稳定':(s>230?'可上线：建议继续收敛回退率':'风险偏高：需优化配额阈值与回退策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['unfair','p95','deny'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

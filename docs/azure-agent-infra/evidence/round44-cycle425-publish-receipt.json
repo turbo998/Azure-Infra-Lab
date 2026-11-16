@@ -1,0 +1,58 @@
+{
+  "round": 44,
+  "cycle": 425,
+  "status": "completed",
+  "topic_slug": "agent-tool-output-chunking-window-selection-faq",
+  "source_worktree_commit": "44c1ad9820d8988427a6159f775791975befc245",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "038db8e3243baa0deb77b1dcc23dc5aa8c0f8f0e",
+    "Azure-Infra-Lab": "75f91602320f774b55f04ea4db5338395af87e67",
+    "ai-research-public": "6ac07c7df3f6198c728f2f0c830e1f4024c55453",
+    "ai-research-lab": "a967dfe6241794d129ce7e48bcceeefe55e0b7b5",
+    "turbo998.github.io": "9b467b64cfb1f66c8c28b7de1b30e3368a8835f1"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "038db8e3243baa0deb77b1dcc23dc5aa8c0f8f0e",
+    "Azure-Infra-Lab": "75f91602320f774b55f04ea4db5338395af87e67",
+    "ai-research-public": "84805f774561f70ee87ae1519cae2cb44c9df57f",
+    "ai-research-lab": "a967dfe6241794d129ce7e48bcceeefe55e0b7b5",
+    "turbo998.github.io": "bcfd2b0b5bf4335f8864d08e87b28a97b4b43f26"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "038db8e3243baa0deb77b1dcc23dc5aa8c0f8f0e",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "75f91602320f774b55f04ea4db5338395af87e67",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "6ac07c7df3f6198c728f2f0c830e1f4024c55453",
+      "delivery_only": 0,
+      "current_only": 1
+    },
+    "ai-research-lab": {
+      "merge_base": "a967dfe6241794d129ce7e48bcceeefe55e0b7b5",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "9b467b64cfb1f66c8c28b7de1b30e3368a8835f1",
+      "delivery_only": 0,
+      "current_only": 1
+    }
+  },
+  "homepage": {
+    "origin_main": "bcfd2b0b5bf4335f8864d08e87b28a97b4b43f26",
+    "pages_main": "bcfd2b0b5bf4335f8864d08e87b28a97b4b43f26",
+    "receipt_vs_pages": {
+      "delivery_only": 0,
+      "current_only": 1,
+      "merge_base": "9b467b64cfb1f66c8c28b7de1b30e3368a8835f1"
+    }
+  },
+  "observed_at_bjt": "2026-11-09T03:54:08+08:00"
+}

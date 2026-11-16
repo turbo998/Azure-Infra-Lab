@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <rect x="40" y="40" width="1520" height="120" rx="14" fill="url(#g)"/>
+  <text x="70" y="102" fill="white" font-size="34" font-family="Segoe UI, Arial">Cycle 2376 · Enterprise Hub-Spoke Private Egress Governance</text>
+  <text x="70" y="142" fill="#dbeafe" font-size="22" font-family="Segoe UI, Arial">Managed VNet | BYO Subnet Injection | NSP | Private DNS | Firewall FQDN/TLS</text>
+  <rect x="70" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="90" y="275" fill="#bfdbfe" font-size="22">Hub VNet</text>
+  <rect x="350" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="370" y="275" fill="#bfdbfe" font-size="22">Managed Lane</text>
+  <rect x="630" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="650" y="275" fill="#bfdbfe" font-size="22">BYO Lane</text>
+  <rect x="910" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="930" y="275" fill="#bfdbfe" font-size="22">NSP + DNS</text>
+  <rect x="1190" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="1210" y="275" fill="#bfdbfe" font-size="22">Firewall</text>
+  <path d="M320 280 L350 280 M600 280 L630 280 M880 280 L910 280 M1160 280 L1190 280" stroke="#93c5fd" stroke-width="4"/>
+  <rect x="70" y="390" width="1460" height="430" rx="16" fill="#0f172a" stroke="#334155"/>
+  <text x="95" y="445" fill="#e2e8f0" font-size="30">Daily capability highlights</text>
+  <text x="95" y="495" fill="#cbd5e1" font-size="24">• Managed/BYO private lane split improves compliance-tier routing precision.</text>
+  <text x="95" y="540" fill="#cbd5e1" font-size="24">• NSP perimeter controls reduce accidental private endpoint exposure.</text>
+  <text x="95" y="585" fill="#cbd5e1" font-size="24">• Private DNS lineage plus Firewall TLS policy improves auditability.</text>
+  <text x="95" y="630" fill="#cbd5e1" font-size="24">• Tenant-attributed egress governance controls cost and risk drift.</text>
+  <text x="95" y="710" fill="#94a3b8" font-size="18">labels: measured / synthetic / anonymized_reported</text>
+  <text x="95" y="740" fill="#94a3b8" font-size="18">fetched_at_utc: 2026-11-15T15:46:34+00:00</text>
+</svg>

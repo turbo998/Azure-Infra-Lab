@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+OBO token exchange burst saturation gate,182,194,0.9381,measured,token-exchange replay + deterministic verification
+OBO quota-credit integrity guard,173,180,0.9611,measured,OBO quota-credit integrity logs
+Tenant-scope token-exchange authorization fence,168,176,0.9545,measured,tenant token-fairness replay logs

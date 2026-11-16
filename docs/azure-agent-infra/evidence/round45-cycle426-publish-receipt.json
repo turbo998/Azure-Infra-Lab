@@ -1,0 +1,58 @@
+{
+  "round": 45,
+  "cycle": 426,
+  "status": "completed",
+  "topic_slug": "agent-gateway-semantic-cache-keying-selection-faq",
+  "source_worktree_commit": "f8c83eccddeab4f90a3aeb43de0f03341471392e",
+  "delivery_receipt_sha": {
+    "ai-infra-lab": "239e306d6bd1d1614f96c01e2f75232770e3310c",
+    "Azure-Infra-Lab": "8dd2be8d7a05195c5d4541563b1d604e6c4d0cd7",
+    "ai-research-public": "65d267483678964bafea490d7098ffc121898139",
+    "ai-research-lab": "4e130a955f51bf1e67cf4531e093c7dd685f3155",
+    "turbo998.github.io": "412b0cf0d567e861a6b71c5363523f6bc194ae16"
+  },
+  "current_remote_origin_main": {
+    "ai-infra-lab": "239e306d6bd1d1614f96c01e2f75232770e3310c",
+    "Azure-Infra-Lab": "8dd2be8d7a05195c5d4541563b1d604e6c4d0cd7",
+    "ai-research-public": "65d267483678964bafea490d7098ffc121898139",
+    "ai-research-lab": "4e130a955f51bf1e67cf4531e093c7dd685f3155",
+    "turbo998.github.io": "412b0cf0d567e861a6b71c5363523f6bc194ae16"
+  },
+  "receipt_vs_current": {
+    "ai-infra-lab": {
+      "merge_base": "239e306d6bd1d1614f96c01e2f75232770e3310c",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "8dd2be8d7a05195c5d4541563b1d604e6c4d0cd7",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "merge_base": "65d267483678964bafea490d7098ffc121898139",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "4e130a955f51bf1e67cf4531e093c7dd685f3155",
+      "delivery_only": 0,
+      "current_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "412b0cf0d567e861a6b71c5363523f6bc194ae16",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "412b0cf0d567e861a6b71c5363523f6bc194ae16",
+    "pages_main": "412b0cf0d567e861a6b71c5363523f6bc194ae16",
+    "receipt_vs_pages": {
+      "merge_base": "412b0cf0d567e861a6b71c5363523f6bc194ae16",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:00:45+08:00"
+}

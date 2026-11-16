@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+ais_portcall_to_risk_packet,AIS/port-call ingestion to first customs-risk packet,10400,19600,anonymized_reported,anonymized maritime customs replay
+sanction_route_anomaly_solver,Sanctioned-route and docs-mismatch deterministic solver,710,1290,synthetic,trade-lane anomaly deterministic benchmark
+customs_release_commit,Customs release lock + manifest attestation commit,208,366,measured,customs release concurrency replay
+carrier_broker_hold_notification,Carrier/broker hold-and-release notice fan-out,442,811,anonymized_reported,anonymized recall dispatch replay

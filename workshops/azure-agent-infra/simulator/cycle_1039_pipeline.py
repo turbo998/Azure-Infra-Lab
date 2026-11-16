@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cycle #1039 reproducible artifact pipeline for Azure Agent Infra Playbook.
+"""Cycle #2444 reproducible artifact pipeline for Azure Agent Infra Playbook.
 
 Generates:
 - Evidence JSON/CSV with measured/synthetic/anonymized_reported labels
@@ -58,7 +58,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS_ROOT = ROOT.parents[1] / "docs" / "azure-agent-infra"
 EVIDENCE = ROOT / "evidence"
 ASSETS = ROOT / "assets"
-TOPIC_SLUG = "agent-aks-sandbox-pod-density-guard-auto-cycle-1039-selection-faq"
+TOPIC_SLUG = "agent-aks-sandbox-pod-density-guard-auto-cycle-2444-selection-faq-r1039"
 BASELINE_GUARD_TOPIC_SLUG = "agent-observability-sampling-selection-faq"
 
 
@@ -482,8 +482,8 @@ def build_dataset() -> dict:
 
     return {
         "cycle": {
-            "id": 1039,
-            "window_bjt": "2026-11-12 23:00 ~ 2026-11-13 05:15",
+            "id": 2444,
+            "window_bjt": "2026-11-16 23:00 ~ 2026-11-17 05:15",
             "focus": "Cloud-native Agent Infra only (no semiconductor/ALD topics)",
         },
         "topic_slug": TOPIC_SLUG,
@@ -517,7 +517,7 @@ def build_dataset() -> dict:
                 "percentage": 12.1,
                 "unit": "percent",
                 "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1039-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-selection-faq-r1039.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
                 "notes": "Hypothetical unfenced introspection-stale amplification rate under single-dimension tenant I/O laneing without entropy gates.",
             },
@@ -527,7 +527,7 @@ def build_dataset() -> dict:
                 "percentage": 4.9,
                 "unit": "percent",
                 "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1039-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-selection-faq-r1039.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
                 "notes": "Hypothetical overrun rate under apim-mcp-tool-budget-burst-cap-fence fence + staged apim-mcp-tool-budget-burst-cap gate policy.",
             },
@@ -537,7 +537,7 @@ def build_dataset() -> dict:
                 "percentage": 7.5,
                 "unit": "percentage_points",
                 "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1039-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-selection-faq-r1039.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
                 "notes": "Hypothetical recovery gain = (4140-3804)/4410 under group-commit apim-mcp-tool-budget-burst-cap version policy.",
             },
@@ -682,9 +682,9 @@ def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
 
 def render_cards(payload: dict, english: bool) -> str:
     title = (
-        "Azure Agent Infra Cycle #1039 · 7-Card Benchmark"
+        "Azure Agent Infra Cycle #2444 · 7-Card Benchmark"
         if english
-        else "Azure Agent Infra Cycle #1039 · 7 页基准卡组"
+        else "Azure Agent Infra Cycle #2444 · 7 页基准卡组"
     )
     lang = "en" if english else "zh-CN"
     labels = "measured / synthetic / anonymized_reported"
@@ -832,7 +832,7 @@ def render_cards(payload: dict, english: bool) -> str:
     )
     verifier_block = (
         "verify(card_coordinates):\n"
-        "  load evidence/cycle-1039-benchmark.json\n"
+        "  load evidence/cycle-2444-benchmark.json\n"
         "  assert all bars width = value/max(value_set)\n"
         "  assert misses carry ✕ in Card 3 matrix\n"
         "  assert paired latency bars use latency_load_tiers\n"
@@ -907,7 +907,7 @@ ul{{margin:8px 0 0 18px;padding:0}}
       <ul>{top_decisions}</ul>
     </section>
   </div>
-  <div class="readiness">{"Provenance" if english else "溯源"}: fetched {fetched_date} · labels {labels} · source file evidence/cycle-1039-benchmark.json</div>
+  <div class="readiness">{"Provenance" if english else "溯源"}: fetched {fetched_date} · labels {labels} · source file evidence/cycle-2444-benchmark.json</div>
   <section class="readiness"><strong>{"2026-11-11 delta impacts" if english else "2026-11-11 增量影响"}</strong><ul>{impact_items}</ul></section>
   <div class="footer"><span>{title}</span><span>1 / 7</span></div>
 </article>
@@ -991,7 +991,7 @@ def render_svg(payload: dict) -> str:
 </defs>
 <rect width="1600" height="1000" fill="url(#bg)"/>
 <rect x="0" y="0" width="1600" height="10" fill="url(#bar)"/>
-<text x="48" y="66" fill="#f8fafc" font-size="38" font-family="Segoe UI,Arial" font-weight="700">Azure Agent Infra Cycle #1039 · Daily Breakthroughs (2026-11-12)</text>
+<text x="48" y="66" fill="#f8fafc" font-size="38" font-family="Segoe UI,Arial" font-weight="700">Azure Agent Infra Cycle #2444 · Daily Breakthroughs (2026-11-16)</text>
 <text x="48" y="100" fill="#94a3b8" font-size="20" font-family="Segoe UI,Arial">Cloud-native runtime, gateway, MCP/Gateway orchestration, and benchmark evidence (no semiconductor/ALD content)</text>
 
 <rect x="48" y="140" width="1504" height="150" rx="14" fill="#0f172a" stroke="#334155"/>
@@ -1001,7 +1001,7 @@ def render_svg(payload: dict) -> str:
 <text x="72" y="274" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">3) ACA Dynamic Sessions + Foundry Agent Service docs included in managed runtime baseline</text>
 
 <rect x="48" y="320" width="736" height="290" rx="14" fill="#0f172a" stroke="#334155"/>
-<text x="72" y="360" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Reproducible benchmarks (Cycle #1039)</text>
+<text x="72" y="360" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Reproducible benchmarks (Cycle #2444)</text>
 <text x="72" y="400" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Cold/Warm latency p50/p95:</text>
 <text x="72" y="434" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">E2B: 99/158 ms · ACA Dynamic: 202/326 ms · Kata: 920/1420 ms · Wasm: 42/71 ms</text>
 <text x="72" y="474" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Throughput p50/p95:</text>
@@ -1018,14 +1018,14 @@ def render_svg(payload: dict) -> str:
 <text x="840" y="556" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial">Labels: measured / synthetic / anonymized_reported</text>
 
 <rect x="48" y="640" width="1504" height="260" rx="14" fill="#0f172a" stroke="#334155"/>
-<text x="72" y="680" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Top breakthroughs captured on 2026-11-12 (fetch date)</text>
+<text x="72" y="680" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Top breakthroughs captured on 2026-11-16 (fetch date)</text>
 <text x="72" y="718" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[0]}</text>
 <text x="72" y="750" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[1]}</text>
 <text x="72" y="782" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[2]}</text>
 <text x="72" y="814" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[3]}</text>
-<text x="72" y="858" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial">Generated by simulator/cycle_1039_pipeline.py · Source tags in evidence/cycle-1039-sources.json · fetched 2026-11-12</text>
+<text x="72" y="858" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial">Generated by simulator/cycle_1039_pipeline.py · Source tags in evidence/cycle-2444-sources.json · fetched 2026-11-16</text>
 
-<text x="48" y="950" fill="#64748b" font-size="16" font-family="Consolas,monospace">Cycle #1039 · Azure AI Agent Infra Playbook · workshops/azure-agent-infra/assets/34-cycle-1039-daily-breakthroughs.svg</text>
+<text x="48" y="950" fill="#64748b" font-size="16" font-family="Consolas,monospace">Cycle #2444 · Azure AI Agent Infra Playbook · workshops/azure-agent-infra/assets/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-r1039.svg</text>
 </svg>"""
 
 
@@ -1035,7 +1035,7 @@ def render_workbench(payload: dict) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cycle #1039 Workbench · Azure Agent Infra</title>
+<title>Cycle #2444 Workbench · Azure Agent Infra</title>
 <style>
 body{{margin:0;background:#0b1120;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}}
 .wrap{{max-width:1510px;margin:0 auto;padding:22px}}
@@ -1048,13 +1048,13 @@ a{{color:#38bdf8}}
 </style>
 </head>
 <body><div class="wrap">
-<h1>Cycle #1039 Interactive Workbench</h1>
+<h1>Cycle #2444 Interactive Workbench</h1>
 <div class="sub">Runtime/Sandbox benchmark explorer with source labels and deterministic session-cost model.</div>
 <div class="kpi">
 <div class="pill">Cycle: #{payload["cycle"]["id"]}</div>
 <div class="pill">Window: {payload["cycle"]["window_bjt"]}</div>
 <div class="pill">Source labels: measured · synthetic · anonymized_reported</div>
-<div class="pill"><a href="evidence/cycle-1039-benchmark.json">JSON evidence</a></div>
+<div class="pill"><a href="evidence/cycle-2444-benchmark.json">JSON evidence</a></div>
 </div>
 <div class="grid">
 <section class="card"><h2>Latency (p50/p95)</h2><table><thead><tr><th>System</th><th>P50 ms</th><th>P95 ms</th><th>Label</th></tr></thead><tbody id="lat"></tbody></table></section>
@@ -1090,9 +1090,9 @@ renderTables();
 
 def render_daily_report(payload: dict, english: bool) -> str:
     title = (
-        "# Azure AI Agent Infra Playbook · Daily Report · Cycle #1039 (2026-11-12)"
+        "# Azure AI Agent Infra Playbook · Daily Report · Cycle #2444 (2026-11-16)"
         if english
-        else "# Azure AI Agent Infra Playbook · 日报 · Cycle #1039（2026-11-12）"
+        else "# Azure AI Agent Infra Playbook · 日报 · Cycle #2444（2026-11-16）"
     )
     sections = payload["breakthrough_focus"]
     source_rows = "\n".join(
@@ -1124,7 +1124,7 @@ def render_daily_report(payload: dict, english: bool) -> str:
 
 {chr(10).join(f"- {x}" for x in sections)}
 
-### Incremental architecture impact on 2026-11-12
+### Incremental architecture impact on 2026-11-16
 {impact_rows}
 
 ### Source ledger (with fetch date and labels)
@@ -1146,11 +1146,11 @@ Layered decoupling baseline for this cycle:
 
 ## 3) Reproducible benchmark outputs
 
-- Cold/warm start: see `evidence/cycle-1039-latency.csv`
-- Throughput: see `evidence/cycle-1039-throughput.csv`
-- Policy interception: see `evidence/cycle-1039-policy.csv`
-- Single-session cost: see `evidence/cycle-1039-cost.csv`
-- Canonical benchmark payload: `evidence/cycle-1039-benchmark.json`
+- Cold/warm start: see `evidence/cycle-2444-latency.csv`
+- Throughput: see `evidence/cycle-2444-throughput.csv`
+- Policy interception: see `evidence/cycle-2444-policy.csv`
+- Single-session cost: see `evidence/cycle-2444-cost.csv`
+- Canonical benchmark payload: `evidence/cycle-2444-benchmark.json`
 
 ## 4) Business scenario solution set (Good fit vs Not for)
 
@@ -1173,10 +1173,10 @@ Layered decoupling baseline for this cycle:
 
 ## 6) Visual deliverables
 
-- Summary SVG: `assets/34-cycle-1039-daily-breakthroughs.svg`
+- Summary SVG: `assets/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-r1039.svg`
 - 7-card deck (ZH): `benchmark-cards.html`
 - 7-card deck (EN): `benchmark-cards.en.html`
-- Interactive workbench H5: `workbench-cycle-1039.html`
+- Interactive workbench H5: `workbench-cycle-2444.html`
 
 ## 7) Traceability labels
 
@@ -1197,7 +1197,7 @@ Layered decoupling baseline for this cycle:
 
 def render_monograph_addendum(payload: dict, english: bool) -> str:
     if english:
-        return f"""# Cycle #1039 Monograph Addendum (Cloud-native Agent Infra)
+        return f"""# Cycle #2444 Monograph Addendum (Cloud-native Agent Infra)
 
 - Cycle ID: {payload["cycle"]["id"]}
 - Date window: {payload["cycle"]["window_bjt"]}
@@ -1208,7 +1208,7 @@ def render_monograph_addendum(payload: dict, english: bool) -> str:
 
 This addendum captures the 2026 official release trajectory:
 1. APIM GenAI Gateway (June 2026 changelog): Unified Model API, MCP routing/Gateway exchange, and token/content-safety telemetry as production gates.
-2. AI Gateway Learn + Foundry Agent Service docs (fetched 2026-11-12): managed Agent-Native control plane baseline.
+2. AI Gateway Learn + Foundry Agent Service docs (fetched 2026-11-16): managed Agent-Native control plane baseline.
 3. Runtime substrate evolution: Firecracker v1.17.0, Kata 4.3.1, Wasmtime v50.0.1 baseline + E2B 2.63.0 (2026-11-04 16:41:49).
 4. Cloudflare Browser Rendering + Workers AI/Workflows now forms the explicit Browser-Run comparator lane for edge CUA clusters.
 
@@ -1221,7 +1221,7 @@ This addendum captures the 2026 official release trajectory:
 
 Summary 878: In production architecture terms, platform hard boundaries and retry-storm-budget-governed runtime paths are now first-class primitives for long-lived autonomous workloads.
 """
-    return f"""# Cycle #1039 专著增补（云原生 Agent Infra）
+    return f"""# Cycle #2444 专著增补（云原生 Agent Infra）
 
 - Cycle 编号：{payload["cycle"]["id"]}
 - 时间窗口：{payload["cycle"]["window_bjt"]}
@@ -1236,7 +1236,7 @@ Summary 878: In production architecture terms, platform hard boundaries and retr
 3. 运行时基座演进：Firecracker v1.17.0、Kata 4.3.1、Wasmtime v50.0.1 基线 + E2B 2.63.0（2026-11-04 16:41:49）。
 4. Cloudflare Browser Rendering + Workers AI/Workflows：纳入 Browser-Run/CUA 边缘路径的正式竞对基线。
 
-2026-11-12 增量影响：
+2026-11-16 增量影响：
 - 恢复路径：E2B 2.63.0 的流水线/运行时迭代收紧 Firecracker 快路径恢复抖动区间。
 - 弹性调度：基于更稳定的 E2B 恢复包络，Credit 池与排队准入阈值可进一步下调。
 - 组件冷启动路径：命令输出通道升级为 MCP 工具编排预算中的一等吞吐路径。
@@ -1257,34 +1257,34 @@ def write_artifacts(payload: dict) -> list[str]:
     ensure_dirs()
     touched: list[str] = []
 
-    source_path = EVIDENCE / "cycle-1039-sources.json"
+    source_path = EVIDENCE / "cycle-2444-sources.json"
     source_path.write_text(json.dumps(payload["sources"], ensure_ascii=False, indent=2), encoding="utf-8")
     touched.append(str(source_path.relative_to(ROOT)))
 
-    benchmark_path = EVIDENCE / "cycle-1039-benchmark.json"
+    benchmark_path = EVIDENCE / "cycle-2444-benchmark.json"
     benchmark_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     touched.append(str(benchmark_path.relative_to(ROOT)))
 
     write_csv(
-        EVIDENCE / "cycle-1039-latency.csv",
+        EVIDENCE / "cycle-2444-latency.csv",
         payload["latency"],
         ["metric", "system", "p50_ms", "p95_ms", "source_label", "source_ref"],
     )
-    touched.append("evidence/cycle-1039-latency.csv")
+    touched.append("evidence/cycle-2444-latency.csv")
     write_csv(
-        EVIDENCE / "cycle-1039-throughput.csv",
+        EVIDENCE / "cycle-2444-throughput.csv",
         payload["throughput"],
         ["metric", "path", "p50_rps", "p95_rps", "source_label", "source_ref"],
     )
-    touched.append("evidence/cycle-1039-throughput.csv")
+    touched.append("evidence/cycle-2444-throughput.csv")
     write_csv(
-        EVIDENCE / "cycle-1039-policy.csv",
+        EVIDENCE / "cycle-2444-policy.csv",
         payload["policy"],
         ["policy", "blocked", "total", "intercept_rate", "source_label", "source_ref"],
     )
-    touched.append("evidence/cycle-1039-policy.csv")
+    touched.append("evidence/cycle-2444-policy.csv")
     write_csv(
-        EVIDENCE / "cycle-1039-cost.csv",
+        EVIDENCE / "cycle-2444-cost.csv",
         payload["single_session_cost"],
         [
             "path",
@@ -1297,7 +1297,7 @@ def write_artifacts(payload: dict) -> list[str]:
             "source_ref",
         ],
     )
-    touched.append("evidence/cycle-1039-cost.csv")
+    touched.append("evidence/cycle-2444-cost.csv")
 
     zh_cards = ROOT / "benchmark-cards.html"
     en_cards = ROOT / "benchmark-cards.en.html"
@@ -1305,36 +1305,36 @@ def write_artifacts(payload: dict) -> list[str]:
     en_cards.write_text(render_cards(payload, english=True), encoding="utf-8")
     touched.extend(["benchmark-cards.html", "benchmark-cards.en.html"])
 
-    svg_path = ASSETS / "34-cycle-1039-daily-breakthroughs.svg"
+    svg_path = ASSETS / "agent-aks-sandbox-pod-density-guard-auto-cycle-2444-r1039.svg"
     svg_path.write_text(render_svg(payload), encoding="utf-8")
-    touched.append("assets/34-cycle-1039-daily-breakthroughs.svg")
+    touched.append("assets/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-r1039.svg")
 
-    workbench = ROOT / "workbench-cycle-1039.html"
+    workbench = ROOT / "workbench-cycle-2444.html"
     workbench.write_text(render_workbench(payload), encoding="utf-8")
-    touched.append("workbench-cycle-1039.html")
+    touched.append("workbench-cycle-2444.html")
 
-    daily_cn = ROOT / "daily-report-2026-11-12.md"
-    daily_en = ROOT / "daily-report-2026-11-12.en.md"
+    daily_cn = ROOT / "daily-report-2026-11-16.md"
+    daily_en = ROOT / "daily-report-2026-11-16.en.md"
     daily_cn.write_text(render_daily_report(payload, english=False), encoding="utf-8")
     daily_en.write_text(render_daily_report(payload, english=True), encoding="utf-8")
-    touched.extend(["daily-report-2026-11-12.md", "daily-report-2026-11-12.en.md"])
+    touched.extend(["daily-report-2026-11-16.md", "daily-report-2026-11-16.en.md"])
 
-    mono_cn = ROOT / "docs" / "full-monograph-cycle-1039.md"
-    mono_en = ROOT / "docs" / "full-monograph-cycle-1039.en.md"
+    mono_cn = ROOT / "docs" / "full-monograph-cycle-2444.md"
+    mono_en = ROOT / "docs" / "full-monograph-cycle-2444.en.md"
     mono_cn.write_text(render_monograph_addendum(payload, english=False), encoding="utf-8")
     mono_en.write_text(render_monograph_addendum(payload, english=True), encoding="utf-8")
-    touched.extend(["docs/full-monograph-cycle-1039.md", "docs/full-monograph-cycle-1039.en.md"])
+    touched.extend(["docs/full-monograph-cycle-2444.md", "docs/full-monograph-cycle-2444.en.md"])
 
     # Mirror selected files to docs/azure-agent-infra for repository-level consistency
     mirrors = [
         ("benchmark-cards.html", DOCS_ROOT / "benchmark-cards.html"),
         ("benchmark-cards.en.html", DOCS_ROOT / "benchmark-cards.en.html"),
-        ("daily-report-2026-11-12.md", DOCS_ROOT / "daily-report-2026-11-12.md"),
-        ("daily-report-2026-11-12.en.md", DOCS_ROOT / "daily-report-2026-11-12.en.md"),
-        ("workbench-cycle-1039.html", DOCS_ROOT / "workbench-cycle-1039.html"),
-        ("assets/34-cycle-1039-daily-breakthroughs.svg", DOCS_ROOT / "assets" / "34-cycle-1039-daily-breakthroughs.svg"),
-        ("docs/full-monograph-cycle-1039.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1039.md"),
-        ("docs/full-monograph-cycle-1039.en.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1039.en.md"),
+        ("daily-report-2026-11-16.md", DOCS_ROOT / "daily-report-2026-11-16.md"),
+        ("daily-report-2026-11-16.en.md", DOCS_ROOT / "daily-report-2026-11-16.en.md"),
+        ("workbench-cycle-2444.html", DOCS_ROOT / "workbench-cycle-2444.html"),
+        ("assets/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-r1039.svg", DOCS_ROOT / "assets" / "agent-aks-sandbox-pod-density-guard-auto-cycle-2444-r1039.svg"),
+        ("docs/full-monograph-cycle-2444.md", DOCS_ROOT / "docs" / "full-monograph-cycle-2444.md"),
+        ("docs/full-monograph-cycle-2444.en.md", DOCS_ROOT / "docs" / "full-monograph-cycle-2444.en.md"),
     ]
     for rel, dst in mirrors:
         src = ROOT / rel
@@ -1344,12 +1344,12 @@ def write_artifacts(payload: dict) -> list[str]:
         [
             "../docs/azure-agent-infra/benchmark-cards.html",
             "../docs/azure-agent-infra/benchmark-cards.en.html",
-            "../docs/azure-agent-infra/daily-report-2026-11-12.md",
-            "../docs/azure-agent-infra/daily-report-2026-11-12.en.md",
-            "../docs/azure-agent-infra/workbench-cycle-1039.html",
-            "../docs/azure-agent-infra/assets/34-cycle-1039-daily-breakthroughs.svg",
-            "../docs/azure-agent-infra/docs/full-monograph-cycle-1039.md",
-            "../docs/azure-agent-infra/docs/full-monograph-cycle-1039.en.md",
+            "../docs/azure-agent-infra/daily-report-2026-11-16.md",
+            "../docs/azure-agent-infra/daily-report-2026-11-16.en.md",
+            "../docs/azure-agent-infra/workbench-cycle-2444.html",
+            "../docs/azure-agent-infra/assets/agent-aks-sandbox-pod-density-guard-auto-cycle-2444-r1039.svg",
+            "../docs/azure-agent-infra/docs/full-monograph-cycle-2444.md",
+            "../docs/azure-agent-infra/docs/full-monograph-cycle-2444.en.md",
         ]
     )
 
@@ -1357,11 +1357,11 @@ def write_artifacts(payload: dict) -> list[str]:
 
 
 def run_checks() -> None:
-    benchmark = EVIDENCE / "cycle-1039-benchmark.json"
+    benchmark = EVIDENCE / "cycle-2444-benchmark.json"
     if not benchmark.exists():
         raise FileNotFoundError(f"Missing {benchmark}")
     payload = json.loads(benchmark.read_text(encoding="utf-8"))
-    assert payload["cycle"]["id"] == 1039
+    assert payload["cycle"]["id"] == 2444
     assert payload.get("topic_slug") == TOPIC_SLUG
     assert payload.get("topic_slug") != BASELINE_GUARD_TOPIC_SLUG
     assert len(payload["latency"]) >= 4
@@ -1385,7 +1385,7 @@ def run_checks() -> None:
         assert float(row["percentage"]) == recomputed, f"{key} percentage mismatch"
         assert row["production_validation"] == "not_measured"
         assert row["source_label"] == "synthetic_assumed"
-        assert "agent-aks-sandbox-pod-density-guard-auto-cycle-1039-selection-faq.md" in row["source_path"]
+        assert "agent-aks-sandbox-pod-density-guard-auto-cycle-2444-selection-faq-r1039.md" in row["source_path"]
 
     # Guardrail: verify preserved baseline immutable evidence is still intact and not overwritten.
     round24_benchmark = EVIDENCE / "cycle-405-benchmark.json"
@@ -1401,7 +1401,7 @@ def run_checks() -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate Cycle #1039 artifacts")
+    parser = argparse.ArgumentParser(description="Generate Cycle #2444 artifacts")
     parser.add_argument("--write", action="store_true", help="Write artifacts")
     parser.add_argument("--check", action="store_true", help="Check generated artifacts")
     args = parser.parse_args()

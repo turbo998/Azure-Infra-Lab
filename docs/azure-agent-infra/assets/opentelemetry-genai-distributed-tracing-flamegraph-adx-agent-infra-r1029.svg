@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0b1220"/><stop offset="100%" stop-color="#172554"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#22c55e"/>
+  </linearGradient>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<rect x="0" y="0" width="1600" height="10" fill="url(#accent)"/>
+<text x="46" y="64" fill="#f8fafc" font-family="Segoe UI,Arial" font-size="36" font-weight="700">Cycle 2434 · OTel GenAI Distributed Tracing &amp; Flamegraph RCA on Azure</text>
+<text x="46" y="98" fill="#93c5fd" font-family="Segoe UI,Arial" font-size="19">Fetched: 2026-11-16 · Labels: measured / synthetic / anonymized_reported · Topic: opentelemetry-genai-distributed-tracing-flamegraph-adx-agent-infra-faq-r1029</text>
+
+<rect x="46" y="132" width="1508" height="166" rx="12" fill="#0f172a" stroke="#334155"/>
+<text x="70" y="172" fill="#38bdf8" font-family="Segoe UI,Arial" font-size="24" font-weight="700">Daily hottest breakthroughs (official/release-first)</text>
+<text x="70" y="208" fill="#e2e8f0" font-family="Segoe UI,Arial" font-size="20">• OTel GenAI semantic conventions are now treated as mandatory production taxonomy for multi-agent DAG telemetry.</text>
+<text x="70" y="236" fill="#e2e8f0" font-family="Segoe UI,Arial" font-size="20">• W3C traceparent/baggage propagation is enforced across APIM, Service Bus, Durable Task, and MCP hops to remove span lineage gaps.</text>
+<text x="70" y="264" fill="#e2e8f0" font-family="Segoe UI,Arial" font-size="20">• PII-redacting OTel collector split-storage pattern (structural spans vs encrypted prompt/completion vault) becomes baseline for zero-leak debugging.</text>
+
+<rect x="46" y="320" width="736" height="280" rx="12" fill="#0f172a" stroke="#334155"/>
+<text x="70" y="360" fill="#f8fafc" font-family="Segoe UI,Arial" font-size="24" font-weight="700">Critical-path telemetry chain</text>
+<text x="70" y="396" fill="#cbd5e1" font-family="Segoe UI,Arial" font-size="19">APIM trace init → Planner/Worker DAG → Service Bus/Durable Task</text>
+<text x="70" y="424" fill="#cbd5e1" font-family="Segoe UI,Arial" font-size="19">→ MCP hops → OTel collector redaction/tail sampling → App Insights + ADX</text>
+<text x="70" y="456" fill="#e2e8f0" font-family="Consolas,monospace" font-size="18">Context continuity: 95.6% · Redaction throughput preserve: 88.2%</text>
+<text x="70" y="486" fill="#e2e8f0" font-family="Consolas,monospace" font-size="18">Tail-vs-head ingestion cost reduction: 79.7%</text>
+
+<rect x="818" y="320" width="736" height="280" rx="12" fill="#0f172a" stroke="#334155"/>
+<text x="842" y="360" fill="#f8fafc" font-family="Segoe UI,Arial" font-size="24" font-weight="700">Latency / throughput highlights</text>
+<text x="842" y="396" fill="#cbd5e1" font-family="Segoe UI,Arial" font-size="19">Trace continuity p50/p95: 184/362 ms</text>
+<text x="842" y="424" fill="#cbd5e1" font-family="Segoe UI,Arial" font-size="19">Collector redaction p50/p95: 27/54 ms</text>
+<text x="842" y="452" fill="#cbd5e1" font-family="Segoe UI,Arial" font-size="19">ADX flamegraph query p50/p95: 428/880 ms</text>
+<text x="842" y="484" fill="#e2e8f0" font-family="Consolas,monospace" font-size="18">Tail sampling ingest p50/p95: 10320/9140 spans/s</text>
+
+<rect x="46" y="626" width="1508" height="258" rx="12" fill="#0f172a" stroke="#334155"/>
+<text x="70" y="664" fill="#f8fafc" font-family="Segoe UI,Arial" font-size="24" font-weight="700">Mermaid sequence landmarks</text>
+<text x="70" y="700" fill="#e2e8f0" font-family="Segoe UI,Arial" font-size="20">User request → APIM trace init → Planner/Worker/MCP async spans</text>
+<text x="70" y="730" fill="#e2e8f0" font-family="Segoe UI,Arial" font-size="20">→ OTel redactor + tail sampler → App Insights + ADX flamegraph RCA</text>
+<text x="70" y="760" fill="#e2e8f0" font-family="Segoe UI,Arial" font-size="20">→ Runaway-loop detector / incident command guardrails</text>
+<text x="70" y="814" fill="#93c5fd" font-family="Segoe UI,Arial" font-size="18">Source tags in evidence/cycle-2434-sources.json; benchmark in evidence/cycle-2434-benchmark.json</text>
+
+<text x="46" y="950" fill="#64748b" font-family="Consolas,monospace" font-size="16">workshops/azure-agent-infra/assets/opentelemetry-genai-distributed-tracing-flamegraph-adx-agent-infra-r1029.svg</text>
+</svg>

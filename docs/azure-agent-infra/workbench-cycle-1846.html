@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1846 · Confidential Attestation Workbench</title>
+<style>body{margin:0;background:#0b2640;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1846｜Confidential Compute 远程证明工作台</h1>
+<div class="g">
+<div class="c"><label>证明通过率(%)</label><input id="p" type="range" min="70" max="100" value="96"><label>误拒率(%)</label><input id="f" type="range" min="0" max="15" value="2"><label>证明冷启动增量(ms)</label><input id="l" type="range" min="10" max="1200" value="230"></div>
+<div class="c"><h3>证明治理健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先降低误拒率，再提升通过率，最后压缩冷启动增量。</div></div>
+<script>
+function calc(){const p=+document.getElementById('p').value,f=+document.getElementById('f').value,l=+document.getElementById('l').value;const s=((p-70)*1.6)+((15-f)*1.9)+((1200-l)*0.04);if(s>95)state.textContent='可信执行与可用性平衡良好';else if(s>78)state.textContent='可上线，建议继续优化误拒与时延';else state.textContent='风险偏高，建议收紧策略并重测证明链';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['p','f','l'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

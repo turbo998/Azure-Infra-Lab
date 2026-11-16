@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1830 · Deterministic Replay Envelope Workbench</title>
+<style>body{margin:0;background:#09162b;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1830｜确定性回放延迟包络工作台</h1>
+<div class="grid">
+<div class="card"><label>L0 包络上限(ms)</label><input id="l0" type="range" min="50" max="2000" value="260"><label>L1 包络上限(ms)</label><input id="l1" type="range" min="200" max="6000" value="1400"><label>L2 离线预算(s)</label><input id="l2" type="range" min="5" max="300" value="75"></div>
+<div class="card"><h3>回放稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先收紧 L0 延迟，再优化 L1，最后约束 L2 离线预算。</div></div>
+<script>
+function evalS(){const a=+l0.value,b=+l1.value,c=+l2.value;const score=((2000-a)*0.006)+((6000-b)*0.0012)+((300-c)*0.03)+8;if(score>22)state.textContent='回放延迟包络稳定';else if(score>16)state.textContent='可用但存在尾延迟风险';else state.textContent='回放时延越界风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['l0','l1','l2'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+stale-token saturation gate,172,184,0.9348,measured,token-introspection mismatch replay + deterministic verification
+cache fence integrity guard,161,168,0.9583,measured,token-introspection integrity logs
+tenant-scope token-introspection authorization fence,154,161,0.9565,measured,tenant token-introspection fairness replay logs

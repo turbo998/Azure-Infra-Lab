@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1797 · HSM Signing Latency Workbench</title>
+<style>body{margin:0;background:#0a1222;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1797｜HSM 签名延迟工作台</h1>
+<div class="grid"><div class="card"><label>批签窗口(ms)</label><input id="batch" type="range" min="5" max="200" value="42"><label>缓存 TTL(秒)</label><input id="ttl" type="range" min="1" max="120" value="18"><label>签名队列深度</label><input id="q" type="range" min="1" max="300" value="64"></div><div class="card"><h3>签名稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先稳定高优队列延迟，再收敛缓存失效率。</div></div>
+<script>
+function evalS(){const b=+batch.value,t=+ttl.value,q=+q.value;const score=18-(b*0.03)-(q*0.04)+(t*0.12);if(score>10)state.textContent='稳态可上线';else if(score>6)state.textContent='可灰度';else state.textContent='高风险';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['batch','ttl','q'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Tenant noisy-neighbor I/O saturation gate,184,196,0.9388,measured,I/O throttle replay + deterministic verification
+IOPS credit-integrity guard,176,183,0.9617,measured,IOPS credit integrity logs
+Tenant-scope I/O fairness authorization fence,171,179,0.9553,measured,tenant I/O fairness replay logs

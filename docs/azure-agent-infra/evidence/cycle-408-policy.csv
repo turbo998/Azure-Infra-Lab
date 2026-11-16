@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Session-affinity budget gate,194,200,0.97,measured,demo simulation trace + deterministic replay
+Affinity drift trigger,174,190,0.9158,measured,policy replay logs
+Retention compaction safety fence,166,180,0.9222,measured,MCP policy replay logs

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+egress-token-leak saturation gate,172,184,0.9348,measured,egress token-binding mismatch replay + deterministic verification
+binding fence integrity guard,161,168,0.9583,measured,egress token-binding integrity logs
+tenant-scope egress-token-binding authorization fence,154,161,0.9565,measured,tenant egress-token-binding fairness replay logs

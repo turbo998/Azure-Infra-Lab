@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1766 · APIM Semantic Cache Governance Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}input{width:100%}</style>
+</head><body><div class="wrap"><h1>Cycle 1766｜APIM 语义缓存治理工作台</h1>
+<div class="grid"><div class="card"><label>命中率（%）</label><input id="hit" type="range" min="0" max="100" value="62"><label>误命中率（%）</label><input id="falsehit" type="range" min="0" max="40" value="8"><label>高风险绕过率（%）</label><input id="bypass" type="range" min="0" max="100" value="74"></div><div class="card"><h3>缓存治理判定</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：优先压低误命中率，再追求命中率上升，避免错误复用放大。</div></div>
+<script>
+function evalCache(){const h=+hit.value,f=+falsehit.value,b=+bypass.value;const score=(h*0.5)+(b*0.4)-(f*2.2);if(score>45){state.textContent='治理有效';detail.textContent=`治理指数 ${score.toFixed(1)}`;}else if(score>25){state.textContent='临界，建议调阈值';detail.textContent=`治理指数 ${score.toFixed(1)}`;}else{state.textContent='高风险，优先收紧';detail.textContent=`治理指数 ${score.toFixed(1)}`;}}
+['hit','falsehit','bypass'].forEach(id=>document.getElementById(id).addEventListener('input',evalCache));evalCache();
+</script></body></html>

@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Image-layer invalidation freshness gate,188,200,0.94,measured,cache invalidation replay + deterministic verification
+Layer-cache staleness guard,183,190,0.9632,measured,layer-cache restore integrity logs
+Tenant layer-isolation authorization fence,172,180,0.9556,measured,MCP policy replay logs

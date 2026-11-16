@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0b1220"/>
+<text x="60" y="90" fill="#e2e8f0" font-size="44" font-family="Segoe UI">Cycle 1757 · Private Link Full-Isolation Topology</text>
+<rect x="60" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="90" y="210" fill="#93c5fd" font-size="30">Ingress</text><text x="90" y="248" fill="#e2e8f0" font-size="22">APIM Private Endpoint only</text>
+<rect x="560" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="590" y="210" fill="#86efac" font-size="30">Control Plane</text><text x="590" y="248" fill="#e2e8f0" font-size="22">Foundry + policy ledger</text>
+<rect x="1060" y="150" width="460" height="170" rx="16" fill="#111827" stroke="#334155"/><text x="1090" y="210" fill="#fbbf24" font-size="30">Execution Plane</text><text x="1090" y="248" fill="#e2e8f0" font-size="22">ACA/AKS runtime private subnet</text>
+<text x="60" y="420" fill="#e2e8f0" font-size="30">Readiness gates</text>
+<text x="60" y="470" fill="#cbd5e1" font-size="24">• Private DNS consistency • Identity boundary separation • Replayable policy lineage</text>
+<text x="60" y="520" fill="#cbd5e1" font-size="24">• Evidence bundle: cycle-1757-benchmark/latency/throughput/policy/cost</text>
+</svg>

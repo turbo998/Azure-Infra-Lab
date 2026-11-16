@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1844 · A2A Backpressure Workbench</title>
+<style>body{margin:0;background:#0b243c;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1844｜A2A WebSocket 背压工作台</h1>
+<div class="g">
+<div class="c"><label>队列积压峰值</label><input id="q" type="range" min="10" max="1000" value="320"><label>ACK 窗口上限</label><input id="a" type="range" min="10" max="500" value="160"><label>节流命中率(%)</label><input id="t" type="range" min="1" max="60" value="18"></div>
+<div class="c"><h3>背压健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先降低积压峰值，再调 ACK 窗口，最后细化节流命中区间。</div></div>
+<script>
+function calc(){const q=+document.getElementById('q').value,a=+document.getElementById('a').value,t=+document.getElementById('t').value;const s=((1000-q)*0.08)+(a*0.12)+((60-t)*0.55);if(s>82)state.textContent='背压治理与吞吐平衡良好';else if(s>66)state.textContent='可上线，建议继续压缩积压峰值';else state.textContent='风险偏高，建议收紧节流并分流队列';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['q','a','t'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

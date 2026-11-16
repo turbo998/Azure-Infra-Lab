@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#09132a"/>
+<text x="56" y="86" fill="#e2e8f0" font-size="40" font-family="Segoe UI">Cycle 1908 · ACA Multitenant Sandbox Eviction Lane</text>
+<rect x="56" y="142" width="470" height="190" rx="16" fill="#111827" stroke="#334155"/><text x="86" y="212" fill="#93c5fd" font-size="28">Tiered Eviction Lanes</text><text x="86" y="252" fill="#e2e8f0" font-size="22">high / mid / background reclaim channels</text>
+<rect x="565" y="142" width="470" height="190" rx="16" fill="#111827" stroke="#334155"/><text x="595" y="212" fill="#86efac" font-size="28">Credit Decay Weights</text><text x="595" y="252" fill="#e2e8f0" font-size="22">fairness-aware eviction ordering</text>
+<rect x="1074" y="142" width="470" height="190" rx="16" fill="#111827" stroke="#334155"/><text x="1104" y="212" fill="#fbbf24" font-size="28">Reverse Backfill</text><text x="1104" y="252" fill="#e2e8f0" font-size="22">recover critical lanes first after reclaim</text>
+<text x="56" y="430" fill="#e2e8f0" font-size="30">Measured focus</text><text x="56" y="476" fill="#cbd5e1" font-size="24">critical interruption · fairness deviation · recovery p95</text>
+</svg>

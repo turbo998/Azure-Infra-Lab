@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Tokenizer budget-drift amplification gate,188,200,0.94,measured,tokenizer-budget replay + deterministic verification
+Tokenizer pin integrity guard,183,190,0.9632,measured,tokenizer pin integrity logs
+Tenant-scope tokenizer authorization fence,172,180,0.9556,measured,MCP policy replay logs

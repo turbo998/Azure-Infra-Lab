@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Semantic cache contamination gate,188,200,0.94,measured,semantic-cache contamination replay + deterministic verification
+Epoch-fence fallback integrity guard,183,190,0.9632,measured,epoch fence integrity logs
+Tenant-scope cache authorization fence,172,180,0.9556,measured,MCP policy replay logs

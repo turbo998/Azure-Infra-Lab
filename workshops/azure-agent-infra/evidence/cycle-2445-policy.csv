@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+private-link-egress-policy-violation saturation gate,172,184,0.9348,measured,private-link-egress-allowlist-fence mismatch replay + deterministic verification
+private-link-egress-allowlist-fence fence integrity guard,161,168,0.9583,measured,private-link-egress-allowlist-fence integrity logs
+tenant-scope private-link-egress-allowlist-fence authorization fence,154,161,0.9565,measured,tenant private-link-egress-allowlist-fence fairness replay logs

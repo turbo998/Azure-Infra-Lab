@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1895 · APIM Token Intent Cache Safety</title>
+<style>body{margin:0;background:#0a1222;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1895｜APIM Token Intent Cache Safety 工作台</h1>
+<div class="g"><div class="c">
+<label>缓存命中率(%)</label><input id="hit" type="range" min="20" max="99" value="78">
+<label>误命中率(%)</label><input id="false" type="range" min="0" max="20" value="3">
+<label>回源P95(ms)</label><input id="p95" type="range" min="50" max="2000" value="420">
+</div><div class="c"><h3>缓存安全治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：优先压低误命中率，再优化回源尾延迟。</div></div>
+<script>
+function calc(){const h=+hit.value,f=+false.value,p=+p95.value;const s=(h*2.0)+((20-f)*4.1)+((2000-p)/12);state.textContent=s>250?'可生产：缓存收益与安全边界均稳定':(s>210?'可上线：建议继续收敛误命中':'风险偏高：需强化隔离键与失效策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['hit','false','p95'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

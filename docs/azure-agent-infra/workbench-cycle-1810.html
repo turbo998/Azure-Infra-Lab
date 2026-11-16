@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1810 · Preemption Safety Window Workbench</title>
+<style>body{margin:0;background:#0a1223;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1810｜抢占安全窗口工作台</h1>
+<div class="grid"><div class="card"><label>安全窗口比例(%)</label><input id="safe" type="range" min="5" max="95" value="42"><label>抢占前快照时长(ms)</label><input id="snap" type="range" min="10" max="2000" value="320"><label>恢复校验开销(ms)</label><input id="verify" type="range" min="5" max="1000" value="120"></div><div class="card"><h3>抢占稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先稳定安全窗口比例，再压缩快照和校验开销。</div></div>
+<script>
+function evalP(){const s=+safe.value,p=+snap.value,v=+verify.value;const score=(s*0.16)-(p*0.01)-(v*0.015)+14;if(score>11)state.textContent='稳态良好';else if(score>7)state.textContent='可优化';else state.textContent='风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['safe','snap','verify'].forEach(id=>document.getElementById(id).addEventListener('input',evalP));evalP();
+</script></body></html>

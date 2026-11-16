@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Route-key entropy underfit gate,186,198,0.9394,measured,route-key entropy replay + deterministic verification
+Lease-fence key-integrity guard,179,186,0.9624,measured,lease-fence key integrity logs
+Tenant-scope cache-key authorization fence,174,182,0.956,measured,cache-tenant policy replay logs

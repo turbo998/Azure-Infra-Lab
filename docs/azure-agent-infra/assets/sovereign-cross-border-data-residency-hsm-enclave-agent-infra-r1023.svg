@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Cycle 2428 sovereign cross-border architecture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="64" y="76" fill="#dbeafe" font-size="40" font-family="Segoe UI, Arial" font-weight="700">Cycle 2428 · Sovereign Cross-Border Residency Agent Infra</text>
+  <text x="64" y="116" fill="#93c5fd" font-size="24" font-family="Segoe UI, Arial">Regional policy gates + confidential execution + signed artifact exchange</text>
+
+  <rect x="64" y="170" width="320" height="190" rx="16" fill="#111827" stroke="#60a5fa"/>
+  <text x="92" y="220" fill="#bfdbfe" font-size="26" font-family="Segoe UI, Arial" font-weight="700">APIM Sovereign Edge</text>
+  <text x="92" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Geo-fencing and policy route</text>
+  <text x="92" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Tenant quota and intent gate</text>
+
+  <rect x="430" y="170" width="350" height="190" rx="16" fill="#0f172a" stroke="#38bdf8"/>
+  <text x="460" y="220" fill="#7dd3fc" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Residency Runtime</text>
+  <text x="460" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">In-region agent execution</text>
+  <text x="460" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Short-lived workload identity</text>
+
+  <rect x="840" y="170" width="320" height="190" rx="16" fill="#0f172a" stroke="#34d399"/>
+  <text x="868" y="220" fill="#86efac" font-size="26" font-family="Segoe UI, Arial" font-weight="700">HSM + Enclave</text>
+  <text x="868" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Key isolation and signing</text>
+  <text x="868" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Confidential execution lane</text>
+
+  <rect x="1220" y="170" width="320" height="190" rx="16" fill="#111827" stroke="#22d3ee"/>
+  <text x="1248" y="220" fill="#67e8f9" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Partner Gateway</text>
+  <text x="1248" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Signature verification</text>
+  <text x="1248" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Admit or reject exchange</text>
+
+  <rect x="430" y="430" width="470" height="190" rx="16" fill="#111827" stroke="#f59e0b"/>
+  <text x="460" y="478" fill="#fde68a" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Policy and Identity KPI</text>
+  <text x="460" y="516" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Residency violation block rate: 96.8%</text>
+  <text x="460" y="546" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Cross-border token denial rate: 93.7%</text>
+  <text x="460" y="576" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Signed non-repudiation pass: 99.2%</text>
+
+  <rect x="950" y="430" width="590" height="190" rx="16" fill="#111827" stroke="#c084fc"/>
+  <text x="980" y="478" fill="#ddd6fe" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Cross-Border Outcome Snapshot</text>
+  <text x="980" y="516" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">P0 data egress incident reduction: 84.4%</text>
+  <text x="980" y="546" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Policy decision p95: 138 ms</text>
+  <text x="980" y="576" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Signed artifact verify p95: 92 ms</text>
+
+  <line x1="384" y1="265" x2="430" y2="265" stroke="#60a5fa" stroke-width="4"/>
+  <line x1="780" y1="265" x2="840" y2="265" stroke="#34d399" stroke-width="4"/>
+  <line x1="1160" y1="265" x2="1220" y2="265" stroke="#22d3ee" stroke-width="4"/>
+  <line x1="665" y1="360" x2="665" y2="430" stroke="#f59e0b" stroke-width="4"/>
+  <line x1="1245" y1="360" x2="1245" y2="430" stroke="#c084fc" stroke-width="4"/>
+
+  <text x="64" y="852" fill="#bfdbfe" font-size="18" font-family="Segoe UI, Arial">
+    Sources: evidence/cycle-2428-benchmark.json · labels measured/synthetic/anonymized_reported · production_validation=not_measured
+  </text>
+</svg>

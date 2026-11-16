@@ -1,0 +1,5 @@
+metric,system,p50_ms,p95_ms,source_label,source_ref
+cold_start_or_restore,E2B Firecracker on Azure D96as_v7,99,158,anonymized_reported,workshops/azure-agent-infra/report.json:e2b_vm_benchmarks
+warm_pool_allocation,ACA Dynamic Sessions (Hyper-V memoryed pool),202,326,anonymized_reported,https://learn.microsoft.com/en-us/azure/container-apps/sessions
+pod_vm_cold_start,AKS + Kata Pod VM,920,1420,anonymized_reported,workshops/azure-agent-infra/report.json + kata release notes
+component_worker_start,Wasmtime component worker (Wasm sandbox path),42,71,synthetic,https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1

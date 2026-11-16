@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+otel-genai-trace-tail-sampling-guard-violation saturation gate,172,184,0.9348,measured,otel-genai-trace-tail-sampling-guard-fence mismatch replay + deterministic verification
+otel-genai-trace-tail-sampling-guard-fence fence integrity guard,161,168,0.9583,measured,otel-genai-trace-tail-sampling-guard-fence integrity logs
+tenant-scope otel-genai-trace-tail-sampling-guard-fence authorization fence,154,161,0.9565,measured,tenant otel-genai-trace-tail-sampling-guard-fence fairness replay logs

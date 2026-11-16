@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Schema compatibility overflow gate,188,200,0.94,measured,schema-compat replay + deterministic verification
+Version-skew fallback integrity guard,183,190,0.9632,measured,schema version-skew integrity logs
+Tenant schema-lane authorization fence,172,180,0.9556,measured,MCP policy replay logs

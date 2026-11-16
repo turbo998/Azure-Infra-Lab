@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><rect width="1600" height="900" fill="#0b3762"/>
+<text x="56" y="88" fill="#e2e8f0" font-size="40" font-family="Segoe UI">Cycle 1876 · APIM Tool Call Burst Smoothing</text>
+<rect x="56" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="86" y="210" fill="#93c5fd" font-size="28">Burst Smoother</text><text x="86" y="248" fill="#e2e8f0" font-size="22">peak shaving and short-window buffering</text>
+<rect x="562" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="592" y="210" fill="#86efac" font-size="28">Priority Queue</text><text x="592" y="248" fill="#e2e8f0" font-size="22">critical call preemption shaping</text>
+<rect x="1068" y="146" width="470" height="180" rx="16" fill="#111827" stroke="#334155"/><text x="1098" y="210" fill="#fbbf24" font-size="28">Budget Gate</text><text x="1098" y="248" fill="#e2e8f0" font-size="22">tiered concurrency and feedback</text>
+<text x="56" y="432" fill="#e2e8f0" font-size="30">Benchmark dimensions</text><text x="56" y="480" fill="#cbd5e1" font-size="24">p95 p99 latency · timeout rate · success ratio · throughput</text>
+</svg>

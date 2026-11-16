@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+promo-abuse-policy-violation saturation gate,172,184,0.9348,measured,loyalty-control-zone-fence mismatch replay + deterministic verification
+loyalty-control-zone-fence fence integrity guard,161,168,0.9583,measured,loyalty-control-zone-fence integrity logs
+tenant-scope loyalty-control-zone-fence authorization fence,154,161,0.9565,measured,tenant loyalty-control-zone-fence fairness replay logs

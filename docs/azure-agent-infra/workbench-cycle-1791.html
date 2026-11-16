@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1791 · Private Egress Broker Workbench</title>
+<style>body{margin:0;background:#0b1020;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1791｜私网出口策略 Broker 工作台</h1>
+<div class="grid"><div class="card"><label>策略命中率(%)</label><input id="hit" type="range" min="40" max="100" value="86"><label>拦截率(%)</label><input id="block" type="range" min="0" max="60" value="18"><label>出口增量延迟(ms)</label><input id="lat" type="range" min="5" max="500" value="72"></div><div class="card"><h3>策略稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先确保默认拒绝，再优化高频放行路径缓存与回滚机制。</div></div>
+<script>
+function evalP(){const h=+hit.value,b=+block.value,l=+lat.value;const score=(h*0.18)+(b*0.12)-(l*0.03);if(score>14)state.textContent='稳态可上线';else if(score>8)state.textContent='可灰度';else state.textContent='需加固';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['hit','block','lat'].forEach(id=>document.getElementById(id).addEventListener('input',evalP));evalP();
+</script></body></html>

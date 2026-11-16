@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1869 · A2A Handoff Budget Workbench</title>
+<style>body{margin:0;background:#0b3762;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1869｜A2A Stateful Handoff Budget 工作台</h1>
+<div class="g">
+<div class="c"><label>关键状态保真率(%)</label><input id="f" type="range" min="40" max="100" value="96"><label>handoff token 使用率(%)</label><input id="t" type="range" min="30" max="140" value="79"><label>交接 P95 时延(ms)</label><input id="l" type="range" min="20" max="1200" value="210"></div>
+<div class="c"><h3>交接治理评分</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先确保关键状态保真，再压低 token 使用率，最后优化交接时延。</div></div>
+<script>
+function calc(){const f=+document.getElementById('f').value,t=+document.getElementById('t').value,l=+document.getElementById('l').value;const v=((f-40)*1.5)+((140-t)*1.05)+((1200-l)*0.08);if(v>182)state.textContent='可生产：交接完整性与预算平衡稳定';else if(v>152)state.textContent='可上线：建议继续压缩可推导状态';else state.textContent='风险偏高：需加强分层与预算门控';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['f','t','l'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

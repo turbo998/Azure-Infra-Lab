@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1841 · Private Link Egress Workbench</title>
+<style>body{margin:0;background:#0b2136;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1841｜Private Link 出站控制工作台</h1>
+<div class="g">
+<div class="c"><label>Private Link 命中率(%)</label><input id="hit" type="range" min="40" max="100" value="86"><label>误拦截率(%)</label><input id="false" type="range" min="0" max="20" value="4"><label>回滚恢复时间(min)</label><input id="rec" type="range" min="1" max="60" value="10"></div>
+<div class="c"><h3>网络边界健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：优先提升 Private Link 命中率，再压低误拦截，最后缩短回滚恢复时间。</div></div>
+<script>
+function calc(){const h=+hit.value,f=+false.value,r=+rec.value;const s=((h-40)*0.68)+((20-f)*0.9)+((60-r)*0.35);if(s>68)state.textContent='零信任边界与可用性平衡良好';else if(s>54)state.textContent='可上线，建议继续优化误拦截';else state.textContent='风险偏高，建议回退策略并复核白名单';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['hit','false','rec'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

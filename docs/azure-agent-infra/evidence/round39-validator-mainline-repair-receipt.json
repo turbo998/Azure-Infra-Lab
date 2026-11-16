@@ -1,0 +1,40 @@
+{
+  "generated_at_utc": "2026-11-08T19:26:21.003837+00:00",
+  "scope": "round39 validator hardening mainline publication",
+  "changes": [
+    "publish strengthened validate_round39_quality.py to mainline repos",
+    "assert zh+en manifest title alignment for rounds 35/36/37",
+    "align round37 English manifest title with artifact title"
+  ],
+  "source_workspace_commit": "0d5f219f69cbc8d67c03f5f40e2a350ad5261ff3",
+  "repo_snapshot_before_publish": {
+    "ai-infra-lab": {
+      "branch": "main",
+      "head": "a3dc3c52ffa4793bed19cf751d14222868b9b609",
+      "dirty": false
+    },
+    "Azure-Infra-Lab": {
+      "branch": "main",
+      "head": "1126f65a0992829837ee29acd60a8d48aa72cb0a",
+      "dirty": false
+    },
+    "ai-research-public": {
+      "branch": "main",
+      "head": "5831f36bb0f0822038b59be69b28c11d22ee783e",
+      "dirty": false
+    },
+    "ai-research-lab": {
+      "branch": "main",
+      "head": "1428ab6a071ab7030cf2e463f0f42f0e9f0fae64",
+      "dirty": false
+    },
+    "turbo998.github.io": {
+      "branch": "main",
+      "head": "a17f012fe11b42a9638fd5069183d876528c7d37",
+      "dirty": false,
+      "origin_main": "a17f012fe11b42a9638fd5069183d876528c7d37",
+      "pages_main": "a17f012fe11b42a9638fd5069183d876528c7d37"
+    }
+  },
+  "homepage_remote_model": "origin/main + pages(main on remote 'pages')"
+}

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1823 · MCP/A2A Governance Plane Workbench</title>
+<style>body{margin:0;background:#0a1028;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1823｜MCP/A2A 治理平面工作台</h1>
+<div class="grid">
+<div class="card"><label>未授权调用拦截阈值(%)</label><input id="block" type="range" min="50" max="100" value="91"><label>策略误杀容忍上限(%)</label><input id="fp" type="range" min="0" max="20" value="5"><label>跨域关联覆盖率(%)</label><input id="trace" type="range" min="50" max="100" value="93"></div>
+<div class="card"><h3>治理稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：优先提升关联覆盖率，再压低误杀率，最后抬高拦截阈值。</div></div>
+<script>
+function evalS(){const b=+block.value,f=+fp.value,t=+trace.value;const score=(b*0.18)+(t*0.2)-((f)*0.45)+8;if(score>22)state.textContent='治理闭环稳定';else if(score>16)state.textContent='可用但审计/误杀需优化';else state.textContent='权限漂移风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['block','fp','trace'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

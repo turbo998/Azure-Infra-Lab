@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+sox-control-policy-violation saturation gate,172,184,0.9348,measured,financial-control-zone-fence mismatch replay + deterministic verification
+financial-control-zone-fence fence integrity guard,161,168,0.9583,measured,financial-control-zone-fence integrity logs
+tenant-scope financial-control-zone-fence authorization fence,154,161,0.9565,measured,tenant financial-control-zone-fence fairness replay logs

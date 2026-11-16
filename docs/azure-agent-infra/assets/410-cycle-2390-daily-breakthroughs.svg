@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <rect x="40" y="40" width="1520" height="120" rx="14" fill="url(#g)"/>
+  <text x="70" y="102" fill="white" font-size="34" font-family="Segoe UI, Arial">Cycle 2390 · Sovereign Semi-Disconnected Hybrid Edge-Cloud Agent Topology</text>
+  <text x="70" y="142" fill="#dbeafe" font-size="22" font-family="Segoe UI, Arial">Azure Local | Arc Kubernetes | ONNX Runtime GenAI | APIM Hybrid</text>
+  <rect x="70" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="90" y="275" fill="#bfdbfe" font-size="22">Edge Request</text>
+  <rect x="350" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="370" y="275" fill="#bfdbfe" font-size="22">Local SLM + Tools</text>
+  <rect x="640" y="220" width="260" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="660" y="275" fill="#bfdbfe" font-size="22">Store-Forward Sync</text>
+  <rect x="930" y="220" width="250" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="950" y="275" fill="#bfdbfe" font-size="22">Residency Gate</text>
+  <rect x="1210" y="220" width="330" height="120" rx="12" fill="#13233d" stroke="#60a5fa"/><text x="1230" y="275" fill="#bfdbfe" font-size="22">APIM Hybrid Escalation</text>
+  <path d="M320 280 L350 280 M610 280 L640 280 M900 280 L930 280 M1180 280 L1210 280" stroke="#93c5fd" stroke-width="4"/>
+  <rect x="70" y="390" width="1460" height="430" rx="16" fill="#0f172a" stroke="#334155"/>
+  <text x="95" y="445" fill="#e2e8f0" font-size="30">Daily capability highlights</text>
+  <text x="95" y="495" fill="#cbd5e1" font-size="24">• Azure Local and Arc enable governed sovereign edge Kubernetes operations.</text>
+  <text x="95" y="540" fill="#cbd5e1" font-size="24">• ONNX Runtime GenAI edge SLMs maintain sub-50ms local tool execution.</text>
+  <text x="95" y="585" fill="#cbd5e1" font-size="24">• Store-forward replay preserves continuity through intermittent WAN windows.</text>
+  <text x="95" y="630" fill="#cbd5e1" font-size="24">• APIM Hybrid policy gates cloud escalation under PII residency constraints.</text>
+  <text x="95" y="710" fill="#94a3b8" font-size="18">labels: measured / synthetic / anonymized_reported</text>
+  <text x="95" y="740" fill="#94a3b8" font-size="18">fetched_at_utc: 2026-11-15T16:43:51+00:00</text>
+</svg>

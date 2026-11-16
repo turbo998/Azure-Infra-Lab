@@ -1,0 +1,58 @@
+{
+  "round": 53,
+  "cycle": 434,
+  "status": "completed",
+  "topic_slug": "agent-runtime-wasm-component-cache-prewarm-selection-faq",
+  "source_worktree_commit": "42a8d0f9d40dc30947ebe87227f48a465c7c08d6",
+  "delivery_receipt_sha": {
+    "Azure-Infra-Lab": "00b30bee902fdda0d5f238e03f355d5564576d49",
+    "turbo998.github.io": "60bdccf8c6945357ed5f33ce5da4e560276b627a",
+    "ai-research-lab": "ecdf0bafe77371ecfd731c0eac6e637c4bbb9bd8",
+    "ai-research-public": "87a880d1523b21a5e29cd6549d70a07353e66cf6",
+    "ai-infra-lab": "42a8d0f9d40dc30947ebe87227f48a465c7c08d6"
+  },
+  "current_remote_origin_main": {
+    "ai-research-public": "87a880d1523b21a5e29cd6549d70a07353e66cf6",
+    "Azure-Infra-Lab": "e0d5ee9cec1f22cd1d5bee84d8cc7e6667a92733",
+    "turbo998.github.io": "60bdccf8c6945357ed5f33ce5da4e560276b627a",
+    "ai-research-lab": "ecdf0bafe77371ecfd731c0eac6e637c4bbb9bd8",
+    "ai-infra-lab": "42a8d0f9d40dc30947ebe87227f48a465c7c08d6"
+  },
+  "receipt_vs_current": {
+    "ai-research-public": {
+      "merge_base": "87a880d1523b21a5e29cd6549d70a07353e66cf6",
+      "current_only": 0,
+      "delivery_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "merge_base": "00b30bee902fdda0d5f238e03f355d5564576d49",
+      "current_only": 1,
+      "delivery_only": 0
+    },
+    "turbo998.github.io": {
+      "merge_base": "60bdccf8c6945357ed5f33ce5da4e560276b627a",
+      "current_only": 0,
+      "delivery_only": 0
+    },
+    "ai-research-lab": {
+      "merge_base": "ecdf0bafe77371ecfd731c0eac6e637c4bbb9bd8",
+      "current_only": 0,
+      "delivery_only": 0
+    },
+    "ai-infra-lab": {
+      "merge_base": "42a8d0f9d40dc30947ebe87227f48a465c7c08d6",
+      "current_only": 0,
+      "delivery_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "60bdccf8c6945357ed5f33ce5da4e560276b627a",
+    "pages_main": "60bdccf8c6945357ed5f33ce5da4e560276b627a",
+    "receipt_vs_pages": {
+      "merge_base": "60bdccf8c6945357ed5f33ce5da4e560276b627a",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "observed_at_bjt": "2026-11-09T04:58:11+08:00"
+}

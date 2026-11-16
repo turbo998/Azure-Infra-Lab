@@ -1,0 +1,54 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Cycle 2426 scientific discovery hpc architecture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="64" y="78" fill="#e0f2fe" font-size="42" font-family="Segoe UI, Arial" font-weight="700">Cycle 2426 · Scientific Discovery HPC Agent Infra</text>
+  <text x="64" y="118" fill="#93c5fd" font-size="24" font-family="Segoe UI, Arial">Surrogate screening + Slurm verification + AMLFS checkpoints + active learning</text>
+
+  <rect x="64" y="170" width="320" height="180" rx="16" fill="#1e293b" stroke="#60a5fa"/>
+  <text x="92" y="220" fill="#bfdbfe" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Hypothesis Planner</text>
+  <text x="92" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Candidate generation</text>
+  <text x="92" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Experiment batch policies</text>
+
+  <rect x="440" y="170" width="360" height="180" rx="16" fill="#0f172a" stroke="#38bdf8"/>
+  <text x="470" y="220" fill="#bae6fd" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Neural Surrogate Stage</text>
+  <text x="470" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">MatterGen / MatterSim / BioEmu</text>
+  <text x="470" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Top-k candidate filtering</text>
+
+  <rect x="860" y="170" width="320" height="180" rx="16" fill="#0f172a" stroke="#22d3ee"/>
+  <text x="890" y="220" fill="#a5f3fc" font-size="26" font-family="Segoe UI, Arial" font-weight="700">HPC Verifier</text>
+  <text x="890" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">CycleCloud Slurm MPI jobs</text>
+  <text x="890" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">GROMACS/VASP/OpenFOAM</text>
+
+  <rect x="1240" y="170" width="300" height="180" rx="16" fill="#111827" stroke="#34d399"/>
+  <text x="1268" y="220" fill="#bbf7d0" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Checkpoint Fabric</text>
+  <text x="1268" y="258" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">AMLFS scratch snapshots</text>
+  <text x="1268" y="288" fill="#e2e8f0" font-size="20" font-family="Segoe UI, Arial">Resume and replay safety</text>
+
+  <rect x="440" y="420" width="420" height="190" rx="16" fill="#111827" stroke="#f59e0b"/>
+  <text x="470" y="470" fill="#fde68a" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Validity Gate</text>
+  <text x="470" y="508" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Physically invalid rejection: 95.7%</text>
+  <text x="470" y="538" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">GPU-hour reduction vs brute-force: 96.8%</text>
+  <text x="470" y="568" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Resume reliability: 98.2%</text>
+
+  <rect x="920" y="420" width="620" height="190" rx="16" fill="#111827" stroke="#60a5fa"/>
+  <text x="950" y="470" fill="#bfdbfe" font-size="26" font-family="Segoe UI, Arial" font-weight="700">Cycle 2426 KPI snapshot</text>
+  <text x="950" y="508" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">AMLFS checkpoint throughput uplift vs blob: 214.0%</text>
+  <text x="950" y="538" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">5k-candidate verification turnaround: -61.3%</text>
+  <text x="950" y="568" fill="#f8fafc" font-size="20" font-family="Segoe UI, Arial">Slurm long-horizon resume reliability: 98.2%</text>
+
+  <line x1="384" y1="260" x2="440" y2="260" stroke="#93c5fd" stroke-width="4"/>
+  <line x1="800" y1="260" x2="860" y2="260" stroke="#67e8f9" stroke-width="4"/>
+  <line x1="1180" y1="260" x2="1240" y2="260" stroke="#86efac" stroke-width="4"/>
+  <line x1="620" y1="350" x2="620" y2="420" stroke="#f59e0b" stroke-width="4"/>
+  <line x1="1120" y1="350" x2="1120" y2="420" stroke="#60a5fa" stroke-width="4"/>
+
+  <text x="64" y="850" fill="#93c5fd" font-size="18" font-family="Segoe UI, Arial">
+    Sources: evidence/cycle-2426-benchmark.json · labels measured/synthetic/anonymized_reported · production_validation=not_measured
+  </text>
+</svg>

@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1889 · ACA Session Pool Fragmentation Guardrails</title>
+<style>body{margin:0;background:#0f172a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1889｜ACA Session Pool Fragmentation Guardrails 工作台</h1>
+<div class="g"><div class="card">
+<label>热池命中率(%)</label><input id="hit" type="range" min="40" max="99" value="88">
+<label>冷启动P95(ms)</label><input id="cold" type="range" min="300" max="5000" value="1180">
+<label>碎片回收成功率(%)</label><input id="rcv" type="range" min="40" max="100" value="86">
+</div><div class="card"><h3>碎片治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="card">建议：优先提升热池命中与回收成功率，再压降冷启动 P95。</div>
+</div><script>
+function calc(){const h=+hit.value,c=+cold.value,r=+rcv.value;const s=((h-40)*2.1)+((5000-c)/35)+((r-40)*1.5);state.textContent=s>190?'可生产：池碎片受控且恢复稳定':(s>160?'可上线：建议继续优化冷启动尾延迟':'风险偏高：需加强桶化与回收阈值');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['hit','cold','rcv'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

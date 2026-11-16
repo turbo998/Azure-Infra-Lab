@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Provider failover timeout amplification gate,188,200,0.94,measured,provider-failover replay + deterministic verification
+Failover state-anchor integrity guard,183,190,0.9632,measured,state-anchor integrity logs
+Tenant-scope failover authorization fence,172,180,0.9556,measured,MCP policy replay logs

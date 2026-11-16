@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+anf-blobnfs-nvme-csi-tiering-guard-violation saturation gate,172,184,0.9348,measured,anf-blobnfs-nvme-csi-tiering-guard-fence mismatch replay + deterministic verification
+anf-blobnfs-nvme-csi-tiering-guard-fence fence integrity guard,161,168,0.9583,measured,anf-blobnfs-nvme-csi-tiering-guard-fence integrity logs
+tenant-scope anf-blobnfs-nvme-csi-tiering-guard-fence authorization fence,154,161,0.9565,measured,tenant anf-blobnfs-nvme-csi-tiering-guard-fence fairness replay logs

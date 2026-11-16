@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1840 · Cosmos RU Partition Workbench</title>
+<style>body{margin:0;background:#0b2034;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1840｜Cosmos 会话 RU 分区工作台</h1>
+<div class="g">
+<div class="c"><label>每分区写入占比峰值(%)</label><input id="hot" type="range" min="10" max="90" value="42"><label>P95 延迟(ms)</label><input id="p95" type="range" min="20" max="1200" value="310"><label>RU 裕量(%)</label><input id="head" type="range" min="5" max="60" value="24"></div>
+<div class="c"><h3>分区健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先降热点占比，再压缩 P95，最后提升 RU 裕量。</div></div>
+<script>
+function calc(){const h=+hot.value,p=+p95.value,r=+head.value;const s=((90-h)*0.42)+((1200-p)*0.03)+(r*0.62);if(s>55)state.textContent='分区与成本平衡良好';else if(s>42)state.textContent='可上线，建议继续优化热点分布';else state.textContent='风险偏高，建议回到键设计';score.textContent=`综合分 ${s.toFixed(2)}`;}
+['hot','p95','head'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

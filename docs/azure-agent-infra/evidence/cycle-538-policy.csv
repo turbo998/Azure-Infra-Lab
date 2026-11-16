@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+websocket backpressure saturation gate,176,188,0.9362,measured,websocket backpressure replay + deterministic verification
+backpressure budget integrity guard,166,173,0.9595,measured,backpressure integrity logs
+tenant-scope backpressure authorization fence,160,167,0.9581,measured,tenant backpressure fairness replay logs

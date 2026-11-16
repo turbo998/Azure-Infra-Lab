@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1827 · Session Eviction Replay Budget Workbench</title>
+<style>body{margin:0;background:#0a142a;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1827｜会话驱逐回放预算工作台</h1>
+<div class="grid">
+<div class="card"><label>驱逐触发水位(%)</label><input id="water" type="range" min="50" max="98" value="83"><label>回放深度上限(轮)</label><input id="depth" type="range" min="1" max="40" value="12"><label>P0 保活份额(%)</label><input id="keep" type="range" min="10" max="80" value="36"></div>
+<div class="card"><h3>会话稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先保障 P0 保活，再调驱逐水位，最后收敛回放深度。</div></div>
+<script>
+function evalS(){const w=+water.value,d=+depth.value,k=+keep.value;const score=(w*0.14)+(k*0.24)-((d)*0.25)+9;if(score>21)state.textContent='容量与连续性平衡良好';else if(score>15)state.textContent='可用但回放成本偏高';else state.textContent='驱逐抖动或中断风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['water','depth','keep'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

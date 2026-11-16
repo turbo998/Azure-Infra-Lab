@@ -1,0 +1,58 @@
+{
+  "round": 56,
+  "cycle": 437,
+  "status": "completed",
+  "topic_slug": "agent-memory-tiering-hot-cold-store-selection-faq",
+  "source_worktree_commit": "dbe836394a22e2505407499a2b7ac1374b5edf58",
+  "delivery_receipt_sha": {
+    "turbo998.github.io": "db3c3c6caede5fab653169efa5e08383768f7d25",
+    "ai-research-lab": "4c206f2b071a97ba51477c5eefaab56cb54aa609",
+    "ai-research-public": "f7f2f220bd46b5a9c890c3d19aa846f241bb7c54",
+    "ai-infra-lab": "dbe836394a22e2505407499a2b7ac1374b5edf58",
+    "Azure-Infra-Lab": "7060e2368c7e5c5ee9a6f4de37eca7b873479d0e"
+  },
+  "current_remote_origin_main": {
+    "turbo998.github.io": "db3c3c6caede5fab653169efa5e08383768f7d25",
+    "ai-research-public": "f7f2f220bd46b5a9c890c3d19aa846f241bb7c54",
+    "ai-research-lab": "4c206f2b071a97ba51477c5eefaab56cb54aa609",
+    "ai-infra-lab": "dbe836394a22e2505407499a2b7ac1374b5edf58",
+    "Azure-Infra-Lab": "7060e2368c7e5c5ee9a6f4de37eca7b873479d0e"
+  },
+  "receipt_vs_current": {
+    "turbo998.github.io": {
+      "delivery_only": 0,
+      "merge_base": "db3c3c6caede5fab653169efa5e08383768f7d25",
+      "current_only": 0
+    },
+    "ai-research-public": {
+      "delivery_only": 0,
+      "merge_base": "f7f2f220bd46b5a9c890c3d19aa846f241bb7c54",
+      "current_only": 0
+    },
+    "ai-research-lab": {
+      "delivery_only": 0,
+      "merge_base": "4c206f2b071a97ba51477c5eefaab56cb54aa609",
+      "current_only": 0
+    },
+    "ai-infra-lab": {
+      "delivery_only": 0,
+      "merge_base": "dbe836394a22e2505407499a2b7ac1374b5edf58",
+      "current_only": 0
+    },
+    "Azure-Infra-Lab": {
+      "delivery_only": 0,
+      "merge_base": "7060e2368c7e5c5ee9a6f4de37eca7b873479d0e",
+      "current_only": 0
+    }
+  },
+  "homepage": {
+    "origin_main": "db3c3c6caede5fab653169efa5e08383768f7d25",
+    "pages_main": "db3c3c6caede5fab653169efa5e08383768f7d25",
+    "receipt_vs_pages": {
+      "merge_base": "db3c3c6caede5fab653169efa5e08383768f7d25",
+      "delivery_only": 0,
+      "current_only": 0
+    }
+  },
+  "observed_at_bjt": "2026-11-09T05:20:34+08:00"
+}

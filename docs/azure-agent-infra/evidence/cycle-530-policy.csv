@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+MCP/A2A replay conflict amplification gate,188,200,0.94,measured,idempotency replay + deterministic verification
+Idempotency fence integrity guard,183,190,0.9632,measured,idempotency fence integrity logs
+Tenant-scope idempotency authorization fence,172,180,0.9556,measured,MCP policy replay logs

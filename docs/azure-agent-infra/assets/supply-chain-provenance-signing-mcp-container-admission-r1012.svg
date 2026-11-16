@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#10243f"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#11223d"/>
+      <stop offset="100%" stop-color="#173764"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 38px 'Segoe UI', Arial, sans-serif; fill: #e2e8f0; }
+      .subtitle { font: 500 20px 'Segoe UI', Arial, sans-serif; fill: #93c5fd; }
+      .h { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #f8fafc; }
+      .t { font: 500 16px 'Segoe UI', Arial, sans-serif; fill: #cbd5e1; }
+      .k { font: 700 17px 'Segoe UI', Arial, sans-serif; fill: #34d399; }
+      .badge { font: 700 14px 'Segoe UI', Arial, sans-serif; fill: #0b1220; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1600" height="960" fill="url(#bg)"/>
+  <rect x="40" y="32" rx="16" ry="16" width="1520" height="896" fill="#0a1426" stroke="#1e3a62"/>
+  <text x="76" y="92" class="title">Cycle 2417 · Supply-Chain Provenance and MCP Admission Security</text>
+  <text x="76" y="128" class="subtitle">ACR Notation + SLSA/SBOM + Ratify/Gatekeeper + Copa + Defender Drift Detection</text>
+
+  <rect x="76" y="172" rx="14" ry="14" width="440" height="220" fill="url(#panel)" stroke="#2563eb"/>
+  <text x="98" y="208" class="h">Build Provenance Plane</text>
+  <text x="98" y="238" class="t">OIDC CI build and digest pinning</text>
+  <text x="98" y="266" class="t">SPDX/CycloneDX SBOM and AI-BOM generation</text>
+  <text x="98" y="294" class="t">Notation X.509 signing in ACR</text>
+  <text x="98" y="332" class="k">Provenance completeness: 98.7%</text>
+
+  <rect x="576" y="172" rx="14" ry="14" width="440" height="220" fill="url(#panel)" stroke="#2563eb"/>
+  <text x="598" y="208" class="h">Admission Policy Plane</text>
+  <text x="598" y="238" class="t">Ratify verification over OCI referrers graph</text>
+  <text x="598" y="266" class="t">Gatekeeper policy blocks unsigned and Critical CVE</text>
+  <text x="598" y="294" class="t">npx/uvx unpinned runtime blocked</text>
+  <text x="598" y="332" class="k">Tampered block rate: 99.5%</text>
+
+  <rect x="1076" y="172" rx="14" ry="14" width="440" height="220" fill="url(#panel)" stroke="#2563eb"/>
+  <text x="1098" y="208" class="h">Patch and Refresh Plane</text>
+  <text x="1098" y="238" class="t">Copa zero-rebuild patching</text>
+  <text x="1098" y="266" class="t">Re-sign and re-admit patched artifacts</text>
+  <text x="1098" y="294" class="t">Exposure window shrink for hot CVEs</text>
+  <text x="1098" y="332" class="k">Patch lead time: 22 min</text>
+
+  <rect x="330" y="468" rx="14" ry="14" width="440" height="220" fill="url(#panel)" stroke="#10b981"/>
+  <text x="352" y="504" class="h">Runtime Defense Plane</text>
+  <text x="352" y="534" class="t">Defender runtime drift alerts</text>
+  <text x="352" y="562" class="t">Tamper quarantine and rollback playbook</text>
+  <text x="352" y="590" class="t">Blast-radius containment policies</text>
+  <text x="352" y="628" class="k">Guardrail pass rate: 98.2%</text>
+
+  <rect x="850" y="468" rx="14" ry="14" width="440" height="220" fill="url(#panel)" stroke="#10b981"/>
+  <text x="872" y="504" class="h">Ops &amp; Audit Plane</text>
+  <text x="872" y="534" class="t">Admission latency budget tracking</text>
+  <text x="872" y="562" class="t">Rug-pull exposure KPI and incident runbooks</text>
+  <text x="872" y="590" class="t">Zero-trust MCP readiness dashboards</text>
+  <text x="872" y="628" class="k">Rug-pull reduction: 93.2%</text>
+
+  <line x1="516" y1="282" x2="576" y2="282" stroke="#60a5fa" stroke-width="4"/>
+  <line x1="1016" y1="282" x2="1076" y2="282" stroke="#60a5fa" stroke-width="4"/>
+  <line x1="1296" y1="392" x2="1296" y2="468" stroke="#34d399" stroke-width="4"/>
+  <line x1="796" y1="392" x2="796" y2="468" stroke="#34d399" stroke-width="4"/>
+  <line x1="770" y1="578" x2="850" y2="578" stroke="#34d399" stroke-width="4"/>
+
+  <rect x="76" y="744" rx="12" ry="12" width="1440" height="132" fill="#0f172a" stroke="#334155"/>
+  <rect x="96" y="770" rx="8" ry="8" width="190" height="34" fill="#34d399"/>
+  <text x="118" y="793" class="badge">measured</text>
+  <text x="300" y="793" class="t">Tampered block 99.5% · admission overhead 96ms · patch lead time 22min</text>
+  <rect x="96" y="816" rx="8" ry="8" width="190" height="34" fill="#fbbf24"/>
+  <text x="124" y="839" class="badge">synthetic</text>
+  <text x="300" y="839" class="t">Maturity-level TCO and exposure trend estimates</text>
+</svg>

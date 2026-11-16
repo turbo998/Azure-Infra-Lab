@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+sbom-attestation-policy-violation saturation gate,172,184,0.9348,measured,sbom-attestation-enclave-fence mismatch replay + deterministic verification
+sbom-attestation-enclave-fence fence integrity guard,161,168,0.9583,measured,sbom-attestation-enclave-fence integrity logs
+tenant-scope sbom-attestation-enclave-fence authorization fence,154,161,0.9565,measured,tenant sbom-attestation-enclave-fence fairness replay logs

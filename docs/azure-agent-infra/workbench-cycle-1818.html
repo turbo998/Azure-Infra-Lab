@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1818 · Cross-region Spillover Workbench</title>
+<style>body{margin:0;background:#091224;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1818｜跨区域配额溢出工作台</h1>
+<div class="grid">
+<div class="card"><label>主区触顶阈值(%)</label><input id="cap" type="range" min="60" max="99" value="88"><label>跨区额度(每分钟)</label><input id="spill" type="range" min="10" max="600" value="180"><label>回流收敛步长(%)</label><input id="back" type="range" min="1" max="30" value="9"></div>
+<div class="card"><h3>跨区稳态判定</h3><p id="state"></p><p id="detail"></p></div>
+</div><div class="card">建议：先限制 spillover 额度，再优化回流步长，避免跨区常态化。</div></div>
+<script>
+function evalS(){const c=+cap.value,s=+spill.value,b=+back.value;const score=(c*0.15)+(s*0.02)-(b*0.28)+6;if(score>18)state.textContent='可用性提升且成本可控';else if(score>13)state.textContent='可用但需优化回流';else state.textContent='跨区抖动/成本风险偏高';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['cap','spill','back'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

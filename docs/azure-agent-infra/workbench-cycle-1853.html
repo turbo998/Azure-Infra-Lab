@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1853 · OpenAPI Contract Diff Gate Workbench</title>
+<style>body{margin:0;background:#0b2d4e;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:22px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1853｜OpenAPI Contract Diff 门禁工作台</h1>
+<div class="g">
+<div class="c"><label>破坏性变更占比(%)</label><input id="b" type="range" min="0" max="40" value="8"><label>风险变更占比(%)</label><input id="r" type="range" min="0" max="60" value="22"><label>阻断命中率(%)</label><input id="h" type="range" min="50" max="100" value="95"></div>
+<div class="c"><h3>门禁健康度</h3><p id="state"></p><p id="score"></p></div>
+</div><div class="c">建议：先提高阻断命中率，再降低破坏性变更占比，最后收敛风险变更占比。</div></div>
+<script>
+function calc(){const b=+document.getElementById('b').value,r=+document.getElementById('r').value,h=+document.getElementById('h').value;const v=((40-b)*1.1)+((60-r)*0.65)+((h-50)*1.45);if(v>120)state.textContent='契约门禁与交付速度平衡良好';else if(v>100)state.textContent='可上线，建议继续压低破坏性变更';else state.textContent='风险偏高，建议收紧发布阻断策略';score.textContent=`综合分 ${v.toFixed(2)}`;}
+['b','r','h'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

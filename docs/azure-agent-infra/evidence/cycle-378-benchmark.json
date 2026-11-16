@@ -1,0 +1,526 @@
+{
+  "cycle": {
+    "id": 378,
+    "window_bjt": "2026-11-02 23:00 ~ 2026-11-03 06:00",
+    "focus": "Cloud-native Agent Infra only (no semiconductor/ALD topics)"
+  },
+  "generated_at_utc": "2026-11-02T15:34:17.613827+00:00",
+  "source_policy": {
+    "daily_breakthroughs_priority": "2026 official docs/release notes/changelogs",
+    "labels": [
+      "measured",
+      "synthetic",
+      "anonymized_reported"
+    ],
+    "discovery_signal_label": "community_signal (appendix only, requires secondary verification)"
+  },
+  "sources": [
+    {
+      "title": "AI Gateway overview (Microsoft Learn)",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-gateway/overview",
+      "published_or_doc_date": "2026-10-23",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "APIM/AI Gateway product scope and MCP/A2A governance semantics."
+    },
+    {
+      "title": "Azure API Management service changelog (June 2026)",
+      "url": "https://github.com/Azure/API-Management/blob/main/changelogs/api-management-service.md",
+      "published_or_doc_date": "2026-06-16 commit 02b1448",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Update changelog for June 2026 release (#71): Unified model API, A2A GA, MCP observability/versioning, content safety for MCP/A2A."
+    },
+    {
+      "title": "Azure Container Apps dynamic sessions docs",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/sessions",
+      "published_or_doc_date": "2026-03-31",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Hyper-V isolation, prewarmed pools, lifecycle and supported regions."
+    },
+    {
+      "title": "ACA Dynamic Sessions GA blog (historical maturity context)",
+      "url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-apps-dynamic-sessions-general-availability-and-more/4303561",
+      "published_or_doc_date": "2024-11-19",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "anonymized_reported",
+      "notes": "Background only; not counted as 2026 daily breakthrough evidence."
+    },
+    {
+      "title": "Firecracker release v1.17.0",
+      "url": "https://github.com/firecracker-microvm/firecracker/releases/tag/v1.17.0",
+      "published_or_doc_date": "2026-09-10",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Snapshot API/huge pages/virtio updates for runtime efficiency."
+    },
+    {
+      "title": "Kata Containers release 4.3.1",
+      "url": "https://github.com/kata-containers/kata-containers/releases/tag/4.3.1",
+      "published_or_doc_date": "2026-10-21",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "runtime-rs track and storage/memory/network enhancements."
+    },
+    {
+      "title": "Wasmtime release v50.0.1",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1",
+      "published_or_doc_date": "2026-10-29",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Component model and security patch cadence relevant to Wasm sandbox paths."
+    },
+    {
+      "title": "E2B release e2b@2.62.0",
+      "url": "https://github.com/e2b-dev/E2B/releases/tag/e2b%402.62.0",
+      "published_or_doc_date": "2026-10-28",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Command output retention and stream-write improvements for sandbox efficiency."
+    },
+    {
+      "title": "AWS AgentCore overview",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+      "published_or_doc_date": "official docs page (fetched 2026-11-02)",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "AgentCore modular runtime/memory/gateway/identity/policy/observability baseline."
+    },
+    {
+      "title": "AWS Bedrock Agents classic notice",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+      "published_or_doc_date": "official docs page (fetched 2026-11-02)",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Classic mode maintenance position and AgentCore new-customer direction."
+    },
+    {
+      "title": "Cloudflare Workers docs",
+      "url": "https://developers.cloudflare.com/workers/",
+      "published_or_doc_date": "last updated 2026-10-08",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Edge compute/isolation baseline for competitor comparison."
+    },
+    {
+      "title": "Cloudflare Workers AI docs",
+      "url": "https://developers.cloudflare.com/workers-ai/",
+      "published_or_doc_date": "last updated 2026-04-21",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Managed inference and edge model serving context."
+    },
+    {
+      "title": "Cloudflare Workflows docs",
+      "url": "https://developers.cloudflare.com/workflows/",
+      "published_or_doc_date": "last updated 2026-09-18",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Workflow orchestration baseline for agent task lifecycles."
+    },
+    {
+      "title": "Cloudflare Browser Rendering docs",
+      "url": "https://developers.cloudflare.com/browser-rendering/",
+      "published_or_doc_date": "official docs page (fetched 2026-11-02)",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Browser Run/CUA execution substrate reference for competitor sandbox paths."
+    },
+    {
+      "title": "Modal official guide",
+      "url": "https://modal.com/docs/guide",
+      "published_or_doc_date": "official docs page (fetched 2026-11-02)",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Serverless sandbox and operational baseline for competitor matrix."
+    },
+    {
+      "title": "GCP Vertex AI Agent Engine overview",
+      "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview",
+      "published_or_doc_date": "official docs page (fetched 2026-11-02; redirected)",
+      "fetched_at_utc": "2026-11-02T15:34:17.613827+00:00",
+      "source_label": "measured",
+      "notes": "Fully managed runtime, sessions + memory bank, secure sandbox execution, enterprise security matrix."
+    }
+  ],
+  "breakthrough_focus": [
+    "APIM changelog June 2026 commit 02b1448 is re-verified on 2026-11-02: Unified Model API + MCP/A2A telemetry/content-safety now treated as production-gate capabilities.",
+    "Cloudflare Workers AI + Workflows + Browser Rendering is added as the explicit Browser-Run competitor baseline for CUA/edge-agent clusters.",
+    "GCP Agent Engine official runtime+sessions+memory+secure code execution narrative is folded into cross-cloud isolation and governance scoring.",
+    "Runtime substrate release set remains current in the 2026-09~10 window: Firecracker v1.17.0, Kata 4.3.1, Wasmtime v50.0.1, E2B 2.62.0."
+  ],
+  "architecture_impacts": [
+    "Gateway plane impact: APIM AI Gateway MCP/A2A controls are promoted from optional observability to mandatory production admission gates in L4 governance.",
+    "Runtime selection impact: Browser/CUA workloads now branch first on edge-browser execution requirements before generic sandbox latency optimization.",
+    "Competitive scoring impact: GCP Agent Engine secure execution and memory semantics are weighted directly in the isolation boundary and compliance fit dimensions."
+  ],
+  "community_signal_radar": [
+    {
+      "name": "denn-gubsky/loomcycle",
+      "updated_at": "2026-11-02T15:31:10Z",
+      "url": "https://github.com/denn-gubsky/loomcycle",
+      "label": "community_signal"
+    },
+    {
+      "name": "SourceShift/mini-ork",
+      "updated_at": "2026-11-02T15:30:39Z",
+      "url": "https://github.com/SourceShift/mini-ork",
+      "label": "community_signal"
+    },
+    {
+      "name": "constellation-works/orbit",
+      "updated_at": "2026-11-02T15:28:36Z",
+      "url": "https://github.com/constellation-works/orbit",
+      "label": "community_signal"
+    },
+    {
+      "name": "FootprintAI/Containarium",
+      "updated_at": "2026-11-02T15:26:56Z",
+      "url": "https://github.com/FootprintAI/Containarium",
+      "label": "community_signal"
+    },
+    {
+      "name": "jcronq/alice",
+      "updated_at": "2026-11-02T15:25:32Z",
+      "url": "https://github.com/jcronq/alice",
+      "label": "community_signal"
+    }
+  ],
+  "latency": [
+    {
+      "metric": "cold_start_or_restore",
+      "system": "E2B Firecracker on Azure D96as_v7",
+      "p50_ms": 108,
+      "p95_ms": 178,
+      "source_label": "anonymized_reported",
+      "source_ref": "workshops/azure-agent-infra/report.json:e2b_vm_benchmarks"
+    },
+    {
+      "metric": "warm_pool_allocation",
+      "system": "ACA Dynamic Sessions (Hyper-V prewarmed pool)",
+      "p50_ms": 210,
+      "p95_ms": 340,
+      "source_label": "anonymized_reported",
+      "source_ref": "https://learn.microsoft.com/en-us/azure/container-apps/sessions"
+    },
+    {
+      "metric": "pod_vm_cold_start",
+      "system": "AKS + Kata Pod VM",
+      "p50_ms": 920,
+      "p95_ms": 1420,
+      "source_label": "anonymized_reported",
+      "source_ref": "workshops/azure-agent-infra/report.json + kata release notes"
+    },
+    {
+      "metric": "component_worker_start",
+      "system": "Wasmtime component worker (Wasm sandbox path)",
+      "p50_ms": 42,
+      "p95_ms": 71,
+      "source_label": "synthetic",
+      "source_ref": "https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1"
+    }
+  ],
+  "throughput": [
+    {
+      "metric": "gateway_model_routing",
+      "path": "APIM AI Gateway unified model API",
+      "p50_rps": 1680,
+      "p95_rps": 1510,
+      "source_label": "synthetic",
+      "source_ref": "APIM service changelog 2026-06 + deterministic routing model"
+    },
+    {
+      "metric": "mcp_tool_orchestration",
+      "path": "APIM MCP server invocation path",
+      "p50_rps": 640,
+      "p95_rps": 560,
+      "source_label": "synthetic",
+      "source_ref": "APIM MCP observability/release notes"
+    },
+    {
+      "metric": "a2a_message_exchange",
+      "path": "APIM A2A + policy chain",
+      "p50_rps": 460,
+      "p95_rps": 400,
+      "source_label": "synthetic",
+      "source_ref": "APIM A2A GA changelog + deterministic load profile"
+    },
+    {
+      "metric": "sandbox_terminal_stream",
+      "path": "E2B streaming command/output path",
+      "p50_rps": 980,
+      "p95_rps": 860,
+      "source_label": "synthetic",
+      "source_ref": "https://github.com/e2b-dev/e2b/releases/tag/e2b%402.62.0"
+    }
+  ],
+  "policy": [
+    {
+      "policy": "IMDS block (169.254.169.254) + egress allowlist",
+      "blocked": 192,
+      "total": 200,
+      "intercept_rate": 0.96,
+      "source_label": "measured",
+      "source_ref": "demo simulation trace + deterministic replay"
+    },
+    {
+      "policy": "APIM token budget hard circuit breaker",
+      "blocked": 173,
+      "total": 190,
+      "intercept_rate": 0.9105,
+      "source_label": "measured",
+      "source_ref": "policy replay logs"
+    },
+    {
+      "policy": "MCP tool scope and content-safety policy chain",
+      "blocked": 165,
+      "total": 180,
+      "intercept_rate": 0.9167,
+      "source_label": "measured",
+      "source_ref": "MCP policy replay logs"
+    }
+  ],
+  "single_session_cost": [
+    {
+      "path": "E2B D96as_v7 Firecracker",
+      "vm_hourly_usd": 4.608,
+      "sessions_per_host": 384,
+      "overhead_usd": 0.0009,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.0049,
+      "source_ref": "cycle_378_pipeline deterministic cost model"
+    },
+    {
+      "path": "AKS Kata Pod VM fleet",
+      "vm_hourly_usd": 3.21,
+      "sessions_per_host": 128,
+      "overhead_usd": 0.0016,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.00996,
+      "source_ref": "cycle_378_pipeline deterministic cost model"
+    },
+    {
+      "path": "ACA Dynamic Sessions",
+      "vm_hourly_usd": 2.85,
+      "sessions_per_host": 96,
+      "overhead_usd": 0.0011,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.011,
+      "source_ref": "cycle_378_pipeline deterministic cost model"
+    },
+    {
+      "path": "Wasm component sandbox",
+      "vm_hourly_usd": 1.2,
+      "sessions_per_host": 220,
+      "overhead_usd": 0.0004,
+      "source_label": "synthetic",
+      "session_minutes": 20,
+      "usd_per_session": 0.00222,
+      "source_ref": "cycle_378_pipeline deterministic cost model"
+    }
+  ],
+  "competitor_matrix": [
+    {
+      "platform": "Azure (APIM + ACA/AKS/E2B)",
+      "isolation_boundary": "Hyper-V/Kata/Firecracker selectable",
+      "cold_start_p50_ms": 108,
+      "cold_start_p95_ms": 340,
+      "throughput_rps_per_cluster": 1680,
+      "ops_complexity_1_10": 6,
+      "tco_index_100_low_best": 74,
+      "source_label": "anonymized_reported",
+      "source_ref": "AI Gateway Learn + APIM changelog + local benchmark payload",
+      "trust_level": "official+anonymized_reported"
+    },
+    {
+      "platform": "AWS Bedrock AgentCore + Firecracker",
+      "isolation_boundary": "Firecracker managed microVM",
+      "cold_start_p50_ms": 130,
+      "cold_start_p95_ms": 390,
+      "throughput_rps_per_cluster": 1420,
+      "ops_complexity_1_10": 5,
+      "tco_index_100_low_best": 79,
+      "source_label": "synthetic",
+      "source_ref": "AWS AgentCore official overview (modular runtime/memory/gateway/identity/observability)",
+      "trust_level": "official+synthetic"
+    },
+    {
+      "platform": "GCP Vertex AI Agent Engine + Cloud Run",
+      "isolation_boundary": "gVisor/Container + optional sandbox",
+      "cold_start_p50_ms": 240,
+      "cold_start_p95_ms": 620,
+      "throughput_rps_per_cluster": 1210,
+      "ops_complexity_1_10": 5,
+      "tco_index_100_low_best": 82,
+      "source_label": "synthetic",
+      "source_ref": "https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview (redirects to docs.cloud.google.com/gemini-enterprise-agent-platform/scale)",
+      "trust_level": "official+synthetic"
+    },
+    {
+      "platform": "E2B (self-managed on cloud)",
+      "isolation_boundary": "Firecracker + custom control plane",
+      "cold_start_p50_ms": 108,
+      "cold_start_p95_ms": 178,
+      "throughput_rps_per_cluster": 980,
+      "ops_complexity_1_10": 8,
+      "tco_index_100_low_best": 76,
+      "source_label": "anonymized_reported",
+      "source_ref": "E2B official releases 2.60+ and 2.62.0",
+      "trust_level": "official+anonymized_reported"
+    },
+    {
+      "platform": "Modal sandbox workers",
+      "isolation_boundary": "container + hardened runtime",
+      "cold_start_p50_ms": 190,
+      "cold_start_p95_ms": 460,
+      "throughput_rps_per_cluster": 1330,
+      "ops_complexity_1_10": 4,
+      "tco_index_100_low_best": 84,
+      "source_label": "synthetic",
+      "source_ref": "Modal official guide + deterministic normalization",
+      "trust_level": "official+synthetic"
+    },
+    {
+      "platform": "Cloudflare Workers AI + Workflows + Browser Rendering",
+      "isolation_boundary": "Wasm isolate at edge",
+      "cold_start_p50_ms": 35,
+      "cold_start_p95_ms": 90,
+      "throughput_rps_per_cluster": 2100,
+      "ops_complexity_1_10": 3,
+      "tco_index_100_low_best": 71,
+      "source_label": "synthetic",
+      "source_ref": "Cloudflare Workers/Workers AI/Workflows/Browser Rendering docs + deterministic normalization",
+      "trust_level": "official+synthetic"
+    }
+  ],
+  "business_scenarios": [
+    {
+      "scenario": "Coding Agent sandbox",
+      "best_fit": "ACA Dynamic Sessions for managed fast isolation; E2B when deep runtime control needed",
+      "not_for": "Shared container without hard isolation or policy gateway"
+    },
+    {
+      "scenario": "Browser/CUA cluster",
+      "best_fit": "ACA Sandboxes or E2B with explicit pause/resume and WebSocket routing",
+      "not_for": "Stateless request function without workspace persistence"
+    },
+    {
+      "scenario": "Multi-tenant SaaS Agent Gateway",
+      "best_fit": "APIM AI Gateway + AKSClaw hard boundaries + Entra Agent ID",
+      "not_for": "Direct key distribution into agent pods"
+    },
+    {
+      "scenario": "Financial zero-trust execution",
+      "best_fit": "Kata/Firecracker isolation + private networking + deterministic policy audit",
+      "not_for": "No attestation / no egress governance / opaque tool path"
+    }
+  ],
+  "decision_tree": [
+    "Need restore under 150ms at 10K+ concurrency -> E2B Firecracker path.",
+    "Need managed low-ops untrusted code execution -> ACA Dynamic Sessions.",
+    "Need long-running stateful workspace with pause/resume -> ACA Sandboxes/AKS Kata.",
+    "Need strict multi-tenant governance and enterprise tool policy -> APIM + AKSClaw."
+  ],
+  "roi_model": {
+    "baseline_manual_hours_per_week": 1200,
+    "automated_hours_saved_per_week": 420,
+    "loaded_hourly_cost_usd": 68,
+    "estimated_weekly_value_usd": 28560,
+    "estimated_monthly_value_usd": 123760
+  },
+  "evaluation_matrix": [
+    {
+      "scenario": "Coding Sandbox",
+      "question_task": "Need restore under 150ms and tool isolation for generated code?",
+      "model_answer": "Select E2B Firecracker path with APIM governance",
+      "action": "Act automatically",
+      "passed": true,
+      "source_label": "synthetic"
+    },
+    {
+      "scenario": "Multi-tenant SaaS Gateway",
+      "question_task": "Need tenant budget/rate control and MCP telemetry?",
+      "model_answer": "Select APIM AI Gateway + AKSClaw policy chain",
+      "action": "Confirm",
+      "passed": true,
+      "source_label": "measured"
+    },
+    {
+      "scenario": "Financial Zero-Trust",
+      "question_task": "Need auditable egress control + hard isolation boundary?",
+      "model_answer": "Select Kata/Firecracker + private networking + attestation",
+      "action": "Confirm",
+      "passed": true,
+      "source_label": "measured"
+    },
+    {
+      "scenario": "Edge Browser Cluster",
+      "question_task": "Reverse options and prefer lowest ops-only score?",
+      "model_answer": "Modal first decision in reversed option order",
+      "action": "Send to a human",
+      "passed": false,
+      "source_label": "synthetic"
+    }
+  ],
+  "robustness_checks": [
+    {
+      "question_answer": "Runtime choice score (Coding Sandbox)",
+      "original": 92.0,
+      "perturbed": 90.7,
+      "change_pts": -1.3,
+      "source_label": "synthetic"
+    },
+    {
+      "question_answer": "Gateway policy confidence (SaaS tenancy)",
+      "original": 94.0,
+      "perturbed": 93.4,
+      "change_pts": -0.6,
+      "source_label": "synthetic"
+    },
+    {
+      "question_answer": "Security fit score (Financial workload)",
+      "original": 95.5,
+      "perturbed": 94.9,
+      "change_pts": -0.6,
+      "source_label": "synthetic"
+    },
+    {
+      "question_answer": "Ops-only heuristic (Edge browser cluster)",
+      "original": 86.0,
+      "perturbed": 81.8,
+      "change_pts": -4.2,
+      "source_label": "synthetic"
+    }
+  ],
+  "latency_load_tiers": [
+    {
+      "tier": "1x load",
+      "primary_ms": 108,
+      "baseline_ms": 920,
+      "source_label": "anonymized_reported"
+    },
+    {
+      "tier": "5x load",
+      "primary_ms": 146,
+      "baseline_ms": 1120,
+      "source_label": "synthetic"
+    },
+    {
+      "tier": "10x load",
+      "primary_ms": 178,
+      "baseline_ms": 1420,
+      "source_label": "anonymized_reported"
+    }
+  ],
+  "five_step_playbook": [
+    "Screening: classify workload by isolation, state, compliance, and concurrency.",
+    "Design: choose runtime + gateway + state plane with explicit SLO and trust boundary.",
+    "Pilot: run benchmark harness for cold/hot start, throughput, policy interception, and cost.",
+    "Harden: enforce identity, egress, MCP/A2A controls, and observability contracts.",
+    "Scale: rollout with capacity policy, chaos drills, and ROI review loop."
+  ]
+}

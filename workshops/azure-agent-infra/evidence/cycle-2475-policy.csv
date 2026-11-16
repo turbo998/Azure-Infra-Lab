@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+cilium-tetragon-kernel-sandbox-guard-violation saturation gate,172,184,0.9348,measured,cilium-tetragon-kernel-sandbox-guard-fence mismatch replay + deterministic verification
+cilium-tetragon-kernel-sandbox-guard-fence fence integrity guard,161,168,0.9583,measured,cilium-tetragon-kernel-sandbox-guard-fence integrity logs
+tenant-scope cilium-tetragon-kernel-sandbox-guard-fence authorization fence,154,161,0.9565,measured,tenant cilium-tetragon-kernel-sandbox-guard-fence fairness replay logs

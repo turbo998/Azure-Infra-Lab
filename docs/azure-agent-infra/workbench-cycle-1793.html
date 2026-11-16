@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1793 · SBOM Enforcement Workbench</title>
+<style>body{margin:0;background:#0b1220;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.wrap{max-width:1080px;margin:0 auto;padding:24px}.card{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="wrap"><h1>Cycle 1793｜SBOM 强制执行工作台</h1>
+<div class="grid"><div class="card"><label>高危拦截率(%)</label><input id="intercept" type="range" min="40" max="100" value="89"><label>例外过期收敛率(%)</label><input id="expiry" type="range" min="0" max="100" value="73"><label>发布延迟增量(ms)</label><input id="lat" type="range" min="10" max="900" value="210"></div><div class="card"><h3>执行稳态评估</h3><p id="state"></p><p id="detail"></p></div></div>
+<div class="card">建议：先把“阻断默认开启”做对，再优化例外治理与发布时延。</div></div>
+<script>
+function evalS(){const i=+intercept.value,e=+expiry.value,l=+lat.value;const score=(i*0.17)+(e*0.12)-(l*0.03);if(score>15)state.textContent='稳态良好';else if(score>9)state.textContent='可灰度';else state.textContent='需加固';detail.textContent=`综合分 ${score.toFixed(2)}`;}
+['intercept','expiry','lat'].forEach(id=>document.getElementById(id).addEventListener('input',evalS));evalS();
+</script></body></html>

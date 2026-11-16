@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Cycle 1893 · Firecracker Host Class Noisy-Neighbor SLO</title>
+<style>body{margin:0;background:#081225;color:#e2e8f0;font-family:Segoe UI,Microsoft YaHei}.w{max-width:1080px;margin:0 auto;padding:24px}.c{background:#111827;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
+</head><body><div class="w"><h1>Cycle 1893｜Firecracker Host Class SLO 工作台</h1>
+<div class="g"><div class="c">
+<label>关键池 P95(ms)</label><input id="p95" type="range" min="20" max="600" value="112">
+<label>干扰告警频率(/h)</label><input id="alert" type="range" min="0" max="40" value="6">
+<label>自动迁移成功率(%)</label><input id="mig" type="range" min="40" max="100" value="91">
+</div><div class="c"><h3>Host Class 治理评分</h3><p id="state"></p><p id="score"></p></div></div>
+<div class="c">建议：先提升迁移成功率，再继续压低告警频率。</div></div>
+<script>
+function calc(){const p=+p95.value,a=+alert.value,m=+mig.value;const s=((600-p)*0.32)+((40-a)*3.1)+(m*1.9);state.textContent=s>245?'可生产：干扰受控且SLO稳定':(s>205?'可上线：建议收敛告警频率':'风险偏高：需强化隔离与迁移策略');score.textContent=`综合分 ${s.toFixed(2)}`;}
+['p95','alert','mig'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>

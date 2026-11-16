@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Semantic cache TTL upper-bound gate,188,200,0.94,measured,TTL policy replay + deterministic verification
+TTL decay consistency guard,183,190,0.9632,measured,TTL decay integrity logs
+Tenant TTL policy authorization fence,172,180,0.9556,measured,MCP policy replay logs

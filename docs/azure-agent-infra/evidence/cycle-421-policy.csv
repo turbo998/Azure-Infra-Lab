@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+Priority-lane starvation guard,188,200,0.94,measured,idempotency replay + deterministic verification
+Tenant fairness queue-lane gate,183,190,0.9632,measured,session replay integrity logs
+A2A cross-hop priority-class authorization fence,172,180,0.9556,measured,MCP policy replay logs

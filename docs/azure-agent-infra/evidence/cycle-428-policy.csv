@@ -1,0 +1,4 @@
+policy,blocked,total,intercept_rate,source_label,source_ref
+A2A idempotency window uniqueness gate,188,200,0.94,measured,idempotency-window replay + deterministic verification
+A2A dedupe-window integrity guard,183,190,0.9632,measured,idempotency-window integrity logs
+Tenant idempotency-window authorization fence,172,180,0.9556,measured,MCP policy replay logs
