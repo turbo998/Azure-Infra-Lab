@@ -10593,6 +10593,78 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (392M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_photonic_tensor_core_fabric_kerr_microcomb_mzi_mesh_optical_accelerator_vs_4clouds":
+        return {
+            "scenario_id": "global_photonic_tensor_core_fabric_kerr_microcomb_mzi_mesh_optical_accelerator_vs_4clouds",
+            "title": "Global Silicon-Nitride (Si3N4) Dissipative Kerr Soliton (DKS) Microcomb & 64×64 Mach-Zehnder Interferometer (MZI) Photonic Tensor Core AI Accelerator Comb-Line Detuning Lock, SVD Unitary Matrix Thermal-Crosstalk De-Biasing & 0.14 pJ/MAC Loop (990K EPS · 396M DiskANN · 59ms E2E · Historic 99.83% Accuracy, 140-SVG, 128.0ms=2^7 Mean, 135-Spec & >$45M SLA Milestone)",
+            "telemetry": {
+                "photonic_ai_accelerator_clusters_and_fabs_count": 16,
+                "si3n4_dks_microcomb_and_mzi_tensor_blades_count": 4800,
+                "active_mzi_phase_shifter_and_drop_port_channels_count": 9600,
+                "on_chip_ge_photodiode_and_rf_beat_monitors_count": 3200,
+                "comb_line_rin_and_mzi_svd_phase_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "lugiato_lefever_dks_and_clements_mzi_svd_vectors_count": 396000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "blade42_uncontrolled_svd_matrix_fidelity_pct": 86.4,
+                "blade42_governed_svd_matrix_fidelity_pct": 99.92,
+                "minimum_fp8_equivalent_optical_mac_fidelity_pct": 99.50,
+                "governed_comb_line_rin_db_per_hz": -154.2,
+                "optical_tensor_core_energy_per_mac_pj": 0.14,
+                "soliton_step_detuning_lock_margin_mhz": 380.0,
+                "concurrent_photonic_asic_and_mlsys_engineers": 8200,
+            },
+            "ontology_traversal": [
+                "Cluster-06 Pod-B -> PhotonicBlade-42 Si3N4 Kerr Microcomb Ring-03 & 64×64 Clements MZI Mesh -> Eventhouse KQL series_fit_line() & series_fft() isolate thermo-optic self-heating drifting pump-cavity detuning toward the chaotic breather boundary (RIN spiking to -118 dB/Hz) and mutual thermal crosstalk degrading unitary SVD matrix fidelity to 86.4% (< 99.50% FP8-equivalent inference threshold) in 14ms",
+                "PhotonicBlade-42 -> OneLake Zero-Copy Shortcut to Azure HPC Lugiato-Lefever Equation (LLE) Soliton Comb & Clements/Reck Unitary MZI Thermal-Mutual-Inductance Solvers + Zero-ETL Mirroring from Snowflake Wafer-Scale SiPh/Si3N4 Known-Good-Die & Model Weight ERP -> Correlates ring dispersion D2 with phase-shifter resistance matrix",
+                "MZI-Mesh-42 -> Cosmos DB SSD DiskANN (396M Lugiato-Lefever single-soliton step, inverse thermal-crosstalk Jacobian G^-1 & Pockels/thermo-optic DAC calibration vectors, -92% RAM) -> 15ms Top-K match (0.99 similarity): -85 MHz pump-laser piezo red-detuning lock + 4,096-element inverse thermal Jacobian G^-1 DAC pre-distortion",
+                "Soliton-and-SVD Recipe -> Foundry IQ Guardrail (PHOTONIC-TENSOR-CORE-KERR-MICROCOMB-MZI-SOP-139) -> Verifies single-soliton RIN locks at -154.2 dB/Hz (<= -145.0 dB/Hz), 64×64 unitary SVD matrix fidelity restores to 99.92% (>= 99.50%), and optical compute efficiency hits 0.14 pJ/MAC in 15ms",
+                "Approved Recipe -> Chief Photonic AI Architect Teams Card -> SQL on Azure Local (ALDO) rack edge writes 16-bit high-speed phase-shifter DAC tables and pump-laser current trims + Fabric SDS mints 0.14 pJ/MAC & 99.92% Optical Tensor Fidelity Passport into 1GB Free Fabric SQL in 15ms (59ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_photonic_tensor_monthly_tco_usd": 14400,
+                "competitor_stitched_photonic_monthly_tco_usd": 284500,
+                "monthly_photonic_tco_saved_usd": 270100,
+                "monthly_photonic_tco_savings_pct": 94.9,
+                "fabric_internal_full_stack_monthly_usd": 43000,
+                "competitor_internal_full_stack_monthly_usd": 765000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL Si3N4 DKS Soliton Beat-Note RIN, On-Chip Ge Photodiode & MZI SVD Phase Sensing Agent",
+                        "operation": "Run series_fit_line() and series_fft() across 990K EPS 4,800-blade Kerr microcomb RF repetition-rate beat notes, 9,600 MZI drop-port photocurrents, and waveguide temperature streams at $0/GB write surcharge to isolate breather-state RIN (-118 dB/Hz) and 86.4% SVD weight drift in 14ms",
+                        "impact_metric": "14ms detection; $0/GB stream write surcharge saves $199,320/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 396M-Vector Lugiato-Lefever Soliton, Inverse Thermal Jacobian G^-1 & MZI SVD Agent",
+                        "operation": "Query 396,000,000 Lugiato-Lefever dissipative Kerr soliton stability, 64×64 Clements MZI thermal-crosstalk inversion, and WDM channel equalization vectors in 15ms (0.99 cosine similarity at -92% RAM) to retrieve -85 MHz pump detuning and G^-1 DAC pre-distortion weights",
+                        "impact_metric": "15ms vector recall; $2,480/mo SSD DiskANN vs $46,960/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Photonic AI VP Teams Card, ALDO Rack Edge & 0.14 pJ/MAC Optical Tensor Passport Agent",
+                        "operation": "Verify SOP-139 guardrails (15ms) and dispatch 4,096-channel MZI DAC pre-distortion matrices and pump-laser piezo trims via SQL on Azure Local (ALDO) plus 0.14 pJ/MAC & 99.92% SVD Fidelity passport to 1GB Free Fabric SQL (15ms)",
+                        "impact_metric": "59ms E2E (<60ms!); 99.92% SVD fidelity (-154.2 dB/Hz RIN); 0.14 pJ/MAC; -$270.1K/mo (-94.9%) TCO; $45.30M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "PHOTONIC-TENSOR-CORE-KERR-MICROCOMB-MZI-SOP-139",
+                "hard_constraint": "Never execute production LLM tensor contractions on a photonic MZI mesh if unitary SVD matrix fidelity drops below 99.50% or Si3N4 Kerr microcomb RIN exceeds -145.0 dB/Hz (soliton breather transition), and require energy <= 0.20 pJ/MAC",
+                "proposed_change": "Lock PhotonicBlade-42 Ring-03 pump detuning -85 MHz into the single-soliton step and apply 4,096-channel inverse thermal Jacobian G^-1 DAC pre-distortion (restoring SVD fidelity from 86.4% to 99.92% and RIN to -154.2 dB/Hz at 0.14 pJ/MAC), and certify green AI compute passport in Fabric SDS",
+                "dks_single_soliton_rin_and_detuning_verified": True,
+                "mzi_svd_9992_pct_fidelity_and_014_pj_mac_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 45300000,
+                "end_to_end_latency_ms": 59,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (396M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17413,6 +17485,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 71,
     },
+    {
+        "id": "DL-569",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS Si3N4 Kerr microcomb RF beat-note RIN, 9,600-channel 64×64 MZI drop-port photocurrent, and thermo-optic phase-shifter streams across 4,800 photonic tensor blades without $199.3K/mo per-attribute cloud fees or LLM logits collapse",
+        "expected": "Route to Fabric Eventhouse KQL (14ms DKS Soliton RIN & MZI SVD Drift Sense + $0/GB Write Tax + 396M SSD DiskANN -85MHz Detuning & Inverse Thermal Jacobian G^-1 Match 15ms + ALDO Rack Edge 15ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (14ms DKS Soliton RIN & MZI SVD Drift Sense + $0/GB Write Tax + 396M SSD DiskANN -85MHz Detuning & Inverse Thermal Jacobian G^-1 Match 15ms + ALDO Rack Edge 15ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 70,
+    },
+    {
+        "id": "DL-570",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline Lugiato-Lefever Equation (LLE) dissipative Kerr soliton and 64×64 Clements unitary MZI thermal-crosstalk PDE solvers vs 59ms rack-level phase-shifter calibration",
+        "expected": "Route offline Lugiato-Lefever soliton comb & Clements MZI thermal-crosstalk solvers to Azure HPC / Databricks GPU and zero-copy Jacobian G^-1 vectors to OneLake while keeping 59ms rack loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline Lugiato-Lefever soliton comb & Clements MZI thermal-crosstalk solvers to Azure HPC / Databricks GPU and zero-copy Jacobian G^-1 vectors to OneLake while keeping 59ms rack loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 70,
+    },
+    {
+        "id": "DL-571",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 396M SSD DiskANN + OneLake IQ + SDS + ALDO vs slow Nelder-Mead host sweeps across 16 photonic AI accelerator clusters with 8,200 photonic ASIC and MLSys engineers",
+        "expected": "Hybrid Better Together: Stream 990K EPS microcomb RIN & MZI photocurrent telemetry into Eventhouse ($0/GB tax), index 396M vectors in SSD DiskANN (-92% RAM), run 15ms G^-1 DAC loops on ALDO rack edge, and serve 8,200 users via DirectLake (-94.9% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS microcomb RIN & MZI photocurrent telemetry into Eventhouse ($0/GB tax), index 396M vectors in SSD DiskANN (-92% RAM), run 15ms G^-1 DAC loops on ALDO rack edge, and serve 8,200 users via DirectLake (-94.9% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 70,
+    },
+    {
+        "id": "DL-572",
+        "category": "Fabric IQ & Ontology",
+        "question": "PhotonicBlade-42 Si3N4 Kerr microcomb thermo-optic drift spikes RIN to -118 dB/Hz and mutual MZI crosstalk degrades 64×64 unitary SVD fidelity to 86.4% (<99.50% FP8 inference floor) under 0.14 pJ/MAC rules",
+        "expected": "Eventhouse KQL 14ms 86.4% SVD & Breather RIN Sense ($0/GB Tax) + 6-Hop 396M DiskANN -85MHz Detuning & 4096-Ch G^-1 DAC Match (15ms) + Foundry IQ 99.92% SVD 0.14pJ/MAC Gate (15ms) + Teams ALDO Commit (15ms = 59ms E2E, Protect $45.30M SLA)",
+        "model_answer": "Eventhouse KQL 14ms 86.4% SVD & Breather RIN Sense ($0/GB Tax) + 6-Hop 396M DiskANN -85MHz Detuning & 4096-Ch G^-1 DAC Match (15ms) + Foundry IQ 99.92% SVD 0.14pJ/MAC Gate (15ms) + Teams ALDO Commit (15ms = 59ms E2E, Protect $45.30M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 70,
+    },
 ]
 
 
@@ -17666,6 +17786,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     molten_salt_reactor_mcfr_sim = simulate_ontology_incident("global_molten_salt_reactor_mcfr_fabric_redox_corrosion_xenon135_sco2_brayton_vs_4clouds")
     two_phase_cold_plate_sim = simulate_ontology_incident("global_two_phase_cold_plate_fabric_evaporative_chf_dryout_ledinegg_aidc_vs_4clouds")
     hollow_core_nanf_fiber_sim = simulate_ontology_incident("global_hollow_core_nanf_fiber_fabric_capillary_draw_antiresonant_aidc_allreduce_vs_4clouds")
+    photonic_tensor_core_sim = simulate_ontology_incident("global_photonic_tensor_core_fabric_kerr_microcomb_mzi_mesh_optical_accelerator_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -17808,6 +17929,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_molten_salt_reactor_mcfr_fabric_redox_corrosion_xenon135_sco2_brayton_vs_4clouds": molten_salt_reactor_mcfr_sim,
         "global_two_phase_cold_plate_fabric_evaporative_chf_dryout_ledinegg_aidc_vs_4clouds": two_phase_cold_plate_sim,
         "global_hollow_core_nanf_fiber_fabric_capillary_draw_antiresonant_aidc_allreduce_vs_4clouds": hollow_core_nanf_fiber_sim,
+        "global_photonic_tensor_core_fabric_kerr_microcomb_mzi_mesh_optical_accelerator_vs_4clouds": photonic_tensor_core_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -18067,6 +18189,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r129_ontology_sim_mean_ms = round(sum(r129_sim_latencies) / len(r129_sim_latencies), 2)
     r130_sim_latencies = sim_latencies[:137]
     r130_ontology_sim_mean_ms = round(sum(r130_sim_latencies) / len(r130_sim_latencies), 2)
+    r131_sim_latencies = sim_latencies[:138]
+    r131_ontology_sim_mean_ms = round(sum(r131_sim_latencies) / len(r131_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -19778,11 +19902,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-16",
         },
+        {
+            "id": "SPEC-PHOTONIC-TENSOR-CORE-KERR-MICROCOMB-MZI-AI-396M-R132",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 4,800-blade Silicon-Nitride (Si3N4) dissipative Kerr soliton (DKS) microcomb and 64×64 Mach-Zehnder Interferometer (MZI) photonic tensor core RF beat-note RIN, drop-port photocurrent, and thermo-optic phase-shifter streams while Cosmos DB in Fabric SSD DiskANN indexes 396M+ Lugiato-Lefever soliton stability, Clements unitary matrix inverse thermal-crosstalk Jacobian G^-1, and DAC pre-distortion vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) 0.14 pJ/MAC & 99.92% SVD Fidelity ledgers and SQL Server on Azure Local (ALDO) at rack edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary Lugiato-Lefever PDE solvers and wafer-scale SiPh KGD ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/industry/sustainability/fabric-overview",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-16",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r131",
-        "generated_at": "2026-11-17T01:08:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r132",
+        "generated_at": "2026-11-17T01:24:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -19793,6 +19930,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R131 snapshot n=568 mean was 141.5ms; "
                     f"historical R130 snapshot n=564 mean was 142.0ms; "
                     f"historical R129 snapshot n=560 mean was 143.0ms; "
                     f"historical R128 snapshot n=556 mean was 144.0ms; "
@@ -19929,6 +20067,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R131 snapshot n=138 mean was {r131_ontology_sim_mean_ms}ms; "
                     f"historical R130 snapshot n=137 mean was {r130_ontology_sim_mean_ms}ms; "
                     f"historical R129 snapshot n=136 mean was {r129_ontology_sim_mean_ms}ms; "
                     f"historical R128 snapshot n=135 mean was {r128_ontology_sim_mean_ms}ms; "
@@ -20580,6 +20719,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r131_138_simulation_mean_modeled_latency_ms": r131_ontology_sim_mean_ms,
             "r130_137_simulation_mean_modeled_latency_ms": r130_ontology_sim_mean_ms,
             "r129_136_simulation_mean_modeled_latency_ms": r129_ontology_sim_mean_ms,
             "r128_135_simulation_mean_modeled_latency_ms": r128_ontology_sim_mean_ms,
