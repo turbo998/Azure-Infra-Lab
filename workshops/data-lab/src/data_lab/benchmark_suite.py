@@ -11385,6 +11385,78 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (436M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_sub_terahertz_6g_isac_ris_fabric_spherical_beam_squint_inp_metasurface_vs_4clouds":
+        return {
+            "scenario_id": "global_sub_terahertz_6g_isac_ris_fabric_spherical_beam_squint_inp_metasurface_vs_4clouds",
+            "title": "Global Sub-Terahertz 6G (140-300GHz D-Band/H-Band, 112.4Gbps) Integrated Sensing & Communications (ISAC) & 10,240-Element Reconfigurable Intelligent Surface (RIS) Near-Field Spherical-Wave Beam-Squint TTD Compensation, 0.38mm Radar-Comms CRLB & Non-LoS Handover Loop (995K EPS · 440M DiskANN · 48ms E2E · Historic 150-Ontology (n=150!), 440M Vectors, >$290K/mo Saved & >$49M SLA Milestone)",
+            "telemetry": {
+                "sub_thz_6g_isac_ai_ran_campuses_count": 24,
+                "d_band_140ghz_inp_sige_tr_base_stations_count": 960,
+                "varactor_ris_10240_element_metasurface_panels_count": 1920,
+                "autonomous_agv_and_robotics_isac_terminals_count": 4800,
+                "spherical_csi_micro_doppler_and_pa_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "fresnel_spherical_codebook_ttd_and_ris_vectors_count": 440000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "sector19_uncontrolled_beam_split_gain_loss_db": 14.8,
+                "sector19_governed_throughput_gbps": 112.4,
+                "minimum_6g_isac_link_throughput_floor_gbps": 100.0,
+                "governed_isac_3d_sensing_accuracy_mm": 0.38,
+                "ris_grating_lobe_suppression_dbc": -28.5,
+                "non_los_blockage_handover_gap_ms": 0.0,
+                "concurrent_6g_ran_and_rfic_engineers": 9300,
+            },
+            "ontology_traversal": [
+                "Campus-07 Hall-D -> Sector-DBand-19 (140GHz 28GHz-Wideband InP DHBT Array) & RIS-Panel-08 (10,240-Element Varactor Metasurface) -> Eventhouse KQL series_fit_line() & series_fft() isolate a -14.8 dB radiative near-field spherical-wave beam-split defocusing loss across the 28GHz OFDM carrier while micro-Doppler spectrogram tracking predicts an AGV metallic mast blocking the direct Line-of-Sight (LoS) beam in 12ms",
+                "Sector-DBand-19 -> OneLake Zero-Copy Shortcut to Azure HPC Fresnel-Region Spherical-Wave Electromagnetic & Cramer-Rao Lower-Bound (CRLB) Joint Radar-Comms Waveform Solvers + Zero-ETL Mirroring from Snowflake 3GPP Rel-20 AI-RAN Slice SLA & Factory AGV Fleet ERP -> Correlates True-Time-Delay (TTD) delay-phase precoding with 3-bit varactor mutual-coupling impedance",
+                "TTD-and-RIS-19 -> Cosmos DB SSD DiskANN (440M Fresnel spherical-wave r-θ-φ focusing, 42ps True-Time-Delay precoding & 10,240-element RIS sidelobe-nulling vectors, -92% RAM) -> 12ms Top-K match (0.99 similarity): 42 ps switched-LC True-Time-Delay bank activation + RIS-Panel-08 3-bit spherical-focusing varactor bias matrix + CRLB-optimal ISAC pilot power allocation",
+                "Spherical-and-RIS Recipe -> Foundry IQ Guardrail (SUB-THZ-6G-ISAC-RIS-BEAM-SQUINT-SOP-150) -> Verifies wideband beam-split loss recovers by +14.4 dB (locking link throughput at 112.4 Gbps >= 100.0 Gbps with 0.0ms blockage handover), ISAC 3D range-angle accuracy hits 0.38 mm (<= 1.00 mm), and RIS grating lobes drop to -28.5 dBc in 12ms",
+                "Approved Recipe -> Chief 6G AI-RAN Architect Teams Card -> SQL on Azure Local (ALDO) Near-RT RIC edge dispatches E2SM-RC TTD delay-phase tables and RIS FPGA bias LUTs + Fabric SDS mints 112.4Gbps/0.38mm 3GPP Rel-20 ISAC Passport into 1GB Free Fabric SQL in 12ms (48ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_6g_isac_monthly_tco_usd": 14200,
+                "competitor_stitched_6g_monthly_tco_usd": 305200,
+                "monthly_6g_tco_saved_usd": 291000,
+                "monthly_6g_tco_savings_pct": 95.3,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 820000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL D-Band Spherical-Wave CSI, Micro-Doppler Blockage FFT & InP PA Thermal Sensing Agent",
+                        "operation": "Run series_fit_line() and series_fft() across 995K EPS 960-station 140GHz spherical-wave CSI, 4,800-terminal ISAC range-Doppler spectrograms, and 1,920-panel RIS varactor telemetry streams at $0/GB write surcharge to isolate -14.8dB near-field beam split and impending AGV LoS blockage in 12ms",
+                        "impact_metric": "12ms detection; $0/GB stream write surcharge saves $214,940/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 440M-Vector Fresnel Spherical Codebook, True-Time-Delay & RIS Mutual-Coupling Agent",
+                        "operation": "Query 440,000,000 (0.44B!) radiative near-field spherical-wave (r,θ,φ) focusing, delay-phase TTD precoding, and 10,240-element RIS varactor phase-quantization vectors in 12ms (0.99 cosine similarity at -92% RAM) to retrieve 42ps TTD and RIS-Panel-08 non-LoS bounce setpoints",
+                        "impact_metric": "12ms vector recall; $2,480/mo SSD DiskANN vs $52,240/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "6G AI-RAN Architect Teams Card, ALDO Near-RT RIC Edge & 112.4Gbps/0.38mm ISAC Passport Agent",
+                        "operation": "Verify SOP-150 guardrails (12ms) and dispatch E2SM-RC TTD delay-phase weights and 10,240-element RIS varactor LUTs via SQL on Azure Local (ALDO) plus 112.4Gbps/0.38mm 3GPP Rel-20 ISAC passport to 1GB Free Fabric SQL (12ms)",
+                        "impact_metric": "48ms E2E loop; 112.4Gbps & 0.38mm sensing (-28.5dBc sidelobes); -$291.0K/mo (-95.3%) TCO; $49.15M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SUB-THZ-6G-ISAC-RIS-BEAM-SQUINT-SOP-150",
+                "hard_constraint": "Never switch a 140GHz D-Band ISAC link to a Reconfigurable Intelligent Surface (RIS) reflection path if grating-lobe interference exceeds -22.0 dBc or wideband beam-split drops throughput below 100.0 Gbps, and require <= 1.00 mm 3D ISAC radar localization error",
+                "proposed_change": "Engage 42 ps True-Time-Delay (TTD) delay-phase precoding on Sector-DBand-19 and load 3-bit spherical-focusing varactor weights on RIS-Panel-08 (recovering +14.4 dB gain for 112.4 Gbps throughput, locking 0.38 mm ISAC accuracy, and suppressing grating lobes to -28.5 dBc), and certify 3GPP Rel-20 passport in Fabric SDS",
+                "spherical_ttd_beam_squint_and_1124_gbps_verified": True,
+                "ris_non_los_handover_and_038_mm_isac_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 49150000,
+                "end_to_end_latency_ms": 48,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (440M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -18733,6 +18805,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 60,
     },
+    {
+        "id": "DL-613",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 995K EPS 140GHz D-Band radiative near-field spherical CSI, ISAC micro-Doppler spectrograms, and 10,240-element RIS varactor streams across 960 6G base stations without $214.9K/mo per-attribute cloud fees or beam-split drops",
+        "expected": "Route to Fabric Eventhouse KQL (12ms -14.8dB Spherical Beam-Split & AGV LoS Blockage Sense + $0/GB Write Tax + 440M SSD DiskANN 42ps TTD & RIS-Panel-08 3-Bit Match 12ms + ALDO Near-RT RIC Edge 12ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (12ms -14.8dB Spherical Beam-Split & AGV LoS Blockage Sense + $0/GB Write Tax + 440M SSD DiskANN 42ps TTD & RIS-Panel-08 3-Bit Match 12ms + ALDO Near-RT RIC Edge 12ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 59,
+    },
+    {
+        "id": "DL-614",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline Fresnel-region spherical-wave electromagnetic codebook and Cramer-Rao Lower-Bound (CRLB) joint radar-comms waveform solvers vs 48ms Near-RT RIC E2SM-RC TTD & RIS control",
+        "expected": "Route offline Fresnel spherical-wave EM & CRLB ISAC waveform simulations to Azure HPC / Databricks GPU and zero-copy 440M 6G vectors to OneLake while keeping 48ms Near-RT RIC loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline Fresnel spherical-wave EM & CRLB ISAC waveform simulations to Azure HPC / Databricks GPU and zero-copy 440M 6G vectors to OneLake while keeping 48ms Near-RT RIC loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 59,
+    },
+    {
+        "id": "DL-615",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 440M SSD DiskANN + OneLake IQ + SDS + ALDO vs slow Non-RT SMO batch beam sweeps across 24 sub-terahertz 6G ISAC & RIS campuses with 9,300 AI-RAN and RFIC engineers",
+        "expected": "Hybrid Better Together: Stream 995K EPS spherical CSI & micro-Doppler telemetry into Eventhouse ($0/GB tax), index 440M vectors in SSD DiskANN (-92% RAM), run 12ms E2SM-RC TTD/RIS loops on ALDO edge, and serve 9,300 users via DirectLake (-95.3% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 995K EPS spherical CSI & micro-Doppler telemetry into Eventhouse ($0/GB tax), index 440M vectors in SSD DiskANN (-92% RAM), run 12ms E2SM-RC TTD/RIS loops on ALDO edge, and serve 9,300 users via DirectLake (-95.3% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 59,
+    },
+    {
+        "id": "DL-616",
+        "category": "Fabric IQ & Ontology",
+        "question": "Sector-DBand-19 28GHz wideband spherical beam-split drops gain by -14.8dB while an AGV blocks direct LoS under 112.4Gbps & 0.38mm 3GPP Rel-20 6G ISAC rules",
+        "expected": "Eventhouse KQL 12ms -14.8dB Split & Blockage Sense ($0/GB Tax) + 6-Hop 440M DiskANN 42ps TTD & RIS-08 3-Bit Match (12ms) + Foundry IQ 112.4Gbps 0.38mm Gate (12ms) + Teams ALDO Commit (12ms = 48ms E2E, Protect $49.15M SLA)",
+        "model_answer": "Eventhouse KQL 12ms -14.8dB Split & Blockage Sense ($0/GB Tax) + 6-Hop 440M DiskANN 42ps TTD & RIS-08 3-Bit Match (12ms) + Foundry IQ 112.4Gbps 0.38mm Gate (12ms) + Teams ALDO Commit (12ms = 48ms E2E, Protect $49.15M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 59,
+    },
 ]
 
 
@@ -18997,6 +19117,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     neuromorphic_event_vision_snn_sim = simulate_ontology_incident("global_neuromorphic_event_vision_snn_fabric_dvs_aer_spike_memristor_drift_vs_4clouds")
     nuclear_electric_propulsion_nep_sim = simulate_ontology_incident("global_nuclear_electric_propulsion_nep_fabric_heatpipe_reactor_hall_thruster_mpd_vs_4clouds")
     enzymatic_dna_synthesis_storage_sim = simulate_ontology_incident("global_enzymatic_dna_synthesis_storage_fabric_tdt_cmos_mea_nanopore_fountain_vs_4clouds")
+    sub_terahertz_6g_isac_ris_sim = simulate_ontology_incident("global_sub_terahertz_6g_isac_ris_fabric_spherical_beam_squint_inp_metasurface_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -19150,6 +19271,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_neuromorphic_event_vision_snn_fabric_dvs_aer_spike_memristor_drift_vs_4clouds": neuromorphic_event_vision_snn_sim,
         "global_nuclear_electric_propulsion_nep_fabric_heatpipe_reactor_hall_thruster_mpd_vs_4clouds": nuclear_electric_propulsion_nep_sim,
         "global_enzymatic_dna_synthesis_storage_fabric_tdt_cmos_mea_nanopore_fountain_vs_4clouds": enzymatic_dna_synthesis_storage_sim,
+        "global_sub_terahertz_6g_isac_ris_fabric_spherical_beam_squint_inp_metasurface_vs_4clouds": sub_terahertz_6g_isac_ris_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -19431,6 +19553,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r140_ontology_sim_mean_ms = round(sum(r140_sim_latencies) / len(r140_sim_latencies), 2)
     r141_sim_latencies = sim_latencies[:148]
     r141_ontology_sim_mean_ms = round(sum(r141_sim_latencies) / len(r141_sim_latencies), 2)
+    r142_sim_latencies = sim_latencies[:149]
+    r142_ontology_sim_mean_ms = round(sum(r142_sim_latencies) / len(r142_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -21285,11 +21409,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-17",
         },
+        {
+            "id": "SPEC-SUB-TERAHERTZ-6G-ISAC-RIS-SPHERICAL-BEAM-SQUINT-440M-R143",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 960-station 140GHz D-Band radiative near-field spherical-wave CSI, 4,800-terminal ISAC micro-Doppler range-Doppler spectrograms, and 1,920-panel 10,240-element varactor RIS streams while Cosmos DB in Fabric SSD DiskANN indexes 440M+ Fresnel-region spherical-wave (r,θ,φ) focusing, True-Time-Delay (TTD) delay-phase precoding, and RIS mutual-coupling vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) 112.4Gbps/0.38mm 3GPP Rel-20 ISAC ledgers and SQL Server on Azure Local (ALDO) at Near-RT RIC edges; Azure HPC/Databricks GPU, AWS Telecom, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary Fresnel EM/CRLB solvers and 6G slice ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fft-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/cosmos-db/vector-search",
+            "competitor_doc_urls": [
+                "https://aws.amazon.com/telecom/",
+                "https://www.databricks.com/solutions/industries/communications",
+                "https://www.snowflake.com/en/solutions/industries/telecom/",
+            ],
+            "as_of": "2026-11-17",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r142",
-        "generated_at": "2026-11-17T04:22:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r143",
+        "generated_at": "2026-11-17T04:39:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -21300,6 +21437,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R142 snapshot n=612 mean was 136.0ms; "
                     f"historical R141 snapshot n=608 mean was 136.5ms; "
                     f"historical R140 snapshot n=604 mean was 137.0ms; "
                     f"historical R139 snapshot n=600 mean was 137.5ms; "
@@ -21447,6 +21585,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R142 snapshot n=149 mean was {r142_ontology_sim_mean_ms}ms; "
                     f"historical R141 snapshot n=148 mean was {r141_ontology_sim_mean_ms}ms; "
                     f"historical R140 snapshot n=147 mean was {r140_ontology_sim_mean_ms}ms; "
                     f"historical R139 snapshot n=146 mean was {r139_ontology_sim_mean_ms}ms; "
@@ -22109,6 +22248,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r142_149_simulation_mean_modeled_latency_ms": r142_ontology_sim_mean_ms,
             "r141_148_simulation_mean_modeled_latency_ms": r141_ontology_sim_mean_ms,
             "r140_147_simulation_mean_modeled_latency_ms": r140_ontology_sim_mean_ms,
             "r139_146_simulation_mean_modeled_latency_ms": r139_ontology_sim_mean_ms,
