@@ -2109,13 +2109,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 51)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 48100000)
 
-    def test_scenario_matrix_604_cases_and_explicit_miss(self) -> None:
+    def test_global_nuclear_electric_propulsion_nep_fabric_heatpipe_reactor_hall_thruster_mpd_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_nuclear_electric_propulsion_nep_fabric_heatpipe_reactor_hall_thruster_mpd_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["nested_100kw_magnetically_shielded_hall_thrusters_count"], 576)
+        self.assertEqual(sim["telemetry"]["hall_breathing_fft_heatpipe_and_cathode_eps"], 995000)
+        self.assertEqual(sim["telemetry"]["pic_mcc_magnetic_shielding_and_heatpipe_wick_vectors_count"], 432000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_nep_tco_saved_usd"], 287200)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_nep_tco_savings_pct"], 95.3)
+        self.assertTrue(sim["foundry_iq_guardrail"]["hall_breathing_mode_damped_and_magnetic_shielding_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["alkali_heatpipe_margin_142_and_4180s_isp_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 50)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 48450000)
+
+    def test_scenario_matrix_608_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 604)
-        self.assertEqual(matrix["passed_scenarios"], 603)
+        self.assertEqual(matrix["total_scenarios"], 608)
+        self.assertEqual(matrix["passed_scenarios"], 607)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.83, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 137.0)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.84, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 136.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -3715,6 +3730,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-95.2% TCO", by_id["DL-603"]["expected"])
         self.assertIn("Protect $48.10M SLA", by_id["DL-604"]["expected"])
 
+    def test_fabric_nuclear_electric_propulsion_nep_heatpipe_reactor_hall_thruster_magnetic_shielding_vs_4clouds_2026_11_17_r141_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-605", "DL-606", "DL-607", "DL-608"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("12ms 52.4% Breathing-Mode Oscillation & 1.06 Heat-Pipe Margin Sense", by_id["DL-605"]["expected"])
+        self.assertIn("2D-3V PIC-MCC plasma shielding & alkali heat-pipe", by_id["DL-606"]["expected"])
+        self.assertIn("-95.3% TCO", by_id["DL-607"]["expected"])
+        self.assertIn("Protect $48.45M SLA", by_id["DL-608"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -3732,11 +3758,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 603)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 604)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 137.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 147)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 124.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 607)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 608)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 136.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 148)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 123.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r140_147_simulation_mean_modeled_latency_ms"], 124.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r139_146_simulation_mean_modeled_latency_ms"], 124.5)
         self.assertEqual(loaded["ontology_simulations_summary"]["r138_145_simulation_mean_modeled_latency_ms"], 125.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r137_144_simulation_mean_modeled_latency_ms"], 125.5)
@@ -3869,7 +3896,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 143)
+        self.assertEqual(len(refs), 144)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17"))
@@ -4018,6 +4045,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_neutral_atom_quantum_array_fabric_optical_tweezer_aod_rydberg_erasure_qec_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_molten_oxide_electrolysis_steel_fabric_inert_anode_skull_ledge_o2_slag_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_neuromorphic_event_vision_snn_fabric_dvs_aer_spike_memristor_drift_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_nuclear_electric_propulsion_nep_fabric_heatpipe_reactor_hall_thruster_mpd_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
