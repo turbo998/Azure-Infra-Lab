@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <linearGradient id="bg134" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="50%" stop-color="#0B192C"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="cyan134" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg134)"/>
+  <rect x="20" y="18" width="1400" height="864" rx="18" fill="#091326" stroke="#1E293B" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="40" y="34" width="1360" height="88" rx="14" fill="#10213D" stroke="#38BDF8" stroke-width="2.2"/>
+  <rect x="58" y="48" width="406" height="26" rx="13" fill="url(#cyan134)"/>
+  <text x="261" y="66" fill="#030712" font-size="10.8" font-weight="900" text-anchor="middle" letter-spacing="0.4">🏆 R126 · 270 TESTS · 131.0ms ONTOLOGY MEAN · &gt;$43M SLA!</text>
+  <text x="478" y="66" fill="#F8FAFC" font-size="15.5" font-weight="800">100 小时铁-空气长时储能 (LDES) 可逆除锈抑寄生析氢 (HER)、空气电极防淹水与极夜保供 65ms 闭环</text>
+  <text x="58" y="100" fill="#94A3B8" font-size="12.5">Scenario EC · 18 座百兆瓦级 100h 铁-空气储能园 (3,600 台 Fe/Fe3O4 模组 + 720 套在线 H2/EIS + 540 台构网逆变器) × 990K EPS · 3.72 亿向量 · $21.5/kWh</text>
+
+  <rect x="1146" y="46" width="236" height="64" rx="10" fill="#064E3B" stroke="#F59E0B" stroke-width="2"/>
+  <text x="1264" y="68" fill="#FDE68A" font-size="11.5" font-weight="900" text-anchor="middle">547 / 548 = 99.82% (270 Tests!)</text>
+  <text x="1264" y="95" fill="#FFFFFF" font-size="19" font-weight="900" text-anchor="middle">372M Vectors · 65ms</text>
+
+  <!-- Left Column -->
+  <rect x="40" y="138" width="430" height="470" rx="14" fill="#131B2E" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="60" y="168" fill="#F87171" font-size="14.5" font-weight="800">01 · 100h 铁-空气可逆生锈储能三大危机与死穴</text>
+
+  <rect x="58" y="184" width="394" height="126" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="206" fill="#FCA5A5" font-size="12.5" font-weight="800">① #88 模组第 72h 充电寄生析氢副反应 (HER 14.8%)</text>
+  <text x="72" y="226" fill="#F8FAFC" font-size="11.5">• 铁还原电位 (-0.877V) 比析氢电位 (-0.828V) 负 49mV，天然易冒氢</text>
+  <text x="72" y="246" fill="#CBD5E1" font-size="11">• 高 SoC 孔内浓差极化与 Bi2S3 耗竭致电位滑向 -1.18V vs Hg/HgO</text>
+  <text x="72" y="266" fill="#CBD5E1" font-size="11">• 寄生 HER 法拉第损耗飙至 14.8% (&gt;2.5% 红线)，顶空 H2 逼近 LEL</text>
+  <text x="72" y="286" fill="#F87171" font-size="11" font-weight="700">• 痛点：每日人工滴定滞后 24h，触发氢气联锁停机丧失保供容量！</text>
+
+  <rect x="58" y="322" width="394" height="132" rx="10" fill="#1F1224" stroke="#F87171" stroke-width="1"/>
+  <text x="72" y="344" fill="#FCA5A5" font-size="12.5" font-weight="800">② PTFE 气体扩散空气电极三相界面 (TPB) 渗液淹水</text>
+  <text x="72" y="364" fill="#F8FAFC" font-size="11.5">• 长期充放电中碳酸盐微晶与表面张力下降劣化 PTFE 疏水接触角</text>
+  <text x="72" y="384" fill="#CBD5E1" font-size="11">• KOH 碱性电解液突破毛细势垒向气侧渗漏 (Electrolyte Weeping)</text>
+  <text x="72" y="404" fill="#CBD5E1" font-size="11">• 氧气扩散纳米通道被液体淹死，电池极化内阻暴增 8 倍</text>
+  <text x="72" y="424" fill="#F87171" font-size="11" font-weight="700">• 痛点：缺乏 Young-Laplace 毛细背压动态闭环，电极寿命腰斩！</text>
+
+  <rect x="58" y="466" width="394" height="126" rx="10" fill="#0F172A" stroke="#475569" stroke-width="1"/>
+  <text x="72" y="488" fill="#FBBF24" font-size="12.5" font-weight="800">③ 四云拼装栈的三重税负 ($273.1K/月 vs $14.4K/月)</text>
+  <text x="72" y="508" fill="#E2E8F0" font-size="11.5">• 写入税：990K EPS 3,600台 EIS/电位/H2/压差流月费 $198.1K</text>
+  <text x="72" y="528" fill="#E2E8F0" font-size="11.5">• 内存税：372M 全内存 DRAM 向量索引月耗 $44.0K</text>
+  <text x="72" y="548" fill="#E2E8F0" font-size="11.5">• 刷新税：Snowflake 60s 滞后 / 人工滴定错失脉冲抑氢窗口</text>
+  <text x="72" y="570" fill="#34D399" font-size="11.5" font-weight="700">• Fabric 破局：$0/GB 写入税 + SSD DiskANN 省 92% 内存</text>
+
+  <!-- Center Column -->
+  <rect x="488" y="138" width="494" height="470" rx="14" fill="#0D1F33" stroke="#38BDF8" stroke-width="2.2"/>
+  <text x="508" y="168" fill="#7DD3FC" font-size="14.5" font-weight="800">02 · Microsoft Fabric 65ms 闭环 (270单测 &amp; 131.0ms均值!)</text>
+
+  <!-- Step 1 -->
+  <rect x="508" y="184" width="454" height="96" rx="10" fill="#112A45" stroke="#06B6D4" stroke-width="1.4"/>
+  <text x="524" y="205" fill="#67E8F9" font-size="12.5" font-weight="800">STEP 1 · Eventhouse KQL 990K EPS 过电位与析氢感知 (16 ms)</text>
+  <text x="524" y="225" fill="#F8FAFC" font-size="11.5">• $0/GB 写入税摄入 3,600 台铁-空气模组 Hg/HgO 电位、EIS 与顶空 H2</text>
+  <text x="524" y="244" fill="#CBD5E1" font-size="11">• series_fit_line() 16ms 捕获 #88 模组 -1.18V 极化与 14.8% HER 损耗</text>
+  <text x="524" y="263" fill="#34D399" font-size="11" font-weight="700">• 同步监测 PTFE 空气电极跨膜毛细压差滑落与渗液前兆</text>
+
+  <!-- Step 2 -->
+  <rect x="508" y="292" width="454" height="104" rx="10" fill="#132F2B" stroke="#10B981" stroke-width="1.8"/>
+  <text x="524" y="313" fill="#6EE7B7" font-size="12.5" font-weight="800">STEP 2 · 6 跳储能孪生 &amp; 3.72 亿向量 SSD DiskANN 检索 (17 ms)</text>
+  <text x="524" y="333" fill="#F8FAFC" font-size="11.5">• 检索 372,000,000 (🏆 270单测 &amp; 131.0ms均值!) 相场/抑氢/TPB 向量</text>
+  <text x="524" y="352" fill="#CBD5E1" font-size="11">• 相似度 0.99 (省 92% 内存)：切换 -0.98V 限幅脉冲弛豫除锈充电波形</text>
+  <text x="524" y="371" fill="#FDE68A" font-size="11" font-weight="700">• 精准补加 0.45 mmol/L K2S 修复 Bi2S3 钝化层 + 空气背压 +4.2 kPa</text>
+
+  <!-- Step 3 -->
+  <rect x="508" y="408" width="454" height="90" rx="10" fill="#172554" stroke="#3B82F6" stroke-width="1.4"/>
+  <text x="524" y="429" fill="#93C5FD" font-size="12.5" font-weight="800">STEP 3 · Foundry IQ 抑析氢与 100h 保供护栏 SOP-133 (16 ms)</text>
+  <text x="524" y="449" fill="#F8FAFC" font-size="11.5">• 校验寄生 HER 法拉第损耗压至 1.35% &lt;= 2.50%，顶空 H2 &lt;= 1.0 vol%</text>
+  <text x="524" y="468" fill="#CBD5E1" font-size="11">• 铁阳极库仑效率恢复至 96.8% &gt;= 95.0%，TPB 压差稳在 18.4 kPa</text>
+  <text x="524" y="485" fill="#34D399" font-size="11" font-weight="700">• 100 小时极夜孤岛保供容量 100% 锁定，度电成本仅 $21.5/kWh</text>
+
+  <!-- Step 4 -->
+  <rect x="508" y="510" width="454" height="84" rx="10" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="1.4"/>
+  <text x="524" y="531" fill="#C4B5FD" font-size="12.5" font-weight="800">STEP 4 · Teams 首席电化学家确认 + ALDO 边缘 + 护照 (16 ms)</text>
+  <text x="524" y="551" fill="#F8FAFC" font-size="11.5">• 储能园 ALDO 边缘下发脉冲整流器、K2S 计量泵与空气歧管风门指令</text>
+  <text x="524" y="570" fill="#34D399" font-size="11" font-weight="700">• 1GB 免费 SQL 签发 100h 24/7 CFE 全天候绿电护照 (65ms 闭环!)</text>
+
+  <!-- Right Column -->
+  <rect x="1000" y="138" width="400" height="470" rx="14" fill="#111C33" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1020" y="168" fill="#60A5FA" font-size="14.5" font-weight="800">03 · 定量基准与五云零拷贝协同 (R126)</text>
+
+  <rect x="1018" y="184" width="364" height="142" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.2"/>
+  <text x="1032" y="206" fill="#34D399" font-size="12.5" font-weight="800">月度 TCO 对比 (省 94.7% · 净省 $258.7K/月!)</text>
+  <text x="1032" y="228" fill="#F8FAFC" font-size="11.5">• Microsoft Fabric 归一化：  $14,400 / 月 (基准最优)</text>
+  <rect x="1032" y="234" width="46" height="10" rx="5" fill="#10B981"/>
+  <text x="1032" y="258" fill="#CBD5E1" font-size="11.5">• 四云拼装栈归一化：         $273,100 / 月 (贵 19.0x)</text>
+  <rect x="1032" y="264" width="320" height="10" rx="5" fill="#EF4444"/>
+  <text x="1032" y="290" fill="#93C5FD" font-size="11">• 集团全量专用容量 (18 储能园)：$43.0K vs $740.0K/月</text>
+  <text x="1032" y="310" fill="#FDE68A" font-size="11.5" font-weight="800">• 守护 SLA 风险敞口：        $43,200,000 (&gt;$43M 大关!)</text>
+
+  <rect x="1018" y="338" width="364" height="126" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1032" y="360" fill="#FDE68A" font-size="12.5" font-weight="900">🏆 270单测 &amp; 131.0ms本体均值 (report.json R126)</text>
+  <text x="1032" y="382" fill="#FFFFFF" font-size="12" font-weight="800">• 路由评估矩阵 (n=548)：    547 / 548 (99.82% · 历史最高!)</text>
+  <text x="1032" y="402" fill="#34D399" font-size="11.5" font-weight="700">• 分母 A 路由矩阵算术均值： 146.0 ms (零余数整数!)</text>
+  <text x="1032" y="422" fill="#FDE68A" font-size="11.5" font-weight="800">• 分母 B 133大行业本体均值：131.0 ms (零余数整数大关!)</text>
+  <text x="1032" y="442" fill="#CBD5E1" font-size="11">• Python 确定性单测套件：  270 / 270 (100% 通过 · 270单测!)</text>
+
+  <rect x="1018" y="476" width="364" height="118" rx="10" fill="#0F172A" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="1032" y="498" fill="#67E8F9" font-size="12.5" font-weight="800">Better Together 跨云零拷贝黄金分工</text>
+  <text x="1032" y="518" fill="#E2E8F0" font-size="11">• Azure HPC / Databricks：COMSOL 多孔铁相场与 ECMWF 极夜仿真</text>
+  <text x="1032" y="538" fill="#E2E8F0" font-size="11">• Snowflake / SAP：直接还原铁球团、KOH 电解液与 PPA 结算 ERP</text>
+  <text x="1032" y="558" fill="#34D399" font-size="11" font-weight="700">• Fabric：OneLake 零拷贝挂载 + 65ms 储能园实时控制面</text>
+  <text x="1032" y="578" fill="#94A3B8" font-size="10.5">• 官方规格引用：129 条 (新增 SPEC-IRON-AIR-100H-LDES-R126)</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="624" width="1360" height="240" rx="14" fill="#0E192D" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="60" y="654" fill="#60A5FA" font-size="14.5" font-weight="800">04 · 100 小时铁-空气长时储能 (LDES) 与极夜保供三大物理护栏矩阵 (SOP-133 · 270 Tests, 131.0ms Mean &amp; $43.20M SLA)</text>
+
+  <rect x="60" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#06B6D4" stroke-width="1.2"/>
+  <text x="76" y="694" fill="#67E8F9" font-size="13" font-weight="800">① 脉冲弛豫除锈与硫化铋原位抑氢 (HER)</text>
+  <text x="76" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：断电弛豫均化孔内 OH⁻ 浓差，Bi/S 提升析氢过电位势垒</text>
+  <text x="76" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：#88 模组电位滑向 -1.18V，寄生 HER 飙升至 14.8%</text>
+  <text x="76" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：切换 -0.98V 脉冲休止波形 + 补加 0.45 mmol/L K2S</text>
+  <text x="76" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：寄生 HER 压至 1.35% &lt;= 2.50%，库仑效率达 96.8%</text>
+  <text x="76" y="800" fill="#94A3B8" font-size="11">• 本质安全：顶空 H2 远低于 25% LEL，彻底根除充电冒氢能量浪费</text>
+
+  <rect x="506" y="670" width="426" height="174" rx="10" fill="#091326" stroke="#10B981" stroke-width="1.2"/>
+  <text x="522" y="694" fill="#6EE7B7" font-size="13" font-weight="800">② 空气电极三相界面 (TPB) 毛细背压平衡</text>
+  <text x="522" y="716" fill="#E2E8F0" font-size="11.5">• 物理机理：ΔPc = -2γcosθ/r，动态背压抵消 PTFE 疏水角退化</text>
+  <text x="522" y="736" fill="#E2E8F0" font-size="11.5">• 异常拦截：KOH 电解液微孔渗漏威胁淹死氧气扩散三相界面</text>
+  <text x="522" y="756" fill="#E2E8F0" font-size="11.5">• 边缘微调：空气腔背压上调 +4.2 kPa + 进气 CO2 洗涤 &lt;2 ppm</text>
+  <text x="522" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：跨膜压差稳在 18.4 kPa，100h 放电零淹水零碳酸盐堵孔</text>
+  <text x="522" y="800" fill="#94A3B8" font-size="11">• 成本优势：度电存储成本仅 $21.5/kWh，不到锂离子电池的 1/10</text>
+
+  <rect x="952" y="670" width="428" height="174" rx="10" fill="#091326" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="968" y="694" fill="#FBBF24" font-size="13" font-weight="800">③ 100h 极夜寒潮孤岛保供与 24/7 CFE 绿电护照</text>
+  <text x="968" y="716" fill="#E2E8F0" font-size="11.5">• 极夜韧性：支撑 1GW AI 算力中心度过连续 4 天无风无光寒潮</text>
+  <text x="968" y="736" fill="#E2E8F0" font-size="11.5">• 构网支撑：540 台 GFM 逆变器提供虚拟同步机惯量与毫秒级稳频</text>
+  <text x="968" y="756" fill="#E2E8F0" font-size="11.5">• 零碳审计：逐小时绿电充放溯源直通欧盟与北美 24/7 CFE 账本</text>
+  <text x="968" y="778" fill="#34D399" font-size="11.5" font-weight="700">• 闭环成效：1GB 免费 SQL 签发 100h 全天候零碳算力保供护照</text>
+  <text x="968" y="800" fill="#FDE68A" font-size="11" font-weight="700">• 里程碑：270单测 · 131.0ms均值 · 372M向量 · $43.20M SLA</text>
+</svg>
