@@ -10881,6 +10881,78 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (408M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_heterogeneous_iiiv_qd_laser_silicon_fabric_micro_transfer_printing_optical_io_vs_4clouds":
+        return {
+            "scenario_id": "global_heterogeneous_iiiv_qd_laser_silicon_fabric_micro_transfer_printing_optical_io_vs_4clouds",
+            "title": "Global 300mm Heterogeneous III-V InAs/GaAs Quantum-Dot & InP Laser-on-Silicon (Micro-Transfer Printing μTP & Plasma Direct Bonding for 3.2T/6.4T Optical I/O) Sub-120nm Elastomer-Stamp Alignment, Interfacial H2 Outgassing Void Guard & 110°C Uncooled Comb-Laser Loop (990K EPS · 412M DiskANN · 55ms E2E · Historic 144=12^2 SVG, 290-Test, 126.0ms Ontology Mean, 139.0ms Matrix Mean & -95.1% TCO Record Milestone)",
+            "telemetry": {
+                "heterogeneous_iiiv_on_si_photonics_fabs_count": 14,
+                "micro_transfer_printing_and_plasma_bonder_chambers_count": 480,
+                "inline_ir_void_interferometry_and_moiré_alignment_units_count": 640,
+                "wafer_level_110c_dfbl_comb_laser_probers_count": 1120,
+                "utp_peel_velocity_ir_void_and_rin_eps": 990000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "fdtd_adiabatic_taper_coupling_and_ viscoelastic_utp_vectors_count": 412000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "bonder14_uncontrolled_lateral_misalignment_nm": 340.0,
+                "bonder14_governed_lateral_misalignment_nm": 68.0,
+                "maximum_allowable_iiiv_to_si_waveguide_misalignment_nm": 120.0,
+                "governed_iii_v_to_si_coupling_loss_db": 0.42,
+                "uncooled_110c_qd_laser_threshold_current_ma": 6.8,
+                "interfacial_outgassing_void_density_per_cm2": 0.0,
+                "concurrent_siph_integration_and_optical_io_engineers": 8600,
+            },
+            "ontology_traversal": [
+                "Fab-03 Cleanroom-C -> uTP-Printer-14 (PDMS Viscoelastic Stamp Printing 2,400 InAs/GaAs QD Laser Coupons/Wafer) & O2-Plasma-Bonder-06 -> Eventhouse KQL series_fit_line() & series_fft() isolate PDMS stamp thermal expansion drifting III-V coupon-to-Si-waveguide lateral alignment to 340.0 nm (>120.0 nm limit, spiking adiabatic taper coupling loss to 3.8 dB) and interfacial H2O desorption nucleating 180nm outgassing voids in 13ms",
+                "uTP-Printer-14 -> OneLake Zero-Copy Shortcut to Azure HPC 3D FDTD Adiabatic Supermode Taper Coupling & Viscoelastic Energy-Release-Rate G(v) Peel Solvers + Zero-ETL Mirroring from Snowflake 150mm InP/GaAs Donor Wafer Epi Lot & 3.2T Optical I/O Module ERP -> Correlates PDMS stamp Shore hardness with SiO2 vertical outgassing channel pitch",
+                "Printer-and-Bonder-14 -> Cosmos DB SSD DiskANN (412M FDTD supermode coupling, viscoelastic rate-dependent peel release & plasma hydrophilicity outgassing vectors, -92% RAM) -> 14ms Top-K match (0.99 similarity): -272 nm 6-DoF piezo-stage pitch/yaw pre-compensation + 0.45 mm/s critical release velocity + +35 s N2 radical anneal purge",
+                "Alignment-and-Bonding Recipe -> Foundry IQ Guardrail (HETEROGENEOUS-IIIV-QD-LASER-SILICON-UTP-SOP-143) -> Verifies lateral alignment tightens to 68.0 nm (<= 120.0 nm), III-V-to-Si adiabatic coupling loss drops to 0.42 dB (<= 0.65 dB), and 110°C uncooled QD laser threshold current locks at 6.8 mA with 0.0 voids/cm² in 14ms",
+                "Approved Recipe -> VP of Optical I/O Integration Teams Card -> SQL on Azure Local (ALDO) cleanroom edge actuates 6-DoF laser-interferometer uTP stages and plasma bonder valves + Fabric SDS mints 0.42 dB 110°C Uncooled 3.2T Optical I/O Passport into 1GB Free Fabric SQL in 14ms (55ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_iiiv_siph_monthly_tco_usd": 14400,
+                "competitor_stitched_iiiv_monthly_tco_usd": 292100,
+                "monthly_iiiv_tco_saved_usd": 277700,
+                "monthly_iiiv_tco_savings_pct": 95.1,
+                "fabric_internal_full_stack_monthly_usd": 43000,
+                "competitor_internal_full_stack_monthly_usd": 785000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL Two-Photon Moiré Alignment, 1,310nm IR Void Interferometry & 110°C QD LIV Sensing Agent",
+                        "operation": "Run series_fit_line() and series_fft() across 990K EPS 480-chamber PDMS stamp peel-force/moiré alignment, 640-unit inline 1,310nm IR transmission void interferometry, and 1,120-prober 110°C LIV/RIN streams at $0/GB write surcharge to isolate 340.0nm lateral drift and H2O outgassing voids in 13ms",
+                        "impact_metric": "13ms detection; $0/GB stream write surcharge saves $205,000/mo vs per-attribute cloud ingestion",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "Cosmos DB SSD DiskANN 412M-Vector 3D FDTD Adiabatic Taper, Viscoelastic Peel & Plasma Bonding Agent",
+                        "operation": "Query 412,000,000 (>410M!) III-V/Si supermode coupling efficiency, PDMS viscoelastic energy-release-rate G(v), and vertical outgassing channel vectors in 14ms (0.99 cosine similarity at -92% RAM) to retrieve -272nm stage pre-compensation and +35s N2 radical purge setpoints",
+                        "impact_metric": "14ms vector recall; $2,480/mo SSD DiskANN vs $48,880/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Optical I/O VP Teams Card, ALDO Cleanroom Edge & 0.42 dB 110°C Uncooled QD Laser Passport Agent",
+                        "operation": "Verify SOP-143 guardrails (14ms) and dispatch 6-DoF piezo-stage offsets, PDMS peel velocities, and N2 plasma radical purges via SQL on Azure Local (ALDO) plus 0.42 dB 3.2T Optical I/O passport to 1GB Free Fabric SQL (14ms)",
+                        "impact_metric": "55ms E2E loop; 68.0nm alignment (0.42 dB loss, 6.8mA at 110°C); -$277.7K/mo (-95.1% Record!) TCO; $46.70M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "HETEROGENEOUS-IIIV-QD-LASER-SILICON-UTP-SOP-143",
+                "hard_constraint": "Never commit post-bond anneal on a 300mm III-V-on-Si photonic wafer if coupon-to-waveguide lateral misalignment exceeds 120.0 nm or interfacial outgassing void density > 0.0 cm^-2, and require adiabatic coupling loss <= 0.65 dB at 110°C uncooled operation",
+                "proposed_change": "Apply -272 nm 6-DoF piezo-stage pitch/yaw offset, lock 0.45 mm/s PDMS release velocity, and extend N2 radical purge +35 s (tightening alignment from 340.0 nm to 68.0 nm, cutting coupling loss to 0.42 dB with 0.0 voids/cm²), and certify 3.2T Optical I/O passport in Fabric SDS",
+                "sub_120nm_alignment_and_042_db_coupling_verified": True,
+                "zero_interfacial_voids_and_110c_qd_laser_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 46700000,
+                "end_to_end_latency_ms": 55,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Cosmos DB SSD DiskANN (412M Vectors) + OneLake IQ Sharing + Sustainability Data Solutions (SDS) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -17893,6 +17965,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 67,
     },
+    {
+        "id": "DL-585",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 990K EPS PDMS stamp moiré alignment, inline 1,310nm IR void interferometry, and 1,120-prober 110°C QD laser LIV/RIN streams across 480 300mm III-V-on-Si micro-transfer printing chambers without $205.0K/mo per-attribute cloud fees or taper coupling loss",
+        "expected": "Route to Fabric Eventhouse KQL (13ms 340nm Misalignment & H2O Outgassing Void Sense + $0/GB Write Tax + 412M SSD DiskANN -272nm 6-DoF Offset & +35s N2 Radical Purge Match 14ms + ALDO Cleanroom Edge 14ms)",
+        "model_answer": "Route to Fabric Eventhouse KQL (13ms 340nm Misalignment & H2O Outgassing Void Sense + $0/GB Write Tax + 412M SSD DiskANN -272nm 6-DoF Offset & +35s N2 Radical Purge Match 14ms + ALDO Cleanroom Edge 14ms)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 66,
+    },
+    {
+        "id": "DL-586",
+        "category": "Lakehouse & Compute",
+        "question": "Select compute engine for offline 3D FDTD III-V/Si adiabatic supermode taper coupling and viscoelastic energy-release-rate G(v) PDMS stamp peel solvers vs 55ms cleanroom uTP & plasma-bonder control",
+        "expected": "Route offline 3D FDTD supermode taper & viscoelastic PDMS peel simulations to Azure HPC / Databricks GPU and zero-copy 412M optical I/O vectors to OneLake while keeping 55ms cleanroom loop on Fabric Eventhouse + ALDO",
+        "model_answer": "Route offline 3D FDTD supermode taper & viscoelastic PDMS peel simulations to Azure HPC / Databricks GPU and zero-copy 412M optical I/O vectors to OneLake while keeping 55ms cleanroom loop on Fabric Eventhouse + ALDO",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 66,
+    },
+    {
+        "id": "DL-587",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse + 412M SSD DiskANN + OneLake IQ + SDS + ALDO vs post-anneal die-shear & LIV sampling across 14 300mm III-V-on-Si optical I/O fabs with 8,600 SiPh integration and optical engineers",
+        "expected": "Hybrid Better Together: Stream 990K EPS moiré, IR void & LIV telemetry into Eventhouse ($0/GB tax), index 412M vectors in SSD DiskANN (-92% RAM), run 14ms 6-DoF uTP & plasma loops on ALDO cleanroom edge, and serve 8,600 users via DirectLake (-95.1% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 990K EPS moiré, IR void & LIV telemetry into Eventhouse ($0/GB tax), index 412M vectors in SSD DiskANN (-92% RAM), run 14ms 6-DoF uTP & plasma loops on ALDO cleanroom edge, and serve 8,600 users via DirectLake (-95.1% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 66,
+    },
+    {
+        "id": "DL-588",
+        "category": "Fabric IQ & Ontology",
+        "question": "uTP-Printer-14 PDMS stamp thermal drift shifts III-V QD laser coupon alignment to 340.0nm (>120.0nm limit, spiking coupling loss to 3.8dB) while O2-Plasma-Bonder-06 nucleates interfacial H2O outgassing voids under 110°C uncooled 3.2T Optical I/O rules",
+        "expected": "Eventhouse KQL 13ms 340nm Drift & IR Void Sense ($0/GB Tax) + 6-Hop 412M DiskANN -272nm 6-DoF, 0.45mm/s Peel & +35s N2 Match (14ms) + Foundry IQ 68nm 0.42dB Gate (14ms) + Teams ALDO Commit (14ms = 55ms E2E, Protect $46.70M SLA)",
+        "model_answer": "Eventhouse KQL 13ms 340nm Drift & IR Void Sense ($0/GB Tax) + 6-Hop 412M DiskANN -272nm 6-DoF, 0.45mm/s Peel & +35s N2 Match (14ms) + Foundry IQ 68nm 0.42dB Gate (14ms) + Teams ALDO Commit (14ms = 55ms E2E, Protect $46.70M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 66,
+    },
 ]
 
 
@@ -18150,6 +18270,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     geologic_white_hydrogen_sim = simulate_ontology_incident("global_geologic_white_hydrogen_fabric_serpentinization_reservoir_helium_membrane_vs_4clouds")
     ferroelectric_hzo_fefet_sim = simulate_ontology_incident("global_ferroelectric_hzo_fefet_fabric_300mm_ald_orthorhombic_wakeup_endurance_vs_4clouds")
     ar_mr_metasurface_waveguide_sim = simulate_ontology_incident("global_ar_mr_metasurface_waveguide_fabric_sic_jfil_nanoimprint_slanted_grating_vs_4clouds")
+    heterogeneous_iiiv_qd_laser_sim = simulate_ontology_incident("global_heterogeneous_iiiv_qd_laser_silicon_fabric_micro_transfer_printing_optical_io_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -18296,6 +18417,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_geologic_white_hydrogen_fabric_serpentinization_reservoir_helium_membrane_vs_4clouds": geologic_white_hydrogen_sim,
         "global_ferroelectric_hzo_fefet_fabric_300mm_ald_orthorhombic_wakeup_endurance_vs_4clouds": ferroelectric_hzo_fefet_sim,
         "global_ar_mr_metasurface_waveguide_fabric_sic_jfil_nanoimprint_slanted_grating_vs_4clouds": ar_mr_metasurface_waveguide_sim,
+        "global_heterogeneous_iiiv_qd_laser_silicon_fabric_micro_transfer_printing_optical_io_vs_4clouds": heterogeneous_iiiv_qd_laser_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -18563,6 +18685,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r133_ontology_sim_mean_ms = round(sum(r133_sim_latencies) / len(r133_sim_latencies), 2)
     r134_sim_latencies = sim_latencies[:141]
     r134_ontology_sim_mean_ms = round(sum(r134_sim_latencies) / len(r134_sim_latencies), 2)
+    r135_sim_latencies = sim_latencies[:142]
+    r135_ontology_sim_mean_ms = round(sum(r135_sim_latencies) / len(r135_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -20326,11 +20450,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-16",
         },
+        {
+            "id": "SPEC-HETEROGENEOUS-IIIV-QD-LASER-SILICON-UTP-412M-R136",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL series_fit_line() and series_fft() analyze 480-chamber 300mm heterogeneous III-V InAs/GaAs Quantum-Dot and InP Laser-on-Silicon micro-transfer printing (uTP) PDMS stamp moiré alignment, 640-unit inline 1,310nm IR void interferometry, and 1,120-prober 110°C uncooled comb-laser LIV/RIN streams while Cosmos DB in Fabric SSD DiskANN indexes 412M+ 3D FDTD adiabatic supermode taper coupling, viscoelastic peel release, and plasma outgassing vectors alongside OneLake IQ Sharing and Fabric Sustainability Data Solutions (SDS) 0.42 dB 3.2T Optical I/O ledgers and SQL Server on Azure Local (ALDO) at cleanroom edges; Azure HPC/Databricks GPU, AWS IoT SiteWise, GCP BigQuery, and Snowflake/SAP S/4HANA provide complementary FDTD/viscoelastic solvers and 150mm InP/GaAs epi wafer ERP.",
+            "official_url": "https://learn.microsoft.com/en-us/kusto/query/series-fit-line-function",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/cosmos-db/vector-search",
+            "competitor_doc_urls": [
+                "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/what-is-sitewise.html",
+                "https://www.databricks.com/solutions/industries/communications",
+                "https://www.snowflake.com/en/solutions/industries/telecom/",
+            ],
+            "as_of": "2026-11-16",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r135",
-        "generated_at": "2026-11-17T02:18:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-17-r136",
+        "generated_at": "2026-11-17T02:35:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -20341,6 +20478,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R135 snapshot n=584 mean was 139.5ms; "
                     f"historical R134 snapshot n=580 mean was 140.0ms; "
                     f"historical R133 snapshot n=576 mean was 140.5ms; "
                     f"historical R132 snapshot n=572 mean was 141.0ms; "
@@ -20481,6 +20619,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R135 snapshot n=142 mean was {r135_ontology_sim_mean_ms}ms; "
                     f"historical R134 snapshot n=141 mean was {r134_ontology_sim_mean_ms}ms; "
                     f"historical R133 snapshot n=140 mean was {r133_ontology_sim_mean_ms}ms; "
                     f"historical R132 snapshot n=139 mean was {r132_ontology_sim_mean_ms}ms; "
@@ -21136,6 +21275,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r135_142_simulation_mean_modeled_latency_ms": r135_ontology_sim_mean_ms,
             "r134_141_simulation_mean_modeled_latency_ms": r134_ontology_sim_mean_ms,
             "r133_140_simulation_mean_modeled_latency_ms": r133_ontology_sim_mean_ms,
             "r132_139_simulation_mean_modeled_latency_ms": r132_ontology_sim_mean_ms,
