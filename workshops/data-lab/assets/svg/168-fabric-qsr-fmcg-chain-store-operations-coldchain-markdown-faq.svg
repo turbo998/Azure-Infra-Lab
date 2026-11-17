@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg168" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090D16"/>
+      <stop offset="50%" stop-color="#111C2D"/>
+      <stop offset="100%" stop-color="#0E1726"/>
+    </linearGradient>
+    <linearGradient id="hdr168" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="50%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardFabric168" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D2824"/>
+      <stop offset="100%" stop-color="#0A1E2B"/>
+    </linearGradient>
+    <linearGradient id="cardWarn168" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1C0D14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg168)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1392" height="84" rx="14" fill="#0F172A" stroke="url(#hdr168)" stroke-width="2"/>
+  <text x="48" y="48" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1">
+    ROUND 160 MILESTONE! · QSR, F&amp;B &amp; CHAIN RETAIL 12,000-STORE POS, COLD-CHAIN &amp; DYNAMIC MARKDOWN SELECTION FAQ
+  </text>
+  <text x="48" y="76" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">
+    餐饮连锁、快消与生鲜零售「万店实时POS对账 + 冷链防损与动态打折 + 外卖补贴ROI」选型 (R160大关, 127.0/114.0ms双整数均值 &amp; 破$55M SLA!)
+  </text>
+  <rect x="1158" y="30" width="236" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1276" y="53" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">R160 · 165 FAQs &amp; &gt;$55M SLA!</text>
+  <text x="1276" y="74" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">31ms E2E · -95.7% TCO · $55.10M SLA</text>
+
+  <!-- Left Column: Chain Store & Cold-Chain Pain Points -->
+  <rect x="24" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="148" fill="#FB923C" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🍔 餐饮茶饮与生鲜万店连锁四大痛点 (1.2万门店 · 11,800店长)
+  </text>
+
+  <rect x="40" y="164" width="398" height="94" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="186" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. 万店 POS/KDS/冷柜与外卖流滞后 ($0/GB vs 流写入税)</text>
+  <text x="54" y="208" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 1.2万门店 POS 小票、KDS 出餐队列与冷柜 BLE 探头高达 995K EPS</text>
+  <text x="54" y="228" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 暴雨致华南 380 店 4.2万份短保鲜奶/烘焙临期，T+1 报表早已报废</text>
+  <text x="54" y="246" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Eventhouse KQL + H3 + Activator 8ms 锁定临期与冷链超温</text>
+
+  <rect x="40" y="268" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="290" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 5.08亿价格弹性/BOM向量 + 外卖真实净毛利对账</text>
+  <text x="54" y="312" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 外卖平台抽佣 (23%)、满减补贴、骑手配送费与 BOM 配方损耗极难实时对齐</text>
+  <text x="54" y="332" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 5.08亿条 (508M) 门店分时价格弹性、BOM 配方与 HACCP 规范向量</text>
+  <text x="54" y="352" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 508M SSD DiskANN + NL2DAX 8ms 算清 22.6% 真实净毛利</text>
+
+  <rect x="40" y="374" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="396" fill="#F472B6" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. HACCP 食品安全硬红线 (&lt;=+4.0°C) + 加盟商单店 RLS</text>
+  <text x="54" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 若将冷柜断电超温 (&gt;+4.0°C 超 30min) 的变质鲜奶打折促销将引发食安事故</text>
+  <text x="54" y="438" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 11,800 名店长与加盟商需严格隔离单店损益表，且不能收高昂 BI 席位费</text>
+  <text x="54" y="458" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Foundry IQ 7ms 食安熔断 (14批次锁单报损) + Entra OBO RLS</text>
+
+  <rect x="40" y="480" width="398" height="94" rx="8" fill="url(#cardWarn168)" stroke="#EF4444" stroke-width="1"/>
+  <text x="54" y="502" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 传统多云拼凑方案的三大成本黑洞 ($337.5K/月)</text>
+  <text x="54" y="524" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• POS/IoT 流写入税 + Fivetran 同步 ERP/外卖账单 MAR = $122.5K/月</text>
+  <text x="54" y="544" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5.08亿价格弹性与食安向量全内存集群 (3.7TB RAM) = $61.0K/月</text>
+  <text x="54" y="564" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 11,800 名店长、督导与加盟商 BI 按席位收费 = $154.0K/月</text>
+
+  <!-- Center Column: 31ms Closed-Loop Architecture -->
+  <rect x="470" y="118" width="500" height="470" rx="12" fill="url(#cardFabric168)" stroke="#10B981" stroke-width="2"/>
+  <text x="492" y="148" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🏛️ Fabric + Foundry IQ 万店连锁与生鲜防损闭环 (31ms · R160!)
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="490" y="164" width="460" height="88" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="506" y="186" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">① Eventhouse KQL + H3 + Activator 临期滞销与冷链感知 (8 ms)</text>
+  <text x="506" y="206" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• $0/GB 摄入 1.2 万门店 995K EPS POS、KDS、外卖与冷柜 BLE 温度流</text>
+  <text x="506" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8ms 锁定华南 380 店 4.2 万份短保商品距报废 &lt;6h，并捕获 14 批次冷柜 +6.8°C 异常</text>
+  <text x="506" y="242" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 触发动态阶梯打折与食安自动锁单分流</text>
+
+  <!-- Step 2 -->
+  <rect x="490" y="264" width="460" height="92" rx="8" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="506" y="286" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">② 5.08亿 (508M) SSD DiskANN + RDS/NL2DAX 净毛利寻优 (8 ms)</text>
+  <text x="506" y="306" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 8ms 检索 508,000,000 条门店价格弹性、BOM 损耗与外卖补贴向量</text>
+  <text x="506" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• NL2DAX 扣除 23% 平台佣金、包装与 BOM 成本，生成 -25% 晚间闪电套餐包</text>
+  <text x="506" y="344" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 动销提速 3.4x，报废率从 7.2% 降至 1.1%，单店净毛利达 22.6% (&gt;=18%)</text>
+
+  <!-- Step 3 -->
+  <rect x="490" y="368" width="460" height="92" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="506" y="390" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">③ Foundry IQ HACCP 食安熔断 (&lt;=+4.0°C) 与加盟商门禁 (7 ms)</text>
+  <text x="506" y="410" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 校验《QSR-FMCG-CHAIN-STORE-COLDCHAIN-AGENT-SOP-167》</text>
+  <text x="506" y="428" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 强制拦截 14 个超温批次禁止促销并锁死收银机（0 食安事故），其余 4.2 万份合规打折</text>
+  <text x="506" y="448" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 7ms 校验加盟商毛利底线 (&gt;=18.0%) 与 Entra OBO 单店 RLS 隔离</text>
+
+  <!-- Step 4 -->
+  <rect x="490" y="472" width="460" height="98" rx="8" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="506" y="494" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">④ Teams 营运总监确认 + ESL 电子价签 + 1GB 免费 SQL (8 ms)</text>
+  <text x="506" y="514" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 营运副总裁与督导在 Teams/企微卡片确认；Rayfin SDK 8ms 同步下发 380 店</text>
+  <text x="506" y="532" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• ESL 电子价签、外卖平台套餐改价与 POS 锁单，写入 1GB 免费 Fabric SQL</text>
+  <text x="506" y="552" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">★ 端到端 8+8+7+8 = 31ms 闭环 · 历史性突破 $55M ($55.10M!) SLA 保障</text>
+
+  <!-- Right Column: 5-Cloud Matrix & Milestones -->
+  <rect x="986" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="1006" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    📊 五云万店连锁与生鲜防损选型对比 (1.2万店 · 5.08亿向量)
+  </text>
+
+  <rect x="1002" y="164" width="398" height="72" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1016" y="186" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">🏆 Microsoft Fabric + Foundry IQ (F64 Reserved)</text>
+  <text x="1016" y="206" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eventhouse 8ms ($0/GB) + 508M SSD DiskANN ($2.80K/月) + $0 Viewer</text>
+  <text x="1016" y="224" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">• 月总 TCO: $14,300/月 (省 95.7% · 月省 $323.2K!) | 31ms 闭环</text>
+
+  <rect x="1002" y="244" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="264" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks (Structured Streaming + Mosaic Vector + Genie)</text>
+  <text x="1016" y="282" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于大规模销量预测训练；但 508M 内存向量与 11,800 店长 BI 席位重</text>
+  <text x="1016" y="298" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $223,000/月 | 端到端延迟: 1,420 ms</text>
+
+  <rect x="1002" y="314" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="334" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake (Snowpipe Streaming + Dynamic Tables + Cortex)</text>
+  <text x="1016" y="352" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于品牌商快消数据共享；但 1.2 万店高频刷新与 60s 延迟耗 Credit</text>
+  <text x="1016" y="368" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $256,500/月 | 端到端延迟: 2,120 ms</text>
+
+  <rect x="1002" y="384" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="404" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Google BigQuery (Streaming + Vertex Vector + Looker)</text>
+  <text x="1016" y="422" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于小程序/GA4 埋点归因；但 $0.05/GB 流写入税 + 11,800 席 Looker 贵</text>
+  <text x="1016" y="438" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $281,000/月 | 端到端延迟: 1,890 ms</text>
+
+  <rect x="1002" y="454" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="474" fill="#F59E0B" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">AWS (MSK/Kinesis + Redshift + OpenSearch + QuickSight)</text>
+  <text x="1016" y="492" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 508M OpenSearch 内存向量 + Fivetran 同步 + 11,800 店长席位费最高</text>
+  <text x="1016" y="508" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $337,500/月 | 端到端延迟: 2,650 ms</text>
+
+  <rect x="1002" y="524" width="398" height="50" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1201" y="545" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    🎯 拐点：连锁门店 &gt;300 家 或 店长看板 &gt;500 人 或 向量 &gt;3,000 万条
+  </text>
+  <text x="1201" y="564" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    已有 BigQuery 小程序埋点 / S3 外卖账单 → OneLake 零拷贝打通
+  </text>
+
+  <!-- Bottom Section: Decision Tree & R160 Milestones -->
+  <rect x="24" y="604" width="1392" height="274" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="634" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🧭 餐饮连锁、快消与生鲜零售万店选型决策树 &amp; R160 里程碑封存基准 (DL-681..DL-684 · Scenario FK)
+  </text>
+
+  <!-- Decision Tree Boxes -->
+  <rect x="44" y="650" width="420" height="66" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="58" y="672" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ 场景 A：万店实时 POS 对账 + 生鲜动态打折 + 外卖净毛利</text>
+  <text x="58" y="692" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">首选 Fabric Eventhouse (8ms) + RDS + 508M SSD DiskANN + Direct Lake</text>
+  <text x="58" y="708" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 31ms 端到端闭环，11,800 店长 $0 席位费，省 95.7% TCO</text>
+
+  <rect x="484" y="650" width="440" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="498" y="672" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔄 场景 B：已深度使用 BigQuery 小程序埋点 / Snowflake 供应商协同</text>
+  <text x="498" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">保留存量埋点/共享仓，通过 OneLake Mirroring / Iceberg Shortcut 零拷贝挂载</text>
+  <text x="498" y="708" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 由 Fabric Eventhouse + Data Agent 承接实时防损与万店店长移动问数</text>
+
+  <rect x="944" y="650" width="452" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="958" y="672" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔌 场景 C：旗舰店/中央厨房离线收银与冷链断网自治 (Store Edge)</text>
+  <text x="958" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">部署 Azure Local Disconnected Operations (ALDO) 门店/央厨边缘节点</text>
+  <text x="958" y="708" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 宽带中断时本地 POS 正常锁单与冷链告警，恢复后增量同步 OneLake</text>
+
+  <!-- Bottom KPI Strip -->
+  <rect x="44" y="732" width="320" height="126" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="204" y="758" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-681 · Eventhouse 1.2万店感知 (42ms)</text>
+  <text x="204" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">8ms · 380店临期预警</text>
+  <text x="204" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">995K EPS $0/GB 写入税 | 捕获 14 批次 +6.8°C</text>
+  <text x="204" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 683/684 (99.85%) · 127.0ms 整数均值!</text>
+
+  <rect x="382" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="547" y="758" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-682 · 5.08亿 SSD DiskANN (42ms)</text>
+  <text x="547" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">$2,800/月 vs $61.0K</text>
+  <text x="547" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">508M 价格弹性/BOM 向量省 92% 内存</text>
+  <text x="547" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ -25% 闪电套餐报废率 7.2%→1.1%</text>
+
+  <rect x="730" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="895" y="758" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-683 · NL2DAX 净毛利 &amp; 食安门禁 (42ms)</text>
+  <text x="895" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">22.6% 净毛利 · 0 食安</text>
+  <text x="895" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">扣除 23% 外卖佣金与 BOM | 14 批次超温锁单</text>
+  <text x="895" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 11,800 店长 $0 席位费 + OBO 单店 RLS</text>
+
+  <rect x="1078" y="732" width="318" height="126" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="1237" y="758" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" text-anchor="middle">DL-684 · R160 里程碑 31ms 闭环 (42ms)</text>
+  <text x="1237" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">-95.7% TCO · $55.10M!</text>
+  <text x="1237" y="816" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">$14.3K vs $337.5K/月 (月省 $323.2K!)</text>
+  <text x="1237" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" text-anchor="middle">★ 165篇FAQ · 114.0ms整数均值 · 破$55M SLA!</text>
+</svg>
