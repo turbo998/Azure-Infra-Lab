@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg169" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070C18"/>
+      <stop offset="50%" stop-color="#0C192E"/>
+      <stop offset="100%" stop-color="#091D26"/>
+    </linearGradient>
+    <linearGradient id="hdr169" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardFabric169" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D2824"/>
+      <stop offset="100%" stop-color="#091E2C"/>
+    </linearGradient>
+    <linearGradient id="cardWarn169" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1C0D14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg169)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1392" height="84" rx="14" fill="#0F172A" stroke="url(#hdr169)" stroke-width="2"/>
+  <text x="48" y="48" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1">
+    ROUND 161 · AIRLINES, HOSPITALITY &amp; TRAVEL DYNAMIC REVENUE MANAGEMENT, IROPS RECOVERY &amp; LOYALTY SELECTION FAQ
+  </text>
+  <text x="48" y="76" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">
+    航空、酒店与商旅「NDC动态收益定价 + 延误(IROPS)旅客安置 + 常旅客联名积分防欺诈」选型 (30ms整十闭环, 512M=2⁹×10⁶向量 &amp; 省95.8%纪录!)
+  </text>
+  <rect x="1158" y="30" width="236" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1276" y="53" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">R161 · 30ms &amp; -95.8% RECORD!</text>
+  <text x="1276" y="74" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">512M Vectors · -$325.0K/mo · $55.45M</text>
+
+  <!-- Left Column: Airlines & Hospitality Pain Points -->
+  <rect x="24" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    ✈️ 航司、酒店与常旅客集团四大痛点 (850架机+4,200店)
+  </text>
+
+  <rect x="40" y="164" width="398" height="94" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="186" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. NDC 询价洪峰与大面积延误 (IROPS) 滞后 ($0/GB vs 税)</text>
+  <text x="54" y="208" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 850架飞机 ACARS + 4,200家酒店 PMS + NDC 搜索流达 995K EPS</text>
+  <text x="54" y="228" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 雷暴致枢纽机场 34 架航班备降/延误，6,800 名中转旅客挤爆柜台</text>
+  <text x="54" y="246" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Eventhouse KQL + H3 + Activator 8ms 锁定 6,800 旅客与 420 钻卡</text>
+
+  <rect x="40" y="268" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="290" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 5.12亿 (512M=2⁹×10⁶) 弹性向量 + 航酒联合改签安置</text>
+  <text x="54" y="312" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 传统运价桶 (RBD 26舱) 僵化；需联合匹配辅营升舱与周边酒店空房</text>
+  <text x="54" y="332" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 5.12亿条 (512M) O&amp;D 支付意愿、酒店房态与 EU261 赔偿条款向量</text>
+  <text x="54" y="352" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 512M SSD DiskANN + FLAML/NL2DAX 8ms 自动改签与食宿电子券</text>
+
+  <rect x="40" y="374" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="396" fill="#F472B6" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 禁止灾备航线天价宰客 + 1.1亿常旅客里程盗刷拦截</text>
+  <text x="54" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 动态定价算法在恶劣天气时若自动涨价 300% 将触发交通部重罚</text>
+  <text x="54" y="438" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 黑产撞库盗刷高价值钻卡里程兑换国际头等舱与奢华酒店</text>
+  <text x="54" y="458" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Foundry IQ 7ms 延误航线限价护栏 + 里程盗刷 (&lt;0.02) 拦截</text>
+
+  <rect x="40" y="480" width="398" height="94" rx="8" fill="url(#cardWarn169)" stroke="#EF4444" stroke-width="1"/>
+  <text x="54" y="502" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 传统多云拼凑方案的三大成本黑洞 ($339.4K/月)</text>
+  <text x="54" y="524" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• NDC/PSS/PMS 流写入税 + Fivetran 同步联名卡账单 = $123.2K/月</text>
+  <text x="54" y="544" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5.12亿价格弹性与权益向量全内存集群 (3.72TB RAM) = $61.8K/月</text>
+  <text x="54" y="564" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 11,950 名收益分析师、场站与客服坐席 BI 席位税 = $154.4K/月</text>
+
+  <!-- Center Column: 30ms Closed-Loop Architecture -->
+  <rect x="470" y="118" width="500" height="470" rx="12" fill="url(#cardFabric169)" stroke="#10B981" stroke-width="2"/>
+  <text x="492" y="148" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🏛️ Fabric + Foundry IQ 航酒动态收益与IROPS闭环 (30ms整十!)
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="490" y="164" width="460" height="88" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="506" y="186" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">① Eventhouse KQL + H3 + Activator 延误断链与询价感知 (8 ms)</text>
+  <text x="506" y="206" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• $0/GB 摄入 995K EPS NDC 询价、ACARS 航班动态、酒店 PMS 与里程兑换流</text>
+  <text x="506" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8ms 捕获枢纽机场雷暴致 34 架航班断链（波及 6,800 名中转客与 420 名钻卡）</text>
+  <text x="506" y="242" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 触发主动式航班改签、协议酒店自动锁房与动态打包</text>
+
+  <!-- Step 2 -->
+  <rect x="490" y="264" width="460" height="92" rx="8" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="506" y="286" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">② 5.12亿 (512M=2⁹×10⁶) SSD DiskANN + FLAML 联合寻优 (8 ms)</text>
+  <text x="506" y="306" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 8ms 检索 512,000,000 条 O&amp;D 支付意愿、余位与机场酒店向量</text>
+  <text x="506" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• FLAML + NL2DAX 为 6,800 旅客匹配最优后续航段 + 1,450 间机场协议酒店空房</text>
+  <text x="506" y="344" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 呼叫中心拥堵降 78%，立省 $1.95M EU261 现金赔付，RASM/RevPAR +$18.4</text>
+
+  <!-- Step 3 -->
+  <rect x="490" y="368" width="460" height="92" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="506" y="390" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">③ Foundry IQ DOT/EU261 限价合规与里程反盗刷门禁 (7 ms)</text>
+  <text x="506" y="410" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 校验《AIRLINES-HOSPITALITY-REVENUE-IROPS-AGENT-SOP-168》</text>
+  <text x="506" y="428" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 强制冻结受灾航线自动涨价（0 宰客投诉），拦截 ATO 异常里程盗刷 (&lt;0.02)</text>
+  <text x="506" y="448" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 7ms 完成 PNR 旅客隐私 Entra OBO 脱敏与联名卡积分对账</text>
+
+  <!-- Step 4 -->
+  <rect x="490" y="472" width="460" height="98" rx="8" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="506" y="494" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">④ Teams 运控/收益总监确认 + App 电子房券 + 1GB SQL (7 ms)</text>
+  <text x="506" y="514" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 运控中心 (AOC) 与收益副总裁在 Teams 确认；Rayfin SDK 7ms 向 6,800 部手机</text>
+  <text x="506" y="532" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 推送新登机牌与免排队酒店数字入住码，写入 1GB 免费 Fabric SQL 与登机口 ALDO</text>
+  <text x="506" y="552" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">★ 端到端 8+8+7+7 = 30ms 整十闭环! · 省 95.8% TCO 新纪录 · $55.45M SLA</text>
+
+  <!-- Right Column: 5-Cloud Matrix & Milestones -->
+  <rect x="986" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="1006" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    📊 五云航旅酒店与常旅客选型对比 (5.12亿向量 · 11,950席)
+  </text>
+
+  <rect x="1002" y="164" width="398" height="72" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1016" y="186" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">🏆 Microsoft Fabric + Foundry IQ (F64 Reserved)</text>
+  <text x="1016" y="206" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eventhouse 8ms ($0/GB) + 512M SSD DiskANN ($2.82K/月) + $0 Viewer</text>
+  <text x="1016" y="224" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">• 月总 TCO: $14,400/月 (省 95.8% 新纪录 · 月省 $325.0K 整!) | 30ms</text>
+
+  <rect x="1002" y="244" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="264" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks (Structured Streaming + Mosaic Vector + Genie)</text>
+  <text x="1016" y="282" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于 O&amp;D 弹性模型训练；但 512M 内存向量与 11,950 席位成本高</text>
+  <text x="1016" y="298" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $224,500/月 | 端到端延迟: 1,380 ms</text>
+
+  <rect x="1002" y="314" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="334" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake (Snowpipe + Clean Rooms + Cortex Search)</text>
+  <text x="1016" y="352" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于银行联名卡 Clean Room；但 995K EPS NDC 搜索流与内存向量昂贵</text>
+  <text x="1016" y="368" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $258,000/月 | 端到端延迟: 2,080 ms</text>
+
+  <rect x="1002" y="384" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="404" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Google BigQuery (Streaming + Vertex Vector + Looker)</text>
+  <text x="1016" y="422" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于旅遊搜索广告归因；但 $0.05/GB 流写入税 + 11,950 席 Looker 极贵</text>
+  <text x="1016" y="438" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $283,500/月 | 端到端延迟: 1,850 ms</text>
+
+  <rect x="1002" y="454" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="474" fill="#F59E0B" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">AWS (MSK/Kinesis + Redshift + OpenSearch + QuickSight)</text>
+  <text x="1016" y="492" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 512M OpenSearch 内存向量 (3.72TB RAM) + Fivetran MAR 账单最高</text>
+  <text x="1016" y="508" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $339,400/月 | 端到端延迟: 2,610 ms</text>
+
+  <rect x="1002" y="524" width="398" height="50" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1201" y="545" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    🎯 拐点：NDC/PMS 流 &gt;30K EPS 或 向量 &gt;3,000万 或 场站/店长 &gt;500人
+  </text>
+  <text x="1201" y="564" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    已有 Amadeus/Sabre/Snowflake 联名卡仓 → OneLake 零拷贝挂载
+  </text>
+
+  <!-- Bottom Section: Decision Tree & R161 Milestones -->
+  <rect x="24" y="604" width="1392" height="274" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="634" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🧭 航司、酒店与商旅集团选型决策树 &amp; R161 封存基准 (DL-685..DL-688 · Scenario FL · 30ms &amp; -95.8% TCO 新纪录!)
+  </text>
+
+  <!-- Decision Tree Boxes -->
+  <rect x="44" y="650" width="420" height="66" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="58" y="672" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ 场景 A：NDC 动态收益定价 + IROPS 延误改签安置 + 积分防盗刷</text>
+  <text x="58" y="692" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">首选 Fabric Eventhouse (8ms) + 512M SSD DiskANN + FLAML + Foundry IQ</text>
+  <text x="58" y="708" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 30ms 整十闭环，省 95.8% TCO 新纪录 ($14.4K vs $339.4K/月)</text>
+
+  <rect x="484" y="650" width="440" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="498" y="672" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔄 场景 B：已与银行/免税店共建 Snowflake / BigQuery 联名营销仓</text>
+  <text x="498" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">保留跨企 Clean Room，通过 OneLake Iceberg Shortcut / Mirroring 零拷贝挂载</text>
+  <text x="498" y="708" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 由 Fabric Eventhouse + Direct Lake 承接实时航延处置与 11,950 席免许可看板</text>
+
+  <rect x="944" y="650" width="452" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="958" y="672" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔌 场景 C：机场登机口离港控制 (DCS) 与度假村断网自治 (Airport Edge)</text>
+  <text x="958" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">部署 Azure Local Disconnected Operations (ALDO) 航站楼/酒店边缘节点</text>
+  <text x="958" y="708" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 广域网中断时本地登机核验与房卡发放毫秒级自治，恢复后同步 OneLake</text>
+
+  <!-- Bottom KPI Strip -->
+  <rect x="44" y="732" width="320" height="126" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="204" y="758" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-685 · Eventhouse IROPS 感知 (41ms)</text>
+  <text x="204" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">8ms · 34航班/6,800客</text>
+  <text x="204" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">995K EPS $0/GB 写入税 | 锁定 420 名钻卡高危中转</text>
+  <text x="204" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 687/688 (99.85%) · 126.5ms 路由均值</text>
+
+  <rect x="382" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="547" y="758" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-686 · 512M=2⁹×10⁶ DiskANN (41ms)</text>
+  <text x="547" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">$2,820/月 vs $61.8K</text>
+  <text x="547" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">512M 运价/房态向量省 92% 内存 | 8ms P99</text>
+  <text x="547" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 自动锁 1,450 间房 · 省 $1.95M EU261 赔付</text>
+
+  <rect x="730" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="895" y="758" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-687 · 延误限价 &amp; 里程防盗刷 (41ms)</text>
+  <text x="895" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">+$18.4 RASM · 0 宰客</text>
+  <text x="895" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">DOT/EU261 灾备限价护栏 | ATO 盗刷 &lt;0.02</text>
+  <text x="895" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 11,950 席 $0 Viewer + PNR OBO 脱敏</text>
+
+  <rect x="1078" y="732" width="318" height="126" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="1237" y="758" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" text-anchor="middle">DL-688 · Scenario FL 30ms 整十闭环 (41ms)</text>
+  <text x="1237" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">-95.8% 纪录 · $325K/月!</text>
+  <text x="1237" y="816" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">$14.4K vs $339.4K/月 (月省 $325.0K 整!)</text>
+  <text x="1237" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" text-anchor="middle">★ 30ms E2E · 340单测大关 · 守护 $55.45M SLA!</text>
+</svg>

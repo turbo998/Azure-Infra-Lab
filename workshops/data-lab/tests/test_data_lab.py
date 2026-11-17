@@ -2409,13 +2409,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 31)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 55100000)
 
-    def test_scenario_matrix_684_cases_and_explicit_miss(self) -> None:
+    def test_global_airlines_hospitality_fabric_dynamic_revenue_irops_loyalty_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_airlines_hospitality_fabric_dynamic_revenue_irops_loyalty_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["aircraft_and_hotels_monitored_count"], 5050)
+        self.assertEqual(sim["telemetry"]["loyalty_members_count"], 110000000)
+        self.assertEqual(sim["telemetry"]["od_elasticity_and_room_vectors_count"], 512000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_airlines_hospitality_tco_saved_usd"], 325000)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_airlines_hospitality_tco_savings_pct"], 95.8)
+        self.assertTrue(sim["foundry_iq_guardrail"]["dot_eu261_emergency_fare_cap_and_hotel_block_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["loyalty_ato_under_002_and_pnr_obo_masking_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 30)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 55450000)
+
+    def test_scenario_matrix_688_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 684)
-        self.assertEqual(matrix["passed_scenarios"], 683)
+        self.assertEqual(matrix["total_scenarios"], 688)
+        self.assertEqual(matrix["passed_scenarios"], 687)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.85, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 127.0)
+        self.assertEqual(matrix["avg_latency_ms"], 126.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -4235,6 +4250,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-$323.2K/mo", by_id["DL-683"]["expected"])
         self.assertIn("Protect $55.10M SLA", by_id["DL-684"]["expected"])
 
+    def test_fabric_airlines_hospitality_dynamic_revenue_irops_loyalty_2026_11_18_r161_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-685", "DL-686", "DL-687", "DL-688"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("8ms 90-Min Predictive 34-Flight / 6,800-Pax IROPS Sense", by_id["DL-685"]["expected"])
+        self.assertIn("512M=2^9*10^6 O&D Elasticity & Hotel Room Vectors, -92% RAM", by_id["DL-686"]["expected"])
+        self.assertIn("-$325.0K/mo Exact / -95.8% Record TCO", by_id["DL-687"]["expected"])
+        self.assertIn("Protect $55.45M SLA", by_id["DL-688"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -4252,11 +4278,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 683)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 684)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 127.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 167)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 114.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 687)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 688)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 126.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 168)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 113.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r160_167_simulation_mean_modeled_latency_ms"], 114.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r159_166_simulation_mean_modeled_latency_ms"], 114.5)
         self.assertEqual(loaded["ontology_simulations_summary"]["r158_165_simulation_mean_modeled_latency_ms"], 115.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r157_164_simulation_mean_modeled_latency_ms"], 115.5)
@@ -4409,7 +4436,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 163)
+        self.assertEqual(len(refs), 164)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18"))
@@ -4578,6 +4605,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_telecom_churn_network_ops_fabric_h3_flaml_predict_500m_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_power_utility_energy_trading_fabric_vpp_carbon_analytics_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_qsr_fmcg_chain_store_fabric_pos_coldchain_markdown_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_airlines_hospitality_fabric_dynamic_revenue_irops_loyalty_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
