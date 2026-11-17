@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad179" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#081526"/>
+    </linearGradient>
+    <linearGradient id="headerGrad179" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <linearGradient id="fabricBoxGrad179" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0A1E32"/>
+    </linearGradient>
+    <linearGradient id="compBoxGrad179" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1E0D10"/>
+    </linearGradient>
+    <filter id="shadow179" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1480" height="940" fill="url(#bgGrad179)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1432" height="92" rx="14" fill="url(#headerGrad179)" filter="url(#shadow179)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-size="22" font-weight="800">⚙️ R171 · Industrial Equipment OEM &amp; Aftermarket Servitization Architecture Selection (20ms 5×4 Symmetrical E2E &amp; &gt;550M Vectors!)</text>
+  <text x="46" y="81" fill="#E0F2FE" font-size="13.5" font-weight="600">Scenario FV (DL-725..DL-728): 185,000 Heavy Machines/Elevators/Turbines + 140 Regional Depots · 995K EPS CAN-Bus/OPC-UA Stream + 552M (&gt;0.55B!) CAD/Manual Vectors · 20ms (5+5+5+5) E2E · -$343.0K/mo (-95.9% TCO)</text>
+  <rect x="1220" y="34" width="218" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1329" y="58" text-anchor="middle" fill="#6EE7B7" font-size="13" font-weight="800">20ms (5+5+5+5) E2E</text>
+  <text x="1329" y="79" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">360 Tests · 552M Vectors</text>
+
+  <!-- Left Column: Enterprise Pain Points & 4-Step 20ms Loop -->
+  <rect x="24" y="124" width="930" height="500" rx="14" fill="url(#fabricBoxGrad179)" stroke="#0EA5E9" stroke-width="1.8" filter="url(#shadow179)"/>
+  <text x="44" y="156" fill="#38BDF8" font-size="17" font-weight="800">🏗️ Microsoft Fabric Unified Industrial OEM Aftermarket, Spare-Parts &amp; Equipment-as-a-Service (EaaS) Loop (20ms Symmetrical E2E)</text>
+  <text x="44" y="177" fill="#94A3B8" font-size="12.5">Zero-Copy SAP S/4HANA PM/MM + Salesforce Field Service + 995K EPS CAN-Bus J1939 / OPC-UA Telemetry ($0/GB Write Tax &amp; $0 Per-Asset Twin Tax)</text>
+
+  <!-- Step 1 -->
+  <rect x="44" y="192" width="890" height="94" rx="10" fill="#0B192C" stroke="#0284C7" stroke-width="1.4"/>
+  <rect x="56" y="204" width="92" height="26" rx="6" fill="#0284C7"/>
+  <text x="102" y="222" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 1 · 5ms</text>
+  <text x="162" y="221" fill="#F8FAFC" font-size="14.5" font-weight="700">Eventhouse KQL + H3 + Activator: 5ms Hydraulic/Bearing Pre-Failure &amp; EaaS Uptime Sense ($0/GB Tax)</text>
+  <text x="56" y="245" fill="#CBD5E1" font-size="12.5">• Ingests 995,000 EPS CAN-bus J1939 pressure/vibration harmonics, OPC-UA compressor telemetry, and GPS H3 rings across 185,000 deployed machines.</text>
+  <text x="56" y="266" fill="#38BDF8" font-size="12.5" font-weight="600">• Eliminates $130,600/mo in per-device IoT twin &amp; stream ingestion fees; isolates 310 machines with 72h bearing spall risk and EaaS SLA drift in 5ms.</text>
+
+  <!-- Step 2 -->
+  <rect x="44" y="298" width="890" height="94" rx="10" fill="#0B192C" stroke="#10B981" stroke-width="1.4"/>
+  <rect x="56" y="310" width="92" height="26" rx="6" fill="#059669"/>
+  <text x="102" y="328" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 2 · 5ms</text>
+  <text x="162" y="327" fill="#F8FAFC" font-size="14.5" font-weight="700">Cosmos DB SSD DiskANN (552M &gt;0.55B! CAD/Manual Vectors) + OneLake SAP MM Multi-Echelon Spare-Parts</text>
+  <text x="56" y="351" fill="#CBD5E1" font-size="12.5">• Searches 552,000,000 3D CAD BOM, service bulletin &amp; acoustic spectrum vectors via SSD DiskANN (-92% RAM at $3,020/mo vs $69,500/mo 4.12TB DRAM).</text>
+  <text x="56" y="372" fill="#34D399" font-size="12.5" font-weight="600">• Cross-checks OneLake zero-copy SAP MM inventory across 140 depots: lifts First-Time Fix Rate (FTFR) 68%→94.8% and cuts dead-stock working capital -28% in 5ms.</text>
+
+  <!-- Step 3 -->
+  <rect x="44" y="404" width="890" height="94" rx="10" fill="#0B192C" stroke="#F59E0B" stroke-width="1.4"/>
+  <rect x="56" y="416" width="92" height="26" rx="6" fill="#D97706"/>
+  <text x="102" y="434" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 3 · 5ms</text>
+  <text x="162" y="433" fill="#F8FAFC" font-size="14.5" font-weight="700">Foundry IQ EaaS Uptime SLA, Warranty Entitlement &amp; Technician Safety Gate (SOP-178)</text>
+  <text x="56" y="457" fill="#CBD5E1" font-size="12.5">• Validates INDUSTRIAL-EQUIPMENT-AFTERMARKET-SERVITIZATION-SOP-178: verifies 99.5% EaaS uptime contract terms, OSHA Lockout/Tagout (LOTO) certification,</text>
+  <text x="56" y="478" fill="#FBBF24" font-size="12.5" font-weight="600">• Blocks 26 out-of-warranty free part replacements (saving $1.84M margin leakage) and enforces dealer-group Entra OBO RLS across 13,450 users in 5ms.</text>
+
+  <!-- Step 4 -->
+  <rect x="44" y="510" width="890" height="98" rx="10" fill="#0B192C" stroke="#8B5CF6" stroke-width="1.4"/>
+  <rect x="56" y="522" width="92" height="26" rx="6" fill="#7C3AED"/>
+  <text x="102" y="540" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 4 · 5ms</text>
+  <text x="162" y="539" fill="#F8FAFC" font-size="14.5" font-weight="700">Teams VP of Aftermarket &amp; Service Card + Van Kit Dispatch, EaaS Billing &amp; 1GB Free SQL Commit (5ms)</text>
+  <text x="56" y="563" fill="#CBD5E1" font-size="12.5">• Dispatches 310 technician van-stock kits with AR repair guides, reconciles EaaS power-by-the-hour usage billing, and syncs SQL on Azure Local (ALDO) mine/plant edges.</text>
+  <text x="56" y="584" fill="#C4B5FD" font-size="12.5" font-weight="600">• Total E2E: 5ms + 5ms + 5ms + 5ms = 20ms Exact Symmetrical Loop! Protects $58.95M SLA &amp; saves -$343,000/mo (-95.9% TCO).</text>
+
+  <!-- Right Column: Competitor Stitched Anti-Patterns -->
+  <rect x="974" y="124" width="482" height="500" rx="14" fill="url(#compBoxGrad179)" stroke="#EF4444" stroke-width="1.8" filter="url(#shadow179)"/>
+  <text x="994" y="156" fill="#FCA5A5" font-size="16.5" font-weight="800">⛔ Stitched Multi-Cloud Aftermarket Anti-Patterns</text>
+  <text x="994" y="177" fill="#F87171" font-size="12.5">$357.7K/mo TCO · Repeat Truck Rolls (68% FTFR) &amp; EaaS Penalties</text>
+
+  <rect x="994" y="194" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="217" fill="#FCA5A5" font-size="13.5" font-weight="700">1. Per-Property IoT Twin &amp; Stream Taxes ($130.6K/mo)</text>
+  <text x="1010" y="239" fill="#E2E8F0" font-size="12">• Per-message IoT SiteWise/TwinMaker + Kafka ingestion across</text>
+  <text x="1010" y="258" fill="#E2E8F0" font-size="12">  185,000 heavy machines and 995K EPS forces 15-min downsampling,</text>
+  <text x="1010" y="276" fill="#FCA5A5" font-size="12" font-weight="600">  missing high-frequency hydraulic cavitation &amp; bearing harmonics.</text>
+
+  <rect x="994" y="300" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="323" fill="#FCA5A5" font-size="13.5" font-weight="700">2. 4.12TB DRAM Vector Cluster ($69.5K/mo vs $3,020/mo)</text>
+  <text x="1010" y="345" fill="#E2E8F0" font-size="12">• Hosting 552,000,000 3D CAD assembly, service bulletin &amp; fault</text>
+  <text x="1010" y="364" fill="#E2E8F0" font-size="12">  vectors in RAM-only HNSW clusters costs $69.5K/mo and remains</text>
+  <text x="1010" y="382" fill="#FCA5A5" font-size="12" font-weight="600">  disconnected from live SAP MM depot stock (32% repeat truck rolls).</text>
+
+  <rect x="994" y="406" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="429" fill="#FCA5A5" font-size="13.5" font-weight="700">3. SAP/Salesforce CDC MAR Tax ($82.0K/mo)</text>
+  <text x="1010" y="451" fill="#E2E8F0" font-size="12">• Replicating SAP S/4HANA PM/MM work orders, serial BOMs, and</text>
+  <text x="1010" y="470" fill="#E2E8F0" font-size="12">  Salesforce Field Service via Fivetran MAR incurs heavy connector</text>
+  <text x="1010" y="488" fill="#FCA5A5" font-size="12" font-weight="600">  surcharges and 6h–24h stock visibility lag across 140 depots.</text>
+
+  <rect x="994" y="512" width="442" height="96" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="535" fill="#FCA5A5" font-size="13.5" font-weight="700">4. Per-User BI &amp; Unchecked Warranty Leakage ($75.6K/mo)</text>
+  <text x="1010" y="557" fill="#E2E8F0" font-size="12">• Provisioning BI seats for 13,450 field technicians, dealer managers,</text>
+  <text x="1010" y="576" fill="#E2E8F0" font-size="12">  and aftermarket planners plus manual EaaS billing audits costs</text>
+  <text x="1010" y="594" fill="#FCA5A5" font-size="12" font-weight="600">  $75.6K/mo vs $0 Power BI Viewer licenses on Fabric F64+.</text>
+
+  <!-- Bottom Section: 5-Cloud TCO & Decision Matrix -->
+  <rect x="24" y="640" width="1432" height="278" rx="14" fill="#091526" stroke="#334155" stroke-width="1.5" filter="url(#shadow179)"/>
+  <text x="44" y="672" fill="#F8FAFC" font-size="16.5" font-weight="800">📊 5-Cloud Industrial OEM Aftermarket, Spare-Parts &amp; EaaS Servitization Decision Matrix (185,000 Assets · 995K EPS · 552M Vectors · 13,450 Users)</text>
+
+  <!-- Table Header -->
+  <rect x="44" y="686" width="1392" height="32" rx="6" fill="#1E293B"/>
+  <text x="58" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Platform / Architecture</text>
+  <text x="340" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">IoT Telemetry &amp; Twin</text>
+  <text x="605" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">552M CAD/Manual Vectors</text>
+  <text x="860" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">SAP MM &amp; EaaS SLA</text>
+  <text x="1145" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Monthly TCO &amp; Verdict</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="44" y="722" width="1392" height="36" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="58" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric (F64 Pooled)</text>
+  <text x="340" y="745" fill="#FFFFFF" font-size="12" font-weight="600">Eventhouse KQL ($0/GB Tax · 5ms)</text>
+  <text x="605" y="745" fill="#6EE7B7" font-size="12" font-weight="700">SSD DiskANN (-92% RAM · $3,020/mo)</text>
+  <text x="860" y="745" fill="#FFFFFF" font-size="12" font-weight="600">FTFR 94.8% · $0 Viewer (13,450 Users)</text>
+  <text x="1145" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">$14.7K/mo (-95.9% · 20ms E2E!)</text>
+
+  <!-- Row 2: AWS -->
+  <rect x="44" y="762" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="783" fill="#E2E8F0" font-size="12" font-weight="700">AWS IoT SiteWise + Redshift</text>
+  <text x="340" y="783" fill="#CBD5E1" font-size="12">SiteWise + MSK ($82K/mo)</text>
+  <text x="605" y="783" fill="#FCA5A5" font-size="12">OpenSearch 4.12TB RAM ($69.5K/mo)</text>
+  <text x="860" y="783" fill="#CBD5E1" font-size="12">SAP Glue CDC + QuickSight ($88.1K/mo)</text>
+  <text x="1145" y="783" fill="#FCA5A5" font-size="12" font-weight="700">$239.6K/mo (+$224.9K/mo)</text>
+
+  <!-- Row 3: GCP -->
+  <rect x="44" y="798" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="819" fill="#E2E8F0" font-size="12" font-weight="700">Google Cloud Pub/Sub + BigQuery</text>
+  <text x="340" y="819" fill="#CBD5E1" font-size="12">Pub/Sub + Dataflow ($92K/mo)</text>
+  <text x="605" y="819" fill="#FCA5A5" font-size="12">Vertex Vector Search RAM ($71.8K/mo)</text>
+  <text x="860" y="819" fill="#CBD5E1" font-size="12">SAP Connector + Looker ($105.0K/mo)</text>
+  <text x="1145" y="819" fill="#FCA5A5" font-size="12" font-weight="700">$268.8K/mo (+$254.1K/mo)</text>
+
+  <!-- Row 4: Databricks -->
+  <rect x="44" y="834" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="855" fill="#E2E8F0" font-size="12" font-weight="700">Databricks DLT + Mosaic AI</text>
+  <text x="340" y="855" fill="#CBD5E1" font-size="12">DLT + Photon Streaming ($106K/mo)</text>
+  <text x="605" y="855" fill="#FCA5A5" font-size="12">Mosaic Vector Search ($74.2K/mo)</text>
+  <text x="860" y="855" fill="#CBD5E1" font-size="12">Fivetran SAP MAR + Seats ($121.0K/mo)</text>
+  <text x="1145" y="855" fill="#FCA5A5" font-size="12" font-weight="700">$301.2K/mo (+$286.5K/mo)</text>
+
+  <!-- Row 5: Snowflake -->
+  <rect x="44" y="870" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="891" fill="#E2E8F0" font-size="12" font-weight="700">Snowflake Snowpipe + Cortex</text>
+  <text x="340" y="891" fill="#CBD5E1" font-size="12">Snowpipe + Dynamic Tables ($130.6K/mo)</text>
+  <text x="605" y="891" fill="#FCA5A5" font-size="12">Cortex Vector + XL WH ($69.5K/mo)</text>
+  <text x="860" y="891" fill="#CBD5E1" font-size="12">Fivetran SAP + BI ($157.6K/mo)</text>
+  <text x="1145" y="891" fill="#FCA5A5" font-size="12" font-weight="700">$357.7K/mo (-$343.0K/mo Saved!)</text>
+</svg>

@@ -13252,6 +13252,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Activator + Data Agent (NL2DAX/NL2SQL) + Cosmos DB SSD DiskANN (548M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_industrial_equipment_aftermarket_fabric_servitization_spare_parts_vs_4clouds":
+        return {
+            "scenario_id": "global_industrial_equipment_aftermarket_fabric_servitization_spare_parts_vs_4clouds",
+            "title": "Global Industrial Equipment OEM Aftermarket, Spare-Parts & EaaS Servitization Loop (185,000 Heavy Machines/Elevators/Turbines + 140 Regional Depots · 995K EPS CAN-Bus J1939 & OPC-UA Stream + 552M 3D CAD BOM & Service Manual Vectors) Eventhouse KQL + H3 + Activator 5ms 310-Machine Bearing/Hydraulic Pre-Failure Sense ($0/GB & $0 Twin Tax), 552M SSD DiskANN ($3,020/mo) + OneLake SAP MM Zero-Copy (FTFR 94.8%, Dead Stock -28%) & Foundry IQ Warranty Entitlement & OSHA LOTO Gate (995K EPS · 552M >0.55B DiskANN · 20ms 5+5+5+5 Symmetrical E2E · 360 Tests Milestone & -$343.0K/mo Saved!)",
+            "telemetry": {
+                "connected_industrial_machines_count": 185000,
+                "pre_failure_machines_dispatched_count": 310,
+                "canbus_and_opcua_telemetry_eps": 995000,
+                "per_property_iot_twin_surcharge_usd": 0,
+                "cad_bom_and_service_manual_vectors_count": 552000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "first_time_fix_rate_pct": 94.8,
+                "out_of_warranty_claims_blocked_count": 26,
+                "eaas_contract_uptime_sla_pct": 99.5,
+                "concurrent_techs_planners_and_dealers": 13450,
+            },
+            "ontology_traversal": [
+                "CANBus-J1939-and-OPCUA-Fleet-Hub -> Eventstream-to-Eventhouse-KQL-H3 -> Ingests 995K EPS hydraulic pressure ripples, bearing harmonics, and GPS H3 rings across 185,000 machines ($0/GB write tax & $0 twin tax), isolating 310 pre-failure machines in 5ms",
+                "CAD-Serial-BOM-and-Depot-Engine -> Cosmos DB SSD DiskANN (552,000,000 >0.55B! 3D CAD BOM & service bulletin vectors, -92% RAM at $3,020/mo vs $69,500/mo 4.12TB DRAM) + OneLake SAP MM Zero-Copy -> Reserves exact van/depot part kits (FTFR 68%->94.8%, dead stock -28%) in 5ms",
+                "Foundry-IQ-Warranty-and-LOTO-Gate -> Validates INDUSTRIAL-EQUIPMENT-AFTERMARKET-SERVITIZATION-SOP-178 -> Blocks 26 out-of-warranty free-part claims (+$1.84M saved), verifies >=99.5% EaaS uptime & OSHA LOTO certification in 5ms",
+                "Approved Van Kit Dispatch & EaaS Billing -> VP of Aftermarket & Service Teams Card -> Rayfin SDK dispatches 310 van kits, updates EaaS usage billing, and commits to 1GB Free Fabric SQL + mine ALDO edge in 5ms (5+5+5+5 = 20ms Symmetrical E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_industrial_aftermarket_monthly_tco_usd": 14700,
+                "competitor_stitched_industrial_aftermarket_monthly_tco_usd": 357700,
+                "monthly_industrial_aftermarket_tco_saved_usd": 343000,
+                "monthly_industrial_aftermarket_tco_savings_pct": 95.9,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 950000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL, H3 & Activator 5ms Pre-Failure & EaaS Sense Agent",
+                        "operation": "Ingest 995K EPS CAN-bus J1939 and OPC-UA streams across 185,000 machines at $0/GB write tax and $0 per-property twin fee, isolating 310 machines with 72h spall risk in 5ms",
+                        "impact_metric": "5ms pre-failure sense; eliminates $130,600/mo in per-property IoT twin and stream fees",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "552M SSD DiskANN Serial BOM Match & OneLake SAP MM Stock Lock Agent",
+                        "operation": "Search 552,000,000 3D CAD BOM & service manual vectors via SSD DiskANN (-92% RAM at $3,020/mo) while reserving OneLake zero-copy SAP MM stock across 140 depots to lift FTFR to 94.8% in 5ms",
+                        "impact_metric": "5ms 552M (>0.55B!) vector & stock lock; $3,020/mo SSD DiskANN vs $69,500/mo 4.12TB DRAM; FTFR 94.8%",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ Warranty / OSHA LOTO Gate & 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-178 blocking 26 out-of-warranty claims (+$1.84M saved) and checking OSHA LOTO credentials (5ms), then dispatch 310 van kits & commit to 1GB Free Fabric SQL (5ms)",
+                        "impact_metric": "20ms (5+5+5+5) Symmetrical E2E!; 360 Tests & 552M Vectors!; -$343.0K/mo (-95.9%) TCO; $58.95M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "INDUSTRIAL-EQUIPMENT-AFTERMARKET-SERVITIZATION-SOP-178",
+                "hard_constraint": "Never approve zero-cost warranty parts for machines exceeding operating-hour/calendar limits or CAN-bus overload thresholds, enforce technician OSHA LOTO certification, and maintain EaaS uptime >= 99.5%",
+                "proposed_change": "Block 26 out-of-warranty free-part claims (+$1.84M saved), dispatch 310 certified technicians with exact van-stock kits (FTFR 94.8%, EaaS uptime 99.72% >= 99.5%), and enforce dealer OBO RLS across 13,450 users",
+                "warranty_entitlement_and_eaas_uptime_verified": True,
+                "osha_loto_safety_and_dealer_obo_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 58950000,
+                "end_to_end_latency_ms": 20,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + H3 + Activator + Data Agent (NL2DAX) + Cosmos DB SSD DiskANN (552M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -21944,6 +22010,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 32,
     },
+    {
+        "id": "DL-725",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Industrial OEM aftermarket (185,000 connected machines + 140 depots · 995K EPS CAN-bus J1939 & OPC-UA stream) needs 72h early detection of 310 bearing spall and hydraulic cavitation failures; evaluate Fabric Eventhouse (KQL + H3 + Activator) vs per-property IoT twin fees ($130.6K/mo) and 15-min downsampling",
+        "expected": "Fabric Eventhouse KQL + H3 + Activator ($0/GB Stream Tax & $0 Per-Property Twin Fee, 5ms 310-Machine Pre-Failure Sense vs $130.6K/mo IoT Twin & Stream Taxes)",
+        "model_answer": "Fabric Eventhouse KQL + H3 + Activator ($0/GB Stream Tax & $0 Per-Property Twin Fee, 5ms 310-Machine Pre-Failure Sense vs $130.6K/mo IoT Twin & Stream Taxes)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 31,
+    },
+    {
+        "id": "DL-726",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB in Fabric (SSD DiskANN indexing 552M >0.55B 3D CAD serial BOM & service manual vectors at $3,020/mo) + OneLake zero-copy SAP MM inventory vs 4.12TB RAM OpenSearch/Mosaic clusters ($69.5K/mo) and 68% FTFR repeat truck rolls",
+        "expected": "Cosmos DB in Fabric SSD DiskANN (552M >0.55B CAD BOM & Service Manual Vectors, -92% RAM at $3,020/mo vs $69,500/mo DRAM, 5ms Part Lock Lifting FTFR to 94.8% & Cutting Dead Stock -28%)",
+        "model_answer": "Cosmos DB in Fabric SSD DiskANN (552M >0.55B CAD BOM & Service Manual Vectors, -92% RAM at $3,020/mo vs $69,500/mo DRAM, 5ms Part Lock Lifting FTFR to 94.8% & Cutting Dead Stock -28%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 31,
+    },
+    {
+        "id": "DL-727",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 185,000-machine aftermarket & EaaS platform (995K EPS CAN-bus/OPC-UA stream, 552M CAD/manual vectors, 13,450 techs/dealers): Fabric F64 ($14.7K/mo) vs stitched SiteWise/BigQuery/Databricks/Snowflake ($239.6K-$357.7K/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 552M SSD DiskANN + OneLake SAP ($14.7K/mo vs $357.7K/mo Stitched Multi-Cloud, Saving -$343.0K/mo / -95.9% TCO with $0 Viewer Licenses & Dealer OBO RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 552M SSD DiskANN + OneLake SAP ($14.7K/mo vs $357.7K/mo Stitched Multi-Cloud, Saving -$343.0K/mo / -95.9% TCO with $0 Viewer Licenses & Dealer OBO RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 31,
+    },
+    {
+        "id": "DL-728",
+        "category": "Fabric IQ & Ontology",
+        "question": "310 EaaS heavy machines trigger 72h bearing spall alerts across 140 depots while 26 out-of-warranty claims request free parts; OEM must dispatch exact van kits and protect >=99.5% EaaS uptime under OSHA LOTO rules",
+        "expected": "Eventhouse 5ms 310-Machine Sense ($0/GB Tax) + 552M DiskANN & SAP 5ms Part Lock (FTFR 94.8%) + Foundry IQ 26-Claim Block (+$1.84M) & LOTO Gate (5ms) + Teams Van Kit & 1GB Free SQL Commit (5ms = 20ms 5+5+5+5 Symmetrical E2E, Protect $58.95M SLA)",
+        "model_answer": "Eventhouse 5ms 310-Machine Sense ($0/GB Tax) + 552M DiskANN & SAP 5ms Part Lock (FTFR 94.8%) + Foundry IQ 26-Claim Block (+$1.84M) & LOTO Gate (5ms) + Teams Van Kit & 1GB Free SQL Commit (5ms = 20ms 5+5+5+5 Symmetrical E2E, Protect $58.95M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 31,
+    },
 ]
 
 
@@ -22236,6 +22350,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     retail_banking_credit_collections_sim = simulate_ontology_incident("global_retail_banking_credit_fabric_mortgage_collections_agent_vs_4clouds")
     biopharma_dct_pv_gmp_sim = simulate_ontology_incident("global_biopharma_clinical_trial_fabric_pharmacovigilance_gmp_release_vs_4clouds")
     contact_center_ccaas_wfm_sim = simulate_ontology_incident("global_contact_center_ccaas_fabric_agent_assist_wfm_vs_4clouds")
+    industrial_aftermarket_eaas_sim = simulate_ontology_incident("global_industrial_equipment_aftermarket_fabric_servitization_spare_parts_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -22417,6 +22532,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_retail_banking_credit_fabric_mortgage_collections_agent_vs_4clouds": retail_banking_credit_collections_sim,
         "global_biopharma_clinical_trial_fabric_pharmacovigilance_gmp_release_vs_4clouds": biopharma_dct_pv_gmp_sim,
         "global_contact_center_ccaas_fabric_agent_assist_wfm_vs_4clouds": contact_center_ccaas_wfm_sim,
+        "global_industrial_equipment_aftermarket_fabric_servitization_spare_parts_vs_4clouds": industrial_aftermarket_eaas_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -22754,6 +22870,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r168_ontology_sim_mean_ms = round(sum(r168_sim_latencies) / len(r168_sim_latencies), 2)
     r169_sim_latencies = sim_latencies[:176]
     r169_ontology_sim_mean_ms = round(sum(r169_sim_latencies) / len(r169_sim_latencies), 2)
+    r170_sim_latencies = sim_latencies[:177]
+    r170_ontology_sim_mean_ms = round(sum(r170_sim_latencies) / len(r170_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -24972,11 +25090,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-18",
         },
+        {
+            "id": "SPEC-INDUSTRIAL-EQUIPMENT-AFTERMARKET-SERVITIZATION-SPARE-PARTS-552M-R171",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL + H3 + Activator ($0/GB write tax & $0 per-property twin fee for CAN-bus J1939 & OPC-UA telemetry), Cosmos DB SSD DiskANN (552M+ >0.55B 3D CAD serial BOM & service manual vectors at -92% RAM), OneLake zero-copy SAP S/4HANA PM/MM integration, and F64+ $0 Power BI Viewer seats power industrial OEM aftermarket and EaaS servitization; AWS IoT SiteWise, GCP Pub/Sub + BigQuery, Databricks, and Snowflake provide alternative stacks.",
+            "official_url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/digital-twin-builder/overview",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data",
+            "competitor_doc_urls": [
+                "https://aws.amazon.com/iot-sitewise/",
+                "https://cloud.google.com/solutions/manufacturing",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+            ],
+            "as_of": "2026-11-18",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-18-r170",
-        "generated_at": "2026-11-18T04:28:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-18-r171",
+        "generated_at": "2026-11-18T04:48:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -24987,6 +25118,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R170 snapshot n=724 mean was 122.0ms; "
                     f"historical R169 snapshot n=720 mean was 122.5ms; "
                     f"historical R168 snapshot n=716 mean was 123.0ms; "
                     f"historical R167 snapshot n=712 mean was 123.5ms; "
@@ -25162,6 +25294,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R170 snapshot n=177 mean was {r170_ontology_sim_mean_ms}ms; "
                     f"historical R169 snapshot n=176 mean was {r169_ontology_sim_mean_ms}ms; "
                     f"historical R168 snapshot n=175 mean was {r168_ontology_sim_mean_ms}ms; "
                     f"historical R167 snapshot n=174 mean was {r167_ontology_sim_mean_ms}ms; "
@@ -25852,6 +25985,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r170_177_simulation_mean_modeled_latency_ms": r170_ontology_sim_mean_ms,
             "r169_176_simulation_mean_modeled_latency_ms": r169_ontology_sim_mean_ms,
             "r168_175_simulation_mean_modeled_latency_ms": r168_ontology_sim_mean_ms,
             "r167_174_simulation_mean_modeled_latency_ms": r167_ontology_sim_mean_ms,
