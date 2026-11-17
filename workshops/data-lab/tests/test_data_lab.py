@@ -2349,13 +2349,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 35)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 53700000)
 
-    def test_scenario_matrix_668_cases_and_explicit_miss(self) -> None:
+    def test_global_cross_border_ecommerce_fabric_wms_customs_hs_fx_finops_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_cross_border_ecommerce_fabric_wms_customs_hs_fx_finops_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["global_marketplaces_and_dtc_sites_count"], 28)
+        self.assertEqual(sim["telemetry"]["overseas_3pl_and_fba_warehouses_count"], 45)
+        self.assertEqual(sim["telemetry"]["wco_hs_customs_and_freight_vectors_count"], 496000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_cross_border_tco_saved_usd"], 317600)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_cross_border_tco_savings_pct"], 95.7)
+        self.assertTrue(sim["foundry_iq_guardrail"]["wco_hs_un383_zero_customs_hold_and_dos_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["true_landed_margin_above_165_pct_and_fx_hedge_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 34)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 54050000)
+
+    def test_scenario_matrix_672_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 668)
-        self.assertEqual(matrix["passed_scenarios"], 667)
+        self.assertEqual(matrix["total_scenarios"], 672)
+        self.assertEqual(matrix["passed_scenarios"], 671)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.85, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 129.0)
+        self.assertEqual(matrix["avg_latency_ms"], 128.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -4131,6 +4146,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-$315.7K/mo", by_id["DL-667"]["expected"])
         self.assertIn("Protect $53.70M SLA", by_id["DL-668"]["expected"])
 
+    def test_fabric_cross_border_ecommerce_global_supply_chain_finops_2026_11_18_r157_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-669", "DL-670", "DL-671", "DL-672"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("8ms Viral 2.4d DoS Stockout & FX Window Sense", by_id["DL-669"]["expected"])
+        self.assertIn("496M WCO HS & Freight Vectors, -92% RAM, 9ms HTS 8507.60.0020 Match", by_id["DL-670"]["expected"])
+        self.assertIn("-$317.6K/mo", by_id["DL-671"]["expected"])
+        self.assertIn("Protect $54.05M SLA", by_id["DL-672"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -4148,11 +4174,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 667)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 668)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 129.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 163)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 116.0)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 671)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 672)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 128.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 164)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 115.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r156_163_simulation_mean_modeled_latency_ms"], 116.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r155_162_simulation_mean_modeled_latency_ms"], 116.5)
         self.assertEqual(loaded["ontology_simulations_summary"]["r154_161_simulation_mean_modeled_latency_ms"], 117.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r153_160_simulation_mean_modeled_latency_ms"], 117.5)
@@ -4301,7 +4328,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 159)
+        self.assertEqual(len(refs), 160)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18"))
@@ -4466,6 +4493,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_five_cloud_platform_fabric_tco_inflection_zero_downtime_migration_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_enterprise_data_agent_fabric_quad_modal_ontology_vs_genie_cortex_oss", loaded["ontology_simulations"])
         self.assertIn("global_enterprise_data_governance_fabric_onelake_rls_cls_purview_obo_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_cross_border_ecommerce_fabric_wms_customs_hs_fx_finops_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":
