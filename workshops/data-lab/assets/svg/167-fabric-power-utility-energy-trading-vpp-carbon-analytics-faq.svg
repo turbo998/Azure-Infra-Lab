@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg167" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0B1628"/>
+      <stop offset="100%" stop-color="#081E26"/>
+    </linearGradient>
+    <linearGradient id="hdr167" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric167" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D2824"/>
+      <stop offset="100%" stop-color="#091D29"/>
+    </linearGradient>
+    <linearGradient id="cardWarn167" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1C0D14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg167)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1392" height="84" rx="14" fill="#0F172A" stroke="url(#hdr167)" stroke-width="2"/>
+  <text x="48" y="48" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1">
+    ROUND 159 · POWER UTILITY, SPOT ENERGY TRADING, VPP AGGREGATION &amp; 24/7 CARBON ACCOUNTING ARCHITECTURE SELECTION FAQ
+  </text>
+  <text x="48" y="76" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">
+    电力能源与智慧售电「新能源预测 + 现货电力交易竞价 + 虚拟电厂(VPP) + 绿证碳核算」选型 (680场景, 32=2⁵ms对称闭环, 504M向量 &amp; 月省&gt;$320K!)
+  </text>
+  <rect x="1158" y="30" width="236" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1276" y="53" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">R159 · 32=2⁵ms SYMMETRICAL E2E!</text>
+  <text x="1276" y="74" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">32ms E2E · -95.7% TCO · $54.75M SLA</text>
+
+  <!-- Left Column: Power Utility & VPP Challenges -->
+  <rect x="24" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="148" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    ⚡ 电力售电与虚拟电厂四大核心痛点 (42GW + 1.8万VPP负荷)
+  </text>
+
+  <rect x="40" y="164" width="398" height="94" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="186" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. 风光出力突变 + 15分钟现货电价飙升 ($0/GB vs 流量税)</text>
+  <text x="54" y="208" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 42GW 风光储 SCADA/PMU + 1.8万工商业 VPP 电表高达 995K EPS</text>
+  <text x="54" y="228" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 强对流云团致华东站群 15min 骤降 -1,450MW，现货电价飙至 $480/MWh</text>
+  <text x="54" y="246" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Eventhouse KQL + H3 + Activator 8ms 感知 ($0/GB 写入费)</text>
+
+  <rect x="40" y="268" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="290" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 5.04亿气象/阻塞断面向量 + VPP 聚合报价 (省92%内存)</text>
+  <text x="54" y="312" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 5.04亿条 (504M) NWP 数值天气图谱、断面阻塞与 OpenADR 响应曲线</text>
+  <text x="54" y="332" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 需毫秒级联合求解 VPP 柔性削峰 (+620MW) 与储能放电 (+380MW)</text>
+  <text x="54" y="352" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Cosmos DB SSD DiskANN + FLAML/NL2DAX 8ms 最优竞价 (+$3.42M)</text>
+
+  <rect x="40" y="374" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="396" fill="#F472B6" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. 电网频率稳定 (50.00±0.02Hz) + 24/7 小时级绿证碳核算</text>
+  <text x="54" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 盲目切除工商业空调/冷库会突破客户温控底线或引发频率越限</text>
+  <text x="54" y="438" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 跨国车企/算力中心要求 24/7 小时级 I-REC 绿证与 Scope 2 零漂移溯源</text>
+  <text x="54" y="458" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Foundry IQ 8ms 频率/温控门禁 (&lt;=+1.0°C) + 小时级绿证绑定</text>
+
+  <rect x="40" y="480" width="398" height="94" rx="8" fill="url(#cardWarn167)" stroke="#EF4444" stroke-width="1"/>
+  <text x="54" y="502" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 传统多云拼凑方案的三大成本黑洞 ($335.6K/月)</text>
+  <text x="54" y="524" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• PMU/AMI 流写入税 + Fivetran 同步 ERP 结算账单 = $122K/月</text>
+  <text x="54" y="544" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5.04亿气象与设备向量全内存集群 (3.65TB RAM) = $60.2K/月</text>
+  <text x="54" y="564" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 11,650 名交易员、调度员与园区用户 BI 按座税 = $153.4K/月</text>
+
+  <!-- Center Column: 32ms (2^5ms Symmetrical 8+8+8+8!) Loop -->
+  <rect x="470" y="118" width="500" height="470" rx="12" fill="url(#cardFabric167)" stroke="#10B981" stroke-width="2"/>
+  <text x="492" y="148" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🏛️ Fabric + Foundry IQ 电力现货与VPP闭环 (32=2⁵ms 完美对称!)
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="490" y="164" width="460" height="88" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="506" y="186" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">① Eventhouse KQL + H3 + Activator 光伏骤降与现货电价感知 (8 ms)</text>
+  <text x="506" y="206" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• $0/GB 摄入 995K EPS SCADA/PMU、NWP 辐照度与 15min 现货出清电价流</text>
+  <text x="506" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 8ms 捕获 `East-Hub-04` 断面光伏骤降 -1,450MW 及现货电价冲高至 $480/MWh</text>
+  <text x="506" y="242" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 触发 1.8 万个工商业 VPP 柔性负荷与储能电站聚合寻优</text>
+
+  <!-- Step 2 -->
+  <rect x="490" y="264" width="460" height="92" rx="8" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="506" y="286" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">② 5.04亿 (504M) SSD DiskANN + FLAML/NL2DAX 竞价寻优 (8 ms)</text>
+  <text x="506" y="306" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 8ms 检索 504,000,000 条历史云团轨迹与 OpenADR 负荷响应向量</text>
+  <text x="506" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• FLAML + NL2DAX 联合生成 VPP 削峰 +620MW 与储能放电 +380MW 阶梯报价单</text>
+  <text x="506" y="344" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 锁定 1,000MW 现货高价出清电量，单次捕获 +$3.42M 现货套利净毛利</text>
+
+  <!-- Step 3 -->
+  <rect x="490" y="368" width="460" height="92" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="506" y="390" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">③ Foundry IQ 电网频率稳定 (50.00±0.02Hz) 与绿证门禁 (8 ms)</text>
+  <text x="506" y="410" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 校验《POWER-UTILITY-VPP-CARBON-AGENT-SOP-166》与 NERC CIP 边界</text>
+  <text x="506" y="428" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 确认电网频率稳定在 50.00±0.02Hz 且冷链/数据中心温升 &lt;= +1.0°C</text>
+  <text x="506" y="448" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 8ms 完成 24/7 小时级 I-REC 绿证与 GHG Scope 2 零碳证明哈希锚定</text>
+
+  <!-- Step 4 -->
+  <rect x="490" y="472" width="460" height="98" rx="8" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="506" y="494" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">④ Teams 交易/调度双签 + OpenADR 群控 + 1GB 免费 SQL (8 ms)</text>
+  <text x="506" y="514" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 电力交易总监与总调度长在 Teams 审批卡片确认；Rayfin SDK 8ms 下发</text>
+  <text x="506" y="532" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• OpenADR 2.0b 群控指令、提交现货交易中心报单并写入 1GB 免费 Fabric SQL</text>
+  <text x="506" y="552" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">★ 端到端 8+8+8+8 = 32ms (2⁵ms 对称闭环!) · 守护 $54.75M 现货与绿证 SLA</text>
+
+  <!-- Right Column: 5-Cloud Matrix & Milestones -->
+  <rect x="986" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="1006" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    📊 五云电力交易与VPP选型对比 (42GW · 5.04亿向量)
+  </text>
+
+  <rect x="1002" y="164" width="398" height="72" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1016" y="186" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">🏆 Microsoft Fabric + Foundry IQ (F64 Reserved)</text>
+  <text x="1016" y="206" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eventhouse 8ms ($0/GB) + 504M SSD DiskANN ($2.78K/月) + $0 Viewer</text>
+  <text x="1016" y="224" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">• 月总 TCO: $14,300/月 (省 95.7% · 月省 $321.3K &gt; $320K!) | 32ms 闭环</text>
+
+  <rect x="1002" y="244" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="264" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks (Structured Streaming + Mosaic Vector + Genie)</text>
+  <text x="1016" y="282" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于 Spark NWP 气象训练；但 504M 内存向量与 24/7 流计算昂贵</text>
+  <text x="1016" y="298" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $221,500/月 | 端到端延迟: 1,450 ms</text>
+
+  <rect x="1002" y="314" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="334" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake (Snowpipe Streaming + Cortex + Energy Clean Room)</text>
+  <text x="1016" y="352" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于跨企绿证共享；但 995K EPS 高频 PMU 脉冲与高频轮询极耗 Credit</text>
+  <text x="1016" y="368" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $254,000/月 | 端到端延迟: 2,050 ms</text>
+
+  <rect x="1002" y="384" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="404" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Google BigQuery (Pub/Sub + Earth Engine/WeatherNext + Looker)</text>
+  <text x="1016" y="422" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于全球气象底图；但 $0.05/GB 流写入税 + 11,650 席 Looker 昂贵</text>
+  <text x="1016" y="438" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $278,000/月 | 端到端延迟: 1,920 ms</text>
+
+  <rect x="1002" y="454" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="474" fill="#F59E0B" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">AWS (MSK/Timestream + Redshift + OpenSearch + QuickSight)</text>
+  <text x="1016" y="492" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 504M OpenSearch 内存向量 + Timestream 写入费 + 5 组件运维重</text>
+  <text x="1016" y="508" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $335,600/月 | 端到端延迟: 2,680 ms</text>
+
+  <rect x="1002" y="524" width="398" height="50" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1201" y="545" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    🎯 拐点：流写入 &gt;30K EPS 或气象/设备向量 &gt;3,000万条 或 看板用户 &gt;500人
+  </text>
+  <text x="1201" y="564" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    已投产 Earth Engine NWP 模型 → OneLake Shortcut 零拷贝复用
+  </text>
+
+  <!-- Bottom Section: Architecture Decision Tree & R159 Milestones -->
+  <rect x="24" y="604" width="1392" height="274" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="634" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🧭 电力能源、虚拟电厂(VPP)与绿证碳核算选型决策树 &amp; R159 封存基准 (DL-677..DL-680 · Scenario FJ)
+  </text>
+
+  <!-- Decision Tree Boxes -->
+  <rect x="44" y="650" width="420" height="66" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="58" y="672" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ 场景 A：新能源预测 + 15min 现货竞价 + VPP 群控 + 绿证</text>
+  <text x="58" y="692" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">首选 Fabric Eventhouse (8ms) + 504M SSD DiskANN + FLAML + Foundry IQ</text>
+  <text x="58" y="708" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 32=2⁵ms 完美对称闭环，省 95.7% TCO ($14.3K vs $335.6K/月)</text>
+
+  <rect x="484" y="650" width="440" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="498" y="672" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔄 场景 B：已深度使用 Google WeatherNext / Databricks NWP 训练</text>
+  <text x="498" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">保留气象训练流水线，通过 OneLake Shortcut 零拷贝挂载预测结果</text>
+  <text x="498" y="708" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 由 Fabric Eventhouse + Direct Lake 承接实时现货竞价与 11,650 席免许可看板</text>
+
+  <rect x="944" y="650" width="452" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="958" y="672" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔌 场景 C：偏远风光储场站断网自治 (Substation Disconnected Edge)</text>
+  <text x="958" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">部署 Azure Local Disconnected Operations (ALDO) + IEC 61850 边缘网关</text>
+  <text x="958" y="708" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 本地毫秒级一次调频/AGC 稳控，网络恢复后增量同步 OneLake 绿证账本</text>
+
+  <!-- Bottom KPI Strip -->
+  <rect x="44" y="732" width="320" height="126" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="204" y="758" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-677 · Eventhouse KQL + H3 (43ms)</text>
+  <text x="204" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">8ms · -1,450MW 预警</text>
+  <text x="204" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">995K EPS $0/GB 写入税 | 捕获 $480/MWh 尖峰</text>
+  <text x="204" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 679/680 (99.85%) · 127.5ms 路由均值</text>
+
+  <rect x="382" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="547" y="758" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-678 · 5.04亿 SSD DiskANN (43ms)</text>
+  <text x="547" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">$2,780/月 vs $60.2K</text>
+  <text x="547" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">504M 气象/断面向量省 92% 内存 | 8ms P99</text>
+  <text x="547" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ VPP +620MW 削峰 + 储能 +380MW 放电</text>
+
+  <rect x="730" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="895" y="758" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-679 · FLAML + NL2DAX 竞价与绿证 (43ms)</text>
+  <text x="895" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">+$3.42M 套利 · 24/7 I-REC</text>
+  <text x="895" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">50.00±0.02Hz 频率安全 | 温升 &lt;=+1.0°C</text>
+  <text x="895" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 小时级绿证 Scope 2 零碳证明自动签发</text>
+
+  <rect x="1078" y="732" width="318" height="126" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="1237" y="758" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" text-anchor="middle">DL-680 · Scenario FJ 32=2⁵ms 闭环 (43ms)</text>
+  <text x="1237" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">-95.7% TCO · $54.75M</text>
+  <text x="1237" y="816" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">$14.3K vs $335.6K/月 (月省 $321.3K!)</text>
+  <text x="1237" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" text-anchor="middle">★ 8+8+8+8=32ms · 114.5ms 本体均值 · 336/336 单测</text>
+</svg>
