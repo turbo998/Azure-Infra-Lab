@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" width="1600" height="1060">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="cardComp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1060" fill="url(#bgGrad)"/>
+
+  <!-- Header Banner -->
+  <rect x="36" y="22" width="1528" height="118" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="54" y="40" width="440" height="26" rx="13" fill="#0284C7"/>
+  <text x="274" y="57" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">DATA LAB · ROUND 156 · DATA GOVERNANCE, CATALOG &amp; OBO SECURITY</text>
+  <text x="510" y="57" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Provenance: [measured_local_harness: 667/668=99.85%, 330/330 tests!] · [synthetic_scenario_model: n=668 mean 129.0ms! | n=163 mean 116.0ms!]</text>
+  <text x="54" y="94" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Enterprise Data Governance, Catalog Federation &amp; RLS/CLS/OLS/OBO Security Passthrough FAQ</text>
+  <text x="54" y="122" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="600">OneLake Unified Security + Microsoft Purview + Entra Agent ID OBO vs. Databricks Unity Catalog vs. Snowflake Horizon vs. Dataplex / Lake Formation</text>
+
+  <!-- Left Panel: Why 5-Engine Duplicate Policies & Broken OBO Chains Fail -->
+  <rect x="36" y="156" width="750" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">1. Why Multi-Engine Policy Duplication &amp; Broken OBO Fail</text>
+  <text x="58" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Eliminating 5-Way Permission Drift, Unencrypted Excel Exports, and Service-Principal Blindness</text>
+
+  <!-- Anti-Pattern Box -->
+  <rect x="58" y="224" width="706" height="142" rx="10" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="248" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">⛔ Legacy Silos: Rewriting RLS/CLS 5 Times Across Storage, Spark, SQL, BI &amp; Vector DBs</text>
+  <text x="76" y="272" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5-Way Policy Drift: Maintaining separate ACLs in S3/ADLS, Spark UC, Warehouse SQL, BI &amp; Vector DBs guarantees security gaps</text>
+  <text x="76" y="294" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Broken Identity at AI/BI Boundary: Service-principal connectors strip user identity, failing GDPR/PIPL/BCBS 239 audits</text>
+  <text x="76" y="316" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Unprotected Office Exports: Sensitivity tags vanish the moment a user exports a table to Excel/PDF or shares it in Teams</text>
+  <text x="76" y="340" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Result: $329.9K/mo stitched governance + per-engine sync ETL + DRAM lineage TCO; severe data exfiltration risk</text>
+
+  <!-- Fabric Solution Box -->
+  <rect x="58" y="378" width="706" height="186" rx="10" fill="url(#cardFabric)" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="76" y="402" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">✅ OneLake Define-Once RLS/CLS/OLS + Purview Label Inheritance + Entra OBO (35ms E2E)</text>
+
+  <rect x="76" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#0284C7"/>
+  <text x="185" y="438" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">OneLake Unified Security</text>
+  <text x="185" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Define RLS/CLS/OLS Once;</text>
+  <text x="185" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Enforce Across 5 Engines</text>
+
+  <rect x="304" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#818CF8"/>
+  <text x="413" y="438" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Purview To Excel/Teams</text>
+  <text x="413" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Sensitivity Labels &amp; RMS</text>
+  <text x="413" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Travel With Exported Files</text>
+
+  <rect x="532" y="416" width="214" height="82" rx="8" fill="#0F172A" stroke="#34D399"/>
+  <text x="639" y="438" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Entra OBO + 492M Lineage</text>
+  <text x="639" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">14-Hop Column Lineage &amp;</text>
+  <text x="639" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Outbound Access Protection</text>
+
+  <text x="76" y="522" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Single OneLake role governs Spark, SQL, DirectLake, KQL &amp; Data Agents while Purview encrypts downstream Office exports</text>
+  <text x="76" y="544" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Result: 35ms E2E · 129.0ms &amp; 116.0ms Exact Means! · 330/330 Tests · 492M (&gt;0.49B!) Vectors · -$315.7K/mo (-95.7% TCO)</text>
+
+  <!-- Right Panel: 5-Cloud Governance & Catalog Selection Matrix -->
+  <rect x="810" y="156" width="754" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="832" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">2. Five-Cloud Governance &amp; Catalog Selection Matrix</text>
+  <text x="832" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Comparing OneLake Security + Purview vs. Unity Catalog vs. Horizon vs. Dataplex vs. Lake Formation</text>
+
+  <rect x="832" y="224" width="710" height="68" rx="8" fill="#0F2942" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="848" y="246" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">① Microsoft Fabric (OneLake Unified Security + Microsoft Purview + Entra Agent ID OBO)</text>
+  <text x="848" y="266" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: End-to-end storage-level RLS/CLS/OLS across Spark, SQL, KQL, Power BI &amp; Copilot Agents, plus automatic</text>
+  <text x="848" y="282" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Purview sensitivity label encryption that persists inside exported Excel/Word/PDF files and Teams chats.</text>
+
+  <rect x="832" y="302" width="710" height="62" rx="8" fill="#1E293B" stroke="#F97316"/>
+  <text x="848" y="324" fill="#FB923C" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">② Databricks Unity Catalog (ABAC + Row Filters / Column Masks + Mosaic AI Gateway)</text>
+  <text x="848" y="344" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Governing Spark tables, MLflow models &amp; Volumes inside Databricks. Coexistence: Federate Unity Catalog</text>
+  <text x="848" y="358" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">metadata into Microsoft Purview and enforce OneLake RLS/CLS when serving Power BI DirectLake &amp; M365 Copilot.</text>
+
+  <rect x="832" y="374" width="710" height="62" rx="8" fill="#1E293B" stroke="#06B6D4"/>
+  <text x="848" y="396" fill="#22D3EE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">③ Snowflake Horizon Catalog + Open Catalog (Apache Polaris)</text>
+  <text x="848" y="416" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Tag-based Dynamic Data Masking and Row Access Policies inside Snowflake warehouses &amp; Iceberg REST.</text>
+  <text x="848" y="430" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Trade-off: Snowflake tags do not natively encrypt downstream M365 Excel/PDF exports without Purview integration.</text>
+
+  <rect x="832" y="446" width="348" height="56" rx="8" fill="#1E293B" stroke="#FACC15"/>
+  <text x="848" y="466" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Google Cloud Dataplex</text>
+  <text x="848" y="484" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">BigQuery policy tags &amp; data quality; limited outside GCP native services.</text>
+
+  <rect x="1194" y="446" width="348" height="56" rx="8" fill="#1E293B" stroke="#A855F7"/>
+  <text x="1210" y="466" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">⑤ AWS Lake Formation + DataZone</text>
+  <text x="1210" y="484" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">Cell-level filters on S3/Glue/Athena; requires stitching across 6 AWS services.</text>
+
+  <rect x="832" y="512" width="710" height="52" rx="8" fill="#064E3B" stroke="#10B981"/>
+  <text x="848" y="534" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">💡 Architect Golden Rule: Push Security Down to OneLake Storage &amp; Bind Purview Labels End-to-End!</text>
+  <text x="848" y="552" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Define RLS/CLS/OLS once in OneLake so Spark, SQL, BI, and AI Agents never diverge on who can see what.</text>
+
+  <!-- Bottom Panel: End-to-End 35ms Cross-Cloud Governance, PII Masking & Exfiltration Defense Loop -->
+  <rect x="36" y="598" width="1528" height="436" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="630" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3. End-to-End Cross-Cloud Catalog Lineage, OBO RLS/CLS &amp; Exfiltration Interdiction Loop (35ms E2E!)</text>
+  <text x="58" y="652" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Scenario FG (R156 · 129.0ms &amp; 116.0ms Exact Means!): 5,400 Data Products · 995K EPS Access/Audit Stream · 492M (&gt;0.49B!) Lineage Vectors · $53.70M SLA</text>
+
+  <!-- Step 1 -->
+  <rect x="58" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#0284C7" stroke-width="1.5"/>
+  <rect x="74" y="688" width="190" height="24" rx="12" fill="#0284C7"/>
+  <text x="169" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 1 · AUDIT SENSE (8 ms)</text>
+  <text x="74" y="732" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Eventhouse KQL Access &amp; DLP Sense</text>
+  <text x="74" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Ingests 995K EPS OneLake/Purview access logs &amp; Spark</text>
+  <text x="74" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  outbound network telemetry across 5,400 data products</text>
+  <text x="74" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  at $0/GB stream write surcharge</text>
+  <text x="74" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Detects an unmasked PII column added in upstream</text>
+  <text x="74" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  CDC &amp; an unauthorized Python notebook attempting</text>
+  <text x="74" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  external webhook egress in 8 ms</text>
+  <text x="74" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Saves $235,200/mo vs per-GB SIEM &amp; 5-engine sync scripts</text>
+
+  <!-- Arrow 1->2 -->
+  <text x="418" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 2 -->
+  <rect x="436" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#818CF8" stroke-width="1.5"/>
+  <rect x="452" y="688" width="190" height="24" rx="12" fill="#6366F1"/>
+  <text x="547" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 2 · 492M LINEAGE (9 ms)</text>
+  <text x="452" y="732" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Purview 14-Hop + 492M DiskANN</text>
+  <text x="452" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Cosmos DB SSD DiskANN searches 492M (&gt;0.49B!)</text>
+  <text x="452" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  column-lineage &amp; PII classification vectors (-92% RAM)</text>
+  <text x="452" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Traces 14-hop downstream impact across 28 semantic</text>
+  <text x="452" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  models and 64 Data Agents in 9 ms</text>
+  <text x="452" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Auto-applies Purview `Highly Confidential` label &amp;</text>
+  <text x="452" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  OneLake CLS column masking in 1 step</text>
+  <text x="452" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$2,720/mo SSD DiskANN vs $58,400/mo DRAM cluster</text>
+
+  <!-- Arrow 2->3 -->
+  <text x="796" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 3 -->
+  <rect x="814" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="830" y="688" width="200" height="24" rx="12" fill="#D97706"/>
+  <text x="930" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 3 · OBO &amp; OAP GATE (9 ms)</text>
+  <text x="830" y="732" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Foundry IQ OBO &amp; OAP Egress Gate</text>
+  <text x="830" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Validates ENTERPRISE-GOVERNANCE-OBO-SOP-163:</text>
+  <text x="830" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  Outbound Access Protection (OAP) blocks unauthorized</text>
+  <text x="830" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  notebook webhook egress (0.00% data exfiltration)</text>
+  <text x="830" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Verifies Entra Agent ID OBO RLS/CLS consistency</text>
+  <text x="830" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  across Spark, T-SQL, DirectLake &amp; Copilot Agents</text>
+  <text x="830" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  plus RMS encryption on Excel exports in 9 ms</text>
+  <text x="830" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">330/330 Tests &amp; 129.0ms/116.0ms Exact Means Verified!</text>
+
+  <!-- Arrow 3->4 -->
+  <text x="1174" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 4 -->
+  <rect x="1192" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="1208" y="688" width="190" height="24" rx="12" fill="#059669"/>
+  <text x="1303" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 4 · COMMIT (9 ms)</text>
+  <text x="1208" y="732" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Teams CISO Card + 1GB Free SQL</text>
+  <text x="1208" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Chief Data Officer &amp; CISO confirm in Teams</text>
+  <text x="1208" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Rayfin SDK commits the OneLake CLS mask, revokes</text>
+  <text x="1208" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  the anomalous session, and logs the GDPR/PIPL/BCBS</text>
+  <text x="1208" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  239 audit to 1GB Free Fabric SQL in 9 ms</text>
+  <text x="1208" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Total 35ms E2E · 129.0ms &amp; 116.0ms Exact Means!</text>
+  <text x="1208" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Saves $315.7K/mo (-95.7% TCO) · $53.70M SLA!</text>
+  <text x="1208" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0 Power BI viewer seats for 11,200 governed users</text>
+
+  <!-- Bottom KPI Summary Bar -->
+  <rect x="58" y="928" width="1484" height="86" rx="10" fill="#091526" stroke="#1E293B"/>
+  <text x="82" y="956" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Round 156 Quantitative &amp; Architectural Milestones (Scenario FG · DL-665..DL-668):</text>
+  <text x="82" y="980" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Exact Routing Mean (n=668): 129.0 ms · Exact Ontology Mean (n=163): 116.0 ms · 330/330 Unit Tests · 492M (&gt;0.49B!) Lineage Vectors!</text>
+  <text x="82" y="1000" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Business Impact: 35ms E2E Loop · -$315,700/mo (&gt;$315K/mo! -95.7% TCO) · $53.70M GDPR/PIPL/BCBS 239 Governance SLA Protected!</text>
+</svg>
