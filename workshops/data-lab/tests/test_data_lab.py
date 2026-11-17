@@ -2544,13 +2544,28 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 22)
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 58250000)
 
-    def test_scenario_matrix_720_cases_and_explicit_miss(self) -> None:
+    def test_global_contact_center_ccaas_fabric_agent_assist_wfm_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_contact_center_ccaas_fabric_agent_assist_wfm_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["daily_voice_and_chat_interactions_count"], 420000)
+        self.assertEqual(sim["telemetry"]["escalating_live_calls_whispered_count"], 640)
+        self.assertEqual(sim["telemetry"]["call_resolution_and_sop_vectors_count"], 548000000)
+        self.assertEqual(sim["telemetry"]["per_minute_speech_analytics_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_contact_center_tco_saved_usd"], 341200)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_contact_center_tco_savings_pct"], 95.9)
+        self.assertTrue(sim["foundry_iq_guardrail"]["pci_dss_inline_pan_redaction_and_waiver_cap_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["wfm_asa_under_20s_and_team_obo_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 21)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 58600000)
+
+    def test_scenario_matrix_724_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 720)
-        self.assertEqual(matrix["passed_scenarios"], 719)
+        self.assertEqual(matrix["total_scenarios"], 724)
+        self.assertEqual(matrix["passed_scenarios"], 723)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.86, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 122.5)
+        self.assertEqual(matrix["avg_latency_ms"], 122.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -4469,6 +4484,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("-$339.4K/mo", by_id["DL-719"]["expected"])
         self.assertIn("Protect $58.25M SLA", by_id["DL-720"]["expected"])
 
+    def test_fabric_enterprise_contact_center_ccaas_agent_assist_wfm_2026_11_18_r170_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-721", "DL-722", "DL-723", "DL-724"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("5ms 640-Call Escalation & +380% Queue Surge Sense", by_id["DL-721"]["expected"])
+        self.assertIn("548M Call-Resolution & SOP Vectors, -92% RAM at $3,000/mo", by_id["DL-722"]["expected"])
+        self.assertIn("-$341.2K/mo", by_id["DL-723"]["expected"])
+        self.assertIn("Protect $58.60M SLA", by_id["DL-724"]["expected"])
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -4486,11 +4512,12 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 719)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 720)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 122.5)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 176)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 109.5)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 723)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 724)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 122.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 177)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 109.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["r169_176_simulation_mean_modeled_latency_ms"], 109.5)
         self.assertEqual(loaded["ontology_simulations_summary"]["r168_175_simulation_mean_modeled_latency_ms"], 110.0)
         self.assertEqual(loaded["ontology_simulations_summary"]["r167_174_simulation_mean_modeled_latency_ms"], 110.5)
         self.assertEqual(loaded["ontology_simulations_summary"]["r166_173_simulation_mean_modeled_latency_ms"], 111.0)
@@ -4652,7 +4679,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(loaded["ontology_simulations_summary"]["r4_11_simulation_mean_modeled_latency_ms"], 584.09)
         self.assertEqual(loaded["ontology_simulations_summary"]["r3_10_simulation_mean_modeled_latency_ms"], 596.0)
         refs = loaded["provenance"]["vendor_published_spec_references"]
-        self.assertEqual(len(refs), 172)
+        self.assertEqual(len(refs), 173)
         for ref in refs:
             self.assertTrue(ref["official_url"].startswith("https://"))
             self.assertIn(ref["as_of"], ("2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18"))
@@ -4830,6 +4857,7 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("global_enterprise_erp_sap_acdoca_fabric_treasury_finops_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_retail_banking_credit_fabric_mortgage_collections_agent_vs_4clouds", loaded["ontology_simulations"])
         self.assertIn("global_biopharma_clinical_trial_fabric_pharmacovigilance_gmp_release_vs_4clouds", loaded["ontology_simulations"])
+        self.assertIn("global_contact_center_ccaas_fabric_agent_assist_wfm_vs_4clouds", loaded["ontology_simulations"])
 
 
 if __name__ == "__main__":

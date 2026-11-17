@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg178" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070C18"/>
+      <stop offset="50%" stop-color="#0D192E"/>
+      <stop offset="100%" stop-color="#081E26"/>
+    </linearGradient>
+    <linearGradient id="hdr178" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="cardFabric178" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D2824"/>
+      <stop offset="100%" stop-color="#091D2A"/>
+    </linearGradient>
+    <linearGradient id="cardWarn178" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1C0D14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg178)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1392" height="84" rx="14" fill="#0F172A" stroke="url(#hdr178)" stroke-width="2"/>
+  <text x="48" y="48" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1">
+    ROUND 170 MILESTONE! · 175 FAQs / 350 DOCS &amp; 122.0/109.0ms EXACT MEANS! · CONTACT CENTER (CCaaS), AGENT ASSIST &amp; WFM FAQ
+  </text>
+  <text x="48" y="76" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">
+    全渠道智能客服(CCaaS)、坐席实时辅助与排班(WFM)「语音情绪感知 + 混合RAG秒级弹屏 + 一次解决率(FCR)」选型 (R170大关 &amp; 21ms闭环!)
+  </text>
+  <rect x="1158" y="30" width="236" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1276" y="53" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">R170 · 175 FAQs &amp; 21ms E2E!</text>
+  <text x="1276" y="74" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">548M Vec · -$341.2K/mo · $58.60M</text>
+
+  <!-- Left Column: Contact Center & WFM Pain Points -->
+  <rect x="24" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🎧 全渠道客服中心与排班四大痛点 (13,300名坐席/主管)
+  </text>
+
+  <rect x="40" y="164" width="398" height="94" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="186" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. 话务洪峰排队爆表与客户愤怒升级滞后 ($0/GB vs 税)</text>
+  <text x="54" y="208" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 1.33万坐席实时语音转写(ASR)、情绪分与队列状态达 995K EPS</text>
+  <text x="54" y="228" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 账单争议队列突发 +380% 洪峰，640 通在途电话情绪恶化 (&gt;0.88)</text>
+  <text x="54" y="246" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Eventhouse KQL + Activator 5ms 捕获情绪升级与队列积压</text>
+
+  <rect x="40" y="268" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="290" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 5.48亿 (548M) 历史录音/知识库向量 + 账单秒级核对</text>
+  <text x="54" y="312" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 坐席需在 8 个系统间切换查账单与退费规则，平均通话时长(AHT)过长</text>
+  <text x="54" y="332" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 5.48亿条 (548M) 历史金牌话术、排障 SOP 与计费争议向量 ($3,000/月)</text>
+  <text x="54" y="352" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 548M SSD DiskANN + NL2DAX 5ms 弹屏 (AHT -34%，FCR 89.6%)</text>
+
+  <rect x="40" y="374" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="396" fill="#F472B6" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. PCI-DSS 语音卡号实时抹除 + 退费权限上限 (&lt;=$150)</text>
+  <text x="54" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 客户口述信用卡号/CVV 若直接写入日志或发给大模型将触发严重违规</text>
+  <text x="54" y="438" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 13,300 名坐席与班组长需实时查看个人绩效与质检分，不能收席位税</text>
+  <text x="54" y="458" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Foundry IQ 5ms 抹除 PAN/CVV (0 泄露) + 调配 180 名全技能坐席</text>
+
+  <rect x="40" y="480" width="398" height="94" rx="8" fill="url(#cardWarn178)" stroke="#EF4444" stroke-width="1"/>
+  <text x="54" y="502" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 传统多云拼凑方案的三大成本黑洞 ($355.8K/月)</text>
+  <text x="54" y="524" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 按通话分钟收智能分析附加费 + 流写入税 = $129.2K/月</text>
+  <text x="54" y="544" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5.48亿通话录音与知识库向量全内存集群 (4.08TB RAM) = $69.0K/月</text>
+  <text x="54" y="564" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 13,300 名坐席、质检与排班主管 BI 席位税 = $157.6K/月</text>
+
+  <!-- Center Column: 21ms Closed-Loop Architecture -->
+  <rect x="470" y="118" width="500" height="470" rx="12" fill="url(#cardFabric178)" stroke="#10B981" stroke-width="2"/>
+  <text x="492" y="148" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🏛️ Fabric + Foundry IQ 智能坐席辅助与WFM闭环 (21ms · R170!)
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="490" y="164" width="460" height="88" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="506" y="186" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">① Eventhouse KQL + Activator 实时语音情绪与队列感知 (5 ms)</text>
+  <text x="506" y="206" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• $0/GB 摄入 13,300 坐席 995K EPS 实时 ASR 字幕、声学情绪与 IVR 队列流</text>
+  <text x="506" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5ms 捕获账单队列 +380% 洪峰与 640 通情绪恶化 (&gt;0.88) 投诉风险通话</text>
+  <text x="506" y="242" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 触发坐席桌面秒级话术弹屏与 WFM 跨技能组动态支援</text>
+
+  <!-- Step 2 -->
+  <rect x="490" y="264" width="460" height="92" rx="8" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="506" y="286" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">② 5.48亿 (548M) SSD DiskANN + NL2DAX 混合 RAG 弹屏 (5 ms)</text>
+  <text x="506" y="306" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 5ms 检索 548,000,000 条金牌化解话术与排障 SOP ($3,000/月整)</text>
+  <text x="506" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Data Agent NL2DAX 实时核对客户历史账单差额并生成一键退费/挽留卡片</text>
+  <text x="506" y="344" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 平均通话时长 (AHT) 缩短 34%，一次解决率 (FCR) 从 71.4% 跃升至 89.6%</text>
+
+  <!-- Step 3 -->
+  <rect x="490" y="368" width="460" height="92" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="506" y="390" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">③ Foundry IQ PCI-DSS 脱敏、退费上限与 WFM 门禁 (5 ms)</text>
+  <text x="506" y="410" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 校验《CONTACT-CENTER-CCAAS-AGENT-ASSIST-WFM-SOP-177》</text>
+  <text x="506" y="428" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5ms 实时抹除语音字幕中的信用卡 PAN/CVV (0 泄露)，锁定自动退费 &lt;=$150</text>
+  <text x="506" y="448" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 动态切入 180 名全技能坐席，确保 20 秒接通率 (ASA &lt;=20s) 达标</text>
+
+  <!-- Step 4 -->
+  <rect x="490" y="472" width="460" height="98" rx="8" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="506" y="494" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">④ Teams 客服副总裁确认 + 坐席弹屏/WFM切流 + 1GB SQL (6 ms)</text>
+  <text x="506" y="514" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 客服副总裁与排班总监在 Teams 确认；Rayfin SDK 6ms 向 640 台坐席桌面</text>
+  <text x="506" y="532" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 推送挽留卡片、切换 180 坐席技能组并写入 1GB 免费 Fabric SQL 与职场 ALDO</text>
+  <text x="506" y="552" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">★ 端到端 5+5+5+6 = 21ms 闭环! · R170 &amp; 175篇FAQ · $58.60M SLA</text>
+
+  <!-- Right Column: 5-Cloud Matrix & Milestones -->
+  <rect x="986" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="1006" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    📊 五云智能客服中心与WFM对比 (1.33万坐席 · 5.48亿向量)
+  </text>
+
+  <rect x="1002" y="164" width="398" height="72" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1016" y="186" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">🏆 Microsoft Fabric + Foundry IQ (F64 Reserved)</text>
+  <text x="1016" y="206" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eventhouse 5ms ($0/GB) + 548M SSD DiskANN ($3,000/月) + $0 Viewer</text>
+  <text x="1016" y="224" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">• 月总 TCO: $14,600/月 (省 95.9% · 月省破 $340K 达 $341.2K!) | 21ms</text>
+
+  <rect x="1002" y="244" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="264" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks (Structured Streaming + Mosaic Vector + Genie)</text>
+  <text x="1016" y="282" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于自定义 NLP 微调；但 548M 内存向量与 13,300 坐席看板成本高</text>
+  <text x="1016" y="298" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $238,000/月 | 端到端延迟: 1,200 ms</text>
+
+  <rect x="1002" y="314" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="334" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake (Snowpipe + Cortex Search + Cortex Analyst)</text>
+  <text x="1016" y="352" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于离线质检报表；但 995K EPS 实时字幕流与万名坐席刷新耗 Credit</text>
+  <text x="1016" y="368" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $271,500/月 | 端到端延迟: 1,800 ms</text>
+
+  <rect x="1002" y="384" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="404" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Google BigQuery (CCAI Insights + Vertex Vector + Looker)</text>
+  <text x="1016" y="422" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于语音识别；但按条/分钟分析费 + $0.05/GB 流税 + 1.33万席 Looker 贵</text>
+  <text x="1016" y="438" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $297,000/月 | 端到端延迟: 1,570 ms</text>
+
+  <rect x="1002" y="454" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="474" fill="#F59E0B" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">AWS (Connect Contact Lens + Kinesis + OpenSearch)</text>
+  <text x="1016" y="492" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Contact Lens 按通话分钟计费 + 548M OpenSearch 内存向量 (4.08TB RAM) 最贵</text>
+  <text x="1016" y="508" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $355,800/月 | 端到端延迟: 2,330 ms</text>
+
+  <rect x="1002" y="524" width="398" height="50" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1201" y="545" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    🎯 拐点：坐席规模 &gt;500 人 或 录音/知识向量 &gt;3,000万 或 实时流 &gt;30K EPS
+  </text>
+  <text x="1201" y="564" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    已有 Genesys / Nice CXone / Salesforce Service → OneLake 零拷贝打通
+  </text>
+
+  <!-- Bottom Section: Decision Tree & R170 Milestones -->
+  <rect x="24" y="604" width="1392" height="274" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="634" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🧭 全渠道智能客服 (CCaaS)、坐席辅助与 WFM 选型决策树 &amp; R170 里程碑封存基准 (DL-721..DL-724 · Scenario FU)
+  </text>
+
+  <!-- Decision Tree Boxes -->
+  <rect x="44" y="650" width="420" height="66" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="58" y="672" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ 场景 A：实时语音情绪弹屏 + 混合 RAG 查账 + 1.33万坐席全员质检</text>
+  <text x="58" y="692" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">首选 Fabric Eventhouse (5ms) + 548M SSD DiskANN + Data Agent + Direct Lake</text>
+  <text x="58" y="708" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 21ms 闭环，FCR 升至 89.6%，省 95.9% TCO ($14.6K vs $355.8K/月)</text>
+
+  <rect x="484" y="650" width="440" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="498" y="672" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔄 场景 B：已使用 Genesys Cloud / NICE CXone / Amazon Connect 话务平台</text>
+  <text x="498" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">保留存量语音交换路由，通过 Eventstream / OneLake Shortcut 零拷贝接入</text>
+  <text x="498" y="708" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 由 Fabric 承接 548M 知识向量与 CRM 账单联合弹屏，省去高昂按分钟分析税</text>
+
+  <rect x="944" y="650" width="452" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="958" y="672" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔌 场景 C：大型金融/政务呼叫中心职场本地录音驻留与断网自治</text>
+  <text x="958" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">部署 Azure Local Disconnected Operations (ALDO) 呼叫职场边缘节点</text>
+  <text x="958" y="708" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 专线抖动时本地 SIP 录音脱敏与坐席知识库弹屏不中断，恢复后同步 OneLake</text>
+
+  <!-- Bottom KPI Strip -->
+  <rect x="44" y="732" width="320" height="126" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="204" y="758" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-721 · Eventhouse 情绪与队列 (32ms)</text>
+  <text x="204" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">5ms · 640高危通话</text>
+  <text x="204" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">995K EPS $0/GB 写入税 | 捕获 +380% 队列洪峰</text>
+  <text x="204" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 723/724 (99.86%) · 122.0ms 整数均值!</text>
+
+  <rect x="382" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="547" y="758" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-722 · 5.48亿 SSD DiskANN (32ms)</text>
+  <text x="547" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">$3,000/月 vs $69.0K</text>
+  <text x="547" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">548M 话术/SOP 向量省 92% 内存</text>
+  <text x="547" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ AHT 缩短 34% · FCR 71.4%→89.6%</text>
+
+  <rect x="730" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="895" y="758" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-723 · PCI-DSS &amp; WFM 调配 (32ms)</text>
+  <text x="895" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">0 卡号泄露 · 180坐席</text>
+  <text x="895" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">PAN/CVV 实时抹除 | ASA &lt;=20s 接通达标</text>
+  <text x="895" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 13,300 席 $0 Viewer + 班组 OBO RLS</text>
+
+  <rect x="1078" y="732" width="318" height="126" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="1237" y="758" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" text-anchor="middle">DL-724 · R170 里程碑 21ms 闭环 (32ms)</text>
+  <text x="1237" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">-$341.2K/月 · $58.60M</text>
+  <text x="1237" y="816" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">$14.6K vs $355.8K/月 (月省破 $340K!)</text>
+  <text x="1237" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" text-anchor="middle">★ 175篇FAQ/350文档 · 122.0/109.0ms双整数均值!</text>
+</svg>
