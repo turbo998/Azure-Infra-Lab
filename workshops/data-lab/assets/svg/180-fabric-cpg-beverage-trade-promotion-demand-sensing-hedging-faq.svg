@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad180" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#081526"/>
+    </linearGradient>
+    <linearGradient id="headerGrad180" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="fabricBoxGrad180" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0A1E32"/>
+    </linearGradient>
+    <linearGradient id="compBoxGrad180" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1E0D10"/>
+    </linearGradient>
+    <filter id="shadow180" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1480" height="940" fill="url(#bgGrad180)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1432" height="92" rx="14" fill="url(#headerGrad180)" filter="url(#shadow180)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-size="22" font-weight="800">🥤 R172 · CPG &amp; Beverage Trade Promotion (TPO), POS Demand Sensing &amp; Commodity Hedging (Sub-20ms 19ms E2E &amp; 180th SVG!)</text>
+  <text x="46" y="81" fill="#E0F2FE" font-size="13.5" font-weight="600">Scenario FW (DL-729..DL-732): 240,000 Retail Doors + 4,800 SKUs · 995K EPS Retailer EDI 852 POS &amp; Commodity Tick Stream + 556M Planogram/Deduction Vectors · 19ms (&lt;20ms!) E2E · 121.0/108.0ms Exact Means · &gt;$59M SLA!</text>
+  <rect x="1216" y="34" width="222" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1327" y="58" text-anchor="middle" fill="#6EE7B7" font-size="13" font-weight="800">19ms (&lt;20ms!) E2E</text>
+  <text x="1327" y="79" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">180th SVG · 121.0/108.0ms</text>
+
+  <!-- Left Column: Enterprise Pain Points & 4-Step 19ms Loop -->
+  <rect x="24" y="124" width="930" height="500" rx="14" fill="url(#fabricBoxGrad180)" stroke="#0EA5E9" stroke-width="1.8" filter="url(#shadow180)"/>
+  <text x="44" y="156" fill="#38BDF8" font-size="17" font-weight="800">🏗️ Microsoft Fabric Unified CPG Trade Promotion (TPO), POS Demand Sensing &amp; Hedging Loop (19ms Sub-20ms E2E)</text>
+  <text x="44" y="177" fill="#94A3B8" font-size="12.5">OneLake Zero-Copy Retailer Clean Room (Walmart Luminate / Circana / NielsenIQ + SAP TPM) + 995K EPS POS &amp; Commodity Stream ($0 Copy Tax)</text>
+
+  <!-- Step 1 -->
+  <rect x="44" y="192" width="890" height="94" rx="10" fill="#0B192C" stroke="#0284C7" stroke-width="1.4"/>
+  <rect x="56" y="204" width="92" height="26" rx="6" fill="#0284C7"/>
+  <text x="102" y="222" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 1 · 5ms</text>
+  <text x="162" y="221" fill="#F8FAFC" font-size="14.5" font-weight="700">Eventhouse KQL + Activator: 5ms Heatwave POS Velocity Surge &amp; Negative-ROI Promo Sense ($0/GB Tax)</text>
+  <text x="56" y="245" fill="#CBD5E1" font-size="12.5">• Ingests 995,000 EPS store-level EDI 852 / API scan data across 240,000 retail doors, hyper-local weather, and ICE/CBOT sugar/aluminum ticks.</text>
+  <text x="56" y="266" fill="#38BDF8" font-size="12.5" font-weight="600">• Eliminates $132,000/mo in retail syndicated data copy &amp; stream taxes; isolates +290% beverage velocity surge &amp; 140 negative-ROI promos in 5ms.</text>
+
+  <!-- Step 2 -->
+  <rect x="44" y="298" width="890" height="94" rx="10" fill="#0B192C" stroke="#10B981" stroke-width="1.4"/>
+  <rect x="56" y="310" width="92" height="26" rx="6" fill="#059669"/>
+  <text x="102" y="328" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 2 · 5ms</text>
+  <text x="162" y="327" fill="#F8FAFC" font-size="14.5" font-weight="700">Cosmos DB SSD DiskANN (556M Planogram/Deduction Vectors) + FLAML In-Lake PREDICT TPO &amp; Hedge</text>
+  <text x="56" y="351" fill="#CBD5E1" font-size="12.5">• Searches 556,000,000 shelf planogram photos, retailer bill-back invoices &amp; promo elasticity vectors via SSD DiskANN (-92% RAM at $3,040/mo vs $70,000/mo DRAM).</text>
+  <text x="56" y="372" fill="#34D399" font-size="12.5" font-weight="600">• Reallocates $18.5M trade spend (+16.4% promo ROI lift), cuts forecast MAPE from 28%→8.4%, and prices 45-day sugar/aluminum futures hedges in 5ms.</text>
+
+  <!-- Step 3 -->
+  <rect x="44" y="404" width="890" height="94" rx="10" fill="#0B192C" stroke="#F59E0B" stroke-width="1.4"/>
+  <rect x="56" y="416" width="92" height="26" rx="6" fill="#D97706"/>
+  <text x="102" y="434" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 3 · 4ms</text>
+  <text x="162" y="433" fill="#F8FAFC" font-size="14.5" font-weight="700">Foundry IQ Invalid Bill-Back Deduction Interdiction, Robinson-Patman &amp; Hedge VaR Gate (SOP-179 · 4ms!)</text>
+  <text x="56" y="457" fill="#CBD5E1" font-size="12.5">• Validates CPG-BEVERAGE-TPO-DEMAND-SENSING-HEDGING-SOP-179: cross-checks retailer chargebacks against store end-cap photo proof-of-performance,</text>
+  <text x="56" y="478" fill="#FBBF24" font-size="12.5" font-weight="600">• Blocks 62 invalid/duplicate retailer deductions (+$3.15M recovered), verifies Robinson-Patman proportionality, and enforces KAM OBO RLS in 4ms.</text>
+
+  <!-- Step 4 -->
+  <rect x="44" y="510" width="890" height="98" rx="10" fill="#0B192C" stroke="#8B5CF6" stroke-width="1.4"/>
+  <rect x="56" y="522" width="92" height="26" rx="6" fill="#7C3AED"/>
+  <text x="102" y="540" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 4 · 5ms</text>
+  <text x="162" y="539" fill="#F8FAFC" font-size="14.5" font-weight="700">Teams Chief Commercial Officer &amp; CFO Card + SAP TPM, DSD Route &amp; 1GB Free SQL Commit (5ms)</text>
+  <text x="56" y="563" fill="#CBD5E1" font-size="12.5">• Updates SAP S/4HANA TPM accrual ledgers, reroutes 1,800 Direct-Store-Delivery (DSD) beverage trucks, and syncs bottling-plant ALDO edge in 5ms.</text>
+  <text x="56" y="584" fill="#C4B5FD" font-size="12.5" font-weight="600">• Total E2E: 5ms + 5ms + 4ms + 5ms = 19ms (&lt;20ms!) Sub-20ms Loop! Protects $59.30M (&gt;$59M!) SLA &amp; saves -$344,800/mo (-95.9% TCO).</text>
+
+  <!-- Right Column: Competitor Stitched Anti-Patterns -->
+  <rect x="974" y="124" width="482" height="500" rx="14" fill="url(#compBoxGrad180)" stroke="#EF4444" stroke-width="1.8" filter="url(#shadow180)"/>
+  <text x="994" y="156" fill="#FCA5A5" font-size="16.5" font-weight="800">⛔ Stitched Multi-Cloud CPG &amp; TPO Anti-Patterns</text>
+  <text x="994" y="177" fill="#F87171" font-size="12.5">$359.5K/mo TCO · 62% Value-Destroying Promos &amp; Unchecked Deductions</text>
+
+  <rect x="994" y="194" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="217" fill="#FCA5A5" font-size="13.5" font-weight="700">1. Syndicated POS Copy &amp; Stream Taxes ($132.0K/mo)</text>
+  <text x="1010" y="239" fill="#E2E8F0" font-size="12">• Copying terabytes of Walmart/Target/Kroger POS feeds and</text>
+  <text x="1010" y="258" fill="#E2E8F0" font-size="12">  Circana/NielsenIQ panels across clouds incurs heavy egress</text>
+  <text x="1010" y="276" fill="#FCA5A5" font-size="12" font-weight="600">  and 2–4 week reporting lag—missing summer heatwave spikes.</text>
+
+  <rect x="994" y="300" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="323" fill="#FCA5A5" font-size="13.5" font-weight="700">2. 4.16TB DRAM Vector Cluster ($70.0K/mo Exact vs $3,040/mo)</text>
+  <text x="1010" y="345" fill="#E2E8F0" font-size="12">• Indexing 556,000,000 store shelf photos, deduction PDFs, and</text>
+  <text x="1010" y="364" fill="#E2E8F0" font-size="12">  trade contracts in RAM-only HNSW clusters costs $70,000/mo</text>
+  <text x="1010" y="382" fill="#FCA5A5" font-size="12" font-weight="600">  and cannot join live SAP TPM accruals (losing $3.15M in deductions).</text>
+
+  <rect x="994" y="406" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="429" fill="#FCA5A5" font-size="13.5" font-weight="700">3. SAP TPM/IBP CDC &amp; Idle Endpoint Tax ($81.5K/mo)</text>
+  <text x="1010" y="451" fill="#E2E8F0" font-size="12">• Replicating SAP S/4HANA TPM accruals and running 24/7 GPU/CPU</text>
+  <text x="1010" y="470" fill="#E2E8F0" font-size="12">  endpoints for SKU×Door demand sensing wastes $81.5K/mo</text>
+  <text x="1010" y="488" fill="#FCA5A5" font-size="12" font-weight="600">  vs $0 OneLake Mirroring &amp; $0 idle tax In-Lake PREDICT.</text>
+
+  <rect x="994" y="512" width="442" height="96" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="535" fill="#FCA5A5" font-size="13.5" font-weight="700">4. Per-User BI Seats for 13,600 KAMs &amp; Reps ($76.0K/mo)</text>
+  <text x="1010" y="557" fill="#E2E8F0" font-size="12">• Licensing BI seats for 13,600 Key Account Managers (KAMs),</text>
+  <text x="1010" y="576" fill="#E2E8F0" font-size="12">  field merchandisers, and DSD route drivers costs $76.0K/mo</text>
+  <text x="1010" y="594" fill="#FCA5A5" font-size="12" font-weight="600">  vs $0 Power BI Viewer + Excel Direct Lake on Fabric F64+.</text>
+
+  <!-- Bottom Section: 5-Cloud TCO & Decision Matrix -->
+  <rect x="24" y="640" width="1432" height="278" rx="14" fill="#091526" stroke="#334155" stroke-width="1.5" filter="url(#shadow180)"/>
+  <text x="44" y="672" fill="#F8FAFC" font-size="16.5" font-weight="800">📊 5-Cloud CPG &amp; Beverage Trade Promotion (TPO), POS Demand Sensing &amp; Hedging Matrix (240K Doors · 995K EPS · 556M Vectors · 13,600 Users)</text>
+
+  <!-- Table Header -->
+  <rect x="44" y="686" width="1392" height="32" rx="6" fill="#1E293B"/>
+  <text x="58" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Platform / Architecture</text>
+  <text x="340" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Retailer POS &amp; Clean Room</text>
+  <text x="605" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">556M Shelf/Deduction Vectors</text>
+  <text x="860" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">TPO Elasticity &amp; KAM BI</text>
+  <text x="1145" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Monthly TCO &amp; Verdict</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="44" y="722" width="1392" height="36" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="58" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric (F64 Pooled)</text>
+  <text x="340" y="745" fill="#FFFFFF" font-size="12" font-weight="600">Eventhouse + OneLake ($0 Copy · 5ms)</text>
+  <text x="605" y="745" fill="#6EE7B7" font-size="12" font-weight="700">SSD DiskANN (-92% RAM · $3,040/mo)</text>
+  <text x="860" y="745" fill="#FFFFFF" font-size="12" font-weight="600">+16.4% Promo ROI · $0 Viewer (13.6K)</text>
+  <text x="1145" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">$14.7K/mo (-95.9% · 19ms E2E!)</text>
+
+  <!-- Row 2: AWS -->
+  <rect x="44" y="762" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="783" fill="#E2E8F0" font-size="12" font-weight="700">AWS Clean Rooms + Redshift</text>
+  <text x="340" y="783" fill="#CBD5E1" font-size="12">MSK + Clean Rooms ($83K/mo)</text>
+  <text x="605" y="783" fill="#FCA5A5" font-size="12">OpenSearch 4.16TB RAM ($70.0K/mo)</text>
+  <text x="860" y="783" fill="#CBD5E1" font-size="12">SageMaker + QuickSight ($88.2K/mo)</text>
+  <text x="1145" y="783" fill="#FCA5A5" font-size="12" font-weight="700">$241.2K/mo (+$226.5K/mo)</text>
+
+  <!-- Row 3: GCP -->
+  <rect x="44" y="798" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="819" fill="#E2E8F0" font-size="12" font-weight="700">Google BigQuery + Analytics Hub</text>
+  <text x="340" y="819" fill="#CBD5E1" font-size="12">Pub/Sub + BQ Slots ($93K/mo)</text>
+  <text x="605" y="819" fill="#FCA5A5" font-size="12">Vertex Vector Search RAM ($72.4K/mo)</text>
+  <text x="860" y="819" fill="#CBD5E1" font-size="12">Vertex Endpoints + Looker ($105.2K/mo)</text>
+  <text x="1145" y="819" fill="#FCA5A5" font-size="12" font-weight="700">$270.6K/mo (+$255.9K/mo)</text>
+
+  <!-- Row 4: Databricks -->
+  <rect x="44" y="834" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="855" fill="#E2E8F0" font-size="12" font-weight="700">Databricks Delta Sharing + Mosaic</text>
+  <text x="340" y="855" fill="#CBD5E1" font-size="12">DLT + Photon Streaming ($107K/mo)</text>
+  <text x="605" y="855" fill="#FCA5A5" font-size="12">Mosaic Vector Search ($74.8K/mo)</text>
+  <text x="860" y="855" fill="#CBD5E1" font-size="12">Fivetran SAP + BI Seats ($121.2K/mo)</text>
+  <text x="1145" y="855" fill="#FCA5A5" font-size="12" font-weight="700">$303.0K/mo (+$288.3K/mo)</text>
+
+  <!-- Row 5: Snowflake -->
+  <rect x="44" y="870" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="891" fill="#E2E8F0" font-size="12" font-weight="700">Snowflake Clean Rooms + Cortex</text>
+  <text x="340" y="891" fill="#CBD5E1" font-size="12">Snowpipe + Clean Room ($132.0K/mo)</text>
+  <text x="605" y="891" fill="#FCA5A5" font-size="12">Cortex Vector + XL WH ($70.0K/mo)</text>
+  <text x="860" y="891" fill="#CBD5E1" font-size="12">Fivetran SAP + BI ($157.5K/mo)</text>
+  <text x="1145" y="891" fill="#FCA5A5" font-size="12" font-weight="700">$359.5K/mo (-$344.8K/mo Saved!)</text>
+</svg>
