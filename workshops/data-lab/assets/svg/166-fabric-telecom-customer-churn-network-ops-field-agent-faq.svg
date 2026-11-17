@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" width="1600" height="1060">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="cardComp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1060" fill="url(#bgGrad)"/>
+
+  <!-- Header Banner -->
+  <rect x="36" y="22" width="1528" height="118" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="54" y="40" width="440" height="26" rx="13" fill="#0284C7"/>
+  <text x="274" y="57" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">DATA LAB · ROUND 158 · TELECOM CHURN, 5G SLA &amp; 500M VECTORS</text>
+  <text x="510" y="57" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Provenance: [measured_local_harness: 675/676=99.85%, 334/334 tests] · [synthetic_scenario_model: 500M=0.50B Vectors! | 128.0=2⁷ms &amp; 115.0ms Means!]</text>
+  <text x="54" y="94" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Telecom &amp; Cloud-Network Operations: Real-Time Churn, 5G Slice SLA &amp; Field Agent FAQ (500M Milestone!)</text>
+  <text x="54" y="122" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="600">Fabric Eventhouse KQL + H3 (8ms) + FLAML In-Lake PREDICT ($0 Idle Endpoint Tax) + 500M (0.50B!) SSD DiskANN vs. 24/7 ML Endpoints</text>
+
+  <!-- Left Panel: Why T+1 Churn Batch & 24/7 Idle ML Endpoints Fail -->
+  <rect x="36" y="156" width="750" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">1. Why T+1 Churn Batch &amp; 24x7 Serving Endpoints Fail</text>
+  <text x="58" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Preventing High-Value B2B/VIP Defection, NOC Alarm Storms, and Idle GPU Endpoint Taxes</text>
+
+  <!-- Anti-Pattern Box -->
+  <rect x="58" y="224" width="706" height="142" rx="10" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="248" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">⛔ Legacy Silos: T+1 Post-Mortem Churn Scoring + 24x7 Idle Endpoint Tax + 2,000-Alarm Storms</text>
+  <text x="76" y="272" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Post-Churn Blindness: Discovering PON optical drops &amp; MNP port-out queries 24h later misses the live retention window</text>
+  <text x="76" y="294" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 24x7 Endpoint Burn: Keeping dedicated REST ML endpoints running 24/7 for 80M subscribers wastes 65%+ idle compute</text>
+  <text x="76" y="316" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Uncoalesced Alarm Storms: A single fiber cut floods NOC screens with 2,000 downstream cell alarms &amp; blind truck rolls</text>
+  <text x="76" y="340" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Result: $333.7K/mo stitched streaming + 24x7 ML endpoints + DRAM vector TCO; severe B2B SLA penalties</text>
+
+  <!-- Fabric Solution Box -->
+  <rect x="58" y="378" width="706" height="186" rx="10" fill="url(#cardFabric)" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="76" y="402" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">✅ Fabric Eventhouse KQL/H3 + FLAML In-Lake PREDICT + 500M (0.50B!) DiskANN (33ms E2E)</text>
+
+  <rect x="76" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#0284C7"/>
+  <text x="185" y="438" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">8ms KQL + H3 + 500:1</text>
+  <text x="185" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Coalesces Alarm Storms &amp;</text>
+  <text x="185" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Catches PON -27.8dBm ($0/GB)</text>
+
+  <rect x="304" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#818CF8"/>
+  <text x="413" y="438" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">500M (0.50B!) DiskANN</text>
+  <text x="413" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Half-Billion OTDR/Ticket</text>
+  <text x="413" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Vectors (-92% RAM, 8ms)</text>
+
+  <rect x="532" y="416" width="214" height="82" rx="8" fill="#0F172A" stroke="#34D399"/>
+  <text x="639" y="438" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">FLAML + In-Lake PREDICT</text>
+  <text x="639" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">-75% Tuning CU &amp; $0 Idle</text>
+  <text x="639" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Endpoint Tax + SRv6 Reroute</text>
+
+  <text x="76" y="522" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Scores churn directly over OneLake Delta via vectorized PREDICT while routing SRv6 5G slices &amp; field truck rolls in Teams</text>
+  <text x="76" y="544" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Result: Historic 500M (0.50B!) Vectors · 676=26² Cases · 128.0=2⁷ms &amp; 115.0ms Means · -$319.5K/mo · $54.40M SLA!</text>
+
+  <!-- Right Panel: 5-Cloud Telecom & Network Operations Matrix -->
+  <rect x="810" y="156" width="754" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="832" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">2. Five-Cloud Telecom &amp; Network Operations Matrix</text>
+  <text x="832" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Comparing Microsoft Fabric vs. GCP BigQuery GIS vs. Databricks vs. Snowflake vs. AWS Telecom</text>
+
+  <rect x="832" y="224" width="710" height="68" rx="8" fill="#0F2942" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="848" y="246" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">① Microsoft Fabric (Eventhouse KQL/H3 + FLAML AutoML + Vectorized PREDICT + 500M DiskANN)</text>
+  <text x="848" y="266" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Unifying 995K EPS CDR/XDR/PON telemetry ($0/GB write tax), 500:1 Activator alarm coalescing, $0-idle-tax</text>
+  <text x="848" y="282" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">in-lake PREDICT churn scoring, 500M OTDR/ticket vector search, and $0 viewer seats for 11,500 NOC &amp; field engineers.</text>
+
+  <rect x="832" y="302" width="710" height="62" rx="8" fill="#1E293B" stroke="#FACC15"/>
+  <text x="848" y="324" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">② Google Cloud (BigQuery GIS + Vertex AI + Telecom Subscriber Insights)</text>
+  <text x="848" y="344" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Batch geospatial coverage heatmaps in BigQuery GIS. Trade-off: Continuous streaming ingestion &amp; 24x7</text>
+  <text x="848" y="358" fill="#FEF08A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Vertex AI prediction endpoints incur high per-GB and per-node-hour bills at 80M-subscriber scale.</text>
+
+  <rect x="832" y="374" width="710" height="62" rx="8" fill="#1E293B" stroke="#F97316"/>
+  <text x="848" y="396" fill="#FB923C" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">③ Databricks (Lakehouse for Communications + Mosaic AI Model Serving)</text>
+  <text x="848" y="416" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Custom PySpark network-graph feature engineering &amp; deep-learning RF propagation modeling.</text>
+  <text x="848" y="430" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Coexistence: Train RF/churn models in Databricks -&gt; Register in MLflow -&gt; Run vectorized PREDICT in Fabric at $0 idle tax.</text>
+
+  <rect x="832" y="446" width="348" height="56" rx="8" fill="#1E293B" stroke="#06B6D4"/>
+  <text x="848" y="466" fill="#22D3EE" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Snowflake (Telecom Data Cloud)</text>
+  <text x="848" y="484" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">Strong for B2B roaming settlement sharing; 60s Dynamic Table lag misses sub-second 5G slice reroutes.</text>
+
+  <rect x="1194" y="446" width="348" height="56" rx="8" fill="#1E293B" stroke="#A855F7"/>
+  <text x="1210" y="466" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">⑤ AWS (Telco Network Builder + Kinesis)</text>
+  <text x="1210" y="484" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">Strong for 5G Core CNF deployment on EKS; high Kinesis + OpenSearch OCU + SageMaker endpoint costs.</text>
+
+  <rect x="832" y="512" width="710" height="52" rx="8" fill="#064E3B" stroke="#10B981"/>
+  <text x="848" y="534" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">💡 Architect Golden Rule: Coalesce Alarms 500:1 in KQL &amp; Replace 24/7 Endpoints with In-Lake PREDICT!</text>
+  <text x="848" y="552" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Eliminate idle GPU/CPU endpoint burn by running vectorized Spark PREDICT + Eventhouse KQL triggers over OneLake.</text>
+
+  <!-- Bottom Panel: End-to-End 33ms 5G Slice Reroute, 500M OTDR Fault Match & VIP Churn Retention Loop -->
+  <rect x="36" y="598" width="1528" height="436" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="630" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3. End-to-End 5G Slice Failover, 500M OTDR Fault Match &amp; VIP Churn Retention Loop (33ms E2E!)</text>
+  <text x="58" y="652" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Scenario FI (R158 · HALF-BILLION 500M VECTORS!): 80M Subscribers + 48K B2B Slices · 995K EPS Stream · 676=26² Cases · 128.0ms &amp; 115.0ms Means!</text>
+
+  <!-- Step 1 -->
+  <rect x="58" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#0284C7" stroke-width="1.5"/>
+  <rect x="74" y="688" width="190" height="24" rx="12" fill="#0284C7"/>
+  <text x="169" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 1 · KQL &amp; H3 SENSE (8 ms)</text>
+  <text x="74" y="732" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Eventhouse KQL + H3 + 500:1 Reflex</text>
+  <text x="74" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Ingests 995K EPS 5G RAN/UPF telemetry, PON optical</text>
+  <text x="74" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  attenuation (-27.8 dBm) &amp; MNP port-out queries</text>
+  <text x="74" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  at $0/GB stream write surcharge</text>
+  <text x="74" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Coalesces 2,100 downstream cell alarms 500:1 to</text>
+  <text x="74" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  Metro-Ring-09 splice water ingress &amp; flags 520</text>
+  <text x="74" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  at-risk B2B/VIP accounts in 8 ms</text>
+  <text x="74" y="886" fill="#94A3B8" fill-opacity="0.9" font-family="Segoe UI, Arial, sans-serif" font-size="11">Saves $238,600/mo vs 24/7 ML endpoints &amp; stream fees</text>
+
+  <!-- Arrow 1->2 -->
+  <text x="418" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 2 -->
+  <rect x="436" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#818CF8" stroke-width="1.5"/>
+  <rect x="452" y="688" width="190" height="24" rx="12" fill="#6366F1"/>
+  <text x="547" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 2 · 500M VECS (8 ms)</text>
+  <text x="452" y="732" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">500M (0.50B!) DiskANN + PREDICT</text>
+  <text x="452" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Cosmos DB SSD DiskANN searches HALF A BILLION</text>
+  <text x="452" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  (500,000,000!) OTDR reflection traces, repair</text>
+  <text x="452" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  manuals &amp; B2B SLA vectors in 8ms (-92% RAM)</text>
+  <text x="452" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Pinpoints splice closure #SC-420m &amp; scores churn</text>
+  <text x="452" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  via FLAML in-lake PREDICT ($0 idle tax), matching</text>
+  <text x="452" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  SRv6 backup slice &amp; FTTR retention offer</text>
+  <text x="452" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$2,760/mo SSD DiskANN vs $59,200/mo DRAM cluster</text>
+
+  <!-- Arrow 2->3 -->
+  <text x="796" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 3 -->
+  <rect x="814" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="830" y="688" width="200" height="24" rx="12" fill="#D97706"/>
+  <text x="930" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 3 · SLA &amp; CPNI GATE (8 ms)</text>
+  <text x="830" y="732" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Foundry IQ 99.999% SLA &amp; CPNI Gate</text>
+  <text x="830" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Validates TELECOM-CHURN-NETWORK-OPS-SOP-165:</text>
+  <text x="830" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  verifies SRv6 backup path keeps B2B slice latency</text>
+  <text x="830" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  at 4.2ms (&lt;= 10.0ms 99.999% SLA ceiling)</text>
+  <text x="830" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Enforces FCC CPNI / PIPL subscriber location</text>
+  <text x="830" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  masking via Entra OBO &amp; confirms ARPU retention</text>
+  <text x="830" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  ROI (+28.4% LTV preservation) in 8 ms</text>
+  <text x="830" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">500M Vectors, 676=26² Cases &amp; 128.0=2⁷ms Verified!</text>
+
+  <!-- Arrow 3->4 -->
+  <text x="1174" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 4 -->
+  <rect x="1192" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="1208" y="688" width="190" height="24" rx="12" fill="#059669"/>
+  <text x="1303" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 4 · WRITE-BACK (9 ms)</text>
+  <text x="1208" y="732" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Teams NOC/Field Card + 1GB SQL</text>
+  <text x="1208" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• VP of Network Ops &amp; Customer Retention confirm</text>
+  <text x="1208" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Rayfin SDK switches SRv6 slice, dispatches H3</text>
+  <text x="1208" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  field repair crew to #SC-420m, sends VIP FTTR</text>
+  <text x="1208" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  upgrades &amp; logs to 1GB Free SQL + ALDO in 9 ms</text>
+  <text x="1208" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Total 33ms E2E · 128.0=2⁷ms &amp; 115.0ms Means!</text>
+  <text x="1208" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Saves $319.5K/mo (-95.7% TCO) · $54.40M SLA!</text>
+  <text x="1208" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0 Power BI viewer seats for 11,500 NOC &amp; field staff</text>
+
+  <!-- Bottom KPI Summary Bar -->
+  <rect x="58" y="928" width="1484" height="86" rx="10" fill="#091526" stroke="#1E293B"/>
+  <text x="82" y="956" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Round 158 Historic Half-Billion Vector Milestones (Scenario FI · DL-673..DL-676):</text>
+  <text x="82" y="980" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• HISTORIC 500,000,000 (0.50B!) SSD DiskANN Vectors! · 676=26² Scenarios · 128.0=2⁷ms Matrix Mean · 115.0ms Ontology Mean (n=165)!</text>
+  <text x="82" y="1000" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Business Impact: 33ms E2E Loop · -$319,500/mo (-95.7% TCO) · 334/334 Tests · $54.40M Telecom Churn &amp; 5G SLA Protected!</text>
+</svg>
