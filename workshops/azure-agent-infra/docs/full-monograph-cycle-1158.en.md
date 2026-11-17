@@ -1,6 +1,6 @@
 # Cycle #1158 Monograph Addendum (Cloud-native Agent Infra)
 
-- Cycle ID: 1158
+- Cycle ID: 1153
 - Date window: 2026-11-12 23:00 ~ 2026-11-13 05:15
 - Topic scope: Cloud-native Agent Runtime/Sandbox, AI Gateway, MCP/Gateway orchestration and tenant I/O throttle governance
 - Exclusion: no semiconductor/ALD precursor topics
@@ -20,4 +20,4 @@ This addendum captures the 2026 official release trajectory:
 - Runtime governance: APIM MCP/Gateway telemetry and content-safety controls become mandatory L4 admission constraints.
 - Cost/throughput: E2B branch keeps stronger rps-per-cluster while absorbing explicit policy-governance overhead in TCO scoring.
 
-Summary 997: In production architecture terms, platform hard boundaries and retry-storm-budget-governed runtime paths are now first-class primitives for long-lived autonomous workloads.
+Summary 992: In production architecture terms, platform hard boundaries and retry-storm-budget-governed runtime paths are now first-class primitives for long-lived autonomous workloads.

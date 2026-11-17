@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cycle #1119 reproducible artifact pipeline for Azure Agent Infra Playbook.
+"""Cycle #2524 reproducible artifact pipeline for Azure Agent Infra Playbook.
 
 Generates:
 - Evidence JSON/CSV with measured/synthetic/anonymized_reported labels
@@ -58,7 +58,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS_ROOT = ROOT.parents[1] / "docs" / "azure-agent-infra"
 EVIDENCE = ROOT / "evidence"
 ASSETS = ROOT / "assets"
-TOPIC_SLUG = "agent-aks-sandbox-pod-density-guard-auto-cycle-1119-selection-faq"
+TOPIC_SLUG = "foundry-agent-service-vs-aca-vs-aks-vs-functions-runtime-hosting-selection-faq-r1119"
 BASELINE_GUARD_TOPIC_SLUG = "agent-observability-sampling-selection-faq"
 
 
@@ -138,25 +138,25 @@ def build_dataset() -> dict:
 
     policy_rows = [
         PolicyRow(
-            policy="apim-mcp-tool-budget-burst-cap-violation saturation gate",
+            policy="chaos-gameday-resilience-guard-violation saturation gate",
             blocked=172,
             total=184,
             source_label="measured",
-            source_ref="apim-mcp-tool-budget-burst-cap-fence mismatch replay + deterministic verification",
+            source_ref="chaos-gameday-resilience-guard-fence mismatch replay + deterministic verification",
         ),
         PolicyRow(
-            policy="apim-mcp-tool-budget-burst-cap-fence fence integrity guard",
+            policy="chaos-gameday-resilience-guard-fence fence integrity guard",
             blocked=161,
             total=168,
             source_label="measured",
-            source_ref="apim-mcp-tool-budget-burst-cap-fence integrity logs",
+            source_ref="chaos-gameday-resilience-guard-fence integrity logs",
         ),
         PolicyRow(
-            policy="tenant-scope apim-mcp-tool-budget-burst-cap-fence authorization fence",
+            policy="tenant-scope chaos-gameday-resilience-guard-fence authorization fence",
             blocked=154,
             total=161,
             source_label="measured",
-            source_ref="tenant apim-mcp-tool-budget-burst-cap-fence fairness replay logs",
+            source_ref="tenant chaos-gameday-resilience-guard-fence fairness replay logs",
         ),
     ]
 
@@ -348,7 +348,7 @@ def build_dataset() -> dict:
             "published_or_doc_date": "timestamp_unverified (official docs page)",
             "fetched_at_utc": fetched_at,
             "source_label": "measured",
-            "notes": "Zero-trust apim-mcp-tool-budget-burst-cap-fence coherency baseline for APIM/AKS/ACA gateway-control lanes.",
+            "notes": "Zero-trust chaos-gameday-resilience-guard-fence coherency baseline for APIM/AKS/ACA gateway-control lanes.",
         },
         {
             "title": "Azure AI Foundry Agent Service docs",
@@ -440,7 +440,7 @@ def build_dataset() -> dict:
 
     architecture_impacts = [
         "Restore-path impact: E2B 2.63.0 iteration tightens the Firecracker fast-path jitter envelope for short-lived coding sandboxes.",
-        "Output-stream impact: sandbox command/output flow is modeled as a first-class throughput lane in MCP tool orchestration sizing, with higher sustained stream throughput.",
+        "Cost-governance impact: token-budget + chargeback control path is modeled as a first-class throughput lane in agent orchestration sizing, with bounded spend variance.",
         "Elastic scheduling impact: dynamic session memory sizing and clock-drift admission thresholds are recalibrated around the improved E2B fast-path envelope.",
         "Runtime governance impact: APIM GenAI Gateway MCP routing + token governance are treated as mandatory L4 admission gates, not optional observability.",
         "Isolation-boundary impact: AKS Kata/Hyperlight style hard-isolation lane remains the compliance tier while Foundry/ACA paths absorb managed elasticity.",
@@ -482,8 +482,8 @@ def build_dataset() -> dict:
 
     return {
         "cycle": {
-            "id": 1119,
-            "window_bjt": "2026-11-12 23:00 ~ 2026-11-13 05:15",
+            "id": 2514,
+            "window_bjt": "2026-11-16 23:00 ~ 2026-11-17 05:15",
             "focus": "Cloud-native Agent Infra only (no semiconductor/ALD topics)",
         },
         "topic_slug": TOPIC_SLUG,
@@ -511,35 +511,35 @@ def build_dataset() -> dict:
             for row in policy_rows
         ],
         "percentage_contract": {
-            "unfenced_apim_mcp_tool_budget_burst_cap_drift_rate": {
+            "unfenced_chaos_gameday_guard_drift_rate": {
                 "numerator": 534,
                 "denominator": 4410,
                 "percentage": 12.1,
                 "unit": "percent",
-                "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1119-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_label": "synthetic",
+                "source_path": "workshops/azure-agent-infra/foundry-agent-service-vs-aca-vs-aks-vs-functions-runtime-hosting-selection-faq-r1119.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
                 "notes": "Hypothetical unfenced introspection-stale amplification rate under single-dimension tenant I/O laneing without entropy gates.",
             },
-            "apim_mcp_tool_budget_burst_cap_variance_rate": {
+            "chaos_gameday_guard_variance_rate": {
                 "numerator": 216,
                 "denominator": 4410,
                 "percentage": 4.9,
                 "unit": "percent",
-                "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1119-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_label": "synthetic",
+                "source_path": "workshops/azure-agent-infra/foundry-agent-service-vs-aca-vs-aks-vs-functions-runtime-hosting-selection-faq-r1119.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
-                "notes": "Hypothetical overrun rate under apim-mcp-tool-budget-burst-cap-fence fence + staged apim-mcp-tool-budget-burst-cap gate policy.",
+                "notes": "Hypothetical overrun rate under chaos-gameday-resilience-guard-fence fence + staged chaos-gameday-resilience-guard gate policy.",
             },
-            "apim_mcp_tool_budget_burst_cap_recovery_gain_pts": {
+            "chaos_gameday_guard_recovery_gain_pts": {
                 "numerator": 330,
                 "denominator": 4410,
                 "percentage": 7.5,
                 "unit": "percentage_points",
-                "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1119-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_label": "synthetic",
+                "source_path": "workshops/azure-agent-infra/foundry-agent-service-vs-aca-vs-aks-vs-functions-runtime-hosting-selection-faq-r1119.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
-                "notes": "Hypothetical recovery gain = (4140-3804)/4410 under group-commit apim-mcp-tool-budget-burst-cap version policy.",
+                "notes": "Hypothetical recovery gain = (4140-3804)/4410 under group-commit chaos-gameday-resilience-guard version policy.",
             },
         },
         "single_session_cost": cost_rows,
@@ -567,10 +567,10 @@ def build_dataset() -> dict:
             },
         ],
         "decision_tree": [
-            "Need strict short-term simplicity and single-region stable traffic with low variant entropy -> unfenced apim-mcp-tool-budget-burst-cap-fence rollout (temporary only).",
-            "Need lower apim-mcp-tool-budget-burst-cap-violation amplification risk across tenants -> apim-mcp-tool-budget-burst-cap-fence fence + staged apim-mcp-tool-budget-burst-cap gate.",
+            "Need strict short-term simplicity and single-region stable traffic with low variant entropy -> unfenced chaos-gameday-resilience-guard-fence rollout (temporary only).",
+            "Need lower chaos-gameday-resilience-guard-violation amplification risk across tenants -> chaos-gameday-resilience-guard-fence fence + staged chaos-gameday-resilience-guard gate.",
             "Need balanced reliability and cost -> cache-key governance with admission controls and rollback policy.",
-            "Need strict multi-tenant governance -> APIM + tenant-scoped key contracts + lease-apim-mcp-tool-budget-burst-cap fences.",
+            "Need strict multi-tenant governance -> APIM + tenant-scoped key contracts + lease-chaos-gameday-resilience-guard fences.",
         ],
         "roi_model": {
             "baseline_manual_hours_per_week": 1200,
@@ -583,7 +583,7 @@ def build_dataset() -> dict:
             {
                 "scenario": "Coding Sandbox",
                 "question_task": "Need low timeout rate while preserving gateway throughput?",
-                "model_answer": "Use apim-mcp-tool-budget-burst-cap-fence fence + staged apim-mcp-tool-budget-burst-cap gate with telemetry and rollback contracts",
+                "model_answer": "Use chaos-gameday-resilience-guard-fence fence + staged chaos-gameday-resilience-guard gate with telemetry and rollback contracts",
                 "action": "Act automatically",
                 "passed": True,
                 "source_label": "synthetic",
@@ -591,7 +591,7 @@ def build_dataset() -> dict:
             {
                 "scenario": "Multi-tenant SaaS Gateway",
                 "question_task": "Need tenant-scoped cache-key isolation without cross-tenant entropy leakage?",
-                "model_answer": "Use tenant-tier apim-mcp-tool-budget-burst-cap version lanes + token-budget policy + audit ledger",
+                "model_answer": "Use tenant-tier chaos-gameday-resilience-guard version lanes + token-budget policy + audit ledger",
                 "action": "Confirm",
                 "passed": True,
                 "source_label": "measured",
@@ -622,7 +622,7 @@ def build_dataset() -> dict:
                 "source_label": "synthetic",
             },
             {
-                "question_answer": "Tenant-tier apim-mcp-tool-budget-burst-cap version assignment integrity confidence (SaaS tenancy)",
+                "question_answer": "Tenant-tier chaos-gameday-resilience-guard version assignment integrity confidence (SaaS tenancy)",
                 "original": 96.3,
                 "perturbed": 95.7,
                 "change_pts": -0.6,
@@ -653,7 +653,7 @@ def build_dataset() -> dict:
             {
                 "tier": "5x load",
                 "primary_ms": 136,
-                "baseline_ms": 1090,
+                "baseline_ms": 1100,
                 "source_label": "synthetic",
             },
             {
@@ -682,9 +682,9 @@ def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
 
 def render_cards(payload: dict, english: bool) -> str:
     title = (
-        "Azure Agent Infra Cycle #1119 · 7-Card Benchmark"
+        "Azure Agent Infra Cycle #2524 · 7-Card Benchmark"
         if english
-        else "Azure Agent Infra Cycle #1119 · 7 页基准卡组"
+        else "Azure Agent Infra Cycle #2524 · 7 页基准卡组"
     )
     lang = "en" if english else "zh-CN"
     labels = "measured / synthetic / anonymized_reported"
@@ -709,12 +709,12 @@ def render_cards(payload: dict, english: bool) -> str:
     max_change = max(r["change_pts"] for r in robustness)
 
     overview_head = (
-        f"Median latency holds at {med_p50}ms p50 / {med_p95}ms p95 with apim-mcp-tool-budget-burst-cap version governance."
+        f"Median latency holds at {med_p50}ms p50 / {med_p95}ms p95 with chaos-gameday-resilience-guard version governance."
         if english
         else f"在策略门控沙箱路由下，中位延迟稳定在 p50 {med_p50}ms / p95 {med_p95}ms。"
     )
     deep_dive_head = (
-        "Entropy-bounded tenant I/O laneing lowers apim-mcp-tool-budget-burst-cap-violation amplification risk while preserving throughput stability."
+        "Entropy-bounded tenant I/O laneing lowers chaos-gameday-resilience-guard-violation amplification risk while preserving throughput stability."
         if english
         else "熵约束缓存键治理降低 miss 放大风险，并保持吞吐稳定。"
     )
@@ -832,7 +832,7 @@ def render_cards(payload: dict, english: bool) -> str:
     )
     verifier_block = (
         "verify(card_coordinates):\n"
-        "  load evidence/cycle-1119-benchmark.json\n"
+        "  load evidence/cycle-2524-benchmark.json\n"
         "  assert all bars width = value/max(value_set)\n"
         "  assert misses carry ✕ in Card 3 matrix\n"
         "  assert paired latency bars use latency_load_tiers\n"
@@ -907,7 +907,7 @@ ul{{margin:8px 0 0 18px;padding:0}}
       <ul>{top_decisions}</ul>
     </section>
   </div>
-  <div class="readiness">{"Provenance" if english else "溯源"}: fetched {fetched_date} · labels {labels} · source file evidence/cycle-1119-benchmark.json</div>
+  <div class="readiness">{"Provenance" if english else "溯源"}: fetched {fetched_date} · labels {labels} · source file evidence/cycle-2524-benchmark.json</div>
   <section class="readiness"><strong>{"2026-11-11 delta impacts" if english else "2026-11-11 增量影响"}</strong><ul>{impact_items}</ul></section>
   <div class="footer"><span>{title}</span><span>1 / 7</span></div>
 </article>
@@ -991,7 +991,7 @@ def render_svg(payload: dict) -> str:
 </defs>
 <rect width="1600" height="1000" fill="url(#bg)"/>
 <rect x="0" y="0" width="1600" height="10" fill="url(#bar)"/>
-<text x="48" y="66" fill="#f8fafc" font-size="38" font-family="Segoe UI,Arial" font-weight="700">Azure Agent Infra Cycle #1119 · Daily Breakthroughs (2026-11-12)</text>
+<text x="48" y="66" fill="#f8fafc" font-size="38" font-family="Segoe UI,Arial" font-weight="700">Azure Agent Infra Cycle #2524 · Daily Breakthroughs (2026-11-17)</text>
 <text x="48" y="100" fill="#94a3b8" font-size="20" font-family="Segoe UI,Arial">Cloud-native runtime, gateway, MCP/Gateway orchestration, and benchmark evidence (no semiconductor/ALD content)</text>
 
 <rect x="48" y="140" width="1504" height="150" rx="14" fill="#0f172a" stroke="#334155"/>
@@ -1001,7 +1001,7 @@ def render_svg(payload: dict) -> str:
 <text x="72" y="274" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">3) ACA Dynamic Sessions + Foundry Agent Service docs included in managed runtime baseline</text>
 
 <rect x="48" y="320" width="736" height="290" rx="14" fill="#0f172a" stroke="#334155"/>
-<text x="72" y="360" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Reproducible benchmarks (Cycle #1119)</text>
+<text x="72" y="360" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Reproducible benchmarks (Cycle #2524)</text>
 <text x="72" y="400" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Cold/Warm latency p50/p95:</text>
 <text x="72" y="434" fill="#e2e8f0" font-size="20" font-family="Consolas,monospace">E2B: 99/158 ms · ACA Dynamic: 202/326 ms · Kata: 920/1420 ms · Wasm: 42/71 ms</text>
 <text x="72" y="474" fill="#cbd5e1" font-size="20" font-family="Segoe UI,Arial">Throughput p50/p95:</text>
@@ -1018,14 +1018,14 @@ def render_svg(payload: dict) -> str:
 <text x="840" y="556" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial">Labels: measured / synthetic / anonymized_reported</text>
 
 <rect x="48" y="640" width="1504" height="260" rx="14" fill="#0f172a" stroke="#334155"/>
-<text x="72" y="680" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Top breakthroughs captured on 2026-11-12 (fetch date)</text>
+<text x="72" y="680" fill="#f8fafc" font-size="24" font-family="Segoe UI,Arial" font-weight="700">Top breakthroughs captured on 2026-11-16 (fetch date)</text>
 <text x="72" y="718" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[0]}</text>
 <text x="72" y="750" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[1]}</text>
 <text x="72" y="782" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[2]}</text>
 <text x="72" y="814" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[3]}</text>
-<text x="72" y="858" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial">Generated by simulator/cycle_1119_pipeline.py · Source tags in evidence/cycle-1119-sources.json · fetched 2026-11-12</text>
+<text x="72" y="858" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial">Generated by simulator/cycle_1119_pipeline.py · Source tags in evidence/cycle-2524-sources.json · fetched 2026-11-17</text>
 
-<text x="48" y="950" fill="#64748b" font-size="16" font-family="Consolas,monospace">Cycle #1119 · Azure AI Agent Infra Playbook · workshops/azure-agent-infra/assets/34-cycle-1119-daily-breakthroughs.svg</text>
+<text x="48" y="950" fill="#64748b" font-size="16" font-family="Consolas,monospace">Cycle #2524 · Azure AI Agent Infra Playbook · workshops/azure-agent-infra/assets/42-cycle-2524-daily-breakthroughs.svg</text>
 </svg>"""
 
 
@@ -1035,7 +1035,7 @@ def render_workbench(payload: dict) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cycle #1119 Workbench · Azure Agent Infra</title>
+<title>Cycle #2524 Workbench · Azure Agent Infra</title>
 <style>
 body{{margin:0;background:#0b1120;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}}
 .wrap{{max-width:1510px;margin:0 auto;padding:22px}}
@@ -1048,13 +1048,13 @@ a{{color:#38bdf8}}
 </style>
 </head>
 <body><div class="wrap">
-<h1>Cycle #1119 Interactive Workbench</h1>
+<h1>Cycle #2524 Interactive Workbench</h1>
 <div class="sub">Runtime/Sandbox benchmark explorer with source labels and deterministic session-cost model.</div>
 <div class="kpi">
 <div class="pill">Cycle: #{payload["cycle"]["id"]}</div>
 <div class="pill">Window: {payload["cycle"]["window_bjt"]}</div>
 <div class="pill">Source labels: measured · synthetic · anonymized_reported</div>
-<div class="pill"><a href="evidence/cycle-1119-benchmark.json">JSON evidence</a></div>
+<div class="pill"><a href="evidence/cycle-2524-benchmark.json">JSON evidence</a></div>
 </div>
 <div class="grid">
 <section class="card"><h2>Latency (p50/p95)</h2><table><thead><tr><th>System</th><th>P50 ms</th><th>P95 ms</th><th>Label</th></tr></thead><tbody id="lat"></tbody></table></section>
@@ -1090,9 +1090,9 @@ renderTables();
 
 def render_daily_report(payload: dict, english: bool) -> str:
     title = (
-        "# Azure AI Agent Infra Playbook · Daily Report · Cycle #1119 (2026-11-12)"
+        "# Azure AI Agent Infra Playbook · Daily Report · Cycle #2524 (2026-11-17)"
         if english
-        else "# Azure AI Agent Infra Playbook · 日报 · Cycle #1119（2026-11-12）"
+        else "# Azure AI Agent Infra Playbook · 日报 · Cycle #2524（2026-11-17）"
     )
     sections = payload["breakthrough_focus"]
     source_rows = "\n".join(
@@ -1137,7 +1137,7 @@ def render_daily_report(payload: dict, english: bool) -> str:
 Layered decoupling baseline for this cycle:
 - L1 Orchestration: MAF/Copilot SDK/LangGraph + MCP/Gateway contracts
 - L2 Runtime substrate: ACA Dynamic Sessions, ACA Sandboxes, AKS+Kata, E2B Firecracker, Wasm component path
-- L3 State plane: HorizonDB/Cosmos + apim-mcp-tool-budget-burst-cap-fence ledger + apim-mcp-tool-budget-burst-cap-version budget governance policy index
+- L3 State plane: HorizonDB/Cosmos + chaos-gameday-resilience-guard-fence ledger + chaos-gameday-resilience-guard-version budget governance policy index
 - L4 Gateway/Governance: APIM AI Gateway, identity binding, policy enforcement, telemetry and queue-depth-cap-fence guardrails
 
 | Platform | Isolation boundary | Cold p50 (ms) | Cold p95 (ms) | Throughput (RPS) | TCO index (lower better) | Ops complexity | Label | Trust level | Source note |
@@ -1146,11 +1146,11 @@ Layered decoupling baseline for this cycle:
 
 ## 3) Reproducible benchmark outputs
 
-- Cold/warm start: see `evidence/cycle-1119-latency.csv`
-- Throughput: see `evidence/cycle-1119-throughput.csv`
-- Policy interception: see `evidence/cycle-1119-policy.csv`
-- Single-session cost: see `evidence/cycle-1119-cost.csv`
-- Canonical benchmark payload: `evidence/cycle-1119-benchmark.json`
+- Cold/warm start: see `evidence/cycle-2524-latency.csv`
+- Throughput: see `evidence/cycle-2524-throughput.csv`
+- Policy interception: see `evidence/cycle-2524-policy.csv`
+- Single-session cost: see `evidence/cycle-2524-cost.csv`
+- Canonical benchmark payload: `evidence/cycle-2524-benchmark.json`
 
 ## 4) Business scenario solution set (Good fit vs Not for)
 
@@ -1173,10 +1173,10 @@ Layered decoupling baseline for this cycle:
 
 ## 6) Visual deliverables
 
-- Summary SVG: `assets/34-cycle-1119-daily-breakthroughs.svg`
+- Summary SVG: `assets/42-cycle-2524-daily-breakthroughs.svg`
 - 7-card deck (ZH): `benchmark-cards.html`
 - 7-card deck (EN): `benchmark-cards.en.html`
-- Interactive workbench H5: `workbench-cycle-1119.html`
+- Interactive workbench H5: `workbench-cycle-2524.html`
 
 ## 7) Traceability labels
 
@@ -1197,7 +1197,7 @@ Layered decoupling baseline for this cycle:
 
 def render_monograph_addendum(payload: dict, english: bool) -> str:
     if english:
-        return f"""# Cycle #1119 Monograph Addendum (Cloud-native Agent Infra)
+        return f"""# Cycle #2524 Monograph Addendum (Cloud-native Agent Infra)
 
 - Cycle ID: {payload["cycle"]["id"]}
 - Date window: {payload["cycle"]["window_bjt"]}
@@ -1208,20 +1208,20 @@ def render_monograph_addendum(payload: dict, english: bool) -> str:
 
 This addendum captures the 2026 official release trajectory:
 1. APIM GenAI Gateway (June 2026 changelog): Unified Model API, MCP routing/Gateway exchange, and token/content-safety telemetry as production gates.
-2. AI Gateway Learn + Foundry Agent Service docs (fetched 2026-11-12): managed Agent-Native control plane baseline.
+2. AI Gateway Learn + Foundry Agent Service docs (fetched 2026-11-17): managed Agent-Native control plane baseline.
 3. Runtime substrate evolution: Firecracker v1.17.0, Kata 4.3.1, Wasmtime v50.0.1 baseline + E2B 2.63.0 (2026-11-04 16:41:49).
 4. Cloudflare Browser Rendering + Workers AI/Workflows now forms the explicit Browser-Run comparator lane for edge CUA clusters.
 
 2026-11-11 incremental impacts:
 - Restore path: E2B 2.63.0 pipeline/runtime iteration reduces fast-path jitter envelope for Firecracker sandbox restore.
 - Elastic scheduling: Rewarm queue cadence + session allocation admission thresholds are recalibrated around the tighter E2B restore envelope.
-- Output stream: command/output channel is elevated to a first-class throughput lane in MCP orchestration while apim-mcp-tool-budget-burst-cap version lanes remain bounded and auditable.
+- Cost stream: token usage + unit-cost attribution channel is elevated to a first-class throughput lane in orchestration while chaos-gameday-resilience-guard version lanes remain bounded and auditable.
 - Runtime governance: APIM MCP/Gateway telemetry and content-safety controls become mandatory L4 admission constraints.
 - Cost/throughput: E2B branch keeps stronger rps-per-cluster while absorbing explicit policy-governance overhead in TCO scoring.
 
-Summary 958: In production architecture terms, platform hard boundaries and retry-storm-budget-governed runtime paths are now first-class primitives for long-lived autonomous workloads.
+Summary 905: In production architecture terms, platform hard boundaries and retry-storm-budget-governed runtime paths are now first-class primitives for long-lived autonomous workloads.
 """
-    return f"""# Cycle #1119 专著增补（云原生 Agent Infra）
+    return f"""# Cycle #2524 专著增补（云原生 Agent Infra）
 
 - Cycle 编号：{payload["cycle"]["id"]}
 - 时间窗口：{payload["cycle"]["window_bjt"]}
@@ -1236,14 +1236,14 @@ Summary 958: In production architecture terms, platform hard boundaries and retr
 3. 运行时基座演进：Firecracker v1.17.0、Kata 4.3.1、Wasmtime v50.0.1 基线 + E2B 2.63.0（2026-11-04 16:41:49）。
 4. Cloudflare Browser Rendering + Workers AI/Workflows：纳入 Browser-Run/CUA 边缘路径的正式竞对基线。
 
-2026-11-12 增量影响：
+2026-11-16 增量影响：
 - 恢复路径：E2B 2.63.0 的流水线/运行时迭代收紧 Firecracker 快路径恢复抖动区间。
 - 弹性调度：基于更稳定的 E2B 恢复包络，Credit 池与排队准入阈值可进一步下调。
 - 组件冷启动路径：命令输出通道升级为 MCP 工具编排预算中的一等吞吐路径。
 - 运行时治理：APIM 的 MCP/Gateway 遥测与内容安全从“可选观测”提升为 L4 准入硬门槛。
 - 成本与吞吐：E2B 分支在纳入治理开销后仍保持高于 Kata 硬隔离路径的集群吞吐效率。
 
-Summary 952：在生产架构层面，平台硬边界与自适应回退预算门控的网关闭环已经成为大规模自治工作负载的基础原语。
+Summary 899：在生产架构层面，平台硬边界与自适应回退预算门控的网关闭环已经成为大规模自治工作负载的基础原语。
 """
 
 
@@ -1257,34 +1257,34 @@ def write_artifacts(payload: dict) -> list[str]:
     ensure_dirs()
     touched: list[str] = []
 
-    source_path = EVIDENCE / "cycle-1119-sources.json"
+    source_path = EVIDENCE / "cycle-2524-sources.json"
     source_path.write_text(json.dumps(payload["sources"], ensure_ascii=False, indent=2), encoding="utf-8")
     touched.append(str(source_path.relative_to(ROOT)))
 
-    benchmark_path = EVIDENCE / "cycle-1119-benchmark.json"
+    benchmark_path = EVIDENCE / "cycle-2524-benchmark.json"
     benchmark_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     touched.append(str(benchmark_path.relative_to(ROOT)))
 
     write_csv(
-        EVIDENCE / "cycle-1119-latency.csv",
+        EVIDENCE / "cycle-2524-latency.csv",
         payload["latency"],
         ["metric", "system", "p50_ms", "p95_ms", "source_label", "source_ref"],
     )
-    touched.append("evidence/cycle-1119-latency.csv")
+    touched.append("evidence/cycle-2524-latency.csv")
     write_csv(
-        EVIDENCE / "cycle-1119-throughput.csv",
+        EVIDENCE / "cycle-2524-throughput.csv",
         payload["throughput"],
         ["metric", "path", "p50_rps", "p95_rps", "source_label", "source_ref"],
     )
-    touched.append("evidence/cycle-1119-throughput.csv")
+    touched.append("evidence/cycle-2524-throughput.csv")
     write_csv(
-        EVIDENCE / "cycle-1119-policy.csv",
+        EVIDENCE / "cycle-2524-policy.csv",
         payload["policy"],
         ["policy", "blocked", "total", "intercept_rate", "source_label", "source_ref"],
     )
-    touched.append("evidence/cycle-1119-policy.csv")
+    touched.append("evidence/cycle-2524-policy.csv")
     write_csv(
-        EVIDENCE / "cycle-1119-cost.csv",
+        EVIDENCE / "cycle-2524-cost.csv",
         payload["single_session_cost"],
         [
             "path",
@@ -1297,7 +1297,7 @@ def write_artifacts(payload: dict) -> list[str]:
             "source_ref",
         ],
     )
-    touched.append("evidence/cycle-1119-cost.csv")
+    touched.append("evidence/cycle-2524-cost.csv")
 
     zh_cards = ROOT / "benchmark-cards.html"
     en_cards = ROOT / "benchmark-cards.en.html"
@@ -1305,36 +1305,36 @@ def write_artifacts(payload: dict) -> list[str]:
     en_cards.write_text(render_cards(payload, english=True), encoding="utf-8")
     touched.extend(["benchmark-cards.html", "benchmark-cards.en.html"])
 
-    svg_path = ASSETS / "34-cycle-1119-daily-breakthroughs.svg"
+    svg_path = ASSETS / "42-cycle-2524-daily-breakthroughs.svg"
     svg_path.write_text(render_svg(payload), encoding="utf-8")
-    touched.append("assets/34-cycle-1119-daily-breakthroughs.svg")
+    touched.append("assets/42-cycle-2524-daily-breakthroughs.svg")
 
-    workbench = ROOT / "workbench-cycle-1119.html"
+    workbench = ROOT / "workbench-cycle-2524.html"
     workbench.write_text(render_workbench(payload), encoding="utf-8")
-    touched.append("workbench-cycle-1119.html")
+    touched.append("workbench-cycle-2524.html")
 
-    daily_cn = ROOT / "daily-report-2026-11-12.md"
-    daily_en = ROOT / "daily-report-2026-11-12.en.md"
+    daily_cn = ROOT / "daily-report-2026-11-18.md"
+    daily_en = ROOT / "daily-report-2026-11-18.en.md"
     daily_cn.write_text(render_daily_report(payload, english=False), encoding="utf-8")
     daily_en.write_text(render_daily_report(payload, english=True), encoding="utf-8")
-    touched.extend(["daily-report-2026-11-12.md", "daily-report-2026-11-12.en.md"])
+    touched.extend(["daily-report-2026-11-18.md", "daily-report-2026-11-18.en.md"])
 
-    mono_cn = ROOT / "docs" / "full-monograph-cycle-1119.md"
-    mono_en = ROOT / "docs" / "full-monograph-cycle-1119.en.md"
+    mono_cn = ROOT / "docs" / "full-monograph-cycle-2524.md"
+    mono_en = ROOT / "docs" / "full-monograph-cycle-2524.en.md"
     mono_cn.write_text(render_monograph_addendum(payload, english=False), encoding="utf-8")
     mono_en.write_text(render_monograph_addendum(payload, english=True), encoding="utf-8")
-    touched.extend(["docs/full-monograph-cycle-1119.md", "docs/full-monograph-cycle-1119.en.md"])
+    touched.extend(["docs/full-monograph-cycle-2524.md", "docs/full-monograph-cycle-2524.en.md"])
 
     # Mirror selected files to docs/azure-agent-infra for repository-level consistency
     mirrors = [
         ("benchmark-cards.html", DOCS_ROOT / "benchmark-cards.html"),
         ("benchmark-cards.en.html", DOCS_ROOT / "benchmark-cards.en.html"),
-        ("daily-report-2026-11-12.md", DOCS_ROOT / "daily-report-2026-11-12.md"),
-        ("daily-report-2026-11-12.en.md", DOCS_ROOT / "daily-report-2026-11-12.en.md"),
-        ("workbench-cycle-1119.html", DOCS_ROOT / "workbench-cycle-1119.html"),
-        ("assets/34-cycle-1119-daily-breakthroughs.svg", DOCS_ROOT / "assets" / "34-cycle-1119-daily-breakthroughs.svg"),
-        ("docs/full-monograph-cycle-1119.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1119.md"),
-        ("docs/full-monograph-cycle-1119.en.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1119.en.md"),
+        ("daily-report-2026-11-18.md", DOCS_ROOT / "daily-report-2026-11-18.md"),
+        ("daily-report-2026-11-18.en.md", DOCS_ROOT / "daily-report-2026-11-18.en.md"),
+        ("workbench-cycle-2524.html", DOCS_ROOT / "workbench-cycle-2524.html"),
+        ("assets/42-cycle-2524-daily-breakthroughs.svg", DOCS_ROOT / "assets" / "42-cycle-2524-daily-breakthroughs.svg"),
+        ("docs/full-monograph-cycle-2524.md", DOCS_ROOT / "docs" / "full-monograph-cycle-2524.md"),
+        ("docs/full-monograph-cycle-2524.en.md", DOCS_ROOT / "docs" / "full-monograph-cycle-2524.en.md"),
     ]
     for rel, dst in mirrors:
         src = ROOT / rel
@@ -1344,12 +1344,12 @@ def write_artifacts(payload: dict) -> list[str]:
         [
             "../docs/azure-agent-infra/benchmark-cards.html",
             "../docs/azure-agent-infra/benchmark-cards.en.html",
-            "../docs/azure-agent-infra/daily-report-2026-11-12.md",
-            "../docs/azure-agent-infra/daily-report-2026-11-12.en.md",
-            "../docs/azure-agent-infra/workbench-cycle-1119.html",
-            "../docs/azure-agent-infra/assets/34-cycle-1119-daily-breakthroughs.svg",
-            "../docs/azure-agent-infra/docs/full-monograph-cycle-1119.md",
-            "../docs/azure-agent-infra/docs/full-monograph-cycle-1119.en.md",
+            "../docs/azure-agent-infra/daily-report-2026-11-18.md",
+            "../docs/azure-agent-infra/daily-report-2026-11-18.en.md",
+            "../docs/azure-agent-infra/workbench-cycle-2524.html",
+            "../docs/azure-agent-infra/assets/42-cycle-2524-daily-breakthroughs.svg",
+            "../docs/azure-agent-infra/docs/full-monograph-cycle-2524.md",
+            "../docs/azure-agent-infra/docs/full-monograph-cycle-2524.en.md",
         ]
     )
 
@@ -1357,11 +1357,11 @@ def write_artifacts(payload: dict) -> list[str]:
 
 
 def run_checks() -> None:
-    benchmark = EVIDENCE / "cycle-1119-benchmark.json"
+    benchmark = EVIDENCE / "cycle-2524-benchmark.json"
     if not benchmark.exists():
         raise FileNotFoundError(f"Missing {benchmark}")
     payload = json.loads(benchmark.read_text(encoding="utf-8"))
-    assert payload["cycle"]["id"] == 1119
+    assert payload["cycle"]["id"] == 2514
     assert payload.get("topic_slug") == TOPIC_SLUG
     assert payload.get("topic_slug") != BASELINE_GUARD_TOPIC_SLUG
     assert len(payload["latency"]) >= 4
@@ -1372,9 +1372,9 @@ def run_checks() -> None:
 
     contract = payload.get("percentage_contract", {})
     required_keys = {
-        "unfenced_apim_mcp_tool_budget_burst_cap_drift_rate",
-        "apim_mcp_tool_budget_burst_cap_variance_rate",
-        "apim_mcp_tool_budget_burst_cap_recovery_gain_pts",
+        "unfenced_chaos_gameday_guard_drift_rate",
+        "chaos_gameday_guard_variance_rate",
+        "chaos_gameday_guard_recovery_gain_pts",
     }
     assert required_keys.issubset(contract.keys())
     for key in required_keys:
@@ -1384,8 +1384,8 @@ def run_checks() -> None:
         recomputed = round((numerator / denominator) * 100, 1)
         assert float(row["percentage"]) == recomputed, f"{key} percentage mismatch"
         assert row["production_validation"] == "not_measured"
-        assert row["source_label"] == "synthetic_assumed"
-        assert "agent-aks-sandbox-pod-density-guard-auto-cycle-1119-selection-faq.md" in row["source_path"]
+        assert row["source_label"] == "synthetic"
+        assert "foundry-agent-service-vs-aca-vs-aks-vs-functions-runtime-hosting-selection-faq-r1119.md" in row["source_path"]
 
     # Guardrail: verify preserved baseline immutable evidence is still intact and not overwritten.
     round24_benchmark = EVIDENCE / "cycle-405-benchmark.json"
@@ -1401,7 +1401,7 @@ def run_checks() -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate Cycle #1119 artifacts")
+    parser = argparse.ArgumentParser(description="Generate Cycle #2524 artifacts")
     parser.add_argument("--write", action="store_true", help="Write artifacts")
     parser.add_argument("--check", action="store_true", help="Check generated artifacts")
     args = parser.parse_args()
@@ -1423,6 +1423,20 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

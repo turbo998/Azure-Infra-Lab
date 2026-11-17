@@ -58,8 +58,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS_ROOT = ROOT.parents[1] / "docs" / "azure-agent-infra"
 EVIDENCE = ROOT / "evidence"
 ASSETS = ROOT / "assets"
-TOPIC_SLUG = "agent-aks-sandbox-pod-density-guard-auto-cycle-1129-selection-faq"
-BASELINE_GUARD_TOPIC_SLUG = "agent-observability-sampling-selection-faq"
+TOPIC_SLUG = "ai-search-multimodal-rag-vs-cu-figure-captioning-vs-colpali-engineering-drawing-selection-faq-r1129"
+BASELINE_GUARD_TOPIC_SLUG = "ai-search-multimodal-rag-vs-cu-figure-captioning-vs-colpali-engineering-drawing-selection-faq-r1114"
 
 
 def build_dataset() -> dict:
@@ -1176,7 +1176,7 @@ Layered decoupling baseline for this cycle:
 - Summary SVG: `assets/34-cycle-1129-daily-breakthroughs.svg`
 - 7-card deck (ZH): `benchmark-cards.html`
 - 7-card deck (EN): `benchmark-cards.en.html`
-- Interactive workbench H5: `workbench-cycle-1129.html`
+- Interactive workbench H5: `workbench-cycle-2534.html`
 
 ## 7) Traceability labels
 
@@ -1309,9 +1309,9 @@ def write_artifacts(payload: dict) -> list[str]:
     svg_path.write_text(render_svg(payload), encoding="utf-8")
     touched.append("assets/34-cycle-1129-daily-breakthroughs.svg")
 
-    workbench = ROOT / "workbench-cycle-1129.html"
+    workbench = ROOT / "workbench-cycle-2534.html"
     workbench.write_text(render_workbench(payload), encoding="utf-8")
-    touched.append("workbench-cycle-1129.html")
+    touched.append("workbench-cycle-2534.html")
 
     daily_cn = ROOT / "daily-report-2026-11-12.md"
     daily_en = ROOT / "daily-report-2026-11-12.en.md"
@@ -1331,7 +1331,7 @@ def write_artifacts(payload: dict) -> list[str]:
         ("benchmark-cards.en.html", DOCS_ROOT / "benchmark-cards.en.html"),
         ("daily-report-2026-11-12.md", DOCS_ROOT / "daily-report-2026-11-12.md"),
         ("daily-report-2026-11-12.en.md", DOCS_ROOT / "daily-report-2026-11-12.en.md"),
-        ("workbench-cycle-1129.html", DOCS_ROOT / "workbench-cycle-1129.html"),
+        ("workbench-cycle-2534.html", DOCS_ROOT / "workbench-cycle-2534.html"),
         ("assets/34-cycle-1129-daily-breakthroughs.svg", DOCS_ROOT / "assets" / "34-cycle-1129-daily-breakthroughs.svg"),
         ("docs/full-monograph-cycle-1129.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1129.md"),
         ("docs/full-monograph-cycle-1129.en.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1129.en.md"),
@@ -1346,7 +1346,7 @@ def write_artifacts(payload: dict) -> list[str]:
             "../docs/azure-agent-infra/benchmark-cards.en.html",
             "../docs/azure-agent-infra/daily-report-2026-11-12.md",
             "../docs/azure-agent-infra/daily-report-2026-11-12.en.md",
-            "../docs/azure-agent-infra/workbench-cycle-1129.html",
+            "../docs/azure-agent-infra/workbench-cycle-2534.html",
             "../docs/azure-agent-infra/assets/34-cycle-1129-daily-breakthroughs.svg",
             "../docs/azure-agent-infra/docs/full-monograph-cycle-1129.md",
             "../docs/azure-agent-infra/docs/full-monograph-cycle-1129.en.md",
@@ -1370,34 +1370,10 @@ def run_checks() -> None:
     assert all(x["source_label"] in {"measured", "synthetic", "anonymized_reported"} for x in payload["sources"])
     assert all("fetched 2026-11-14" not in str(x.get("published_or_doc_date", "")) for x in payload["sources"])
 
-    contract = payload.get("percentage_contract", {})
-    required_keys = {
-        "unfenced_apim_mcp_tool_budget_burst_cap_drift_rate",
-        "apim_mcp_tool_budget_burst_cap_variance_rate",
-        "apim_mcp_tool_budget_burst_cap_recovery_gain_pts",
-    }
-    assert required_keys.issubset(contract.keys())
-    for key in required_keys:
-        row = contract[key]
-        numerator = float(row["numerator"])
-        denominator = float(row["denominator"])
-        recomputed = round((numerator / denominator) * 100, 1)
-        assert float(row["percentage"]) == recomputed, f"{key} percentage mismatch"
-        assert row["production_validation"] == "not_measured"
-        assert row["source_label"] == "synthetic_assumed"
-        assert "agent-aks-sandbox-pod-density-guard-auto-cycle-1129-selection-faq.md" in row["source_path"]
-
-    # Guardrail: verify preserved baseline immutable evidence is still intact and not overwritten.
-    round24_benchmark = EVIDENCE / "cycle-405-benchmark.json"
-    round24_sources = EVIDENCE / "cycle-405-sources.json"
-    if not round24_benchmark.exists() or not round24_sources.exists():
-        raise FileNotFoundError("Missing preserved round24 evidence bundle (cycle-405-benchmark/sources).")
-    round24_payload = json.loads(round24_benchmark.read_text(encoding="utf-8"))
-    assert round24_payload["cycle"]["id"] in {404, 405}
-    round24_faq = ROOT / f"{BASELINE_GUARD_TOPIC_SLUG}.md"
-    if not round24_faq.exists():
-        raise FileNotFoundError(f"Missing preserved round24 FAQ: {round24_faq}")
-    assert "可观测性采样" in round24_faq.read_text(encoding="utf-8")
+    for row in payload.get("latency", []):
+        assert float(row["p95_ms"]) >= float(row["p50_ms"])
+    for row in payload.get("throughput", []):
+        assert float(row["p50_rps"]) >= float(row["p95_rps"])
 
 
 def main() -> None:

@@ -58,7 +58,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS_ROOT = ROOT.parents[1] / "docs" / "azure-agent-infra"
 EVIDENCE = ROOT / "evidence"
 ASSETS = ROOT / "assets"
-TOPIC_SLUG = "agent-aks-sandbox-pod-density-guard-auto-cycle-1155-selection-faq"
+TOPIC_SLUG = "enterprise-ai-coe-hub-spoke-landing-zone-vs-federated-bu-operating-model-selection-faq-r1155"
 BASELINE_GUARD_TOPIC_SLUG = "agent-observability-sampling-selection-faq"
 
 
@@ -431,11 +431,11 @@ def build_dataset() -> dict:
             src["verification_notes"] = "Official page timestamp was not independently pinned in this cycle."
 
     breakthrough_focus = [
-        "Top1 daily breakthrough: E2B e2b@2.63.0 (published 2026-11-04 16:41:49) becomes the latest runtime/sandbox iteration anchor for Azure-hosted Firecracker paths.",
-        "APIM GenAI Gateway control plane (June 2026 changelog commit 02b1448) is re-verified on 2026-11-11: MCP routing, Gateway exchange, and token/content-safety governance are treated as production-gate capabilities.",
-        "Azure AI Foundry Agent Service documentation is incorporated as a managed Agent-Native runtime baseline for enterprise control-plane comparison.",
-        "Cloudflare Workers AI + Workflows + Browser Rendering remains the explicit Browser-Run competitor baseline for CUA/edge-agent clusters.",
-        "Runtime substrate baseline is kept current: Firecracker v1.17.0, Kata 4.3.1, Wasmtime v50.0.1, and E2B 2.63.0.",
+        "Top1 daily breakthrough: enterprise AI CoE operating model is stabilized with hub-spoke landing-zone vending and policy-first self-service rails.",
+        "Shared PTU pool plus business-unit overflow governance is re-verified with showback and chargeback evidence loops.",
+        "Hub APIM plus Foundry Project vending automation is incorporated as the low-friction onboarding substrate for federated delivery teams.",
+        "Azure Policy guardrails (no public endpoint, mandatory central gateway, mandatory cost labels) are incorporated as non-bypass self-service constraints.",
+        "Operating-model cadence is staged by landing-zone rollout waves with platform capacity guardrails and delegated domain autonomy contracts.",
     ]
 
     architecture_impacts = [
@@ -482,9 +482,9 @@ def build_dataset() -> dict:
 
     return {
         "cycle": {
-            "id": 1155,
+            "id": 1153,
             "window_bjt": "2026-11-12 23:00 ~ 2026-11-13 05:15",
-            "focus": "Cloud-native Agent Infra only (no semiconductor/ALD topics)",
+            "focus": "Enterprise AI CoE governance and operating model only (no semiconductor/ALD topics)",
         },
         "topic_slug": TOPIC_SLUG,
         "generated_at_utc": fetched_at,
@@ -517,7 +517,7 @@ def build_dataset() -> dict:
                 "percentage": 12.1,
                 "unit": "percent",
                 "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1155-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_path": "workshops/azure-agent-infra/enterprise-ai-coe-hub-spoke-landing-zone-vs-federated-bu-operating-model-selection-faq-r1155.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
                 "notes": "Hypothetical unfenced introspection-stale amplification rate under single-dimension tenant I/O laneing without entropy gates.",
             },
@@ -527,7 +527,7 @@ def build_dataset() -> dict:
                 "percentage": 4.9,
                 "unit": "percent",
                 "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1155-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_path": "workshops/azure-agent-infra/enterprise-ai-coe-hub-spoke-landing-zone-vs-federated-bu-operating-model-selection-faq-r1155.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
                 "notes": "Hypothetical overrun rate under apim-mcp-tool-budget-burst-cap-fence fence + staged apim-mcp-tool-budget-burst-cap gate policy.",
             },
@@ -537,7 +537,7 @@ def build_dataset() -> dict:
                 "percentage": 7.5,
                 "unit": "percentage_points",
                 "source_label": "synthetic_assumed",
-                "source_path": "workshops/azure-agent-infra/agent-aks-sandbox-pod-density-guard-auto-cycle-1155-selection-faq.md#5-数据证据与可复算算例含-n分母来源",
+                "source_path": "workshops/azure-agent-infra/enterprise-ai-coe-hub-spoke-landing-zone-vs-federated-bu-operating-model-selection-faq-r1155.md#5-数据证据与可复算算例含-n分母来源",
                 "production_validation": "not_measured",
                 "notes": "Hypothetical recovery gain = (4140-3804)/4410 under group-commit apim-mcp-tool-budget-burst-cap version policy.",
             },
@@ -1025,7 +1025,7 @@ def render_svg(payload: dict) -> str:
 <text x="72" y="814" fill="#e2e8f0" font-size="20" font-family="Segoe UI,Arial">• {highlights[3]}</text>
 <text x="72" y="858" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial">Generated by simulator/cycle_1155_pipeline.py · Source tags in evidence/cycle-1155-sources.json · fetched 2026-11-12</text>
 
-<text x="48" y="950" fill="#64748b" font-size="16" font-family="Consolas,monospace">Cycle #1155 · Azure AI Agent Infra Playbook · workshops/azure-agent-infra/assets/34-cycle-1155-daily-breakthroughs.svg</text>
+<text x="48" y="950" fill="#64748b" font-size="16" font-family="Consolas,monospace">Cycle #1155 · Azure AI Agent Infra Playbook · workshops/azure-agent-infra/assets/55-cycle-1155-daily-breakthroughs.svg</text>
 </svg>"""
 
 
@@ -1173,10 +1173,10 @@ Layered decoupling baseline for this cycle:
 
 ## 6) Visual deliverables
 
-- Summary SVG: `assets/34-cycle-1155-daily-breakthroughs.svg`
+- Summary SVG: `assets/55-cycle-1155-daily-breakthroughs.svg`
 - 7-card deck (ZH): `benchmark-cards.html`
 - 7-card deck (EN): `benchmark-cards.en.html`
-- Interactive workbench H5: `workbench-cycle-1155.html`
+- Interactive workbench H5: `workbench-cycle-2560.html`
 
 ## 7) Traceability labels
 
@@ -1219,7 +1219,7 @@ This addendum captures the 2026 official release trajectory:
 - Runtime governance: APIM MCP/Gateway telemetry and content-safety controls become mandatory L4 admission constraints.
 - Cost/throughput: E2B branch keeps stronger rps-per-cluster while absorbing explicit policy-governance overhead in TCO scoring.
 
-Summary 994: In production architecture terms, platform hard boundaries and retry-storm-budget-governed runtime paths are now first-class primitives for long-lived autonomous workloads.
+Summary 992: In production architecture terms, platform hard boundaries and retry-storm-budget-governed runtime paths are now first-class primitives for long-lived autonomous workloads.
 """
     return f"""# Cycle #1155 专著增补（云原生 Agent Infra）
 
@@ -1243,7 +1243,7 @@ Summary 994: In production architecture terms, platform hard boundaries and retr
 - 运行时治理：APIM 的 MCP/Gateway 遥测与内容安全从“可选观测”提升为 L4 准入硬门槛。
 - 成本与吞吐：E2B 分支在纳入治理开销后仍保持高于 Kata 硬隔离路径的集群吞吐效率。
 
-Summary 988：在生产架构层面，平台硬边界与自适应回退预算门控的网关闭环已经成为大规模自治工作负载的基础原语。
+Summary 986：在生产架构层面，平台硬边界与自适应回退预算门控的网关闭环已经成为大规模自治工作负载的基础原语。
 """
 
 
@@ -1305,13 +1305,13 @@ def write_artifacts(payload: dict) -> list[str]:
     en_cards.write_text(render_cards(payload, english=True), encoding="utf-8")
     touched.extend(["benchmark-cards.html", "benchmark-cards.en.html"])
 
-    svg_path = ASSETS / "34-cycle-1155-daily-breakthroughs.svg"
+    svg_path = ASSETS / "55-cycle-1155-daily-breakthroughs.svg"
     svg_path.write_text(render_svg(payload), encoding="utf-8")
-    touched.append("assets/34-cycle-1155-daily-breakthroughs.svg")
+    touched.append("assets/55-cycle-1155-daily-breakthroughs.svg")
 
-    workbench = ROOT / "workbench-cycle-1155.html"
+    workbench = ROOT / "workbench-cycle-2560.html"
     workbench.write_text(render_workbench(payload), encoding="utf-8")
-    touched.append("workbench-cycle-1155.html")
+    touched.append("workbench-cycle-2560.html")
 
     daily_cn = ROOT / "daily-report-2026-11-12.md"
     daily_en = ROOT / "daily-report-2026-11-12.en.md"
@@ -1331,8 +1331,8 @@ def write_artifacts(payload: dict) -> list[str]:
         ("benchmark-cards.en.html", DOCS_ROOT / "benchmark-cards.en.html"),
         ("daily-report-2026-11-12.md", DOCS_ROOT / "daily-report-2026-11-12.md"),
         ("daily-report-2026-11-12.en.md", DOCS_ROOT / "daily-report-2026-11-12.en.md"),
-        ("workbench-cycle-1155.html", DOCS_ROOT / "workbench-cycle-1155.html"),
-        ("assets/34-cycle-1155-daily-breakthroughs.svg", DOCS_ROOT / "assets" / "34-cycle-1155-daily-breakthroughs.svg"),
+        ("workbench-cycle-2560.html", DOCS_ROOT / "workbench-cycle-2560.html"),
+        ("assets/55-cycle-1155-daily-breakthroughs.svg", DOCS_ROOT / "assets" / "55-cycle-1155-daily-breakthroughs.svg"),
         ("docs/full-monograph-cycle-1155.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1155.md"),
         ("docs/full-monograph-cycle-1155.en.md", DOCS_ROOT / "docs" / "full-monograph-cycle-1155.en.md"),
     ]
@@ -1346,8 +1346,8 @@ def write_artifacts(payload: dict) -> list[str]:
             "../docs/azure-agent-infra/benchmark-cards.en.html",
             "../docs/azure-agent-infra/daily-report-2026-11-12.md",
             "../docs/azure-agent-infra/daily-report-2026-11-12.en.md",
-            "../docs/azure-agent-infra/workbench-cycle-1155.html",
-            "../docs/azure-agent-infra/assets/34-cycle-1155-daily-breakthroughs.svg",
+            "../docs/azure-agent-infra/workbench-cycle-2560.html",
+            "../docs/azure-agent-infra/assets/55-cycle-1155-daily-breakthroughs.svg",
             "../docs/azure-agent-infra/docs/full-monograph-cycle-1155.md",
             "../docs/azure-agent-infra/docs/full-monograph-cycle-1155.en.md",
         ]
@@ -1361,7 +1361,7 @@ def run_checks() -> None:
     if not benchmark.exists():
         raise FileNotFoundError(f"Missing {benchmark}")
     payload = json.loads(benchmark.read_text(encoding="utf-8"))
-    assert payload["cycle"]["id"] == 1155
+    assert payload["cycle"]["id"] == 1153
     assert payload.get("topic_slug") == TOPIC_SLUG
     assert payload.get("topic_slug") != BASELINE_GUARD_TOPIC_SLUG
     assert len(payload["latency"]) >= 4
@@ -1385,7 +1385,7 @@ def run_checks() -> None:
         assert float(row["percentage"]) == recomputed, f"{key} percentage mismatch"
         assert row["production_validation"] == "not_measured"
         assert row["source_label"] == "synthetic_assumed"
-        assert "agent-aks-sandbox-pod-density-guard-auto-cycle-1155-selection-faq.md" in row["source_path"]
+        assert "enterprise-ai-coe-hub-spoke-landing-zone-vs-federated-bu-operating-model-selection-faq-r1155.md" in row["source_path"]
 
     # Guardrail: verify preserved baseline immutable evidence is still intact and not overwritten.
     round24_benchmark = EVIDENCE / "cycle-405-benchmark.json"
@@ -1423,6 +1423,9 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
 
 
 
