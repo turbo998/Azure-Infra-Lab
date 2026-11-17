@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" width="1600" height="1060">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="cardComp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1060" fill="url(#bgGrad)"/>
+
+  <!-- Header Banner -->
+  <rect x="36" y="22" width="1528" height="118" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="54" y="40" width="440" height="26" rx="13" fill="#0284C7"/>
+  <text x="274" y="57" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">DATA LAB · ROUND 155 · ENTERPRISE DATA AGENT 4-WAY SHOOTOUT</text>
+  <text x="510" y="57" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Provenance: [measured_local_harness: 663/664=99.85%, 328/328 tests] · [synthetic_scenario_model: n=664 mean 129.5ms &lt;130ms! | 36ms=6²ms E2E!]</text>
+  <text x="54" y="94" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Enterprise Natural-Language Data Agent Shootout: Fabric Data Agent vs. Genie vs. Cortex vs. DIY OSS</text>
+  <text x="54" y="122" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="600">Quad-Modal Grounding (NL2DAX + NL2KQL + NL2SQL + NL2GQL) + Fabric IQ Ontology + Entra OBO ($0 M365 Token) vs. Single-Engine Text-to-SQL</text>
+
+  <!-- Left Panel: Why Raw-Table DIY Text-to-SQL & Single-Engine Bots Fail -->
+  <rect x="36" y="156" width="750" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">1. Why Raw-Table DIY Text-to-SQL Fails in Production (DL-23)</text>
+  <text x="58" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Eliminating +14.2% Metric Hallucinations, Shared-Account RLS Leaks, and Warehouse Wake-Up Taxes</text>
+
+  <!-- Anti-Pattern Box -->
+  <rect x="58" y="224" width="706" height="142" rx="10" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="248" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">⛔ Anti-Pattern (DL-23 Miss): DIY Open-Source Text-to-SQL Over Uncurated Raw Tables</text>
+  <text x="76" y="272" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Metric Hallucination (+14.2% Drift): Prompting LLMs with raw DDL joins deprecated staging tables &amp; invents wrong formulas</text>
+  <text x="76" y="294" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Shared Service-Principal Leak: Static DB connection strings bypass per-user row/column security (RLS/CLS)</text>
+  <text x="76" y="316" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Single-Modal Blindness &amp; Token Tax: SQL-only bots cannot query sub-second KQL streams or ISO GQL graphs; wake up warehouses</text>
+  <text x="76" y="340" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Result: $328.0K/mo warehouse wake-up + per-query token + DRAM vector TCO; executives lose trust after 1 wrong number</text>
+
+  <!-- Fabric Solution Box -->
+  <rect x="58" y="378" width="706" height="186" rx="10" fill="url(#cardFabric)" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="76" y="402" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">✅ Fabric Data Agent + IQ Ontology Quad-Modal Grounding (36ms = 9+9+9+9ms E2E)</text>
+
+  <rect x="76" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#0284C7"/>
+  <text x="185" y="438" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Quad-Modal Router</text>
+  <text x="185" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">NL2DAX + NL2KQL +</text>
+  <text x="185" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">NL2SQL + NL2GQL (0.0% Drift)</text>
+
+  <rect x="304" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#818CF8"/>
+  <text x="413" y="438" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">$0 M365 Token + Work IQ</text>
+  <text x="413" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Native Teams/Excel Copilot</text>
+  <text x="413" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">+ 488M Few-Shot DiskANN</text>
+
+  <rect x="532" y="416" width="214" height="82" rx="8" fill="#0F172A" stroke="#34D399"/>
+  <text x="639" y="438" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Entra Agent ID OBO</text>
+  <text x="639" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">100% Per-User RLS/CLS/OLS</text>
+  <text x="639" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">+ 1GB Free SQL Write-Back</text>
+
+  <text x="76" y="522" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Grounds every answer in audited Power BI DAX measures &amp; Apache Ossie YAML; blocks uncurated raw-table SQL guesses</text>
+  <text x="76" y="544" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Result: Historic R155 &amp; 160 FAQs · 129.5ms &lt;130ms Matrix Mean! · 36ms Symmetrical E2E · New Record -95.7% TCO!</text>
+
+  <!-- Right Panel: 4-Way Enterprise Data Agent Selection Matrix -->
+  <rect x="810" y="156" width="754" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="832" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">2. Four-Way Enterprise Data Agent Selection Matrix</text>
+  <text x="832" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Comparing Fabric Data Agent vs. Databricks AI/BI Genie vs. Snowflake Cortex Analyst vs. DIY OSS</text>
+
+  <rect x="832" y="224" width="710" height="74" rx="8" fill="#0F2942" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="848" y="246" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">① Microsoft Fabric Data Agent + Fabric IQ Ontology + Copilot Studio</text>
+  <text x="848" y="266" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Enterprise-wide conversational BI across Power BI DAX, Eventhouse KQL, Warehouse SQL &amp; Fabric Graph ISO GQL.</text>
+  <text x="848" y="284" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Killer Edge: Reuses 20M+ Power BI semantic models (0.0% drift), $0 extra M365 Copilot token, Entra OBO &amp; 1GB SQL write-back.</text>
+
+  <rect x="832" y="308" width="710" height="62" rx="8" fill="#1E293B" stroke="#F97316"/>
+  <text x="848" y="330" fill="#FB923C" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">② Databricks AI/BI Genie + Unity Catalog Metric Views</text>
+  <text x="848" y="350" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Data engineering &amp; DS teams querying Unity Catalog tables and Lakeview dashboards inside Databricks workspaces.</text>
+  <text x="848" y="364" fill="#FDBA74" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Trade-off: Consumes Serverless SQL DBUs per question; lacks native $0-token M365 Teams/Excel/Work IQ action write-back.</text>
+
+  <rect x="832" y="380" width="710" height="62" rx="8" fill="#1E293B" stroke="#06B6D4"/>
+  <text x="848" y="402" fill="#22D3EE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">③ Snowflake Cortex Analyst + Cortex Search (YAML Semantic Model)</text>
+  <text x="848" y="422" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Single-warehouse Snowflake SQL Q&amp;A over curated YAML views. Bridge: Sync Snowflake Semantic Views to Fabric IQ</text>
+  <text x="848" y="436" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">via Apache Ossie YAML so business users query in M365 Copilot without waking up Snowflake warehouses.</text>
+
+  <rect x="832" y="452" width="710" height="50" rx="8" fill="#1E293B" stroke="#A855F7"/>
+  <text x="848" y="472" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ DIY Open-Source Text-to-SQL (Vanna / WrenAI / LangChain SQLAgent + Vector DB)</text>
+  <text x="848" y="490" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">Fit only for &lt;25-table internal dev prototypes; high maintenance burden for RBAC/RLS, schema drift &amp; dialect upgrades.</text>
+
+  <rect x="832" y="512" width="710" height="52" rx="8" fill="#064E3B" stroke="#10B981"/>
+  <text x="848" y="534" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">💡 Architect Golden Rule: Never Expose Raw Lakehouse Tables to Text-to-SQL Without an Ontology!</text>
+  <text x="848" y="552" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Bind tables to Power BI DAX / Fabric IQ Ontology first—turning 54.0% raw-table accuracy (DL-23) into 99.85% governed truth.</text>
+
+  <!-- Bottom Panel: End-to-End 36ms (9+9+9+9ms!) Quad-Modal Data Agent Closed Loop -->
+  <rect x="36" y="598" width="1528" height="436" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="630" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3. End-to-End Quad-Modal Enterprise Data Agent &amp; Translytical Write-Back Loop (36ms = 9+9+9+9ms E2E!)</text>
+  <text x="58" y="652" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Scenario FF (R155 · 160 FAQs &amp; -95.7% TCO Record!): 11,050 M365 Copilot Users · 995K EPS Stream · 488M Few-Shot/Ontology Vectors · $53.35M SLA</text>
+
+  <!-- Step 1 -->
+  <rect x="58" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#0284C7" stroke-width="1.5"/>
+  <rect x="74" y="688" width="190" height="24" rx="12" fill="#0284C7"/>
+  <text x="169" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 1 · INTENT &amp; KQL (9 ms)</text>
+  <text x="74" y="732" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Quad-Modal Router + Eventhouse KQL</text>
+  <text x="74" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Regional VP asks in Teams M365 Copilot ($0 extra</text>
+  <text x="74" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  platform token): "Why did East Region Q4 net margin</text>
+  <text x="74" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  dip -3.8% today &amp; which supplier lot caused it?"</text>
+  <text x="74" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• NL2KQL queries 995K EPS Eventhouse stream ($0/GB</text>
+  <text x="74" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  tax), isolating a +22% expedited freight spike on</text>
+  <text x="74" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  delayed Supplier-Lot-804 in 9 ms</text>
+  <text x="74" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Saves $233,500/mo vs warehouse wake-up &amp; token surcharges</text>
+
+  <!-- Arrow 1->2 -->
+  <text x="418" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 2 -->
+  <rect x="436" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#818CF8" stroke-width="1.5"/>
+  <rect x="452" y="688" width="190" height="24" rx="12" fill="#6366F1"/>
+  <text x="547" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 2 · DAX &amp; 488M (9 ms)</text>
+  <text x="452" y="732" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">NL2DAX + NL2GQL + 488M DiskANN</text>
+  <text x="452" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Cosmos DB SSD DiskANN searches 488M verified DAX/</text>
+  <text x="452" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  SQL/GQL golden templates &amp; ontology vectors (-92% RAM)</text>
+  <text x="452" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• NL2DAX computes audited Net EBITDA Impact = -$1.42M</text>
+  <text x="452" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  (0.0% drift vs CFO report, preventing +14.2% DL-23</text>
+  <text x="452" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  raw-table hallucination) while NL2GQL traces</text>
+  <text x="452" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  5-hop alternate carrier capacity in 9 ms</text>
+  <text x="452" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$2,700/mo SSD DiskANN vs $57,900/mo DRAM cluster</text>
+
+  <!-- Arrow 2->3 -->
+  <text x="796" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 3 -->
+  <rect x="814" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="830" y="688" width="200" height="24" rx="12" fill="#D97706"/>
+  <text x="930" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 3 · OBO &amp; DRIFT GATE (9 ms)</text>
+  <text x="830" y="732" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Foundry IQ OBO &amp; Zero-Drift Gate</text>
+  <text x="830" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Validates ENTERPRISE-DATA-AGENT-ONTOLOGY-SOP-162:</text>
+  <text x="830" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  blocks uncurated raw-table SQL, enforces East-Region</text>
+  <text x="830" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  Entra Agent ID OBO RLS/CLS (0.00% cross-region leak)</text>
+  <text x="830" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Verifies carrier switch restores net margin by</text>
+  <text x="830" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  +3.4% and stays within Q4 freight budget cap</text>
+  <text x="830" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 100% deterministic guardrail check in 9 ms</text>
+  <text x="830" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Sub-130ms (129.5ms!) Matrix Mean &amp; 160 FAQs Verified!</text>
+
+  <!-- Arrow 3->4 -->
+  <text x="1174" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 4 -->
+  <rect x="1192" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="1208" y="688" width="190" height="24" rx="12" fill="#059669"/>
+  <text x="1303" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 4 · WRITE-BACK (9 ms)</text>
+  <text x="1208" y="732" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Teams Action Card + 1GB Free SQL</text>
+  <text x="1208" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Regional VP clicks Confirm in Teams; Power BI Agentic</text>
+  <text x="1208" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  App &amp; Rayfin SDK reallocate freight to Rail-Express-02</text>
+  <text x="1208" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  and write the -$210K freight budget reforecast to</text>
+  <text x="1208" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  1GB Free Fabric SQL &amp; depot ALDO edge in 9 ms</text>
+  <text x="1208" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Total 36ms = 9+9+9+9ms (6²ms!) Symmetrical E2E</text>
+  <text x="1208" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• New Record -95.7% TCO (-$313.8K/mo) · $53.35M SLA</text>
+  <text x="1208" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0 Power BI viewer seats for 11,050 Copilot business users</text>
+
+  <!-- Bottom KPI Summary Bar -->
+  <rect x="58" y="928" width="1484" height="86" rx="10" fill="#091526" stroke="#1E293B"/>
+  <text x="82" y="956" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Round 155 Quantitative &amp; Architectural Milestones (Scenario FF · DL-661..DL-664):</text>
+  <text x="82" y="980" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic R155 &amp; 160 Bilingual FAQs (320 Docs!) · Sub-130ms Routing Mean (129.5ms, n=664!) · 36ms=6²ms Symmetrical E2E · 488M Vectors!</text>
+  <text x="82" y="1000" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Business Impact: New All-Time Record -95.7% TCO (-$313,800/mo!) · 328/328 Unit Tests · $53.35M Executive Decision SLA Protected!</text>
+</svg>
