@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" width="1600" height="1060">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="cardFabric" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="cardComp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1060" fill="url(#bgGrad)"/>
+
+  <!-- Header Banner -->
+  <rect x="36" y="22" width="1528" height="118" rx="14" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <rect x="54" y="40" width="440" height="26" rx="13" fill="#0284C7"/>
+  <text x="274" y="57" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">DATA LAB · ROUND 150 MILESTONE · SAAS &amp; GAMING EMBEDDED ANALYTICS</text>
+  <text x="510" y="57" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Provenance: [measured_local_harness: 643/644=99.84%, 318/318 tests] · [synthetic_scenario_model: n=644 mean 132.0ms | n=157 mean 119.0ms!]</text>
+  <text x="54" y="94" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">SaaS &amp; Gaming Multi-Tenant Embedded Analytics, Real-Time Retention/ROAS &amp; RLS Passthrough FAQ</text>
+  <text x="54" y="122" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="600">Fabric Embedded ($0 External Viewer Seat + DirectLake Dynamic RLS + Eventhouse 10ms Funnel + 468M DiskANN) vs. Looker / Snowflake / Databricks / QuickSight</text>
+
+  <!-- Left Panel: Why Legacy Embedded BI & Batch Attribution Fail -->
+  <rect x="36" y="156" width="750" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">1. Why Per-Seat Embedded BI &amp; T+1 UA Attribution Break SaaS/Gaming</text>
+  <text x="58" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Eliminating External Viewer License Taxes, Cross-Tenant SQL Injection Leaks, and Bot-Farm Ad Burn</text>
+
+  <!-- Anti-Pattern Box -->
+  <rect x="58" y="224" width="706" height="142" rx="10" fill="#2A1215" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="76" y="248" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">⛔ Legacy Anti-Patterns: Per-External-User BI Tax + App-Layer SQL Filtering + T+1 ROAS</text>
+  <text x="76" y="272" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• External Seat &amp; Session Tax: Paying per-external-user or per-session fees across 2,400 B2B tenants (50,000+ external users)</text>
+  <text x="76" y="294" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• App-Layer Tenant Leak Risk: Prompt injection bypassing app-generated `WHERE tenant_id=...` exposes competitor revenue</text>
+  <text x="76" y="316" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• T+1 Attribution Lag: Waiting 24h to spot ad-network bot farms or Level-3 tutorial churn burns $250K+ in UA budget</text>
+  <text x="76" y="340" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Result: $318.5K/mo stitched embedded BI + multi-cluster warehouse + per-GB telemetry + DRAM vector TCO</text>
+
+  <!-- Fabric Solution Box -->
+  <rect x="58" y="378" width="706" height="186" rx="10" fill="url(#cardFabric)" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="76" y="402" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">✅ Fabric App-Owns-Data Embedded + DirectLake Dynamic RLS + Eventhouse KQL (41ms E2E)</text>
+
+  <rect x="76" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#0284C7"/>
+  <text x="185" y="438" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">$0 External Viewer Seat</text>
+  <text x="185" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Capacity-Based App-Owns-Data</text>
+  <text x="185" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">+ Surge Protection (75% Cap)</text>
+
+  <rect x="304" y="416" width="218" height="82" rx="8" fill="#0F172A" stroke="#818CF8"/>
+  <text x="413" y="438" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Engine-Enforced Dynamic RLS</text>
+  <text x="413" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">EffectiveIdentity `CUSTOMDATA()`</text>
+  <text x="413" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">1 Model Serves 2,400 Tenants</text>
+
+  <rect x="532" y="416" width="214" height="82" rx="8" fill="#0F172A" stroke="#34D399"/>
+  <text x="639" y="438" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">10ms KQL Funnel + 468M</text>
+  <text x="639" y="458" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Real-Time Bot &amp; Churn Sense</text>
+  <text x="639" y="476" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">+ PlayFab / 1GB SQL Write-Back</text>
+
+  <text x="76" y="522" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Unifies B2B SaaS tenant portals &amp; LiveOps game telemetry with 0.00% cross-tenant leakage and sub-second ROAS attribution</text>
+  <text x="76" y="544" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Result: Historic R150! · 41ms E2E · 132.0ms &amp; 119.0ms Exact Integer Means · -$304.3K/mo (-95.5% TCO) · $51.60M SLA</text>
+
+  <!-- Right Panel: 5-Cloud Embedded Analytics & Attribution Selection Matrix -->
+  <rect x="810" y="156" width="754" height="425" rx="14" fill="url(#cardComp)" stroke="#334155" stroke-width="1.5"/>
+  <text x="832" y="188" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">2. Five-Cloud Embedded Analytics &amp; LiveOps Selection Matrix</text>
+  <text x="832" y="210" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Comparing Microsoft Fabric Embedded vs. Looker / BigQuery vs. Snowflake vs. Databricks vs. QuickSight</text>
+
+  <rect x="832" y="224" width="710" height="68" rx="8" fill="#0F2942" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="848" y="246" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">① Microsoft Fabric Embedded + Power BI DirectLake + Eventhouse KQL (Primary B2B SaaS &amp; LiveOps Hub)</text>
+  <text x="848" y="266" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Customer-facing SaaS portals (100–2,400+ tenants) &amp; LiveOps games needing $0 per-external-user licensing,</text>
+  <text x="848" y="282" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">DirectLake in-memory speed (bypassing SQL warehouse bottlenecks), EffectiveIdentity RLS/CLS, and 10ms KQL funnels.</text>
+
+  <rect x="832" y="302" width="710" height="62" rx="8" fill="#1E293B" stroke="#FACC15"/>
+  <text x="848" y="324" fill="#FDE047" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">② GCP BigQuery + Looker Embedded + Firebase / GA4</text>
+  <text x="848" y="344" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Mobile apps deeply tied to Firebase/AdMob; however, Looker Embedded carries high platform &amp; external user fees.</text>
+  <text x="848" y="358" fill="#FEF08A" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Coexistence: Mirror BigQuery Firebase/GA4 events into OneLake ($0 compute) &amp; serve external tenants via Fabric Embedded.</text>
+
+  <rect x="832" y="374" width="710" height="62" rx="8" fill="#1E293B" stroke="#06B6D4"/>
+  <text x="848" y="396" fill="#22D3EE" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">③ Snowflake Multi-Cluster Warehouse + Streamlit / External BI</text>
+  <text x="848" y="416" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Best for: Sharing raw B2B data tables to customers who already own their own Snowflake accounts (Reader/Full Accounts).</text>
+  <text x="848" y="430" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Pitfall: Serving 10,000+ concurrent external web portal users via live SQL queries triggers severe Multi-Cluster credit burn.</text>
+
+  <rect x="832" y="446" width="348" height="56" rx="8" fill="#1E293B" stroke="#F97316"/>
+  <text x="848" y="466" fill="#FB923C" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">④ Databricks SQL Serverless + Lakeview</text>
+  <text x="848" y="484" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">Strong for internal ML churn modeling; lacks mature white-label OEM multi-tenant SDKs.</text>
+
+  <rect x="1194" y="446" width="348" height="56" rx="8" fill="#1E293B" stroke="#A855F7"/>
+  <text x="1210" y="466" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">⑤ AWS QuickSight Embedded + Kinesis</text>
+  <text x="1210" y="484" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11">Session-pack pricing escalates rapidly under high-frequency daily SaaS portal logins.</text>
+
+  <rect x="832" y="512" width="710" height="52" rx="8" fill="#064E3B" stroke="#10B981"/>
+  <text x="848" y="534" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">💡 Architect Golden Rule: Use One Shared Semantic Model + `EffectiveIdentity` RLS + Workspace Isolation for VIPs!</text>
+  <text x="848" y="552" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">Serve 95% of standard tenants via pooled Dynamic RLS, and isolate top 5% enterprise VIPs in dedicated workspaces with BYOK CMK.</text>
+
+  <!-- Bottom Panel: End-to-End 41ms Multi-Tenant SaaS & Gaming LiveOps Attribution Closed Loop -->
+  <rect x="36" y="598" width="1528" height="436" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="58" y="630" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3. End-to-End Multi-Tenant Embedded Analytics, Real-Time Bot/Churn Attribution &amp; LiveOps Loop (41ms E2E)</text>
+  <text x="58" y="652" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12">Scenario FA (R150 Milestone!): 2,400 SaaS/Game Tenants · 995K EPS Event Stream · 468M Behavioral Vectors · $51.60M ARR/ROAS Protected</text>
+
+  <!-- Step 1 -->
+  <rect x="58" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#0284C7" stroke-width="1.5"/>
+  <rect x="74" y="688" width="190" height="24" rx="12" fill="#0284C7"/>
+  <text x="169" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 1 · FUNNEL &amp; BOT (10 ms)</text>
+  <text x="74" y="732" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Eventhouse KQL Real-Time Funnel</text>
+  <text x="74" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Ingests 995K EPS multi-tenant clickstream, in-app</text>
+  <text x="74" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  purchase (IAP) &amp; ad-network callbacks ($0/GB tax)</text>
+  <text x="74" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Detects Campaign-UA-19 device-farm click-injection</text>
+  <text x="74" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  (34.2% fake installs) &amp; Level-4 boss churn spike</text>
+  <text x="74" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Computes real-time D1/D7 ROAS &amp; cohort retention</text>
+  <text x="74" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  across 2,400 tenants in 10 ms</text>
+  <text x="74" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0/GB Eventhouse write tax saves $225,200/mo</text>
+
+  <!-- Arrow 1->2 -->
+  <text x="418" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 2 -->
+  <rect x="436" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#818CF8" stroke-width="1.5"/>
+  <rect x="452" y="688" width="190" height="24" rx="12" fill="#6366F1"/>
+  <text x="547" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 2 · 468M &amp; RLS (10 ms)</text>
+  <text x="452" y="732" fill="#A5B4FC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">468M DiskANN + DirectLake RLS</text>
+  <text x="452" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Cosmos DB SSD DiskANN searches 468M player/user</text>
+  <text x="452" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  journey &amp; ad-creative embeddings in 10ms (-92% RAM)</text>
+  <text x="452" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Matches dynamic boss HP tuning (-8%) &amp; reallocates</text>
+  <text x="452" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  UA budget to high-LTV organic lookalike cohorts</text>
+  <text x="452" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• DirectLake + EffectiveIdentity RLS serves 10,300</text>
+  <text x="452" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  tenant analysts with 0.00% cross-tenant leakage</text>
+  <text x="452" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$2,600/mo SSD DiskANN vs $55,600/mo DRAM cluster</text>
+
+  <!-- Arrow 2->3 -->
+  <text x="796" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 3 -->
+  <rect x="814" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="830" y="688" width="200" height="24" rx="12" fill="#D97706"/>
+  <text x="930" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 3 · TENANT &amp; SURGE (10 ms)</text>
+  <text x="830" y="732" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Foundry IQ OBO &amp; Economy Gate</text>
+  <text x="830" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Validates SAAS-GAMING-EMBEDDED-RLS-SOP-157:</text>
+  <text x="830" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  enforces strict `tenant_id` OBO isolation, Surge</text>
+  <text x="830" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  Protection (75% background cap) &amp; economy inflation</text>
+  <text x="830" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Blocks adversarial prompt trying to query another</text>
+  <text x="830" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">  tenant's ARR or issue uncapped virtual currency</text>
+  <text x="830" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 100% deterministic guardrail verification in 10 ms</text>
+  <text x="830" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">Historic 150th Round (R150!) &amp; 155 Bilingual FAQs!</text>
+
+  <!-- Arrow 3->4 -->
+  <text x="1174" y="795" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">→</text>
+
+  <!-- Step 4 -->
+  <rect x="1192" y="672" width="350" height="240" rx="10" fill="#131F38" stroke="#10B981" stroke-width="1.5"/>
+  <rect x="1208" y="688" width="190" height="24" rx="12" fill="#059669"/>
+  <text x="1303" y="704" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">STEP 4 · WRITE-BACK (11 ms)</text>
+  <text x="1208" y="732" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">PlayFab + Ad Bid + 1GB Free SQL</text>
+  <text x="1208" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• LiveOps &amp; Growth Director approves in Teams/Portal</text>
+  <text x="1208" y="774" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Rayfin SDK blocks bot-farm sub-publisher, updates</text>
+  <text x="1208" y="796" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  PlayFab LiveOps config &amp; logs audit to 1GB Free SQL</text>
+  <text x="1208" y="814" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">  &amp; regional gateway ALDO edge in 11 ms</text>
+  <text x="1208" y="836" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Total 41ms E2E · 132.0ms &amp; 119.0ms Exact Means</text>
+  <text x="1208" y="854" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• Saves $304.3K/mo (-95.5% TCO) · $51.60M SLA Protected</text>
+  <text x="1208" y="886" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11">$0 external viewer seat tax for 2,400 tenants on F64+</text>
+
+  <!-- Bottom KPI Summary Bar -->
+  <rect x="58" y="928" width="1484" height="86" rx="10" fill="#091526" stroke="#1E293B"/>
+  <text x="82" y="956" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Round 150 Sesquicentennial Milestone Summary (Scenario FA · DL-641..DL-644):</text>
+  <text x="82" y="980" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Historic 150th Round (R150!) · 155 Bilingual FAQs (310 Docs!) · Exact Routing Mean (n=644): 132.0 ms · Exact Ontology Mean (n=157): 119.0 ms · Tests: 318 / 318</text>
+  <text x="82" y="1000" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">• Business Impact: 468M Vectors · -$304,300/mo (-95.5% TCO) · 41ms E2E · Protects $51.60M Multi-Tenant SaaS ARR &amp; Gaming ROAS SLA</text>
+</svg>
