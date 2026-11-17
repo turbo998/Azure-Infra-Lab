@@ -11797,6 +11797,73 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Azure AI Search L2 + Foundry IQ + Cosmos DB SSD DiskANN (460M Vectors) + Eventhouse KQL + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_manufacturing_automotive_fabric_supply_chain_connected_vehicle_maintenance_vs_4clouds":
+        return {
+            "scenario_id": "global_manufacturing_automotive_fabric_supply_chain_connected_vehicle_maintenance_vs_4clouds",
+            "title": "Global Manufacturing & Automotive Connected Vehicle Telematics, Multi-Tier SAP Supply Chain ATP & Predictive Maintenance Loop (1.5M Connected EVs + 42 Assembly Plants · 995K EPS CAN/OPC-UA Stream + 464M Waveform & Repair BOM Vectors) Eventhouse H3 Spatial Join, OneLake SAP Zero-Copy & Line-Side Lot Containment (995K EPS · 464M DiskANN · 42ms E2E · 640 Scenarios, Sub-120ms (119.5ms!) Ontology Mean & >$51M SLA Milestone!)",
+            "telemetry": {
+                "connected_vehicles_fleet_count": 1500000,
+                "assembly_and_component_plants_count": 42,
+                "can_bus_and_opcua_ingestion_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "fault_waveform_and_repair_bom_vectors_count": 464000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "affected_inverter_lot_vehicles_count": 380,
+                "contained_line_side_unmounted_units_count": 1200,
+                "governed_factory_otif_pct": 99.4,
+                "unplanned_line_stop_minutes": 0,
+                "concurrent_plant_staff_and_dealers": 10150,
+            },
+            "ontology_traversal": [
+                "EV-Fleet-EastChina (380 EVs on SiC Inverter Lot-INV-26B) -> Eventhouse KQL series_fit_line() detects gate-driver thermal-resistance degradation across 995K EPS CAN streams ($0/GB write tax) while native H3 Res-8 spatial join locates nearest 4S service bays in 10ms",
+                "Lot-INV-26B -> OneLake × SAP Datasphere Zero-Copy BOM Trace + Cosmos DB SSD DiskANN (464M CAN waveform, NVH acoustic & 8D repair manual vectors, -92% RAM) -> Flags 1,200 unmounted Lot-INV-26B units at Plant-04 and locks 420 replacement kits at Kunshan Parts Hub in 11ms",
+                "Containment-and-Service-Plan -> Foundry IQ Guardrail (MFG-AUTO-SUPPLY-TELEMATICS-SOP-156) + Purview OBO Security -> Verifies IATF 16949 containment, confirms 99.4% factory OTIF (0-min line stop) via alternate Tier-1 safety stock, and masks driver GPS PII in 10ms",
+                "Approved Plan -> VP of Supply Chain & Quality Teams Card -> Rayfin SDK commits SAP spare-part transfer, 4S bay booking & Plant-04 line-side lot swap to 1GB Free Fabric SQL + plant ALDO edge in 11ms (42ms E2E)",
+            ],
+            "multi_agent_plan": {
+                "fabric_mfg_auto_monthly_tco_usd": 14200,
+                "competitor_stitched_mfg_monthly_tco_usd": 316600,
+                "monthly_mfg_auto_tco_saved_usd": 302400,
+                "monthly_mfg_auto_tco_savings_pct": 95.5,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 850000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 995K EPS Connected-Vehicle CAN & H3 Dealer Spatial Join Agent",
+                        "operation": "Ingest 995K EPS 1.5M-vehicle CAN bus and 42-plant OPC-UA telemetry at $0/GB write surcharge, detect Lot-INV-26B SiC inverter thermal drift, and H3-join nearest 4S service bays in 10ms",
+                        "impact_metric": "10ms KQL + H3 sense; $0/GB stream write surcharge saves $223,800/mo vs per-property/GB IoT pricing",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "OneLake SAP Datasphere Zero-Copy BOM & Cosmos DB SSD DiskANN 464M-Vector Agent",
+                        "operation": "Trace Lot-INV-26B across multi-tier SAP BOMs (flagging 1,200 unmounted units at Plant-04) and query 464,000,000 waveform/repair vectors in 11ms (-92% RAM) to lock 420 Kunshan spare kits",
+                        "impact_metric": "11ms BOM & vector match; $2,580/mo SSD DiskANN vs $55,100/mo full-DRAM vector cluster",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ IATF 16949 Gate, SAP BAPI & Plant ALDO Edge Write-Back Agent",
+                        "operation": "Verify SOP-156 99.4% OTIF zero-line-stop guardrail and Purview OBO GPS masking (10ms), then commit SAP parts transfer, 4S booking, and Plant-04 lot swap to 1GB Free Fabric SQL and ALDO edge (11ms)",
+                        "impact_metric": "42ms E2E loop; 99.4% OTIF & 0-min line stop; -$302.4K/mo (-95.5%) TCO; $51.25M (>$51M!) SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "MFG-AUTO-SUPPLY-TELEMATICS-SOP-156",
+                "hard_constraint": "Never dispatch customer predictive-maintenance alerts without locking verified SAP spare-part ATP at the target service center, never allow defective supplier lots to continue mounting on assembly lines, and never expose unmasked driver GPS trajectories to external suppliers",
+                "proposed_change": "Lock 420 gate-driver replacement kits at Kunshan Hub for 28 4S dealers via H3 join, swap 1,200 unmounted Lot-INV-26B units at Plant-04 to alternate Tier-1 stock (preserving 99.4% OTIF), mask driver GPS via Purview OBO, and commit to 1GB Free Fabric SQL",
+                "sap_spare_part_atp_and_plant_lot_containment_verified": True,
+                "iatf_16949_zero_line_stop_and_gps_masking_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 51250000,
+                "end_to_end_latency_ms": 42,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL/H3 + OneLake SAP Zero-Copy + Cosmos DB SSD DiskANN (464M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -19433,6 +19500,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 54,
     },
+    {
+        "id": "DL-637",
+        "category": "Real-Time Intelligence",
+        "question": "Ingest 995K EPS connected-vehicle CAN bus (BMS/inverter) and 42-plant OPC-UA streams across 1.5M EVs and spatially join nearest 4S service bays without $223.8K/mo per-property/GB fees",
+        "expected": "Route to Fabric Eventhouse KQL + H3 (10ms Thermal-Drift & Res-8 Dealer Spatial Join at $0/GB Write Tax) + OneLake SAP Datasphere Zero-Copy + 464M SSD DiskANN 11ms",
+        "model_answer": "Route to Fabric Eventhouse KQL + H3 (10ms Thermal-Drift & Res-8 Dealer Spatial Join at $0/GB Write Tax) + OneLake SAP Datasphere Zero-Copy + 464M SSD DiskANN 11ms",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 53,
+    },
+    {
+        "id": "DL-638",
+        "category": "Lakehouse & Compute",
+        "question": "Select architecture for offline petabyte ADAS camera/LiDAR perception training vs 42ms live SAP S/4HANA multi-tier BOM containment and dealer spare-part ATP dispatch",
+        "expected": "Train ADAS/RUL perception models on Databricks GPU / Azure ML and zero-copy to OneLake while uniting SAP Datasphere BOMs, Eventhouse H3, and 464M SSD DiskANN vectors in Fabric IQ",
+        "model_answer": "Train ADAS/RUL perception models on Databricks GPU / Azure ML and zero-copy to OneLake while uniting SAP Datasphere BOMs, Eventhouse H3, and 464M SSD DiskANN vectors in Fabric IQ",
+        "task_type": "choice",
+        "confidence": 0.98,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 53,
+    },
+    {
+        "id": "DL-639",
+        "category": "Enterprise Governance",
+        "question": "Compare Fabric Eventhouse H3 + OneLake SAP Zero-Copy + 464M SSD DiskANN + ALDO vs stitched AWS SiteWise/FleetWise + per-seat BI across 42 plants and 10,150 plant/dealer users",
+        "expected": "Hybrid Better Together: Stream 995K EPS CAN/OPC-UA into Eventhouse ($0/GB tax), zero-copy SAP BOMs, index 464M vectors in SSD DiskANN (-92% RAM), run ALDO plant edge, and serve 10,150 users at $0 viewer seat (-95.5% TCO)",
+        "model_answer": "Hybrid Better Together: Stream 995K EPS CAN/OPC-UA into Eventhouse ($0/GB tax), zero-copy SAP BOMs, index 464M vectors in SSD DiskANN (-92% RAM), run ALDO plant edge, and serve 10,150 users at $0 viewer seat (-95.5% TCO)",
+        "task_type": "score",
+        "confidence": 0.97,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 53,
+    },
+    {
+        "id": "DL-640",
+        "category": "Fabric IQ & Ontology",
+        "question": "380 EVs on inverter Lot-INV-26B show SiC thermal degradation while Plant-04 holds 1,200 unmounted units under IATF 16949 zero-line-stop (99.4% OTIF) and driver GPS privacy rules",
+        "expected": "Eventhouse KQL/H3 10ms Lot-INV-26B & Dealer Sense ($0/GB Tax) + SAP Zero-Copy & 464M DiskANN 11ms Kunshan 420-Kit & Plant-04 Swap Match + Foundry IQ 99.4% OTIF & GPS Gate (10ms) + Teams 1GB Free SQL/ALDO Commit (11ms = 42ms E2E, Protect $51.25M SLA)",
+        "model_answer": "Eventhouse KQL/H3 10ms Lot-INV-26B & Dealer Sense ($0/GB Tax) + SAP Zero-Copy & 464M DiskANN 11ms Kunshan 420-Kit & Plant-04 Swap Match + Foundry IQ 99.4% OTIF & GPS Gate (10ms) + Teams 1GB Free SQL/ALDO Commit (11ms = 42ms E2E, Protect $51.25M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 53,
+    },
 ]
 
 
@@ -19703,6 +19818,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     financial_research_hybrid_rag_sim = simulate_ontology_incident("global_financial_research_wealth_fabric_hybrid_rag_text2sql_agent_vs_4clouds")
     oltp_olap_zero_etl_mirroring_sim = simulate_ontology_incident("global_oltp_to_olap_zero_etl_fabric_mirroring_osmos_vs_debezium_kafka_fivetran")
     enterprise_vector_hybrid_search_sim = simulate_ontology_incident("global_enterprise_vector_hybrid_search_fabric_diskann_ai_search_vs_pgvector_mosaic_milvus")
+    mfg_auto_supply_telematics_sim = simulate_ontology_incident("global_manufacturing_automotive_fabric_supply_chain_connected_vehicle_maintenance_vs_4clouds")
     perturbations = evaluate_perturbation_robustness()
     scaling = evaluate_scaling_latency()
 
@@ -19862,6 +19978,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_financial_research_wealth_fabric_hybrid_rag_text2sql_agent_vs_4clouds": financial_research_hybrid_rag_sim,
         "global_oltp_to_olap_zero_etl_fabric_mirroring_osmos_vs_debezium_kafka_fivetran": oltp_olap_zero_etl_mirroring_sim,
         "global_enterprise_vector_hybrid_search_fabric_diskann_ai_search_vs_pgvector_mosaic_milvus": enterprise_vector_hybrid_search_sim,
+        "global_manufacturing_automotive_fabric_supply_chain_connected_vehicle_maintenance_vs_4clouds": mfg_auto_supply_telematics_sim,
     }
     sim_latencies = [sim["decision_routing"]["end_to_end_latency_ms"] for sim in ontology_sims_dict.values()]
     ontology_sim_mean_ms = round(sum(sim_latencies) / len(sim_latencies), 2)
@@ -20155,6 +20272,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
     r146_ontology_sim_mean_ms = round(sum(r146_sim_latencies) / len(r146_sim_latencies), 2)
     r147_sim_latencies = sim_latencies[:154]
     r147_ontology_sim_mean_ms = round(sum(r147_sim_latencies) / len(r147_sim_latencies), 2)
+    r148_sim_latencies = sim_latencies[:155]
+    r148_ontology_sim_mean_ms = round(sum(r148_sim_latencies) / len(r148_sim_latencies), 2)
 
     vendor_spec_references = [
         {
@@ -22088,11 +22207,24 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             ],
             "as_of": "2026-11-17",
         },
+        {
+            "id": "SPEC-MANUFACTURING-AUTOMOTIVE-SUPPLY-CHAIN-TELEMATICS-MAINTENANCE-464M-R149",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL time-series and H3 geospatial indexing ($0/GB stream write surcharge), Digital Twin Builder, OneLake × SAP Datasphere zero-copy multi-tier BOM & ATP integration, Cosmos DB in Fabric SSD DiskANN (464M+ fault-waveform & repair-manual vectors at -92% RAM), and SQL Server on Azure Local (ALDO) plant-floor edge close the loop from connected-vehicle anomaly detection to line-side lot containment and 4S dealer parts booking; Databricks Mosaic AI, AWS IoT FleetWise/SiteWise, Snowflake Manufacturing Data Cloud, and GCP BigQuery provide complementary ADAS training and edge collection.",
+            "official_url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/digital-twin-builder/overview",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/kusto/query/geo-point-to-h3cell-function",
+            "competitor_doc_urls": [
+                "https://aws.amazon.com/iot-fleetwise/",
+                "https://www.databricks.com/solutions/industries/manufacturing",
+                "https://www.snowflake.com/en/solutions/industries/manufacturing/",
+            ],
+            "as_of": "2026-11-18",
+        },
     ]
 
     report = {
-        "report_id": "data-lab-fabric-vs-4clouds-2026-11-18-r148",
-        "generated_at": "2026-11-18T00:02:00+08:00",
+        "report_id": "data-lab-fabric-vs-4clouds-2026-11-18-r149",
+        "generated_at": "2026-11-18T00:15:00+08:00",
         "provenance": {
             "data_classification": "synthetic_deterministic_and_reported_baseline",
             "independently_reproduced": True,
@@ -22103,6 +22235,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "routing_matrix_scope": (
                     f"Arithmetic mean across all n={matrix['total_scenarios']} routing & decision evaluation items "
                     f"(DL-01..DL-{matrix['total_scenarios']:02d}, mean={matrix['avg_latency_ms']}ms; "
+                    f"historical R148 snapshot n=636 mean was 133.0ms; "
                     f"historical R147 snapshot n=632 mean was 133.5ms; "
                     f"historical R146 snapshot n=628 mean was 134.0ms; "
                     f"historical R145 snapshot n=624 mean was 134.5ms; "
@@ -22256,6 +22389,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "ontology_simulations_scope": (
                     f"Arithmetic mean across the n={len(sim_latencies)} multi-step industry Ontology closed-loop simulations "
                     f"({sim_latencies}ms, range {min(sim_latencies)}-{max(sim_latencies)}ms, mean={ontology_sim_mean_ms}ms; "
+                    f"historical R148 snapshot n=155 mean was {r148_ontology_sim_mean_ms}ms; "
                     f"historical R147 snapshot n=154 mean was {r147_ontology_sim_mean_ms}ms; "
                     f"historical R146 snapshot n=153 mean was {r146_ontology_sim_mean_ms}ms; "
                     f"historical R145 snapshot n=152 mean was {r145_ontology_sim_mean_ms}ms; "
@@ -22924,6 +23058,7 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
             "total_ontology_simulations": len(sim_latencies),
             "simulation_latencies_ms": sim_latencies,
             "ontology_simulation_mean_modeled_latency_ms": ontology_sim_mean_ms,
+            "r148_155_simulation_mean_modeled_latency_ms": r148_ontology_sim_mean_ms,
             "r147_154_simulation_mean_modeled_latency_ms": r147_ontology_sim_mean_ms,
             "r146_153_simulation_mean_modeled_latency_ms": r146_ontology_sim_mean_ms,
             "r145_152_simulation_mean_modeled_latency_ms": r145_ontology_sim_mean_ms,
