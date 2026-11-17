@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg176" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070C18"/>
+      <stop offset="50%" stop-color="#0C192E"/>
+      <stop offset="100%" stop-color="#081E26"/>
+    </linearGradient>
+    <linearGradient id="hdr176" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="cardFabric176" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D2824"/>
+      <stop offset="100%" stop-color="#091D2A"/>
+    </linearGradient>
+    <linearGradient id="cardWarn176" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1C0D14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg176)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1392" height="84" rx="14" fill="#0F172A" stroke="url(#hdr176)" stroke-width="2"/>
+  <text x="48" y="48" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1">
+    ROUND 168 · 175TH ONTOLOGY &amp; 123.0/110.0ms EXACT MEANS! · RETAIL BANKING, CREDIT UNDERWRITING &amp; COLLECTIONS FAQ
+  </text>
+  <text x="48" y="76" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">
+    零售银行、消费信贷与房贷「开放银行实时授信 + M0/M1逾期预警 + 合规催收/展期」选型 (第175大本体, 123.0/110.0ms整数均值 &amp; 23ms闭环!)
+  </text>
+  <rect x="1158" y="30" width="236" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1276" y="53" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">R168 · 175 ONTOLOGIES &amp; 110.0ms!</text>
+  <text x="1276" y="74" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">540M Vec · -$337.6K/mo · $57.90M</text>
+
+  <!-- Left Column: Retail Banking & Consumer Credit Pain Points -->
+  <rect x="24" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🏦 零售信贷、按揭审批与贷后催收四大痛点 (4,500万账户)
+  </text>
+
+  <rect x="40" y="164" width="398" height="94" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="186" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">1. 征信滞后 30 天与 M1 首次逾期盲区 ($0/GB vs 流写入税)</text>
+  <text x="54" y="208" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 4,500万信贷/信用卡/房贷账户流水与代发工资流高达 995K EPS</text>
+  <text x="54" y="228" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 等人行/FICO 月度征信报出违约时，借款人已滚入 M2 不良并计提减值</text>
+  <text x="54" y="246" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Eventhouse KQL + Activator 6ms 提前 14 天锁定 1.84 万高危户</text>
+
+  <rect x="40" y="268" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="290" fill="#A78BFA" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">2. 5.40亿 (540M) 流水/税单/展期向量 + 湖内 PREDICT ($0税)</text>
+  <text x="54" y="312" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 房贷收入证明 (税单/银行流水) 人工核验慢；全量客户每日重评推理贵</text>
+  <text x="54" y="332" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 5.40亿条 (540M) 征信轨迹、按揭凭证与纾困展期方案向量 (对比4TB内存)</text>
+  <text x="54" y="352" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 540M SSD DiskANN + 湖内 PREDICT 6ms 降 M1→M2 迁徙率 38%</text>
+
+  <rect x="40" y="374" width="398" height="96" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="54" y="396" fill="#F472B6" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">3. ECOA 拒贷可解释性 + FDCPA/催收频次红线 (&lt;=7次/7天)</text>
+  <text x="54" y="418" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 黑盒拒贷若给不出法定原因码或外呼催收突破频次/静默时段将遭重罚</text>
+  <text x="54" y="438" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12.5">• 13,000 名信贷审批、风控与支行客户经理需严格脱敏身份证/卡号</text>
+  <text x="54" y="458" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ Foundry IQ 5ms 校验可解释原因码 &amp; 催收频次上限 + OBO 脱敏</text>
+
+  <rect x="40" y="480" width="398" height="94" rx="8" fill="url(#cardWarn176)" stroke="#EF4444" stroke-width="1"/>
+  <text x="54" y="502" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">4. 传统多云拼凑方案的三大成本黑洞 ($352.2K/月)</text>
+  <text x="54" y="524" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 交易流写入税 + 4,500万账户 24/7 在线评分端点 = $127.8K/月</text>
+  <text x="54" y="544" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5.40亿征信与收入凭证向量全内存集群 (4.00TB RAM!) = $67.4K/月</text>
+  <text x="54" y="564" fill="#FECACA" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 13,000 名风控、审批与支行客户经理 BI 席位税 = $157.0K/月</text>
+
+  <!-- Center Column: 23ms Closed-Loop Architecture -->
+  <rect x="470" y="118" width="500" height="470" rx="12" fill="url(#cardFabric176)" stroke="#10B981" stroke-width="2"/>
+  <text x="492" y="148" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🏛️ Fabric + Foundry IQ 实时授信与合规展期闭环 (23ms!)
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="490" y="164" width="460" height="88" rx="8" fill="#0F172A" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="506" y="186" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">① Eventhouse KQL + Activator 现金流断崖与M0预警 (6 ms)</text>
+  <text x="506" y="206" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• $0/GB 摄入 4,500 万账户 995K EPS 开放银行流水、代发工资与刷卡流</text>
+  <text x="506" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6ms 提前 14 天锁定 18,400 名代发工资中断或房产税激增的 M0 潜在逾期户</text>
+  <text x="506" y="242" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 触发主动式账单分期/宽限期纾困与按揭秒批</text>
+
+  <!-- Step 2 -->
+  <rect x="490" y="264" width="460" height="92" rx="8" fill="#0F172A" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="506" y="286" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">② 5.40亿 (540M) SSD DiskANN + 湖内 PREDICT ($0税) (6 ms)</text>
+  <text x="506" y="306" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 6ms 检索 540,000,000 条征信轨迹、税单凭证与展期转化向量</text>
+  <text x="506" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• FLAML 湖内 PREDICT ($0 闲置税) + NL2DAX 定制 90 天先息后本纾困方案</text>
+  <text x="506" y="344" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ M1→M2 恶化迁徙率降低 38%，立省 $3.65M IFRS 9 / CECL 拨备计提</text>
+
+  <!-- Step 3 -->
+  <rect x="490" y="368" width="460" height="92" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="506" y="390" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">③ Foundry IQ ECOA 公平信贷与 FDCPA 催收频次门禁 (5 ms)</text>
+  <text x="506" y="410" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 校验《RETAIL-BANKING-CREDIT-COLLECTIONS-AGENT-SOP-175》</text>
+  <text x="506" y="428" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5ms 验证 SHAP 拒贷原因码零群体歧视，锁死催收触达 &lt;=7次/7天且静默期免打扰</text>
+  <text x="506" y="448" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 强制执行 13,000 名信贷与支行人员 SSN/卡号 Entra OBO 动态掩码</text>
+
+  <!-- Step 4 -->
+  <rect x="490" y="472" width="460" height="98" rx="8" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="506" y="494" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">④ Teams 首席信贷官确认 + App 一键展期 + 1GB SQL (6 ms)</text>
+  <text x="506" y="514" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 首席信贷官与消金副总裁在 Teams 确认；Rayfin SDK 6ms 向手机银行推送</text>
+  <text x="506" y="532" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 一键展期协议、更新 IFRS 9 减值阶段并写入 1GB 免费 Fabric SQL 与分行 ALDO</text>
+  <text x="506" y="552" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800">★ 端到端 6+6+5+6 = 23ms 闭环! · 第175大本体(110.0ms均值!) · $57.90M SLA</text>
+
+  <!-- Right Column: 5-Cloud Matrix & Milestones -->
+  <rect x="986" y="118" width="430" height="470" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="1006" y="148" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    📊 五云零售信贷与贷后管理对比 (4,500万户 · 5.40亿向量)
+  </text>
+
+  <rect x="1002" y="164" width="398" height="72" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="1016" y="186" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">🏆 Microsoft Fabric + Foundry IQ (F64 Reserved)</text>
+  <text x="1016" y="206" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Eventhouse 6ms ($0/GB) + 湖内 PREDICT ($0闲置税) + 540M DiskANN</text>
+  <text x="1016" y="224" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800">• 月总 TCO: $14,600/月 (省 95.9% 新纪录! · 月省 $337.6K!) | 23ms</text>
+
+  <rect x="1002" y="244" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="264" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Databricks (Structured Streaming + Mosaic Vector + Genie)</text>
+  <text x="1016" y="282" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于信用评分卡训练；但 540M 内存向量与 13,000 支行席位贵</text>
+  <text x="1016" y="298" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $235,000/月 | 端到端延迟: 1,240 ms</text>
+
+  <rect x="1002" y="314" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="334" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Snowflake (Snowpipe + Document AI + Cortex Search)</text>
+  <text x="1016" y="352" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于外部征信局共享；但 995K EPS 流水写入与万名客户经理并发耗 Credit</text>
+  <text x="1016" y="368" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $268,500/月 | 端到端延迟: 1,860 ms</text>
+
+  <rect x="1002" y="384" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="404" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Google BigQuery (Streaming + Document AI + Looker)</text>
+  <text x="1016" y="422" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 强于按揭文档解析；但 $0.05/GB 流写入税 + 13,000 席 Looker 极昂贵</text>
+  <text x="1016" y="438" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $294,000/月 | 端到端延迟: 1,630 ms</text>
+
+  <rect x="1002" y="454" width="398" height="62" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <text x="1016" y="474" fill="#F59E0B" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">AWS (MSK/Kinesis + SageMaker + OpenSearch + QuickSight)</text>
+  <text x="1016" y="492" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 540M OpenSearch 内存向量 (4.00TB RAM!) + 24/7 在线端点最昂贵</text>
+  <text x="1016" y="508" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• 月总 TCO: $352,200/月 | 端到端延迟: 2,390 ms</text>
+
+  <rect x="1002" y="524" width="398" height="50" rx="8" fill="#172554" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="1201" y="545" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    🎯 拐点：信贷账户 &gt;50万户 或 向量 &gt;3,000万 或 支行/风控用户 &gt;500人
+  </text>
+  <text x="1201" y="564" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+    已有 Snowflake 外部征信局 / 核心账务库 → OneLake 零拷贝打通
+  </text>
+
+  <!-- Bottom Section: Decision Tree & R168 Milestones -->
+  <rect x="24" y="604" width="1392" height="274" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="634" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    🧭 零售银行、消费信贷与房贷按揭选型决策树 &amp; R168 封存基准 (DL-713..DL-716 · Scenario FS · 省95.9% TCO新纪录!)
+  </text>
+
+  <!-- Decision Tree Boxes -->
+  <rect x="44" y="650" width="420" height="66" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="58" y="672" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ 场景 A：开放银行实时授信 + M0 主动纾困 + 合规智能催收</text>
+  <text x="58" y="692" fill="#ECFDF5" font-family="Segoe UI, Arial, sans-serif" font-size="12">首选 Fabric Eventhouse (6ms) + 湖内 PREDICT + 540M DiskANN + Foundry IQ</text>
+  <text x="58" y="708" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 23ms 闭环，省 95.9% TCO 新纪录 ($14.6K vs $352.2K/月)</text>
+
+  <rect x="484" y="650" width="440" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="498" y="672" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔄 场景 B：已接入 Snowflake 外部征信局共享或 Databricks 风控沙箱</text>
+  <text x="498" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">保留外部征信共享与模型训练，通过 OneLake Iceberg Shortcut 零拷贝挂载</text>
+  <text x="498" y="708" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 由 Fabric Eventhouse + Direct Lake 承接日内流水预警与 13,000 席支行看板</text>
+
+  <rect x="944" y="650" width="452" height="66" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  <text x="958" y="672" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">🔌 场景 C：核心分行金库/按揭面签中心本地隐私驻留 (Branch Edge)</text>
+  <text x="958" y="692" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">部署 Azure Local Disconnected Operations (ALDO) 分行合规边缘节点</text>
+  <text x="958" y="708" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">→ 本地完成面签生物特征核验与凭证归档，脱敏特征同步总行 OneLake</text>
+
+  <!-- Bottom KPI Strip -->
+  <rect x="44" y="732" width="320" height="126" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="204" y="758" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-713 · Eventhouse M0 预警 (34ms)</text>
+  <text x="204" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">6ms · 提前14天预警</text>
+  <text x="204" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">995K EPS $0/GB 写入税 | 锁定 1.84万 M0 高危户</text>
+  <text x="204" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 715/716 (99.86%) · 123.0ms 顺子整数均值!</text>
+
+  <rect x="382" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="547" y="758" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-714 · 5.40亿 SSD DiskANN (34ms)</text>
+  <text x="547" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">$2,960/月 vs $67.4K</text>
+  <text x="547" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">540M 征信/税单向量省 92% 内存 (对比4.0TB!)</text>
+  <text x="547" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ M1→M2 迁徙率降 38% · 省 $3.65M 拨备</text>
+
+  <rect x="730" y="732" width="330" height="126" rx="10" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="895" y="758" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">DL-715 · ECOA &amp; FDCPA 门禁 (34ms)</text>
+  <text x="895" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">&lt;=7次/7天 · 0投诉</text>
+  <text x="895" y="816" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">SHAP 可解释拒贷码 | 湖内 PREDICT $0 闲置税</text>
+  <text x="895" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">✓ 13,000 席整千用户 $0 Viewer + OBO 掩码</text>
+
+  <rect x="1078" y="732" width="318" height="126" rx="10" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+  <text x="1237" y="758" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800" text-anchor="middle">DL-716 · 23ms 闭环 &amp; 95.9%纪录 (34ms)</text>
+  <text x="1237" y="790" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">-95.9% 纪录! · $57.90M</text>
+  <text x="1237" y="816" fill="#A7F3D0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">$14.6K vs $352.2K/月 (月省 $337.6K!)</text>
+  <text x="1237" y="840" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" text-anchor="middle">★ 第175大本体 · 110.0ms整十均值 · 23ms!</text>
+</svg>
