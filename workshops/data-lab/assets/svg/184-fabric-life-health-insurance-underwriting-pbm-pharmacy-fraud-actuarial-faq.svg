@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad184" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#081526"/>
+    </linearGradient>
+    <linearGradient id="headerGrad184" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="fabricBoxGrad184" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0A1E32"/>
+    </linearGradient>
+    <linearGradient id="compBoxGrad184" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1E0D10"/>
+    </linearGradient>
+    <filter id="shadow184" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1480" height="940" fill="url(#bgGrad184)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1432" height="92" rx="14" fill="url(#headerGrad184)" filter="url(#shadow184)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-size="20.5" font-weight="800">🏥 R176 · Life/Health Insurance AI Underwriting, PBM Pharmacy FWA &amp; IFRS 17 CSM (17ms Loop · Record -96.0% TCO · 240.0ms Mean!)</text>
+  <text x="46" y="81" fill="#E0F2FE" font-size="13.5" font-weight="600">Scenario GA (DL-745..DL-748): 42M Insured Members · 995K EPS NCPDP D.0 / EDI 837 Stream + 572M APS/ICD-10 Vectors · 17ms (4+4+4+5) E2E · 70th Ontology Sim · 14,400=120² Users!</text>
+  <rect x="1216" y="34" width="222" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1327" y="58" text-anchor="middle" fill="#6EE7B7" font-size="13" font-weight="800">17ms E2E · -96.0% TCO!</text>
+  <text x="1327" y="79" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">240.0ms Exact · $60.70M SLA</text>
+
+  <!-- Left Column: Enterprise Pain Points & 4-Step 17ms Loop -->
+  <rect x="24" y="124" width="930" height="500" rx="14" fill="url(#fabricBoxGrad184)" stroke="#0EA5E9" stroke-width="1.8" filter="url(#shadow184)"/>
+  <text x="44" y="156" fill="#38BDF8" font-size="17" font-weight="800">🏗️ Microsoft Fabric Unified Life/Health Underwriting, PBM FWA &amp; IFRS 17 Actuarial Loop (17ms Sub-18ms E2E)</text>
+  <text x="44" y="177" fill="#94A3B8" font-size="12.5">Eventhouse KQL (995K EPS NCPDP D.0 / EDI 837) + Healthcare Data Solutions (FHIR R4) + 572M SSD DiskANN + Gluten C++ ($0 Surcharge)</text>
+
+  <!-- Step 1 -->
+  <rect x="44" y="192" width="890" height="94" rx="10" fill="#0B192C" stroke="#0284C7" stroke-width="1.4"/>
+  <rect x="56" y="204" width="92" height="26" rx="6" fill="#0284C7"/>
+  <text x="102" y="222" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 1 · 4ms</text>
+  <text x="162" y="221" fill="#F8FAFC" font-size="14.5" font-weight="700">Eventhouse KQL + HDS FHIR R4: 4ms Point-of-Sale PBM Pharmacy &amp; Hospital FWA Sense ($0/GB Tax!)</text>
+  <text x="56" y="245" fill="#CBD5E1" font-size="12.5">• Ingests 995,000 EPS NCPDP D.0 pharmacy claims, EDI 837 hospital bills &amp; 300-page APS PDFs across 42M insured members.</text>
+  <text x="56" y="266" fill="#38BDF8" font-size="12.5" font-weight="600">• Eliminates $135,000/mo in managed FHIR &amp; stream taxes; isolates 112 multi-pharmacy GLP-1 diversion &amp; DRG upcoding claims in 4ms.</text>
+
+  <!-- Step 2 -->
+  <rect x="44" y="298" width="890" height="94" rx="10" fill="#0B192C" stroke="#10B981" stroke-width="1.4"/>
+  <rect x="56" y="310" width="92" height="26" rx="6" fill="#059669"/>
+  <text x="102" y="328" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 2 · 4ms</text>
+  <text x="162" y="327" fill="#F8FAFC" font-size="14.5" font-weight="700">Cosmos DB SSD DiskANN (572M APS/Manual Vectors) + Spark Gluten C++ IFRS 17 CSM (4ms!)</text>
+  <text x="56" y="351" fill="#CBD5E1" font-size="12.5">• Queries 572,000,000 Swiss Re/Munich Re underwriting rules, ICD-10/CPT &amp; APS vectors via SSD DiskANN (-92% RAM at $3,120/mo vs $71,600/mo DRAM).</text>
+  <text x="56" y="372" fill="#34D399" font-size="12.5" font-weight="600">• Lifts 300-page APS straight-through underwriting from 52%→86% and accelerates 42M-policy IFRS 17 CSM valuation by 3.4x ($0 Gluten surcharge) in 4ms.</text>
+
+  <!-- Step 3 -->
+  <rect x="44" y="404" width="890" height="94" rx="10" fill="#0B192C" stroke="#F59E0B" stroke-width="1.4"/>
+  <rect x="56" y="416" width="92" height="26" rx="6" fill="#D97706"/>
+  <text x="102" y="434" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 3 · 4ms</text>
+  <text x="162" y="433" fill="#F8FAFC" font-size="14.5" font-weight="700">Foundry IQ Pre-Payment FWA Interdiction, GINA Genetic Non-Discrimination &amp; HIPAA Gate (SOP-183 · 4ms!)</text>
+  <text x="56" y="457" fill="#CBD5E1" font-size="12.5">• Validates LIFE-HEALTH-INSURANCE-UNDERWRITING-PBM-FWA-SOP-183: enforces GINA genetic non-discrimination &amp; CMS/HIPAA clinical necessity,</text>
+  <text x="56" y="478" fill="#FBBF24" font-size="12.5" font-weight="600">• Blocks 112 fraudulent FWA claims pre-payment (+$6.85M saved) and enforces PHI Purview CLS across 14,400=120² users in 4ms.</text>
+
+  <!-- Step 4 -->
+  <rect x="44" y="510" width="890" height="98" rx="10" fill="#0B192C" stroke="#8B5CF6" stroke-width="1.4"/>
+  <rect x="56" y="522" width="92" height="26" rx="6" fill="#7C3AED"/>
+  <text x="102" y="540" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 4 · 5ms</text>
+  <text x="162" y="539" fill="#F8FAFC" font-size="14.5" font-weight="700">Teams Chief Underwriter &amp; Actuary Card + Policy Admin Issue, Excel Direct Lake &amp; 1GB SQL Commit (5ms)</text>
+  <text x="56" y="563" fill="#CBD5E1" font-size="12.5">• Issues 86%-STP life policies, commits IFRS 17 CSM sub-ledger entries to Excel Direct Lake, and logs audit trail to 1GB Free SQL in 5ms.</text>
+  <text x="56" y="584" fill="#C4B5FD" font-size="12.5" font-weight="600">• Total E2E: 4ms + 4ms + 4ms + 5ms = 17ms Sub-18ms Loop! Protects $60.70M SLA &amp; saves -$352,000/mo (Record -96.0% TCO!).</text>
+
+  <!-- Right Column: Competitor Stitched Anti-Patterns -->
+  <rect x="974" y="124" width="482" height="500" rx="14" fill="url(#compBoxGrad184)" stroke="#EF4444" stroke-width="1.8" filter="url(#shadow184)"/>
+  <text x="994" y="156" fill="#FCA5A5" font-size="16.5" font-weight="800">⛔ Stitched Multi-Cloud Insurance &amp; PBM Anti-Patterns</text>
+  <text x="994" y="177" fill="#F87171" font-size="12.5">$366.8K/mo TCO · 10-Day Manual APS Review &amp; Pay-and-Chase Losses</text>
+
+  <rect x="994" y="194" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="217" fill="#FCA5A5" font-size="13.5" font-weight="700">1. Managed FHIR &amp; Per-GB Claim Stream Taxes ($135.0K/mo)</text>
+  <text x="1010" y="239" fill="#E2E8F0" font-size="12">• Ingesting 995K EPS pharmacy/hospital claims into hourly</text>
+  <text x="1010" y="258" fill="#E2E8F0" font-size="12">  FHIR datastores and per-GB streams costs $135.0K/mo and</text>
+  <text x="1010" y="276" fill="#FCA5A5" font-size="12" font-weight="600">  settles FWA claims T+1 ("pay-and-chase" recovers &lt;12%).</text>
+
+  <rect x="994" y="300" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="323" fill="#FCA5A5" font-size="13.5" font-weight="700">2. 4.32TB DRAM Vector Cluster ($71.6K/mo vs $3,120/mo)</text>
+  <text x="1010" y="345" fill="#E2E8F0" font-size="12">• Hosting 572,000,000 APS medical chunks, reinsurance manuals,</text>
+  <text x="1010" y="364" fill="#E2E8F0" font-size="12">  and ICD-10/CPT vectors in RAM-only HNSW clusters costs</text>
+  <text x="1010" y="382" fill="#FCA5A5" font-size="12" font-weight="600">  $71,600/mo vs $3,120/mo on Cosmos DB SSD DiskANN (-92% RAM).</text>
+
+  <rect x="994" y="406" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="429" fill="#FCA5A5" font-size="13.5" font-weight="700">3. Per-Page APS OCR &amp; IFRS 17 Compute Tax ($82.7K/mo)</text>
+  <text x="1010" y="451" fill="#E2E8F0" font-size="12">• Paying per-page medical OCR fees plus Photon/XL warehouse</text>
+  <text x="1010" y="470" fill="#E2E8F0" font-size="12">  surcharges for 42M-policy IFRS 17 CSM runs wastes $82.7K/mo</text>
+  <text x="1010" y="488" fill="#FCA5A5" font-size="12" font-weight="600">  vs in-lake ai.extract &amp; $0-surcharge Spark Gluten C++.</text>
+
+  <rect x="994" y="512" width="442" height="96" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="535" fill="#FCA5A5" font-size="13.5" font-weight="700">4. Per-User BI Seats for 14,400 Actuaries &amp; Staff ($77.5K/mo)</text>
+  <text x="1010" y="557" fill="#E2E8F0" font-size="12">• Licensing BI seats for 14,400 (120²) underwriters, actuaries,</text>
+  <text x="1010" y="576" fill="#E2E8F0" font-size="12">  PBM pharmacists, and SIU investigators costs $77.5K/mo vs</text>
+  <text x="1010" y="594" fill="#FCA5A5" font-size="12" font-weight="600">  $0 Power BI Viewer + Excel Direct Lake on Fabric F64+.</text>
+
+  <!-- Bottom Section: 5-Cloud TCO & Decision Matrix -->
+  <rect x="24" y="640" width="1432" height="278" rx="14" fill="#091526" stroke="#334155" stroke-width="1.5" filter="url(#shadow184)"/>
+  <text x="44" y="672" fill="#F8FAFC" font-size="16.5" font-weight="800">📊 5-Cloud Life/Health Insurance Underwriting, PBM FWA &amp; IFRS 17 Matrix (42M Members · 995K EPS · 572M Vectors · 14,400 Users)</text>
+
+  <!-- Table Header -->
+  <rect x="44" y="686" width="1392" height="32" rx="6" fill="#1E293B"/>
+  <text x="58" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Platform / Architecture</text>
+  <text x="340" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">NCPDP/EDI &amp; HDS FHIR</text>
+  <text x="605" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">572M APS/Manual Vectors</text>
+  <text x="860" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">IFRS 17 C++ &amp; 14.4K BI</text>
+  <text x="1145" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Monthly TCO &amp; Verdict</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="44" y="722" width="1392" height="36" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="58" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric (F64 Pooled)</text>
+  <text x="340" y="745" fill="#FFFFFF" font-size="12" font-weight="600">Eventhouse + HDS ($0 Tax · 4ms)</text>
+  <text x="605" y="745" fill="#6EE7B7" font-size="12" font-weight="700">SSD DiskANN (-92% RAM · $3,120/mo)</text>
+  <text x="860" y="745" fill="#FFFFFF" font-size="12" font-weight="600">86% STP · Gluten 3.4x · $0 Viewer</text>
+  <text x="1145" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">$14.8K/mo (-96.0% Record · 17ms!)</text>
+
+  <!-- Row 2: AWS -->
+  <rect x="44" y="762" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="783" fill="#E2E8F0" font-size="12" font-weight="700">AWS HealthLake + Textract + OS</text>
+  <text x="340" y="783" fill="#CBD5E1" font-size="12">Kinesis + HealthLake ($85.0K/mo)</text>
+  <text x="605" y="783" fill="#FCA5A5" font-size="12">OpenSearch 4.32TB RAM ($71.6K/mo)</text>
+  <text x="860" y="783" fill="#CBD5E1" font-size="12">Textract + QuickSight ($91.0K/mo)</text>
+  <text x="1145" y="783" fill="#FCA5A5" font-size="12" font-weight="700">$247.6K/mo (+$232.8K/mo)</text>
+
+  <!-- Row 3: GCP -->
+  <rect x="44" y="798" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="819" fill="#E2E8F0" font-size="12" font-weight="700">Google Healthcare API + Vertex</text>
+  <text x="340" y="819" fill="#CBD5E1" font-size="12">Pub/Sub + Health API ($95.0K/mo)</text>
+  <text x="605" y="819" fill="#FCA5A5" font-size="12">Vertex Vector Search RAM ($74.0K/mo)</text>
+  <text x="860" y="819" fill="#CBD5E1" font-size="12">DocAI + Looker ($108.0K/mo)</text>
+  <text x="1145" y="819" fill="#FCA5A5" font-size="12" font-weight="700">$277.0K/mo (+$262.2K/mo)</text>
+
+  <!-- Row 4: Databricks -->
+  <rect x="44" y="834" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="855" fill="#E2E8F0" font-size="12" font-weight="700">Databricks Lakeflow + Photon</text>
+  <text x="340" y="855" fill="#CBD5E1" font-size="12">DLT + Photon Stream ($109.0K/mo)</text>
+  <text x="605" y="855" fill="#FCA5A5" font-size="12">Mosaic Vector Search ($76.4K/mo)</text>
+  <text x="860" y="855" fill="#CBD5E1" font-size="12">Photon DBU + BI Seats ($124.4K/mo)</text>
+  <text x="1145" y="855" fill="#FCA5A5" font-size="12" font-weight="700">$309.8K/mo (+$295.0K/mo)</text>
+
+  <!-- Row 5: Snowflake -->
+  <rect x="44" y="870" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="891" fill="#E2E8F0" font-size="12" font-weight="700">Snowflake + Cortex + XL WH</text>
+  <text x="340" y="891" fill="#CBD5E1" font-size="12">Snowpipe + FHIR ETL ($135.0K/mo)</text>
+  <text x="605" y="891" fill="#FCA5A5" font-size="12">Cortex Vector + XL WH ($71.6K/mo)</text>
+  <text x="860" y="891" fill="#CBD5E1" font-size="12">Snowpark + BI ($160.2K/mo)</text>
+  <text x="1145" y="891" fill="#FCA5A5" font-size="12" font-weight="700">$366.8K/mo (-$352.0K/mo Saved!)</text>
+</svg>

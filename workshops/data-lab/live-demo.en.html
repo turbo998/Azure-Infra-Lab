@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">291 / 292 Scenarios Passed (99.66%) · 63 Enterprise SA FAQs · Diamond Demo Suite</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">295 / 296 Scenarios Passed (99.66%) · 64 Enterprise SA FAQs · Diamond Demo Suite</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=292 / n=69)</div>
-        <div class="val">242.8ms / 211.7ms</div>
-        <div class="sub" id="kpi3-sub">n=292 Routing Mean 242.8ms · n=69 Ontology Mean 211.68ms</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=296 / n=70)</div>
+        <div class="val">240.0ms / 208.9ms</div>
+        <div class="sub" id="kpi3-sub">n=296 Exact Routing Mean 240.0ms · n=70 Ontology Mean 208.90ms</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -327,6 +327,7 @@
       <button class="comp-pill" id="sim-btn-luxuryrfid" onclick="selectScenario('global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds')">👗 Scenario FX: Luxury, Apparel &amp; Footwear 8,600 Stores × 995K EPS UHF RFID Size Rebalancing &amp; Return-Fraud Loop (Eventhouse 5ms + 560M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (18ms · R173)</button>
       <button class="comp-pill" id="sim-btn-corpbank" onclick="selectScenario('global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds')">🏦 Scenario FY: Corporate Banking 380K Clients × 995K EPS ISO 20022, UCP 600 Trade AI &amp; 10-Hop pKYC Loop (Eventhouse + Graph 5ms + 564M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (18ms · $60.00M SLA · R174)</button>
       <button class="comp-pill" id="sim-btn-hrpeople" onclick="selectScenario('global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds')">👥 Scenario FZ: Enterprise HR 320K Employees × Work IQ Skills, Workday/SAP Zero-Copy &amp; Mobility Loop (Work IQ 5ms + 568M DiskANN 4ms + Foundry IQ EU AI Act 4ms) vs Stitched Stack (18ms · -$350.2K/mo · R175)</button>
+      <button class="comp-pill" id="sim-btn-lifehealth" onclick="selectScenario('global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds')">🏥 Scenario GA: Life/Health Insurance &amp; PBM 42M Members × 300-Page APS AI, Pharmacy FWA &amp; IFRS 17 Loop (Eventhouse 4ms + 572M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · -96.0% TCO · R176)</button>
     </div>
 
     <div class="grid-2">
@@ -358,6 +359,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>184 · Life, Health Insurance &amp; PBM Accelerated Medical Underwriting (300-Page APS), Point-of-Sale Pharmacy FWA &amp; IFRS 17 CSM (Eventhouse KQL + HDS FHIR 4ms $0/GB Tax + 572M SSD DiskANN -92% RAM + Gluten C++ 3.4x IFRS 17, 17ms Loop, Record -96.0% TCO, 240.0ms Exact Mean!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R176)</span>
+        <a href="assets/svg/184-fabric-life-health-insurance-underwriting-pbm-pharmacy-fraud-actuarial-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/184-fabric-life-health-insurance-underwriting-pbm-pharmacy-fraud-actuarial-faq.svg" alt="Fabric Life Health Insurance Underwriting PBM Pharmacy Fraud Actuarial Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2185,6 +2194,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>EnterpriseHR:320KEmployees_995KEPS_WorkdaySAP → WorkIQ_OneLake:5ms_450SkillGaps_180FlightRisk_0PctDrift (5ms) → DiskANN568M_PREDICT:4ms_310InternalMatches_$8.4MSaved (4ms) → FoundryIQ:4ms_EU_AI_Act_DIR0.96_SalaryCLS (4ms) → Workday_ExcelDirectLake_1GB_SQL:Mobility_Budget_Commit (18ms E2E)</code>',
       teamsTitle: 'Teams Enterprise CHRO & CFO Card · 320K-Employee Skills Mobility & Workforce Loop (DL-741..744)',
       teamsSummary: '18ms People Analytics & Workforce Loop Ready: Work IQ+OneLake 5ms sense (0.00% budget drift) + 568M DiskANN matches 310 internal staff (-$8.4M agency fees) + EU AI Act DIR 0.96 verified · -95.9% TCO (-$350.2K/mo >$350K/mo saved!), $60,350,000 SLA Protected ✓'
+    }
+  },
+  global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 药房 NCPDP D.0 与 HDS FHIR 事中感知 ($0/GB 写入税)', latency: '4 ms', desc: '实时摄入 4,200 万名被保险人的 995K EPS 药房 NCPDP D.0 刷卡流、医院 EDI 837 账单与 300 页住院病历 (APS)，4ms 事中锁定 112 笔跨药房倒卖 GLP-1 特种药与手术高套编码 (Upcoding) 欺诈（免除 $135.0K/月 FHIR 与流计算税）。' },
+        { title: '② Cosmos DB SSD DiskANN (5.72 亿病历/核保向量) 与 Gluten C++ IFRS 17 计量', latency: '4 ms', desc: '在 5.72 亿条 Swiss Re/Munich Re 再保核保手册、ICD-10/CPT 与病历向量库上以 $3,120/月 (-92% 内存 vs $71,600/月 DRAM) 完成 4ms 评点，将 300 页病历自动核保直通率提至 86%，并通过 $0 溢价 Spark Gluten C++ 将 IFRS 17 CSM 重算提速 3.4x。' },
+        { title: '③ Foundry IQ 事中 FWA 拒付拦截与 GINA 基因反歧视护栏 (SOP-183)', latency: '4 ms', desc: '强制执行 SOP-183，4ms 内在资金划拨前事中拦截 112 笔欺诈理赔（挽回 $6.85M 赔款），核验核保模型 100% 剔除受 GINA 保护的基因筛查特征，并对 14,400 (120²) 名用户启用 HIPAA PHI 列级掩码。' },
+        { title: '④ 首席核保官与总精算师 Teams 确认及核心契约 / Excel Direct Lake / 1GB SQL 回写', latency: '5 ms', desc: '首席核保官与总精算师批准后，5ms 内签发 86% 直通核保保单、将 IFRS 17 CSM 分录同步至 Excel Direct Lake 并写入 1GB 免费 Fabric SQL（端到端 17ms，创纪录月省 96.0% TCO 即 -$352.0K/月，守护 $60.70M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>LifeHealthPBM:42MMembers_995KEPS_NCPDP_EDI837 → Eventhouse_HDS_FHIR:4ms_112_FWA_Claims_$0Tax (4ms) → DiskANN572M_GlutenCPP:4ms_86Pct_STP_3.4x_IFRS17 (4ms) → FoundryIQ:4ms_PrePayBlock_$6.85M_GINA_HIPAA (4ms) → PolicyAdmin_ExcelDirectLake_1GB_SQL:CSM_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams 寿险健康险首席核保官与总精算师审批卡 · 4,200 万会员 AI 核保与 PBM 反欺诈闭环 (DL-745..748)',
+      teamsSummary: '17ms 寿险 AI 核保、PBM 事中反欺诈与 IFRS 17 闭环就绪：KQL+FHIR 4ms 感知 ($0/GB 税) + 572M DiskANN 86% 直通核保 & Gluten 3.4x IFRS 17 + 事中拦截 112 笔欺诈 (+$6.85M) · 创纪录省 96.0% TCO (-$352.0K/月)，守护 $60,700,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Pharmacy NCPDP D.0 & HDS FHIR Pre-Pay Sense ($0/GB Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of point-of-sale NCPDP D.0 pharmacy claims, EDI 837 hospital bills, and 300-page APS PDFs across 42M members at $0/GB write tax, isolating 112 GLP-1 diversion and DRG upcoding claims in 4ms (saving $135.0K/mo).' },
+        { title: '② Cosmos DB SSD DiskANN (572M APS/Manual Vectors) & Gluten C++ IFRS 17 CSM', latency: '4 ms', desc: 'Queries 572M Swiss Re/Munich Re underwriting rules, ICD-10/CPT, and APS vectors via SSD DiskANN ($3,120/mo, -92% RAM vs $71,600/mo DRAM) in 4ms—lifting straight-through underwriting to 86% and speeding IFRS 17 CSM by 3.4x on $0-surcharge Gluten C++.' },
+        { title: '③ Foundry IQ Pre-Payment FWA Interdiction & GINA Genetic Privacy Gate (SOP-183)', latency: '4 ms', desc: 'Enforces SOP-183 in 4ms, blocking 112 fraudulent FWA claims pre-payment (+$6.85M saved), verifying GINA genetic non-discrimination, and applying HIPAA PHI Purview CLS across 14,400 (120²) users.' },
+        { title: '④ Chief Underwriter & Chief Actuary Teams Card & Policy Admin / 1GB SQL Commit', latency: '5 ms', desc: 'Chief Underwriter and Chief Actuary approve in Teams; issues 86%-STP policies, posts IFRS 17 CSM entries to Excel Direct Lake, and commits to 1GB Free Fabric SQL in 5ms (17ms E2E, saving -$352.0K/mo or Record -96.0% TCO and protecting $60.70M SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>LifeHealthPBM:42MMembers_995KEPS_NCPDP_EDI837 → Eventhouse_HDS_FHIR:4ms_112_FWA_Claims_$0Tax (4ms) → DiskANN572M_GlutenCPP:4ms_86Pct_STP_3.4x_IFRS17 (4ms) → FoundryIQ:4ms_PrePayBlock_$6.85M_GINA_HIPAA (4ms) → PolicyAdmin_ExcelDirectLake_1GB_SQL:CSM_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams Chief Underwriter & Chief Actuary Card · 42M-Member APS AI & PBM FWA Loop (DL-745..748)',
+      teamsSummary: '17ms Underwriting, PBM FWA & IFRS 17 Loop Ready: KQL+FHIR 4ms sense ($0/GB tax) + 572M DiskANN 86% STP & Gluten 3.4x IFRS 17 + 112 FWA claims blocked pre-pay (+$6.85M) · Record -96.0% TCO (-$352.0K/mo saved), $60,700,000 SLA Protected ✓'
     }
   }
 };

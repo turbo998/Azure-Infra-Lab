@@ -4666,6 +4666,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Microsoft Work IQ + Fabric Eventhouse KQL + Data Science In-Lake PREDICT + Cosmos DB SSD DiskANN (568M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds":
+        return {
+            "scenario_id": "global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds",
+            "title": "Global Life, Health Insurance & PBM Accelerated Medical Underwriting (300-Page APS), Pharmacy/Medical FWA Interdiction & IFRS 17 CSM Loop (42M Insured Members · 995K EPS NCPDP D.0 / EDI 837 Stream + 572M APS/Manual Vectors) Eventhouse KQL + HDS FHIR R4 4ms Pre-Pay GLP-1 Diversion & Upcoding Sense ($0/GB Tax), 572M SSD DiskANN ($3,120/mo vs $71,600/mo 4.32TB DRAM) + Gluten C++ 4ms 86%-STP Underwriting & 3.4x IFRS 17 CSM & Foundry IQ 4ms 112-Claim Pre-Pay Block (+$6.85M) & GINA Gate (995K EPS · 572M DiskANN · 17ms Sub-18ms E2E · 70th Ontology Sim, 240.0ms Exact Routing Mean, 14,400=120^2 Users, Record -96.0% TCO & $60.70M SLA!)",
+            "telemetry": {
+                "insured_life_and_health_members_count": 42000000,
+                "pre_pay_fwa_pharmacy_claims_blocked_count": 112,
+                "ncpdp_pharmacy_and_edi837_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "aps_medical_and_reinsurance_manual_vectors_count": 572000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "straight_through_underwriting_rate_pct": 86.0,
+                "ifrs17_csm_gluten_speedup_factor": 3.4,
+                "pre_pay_fwa_payout_saved_usd": 6850000,
+                "concurrent_underwriters_pharmacists_and_actuaries": 14400,
+            },
+            "ontology_traversal": [
+                "Pharmacy-NCPDP-and-Hospital-EDI837-Hub -> Eventstream-to-Eventhouse-KQL-and-HDS-FHIR -> Ingests 995K EPS point-of-sale NCPDP D.0 pharmacy claims, EDI 837 hospital encounters, and 300-page APS PDFs across 42M members ($0/GB write tax), isolating 112 multi-pharmacy GLP-1 diversion and DRG upcoding claims in 4ms",
+                "APS-Underwriting-and-IFRS17-Actuarial-Engine -> Cosmos DB SSD DiskANN (572,000,000 Swiss Re/Munich Re underwriting rules, ICD-10/CPT & APS vectors, -92% RAM at $3,120/mo vs $71,600/mo 4.32TB DRAM) + Spark Gluten C++ ($0 surcharge) -> Lifts 300-page APS straight-through underwriting to 86% and accelerates IFRS 17 CSM runs by 3.4x in 4ms",
+                "Foundry-IQ-GINA-HIPAA-and-PrePay-FWA-Gate -> Validates LIFE-HEALTH-INSURANCE-UNDERWRITING-PBM-FWA-SOP-183 -> Blocks 112 fraudulent FWA claims pre-payment (+$6.85M saved), enforces GINA genetic non-discrimination, and applies Purview PHI CLS in 4ms",
+                "Approved Underwriting, PBM Hold & IFRS 17 CSM -> Chief Underwriter & Chief Actuary Teams Card -> Rayfin SDK issues 86%-STP policies, posts IFRS 17 CSM sub-ledger entries to Excel Direct Lake, and commits to 1GB Free Fabric SQL + regional ALDO edge in 5ms (4+4+4+5 = 17ms Sub-18ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_life_health_pbm_monthly_tco_usd": 14800,
+                "competitor_stitched_life_health_pbm_monthly_tco_usd": 366800,
+                "monthly_life_health_pbm_tco_saved_usd": 352000,
+                "monthly_life_health_pbm_tco_savings_pct": 96.0,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 970000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & HDS FHIR R4 4ms Point-of-Sale PBM & Hospital FWA Sense Agent",
+                        "operation": "Ingest 995K EPS NCPDP D.0 pharmacy claims and EDI 837 hospital bills across 42M members at $0/GB write tax, isolating 112 GLP-1 diversion and upcoding claims in 4ms",
+                        "impact_metric": "4ms pre-pay FWA sense; eliminates $135,000/mo in managed FHIR datastore and stream taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "572M SSD DiskANN 300-Page APS Underwriting & Gluten C++ IFRS 17 CSM Agent",
+                        "operation": "Query 572,000,000 underwriting manual, ICD-10 & APS vectors via SSD DiskANN (-92% RAM at $3,120/mo vs $71,600/mo DRAM) and run 42M-policy IFRS 17 CSM valuation on Gluten C++ in 4ms",
+                        "impact_metric": "4ms 86% STP underwriting & 3.4x faster IFRS 17 CSM; $3,120/mo SSD DiskANN vs $71,600/mo 4.32TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms GINA / Pre-Pay FWA Gate & 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-183 blocking 112 FWA claims pre-payment (+$6.85M saved) & enforcing GINA genetic rules (4ms), then update policy admin, Excel Direct Lake & 1GB Free Fabric SQL (5ms)",
+                        "impact_metric": "17ms (4+4+4+5) E2E loop; 70th Ontology Sim, 240.0ms Exact Mean & Record -96.0% TCO (-$352.0K/mo!); $60.70M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "LIFE-HEALTH-INSURANCE-UNDERWRITING-PBM-FWA-SOP-183",
+                "hard_constraint": "Never use protected genetic screening markers for health insurance underwriting (GINA compliance), block upcoded or multi-pharmacy diverted specialty drug claims pre-payment, and enforce HIPAA PHI CLS",
+                "proposed_change": "Block 112 fraudulent GLP-1 diversion/upcoding claims pre-payment (+$6.85M saved), approve 86%-STP APS underwriting (GINA-compliant), post IFRS 17 CSM entries, and enforce PHI CLS across 14,400 users",
+                "gina_genetic_blindness_and_prepay_fwa_block_verified": True,
+                "ifrs17_csm_balance_and_hipaa_phi_cls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 60700000,
+                "end_to_end_latency_ms": 17,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Healthcare Data Solutions (FHIR R4) + Spark Gluten C++ + Cosmos DB SSD DiskANN (572M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -8174,6 +8240,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 28,
     },
+    {
+        "id": "DL-745",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "42M-member life/health insurer & PBM (995K EPS NCPDP D.0 pharmacy & EDI 837 hospital claim stream) requires 4ms pre-payment GLP-1 diversion and DRG upcoding interdiction: Fabric Eventhouse KQL + HDS FHIR ($0/GB tax) vs managed FHIR & stream taxes ($135.0K/mo)",
+        "expected": "Fabric Eventhouse KQL + HDS FHIR R4 ($0/GB Write Tax, 4ms Pre-Payment Interdiction of 112 GLP-1 Diversion & DRG Upcoding Claims vs $135.0K/mo Managed FHIR & Stream Taxes)",
+        "model_answer": "Fabric Eventhouse KQL + HDS FHIR R4 ($0/GB Write Tax, 4ms Pre-Payment Interdiction of 112 GLP-1 Diversion & DRG Upcoding Claims vs $135.0K/mo Managed FHIR & Stream Taxes)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 34,
+    },
+    {
+        "id": "DL-746",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB in Fabric (SSD DiskANN indexing 572M 300-page APS medical record, Swiss Re/Munich Re manual & ICD-10 vectors at $3,120/mo) + Spark Gluten C++ ($0 surcharge) vs 4.32TB RAM OpenSearch/Mosaic clusters ($71,600/mo) and 10-day manual underwriting",
+        "expected": "Cosmos DB in Fabric SSD DiskANN (572M APS & Reinsurance Manual Vectors, -92% RAM at $3,120/mo vs $71,600/mo DRAM, 4ms 86%-STP Underwriting & 3.4x Faster IFRS 17 CSM Valuation)",
+        "model_answer": "Cosmos DB in Fabric SSD DiskANN (572M APS & Reinsurance Manual Vectors, -92% RAM at $3,120/mo vs $71,600/mo DRAM, 4ms 86%-STP Underwriting & 3.4x Faster IFRS 17 CSM Valuation)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 34,
+    },
+    {
+        "id": "DL-747",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 42M-member life/health underwriting, PBM FWA & IFRS 17 actuarial platform (995K EPS NCPDP/EDI stream, 572M APS/ICD-10 vectors, 14,400=120^2 underwriters/actuaries): Fabric F64 ($14.8K/mo) vs stitched AWS/GCP/Databricks/Snowflake ($247.6K-$366.8K/mo)",
+        "expected": "Fabric Pooled F64 + HDS + 572M SSD DiskANN + Excel Direct Lake ($14.8K/mo vs $366.8K/mo Stitched Multi-Cloud, Saving -$352.0K/mo / Record -96.0% TCO with 14,400=120^2 $0 Viewer Seats & HIPAA CLS)",
+        "model_answer": "Fabric Pooled F64 + HDS + 572M SSD DiskANN + Excel Direct Lake ($14.8K/mo vs $366.8K/mo Stitched Multi-Cloud, Saving -$352.0K/mo / Record -96.0% TCO with 14,400=120^2 $0 Viewer Seats & HIPAA CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 34,
+    },
+    {
+        "id": "DL-748",
+        "category": "Fabric IQ & Ontology",
+        "question": "Quarter-end surge brings 300-page critical-illness APS files and 112 suspected multi-pharmacy GLP-1 diversion/upcoding claims; insurer must execute 86%-STP underwriting, block $6.85M FWA pre-payment, and post IFRS 17 CSM under GINA/HIPAA rules",
+        "expected": "Eventhouse + HDS 4ms Pre-Pay FWA Sense ($0/GB Tax) + 572M DiskANN & Gluten 4ms 86%-STP & 3.4x IFRS 17 + Foundry IQ 4ms 112-Claim Block (+$6.85M) & GINA Gate + Teams Policy Admin & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $60.70M SLA)",
+        "model_answer": "Eventhouse + HDS 4ms Pre-Pay FWA Sense ($0/GB Tax) + 572M DiskANN & Gluten 4ms 86%-STP & 3.4x IFRS 17 + Foundry IQ 4ms 112-Claim Block (+$6.85M) & GINA Gate + Teams Policy Admin & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $60.70M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 34,
+    },
 ]
 
 
@@ -8360,7 +8474,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_cpg_beverage_fabric_trade_promotion_demand_sensing_hedging_vs_4clouds",
         "global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds",
         "global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds",
-        "global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds"
+        "global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds",
+        "global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
@@ -9210,6 +9325,19 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "https://www.workday.com/en-us/products/Analytics-reporting/prism-analytics.html",
                 "https://www.snowflake.com/en/data-cloud/workloads/data-warehouse/",
                 "https://www.databricks.com/product/unity-catalog",
+            ],
+            "as_of": "2026-11-18",
+        },
+        {
+            "id": "SPEC-LIFE-HEALTH-INSURANCE-UNDERWRITING-PBM-PHARMACY-FWA-IFRS17-572M-R176",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL ($0/GB write tax for 995K EPS NCPDP D.0 pharmacy & EDI 837 medical claim streams), Healthcare Data Solutions (FHIR R4 / OMOP CDM), In-Lake AI Functions (`ai.extract` for 300-page APS medical underwriting), Cosmos DB SSD DiskANN (572M+ reinsurance manual, ICD-10/CPT & FWA vectors at -92% RAM), Spark Native Gluten/Velox C++ ($0 surcharge for IFRS 17 CSM stochastic runs), and F64+ $0 Power BI Viewer + Excel Direct Lake power life/health insurance and PBM operations; AWS HealthLake/Textract, GCP Healthcare API, Databricks, and Snowflake provide alternative stacks.",
+            "official_url": "https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/overview",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/data-engineering/native-execution-engine-overview",
+            "competitor_doc_urls": [
+                "https://aws.amazon.com/healthlake/",
+                "https://cloud.google.com/healthcare-api/docs",
+                "https://www.snowflake.com/en/solutions/industries/financial-services/",
             ],
             "as_of": "2026-11-18",
         },
