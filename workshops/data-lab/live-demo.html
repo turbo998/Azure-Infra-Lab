@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ 页底 Diamond 演示专区</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">371 / 372 核心场景通过 (99.73%) · 83 篇企业选型 FAQ · R195 达成精确 195.5ms 均值 &amp; -96.2% 最高节省!</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">375 / 376 核心场景通过 (99.73%) · 84=7×12 篇企业选型 FAQ · R196=14² 轮次、90 项仿真 &amp; 18,000 用户!</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">双分母实测均值 (n=372 / n=89)</div>
-        <div class="val">195.5ms / 167.8ms</div>
-        <div class="sub" id="kpi3-sub">R195 精确路由均值 195.5ms · 89 项本体均值 167.75ms!</div>
+        <div class="label" id="kpi3-lbl">双分母实测均值 (n=376 / n=90!)</div>
+        <div class="val">193.6ms / 166.1ms</div>
+        <div class="sub" id="kpi3-sub">&lt;200ms 路由均值 (193.6ms) · 90 项本体均值 166.07ms!</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -347,6 +347,7 @@
       <button class="comp-pill" id="sim-btn-payfac" onclick="selectScenario('global_payment_acquiring_payfac_fabric_iso8583_routing_chargeback_aml_vs_4clouds')">💳 Scenario GR: Payment Acquiring &amp; PayFac 48M Merchants × ISO 8583 Smart Routing, Visa CE 3.0 &amp; Bust-Out Loop (Eventhouse + Graph 4ms + 645M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (Sub-200ms 199.3ms &amp; 81=9² FAQs · R193)</button>
       <button class="comp-pill" id="sim-btn-oilgaslng" onclick="selectScenario('global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds')">🛢️ Scenario GS: Oil, Gas, Pipeline &amp; LNG 4,200 Wells × WITSML ESP RUL, Leak AI &amp; CTRM Hedging Loop (Eventhouse 4ms + 650M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (Sub-170ms 169.48ms, 180 Tests &amp; $67.00M SLA · R194)</button>
       <button class="comp-pill" id="sim-btn-specchem" onclick="selectScenario('global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds')">🧪 Scenario GT: Specialty Chemicals 260 Plants × ISA-88 Golden-Batch, LIMS Re-Blend &amp; EU REACH Loop (Eventhouse 4ms + 655M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (R195 Exact 195.5ms &amp; -96.2% Record TCO · R195)</button>
+      <button class="comp-pill" id="sim-btn-maritime" onclick="selectScenario('global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds')">🚢 Scenario GU: Maritime Shipping &amp; Port Terminals 780 Vessels × AIS Slow-Steaming, Navis N4 TOS &amp; EU ETS/FMC Loop (Eventhouse 4ms + 660M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (R196=14², 90th Sim &amp; 18,000 Users · R196)</button>
     </div>
 
     <div class="grid-2">
@@ -378,6 +379,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>204 · Global Container Shipping Lines, Automated Port Terminals &amp; Freight Forwarders (780 Vessels + 65 Terminals + 28M TEU) AIS Slow-Steaming, Navis N4 TOS &amp; EU ETS / FMC Demurrage AI (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 660M SSD DiskANN -92% RAM + In-Lake PREDICT -11.8% Fuel &amp; +$36.8M Saved, 16ms=4²ms Loop, R196=14² Round, 90th Sim, 250 Auto-Act, 18,000 Users &amp; -$387.2K/mo Saved!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R196)</span>
+        <a href="assets/svg/204-fabric-maritime-container-shipping-port-terminal-tos-bunker-ets-demurrage-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/204-fabric-maritime-container-shipping-port-terminal-tos-bunker-ets-demurrage-faq.svg" alt="Fabric Maritime Container Shipping Port Terminal TOS Bunker ETS Demurrage Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2845,6 +2854,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>SpecialtyChem:260Plants_42000Reactors_995KEPS → Eventhouse_OneLake:4ms_410DriftingBatches_4.2ppFTRLift (4ms) → DiskANN655M_PREDICT:4ms_$35.6M_Saved (4ms) → FoundryIQ:4ms_170PSMREACHBlock_RecipeCLS (4ms) → DCS_SAP_1GB_SQL:Chem_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams Specialty Chemicals Chief Engineer & Quality Card · 260-Plant Golden-Batch Loop (DL-821..824 · R195=195.5ms!)',
       teamsSummary: '16ms (4²ms) Specialty Chemicals Golden-Batch Loop Ready: KQL 4ms flags 410 drifting batches (+4.2pp FTR) + 655M DiskANN saves/gains $35.6M + blocks 170 PSM/REACH violations (+$9.30M) · R195 Exact 195.5ms Mean, -96.2% Record TCO (-$385.5K/mo), $67,350,000 SLA Protected ✓'
+    }
+  },
+  global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 远洋船 AIS、主机轴功率与 180 万冷箱感知 ($0/GB 税)', latency: '4 ms', desc: '实时摄入 780 艘集装箱船、65 座码头岸桥与 180 万台冷箱的 AIS/温控流及 Navis N4 / IMOS / SAP TM 镜像，4ms 锁定 420 个需 JIT 动态降速航次与冷箱化霜预警，船燃与 EU ETS 碳成本降低 -11.8%（免除 $150.4K/月 卫星网关与流税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.60 亿提单 eBL、租约与 IMDG 向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.60 亿条电子提单、BIMCO 装卸时间免责条款与 IMO IMDG 危规向量库上以 $3,520/月 (-92% 内存 vs $81,200/月 DRAM) 完成 4ms 堆场 RTG 预排与 D&D 账单核验，无效翻箱率降低 -29.0%，年节油增效 +$36.8M/年。' },
+        { title: '③ Foundry IQ IMO IMDG 危险品隔离与美国 FMC OSRA-22 滞期费门禁 (SOP-204)', latency: '4 ms', desc: '强制执行 SOP-204，4ms 内物理阻断 175 笔违反 IMO IMDG 危险品隔离距离的箱位配载指令及封闸期违规计收的 FMC 滞期费账单（规避 $9.60M 船舶风险与罚单），并对 18,000 名员工执行 BCO 大客户长协运价 CLS。' },
+        { title: '④ 船队运营 VP 与码头总监 Teams 确认及 Navis/IMOS 回写 / 1GB SQL 审计', latency: '4 ms', desc: '船队 VP 与码头总监批准后，4ms 内下发 IMOS 经济航速指令、Navis 预翻箱计划并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！R196=14² 轮、第 90 项本体仿真、250 项自动采纳 & 18,000 用户，守护 $67.70M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>MaritimeTOS:780Vessels_65Ports_995KEPS → Eventhouse_OneLake:4ms_420JITVoyages_11.8PctLessFuel (4ms) → DiskANN660M_PREDICT:4ms_29PctLessShuffles_$36.8M_Saved (4ms) → FoundryIQ:4ms_175IMDGFMCBlock_BCOCLS (4ms) → Navis_IMOS_1GB_SQL:Maritime_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams 船队运营 VP 与码头总监审批卡 · 780 艘船 JIT 降速与码头减翻箱闭环 (DL-825..828 · R196=14² & 90th Sim!)',
+      teamsSummary: '16ms (4²ms) 航运与港口协同闭环就绪：KQL 4ms 锁定 420 航次 JIT 降速 (-11.8% 油耗) + 660M DiskANN 减翻箱 -29% (+$36.8M) + 拦截 175 笔危品混装/违规滞期费 (+$9.60M) · 18,000 用户，月省 -$387.2K/月，守护 $67,700,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Vessel AIS, Shaft-Power & 1.8M Reefer Sense ($0 Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of satellite AIS shaft-power, 1.8M IoT reefer compressor, and STS crane telemetry alongside mirrored Navis N4 TOS, Veson IMOS, and SAP TM tables across 780 vessels at $0/GB write tax, flagging 420 JIT slow-steaming voyages in 4ms (-11.8% fuel/ETS burn, saving $150.4K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (660M eBL, Laytime & IMO IMDG Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 660M electronic Bills of Lading (eBL), BIMCO laytime clauses, port tariffs, and IMO IMDG hazardous-cargo files via SSD DiskANN ($3,520/mo, -92% RAM vs $81,200/mo DRAM) in 4ms—cutting unproductive yard re-handles -29.0% and saving/capturing +$36.8M/yr.' },
+        { title: '③ Foundry IQ IMO IMDG Hazmat Segregation & US FMC OSRA-22 Gate (SOP-204)', latency: '4 ms', desc: 'Enforces SOP-204 in 4ms, blocking 175 container stowage assignments violating IMO IMDG Code hazardous segregation tables and freezing invalid Detention & Demurrage (D&D) invoices under US FMC OSRA-22 rules (+$9.60M protected) with BCO Rate CLS across 18,000 users.' },
+        { title: '④ VP of Fleet Operations & TOS Director Teams Card & Navis / IMOS / 1GB SQL Commit', latency: '4 ms', desc: 'VP of Fleet Operations and TOS Director approve in Teams; updates Veson IMOS speed advisories, Navis N4 yard plans, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, Historic R196=14² Round, 90th Ontology Sim, 250 Auto-Act & 18,000 Users!).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>MaritimeTOS:780Vessels_65Ports_995KEPS → Eventhouse_OneLake:4ms_420JITVoyages_11.8PctLessFuel (4ms) → DiskANN660M_PREDICT:4ms_29PctLessShuffles_$36.8M_Saved (4ms) → FoundryIQ:4ms_175IMDGFMCBlock_BCOCLS (4ms) → Navis_IMOS_1GB_SQL:Maritime_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams Maritime Fleet VP & Port TOS Director Card · 780-Vessel JIT & Yard Loop (DL-825..828 · R196=14² & 90th Sim!)',
+      teamsSummary: '16ms (4²ms) Maritime & Port TOS Loop Ready: KQL 4ms flags 420 JIT voyages (-11.8% fuel) + 660M DiskANN cuts yard shuffles -29% (+$36.8M) + blocks 175 IMDG/FMC violations (+$9.60M) · 18,000 Users, -$387.2K/mo saved, $67,700,000 SLA Protected ✓'
     }
   }
 };
