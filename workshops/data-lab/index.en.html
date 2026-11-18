@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">283 / 284 Scenarios Passed (99.65%) · 61 Enterprise SA FAQs · Diamond Demo Suite</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">287 / 288 Scenarios Passed (99.65%) · 62 Enterprise SA FAQs · Diamond Demo Suite</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=284 / n=67)</div>
-        <div class="val">248.9ms / 217.5ms</div>
-        <div class="sub" id="kpi3-sub">n=284 Routing Mean 248.9ms · n=67 Ontology Mean 217.46ms</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=288 / n=68)</div>
+        <div class="val">245.8ms / 214.5ms</div>
+        <div class="sub" id="kpi3-sub">n=288 Routing Mean 245.8ms · n=68 Ontology Mean 214.53ms</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -325,6 +325,7 @@
       <button class="comp-pill" id="sim-btn-sapacdoca" onclick="selectScenario('global_industrial_sap_s4hana_acdoca_datasphere_fabric_vs_4clouds')">🏢 Scenario AK: Global Industrial 12 SAP S/4HANA × 3.2B ACDOCA Rows Zero-Copy xP&amp;A Loop (ABAP CDS/Datasphere 18ms + 18.4% APR Discount + SAP BAPI) vs 3rd-Party CDC (79ms · R30)</button>
       <button class="comp-pill" id="sim-btn-gamingrtb" onclick="selectScenario('global_gaming_adtech_fabric_eventhouse_liveops_rtb_vs_4clouds')">🎮 Scenario AL: Global Gaming &amp; AdTech 14 Live Titles × 48M DAU × 500K EPS LiveOps &amp; Anti-Cheat Loop (Eventhouse KQL 14ms + PlayFab + SSD DiskANN) vs Write API Tax (63ms · R31)</button>
       <button class="comp-pill" id="sim-btn-luxuryrfid" onclick="selectScenario('global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds')">👗 Scenario FX: Luxury, Apparel &amp; Footwear 8,600 Stores × 995K EPS UHF RFID Size Rebalancing &amp; Return-Fraud Loop (Eventhouse 5ms + 560M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (18ms · R173)</button>
+      <button class="comp-pill" id="sim-btn-corpbank" onclick="selectScenario('global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds')">🏦 Scenario FY: Corporate Banking 380K Clients × 995K EPS ISO 20022, UCP 600 Trade AI &amp; 10-Hop pKYC Loop (Eventhouse + Graph 5ms + 564M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (18ms · $60.00M SLA · R174)</button>
     </div>
 
     <div class="grid-2">
@@ -356,6 +357,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>182 · Corporate &amp; Commercial Banking ISO 20022 Cash Management, UCP 600 Trade Finance AI &amp; 10-Hop pKYC/AML (Eventhouse KQL + Fabric Graph ISO GQL 5ms $0 Tax + 564M SSD DiskANN -92% RAM + In-Lake ai.extract 99.6% Recall, 18ms Loop, -95.9% TCO, $60.00M Exact SLA!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R174)</span>
+        <a href="assets/svg/182-fabric-corporate-commercial-banking-treasury-trade-finance-kyc-aml-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/182-fabric-corporate-commercial-banking-treasury-trade-finance-kyc-aml-faq.svg" alt="Fabric Corporate Commercial Banking Treasury Trade Finance KYC AML Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2119,6 +2128,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>LuxuryApparel:8600Stores_65KSKUs_995KEPS → EventhouseKQL:5ms_320Store_SizeStockout_$0Tax (5ms) → DiskANN560M_PREDICT:4ms_28K_Transfer_14.8Pct_SellThrough (4ms) → FoundryIQ:4ms_78ReturnFraudBlock_$2.85M_IconFloor (4ms) → SAP_Fashion_1GB_SQL:STO_VIC_Clienteling_Commit (18ms E2E)</code>',
       teamsTitle: 'Teams Luxury & Apparel Chief Merchandising Officer Card · 8,600-Store RFID & Return Loop (DL-733..736)',
       teamsSummary: '18ms Merchandising & Return-Fraud Loop Ready: KQL 5ms flags 320-store size stockouts ($0/GB tax) + 560M DiskANN & PREDICT rebalances 28,000 units (+14.8% sell-through) + 78 fraudulent returns blocked (+$2.85M) · -95.9% TCO (-$346.6K/mo saved), $59,650,000 SLA Protected ✓'
+    }
+  },
+  global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS ISO 20022 与 Fabric Graph (ISO GQL) 10 跳 UBO 穿透 ($0 税)', latency: '5 ms', desc: '实时摄入 38 万家对公客户的 995K EPS SWIFT ISO 20022 电汇流与海运 AIS 轨迹（$0/GB 写入税），通过 Fabric Graph 零拷贝穿透 10 跳 BVI/开曼离岸空壳 UBO 并锁定 2 艘关闭 AIS 的暗船（免除 $133.5K/月独立图库与流计算税）。' },
+        { title: '② Cosmos DB SSD DiskANN (5.64 亿 UCP 600/提单向量) 与湖内 ai.extract 智能审单', latency: '4 ms', desc: '直接调用湖内 ai.extract 抽取 60 页信用证交单包字段，并在 5.64 亿条 UCP 600 判例、提单指纹与海关公允价格向量库上以 $3,080/月 (-92% 内存 vs $70,800/月 DRAM) 完成 4ms 比对，将审单从 48 小时缩至 4ms（不符点检出率 99.6%，揪出 +340% 虚高洗钱发票）。' },
+        { title: '③ Foundry IQ 贸易反洗钱 (TBML)、OFAC 制裁与重复质押提单护栏 (SOP-181)', latency: '4 ms', desc: '强制执行 SOP-181，4ms 内冻结 26 笔涉及暗船转运、重复质押提单 (Double-Financing) 与受制裁 UBO 的贸易融资放款（挽回 $42.0M 本金敞口），并校验 14,000 名对公 RM 的 OBO RLS 权限。' },
+        { title: '④ 交易银行总监 Teams 确认与核心贸易信贷锁库 / SAR 报送 / 1GB SQL 回写', latency: '5 ms', desc: '对公与交易银行总监批准后，5ms 内更新核心贸易融资台账、生成 FinCEN/ECB TBML 可疑交易报告 (SAR) 并写入 1GB 免费 Fabric SQL（端到端 18ms，月省 95.9% TCO 即 -$348.4K/月，守护突破 $60M 的 $60.00M 整 SLA 里程碑！）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>CorporateBanking:380KClients_995KEPS_ISO20022 → Eventhouse_FabricGraph:5ms_10Hop_UBO_2DarkVessels_$0Tax (5ms) → DiskANN564M_aiExtract:4ms_UCP600_99.6Pct_Recall (4ms) → FoundryIQ:4ms_26LoanFreeze_$42M_TBML_Gate (4ms) → CoreTrade_1GB_SQL:SAR_RM_OBO_Commit (18ms E2E)</code>',
+      teamsTitle: 'Teams 商业银行公司金融与交易银行总监审批卡 · 38 万对公客户 UCP 600 审单与 pKYC 闭环 (DL-737..740)',
+      teamsSummary: '18ms 对公贸易融资 AI 审单与 10 跳 UBO 反洗钱闭环就绪：KQL+Graph 5ms 穿透 10 跳 UBO ($0 税) + 564M DiskANN & ai.extract 4ms 审单 (99.6% 检出率) + 冻结 26 笔违规押汇 ($42.0M) · 月省 95.9% TCO (-$348.4K/月)，守护 $60,000,000 整 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS ISO 20022 & Fabric Graph (ISO GQL) 10-Hop UBO Sense ($0 Tax)', latency: '5 ms', desc: 'Ingests 995K EPS of SWIFT ISO 20022 corporate wires and vessel AIS telemetry across 380,000 corporate clients at $0/GB write tax, traversing 10-hop offshore BVI/Cayman UBO shells and flagging 2 AIS-dark vessels in 5ms (saving $133.5K/mo).' },
+        { title: '② Cosmos DB SSD DiskANN (564M UCP 600 / B/L Vectors) & In-Lake ai.extract Audit', latency: '4 ms', desc: 'Extracts 120+ fields from 60-page L/C packets via in-lake ai.extract and queries 564M UCP 600, B/L hash, and commodity price vectors via SSD DiskANN ($3,080/mo, -92% RAM vs $70,800/mo DRAM) in 4ms (99.6% recall, catching +340% TBML over-invoicing).' },
+        { title: '③ Foundry IQ TBML, OFAC Sanctions & Double-Pledged B/L Gate (SOP-181)', latency: '4 ms', desc: 'Enforces SOP-181 in 4ms, freezing 26 high-risk trade loan disbursements ($42.0M principal protected), blocking duplicate pledged Bills of Lading, and verifying Corporate RM OBO RLS across 14,000 users.' },
+        { title: '④ Head of Transaction Banking Teams Card & Core Trade Hold / SAR / 1GB SQL Commit', latency: '5 ms', desc: 'Head of Transaction Banking approves in Teams; updates core trade-finance ledgers, files FinCEN/ECB TBML SARs, and commits to 1GB Free Fabric SQL in 5ms (18ms E2E, saving -$348.4K/mo or -95.9% TCO and protecting $60.00M Exact SLA!).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>CorporateBanking:380KClients_995KEPS_ISO20022 → Eventhouse_FabricGraph:5ms_10Hop_UBO_2DarkVessels_$0Tax (5ms) → DiskANN564M_aiExtract:4ms_UCP600_99.6Pct_Recall (4ms) → FoundryIQ:4ms_26LoanFreeze_$42M_TBML_Gate (4ms) → CoreTrade_1GB_SQL:SAR_RM_OBO_Commit (18ms E2E)</code>',
+      teamsTitle: 'Teams Corporate & Transaction Banking Head Card · 380K-Client UCP 600 & pKYC Loop (DL-737..740)',
+      teamsSummary: '18ms Corporate Trade Finance & 10-Hop pKYC Loop Ready: KQL+Graph 5ms 10-hop UBO sense ($0 tax) + 564M DiskANN & ai.extract 4ms audit (99.6% recall) + 26 risky loans frozen ($42.0M) · -95.9% TCO (-$348.4K/mo saved), $60,000,000 Exact SLA Protected ✓'
     }
   }
 };

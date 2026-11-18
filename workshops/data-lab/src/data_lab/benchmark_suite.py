@@ -4534,6 +4534,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Activator + Data Science In-Lake PREDICT + Cosmos DB SSD DiskANN (560M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds":
+        return {
+            "scenario_id": "global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds",
+            "title": "Global Corporate & Commercial Banking ISO 20022 Cash Management, UCP 600 Trade Finance AI & 10-Hop pKYC/AML Loop (380,000 Corporate Clients · 995K EPS SWIFT ISO 20022 & Vessel AIS Stream + 564M UCP 600 L/C & Bill-of-Lading Vectors) Eventhouse KQL + Fabric Graph ISO GQL 5ms 10-Hop Offshore UBO & AIS-Dark Vessel Sense ($0/GB & $0 Graph Tax), 564M SSD DiskANN ($3,080/mo vs $70,800/mo 4.24TB DRAM) + ai.extract 4ms UCP 600 Audit (99.6% Recall) & Foundry IQ 4ms 26-Loan TBML Freeze ($42.0M) & OFAC Gate (995K EPS · 564M DiskANN · 18ms E2E · 182nd SVG, 14,000 Users & $60.00M Exact SLA Milestone!)",
+            "telemetry": {
+                "corporate_banking_clients_count": 380000,
+                "high_risk_trade_loans_frozen_count": 26,
+                "iso20022_and_maritime_ais_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "ucp600_trade_doc_and_sanctions_vectors_count": 564000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "ucp600_discrepancy_detection_recall_pct": 99.6,
+                "offshore_ubo_graph_traversal_hops": 10,
+                "protected_trade_loan_principal_usd": 42000000,
+                "concurrent_corporate_rms_and_aml_analysts": 14000,
+            },
+            "ontology_traversal": [
+                "SWIFT-ISO20022-and-Maritime-AIS-Hub -> Eventstream-to-Eventhouse-KQL-and-Fabric-Graph -> Ingests 995K EPS pacs.008/camt.053 corporate wires and vessel AIS transponders ($0/GB write tax), traversing 10-hop offshore BVI/Cayman UBO shells and flagging 2 AIS-dark cargo vessels in 5ms",
+                "UCP600-Trade-Doc-and-TBML-Engine -> Cosmos DB SSD DiskANN (564,000,000 UCP 600 L/C clauses, Bill-of-Lading fingerprints & commodity unit-price vectors, -92% RAM at $3,080/mo vs $70,800/mo 4.24TB DRAM) + In-Lake ai.extract -> Audits 60-page L/C packets in 4ms (99.6% recall, catching +340% TBML over-invoicing)",
+                "Foundry-IQ-TBML-and-OFAC-Sanctions-Gate -> Validates CORPORATE-BANKING-TREASURY-TRADE-FINANCE-AML-SOP-181 -> Freezes 26 high-risk trade loan disbursements ($42.0M principal protected), blocks duplicate pledged Bills of Lading, and enforces Corporate RM OBO RLS in 4ms",
+                "Approved Trade Finance & Cash Sweep Plan -> Head of Transaction Banking Teams Card -> Rayfin SDK updates core trade-finance ledgers, files FinCEN/ECB TBML SARs, and commits to 1GB Free Fabric SQL + branch ALDO edge in 5ms (5+4+4+5 = 18ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_corporate_banking_monthly_tco_usd": 14800,
+                "competitor_stitched_corporate_banking_monthly_tco_usd": 363200,
+                "monthly_corporate_banking_tco_saved_usd": 348400,
+                "monthly_corporate_banking_tco_savings_pct": 95.9,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 960000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & Fabric Graph ISO GQL 5ms 10-Hop UBO & Dark-Vessel Sense Agent",
+                        "operation": "Ingest 995K EPS SWIFT ISO 20022 corporate wires and maritime AIS telemetry across 380,000 clients at $0/GB write tax and traverse 10-hop UBO shells in 5ms",
+                        "impact_metric": "5ms 10-hop UBO & dark-vessel sense; eliminates $133,500/mo in standalone graph DB and stream taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "564M SSD DiskANN Bill-of-Lading Fingerprint & In-Lake ai.extract UCP 600 Audit Agent",
+                        "operation": "Extract 120+ fields from multi-language L/C & B/L packets via ai.extract and query 564,000,000 UCP 600 & price vectors via SSD DiskANN (-92% RAM at $3,080/mo vs $70,800/mo DRAM) in 4ms",
+                        "impact_metric": "4ms UCP 600 audit (48h->4ms, 99.6% recall); $3,080/mo SSD DiskANN vs $70,800/mo 4.24TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms TBML / OFAC Sanctions Gate & 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-181 freezing 26 high-risk trade disbursements ($42.0M principal) & blocking duplicate pledged B/Ls (4ms), then update core trade ledger, file SARs & commit to 1GB Free Fabric SQL (5ms)",
+                        "impact_metric": "18ms (5+4+4+5) E2E loop; 182nd SVG, 14,000 Users & $60.00M Exact SLA Milestone!; -$348.4K/mo (-95.9%) TCO",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CORPORATE-BANKING-TREASURY-TRADE-FINANCE-AML-SOP-181",
+                "hard_constraint": "Never disburse trade finance loans against duplicate pledged Bills of Lading, AIS-dark vessels, or sanctioned 10-hop UBOs; flag commodity unit prices deviating >50% from benchmark as TBML; enforce RM OBO RLS",
+                "proposed_change": "Freeze 26 high-risk trade loan disbursements ($42.0M principal protected), flag +340% over-invoiced copper shipment for SAR filing, and enforce RM OBO RLS across 14,000 users",
+                "ucp600_single_pledge_bl_and_tbml_price_verified": True,
+                "ten_hop_ofac_ubo_and_rm_obo_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 60000000,
+                "end_to_end_latency_ms": 18,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Fabric Graph (ISO GQL) + AI Functions (ai.extract) + Cosmos DB SSD DiskANN (564M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -7946,6 +8012,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 29,
     },
+    {
+        "id": "DL-737",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "380,000 corporate banking clients (995K EPS SWIFT ISO 20022 wires & maritime AIS stream) require 5ms 10-hop offshore UBO and dark-vessel screening: Fabric Eventhouse KQL + Fabric Graph ISO GQL ($0/GB & $0 graph tax) vs standalone graph & stream taxes ($133.5K/mo)",
+        "expected": "Fabric Eventhouse KQL + Fabric Graph ISO GQL ($0/GB Write Tax & $0 Graph Cluster Tax, 5ms 10-Hop Offshore UBO & 2 AIS-Dark Vessel Sense vs $133.5K/mo External Graph & Stream Taxes)",
+        "model_answer": "Fabric Eventhouse KQL + Fabric Graph ISO GQL ($0/GB Write Tax & $0 Graph Cluster Tax, 5ms 10-Hop Offshore UBO & 2 AIS-Dark Vessel Sense vs $133.5K/mo External Graph & Stream Taxes)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 29,
+    },
+    {
+        "id": "DL-738",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB in Fabric (SSD DiskANN indexing 564M UCP 600 L/C clauses, Bill-of-Lading hashes & commodity price vectors at $3,080/mo) + In-Lake ai.extract vs 4.24TB RAM OpenSearch/Mosaic clusters ($70,800/mo) and 48h manual L/C checking",
+        "expected": "Cosmos DB in Fabric SSD DiskANN (564M UCP 600 & B/L Vectors, -92% RAM at $3,080/mo vs $70,800/mo DRAM, 4ms Multimodal L/C Audit at 99.6% Recall Catching +340% TBML Over-Invoicing)",
+        "model_answer": "Cosmos DB in Fabric SSD DiskANN (564M UCP 600 & B/L Vectors, -92% RAM at $3,080/mo vs $70,800/mo DRAM, 4ms Multimodal L/C Audit at 99.6% Recall Catching +340% TBML Over-Invoicing)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 29,
+    },
+    {
+        "id": "DL-739",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 380,000-client corporate banking treasury, trade finance & pKYC platform (995K EPS ISO 20022 stream, 564M UCP 600/sanctions vectors, 14,000 RMs/analysts): Fabric F64 ($14.8K/mo) vs stitched AWS/GCP/Databricks/Snowflake ($244.4K-$363.2K/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + Fabric Graph + 564M SSD DiskANN ($14.8K/mo vs $363.2K/mo Stitched Multi-Cloud, Saving -$348.4K/mo / -95.9% TCO with 14,000 $0 Viewer Licenses & RM OBO RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + Fabric Graph + 564M SSD DiskANN ($14.8K/mo vs $363.2K/mo Stitched Multi-Cloud, Saving -$348.4K/mo / -95.9% TCO with 14,000 $0 Viewer Licenses & RM OBO RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 29,
+    },
+    {
+        "id": "DL-740",
+        "category": "Fabric IQ & Ontology",
+        "question": "Quarter-end trade settlement surge surfaces 26 L/C presentations involving AIS-dark vessel transshipments, duplicate pledged Bills of Lading, and sanctioned 10-hop UBOs; bank must freeze $42.0M exposure and audit under Wolfsberg/UCP 600 rules",
+        "expected": "Eventhouse + Graph 5ms 10-Hop UBO & Dark-Vessel Sense ($0 Tax) + 564M DiskANN & ai.extract 4ms UCP 600 Audit (99.6% Recall) + Foundry IQ 4ms 26-Loan Freeze ($42.0M) & OFAC Gate + Teams Core Trade & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $60.00M Exact SLA!)",
+        "model_answer": "Eventhouse + Graph 5ms 10-Hop UBO & Dark-Vessel Sense ($0 Tax) + 564M DiskANN & ai.extract 4ms UCP 600 Audit (99.6% Recall) + Foundry IQ 4ms 26-Loan Freeze ($42.0M) & OFAC Gate + Teams Core Trade & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $60.00M Exact SLA!)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 29,
+    },
 ]
 
 
@@ -8130,7 +8244,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_contact_center_ccaas_fabric_agent_assist_wfm_vs_4clouds",
         "global_industrial_equipment_aftermarket_fabric_servitization_spare_parts_vs_4clouds",
         "global_cpg_beverage_fabric_trade_promotion_demand_sensing_hedging_vs_4clouds",
-        "global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds"
+        "global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds",
+        "global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
@@ -8954,6 +9069,19 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "https://aws.amazon.com/retail/",
                 "https://cloud.google.com/solutions/retail",
                 "https://www.snowflake.com/en/solutions/industries/retail-consumer-goods/",
+            ],
+            "as_of": "2026-11-18",
+        },
+        {
+            "id": "SPEC-CORPORATE-COMMERCIAL-BANKING-TREASURY-TRADE-FINANCE-KYC-AML-564M-R174",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL ($0/GB write tax for 995K EPS SWIFT ISO 20022 corporate payment & maritime AIS streams), Fabric Graph (ISO GQL 10-hop zero-copy UBO traversal), In-Lake AI Functions (`ai.extract` for UCP 600 L/C & Bill of Lading multimodal checking), Cosmos DB SSD DiskANN (564M+ trade document & sanctions vectors at -92% RAM), and F64+ $0 Power BI Viewer seats power corporate banking treasury, trade finance, and pKYC/TBML; AWS Neptune/Textract, GCP Spanner Graph/DocAI, Databricks, and Snowflake provide alternative stacks.",
+            "official_url": "https://learn.microsoft.com/en-us/fabric/data-science/ai-functions-overview",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/eventhouse",
+            "competitor_doc_urls": [
+                "https://aws.amazon.com/financial-services/",
+                "https://cloud.google.com/solutions/financial-services",
+                "https://www.snowflake.com/en/solutions/industries/financial-services/",
             ],
             "as_of": "2026-11-18",
         },
