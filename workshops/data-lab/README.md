@@ -3,7 +3,7 @@
 > **语言版本 / Language**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
 > **⚡ 快捷入口 / Quick Access**: **[💎 Diamond 企业级演示中心](demos/diamond-hub.html)** · **[📺 TCL × Fabric 6幕指挥舱](demos/tcl-fabric/index.html)** · **[🛒 Zava × Databricks & Fabric 沙盘](demos/databricks-fabric/index.html)** · **[⚔️ Databricks vs Fabric 10维战卡](demos/databricks-fabric/battlecard.html)** · **[🧭 五云交互选型与 TCO 工作台](index.html)** · **[📊 7-Card 基准测试报告](benchmark-cards.html)**
 
-面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**73 篇中英双语架构选型 FAQ** 及 **密封可复现基准测试套件 (`331 / 332 = 99.70%`, `162 / 162` 单测通过)**。
+面向 **AI Solution Architect (SA)** 的企业级数据与智能平台选型实验室：深度对标 **Microsoft Fabric**（OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology）与 **Azure Databricks**、**Snowflake**、**GCP BigQuery**、**AWS Lakehouse**，提供 **2套全脱敏企业级交互实战沙盘 (Diamond Enterprise Demo Suite)**、**74 篇中英双语架构选型 FAQ** 及 **密封可复现基准测试套件 (`335 / 336 = 99.70%`, `164 / 164` 单测通过)**。
 
 ---
 
@@ -15,11 +15,11 @@
 | **📺 TCL 海外渠道智能 × Fabric (6 幕指挥舱)** | OneLake 零拷贝挂载 EDI 852 + Eventhouse 港口预警 + Fabric IQ 本体护栏 + 云端 Pipeline 调拨闭环 | [`demos/tcl-fabric/index.html`](demos/tcl-fabric/index.html) · [双屏讲稿](demos/tcl-fabric/playbook.html) |
 | **🛒 Zava 全渠道生鲜 × Databricks & Fabric** | Unity Catalog 动态脱敏 (`mask_cn_phone`) + AI/BI Genie 5 轮毛利异动归因 + Mirrored UC Direct Lake | [`demos/databricks-fabric/index.html`](demos/databricks-fabric/index.html) · [10维战卡](demos/databricks-fabric/battlecard.html) |
 | **🧭 Data Lab 五云选型与 TCO 仿真工作台** | 六维竞对评分罗盘、500 用户动态 TCO 计算器、Fabric IQ 行业本体与越界熔断交互仿真 | [`index.html`](index.html) · [English](index.en.html) |
-| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（`331/332 = 99.70%` · `216.6ms` 均值 · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
+| **📊 7-Card 4:5 视觉基准测试报告** | 严格基于 `reports/report.json` 生成的 7 卡纵向评测卡组（`335/336 = 99.70%` · `214.3ms` 均值 · `DL-23` 显式边界标注） | [`benchmark-cards.html`](benchmark-cards.html) · [English](benchmark-cards.en.html) |
 
 ---
 
-## 二、73 篇企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
+## 二、74 篇企业级 Data + AI 架构选型 FAQ 精选索引（SA Decision Guides）
 
 所有选型指南均遵循清晰的架构师决策范式（Executive Summary、核心场景问答、架构流向图、多云对比矩阵、落地核查清单），剔除晦涩无关的机械/物理推导，聚焦真实企业 IT 与业务架构：
 
@@ -38,7 +38,7 @@
 ### B. 主流行业解决方案架构选型（Enterprise Industry Solutions）
 - **零售电商与全渠道供应链**：[零售 Customer 360 与实时导购补货](comparisons/fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.md) · [跨境电商海外仓 WMS 与 FinOps](comparisons/fabric-cross-border-ecommerce-global-supply-chain-finops-faq.md) · [万店餐饮生鲜冷链与动态打折](comparisons/fabric-qsr-fmcg-chain-store-operations-coldchain-markdown-faq.md) · [快消饮料 TPO 通路促销与 POS 需求感知](comparisons/fabric-cpg-beverage-trade-promotion-demand-sensing-hedging-faq.md) · [时尚鞋服与奢侈品 RFID 尺码配补与退货防伪](comparisons/fabric-luxury-apparel-footwear-merchandising-rfid-clienteling-returns-faq.md) · [1.6亿会员可组合 CDP、实时旅程与数据净室归因](comparisons/fabric-retail-loyalty-cdp-marketing-automation-cleanroom-attribution-faq.md)
 - **金融银行、投研、保险与专业服务（咨询/律所）**：[金融投研混合 RAG + NL2DAX 智能体](comparisons/fabric-financial-research-hybrid-rag-text2sql-wealth-agent-vs-4clouds-faq.md) · [银行保险实时反欺诈与理赔图谱](comparisons/fabric-banking-insurance-realtime-antifraud-graph-claims-faq.md) · [零售信贷与智能催收合规](comparisons/fabric-retail-banking-consumer-credit-mortgage-collections-agent-faq.md) · [商业银行对公 ISO 20022 现金池、UCP 600 贸易融资 AI 审单与 pKYC](comparisons/fabric-corporate-commercial-banking-treasury-trade-finance-kyc-aml-faq.md) · [买方资管盘中归因、私募信贷 PCAP AI 与 1.5万投顾门户](comparisons/fabric-wealth-asset-management-portfolio-risk-esg-client-reporting-faq.md) · [专业服务、管理咨询、四大事务所与律所 PSA 稼动率、WIP 变现与信息屏障](comparisons/fabric-professional-services-legal-psa-utilization-wip-billing-conflict-check-faq.md)
-- **制造、SAP ERP、工程建设与汽车供应链**：[集团多 ERP (SAP S/4HANA ACDOCA) 零拷贝合并与司库](comparisons/fabric-enterprise-erp-sap-s4hana-acdoca-treasury-finops-faq.md) · [制造汽车多级库存协同与车联网维保](comparisons/fabric-manufacturing-automotive-supply-chain-connected-vehicle-maintenance-faq.md) · [企业人力资源 (Workday/SAP) 编制协同与 Work IQ 技能图谱](comparisons/fabric-enterprise-hr-people-analytics-workforce-planning-skills-copilot-faq.md) · [集团战略采购 S2P、全局 Spend Cube 与合同 AI](comparisons/fabric-enterprise-procurement-source-to-pay-supplier-risk-contract-ai-faq.md) · [B2B 工业与电子分销 150 万 SKU 动态 CPQ 报价、BOM 替代与 SPA 返利核销](comparisons/fabric-b2b-wholesale-distribution-dynamic-pricing-cpq-rebate-inventory-faq.md) · [EPC 工程总承包与基建 BIM 5D 算量控本、P6 关键路径延误与分包变更 AI 审价](comparisons/fabric-epc-construction-bim-5d-schedule-risk-subcontractor-change-order-safety-faq.md)
+- **制造、SAP ERP、工程建设、商业地产与汽车供应链**：[集团多 ERP (SAP S/4HANA ACDOCA) 零拷贝合并与司库](comparisons/fabric-enterprise-erp-sap-s4hana-acdoca-treasury-finops-faq.md) · [制造汽车多级库存协同与车联网维保](comparisons/fabric-manufacturing-automotive-supply-chain-connected-vehicle-maintenance-faq.md) · [企业人力资源 (Workday/SAP) 编制协同与 Work IQ 技能图谱](comparisons/fabric-enterprise-hr-people-analytics-workforce-planning-skills-copilot-faq.md) · [集团战略采购 S2P、全局 Spend Cube 与合同 AI](comparisons/fabric-enterprise-procurement-source-to-pay-supplier-risk-contract-ai-faq.md) · [B2B 工业与电子分销 150 万 SKU 动态 CPQ 报价、BOM 替代与 SPA 返利核销](comparisons/fabric-b2b-wholesale-distribution-dynamic-pricing-cpq-rebate-inventory-faq.md) · [EPC 工程总承包与基建 BIM 5D 算量控本、P6 关键路径延误与分包变更 AI 审价](comparisons/fabric-epc-construction-bim-5d-schedule-risk-subcontractor-change-order-safety-faq.md) · [商业地产与 REITs 8,500 栋楼宇 BACnet 暖通削峰、ASC 842 租约抽取与 CAM 自动对账](comparisons/fabric-commercial-real-estate-reit-smart-building-bms-lease-cam-esg-faq.md)
 - **医疗医药、电信、教育与 SaaS**：[医疗医药商业合规与 RWE OMOP 分析](comparisons/fabric-healthcare-pharma-commercial-compliance-rwe-analytics-faq.md) · [B2B SaaS 与游戏多租户嵌入式分析](comparisons/fabric-saas-gaming-multitenant-embedded-analytics-retention-attribution-faq.md) · [电信客户防流失与 5G 专网 SLA](comparisons/fabric-telecom-customer-churn-network-ops-field-agent-faq.md) · [寿险健康险 AI 病历核保、PBM 处方反欺诈与 IFRS 17 精算](comparisons/fabric-life-health-insurance-underwriting-pbm-pharmacy-fraud-actuarial-faq.md) · [医院集团床位/手术室排程与 RCM 拒付申诉 AI](comparisons/fabric-hospital-provider-network-patient-flow-revenue-cycle-denials-faq.md) · [高等教育与全球 EdTech 120 万学习者 xAPI 自适应学习、退学预警与科研经费合规](comparisons/fabric-higher-education-edtech-adaptive-learning-student-retention-grant-compliance-faq.md)
 
 ---
@@ -64,4 +64,4 @@
 ```bash
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 ```
-- **密封评测基线 (`reports/report.json`)**：`331 / 332` 决策场景通过 (`99.70%` 历史峰值准确率，`DL-23` 显式保留为单区 LRS 合规升级人工审批反例)，路由矩阵均值 `216.6 ms`，79 项企业本体闭环均值 `186.96 ms`，`162 / 162` 单元测试全绿。
+- **密封评测基线 (`reports/report.json`)**：`335 / 336` 决策场景通过 (`99.70%` 准确率，总路由延迟和精确 `72,000 ms`！`DL-23` 显式保留为单区 LRS 合规升级人工审批反例)，路由矩阵均值 `214.3 ms`，**`80` 项企业本体闭环仿真里程碑**均值 `184.82 ms`，`164 / 164` 单元测试全绿。

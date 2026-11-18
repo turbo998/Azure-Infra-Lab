@@ -5326,6 +5326,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Work IQ + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (608M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_commercial_real_estate_reit_fabric_smart_building_bms_lease_cam_esg_vs_4clouds":
+        return {
+            "scenario_id": "global_commercial_real_estate_reit_fabric_smart_building_bms_lease_cam_esg_vs_4clouds",
+            "title": "Global Commercial Real Estate (CRE), REITs & Smart Building Portfolios (8,500 Buildings + 1.4B Sq Ft) BACnet/Modbus BMS Fault Detection, Lease Abstraction (ASC 842 / IFRS 16), CAM Reconciliation AI & ESG Loop (995K EPS BACnet/Modbus Stream + 612M Lease/MEP Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 420-Fault & Peak Sense ($0/GB & $0 Copy Tax), 612M SSD DiskANN ($3,320/mo vs $76,000/mo DRAM) + In-Lake PREDICT 4ms (-21.4% Peak Energy & +$18.5M CAM Recovery) & Foundry IQ 4ms 125-CAM-Cap/ASHRAE Block (+$6.80M) (995K EPS · 612M DiskANN · 16ms=4^2ms E2E · 80th Ontology Sim, 16,000 Users & $64.20M SLA!)",
+            "telemetry": {
+                "commercial_buildings_count": 8500,
+                "hvac_valve_and_damper_faults_flagged_count": 420,
+                "bacnet_modbus_bms_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "lease_amendment_estoppel_and_mep_vectors_count": 612000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "peak_hvac_energy_reduction_pct": 21.4,
+                "cam_reconciliation_pass_through_recovered_usd": 18500000,
+                "over_cap_cam_and_ashrae_violations_blocked_count": 125,
+                "concurrent_asset_managers_engineers_and_brokers": 16000,
+            },
+            "ontology_traversal": [
+                "BACnet-Modbus-BMS-and-Yardi-MRI-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS chiller/AHU/VAV telemetry and mirrors Yardi Voyager, MRI Software, and SAP RE-FX across 8,500 buildings ($0/GB write tax & $0 copy tax), flagging 420 HVAC valve faults and utility peak ratchets in 4ms",
+                "Lease-CAM-and-Thermal-Flywheel-Engine -> Azure SQL / Cosmos DB SSD DiskANN (612,000,000 commercial lease amendment, 95% Gross-Up clause, estoppel & MEP manual vectors, -92% RAM at $3,320/mo vs $76,000/mo DRAM) + In-Lake PREDICT -> Cuts peak HVAC energy -21.4% and recovers +$18.5M/yr in under-billed CAM pass-throughs in 4ms",
+                "Foundry-IQ-CAM-Cap-and-ASHRAE55-Gate -> Validates CRE-REIT-BMS-LEASE-CAM-ESG-SOP-194 -> Blocks 125 year-end CAM invoices exceeding negotiated 5% controllable caps or unsafe ASHRAE 55 lab/cleanroom setpoint overrides (+$6.80M dispute & Local Law 97 penalty avoidance) with Tenant RLS in 4ms",
+                "Approved Pre-Cooling Setpoint & CAM Invoice -> Chief Engineer & VP of Asset Mgmt Teams Card -> Dispatches Niagara BMS pre-cooling setpoints, updates Yardi CAM statements, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_cre_reit_monthly_tco_usd": 15240,
+                "competitor_stitched_cre_reit_monthly_tco_usd": 385000,
+                "monthly_cre_reit_tco_saved_usd": 369760,
+                "monthly_cre_reit_tco_savings_pct": 96.0,
+                "fabric_internal_full_stack_monthly_usd": 43600,
+                "competitor_internal_full_stack_monthly_usd": 1020000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms BACnet Fault & Peak Demand Sense Agent",
+                        "operation": "Mirror Yardi Voyager, MRI Software, and SAP RE-FX zero-copy and ingest 995K EPS BACnet/Modbus streams across 8,500 buildings at $0/GB write tax, flagging 420 HVAC faults in 4ms",
+                        "impact_metric": "4ms BMS fault & peak sense; eliminates $142,800/mo in standalone smart-building SaaS and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "612M SSD DiskANN Lease CAM Reconciliation & In-Lake PREDICT Pre-Cooling Agent",
+                        "operation": "Search 612,000,000 lease amendment, Gross-Up & MEP vectors via SSD DiskANN (-92% RAM at $3,320/mo vs $76,000/mo DRAM) and score thermal pre-cooling in 4ms",
+                        "impact_metric": "4ms CAM audit (-21.4% peak energy, +$18.5M CAM recovered); $3,320/mo SSD DiskANN vs $76,000/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms CAM Cap / ASHRAE 55 Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-194 blocking 125 over-cap CAM bills & unsafe ASHRAE overrides (+$6.80M saved) & enforcing Tenant RLS (4ms), then update Niagara/Yardi & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 80th Ontology Sim & 16,000 Users Milestone; -$369.8K/mo (-96.0%) TCO; $64.20M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "CRE-REIT-BMS-LEASE-CAM-ESG-SOP-194",
+                "hard_constraint": "Never bill tenants for excluded capital repairs or exceed negotiated annual controllable CAM caps, block BMS setpoint overrides violating ASHRAE 55 / cleanroom SLAs, and enforce property/tenant RLS",
+                "proposed_change": "Block 125 over-cap CAM bills & unsafe ASHRAE overrides (+$6.80M saved), recover $18.5M in CAM pass-throughs, pre-cool 8,500 buildings (-21.4% peak energy), and enforce Tenant RLS across 16,000 users",
+                "lease_cam_cap_and_gross_up_verified": True,
+                "ashrae_55_comfort_and_tenant_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 64200000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (612M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -9314,6 +9380,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 19,
     },
+    {
+        "id": "DL-785",
+        "category": "Realtime & Eventhouse",
+        "question": "8,500 commercial buildings stream 995K EPS of BACnet/Modbus chiller & VAV telemetry while Yardi/SAP lease ledgers sit in batch silos; isolate 420 valve faults & shave peak HVAC load in 4ms without $142.8K/mo BMS SaaS & stream taxes",
+        "expected": "Fabric Eventhouse KQL + Yardi/MRI/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms BACnet Fault Detection Flagging 420 Valve Leaks & Cutting Peak HVAC Energy -21.4%)",
+        "model_answer": "Fabric Eventhouse KQL + Yardi/MRI/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms BACnet Fault Detection Flagging 420 Valve Leaks & Cutting Peak HVAC Energy -21.4%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 23,
+    },
+    {
+        "id": "DL-786",
+        "category": "Vector & AI Agents",
+        "question": "Reconcile year-end Common Area Maintenance (CAM) pass-throughs across 612M commercial lease amendment, 95% Gross-Up clause, and MEP vectors in 4ms without $76,000/mo DRAM HNSW clusters while recovering $18.5M/yr in NOI",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (612M Lease Amendment & MEP Vectors, -92% RAM at $3,320/mo vs $76,000/mo Exact DRAM, 4ms CAM Audit & +$18.5M/yr Recovered)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (612M Lease Amendment & MEP Vectors, -92% RAM at $3,320/mo vs $76,000/mo Exact DRAM, 4ms CAM Audit & +$18.5M/yr Recovered)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 23,
+    },
+    {
+        "id": "DL-787",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for an 8,500-building REIT smart-BMS & lease CAM platform (995K EPS BACnet stream, 612M lease/MEP vectors, 16,000 managers/engineers): Fabric F64 ($15,240/mo) vs stitched stacks ($366K-$402K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 612M SSD DiskANN + Foundry IQ CAM-Cap/ASHRAE Gate ($15,240/mo vs $385,000/mo Stitched Stack, Saving -$369.8K/mo / -96.0% TCO with 16,000 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 612M SSD DiskANN + Foundry IQ CAM-Cap/ASHRAE Gate ($15,240/mo vs $385,000/mo Stitched Stack, Saving -$369.8K/mo / -96.0% TCO with 16,000 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 22,
+    },
+    {
+        "id": "DL-788",
+        "category": "Fabric IQ & Ontology",
+        "question": "80th Ontology Sim & 16,000 Users Milestone: Utility peak alert hits 8,500 buildings with 420 HVAC faults while 140K leases undergo CAM reconciliation and 125 over-cap/ASHRAE violations surface; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 420-Fault & Peak Sense ($0 Tax) + 612M DiskANN & PREDICT 4ms (-21.4% Energy & +$18.5M CAM) + Foundry IQ 4ms 125-Cap/ASHRAE Block (+$6.80M) & Tenant RLS + Teams BMS/Yardi & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $64.20M SLA)",
+        "model_answer": "Eventhouse 4ms 420-Fault & Peak Sense ($0 Tax) + 612M DiskANN & PREDICT 4ms (-21.4% Energy & +$18.5M CAM) + Foundry IQ 4ms 125-Cap/ASHRAE Block (+$6.80M) & Tenant RLS + Teams BMS/Yardi & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $64.20M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 22,
+    },
 ]
 
 
@@ -9510,7 +9624,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_b2b_wholesale_distribution_fabric_dynamic_pricing_cpq_rebate_inventory_vs_4clouds",
         "global_higher_education_edtech_fabric_adaptive_learning_student_retention_grant_compliance_vs_4clouds",
         "global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds",
-        "global_professional_services_legal_fabric_psa_utilization_wip_billing_conflict_check_vs_4clouds"
+        "global_professional_services_legal_fabric_psa_utilization_wip_billing_conflict_check_vs_4clouds",
+        "global_commercial_real_estate_reit_fabric_smart_building_bms_lease_cam_esg_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
