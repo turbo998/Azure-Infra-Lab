@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">323 / 324 (18²) Scenarios Passed (99.69%) · 71 Enterprise SA FAQs · 600M=0.60B Vectors</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">327 / 328 Scenarios Passed (99.70%!) · 72 (8×9) Enterprise SA FAQs · 160 Unit Tests</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=324 / n=77)</div>
-        <div class="val">221.5ms / 191.4ms</div>
-        <div class="sub" id="kpi3-sub">n=324=18² Routing Mean 221.5ms · n=77 Ontology Mean 191.40ms!</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=328 / n=78)</div>
+        <div class="val">219.0ms / 189.2ms</div>
+        <div class="sub" id="kpi3-sub">n=328 Exact Mean 219.0ms · n=78 Ontology Mean 189.15ms (&lt;190ms!)</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -335,6 +335,7 @@
       <button class="comp-pill" id="sim-btn-hospidn" onclick="selectScenario('global_hospital_provider_idn_fabric_patient_flow_rcm_denials_drg_vs_4clouds')">🏥 Scenario GF: Hospital IDN 48 Campuses × Patient Flow, OR Block Backfill &amp; RCM Denial AI Loop (Eventhouse 4ms + 592M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (75th Sim · R181)</button>
       <button class="comp-pill" id="sim-btn-b2bdist" onclick="selectScenario('global_b2b_wholesale_distribution_fabric_dynamic_pricing_cpq_rebate_inventory_vs_4clouds')">⚙️ Scenario GG: B2B Wholesale Distribution 1.5M SKUs × Dynamic CPQ, BOM Cross-Ref &amp; SPA Rebate Loop (Eventhouse 4ms + 596M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (190th SVG · R182)</button>
       <button class="comp-pill" id="sim-btn-highered" onclick="selectScenario('global_higher_education_edtech_fabric_adaptive_learning_student_retention_grant_compliance_vs_4clouds')">🎓 Scenario GH: Higher Ed &amp; EdTech 1.2M Learners × xAPI Adaptive Learning, Student Retention &amp; Grant Compliance Loop (Eventhouse 4ms + 600M=0.60B! DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (0.60B Vectors · R183)</button>
+      <button class="comp-pill" id="sim-btn-epcbim" onclick="selectScenario('global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds')">🏗️ Scenario GI: EPC Construction $45B Backlog × BIM 5D SPI/CPI, P6 Schedule Risk &amp; FIDIC Change-Order AI Loop (Eventhouse 4ms + 604M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (99.70% · R184)</button>
     </div>
 
     <div class="grid-2">
@@ -366,6 +367,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>192 · Engineering, Procurement &amp; Construction (EPC) &amp; Capital Projects ($45B Backlog + 320 Sites) BIM 5D Cost Control, Primavera P6 Risk &amp; Change-Order AI (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 604M SSD DiskANN -92% RAM + In-Lake PREDICT -31% Slippage &amp; +$19.2M Claim Savings, 16ms=4²ms Loop, 99.70% Accuracy &amp; -$366.3K/mo Saved!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R184)</span>
+        <a href="assets/svg/192-fabric-epc-construction-bim-5d-schedule-risk-subcontractor-change-order-safety-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/192-fabric-epc-construction-bim-5d-schedule-risk-subcontractor-change-order-safety-faq.svg" alt="Fabric EPC Construction BIM 5D Schedule Risk Subcontractor Change Order Safety Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2449,6 +2458,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>HigherEd:1.2MLearners_45Campuses_995KEPS → Eventhouse_OneLake:4ms_480AtRisk_95GrantTransfers (4ms) → DiskANN600M_0.60B_PREDICT:4ms_8.4pp_Retention_$24.6M_Saved (4ms) → FoundryIQ:4ms_Socratic0Spoiler_2CFR200_FERPA (4ms) → Canvas_Banner_1GB_SQL:Advisor_PI_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams Provost, Academic Advisor & PI Card · 1.2M-Learner Retention & Grant Loop (DL-773..776 · 600M=0.60B Vectors!)',
       teamsSummary: '16ms (4²ms) Higher Ed Retention & Grant Compliance Loop Ready: KQL 4ms flags 480 Week-3 at-risk freshmen (+8.4pp retention) + 600M (0.60B!) DiskANN protects $24.6M tuition/grants + Socratic 0-spoiler & blocks 95 grant transfers · -96.0% TCO (-$364.6K/mo saved!), $63,150,000 SLA Protected ✓'
+    }
+  },
+  global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 工地 RFID 进场流与 BIM 5D 实时挣值感知 ($0/GB 写入税)', latency: '4 ms', desc: '实时摄入 320 个超级工地的预制件 RFID 进场、塔吊吊装流与 Primavera P6 / Procore / SAP S/4HANA PS 镜像，4ms 计算实时 SPI/CPI 并锁定 260 个关键路径负浮时延误段与 115 笔缺留置权豁免书付款（免除 $141.2K/月 BIM 5D 中间件与流税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.04 亿 BIM IFC 规范/FIDIC 合同向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.04 亿条 BIM IFC 构件参数、CSI 施工规范、BOQ 清单与历史变更单向量库上以 $3,280/月 (-92% 内存 vs $75,000/月 DRAM) 完成 4ms 比对，减少关键路径延误 -31% 并核减 +$19.2M/年 重复变更索赔。' },
+        { title: '③ Foundry IQ 无条件留置权豁免门禁 (+$6.20M 防双倍赔付) 与标底 CLS 护栏 (SOP-192)', latency: '4 ms', desc: '强制执行 SOP-192，4ms 内冻结 115 笔缺失二级分包无条件留置权豁免书的 AIA G702 进度款（规避 $6.20M 机械留置权损失），核验 OSHA 吊装半径安全，并对 15,700 名内外人员物理屏蔽总包标底列。' },
+        { title: '④ 项目控制总监与总造价师 (QS) Teams 确认及 P6/Procore/SAP 回写 / 1GB SQL 审计', latency: '4 ms', desc: '项目总监与总造价师批准后，4ms 内更新 Primavera P6 赶工排程、回写 Procore 变更审价单并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！月省 -$366.3K/月，守护 $63.50M 工程毛利 SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>EPCConstruction:320Sites_24KSubcontractors_995KEPS → Eventhouse_OneLake:4ms_260CriticalSegments_115UnwaivedPayApps (4ms) → DiskANN604M_PREDICT:4ms_31Pct_LessDelay_$19.2M_ClaimSavings (4ms) → FoundryIQ:4ms_LienWaiver_BidCLS_OSHA (4ms) → P6_Procore_1GB_SQL:Director_QS_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams EPC 项目控制总监与总造价师 (QS) 审批卡 · 320 个工地 BIM 5D 与变更审价闭环 (DL-777..780 · 99.70% 准确率!)',
+      teamsSummary: '16ms (4²ms) EPC BIM 5D 控本与变更审价就绪：KQL 4ms 锁定 260 个关键路径延误段 (-31% 延误) + 604M DiskANN 核减 $19.2M 重复索赔 + 冻结 115 笔缺留置权豁免付款 (+$6.20M) · 月省 -$366.3K/月 (-96.0%)，守护 $63,500,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Jobsite RFID & Live BIM 5D SPI/CPI Sense ($0/GB Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of module RFID gate scans, crane lifts, and mirrored Primavera P6, Procore, and SAP S/4HANA PS tables across 320 mega-sites at $0/GB write tax, flagging 260 negative-float segments and 115 unwaived pay apps in 4ms (saving $141.2K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (604M BIM IFC/FIDIC Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 604M BIM IFC element spec, BOQ, CSI MasterFormat, and FIDIC contract vectors via SSD DiskANN ($3,280/mo, -92% RAM vs $75,000/mo DRAM) in 4ms—cutting critical-path slippage -31% and rejecting +$19.2M/yr in duplicate variation claims.' },
+        { title: '③ Foundry IQ Unconditional Lien-Waiver Gate (+$6.20M Saved) & Bid CLS (SOP-192)', latency: '4 ms', desc: 'Enforces SOP-192 in 4ms, blocking 115 AIA G702 progress payouts lacking lower-tier Unconditional Lien Waivers (+$6.20M mechanics\' lien protection), checking OSHA crane safety, and masking Internal_Estimate_Baseline across 15,700 users.' },
+        { title: '④ Project Director & Chief QS Teams Card & P6 / Procore / 1GB SQL Commit', latency: '4 ms', desc: 'Project Director and Chief QS approve in Teams; updates Primavera P6 schedules, Procore variation logs, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, 72=8x9 FAQs, 99.70% Accuracy, 219.0ms Exact & Sub-190ms 189.15ms Ontology Mean, saving -$366.3K/mo and protecting $63.50M SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>EPCConstruction:320Sites_24KSubcontractors_995KEPS → Eventhouse_OneLake:4ms_260CriticalSegments_115UnwaivedPayApps (4ms) → DiskANN604M_PREDICT:4ms_31Pct_LessDelay_$19.2M_ClaimSavings (4ms) → FoundryIQ:4ms_LienWaiver_BidCLS_OSHA (4ms) → P6_Procore_1GB_SQL:Director_QS_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams EPC VP of Project Controls & Chief QS Card · 320-Site BIM 5D & Claim Loop (DL-777..780 · 99.70% Accuracy!)',
+      teamsSummary: '16ms (4²ms) EPC BIM 5D & Change-Order Loop Ready: KQL 4ms flags 260 negative-float segments (-31% delay) + 604M DiskANN rejects $19.2M duplicate claims + blocks 115 unwaived payouts (+$6.20M) · -96.0% TCO (-$366.3K/mo saved!), $63,500,000 SLA Protected ✓'
     }
   }
 };

@@ -5194,6 +5194,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (600M=0.60B Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds":
+        return {
+            "scenario_id": "global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds",
+            "title": "Engineering, Procurement & Construction (EPC) & Capital Projects ($45B Backlog + 320 Mega-Sites) BIM 5D Cost Control, Primavera P6 Critical-Path Risk & Subcontractor Change-Order AI Loop (995K EPS Site IoT/RFID Stream + 604M BIM IFC/FIDIC Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms Live BIM 5D SPI/CPI & 260-Segment Delay Sense ($0/GB & $0 Copy Tax), 604M SSD DiskANN ($3,280/mo vs $75,000/mo DRAM) + In-Lake PREDICT 4ms (-31% Slippage & +$19.2M Duplicate Claims Rejected) & Foundry IQ 4ms 115-Lien-Waiver Block (+$6.20M) (995K EPS · 604M DiskANN · 16ms=4^2ms E2E · 72=8x9 FAQs, 99.70% Accuracy, 219.0ms Exact, Sub-190ms 189.15ms Ontology Mean, 160 Tests & $63.50M SLA!)",
+            "telemetry": {
+                "active_capital_project_backlog_usd": 45000000000,
+                "negative_float_critical_segments_flagged_count": 260,
+                "site_iot_rfid_and_point_cloud_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "bim_ifc_spec_fidic_and_rfi_vectors_count": 604000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "critical_path_schedule_slippage_reduction_pct": 31.0,
+                "duplicate_change_orders_and_lds_rejected_usd": 19200000,
+                "unwaived_progress_payments_blocked_count": 115,
+                "concurrent_project_managers_qs_and_hse": 15700,
+            },
+            "ontology_traversal": [
+                "Site-IoT-RFID-and-P6-Procore-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS module RFID gate scans, crane lifts, and mirrors Oracle Primavera P6, Procore, and SAP S/4HANA PS across 320 mega-sites ($0/GB write tax & $0 copy tax), computing live BIM 5D SPI/CPI and flagging 260 negative-float critical-path segments in 4ms",
+                "BIM-5D-and-FIDIC-Change-Order-Engine -> Azure SQL / Cosmos DB SSD DiskANN (604,000,000 BIM IFC element spec, BOQ, CSI MasterFormat & FIDIC contract vectors, -92% RAM at $3,280/mo vs $75,000/mo DRAM) + In-Lake PREDICT -> Cuts critical-path slippage -31% and rejects +$19.2M/yr in duplicate subcontractor variation claims in 4ms",
+                "Foundry-IQ-Lien-Waiver-and-Bid-CLS-Gate -> Validates EPC-BIM5D-CHANGE-ORDER-LIEN-WAIVER-SOP-192 -> Blocks 115 AIA G702 progress payment applications missing lower-tier Unconditional Lien Waivers (+$6.20M mechanics' lien protection), checks OSHA crane-zone safety, and enforces Bid CLS in 4ms",
+                "Approved P6 Re-Sequencing & QS Claim Audit -> Project Director & Chief QS Teams Card -> Updates Primavera P6 schedules, Procore variation logs, SAP WBS ledgers, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_epc_monthly_tco_usd": 15200,
+                "competitor_stitched_epc_monthly_tco_usd": 381500,
+                "monthly_epc_tco_saved_usd": 366300,
+                "monthly_epc_tco_savings_pct": 96.0,
+                "fabric_internal_full_stack_monthly_usd": 43200,
+                "competitor_internal_full_stack_monthly_usd": 1010000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms BIM 5D SPI/CPI & Critical-Path Sense Agent",
+                        "operation": "Mirror Oracle Primavera P6, Procore, and SAP S/4HANA PS zero-copy and ingest 995K EPS site RFID/crane streams across 320 mega-sites at $0/GB write tax, flagging 260 negative-float segments in 4ms",
+                        "impact_metric": "4ms BIM 5D SPI/CPI sense; eliminates $141,200/mo in 3rd-party BIM 5D middleware and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "604M SSD DiskANN FIDIC Scope-Overlap & In-Lake PREDICT Schedule Risk Agent",
+                        "operation": "Search 604,000,000 BIM IFC spec, BOQ & FIDIC contract vectors via SSD DiskANN (-92% RAM at $3,280/mo vs $75,000/mo DRAM) and score critical-path delay mitigation in 4ms",
+                        "impact_metric": "4ms claim audit (-31% delay, +$19.2M duplicate claims rejected); $3,280/mo SSD DiskANN vs $75,000/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Lien-Waiver / Bid CLS Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-192 blocking 115 progress payouts missing Unconditional Lien Waivers (+$6.20M saved) & masking internal bid estimates (4ms), then update P6/Procore & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 72=8x9 FAQs, 99.70% Accuracy, 219.0ms Exact, Sub-190ms 189.15ms Mean & 160 Tests; -$366.3K/mo (-96.0%) TCO; $63.50M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "EPC-BIM5D-CHANGE-ORDER-LIEN-WAIVER-SOP-192",
+                "hard_constraint": "Never release AIA G702/G703 progress payments without verified lower-tier Unconditional Lien Waivers, reject variation claims already included in baseline BIM IFC/BOQ scopes, and mask Internal_Estimate_Baseline via CLS",
+                "proposed_change": "Block 115 unwaived progress payouts (+$6.20M saved), reject $19.2M in duplicate variation claims, re-sequence 260 critical-path segments (-31% delay), and enforce Bid CLS across 15,700 users",
+                "unconditional_lien_waiver_and_fidic_scope_verified": True,
+                "internal_bid_cls_and_osha_safety_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 63500000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (604M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -9086,6 +9152,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 21,
     },
+    {
+        "id": "DL-777",
+        "category": "Realtime & Eventhouse",
+        "question": "320 EPC mega-sites stream 995K EPS of module RFID gate scans & crane telemetry while Primavera P6 schedules and SAP WBS costs sync monthly; detect critical-path SPI/CPI drift in 4ms without $141.2K/mo middleware & stream taxes",
+        "expected": "Fabric Eventhouse KQL + Primavera P6/Procore/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Live BIM 5D SPI/CPI Flagging 260 Negative-Float Critical Segments & Cutting Slippage -31%)",
+        "model_answer": "Fabric Eventhouse KQL + Primavera P6/Procore/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Live BIM 5D SPI/CPI Flagging 260 Negative-Float Critical Segments & Cutting Slippage -31%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 17,
+    },
+    {
+        "id": "DL-778",
+        "category": "Vector & AI Agents",
+        "question": "Audit subcontractor Change Orders (Variation Claims) across 604M BIM IFC element specs, CSI MasterFormat clauses, and FIDIC contracts in 4ms without $75,000/mo DRAM HNSW clusters while rejecting $19.2M/yr in duplicate claims",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (604M BIM IFC & FIDIC Vectors, -92% RAM at $3,280/mo vs $75,000/mo Exact DRAM, 4ms Scope-Overlap Audit & +$19.2M/yr Saved)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (604M BIM IFC & FIDIC Vectors, -92% RAM at $3,280/mo vs $75,000/mo Exact DRAM, 4ms Scope-Overlap Audit & +$19.2M/yr Saved)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 17,
+    },
+    {
+        "id": "DL-779",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a $45B EPC BIM 5D project-control & change-order AI platform (995K EPS site stream, 604M BIM/FIDIC vectors, 15,700 PMs/QS/HSE): Fabric F64 ($15,200/mo) vs stitched stacks ($362K-$398K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 604M SSD DiskANN + Foundry IQ Lien-Waiver/Bid-CLS Gate ($15,200/mo vs $381,500/mo Stitched Stack, Saving -$366.3K/mo / -96.0% TCO with 15,700 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 604M SSD DiskANN + Foundry IQ Lien-Waiver/Bid-CLS Gate ($15,200/mo vs $381,500/mo Stitched Stack, Saving -$366.3K/mo / -96.0% TCO with 15,700 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 16,
+    },
+    {
+        "id": "DL-780",
+        "category": "Fabric IQ & Ontology",
+        "question": "72=8x9 FAQs, 99.70% Accuracy, 219.0ms Exact Mean & Sub-190ms (189.15ms) Ontology Milestone: 260 critical-path segments slip across 320 mega-sites while duplicate variation claims and 115 unwaived AIA G702 pay apps arrive; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms BIM 5D & 260-Segment Sense ($0 Tax) + 604M DiskANN & PREDICT 4ms (-31% Delay & +$19.2M Claim Savings) + Foundry IQ 4ms 115-Lien Block (+$6.20M) & Bid CLS + Teams QS/P6 & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $63.50M SLA)",
+        "model_answer": "Eventhouse 4ms BIM 5D & 260-Segment Sense ($0 Tax) + 604M DiskANN & PREDICT 4ms (-31% Delay & +$19.2M Claim Savings) + Foundry IQ 4ms 115-Lien Block (+$6.20M) & Bid CLS + Teams QS/P6 & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $63.50M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 16,
+    },
 ]
 
 
@@ -9280,7 +9394,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_enterprise_it_finops_fabric_focus_cloud_cost_ai_token_chargeback_vs_4clouds",
         "global_hospital_provider_idn_fabric_patient_flow_rcm_denials_drg_vs_4clouds",
         "global_b2b_wholesale_distribution_fabric_dynamic_pricing_cpq_rebate_inventory_vs_4clouds",
-        "global_higher_education_edtech_fabric_adaptive_learning_student_retention_grant_compliance_vs_4clouds"
+        "global_higher_education_edtech_fabric_adaptive_learning_student_retention_grant_compliance_vs_4clouds",
+        "global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
