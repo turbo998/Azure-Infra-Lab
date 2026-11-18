@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad187" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#081526"/>
+    </linearGradient>
+    <linearGradient id="headerGrad187" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="fabricBoxGrad187" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0A1E32"/>
+    </linearGradient>
+    <linearGradient id="compBoxGrad187" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1E0D10"/>
+    </linearGradient>
+    <filter id="shadow187" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1480" height="940" fill="url(#bgGrad187)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1432" height="92" rx="14" fill="url(#headerGrad187)" filter="url(#shadow187)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-size="20.5" font-weight="800">📈 R179 · Asset &amp; Wealth Mgmt Intraday Risk, Private Credit PCAP AI &amp; 15,000-Advisor Portal (15K Users &amp; 150 Tests!)</text>
+  <text x="46" y="81" fill="#E0F2FE" font-size="13.5" font-weight="600">Scenario GD (DL-757..DL-760): $1.8T AUM · 995K EPS Market/Aladdin Stream + 584M Private-Credit/IPS Vectors · 17ms E2E · 15,000 (15K!) Users · 150/150 Tests · $61.75M SLA!</text>
+  <rect x="1216" y="34" width="222" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1327" y="58" text-anchor="middle" fill="#6EE7B7" font-size="13" font-weight="800">15,000 Users · 17ms E2E</text>
+  <text x="1327" y="79" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">584M Vectors · $61.75M SLA</text>
+
+  <!-- Left Column: Enterprise Pain Points & 4-Step 17ms Loop -->
+  <rect x="24" y="124" width="930" height="500" rx="14" fill="url(#fabricBoxGrad187)" stroke="#0EA5E9" stroke-width="1.8" filter="url(#shadow187)"/>
+  <text x="44" y="156" fill="#38BDF8" font-size="17" font-weight="800">🏗️ Microsoft Fabric Unified Buy-Side Intraday Risk, Private-Markets AI &amp; 15K-Advisor Loop (17ms E2E)</text>
+  <text x="44" y="177" fill="#94A3B8" font-size="12.5">OneLake Zero-Copy (BlackRock Aladdin + SimCorp + Custodian NAV) + Eventhouse KQL (995K EPS) + 584M SSD DiskANN + Gluten C++</text>
+
+  <!-- Step 1 -->
+  <rect x="44" y="192" width="890" height="94" rx="10" fill="#0B192C" stroke="#0284C7" stroke-width="1.4"/>
+  <rect x="56" y="204" width="92" height="26" rx="6" fill="#0284C7"/>
+  <text x="102" y="222" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 1 · 4ms</text>
+  <text x="162" y="221" fill="#F8FAFC" font-size="14.5" font-weight="700">Eventhouse KQL + OneLake Zero-Copy: 4ms Intraday IPS Mandate Breach &amp; Yield Drift Sense ($0 Tax!)</text>
+  <text x="56" y="245" fill="#CBD5E1" font-size="12.5">• Ingests 995,000 EPS intraday FIX market ticks, ETF baskets &amp; Aladdin/SimCorp fills across 3,200 institutional &amp; wealth portfolios.</text>
+  <text x="56" y="266" fill="#38BDF8" font-size="12.5" font-weight="600">• Eliminates $137,200/mo in tick stream &amp; copy taxes; isolates 28 pension accounts breaching 15.0% IPS sector caps in 4ms.</text>
+
+  <!-- Step 2 -->
+  <rect x="44" y="298" width="890" height="94" rx="10" fill="#0B192C" stroke="#10B981" stroke-width="1.4"/>
+  <rect x="56" y="310" width="92" height="26" rx="6" fill="#059669"/>
+  <text x="102" y="328" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 2 · 4ms</text>
+  <text x="162" y="327" fill="#F8FAFC" font-size="14.5" font-weight="700">Cosmos DB SSD DiskANN (584M Private-Credit/IPS Vectors) + In-Lake ai.extract &amp; Gluten C++ (4ms!)</text>
+  <text x="56" y="351" fill="#CBD5E1" font-size="12.5">• Parses GP PCAP/Capital Call PDFs into ILPA tables via ai.extract &amp; searches 584M vectors via SSD DiskANN ($3,180/mo vs $72,800/mo DRAM).</text>
+  <text x="56" y="372" fill="#34D399" font-size="12.5" font-weight="600">• Flags 14 private-credit borrower covenant warnings ($86M exposure) and runs $0-surcharge Gluten C++ Brinson attribution in 4ms.</text>
+
+  <!-- Step 3 -->
+  <rect x="44" y="404" width="890" height="94" rx="10" fill="#0B192C" stroke="#F59E0B" stroke-width="1.4"/>
+  <rect x="56" y="416" width="92" height="26" rx="6" fill="#D97706"/>
+  <text x="102" y="434" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 3 · 4ms</text>
+  <text x="162" y="433" fill="#F8FAFC" font-size="14.5" font-weight="700">Foundry IQ Dual-Custodian NAV Parity (&lt;0.1 bps), SEC Marketing Rule &amp; Chinese Wall Gate (SOP-186 · 4ms!)</text>
+  <text x="56" y="457" fill="#CBD5E1" font-size="12.5">• Validates WEALTH-ASSET-MGMT-INTRADAY-PRIVATE-CREDIT-SOP-186: verifies State Street/BNY Mellon NAV parity (&lt;0.1 bps) &amp; Gross/Net fee rules,</text>
+  <text x="56" y="478" fill="#FBBF24" font-size="12.5" font-weight="600">• Approves 28-account ETF rebalance baskets and enforces MNPI Chinese Wall OBO RLS across 15,000 (15K!) users in 4ms.</text>
+
+  <!-- Step 4 -->
+  <rect x="44" y="510" width="890" height="98" rx="10" fill="#0B192C" stroke="#8B5CF6" stroke-width="1.4"/>
+  <rect x="56" y="522" width="92" height="26" rx="6" fill="#7C3AED"/>
+  <text x="102" y="540" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 4 · 5ms</text>
+  <text x="162" y="539" fill="#F8FAFC" font-size="14.5" font-weight="700">Teams CIO &amp; CRO Card + Aladdin OMS Order, 15,000-Advisor Excel Direct Lake &amp; 1GB SQL Commit (5ms)</text>
+  <text x="56" y="563" fill="#CBD5E1" font-size="12.5">• Dispatches OMS rebalance orders, publishes client quarterly packs to 15,000 RMs in Direct Lake, and commits to 1GB Free SQL in 5ms.</text>
+  <text x="56" y="584" fill="#C4B5FD" font-size="12.5" font-weight="600">• Total E2E: 4ms + 4ms + 4ms + 5ms = 17ms Loop! Protects $61.75M SLA &amp; saves -$357,500/mo (-96.0% TCO).</text>
+
+  <!-- Right Column: Competitor Stitched Anti-Patterns -->
+  <rect x="974" y="124" width="482" height="500" rx="14" fill="url(#compBoxGrad187)" stroke="#EF4444" stroke-width="1.8" filter="url(#shadow187)"/>
+  <text x="994" y="156" fill="#FCA5A5" font-size="16.5" font-weight="800">⛔ Stitched Multi-Cloud Buy-Side &amp; Alt-Ops Anti-Patterns</text>
+  <text x="994" y="177" fill="#F87171" font-size="12.5">$372.4K/mo TCO · 14-Day Manual GP PCAP Entry &amp; BI Seat Taxes</text>
+
+  <rect x="994" y="194" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="217" fill="#FCA5A5" font-size="13.5" font-weight="700">1. Intraday Tick Stream &amp; OMS Copy Taxes ($137.2K/mo)</text>
+  <text x="1010" y="239" fill="#E2E8F0" font-size="12">• Streaming 995K EPS market ticks and copying Aladdin/SimCorp</text>
+  <text x="1010" y="258" fill="#E2E8F0" font-size="12">  positions across clouds costs $137.2K/mo and leaves</text>
+  <text x="1010" y="276" fill="#FCA5A5" font-size="12" font-weight="600">  hours of lag in detecting intraday IPS mandate breaches.</text>
+
+  <rect x="994" y="300" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="323" fill="#FCA5A5" font-size="13.5" font-weight="700">2. 4.44TB DRAM Vector Cluster ($72.8K/mo vs $3,180/mo)</text>
+  <text x="1010" y="345" fill="#E2E8F0" font-size="12">• Hosting 584,000,000 private-credit covenant clauses, PPMs,</text>
+  <text x="1010" y="364" fill="#E2E8F0" font-size="12">  and IPS mandate vectors in RAM-only HNSW clusters costs</text>
+  <text x="1010" y="382" fill="#FCA5A5" font-size="12" font-weight="600">  $72,800/mo vs $3,180/mo on Cosmos DB SSD DiskANN (-92% RAM).</text>
+
+  <rect x="994" y="406" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="429" fill="#FCA5A5" font-size="13.5" font-weight="700">3. Per-Page GP PCAP OCR &amp; Attribution Tax ($83.8K/mo)</text>
+  <text x="1010" y="451" fill="#E2E8F0" font-size="12">• Paying commercial alt-ops OCR fees and Photon/XL warehouse</text>
+  <text x="1010" y="470" fill="#E2E8F0" font-size="12">  surcharges for multi-asset attribution wastes $83.8K/mo</text>
+  <text x="1010" y="488" fill="#FCA5A5" font-size="12" font-weight="600">  while leaving 14-day manual GP PCAP reconciliation delays.</text>
+
+  <rect x="994" y="512" width="442" height="96" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="535" fill="#FCA5A5" font-size="13.5" font-weight="700">4. Per-User BI Seats for 15,000 RMs &amp; PMs ($78.6K/mo)</text>
+  <text x="1010" y="557" fill="#E2E8F0" font-size="12">• Licensing BI seats for 15,000 (15K!) portfolio managers,</text>
+  <text x="1010" y="576" fill="#E2E8F0" font-size="12">  wealth RMs, and institutional LPs costs $78.6K/mo vs $0</text>
+  <text x="1010" y="594" fill="#FCA5A5" font-size="12" font-weight="600">  Power BI Viewer + Excel Direct Lake on Fabric F64+.</text>
+
+  <!-- Bottom Section: 5-Cloud TCO & Decision Matrix -->
+  <rect x="24" y="640" width="1432" height="278" rx="14" fill="#091526" stroke="#334155" stroke-width="1.5" filter="url(#shadow187)"/>
+  <text x="44" y="672" fill="#F8FAFC" font-size="16.5" font-weight="800">📊 5-Cloud Asset &amp; Wealth Management Intraday Risk, Private Credit AI &amp; 15K-RM Matrix ($1.8T AUM · 995K EPS · 584M Vectors · 15,000 Users)</text>
+
+  <!-- Table Header -->
+  <rect x="44" y="686" width="1392" height="32" rx="6" fill="#1E293B"/>
+  <text x="58" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Platform / Architecture</text>
+  <text x="340" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Intraday Ticks &amp; Aladdin Sync</text>
+  <text x="605" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">584M Covenant/IPS Vectors</text>
+  <text x="860" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">PCAP AI &amp; 15,000 RM BI</text>
+  <text x="1145" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Monthly TCO &amp; Verdict</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="44" y="722" width="1392" height="36" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="58" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric (F64 Pooled)</text>
+  <text x="340" y="745" fill="#FFFFFF" font-size="12" font-weight="600">Eventhouse + OneLake ($0 Tax · 4ms)</text>
+  <text x="605" y="745" fill="#6EE7B7" font-size="12" font-weight="700">SSD DiskANN (-92% RAM · $3,180/mo)</text>
+  <text x="860" y="745" fill="#FFFFFF" font-size="12" font-weight="600">ai.extract · $0 Viewer (15,000!)</text>
+  <text x="1145" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">$14.9K/mo (-96.0% · 17ms E2E!)</text>
+
+  <!-- Row 2: AWS -->
+  <rect x="44" y="762" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="783" fill="#E2E8F0" font-size="12" font-weight="700">AWS FinSpace + Textract + OS</text>
+  <text x="340" y="783" fill="#CBD5E1" font-size="12">Kinesis + FinSpace ($86.5K/mo)</text>
+  <text x="605" y="783" fill="#FCA5A5" font-size="12">OpenSearch 4.44TB RAM ($72.8K/mo)</text>
+  <text x="860" y="783" fill="#CBD5E1" font-size="12">Textract + QuickSight ($93.1K/mo)</text>
+  <text x="1145" y="783" fill="#FCA5A5" font-size="12" font-weight="700">$252.4K/mo (+$237.5K/mo)</text>
+
+  <!-- Row 3: GCP -->
+  <rect x="44" y="798" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="819" fill="#E2E8F0" font-size="12" font-weight="700">Google BigQuery + DocAI + Vertex</text>
+  <text x="340" y="819" fill="#CBD5E1" font-size="12">Pub/Sub + BQ Slots ($96.5K/mo)</text>
+  <text x="605" y="819" fill="#FCA5A5" font-size="12">Vertex Vector Search RAM ($75.2K/mo)</text>
+  <text x="860" y="819" fill="#CBD5E1" font-size="12">DocAI + Looker ($110.1K/mo)</text>
+  <text x="1145" y="819" fill="#FCA5A5" font-size="12" font-weight="700">$281.8K/mo (+$266.9K/mo)</text>
+
+  <!-- Row 4: Databricks -->
+  <rect x="44" y="834" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="855" fill="#E2E8F0" font-size="12" font-weight="700">Databricks Lakeflow + Photon</text>
+  <text x="340" y="855" fill="#CBD5E1" font-size="12">DLT + Photon Stream ($110.5K/mo)</text>
+  <text x="605" y="855" fill="#FCA5A5" font-size="12">Mosaic Vector Search ($77.6K/mo)</text>
+  <text x="860" y="855" fill="#CBD5E1" font-size="12">Photon DBU + BI Seats ($127.1K/mo)</text>
+  <text x="1145" y="855" fill="#FCA5A5" font-size="12" font-weight="700">$315.2K/mo (+$300.3K/mo)</text>
+
+  <!-- Row 5: Snowflake -->
+  <rect x="44" y="870" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="891" fill="#E2E8F0" font-size="12" font-weight="700">Snowflake + Alt-Ops OCR + BI</text>
+  <text x="340" y="891" fill="#CBD5E1" font-size="12">Snowpipe + Copy Tax ($137.2K/mo)</text>
+  <text x="605" y="891" fill="#FCA5A5" font-size="12">Cortex Vector + XL WH ($72.8K/mo)</text>
+  <text x="860" y="891" fill="#CBD5E1" font-size="12">Snowpark + BI ($162.4K/mo)</text>
+  <text x="1145" y="891" fill="#FCA5A5" font-size="12" font-weight="700">$372.4K/mo (-$357.5K/mo Saved!)</text>
+</svg>

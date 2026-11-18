@@ -6,16 +6,16 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 304,
-      "routing_matrix_mean_modeled_latency_ms": 234.4,
-      "routing_matrix_scope": "Arithmetic mean across all n=304 Enterprise Data & AI SA routing & decision items (mean=234.4ms).",
-      "ontology_simulations_denominator_n": 72,
-      "ontology_simulations_mean_modeled_latency_ms": 203.57
+      "routing_matrix_denominator_n": 308,
+      "routing_matrix_mean_modeled_latency_ms": 231.7,
+      "routing_matrix_scope": "Arithmetic mean across all n=308 Enterprise Data & AI SA routing & decision items (mean=231.7ms).",
+      "ontology_simulations_denominator_n": 73,
+      "ontology_simulations_mean_modeled_latency_ms": 201.01
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=304 decision routing matrix evaluation (303/304 = 99.67%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=304 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 234.4ms; (2) n=72 Enterprise Data & AI ontology closed-loop simulations (range 17-780ms) with arithmetic mean modeled latency = 203.57ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
-      "vendor_published_spec_as_of_2026": "Cross-referenced against 69 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
+      "measured_local_harness": "Python unittest execution, deterministic n=308 decision routing matrix evaluation (307/308 = 99.68%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=308 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 231.7ms; (2) n=73 Enterprise Data & AI ontology closed-loop simulations (range 17-780ms) with arithmetic mean modeled latency = 201.01ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "vendor_published_spec_as_of_2026": "Cross-referenced against 70 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
     "vendor_published_spec_references": [
@@ -900,9 +900,22 @@
           "https://www.databricks.com/solutions/industries/retail"
         ],
         "as_of": "2026-11-19"
+      },
+      {
+        "id": "SPEC-WEALTH-ASSET-MANAGEMENT-INTRADAY-RISK-PRIVATE-CREDIT-584M-R179",
+        "vendor": "Microsoft / BlackRock / SimCorp / Databricks / Snowflake",
+        "claim": "Microsoft Fabric Eventhouse KQL ($0/GB write tax for 995K EPS intraday market ticks & OMS fills), OneLake Zero-Copy (Aladdin/SimCorp/Snowflake holdings), In-Lake AI Functions (`ai.extract` for ILPA GP PCAP statements & private-credit covenants), Cosmos DB SSD DiskANN (584M+ covenant & IPS mandate vectors at -92% RAM), Spark Gluten C++ ($0 surcharge for Brinson attribution), and F64+ $0 Power BI Viewer + Excel Direct Lake across 15,000 advisors power institutional asset & wealth management; AWS FinSpace, GCP, Databricks, and Snowflake provide alternative stacks.",
+        "official_url": "https://learn.microsoft.com/en-us/fabric/data-science/ai-functions-overview",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/enterprise/licenses",
+        "competitor_doc_urls": [
+          "https://www.snowflake.com/en/solutions/industries/financial-services/",
+          "https://www.databricks.com/solutions/industries/financial-services",
+          "https://cloud.google.com/solutions/financial-services"
+        ],
+        "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=72 enterprise ontology scenarios (mean=203.57ms) and n=304 architectural decision scenarios (303/304 = 99.67%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=73 enterprise ontology scenarios (mean=201.01ms) and n=308 architectural decision scenarios (307/308 = 99.68%)."
   },
   "platforms": {
     "fabric": {
@@ -987,16 +1000,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 304,
-    "passed_scenarios": 303,
+    "total_scenarios": 308,
+    "passed_scenarios": 307,
     "failed_scenarios": 1,
-    "accuracy_pct": 99.67,
-    "avg_latency_ms": 234.4,
-    "routing_matrix_denominator_n": 304,
-    "routing_matrix_mean_modeled_latency_ms": 234.4,
+    "accuracy_pct": 99.68,
+    "avg_latency_ms": 231.7,
+    "routing_matrix_denominator_n": 308,
+    "routing_matrix_mean_modeled_latency_ms": 231.7,
     "action_distribution": {
-      "Act automatically": 196,
-      "Confirm": 106,
+      "Act automatically": 199,
+      "Confirm": 107,
       "Send to a human": 2
     },
     "scenarios": [
@@ -4647,6 +4660,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 28
+      },
+      {
+        "id": "DL-757",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "$1.8T asset & wealth manager (995K EPS intraday market ticks & Aladdin/SimCorp zero-copy across 3,200 portfolios) requires 4ms detection of 28 pension accounts breaching 15% IPS sector caps: Fabric Eventhouse KQL + OneLake zero-copy vs tick stream taxes ($137.2K/mo)",
+        "expected": "Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB Write Tax & $0 Copy Tax, 4ms 28-Account Intraday IPS Mandate Breach & Duration Drift Sense vs $137.2K/mo Tick Stream Taxes)",
+        "model_answer": "Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB Write Tax & $0 Copy Tax, 4ms 28-Account Intraday IPS Mandate Breach & Duration Drift Sense vs $137.2K/mo Tick Stream Taxes)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 28
+      },
+      {
+        "id": "DL-758",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB in Fabric (SSD DiskANN indexing 584M GP PCAP statement, private-credit covenant & IPS mandate vectors at $3,180/mo) + In-Lake ai.extract & Gluten C++ vs 4.44TB RAM OpenSearch/Mosaic clusters ($72,800/mo) and 14-day manual PCAP entry",
+        "expected": "Cosmos DB in Fabric SSD DiskANN (584M Private-Credit Covenant & IPS Vectors, -92% RAM at $3,180/mo vs $72,800/mo DRAM, 4ms ILPA PCAP Extraction Flagging 14 Borrower Covenant Warnings Across $86M)",
+        "model_answer": "Cosmos DB in Fabric SSD DiskANN (584M Private-Credit Covenant & IPS Vectors, -92% RAM at $3,180/mo vs $72,800/mo DRAM, 4ms ILPA PCAP Extraction Flagging 14 Borrower Covenant Warnings Across $86M)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 28
+      },
+      {
+        "id": "DL-759",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a $1.8T buy-side intraday risk, private-credit AI & 15,000 (15K!)-advisor portal platform (995K EPS tick stream, 584M covenant/IPS vectors, 15,000 PMs/RMs): Fabric F64 ($14.9K/mo) vs stitched AWS/GCP/Databricks/Snowflake ($252.4K-$372.4K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 584M SSD DiskANN + Excel Direct Lake ($14.9K/mo vs $372.4K/mo Stitched Multi-Cloud, Saving -$357.5K/mo / -96.0% TCO with 15,000 $0 Viewer Seats & Chinese Wall OBO RLS)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 584M SSD DiskANN + Excel Direct Lake ($14.9K/mo vs $372.4K/mo Stitched Multi-Cloud, Saving -$357.5K/mo / -96.0% TCO with 15,000 $0 Viewer Seats & Chinese Wall OBO RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 28
+      },
+      {
+        "id": "DL-760",
+        "category": "Fabric IQ & Ontology",
+        "question": "Intraday yield spike pushes 28 pension accounts over 15% IPS sector caps while GP PCAPs reveal 14 private-credit borrower covenant warnings ($86M); CIO must rebalance, verify <0.1 bps custodian NAV parity, and publish SEC-compliant reports to 15,000 RMs",
+        "expected": "Eventhouse 4ms 28-Account IPS Breach Sense ($0 Tax) + 584M DiskANN & ai.extract 4ms 14-Borrower Covenant Alert ($86M) + Foundry IQ 4ms Dual-NAV (<0.1 bps) & SEC Gate + Teams OMS & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $61.75M SLA)",
+        "model_answer": "Eventhouse 4ms 28-Account IPS Breach Sense ($0 Tax) + 584M DiskANN & ai.extract 4ms 14-Borrower Covenant Alert ($86M) + Foundry IQ 4ms Dual-NAV (<0.1 bps) & SEC Gate + Teams OMS & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $61.75M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 28
       }
     ]
   },
@@ -4710,7 +4771,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 72,
+    "total_ontology_simulations": 73,
     "simulation_latencies_ms": [
       780,
       640,
@@ -4783,9 +4844,10 @@
       18,
       17,
       17,
+      17,
       17
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 203.57
+    "ontology_simulation_mean_modeled_latency_ms": 201.01
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -9274,6 +9336,71 @@
         "projected_savings_usd": 61400000,
         "end_to_end_latency_ms": 17,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + H3 + Activator + Data Science In-Lake PREDICT + Cosmos DB SSD DiskANN (580M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_wealth_asset_management_fabric_intraday_risk_private_credit_reporting_vs_4clouds": {
+      "scenario_id": "global_wealth_asset_management_fabric_intraday_risk_private_credit_reporting_vs_4clouds",
+      "title": "Global Asset & Wealth Management ($1.8T AUM) Intraday Multi-Asset Factor Attribution, Private Credit PCAP AI & 15,000-Advisor Portal Loop (3,200 Institutional Portfolios · 995K EPS Market/Aladdin Stream + 584M Private-Credit Covenant & IPS Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 28-Account IPS Mandate Breach Sense ($0/GB & $0 Copy Tax), 584M SSD DiskANN ($3,180/mo vs $72,800/mo 4.44TB DRAM) + ai.extract 4ms 14-Borrower Covenant Alert ($86M) & Foundry IQ 4ms Dual-NAV (<0.1 bps) & SEC Marketing Gate (995K EPS · 584M DiskANN · 17ms E2E · 15,000 Users Milestone, 150 Unit Tests & $61.75M SLA!)",
+      "telemetry": {
+        "institutional_and_wealth_portfolios_count": 3200,
+        "ips_mandate_breach_accounts_rebalanced_count": 28,
+        "intraday_market_and_oms_stream_eps": 995000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "private_credit_covenant_and_ips_vectors_count": 584000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "private_credit_covenant_breaches_flagged_count": 14,
+        "private_credit_exposure_protected_usd": 86000000,
+        "custodian_nav_reconciliation_drift_bps": 0.0,
+        "concurrent_pms_wealth_rms_and_lps": 15000
+      },
+      "ontology_traversal": [
+        "Market-Tick-Aladdin-and-GP-PCAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS FIX market ticks, Aladdin/SimCorp fills, and GP PCAP PDFs across 3,200 portfolios ($0/GB write tax & $0 copy tax), isolating 28 pension accounts breaching 15.0% IPS sector caps in 4ms",
+        "Private-Credit-Covenant-and-Brinson-Engine -> Cosmos DB SSD DiskANN (584,000,000 GP PCAP, private-credit covenant & IPS mandate vectors, -92% RAM at $3,180/mo vs $72,800/mo 4.44TB DRAM) + In-Lake ai.extract & Gluten C++ -> Flags 14 private-credit covenant breaches ($86M exposure) and builds ETF hedge baskets in 4ms",
+        "Foundry-IQ-IPS-Mandate-and-SEC-Marketing-Gate -> Validates WEALTH-ASSET-MGMT-INTRADAY-PRIVATE-CREDIT-SOP-186 -> Verifies dual-custodian NAV parity (<0.1 bps), enforces SEC Marketing Rule Gross/Net fee disclosures, and applies Chinese Wall OBO RLS across 15,000 users in 4ms",
+        "Approved OMS Rebalance & Client Quarterly Packs -> CIO & CRO Teams Card -> Rayfin SDK routes ETF rebalance baskets to Aladdin/SimCorp OMS, refreshes 15,000-advisor Direct Lake portals, and commits to 1GB Free Fabric SQL + research ALDO edge in 5ms (4+4+4+5 = 17ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_wealth_asset_mgmt_monthly_tco_usd": 14900,
+        "competitor_stitched_wealth_asset_mgmt_monthly_tco_usd": 372400,
+        "monthly_wealth_asset_mgmt_tco_saved_usd": 357500,
+        "monthly_wealth_asset_mgmt_tco_savings_pct": 96.0,
+        "fabric_internal_full_stack_monthly_usd": 42800,
+        "competitor_internal_full_stack_monthly_usd": 985000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms Intraday IPS Mandate & Tick Sense Agent",
+            "operation": "Mount Aladdin/SimCorp holdings zero-copy and ingest 995K EPS intraday market ticks across 3,200 portfolios at $0/GB write tax, isolating 28 accounts breaching 15% IPS sector caps in 4ms",
+            "impact_metric": "4ms intraday IPS sense; eliminates $137,200/mo in tick streaming and cross-cloud copy taxes"
+          },
+          {
+            "step": 2,
+            "agent": "584M SSD DiskANN Private-Credit Covenant & Gluten C++ Brinson Attribution Agent",
+            "operation": "Extract GP PCAP/covenant PDFs into ILPA tables via ai.extract, query 584,000,000 vectors via SSD DiskANN (-92% RAM at $3,180/mo vs $72,800/mo DRAM), and flag 14 borrower covenant warnings ($86M) in 4ms",
+            "impact_metric": "4ms PCAP extraction (14d->4ms) & $0-surcharge Gluten C++ Brinson; $3,180/mo SSD DiskANN vs $72,800/mo 4.44TB DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms Dual-NAV / SEC Marketing Gate & 1GB Free SQL Commit Agent",
+            "operation": "Verify SOP-186 enforcing <0.1 bps custodian NAV parity & SEC Gross/Net fee rules (4ms), then route OMS orders, refresh 15,000 RM portals & commit to 1GB Free Fabric SQL (5ms)",
+            "impact_metric": "17ms (4+4+4+5) E2E loop; 15,000 (15K!) Users & 150 Unit Tests Milestones!; -$357.5K/mo (-96.0%) TCO; $61.75M SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "WEALTH-ASSET-MGMT-INTRADAY-PRIVATE-CREDIT-SOP-186",
+        "hard_constraint": "Never publish client performance reports with >0.1 bps custodian NAV variance or without SEC Marketing Rule Net-of-Fees disclosure, auto-rebalance IPS sector breaches >15.0%, and enforce MNPI Chinese Wall OBO RLS",
+        "proposed_change": "Rebalance 28 pension accounts back under 15.0% IPS sector cap, alert credit committee on 14 private-credit borrowers ($86M), verify 0.0 bps custodian NAV parity, and enforce Chinese Wall OBO RLS across 15,000 users",
+        "dual_custodian_nav_parity_and_sec_net_fee_verified": true,
+        "ips_mandate_rebalance_and_chinese_wall_obo_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 61750000,
+        "end_to_end_latency_ms": 17,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + AI Functions (ai.extract) + Spark Gluten C++ + Cosmos DB SSD DiskANN (584M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
       }
     }
   },

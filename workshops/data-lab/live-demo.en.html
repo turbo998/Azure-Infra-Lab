@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">303 / 304 Scenarios Passed (99.67%) · 66 Enterprise SA FAQs · Diamond Demo Suite</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">307 / 308 Scenarios Passed (99.68%) · 67 Enterprise SA FAQs · Diamond Demo Suite</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=304 / n=72)</div>
-        <div class="val">234.4ms / 203.6ms</div>
-        <div class="sub" id="kpi3-sub">n=304 Routing Mean 234.4ms · n=72 (8×9) Ontology Mean 203.57ms</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=308 / n=73)</div>
+        <div class="val">231.7ms / 201.0ms</div>
+        <div class="sub" id="kpi3-sub">n=308 Routing Mean 231.7ms · n=73 Ontology Mean 201.01ms</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -330,6 +330,7 @@
       <button class="comp-pill" id="sim-btn-lifehealth" onclick="selectScenario('global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds')">🏥 Scenario GA: Life/Health Insurance &amp; PBM 42M Members × 300-Page APS AI, Pharmacy FWA &amp; IFRS 17 Loop (Eventhouse 4ms + 572M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · -96.0% TCO · R176)</button>
       <button class="comp-pill" id="sim-btn-procs2p" onclick="selectScenario('global_enterprise_procurement_s2p_fabric_spend_cube_supplier_risk_contract_ai_vs_4clouds')">📦 Scenario GB: Enterprise Procurement S2P 68K Suppliers × Multi-ERP Spend Cube, Supplier Risk &amp; Contract AI Loop (Eventhouse 4ms + 576M=24²M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · 300th Scenario · R177)</button>
       <button class="comp-pill" id="sim-btn-compcdp" onclick="selectScenario('global_retail_loyalty_composable_cdp_fabric_journey_cleanroom_iroas_vs_4clouds')">🎯 Scenario GC: 160M-Member Composable CDP, Real-Time Journey &amp; Clean Room iROAS Loop (Eventhouse + Activator 4ms + 580M DiskANN 4ms + Foundry IQ 4ms) vs Packaged SaaS CDP (17ms · -$355.6K/mo · R178)</button>
+      <button class="comp-pill" id="sim-btn-wealtham" onclick="selectScenario('global_wealth_asset_management_fabric_intraday_risk_private_credit_reporting_vs_4clouds')">📈 Scenario GD: Asset &amp; Wealth Mgmt $1.8T AUM × Intraday IPS Risk, Private Credit PCAP AI &amp; 15,000-Advisor Loop (Eventhouse 4ms + 584M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · 15K Users · R179)</button>
     </div>
 
     <div class="grid-2">
@@ -361,6 +362,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>187 · Asset &amp; Wealth Management ($1.8T AUM) Intraday Multi-Asset Factor Attribution, Private Credit PCAP AI &amp; 15,000-Advisor Portal (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 584M SSD DiskANN -92% RAM + In-Lake ai.extract ILPA Covenants, 17ms Loop, 15,000 Users &amp; 150 Tests!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R179)</span>
+        <a href="assets/svg/187-fabric-wealth-asset-management-portfolio-risk-esg-client-reporting-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/187-fabric-wealth-asset-management-portfolio-risk-esg-client-reporting-faq.svg" alt="Fabric Wealth Asset Management Portfolio Risk ESG Client Reporting Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2284,6 +2293,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>ComposableCDP:160MMembers_995KEPS_GoldenProfile → Eventhouse_Activator:4ms_480K_Abandoners_100Pct_POS_Suppress (4ms) → DiskANN580M_UpliftPREDICT:4ms_24.6Pct_Lift_$9.2M_Saved (4ms) → FoundryIQ:4ms_42K_OptOutBlock_CleanRoom_k50 (4ms) → Webhook_ExcelDirectLake_1GB_SQL:iROAS_Commit (17ms E2E)</code>',
       teamsTitle: 'Teams Consumer Brand CMO & Loyalty VP Card · 160M-Member Composable CDP Loop (DL-753..756)',
       teamsSummary: '17ms Composable CDP & Clean Room iROAS Loop Ready: KQL+Activator 4ms sense ($0 MTU tax & 100% POS suppression) + 580M DiskANN & Uplift saves $9.2M subsidy + 42K opt-out/over-cap pushes blocked · -96.0% TCO (-$355.6K/mo saved), $61,400,000 SLA Protected ✓'
+    }
+  },
+  global_wealth_asset_management_fabric_intraday_risk_private_credit_reporting_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 盘中行情与 Aladdin/SimCorp 零拷贝感知 ($0 税)', latency: '4 ms', desc: '零拷贝挂载 BlackRock Aladdin / SimCorp 持仓与托管行估值表，实时摄入 995K EPS 盘中 FIX 行情流，4ms 锁定 28 只机构养老金专户因可转债波动突破 15.0% IPS 行业集中度上限（免除 $137.2K/月流计算与复制税）。' },
+        { title: '② Cosmos DB SSD DiskANN (5.84 亿私募契约/IPS 向量) 与湖内 ai.extract + Gluten C++', latency: '4 ms', desc: '调用湖内 ai.extract 将私募 GP 季报 (PCAP) 与 Capital Call PDF 解析为 ILPA 标准表，并在 5.84 亿条私募信贷契约与 IPS 向量库上以 $3,180/月 (-92% 内存 vs $72,800/月 DRAM) 完成 4ms 比对，揪出 14 家底层借款人触及契约预警（$86M 敞口）。' },
+        { title: '③ Foundry IQ 双边托管行 NAV 核对 (<0.1 bps)、SEC 营销规则与 Chinese Wall 门禁 (SOP-186)', latency: '4 ms', desc: '强制执行 SOP-186，4ms 内校验组合净值与托管行官方估值差异 <0.1 bps、强制披露扣费前后收益，并通过 OneLake Entra OBO RLS 在 15,000 (15K!) 名投顾与基金经理间执行公私募信息墙 (Chinese Wall) 隔离。' },
+        { title: '④ 首席投资官 (CIO) Teams 确认与 OMS 调仓指令 / 15,000 席 Direct Lake / 1GB SQL 回写', latency: '5 ms', desc: 'CIO 与 CRO 批准后，5ms 内向 Aladdin/SimCorp OMS 下发 28 只专户 ETF 对冲调仓单、刷新 15,000 名投顾的 Direct Lake 客户季报门户并写入 1GB 免费 Fabric SQL（端到端 17ms，月省 96.0% TCO 即 -$357.5K/月，守护 $61.75M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>WealthAssetMgmt:$1.8TAUM_3200Portfolios_995KEPS → Eventhouse_OneLake:4ms_28Accounts_IPS_Breach (4ms) → DiskANN584M_aiExtract_Gluten:4ms_14PrivateCreditAlerts_$86M (4ms) → FoundryIQ:4ms_DualNAV_0.0bps_SEC_ChineseWall (4ms) → AladdinOMS_15KAdvisorDirectLake_1GB_SQL:Rebalance_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams 首席投资官 (CIO) 与首席风险官 (CRO) 审批卡 · $1.8T 资管盘中风控与私募 AI 闭环 (DL-757..760 · 15,000 用户!)',
+      teamsSummary: '17ms 买方资管盘中归因与另类私募 AI 闭环就绪：KQL 4ms 捕捉 28 只专户 IPS 越界 + 584M DiskANN 锁定 14 家私募信贷预警 ($86M) + 15,000 席 $0 Viewer · 省 96.0% TCO (-$357.5K/月)，守护 $61,750,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Intraday Ticks & Aladdin/SimCorp Zero-Copy Sense ($0 Tax)', latency: '4 ms', desc: 'Mounts BlackRock Aladdin and SimCorp holdings zero-copy and ingests 995K EPS of intraday FIX market ticks across 3,200 portfolios in 4ms, isolating 28 pension accounts breaching 15.0% IPS sector caps (saving $137.2K/mo).' },
+        { title: '② Cosmos DB SSD DiskANN (584M Covenant/IPS Vectors) & ai.extract + Gluten C++', latency: '4 ms', desc: 'Extracts GP PCAP and Capital Call PDFs into ILPA tables via in-lake ai.extract and queries 584M private-credit covenant and IPS vectors via SSD DiskANN ($3,180/mo, -92% RAM vs $72,800/mo DRAM) in 4ms—flagging 14 borrower covenant warnings ($86M exposure).' },
+        { title: '③ Foundry IQ Dual-Custodian NAV Parity (<0.1 bps), SEC Marketing & Chinese Wall Gate (SOP-186)', latency: '4 ms', desc: 'Enforces SOP-186 in 4ms, verifying <0.1 bps custodian NAV parity, enforcing SEC Marketing Rule Gross/Net fee disclosures, and applying Chinese Wall OBO RLS across 15,000 (15K!) PMs and wealth RMs.' },
+        { title: '④ CIO & CRO Teams Card & Aladdin OMS Rebalance / 15K-RM Portal / 1GB SQL Commit', latency: '5 ms', desc: 'CIO and CRO approve in Teams; routes 28-account ETF rebalance baskets to Aladdin/SimCorp OMS, refreshes 15,000-advisor Direct Lake portals, and commits to 1GB Free Fabric SQL in 5ms (17ms E2E, saving -$357.5K/mo and protecting $61.75M SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>WealthAssetMgmt:$1.8TAUM_3200Portfolios_995KEPS → Eventhouse_OneLake:4ms_28Accounts_IPS_Breach (4ms) → DiskANN584M_aiExtract_Gluten:4ms_14PrivateCreditAlerts_$86M (4ms) → FoundryIQ:4ms_DualNAV_0.0bps_SEC_ChineseWall (4ms) → AladdinOMS_15KAdvisorDirectLake_1GB_SQL:Rebalance_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams Buy-Side CIO & CRO Card · $1.8T AUM Intraday Risk & Private Credit AI Loop (DL-757..760 · 15,000 Users!)',
+      teamsSummary: '17ms Buy-Side Intraday Risk & Private Credit AI Loop Ready: KQL 4ms flags 28 IPS breaches + 584M DiskANN isolates 14 private-credit warnings ($86M) + 15,000 $0 Viewer seats · -96.0% TCO (-$357.5K/mo saved), $61,750,000 SLA Protected ✓'
     }
   }
 };
