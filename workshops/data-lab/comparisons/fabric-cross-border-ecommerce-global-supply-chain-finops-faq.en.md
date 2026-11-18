@@ -1,7 +1,7 @@
 # Cross-Border E-Commerce & Global Retail Supply Chain "Multi-Site Attribution, Overseas WMS Inventory, WCO HS Customs Compliance & FX/Tax FinOps" Architecture Selection FAQ: Microsoft Fabric vs. Databricks / Snowflake / Google BigQuery / AWS
 
 > 🌐 **Language / 语言**: **[中文 (`fabric-cross-border-ecommerce-global-supply-chain-finops-faq.md`)](fabric-cross-border-ecommerce-global-supply-chain-finops-faq.md)** | **English (Current)**  
-> 🔗 **Related Deep Dives**: [R145: Retail & E-Commerce Omnichannel Customer 360 FAQ](fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.en.md) · [R30: SAP S/4HANA & Datasphere Zero-Copy FAQ](fabric-sap-s4hana-datasphere-acdoca-zero-copy-vs-4clouds-faq.en.md) · [R52: Sovereign Tax & WCO HS Customs Foundations](fabric-sovereign-tax-customs-einvoicing-vat-carousel-fraud-vs-4clouds-faq.en.md) · [📊 7-Card 4:5 Benchmark Report](../benchmark-cards.en.html) · [🧪 Interactive Workbench (`index.en.html`)](../index.en.html)
+> 🔗 **Related Deep Dives**: [R145: Retail & E-Commerce Omnichannel Customer 360 FAQ](fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.en.md) · [R30: SAP S/4HANA & Datasphere Zero-Copy FAQ](fabric-sap-s4hana-datasphere-acdoca-zero-copy-vs-4clouds-faq.en.md) · [R52: Sovereign Tax & WCO HS Customs Foundations](fabric-enterprise-erp-sap-s4hana-acdoca-treasury-finops-faq.en.md) · [📊 7-Card 4:5 Benchmark Report](../benchmark-cards.en.html) · [🧪 Interactive Workbench (`index.en.html`)](../index.en.html)
 
 ![Cross-Border E-Commerce Global Supply Chain, Customs HS & FX FinOps Architecture](../assets/svg/165-fabric-cross-border-ecommerce-global-supply-chain-finops-faq.svg)
 

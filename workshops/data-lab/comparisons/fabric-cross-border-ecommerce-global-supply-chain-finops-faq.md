@@ -1,7 +1,7 @@
 # 跨境电商与全球零售供应链（多站点渠道归因、海外仓 WMS 防断货/防滞销、WCO HS 海关编码归类与实时汇率/出口退税 FinOps）架构选型 FAQ：Microsoft Fabric vs. Databricks / Snowflake / Google BigQuery / AWS
 
 > 🌐 **Language / 语言**: **中文 (Chinese)** | **[English (`fabric-cross-border-ecommerce-global-supply-chain-finops-faq.en.md`)](fabric-cross-border-ecommerce-global-supply-chain-finops-faq.en.md)**  
-> 🔗 **关联专题 (Related Deep Dives)**: [《R145: 零售电商全渠道 Customer 360 与智能导购选型 FAQ》](fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.md) · [《R30: SAP S/4HANA & Datasphere 零拷贝财务对齐 FAQ》](fabric-sap-s4hana-datasphere-acdoca-zero-copy-vs-4clouds-faq.md) · [《R52: 电子税务与海关 WCO HS 智能通关基础篇》](fabric-sovereign-tax-customs-einvoicing-vat-carousel-fraud-vs-4clouds-faq.md) · [📊 7-Card 4:5 基准测试报告](../benchmark-cards.html) · [🧪 交互式选型与 TCO 仿真工作台 (`index.html`)](../index.html)
+> 🔗 **关联专题 (Related Deep Dives)**: [《R145: 零售电商全渠道 Customer 360 与智能导购选型 FAQ》](fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.md) · [《R30: SAP S/4HANA & Datasphere 零拷贝财务对齐 FAQ》](fabric-sap-s4hana-datasphere-acdoca-zero-copy-vs-4clouds-faq.md) · [《R52: 电子税务与海关 WCO HS 智能通关基础篇》](fabric-enterprise-erp-sap-s4hana-acdoca-treasury-finops-faq.md) · [📊 7-Card 4:5 基准测试报告](../benchmark-cards.html) · [🧪 交互式选型与 TCO 仿真工作台 (`index.html`)](../index.html)
 
 ![Cross-Border E-Commerce Global Supply Chain, Customs HS & FX FinOps Architecture](../assets/svg/165-fabric-cross-border-ecommerce-global-supply-chain-finops-faq.svg)
 
