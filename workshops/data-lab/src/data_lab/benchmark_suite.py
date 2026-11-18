@@ -5854,6 +5854,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Fabric Graph + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (645M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds":
+        return {
+            "scenario_id": "global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds",
+            "title": "Global Oil, Gas, LNG & Integrated Energy (4,200 Wells/Platforms + 68,000 km Pipelines + 18 LNG Trains) WITSML ESP Predictive Maintenance, Pipeline Acoustic Leak AI, LNG CTRM Hedging & OGMP 2.0 Methane Compliance Loop (995K EPS WITSML/OPC-UA/DAS Stream + 650M OSDU/ILI/SPA Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 390-Asset ESP/Leak Sense ($0/GB & $0 Copy Tax), 650M SSD DiskANN ($3,480/mo vs $80,000/mo Exact DRAM) + In-Lake PREDICT 4ms (-38.0% Unplanned Trips & +$34.2M/yr Gained) & Foundry IQ 4ms 165-MAOP/OGMP Block (+$9.00M) (995K EPS · 650M DiskANN · 16ms=4^2ms E2E · Sub-170ms 169.48ms Ontology Mean, 180 Tests, -$383.8K/mo & $67.00M Exact SLA!)",
+            "telemetry": {
+                "active_wells_and_platforms_count": 4200,
+                "esp_compressor_and_leak_precursors_flagged_count": 390,
+                "witsml_opcua_and_das_acoustic_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "osdu_well_ili_pigging_and_spa_vectors_count": 650000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "unplanned_esp_and_compressor_trip_reduction_pct": 38.0,
+                "deferred_production_and_lng_netback_gained_usd": 34200000,
+                "phmsa_maop_h2s_and_ogmp20_violations_blocked_count": 165,
+                "concurrent_engineers_controllers_and_traders": 17600,
+            },
+            "ontology_traversal": [
+                "WITSML-DAS-and-SAP-OSDU-Endur-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS downhole WITSML ESP harmonics, LNG compressor vibration, and pipeline DAS acoustic waves while mirroring SAP S/4HANA PRA/JVA, OSDU, and OpenLink Endur across 4,200 wells and 68,000 km of pipe ($0/GB write tax & $0 copy tax), flagging 390 ESP/compressor/leak precursors 48 hours early in 4ms",
+                "Workover-Triage-and-LNG-Netback-Engine -> Azure SQL / Cosmos DB SSD DiskANN (650,000,000 OSDU completion logs, P&IDs, smart-pig ILI MFL corrosion anomalies & LNG SPA contract vectors, -92% RAM at $3,480/mo vs $80,000/mo Exact DRAM) + In-Lake PREDICT -> Cuts unplanned ESP/compressor trips -38.0% and saves/captures +$34.2M/yr in deferred production and JKM/TTF cargo diversions in 4ms",
+                "Foundry-IQ-PHMSA-MAOP-and-OGMP20-Methane-Gate -> Validates OIL-GAS-LNG-UPSTREAM-MIDSTREAM-CTRM-SOP-202 -> Blocks 165 SCADA setpoints exceeding wall-loss-adjusted PHMSA MAOP pressure ceilings, unpermitted sour-gas H2S work orders, and unmitigated OGMP 2.0 Level 5 methane plumes (+$9.00M safety/penalty protection) with JV Partner RLS in 4ms",
+                "Approved VSD Choke & LNG Cargo Hedge -> VP of Production & PCC Director Teams Card -> Updates SCADA VSD choke setpoints, OpenLink Endur LNG hedges, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_oil_gas_lng_monthly_tco_usd": 15400,
+                "competitor_stitched_oil_gas_lng_monthly_tco_usd": 399200,
+                "monthly_oil_gas_lng_tco_saved_usd": 383800,
+                "monthly_oil_gas_lng_tco_savings_pct": 96.1,
+                "fabric_internal_full_stack_monthly_usd": 44800,
+                "competitor_internal_full_stack_monthly_usd": 1060000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms WITSML ESP, Compressor & DAS Leak Sense Agent",
+                        "operation": "Mirror SAP PRA/JVA, OSDU, and OpenLink Endur zero-copy and ingest 995K EPS WITSML/OPC-UA/DAS streams across 4,200 wells and 68,000 km pipe at $0/GB write tax, flagging 390 precursors 48h early in 4ms",
+                        "impact_metric": "4ms 390-asset ESP/leak sense; eliminates $148,800/mo in historian connectors and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "650M SSD DiskANN OSDU/ILI Corrosion & In-Lake PREDICT LNG Cargo Netback Agent",
+                        "operation": "Search 650,000,000 OSDU well-log, P&ID, ILI smart-pig & LNG SPA vectors via SSD DiskANN (-92% RAM at $3,480/mo vs $80,000/mo Exact DRAM) and score RUL/netback in 4ms",
+                        "impact_metric": "4ms OSDU/ILI match (-38.0% unplanned trips, +$34.2M/yr saved/gained); $3,480/mo SSD DiskANN vs $80,000/mo Exact DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms PHMSA MAOP / OGMP 2.0 Methane Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-202 blocking 165 MAOP/H2S/OGMP violations (+$9.00M saved) & isolating JV partner blocks (4ms), then update SCADA/Endur & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic Sub-170ms (169.48ms) Ontology Mean, 650M Vectors, 180 Tests & $67.00M Exact SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "OIL-GAS-LNG-UPSTREAM-MIDSTREAM-CTRM-SOP-202",
+                "hard_constraint": "Never dispatch pipeline SCADA setpoints exceeding wall-loss-adjusted PHMSA MAOP pressure ceilings, block workover dispatches into sour-gas H2S zones without active permits, enforce EPA Subpart W / EU OGMP 2.0 methane mitigation, and isolate Joint-Venture partner blocks",
+                "proposed_change": "Block 165 MAOP/H2S/OGMP violations (+$9.00M saved), save/capture $34.2M in avoided deferred production and LNG cargo netback (-38.0% trips), flag 390 ESP/leak precursors, and enforce JV Partner RLS across 17,600 users",
+                "phmsa_maop_pressure_and_h2s_permit_verified": True,
+                "ogmp20_methane_lock_and_jv_partner_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 67000000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (650M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -10226,6 +10292,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 18,
     },
+    {
+        "id": "DL-817",
+        "category": "Realtime & Eventhouse",
+        "question": "4,200 oil/gas wells, 68,000 km pipelines, and 18 LNG trains stream 995K EPS of WITSML downhole ESP harmonics, compressor vibration, and DAS acoustic waves while SAP PRA/OSDU sync overnight; flag failures 48h early in 4ms without $148.8K/mo historian & stream taxes",
+        "expected": "Fabric Eventhouse KQL + SAP PRA/OSDU/Endur Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms WITSML/DAS Sense Flagging 390 Precursors 48h Early & Cutting Unplanned Trips -38.0%)",
+        "model_answer": "Fabric Eventhouse KQL + SAP PRA/OSDU/Endur Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms WITSML/DAS Sense Flagging 390 Precursors 48h Early & Cutting Unplanned Trips -38.0%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 16,
+    },
+    {
+        "id": "DL-818",
+        "category": "Vector & AI Agents",
+        "question": "Correlate 650M OSDU well-completion logs, P&IDs, smart-pig ILI MFL corrosion anomalies, and LNG SPA diversion clauses in 4ms without $80,000/mo exact DRAM HNSW clusters while capturing $34.2M/yr in production and LNG netback",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (650M OSDU, ILI Pigging & LNG SPA Vectors, -92% RAM at $3,480/mo vs $80,000/mo Exact DRAM, 4ms Match & +$34.2M/yr Gained)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (650M OSDU, ILI Pigging & LNG SPA Vectors, -92% RAM at $3,480/mo vs $80,000/mo Exact DRAM, 4ms Match & +$34.2M/yr Gained)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 15,
+    },
+    {
+        "id": "DL-819",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 4,200-well, 68,000-km pipeline & 18-train LNG platform (995K EPS WITSML/DAS stream, 650M OSDU/ILI vectors, 17,600 engineers/traders): Fabric F64 ($15,400/mo) vs stitched stacks ($378.2K-$414.2K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 650M SSD DiskANN + Foundry IQ PHMSA-MAOP/OGMP-2.0 Gate ($15,400/mo vs $399,200/mo Stitched Stack, Saving -$383.8K/mo / -96.1% Record TCO with 17,600 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 650M SSD DiskANN + Foundry IQ PHMSA-MAOP/OGMP-2.0 Gate ($15,400/mo vs $399,200/mo Stitched Stack, Saving -$383.8K/mo / -96.1% Record TCO with 17,600 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 15,
+    },
+    {
+        "id": "DL-820",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic Sub-170ms (169.48ms) Ontology Mean (88=8x11 Sims), 650M Vectors, 180 Tests & $67.00M Exact SLA Milestone: Polar vortex spikes JKM/TTF spreads while 390 ESP/compressor alerts and 165 MAOP/methane risks arrive; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 390-Asset Sense ($0 Tax) + 650M DiskANN & PREDICT 4ms (-38.0% Trips & +$34.2M Saved) + Foundry IQ 4ms 165-MAOP/OGMP Block (+$9.00M) & JV RLS + Teams SCADA/Endur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $67.00M Exact SLA!)",
+        "model_answer": "Eventhouse 4ms 390-Asset Sense ($0 Tax) + 650M DiskANN & PREDICT 4ms (-38.0% Trips & +$34.2M Saved) + Foundry IQ 4ms 165-MAOP/OGMP Block (+$9.00M) & JV RLS + Teams SCADA/Endur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $67.00M Exact SLA!)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 15,
+    },
 ]
 
 
@@ -10430,7 +10544,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds",
         "global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds",
         "global_airline_aviation_fabric_ioc_crew_recovery_mro_aog_ndc_pricing_vs_4clouds",
-        "global_payment_acquiring_payfac_fabric_iso8583_routing_chargeback_aml_vs_4clouds"
+        "global_payment_acquiring_payfac_fabric_iso8583_routing_chargeback_aml_vs_4clouds",
+        "global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
