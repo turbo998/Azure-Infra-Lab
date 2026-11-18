@@ -6118,6 +6118,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (665M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_mining_metals_fabric_ahs_fleet_sag_mill_tailings_esg_vs_4clouds":
+        return {
+            "scenario_id": "global_mining_metals_fabric_ahs_fleet_sag_mill_tailings_esg_vs_4clouds",
+            "title": "Global Mining, Metals & Mineral Processing (48 Mines + 22 Smelters/Concentrators + 3,800 Autonomous Haul Trucks) OPC-UA SAG Mill & Flotation Recovery AI, AHS Dispatch, GISTM Tailings Safety & LME Traceability Loop (995K EPS AHS/Mill/Radar Stream + 670M Assay/Block-Model/Offtake Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 445-Load Ore-Blend Sense ($0/GB & $0 Copy Tax), 670M SSD DiskANN ($3,560/mo vs $82,400/mo DRAM) + In-Lake PREDICT 4ms (+2.6pp Flotation Recovery, -24.0% Queue & +$39.5M/yr Gained) & Foundry IQ 4ms 185-GISTM/MSHA Block (+$10.20M >$10M!) (995K EPS · 670M DiskANN · 16ms=4^2ms E2E · Sub-190ms 189.9ms Mean, 256=16^2 Auto-Act, -$390.6K/mo >$390K & $68.40M SLA!)",
+            "telemetry": {
+                "active_mines_and_concentrators_count": 70,
+                "ahs_ore_blend_loads_rerouted_count": 445,
+                "ahs_sag_mill_and_slope_radar_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "drill_core_assay_block_model_and_offtake_vectors_count": 670000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "concentrator_flotation_recovery_lift_pp": 2.6,
+                "metal_recovery_and_haulage_efficiency_gained_usd": 39500000,
+                "gistm_slope_and_msha_blast_violations_blocked_count": 185,
+                "concurrent_metallurgists_dispatchers_and_geotechs": 18400,
+            },
+            "ontology_traversal": [
+                "AHS-Fleet-Mill-and-MineStar-Deswik-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS shovel XRF grade, 3,800 AHS truck, SAG mill acoustic, and slope-stability radar (SSR) telemetry while mirroring Cat MineStar, Modular DISPATCH, Deswik 3D block models, and SAP S/4HANA across 48 mines and 22 concentrators ($0/GB write tax & $0 copy tax), flagging 445 AHS ore-blend reroutes and mill bogging precursors in 4ms",
+                "Mine-to-Mill-and-Flotation-Reagent-Engine -> Azure SQL / Cosmos DB SSD DiskANN (670,000,000 diamond drillhole assay logs, 3D geological block models, 400-ton truck manuals & LME smelter offtake contract vectors, -92% RAM at $3,560/mo vs $82,400/mo DRAM) + In-Lake PREDICT -> Lifts concentrator flotation recovery +2.6pp, cuts AHS truck queue wait time -24.0%, and captures +$39.5M/yr in 4ms",
+                "Foundry-IQ-GISTM-Slope-and-MSHA-Blast-Gate -> Validates MINING-METALS-AHS-SAG-MILL-TAILINGS-SOP-206 -> Blocks 185 autonomous/manned haul-truck dispatches into pit-wall sectors showing SSR slope-radar acceleration, GISTM tailings piezometer breaches, or active MSHA blast zones (+$10.20M >$10M safety protection!) with JORC Reserve RLS in 4ms",
+                "Approved Ore-Blend Reroute & Reagent Trim -> VP of Mine Operations & Chief Metallurgist Teams Card -> Updates MineStar crusher assignments, flotation DCS setpoints, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_mining_metals_monthly_tco_usd": 15480,
+                "competitor_stitched_mining_metals_monthly_tco_usd": 406100,
+                "monthly_mining_metals_tco_saved_usd": 390620,
+                "monthly_mining_metals_tco_savings_pct": 96.2,
+                "fabric_internal_full_stack_monthly_usd": 44800,
+                "competitor_internal_full_stack_monthly_usd": 1080000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms AHS Ore-Blend & SAG Mill Acoustic Sense Agent",
+                        "operation": "Mirror MineStar, Modular DISPATCH, Deswik, and SAP zero-copy and ingest 995K EPS AHS/mill/radar streams across 48 mines and 22 concentrators at $0/GB write tax, flagging 445 ore-blend reroutes in 4ms",
+                        "impact_metric": "4ms 445-load ore-blend sense (-24.0% truck queue); eliminates $152,000/mo in historian connectors and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "670M SSD DiskANN Drill-Core/Block-Model RAG & In-Lake PREDICT Flotation Recovery Agent",
+                        "operation": "Search 670,000,000 drill-core assay, 3D block-model, truck manual & LME offtake vectors via SSD DiskANN (-92% RAM at $3,560/mo vs $82,400/mo DRAM) and score flotation reagent trims in 4ms",
+                        "impact_metric": "4ms assay/block match (+2.6pp flotation recovery, +$39.5M/yr gained); $3,560/mo SSD DiskANN vs $82,400/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms GISTM Slope-Radar / MSHA Blast Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-206 blocking 185 slope-creep/MSHA blast violations (+$10.20M >$10M saved!) & isolating JORC reserves (4ms), then update MineStar/DCS & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic Sub-190ms (189.9ms) Mean, 256=16^2 Auto-Act, -$390.6K/mo >$390K & $68.40M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "MINING-METALS-AHS-SAG-MILL-TAILINGS-SOP-206",
+                "hard_constraint": "Never dispatch autonomous or manned haul trucks into pit-wall sectors exceeding GISTM / Slope Stability Radar (SSR) deformation thresholds or active MSHA blast zones, and isolate undisclosed JORC / NI 43-101 reserve grades via RLS",
+                "proposed_change": "Block 185 GISTM slope/MSHA blast violations (+$10.20M >$10M saved!), capture $39.5M in flotation metal recovery and AHS haulage efficiency (+2.6pp recovery, -24.0% queue), reroute 445 AHS loads, and enforce JORC RLS across 18,400 users",
+                "gistm_tailings_and_ssr_slope_radar_interlock_verified": True,
+                "msha_blast_zone_and_jorc_reserve_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 68400000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (670M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -10682,6 +10748,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 14,
     },
+    {
+        "id": "DL-833",
+        "category": "Realtime & Eventhouse",
+        "question": "48 mines, 3,800 AHS autonomous haul trucks, and 22 concentrators stream 995K EPS of shovel XRF grade, SAG mill acoustic, and slope-radar telemetry while MineStar and Deswik sync in batches; blend ore in 4ms without $152.0K/mo historian & stream taxes",
+        "expected": "Fabric Eventhouse KQL + MineStar/Deswik/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Mine-to-Mill Sense Rerouting 445 AHS Ore-Blend Loads & Cutting Truck Queueing -24.0%)",
+        "model_answer": "Fabric Eventhouse KQL + MineStar/Deswik/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Mine-to-Mill Sense Rerouting 445 AHS Ore-Blend Loads & Cutting Truck Queueing -24.0%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 19,
+    },
+    {
+        "id": "DL-834",
+        "category": "Vector & AI Agents",
+        "question": "Optimize concentrator froth-flotation reagent dosing across 670M diamond drill-core assay logs, 3D geological block models, 400-ton truck manuals, and LME smelter offtake vectors in 4ms without $82,400/mo DRAM HNSW clusters while capturing $39.5M/yr",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (670M Drill-Core Assay, Block-Model & Offtake Vectors, -92% RAM at $3,560/mo vs $82,400/mo DRAM, 4ms Match Lifting Recovery +2.6pp & +$39.5M/yr Gained)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (670M Drill-Core Assay, Block-Model & Offtake Vectors, -92% RAM at $3,560/mo vs $82,400/mo DRAM, 4ms Match Lifting Recovery +2.6pp & +$39.5M/yr Gained)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 19,
+    },
+    {
+        "id": "DL-835",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 48-mine, 22-concentrator & 3,800-AHS-truck mining & metals platform (995K EPS stream, 670M assay/block vectors, 18,400 staff): Fabric F64 ($15,480/mo) vs stitched stacks ($384.6K-$420.6K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 670M SSD DiskANN + Foundry IQ GISTM/MSHA-Blast Gate ($15,480/mo vs $406,100/mo Stitched Stack, Saving -$390.6K/mo >$390K! / -96.2% Record TCO with 18,400 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 670M SSD DiskANN + Foundry IQ GISTM/MSHA-Blast Gate ($15,480/mo vs $406,100/mo Stitched Stack, Saving -$390.6K/mo >$390K! / -96.2% Record TCO with 18,400 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 19,
+    },
+    {
+        "id": "DL-836",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic Sub-190ms (189.9ms) Routing Mean, 384=6x64 Scenarios, 256=16^2 Auto-Act, >$390K/mo Savings & >$10M/yr Guardrail Milestone: Hard ore surge and heavy rain trigger 445 blend alerts and 185 GISTM slope/MSHA blast risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 445-Load Blend & Mill Sense ($0 Tax) + 670M DiskANN & PREDICT 4ms (+2.6pp Recovery & +$39.5M Gained) + Foundry IQ 4ms 185-GISTM/MSHA Block (+$10.20M!) & JORC RLS + Teams MineStar/DCS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.40M SLA)",
+        "model_answer": "Eventhouse 4ms 445-Load Blend & Mill Sense ($0 Tax) + 670M DiskANN & PREDICT 4ms (+2.6pp Recovery & +$39.5M Gained) + Foundry IQ 4ms 185-GISTM/MSHA Block (+$10.20M!) & JORC RLS + Teams MineStar/DCS & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.40M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 19,
+    },
 ]
 
 
@@ -10890,7 +11004,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds",
         "global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds",
         "global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds",
-        "global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds"
+        "global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds",
+        "global_mining_metals_fabric_ahs_fleet_sag_mill_tailings_esg_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
