@@ -1402,13 +1402,29 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 67000000)
 
 
+    def test_global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["active_chemical_plants_count"], 260)
+        self.assertEqual(sim["telemetry"]["drifting_reactor_batches_flagged_count"], 410)
+        self.assertEqual(sim["telemetry"]["eln_recipe_lims_and_ghs_sds_vectors_count"], 655000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_specialty_chemicals_tco_saved_usd"], 385480)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_specialty_chemicals_tco_savings_pct"], 96.2)
+        self.assertTrue(sim["foundry_iq_guardrail"]["osha_psm_exothermic_and_seveso_interlock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["eu_reach_svhc_tonnage_and_recipe_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 67350000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 368)
-        self.assertEqual(matrix["passed_scenarios"], 367)
+        self.assertEqual(matrix["total_scenarios"], 372)
+        self.assertEqual(matrix["passed_scenarios"], 371)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.73, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 197.3)
+        self.assertEqual(matrix["avg_latency_ms"], 195.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2434,6 +2450,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $67.00M Exact SLA!", by_id["DL-820"])
 
 
+    def test_fabric_specialty_chemicals_golden_batch_lims_reach_sds_2026_11_19_r195_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-821", "DL-822", "DL-823", "DL-824"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Golden-Batch & FTIR Drift Sense Flagging 410 Batches 45m Early & Lifting First-Time-Right Yield +4.2pp", by_id["DL-821"])
+        self.assertIn("655M ELN, LIMS & GHS SDS Vectors, -92% RAM at $3,500/mo vs $80,600/mo DRAM", by_id["DL-822"])
+        self.assertIn("-$385.5K/mo", by_id["DL-823"])
+        self.assertIn("16ms 4^2ms E2E, Protect $67.35M SLA", by_id["DL-824"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2452,11 +2479,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 367)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 368)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 197.3)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 88)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 169.48)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 371)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 372)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 195.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 89)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 167.75)
 
 
 if __name__ == "__main__":

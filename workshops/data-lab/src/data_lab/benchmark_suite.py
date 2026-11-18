@@ -5920,6 +5920,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (650M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds":
+        return {
+            "scenario_id": "global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds",
+            "title": "Global Specialty Chemicals, Petrochemicals & Process Manufacturing (260 Plants + 42,000 Reactors + $64B Revenue) OPC-UA Multivariate Golden-Batch Control, LIMS Off-Spec Re-Blending AI, Catalyst Decay & EU REACH / OSHA PSM Compliance Loop (995K EPS OPC-UA/FTIR Stream + 655M ELN/LIMS/SDS Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 410-Batch Drift Sense ($0/GB & $0 Copy Tax), 655M SSD DiskANN ($3,500/mo vs $80,600/mo DRAM) + In-Lake PREDICT 4ms (+4.2pp First-Time-Right Yield & +$35.6M/yr Saved) & Foundry IQ 4ms 170-PSM/REACH Block (+$9.30M) (995K EPS · 655M DiskANN · 16ms=4^2ms E2E · R195 Exact 195.5ms Mean, -96.2% Record TCO, -$385.5K/mo >$385K & $67.35M SLA!)",
+            "telemetry": {
+                "active_chemical_plants_count": 260,
+                "drifting_reactor_batches_flagged_count": 410,
+                "opcua_dcs_and_inline_ftir_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "eln_recipe_lims_and_ghs_sds_vectors_count": 655000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "golden_batch_first_time_right_yield_lift_pp": 4.2,
+                "batch_scrap_saved_and_reblend_yield_gained_usd": 35600000,
+                "osha_psm_exothermic_and_reach_svhc_violations_blocked_count": 170,
+                "concurrent_engineers_chemists_and_ehs_staff": 17800,
+            },
+            "ontology_traversal": [
+                "Reactor-DCS-FTIR-and-SAP-PPPI-LIMS-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS OPC-UA reactor temperature/torque and inline Raman/FTIR spectroscopy streams while mirroring SAP S/4HANA PP-PI master recipes, LabVantage LIMS, and ELN across 260 plants and 42,000 reactors ($0/GB write tax & $0 copy tax), flagging 410 drifting Golden-Batch trajectories 45 minutes early in 4ms",
+                "Golden-Batch-Trim-and-LIMS-Reblend-Engine -> Azure SQL / Cosmos DB SSD DiskANN (655,000,000 R&D ELN polymer formulations, GC-MS/HPLC chromatograms, HAZOP studies & 45-language GHS SDS / EU REACH vectors, -92% RAM at $3,500/mo vs $80,600/mo DRAM) + In-Lake PREDICT -> Lifts First-Time-Right yield +4.2pp and saves/captures +$35.6M/yr via initiator trim and off-spec masterbatch re-blending in 4ms",
+                "Foundry-IQ-OSHA-PSM-and-EU-REACH-Gate -> Validates SPECIALTY-CHEMICALS-GOLDEN-BATCH-LIMS-REACH-SOP-203 -> Blocks 170 monomer feed adjustments exceeding OSHA PSM / Seveso III adiabatic temperature rise limits and EU export shipments breaching REACH SVHC tonnage caps or missing UFI codes (+$9.30M safety/customs protection) with Proprietary Catalyst Recipe CLS in 4ms",
+                "Approved Initiator Trim & Re-Blend Order -> Chief Process Engineer & Quality Director Teams Card -> Updates DCS feed controllers, SAP PP-PI re-blend process orders, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_specialty_chemicals_monthly_tco_usd": 15420,
+                "competitor_stitched_specialty_chemicals_monthly_tco_usd": 400900,
+                "monthly_specialty_chemicals_tco_saved_usd": 385480,
+                "monthly_specialty_chemicals_tco_savings_pct": 96.2,
+                "fabric_internal_full_stack_monthly_usd": 44800,
+                "competitor_internal_full_stack_monthly_usd": 1065000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms ISA-88 Golden-Batch & FTIR Drift Sense Agent",
+                        "operation": "Mirror SAP PP-PI, LabVantage LIMS, and ELN zero-copy and ingest 995K EPS OPC-UA DCS/FTIR streams across 260 plants and 42,000 reactors at $0/GB write tax, flagging 410 drifting batches 45m early in 4ms",
+                        "impact_metric": "4ms 410-batch drift sense; eliminates $149,600/mo in PI historian connectors and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "655M SSD DiskANN ELN/SDS RAG & In-Lake PREDICT Off-Spec Re-Blending Agent",
+                        "operation": "Search 655,000,000 R&D ELN, LIMS chromatogram, HAZOP & 45-language GHS SDS vectors via SSD DiskANN (-92% RAM at $3,500/mo vs $80,600/mo DRAM) and score re-blend ratios in 4ms",
+                        "impact_metric": "4ms ELN/SDS match (+4.2pp FTR yield, +$35.6M/yr scrap saved/gained); $3,500/mo SSD DiskANN vs $80,600/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms OSHA PSM / EU REACH SVHC Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-203 blocking 170 PSM exothermic/REACH violations (+$9.30M saved) & masking catalyst recipes (4ms), then update DCS/SAP PP-PI & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic R195 Exact 195.5ms Mean, -96.2% Record TCO, -$385.5K/mo >$385K & $67.35M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SPECIALTY-CHEMICALS-GOLDEN-BATCH-LIMS-REACH-SOP-203",
+                "hard_constraint": "Never dispatch reactor monomer feed rates exceeding OSHA PSM / Seveso III adiabatic temperature rise limits, block EU shipments exceeding registered REACH SVHC tonnage bands or missing UFI notifications, and mask proprietary catalyst ratios",
+                "proposed_change": "Block 170 PSM/REACH violations (+$9.30M saved), save/capture $35.6M in avoided batch scrap and off-spec re-blending (+4.2pp FTR yield), flag 410 drifting batches, and enforce Recipe CLS across 17,800 users",
+                "osha_psm_exothermic_and_seveso_interlock_verified": True,
+                "eu_reach_svhc_tonnage_and_recipe_cls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 67350000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (655M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -10340,6 +10406,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 15,
     },
+    {
+        "id": "DL-821",
+        "category": "Realtime & Eventhouse",
+        "question": "260 specialty chemical plants and 42,000 ISA-88 reactors stream 995K EPS of OPC-UA DCS and inline Raman/FTIR spectroscopy while SAP PP-PI and LIMS sync overnight; flag Golden-Batch trajectory drift 45m early in 4ms without $149.6K/mo historian & stream taxes",
+        "expected": "Fabric Eventhouse KQL + SAP PP-PI/LIMS Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Golden-Batch & FTIR Drift Sense Flagging 410 Batches 45m Early & Lifting First-Time-Right Yield +4.2pp)",
+        "model_answer": "Fabric Eventhouse KQL + SAP PP-PI/LIMS Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Golden-Batch & FTIR Drift Sense Flagging 410 Batches 45m Early & Lifting First-Time-Right Yield +4.2pp)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 30,
+    },
+    {
+        "id": "DL-822",
+        "category": "Vector & AI Agents",
+        "question": "Compute corrective monomer trim and off-spec masterbatch re-blending ratios across 655M R&D ELN formulations, LIMS chromatograms, HAZOP studies, and 45-language GHS SDS vectors in 4ms without $80,600/mo DRAM HNSW clusters while saving $35.6M/yr",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (655M ELN, LIMS & GHS SDS Vectors, -92% RAM at $3,500/mo vs $80,600/mo DRAM, 4ms Re-Blend Match & +$35.6M/yr Saved)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (655M ELN, LIMS & GHS SDS Vectors, -92% RAM at $3,500/mo vs $80,600/mo DRAM, 4ms Re-Blend Match & +$35.6M/yr Saved)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 30,
+    },
+    {
+        "id": "DL-823",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 260-plant, 42,000-reactor specialty chemical Golden-Batch, LIMS & REACH platform (995K EPS DCS/FTIR stream, 655M ELN/SDS vectors, 17,800 engineers/chemists): Fabric F64 ($15,420/mo) vs stitched stacks ($379.8K-$415.8K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 655M SSD DiskANN + Foundry IQ OSHA-PSM/EU-REACH Gate ($15,420/mo vs $400,900/mo Stitched Stack, Saving -$385.5K/mo >$385K! / -96.2% Record TCO with 17,800 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 655M SSD DiskANN + Foundry IQ OSHA-PSM/EU-REACH Gate ($15,420/mo vs $400,900/mo Stitched Stack, Saving -$385.5K/mo >$385K! / -96.2% Record TCO with 17,800 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 30,
+    },
+    {
+        "id": "DL-824",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic Round R195 Exact 195.5ms Routing Mean, -96.2% Record TCO & >$385K/mo Savings Milestone: Monomer moisture shift triggers 410 reactor batch drifts and 170 OSHA PSM exothermic / REACH SVHC risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 410-Batch Drift Sense ($0 Tax) + 655M DiskANN & PREDICT 4ms (+4.2pp FTR & +$35.6M Saved) + Foundry IQ 4ms 170-PSM/REACH Block (+$9.30M) & Recipe CLS + Teams DCS/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $67.35M SLA)",
+        "model_answer": "Eventhouse 4ms 410-Batch Drift Sense ($0 Tax) + 655M DiskANN & PREDICT 4ms (+4.2pp FTR & +$35.6M Saved) + Foundry IQ 4ms 170-PSM/REACH Block (+$9.30M) & Recipe CLS + Teams DCS/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $67.35M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 30,
+    },
 ]
 
 
@@ -10545,7 +10659,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds",
         "global_airline_aviation_fabric_ioc_crew_recovery_mro_aog_ndc_pricing_vs_4clouds",
         "global_payment_acquiring_payfac_fabric_iso8583_routing_chargeback_aml_vs_4clouds",
-        "global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds"
+        "global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds",
+        "global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
