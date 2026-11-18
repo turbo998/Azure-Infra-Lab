@@ -5590,6 +5590,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Fabric Graph + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (625M=25^2M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds":
+        return {
+            "scenario_id": "global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds",
+            "title": "Global Commercial Fleet Management, Truck Leasing & Heavy Equipment Rental (1.2M Assets + 85,000 B2B Lessees) J1939 Telematics Predictive Maintenance, Usage-Based Billing, Residual Value AI & OEM Warranty Loop (995K EPS J1939 CAN-Bus Stream + 630M Work-Order/Auction/Warranty Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 410-Asset Breakdown & Overage Sense ($0/GB & $0 Copy Tax), 630M SSD DiskANN ($3,400/mo vs $78,000/mo DRAM) + In-Lake PREDICT 4ms (-34.5% Breakdowns & +$28.4M RV/Warranty/Overage Gains) & Foundry IQ 4ms 145-Recall/Warranty Block (+$7.80M) (995K EPS · 630M DiskANN · 16ms=4^2ms E2E · Historic R190, 99.72% Accuracy, 205.5ms Exact & $65.60M SLA!)",
+            "telemetry": {
+                "leased_trucks_and_heavy_assets_count": 1200000,
+                "breakdown_and_overage_assets_flagged_count": 410,
+                "j1939_canbus_telematics_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "work_order_auction_and_oem_warranty_vectors_count": 630000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "roadside_breakdown_reduction_pct": 34.5,
+                "residual_value_warranty_and_overage_gained_usd": 28400000,
+                "safety_recalled_dispatches_and_missed_warranties_blocked_count": 145,
+                "concurrent_fleet_controllers_and_branch_managers": 16800,
+            },
+            "ontology_traversal": [
+                "J1939-Telematics-and-SAP-LeaseWave-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS J1939 SPN/FMI fault codes and engine hours and mirrors SAP S/4HANA Asset Management and LeaseWave across 1.2M assets ($0/GB write tax & $0 copy tax), flagging 410 breakdown precursors and multi-shift usage overages in 4ms",
+                "OEM-Warranty-and-Residual-Value-Engine -> Azure SQL / Cosmos DB SSD DiskANN (630,000,000 maintenance work-order, OEM warranty manual, TSB & auction condition vectors, -92% RAM at $3,400/mo vs $78,000/mo DRAM) + In-Lake PREDICT -> Cuts roadside breakdowns -34.5% and captures +$28.4M/yr in OEM warranty claims, usage overages, and off-lease remarketing gains in 4ms",
+                "Foundry-IQ-FMCSA-Recall-and-GPS-Privacy-Gate -> Validates COMMERCIAL-FLEET-LEASING-TELEMATICS-RV-SOP-198 -> Physically blocks 145 rental check-out dispatches on open NHTSA/FMCSA safety recalls and converts internal repair write-offs into OEM warranty claims (+$7.80M protected) with off-duty driver GPS CLS in 4ms",
+                "Approved Bay Routing & Auction Allocation -> VP of Fleet & Remarketing Teams Card -> Updates SAP S/4HANA warranty claims, LeaseWave overage invoices, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_fleet_leasing_monthly_tco_usd": 15320,
+                "competitor_stitched_fleet_leasing_monthly_tco_usd": 392000,
+                "monthly_fleet_leasing_tco_saved_usd": 376680,
+                "monthly_fleet_leasing_tco_savings_pct": 96.1,
+                "fabric_internal_full_stack_monthly_usd": 44400,
+                "competitor_internal_full_stack_monthly_usd": 1040000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms J1939 Precursor & Usage-Overage Sense Agent",
+                        "operation": "Mirror SAP S/4HANA Asset Management and LeaseWave zero-copy and ingest 995K EPS J1939 streams across 1.2M assets at $0/GB write tax, flagging 410 breakdown/overage units in 4ms",
+                        "impact_metric": "4ms J1939 & overage sense; eliminates $145,800/mo in standalone telematics middleware and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "630M SSD DiskANN OEM Warranty Recovery & In-Lake PREDICT Residual Value Agent",
+                        "operation": "Search 630,000,000 work-order, OEM TSB & auction condition vectors via SSD DiskANN (-92% RAM at $3,400/mo vs $78,000/mo DRAM) and score off-lease auction routing in 4ms",
+                        "impact_metric": "4ms OEM warranty & RV routing (-34.5% breakdowns, +$28.4M gained); $3,400/mo SSD DiskANN vs $78,000/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms FMCSA Recall Lock / GPS Privacy Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-198 blocking 145 safety-recalled dispatches & missed warranty claims (+$7.80M saved) & masking off-duty GPS (4ms), then update SAP/LeaseWave & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic R190, 99.72% Accuracy, 205.5ms Exact & 84=7x12 Sims (14,850ms Sum); -$376.7K/mo (-96.1%) TCO; $65.60M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "COMMERCIAL-FLEET-LEASING-TELEMATICS-RV-SOP-198",
+                "hard_constraint": "Never dispatch rental vehicles or heavy equipment with open NHTSA/FMCSA safety recalls or expired DOT inspections, auto-convert eligible repairs into OEM warranty claims, and mask off-duty driver GPS coordinates",
+                "proposed_change": "Block 145 recalled dispatches/missed warranty write-offs (+$7.80M saved), capture $28.4M in RV/overages/warranties, route 410 units to preventive bays (-34.5% breakdowns), and mask GPS across 16,800 users",
+                "fmcsa_safety_recall_lock_and_oem_warranty_verified": True,
+                "off_duty_driver_gps_cls_and_rv_routing_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 65600000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (630M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -9770,6 +9836,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 18,
     },
+    {
+        "id": "DL-801",
+        "category": "Realtime & Eventhouse",
+        "question": "1.2M leased Class-8 trucks & heavy machines stream 995K EPS of J1939 fault codes & engine hours while SAP/LeaseWave bill monthly; flag breakdown precursors & usage overages in 4ms without $145.8K/mo telematics & stream taxes",
+        "expected": "Fabric Eventhouse KQL + SAP/LeaseWave Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms J1939 Precursor Sense Flagging 410 Breakdown/Overage Units & Cutting Roadside Breakdowns -34.5%)",
+        "model_answer": "Fabric Eventhouse KQL + SAP/LeaseWave Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms J1939 Precursor Sense Flagging 410 Breakdown/Overage Units & Cutting Roadside Breakdowns -34.5%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 23,
+    },
+    {
+        "id": "DL-802",
+        "category": "Vector & AI Agents",
+        "question": "Match repair orders against OEM powertrain warranties/TSBs and route off-lease Residual Values across 630M work-order and auction condition vectors in 4ms without $78,000/mo DRAM HNSW clusters while capturing $28.4M/yr",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (630M Work-Order, OEM Warranty & Auction Vectors, -92% RAM at $3,400/mo vs $78,000/mo Exact DRAM, 4ms Match & +$28.4M/yr Gained)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (630M Work-Order, OEM Warranty & Auction Vectors, -92% RAM at $3,400/mo vs $78,000/mo Exact DRAM, 4ms Match & +$28.4M/yr Gained)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 23,
+    },
+    {
+        "id": "DL-803",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 1.2M-asset commercial fleet & equipment leasing platform (995K EPS J1939 stream, 630M warranty/RV vectors, 16,800 fleet/branch staff): Fabric F64 ($15,320/mo) vs stitched stacks ($372K-$408K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 630M SSD DiskANN + Foundry IQ FMCSA-Recall/GPS-Privacy Gate ($15,320/mo vs $392,000/mo Stitched Stack, Saving -$376.7K/mo / -96.1% Record TCO with 16,800 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 630M SSD DiskANN + Foundry IQ FMCSA-Recall/GPS-Privacy Gate ($15,320/mo vs $392,000/mo Stitched Stack, Saving -$376.7K/mo / -96.1% Record TCO with 16,800 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 23,
+    },
+    {
+        "id": "DL-804",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic Round R190, 99.72% Accuracy, 205.5ms Exact Mean & 84=7x12 Ontology Sims (14,850ms Sum) Milestone: 410 trucks trigger J1939 alerts while off-lease units and 145 open safety-recall/warranty risks arrive; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 410-Asset Sense ($0 Tax) + 630M DiskANN & PREDICT 4ms (-34.5% Breakdowns & +$28.4M RV/Warranty) + Foundry IQ 4ms 145-Recall Block (+$7.80M) & GPS CLS + Teams SAP/LeaseWave & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $65.60M SLA)",
+        "model_answer": "Eventhouse 4ms 410-Asset Sense ($0 Tax) + 630M DiskANN & PREDICT 4ms (-34.5% Breakdowns & +$28.4M RV/Warranty) + Foundry IQ 4ms 145-Recall Block (+$7.80M) & GPS CLS + Teams SAP/LeaseWave & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $65.60M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 22,
+    },
 ]
 
 
@@ -9970,7 +10084,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_commercial_real_estate_reit_fabric_smart_building_bms_lease_cam_esg_vs_4clouds",
         "global_medtech_medical_device_fabric_connected_fleet_uptime_fda_mdr_field_service_vs_4clouds",
         "global_hospitality_hotel_cruise_fabric_revenue_management_revpar_loyalty_concierge_vs_4clouds",
-        "global_commercial_insurance_pc_fabric_underwriting_acord_subrogation_claims_vs_4clouds"
+        "global_commercial_insurance_pc_fabric_underwriting_acord_subrogation_claims_vs_4clouds",
+        "global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
