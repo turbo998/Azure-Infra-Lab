@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">287 / 288 Scenarios Passed (99.65%) · 62 Enterprise SA FAQs · Diamond Demo Suite</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">291 / 292 Scenarios Passed (99.66%) · 63 Enterprise SA FAQs · Diamond Demo Suite</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=288 / n=68)</div>
-        <div class="val">245.8ms / 214.5ms</div>
-        <div class="sub" id="kpi3-sub">n=288 Routing Mean 245.8ms · n=68 Ontology Mean 214.53ms</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=292 / n=69)</div>
+        <div class="val">242.8ms / 211.7ms</div>
+        <div class="sub" id="kpi3-sub">n=292 Routing Mean 242.8ms · n=69 Ontology Mean 211.68ms</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -326,6 +326,7 @@
       <button class="comp-pill" id="sim-btn-gamingrtb" onclick="selectScenario('global_gaming_adtech_fabric_eventhouse_liveops_rtb_vs_4clouds')">🎮 Scenario AL: Global Gaming &amp; AdTech 14 Live Titles × 48M DAU × 500K EPS LiveOps &amp; Anti-Cheat Loop (Eventhouse KQL 14ms + PlayFab + SSD DiskANN) vs Write API Tax (63ms · R31)</button>
       <button class="comp-pill" id="sim-btn-luxuryrfid" onclick="selectScenario('global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds')">👗 Scenario FX: Luxury, Apparel &amp; Footwear 8,600 Stores × 995K EPS UHF RFID Size Rebalancing &amp; Return-Fraud Loop (Eventhouse 5ms + 560M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (18ms · R173)</button>
       <button class="comp-pill" id="sim-btn-corpbank" onclick="selectScenario('global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds')">🏦 Scenario FY: Corporate Banking 380K Clients × 995K EPS ISO 20022, UCP 600 Trade AI &amp; 10-Hop pKYC Loop (Eventhouse + Graph 5ms + 564M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (18ms · $60.00M SLA · R174)</button>
+      <button class="comp-pill" id="sim-btn-hrpeople" onclick="selectScenario('global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds')">👥 Scenario FZ: Enterprise HR 320K Employees × Work IQ Skills, Workday/SAP Zero-Copy &amp; Mobility Loop (Work IQ 5ms + 568M DiskANN 4ms + Foundry IQ EU AI Act 4ms) vs Stitched Stack (18ms · -$350.2K/mo · R175)</button>
     </div>
 
     <div class="grid-2">
@@ -357,6 +358,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>183 · Enterprise HR &amp; People Analytics (CHRO) Cross-Border Workforce Planning, Work IQ Skills Graph &amp; Flight-Risk Prevention (Work IQ + OneLake Zero-Copy 5ms $0 PEPM Tax + 568M SSD DiskANN -92% RAM + In-Lake PREDICT -$8.4M Agency Fees, 18ms Loop, -$350.2K/mo &gt;$350K/mo Milestone!) vs. Visier / AWS / GCP / Databricks / Snowflake FAQ Architecture (R175)</span>
+        <a href="assets/svg/183-fabric-enterprise-hr-people-analytics-workforce-planning-skills-copilot-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/183-fabric-enterprise-hr-people-analytics-workforce-planning-skills-copilot-faq.svg" alt="Fabric Enterprise HR People Analytics Workforce Planning Skills Copilot Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2152,6 +2161,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>CorporateBanking:380KClients_995KEPS_ISO20022 → Eventhouse_FabricGraph:5ms_10Hop_UBO_2DarkVessels_$0Tax (5ms) → DiskANN564M_aiExtract:4ms_UCP600_99.6Pct_Recall (4ms) → FoundryIQ:4ms_26LoanFreeze_$42M_TBML_Gate (4ms) → CoreTrade_1GB_SQL:SAR_RM_OBO_Commit (18ms E2E)</code>',
       teamsTitle: 'Teams Corporate & Transaction Banking Head Card · 380K-Client UCP 600 & pKYC Loop (DL-737..740)',
       teamsSummary: '18ms Corporate Trade Finance & 10-Hop pKYC Loop Ready: KQL+Graph 5ms 10-hop UBO sense ($0 tax) + 564M DiskANN & ai.extract 4ms audit (99.6% recall) + 26 risky loans frozen ($42.0M) · -95.9% TCO (-$348.4K/mo saved), $60,000,000 Exact SLA Protected ✓'
+    }
+  },
+  global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Work IQ 真实协作上下文 + OneLake Workday/SAP 零拷贝感知 ($0 PEPM 税)', latency: '5 ms', desc: '零拷贝汇聚 32 万名员工的 Workday 组织树、SAP S/4HANA 工资总账 (0.00% 业财编制偏差)、Work IQ 项目产出信号与 995K EPS 招聘/学习流，5ms 锁定 450 个紧缺 AI/合规技能缺口与 180 名离职风险核心骨干（免除 $134.2K/月 PEPM SaaS 税）。' },
+        { title: '② Cosmos DB SSD DiskANN (5.68 亿技能/履历向量) 与湖内 PREDICT 内部活水匹配', latency: '4 ms', desc: '在 5.68 亿条全球岗位胜任力、项目交付物与候选人向量库上以 $3,100/月 (-92% 内存 vs $71,200/月 DRAM) 完成 4ms 检索，通过湖内 PREDICT 匹配 310 名内部跨部门人才（68% 内部填充率，立省 $8.4M 外部猎头费）。' },
+        { title: '③ Foundry IQ 欧盟 AI 法案 (EU AI Act) 反歧视、同工同酬与 OBO 薪资加密护栏 (SOP-182)', latency: '4 ms', desc: '强制执行 SOP-182，4ms 内核验内部竞聘与晋升评分满足四分之五法则 (Disparate Impact Ratio = 0.96 >= 0.80)，自动修正 34 份同工不同酬报价 (>3.5% 偏差)，并启用直线经理汇报线 OBO RLS 与 Purview 薪资列级掩码 (CLS)。' },
+        { title: '④ CHRO 与 CFO Teams 确认及 Workday 调岗工作流 / Excel Direct Lake / 1GB SQL 回写', latency: '5 ms', desc: 'CHRO 与 CFO 批准后，5ms 内触发 310 份 Workday 内部竞聘调令、在 Excel Direct Lake 锁定 0.00% 偏差编制预算并写入 1GB 免费 Fabric SQL（端到端 18ms，月省突破 $350K 达 -$350.2K/月 即 -95.9% TCO，守护 $60.35M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>EnterpriseHR:320KEmployees_995KEPS_WorkdaySAP → WorkIQ_OneLake:5ms_450SkillGaps_180FlightRisk_0PctDrift (5ms) → DiskANN568M_PREDICT:4ms_310InternalMatches_$8.4MSaved (4ms) → FoundryIQ:4ms_EU_AI_Act_DIR0.96_SalaryCLS (4ms) → Workday_ExcelDirectLake_1GB_SQL:Mobility_Budget_Commit (18ms E2E)</code>',
+      teamsTitle: 'Teams 集团首席人力资源官 (CHRO) 与 CFO 审批卡 · 32 万员工技能活水与编制闭环 (DL-741..744)',
+      teamsSummary: '18ms 企业人才活水与跨国编制协同就绪：Work IQ+OneLake 5ms 感知 (0.00% 业财偏差) + 568M DiskANN 匹配 310 名内部专家 (省 $8.4M 猎头费) + EU AI Act 反歧视核验 (DIR 0.96) · 月省突破 $350K (-$350.2K/月)，守护 $60,350,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Work IQ Workplace Context + OneLake Workday/SAP Zero-Copy Sense ($0 PEPM Tax)', latency: '5 ms', desc: 'Unifies 320,000 Workday/SuccessFactors position trees, SAP S/4HANA payroll actuals (0.00% budget drift), Work IQ project deliverables, and 995K EPS LMS/ATS streams in 5ms, isolating 450 critical skill gaps and 180 flight-risk engineers (saving $134.2K/mo).' },
+        { title: '② Cosmos DB SSD DiskANN (568M Skill/Resume Vectors) & In-Lake PREDICT Mobility', latency: '4 ms', desc: 'Searches 568M job-architecture, project artifact, and resume vectors via SSD DiskANN ($3,100/mo, -92% RAM vs $71,200/mo DRAM) and matches 310 internal candidates via In-Lake PREDICT in 4ms (68% internal fill, saving $8.4M agency fees).' },
+        { title: '③ Foundry IQ EU AI Act Non-Discrimination, Pay-Equity & OBO Salary CLS Gate (SOP-182)', latency: '4 ms', desc: 'Enforces SOP-182 in 4ms, verifying EU AI Act demographic blindness (Disparate Impact Ratio = 0.96 >= 0.80), remediating 34 peer pay-equity gaps (>3.5% variance), and enforcing Manager OBO RLS + Purview Salary CLS across 14,200 users.' },
+        { title: '④ CHRO & CFO Teams Card & Workday Transfer / Excel Direct Lake / 1GB SQL Commit', latency: '5 ms', desc: 'CHRO and CFO approve in Teams; triggers 310 Workday internal transfer workflows, locks 0.00%-drift Excel Direct Lake budgets, and commits to 1GB Free Fabric SQL in 5ms (18ms E2E, saving -$350.2K/mo >$350K/mo Milestone! and protecting $60.35M SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>EnterpriseHR:320KEmployees_995KEPS_WorkdaySAP → WorkIQ_OneLake:5ms_450SkillGaps_180FlightRisk_0PctDrift (5ms) → DiskANN568M_PREDICT:4ms_310InternalMatches_$8.4MSaved (4ms) → FoundryIQ:4ms_EU_AI_Act_DIR0.96_SalaryCLS (4ms) → Workday_ExcelDirectLake_1GB_SQL:Mobility_Budget_Commit (18ms E2E)</code>',
+      teamsTitle: 'Teams Enterprise CHRO & CFO Card · 320K-Employee Skills Mobility & Workforce Loop (DL-741..744)',
+      teamsSummary: '18ms People Analytics & Workforce Loop Ready: Work IQ+OneLake 5ms sense (0.00% budget drift) + 568M DiskANN matches 310 internal staff (-$8.4M agency fees) + EU AI Act DIR 0.96 verified · -95.9% TCO (-$350.2K/mo >$350K/mo saved!), $60,350,000 SLA Protected ✓'
     }
   }
 };

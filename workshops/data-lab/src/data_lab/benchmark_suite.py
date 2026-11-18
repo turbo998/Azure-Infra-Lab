@@ -4600,6 +4600,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Fabric Graph (ISO GQL) + AI Functions (ai.extract) + Cosmos DB SSD DiskANN (564M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds":
+        return {
+            "scenario_id": "global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds",
+            "title": "Global Enterprise HR & People Analytics (CHRO) Cross-Border Workforce Planning, Work IQ Skills Graph & Flight-Risk Loop (320,000 Employees · 995K EPS ATS/LMS Stream + Workday/SAP Zero-Copy + 568M Skill/Resume Vectors) Work IQ + Eventhouse KQL 5ms 450-Role Skill-Gap & 180 Flight-Risk Sense ($0 PEPM Tax & 0.00% HR-Finance Drift), 568M SSD DiskANN ($3,100/mo vs $71,200/mo 4.28TB DRAM) + In-Lake PREDICT 4ms 310 Internal Mobility Matches (-$8.4M Agency Fees) & Foundry IQ 4ms EU AI Act Bias Gate (DIR 0.96) & OBO Salary CLS (995K EPS · 568M DiskANN · 18ms E2E · Historic >$350K/mo (-$350.2K/mo!) Saved & $60.35M SLA!)",
+            "telemetry": {
+                "global_enterprise_employees_count": 320000,
+                "internal_mobility_candidates_matched_count": 310,
+                "ats_lms_and_work_iq_stream_eps": 995000,
+                "hr_to_finance_headcount_budget_drift_pct": 0.0,
+                "skill_graph_and_resume_vectors_count": 568000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "external_recruiting_agency_savings_usd": 8400000,
+                "eu_ai_act_disparate_impact_ratio": 0.96,
+                "pay_equity_offers_remediated_count": 34,
+                "concurrent_managers_hrbps_and_fpa_planners": 14200,
+            },
+            "ontology_traversal": [
+                "Workday-SuccessFactors-SAP-and-Work-IQ-Hub -> OneLake-Zero-Copy-and-Eventhouse-KQL -> Unifies 320,000 employee position trees, SAP S/4HANA payroll actuals (0.00% budget drift), Work IQ project signals & 995K EPS LMS/ATS events ($0 PEPM tax), isolating 450 AI/compliance skill gaps and 180 flight-risk principal staff in 5ms",
+                "Skills-Graph-and-Mobility-Engine -> Cosmos DB SSD DiskANN (568,000,000 skill taxonomy, project deliverable & resume vectors, -92% RAM at $3,100/mo vs $71,200/mo 4.28TB DRAM) + In-Lake PREDICT -> Matches 310 internal candidates (68% internal fill, saving $8.4M agency fees) and scores retention packages in 4ms",
+                "Foundry-IQ-EU-AI-Act-and-Pay-Equity-Gate -> Validates ENTERPRISE-HR-PEOPLE-ANALYTICS-WORKFORCE-SOP-182 -> Verifies EU AI Act demographic blindness (Disparate Impact Ratio 0.96 >= 0.80), remediates 34 peer pay-equity gaps (>3.5% variance), and enforces Manager OBO RLS + Purview Salary CLS in 4ms",
+                "Approved Mobility & Workforce Budget -> CHRO & CFO Teams Card -> Rayfin SDK triggers 310 Workday internal transfer workflows, locks Excel Direct Lake headcount budgets, and commits to 1GB Free Fabric SQL + campus ALDO edge in 5ms (5+4+4+5 = 18ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_hr_people_analytics_monthly_tco_usd": 14800,
+                "competitor_stitched_hr_people_analytics_monthly_tco_usd": 365000,
+                "monthly_hr_people_analytics_tco_saved_usd": 350200,
+                "monthly_hr_people_analytics_tco_savings_pct": 95.9,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 965000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Work IQ, OneLake Zero-Copy & Eventhouse KQL 5ms Skill-Gap & Flight-Risk Sense Agent",
+                        "operation": "Unify Workday/SuccessFactors position trees, SAP S/4HANA payroll actuals, Work IQ signals, and 995K EPS LMS/ATS streams across 320,000 employees in 5ms with 0.00% HR-Finance budget drift",
+                        "impact_metric": "5ms skill & attrition sense; eliminates $134,200/mo in PEPM People Analytics SaaS and replication taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "568M SSD DiskANN Skills Graph & In-Lake PREDICT Internal Mobility Agent",
+                        "operation": "Search 568,000,000 skill, project & resume vectors via SSD DiskANN (-92% RAM at $3,100/mo vs $71,200/mo DRAM) and match 310 internal candidates via In-Lake PREDICT in 4ms",
+                        "impact_metric": "4ms 568M skill match (68% internal fill, -$8.4M agency fees); $3,100/mo SSD DiskANN vs $71,200/mo 4.28TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms EU AI Act / Pay-Equity Gate & 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-182 enforcing EU AI Act DIR 0.96, remediating 34 pay-equity offers & masking Salary CLS (4ms), then update Workday, Excel Direct Lake & 1GB Free Fabric SQL (5ms)",
+                        "impact_metric": "18ms (5+4+4+5) E2E loop; Historic >$350K/mo (-$350.2K/mo! -95.9%) TCO Saved; $60.35M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "ENTERPRISE-HR-PEOPLE-ANALYTICS-WORKFORCE-SOP-182",
+                "hard_constraint": "Never include protected demographic attributes in mobility/promotion scoring (require Disparate Impact Ratio >= 0.80 under EU AI Act), block comp offers with >3.5% peer pay gap, and mask Base_Salary/Performance_Rating via OBO CLS",
+                "proposed_change": "Approve 310 internal mobility transfers (-$8.4M agency fees, DIR = 0.96 >= 0.80), remediate 34 peer pay-equity offers, lock 0.00% HR-Finance budget in Excel Direct Lake, and enforce OBO Salary CLS across 14,200 users",
+                "eu_ai_act_dir_096_and_pay_equity_verified": True,
+                "manager_obo_rls_and_salary_cls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 60350000,
+                "end_to_end_latency_ms": 18,
+                "audit_control_plane": "Microsoft Agent 365 + Microsoft Work IQ + Fabric Eventhouse KQL + Data Science In-Lake PREDICT + Cosmos DB SSD DiskANN (568M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -8060,6 +8126,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 29,
     },
+    {
+        "id": "DL-741",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "320,000-employee global enterprise (995K EPS ATS/LMS stream + Workday/SAP S/4HANA zero-copy + Work IQ) needs 5ms detection of 450 critical skill gaps and 180 flight-risk staff: Fabric vs PEPM SaaS & replication taxes ($134.2K/mo)",
+        "expected": "Fabric Eventhouse KQL + OneLake Zero-Copy + Work IQ ($0/GB Write Tax & 0.00% HR-Finance Budget Drift, 5ms 450-Role Skill-Gap & 180 Flight-Risk Sense vs $134.2K/mo PEPM SaaS Tax)",
+        "model_answer": "Fabric Eventhouse KQL + OneLake Zero-Copy + Work IQ ($0/GB Write Tax & 0.00% HR-Finance Budget Drift, 5ms 450-Role Skill-Gap & 180 Flight-Risk Sense vs $134.2K/mo PEPM SaaS Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 28,
+    },
+    {
+        "id": "DL-742",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB in Fabric (SSD DiskANN indexing 568M skill taxonomy, project artifact & resume vectors at $3,100/mo) + In-Lake PREDICT ($0 idle tax) vs 4.28TB RAM OpenSearch/Mosaic clusters ($71,200/mo) and 90-day external agency recruiting",
+        "expected": "Cosmos DB in Fabric SSD DiskANN (568M Skill-Graph & Resume Vectors, -92% RAM at $3,100/mo vs $71,200/mo DRAM, 4ms 310-Candidate Internal Mobility Match Saving $8.4M Agency Fees)",
+        "model_answer": "Cosmos DB in Fabric SSD DiskANN (568M Skill-Graph & Resume Vectors, -92% RAM at $3,100/mo vs $71,200/mo DRAM, 4ms 310-Candidate Internal Mobility Match Saving $8.4M Agency Fees)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 28,
+    },
+    {
+        "id": "DL-743",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 320,000-employee People Analytics, Workforce Planning & Skills Graph platform (995K EPS LMS/ATS stream, 568M skill/resume vectors, 14,200 managers/HRBPs): Fabric F64 ($14.8K/mo) vs stitched Visier/AWS/GCP/Databricks/Snowflake ($246.0K-$365.0K/mo)",
+        "expected": "Fabric Pooled F64 + Work IQ + 568M SSD DiskANN + Excel Direct Lake ($14.8K/mo vs $365.0K/mo Stitched Multi-Cloud, Saving -$350.2K/mo >$350K/mo Milestone! / -95.9% TCO with 14,200 $0 Viewer Seats & OBO Salary CLS)",
+        "model_answer": "Fabric Pooled F64 + Work IQ + 568M SSD DiskANN + Excel Direct Lake ($14.8K/mo vs $365.0K/mo Stitched Multi-Cloud, Saving -$350.2K/mo >$350K/mo Milestone! / -95.9% TCO with 14,200 $0 Viewer Seats & OBO Salary CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 28,
+    },
+    {
+        "id": "DL-744",
+        "category": "Fabric IQ & Ontology",
+        "question": "New AI initiative urgently requires 450 specialists while 180 principal engineers show flight risk; CHRO must match 310 internal staff, remediate 34 peer pay-equity gaps, and enforce EU AI Act non-discrimination & OBO Salary CLS",
+        "expected": "Work IQ + OneLake 5ms Skill & Flight-Risk Sense ($0 PEPM Tax) + 568M DiskANN & PREDICT 4ms 310-Candidate Match (-$8.4M Agency Fees) + Foundry IQ 4ms EU AI Act Gate (DIR 0.96) & 34 Pay-Equity Fixes + Teams Workday & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $60.35M SLA)",
+        "model_answer": "Work IQ + OneLake 5ms Skill & Flight-Risk Sense ($0 PEPM Tax) + 568M DiskANN & PREDICT 4ms 310-Candidate Match (-$8.4M Agency Fees) + Foundry IQ 4ms EU AI Act Gate (DIR 0.96) & 34 Pay-Equity Fixes + Teams Workday & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $60.35M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 28,
+    },
 ]
 
 
@@ -8245,7 +8359,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_industrial_equipment_aftermarket_fabric_servitization_spare_parts_vs_4clouds",
         "global_cpg_beverage_fabric_trade_promotion_demand_sensing_hedging_vs_4clouds",
         "global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds",
-        "global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds"
+        "global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds",
+        "global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
@@ -9082,6 +9197,19 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "https://aws.amazon.com/financial-services/",
                 "https://cloud.google.com/solutions/financial-services",
                 "https://www.snowflake.com/en/solutions/industries/financial-services/",
+            ],
+            "as_of": "2026-11-18",
+        },
+        {
+            "id": "SPEC-ENTERPRISE-HR-PEOPLE-ANALYTICS-WORKFORCE-PLANNING-SKILLS-568M-R175",
+            "vendor": "Microsoft / Workday / SAP / Databricks / Snowflake",
+            "claim": "Microsoft Fabric OneLake Zero-Copy (Workday / SAP SuccessFactors position trees & SAP S/4HANA payroll ledgers), Microsoft Work IQ workplace collaboration skills context, Cosmos DB SSD DiskANN (568M+ skill taxonomy, project artifact & resume vectors at -92% RAM), FLAML In-Lake PREDICT internal mobility & attrition scoring, and OneLake Entra OBO manager-hierarchy RLS + Purview Salary CLS with F64+ $0 Power BI Viewer seats power enterprise People Analytics and Strategic Workforce Planning; Visier/Workday Prism, Databricks, Snowflake, BigQuery, and AWS provide alternative stacks.",
+            "official_url": "https://learn.microsoft.com/en-us/fabric/onelake/security/column-level-security",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/data-science/batch-scoring-predict",
+            "competitor_doc_urls": [
+                "https://www.workday.com/en-us/products/Analytics-reporting/prism-analytics.html",
+                "https://www.snowflake.com/en/data-cloud/workloads/data-warehouse/",
+                "https://www.databricks.com/product/unity-catalog",
             ],
             "as_of": "2026-11-18",
         },
