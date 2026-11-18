@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940">
+  <defs>
+    <linearGradient id="bg199" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr199" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#15803D"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabCard199" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06281E"/>
+      <stop offset="100%" stop-color="#0A1E36"/>
+    </linearGradient>
+    <linearGradient id="compCard199" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2B1219"/>
+      <stop offset="100%" stop-color="#1A162B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1480" height="940" fill="url(#bg199)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="20" width="1432" height="94" rx="14" fill="url(#hdr199)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="21.5" font-weight="800">
+    199 · Agribusiness, Grain Trading &amp; Food Processing ($52B Volume · 380 Plants) Basis, NIR Blending &amp; FSMA/EUDR AI
+  </text>
+  <text x="46" y="82" fill="#E0F2FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.8" font-weight="600">
+    农业食品加工与大宗粮商（42 万份农户合同 + 17,000 交易/品控员）期货基差对冲、地磅 NIR 混仓、FSMA 204 溯源与欧盟零毁林五云选型 (2026-11-19 R191 · 85th Sim &amp; 17K Users!)
+  </text>
+  <rect x="1175" y="34" width="260" height="64" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="2"/>
+  <text x="1305" y="59" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">85TH SIM · 17,000 USERS</text>
+  <text x="1305" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">16ms (4²ms) · -$378.5K/mo</text>
+
+  <!-- Left Column: NIR Scale-House, CTRM & EUDR Sources -->
+  <rect x="24" y="130" width="300" height="450" rx="12" fill="#111C2D" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="160" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">1. 粮库、期货与溯源数据源 (Sources)</text>
+
+  <rect x="40" y="176" width="268" height="90" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="200" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">380 座粮库地磅 NIR &amp; CBOT 行情</text>
+  <text x="54" y="222" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 水分、蛋白、含油率与毒素流</text>
+  <text x="54" y="242" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 筒仓测温电缆与芝加哥期货 (CBOT) 基差跳动</text>
+
+  <rect x="40" y="278" width="268" height="90" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="302" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">SAP ACM / Openlink Endur / LIMS</text>
+  <text x="54" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 420,000 份农户基差合同 · $52B 套保账本</text>
+  <text x="54" y="344" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="380" width="268" height="90" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="404" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">635M 合同、COA 与 EUDR 多边形库</text>
+  <text x="54" y="426" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 全球农场卫星 GeoJSON 边界与植物检疫证</text>
+  <text x="54" y="446" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• FDA FSMA 204 关键数据元素 (KDEs/CTEs)</text>
+
+  <rect x="40" y="482" width="268" height="82" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="54" y="506" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">17,000 名期货交易员、收粮商与品控</text>
+  <text x="54" y="528" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Power BI 压榨毛利看板 + Teams 混仓卡</text>
+  <text x="54" y="548" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• F64 免除全部 Viewer 与 M365 Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms=4^2ms Loop -->
+  <rect x="342" y="130" width="1114" height="248" rx="12" fill="url(#fabCard199)" stroke="#10B981" stroke-width="2"/>
+  <text x="364" y="160" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    2A. 推荐首选：Microsoft Fabric 一体化大宗粮商基差对冲、筒仓混配与食安溯源架构（16ms = 4²ms · $15,340/mo · 省 96.1%）
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="362" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="376" y="200" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">① Sense (4ms) · Eventhouse KQL</text>
+  <text x="376" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 地磅 NIR 与期货流 ($0 税)</text>
+  <text x="376" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 锁定 430 车次水分/毒素异动交割单</text>
+  <text x="376" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 实时重算全集团现货与期货净基差敞口</text>
+  <text x="376" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 捕获 150 批毒素超标与缺失 EUDR 批次</text>
+  <text x="376" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 月省 $146.5K 粮库中间件与流写入税</text>
+
+  <!-- Step 2 -->
+  <rect x="634" y="176" width="264" height="182" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="648" y="200" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">② Reason (4ms) · 635M SSD DiskANN</text>
+  <text x="648" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.35 亿合同、COA 与 EUDR 多边形向量</text>
+  <text x="648" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 仅 $3,420/mo (-92% RAM)</text>
+  <text x="648" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 湖内 PREDICT 压榨混配毛利提升 +2.9pp</text>
+  <text x="648" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 年增收节支 +$29.6M/yr (套保+混配+船期)</text>
+  <text x="648" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 4 秒级完成 FDA FSMA 204 全链溯源</text>
+
+  <!-- Step 3 -->
+  <rect x="914" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="928" y="200" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">③ Guardrail (4ms) · Foundry IQ</text>
+  <text x="928" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 物理阻断 &gt;20ppb 黄曲霉毒素入食品仓</text>
+  <text x="928" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 拦截 150 批缺失 EUDR 零毁林坐标报关</text>
+  <text x="928" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 规避 +$8.10M/yr 召回与欧盟海关扣货</text>
+  <text x="928" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 42 万农户银行账户与亩产隐私 CLS</text>
+  <text x="928" y="336" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ SOP-199 100% FSMA 与零毁林合规</text>
+
+  <!-- Step 4 -->
+  <rect x="1186" y="176" width="250" height="182" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="1200" y="200" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">④ Act (4ms) · Teams, PLC &amp; Endur</text>
+  <text x="1200" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Teams 交易员与品控主任混仓审批卡</text>
+  <text x="1200" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 粮库电动溜管 PLC 与 Endur 套保回写</text>
+  <text x="1200" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL 审计落盘</text>
+  <text x="1200" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 守护 $65.95M 贸易毛利与食安 SLA</text>
+  <text x="1200" y="336" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 第 85 项仿真 &amp; 17,000 用户里程碑！</text>
+
+  <!-- Center Bottom: Stitched Stack Comparison -->
+  <rect x="342" y="392" width="1114" height="188" rx="12" fill="url(#compCard199)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="364" y="422" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    2B. 传统四云 + 独立向量库 + 盘后 CTRM 批处理拼接栈痛点（880ms – 3,400ms 延迟 · $373.5K–$409.5K/mo 昂贵账单）
+  </text>
+
+  <rect x="362" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="378" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 635M 合同/农场多边形向量爆炸 ($78.5K/mo)</text>
+  <text x="378" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.35 亿 COA 与农场边界常驻 HNSW 需 &gt;2.5TB RAM</text>
+  <text x="378" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Mosaic / Cortex / OpenSearch 月耗 $75K–$81K</text>
+  <text x="378" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 人工拼凑 FSMA 204 批次溯源耗时数天，错过 24h 窗口</text>
+
+  <rect x="728" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="744" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 地磅 T+1 割裂导致盘中基差踏空与混仓坏船</text>
+  <text x="744" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 地磅 NIR 流按 GB 收取高额流写入附加费</text>
+  <text x="744" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 交易台盘中看不见收粮进度，基差套保滑点损失超千万</text>
+  <text x="744" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 误混入 1 户毁林大豆或高毒素玉米导致整船被扣</text>
+
+  <rect x="1094" y="438" width="342" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1110" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 17,000 名交易员/收购商席位与并发税</text>
+  <text x="1110" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Looker / QuickSight 按人头月费高达 $90K–$95K/mo</text>
+  <text x="1110" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 芝加哥开盘与USDA月报发布瞬间触发多集群翻倍计费</text>
+  <text x="1110" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 跨 SAP ACM / Endur / LIMS 权限割裂易泄露农户底价</text>
+
+  <!-- Bottom Table: 5-Cloud Decision Matrix -->
+  <rect x="24" y="596" width="1432" height="320" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="628" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    3. 五云农业食品加工与大宗粮商基差对冲、筒仓混配与 FSMA 204 / EUDR 横向评测矩阵（$52B Volume · 635M Vectors · 17,000 Users）
+  </text>
+
+  <!-- Table Header -->
+  <rect x="40" y="642" width="1400" height="36" rx="6" fill="#1E293B"/>
+  <text x="54" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">云平台方案 (Platform)</text>
+  <text x="340" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">地磅 NIR 流 + ACM 同步</text>
+  <text x="595" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">635M 合同/COA/EUDR 向量</text>
+  <text x="855" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">混配寻优与 20ppb/EUDR 门禁</text>
+  <text x="1125" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">17,000 交易/品控席位</text>
+  <text x="1290" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">月度总成本 (TCO)</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="40" y="684" width="1400" height="42" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="54" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ Microsoft Fabric (F64)</text>
+  <text x="340" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms KQL + $0 Mirroring</text>
+  <text x="595" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$3,420/mo (SSD DiskANN -92%)</text>
+  <text x="855" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms 增收 $29.6M &amp; EUDR Gate</text>
+  <text x="1125" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$0 Viewer / $0 Token</text>
+  <text x="1290" y="710" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">$15,340/mo (-96.1%)</text>
+
+  <!-- Row 2: Databricks -->
+  <rect x="40" y="732" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔶 Azure Databricks</text>
+  <text x="340" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">730ms–2.2s ($59.0K/mo DBU)</text>
+  <text x="595" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$78,500/mo (Mosaic DRAM)</text>
+  <text x="855" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">UC ABAC + 外部规则校验</text>
+  <text x="1125" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$90,000/mo (BI + SQL)</text>
+  <text x="1290" y="756" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$382,500/mo</text>
+
+  <!-- Row 3: Snowflake -->
+  <rect x="40" y="776" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="800" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔷 Snowflake Enterprise</text>
+  <text x="340" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">1.2s–3.4s ($70.0K/mo Credits)</text>
+  <text x="595" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$81,000/mo (Cortex Search)</text>
+  <text x="855" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Horizon RLS + 外部网关</text>
+  <text x="1125" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$95,000/mo (Multi-Cluster)</text>
+  <text x="1290" y="800" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$409,500/mo</text>
+
+  <!-- Row 4: BigQuery -->
+  <rect x="40" y="820" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="844" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🌐 Google BigQuery</text>
+  <text x="340" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">830ms–2.4s ($57.0K/mo Write API)</text>
+  <text x="595" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$75,000/mo (Vertex Vector)</text>
+  <text x="855" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Policy Tags + 外部代码</text>
+  <text x="1125" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$94,000/mo (Looker Seats)</text>
+  <text x="1290" y="844" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$373,500/mo</text>
+
+  <!-- Row 5: AWS -->
+  <rect x="40" y="864" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="888" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">☁️ AWS Lakehouse</text>
+  <text x="340" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">870ms–2.7s ($58.0K/mo IoT Core)</text>
+  <text x="595" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$77,000/mo (OpenSearch OCU)</text>
+  <text x="855" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Lake Formation + 外部网关</text>
+  <text x="1125" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$92,000/mo (QuickSight)</text>
+  <text x="1290" y="888" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$379,500/mo</text>
+</svg>

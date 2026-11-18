@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">351 / 352 Scenarios Passed (99.72% · R190!) · 78 Enterprise SA FAQs · 630M Vectors</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">355 / 356 Scenarios Passed (99.72%) · 79 Enterprise SA FAQs · 85th Sim &amp; 17,000 Users</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=352 / n=84)</div>
-        <div class="val">205.5ms / 176.8ms</div>
-        <div class="sub" id="kpi3-sub">n=352 Exact Mean 205.5ms · n=84=7×12 Ontology Mean 176.79ms!</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=356 / n=85)</div>
+        <div class="val">203.4ms / 174.9ms</div>
+        <div class="sub" id="kpi3-sub">n=356 Routing Mean 203.4ms · n=85 Ontology Mean 174.89ms (&lt;175ms!)</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -342,6 +342,7 @@
       <button class="comp-pill" id="sim-btn-hospitality" onclick="selectScenario('global_hospitality_hotel_cruise_fabric_revenue_management_revpar_loyalty_concierge_vs_4clouds')">🏨 Scenario GM: Hospitality &amp; Cruise 9,200 Properties × Real-Time RevPAR Pricing, MICE RFP &amp; Loyalty Concierge Loop (Eventhouse 4ms + 620M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (196=14² SVG &amp; 343=7³ Passed · R188)</button>
       <button class="comp-pill" id="sim-btn-commpc" onclick="selectScenario('global_commercial_insurance_pc_fabric_underwriting_acord_subrogation_claims_vs_4clouds')">🛡️ Scenario GN: Commercial P&amp;C Insurance $38B GWP × ACORD Triage, Subrogation &amp; 10-Hop SIU Fraud Loop (Eventhouse + Graph 4ms + 625M=25²M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (DL-800 &amp; $65.25M SLA · R189)</button>
       <button class="comp-pill" id="sim-btn-fleetlease" onclick="selectScenario('global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds')">🚚 Scenario GO: Commercial Fleet &amp; Equipment Leasing 1.2M Assets × J1939 RUL, Residual Value &amp; OEM Warranty Loop (Eventhouse 4ms + 630M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (99.72% &amp; 205.5ms Exact · R190)</button>
+      <button class="comp-pill" id="sim-btn-agribiz" onclick="selectScenario('global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds')">🌾 Scenario GP: Agribusiness &amp; Grain Trading $52B Volume × CBOT Basis Hedge, NIR Silo Blending &amp; FSMA/EUDR Loop (Eventhouse 4ms + 635M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (85th Sim &amp; 17K Users · R191)</button>
     </div>
 
     <div class="grid-2">
@@ -373,6 +374,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>199 · Global Agribusiness, Grain Trading (ABCD) &amp; Food Processing ($52B Volume + 380 Plants) CBOT Basis Hedge, NIR Silo Blending &amp; FSMA 204 / EUDR AI (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 635M SSD DiskANN -92% RAM + In-Lake PREDICT +2.9pp Margin &amp; +$29.6M Gained, 16ms=4²ms Loop, 85th Sim, 17,000 Users &amp; -$378.5K/mo Saved!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R191)</span>
+        <a href="assets/svg/199-fabric-agribusiness-grain-trading-food-processing-commodity-risk-fsma204-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/199-fabric-agribusiness-grain-trading-food-processing-commodity-risk-fsma204-faq.svg" alt="Fabric Agribusiness Grain Trading Food Processing Commodity Risk FSMA204 Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2680,6 +2689,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>FleetLeasing:1.2MAssets_85KLessee_995KEPS → Eventhouse_OneLake:4ms_410BreakdownOverage_34.5PctLessTow (4ms) → DiskANN630M_PREDICT:4ms_$28.4M_RVWarrantyGained (4ms) → FoundryIQ:4ms_145RecallLock_OffDutyGPSCLS (4ms) → SAP_LeaseWave_1GB_SQL:Fleet_Branch_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams Commercial Fleet VP & Branch Manager Card · 1.2M-Asset RUL & Remarketing Loop (DL-801..804 · R190 & 99.72%!)',
       teamsSummary: '16ms (4²ms) Fleet RUL & Residual Value Loop Ready: KQL 4ms flags 410 breakdown/overage units (-34.5% breakdowns) + 630M DiskANN captures $28.4M RV/warranty + blocks 145 recalled dispatches (+$7.80M) · -96.1% TCO (-$376.7K/mo saved!), $65,600,000 SLA Protected ✓'
+    }
+  },
+  global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 地磅 NIR 质检与 CBOT 期货基差实时感知 ($0/GB 写入税)', latency: '4 ms', desc: '实时摄入 380 座粮库与压榨厂的地磅 NIR 水分/蛋白/毒素流及 SAP ACM / Openlink Endur 镜像，4ms 锁定 430 车次异常原粮并重算盘中基差敞口（免除 $146.5K/月 粮库中间件与流写入税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.35 亿农户合同/COA/EUDR 多边形向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.35 亿条农户基差合同、COA 质检报告与 EUDR 农场矢量边界向量库上以 $3,420/月 (-92% 内存 vs $78,500/月 DRAM) 完成 4ms 比对，提升压榨混配毛利 +2.9pp 并每年增收节支 +$29.6M/年。' },
+        { title: '③ Foundry IQ FDA 20ppb 毒素硬隔离与 EUDR 零毁林多边形门禁 (SOP-199)', latency: '4 ms', desc: '强制执行 SOP-199，4ms 内物理阻断黄曲霉毒素 >20ppb 原粮进入食品仓并拦截 150 批缺失 2020 年后零毁林坐标的欧盟出口批次（规避 $8.10M 召回与港口扣货），对 17,000 名员工执行农户隐私 CLS。' },
+        { title: '④ 首席交易官与品控总监 Teams 确认及溜管 PLC / Endur 回写 / 1GB SQL 审计', latency: '4 ms', desc: '交易官与品控总监批准后，4ms 内下发粮库电动溜管混配指令、执行 Endur 期货锁仓并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！第 85 项仿真 & 17,000 用户，月省 -$378.5K/月，守护 $65.95M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>Agribusiness:380Plants_420KContracts_995KEPS → Eventhouse_OneLake:4ms_430NIRLoads_BasisExposure (4ms) → DiskANN635M_PREDICT:4ms_2.9pp_Margin_$29.6M_Gained (4ms) → FoundryIQ:4ms_150ToxinEUDRBlock_GrowerCLS (4ms) → PLC_Endur_1GB_SQL:Trader_QA_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams 首席交易官与品控总监审批卡 · 380 座粮库混配与 EUDR 溯源闭环 (DL-805..808 · 85th Sim & 17K Users!)',
+      teamsSummary: '16ms (4²ms) 大宗粮商基差对冲与筒仓混配就绪：KQL 4ms 锁定 430 车次异动 (+2.9pp 毛利) + 635M DiskANN 增收 $29.6M + 拦截 150 批 >20ppb 毒素与毁林粮 (+$8.10M) · 月省 -$378.5K/月 (-96.1%)，守护 $65,950,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Scale-House NIR & CBOT Basis Sense ($0/GB Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of scale-house NIR moisture/protein/toxin readings and CBOT ticks plus mirrored SAP ACM and Openlink Endur tables across 380 plants at $0/GB write tax, flagging 430 anomalous loads in 4ms (saving $146.5K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (635M Contract/COA/EUDR Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 635M grower contract, lab COA, FSMA 204 KDE, and EUDR farm polygon vectors via SSD DiskANN ($3,420/mo, -92% RAM vs $78,500/mo DRAM) in 4ms—lifting crush/blending margin +2.9pp and capturing +$29.6M/yr.' },
+        { title: '③ Foundry IQ FDA 20ppb Mycotoxin Lock & EUDR Polygon Gate (SOP-199)', latency: '4 ms', desc: 'Enforces SOP-199 in 4ms, diverting grain loads >20 ppb aflatoxin away from food silos and blocking 150 export lots missing post-2020 EUDR deforestation-free polygons (+$8.10M protected) with Grower PII CLS across 17,000 users.' },
+        { title: '④ Chief Trading Officer & QA Teams Card & PLC / Endur / 1GB SQL Commit', latency: '4 ms', desc: 'Chief Trading Officer and QA Director approve in Teams; actuates elevator diverter PLCs, executes Openlink Endur CBOT hedges, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, 85th Sim, Sub-175ms 174.89ms Mean & 17,000 Users Milestone!).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>Agribusiness:380Plants_420KContracts_995KEPS → Eventhouse_OneLake:4ms_430NIRLoads_BasisExposure (4ms) → DiskANN635M_PREDICT:4ms_2.9pp_Margin_$29.6M_Gained (4ms) → FoundryIQ:4ms_150ToxinEUDRBlock_GrowerCLS (4ms) → PLC_Endur_1GB_SQL:Trader_QA_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams Agribusiness Chief Trading Officer & QA Card · 380-Plant Blending & EUDR Loop (DL-805..808 · 85th Sim!)',
+      teamsSummary: '16ms (4²ms) Agribusiness Basis & Silo Blending Loop Ready: KQL 4ms flags 430 NIR loads (+2.9pp margin) + 635M DiskANN captures $29.6M yield + blocks 150 >20ppb toxin/EUDR lots (+$8.10M) · -96.1% TCO (-$378.5K/mo saved!), $65,950,000 SLA Protected ✓'
     }
   }
 };

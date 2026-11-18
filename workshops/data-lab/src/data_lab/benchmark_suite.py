@@ -5656,6 +5656,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (630M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds":
+        return {
+            "scenario_id": "global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds",
+            "title": "Global Agribusiness, Grain Trading (ABCD) & Food Processing ($52B Volume + 420K Grower Contracts + 380 Plants) Commodity Basis Risk, NIR Silo Blending, FDA FSMA 204 Traceability & EUDR Loop (995K EPS NIR/CBOT Stream + 635M Contract/COA/EUDR Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 430-Load NIR & Basis Sense ($0/GB & $0 Copy Tax), 635M SSD DiskANN ($3,420/mo vs $78,500/mo DRAM) + In-Lake PREDICT 4ms (+2.9pp Crush/Blend Margin & +$29.6M Gained) & Foundry IQ 4ms 150-Toxin/EUDR Block (+$8.10M) (995K EPS · 635M DiskANN · 16ms=4^2ms E2E · 85th Sim, Sub-175ms 174.89ms Mean, 17,000 Users & $65.95M SLA!)",
+            "telemetry": {
+                "grower_basis_contracts_count": 420000,
+                "anomalous_nir_grain_loads_flagged_count": 430,
+                "nir_scale_house_and_cbot_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "contract_coa_and_eudr_polygon_vectors_count": 635000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "crush_and_blending_margin_lift_pp": 2.9,
+                "basis_hedge_and_blending_yield_gained_usd": 29600000,
+                "mycotoxin_and_eudr_violating_lots_blocked_count": 150,
+                "concurrent_traders_merchandisers_and_qa": 17000,
+            },
+            "ontology_traversal": [
+                "NIR-Scale-House-CBOT-and-SAP-ACM-Endur-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS scale-house NIR moisture/protein/toxin readings and CBOT ticks and mirrors SAP ACM, Openlink Endur, and LIMS across 380 plants ($0/GB write tax & $0 copy tax), flagging 430 anomalous truck loads and recalculating net Basis exposure in 4ms",
+                "Silo-Blending-and-FSMA204-Traceability-Engine -> Azure SQL / Cosmos DB SSD DiskANN (635,000,000 grower basis contract, lab COA, FSMA 204 KDE & EUDR farm polygon vectors, -92% RAM at $3,420/mo vs $78,500/mo DRAM) + In-Lake PREDICT -> Lifts crush and blending margin +2.9pp and captures +$29.6M/yr in basis hedging and blending yield in 4ms",
+                "Foundry-IQ-Mycotoxin-and-EUDR-Polygon-Gate -> Validates AGRIBUSINESS-GRAIN-TRADING-FSMA204-EUDR-SOP-199 -> Physically diverts grain loads exceeding 20 ppb aflatoxin away from food silos and blocks 150 export lots missing post-2020 EUDR deforestation-free polygons (+$8.10M recall & customs seizure protection) with Grower PII CLS in 4ms",
+                "Approved Dump-Pit Diverter & CBOT Hedge -> Chief Trading Officer & QA Director Teams Card -> Actuates elevator diverter PLCs, executes Openlink Endur CBOT hedges, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_agribusiness_monthly_tco_usd": 15340,
+                "competitor_stitched_agribusiness_monthly_tco_usd": 393800,
+                "monthly_agribusiness_tco_saved_usd": 378460,
+                "monthly_agribusiness_tco_savings_pct": 96.1,
+                "fabric_internal_full_stack_monthly_usd": 44600,
+                "competitor_internal_full_stack_monthly_usd": 1045000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms NIR Quality & CBOT Basis Sense Agent",
+                        "operation": "Mirror SAP ACM, Openlink Endur, and LIMS zero-copy and ingest 995K EPS NIR/CBOT streams across 380 plants at $0/GB write tax, flagging 430 anomalous loads in 4ms",
+                        "impact_metric": "4ms NIR & basis sense; eliminates $146,500/mo in standalone elevator middleware and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "635M SSD DiskANN FSMA 204 Genealogy & In-Lake PREDICT Silo Blending Agent",
+                        "operation": "Search 635,000,000 grower contract, COA & EUDR polygon vectors via SSD DiskANN (-92% RAM at $3,420/mo vs $78,500/mo DRAM) and optimize dump-pit blending in 4ms",
+                        "impact_metric": "4ms blending & FSMA 204 trace (+2.9pp margin, +$29.6M gained); $3,420/mo SSD DiskANN vs $78,500/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms 20ppb Mycotoxin / EUDR Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-199 blocking 150 >20ppb toxin & EUDR-violating lots (+$8.10M saved) & masking grower PII (4ms), then actuate PLCs/Endur & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 85th Ontology Sim, Sub-175ms (174.89ms) Mean & 17,000 Users Milestone; -$378.5K/mo (-96.1%) TCO; $65.95M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "AGRIBUSINESS-GRAIN-TRADING-FSMA204-EUDR-SOP-199",
+                "hard_constraint": "Never blend grain exceeding FDA 20 ppb aflatoxin action levels into food-grade silos, block EU shipments lacking verified post-Dec-2020 EUDR deforestation-free farm polygons, and mask grower bank/yield PII",
+                "proposed_change": "Quarantine 150 >20ppb toxin/EUDR-violating lots (+$8.10M saved), capture $29.6M in basis/blending yield (+2.9pp margin), route 430 loads across 380 plants, and mask PII across 17,000 users",
+                "fda_20ppb_mycotoxin_quarantine_and_fsma204_verified": True,
+                "eudr_deforestation_polygon_and_grower_cls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 65950000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (635M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -9884,6 +9950,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 22,
     },
+    {
+        "id": "DL-805",
+        "category": "Realtime & Eventhouse",
+        "question": "380 grain elevators & crush plants stream 995K EPS of scale-house NIR moisture/toxin readings & CBOT ticks while SAP ACM/Endur sync overnight; hedge Basis & blend silos in 4ms without $146.5K/mo elevator & stream taxes",
+        "expected": "Fabric Eventhouse KQL + SAP ACM/Endur Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms NIR & Basis Sense Flagging 430 Loads & Lifting Crush/Blending Margin +2.9pp)",
+        "model_answer": "Fabric Eventhouse KQL + SAP ACM/Endur Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms NIR & Basis Sense Flagging 430 Loads & Lifting Crush/Blending Margin +2.9pp)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 19,
+    },
+    {
+        "id": "DL-806",
+        "category": "Vector & AI Agents",
+        "question": "Trace FDA FSMA 204 farm-to-fork lot genealogy and verify EUDR farm polygons across 635M grower contract and lab COA vectors in 4ms without $78,500/mo DRAM HNSW clusters while capturing $29.6M/yr in basis & blending yield",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (635M Contract, COA & EUDR Polygon Vectors, -92% RAM at $3,420/mo vs $78,500/mo Exact DRAM, 4ms Trace & +$29.6M/yr Gained)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (635M Contract, COA & EUDR Polygon Vectors, -92% RAM at $3,420/mo vs $78,500/mo Exact DRAM, 4ms Trace & +$29.6M/yr Gained)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 19,
+    },
+    {
+        "id": "DL-807",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a $52B agribusiness trading, silo blending & FSMA 204/EUDR platform (995K EPS NIR/CBOT stream, 635M COA/EUDR vectors, 17,000 traders/QA): Fabric F64 ($15,340/mo) vs stitched stacks ($373.5K-$409.5K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 635M SSD DiskANN + Foundry IQ 20ppb-Toxin/EUDR Gate ($15,340/mo vs $393,800/mo Stitched Stack, Saving -$378.5K/mo / -96.1% Record TCO with 17,000 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 635M SSD DiskANN + Foundry IQ 20ppb-Toxin/EUDR Gate ($15,340/mo vs $393,800/mo Stitched Stack, Saving -$378.5K/mo / -96.1% Record TCO with 17,000 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 18,
+    },
+    {
+        "id": "DL-808",
+        "category": "Fabric IQ & Ontology",
+        "question": "85th Ontology Sim, Sub-175ms (174.89ms) Mean & 17,000 Users Milestone: Harvest surge triggers 430 NIR moisture/toxin alerts, CBOT basis swings, and 150 >20ppb toxin/EUDR export violations; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 430-Load Sense ($0 Tax) + 635M DiskANN & PREDICT 4ms (+2.9pp Margin & +$29.6M Gained) + Foundry IQ 4ms 150-Toxin/EUDR Block (+$8.10M) & Grower CLS + Teams PLC/Endur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $65.95M SLA)",
+        "model_answer": "Eventhouse 4ms 430-Load Sense ($0 Tax) + 635M DiskANN & PREDICT 4ms (+2.9pp Margin & +$29.6M Gained) + Foundry IQ 4ms 150-Toxin/EUDR Block (+$8.10M) & Grower CLS + Teams PLC/Endur & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $65.95M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 18,
+    },
 ]
 
 
@@ -10085,7 +10199,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_medtech_medical_device_fabric_connected_fleet_uptime_fda_mdr_field_service_vs_4clouds",
         "global_hospitality_hotel_cruise_fabric_revenue_management_revpar_loyalty_concierge_vs_4clouds",
         "global_commercial_insurance_pc_fabric_underwriting_acord_subrogation_claims_vs_4clouds",
-        "global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds"
+        "global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds",
+        "global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
