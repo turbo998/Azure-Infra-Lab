@@ -1178,13 +1178,29 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 62100000)
 
 
+    def test_global_hospital_provider_idn_fabric_patient_flow_rcm_denials_drg_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_hospital_provider_idn_fabric_patient_flow_rcm_denials_drg_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["hospital_campuses_and_centers_count"], 48)
+        self.assertEqual(sim["telemetry"]["imminent_bed_discharges_predicted_count"], 620)
+        self.assertEqual(sim["telemetry"]["clinical_note_and_lcd_policy_vectors_count"], 592000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_hospital_idn_tco_saved_usd"], 361100)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_hospital_idn_tco_savings_pct"], 96.0)
+        self.assertTrue(sim["foundry_iq_guardrail"]["objective_lab_proof_anti_upcoding_and_two_midnight_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["or_block_backfill_and_hipaa_phi_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 62450000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 312)
-        self.assertEqual(matrix["passed_scenarios"], 311)
+        self.assertEqual(matrix["total_scenarios"], 316)
+        self.assertEqual(matrix["passed_scenarios"], 315)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.68, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 229.1)
+        self.assertEqual(matrix["avg_latency_ms"], 226.6)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2054,6 +2070,18 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $62.10M SLA", by_id["DL-764"]["expected"])
 
 
+    def test_fabric_hospital_provider_network_patient_flow_revenue_cycle_denials_2026_11_19_r181_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s for s in matrix["scenarios"]}
+        for sid in ("DL-765", "DL-766", "DL-767", "DL-768"):
+            self.assertIn(sid, by_id)
+            self.assertTrue(by_id[sid]["correct"])
+        self.assertIn("4ms 620-Bed Discharge & 84 Open OR Block Sense", by_id["DL-765"]["expected"])
+        self.assertIn("592M Clinical-Note & Payer LCD Vectors, -92% RAM at $3,220/mo vs $73,600/mo DRAM", by_id["DL-766"]["expected"])
+        self.assertIn("-$361.1K/mo >$360K/mo Milestone!", by_id["DL-767"]["expected"])
+        self.assertIn("16ms 4^2ms E2E, Protect $62.45M SLA", by_id["DL-768"]["expected"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2072,11 +2100,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 311)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 312)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 229.1)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 74)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 198.51)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 315)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 316)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 226.6)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 75)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 196.08)
 
 
 if __name__ == "__main__":
