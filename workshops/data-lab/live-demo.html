@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ 页底 Diamond 演示专区</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">355 / 356 核心场景通过 (99.72%) · 79 篇企业选型 FAQ · 第 85 项仿真与 17,000 用户</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">359 / 360 (360°!) 核心场景通过 (99.72%) · 80 篇企业选型 FAQ · 第 200 张 SVG &amp; 月省 &gt;$380K</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">双分母实测均值 (n=356 / n=85)</div>
-        <div class="val">203.4ms / 174.9ms</div>
-        <div class="sub" id="kpi3-sub">356 路由均值 203.4ms · 85 项本体均值 174.89ms (&lt;175ms!)</div>
+        <div class="label" id="kpi3-lbl">双分母实测均值 (n=360 / n=86)</div>
+        <div class="val">201.3ms / 173.1ms</div>
+        <div class="sub" id="kpi3-sub">360° 路由精确均值 201.3ms · 86 项本体均值 173.05ms!</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -343,6 +343,7 @@
       <button class="comp-pill" id="sim-btn-commpc" onclick="selectScenario('global_commercial_insurance_pc_fabric_underwriting_acord_subrogation_claims_vs_4clouds')">🛡️ Scenario GN: Commercial P&amp;C Insurance $38B GWP × ACORD Triage, Subrogation &amp; 10-Hop SIU Fraud Loop (Eventhouse + Graph 4ms + 625M=25²M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (DL-800 &amp; $65.25M SLA · R189)</button>
       <button class="comp-pill" id="sim-btn-fleetlease" onclick="selectScenario('global_commercial_fleet_equipment_leasing_fabric_telematics_residual_value_remarketing_vs_4clouds')">🚚 Scenario GO: Commercial Fleet &amp; Equipment Leasing 1.2M Assets × J1939 RUL, Residual Value &amp; OEM Warranty Loop (Eventhouse 4ms + 630M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (99.72% &amp; 205.5ms Exact · R190)</button>
       <button class="comp-pill" id="sim-btn-agribiz" onclick="selectScenario('global_agribusiness_grain_trading_fabric_commodity_risk_silo_blending_fsma204_vs_4clouds')">🌾 Scenario GP: Agribusiness &amp; Grain Trading $52B Volume × CBOT Basis Hedge, NIR Silo Blending &amp; FSMA/EUDR Loop (Eventhouse 4ms + 635M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (85th Sim &amp; 17K Users · R191)</button>
+      <button class="comp-pill" id="sim-btn-airlineioc" onclick="selectScenario('global_airline_aviation_fabric_ioc_crew_recovery_mro_aog_ndc_pricing_vs_4clouds')">✈️ Scenario GQ: Airline IOC &amp; MRO 950 Aircraft × ACARS AOG Prediction, IROPS Recovery &amp; NDC Pricing Loop (Eventhouse 4ms + 640M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (200th SVG, 80th FAQ &amp; 360° · R192)</button>
     </div>
 
     <div class="grid-2">
@@ -374,6 +375,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>200 (200th SVG!) · Global Commercial Aviation, Airline IOC &amp; MRO Maintenance (950 Aircraft + 4,800 Daily Flights) ACARS AOG Prediction, IROPS Recovery &amp; NDC Pricing AI (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 640M SSD DiskANN -92% RAM + In-Lake PREDICT -36.0% AOG &amp; +$31.2M Saved, 16ms=4²ms Loop, 200th SVG, 80th FAQ, 360° Scenarios &amp; -$380.2K/mo &gt;$380K Saved!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R192)</span>
+        <a href="assets/svg/200-fabric-airline-aviation-ioc-crew-recovery-mro-aog-ndc-pricing-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/200-fabric-airline-aviation-ioc-crew-recovery-mro-aog-ndc-pricing-faq.svg" alt="Fabric Airline Aviation IOC Crew Recovery MRO AOG NDC Pricing Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2713,6 +2722,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>Agribusiness:380Plants_420KContracts_995KEPS → Eventhouse_OneLake:4ms_430NIRLoads_BasisExposure (4ms) → DiskANN635M_PREDICT:4ms_2.9pp_Margin_$29.6M_Gained (4ms) → FoundryIQ:4ms_150ToxinEUDRBlock_GrowerCLS (4ms) → PLC_Endur_1GB_SQL:Trader_QA_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams Agribusiness Chief Trading Officer & QA Card · 380-Plant Blending & EUDR Loop (DL-805..808 · 85th Sim!)',
       teamsSummary: '16ms (4²ms) Agribusiness Basis & Silo Blending Loop Ready: KQL 4ms flags 430 NIR loads (+2.9pp margin) + 635M DiskANN captures $29.6M yield + blocks 150 >20ppb toxin/EUDR lots (+$8.10M) · -96.1% TCO (-$378.5K/mo saved!), $65,950,000 SLA Protected ✓'
+    }
+  },
+  global_airline_aviation_fabric_ioc_crew_recovery_mro_aog_ndc_pricing_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 空地 ACARS/QAR 遥测与 AMOS 航材实时感知 ($0/GB 写入税)', latency: '4 ms', desc: '实时摄入 950 架飞机（每日 4,800 架次）的 ACARS 发动机 EGT 裕度、引气活门流及 AMOS / Maintenix / Amadeus Altéa 镜像，4ms 提前 2 小时锁定 370 架次外站 AOG 故障前兆，外站机械延误降低 -36.0%（免除 $147.2K/月 电报中间件与流税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.40 亿 AMM/FIM/MEL 手册与 AD 向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.40 亿条波音/空客维修手册、MEL 最低设备清单与适航指令向量库上以 $3,440/月 (-92% 内存 vs $79,000/月 DRAM) 完成 4ms 比对，廊桥 MEL 核查从 45m 缩至 4ms，每年节省 EU261/AOG 成本并增收 NDC +$31.2M/年。' },
+        { title: '③ Foundry IQ FAA FAR 117 机组执勤红线与 Part 121 MEL 适航门禁 (SOP-200)', latency: '4 ms', desc: '强制执行 SOP-200，4ms 内物理阻断 155 笔违反 FAR Part 117 机组法定休息期的改派方案及超期 MEL B/C 类保留故障放行单（规避 $8.40M 适航罚单与登机口清舱），并对 17,200 名员工执行旅客 PNR 隐私 CLS。' },
+        { title: '④ 运控中心 (IOC) VP 与总工程师 Teams 确认及 AMOS/Altéa 回写 / 1GB SQL 审计', latency: '4 ms', desc: '运控 VP 与总工批准后，4ms 内下发枢纽站预防性换飞机 (Tail Swap)、签发 MEL 电子放行单并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！第 200 张 SVG、第 80 篇 FAQ & 360° 评测，月省突破 $380K 达 -$380.2K/月，守护 $66.30M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>AirlineIOC:950Aircraft_4800Flights_995KEPS → Eventhouse_OneLake:4ms_370InFlightPrecursors_36PctLessAOG (4ms) → DiskANN640M_PREDICT:4ms_$31.2M_SavedGained (4ms) → FoundryIQ:4ms_155FAR117MELBlock_PNRCLS (4ms) → AMOS_Altea_1GB_SQL:IOC_MRO_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams 民航运控中心 (IOC) VP 与总工程师审批卡 · 950 架飞机防 AOG 与机组恢复闭环 (DL-809..812 · 200th SVG & 80th FAQ!)',
+      teamsSummary: '16ms (4²ms) 航司 IOC 防 AOG 与 MEL 放行就绪：KQL 4ms 提前 2h 锁定 370 架次故障 (-36.0% AOG) + 640M DiskANN 增效 $31.2M + 拦截 155 笔机组超时与超期 MEL (+$8.40M) · 月省突破 $380K (-$380.2K/月，-96.1%!)，守护 $66,300,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS In-Flight ACARS/QAR & Turnaround Sense ($0/GB Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of in-flight ACARS EGT/bleed-valve telemetry and mirrored AMOS, IFS Maintenix, and Amadeus Altéa tables across 950 aircraft at $0/GB write tax, flagging 370 AOG precursors 2 hours before landing in 4ms (-36.0% AOG delays, saving $147.2K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (640M AMM/MEL/AD Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 640M Boeing/Airbus AMM, FIM, MEL, Airworthiness Directive, and IATA NDC vectors via SSD DiskANN ($3,440/mo, -92% RAM vs $79,000/mo DRAM) in 4ms—resolving gate MEL deferrals and saving/capturing +$31.2M/yr in EU261 and NDC yield.' },
+        { title: '③ Foundry IQ FAA FAR 117 Crew-Legality & Part 121 MEL Gate (SOP-200)', latency: '4 ms', desc: 'Enforces SOP-200 in 4ms, blocking 155 IROPS crew reassignments breaching FAR Part 117 Flight Duty Period limits and aircraft releases with expired Category-B/C MEL deferrals (+$8.40M protected) with PNR PII CLS across 17,200 users.' },
+        { title: '④ VP of IOC & Chief Engineer Teams Card & AMOS / Altéa / 1GB SQL Commit', latency: '4 ms', desc: 'VP of IOC and Chief Engineer approve in Teams; updates AMOS eTechLog deferrals, Amadeus Altéa tail swaps, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, Historic 200th SVG, 80th FAQ, 360° Scenarios & -$380.2K/mo >$380K/mo Milestone!).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>AirlineIOC:950Aircraft_4800Flights_995KEPS → Eventhouse_OneLake:4ms_370InFlightPrecursors_36PctLessAOG (4ms) → DiskANN640M_PREDICT:4ms_$31.2M_SavedGained (4ms) → FoundryIQ:4ms_155FAR117MELBlock_PNRCLS (4ms) → AMOS_Altea_1GB_SQL:IOC_MRO_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams Airline VP of IOC & Chief Engineer Card · 950-Aircraft AOG & IROPS Loop (DL-809..812 · 200th SVG & 80th FAQ!)',
+      teamsSummary: '16ms (4²ms) Airline IOC & MRO AOG Loop Ready: KQL 4ms flags 370 in-flight precursors (-36.0% AOG) + 640M DiskANN saves/gains $31.2M + blocks 155 FAR 117/MEL violations (+$8.40M) · -96.1% TCO (-$380.2K/mo >$380K/mo saved!), $66,300,000 SLA Protected ✓'
     }
   }
 };
