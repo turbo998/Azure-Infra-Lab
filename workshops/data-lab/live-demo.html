@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ 页底 Diamond 演示专区</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">299 / 300 核心场景通过 (99.67%) · 65 篇企业选型 FAQ · Diamond 实战样板间</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">303 / 304 核心场景通过 (99.67%) · 66 篇企业选型 FAQ · Diamond 实战样板间</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">双分母实测均值 (n=300 / n=71)</div>
-        <div class="val">237.2ms / 206.2ms</div>
-        <div class="sub" id="kpi3-sub">300 路由里程碑均值 237.2ms · 71 企业本体均值 206.20ms</div>
+        <div class="label" id="kpi3-lbl">双分母实测均值 (n=304 / n=72)</div>
+        <div class="val">234.4ms / 203.6ms</div>
+        <div class="sub" id="kpi3-sub">304 路由均值 234.4ms · 72 (8×9) 企业本体均值 203.57ms</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -329,6 +329,7 @@
       <button class="comp-pill" id="sim-btn-hrpeople" onclick="selectScenario('global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds')">👥 Scenario FZ: Enterprise HR 320K Employees × Work IQ Skills, Workday/SAP Zero-Copy &amp; Mobility Loop (Work IQ 5ms + 568M DiskANN 4ms + Foundry IQ EU AI Act 4ms) vs Stitched Stack (18ms · -$350.2K/mo · R175)</button>
       <button class="comp-pill" id="sim-btn-lifehealth" onclick="selectScenario('global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds')">🏥 Scenario GA: Life/Health Insurance &amp; PBM 42M Members × 300-Page APS AI, Pharmacy FWA &amp; IFRS 17 Loop (Eventhouse 4ms + 572M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · -96.0% TCO · R176)</button>
       <button class="comp-pill" id="sim-btn-procs2p" onclick="selectScenario('global_enterprise_procurement_s2p_fabric_spend_cube_supplier_risk_contract_ai_vs_4clouds')">📦 Scenario GB: Enterprise Procurement S2P 68K Suppliers × Multi-ERP Spend Cube, Supplier Risk &amp; Contract AI Loop (Eventhouse 4ms + 576M=24²M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · 300th Scenario · R177)</button>
+      <button class="comp-pill" id="sim-btn-compcdp" onclick="selectScenario('global_retail_loyalty_composable_cdp_fabric_journey_cleanroom_iroas_vs_4clouds')">🎯 Scenario GC: 160M-Member Composable CDP, Real-Time Journey &amp; Clean Room iROAS Loop (Eventhouse + Activator 4ms + 580M DiskANN 4ms + Foundry IQ 4ms) vs Packaged SaaS CDP (17ms · -$355.6K/mo · R178)</button>
     </div>
 
     <div class="grid-2">
@@ -360,6 +361,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>186 · Consumer Brand &amp; Retail Loyalty 160M-Member Composable CDP, Real-Time Journey Orchestration &amp; Clean Room iROAS (Eventhouse KQL + Activator 4ms $0 MTU Tax + 580M SSD DiskANN -92% RAM + In-Lake Uplift PREDICT -$9.2M Subsidy Saved, 17ms Loop, -96.0% TCO) vs. Packaged SaaS CDP / AWS / GCP / Databricks / Snowflake FAQ Architecture (R178)</span>
+        <a href="assets/svg/186-fabric-retail-loyalty-cdp-marketing-automation-cleanroom-attribution-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/186-fabric-retail-loyalty-cdp-marketing-automation-cleanroom-attribution-faq.svg" alt="Fabric Retail Loyalty CDP Marketing Automation Cleanroom Attribution Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2251,6 +2260,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>EnterpriseS2P:68KSuppliers_18ERPs_995KEPS → Eventhouse_OneLake:4ms_19RiskSuppliers_$38M_POs (4ms) → DiskANN576M_SpendCube:4ms_$24.5M_Rebates_UNSPSC (4ms) → FoundryIQ:4ms_94MaverickHold_$4.25M_CSDDD (4ms) → SAP_ExcelDirectLake_1GB_SQL:DualSource_Commit (17ms E2E)</code>',
       teamsTitle: 'Teams Chief Procurement Officer Card · 68K-Supplier Spend Cube & Contract AI Loop (DL-749..752 · 300th Scenario!)',
       teamsSummary: '17ms S2P & Contract AI Loop Ready: KQL 4ms flags 19 at-risk suppliers ($38M) + 576M (24²M) DiskANN unlocks $24.5M rebates + 94 Maverick invoices blocked (+$4.25M) · -96.0% TCO (-$353.8K/mo saved), $61,050,000 SLA Protected ✓'
+    }
+  },
+  global_retail_loyalty_composable_cdp_fabric_journey_cleanroom_iroas_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL + H3 + Activator 995K EPS 实时弃购感知与门店付款静默 ($0 MTU 税)', latency: '4 ms', desc: '在 OneLake 原位维护 1.6 亿会员黄金档案（$0 MTU 档案税），实时摄入 995K EPS App/小程序浏览、门店 300m H3 围栏与 POS 结账流，4ms 锁定 48 万高意向弃购犹豫客并 100% 自动静默刚在门店付款成功的会员（免除 $136.5K/月打包 CDP 与 Reverse ETL 税）。' },
+        { title: '② Cosmos DB SSD DiskANN (5.80 亿受众/创意向量) 与湖内 Uplift PREDICT 智能配券', latency: '4 ms', desc: '在 5.80 亿条会员偏好、Lookalike 相似受众与多模态创意向量库上以 $3,160/月 (-92% 内存 vs $72,400/月 DRAM) 完成 4ms 匹配，通过湖内 Uplift PREDICT 仅对“价格敏感摇摆客”发券（转化率提升 +24.6%，每年立省 $9.2M 无效优惠券补贴）。' },
+        { title: '③ Foundry IQ 隐私退订 (GDPR/TCPA/PIPL)、频次上限与数据净室门禁 (SOP-185)', latency: '4 ms', desc: '强制执行 SOP-185，4ms 内拦截 4.2 万条已撤回授权或超频 (>2次/天) 的推送指令，核验 OneLake 数据净室最小聚合桶 k>=50（广告增量 iROAS 提升 +31.0%），并对 14,800 名运营人员启用手机号 PII 列级脱敏。' },
+        { title: '④ 首席营销官 (CMO) Teams 确认与全渠道触达网关 / Excel Direct Lake / 1GB SQL 回写', latency: '5 ms', desc: 'CMO 批准后，5ms 内触发企微/Braze/短信个性化下发、刷新 14,800 名运营人员的 Direct Lake 归因看板并写入 1GB 免费 Fabric SQL（端到端 17ms，月省 96.0% TCO 即 -$355.6K/月，守护 $61.40M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>ComposableCDP:160MMembers_995KEPS_GoldenProfile → Eventhouse_Activator:4ms_480K_Abandoners_100Pct_POS_Suppress (4ms) → DiskANN580M_UpliftPREDICT:4ms_24.6Pct_Lift_$9.2M_Saved (4ms) → FoundryIQ:4ms_42K_OptOutBlock_CleanRoom_k50 (4ms) → Webhook_ExcelDirectLake_1GB_SQL:iROAS_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams 首席营销官 (CMO) 与私域增长总监审批卡 · 1.6 亿会员可组合 CDP 闭环 (DL-753..756)',
+      teamsSummary: '17ms 湖仓原生可组合 CDP 与净室 iROAS 闭环就绪：KQL+Activator 4ms 感知 ($0 MTU 税 & 100% 门店已购防打扰) + 580M DiskANN & Uplift 省 $9.2M 补贴 + 拦截 4.2万条超频推送 · 省 96.0% TCO (-$355.6K/月)，守护 $61,400,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL + H3 + Activator 995K EPS Cart Sense & POS Buyer Suppression ($0 MTU Tax)', latency: '4 ms', desc: 'Maintains 160M Golden Profiles in OneLake ($0 MTU profile tax) and ingests 995K EPS App/web clicks, 300m store H3 geofence entries, and POS checkouts in 4ms—isolating 480K hesitant cart abandoners while suppressing 100% of recent POS buyers (saving $136.5K/mo).' },
+        { title: '② Cosmos DB SSD DiskANN (580M Lookalike/Creative Vectors) & In-Lake Uplift PREDICT', latency: '4 ms', desc: 'Queries 580M member preference, lookalike, and creative vectors via SSD DiskANN ($3,160/mo, -92% RAM vs $72,400/mo DRAM) and scores Persuadables via In-Lake Uplift PREDICT in 4ms (+24.6% conversion lift, saving $9.2M in wasted coupon subsidies).' },
+        { title: '③ Foundry IQ Consent (GDPR/TCPA/PIPL), Frequency Cap & Clean Room k>=50 Gate (SOP-185)', latency: '4 ms', desc: 'Enforces SOP-185 in 4ms, blocking 42,000 opt-out/over-cap (>2/day) messages, verifying Clean Room k>=50 differential privacy (+31.0% ad iROAS lift), and applying PII Purview CLS across 14,800 marketers.' },
+        { title: '④ CMO Teams Card & Omnichannel Activation Webhook / 1GB SQL Commit', latency: '5 ms', desc: 'CMO approves in Teams; dispatches Braze/WeChat/WhatsApp webhooks, refreshes 14,800 marketer Direct Lake dashboards, and commits to 1GB Free Fabric SQL in 5ms (17ms E2E, saving -$355.6K/mo or -96.0% TCO and protecting $61.40M SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>ComposableCDP:160MMembers_995KEPS_GoldenProfile → Eventhouse_Activator:4ms_480K_Abandoners_100Pct_POS_Suppress (4ms) → DiskANN580M_UpliftPREDICT:4ms_24.6Pct_Lift_$9.2M_Saved (4ms) → FoundryIQ:4ms_42K_OptOutBlock_CleanRoom_k50 (4ms) → Webhook_ExcelDirectLake_1GB_SQL:iROAS_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams Consumer Brand CMO & Loyalty VP Card · 160M-Member Composable CDP Loop (DL-753..756)',
+      teamsSummary: '17ms Composable CDP & Clean Room iROAS Loop Ready: KQL+Activator 4ms sense ($0 MTU tax & 100% POS suppression) + 580M DiskANN & Uplift saves $9.2M subsidy + 42K opt-out/over-cap pushes blocked · -96.0% TCO (-$355.6K/mo saved), $61,400,000 SLA Protected ✓'
     }
   }
 };

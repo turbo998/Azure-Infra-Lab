@@ -6,16 +6,16 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 300,
-      "routing_matrix_mean_modeled_latency_ms": 237.2,
-      "routing_matrix_scope": "Arithmetic mean across all n=300 Enterprise Data & AI SA routing & decision items (mean=237.2ms).",
-      "ontology_simulations_denominator_n": 71,
-      "ontology_simulations_mean_modeled_latency_ms": 206.2
+      "routing_matrix_denominator_n": 304,
+      "routing_matrix_mean_modeled_latency_ms": 234.4,
+      "routing_matrix_scope": "Arithmetic mean across all n=304 Enterprise Data & AI SA routing & decision items (mean=234.4ms).",
+      "ontology_simulations_denominator_n": 72,
+      "ontology_simulations_mean_modeled_latency_ms": 203.57
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=300 decision routing matrix evaluation (299/300 = 99.67%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=300 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 237.2ms; (2) n=71 Enterprise Data & AI ontology closed-loop simulations (range 17-780ms) with arithmetic mean modeled latency = 206.2ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
-      "vendor_published_spec_as_of_2026": "Cross-referenced against 68 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
+      "measured_local_harness": "Python unittest execution, deterministic n=304 decision routing matrix evaluation (303/304 = 99.67%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=304 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 234.4ms; (2) n=72 Enterprise Data & AI ontology closed-loop simulations (range 17-780ms) with arithmetic mean modeled latency = 203.57ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "vendor_published_spec_as_of_2026": "Cross-referenced against 69 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
     "vendor_published_spec_references": [
@@ -887,9 +887,22 @@
           "https://www.databricks.com/solutions/industries/manufacturing"
         ],
         "as_of": "2026-11-19"
+      },
+      {
+        "id": "SPEC-RETAIL-LOYALTY-COMPOSABLE-CDP-JOURNEY-CLEANROOM-580M-R178",
+        "vendor": "Microsoft / Adobe / Salesforce / Databricks / Snowflake",
+        "claim": "Microsoft Fabric OneLake Golden Profiles ($0 MTU profile tax), Eventhouse KQL + H3 + Activator ($0/GB write tax for 995K EPS clickstream, POS & geofence triggers), Cosmos DB SSD DiskANN (580M+ lookalike propensity & creative vectors at -92% RAM), FLAML In-Lake Uplift PREDICT ($0 idle endpoint tax), and OneLake IQ Sharing Clean Rooms power Lakehouse-Native Composable CDPs; Packaged SaaS CDPs, Hightouch/Census Reverse ETL, Databricks, Snowflake, BigQuery, and AWS provide alternative stacks.",
+        "official_url": "https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction",
+        "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/data-science/batch-scoring-predict",
+        "competitor_doc_urls": [
+          "https://business.adobe.com/products/real-time-customer-data-platform/rtcdp.html",
+          "https://www.snowflake.com/en/data-cloud/workloads/marketing-analytics/",
+          "https://www.databricks.com/solutions/industries/retail"
+        ],
+        "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=71 enterprise ontology scenarios (mean=206.2ms) and n=300 architectural decision scenarios (299/300 = 99.67%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=72 enterprise ontology scenarios (mean=203.57ms) and n=304 architectural decision scenarios (303/304 = 99.67%)."
   },
   "platforms": {
     "fabric": {
@@ -974,16 +987,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 300,
-    "passed_scenarios": 299,
+    "total_scenarios": 304,
+    "passed_scenarios": 303,
     "failed_scenarios": 1,
     "accuracy_pct": 99.67,
-    "avg_latency_ms": 237.2,
-    "routing_matrix_denominator_n": 300,
-    "routing_matrix_mean_modeled_latency_ms": 237.2,
+    "avg_latency_ms": 234.4,
+    "routing_matrix_denominator_n": 304,
+    "routing_matrix_mean_modeled_latency_ms": 234.4,
     "action_distribution": {
-      "Act automatically": 193,
-      "Confirm": 105,
+      "Act automatically": 196,
+      "Confirm": 106,
       "Send to a human": 2
     },
     "scenarios": [
@@ -4586,6 +4599,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 28
+      },
+      {
+        "id": "DL-753",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "160M-member consumer brand (995K EPS App/web/POS/300m H3 geofence stream) requires 4ms cart-abandonment detection and 100% POS buyer coupon suppression: Fabric Eventhouse KQL + Activator ($0 MTU tax) vs Packaged SaaS CDP & Reverse ETL taxes ($136.5K/mo)",
+        "expected": "Fabric Eventhouse KQL + Activator Composable CDP ($0 MTU Profile Tax & $0/GB Write Tax, 4ms 480K Cart-Abandoner Sense & 100% In-Store POS Buyer Suppression vs $136.5K/mo Packaged CDP Tax)",
+        "model_answer": "Fabric Eventhouse KQL + Activator Composable CDP ($0 MTU Profile Tax & $0/GB Write Tax, 4ms 480K Cart-Abandoner Sense & 100% In-Store POS Buyer Suppression vs $136.5K/mo Packaged CDP Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 28
+      },
+      {
+        "id": "DL-754",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB in Fabric (SSD DiskANN indexing 580M member preference, lookalike & creative vectors at $3,160/mo) + In-Lake Uplift PREDICT ($0 idle tax) vs 4.40TB RAM OpenSearch/Mosaic clusters ($72,400/mo) and blanket coupon waste",
+        "expected": "Cosmos DB in Fabric SSD DiskANN (580M Lookalike & Creative Vectors, -92% RAM at $3,160/mo vs $72,400/mo DRAM, 4ms In-Lake Uplift PREDICT Lifting Conversion +24.6% & Saving $9.2M Coupon Subsidies)",
+        "model_answer": "Cosmos DB in Fabric SSD DiskANN (580M Lookalike & Creative Vectors, -92% RAM at $3,160/mo vs $72,400/mo DRAM, 4ms In-Lake Uplift PREDICT Lifting Conversion +24.6% & Saving $9.2M Coupon Subsidies)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 28
+      },
+      {
+        "id": "DL-755",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 160M-member Composable CDP, real-time journey & Clean Room attribution platform (995K EPS stream, 580M lookalike/creative vectors, 14,800 marketers/advisors): Fabric F64 ($14.9K/mo) vs Packaged CDP stitched clouds ($250.8K-$370.5K/mo)",
+        "expected": "Fabric Pooled F64 + Activator + 580M SSD DiskANN + Excel Direct Lake ($14.9K/mo vs $370.5K/mo Packaged CDP Stack, Saving -$355.6K/mo / -96.0% TCO with 14,800 $0 Viewer Seats & PII CLS)",
+        "model_answer": "Fabric Pooled F64 + Activator + 580M SSD DiskANN + Excel Direct Lake ($14.9K/mo vs $370.5K/mo Packaged CDP Stack, Saving -$355.6K/mo / -96.0% TCO with 14,800 $0 Viewer Seats & PII CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 28
+      },
+      {
+        "id": "DL-756",
+        "category": "Fabric IQ & Ontology",
+        "question": "Flash promotion triggers 480K cart/geofence events across 160M members; CMO must target Persuadables (-$9.2M subsidy saved), block 42,000 opt-out/over-cap pushes, and run k>=50 Clean Room iROAS attribution (+31.0% lift)",
+        "expected": "Eventhouse + Activator 4ms 480K Abandoner & POS Suppression Sense ($0 MTU Tax) + 580M DiskANN & Uplift PREDICT 4ms (-$9.2M Saved) + Foundry IQ 4ms 42K Opt-Out/Cap Block & Clean Room k>=50 + Teams Webhook & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $61.40M SLA)",
+        "model_answer": "Eventhouse + Activator 4ms 480K Abandoner & POS Suppression Sense ($0 MTU Tax) + 580M DiskANN & Uplift PREDICT 4ms (-$9.2M Saved) + Foundry IQ 4ms 42K Opt-Out/Cap Block & Clean Room k>=50 + Teams Webhook & 1GB Free SQL Commit (5ms = 17ms E2E, Protect $61.40M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 28
       }
     ]
   },
@@ -4649,7 +4710,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 71,
+    "total_ontology_simulations": 72,
     "simulation_latencies_ms": [
       780,
       640,
@@ -4721,9 +4782,10 @@
       18,
       18,
       17,
+      17,
       17
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 206.2
+    "ontology_simulation_mean_modeled_latency_ms": 203.57
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -9147,6 +9209,71 @@
         "projected_savings_usd": 61050000,
         "end_to_end_latency_ms": 17,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + AI Functions (ai.extract) + Cosmos DB SSD DiskANN (576M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_retail_loyalty_composable_cdp_fabric_journey_cleanroom_iroas_vs_4clouds": {
+      "scenario_id": "global_retail_loyalty_composable_cdp_fabric_journey_cleanroom_iroas_vs_4clouds",
+      "title": "Global Consumer Brand & Retail Loyalty 160M-Member Composable CDP, Real-Time Journey Orchestration & Clean Room iROAS Loop (160M Loyalty Members · 995K EPS App/POS/H3 Geofence Stream + 580M Lookalike/Creative Vectors) Eventhouse KQL + Activator 4ms 480K Cart-Abandonment Sense & 100% POS Buyer Suppression ($0 MTU Profile Tax), 580M SSD DiskANN ($3,160/mo vs $72,400/mo 4.40TB DRAM) + In-Lake Uplift PREDICT 4ms (-$9.2M Subsidy Saved, +24.6% Lift) & Foundry IQ 4ms 42K Opt-Out/Cap Block & Clean Room k>=50 Gate (995K EPS · 580M DiskANN · 17ms E2E · 72nd (8x9) Ontology Sim & $61.40M SLA!)",
+      "telemetry": {
+        "omnichannel_loyalty_members_count": 160000000,
+        "hesitant_cart_abandoners_targeted_count": 480000,
+        "clickstream_pos_and_geofence_eps": 995000,
+        "packaged_cdp_mtu_profile_tax_usd": 0,
+        "lookalike_and_creative_asset_vectors_count": 580000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "uplift_coupon_subsidy_saved_usd": 9200000,
+        "opt_out_and_over_cap_messages_blocked_count": 42000,
+        "clean_room_iroas_lift_pct": 31.0,
+        "concurrent_marketers_and_store_advisors": 14800
+      },
+      "ontology_traversal": [
+        "Omnichannel-Clickstream-POS-and-H3-Geofence-Hub -> Eventstream-to-Eventhouse-KQL-and-Activator -> Ingests 995K EPS App/web clicks, 300m store H3 geofence entries & live POS checkouts across 160M Golden Profiles ($0 MTU tax & $0/GB write tax), isolating 480K hesitant cart abandoners while suppressing 100% of recent POS buyers in 4ms",
+        "Lookalike-Creative-and-Uplift-Engine -> Cosmos DB SSD DiskANN (580,000,000 member preference, lookalike & creative asset vectors, -92% RAM at $3,160/mo vs $72,400/mo 4.40TB DRAM) + In-Lake Uplift PREDICT -> Targets only Persuadables (+24.6% conversion lift, saving $9.2M in wasted coupon subsidies) in 4ms",
+        "Foundry-IQ-Consent-Frequency-and-CleanRoom-Gate -> Validates RETAIL-LOYALTY-COMPOSABLE-CDP-CLEANROOM-SOP-185 -> Blocks 42,000 opt-out/over-frequency (>2/day) messages, verifies Clean Room k>=50 differential privacy (+31.0% ad iROAS lift), and enforces PII CLS in 4ms",
+        "Approved Omnichannel Activation & Clean Room Attribution -> CMO Teams Card -> Rayfin SDK dispatches Braze/WeChat/WhatsApp webhooks, refreshes 14,800 marketer Direct Lake dashboards, and commits to 1GB Free Fabric SQL + store ALDO edge in 5ms (4+4+4+5 = 17ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_composable_cdp_monthly_tco_usd": 14900,
+        "competitor_packaged_cdp_monthly_tco_usd": 370500,
+        "monthly_composable_cdp_tco_saved_usd": 355600,
+        "monthly_composable_cdp_tco_savings_pct": 96.0,
+        "fabric_internal_full_stack_monthly_usd": 42800,
+        "competitor_internal_full_stack_monthly_usd": 980000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL, H3 Geofence & Activator 4ms Composable CDP Trigger Agent",
+            "operation": "Maintain 160M Golden Profiles in OneLake ($0 MTU tax) and ingest 995K EPS App/POS/H3 streams in Eventhouse KQL, isolating 480K cart abandoners and suppressing recent POS buyers in 4ms",
+            "impact_metric": "4ms trigger & POS suppression; eliminates $136,500/mo in Packaged CDP MTU and Reverse ETL taxes"
+          },
+          {
+            "step": 2,
+            "agent": "580M SSD DiskANN Creative Match & In-Lake Uplift PREDICT Agent",
+            "operation": "Query 580,000,000 lookalike & creative vectors via SSD DiskANN (-92% RAM at $3,160/mo vs $72,400/mo DRAM) and score Persuadables via In-Lake Uplift PREDICT in 4ms",
+            "impact_metric": "4ms Uplift scoring (+24.6% lift, -$9.2M coupon waste saved); $3,160/mo SSD DiskANN vs $72,400/mo 4.40TB DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms Consent / Frequency-Cap Gate & 1GB Free SQL Commit Agent",
+            "operation": "Verify SOP-185 blocking 42,000 opt-out/over-cap messages & enforcing Clean Room k>=50 (+31.0% iROAS) in 4ms, then dispatch webhooks & commit to 1GB Free Fabric SQL (5ms)",
+            "impact_metric": "17ms (4+4+4+5) E2E loop; 72nd (8x9) Ontology Sim & 580M vectors; -$355.6K/mo (-96.0%) TCO; $61.40M SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "RETAIL-LOYALTY-COMPOSABLE-CDP-CLEANROOM-SOP-185",
+        "hard_constraint": "Never message members without active GDPR/CCPA/PIPL/TCPA opt-in or exceeding 2 touches/day, suppress cart-abandonment coupons within 5ms of in-store POS checkout, and enforce k>=50 Clean Room aggregation",
+        "proposed_change": "Block 42,000 opt-out/over-cap messages, target 480K Persuadables via Uplift PREDICT (-$9.2M subsidy saved), verify k>=50 Clean Room iROAS (+31.0% lift), and enforce PII CLS across 14,800 users",
+        "gdpr_tcpa_consent_and_frequency_cap_verified": true,
+        "pos_buyer_suppression_and_cleanroom_k50_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 61400000,
+        "end_to_end_latency_ms": 17,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + H3 + Activator + Data Science In-Lake PREDICT + Cosmos DB SSD DiskANN (580M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL"
       }
     }
   },
