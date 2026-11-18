@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ 页底 Diamond 演示专区</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">295 / 296 核心场景通过 (99.66%) · 64 篇企业选型 FAQ · Diamond 实战样板间</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">299 / 300 核心场景通过 (99.67%) · 65 篇企业选型 FAQ · Diamond 实战样板间</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">双分母实测均值 (n=296 / n=70)</div>
-        <div class="val">240.0ms / 208.9ms</div>
-        <div class="sub" id="kpi3-sub">296 路由整数均值 240.0ms · 70 企业本体均值 208.90ms</div>
+        <div class="label" id="kpi3-lbl">双分母实测均值 (n=300 / n=71)</div>
+        <div class="val">237.2ms / 206.2ms</div>
+        <div class="sub" id="kpi3-sub">300 路由里程碑均值 237.2ms · 71 企业本体均值 206.20ms</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -328,6 +328,7 @@
       <button class="comp-pill" id="sim-btn-corpbank" onclick="selectScenario('global_corporate_commercial_banking_fabric_treasury_trade_finance_kyc_aml_vs_4clouds')">🏦 Scenario FY: Corporate Banking 380K Clients × 995K EPS ISO 20022, UCP 600 Trade AI &amp; 10-Hop pKYC Loop (Eventhouse + Graph 5ms + 564M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (18ms · $60.00M SLA · R174)</button>
       <button class="comp-pill" id="sim-btn-hrpeople" onclick="selectScenario('global_enterprise_hr_people_analytics_fabric_workforce_planning_skills_copilot_vs_4clouds')">👥 Scenario FZ: Enterprise HR 320K Employees × Work IQ Skills, Workday/SAP Zero-Copy &amp; Mobility Loop (Work IQ 5ms + 568M DiskANN 4ms + Foundry IQ EU AI Act 4ms) vs Stitched Stack (18ms · -$350.2K/mo · R175)</button>
       <button class="comp-pill" id="sim-btn-lifehealth" onclick="selectScenario('global_life_health_insurance_pbm_fabric_underwriting_pharmacy_fwa_ifrs17_vs_4clouds')">🏥 Scenario GA: Life/Health Insurance &amp; PBM 42M Members × 300-Page APS AI, Pharmacy FWA &amp; IFRS 17 Loop (Eventhouse 4ms + 572M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · -96.0% TCO · R176)</button>
+      <button class="comp-pill" id="sim-btn-procs2p" onclick="selectScenario('global_enterprise_procurement_s2p_fabric_spend_cube_supplier_risk_contract_ai_vs_4clouds')">📦 Scenario GB: Enterprise Procurement S2P 68K Suppliers × Multi-ERP Spend Cube, Supplier Risk &amp; Contract AI Loop (Eventhouse 4ms + 576M=24²M DiskANN 4ms + Foundry IQ 4ms) vs Stitched Stack (17ms · 300th Scenario · R177)</button>
     </div>
 
     <div class="grid-2">
@@ -359,6 +360,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>185 · Enterprise Procurement &amp; Source-to-Pay (S2P) Multi-ERP Spend Cube, N-Tier Supplier Risk &amp; Contract AI (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 576M=24²M SSD DiskANN -92% RAM + In-Lake ai.extract +$24.5M Rebates, 17ms Loop, 300th Scenario Milestone &amp; $61.05M SLA!) vs. Spend SaaS / AWS / GCP / Databricks / Snowflake FAQ Architecture (R177)</span>
+        <a href="assets/svg/185-fabric-enterprise-procurement-source-to-pay-supplier-risk-contract-ai-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/185-fabric-enterprise-procurement-source-to-pay-supplier-risk-contract-ai-faq.svg" alt="Fabric Enterprise Procurement Source to Pay Supplier Risk Contract AI Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2218,6 +2227,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>LifeHealthPBM:42MMembers_995KEPS_NCPDP_EDI837 → Eventhouse_HDS_FHIR:4ms_112_FWA_Claims_$0Tax (4ms) → DiskANN572M_GlutenCPP:4ms_86Pct_STP_3.4x_IFRS17 (4ms) → FoundryIQ:4ms_PrePayBlock_$6.85M_GINA_HIPAA (4ms) → PolicyAdmin_ExcelDirectLake_1GB_SQL:CSM_Commit (17ms E2E)</code>',
       teamsTitle: 'Teams Chief Underwriter & Chief Actuary Card · 42M-Member APS AI & PBM FWA Loop (DL-745..748)',
       teamsSummary: '17ms Underwriting, PBM FWA & IFRS 17 Loop Ready: KQL+FHIR 4ms sense ($0/GB tax) + 572M DiskANN 86% STP & Gluten 3.4x IFRS 17 + 112 FWA claims blocked pre-pay (+$6.85M) · Record -96.0% TCO (-$352.0K/mo saved), $60,700,000 SLA Protected ✓'
+    }
+  },
+  global_enterprise_procurement_s2p_fabric_spend_cube_supplier_risk_contract_ai_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 供应商风险流与 OneLake 多 ERP 零拷贝感知 ($0 税)', latency: '4 ms', desc: '零拷贝汇聚 SAP Ariba、Coupa 与 18 套 SAP S/4HANA 采购表 (EKKO/EKPO/RBKP) 及 995K EPS 邓白氏信用、LME 大宗指数与海运 ASN 流，4ms 锁定 19 家面临断供高危的二级供应商（波及 $38.0M 在途订单，免除 $135.8K/月 Spend SaaS 与复制税）。' },
+        { title: '② Cosmos DB SSD DiskANN (5.76 亿 = 24²M 合同/支出向量) 与 Spend Cube 归一', latency: '4 ms', desc: '在 5.76 亿条 MSA 价格公式、UNSPSC 四级分类与发票向量库上以 $3,140/月 (-92% 内存 vs $72,000/月整 DRAM) 完成 4ms 比对，自动归并同一邓白氏母公司供应商并释放 $24.5M 合并议价与阶梯返利空间。' },
+        { title: '③ Foundry IQ SOX 三单匹配、反拆分订单 (Split-PO) 与欧盟 CSDDD 护栏 (SOP-184)', latency: '4 ms', desc: '强制执行 SOP-184，4ms 内在 AP 自动付款前冻结 94 笔超合同价 >5% 或违规拆分规避招标的发票（挽回 $4.25M 现金流失），核验二级供应商符合欧盟 CSDDD 尽调，并对 14,600 名采购员启用 OBO RLS。' },
+        { title: '④ 首席采购官 (CPO) Teams 确认与 SAP 二供切流 / Excel Direct Lake / 1GB SQL 回写', latency: '5 ms', desc: 'CPO 批准后，5ms 内更新 SAP S/4HANA 货源清单完成二供配额切换、刷新 Excel Direct Lake Should-Cost 应标模型并写入 1GB 免费 Fabric SQL（端到端 17ms，月省 96.0% TCO 即 -$353.8K/月，守护突破 $61M 的 $61.05M SLA！）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>EnterpriseS2P:68KSuppliers_18ERPs_995KEPS → Eventhouse_OneLake:4ms_19RiskSuppliers_$38M_POs (4ms) → DiskANN576M_SpendCube:4ms_$24.5M_Rebates_UNSPSC (4ms) → FoundryIQ:4ms_94MaverickHold_$4.25M_CSDDD (4ms) → SAP_ExcelDirectLake_1GB_SQL:DualSource_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams 集团首席采购官 (CPO) 审批卡 · 6.8 万供应商 Spend Cube 与合同 AI 闭环 (DL-749..752 · 第 300 场景!)',
+      teamsSummary: '17ms 战略采购 S2P 与合同 AI 闭环就绪：KQL 4ms 锁定 19 家断供风险商 ($38M) + 576M (24²M) DiskANN 释放 $24.5M 返利 + 拦截 94 笔违规发票 (+$4.25M) · 省 96.0% TCO (-$353.8K/月)，守护 $61,050,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Supplier Risk & OneLake Multi-ERP Zero-Copy Sense ($0 Tax)', latency: '4 ms', desc: 'Unifies SAP Ariba, Coupa, and 18 SAP S/4HANA procurement tables (EKKO/EKPO/RBKP) zero-copy with 995K EPS D&B credit, LME index, and ASN streams in 4ms, isolating 19 disruption-risk suppliers ($38.0M PO exposure, saving $135.8K/mo).' },
+        { title: '② Cosmos DB SSD DiskANN (576M = 24²M MSA/UNSPSC Vectors) & Spend Cube', latency: '4 ms', desc: 'Searches 576M MSA pricing formulas, UNSPSC categories, and invoices via SSD DiskANN ($3,140/mo, -92% RAM vs $72,000/mo exact DRAM) in 4ms—unlocking $24.5M in volume rebates & price parity and splitting POs to dual-source vendors.' },
+        { title: '③ Foundry IQ SOX 3-Way Match, Anti-Split-PO & EU CSDDD Gate (SOP-184)', latency: '4 ms', desc: 'Enforces SOP-184 in 4ms, blocking 94 Maverick/split-PO invoices pre-payment (+$4.25M saved), verifying EU CSDDD/UFLPA compliance, and enforcing Category OBO RLS across 14,600 buyers.' },
+        { title: '④ Chief Procurement Officer Teams Card & SAP Source-List / 1GB SQL Commit', latency: '5 ms', desc: 'CPO approves in Teams; updates SAP S/4HANA source lists, refreshes Excel Direct Lake Should-Cost models, and commits to 1GB Free Fabric SQL in 5ms (17ms E2E, 300th Scenario Milestone, saving -$353.8K/mo and protecting $61.05M SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>EnterpriseS2P:68KSuppliers_18ERPs_995KEPS → Eventhouse_OneLake:4ms_19RiskSuppliers_$38M_POs (4ms) → DiskANN576M_SpendCube:4ms_$24.5M_Rebates_UNSPSC (4ms) → FoundryIQ:4ms_94MaverickHold_$4.25M_CSDDD (4ms) → SAP_ExcelDirectLake_1GB_SQL:DualSource_Commit (17ms E2E)</code>',
+      teamsTitle: 'Teams Chief Procurement Officer Card · 68K-Supplier Spend Cube & Contract AI Loop (DL-749..752 · 300th Scenario!)',
+      teamsSummary: '17ms S2P & Contract AI Loop Ready: KQL 4ms flags 19 at-risk suppliers ($38M) + 576M (24²M) DiskANN unlocks $24.5M rebates + 94 Maverick invoices blocked (+$4.25M) · -96.0% TCO (-$353.8K/mo saved), $61,050,000 SLA Protected ✓'
     }
   }
 };
