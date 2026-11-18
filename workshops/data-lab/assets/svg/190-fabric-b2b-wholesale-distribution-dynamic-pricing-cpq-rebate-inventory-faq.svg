@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad190" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120"/>
+      <stop offset="50%" stop-color="#0C1B33"/>
+      <stop offset="100%" stop-color="#081526"/>
+    </linearGradient>
+    <linearGradient id="headerGrad190" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="fabricBoxGrad190" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0A1E32"/>
+    </linearGradient>
+    <linearGradient id="compBoxGrad190" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1215"/>
+      <stop offset="100%" stop-color="#1E0D10"/>
+    </linearGradient>
+    <filter id="shadow190" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1480" height="940" fill="url(#bgGrad190)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="18" width="1432" height="92" rx="14" fill="url(#headerGrad190)" filter="url(#shadow190)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-size="20" font-weight="800">🏭 R182 · B2B Wholesale Distribution 1.5M-SKU Dynamic CPQ, BOM Cross-Ref &amp; SPA Rebates (190th SVG · 320 Scenarios · 224.0ms Exact!)</text>
+  <text x="46" y="81" fill="#E0F2FE" font-size="13.5" font-weight="600">Scenario GG (DL-769..DL-772): 1.5M SKUs + 180 DCs · 995K EPS EDI 840/850/844 Stream + 596M Datasheet/Quote Vectors · 16ms (4²ms) E2E · 70th FAQ · $62.80M SLA!</text>
+  <rect x="1216" y="34" width="222" height="58" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+  <text x="1327" y="58" text-anchor="middle" fill="#6EE7B7" font-size="13" font-weight="800">190th SVG · 224.0ms Exact</text>
+  <text x="1327" y="79" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">320 Cases · $62.80M SLA</text>
+
+  <!-- Left Column: Enterprise Pain Points & 4-Step 16ms Loop -->
+  <rect x="24" y="124" width="930" height="500" rx="14" fill="url(#fabricBoxGrad190)" stroke="#0EA5E9" stroke-width="1.8" filter="url(#shadow190)"/>
+  <text x="44" y="156" fill="#38BDF8" font-size="17" font-weight="800">🏗️ Microsoft Fabric Unified B2B Dynamic CPQ, 596M BOM Cross-Ref &amp; Ship-and-Debit Loop (16ms = 4²ms E2E)</text>
+  <text x="44" y="177" fill="#94A3B8" font-size="12.5">OneLake Zero-Copy (SAP S/4HANA + Epicor + Salesforce/D365 CPQ) + Eventhouse KQL (995K EPS EDI 840/850/844) + 596M SSD DiskANN</text>
+
+  <!-- Step 1 -->
+  <rect x="44" y="192" width="890" height="94" rx="10" fill="#0B192C" stroke="#0284C7" stroke-width="1.4"/>
+  <rect x="56" y="204" width="92" height="26" rx="6" fill="#0284C7"/>
+  <text x="102" y="222" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 1 · 4ms</text>
+  <text x="162" y="221" fill="#F8FAFC" font-size="14.5" font-weight="700">Eventhouse KQL + OneLake Zero-Copy: 4ms Pocket-Margin Waterfall &amp; Backorder Sense ($0/GB Tax!)</text>
+  <text x="56" y="245" fill="#CBD5E1" font-size="12.5">• Ingests 995,000 EPS EDI 840 RFQs, 850 POs, 844 Ship-and-Debit claims &amp; 180-DC ATP inventory across 1.5M active SKUs.</text>
+  <text x="56" y="266" fill="#38BDF8" font-size="12.5" font-weight="600">• Eliminates $139,500/mo in Pricing SaaS &amp; copy taxes; flags 300 backordered BOM lines &amp; computes 5-tier Pocket Margin in 4ms.</text>
+
+  <!-- Step 2 -->
+  <rect x="44" y="298" width="890" height="94" rx="10" fill="#0B192C" stroke="#10B981" stroke-width="1.4"/>
+  <rect x="56" y="310" width="92" height="26" rx="6" fill="#059669"/>
+  <text x="102" y="328" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 2 · 4ms</text>
+  <text x="162" y="327" fill="#F8FAFC" font-size="14.5" font-weight="700">Cosmos DB SSD DiskANN (596M Datasheet/Cross-Ref Vectors) + In-Lake PREDICT Price Corridor (4ms!)</text>
+  <text x="56" y="351" fill="#CBD5E1" font-size="12.5">• Searches 596,000,000 manufacturer datasheets, pin-to-pin substitutes &amp; quotes via SSD DiskANN ($3,240/mo vs $74,000/mo exact DRAM).</text>
+  <text x="56" y="372" fill="#34D399" font-size="12.5" font-weight="600">• Quotes 2,000-line BOMs in 4ms (+22.5% win rate, +3.4pp Pocket Margin) and recovers $16.4M in supplier Ship-and-Debit SPA rebates.</text>
+
+  <!-- Step 3 -->
+  <rect x="44" y="404" width="890" height="94" rx="10" fill="#0B192C" stroke="#F59E0B" stroke-width="1.4"/>
+  <rect x="56" y="416" width="92" height="26" rx="6" fill="#D97706"/>
+  <text x="102" y="434" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 3 · 4ms</text>
+  <text x="162" y="433" fill="#F8FAFC" font-size="14.5" font-weight="700">Foundry IQ Pocket-Margin Floor (&gt;=11.5%), SPA Eligibility &amp; Territory Gate (SOP-189 · 4ms!)</text>
+  <text x="56" y="457" fill="#CBD5E1" font-size="12.5">• Validates B2B-DISTRIBUTION-DYNAMIC-CPQ-REBATE-SOP-189: blocks rep quotes with net Pocket Margin &lt;11.5% after freight &amp; 90-day terms,</text>
+  <text x="56" y="478" fill="#FBBF24" font-size="12.5" font-weight="600">• Interdicts 145 below-floor quotes (+$5.80M saved), verifies franchise territory rules, and enforces Cost CLS across 15,600 users in 4ms.</text>
+
+  <!-- Step 4 -->
+  <rect x="44" y="510" width="890" height="98" rx="10" fill="#0B192C" stroke="#8B5CF6" stroke-width="1.4"/>
+  <rect x="56" y="522" width="92" height="26" rx="6" fill="#7C3AED"/>
+  <text x="102" y="540" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">STEP 4 · 4ms</text>
+  <text x="162" y="539" fill="#F8FAFC" font-size="14.5" font-weight="700">Teams VP of Sales Card + Salesforce/D365 CPQ Quote, EDI 844 Claim &amp; 1GB SQL Commit (4ms!)</text>
+  <text x="56" y="563" fill="#CBD5E1" font-size="12.5">• Releases approved CPQ quotes, files EDI 844 Ship-and-Debit claims, and commits audit logs to 1GB Free Fabric SQL + DC ALDO edge in 4ms.</text>
+  <text x="56" y="584" fill="#C4B5FD" font-size="12.5" font-weight="600">• Total E2E: 4ms + 4ms + 4ms + 4ms = 16ms (4²ms) Loop! 190th SVG, 320 Scenarios (224.0ms Exact!) &amp; $62.80M SLA!</text>
+
+  <!-- Right Column: Competitor Stitched Anti-Patterns -->
+  <rect x="974" y="124" width="482" height="500" rx="14" fill="url(#compBoxGrad190)" stroke="#EF4444" stroke-width="1.8" filter="url(#shadow190)"/>
+  <text x="994" y="156" fill="#FCA5A5" font-size="16.5" font-weight="800">⛔ Stitched B2B Pricing SaaS &amp; Manual BOM Anti-Patterns</text>
+  <text x="994" y="177" fill="#F87171" font-size="12.5">$377.8K/mo TCO · 48h Manual BOM Quoting &amp; Unclaimed SPA Rebates</text>
+
+  <rect x="994" y="194" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="217" fill="#FCA5A5" font-size="13.5" font-weight="700">1. Commercial Pricing SaaS &amp; EDI Copy Taxes ($139.5K/mo)</text>
+  <text x="1010" y="239" fill="#E2E8F0" font-size="12">• Licensing 3rd-party B2B pricing SaaS (PROS/Pricefx) and</text>
+  <text x="1010" y="258" fill="#E2E8F0" font-size="12">  copying SAP/EDI streams costs $139.5K/mo while missing</text>
+  <text x="1010" y="276" fill="#FCA5A5" font-size="12" font-weight="600">  live 180-DC freight and Ship-and-Debit SPA eligibility.</text>
+
+  <rect x="994" y="300" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="323" fill="#FCA5A5" font-size="13.5" font-weight="700">2. 4.56TB DRAM Vector Cluster ($74.0K/mo Exact vs $3,240/mo)</text>
+  <text x="1010" y="345" fill="#E2E8F0" font-size="12">• Hosting 596,000,000 manufacturer datasheets, pin-to-pin</text>
+  <text x="1010" y="364" fill="#E2E8F0" font-size="12">  substitutes, and RFQ history in RAM-only HNSW clusters</text>
+  <text x="1010" y="382" fill="#FCA5A5" font-size="12" font-weight="600">  costs $74,000/mo exact vs $3,240/mo on SSD DiskANN.</text>
+
+  <rect x="994" y="406" width="442" height="94" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="429" fill="#FCA5A5" font-size="13.5" font-weight="700">3. 48h Manual BOM Lookup &amp; Rebate Leakage ($85.0K/mo)</text>
+  <text x="1010" y="451" fill="#E2E8F0" font-size="12">• Running 24/7 pricing endpoints and manual SPA spreadsheets</text>
+  <text x="1010" y="470" fill="#E2E8F0" font-size="12">  wastes $85.0K/mo while forfeiting $16.4M in unclaimed</text>
+  <text x="1010" y="488" fill="#FCA5A5" font-size="12" font-weight="600">  vendor Ship-and-Debit rebates and $5.80M in rep discounting.</text>
+
+  <rect x="994" y="512" width="442" height="96" rx="10" fill="#180A0C" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="1010" y="535" fill="#FCA5A5" font-size="13.5" font-weight="700">4. Per-User BI Seats for 15,600 Sales Reps ($79.3K/mo)</text>
+  <text x="1010" y="557" fill="#E2E8F0" font-size="12">• Licensing BI seats for 15,600 field sales reps, inside</text>
+  <text x="1010" y="576" fill="#E2E8F0" font-size="12">  quoters, and rebate accountants costs $79.3K/mo vs $0</text>
+  <text x="1010" y="594" fill="#FCA5A5" font-size="12" font-weight="600">  Power BI Viewer + Excel Direct Lake on Fabric F64+.</text>
+
+  <!-- Bottom Section: 5-Cloud TCO & Decision Matrix -->
+  <rect x="24" y="640" width="1432" height="278" rx="14" fill="#091526" stroke="#334155" stroke-width="1.5" filter="url(#shadow190)"/>
+  <text x="44" y="672" fill="#F8FAFC" font-size="16.5" font-weight="800">📊 5-Cloud B2B Wholesale Distribution Dynamic CPQ, Cross-Ref &amp; Rebate Matrix (1.5M SKUs · 180 DCs · 995K EPS · 596M Vectors · 15,600 Users)</text>
+
+  <!-- Table Header -->
+  <rect x="44" y="686" width="1392" height="32" rx="6" fill="#1E293B"/>
+  <text x="58" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Platform / Architecture</text>
+  <text x="340" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">EDI Stream &amp; SAP/CPQ Sync</text>
+  <text x="605" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">596M Datasheet/Quote Vectors</text>
+  <text x="860" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">CPQ PREDICT &amp; 15.6K BI</text>
+  <text x="1145" y="707" fill="#38BDF8" font-size="12.5" font-weight="800">Monthly TCO &amp; Verdict</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="44" y="722" width="1392" height="36" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="58" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric (F64 Pooled)</text>
+  <text x="340" y="745" fill="#FFFFFF" font-size="12" font-weight="600">Eventhouse + OneLake ($0 Tax · 4ms)</text>
+  <text x="605" y="745" fill="#6EE7B7" font-size="12" font-weight="700">SSD DiskANN (-92% RAM · $3,240/mo)</text>
+  <text x="860" y="745" fill="#FFFFFF" font-size="12" font-weight="600">+$16.4M Rebates · $0 Viewer (15.6K)</text>
+  <text x="1145" y="745" fill="#6EE7B7" font-size="12.5" font-weight="800">$15.0K/mo (-96.0% · 16ms=4²ms!)</text>
+
+  <!-- Row 2: AWS -->
+  <rect x="44" y="762" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="783" fill="#E2E8F0" font-size="12" font-weight="700">AWS Kinesis + OpenSearch + RS</text>
+  <text x="340" y="783" fill="#CBD5E1" font-size="12">Kinesis + Glue SAP ($88.0K/mo)</text>
+  <text x="605" y="783" fill="#FCA5A5" font-size="12">OpenSearch 4.56TB RAM ($74.0K/mo)</text>
+  <text x="860" y="783" fill="#CBD5E1" font-size="12">SageMaker + QuickSight ($95.2K/mo)</text>
+  <text x="1145" y="783" fill="#FCA5A5" font-size="12" font-weight="700">$257.2K/mo (+$242.2K/mo)</text>
+
+  <!-- Row 3: GCP -->
+  <rect x="44" y="798" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="819" fill="#E2E8F0" font-size="12" font-weight="700">Google BigQuery + Vertex + Looker</text>
+  <text x="340" y="819" fill="#CBD5E1" font-size="12">Pub/Sub + BQ Slots ($98.0K/mo)</text>
+  <text x="605" y="819" fill="#FCA5A5" font-size="12">Vertex Vector Search RAM ($76.4K/mo)</text>
+  <text x="860" y="819" fill="#CBD5E1" font-size="12">Vertex + Looker ($112.2K/mo)</text>
+  <text x="1145" y="819" fill="#FCA5A5" font-size="12" font-weight="700">$286.6K/mo (+$271.6K/mo)</text>
+
+  <!-- Row 4: Databricks -->
+  <rect x="44" y="834" width="1392" height="32" rx="4" fill="#0F172A"/>
+  <text x="58" y="855" fill="#E2E8F0" font-size="12" font-weight="700">Databricks Lakeflow + Mosaic AI</text>
+  <text x="340" y="855" fill="#CBD5E1" font-size="12">Fivetran + Streaming ($112.0K/mo)</text>
+  <text x="605" y="855" fill="#FCA5A5" font-size="12">Mosaic Vector Search ($78.8K/mo)</text>
+  <text x="860" y="855" fill="#CBD5E1" font-size="12">Serving + BI Seats ($129.8K/mo)</text>
+  <text x="1145" y="855" fill="#FCA5A5" font-size="12" font-weight="700">$320.6K/mo (+$305.6K/mo)</text>
+
+  <!-- Row 5: Snowflake -->
+  <rect x="44" y="870" width="1392" height="32" rx="4" fill="#131E32"/>
+  <text x="58" y="891" fill="#E2E8F0" font-size="12" font-weight="700">Snowflake + Pricing SaaS (PROS)</text>
+  <text x="340" y="891" fill="#CBD5E1" font-size="12">Pricing SaaS + Snowpipe ($139.5K/mo)</text>
+  <text x="605" y="891" fill="#FCA5A5" font-size="12">Cortex Vector + XL WH ($74.0K/mo)</text>
+  <text x="860" y="891" fill="#CBD5E1" font-size="12">Snowpark + BI ($164.3K/mo)</text>
+  <text x="1145" y="891" fill="#FCA5A5" font-size="12" font-weight="700">$377.8K/mo (-$362.8K/mo Saved!)</text>
+</svg>
