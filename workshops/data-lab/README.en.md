@@ -3,7 +3,7 @@
 > **Language / 语言切换**: **[🇨🇳 中文 (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
 > **⚡ Quick Access**: **[💎 Diamond Enterprise Demo Hub](demos/diamond-hub.en.html)** · **[📺 TCL × Fabric 6-Act Cockpit](demos/tcl-fabric/index.en.html)** · **[🛒 Zava × Databricks & Fabric Demo](demos/databricks-fabric/index.en.html)** · **[⚔️ Databricks vs Fabric 10-Dim Battlecard](demos/databricks-fabric/battlecard.en.html)** · **[🧭 5-Cloud TCO & Sim Workbench](index.en.html)** · **[📊 7-Card Benchmark Deck](benchmark-cards.en.html)**
 
-An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Microsoft Fabric** (OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology) with **Azure Databricks**, **Snowflake**, **GCP BigQuery**, and **AWS Lakehouse** — featuring **2 fully sanitized executive live demos (Diamond Enterprise Demo Suite)**, **67 bilingual enterprise architecture selection FAQs**, and a **sealed reproducible benchmark suite (`307 / 308 = 99.68%`, `150 / 150` unit tests passing)**.
+An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Microsoft Fabric** (OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology) with **Azure Databricks**, **Snowflake**, **GCP BigQuery**, and **AWS Lakehouse** — featuring **2 fully sanitized executive live demos (Diamond Enterprise Demo Suite)**, **68 bilingual enterprise architecture selection FAQs**, and a **sealed reproducible benchmark suite (`311 / 312 = 99.68%`, `152 / 152` unit tests passing)**.
 
 ---
 
@@ -15,11 +15,11 @@ An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Micro
 | **📺 TCL Global Channel IQ × Fabric (6-Act Cockpit)** | Zero-copy OneLake EDI 852 Shortcuts + Eventhouse port-delay KQL + Fabric IQ Ontology guardrails + pipeline write-back | [`demos/tcl-fabric/index.en.html`](demos/tcl-fabric/index.en.html) · [SA Playbook](demos/tcl-fabric/playbook.en.html) |
 | **🛒 Zava Omnichannel Retail × Databricks & Fabric** | Unity Catalog dynamic PII masking + 5-turn AI/BI Genie margin root-cause drilldown + Mirrored UC Direct Lake | [`demos/databricks-fabric/index.en.html`](demos/databricks-fabric/index.en.html) · [10-Dim Battlecard](demos/databricks-fabric/battlecard.en.html) |
 | **🧭 5-Cloud Competitive & TCO Workbench** | 6-dimension platform scorecard, 500-viewer interactive TCO calculator, and Fabric IQ Ontology guardrail simulator | [`index.en.html`](index.en.html) · [中文](index.html) |
-| **📊 7-Card 4:5 Visual Benchmark Deck** | Self-contained 7-card evaluation deck generated from sealed `reports/report.json` (`307/308 = 99.68%`, explicit `DL-23` miss) | [`benchmark-cards.en.html`](benchmark-cards.en.html) · [中文](benchmark-cards.html) |
+| **📊 7-Card 4:5 Visual Benchmark Deck** | Self-contained 7-card evaluation deck generated from sealed `reports/report.json` (`311/312 = 99.68%`, explicit `DL-23` miss) | [`benchmark-cards.en.html`](benchmark-cards.en.html) · [中文](benchmark-cards.html) |
 
 ---
 
-## 2. 67 Curated Enterprise Data + AI Architecture Selection FAQs
+## 2. 68 Curated Enterprise Data + AI Architecture Selection FAQs
 
 Every FAQ follows a crisp Solution Architect structure (Executive Summary, Architecture Q&A, Dataflow Diagram, 5-Cloud Decision Matrix, Implementation Checklist) focused strictly on mainstream enterprise workloads:
 
@@ -33,7 +33,7 @@ Every FAQ follows a crisp Solution Architect structure (Executive Summary, Archi
 - **Enterprise Text-to-SQL Agents**: [Fabric Data Agent vs Databricks AI/BI Genie vs Snowflake Cortex](comparisons/fabric-enterprise-data-agent-text2sql-fabric-genie-cortex-oss-faq.en.md)
 - **Medallion Batch-Stream Unification**: [Bronze-Silver-Gold & Lambda / Kappa Selection Guide](comparisons/fabric-medallion-lakehouse-lambda-kappa-streaming-batch-architecture-faq.en.md)
 - **5-Cloud TCO Inflection & Migration**: [5-Cloud Platform TCO & Zero-Downtime EDW Migration Guide](comparisons/fabric-five-cloud-data-platform-tco-inflection-migration-faq.en.md)
-- **FinOps, Network Security & BCDR**: [Capacity FinOps & Surge Protection](comparisons/fabric-capacity-finops-surge-rayfin-vs-4clouds-faq.en.md) · [Managed VNet & Private Link](comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.en.md) · [Cross-Region BCDR & CMK](comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.en.md)
+- **FinOps, Network Security & BCDR**: [Capacity FinOps & Surge Protection](comparisons/fabric-capacity-finops-surge-rayfin-vs-4clouds-faq.en.md) · [Managed VNet & Private Link](comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.en.md) · [Cross-Region BCDR & CMK](comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.en.md) · [Multi-Cloud FOCUS 1.0 FinOps, AI Chargeback & SaaS ITAM](comparisons/fabric-enterprise-it-finops-cloud-cost-license-optimization-aiops-faq.en.md)
 
 ### B. Enterprise Industry Architecture Guides
 - **Retail, E-Commerce & Supply Chain**: [Omnichannel Customer 360 & Store Replenishment](comparisons/fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.en.md) · [Cross-Border Supply Chain & FinOps](comparisons/fabric-cross-border-ecommerce-global-supply-chain-finops-faq.en.md) · [QSR & Cold-Chain Dynamic Markdown](comparisons/fabric-qsr-fmcg-chain-store-operations-coldchain-markdown-faq.en.md) · [CPG Trade Promotion (TPO) & POS Demand Sensing](comparisons/fabric-cpg-beverage-trade-promotion-demand-sensing-hedging-faq.en.md) · [Luxury, Apparel & Footwear RFID & Returns](comparisons/fabric-luxury-apparel-footwear-merchandising-rfid-clienteling-returns-faq.en.md) · [160M-Member Composable CDP & Clean Room iROAS](comparisons/fabric-retail-loyalty-cdp-marketing-automation-cleanroom-attribution-faq.en.md)
@@ -62,4 +62,4 @@ Every FAQ follows a crisp Solution Architect structure (Executive Summary, Archi
 ```bash
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 ```
-- **Sealed Baseline (`reports/report.json`)**: `307 / 308` scenarios passed (`99.68%`, explicit `DL-23` single-region LRS human-escalation boundary), `231.7 ms` routing mean, `201.01 ms` ontology simulation mean (`n=73`), `150 / 150` unit tests passing.
+- **Sealed Baseline (`reports/report.json`)**: `311 / 312` scenarios passed (`99.68%`, explicit `DL-23` single-region LRS human-escalation boundary), `229.1 ms` routing mean, `198.51 ms` (`<200ms`!) ontology simulation mean (`n=74`), `152 / 152` unit tests passing.
