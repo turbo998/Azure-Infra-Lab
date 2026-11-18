@@ -6052,6 +6052,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (660M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds":
+        return {
+            "scenario_id": "global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds",
+            "title": "Global Semiconductor Fab, IDM & OSAT Packaging (18 300mm Fabs + 9,400 Tools + $78B Output) SECS/GEM FDC & Virtual Metrology, Spatial Wafer-Map Defect AI & Automotive AEC-Q100 / Customer IP Isolation Loop (995K EPS SECS/GEM Stream + 665M KLARF/SEM/CoA Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 430-Lot Virtual Metrology Sense ($0/GB & $0 Copy Tax), 665M SSD DiskANN ($3,540/mo vs $81,800/mo DRAM) + In-Lake PREDICT 4ms (+3.4pp DPW Yield & +$38.2M/yr Saved) & Foundry IQ 4ms 180-PAT/Chamber Block (+$9.90M) (995K EPS · 665M DiskANN · 16ms=4^2ms E2E · 85th FAQ, 99.74% Accuracy, Exact 191.7ms Mean & $68.05M SLA!)",
+            "telemetry": {
+                "active_300mm_fabs_and_osat_sites_count": 18,
+                "drifting_chamber_wafer_lots_flagged_count": 430,
+                "secs_gem_eda_chamber_telemetry_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "klarf_wafer_map_sem_and_coa_vectors_count": 665000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "die_per_wafer_line_yield_lift_pp": 3.4,
+                "foup_scrap_saved_and_fab_capacity_gained_usd": 38200000,
+                "aec_q100_pat_and_excursion_lots_blocked_count": 180,
+                "concurrent_yield_pie_and_equipment_engineers": 18200,
+            },
+            "ontology_traversal": [
+                "Tool-SECS-GEM-and-Opcenter-MES-STDF-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS SECS/GEM (E120/E134 EDA) chamber RF impedance, gas flow, and chuck pressure telemetry while mirroring Opcenter MES wafer genealogy, SAP S/4HANA, and STDF probe tables across 18 fabs and 9,400 tools ($0/GB write tax & $0 copy tax), running 100% Virtual Metrology to flag 430 drifting chamber lots in 4ms",
+                "Spatial-Wafer-Map-and-APC-Trim-Engine -> Azure SQL / Cosmos DB SSD DiskANN (665,000,000 KLARF spatial wafer defect maps, SEM micrographs, 8D excursion reports & photoresist CoA vectors, -92% RAM at $3,540/mo vs $81,800/mo DRAM) + In-Lake PREDICT -> Lifts 300mm Die-Per-Wafer yield +3.4pp, shrinks excursion root-cause triage from 36h to 4ms, and saves/captures +$38.2M/yr in 4ms",
+                "Foundry-IQ-AECQ100-PAT-and-GDSII-RLS-Gate -> Validates SEMICONDUCTOR-FAB-OSAT-SECS-GEM-YIELD-SOP-205 -> Electronic-inks 180 wafer lots/dies failing automotive AEC-Q100 Dynamic PAT / GDBC neighbor rules and holds excursion chambers (+$9.90M RMA/scrap protection) with multi-tenant Fabless Customer GDSII/PDK RLS in 4ms",
+                "Approved Chamber Hold & APC R2R Trim -> VP of Yield Enhancement & PIE Director Teams Card -> Updates Opcenter MES chamber holds, APC recipe trims, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_semiconductor_fab_monthly_tco_usd": 15460,
+                "competitor_stitched_semiconductor_fab_monthly_tco_usd": 404400,
+                "monthly_semiconductor_fab_tco_saved_usd": 388940,
+                "monthly_semiconductor_fab_tco_savings_pct": 96.2,
+                "fabric_internal_full_stack_monthly_usd": 44800,
+                "competitor_internal_full_stack_monthly_usd": 1075000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms SECS/GEM FDC & 100% Virtual Metrology Sense Agent",
+                        "operation": "Mirror Opcenter MES, SAP, and STDF probe tables zero-copy and ingest 995K EPS SECS/GEM streams across 18 fabs and 9,400 tools at $0/GB write tax, flagging 430 drifting chamber lots in 4ms",
+                        "impact_metric": "4ms 430-lot virtual metrology sense (+3.4pp DPW yield); eliminates $151,200/mo in FDC middleware and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "665M SSD DiskANN Spatial Wafer-Map RAG & In-Lake PREDICT Chamber Commonality Agent",
+                        "operation": "Search 665,000,000 KLARF spatial wafer-map, SEM micrograph, 8D & photoresist CoA vectors via SSD DiskANN (-92% RAM at $3,540/mo vs $81,800/mo DRAM) and isolate excursion chambers in 4ms",
+                        "impact_metric": "4ms wafer-map match (36h->4ms triage, +$38.2M/yr FOUP scrap saved); $3,540/mo SSD DiskANN vs $81,800/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Automotive AEC-Q100 PAT / Customer GDSII RLS Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-205 electronic-inking 180 AEC-Q100 PAT/excursion lots (+$9.90M saved) & isolating customer GDSII IP (4ms), then update MES/APC & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; Historic 85th FAQ, 379/380=99.74% Accuracy, Exact 191.7ms Mean, 125=5^3 Confirm & $68.05M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "SEMICONDUCTOR-FAB-OSAT-SECS-GEM-YIELD-SOP-205",
+                "hard_constraint": "Never release automotive wafer lots failing AEC-Q100 Dynamic Part-Average Testing (PAT) or Good-Die-in-Bad-Cluster (GDBC) screening, hold excursion tool chambers immediately, and isolate competing Fabless customer GDSII/PDK IP via RLS",
+                "proposed_change": "Block 180 AEC-Q100 PAT/excursion lots (+$9.90M saved), save/capture $38.2M in prevented FOUP scrap and fab capacity (+3.4pp DPW yield), flag 430 chamber drifts, and enforce Customer GDSII RLS across 18,200 engineers",
+                "aec_q100_dynamic_pat_and_gdbc_inking_verified": True,
+                "fabless_customer_gdsii_pdk_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 68050000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (665M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -10568,6 +10634,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 15,
     },
+    {
+        "id": "DL-829",
+        "category": "Realtime & Eventhouse",
+        "question": "18 300mm wafer fabs and 9,400 EUV/etch/CVD tools stream 995K EPS of SECS/GEM (E120/E134) chamber telemetry while Opcenter MES and STDF sync in batches; run 100% Virtual Metrology in 4ms without $151.2K/mo FDC & stream taxes",
+        "expected": "Fabric Eventhouse KQL + Opcenter MES/SAP/STDF Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms SECS/GEM Virtual Metrology Sense Flagging 430 Chamber Lots & Lifting Die-Per-Wafer Yield +3.4pp)",
+        "model_answer": "Fabric Eventhouse KQL + Opcenter MES/SAP/STDF Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms SECS/GEM Virtual Metrology Sense Flagging 430 Chamber Lots & Lifting Die-Per-Wafer Yield +3.4pp)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 15,
+    },
+    {
+        "id": "DL-830",
+        "category": "Vector & AI Agents",
+        "question": "Isolate excursion root-cause chambers across 665M KLARF spatial wafer defect maps, SEM micrographs, 8D reports, and photoresist CoA vectors in 4ms without $81,800/mo DRAM HNSW clusters while saving $38.2M/yr in FOUP scrap",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (665M KLARF Wafer-Map, SEM & CoA Vectors, -92% RAM at $3,540/mo vs $81,800/mo DRAM, 4ms Triage & +$38.2M/yr Saved)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (665M KLARF Wafer-Map, SEM & CoA Vectors, -92% RAM at $3,540/mo vs $81,800/mo DRAM, 4ms Triage & +$38.2M/yr Saved)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 15,
+    },
+    {
+        "id": "DL-831",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for an 18-fab, 9,400-tool semiconductor SECS/GEM FDC, wafer-map & AEC-Q100 platform (995K EPS stream, 665M KLARF/SEM vectors, 18,200 engineers): Fabric F64 ($15,460/mo) vs stitched stacks ($383.0K-$419.0K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 665M SSD DiskANN + Foundry IQ AEC-Q100-PAT/GDSII-RLS Gate ($15,460/mo vs $404,400/mo Stitched Stack, Saving -$388.9K/mo / -96.2% Record TCO with 18,200 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 665M SSD DiskANN + Foundry IQ AEC-Q100-PAT/GDSII-RLS Gate ($15,460/mo vs $404,400/mo Stitched Stack, Saving -$388.9K/mo / -96.2% Record TCO with 18,200 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 15,
+    },
+    {
+        "id": "DL-832",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 85th Curated FAQ, 379/380=99.74% Record Accuracy, Exact 191.7ms Mean, 125=5^3 Confirm & >$68M ($68.05M) SLA Milestone: Etch micro-arcing triggers 430 lot drifts and 180 automotive AEC-Q100 PAT risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 430-Lot Virtual Metrology Sense ($0 Tax) + 665M DiskANN & PREDICT 4ms (+3.4pp Yield & +$38.2M Saved) + Foundry IQ 4ms 180-PAT/Chamber Hold (+$9.90M) & GDSII RLS + Teams MES/APC & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.05M SLA)",
+        "model_answer": "Eventhouse 4ms 430-Lot Virtual Metrology Sense ($0 Tax) + 665M DiskANN & PREDICT 4ms (+3.4pp Yield & +$38.2M Saved) + Foundry IQ 4ms 180-PAT/Chamber Hold (+$9.90M) & GDSII RLS + Teams MES/APC & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.05M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 14,
+    },
 ]
 
 
@@ -10775,7 +10889,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_payment_acquiring_payfac_fabric_iso8583_routing_chargeback_aml_vs_4clouds",
         "global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds",
         "global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds",
-        "global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds"
+        "global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds",
+        "global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()

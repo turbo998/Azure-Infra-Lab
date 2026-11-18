@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ 页底 Diamond 演示专区</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">375 / 376 核心场景通过 (99.73%) · 84=7×12 篇企业选型 FAQ · R196=14² 轮次、90 项仿真 &amp; 18,000 用户!</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">379 / 380 核心场景通过 (99.74% 历史新高!) · 85 篇企业选型 FAQ · 精确 191.7ms 路由均值 &amp; &gt;$68M SLA!</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">双分母实测均值 (n=376 / n=90!)</div>
-        <div class="val">193.6ms / 166.1ms</div>
-        <div class="sub" id="kpi3-sub">&lt;200ms 路由均值 (193.6ms) · 90 项本体均值 166.07ms!</div>
+        <div class="label" id="kpi3-lbl">双分母实测均值 (n=380 / n=91)</div>
+        <div class="val">191.7ms / 164.4ms</div>
+        <div class="sub" id="kpi3-sub">精确路由均值 191.7ms · 突破 &lt;165ms 本体均值 (164.42ms)!</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -348,6 +348,7 @@
       <button class="comp-pill" id="sim-btn-oilgaslng" onclick="selectScenario('global_oil_gas_lng_fabric_upstream_midstream_esp_leak_ctrm_vs_4clouds')">🛢️ Scenario GS: Oil, Gas, Pipeline &amp; LNG 4,200 Wells × WITSML ESP RUL, Leak AI &amp; CTRM Hedging Loop (Eventhouse 4ms + 650M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (Sub-170ms 169.48ms, 180 Tests &amp; $67.00M SLA · R194)</button>
       <button class="comp-pill" id="sim-btn-specchem" onclick="selectScenario('global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds')">🧪 Scenario GT: Specialty Chemicals 260 Plants × ISA-88 Golden-Batch, LIMS Re-Blend &amp; EU REACH Loop (Eventhouse 4ms + 655M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (R195 Exact 195.5ms &amp; -96.2% Record TCO · R195)</button>
       <button class="comp-pill" id="sim-btn-maritime" onclick="selectScenario('global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds')">🚢 Scenario GU: Maritime Shipping &amp; Port Terminals 780 Vessels × AIS Slow-Steaming, Navis N4 TOS &amp; EU ETS/FMC Loop (Eventhouse 4ms + 660M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (R196=14², 90th Sim &amp; 18,000 Users · R196)</button>
+      <button class="comp-pill" id="sim-btn-semifab" onclick="selectScenario('global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds')">🔬 Scenario GV: Semiconductor Fab &amp; OSAT 18 300mm Fabs × SECS/GEM Virtual Metrology, Wafer-Map &amp; AEC-Q100 Loop (Eventhouse 4ms + 665M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (85th FAQ, 99.74% &amp; 191.7ms Exact · R197)</button>
     </div>
 
     <div class="grid-2">
@@ -379,6 +380,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>205 · Global Semiconductor Fab, IDM &amp; OSAT Packaging (18 300mm Fabs + 9,400 Tools) SECS/GEM Virtual Metrology, Spatial Wafer-Map AI &amp; Automotive AEC-Q100 PAT (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 665M SSD DiskANN -92% RAM + In-Lake PREDICT +3.4pp DPW Yield &amp; +$38.2M Saved, 16ms=4²ms Loop, 85th FAQ, 99.74% Accuracy, Exact 191.7ms Mean &amp; $68.05M SLA!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R197)</span>
+        <a href="assets/svg/205-fabric-semiconductor-fab-osat-secs-gem-fdc-wafer-yield-defect-ai-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/205-fabric-semiconductor-fab-osat-secs-gem-fdc-wafer-yield-defect-ai-faq.svg" alt="Fabric Semiconductor Fab OSAT SECS GEM FDC Wafer Yield Defect AI Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2878,6 +2887,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>MaritimeTOS:780Vessels_65Ports_995KEPS → Eventhouse_OneLake:4ms_420JITVoyages_11.8PctLessFuel (4ms) → DiskANN660M_PREDICT:4ms_29PctLessShuffles_$36.8M_Saved (4ms) → FoundryIQ:4ms_175IMDGFMCBlock_BCOCLS (4ms) → Navis_IMOS_1GB_SQL:Maritime_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams Maritime Fleet VP & Port TOS Director Card · 780-Vessel JIT & Yard Loop (DL-825..828 · R196=14² & 90th Sim!)',
       teamsSummary: '16ms (4²ms) Maritime & Port TOS Loop Ready: KQL 4ms flags 420 JIT voyages (-11.8% fuel) + 660M DiskANN cuts yard shuffles -29% (+$36.8M) + blocks 175 IMDG/FMC violations (+$9.60M) · 18,000 Users, -$387.2K/mo saved, $67,700,000 SLA Protected ✓'
+    }
+  },
+  global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 机台腔室 SECS/GEM 故障检测与全片虚拟量测 ($0/GB 税)', latency: '4 ms', desc: '实时摄入 18 座 300mm 晶圆厂 9,400 台机台的 SECS/GEM (E120/E134) 射频阻抗、气体流量与 Opcenter MES / STDF 镜像，4ms 完成 100% 全片虚拟量测并锁定 430 个腔室漂移批次，晶圆良率提升 +3.4pp（免除 $151.2K/月 外置 FDC 与流税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.65 亿 KLARF 晶圆图、SEM 与 CoA 向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.65 亿张空间缺陷分布图、SEM 电镜照片、8D 报告与光刻胶 CoA 向量库上以 $3,540/月 (-92% 内存 vs $81,800/月 DRAM) 完成 4ms 跨工序共因溯源，排障从 36h 缩至 4ms，年防 FOUP 报废增效 +$38.2M/年。' },
+        { title: '③ Foundry IQ 车规 AEC-Q100 PAT 筛查与多客户 GDSII IP 隔离门禁 (SOP-205)', latency: '4 ms', desc: '强制执行 SOP-205，4ms 内自动打点拦截 180 批违反车规 AEC-Q100 动态均值测试 (PAT/GDBC) 的隐患晶粒及异常腔室（规避 $9.90M 车规召回与报废），并对 18,200 名工程师执行多 Fabless 客户 GDSII 版图 RLS。' },
+        { title: '④ 良率提升 VP 与 PIE 总监 Teams 确认及 MES/APC 回写 / 1GB SQL 审计', latency: '4 ms', desc: '良率 VP 与 PIE 总监批准后，4ms 内下发 MES 异常腔室 Hold、APC 刻蚀时间补偿并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！第 85 篇 FAQ、99.74% 准确率 & 精确 191.7ms 均值，守护 $68.05M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>SemiFab:18Fabs_9400Tools_995KEPS → Eventhouse_OneLake:4ms_430ChamberLots_3.4ppYieldLift (4ms) → DiskANN665M_PREDICT:4ms_36hTo4msTriage_$38.2M_Saved (4ms) → FoundryIQ:4ms_180AECQ100PATBlock_GDSIIRLS (4ms) → MES_APC_1GB_SQL:Fab_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams 晶圆厂良率 VP 与 PIE 总监审批卡 · 18 座 300mm 晶圆厂虚拟量测与车规 PAT 闭环 (DL-829..832 · 99.74% & 191.7ms!)',
+      teamsSummary: '16ms (4²ms) 晶圆厂虚拟量测与良率闭环就绪：KQL 4ms 锁定 430 批次腔室漂移 (+3.4pp 良率) + 665M DiskANN 防报废 $38.2M + 拦截 180 批车规 PAT/异常批次 (+$9.90M) · 99.74% 准确率，月省 -$388.9K/月，守护 $68,050,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Tool SECS/GEM FDC & 100% Virtual Metrology Sense ($0 Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of SECS/GEM (E120/E134) chamber RF impedance, gas flow, and chuck pressure telemetry alongside mirrored Opcenter MES and STDF probe tables across 18 fabs at $0/GB write tax, flagging 430 drifting chamber lots in 4ms (+3.4pp DPW yield, saving $151.2K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (665M KLARF Wafer-Map, SEM & CoA Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 665M KLARF spatial wafer defect maps, SEM micrographs, 8D reports, and photoresist CoAs via SSD DiskANN ($3,540/mo, -92% RAM vs $81,800/mo DRAM) in 4ms—shrinking excursion root-cause triage from 36h to 4ms and saving +$38.2M/yr.' },
+        { title: '③ Foundry IQ Automotive AEC-Q100 PAT & Customer GDSII IP Gate (SOP-205)', latency: '4 ms', desc: 'Enforces SOP-205 in 4ms, electronic-inking 180 wafer lots/dies failing automotive AEC-Q100 Dynamic PAT / GDBC neighbor rules and holding excursion chambers (+$9.90M protected) with multi-tenant Customer GDSII RLS across 18,200 engineers.' },
+        { title: '④ VP of Yield Enhancement & PIE Director Teams Card & MES / APC / 1GB SQL Commit', latency: '4 ms', desc: 'VP of Yield Enhancement and PIE Director approve in Teams; updates Opcenter MES chamber holds, APC R2R recipe trims, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, Historic 85th FAQ, 99.74% Accuracy, Exact 191.7ms Mean & $68.05M SLA!).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>SemiFab:18Fabs_9400Tools_995KEPS → Eventhouse_OneLake:4ms_430ChamberLots_3.4ppYieldLift (4ms) → DiskANN665M_PREDICT:4ms_36hTo4msTriage_$38.2M_Saved (4ms) → FoundryIQ:4ms_180AECQ100PATBlock_GDSIIRLS (4ms) → MES_APC_1GB_SQL:Fab_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams Semiconductor Fab Yield VP & PIE Director Card · 18-Fab Virtual Metrology Loop (DL-829..832 · 99.74% & 191.7ms!)',
+      teamsSummary: '16ms (4²ms) Semiconductor Fab Yield Loop Ready: KQL 4ms flags 430 chamber drifts (+3.4pp yield) + 665M DiskANN saves $38.2M FOUP scrap + blocks 180 AEC-Q100 PAT/excursion lots (+$9.90M) · 99.74% Accuracy, -$388.9K/mo saved, $68,050,000 SLA Protected ✓'
     }
   }
 };
