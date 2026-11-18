@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-flight_state_ingest,Event Hubs + ADX ACARS/ADS-B/METAR/NOTAM ingest lane,16640,13850,anonymized_reported,anonymized hub telemetry replay
-joint_solver_jobs,CP-SAT aircraft-crew-gate joint solve lane,1320,1090,synthetic,deterministic irops optimization replay
-seat_rebook_transactions,Seat inventory lock + PSS/NDC commit lane,5280,4680,anonymized_reported,anonymized 100k pax burst replay
-omnichannel_rebook_requests,APIM-priority rebooking agent lane,4480,3810,measured,apim queued booking flow replay

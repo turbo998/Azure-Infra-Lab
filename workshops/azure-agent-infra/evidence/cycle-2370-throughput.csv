@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-sandbox_sessions,ACA Hyper-V sessions,842,735,synthetic,deterministic model
-sandbox_sessions,E2B Firecracker VMSS,1584,1397,synthetic,deterministic model
-sandbox_sessions,AKS Kata confidential pool,624,538,synthetic,deterministic model
-policy_guardlane,Unified isolation policy lane,1169,1032,synthetic,deterministic model

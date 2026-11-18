@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced composabilitycustodyproof drift gate,207,215,0.9628,measured,replay logs
-composabilitycustodyproof variance guard,201,208,0.9663,measured,replay logs
-composabilitycustodyproof recovery fence,194,201,0.9652,measured,replay logs

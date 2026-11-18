@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-safety-critical PLC write unauthorized command block,198,200,0.99,measured,deterministic deny replay for unsafe control writes
-cross-cell production recipe drift guard,176,184,0.9565,measured,recipe drift policy replay
-maintenance ticket storm dampening gate,162,170,0.9529,measured,ticket dedupe and cooldown replay

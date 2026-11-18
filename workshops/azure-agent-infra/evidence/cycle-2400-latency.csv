@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-durable_saga_outbox_target,Durable saga + transactional outbox target,774,1386,0.0,measured,staging replay
-saga_without_outbox,Saga without transactional outbox,912,1612,16.3,anonymized_reported,official+reported
-outbox_without_saga,Outbox without saga compensation,1018,1745,25.9,measured,staging replay
-legacy_callback_baseline,Legacy callback baseline,1494,2488,79.5,anonymized_reported,reported baseline

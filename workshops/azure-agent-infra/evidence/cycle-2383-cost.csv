@@ -1,5 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-Front Door + APIM failover lane,4.91,344,20,0.00186,0.00635,synthetic,deterministic cost model
-PTU spillover lane,5.44,327,20,0.00198,0.00711,synthetic,deterministic cost model
-Cosmos conflict merge lane,4.57,366,20,0.00175,0.00588,synthetic,deterministic cost model
-DR guard lane,4.83,352,20,0.00182,0.00612,synthetic,deterministic cost model

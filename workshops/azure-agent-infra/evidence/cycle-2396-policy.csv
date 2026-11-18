@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-multi-hop answer grounding fidelity,238,246,0.9675,measured,replay logs
-incremental graph mutation consistency,234,246,0.9512,measured,replay logs
-index-token break-even optimization precision,231,246,0.939,measured,replay logs

@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-deterministic_firewall_target,Target path,13480,12840,synthetic,deterministic model
-gateway_only_policy,Gateway-only,14190,13620,synthetic,deterministic model
-admission_only_policy,Admission-only,12320,11740,synthetic,deterministic model
-legacy_coarse_rbac,Legacy baseline,8810,8410,synthetic,deterministic model

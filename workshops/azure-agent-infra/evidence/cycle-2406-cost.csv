@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-GB200 target,790.2,14860,53.2,synthetic,deterministic finops model
-H200 partial locality,762.4,12340,61.8,synthetic,deterministic finops model
-H100 no pinning,674.2,9050,74.5,synthetic,deterministic finops model
-Non-MoE baseline,552.5,6180,89.4,synthetic,deterministic finops model

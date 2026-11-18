@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-untrusted code escape-risk block,219,227,0.9648,measured,replay logs
-egress deny-list isolation consistency,211,219,0.9635,measured,replay logs
-confidential attestation continuity fence,203,211,0.9621,measured,replay logs

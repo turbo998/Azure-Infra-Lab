@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-attestation chain integrity fidelity,226,233,0.9699,measured,replay logs
-secure key release custody precision,224,233,0.9614,measured,replay logs
-confidential-overhead budget guard,219,233,0.9399,measured,replay logs

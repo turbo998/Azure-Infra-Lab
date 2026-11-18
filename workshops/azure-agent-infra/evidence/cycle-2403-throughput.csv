@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-dspm_ledger_defender_target,Target path,1288,1186,synthetic,deterministic model
-dspm_tokenization_only,DSPM+tokenization path,1396,1294,synthetic,deterministic model
-ledger_only_path,Ledger-only path,1302,1211,synthetic,deterministic model
-legacy_audit_log_baseline,Legacy baseline,832,756,synthetic,deterministic model

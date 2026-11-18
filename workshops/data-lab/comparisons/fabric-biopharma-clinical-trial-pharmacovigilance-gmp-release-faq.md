@@ -13,7 +13,7 @@
 | :--- | :--- | :--- | :--- |
 | **大中型创新药企、CRO 临床运营、药物警戒（PV）与 CDMO 质量放行主力场景**（管理 **10 项至 180+ 项临床试验**、**2,200 家临床中心**、**13,150 名 CRA/PV 医生/QA 放行人员**，需打通 FHIR/OMOP 临床数据 + DCT 可穿戴流 + E2B(R3) 不良事件编码 + eBR 批次放行） | 🏆 **Microsoft Fabric (`Healthcare Data Solutions (HDS)` + `Eventhouse KQL + Activator` + `AI Functions ai.extract` + `Cosmos DB 544M SSD DiskANN` + `Foundry IQ`)** | • **开箱即用 FHIR/OMOP 转换 (`$23/TB`) + ePRO 流 `$0/GB` 写入税**：免除专有医疗 API 按容量高额抽成；<br>• **5.44 亿 (`544M`) 入排标准/MedDRA/批记录向量省 `92%` 内存**：SSD DiskANN 仅需 `$2,980/月`（对比 `4.04TB` 全内存集群 `$68,200/月`）；<br>• **`22ms` (`6+5+5+6` 回文对称!) 闭环 + 省 `95.9%` TCO**：`13,150` 名临床与 QA 人员 `$0` Viewer 席位费，月总成本 `$14.6K` vs `$354.0K/月`（**月省 `$339.4K`！**）。 | 规避双盲临床试验意外破盲导致数亿美元试验作废、4.04TB 全内存向量天价账单、SUSAR 严重不良事件逾期漏报被 FDA 警告以及万名临床人员 BI 席位税。 |
 | **已深度使用 Veeva Vault Clinical/Safety、Medidata Rave 或 Databricks 基因组学管线** | 🔄 **混合零拷贝架构（保留 `Veeva / Medidata / Databricks` + `OneLake Shortcut / Mirroring` 零拷贝挂载至 `Fabric` 临床招募与药物警戒层）** | • 生物统计与临床团队保留既有 EDC 录入与生信工具；<br>• 试验进度、不良事件与冷链批记录通过 OneLake 零拷贝对齐，由 Fabric HDS 与 Direct Lake 赋能实时安全性监测与免席位费看板。 | 避免替换已通过 GxP 验证的 EDC 系统，同时消除 Fivetran 搬运税与万席报表扩容费。 |
-| **生物药无菌灌装车间、冻干机房与临床中心本地隐私驻留（GMP & Site Edge）** | 🔌 **Azure Local Disconnected Operations (`ALDO`) + 车间 MES/eBR 边缘节点 + OneLake 增量同步** | • 外网中断时本地完成无菌灌装参数签批与患者原始病历脱敏，恢复后同步总部 OneLake。 | 规避网络波动导致数千万美元生物药批次放行停摆。 |
+| **生物药无菌灌装车间、无菌制剂冷链机房与临床中心本地隐私驻留（GMP & Site Edge）** | 🔌 **Azure Local Disconnected Operations (`ALDO`) + 车间 MES/eBR 边缘节点 + OneLake 增量同步** | • 外网中断时本地完成无菌灌装参数签批与患者原始病历脱敏，恢复后同步总部 OneLake。 | 规避网络波动导致数千万美元生物药批次放行停摆。 |
 
 ![生物医药临床试验DCT、药物警戒PV与CDMO批次放行选型架构图](../assets/svg/177-fabric-biopharma-clinical-trial-pharmacovigilance-gmp-release-faq.svg)
 

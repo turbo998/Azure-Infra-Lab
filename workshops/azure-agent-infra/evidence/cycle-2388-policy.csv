@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-offline eval gate fidelity,228,236,0.9661,measured,replay logs
-adversarial red-team intercept coverage,223,236,0.9449,measured,replay logs
-online rollback trigger precision,221,236,0.9364,measured,replay logs

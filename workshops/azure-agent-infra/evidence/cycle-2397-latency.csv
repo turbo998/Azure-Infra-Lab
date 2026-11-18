@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_prompt_only,source_label,source_ref
-slora_hotswap_path,vLLM S-LoRA hot-swap path,118,226,-35.6,measured,staging replay
-lustre_warm_mount_path,Managed Lustre assisted warm-mount path,152,298,-15.1,anonymized_reported,official+reported
-prompt_only_frontier_baseline,Prompt-only frontier baseline,181,351,0.0,measured,staging replay
-dedicated_model_per_tenant_baseline,Dedicated model per tenant baseline,427,910,159.3,anonymized_reported,reported baseline

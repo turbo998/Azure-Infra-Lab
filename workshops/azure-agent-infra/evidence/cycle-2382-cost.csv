@@ -1,5 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-Registry attestation lane,4.75,349,20,0.00181,0.00614,synthetic,deterministic cost model
-OPA sidecar lane,4.48,371,20,0.00172,0.00573,synthetic,deterministic cost model
-HSM rotation lane,5.06,332,20,0.00194,0.00689,synthetic,deterministic cost model
-Custody guard lane,4.69,356,20,0.00179,0.00602,synthetic,deterministic cost model

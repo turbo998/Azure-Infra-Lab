@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-legacy plaintext cross-border lane,1.0,1000,1.0,anonymized_reported,legacy model
-policy-gated signed exchange,0.72,1000,0.72,synthetic,sovereign exchange model
-confidential lane with HSM signing,0.79,1000,0.79,synthetic,confidential compute model
-federated audit replay integrated,0.81,1000,0.81,measured,audit replay suite

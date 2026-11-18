@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-durable_checkpoint_lane,Durable checkpoint lane,978,862,synthetic,deterministic model
-redis_hot_lane,Redis hot context lane,1492,1368,synthetic,deterministic model
-hybrid_lane,Hybrid restore lane,1226,1098,synthetic,deterministic model
-compensation_lane,Compensation handoff lane,906,793,synthetic,deterministic model

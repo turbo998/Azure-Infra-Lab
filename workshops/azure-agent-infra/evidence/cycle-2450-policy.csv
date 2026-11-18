@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-phi-redaction-policy-violation saturation gate,172,184,0.9348,measured,clinical-phi-residency-fence mismatch replay + deterministic verification
-clinical-phi-residency-fence fence integrity guard,161,168,0.9583,measured,clinical-phi-residency-fence integrity logs
-tenant-scope clinical-phi-residency-fence authorization fence,154,161,0.9565,measured,tenant clinical-phi-residency-fence fairness replay logs

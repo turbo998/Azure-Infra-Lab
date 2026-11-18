@@ -1,5 +1,0 @@
-path,compute_hour_usd,units_per_hour,usd_per_10k_pages,source_label,source_ref
-Partitioned layout path,5.02,702,71.52,synthetic,deterministic finops model
-Diagram ingestion path,5.44,648,83.95,synthetic,deterministic finops model
-Video alignment path,6.11,593,103.04,synthetic,deterministic finops model
-Non-partitioned baseline,4.86,452,107.52,synthetic,deterministic finops model

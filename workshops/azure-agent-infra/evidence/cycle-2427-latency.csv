@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-full_geotiff_ingestion,Full-scene GeoTIFF download path,2410,5230,0.0,anonymized_reported,ingestion baseline traces
-cog_range_window_read,COG range window read path,190,410,0.0,measured,tile read replay
-postgis_h3_spatial_join,PostGIS plus H3 join execution,78,156,0.0,measured,query benchmark suite
-weather_reroute_solver,OR-Tools reroute solve latency,640,1220,6.2,synthetic,reroute simulation

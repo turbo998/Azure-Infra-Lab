@@ -1,5 +1,0 @@
-path,compute_hour_usd,sessions_per_hour,usd_per_session,source_label,source_ref
-Edge local path,4.37,672,0.0065,synthetic,deterministic finops model
-Store-forward replay path,4.82,594,0.00811,synthetic,deterministic finops model
-Hybrid escalation path,5.61,523,0.01073,synthetic,deterministic finops model
-Cloud-dependent baseline,5.28,481,0.01098,synthetic,deterministic finops model

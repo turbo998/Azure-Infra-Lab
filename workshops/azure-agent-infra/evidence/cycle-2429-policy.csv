@@ -1,5 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-rto within slo recovery,946,1000,0.946,measured,recovery compliance suite
-rpo within budget,928,1000,0.928,anonymized_reported,state replay verification
-policy drift blocked,987,1000,0.987,measured,policy lineage suite
-failback stability window pass,959,1000,0.959,synthetic,failback stability simulation

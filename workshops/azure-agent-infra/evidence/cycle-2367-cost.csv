@@ -1,5 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-APIM Premium v2 + regional pool,6.12,498,20,0.00116,0.00526,synthetic,deterministic cost model
-ACA Dynamic Sessions,2.85,146,20,0.00108,0.00759,synthetic,deterministic cost model
-AKS Kata isolation pool,3.21,193,20,0.00155,0.00709,synthetic,deterministic cost model
-Wasm control-worker lane,1.2,314,20,0.00046,0.00173,synthetic,deterministic cost model

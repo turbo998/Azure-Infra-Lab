@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-policy_checks_per_second,residency policy lane,2310,2140,measured,policy load test
-signed_artifacts_per_second,signature exchange lane,1480,1360,synthetic,signing simulation
-cross_border_requests_per_second,partner federation lane,820,760,anonymized_reported,federation replay
-audit_replay_batches_per_hour,audit lineage validation,420,390,measured,audit suite

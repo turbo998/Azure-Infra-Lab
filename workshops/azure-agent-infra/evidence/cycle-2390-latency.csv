@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_cloud_baseline,source_label,source_ref
-edge_local_tool_exec,Azure Local edge tool execution path,22,47,-64.3,measured,staging replay
-store_forward_sync_path,Store-and-forward sync replay path,138,343,-18.5,anonymized_reported,official+reported
-hybrid_escalation_path,APIM hybrid cloud escalation path,209,412,-2.7,measured,staging replay
-cloud_dependent_baseline,Cloud-dependent baseline path,436,926,0.0,anonymized_reported,reported baseline

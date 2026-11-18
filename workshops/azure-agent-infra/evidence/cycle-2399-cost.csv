@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Foundry+ACA+Durable target path,9.03,1247,7.24,synthetic,deterministic finops model
-Foundry+ACA transition path,9.22,1137,8.11,synthetic,deterministic finops model
-Shadow dual-run path,8.81,907,9.72,synthetic,deterministic finops model
-Legacy multi-cloud baseline,8.62,721,11.96,synthetic,deterministic finops model

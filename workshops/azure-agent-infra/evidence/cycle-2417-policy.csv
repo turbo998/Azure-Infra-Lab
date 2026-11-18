@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unsigned tampered mcp block,995,1000,0.995,measured,admission deny logs
-rugpull exposure reduction,932,1000,0.932,measured,runtime package exposure model
-supply chain guardrail pass,982,1000,0.982,measured,promotion guardrail suite

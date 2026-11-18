@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-quota-storm degradation fidelity,234,242,0.9669,measured,replay logs
-regional-latency resilience consistency,230,242,0.9504,measured,replay logs
-duplicate-sideeffect prevention precision,227,242,0.938,measured,replay logs

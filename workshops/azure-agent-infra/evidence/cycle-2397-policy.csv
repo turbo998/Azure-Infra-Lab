@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-adapter signature and tenancy guard,204,210,0.9714,measured,replay logs
-hot-swap lifecycle consistency,201,210,0.9571,measured,replay logs
-cross-tenant adapter leakage prevention,197,210,0.9381,measured,replay logs

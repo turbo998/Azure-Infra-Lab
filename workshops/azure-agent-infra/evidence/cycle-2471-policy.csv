@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-acr-spegel-overlaybd-coldstart-guard-violation saturation gate,172,184,0.9348,measured,acr-spegel-overlaybd-coldstart-guard-fence mismatch replay + deterministic verification
-acr-spegel-overlaybd-coldstart-guard-fence fence integrity guard,161,168,0.9583,measured,acr-spegel-overlaybd-coldstart-guard-fence integrity logs
-tenant-scope acr-spegel-overlaybd-coldstart-guard-fence authorization fence,154,161,0.9565,measured,tenant acr-spegel-overlaybd-coldstart-guard-fence fairness replay logs

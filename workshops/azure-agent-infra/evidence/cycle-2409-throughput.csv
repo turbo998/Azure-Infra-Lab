@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-full_bcdr_target,Full BCDR target,14600000,13800000,synthetic,modeled index rebuild capacity
-pitr_alias_no_cleanroom,PITR + alias no clean-room,15900000,15100000,synthetic,modeled index rebuild capacity
-immutable_only_periodic,Immutable-only periodic restore,8400000,7900000,synthetic,modeled index rebuild capacity
-legacy_backup_baseline,Legacy baseline,2900000,2600000,anonymized_reported,reported baseline

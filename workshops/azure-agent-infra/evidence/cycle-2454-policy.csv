@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-audit-gate-policy-violation saturation gate,172,184,0.9348,measured,eligibility-control-zone-fence mismatch replay + deterministic verification
-eligibility-control-zone-fence fence integrity guard,161,168,0.9583,measured,eligibility-control-zone-fence integrity logs
-tenant-scope eligibility-control-zone-fence authorization fence,154,161,0.9565,measured,tenant eligibility-control-zone-fence fairness replay logs

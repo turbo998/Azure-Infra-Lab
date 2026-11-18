@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-delta_docs_per_min,Event-driven delta indexing lane,3120,2670,anonymized_reported,delta indexing replay batch
-nli_contradiction_pairs_per_min,NLI + graph contradiction detector lane,1240,1015,synthetic,deterministic NLI pair-check profile
-acl_revoke_events_per_min,ACL revoke and tombstone purge lane,1880,1610,anonymized_reported,acl revoke stress-replay traces
-owner_card_actions_per_min,Owner attestation / quarantine workflow lane,460,380,anonymized_reported,teams adaptive card completion replay

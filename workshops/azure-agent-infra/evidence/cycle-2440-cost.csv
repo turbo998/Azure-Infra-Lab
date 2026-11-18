@@ -1,4 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,overhead_usd,source_label,session_minutes,usd_per_session,source_ref
-legacy sequential OCC manual recovery,6.12,102,0.0074,synthetic,20,0.0274,round_1035_cycle_2440 deterministic cost model
-pure LLM advisory without deterministic verifier,5.36,118,0.0066,synthetic,20,0.02174,round_1035_cycle_2440 deterministic cost model
-hybrid agent + CP-SAT deterministic recovery,5.84,144,0.0061,synthetic,20,0.01962,round_1035_cycle_2440 deterministic cost model

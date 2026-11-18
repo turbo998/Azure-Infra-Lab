@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Target path,10.25,1186,8.64,synthetic,deterministic finops model
-DSPM+tokenization path,9.29,1294,7.18,synthetic,deterministic finops model
-Ledger-only path,9.37,1211,7.74,synthetic,deterministic finops model
-Legacy baseline,8.56,756,11.32,synthetic,deterministic finops model

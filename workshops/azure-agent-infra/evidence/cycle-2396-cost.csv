@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Dynamic community path,5.06,714,6.39,synthetic,deterministic finops model
-Temporal mutation path,5.38,667,7.92,synthetic,deterministic finops model
-Hybrid vector-graph path,5.81,619,9.39,synthetic,deterministic finops model
-Full rebuild baseline,4.97,432,11.5,synthetic,deterministic finops model

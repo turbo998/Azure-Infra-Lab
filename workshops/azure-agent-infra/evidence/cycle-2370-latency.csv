@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-cold_start,ACA Dynamic Sessions (Hyper-V),238,401,anonymized_reported,official+reported
-cold_start,E2B Firecracker on VMSS,92,151,anonymized_reported,release+reported
-cold_start,AKS Kata Confidential Containers,914,1398,anonymized_reported,reported
-warm_resume,Prewarmed snapshot restore,58,94,synthetic,deterministic model

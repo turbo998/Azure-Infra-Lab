@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-ISO 26262 safety-domain write-path firewall,200,200,1.0,measured,deterministic deny-all test for ADAS/powertrain command path
-cross-domain CAN-FD bridge unauthorized command block,191,197,0.9695,measured,gateway isolation replay logs
-MQTT replay and stale-session token rejection,176,183,0.9617,measured,session-expiry/backpressure policy replay

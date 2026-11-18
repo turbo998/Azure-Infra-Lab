@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-webhook_to_delta_sync,Graph/SharePoint/Confluence webhook -> delta chunk ingest,18400,43100,anonymized_reported,enterprise corpus replay (anonymized) cycle-2438
-acl_tombstone_purge,ACL revoke -> tombstone purge from index,22700,48700,anonymized_reported,acl revoke replay with hard delete propagation
-contradiction_sweep_job,Nightly contradiction graph-sweeper (ACA Job),920,1660,synthetic,deterministic contradiction sweep benchmark profile
-owner_attestation_turnaround,Teams adaptive-card owner attestation loop,35800,74200,anonymized_reported,owner SLA audit replay in regulated tenant

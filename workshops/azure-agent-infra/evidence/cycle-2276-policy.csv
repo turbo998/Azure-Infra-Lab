@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced determinism drift gate,178,186,0.957,measured,replay logs
-determinism variance guard,171,178,0.9607,measured,replay logs
-determinism recovery fence,165,172,0.9593,measured,replay logs

@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-alarm_events_correlated_per_second,adx correlator throughput,26400,24100,measured,correlator benchmark
-candidate_configs_verified_per_hour,digital twin verification throughput,1880,1710,synthetic,preflight model
-canary_rings_processed_per_hour,ring rollout throughput,740,690,anonymized_reported,rollout sample
-slice_sla_evaluations_per_hour,sla assurance lane,3120,2860,measured,sla verifier benchmark

@@ -1,4 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-legacy rule-only dispatch baseline,5.02,152,20,0.0062,0.01721,synthetic,round_1032_cycle_2437 deterministic cost model
-cloud VPP advisory + AC-OPF gate,4.66,188,20,0.0047,0.01296,synthetic,round_1032_cycle_2437 deterministic cost model
-cloud VPP + strict NERC-CIP boundary controls,4.91,182,20,0.0051,0.01409,synthetic,round_1032_cycle_2437 deterministic cost model

@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Full-scene ingest baseline,1.0,1000,1.0,anonymized_reported,baseline model
-Windowed COG reads only,0.42,1000,0.42,synthetic,window model
-Windowed plus postgis h3,0.36,1000,0.36,synthetic,spatial model
-Weather reroute integrated,0.39,1000,0.39,synthetic,routing model

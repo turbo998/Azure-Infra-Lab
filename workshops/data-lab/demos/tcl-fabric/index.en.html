@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCL Global Channel IQ × Microsoft Fabric — Overseas Omnichannel Command Cockpit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="diamond-quickbar">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+      <strong style="color:#f8fafc;">💎 DIAMOND ENTERPRISE DEMO SUITE</strong>
+      <a href="../diamond-hub.en.html">← Diamond Demo Hub</a>
+      <a href="index.en.html" class="qb-active">📺 TCL × Fabric 6-Act Cockpit</a>
+      <a href="playbook.en.html">📖 SA Dual-Screen Playbook</a>
+      <a href="../databricks-fabric/index.en.html">🛒 Zava × Databricks &amp; Fabric</a>
+      <a href="../databricks-fabric/battlecard.en.html">⚔️ Databricks vs Fabric Battlecard</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <a href="../../index.en.html">🏠 Back to Data Lab</a>
+      <a href="index.html">🌐 中文版</a>
+    </div>
+  </div>
+
+  <!-- Top Executive Header -->
+  <header class="top-header">
+    <div class="brand-cluster">
+      <div class="tcl-logo-badge">TCL</div>
+      <div class="brand-titles">
+        <h1>
+          Global Channel IQ · Overseas Multi-Tier Channel Cockpit
+          <span class="fabric-badge" id="liveModeBadge">Microsoft Fabric Sandbox Ready</span>
+        </h1>
+        <div class="brand-sub">
+          Sanitized Diamond Reference Architecture · Workspace: <strong id="hdrWorkspace">TCL_Global_Channel_IQ</strong> · Capacity: <strong>fc-tcl-channel-iq-demo (F8)</strong> · Snapshot: <strong>Black Friday Peak</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <div class="engine-pills" id="engineStatusPills">
+        <span class="engine-pill"><span class="dot"></span> DirectLake DAX</span>
+        <span class="engine-pill"><span class="dot"></span> Eventhouse KQL</span>
+        <span class="engine-pill"><span class="dot"></span> Ontology Graph</span>
+      </div>
+      <button class="btn btn-primary" id="btnLiveSync" title="实时向 Diamond 云端发起 DirectLake DAX + Eventhouse KQL + Fabric API 查询">
+        ⚡ Sync Fabric Engines
+      </button>
+      <button class="btn" id="btnToggleCue" title="显示或隐藏每幕高管讲解提词器">
+        🎙️ Talk Track: ON
+      </button>
+      <button class="btn" id="btnOpenDrawer" title="查看 H5 与 Microsoft Fabric 后台的真实 REST / DAX / KQL 通信报文">
+        📡 API Telemetry
+      </button>
+      <a class="btn btn-tcl" id="btnOpenFabricPortal" href="playbook.en.html">
+        📖 Open SA Playbook ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- 6-Act Interactive Demo Navigation -->
+  <nav class="act-nav" id="actNav">
+    <button class="act-tab active" data-tab="tab-overview">
+      <span class="act-step">Act 1 · Executive Overview</span>
+      <span class="act-title">🌍 Global Sell-In / Sell-Out & Risks</span>
+    </button>
+    <button class="act-tab" data-tab="tab-onelake">
+      <span class="act-step">Act 2 · OneLake Zero-Copy</span>
+      <span class="act-title">🏛️ Cross-Domain Shortcuts & Lakehouse</span>
+    </button>
+    <button class="act-tab" data-tab="tab-realtime">
+      <span class="act-step">Act 3 · Real-Time Intelligence</span>
+      <span class="act-title">⚡ POS Surge, Port Delay & KQL Pairing</span>
+    </button>
+    <button class="act-tab" data-tab="tab-ontology">
+      <span class="act-step">Act 4 · Fabric IQ Ontology</span>
+      <span class="act-title">🕸️ Semantic Graph & Margin Guardrails</span>
+    </button>
+    <button class="act-tab" data-tab="tab-agents">
+      <span class="act-step">Act 5 · Dual Fabric Agents</span>
+      <span class="act-title">🤖 Root-Cause Q&A & Pipeline Dispatch</span>
+    </button>
+    <button class="act-tab" data-tab="tab-lab">
+      <span class="act-step">Act 6 · Live Query Lab</span>
+      <span class="act-title">🔬 Interactive DAX / KQL Runner</span>
+    </button>
+  </nav>
+
+  <!-- Dynamic Presenter Talk-Track Cue Bar -->
+  <section class="presenter-cue" id="presenterCueBanner">
+    <div>
+      <div>
+        <span class="cue-badge" id="cueActLabel">ACT 1 讲解核心</span>
+        <span class="cue-text" id="cueMainScript"></span>
+      </div>
+      <div class="cue-fabric-tip" id="cueFabricAction"></div>
+    </div>
+    <button class="btn btn-sm" id="btnNextAct">Next Act →</button>
+  </section>
+
+  <!-- Main Viewport -->
+  <main class="main-container">
+
+    <!-- =====================================================================
+         TAB 1: EXECUTIVE OVERVIEW (全球渠道与 OMO 经营总览)
+    ====================================================================== -->
+    <section class="tab-pane active" id="tab-overview">
+      <div class="kpi-grid" id="kpiGrid"></div>
+
+      <!-- Three Core Business Scenarios Spotlight -->
+      <div class="grid-3">
+        <div class="crisis-card">
+          <div>
+            <span class="crisis-tag tag-red">🔴 Crisis 1 · Europe Black Friday Stockout + Port Delay</span>
+            <h3 style="margin:8px 0 5px;font-size:15px;">Germany 75"/85" C855 WOS Drops Below 0.86w as Rotterdam Vessel Delays 11 Days</h3>
+            <p style="font-size:12.5px;color:var(--text-secondary);">
+              德国国代 <strong>EuroTech DE01</strong> 与全渠道巨头 <strong>MediaMarkt DE02</strong> 受黑五 OMO 线上引流门店自提拉动流速暴涨 <strong>2.8x</strong>；但搭载 1,850 台旗舰补货的 <code>MSC-AURORA-V42</code> 因鹿特丹港拥堵延误 11 天。同时法国 <strong>AlpenElectro FR01</strong> 同款欧规库存高达 <strong>7.1 周</strong>。
+            </p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px solid var(--border-subtle);">
+            <span class="mono" style="color:#fca5a5;">Stockout Exposure: $1,619,170</span>
+            <button class="btn btn-sm btn-primary" onclick="switchTab('tab-realtime')">Inspect Real-Time Pairing →</button>
+          </div>
+        </div>
+
+        <div class="crisis-card">
+          <div>
+            <span class="crisis-tag tag-amber">🟠 Crisis 2 · Prior-Gen P745 Overstock & Price-Protection Trap</span>
+            <h3 style="margin:8px 0 5px;font-size:15px;">LATAM/MEA WOS > 13w: Cutting MSRP Triggers $766.7K Contractual Liability</h3>
+            <p style="font-size:12.5px;color:var(--text-secondary);">
+              墨西哥 <strong>Andes Hogar MX02 (14.19 周)</strong>、巴西 <strong>BrasilSul BR02 (13.51 周)</strong> 积压大量 2025 款 <code>65P745</code>。因合同含 60 天库存价保条款，若总部官宣降价 15%，需对在库老品全额补差 <strong>$766,697.60</strong>。Ontology 自动切换为 <strong>Q85H 声霸 OMO 捆绑套餐</strong>。
+            </p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px solid var(--border-subtle);">
+            <span class="mono" style="color:#fcd34d;">Net Margin Protected: $582,098</span>
+            <button class="btn btn-sm btn-primary" onclick="switchTab('tab-ontology')">Open Price-Protection Simulator →</button>
+          </div>
+        </div>
+
+        <div class="crisis-card">
+          <div>
+            <span class="crisis-tag tag-purple">🟣 Crisis 3 · Quarter-End Channel Stuffing Rebate Fraud</span>
+            <h3 style="margin:8px 0 5px;font-size:15px;">Vietnam Tier-1 Distributor Hits 104.5% Sell-In with Only 41.2% Sell-Through</h3>
+            <p style="font-size:12.5px;color:var(--text-secondary);">
+              传统 ERP 只看总部批发提货额，越南一级国代 <strong>Mekong Star VN01</strong> 季末突击提货达标申请 <strong>8.5% 最高阶梯返利 ($162,500)</strong>。OneLake 零拷贝打通 POS Sell-Out 后暴露其 WOS 高达 <strong>13.8 周</strong>，Ontology 审计规则自动冻结兑付。
+            </p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px solid var(--border-subtle);">
+            <span class="mono" style="color:#d8b4fe;">Blocked Rebate Payout: $162,500</span>
+            <button class="btn btn-sm btn-primary" onclick="switchTab('tab-ontology')">Inspect Rebate Audit →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Performance & OMO Mix Charts -->
+      <div class="grid-sidebar">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">📊 五大海外经营大区：总部批发 Sell-In vs 全渠道终端实销 Sell-Out 与库存周转极化</div>
+              <div class="card-subtitle">数据来源：DirectLake 语义模型 <code>sm_tcl_global_channel_iq</code>（零导入直连 OneLake Delta 表 + 外部 EDI Shortcut）</div>
+            </div>
+          </div>
+          <div class="svg-wrap" id="regionalChartContainer"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🛍️ OMO 线上+线下全渠道终端实销结构 ($108.95M)</div>
+              <div class="card-subtitle">打通门店 POS、代理商官网 BOPIS（线上下单门店自提）、电商平台与 TCL.com DTC</div>
+            </div>
+          </div>
+          <div id="channelMixContainer"></div>
+        </div>
+      </div>
+
+      <!-- 36 Overseas Distributors & KA Matrix -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">🏢 TCL 全球 36 家核心代理商与全渠道 KA 库存健康度作战矩阵</div>
+            <div class="card-subtitle">融合 SAP Sell-In 授信主数据 + OneLake Shortcut 代理商 EDI 852 最新周快照（平均 WOS 3.23 周背后隐藏严重冷热失衡）</div>
+          </div>
+          <div class="filter-bar">
+            <select id="filterRegion">
+              <option value="ALL">全部大区 (5 大区 / 36 家)</option>
+              <option value="Europe">Europe (欧洲 10 家)</option>
+              <option value="North America">North America (北美 8 家)</option>
+              <option value="LATAM">LATAM (拉美 7 家)</option>
+              <option value="APAC">APAC (亚太 6 家)</option>
+              <option value="MEA">MEA (中东非 5 家)</option>
+            </select>
+            <select id="filterStatus">
+              <option value="ALL">全部健康状态</option>
+              <option value="CRITICAL_STOCKOUT">🔴 断货告急 (WOS &lt; 1.5w)</option>
+              <option value="AGING_OVERSTOCK">🟠 老品积压/价保预警</option>
+              <option value="DONOR_SURPLUS">🟢 欧陆富余可调出仓</option>
+              <option value="HEALTHY">🔵 周转健康</option>
+            </select>
+            <input type="text" class="input-box" id="searchPartner" placeholder="搜索代理商 / 国家 / 城市..." />
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>伙伴编码</th>
+                <th>海外代理商 / KA 名称</th>
+                <th>大区 / 国家城市</th>
+                <th>渠道层级与 OMO 模式</th>
+                <th>数据接入协议</th>
+                <th class="num">在库台数</th>
+                <th class="num">在库货值 (USD)</th>
+                <th class="num">平均 / 最低 WOS</th>
+                <th class="num">90天+库龄</th>
+                <th class="num">价保敞口 (USD)</th>
+                <th>状态与风险 SKU</th>
+              </tr>
+            </thead>
+            <tbody id="partnerTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 2: ONELAKE & ZERO-COPY SHORTCUTS (跨域零拷贝湖仓架构)
+    ====================================================================== -->
+    <section class="tab-pane" id="tab-onelake">
+      <div class="card" style="margin-bottom:16px;">
+        <div class="card-header">
+          <div>
+            <div class="card-title">🏛️ Microsoft Fabric OneLake 跨域零拷贝（Zero-Copy Shortcuts）实景拓扑</div>
+            <div class="card-subtitle">代理商 EDI 852 库存与零售 POS 数据保留在独立隔离域，总部通过 OneLake Shortcuts 秒级挂载，四套引擎共享同一份 Delta Parquet</div>
+          </div>
+          <a class="btn btn-sm btn-primary" id="linkPartnerWs" href="#" target="_blank" rel="noopener">打开外部代理商隔离工作区 ↗</a>
+        </div>
+        <div class="svg-wrap" id="onelakeArchSvg"></div>
+      </div>
+
+      <div class="grid-sidebar">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">☁️ Diamond 云端实景部署的 13 项核心 Fabric 资产清单（带真实 GUID 直达链接）</div>
+              <div class="card-subtitle">点击右侧按钮可在已登录的 Edge 无痕窗口直接打开对应云端资产校验</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>架构分层</th>
+                  <th>Fabric 资产名称</th>
+                  <th>类型</th>
+                  <th>云端 Item GUID</th>
+                  <th>业务职责</th>
+                  <th>门户直达</th>
+                </tr>
+              </thead>
+              <tbody id="fabricItemsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">📦 全量合成业务数据表规模 (14 张表 · 15,319 行)</div>
+              <div class="card-subtitle">涵盖总部 SAP ERP、跨区 EDI 零拷贝表与实时 Eventhouse 流</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>表名 / 流名称</th>
+                  <th>存储位置与接入方式</th>
+                  <th class="num">记录行数</th>
+                </tr>
+              </thead>
+              <tbody id="rowCountTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 3: REAL-TIME INTELLIGENCE (黑五脉冲、港口延误与调拨配对)
+    ====================================================================== -->
+    <section class="tab-pane" id="tab-realtime">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">📈 黑五 OMO 2 小时粒度销量暴涨脉冲 (<code class="mono">PosSellOutRealtime</code>)</div>
+              <div class="card-subtitle">德国 DE01+DE02 因 TikTok/Meta 同城引流门店自提销量飙升至基准 <strong>2.8x</strong>，法国 FR01 平稳</div>
+            </div>
+            <span class="crisis-tag tag-red">Eventhouse KQL 实时流</span>
+          </div>
+          <div class="svg-wrap" id="posSurgeChart"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">📉 <code class="mono">TCL-75C855</code> 动态库存周转天数耗尽曲线 (<code class="mono">ChannelInventoryTelemetry</code>)</div>
+              <div class="card-subtitle">德国 <code>DIST-EU-DE01</code> 跌破 1.5 周红色警戒线至 <strong>0.86 周</strong>，法国 <code>DIST-EU-FR01</code> 维持 7.1 周</div>
+            </div>
+            <span class="crisis-tag tag-blue">Ontology TimeSeries 绑定源</span>
+          </div>
+          <div class="svg-wrap" id="wosDepletionChart"></div>
+        </div>
+      </div>
+
+      <div class="grid-sidebar">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🔄 云端 KQL 函数 <code class="mono">fn_CrossBorderRebalanceCandidates()</code> 欧陆跨国调拨自动配对</div>
+              <div class="card-subtitle">自动筛选同一 SKU、同为 <code>EU_CE_230V</code> 欧规制式、缺货方 WOS &lt; 1.5 周且支援方 WOS &gt; 6.0 周的跨国方案</div>
+            </div>
+            <button class="btn btn-sm btn-primary" id="btnRefreshLiveKql">⚡ Recompute Eventhouse KQL</button>
+          </div>
+          <div id="liveKqlBanner" style="font-size:12px;color:#6ee7b7;margin-bottom:8px;"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>旗舰机型 SKU</th>
+                  <th>缺货告急伙伴 (收货方)</th>
+                  <th class="num">缺货方余量 / WOS</th>
+                  <th>富余支援伙伴 (调出方)</th>
+                  <th class="num">支援方余量 / WOS</th>
+                  <th class="num">建议调拨</th>
+                  <th>一键执行</th>
+                </tr>
+              </thead>
+              <tbody id="rebalancePairsBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🚢 全球海运与港口拥堵实时预警 (<code class="mono">PortAndLogisticsAlerts</code>)</div>
+              <div class="card-subtitle">解释为何不能等总部海运补货：鹿特丹港拥堵指数高达 8.9，货轮延误 11 天</div>
+            </div>
+          </div>
+          <div id="portAlertsList" style="display:flex;flex-direction:column;gap:9px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 4: FABRIC IQ ONTOLOGY (业务本体图谱与价保/返利风控)
+    ====================================================================== -->
+    <section class="tab-pane" id="tab-ontology">
+      <div class="grid-sidebar">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🕸️ <code class="mono">ont_tcl_global_channel_network</code> 交互式业务本体图谱 (10 实体 · 13 关系 · 31 TMDL Parts)</div>
+              <div class="card-subtitle">点击图中任意实体节点，右侧立即检视其 OneLake 静态表映射、<code class="mono">TimeSeries</code> 实时流属性双绑定与业务样本</div>
+            </div>
+            <span class="crisis-tag tag-purple">GraphModel 已自动物化</span>
+          </div>
+          <div class="svg-wrap" id="ontologyGraphContainer"></div>
+        </div>
+
+        <div class="card" id="ontologyInspectorCard">
+          <div class="card-header">
+            <div>
+              <div class="card-title" id="ontNodeTitle">🔍 实体检视器：ChannelPartner</div>
+              <div class="card-subtitle" id="ontNodeSub">点击左侧图谱节点切换检视对象</div>
+            </div>
+          </div>
+          <div id="ontNodeDetails"></div>
+        </div>
+      </div>
+
+      <!-- Three Ontology Business Rules -->
+      <div class="grid-3" id="ontologyRulesGrid"></div>
+
+      <!-- Price Protection Interactive What-If Simulator + Rebate Audit -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🧮 2025 老品 <code class="mono">TCL-65P745/55P745</code> 价保敞口 vs OMO 声霸捆绑精算沙盘</div>
+              <div class="card-subtitle">拖动滑块向客户直观演示：为什么 Ontology 严禁直接砍指导价（MSRP），而推荐 Q85H 声霸捆绑清库</div>
+            </div>
+            <span class="crisis-tag tag-amber">受价保合同保护在库量: 5,680 台</span>
+          </div>
+
+          <div class="slider-group">
+            <label>
+              <span>方案 A（传统粗放清库）：总部直接下调老品官宣指导价 (MSRP Cut %)</span>
+              <strong id="lblMsrpCut" class="mono" style="color:#fca5a5;">15% 降幅</strong>
+            </label>
+            <input type="range" id="rngMsrpCut" min="5" max="25" step="1" value="15" />
+          </div>
+
+          <div class="slider-group">
+            <label>
+              <span>方案 B（Ontology 推荐）：买 P745 搭售 <code class="mono">Q85H</code> 声霸总部联合补贴 (USD/台)</span>
+              <strong id="lblBundleSub" class="mono" style="color:#6ee7b7;">$40 / 台</strong>
+            </label>
+            <input type="range" id="rngBundleSub" min="20" max="85" step="5" value="40" />
+          </div>
+
+          <div class="slider-group">
+            <label>
+              <span>方案 B 叠加：线下门店导购员 OMO 促成奖励 (Store Rep Spiff USD/台)</span>
+              <strong id="lblSpiff" class="mono" style="color:#7dd3fc;">$25 / 台</strong>
+            </label>
+            <input type="range" id="rngSpiff" min="0" max="50" step="5" value="25" />
+          </div>
+
+          <div class="compare-box" id="priceProtectionSimResult"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🛡️ 代理商阶梯返利与价保申请审计台账 (<code class="mono">fact_rebate_claims</code>)</div>
+              <div class="card-subtitle">首行展示越南国代 <code>DIST-APAC-VN01</code> 季末压货冲量被 Ontology Rule 3 自动识别并冻结 <strong>$162,500</strong></div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>申请单号</th>
+                  <th>代理商 / 机型</th>
+                  <th class="num">申请金额</th>
+                  <th class="num">提货达成 / 实销率</th>
+                  <th class="num">最新 WOS</th>
+                  <th>Ontology 审计结论</th>
+                </tr>
+              </thead>
+              <tbody id="rebateClaimsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 5: FABRIC IQ AGENTS & CLOSED-LOOP EXECUTION (双智能体与闭环调拨)
+    ====================================================================== -->
+    <section class="tab-pane" id="tab-agents">
+      <div class="grid-2">
+        <!-- Left: Data Agent Interactive Q&A -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">💬 <code class="mono">da_tcl_channel_copilot</code> · Fabric Data Agent 自然语言归因台</div>
+              <div class="card-subtitle">点击任一高管预设提问，后台将<strong>实时向 Diamond 云端发送真实 DAX / KQL 查询</strong>并合成决策建议</div>
+            </div>
+            <span class="crisis-tag tag-blue">跨 SQL + KQL 双源</span>
+          </div>
+
+          <div class="agent-presets" id="agentPresetButtons"></div>
+
+          <div class="agent-response-box" id="agentResponseContainer">
+            <div style="color:var(--text-muted);font-size:13px;">
+              👆 请点击上方任一 TCL 高管高频业务问题，体验 Data Agent 跨 OneLake 湖仓与 Eventhouse 实时流的数据穿透归因。
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Operations Agent Closed-Loop Rebalance Dispatcher -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">⚙️ <code class="mono">ops_tcl_autonomous_channel_guard</code> · 跨国调拨闭环审批与云端 Pipeline 触发器</div>
+              <div class="card-subtitle">点击「批准并触发云端 Pipeline」，将真实调用 Fabric Job Scheduler API 运行 <code>pl_tcl_rebalance_orchestrator</code> 回写 OneLake！</div>
+            </div>
+            <span class="crisis-tag tag-green">真实触发云端 DataPipeline</span>
+          </div>
+
+          <div style="background:rgba(15,23,42,0.85);border:1px solid var(--border-subtle);border-radius:10px;padding:13px;margin-bottom:14px;">
+            <div style="font-weight:700;margin-bottom:10px;color:#f8fafc;">🚀 发起 48 小时欧陆跨国调拨指令（回写 <code class="mono">fact_inter_warehouse_transfers</code>）</div>
+            <div class="grid-2" style="margin-bottom:10px;gap:10px;">
+              <div>
+                <label style="font-size:11.5px;color:var(--text-muted);display:block;margin-bottom:4px;">调出富余仓 (Source Donor)</label>
+                <select id="dispSource" style="width:100%;">
+                  <option value="DIST-EU-FR01">DIST-EU-FR01 · AlpenElectro France (里昂, WOS 7.1w)</option>
+                  <option value="SUB-EU-PL">SUB-EU-PL · TCL Wroclaw EuroHub (波兰制造中心)</option>
+                  <option value="DIST-EU-IT01">DIST-EU-IT01 · Unieuro Mediterraneo (米兰, WOS 6.7w)</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:11.5px;color:var(--text-muted);display:block;margin-bottom:4px;">调入告急仓 (Target Shortage)</label>
+                <select id="dispTarget" style="width:100%;">
+                  <option value="DIST-EU-DE01">DIST-EU-DE01 · EuroTech Germany (法兰克福, WOS 0.86w)</option>
+                  <option value="DIST-EU-DE02">DIST-EU-DE02 · MediaMarktSaturn DE (因戈尔施塔特, WOS 1.04w)</option>
+                  <option value="DIST-EU-NL01">DIST-EU-NL01 · Benelux Vision NL (阿姆斯特丹, WOS 1.14w)</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-2" style="margin-bottom:12px;gap:10px;">
+              <div>
+                <label style="font-size:11.5px;color:var(--text-muted);display:block;margin-bottom:4px;">欧规旗舰 SKU (<code class="mono">EU_CE_230V</code>)</label>
+                <select id="dispSku" style="width:100%;">
+                  <option value="TCL-75C855">TCL-75C855 · 75" C855 QD-Mini LED 4K TV</option>
+                  <option value="TCL-85C855">TCL-85C855 · 85" C855 QD-Mini LED 4K TV</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:11.5px;color:var(--text-muted);display:block;margin-bottom:4px;">紧急陆运调拨数量 (台)</label>
+                <input type="number" class="input-box" id="dispUnits" value="350" min="50" max="800" step="10" style="width:100%;" />
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+              <div id="dispEstimateText" class="mono" style="font-size:12px;color:#6ee7b7;">
+                预计陆运费: $11,900 · 护航黑五营收: $629,650 · 净保毛利: $179,900
+              </div>
+              <button class="btn btn-tcl" id="btnDispatchPipeline">
+                🚀 Approve & Trigger Fabric Pipeline
+              </button>
+            </div>
+            <div id="dispatchStatusBox" style="margin-top:10px;display:none;"></div>
+          </div>
+
+          <div style="font-weight:700;margin-bottom:8px;font-size:13px;">📋 跨仓/跨国调拨执行台账（含 Operations Agent 推荐单与现场触发单）</div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>调拨单号</th>
+                  <th>调出方 → 调入方</th>
+                  <th>机型 / 台数</th>
+                  <th class="num">护航营收 / 净保毛利</th>
+                  <th>当前状态</th>
+                  <th>快捷审批</th>
+                </tr>
+              </thead>
+              <tbody id="transfersTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 6: LIVE ENGINE QUERY LAB (云端 DAX / KQL 实时直查实验室)
+    ====================================================================== -->
+    <section class="tab-pane" id="tab-lab">
+      <div class="grid-sidebar">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🔬 Diamond Fabric 云端引擎实时直查实验室 (Zero-Mock Live Query Runner)</div>
+              <div class="card-subtitle">支持现场向客户证明：页面所有指标均可直接向云端 <code>sm_tcl_global_channel_iq</code> (DAX) 或 <code>kql_tcl_channel_pulse</code> (KQL) 实时发起查询</div>
+            </div>
+          </div>
+
+          <div class="filter-bar" style="margin-bottom:10px;">
+            <select id="labEngineSelect">
+              <option value="dax">DirectLake 语义模型 (DAX executeQueries)</option>
+              <option value="kql">Eventhouse 实时数据库 (Kusto v2 KQL)</option>
+            </select>
+            <select id="labPresetSelect" style="flex:1;"></select>
+            <button class="btn btn-primary" id="btnRunLabQuery">▶ Run DAX / KQL Query</button>
+          </div>
+
+          <textarea id="labQueryInput" rows="8" class="mono" style="width:100%;margin-bottom:12px;"></textarea>
+
+          <div id="labMetaBar" style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;"></div>
+          <div class="table-wrap" id="labResultTableWrap"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">🔐 云端连接拓扑与安全凭证说明</div>
+              <div class="card-subtitle">本 H5 通过本地安全网关代理 Entra ID OAuth2 令牌直连 Fabric REST API</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:12.5px;color:var(--text-secondary);">
+            <div class="sim-panel">
+              <strong style="color:#fff;">1. DirectLake Semantic Model API</strong>
+              <div class="mono" style="margin-top:4px;color:#93c5fd;">POST https://api.powerbi.com/v1.0/myorg/groups/{workspaceId}/datasets/{datasetId}/executeQueries</div>
+              <div style="margin-top:4px;">直接读取 OneLake Delta Parquet 列存，无需传统 Power BI Import 定时刷新。</div>
+            </div>
+            <div class="sim-panel">
+              <strong style="color:#fff;">2. Eventhouse Kusto REST v2 API</strong>
+              <div class="mono" style="margin-top:4px;color:#6ee7b7;">POST https://kusto-tcl-channel-iq-demo.kusto.fabric.microsoft.com/v2/rest/query</div>
+              <div style="margin-top:4px;">毫秒级查询黑五 POS 脉冲流、动态 WOS 遥测与鹿特丹港口拥堵流。</div>
+            </div>
+            <div class="sim-panel">
+              <strong style="color:#fff;">3. Closed-Loop Pipeline Job Scheduler API</strong>
+              <div class="mono" style="margin-top:4px;color:#fda4af;">POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{pipelineId}/jobs/instances?jobType=Pipeline</div>
+              <div style="margin-top:4px;">从业务前端一键触发云端编排管道与 PySpark Notebook，实现「洞察 → 决策 → 回写 OneLake」全闭环。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Right Slide-over Live Fabric Telemetry Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="telemetry-drawer" id="telemetryDrawer">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <h3 style="font-size:16px;">📡 Microsoft Fabric 后台实时通信遥测日志</h3>
+      <button class="btn btn-sm" id="btnCloseDrawer">✕ 关闭</button>
+    </div>
+    <p style="font-size:12.5px;color:var(--text-muted);margin-bottom:14px;">
+      以下展示本 H5 指挥舱与 Microsoft Fabric 演示工作区（<code>TCL_Global_Channel_IQ</code> · 已脱敏沙盘）之间执行的 DAX / KQL / Pipeline 通信报文与耗时摘要：
+    </p>
+    <div id="telemetryLogList" style="display:flex;flex-direction:column;gap:12px;"></div>
+  </aside>
+
+  <!-- Pre-bundled initial snapshot so page renders in <50ms and works offline too -->
+  <script>window.__TCL_LANG__ = "en";</script>
+  <script src="data_bundle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

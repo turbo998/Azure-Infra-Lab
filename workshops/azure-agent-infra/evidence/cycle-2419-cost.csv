@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Rules-only baseline,1.0,1000000,1.0,anonymized_reported,baseline model
-Inline ML + micro-SLM,1.14,1000000,1.14,synthetic,inline model cost
-Dual-speed + async investigation,1.28,1000000,1.28,synthetic,dual-speed cost model
-Dual-speed optimized triage,1.22,1000000,1.22,synthetic,optimization model

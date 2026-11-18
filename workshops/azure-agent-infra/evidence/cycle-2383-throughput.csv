@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-frontdoor_apim_lane,Front Door + APIM lane,1169,1032,synthetic,deterministic model
-ptu_spillover_lane,PTU spillover lane,1088,954,synthetic,deterministic model
-cosmos_merge_lane,Cosmos merge lane,1242,1107,synthetic,deterministic model
-dr_guard_lane,DR guard lane,1016,892,synthetic,deterministic model

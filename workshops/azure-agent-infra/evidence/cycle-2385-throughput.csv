@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-aca_lane,ACA dynamic session lane,1377,1241,synthetic,deterministic model
-aks_pool_lane,AKS Chromium pool lane,1294,1168,synthetic,deterministic model
-proxy_handoff_lane,Proxy + MFA handoff lane,996,878,synthetic,deterministic model
-a11y_first_lane,Accessibility-tree first lane,1422,1289,synthetic,deterministic model

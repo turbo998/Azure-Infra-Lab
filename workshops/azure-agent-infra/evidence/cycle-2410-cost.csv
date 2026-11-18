@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Foundry batch + spillover,360.64,1960000,184.0,synthetic,deterministic finops model
-AKS Kueue spot vLLM,308.79,2190000,141.0,synthetic,deterministic finops model
-ACA jobs blend,288.96,1720000,168.0,synthetic,deterministic finops model
-Legacy fixed workers,220.08,840000,262.0,synthetic,deterministic finops model

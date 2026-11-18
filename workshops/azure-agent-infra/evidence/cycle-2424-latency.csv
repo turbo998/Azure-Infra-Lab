@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-focus_anomaly_detection,FOCUS anomaly scan pipeline,18200,34700,0.0,measured,kql replay suite
-arg_monitor_join,ARG and Monitor join stage,21000,47000,0.0,anonymized_reported,attribution query traces
-whatif_verifier,what-if and plan verifier,51000,92000,0.0,measured,pre-merge verification traces
-pr_open_to_owner_review,PR creation to owner review start,240000,620000,8.9,synthetic,workflow simulation

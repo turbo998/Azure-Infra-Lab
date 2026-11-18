@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-tile_windows_per_minute,Windowed tile requests per minute,18200,17120,measured,tiler throughput bench
-spatial_joins_per_minute,Spatial joins per minute,124000,116200,anonymized_reported,query load sample
-claims_triaged_per_hour,Catastrophe claims triaged per hour,987,921,synthetic,triage model
-reroute_decisions_per_hour,Weather reroute decisions per hour,3120,2890,measured,dispatch replay

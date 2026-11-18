@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced forensiclineageproof drift gate,192,200,0.96,measured,replay logs
-forensiclineageproof variance guard,185,192,0.9635,measured,replay logs
-forensiclineageproof recovery fence,179,186,0.9624,measured,replay logs

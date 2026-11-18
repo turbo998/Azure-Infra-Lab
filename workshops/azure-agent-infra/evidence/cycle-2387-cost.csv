@@ -1,5 +1,0 @@
-path,gpu_hour_usd,sessions_per_gpu_hour,usd_per_session,source_label,source_ref
-NCC H100 confidential lane,8.92,186,0.04796,synthetic,deterministic finops model
-AKS Kata confidential lane,9.41,173,0.05439,synthetic,deterministic finops model
-MAA+SKR attested lane,9.68,167,0.05796,synthetic,deterministic finops model
-Standard ND H100 lane,8.11,201,0.04035,synthetic,deterministic finops model

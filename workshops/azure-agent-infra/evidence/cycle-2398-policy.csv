@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-token scope and ttl guard,233,240,0.9708,measured,replay logs
-runtime isolation policy,236,240,0.9833,measured,replay logs
-egress allowlist conformance,231,240,0.9625,measured,replay logs

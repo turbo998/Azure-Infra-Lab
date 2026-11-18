@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-nsp perimeter policy integrity fence,218,232,0.9397,measured,replay logs
-private-dns resolver lineage guard,214,224,0.9554,measured,replay logs
-firewall fqdn-tls egress governance detector,221,229,0.9651,measured,replay logs

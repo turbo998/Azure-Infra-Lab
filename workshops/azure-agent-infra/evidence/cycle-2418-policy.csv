@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-compliant provisioning under 30 min,964,1000,0.964,measured,provisioning replay logs
-policy non-compliant block,987,1000,0.987,measured,policy deny traces
-orphaned sandbox ttl savings,412,500,0.824,measured,ttl reclaim cost model

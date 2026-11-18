@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-cold_start_or_restore,E2B Firecracker,109,168,anonymized_reported,release+reported
-warm_pool_allocation,ACA Dynamic Sessions,219,346,anonymized_reported,learn+reported
-pod_vm_cold_start,AKS Kata Pod VM,935,1448,anonymized_reported,reported
-component_worker_start,Wasmtime component worker,50,76,synthetic,release-derived model

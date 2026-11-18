@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-policy_checks_per_second,failover and failback policy lane,2180,2010,measured,policy load bench
-replay_commits_per_second,event replay commit lane,1360,1230,anonymized_reported,replay throughput sample
-audit_events_per_second,audit trace lane,1640,1490,measured,audit workload bench
-chaos_rounds_per_day,continuous drill cadence,26,22,synthetic,drill cadence model

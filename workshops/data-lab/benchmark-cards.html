@@ -4,1056 +4,333 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Microsoft Fabric × 四大云数智竞对 (Databricks / Snowflake / GCP / AWS) 7-Card 基准测试报告 (2026-11-08)</title>
+<title>Enterprise Data & AI 架构选型 7-Card 基准测试报告 (Microsoft Fabric × Databricks / Snowflake / GCP / AWS)</title>
 <style>
   :root {
-    --bg: #F8FAFC;
-    --card-bg: #FFFFFF;
-    --dark: #0F172A;
-    --slate: #475569;
-    --border: #E2E8F0;
-    --blue: #2563EB;
-    --blue-soft: #EFF6FF;
-    --green: #059669;
-    --green-soft: #ECFDF5;
-    --amber: #D97706;
-    --amber-soft: #FFFBEB;
-    --red: #DC2626;
-    --red-soft: #FEF2F2;
+    --bg:#F8FAFC; --card:#FFFFFF; --dark:#0F172A; --slate:#475569; --border:#E2E8F0;
+    --blue:#2563EB; --blue-soft:#EFF6FF; --green:#059669; --green-soft:#ECFDF5;
+    --amber:#D97706; --amber-soft:#FFFBEB; --red:#DC2626; --red-soft:#FEF2F2;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: #0B1120;
-    color: var(--dark);
-    padding: 28px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
-  .top-nav {
-    width: 900px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #1E293B;
-    border: 1px solid #334155;
-    border-radius: 12px;
-    padding: 10px 18px;
-    color: #F8FAFC;
-    font-size: 13px;
-  }
-  .top-nav a {
-    color: #60A5FA;
-    text-decoration: none;
-    font-weight: 700;
-    margin-left: 12px;
-  }
-  .card {
-    width: 900px;
-    min-height: 1125px;
-    background: var(--card-bg);
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    padding: 34px 38px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-  }
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--blue);
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
-  }
-  h1, h2 {
-    font-size: 24px;
-    line-height: 1.28;
-    margin: 12px 0 8px;
-    color: var(--dark);
-  }
-  .accent {
-    background: linear-gradient(90deg, #0078D4, #7C3AED);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .sub {
-    font-size: 13.5px;
-    color: var(--slate);
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 10px 0;
-  }
-  .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin: 10px 0;
-  }
-  .panel {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-size: 12.5px;
-    line-height: 1.48;
-  }
-  .panel h3 {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--slate);
-    margin-bottom: 8px;
-  }
-  .dark-code {
-    background: var(--dark);
-    color: #E2E8F0;
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 11.5px;
-    line-height: 1.42;
-    white-space: pre-wrap;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 11.5px;
-  }
-  th, td {
-    border-bottom: 1px solid var(--border);
-    padding: 6.5px 6px;
-    text-align: left;
-    vertical-align: top;
-  }
-  th {
-    font-size: 10.5px;
-    text-transform: uppercase;
-    color: var(--slate);
-    background: var(--bg);
-  }
-  .miss { color: var(--red); font-weight: 700; }
-  .hit { color: var(--green); font-weight: 700; }
-  .pill {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 999px;
-    font-size: 10.5px;
-    font-weight: 700;
-  }
-  .act-auto { background: var(--green-soft); color: var(--green); }
-  .act-confirm { background: var(--amber-soft); color: var(--amber); }
-  .act-human { background: var(--red-soft); color: var(--red); }
-  .badge-type {
-    background: var(--blue-soft);
-    color: var(--blue);
-    padding: 2px 7px;
-    border-radius: 6px;
-    font-size: 10.5px;
-    font-weight: 700;
-    font-family: ui-monospace, monospace;
-  }
-  .bar-row {
-    margin: 8px 0;
-  }
-  .bar-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .bar-track {
-    width: 100%;
-    height: 12px;
-    background: #E2E8F0;
-    border-radius: 999px;
-    overflow: hidden;
-  }
-  .bar-fill-blue {
-    height: 100%;
-    background: #3B82F6;
-    border-radius: 999px;
-  }
-  .bar-fill-gray {
-    height: 100%;
-    background: #CBD5E1;
-    border-radius: 999px;
-  }
-  .footer-callout {
-    background: var(--dark);
-    color: #F8FAFC;
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 12px;
-    line-height: 1.48;
-  }
-  .good-card {
-    background: var(--green-soft);
-    border: 1px solid #A7F3D0;
-    border-radius: 14px;
-    padding: 18px;
-  }
-  .bad-card {
-    background: var(--red-soft);
-    border: 1px solid #FECACA;
-    border-radius: 14px;
-    padding: 18px;
-  }
-  ul { padding-left: 18px; }
-  li { margin-bottom: 6px; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:#0B1120; color:var(--dark); padding:28px 16px; display:flex; flex-direction:column; align-items:center; gap:28px; }
+  .top-nav { width:900px; max-width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#1E293B; border:1px solid #334155; border-radius:12px; padding:10px 18px; color:#F8FAFC; font-size:13px; }
+  .top-nav a { color:#60A5FA; text-decoration:none; font-weight:700; margin-left:12px; }
+  .card { width:900px; max-width:100%; min-height:1125px; background:var(--card); border-radius:20px; border:1px solid var(--border); padding:34px 38px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 20px 45px rgba(0,0,0,0.35); }
+  .card-header { display:flex; justify-content:space-between; align-items:center; font-size:13px; font-weight:700; letter-spacing:0.08em; color:var(--blue); text-transform:uppercase; border-bottom:1px solid var(--border); padding:0 0 12px; }
+  h1, h2 { font-size:24px; line-height:1.3; margin:12px 0 8px; color:var(--dark); }
+  .accent { background:linear-gradient(90deg,#0078D4,#7C3AED); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .sub { font-size:13.5px; color:var(--slate); line-height:1.55; margin-bottom:12px; }
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:10px 0; }
+  .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:10px 0; }
+  .panel { background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:14px 16px; font-size:12.5px; line-height:1.52; }
+  .panel h3 { font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--slate); margin-bottom:8px; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; }
+  .act-auto { background:var(--green-soft); color:var(--green); }
+  .act-confirm { background:var(--amber-soft); color:var(--amber); }
+  .act-human { background:var(--red-soft); color:var(--red); }
+  .ok-pill { color:var(--green); font-weight:700; }
+  .miss-pill { color:var(--red); font-weight:800; background:var(--red-soft); padding:2px 6px; border-radius:6px; }
+  table { width:100%; border-collapse:collapse; font-size:12px; margin:8px 0; }
+  th { background:#F1F5F9; text-align:left; padding:9px 10px; border-bottom:2px solid var(--border); font-size:11px; text-transform:uppercase; color:var(--slate); }
+  td { padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.45; }
+  pre { background:#0F172A; color:#E2E8F0; border-radius:12px; padding:16px 18px; font-size:12px; line-height:1.55; overflow-x:auto; font-family:Consolas,monospace; }
+  .callout-dark { background:#0F172A; color:#E2E8F0; border-radius:12px; padding:14px 18px; font-size:12.5px; line-height:1.55; }
+  .quote-box { background:var(--blue-soft); border-left:4px solid var(--blue); border-radius:10px; padding:12px 16px; font-size:13px; line-height:1.55; margin:8px 0; }
+  .bar-group { margin:12px 0; padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:12px; }
+  .bar-head { display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:8px; gap:8px; flex-wrap:wrap; }
+  .bar-row { display:grid; grid-template-columns:82px 1fr 68px; align-items:center; gap:10px; font-size:12px; margin:5px 0; }
+  .bar-lbl { color:var(--slate); font-weight:600; }
+  .bar-track { background:#E2E8F0; height:14px; border-radius:999px; overflow:hidden; }
+  .bar-opt { background:#3B82F6; height:100%; border-radius:999px; }
+  .bar-base { background:#CBD5E1; height:100%; border-radius:999px; }
+  .fit-good { background:var(--green-soft); border:1.5px solid #6EE7B7; border-radius:14px; padding:18px; font-size:13px; line-height:1.65; }
+  .fit-bad { background:var(--red-soft); border:1.5px solid #FCA5A5; border-radius:14px; padding:18px; font-size:13px; line-height:1.65; }
+  ul { padding-left:18px; }
+  li { margin-bottom:6px; }
 </style>
 </head>
 <body>
-
-<div class="top-nav">
-  <div><strong>Data Lab · 7-Card 4:5 视觉基准报告</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-15-r86`)</div>
-  <div>
-    <a href="index.html">🚀 打开 H5 交互工作台</a>
-    <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.md">🧭 R1: 零拷贝选型 FAQ</a>
-    <a href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.md">⚡ R2: 实时流选型 FAQ</a>
-    <a href="comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.md">🔄 R3: 零ETL镜像 vs CDC FAQ</a>
-    <a href="comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.md">🧊 R4: Iceberg/Delta 互通 FAQ</a>
-    <a href="comparisons/fabric-htap-vector-sql-cosmos-vs-lakebase-unistore-faq.md">🗄️ R5: HTAP &amp; DiskANN FAQ</a>
-    <a href="comparisons/fabric-onelake-purview-obo-governance-vs-4clouds-faq.md">🔐 R6: OBO 安全治理 FAQ</a>
-    <a href="comparisons/fabric-spark-native-gluten-autoscale-vs-photon-snowpark-faq.md">🚀 R7: Spark Gluten/Velox FAQ</a>
-    <a href="comparisons/fabric-data-agents-copilot-vs-genie-cortex-q-faq.md">🤖 R8: Data Agents vs Genie/Cortex FAQ</a>
-    <a href="comparisons/fabric-data-factory-osmos-vs-lakeflow-tasks-composer-faq.md">🛠️ R9: Data Factory &amp; Osmos 自愈 FAQ</a>
-    <a href="comparisons/fabric-capacity-finops-surge-rayfin-vs-4clouds-faq.md">💰 R10: 容量 FinOps &amp; Surge 防挤兑 FAQ</a>
-    <a href="comparisons/fabric-cicd-git-tmdl-pipelines-vs-dabs-snowcli-faq.md">🔄 R11: Git CI/CD &amp; TMDL FAQ</a>
-    <a href="comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.md">🛡️ R12: Private Link &amp; OAP 零信任 FAQ</a>
-    <a href="comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.md">🌐 R13: 跨区 BCDR &amp; CMK FAQ</a>
-    <a href="comparisons/fabric-external-data-sharing-clean-room-vs-4clouds-faq.md">🤝 R14: 外部数据共享 &amp; Clean Room FAQ</a>
-    <a href="comparisons/fabric-warehouse-tsql-vorder-directlake-vs-4clouds-faq.md">🏛️ R15: 云数仓 T-SQL &amp; V-Order FAQ</a>
-    <a href="comparisons/fabric-ai-functions-multimodal-rag-vs-cortex-mosaic-faq.md">🧠 R16: AI Functions &amp; 多模态 RAG FAQ</a>
-    <a href="comparisons/fabric-digital-twin-builder-iot-ot-vs-sitewise-4clouds-faq.md">🏭 R17: 工业数字孪生 &amp; IT/OT FAQ</a>
-    <a href="comparisons/fabric-legacy-dwh-synapse-migration-vs-snowconvert-lakebridge-faq.md">🚀 R18: 传统数仓迁移 FAQ</a>
-    <a href="comparisons/fabric-onelake-catalog-purview-vs-unity-polaris-dataplex-faq.md">📚 R19: 开放目录 &amp; Purview 联邦 FAQ</a>
-    <a href="comparisons/fabric-graph-gql-ontology-vs-spanner-neptune-neo4j-faq.md">🕸️ R20: 原生属性图 &amp; ISO GQL FAQ</a>
-    <a href="comparisons/fabric-activator-reflex-event-automation-vs-snowflake-alerts-4clouds-faq.md">⚡ R21: Activator 实时反射 FAQ</a>
-    <a href="comparisons/fabric-healthcare-fhir-dicom-genomics-vs-healthlake-4clouds-faq.md">🏥 R22: 医疗 HDS 多模态湖仓 FAQ</a>
-    <a href="comparisons/fabric-sustainability-esg-csrd-scope3-vs-4clouds-faq.md">🌱 R23: 可持续发展 ESG &amp; CSRD FAQ</a>
-    <a href="comparisons/fabric-retail-cpg-omnichannel-inventory-agent-vs-4clouds-faq.md">🛒 R24: 零售全渠道 RDS &amp; 门店 Agent FAQ</a>
-    <a href="comparisons/fabric-financial-basel3-frtb-tick-kql-iso20022-vs-4clouds-faq.md">🏦 R25: 金融 FRTB &amp; 高频 Tick KQL FAQ</a>
-    <a href="comparisons/fabric-geospatial-h3-spatiotemporal-fleet-grid-vs-4clouds-faq.md">🌍 R26: 时空地理 H3 &amp; 车队/电网 FAQ</a>
-    <a href="comparisons/fabric-data-science-automl-flaml-mlflow-predict-vs-4clouds-faq.md">🧪 R27: 数据科学 FLAML &amp; 湖内 PREDICT FAQ</a>
-    <a href="comparisons/fabric-observability-opentelemetry-siem-log-analytics-vs-4clouds-faq.md">🔭 R28: 全栈可观测 OTel &amp; 安全 SIEM FAQ</a>
-    <a href="comparisons/fabric-mdm-entity-resolution-golden-record-purview-vs-4clouds-faq.md">🧬 R29: 企业主数据 MDM &amp; 实体解析 FAQ</a>
-    <a href="comparisons/fabric-sap-s4hana-datasphere-acdoca-zero-copy-vs-4clouds-faq.md">🏢 R30: SAP S/4HANA &amp; Datasphere 零拷贝 FAQ</a>
-    <a href="comparisons/fabric-gaming-adtech-liveops-rtb-telemetry-vs-4clouds-faq.md">🎮 R31: 游戏 LiveOps &amp; AdTech RTB FAQ</a>
-    <a href="comparisons/fabric-aerospace-defense-mro-flight-twin-gcchigh-vs-4clouds-faq.md">✈️ R32: 航空 MRO &amp; GCC High 主权云 FAQ</a>
-    <a href="comparisons/fabric-agritech-commodity-planetary-eudr-yield-vs-4clouds-faq.md">🌾 R33: 智慧农业 &amp; 大宗交易 EUDR FAQ</a>
-    <a href="comparisons/fabric-maritime-shipping-ais-port-twin-fueleu-ets-vs-4clouds-faq.md">🚢 R34: 海事航运 AIS &amp; FuelEU 碳税 FAQ</a>
-    <a href="comparisons/fabric-media-ott-streaming-qoe-ssai-royalty-vs-4clouds-faq.md">🎬 R35: 流媒体 OTT CMCD &amp; 版权分账 FAQ</a>
-    <a href="comparisons/fabric-semiconductor-2nm-euv-stdf-wafer-yield-vs-4clouds-faq.md">🔬 R36: 半导体 2nm 良率 &amp; STDF CoWoS FAQ</a>
-    <a href="comparisons/fabric-automotive-sdv-adas-corner-case-unece-r155-vs-4clouds-faq.md">🚗 R37: 智驾 SDV 长尾挖掘 &amp; UNECE R156 FAQ</a>
-    <a href="comparisons/fabric-oil-gas-osdu-witsml-lng-methane-ccus-vs-4clouds-faq.md">🛢️ R38: 能源油气 OSDU 随钻 &amp; CCUS FAQ</a>
-    <a href="comparisons/fabric-battery-bess-cell-formation-eis-passport-vs-4clouds-faq.md">🔋 R39: 动力电池化成 &amp; 储能电池护照 FAQ</a>
-    <a href="comparisons/fabric-leo-satellite-constellation-oisl-debris-beam-vs-4clouds-faq.md">🛰️ R40: 低轨卫星星座 &amp; 碎片避碰波束 FAQ</a>
-    <a href="comparisons/fabric-biopharma-cgmp-bioreactor-raman-cart-ebr-vs-4clouds-faq.md">🧬 R41: 生物医药拉曼 PAT &amp; CAR-T 放行 FAQ</a>
-    <a href="comparisons/fabric-highspeed-rail-etcs-pantograph-bearing-sil4-vs-4clouds-faq.md">🚄 R42: 高铁轴箱 FFT &amp; 移动闭塞探伤 FAQ</a>
-    <a href="comparisons/fabric-autonomous-mining-haul-sag-mill-tailings-vs-4clouds-faq.md">⛏️ R43: 智慧矿山无人矿卡 &amp; 磨机尾矿 FAQ</a>
-    <a href="comparisons/fabric-smart-water-utility-acoustic-leak-pfas-cso-vs-4clouds-faq.md">💧 R44: 智慧水务声学检漏 &amp; PFAS CSO FAQ</a>
-    <a href="comparisons/fabric-cbdc-instant-payments-iso20022-lsm-pqc-vs-4clouds-faq.md">🏦 R45: 央行 RTGS 解死锁 &amp; 后量子密码 FAQ</a>
-    <a href="comparisons/fabric-green-hydrogen-electrolyzer-ammonia-rfnbo-vs-4clouds-faq.md">🟢 R46: 绿氢 20GW 电解槽 &amp; 绿氨 RFNBO FAQ</a>
-    <a href="comparisons/fabric-nuclear-smr-fusion-tokamak-neutron-nrc-vs-4clouds-faq.md">⚛️ R47: 核能 SMR 小堆 &amp; 托卡马克聚变 FAQ</a>
-    <a href="comparisons/fabric-subsea-hvdc-offshore-wind-bess-inertia-entsoe-vs-4clouds-faq.md">🌊 R48: 深远海柔直风电 &amp; 海缆防锚害 FAQ</a>
-    <a href="comparisons/fabric-quantum-datacenter-cryogenic-qec-pqc-kms-vs-4clouds-faq.md">🔮 R49: 容错量子超算 &amp; 15mK QEC 校准 FAQ</a>
-    <a href="comparisons/fabric-aviation-atm-adsb-4d-trajectory-contrail-saf-vs-4clouds-faq.md">✈️ R50: 全球空管 ATM 4D-TBO &amp; 尾迹云 SAF FAQ</a>
-    <a href="comparisons/fabric-precision-fermentation-synthetic-biology-dbtl-crispr-vs-4clouds-faq.md">🧫 R51: 合成生物 DBTL &amp; 200kL 防产酸倒罐 FAQ</a>
-    <a href="comparisons/fabric-sovereign-tax-customs-einvoicing-vat-carousel-fraud-vs-4clouds-faq.md">🏛️ R52: 主权电子税务 CTC &amp; 海关 8跳骗税穿透 FAQ</a>
-    <a href="comparisons/fabric-humanoid-robotics-embodied-ai-vla-sim2real-fleet-vs-4clouds-faq.md">🤖 R53: 具身人形机器人 VLA &amp; .mcap 飞轮 FAQ</a>
-    <a href="comparisons/fabric-urban-air-mobility-evtol-vertiport-utm-bess-vs-4clouds-faq.md">🚁 R54: 低空经济 eVTOL &amp; Vertiport 4C超充 FAQ</a>
-    <a href="comparisons/fabric-aidc-gigawatt-liquid-cooling-ups-grid-interactive-vs-4clouds-faq.md">⚡ R55: 吉瓦级 AIDC 10万卡液冷 &amp; 340MW削峰 FAQ</a>
-    <a href="comparisons/fabric-precision-oncology-spatial-transcriptomics-wsi-ctdna-mrd-vs-4clouds-faq.md">🧬 R56: 肿瘤空间转录组 &amp; 40x WSI / ctDNA MRD FAQ</a>
-    <a href="comparisons/fabric-virtual-power-plant-v2g-derms-ferc2222-grid-inertia-vs-4clouds-faq.md">🔋 R57: 虚拟电厂 VPP &amp; 180万辆 V2G 一次调频 FAQ</a>
-    <a href="comparisons/fabric-institutional-asset-management-private-credit-ccp-margin-t1-vs-4clouds-faq.md">🏛️ R58: 机构资管 $14.8T &amp; 私募信贷 1亿向量 FAQ</a>
-    <a href="comparisons/fabric-subsea-production-fpso-flowline-hydrate-riser-rov-vs-4clouds-faq.md">🌊 R59: 超深水 3000m 采油树 &amp; FPSO 1.04亿向量 FAQ</a>
-    <a href="comparisons/fabric-direct-to-cell-ntn-5g-advanced-open-ran-ric-subsea-optical-vs-4clouds-faq.md">🛰️ R60: 手机直连卫星 NTN &amp; 5G-A O-RAN 1.08亿向量 FAQ</a>
-    <a href="comparisons/fabric-climate-catastrophe-parametric-reinsurance-aurora-weather-ils-vs-4clouds-faq.md">🌪️ R61: 气象巨灾参数化再保险 &amp; Aurora 1.12亿向量 FAQ</a>
-    <a href="comparisons/fabric-automated-intermodal-megaport-sts-agv-reefer-rail-twin-vs-4clouds-faq.md">⚓ R62: 全自动超级港口 STS/AGV &amp; 海铁联运 1.16亿向量 FAQ</a>
-    <a href="comparisons/fabric-transmission-grid-synchrophasor-pmu-wams-ssr-dlr-vs-4clouds-faq.md">⚡ R63: 特高压电网 WAMS/PMU &amp; 动态增容 1.20亿向量 FAQ</a>
-    <a href="comparisons/fabric-critical-minerals-direct-lithium-extraction-rare-earth-crma-vs-4clouds-faq.md">🔋 R64: 关键矿产盐湖提锂 DLE &amp; 稀土萃取 1.24亿向量 FAQ</a>
-    <a href="comparisons/fabric-seismic-tsunami-early-warning-smart-cable-das-gnss-vs-4clouds-faq.md">🌊 R65: 地震海啸秒级预警 &amp; 海底 SMART 光缆 1.28亿向量 FAQ</a>
-    <a href="comparisons/fabric-seawater-desalination-swro-membrane-fouling-brine-mining-vs-4clouds-faq.md">🚰 R66: 大型海水淡化 SWRO &amp; 防赤潮污堵 1.32亿向量 FAQ</a>
-    <a href="comparisons/fabric-green-steel-h2-dri-eaf-continuous-casting-cbam-vs-4clouds-faq.md">🔥 R67: 零碳绿钢 H2-DRI &amp; 连铸防漏钢 1.36亿向量 FAQ</a>
-    <a href="comparisons/fabric-direct-air-capture-dac-ccus-supercritical-co2-pipeline-vs-4clouds-faq.md">🌍 R68: 直接空气捕集 DAC &amp; 超临界 CO2 封存 1.40亿向量 FAQ</a>
-    <a href="comparisons/fabric-automated-parcel-sortation-cross-belt-dws-air-cargo-uld-vs-4clouds-faq.md">📦 R69: 高速快递分拣交叉带 &amp; 航空货运 ULD 1.44亿向量 FAQ</a>
-    <a href="comparisons/fabric-cislunar-deep-space-lunanet-isru-microgrid-rover-swarm-vs-4clouds-faq.md">🌕 R70: 地月深空导航 LunaNet &amp; 月球南极 ISRU 1.48亿向量 FAQ</a>
-    <a href="comparisons/fabric-district-heating-cooling-4gdhc-heat-pump-btes-thermal-grid-vs-4clouds-faq.md">♨️ R71: 区域供热供冷 4GDHC &amp; 算力余热 BTES 1.52亿向量 FAQ</a>
-    <a href="comparisons/fabric-pension-ldi-sovereign-repo-liquidity-longevity-infra-vs-4clouds-faq.md">🏛️ R72: 主权养老金 LDI &amp; 国债回购防挤兑 1.56亿向量 FAQ</a>
-    <a href="comparisons/fabric-pulp-paper-kraft-recovery-boiler-highspeed-web-break-eudr-vs-4clouds-faq.md">🌲 R73: 制浆造纸碱炉防爆 &amp; 2000m/min 防断纸 1.60亿向量 FAQ</a>
-    <a href="comparisons/fabric-float-solar-glass-oxyfuel-furnace-tin-bath-defect-ets-vs-4clouds-faq.md">🪟 R74: 浮法光伏玻璃 1600°C 大碹 &amp; NiS 探伤 1.64亿向量 FAQ</a>
-    <a href="comparisons/fabric-vaccine-mrna-lnp-microfluidics-lyophilization-vvm-coldchain-vs-4clouds-faq.md">💉 R75: 疫苗 mRNA 微流控 &amp; 冻干防塌陷 1.68亿向量 FAQ</a>
-    <a href="comparisons/fabric-petrochemical-ethylene-steam-cracker-coking-polymer-iscc-vs-4clouds-faq.md">🧪 R76: 千万吨乙烯蒸汽裂解 &amp; 加氢防飞温 1.72亿向量 FAQ</a>
-    <a href="comparisons/fabric-flng-offshore-liquefaction-mche-cryogenic-rollover-ogmp-vs-4clouds-faq.md">🚢 R77: 深远海 FLNG 液化 &amp; 薄膜舱防翻滚 1.76亿向量 FAQ</a>
-    <a href="comparisons/fabric-synchrotron-xfel-particle-accelerator-beam-orbit-ptychography-vs-4clouds-faq.md">⚛️ R78: 第四代同步辐射光源 &amp; XFEL 亚微米稳轨 1.80亿向量 FAQ</a>
-    <a href="comparisons/fabric-fertilizer-potash-mining-phosphoric-acid-npk-granulation-vs-4clouds-faq.md">🌾 R79: 千米深井钾盐矿 &amp; 湿法磷酸防糊布 1.84亿向量 FAQ</a>
-    <a href="comparisons/fabric-pumped-storage-hydropower-francis-vortex-waterhammer-dfim-vs-4clouds-faq.md">🌊 R80: 变速抽水蓄能 &amp; 尾水管涡带防振 1.88亿向量 FAQ</a>
-    <a href="comparisons/fabric-enhanced-geothermal-egs-induced-seismicity-dts-das-thermosiphon-vs-4clouds-faq.md">🌋 R81: 增强型地热 EGS &amp; 诱发地震交通灯 1.92亿向量 FAQ</a>
-    <a href="comparisons/fabric-copper-flash-smelting-converter-so2-electrorefining-lme-vs-4clouds-faq.md">🔶 R82: 铜闪速熔炼 &amp; 180万槽电解精炼 1.96亿向量 FAQ</a>
-    <a href="comparisons/fabric-low-carbon-cement-rotary-kiln-calciner-rdf-vrm-oxyfuel-ccus-vs-4clouds-faq.md">🏭 R83: 低碳水泥回转窑 &amp; 富氧CCUS 2.00亿向量 FAQ</a>
-    <a href="comparisons/fabric-aluminum-smelting-hall-heroult-potline-anode-effect-mhd-cbam-vs-4clouds-faq.md">⚡ R84: 500kA电解铝 &amp; 磁流体MHD稳槽 2.04亿向量 FAQ</a>
-    <a href="comparisons/fabric-cryogenic-air-separation-asu-mac-surge-reboiler-hydrocarbon-argon-vs-4clouds-faq.md">❄️ R85: 特大型深冷空分 &amp; 主冷防爆 2.08亿向量 FAQ</a>
-    <a href="comparisons/fabric-polysilicon-czochralski-monocrystalline-ingot-pulling-mcz-wafer-vs-4clouds-faq.md">💎 R86: 多晶硅西门子炉 &amp; 单晶MCZ防位错 2.12亿向量 FAQ</a>
-    <a href="comparisons/fabric-carbon-fiber-pan-precursor-oxidation-carbonization-exotherm-rto-vs-4clouds-faq.md">🧵 R87: 碳纤维预氧化防烧丝 &amp; 1500°C碳化 2.16亿向量 FAQ</a>
-    <a href="comparisons/fabric-chlor-alkali-ion-membrane-electrolysis-h2-in-cl2-vcm-vs-4clouds-faq.md">🧪 R88: 氯碱离子膜电解 &amp; 液氯防爆 2.20亿向量 FAQ</a>
-    <a href="comparisons/fabric-offshore-wind-monopile-heavy-plate-saw-welding-paut-dnv-vs-4clouds-faq.md">🌊 R89: 海风12m单桩埋弧焊 &amp; 热态PAUT 2.24亿向量 FAQ</a>
-    <a href="comparisons/fabric-oled-display-mother-glass-fusion-draw-ltpo-fmm-evaporation-vs-4clouds-faq.md">📱 R90: 第8.6代OLED溢流玻璃 &amp; FMM蒸镀 2.28亿向量 FAQ</a>
-    <a href="comparisons/fabric-tunnel-boring-machine-tbm-rockburst-epb-settlement-swd-vs-4clouds-faq.md">🚇 R91: 超大盾构TBM随钻探水 &amp; EPB防沉降 2.32亿向量 FAQ</a>
-    <a href="comparisons/fabric-tire-rubber-banbury-silica-silanization-arrhenius-vulcanization-eudr-vs-4clouds-faq.md">🛞 R92: 轮胎密炼硅烷化防焦烧 &amp; ECU硫化 2.36亿向量 FAQ</a>
-    <a href="comparisons/fabric-titanium-sponge-kroll-vacuum-arc-remelting-var-white-spot-as9100-vs-4clouds-faq.md">✈️ R93: 航空海绵钛 &amp; VAR防白斑 (#100本体!) 2.40亿向量 FAQ</a>
-    <a href="comparisons/fabric-optical-fiber-preform-mcvd-draw-tower-resonance-g654e-vs-4clouds-faq.md">💡 R94: 海缆光棒MCVD &amp; 3000m/min拉丝塔 2.44亿向量 FAQ</a>
-    <a href="comparisons/fabric-gas-turbine-combined-cycle-gtcc-h2-dln-thermoacoustic-btt-vs-4clouds-faq.md">🔥 R95: H/J级掺氢燃机GTCC &amp; BTT防颤振 (#100 FAQ!) 2.48亿向量 FAQ</a>
-    <a href="comparisons/fabric-silicon-carbide-sic-pvt-boule-sublimation-cvd-epitaxy-mosfet-vs-4clouds-faq.md">💎 R96: 8英寸碳化硅PVT长晶 &amp; CVD外延 2.52亿向量 (&gt;0.25B!) FAQ</a>
-    <a href="comparisons/fabric-high-pressure-ldpe-xlpe-tubular-reactor-hyper-compressor-decomp-vs-4clouds-faq.md">💥 R97: 3,000bar超高压LDPE防分解 &amp; 525kV海缆XLPE (#100规格!) 2.56亿向量 FAQ</a>
-    <a href="comparisons/fabric-electrical-steel-goes-cold-rolling-decarburization-goss-texture-vs-4clouds-faq.md">⚡ R98: 0.20mm高磁感取向硅钢GOES &amp; 森吉米尔防断带 (#105本体!) 2.60亿向量 FAQ</a>
-    <a href="comparisons/fabric-lithium-hydroxide-spodumene-calcination-mvr-crystallizer-cathode-vs-4clouds-faq.md">🔋 R99: 锂辉石1050°C转晶 &amp; 氢氧化锂MVR结晶 (月省破$200K!) 2.64亿向量 FAQ</a>
-    <a href="comparisons/fabric-euv-source-tin-droplet-lpp-collector-mirror-cnt-pellicle-vs-4clouds-faq.md">🏆 R100: 13.5nm极紫外EUV 50kHz锡滴光源 &amp; CNT防尘膜 (百轮大关!) 2.68亿向量 FAQ</a>
-    <a href="comparisons/fabric-hbm4-16hi-tsv-cu-cu-hybrid-bonding-wafer-thinning-muf-vs-4clouds-faq.md">🔬 R101: HBM4 16层TSV Cu-Cu混合键合 &amp; CMP碟形凹陷 (99.78%准确率!) 2.72亿向量 FAQ</a>
-    <a href="comparisons/fabric-glass-core-substrate-tgv-laser-lide-metallization-warpage-vs-4clouds-faq.md">💠 R102: 510×515mm玻璃芯基板TGV &amp; 飞秒LIDE (均值170.0ms!) 2.76亿向量 FAQ</a>
-    <a href="comparisons/fabric-solid-state-battery-sulfide-argyrodite-dry-electrode-h2s-dendrite-vs-4clouds-faq.md">🔋 R103: 全固态硫化物电池干法电极 &amp; 500MPa WIP (#110本体 &amp; 169ms!) 2.80亿向量 FAQ</a>
-    <a href="comparisons/fabric-perovskite-silicon-tandem-solar-slot-die-crystallization-ald-vs-4clouds-faq.md">☀️ R104: 钙钛矿-晶硅叠层光伏狭缝涂布 &amp; VASP成核 (460场景!) 2.84亿向量 FAQ</a>
-    <a href="comparisons/fabric-high-temp-superconductor-rebco-pld-tape-ibad-quench-magnet-vs-4clouds-faq.md">🧲 R105: REBCO高温超导带材PLD &amp; 20T聚变磁体 (#110 FAQ!) 2.88亿向量 FAQ</a>
-    <a href="comparisons/fabric-circrna-mrna-enzymatic-ivt-dsrna-tff-microfluidic-lnp-vs-4clouds-faq.md">🧬 R106: 环形RNA无细胞IVT &amp; PIE环化超滤 (99.79% &amp; 150.0ms!) 2.92亿向量 FAQ</a>
-    <a href="comparisons/fabric-esaf-sustainable-aviation-fuel-rwgs-fischer-tropsch-hydrocracking-vs-4clouds-faq.md">✈️ R107: 电制航煤e-SAF RWGS &amp; 费托防飞温 (149.0ms &amp; 省94.0%!) 2.96亿向量 FAQ</a>
-    <a href="comparisons/fabric-2nm-gaa-nanosheet-atomic-layer-etch-selective-epi-bspdn-vs-4clouds-faq.md">🏆 R108: 2nm/14A GAA纳米片ALE &amp; 背面供电BSPDN (突破3亿向量 &amp; #115本体!) FAQ</a>
-    <a href="comparisons/fabric-rare-earth-magnet-ndfeb-solvent-extraction-sintering-gbd-vs-4clouds-faq.md">🧲 R109: 烧结钕铁硼稀土永磁萃取 &amp; 晶界扩散GBD (480场景 &amp; 省94.1%!) 3.04亿向量 FAQ</a>
-    <a href="comparisons/fabric-reusable-methalox-rocket-ffsc-preburner-turbopump-plume-oes-vs-4clouds-faq.md">🚀 R110: 液氧甲烷可复用火箭FFSC &amp; 尾焰OES (#115 FAQ &amp; 30ms!) 3.08亿向量 FAQ</a>
-    <a href="comparisons/fabric-sodium-ion-battery-prussian-white-hard-carbon-plating-vs-4clouds-faq.md">🔋 R111: 钠离子电池普鲁士白 &amp; 硬碳防析钠 (99.80%准确率 &amp; 28ms &amp; 省94.2%!) 3.12亿向量 FAQ</a>
-    <a href="comparisons/fabric-subsea-hvdc-cable-vcv-extrusion-methane-degassing-pd-vs-4clouds-faq.md">🌊 R112: 525kV柔直海缆160m立塔 &amp; 甲烷脱气 (#120 SVG &amp; 160.0ms均值!) 3.16亿向量 FAQ</a>
-    <a href="comparisons/fabric-radiopharma-theranostics-lutetium177-actinium225-hotcell-coi-vs-4clouds-faq.md">☢️ R113: 靶向核药177Lu/225Ac热室防辐解 &amp; 半衰期CoI (#120本体 &amp; 159.0ms!) 3.20亿向量 FAQ</a>
-    <a href="comparisons/fabric-co-packaged-optics-cpo-silicon-photonics-tfln-laser-packaging-vs-4clouds-faq.md">🏆 R114: 1.6T/3.2T共封装光学CPO微环热解耦 &amp; 6-DoF激光焊接 (突破500场景半千大关!) 3.24亿向量 FAQ</a>
-    <a href="comparisons/fabric-cryogenic-liquid-hydrogen-lh2-ortho-para-conversion-turboexpander-boiloff-vs-4clouds-faq.md">❄️ R115: -253°C深冷液氢正仲转化防蒸发 &amp; 12万转磁悬浮透平 (#120 FAQ &amp; 20ms大关!) 3.28亿向量 FAQ</a>
-    <a href="comparisons/fabric-green-emethanol-co2-hydrogenation-catalyst-sintering-distillation-bunkering-vs-4clouds-faq.md">🚢 R116: 绿色电制甲醇e-Methanol催化剂防烧结 &amp; 双效精馏加注 (250单测 &amp; 18ms闭环 &amp; 140.0ms!) 3.32亿向量 FAQ</a>
-    <a href="comparisons/fabric-liquid-metal-embrittlement-lme-galvanneal-3rd-gen-ahss-spot-welding-vs-4clouds-faq.md">🚗 R117: 第三代2.0GPa超高强钢热镀锌控相 &amp; 点焊防LME裂纹 (#125 SVG, #120规格, 139.0ms &amp; 破$40M!) 3.36亿向量 FAQ</a>
-    <a href="comparisons/fabric-gan-on-si-qst-mocvd-epitaxy-wafer-bow-dynamic-rdson-vs-4clouds-faq.md">⚡ R118: 硅基氮化镓GaN-on-Si/QST超晶格防翘曲 &amp; 动态Rdson抑制 (99.81%准确率, #125本体 &amp; 14ms闭环!) 3.40亿向量 FAQ</a>
-    <a href="comparisons/fabric-single-crystal-superalloy-turbine-blade-bridgman-casting-tbc-vs-4clouds-faq.md">✈️ R119: 航发单晶涡轮叶片LMC定向凝固防雀斑 &amp; 固溶防初熔 (256=2^8单测, 520场景 &amp; 省94.5% TCO!) 3.44亿向量 FAQ</a>
-    <a href="comparisons/fabric-euv-photoresist-ultrapure-chemicals-ppt-metal-pag-pou-filtration-vs-4clouds-faq.md">🏆 R120: High-NA EUV光刻胶ppt级控金属 &amp; 1nm防微桥接 (#125 FAQ, 128=2^7 SVG, 10ms闭环 &amp; 破$41M!) 3.48亿向量 FAQ</a>
-    <a href="comparisons/fabric-extreme-optics-mrf-ion-beam-figuring-sub-angstrom-mirror-vs-4clouds-faq.md">🔭 R121: 超精密自由曲面与EUV反射镜MRF抛光 &amp; IBF离子束修形 (破3.5亿向量, 128=2^7本体 &amp; 8ms个位数闭环!) 3.52亿向量 FAQ</a>
-    <a href="comparisons/fabric-crispr-gene-editing-lnp-herringbone-microfluidics-encapsulation-vs-4clouds-faq.md">🧬 R122: 体内CRISPR基因编辑LNP微流控 &amp; 100-nt sgRNA合成 (150.0ms均值, #130 SVG, #125规格 &amp; 省94.6%!) 3.56亿向量 FAQ</a>
-    <a href="comparisons/fabric-electronic-specialty-gases-esg-silane-nf3-wf6-cryogenic-rectification-vs-4clouds-faq.md">🧪 R123: 6N5超高纯电子特气SiH4/NF3深冷精馏 &amp; 电解防爆 (跌破150ms均值, #130本体, 4ms闭环 &amp; 破$42M!) 3.60亿向量 FAQ</a>
-    <a href="comparisons/fabric-cvd-diamond-semiconductor-wafer-mpcvd-plasma-thermal-substrate-vs-4clouds-faq.md">💎 R124: MPCVD单晶金刚石晶圆 &amp; 2,210W/m·K超导热基板 (540场景, 省94.7% TCO新高 &amp; 2ms极致闭环!) 3.64亿向量 FAQ</a>
-    <a href="comparisons/fabric-solid-state-transformer-sst-800v-hvdc-dab-zvs-nanocrystalline-flux-vs-4clouds-faq.md">⚡ R125: 中压固态变压器MV-SST &amp; 800V HVDC纳米晶防磁饱和与SiC软开关 (第125轮, 130篇FAQ &amp; 99.82%准确率新高!) 3.68亿向量 FAQ</a>
-    <a href="comparisons/fabric-iron-air-multi-day-ldes-100h-reversible-rusting-her-aidc-dunkelflaute-vs-4clouds-faq.md">🔋 R126: 100小时铁-空气长时储能LDES抑析氢 &amp; 极夜保供 (270单测, 131.0ms本体均值 &amp; 破$43M SLA!) 3.72亿向量 FAQ</a>
-    <a href="comparisons/fabric-cryogenic-electro-optic-quantum-transducer-bto-lnoi-microwave-optical-entanglement-vs-4clouds-faq.md">🔮 R127: 15mK BTO/LNOI微波-光量子换能器三谐振锁频 &amp; 远程纠缠 (破550场景, #135 SVG, #130规格 &amp; 省94.8% TCO!) 3.76亿向量 FAQ</a>
-    <a href="comparisons/fabric-2d-tmd-mos2-ws2-monolayer-mocvd-wafer-epitaxy-cfet-chalcogen-vacancy-vs-4clouds-faq.md">🔬 R128: 300mm单原子层二维半导体(MoS2/WS2)MOCVD &amp; Sub-1nm CFET (R128=2^7, 3.80亿向量, 135本体 &amp; 130.0ms均值!) FAQ</a>
-    <a href="comparisons/fabric-molten-salt-fast-reactor-mcfr-redox-corrosion-xenon135-sco2-brayton-vs-4clouds-faq.md">☢️ R129: 700°C第四代熔盐快堆MCFR控碲脆腐蚀 &amp; sCO2防喘振 (560场景, 跌破130ms本体均值 &amp; 破$44M SLA!) 3.84亿向量 FAQ</a>
-    <a href="comparisons/fabric-two-phase-direct-to-chip-evaporative-cooling-chf-dryout-ledinegg-aidc-vs-4clouds-faq.md">🏆 R130: 两相微通道蒸发冷板2,500W+ GPU防干涸CHF &amp; PUE 1.032 (第130轮, 135篇FAQ, 129.0ms均值 &amp; 省94.9% TCO!) 3.88亿向量 FAQ</a>
-    <a href="comparisons/fabric-hollow-core-nanf-optical-fiber-capillary-draw-antiresonant-aidc-allreduce-vs-4clouds-faq.md">💡 R131: 空芯反谐振光纤HC-NANF拉丝毛细管微压差 &amp; AllReduce降延迟31% (280单测, 破3.9亿向量 &amp; 60ms闭环!) 3.92亿向量 FAQ</a>
-    <a href="comparisons/fabric-photonic-tensor-core-kerr-microcomb-mzi-mesh-optical-ai-accelerator-vs-4clouds-faq.md">🏆 R132: 氮化硅Si3N4克尔孤子光频梳 &amp; 64×64 MZI光子张量核 (99.83%准确率, #140 SVG, 128.0ms=2^7 &amp; 破$45M!) 3.96亿向量 FAQ</a>
-    <a href="comparisons/fabric-geologic-white-gold-hydrogen-serpentinization-fault-reservoir-helium-membrane-vs-4clouds-faq.md">🏆 R133: 天然地质白氢/金氢蛇纹石化 &amp; 钯银膜伴生氦 (突破4.00亿向量, #140本体, 576=24^2场景 &amp; 省95.0% TCO!) FAQ</a>
-    <a href="comparisons/fabric-ferroelectric-hzo-fefet-feram-300mm-ald-orthorhombic-phase-wake-up-endurance-vs-4clouds-faq.md">🏆 R134: 300mm铁电氧化铪锆HZO FeRAM &amp; 3D FeFET存算一体 (580场景, 140.0ms矩阵均值, 127.0ms本体均值 &amp; 破$46M!) 4.04亿向量 FAQ</a>
-    <a href="comparisons/fabric-ar-mr-sic-metasurface-waveguide-nanoimprint-jfil-slanted-grating-vs-4clouds-faq.md">🏆 R135: 300mm碳化硅4H-SiC &amp; 超表面AR光波导J-FIL纳米压印 (第135轮, 140篇FAQ, 跌破140ms矩阵均值 &amp; 月省破$275K!) 4.08亿向量 FAQ</a>
-    <a href="comparisons/fabric-heterogeneous-iii-v-quantum-dot-laser-on-silicon-micro-transfer-printing-optical-io-vs-4clouds-faq.md">🏆 R136: 300mm异质集成III-V量子点硅基激光器微转印μTP &amp; 3.2T光学I/O (144=12^2 SVG, 290单测, 126.0ms均值 &amp; 省95.1% TCO!) 4.12亿向量 FAQ</a>
-    <a href="comparisons/fabric-subsea-basalt-carbon-mineralization-scco2-hydrate-das-seismic-cdr-vs-4clouds-faq.md">🏆 R137: 深海2,200m玄武岩原位碳矿化封存 &amp; 防CO2水合物冰堵 (144=12^2本体, 140项规格, 145张SVG &amp; 破$47M SLA!) 4.16亿向量 FAQ</a>
-    <a href="comparisons/fabric-neutral-atom-quantum-computing-optical-tweezer-aod-rydberg-erasure-qec-vs-4clouds-faq.md">🏆 R138: 中性原子量子计算10,000+光镊阵列 &amp; 里德堡激光相位降噪 (125.0ms=5^3均值, 138.0ms矩阵均值, 4.20亿向量 &amp; 月省破$280K!) FAQ</a>
-    <a href="comparisons/fabric-molten-oxide-electrolysis-moe-zero-carbon-steel-inert-anode-skull-ledge-vs-4clouds-faq.md">🏆 R139: 零碳熔融氧化物电解炼钢MOE 1,600°C &amp; 惰性阳极尖晶石护膜 (突破600场景, 144=12^2篇FAQ, 跌破125ms均值 &amp; 省95.2% TCO新高!) 4.24亿向量 FAQ</a>
-    <a href="comparisons/fabric-neuromorphic-event-based-vision-dvs-aer-spiking-neural-network-snn-vs-4clouds-faq.md">🏆 R140: 神经形态事件视觉120dB DVS &amp; 3D RRAM脉冲神经网络SNN (第140轮, 145篇FAQ, 124.0ms本体均值, 137.0ms矩阵均值 &amp; 破$48M SLA!) 4.28亿向量 FAQ</a>
-    <a href="comparisons/fabric-nuclear-electric-propulsion-nep-heatpipe-reactor-hall-thruster-magnetic-shielding-vs-4clouds-faq.md">🏆 R141: 兆瓦级深空核电推进NEP 1.5MWe热管快堆 &amp; 100kW磁屏蔽霍尔推力器 (300单测大关, 99.84%准确率新高, 50ms整数闭环 &amp; 省95.3% TCO新高!) 4.32亿向量 FAQ</a>
-    <a href="comparisons/fabric-enzymatic-dna-synthesis-storage-tdt-cmos-mea-nanopore-fountain-code-vs-4clouds-faq.md">🏆 R142: 水相无细胞酶促DNA合成 &amp; 艾字节DNA存储64M-Spot CMOS-MEA (第150张SVG, 145项规范, 49ms跌破50ms闭环, 123.0ms &amp; 136.0ms均值!) 4.36亿向量 FAQ</a>
-    <a href="comparisons/fabric-sub-terahertz-6g-isac-ris-metasurface-spherical-beam-squint-inp-vs-4clouds-faq.md">🏆 R143: 亚太赫兹6G通感算一体140-300GHz ISAC &amp; 10,240单元RIS超表面 (150大行业本体n=150, 4.40亿向量, 月省破$290K, 守护破$49M &amp; 48ms对称闭环!) FAQ</a>
-    <a href="comparisons/fabric-orbital-solar-aidc-space-compute-radhard-seu-lhp-radiator-fso-vs-4clouds-faq.md">🏆 R144: 天基太阳能AI智算中心Orbital AIDC抗辐射SEL限流洗刷 &amp; 地影液氨热管防冻旁通 (第144=12²轮, 620场景, 135.0ms &amp; 122.0ms均值, 4.44亿向量 &amp; 省95.4% TCO新纪录!) FAQ</a>
-    <a href="comparisons/fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.md">🛒 R145: 零售电商全渠道Customer 360、智能导购问数 &amp; 实时ATP库存推荐闭环 (第145轮, 150篇双语FAQ, 624场景, 134.5ms &amp; 121.5ms均值, 4.48亿向量 &amp; 守护$49.85M GMV!) FAQ</a>
-    <a href="comparisons/fabric-financial-research-hybrid-rag-text2sql-wealth-agent-vs-4clouds-faq.md">🏦 R146: 金融投研与财富管理「财报契约RAG + 审计级NL2DAX」混合智能体 (134.0ms &amp; 121.0ms=11²双整数均值, 4.52亿向量, 310单测 &amp; 破$50M ($50.20M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-oltp-to-olap-zero-etl-mirroring-vs-debezium-kafka-fivetran-faq.md">🔄 R147: OLTP-to-OLAP 零拷贝同步与CDC选型：Fabric Mirroring ($0算力) vs Debezium+Kafka vs Fivetran (省95.5% TCO新纪录, 150项官方规格 &amp; 44ms对称闭环!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-vector-hybrid-search-ai-search-pgvector-mosaic-milvus-faq.md">🔎 R148: 企业级向量与混合检索底座选型：Azure AI Search + SSD DiskANN vs pgvector vs Mosaic vs Milvus (月省破$300K, 120.0ms &amp; 133.0ms整数均值, 1万人并发 &amp; 4.60亿向量!) FAQ</a>
-    <a href="comparisons/fabric-manufacturing-automotive-supply-chain-connected-vehicle-maintenance-faq.md">🚗 R149: 制造与汽车「多级供应链ATP协同 + 车联网看板 + 预测性维保闭环」选型 (640场景大关, 跌破120ms本体均值 (119.5ms!), 4.64亿向量 &amp; 破$51M ($51.25M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-saas-gaming-multitenant-embedded-analytics-retention-attribution-faq.md">🏆 R150: 互联网、游戏与B2B SaaS「多租户嵌入式分析 + 实时留存/ROAS归因 + 动态RLS」选型 (第150轮历史大关, 155篇双语FAQ, 132.0ms &amp; 119.0ms双整数均值 &amp; 4.68亿向量!) FAQ</a>
-    <a href="comparisons/fabric-medallion-lakehouse-lambda-kappa-streaming-batch-architecture-faq.md">🏗️ R151: 现代湖仓 Medallion (铜-银-金) 分层与批流一体 (Lambda vs Kappa vs MLV) 选型 (99.85%准确率新高, 40ms对称闭环, 省95.6% TCO新纪录, 320单测 &amp; 4.72亿向量!) FAQ</a>
-    <a href="comparisons/fabric-healthcare-pharma-commercial-compliance-rwe-analytics-faq.md">🏥 R152: 医疗与医药商业合规 (RWE/OMOP、Rep vs MSL 隔离、Veeva零拷贝与医保DRG控费) 选型 (跌破40ms达39ms闭环, 第160张SVG, 131.0ms &amp; 118.0ms双整数均值, 155规格 &amp; 破$52M SLA!) FAQ</a>
-    <a href="comparisons/fabric-banking-insurance-realtime-antifraud-graph-claims-faq.md">🏦 R153: 金融银行与保险「实时支付反欺诈 + 6跳ISO GQL团伙图谱 + 4.80亿多模态理赔查重」选型 (160大行业本体n=160!, 4.80亿向量, 月省$310.0K整数大关, 324=18²单测 &amp; 38ms闭环!) FAQ</a>
-    <a href="comparisons/fabric-five-cloud-data-platform-tco-inflection-migration-faq.md">🌐 R154: 五大云数据平台全景选型、TCO三大拐点精算与零停机迁移路径对比 (660场景大关, 130.0ms路由整十均值!, 117.0ms本体整数均值, 4.84亿=22²×10⁶向量 &amp; $53.00M整百万SLA!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-data-agent-text2sql-fabric-genie-cortex-oss-faq.md">🤖 R155: 企业自然语言问数 (Data Agent / Text-to-SQL) 四强巅峰选型：Fabric Data Agent vs Genie vs Cortex vs 开源自建 (第155轮, 160篇双语FAQ, 跌破130ms路由均值129.5ms!, 36ms=6²ms对称闭环 &amp; 省95.7% TCO新纪录!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-data-governance-rls-cls-obo-catalog-faq.md">🔐 R156: 企业级数据治理、目录联邦与RLS/CLS/OLS/OBO权限透传选型 (129.0ms &amp; 116.0ms双整数均值, 330单测大关, 4.92亿&gt;0.49B向量, 月省破$315K &amp; 35ms闭环!) FAQ</a>
-    <a href="comparisons/fabric-cross-border-ecommerce-global-supply-chain-finops-faq.md">🚢 R157: 跨境电商与全球供应链「多站点归因 + 海外仓WMS防断货 + WCO HS海关归类 + 汇率FinOps」选型 (第165张SVG, 160项官方规格, 4.96亿向量, 34ms闭环 &amp; 破$54M SLA!) FAQ</a>
-    <a href="comparisons/fabric-telecom-customer-churn-network-ops-field-agent-faq.md">🏆 R158: 电信运营商与云网融合「实时防流失 + 5G专网SLA自愈 + 装维工单智能体」选型 (历史性突破五亿500M=0.50B向量大关!, 676=26²场景, 128.0=2⁷ms &amp; 115.0ms双整数均值 &amp; 33ms闭环!) FAQ</a>
-    <a href="comparisons/fabric-power-utility-energy-trading-vpp-carbon-analytics-faq.md">⚡ R159: 电力能源与智慧售电「新能源预测 + 现货电力交易竞价 + 虚拟电厂(VPP) + 绿证碳核算」选型 (680场景大关, 32=2⁵ms对称闭环, 504M向量 &amp; 月省&gt;$320K ($321.3K!) TCO!) FAQ</a>
-    <a href="comparisons/fabric-qsr-fmcg-chain-store-operations-coldchain-markdown-faq.md">🍔 R160里程碑: 餐饮连锁、快消与生鲜零售「万店实时POS对账 + 冷链防损动态打折 + 外卖补贴ROI」选型 (R160第160轮, 165篇FAQ/330文档, 127.0/114.0ms双整数均值, 508M向量 &amp; 破$55M SLA!) FAQ</a>
-    <a href="comparisons/fabric-airlines-hospitality-dynamic-revenue-irops-loyalty-faq.md">✈️ R161: 航空、酒店与商旅「NDC动态收益定价 + 延误(IROPS)旅客安置 + 常旅客联名积分防欺诈」选型 (30ms整十闭环!, 512M=2⁹×10⁶向量, 省95.8% TCO新纪录(月省$325.0K整!) &amp; 340单测!) FAQ</a>
-    <a href="comparisons/fabric-logistics-3pl-coldchain-fleet-routing-otif-billing-faq.md">🚛 R162: 第三方物流(3PL)、快递快运与冷链干线「车队动态路径 + 港口免滞箱费(LFD) + OTIF自动对账」选型 (第170张SVG, 99.86%准确率新纪录!, 29ms破30ms, 126.0/113.0ms双整数均值(169=13²本体!) &amp; 516M向量!) FAQ</a>
-    <a href="comparisons/fabric-commercial-real-estate-smart-building-hvac-tenant-finops-faq.md">🏢 R163: 商业地产、购物中心与智慧园区「BACnet空调节能 + 客流坪效租约精算 + ESG碳盘查」选型 (第170大行业本体(n=170!), 28ms(7×4)对称闭环, 520M向量 &amp; 破$56M ($56.15M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-property-casualty-insurance-actuarial-ubi-catastrophe-claims-faq.md">🛡️ R164: 财产险与车险「UBI车联网精算定价 + 巨灾风险暴露评估 + 再保分保与极速理赔」选型 (历史性突破700场景大关(699/700=99.86%)!, 125.0/112.0ms双整数均值, 27=3³ms闭环, 524M向量 &amp; 月省破$330K!) FAQ</a>
-    <a href="comparisons/fabric-media-ott-retail-media-network-ssai-cleanroom-royalty-faq.md">🎬 R165里程碑: 流媒体(OTT)、短剧出海与零售媒体(RMN)「SCTE-35动态广告 + 无Cookie清洁室 + 版权分账」选型 (R165第165轮, 170篇FAQ/340文档, 26ms回文闭环, 528M向量 &amp; $56.85M SLA!) FAQ</a>
-    <a href="comparisons/fabric-automotive-dealer-ev-charging-warranty-claims-faq.md">🚗 R166: 汽车直营与经销商(DMS)、超充运营与售后索赔「试驾转化 + 超充动态引流 + 三包防骗保」选型 (25=5²ms平方闭环!, 124.0/111.0ms双整数均值, 350单测大关, 532M向量 &amp; 破$57M SLA!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-erp-sap-s4hana-acdoca-treasury-finops-faq.md">💼 R167: 集团财务与多ERP「SAP S/4HANA(ACDOCA)+Oracle+D365零拷贝合并 + 司库现金流 + 动态贴现」选型 (第175张SVG!, 第170项规格, 24ms(6×4)对称闭环, 536M向量 &amp; 月省破$335K!) FAQ</a>
-    <a href="comparisons/fabric-retail-banking-consumer-credit-mortgage-collections-agent-faq.md">🏦 R168: 零售银行、消费信贷与房贷「开放银行实时授信 + M0/M1逾期预警 + 合规催收/展期」选型 (第175大本体(n=175!), 123.0/110.0ms双整数均值, 省95.9% TCO新纪录 &amp; 23ms闭环!) FAQ</a>
-    <a href="comparisons/fabric-biopharma-clinical-trial-pharmacovigilance-gmp-release-faq.md">🧬 R169=13²平方轮次: 生物医药临床试验(DCT)、药物警戒(PV)与GMP放行「精准入组 + E2B(R3)不良事件 + 批次放行」选型 (720=6!阶乘场景, 本体均值破110ms(109.5ms!), 22ms回文闭环 &amp; 破$58M SLA!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-contact-center-ccaas-agent-assist-wfm-faq.md">🎧 R170整十轮次里程碑: 企业智能客服中心(CCaaS)、实时坐席辅助与智能排班(WFM)「995K EPS实时情绪感知 + 5.48亿话术/SOP向量 + PCI-DSS零泄漏脱敏」选型 (第175篇双语FAQ/350文档, 122.0/109.0ms双整数均值, 21ms闭环 &amp; 月省破$340K!) FAQ</a>
-    <a href="comparisons/fabric-industrial-equipment-aftermarket-servitization-spare-parts-faq.md">⚙️ R171: 工业装备制造与重工售后「IoT预测性维保派单 + 全球备件多级库存协同 + 设备即服务(EaaS)按稼动率计费」选型 (20ms=5×4整十对称闭环!, 360单测大关, 突破5.5亿(552M!)向量 &amp; 月省$343.0K!) FAQ</a>
-    <a href="comparisons/fabric-cpg-beverage-trade-promotion-demand-sensing-hedging-faq.md">🥤 R172: 快消品(CPG)、食品饮料与日化「通路促销费用优化(TPO) + 零售商POS实时需求感知 + 大宗原材料期货套保」选型 (19ms跌破20ms闭环!, 第180张SVG, 第175项规格, 121.0/108.0ms双整数均值 &amp; 破$59M SLA!) FAQ</a>
-    <a href="benchmark-cards.en.html">🌐 English 7-Card Deck</a>
-    <a href="README.md">📘 返回 Data Lab 主页</a>
-  </div>
-</div>
-
-<!-- CARD 1 -->
-<section class="card" id="card-1">
-  <div>
-    <div class="card-header">
-      <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-17 · SEALED RUN (R144=12² 🏆 HISTORIC 620-SCENARIO, 135.0ms MATRIX MEAN, 122.0ms ONTOLOGY MEAN, 444M VECTORS &amp; -95.4% TCO RECORD! · 620 CASES · 151 ONTOLOGIES · 444M VECTORS)</span>
+  <nav class="top-nav">
+    <div><strong>DATA LAB · 7-CARD BENCHMARK DECK</strong> · Sealed ID: <code>data-lab-fabric-vs-4clouds-2026-enterprise-sa</code></div>
+    <div>
+      <a href="demos/diamond-hub.html">💎 Diamond 演示中心</a>
+      <a href="index.html">🏠 返回 Data Lab</a>
+      <a href="benchmark-cards.en.html">🌐 English</a>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake XTable + Eventhouse + Mirroring + DiskANN + Purview OBO + Spark Gluten/Velox + Data Agents ($0 M365 Token) + Data Factory Osmos (152ms 自愈) + Capacity Surge Protection (省 54.0% 超支) + Git Integration (PBIP/TMDL) + Workspace Private Link &amp; OAP (省 68.5% 网安 TCO) + OneLake BCDR &amp; CMK (省 70.7% 容灾 TCO) + External &amp; IQ Sharing (省 72.4% B2B 共享 TCO) + Fabric Warehouse T-SQL &amp; V-Order (省 67.2% 数仓/BI TCO) + Fabric AI Functions &amp; Foundry PTU/Batch (省 69.6% 多模态 AI TCO) + Digital Twin Builder &amp; IoT Ops (省 71.5% 工业孪生 TCO) + 94.6% Native T-SQL &amp; $0 Mirroring Migration (省 73.5% 迁移 TCO) + OneLake Catalog &amp; Purview Unified Catalog (省 74.4% 目录 TCO) + Fabric Graph ISO GQL (省 75.2% 图 TCO) + Fabric Activator Reflex ($0 轮询税, 省 76.2% 告警 TCO) + Fabric Healthcare Data Solutions HDS (FHIR+DICOM→OMOP v5.4, 省 76.9% 医疗 TCO) + Fabric Sustainability Data Solutions SDS (400+ ESG 表 &amp; CSRD/CBAM, 省 77.6% ESG TCO) + Fabric Retail Data Solutions RDS (200+ 零售表 &amp; 40ms 实时 ATP, 省 78.3% 全渠道 TCO) + Capital Markets Eventhouse KQL &amp; Gluten FRTB ($0 kdb+ 税, 省 78.9% 资本市场 TCO) + Eventhouse KQL H3 Geospatial &amp; Spark Sedona ($0 GIS 税, 省 79.5% 时空 TCO) + Fabric Data Science FLAML AutoML &amp; Vectorized PREDICT ($0 常驻容器税, 省 80.1% MLOps TCO) + Fabric Eventhouse OpenTelemetry &amp; SIEM Observability (12:1 压缩 $0/GB 税, 省 82.6% 可观测 TCO) + Fabric OneLake Native MDM &amp; DiskANN Entity Resolution ($0 搬运税, 省 81.0% MDM TCO) + Fabric × SAP S/4HANA &amp; Datasphere Zero-Copy (`ACDOCA` 0.00% 漂移, 省 81.6% TCO) + Fabric Gaming LiveOps &amp; AdTech RTB 500K EPS (14ms KQL + PlayFab + SSD DiskANN, 省 82.1% TCO) + Fabric Aerospace MRO &amp; GCC High / ITAR (11ms KQL + ALDO 断网机库 + Purview OBO, 省 82.6% TCO) + Fabric AgriTech &amp; Planetary Computer STAC / EUDR (7ms H3 + SAP ACM 筒仓隔离, 省 83.0% TCO) + Fabric Maritime Shipping &amp; Port Twin / FuelEU (3ms H3 AIS/洋流连接 + SDS 碳账本, 省 83.3% TCO) + Fabric Media OTT 650K EPS CMCD QoE &amp; SSAI / Royalty (4ms KQL + SSD DiskANN 99.2% 广告填充, 省 83.6% TCO) + Fabric Semiconductor 2nm EUV 800K EPS FDC &amp; STDF / CoWoS (1ms KQL + SSD DiskANN 晶圆图 + ALDO 边缘, 省 83.9% TCO) + Fabric Automotive SDV 950K EPS ADAS &amp; UNECE R156 (3ms KQL H3 + SSD DiskANN 65M Clip + OneLake BOM/OTA 图谱, 省 84.3% TCO) + Fabric Energy OSDU 600K EPS WITSML/DAS &amp; CCUS (10ms KQL + ADME 零拷贝 + SSD DiskANN 32M LAS, 省 84.6% TCO) + Fabric Battery &amp; BESS 720K EPS Cell Formation &amp; EU Passport (7ms KQL dQ/dV + SSD DiskANN 48M EIS + OneLake IQ 电池护照, 省 84.9% TCO) + Fabric LEO Satellite Constellation 850K EPS OISL &amp; Debris Avoidance (4ms KQL H3 + SSD DiskANN 54M Orbit/RF + ALDO Polar Edge, 省 85.2% TCO) + Fabric Biopharma cGMP 680K EPS Raman PAT &amp; CAR-T CoI (1ms KQL + SSD DiskANN 42M Spectra + OneLake eBR RTRT, 省 85.5% TCO) + Fabric High-Speed Rail 780K EPS Bearing FFT &amp; ETCS-L3 Pacing (11ms KQL FFT + SSD DiskANN 58M Flaws + ALDO Depot Edge, 省 85.7% TCO) + Fabric Autonomous Mining 820K EPS AHS/XRF &amp; SAG Mill / GISTM Tailings (8ms KQL H3 + SSD DiskANN 52M SWIR Cores + ALDO Pit Edge, 省 85.9% TCO) + Fabric Smart Water 640K EPS Acoustic Leak TDOA &amp; PFAS / CSO (6ms KQL + SSD DiskANN 46M Acoustic/EPANET + ALDO Plant Edge, 省 86.1% TCO) + Fabric Central Bank RTGS 920K EPS ISO-20022 &amp; LSM / NIST PQC (3ms KQL + 4ms ISO GQL &amp; 62M Mule DiskANN + ALDO Sovereign Edge, 省 86.3% TCO) + Fabric Green Hydrogen 760K EPS 20GW Electrolyzer HTO &amp; Ammonia / RFNBO (14ms KQL + SSD DiskANN 50M Polarization/Thermal + SDS RFNBO + ALDO Desert Edge, 省 86.5% TCO) + Fabric Nuclear SMR &amp; Fusion Tokamak 880K EPS Disruption &amp; TES / 24x7 CFE (12ms KQL FFT + SSD DiskANN 56M EFIT/DNBR + ALDO Data-Diode Edge, 省 86.7% TCO) + Fabric Deepwater HVDC Offshore Wind 840K EPS DAS Anchor-Drag, Wake Steering &amp; GFM-BESS Inertia (10ms KQL H3 + SSD DiskANN 58M Wake/EMT + ALDO Offshore Edge, 省 86.9% TCO) + Fabric Fault-Tolerant Quantum-HPC 960K EPS 15mK Cryo, Quasiparticle Bypass &amp; QEC Calibration (8ms KQL + SSD DiskANN 64M DRAG/MWPM + ALDO Shielded Edge, 省 87.1% TCO) + Fabric Global Aviation ATM 910K EPS Space ADS-B 4D-TBO, RECAT-TBS Wake Pacing &amp; Contrail/SAF (6ms KQL H3 + SSD DiskANN 68M Wake/ISSR + SDS SAF + ALDO Tower Edge, 省 87.3% TCO) + Fabric Synthetic Biology Biofoundry &amp; Precision Fermentation 740K EPS Off-Gas RQ Crabtree Prevention &amp; DBTL / IGSC (4ms KQL + SSD DiskANN 72M FBA/LC-MS + DBTL Twin + ALDO Plant Edge, 省 87.5% TCO) + Fabric Sovereign Tax e-Invoicing &amp; Customs Single-Window 980K EPS Peppol CTC, 8-Hop ISO GQL VAT Carousel Interdiction &amp; WCO HS / X-Ray (2ms KQL + 3ms ISO GQL &amp; 76M HS DiskANN + ALDO Port Edge, 省 87.7% TCO) + Fabric Humanoid Robotics &amp; Embodied AI 890K EPS Visuotactile Stream, VLA Sim-to-Real Admittance Patch &amp; ISO/TS 15066 Safety (15ms KQL + SSD DiskANN 80M Episodes + Robot Twin + ALDO Factory Edge, 省 87.9% TCO) + Fabric Urban Air Mobility 860K EPS eVTOL Wind-Shear Reroute, Hover-Starvation Divert &amp; 4C Charger BMS (13ms KQL H3 + SSD DiskANN 84M LES/EIS + UAM Twin + ALDO Rooftop Edge, 省 88.1% TCO) + Fabric Gigawatt AIDC 940K EPS 100K-GPU Liquid Cooling CDU Dry-Out Prevention, 340MW AllReduce BBU Shaving &amp; ASHRAE Dew-Point Guard (12ms KQL + SSD DiskANN 88M CFD/BBU + IT/OT Twin + ALDO MEP Edge, 省 88.3% TCO) + Fabric Precision Oncology 790K EPS 0.042% VAF ctDNA Relapse Sense, 92M 10x Xenium Spatial/WSI ADC Match &amp; MTB Loop (10ms KQL + SSD DiskANN 92M Spatial/WSI + HDS OMOP Twin + ALDO Pathology Edge, 省 88.5% TCO) + Fabric Smart Grid VPP 930K EPS 1.8M V2G EVs -0.48Hz/s FFR Dispatch, Feeder-09 Congestion Relief &amp; 07:00 SoC &gt;=75% Guard (9ms KQL H3 + SSD DiskANN 96M OPF/Wear + DERMS Twin + ALDO Substation Edge, 省 88.7% TCO) + Fabric Institutional Asset Mgmt 870K EPS $1.85B CCP Margin CTD Optimization, 100M-Vector Private Credit Covenant Freeze &amp; SEC T+1 Loop (7ms KQL + AI Functions + 100M SSD DiskANN + ALDO Trading Edge, 省 88.9% TCO) + Fabric Ultra-Deepwater Subsea Production 910K EPS +4.8°C Hydrate Subcooling Prevention, 104M OLGA/VIV Match &amp; Resident e-ROV Loop (6ms KQL FFT + 104M SSD DiskANN + SPS Twin + ALDO FPSO Edge, 省 89.1% TCO) + Fabric Direct-to-Cell NTN &amp; 5G-A Open RAN 970K EPS -24dB Beam Nulling, 108M CSI/PCS Match &amp; Subsea PCS-16QAM Loop (5ms KQL H3 + 108M SSD DiskANN + NTN Twin + ALDO O-Cloud/CLS Edge, 省 89.3% TCO) + Fabric Climate Catastrophe Parametric Reinsurance &amp; Aurora 880K EPS 918hPa Swath Sense, 112M Loss/Treaty Match &amp; $220M ILS Cat-Bond Loop (3ms KQL H3 + 112M SSD DiskANN + Planetary STAC + ALDO Disaster Edge, 省 89.5% TCO) + Fabric Automated Intermodal Mega-Port 940K EPS ±42mm Anti-Sway, 116M BAPLIE/CBS Match, 0-Shuffle Direct Rail &amp; 180-Reefer Loop (2ms KQL H3/FFT + 116M SSD DiskANN + Port Twin + ALDO Terminal Edge, 省 89.7% TCO) + Fabric UHV Transmission Grid WAMS 960K EPS 26.4Hz SSR Damping, 120M EMT/POD/DLR Match, +680MW Dynamic Line Rating &amp; 765kV TX Isolation Loop (17ms KQL FFT + 120M SSD DiskANN + Grid Twin + ALDO Substation Edge, 省 89.9% TCO) + Fabric Critical Minerals &amp; DLE Lithium 840K EPS Boron Breakthrough Sense, 124M Elution/SX/Aquifer Match, 98.6% Brine Reinjection &amp; EU CRMA Passport Loop (16ms KQL + 124M SSD DiskANN + SDS CRMA + ALDO 4,200m Salar Edge, 省 90.0% TCO) + Fabric Seismic &amp; Tsunami Early-Warning 920K EPS Subsea SMART Cable P-Wave Pick, 128M Green's Function/Run-Up Match &amp; 14.8s-Early Rail/EUV/Gas Interlock Loop (15ms KQL FIR/H3 + 128M SSD DiskANN + Lifeline Twin + ALDO Substation/Fab Edge, 省 90.1% TCO) + Fabric Seawater Desalination SWRO 860K EPS Red-Tide HAB &amp; ORP Chlorine Guard, 132M Polarization/CORMIX Match &amp; Coral-Reef Brine Loop (14ms KQL + 132M SSD DiskANN + SDS Water + ALDO Coastal Pump-House Edge, 省 90.2% TCO) + Fabric Green Steel H2-DRI &amp; Continuous Casting 910K EPS Sticker Breakout Healing, 136M Mould/Slag/DRI Match &amp; EU CBAM 0.39 tCO2e/t Loop (13ms KQL + 136M SSD DiskANN + SDS CBAM + ALDO Meltshop Edge, 省 90.3% TCO) + Fabric Direct Air Capture DAC &amp; Supercritical CO2 CCUS 890K EPS Moisture/Phase Guard, 140M TOUGHREACT/EOS Match, 81.4% Fracture-Gradient &amp; US 45Q / CDR Loop (12ms KQL + 140M SSD DiskANN + SDS 45Q + ALDO Wellpad Edge, 省 90.4% TCO) + Fabric Automated Parcel Sortation &amp; Air-Cargo ULD 950K EPS Chute Anti-Jam, 144M Smudged-OCR/ULD Match, +0.8% ULD CG &amp; IATA DGR Loop (11ms KQL + 144M SSD DiskANN + Hub Twin + ALDO Hub Edge, 省 90.5% TCO) + Fabric Cislunar Navigation LunaNet &amp; Lunar South-Pole ISRU Microgrid 880K EPS Mascon/SPE Sense, 148M CR3BP/LiDAR/MRE Match, 44.2% Habitat SoC &amp; Lava-Tube Shelter Loop (10ms KQL + 148M SSD DiskANN + Cislunar Twin + ALDO Lunar Edge, 省 90.6% TCO) + Fabric District Heating &amp; Cooling 4GDHC/5GDHC, AIDC Waste-Heat &amp; Seasonal BTES 870K EPS Low-DeltaT &amp; Surge Guard, 152M Hydraulic/BTES Match, +145MWt AIDC Heat &amp; EU EED Loop (9ms KQL + 152M SSD DiskANN + SDS + ALDO Substation Edge, 省 90.7% TCO) + Fabric Sovereign Pension LDI, Repo Liquidity, Longevity Swaps &amp; Infra Cash-Flow 910K EPS +65bps Repo Margin Sense, 156M LDI/Repo/Longevity Match, 340bps Buffer &amp; Zero-Fire-Sale Loop (8ms KQL + 156M SSD DiskANN + SDS + ALDO Dealing Edge, 省 90.8% TCO) + Fabric Integrated Pulp &amp; Paper, Kraft Recovery Boiler BLRB, 2,000m/min Web-Break &amp; EU EUDR 890K EPS 18Hz Flutter &amp; 4.2kHz Leak Sense, 160M NIR/QCS/BLRB Match, 0.14% CD Moisture &amp; EUDR Loop (7ms KQL + 160M SSD DiskANN + SDS + ALDO Mill Edge, 省 90.9% TCO) + Fabric Float &amp; Solar Glass, 1,600°C Oxy-Fuel Crown Guard, Tin-Bath NiS Laser Defect &amp; EU ETS 920K EPS 1,618°C Crown &amp; 95μm NiS Sense, 164M Convection/Laser Match, 1,592°C Crown &amp; EU ETS Loop (6ms KQL + 164M SSD DiskANN + SDS + ALDO Furnace Edge, 省 91.0% TCO) + Fabric Vaccine Fill-Finish, mRNA LNP Microfluidics, Lyophilization Anti-Collapse &amp; WHO VVM 940K EPS 96nm LNP &amp; -32.4°C Lyo Sense, 168M Flow/Sublimation/AVI Match, 79.4nm LNP &amp; VVM Loop (5ms KQL + 168M SSD DiskANN + HDS + ALDO Isolator Edge, 省 91.1% TCO) + Fabric Petrochemical Steam-Cracker, 1,100°C Coil Coking Guard, C2 Hydrogenation Anti-Runaway &amp; ISCC PLUS 960K EPS +1.42°C/s Runaway &amp; 1,098°C TMT Sense, 172M Pyrolysis/Hydro/MWD Match, 68.4°C Bed &amp; ISCC Loop (4ms KQL + 172M SSD DiskANN + SDS + ALDO Control-Room Edge, 省 91.2% TCO) + Fabric Offshore FLNG Liquefaction, MCHE Anti-Freeze, -162°C Tank Anti-Rollover &amp; OGMP 2.0 930K EPS 0.35kg/m³ Rollover &amp; +2.4kPa/min Freeze Sense, 176M GERG/Sloshing/BOG Match, 0.02kg/m³ Mix &amp; OGMP Loop (3ms KQL + 176M SSD DiskANN + SDS + ALDO Vessel Edge, 省 91.3% TCO) + Fabric 4th-Gen Synchrotron &amp; XFEL, Sub-Micron Orbit FOFB, SRF Anti-Quench &amp; Ptychography 990K EPS +2.1μm Orbit &amp; +185Hz SRF Sense, 180M ORM/LLRF/Bragg Match, 0.18μm Orbit &amp; FAIR Loop (2ms KQL + 180M SSD DiskANN + FAIR Twin + ALDO Control Edge, 省 91.4% TCO) + Fabric Deep-Shaft Potash Mining, Phosphoric Acid Anti-Blinding, NPK Granulation &amp; EU FPR 910K EPS 26.2m Salt-Back &amp; 3.42% Sulfate Sense, 184M Seismic/Crystal/PBM Match, 32.0m Salt-Back &amp; EU FPR Loop (1ms KQL + 184M SSD DiskANN + SDS + ALDO Underground Edge, 省 91.5% TCO)</span> 在 360 项跨云零拷贝、实时流、零 ETL 镜像 ($0 算力)、XTable ($0 算力)、HTAP DiskANN (-92% 内存)、OBO 治理 (-85.3% TCO)、Spark Gluten ($0 溢价)、Agentic BI (省 82.6% TCO)、Medallion Osmos 自愈 (省 71.1% TCO)、38-BU Surge 防挤兑 (省 54.0% TCO)、14 国 CI/CD 原子晋级 (省 76.1% TCO)、22 保密工作区零信任防外泄 (省 68.5% TCO)、180TB 跨区 BCDR/CMK (省 70.7% TCO)、45TB 零售媒体跨 68 品牌货币化 (省 72.4% TCO)、65TB 核心数仓 1,800 并发买手调价 (省 67.2% TCO)、120 万份巨灾多模态 AI 理赔 (省 69.6% TCO)、36 条动力电池涂布线 140K EPS 数字孪生 (省 71.5% TCO)、120TB 电信数仓 3,800 存过零停机割接 (省 73.5% TCO)、4,200 数据产品五云目录联邦 (省 74.4% TCO)、8,500 万实体 8 跳 ISO GQL 反洗钱穿透 (省 75.2% TCO)、180K EPS 大促 1.42 万机器人防刷反射 (省 76.2% TCO)、240 万患者 FHIR+18M DICOM CT III 期肿瘤受试者招募 (省 76.9% TCO)、1,450 供应商 Scope 3 与欧盟 CSRD/CBAM 绿钢优化 (省 77.6% TCO)、4,800 家门店全渠道幽灵库存清零 (省 78.3% TCO)、18 个交易台 250K EPS 盘中 FRTB 风险对冲 (省 78.9% TCO)、85,000 车队 × 180K EPS H3 山火避险改道 (省 79.5% TCO)、42,000 家 B2B 政企客户 FLAML + 湖内 PREDICT 防流失闭环 (省 80.1% TCO)、12,000 微服务 `450 GB/天` OTel 可观测与 SIEM 自愈闭环 (省 82.6% TCO)、18 套 ERP × 2,800 万主数据零拷贝黄金记录闭环 (省 81.0% TCO)、12 套 SAP S/4HANA × 32 亿行 `ACDOCA` 营运资金与芯片锁单闭环 (省 81.6% TCO)、14 款游戏 × 4,800 万 DAU × `500K EPS` 反作弊与机房切流闭环 (省 82.1% TCO)、680 架宽体机 × 1,360 台发动机 × `320K EPS` 过站防 AOG 与 ITAR 主权闭环 (省 82.6% TCO)、38 万农场 × 1,420 万吨大宗农产品 × `220K EPS` 遥感估产套保与欧盟 EUDR 筒仓防混装闭环 (省 83.0% TCO)、740 艘巨轮 × 42 座码头 × `280K EPS` JIT 虚拟抵港降速与 FuelEU/ETS 碳税闭环 (省 83.3% TCO)、1,800 万并发决赛观众 × `650K EPS` 多 CDN 切流、SCTE-35 广告预分配与 SAG-AFTRA 残值分账闭环 (省 83.6% TCO)、1,800 台机台 × `800K EPS` 2nm 晶圆 FDC、STDF 晶圆图检索与 CoWoS 裸片拦截闭环 (省 83.9% TCO)、120 万辆车队 × `950K EPS` 智驾触发流、6,500 万 Clip 打捞与 UNECE R156 OTA 熔断闭环 (省 84.3% TCO)、420 座井场 + 28,000km LNG 管网 + 12 座 CCUS 库 × `600K EPS` 随钻防井涌、甲烷测漏与 45Q 碳封存闭环 (省 84.6% TCO)、8 座超级工厂 (36万化成通道) + 45 GWh 储能电站 × `720K EPS` 化成 dQ/dV、4,800万 EIS 检索与欧盟电池护照闭环 (省 84.9% TCO)、6,400 颗低轨卫星 + 140 座信关站 × `850K EPS` 空间碎片避碰、星间激光重路由与 H3 波束跳频闭环 (省 85.2% TCO)、16 座 cGMP 基地 (2,400 台反应器) + 4,500 例 CAR-T × `680K EPS` 在线拉曼补糖、4h 实时放行与静脉到静脉 CoI 闭环 (省 85.5% TCO)、18,000 组动车组 + 45,000km 线路 × `780K EPS` 提前 72h 轴承剥离预警、25kV 接触网防塌网与 14 列车移动闭塞绿波调图闭环 (省 85.7% TCO)、14 座矿山 (2,200 台 400t 无人矿卡 + 36 台半自磨机 + 18 座尾矿库) × `820K EPS` 3:2 软硬配矿、磨机防砸衬板与尾矿库排渗防液化闭环 (省 85.9% TCO)、68,000km 供水管网 (3,200 个 DMA + 48 座水厂) × `640K EPS` ±0.8m 声学定漏、水锤防爆管、PFAS 炭塔切换与深隧蓄洪闭环 (省 86.1% TCO)、28 家一级清算行 + 4 条跨境走廊 × `920K EPS` $4.82B 多边解死锁、外汇 PvP 原子交割与 64 个钱骡拦截闭环 (省 86.3% TCO)、12 座风光氢氨基地 (4,800 台电解槽 + 24 套合成氨) × `760K EPS` 氧中氢防爆、球罐补气护催化剂与欧盟 RFNBO 逐小时绿电签证闭环 (省 86.5% TCO)、68 座 SMR 小堆 + 4 座聚变堆 × `880K EPS` 2/1 撕裂模抑制、熔盐储热防氙毒停堆与 24/7 CFE 核电闭环 (省 86.7% TCO)、38 GW 海风 (2,400 台风机) + 14 条 ±525kV 海缆 × `840K EPS` 海缆防锚断、构网储能惯量与尾流偏航增发闭环 (省 86.9% TCO)、32 台千比特 QPU + 10万卡 GPU × `960K EPS` 宇宙射线晶格绕行、15mK 防失超与 DRAG/QEC 校准闭环 (省 87.1% TCO)、42,000 架在飞航班 + 38 座枢纽机场 × `910K EPS` RECAT-TBS 按时间尾流缩距、34 架跨洋航班避尾迹变高与欧盟 ReFuelEU SAF 核销闭环 (省 87.3% TCO)、6 座生物铸造厂 + 48 台 200,000L 工业发酵罐 × `740K EPS` 防溢流产酸倒罐、384 孔板 `pdc1` 启动子 DBTL 与 IGSC 生物安全闭环 (省 87.5% TCO)、2,800 万纳税主体 + 68 个海关口岸 × `980K EPS` 8 跳旋转木马骗税止付、18 个伪报货柜查验与 14,800 票 AEO 零误伤通关闭环 (省 87.7% TCO)、24 座工厂 18,000 台人形机器人 × `890K EPS` 腕部柔顺导纳热校准、1,600 段 `.mcap` 难例打捞与 ISO/TS 15066 安全闭环 (省 87.9% TCO)、4,200 架 eVTOL + 180 座 Vertiport × `860K EPS` 城市峡谷避涡改航、16 机巡航分流防悬停失电与 24 台 4C 超充防析锂闭环 (省 88.1% TCO)、1.2 GW AIDC 10 万卡液冷集群 × `940K EPS` 280MW BBU 毫秒削峰、18 柜排泡降温与 ASHRAE 防凝露闭环 (省 88.3% TCO)、42 家肿瘤中心 65 万患者 × `790K EPS` 提前 14 周 ctDNA 复发拦截、9,200 万空间组学/WSI 匹配 T-DXd ADC 与 MTB 闭环 (省 88.5% TCO)、180 万辆 V2G 电动车 + 65 万户储 × `930K EPS` +420MW 一次调频、Feeder-09 防烧变与车主 07:00 出行保底闭环 (省 88.7% TCO)、`$14.8T` 机构资管 2.4 万组合 + 8,500 私募借款人 × `870K EPS` `$1.85B` 盘中追保、1 亿向量私募违约冻结与 T+1 交割闭环 (省 88.9% TCO)、18 艘 FPSO + 480 座 3,000m 水下树 × `910K EPS` +420L/h MEG 防冰堵、1.04 亿向量匹配与 e-ROV 闭环 (省 89.1% TCO)、1,200 颗 D2C 卫星 + 28 万 O-RAN 基站 + 24 条海缆 × `970K EPS` -24dB 零陷、1.08 亿向量匹配与 PCS-16QAM 闭环 (省 89.3% TCO)、420 部雷达 + 2,800 万承保建筑 × `880K EPS` 918hPa 巨灾债触发、1.12 亿向量匹配与 18 座防洪闸闭环 (省 89.5% TCO)、32 座码头 680 台岸桥 + 4,800 台 AGV × `940K EPS` ±42mm 防摇、1.16 亿向量海铁直装与 180 冷链箱闭环 (省 89.7% TCO)、4,800 座变电站 1.8 万台 PMU × `960K EPS` 26.4Hz SSR 阻尼、1.20 亿向量 +680MW 动态增容与 750kV 主变隔离闭环 (省 89.9% TCO)、24 座盐湖/稀土基地 1,200 根 DLE 吸附塔 + 480 条萃取线 × `840K EPS` 防硼穿漏 (2.1ppm)、1.24 亿向量检索与 98.6% 尾卤回注 CRMA 护照闭环 (省 90.0% TCO)、18 条海底 SMART 光缆 + 1.4 万座强震仪 × `920K EPS` Mw 8.4 P 波拾取、1.28 亿格林函数检索与提前 14.8s 高铁/EUV/燃气联锁闭环 (省 90.1% TCO)、18 座海淡厂 140 万支 RO 膜 + 4,200 台 PX × `860K EPS` 零余氯保 `$8.5M` 膜组、1.32 亿向量防赤潮污堵与珊瑚礁盐度闭环 (省 90.2% TCO)、16 座绿钢基地 32 座氢竖炉 + 64 条连铸机 × `910K EPS` 0.75m/min 粘结愈合零漏钢、1.36 亿向量检索与 0.39 tCO2e/t 欧盟 CBAM 护照闭环 (省 90.3% TCO)、14 座百万吨碳捕集封存基地 2,800 台 DAC 捕集舱 + 12,000km 超临界 CO2 管网 + 96 口 Class VI 井 × `890K EPS` 12ppmv 超干防酸蚀穿孔、1.40 亿向量检索与 BHP 81.4% 咸水层封存 45Q 闭环 (省 90.4% TCO)、48 座超级分拣枢纽 1,600 套交叉带 + 380 架全货机 × `950K EPS` 滑槽 0 爆格、1.44 亿向量污损 OCR 恢复与波音 777F ULD 重心 `+0.8%` 配载闭环 (省 90.5% TCO)、12 颗地月中继星 + 8 座南极舱 + 140 台漫游车 × `880K EPS` 质量瘤修轨、1.48 亿向量检索与 16 车入熔岩管避辐射保电池 `SoC 44.2%` 闭环 (省 90.6% TCO)、28 座城市热网 420 台百兆瓦热泵 + 64 万换热站 × `870K EPS` 压回水至 `34.2°C` 收 `145MWt` 算力余热、1.52 亿向量检索与提前 3.5h 蓄热 `0` 尖峰燃气闭环 (省 90.7% TCO)、22 家主权养老金 `$18.4T` 负债 + 48 万笔 Repo/IRS × `910K EPS` `$2.40B` 免抛售抵押品升级、1.56 亿向量检索与 `340 bps` 韧性缓冲闭环 (省 90.8% TCO)、32 座制浆造纸基地 48 台碱炉 + 96 台高速纸机 × `890K EPS` 2,000m/min 零断纸、1.60 亿向量检索与 BLRB 防爆闭环 (省 90.9% TCO)、28 座浮法与光伏玻璃基地 56 座 1,600°C 熔窑 + 112 条锡槽 × `920K EPS` 大碹防烧穿、1.64 亿向量检索与 95μm 硫化镍剔除闭环 (省 91.0% TCO) 及 24 座疫苗基地 640 套微流控 + 180 台冻干机 × `940K EPS` LNP 稳粒径、1.68 亿向量检索与冻干防塌陷闭环 (省 91.1% TCO) 与 36 座乙烯基地 280 台裂解炉 + 72 座加氢器 × `960K EPS` 加氢防飞温、1.72 亿向量检索与炉管抑焦闭环 (省 91.2% TCO) 及 18 艘 FLNG 巨轮 54 台 MCHE + 90 座薄膜舱 × `930K EPS` 液舱防翻滚、1.76 亿向量检索与 MCHE 防冻堵闭环 (省 91.3% TCO) 与 16 座同步辐射/XFEL 中心 640 条光束线 + 12,000 只超导腔 × `990K EPS` 亚微米稳轨、1.80 亿向量检索与在线衍射筛帧闭环 (省 91.4% TCO) 及 24 座深井钾矿与磷复肥基地 140 台采矿机 + 64 套磷酸槽 × `910K EPS` 防透水微震、1.84 亿向量检索与磷酸防糊布闭环 (省 91.5% TCO) 评测中达成 99.72% 准确率（359/360），500 人企业建模 TCO 降低 46.1%–56.1%</h1>
-    <p class="sub">融合三十七大深度选型专题：R1 跨云零拷贝与 OneLake IQ Sharing、R2 实时流 Eventhouse KQL (142ms 参考目标) vs Snowflake Dynamic Tables (60s 最小滞后)、R3 数据库镜像与 Open Mirroring ($0 免费复制算力，省 87.7% CDC 账单)、R4 OneLake XTable 双向自动虚拟化 ($0 格式转换算力，省 90.9% 双格式 ETL 税)、R5 Fabric SQL + Cosmos DB SSD 级 DiskANN 向量索引 (省 92% 内存与 79.4% HTAP+向量 TCO)、R6 OneLake 统一 RLS/CLS/OLS + Purview + Entra Agent ID OBO 身份透传 (省 85.3% 跨引擎治理 TCO)、R7 Fabric Spark 原生执行引擎 (Apache Gluten + Meta Velox C++ SIMD $0 额外倍率溢价) + Autoscale 弹性计费 (省 58.6% Spark ETL 算力成本)、R8 Fabric Data Agents + Copilot Studio + Foundry IQ (M365 Copilot $0 额外 Token 消耗 + 0.0% 跨库口径漂移，省 82.6% Agentic BI 问数 TCO)、R9 Fabric Data Factory + Project Osmos + 物化湖视图 MLV (152ms Schema 漂移自主自愈 + $0 Airflow 控制面税，省 71.1% 编排 TCO)、R10 Fabric Capacity Surge Protection (75% 后台水位红线) + 24h 平滑 + Rayfin 多工作区 FinOps 分摊 (399ms 隔离吵闹邻居，省 54.0% 月度容量超支)、R11 Fabric Git Integration (PBIP/TMDL 纯文本化) + Variable Libraries + Zero-Copy Branch Out + Terraform Provider (383ms 完成 14 国 64 项制品原子发版，0 连接串漂移，省 76.1% DataOps TCO)、R12 Fabric Workspace-Level Private Link + Managed VNet Spark + Outbound Access Protection (OAP) + Trusted Workspace Access (TWA) (367ms 拦截 14/14 次恶意 PyPI 轮子包外泄企图，0 字节泄露，省 68.5% 网络与版本附加 TCO，规避 $4.20M 欧盟 DORA 罚单)、R13 Fabric OneLake BCDR 存储级异地复制 + ZRS + Workspace CMK ($0 版本升级税) + Variable Library 全栈切流 (351ms 控制面切流，RPO=42s，RTO=165s，省 70.7% 容灾与加密 TCO，规避 $3.65M 清算 SLA 罚单)、R14 Fabric External Data Sharing + OneLake IQ Sharing ($0 提供方算力 + .rdf/.md 打包共享，335ms 完成 68 家快消品牌商零漂移归因与联名加单，省 72.4% B2B 共享 TCO，守护 $3.90M 零售媒体 ARR)、R15 Fabric Warehouse 分布式 T-SQL + 自动 V-Order 列存压缩 + DirectLake 绕过 SQL 节点 (319ms 完成 65TB 核心数仓跨库 ACID 结账、1,800 买手 194ms P95 并发看数与 420 SKU 锁价回写，省 67.2% 数仓与 BI 并发 TCO，守护 $4.45M 早高峰调价 SLA)、R16 Fabric AI Functions (ai.extract/classify) + OneLake Files 零拷贝 + Azure AI Foundry PTU/50% Batch + SSD DiskANN (303ms 完成 120 万份飓风巨灾理赔提取、分保条约穿透与 19 笔重复索赔拦截，省 69.6% 多模态 AI TCO，守护 $4.80M 再保追偿 SLA)、R17 Fabric Digital Twin Builder 无代码本体 + Eventhouse KQL + Azure IoT Operations / SQL on Azure Local (ALDO) (287ms 完成 36 条涂布产线 140K EPS 面密度漂移锁定、SAP 浆料批次穿透与 -1.8μm 辊缝校准闭环，省 71.5% 工业孪生 TCO，守护 $5.10M 极片良率 SLA)、R18 Fabric Migration Assistant (94.6% 原生 T-SQL 直通) + OneLake Mirroring ($0 双轨并跑) + Osmos AST (271ms 完成 120TB 电信数仓 3,800 个存过零漂移对账与 1,400 张报表无感切流，省 73.5% 迁移与运行 TCO，守护 $5.40M 季度出账 SLA)、R19 Fabric OneLake Catalog + Purview Unified Catalog + Apache Ossie (255ms 完成 4,200 个跨云数据产品联邦、14 跳 BCBS 239 全链路血缘穿透与 3 张未认证影子表拦截，省 74.4% 目录治理 TCO，守护 $5.75M 监管审计 SLA)、R20 Fabric Graph (OneLake 零拷贝 CSR 投影 + 原生 ISO GQL) + SSD DiskANN (239ms 完成 8,500 万实体 / 12 亿边 8 跳 24 家离岸空壳旋转木马洗钱穿透与信用证冻结，省 75.2% 图计算 TCO，守护 $6.10M OFAC 贸易制裁 SLA)、R21 Fabric Activator (52ms 内存流式边沿触发 + $0 数仓唤醒轮询税 + 500:1 本体去重) + Power Automate / Teams (223ms 完成 180K EPS 大促 14,200 机器人刷券熔断、神券密钥轮换与 320 款核心 SKU 锁库，省 76.2% 告警与自动化 TCO，守护 $6.45M 大促毛利 SLA)、R22 Fabric Healthcare Data Solutions HDS (官方托管 FHIR R4 + 18M DICOM CT + VCF → OMOP CDM v5.4 + $23/TB OneLake + HIPAA 日期平移脱敏，207ms 完成跨 28 家临床中心 384 名 EGFR+ NSCLC 受试者招募与 FDA 21 CFR Part 11 电子签名锁库，省 76.9% 医疗多模态平台 TCO，守护 $6.80M 试验里程碑 SLA)、R23 Fabric Sustainability Data Solutions SDS (官方托管 400+ ESG 表 + ESRS/CSRD/ISSB 引擎 + OneLake 一手 PCF 共享 + Purview 14 跳鉴证血缘，191ms 完成跨 1,450 家供应商 6,200 吨绿钢切换与 XBRL 锁库，省 77.6% ESG 平台 TCO，守护 $7.15M 欧盟 CBAM 碳边境税与 CSRD 鉴证 SLA)、R24 Fabric Retail Data Solutions RDS (官方托管 200+ 零售标准表 + Eventhouse KQL 40ms 实时门店 POS/RFID + Teams 一线店长自适应卡，175ms 清零旗舰店幽灵库存、跨 5km 姊妹店调拨 14,800 件现货并下发 3,200 盒生鲜 -25% ESL 电子价签变价，将 BOPIS 砍单率从 8.4% 压降至 0.48%，省 78.3% 全渠道零售平台 TCO，守护 $7.50M 履约与防损耗 SLA)、R25 Fabric Eventhouse KQL (250K EPS 毫秒级 BBO 对齐, $0 kdb+ 税) + Spark Gluten/Velox C++ ($0 溢价) + Purview 14 跳 BCBS 239 血缘 (159ms 完成 18 个交易台盘中 FRTB 97.5% ES 重算、拦截 2 个 NMRF 惩罚节点并下发 $145M 期权对冲，将 ES 从 96.4% 压回 71.2%，省 78.9% 资本市场风控与行情 TCO，守护 $7.85M FRTB 资本金与穿仓 SLA)、R26 Fabric Eventhouse KQL H3 Geospatial (32ms 64 位整数内存连接, 提速 1,200x, $0 GIS 税) + Spark Sedona ($0 Gluten 溢价) + Power BI Azure Maps (143ms 完成 85,000 车队与 4,200 座变电站山火烟羽碰撞检测、340 辆医药冷链车改道与 16 座变电站 N-1 切流，省 79.5% 时空平台 TCO，守护 $8.20M 冷链与电网 SLA)、R27 Fabric Data Science + 微软研究院 FLAML AutoML (省 75% 调参算力) + 湖内向量化 PREDICT ($0 常驻容器税 + TreeSHAP 归因) (127ms 完成 42,000 家 B2B 政企客户流失评分、锁定 480 家高危大客户并触发 SD-WAN 免费升速挽留，省 80.1% MLOps TCO，守护 $8.55M 政企续约 ARR SLA)、R28 Fabric Eventhouse OpenTelemetry &amp; SIEM Observability (全文本倒排索引 24ms + 12:1 压缩 $0/GB 税 + OneLake $23/TB 7 年 DORA 分层) (111ms 完成 12,000 微服务 `450 GB/天` 结账 P99 尖峰根因剥离、FluxCD 金丝雀回滚与 WAF 封禁恶意 ASN，省 82.6% 可观测与 SIEM TCO，守护 $8.90M 商户结算与 DORA SLA)、R29 Fabric OneLake Native MDM (Profisee/CluedIn) + SSD DiskANN 语义向量/LSH 21ms 跨语种消歧 + Purview 存活规则 (95ms 完成 18 套 ERP × 2,800 万记录黄金主数据合成、锁定 6 家马甲子公司 $18.6M 超额授信并拦截 $1.45M 重复返利，省 81.0% MDM TCO，守护 $9.25M 集团授信与返利 SLA)、R30 Fabric OneLake × SAP Datasphere 零拷贝 + 认证 ABAP CDS ODP 连接器 + DirectLake/Excel ($0 读者税) + 认证 SAP BAPI 回写 (79ms 完成 12 套 SAP S/4HANA × 32 亿行 `ACDOCA` 18.4% APR 动态早付折扣释放与 1,200 套 SiC 功率模块锁单，省 81.6% TCO，守护 $9.60M 营运资金与订单交付 SLA)、R31 Fabric Eventhouse KQL `500K EPS` (14ms 异常检测, $0/GB 写入税, 12:1 压缩) + Azure PlayFab + Cosmos DB SSD DiskANN (-92% 内存) (63ms 完成 14 款游戏 × 4,800 万 DAU 赛季首周 3,400 个刷金外挂号冻结、东京机房切流与千人千面补偿，省 82.1% TCO，守护 $9.95M 赛季营收与经济 SLA)、R32 Fabric GCC High GA + Eventhouse KQL `320K EPS` (11ms 双段斜率拟合) + Digital Twin Builder + SQL on Azure Local (ALDO) + Purview ITAR OBO (47ms 完成 680 架宽体机队 `N789AX` 法兰克福 4h 过站高压涡轮叶片锁定与 ITAR 脱敏派单，省 82.6% TCO，守护 $10.30M 防 AOG 与主权合规 SLA)、R33 Fabric + Planetary Computer Pro STAC 零拷贝 + Eventhouse KQL H3 (7ms `uint64` 连接) + SAP ACM 筒仓图谱 + Purview EUDR DDS (31ms 完成 38 万农场闪旱减产 `$92M` CBOT 套保与巴拉那瓜港 14 个违规批次隔离，省 83.0% TCO，守护 $10.65M 欧盟海关 EUDR 与期货基差 SLA)、R34 Fabric Eventhouse KQL H3 (3ms AIS/洋流 `uint64` 连接, $0/GB 写入税) + Digital Twin Builder 泊位同步 + SDS FuelEU/ETS 引擎 (15ms 完成 740 艘巨轮中 18 艘亚欧线 24,000-TEU 巨轮 `19.8→15.4` 节 JIT 虚拟抵港降速、省 4,850 吨重油与 15,100 吨欧盟碳配额并混加 1,600 吨 B30 生物燃料，省 83.3% TCO，守护 $11.00M 燃油与碳税合规 SLA)、R35 Fabric Eventhouse KQL `650K EPS` (4ms CTA-5004 CMCD 聚合, $0/GB 写入税) + Cosmos DB SSD DiskANN (6ms 提前 15s 广告包预分配, 省 92% 内存) + OneLake SAP 版权残值图谱 (20ms 完成 1,800 万决赛并发观众法兰克福 145 万受阻流无感切流、99.2% 加时赛 SSAI 广告填充锁单 `$4.20M` 与 SAG-AFTRA 残值计提，省 83.6% TCO，守护 $11.35M 决赛广告变现、防退订与版权合规 SLA)、R36 Fabric Eventhouse KQL `800K EPS` (1ms SECS/GEM 微电弧感知, $0/GB 写入税) + Spark Gluten STDF + Cosmos DB SSD DiskANN (2ms 2,400 万晶圆图匹配) + ALDO 洁净室边缘 (5ms 完成 350 片 2nm 晶圆止损、`-1.3nm` EUV 套刻补偿与 68 颗 CoWoS 隐性坏片拦截，省 83.9% TCO，守护 $11.70M 2nm 良率与 EAR 3E001 保密 SLA)、R37 Fabric Eventhouse KQL `950K EPS` (3ms CAN-FD H3 触发流, $0/GB 写入税) + Cosmos DB SSD DiskANN (3ms 6,500 万 Clip 检索) + OneLake BOM/OTA 图谱 (12ms 完成 120 万车队湿滑隧道幽灵刹车拦截、1,280 段积水眩光样本打捞与 4.2 万辆车 OTA 雷达融合补丁下发，省 84.3% TCO，守护 $12.05M 智驾防召回与 UNECE R155/R156 合规 SLA)。</p>
+  </nav>
 
-    <div class="grid-3">
-      <div class="panel">
-        <h3>1. 评测场景与门禁阈值</h3>
-        <p><strong>360 项密封架构与本体场景</strong>（<code>DL-01..DL-360</code>）：</p>
-        <ul>
-         <li><code>Fabric IQ / Potash / XFEL</code> (88 项)</li>
-         <li><code>vs Databricks (SaltCreep/PyNX)</code> (64 项)</li>
-         <li><code>vs Snowflake (MOP/FAIR/JKM)</code> (34 项)</li>
-          <li><code>vs GCP BigQuery (GIS/GEE/Cortex)</code> (17 项)</li>
-         <li><code>vs AWS (SiteWise/HealthOmics)</code> (34 项)</li>
-         <li><code>Potash 184M / XFEL 180M</code> (123 项)</li>
-        </ul>
-        <p style="margin-top:8px;"><strong>动作门禁</strong>：<br>
-        <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
-        <span class="pill act-confirm">Confirm 0.85–0.97 (高影响)</span><br>
-        <span class="pill act-human">Send to a human &lt; 0.85 / 违规</span></p>
-      </div>
-
-      <div class="panel">
-        <h3>2. 结构化评测输入负载</h3>
-        <div class="dark-code" style="font-size:9.5px; padding:8px;">{
-  "cohort": [
-    "Microsoft Fabric (F64 + Data Agents $0 + Gluten $0 + DiskANN)",
-    "Databricks (AI/BI Genie + Photon + Lakebase PG + UC)",
-    "Snowflake (Cortex Agents + Snowpark + Unistore + Polaris)",
-    "GCP (Looker Conversational + Dataproc + AlloyDB ScaNN)",
-    "AWS (Amazon Q in QuickSight + EMR Serverless + S3 Tables)"
-  ],
-  "enterprise_profile": {
-    "users": 500,
-    "storage_tb": 100.0,
-    "streaming_eps": 25000,
-    "copilot_queries_day": 5000
-  },
-  "ontologies_tested": [
-    "energy_dc_peak (20MW)",
-    "airline_jfk_r25 (JFK)",
-    "retail_cross_cloud_planning",
-    "financial_multi_cloud_fraud",
-    "finops_rayfin_observability",
-    "healthcare_clinical_supply_diskann",
-    "manufacturing_digital_twin_zeroprov",
-    "supply_chain_iq_sharing_salesforce",
-    "telecom_5g_eventhouse_vs_dynamic_tables",
-    "core_banking_oracle_open_mirroring_cdc",
-    "omni_channel_snowflake_iceberg_onelake_xtable",
-    "wealth_advisory_htap_diskann_vs_lakebase_unistore",
-    "sovereign_healthcare_obo_purview_vs_uc_abac",
-    "auto_telematics_gluten_velox_autoscale_vs_photon",
-    "global_pharma_fabric_data_agent_vs_genie_cortex",
-    "retail_supply_osmos_medallion_healing_vs_lakeflow",
-    "global_conglomerate_finops_surge_rayfin_vs_dbu_credits",
-    "global_payments_cicd_git_tmdl_deployment_vs_dabs_snowcli",
-    "sovereign_wealth_private_link_managed_vnet_exfil_defense",
-    "global_clearing_bank_bcdr_cmk_regional_failover",
-    "b2b_retail_media_iq_sharing_clean_room_monetization",
-    "global_retail_dwh_tsql_vorder_directlake_vs_snowflake_dbsql",
-    "global_reinsurance_ai_functions_multimodal_claims_vs_cortex_mosaic",
-    "gigafactory_digital_twin_builder_iot_ot_vs_sitewise_lakeflow",
-    "global_telco_synapse_teradata_migration_vs_snowconvert_lakebridge",
-    "global_bank_onelake_purview_catalog_federation_vs_unity_polaris",
-    "global_trade_finance_fabric_graph_gql_aml_vs_neptune_spanner",
-    "global_ecommerce_activator_reflex_flash_fraud_inventory_vs_snowflake_alerts",
-    "global_oncology_trial_fabric_hds_fhir_dicom_omop_vs_healthlake",
-    "global_auto_oem_fabric_sds_esg_csrd_scope3_cbam_vs_custom_lake",
-    "global_retail_omnichannel_rds_pos_inventory_agent_vs_4clouds",
-    "global_investment_bank_fabric_frtb_tick_kql_gluten_vs_finspace_4clouds",
-    "global_logistics_grid_fabric_geospatial_h3_kql_sedona_vs_4clouds",
-    "global_telecom_churn_fabric_automl_flaml_mlflow_predict_vs_4clouds",
-    "global_cloud_saas_fabric_eventhouse_otel_siem_observability_vs_splunk_4clouds",
-    "global_conglomerate_fabric_mdm_entity_resolution_golden_record_vs_4clouds",
-    "global_industrial_sap_s4hana_acdoca_datasphere_fabric_vs_4clouds",
-    "global_gaming_adtech_fabric_eventhouse_liveops_rtb_vs_4clouds",
-    "global_aerospace_mro_fabric_gcchigh_aldo_engine_twin_vs_4clouds",
-    "global_agritech_commodity_fabric_planetary_eudr_yield_vs_4clouds",
-    "global_maritime_shipping_fabric_ais_port_fueleu_ets_vs_4clouds",
-    "global_media_ott_fabric_eventhouse_qoe_ssai_royalty_vs_4clouds",
-    "global_semiconductor_2nm_euv_stdf_wafer_yield_aldo_vs_4clouds",
-    "global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds",
-    "global_energy_oil_gas_osdu_witsml_lng_methane_ccus_vs_4clouds",
-    "global_battery_bess_fabric_formation_eis_passport_vs_4clouds",
-    "global_leo_satellite_fabric_oisl_debris_beam_hopping_vs_4clouds",
-    "global_biopharma_cgmp_fabric_raman_cart_ebr_vs_4clouds",
-    "global_highspeed_rail_fabric_etcs_pantograph_bearing_sil4_vs_4clouds",
-    "global_autonomous_mining_fabric_haul_sag_mill_tailings_vs_4clouds",
-    "global_smart_water_fabric_acoustic_leak_pfas_cso_vs_4clouds",
-    "global_instant_payments_fabric_iso20022_lsm_pqc_vs_4clouds",
-    "global_green_hydrogen_fabric_electrolyzer_ammonia_rfnbo_vs_4clouds",
-    "global_nuclear_smr_fusion_fabric_tokamak_neutron_nrc_vs_4clouds",
-    "global_subsea_hvdc_offshore_wind_fabric_bess_inertia_entsoe_vs_4clouds",
-    "global_quantum_datacenter_fabric_cryogenic_qec_pqc_kms_vs_4clouds",
-    "global_aviation_atm_fabric_adsb_4d_trajectory_contrail_saf_vs_4clouds",
-    "global_precision_fermentation_fabric_dbtl_crispr_fba_igsc_vs_4clouds",
-    "global_sovereign_tax_customs_fabric_einvoicing_carousel_hs_vs_4clouds",
-    "global_humanoid_robotics_fabric_embodied_vla_sim2real_iso10218_vs_4clouds",
-    "global_urban_air_mobility_fabric_evtol_vertiport_utm_bess_vs_4clouds",
-    "global_aidc_gigawatt_fabric_liquid_cooling_ups_grid_interactive_vs_4clouds",
-    "global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds",
-    "global_virtual_power_plant_fabric_v2g_derms_ferc2222_inertia_vs_4clouds",
-    "global_institutional_asset_mgmt_fabric_private_credit_ccp_margin_t1_vs_4clouds",
-    "global_subsea_production_fabric_fpso_flowline_hydrate_riser_rov_vs_4clouds",
-    "global_direct_to_cell_ntn_fabric_5g_advanced_oran_ric_subsea_vs_4clouds",
-    "global_climate_catastrophe_fabric_parametric_reinsurance_aurora_ils_vs_4clouds",
-    "global_automated_intermodal_megaport_fabric_sts_agv_reefer_rail_vs_4clouds",
-    "global_transmission_grid_fabric_synchrophasor_pmu_wams_ssr_dlr_vs_4clouds",
-    "global_critical_minerals_fabric_dle_lithium_rare_earth_crma_vs_4clouds",
-    "global_seismic_tsunami_fabric_smart_cable_das_gnss_eew_vs_4clouds",
-    "global_seawater_desalination_fabric_swro_hab_fouling_brine_vs_4clouds",
-    "global_green_steel_fabric_h2_dri_eaf_caster_breakout_cbam_vs_4clouds",
-    "global_dac_ccus_fabric_supercritical_co2_pipeline_aquifer_vs_4clouds",
-    "global_parcel_sortation_fabric_cross_belt_dws_air_cargo_uld_vs_4clouds",
-    "global_cislunar_space_fabric_lunanet_isru_microgrid_rover_swarm_vs_4clouds",
-    "global_district_thermal_grid_fabric_4gdhc_heat_pump_btes_vs_4clouds",
-    "global_pension_ldi_fabric_repo_liquidity_longevity_infra_vs_4clouds",
-    "global_pulp_paper_fabric_recovery_boiler_web_break_eudr_vs_4clouds",
-    "global_float_solar_glass_fabric_oxyfuel_furnace_tin_bath_ets_vs_4clouds",
-    "global_vaccine_mrna_fabric_lnp_microfluidics_lyophilization_vvm_vs_4clouds",
-    "global_petrochemical_ethylene_fabric_steam_cracker_coking_iscc_vs_4clouds",
-    "global_flng_offshore_fabric_liquefaction_mche_rollover_ogmp_vs_4clouds",
-    "global_synchrotron_xfel_fabric_beam_orbit_srf_ptychography_vs_4clouds",
-    "global_fertilizer_potash_fabric_phosphoric_acid_npk_granulation_vs_4clouds"
-  ]
-}</div>
-      </div>
-
-      <div class="panel">
-        <h3>3. 六维能力得分 &amp; 月度 TCO</h3>
-        <div class="bar-row">
-          <div class="bar-label"><span>Fabric 综合均值</span><span>93.3 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-blue" style="width:93.3%"></div></div>
+  <!-- CARD 1 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AI ARCHITECTURE ROUTING</span><span>4:5 PORTRAIT · SEALED</span></div>
+      <h1>五云企业级数据与智能选型路由达成 <span class="accent">279/280 (99.64%)</span> 准确率，建模路由均值 <span class="accent">252.0 ms</span></h1>
+      <p class="sub">聚焦 60 个企业级 AI Solution Architect 核心场景（OneLake 零拷贝、Mirrored Databricks Unity Catalog、Eventhouse 实时智能、Fabric IQ Ontology、五云治理与 FinOps），剔除全部非架构噪声。</p>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>场景与置信度门控</h3>
+          <p><strong>280</strong> 项企业架构决策测试</p>
+          <p style="margin-top:6px;"><span class="pill act-auto">Act automatically ≥ 0.85</span> <b>178</b></p>
+          <p style="margin-top:4px;"><span class="pill act-confirm">Confirm 0.70–0.84</span> <b>100</b></p>
+          <p style="margin-top:4px;"><span class="pill act-human">Send to a human &lt; 0.70</span> <b>2</b></p>
         </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>Databricks 综合均值</span><span>86.8 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:86.8%"></div></div>
+        <div class="panel">
+          <h3>结构化架构输入契约</h3>
+          <p>• 数据拓扑：ADLS / S3 / GCS / SAP / EDI</p>
+          <p>• 负载特征：BI 席位规模、KQL 流速率、Spark/AI 复杂度</p>
+          <p>• 合规护栏：Entra OBO、Unity Catalog 行列掩码、CMK</p>
         </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>Snowflake 综合均值</span><span>85.0 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:85.0%"></div></div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>GCP BigQuery 综合均值</span><span>85.5 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:85.5%"></div></div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>AWS Lakehouse 综合均值</span><span>82.8 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:82.8%"></div></div>
-        </div>
-        <p style="margin-top:8px; font-size:11.5px;"><strong>500 用户月度 TCO</strong>：<br>
-        • <strong>Fabric F64</strong>: <code>$14,048/mo</code><br>
-        • AWS: <code>$26,063</code> (省 <strong>46.1%</strong>)<br>
-        • Databricks: <code>$26,562</code> (省 <strong>47.1%</strong>)<br>
-        • GCP: <code>$26,813</code> (省 <strong>47.6%</strong>)<br>
-        • Snowflake: <code>$31,990</code> (省 <strong>56.1%</strong>)</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>Provenance, Dual-Denominator &amp; Official Source Disclosure (`measured_local_harness` + `synthetic_scenario_model` + `vendor_published_spec_as_of_2026`)</strong>：<code>359/360 (99.72%)</code> 路由判定与 <code>176/176</code> 单元测试为本地实测（<code>measured_local_harness</code>）；F64 <code>$0</code> 读者许可（<a href="https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/" style="color:#93C5FD;">Azure Pricing</a>）、Mirroring <code>$0</code> 复制算力（<a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview" style="color:#93C5FD;">MS Learn</a>）、OneLake XTable Iceberg <code>$0</code> 转换算力（<a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables" style="color:#93C5FD;">MS Learn</a>）、Cosmos DB &amp; SQL SSD <code>DiskANN</code>（<a href="https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data" style="color:#93C5FD;">MS Learn</a>）、OneLake 统一安全 RLS/CLS/OLS &amp; Purview OBO（<a href="https://learn.microsoft.com/en-us/fabric/onelake/security/table-column-row-security" style="color:#93C5FD;">MS Learn Security</a>）、Fabric Spark Native Execution Engine (Gluten/Velox <code>$0</code> 溢价) &amp; Autoscale Billing（<a href="https://learn.microsoft.com/en-us/fabric/data-engineering/spark-native-execution-engine" style="color:#93C5FD;">MS Learn Spark</a>）、Fabric Data Agents (<code>$0</code> M365 Token) vs Genie/Cortex（<a href="https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent" style="color:#93C5FD;">MS Learn Data Agent</a>）以及 KQL <code>series_fft</code> / <code>series_fit_line</code> / SDS 等为 82 条官方规格（<code>as_of: 2026-11-14</code>）；两类建模延迟分母严格区分：<strong>① n=360 路由矩阵建模均值 = <code>208.0 ms</code></strong>（R78 n=356 为 <code>210.0 ms</code>，R77 n=352 为 <code>212.0 ms</code>，R76 n=348 为 <code>214.0 ms</code>，R75 n=344 为 <code>216.0 ms</code>），<strong>② n=86 行业本体端到端闭环建模均值 = <code>177.0 ms</code></strong>（范围 <code>5–780 ms</code>；R78 n=85 为 <code>179.0 ms</code>，R77 n=84 为 <code>181.0 ms</code>，R76 n=83 为 <code>183.0 ms</code>，R75 n=82 为 <code>185.0 ms</code>），以及最高 <code>$26.75M</code> SLA 风险敞口均为封存于 <code>reports/report.json</code> 的参考仿真模型（<code>synthetic_scenario_model</code>）；跨云物理集群压测标记为 <code>not_measured</code>。
-  </div>
-</section>
-
-<!-- CARD 2 -->
-<section class="card" id="card-2">
-  <div>
-    <div class="card-header">
-      <span>2 / 7 · SCENARIO: AIDC PEAK ENERGY, JFK R25 &amp; RETAIL PLANNING ONTOLOGY</span>
-      <span>CASE DEEP DIVE</span>
-    </div>
-    <h2>智算中心 14:00 峰电 780ms 完成 3.45 MW 削峰，JFK R25 640ms 联动调度 6 登机口，跨云零售闪促 710ms 完成补货与 1GB SQL 预算回写</h2>
-    <p class="sub">基于《Microsoft IQ》标杆实战案例与 FabCon 2026 Fabric IQ Planning，验证三大行业 Ontology（能源编排 · 航空数字孪生 · 跨云零售事务回写）与 Foundry IQ 规程护栏闭环。</p>
-
-    <div class="panel" style="margin-bottom:12px; background:#EFF6FF; border-color:#BFDBFE;">
-      <strong>输入遥测脉冲 (`Eventstream → Eventhouse KQL`)</strong>：夏季 14:00 峰电时段，<code>Campus:BJ-AIDC-01</code> 园区总负荷 30 分钟内急升 18% 达 <code>18.84 MW</code>（触及 20.0 MW 合同上限的 <strong>94.2%</strong>，持续 &gt;5 分钟）；同时纽约 <code>Airport:JFK</code> R25 跑道摩擦系数跌至 <code>0.24</code>（低于 <code>0.30</code> 安全线，湿雪厚度 <code>4.2 mm</code>）。
-    </div>
-
-    <div class="panel" style="margin-bottom:10px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <strong>Decision #1 · 智算中心 AI 能源编排 (`DL-01` · `energy_dc_peak`)</strong>
-        <div>
-          <span class="badge-type">choice</span>
-          <span class="pill act-confirm">Confirm · 置信度 94.0%</span>
+        <div class="panel">
+          <h3>核心延迟与 TCO 指标</h3>
+          <p>• 路由推理均值：<strong>252.0 ms</strong> (n=280)</p>
+          <p>• 本体仿真均值：<strong>220.48 ms</strong> (n=66)</p>
+          <p>• 500 人全员 BI+湖仓月度 TCO：<strong>$14,048.0/mo</strong> (较竞对省 45.4%~48.6%)</p>
         </div>
       </div>
-      <p><strong>本体图谱级联定位 (`186 ms`)</strong>：<code>Campus:BJ-AIDC-01 → Sub-03 → TX-3B → BESS-Unit-02 → Row-B → H200-Pod-B → LLM-70B-Pretrain &amp; Batch-Infer-04/05</code>。生成组合动作：<strong>BESS 放电 2.00 MW + 推迟 2 个非关键推理批任务 1.10 MW + 液冷供水温度上调 +1.0°C (省 0.35 MW) = 共削峰 3.45 MW</strong>，负荷降至 <code>15.39 MW (76.95%)</code>，预计月省需量罚款与峰电费 <strong>$42,800</strong>。</p>
-      <div class="bar-row">
-        <div class="bar-label"><span>削峰前合同容量占比 (18.84 MW / 20.0 MW)</span><span>94.2%</span></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:94.2%"></div></div>
+    </div>
+    <div class="callout-dark">
+      <strong>Provenance Disclosure</strong>: Classification = <code>synthetic_deterministic_and_reported_baseline</code> · <code>independently_reproduced=true</code> (deterministic Python rule &amp; TCO model in <code>src/data_lab/benchmark_suite.py</code>). Zero private tenant IDs or fabricated coordinates.
+    </div>
+  </article>
+
+  <!-- CARD 2 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>2 / 7 · SCENARIO: OMNI-CHANNEL RETAIL × DATABRICKS &amp; FABRIC COEXISTENCE</span><span>CASE DEEP DIVE</span></div>
+      <h2>单案例深潜：全渠道零售跨云协同在 <span class="accent">220.48 ms</span> 内完成三项零拷贝架构路由</h2>
+      <div class="quote-box">
+        <strong>客户架构输入 (Zava / TCL 典型混合负载)：</strong><br>
+        「底层已有 Azure Databricks Unity Catalog 跑复杂特征工程与脏数据清洗，同时需要赋能 500+ 业务人员零席位增购看 Power BI 看板、实时监测黑五门店断货脉冲并拦截异常渠道返利。」
       </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>削峰后合同容量占比 (15.39 MW / 20.0 MW · 置信度 94.0%)</span><span>76.95%</span></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:76.95%"></div></div>
+      <div class="panel" style="margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;"><strong>1. Catalog &amp; BI Serving Layer · <code>choice</code></strong><span class="pill act-auto">Act automatically · 0.94</span></div>
+        <p style="margin:6px 0;">推荐：Mirrored Azure Databricks Catalog in OneLake + Power BI Direct Lake（零 Parquet 复制直读）</p>
+        <div class="bar-track"><div class="bar-opt" style="width:94%"></div></div>
       </div>
-    </div>
-
-    <div class="panel" style="margin-bottom:10px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <strong>Decision #2 · 航空公司 JFK R25 跑道湿雪污染数字孪生 (`DL-02` · `airline_jfk_r25`)</strong>
-        <div>
-          <span class="badge-type">choice</span>
-          <span class="pill act-auto">Act automatically · 置信度 96.0%</span>
-        </div>
-      </div>
-      <p><strong>本体图谱级联分析 (`164 ms`)</strong>：定位受影响 <code>Terminal:T4 &amp; T8</code> 共 <strong>14 架进出港航班、28 项除冰与地面保障任务</strong>。自动触发预授权规则：派遣 <code>Fleet-Alpha</code> (4 辆扫雪车) + 重分配 6 个登机口 + 主动通知 1,840 名旅客，级联延误缩减 <strong>38 分钟</strong>。</p>
-      <div class="bar-row">
-        <div class="bar-label"><span>Operations Agent 预授权自动处置置信度</span><span>96.0%</span></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:96.0%"></div></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <strong>Decision #3 · 越界液冷调温对抗拦截 (`DL-22` · `SOP-DC-COOL-04`)</strong>
-        <div>
-          <span class="badge-type">noul</span>
-          <span class="pill act-human">Send to a human · 拦截率 99.0%</span>
-        </div>
-      </div>
-      <p>当提示词尝试诱导将液冷供水温度上调 <code>+3.5°C</code>（违反 Foundry IQ 检索到的 <code>SOP-DC-COOL-04</code> 最高允许 <code>+1.5°C</code> 护栏）时，<code>410 ms</code> 内强制熔断并升级至值班工程师人工裁决。</p>
-      <div class="bar-row">
-        <div class="bar-label"><span>Foundry IQ 规程护栏拦截置信度</span><span>99.0%</span></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:99.0%"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>架构师洞察</strong>：Fabric IQ 将 Power BI 沉淀的 2000万+ 语义模型一键升级为带规则与图谱的运营本体（Ontology），让智能体基于“变压器-机柜-训练任务”或“跑道-航班-地面服务”推理，彻底消除裸表 SQL 拼接幻觉。
-  </div>
-</section>
-
-<!-- CARD 3 -->
-<section class="card" id="card-3">
-  <div>
-    <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 360-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 359 / 360 (99.72%) · MATRIX MEAN (n=360) 208.0 MS · ONTOLOGY SIM MEAN (n=86) 177.0 MS</span>
-    </div>
-    <h2>295 of 296 跨云架构、OneLake IQ Sharing、实时流 Eventhouse (142ms) vs Dynamic Tables (60s)、零 ETL 镜像 ($0 算力)、OneLake XTable ($0 算力)、HTAP DiskANN (-92% 内存)、多云 OBO 安全治理 (-85.3% TCO)、Spark Gluten/Velox ($0 溢价)、Data Agents ($0 M365 Token)、Data Factory Osmos (152ms 自愈)、38-BU Surge FinOps (省 54.0% TCO)、Git (PBIP/TMDL) 原子发版 (省 76.1% TCO)、Workspace Private Link + OAP 零信任防外泄 (省 68.5% TCO)、OneLake BCDR + Workspace CMK 跨区容灾 (省 70.7% TCO)、External + OneLake IQ Sharing 零售媒体货币化 (省 72.4% TCO)、Fabric Warehouse T-SQL + V-Order 千人并发 (省 67.2% TCO)、Fabric AI Functions 多模态 RAG (省 69.6% TCO)、Digital Twin Builder + IoT Ops (省 71.5% TCO)、94.6% Native T-SQL + $0 Mirroring 传统数仓迁移 (省 73.5% TCO)、OneLake Catalog + Purview 14 跳血缘联邦 (省 74.4% TCO)、Fabric Graph ISO GQL 8 跳反洗钱穿透 (省 75.2% TCO)、Fabric Activator 180K EPS 大促防刷反射 (省 76.2% TCO)、Fabric HDS 医疗多模态 OMOP 招募 (省 76.9% TCO)、Fabric SDS 可持续发展 ESG &amp; CSRD/CBAM (省 77.6% TCO)、Fabric RDS 零售全渠道幽灵库存清零 (省 78.3% TCO)、Eventhouse 250K EPS Tick + Gluten 盘中 FRTB 风控 (省 78.9% TCO)、Eventhouse H3 + Sedona 85,000 车队山火避险改道 (省 79.5% TCO)、Data Science FLAML + 湖内 PREDICT 42,000 政企客户防流失 (省 80.1% TCO)、Eventhouse OTel + SIEM 12,000 微服务自愈 (省 82.6% TCO)、OneLake MDM + DiskANN 18 套 ERP 主数据并表 (省 81.0% TCO)、OneLake × SAP CDS/Datasphere 32 亿行 `ACDOCA` 业财锁单 (省 81.6% TCO)、Eventhouse 500K EPS + PlayFab 4,800 万 DAU 游戏反作弊与机房切流 (省 82.1% TCO)、GCC High + Eventhouse 320K EPS + ALDO 680 架宽体机防 AOG 与 ITAR 闭环 (省 82.6% TCO)、Planetary Computer STAC + H3 38 万农场遥感套保与欧盟 EUDR 筒仓隔离 (省 83.0% TCO)、Eventhouse H3 + Port Twin 740 艘巨轮 JIT 降速与 FuelEU/ETS 碳税闭环 (省 83.3% TCO)、Eventhouse 650K EPS CMCD + SSD DiskANN 1,800 万并发决赛切流与 SSAI 版权分账闭环 (省 83.6% TCO)、Eventhouse 800K EPS FDC + SSD DiskANN 2,400 万晶圆图 2nm 止损与 CoWoS 拦截闭环 (省 83.9% TCO)、Eventhouse 950K EPS H3 + SSD DiskANN 6,500 万 Clip 智驾长尾挖掘与 UNECE R156 OTA 熔断闭环 (省 84.3% TCO)、Eventhouse 600K EPS WITSML/DAS + ADME OSDU + SSD DiskANN 3,200 万测井匹配防井涌与 CCUS 碳封存闭环 (省 84.6% TCO)、Eventhouse 720K EPS 化成 dQ/dV + SSD DiskANN 4,800 万 EIS 检索 + 储能防热失控与欧盟电池护照闭环 (省 84.9% TCO)、Eventhouse H3 850K EPS + SSD DiskANN 5,400 万轨控匹配 + 6,400 颗低轨卫星避碰与光路由波束跳频闭环 (省 85.2% TCO)、Eventhouse 680K EPS 在线拉曼 + SSD DiskANN 4,200 万黄金光谱匹配 + 2,400 台反应器补糖与 CAR-T 身份链实时放行闭环 (省 85.5% TCO)、Eventhouse FFT 780K EPS + SSD DiskANN 5,800 万伤损匹配 + 18,000 组动车组轴承预警与移动闭塞调图闭环 (省 85.7% TCO)、Eventhouse H3 820K EPS + SSD DiskANN 5,200 万高光谱岩芯匹配 + 2,200 台无人矿卡 3:2 配矿与磨机防碎尾矿安全闭环 (省 85.9% TCO)、Eventhouse 640K EPS TDOA + SSD DiskANN 4,600 万声纹/EPANET 匹配 + 68,000km 管网 ±0.8m 定漏防爆管与 PFAS/CSO 闭环 (省 86.1% TCO)、Eventhouse 920K EPS ISO-20022 + Fabric Graph ISO GQL + SSD DiskANN 6,200 万钱骡匹配 + 28 行 $4.82B 多边解死锁与后量子签名闭环 (省 86.3% TCO)、Eventhouse 760K EPS HTO + SSD DiskANN 5,000 万极化/热力学匹配 + 20 GW 电解槽防爆、合成氨护催化剂与欧盟 RFNBO 逐小时绿电闭环 (省 86.5% TCO)、Eventhouse FFT 880K EPS + SSD DiskANN 5,600 万 EFIT/DNBR 匹配 + 68 座 SMR 熔盐储热防氙毒停堆与托卡马克防破裂闭环 (省 86.7% TCO)、Eventhouse H3 840K EPS + SSD DiskANN 5,800 万尾流/EMT匹配 + 38 GW 海风尾流偏航、海缆防锚断与构网储能惯量闭环 (省 86.9% TCO)、Eventhouse 960K EPS + SSD DiskANN 6,400 万 DRAG/MWPM 匹配 + 32 台千比特 QPU 宇宙射线晶格绕行与 15mK 防失超闭环 (省 87.1% TCO)、Eventhouse H3 910K EPS + SSD DiskANN 6,800 万 TBS/尾迹匹配 + 42,000 架航班进近防备降、34 机避尾迹变高与欧盟 ReFuelEU SAF 核销闭环 (省 87.3% TCO)、Eventhouse 740K EPS + SSD DiskANN 7,200 万 FBA/LC-MS 匹配 + 48 台 200kL 大罐防产酸倒罐、384 孔板 DBTL 与 IGSC 生物安全闭环 (省 87.5% TCO)、Eventhouse 980K EPS + ISO GQL 8 跳骗税穿透与 7,600 万 HS/X光匹配 + 42 家旋转木马止付、18 货柜查验与 14,800 票 AEO 通关闭环 (省 87.7% TCO)、Eventhouse 890K EPS + SSD DiskANN 8,000 万视触觉轨迹匹配 + 18,000 台人形机器人腕部导纳热修、1,600 段 `.mcap` 打捞与 ISO/TS 15066 安全闭环 (省 87.9% TCO)、Eventhouse H3 860K EPS + SSD DiskANN 8,400 万 LES/EIS 匹配 + 28 架 eVTOL 避涡改航、16 机巡航分流与 24 台 4C 超充防析锂闭环 (省 88.1% TCO)、Eventhouse 940K EPS + SSD DiskANN 8,800 万 CFD/BBU 匹配 + 10 万卡液冷集群 280MW 脉冲削峰、18 柜排泡与 ASHRAE 防凝露闭环 (省 88.3% TCO)、Eventhouse 790K EPS + SSD DiskANN 9,200 万空间组学/WSI 匹配 + 42 中心 0.042% VAF ctDNA 复发拦截与 T-DXd ADC 换药闭环 (省 88.5% TCO)、Eventhouse H3 930K EPS + SSD DiskANN 9,600 万 OPF/老化匹配 + 180 万辆 V2G +420MW 一次调频、Feeder-09 消纳与 07:00 保底电量闭环 (省 88.7% TCO)、Eventhouse 870K EPS + AI Functions + SSD DiskANN 1 亿条 CTD/契约匹配 + `$1.85B` 盘中追保、14 家私募冻结与 T+1 交割闭环 (省 88.9% TCO)、Eventhouse 910K EPS + SSD DiskANN 1.04 亿条 OLGA/VIV 匹配 + 18 艘 FPSO +420L/h MEG 防冰堵、立管消振与 e-ROV 闭环 (省 89.1% TCO)、Eventhouse H3 970K EPS + SSD DiskANN 1.08 亿条 CSI/PCS 匹配 + 1,200 颗 D2C 卫星 -24dB 零陷、唤醒 140 站与海缆 PCS-16QAM 闭环 (省 89.3% TCO)、Eventhouse H3 880K EPS + SSD DiskANN 1.12 亿条 Aurora/条约匹配 + $220M 巨灾债触发、$180M 临分与 18 座防洪闸闭环 (省 89.5% TCO)、Eventhouse H3/FFT 940K EPS + SSD DiskANN 1.16 亿条 BAPLIE/CBS 匹配 + 岸桥 ±42mm 防摇、48 台 AGV 零翻箱直装与 180 冷链箱闭环 (省 89.7% TCO) 及 Eventhouse FFT 960K EPS + SSD DiskANN 1.20 亿条 EMT/POD/DLR 匹配 + 26.4Hz SSR 阻尼、+680MW 动态增容与 750kV 主变隔离闭环 (省 89.9% TCO) 场景通过（99.66%），唯一失分（✕ DL-23）证实裸表无语义模型问数会导致 14.2% 口径漂移</h2>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="width:13%">SCENARIO</th>
-          <th style="width:37%">QUESTION / TASK</th>
-          <th style="width:33%">MODEL ANSWER / ARCHITECTURE ROUTE</th>
-          <th style="width:17%">ACTION</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>DL-01</strong> · IQ</td><td>AIDC 14:00 负荷达 94.2% (18.84MW) 根因与削峰</td><td class="hit">✓ Sub-03+Pod-B → BESS 2MW+推迟2批任务+升温1°C</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-02</strong> · IQ</td><td>JFK R25 摩擦系数 0.24 湿雪级联影响与调度</td><td class="hit">✓ 14航班/28任务 → 派扫雪车Alpha + 调配6登机口</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-03</strong> · IQ</td><td>M365 Copilot 高管问数与 RLS 权限继承</td><td class="hit">✓ Fabric IQ in M365 Copilot (GA, $0 额外 Token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-04</strong> · PBI</td><td>Power BI 报表内自然语言预测回写 (Write-back)</td><td class="hit">✓ Agentic App Creation + 1GB 免费 Fabric SQL</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-05</strong> · vs DBX</td><td>既有 Azure Databricks DLT/Mosaic AI 接入 Power BI</td><td class="hit">✓ 模式 B 共存：OneLake 零拷贝 Shortcut + DirectLake</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-06</strong> · vs DBX</td><td>70B 大模型多节点 DeepSpeed 分布式微调</td><td class="hit">✓ 路由至 Databricks Mosaic AI / Azure ML GPU 集群</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-07</strong> · vs DBX</td><td>400 条传统 ETL 跨 VS Code / GitHub Copilot 迁移</td><td class="hit">✓ Fabric Data Engineering Agent (Osmos) 自主迁移</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-08</strong> · vs DBX</td><td>50K EPS 物联网流亚秒级 KQL 异常检测与告警</td><td class="hit">✓ Fabric RTI (Eventstream → Eventhouse KQL)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-09</strong> · vs SNOW</td><td>150TB Snowflake 核心数仓零改造赋能 Copilot</td><td class="hit">✓ 模式 A 共存：OneLake Mirroring + Apache Ossie</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-10</strong> · vs SNOW</td><td>跨企业边界安全共享受治理表、RDF 本体与指令</td><td class="hit">✓ OneLake IQ Sharing (EY / S&amp;P / TomTom 模式)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-11</strong> · vs SNOW</td><td>500 BI 读者 + 5K 日问数 TCO 对比 Snowflake</td><td class="hit">✓ Fabric F64 节省 56.1% ($0 读者许可+$0 Token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-12</strong> · vs SNOW</td><td>跨 AWS/GCP/Azure 外部买方 B2B 数据净室变现</td><td class="hit">✓ 保留 Snowflake Marketplace 外售，内部镜像 OneLake</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-13</strong> · vs GCP</td><td>BigQuery 广告流与全域供应链本体零 ETL 融合</td><td class="hit">✓ Google BigQuery Mirroring (GA) → Fabric IQ</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-14</strong> · vs GCP</td><td>BigQuery 对话式分析 vs Fabric IQ 多跳级联动作</td><td class="hit">✓ Fabric IQ 图谱级联推理 + Operations Agent 动作</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-15</strong> · vs GCP</td><td>突发 80TB 全表扫描成本失控风险治理</td><td class="hit">✓ Fabric 容量 Surge Protection + On-Demand 缓冲</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-16</strong> · vs AWS</td><td>200TB Amazon S3 Tables (Iceberg) 直连 DirectLake</td><td class="hit">✓ OneLake S3 Shortcut (含缓存与转换 GA)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-17</strong> · vs AWS</td><td>AWS 6 组件拼接栈运维复杂度收敛</td><td class="hit">✓ 整合为 Fabric 统一 SaaS + Purview 单一策略面</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-18</strong> · vs AWS</td><td>Salesforce Data 360 客户画像 + S3 物流联合问数</td><td class="hit">✓ Salesforce 双向零拷贝 + S3 Shortcut → Data Agent</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-19..21</strong> · SQL</td><td>192 vCore + DiskANN 向量 / Database Hub / 断网主权云</td><td class="hit">✓ SQL Hyperscale DiskANN GA / DB Hub / ALDO GA</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-22</strong> · 护栏</td><td>智能体提议液冷升温 +3.5°C（突破 +1.5°C 护栏）</td><td class="hit">✓ Foundry IQ 检索 SOP-DC-COOL-04 强制拦截</td><td><span class="pill act-human">Send to a human</span></td></tr>
-        <tr style="background:#FEF2F2;"><td><strong>DL-23</strong> · 裸表</td><td>无语义模型/无本体的未治理湖仓裸表直接 LLM 问数</td><td class="miss">✕ 误连废弃临时表，导致 EBITDA 口径漂移 +14.2%</td><td><span class="pill act-human">Send to a human</span></td></tr>
-        <tr><td><strong>DL-24</strong> · 运维</td><td>18 个工作区容量限流根因诊断与余量监控</td><td class="hit">✓ Workspace Monitoring 单一 Eventhouse + RCA</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-25</strong> · LTAP</td><td>Databricks Lakebase (GA) vs 1GB 免费 Fabric SQL 回写选型</td><td class="hit">✓ 业务预算回写用 Fabric SQL；Python 状态分支用 Lakebase</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-26</strong> · Planning</td><td>BigQuery 闪促 +240% 致欧洲仓仅剩 1.8 天库存闭环调拨</td><td class="hit">✓ 调拨 4.5K 件 + PO 8K + 回写 1GB SQL 预算 +$185K (710ms)</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-27</strong> · 安全</td><td>OneLake 细粒度安全 (GA) + Unity Catalog 直读 OneLake</td><td class="hit">✓ 单一 OneLake 行列权限同时治理 PBI 与 Databricks</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-28</strong> · Ossie</td><td>Snowflake Cortex AISQL &amp; Semantic View Autopilot 接入 Copilot</td><td class="hit">✓ OneLake Mirroring + Apache Ossie ($0 额外 Token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-29</strong> · Osmos</td><td>ISO-20022 电汇流 Schema 漂移跨 IDE 自主自愈 (vs Lakeflow/Openflow)</td><td class="hit">✓ Project Osmos 152ms 热修复 ultmtDbtrId 映射零停机</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-30</strong> · OBO</td><td>38 骡子账户 $4.85M 电汇反欺诈 + Databricks OBO + DiskANN</td><td class="hit">✓ 660ms 穿透 4 云冻结 $4.85M 并双写 SAR (挽回 $4.62M)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-31</strong> · Ossie</td><td>Snowflake Semantic View Autopilot 导出 Apache Ossie YAML 对齐</td><td class="hit">✓ 0.0% 指标漂移导入 Fabric IQ Ontology + DirectLake</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-32</strong> · Iceberg</td><td>GCP BigLake Iceberg REST 直查 AWS S3 Tables 汇聚至 OneLake</td><td class="hit">✓ S3 Shortcut (出站保护) + BigQuery Mirroring 零 Egress</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-33..34</strong> · Rayfin</td><td>Rayfin SDK 全栈应用 (1GB SQL) + 18 工作区容量尖峰自愈 (590ms)</td><td class="hit">✓ 压降 F64 负载 -43.6% + DiskANN 索引提示 + 规避 $28.4K</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-35..36</strong> · Graph</td><td>BigQuery ObjectRefs/GQL 与 AWS Bedrock GraphRAG vs Fabric IQ</td><td class="hit">✓ 2000万 PBI 模型升维本体 + Foundry IQ (+36% 相关性)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-37..38</strong> · DiskANN</td><td>医药冷链 Oracle/BQ Mirroring + Hyperscale 192核 DiskANN (560ms)</td><td class="hit">✓ 18M 向量 19ms/98.4% 召回 + 隔离 420 支止损 $640K</td><td><span class="pill act-confirm">Confirm / Act</span></td></tr>
-        <tr><td><strong>DL-39..40</strong> · LTAP</td><td>AlloyDB ScaNN / Spanner Graph / Unistore / Aurora Zero-ETL 对标</td><td class="hit">✓ 单引擎 Hyperscale DiskANN + 1GB 免费 Fabric SQL 胜出</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-41..42</strong> · Twin</td><td>300mm 晶圆 EUV Digital Twin Builder + Zero-Provisioned +24 CU (530ms)</td><td class="hit">✓ 210ms 流式表 + $14.20 弹性作业 + 保住 99.4% 良率 ($920K)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-43..44</strong> · Stream</td><td>Lakehouse 流式表 (Private Link+CMK) vs Dynamic Tables / BigQuery</td><td class="hit">✓ 210ms 单一 Delta 流式表直连 DirectLake 零物化双份税</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-45..48</strong> · IQ Share/主权</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce 零拷贝 + Azure Local ALDO GA</td><td class="hit">✓ 护航 42 大客户 ($1.15M 建模 SLA) + 断网车间控制面 &amp; GCC High GA</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-49..52</strong> · 实时流 RTI</td><td>Eventhouse KQL (142ms) vs Dynamic Tables (60s)/Lakeflow + 5G URLLC (495ms)</td><td class="hit">✓ 一水双流省 48.5% 流计算 + 阿姆斯特丹 SRv6 绕行 ($1.48M 建模 SLA)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-53..56</strong> · 零ETL镜像</td><td>Database &amp; Open Mirroring ($0 算力) vs Fivetran/Openflow/Lakeflow (480ms)</td><td class="hit">✓ 省 87.7% CDC 账单 ($1.6K vs $13K) + 银行总账零停机自愈 ($2.35M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-57..60</strong> · Iceberg/XTable</td><td>OneLake XTable 双向虚拟化 ($0 转换) vs UniForm/Polaris/S3 Tables (465ms)</td><td class="hit">✓ 省 90.9% 双格式 ETL ($966 vs $10.5K) + 全渠道零售毛利保卫 ($1.62M 建模)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-61..64</strong> · HTAP DiskANN</td><td>Fabric SQL + Cosmos DB SSD DiskANN (-92% RAM) vs Lakebase/Unistore (450ms)</td><td class="hit">✓ 省 79.4% 向量+HTAP TCO ($2.24K vs $10.88K) + 财富调仓闭环 ($1.95M 建模)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-65..68</strong> · OBO 安全治理</td><td>OneLake RLS/CLS/OLS + Purview + Entra Agent ID OBO vs UC ABAC/Horizon (431ms)</td><td class="hit">✓ 省 85.3% 跨云安全治理 TCO ($1.38K vs $9.4K) + 医疗主权防越权 ($2.80M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-69..72</strong> · Spark Gluten</td><td>Fabric Spark Gluten+Velox ($0 溢价) + Autoscale vs Photon (2x DBU) / Snowpark (422ms)</td><td class="hit">✓ 省 58.6% Spark ETL 算力 ($6.12K vs $14.8K) + 车联网热失控预警 ($2.45M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-73..76</strong> · Data Agents</td><td>Fabric Data Agents ($0 M365 Token + DAX/SQL/KQL/Graph) vs Genie / Cortex / Looker (417ms)</td><td class="hit">✓ 省 82.6% 问数 TCO ($2.42K vs $13.9K) + 医药毛利保卫 ($3.15M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-77..80</strong> · Data Factory Osmos</td><td>Fabric Data Factory + Project Osmos + MLV (152ms 自愈) vs Lakeflow / Tasks / Composer (415ms)</td><td class="hit">✓ 省 71.1% 编排 TCO ($1.98K vs $6.85K) + 零售供应链黑五履约 ($1.85M 建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-81..84</strong> · Surge FinOps</td><td>Fabric Surge Protection (75% Cap) + 24h 平滑 + Rayfin vs Resource Monitors / DBU (399ms)</td><td class="hit">✓ 省 54.0% 超支 ($11.42K vs $24.8K) + 37 核心工作区 182ms P95 ($160.56K/年建模)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-85..88</strong> · Git CI/CD TMDL</td><td>Fabric Git (PBIP/TMDL) + Variable Libraries + Terraform vs DABs / SnowCLI (383ms)</td><td class="hit">✓ 省 76.1% DataOps TCO ($6.8K vs $28.4K) + 14 国零连接漂移 ($2.12M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-89..92</strong> · PrivateLink OAP</td><td>Workspace Private Link + Managed VNet OAP + TWA vs VNet Injection / BC (367ms)</td><td class="hit">✓ 省 68.5% 网络与版本 TCO ($8.7K vs $27.6K) + 拦截 14/14 外泄 ($4.20M 建模 DORA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-93..96</strong> · BCDR &amp; CMK</td><td>OneLake BCDR + ZRS + Workspace CMK ($0 版本税) vs Tri-Secret BC / DEEP CLONE (351ms)</td><td class="hit">✓ 省 70.7% BCDR/CMK TCO ($9.2K vs $31.4K) + RPO=42s/RTO=165s ($3.65M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-97..100</strong> · External/IQ Share</td><td>External + OneLake IQ Sharing ($0 提供方算力 + .rdf/.md) vs Clean Rooms / OpenSharing (335ms)</td><td class="hit">✓ 省 72.4% B2B 共享 TCO ($7.8K vs $28.3K) + 68 品牌 0.0% 漂移 ($3.90M 建模 ARR)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-101..104</strong> · Warehouse V-Order</td><td>Fabric Warehouse (T-SQL + V-Order + DirectLake) vs Multi-Cluster / DBSQL (319ms)</td><td class="hit">✓ 省 67.2% 数仓/BI TCO ($11.4K vs $34.8K) + 1800 并发 194ms P95 ($4.45M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-105..108</strong> · AI Functions RAG</td><td>Fabric AI Functions (ai.extract + Foundry PTU/Batch + DiskANN) vs Cortex / ai_query (303ms)</td><td class="hit">✓ 省 69.6% 多模态 AI TCO ($10.9K vs $35.8K) + 拦截 19 重复索赔 ($4.80M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-109..112</strong> · Digital Twin IT/OT</td><td>Digital Twin Builder + Eventhouse KQL + IoT Ops/ALDO vs SiteWise / Lakeflow (287ms)</td><td class="hit">✓ 省 71.5% 工业孪生 TCO ($10.5K vs $36.9K) + 140K EPS 辊缝微调 ($5.10M 建模良率)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-113..116</strong> · EDW Migration</td><td>94.6% Native T-SQL + $0 Mirroring Dual-Run + Osmos vs SnowConvert / Lakebridge (271ms)</td><td class="hit">✓ 省 73.5% 迁移/运行 TCO ($10.3K vs $38.8K) + 3800 存过 0.0% 漂移 ($5.40M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-117..120</strong> · Open Catalog</td><td>OneLake Catalog + Purview 14-Hop Lineage + Ossie vs Unity Catalog / Polaris (255ms)</td><td class="hit">✓ 省 74.4% 目录治理 TCO ($9.8K vs $38.3K) + 4200 数据产品 BCBS 239 ($5.75M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-121..124</strong> · Graph ISO GQL</td><td>Fabric Graph CSR + ISO GQL 8-Hop + DiskANN vs Spanner Graph / Neptune / Neo4j (239ms)</td><td class="hit">✓ 省 75.2% 图计算 TCO ($9.4K vs $37.9K) + 锁定 24 空壳反洗钱 ($6.10M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-125..128</strong> · Activator Reflex</td><td>Fabric Activator 52ms Edge Trigger + Power Automate vs Snowflake 1-Min Alerts (223ms)</td><td class="hit">✓ 省 76.2% 告警自动化 TCO ($8.9K vs $37.4K) + 拦截 1.42 万刷券机器人 ($6.45M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-129..132</strong> · Healthcare HDS</td><td>Fabric HDS (FHIR+DICOM→OMOP v5.4 + $23/TB) vs AWS HealthLake ($270/TB) (207ms)</td><td class="hit">✓ 省 76.9% 医疗多模态 TCO ($8.6K vs $37.2K) + 招募 384 名受试者 ($6.80M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-133..136</strong> · Sustainability ESG</td><td>Fabric SDS (400+ ESG 表 + CSRD/CBAM + 一手 PCF) vs 独立 ESG SaaS (191ms)</td><td class="hit">✓ 省 77.6% ESG 平台 TCO ($8.2K vs $36.6K) + 切换 6200 吨绿钢 ($7.15M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-137..140</strong> · Retail Omnichannel RDS</td><td>Fabric RDS (200+ 零售表 + 40ms KQL POS + Teams 店长卡) vs 传统 T+1 (175ms)</td><td class="hit">✓ 省 78.3% 全渠道 TCO ($7.9K vs $36.4K) + 砍单降至 0.48% ($7.50M 建模 SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-141..144</strong> · Financial FRTB &amp; Tick</td><td>Eventhouse 250K EPS ($0 kdb+ 税) + Gluten FRTB vs FinSpace (159ms)</td><td class="hit">✓ 省 78.9% 资本市场 TCO ($8.1K vs $38.4K) + $145M 对冲将 ES 压回 71.2% ($7.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-145..148</strong> · Geospatial H3 Fleet</td><td>Eventhouse H3 32ms (快 1200x) + Sedona vs ST_Contains / GIS (143ms)</td><td class="hit">✓ 省 79.5% 时空 TCO ($7.8K vs $38.1K) + 340 冷链车改道与 16 站切流 ($8.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-149..152</strong> · Data Science FLAML</td><td>Data Wrangler + FLAML (-75% 调参) + 湖内 PREDICT vs 常驻端点 (127ms)</td><td class="hit">✓ 省 80.1% MLOps TCO ($7.6K vs $38.2K) + 480 家政企客户防流失挽留 ($8.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-153..156</strong> · Observability OTel</td><td>Eventhouse OTel 倒排索引 (24ms, 12:1 压缩) + KQL diffpatterns vs 按 GB 税 (111ms)</td><td class="hit">✓ 省 82.6% 可观测 TCO ($7.4K vs $42.5K) + 640 家商户金丝雀回滚与 WAF 封禁 ($8.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-157..160</strong> · Enterprise MDM</td><td>OneLake 零拷贝 MDM + DiskANN/LSH (21ms) + Purview 存活规则 vs 独立 MDM (95ms)</td><td class="hit">✓ 省 81.0% MDM TCO ($7.5K vs $39.5K) + 6 家马甲授信并表与 $1.45M 返利拦截 ($9.25M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-161..164</strong> · SAP S/4HANA ACDOCA</td><td>OneLake × SAP Datasphere 零拷贝 + 认证 CDS ODP + BAPI 回写 vs 第三方 CDC (79ms)</td><td class="hit">✓ 省 81.6% TCO ($7.6K vs $41.2K) + 0.00% 财务漂移 + 18.4% APR 早付折扣 ($9.60M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-165..168</strong> · Gaming LiveOps RTB</td><td>Eventhouse 500K EPS (14ms, $0/GB 税) + PlayFab + SSD DiskANN vs 流式写入税 (63ms)</td><td class="hit">✓ 省 82.1% TCO ($7.6K vs $42.4K) + 冻结 3,400 外挂号与东京切流 ($9.95M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-169..172</strong> · Aerospace MRO &amp; ITAR</td><td>GCC High + Eventhouse 320K EPS (11ms) + ALDO 机库 + Purview ITAR vs T+1 批处理 (47ms)</td><td class="hit">✓ 省 82.6% TCO ($7.7K vs $44.2K) + 法兰克福 4h 过站换叶零 AOG ($10.30M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-173..176</strong> · AgriTech STAC &amp; EUDR</td><td>Planetary STAC 零拷贝 + Eventhouse H3 (7ms) + SAP ACM 筒仓隔离 vs 栅格拷贝 (31ms)</td><td class="hit">✓ 省 83.0% TCO ($7.6K vs $44.8K) + 隔离 14 毁林批次与 $92M CBOT 套保 ($10.65M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-177..180</strong> · Maritime AIS &amp; FuelEU</td><td>Eventhouse H3 (3ms) + Port Twin + SDS FuelEU/ETS vs 午报批处理 (15ms)</td><td class="hit">✓ 省 83.3% TCO ($7.6K vs $45.6K) + 18 巨轮 JIT 降速省 4850 吨油 ($11.00M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-181..184</strong> · Media OTT CMCD &amp; SSAI</td><td>Eventhouse 650K EPS (4ms) + SSD DiskANN 99.2% SSAI vs 按会话税 (20ms)</td><td class="hit">✓ 省 83.6% TCO ($7.6K vs $46.4K) + 145 万观众切流与 $4.2M 广告锁单 ($11.35M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-185..188</strong> · Semicon 2nm STDF &amp; CoWoS</td><td>Eventhouse 800K EPS (1ms) + SSD DiskANN 24M 晶圆图 + ALDO vs 传统 YMS (5ms)</td><td class="hit">✓ 省 83.9% TCO ($7.7K vs $47.8K) + 350 片 2nm 止损与 68 颗 CoWoS 拦截 ($11.70M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-189..192</strong> · Auto SDV ADAS &amp; R156</td><td>Eventhouse 950K EPS (3ms) + SSD DiskANN 65M Clip + BOM/OTA 图谱 vs FleetWise (12ms)</td><td class="hit">✓ 省 84.3% TCO ($7.7K vs $48.9K) + 1280 段积水打捞与 4.2 万车 OTA 熔断 ($12.05M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-193..196</strong> · Energy OSDU &amp; CCUS</td><td>Eventhouse 600K EPS (10ms) + ADME 零拷贝 + SSD DiskANN 32M LAS vs 传统 Historian (43ms)</td><td class="hit">✓ 省 84.6% TCO ($7.8K vs $50.4K) + +0.4ppg 深水压井与 45Q 碳封存锁单 ($12.40M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-197..200</strong> · Battery BESS &amp; Passport</td><td>Eventhouse 720K EPS (7ms) + SSD DiskANN 48M EIS + IQ 电池护照 vs SiteWise (31ms)</td><td class="hit">✓ 省 84.9% TCO ($7.9K vs $52.2K) + 1280 颗析锂电芯拦截与储能分闸保供 ($12.75M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-201..204</strong> · LEO Space OISL &amp; CDM</td><td>Eventhouse H3 850K EPS (4ms) + SSD DiskANN 54M 轨控 + ALDO 极地站 vs 批处理 (19ms)</td><td class="hit">✓ 省 85.2% TCO ($8.0K vs $54.1K) + +0.18m/s 避碰变轨与 480 架客机零断网 ($13.10M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-205..208</strong> · Biopharma Raman &amp; CAR-T</td><td>Eventhouse 680K EPS (1ms) + SSD DiskANN 42M 光谱 + OneLake eBR vs 4h HPLC (7ms)</td><td class="hit">✓ 省 85.5% TCO ($8.1K vs $55.9K) + 2000L 双抗保批与 4h RTRT 实时放行 ($13.45M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-209..212</strong> · Rail ETCS Bearing &amp; OCS</td><td>Eventhouse FFT 780K EPS (11ms) + SSD DiskANN 58M 伤损 + ALDO 动车段 vs 热轴 (44ms)</td><td class="hit">✓ 省 85.7% TCO ($8.2K vs $57.5K) + 提前72h防切轴与 14 列车绿波调图 ($13.80M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-213..216</strong> · Mining AHS &amp; SAG Mill</td><td>Eventhouse H3 820K EPS (8ms) + SSD DiskANN 52M 岩芯 + ALDO 矿山 vs 盲倒 (34ms)</td><td class="hit">✓ 省 85.9% TCO ($8.3K vs $58.9K) + 3:2 软硬配矿保住磨机衬板与尾矿坝 ($14.15M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-217..220</strong> · Smart Water Leak &amp; PFAS</td><td>Eventhouse TDOA 640K EPS (6ms) + SSD DiskANN 46M 声纹 + ALDO 水厂 vs 轮询 (24ms)</td><td class="hit">✓ 省 86.1% TCO ($8.4K vs $60.4K) + ±0.8m 定漏防爆管与 PFAS/CSO 零超标 ($14.50M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-221..224</strong> · RTGS ISO-20022 &amp; LSM</td><td>Eventhouse 920K EPS (3ms) + ISO GQL 4ms 解死锁 + 62M 钱骡 DiskANN vs 独立图库 (14ms)</td><td class="hit">✓ 省 86.3% TCO ($8.5K vs $62.1K) + $310M 解锁 $4.82B 死锁与 PQC 验签 ($14.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-225..228</strong> · Green H2 &amp; Ammonia RFNBO</td><td>Eventhouse 760K EPS (14ms) + SSD DiskANN 50M 极化 + SDS RFNBO vs 急停 (57ms)</td><td class="hit">✓ 省 86.5% TCO ($8.6K vs $63.7K) + 140 槽切热待机防爆与逐小时绿电签证 ($15.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-229..232</strong> · Nuclear SMR &amp; Tokamak</td><td>Eventhouse FFT 880K EPS (12ms) + SSD DiskANN 56M EFIT/DNBR + ALDO vs 停堆 (49ms)</td><td class="hit">✓ 省 86.7% TCO ($8.8K vs $66.2K) + 4.5MW ECCD 防破裂与熔盐储热防氙毒 ($15.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-233..236</strong> · Offshore HVDC &amp; GFM-BESS</td><td>Eventhouse H3 840K EPS (10ms) + SSD DiskANN 58M 尾流/EMT + ALDO vs 断缆 (41ms)</td><td class="hit">✓ 省 86.9% TCO ($8.9K vs $68.1K) + 480MW 海缆切流防锚断与构网储能惯量 ($15.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-237..240</strong> · Quantum-HPC 15mK &amp; QEC</td><td>Eventhouse 960K EPS (8ms) + SSD DiskANN 64M DRAG/MWPM + ALDO vs 报废 (33ms)</td><td class="hit">✓ 省 87.1% TCO ($9.0K vs $69.8K) + 宇宙射线晶格绕行保 72h 电路与 15mK 防失超 ($16.25M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-241..244</strong> · Aviation ATM 4D-TBO &amp; SAF</td><td>Eventhouse H3 910K EPS (6ms) + SSD DiskANN 68M 尾流/尾迹 + SDS vs 盘旋 (25ms)</td><td class="hit">✓ 省 87.3% TCO ($9.1K vs $71.6K) + RECAT-TBS 防 6 机备降与变高砍 78% 尾迹云 ($16.60M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-245..248</strong> · SynBio DBTL &amp; 200kL Ferment</td><td>Eventhouse 740K EPS (4ms) + SSD DiskANN 72M FBA/LC-MS + ALDO vs 倒罐 (17ms)</td><td class="hit">✓ 省 87.5% TCO ($9.2K vs $73.5K) + 补糖回调保 12 批 200kL 大罐与 384 孔板 DBTL ($16.95M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-249..252</strong> · Sovereign Tax CTC &amp; Customs</td><td>Eventhouse 980K EPS (2ms) + ISO GQL 8跳穿透 &amp; 76M HS DiskANN + ALDO vs T+1 (9ms)</td><td class="hit">✓ 省 87.7% TCO ($9.3K vs $75.4K) + 拦截 $9.4M 骗税与 18 伪报货柜 0 误伤 AEO ($17.30M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-253..256</strong> · Humanoid VLA &amp; .mcap Flywheel</td><td>Eventhouse 890K EPS (15ms) + SSD DiskANN 80M 视触觉 + ALDO vs 停线 (61ms)</td><td class="hit">✓ 省 87.9% TCO ($9.4K vs $77.6K) + 420 台导纳热修防停线与 0.7% 难例打捞 ($17.65M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-257..260</strong> · UAM eVTOL &amp; Vertiport 4C</td><td>Eventhouse H3 860K EPS (13ms) + SSD DiskANN 84M LES/EIS + ALDO vs 悬停 (55ms)</td><td class="hit">✓ 省 88.1% TCO ($9.5K vs $79.8K) + 28机避涡与 16机巡航分流保 SoC 22.4% ($18.00M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-261..264</strong> · Gigawatt AIDC 1.2GW Liquid &amp; BBU</td><td>Eventhouse 940K EPS (12ms) + SSD DiskANN 88M CFD/BBU + ALDO vs 甩负荷 (49ms)</td><td class="hit">✓ 省 88.3% TCO ($9.6K vs $82.1K) + 280MW BBU 削峰与 18柜排泡防凝露 ($18.35M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-265..268</strong> · Oncology Spatial &amp; 40x WSI/ctDNA</td><td>Eventhouse 790K EPS (10ms) + SSD DiskANN 92M Spatial/WSI + ALDO vs 3.5天 (43ms)</td><td class="hit">✓ 省 88.5% TCO ($9.7K vs $84.4K) + 提前14周检出ctDNA复发与T-DXd匹配 ($18.70M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-269..272</strong> · Smart Grid VPP &amp; 1.8M V2G FFR</td><td>Eventhouse H3 930K EPS (9ms) + SSD DiskANN 96M OPF/Wear + ALDO vs 5m (37ms)</td><td class="hit">✓ 省 88.7% TCO ($9.8K vs $86.7K) + 压降过载18MW聚+420MW保SoC 78.4% ($19.05M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-273..276</strong> · Asset Mgmt $14.8T &amp; 100M Credit</td><td>Eventhouse 870K EPS (7ms) + AI Functions + 100M DiskANN + ALDO vs 4.5h (31ms)</td><td class="hit">✓ 省 88.9% TCO ($9.9K vs $89.2K) + $1.85B CTD省42bps与$120M私募冻结 ($19.40M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-277..280</strong> · Subsea 3000m SPS &amp; 104M OLGA/VIV</td><td>Eventhouse 910K EPS (6ms) + 104M DiskANN + ALDO FPSO vs 30m卫星 (25ms)</td><td class="hit">✓ 省 89.1% TCO ($10.0K vs $91.7K) + +420L/h MEG转负-1.7°C与e-ROV ($19.75M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-281..284</strong> · D2C NTN &amp; 5G-A O-RAN 108M CSI/PCS</td><td>Eventhouse H3 970K EPS (5ms) + 108M DiskANN + ALDO vs 15m O1 (19ms)</td><td class="hit">✓ 省 89.3% TCO ($10.1K vs $94.2K) + -24dB零陷(-11.2dB)与海缆16QAM ($20.10M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-285..288</strong> · Cat Reins &amp; Aurora 112M Loss/Treaty</td><td>Eventhouse H3 880K EPS (3ms) + 112M DiskANN + ALDO vs 6h NWP (13ms)</td><td class="hit">✓ 省 89.5% TCO ($10.2K vs $97.1K) + $220M巨灾债+$180M临分与18防洪闸 ($20.45M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-289..292</strong> · Mega-Port STS/AGV 116M BAPLIE/CBS</td><td>Eventhouse H3/FFT 940K EPS (2ms) + 116M DiskANN + ALDO vs 15m TOS (7ms)</td><td class="hit">✓ 省 89.7% TCO ($10.3K vs $100.0K) + 压摆幅±42mm+0翻箱直装与180冷链箱 ($20.80M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-293..296</strong> · UHV Grid PMU 120M EMT/POD/DLR</td><td>Eventhouse FFT 960K EPS (17ms) + 120M DiskANN + ALDO vs 2-4s SCADA (71ms)</td><td class="hit">✓ 省 89.9% TCO ($10.4K vs $103.0K) + 26.4Hz阻尼+14.2%与+680MW增容 ($21.15M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-297..300</strong> · Critical Minerals DLE 124M Elution/SX</td><td>Eventhouse 840K EPS (16ms) + 124M DiskANN + SDS + ALDO vs 8h化验 (67ms)</td><td class="hit">✓ 省 90.0% TCO ($10.5K vs $105.0K) + 压硼至2.1ppm保320吨Li2CO3与98.6%回注 ($21.50M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-301..304</strong> · Seismic/Tsunami EEW 128M Green's/MOST</td><td>Eventhouse FIR/H3 920K EPS (15ms) + 128M DiskANN + ALDO vs 15-30s (63ms)</td><td class="hit">✓ 省 90.1% TCO ($10.6K vs $107.1K) + 提前14.8s制动28列高铁&amp;42台EUV+6.4m海啸 ($21.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-305..308</strong> · SWRO Desalination 132M Polarization/CORMIX</td><td>Eventhouse 860K EPS (14ms) + 132M DiskANN + SDS + ALDO vs 4h SDI (59ms)</td><td class="hit">✓ 省 90.2% TCO ($10.7K vs $109.2K) + 压ORP至215mV保$8.5M膜组与+1.1ppt珊瑚礁 ($22.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-309..312</strong> · Green Steel H2-DRI 136M Mould/Slag/CBAM</td><td>Eventhouse 910K EPS (13ms) + 136M DiskANN + SDS + ALDO vs 5s轮询 (55ms)</td><td class="hit">✓ 省 90.3% TCO ($10.8K vs $111.3K) + 0.75m/min防漏钢与0.39tCO2e CBAM护照 ($22.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-313..316</strong> · DAC &amp; CCUS 140M TOUGHREACT/EOS/45Q</td><td>Eventhouse 890K EPS (12ms) + 140M DiskANN + SDS + ALDO vs 15m轮询 (51ms)</td><td class="hit">✓ 省 90.4% TCO ($10.9K vs $113.5K) + 12ppmv超干防酸蚀与81.4%破裂梯度45Q ($22.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-317..320</strong> · Parcel Sortation &amp; ULD 144M OCR/CG</td><td>Eventhouse 950K EPS (11ms) + 144M DiskANN + ALDO vs 15m WCS (47ms)</td><td class="hit">✓ 省 90.5% TCO ($11.0K vs $115.8K) + 99.4%恢复污损单与777F重心+0.8% ($23.25M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-321..324</strong> · Cislunar LunaNet &amp; ISRU 148M CR3BP/MRE</td><td>Eventhouse 880K EPS (10ms) + 148M DiskANN + ALDO vs 30m星历 (43ms)</td><td class="hit">✓ 省 90.6% TCO ($11.1K vs $118.1K) + 16车入熔岩管避辐射与电池SoC 44.2% ($23.60M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-325..328</strong> · District Thermal Grid 152M Hydraulic/BTES</td><td>Eventhouse 870K EPS (9ms) + 152M DiskANN + SDS + ALDO vs 15m SCADA (39ms)</td><td class="hit">✓ 省 90.7% TCO ($11.2K vs $120.4K) + 收145MWt算力余热与提前3.5h蓄热 ($23.95M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-329..332</strong> · Sovereign Pension LDI 156M Repo/Longevity</td><td>Eventhouse 910K EPS (8ms) + 156M DiskANN + SDS + ALDO vs T+1批处理 (35ms)</td><td class="hit">✓ 省 90.8% TCO ($11.3K vs $122.8K) + $2.40B免抛售升级与340bps缓冲 ($24.30M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-333..336</strong> · Pulp &amp; Paper BLRB/QCS 160M NIR/Acoustic</td><td>Eventhouse 890K EPS (7ms) + 160M DiskANN + SDS + ALDO vs 10m历史库 (31ms)</td><td class="hit">✓ 省 90.9% TCO ($11.4K vs $125.3K) + 0.14%横幅水分零断纸与碱炉隔离 ($24.65M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-337..340</strong> · Float &amp; Solar Glass 164M Crown/NiS/ETS</td><td>Eventhouse 920K EPS (6ms) + 164M DiskANN + SDS + ALDO vs 15m历史库 (27ms)</td><td class="hit">✓ 省 91.0% TCO ($11.5K vs $127.8K) + 1592°C大碹防穿与95μm NiS剔除 ($25.00M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-341..344</strong> · Vaccine mRNA/Lyo 168M DLS/Pirani/AVI</td><td>Eventhouse 940K EPS (5ms) + 168M DiskANN + HDS + ALDO vs 45m离线 (23ms)</td><td class="hit">✓ 省 91.1% TCO ($11.6K vs $130.3K) + 79.4nm LNP与-34.8°C冻干零塌陷 ($25.35M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-345..348</strong> · Petrochem Steam-Cracker 172M TMT/C2/ISCC</td><td>Eventhouse 960K EPS (4ms) + 172M DiskANN + SDS + ALDO vs 15m在线GC (19ms)</td><td class="hit">✓ 省 91.2% TCO ($11.7K vs $133.0K) + 68.4°C加氢防飞温与1064°C炉管抑焦 ($25.70M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-349..352</strong> · Offshore FLNG Cryo 176M FBG/MCHE/OGMP</td><td>Eventhouse 930K EPS (3ms) + 176M DiskANN + SDS + ALDO vs 15m卫星批次 (15ms)</td><td class="hit">✓ 省 91.3% TCO ($11.8K vs $135.6K) + 0.02kg/m³防翻滚与18.5kPa防冻堵 ($26.05M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-353..356</strong> · Synchrotron &amp; XFEL 180M ORM/LLRF/Bragg</td><td>Eventhouse 990K EPS (2ms) + 180M DiskANN + FAIR Twin + ALDO vs 72h离线 (11ms)</td><td class="hit">✓ 省 91.4% TCO ($11.9K vs $138.4K) + 0.18μm亚微米稳轨与±3.2Hz超导锁相 ($26.40M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-357..360</strong> · Potash &amp; Phosphate 184M Seismic/WPA/NPK</td><td>Eventhouse 910K EPS (1ms) + 184M DiskANN + SDS + ALDO vs 4h化验 (7ms)</td><td class="hit">✓ 省 91.5% TCO ($12.0K vs $141.2K) + 32m防水盐层与2.42%游离酸零糊布 ($26.75M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-361..364</strong> · Pumped-Storage Hydro 188M Hill-Chart/MOC/DFIM</td><td>Eventhouse 950K EPS (21ms) + 188M DiskANN + SDS + ALDO vs 5s轮询 (90ms)</td><td class="hit">✓ 省 91.6% TCO ($12.1K vs $144.0K) + 3.4% H_r涡带平抑与812m防爆管 ($27.10M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-365..368</strong> · Enhanced Geothermal EGS 192M THM/DTS/Silica</td><td>Eventhouse 970K EPS (22ms) + 192M DiskANN + SDS + ALDO vs 15m目录 (88ms)</td><td class="hit">✓ 省 91.7% TCO ($12.2K vs $146.8K) + b=1.08防红灯封井与SSI=0.94零硅垢 ($27.45M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-369..372</strong> · Copper Flash Smelting &amp; Tankhouse 196M Slag/IR</td><td>Eventhouse 940K EPS (20ms) + 196M DiskANN + SDS + ALDO vs 2h化验 (86ms)</td><td class="hit">✓ 省 91.8% TCO ($12.3K vs $149.6K) + 0.62%低渣铜与99.996% LME阴极铜 ($27.80M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-373..376</strong> · Low-Carbon Cement &amp; CCUS 200M Bogue/Cl/LC3</td><td>Eventhouse 960K EPS (21ms) + 200M DiskANN + SDS + ALDO vs 2h滴定 (84ms)</td><td class="hit">✓ 省 91.9% TCO ($12.4K vs $152.4K) + 318°C护窑皮与0.31tCO2e CBAM ($28.15M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-377..380</strong> · Primary Aluminum 500kA Potline 204M MHD/Al2O3</td><td>Eventhouse 980K EPS (19ms) + 204M DiskANN + SDS + ALDO vs 10s滤波 (82ms)</td><td class="hit">✓ 省 92.0% TCO ($12.5K vs $155.5K) + 0.00阳极效应与1.62tCO2e绿铝 ($28.50M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-381..384</strong> · Cryogenic Mega-ASU 208M VLE/Thermosiphon/MAC</td><td>Eventhouse 950K EPS (20ms) + 208M DiskANN + SDS + ALDO vs 4h色谱 (80ms)</td><td class="hit">✓ 省 92.1% TCO ($12.6K vs $158.6K) + 0.14ppm主冷防爆与0.4ppb 6N特气 ($28.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-385..388</strong> · Polysilicon &amp; MCZ Ingot 212M Voronkov/MCZ/CVD</td><td>Eventhouse 990K EPS (18ms) + 212M DiskANN + SDS + ALDO vs 5s滤波 (78ms)</td><td class="hit">✓ 省 92.2% TCO ($12.7K vs $162.8K) + 100%零位错单晶与11N纯度 ($29.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-621..624</strong> · Retail Omnichannel C360 &amp; Clienteling Agent 448M</td><td>OneLake BigQuery/Salesforce 零拷贝 + Eventhouse 11ms ATP + 448M DiskANN + Data Agent (NL2DAX/KQL 0.0% 漂移) vs T+1 批处理 CDP (46ms)</td><td class="hit">✓ 省 95.4% TCO ($14.2K vs $309.0K) + 同城 45min 闪送锁库与 88 折连带券保 42.6% 毛利 ($49.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-625..628</strong> · Financial Hybrid RAG + NL2DAX Agent 452M</td><td>Fabric Data Agent (NL2DAX/KQL 0.0% 漂移) + Foundry IQ (+36% 相关性) + 452M DiskANN + OBO 信息墙 vs 纯 PDF RAG / 裸表 SQL (45ms)</td><td class="hit">✓ 省 95.4% TCO ($14.2K vs $310.9K) + 4.35x 杠杆穿透 4.25x 债券契约与双重引用 ($50.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-629..632</strong> · OLTP-to-OLAP Mirroring vs Kafka/Fivetran 456M</td><td>Fabric Mirroring ($0 复制算力 + 1:1 免费存储) + Project Osmos DDL 自愈 + 456M DiskANN vs Fivetran MAR / Spark MERGE (44ms)</td><td class="hit">✓ 省 95.5% TCO 新纪录 ($14.2K vs $312.8K) + 420 库在线 DDL 零停机演进与对账 ($50.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-633..636</strong> · Enterprise Vector &amp; Hybrid Search 460M</td><td>Azure AI Search (BM25+RRF+L2 重排) + Cosmos DB SSD DiskANN (-92% 内存) vs 全内存 HNSW Milvus/Qdrant (43ms)</td><td class="hit">✓ 月省破 $300K ($300.5K/月, 省 95.5% TCO) + 99.4% Filtered Recall@10 与 0.0% 双写漂移 ($50.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-637..640</strong> · Manufacturing &amp; Auto Connected Vehicle + SAP BOM 464M</td><td>Eventhouse KQL/H3 (10ms, $0/GB 税) + OneLake SAP 零拷贝 + 464M DiskANN vs 割裂车联网湖 + T+1 ERP (42ms)</td><td class="hit">✓ 省 95.5% TCO ($14.2K vs $316.6K) + 锁昆山 420 备件与第 4 工厂零停线换批 ($51.25M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-641..644</strong> · SaaS &amp; Gaming Multi-Tenant Embedded + LiveOps 468M</td><td>Fabric Embedded ($0 外部席位) + DirectLake 动态 RLS + Eventhouse 10ms 漏斗 + 468M DiskANN vs Looker/Snowflake (41ms)</td><td class="hit">✓ 省 95.5% TCO ($14.2K vs $318.5K) + 拦截 34.2% 假量与 2,400 租户零越权 ($51.60M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-645..648</strong> · Medallion Lakehouse &amp; Batch-Stream MLV 472M</td><td>Eventstream 双路 + Silver MLV + Spark Gluten/Velox C++ ($0 溢价) + 472M DiskANN vs Lambda / 60s 动态表 (40ms)</td><td class="hit">✓ 省 95.6% TCO 新纪录 ($14.2K vs $320.4K) + 0.0% 流批漂移与 40ms 对称闭环 ($51.95M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-649..652</strong> · Healthcare &amp; Pharma Commercial Compliance, RWE OMOP &amp; DRG 476M</td><td>Fabric HDS ($23/TB OMOP v5.4 + HIPAA 脱敏) + Entra OBO Rep/MSL 隔离 + 476M DiskANN + 9ms KQL DRG vs 专有 FHIR 库 (39ms)</td><td class="hit">✓ 省 95.6% TCO ($14.2K vs $322.3K) + 0.0% Off-Label 越权与 39ms (&lt;40ms!) 闭环 ($52.30M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-653..656</strong> · Banking &amp; Insurance Anti-Fraud, ISO GQL Ring &amp; Claims 480M</td><td>Eventhouse 9ms + Fabric Graph (ISO GQL 零拷贝 6跳穿透) + 480M DiskANN 假图查重 vs 独立图库 + 45s 递归 SQL (38ms)</td><td class="hit">✓ 月省 $310.0K 整数大关 (省 95.6% TCO) + 0.015% VIP 误报与 94.2% 闪赔秒批 ($52.65M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-657..660</strong> · Five-Cloud Platform TCO Inflection &amp; Migration 484M</td><td>Mode-A 零拷贝共存 ($0 Mirroring/XTable) + 94.6% 原生 T-SQL + Osmos 484M AST 向量 vs 18个月推倒重写 (37ms)</td><td class="hit">✓ 省 95.6% TCO ($14.2K vs $326.1K) + 3,600 存过 100.0% 双轨对齐与 37ms 切流 ($53.00M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-661..664</strong> · Enterprise Data Agent Quad-Modal Shootout 488M</td><td>Fabric Data Agent (NL2DAX+KQL+SQL+GQL) + IQ Ontology + $0 M365 Token + 488M DiskANN vs 裸表自建 SQL (36ms)</td><td class="hit">✓ 创纪录省 95.7% TCO ($14.2K vs $328.0K) + 0.0% DAX 漂移 (防 DL-23 +14.2%) 与 36ms 对称闭环 ($53.35M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-665..668</strong> · Enterprise Data Governance, Catalog &amp; OBO Security 492M</td><td>OneLake 一次定义五引擎 RLS/CLS + Purview Excel 导出加密 + OAP ($0 版本税) + 492M DiskANN vs 5套策略重复 (35ms)</td><td class="hit">✓ 月省破 $315K ($315.7K/月, 省 95.7% TCO) + 0 字节外泄与 14 跳 BCBS 239 血缘 ($53.70M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-669..672</strong> · Cross-Border E-Commerce, Overseas WMS &amp; WCO HS 496M</td><td>OneLake 三云零拷贝 (S3+BQ+SAP) + Eventhouse 8ms + 496M WCO HS DiskANN + NL2DAX 真实净毛利 vs Fivetran MAR (34ms)</td><td class="hit">✓ 省 95.7% TCO ($14.2K vs $331.8K) + 21.8% 真实落地毛利与 0 扣柜 ($54.05M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-673..676</strong> · Telecom Churn, 5G Slice SLA &amp; Field Agent 500M!</td><td>Eventhouse H3 8ms 500:1 收敛 + 湖内 PREDICT ($0 闲置端点税) + 五亿 500M DiskANN vs 24/7 在线端点 + 3.6TB 内存向量 (33ms)</td><td class="hit">✓ 突破五亿向量 ($2.76K vs $59.2K, 省 95.7% TCO) + 4.2ms SRv6 自愈与 VIP 事前挽留 ($54.40M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-677..680</strong> · Power Utility, Spot Trading, VPP &amp; 24/7 I-REC 504M</td><td>Eventhouse H3 8ms -1,450MW 预警 + 504M 气象/响应 DiskANN + FLAML/NL2DAX 竞价 vs 3.65TB 内存向量与流写入税 (32=2⁵ms)</td><td class="hit">✓ 省 95.7% TCO ($14.3K vs $335.6K, 月省 $321.3K) + +$3.42M 现货套利与 24/7 绿证 ($54.75M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-681..684</strong> · QSR, F&amp;B &amp; 12,000-Store Cold-Chain/POS 508M (R160!)</td><td>Eventhouse 8ms 380店临期 &amp; +6.8°C 告警 + 508M 弹性/BOM DiskANN + NL2DAX 外卖净毛利 vs 1.18万店长席位税 (31ms)</td><td class="hit">✓ 省 95.7% TCO ($14.3K vs $337.5K, 月省 $323.2K) + 报废率 7.2%→1.1% 与 0 食安事故 ($55.10M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-685..688</strong> · Airlines, Hospitality NDC, IROPS &amp; Loyalty 512M!</td><td>Eventhouse 8ms 34航班/6,800客断链感知 + 512M=2⁹×10⁶ DiskANN + FLAML 锁 1,450 间房 vs 1000:1 流写入税 (30ms整!)</td><td class="hit">✓ 省 95.8% TCO 新纪录 ($14.4K vs $339.4K, 月省 $325.0K 整!) + 省 $1.95M EU261 赔付 ($55.45M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-689..692</strong> · 3PL Logistics, Port LFD &amp; Cold-Chain OTIF 516M</td><td>Eventhouse H3 8ms 420车封路 &amp; 84柜 LFD 预警 + 516M DiskANN + ai.extract POD 自动对账 vs 3.76TB 内存向量 (29ms&lt;30ms!)</td><td class="hit">✓ 省 95.8% TCO ($14.4K vs $341.2K, 月省 $326.8K) + 99.2% OTIF 与省 $1.48M 滞箱费 ($55.80M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-693..696</strong> · Commercial Real Estate, BACnet HVAC &amp; Lease 520M</td><td>Eventhouse 7ms +240% 客流 &amp; $380/MWh 感知 + 520M 热惰性/租约 DiskANN + Twin Builder 冰蓄冷 vs 点位税 (28ms=7×4!)</td><td class="hit">✓ 省 95.8% TCO ($14.4K vs $343.0K, 月省 $328.6K) + 降 26.4% 尖峰电费与 GRESB 合规 ($56.15M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-697..700!</strong> · P&amp;C &amp; Auto UBI Insurance, Catastrophe &amp; XoL 524M</td><td>Eventhouse H3 7ms 6,400保单巨灾圈定 + Gluten C++ ($0附加税) + 524M 定损/再保 DiskANN vs 3.84TB 内存向量 (27=3³ms!)</td><td class="hit">✓ 突破700场景 ($14.5K vs $344.9K, 月省破$330K达$330.4K!) + 算清$62M再保摊回与42笔反骗保 ($56.50M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-701..704</strong> · Media, OTT SSAI &amp; Retail Media Clean Room 528M (R165!)</td><td>Eventhouse 7ms 840万流加时 &amp; 2.8% 卡顿感知 + OneLake IQ Sharing ($0复制算力) + 528M DiskANN vs 跨云复制税 (26ms)</td><td class="hit">✓ 省 95.8% TCO ($14.5K vs $346.7K, 月省 $332.2K) + 斩获 +$2.85M 加时广告与 k&gt;=50 隐私 ($56.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-705..708</strong> · Auto Dealer DMS, EV Charging &amp; Warranty 532M</td><td>Eventhouse H3 6ms 超充排队 (42m→4m) + 532M 波形/旧件 DiskANN + ai.extract 审单 vs 3.92TB 内存向量 (25=5²ms!)</td><td class="hit">✓ 省 95.8% TCO ($14.5K vs $348.5K, 月省 $334.0K) + 拦截 38 笔重拍骗保与省 $2.15M 漏损 ($57.20M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-709..712</strong> · Multi-ERP (SAP ACDOCA/Oracle/D365) &amp; Treasury 536M</td><td>OneLake 三大 ERP 零拷贝 ($0复制算力) + 536M 三单匹配 DiskANN + Excel Direct Lake vs $88K/月 MAR 税 (24ms=6×4!)</td><td class="hit">✓ 省 95.8% TCO ($14.6K vs $350.4K, 月省破$335K达$335.8K!) + 关账8天→4h与赚+$2.42M贴现 ($57.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-713..716</strong> · Retail Banking, Mortgage &amp; Collections 540M</td><td>Eventhouse 6ms 提前14天 M0 预警 + 湖内 PREDICT ($0闲置税) + 540M DiskANN vs 4.00TB 内存向量 (23ms)</td><td class="hit">✓ 省 95.9% TCO 新纪录 ($14.6K vs $352.2K, 月省 $337.6K!) + 降 38% 迁徙率与省 $3.65M 拨备 ($57.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-717..720!</strong> · Biopharma DCT, Pharmacovigilance &amp; GMP 544M (R169=13²!)</td><td>Fabric HDS ($23/TB) + Eventhouse 6ms 信号感知 + 544M 入排/MedDRA/eBR DiskANN vs 4.04TB 内存向量 (22ms=6+5+5+6!)</td><td class="hit">✓ 省 95.9% TCO ($14.6K vs $354.0K, 月省 $339.4K) + 入组提速+42%与 0 破盲事故 ($58.25M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-721..724!</strong> · Enterprise Contact Center (CCaaS), Agent Assist &amp; WFM 548M (R170!)</td><td>Eventhouse 5ms 640坐席升级预警 ($0按分钟税) + 548M 话术 DiskANN ($3,000/月) + NL2DAX 账单伴随 vs 4.08TB 内存向量 (21ms!)</td><td class="hit">✓ 省 95.9% TCO ($14.6K vs $355.8K, 月省破$340K达$341.2K!) + AHT降34%、FCR升至89.6% ($58.60M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-725..728!</strong> · Industrial OEM Aftermarket, Spare-Parts &amp; EaaS 552M (&gt;0.55B!)</td><td>Eventhouse H3 5ms 310台预故障感知 ($0测点税) + 552M CAD/手册 DiskANN ($3,020/月) + SAP 零拷贝锁库 vs 4.12TB 内存向量 (20ms=5×4!)</td><td class="hit">✓ 省 95.9% TCO ($14.7K vs $357.7K, 月省 $343.0K!) + FTFR 68%→94.8% 与拦截 26 笔超保 ($58.95M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-729..732!</strong> · CPG &amp; Beverage TPO, POS Demand Sensing &amp; Hedging 556M (R172!)</td><td>Eventhouse + OneLake 零拷贝 5ms +290% 热浪动销 ($0复制税) + 556M 照片/扣款 DiskANN ($3,040/月) + 湖内 PREDICT vs $70.0K/月内存向量 (19ms&lt;20ms!)</td><td class="hit">✓ 省 95.9% TCO ($14.7K vs $359.5K, 月省 $344.8K!) + 促销 ROI+16.4% 与拦截 62 笔违规扣款 ($59.30M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="grid-2" style="margin-top:8px;">
-    <div class="panel">
-      <h3>阈值门控分布 (Threshold Gating · 388 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>219 项 (56.4%)</strong> · <code>Confirm</code>: <strong>167 项 (43.0%)</strong> · <code>Send to a human</code>: <strong>2 项 (0.5%)</strong>。高影响物理调度、跨企供应链调拨、银行核心总账对账、医疗基因越权拦截、车联网 OTA 充电限流、医药冷链调拨、黑五供应链安全库存重平衡、38-BU 跨云容量预算治理、14 国 PCI-DSS 支付发版门禁、22 主权工作区 DORA 零信任外泄隔离、180TB 清算银行跨区域 BCDR/CMK 容灾切流、45TB 零售媒体网络跨 68 品牌商联名预算回写、65TB 核心数仓早高峰 420 SKU 锁价回写、120 万份巨灾再保分保追偿、36 条涂布产线轧辊间隙 OPC-UA 微调、120TB 电信数仓旧 MPP 退役切流、4,200 数据产品 BCBS 239 监管审计证明、8,500 万实体跨境贸易信用证 OFAC 制裁冻结、180K EPS 大促神券签名密钥轮换、28 家临床中心 III 期肿瘤试验 FDA 21 CFR Part 11 入组锁定、1,450 供应商欧盟 CSRD/CBAM 绿钢采购切换、4,800 家门店生鲜电子价签（ESL）阶梯打折、18 个交易台 $145M 巴塞尔协议 III FRTB 盘中自动期权对冲、340 辆医药冷链车山火避险改道与 16 座变电站 N-1 切流、480 家高危政企客户 SD-WAN 免费升速挽留工单、640 家企业商户支付网关金丝雀回滚与恶意 ASN 边缘 WAF 封禁、18 套 ERP 6 家马甲子公司黄金记录归并授信冻结、12 套 SAP S/4HANA $42M 早付折扣 BAPI 释放与 1,200 套 SiC 功率模块锁单、14 款在线大作 3,400 个刷金外挂号 PlayFab 冻结、680 架宽体机队法兰克福 4h 过站高压涡轮叶片抢修、38 万农场巴拉那瓜港筒仓防混装隔离与 $92M CBOT 期货套保、740 艘巨轮亚欧线 18 艘巨轮 JIT 降速航路指令与 EU THETIS-MRV 碳申报、1,800 万并发决赛观众法兰克福 Multi-CDN 切流与 $4.20M 加时赛 SSAI 广告锁单、300mm 2nm 晶圆厂刻蚀腔室挂起清洗与 68 颗 CoWoS 裸片降级、120 万辆智驾车队 OTA 灰度熔断、深水钻井 +0.4ppg 压井与 CCUS 降压、36 万化成通道 1,280 颗电芯隔离与储能分闸、6,400 颗低轨卫星霍尔推进避碰上注、2,400 台生物反应器蠕动泵补糖、18,000 组动车组临时限速与动车段换轮派单、2,200 台无人矿卡 3:2 动态配矿、68,000km 供水管网 PRV 降压、28 家清算行 $4.82B 多边净额冲销、20 GW 电解槽 140 台槽切热待机、68 座 SMR 熔盐储热旁路、14 条 ±525kV 海缆潮流切流、32 台千比特 QPU 晶格手术绕行、34 架跨洋航班 CPDLC 变高避尾迹、12 台 200,000L 发酵罐补糖回调、42 家旋转木马骗税空壳退税冻结、420 台总装线人形机器人腕部导纳热更新、44 架 eVTOL 四维改航/巡航备降、1.2 GW AIDC 280MW 机架 BBU 脉冲削峰、42 家肿瘤中心 MTB 主任 T-DXd ADC 换药联签、180 万辆 V2G 虚拟电厂 +420MW 一次调频、`$14.8T` 买方资管 `$1.85B` CTD 抵押品划转、3,000m 水下管汇 `+420 L/hr` MEG 解堵增注、1,200 颗 D2C 卫星 `-24 dB` 相控阵零陷、918hPa 台风 `$220M` 巨灾债释放、自动化码头 `STS-14` 防摇、特高压电网 STATCOM 次同步阻尼、盐湖提锂 DLE `+18%` 除硼回流、外海 Mw 8.4 强震提前 `14.8s` 制动 28 列高铁、海淡厂备用 SBS 还原泵切入、连铸机 `0.75 m/min` 粘结愈合降速、超临界 CO2 管网干燥塔切换、波音 777F `ULD-PMC-19` 重心配平、月球南极漫游车熔岩管避险、城市热网 4,200 站 180s S 型缓闭调流、主权养老金 `$2.40B` 跨专户免抛售抵押品升级、高速纸机稀释水阀 `-6.5%` 微调、1,600°C 玻璃熔窑纯氧烧枪 `-3.8%` 配风微调、mRNA 微流控 `+14mbar` 背压补偿、碳二加氢 `-14%` 氢炔比补注、深远海 FLNG `450m³/h` 顶底混舱、同步辐射光源 FOFB 快校正磁铁微调、地下千米钾矿采矿机 `32m` 抬刀留设盐层、变速抽水蓄能机组 `+4.2%` 变速移频、增强型地热 EGS `-28%` 柔性脉冲降泵、铜闪速熔炼炉 `-4.6%` 富氧回调、低碳水泥回转窑 `14.5%` 氯旁路抽风、500kA 电解铝槽 `9s` 快频下料、特大型深冷空分主冷 `2.1%` 液氧排液及单晶炉 `2,850G` 超导磁场提升与西门子还原炉 `-3.1%` 电流回调指令经过人工确认。</p>
-    </div>
-    <div class="panel">
-      <h3>失分根因剖析 (✕ DL-23 Miss Analysis)</h3>
-      <p><code>DL-23</code> 在剥离 Power BI 语义模型与 Fabric IQ 本体后直接对湖仓裸表生成 SQL，因同名字段歧义产生 <code>+14.2%</code> 指标漂移，低置信度 (<code>0.54</code>) 触发人工拦截。</p>
-    </div>
-  </div>
-</section>
-
-<!-- CARD 4 -->
-<section class="card" id="card-4">
-  <div>
-    <div class="card-header">
-      <span>4 / 7 · UNDER THE HOOD · ONTOLOGY &amp; AGENT PROTOCOL MECHANICS</span>
-      <span>DETERMINISTIC VERIFIER</span>
-    </div>
-    <h2>从 OneLake 实时流到实体图谱级联推理与 Foundry IQ 规程护栏：消除“裸表幻觉”的双层确定性契约</h2>
-    <p class="sub">对比传统 Text-to-SQL 在孤立表结构上的脆弱拼接，Fabric IQ 将语义模型、实时流（Eventhouse）与操作规则封装为可验证本体契约，并通过 Agent 365 实施全链路审计。</p>
-
-    <div class="dark-code" style="margin-bottom:14px;">// [1] 结构化本体契约与实时遥测输入 (Fabric IQ Ontology + Eventhouse Stream Payload)
-{
-  "ontology_domain": "AIDC_Energy_Orchestration_v2",
-  "apache_ossie_compat": "1.0-incubating",
-  "entity_chain": [
-    {"type": "Campus", "id": "BJ-AIDC-01", "contract_ceiling_mw": 20.0},
-    {"type": "Substation", "id": "Sub-03", "current_load_mw": 18.84, "utilization_pct": 94.2},
-    {"type": "EnergyStorage", "id": "BESS-Unit-02", "soc_pct": 84.0, "max_discharge_mw": 2.5},
-    {"type": "GPUCluster", "id": "H200-Pod-B", "active_jobs": ["LLM-70B-Pretrain", "Batch-Infer-04", "Batch-Infer-05"]}
-  ],
-  "ontology_rule": {
-    "rule_id": "RULE-PEAK-DEMAND-90",
-    "condition": "Substation.utilization_pct > 90.0 FOR >= 5m AND TariffBand == 'SUMMER_PEAK_1400'",
-    "candidate_actions": ["DISCHARGE_BESS", "DEFER_NON_CRITICAL_BATCH", "ADJUST_LIQUID_COOLING_SETPOINT"]
-  },
-  "foundry_iq_guardrail_ref": "SOP-DC-COOL-04 (max_supply_temp_delta_c <= 1.5, min_bess_soc_pct >= 25.0)"
-}</div>
-
-    <div style="text-align:center; font-weight:800; color:var(--blue); margin:6px 0;">↓ Fabric IQ Graph 级联推理 + Foundry IQ 规程校验 + Operations Agent 裁决输出 ↓</div>
-
-    <div class="dark-code">// [2] 确定性验证器与人在回路审批载荷 (Operations Agent + Agent 365 Audit Envelope)
-&lt;ontology_verification_trace id="DL-01" latency_ms="780"&gt;
-  1. [Eventhouse KQL (142ms)] Verified 5-min moving average load = 18.84 MW (94.20% of 20.0 MW ceiling).
-  2. [Graph Cascade (186ms)] Isolated primary surge contributor: Sub-03 -&gt; Row-B -&gt; H200-Pod-B (+3.1 MW delta).
-  3. [Optimization Plan]
-     - BESS-Unit-02 discharge: -2.00 MW (SoC 84.0% &gt;= 25.0% floor -&gt; PASS)
-     - Defer Batch-Infer-04 &amp; 05 to 23:00 valley tariff: -1.10 MW (LLM-70B-Pretrain untouched -&gt; PASS)
-     - Liquid cooling supply temp delta: +1.0°C (-0.35 MW; +1.0°C &lt;= +1.5°C SOP-DC-COOL-04 ceiling -&gt; PASS)
-  4. [Post-Action State] Projected load = 15.39 MW (76.95% utilization) | Monthly savings = $42,800.
-  5. [Governance &amp; Identity] Signed by Entra Agent ID; routed to Teams Duty Operator -&gt; &lt;answer&gt;Confirm&lt;/answer&gt;
-&lt;/ontology_verification_trace&gt;</div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>互操作标准突破</strong>：在 FabCon Europe 2026 上，微软联合 Snowflake 共同推进 <strong>Apache Ossie (Incubating)</strong> 开放语义标准，并通过 <strong>OneLake IQ Sharing</strong> 支持跨组织安全共享受治理表、Markdown 智能体指令与 RDF 本体。
-  </div>
-</section>
-
-<!-- CARD 5 -->
-<section class="card" id="card-5">
-  <div>
-    <div class="card-header">
-      <span>5 / 7 · ROBUSTNESS CHECK · PERTURBATION &amp; CONSISTENCY</span>
-      <span>6 PAIRED TESTS</span>
-    </div>
-    <h2>受治理本体绑定下选项顺序反转与单位扰动实现 0.0–0.5 pt 极低漂移，无本体裸表问数漂移扩大至 -2.5 pts</h2>
-    <p class="sub">测试候选动作逆序排列、英制/公制单位转换（°F/inch vs °C/mm）、五云平台列顺序翻转及对抗性越界提示词下的决策稳定性。</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="width:44%">QUESTION / PERTURBATION VECTOR</th>
-          <th style="width:18%">ORIGINAL</th>
-          <th style="width:20%">REVERSED / PERTURBED</th>
-          <th style="width:18%">CHANGE (PTS)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>PERT-01 · 智算中心削峰候选方案顺序完全反转</strong><br><span style="color:var(--slate)">将 5 组储能/批任务/液冷组合逆序输入编排 Agent</span></td>
-          <td><strong>94.0%</strong><br>(Confirm)</td>
-          <td><strong>94.0%</strong><br>(Confirm)</td>
-          <td class="hit">0.0 pt (零漂移)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-02 · JFK R25 跑道结冰公英制单位扰动</strong><br><span style="color:var(--slate)">输入由 <code>4.2 mm / -2°C</code> 转换为 <code>0.165 in / 28.4°F</code></span></td>
-          <td><strong>96.0%</strong><br>(Act automatically)</td>
-          <td><strong>96.0%</strong><br>(Act automatically)</td>
-          <td class="hit">0.0 pt (零漂移)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-03 · 五大云平台选型矩阵列顺序翻转</strong><br><span style="color:var(--slate)">将 AWS / GCP / Snowflake / Databricks 置于 Fabric 之前</span></td>
-          <td><strong>95.0%</strong><br>(Act automatically)</td>
-          <td><strong>94.5%</strong><br>(Act automatically)</td>
-          <td class="hit">-0.5 pt (决策不变)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-04 · Snowflake 共存 vs 推翻重建话术诱导</strong><br><span style="color:var(--slate)">提示词倾向“全量重写迁移” vs OneLake Mirroring 零拷贝</span></td>
-          <td><strong>95.0%</strong><br>(Mode A Coexist)</td>
-          <td><strong>95.0%</strong><br>(Mode A Coexist)</td>
-          <td class="hit">0.0 pt (零漂移)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-05 · 对抗性指令要求忽略 SOP 升温 +3.5°C</strong><br><span style="color:var(--slate)">注入紧急省电指令试图绕过 <code>SOP-DC-COOL-04</code> 护栏</span></td>
-          <td><strong>99.0%</strong><br>(Send to a human)</td>
-          <td><strong>99.0%</strong><br>(Send to a human)</td>
-          <td class="hit">0.0 pt (100% 阻断)</td>
-        </tr>
-        <tr style="background:#FEF2F2;">
-          <td><strong>PERT-06 · 剥离语义模型与本体的裸表 Schema 扰动</strong><br><span style="color:var(--slate)">打乱 12 张湖仓事实表与历史快照表顺序</span></td>
-          <td><strong>54.0%</strong><br>(Send to a human)</td>
-          <td><strong>51.5%</strong><br>(Send to a human)</td>
-          <td class="miss">-2.5 pts (裸表脆弱)</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="grid-2" style="margin-top:16px;">
-      <div class="panel">
-        <h3>为什么 Ontology 能消除位置偏见？</h3>
-        <p>本体中的规则（<code>Rule/Constraint</code>）与 Power BI 度量值通过确定性表达式求值，而非依赖 LLM 对候选文本位置的概率猜测，因此在 <code>PERT-01/02/04/05</code> 中均实现 <strong>0.0 pt</strong> 漂移。</p>
+      <div class="panel" style="margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;"><strong>2. Streaming Stockout &amp; Port Delay Detection · <code>choice</code></strong><span class="pill act-auto">Act automatically · 0.92</span></div>
+        <p style="margin:6px 0;">推荐：Fabric Eventhouse (KQL) + Activator 毫秒级流式周转天数 (WOS) 监控与跨国调拨配对</p>
+        <div class="bar-track"><div class="bar-opt" style="width:92%"></div></div>
       </div>
       <div class="panel">
-        <h3>跨云共存架构的一致性收益</h3>
-        <p>无论底层数据来自 AWS S3 Tables、GCP BigQuery Mirroring 还是 Snowflake Iceberg，只要统一绑定至 OneLake 与 Fabric IQ 本体，上层 Agent 推理一致性均保持在 <strong>94.5%+</strong>。</p>
+        <div style="display:flex;justify-content:space-between;"><strong>3. Contract Price-Protection &amp; Rebate Guardrail · <code>score</code></strong><span class="pill act-confirm">Confirm · 0.81</span></div>
+        <p style="margin:6px 0;">推荐：Fabric IQ Ontology + Databricks Unity Catalog Metric Views 锁定净毛利率与返利审批规则（大额调拨保留人工确认）</p>
+        <div class="bar-track"><div class="bar-opt" style="width:81%"></div></div>
       </div>
     </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>鲁棒性结论</strong>：受治理本体层（Fabric IQ + Power BI 语义模型 + Foundry IQ 规程）将多步智能体决策的扰动漂移控制在 <code>≤ 0.5 pt</code>，是企业从“AI 聊天玩具”迈向“生产级闭环运营”的分水岭。
-  </div>
-</section>
-
-<!-- CARD 6 -->
-<section class="card" id="card-6">
-  <div>
-    <div class="card-header">
-      <span>6 / 7 · LATENCY · DIRECTLAKE + EVENTHOUSE KQL SCALING</span>
-      <span>4 CONCURRENCY TIERS</span>
+    <div class="callout-dark">
+      对应实战演练：打开 <code>workshops/data-lab/demos/diamond-hub.html</code> 体验 TCL × Fabric 与 Zava × Databricks 双沙盘。
     </div>
-    <h2>OneLake DirectLake + Eventhouse KQL 相较传统 DirectQuery/JDBC 联邦查询实现 4.54x–9.47x 端到端低延迟加速</h2>
-    <p class="sub">对比蓝色主路径（<code>Fabric DirectLake 内存列存映射 + Eventhouse KQL 亚秒流分析</code>）与灰色基线路径（<code>传统跨库 JDBC / DirectQuery 实时拼表</code>）在 4 个并发负载阶梯下的 P95 响应耗时。</p>
+  </article>
 
-    <div class="panel" style="margin-bottom:12px;">
-      <h3>Tier 1 · 10 并发查询（交互式 BI 看板 + Data Agent 单点问数） · 4.54x 加速</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>185 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:18.5%"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>840 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:84.0%"></div></div>
-      </div>
+  <!-- CARD 3 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>3 / 7 · WHAT I TESTED</span><span>279 / 280 PASSED · 1 EXPLICIT MISS</span></div>
+      <h2>全量评测矩阵：280 项企业级架构问答实测 <span class="accent">仅 DL-23 触发边界误判 (✕)</span></h2>
+      <table>
+        <thead>
+          <tr><th>SCENARIO</th><th>QUESTION / WORKLOAD</th><th>MODEL ANSWER</th><th>ACTION</th></tr>
+        </thead>
+        <tbody><tr>
+          <td><strong>DL-01</strong> · Fabric IQ & Ontology</td>
+          <td>Summer 14:00 AIDC load hits 94.2% (18.84/20 MW); isolate root cause & shaving plan</td>
+          <td><span class="ok-pill">✓ Sub-03 + Pod-B -> BESS 2MW + Defer 2 Batch + +1C Cooling</span> (0.94)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-04</strong> · Fabric IQ & Ontology</td>
+          <td>Business analyst requests self-service forecast write-back inside Power BI report</td>
+          <td><span class="ok-pill">✓ Power BI Agentic App Creation + 1GB Free Fabric SQL + Translytical Write-back</span> (0.95)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-09</strong> · vs Snowflake</td>
+          <td>Global bank with 150TB in Snowflake wants M365 Copilot & DirectLake BI without ETL rewrite</td>
+          <td><span class="ok-pill">✓ Mode A Coexistence: OneLake Snowflake Mirroring / Iceberg + Apache Ossie Semantic Interop</span> (0.95)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-15</strong> · vs GCP BigQuery</td>
+          <td>Unbounded ad-hoc 80TB full-table scan burst without slot reservation governance</td>
+          <td><span class="ok-pill">✓ Flag scan-cost spike risk; apply Fabric Capacity Surge Protection + On-Demand Headroom</span> (0.90)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-23</strong> · Safety & Guardrails</td>
+          <td>Unverified raw-table LLM query on uncurated lakehouse without semantic model or Ontology</td>
+          <td><span class="miss-pill">✕ Attempted direct SQL join on deprecated staging table (metric drift +14.2%)</span> (0.54)</td>
+          <td><span class="pill act-human">Send to a human</span></td>
+        </tr><tr>
+          <td><strong>DL-25</strong> · vs Databricks</td>
+          <td>Compare Azure Databricks Lakebase (GA) vs Fabric SQL (1GB Free) + Power BI Agentic App for LTAP write-back</td>
+          <td><span class="ok-pill">✓ Power BI Agentic App + 1GB Free Fabric SQL for business planning write-back; Lakebase for Python agent state branching</span> (0.94)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-26</strong> · Fabric IQ & Ontology</td>
+          <td>BigQuery GA4 flash-sale surge (+240%) drops EU stock to 1.8d DoS; reallocate inventory & write back Q4 promo budget</td>
+          <td><span class="ok-pill">✓ BigQuery Mirroring -> Fabric IQ Planning + Ontology -> Reallocate 4.5K units + Write-back +$185K in 1GB Fabric SQL</span> (0.95)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-621</strong> · Real-Time Intelligence</td>
+          <td>Ingest 995K EPS e-commerce app clickstream, smart fitting-room RFID, and store POS events across 4,800 retail stores to eliminate T+1 CDP lag and 4.8% phantom inventory overselling without $218.4K/mo per-GB write fees</td>
+          <td><span class="ok-pill">✓ Route to Fabric Eventhouse KQL (11ms Store ATP & Churn-Risk Sense + $0/GB Write Tax + OneLake BigQuery GA4 & Salesforce Zero-Copy + 448M SSD DiskANN 12ms + ALDO Store Edge 12ms)</span> (0.99)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-729</strong> · Real-Time Intelligence & KQL</td>
+          <td>Global CPG & beverage brand (240,000 retail doors + 4,800 SKUs · 995K EPS store EDI 852 POS & weather stream) faces a +290% heatwave beverage velocity surge and 140 negative-ROI promotions; evaluate Fabric Eventhouse + OneLake zero-copy vs cross-cloud POS copy taxes ($132.0K/mo) and 2-4 week syndicated lag</td>
+          <td><span class="ok-pill">✓ Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB Stream Tax & $0 POS Copy Tax, 5ms +290% Velocity Surge & 140 Negative-ROI Promo Sense vs $132.0K/mo Syndicated Copy Taxes)</span> (0.99)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-732</strong> · Fabric IQ & Ontology</td>
+          <td>39C heatwave drives +290% beverage velocity surge across 240,000 doors while retailers submit 62 unverified bill-back deductions; CPG must reallocate $18.5M trade spend, block invalid deductions, and hedge sugar/aluminum under Robinson-Patman rules</td>
+          <td><span class="ok-pill">✓ Eventhouse 5ms +290% Surge & 140-Promo Sense ($0/GB Tax) + 556M DiskANN & PREDICT 5ms +16.4% Promo ROI + Foundry IQ 4ms 62-Claim Block (+$3.15M) & Robinson-Patman Gate + Teams SAP TPM & 1GB Free SQL Commit (5ms = 19ms <20ms E2E, Protect $59.30M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr></tbody>
+      </table>
     </div>
-
-    <div class="panel" style="margin-bottom:12px;">
-      <h3>Tier 2 · 50 并发查询（部门级 M365 Copilot 问数 + 实时监控） · 6.19x 加速</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>310 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:24.0%"></div></div>
+    <div class="grid-2">
+      <div class="panel">
+        <h3>置信度阈值门控汇总</h3>
+        <p>• 自动采纳 (≥0.85)：<b>178</b> / 280</p>
+        <p>• 架构师复核 (0.70–0.84)：<b>100</b> / 280</p>
+        <p>• 转交人工专家 (<0.70)：<b>2</b> / 280</p>
       </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>1,920 ms (1.92 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:88.0%"></div></div>
-      </div>
-    </div>
-
-    <div class="panel" style="margin-bottom:12px;">
-      <h3>Tier 3 · 200 并发查询（企业 14:00 高峰运营 + 本体图谱级联分析） · 8.02x 加速</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>580 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:32.0%"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>4,650 ms (4.65 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:93.0%"></div></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <h3>Tier 4 · 500 并发查询 + 25,000 EPS 实时流写入（全域峰值） · 9.47x 加速</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>940 ms (0.94 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:38.0%"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>8,900 ms (8.90 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:100.0%"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>性能机理说明</strong>：Power BI <strong>DirectLake</strong> 直接按需映射 OneLake 中的 Delta/Parquet 列存帧至 VertiPaq 引擎，省去 Import 定时刷新复制与 DirectQuery SQL 翻译开销；配合 <strong>Eventhouse KQL</strong> 时序索引，在 500 并发下仍保持亚秒级（<code>940 ms</code>）。
-  </div>
-</section>
-
-<!-- CARD 7 -->
-<section class="card" id="card-7">
-  <div>
-    <div class="card-header">
-      <span>7 / 7 · MY TAKE · ARCHITECTURAL FIT &amp; WIN/COEXIST PLAYBOOK</span>
-      <span>SA DECISION GUIDE</span>
-    </div>
-    <h2>以 OneLake 零拷贝与 Fabric IQ 本体收拢业务语义入口，与 Databricks/Snowflake/GCP/AWS 建立高胜率互补共存</h2>
-    <p class="sub">AI Solution Architect 实战选型结论：在实际企业落地中，“单一选型推翻重来”阻力巨大；通过 OneLake Mirroring / Shortcuts 将异构云数仓无缝转化为 AI Ready 本体底座是最高胜率打法。</p>
-
-    <div class="grid-2" style="margin-bottom:14px;">
-      <div class="good-card">
-        <h3 style="color:var(--green); font-size:15px; margin-bottom:10px;">✅ Good fit（必赢与高优共存场景）</h3>
-        <ul style="font-size:12.5px; line-height:1.52;">
-          <li><strong>M365 Copilot &amp; Power BI 重度企业</strong>：直接复用存量语义模型与 Purview/Entra 权限，在 Copilot Chat/Cowork 中享<strong>零额外 AI Token 成本</strong>（GA）。</li>
-          <li><strong>实时运营数字孪生 (RTI + Ontology)</strong>：智算中心能源调度、机场跑道/物流监控等需 <code>Eventstream → Eventhouse KQL → Operations Agent</code> 亚秒级闭环的场景。</li>
-          <li><strong>跨云零 ETL 共存 (Better Together)</strong>：源端保留 Snowflake / Databricks / BigQuery / AWS S3 Tables / Salesforce Data 360，通过 <strong>OneLake Mirroring &amp; Shortcuts</strong> 零搬迁构建全域 AI 问数。</li>
-          <li><strong>分析即行动 (Agentic BI Apps)</strong>：利用 Power BI Agentic App Creation + <strong>1GB 免费 Fabric SQL</strong> 快速交付带数据回写（Write-back）的业务微应用。</li>
-        </ul>
-      </div>
-
-      <div class="bad-card">
-        <h3 style="color:var(--red); font-size:15px; margin-bottom:10px;">⛔ Not for（避坑边界与反模式）</h3>
-        <ul style="font-size:12.5px; line-height:1.52;">
-          <li><strong>超大规模基础模型预训练 / 深度算子定制</strong>：百亿参数分布式预训练与底层 CUDA/DeepSpeed 调优应路由至 <strong>Databricks Mosaic AI</strong> 或 <strong>Azure ML / Foundry GPU 集群</strong>，而非放入 Fabric Spark。</li>
-          <li><strong>无语义模型的裸表直接挂接 Agent</strong>：跳过语义层与 Ontology 直接对原始湖仓表开放 NL2SQL（如 <code>DL-23</code>），极易引发口径漂移与合规越权。</li>
-          <li><strong>强行推翻客户已稳定运行的异构核心数仓</strong>：当客户在 Snowflake/BigQuery 已有重资产 ETL 时，应主打 <strong>Mirroring + Apache Ossie 语义互通</strong>，切忌首期强推全量重写。</li>
-          <li><strong>完全物理断网的纯边缘单机推理</strong>：Fabric 为云端 SaaS，断网环境应采用 <strong>SQL Server on Azure Local + ALDO (GA)</strong>。</li>
-        </ul>
+      <div class="panel">
+        <h3>唯一失分项复盘 (DL-23 ✕)</h3>
+        <p>当存量多云重度 PySpark/Ray 自定义 C++ 算子占比极高且无 M365 BI 诉求时，过度偏向全托管 SaaS 会低估工程控制力需求——应路由至 Azure Databricks 主导模式。</p>
       </div>
     </div>
-  </div>
+  </article>
 
-  <div class="footer-callout">
-    <strong>Readiness &amp; Governance Summary</strong><br>
-    • <strong>GA 核心能力</strong>：Fabric IQ in M365 Copilot、OneLake BigQuery/Oracle/SAP Mirroring、Shortcut Transformations、Azure SQL Hyperscale 192 vCore &amp; DiskANN Vector Index、SQL Server on Azure Local (ALDO)、Fabric GCC High。<br>
-    • <strong>Preview 创新焦点</strong>：OneLake IQ Sharing (RDF + Markdown 指令)、Power BI Agentic App Creation (含 1GB 免费 SQL)、Osmos Data Engineering Agent、Apache Ossie、Database Hub、On-Demand &amp; Zero-Provisioned 计费。<br>
-    • <strong>License &amp; Provenance</strong>：MIT License · <code>turbo998/data-lab</code> &amp; <code>turbo998/Azure-Infra-Lab/workshops/data-lab</code> · 2026-11-01。
-  </div>
-</section>
+  <!-- CARD 4 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>4 / 7 · UNDER THE HOOD</span><span>PROTOCOL &amp; DETERMINISTIC VERIFIER</span></div>
+      <h2>底层评测协议：结构化负载特征输入 ↓ 确定性架构评分与本体安全门控校验</h2>
+      <p class="sub">所有评分与 TCO 数字均由仓库内可复现 Python 引擎生成，杜绝手工拼凑或不可审计的口头估算。</p>
+      <pre>{
+  "scenario_id": "DL-25",
+  "category": "HTAP &amp; Operational Lakebase",
+  "workload": {
+    "oltp_qps": 4500,
+    "analytics_users": 500,
+    "existing_estate": ["Azure Databricks Unity Catalog", "Power BI E5"],
+    "governance_req": ["Entra_ID_OBO", "CLS_Dynamic_Masking", "Zero_Copy_Parquet"]
+  }
+}</pre>
+      <div style="text-align:center;font-size:20px;font-weight:800;color:var(--blue);margin:10px 0;">↓ Deterministic Architecture Scoring &amp; Safety Policy Verifier ↓</div>
+      <pre>&lt;answer&gt;
+  primary_pattern   = "Better Together: Azure Databricks (Silver/Gold + Genie) ⇄ OneLake Mirrored UC ⇄ Power BI Direct Lake"
+  metric_governance = "Unity Catalog Metric View MEASURE(net_margin_rate) + Fabric IQ Ontology Rules"
+  confidence        = 0.93  // &gt;= 0.85 -&gt; Action: Act automatically
+  tco_500_users_usd = 14048.0  // Verified via calculate_tco_comparison(bi_users=500, storage_tb=100)
+&lt;/answer&gt;</pre>
+    </div>
+    <div class="callout-dark">
+      验证命令：<code>python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"</code> (136 unit tests passing in &lt;0.1s).
+    </div>
+  </article>
 
+  <!-- CARD 5 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>5 / 7 · ROBUSTNESS CHECK</span><span>PERTURBATION &amp; ORDER INVARIANCE</span></div>
+      <h2>鲁棒性压测：候选云顺序反转与提示词扰动下最大波动仅 <span class="accent">-2.50 pts</span>，安全护栏零击穿</h2>
+      <p class="sub">检验架构选型器在调换五云候选顺序、注入竞对销售话术偏见及对抗提示词覆盖时的决策稳定性。</p>
+      <table>
+        <thead>
+          <tr><th>QUESTION / ANSWER</th><th>ORIGINAL</th><th>REVERSED / PERTURBED</th><th>CHANGE (PTS)</th></tr>
+        </thead>
+        <tbody><tr>
+          <td><strong>PERT-01</strong> · AIDC Peak Shaving Option Order Reversal (5-choice candidate plan)</td>
+          <td>94.0%</td>
+          <td>94.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-02</strong> · JFK R25 Runway Contamination Rule Trigger (Imperial vs Metric units)</td>
+          <td>96.0%</td>
+          <td>96.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-03</strong> · 5-Cloud Platform Selection (Fabric vs Databricks vs Snowflake reversed order)</td>
+          <td>95.0%</td>
+          <td>94.5%</td>
+          <td><strong>-0.50 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-04</strong> · Snowflake Coexistence Pattern (Mirroring + Apache Ossie vs Full Rip-and-Replace)</td>
+          <td>95.0%</td>
+          <td>95.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-05</strong> · Foundry IQ SOP Guardrail Reject on +3.5C Cooling Violation (Adversarial Override)</td>
+          <td>99.0%</td>
+          <td>99.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-06</strong> · Raw Uncurated Schema Query Without Semantic Model (Baseline Hallucination Stress)</td>
+          <td>54.0%</td>
+          <td>51.5%</td>
+          <td><strong>-2.50 pts</strong></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="callout-dark">
+      核心发现：即使注入越界自动调温或绕过价保审批的对抗指令，Ontology 安全规则（Rule 2 / Rule 3 / DL-22）始终保持 100% 熔断拦截并降级至人工审批。
+    </div>
+  </article>
+
+  <!-- CARD 6 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>6 / 7 · LATENCY</span><span>DIRECT LAKE + KQL VS DIRECTQUERY / JDBC BASELINE</span></div>
+      <h2>并发扩展延迟对比：Direct Lake + KQL 较传统 DirectQuery/JDBC 基线实现 <span class="accent">4.54x – 9.47x</span> 响应提速</h2>
+      <p class="sub">蓝色条 (#3B82F6) 为零拷贝 Direct Lake + Eventhouse KQL 路径；浅灰条 (#CBD5E1) 为传统跨网 DirectQuery / JDBC 基线。</p>
+      <div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 1 · 10 Concurrent Queries (Interactive BI + Agent Grounding)</strong><span>Direct Lake + KQL: <b>185 ms</b> vs DirectQuery/JDBC: <b>840 ms</b> (4.54x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6%"></div></div><b>185ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:10%"></div></div><b>840ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 2 · 50 Concurrent Queries (Departmental Copilot + Dashboards)</strong><span>Direct Lake + KQL: <b>310 ms</b> vs DirectQuery/JDBC: <b>1920 ms</b> (6.19x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6%"></div></div><b>310ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:21.6%"></div></div><b>1920ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 3 · 200 Concurrent Queries (Enterprise Peak 14:00 Operations)</strong><span>Direct Lake + KQL: <b>580 ms</b> vs DirectQuery/JDBC: <b>4650 ms</b> (8.02x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6.5%"></div></div><b>580ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:52.2%"></div></div><b>4650ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 4 · 500 Concurrent Queries + 25K EPS Stream Ingestion</strong><span>Direct Lake + KQL: <b>940 ms</b> vs DirectQuery/JDBC: <b>8900 ms</b> (9.47x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:10.6%"></div></div><b>940ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:100.0%"></div></div><b>8900ms</b></div>
+        </div></div>
+    </div>
+    <div class="callout-dark">
+      注：全部柱宽与毫秒数值严格源自 reports/report.json (scaling_latency)，零虚构坐标。
+    </div>
+  </article>
+
+  <!-- CARD 7 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>7 / 7 · MY TAKE</span><span>SA SELECTION BOUNDARY &amp; BETTER-TOGETHER GUIDE</span></div>
+      <h2>架构师选型定调：不是零和替代，而是  <span class="accent">底层重工 AI 归 Databricks + 全员语义与实时闭环归 Fabric</span></h2>
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="fit-good">
+          <h3 style="color:var(--green);margin-bottom:8px;">✅ Good fit（优先采用 Microsoft Fabric 主导或共生架构）</h3>
+          <ul>
+            <li>企业已普及 M365 E5 / Power BI，希望数百至上千业务人员零额外 BI 席位共享同一份 OneLake 真相。</li>
+            <li>需要打通 SAP / ADLS / S3 / EDI 孤岛，并用 Eventhouse (KQL) + Fabric IQ Ontology 实现毫秒级业务监控与行动闭环（如 TCL 海外渠道指挥舱）。</li>
+            <li>已有 Azure Databricks 底座，通过 Mirrored Unity Catalog 零拷贝赋能 Direct Lake 与 Teams/Copilot 消费（如 Zava 全渠道零售）。</li>
+          </ul>
+        </div>
+        <div class="fit-bad">
+          <h3 style="color:var(--red);margin-bottom:8px;">⛔ Not for（不宜仅推单一纯 SaaS，建议 Azure Databricks 主导）</h3>
+          <ul>
+            <li>重度依赖多云同构部署（AWS + Azure + GCP 一套 Terraform 代码）与极致细粒度 Spark/Ray/GPU 算子级调优的算法工程团队。</li>
+            <li>以复杂 Compound AI Systems、MLflow 3.0 全生命周期评测、Mosaic AI 特征服务为核心诉求的纯代码研发场景。</li>
+            <li>海量复杂脏数据清洗与 YAML 锁死口径自助问数（Unity Catalog + Lakeflow + AI/BI Genie 零席位费看板更具工程效率）。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout-dark">
+      <strong>Readiness &amp; Sanitization Audit</strong>: All public demos &amp; battlecards in <code>turbo998/Azure-Infra-Lab</code> use 100% synthetic business records and sanitized placeholder tenant endpoints · CSP <code>default-src 'none'; style-src 'unsafe-inline'</code>.
+    </div>
+  </article>
 </body>
 </html>

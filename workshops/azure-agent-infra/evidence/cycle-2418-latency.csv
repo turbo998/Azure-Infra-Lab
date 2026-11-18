@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-ticket_driven_provisioning,Ticket-driven platform ops,1296000000,1900800000,100.0,anonymized_reported,historical enterprise ops baseline
-module_first_provisioning,AVM + manual process,216000000,362880000,67.5,synthetic,modeled module-first flow
-idp_vending_provisioning,ADE + AVM + azd IDP vending,1620000,2640000,0.0,measured,vending replay suite
-promotion_gate_pass,Sandbox-to-prod promotion checks,162000,252000,15.2,anonymized_reported,promotion gate audit logs

@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-kueue cohort fairness custody,222,233,0.9528,measured,replay logs
-spot fallback latency guard,219,233,0.9399,measured,replay logs
-mig partition utilization fidelity,224,233,0.9614,measured,replay logs

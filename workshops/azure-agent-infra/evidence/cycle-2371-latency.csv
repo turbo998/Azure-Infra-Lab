@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-delegated_chain,Entra Agent ID OBO token delegation chain,146,244,anonymized_reported,official+reported
-federated_identity,AKS federated workload identity token mint,61,104,measured,staging replay
-private_secret_path,Key Vault via Private Link + RBAC check,87,139,anonymized_reported,official+reported
-warm_cache,Delegated credential warm cache restore,29,52,synthetic,deterministic model

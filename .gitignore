@@ -11,3 +11,5 @@
 **/*.p12
 **/*.tfstate
 **/*.tfstate.*
+**/__pycache__/
+**/*.py[cod]

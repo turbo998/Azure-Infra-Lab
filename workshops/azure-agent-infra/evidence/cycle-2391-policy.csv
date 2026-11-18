@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-nested-table layout extraction fidelity,233,241,0.9668,measured,replay logs
-diagram-video alignment consistency,229,241,0.9502,measured,replay logs
-throughput-cost gate precision,226,241,0.9378,measured,replay logs

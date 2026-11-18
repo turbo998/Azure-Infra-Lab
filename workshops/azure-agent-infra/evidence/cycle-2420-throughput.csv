@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-gateway_handshake_throughput,APIM DMZ handshake path,1820,1660,measured,gateway replay
-quarantine_scan_throughput,Prompt shield quarantine path,980,860,synthetic,shield scan model
-a2a_task_dispatch,Async A2A task dispatch,640,590,anonymized_reported,dispatch queue traces
-dlp_egress_scan,Purview DLP egress path,730,690,measured,dlp scan replay

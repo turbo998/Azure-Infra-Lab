@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Durable saga + outbox target,18.66,1013,18.42,synthetic,deterministic finops model
-Saga without outbox,15.63,924,16.91,synthetic,deterministic finops model
-Outbox without saga,15.32,883,17.36,synthetic,deterministic finops model
-Legacy callback baseline,14.8,621,23.84,synthetic,deterministic finops model

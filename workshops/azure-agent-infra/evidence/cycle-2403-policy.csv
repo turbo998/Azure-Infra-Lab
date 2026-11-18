@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-provenance integrity,491,500,0.982,measured,replay logs
-pii tokenization compliance,481,500,0.962,measured,replay logs
-threat correlation guard,492,500,0.984,measured,replay logs

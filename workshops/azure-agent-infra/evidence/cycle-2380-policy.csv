@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-checkpoint consistency custody,224,232,0.9655,measured,replay logs
-replay latency budget guard,221,233,0.9485,measured,replay logs
-tenant partition isolation fidelity,219,228,0.9605,measured,replay logs

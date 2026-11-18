@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-ledger-worm-pim-jit-auditchain-guard-violation saturation gate,172,184,0.9348,measured,ledger-worm-pim-jit-auditchain-guard-fence mismatch replay + deterministic verification
-ledger-worm-pim-jit-auditchain-guard-fence fence integrity guard,161,168,0.9583,measured,ledger-worm-pim-jit-auditchain-guard-fence integrity logs
-tenant-scope ledger-worm-pim-jit-auditchain-guard-fence authorization fence,154,161,0.9565,measured,tenant ledger-worm-pim-jit-auditchain-guard-fence fairness replay logs

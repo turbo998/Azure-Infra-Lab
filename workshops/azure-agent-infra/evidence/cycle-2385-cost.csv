@@ -1,5 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,vision_token_cost_usd,a11y_token_cost_usd,source_label,source_ref
-ACA dynamic session lane,4.39,402,20,0.00166,0.00021,7e-05,synthetic,deterministic cost model
-AKS Chromium pool lane,4.87,381,20,0.00184,0.00019,6e-05,synthetic,deterministic cost model
-Proxy+MFA handoff lane,5.16,349,20,0.00197,0.00023,8e-05,synthetic,deterministic cost model
-A11y-first guard lane,4.52,417,20,0.00171,0.00018,5e-05,synthetic,deterministic cost model

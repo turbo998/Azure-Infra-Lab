@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-in-flight stream drain fidelity,235,243,0.9671,measured,replay logs
-schema version pinning consistency,231,243,0.9506,measured,replay logs
-checkpoint migration integrity precision,228,243,0.9383,measured,replay logs

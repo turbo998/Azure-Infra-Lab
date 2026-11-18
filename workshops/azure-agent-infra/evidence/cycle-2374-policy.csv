@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-session-lock renewal anomaly block,214,229,0.9345,measured,replay logs
-poison-message DLQ isolation fence,223,229,0.9738,measured,replay logs
-event-stream telemetry backpressure guard,217,225,0.9644,measured,replay logs

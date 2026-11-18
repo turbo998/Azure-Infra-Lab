@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zava 全渠道生鲜零售 × Azure Databricks & Microsoft Fabric 协同实战沙盘</title>
+<style>
+  :root {
+    --bg:#090d16; --panel:#111827; --card:#1e293b; --border:#334155;
+    --text:#f8fafc; --muted:#94a3b8; --dbx:#ff3621; --fab:#0ea5e9; --green:#10b981; --amber:#f59e0b; --purple:#a855f7;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .quickbar { background:#060911; border-bottom:1px solid var(--border); padding:8px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:12px; position:sticky; top:0; z-index:60; }
+  .quickbar a { color:#93c5fd; text-decoration:none; font-weight:600; padding:4px 10px; border-radius:6px; background:rgba(30,41,59,0.8); border:1px solid rgba(148,163,184,0.22); }
+  .quickbar a:hover, .quickbar a.active { background:rgba(255,54,33,0.22); color:#fff; border-color:rgba(255,54,33,0.55); }
+  .header { background:linear-gradient(135deg,#1c1219 0%,#0f172a 55%,#0c2438 100%); border-bottom:1px solid var(--border); padding:20px 26px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .brand-pill { display:inline-flex; align-items:center; gap:8px; font-size:11.5px; font-weight:800; padding:3px 10px; border-radius:999px; background:rgba(255,54,33,0.16); color:#fca5a5; border:1px solid rgba(255,54,33,0.4); margin-bottom:6px; }
+  h1 { font-size:22px; }
+  .sub { font-size:13px; color:var(--muted); }
+  .timer-box { display:flex; align-items:center; gap:8px; background:rgba(15,23,42,0.9); border:1px solid var(--border); padding:8px 14px; border-radius:10px; font-size:13px; }
+  .act-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:12px 24px; background:#0d1424; border-bottom:1px solid var(--border); }
+  @media(max-width:860px){ .act-bar { grid-template-columns:repeat(2,1fr); } }
+  .act-btn { background:var(--panel); border:1px solid var(--border); color:var(--text); padding:10px 14px; border-radius:10px; text-align:left; cursor:pointer; transition:all 0.15s; }
+  .act-btn:hover { border-color:var(--fab); }
+  .act-btn.active { background:linear-gradient(135deg,rgba(255,54,33,0.2),rgba(14,165,233,0.2)); border-color:#38bdf8; }
+  .act-step { font-size:11px; color:#38bdf8; font-weight:700; text-transform:uppercase; display:block; }
+  .act-name { font-size:13.5px; font-weight:700; margin-top:2px; display:block; }
+  .cue-strip { background:rgba(14,165,233,0.1); border-bottom:1px solid rgba(56,189,248,0.25); padding:10px 26px; font-size:13px; color:#e0f2fe; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .container { max-width:1280px; margin:0 auto; padding:22px 24px 56px; }
+  .pane { display:none; }
+  .pane.active { display:block; }
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:16px; margin-bottom:16px; }
+  .grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-bottom:16px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; }
+  .card h3 { font-size:15px; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; gap:8px; }
+  .kpi-val { font-size:26px; font-weight:800; margin:6px 0 2px; }
+  .btn { background:#2563eb; color:#fff; border:none; padding:7px 13px; border-radius:8px; font-size:12.5px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+  .btn.alt { background:#334155; }
+  .btn.dbx { background:#e11d48; }
+  .btn.active-role { outline:2px solid #38bdf8; background:#0284c7; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; margin-top:8px; }
+  th { background:#0f172a; color:#93c5fd; text-align:left; padding:8px 10px; border-bottom:1px solid var(--border); }
+  td { padding:8px 10px; border-bottom:1px solid rgba(51,65,85,0.6); }
+  pre { background:#090d16; border:1px solid var(--border); border-radius:10px; padding:12px 14px; font-size:12px; color:#e2e8f0; overflow-x:auto; font-family:Consolas,monospace; margin-top:8px; }
+  .q-btn { width:100%; text-align:left; background:#0f172a; border:1px solid var(--border); color:#e2e8f0; padding:10px 13px; border-radius:10px; margin-bottom:8px; cursor:pointer; font-size:13px; transition:all 0.15s; }
+  .q-btn:hover, .q-btn.active { border-color:#38bdf8; background:rgba(14,165,233,0.16); color:#fff; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; }
+  .tag-red { background:rgba(244,63,94,0.2); color:#fda4af; }
+  .tag-green { background:rgba(16,185,129,0.2); color:#6ee7b7; }
+  .tag-blue { background:rgba(56,189,248,0.2); color:#7dd3fc; }
+  .pat-tab { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+</style>
+</head>
+<body>
+  <nav class="quickbar">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <strong>💎 DIAMOND ENTERPRISE DEMO SUITE</strong>
+      <a href="../diamond-hub.html">← Diamond 演示总入口</a>
+      <a href="../tcl-fabric/index.html">📺 TCL × Fabric 渠道指挥舱</a>
+      <a href="index.html" class="active">🛒 Zava × Databricks & Fabric 4幕沙盘</a>
+      <a href="battlecard.html">⚔️ 10维选型攻防战卡 (Battlecard)</a>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <a href="../../index.html">🏠 返回 Data Lab</a>
+      <a href="index.en.html">🌐 English Version</a>
+    </div>
+  </nav>
+
+  <header class="header">
+    <div>
+      <span class="brand-pill">AZURE DATABRICKS × MICROSOFT FABRIC · BETTER TOGETHER</span>
+      <h1>Zava 全渠道生鲜零售 — Unity Catalog · AI/BI Genie · OneLake 零拷贝共生工作台</h1>
+      <div class="sub">已脱敏企业级参考沙盘 · Catalog: zava_retail (Serverless SQL) ⇄ OneLake Mirrored Unity Catalog ⇄ Power BI Direct Lake</div>
+    </div>
+    <div class="timer-box">
+      <span>⏱️ 25m 演示计时：</span>
+      <strong id="timerDisplay" style="font-family:Consolas,monospace;font-size:16px;color:#6ee7b7;">25:00</strong>
+      <button class="btn" onclick="toggleTimer()" id="timerBtn">开始</button>
+      <button class="btn alt" onclick="resetTimer()">重置</button>
+    </div>
+  </header>
+
+  <nav class="act-bar">
+    <button class="act-btn active" onclick="setAct(0)" id="actBtn0">
+      <span class="act-step">Act 1 · Unity Catalog (6m)</span>
+      <span class="act-name">🛡️ 奖牌清洗、动态脱敏与语义锁死</span>
+    </button>
+    <button class="act-btn" onclick="setAct(1)" id="actBtn1">
+      <span class="act-step">Act 2 · AI/BI Genie (8m)</span>
+      <span class="act-name">💬 5 轮追问穿透华东毛利暴跌根因</span>
+    </button>
+    <button class="act-btn" onclick="setAct(2)" id="actBtn2">
+      <span class="act-step">Act 3 · Lakeview &amp; Direct Lake (5m)</span>
+      <span class="act-name">📊 高管零席位费看板与双端同源</span>
+    </button>
+    <button class="act-btn" onclick="setAct(3)" id="actBtn3">
+      <span class="act-step">Act 4 · Better Together (6m)</span>
+      <span class="act-name">🤝 Databricks × Fabric 四大零拷贝模式</span>
+    </button>
+  </nav>
+
+  <div class="cue-strip">
+    <div id="cueText"></div>
+    <a class="btn dbx" href="battlecard.html">⚔️ 打开 Databricks vs Fabric 10维选型战卡 →</a>
+  </div>
+
+  <main class="container">
+    <!-- ACT 1 -->
+    <section class="pane active" id="pane0">
+      <div class="grid-4">
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">Bronze 原始全渠道订单</div>
+          <div class="kpi-val" style="color:#cbd5e1;">24,024</div>
+          <div style="font-size:12px;color:#fca5a5;">含 24 条负客单/空主键脏数据</div>
+        </div>
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">Silver 洁净受治理订单</div>
+          <div class="kpi-val" style="color:#38bdf8;">24,000</div>
+          <div style="font-size:12px;color:#6ee7b7;">Lakeflow 预期规则 100% 拦截隔离</div>
+        </div>
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">PII 列级动态掩码函数</div>
+          <div class="kpi-val" style="color:#f59e0b;">mask_cn_phone</div>
+          <div style="font-size:12px;color:var(--muted);">对 AI Agent 与门店运营自动脱敏</div>
+        </div>
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">统一语义度量视图</div>
+          <div class="kpi-val" style="color:#c084fc;">mv_retail_kpi</div>
+          <div style="font-size:12px;color:var(--muted);">YAML 锁死净毛利率消除 AI 幻觉</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>
+            <span>🔐 Unity Catalog 列级动态脱敏实测 (CLS Masking)</span>
+            <span class="tag tag-blue">zava_retail.silver.dim_customer</span>
+          </h3>
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px;">
+            切换当前查询身份，观察同一张表在无需复制脱敏副本的前提下如何动态保护客户手机号（AI/BI Genie 与 Fabric Data Agent 均强制继承）：
+          </p>
+          <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+            <button class="btn active-role" id="roleOpsBtn" onclick="setMaskRole('ops')">👤 门店运营 / AI Agent 视角 (脱敏)</button>
+            <button class="btn alt" id="roleAuditBtn" onclick="setMaskRole('audit')">🔑 合规审计官视角 (授权明文)</button>
+          </div>
+          <table>
+            <thead>
+              <tr><th>customer_id</th><th>region</th><th>loyalty_tier</th><th>mobile_phone</th><th>gov_policy</th></tr>
+            </thead>
+            <tbody id="maskTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>
+            <span>📐 Unity Catalog Metric View（锁死净毛利率口径）</span>
+            <span class="tag tag-green">zava_retail.gold.mv_retail_kpi</span>
+          </h3>
+          <p style="font-size:12.5px;color:var(--muted);">
+            防止不同分析师或大模型把促销折扣、冷链报损漏算导致“毛利率打架”——在目录层一次性通过 YAML 锁定官方公式：
+          </p>
+          <pre>version: 0.1
+source: zava_retail.gold.fact_store_daily_summary
+dimensions:
+  - name: region_name
+    expr: region_name
+  - name: fulfillment_hub
+    expr: hub_name
+measures:
+  - name: net_margin_rate
+    expr: (SUM(gross_sales_cny) - SUM(cogs_cny) - SUM(spoilage_cost_cny) - SUM(promo_discount_cny)) / NULLIF(SUM(gross_sales_cny), 0)
+  - name: stockout_rate
+    expr: SUM(stockout_sku_days) * 1.0 / NULLIF(SUM(scheduled_sku_days), 0)</pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span>🧬 端到端列级血缘图谱 (Bronze → Silver → Gold → OneLake Direct Lake)</span></h3>
+        <svg viewBox="0 0 1040 125" style="width:100%;height:auto;margin-top:8px;">
+          <rect x="10" y="25" width="215" height="75" rx="10" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+          <text x="24" y="52" fill="#fca5a5" font-size="12" font-weight="bold">BRONZE · Lakeflow Auto Loader</text>
+          <text x="24" y="72" fill="#e2e8f0" font-size="11.5">raw_omnichannel_orders (24,024)</text>
+          <text x="24" y="89" fill="#94a3b8" font-size="10.5">Quarantined: 24 dirty rows</text>
+
+          <path d="M225 62 L275 62" stroke="#38bdf8" stroke-width="2.2"/>
+          <rect x="278" y="25" width="225" height="75" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="292" y="52" fill="#38bdf8" font-size="12" font-weight="bold">SILVER · UC CLS + RLS</text>
+          <text x="292" y="72" fill="#e2e8f0" font-size="11.5">fact_orders_clean (24,000)</text>
+          <text x="292" y="89" fill="#94a3b8" font-size="10.5">+ mask_cn_phone() policy</text>
+
+          <path d="M503 62 L553 62" stroke="#10b981" stroke-width="2.2"/>
+          <rect x="556" y="25" width="225" height="75" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="570" y="52" fill="#6ee7b7" font-size="12" font-weight="bold">GOLD · UC Metric View</text>
+          <text x="570" y="72" fill="#e2e8f0" font-size="11.5">mv_retail_kpi + Genie Space</text>
+          <text x="570" y="89" fill="#94a3b8" font-size="10.5">MEASURE(net_margin_rate)</text>
+
+          <path d="M781 62 L831 62" stroke="#a855f7" stroke-width="2.2" stroke-dasharray="5,4"/>
+          <rect x="834" y="25" width="196" height="75" rx="10" fill="#1e1b4b" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="848" y="52" fill="#d8b4fe" font-size="12" font-weight="bold">FABRIC ONELAKE MIRROR</text>
+          <text x="848" y="72" fill="#e2e8f0" font-size="11.5">Zero-Copy Direct Lake BI</text>
+          <text x="848" y="89" fill="#cbd5e1" font-size="10.5">500+ M365 / Teams Users</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ACT 2 -->
+    <section class="pane" id="pane1">
+      <div class="grid-2">
+        <div class="card">
+          <h3><span>💬 AI/BI Genie 五轮连环追问（点击问题实时推演）</span><span class="tag tag-green">Serverless SQL</span></h3>
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px;">
+            模拟零售运营副总裁在早会发现华东利润异动后，无需等待数据团队排期写 SQL，5 分钟连追 5 层直达门店止损动作：
+          </p>
+          <div id="genieQuestionList"></div>
+        </div>
+
+        <div class="card">
+          <h3><span>🔍 Genie 归因结果与自动生成 SQL</span><span class="tag tag-blue" id="genieLatencyBadge">195 ms</span></h3>
+          <div id="genieInsightBox" style="background:rgba(16,185,129,0.1);border-left:4px solid #10b981;padding:10px 14px;border-radius:8px;font-size:13px;margin:8px 0 12px;"></div>
+          <div id="genieTableWrap"></div>
+          <pre id="genieSqlBox"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 3 -->
+    <section class="pane" id="pane2">
+      <div class="grid-4">
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">华东大区近7天净毛利率</div>
+          <div class="kpi-val" style="color:#fca5a5;">25.9% <span style="font-size:13px;">(-3.1pp)</span></div>
+          <div style="font-size:12px;color:var(--muted);">其余三大区稳居 29.0%</div>
+        </div>
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">昆山二号冷链仓断货率</div>
+          <div class="kpi-val" style="color:#f59e0b;">16.2%</div>
+          <div style="font-size:12px;color:var(--muted);">生鲜报损率同步升至 6.6%</div>
+        </div>
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">华东近7天断货损失额</div>
+          <div class="kpi-val" style="color:#f43f5e;">¥250.8K</div>
+          <div style="font-size:12px;color:var(--muted);">昆山二号仓占比 88.9% (¥223K)</div>
+        </div>
+        <div class="card">
+          <div style="font-size:12px;color:var(--muted);">嘉兴一号仓可紧急调拨箱数</div>
+          <div class="kpi-val" style="color:#10b981;">1,460 箱</div>
+          <div style="font-size:12px;color:#6ee7b7;">平均出库延迟仅 1.6h · 准点率 98.1%</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3><span>📉 14 天同日拐点验证：净毛利率骤降 vs 出库延迟飙升 (2.4h → 17.3h)</span></h3>
+          <svg viewBox="0 0 560 220" style="width:100%;height:auto;margin-top:8px;background:#0f172a;border-radius:10px;padding:8px;">
+            <line x1="45" y1="185" x2="535" y2="185" stroke="#334155" stroke-width="1"/>
+            <line x1="290" y1="25" x2="290" y2="185" stroke="#f43f5e" stroke-dasharray="4,4" stroke-width="1.5"/>
+            <text x="296" y="38" fill="#fda4af" font-size="11" font-weight="bold">Day -7: 昆山冷库分拣升级故障拐点</text>
+            <polyline fill="none" stroke="#10b981" stroke-width="3" points="55,55 90,54 125,56 160,55 195,54 230,55 265,56 300,108 335,126 370,132 405,134 440,131 475,135 515,133"/>
+            <polyline fill="none" stroke="#f43f5e" stroke-width="3" points="55,168 90,167 125,169 160,167 195,168 230,166 265,167 300,98 335,66 370,52 405,48 440,50 475,47 515,49"/>
+            <text x="58" y="45" fill="#6ee7b7" font-size="11">净毛利率 29.0% → 25.9%</text>
+            <text x="365" y="172" fill="#fda4af" font-size="11">出库延迟 2.4h → 17.3h</text>
+          </svg>
+        </div>
+
+        <div class="card">
+          <h3><span>🏪 华东受损最重 Top 5 核心旗舰门店（优先补货清单）</span></h3>
+          <table>
+            <thead>
+              <tr><th>优先级</th><th>门店名称</th><th>供货冷链仓</th><th>断货率</th><th>7天断货损失</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>#1</td><td><strong>上海静安旗舰店</strong></td><td>WH-EC-02</td><td style="color:#fca5a5;">18.4%</td><td><strong>¥33,200</strong></td></tr>
+              <tr><td>#2</td><td><strong>上海陆家嘴中心店</strong></td><td>WH-EC-02</td><td style="color:#fca5a5;">17.1%</td><td><strong>¥27,400</strong></td></tr>
+              <tr><td>#3</td><td><strong>上海徐汇港汇店</strong></td><td>WH-EC-02</td><td style="color:#fca5a5;">16.8%</td><td><strong>¥26,100</strong></td></tr>
+              <tr><td>#4</td><td><strong>苏州工业园区中心店</strong></td><td>WH-EC-02</td><td style="color:#fca5a5;">16.5%</td><td><strong>¥25,800</strong></td></tr>
+              <tr><td>#5</td><td><strong>上海虹桥枢纽店</strong></td><td>WH-EC-02</td><td style="color:#fca5a5;">15.2%</td><td><strong>¥22,300</strong></td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:12px;color:#93c5fd;margin-top:10px;">
+            💡 双平台交付价值：Databricks AI/BI Lakeview 提供免 BI 席位费内部运营看板；同时通过 Mirrored Unity Catalog 零拷贝同步至 Microsoft Fabric Power BI Direct Lake 嵌入高管 Teams 周报。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 4 -->
+    <section class="pane" id="pane3">
+      <div class="card" style="margin-bottom:16px;">
+        <h3><span>🤝 Azure Databricks × Microsoft Fabric 四大官方零拷贝共生架构模式</span></h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">
+          作为微软云 AI Solution Architect 的核心定位：Azure Databricks 与 Microsoft Fabric 绝非“二选一替代”，两者底层天然共享 ADLS Gen2 + Delta Lake Parquet——点击切换查看四大落地模式：
+        </p>
+        <div class="pat-tab">
+          <button class="btn active-role" id="patBtn0" onclick="setPattern(0)">模式 A (90%主流)：Mirrored Unity Catalog → Direct Lake</button>
+          <button class="btn alt" id="patBtn1" onclick="setPattern(1)">模式 B：OneLake 双向 Shortcuts 零拷贝互读</button>
+          <button class="btn alt" id="patBtn2" onclick="setPattern(2)">模式 C：Fabric Data Factory + Eventhouse ⇄ Lakeflow</button>
+          <button class="btn alt" id="patBtn3" onclick="setPattern(3)">模式 D：Copilot Studio 编排双智能体 (Genie + Data Agent)</button>
+        </div>
+        <div id="patternDetailBox" class="card" style="background:#0f172a;"></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3><span>🎯 30 秒高管选型定调金句</span></h3>
+          <p style="font-size:13.5px;color:#e2e8f0;">
+            • 当主诉求是「打通 M365 全员自助 BI + 跨云零拷贝联邦 + Eventhouse 毫秒级流 + Ontology 业务闭环」→ 以 Microsoft Fabric 为交互与语义核心（参考 TCL 沙盘）。
+          </p>
+          <p style="font-size:13.5px;color:#e2e8f0;margin-top:8px;">
+            • 当主诉求是「重度 PySpark/Lakeflow 数据工程 + 复杂 MLflow/Mosaic AI 训练评测 + 多云同构代码资产」→ 以 Azure Databricks 为工程与 AI 核心，并通过 Mirrored Unity Catalog 零拷贝赋能 Fabric Power BI（参考本 Zava 沙盘）。
+          </p>
+        </div>
+        <div class="card">
+          <h3><span>⚔️ 深度竞合对比：10 维架构师选型战卡</span></h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">
+            包含产品哲学、存储开放性 (Delta/Iceberg)、ETL、Spark 内核 (Photon vs Velox/Gluten)、治理血缘、AI 智能体、计费 FinOps 等 10 大维度完整客观对标与反模式避坑清单。
+          </p>
+          <a class="btn dbx" href="battlecard.html">📖 查看完整 10 维选型战卡 →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+const ZH = true;
+
+const CUES = ZH ? [
+  "🎙️ Act 1 话术重点：展示 Lakeflow 自动拦截 24 条脏数据、mask_cn_phone() 对 AI 与普通员工动态隐藏手机号，以及 YAML Metric View 锁死净毛利率公式消除大模型口径幻觉。",
+  "🎙️ Act 2 话术重点：依次点击 Q1→Q5，演示高管不写一行 SQL 在 5 轮追问内从「华东净毛利跌 3.1pp」精准定位到「昆山二号仓出库延迟飙至 17.3h」及「嘉兴一号仓 1,460 箱调拨方案」。",
+  "🎙️ Act 3 话术重点：左图证明 Day -7 毛利下跌与出库延迟飙升同日发生；右表直接输出上海静安旗舰店等 Top 5 门店补货优先级，并通过 Mirrored UC 零拷贝同步 Power BI。",
+  "🎙️ Act 4 话术重点：切忌把 Databricks 与 Fabric 讲成零和博弈！展示四大零拷贝共生模式——底层重工清洗与 AI 归 Databricks，全员 Direct Lake 与 M365 协同归 Fabric。"
+] : [
+  "🎙️ Act 1 Cue: Show 24 dirty rows quarantined by Lakeflow, dynamic PII masking via mask_cn_phone(), and YAML Metric View locking net_margin_rate.",
+  "🎙️ Act 2 Cue: Walk Q1→Q5 to trace East China's -3.1pp margin drop down to Kunshan Hub #2's 17.3h dispatch bottleneck and Jiaxing Hub #1's 1,460-case rebalance.",
+  "🎙️ Act 3 Cue: Highlight the Day -7 synchronized inflection chart and Top-5 flagship store replenishment list served across Lakeview and Power BI Direct Lake.",
+  "🎙️ Act 4 Cue: Position Azure Databricks + Microsoft Fabric as Better Together on Azure ADLS Gen2 + Delta Parquet across 4 zero-copy coexistence patterns."
+];
+
+const MASK_ROWS = [
+  { id: "CUST-EC-10082", reg: "East China", tier: "Diamond VIP", masked: "135****8240", raw: "135-8821-8240" },
+  { id: "CUST-EC-10419", reg: "East China", tier: "Gold Plus", masked: "138****3912", raw: "138-1604-3912" },
+  { id: "CUST-NC-20105", reg: "North China", tier: "Platinum", masked: "186****7701", raw: "186-0192-7701" }
+];
+
+const GENIE_QS = [
+  {
+    q: ZH ? "Q1 · 过去 7 天各经营大区的净毛利率与断货率对比如何？哪个大区出现异常？" : "Q1 · Compare net margin rate and stockout rate across regions over the last 7 days.",
+    lat: "182 ms",
+    insight: ZH ? "🚨 异常锁定：北/南/西南三大区净毛利率均稳居 29.0%，唯独【华东大区 (East China)】从 29.0% 暴跌至 25.9% (-3.1pp)，断货率飙升至 11.8%！" : "🚨 Anomaly Isolated: North, South, and Southwest hold steady at ~29.0% net margin, while East China dropped -3.1pp to 25.9% with an 11.8% stockout rate.",
+    cols: ["Region", "Gross Sales", "Net Margin Rate", "Prior 7d Margin", "Stockout Rate"],
+    rows: [
+      ["East China (华东)", "¥4,180,000", "25.9% (-3.1pp)", "29.0%", "11.8% 🔴"],
+      ["North China (华北)", "¥3,420,000", "29.1% (+0.1pp)", "29.0%", "3.4% 🟢"],
+      ["South China (华南)", "¥3,190,000", "29.0% (0.0pp)", "29.0%", "3.6% 🟢"],
+      ["Southwest (西南)", "¥2,150,000", "28.9% (-0.1pp)", "29.0%", "3.8% 🟢"]
+    ],
+    sql: "SELECT region_name, SUM(gross_sales_cny) AS gross_sales,\n       MEASURE(net_margin_rate) AS net_margin_rate,\n       MEASURE(stockout_rate) AS stockout_rate\nFROM zava_retail.gold.mv_retail_kpi\nWHERE order_date >= current_date() - INTERVAL 7 DAYS\nGROUP BY region_name ORDER BY net_margin_rate ASC;"
+  },
+  {
+    q: ZH ? "Q2 · 下钻华东大区：具体是哪座冷链履约中心导致了断货与生鲜报损激增？" : "Q2 · Drill into East China: which cold-chain fulfillment hub caused the stockout & spoilage spike?",
+    lat: "196 ms",
+    insight: ZH ? "🎯 根因定位：【昆山二号冷链仓 (WH-EC-02)】断货率高达 16.2%、生鲜腐损率 6.6%，单仓造成 ¥223,100 断货丢单；而同区【嘉兴一号仓 (WH-EC-01)】完全正常 (3.7%)。" : "🎯 Root-Cause Hub: Kunshan Cold-Chain Hub #2 (WH-EC-02) hit 16.2% stockout and 6.6% spoilage (¥223.1K lost sales), while Jiaxing Hub #1 remained healthy at 3.7%.",
+    cols: ["Hub ID", "Cold-Chain Hub", "Stockout Rate", "Spoilage Rate", "7d Lost Sales"],
+    rows: [
+      ["WH-EC-02", "Kunshan Cold-Chain Hub #2 (昆山二号仓)", "16.2% 🔴", "6.6% 🔴", "¥223,100"],
+      ["WH-EC-01", "Jiaxing Automated Hub #1 (嘉兴一号仓)", "3.7% 🟢", "1.4% 🟢", "¥27,700"]
+    ],
+    sql: "SELECT hub_id, hub_name, MEASURE(stockout_rate) AS stockout_rate,\n       SUM(spoilage_cost_cny)/SUM(gross_sales_cny) AS spoilage_rate,\n       SUM(estimated_lost_sales_cny) AS lost_sales_cny\nFROM zava_retail.gold.fact_store_daily_summary\nWHERE region_name = 'East China' AND order_date >= current_date() - INTERVAL 7 DAYS\nGROUP BY hub_id, hub_name;"
+  },
+  {
+    q: ZH ? "Q3 · 查看昆山二号仓过去 14 天出库延迟趋势，拐点发生在哪一天？" : "Q3 · Show Kunshan Hub #2's 14-day dispatch delay trend — when did the inflection start?",
+    lat: "174 ms",
+    insight: ZH ? "⏱️ 时间拐点确认：7 天前（WMS 冷库分拣波次升级当日），昆山二号仓平均出库延迟从平稳的 2.4 小时瞬间飙升至 17.3 小时，导致早高峰生鲜错过门店配载窗！" : "⏱️ Inflection Pinpointed: Exactly 7 days ago (following a WMS wave-sorting update), average dispatch delay jumped from 2.4h to 17.3h, missing morning store delivery windows.",
+    cols: ["Window", "Avg Dispatch Delay", "On-Time Dispatch %", "Cold-Dock Queue"],
+    rows: [
+      ["Days -14 to -8 (Baseline)", "2.4 hrs 🟢", "97.6%", "Normal (12 pallets)"],
+      ["Day -7 (Inflection Day)", "11.8 hrs 🟠", "61.2%", "WMS Wave Lock"],
+      ["Days -6 to Today", "17.3 hrs 🔴", "42.8%", "Severe Backlog (94 pallets)"]
+    ],
+    sql: "SELECT CASE WHEN log_date < current_date() - INTERVAL 7 DAYS THEN 'Prior_7d' ELSE 'Last_7d' END AS period,\n       ROUND(AVG(dispatch_delay_hours), 1) AS avg_delay_hrs,\n       ROUND(AVG(on_time_flag)*100, 1) AS on_time_pct\nFROM zava_retail.silver.fact_warehouse_dispatch\nWHERE hub_id = 'WH-EC-02' GROUP BY 1;"
+  },
+  {
+    q: ZH ? "Q4 · 邻近嘉兴一号仓当前有多少富余生鲜库存可在 2 小时内紧急跨仓支援上海/苏州？" : "Q4 · How much surplus chilled inventory at Jiaxing Hub #1 can rebalance to Shanghai/Suzhou within 2 hours?",
+    lat: "208 ms",
+    insight: ZH ? "✅ 可执行支援方案：【嘉兴一号仓 (WH-EC-01)】距上海核心圈仅 95km（平均出库延迟 1.6h，准点率 98.1%），当前共有 1,460 箱高毛利鲜奶/冷鲜肉富余可立即跨仓直配！" : "✅ Actionable Rebalance: Jiaxing Hub #1 (95km from Shanghai, 1.6h dispatch delay, 98.1% on-time) holds 1,460 surplus chilled cases ready for immediate cross-dock dispatch.",
+    cols: ["Donor Hub", "Category", "Surplus Cases", "Avg Dispatch", "On-Time %"],
+    rows: [
+      ["WH-EC-01 · Jiaxing #1", "A2 Chilled Milk & Dairy", "640 cases", "1.5 hrs", "98.4%"],
+      ["WH-EC-01 · Jiaxing #1", "Chilled Wagyu & Pork", "490 cases", "1.7 hrs", "97.9%"],
+      ["WH-EC-01 · Jiaxing #1", "Organic Berry Packs", "330 cases", "1.6 hrs", "98.1%"]
+    ],
+    sql: "SELECT hub_id, product_category, SUM(transferable_cases) AS surplus_cases,\n       ROUND(AVG(dispatch_delay_hours),1) AS dispatch_hrs\nFROM zava_retail.gold.vw_hub_rebalance_candidates\nWHERE hub_id = 'WH-EC-01' GROUP BY 1, 2;"
+  },
+  {
+    q: ZH ? "Q5 · 列出近 7 天断货损失最高的 Top 5 华东旗舰门店，生成首批补货拨付单优先级。" : "Q5 · Rank the Top 5 East China flagship stores by 7-day lost sales for priority replenishment.",
+    lat: "169 ms",
+    insight: ZH ? "📋 门店止损清单已生成：上海静安旗舰店 (¥33.2K)、陆家嘴店 (¥27.4K)、徐汇港汇店 (¥26.1K)、苏州园区店 (¥25.8K)、上海虹桥店 (¥22.3K) 列入首波 05:00 冷链直配！" : "📋 Priority Replenishment Locked: Shanghai Jing'an (¥33.2K), Lujiazui (¥27.4K), Xuhui (¥26.1K), Suzhou SIP (¥25.8K), and Hongqiao (¥22.3K) queued for 05:00 cold-chain dispatch.",
+    cols: ["Priority", "Store Name", "Stockout %", "7d Lost Sales", "Recommended Cases"],
+    rows: [
+      ["P1", "Shanghai Jing'an Flagship", "18.4%", "¥33,200", "340 cases"],
+      ["P2", "Shanghai Lujiazui Center", "17.1%", "¥27,400", "295 cases"],
+      ["P3", "Shanghai Xuhui Grand Gateway", "16.8%", "¥26,100", "280 cases"],
+      ["P4", "Suzhou SIP Flagship", "16.5%", "¥25,800", "275 cases"],
+      ["P5", "Shanghai Hongqiao Hub", "15.2%", "¥22,300", "270 cases"]
+    ],
+    sql: "SELECT store_name, MEASURE(stockout_rate) AS stockout_pct,\n       SUM(estimated_lost_sales_cny) AS lost_sales_cny\nFROM zava_retail.gold.fact_store_daily_summary\nWHERE hub_id = 'WH-EC-02' AND order_date >= current_date() - INTERVAL 7 DAYS\nGROUP BY store_name ORDER BY lost_sales_cny DESC LIMIT 5;"
+  }
+];
+
+const PATTERNS = [
+  {
+    title: ZH ? "模式 A（90% 企业首选）：Mirrored Azure Databricks Catalog in OneLake → Power BI Direct Lake" : "Pattern A (90% Enterprise Default): Mirrored Unity Catalog in OneLake → Power BI Direct Lake",
+    flow: "[Azure Databricks Lakeflow + Unity Catalog Gold]  ══(Zero-Copy Metadata Mirror)══▶  [Fabric OneLake]  ══(Direct Lake)══▶  [Power BI / Teams / M365 Copilot]",
+    desc: ZH
+      ? "数据物理文件仅存一份在 Azure ADLS Gen2 Delta 表中：Databricks 负责重度脏数据清洗、特征工程与 Unity Catalog 行列治理；Fabric 自动镜像目录元数据，让全公司数千名业务人员以 Direct Lake 亚秒级打开 Power BI 报表，彻底消灭传统 Import 定时刷新与 JDBC 并发瓶颈。"
+      : "Physical Delta Parquet files live once in Azure ADLS Gen2. Azure Databricks handles Lakeflow ETL, ML, and Unity Catalog governance; Fabric mirrors catalog metadata automatically so thousands of M365 users query Power BI via Direct Lake with zero data duplication."
+  },
+  {
+    title: ZH ? "模式 B：OneLake 双向零拷贝 Shortcuts + Delta / Iceberg UniForm 互通" : "Pattern B: Bi-Directional OneLake Shortcuts & Delta / Iceberg UniForm",
+    flow: "[Fabric OneLake (SAP / D365 / M365 Data)]  ◀══(abfss:// OneLake DFS Endpoint)══▶  [Azure Databricks Spark / Mosaic AI]",
+    desc: ZH
+      ? "Databricks Notebook 与训练集群可直接通过 OneLake DFS API 零拷贝读取 Fabric 中沉淀的 Dynamics 365、SAP 镜像或 Eventhouse 历史流数据训练补货预测模型，预测结果写回 Delta 表即刻被 Fabric IQ Ontology 消费。"
+      : "Azure Databricks mounts Fabric OneLake tables natively via the abfss:// DFS endpoint to train demand-forecasting models on D365/SAP/Eventhouse data, writing predictions straight back for Fabric IQ Ontology consumption."
+  },
+  {
+    title: ZH ? "模式 C：Fabric Data Factory & Eventhouse KQL ⇄ Databricks Lakeflow Serverless" : "Pattern C: Fabric Data Factory & Eventhouse KQL ⇄ Databricks Lakeflow Jobs",
+    flow: "[Fabric ADF 400+ Connectors + Eventhouse KQL]  ══(Native Databricks Activity)══▶  [Databricks Serverless Job / MLflow 3.0]",
+    desc: ZH
+      ? "利用 Fabric Data Factory 丰富的企业 SaaS/ERP 连接器与 Eventhouse 秒级流脉冲感知异常，通过原生 Databricks 活动节点一键拉起 Serverless PySpark / 运筹优化作业，兼具低代码集成效率与极致工程弹性。"
+      : "Combine Fabric Data Factory's 400+ enterprise connectors and Eventhouse real-time KQL anomaly triggers with native orchestration of Azure Databricks Serverless Spark & MLflow pipelines."
+  },
+  {
+    title: ZH ? "模式 D：Microsoft Copilot Studio 统一编排 Fabric Data Agent + Databricks Genie MCP" : "Pattern D: Copilot Studio Multi-Agent Orchestration (Fabric Data Agent + Databricks Genie)",
+    flow: "[Microsoft Teams / Copilot]  ──▶  [Copilot Studio Router]  ──▶  [Databricks Genie (Supply/ML) + Fabric Data Agent (Finance/CRM)]",
+    desc: ZH
+      ? "业务高管在 Microsoft Teams 一个聊天窗口发问：Copilot Studio 自动将供应链冷链与损耗预测路由给 Databricks AI/BI Genie，将财务预算与渠道合同路由给 Fabric Data Agent，返回统一有据可查的综合建议。"
+      : "Executives ask one question in Microsoft Teams while Copilot Studio routes cold-chain & ML diagnostics to Databricks Genie and financial/contract guardrails to Fabric Data Agent under unified Entra ID identity."
+  }
+];
+
+function setAct(idx) {
+  for (let i = 0; i < 4; i++) {
+    document.getElementById("pane" + i).classList.toggle("active", i === idx);
+    document.getElementById("actBtn" + i).classList.toggle("active", i === idx);
+  }
+  document.getElementById("cueText").textContent = CUES[idx];
+}
+
+function setMaskRole(role) {
+  const isAudit = role === "audit";
+  document.getElementById("roleOpsBtn").className = isAudit ? "btn alt" : "btn active-role";
+  document.getElementById("roleAuditBtn").className = isAudit ? "btn active-role" : "btn alt";
+  document.getElementById("maskTableBody").innerHTML = MASK_ROWS.map(r => `
+    <tr>
+      <td><code>${r.id}</code></td>
+      <td>${r.reg}</td>
+      <td>${r.tier}</td>
+      <td><strong style="color:${isAudit ? '#fcd34d' : '#6ee7b7'};font-family:Consolas,monospace;">${isAudit ? r.raw : r.masked}</strong></td>
+      <td><span class="tag ${isAudit ? 'tag-red' : 'tag-green'}">${isAudit ? 'Audit Group: Unmasked Logged' : 'CLS Masked via mask_cn_phone()'}</span></td>
+    </tr>
+  `).join("");
+}
+
+function selectGenieQ(idx) {
+  const item = GENIE_QS[idx];
+  document.querySelectorAll(".q-btn").forEach((b, i) => b.classList.toggle("active", i === idx));
+  document.getElementById("genieLatencyBadge").textContent = "Serverless SQL · " + item.lat;
+  document.getElementById("genieInsightBox").textContent = item.insight;
+  let th = item.cols.map(c => `<th>${c}</th>`).join("");
+  let tr = item.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join("")}</tr>`).join("");
+  document.getElementById("genieTableWrap").innerHTML = `<table><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table>`;
+  document.getElementById("genieSqlBox").textContent = item.sql;
+}
+
+function setPattern(idx) {
+  for (let i = 0; i < 4; i++) {
+    document.getElementById("patBtn" + i).className = i === idx ? "btn active-role" : "btn alt";
+  }
+  const p = PATTERNS[idx];
+  document.getElementById("patternDetailBox").innerHTML = `
+    <h3 style="color:#38bdf8;margin-bottom:8px;">${p.title}</h3>
+    <pre style="color:#6ee7b7;margin-bottom:10px;">${p.flow}</pre>
+    <p style="font-size:13.5px;color:#e2e8f0;">${p.desc}</p>
+  `;
+}
+
+let timerSec = 1500, timerRef = null;
+function toggleTimer() {
+  const btn = document.getElementById("timerBtn");
+  if (timerRef) {
+    clearInterval(timerRef); timerRef = null;
+    btn.textContent = ZH ? "继续" : "Resume";
+  } else {
+    btn.textContent = ZH ? "暂停" : "Pause";
+    timerRef = setInterval(() => {
+      if (timerSec > 0) timerSec--;
+      const m = String(Math.floor(timerSec / 60)).padStart(2, "0");
+      const s = String(timerSec % 60).padStart(2, "0");
+      document.getElementById("timerDisplay").textContent = m + ":" + s;
+    }, 1000);
+  }
+}
+function resetTimer() {
+  if (timerRef) { clearInterval(timerRef); timerRef = null; }
+  timerSec = 1500;
+  document.getElementById("timerDisplay").textContent = "25:00";
+  document.getElementById("timerBtn").textContent = ZH ? "开始" : "Start";
+}
+
+document.getElementById("genieQuestionList").innerHTML = GENIE_QS.map((item, idx) =>
+  `<button class="q-btn" onclick="selectGenieQ(${idx})">${item.q}</button>`
+).join("");
+setAct(0);
+setMaskRole("ops");
+selectGenieQ(0);
+setPattern(0);
+</script>
+</body>
+</html>

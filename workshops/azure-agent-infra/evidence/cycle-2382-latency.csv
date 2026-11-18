@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-apim_registry_attestation_lane,APIM MCP registry attestation lane,146,287,measured,staging replay
-opa_rego_sidecar_lane,OPA/Rego sidecar policy lane on AKS/ACA,121,249,anonymized_reported,official+reported
-hsm_signing_rotation_lane,Key Vault HSM signing/rotation lane,171,319,measured,staging replay
-unmanaged_baseline_lane,Unmanaged MCP tool path baseline,488,971,anonymized_reported,reported baseline

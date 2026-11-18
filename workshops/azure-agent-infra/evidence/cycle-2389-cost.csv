@@ -1,5 +1,0 @@
-path,compute_hour_usd,sessions_per_hour,usd_per_session,source_label,source_ref
-AST read-only gate path,5.21,598,0.00871,synthetic,deterministic finops model
-Entra OBO + RLS gate path,5.78,551,0.01049,synthetic,deterministic finops model
-Semantic metric grounding path,6.12,523,0.0117,synthetic,deterministic finops model
-Ungated raw-schema baseline,4.69,664,0.00706,synthetic,deterministic finops model

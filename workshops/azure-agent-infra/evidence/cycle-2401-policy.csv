@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-prompt-version invalidation,244,250,0.976,measured,replay logs
-context compaction fidelity,239,250,0.956,measured,replay logs
-tenant-safe cache lease,241,250,0.964,measured,replay logs

@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-ACA managed lane,7.18,3900,1.84,synthetic,deterministic finops model
-AKS Kata lane,7.95,3600,2.21,synthetic,deterministic finops model
-Mixed fallback lane,8.22,3200,2.57,synthetic,deterministic finops model
-Legacy static VM baseline,8.96,1806,4.96,synthetic,deterministic finops model

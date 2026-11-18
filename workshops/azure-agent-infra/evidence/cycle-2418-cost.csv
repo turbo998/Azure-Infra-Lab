@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Ticket-driven baseline,1.0,1000000,1.0,anonymized_reported,baseline model
-Module-first,0.86,1000000,0.86,synthetic,module process model
-Full IDP vending,0.72,1000000,0.72,synthetic,vending automation model
-IDP vending + TTL reclaim,0.58,1000000,0.58,synthetic,ttl reclaim optimization model

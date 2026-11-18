@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-tdp_100_ttft,100% TDP profile,620,840,0.0,anonymized_reported,baseline gpu profile
-tdp_85_ttft,85% TDP profile,674,892,6.2,measured,power-cap replay
-tdp_75_ttft,75% TDP profile,742,978,16.4,measured,power-cap replay
-async_batch_window_completion,Temporal shifted async window,214000,336000,11.8,synthetic,batch-window simulation

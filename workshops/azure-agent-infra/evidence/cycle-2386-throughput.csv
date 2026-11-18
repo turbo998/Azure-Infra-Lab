@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-router_draft_lane,Foundry router draft lane,1451,1328,synthetic,deterministic model
-eagle_lane,AKS EAGLE-3 lane,1524,1396,synthetic,deterministic model
-constrained_lane,Constrained decode lane,1187,1061,synthetic,deterministic model
-guard_lane,Schema guard lane,1249,1123,synthetic,deterministic model

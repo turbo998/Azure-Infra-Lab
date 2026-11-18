@@ -1,97 +1,35 @@
-# Azure AI Agent Infrastructure Playbook (Compact)
+# Azure AI Agent Infrastructure Playbook — Enterprise Runtime Selection & Capacity Sizing
 
-> 🌐 **Language Switch**: **[🇨🇳 Chinese (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
-> 🔎 **Cycle #1511 highlights**: [benchmark-cards.en.html](benchmark-cards.en.html) · [benchmark-cards.html](benchmark-cards.html) · [workbench-cycle-1511.html](workbench-cycle-1511.html) · [daily-report-2026-11-12.en.md](daily-report-2026-11-12.en.md)
+> 🌐 **Language / 语言切换**: **[🇨🇳 中文 (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**
 
----
-
-## 1) Cycle #1511 release summary (2026-11-12)
-
-- **Scope**: Cloud-native Agent Infra (Runtime/Sandbox, AI Gateway, MCP/A2A orchestration and observability)
-- **Evidence policy**: 2026 official docs/changelogs/releases first
-- **Trace labels**: `measured` / `synthetic` / `anonymized_reported`
-- **Deliverables**:
-  1. Bilingual 7-card 4:5 visual decks (CSP self-contained)
-  2. Browser-runnable benchmark workbench
-  3. Reproducible benchmark evidence bundle (JSON/CSV)
-  4. Bilingual daily reports and monograph addendum
+An **Azure AI Solution Architect (SA)** reference suite for evaluating cloud-native agent execution runtimes, hardware isolation boundaries, and 100K-sandbox fleet sizing across **AKS Kata Confidential/VM Pods**, **E2B Firecracker MicroVMs**, **Azure Container Apps Dynamic Sessions**, **Azure Functions Flex**, **APIM AI Gateway**, and **MCP/A2A** orchestration.
 
 ---
 
-## 2) Core navigation (existing entries preserved)
+## 1. Interactive SA Workbenches
 
-| Asset | Purpose | Link |
-|---|---|---|
-| Playbook hub | Architecture and workflow entry | [`index.html`](index.html) |
-| Dual-track demo | AKSClaw × E2B simulation | [`demo.html`](demo.html) |
-| Decision + sizing | Runtime/storage selection and capacity | [`selector.html`](selector.html) |
-| Historical 7-card deck | Existing visual report entry | [`cards.html`](cards.html) |
-| **Cycle #1511 deck (EN)** | New archetype-aligned deck | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #1511 deck (ZH)** | New archetype-aligned deck | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #1511 workbench** | Interactive benchmark surface | [`workbench-cycle-1511.html`](workbench-cycle-1511.html) |
+| Asset | SA Use Case & Capability | Link |
+| :--- | :--- | :--- |
+| **Executive Architecture Hub** | End-to-end comparison of 6 Azure agent runtime patterns and security boundaries | [`index.html`](index.html) |
+| **AKSClaw × E2B Dual-Track Live Sim** | Firecracker snapshot resume breakdown, Kata VM node density, and HorizonDB PgBouncer SLOs | [`demo.html`](demo.html) |
+| **Decision Tree & Fleet Sizer (Tools 1–34)** | 34 cloud-native agent infrastructure calculators (fleet TCO, KV-cache affinity, zero-trust egress, Spot drain, FinOps guardrails) | [`selector.html`](selector.html) |
+| **7-Card 4:5 Visual Benchmark Deck** | Self-contained 7-card evaluation deck covering routing accuracy, perturbation robustness, and tail latency | [`cards.html`](cards.html) · [`benchmark-cards.en.html`](benchmark-cards.en.html) |
 
 ---
 
-## 3) Reproducible evidence bundle
+## 2. Architecture Selection FAQs & Reference Blueprints
 
-- Canonical payload: [`evidence/cycle-1445-benchmark.json`](evidence/cycle-1445-benchmark.json)
-- Source ledger: [`evidence/cycle-1445-sources.json`](evidence/cycle-1445-sources.json)
-- Metric CSV files:
-  - [`cycle-1445-latency.csv`](evidence/cycle-1445-latency.csv)
-  - [`cycle-1445-throughput.csv`](evidence/cycle-1445-throughput.csv)
-  - [`cycle-1445-policy.csv`](evidence/cycle-1445-policy.csv)
-  - [`cycle-1445-cost.csv`](evidence/cycle-1445-cost.csv)
+- **Runtime Isolation Selection FAQ**: [ACA Dynamic Sessions vs Firecracker MicroVM Isolation Guide (EN)](aca-vs-firecracker-runtime-isolation-selection-faq.en.md) · [中文](aca-vs-firecracker-runtime-isolation-selection-faq.md)
+- **MCP / A2A Idempotency Selection FAQ**: [Agent MCP & A2A Idempotency Key Architecture Guide (EN)](agent-mcp-a2a-idempotency-key-selection-faq.en.md) · [中文](agent-mcp-a2a-idempotency-key-selection-faq.md)
+- **Benchmark Reports**: [Technical Benchmark Report (EN)](test-report.en.md) · [中文评测报告](test-report.md)
+- **Production Bicep IaC Blueprints**: [`blueprints/`](blueprints/) (34 Azure Bicep templates for AKS Kata, ACA Dynamic Sessions, APIM AI Gateway, Entra Agent ID, Confidential SNP, and multi-region DR)
 
 ---
 
-## 4) Reports and visuals
-
-- Daily report (EN): [`daily-report-2026-11-12.en.md`](daily-report-2026-11-12.en.md)
-- Daily report (ZH): [`daily-report-2026-11-12.md`](daily-report-2026-11-12.md)
-- One-page SVG: [`assets/34-cycle-1445-daily-breakthroughs.svg`](assets/34-cycle-1445-daily-breakthroughs.svg)
-- Monograph addendum (EN): [`docs/full-monograph-cycle-1445.en.md`](docs/full-monograph-cycle-1445.en.md)
-- Monograph addendum (ZH): [`docs/full-monograph-cycle-1445.md`](docs/full-monograph-cycle-1445.md)
-- Selection FAQ (EN, APIM MCP Drain Threshold): [`agent-apim-mcp-drain-threshold-selection-faq.en.md`](agent-apim-mcp-drain-threshold-selection-faq.en.md)
-- Selection FAQ (ZH, APIM MCP Drain Threshold): [`agent-apim-mcp-drain-threshold-selection-faq.md`](agent-apim-mcp-drain-threshold-selection-faq.md)
-- Full archive (EN): [`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
-- Full archive (ZH): [`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
-
----
-
-## 5) Validation commands
+## 3. Verification Commands
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_1271_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_1271_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
-python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
+python workshops/azure-agent-infra/demo/run_live_demo.py --self-test
+python -m unittest discover -s workshops/azure-agent-infra/simulator -p "test_*.py"
 ```
-
----
-
-## 6) Build and runtime scripts
-
-- Generator pipeline: [`simulator/cycle_1271_pipeline.py`](simulator/cycle_1271_pipeline.py)
-- Runtime sizer: [`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
-- Test suite: [`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
-- Workshop runbook: [`workshop-runbook.md`](workshop-runbook.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-localized_minutes_per_gpu_hour,split pool localization throughput,67,62,synthetic,split pool throughput model
-frame_verified_clips_per_hour,frame-accurate clipping throughput,920,850,measured,clip verifier benchmark
-brand_safety_checks_per_hour,compliance check throughput,1860,1710,anonymized_reported,compliance lane sample
-live_highlights_published_per_hour,live publish throughput,274,251,synthetic,highlight publish model

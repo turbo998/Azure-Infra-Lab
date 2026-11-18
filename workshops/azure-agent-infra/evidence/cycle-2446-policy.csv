@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-token-vault-key-rotation-violation saturation gate,172,184,0.9348,measured,token-vault-enclave-fence mismatch replay + deterministic verification
-token-vault-enclave-fence fence integrity guard,161,168,0.9583,measured,token-vault-enclave-fence integrity logs
-tenant-scope token-vault-enclave-fence authorization fence,154,161,0.9565,measured,tenant token-vault-enclave-fence fairness replay logs

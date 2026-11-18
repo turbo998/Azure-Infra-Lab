@@ -1,5 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-store wan egress reduction,876,1000,0.876,measured,wan egress comparison suite
-oos detection to restock latency improvement,469,1000,0.469,anonymized_reported,oos closure benchmark
-perishable spoilage reduction,284,1000,0.284,synthetic,shelf-life optimization model
-milp versus unconstrained order accuracy gain,417,1000,0.417,synthetic,order-quality simulation

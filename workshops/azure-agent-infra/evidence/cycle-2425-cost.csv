@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Manual legal review baseline,1.0,1000,1.0,anonymized_reported,baseline model
-Interactive add-in only,0.91,1000,0.91,synthetic,interactive model
-Bulk swarm + deterministic patch,0.74,1000,0.74,synthetic,bulk patch model
-Bulk + escalation matrix,0.79,1000,0.79,synthetic,escalation model

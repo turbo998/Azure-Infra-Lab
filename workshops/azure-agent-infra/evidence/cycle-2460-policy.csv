@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-aisearch-hybrid-vector-acl-guard-violation saturation gate,172,184,0.9348,measured,aisearch-hybrid-vector-acl-guard-fence mismatch replay + deterministic verification
-aisearch-hybrid-vector-acl-guard-fence fence integrity guard,161,168,0.9583,measured,aisearch-hybrid-vector-acl-guard-fence integrity logs
-tenant-scope aisearch-hybrid-vector-acl-guard-fence authorization fence,154,161,0.9565,measured,tenant aisearch-hybrid-vector-acl-guard-fence fairness replay logs

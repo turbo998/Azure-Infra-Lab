@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-foundry_gate,Foundry eval gate,1398,1275,synthetic,deterministic model
-pyrit_gate,PyRIT red-team gate,1242,1116,synthetic,deterministic model
-online_sampling_gate,Online sampling rollback gate,1168,1044,synthetic,deterministic model
-ungated_path,Ungated baseline path,1554,1421,synthetic,deterministic model

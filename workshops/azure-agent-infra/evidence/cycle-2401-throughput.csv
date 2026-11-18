@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-foundry_apc_lmcache_full,Full cache fabric,1862,1728,synthetic,deterministic model
-foundry_apc_only,Foundry+APC,1644,1532,synthetic,deterministic model
-unversioned_prefix_cache,Unversioned prefix cache,1419,1311,synthetic,deterministic model
-no_cache_baseline,No cache baseline,892,814,synthetic,deterministic model

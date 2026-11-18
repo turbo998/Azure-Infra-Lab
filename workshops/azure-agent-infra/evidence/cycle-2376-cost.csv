@@ -1,5 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-Managed VNet private lane,4.94,318,20,0.00182,0.007,synthetic,deterministic cost model
-BYO-VNet isolated lane,5.62,286,20,0.00214,0.00869,synthetic,deterministic cost model
-Firewall-inspected lane,4.26,356,20,0.00196,0.00595,synthetic,deterministic cost model
-Hybrid governed private lane,0.0,1,20,0.00188,0.00721,synthetic,deterministic cost model

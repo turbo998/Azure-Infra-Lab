@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-edge_local,Edge local path,1432,1308,synthetic,deterministic model
-store_forward,Store-forward replay path,1188,1066,synthetic,deterministic model
-hybrid_escalation,Hybrid escalation path,1107,986,synthetic,deterministic model
-cloud_only,Cloud-dependent baseline path,1014,903,synthetic,deterministic model

@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Pool shared,38.0,1000000,38.0,synthetic,deterministic finops model
-Bridge hybrid,74.0,1000000,74.0,synthetic,deterministic finops model
-Silo dedicated,182.0,1000000,182.0,synthetic,deterministic finops model
-Legacy flat,29.0,1000000,29.0,synthetic,deterministic finops model

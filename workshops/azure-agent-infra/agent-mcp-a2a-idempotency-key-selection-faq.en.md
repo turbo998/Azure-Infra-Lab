@@ -88,7 +88,6 @@ sequenceDiagram
 | Cost per session (USD/20min) | 0.00483 | 0.00511 |
 
 - 7-card output: `benchmark-cards.html` / `benchmark-cards.en.html`  
-- Evidence pack: `evidence/cycle-414-benchmark.json`, `evidence/cycle-414-sources.json`  
 - Labeling: `measured / synthetic / anonymized_reported` (production gaps marked as `not_measured`)
 
 ## 🛠️ Production verification checklist

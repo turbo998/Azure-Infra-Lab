@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced resilience drift gate,176,184,0.9565,measured,replay logs
-resilience variance guard,169,176,0.9602,measured,replay logs
-resilience recovery fence,162,170,0.9529,measured,replay logs

@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-router_decision,Hybrid Router (PTU + PayGo + vLLM),34,52,synthetic,deterministic model
-ptu_inference,Foundry PTU steady lane,121,186,anonymized_reported,reported
-paygo_spillover,Foundry PayGo spillover lane,164,248,synthetic,deterministic model
-vllm_kaito_inference,AKS KAITO/vLLM elastic lane,147,229,synthetic,deterministic model

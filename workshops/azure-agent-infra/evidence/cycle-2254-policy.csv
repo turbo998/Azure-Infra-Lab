@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced consistency drift gate,169,177,0.9548,measured,replay logs
-consistency variance guard,162,169,0.9586,measured,replay logs
-consistency recovery fence,155,163,0.9509,measured,replay logs

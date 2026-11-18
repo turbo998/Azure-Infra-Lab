@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Postgres unified,279.6,5980,46.8,synthetic,deterministic finops model
-Cosmos unified,347.9,6640,52.4,synthetic,deterministic finops model
-Split stack,424.8,7210,58.9,synthetic,deterministic finops model
-Legacy dual-write,307.3,4310,71.3,synthetic,deterministic finops model

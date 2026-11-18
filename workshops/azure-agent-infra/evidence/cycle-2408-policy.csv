@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-signed contract enforcement,992,1000,0.992,measured,replay logs
-policy firewall slo meet,971,1000,0.971,measured,replay logs
-tool governance audit coverage,984,1000,0.984,measured,replay logs

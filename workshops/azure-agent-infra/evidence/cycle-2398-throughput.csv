@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-aca_managed_lane,ACA managed lane,1834,1672,synthetic,deterministic model
-aks_kata_lane,AKS Kata lane,1538,1394,synthetic,deterministic model
-mixed_fallback_lane,Mixed fallback lane,1329,1216,synthetic,deterministic model
-legacy_static_vm_baseline,Legacy static VM baseline,611,542,synthetic,deterministic model

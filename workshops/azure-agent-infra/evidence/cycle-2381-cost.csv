@@ -1,5 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-Kueue fairness lane,5.21,312,20,0.00197,0.00772,synthetic,deterministic cost model
-KubeRay/vLLM lane,5.88,341,20,0.00204,0.00779,synthetic,deterministic cost model
-Spot fallback lane,4.67,356,20,0.00176,0.00612,synthetic,deterministic cost model
-MIG partition lane,4.93,372,20,0.00182,0.00591,synthetic,deterministic cost model

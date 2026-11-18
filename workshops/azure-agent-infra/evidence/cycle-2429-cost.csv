@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-manual runbook recovery,1.0,1000,1.0,anonymized_reported,manual baseline
-warm-standby replay governance,0.74,1000,0.74,synthetic,warm replay model
-active-active governance,0.96,1000,0.96,synthetic,active active model
-audit replay integrated,0.79,1000,0.79,measured,audit replay benchmark

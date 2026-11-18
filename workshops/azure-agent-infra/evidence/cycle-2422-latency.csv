@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-client_bark_ttft,Client ONNX bark lane,28,45,0.0,anonymized_reported,client npu replay
-regional_lora_ttft,Regional vLLM LoRA lane,89,132,0.0,measured,regional pool replay
-frontier_director_async,Frontier async director,410,680,0.0,synthetic,async director model
-launch_day_burst_transition,10x CCU burst transition,1260,1940,12.7,anonymized_reported,launch-day drill traces

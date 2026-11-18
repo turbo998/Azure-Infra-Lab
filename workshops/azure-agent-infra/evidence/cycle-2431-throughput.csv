@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-store_events_per_minute,edge event pipeline throughput,112000,103000,measured,eventstream benchmark
-replenishment_decisions_per_hour,MILP allocation throughput,2060,1920,synthetic,solver throughput simulation
-oos_events_resolved_per_hour,oos closure throughput,1480,1350,anonymized_reported,retail replay sample
-erp_po_admissions_per_hour,po guardrail throughput,1810,1660,measured,erp workflow benchmark

@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Brute-force dft baseline,1.0,1000,1.0,anonymized_reported,baseline model
-Surrogate pre-screen only,0.19,1000,0.19,synthetic,pre-screen model
-Surrogate plus hpc verifier,0.032,1000,0.032,synthetic,hybrid model
-Hybrid plus active learning,0.027,1000,0.027,synthetic,active-learning model

@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-ncc_lane,NCC confidential lane,1248,1114,synthetic,deterministic model
-kata_lane,AKS Kata lane,1172,1038,synthetic,deterministic model
-attestation_lane,MAA+SKR attestation lane,1033,904,synthetic,deterministic model
-standard_lane,Standard ND lane,1385,1262,synthetic,deterministic model

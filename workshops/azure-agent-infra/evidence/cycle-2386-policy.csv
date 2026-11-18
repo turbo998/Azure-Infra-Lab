@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-zero-malformed tool-call fidelity,231,233,0.9914,measured,replay logs
-ttft/tpot latency gain integrity,224,233,0.9614,measured,replay logs
-token finops route governance,221,233,0.9485,measured,replay logs

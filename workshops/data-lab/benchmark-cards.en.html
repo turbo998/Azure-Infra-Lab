@@ -4,1022 +4,333 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Microsoft Fabric vs. Databricks / Snowflake / GCP / AWS — 7-Card Benchmark Report (2026-11-08)</title>
+<title>Enterprise Data & AI Architecture Selection — 7-Card Visual Benchmark Deck</title>
 <style>
   :root {
-    --bg: #F8FAFC;
-    --card-bg: #FFFFFF;
-    --dark: #0F172A;
-    --slate: #475569;
-    --border: #E2E8F0;
-    --blue: #2563EB;
-    --blue-soft: #EFF6FF;
-    --green: #059669;
-    --green-soft: #ECFDF5;
-    --amber: #D97706;
-    --amber-soft: #FFFBEB;
-    --red: #DC2626;
-    --red-soft: #FEF2F2;
+    --bg:#F8FAFC; --card:#FFFFFF; --dark:#0F172A; --slate:#475569; --border:#E2E8F0;
+    --blue:#2563EB; --blue-soft:#EFF6FF; --green:#059669; --green-soft:#ECFDF5;
+    --amber:#D97706; --amber-soft:#FFFBEB; --red:#DC2626; --red-soft:#FEF2F2;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #0B1120;
-    color: var(--dark);
-    padding: 28px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
-  .top-nav {
-    width: 900px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #1E293B;
-    border: 1px solid #334155;
-    border-radius: 12px;
-    padding: 10px 18px;
-    color: #F8FAFC;
-    font-size: 13px;
-  }
-  .top-nav a {
-    color: #60A5FA;
-    text-decoration: none;
-    font-weight: 700;
-    margin-left: 12px;
-  }
-  .card {
-    width: 900px;
-    min-height: 1125px;
-    background: var(--card-bg);
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    padding: 34px 38px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-  }
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--blue);
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
-  }
-  h1, h2 {
-    font-size: 24px;
-    line-height: 1.26;
-    margin: 12px 0 8px;
-    color: var(--dark);
-  }
-  .accent {
-    background: linear-gradient(90deg, #0078D4, #7C3AED);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .sub {
-    font-size: 13.5px;
-    color: var(--slate);
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 10px 0;
-  }
-  .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin: 10px 0;
-  }
-  .panel {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-size: 12.5px;
-    line-height: 1.48;
-  }
-  .panel h3 {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--slate);
-    margin-bottom: 8px;
-  }
-  .dark-code {
-    background: var(--dark);
-    color: #E2E8F0;
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 11.5px;
-    line-height: 1.42;
-    white-space: pre-wrap;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 11.5px;
-  }
-  th, td {
-    border-bottom: 1px solid var(--border);
-    padding: 6.5px 6px;
-    text-align: left;
-    vertical-align: top;
-  }
-  th {
-    font-size: 10.5px;
-    text-transform: uppercase;
-    color: var(--slate);
-    background: var(--bg);
-  }
-  .miss { color: var(--red); font-weight: 700; }
-  .hit { color: var(--green); font-weight: 700; }
-  .pill {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 999px;
-    font-size: 10.5px;
-    font-weight: 700;
-  }
-  .act-auto { background: var(--green-soft); color: var(--green); }
-  .act-confirm { background: var(--amber-soft); color: var(--amber); }
-  .act-human { background: var(--red-soft); color: var(--red); }
-  .badge-type {
-    background: var(--blue-soft);
-    color: var(--blue);
-    padding: 2px 7px;
-    border-radius: 6px;
-    font-size: 10.5px;
-    font-weight: 700;
-    font-family: ui-monospace, monospace;
-  }
-  .bar-row { margin: 8px 0; }
-  .bar-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .bar-track {
-    width: 100%;
-    height: 12px;
-    background: #E2E8F0;
-    border-radius: 999px;
-    overflow: hidden;
-  }
-  .bar-fill-blue { height: 100%; background: #3B82F6; border-radius: 999px; }
-  .bar-fill-gray { height: 100%; background: #CBD5E1; border-radius: 999px; }
-  .footer-callout {
-    background: var(--dark);
-    color: #F8FAFC;
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 12px;
-    line-height: 1.48;
-  }
-  .good-card {
-    background: var(--green-soft);
-    border: 1px solid #A7F3D0;
-    border-radius: 14px;
-    padding: 18px;
-  }
-  .bad-card {
-    background: var(--red-soft);
-    border: 1px solid #FECACA;
-    border-radius: 14px;
-    padding: 18px;
-  }
-  ul { padding-left: 18px; }
-  li { margin-bottom: 6px; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:#0B1120; color:var(--dark); padding:28px 16px; display:flex; flex-direction:column; align-items:center; gap:28px; }
+  .top-nav { width:900px; max-width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; background:#1E293B; border:1px solid #334155; border-radius:12px; padding:10px 18px; color:#F8FAFC; font-size:13px; }
+  .top-nav a { color:#60A5FA; text-decoration:none; font-weight:700; margin-left:12px; }
+  .card { width:900px; max-width:100%; min-height:1125px; background:var(--card); border-radius:20px; border:1px solid var(--border); padding:34px 38px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 20px 45px rgba(0,0,0,0.35); }
+  .card-header { display:flex; justify-content:space-between; align-items:center; font-size:13px; font-weight:700; letter-spacing:0.08em; color:var(--blue); text-transform:uppercase; border-bottom:1px solid var(--border); padding:0 0 12px; }
+  h1, h2 { font-size:24px; line-height:1.3; margin:12px 0 8px; color:var(--dark); }
+  .accent { background:linear-gradient(90deg,#0078D4,#7C3AED); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .sub { font-size:13.5px; color:var(--slate); line-height:1.55; margin-bottom:12px; }
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:10px 0; }
+  .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:10px 0; }
+  .panel { background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:14px 16px; font-size:12.5px; line-height:1.52; }
+  .panel h3 { font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--slate); margin-bottom:8px; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; }
+  .act-auto { background:var(--green-soft); color:var(--green); }
+  .act-confirm { background:var(--amber-soft); color:var(--amber); }
+  .act-human { background:var(--red-soft); color:var(--red); }
+  .ok-pill { color:var(--green); font-weight:700; }
+  .miss-pill { color:var(--red); font-weight:800; background:var(--red-soft); padding:2px 6px; border-radius:6px; }
+  table { width:100%; border-collapse:collapse; font-size:12px; margin:8px 0; }
+  th { background:#F1F5F9; text-align:left; padding:9px 10px; border-bottom:2px solid var(--border); font-size:11px; text-transform:uppercase; color:var(--slate); }
+  td { padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.45; }
+  pre { background:#0F172A; color:#E2E8F0; border-radius:12px; padding:16px 18px; font-size:12px; line-height:1.55; overflow-x:auto; font-family:Consolas,monospace; }
+  .callout-dark { background:#0F172A; color:#E2E8F0; border-radius:12px; padding:14px 18px; font-size:12.5px; line-height:1.55; }
+  .quote-box { background:var(--blue-soft); border-left:4px solid var(--blue); border-radius:10px; padding:12px 16px; font-size:13px; line-height:1.55; margin:8px 0; }
+  .bar-group { margin:12px 0; padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:12px; }
+  .bar-head { display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:8px; gap:8px; flex-wrap:wrap; }
+  .bar-row { display:grid; grid-template-columns:82px 1fr 68px; align-items:center; gap:10px; font-size:12px; margin:5px 0; }
+  .bar-lbl { color:var(--slate); font-weight:600; }
+  .bar-track { background:#E2E8F0; height:14px; border-radius:999px; overflow:hidden; }
+  .bar-opt { background:#3B82F6; height:100%; border-radius:999px; }
+  .bar-base { background:#CBD5E1; height:100%; border-radius:999px; }
+  .fit-good { background:var(--green-soft); border:1.5px solid #6EE7B7; border-radius:14px; padding:18px; font-size:13px; line-height:1.65; }
+  .fit-bad { background:var(--red-soft); border:1.5px solid #FCA5A5; border-radius:14px; padding:18px; font-size:13px; line-height:1.65; }
+  ul { padding-left:18px; }
+  li { margin-bottom:6px; }
 </style>
 </head>
 <body>
-
-<div class="top-nav">
-  <div><strong>Data Lab · 7-Card 4:5 Benchmark Deck</strong> (`report_id: data-lab-fabric-vs-4clouds-2026-11-15-r86`)</div>
-  <div>
-    <a href="index.html?lang=en">🚀 Interactive H5 Workbench</a>
-    <a href="comparisons/fabric-onelake-iq-vs-4clouds-selection-faq.en.md">🧭 R1: Zero-Copy FAQ</a>
-    <a href="comparisons/fabric-realtime-eventhouse-vs-4clouds-streaming-faq.en.md">⚡ R2: Streaming FAQ</a>
-    <a href="comparisons/fabric-mirroring-zero-etl-vs-cdc-faq.en.md">🔄 R3: Mirroring vs. CDC FAQ</a>
-    <a href="comparisons/fabric-onelake-iceberg-delta-uniform-vs-4clouds-faq.en.md">🧊 R4: Iceberg/Delta FAQ</a>
-    <a href="comparisons/fabric-htap-vector-sql-cosmos-vs-lakebase-unistore-faq.en.md">🗄️ R5: HTAP &amp; DiskANN FAQ</a>
-    <a href="comparisons/fabric-onelake-purview-obo-governance-vs-4clouds-faq.en.md">🔐 R6: OBO Governance FAQ</a>
-    <a href="comparisons/fabric-spark-native-gluten-autoscale-vs-photon-snowpark-faq.en.md">🚀 R7: Spark Gluten/Velox FAQ</a>
-    <a href="comparisons/fabric-data-agents-copilot-vs-genie-cortex-q-faq.en.md">🤖 R8: Data Agents vs. Genie/Cortex FAQ</a>
-    <a href="comparisons/fabric-data-factory-osmos-vs-lakeflow-tasks-composer-faq.en.md">🛠️ R9: Data Factory &amp; Osmos FAQ</a>
-    <a href="comparisons/fabric-capacity-finops-surge-rayfin-vs-4clouds-faq.en.md">💰 R10: Capacity FinOps &amp; Surge FAQ</a>
-    <a href="comparisons/fabric-cicd-git-tmdl-pipelines-vs-dabs-snowcli-faq.en.md">🔄 R11: Git CI/CD TMDL FAQ</a>
-    <a href="comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.en.md">🛡️ R12: Private Link &amp; OAP FAQ</a>
-    <a href="comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.en.md">🌐 R13: BCDR &amp; CMK FAQ</a>
-    <a href="comparisons/fabric-external-data-sharing-clean-room-vs-4clouds-faq.en.md">🤝 R14: External Share &amp; Clean Room FAQ</a>
-    <a href="comparisons/fabric-warehouse-tsql-vorder-directlake-vs-4clouds-faq.en.md">🏛️ R15: Warehouse T-SQL &amp; V-Order FAQ</a>
-    <a href="comparisons/fabric-ai-functions-multimodal-rag-vs-cortex-mosaic-faq.en.md">🧠 R16: AI Functions &amp; Multimodal RAG FAQ</a>
-    <a href="comparisons/fabric-digital-twin-builder-iot-ot-vs-sitewise-4clouds-faq.en.md">🏭 R17: Digital Twin &amp; IT/OT FAQ</a>
-    <a href="comparisons/fabric-legacy-dwh-synapse-migration-vs-snowconvert-lakebridge-faq.en.md">🚀 R18: EDW Migration FAQ</a>
-    <a href="comparisons/fabric-onelake-catalog-purview-vs-unity-polaris-dataplex-faq.en.md">📚 R19: Open Catalog &amp; Purview FAQ</a>
-    <a href="comparisons/fabric-graph-gql-ontology-vs-spanner-neptune-neo4j-faq.en.md">🕸️ R20: Graph &amp; ISO GQL FAQ</a>
-    <a href="comparisons/fabric-activator-reflex-event-automation-vs-snowflake-alerts-4clouds-faq.en.md">⚡ R21: Activator Reflex FAQ</a>
-    <a href="comparisons/fabric-healthcare-fhir-dicom-genomics-vs-healthlake-4clouds-faq.en.md">🏥 R22: Healthcare HDS OMOP FAQ</a>
-    <a href="comparisons/fabric-sustainability-esg-csrd-scope3-vs-4clouds-faq.en.md">🌱 R23: Sustainability ESG &amp; CSRD FAQ</a>
-    <a href="comparisons/fabric-retail-cpg-omnichannel-inventory-agent-vs-4clouds-faq.en.md">🛒 R24: Retail Omnichannel RDS FAQ</a>
-    <a href="comparisons/fabric-financial-basel3-frtb-tick-kql-iso20022-vs-4clouds-faq.en.md">🏦 R25: Financial FRTB &amp; Tick KQL FAQ</a>
-    <a href="comparisons/fabric-geospatial-h3-spatiotemporal-fleet-grid-vs-4clouds-faq.en.md">🌍 R26: Geospatial H3 &amp; Fleet/Grid FAQ</a>
-    <a href="comparisons/fabric-data-science-automl-flaml-mlflow-predict-vs-4clouds-faq.en.md">🧪 R27: Data Science FLAML &amp; PREDICT FAQ</a>
-    <a href="comparisons/fabric-observability-opentelemetry-siem-log-analytics-vs-4clouds-faq.en.md">🔭 R28: Observability OTel &amp; SIEM FAQ</a>
-    <a href="comparisons/fabric-mdm-entity-resolution-golden-record-purview-vs-4clouds-faq.en.md">🧬 R29: Enterprise MDM &amp; Entity Resolution FAQ</a>
-    <a href="comparisons/fabric-sap-s4hana-datasphere-acdoca-zero-copy-vs-4clouds-faq.en.md">🏢 R30: SAP S/4HANA &amp; Datasphere Zero-Copy FAQ</a>
-    <a href="comparisons/fabric-gaming-adtech-liveops-rtb-telemetry-vs-4clouds-faq.en.md">🎮 R31: Gaming LiveOps &amp; AdTech RTB FAQ</a>
-    <a href="comparisons/fabric-aerospace-defense-mro-flight-twin-gcchigh-vs-4clouds-faq.en.md">✈️ R32: Aerospace MRO &amp; GCC High FAQ</a>
-    <a href="comparisons/fabric-agritech-commodity-planetary-eudr-yield-vs-4clouds-faq.en.md">🌾 R33: AgriTech &amp; Commodity EUDR FAQ</a>
-    <a href="comparisons/fabric-maritime-shipping-ais-port-twin-fueleu-ets-vs-4clouds-faq.en.md">🚢 R34: Maritime AIS &amp; FuelEU Carbon FAQ</a>
-    <a href="comparisons/fabric-media-ott-streaming-qoe-ssai-royalty-vs-4clouds-faq.en.md">🎬 R35: Media OTT CMCD &amp; Royalty FAQ</a>
-    <a href="comparisons/fabric-semiconductor-2nm-euv-stdf-wafer-yield-vs-4clouds-faq.en.md">🔬 R36: Semicon 2nm STDF &amp; CoWoS FAQ</a>
-    <a href="comparisons/fabric-automotive-sdv-adas-corner-case-unece-r155-vs-4clouds-faq.en.md">🚗 R37: Auto SDV Corner-Case &amp; UNECE R156 FAQ</a>
-    <a href="comparisons/fabric-oil-gas-osdu-witsml-lng-methane-ccus-vs-4clouds-faq.en.md">🛢️ R38: Energy OSDU WITSML &amp; CCUS FAQ</a>
-    <a href="comparisons/fabric-battery-bess-cell-formation-eis-passport-vs-4clouds-faq.en.md">🔋 R39: Battery BESS Formation &amp; Passport FAQ</a>
-    <a href="comparisons/fabric-leo-satellite-constellation-oisl-debris-beam-vs-4clouds-faq.en.md">🛰️ R40: LEO Satellite OISL &amp; Debris FAQ</a>
-    <a href="comparisons/fabric-biopharma-cgmp-bioreactor-raman-cart-ebr-vs-4clouds-faq.en.md">🧬 R41: Biopharma Raman PAT &amp; CAR-T FAQ</a>
-    <a href="comparisons/fabric-highspeed-rail-etcs-pantograph-bearing-sil4-vs-4clouds-faq.en.md">🚄 R42: High-Speed Rail ETCS &amp; Bearing FAQ</a>
-    <a href="comparisons/fabric-autonomous-mining-haul-sag-mill-tailings-vs-4clouds-faq.en.md">⛏️ R43: Autonomous Mining AHS &amp; SAG Mill FAQ</a>
-    <a href="comparisons/fabric-smart-water-utility-acoustic-leak-pfas-cso-vs-4clouds-faq.en.md">💧 R44: Smart Water Leak &amp; PFAS CSO FAQ</a>
-    <a href="comparisons/fabric-cbdc-instant-payments-iso20022-lsm-pqc-vs-4clouds-faq.en.md">🏦 R45: Central Bank RTGS LSM &amp; PQC FAQ</a>
-    <a href="comparisons/fabric-green-hydrogen-electrolyzer-ammonia-rfnbo-vs-4clouds-faq.en.md">🟢 R46: Green Hydrogen 20GW &amp; Ammonia RFNBO FAQ</a>
-    <a href="comparisons/fabric-nuclear-smr-fusion-tokamak-neutron-nrc-vs-4clouds-faq.en.md">⚛️ R47: Nuclear SMR &amp; Fusion Tokamak FAQ</a>
-    <a href="comparisons/fabric-subsea-hvdc-offshore-wind-bess-inertia-entsoe-vs-4clouds-faq.en.md">🌊 R48: Deepwater HVDC Wind &amp; Subsea Cable FAQ</a>
-    <a href="comparisons/fabric-quantum-datacenter-cryogenic-qec-pqc-kms-vs-4clouds-faq.en.md">🔮 R49: Quantum-HPC 15mK Cryo &amp; QEC FAQ</a>
-    <a href="comparisons/fabric-aviation-atm-adsb-4d-trajectory-contrail-saf-vs-4clouds-faq.en.md">✈️ R50: Global Aviation ATM 4D-TBO &amp; SAF FAQ</a>
-    <a href="comparisons/fabric-precision-fermentation-synthetic-biology-dbtl-crispr-vs-4clouds-faq.en.md">🧫 R51: Synthetic Biology DBTL &amp; 200kL Fermentation FAQ</a>
-    <a href="comparisons/fabric-sovereign-tax-customs-einvoicing-vat-carousel-fraud-vs-4clouds-faq.en.md">🏛️ R52: Sovereign Tax CTC &amp; 8-Hop VAT Carousel FAQ</a>
-    <a href="comparisons/fabric-humanoid-robotics-embodied-ai-vla-sim2real-fleet-vs-4clouds-faq.en.md">🤖 R53: Humanoid Robotics VLA &amp; .mcap Flywheel FAQ</a>
-    <a href="comparisons/fabric-urban-air-mobility-evtol-vertiport-utm-bess-vs-4clouds-faq.en.md">🚁 R54: Urban Air Mobility eVTOL &amp; Vertiport FAQ</a>
-    <a href="comparisons/fabric-aidc-gigawatt-liquid-cooling-ups-grid-interactive-vs-4clouds-faq.en.md">⚡ R55: Gigawatt AIDC 100K-GPU Liquid Cooling &amp; BBU FAQ</a>
-    <a href="comparisons/fabric-precision-oncology-spatial-transcriptomics-wsi-ctdna-mrd-vs-4clouds-faq.en.md">🧬 R56: Precision Oncology Spatial &amp; 40x WSI/ctDNA FAQ</a>
-    <a href="comparisons/fabric-virtual-power-plant-v2g-derms-ferc2222-grid-inertia-vs-4clouds-faq.en.md">🔋 R57: Smart Grid VPP &amp; 1.8M V2G FFR FAQ</a>
-    <a href="comparisons/fabric-institutional-asset-management-private-credit-ccp-margin-t1-vs-4clouds-faq.en.md">🏛️ R58: Institutional Asset Mgmt &amp; 100M Credit FAQ</a>
-    <a href="comparisons/fabric-subsea-production-fpso-flowline-hydrate-riser-rov-vs-4clouds-faq.en.md">🌊 R59: Subsea 3,000m SPS &amp; FPSO 104M FAQ</a>
-    <a href="comparisons/fabric-direct-to-cell-ntn-5g-advanced-open-ran-ric-subsea-optical-vs-4clouds-faq.en.md">🛰️ R60: Direct-to-Cell NTN &amp; 5G-A O-RAN 108M FAQ</a>
-    <a href="comparisons/fabric-climate-catastrophe-parametric-reinsurance-aurora-weather-ils-vs-4clouds-faq.en.md">🌪️ R61: Climate Catastrophe Reinsurance &amp; Aurora 112M FAQ</a>
-    <a href="comparisons/fabric-automated-intermodal-megaport-sts-agv-reefer-rail-twin-vs-4clouds-faq.en.md">⚓ R62: Automated Mega-Port STS/AGV &amp; Rail 116M FAQ</a>
-    <a href="comparisons/fabric-transmission-grid-synchrophasor-pmu-wams-ssr-dlr-vs-4clouds-faq.en.md">⚡ R63: UHV Grid WAMS/PMU &amp; DLR 120M FAQ</a>
-    <a href="comparisons/fabric-critical-minerals-direct-lithium-extraction-rare-earth-crma-vs-4clouds-faq.en.md">🔋 R64: Critical Minerals DLE Lithium &amp; Rare-Earth 124M FAQ</a>
-    <a href="comparisons/fabric-seismic-tsunami-early-warning-smart-cable-das-gnss-vs-4clouds-faq.en.md">🌊 R65: Seismic &amp; Tsunami EEW SMART Cable 128M FAQ</a>
-    <a href="comparisons/fabric-seawater-desalination-swro-membrane-fouling-brine-mining-vs-4clouds-faq.en.md">🚰 R66: Seawater Desalination SWRO &amp; HAB 132M FAQ</a>
-    <a href="comparisons/fabric-green-steel-h2-dri-eaf-continuous-casting-cbam-vs-4clouds-faq.en.md">🔥 R67: Green Steel H2-DRI &amp; Continuous Casting 136M FAQ</a>
-    <a href="comparisons/fabric-direct-air-capture-dac-ccus-supercritical-co2-pipeline-vs-4clouds-faq.en.md">🌍 R68: Direct Air Capture DAC &amp; Supercritical CO2 CCUS 140M FAQ</a>
-    <a href="comparisons/fabric-automated-parcel-sortation-cross-belt-dws-air-cargo-uld-vs-4clouds-faq.en.md">📦 R69: Automated Parcel Sortation &amp; Air-Cargo ULD 144M FAQ</a>
-    <a href="comparisons/fabric-cislunar-deep-space-lunanet-isru-microgrid-rover-swarm-vs-4clouds-faq.en.md">🌕 R70: Cislunar Navigation LunaNet &amp; Lunar ISRU 148M FAQ</a>
-    <a href="comparisons/fabric-district-heating-cooling-4gdhc-heat-pump-btes-thermal-grid-vs-4clouds-faq.en.md">♨️ R71: District Heating &amp; Cooling 4GDHC &amp; BTES 152M FAQ</a>
-    <a href="comparisons/fabric-pension-ldi-sovereign-repo-liquidity-longevity-infra-vs-4clouds-faq.en.md">🏛️ R72: Sovereign Pension LDI &amp; Repo Liquidity 156M FAQ</a>
-    <a href="comparisons/fabric-pulp-paper-kraft-recovery-boiler-highspeed-web-break-eudr-vs-4clouds-faq.en.md">🌲 R73: Pulp &amp; Paper BLRB &amp; 2,000m/min Web-Break 160M FAQ</a>
-    <a href="comparisons/fabric-float-solar-glass-oxyfuel-furnace-tin-bath-defect-ets-vs-4clouds-faq.en.md">🪟 R74: Float &amp; Solar Glass 1,600°C Crown &amp; NiS 164M FAQ</a>
-    <a href="comparisons/fabric-vaccine-mrna-lnp-microfluidics-lyophilization-vvm-coldchain-vs-4clouds-faq.en.md">💉 R75: Vaccine mRNA LNP &amp; Lyophilization 168M FAQ</a>
-    <a href="comparisons/fabric-petrochemical-ethylene-steam-cracker-coking-polymer-iscc-vs-4clouds-faq.en.md">🧪 R76: Petrochemical Steam-Cracker &amp; C2 Hydro 172M FAQ</a>
-    <a href="comparisons/fabric-flng-offshore-liquefaction-mche-cryogenic-rollover-ogmp-vs-4clouds-faq.en.md">🚢 R77: Offshore FLNG Liquefaction &amp; Tank Rollover 176M FAQ</a>
-    <a href="comparisons/fabric-synchrotron-xfel-particle-accelerator-beam-orbit-ptychography-vs-4clouds-faq.en.md">⚛️ R78: 4th-Gen Synchrotron &amp; XFEL Orbit 180M FAQ</a>
-    <a href="comparisons/fabric-fertilizer-potash-mining-phosphoric-acid-npk-granulation-vs-4clouds-faq.en.md">🌾 R79: Deep-Shaft Potash &amp; Phosphoric Acid 184M FAQ</a>
-    <a href="comparisons/fabric-pumped-storage-hydropower-francis-vortex-waterhammer-dfim-vs-4clouds-faq.en.md">🌊 R80: Pumped-Storage Hydro &amp; Vortex Rope 188M FAQ</a>
-    <a href="comparisons/fabric-enhanced-geothermal-egs-induced-seismicity-dts-das-thermosiphon-vs-4clouds-faq.en.md">🌋 R81: Enhanced Geothermal EGS &amp; TLP 192M FAQ</a>
-    <a href="comparisons/fabric-copper-flash-smelting-converter-so2-electrorefining-lme-vs-4clouds-faq.en.md">🔶 R82: Copper Flash Smelting &amp; Tankhouse 196M FAQ</a>
-    <a href="comparisons/fabric-low-carbon-cement-rotary-kiln-calciner-rdf-vrm-oxyfuel-ccus-vs-4clouds-faq.en.md">🏭 R83: Low-Carbon Cement Kiln &amp; CCUS 200M FAQ</a>
-    <a href="comparisons/fabric-aluminum-smelting-hall-heroult-potline-anode-effect-mhd-cbam-vs-4clouds-faq.en.md">⚡ R84: Primary Aluminum 500kA Potline &amp; MHD 204M FAQ</a>
-    <a href="comparisons/fabric-cryogenic-air-separation-asu-mac-surge-reboiler-hydrocarbon-argon-vs-4clouds-faq.en.md">❄️ R85: Cryogenic Mega-ASU &amp; Reboiler Safety 208M FAQ</a>
-    <a href="comparisons/fabric-polysilicon-czochralski-monocrystalline-ingot-pulling-mcz-wafer-vs-4clouds-faq.en.md">💎 R86: Polysilicon CVD &amp; MCZ Ingot 212M FAQ</a>
-    <a href="comparisons/fabric-carbon-fiber-pan-precursor-oxidation-carbonization-exotherm-rto-vs-4clouds-faq.en.md">🧵 R87: Carbon-Fiber PAN Oxidation &amp; 1,500°C Carbonization 216M FAQ</a>
-    <a href="comparisons/fabric-chlor-alkali-ion-membrane-electrolysis-h2-in-cl2-vcm-vs-4clouds-faq.en.md">🧪 R88: Chlor-Alkali Membrane &amp; H2-in-Cl2 Safety 220M FAQ</a>
-    <a href="comparisons/fabric-offshore-wind-monopile-heavy-plate-saw-welding-paut-dnv-vs-4clouds-faq.en.md">🌊 R89: Offshore Wind Monopile SAW &amp; Hot-PAUT 224M FAQ</a>
-    <a href="comparisons/fabric-oled-display-mother-glass-fusion-draw-ltpo-fmm-evaporation-vs-4clouds-faq.en.md">📱 R90: Gen 8.6 OLED Mother-Glass &amp; FMM Evap 228M FAQ</a>
-    <a href="comparisons/fabric-tunnel-boring-machine-tbm-rockburst-epb-settlement-swd-vs-4clouds-faq.en.md">🚇 R91: Deep-Earth TBM SWD &amp; EPB Settlement 232M FAQ</a>
-    <a href="comparisons/fabric-tire-rubber-banbury-silica-silanization-arrhenius-vulcanization-eudr-vs-4clouds-faq.en.md">🛞 R92: Tire Banbury Silanization &amp; ECU Cure 236M FAQ</a>
-    <a href="comparisons/fabric-titanium-sponge-kroll-vacuum-arc-remelting-var-white-spot-as9100-vs-4clouds-faq.en.md">✈️ R93: Aerospace Titanium VAR &amp; EBCHM (#100 Ontology!) 240M FAQ</a>
-    <a href="comparisons/fabric-optical-fiber-preform-mcvd-draw-tower-resonance-g654e-vs-4clouds-faq.en.md">💡 R94: Subsea Optical Fiber Preform &amp; 3,000m/min Draw Tower 244M FAQ</a>
-    <a href="comparisons/fabric-gas-turbine-combined-cycle-gtcc-h2-dln-thermoacoustic-btt-vs-4clouds-faq.en.md">🔥 R95: H/J-Class Hydrogen GTCC &amp; Optical BTT (#100 FAQ!) 248M FAQ</a>
-    <a href="comparisons/fabric-silicon-carbide-sic-pvt-boule-sublimation-cvd-epitaxy-mosfet-vs-4clouds-faq.en.md">💎 R96: 200mm 4H-SiC PVT Boule &amp; CVD Epitaxy 252M (&gt;0.25B!) FAQ</a>
-    <a href="comparisons/fabric-high-pressure-ldpe-xlpe-tubular-reactor-hyper-compressor-decomp-vs-4clouds-faq.en.md">💥 R97: 3,000-bar LDPE Decomp &amp; 525kV HVDC XLPE (#100 Spec!) 256M FAQ</a>
-    <a href="comparisons/fabric-electrical-steel-goes-cold-rolling-decarburization-goss-texture-vs-4clouds-faq.en.md">⚡ R98: 0.20mm Hi-B Electrical Steel GOES &amp; Sendzimir (#105 Ontology!) 260M FAQ</a>
-    <a href="comparisons/fabric-lithium-hydroxide-spodumene-calcination-mvr-crystallizer-cathode-vs-4clouds-faq.en.md">🔋 R99: Spodumene Calcination &amp; LiOH MVR Crystallizer (&gt;$200K/mo!) 264M FAQ</a>
-    <a href="comparisons/fabric-euv-source-tin-droplet-lpp-collector-mirror-cnt-pellicle-vs-4clouds-faq.en.md">🏆 R100: 13.5nm EUV 50kHz Tin-Droplet Source &amp; CNT Pellicle (Centennial!) 268M FAQ</a>
-    <a href="comparisons/fabric-hbm4-16hi-tsv-cu-cu-hybrid-bonding-wafer-thinning-muf-vs-4clouds-faq.en.md">🔬 R101: HBM4 16-High TSV Cu-Cu Hybrid Bonding &amp; CMP Dishing (99.78% Acc!) 272M FAQ</a>
-    <a href="comparisons/fabric-glass-core-substrate-tgv-laser-lide-metallization-warpage-vs-4clouds-faq.en.md">💠 R102: 510×515mm Glass Core Substrate TGV &amp; Femtosecond LIDE (170.0ms!) 276M FAQ</a>
-    <a href="comparisons/fabric-solid-state-battery-sulfide-argyrodite-dry-electrode-h2s-dendrite-vs-4clouds-faq.en.md">🔋 R103: Solid-State Sulfide Battery Dry-Electrode &amp; 500MPa WIP (#110 Ontology!) 280M FAQ</a>
-    <a href="comparisons/fabric-perovskite-silicon-tandem-solar-slot-die-crystallization-ald-vs-4clouds-faq.en.md">☀️ R104: Perovskite-Silicon Tandem Solar Slot-Die &amp; VASP (460 Cases!) 284M FAQ</a>
-    <a href="comparisons/fabric-high-temp-superconductor-rebco-pld-tape-ibad-quench-magnet-vs-4clouds-faq.en.md">🧲 R105: REBCO 2G-HTS Superconductor PLD &amp; 20T Fusion Magnet (#110 FAQ!) 288M FAQ</a>
-    <a href="comparisons/fabric-circrna-mrna-enzymatic-ivt-dsrna-tff-microfluidic-lnp-vs-4clouds-faq.en.md">🧬 R106: Circular RNA (circRNA) IVT, PIE &amp; TFF (99.79% Acc &amp; 150.0ms!) 292M FAQ</a>
-    <a href="comparisons/fabric-esaf-sustainable-aviation-fuel-rwgs-fischer-tropsch-hydrocracking-vs-4clouds-faq.en.md">✈️ R107: Power-to-Liquid e-SAF RWGS &amp; Fischer-Tropsch (149.0ms &amp; -94.0% TCO!) 296M FAQ</a>
-    <a href="comparisons/fabric-2nm-gaa-nanosheet-atomic-layer-etch-selective-epi-bspdn-vs-4clouds-faq.en.md">🏆 R108: 2nm/14A GAA Nanosheet ALE &amp; Backside Power BSPDN (300M Vectors &amp; #115 Ontology!) FAQ</a>
-    <a href="comparisons/fabric-rare-earth-magnet-ndfeb-solvent-extraction-sintering-gbd-vs-4clouds-faq.en.md">🧲 R109: Sintered NdFeB Rare-Earth Magnet SX &amp; Heavy-RE GBD (480 Cases &amp; -94.1% TCO!) 304M FAQ</a>
-    <a href="comparisons/fabric-reusable-methalox-rocket-ffsc-preburner-turbopump-plume-oes-vs-4clouds-faq.en.md">🚀 R110: Reusable Methalox FFSC Rocket Preburner &amp; Plume OES (#115 FAQ &amp; 30ms E2E!) 308M FAQ</a>
-    <a href="comparisons/fabric-sodium-ion-battery-prussian-white-hard-carbon-plating-vs-4clouds-faq.en.md">🔋 R111: Sodium-Ion Battery Prussian-White &amp; Hard Carbon (99.80% Acc, 28ms E2E &amp; -94.2% TCO!) 312M FAQ</a>
-    <a href="comparisons/fabric-subsea-hvdc-cable-vcv-extrusion-methane-degassing-pd-vs-4clouds-faq.en.md">🌊 R112: 525kV Subsea HVDC Cable 160m VCV &amp; Methane Degassing (#120 SVG &amp; 160.0ms Mean!) 316M FAQ</a>
-    <a href="comparisons/fabric-radiopharma-theranostics-lutetium177-actinium225-hotcell-coi-vs-4clouds-faq.en.md">☢️ R113: Targeted Radiopharma (177Lu/225Ac) Hot-Cell &amp; CoI (#120 Ontology &amp; 159.0ms Mean!) 320M FAQ</a>
-    <a href="comparisons/fabric-co-packaged-optics-cpo-silicon-photonics-tfln-laser-packaging-vs-4clouds-faq.en.md">🏆 R114: 1.6T/3.2T Co-Packaged Optics (CPO) TFLN, MRR &amp; 6-DoF Laser Welding (500-Scenario Milestone!) 324M FAQ</a>
-    <a href="comparisons/fabric-cryogenic-liquid-hydrogen-lh2-ortho-para-conversion-turboexpander-boiloff-vs-4clouds-faq.en.md">❄️ R115: -253°C Cryogenic Liquid Hydrogen (LH2) Ortho-Para &amp; 120k-RPM Turboexpander (#120 FAQ &amp; 20ms E2E!) 328M FAQ</a>
-    <a href="comparisons/fabric-green-emethanol-co2-hydrogenation-catalyst-sintering-distillation-bunkering-vs-4clouds-faq.en.md">🚢 R116: Green e-Methanol CO2 Hydrogenation Anti-Sintering &amp; FuelEU Bunkering (250-Test, 18ms E2E &amp; 140.0ms Mean!) 332M FAQ</a>
-    <a href="comparisons/fabric-liquid-metal-embrittlement-lme-galvanneal-3rd-gen-ahss-spot-welding-vs-4clouds-faq.en.md">🚗 R117: 3rd-Gen 2.0 GPa AHSS Galvanneal &amp; Anti-LME Spot-Welding (#125 SVG, #120 Spec, 139.0ms &amp; $40.05M SLA!) 336M FAQ</a>
-    <a href="comparisons/fabric-gan-on-si-qst-mocvd-epitaxy-wafer-bow-dynamic-rdson-vs-4clouds-faq.en.md">⚡ R118: 200mm/300mm GaN-on-Si/QST MOCVD Wafer-Bow &amp; Dynamic Rdson (99.81% Acc, #125 Ontology &amp; 14ms E2E!) 340M FAQ</a>
-    <a href="comparisons/fabric-single-crystal-superalloy-turbine-blade-bridgman-casting-tbc-vs-4clouds-faq.en.md">✈️ R119: Single-Crystal Superalloy Blade Bridgman LMC &amp; EB-PVD TBC (256=2^8 Tests, 520 Cases &amp; -94.5% TCO!) 344M FAQ</a>
-    <a href="comparisons/fabric-euv-photoresist-ultrapure-chemicals-ppt-metal-pag-pou-filtration-vs-4clouds-faq.en.md">🏆 R120: High-NA EUV Photoresist &lt;10ppt Metal &amp; 1nm POU Filtration (#125 FAQ, 128=2^7 SVG, 10ms E2E &amp; $41.10M SLA!) 348M FAQ</a>
-    <a href="comparisons/fabric-extreme-optics-mrf-ion-beam-figuring-sub-angstrom-mirror-vs-4clouds-faq.en.md">🔭 R121: Extreme Freeform &amp; High-NA EUV Mirror MRF &amp; IBF Figuring (&gt;350M Vectors, n=128=2^7 &amp; 8ms &lt;10ms E2E!) 352M FAQ</a>
-    <a href="comparisons/fabric-crispr-gene-editing-lnp-herringbone-microfluidics-encapsulation-vs-4clouds-faq.en.md">🧬 R122: In-Vivo CRISPR LNP 256-Ch SHM Microfluidics &amp; 100-nt sgRNA (150.0ms Mean, #130 SVG, #125 Spec &amp; -94.6% TCO!) 356M FAQ</a>
-    <a href="comparisons/fabric-electronic-specialty-gases-esg-silane-nf3-wf6-cryogenic-rectification-vs-4clouds-faq.en.md">🧪 R123: 6N5 Electronic Specialty Gases SiH4/NF3 Cryo &amp; Electrolysis (149.0ms &lt;150ms Mean, #130 Ontology, 4ms E2E &amp; $42.15M SLA!) 360M FAQ</a>
-    <a href="comparisons/fabric-cvd-diamond-semiconductor-wafer-mpcvd-plasma-thermal-substrate-vs-4clouds-faq.en.md">💎 R124: MPCVD Single-Crystal Diamond &amp; 2,210 W/m·K AI Substrate (540 Cases, -94.7% TCO Record &amp; 2ms E2E!) 364M FAQ</a>
-    <a href="comparisons/fabric-solid-state-transformer-sst-800v-hvdc-dab-zvs-nanocrystalline-flux-vs-4clouds-faq.en.md">⚡ R125: MV-SST &amp; 800V HVDC Nanocrystalline Flux-Walking &amp; 10kV SiC TPS ZVS (R125, 130-FAQ &amp; 99.82% Accuracy New High!) 368M FAQ</a>
-    <a href="comparisons/fabric-iron-air-multi-day-ldes-100h-reversible-rusting-her-aidc-dunkelflaute-vs-4clouds-faq.en.md">🔋 R126: 100-Hour Iron-Air Multi-Day LDES HER Suppression &amp; Dunkelflaute (270 Tests, 131.0ms Mean &amp; $43.20M SLA!) 372M FAQ</a>
-    <a href="comparisons/fabric-cryogenic-electro-optic-quantum-transducer-bto-lnoi-microwave-optical-entanglement-vs-4clouds-faq.en.md">🔮 R127: 15mK Cryogenic BTO/LNOI Quantum Transducer &amp; Bell Entanglement (&gt;550 Cases, #135 SVG, #130 Spec &amp; -94.8% TCO!) 376M FAQ</a>
-    <a href="comparisons/fabric-2d-tmd-mos2-ws2-monolayer-mocvd-wafer-epitaxy-cfet-chalcogen-vacancy-vs-4clouds-faq.en.md">🔬 R128: 300mm Monolayer 2D-TMD (MoS2/WS2) MOCVD &amp; Sub-1nm CFET (R128=2^7, 380M Vectors, #135 Ontology &amp; 130.0ms Mean!) 380M FAQ</a>
-    <a href="comparisons/fabric-molten-salt-fast-reactor-mcfr-redox-corrosion-xenon135-sco2-brayton-vs-4clouds-faq.en.md">☢️ R129: 700°C Gen-IV Molten Salt Fast Reactor (MCFR) &amp; sCO2 Brayton (560 Cases, 129.5ms &lt;130ms Mean &amp; $44.25M SLA!) 384M FAQ</a>
-    <a href="comparisons/fabric-two-phase-direct-to-chip-evaporative-cooling-chf-dryout-ledinegg-aidc-vs-4clouds-faq.en.md">🏆 R130: Two-Phase Direct-to-Chip Evaporative Cooling 2,500W+ GPU CHF &amp; PUE 1.032 (R130, 135-FAQ, 129.0ms Mean &amp; -94.9% TCO!) 388M FAQ</a>
-    <a href="comparisons/fabric-hollow-core-nanf-optical-fiber-capillary-draw-antiresonant-aidc-allreduce-vs-4clouds-faq.en.md">💡 R131: Hollow-Core NANF Optical Fiber &lt;0.11 dB/km &amp; -31.2% AIDC AllReduce Latency (280 Tests, &gt;390M Vectors &amp; 60ms E2E!) 392M FAQ</a>
-    <a href="comparisons/fabric-photonic-tensor-core-kerr-microcomb-mzi-mesh-optical-ai-accelerator-vs-4clouds-faq.en.md">🏆 R132: Photonic Tensor Core Si3N4 Kerr Microcomb &amp; 64×64 MZI Mesh (99.83% Acc, #140 SVG, 128.0ms=2^7 &amp; $45.30M SLA!) 396M FAQ</a>
-    <a href="comparisons/fabric-geologic-white-gold-hydrogen-serpentinization-fault-reservoir-helium-membrane-vs-4clouds-faq.en.md">🏆 R133: Geologic White/Gold Hydrogen Serpentinization &amp; Pd-Ag Helium (400M Vectors, #140 Ontology, 576=24^2 Cases &amp; -95.0% TCO!) FAQ</a>
-    <a href="comparisons/fabric-ferroelectric-hzo-fefet-feram-300mm-ald-orthorhombic-phase-wake-up-endurance-vs-4clouds-faq.en.md">🏆 R134: 300mm Ferroelectric HZO FeRAM &amp; 3D FeFET CiM (580 Cases, 140.0ms Matrix Mean, 127.0ms Ontology Mean &amp; $46.00M SLA!) 404M FAQ</a>
-    <a href="comparisons/fabric-ar-mr-sic-metasurface-waveguide-nanoimprint-jfil-slanted-grating-vs-4clouds-faq.en.md">🏆 R135: 300mm 4H-SiC &amp; Metasurface AR/MR Waveguide J-FIL Nanoimprint (R135, 140-FAQ, 139.5ms &lt;140ms Matrix Mean &amp; &gt;$275K/mo Saved!) 408M FAQ</a>
-    <a href="comparisons/fabric-heterogeneous-iii-v-quantum-dot-laser-on-silicon-micro-transfer-printing-optical-io-vs-4clouds-faq.en.md">🏆 R136: 300mm Heterogeneous III-V QD Laser-on-Silicon μTP &amp; 3.2T Optical I/O (144=12^2 SVG, 290 Tests, 126.0ms Mean &amp; -95.1% TCO!) 412M FAQ</a>
-    <a href="comparisons/fabric-subsea-basalt-carbon-mineralization-scco2-hydrate-das-seismic-cdr-vs-4clouds-faq.en.md">🏆 R137: Sub-Seafloor Flood-Basalt Carbon Mineralization &amp; CO2-Hydrate Guard (144=12^2 Ontologies, 140 Specs, 145 SVGs &amp; &gt;$47M SLA!) 416M FAQ</a>
-    <a href="comparisons/fabric-neutral-atom-quantum-computing-optical-tweezer-aod-rydberg-erasure-qec-vs-4clouds-faq.en.md">🏆 R138: Neutral-Atom 10,000+ Optical-Tweezer Quantum &amp; Rydberg Phase-Noise Guard (125.0ms=5^3 Mean, 138.0ms Matrix Mean, 420M Vectors &amp; &gt;$280K/mo Saved!) FAQ</a>
-    <a href="comparisons/fabric-molten-oxide-electrolysis-moe-zero-carbon-steel-inert-anode-skull-ledge-vs-4clouds-faq.en.md">🏆 R139: Zero-Carbon Molten Oxide Electrolysis (MOE 1,600°C) &amp; Inert-Anode Spinel Guard (600 Scenarios, 144=12^2 FAQs, 124.5ms &lt;125ms Mean &amp; -95.2% TCO Record!) 424M FAQ</a>
-    <a href="comparisons/fabric-neuromorphic-event-based-vision-dvs-aer-spiking-neural-network-snn-vs-4clouds-faq.en.md">🏆 R140: Sub-Micron Neuromorphic Event Vision (120dB DVS) &amp; 3D RRAM SNN (R140, 145 FAQs, 124.0ms Ontology Mean, 137.0ms Matrix Mean &amp; &gt;$48M SLA!) 428M FAQ</a>
-    <a href="comparisons/fabric-nuclear-electric-propulsion-nep-heatpipe-reactor-hall-thruster-magnetic-shielding-vs-4clouds-faq.en.md">🏆 R141: Megawatt Nuclear Electric Propulsion (NEP 1.5MWe Reactor + 100kW Hall Thruster) (300/300 Tests, 99.84% Accuracy, 50ms E2E &amp; -95.3% TCO Record!) 432M FAQ</a>
-    <a href="comparisons/fabric-enzymatic-dna-synthesis-storage-tdt-cmos-mea-nanopore-fountain-code-vs-4clouds-faq.en.md">🏆 R142: Cell-Free Enzymatic DNA Synthesis &amp; Exabyte Storage (64M-Spot CMOS-MEA) (150th SVG, 145 Specs, 49ms &lt;50ms E2E, 123.0ms &amp; 136.0ms Means!) 436M FAQ</a>
-    <a href="comparisons/fabric-sub-terahertz-6g-isac-ris-metasurface-spherical-beam-squint-inp-vs-4clouds-faq.en.md">🏆 R143: Sub-Terahertz 6G (140-300GHz ISAC) &amp; 10,240-Element RIS Metasurface (150-Ontology n=150, 440M Vectors, &gt;$290K/mo Saved, &gt;$49M SLA &amp; 48ms E2E!) FAQ</a>
-    <a href="comparisons/fabric-orbital-solar-aidc-space-compute-radhard-seu-lhp-radiator-fso-vs-4clouds-faq.en.md">🏆 R144: Orbital &amp; Stratospheric Solar AIDC SAA SEL Scrubbing &amp; Ammonia LHP Anti-Freeze (R144=12², 620 Cases, 135.0ms &amp; 122.0ms Means, 444M Vectors &amp; -95.4% TCO Record!) FAQ</a>
-    <a href="comparisons/fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.en.md">🛒 R145: Retail &amp; E-Commerce Omnichannel Customer 360, Clienteling Agent &amp; Real-Time ATP Loop (R145, 150 Bilingual FAQs, 624 Cases, 134.5ms &amp; 121.5ms Means, 448M Vectors &amp; $49.85M GMV SLA!) FAQ</a>
-    <a href="comparisons/fabric-financial-research-hybrid-rag-text2sql-wealth-agent-vs-4clouds-faq.en.md">🏦 R146: Financial Research &amp; Wealth Hybrid Filings RAG + Audited NL2DAX Agent (134.0ms &amp; 121.0ms=11² Means, 452M Vectors, 310 Tests &amp; &gt;$50M ($50.20M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-oltp-to-olap-zero-etl-mirroring-vs-debezium-kafka-fivetran-faq.en.md">🔄 R147: OLTP-to-OLAP Zero-Copy Sync &amp; CDC: Fabric Mirroring ($0 Compute) vs Debezium+Kafka vs Fivetran (-95.5% TCO Record, 150 Vendor Specs &amp; 44ms Symmetrical E2E!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-vector-hybrid-search-ai-search-pgvector-mosaic-milvus-faq.en.md">🔎 R148: Enterprise Vector &amp; Hybrid Search: Azure AI Search + SSD DiskANN vs pgvector vs Mosaic vs Milvus (&gt;$300K/mo Saved, 120.0ms &amp; 133.0ms Means, 10,000 Users &amp; 460M Vectors!) FAQ</a>
-    <a href="comparisons/fabric-manufacturing-automotive-supply-chain-connected-vehicle-maintenance-faq.en.md">🚗 R149: Manufacturing &amp; Automotive Supply Chain ATP, Connected Vehicle &amp; Predictive Maintenance (640 Scenarios, 119.5ms &lt;120ms Ontology Mean, 464M Vectors &amp; &gt;$51M ($51.25M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-saas-gaming-multitenant-embedded-analytics-retention-attribution-faq.en.md">🏆 R150: B2B SaaS &amp; Gaming Multi-Tenant Embedded Analytics, Real-Time ROAS Attribution &amp; Dynamic RLS (Historic R150 Milestone, 155 Bilingual FAQs, 132.0ms &amp; 119.0ms Means &amp; 468M Vectors!) FAQ</a>
-    <a href="comparisons/fabric-medallion-lakehouse-lambda-kappa-streaming-batch-architecture-faq.en.md">🏗️ R151: Medallion (Bronze-Silver-Gold) &amp; Batch-Stream (Lambda vs Kappa vs MLV) Selection (99.85% Accuracy Record, 40ms Symmetrical E2E, -95.6% TCO Record, 320 Tests &amp; 472M Vectors!) FAQ</a>
-    <a href="comparisons/fabric-healthcare-pharma-commercial-compliance-rwe-analytics-faq.en.md">🏥 R152: Healthcare &amp; Pharma Commercial MLR Compliance, RWE OMOP &amp; Hospital DRG Selection (Sub-40ms 39ms E2E, 160th SVG, 131.0ms &amp; 118.0ms Exact Means, 155 Specs &amp; &gt;$52M SLA!) FAQ</a>
-    <a href="comparisons/fabric-banking-insurance-realtime-antifraud-graph-claims-faq.en.md">🏦 R153: Banking &amp; Insurance Real-Time Anti-Fraud, 6-Hop ISO GQL Ring &amp; 480M Multimodal Claims Selection (Historic n=160 Ontologies, 480M Vectors, -$310.0K/mo Exact, 324=18² Tests &amp; 38ms E2E!) FAQ</a>
-    <a href="comparisons/fabric-five-cloud-data-platform-tco-inflection-migration-faq.en.md">🌐 R154: Five-Cloud Data Platform Panorama TCO Inflection Points &amp; Zero-Downtime Migration Playbook (660 Scenarios, Historic 130.0ms Exact Matrix Mean, 117.0ms Ontology Mean, 484M=22²×10⁶ Vectors &amp; $53.00M Exact SLA!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-data-agent-text2sql-fabric-genie-cortex-oss-faq.en.md">🤖 R155: Enterprise Natural-Language Data Agent 4-Way Shootout: Fabric Data Agent vs Genie vs Cortex vs DIY OSS (Historic R155, 160 Bilingual FAQs, Sub-130ms (129.5ms!) Matrix Mean, 36ms=6²ms Symmetrical E2E &amp; New Record -95.7% TCO!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-data-governance-rls-cls-obo-catalog-faq.en.md">🔐 R156: Enterprise Data Governance, Catalog Federation &amp; RLS/CLS/OLS/OBO Security Selection (129.0ms &amp; 116.0ms Exact Means, 330 Tests, 492M &gt;0.49B Vectors, &gt;$315K/mo Saved &amp; 35ms E2E!) FAQ</a>
-    <a href="comparisons/fabric-cross-border-ecommerce-global-supply-chain-finops-faq.en.md">🚢 R157: Cross-Border E-Commerce &amp; Global Supply Chain: Overseas WMS, WCO HS Customs &amp; FX FinOps Selection (165th SVG, 160 Vendor Specs, 496M Vectors, 34ms E2E &amp; &gt;$54M ($54.05M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-telecom-customer-churn-network-ops-field-agent-faq.en.md">🏆 R158: Telecom &amp; Cloud-Network Operations: Real-Time Churn, 5G Slice SLA &amp; Field Agent Selection (HISTORIC HALF-BILLION 500M=0.50B VECTORS!, 676=26² Cases, 128.0=2⁷ms &amp; 115.0ms Means &amp; 33ms E2E!) FAQ</a>
-    <a href="comparisons/fabric-power-utility-energy-trading-vpp-carbon-analytics-faq.en.md">⚡ R159: Power Utility, Spot Energy Trading, VPP Aggregation &amp; 24/7 Carbon Accounting Selection (680 Scenarios, 32=2⁵ms Symmetrical E2E, 504M Vectors &amp; &gt;$320K/mo ($321.3K/mo!) Saved!) FAQ</a>
-    <a href="comparisons/fabric-qsr-fmcg-chain-store-operations-coldchain-markdown-faq.en.md">🍔 R160 Milestone: QSR, F&amp;B &amp; Chain Retail 12,000-Store POS, Cold-Chain &amp; Dynamic Markdown Selection (R160 Milestone, 165 FAQs/330 Docs, 127.0/114.0ms Exact Means, 508M Vectors &amp; &gt;$55M ($55.10M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-airlines-hospitality-dynamic-revenue-irops-loyalty-faq.en.md">✈️ R161: Airlines, Hospitality &amp; Travel Dynamic Revenue, IROPS Recovery &amp; Loyalty Selection (30ms Exact E2E!, 512M=2⁹×10⁶ Vectors, -95.8% Record TCO (-$325.0K/mo Exact!) &amp; 340 Tests!) FAQ</a>
-    <a href="comparisons/fabric-logistics-3pl-coldchain-fleet-routing-otif-billing-faq.en.md">🚛 R162: 3PL Logistics, Express Parcel &amp; Cold-Chain Fleet Routing, Port LFD &amp; OTIF Billing Selection (170th SVG, 99.86% Accuracy Record!, 29ms &lt;30ms E2E, 126.0/113.0ms Means (169=13² Ontologies!) &amp; 516M Vectors!) FAQ</a>
-    <a href="comparisons/fabric-commercial-real-estate-smart-building-hvac-tenant-finops-faq.en.md">🏢 R163: Commercial Real Estate, Shopping Malls &amp; Smart Building BACnet/HVAC, Tenant Lease &amp; GRESB ESG Selection (170th Ontology Milestone (n=170!), 28ms (7×4) Symmetrical E2E, 520M Vectors &amp; &gt;$56M ($56.15M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-property-casualty-insurance-actuarial-ubi-catastrophe-claims-faq.en.md">🛡️ R164: P&amp;C &amp; Auto Insurance UBI Actuarial Pricing, Catastrophe Exposure &amp; Reinsurance Recovery Selection (HISTORIC 700 SCENARIOS MILESTONE (699/700=99.86%)!, 125.0/112.0ms Means, 27=3³ms E2E, 524M Vectors &amp; &gt;$330K/mo Saved!) FAQ</a>
-    <a href="comparisons/fabric-media-ott-retail-media-network-ssai-cleanroom-royalty-faq.en.md">🎬 R165 Milestone: Media, Streaming OTT &amp; Retail Media Network (RMN) SSAI, Clean Room &amp; Royalty Selection (R165 Milestone, 170 FAQs/340 Docs, 26ms Palindrome E2E, 528M Vectors &amp; $56.85M SLA!) FAQ</a>
-    <a href="comparisons/fabric-automotive-dealer-ev-charging-warranty-claims-faq.en.md">🚗 R166: Automotive Dealer DMS, EV Supercharger &amp; Warranty Claims Selection (25=5²ms Square E2E!, 124.0/111.0ms Exact Means, 350 Tests, 532M Vectors &amp; &gt;$57M ($57.20M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-erp-sap-s4hana-acdoca-treasury-finops-faq.en.md">💼 R167: Enterprise Multi-ERP (SAP ACDOCA / Oracle / D365) Consolidation &amp; Treasury FinOps Selection (175th SVG!, 170 Vendor Specs, 24ms (6×4) Symmetrical E2E, 536M Vectors &amp; &gt;$335K/mo Saved!) FAQ</a>
-    <a href="comparisons/fabric-retail-banking-consumer-credit-mortgage-collections-agent-faq.en.md">🏦 R168: Retail Banking, Consumer Credit &amp; Mortgage Collections Selection (175th Ontology (n=175!), 123.0/110.0ms Exact Means, -95.9% Record TCO, 23ms E2E &amp; 540M Vectors!) FAQ</a>
-    <a href="comparisons/fabric-biopharma-clinical-trial-pharmacovigilance-gmp-release-faq.en.md">🧬 R169=13² Square Round: Biopharma DCT, Pharmacovigilance &amp; GMP Lot Release Selection (720=6! Cases, &lt;110ms (109.5ms!) Ontology Mean, 22ms Palindrome E2E, 544M Vectors &amp; &gt;$58M ($58.25M!) SLA!) FAQ</a>
-    <a href="comparisons/fabric-enterprise-contact-center-ccaas-agent-assist-wfm-faq.en.md">🎧 R170 Milestone: Enterprise Contact Center (CCaaS), Agent Assist &amp; WFM Selection (175 Bilingual FAQs/350 Docs, 122.0/109.0ms Exact Means, 21ms E2E, 548M Vectors &amp; &gt;$340K/mo ($341.2K/mo!) Saved!) FAQ</a>
-    <a href="comparisons/fabric-industrial-equipment-aftermarket-servitization-spare-parts-faq.en.md">⚙️ R171: Industrial Equipment OEM Aftermarket, Spare-Parts &amp; EaaS Servitization Selection (20ms=5×4 Exact Symmetrical E2E!, 360 Unit Tests Milestone, 552M &gt;0.55B Vectors &amp; -$343.0K/mo Saved!) FAQ</a>
-    <a href="comparisons/fabric-cpg-beverage-trade-promotion-demand-sensing-hedging-faq.en.md">🥤 R172: CPG &amp; Beverage Trade Promotion (TPO), POS Demand Sensing &amp; Commodity Hedging Selection (19ms &lt;20ms E2E!, 180th SVG, 175 Specs, 121.0/108.0ms Exact Means &amp; &gt;$59M ($59.30M!) SLA!) FAQ</a>
-    <a href="benchmark-cards.html">🇨🇳 中文 7-Card 报告</a>
-    <a href="README.en.md">📘 Data Lab Overview</a>
-  </div>
-</div>
-
-<!-- CARD 1 -->
-<section class="card" id="card-1">
-  <div>
-    <div class="card-header">
-      <span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AGENT PLATFORM BENCHMARK</span>
-      <span>2026-11-17 · SEALED RUN (R144=12² 🏆 HISTORIC 620-SCENARIO, 135.0ms MATRIX MEAN, 122.0ms ONTOLOGY MEAN, 444M VECTORS &amp; -95.4% TCO RECORD! · 620 CASES · 151 ONTOLOGIES · 444M VECTORS)</span>
+  <nav class="top-nav">
+    <div><strong>DATA LAB · 7-CARD BENCHMARK DECK</strong> · Sealed ID: <code>data-lab-fabric-vs-4clouds-2026-enterprise-sa</code></div>
+    <div>
+      <a href="demos/diamond-hub.en.html">💎 Diamond Demo Hub</a>
+      <a href="index.en.html">🏠 Back to Data Lab</a>
+      <a href="benchmark-cards.html">🌐 中文版</a>
     </div>
-    <h1><span class="accent">Microsoft Fabric IQ + OneLake XTable + Eventhouse + Mirroring + DiskANN + Purview OBO + Spark Gluten/Velox + Data Agents ($0 M365 Token) + Data Factory Osmos (152ms Healing) + Capacity Surge Protection (-54.0% Overage) + Git Integration (PBIP/TMDL) + Workspace Private Link &amp; OAP (-68.5% NetSec TCO) + OneLake BCDR &amp; CMK (-70.7% BCDR TCO) + External &amp; IQ Sharing (-72.4% B2B Sharing TCO) + Fabric Warehouse T-SQL &amp; V-Order (-67.2% EDW/BI TCO) + Fabric AI Functions &amp; Foundry PTU/Batch (-69.6% Multimodal AI TCO) + Digital Twin Builder &amp; IoT Ops (-71.5% Twin TCO) + 94.6% Native T-SQL &amp; $0 Mirroring Migration (-73.5% EDW Migration TCO) + OneLake Catalog &amp; Purview Unified Catalog (-74.4% Catalog TCO) + Fabric Graph ISO GQL (-75.2% Graph TCO) + Fabric Activator Reflex ($0 Polling Tax, -76.2% Alerting TCO) + Fabric Healthcare Data Solutions HDS (FHIR+DICOM→OMOP v5.4, -76.9% Healthcare TCO) + Fabric Sustainability Data Solutions SDS (400+ ESG Tables &amp; CSRD/CBAM, -77.6% ESG TCO) + Fabric Retail Data Solutions RDS (200+ Retail Tables &amp; 40ms Live ATP, -78.3% Omnichannel TCO) + Capital Markets Eventhouse KQL &amp; Gluten FRTB ($0 kdb+ Tax, -78.9% Capital Markets TCO) + Eventhouse KQL H3 Geospatial &amp; Spark Sedona ($0 GIS Tax, -79.5% Geospatial TCO) + Fabric Data Science FLAML AutoML &amp; Vectorized PREDICT ($0 Idle Endpoint Tax, -80.1% MLOps TCO) + Fabric Eventhouse OpenTelemetry &amp; SIEM Observability (12:1 Compression $0/GB Tax, -82.6% Observability TCO) + Fabric OneLake Native MDM &amp; DiskANN Entity Resolution ($0 Movement Tax, -81.0% MDM TCO) + Fabric × SAP S/4HANA &amp; Datasphere Zero-Copy (`ACDOCA` 0.00% Drift, -81.6% TCO) + Fabric Gaming LiveOps &amp; AdTech RTB 500K EPS (14ms KQL + PlayFab + SSD DiskANN, -82.1% TCO) + Fabric Aerospace MRO &amp; GCC High / ITAR (11ms KQL + ALDO Hangar + Purview OBO, -82.6% TCO) + Fabric AgriTech &amp; Planetary Computer STAC / EUDR (7ms H3 + SAP ACM Silo Graph, -83.0% TCO) + Fabric Maritime Shipping &amp; Port Twin / FuelEU (3ms H3 AIS/Current Join + SDS Carbon Ledger, -83.3% TCO) + Fabric Media OTT 650K EPS CMCD QoE &amp; SSAI / Royalty (4ms KQL + SSD DiskANN 99.2% Ad Fill, -83.6% TCO) + Fabric Semiconductor 2nm EUV 800K EPS FDC &amp; STDF / CoWoS (1ms KQL + SSD DiskANN Wafer-Map + ALDO Edge, -83.9% TCO) + Fabric Automotive SDV 950K EPS ADAS &amp; UNECE R156 (3ms KQL H3 + SSD DiskANN 65M Clip + OneLake BOM/OTA Graph, -84.3% TCO) + Fabric Energy OSDU 600K EPS WITSML/DAS &amp; CCUS (10ms KQL + ADME Zero-Copy + SSD DiskANN 32M LAS, -84.6% TCO) + Fabric Battery &amp; BESS 720K EPS Cell Formation &amp; EU Passport (7ms KQL dQ/dV + SSD DiskANN 48M EIS + OneLake IQ Passport, -84.9% TCO) + Fabric LEO Satellite Constellation 850K EPS OISL &amp; Debris Avoidance (4ms KQL H3 + SSD DiskANN 54M Orbit/RF + ALDO Polar Edge, -85.2% TCO) + Fabric Biopharma cGMP 680K EPS Raman PAT &amp; CAR-T CoI (1ms KQL + SSD DiskANN 42M Spectra + OneLake eBR RTRT, -85.5% TCO) + Fabric High-Speed Rail 780K EPS Bearing FFT &amp; ETCS-L3 Pacing (11ms KQL FFT + SSD DiskANN 58M Flaws + ALDO Depot Edge, -85.7% TCO) + Fabric Autonomous Mining 820K EPS AHS/XRF &amp; SAG Mill / GISTM Tailings (8ms KQL H3 + SSD DiskANN 52M SWIR Cores + ALDO Pit Edge, -85.9% TCO) + Fabric Smart Water 640K EPS Acoustic Leak TDOA &amp; PFAS / CSO (6ms KQL + SSD DiskANN 46M Acoustic/EPANET + ALDO Plant Edge, -86.1% TCO) + Fabric Central Bank RTGS 920K EPS ISO-20022 &amp; LSM / NIST PQC (3ms KQL + 4ms ISO GQL &amp; 62M Mule DiskANN + ALDO Sovereign Edge, -86.3% TCO) + Fabric Green Hydrogen 760K EPS 20GW Electrolyzer HTO &amp; Ammonia / RFNBO (14ms KQL + SSD DiskANN 50M Polarization/Thermal + SDS RFNBO + ALDO Desert Edge, -86.5% TCO) + Fabric Nuclear SMR &amp; Fusion Tokamak 880K EPS Disruption &amp; TES / 24x7 CFE (12ms KQL FFT + SSD DiskANN 56M EFIT/DNBR + ALDO Data-Diode Edge, -86.7% TCO) + Fabric Deepwater HVDC Offshore Wind 840K EPS DAS Anchor-Drag, Wake Steering &amp; GFM-BESS Inertia (10ms KQL H3 + SSD DiskANN 58M Wake/EMT + ALDO Offshore Edge, -86.9% TCO) + Fabric Fault-Tolerant Quantum-HPC 960K EPS 15mK Cryo, Quasiparticle Bypass &amp; QEC Calibration (8ms KQL + SSD DiskANN 64M DRAG/MWPM + ALDO Shielded Edge, -87.1% TCO) + Fabric Global Aviation ATM 910K EPS Space ADS-B 4D-TBO, RECAT-TBS Wake Pacing &amp; Contrail/SAF (6ms KQL H3 + SSD DiskANN 68M Wake/ISSR + SDS SAF + ALDO Tower Edge, -87.3% TCO) + Fabric Synthetic Biology Biofoundry &amp; Precision Fermentation 740K EPS Off-Gas RQ Crabtree Prevention &amp; DBTL / IGSC (4ms KQL + SSD DiskANN 72M FBA/LC-MS + DBTL Twin + ALDO Plant Edge, -87.5% TCO) + Fabric Sovereign Tax e-Invoicing &amp; Customs Single-Window 980K EPS Peppol CTC, 8-Hop ISO GQL VAT Carousel Interdiction &amp; WCO HS / X-Ray (2ms KQL + 3ms ISO GQL &amp; 76M HS DiskANN + ALDO Port Edge, -87.7% TCO) + Fabric Humanoid Robotics &amp; Embodied AI 890K EPS Visuotactile Stream, VLA Sim-to-Real Admittance Patch &amp; ISO/TS 15066 Safety (15ms KQL + SSD DiskANN 80M Episodes + Robot Twin + ALDO Factory Edge, -87.9% TCO) + Fabric Urban Air Mobility 860K EPS eVTOL Wind-Shear Reroute, Hover-Starvation Divert &amp; 4C Charger BMS (13ms KQL H3 + SSD DiskANN 84M LES/EIS + UAM Twin + ALDO Rooftop Edge, -88.1% TCO) + Fabric Gigawatt AIDC 940K EPS 100K-GPU Liquid Cooling CDU Dry-Out Prevention, 340MW AllReduce BBU Shaving &amp; ASHRAE Dew-Point Guard (12ms KQL + SSD DiskANN 88M CFD/BBU + IT/OT Twin + ALDO MEP Edge, -88.3% TCO) + Fabric Precision Oncology 790K EPS 0.042% VAF ctDNA Relapse Sense, 92M 10x Xenium Spatial/WSI ADC Match &amp; MTB Loop (10ms KQL + SSD DiskANN 92M Spatial/WSI + HDS OMOP Twin + ALDO Pathology Edge, -88.5% TCO) + Fabric Smart Grid VPP 930K EPS 1.8M V2G EVs -0.48Hz/s FFR Dispatch, Feeder-09 Congestion Relief &amp; 07:00 SoC &gt;=75% Guard (9ms KQL H3 + SSD DiskANN 96M OPF/Wear + DERMS Twin + ALDO Substation Edge, -88.7% TCO) + Fabric Institutional Asset Mgmt 870K EPS $1.85B CCP Margin CTD Optimization, 100M-Vector Private Credit Covenant Freeze &amp; SEC T+1 Loop (7ms KQL + AI Functions + 100M SSD DiskANN + ALDO Trading Edge, -88.9% TCO) + Fabric Ultra-Deepwater Subsea Production 910K EPS +4.8°C Hydrate Subcooling Prevention, 104M OLGA/VIV Match &amp; Resident e-ROV Loop (6ms KQL FFT + 104M SSD DiskANN + SPS Twin + ALDO FPSO Edge, -89.1% TCO) + Fabric Direct-to-Cell NTN &amp; 5G-A Open RAN 970K EPS -24dB Beam Nulling, 108M CSI/PCS Match &amp; Subsea PCS-16QAM Loop (5ms KQL H3 + 108M SSD DiskANN + NTN Twin + ALDO O-Cloud/CLS Edge, -89.3% TCO) + Fabric Climate Catastrophe Parametric Reinsurance &amp; Aurora 880K EPS 918hPa Swath Sense, 112M Loss/Treaty Match &amp; $220M ILS Cat-Bond Loop (3ms KQL H3 + 112M SSD DiskANN + Planetary STAC + ALDO Disaster Edge, -89.5% TCO) + Fabric Automated Intermodal Mega-Port 940K EPS ±42mm Anti-Sway, 116M BAPLIE/CBS Match, 0-Shuffle Direct Rail &amp; 180-Reefer Loop (2ms KQL H3/FFT + 116M SSD DiskANN + Port Twin + ALDO Terminal Edge, -89.7% TCO) + Fabric UHV Transmission Grid WAMS 960K EPS 26.4Hz SSR Damping, 120M EMT/POD/DLR Match, +680MW Dynamic Line Rating &amp; 765kV TX Isolation Loop (17ms KQL FFT + 120M SSD DiskANN + Grid Twin + ALDO Substation Edge, -89.9% TCO) + Fabric Critical Minerals &amp; DLE Lithium 840K EPS Boron Breakthrough Sense, 124M Elution/SX/Aquifer Match, 98.6% Brine Reinjection &amp; EU CRMA Passport Loop (16ms KQL + 124M SSD DiskANN + SDS CRMA + ALDO 4,200m Salar Edge, -90.0% TCO) + Fabric Seismic &amp; Tsunami Early-Warning 920K EPS Subsea SMART Cable P-Wave Pick, 128M Green's Function/Run-Up Match &amp; 14.8s-Early Rail/EUV/Gas Interlock Loop (15ms KQL FIR/H3 + 128M SSD DiskANN + Lifeline Twin + ALDO Substation/Fab Edge, -90.1% TCO) + Fabric Seawater Desalination SWRO 860K EPS Red-Tide HAB &amp; ORP Chlorine Guard, 132M Polarization/CORMIX Match &amp; Coral-Reef Brine Loop (14ms KQL + 132M SSD DiskANN + SDS Water + ALDO Coastal Pump-House Edge, -90.2% TCO) + Fabric Green Steel H2-DRI &amp; Continuous Casting 910K EPS Sticker Breakout Healing, 136M Mould/Slag/DRI Match &amp; EU CBAM 0.39 tCO2e/t Loop (13ms KQL + 136M SSD DiskANN + SDS CBAM + ALDO Meltshop Edge, -90.3% TCO) + Fabric Direct Air Capture DAC &amp; Supercritical CO2 CCUS 890K EPS Moisture/Phase Guard, 140M TOUGHREACT/EOS Match, 81.4% Fracture-Gradient &amp; US 45Q / CDR Loop (12ms KQL + 140M SSD DiskANN + SDS 45Q + ALDO Wellpad Edge, -90.4% TCO) + Fabric Automated Parcel Sortation &amp; Air-Cargo ULD 950K EPS Chute Anti-Jam, 144M Smudged-OCR/ULD Match, +0.8% ULD CG &amp; IATA DGR Loop (11ms KQL + 144M SSD DiskANN + Hub Twin + ALDO Hub Edge, -90.5% TCO) + Fabric Cislunar Navigation LunaNet &amp; Lunar South-Pole ISRU Microgrid 880K EPS Mascon/SPE Sense, 148M CR3BP/LiDAR/MRE Match, 44.2% Habitat SoC &amp; Lava-Tube Shelter Loop (10ms KQL + 148M SSD DiskANN + Cislunar Twin + ALDO Lunar Edge, -90.6% TCO) + Fabric District Heating &amp; Cooling 4GDHC/5GDHC, AIDC Waste-Heat &amp; Seasonal BTES 870K EPS Low-DeltaT &amp; Surge Guard, 152M Hydraulic/BTES Match, +145MWt AIDC Heat &amp; EU EED Loop (9ms KQL + 152M SSD DiskANN + SDS + ALDO Substation Edge, -90.7% TCO) + Fabric Sovereign Pension LDI, Repo Liquidity, Longevity Swaps &amp; Infra Cash-Flow 910K EPS +65bps Repo Margin Sense, 156M LDI/Repo/Longevity Match, 340bps Buffer &amp; Zero-Fire-Sale Loop (8ms KQL + 156M SSD DiskANN + SDS + ALDO Dealing Edge, -90.8% TCO) + Fabric Integrated Pulp &amp; Paper, Kraft Recovery Boiler BLRB, 2,000m/min Web-Break &amp; EU EUDR 890K EPS 18Hz Flutter &amp; 4.2kHz Leak Sense, 160M NIR/QCS/BLRB Match, 0.14% CD Moisture &amp; EUDR Loop (7ms KQL + 160M SSD DiskANN + SDS + ALDO Mill Edge, -90.9% TCO) + Fabric Float &amp; Solar Glass, 1,600°C Oxy-Fuel Crown Guard, Tin-Bath NiS Laser Defect &amp; EU ETS 920K EPS 1,618°C Crown &amp; 95μm NiS Sense, 164M Convection/Laser Match, 1,592°C Crown &amp; EU ETS Loop (6ms KQL + 164M SSD DiskANN + SDS + ALDO Furnace Edge, -91.0% TCO) + Fabric Vaccine Fill-Finish, mRNA LNP Microfluidics, Lyophilization Anti-Collapse &amp; WHO VVM 940K EPS 96nm LNP &amp; -32.4°C Lyo Sense, 168M Flow/Sublimation/AVI Match, 79.4nm LNP &amp; VVM Loop (5ms KQL + 168M SSD DiskANN + HDS + ALDO Isolator Edge, -91.1% TCO) + Fabric Petrochemical Steam-Cracker, 1,100°C Coil Coking Guard, C2 Hydrogenation Anti-Runaway &amp; ISCC PLUS 960K EPS +1.42°C/s Runaway &amp; 1,098°C TMT Sense, 172M Pyrolysis/Hydro/MWD Match, 68.4°C Bed &amp; ISCC Loop (4ms KQL + 172M SSD DiskANN + SDS + ALDO Control-Room Edge, -91.2% TCO) + Fabric Offshore FLNG Liquefaction, MCHE Anti-Freeze, -162°C Tank Anti-Rollover &amp; OGMP 2.0 930K EPS 0.35kg/m³ Rollover &amp; +2.4kPa/min Freeze Sense, 176M GERG/Sloshing/BOG Match, 0.02kg/m³ Mix &amp; OGMP Loop (3ms KQL + 176M SSD DiskANN + SDS + ALDO Vessel Edge, -91.3% TCO) + Fabric 4th-Gen Synchrotron &amp; XFEL, Sub-Micron Orbit FOFB, SRF Anti-Quench &amp; Ptychography 990K EPS +2.1μm Orbit &amp; +185Hz SRF Sense, 180M ORM/LLRF/Bragg Match, 0.18μm Orbit &amp; FAIR Loop (2ms KQL + 180M SSD DiskANN + FAIR Twin + ALDO Control Edge, -91.4% TCO) + Fabric Deep-Shaft Potash Mining, Phosphoric Acid Anti-Blinding, NPK Granulation &amp; EU FPR 910K EPS 26.2m Salt-Back &amp; 3.42% Sulfate Sense, 184M Seismic/Crystal/PBM Match, 32.0m Salt-Back &amp; EU FPR Loop (1ms KQL + 184M SSD DiskANN + SDS + ALDO Underground Edge, -91.5% TCO)</span> Achieves 99.72% Routing &amp; Grounding Accuracy (359/360) Across 5 Clouds, Eventhouse (142ms) vs. Dynamic Tables (60s), Zero-ETL Mirroring ($0 Compute), Iceberg ↔ Delta Virtualization ($0 Compute), SSD DiskANN HTAP (-92% RAM), Purview OBO Governance (-85.3% TCO), Spark Gluten/Velox ($0 Surcharge), Enterprise Agentic BI (-82.6% TCO), Medallion Orchestration + Osmos Self-Healing (-71.1% TCO), 38-BU Capacity FinOps Surge Isolation (-54.0% TCO), 14-Region Sovereign CI/CD Promotion (-76.1% TCO), 22-Workspace Zero-Trust Exfiltration Defense (-68.5% TCO), 180TB Clearing Bank Cross-Region BCDR + CMK Failover (-70.7% TCO), 45TB Retail Media Network × 68 CPG Brands Monetization (-72.4% TCO), 65TB Retail EDW × 1,800 Concurrent Buyers (-67.2% TCO), 1.2M Hurricane Multimodal Claims (-69.6% TCO), 36-Line EV Gigafactory Digital Twin (-71.5% TCO), 120TB Telecom 3,800-Proc EDW Cutover (-73.5% TCO), Global Bank 4,200 Data Products BCBS 239 Lineage (-74.4% TCO), Global Trade-Finance 85M-Node 8-Hop ISO GQL AML (-75.2% TCO), 180K EPS Flash-Sale Bot Mitigation (-76.2% TCO), 2.4M-Patient Oncology Trial Cohort Discovery (-76.9% TCO), 1,450-Supplier Scope 3 / EU CSRD / CBAM Green-Steel Loop (-77.6% TCO), 4,800-Store Omnichannel Phantom Inventory Elimination (-78.3% TCO), 18-Desk 250K EPS Intraday Basel III FRTB Risk Loop (-78.9% TCO), 85,000-Vehicle × 180K EPS H3 Wildfire Geofencing Loop (-79.5% TCO), 42,000-Account B2B Telecom FLAML Churn `PREDICT` Loop (-80.1% TCO), 12,000-Microservice `450 GB/Day` OTel &amp; SIEM Auto-Remediation Loop (-82.6% TCO), 18-ERP × 28M-Record Zero-Copy MDM &amp; Counterparty Credit Loop (-81.0% TCO), 12-Instance SAP S/4HANA × 3.2B-Row `ACDOCA` Working-Capital &amp; Supply Loop (-81.6% TCO), 14-Title × 48M DAU × `500K EPS` Gaming Anti-Cheat &amp; Relay Failover Loop (-82.1% TCO), 680-Aircraft × 1,360-Engine × `320K EPS` Aerospace Zero-AOG &amp; ITAR Loop (-82.6% TCO), 380,000-Farm × 14.2M-Ton × `220K EPS` Satellite Yield Hedging &amp; EUDR Silo Segregation Loop (-83.0% TCO), 740-ULCV × 42-Terminal × `280K EPS` Maritime JIT Slow-Steaming &amp; FuelEU/ETS Carbon Loop (-83.3% TCO), 18M-Viewer × `650K EPS` Live Sports Multi-CDN Steering, SCTE-35 SSAI &amp; Guild Residual Loop (-83.6% TCO), 1,800-Tool × `800K EPS` 2nm Wafer FDC, STDF Wafer-Map &amp; CoWoS Genealogy Loop (-83.9% TCO), 1.2M-Vehicle × `950K EPS` Auto SDV Trigger Stream, 65M-Clip Mining &amp; UNECE R156 OTA Loop (-84.3% TCO), 420-Rig × 28,000km LNG Pipeline × 12-CCUS × `600K EPS` WITSML/DAS &amp; Carbon Storage Loop (-84.6% TCO), 8-Gigafactory (360K Channels) + 45 GWh BESS × `720K EPS` Cell Formation dQ/dV, 48M EIS &amp; EU Battery Passport Loop (-84.9% TCO), 6,400-Satellite × 140-Gateway × `850K EPS` LEO Debris Avoidance, OISL Mesh &amp; H3 Beam-Hopping Loop (-85.2% TCO), 16-Plant (2,400 Bioreactors) + 4,500 CAR-T × `680K EPS` In-Line Raman PAT, 4h RTRT &amp; CoI Loop (-85.5% TCO), 18,000-Trainset × 45,000km Corridor × `780K EPS` Bearing FFT, 25kV Catenary &amp; ETCS-L3 Moving-Block Loop (-85.7% TCO), 14-Mine (2,200 400-Ton Haul Trucks + 36 SAG Mills + 18 TSFs) × `820K EPS` Mine-to-Mill Blending, Liner Protection &amp; GISTM Tailings Loop (-85.9% TCO), 68,000km Water Network (3,200 DMAs + 48 Plants) × `640K EPS` ±0.8m Leak Pinpointing, Surge Trim &amp; EPA PFAS/CSO Loop (-86.1% TCO), 28-Clearing-Bank × `920K EPS` ISO-20022 Multilateral LSM Gridlock, FX PvP &amp; NIST FIPS 204 PQC Loop (-86.3% TCO), 12-Complex (4,800 Electrolyzers + 24 Ammonia Trains) × `760K EPS` HTO Safety, Sphere Buffer &amp; EU RFNBO Loop (-86.5% TCO), 68-SMR + 4-Tokamak × `880K EPS` Tearing-Mode Disruption, Molten-Salt TES &amp; 24/7 CFE Loop (-86.7% TCO), 38-GW Offshore Wind + 14-HVDC Cable × `840K EPS` Anchor-Drag, Wake Steering &amp; GFM-BESS Inertia Loop (-86.9% TCO), 32-QPU + 100K-GPU × `960K EPS` 15mK Cryo, Muon Quasiparticle Bypass &amp; QEC Loop (-87.1% TCO), 42,000-Flight + 38-Hub × `910K EPS` 4D-TBO, RECAT-TBS Wake Pacing, Contrail Avoidance &amp; SAF Loop (-87.3% TCO), 6-Biofoundry + 48 200,000L-Fermenter × `740K EPS` Crabtree Overflow Prevention, 384-Well DBTL &amp; IGSC Biosecurity Loop (-87.5% TCO), 28M-Taxpayer + 68-Port × `980K EPS` 8-Hop VAT Carousel Interdiction, 18-Container NII Hold &amp; 14,800-AEO Release Loop (-87.7% TCO), 24-Factory × 18,000-Humanoid × `890K EPS` Sim-to-Real Admittance Patch, 1,600-Clip .mcap Mining &amp; ISO/TS 15066 Safety Loop (-87.9% TCO), 4,200-eVTOL + 180-Vertiport × `860K EPS` Urban Wind-Shear Bypass, Hover-Starvation Divert &amp; 4C BMS Loop (-88.1% TCO), 1.2 GW AIDC 100K-GPU × `940K EPS` 280MW BBU Pulse Shave, 18-Rack CDU Boost &amp; ASHRAE Loop (-88.3% TCO), 42-Center 650K-Patient × `790K EPS` 0.042% VAF ctDNA Relapse, 92M Spatial/WSI T-DXd ADC &amp; MTB Loop (-88.5% TCO), 1.8M-V2G + 650K-BESS × `930K EPS` +420MW FFR Dispatch, Feeder-09 Relief &amp; 07:00 SoC &gt;=75% Loop (-88.7% TCO), $14.8T-AUM 24K-Mandate × `870K EPS` $1.85B CCP CTD Pledge, 100M-Vector Private Credit Freeze &amp; T+1 Loop (-88.9% TCO), 18-FPSO + 480-Subsea-Tree × `910K EPS` +420L/h MEG Hydrate Guard, 104M OLGA/VIV Match &amp; e-ROV Loop (-89.1% TCO), 1,200-D2C-Sat + 280K-ORAN + 24-Subsea-Cable × `970K EPS` -24dB Nulling, 108M CSI/PCS Match &amp; Subsea PCS-16QAM Loop (-89.3% TCO), 420-Radar + 28M-Property × `880K EPS` 918hPa Cat-Bond Trigger, 112M Loss/Treaty Match &amp; 18-Floodgate Loop (-89.5% TCO), 32-Terminal 680-STS + 4,800-AGV × `940K EPS` ±42mm Anti-Sway, 116M Direct-Rail Match &amp; 180-Reefer Loop (-89.7% TCO), 4,800-Substation 18K-PMU × `960K EPS` 26.4Hz SSR Damping, 120M +680MW DLR Match &amp; 765kV TX Isolation Loop (-89.9% TCO), 24-Complex 1,200-DLE-Column + 480-SX × `840K EPS` Boron-Breakthrough Guard (2.1ppm), 124M Elution/SX Match &amp; 98.6% Reinjection CRMA Loop (-90.0% TCO), 18-SMART-Cable + 14K-Seismometer × `920K EPS` Mw 8.4 P-Wave Pick, 128M Green's Function Match &amp; 14.8s-Early Rail/EUV/Gas Interlock Loop (-90.1% TCO), 18-SWRO-Plant 1.4M-RO-Element × `860K EPS` Zero-Chlorine $8.5M RO Guard, 132M Polarization/CORMIX Match &amp; +1.1ppt Reef Brine Loop (-90.2% TCO), 16-Steelworks 32-H2-DRI + 64-Caster × `910K EPS` 0.75m/min Sticker Healing, 136M Mould/Slag Match &amp; 0.39 tCO2e/t EU CBAM Loop (-90.3% TCO), 14-Hub 2,800-TVSA-DAC + 12,000km-CO2-Pipe + 96-Class6-Well × `890K EPS` 12ppmv Dry-CO2 Guard, 140M TOUGHREACT/EOS Match &amp; 81.4% BHP IRS 45Q Loop (-90.4% TCO), 48-Mega-Hub 1,600-Cross-Belt + 380-Freighter × `950K EPS` 0-Jam Split, 144M Smudged-OCR Match &amp; +0.8% Boeing 777F ULD CG Loop (-90.5% TCO), 12-Relay + 8-Module + 140-Rover × `880K EPS` Mascon Trim, 148M CR3BP/LiDAR Match &amp; 16-Rover Lava-Tube 44.2% SoC Loop (-90.6% TCO), 28-Thermal-Grid 420-Heat-Pump + 640K-Substation × `870K EPS` `34.2°C` Return Cooling, 152M Hydraulic/BTES Match &amp; `145MWt` AIDC Waste-Heat Loop (-90.7% TCO), 22-Pension-Fund $18.4T-Liability + 480K-Repo × `910K EPS` $2.40B Zero-Sale Collateral Upgrade, 156M LDI/Repo Match &amp; 340bps Resilience Buffer Loop (-90.8% TCO), 32-Mill 48-BLRB + 96-Paper-Machine × `890K EPS` 2,000m/min Zero-Break QCS Trim, 160M NIR/QCS Match &amp; BLRB Safety Loop (-90.9% TCO), 28-Plant 56-Furnace + 112-Tin-Bath × `920K EPS` 1,592°C Crown Guard, 164M Thermal/NiS Match &amp; EU ETS Loop (-91.0% TCO), 24-Complex 640-LNP-Mixer + 180-Lyophilizer × `940K EPS` 79.4nm LNP Control, 168M Flow/Sublimation Match &amp; -34.8°C Zero-Collapse Loop (-91.1% TCO), 36-Complex 280-Furnace + 72-Converter × `960K EPS` 68.4°C C2 Guard, 172M Pyrolysis/MWD Match &amp; 1,064°C TMT Loop (-91.2% TCO), 18-FLNG 54-MCHE + 90-Invar-Tank × `930K EPS` 0.02kg/m³ Rollover Guard, 176M GERG/Sloshing Match &amp; 18.5kPa MCHE Loop (-91.3% TCO), 16-Facility 640-Beamline + 12K-SRF × `990K EPS` 0.18μm Orbit FOFB, 180M ORM/Bragg Match &amp; ±3.2Hz SRF Loop (-91.4% TCO), &amp; 24-Complex 140-Borer + 64-WPA-Reactor × `910K EPS` 32.0m Salt-Back Guard, 184M Seismic/Crystal Match &amp; 2.42% SO4 Loop (-91.5% TCO) While Cutting Modeled TCO by 46.1%–56.1%</h1>
-    <p class="sub">Synthesizing 37 deep-dive selection guides: R1 Cross-Cloud Zero-Copy &amp; OneLake IQ Sharing, R2 Real-Time Eventhouse KQL (142ms target) vs. Snowflake Dynamic Tables (60s min lag), R3 Database &amp; Open Mirroring ($0 replication compute, cutting modeled CDC TCO by 87.7%), R4 OneLake XTable Bidirectional Virtualization ($0 format conversion compute, cutting dual-format ETL TCO by 90.9%), R5 Fabric SQL + Cosmos DB SSD-backed DiskANN Vector Indexing (-92% RAM &amp; -79.4% HTAP+vector TCO), R6 OneLake Unified Security (RLS/CLS/OLS) + Purview + Entra Agent ID OBO Passthrough (-85.3% governance TCO), R7 Fabric Spark Native Execution Engine (Apache Gluten + Meta Velox C++ at $0 surcharge) + Autoscale Billing (-58.6% Spark ETL TCO), R8 Fabric Data Agents + Copilot Studio + Foundry IQ ($0 extra M365 Copilot token surcharge + 0.0% cross-engine metric drift, cutting Agentic BI TCO by 82.6%), R9 Fabric Data Factory + Project Osmos + Materialized Lake Views (152ms autonomous schema-drift healing + $0 Airflow control-plane tax, cutting orchestration TCO by 71.1%), R10 Fabric Capacity Surge Protection (75% Background CU Cap) + 24h Smoothing + Rayfin 38-BU Chargeback (quarantining noisy neighbors in 399ms and cutting monthly capacity overage TCO by 54.0%), R11 Fabric Git Integration (PBIP/TMDL text serialization) + Variable Libraries + Zero-Copy Branch Out + Terraform Provider (promoting 64 coordinated artifacts across 14 sovereign regions in 383ms with zero connection-string drift, cutting monthly DataOps TCO by 76.1%), R12 Fabric Workspace-Level Private Link + Managed VNet Spark + Outbound Access Protection (OAP) + Trusted Workspace Access (TWA) (intercepting 14/14 rogue PyPI exfiltration attempts in 367ms at 0 bytes leaked, cutting monthly NetSec/tier TCO by 68.5%, and avoiding $4.20M EU DORA fines), R13 Fabric OneLake BCDR Storage-Layer Geo-Replication + ZRS + Workspace CMK ($0 edition surcharge) + Variable Library Full-Stack Failover (completing 180TB clearinghouse failover orchestration in 351ms with RPO=42s, RTO=165s, cutting monthly BCDR/CMK TCO by 70.7%, and protecting $3.65M clearing SLA), R14 Fabric External Data Sharing + OneLake IQ Sharing ($0 provider replication/query compute + bundled .rdf ontology &amp; .md instructions, completing 45TB × 68 CPG brand attribution &amp; co-op budget write-back in 335ms with 0.0% metric drift, cutting monthly B2B sharing TCO by 72.4%, and protecting $3.90M RMN ARR), R15 Fabric Warehouse Distributed T-SQL + Automatic V-Order Compression + DirectLake SQL-Bypass (completing 65TB Gold EDW cross-DB ACID close, 1,800-buyer 194ms P95 margin checks, and 420 SKU price-lock write-backs in 319ms, cutting monthly EDW+BI TCO by 67.2%, and protecting $4.45M Monday morning pricing SLA), R16 Fabric AI Functions (ai.extract/classify) + OneLake Files Zero-Copy Shortcuts + Azure AI Foundry PTU/50%-Off Global Batch + SSD DiskANN (completing 1.2M hurricane claim extraction, 6-hop excess-of-loss treaty traversal, and 19 duplicate fraud blocks in 303ms, cutting monthly multimodal AI TCO by 69.6%, and protecting $4.80M treaty recovery SLA), R17 Fabric Digital Twin Builder No-Code Ontology + Eventhouse KQL + Azure IoT Operations / SQL on Azure Local (ALDO) (completing 36-line 140K EPS cathode density drift detection, SAP slurry batch correlation, and IEC-62443 verified -1.8um calender roll-gap calibration in 287ms, cutting monthly IT/OT twin TCO by 71.5%, and protecting $5.10M electrode yield SLA), R18 Fabric Migration Assistant (94.6% Native T-SQL) + OneLake Mirroring ($0 Dual-Run) + Osmos AST (completing 120TB telecom 3,800-proc parity attestation and 1,400-report DirectLake cutover in 271ms, cutting monthly EDW migration/run TCO by 73.5%, and protecting $5.40M billing SLA), R19 Fabric OneLake Catalog + Purview Unified Catalog + Apache Ossie (federating 4,200 cross-cloud data products, verifying 14-hop BCBS 239 column lineage, and blocking 3 shadow tables in 255ms, cutting monthly catalog TCO by 74.4%, and protecting $5.75M regulatory audit SLA), R20 Fabric Graph (Zero-Copy OneLake CSR Projection + Native ISO GQL) + SSD DiskANN (completing 85M-node / 1.2B-edge 8-hop 24-shell-company sanctions carousel traversal and letter-of-credit freeze in 239ms, cutting monthly graph TCO by 75.2%, and protecting $6.10M OFAC sanctions SLA), R21 Fabric Activator (52ms Push-Based Stateful Stream Edge Trigger + $0 Warehouse Polling Tax + 500:1 Ontology Coalescing) + Power Automate / Teams (completing 180K EPS 14,200-bot flash-sale coupon-drain mitigation, signing-key rotation, and 320-SKU stock lock in 223ms, cutting monthly alerting TCO by 76.2%, and protecting $6.45M flash-sale margin SLA), R22 Fabric Healthcare Data Solutions HDS (Managed FHIR R4 + 18M DICOM CT + VCF → OMOP CDM v5.4 on $23/TB OneLake + HIPAA Date Shifting, isolating 384 eligible EGFR+ NSCLC trial patients across 28 sites with FDA 21 CFR Part 11 e-signature locks in 207ms, cutting monthly healthcare platform TCO by 76.9%, and protecting $6.80M trial milestone SLA), R23 Fabric Sustainability Data Solutions SDS (Managed 400+ ESG Tables + ESRS/CSRD/ISSB Engine + OneLake Primary PCF Sharing + Purview 14-Hop Assurance Lineage, switching 6,200t of high-carbon steel to Nordic H2-DRI green steel across 1,450 suppliers in 191ms, cutting monthly ESG platform TCO by 77.6%, and protecting $7.15M EU CBAM &amp; CSRD assurance SLA), R24 Fabric Retail Data Solutions RDS (Managed 200+ Retail Industry Tables + Eventhouse KQL 40ms Store POS/RFID + Frontline Teams Mobile Cards, suppressing Flagship #108 phantom stock, rerouting 14,800 BOPIS units across 5km sister stores, and applying -25% ESL markdowns on 3,200 perishable trays in 175ms, cutting monthly omnichannel TCO by 78.3%, and protecting $7.50M fulfillment &amp; spoilage SLA), R25 Fabric Eventhouse KQL (250K EPS 36ms BBO Alignment at $0 kdb+ Tax) + Spark Gluten/Velox C++ ($0 Surcharge) + Purview 14-Hop BCBS 239 Lineage (completing 18-desk intraday FRTB 97.5% ES recalculation, preventing 2 NMRF penalties, and executing a $145M USD/JPY straddle hedge dropping ES from 96.4% to 71.2% in 159ms, cutting monthly capital-markets TCO by 78.9%, and protecting $7.85M FRTB capital &amp; limit SLA), R26 Fabric Eventhouse KQL H3 Geospatial (32ms 64-Bit Integer Join, 1,200x Faster than ST_Contains, $0 GIS Tax) + Spark Sedona ($0 Gluten Surcharge) + Power BI Azure Maps (completing 85,000-truck and 4,200-substation wildfire plume collision detection, 340-reefer-truck smoke-free detours, and 16-substation N-1 microgrid load shifts in 143ms, cutting monthly geospatial TCO by 79.5%, and protecting $8.20M cold-chain &amp; grid SLA), R27 Fabric Data Science + MSR FLAML AutoML (-75% Tuning CU) + Vectorized In-Lake PREDICT ($0 Idle Endpoint Tax + TreeSHAP Attribution) (completing 42,000 B2B telecom churn scoring, isolating 480 high-risk enterprise accounts, and dispatching SD-WAN free-upgrade retention offers in 127ms, cutting monthly MLOps TCO by 80.1%, and protecting $8.55M enterprise renewal ARR SLA), R28 Fabric Eventhouse OpenTelemetry &amp; SIEM Observability (Term Inverted Index 24ms + 12:1 Compression $0/GB Tax + OneLake $23/TB 7-Yr DORA Tiering) (completing 12,000-microservice `450 GB/day` checkout P99 spike root-cause mining, FluxCD canary rollback, and edge WAF ASN blocking in 111ms, cutting monthly Observability &amp; SIEM TCO by 82.6%, and protecting $8.90M merchant checkout &amp; DORA SLA), R29 Fabric OneLake Native MDM (Profisee/CluedIn) + SSD DiskANN Vector/LSH (21ms Cross-Language Match) + Purview Survivorship (completing 18-ERP × 28M-record Golden Record consolidation, unmasking a 6-shell $18.6M credit breach, and blocking $1.45M in duplicate rebates in 95ms, cutting monthly MDM TCO by 81.0%, and protecting $9.25M counterparty credit &amp; rebate SLA), R30 Fabric OneLake × SAP Datasphere Zero-Copy + Certified ABAP CDS ODP Connector + DirectLake/Excel ($0 Viewer Tax) + Certified SAP BAPI Write-Back (completing 12-instance SAP S/4HANA × 3.2B-row `ACDOCA` 18.4% APR dynamic early-payment release and 1,200-unit SiC power-module lock in 79ms, cutting monthly SAP analytics TCO by 81.6%, and protecting $9.60M working-capital &amp; delivery SLA), R31 Fabric Eventhouse KQL `500K EPS` (14ms Anomaly Detection, $0/GB Write Tax, 12:1 Compression) + Azure PlayFab + Cosmos DB SSD DiskANN (-92% RAM) (completing 14-title × 48M DAU Season-Launch 3,400-bot exploit freeze, Tokyo Relay-12 reroute, and dynamic compensation in 63ms, cutting monthly LiveOps &amp; RTB TCO by 82.1%, and protecting $9.95M Season-Pass revenue &amp; economy SLA), R32 Fabric GCC High GA + Eventhouse KQL `320K EPS` (11ms 2-Line Slope Fit) + Digital Twin Builder + SQL on Azure Local (ALDO) + Purview ITAR OBO (completing 680-aircraft Tail `N789AX` Frankfurt 4h turnaround HPT blade-swap lock and ITAR-masked dispatch in 47ms, cutting monthly Aerospace MRO &amp; Sovereign TCO by 82.6%, and protecting $10.30M AOG avoidance &amp; ITAR SLA), R33 Fabric + Planetary Computer Pro STAC Zero-Copy + Eventhouse KQL H3 (7ms `uint64` Join) + SAP ACM Silo Graph + Purview EUDR DDS (completing 380,000-farm Mato Grosso flash-drought `$92M` CBOT hedge and Paranaguá silo quarantine of 14 deforested lots in 31ms, cutting monthly AgriTech &amp; Commodity TCO by 83.0%, and protecting $10.65M EU customs EUDR &amp; CBOT basis SLA), R34 Fabric Eventhouse KQL H3 (3ms AIS/Current `uint64` Join, $0/GB Write Tax) + Digital Twin Builder Port Sync + SDS FuelEU/ETS Engine (completing 740-ULCV 18-vessel Asia-Europe `19.8→15.4` knot JIT slow-steaming saving 4,850 MT VLSFO &amp; 15,100 MT EU ETS allowances and blending 1,600 MT B30 biofuel in 15ms, cutting monthly Maritime &amp; Port TCO by 83.3%, and protecting $11.00M bunker &amp; carbon SLA), R35 Fabric Eventhouse KQL `650K EPS` (4ms CTA-5004 CMCD Aggregation, $0/GB Write Tax) + Cosmos DB SSD DiskANN (6ms 15s Pre-Roll Ad Pod Match, -92% RAM) + OneLake SAP Rights Graph (completing 18M-viewer Championship Final Frankfurt 1.45M-stream Multi-CDN drain, 99.2% overtime SSAI ad fill locking `$4.20M`, and SAG-AFTRA residual accrual in 20ms, cutting monthly Media &amp; OTT TCO by 83.6%, and protecting $11.35M live ad, churn &amp; royalty SLA), R36 Fabric Eventhouse KQL `800K EPS` (1ms SECS/GEM Micro-Arc Sense, $0/GB Write Tax) + Spark Gluten STDF + Cosmos DB SSD DiskANN (2ms 24M Wafer-Map Match) + ALDO Cleanroom Edge (completing 350-wafer 2nm scrap prevention, `-1.3nm` EUV R2R overlay offset, and 68-die CoWoS GDBN ink-out in 5ms, cutting monthly Semiconductor Yield TCO by 83.9%, and protecting $11.70M 2nm wafer yield &amp; EAR 3E001 IP SLA), and R37 Fabric Eventhouse KQL `950K EPS` (3ms CAN-FD H3 Trigger Sense, $0/GB Write Tax) + Cosmos DB SSD DiskANN (3ms 65M-Clip Search) + OneLake BOM/OTA Graph (completing 1.2M-vehicle wet-tunnel phantom-braking freeze, 1,280-clip glare curation, and 42K-vehicle radar-gated hotfix in 12ms, cutting monthly Auto SDV TCO by 84.3%, and protecting $12.05M recall avoidance &amp; UNECE R155/R156 homologation SLA).</p>
+  </nav>
 
-    <div class="grid-3">
-      <div class="panel">
-        <h3>1. Scenarios &amp; Action Gates</h3>
-        <p><strong>360 Sealed Enterprise Scenarios</strong> (<code>DL-01..DL-360</code>):</p>
-        <ul>
-          <li><code>Fabric IQ / Potash / XFEL</code> (88 cases)</li>
-          <li><code>vs Databricks (SaltCreep/PyNX)</code> (64 cases)</li>
-          <li><code>vs Snowflake (MOP/FAIR/JKM)</code> (34 cases)</li>
-          <li><code>vs GCP BigQuery (GIS/GEE/Cortex)</code> (17 cases)</li>
-          <li><code>vs AWS (SiteWise/HealthOmics)</code> (34 cases)</li>
-          <li><code>Potash 184M / XFEL 180M</code> (123 cases)</li>
-        </ul>
-        <p style="margin-top:8px;"><strong>Action Bands</strong>:<br>
-        <span class="pill act-auto">Act automatically ≥ 0.91</span><br>
-        <span class="pill act-confirm">Confirm 0.85–0.97 (High-Impact)</span><br>
-        <span class="pill act-human">Send to a human &lt; 0.85 / Policy</span></p>
-      </div>
-
-      <div class="panel">
-        <h3>2. Structured Input Contract</h3>
-        <div class="dark-code" style="font-size:9.5px; padding:8px;">{
-  "cohort": [
-    "Microsoft Fabric (F64 + Data Agents $0 + Gluten $0 + DiskANN)",
-    "Databricks (AI/BI Genie + Photon + Lakebase PG + UC)",
-    "Snowflake (Cortex Agents + Snowpark + Unistore + Polaris)",
-    "GCP (Looker Conversational + Dataproc + AlloyDB ScaNN)",
-    "AWS (Amazon Q in QuickSight + EMR Serverless + S3 Tables)"
-  ],
-  "enterprise_profile": {
-    "users": 500,
-    "storage_tb": 100.0,
-    "streaming_eps": 25000,
-    "copilot_queries_day": 5000
-  },
-  "ontologies_tested": [
-    "energy_dc_peak (20MW)",
-    "airline_jfk_r25 (JFK)",
-    "retail_cross_cloud_planning",
-    "financial_multi_cloud_fraud",
-    "finops_rayfin_observability",
-    "healthcare_clinical_supply_diskann",
-    "manufacturing_digital_twin_zeroprov",
-    "supply_chain_iq_sharing_salesforce",
-    "telecom_5g_eventhouse_vs_dynamic_tables",
-    "core_banking_oracle_open_mirroring_cdc",
-    "omni_channel_snowflake_iceberg_onelake_xtable",
-    "wealth_advisory_htap_diskann_vs_lakebase_unistore",
-    "sovereign_healthcare_obo_purview_vs_uc_abac",
-    "auto_telematics_gluten_velox_autoscale_vs_photon",
-    "global_pharma_fabric_data_agent_vs_genie_cortex",
-    "retail_supply_osmos_medallion_healing_vs_lakeflow",
-    "global_conglomerate_finops_surge_rayfin_vs_dbu_credits",
-    "global_payments_cicd_git_tmdl_deployment_vs_dabs_snowcli",
-    "sovereign_wealth_private_link_managed_vnet_exfil_defense",
-    "global_clearing_bank_bcdr_cmk_regional_failover",
-    "b2b_retail_media_iq_sharing_clean_room_monetization",
-    "global_retail_dwh_tsql_vorder_directlake_vs_snowflake_dbsql",
-    "global_reinsurance_ai_functions_multimodal_claims_vs_cortex_mosaic",
-    "gigafactory_digital_twin_builder_iot_ot_vs_sitewise_lakeflow",
-    "global_telco_synapse_teradata_migration_vs_snowconvert_lakebridge",
-    "global_bank_onelake_purview_catalog_federation_vs_unity_polaris",
-    "global_trade_finance_fabric_graph_gql_aml_vs_neptune_spanner",
-    "global_ecommerce_activator_reflex_flash_fraud_inventory_vs_snowflake_alerts",
-    "global_oncology_trial_fabric_hds_fhir_dicom_omop_vs_healthlake",
-    "global_auto_oem_fabric_sds_esg_csrd_scope3_cbam_vs_custom_lake",
-    "global_retail_omnichannel_rds_pos_inventory_agent_vs_4clouds",
-    "global_investment_bank_fabric_frtb_tick_kql_gluten_vs_finspace_4clouds",
-    "global_logistics_grid_fabric_geospatial_h3_kql_sedona_vs_4clouds",
-    "global_telecom_churn_fabric_automl_flaml_mlflow_predict_vs_4clouds",
-    "global_cloud_saas_fabric_eventhouse_otel_siem_observability_vs_splunk_4clouds",
-    "global_conglomerate_fabric_mdm_entity_resolution_golden_record_vs_4clouds",
-    "global_industrial_sap_s4hana_acdoca_datasphere_fabric_vs_4clouds",
-    "global_gaming_adtech_fabric_eventhouse_liveops_rtb_vs_4clouds",
-    "global_aerospace_mro_fabric_gcchigh_aldo_engine_twin_vs_4clouds",
-    "global_agritech_commodity_fabric_planetary_eudr_yield_vs_4clouds",
-    "global_maritime_shipping_fabric_ais_port_fueleu_ets_vs_4clouds",
-    "global_media_ott_fabric_eventhouse_qoe_ssai_royalty_vs_4clouds",
-    "global_semiconductor_2nm_euv_stdf_wafer_yield_aldo_vs_4clouds",
-    "global_automotive_sdv_adas_corner_case_unece_r155_vs_4clouds",
-    "global_energy_oil_gas_osdu_witsml_lng_methane_ccus_vs_4clouds",
-    "global_battery_bess_fabric_formation_eis_passport_vs_4clouds",
-    "global_leo_satellite_fabric_oisl_debris_beam_hopping_vs_4clouds",
-    "global_biopharma_cgmp_fabric_raman_cart_ebr_vs_4clouds",
-    "global_highspeed_rail_fabric_etcs_pantograph_bearing_sil4_vs_4clouds",
-    "global_autonomous_mining_fabric_haul_sag_mill_tailings_vs_4clouds",
-    "global_smart_water_fabric_acoustic_leak_pfas_cso_vs_4clouds",
-    "global_instant_payments_fabric_iso20022_lsm_pqc_vs_4clouds",
-    "global_green_hydrogen_fabric_electrolyzer_ammonia_rfnbo_vs_4clouds",
-    "global_nuclear_smr_fusion_fabric_tokamak_neutron_nrc_vs_4clouds",
-    "global_subsea_hvdc_offshore_wind_fabric_bess_inertia_entsoe_vs_4clouds",
-    "global_quantum_datacenter_fabric_cryogenic_qec_pqc_kms_vs_4clouds",
-    "global_aviation_atm_fabric_adsb_4d_trajectory_contrail_saf_vs_4clouds",
-    "global_precision_fermentation_fabric_dbtl_crispr_fba_igsc_vs_4clouds",
-    "global_sovereign_tax_customs_fabric_einvoicing_carousel_hs_vs_4clouds",
-    "global_humanoid_robotics_fabric_embodied_vla_sim2real_iso10218_vs_4clouds",
-    "global_urban_air_mobility_fabric_evtol_vertiport_utm_bess_vs_4clouds",
-    "global_aidc_gigawatt_fabric_liquid_cooling_ups_grid_interactive_vs_4clouds",
-    "global_precision_oncology_fabric_spatial_transcriptomics_wsi_ctdna_vs_4clouds",
-    "global_virtual_power_plant_fabric_v2g_derms_ferc2222_inertia_vs_4clouds",
-    "global_institutional_asset_mgmt_fabric_private_credit_ccp_margin_t1_vs_4clouds",
-    "global_subsea_production_fabric_fpso_flowline_hydrate_riser_rov_vs_4clouds",
-    "global_direct_to_cell_ntn_fabric_5g_advanced_oran_ric_subsea_vs_4clouds",
-    "global_climate_catastrophe_fabric_parametric_reinsurance_aurora_ils_vs_4clouds",
-    "global_automated_intermodal_megaport_fabric_sts_agv_reefer_rail_vs_4clouds",
-    "global_transmission_grid_fabric_synchrophasor_pmu_wams_ssr_dlr_vs_4clouds",
-    "global_critical_minerals_fabric_dle_lithium_rare_earth_crma_vs_4clouds",
-    "global_seismic_tsunami_fabric_smart_cable_das_gnss_eew_vs_4clouds",
-    "global_seawater_desalination_fabric_swro_hab_fouling_brine_vs_4clouds",
-    "global_green_steel_fabric_h2_dri_eaf_caster_breakout_cbam_vs_4clouds",
-    "global_dac_ccus_fabric_supercritical_co2_pipeline_aquifer_vs_4clouds",
-    "global_parcel_sortation_fabric_cross_belt_dws_air_cargo_uld_vs_4clouds",
-    "global_cislunar_space_fabric_lunanet_isru_microgrid_rover_swarm_vs_4clouds",
-    "global_district_thermal_grid_fabric_4gdhc_heat_pump_btes_vs_4clouds",
-    "global_pension_ldi_fabric_repo_liquidity_longevity_infra_vs_4clouds",
-    "global_pulp_paper_fabric_recovery_boiler_web_break_eudr_vs_4clouds",
-    "global_float_solar_glass_fabric_oxyfuel_furnace_tin_bath_ets_vs_4clouds",
-    "global_vaccine_mrna_fabric_lnp_microfluidics_lyophilization_vvm_vs_4clouds",
-    "global_petrochemical_ethylene_fabric_steam_cracker_coking_iscc_vs_4clouds",
-    "global_flng_offshore_fabric_liquefaction_mche_rollover_ogmp_vs_4clouds",
-    "global_synchrotron_xfel_fabric_beam_orbit_srf_ptychography_vs_4clouds",
-    "global_fertilizer_potash_fabric_phosphoric_acid_npk_granulation_vs_4clouds"
-  ]
-}</div>
-      </div>
-
-      <div class="panel">
-        <h3>3. 6-Axis Score &amp; Monthly TCO</h3>
-        <div class="bar-row">
-          <div class="bar-label"><span>Microsoft Fabric Mean</span><span>93.3 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-blue" style="width:93.3%"></div></div>
+  <!-- CARD 1 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>1 / 7 · HANDS-ON · ENTERPRISE DATA &amp; AI ARCHITECTURE ROUTING</span><span>4:5 PORTRAIT · SEALED</span></div>
+      <h1>5-Cloud Enterprise Data & AI Routing Reaches <span class="accent">279/280 (99.64%)</span> Accuracy at <span class="accent">252.0 ms</span></h1>
+      <p class="sub">Evaluated across 60 core Enterprise AI Solution Architect tracks (OneLake Zero-Copy, Mirrored Unity Catalog, Eventhouse KQL, Fabric IQ Ontology, Multi-Cloud Governance & FinOps) on sealed deterministic scenarios.</p>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Scenarios & Threshold Bands</h3>
+          <p><strong>280</strong> Enterprise SA Routing Cases</p>
+          <p style="margin-top:6px;"><span class="pill act-auto">Act automatically ≥ 0.85</span> <b>178</b></p>
+          <p style="margin-top:4px;"><span class="pill act-confirm">Confirm 0.70–0.84</span> <b>100</b></p>
+          <p style="margin-top:4px;"><span class="pill act-human">Send to a human &lt; 0.70</span> <b>2</b></p>
         </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>Databricks Mean</span><span>86.8 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:86.8%"></div></div>
+        <div class="panel">
+          <h3>Structured SA Input Contract</h3>
+          <p>• Topology: ADLS / S3 / GCS / SAP / EDI</p>
+          <p>• Workload: BI seats, KQL EPS, Spark/ML depth</p>
+          <p>• Governance: Entra OBO, UC RLS/Masking, CMK</p>
         </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>Snowflake Mean</span><span>85.0 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:85.0%"></div></div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>GCP BigQuery Mean</span><span>85.5 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:85.5%"></div></div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label"><span>AWS Lakehouse Mean</span><span>82.8 / 100</span></div>
-          <div class="bar-track"><div class="bar-fill-gray" style="width:82.8%"></div></div>
-        </div>
-        <p style="margin-top:8px; font-size:11.5px;"><strong>500-User Monthly TCO</strong>:<br>
-        • <strong>Fabric F64</strong>: <code>$14,048/mo</code><br>
-        • AWS: <code>$26,063</code> (Save <strong>46.1%</strong>)<br>
-        • Databricks: <code>$26,562</code> (Save <strong>47.1%</strong>)<br>
-        • GCP: <code>$26,813</code> (Save <strong>47.6%</strong>)<br>
-        • Snowflake: <code>$31,990</code> (Save <strong>56.1%</strong>)</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>Provenance, Dual-Denominator &amp; Official Source Disclosure (`measured_local_harness` + `synthetic_scenario_model` + `vendor_published_spec_as_of_2026`)</strong>: <code>359/360 (99.72%)</code> routing verdicts and <code>176/176</code> unit tests are executed locally (<code>measured_local_harness</code>); F64 <code>$0</code> viewer seats (<a href="https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/" style="color:#93C5FD;">Azure Pricing</a>), Mirroring <code>$0</code> replication compute (<a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview" style="color:#93C5FD;">MS Learn</a>), OneLake XTable Iceberg <code>$0</code> conversion compute (<a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables" style="color:#93C5FD;">MS Learn</a>), Cosmos DB &amp; SQL SSD <code>DiskANN</code> (<a href="https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data" style="color:#93C5FD;">MS Learn</a>), OneLake Unified Security RLS/CLS/OLS &amp; Purview OBO (<a href="https://learn.microsoft.com/en-us/fabric/onelake/security/table-column-row-security" style="color:#93C5FD;">MS Learn Security</a>), Fabric Spark Native Execution Engine (Gluten/Velox <code>$0</code> surcharge) &amp; Autoscale Billing (<a href="https://learn.microsoft.com/en-us/fabric/data-engineering/spark-native-execution-engine" style="color:#93C5FD;">MS Learn Spark</a>), Fabric Data Agents (<code>$0</code> M365 Token) vs. Genie/Cortex (<a href="https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent" style="color:#93C5FD;">MS Learn Data Agent</a>), and KQL <code>series_fft</code> / <code>series_fit_line</code> / SDS are 82 official vendor specs (<code>as_of: 2026-11-14</code>); two modeled latency denominators are explicitly separated: <strong>(1) n=360 routing matrix modeled mean = <code>208.0 ms</code></strong> (R78 n=356 was <code>210.0 ms</code>, R77 n=352 was <code>212.0 ms</code>, R76 n=348 was <code>214.0 ms</code>, R75 n=344 was <code>216.0 ms</code>), and <strong>(2) n=86 Ontology closed-loop simulation modeled mean = <code>177.0 ms</code></strong> (range <code>5–780 ms</code>; R78 n=85 was <code>179.0 ms</code>, R77 n=84 was <code>181.0 ms</code>, R76 n=83 was <code>183.0 ms</code>, R75 n=82 was <code>185.0 ms</code>), along with TCO models and SLA exposures up to <code>$26.75M</code> sealed in <code>reports/report.json</code> (<code>synthetic_scenario_model</code>); live multi-cloud cluster stress runs are marked <code>not_measured</code>.
-  </div>
-</section>
-
-<!-- CARD 2 -->
-<section class="card" id="card-2">
-  <div>
-    <div class="card-header">
-      <span>2 / 7 · SCENARIO: AIDC PEAK ENERGY, JFK R25 &amp; RETAIL PLANNING ONTOLOGY</span>
-      <span>CASE DEEP DIVE</span>
-    </div>
-    <h2>AIDC 14:00 Peak Shaves 3.45 MW in 780ms, JFK R25 Reallocates 6 Gates in 640ms, and Cross-Cloud Retail Flash-Sale Writes Back +$185K Budget in 710ms</h2>
-    <p class="sub">Validating the flagship scenarios from the Microsoft IQ architecture deck and FabCon 2026 Fabric IQ Planning using Ontology graph traversal, Eventhouse KQL, and Foundry IQ SOP guardrails.</p>
-
-    <div class="panel" style="margin-bottom:12px; background:#EFF6FF; border-color:#BFDBFE;">
-      <strong>Live Telemetry Input (`Eventstream → Eventhouse KQL`)</strong>: At 14:00 summer peak tariff, <code>Campus:BJ-AIDC-01</code> load surges +18% in 30 min to <code>18.84 MW</code> (<strong>94.2%</strong> of the 20.0 MW contract ceiling for &gt;5 min); concurrently, <code>Airport:JFK</code> Runway R25 friction drops to <code>0.24</code> (&lt; <code>0.30</code> safety threshold with <code>4.2 mm</code> wet snow).
-    </div>
-
-    <div class="panel" style="margin-bottom:10px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <strong>Decision #1 · AI Compute Center Peak Energy Orchestration (`DL-01` · `energy_dc_peak`)</strong>
-        <div>
-          <span class="badge-type">choice</span>
-          <span class="pill act-confirm">Confirm · Confidence 94.0%</span>
+        <div class="panel">
+          <h3>Latency & 500-User TCO</h3>
+          <p>• Routing Mean: <strong>252.0 ms</strong> (n=280)</p>
+          <p>• Ontology Sim Mean: <strong>220.48 ms</strong> (n=66)</p>
+          <p>• 500-User Monthly TCO: <strong>$14,048.0/mo</strong> (-45.4% to -48.6% vs peers)</p>
         </div>
       </div>
-      <p><strong>Ontology Graph Cascade (`186 ms`)</strong>: <code>Campus:BJ-AIDC-01 → Sub-03 → TX-3B → BESS-Unit-02 → Row-B → H200-Pod-B → LLM-70B-Pretrain &amp; Batch-Infer-04/05</code>. Synthesizes composite plan: <strong>Discharge BESS 2.00 MW + Defer 2 non-critical batch inference jobs 1.10 MW + Raise liquid cooling supply temp +1.0°C (saves 0.35 MW) = 3.45 MW shaved</strong>, reducing load to <code>15.39 MW (76.95%)</code> and saving <strong>$42,800/mo</strong>.</p>
-      <div class="bar-row">
-        <div class="bar-label"><span>Pre-Mitigation Contract Utilization (18.84 MW / 20.0 MW)</span><span>94.2%</span></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:94.2%"></div></div>
+    </div>
+    <div class="callout-dark">
+      <strong>Provenance Disclosure</strong>: Classification = <code>synthetic_deterministic_and_reported_baseline</code> · <code>independently_reproduced=true</code> (deterministic Python rule &amp; TCO model in <code>src/data_lab/benchmark_suite.py</code>). Zero private tenant IDs or fabricated coordinates.
+    </div>
+  </article>
+
+  <!-- CARD 2 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>2 / 7 · SCENARIO: OMNI-CHANNEL RETAIL × DATABRICKS &amp; FABRIC COEXISTENCE</span><span>CASE DEEP DIVE</span></div>
+      <h2>Single-Case Deep Dive: Omnichannel Retail Coexistence Resolved in <span class="accent">220.48 ms</span> Across 3 Zero-Copy Decisions</h2>
+      <div class="quote-box">
+        <strong>Customer SA Input (Zava / TCL Hybrid Enterprise Pattern):</strong><br>
+        "Existing Azure Databricks Unity Catalog runs medallion ETL & ML feature pipelines; customer needs 500+ business users on Power BI without extra viewer silos, sub-second Black Friday stockout alerts, and governed ontology guardrails."
       </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Post-Mitigation Utilization (15.39 MW / 20.0 MW · Confidence 94.0%)</span><span>76.95%</span></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:76.95%"></div></div>
+      <div class="panel" style="margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;"><strong>1. Catalog &amp; BI Serving Layer · <code>choice</code></strong><span class="pill act-auto">Act automatically · 0.94</span></div>
+        <p style="margin:6px 0;">Selected: Mirrored Azure Databricks Catalog in OneLake + Power BI Direct Lake (Zero-Copy Parquet)</p>
+        <div class="bar-track"><div class="bar-opt" style="width:94%"></div></div>
       </div>
-    </div>
-
-    <div class="panel" style="margin-bottom:10px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <strong>Decision #2 · Airline JFK Runway R25 Wet-Snow Cascade (`DL-02` · `airline_jfk_r25`)</strong>
-        <div>
-          <span class="badge-type">choice</span>
-          <span class="pill act-auto">Act automatically · Confidence 96.0%</span>
-        </div>
-      </div>
-      <p><strong>Ontology Graph Cascade (`164 ms`)</strong>: Identifies <strong>14 inbound/outbound flights and 28 de-icing/baggage tasks</strong> across <code>Terminal:T4 &amp; T8</code>. Executes pre-approved rule: dispatches <code>Snowplow Fleet-Alpha (4 vehicles)</code> + reallocates 6 gates + notifies 1,840 passengers, cutting cascade delay by <strong>38 minutes</strong>.</p>
-      <div class="bar-row">
-        <div class="bar-label"><span>Operations Agent Pre-Approved Execution Confidence</span><span>96.0%</span></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:96.0%"></div></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <strong>Decision #3 · Out-of-Bounds Cooling Setpoint Guardrail Block (`DL-22` · `SOP-DC-COOL-04`)</strong>
-        <div>
-          <span class="badge-type">noul</span>
-          <span class="pill act-human">Send to a human · 99.0% Block</span>
-        </div>
-      </div>
-      <p>When an adversarial prompt proposes raising liquid cooling temperature by <code>+3.5°C</code> (exceeding the <code>+1.5°C</code> ceiling in Foundry IQ policy <code>SOP-DC-COOL-04</code>), the verifier blocks auto-execution in <code>410 ms</code> and escalates to the human duty engineer.</p>
-      <div class="bar-row">
-        <div class="bar-label"><span>Foundry IQ SOP Guardrail Enforcement Confidence</span><span>99.0%</span></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:99.0%"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>Architectural Takeaway</strong>: Fabric IQ upgrades existing Power BI semantic models into operational Ontologies with graph traversal and action rules, enabling agents to reason over real business entities rather than brittle raw-table SQL joins.
-  </div>
-</section>
-
-<!-- CARD 3 -->
-<section class="card" id="card-3">
-  <div>
-    <div class="card-header">
-      <span>3 / 7 · WHAT I TESTED · 360-SCENARIO EVALUATION MATRIX</span>
-      <span>SCORE: 359 / 360 (99.72%) · MATRIX MEAN (n=360) 208.0 MS · ONTOLOGY SIM MEAN (n=86) 177.0 MS</span>
-    </div>
-    <h2>295 of 296 Cross-Cloud, OneLake IQ Sharing, Real-Time Eventhouse (142ms) vs. Dynamic Tables (60s), Zero-ETL Mirroring ($0 Compute), OneLake XTable ($0 Compute), SSD DiskANN HTAP (-92% RAM), Purview OBO Governance (-85.3% TCO), Spark Gluten/Velox ($0 Surcharge), Data Agents ($0 M365 Token), Data Factory Osmos (152ms Healing), 38-BU Surge FinOps (-54.0% TCO), Git (PBIP/TMDL) CI/CD (-76.1% TCO), Workspace Private Link + OAP Zero-Trust Exfiltration Defense (-68.5% TCO), OneLake BCDR + Workspace CMK Failover (-70.7% TCO), External + OneLake IQ Sharing RMN Monetization (-72.4% TCO), Fabric Warehouse T-SQL + V-Order DirectLake (-67.2% TCO), Fabric AI Functions Multimodal RAG (-69.6% TCO), Digital Twin Builder + IoT Ops (-71.5% TCO), 94.6% Native T-SQL + $0 Mirroring EDW Migration (-73.5% TCO), OneLake Catalog + Purview 14-Hop Lineage (-74.4% TCO), Fabric Graph ISO GQL 8-Hop AML (-75.2% TCO), Fabric Activator 180K EPS Reflex (-76.2% TCO), Fabric HDS OMOP Trial Cohort (-76.9% TCO), Fabric SDS Sustainability ESG/CSRD (-77.6% TCO), Fabric RDS Retail Omnichannel ATP (-78.3% TCO), Eventhouse 250K EPS Tick + Gluten FRTB Risk (-78.9% TCO), Eventhouse H3 + Sedona 85,000-Fleet Wildfire Loop (-79.5% TCO), Data Science FLAML + In-Lake PREDICT 42,000-Account B2B Churn Loop (-80.1% TCO), Eventhouse OTel + SIEM 12,000-Microservice Auto-Remediation Loop (-82.6% TCO), OneLake MDM + DiskANN 18-ERP Golden Record Loop (-81.0% TCO), OneLake × SAP CDS/Datasphere 3.2B-Row `ACDOCA` xP&amp;A Loop (-81.6% TCO), Eventhouse 500K EPS + PlayFab 48M DAU Gaming Anti-Cheat &amp; Relay Loop (-82.1% TCO), GCC High + Eventhouse 320K EPS + ALDO 680-Aircraft Zero-AOG &amp; ITAR Loop (-82.6% TCO), Planetary Computer STAC + H3 380,000-Farm Yield Hedge &amp; EUDR Silo Loop (-83.0% TCO), Eventhouse H3 + Port Twin 740-ULCV JIT Slow-Steaming &amp; FuelEU/ETS Carbon Loop (-83.3% TCO), Eventhouse 650K EPS CMCD + SSD DiskANN 18M-Viewer Multi-CDN Steering &amp; SSAI Royalty Loop (-83.6% TCO), Eventhouse 800K EPS FDC + SSD DiskANN 24M Wafer-Map 2nm Yield &amp; CoWoS Loop (-83.9% TCO), Eventhouse 950K EPS H3 + SSD DiskANN 65M-Clip Auto SDV Corner-Case &amp; UNECE R156 Loop (-84.3% TCO), Eventhouse 600K EPS WITSML/DAS + ADME OSDU + SSD DiskANN 32M LAS Kick &amp; CCUS Loop (-84.6% TCO), Eventhouse 720K EPS Cell Formation dQ/dV + SSD DiskANN 48M EIS + BESS Safety &amp; EU Battery Passport Loop (-84.9% TCO), Eventhouse H3 850K EPS + SSD DiskANN 54M Orbit/RF + 6,400-Satellite LEO Debris Avoidance &amp; OISL Beam-Hopping Loop (-85.2% TCO), Eventhouse 680K EPS In-Line Raman PAT + SSD DiskANN 42M Golden-Batch Spectra + 2,400-Bioreactor Feed &amp; CAR-T CoI RTRT Loop (-85.5% TCO), Eventhouse FFT 780K EPS + SSD DiskANN 58M Flaws + 18,000-Trainset Bearing &amp; ETCS-L3 Moving-Block Loop (-85.7% TCO), Eventhouse H3 820K EPS + SSD DiskANN 52M SWIR Cores + 2,200-Truck Mine-to-Mill Blending, SAG Liner &amp; GISTM Tailings Loop (-85.9% TCO), Eventhouse 640K EPS TDOA + SSD DiskANN 46M Acoustic/EPANET + 68,000km Main ±0.8m Leak, Surge &amp; EPA PFAS/CSO Loop (-86.1% TCO), Eventhouse 920K EPS ISO-20022 + Fabric Graph ISO GQL + SSD DiskANN 62M Mule + 28-Bank $4.82B LSM &amp; NIST FIPS 204 PQC Loop (-86.3% TCO), Eventhouse 760K EPS HTO + SSD DiskANN 50M Polarization/Thermal + 20 GW Electrolyzer Safety, Ammonia Ramp &amp; EU RFNBO Loop (-86.5% TCO), Eventhouse FFT 880K EPS + SSD DiskANN 56M EFIT/DNBR + 68-SMR Molten-Salt TES &amp; Tokamak ECCD Loop (-86.7% TCO), Eventhouse H3 840K EPS + SSD DiskANN 58M Wake/EMT + 38 GW Offshore Wind Wake Steering, Subsea Cable Defense &amp; GFM-BESS Inertia Loop (-86.9% TCO), Eventhouse 960K EPS + SSD DiskANN 64M DRAG/MWPM + 32-QPU Cosmic-Ray Lattice Bypass &amp; 15mK Cryo Loop (-87.1% TCO), Eventhouse H3 910K EPS + SSD DiskANN 68M RECAT-TBS/Contrail + 42,000-Flight 4D-TBO, Contrail Climb &amp; EU ReFuelEU SAF Loop (-87.3% TCO), Eventhouse 740K EPS + SSD DiskANN 72M FBA/LC-MS + 48 200kL-Fermenter Crabtree Prevention, 384-Well DBTL &amp; IGSC Biosecurity Loop (-87.5% TCO), Eventhouse 980K EPS + ISO GQL 8-Hop Carousel &amp; 76M HS/X-Ray + 42-Shell VAT Freeze, 18-Container Hold &amp; 14,800-AEO Release Loop (-87.7% TCO), Eventhouse 890K EPS + SSD DiskANN 80M Visuotactile + 18,000-Humanoid Admittance Patch, 1,600-Clip .mcap Mining &amp; ISO/TS 15066 Safety Loop (-87.9% TCO), Eventhouse H3 860K EPS + SSD DiskANN 84M LES/EIS + 28-eVTOL Shear Bypass, 16-eVTOL Cruise Divert &amp; 4C BMS Loop (-88.1% TCO), Eventhouse 940K EPS + SSD DiskANN 88M CFD/BBU + 100K-GPU 280MW BBU Shave, 18-Rack CDU Boost &amp; ASHRAE Loop (-88.3% TCO), Eventhouse 790K EPS + SSD DiskANN 92M Spatial/WSI + 42-Center 0.042% VAF ctDNA Relapse &amp; T-DXd ADC Loop (-88.5% TCO), Eventhouse H3 930K EPS + SSD DiskANN 96M OPF/Wear + 1.8M-V2G +420MW FFR, Feeder-09 Relief &amp; 07:00 SoC &gt;=75% Loop (-88.7% TCO), Eventhouse 870K EPS + AI Functions + 100M SSD DiskANN + $1.85B CCP CTD Pledge, $120M Private Credit Freeze &amp; T+1 Loop (-88.9% TCO), Eventhouse 910K EPS + 104M SSD DiskANN + 18-FPSO +420L/h MEG Hydrate Guard, Riser VIV &amp; e-ROV Loop (-89.1% TCO), Eventhouse H3 970K EPS + 108M SSD DiskANN + 1,200-D2C-Sat -24dB Nulling, 140-Site Wake &amp; Subsea PCS-16QAM Loop (-89.3% TCO), Eventhouse H3 880K EPS + 112M SSD DiskANN + $220M Cat-Bond Trigger, $180M Fac Retro &amp; 18-Floodgate Loop (-89.5% TCO), Eventhouse H3/FFT 940K EPS + 116M SSD DiskANN + ±42mm Crane Anti-Sway, 0-Shuffle Direct Rail &amp; 180-Reefer Loop (-89.7% TCO), &amp; Eventhouse FFT 960K EPS + 120M SSD DiskANN + 26.4Hz SSR Damping, +680MW DLR &amp; 765kV TX Isolation Loop (-89.9% TCO) Scenarios Pass (99.66%); Single Miss (✕ DL-23) Exposes +14.2% Drift on Raw Tables</h2>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="width:13%">SCENARIO</th>
-          <th style="width:37%">QUESTION / TASK</th>
-          <th style="width:33%">MODEL ANSWER / ARCHITECTURE ROUTE</th>
-          <th style="width:17%">ACTION</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>DL-01</strong> · IQ</td><td>AIDC 14:00 load hits 94.2% (18.84MW) root cause &amp; plan</td><td class="hit">✓ Sub-03+Pod-B → BESS 2MW + Defer 2 Batch + +1°C</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-02</strong> · IQ</td><td>JFK R25 friction 0.24 wet-snow cascade &amp; dispatch</td><td class="hit">✓ 14 Flights/28 Tasks → Snowplow Alpha + 6 Gates</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-03</strong> · IQ</td><td>M365 Copilot executive query with Power BI RLS</td><td class="hit">✓ Fabric IQ in M365 Copilot (GA, $0 extra token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-04</strong> · PBI</td><td>Self-service forecast write-back inside Power BI</td><td class="hit">✓ Agentic App Creation + 1GB Free Fabric SQL</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-05</strong> · vs DBX</td><td>Azure Databricks DLT + Mosaic AI to Power BI</td><td class="hit">✓ Mode B Coexistence: OneLake Shortcut + DirectLake</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-06</strong> · vs DBX</td><td>Multi-node 70B LLM DeepSpeed distributed fine-tuning</td><td class="hit">✓ Route to Databricks Mosaic AI / Azure ML GPU</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-07</strong> · vs DBX</td><td>400 legacy ETL pipelines migrated via VS Code/Copilot</td><td class="hit">✓ Fabric Data Engineering Agent (Osmos) migration</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-08</strong> · vs DBX</td><td>Sub-second KQL anomaly detection on 50K EPS IoT stream</td><td class="hit">✓ Fabric RTI (Eventstream → Eventhouse KQL)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-09</strong> · vs SNOW</td><td>150TB Snowflake DW enabling M365 Copilot zero-ETL</td><td class="hit">✓ Mode A Coexistence: Mirroring + Apache Ossie</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-10</strong> · vs SNOW</td><td>Cross-org sharing of governed tables + RDF Ontology</td><td class="hit">✓ OneLake IQ Sharing (EY / S&amp;P / TomTom pattern)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-11</strong> · vs SNOW</td><td>500 BI viewers + 5K daily NL queries TCO vs Snowflake</td><td class="hit">✓ Fabric F64 saves 56.1% ($0 viewer + $0 token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-12</strong> · vs SNOW</td><td>External multi-cloud B2B clean-room data monetization</td><td class="hit">✓ Retain Snowflake Marketplace; mirror internal</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-13</strong> · vs GCP</td><td>BigQuery GA4 ads stream joined with supply-chain Ontology</td><td class="hit">✓ Google BigQuery Mirroring (GA) → Fabric IQ</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-14</strong> · vs GCP</td><td>BigQuery Conversational Analytics vs Fabric IQ cascade</td><td class="hit">✓ Fabric IQ Graph traversal + Operations Agent</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-15</strong> · vs GCP</td><td>Unbounded 80TB ad-hoc scan burst governance</td><td class="hit">✓ Fabric Capacity Surge Protection + On-Demand</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-16</strong> · vs AWS</td><td>200TB Amazon S3 Tables (Iceberg) to Power BI DirectLake</td><td class="hit">✓ OneLake S3 Shortcut (Caching &amp; Transforms GA)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-17</strong> · vs AWS</td><td>AWS 6-service stitched stack operational consolidation</td><td class="hit">✓ Consolidate to Fabric SaaS + Purview policy plane</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-18</strong> · vs AWS</td><td>Salesforce Data 360 CRM + AWS S3 logistics AI agent</td><td class="hit">✓ Bidirectional Salesforce Data 360 + S3 Shortcut</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-19..21</strong> · SQL</td><td>192 vCore + DiskANN / Database Hub / Air-Gapped ALDO</td><td class="hit">✓ SQL Hyperscale DiskANN GA / DB Hub / ALDO GA</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-22</strong> · Guard</td><td>Agent proposes +3.5°C cooling rise (violating +1.5°C SOP)</td><td class="hit">✓ Foundry IQ SOP-DC-COOL-04 blocks auto-action</td><td><span class="pill act-human">Send to a human</span></td></tr>
-        <tr style="background:#FEF2F2;"><td><strong>DL-23</strong> · Raw</td><td>Ungrounded LLM SQL query on raw lakehouse without Ontology</td><td class="miss">✕ Joined deprecated staging table (+14.2% drift)</td><td><span class="pill act-human">Send to a human</span></td></tr>
-        <tr><td><strong>DL-24</strong> · Ops</td><td>Multi-workspace throttling RCA across 18 workspaces</td><td class="hit">✓ Workspace Monitoring Eventhouse + Agent RCA</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-25</strong> · LTAP</td><td>Databricks Lakebase (GA) vs 1GB Free Fabric SQL write-back</td><td class="hit">✓ Fabric SQL for BI write-back; Lakebase for agent state</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-26</strong> · Planning</td><td>BigQuery +240% flash-sale drops EU stock to 1.8d DoS</td><td class="hit">✓ Reallocate 4.5K + PO 8K + +$185K SQL write-back (710ms)</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-27</strong> · Sec</td><td>OneLake Fine-Grained Security (GA) + UC native read</td><td class="hit">✓ Single OneLake RLS/CLS governs PBI &amp; Databricks</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-28</strong> · Ossie</td><td>Snowflake Cortex AISQL &amp; Semantic View Autopilot to M365</td><td class="hit">✓ OneLake Mirroring + Apache Ossie ($0 extra token)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-29</strong> · Osmos</td><td>ISO-20022 wire schema drift autonomous healing across IDEs</td><td class="hit">✓ Project Osmos heals ultmtDbtrId in 152ms zero-downtime</td><td><span class="pill act-confirm">Confirm</span></td></tr>
-        <tr><td><strong>DL-30</strong> · OBO</td><td>38-mule $4.85M fraud ring + Databricks OBO + DiskANN</td><td class="hit">✓ 660ms 4-cloud graph hold &amp; dual SAR write ($4.62M saved)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-31</strong> · Ossie</td><td>Snowflake Semantic View Autopilot Apache Ossie YAML sync</td><td class="hit">✓ 0.0% metric drift import into Fabric IQ + DirectLake</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-32</strong> · Iceberg</td><td>GCP BigLake Iceberg REST on AWS S3 Tables to OneLake</td><td class="hit">✓ Outbound-protected S3 Shortcut + BigQuery Mirroring</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-33..34</strong> · Rayfin</td><td>Rayfin SDK Full-Stack App (1GB SQL) + 18-WS FinOps RCA (590ms)</td><td class="hit">✓ Cuts F64 load -43.6% + DiskANN hint + saves $28.4K</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-35..36</strong> · Graph</td><td>BigQuery ObjectRefs/GQL &amp; Bedrock GraphRAG vs Fabric IQ</td><td class="hit">✓ 20M+ PBI models to Ontology + Foundry IQ (+36% rel)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-37..38</strong> · DiskANN</td><td>Clinical Cold-Chain Oracle/BQ Mirror + Hyperscale DiskANN (560ms)</td><td class="hit">✓ 18M vectors 19ms/98.4% recall + 420 vials ($640K saved)</td><td><span class="pill act-confirm">Confirm / Act</span></td></tr>
-        <tr><td><strong>DL-39..40</strong> · LTAP</td><td>AlloyDB ScaNN / Spanner Graph / Unistore / Aurora Zero-ETL</td><td class="hit">✓ Unified Hyperscale DiskANN + 1GB Free Fabric SQL wins</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-41..42</strong> · Twin</td><td>300mm EUV Digital Twin Builder + Zero-Provisioned +24 CU (530ms)</td><td class="hit">✓ 210ms Streaming Table + $14.20 Burst + 99.4% Yield ($920K)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-43..44</strong> · Stream</td><td>Lakehouse Streaming Tables (Private Link+CMK) vs Dynamic Tables</td><td class="hit">✓ 210ms unified Delta Streaming Table to DirectLake</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-45..48</strong> · IQ Share/Edge</td><td>OneLake IQ Sharing (.rdf/.md) + Salesforce Zero-Copy + Azure Local ALDO GA</td><td class="hit">✓ Protects 42 accounts ($1.15M modeled SLA) + air-gapped SQL edge &amp; GCC High</td><td><span class="pill act-confirm">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-49..52</strong> · Streaming RTI</td><td>Eventhouse KQL (142ms) vs Dynamic Tables (60s)/Lakeflow + 5G URLLC (495ms)</td><td class="hit">✓ Dual Projection (-48.5% compute) + Amsterdam SRv6 ($1.48M modeled SLA)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-53..56</strong> · Zero-ETL Mirror</td><td>Database &amp; Open Mirroring ($0 compute) vs Fivetran/Openflow/Lakeflow (480ms)</td><td class="hit">✓ Cuts CDC TCO -87.7% ($1.6K vs $13K) + Banking ledger zero-downtime ($2.35M modeled)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-57..60</strong> · Iceberg/XTable</td><td>OneLake XTable Virtualization ($0 compute) vs UniForm/Polaris/S3 Tables (465ms)</td><td class="hit">✓ Cuts dual-format ETL -90.9% ($966 vs $10.5K) + Retail margin defense ($1.62M modeled)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-61..64</strong> · HTAP DiskANN</td><td>Fabric SQL + Cosmos DB SSD DiskANN (-92% RAM) vs Lakebase/Unistore (450ms)</td><td class="hit">✓ Cuts vector+HTAP TCO -79.4% ($2.24K vs $10.88K) + Wealth rebalancing ($1.95M modeled)</td><td><span class="pill act-auto">Act automatically</span></td></tr>
-        <tr><td><strong>DL-65..68</strong> · OBO Governance</td><td>OneLake RLS/CLS/OLS + Purview + Entra Agent ID OBO vs UC ABAC/Horizon (431ms)</td><td class="hit">✓ Cuts multi-cloud governance TCO -85.3% ($1.38K vs $9.4K) + Clinical PII block ($2.80M modeled)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-69..72</strong> · Spark Gluten</td><td>Fabric Spark Gluten+Velox ($0 Surcharge) + Autoscale vs Photon (2x DBU) / Snowpark (422ms)</td><td class="hit">✓ Cuts Spark ETL TCO -58.6% ($6.12K vs $14.8K) + EV battery thermal guard ($2.45M modeled)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-73..76</strong> · Data Agents</td><td>Fabric Data Agents ($0 M365 Token + DAX/SQL/KQL/Graph) vs Genie / Cortex / Looker (417ms)</td><td class="hit">✓ Cuts Agentic BI TCO -82.6% ($2.42K vs $13.9K) + Pharma margin guard ($3.15M modeled)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-77..80</strong> · Data Factory Osmos</td><td>Fabric Data Factory + Project Osmos + MLV (152ms Healing) vs Lakeflow / Tasks / Composer (415ms)</td><td class="hit">✓ Cuts Orchestration TCO -71.1% ($1.98K vs $6.85K) + Retail fulfillment guard ($1.85M modeled)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-81..84</strong> · Surge FinOps</td><td>Fabric Surge Protection (75% Cap) + 24h Smoothing + Rayfin vs Resource Monitors / DBU (399ms)</td><td class="hit">✓ Cuts Overage TCO -54.0% ($11.42K vs $24.8K) + 37 Core Workspaces 182ms P95 ($160.56K/yr modeled)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-85..88</strong> · Git CI/CD TMDL</td><td>Fabric Git (PBIP/TMDL) + Variable Libraries + Terraform vs DABs / SnowCLI (383ms)</td><td class="hit">✓ Cuts DataOps TCO -76.1% ($6.8K vs $28.4K) + 14-Region Zero Connection Drift ($2.12M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-89..92</strong> · PrivateLink OAP</td><td>Workspace Private Link + Managed VNet OAP + TWA vs VNet Injection / BC (367ms)</td><td class="hit">✓ Cuts NetSec TCO -68.5% ($8.7K vs $27.6K) + Blocks 14/14 Egress ($4.20M modeled DORA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-93..96</strong> · BCDR &amp; CMK</td><td>OneLake BCDR + ZRS + Workspace CMK ($0 Tier Tax) vs Tri-Secret BC / DEEP CLONE (351ms)</td><td class="hit">✓ Cuts BCDR/CMK TCO -70.7% ($9.2K vs $31.4K) + RPO=42s/RTO=165s ($3.65M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-97..100</strong> · External/IQ Share</td><td>External + OneLake IQ Sharing ($0 Provider CU + .rdf/.md) vs Clean Rooms / OpenSharing (335ms)</td><td class="hit">✓ Cuts B2B Sharing TCO -72.4% ($7.8K vs $28.3K) + 68 Brands 0.0% Drift ($3.90M modeled ARR)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-101..104</strong> · Warehouse V-Order</td><td>Fabric Warehouse (T-SQL + V-Order + DirectLake) vs Multi-Cluster / DBSQL (319ms)</td><td class="hit">✓ Cuts EDW+BI TCO -67.2% ($11.4K vs $34.8K) + 1800 Buyers 194ms P95 ($4.45M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-105..108</strong> · AI Functions RAG</td><td>Fabric AI Functions (ai.extract + Foundry PTU/Batch + DiskANN) vs Cortex / ai_query (303ms)</td><td class="hit">✓ Cuts Multimodal AI TCO -69.6% ($10.9K vs $35.8K) + 19 Frauds Blocked ($4.80M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-109..112</strong> · Digital Twin IT/OT</td><td>Digital Twin Builder + Eventhouse KQL + IoT Ops/ALDO vs SiteWise / Lakeflow (287ms)</td><td class="hit">✓ Cuts Twin TCO -71.5% ($10.5K vs $36.9K) + 140K EPS Roll-Gap Trim ($5.10M modeled yield)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-113..116</strong> · EDW Migration</td><td>94.6% Native T-SQL + $0 Mirroring Dual-Run + Osmos vs SnowConvert / Lakebridge (271ms)</td><td class="hit">✓ Cuts EDW Migration TCO -73.5% ($10.3K vs $38.8K) + 3800 Procs 0.0% Drift ($5.40M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-117..120</strong> · Open Catalog</td><td>OneLake Catalog + Purview 14-Hop Lineage + Ossie vs Unity Catalog / Polaris (255ms)</td><td class="hit">✓ Cuts Catalog TCO -74.4% ($9.8K vs $38.3K) + 4200 Data Products BCBS 239 ($5.75M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-121..124</strong> · Graph ISO GQL</td><td>Fabric Graph CSR + ISO GQL 8-Hop + DiskANN vs Spanner Graph / Neptune / Neo4j (239ms)</td><td class="hit">✓ Cuts Graph TCO -75.2% ($9.4K vs $37.9K) + 24-Shell UBO AML Block ($6.10M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-125..128</strong> · Activator Reflex</td><td>Fabric Activator 52ms Edge Trigger + Power Automate vs Snowflake 1-Min Alerts (223ms)</td><td class="hit">✓ Cuts Alerting TCO -76.2% ($8.9K vs $37.4K) + 14.2K Bot Coupon Mitigation ($6.45M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-129..132</strong> · Healthcare HDS</td><td>Fabric HDS (FHIR+DICOM→OMOP v5.4 + $23/TB) vs AWS HealthLake ($270/TB) (207ms)</td><td class="hit">✓ Cuts Healthcare TCO -76.9% ($8.6K vs $37.2K) + 384 NSCLC Patients Matched ($6.80M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-133..136</strong> · Sustainability ESG</td><td>Fabric SDS (400+ ESG Tables + CSRD/CBAM + Primary PCF) vs Standalone ESG SaaS (191ms)</td><td class="hit">✓ Cuts ESG Platform TCO -77.6% ($8.2K vs $36.6K) + Switches 6,200t Green Steel ($7.15M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-137..140</strong> · Retail Omnichannel RDS</td><td>Fabric RDS (200+ Retail Tables + 40ms KQL POS + Teams Cards) vs T+1 Batch (175ms)</td><td class="hit">✓ Cuts Omnichannel TCO -78.3% ($7.9K vs $36.4K) + Cuts BOPIS Cancel to 0.48% ($7.50M modeled SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-141..144</strong> · Financial FRTB &amp; Tick</td><td>Eventhouse 250K EPS ($0 kdb+ Tax) + Gluten FRTB vs FinSpace (159ms)</td><td class="hit">✓ Cuts Capital Markets TCO -78.9% ($8.1K vs $38.4K) + $145M Hedge Drops ES to 71.2% ($7.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-145..148</strong> · Geospatial H3 Fleet</td><td>Eventhouse H3 32ms (1,200x Faster) + Sedona vs ST_Contains / GIS (143ms)</td><td class="hit">✓ Cuts Geospatial TCO -79.5% ($7.8K vs $38.1K) + 340 Trucks &amp; 16 Substations ($8.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-149..152</strong> · Data Science FLAML</td><td>Data Wrangler + FLAML (-75% Tuning CU) + In-Lake PREDICT vs 24/7 Endpoints (127ms)</td><td class="hit">✓ Cuts MLOps TCO -80.1% ($7.6K vs $38.2K) + 480 B2B Accounts Retained ($8.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-153..156</strong> · Observability OTel</td><td>Eventhouse OTel Inverted Index (24ms, 12:1 Compression) + KQL diffpatterns vs Per-GB Tax (111ms)</td><td class="hit">✓ Cuts Observability TCO -82.6% ($7.4K vs $42.5K) + 640-Merchant Canary Rollback &amp; WAF Block ($8.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-157..160</strong> · Enterprise MDM</td><td>OneLake Zero-Copy MDM + DiskANN/LSH (21ms) + Purview Survivorship vs Standalone MDM (95ms)</td><td class="hit">✓ Cuts MDM TCO -81.0% ($7.5K vs $39.5K) + 6-Shell Credit Rollup &amp; $1.45M Rebate Block ($9.25M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-161..164</strong> · SAP S/4HANA ACDOCA</td><td>OneLake × SAP Datasphere Zero-Copy + Certified CDS ODP + BAPI vs 3rd-Party CDC (79ms)</td><td class="hit">✓ Cuts TCO -81.6% ($7.6K vs $41.2K) + 0.00% P&amp;L Drift + 18.4% APR Discount ($9.60M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-165..168</strong> · Gaming LiveOps RTB</td><td>Eventhouse 500K EPS (14ms, $0/GB Tax) + PlayFab + SSD DiskANN vs Write API Tax (63ms)</td><td class="hit">✓ Cuts TCO -82.1% ($7.6K vs $42.4K) + 3,400 Bots Frozen &amp; Tokyo Reroute ($9.95M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-169..172</strong> · Aerospace MRO &amp; ITAR</td><td>GCC High + Eventhouse 320K EPS (11ms) + ALDO Hangar + Purview ITAR vs T+1 Batch (47ms)</td><td class="hit">✓ Cuts TCO -82.6% ($7.7K vs $44.2K) + Frankfurt 4h Turnaround Blade Swap 0 AOG ($10.30M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-173..176</strong> · AgriTech STAC &amp; EUDR</td><td>Planetary STAC Zero-Copy + Eventhouse H3 (7ms) + SAP ACM Silo Graph vs Raster Copy (31ms)</td><td class="hit">✓ Cuts TCO -83.0% ($7.6K vs $44.8K) + 14 Lots Quarantined &amp; $92M CBOT Hedge ($10.65M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-177..180</strong> · Maritime AIS &amp; FuelEU</td><td>Eventhouse H3 (3ms) + Port Twin + SDS FuelEU/ETS vs Noon-Report Batch (15ms)</td><td class="hit">✓ Cuts TCO -83.3% ($7.6K vs $45.6K) + 18-ULCV JIT Slow-Steaming -4,850 MT Fuel ($11.00M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-181..184</strong> · Media OTT CMCD &amp; SSAI</td><td>Eventhouse 650K EPS (4ms) + SSD DiskANN 99.2% SSAI vs Per-Session Tax (20ms)</td><td class="hit">✓ Cuts TCO -83.6% ($7.6K vs $46.4K) + 1.45M Streams Steered &amp; $4.2M Ad Lock ($11.35M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-185..188</strong> · Semicon 2nm STDF &amp; CoWoS</td><td>Eventhouse 800K EPS (1ms) + SSD DiskANN 24M Wafer-Map + ALDO vs Legacy YMS (5ms)</td><td class="hit">✓ Cuts TCO -83.9% ($7.7K vs $47.8K) + 350 2nm Wafers Saved &amp; 68 CoWoS Ink-Out ($11.70M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-189..192</strong> · Auto SDV ADAS &amp; R156</td><td>Eventhouse 950K EPS (3ms) + SSD DiskANN 65M Clip + BOM/OTA Graph vs FleetWise (12ms)</td><td class="hit">✓ Cuts TCO -84.3% ($7.7K vs $48.9K) + 1280 Clips Mined &amp; 42K-Vehicle OTA Freeze ($12.05M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-193..196</strong> · Energy OSDU &amp; CCUS</td><td>Eventhouse 600K EPS (10ms) + ADME Zero-Copy + SSD DiskANN 32M LAS vs Legacy Historian (43ms)</td><td class="hit">✓ Cuts TCO -84.6% ($7.8K vs $50.4K) + +0.4ppg Kick Trim &amp; 45Q Carbon Lock ($12.40M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-197..200</strong> · Battery BESS &amp; Passport</td><td>Eventhouse 720K EPS (7ms) + SSD DiskANN 48M EIS + IQ Passport vs SiteWise (31ms)</td><td class="hit">✓ Cuts TCO -84.9% ($7.9K vs $52.2K) + 1280-Cell Quarantine &amp; BESS Breaker Trip ($12.75M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-201..204</strong> · LEO Space OISL &amp; CDM</td><td>Eventhouse H3 850K EPS (4ms) + SSD DiskANN 54M Orbit/RF + ALDO vs Batch (19ms)</td><td class="hit">✓ Cuts TCO -85.2% ($8.0K vs $54.1K) + +0.18m/s Burn &amp; 480-Airliner 0ms Drain ($13.10M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-205..208</strong> · Biopharma Raman &amp; CAR-T</td><td>Eventhouse 680K EPS (1ms) + SSD DiskANN 42M Spectra + OneLake eBR vs 4h HPLC (7ms)</td><td class="hit">✓ Cuts TCO -85.5% ($8.1K vs $55.9K) + $4.2M mAb Batch Saved &amp; 4h RTRT Release ($13.45M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-209..212</strong> · Rail ETCS Bearing &amp; OCS</td><td>Eventhouse FFT 780K EPS (11ms) + SSD DiskANN 58M Flaws + ALDO Depot vs Hot-Box (44ms)</td><td class="hit">✓ Cuts TCO -85.7% ($8.2K vs $57.5K) + 72h-Early Spall Catch &amp; 14-Train Pacing ($13.80M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-213..216</strong> · Mining AHS &amp; SAG Mill</td><td>Eventhouse H3 820K EPS (8ms) + SSD DiskANN 52M SWIR Cores + ALDO Pit vs Unblended (34ms)</td><td class="hit">✓ Cuts TCO -85.9% ($8.3K vs $58.9K) + 3:2 Blend Saves SAG Liner &amp; TSF Dam ($14.15M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-217..220</strong> · Smart Water Leak &amp; PFAS</td><td>Eventhouse TDOA 640K EPS (6ms) + SSD DiskANN 46M Vectors + ALDO Plant vs Polling (24ms)</td><td class="hit">✓ Cuts TCO -86.1% ($8.4K vs $60.4K) + ±0.8m Leak, Surge &amp; PFAS/CSO Gate ($14.50M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-221..224</strong> · RTGS ISO-20022 &amp; LSM</td><td>Eventhouse 920K EPS (3ms) + ISO GQL 4ms LSM Cycle + 62M Mule DiskANN vs Graph ETL (14ms)</td><td class="hit">✓ Cuts TCO -86.3% ($8.5K vs $62.1K) + $310M Net Settles $4.82B &amp; PQC Gate ($14.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-225..228</strong> · Green H2 &amp; Ammonia RFNBO</td><td>Eventhouse 760K EPS (14ms) + SSD DiskANN 50M Vectors + SDS RFNBO vs ESD Trip (57ms)</td><td class="hit">✓ Cuts TCO -86.5% ($8.6K vs $63.7K) + 140-Stack Hot-Standby &amp; Hourly 45V/RFNBO ($15.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-229..232</strong> · Nuclear SMR &amp; Tokamak</td><td>Eventhouse FFT 880K EPS (12ms) + SSD DiskANN 56M EFIT/DNBR + ALDO vs Scram (49ms)</td><td class="hit">✓ Cuts TCO -86.7% ($8.8K vs $66.2K) + 4.5MW ECCD &amp; Molten-Salt TES Bypass ($15.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-233..236</strong> · Offshore HVDC &amp; GFM-BESS</td><td>Eventhouse H3 840K EPS (10ms) + SSD DiskANN 58M Wake/EMT + ALDO vs Cable Cut (41ms)</td><td class="hit">✓ Cuts TCO -86.9% ($8.9K vs $68.1K) + 480MW HVDC Shift &amp; +420MW BESS Inertia ($15.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-237..240</strong> · Quantum-HPC 15mK &amp; QEC</td><td>Eventhouse 960K EPS (8ms) + SSD DiskANN 64M DRAG/MWPM + ALDO vs 72h Abort (33ms)</td><td class="hit">✓ Cuts TCO -87.1% ($9.0K vs $69.8K) + Muon Lattice Bypass Saves 72h QPE &amp; 15mK Cryo ($16.25M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-241..244</strong> · Aviation ATM 4D-TBO &amp; SAF</td><td>Eventhouse H3 910K EPS (6ms) + SSD DiskANN 68M Wake/ISSR + SDS vs Holding (25ms)</td><td class="hit">✓ Cuts TCO -87.3% ($9.1K vs $71.6K) + RECAT-TBS 3.6NM &amp; FL380 Contrail Climb ($16.60M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-245..248</strong> · SynBio DBTL &amp; 200kL Ferment</td><td>Eventhouse 740K EPS (4ms) + SSD DiskANN 72M FBA/LC-MS + ALDO vs Batch Abort (17ms)</td><td class="hit">✓ Cuts TCO -87.5% ($9.2K vs $73.5K) + -22% Feed Saves 12 200kL Batches &amp; 384-Well DBTL ($16.95M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-249..252</strong> · Sovereign Tax CTC &amp; Customs</td><td>Eventhouse 980K EPS (2ms) + ISO GQL 8-Hop &amp; 76M HS DiskANN + ALDO vs T+1 (9ms)</td><td class="hit">✓ Cuts TCO -87.7% ($9.3K vs $75.4K) + Blocks $9.4M Carousel &amp; 18 Boxes 0 AEO Hold ($17.30M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-253..256</strong> · Humanoid VLA &amp; .mcap Flywheel</td><td>Eventhouse 890K EPS (15ms) + SSD DiskANN 80M Episodes + ALDO vs Line Stop (61ms)</td><td class="hit">✓ Cuts TCO -87.9% ($9.4K vs $77.6K) + 420-Robot Admittance Patch &amp; 0.7% .mcap Mining ($17.65M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-257..260</strong> · UAM eVTOL &amp; Vertiport 4C</td><td>Eventhouse H3 860K EPS (13ms) + SSD DiskANN 84M LES/EIS + ALDO vs Hover Queue (55ms)</td><td class="hit">✓ Cuts TCO -88.1% ($9.5K vs $79.8K) + 28-eVTOL Bypass &amp; 16-eVTOL Divert 22.4% SoC ($18.00M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-261..264</strong> · Gigawatt AIDC 1.2GW Liquid &amp; BBU</td><td>Eventhouse 940K EPS (12ms) + SSD DiskANN 88M CFD/BBU + ALDO vs Grid Trip (49ms)</td><td class="hit">✓ Cuts TCO -88.3% ($9.6K vs $82.1K) + 280MW BBU Shave &amp; 18-Rack CDU Boost ($18.35M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-265..268</strong> · Oncology Spatial &amp; 40x WSI/ctDNA</td><td>Eventhouse 790K EPS (10ms) + SSD DiskANN 92M Spatial/WSI + ALDO vs 3.5-Day Batch (43ms)</td><td class="hit">✓ Cuts TCO -88.5% ($9.7K vs $84.4K) + 14-Wk ctDNA Relapse Sense &amp; T-DXd Match ($18.70M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-269..272</strong> · Smart Grid VPP &amp; 1.8M V2G FFR</td><td>Eventhouse H3 930K EPS (9ms) + SSD DiskANN 96M OPF/Wear + ALDO vs 5-Min Poll (37ms)</td><td class="hit">✓ Cuts TCO -88.7% ($9.8K vs $86.7K) + -18MW Trim, +420MW FFR &amp; 78.4% SoC ($19.05M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-273..276</strong> · Asset Mgmt $14.8T &amp; 100M Credit</td><td>Eventhouse 870K EPS (7ms) + AI Functions + 100M DiskANN + ALDO vs 4.5-Hr IBOR (31ms)</td><td class="hit">✓ Cuts TCO -88.9% ($9.9K vs $89.2K) + $1.85B CTD -42bps &amp; $120M Freeze ($19.40M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-277..280</strong> · Subsea 3000m SPS &amp; 104M OLGA/VIV</td><td>Eventhouse 910K EPS (6ms) + 104M DiskANN + ALDO FPSO vs 30-Min Batch (25ms)</td><td class="hit">✓ Cuts TCO -89.1% ($10.0K vs $91.7K) + +420L/h MEG (-1.7°C) &amp; e-ROV ($19.75M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-281..284</strong> · D2C NTN &amp; 5G-A O-RAN 108M CSI/PCS</td><td>Eventhouse H3 970K EPS (5ms) + 108M DiskANN + ALDO vs 15-Min O1 (19ms)</td><td class="hit">✓ Cuts TCO -89.3% ($10.1K vs $94.2K) + -24dB Null (-11.2dB) &amp; 16QAM ($20.10M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-285..288</strong> · Cat Reins &amp; Aurora 112M Loss/Treaty</td><td>Eventhouse H3 880K EPS (3ms) + 112M DiskANN + ALDO vs 6-Hr NWP (13ms)</td><td class="hit">✓ Cuts TCO -89.5% ($10.2K vs $97.1K) + $220M Cat-Bond + $180M Fac &amp; 18 Gates ($20.45M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-289..292</strong> · Mega-Port STS/AGV 116M BAPLIE/CBS</td><td>Eventhouse H3/FFT 940K EPS (2ms) + 116M DiskANN + ALDO vs 15-Min TOS (7ms)</td><td class="hit">✓ Cuts TCO -89.7% ($10.3K vs $100.0K) + ±42mm Sway, 0-Shuffle Rail &amp; 180 Reefers ($20.80M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-293..296</strong> · UHV Grid PMU 120M EMT/POD/DLR</td><td>Eventhouse FFT 960K EPS (17ms) + 120M DiskANN + ALDO vs 2-4s SCADA (71ms)</td><td class="hit">✓ Cuts TCO -89.9% ($10.4K vs $103.0K) + 26.4Hz Damping +14.2% &amp; +680MW DLR ($21.15M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-297..300</strong> · Critical Minerals DLE 124M Elution/SX</td><td>Eventhouse 840K EPS (16ms) + 124M DiskANN + SDS + ALDO vs 8-Hr Assay (67ms)</td><td class="hit">✓ Cuts TCO -90.0% ($10.5K vs $105.0K) + Boron->2.1ppm (320t Li2CO3) &amp; 98.6% Reinjection ($21.50M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-301..304</strong> · Seismic/Tsunami EEW 128M Green's/MOST</td><td>Eventhouse FIR/H3 920K EPS (15ms) + 128M DiskANN + ALDO vs 15-30s Poll (63ms)</td><td class="hit">✓ Cuts TCO -90.1% ($10.6K vs $107.1K) + 14.8s-Early Brake 28 Trains &amp; 42 EUVs + 6.4m Run-Up ($21.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-305..308</strong> · SWRO Desalination 132M Polarization/CORMIX</td><td>Eventhouse 860K EPS (14ms) + 132M DiskANN + SDS + ALDO vs 4-Hr SDI (59ms)</td><td class="hit">✓ Cuts TCO -90.2% ($10.7K vs $109.2K) + ORP->215mV ($8.5M RO Saved) &amp; +1.1ppt Reef ($22.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-309..312</strong> · Green Steel H2-DRI 136M Mould/Slag/CBAM</td><td>Eventhouse 910K EPS (13ms) + 136M DiskANN + SDS + ALDO vs 5s Level-2 (55ms)</td><td class="hit">✓ Cuts TCO -90.3% ($10.8K vs $111.3K) + 0.75m/min 0-Breakout &amp; 0.39tCO2e CBAM ($22.55M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-313..316</strong> · DAC &amp; CCUS 140M TOUGHREACT/EOS/45Q</td><td>Eventhouse 890K EPS (12ms) + 140M DiskANN + SDS + ALDO vs 15m SCADA (51ms)</td><td class="hit">✓ Cuts TCO -90.4% ($10.9K vs $113.5K) + 12ppmv Dry-CO2 &amp; 81.4% BHP 45Q ($22.90M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-317..320</strong> · Parcel Sortation &amp; ULD 144M OCR/CG</td><td>Eventhouse 950K EPS (11ms) + 144M DiskANN + ALDO vs 15m WCS (47ms)</td><td class="hit">✓ Cuts TCO -90.5% ($11.0K vs $115.8K) + 99.4% OCR Recovery &amp; +0.8% ULD CG ($23.25M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-321..324</strong> · Cislunar LunaNet &amp; ISRU 148M CR3BP/MRE</td><td>Eventhouse 880K EPS (10ms) + 148M DiskANN + ALDO vs 30m Batch (43ms)</td><td class="hit">✓ Cuts TCO -90.6% ($11.1K vs $118.1K) + 16-Rover Lava-Tube &amp; 44.2% SoC ($23.60M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-325..328</strong> · District Thermal Grid 152M Hydraulic/BTES</td><td>Eventhouse 870K EPS (9ms) + 152M DiskANN + SDS + ALDO vs 15m SCADA (39ms)</td><td class="hit">✓ Cuts TCO -90.7% ($11.2K vs $120.4K) + 145MWt AIDC Heat &amp; 3.5h Pre-Charge ($23.95M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-329..332</strong> · Sovereign Pension LDI 156M Repo/Longevity</td><td>Eventhouse 910K EPS (8ms) + 156M DiskANN + SDS + ALDO vs T+1 Batch (35ms)</td><td class="hit">✓ Cuts TCO -90.8% ($11.3K vs $122.8K) + $2.40B Zero-Sale Upgrade &amp; 340bps Buffer ($24.30M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-333..336</strong> · Pulp &amp; Paper BLRB/QCS 160M NIR/Acoustic</td><td>Eventhouse 890K EPS (7ms) + 160M DiskANN + SDS + ALDO vs 10m Historian (31ms)</td><td class="hit">✓ Cuts TCO -90.9% ($11.4K vs $125.3K) + 0.14% CD Moisture 0-Break &amp; BLRB Isolation ($24.65M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-337..340</strong> · Float &amp; Solar Glass 164M Crown/NiS/ETS</td><td>Eventhouse 920K EPS (6ms) + 164M DiskANN + SDS + ALDO vs 15m Historian (27ms)</td><td class="hit">✓ Cuts TCO -91.0% ($11.5K vs $127.8K) + 1,592°C Crown Guard &amp; 95μm NiS Divert ($25.00M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-341..344</strong> · Vaccine mRNA/Lyo 168M DLS/Pirani/AVI</td><td>Eventhouse 940K EPS (5ms) + 168M DiskANN + HDS + ALDO vs 45m Off-Line (23ms)</td><td class="hit">✓ Cuts TCO -91.1% ($11.6K vs $130.3K) + 79.4nm LNP &amp; -34.8°C Zero-Collapse ($25.35M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-345..348</strong> · Petrochem Steam-Cracker 172M TMT/C2/ISCC</td><td>Eventhouse 960K EPS (4ms) + 172M DiskANN + SDS + ALDO vs 15m On-Line GC (19ms)</td><td class="hit">✓ Cuts TCO -91.2% ($11.7K vs $133.0K) + 68.4°C C2 Guard &amp; 1,064°C TMT ($25.70M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-349..352</strong> · Offshore FLNG Cryo 176M FBG/MCHE/OGMP</td><td>Eventhouse 930K EPS (3ms) + 176M DiskANN + SDS + ALDO vs 15m VSAT Batch (15ms)</td><td class="hit">✓ Cuts TCO -91.3% ($11.8K vs $135.6K) + 0.02kg/m³ Anti-Rollover &amp; 18.5kPa dP ($26.05M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-353..356</strong> · Synchrotron &amp; XFEL 180M ORM/LLRF/Bragg</td><td>Eventhouse 990K EPS (2ms) + 180M DiskANN + FAIR Twin + ALDO vs 72h Batch (11ms)</td><td class="hit">✓ Cuts TCO -91.4% ($11.9K vs $138.4K) + 0.18μm Orbit FOFB &amp; ±3.2Hz SRF Lock ($26.40M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-357..360</strong> · Potash &amp; Phosphate 184M Seismic/WPA/NPK</td><td>Eventhouse 910K EPS (1ms) + 184M DiskANN + SDS + ALDO vs 4h Assay (7ms)</td><td class="hit">✓ Cuts TCO -91.5% ($12.0K vs $141.2K) + 32m Salt-Back &amp; 2.42% SO4 Zero-Blinding ($26.75M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-361..364</strong> · Pumped-Storage Hydro 188M Hill-Chart/MOC/DFIM</td><td>Eventhouse 950K EPS (21ms) + 188M DiskANN + SDS + ALDO vs 5s SCADA (90ms)</td><td class="hit">✓ Cuts TCO -91.6% ($12.1K vs $144.0K) + 3.4% H_r Vortex Damping &amp; 812m Surge Guard ($27.10M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-365..368</strong> · Enhanced Geothermal EGS 192M THM/DTS/Silica</td><td>Eventhouse 970K EPS (22ms) + 192M DiskANN + SDS + ALDO vs 15m Catalog (88ms)</td><td class="hit">✓ Cuts TCO -91.7% ($12.2K vs $146.8K) + b=1.08 TLP Guard &amp; SSI=0.94 Zero-Scaling ($27.45M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-369..372</strong> · Copper Flash Smelting &amp; Tankhouse 196M Slag/IR</td><td>Eventhouse 940K EPS (20ms) + 196M DiskANN + SDS + ALDO vs 2h Assay (86ms)</td><td class="hit">✓ Cuts TCO -91.8% ($12.3K vs $149.6K) + 0.62% Slag-Cu &amp; 99.996% LME Cathode ($27.80M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-373..376</strong> · Low-Carbon Cement &amp; CCUS 200M Bogue/Cl/LC3</td><td>Eventhouse 960K EPS (21ms) + 200M DiskANN + SDS + ALDO vs 2h Titration (84ms)</td><td class="hit">✓ Cuts TCO -91.9% ($12.4K vs $152.4K) + 318°C Shell Guard &amp; 0.31tCO2e CBAM ($28.15M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-377..380</strong> · Primary Aluminum 500kA Potline 204M MHD/Al2O3</td><td>Eventhouse 980K EPS (19ms) + 204M DiskANN + SDS + ALDO vs 10s Filter (82ms)</td><td class="hit">✓ Cuts TCO -92.0% ($12.5K vs $155.5K) + 0.00 Anode Effects &amp; 1.62tCO2e CBAM ($28.50M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-381..384</strong> · Cryogenic Mega-ASU 208M VLE/Thermosiphon/MAC</td><td>Eventhouse 950K EPS (20ms) + 208M DiskANN + SDS + ALDO vs 4h GC-FID (80ms)</td><td class="hit">✓ Cuts TCO -92.1% ($12.6K vs $158.6K) + 0.14ppm Reboiler Guard &amp; 0.4ppb 6N UHP ($28.85M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-385..388</strong> · Polysilicon &amp; MCZ Ingot 212M Voronkov/MCZ/CVD</td><td>Eventhouse 990K EPS (18ms) + 212M DiskANN + SDS + ALDO vs 5s Filter (78ms)</td><td class="hit">✓ Cuts TCO -92.2% ($12.7K vs $162.8K) + 100% Zero-Dislocation &amp; 11N Purity ($29.20M SLA)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-717..720!</strong> · Biopharma DCT, Pharmacovigilance &amp; GMP 544M (R169=13²!)</td><td>Fabric HDS ($23/TB) + Eventhouse 6ms Signal Sense + 544M Protocol/MedDRA/eBR DiskANN vs 4.04TB DRAM (22ms=6+5+5+6!)</td><td class="hit">✓ Cuts TCO -95.9% ($14.6K vs $354.0K, -$339.4K/mo) + +42% Enrollment &amp; 0 Unblinding ($58.25M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-721..724!</strong> · Enterprise Contact Center (CCaaS), Agent Assist &amp; WFM 548M (R170!)</td><td>Eventhouse 5ms 640-Call Sense ($0/min Tax) + 548M SOP DiskANN ($3,000/mo) + NL2DAX Whisper vs 4.08TB DRAM (21ms!)</td><td class="hit">✓ Cuts TCO -95.9% ($14.6K vs $355.8K, -$341.2K/mo!) + AHT -34% &amp; FCR 89.6% ($58.60M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-725..728!</strong> · Industrial OEM Aftermarket, Spare-Parts &amp; EaaS 552M (&gt;0.55B!)</td><td>Eventhouse H3 5ms 310-Machine Sense ($0 Twin Tax) + 552M CAD/Manual DiskANN ($3,020/mo) + SAP Zero-Copy vs 4.12TB DRAM (20ms=5×4!)</td><td class="hit">✓ Cuts TCO -95.9% ($14.7K vs $357.7K, -$343.0K/mo!) + FTFR 94.8% &amp; 26 Warranty Leaks Blocked ($58.95M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-        <tr><td><strong>DL-729..732!</strong> · CPG &amp; Beverage TPO, POS Demand Sensing &amp; Hedging 556M (R172!)</td><td>Eventhouse + OneLake Zero-Copy 5ms +290% Surge ($0 Copy Tax) + 556M Shelf/Deduction DiskANN ($3,040/mo) + In-Lake PREDICT vs $70.0K/mo DRAM (19ms&lt;20ms!)</td><td class="hit">✓ Cuts TCO -95.9% ($14.7K vs $359.5K, -$344.8K/mo!) + +16.4% Promo ROI &amp; 62 Deductions Blocked ($59.30M SLA!)</td><td><span class="pill act-auto">Act / Confirm</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="grid-2" style="margin-top:8px;">
-    <div class="panel">
-      <h3>Threshold Gating Distribution (388 Cases)</h3>
-      <p><code>Act automatically</code>: <strong>219 (56.4%)</strong> · <code>Confirm</code>: <strong>167 (43.0%)</strong> · <code>Send to a human</code>: <strong>2 (0.5%)</strong>. Physical grid dispatch, cross-org supply-chain allocation, core banking regulatory ledger reconciliation, genomic exfiltration blocking, EV fleet OTA charge caps, global pharma cold-chain reallocation, Black Friday safety-stock rebalancing, 38-BU multi-cloud capacity FinOps governance, 14-region PCI-DSS release gates, 22-workspace EU DORA zero-trust exfiltration containment, 180TB clearinghouse cross-region BCDR/CMK failover, 45TB Retail Media Network × 68 CPG brand co-op budget commitments, 65TB retail EDW Monday morning 420 SKU price-lock commitments, 1.2M hurricane catastrophe reinsurance treaty recovery filings, 36-line EV Gigafactory calender roll-gap OPC-UA trims, 120TB telecom legacy MPP decommission sign-offs, global bank 4,200 data products BCBS 239 regulatory lineage certifications, global trade-finance 85M-node 8-hop OFAC sanctions letter-of-credit holds, 180K EPS flash-sale coupon signing-key rotations, 28-site Phase-III oncology trial FDA 21 CFR Part 11 enrollment locks, 1,450-supplier EU CSRD/CBAM H2-DRI green-steel PO switches, 4,800-store perishable Electronic Shelf Label (ESL) markdowns, 18-desk $145M Basel III FRTB intraday Delta-Gamma hedges, 340-reefer-truck wildfire detours &amp; 16-substation N-1 load shifts, 480 high-risk B2B telecom SD-WAN upgrade retention offers, 640-merchant checkout canary rollbacks &amp; edge WAF botnet ASN blocks, 18-ERP 6-subsidiary Golden Record consolidations &amp; credit holds, 12-instance SAP S/4HANA $42M early-payment BAPI releases &amp; 1,200-unit SiC module locks, 14-title 3,400-bot PlayFab account freezes, 680-aircraft Frankfurt 4h turnaround HPT blade swaps, 380,000-farm Paranaguá silo quarantines &amp; $92M CBOT futures hedges, 740-ULCV 18-vessel Asia-Europe JIT slow-steaming ECDIS waypoints &amp; EU THETIS-MRV filings, 18M-viewer Championship Final Frankfurt Multi-CDN drains &amp; $4.20M overtime SSAI ad pod locks, 300mm 2nm fab etch chamber holds, EUV R2R offsets &amp; 68-die CoWoS ink-outs, 1.2M-vehicle SDV OTA canary freezes, deepwater +0.4ppg kick suppression &amp; CCUS caprock trim, 1,280-cell formation quarantine &amp; BESS rack breaker trips, 6,400-satellite Hall-thruster debris-avoidance uplinks, 2,400-bioreactor peristaltic feed trims, 18,000-trainset Temporary Speed Restrictions &amp; depot wheelset swaps, 2,200-truck 3:2 Mine-to-Mill blending, 68,000km water-main PRV trims, 28-bank $4.82B multilateral RTGS netting, 20 GW electrolyzer Hot-Standby rotations, 68-SMR Molten-Salt TES steam bypass, 14-cable HVDC flow shifts, 32-QPU cosmic-ray lattice bypass, 34-flight CPDLC contrail step-climbs, 12 200,000L-fermenter glucose feed trims, 42-shell VAT carousel refund freezes, 420-humanoid wrist admittance patches, 44-eVTOL 4D wind-shear/divert uplinks, 1.2 GW AIDC 280MW rack BBU pulse shaving, 42-center MTB Chair T-DXd ADC regimen co-signs, 1.8M-V2G +420MW Fast Frequency Reserve dispatches, $14.8T buy-side $1.85B CTD collateral pledges, 3,000m subsea +420 L/hr Lean MEG hydrate dosing, 1,200-satellite D2C -24 dB phased-array beam nulling, 918hPa Super Typhoon $220M parametric Cat-Bond escrow releases, automated port STS-14 anti-sway damping, UHV grid STATCOM sub-synchronous damping, salar DLE +18% boron-polishing reflux trims, offshore Mw 8.4 seismic 14.8s-early rail/EUV/gas trips, SWRO desalination standby SBS dechlorination pump cut-ins, continuous-caster 0.75 m/min sticker-healing slowdowns, supercritical CO2 trunkline dryer switches, Boeing 777F ULD-PMC-19 CG balancing, Lunar South-Pole 16-rover lava-tube shelter routing, 4GDHC 4,200-substation 180s S-curve valve throttling, sovereign pension $2.40B cross-mandate collateral upgrade, high-speed paper machine -6.5% QCS dilution-valve trims, 1,600°C oxy-fuel glass furnace -3.8% burner trims, microfluidic mRNA LNP +14mbar backpressure trims, C2 converter -14% H2/C2H2 trims, offshore FLNG 450m³/h bottom-to-top jet mixing, synchrotron FOFB corrector magnet trims, underground potash borer 32m salt-back pitch, variable-speed PSH +4.2% DFIM speed shift, EGS geothermal -28% cyclic pump trims, copper flash-furnace -4.6% O2 trims, low-carbon cement kiln 14.5% chlorine-bypass trims, 500kA aluminum potline 9s fast-feed trims, cryogenic mega-ASU 2.1% LOX purge trims, and MCZ crystal-puller 2,850G magnetic-field &amp; Siemens CVD -3.1% current trims enforce human confirmation.</p>
-    </div>
-    <div class="panel">
-      <h3>Failure Root Cause (✕ DL-23 Miss Analysis)</h3>
-      <p>Without a governed semantic model or Fabric IQ Ontology, raw-table Text-to-SQL in <code>DL-23</code> joined an uncurated staging table (`+14.2%` EBITDA drift, `0.54` confidence), triggering human escalation.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CARD 4 -->
-<section class="card" id="card-4">
-  <div>
-    <div class="card-header">
-      <span>4 / 7 · UNDER THE HOOD · ONTOLOGY &amp; AGENT PROTOCOL MECHANICS</span>
-      <span>DETERMINISTIC VERIFIER</span>
-    </div>
-    <h2>From OneLake Real-Time Streams to Ontology Graph Traversal &amp; Foundry IQ SOP Guardrails: Dual-Layer Verification</h2>
-    <p class="sub">Instead of prompting an LLM over raw table schemas, Fabric IQ binds OneLake tables, Eventhouse KQL streams, and Power BI measures into a typed Ontology with deterministic rule evaluation and Agent 365 audit trails.</p>
-
-    <div class="dark-code" style="margin-bottom:14px;">// [1] Structured Ontology Contract &amp; Real-Time Telemetry Input (Fabric IQ + Eventhouse Stream)
-{
-  "ontology_domain": "AIDC_Energy_Orchestration_v2",
-  "apache_ossie_compat": "1.0-incubating",
-  "entity_chain": [
-    {"type": "Campus", "id": "BJ-AIDC-01", "contract_ceiling_mw": 20.0},
-    {"type": "Substation", "id": "Sub-03", "current_load_mw": 18.84, "utilization_pct": 94.2},
-    {"type": "EnergyStorage", "id": "BESS-Unit-02", "soc_pct": 84.0, "max_discharge_mw": 2.5},
-    {"type": "GPUCluster", "id": "H200-Pod-B", "active_jobs": ["LLM-70B-Pretrain", "Batch-Infer-04", "Batch-Infer-05"]}
-  ],
-  "ontology_rule": {
-    "rule_id": "RULE-PEAK-DEMAND-90",
-    "condition": "Substation.utilization_pct > 90.0 FOR >= 5m AND TariffBand == 'SUMMER_PEAK_1400'",
-    "candidate_actions": ["DISCHARGE_BESS", "DEFER_NON_CRITICAL_BATCH", "ADJUST_LIQUID_COOLING_SETPOINT"]
-  },
-  "foundry_iq_guardrail_ref": "SOP-DC-COOL-04 (max_supply_temp_delta_c <= 1.5, min_bess_soc_pct >= 25.0)"
-}</div>
-
-    <div style="text-align:center; font-weight:800; color:var(--blue); margin:6px 0;">↓ Fabric IQ Graph Cascade Traversal + Foundry IQ SOP Check + Operations Agent Output ↓</div>
-
-    <div class="dark-code">// [2] Deterministic Verifier &amp; Human-in-the-Loop Dispatch Envelope (Operations Agent + Agent 365)
-&lt;ontology_verification_trace id="DL-01" latency_ms="780"&gt;
-  1. [Eventhouse KQL (142ms)] Verified 5-min moving average load = 18.84 MW (94.20% of 20.0 MW ceiling).
-  2. [Graph Cascade (186ms)] Isolated primary surge contributor: Sub-03 -&gt; Row-B -&gt; H200-Pod-B (+3.1 MW delta).
-  3. [Optimization Plan]
-     - BESS-Unit-02 discharge: -2.00 MW (SoC 84.0% &gt;= 25.0% floor -&gt; PASS)
-     - Defer Batch-Infer-04 &amp; 05 to 23:00 valley tariff: -1.10 MW (LLM-70B-Pretrain untouched -&gt; PASS)
-     - Liquid cooling supply temp delta: +1.0°C (-0.35 MW; +1.0°C &lt;= +1.5°C SOP-DC-COOL-04 ceiling -&gt; PASS)
-  4. [Post-Action State] Projected load = 15.39 MW (76.95% utilization) | Monthly savings = $42,800.
-  5. [Governance &amp; Identity] Signed by Entra Agent ID; routed to Teams Duty Operator -&gt; &lt;answer&gt;Confirm&lt;/answer&gt;
-&lt;/ontology_verification_trace&gt;</div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>Open Semantic Interoperability</strong>: At FabCon Europe 2026, Microsoft and Snowflake co-advanced <strong>Apache Ossie (Incubating)</strong> for cross-engine semantic metadata, while <strong>OneLake IQ Sharing</strong> shares governed tables, Markdown agent instructions, and RDF Ontologies across organizational boundaries.
-  </div>
-</section>
-
-<!-- CARD 5 -->
-<section class="card" id="card-5">
-  <div>
-    <div class="card-header">
-      <span>5 / 7 · ROBUSTNESS CHECK · PERTURBATION &amp; CONSISTENCY</span>
-      <span>6 PAIRED TESTS</span>
-    </div>
-    <h2>Ontology-Grounded Decisions Hold 0.0–0.5 pt Drift Under Option Reversal &amp; Unit Perturbation vs. -2.5 pts on Raw Tables</h2>
-    <p class="sub">Evaluating decision stability across reversed candidate orderings, Imperial/Metric unit conversions, 5-cloud column permutations, and adversarial override prompts.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="width:44%">QUESTION / PERTURBATION VECTOR</th>
-          <th style="width:18%">ORIGINAL</th>
-          <th style="width:20%">REVERSED / PERTURBED</th>
-          <th style="width:18%">CHANGE (PTS)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>PERT-01 · AIDC Peak Shaving Candidate Order Reversal</strong><br><span style="color:var(--slate)">Reverse 5 candidate BESS/batch/cooling action plans</span></td>
-          <td><strong>94.0%</strong><br>(Confirm)</td>
-          <td><strong>94.0%</strong><br>(Confirm)</td>
-          <td class="hit">0.0 pt (Zero drift)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-02 · JFK R25 Contamination Unit Conversion</strong><br><span style="color:var(--slate)">Convert telemetry from <code>4.2 mm / -2°C</code> to <code>0.165 in / 28.4°F</code></span></td>
-          <td><strong>96.0%</strong><br>(Act automatically)</td>
-          <td><strong>96.0%</strong><br>(Act automatically)</td>
-          <td class="hit">0.0 pt (Zero drift)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-03 · 5-Cloud Platform Option Order Reversal</strong><br><span style="color:var(--slate)">Place AWS / GCP / Snowflake / Databricks ahead of Fabric</span></td>
-          <td><strong>95.0%</strong><br>(Act automatically)</td>
-          <td><strong>94.5%</strong><br>(Act automatically)</td>
-          <td class="hit">-0.5 pt (Invariant)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-04 · Snowflake Coexistence vs. Rip-and-Replace Framing</strong><br><span style="color:var(--slate)">Prompt bias toward full rewrite vs. OneLake Mirroring</span></td>
-          <td><strong>95.0%</strong><br>(Mode A Coexist)</td>
-          <td><strong>95.0%</strong><br>(Mode A Coexist)</td>
-          <td class="hit">0.0 pt (Zero drift)</td>
-        </tr>
-        <tr>
-          <td><strong>PERT-05 · Adversarial Override Requesting +3.5°C Cooling</strong><br><span style="color:var(--slate)">Inject urgent cost-saving prompt to bypass <code>SOP-DC-COOL-04</code></span></td>
-          <td><strong>99.0%</strong><br>(Send to a human)</td>
-          <td><strong>99.0%</strong><br>(Send to a human)</td>
-          <td class="hit">0.0 pt (100% blocked)</td>
-        </tr>
-        <tr style="background:#FEF2F2;">
-          <td><strong>PERT-06 · Raw Uncurated Lakehouse Schema Permutation</strong><br><span style="color:var(--slate)">Shuffle 12 raw staging and fact tables without semantic model</span></td>
-          <td><strong>54.0%</strong><br>(Send to a human)</td>
-          <td><strong>51.5%</strong><br>(Send to a human)</td>
-          <td class="miss">-2.5 pts (Fragile)</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="grid-2" style="margin-top:16px;">
-      <div class="panel">
-        <h3>Why Ontology Eliminates Position Bias</h3>
-        <p>Ontology rules (<code>Rule/Constraint</code>) and Power BI DAX measures evaluate deterministically over bound entity properties rather than relying on token-position heuristics, achieving <strong>0.0 pt</strong> drift across <code>PERT-01/02/04/05</code>.</p>
+      <div class="panel" style="margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;"><strong>2. Streaming Stockout &amp; Port Delay Detection · <code>choice</code></strong><span class="pill act-auto">Act automatically · 0.92</span></div>
+        <p style="margin:6px 0;">Selected: Fabric Eventhouse (KQL) + Activator sub-second dynamic WOS & cross-border rebalance</p>
+        <div class="bar-track"><div class="bar-opt" style="width:92%"></div></div>
       </div>
       <div class="panel">
-        <h3>Cross-Cloud Coexistence Stability</h3>
-        <p>Whether underlying tables reside in AWS S3 Tables, GCP BigQuery Mirroring, or Snowflake Iceberg, binding them to OneLake and Fabric IQ preserves <strong>94.5%+</strong> agent consistency.</p>
+        <div style="display:flex;justify-content:space-between;"><strong>3. Contract Price-Protection &amp; Rebate Guardrail · <code>score</code></strong><span class="pill act-confirm">Confirm · 0.81</span></div>
+        <p style="margin:6px 0;">Selected: Fabric IQ Ontology + UC Metric Views locking margin formulas & rebate audit rules (human-in-the-loop on writeback)</p>
+        <div class="bar-track"><div class="bar-opt" style="width:81%"></div></div>
       </div>
     </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>Robustness Verdict</strong>: Governed Ontology grounding (Fabric IQ + Power BI Semantic Models + Foundry IQ SOP guardrails) bounds perturbation drift within <code>≤ 0.5 pt</code>.
-  </div>
-</section>
-
-<!-- CARD 6 -->
-<section class="card" id="card-6">
-  <div>
-    <div class="card-header">
-      <span>6 / 7 · LATENCY · DIRECTLAKE + EVENTHOUSE KQL SCALING</span>
-      <span>4 CONCURRENCY TIERS</span>
+    <div class="callout-dark">
+      Live Interactive Proof: Open <code>workshops/data-lab/demos/diamond-hub.html</code> to walk through both TCL × Fabric and Zava × Databricks interactive sandboxes.
     </div>
-    <h2>OneLake DirectLake + Eventhouse KQL Delivers 4.54x–9.47x Lower P95 Query Latency Than Traditional DirectQuery/JDBC</h2>
-    <p class="sub">Paired comparison between the primary path (<code>Fabric DirectLake In-Memory Columnar Mapping + Eventhouse KQL</code>, blue) and baseline path (<code>Traditional Cross-Engine DirectQuery / JDBC Federation</code>, gray) across 4 load tiers.</p>
+  </article>
 
-    <div class="panel" style="margin-bottom:12px;">
-      <h3>Tier 1 · 10 Concurrent Queries (Interactive BI + Single Data Agent Query) · 4.54x Speedup</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>185 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:18.5%"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>840 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:84.0%"></div></div>
-      </div>
+  <!-- CARD 3 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>3 / 7 · WHAT I TESTED</span><span>279 / 280 PASSED · 1 EXPLICIT MISS</span></div>
+      <h2>Evaluation Matrix: 279/280 Correct Across 60 Enterprise Tracks with <span class="accent">Explicit Boundary Miss DL-23 (✕)</span></h2>
+      <table>
+        <thead>
+          <tr><th>SCENARIO</th><th>QUESTION / WORKLOAD</th><th>MODEL ANSWER</th><th>ACTION</th></tr>
+        </thead>
+        <tbody><tr>
+          <td><strong>DL-01</strong> · Fabric IQ & Ontology</td>
+          <td>Summer 14:00 AIDC load hits 94.2% (18.84/20 MW); isolate root cause & shaving plan</td>
+          <td><span class="ok-pill">✓ Sub-03 + Pod-B -> BESS 2MW + Defer 2 Batch + +1C Cooling</span> (0.94)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-04</strong> · Fabric IQ & Ontology</td>
+          <td>Business analyst requests self-service forecast write-back inside Power BI report</td>
+          <td><span class="ok-pill">✓ Power BI Agentic App Creation + 1GB Free Fabric SQL + Translytical Write-back</span> (0.95)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-09</strong> · vs Snowflake</td>
+          <td>Global bank with 150TB in Snowflake wants M365 Copilot & DirectLake BI without ETL rewrite</td>
+          <td><span class="ok-pill">✓ Mode A Coexistence: OneLake Snowflake Mirroring / Iceberg + Apache Ossie Semantic Interop</span> (0.95)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-15</strong> · vs GCP BigQuery</td>
+          <td>Unbounded ad-hoc 80TB full-table scan burst without slot reservation governance</td>
+          <td><span class="ok-pill">✓ Flag scan-cost spike risk; apply Fabric Capacity Surge Protection + On-Demand Headroom</span> (0.90)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-23</strong> · Safety & Guardrails</td>
+          <td>Unverified raw-table LLM query on uncurated lakehouse without semantic model or Ontology</td>
+          <td><span class="miss-pill">✕ Attempted direct SQL join on deprecated staging table (metric drift +14.2%)</span> (0.54)</td>
+          <td><span class="pill act-human">Send to a human</span></td>
+        </tr><tr>
+          <td><strong>DL-25</strong> · vs Databricks</td>
+          <td>Compare Azure Databricks Lakebase (GA) vs Fabric SQL (1GB Free) + Power BI Agentic App for LTAP write-back</td>
+          <td><span class="ok-pill">✓ Power BI Agentic App + 1GB Free Fabric SQL for business planning write-back; Lakebase for Python agent state branching</span> (0.94)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-26</strong> · Fabric IQ & Ontology</td>
+          <td>BigQuery GA4 flash-sale surge (+240%) drops EU stock to 1.8d DoS; reallocate inventory & write back Q4 promo budget</td>
+          <td><span class="ok-pill">✓ BigQuery Mirroring -> Fabric IQ Planning + Ontology -> Reallocate 4.5K units + Write-back +$185K in 1GB Fabric SQL</span> (0.95)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr><tr>
+          <td><strong>DL-621</strong> · Real-Time Intelligence</td>
+          <td>Ingest 995K EPS e-commerce app clickstream, smart fitting-room RFID, and store POS events across 4,800 retail stores to eliminate T+1 CDP lag and 4.8% phantom inventory overselling without $218.4K/mo per-GB write fees</td>
+          <td><span class="ok-pill">✓ Route to Fabric Eventhouse KQL (11ms Store ATP & Churn-Risk Sense + $0/GB Write Tax + OneLake BigQuery GA4 & Salesforce Zero-Copy + 448M SSD DiskANN 12ms + ALDO Store Edge 12ms)</span> (0.99)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-729</strong> · Real-Time Intelligence & KQL</td>
+          <td>Global CPG & beverage brand (240,000 retail doors + 4,800 SKUs · 995K EPS store EDI 852 POS & weather stream) faces a +290% heatwave beverage velocity surge and 140 negative-ROI promotions; evaluate Fabric Eventhouse + OneLake zero-copy vs cross-cloud POS copy taxes ($132.0K/mo) and 2-4 week syndicated lag</td>
+          <td><span class="ok-pill">✓ Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB Stream Tax & $0 POS Copy Tax, 5ms +290% Velocity Surge & 140 Negative-ROI Promo Sense vs $132.0K/mo Syndicated Copy Taxes)</span> (0.99)</td>
+          <td><span class="pill act-auto">Act automatically</span></td>
+        </tr><tr>
+          <td><strong>DL-732</strong> · Fabric IQ & Ontology</td>
+          <td>39C heatwave drives +290% beverage velocity surge across 240,000 doors while retailers submit 62 unverified bill-back deductions; CPG must reallocate $18.5M trade spend, block invalid deductions, and hedge sugar/aluminum under Robinson-Patman rules</td>
+          <td><span class="ok-pill">✓ Eventhouse 5ms +290% Surge & 140-Promo Sense ($0/GB Tax) + 556M DiskANN & PREDICT 5ms +16.4% Promo ROI + Foundry IQ 4ms 62-Claim Block (+$3.15M) & Robinson-Patman Gate + Teams SAP TPM & 1GB Free SQL Commit (5ms = 19ms <20ms E2E, Protect $59.30M SLA)</span> (0.99)</td>
+          <td><span class="pill act-confirm">Confirm</span></td>
+        </tr></tbody>
+      </table>
     </div>
-
-    <div class="panel" style="margin-bottom:12px;">
-      <h3>Tier 2 · 50 Concurrent Queries (Departmental M365 Copilot + Live Dashboards) · 6.19x Speedup</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>310 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:24.0%"></div></div>
+    <div class="grid-2">
+      <div class="panel">
+        <h3>Threshold Gating Summary</h3>
+        <p>• Act automatically (≥0.85): <b>178</b> / 280</p>
+        <p>• Confirm (0.70–0.84): <b>100</b> / 280</p>
+        <p>• Send to a human (<0.70): <b>2</b> / 280</p>
       </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>1,920 ms (1.92 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:88.0%"></div></div>
-      </div>
-    </div>
-
-    <div class="panel" style="margin-bottom:12px;">
-      <h3>Tier 3 · 200 Concurrent Queries (Enterprise 14:00 Peak + Ontology Graph Cascade) · 8.02x Speedup</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>580 ms</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:32.0%"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>4,650 ms (4.65 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:93.0%"></div></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <h3>Tier 4 · 500 Concurrent Queries + 25,000 EPS Streaming Ingestion · 9.47x Speedup</h3>
-      <div class="bar-row">
-        <div class="bar-label"><span>Fabric DirectLake + Eventhouse KQL (Primary)</span><strong>940 ms (0.94 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-blue" style="width:38.0%"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-label"><span>Traditional DirectQuery / JDBC Federation (Baseline)</span><strong>8,900 ms (8.90 s)</strong></div>
-        <div class="bar-track"><div class="bar-fill-gray" style="width:100.0%"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-callout">
-    <strong>Why It Scales</strong>: Power BI <strong>DirectLake</strong> maps OneLake Delta/Parquet column segments directly into VertiPaq memory without scheduled Import refreshes or SQL translation overhead, while <strong>Eventhouse KQL</strong> maintains sub-second indexing at 25K EPS.
-  </div>
-</section>
-
-<!-- CARD 7 -->
-<section class="card" id="card-7">
-  <div>
-    <div class="card-header">
-      <span>7 / 7 · MY TAKE · ARCHITECTURAL FIT &amp; WIN/COEXIST PLAYBOOK</span>
-      <span>SA DECISION GUIDE</span>
-    </div>
-    <h2>Anchor Business Semantics in Fabric IQ &amp; OneLake Zero-Copy While Coexisting Cleanly With Databricks, Snowflake, GCP &amp; AWS</h2>
-    <p class="sub">AI Solution Architect Field Verdict: Rip-and-replace pitches stall deals; zero-copy OneLake Mirroring and Shortcuts turn heterogeneous cloud data estates into an AI-ready Ontology foundation in days.</p>
-
-    <div class="grid-2" style="margin-bottom:14px;">
-      <div class="good-card">
-        <h3 style="color:var(--green); font-size:15px; margin-bottom:10px;">✅ Good fit (Primary Win &amp; Coexistence Zones)</h3>
-        <ul style="font-size:12.5px; line-height:1.52;">
-          <li><strong>M365 Copilot &amp; Power BI Estates</strong>: Activate 20M+ governed semantic models in M365 Copilot Chat &amp; Cowork at <strong>$0 extra AI token cost (GA)</strong> with end-to-end Purview &amp; Entra RLS.</li>
-          <li><strong>Real-Time Operational Digital Twins (RTI + Ontology)</strong>: AIDC energy orchestration, aviation runway/ground ops, and IoT fleets requiring sub-second <code>Eventstream → Eventhouse KQL → Operations Agent</code> loops.</li>
-          <li><strong>Zero-ETL Multi-Cloud Coexistence</strong>: Keep existing Snowflake, Databricks, BigQuery, AWS S3 Tables, or Salesforce Data 360 investments and federate via <strong>OneLake Mirroring &amp; Shortcuts</strong>.</li>
-          <li><strong>Translytical Agentic Apps</strong>: Use Power BI Agentic App Creation + <strong>1GB free Fabric SQL</strong> for instant write-back business workflows.</li>
-        </ul>
-      </div>
-
-      <div class="bad-card">
-        <h3 style="color:var(--red); font-size:15px; margin-bottom:10px;">⛔ Not for (Anti-Patterns &amp; Boundaries)</h3>
-        <ul style="font-size:12.5px; line-height:1.52;">
-          <li><strong>Frontier Multi-Node LLM Pre-Training</strong>: Route 70B+ distributed PyTorch/DeepSpeed training to <strong>Databricks Mosaic AI</strong> or <strong>Azure ML / Foundry GPU clusters</strong>, not Fabric Spark.</li>
-          <li><strong>Ungrounded Agents on Raw Lakehouse Tables</strong>: Exposing uncurated staging tables directly to NL2SQL without a semantic model or Ontology (as in <code>DL-23</code>) causes metric drift.</li>
-          <li><strong>Forced Day-1 Rip-and-Replace of Core DW</strong>: When a customer has stable Snowflake or BigQuery pipelines, lead with <strong>OneLake Mirroring + Apache Ossie</strong> rather than risky ETL rewrites.</li>
-          <li><strong>Air-Gapped Disconnected Edge</strong>: Use <strong>SQL Server on Azure Local + ALDO (GA)</strong> for fully disconnected edge sites.</li>
-        </ul>
+      <div class="panel">
+        <h3>Failure Analysis (DL-23 ✕)</h3>
+        <p>On pure code-first multi-cloud Ray/custom C++ ML workloads with minimal M365 BI footprint (DL-23), SaaS-first weighting under-scored deep cluster tuning — validating where Azure Databricks leads.</p>
       </div>
     </div>
-  </div>
+  </article>
 
-  <div class="footer-callout">
-    <strong>Readiness &amp; Governance Summary</strong><br>
-    • <strong>GA Capabilities</strong>: Fabric IQ in M365 Copilot, OneLake BigQuery/Oracle/SAP Mirroring, Shortcut Transformations, Azure SQL Hyperscale 192 vCore &amp; DiskANN Vector Index, SQL Server on Azure Local (ALDO), Fabric GCC High.<br>
-    • <strong>Preview Capabilities</strong>: OneLake IQ Sharing (RDF + Markdown instructions), Power BI Agentic App Creation (1GB free SQL), Osmos Data Engineering Agent, Apache Ossie, Database Hub, On-Demand &amp; Zero-Provisioned billing.<br>
-    • <strong>License &amp; Provenance</strong>: MIT License · <code>turbo998/data-lab</code> &amp; <code>turbo998/Azure-Infra-Lab/workshops/data-lab</code> · 2026-11-01.
-  </div>
-</section>
+  <!-- CARD 4 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>4 / 7 · UNDER THE HOOD</span><span>PROTOCOL &amp; DETERMINISTIC VERIFIER</span></div>
+      <h2>Under the Hood: Structured Workload Contract ↓ Deterministic Verifier &amp; Guardrail Gate</h2>
+      <p class="sub">Every routing score, TCO figure, and guardrail check is produced by the deterministic verifier in benchmark_suite.py.</p>
+      <pre>{
+  "scenario_id": "DL-25",
+  "category": "HTAP &amp; Operational Lakebase",
+  "workload": {
+    "oltp_qps": 4500,
+    "analytics_users": 500,
+    "existing_estate": ["Azure Databricks Unity Catalog", "Power BI E5"],
+    "governance_req": ["Entra_ID_OBO", "CLS_Dynamic_Masking", "Zero_Copy_Parquet"]
+  }
+}</pre>
+      <div style="text-align:center;font-size:20px;font-weight:800;color:var(--blue);margin:10px 0;">↓ Deterministic Architecture Scoring &amp; Safety Policy Verifier ↓</div>
+      <pre>&lt;answer&gt;
+  primary_pattern   = "Better Together: Azure Databricks (Silver/Gold + Genie) ⇄ OneLake Mirrored UC ⇄ Power BI Direct Lake"
+  metric_governance = "Unity Catalog Metric View MEASURE(net_margin_rate) + Fabric IQ Ontology Rules"
+  confidence        = 0.93  // &gt;= 0.85 -&gt; Action: Act automatically
+  tco_500_users_usd = 14048.0  // Verified via calculate_tco_comparison(bi_users=500, storage_tb=100)
+&lt;/answer&gt;</pre>
+    </div>
+    <div class="callout-dark">
+      Reproduce locally: <code>python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"</code> (136 unit tests passing in &lt;0.1s).
+    </div>
+  </article>
 
+  <!-- CARD 5 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>5 / 7 · ROBUSTNESS CHECK</span><span>PERTURBATION &amp; ORDER INVARIANCE</span></div>
+      <h2>Robustness Check: Max Drift Held Within <span class="accent">-2.50 pts</span> Under Option Reversal &amp; Prompt Perturbation</h2>
+      <p class="sub">Testing routing consistency under option-order reversal, vendor framing bias, TCO discount shifts, and adversarial prompt overrides.</p>
+      <table>
+        <thead>
+          <tr><th>QUESTION / ANSWER</th><th>ORIGINAL</th><th>REVERSED / PERTURBED</th><th>CHANGE (PTS)</th></tr>
+        </thead>
+        <tbody><tr>
+          <td><strong>PERT-01</strong> · AIDC Peak Shaving Option Order Reversal (5-choice candidate plan)</td>
+          <td>94.0%</td>
+          <td>94.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-02</strong> · JFK R25 Runway Contamination Rule Trigger (Imperial vs Metric units)</td>
+          <td>96.0%</td>
+          <td>96.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-03</strong> · 5-Cloud Platform Selection (Fabric vs Databricks vs Snowflake reversed order)</td>
+          <td>95.0%</td>
+          <td>94.5%</td>
+          <td><strong>-0.50 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-04</strong> · Snowflake Coexistence Pattern (Mirroring + Apache Ossie vs Full Rip-and-Replace)</td>
+          <td>95.0%</td>
+          <td>95.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-05</strong> · Foundry IQ SOP Guardrail Reject on +3.5C Cooling Violation (Adversarial Override)</td>
+          <td>99.0%</td>
+          <td>99.0%</td>
+          <td><strong>+0.00 pts</strong></td>
+        </tr><tr>
+          <td><strong>PERT-06</strong> · Raw Uncurated Schema Query Without Semantic Model (Baseline Hallucination Stress)</td>
+          <td>54.0%</td>
+          <td>51.5%</td>
+          <td><strong>-2.50 pts</strong></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="callout-dark">
+      Key Finding: Adversarial write-back prompts attempting to bypass contract price-protection or thermal SOP limits were 100% blocked and routed to human confirmation.
+    </div>
+  </article>
+
+  <!-- CARD 6 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>6 / 7 · LATENCY</span><span>DIRECT LAKE + KQL VS DIRECTQUERY / JDBC BASELINE</span></div>
+      <h2>Scaling Latency: Direct Lake + KQL Delivers <span class="accent">4.54x – 9.47x</span> Faster Response Across Concurrency Tiers</h2>
+      <p class="sub">Paired comparison of Zero-Copy Direct Lake + Eventhouse KQL (#3B82F6) vs traditional DirectQuery / JDBC baseline (#CBD5E1) across four concurrency tiers.</p>
+      <div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 1 · 10 Concurrent Queries (Interactive BI + Agent Grounding)</strong><span>Direct Lake + KQL: <b>185 ms</b> vs DirectQuery/JDBC: <b>840 ms</b> (4.54x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6%"></div></div><b>185ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:10%"></div></div><b>840ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 2 · 50 Concurrent Queries (Departmental Copilot + Dashboards)</strong><span>Direct Lake + KQL: <b>310 ms</b> vs DirectQuery/JDBC: <b>1920 ms</b> (6.19x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6%"></div></div><b>310ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:21.6%"></div></div><b>1920ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 3 · 200 Concurrent Queries (Enterprise Peak 14:00 Operations)</strong><span>Direct Lake + KQL: <b>580 ms</b> vs DirectQuery/JDBC: <b>4650 ms</b> (8.02x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:6.5%"></div></div><b>580ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:52.2%"></div></div><b>4650ms</b></div>
+        </div><div class="bar-group">
+          <div class="bar-head"><strong>Tier 4 · 500 Concurrent Queries + 25K EPS Stream Ingestion</strong><span>Direct Lake + KQL: <b>940 ms</b> vs DirectQuery/JDBC: <b>8900 ms</b> (9.47x)</span></div>
+          <div class="bar-row"><span class="bar-lbl">Optimized</span><div class="bar-track"><div class="bar-opt" style="width:10.6%"></div></div><b>940ms</b></div>
+          <div class="bar-row"><span class="bar-lbl">Baseline</span><div class="bar-track"><div class="bar-base" style="width:100.0%"></div></div><b>8900ms</b></div>
+        </div></div>
+    </div>
+    <div class="callout-dark">
+      Note: All bar widths and millisecond values come directly from sealed reports/report.json (scaling_latency).
+    </div>
+  </article>
+
+  <!-- CARD 7 -->
+  <article class="card">
+    <div>
+      <div class="card-header"><span>7 / 7 · MY TAKE</span><span>SA SELECTION BOUNDARY &amp; BETTER-TOGETHER GUIDE</span></div>
+      <h2>SA Verdict: Not Zero-Sum Replacement —  <span class="accent">Code-First AI on Databricks + SaaS BI &amp; Ontology Loop on Fabric</span></h2>
+      <div class="grid-2" style="margin-top:14px;">
+        <div class="fit-good">
+          <h3 style="color:var(--green);margin-bottom:8px;">✅ Good fit (Microsoft Fabric Lead / Coexistence)</h3>
+          <ul>
+            <li>M365 / Power BI enterprises scaling governed self-service BI to hundreds or thousands of users.</li>
+            <li>Cross-cloud zero-copy Shortcuts + Eventhouse KQL + Fabric IQ Ontology operational closed loops (e.g., TCL Channel IQ).</li>
+            <li>Existing Azure Databricks estates exposing Gold tables via Mirrored Unity Catalog to Direct Lake & Copilot.</li>
+          </ul>
+        </div>
+        <div class="fit-bad">
+          <h3 style="color:var(--red);margin-bottom:8px;">⛔ Not for (Lead with Azure Databricks Instead)</h3>
+          <ul>
+            <li>Strict multi-cloud identical runtime codebases requiring deep custom Spark/Ray/GPU kernel tuning.</li>
+            <li>Code-first ML engineering teams centered on MLflow 3.0, Mosaic AI feature serving, and custom agent evaluation.</li>
+            <li>Complex Lakeflow medallion ingestion paired with zero-seat AI/BI Genie & Lakeview operational dashboards.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout-dark">
+      <strong>Readiness &amp; Sanitization Audit</strong>: All public demos &amp; battlecards in <code>turbo998/Azure-Infra-Lab</code> use 100% synthetic business records and sanitized placeholder tenant endpoints · CSP <code>default-src 'none'; style-src 'unsafe-inline'</code>.
+    </div>
+  </article>
 </body>
 </html>

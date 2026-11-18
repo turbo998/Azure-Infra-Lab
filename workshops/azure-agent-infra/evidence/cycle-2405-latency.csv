@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-full_blueprint_target,Full blueprint target path,498,721,0.0,measured,staging replay
-compute_heavy_no_pooling,Compute heavy without session pooling,688,958,32.9,anonymized_reported,official+reported
-monolithic_appservice_style,Monolithic app-service style,871,1268,75.9,measured,staging replay
-legacy_no_gateway_baseline,Legacy no-gateway baseline,1324,1935,168.4,anonymized_reported,reported baseline

@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-retrieval freshness drift block,211,224,0.942,measured,replay logs
-diskann operational memory consistency fence,218,224,0.9732,measured,replay logs
-redis episodic cache tenancy guard,209,217,0.9631,measured,replay logs

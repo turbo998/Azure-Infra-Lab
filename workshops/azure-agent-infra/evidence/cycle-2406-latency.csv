@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-gb200_nvl72_target,GB200 NVL72 topology-aware target,566,812,0.0,measured,staging replay
-h200_partial_locality,H200 mixed topology with partial locality,688,967,19.1,anonymized_reported,official+reported
-h100_no_topology_pinning,H100 legacy cluster no topology pinning,942,1288,58.6,measured,staging replay
-non_moe_baseline,Non-MoE baseline inference farm,1264,1714,111.1,anonymized_reported,reported baseline

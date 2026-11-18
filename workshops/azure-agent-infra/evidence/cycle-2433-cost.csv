@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-manual netops baseline,1.0,1000,1.0,anonymized_reported,baseline model
-nexus plus adx plus twin preflight,0.82,1000,0.82,measured,hybrid benchmark
-cloud-only oss agent,0.89,1000,0.89,synthetic,cloud-only simulation
-rule-only son baseline,0.94,1000,0.94,anonymized_reported,rule baseline sample

@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-L0 no gate,1.0,1000000,1.0,anonymized_reported,baseline model
-L1 signing+SBOM,1.08,1000000,1.08,synthetic,security control uplift model
-L2 Ratify+Gatekeeper,1.19,1000000,1.19,synthetic,security control uplift model
-L3 full chain+drift,1.27,1000000,1.27,synthetic,security control uplift model

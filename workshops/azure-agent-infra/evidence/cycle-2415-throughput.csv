@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-odata_bapi_wrapper,OData/BAPI MCP wrapper,940,860,measured,integration replay logs
-logicapps_connector,Logic Apps connector bus,780,710,anonymized_reported,connector load audit
-rpa_automation,RPA computer-use fallback,180,140,synthetic,ui automation replay
-testrun_precommit,TESTRUN simulation gate,650,620,measured,dry-run gate replay

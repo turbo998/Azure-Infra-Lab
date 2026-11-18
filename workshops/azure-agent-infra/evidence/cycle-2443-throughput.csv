@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-iot_telemetry_ingest,AIS + berth + manifest ingest lane,10320,8920,anonymized_reported,anonymized plant-to-distribution burst replay
-risk_solver_jobs,Sanctions + HS-code + consignee deterministic verification lane,1760,1490,synthetic,deterministic customs-verifier benchmark profile
-release_commit_transactions,Release lock + manifest attestation commit lane,3920,3410,measured,customs event ledger concurrency replay
-inspection_status_updates,Inspection status + hold-release update lane,2810,2380,anonymized_reported,anonymized port-ops notification replay

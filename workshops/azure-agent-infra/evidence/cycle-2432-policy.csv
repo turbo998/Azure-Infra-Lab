@@ -1,5 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-split pool localization cost reduction,385,1000,0.385,synthetic,cost comparison simulation
-smpte cutpoint frame accuracy,991,1000,0.991,measured,frame-anchor validation suite
-brand safety compliance recall,973,1000,0.973,anonymized_reported,brand safety benchmark
-live highlight publish latency improvement,448,1000,0.448,synthetic,latency improvement model

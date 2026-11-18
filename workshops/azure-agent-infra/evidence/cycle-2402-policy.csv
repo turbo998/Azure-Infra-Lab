@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-ack sla policy,981,992,0.9889,measured,replay logs
-hmac replay guard,486,500,0.972,measured,replay logs
-identity linking guard,477,500,0.954,measured,replay logs

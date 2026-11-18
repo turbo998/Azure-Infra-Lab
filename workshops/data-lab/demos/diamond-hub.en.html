@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diamond Enterprise Demo Hub — TCL × Microsoft Fabric & Zava × Azure Databricks</title>
+<style>
+  :root {
+    --bg:#070b14; --panel:#0f172a; --card:#1e293b; --border:#334155;
+    --text:#f8fafc; --muted:#94a3b8; --blue:#38bdf8; --red:#f43f5e; --green:#10b981; --purple:#a855f7;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.62; }
+  .topbar { background:#050810; border-bottom:1px solid var(--border); padding:10px 26px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:13px; position:sticky; top:0; z-index:50; }
+  .topbar a { color:#93c5fd; text-decoration:none; font-weight:600; padding:5px 11px; border-radius:7px; background:rgba(30,41,59,0.8); border:1px solid rgba(148,163,184,0.22); }
+  .topbar a:hover { background:#2563eb; color:#fff; }
+  .wrap { max-width:1240px; margin:0 auto; padding:34px 24px 68px; }
+  .hero { background:radial-gradient(circle at 85% 15%, rgba(168,85,247,0.22), transparent 45%), linear-gradient(135deg,#0f172a 0%,#1e1b4b 55%,#1b1022 100%); border:1px solid rgba(56,189,248,0.35); border-radius:22px; padding:34px 38px; margin-bottom:28px; }
+  .pill { display:inline-block; padding:4px 12px; border-radius:999px; font-size:11.5px; font-weight:800; letter-spacing:0.06em; background:rgba(56,189,248,0.16); color:#7dd3fc; border:1px solid rgba(56,189,248,0.4); margin-bottom:12px; }
+  h1 { font-size:30px; line-height:1.25; margin-bottom:10px; }
+  .hero p { font-size:15px; color:#cbd5e1; max-width:940px; }
+  .quick-launch { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+  .btn { display:inline-flex; align-items:center; gap:6px; padding:10px 18px; border-radius:10px; font-size:13.5px; font-weight:700; text-decoration:none; color:#fff; transition:transform 0.12s; }
+  .btn:hover { transform:translateY(-1px); }
+  .btn-tcl { background:linear-gradient(135deg,#e11d48,#be123c); }
+  .btn-dbx { background:linear-gradient(135deg,#ea580c,#dc2626); }
+  .btn-fab { background:linear-gradient(135deg,#0284c7,#2563eb); }
+  .btn-outline { background:rgba(30,41,59,0.9); border:1px solid var(--border); color:#e2e8f0; }
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(460px,1fr)); gap:22px; margin-bottom:28px; }
+  @media(max-width:600px){ .grid-2 { grid-template-columns:1fr; } }
+  .demo-card { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:26px 28px; display:flex; flex-direction:column; justify-content:space-between; }
+  .demo-card.tcl { border-top:4px solid #f43f5e; }
+  .demo-card.zava { border-top:4px solid #f97316; }
+  .demo-card h2 { font-size:21px; margin:8px 0 8px; }
+  .kpi-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:14px 0; }
+  .kpi-mini { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:10px 12px; }
+  .kpi-mini b { display:block; font-size:16px; color:#fff; }
+  .kpi-mini span { font-size:11.5px; color:var(--muted); }
+  ul { padding-left:18px; font-size:13.5px; color:#cbd5e1; margin:10px 0 18px; }
+  li { margin-bottom:6px; }
+  .matrix-card { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:24px 28px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin-top:12px; }
+  th { background:var(--card); color:#93c5fd; text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); }
+  td { padding:10px 12px; border-bottom:1px solid rgba(51,65,85,0.65); color:#e2e8f0; vertical-align:top; }
+</style>
+</head>
+<body>
+  <nav class="topbar">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+      <strong>💎 DIAMOND ENTERPRISE DEMO HUB</strong>
+      <a href="../index.en.html">← Back to Data Lab</a>
+      <a href="../live-demo.en.html">🧭 5-Cloud TCO & Sim Workbench</a>
+      <a href="../benchmark-cards.en.html">📊 7-Card Benchmark Deck</a>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <a href="https://github.com/turbo998/Azure-Infra-Lab">📦 GitHub Repo</a>
+      <a href="diamond-hub.html">🌐 切换为中文</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="pill">AI SOLUTION ARCHITECT · EXECUTIVE LIVE DEMO SUITE</span>
+      <h1>Diamond Enterprise Data & AI Live Demo Center</h1>
+      <p>Interactive Solution Architect showcase featuring two flagship enterprise sandboxes: (1) TCL Global Channel IQ on Microsoft Fabric (OneLake Shortcuts, Eventhouse KQL, Fabric IQ Ontology & Dual Agents) and (2) Zava Omnichannel Retail on Azure Databricks + Microsoft Fabric Better-Together (Unity Catalog, AI/BI Genie & Mirrored Direct Lake). 100% sanitized and ready to present in any browser.</p>
+      <div class="quick-launch">
+        <a class="btn btn-tcl" href="tcl-fabric/index.en.html">📺 Launch: TCL × Fabric 6-Act Cockpit</a>
+        <a class="btn btn-dbx" href="databricks-fabric/index.en.html">🛒 Launch: Zava × Databricks & Fabric Demo</a>
+        <a class="btn btn-fab" href="tcl-fabric/playbook.en.html">📖 TCL Dual-Screen Playbook</a>
+        <a class="btn btn-outline" href="databricks-fabric/battlecard.en.html">⚔️ Databricks vs Fabric 10-Dim Battlecard</a>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <!-- CARD 1: TCL x FABRIC -->
+      <article class="demo-card tcl">
+        <div>
+          <span style="font-size:12px;font-weight:800;color:#fda4af;">FLAGSHIP DEMO 01 · MICROSOFT FABRIC END-TO-END</span>
+          <h2>TCL Global Channel IQ × Microsoft Fabric (6-Act Command Cockpit)</h2>
+          <p style="font-size:13.5px;color:var(--muted);">
+            Simulates a global electronics manufacturer navigating three Black Friday channel crises across 5 regions and 36 overseas distributors & retail KAs.
+          </p>
+          <div class="kpi-strip">
+            <div class="kpi-mini"><b>$629.7K</b><span>Protected EU Black Friday GMV</span></div>
+            <div class="kpi-mini"><b>$582.1K</b><span>Saved vs MSRP Price-Prot Cut</span></div>
+            <div class="kpi-mini"><b>$162.5K</b><span>Blocked Stuffing Rebate Claim</span></div>
+          </div>
+          <ul>
+            <li><strong>OneLake Shortcuts</strong>: Zero-copy mounting of isolated partner EDI 852 & POS Delta tables</li>
+            <li><strong>Eventhouse KQL</strong>: Detects 2.8x German POS surge + 11-day Rotterdam delay, pairing Lyon surplus in ms</li>
+            <li><strong>Fabric IQ Ontology + Agents</strong>: 10-entity static/TimeSeries graph + interactive price-protection slider + pipeline dispatch</li>
+          </ul>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-tcl" href="tcl-fabric/index.en.html">🚀 Open 6-Act Cockpit</a>
+          <a class="btn btn-outline" href="tcl-fabric/playbook.en.html">📖 SA Playbook (15m/40m)</a>
+        </div>
+      </article>
+
+      <!-- CARD 2: ZAVA x DATABRICKS & FABRIC -->
+      <article class="demo-card zava">
+        <div>
+          <span style="font-size:12px;font-weight:800;color:#fdba74;">FLAGSHIP DEMO 02 · AZURE DATABRICKS × FABRIC COEXISTENCE</span>
+          <h2>Zava Omnichannel Fresh Retail × Databricks & Fabric Coexistence</h2>
+          <p style="font-size:13.5px;color:var(--muted);">
+            Demonstrates how Lakeflow data engineering, Unity Catalog governance, and AI/BI Genie pair seamlessly with Microsoft Fabric OneLake & Power BI Direct Lake.
+          </p>
+          <div class="kpi-strip">
+            <div class="kpi-mini"><b>-3.1 pp</b><span>East China Margin Drop Isolated</span></div>
+            <div class="kpi-mini"><b>17.3 hrs</b><span>Kunshan Hub Dispatch Spike</span></div>
+            <div class="kpi-mini"><b>1,460 Cases</b><span>Jiaxing Hub 2h Rebalance</span></div>
+          </div>
+          <ul>
+            <li><strong>Unity Catalog Governance</strong>: Interactive role toggle proving CLS phone masking + YAML Metric View formula lock</li>
+            <li><strong>AI/BI Genie 5-Turn Drilldown</strong>: 5-turn NL root-cause drilldown from region → cold-chain hub → Day -7 spike → Top 5 stores</li>
+            <li><strong>4 Better-Together Patterns</strong>: Mirrored Unity Catalog serving 500+ M365 Power BI Direct Lake users with zero ETL copy</li>
+          </ul>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-dbx" href="databricks-fabric/index.en.html">🚀 Open 4-Act Workbench</a>
+          <a class="btn btn-outline" href="databricks-fabric/battlecard.en.html">⚔️ 10-Dim SA Battlecard</a>
+        </div>
+      </article>
+    </div>
+
+    <section class="matrix-card">
+      <h2 style="font-size:19px;color:#38bdf8;margin-bottom:6px;">🧭 SA Field Guide: When to Lead with Fabric, Databricks, or Coexistence</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Primary Customer Scenario</th>
+            <th>Recommended Architecture Lead</th>
+            <th>Matching Demo Proof</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>M365 / Power BI standardization + cross-cloud Shortcuts + real-time operational loop</strong></td>
+            <td><strong>Microsoft Fabric End-to-End</strong> (OneLake + Eventhouse KQL + Fabric IQ Ontology + Direct Lake)</td>
+            <td>Demo 01 (TCL): 16 unified items on one capacity driving automated rebalance & price-protection guardrails.</td>
+          </tr>
+          <tr>
+            <td><strong>Code-first PySpark/ML engineering + complex medallion quality + multi-cloud IaC</strong></td>
+            <td><strong>Azure Databricks Lead</strong> (Unity Catalog + Lakeflow + Photon + Mosaic AI / Genie)</td>
+            <td>Demo 02 Acts 1–2 (Zava): Lakeflow dirty-row quarantine + dynamic CLS masking + 5-turn Genie drilldown.</td>
+          </tr>
+          <tr>
+            <td><strong>Existing Azure Databricks lakehouse + broad executive/store BI & Teams Copilot rollout</strong></td>
+            <td><strong>Better Together Zero-Copy</strong> (Mirrored Unity Catalog in OneLake → Power BI Direct Lake)</td>
+            <td>Demo 02 Acts 3–4 + Battlecard: Single ADLS Delta copy shared via Mirrored UC + Direct Lake.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

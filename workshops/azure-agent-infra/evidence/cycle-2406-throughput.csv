@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-gb200_nvl72_target,Target path,15620,14860,synthetic,deterministic model
-h200_partial_locality,H200 path,13140,12340,synthetic,deterministic model
-h100_no_topology_pinning,H100 path,9680,9050,synthetic,deterministic model
-non_moe_baseline,Baseline path,6640,6180,synthetic,deterministic model

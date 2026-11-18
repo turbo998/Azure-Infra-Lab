@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-Read-only advisory baseline,1.0,1000,1.0,anonymized_reported,baseline model
-Auto-stop tagging strategy,0.84,1000,0.84,synthetic,auto-stop model
-GitOps iac-pr remediation,0.71,1000,0.71,synthetic,iac-pr model
-iac-pr with strict what-if gates,0.74,1000,0.74,synthetic,guarded iac-pr model

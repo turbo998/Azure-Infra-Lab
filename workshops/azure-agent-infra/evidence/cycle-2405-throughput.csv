@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-full_blueprint_target,Target path,3348,3192,synthetic,deterministic model
-compute_heavy_no_pooling,No pooling path,2548,2406,synthetic,deterministic model
-monolithic_appservice_style,Monolith path,1835,1712,synthetic,deterministic model
-legacy_no_gateway_baseline,Legacy baseline,1048,982,synthetic,deterministic model

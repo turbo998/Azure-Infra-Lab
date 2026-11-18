@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-edge stream session continuity,984,1000,0.984,measured,stream replay logs
-midstream failover resume success,973,1000,0.973,measured,failover drills
-waf abuse blocking accuracy,981,1000,0.981,measured,security tests

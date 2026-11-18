@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced provenance drift gate,172,180,0.9556,measured,replay logs
-provenance variance guard,165,172,0.9593,measured,replay logs
-provenance recovery fence,158,166,0.9518,measured,replay logs

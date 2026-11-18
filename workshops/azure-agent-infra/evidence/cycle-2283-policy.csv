@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced integrityproof drift gate,197,205,0.961,measured,replay logs
-integrityproof variance guard,190,197,0.9645,measured,replay logs
-integrityproof recovery fence,184,191,0.9634,measured,replay logs

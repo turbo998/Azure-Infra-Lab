@@ -1,5 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-mouth-to-ear p95 sla compliance,948,1000,0.948,measured,voice latency policy suite
-barge-in interruption accuracy,936,1000,0.936,anonymized_reported,barge-in replay suite
-pci pan-cvv leakage prevention,998,1000,0.998,measured,pci masking gate suite
-aht reduction with live whisper,284,1000,0.284,synthetic,aht comparison model

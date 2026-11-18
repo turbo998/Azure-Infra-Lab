@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unified adoption readiness,961,1000,0.961,measured,replay logs
-p99 recall slo meet,974,1000,0.974,measured,replay logs
-tco break even success,347,1000,0.347,measured,replay logs

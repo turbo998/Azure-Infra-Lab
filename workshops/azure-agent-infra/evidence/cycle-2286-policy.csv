@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced reliabilityproof drift gate,206,214,0.9626,measured,replay logs
-reliabilityproof variance guard,199,206,0.966,measured,replay logs
-reliabilityproof recovery fence,193,200,0.965,measured,replay logs

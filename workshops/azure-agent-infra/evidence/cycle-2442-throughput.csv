@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-iot_telemetry_ingest,"Telemetry ingest lane (reefers, depots, line-side scanners)",11240,9860,anonymized_reported,anonymized plant-to-distribution burst replay
-deviation_solver_jobs,Deviation triage + CAPA deterministic verification lane,1890,1610,synthetic,deterministic GMP CAPA benchmark profile
-qms_commit_transactions,QMS release lock + e-sign commit lane,4180,3660,measured,electronic batch record concurrency replay
-recall_status_updates,Recall status + hold-unhold update lane,3020,2570,anonymized_reported,anonymized quality-ops notification replay

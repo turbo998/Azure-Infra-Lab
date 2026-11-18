@@ -1,95 +1,35 @@
-# Azure AI Agent Infrastructure Playbook（精简版）
+# Azure AI Agent Infrastructure Playbook — 企业级 AI 智能体基础设施选型与容量手册
 
-> 🌐 **Language / 语言切换**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**  
-> 🔎 **Cycle #1511 重点资产**: [benchmark-cards.html](benchmark-cards.html) · [benchmark-cards.en.html](benchmark-cards.en.html) · [workbench-cycle-1511.html](workbench-cycle-1511.html) · [daily-report-2026-11-12.md](daily-report-2026-11-12.md)
+> 🌐 **Language / 语言切换**: **🇨🇳 中文 (`README.md`)** | **[🇬🇧 English (`README.en.md`)](README.en.md)**
 
----
-
-## 一、Cycle #1511 发布摘要（2026-11-12）
-
-- **主题**：云原生 Agent Infra（Runtime/Sandbox、AI Gateway、MCP/A2A 编排与可观测）
-- **当日证据口径**：2026 官方文档 / changelog / release notes 优先
-- **标签体系**：`measured` / `synthetic` / `anonymized_reported`
-- **核心交付**：
-  1. 双语 7-card 4:5 卡组（CSP self-contained）
-  2. 交互式工作台（浏览器可直接运行）
-  3. 可复现实验证据（JSON/CSV）
-  4. 日报双语与专著增补
+面向 **Azure AI Solution Architect (SA)** 的云原生智能体运行底座选型、隔离边界评估与 10 万级并发沙箱容量规划工作台。聚焦真实企业生产负载（AKS Kata VM 隔离、Firecracker/E2B 微虚机、Azure Container Apps Dynamic Sessions、Azure Functions Flex、APIM AI Gateway、MCP/A2A 协议治理与多区域容灾）。
 
 ---
 
-## 二、核心入口（保留导航）
+## 一、核心交互资产（Interactive Workbenches）
 
-| 资产 | 说明 | 链接 |
-|---|---|---|
-| 全景工作台 | Playbook 导览入口 | [`index.html`](index.html) |
-| 双轨仿真 Demo | AKSClaw × E2B | [`demo.html`](demo.html) |
-| 选型与容量测算 | 决策树 + 10 万沙箱估算 | [`selector.html`](selector.html) |
-| 历史 7-card 卡组 | 既有可视化入口 | [`cards.html`](cards.html) |
-| **Cycle #1511 卡组（中文）** | 新规范 7-card | [`benchmark-cards.html`](benchmark-cards.html) |
-| **Cycle #1511 卡组（英文）** | 新规范 7-card | [`benchmark-cards.en.html`](benchmark-cards.en.html) |
-| **Cycle #1511 工作台** | 新增交互实验台 | [`workbench-cycle-1511.html`](workbench-cycle-1511.html) |
+| 资产名称 | SA 适用场景与核心能力 | 入口链接 |
+| :--- | :--- | :--- |
+| **全景架构工作台** | 6 类 Azure 运行时架构选型总览、控制平面与数据平面边界解析 | [`index.html`](index.html) |
+| **AKSClaw × E2B 实时仿真台** | Firecracker 快照恢复耗时拆解、Kata VM 节点密度与 HorizonDB 连接池压测 | [`demo.html`](demo.html) |
+| **架构决策树与容量测算器 (Tools 1–34)** | 34 项云原生 Agent 基础设施交互测算器（并发沙箱、KV Cache 路由、零信任出站、Spot 优雅排空、FinOps 成本护栏） | [`selector.html`](selector.html) |
+| **7-Card 4:5 基准测试卡组** | 遵循标准 7 卡视觉规范的运行时延迟、策略鲁棒性与扩展性评测报告 | [`cards.html`](cards.html) · [`benchmark-cards.html`](benchmark-cards.html) |
 
 ---
 
-## 三、可复现实验与证据
+## 二、深度架构选型指南（SA Selection FAQs & Reports）
 
-- 基准主文件：[`evidence/cycle-1445-benchmark.json`](evidence/cycle-1445-benchmark.json)
-- 来源台账：[`evidence/cycle-1445-sources.json`](evidence/cycle-1445-sources.json)
-- 指标 CSV：
-  - [`cycle-1445-latency.csv`](evidence/cycle-1445-latency.csv)
-  - [`cycle-1445-throughput.csv`](evidence/cycle-1445-throughput.csv)
-  - [`cycle-1445-policy.csv`](evidence/cycle-1445-policy.csv)
-  - [`cycle-1445-cost.csv`](evidence/cycle-1445-cost.csv)
+- **运行时安全隔离选型 FAQ**：[ACA Dynamic Sessions vs Firecracker 微虚机隔离边界选型指南（中文）](aca-vs-firecracker-runtime-isolation-selection-faq.md) · [English](aca-vs-firecracker-runtime-isolation-selection-faq.en.md)
+- **多智能体协议幂等治理 FAQ**：[Agent MCP × A2A 跨服务调用幂等键与状态恢复指南（中文）](agent-mcp-a2a-idempotency-key-selection-faq.md) · [English](agent-mcp-a2a-idempotency-key-selection-faq.en.md)
+- **基准评测报告**：[技术评测报告（中文）](test-report.md) · [Technical Benchmark Report (EN)](test-report.en.md)
+- **Bicep 参考部署蓝图**：[`blueprints/`](blueprints/)（34 套生产级 Azure Bicep IaC 模板，涵盖 AKS Kata、ACA Dynamic Sessions、APIM AI Gateway、Entra Agent ID、Confidential Containers 等）
 
 ---
 
-## 四、文档与图形交付
-
-- 日报（中文）：[`daily-report-2026-11-12.md`](daily-report-2026-11-12.md)
-- 日报（英文）：[`daily-report-2026-11-12.en.md`](daily-report-2026-11-12.en.md)
-- 一图流 SVG：[`assets/34-cycle-1445-daily-breakthroughs.svg`](assets/34-cycle-1445-daily-breakthroughs.svg)
-- 专著增补（中文）：[`docs/full-monograph-cycle-1445.md`](docs/full-monograph-cycle-1445.md)
-- 专著增补（英文）：[`docs/full-monograph-cycle-1445.en.md`](docs/full-monograph-cycle-1445.en.md)
-- 选型 FAQ（中文）：[`agent-apim-mcp-drain-threshold-selection-faq.md`](agent-apim-mcp-drain-threshold-selection-faq.md)
-- 选型 FAQ（英文）：[`agent-apim-mcp-drain-threshold-selection-faq.en.md`](agent-apim-mcp-drain-threshold-selection-faq.en.md)
-- 完整历史专著（中文）：[`docs/full-monograph-archive.md`](docs/full-monograph-archive.md)
-- 完整历史专著（英文）：[`docs/full-monograph-archive.en.md`](docs/full-monograph-archive.en.md)
-
----
-
-## 五、验证命令（发布门禁）
+## 三、本地复现与自动化验证（Verification）
 
 ```bash
-python workshops/azure-agent-infra/simulator/cycle_1271_pipeline.py --write
-python workshops/azure-agent-infra/simulator/cycle_1271_pipeline.py --check
 python workshops/azure-agent-infra/simulator/agent_infra_sizer.py --check
-python -m unittest workshops/azure-agent-infra/simulator/test_agent_infra_sizer.py
+python workshops/azure-agent-infra/demo/run_live_demo.py --self-test
+python -m unittest discover -s workshops/azure-agent-infra/simulator -p "test_*.py"
 ```
-
----
-
-## 六、实现与运行脚本
-
-- 生成管线：[`simulator/cycle_1271_pipeline.py`](simulator/cycle_1271_pipeline.py)
-- 运行时测算器：[`simulator/agent_infra_sizer.py`](simulator/agent_infra_sizer.py)
-- 测试集：[`simulator/test_agent_infra_sizer.py`](simulator/test_agent_infra_sizer.py)
-- 现场执行手册：[`workshop-runbook.md`](workshop-runbook.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

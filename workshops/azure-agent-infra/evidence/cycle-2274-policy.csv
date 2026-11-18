@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced attestation drift gate,175,183,0.9563,measured,replay logs
-attestation variance guard,168,175,0.9600,measured,replay logs
-attestation recovery fence,161,169,0.9527,measured,replay logs

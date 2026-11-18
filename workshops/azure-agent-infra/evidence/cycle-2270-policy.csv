@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced auditability drift gate,170,178,0.9551,measured,replay logs
-auditability variance guard,163,170,0.9588,measured,replay logs
-auditability recovery fence,156,164,0.9512,measured,replay logs

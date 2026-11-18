@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-toolchain_routing,Multi-agent delegated tool-chain execution,912,804,synthetic,deterministic model
-search_acl,Azure AI Search document ACL filter lane,1334,1188,synthetic,deterministic model
-secret_unwrap,Key Vault secret unwrap via Private Link,1042,918,synthetic,deterministic model
-policy_guardlane,Zero-trust delegation policy guardlane,1268,1130,synthetic,deterministic model

@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-unfenced availabilityproof drift gate,205,213,0.9624,measured,replay logs
-availabilityproof variance guard,198,205,0.9659,measured,replay logs
-availabilityproof recovery fence,192,199,0.9648,measured,replay logs

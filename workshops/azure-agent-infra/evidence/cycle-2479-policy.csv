@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-browser-fleet-snat-oom-guard-violation saturation gate,172,184,0.9348,measured,browser-fleet-snat-oom-guard-fence mismatch replay + deterministic verification
-browser-fleet-snat-oom-guard-fence fence integrity guard,161,168,0.9583,measured,browser-fleet-snat-oom-guard-fence integrity logs
-tenant-scope browser-fleet-snat-oom-guard-fence authorization fence,154,161,0.9565,measured,tenant browser-fleet-snat-oom-guard-fence fairness replay logs

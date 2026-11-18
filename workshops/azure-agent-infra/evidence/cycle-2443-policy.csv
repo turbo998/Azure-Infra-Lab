@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-Sanctions and denied-party boundary block,248,257,0.965,measured,sanctions compliance replay
-Unresolved manifest discrepancy release block,233,241,0.9668,measured,manifest discrepancy gate replay
-Bill-of-lading lineage gap block,174,181,0.9613,anonymized_reported,anonymized custody-lapse simulation

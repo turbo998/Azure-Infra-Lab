@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-mqtt_eventstreams_activator_target,Target path,2791,2634,synthetic,deterministic model
-eventstreams_no_ot_split,No OT split path,2620,2481,synthetic,deterministic model
-opcua_direct_cloud_relay,OPC relay path,1947,1836,synthetic,deterministic model
-historian_polling_baseline,Historian baseline,971,904,synthetic,deterministic model

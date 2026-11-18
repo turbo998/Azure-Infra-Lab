@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-orchestrator_checkpoint_commit,Durable Functions checkpoint flush,71,118,anonymized_reported,official+reported
-cosmos_session_resume,Cosmos DB state resume,42,67,synthetic,deterministic model
-agent_handoff_resume,Multi-agent handoff replay,96,154,synthetic,deterministic model
-lineage_validation,Lineage consistency validator,27,45,synthetic,deterministic model

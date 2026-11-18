@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-acs-realtime-voice-sla-guard-violation saturation gate,172,184,0.9348,measured,acs-realtime-voice-sla-guard-fence mismatch replay + deterministic verification
-acs-realtime-voice-sla-guard-fence fence integrity guard,161,168,0.9583,measured,acs-realtime-voice-sla-guard-fence integrity logs
-tenant-scope acs-realtime-voice-sla-guard-fence authorization fence,154,161,0.9565,measured,tenant acs-realtime-voice-sla-guard-fence fairness replay logs

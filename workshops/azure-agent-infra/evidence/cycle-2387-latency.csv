@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_nd,source_label,source_ref
-ncc_h100_confidential_lane,NCC H100 v5 confidential lane,134,258,12.7,measured,staging replay
-aks_kata_confidential_lane,AKS Kata confidential container lane,149,301,15.9,anonymized_reported,official+reported
-maa_skr_attestation_lane,MAA + Managed HSM SKR attestation lane,171,329,18.4,measured,staging replay
-standard_nd_h100_baseline,Standard ND H100 v5 baseline lane,432,934,0.0,anonymized_reported,reported baseline

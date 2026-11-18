@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-sap principal propagation audit coverage,988,1000,0.988,measured,principal propagation verification suite
-testrun precommit error catch,952,1000,0.952,measured,bapi dry-run replay logs
-backend connection pool protection,961,1000,0.961,measured,gateway + connector storm tests

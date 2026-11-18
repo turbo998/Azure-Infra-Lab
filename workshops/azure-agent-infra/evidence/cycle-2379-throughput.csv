@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-apim_registry_lane,APIM registry edge lane,1142,1008,synthetic,deterministic model
-mesh_lane,East-west mesh lane,932,818,synthetic,deterministic model
-stream_pool_lane,Streamable-HTTP pooled lane,1261,1129,synthetic,deterministic model
-federation_guard_lane,Cross-tenant federation guard lane,1044,919,synthetic,deterministic model

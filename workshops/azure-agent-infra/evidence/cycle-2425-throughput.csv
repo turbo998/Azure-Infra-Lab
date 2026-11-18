@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-vdr_docs_processed_per_hour,VDR documents processed per hour,292,268,measured,bulk diligence replay
-risk_clauses_tagged_per_hour,Risk clauses tagged per hour,68300,65120,anonymized_reported,tagging pipeline sample
-citation_verifications_per_hour,Citation checks per hour,91800,88700,synthetic,citation verifier model
-escalation_packets_per_hour,Counsel-ready escalation packets per hour,1210,1120,measured,approval packet replay

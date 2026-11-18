@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-Temporal validity gate blocks superseded chunks,423,447,0.9463,measured,temporal retrieval verifier replay
-ACL tombstone purge gate blocks revoked docs,198,202,0.9802,measured,acl revoke synthetic+anonymized mixed replay
-Contradiction quarantine gate blocks conflicting SOP chunks,267,291,0.9175,measured,cross-version contradiction detector benchmark

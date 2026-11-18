@@ -1,5 +1,0 @@
-path,compute_hour_usd,resolved_queries_per_hour,index_token_cost_per_1k_queries,source_label,source_ref
-cloud-only centralized baseline,1.0,1000,1.0,anonymized_reported,baseline model
-edge eventized architecture,0.79,1000,0.79,measured,eventized cost benchmark
-milp constrained replenishment,0.74,1000,0.74,synthetic,solver cost model
-hybrid edge plus cloud tiered,0.83,1000,0.83,anonymized_reported,hybrid run sample

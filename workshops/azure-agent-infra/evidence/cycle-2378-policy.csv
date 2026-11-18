@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-indirect injection block fidelity,229,240,0.9542,measured,replay logs
-async parallel guardrail latency budget,226,236,0.9576,measured,replay logs
-false-positive tuning governance control,217,233,0.9313,measured,replay logs

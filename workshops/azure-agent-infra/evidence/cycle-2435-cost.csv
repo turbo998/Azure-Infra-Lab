@@ -1,4 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-Cloud-only voice copilot baseline,5.84,138,20,0.0065,0.02061,synthetic,round_1030_cycle_2435 deterministic cost model
-Hybrid edge SLM + cloud fallback,4.92,188,20,0.0041,0.01282,synthetic,round_1030_cycle_2435 deterministic cost model
-Hybrid + fleet diagnostics + OTA triage,5.16,182,20,0.0048,0.01425,synthetic,round_1030_cycle_2435 deterministic cost model

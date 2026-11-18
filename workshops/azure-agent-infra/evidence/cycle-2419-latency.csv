@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-rules_only_hotpath,Rules-only authorization,13000,21000,0.0,anonymized_reported,legacy fraud baseline
-inline_ml_hotpath,Inline ONNX + micro-SLM,24000,34000,0.0,synthetic,inline scoring model
-dual_speed_hotpath,Dual-speed hot-path authorization,31000,43000,0.0,measured,dual-speed replay suite
-async_investigation_cycle,Async investigation completion,1260000,2520000,22.7,anonymized_reported,case management traces

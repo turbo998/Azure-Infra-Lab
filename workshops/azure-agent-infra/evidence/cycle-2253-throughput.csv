@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-gateway_model_routing,APIM AI Gateway unified model API,1710,1542,synthetic,deterministic model
-mcp_tool_orchestration,APIM MCP orchestration lane,668,585,synthetic,deterministic model
-gateway_message_exchange,APIM policy chain,474,413,synthetic,deterministic model
-sandbox_terminal_stream,E2B terminal stream,1098,964,synthetic,deterministic model

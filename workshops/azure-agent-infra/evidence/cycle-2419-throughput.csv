@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-inline_authorization,Hot-path authorization throughput,15900,14600,measured,authorization replay
-feature_window_updates,Redis velocity feature updates,31200,28900,synthetic,feature update model
-async_investigation_dispatch,Foundry investigation swarm dispatch,980,860,anonymized_reported,investigation queue traces
-stepup_orchestration,Step-up challenge orchestration,2400,2210,measured,step-up replay

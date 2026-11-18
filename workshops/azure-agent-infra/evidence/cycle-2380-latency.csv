@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-durable_cosmos_checkpoint_path,Durable Functions + Cosmos DB checkpoint path,152,298,measured,staging replay
-redis_hot_context_path,Redis hot context path,81,164,anonymized_reported,official+reported
-hybrid_restore_path,Hybrid durable+hot restore path,129,256,synthetic,deterministic model
-compensation_handoff_path,Compensation handoff re-entry path,177,327,measured,staging replay

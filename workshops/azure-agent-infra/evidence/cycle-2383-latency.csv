@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-frontdoor_apim_failover_lane,Front Door + multi-region APIM failover lane,139,276,measured,staging replay
-foundry_ptu_spillover_lane,Foundry regional PTU + global spillover lane,161,314,anonymized_reported,official+reported
-cosmos_multiwrite_merge_lane,Cosmos DB multi-write conflict merge lane,128,247,measured,staging replay
-unmanaged_dr_baseline,Unmanaged single-region baseline,472,962,anonymized_reported,reported baseline

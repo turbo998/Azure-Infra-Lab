@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-registry_lane,APIM registry attestation lane,1118,996,synthetic,deterministic model
-sidecar_lane,OPA/Rego sidecar lane,1296,1162,synthetic,deterministic model
-rotation_lane,HSM rotation lane,972,849,synthetic,deterministic model
-custody_guard_lane,Tool custody guard lane,1048,931,synthetic,deterministic model

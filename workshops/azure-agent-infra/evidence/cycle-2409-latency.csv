@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-full_bcdr_target,Full BCDR target,611,842,0.0,measured,staging drill replay
-pitr_alias_no_cleanroom,PITR + alias no clean-room,538,731,-13.2,anonymized_reported,drill+reported
-immutable_only_periodic,Immutable backup only periodic restore,904,1298,54.2,measured,staging drill replay
-legacy_backup_baseline,Legacy coarse backup baseline,1812,2480,194.5,anonymized_reported,reported baseline

@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-read-only diagnostic autonomy fidelity,237,245,0.9673,measured,replay logs
-jit remediation approval precision,233,245,0.951,measured,replay logs
-alert dedup and mttr convergence consistency,230,245,0.9388,measured,replay logs

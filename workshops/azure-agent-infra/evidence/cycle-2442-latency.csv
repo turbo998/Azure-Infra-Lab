@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-lot_telemetry_to_risk_packet,IoT lot telemetry ingest to first release-risk packet,9800,18400,anonymized_reported,anonymized cGMP lot replay
-excursion_root_cause_solver,Temperature excursion deterministic root-cause solver,640,1180,synthetic,cold-chain deviation deterministic benchmark
-batch_release_commit,QMS e-sign + batch release lock commit,172,312,measured,qms release concurrency replay
-supplier_recall_notification,Supplier/depot recall and hold-notice fan-out,390,725,anonymized_reported,anonymized recall dispatch replay

@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-breaker_path,Breaker-protected path,1329,1206,synthetic,deterministic model
-degraded_path,Latency-spike degraded path,1234,1112,synthetic,deterministic model
-brownout_fallback_path,Tool-brownout fallback path,1151,1028,synthetic,deterministic model
-nobreaker_path,No-breaker baseline path,897,786,synthetic,deterministic model

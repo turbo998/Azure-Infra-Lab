@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,overhead_pct_vs_target,source_label,source_ref
-postgres_unified,PostgreSQL unified (ACID + pg_diskann),71,108,14.9,measured,staging replay
-cosmos_unified,Cosmos unified (NoSQL + DiskANN),62,94,0.0,anonymized_reported,official+reported
-split_stack,Split stack (Postgres + AI Search),58,86,-8.5,measured,staging replay
-legacy_dual_write,Legacy dual-write baseline,103,153,62.8,anonymized_reported,reported baseline

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCL Global Channel IQ × Microsoft Fabric — Dual-Screen SA Live Demo Playbook</title>
+<style>
+  :root {
+    --bg:#0b1120; --panel:#111827; --card:#1e293b; --border:#334155;
+    --text:#f8fafc; --muted:#94a3b8; --blue:#38bdf8; --red:#f43f5e; --green:#10b981; --amber:#f59e0b;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+  .quickbar { background:#090d16; border-bottom:1px solid var(--border); padding:9px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:12.5px; position:sticky; top:0; z-index:50; }
+  .quickbar a { color:#93c5fd; text-decoration:none; font-weight:600; padding:4px 10px; border-radius:6px; background:rgba(30,41,59,0.8); border:1px solid rgba(148,163,184,0.25); }
+  .quickbar a:hover { background:#2563eb; color:#fff; }
+  .wrap { max-width:1160px; margin:0 auto; padding:32px 22px 64px; }
+  .hero { background:linear-gradient(135deg,#1e1b4b 0%,#0f172a 55%,#1f1224 100%); border:1px solid rgba(244,63,94,0.35); border-radius:18px; padding:28px 32px; margin-bottom:26px; }
+  .badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:11.5px; font-weight:700; background:rgba(244,63,94,0.2); color:#fda4af; border:1px solid rgba(244,63,94,0.4); margin-bottom:10px; }
+  h1 { font-size:26px; margin-bottom:8px; }
+  h2 { font-size:19px; color:var(--blue); margin:28px 0 12px; border-left:4px solid var(--red); padding-left:12px; }
+  h3 { font-size:15.5px; color:#e2e8f0; margin:14px 0 8px; }
+  p { color:#cbd5e1; font-size:14px; margin-bottom:10px; }
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin:14px 0; }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin:14px 0; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin:12px 0; background:var(--panel); border-radius:10px; overflow:hidden; }
+  th { background:#1e293b; color:#93c5fd; text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); }
+  td { padding:10px 12px; border-bottom:1px solid rgba(51,65,85,0.65); color:#e2e8f0; vertical-align:top; }
+  pre { background:#090d16; border:1px solid var(--border); border-radius:10px; padding:14px 16px; color:#e2e8f0; font-family:Consolas,monospace; font-size:12.5px; overflow-x:auto; margin:8px 0; }
+  code { font-family:Consolas,monospace; color:#7dd3fc; }
+  .quote { background:rgba(16,185,129,0.08); border-left:4px solid var(--green); padding:12px 16px; border-radius:8px; font-size:13.5px; color:#d1fae5; margin:10px 0; }
+  .btn-cta { display:inline-block; padding:9px 18px; border-radius:8px; background:#e11d48; color:#fff; text-decoration:none; font-weight:700; font-size:13.5px; margin-right:10px; margin-top:8px; }
+  .btn-sec { display:inline-block; padding:9px 18px; border-radius:8px; background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:13.5px; margin-top:8px; }
+</style>
+</head>
+<body>
+  <nav class="quickbar">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <strong>💎 DIAMOND SA PLAYBOOK</strong>
+      <a href="../diamond-hub.en.html">← Diamond Demo Hub</a>
+      <a href="index.en.html">📺 Launch 6-Act Interactive Cockpit</a>
+      <a href="../databricks-fabric/index.en.html">🛒 Zava × Databricks & Fabric</a>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <a href="../../index.en.html">🏠 Back to Data Lab</a>
+      <a href="playbook.html">🌐 中文版</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge">DIAMOND REFERENCE ARCHITECTURE · MICROSOFT FABRIC END-TO-END</span>
+      <h1>TCL Global Channel IQ × Microsoft Fabric — Dual-Screen SA Live Demo Playbook</h1>
+      <p>Solution Architect field playbook for global consumer-electronics manufacturing executives (Sales, S&OP, Channel Finance, CIO). Demonstrates how a single Microsoft Fabric capacity unifies OneLake Shortcuts, Direct Lake, Eventhouse KQL, Fabric IQ Ontology, and Dual Agents into a closed operational loop.</p>
+      <div>
+        <a class="btn-cta" href="index.en.html">🚀 Launch 6-Act Interactive Cockpit</a>
+        <a class="btn-sec" href="#queries">📋 Copy DAX / KQL / Agent Queries</a>
+      </div>
+    </section>
+
+    <h2 id="personas">1. Executive Persona Pain Points & Microsoft Fabric Value Mapping</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Stakeholder Role</th>
+          <th>Channel Business Pain</th>
+          <th>Killer Demo Moment</th>
+          <th>SA Value Takeaway</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>VP Overseas Sales / Regional GM</strong></td>
+          <td>Black Friday ad spend wasted on KA stockouts; cutting aging TV MSRP triggers steep contractual price-protection payouts</td>
+          <td>Act 1 Crisis Cards + Act 4 P745 Price-Protection Simulator</td>
+          <td>"Zero MSRP cut avoids $766.7K price-protection liability; Q85H soundbar bundle protects $582K net margin."</td>
+        </tr>
+        <tr>
+          <td><strong>Global Supply Chain & S&OP Director</strong></td>
+          <td>Weekly EDI 852 lags 5–7 days; ocean port congestion blocks replenishment during peak weekend</td>
+          <td>Act 3 2.8x POS Surge + 11-Day Rotterdam Delay + KQL Pairing</td>
+          <td>"Bypass the 11-day delayed vessel: KQL pairs Lyon EU_CE_230V surplus stock for 48h truck delivery to Frankfurt."</td>
+        </tr>
+        <tr>
+          <td><strong>Channel Finance & Audit Director</strong></td>
+          <td>Quarter-end channel stuffing inflates Sell-In to game top-tier rebates while stock sits unsold</td>
+          <td>Act 4 Rebate Audit Ledger (Auto-blocking VN01 $162.5K claim)</td>
+          <td>"OneLake joins SAP Sell-In with POS Sell-Out; Ontology Rule 3 blocks 104.5% Sell-In / 41.2% Sell-Through stuffing claims."</td>
+        </tr>
+        <tr>
+          <td><strong>Group CIO / Chief Data Architect</strong></td>
+          <td>Fragmented SAP, ADLS/S3, and partner EDI pipelines; raw LLMs hallucinate pricing actions that violate contracts</td>
+          <td>Act 2 OneLake Shortcuts + Act 4 Ontology Dual Binding + Act 6 Lab</td>
+          <td>"OneLake Shortcuts unify cross-domain tables with zero copy; Fabric IQ Ontology compiles contract rules into deterministic guardrails."</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="numbers">2. Verified Business Metrics Cheat Sheet</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>🌍 Global Footprint (15,319 Rows)</h3>
+        <p>• 5 Regions · 8 Subsidiaries · 36 Distributors & KAs</p>
+        <p>• Sell-In: <code>$135,334,688</code></p>
+        <p>• OMO Sell-Out: <code>$108,952,370</code> (80.5%)</p>
+        <p>• Channel Stock: <code>$47,489,905</code> (Avg 3.23w WOS)</p>
+      </div>
+      <div class="card">
+        <h3>🔴 Europe Stockout & Rebalance</h3>
+        <p>• <code>EuroTech DE01</code>: 85C855 <code>0.82w</code> (98u), 75C855 <code>0.86w</code> (185u)</p>
+        <p>• <code>MSC-AURORA-V42</code>: Delayed 11 days at Rotterdam ($2.68M cargo)</p>
+        <p>• <code>AlpenElectro FR01</code>: 7.1w WOS → 350u 48h truck saves <code>$629,650</code> GMV</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ Price Protection & Rebate Guard</h3>
+        <p>• P745 60-Day Exposure: <code>$766,697.60</code> (5,680u)</p>
+        <p>• Q85H Bundle Net Savings: <code>+$582,098</code></p>
+        <p>• <code>Mekong Star VN01</code>: 104.5% Sell-In vs 41.2% Sell-Out → Blocked <code>$162,500</code></p>
+      </div>
+    </div>
+
+    <h2 id="architecture">3. 6-Act Walkthrough & Architecture Highlights</h2>
+    <div class="grid-2">
+      <div class="card" id="onelake-shortcuts">
+        <h3>Act 1–2 · From Average WOS Illusion to OneLake Zero-Copy</h3>
+        <p>1. In Act 1, filter the 36-partner matrix by Critical Stockout (<1.5w) and Aging Overstock (>12w) to expose polarization behind the 3.23w average.</p>
+        <p>2. In Act 2, show how partner EDI 852 and retail POS tables in isolated partner storage mount into lh_tcl_global_channel via OneLake Shortcuts with zero physical duplication.</p>
+      </div>
+      <div class="card" id="act5">
+        <h3>Act 3–6 · Eventhouse KQL, Ontology Rules & Closed-Loop Pipeline</h3>
+        <p>3. In Act 3, run fn_CrossBorderRebalanceCandidates() on Eventhouse KQL to pair EU_CE_230V surplus in Lyon with Frankfurt shortages.</p>
+        <p>4. In Act 4, drag the P745 price-protection sliders, then in Act 5 trigger pl_tcl_rebalance_orchestrator to write the approved transfer order back to OneLake.</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>💡 Crisp SA Distinction (Semantic Model vs Fabric IQ Ontology):</strong><br>
+      "Power BI Semantic Models aggregate metrics (SUM/AVG) for human reporting; Fabric IQ Ontology binds business entities, live TimeSeries telemetry, and enforceable contract rules so AI agents act without hallucinating."
+    </div>
+
+    <h2 id="queries">4. Copy-Ready KQL, T-SQL & Data Agent Prompts</h2>
+    <pre>// 1. Eventhouse KQL — Intra-Europe 48h Cross-Border Rebalance Pairing
+fn_CrossBorderRebalanceCandidates()
+
+// 2. Eventhouse KQL — Ocean Vessel &amp; Port Congestion Alerts (&gt;= 7 Days Delay)
+PortAndLogisticsAlerts
+| where DelayDays &gt;= 7
+| project AlertTimestamp, ShipmentId, VesselCode, OriginPort, DestinationPort, AffectedProductId, AffectedUnits, CargoValueUSD, DelayDays, PortCongestionIndex
+| order by DelayDays desc</pre>
+
+    <pre>-- 3. Lakehouse SQL Analytics Endpoint — Cross-Domain SAP Master + Zero-Copy EDI 852 Polarization Check
+SELECT d.DistributorId, d.DistributorName, d.Country, i.ProductId,
+       i.OnHandUnits, i.WeeksOfSupply, i.PriceProtectionExposureUSD, i.StockHealthStatus
+FROM dbo.fact_channel_inventory_weekly i
+JOIN dbo.dim_distributors d ON i.DistributorId = d.DistributorId
+WHERE i.IsLatestSnapshot = 1
+  AND (i.WeeksOfSupply &lt; 1.5 OR i.PriceProtectionExposureUSD &gt; 50000)
+ORDER BY i.WeeksOfSupply ASC;</pre>
+
+    <h2 id="asset-inventory">5. Sanitized Reference Fabric Workspace Asset Bill of Materials</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Item Name</th><th>Fabric Artifact Type</th><th>Architectural Role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><code>TCL_Global_Channel_IQ</code></td><td>Workspace (F8/F64)</td><td>HQ Channel IQ primary workspace running all 16 items on one shared capacity</td></tr>
+        <tr><td>2</td><td><code>TCL_Partner_EDI_Portal_Zone</code></td><td>Partner Workspace + ADLS</td><td>Isolated partner EDI 852 / POS landing zone mounted via OneLake Shortcuts</td></tr>
+        <tr><td>3</td><td><code>lh_tcl_global_channel</code></td><td>Lakehouse</td><td>Unifies SAP Sell-In, ocean shipments, rebate contracts, and shortcut POS tables</td></tr>
+        <tr><td>4</td><td><code>eh_tcl_channel_pulse</code></td><td>Eventhouse (KQL)</td><td>Streams 2h POS surge, dynamic WOS telemetry, and Rotterdam port alerts</td></tr>
+        <tr><td>5</td><td><code>sm_tcl_global_channel_iq</code></td><td>Direct Lake Semantic Model</td><td>19 governed DAX measures reading OneLake V-Order Parquet with zero import lag</td></tr>
+        <tr><td>6</td><td><code>ont_tcl_global_channel_network</code></td><td>Fabric IQ Ontology + Graph</td><td>10 entities, 13 edges, static + TimeSeries bindings, and 3 margin guardrail rules</td></tr>
+        <tr><td>7</td><td><code>da_tcl_channel_copilot</code></td><td>Fabric Data Agent</td><td>Executive NL root-cause agent spanning SQL + KQL with Entra ID RLS passthrough</td></tr>
+        <tr><td>8</td><td><code>ops_tcl_autonomous_channel_guard</code></td><td>Operations Agent + Pipeline</td><td>Monitors WOS thresholds and triggers pl_tcl_rebalance_orchestrator write-back</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azure Databricks vs. Microsoft Fabric — 10-Dimension SA Architecture Battlecard</title>
+<style>
+  :root { --bg:#0b1120; --panel:#111827; --card:#1e293b; --border:#334155; --text:#f8fafc; --muted:#94a3b8; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+  .quickbar { background:#060911; border-bottom:1px solid var(--border); padding:9px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:12.5px; position:sticky; top:0; z-index:50; }
+  .quickbar a { color:#93c5fd; text-decoration:none; font-weight:600; padding:4px 10px; border-radius:6px; background:rgba(30,41,59,0.8); border:1px solid rgba(148,163,184,0.22); }
+  .quickbar a:hover { background:#2563eb; color:#fff; }
+  .wrap { max-width:1180px; margin:0 auto; padding:32px 22px 64px; }
+  .hero { background:linear-gradient(135deg,#1f1218 0%,#0f172a 50%,#0c233a 100%); border:1px solid rgba(56,189,248,0.35); border-radius:18px; padding:28px 32px; margin-bottom:26px; }
+  h1 { font-size:26px; margin-bottom:8px; }
+  h2 { font-size:19px; color:#38bdf8; margin:26px 0 12px; border-left:4px solid #f43f5e; padding-left:12px; }
+  p { font-size:14px; color:#cbd5e1; margin-bottom:10px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; background:var(--panel); border-radius:12px; overflow:hidden; margin:12px 0; }
+  th { background:#1e293b; color:#93c5fd; text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); }
+  td { padding:10px 12px; border-bottom:1px solid rgba(51,65,85,0.65); vertical-align:top; }
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin:14px 0; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; }
+  .card h3 { font-size:15.5px; margin-bottom:8px; }
+  ul { padding-left:18px; font-size:13.5px; color:#e2e8f0; }
+  li { margin-bottom:6px; }
+</style>
+</head>
+<body>
+  <nav class="quickbar">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <strong>⚔️ SA ARCHITECTURE BATTLECARD</strong>
+      <a href="../diamond-hub.en.html">← Diamond Demo Hub</a>
+      <a href="index.en.html">🛒 Back to Zava 4-Act Demo</a>
+      <a href="../tcl-fabric/index.en.html">📺 TCL × Fabric Cockpit</a>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <a href="../../index.en.html">🏠 Back to Data Lab</a>
+      <a href="battlecard.html">🌐 中文版</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Azure Databricks vs. Microsoft Fabric — 10-Dimension SA Selection & Coexistence Battlecard</h1>
+      <p>Core Principle: Both are first-party Azure services (both count toward Microsoft MACC) sharing ADLS Gen2 + Delta Parquet. Over 70% of mature enterprise accounts run a Zero-Copy Better-Together architecture.</p>
+    </section>
+
+    <h2>1. 10-Dimension Architectural Comparison Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:16%;">Dimension</th>
+          <th style="width:42%;">Azure Databricks</th>
+          <th style="width:42%;">Microsoft Fabric</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. Core Philosophy</strong></td><td>Code-First Data Engineering & Compound AI platform with identical multi-cloud runtime</td><td>SaaS-First unified analytics deeply integrated with M365, Power BI, Teams & Purview</td></tr>
+        <tr><td><strong>2. Storage & Open Formats</strong></td><td>Customer ADLS Gen2 + Delta Lake 4.0 / Liquid Clustering + UniForm Iceberg</td><td>Managed OneLake SaaS storage + V-Order optimization + cross-cloud Shortcuts</td></tr>
+        <tr><td><strong>3. Data Integration & ETL</strong></td><td>Lakeflow Connect + Declarative Pipelines (DLT) with built-in data quality quarantine</td><td>Data Factory (400+ low-code connectors), Dataflows Gen2 & Zero-ETL Database Mirroring</td></tr>
+        <tr><td><strong>4. Spark & SQL Engine</strong></td><td>C++ Photon vectorized engine + Serverless SQL Warehouse for heavy joins & scale</td><td>Native Execution Engine (Velox + Gluten) + T-SQL Warehouse with zero cluster ops</td></tr>
+        <tr><td><strong>5. Streaming & Real-Time</strong></td><td>Structured Streaming for stateful stream-batch ETL and real-time ML features</td><td>Eventhouse (KQL) + Activator for sub-second high-cardinality telemetry & operational alerts</td></tr>
+        <tr><td><strong>6. Governance & Catalog</strong></td><td>Unity Catalog: fine-grained RLS/CLS dynamic masking, column lineage & ABAC</td><td>OneLake Catalog + Purview: native M365 sensitivity labels & Entra ID OBO passthrough</td></tr>
+        <tr><td><strong>7. BI & Business Semantics</strong></td><td>UC Metric Views (YAML) + zero-seat AI/BI Lakeview operational dashboards</td><td>Power BI Direct Lake + Fabric IQ Ontology (entity graph + TimeSeries + contract rules)</td></tr>
+        <tr><td><strong>8. AI Agents & MLOps</strong></td><td>Mosaic AI, MLflow 3.0 & AI/BI Genie for production ML lifecycle & SQL root-cause Q&A</td><td>Fabric Data Agent + Operations Agent + Foundry IQ for closed-loop operational actions</td></tr>
+        <tr><td><strong>9. Operational HTAP</strong></td><td>Lakebase (Serverless Postgres) for low-latency online state & feature serving</td><td>SQL Database in Fabric + Cosmos DB Mirroring auto-replicating OLTP to OneLake</td></tr>
+        <tr><td><strong>10. Pricing & FinOps</strong></td><td>Per-second Serverless DBU consumption + commit discounts; zero idle compute waste</td><td>Unified F-SKU Capacity Units (F64+ includes Power BI viewer distribution) + burst smoothing</td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. Four Customer Archetypes & Recommended Reference Patterns</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color:#38bdf8;">🏢 Archetype 1: M365-Centric Global Operations (e.g., TCL Channel IQ)</h3>
+        <ul>
+          <li>High Power BI adoption; needs unified SAP/EDI/POS visibility + real-time operational guardrails.</li>
+          <li>Lead with Microsoft Fabric (OneLake Shortcuts + Eventhouse KQL + Fabric IQ Ontology + Direct Lake).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="color:#fca5a5;">🧪 Archetype 2: Code-First Data Engineering & Multi-Cloud AI Teams</h3>
+        <ul>
+          <li>Large PySpark/ML teams standardized on Git/DABs, MLflow 3.0, and custom Spark/Ray pipelines.</li>
+          <li>Lead with Azure Databricks (Unity Catalog + Lakeflow + Mosaic AI + AI/BI Genie).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="color:#6ee7b7;">🤝 Archetype 3: Hybrid Enterprise "Better-Together" (e.g., Zava Retail)</h3>
+        <ul>
+          <li>Existing Azure Databricks medallion & ML backbone + enterprise-wide Power BI & Teams consumption.</li>
+          <li>Mirrored Unity Catalog in OneLake + Power BI Direct Lake (zero ETL copy, single storage footprint).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="color:#fcd34d;">⛔ Anti-Patterns to Avoid in Customer Designs</h3>
+        <ul>
+          <li>Never copy Databricks Delta tables via scheduled ETL into Fabric Warehouse — use Zero-Copy Mirrored UC instead.</li>
+          <li>Avoid legacy JDBC scheduled Power BI Imports on large Gold tables — switch to Direct Lake.</li>
+          <li>Never expose raw tables to LLM agents without UC Metric Views or Fabric IQ Ontology rules.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-attribution_path,Token-attribution path,1335,1210,synthetic,deterministic model
-cache_path,Semantic-cache guarded path,1242,1119,synthetic,deterministic model
-routing_path,Batch/PTU/PayGo routing path,1157,1033,synthetic,deterministic model
-baseline_path,Non-optimized baseline path,902,789,synthetic,deterministic model

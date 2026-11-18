@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-apim_bus_acs_target,Target path,2280,2142,synthetic,deterministic model
-apim_direct_worker,Direct worker path,1789,1674,synthetic,deterministic model
-queue_without_replay_guard,No replay-guard path,1948,1830,synthetic,deterministic model
-legacy_channel_silo_baseline,Legacy baseline,1002,911,synthetic,deterministic model

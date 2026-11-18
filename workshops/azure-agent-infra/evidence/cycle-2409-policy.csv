@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-immutable backup lock enforcement,993,1000,0.993,measured,drill logs
-cleanroom recovery success,964,1000,0.964,measured,drill logs
-cross store checkpoint consistency,972,1000,0.972,measured,drill logs

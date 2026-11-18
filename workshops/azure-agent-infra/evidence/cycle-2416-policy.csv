@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-distilled accuracy gain,129,1000,0.129,measured,eval delta verifier
-monthly token cost reduction,290,1000,0.29,measured,finops replay
-forgetting guardrail pass,969,1000,0.969,measured,regression suite

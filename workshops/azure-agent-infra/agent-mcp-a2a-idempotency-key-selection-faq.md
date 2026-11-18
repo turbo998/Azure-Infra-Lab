@@ -88,7 +88,6 @@ sequenceDiagram
 | 单会话成本 (USD/20min) | 0.00483 | 0.00511 |
 
 - 7-card 输出：`benchmark-cards.html` / `benchmark-cards.en.html`  
-- 证据包：`evidence/cycle-414-benchmark.json`、`evidence/cycle-414-sources.json`  
 - 标签：`measured / synthetic / anonymized_reported`（生产未跑指标标记 `not_measured`）
 
 ## 🛠️ 生产核验 Checklist

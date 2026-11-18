@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-FAA Part 117 / EASA FTL illegal duty-time block,280,280,1.0,measured,crew legality constraint replay
-MEL maintenance violation block,193,198,0.9747,measured,mel gating replay in disruption scenarios
-Gate double-book conflict block,169,176,0.9602,anonymized_reported,anonymized gate assignment conflict replay

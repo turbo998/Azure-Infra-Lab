@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-managed_vnet_lane,Foundry managed VNet private-access lane,173,297,anonymized_reported,official+reported
-byo_subnet_lane,BYO-VNet subnet injection + route isolation lane,189,324,measured,staging replay
-dns_resolver_lane,Private DNS Resolver lookup lane,46,81,anonymized_reported,official+reported
-firewall_tls_lane,Firewall FQDN/TLS policy evaluation lane,69,123,synthetic,deterministic model

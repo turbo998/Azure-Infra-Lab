@@ -1,5 +1,0 @@
-metric,system,p50_ms,p95_ms,source_label,source_ref
-openadr_dispatch_500k_der,OpenADR dispatch fan-out across 500k DER endpoints,412,788,anonymized_reported,anonymized VPP dispatch replay bundle
-acopf_gate_latency,Pandapower AC-OPF thermal/voltage gate,86,154,synthetic,deterministic AC-OPF replay model
-pmu_stream_to_adx,PMU/AMI ingest and ADX query path,128,246,anonymized_reported,anonymized PMU+AMI ingestion traces
-weather_ensemble_inference,GPU weather/irradiance ensemble forecast,301,562,anonymized_reported,anonymized Aurora-style ensemble inference replay

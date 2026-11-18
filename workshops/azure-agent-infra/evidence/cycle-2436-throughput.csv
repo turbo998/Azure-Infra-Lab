@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-opcua_stream_ingest,OPC UA stream ingest and twin update,10880,9320,anonymized_reported,anonymized ingest replay
-modbus_normalization_lane,Modbus signal normalization throughput,7620,6540,synthetic,deterministic protocol normalization model
-maintenance_ticket_generation,Predictive maintenance ticket generation lane,2980,2410,anonymized_reported,anonymized CMMS ticket replay
-safety_gate_events,Safety gate validation event lane,4160,3650,synthetic,deterministic safety-policy replay

@@ -1,5 +1,0 @@
-path,vm_hourly_usd,sessions_per_host,session_minutes,overhead_usd,usd_per_session,source_label,source_ref
-RoCEv2 + local NVMe lane,7.88,286,20,0.00144,0.01062,synthetic,deterministic cost model
-InfiniBand + Managed Lustre lane,9.36,344,20,0.00187,0.01094,synthetic,deterministic cost model
-Hybrid prefill/decode split lane,8.42,412,20,0.00161,0.00842,synthetic,deterministic cost model
-Shared unsplit baseline,7.12,238,20,0.00122,0.01119,synthetic,deterministic cost model

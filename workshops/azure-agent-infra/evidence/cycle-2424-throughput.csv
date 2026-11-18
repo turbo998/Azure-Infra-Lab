@@ -1,5 +1,0 @@
-metric,path,p50_rps,p95_rps,source_label,source_ref
-finops_anomaly_batches_per_day,Anomaly batches triaged per day,186,174,measured,batch run telemetry
-iac_prs_opened_per_day,IaC remediation PRs opened per day,72,65,anonymized_reported,repo automation sample
-whatif_plan_checks_per_day,what-if and terraform plan checks per day,161,149,synthetic,verification model
-approved_remediations_per_day,Approved remediations per day,56,52,measured,approval trail replay

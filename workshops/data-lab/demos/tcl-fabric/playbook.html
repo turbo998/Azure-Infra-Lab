@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCL Global Channel IQ × Microsoft Fabric 双屏实战演示手册 (SA Playbook)</title>
+<style>
+  :root {
+    --bg:#0b1120; --panel:#111827; --card:#1e293b; --border:#334155;
+    --text:#f8fafc; --muted:#94a3b8; --blue:#38bdf8; --red:#f43f5e; --green:#10b981; --amber:#f59e0b;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+  .quickbar { background:#090d16; border-bottom:1px solid var(--border); padding:9px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:12.5px; position:sticky; top:0; z-index:50; }
+  .quickbar a { color:#93c5fd; text-decoration:none; font-weight:600; padding:4px 10px; border-radius:6px; background:rgba(30,41,59,0.8); border:1px solid rgba(148,163,184,0.25); }
+  .quickbar a:hover { background:#2563eb; color:#fff; }
+  .wrap { max-width:1160px; margin:0 auto; padding:32px 22px 64px; }
+  .hero { background:linear-gradient(135deg,#1e1b4b 0%,#0f172a 55%,#1f1224 100%); border:1px solid rgba(244,63,94,0.35); border-radius:18px; padding:28px 32px; margin-bottom:26px; }
+  .badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:11.5px; font-weight:700; background:rgba(244,63,94,0.2); color:#fda4af; border:1px solid rgba(244,63,94,0.4); margin-bottom:10px; }
+  h1 { font-size:26px; margin-bottom:8px; }
+  h2 { font-size:19px; color:var(--blue); margin:28px 0 12px; border-left:4px solid var(--red); padding-left:12px; }
+  h3 { font-size:15.5px; color:#e2e8f0; margin:14px 0 8px; }
+  p { color:#cbd5e1; font-size:14px; margin-bottom:10px; }
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin:14px 0; }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin:14px 0; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin:12px 0; background:var(--panel); border-radius:10px; overflow:hidden; }
+  th { background:#1e293b; color:#93c5fd; text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); }
+  td { padding:10px 12px; border-bottom:1px solid rgba(51,65,85,0.65); color:#e2e8f0; vertical-align:top; }
+  pre { background:#090d16; border:1px solid var(--border); border-radius:10px; padding:14px 16px; color:#e2e8f0; font-family:Consolas,monospace; font-size:12.5px; overflow-x:auto; margin:8px 0; }
+  code { font-family:Consolas,monospace; color:#7dd3fc; }
+  .quote { background:rgba(16,185,129,0.08); border-left:4px solid var(--green); padding:12px 16px; border-radius:8px; font-size:13.5px; color:#d1fae5; margin:10px 0; }
+  .btn-cta { display:inline-block; padding:9px 18px; border-radius:8px; background:#e11d48; color:#fff; text-decoration:none; font-weight:700; font-size:13.5px; margin-right:10px; margin-top:8px; }
+  .btn-sec { display:inline-block; padding:9px 18px; border-radius:8px; background:#2563eb; color:#fff; text-decoration:none; font-weight:700; font-size:13.5px; margin-top:8px; }
+</style>
+</head>
+<body>
+  <nav class="quickbar">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <strong>💎 DIAMOND SA PLAYBOOK</strong>
+      <a href="../diamond-hub.html">← Diamond 演示总入口</a>
+      <a href="index.html">📺 启动 TCL 6幕交互指挥舱</a>
+      <a href="../databricks-fabric/index.html">🛒 Zava × Databricks & Fabric 演示</a>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <a href="../../index.html">🏠 返回 Data Lab</a>
+      <a href="playbook.en.html">🌐 English</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge">DIAMOND REFERENCE ARCHITECTURE · MICROSOFT FABRIC END-TO-END</span>
+      <h1>TCL 海外销售与多级渠道智能 (Global Channel IQ) — 双屏实战演示手册</h1>
+      <p>面向制造出海营销本部 (OBG)、全球供应链 S&OP、海外财务稽核与集团 CIO 的解决方案架构师实战剧本。基于统一 Microsoft Fabric 容量（OneLake Shortcuts + Direct Lake + Eventhouse KQL + Fabric IQ Ontology + Data/Operations Agents）端到端打通「感知 → 语义风控 → 跨国调拨回写」闭环。</p>
+      <div>
+        <a class="btn-cta" href="index.html">🚀 打开 6 幕交互式作战指挥舱</a>
+        <a class="btn-sec" href="#queries">📋 复制 DAX / KQL / Agent 实战查询</a>
+      </div>
+    </section>
+
+    <h2 id="personas">一、高管角色痛点与 Microsoft Fabric 核心价值锚点</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>客户角色</th>
+          <th>核心渠道痛点</th>
+          <th>对应演示高光画面</th>
+          <th>SA 一句话价值定调</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>海外营销本部 (OBG) / 大区总</strong></td>
+          <td>黑五线上投流猛但线下门店断货；老品清库一砍指导价就触发巨额价保赔付</td>
+          <td>Act 1 三大危机卡片 + Act 4 P745 价保滑块沙盘</td>
+          <td>“不降指导价零触发 $76.67 万价保，改推 Q85H 声霸 OMO 捆绑净保 $58.2 万毛利。”</td>
+        </tr>
+        <tr>
+          <td><strong>全球供应链 & S&OP 总监</strong></td>
+          <td>代理商 EDI 852 周报滞后 5–7 天；红海/鹿特丹港延误时来不及跨国调货</td>
+          <td>Act 3 黑五脉冲 + 鹿特丹延误 11 天 + KQL 欧陆配对</td>
+          <td>“不等延误 11 天的海运船，KQL 毫秒级配对法国里昂富余欧规库存，48h 陆运救场德国黑五。”</td>
+        </tr>
+        <tr>
+          <td><strong>海外财务与渠道稽核总监</strong></td>
+          <td>国代季末突击提货 (Channel Stuffing) 骗取高阶返利，次季退货或砸价</td>
+          <td>Act 4 返利审计台账（自动冻结越南 VN01 $16.25 万）</td>
+          <td>“OneLake 打通批发 Sell-In 与终端 POS Sell-Out，Ontology 自动拦截提货 104.5% 但实销仅 41.2% 的异常返利。”</td>
+        </tr>
+        <tr>
+          <td><strong>集团 CIO / 首席数据架构师</strong></td>
+          <td>SAP、子公司 ADLS/S3、代理商 EDI 烟囱林立；裸连大模型不懂合同规则易幻觉</td>
+          <td>Act 2 OneLake 零拷贝拓扑 + Act 4 Ontology 双绑定 + Act 6 实验室</td>
+          <td>“OneLake Shortcuts 零物理复制统一底座；Fabric IQ Ontology 将合同护栏编译为可推理图谱。”</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="numbers">二、精确业务与财务底牌速查 (Presenter Cheat Sheet)</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>🌍 全球经营底盘 (15,319 行)</h3>
+        <p>• 5 大海外经营区 / 8 家分公司 / 36 家国代与 KA</p>
+        <p>• Sell-In: <code>$135,334,688</code></p>
+        <p>• OMO Sell-Out: <code>$108,952,370</code> (80.5%)</p>
+        <p>• 在库总货值：<code>$47,489,905</code> (均值 3.23w)</p>
+      </div>
+      <div class="card">
+        <h3>🔴 欧陆断货与调拨底牌</h3>
+        <p>• <code>EuroTech DE01</code>: 85C855 <code>0.82w</code> (98u), 75C855 <code>0.86w</code> (185u)</p>
+        <p>• <code>MSC-AURORA-V42</code>: 鹿特丹港延误 11 天 ($2.68M 在途)</p>
+        <p>• <code>AlpenElectro FR01</code>: 7.1w WOS → 调拨 350 台 75C855 护航 <code>$629,650</code> GMV</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ 价保精算与返利稽核底牌</h3>
+        <p>• P745 60天价保敞口：<code>$766,697.60</code> (5,680u)</p>
+        <p>• Q85H 声霸捆绑净保毛利：<code>+$582,098</code></p>
+        <p>• <code>Mekong Star VN01</code>: 104.5% Sell-In vs 41.2% Sell-Out → 冻结 <code>$162,500</code></p>
+      </div>
+    </div>
+
+    <h2 id="architecture">三、六幕双屏串联节奏（15 分钟高管版 / 40 分钟架构深潜版）</h2>
+    <div class="grid-2">
+      <div class="card" id="onelake-shortcuts">
+        <h3>Act 1–2 · 从“平均数假象”到 OneLake 零拷贝底座</h3>
+        <p>1. 在 Act 1 用状态筛选器一键切出 6 个断货仓与 7 个老品积压仓，破除 3.23 周平均周转假象。</p>
+        <p>2. 在 Act 2 展示外部代理商隔离域 (ADLS Gen2 / 独立工作区) 如何通过 OneLake Shortcuts 零字节复制挂载至主湖仓 lh_tcl_global_channel，供 SQL、Spark、Direct Lake 与 Ontology 共用。</p>
+      </div>
+      <div class="card" id="act5">
+        <h3>Act 3–6 · 实时流配对、Ontology 风控与闭环回写</h3>
+        <p>3. Act 3 点击「实时调用 Eventhouse KQL 重算」运行 fn_CrossBorderRebalanceCandidates()，锁定同为 EU_CE_230V 规格的法德调拨对。</p>
+        <p>4. Act 4 拖动 P745 价保滑块对比“直接降 MSRP (-$766.7K)”与“声霸套餐 (+$582.1K)”，并在 Act 5 一键触发 pl_tcl_rebalance_orchestrator 将调拨单回写 OneLake。</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>💡 SA 黄金区分话术（Semantic Model vs Fabric IQ Ontology）：</strong><br>
+      「Power BI 语义模型是为“人看报表做聚合（SUM/AVG）”设计的；而 Fabric IQ Ontology 是为“AI 智能体理解真实业务实体、分钟级 TimeSeries 状态与合同护栏规则”设计的——把“看报表”真正升级为“零幻觉自动管业务”。」
+    </div>
+
+    <h2 id="queries">四、复制即用：Eventhouse KQL / SQL / Data Agent 实战查询库</h2>
+    <pre>// 1. Eventhouse KQL — Intra-Europe 48h Cross-Border Rebalance Pairing
+fn_CrossBorderRebalanceCandidates()
+
+// 2. Eventhouse KQL — Ocean Vessel &amp; Port Congestion Alerts (&gt;= 7 Days Delay)
+PortAndLogisticsAlerts
+| where DelayDays &gt;= 7
+| project AlertTimestamp, ShipmentId, VesselCode, OriginPort, DestinationPort, AffectedProductId, AffectedUnits, CargoValueUSD, DelayDays, PortCongestionIndex
+| order by DelayDays desc</pre>
+
+    <pre>-- 3. Lakehouse SQL Analytics Endpoint — Cross-Domain SAP Master + Zero-Copy EDI 852 Polarization Check
+SELECT d.DistributorId, d.DistributorName, d.Country, i.ProductId,
+       i.OnHandUnits, i.WeeksOfSupply, i.PriceProtectionExposureUSD, i.StockHealthStatus
+FROM dbo.fact_channel_inventory_weekly i
+JOIN dbo.dim_distributors d ON i.DistributorId = d.DistributorId
+WHERE i.IsLatestSnapshot = 1
+  AND (i.WeeksOfSupply &lt; 1.5 OR i.PriceProtectionExposureUSD &gt; 50000)
+ORDER BY i.WeeksOfSupply ASC;</pre>
+
+    <h2 id="asset-inventory">五、参考部署资产架构清单（已脱敏标准模板）</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>资产名称</th><th>Fabric 类型</th><th>架构职责说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><code>TCL_Global_Channel_IQ</code></td><td>Workspace (F8/F64)</td><td>总部渠道智能主工作区（统一 CU 容量池承载全部 16 项组件）</td></tr>
+        <tr><td>2</td><td><code>TCL_Partner_EDI_Portal_Zone</code></td><td>Partner Workspace + ADLS</td><td>外部代理商 EDI 852 / POS 隔离落地区，通过 OneLake Shortcuts 零拷贝挂载</td></tr>
+        <tr><td>3</td><td><code>lh_tcl_global_channel</code></td><td>Lakehouse</td><td>汇聚 SAP Sell-In、在途海运提单、价保返利合同与零拷贝终端表</td></tr>
+        <tr><td>4</td><td><code>eh_tcl_channel_pulse</code></td><td>Eventhouse (KQL)</td><td>承载 2h 粒度黑五 POS 脉冲、动态 WOS 时序流与港口拥堵告警函数</td></tr>
+        <tr><td>5</td><td><code>sm_tcl_global_channel_iq</code></td><td>Direct Lake Semantic Model</td><td>19 项核心渠道度量值直读 OneLake V-Order Parquet，零定时导入延迟</td></tr>
+        <tr><td>6</td><td><code>ont_tcl_global_channel_network</code></td><td>Fabric IQ Ontology + Graph</td><td>10 类实体、13 条边、动静态双绑定与 3 条价保/返利/调拨风控规则</td></tr>
+        <tr><td>7</td><td><code>da_tcl_channel_copilot</code></td><td>Fabric Data Agent</td><td>穿透 SQL + KQL 双引擎的高管自然语言根因问数智能体（继承 Entra RLS）</td></tr>
+        <tr><td>8</td><td><code>ops_tcl_autonomous_channel_guard</code></td><td>Operations Agent + Pipeline</td><td>7×24 监控断货阈值并调用 pl_tcl_rebalance_orchestrator 回写跨国调拨单</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

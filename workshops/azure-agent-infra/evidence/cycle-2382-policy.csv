@@ -1,4 +1,0 @@
-policy,blocked,total,intercept_rate,source_label,source_ref
-signed card attestation fidelity,226,233,0.9699,measured,replay logs
-policy denial precision control,222,233,0.9528,measured,replay logs
-key rotation custody guard,219,233,0.9399,measured,replay logs
