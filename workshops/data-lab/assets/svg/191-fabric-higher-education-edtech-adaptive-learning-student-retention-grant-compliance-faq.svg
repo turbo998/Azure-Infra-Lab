@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940">
+  <defs>
+    <linearGradient id="bg191" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr191" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabCard191" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06281E"/>
+      <stop offset="100%" stop-color="#0A1E36"/>
+    </linearGradient>
+    <linearGradient id="compCard191" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2B1219"/>
+      <stop offset="100%" stop-color="#1A162B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1480" height="940" fill="url(#bg191)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="20" width="1432" height="94" rx="14" fill="url(#hdr191)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">
+    191 · Higher Education &amp; EdTech (1.2M Learners · 45 Campuses) xAPI Adaptive Learning, Student Retention &amp; Grant AI
+  </text>
+  <text x="46" y="82" fill="#E0F2FE" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">
+    高等教育与全球 EdTech 平台（120 万学习者 + $4.2B 科研经费）xAPI 自适应学习、退学预警 AI、2 CFR 200 经费合规与苏格拉底助教五云选型 (2026-11-19 R183 · 600M = 0.60B Vectors!)
+  </text>
+  <rect x="1175" y="34" width="260" height="64" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="2"/>
+  <text x="1305" y="59" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800">600M (0.60B!) VECTORS</text>
+  <text x="1305" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">16ms (4²ms) · -$364.6K/mo</text>
+
+  <!-- Left Column: Campus & EdTech Sources -->
+  <rect x="24" y="130" width="300" height="450" rx="12" fill="#111C2D" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="160" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">1. 高校教学、教务与科研源 (Sources)</text>
+
+  <rect x="40" y="176" width="268" height="90" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="200" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Canvas / Blackboard &amp; Coding Labs</text>
+  <text x="54" y="222" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 120 万学习者 · 85,000 门在线与混合课程</text>
+  <text x="54" y="242" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 995K EPS xAPI / IMS Caliper 学习点击流</text>
+
+  <rect x="40" y="278" width="268" height="90" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="302" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Ellucian Banner / Workday Student</text>
+  <text x="54" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 45 个校区选课、期中成绩与奖助学金记录</text>
+  <text x="54" y="344" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="380" width="268" height="90" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="404" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">600M (0.60B) 课程与科研基金库</text>
+  <text x="54" y="426" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 教材讲义、录播字幕与分步评分标准</text>
+  <text x="54" y="446" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• $4.2B NIH / NSF / Horizon 18,000 课题</text>
+
+  <rect x="40" y="482" width="268" height="82" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="54" y="506" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">15,500 名教授、学业导师与课题 PI</text>
+  <text x="54" y="528" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Power BI 留存看板 + Teams 干预审批</text>
+  <text x="54" y="548" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• F64 免除全部 Viewer 与 M365 Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms=4^2ms Loop -->
+  <rect x="342" y="130" width="1114" height="248" rx="12" fill="url(#fabCard191)" stroke="#10B981" stroke-width="2"/>
+  <text x="364" y="160" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    2A. 推荐首选：Microsoft Fabric 一体化智慧高教与科研合规架构（16ms = 4+4+4+4 = 4²ms · $15,180/mo · 省 96.0%）
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="362" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="376" y="200" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">① Sense (4ms) · Eventhouse KQL</text>
+  <text x="376" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS xAPI 学习流 ($0 写入税)</text>
+  <text x="376" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 关联 Banner/Workday 学籍与助学金</text>
+  <text x="376" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 第 3 周锁定 480 名高退学风险学生</text>
+  <text x="376" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 捕获 95 笔科研课题超期违规调账</text>
+  <text x="376" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 月省 $140.5K 学生成功 SaaS 与流税</text>
+
+  <!-- Step 2 -->
+  <rect x="634" y="176" width="264" height="182" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="648" y="200" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">② Reason (4ms) · 600M (0.60B!) DiskANN</text>
+  <text x="648" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.00 亿课程讲义与 NIH 指南向量</text>
+  <text x="648" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 仅 $3,260/mo (-92% RAM)</text>
+  <text x="648" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 湖内 PREDICT 退学预警 (+8.4pp 留存)</text>
+  <text x="648" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 挽回 +$24.6M/yr 学费流失与科研核减</text>
+  <text x="648" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 突破 0.60 Billion 向量规模里程碑！</text>
+
+  <!-- Step 3 -->
+  <rect x="914" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="928" y="200" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">③ Guardrail (4ms) · Foundry IQ</text>
+  <text x="928" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 苏格拉底启发式护栏 (0 考试答案剧透)</text>
+  <text x="928" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 2 CFR 200 拦截 95 笔违规科研调账</text>
+  <text x="928" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 规避 +$5.90M/yr 联邦科研审计追缴</text>
+  <text x="928" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• FERPA 学生隐私与心理记录 RLS/CLS</text>
+  <text x="928" y="336" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ SOP-191 100% 教学法与联邦合规</text>
+
+  <!-- Step 4 -->
+  <rect x="1186" y="176" width="250" height="182" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="1200" y="200" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">④ Act (4ms) · Teams &amp; Canvas</text>
+  <text x="1200" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Teams 学业导师预约与 PI 审批卡</text>
+  <text x="1200" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Canvas 自适应练习与 Banner 写回</text>
+  <text x="1200" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL 审计落盘</text>
+  <text x="1200" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 守护 $63.15M 学费与科研经费 SLA</text>
+  <text x="1200" y="336" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 4+4+4+4 = 16ms (4²ms) 极速闭环</text>
+
+  <!-- Center Bottom: Stitched Stack Comparison -->
+  <rect x="342" y="392" width="1114" height="188" rx="12" fill="url(#compCard191)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="364" y="422" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    2B. 传统四云 + 独立向量库 + 学生成功 SaaS 拼接栈痛点（820ms – 3,000ms 延迟 · $360K–$396K/mo 昂贵账单）
+  </text>
+
+  <rect x="362" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="378" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 600M (0.60B) 向量 DRAM 内存爆炸 ($74.5K/mo)</text>
+  <text x="378" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.00 亿课程与科研指南向量常驻 HNSW 需 &gt;2.3TB RAM</text>
+  <text x="378" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Mosaic / Cortex / OpenSearch 月耗 $71K–$77K</text>
+  <text x="378" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 缺乏考试时间窗联动，AI 易直接泄露考题标准答案</text>
+
+  <rect x="728" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="744" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ xAPI 流与 Banner 教务库 T+7 割裂</text>
+  <text x="744" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 课堂点击流按 GB 收取高额流写入附加费</text>
+  <text x="744" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 期中挂科后才触发预警，大一退学率高达 14.8%</text>
+  <text x="744" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 科研经费人工对账滞后，超期调账面临联邦审计核减</text>
+
+  <rect x="1094" y="438" width="342" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1110" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 15,500 名教授/导师/PI 席位与并发税</text>
+  <text x="1110" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Looker / QuickSight 按人头月费高达 $88K–$93K/mo</text>
+  <text x="1110" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 开学选课与结题高峰触发多集群 Warehouse 翻倍计费</text>
+  <text x="1110" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 跨 LMS / SIS / 财务三套权限策略维护极易越权泄露</text>
+
+  <!-- Bottom Table: 5-Cloud Decision Matrix -->
+  <rect x="24" y="596" width="1432" height="320" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="628" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    3. 五云高等教育自适应学习、学业留存预警与科研经费合规横向评测矩阵（1.2M Learners · 600M=0.60B Vectors · 15,500 Faculty/Advisors）
+  </text>
+
+  <!-- Table Header -->
+  <rect x="40" y="642" width="1400" height="36" rx="6" fill="#1E293B"/>
+  <text x="54" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">云平台方案 (Platform)</text>
+  <text x="340" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">xAPI 学习流 + SIS 同步</text>
+  <text x="595" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">600M (0.60B) 课程/指南向量</text>
+  <text x="855" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">苏格拉底防作弊与 FERPA 护栏</text>
+  <text x="1125" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">15.5K 导师/PI 席位费</text>
+  <text x="1290" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">月度总成本 (TCO)</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="40" y="684" width="1400" height="42" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="54" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ Microsoft Fabric (F64)</text>
+  <text x="340" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms KQL + $0 Mirroring</text>
+  <text x="595" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$3,260/mo (SSD DiskANN -92%)</text>
+  <text x="855" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms 零剧透 + 2 CFR 200 &amp; FERPA</text>
+  <text x="1125" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$0 Viewer / $0 Token</text>
+  <text x="1290" y="710" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">$15,180/mo (-96.0%)</text>
+
+  <!-- Row 2: Databricks -->
+  <rect x="40" y="732" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔶 Azure Databricks</text>
+  <text x="340" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">650ms–1.9s ($55K/mo DBU)</text>
+  <text x="595" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$74,500/mo (Mosaic DRAM)</text>
+  <text x="855" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">UC ABAC + 外部教学法校验</text>
+  <text x="1125" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$88,000/mo (BI + SQL)</text>
+  <text x="1290" y="756" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$369,000/mo</text>
+
+  <!-- Row 3: Snowflake -->
+  <rect x="40" y="776" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="800" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔷 Snowflake Enterprise</text>
+  <text x="340" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">1.1s–3.0s ($66K/mo Credits)</text>
+  <text x="595" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$77,000/mo (Cortex Search)</text>
+  <text x="855" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Horizon RLS + 外部规则网关</text>
+  <text x="1125" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$93,000/mo (Multi-Cluster)</text>
+  <text x="1290" y="800" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$396,000/mo</text>
+
+  <!-- Row 4: BigQuery -->
+  <rect x="40" y="820" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="844" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🌐 Google BigQuery</text>
+  <text x="340" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">750ms–2.1s ($53K/mo Write API)</text>
+  <text x="595" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$71,000/mo (Vertex Vector)</text>
+  <text x="855" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Policy Tags + 外部代码</text>
+  <text x="1125" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$92,000/mo (Looker Seats)</text>
+  <text x="1290" y="844" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$360,000/mo</text>
+
+  <!-- Row 5: AWS -->
+  <rect x="40" y="864" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="888" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">☁️ AWS Lakehouse</text>
+  <text x="340" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">790ms–2.3s ($54K/mo MSK/Glue)</text>
+  <text x="595" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$73,000/mo (OpenSearch OCU)</text>
+  <text x="855" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Lake Formation + 外部网关</text>
+  <text x="1125" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$90,000/mo (QuickSight)</text>
+  <text x="1290" y="888" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$366,000/mo</text>
+</svg>
