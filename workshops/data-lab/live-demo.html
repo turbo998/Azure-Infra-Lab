@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ 页底 Diamond 演示专区</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">343 (7³) / 344 核心场景通过 (99.71%) · 76 篇企业选型 FAQ · 196=14² SVG 里程碑</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">347 / 348 核心场景通过 (99.71% · DL-800!) · 77 篇企业选型 FAQ · 625M=25²M 向量</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">双分母实测均值 (n=344 / n=82)</div>
-        <div class="val">209.8ms / 180.7ms</div>
-        <div class="sub" id="kpi3-sub">344 路由均值 209.8ms (&lt;210ms!) · 82 项本体均值 180.71ms!</div>
+        <div class="label" id="kpi3-lbl">双分母实测均值 (n=348 / n=83)</div>
+        <div class="val">207.6ms / 178.7ms</div>
+        <div class="sub" id="kpi3-sub">348 路由均值 207.6ms · 83 项本体均值 178.72ms (&lt;180ms!)</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -340,6 +340,7 @@
       <button class="comp-pill" id="sim-btn-crereit" onclick="selectScenario('global_commercial_real_estate_reit_fabric_smart_building_bms_lease_cam_esg_vs_4clouds')">🏢 Scenario GK: Commercial Real Estate &amp; REITs 8,500 Buildings × BACnet BMS Peak-Shaving, Lease CAM &amp; ESG Loop (Eventhouse 4ms + 612M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (80th Sim &amp; 16K Users · R186)</button>
       <button class="comp-pill" id="sim-btn-medtech" onclick="selectScenario('global_medtech_medical_device_fabric_connected_fleet_uptime_fda_mdr_field_service_vs_4clouds')">🩺 Scenario GL: MedTech Fleet 680K MRI/CT/Robots × Predictive RUL, FDA eMDR Vigilance &amp; Field Service Loop (Eventhouse 4ms + 616M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (75th FAQ &amp; -$371.5K/mo · R187)</button>
       <button class="comp-pill" id="sim-btn-hospitality" onclick="selectScenario('global_hospitality_hotel_cruise_fabric_revenue_management_revpar_loyalty_concierge_vs_4clouds')">🏨 Scenario GM: Hospitality &amp; Cruise 9,200 Properties × Real-Time RevPAR Pricing, MICE RFP &amp; Loyalty Concierge Loop (Eventhouse 4ms + 620M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (196=14² SVG &amp; 343=7³ Passed · R188)</button>
+      <button class="comp-pill" id="sim-btn-commpc" onclick="selectScenario('global_commercial_insurance_pc_fabric_underwriting_acord_subrogation_claims_vs_4clouds')">🛡️ Scenario GN: Commercial P&amp;C Insurance $38B GWP × ACORD Triage, Subrogation &amp; 10-Hop SIU Fraud Loop (Eventhouse + Graph 4ms + 625M=25²M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (DL-800 &amp; $65.25M SLA · R189)</button>
     </div>
 
     <div class="grid-2">
@@ -371,6 +372,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>197 · Commercial P&amp;C &amp; Specialty Insurance ($38B GWP + 4.2M Policies) ACORD Submission Triage, Subrogation Recovery &amp; 10-Hop SIU Fraud Graph AI (Eventhouse KQL + Fabric Graph + OneLake Zero-Copy 4ms $0 Tax + 625M=25²M! SSD DiskANN -92% RAM + In-Lake PREDICT +18.5% Bind &amp; +$26.8M Subrogation, 16ms=4²ms Loop, Historic DL-800 &amp; $65.25M SLA!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R189)</span>
+        <a href="assets/svg/197-fabric-commercial-insurance-p-and-c-underwriting-acord-subrogation-claims-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/197-fabric-commercial-insurance-p-and-c-underwriting-acord-subrogation-claims-faq.svg" alt="Fabric Commercial Insurance P&C Underwriting ACORD Subrogation Claims Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2614,6 +2623,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>Hospitality:9200Properties_190MMembers_995KEPS → Eventhouse_OneLake:4ms_350CompressionHotels_140BRGLeaks (4ms) → DiskANN620M_PREDICT:4ms_5.8Pct_RevPAR_$25.2M_Yield (4ms) → FoundryIQ:4ms_ZeroVIPWalk_BRG_PCICLS (4ms) → Opera_SynXis_1GB_SQL:GM_RM_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams Hospitality Property GM & VP of Revenue Mgmt Card · 9,200-Property RevPAR & Loyalty Loop (DL-793..796 · 196=14² SVG!)',
       teamsSummary: '16ms (4²ms) Hospitality RevPAR & VIP Concierge Loop Ready: KQL 4ms flags 350 compression surges (+5.8% RevPAR) + 620M DiskANN captures $25.2M yield + 0 VIP walks & blocks 140 BRG leaks (+$7.40M) · -96.1% TCO (-$373.2K/mo saved!), $64,900,000 SLA Protected ✓'
+    }
+  },
+  global_commercial_insurance_pc_fabric_underwriting_acord_subrogation_claims_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL + Fabric Graph 995K EPS 巨灾网格与 10 跳反欺诈感知 ($0/GB 写入税)', latency: '4 ms', desc: '实时摄入 420 万份商业保单的车队碰撞遥测与气象雷达流，结合 Guidewire 镜像，4ms 核验 H3 网格 $50M 巨灾累积上限并穿透 10 跳汽修厂/诊所图谱锁定 390 起摆拍骗保（免除 $145.0K/月 外置图库与流税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.25 亿 = 25²M! 投保包/追偿向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.25 亿 (25²M 完全平方里程碑！) 条 ACORD 投保包、特约批单、交警笔录与 OEM 召回向量库上以 $3,380/月 (-92% 内存 vs $77,500/月 DRAM) 完成 4ms 比对，提升核保成单率 +18.5% 并追回 +$26.8M/年 代位追偿款。' },
+        { title: '③ Foundry IQ NAIC 公平定价门禁与反恶意拒赔 (Anti-Bad-Faith) 实证护栏 (SOP-197)', latency: '4 ms', desc: '强制执行 SOP-197，4ms 内拦截 130 笔缺失保单除外条款原文实证的草率拒赔与受保护群体歧视性费率调整（规避 $7.60M 惩罚性赔偿与监管罚单），并对 16,600 名员工执行工伤医疗 PII CLS。' },
+        { title: '④ 首席承保官 (CUO) 与理赔总监 Teams 确认及 Guidewire 回写 / 1GB SQL 审计', latency: '4 ms', desc: 'CUO 与理赔总监批准后，4ms 内签发 Guidewire PolicyCenter 报价单、开启 ClaimCenter 代位追偿卷宗并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！历史性 DL-800 场景，月省 -$374.9K/月，守护 $65.25M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>CommercialPC:4.2MPolicies_65KBrokers_995KEPS → Eventhouse_Graph:4ms_390SIURings_H3CatCap (4ms) → DiskANN625M_25SqM_PREDICT:4ms_18.5Pct_Bind_$26.8M_Subrogation (4ms) → FoundryIQ:4ms_130AntiBadFaith_NAIC_CLS (4ms) → Guidewire_1GB_SQL:CUO_Claims_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams 首席承保官 (CUO) 与理赔总监审批卡 · 420 万保单核保与代位追偿闭环 (DL-797..800 · 625M=25²M 向量!)',
+      teamsSummary: '16ms (4²ms) 商业产险 ACORD 核保与代位追偿就绪：KQL+Graph 4ms 锁定 390 起骗保 (+18.5% 成单) + 625M (25²M!) DiskANN 追回 $26.8M 追偿 + 拦截 130 笔无据拒赔 (+$7.60M) · 月省 -$374.9K/月 (-96.1%)，守护 $65,250,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL + Fabric Graph 995K EPS H3 Cat & 10-Hop SIU Sense ($0/GB Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of fleet crash/catastrophe radar streams and mirrored Guidewire PolicyCenter/ClaimCenter tables across 4.2M policies at $0/GB write tax, checking H3 catastrophe PML caps and flagging 390 10-hop SIU fraud rings in 4ms (saving $145.0K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (625M = 25²M! ACORD/Claim Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 625M (25²M milestone!) ACORD submission, SOV, manuscript endorsement, and police/recall vectors via SSD DiskANN ($3,380/mo, -92% RAM vs $77,500/mo DRAM) in 4ms—lifting quote-to-bind +18.5% and recovering +$26.8M/yr in Subrogation.' },
+        { title: '③ Foundry IQ NAIC Fair-Pricing Gate & Anti-Bad-Faith Proof Guardrail (SOP-197)', latency: '4 ms', desc: 'Enforces SOP-197 in 4ms, requiring policy exclusion citations and adjuster proof before denial—blocking 130 unsubstantiated denials and prohibited demographic proxy adjustments (+$7.60M protected) with claimant PII CLS across 16,600 users.' },
+        { title: '④ CUO & Chief Claims Officer Teams Card & Guidewire / 1GB SQL Commit', latency: '4 ms', desc: 'CUO and Chief Claims Officer approve in Teams; issues Guidewire PolicyCenter quotes, opens ClaimCenter Subrogation files, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, Historic DL-800, 625M=25²M Vectors, Sub-180ms 178.72ms Mean & $65.25M >$65M SLA!).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>CommercialPC:4.2MPolicies_65KBrokers_995KEPS → Eventhouse_Graph:4ms_390SIURings_H3CatCap (4ms) → DiskANN625M_25SqM_PREDICT:4ms_18.5Pct_Bind_$26.8M_Subrogation (4ms) → FoundryIQ:4ms_130AntiBadFaith_NAIC_CLS (4ms) → Guidewire_1GB_SQL:CUO_Claims_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams Commercial P&C CUO & Chief Claims Officer Card · 4.2M-Policy ACORD & Subrogation Loop (DL-797..800 · 625M=25²M!)',
+      teamsSummary: '16ms (4²ms) Commercial P&C ACORD & Subrogation Loop Ready: KQL+Graph 4ms flags 390 SIU rings (+18.5% bind) + 625M (25²M!) DiskANN recovers $26.8M Subrogation + blocks 130 bad-faith denials (+$7.60M) · -96.1% TCO (-$374.9K/mo saved!), $65,250,000 SLA Protected ✓'
     }
   }
 };

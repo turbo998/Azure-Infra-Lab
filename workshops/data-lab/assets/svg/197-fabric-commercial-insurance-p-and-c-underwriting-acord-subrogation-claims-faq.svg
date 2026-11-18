@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940">
+  <defs>
+    <linearGradient id="bg197" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr197" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabCard197" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06281E"/>
+      <stop offset="100%" stop-color="#0A1E36"/>
+    </linearGradient>
+    <linearGradient id="compCard197" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2B1219"/>
+      <stop offset="100%" stop-color="#1A162B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1480" height="940" fill="url(#bg197)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="20" width="1432" height="94" rx="14" fill="url(#hdr197)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="21.5" font-weight="800">
+    197 · Commercial P&amp;C Insurance ($38B GWP · 4.2M Policies) ACORD Triage, Subrogation &amp; SIU Fraud Graph AI
+  </text>
+  <text x="46" y="82" fill="#E0F2FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.8" font-weight="600">
+    商业财产险（Commercial P&amp;C：65,000 经纪人 + 16,600 核保/理赔员）ACORD 秒级核保、代位追偿挖掘与 10 跳反欺诈图谱五云选型 (2026-11-19 R189 · DL-800 &amp; 625M=25²M Vectors!)
+  </text>
+  <rect x="1175" y="34" width="260" height="64" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="2"/>
+  <text x="1305" y="59" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">DL-800 · 625M (25²M!) VEC</text>
+  <text x="1305" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">16ms (4²ms) · $65.25M SLA</text>
+
+  <!-- Left Column: Broker ACORD, Telematics & Guidewire Sources -->
+  <rect x="24" y="130" width="300" height="450" rx="12" fill="#111C2D" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="160" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">1. 询价、车队与核心系统源 (Sources)</text>
+
+  <rect x="40" y="176" width="268" height="90" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="200" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">65K 经纪人 ACORD &amp; 车队/气象流</text>
+  <text x="54" y="222" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 120 页 ACORD 125/140 + SOV 资产清单</text>
+  <text x="54" y="242" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 995K EPS 商用车队碰撞与飓风 H3 雷达流</text>
+
+  <rect x="40" y="278" width="268" height="90" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="302" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Guidewire PolicyCenter / ClaimCenter</text>
+  <text x="54" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 420 万份商业保单 · $38B 保费与准备金</text>
+  <text x="54" y="344" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="380" width="268" height="90" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="404" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">625M (25²M!) 批单与交警/追偿卷宗库</text>
+  <text x="54" y="426" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 5 年赔付表 (Loss Runs) 与特约批单</text>
+  <text x="54" y="446" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 交警责任认定书、消防鉴定与 OEM 召回库</text>
+
+  <rect x="40" y="482" width="268" height="82" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="54" y="506" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">16,600 名商业核保师、理赔员与 SIU</text>
+  <text x="54" y="528" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Power BI 综合成本率看板 + Teams 追偿卡</text>
+  <text x="54" y="548" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• F64 免除全部 Viewer 与 M365 Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms=4^2ms Loop -->
+  <rect x="342" y="130" width="1114" height="248" rx="12" fill="url(#fabCard197)" stroke="#10B981" stroke-width="2"/>
+  <text x="364" y="160" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    2A. 推荐首选：Microsoft Fabric 一体化 ACORD 智能核保、代位追偿与反欺诈架构（16ms = 4²ms · $15,300/mo · 省 96.1%）
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="362" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="376" y="200" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">① Sense (4ms) · KQL &amp; Graph</text>
+  <text x="376" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 车队与巨灾雷达流 ($0 税)</text>
+  <text x="376" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• H3 网格实时校验 $50M 巨灾累积上限</text>
+  <text x="376" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Fabric Graph 10 跳穿透汽修厂/诊所</text>
+  <text x="376" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 4ms 锁定 390 起摆拍骗保与超限投保</text>
+  <text x="376" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 月省 $145.0K 外置图库与流写入税</text>
+
+  <!-- Step 2 -->
+  <rect x="634" y="176" width="264" height="182" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="648" y="200" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">② Reason (4ms) · 625M (25²M!) Vec</text>
+  <text x="648" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.25 亿 (25²M!) 投保包与追偿卷宗向量</text>
+  <text x="648" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 仅 $3,380/mo (-92% RAM)</text>
+  <text x="648" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• ACORD 秒级核保成单率提升 +18.5%</text>
+  <text x="648" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 追回 +$26.8M/yr 第三方代位追偿款</text>
+  <text x="648" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 达成 625M = 25²M 完全平方向量！</text>
+
+  <!-- Step 3 -->
+  <rect x="914" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="928" y="200" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">③ Guardrail (4ms) · Foundry IQ</text>
+  <text x="928" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 反恶意拒赔 (Bad-Faith) 条款实证门禁</text>
+  <text x="928" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 拦截 130 笔无据拒赔与歧视性费率因子</text>
+  <text x="928" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 规避 +$7.60M/yr 惩罚性赔偿与监管罚单</text>
+  <text x="928" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 工伤医疗记录与财务隐私 Purview CLS</text>
+  <text x="928" y="336" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ SOP-197 100% NAIC 与理赔法规合规</text>
+
+  <!-- Step 4 -->
+  <rect x="1186" y="176" width="250" height="182" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="1200" y="200" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">④ Act (4ms) · Teams &amp; Guidewire</text>
+  <text x="1200" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Teams 核保报价与代位追偿审批卡</text>
+  <text x="1200" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Guidewire Policy/ClaimCenter 回写</text>
+  <text x="1200" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL 审计落盘</text>
+  <text x="1200" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 守护 $65.25M (&gt;$65M!) 综合成本率 SLA</text>
+  <text x="1200" y="336" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 历史性第 DL-800 号场景里程碑！</text>
+
+  <!-- Center Bottom: Stitched Stack Comparison -->
+  <rect x="342" y="392" width="1114" height="188" rx="12" fill="url(#compCard197)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="364" y="422" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    2B. 传统四云 + 独立向量库 + 外置图数据库拼接栈痛点（860ms – 3,300ms 延迟 · $370.5K–$406.5K/mo 昂贵账单）
+  </text>
+
+  <rect x="362" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="378" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 625M (25²M) 向量内存爆炸 ($77.5K/mo)</text>
+  <text x="378" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.25 亿投保包与理赔卷宗常驻 HNSW 需 &gt;2.4TB RAM</text>
+  <text x="378" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Mosaic / Cortex / OpenSearch 月耗 $74K–$80K</text>
+  <text x="378" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 定损员无暇细读 80 页交警报告，每年漏追 $26.8M 追偿</text>
+
+  <rect x="728" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="744" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 6 天手工核保丢单与 T+1 外置图库漏放骗保</text>
+  <text x="744" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 手工清洗经纪人 SOV 清单错失 62% 首家报价机会</text>
+  <text x="744" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 赔案付款后才同步外置图库，无法事前拦截摆拍团伙</text>
+  <text x="744" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 缺乏保单除外条款实证校验，面临恶意拒赔天价诉讼</text>
+
+  <rect x="1094" y="438" width="342" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1110" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 16,600 名核保/理赔员席位与并发税</text>
+  <text x="1110" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Looker / QuickSight 按人头月费高达 $90K–$95K/mo</text>
+  <text x="1110" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 台风/飓风过境集中报案高峰触发多集群翻倍计费</text>
+  <text x="1110" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 跨 Guidewire / 图库 / BI 三套权限极易泄露工伤 PHI</text>
+
+  <!-- Bottom Table: 5-Cloud Decision Matrix -->
+  <rect x="24" y="596" width="1432" height="320" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="628" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    3. 五云商业财产险（P&amp;C）ACORD 智能核保、代位追偿与 SIU 反欺诈横向评测矩阵（$38B GWP · 625M=25²M Vectors · 16,600 Users）
+  </text>
+
+  <!-- Table Header -->
+  <rect x="40" y="642" width="1400" height="36" rx="6" fill="#1E293B"/>
+  <text x="54" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">云平台方案 (Platform)</text>
+  <text x="340" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">巨灾流 + 10跳图谱 + 同步</text>
+  <text x="595" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">625M (25²M) 投保/追偿向量</text>
+  <text x="855" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">代位追偿与反恶意拒赔门禁</text>
+  <text x="1125" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">16.6K 核保/理赔席位</text>
+  <text x="1290" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">月度总成本 (TCO)</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="40" y="684" width="1400" height="42" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="54" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ Microsoft Fabric (F64)</text>
+  <text x="340" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms KQL+Graph + $0 Mirror</text>
+  <text x="595" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$3,380/mo (SSD DiskANN -92%)</text>
+  <text x="855" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms 追回 $26.8M &amp; NAIC Gate</text>
+  <text x="1125" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$0 Viewer / $0 Token</text>
+  <text x="1290" y="710" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">$15,300/mo (-96.1%)</text>
+
+  <!-- Row 2: Databricks -->
+  <rect x="40" y="732" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔶 Azure Databricks</text>
+  <text x="340" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">710ms–2.1s ($58.0K/mo DBU)</text>
+  <text x="595" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$77,500/mo (Mosaic DRAM)</text>
+  <text x="855" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">UC ABAC + 外部规则校验</text>
+  <text x="1125" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$90,000/mo (BI + SQL)</text>
+  <text x="1290" y="756" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$379,500/mo</text>
+
+  <!-- Row 3: Snowflake -->
+  <rect x="40" y="776" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="800" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔷 Snowflake Enterprise</text>
+  <text x="340" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">1.2s–3.3s ($69.0K/mo + Graph)</text>
+  <text x="595" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$80,000/mo (Cortex Search)</text>
+  <text x="855" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Horizon RLS + 外部网关</text>
+  <text x="1125" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$95,000/mo (Multi-Cluster)</text>
+  <text x="1290" y="800" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$406,500/mo</text>
+
+  <!-- Row 4: BigQuery -->
+  <rect x="40" y="820" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="844" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🌐 Google BigQuery</text>
+  <text x="340" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">810ms–2.4s ($56.0K/mo Spanner)</text>
+  <text x="595" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$74,000/mo (Vertex Vector)</text>
+  <text x="855" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Policy Tags + 外部代码</text>
+  <text x="1125" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$94,000/mo (Looker Seats)</text>
+  <text x="1290" y="844" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$370,500/mo</text>
+
+  <!-- Row 5: AWS -->
+  <rect x="40" y="864" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="888" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">☁️ AWS Lakehouse</text>
+  <text x="340" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">850ms–2.6s ($57.0K/mo Neptune)</text>
+  <text x="595" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$76,000/mo (OpenSearch OCU)</text>
+  <text x="855" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Lake Formation + 外部网关</text>
+  <text x="1125" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$92,000/mo (QuickSight)</text>
+  <text x="1290" y="888" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$376,500/mo</text>
+</svg>
