@@ -3,7 +3,7 @@
 > **Language / 语言切换**: **[🇨🇳 中文 (`README.md`)](README.md)** | **🇬🇧 English (`README.en.md`)**  
 > **⚡ Quick Access**: **[💎 Diamond Enterprise Demo Hub](demos/diamond-hub.en.html)** · **[📺 TCL × Fabric 6-Act Cockpit](demos/tcl-fabric/index.en.html)** · **[🛒 Zava × Databricks & Fabric Demo](demos/databricks-fabric/index.en.html)** · **[⚔️ Databricks vs Fabric 10-Dim Battlecard](demos/databricks-fabric/battlecard.en.html)** · **[🧭 5-Cloud TCO & Sim Workbench](index.en.html)** · **[📊 7-Card Benchmark Deck](benchmark-cards.en.html)**
 
-An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Microsoft Fabric** (OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology) with **Azure Databricks**, **Snowflake**, **GCP BigQuery**, and **AWS Lakehouse** — featuring **2 fully sanitized executive live demos (Diamond Enterprise Demo Suite)**, **60 bilingual enterprise architecture selection FAQs**, and a **sealed reproducible benchmark suite (`279 / 280 = 99.64%`, `136 / 136` unit tests passing)**.
+An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Microsoft Fabric** (OneLake · Direct Lake · Eventhouse · Fabric IQ Ontology) with **Azure Databricks**, **Snowflake**, **GCP BigQuery**, and **AWS Lakehouse** — featuring **2 fully sanitized executive live demos (Diamond Enterprise Demo Suite)**, **61 bilingual enterprise architecture selection FAQs**, and a **sealed reproducible benchmark suite (`283 / 284 = 99.65%`, `138 / 138` unit tests passing)**.
 
 ---
 
@@ -15,11 +15,11 @@ An **AI Solution Architect (SA)** evaluation and live-demo lab comparing **Micro
 | **📺 TCL Global Channel IQ × Fabric (6-Act Cockpit)** | Zero-copy OneLake EDI 852 Shortcuts + Eventhouse port-delay KQL + Fabric IQ Ontology guardrails + pipeline write-back | [`demos/tcl-fabric/index.en.html`](demos/tcl-fabric/index.en.html) · [SA Playbook](demos/tcl-fabric/playbook.en.html) |
 | **🛒 Zava Omnichannel Retail × Databricks & Fabric** | Unity Catalog dynamic PII masking + 5-turn AI/BI Genie margin root-cause drilldown + Mirrored UC Direct Lake | [`demos/databricks-fabric/index.en.html`](demos/databricks-fabric/index.en.html) · [10-Dim Battlecard](demos/databricks-fabric/battlecard.en.html) |
 | **🧭 5-Cloud Competitive & TCO Workbench** | 6-dimension platform scorecard, 500-viewer interactive TCO calculator, and Fabric IQ Ontology guardrail simulator | [`index.en.html`](index.en.html) · [中文](index.html) |
-| **📊 7-Card 4:5 Visual Benchmark Deck** | Self-contained 7-card evaluation deck generated from sealed `reports/report.json` (`279/280 = 99.64%`, explicit `DL-23` miss) | [`benchmark-cards.en.html`](benchmark-cards.en.html) · [中文](benchmark-cards.html) |
+| **📊 7-Card 4:5 Visual Benchmark Deck** | Self-contained 7-card evaluation deck generated from sealed `reports/report.json` (`283/284 = 99.65%`, explicit `DL-23` miss) | [`benchmark-cards.en.html`](benchmark-cards.en.html) · [中文](benchmark-cards.html) |
 
 ---
 
-## 2. 60 Curated Enterprise Data + AI Architecture Selection FAQs
+## 2. 61 Curated Enterprise Data + AI Architecture Selection FAQs
 
 Every FAQ follows a crisp Solution Architect structure (Executive Summary, Architecture Q&A, Dataflow Diagram, 5-Cloud Decision Matrix, Implementation Checklist) focused strictly on mainstream enterprise workloads:
 
@@ -36,7 +36,7 @@ Every FAQ follows a crisp Solution Architect structure (Executive Summary, Archi
 - **FinOps, Network Security & BCDR**: [Capacity FinOps & Surge Protection](comparisons/fabric-capacity-finops-surge-rayfin-vs-4clouds-faq.en.md) · [Managed VNet & Private Link](comparisons/fabric-private-link-managed-vnet-security-vs-4clouds-faq.en.md) · [Cross-Region BCDR & CMK](comparisons/fabric-bcdr-cross-region-cmk-recovery-vs-4clouds-faq.en.md)
 
 ### B. Enterprise Industry Architecture Guides
-- **Retail, E-Commerce & Supply Chain**: [Omnichannel Customer 360 & Store Replenishment](comparisons/fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.en.md) · [Cross-Border Supply Chain & FinOps](comparisons/fabric-cross-border-ecommerce-global-supply-chain-finops-faq.en.md) · [QSR & Cold-Chain Dynamic Markdown](comparisons/fabric-qsr-fmcg-chain-store-operations-coldchain-markdown-faq.en.md)
+- **Retail, E-Commerce & Supply Chain**: [Omnichannel Customer 360 & Store Replenishment](comparisons/fabric-retail-ecommerce-customer360-realtime-recommendation-agent-vs-4clouds-faq.en.md) · [Cross-Border Supply Chain & FinOps](comparisons/fabric-cross-border-ecommerce-global-supply-chain-finops-faq.en.md) · [QSR & Cold-Chain Dynamic Markdown](comparisons/fabric-qsr-fmcg-chain-store-operations-coldchain-markdown-faq.en.md) · [CPG Trade Promotion (TPO) & POS Demand Sensing](comparisons/fabric-cpg-beverage-trade-promotion-demand-sensing-hedging-faq.en.md) · [Luxury, Apparel & Footwear RFID & Returns](comparisons/fabric-luxury-apparel-footwear-merchandising-rfid-clienteling-returns-faq.en.md)
 - **Banking, Capital Markets & Insurance**: [Financial Research Hybrid RAG + NL2DAX](comparisons/fabric-financial-research-hybrid-rag-text2sql-wealth-agent-vs-4clouds-faq.en.md) · [Real-Time Fraud Graph & Claims](comparisons/fabric-banking-insurance-realtime-antifraud-graph-claims-faq.en.md) · [Consumer Credit & Collections](comparisons/fabric-retail-banking-consumer-credit-mortgage-collections-agent-faq.en.md)
 - **Manufacturing, SAP ERP & Automotive**: [Multi-ERP SAP S/4HANA ACDOCA Consolidation](comparisons/fabric-enterprise-erp-sap-s4hana-acdoca-treasury-finops-faq.en.md) · [Connected Vehicle & Supply Chain ATP](comparisons/fabric-manufacturing-automotive-supply-chain-connected-vehicle-maintenance-faq.en.md)
 - **Healthcare, SaaS & Telecom**: [Healthcare Commercial Compliance & OMOP RWE](comparisons/fabric-healthcare-pharma-commercial-compliance-rwe-analytics-faq.en.md) · [Multi-Tenant SaaS Embedded BI](comparisons/fabric-saas-gaming-multitenant-embedded-analytics-retention-attribution-faq.en.md) · [Telecom Churn & 5G SLA](comparisons/fabric-telecom-customer-churn-network-ops-field-agent-faq.en.md)
@@ -62,4 +62,4 @@ Every FAQ follows a crisp Solution Architect structure (Executive Summary, Archi
 ```bash
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 ```
-- **Sealed Baseline (`reports/report.json`)**: `279 / 280` scenarios passed (`99.64%`, explicit `DL-23` single-region LRS human-escalation boundary), `252.0 ms` routing mean, `220.48 ms` ontology simulation mean (`n=66`), `136 / 136` unit tests passing.
+- **Sealed Baseline (`reports/report.json`)**: `283 / 284` scenarios passed (`99.65%`, explicit `DL-23` single-region LRS human-escalation boundary), `248.9 ms` routing mean, `217.46 ms` ontology simulation mean (`n=67`), `138 / 138` unit tests passing.

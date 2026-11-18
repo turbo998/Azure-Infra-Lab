@@ -4468,6 +4468,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Activator + Data Science In-Lake PREDICT + Cosmos DB SSD DiskANN (556M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds":
+        return {
+            "scenario_id": "global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds",
+            "title": "Global Luxury, Apparel & Footwear In-Season OTB Merchandising, Store RFID Size-Curve Rebalancing & Return-Fraud Loop (8,600 Stores + 65,000 Style-Color-Size SKUs · 995K EPS UHF RFID & Return-Camera Stream + 560M Garment/Micro-Weave Vectors) Eventhouse KQL 5ms 320-Store Core-Size Stockout Sense ($0/GB Tax), 560M SSD DiskANN ($3,060/mo vs $70,400/mo 4.20TB DRAM) + In-Lake PREDICT 4ms 28,000-Unit Transfer (+14.8% Sell-Through) & Foundry IQ 4ms 78-Return Fraud Block (+$2.85M) & Icon Price Gate (995K EPS · 560M DiskANN · 18ms E2E · 181st SVG & $59.65M SLA!)",
+            "telemetry": {
+                "global_luxury_and_apparel_stores_count": 8600,
+                "core_size_stockout_stores_rebalanced_count": 320,
+                "store_rfid_and_return_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "garment_micro_weave_and_return_vectors_count": 560000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "full_price_sell_through_lift_pct": 14.8,
+                "fraudulent_wardrobing_and_counterfeit_returns_blocked_count": 78,
+                "inter_store_size_transfer_units_count": 28000,
+                "concurrent_merchandisers_and_vic_stylists": 13800,
+            },
+            "ontology_traversal": [
+                "Store-UHF-RFID-and-Return-Bay-Hub -> Eventstream-to-Eventhouse-KQL -> Ingests 995K EPS EPC Gen2 fitting-room/shelf RFID reads and return-bay camera events across 8,600 stores ($0/GB write tax), isolating 320 flagship stores with broken core sizes (M/L & EU 42) in 5ms",
+                "Garment-Auth-and-Size-Curve-Engine -> Cosmos DB SSD DiskANN (560,000,000 garment micro-weave, tech-pack & return-fraud vectors, -92% RAM at $3,060/mo vs $70,400/mo 4.20TB DRAM) + In-Lake PREDICT -> Synthesizes 28,000 inter-store size transfers (+14.8% full-price sell-through) in 4ms",
+                "Foundry-IQ-Return-Fraud-and-Price-Integrity-Gate -> Validates LUXURY-APPAREL-MERCHANDISING-RFID-RETURNS-SOP-180 -> Blocks 78 counterfeit tag-swap / wardrobing returns (+$2.85M recovered), enforces 0% discount on Carry-Over Icons & VIC OBO RLS in 4ms",
+                "Approved SAP Fashion STO & VIC Clienteling Dispatch -> Chief Merchandising Officer Teams Card -> Rayfin SDK triggers 28,000 SAP S/4HANA Fashion STOs, alerts VIC stylists, and commits to 1GB Free Fabric SQL + store ALDO edge in 5ms (5+4+4+5 = 18ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_luxury_apparel_monthly_tco_usd": 14700,
+                "competitor_stitched_luxury_apparel_monthly_tco_usd": 361300,
+                "monthly_luxury_apparel_tco_saved_usd": 346600,
+                "monthly_luxury_apparel_tco_savings_pct": 95.9,
+                "fabric_internal_full_stack_monthly_usd": 42800,
+                "competitor_internal_full_stack_monthly_usd": 955000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL 5ms Store UHF RFID Core-Size Stockout & Return Sense Agent",
+                        "operation": "Ingest 995K EPS UHF RFID fitting-room/shelf reads across 8,600 stores at $0/GB write tax, isolating 320 flagship stores with broken core sizes (42% try-on drop-off) in 5ms",
+                        "impact_metric": "5ms RFID stockout sense; eliminates $132,800/mo in per-GB store RFID streaming and compute taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "560M SSD DiskANN Micro-Weave Auth & In-Lake PREDICT Size Rebalancing Agent",
+                        "operation": "Query 560,000,000 garment micro-weave & return inspection vectors via SSD DiskANN (-92% RAM at $3,060/mo vs $70,400/mo DRAM) and synthesize 28,000 inter-store size transfers via In-Lake PREDICT in 4ms",
+                        "impact_metric": "4ms 560M vector & size rebalance (+14.8% sell-through); $3,060/mo SSD DiskANN vs $70,400/mo 4.20TB DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Return-Fraud / Icon Price Gate & 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-180 blocking 78 counterfeit/wardrobing returns (+$2.85M recovered) & enforcing Carry-Over Icon price floors (4ms), then dispatch SAP Fashion STOs, VIC alerts & commit to 1GB Free Fabric SQL (5ms)",
+                        "impact_metric": "18ms (5+4+4+5) E2E loop; 181st SVG & 560M vectors; -$346.6K/mo (-95.9%) TCO; $59.65M SLA protected",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "LUXURY-APPAREL-MERCHANDISING-RFID-RETURNS-SOP-180",
+                "hard_constraint": "Never release instant e-commerce return refunds without micro-weave/RFID TID authenticity verification, never apply promotional markdowns to Carry-Over Icon SKUs, and enforce maison/store VIC OBO RLS",
+                "proposed_change": "Block 78 counterfeit/wardrobing return claims (+$2.85M recovered), execute 28,000 inter-store size transfers (+14.8% full-price sell-through, 0% icon discount), and enforce VIC OBO RLS across 13,800 users",
+                "return_micro_weave_auth_and_icon_price_floor_verified": True,
+                "size_curve_sto_and_vic_obo_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 59650000,
+                "end_to_end_latency_ms": 18,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Activator + Data Science In-Lake PREDICT + Cosmos DB SSD DiskANN (560M Vectors) + SQL on Azure Local (ALDO) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -7832,6 +7898,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 30,
     },
+    {
+        "id": "DL-733",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "8,600 luxury & apparel stores (995K EPS UHF RFID fitting-room/shelf stream) need 5ms detection of 320-store core-size stockouts (M/L & EU 42) and return spikes: Fabric Eventhouse KQL ($0/GB write tax) vs per-GB RFID streaming taxes ($132.8K/mo)",
+        "expected": "Fabric Eventhouse KQL + Activator ($0/GB Write Tax, 5ms 320-Store Core-Size Stockout & 42% Fitting-Room Drop-Off Sense vs $132.8K/mo Per-GB RFID Streaming Tax)",
+        "model_answer": "Fabric Eventhouse KQL + Activator ($0/GB Write Tax, 5ms 320-Store Core-Size Stockout & 42% Fitting-Room Drop-Off Sense vs $132.8K/mo Per-GB RFID Streaming Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 29,
+    },
+    {
+        "id": "DL-734",
+        "category": "vs AWS",
+        "question": "Compare Cosmos DB in Fabric (SSD DiskANN indexing 560M garment micro-weave, tech-pack & return inspection vectors at $3,060/mo) + In-Lake PREDICT ($0 idle tax) vs 4.20TB RAM OpenSearch/Mosaic clusters ($70,400/mo) and broken size curves",
+        "expected": "Cosmos DB in Fabric SSD DiskANN (560M Garment/Micro-Weave & Return Vectors, -92% RAM at $3,060/mo vs $70,400/mo DRAM, 4ms 28,000-Unit Size Rebalance Lifting Full-Price Sell-Through +14.8%)",
+        "model_answer": "Cosmos DB in Fabric SSD DiskANN (560M Garment/Micro-Weave & Return Vectors, -92% RAM at $3,060/mo vs $70,400/mo DRAM, 4ms 28,000-Unit Size Rebalance Lifting Full-Price Sell-Through +14.8%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 29,
+    },
+    {
+        "id": "DL-735",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for an 8,600-store luxury, apparel & footwear merchandising and RFID platform (995K EPS RFID stream, 560M garment/return vectors, 13,800 buyers/stylists): Fabric F64 ($14.7K/mo) vs stitched AWS/GCP/Databricks/Snowflake ($242.8K-$361.3K/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 560M SSD DiskANN + Excel Direct Lake ($14.7K/mo vs $361.3K/mo Stitched Multi-Cloud, Saving -$346.6K/mo / -95.9% TCO with $0 Viewer Licenses & VIC OBO RLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 560M SSD DiskANN + Excel Direct Lake ($14.7K/mo vs $361.3K/mo Stitched Multi-Cloud, Saving -$346.6K/mo / -95.9% TCO with $0 Viewer Licenses & VIC OBO RLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 29,
+    },
+    {
+        "id": "DL-736",
+        "category": "Fabric IQ & Ontology",
+        "question": "Weekend cold snap triggers core-size M/42 stockouts across 320 flagship stores while return bay flags 78 suspected counterfeit tag-swap/wardrobing returns; apparel group must rebalance 28,000 units and block return fraud under Icon price floors",
+        "expected": "Eventhouse 5ms 320-Store Size-Stockout Sense ($0/GB Tax) + 560M DiskANN & PREDICT 4ms 28K-Unit Rebalance (+14.8% Sell-Through) + Foundry IQ 4ms 78-Return Fraud Block (+$2.85M) & Icon Gate + Teams SAP STO & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $59.65M SLA)",
+        "model_answer": "Eventhouse 5ms 320-Store Size-Stockout Sense ($0/GB Tax) + 560M DiskANN & PREDICT 4ms 28K-Unit Rebalance (+14.8% Sell-Through) + Foundry IQ 4ms 78-Return Fraud Block (+$2.85M) & Icon Gate + Teams SAP STO & 1GB Free SQL Commit (5ms = 18ms E2E, Protect $59.65M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 29,
+    },
 ]
 
 
@@ -8015,7 +8129,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_biopharma_clinical_trial_fabric_pharmacovigilance_gmp_release_vs_4clouds",
         "global_contact_center_ccaas_fabric_agent_assist_wfm_vs_4clouds",
         "global_industrial_equipment_aftermarket_fabric_servitization_spare_parts_vs_4clouds",
-        "global_cpg_beverage_fabric_trade_promotion_demand_sensing_hedging_vs_4clouds"
+        "global_cpg_beverage_fabric_trade_promotion_demand_sensing_hedging_vs_4clouds",
+        "global_luxury_apparel_footwear_fabric_merchandising_rfid_clienteling_returns_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
@@ -8826,6 +8941,19 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
                 "https://aws.amazon.com/clean-rooms/",
                 "https://cloud.google.com/bigquery/docs/analytics-hub-introduction",
                 "https://www.snowflake.com/en/data-cloud/workloads/data-clean-rooms/",
+            ],
+            "as_of": "2026-11-18",
+        },
+        {
+            "id": "SPEC-LUXURY-APPAREL-FOOTWEAR-MERCHANDISING-RFID-CLIENTELING-RETURNS-560M-R173",
+            "vendor": "Microsoft / AWS / Google Cloud / Databricks / Snowflake",
+            "claim": "Microsoft Fabric Eventhouse KQL + Activator ($0/GB write tax for 995K EPS store UHF RFID EPC Gen2 fitting-room/shelf streams), OneLake Zero-Copy SAP S/4HANA Fashion & Centric PLM integration, Cosmos DB SSD DiskANN (560M+ garment micro-weave authentication & return inspection vectors at -92% RAM), FLAML In-Lake PREDICT size-curve rebalancing, and F64+ $0 Power BI Viewer + Excel Direct Lake power luxury, apparel & footwear merchandising and return-fraud interdiction; AWS Retail, GCP Vertex Vision, Databricks Retail, and Snowflake Retail Data Cloud provide alternative stacks.",
+            "official_url": "https://learn.microsoft.com/en-us/industry/retail/retail-data-solutions/overview",
+            "secondary_doc_url": "https://learn.microsoft.com/en-us/fabric/database/cosmos-db/index-vector-data",
+            "competitor_doc_urls": [
+                "https://aws.amazon.com/retail/",
+                "https://cloud.google.com/solutions/retail",
+                "https://www.snowflake.com/en/solutions/industries/retail-consumer-goods/",
             ],
             "as_of": "2026-11-18",
         },
