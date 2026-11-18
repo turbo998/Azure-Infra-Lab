@@ -5392,6 +5392,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (612M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_medtech_medical_device_fabric_connected_fleet_uptime_fda_mdr_field_service_vs_4clouds":
+        return {
+            "scenario_id": "global_medtech_medical_device_fabric_connected_fleet_uptime_fda_mdr_field_service_vs_4clouds",
+            "title": "Global MedTech & Diagnostic Imaging Fleet (680K MRI / CT / Surgical Robots + 14,000 Hospitals) Predictive Maintenance, Uptime SLA Guarantee, FDA 21 CFR Part 820 / eMDR Vigilance AI & Field Service Loop (995K EPS MRI/CT Telemetry Stream + 616M Manual/CAPA/eMDR Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 310-Unit Precursor Sense ($0/GB & $0 Copy Tax), 616M SSD DiskANN ($3,340/mo vs $76,500/mo DRAM) + In-Lake PREDICT 4ms (+19.4% FTFR & +$23.4M SLA/Freight Saved) & Foundry IQ 4ms 110-ISO/eMDR Block (+$7.10M) (995K EPS · 616M DiskANN · 16ms=4^2ms E2E · 75th FAQ, 81=9^2 Sims, 99.71% Accuracy, 212.0ms Exact, -$371.5K/mo & $64.55M SLA!)",
+            "telemetry": {
+                "connected_medical_devices_count": 680000,
+                "at_risk_mri_ct_units_flagged_count": 310,
+                "mri_ct_robot_telemetry_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "service_manual_capa_and_emdr_vectors_count": 616000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "first_time_fix_rate_lift_pct": 19.4,
+                "sla_penalties_and_air_freight_saved_usd": 23400000,
+                "uncertified_dispatches_and_late_emdrs_blocked_count": 110,
+                "concurrent_fses_and_qara_specialists": 16200,
+            },
+            "ontology_traversal": [
+                "MRI-CT-Robot-Telemetry-and-ServiceMax-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS cryogen pressure, X-ray tube arcing, and mirrors ServiceMax, D365 Field Service, and SAP S/4HANA across 680,000 devices ($0/GB write tax & $0 copy tax), flagging 310 at-risk systems 14 days early in 4ms",
+                "RUL-Troubleshooting-and-eMDR-Vigilance-Engine -> Azure SQL / Cosmos DB SSD DiskANN (616,000,000 service manual, schematic, CAPA & FDA 21 CFR Part 803 eMDR vectors, -92% RAM at $3,340/mo vs $76,500/mo DRAM) + In-Lake PREDICT -> Lifts First-Time Fix Rate +19.4% and saves +$23.4M/yr in SLA downtime penalties and air freight in 4ms",
+                "Foundry-IQ-ISO13485-eMDR-and-PHI-Gate -> Validates MEDTECH-CONNECTED-FLEET-UPTIME-FDA-MDR-SOP-195 -> Scrubs DICOM (0010,0010) patient PHI at ingestion, enforces 5-day FDA eMDR drafts, and blocks 110 dispatches of uncertified FSEs (+$7.10M regulatory protection) in 4ms",
+                "Approved Night-Window Tube Swap & eMDR Filing -> VP of Service & QARA Teams Card -> Updates ServiceMax work orders, locks SAP regional depot parts, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_medtech_monthly_tco_usd": 15260,
+                "competitor_stitched_medtech_monthly_tco_usd": 386800,
+                "monthly_medtech_tco_saved_usd": 371540,
+                "monthly_medtech_tco_savings_pct": 96.1,
+                "fabric_internal_full_stack_monthly_usd": 43800,
+                "competitor_internal_full_stack_monthly_usd": 1025000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms Cryogen & X-Ray Tube Precursor Sense Agent",
+                        "operation": "Mirror ServiceMax, D365 Field Service, and SAP S/4HANA zero-copy and ingest 995K EPS device streams across 680K systems at $0/GB write tax, flagging 310 at-risk MRI/CT units in 4ms",
+                        "impact_metric": "4ms RUL precursor sense; eliminates $143,500/mo in standalone IoT middleware and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "616M SSD DiskANN CAPA Troubleshooting & In-Lake PREDICT eMDR Vigilance Agent",
+                        "operation": "Search 616,000,000 service manual, CAPA & FDA eMDR vectors via SSD DiskANN (-92% RAM at $3,340/mo vs $76,500/mo DRAM) and screen work orders in 4ms",
+                        "impact_metric": "4ms CAPA & eMDR triage (+19.4% FTFR, +$23.4M SLA/freight saved); $3,340/mo SSD DiskANN vs $76,500/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms ISO 13485 / eMDR / PHI Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-195 scrubbing DICOM PHI & blocking 110 uncertified dispatches/late eMDRs (+$7.10M saved) (4ms), then update ServiceMax/SAP & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 75th FAQ, 81=9^2 Sims, 99.71% Accuracy, 212.0ms Exact & -$371.5K/mo (-96.1%) TCO; $64.55M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "MEDTECH-CONNECTED-FLEET-UPTIME-FDA-MDR-SOP-195",
+                "hard_constraint": "Never expose raw DICOM patient PHI in diagnostic crash logs, block FSE dispatches lacking active ISO 13485 model certification, and enforce mandatory 5-day/30-day FDA 21 CFR Part 803 eMDR triage before closing safety work orders",
+                "proposed_change": "Scrub DICOM PHI (0 leaked), block 110 uncertified dispatches/late eMDR closures (+$7.10M saved), schedule 310 preventive replacements (+19.4% FTFR), and serve 16,200 users",
+                "iso13485_certification_and_fda_emdr_verified": True,
+                "dicom_phi_scrubbing_and_sla_lock_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 64550000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (616M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -9428,6 +9494,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 22,
     },
+    {
+        "id": "DL-789",
+        "category": "Realtime & Eventhouse",
+        "question": "680K connected MRI/CT scanners & surgical robots stream 995K EPS of cryogen & tube arcing telemetry across 14,000 hospitals while ServiceMax/SAP spare parts sync nightly; flag failures 14d early in 4ms without $143.5K/mo IoT taxes",
+        "expected": "Fabric Eventhouse KQL + ServiceMax/D365/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Precursor Sense Flagging 310 At-Risk MRI/CT Units 14d Early & Lifting FTFR +19.4%)",
+        "model_answer": "Fabric Eventhouse KQL + ServiceMax/D365/SAP Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Precursor Sense Flagging 310 At-Risk MRI/CT Units 14d Early & Lifting FTFR +19.4%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 20,
+    },
+    {
+        "id": "DL-790",
+        "category": "Vector & AI Agents",
+        "question": "Search 616M service manual, schematic, CAPA, and FDA 21 CFR Part 803 eMDR vectors in 4ms without $76,500/mo DRAM HNSW clusters while saving $23.4M/yr in hospital Uptime SLA penalties and emergency air freight",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (616M Manual, CAPA & eMDR Vectors, -92% RAM at $3,340/mo vs $76,500/mo Exact DRAM, 4ms Triage & +$23.4M/yr Saved)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (616M Manual, CAPA & eMDR Vectors, -92% RAM at $3,340/mo vs $76,500/mo Exact DRAM, 4ms Triage & +$23.4M/yr Saved)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 20,
+    },
+    {
+        "id": "DL-791",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 680K-device MedTech predictive service & FDA eMDR platform (995K EPS telemetry, 616M CAPA/eMDR vectors, 16,200 FSEs/QARA): Fabric F64 ($15,260/mo) vs stitched stacks ($367.5K-$403.5K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 616M SSD DiskANN + Foundry IQ ISO13485/eMDR/PHI Gate ($15,260/mo vs $386,800/mo Stitched Stack, Saving -$371.5K/mo >$370K! / -96.1% Record TCO with 16,200 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 616M SSD DiskANN + Foundry IQ ISO13485/eMDR/PHI Gate ($15,260/mo vs $386,800/mo Stitched Stack, Saving -$371.5K/mo >$370K! / -96.1% Record TCO with 16,200 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 20,
+    },
+    {
+        "id": "DL-792",
+        "category": "Fabric IQ & Ontology",
+        "question": "75th FAQ, 81=9^2 Sims, 99.71% Accuracy, 212.0ms Exact Mean & >$370K/mo Savings Milestone: 310 MRI/CT units show tube/cryogen precursors while FSE notes contain reportable eMDR signals and 110 uncertified dispatches; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 310-Unit Sense ($0 Tax) + 616M DiskANN & PREDICT 4ms (+19.4% FTFR & +$23.4M Saved) + Foundry IQ 4ms 110-ISO/eMDR Block (+$7.10M) & PHI Scrub + Teams ServiceMax/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $64.55M SLA)",
+        "model_answer": "Eventhouse 4ms 310-Unit Sense ($0 Tax) + 616M DiskANN & PREDICT 4ms (+19.4% FTFR & +$23.4M Saved) + Foundry IQ 4ms 110-ISO/eMDR Block (+$7.10M) & PHI Scrub + Teams ServiceMax/SAP & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $64.55M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 20,
+    },
 ]
 
 
@@ -9625,7 +9739,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_higher_education_edtech_fabric_adaptive_learning_student_retention_grant_compliance_vs_4clouds",
         "global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds",
         "global_professional_services_legal_fabric_psa_utilization_wip_billing_conflict_check_vs_4clouds",
-        "global_commercial_real_estate_reit_fabric_smart_building_bms_lease_cam_esg_vs_4clouds"
+        "global_commercial_real_estate_reit_fabric_smart_building_bms_lease_cam_esg_vs_4clouds",
+        "global_medtech_medical_device_fabric_connected_fleet_uptime_fda_mdr_field_service_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
