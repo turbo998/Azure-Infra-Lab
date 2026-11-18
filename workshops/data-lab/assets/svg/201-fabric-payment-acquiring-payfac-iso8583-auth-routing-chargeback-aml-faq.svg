@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940">
+  <defs>
+    <linearGradient id="bg201" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr201" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabCard201" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06281E"/>
+      <stop offset="100%" stop-color="#0A1E36"/>
+    </linearGradient>
+    <linearGradient id="compCard201" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2B1219"/>
+      <stop offset="100%" stop-color="#1A162B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1480" height="940" fill="url(#bg201)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="20" width="1432" height="94" rx="14" fill="url(#hdr201)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="21.5" font-weight="800">
+    201 · Payment Acquiring &amp; PayFacs (48M Merchants · $4.8T TPV) ISO 8583 Smart Routing, Visa CE 3.0 &amp; Bust-Out AI
+  </text>
+  <text x="46" y="82" fill="#E0F2FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.8" font-weight="600">
+    支付收单与聚合支付（4,800 万商户 + 17,400 风控/路由工程师）ISO 8583 误拒挽回、Visa CE 3.0 拒付抗辩与反套现五云选型 (2026-11-19 R193 · Sub-200ms 199.3ms Mean!)
+  </text>
+  <rect x="1175" y="34" width="260" height="64" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="2"/>
+  <text x="1305" y="59" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">199.3ms &lt;200ms! · 81=9² FAQs</text>
+  <text x="1305" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">16ms (4²ms) · -$382.0K/mo</text>
+
+  <!-- Left Column: ISO 8583, Settlement Ledger & CE 3.0 Sources -->
+  <rect x="24" y="130" width="300" height="450" rx="12" fill="#111C2D" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="160" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">1. 卡组、清算与存证数据源 (Sources)</text>
+
+  <rect x="40" y="176" width="268" height="90" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="200" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Visa / MC / 银联 / PIX / FedNow</text>
+  <text x="54" y="222" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS ISO 8583 / 20022 授权流</text>
+  <text x="54" y="242" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 发卡行软拒绝码 (05/91)、3DS2 与网络令牌</text>
+
+  <rect x="40" y="278" width="268" height="90" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="302" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">清结算核心总账 &amp; SAP / NetSuite</text>
+  <text x="54" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 4,800 万商户 · $4.8T TPV 与保证金余额</text>
+  <text x="54" y="344" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="380" width="268" height="90" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="404" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">645M Visa CE 3.0 存证与 KYB 库</text>
+  <text x="54" y="426" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 365 天无争议交易设备指纹、IP 与收货地址</text>
+  <text x="54" y="446" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 物流妥投照片、退改签政策与商户 KYB 章程</text>
+
+  <rect x="40" y="482" width="268" height="82" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="54" y="506" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">17,400 名风控、路由工程师与争议专员</text>
+  <text x="54" y="528" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Power BI 实时授权率看板 + Teams 冻结卡</text>
+  <text x="54" y="548" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• F64 免除全部 Viewer 与 M365 Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms=4^2ms Loop -->
+  <rect x="342" y="130" width="1114" height="248" rx="12" fill="url(#fabCard201)" stroke="#10B981" stroke-width="2"/>
+  <text x="364" y="160" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    2A. 推荐首选：Microsoft Fabric 一体化智能收单路由、CE 3.0 抗辩与反套现架构（16ms = 4²ms · $15,380/mo · 省 96.1%）
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="362" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="376" y="200" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">① Sense (4ms) · KQL &amp; Graph</text>
+  <text x="376" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS ISO 8583 授权流 ($0 税)</text>
+  <text x="376" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 按 BIN 监控 40+ 收单通道健康度</text>
+  <text x="376" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Fabric Graph 10 跳穿透共用法人/设备</text>
+  <text x="376" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 4ms 锁定 440 个套现跑路 (Bust-Out) 簇</text>
+  <text x="376" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 月省 $148.0K 外置图库与流写入税</text>
+
+  <!-- Step 2 -->
+  <rect x="634" y="176" width="264" height="182" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="648" y="200" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">② Reason (4ms) · 645M SSD DiskANN</text>
+  <text x="648" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.45 亿 Visa CE 3.0 存证与 KYB 向量</text>
+  <text x="648" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 仅 $3,460/mo (-92% RAM)</text>
+  <text x="648" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 授权通过率 +2.8pp · 抗辩胜诉 +38.5%</text>
+  <text x="648" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 年增收挽损 +$32.8M/yr (误拒+拒付挽回)</text>
+  <text x="648" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 4ms 自动匹配 2 笔历史无争议履约单</text>
+
+  <!-- Step 3 -->
+  <rect x="914" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="928" y="200" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">③ Guardrail (4ms) · Foundry IQ</text>
+  <text x="928" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 冻结 160 笔逼近 VFMP 0.90% 跑路提现</text>
+  <text x="928" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 拦截伪装合规网店的交易洗钱 (Laundering)</text>
+  <text x="928" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 规避 +$8.70M/yr 跑路垫付坏账与罚单</text>
+  <text x="928" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 全链路卡号 (PAN) PCI-DSS v4.0 CLS</text>
+  <text x="928" y="336" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ SOP-201 100% 卡组风控与数据安全</text>
+
+  <!-- Step 4 -->
+  <rect x="1186" y="176" width="250" height="182" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="1200" y="200" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">④ Act (4ms) · Teams &amp; Switch</text>
+  <text x="1200" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Teams 收单风控与路由工程师审批卡</text>
+  <text x="1200" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 网关路由表与 Visa CE 3.0 API 回写</text>
+  <text x="1200" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL 审计落盘</text>
+  <text x="1200" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 守护 $66.65M 授权与清结算安全 SLA</text>
+  <text x="1200" y="336" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 突破 Sub-200ms (199.3ms) 路由均值！</text>
+
+  <!-- Center Bottom: Stitched Stack Comparison -->
+  <rect x="342" y="392" width="1114" height="188" rx="12" fill="url(#compCard201)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="364" y="422" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    2B. 传统四云 + 独立向量库 + 外置图数据库拼接栈痛点（890ms – 3,500ms 延迟 · $376.5K–$412.5K/mo 昂贵账单）
+  </text>
+
+  <rect x="362" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="378" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 645M 交易存证向量内存爆炸 ($79.5K/mo)</text>
+  <text x="378" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.45 亿 CE 3.0 存证常驻 HNSW 需 &gt;2.5TB RAM</text>
+  <text x="378" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Mosaic / Cortex / OpenSearch 月耗 $76K–$82K</text>
+  <text x="378" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 人工捞取历史设备指纹超时，友好欺诈拒付败诉率 74%</text>
+
+  <rect x="728" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="744" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 静态路由误拒优质买家与 D+0 跑路坏账</text>
+  <text x="744" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 授权报文按 GB 收取高额流写入附加费</text>
+  <text x="744" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 发卡行抖动无法秒级切换备选通道，误拒率达 5.4%</text>
+  <text x="744" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• T+1 外置图库同步滞后，空壳商户已提走 D+0 资金跑路</text>
+
+  <rect x="1094" y="438" width="342" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1110" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 17,400 名风控/路由工程师席位与并发税</text>
+  <text x="1110" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Looker / QuickSight 按人头月费高达 $90K–$95K/mo</text>
+  <text x="1110" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 黑五网一峰值全员盯盘触发多集群 Warehouse 翻倍</text>
+  <text x="1110" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 跨网关 / 图库 / 总账三套权限极易违反 PCI-DSS v4.0</text>
+
+  <!-- Bottom Table: 5-Cloud Decision Matrix -->
+  <rect x="24" y="596" width="1432" height="320" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="628" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    3. 五云支付收单（PayFac）ISO 8583 智能路由、Visa CE 3.0 抗辩与反套现横向评测矩阵（48M Merchants · 645M Vectors · 17,400 Users）
+  </text>
+
+  <!-- Table Header -->
+  <rect x="40" y="642" width="1400" height="36" rx="6" fill="#1E293B"/>
+  <text x="54" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">云平台方案 (Platform)</text>
+  <text x="340" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">ISO 8583 + 10跳图谱 + 同步</text>
+  <text x="595" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">645M CE 3.0 存证/KYB 向量</text>
+  <text x="855" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">误拒挽回与 VFMP/PCI 门禁</text>
+  <text x="1125" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">17.4K 风控/路由席位</text>
+  <text x="1290" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">月度总成本 (TCO)</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="40" y="684" width="1400" height="42" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="54" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ Microsoft Fabric (F64)</text>
+  <text x="340" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms KQL+Graph + $0 Mirror</text>
+  <text x="595" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$3,460/mo (SSD DiskANN -92%)</text>
+  <text x="855" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms 挽回 $32.8M &amp; PCI v4.0</text>
+  <text x="1125" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$0 Viewer / $0 Token</text>
+  <text x="1290" y="710" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">$15,380/mo (-96.1%)</text>
+
+  <!-- Row 2: Databricks -->
+  <rect x="40" y="732" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔶 Azure Databricks</text>
+  <text x="340" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">750ms–2.2s ($60.0K/mo DBU)</text>
+  <text x="595" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$79,500/mo (Mosaic DRAM)</text>
+  <text x="855" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">UC ABAC + 外部规则校验</text>
+  <text x="1125" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$90,000/mo (BI + SQL)</text>
+  <text x="1290" y="756" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$385,500/mo</text>
+
+  <!-- Row 3: Snowflake -->
+  <rect x="40" y="776" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="800" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔷 Snowflake Enterprise</text>
+  <text x="340" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">1.3s–3.5s ($71.0K/mo + Graph)</text>
+  <text x="595" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$82,000/mo (Cortex Search)</text>
+  <text x="855" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Horizon RLS + 外部网关</text>
+  <text x="1125" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$95,000/mo (Multi-Cluster)</text>
+  <text x="1290" y="800" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$412,500/mo</text>
+
+  <!-- Row 4: BigQuery -->
+  <rect x="40" y="820" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="844" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🌐 Google BigQuery</text>
+  <text x="340" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">850ms–2.5s ($58.0K/mo Spanner)</text>
+  <text x="595" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$76,000/mo (Vertex Vector)</text>
+  <text x="855" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Policy Tags + 外部代码</text>
+  <text x="1125" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$94,000/mo (Looker Seats)</text>
+  <text x="1290" y="844" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$376,500/mo</text>
+
+  <!-- Row 5: AWS -->
+  <rect x="40" y="864" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="888" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">☁️ AWS Lakehouse</text>
+  <text x="340" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">890ms–2.7s ($59.0K/mo Neptune)</text>
+  <text x="595" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$78,000/mo (OpenSearch OCU)</text>
+  <text x="855" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Lake Formation + 外部网关</text>
+  <text x="1125" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$92,000/mo (QuickSight)</text>
+  <text x="1290" y="888" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$382,500/mo</text>
+</svg>
