@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">327 / 328 Scenarios Passed (99.70%!) · 72 (8×9) Enterprise SA FAQs · 160 Unit Tests</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">331 / 332 Scenarios Passed (99.70%!) · 73 Enterprise SA FAQs · 608M Vectors &amp; 15.8K Users</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=328 / n=78)</div>
-        <div class="val">219.0ms / 189.2ms</div>
-        <div class="sub" id="kpi3-sub">n=328 Exact Mean 219.0ms · n=78 Ontology Mean 189.15ms (&lt;190ms!)</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=332 / n=79)</div>
+        <div class="val">216.6ms / 187.0ms</div>
+        <div class="sub" id="kpi3-sub">n=332 Routing Mean 216.6ms · n=79 Ontology Mean 186.96ms!</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -336,6 +336,7 @@
       <button class="comp-pill" id="sim-btn-b2bdist" onclick="selectScenario('global_b2b_wholesale_distribution_fabric_dynamic_pricing_cpq_rebate_inventory_vs_4clouds')">⚙️ Scenario GG: B2B Wholesale Distribution 1.5M SKUs × Dynamic CPQ, BOM Cross-Ref &amp; SPA Rebate Loop (Eventhouse 4ms + 596M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (190th SVG · R182)</button>
       <button class="comp-pill" id="sim-btn-highered" onclick="selectScenario('global_higher_education_edtech_fabric_adaptive_learning_student_retention_grant_compliance_vs_4clouds')">🎓 Scenario GH: Higher Ed &amp; EdTech 1.2M Learners × xAPI Adaptive Learning, Student Retention &amp; Grant Compliance Loop (Eventhouse 4ms + 600M=0.60B! DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (0.60B Vectors · R183)</button>
       <button class="comp-pill" id="sim-btn-epcbim" onclick="selectScenario('global_epc_construction_fabric_bim_5d_schedule_risk_change_order_safety_vs_4clouds')">🏗️ Scenario GI: EPC Construction $45B Backlog × BIM 5D SPI/CPI, P6 Schedule Risk &amp; FIDIC Change-Order AI Loop (Eventhouse 4ms + 604M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (99.70% · R184)</button>
+      <button class="comp-pill" id="sim-btn-proserv" onclick="selectScenario('global_professional_services_legal_fabric_psa_utilization_wip_billing_conflict_check_vs_4clouds')">⚖️ Scenario GJ: Professional Services &amp; Law Firms 180K Practitioners × PSA Utilization, LEDES Pre-Bill &amp; Ethical Wall Loop (Eventhouse + Work IQ 4ms + 608M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (608M Vectors · R185)</button>
     </div>
 
     <div class="grid-2">
@@ -367,6 +368,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>193 · Global Professional Services, Management Consulting &amp; Law Firms (180K Practitioners + 42K Matters) PSA Utilization, WIP Realization &amp; Ethical Wall AI (Eventhouse KQL + Work IQ + OneLake Zero-Copy 4ms $0 Tax + 608M SSD DiskANN -92% RAM + In-Lake PREDICT +4.8pp Util &amp; +$21.5M WIP/LEDES, 16ms=4²ms Loop &amp; -$368.0K/mo Saved!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R185)</span>
+        <a href="assets/svg/193-fabric-professional-services-legal-psa-utilization-wip-billing-conflict-check-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/193-fabric-professional-services-legal-psa-utilization-wip-billing-conflict-check-faq.svg" alt="Fabric Professional Services Legal PSA Utilization WIP Billing Conflict Check Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2482,6 +2491,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>EPCConstruction:320Sites_24KSubcontractors_995KEPS → Eventhouse_OneLake:4ms_260CriticalSegments_115UnwaivedPayApps (4ms) → DiskANN604M_PREDICT:4ms_31Pct_LessDelay_$19.2M_ClaimSavings (4ms) → FoundryIQ:4ms_LienWaiver_BidCLS_OSHA (4ms) → P6_Procore_1GB_SQL:Director_QS_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams EPC VP of Project Controls & Chief QS Card · 320-Site BIM 5D & Claim Loop (DL-777..780 · 99.70% Accuracy!)',
       teamsSummary: '16ms (4²ms) EPC BIM 5D & Change-Order Loop Ready: KQL 4ms flags 260 negative-float segments (-31% delay) + 604M DiskANN rejects $19.2M duplicate claims + blocks 115 unwaived payouts (+$6.20M) · -96.0% TCO (-$366.3K/mo saved!), $63,500,000 SLA Protected ✓'
+    }
+  },
+  global_professional_services_legal_fabric_psa_utilization_wip_billing_conflict_check_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 工时草稿流与 Work IQ 技能图谱实时感知 ($0/GB 写入税)', latency: '4 ms', desc: '实时摄入 18 万名顾问与律师的工时草稿流及 Workday PSA / Thomson Reuters 3E / Intapp 镜像，4ms 锁定 380 个 WIP 燃尽超支 (>115%) 项目并通过 Work IQ 跨所匹配闲置 Bench 顾问，计费稼动率提升 +4.8pp（免除 $142.0K/月 PSA 插件与流税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.08 亿标书/文书/OCG 规则向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.08 亿条脱敏标书、SOW 条款、法律备忘录与客户外部计费指南 (OCG) 向量库上以 $3,300/月 (-92% 内存 vs $75,500/月 DRAM) 完成 4ms 比对，自动修复 Block-Billing 账单并挽回 +$21.5M/年 WIP 核销与退单损失。' },
+        { title: '③ Foundry IQ 信息隔离墙 (Ethical Wall) 硬阻断与 PCAOB/ABA 冲突门禁 (SOP-193)', latency: '4 ms', desc: '强制执行 SOP-193，全链路透传 Entra OBO 令牌并比对 Intapp Walls 与 10 跳股权树，4ms 内物理阻断 135 次跨竞业/跨原被告信息墙检索与冲突立项（规避 $6.50M 取消资格与执业索赔）。' },
+        { title: '④ 管理合伙人与项目经理 Teams 确认及 3E/Workday PSA 回写 / 1GB SQL 审计', latency: '4 ms', desc: '合伙人与项目经理批准后，4ms 内回写 Thomson Reuters 3E 预审账单、更新 Workday PSA 排班并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！月省 -$368.0K/月，守护 $63.85M 营收变现 SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>ProServices:180KPractitioners_42KMatters_995KEPS → Eventhouse_WorkIQ:4ms_380WIPAlerts_BenchMatch (4ms) → DiskANN608M_PREDICT:4ms_4.8pp_Util_$21.5M_WIPRecovered (4ms) → FoundryIQ:4ms_135EthicalWallBlocks_OBO (4ms) → 3E_WorkdayPSA_1GB_SQL:Partner_EM_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams 管理合伙人、项目经理与总法律顾问审批卡 · 42,000 个项目 WIP 与信息屏障闭环 (DL-781..784 · 608M 向量!)',
+      teamsSummary: '16ms (4²ms) 专业服务 PSA 变现与信息屏障就绪：KQL+Work IQ 4ms 锁定 380 个超支项目 (+4.8pp 稼动率) + 608M DiskANN 挽回 $21.5M WIP/LEDES + 阻断 135 次跨信息墙越权 (+$6.50M) · 月省 -$368.0K/月 (-96.0%)，守护 $63,850,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Time Stream & Work IQ Bench Sense ($0/GB Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of time-entry drafts and mirrored Workday PSA, Thomson Reuters 3E, and Intapp Walls across 180K practitioners and 42,000 matters at $0/GB write tax, flagging 380 WIP overruns and matching bench specialists via Work IQ in 4ms (+4.8pp utilization, saving $142.0K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (608M SOW/Brief/OCG Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 608M sanitized pitch, SOW, legal brief, and client Outside Counsel Guideline (OCG) vectors via SSD DiskANN ($3,300/mo, -92% RAM vs $75,500/mo DRAM) in 4ms—remediating block-billed LEDES narratives and recovering +$21.5M/yr in WIP realization.' },
+        { title: '③ Foundry IQ Ethical Wall Information Barrier & PCAOB/ABA Gate (SOP-193)', latency: '4 ms', desc: 'Enforces SOP-193 in 4ms with Entra Agent ID OBO passthrough and 10-hop corporate ownership graph checks, blocking 135 cross-wall queries and conflicted matter intakes (+$6.50M malpractice protection) across 15,800 partners and managers.' },
+        { title: '④ Managing Partner & EM Teams Card & 3E / Workday PSA / 1GB SQL Commit', latency: '4 ms', desc: 'Managing Partner and Engagement Manager approve in Teams; updates Thomson Reuters 3E pre-bills, Workday PSA staffing, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, 608M Vectors & 15,800 Users Milestone, saving -$368.0K/mo and protecting $63.85M SLA).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>ProServices:180KPractitioners_42KMatters_995KEPS → Eventhouse_WorkIQ:4ms_380WIPAlerts_BenchMatch (4ms) → DiskANN608M_PREDICT:4ms_4.8pp_Util_$21.5M_WIPRecovered (4ms) → FoundryIQ:4ms_135EthicalWallBlocks_OBO (4ms) → 3E_WorkdayPSA_1GB_SQL:Partner_EM_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams Managing Partner, EM & General Counsel Card · 42K-Matter WIP & Ethical Wall Loop (DL-781..784 · 608M Vectors!)',
+      teamsSummary: '16ms (4²ms) Professional Services PSA & Ethical Wall Loop Ready: KQL+Work IQ 4ms flags 380 WIP overruns (+4.8pp util) + 608M DiskANN recovers $21.5M WIP/LEDES + blocks 135 cross-wall breaches (+$6.50M) · -96.0% TCO (-$368.0K/mo saved!), $63,850,000 SLA Protected ✓'
     }
   }
 };

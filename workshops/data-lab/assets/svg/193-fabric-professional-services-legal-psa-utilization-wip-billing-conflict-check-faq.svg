@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 940" width="1480" height="940">
+  <defs>
+    <linearGradient id="bg193" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="hdr193" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="fabCard193" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06281E"/>
+      <stop offset="100%" stop-color="#0A1E36"/>
+    </linearGradient>
+    <linearGradient id="compCard193" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2B1219"/>
+      <stop offset="100%" stop-color="#1A162B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1480" height="940" fill="url(#bg193)"/>
+
+  <!-- Header Banner -->
+  <rect x="24" y="20" width="1432" height="94" rx="14" fill="url(#hdr193)"/>
+  <text x="46" y="54" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="21.5" font-weight="800">
+    193 · Professional Services, Consulting &amp; Law Firms (180K Practitioners · 42K Matters) PSA, WIP &amp; Ethical Wall AI
+  </text>
+  <text x="46" y="82" fill="#E0F2FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.8" font-weight="600">
+    专业服务、管理咨询、四大事务所与律所（18万顾问/律师 + 42,000项目）PSA 稼动率、WIP 变现、LEDES 电子账单预审与信息屏障五云选型 (2026-11-19 R185 · 608M Vectors!)
+  </text>
+  <rect x="1175" y="34" width="260" height="64" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="2"/>
+  <text x="1305" y="59" text-anchor="middle" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">608M VECTORS · 15.8K USERS</text>
+  <text x="1305" y="83" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">16ms (4²ms) · -$368.0K/mo</text>
+
+  <!-- Left Column: PSA, Time & Ethical Wall Sources -->
+  <rect x="24" y="130" width="300" height="450" rx="12" fill="#111C2D" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="160" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">1. 工时、财务与信息墙源 (Sources)</text>
+
+  <rect x="40" y="176" width="268" height="90" rx="8" fill="#1E293B" stroke="#0EA5E9" stroke-width="1.2"/>
+  <text x="54" y="200" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Intapp Time &amp; M365 Work IQ</text>
+  <text x="54" y="222" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 18 万顾问/审计师/律师 · 995K EPS 工时流</text>
+  <text x="54" y="242" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 实时提取隐性交付技能与在岗闲置 (Bench)</text>
+
+  <rect x="40" y="278" width="268" height="90" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+  <text x="54" y="302" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">Workday PSA / Thomson Reuters 3E</text>
+  <text x="54" y="324" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 42,000 个在办项目 · $28B 营收与 WIP 账龄</text>
+  <text x="54" y="344" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="380" width="268" height="90" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="54" y="404" fill="#FCD34D" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">608M 标书/文书与客户 OCG 规则库</text>
+  <text x="54" y="426" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 历年 Pitch 标书、SOW 条款与尽调备忘录</text>
+  <text x="54" y="446" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11.5">• 客户外部顾问计费指南 (LEDES / OCG) 规则</text>
+
+  <rect x="40" y="482" width="268" height="82" rx="8" fill="#1E293B" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="54" y="506" fill="#D8B4FE" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="700">15,800 名合伙人、总监与项目经理</text>
+  <text x="54" y="528" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Power BI Matter P&amp;L 看板 + Teams 审单卡</text>
+  <text x="54" y="548" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700">• F64 免除全部 Viewer 与 M365 Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric 16ms=4^2ms Loop -->
+  <rect x="342" y="130" width="1114" height="248" rx="12" fill="url(#fabCard193)" stroke="#10B981" stroke-width="2"/>
+  <text x="364" y="160" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">
+    2A. 推荐首选：Microsoft Fabric 一体化 PSA 变现、LEDES 审单与信息屏障架构（16ms = 4²ms · $15,220/mo · 省 96.0%）
+  </text>
+
+  <!-- Step 1 -->
+  <rect x="362" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="376" y="200" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">① Sense (4ms) · Eventhouse &amp; Work IQ</text>
+  <text x="376" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 工时草稿与项目流 ($0 税)</text>
+  <text x="376" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 锁定 380 个 WIP 燃尽超支 (&gt;115%) 项目</text>
+  <text x="376" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Work IQ 跨所匹配闲置 Bench 顾问</text>
+  <text x="376" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 全所计费稼动率提升 +4.8pp</text>
+  <text x="376" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 月省 $142.0K PSA 插件与流写入税</text>
+
+  <!-- Step 2 -->
+  <rect x="634" y="176" width="264" height="182" rx="10" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+  <text x="648" y="200" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">② Reason (4ms) · 608M SSD DiskANN</text>
+  <text x="648" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.08 亿标书/判例与客户 OCG 规则向量</text>
+  <text x="648" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• SSD DiskANN 仅 $3,300/mo (-92% RAM)</text>
+  <text x="648" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 湖内 PREDICT + ai.extract 预审 LEDES</text>
+  <text x="648" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 挽回 +$21.5M/yr WIP 核销与退单扣减</text>
+  <text x="648" y="336" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 电子账单一次通过率升至 99.4%</text>
+
+  <!-- Step 3 -->
+  <rect x="914" y="176" width="256" height="182" rx="10" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="928" y="200" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">③ Guardrail (4ms) · Ethical Wall</text>
+  <text x="928" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Intapp Walls 信息隔离墙 OBO 硬阻断</text>
+  <text x="928" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 拦截 135 次跨竞业/跨原被告越权检索</text>
+  <text x="928" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 10 跳股权树 PCAOB/ABA 利益冲突核查</text>
+  <text x="928" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 规避 +$6.50M/yr 取消资格与执业索赔</text>
+  <text x="928" y="336" fill="#FBBF24" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ SOP-193 100% 独立性与保密隔离</text>
+
+  <!-- Step 4 -->
+  <rect x="1186" y="176" width="250" height="182" rx="10" fill="#0F172A" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="1200" y="200" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">④ Act (4ms) · Teams, 3E &amp; PSA</text>
+  <text x="1200" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Teams 合伙人开票与资源调配审批卡</text>
+  <text x="1200" y="246" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Thomson Reuters 3E / Workday 写回</text>
+  <text x="1200" y="268" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 1GB Free Fabric SQL 审计落盘</text>
+  <text x="1200" y="290" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 守护 $63.85M 营收变现与合规 SLA</text>
+  <text x="1200" y="336" fill="#C084FC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">✓ 4+4+4+4 = 16ms (4²ms) 极速闭环</text>
+
+  <!-- Center Bottom: Stitched Stack Comparison -->
+  <rect x="342" y="392" width="1114" height="188" rx="12" fill="url(#compCard193)" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="364" y="422" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    2B. 传统四云 + 独立向量库 + 电子账单预审 SaaS 拼接栈痛点（830ms – 3,100ms 延迟 · $364K–$400K/mo 昂贵账单）
+  </text>
+
+  <rect x="362" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="378" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 608M 标书/文书向量内存爆炸 ($75.5K/mo)</text>
+  <text x="378" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 6.08 亿历史交付件与 OCG 规则常驻 HNSW 需 &gt;2.3TB RAM</text>
+  <text x="378" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Mosaic / Cortex / OpenSearch 月耗 $72K–$78K</text>
+  <text x="378" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 外部向量库脱离 Intapp 信息墙，极易发生跨项目泄密</text>
+
+  <rect x="728" y="438" width="350" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="744" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 月末 WIP 核销黑洞与 18% 电子账单退单</text>
+  <text x="744" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 995K EPS 工时活动流按 GB 收取高额流写入附加费</text>
+  <text x="744" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 月末才发现超支，8.5%–12% 未开票 WIP 被迫核销</text>
+  <text x="744" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 人工漏查 Block-Billing 条目遭客户系统自动扣款</text>
+
+  <rect x="1094" y="438" width="342" height="126" rx="8" fill="#1F1218" stroke="#F87171" stroke-width="1"/>
+  <text x="1110" y="462" fill="#FDA4AF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">❌ 15,800 名合伙人/项目经理席位与并发税</text>
+  <text x="1110" y="486" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• Looker / QuickSight 按人头月费高达 $89K–$94K/mo</text>
+  <text x="1110" y="508" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 月末集中开票与结账高峰触发多集群 Warehouse 翻倍计费</text>
+  <text x="1110" y="530" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">• 缺乏 M365 Work IQ 原生融合，闲置顾问匹配滞后</text>
+
+  <!-- Bottom Table: 5-Cloud Decision Matrix -->
+  <rect x="24" y="596" width="1432" height="320" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="44" y="628" fill="#38BDF8" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">
+    3. 五云专业服务与律所 PSA 稼动率、WIP 变现与信息屏障横向评测矩阵（180K Practitioners · 608M Vectors · 15,800 Partners/EMs）
+  </text>
+
+  <!-- Table Header -->
+  <rect x="40" y="642" width="1400" height="36" rx="6" fill="#1E293B"/>
+  <text x="54" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">云平台方案 (Platform)</text>
+  <text x="340" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">工时流 + PSA/3E 同步</text>
+  <text x="595" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">608M 标书/文书/OCG 向量</text>
+  <text x="855" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">信息屏障与 LEDES 审单护栏</text>
+  <text x="1125" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">15.8K 合伙人/经理席位</text>
+  <text x="1290" y="665" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">月度总成本 (TCO)</text>
+
+  <!-- Row 1: Fabric -->
+  <rect x="40" y="684" width="1400" height="42" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="54" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">✅ Microsoft Fabric (F64)</text>
+  <text x="340" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms KQL + Work IQ + $0 Mirror</text>
+  <text x="595" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$3,300/mo (SSD DiskANN -92%)</text>
+  <text x="855" y="710" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">4ms Ethical Wall + 挽回 $21.5M</text>
+  <text x="1125" y="710" fill="#6EE7B7" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">$0 Viewer / $0 Token</text>
+  <text x="1290" y="710" fill="#34D399" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="800">$15,220/mo (-96.0%)</text>
+
+  <!-- Row 2: Databricks -->
+  <rect x="40" y="732" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="756" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔶 Azure Databricks</text>
+  <text x="340" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">670ms–2.0s ($56.0K/mo DBU)</text>
+  <text x="595" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$75,500/mo (Mosaic DRAM)</text>
+  <text x="855" y="756" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">UC ABAC + 外部权限同步</text>
+  <text x="1125" y="756" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$89,000/mo (BI + SQL)</text>
+  <text x="1290" y="756" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$373,000/mo</text>
+
+  <!-- Row 3: Snowflake -->
+  <rect x="40" y="776" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="800" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🔷 Snowflake Enterprise</text>
+  <text x="340" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">1.1s–3.1s ($67.0K/mo Credits)</text>
+  <text x="595" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$78,000/mo (Cortex Search)</text>
+  <text x="855" y="800" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Horizon RLS + 外部网关</text>
+  <text x="1125" y="800" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$94,000/mo (Multi-Cluster)</text>
+  <text x="1290" y="800" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$400,000/mo</text>
+
+  <!-- Row 4: BigQuery -->
+  <rect x="40" y="820" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="844" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">🌐 Google BigQuery</text>
+  <text x="340" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">770ms–2.2s ($54.0K/mo Write API)</text>
+  <text x="595" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$72,000/mo (Vertex Vector)</text>
+  <text x="855" y="844" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Policy Tags + 外部代码</text>
+  <text x="1125" y="844" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$93,000/mo (Looker Seats)</text>
+  <text x="1290" y="844" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$364,000/mo</text>
+
+  <!-- Row 5: AWS -->
+  <rect x="40" y="864" width="1400" height="38" rx="6" fill="#1E293B"/>
+  <text x="54" y="888" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">☁️ AWS Lakehouse</text>
+  <text x="340" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">810ms–2.4s ($55.0K/mo MSK/Glue)</text>
+  <text x="595" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$74,000/mo (OpenSearch OCU)</text>
+  <text x="855" y="888" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="12">Lake Formation + 外部网关</text>
+  <text x="1125" y="888" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="12">$91,000/mo (QuickSight)</text>
+  <text x="1290" y="888" fill="#F87171" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700">~$370,000/mo</text>
+</svg>

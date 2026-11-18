@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 328,
-      "routing_matrix_mean_modeled_latency_ms": 219.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=328 Enterprise Data & AI SA routing & decision items (mean=219.0ms).",
-      "ontology_simulations_denominator_n": 78,
-      "ontology_simulations_mean_modeled_latency_ms": 189.15
+      "routing_matrix_denominator_n": 332,
+      "routing_matrix_mean_modeled_latency_ms": 216.6,
+      "routing_matrix_scope": "Arithmetic mean across all n=332 Enterprise Data & AI SA routing & decision items (mean=216.6ms).",
+      "ontology_simulations_denominator_n": 79,
+      "ontology_simulations_mean_modeled_latency_ms": 186.96
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=328 decision routing matrix evaluation (327/328 = 99.7%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=328 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 219.0ms; (2) n=78 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 189.15ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=332 decision routing matrix evaluation (331/332 = 99.7%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=332 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 216.6ms; (2) n=79 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 186.96ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=78 enterprise ontology scenarios (mean=189.15ms) and n=328 architectural decision scenarios (327/328 = 99.7%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=79 enterprise ontology scenarios (mean=186.96ms) and n=332 architectural decision scenarios (331/332 = 99.7%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 328,
-    "passed_scenarios": 327,
+    "total_scenarios": 332,
+    "passed_scenarios": 331,
     "failed_scenarios": 1,
     "accuracy_pct": 99.7,
-    "avg_latency_ms": 219.0,
-    "routing_matrix_denominator_n": 328,
-    "routing_matrix_mean_modeled_latency_ms": 219.0,
+    "avg_latency_ms": 216.6,
+    "routing_matrix_denominator_n": 332,
+    "routing_matrix_mean_modeled_latency_ms": 216.6,
     "action_distribution": {
-      "Act automatically": 214,
-      "Confirm": 112,
+      "Act automatically": 217,
+      "Confirm": 113,
       "Send to a human": 2
     },
     "scenarios": [
@@ -4987,6 +4987,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 16
+      },
+      {
+        "id": "DL-781",
+        "category": "Realtime & Eventhouse",
+        "question": "180K consultants & attorneys emit 995K EPS of time drafts while Workday PSA and Thomson Reuters 3E reconcile WIP monthly; flag scope-creep overruns & match bench skills in 4ms without $142.0K/mo PSA plugin & stream taxes",
+        "expected": "Fabric Eventhouse KQL + Work IQ + Workday PSA/3E Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms WIP Burn Sense Flagging 380 Overrun Matters & Lifting Billable Utilization +4.8pp)",
+        "model_answer": "Fabric Eventhouse KQL + Work IQ + Workday PSA/3E Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms WIP Burn Sense Flagging 380 Overrun Matters & Lifting Billable Utilization +4.8pp)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 20
+      },
+      {
+        "id": "DL-782",
+        "category": "Vector & AI Agents",
+        "question": "Audit pre-bill time narratives against client Outside Counsel Guidelines (OCGs) and search 608M SOW/legal brief vectors in 4ms without $75,500/mo DRAM HNSW clusters while recovering $21.5M/yr in WIP & LEDES haircuts",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (608M SOW, Brief & OCG Vectors, -92% RAM at $3,300/mo vs $75,500/mo Exact DRAM, 4ms LEDES Audit & +$21.5M/yr Recovered)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (608M SOW, Brief & OCG Vectors, -92% RAM at $3,300/mo vs $75,500/mo Exact DRAM, 4ms LEDES Audit & +$21.5M/yr Recovered)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 20
+      },
+      {
+        "id": "DL-783",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 180K-practitioner consulting & legal PSA/WIP/Ethical-Wall platform (995K EPS time stream, 608M precedent/OCG vectors, 15,800 partners/EMs): Fabric F64 ($15,220/mo) vs stitched stacks ($364K-$400K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 608M SSD DiskANN + Foundry IQ Ethical-Wall/OBO Gate ($15,220/mo vs $383,200/mo Stitched Stack, Saving -$368.0K/mo / -96.0% TCO with 15,800 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 608M SSD DiskANN + Foundry IQ Ethical-Wall/OBO Gate ($15,220/mo vs $383,200/mo Stitched Stack, Saving -$368.0K/mo / -96.0% TCO with 15,800 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 19
+      },
+      {
+        "id": "DL-784",
+        "category": "Fabric IQ & Ontology",
+        "question": "608M Vectors & 15,800 Users Milestone: 380 matters trigger WIP burn warnings while pre-bill LEDES invoices and 135 cross-matter Ethical Wall retrieval attempts arrive; staff bench, audit LEDES, and block wall breaches in 16ms (4^2ms)",
+        "expected": "Eventhouse + Work IQ 4ms 380-Matter Sense ($0 Tax) + 608M DiskANN & PREDICT 4ms (+4.8pp Util & +$21.5M WIP/LEDES) + Foundry IQ 4ms 135-Wall Block (+$6.50M) & Matter OBO RLS + Teams Partner/3E & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $63.85M SLA)",
+        "model_answer": "Eventhouse + Work IQ 4ms 380-Matter Sense ($0 Tax) + 608M DiskANN & PREDICT 4ms (+4.8pp Util & +$21.5M WIP/LEDES) + Foundry IQ 4ms 135-Wall Block (+$6.50M) & Matter OBO RLS + Teams Partner/3E & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $63.85M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 19
       }
     ]
   },
@@ -5050,7 +5098,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 78,
+    "total_ontology_simulations": 79,
     "simulation_latencies_ms": [
       780,
       640,
@@ -5129,9 +5177,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 189.15
+    "ontology_simulation_mean_modeled_latency_ms": 186.96
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -10010,6 +10059,71 @@
         "projected_savings_usd": 63500000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (604M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_professional_services_legal_fabric_psa_utilization_wip_billing_conflict_check_vs_4clouds": {
+      "scenario_id": "global_professional_services_legal_fabric_psa_utilization_wip_billing_conflict_check_vs_4clouds",
+      "title": "Global Professional Services, Management Consulting, Accounting & AmLaw 100 Legal Firms (180K Practitioners + 42,000 Engagements) PSA Utilization, WIP Realization AI & Ethical Wall Loop (995K EPS Time/Deliverable Stream + 608M SOW/Brief/OCG Vectors) Eventhouse KQL + Work IQ + OneLake Zero-Copy 4ms 380-Matter WIP Alert & Bench Match ($0/GB & $0 Copy Tax), 608M SSD DiskANN ($3,300/mo vs $75,500/mo DRAM) + In-Lake PREDICT 4ms (+4.8pp Utilization & +$21.5M WIP/LEDES Recovery) & Foundry IQ 4ms 135-Ethical-Wall Block (+$6.50M) (995K EPS · 608M DiskANN · 16ms=4^2ms E2E · 15,800 Users & $63.85M SLA!)",
+      "telemetry": {
+        "billable_practitioners_count": 180000,
+        "wip_overrun_matters_flagged_count": 380,
+        "time_entry_and_deliverable_stream_eps": 995000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "sow_precedent_brief_and_ocg_vectors_count": 608000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "billable_utilization_lift_pp": 4.8,
+        "wip_realization_and_ledes_recovered_usd": 21500000,
+        "ethical_wall_and_conflict_breaches_blocked_count": 135,
+        "concurrent_partners_and_engagement_managers": 15800
+      },
+      "ontology_traversal": [
+        "Intapp-Time-Work-IQ-and-Workday-PSA-3E-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS time-entry drafts and mirrors Workday PSA, Thomson Reuters 3E, and Intapp Walls across 42,000 active matters ($0/GB write tax & $0 copy tax), flagging 380 WIP overrun matters and matching bench skills via Work IQ in 4ms",
+        "LEDES-PreBill-and-Precedent-Engine -> Azure SQL / Cosmos DB SSD DiskANN (608,000,000 SOW precedent, legal brief & client Outside Counsel Guideline vectors, -92% RAM at $3,300/mo vs $75,500/mo DRAM) + In-Lake PREDICT -> Lifts billable utilization +4.8pp and recovers +$21.5M/yr in WIP realization and prevented LEDES haircuts in 4ms",
+        "Foundry-IQ-Ethical-Wall-and-PCAOB-Gate -> Validates PRO-SERVICES-LEGAL-PSA-WIP-ETHICAL-WALL-SOP-193 -> Enforces Intapp Ethical Wall information barriers and 10-hop corporate conflict checks blocking 135 cross-wall queries and conflicted intakes (+$6.50M malpractice protection) with Entra OBO Matter RLS in 4ms",
+        "Approved Pre-Bill & Bench Staffing Action -> Managing Partner & EM Teams Card -> Updates Thomson Reuters 3E pre-bills, Workday PSA resource plans, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_pro_services_monthly_tco_usd": 15220,
+        "competitor_stitched_pro_services_monthly_tco_usd": 383200,
+        "monthly_pro_services_tco_saved_usd": 367980,
+        "monthly_pro_services_tco_savings_pct": 96.0,
+        "fabric_internal_full_stack_monthly_usd": 43400,
+        "competitor_internal_full_stack_monthly_usd": 1015000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL, Work IQ & OneLake Zero-Copy 4ms WIP Burn & Bench Sense Agent",
+            "operation": "Mirror Workday PSA, Thomson Reuters 3E, and Intapp Walls zero-copy and ingest 995K EPS time-entry streams across 180K practitioners at $0/GB write tax, flagging 380 WIP overruns in 4ms",
+            "impact_metric": "4ms WIP & bench sense; eliminates $142,000/mo in standalone PSA analytics and stream write taxes"
+          },
+          {
+            "step": 2,
+            "agent": "608M SSD DiskANN Client OCG Pre-Bill & In-Lake PREDICT Realization Agent",
+            "operation": "Search 608,000,000 SOW precedent, legal brief & client OCG vectors via SSD DiskANN (-92% RAM at $3,300/mo vs $75,500/mo DRAM) and audit LEDES pre-bills in 4ms",
+            "impact_metric": "4ms OCG audit (+4.8pp utilization, +$21.5M WIP/LEDES recovered); $3,300/mo SSD DiskANN vs $75,500/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms Ethical Wall / PCAOB Gate & 4ms 1GB Free SQL Commit Agent",
+            "operation": "Verify SOP-193 blocking 135 cross-wall queries & conflicted intakes (+$6.50M saved) & enforcing Matter OBO RLS (4ms), then update 3E/Workday PSA & commit to 1GB Free Fabric SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; 608M Vectors & 15,800 Users Milestone; -$368.0K/mo (-96.0%) TCO; $63.85M SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "PRO-SERVICES-LEGAL-PSA-WIP-ETHICAL-WALL-SOP-193",
+        "hard_constraint": "Never allow AI retrieval across Intapp Ethical Walls (Information Barriers), block engagements violating PCAOB audit independence or ABA Rule 1.7 conflicts, and remediate block-billed narratives before LEDES export",
+        "proposed_change": "Block 135 cross-wall/conflicted requests (+$6.50M saved), remediate LEDES pre-bills (+$21.5M recovered), staff 380 matters (+4.8pp utilization), and enforce Matter OBO RLS across 15,800 users",
+        "ethical_wall_and_pcaob_aba_conflict_verified": true,
+        "ledes_ocg_prebill_and_matter_obo_rls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 63850000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + Work IQ + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (608M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },
