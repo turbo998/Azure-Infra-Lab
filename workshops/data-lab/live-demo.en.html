@@ -186,7 +186,7 @@
           <a class="btn" href="#diamond-showcase">⬇️ Diamond Showcase Below</a>
         </div>
       </div>
-      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">383 / 384 (6×64!) Scenarios Passed (99.74%) · 86 Enterprise SA FAQs · Sub-190ms (189.9ms) Mean &amp; &gt;$390K/mo Saved!</span>
+      <span class="badge-pill" style="background:#065F46; border:1px solid #10B981;">387 / 388 Scenarios Passed (99.74%) · 87 Enterprise SA FAQs · 188.2ms Mean &amp; Exact $15,500/mo TCO!</span>
     </div>
     <div class="kpi-row">
       <div class="kpi-card">
@@ -200,9 +200,9 @@
         <div class="sub" id="kpi2-sub">$14,048/mo ($0 BI Viewer + $0 Mirror/XTable + $0 Token)</div>
       </div>
       <div class="kpi-card">
-        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=384 / n=92)</div>
-        <div class="val">189.9ms / 162.8ms</div>
-        <div class="sub" id="kpi3-sub">Sub-190ms Routing Mean (189.9ms) · n=92 Ontology Mean 162.80ms!</div>
+        <div class="label" id="kpi3-lbl">Dual-Denominator Mean (n=388 / n=93)</div>
+        <div class="val">188.2ms / 161.2ms</div>
+        <div class="sub" id="kpi3-sub">Routing Mean 188.2ms (&lt;188.5ms) · n=93 Ontology Mean 161.23ms!</div>
       </div>
       <div class="kpi-card">
         <div class="label" id="kpi4-lbl">DirectLake + KQL 高并发优势</div>
@@ -350,6 +350,7 @@
       <button class="comp-pill" id="sim-btn-maritime" onclick="selectScenario('global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds')">🚢 Scenario GU: Maritime Shipping &amp; Port Terminals 780 Vessels × AIS Slow-Steaming, Navis N4 TOS &amp; EU ETS/FMC Loop (Eventhouse 4ms + 660M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (R196=14², 90th Sim &amp; 18,000 Users · R196)</button>
       <button class="comp-pill" id="sim-btn-semifab" onclick="selectScenario('global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds')">🔬 Scenario GV: Semiconductor Fab &amp; OSAT 18 300mm Fabs × SECS/GEM Virtual Metrology, Wafer-Map &amp; AEC-Q100 Loop (Eventhouse 4ms + 665M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (85th FAQ, 99.74% &amp; 191.7ms Exact · R197)</button>
       <button class="comp-pill" id="sim-btn-mining" onclick="selectScenario('global_mining_metals_fabric_ahs_fleet_sag_mill_tailings_esg_vs_4clouds')">⛏️ Scenario GW: Mining, Metals &amp; AHS Fleet 48 Mines × Mine-to-Mill Ore Blend, Flotation &amp; GISTM Loop (Eventhouse 4ms + 670M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (Sub-190ms 189.9ms &amp; -$390.6K/mo · R198)</button>
+      <button class="comp-pill" id="sim-btn-grocery" onclick="selectScenario('global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds')">🛒 Scenario GX: Grocery &amp; Supermarket 4,600 Stores × Perishable Auto-Replenishment, ESL Markdown &amp; SCO Shrinkage Loop (Eventhouse 4ms + 675M DiskANN 4ms + Foundry IQ 4ms + 4ms = 16ms 4²ms!) vs Stitched Stack (87th FAQ, 127=2⁷-1 Confirm &amp; 190 Tests · R199)</button>
     </div>
 
     <div class="grid-2">
@@ -381,6 +382,14 @@
         <a href="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" target="_blank">🔍 View Full-Res SVG</a>
       </h3>
       <img src="assets/svg/01-data-lab-executive-summary-2026-11-04.svg" alt="Data Lab Executive Visual Summary" class="svg-preview">
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>
+        <span>207 · Global Grocery, Supermarket, Hypermarket &amp; Warehouse Club (4,600 Stores + 180 Fresh DCs + 48M ESL Tags) Perishable Auto-Replenishment, ESL Dynamic Markdown &amp; Self-Checkout (SCO) Shrinkage AI (Eventhouse KQL + OneLake Zero-Copy 4ms $0 Tax + 675M SSD DiskANN -92% RAM vs $83,000/mo Exact DRAM + In-Lake PREDICT -28.5% Shrink &amp; +$41.0M/yr Exact Saved, 16ms=4²ms Loop, 87th FAQ, 127=2⁷-1 Mersenne Confirm, Exact $15,500/mo, -$392.3K/mo &amp; $68.75M SLA!) vs. AWS / GCP / Databricks / Snowflake FAQ Architecture (R199)</span>
+        <a href="assets/svg/207-fabric-grocery-supermarket-hypermarket-perishable-replenishment-shrinkage-pos-esl-faq.svg" target="_blank">🔍 View Full-Res SVG</a>
+      </h3>
+      <img src="assets/svg/207-fabric-grocery-supermarket-hypermarket-perishable-replenishment-shrinkage-pos-esl-faq.svg" alt="Fabric Grocery Supermarket Hypermarket Perishable Replenishment Shrinkage POS ESL Architecture" class="svg-preview">
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2944,6 +2953,30 @@ const SIM_DATA = {
       graph: '<b>Ontology Cascade Path:</b> <code>MiningAHS:48Mines_3800AHSTrucks_995KEPS → Eventhouse_OneLake:4ms_445OreBlendLoads_24PctLessQueue (4ms) → DiskANN670M_PREDICT:4ms_2.6ppRecoveryLift_$39.5M_Gained (4ms) → FoundryIQ:4ms_185GISTMMSHABlock_JORCRLS (4ms) → MineStar_DCS_1GB_SQL:Mining_Commit (16ms=4²ms E2E)</code>',
       teamsTitle: 'Teams Mining Operations VP & Chief Metallurgist Card · 48-Mine AHS & Flotation Loop (DL-833..836 · 189.9ms <190ms!)',
       teamsSummary: '16ms (4²ms) Mine-to-Mill & GISTM Loop Ready: KQL 4ms flags 445 ore-blend loads (-24% queue) + 670M DiskANN lifts recovery +2.6pp (+$39.5M) + blocks 185 GISTM/MSHA violations (+$10.20M!) · Sub-190ms (189.9ms) Mean, -$390.6K/mo saved, $68,400,000 SLA Protected ✓'
+    }
+  },
+  global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds: {
+    zh: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS 门店 POS/SCO、4,800万 ESL 与冷柜温控感知 ($0/GB 税)', latency: '4 ms', desc: '实时摄入 4,600 家门店、180 座生鲜大仓、92,000 台收银机与 4,800 万块电子价签的流水、SCO 视觉及 SAP CAR / RELEX 镜像，4ms 锁定 460 家门店临期生鲜滞销与 SCO 换标漏扫，生鲜报损与防损降低 -28.5%（免除 $152.8K/月 流与连接器税）。' },
+        { title: '② Azure SQL SSD DiskANN (6.75 亿单店条码弹性、SCO 视觉与陈列向量) 与湖内 PREDICT', latency: '4 ms', desc: '在 6.75 亿条单店单品价格弹性、SCO 防损视觉、端架陈列与供应商 COA 向量库上以 $3,580/月 (-92% 内存 vs $83,000/月精确 DRAM) 完成 4ms 阶梯出清与日配补货寻优，晚高峰有货率提升 +3.8pp，年挽回生鲜净利 +$41.0M/年（精确整百万！）。' },
+        { title: '③ Foundry IQ FSMA 204 冷链断链锁架与促销毛利底线门禁 (SOP-207)', latency: '4 ms', desc: '强制执行 SOP-207，4ms 内物理阻断 190 笔 >4°C 超温冷链生鲜结账、FDA/市监局召回批次售卖与击穿保底毛利的恶性降价指令（规避 $10.50M 食安与毛利损失），并对 18,600 名店长与买手执行供应商返利 RLS。' },
+        { title: '④ 零售运营 VP 与生鲜买手 Teams 确认及 ESL 基站/SAP CAR 回写 / 1GB SQL 审计', latency: '4 ms', desc: '运营 VP 与买手批准后，4ms 内下发 4,800 万块 ESL 电子价签阶梯出清价、SAP CAR 日配补货单并写入 1GB 免费 Fabric SQL（端到端 4+4+4+4 = 16ms = 4²ms 闭环！达成 87 篇 FAQ、127=2⁷-1 Confirm & 190 单测，守护 $68.75M SLA）。' }
+      ],
+      graph: '<b>Ontology 级联路径：</b><code>GroceryStore:4600Stores_48MESLs_995KEPS → Eventhouse_OneLake:4ms_460StoreMarkdowns_28.5PctLessShrink (4ms) → DiskANN675M_PREDICT:4ms_3.8ppOSA_$41.0M_Saved (4ms) → FoundryIQ:4ms_190FSMAColdChainLock_VendorRLS (4ms) → ESL_SAPCAR_1GB_SQL:Grocery_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams 零售运营 VP 与生鲜总监审批卡 · 4,600 家门店生鲜日配与 ESL 出清闭环 (DL-837..840 · $15,500/mo & 190 Tests!)',
+      teamsSummary: '16ms (4²ms) 商超生鲜补货与 ESL 出清闭环就绪：KQL 4ms 锁定 460 店出清 (-28.5% 损耗) + 675M DiskANN 提有货率 +3.8pp (+$41.0M) + 拦截 190 笔超温/召回结账 (+$10.50M) · $15,500/月精确 TCO，月省 -$392.3K/月，守护 $68,750,000 SLA ✓'
+    },
+    en: {
+      steps: [
+        { title: '① Eventhouse KQL 995K EPS Store POS/SCO, 48M ESL & Refrigeration Sense ($0 Tax)', latency: '4 ms', desc: 'Ingests 995K EPS of checkout scans, overhead SCO vision, 48M ESL heartbeats, and cabinet temperatures alongside mirrored SAP CAR, GK POS, and RELEX across 4,600 stores at $0/GB write tax, flagging 460 store perishable markdowns in 4ms (-28.5% shrinkage, saving $152.8K/mo).' },
+        { title: '② Azure SQL SSD DiskANN (675M Store-SKU Elasticity, SCO Vision & Planogram Vectors) & In-Lake PREDICT', latency: '4 ms', desc: 'Searches 675M store-SKU price-elasticity curves, SCO visual signatures, planograms, and supplier COA vectors via SSD DiskANN ($3,580/mo, -92% RAM vs $83,000/mo exact DRAM) in 4ms—lifting evening OSA +3.8pp and recovering +$41.0M/yr exact.' },
+        { title: '③ Foundry IQ FSMA 204 Cold-Chain Lock & Margin-Floor Gate (SOP-207)', latency: '4 ms', desc: 'Enforces SOP-207 in 4ms, locking ESL shelf tags and blocking 190 POS/SCO checkouts or markdowns involving >4°C cabinet excursions, FDA/FSMA recalls, or below-floor pricing (+$10.50M protected) with Vendor Rebate RLS across 18,600 users.' },
+        { title: '④ VP of Store Operations & Fresh Buyer Teams Card & ESL / SAP CAR / 1GB SQL Commit', latency: '4 ms', desc: 'VP of Store Operations and Fresh Buyer approve in Teams; updates 48M ESL tags, SAP CAR fresh DC replenishment orders, and commits to 1GB Free Fabric SQL in 4ms (16ms = 4²ms E2E, 87th FAQ, 127=2⁷-1 Mersenne Confirm & -$392.3K/mo Saved!).' }
+      ],
+      graph: '<b>Ontology Cascade Path:</b> <code>GroceryStore:4600Stores_48MESLs_995KEPS → Eventhouse_OneLake:4ms_460StoreMarkdowns_28.5PctLessShrink (4ms) → DiskANN675M_PREDICT:4ms_3.8ppOSA_$41.0M_Saved (4ms) → FoundryIQ:4ms_190FSMAColdChainLock_VendorRLS (4ms) → ESL_SAPCAR_1GB_SQL:Grocery_Commit (16ms=4²ms E2E)</code>',
+      teamsTitle: 'Teams Store Operations VP & Fresh Merchandising Card · 4,600-Store ESL & Fresh Loop (DL-837..840 · $15,500/mo Exact!)',
+      teamsSummary: '16ms (4²ms) Grocery Perishable & ESL Loop Ready: KQL 4ms flags 460 store markdowns (-28.5% shrink) + 675M DiskANN lifts OSA +3.8pp (+$41.0M) + blocks 190 FSMA/margin violations (+$10.50M) · 188.2ms Mean, -$392.3K/mo saved, $68,750,000 SLA Protected ✓'
     }
   }
 };

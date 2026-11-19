@@ -1466,13 +1466,29 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 68400000)
 
 
+    def test_global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["active_grocery_stores_and_fresh_dcs_count"], 4780)
+        self.assertEqual(sim["telemetry"]["stores_with_perishable_markdown_and_sco_alerts_count"], 460)
+        self.assertEqual(sim["telemetry"]["store_sku_elasticity_sco_vision_and_planogram_vectors_count"], 675000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_grocery_supermarket_tco_saved_usd"], 392300)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_grocery_supermarket_tco_savings_pct"], 96.2)
+        self.assertTrue(sim["foundry_iq_guardrail"]["fsma_cold_chain_excursion_and_recall_esl_lock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["margin_floor_and_vendor_rebate_rls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 68750000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 384)
-        self.assertEqual(matrix["passed_scenarios"], 383)
+        self.assertEqual(matrix["total_scenarios"], 388)
+        self.assertEqual(matrix["passed_scenarios"], 387)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.74, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 189.9)
+        self.assertEqual(matrix["avg_latency_ms"], 188.2)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2542,6 +2558,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $68.40M SLA", by_id["DL-836"])
 
 
+    def test_fabric_grocery_supermarket_perishable_replenishment_shrinkage_pos_esl_2026_11_19_r199_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-837", "DL-838", "DL-839", "DL-840"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Store Sell-Through & SCO Vision Sense Flagging 460 Store Markdowns & Cutting Shrinkage -28.5%", by_id["DL-837"])
+        self.assertIn("675M Store-SKU Elasticity, SCO Vision & Planogram Vectors, -92% RAM at $3,580/mo vs $83,000/mo Exact DRAM", by_id["DL-838"])
+        self.assertIn("-$392.3K/mo", by_id["DL-839"])
+        self.assertIn("16ms 4^2ms E2E, Protect $68.75M SLA", by_id["DL-840"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2560,11 +2587,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 383)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 384)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 189.9)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 92)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 162.80)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 387)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 388)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 188.2)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 93)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 161.23)
 
 
 if __name__ == "__main__":

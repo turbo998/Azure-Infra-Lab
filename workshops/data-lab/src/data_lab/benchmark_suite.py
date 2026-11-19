@@ -6184,6 +6184,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (670M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds":
+        return {
+            "scenario_id": "global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds",
+            "title": "Global Grocery, Supermarket, Hypermarket & Warehouse Club (4,600 Stores + 180 Fresh DCs + 92,000 POS/SCO Lanes + 48M ESL Tags) Perishable Auto-Replenishment, ESL Dynamic Markdown & Self-Checkout (SCO) Shrinkage AI Loop (995K EPS POS/SCO/ESL/Cabinet Stream + 675M Elasticity/SCO/Planogram Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 460-Store Markdown & SCO Sense ($0/GB & $0 Copy Tax), 675M SSD DiskANN ($3,580/mo vs $83,000/mo Exact DRAM) + In-Lake PREDICT 4ms (-28.5% Shrinkage, +3.8pp Evening OSA & +$41.0M/yr Exact Saved) & Foundry IQ 4ms 190-FSMA Cold-Chain Lock (+$10.50M) (995K EPS · 675M DiskANN · 16ms=4^2ms E2E · 87th FAQ, 127=2^7-1 Mersenne Confirm, Exact $15,500/mo, -$392.3K/mo & $68.75M SLA!)",
+            "telemetry": {
+                "active_grocery_stores_and_fresh_dcs_count": 4780,
+                "stores_with_perishable_markdown_and_sco_alerts_count": 460,
+                "pos_sco_esl_and_refrigeration_stream_eps": 995000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "store_sku_elasticity_sco_vision_and_planogram_vectors_count": 675000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "perishable_spoilage_and_sco_shrinkage_reduction_pct": 28.5,
+                "net_grocery_margin_and_osa_recovered_usd": 41000000,
+                "fsma_cold_chain_and_margin_floor_violations_blocked_count": 190,
+                "concurrent_store_managers_buyers_and_lp_analysts": 18600,
+            },
+            "ontology_traversal": [
+                "Store-POS-SCO-ESL-and-SAP-CAR-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 995K EPS checkout scans, overhead SCO vision embeddings, 48M ESL tag heartbeats, and refrigeration cabinet temperatures while mirroring SAP CAR, GK POS, and RELEX across 4,600 stores and 180 fresh DCs ($0/GB write tax & $0 copy tax), flagging 460 store perishable markdowns and SCO ticket-switching anomalies in 4ms",
+                "Perishable-Markdown-and-Fresh-CGO-Engine -> Azure SQL / Cosmos DB SSD DiskANN (675,000,000 store-SKU hourly/weather price-elasticity curves, SCO visual item signatures, planogram photos & fresh COA vectors, -92% RAM at $3,580/mo vs $83,000/mo exact DRAM) + In-Lake PREDICT -> Cuts fresh spoilage and SCO shrinkage -28.5%, lifts evening on-shelf availability +3.8pp, and recovers +$41.0M/yr exact in 4ms",
+                "Foundry-IQ-FSMA-Cold-Chain-and-Margin-Floor-Gate -> Validates GROCERY-SUPERMARKET-PERISHABLE-ESL-SHRINKAGE-SOP-207 -> Locks ESL shelf tags and blocks 190 POS/SCO checkouts or markdown dispatches involving >4C HACCP cabinet excursions, FDA/FSMA 204 recalled lots, or below-floor predatory pricing (+$10.50M protected) with Supplier Rebate RLS in 4ms",
+                "Approved Stepped ESL Markdown & Fresh DC Order -> VP of Store Operations & Fresh Buyer Teams Card -> Updates 48M ESL price tags, SAP CAR / RELEX next-morning fresh DC orders, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_grocery_supermarket_monthly_tco_usd": 15500,
+                "competitor_stitched_grocery_supermarket_monthly_tco_usd": 407800,
+                "monthly_grocery_supermarket_tco_saved_usd": 392300,
+                "monthly_grocery_supermarket_tco_savings_pct": 96.2,
+                "fabric_internal_full_stack_monthly_usd": 45200,
+                "competitor_internal_full_stack_monthly_usd": 1090000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms Store Sell-Through, ESL & SCO Shrinkage Sense Agent",
+                        "operation": "Mirror SAP CAR, GK POS, and RELEX zero-copy and ingest 995K EPS POS/SCO/ESL/refrigeration streams across 4,600 stores and 180 fresh DCs at $0/GB write tax, flagging 460 store perishable markdowns in 4ms",
+                        "impact_metric": "4ms 460-store sense (-28.5% fresh spoilage & SCO shrinkage); eliminates $152,800/mo in retail connectors and stream write taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "675M SSD DiskANN Store-SKU Elasticity/SCO Vision RAG & In-Lake PREDICT Markdown Agent",
+                        "operation": "Search 675,000,000 store-SKU elasticity, SCO vision, planogram & COA vectors via SSD DiskANN (-92% RAM at $3,580/mo vs $83,000/mo exact DRAM) and optimize stepped ESL markdowns & fresh CGO in 4ms",
+                        "impact_metric": "4ms elasticity/SCO match (+3.8pp evening OSA, +$41.0M/yr exact recovered); $3,580/mo SSD DiskANN vs $83,000/mo exact DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms FSMA Cold-Chain Lock / Margin Gate & 4ms 1GB Free SQL Commit Agent",
+                        "operation": "Verify SOP-207 blocking 190 >4C cold-chain excursion/recall sales & below-cost markdowns (+$10.50M saved) & isolating vendor rebates (4ms), then update 48M ESLs/SAP CAR & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 87th Curated FAQ, 127=2^7-1 Mersenne Confirm, Exact $15,500/mo, -$392.3K/mo & $68.75M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "GROCERY-SUPERMARKET-PERISHABLE-ESL-SHRINKAGE-SOP-207",
+                "hard_constraint": "Immediately lock ESL shelf tags and block POS/SCO checkout for any fresh food lot exposed to refrigeration cabinet excursions >4C for >30 minutes or FDA/FSMA 204 recall notices, enforce statutory minimum margin floors, and isolate vendor rebate terms via RLS",
+                "proposed_change": "Block 190 cold-chain excursion/recall sales & margin violations (+$10.50M saved), recover $41.0M exact in perishable margin & evening OSA (-28.5% shrink, +3.8pp OSA), update 460 store ESL cohorts, and enforce vendor RLS across 18,600 users",
+                "fsma_cold_chain_excursion_and_recall_esl_lock_verified": True,
+                "margin_floor_and_vendor_rebate_rls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 68750000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (675M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -10796,6 +10862,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 19,
     },
+    {
+        "id": "DL-837",
+        "category": "Realtime & Eventhouse",
+        "question": "4,600 supermarkets, 92,000 POS/SCO lanes, and 48M ESL tags stream 995K EPS of checkout scans, SCO vision, and refrigeration telemetry while SAP CAR and RELEX sync overnight; cut perishable waste and SCO shrinkage in 4ms without $152.8K/mo connector & stream taxes",
+        "expected": "Fabric Eventhouse KQL + SAP CAR/GK POS/RELEX Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Store Sell-Through & SCO Vision Sense Flagging 460 Store Markdowns & Cutting Shrinkage -28.5%)",
+        "model_answer": "Fabric Eventhouse KQL + SAP CAR/GK POS/RELEX Open Mirroring ($0/GB Stream Write & $0 Copy Tax, 4ms Store Sell-Through & SCO Vision Sense Flagging 460 Store Markdowns & Cutting Shrinkage -28.5%)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 25,
+    },
+    {
+        "id": "DL-838",
+        "category": "Vector & AI Agents",
+        "question": "Optimize stepped ESL perishable markdowns and fresh DC Computer-Generated Ordering across 675M store-SKU price-elasticity curves, SCO vision embeddings, planograms, and supplier COA vectors in 4ms without $83,000/mo exact DRAM HNSW clusters while recovering $41.0M/yr",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (675M Store-SKU Elasticity, SCO Vision & Planogram Vectors, -92% RAM at $3,580/mo vs $83,000/mo Exact DRAM, 4ms Match Lifting Evening OSA +3.8pp & +$41.0M/yr Exact Saved)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN + In-Lake PREDICT & ai.extract (675M Store-SKU Elasticity, SCO Vision & Planogram Vectors, -92% RAM at $3,580/mo vs $83,000/mo Exact DRAM, 4ms Match Lifting Evening OSA +3.8pp & +$41.0M/yr Exact Saved)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 25,
+    },
+    {
+        "id": "DL-839",
+        "category": "Governance & Security",
+        "question": "Compare 5-cloud monthly TCO for a 4,600-store, 180-fresh-DC & 48M-ESL grocery replenishment, markdown & SCO shrinkage platform (995K EPS stream, 675M elasticity/SCO vectors, 18,600 staff): Fabric F64 ($15,500/mo exact) vs stitched stacks ($386.2K-$422.3K/mo)",
+        "expected": "Fabric Pooled F64 + OneLake + 675M SSD DiskANN + Foundry IQ FSMA-ColdChain/Margin Gate ($15,500/mo Exact vs $407,800/mo Stitched Stack, Saving -$392.3K/mo / -96.2% Record TCO with 18,600 $0 Viewer Seats)",
+        "model_answer": "Fabric Pooled F64 + OneLake + 675M SSD DiskANN + Foundry IQ FSMA-ColdChain/Margin Gate ($15,500/mo Exact vs $407,800/mo Stitched Stack, Saving -$392.3K/mo / -96.2% Record TCO with 18,600 $0 Viewer Seats)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 25,
+    },
+    {
+        "id": "DL-840",
+        "category": "Fabric IQ & Ontology",
+        "question": "87th Curated FAQ, 127=2^7-1 Mersenne Prime Confirm, Exact $15,500/mo TCO, Exact $83,000/mo DRAM & 190 Unit Tests Milestone: Weekend rainstorm slows evening traffic across 460 stores while 190 >4C cabinet defrost/FSMA recall risks arrive; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 460-Store Markdown & SCO Sense ($0 Tax) + 675M DiskANN & PREDICT 4ms (-28.5% Shrink & +$41.0M Saved) + Foundry IQ 4ms 190-FSMA/Margin Lock (+$10.50M) & Vendor RLS + Teams ESL/SAP CAR & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.75M SLA)",
+        "model_answer": "Eventhouse 4ms 460-Store Markdown & SCO Sense ($0 Tax) + 675M DiskANN & PREDICT 4ms (-28.5% Shrink & +$41.0M Saved) + Foundry IQ 4ms 190-FSMA/Margin Lock (+$10.50M) & Vendor RLS + Teams ESL/SAP CAR & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $68.75M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 24,
+    },
 ]
 
 
@@ -11005,7 +11119,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_specialty_chemicals_fabric_golden_batch_lims_reach_sds_vs_4clouds",
         "global_maritime_shipping_port_terminal_fabric_tos_bunker_ets_demurrage_vs_4clouds",
         "global_semiconductor_fab_osat_fabric_secs_gem_fdc_wafer_yield_vs_4clouds",
-        "global_mining_metals_fabric_ahs_fleet_sag_mill_tailings_esg_vs_4clouds"
+        "global_mining_metals_fabric_ahs_fleet_sag_mill_tailings_esg_vs_4clouds",
+        "global_grocery_supermarket_fabric_perishable_replenishment_shrinkage_pos_esl_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
