@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg209" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#051319"/>
+      <stop offset="50%" stop-color="#0a222c"/>
+      <stop offset="100%" stop-color="#040d12"/>
+    </linearGradient>
+    <linearGradient id="hdr209" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="fabCard209" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a2e28"/>
+      <stop offset="100%" stop-color="#061d24"/>
+    </linearGradient>
+    <linearGradient id="badCard209" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c1219"/>
+      <stop offset="100%" stop-color="#1a0d13"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20.5px; font-weight: 800; fill: #f8fafc; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 500; fill: #94a3b8; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; font-weight: 700; fill: #f1f5f9; }
+      .t-box-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #34d399; }
+      .t-box-b { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; fill: #cbd5e1; }
+      .t-bad-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #fb7185; }
+      .t-kpi-v { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #34d399; }
+      .t-kpi-l { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 600; fill: #94a3b8; }
+      .t-pill { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; fill: #040d12; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg209)" rx="16"/>
+  <rect x="24" y="20" width="1352" height="74" rx="12" fill="#0f172a" stroke="url(#hdr209)" stroke-width="2"/>
+  <text x="46" y="50" class="t-title">209 · 动力电池与储能超级工厂（28 基地 320GWh + 48万化成通道 + 450万在网 BMS）数字电池护照五云选型 (R201)</text>
+  <text x="46" y="74" class="t-sub">EV &amp; BESS Battery Gigafactory Slot-Die Coating, Cell Formation dQ/dV AI, BMS Thermal Runaway &amp; EU Digital Battery Passport · 995K EPS · 685M DiskANN · 16ms E2E</text>
+  <rect x="1140" y="34" width="215" height="44" rx="8" fill="#10b981"/>
+  <text x="1247" y="55" text-anchor="middle" class="t-pill">R201 · SCENARIO GZ</text>
+  <text x="1247" y="70" text-anchor="middle" class="t-pill">&lt;185ms Mean · 19,000 Users</text>
+
+  <!-- Left Column: Gigafactory & BMS Data Sources -->
+  <rect x="24" y="110" width="285" height="585" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="138" class="t-sec">🔋 28 座超级基地与 450万 BMS 源</text>
+
+  <rect x="40" y="154" width="253" height="115" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2"/>
+  <text x="52" y="176" class="t-box-h" fill="#22d3ee">1. 涂布测厚 / 48万化成通道 / BMS</text>
+  <text x="52" y="196" class="t-box-b">• β/X 射线涂布面密度仪 + 辊压 CCD</text>
+  <text x="52" y="214" class="t-box-b">• 480,000 个化成分容充放电柜通道</text>
+  <text x="52" y="232" class="t-box-b">• 450 万套车载与储能电站 BMS 遥测</text>
+  <text x="52" y="250" class="t-box-b" fill="#34d399">⚡ 峰值吞吐：995,000 EPS 实时流</text>
+
+  <rect x="40" y="284" width="253" height="115" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+  <text x="52" y="306" class="t-box-h">2. Camstar MES / SAP PP-QM / LIMS</text>
+  <text x="52" y="326" class="t-box-b">• Opcenter Camstar 电芯单件族谱</text>
+  <text x="52" y="344" class="t-box-b">• SAP PP/QM 正负极碳酸锂/镍钴批次</text>
+  <text x="52" y="362" class="t-box-b">• 欧盟《新电池法》Scope 1-3 碳台账</text>
+  <text x="52" y="380" class="t-box-b" fill="#34d399">🔄 Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="414" width="253" height="125" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="52" y="436" class="t-box-h" fill="#c084fc">3. 6.85 亿 (685M) 电芯与材料向量</text>
+  <text x="52" y="456" class="t-box-b">• 化成 dQ/dV 容量微分曲线与 EIS 谱</text>
+  <text x="52" y="474" class="t-box-b">• 卷绕/叠片 X-Ray 极耳对齐 Overhang</text>
+  <text x="52" y="492" class="t-box-b">• 浆料流变配方与数字电池护照 (DBP)</text>
+  <text x="52" y="510" class="t-box-b" fill="#c084fc">🧠 SSD DiskANN 仅 $3,620/月 (-92% RAM)</text>
+
+  <rect x="40" y="554" width="253" height="124" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="52" y="576" class="t-box-h" fill="#fbbf24">4. 19,000 名工艺、质量与 BMS 专家</text>
+  <text x="52" y="596" class="t-box-b">• 19,000 名涂布/化成/Pack 质量工程师</text>
+  <text x="52" y="614" class="t-box-b">• UN ECE R100 / GB 38031 热失控红线</text>
+  <text x="52" y="632" class="t-box-b">• 主机厂 (OEM) 专属电芯配方 RLS</text>
+  <text x="52" y="650" class="t-box-b" fill="#fbbf24">🛡️ F64 全包 $0 BI 席位 + $0 AI Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric Unified Architecture -->
+  <rect x="327" y="110" width="1049" height="350" rx="12" fill="url(#fabCard209)" stroke="#10b981" stroke-width="2"/>
+  <text x="348" y="138" class="t-sec" fill="#34d399">✅ 首选方案：Microsoft Fabric 一体化电池超级工厂、化成 AI 与欧盟数字电池护照底座（F64 预留容量 · $15,540/mo · 16ms = 4²ms 闭环）</text>
+
+  <rect x="345" y="156" width="242" height="225" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="357" y="180" class="t-box-h" fill="#22d3ee">① Eventhouse + Mirroring (4ms)</text>
+  <text x="357" y="202" class="t-box-b">• $0/GB 写入税摄入 995K EPS</text>
+  <text x="357" y="220" class="t-box-b">  涂布面密度、48万化成通道与 BMS 流</text>
+  <text x="357" y="240" class="t-box-b">• $0 算力镜像 Camstar MES / SAP</text>
+  <text x="357" y="260" class="t-box-b">• 4ms 锁定 495 批涂布偏移、化成</text>
+  <text x="357" y="278" class="t-box-b">  K 值压降超标与 BMS 内短路前兆</text>
+  <text x="357" y="302" class="t-box-b" fill="#34d399">✔ 化成能耗与极片报废降低 -26.5%</text>
+  <text x="357" y="320" class="t-box-b" fill="#34d399">✔ 免除 $154.4K/月 历史库与流税</text>
+
+  <rect x="602" y="156" width="248" height="225" rx="10" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="614" y="180" class="t-box-h" fill="#c084fc">② 685M DiskANN + PREDICT (4ms)</text>
+  <text x="614" y="202" class="t-box-b">• Azure SQL / Cosmos SSD DiskANN</text>
+  <text x="614" y="220" class="t-box-b">  托管 6.85 亿 dQ/dV、X-Ray 与材料向量</text>
+  <text x="614" y="240" class="t-box-b">• 月费仅 $3,620 vs $84,200 DRAM</text>
+  <text x="614" y="260" class="t-box-b">• 湖内 PREDICT 前 5 圈预测电芯寿命</text>
+  <text x="614" y="278" class="t-box-b">  并动态寻优涂布模头与脉冲化成工步</text>
+  <text x="614" y="302" class="t-box-b" fill="#34d399">✔ 电芯 A 品良率提升 +3.6pp</text>
+  <text x="614" y="320" class="t-box-b" fill="#34d399">✔ 年省废品与化成电费 +$44.0M/yr!</text>
+
+  <rect x="865" y="156" width="245" height="225" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="877" y="180" class="t-box-h" fill="#fbbf24">③ Foundry IQ 热安全与护照门禁 (4ms)</text>
+  <text x="877" y="202" class="t-box-b">• 强制执行 SOP-209 热安全与欧盟法规</text>
+  <text x="877" y="220" class="t-box-b">• 100% 物理拦截精确 200 笔 K 值自放电</text>
+  <text x="877" y="238" class="t-box-b">  /X-Ray Overhang 缺陷电芯入 Pack</text>
+  <text x="877" y="258" class="t-box-b">  及缺失欧盟数字电池护照 (DBP) 出运单</text>
+  <text x="877" y="278" class="t-box-b">• OneLake RLS/CLS 隔离 OEM 客户配方</text>
+  <text x="877" y="302" class="t-box-b" fill="#fbbf24">✔ 规避 +$11.10M/yr 召回与禁售罚款</text>
+  <text x="877" y="320" class="t-box-b" fill="#fbbf24">✔ 200 笔高危批次 0 漏判物理锁死</text>
+
+  <rect x="1125" y="156" width="234" height="225" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1137" y="180" class="t-box-h">④ MES/化成柜回写与 DBP 签发 (4ms)</text>
+  <text x="1137" y="202" class="t-box-b">• 制造 VP 与质量总监 Teams 一键审批</text>
+  <text x="1137" y="220" class="t-box-b">• 4ms 下发涂布模头微调、脉冲化成曲线</text>
+  <text x="1137" y="238" class="t-box-b">  与欧盟数字电池护照 (DBP) 签名</text>
+  <text x="1137" y="258" class="t-box-b">• 写入 1GB 免费 Fabric SQL 审计库</text>
+  <text x="1137" y="278" class="t-box-b">• 19,000 名工程师享 $0 Viewer 席位</text>
+  <text x="1137" y="302" class="t-box-b" fill="#34d399">✔ 4+4+4+4 = 16ms (4²ms) 闭环</text>
+  <text x="1137" y="320" class="t-box-b" fill="#34d399">✔ 守护 $69.45M 超级工厂 SLA</text>
+
+  <rect x="345" y="395" width="1014" height="50" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+  <text x="852" y="425" text-anchor="middle" class="t-sec" fill="#ecfdf5">🏆 R201 里程碑：圆满收官 G 字母周期 (GA..GZ) · 突破 &lt;185ms 路由均值 (184.7ms) · 月省 -$395.7K/mo (&gt;$395K!) · 19,000 人 $0 席位</text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="327" y="476" width="1049" height="219" rx="12" fill="url(#badCard209)" stroke="#f43f5e" stroke-width="1.8"/>
+  <text x="348" y="504" class="t-bad-h">⛔ 传统四云拼接反模式（AWS / GCP / Databricks / Snowflake + 工业历史库 + 685M 全内存向量 + 按人头 BI 席位）：$389.6K – $425.8K / mo</text>
+
+  <rect x="345" y="520" width="242" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="357" y="544" class="t-bad-h">1. 涂布/化成孤岛与流写入税</text>
+  <text x="357" y="566" class="t-box-b">• 涂布面密度与 48 万化成通道按批</text>
+  <text x="357" y="584" class="t-box-b">  导出，整卷极片报废才后知后觉</text>
+  <text x="357" y="604" class="t-box-b">• SiteWise/Snowpipe/Lakeflow 流与</text>
+  <text x="357" y="622" class="t-box-b">  连接器月费高达 $63.2K–$74.5K/mo</text>
+  <text x="357" y="646" class="t-box-b" fill="#fb7185">✘ 延迟 800ms – 3.5s，化成电费高企</text>
+
+  <rect x="602" y="520" width="248" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="614" y="544" class="t-bad-h">2. 685M 全内存向量库天价账单</text>
+  <text x="614" y="566" class="t-box-b">• Mosaic / Cortex / OpenSearch</text>
+  <text x="614" y="584" class="t-box-b">  全内存托管 6.85 亿 dQ/dV 与 X-Ray</text>
+  <text x="614" y="604" class="t-box-b">• 需常驻 5.25TB DRAM 集群，</text>
+  <text x="614" y="622" class="t-box-b">  单项月费高达 $80.2K–$86.4K/mo</text>
+  <text x="614" y="646" class="t-box-b" fill="#fb7185">✘ 内存成本比 SSD DiskANN 贵 23 倍</text>
+
+  <rect x="865" y="520" width="245" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="877" y="544" class="t-bad-h">3. 缺陷电芯流入 Pack 与护照断链</text>
+  <text x="877" y="566" class="t-box-b">• 独立 GPU 推理端点空转计费</text>
+  <text x="877" y="584" class="t-box-b">  高达 $73.0K–$80.0K/mo</text>
+  <text x="877" y="604" class="t-box-b">• 缺乏内核级 K 值超标电芯拦截与</text>
+  <text x="877" y="622" class="t-box-b">  欧盟数字电池护照 (DBP) 实时核验</text>
+  <text x="877" y="646" class="t-box-b" fill="#fb7185">✘ 整包召回与欧盟海关扣货风险极高</text>
+
+  <rect x="1125" y="520" width="234" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="1137" y="544" class="t-bad-h">4. 19,000 人高昂 BI 席位与扩容税</text>
+  <text x="1137" y="566" class="t-box-b">• 19,000 名工艺与质量工程师收取</text>
+  <text x="1137" y="584" class="t-box-b">  Looker/QuickSight/BI 席位费</text>
+  <text x="1137" y="604" class="t-box-b">• 跨 28 基地并发良率查询触发多集群</text>
+  <text x="1137" y="622" class="t-box-b">  扩容 ($91.5K–$96.5K/mo)</text>
+  <text x="1137" y="646" class="t-box-b" fill="#fb7185">✘ 拼接栈总成本 $411,200/mo</text>
+
+  <!-- Bottom KPI Bar -->
+  <rect x="24" y="712" width="1352" height="126" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <g transform="translate(45, 730)">
+    <rect x="0" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="105" y="36" text-anchor="middle" class="t-kpi-v">16 ms (4² ms)</text>
+    <text x="105" y="60" text-anchor="middle" class="t-kpi-l">端到端涂布/化成闭环与锁批</text>
+    <text x="105" y="76" text-anchor="middle" class="t-kpi-l">vs 传统架构 800ms – 3.5s</text>
+
+    <rect x="224" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="329" y="36" text-anchor="middle" class="t-kpi-v">-$395.7K / mo</text>
+    <text x="329" y="60" text-anchor="middle" class="t-kpi-l">月度净省突破 $395K! (-96.2%)</text>
+    <text x="329" y="76" text-anchor="middle" class="t-kpi-l">$15,540 vs $411,200/mo</text>
+
+    <rect x="448" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="553" y="36" text-anchor="middle" class="t-kpi-v">+3.6pp / -26.5%</text>
+    <text x="553" y="60" text-anchor="middle" class="t-kpi-l">A 品良率提升 / 化成能耗与报废降幅</text>
+    <text x="553" y="76" text-anchor="middle" class="t-kpi-l">年省废品与电费 +$44.0M/yr!</text>
+
+    <rect x="672" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="777" y="36" text-anchor="middle" class="t-kpi-v">685M Vectors</text>
+    <text x="777" y="60" text-anchor="middle" class="t-kpi-l">SSD DiskANN 仅 $3,620/mo</text>
+    <text x="777" y="76" text-anchor="middle" class="t-kpi-l">省 92% 内存 (vs $84,200/mo DRAM)</text>
+
+    <rect x="896" y="0" width="205" height="90" rx="8" fill="#1e293b"/>
+    <text x="998" y="36" text-anchor="middle" class="t-kpi-v">200 Blocked</text>
+    <text x="998" y="60" text-anchor="middle" class="t-kpi-l">拦截精确 200 笔内短/缺失护照批次</text>
+    <text x="998" y="76" text-anchor="middle" class="t-kpi-l">保护 +$11.10M/yr · EU 2023/1542</text>
+
+    <rect x="1115" y="0" width="195" height="90" rx="8" fill="#1e293b"/>
+    <text x="1212" y="36" text-anchor="middle" class="t-kpi-v">184.7 ms</text>
+    <text x="1212" y="60" text-anchor="middle" class="t-kpi-l">突破 &lt;185ms 路由均值! (395/396)</text>
+    <text x="1212" y="76" text-anchor="middle" class="t-kpi-l">89 篇双语 FAQ · 194 单测</text>
+  </g>
+</svg>
