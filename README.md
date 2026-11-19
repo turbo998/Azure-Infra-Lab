@@ -24,7 +24,7 @@
 
 | 专题模块 | 架构师核心覆盖范围 | 交互式工作台与视觉报告 | 验证与代码基线 |
 | :--- | :--- | :--- | :--- |
-| **1. [Data Lab — 企业级五云数据与 AI 选型实验室](workshops/data-lab/README.md)** · [EN](workshops/data-lab/README.en.md) | 对标 **Microsoft Fabric × Azure Databricks / Snowflake / GCP BigQuery / AWS**；收录 **91 篇（双语 182 篇）企业架构选型 FAQ**（Microsoft IQ 四维智能层、零拷贝、实时流、CDC 镜像、向量检索、OBO 治理、安全运营 SOC/SIEM、零售/商超生鲜/金融/制造/动力电池 Gigafactory/智慧水务/医疗/SAP/B2B 分销/高教 EdTech/EPC 基建/专业服务律所/商业地产 REITs/医疗器械 MedTech/酒旅邮轮/商业产险/车队租赁/大宗农粮/民航 IOC/支付收单 PayFac/油气 LNG/精细化工/海运港口/晶圆封测/矿业有色融合）及 **Diamond 双旗舰沙盘** | [交互选型与 TCO 工作台](workshops/data-lab/index.html) · [7-Card 评测卡组](workshops/data-lab/benchmark-cards.html) · [Diamond 演示中心](workshops/data-lab/demos/diamond-hub.html) | `403 / 404 (99.75% · 🏆 >$70M SLA · 211th SVG)` 路由评估 (`181.4ms` 均值) · `198 / 198` 单测全绿 ([`tests/`](workshops/data-lab/tests)) |
+| **1. [Data Lab — 企业级五云数据与 AI 选型实验室](workshops/data-lab/README.md)** · [EN](workshops/data-lab/README.en.md) | 对标 **Microsoft Fabric × Azure Databricks / Snowflake / GCP BigQuery / AWS**；收录 **92 篇（双语 184 篇）企业架构选型 FAQ**（Microsoft IQ 四维智能层、零拷贝、实时流、CDC 镜像、向量检索、OBO 治理、安全运营 SOC/SIEM、零售/商超生鲜/金融/制造/动力电池 Gigafactory/智慧水务/铁路城轨/医疗/SAP/B2B 分销/高教 EdTech/EPC 基建/专业服务律所/商业地产 REITs/医疗器械 MedTech/酒旅邮轮/商业产险/车队租赁/大宗农粮/民航 IOC/支付收单 PayFac/油气 LNG/精细化工/海运港口/晶圆封测/矿业有色融合）及 **Diamond 双旗舰沙盘** | [交互选型与 TCO 工作台](workshops/data-lab/index.html) · [7-Card 评测卡组](workshops/data-lab/benchmark-cards.html) · [Diamond 演示中心](workshops/data-lab/demos/diamond-hub.html) | `407 / 408 (99.75% · 🏆 700M 向量 · 212th SVG)` 路由评估 (`179.8ms` <180ms 均值) · `200 / 200` 单测全绿 ([`tests/`](workshops/data-lab/tests)) |
 | **2. [Azure AI Agent Infra 全栈架构手册 (`AKSClaw × E2B`)](workshops/azure-agent-infra/README.md)** · [EN](workshops/azure-agent-infra/README.en.md) | 6 层生产级智能体基础设施（`Build · Run · Ground · Govern`）；实测 `Standard_D96as_v7` 上 **Firecracker MicroVM `80ms` 冷启动 / `108ms` UFFD 恢复**，261 节点承载 **10 万并发沙箱**；含 **34 套 Bicep 蓝图**与 **34 项容量测算器** | [全景工作台](workshops/azure-agent-infra/index.html) · [双轨实时仿真](workshops/azure-agent-infra/demo.html) · [10万沙箱计算器](workshops/azure-agent-infra/selector.html) · [7-Card 报告](workshops/azure-agent-infra/cards.html) | `30 / 30` 单测全绿 ([`simulator/`](workshops/azure-agent-infra/simulator)) · [`blueprints/`](workshops/azure-agent-infra/blueprints) |
 | **3. [FabCon & SQLCon Barcelona 2026 创新简报](workshops/fabcon-sqlcon-2026/README.md)** · [EN](workshops/fabcon-sqlcon-2026/README.en.md) | 系统拆解微软企业数据底座六大战略支柱：Fabric IQ、Power BI 智能体建站、OneLake IQ 语义共享、Osmos 自主数据工程与 Azure SQL Hyperscale DiskANN 向量索引（含 18 项 GA/Preview 矩阵） | [双语视频交互展厅 (`index.html`)](workshops/fabcon-sqlcon-2026/index.html) · [English Hub](workshops/fabcon-sqlcon-2026/index.html?lang=en) | 5 支官方实机演示视频与多码率字幕归档 |
 | **4. [Azure VM 现代化评估与 FinOps 伙伴工作坊](workshops/azure-vm-modernization/README.md)** | 面向 Sales / Presales / Service 的同页三语（简/繁/英）7 模块课程、6 个合成评估案例与纯浏览器本地 CSV/XLSX TCO 及约束分析器 | [自动演示 (`demo.html`)](workshops/azure-vm-modernization/demo.html) · [课程 (`workshop.html`)](workshops/azure-vm-modernization/workshop.html) · [计算器 (`calculator.html`)](workshops/azure-vm-modernization/calculator.html) | 纯静态离线可用 · 客户价格护栏校验 |
@@ -42,7 +42,7 @@
 ## ✅ 本地一键验证（Repository Verification）
 
 ```bash
-# 1. 验证 Data Lab 基准评测与 198 项单元测试
+# 1. 验证 Data Lab 基准评测与 200 项单元测试
 python -m unittest discover -s workshops/data-lab/tests -p "test_*.py"
 
 # 2. 验证 Azure Agent Infra 容量测算器与 30 项单元测试

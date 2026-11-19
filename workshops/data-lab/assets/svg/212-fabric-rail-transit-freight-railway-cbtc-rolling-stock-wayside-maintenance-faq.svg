@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg212" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06101f"/>
+      <stop offset="50%" stop-color="#0c1f38"/>
+      <stop offset="100%" stop-color="#040b15"/>
+    </linearGradient>
+    <linearGradient id="hdr212" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="fabCard212" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b2b36"/>
+      <stop offset="100%" stop-color="#071b24"/>
+    </linearGradient>
+    <linearGradient id="badCard212" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c1219"/>
+      <stop offset="100%" stop-color="#1a0d13"/>
+    </linearGradient>
+    <style>
+      .t-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20.5px; font-weight: 800; fill: #f8fafc; }
+      .t-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 500; fill: #94a3b8; }
+      .t-sec { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; font-weight: 700; fill: #f1f5f9; }
+      .t-box-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #38bdf8; }
+      .t-box-b { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; fill: #cbd5e1; }
+      .t-bad-h { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13.5px; font-weight: 700; fill: #fb7185; }
+      .t-kpi-v { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 800; fill: #34d399; }
+      .t-kpi-l { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 600; fill: #94a3b8; }
+      .t-pill { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; fill: #040b15; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg212)" rx="16"/>
+  <rect x="24" y="20" width="1352" height="74" rx="12" fill="#0f172a" stroke="url(#hdr212)" stroke-width="2"/>
+  <text x="46" y="50" class="t-title">212 · 🏆 七冠大满贯：干线铁路、高铁动车组与城轨集团（18,000列车 + 8.5万公里线路）轨旁维保与调度五云选型 (R204)</text>
+  <text x="46" y="74" class="t-sub">Rail Transit &amp; Freight Railway Wayside TADS/THDS/TFDS AI, CBTC/ETCS Rescheduling &amp; FRA/ERA Safety · 700M=0.70B Vectors · &lt;180ms Mean · 200 Tests · -$400.7K/mo!</text>
+  <rect x="1135" y="34" width="220" height="44" rx="8" fill="#38bdf8"/>
+  <text x="1245" y="55" text-anchor="middle" class="t-pill">🏆 700M VECTORS · 200 TESTS</text>
+  <text x="1245" y="70" text-anchor="middle" class="t-pill">179.8ms &lt;180ms · -$400.7K/mo!</text>
+
+  <!-- Left Column: Railway & Rolling Stock Data Sources -->
+  <rect x="24" y="110" width="285" height="585" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="138" class="t-sec">🚆 1.8万列车与 6,400套轨旁探测源</text>
+
+  <rect x="40" y="154" width="253" height="115" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="52" y="176" class="t-box-h" fill="#38bdf8">1. 车载 TCMS 与 6,400套轨旁探测器</text>
+  <text x="52" y="196" class="t-box-b">• 18,000 列机车/动车组牵引与轴温</text>
+  <text x="52" y="214" class="t-box-b">• TADS 声学轴承 / THDS 红外热轴</text>
+  <text x="52" y="232" class="t-box-b">• CBTC / ETCS / PTC 移动闭塞信号</text>
+  <text x="52" y="250" class="t-box-b" fill="#34d399">⚡ 峰值吞吐：995,000 EPS 实时流</text>
+
+  <rect x="40" y="284" width="253" height="115" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+  <text x="52" y="306" class="t-box-h" fill="#34d399">2. SAP EAM / Maximo / CTC 运行图</text>
+  <text x="52" y="326" class="t-box-b">• SAP EAM / IBM Maximo 机辆履历</text>
+  <text x="52" y="344" class="t-box-b">• CTC 分散自律调度中心运行图</text>
+  <text x="52" y="362" class="t-box-b">• 工务天窗施工计划与货运编组单</text>
+  <text x="52" y="380" class="t-box-b" fill="#34d399">🔄 Open Mirroring $0 算力零拷贝入湖</text>
+
+  <rect x="40" y="414" width="253" height="125" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="52" y="436" class="t-box-h" fill="#c084fc">3. 🏆 7.00 亿 (700M=0.70B!) 铁路向量</text>
+  <text x="52" y="456" class="t-box-b">• TFDS 轨旁高清车底开口销/弹簧图像</text>
+  <text x="52" y="474" class="t-box-b">• 8.5万公里钢轨超声波探伤 B显波形</text>
+  <text x="52" y="492" class="t-box-b">• 受电弓 3C/4C 视觉与检修规程向量</text>
+  <text x="52" y="510" class="t-box-b" fill="#c084fc">🧠 SSD DiskANN $3,680 vs $86,000 整 DRAM</text>
+
+  <rect x="40" y="554" width="253" height="124" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="52" y="576" class="t-box-h" fill="#fbbf24">4. 19,600 (140²!) 名调度与机辆专家</text>
+  <text x="52" y="596" class="t-box-b">• 19,600 名行车调度、机辆段与工务员</text>
+  <text x="52" y="614" class="t-box-b">• FRA / ERA EN 50126 SIL-4 安全红线</text>
+  <text x="52" y="632" class="t-box-b">• 路网咽喉拓扑 CIP RLS 与货运保密</text>
+  <text x="52" y="650" class="t-box-b" fill="#fbbf24">🛡️ F64 全包 $0 BI 席位 + $0 AI Token 税</text>
+
+  <!-- Center Top: Microsoft Fabric Unified Smart Rail Architecture -->
+  <rect x="327" y="110" width="1049" height="350" rx="12" fill="url(#fabCard212)" stroke="#10b981" stroke-width="2"/>
+  <text x="348" y="138" class="t-sec" fill="#34d399">✅ 首选方案：Microsoft Fabric 一体化智慧铁路、轨旁预测性维保与 CTC 智能运行图底座（$15,600/mo 整 · 16ms = 4²ms 闭环）</text>
+
+  <rect x="345" y="156" width="242" height="225" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="357" y="180" class="t-box-h" fill="#38bdf8">① Eventhouse + Mirroring (4ms)</text>
+  <text x="357" y="202" class="t-box-b">• $0/GB 写入税摄入 995K EPS</text>
+  <text x="357" y="220" class="t-box-b">  车载 TCMS、TADS/THDS 与信号流</text>
+  <text x="357" y="240" class="t-box-b">• $0 算力镜像 SAP EAM / Maximo</text>
+  <text x="357" y="260" class="t-box-b">• 4ms 跨多站追踪锁定 540 起轴承</text>
+  <text x="357" y="278" class="t-box-b">  温升、受电弓拉弧与咽喉冲突前兆</text>
+  <text x="357" y="302" class="t-box-b" fill="#34d399">✔ 正线机械故障晚点降低 -37.5%</text>
+  <text x="357" y="320" class="t-box-b" fill="#34d399">✔ 免除 $156.8K/月 历史库与流税</text>
+
+  <rect x="602" y="156" width="248" height="225" rx="10" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="614" y="180" class="t-box-h" fill="#c084fc">② 700M DiskANN + PREDICT (4ms)</text>
+  <text x="614" y="202" class="t-box-b">• SSD DiskANN 历史性承载 7.00 亿</text>
+  <text x="614" y="220" class="t-box-b">  (0.70B!) TFDS 车底图与探伤波形向量</text>
+  <text x="614" y="240" class="t-box-b">• 月费仅 $3,680 vs $86,000 整 DRAM</text>
+  <text x="614" y="260" class="t-box-b">• 湖内 PREDICT 秒级识别开口销缺失</text>
+  <text x="614" y="278" class="t-box-b">  并重算 CTC 列车交会与入库扣修单</text>
+  <text x="614" y="302" class="t-box-b" fill="#34d399">✔ 机辆段周转率提升 +16.8%</text>
+  <text x="614" y="320" class="t-box-b" fill="#34d399">✔ 年省正线救援与空驶 +$48.5M/yr</text>
+
+  <rect x="865" y="156" width="245" height="225" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="877" y="180" class="t-box-h" fill="#fbbf24">③ Foundry IQ 行车安全门禁 (4ms)</text>
+  <text x="877" y="202" class="t-box-b">• 强制执行 SOP-212 铁路安全联锁红线</text>
+  <text x="877" y="220" class="t-box-b">• 100% 物理拦截 215 笔闯入工务施工</text>
+  <text x="877" y="238" class="t-box-b">  天窗、高温胀轨慢行区未降速或</text>
+  <text x="877" y="258" class="t-box-b">  危化品罐车违规连挂的调度指令</text>
+  <text x="877" y="278" class="t-box-b">• OneLake RLS/CLS 保护路网拓扑</text>
+  <text x="877" y="302" class="t-box-b" fill="#fbbf24">✔ 护栏保护突破 +$12.00M/yr 整!</text>
+  <text x="877" y="320" class="t-box-b" fill="#fbbf24">✔ 215 笔高危行车指令 0 漏判锁死</text>
+
+  <rect x="1125" y="156" width="234" height="225" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1137" y="180" class="t-box-h" fill="#34d399">④ CTC 运行图与机辆段回写 (4ms)</text>
+  <text x="1137" y="202" class="t-box-b">• 总调度长与机辆总监 Teams 卡片确认</text>
+  <text x="1137" y="220" class="t-box-b">• 4ms 下发前方大站甩车扣修、CTC</text>
+  <text x="1137" y="238" class="t-box-b">  会让调整与 Maximo 备件预领单</text>
+  <text x="1137" y="258" class="t-box-b">• 落盘 1GB 免费 Fabric SQL 审计库</text>
+  <text x="1137" y="278" class="t-box-b">• 19,600 (140²) 人享 $0 Viewer 席位</text>
+  <text x="1137" y="302" class="t-box-b" fill="#34d399">✔ 4+4+4+4 = 16ms (4²ms) 闭环</text>
+  <text x="1137" y="320" class="t-box-b" fill="#34d399">✔ 守护 $70.50M 铁路干线安全 SLA</text>
+
+  <rect x="345" y="395" width="1014" height="50" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+  <text x="852" y="425" text-anchor="middle" class="t-sec" fill="#ecfdf5">🏆 R204 七冠大满贯：700M(0.70B)向量 · 路由均值破 &lt;180ms (179.8ms) · 本体破 &lt;155ms (153.82ms) · 月省破 $400K (-$400.7K/mo) · 200 单测!</text>
+
+  <!-- Center Bottom: Stitched Multi-Cloud Anti-Pattern -->
+  <rect x="327" y="476" width="1049" height="219" rx="12" fill="url(#badCard212)" stroke="#f43f5e" stroke-width="1.8"/>
+  <text x="348" y="504" class="t-bad-h">⛔ 传统四云拼接反模式（AWS / GCP / Databricks / Snowflake + 轨旁孤岛库 + 700M 全内存向量 + 按人头席位）：$394.4K – $431.0K / mo</text>
+
+  <rect x="345" y="520" width="242" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="357" y="544" class="t-bad-h">1. 轨旁单站孤岛与入库批处理</text>
+  <text x="357" y="566" class="t-box-b">• TADS/THDS/TFDS 单站孤立报警，</text>
+  <text x="357" y="584" class="t-box-b">  无法跨站拟合轴承连续温升曲线</text>
+  <text x="357" y="604" class="t-box-b">• SiteWise/Snowpipe/Lakeflow 流与</text>
+  <text x="357" y="622" class="t-box-b">  连接器月费高达 $64.4K–$76.0K/mo</text>
+  <text x="357" y="646" class="t-box-b" fill="#fb7185">✘ 热轴切轴引发正线中断数小时</text>
+
+  <rect x="602" y="520" width="248" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="614" y="544" class="t-bad-h">2. 700M (0.70B) 全内存向量天价</text>
+  <text x="614" y="566" class="t-box-b">• Mosaic / Cortex / OpenSearch</text>
+  <text x="614" y="584" class="t-box-b">  全内存托管 7.00 亿车底图与探伤波形</text>
+  <text x="614" y="604" class="t-box-b">• 需常驻 5.4TB DRAM 集群，单项</text>
+  <text x="614" y="622" class="t-box-b">  月费高达精确 $86,000/mo DRAM</text>
+  <text x="614" y="646" class="t-box-b" fill="#fb7185">✘ 内存成本比 SSD DiskANN 贵 23 倍</text>
+
+  <rect x="865" y="520" width="245" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="877" y="544" class="t-bad-h">3. 人工判图积压与天窗安全脱节</text>
+  <text x="877" y="566" class="t-box-b">• 动态检车员手工看数万张 TFDS 图像</text>
+  <text x="877" y="584" class="t-box-b">  易视觉疲劳漏检微裂纹 ($74K–$81K)</text>
+  <text x="877" y="604" class="t-box-b">• 外部运行图算法未与工务天窗及</text>
+  <text x="877" y="622" class="t-box-b">  高温胀轨慢行令内核级硬联锁</text>
+  <text x="877" y="646" class="t-box-b" fill="#fb7185">✘ 误闯施工区间酿成重大安全事故</text>
+
+  <rect x="1125" y="520" width="234" height="156" rx="8" fill="#1f1218" stroke="#fb7185" stroke-width="1"/>
+  <text x="1137" y="544" class="t-bad-h">4. 19,600 (140²) 人高昂 BI 席位税</text>
+  <text x="1137" y="566" class="t-box-b">• 19,600 名路局调度、机辆与工务员</text>
+  <text x="1137" y="584" class="t-box-b">  按人头收取 Looker/QuickSight 费</text>
+  <text x="1137" y="604" class="t-box-b">• 节假日春运高峰查询触发多集群</text>
+  <text x="1137" y="622" class="t-box-b">  扩容 ($93.0K–$98.0K/mo)</text>
+  <text x="1137" y="646" class="t-box-b" fill="#fb7185">✘ 拼接栈总成本 $416,300/mo</text>
+
+  <!-- Bottom KPI Bar -->
+  <rect x="24" y="712" width="1352" height="126" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <g transform="translate(45, 730)">
+    <rect x="0" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="105" y="36" text-anchor="middle" class="t-kpi-v">179.8 ms</text>
+    <text x="105" y="60" text-anchor="middle" class="t-kpi-l">历史性突破 &lt;180ms 路由均值!</text>
+    <text x="105" y="76" text-anchor="middle" class="t-kpi-l">本体破 &lt;155ms (153.82ms · n=98)</text>
+
+    <rect x="224" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="329" y="36" text-anchor="middle" class="t-kpi-v">-$400.7K / mo</text>
+    <text x="329" y="60" text-anchor="middle" class="t-kpi-l">月度净省首次突破 $400K! (-96.3%)</text>
+    <text x="329" y="76" text-anchor="middle" class="t-kpi-l">$15,600 整 vs $416,300/mo</text>
+
+    <rect x="448" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="553" y="36" text-anchor="middle" class="t-kpi-v">-37.5% / +16.8%</text>
+    <text x="553" y="60" text-anchor="middle" class="t-kpi-l">正线故障晚点降幅 / 机辆周转提升</text>
+    <text x="553" y="76" text-anchor="middle" class="t-kpi-l">年省正线救援与空驶 +$48.5M/yr</text>
+
+    <rect x="672" y="0" width="210" height="90" rx="8" fill="#1e293b"/>
+    <text x="777" y="36" text-anchor="middle" class="t-kpi-v">700M (0.70B!)</text>
+    <text x="777" y="60" text-anchor="middle" class="t-kpi-l">突破七亿向量! SSD 仅 $3,680/mo</text>
+    <text x="777" y="76" text-anchor="middle" class="t-kpi-l">省 92% 内存 (vs $86,000 整 DRAM)</text>
+
+    <rect x="896" y="0" width="205" height="90" rx="8" fill="#1e293b"/>
+    <text x="998" y="36" text-anchor="middle" class="t-kpi-v">+$12.00M / yr</text>
+    <text x="998" y="60" text-anchor="middle" class="t-kpi-l">护栏保护突破 $12M 整! (215 笔)</text>
+    <text x="998" y="76" text-anchor="middle" class="t-kpi-l">FRA / ERA SIL-4 天窗与胀轨门禁</text>
+
+    <rect x="1115" y="0" width="195" height="90" rx="8" fill="#1e293b"/>
+    <text x="1212" y="36" text-anchor="middle" class="t-kpi-v">200 / 200 Tests</text>
+    <text x="1212" y="60" text-anchor="middle" class="t-kpi-l">突破 200 项单测大关! (407/408)</text>
+    <text x="1212" y="76" text-anchor="middle" class="t-kpi-l">19,600=140² 用户 · $70.50M SLA</text>
+  </g>
+</svg>
