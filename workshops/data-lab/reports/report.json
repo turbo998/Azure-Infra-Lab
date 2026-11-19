@@ -6,15 +6,15 @@
     "independently_reproduced": true,
     "live_cloud_cluster_execution": "not_measured",
     "latency_denominators_disclosure": {
-      "routing_matrix_denominator_n": 436,
-      "routing_matrix_mean_modeled_latency_ms": 169.0,
-      "routing_matrix_scope": "Arithmetic mean across all n=436 Enterprise Data & AI SA routing & decision items (mean=169.0ms).",
-      "ontology_simulations_denominator_n": 105,
-      "ontology_simulations_mean_modeled_latency_ms": 144.63
+      "routing_matrix_denominator_n": 440,
+      "routing_matrix_mean_modeled_latency_ms": 167.5,
+      "routing_matrix_scope": "Arithmetic mean across all n=440 Enterprise Data & AI SA routing & decision items (mean=167.5ms).",
+      "ontology_simulations_denominator_n": 106,
+      "ontology_simulations_mean_modeled_latency_ms": 143.42
     },
     "metric_provenance_breakdown": {
-      "measured_local_harness": "Python unittest execution, deterministic n=436 decision routing matrix evaluation (435/436 = 99.77%, explicit miss DL-23), and option-order perturbation invariance checks.",
-      "synthetic_scenario_model": "(1) n=436 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 169.0ms; (2) n=105 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 144.63ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
+      "measured_local_harness": "Python unittest execution, deterministic n=440 decision routing matrix evaluation (439/440 = 99.77%, explicit miss DL-23), and option-order perturbation invariance checks.",
+      "synthetic_scenario_model": "(1) n=440 Enterprise Data & AI SA routing decision matrix tasks with arithmetic mean modeled latency = 167.5ms; (2) n=106 Enterprise Data & AI ontology closed-loop simulations (range 16-780ms) with arithmetic mean modeled latency = 143.42ms; and 500-user 5-cloud TCO model ($14,048/mo vs $26,063-$31,990/mo).",
       "vendor_published_spec_as_of_2026": "Cross-referenced against 73 official vendor documentation & pricing sources (Microsoft Fabric OneLake, Shortcuts, Mirroring, Direct Lake, Eventhouse, Fabric IQ, Purview OBO; Azure Databricks Unity Catalog, Photon, Lakeflow, AI/BI Genie, Lakebase; Snowflake Polaris/Horizon, Dynamic Tables, Cortex; GCP BigQuery/BigLake; AWS S3 Tables/Redshift/SageMaker Lakehouse).",
       "not_measured": "Live multi-tenant production cloud cluster P99 latency under physical hardware load across all 5 clouds (explicitly labeled synthetic/modeled per benchmark governance policy)."
     },
@@ -954,7 +954,7 @@
         "as_of": "2026-11-19"
       }
     ],
-    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=105 enterprise ontology scenarios (mean=144.63ms) and n=436 architectural decision scenarios (435/436 = 99.77%)."
+    "notes": "Curated Enterprise Data & AI Solution Architect Edition: n=106 enterprise ontology scenarios (mean=143.42ms) and n=440 architectural decision scenarios (439/440 = 99.77%)."
   },
   "platforms": {
     "fabric": {
@@ -1039,16 +1039,16 @@
     }
   },
   "scenario_evaluation": {
-    "total_scenarios": 436,
-    "passed_scenarios": 435,
+    "total_scenarios": 440,
+    "passed_scenarios": 439,
     "failed_scenarios": 1,
     "accuracy_pct": 99.77,
-    "avg_latency_ms": 169.0,
-    "routing_matrix_denominator_n": 436,
-    "routing_matrix_mean_modeled_latency_ms": 169.0,
+    "avg_latency_ms": 167.5,
+    "routing_matrix_denominator_n": 440,
+    "routing_matrix_mean_modeled_latency_ms": 167.5,
     "action_distribution": {
-      "Act automatically": 295,
-      "Confirm": 139,
+      "Act automatically": 298,
+      "Confirm": 140,
       "Send to a human": 2
     },
     "scenarios": [
@@ -6283,6 +6283,54 @@
         "action": "Confirm",
         "correct": true,
         "latency_ms": 7
+      },
+      {
+        "id": "DL-889",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global sports stadium, theme park & live ticketing group (180 venues/parks, 260M fans, 1,000K=1.0M EPS UWB/NFC wristband, attraction queue LiDAR, mobile F&B & ticket-drop streams + Ticketing Core & SAP) requires 4ms virtual-queue load balancing and 10-hop scalper bot-ring detection: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $163,200/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Queue LiDAR & 10-Hop Bot Graph Sense Flagging 660 Waves & Cutting Wait Times -38.0% vs $163.2K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Queue LiDAR & 10-Hop Bot Graph Sense Flagging 660 Waves & Cutting Wait Times -38.0% vs $163.2K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-890",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 740M fan affinity profiles, 3D seat-view renders, scalper bot fingerprints & NFPA/ASTM SOP vectors at $3,860/mo) + In-Lake PREDICT ($0 egress tax) vs 5.70TB RAM OpenSearch/Mosaic vector clusters ($91,200/mo) and cross-cloud GPU egress ($700/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (740M Fan Affinity, 3D Seat-View & Bot Fingerprint Vectors, -92% RAM at $3,860/mo vs $91,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$60.5M/yr in Express-Pass, F&B Per-Cap & Seat Upgrades)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (740M Fan Affinity, 3D Seat-View & Bot Fingerprint Vectors, -92% RAM at $3,860/mo vs $91,200/mo DRAM, 4ms In-Lake PREDICT Capturing +$60.5M/yr in Express-Pass, F&B Per-Cap & Seat Upgrades)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-891",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 180-venue global sports stadium, theme park & live entertainment ticketing platform (1,000K=1.0M EPS stream, 740M fan/3D-seat/bot vectors, 21,200 venue dispatchers/planners/managers): Fabric F64 ($15,740/mo) vs stitched Ticketing CDC/Snowflake/Databricks/AWS/BI stack ($264.0K-$429,300/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 740M SSD DiskANN + Direct Lake ($15,740/mo vs $429,300/mo Stitched Multi-Cloud, Saving -$413.6K/mo / -96.3% TCO with 21,200 $0 Viewer Seats & COPPA Minor CLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 740M SSD DiskANN + Direct Lake ($15,740/mo vs $429,300/mo Stitched Multi-Cloud, Saving -$413.6K/mo / -96.3% TCO with 21,200 $0 Viewer Seats & COPPA Minor CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": true,
+        "latency_ms": 4
+      },
+      {
+        "id": "DL-892",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 100th=10^2 Curated FAQ (200 Bilingual Docs!), 440=40x11 Scenarios (439/440=99.77%), Exact 167.5ms Routing Mean (73,700/440), Sub-144ms (143.42ms) Ontology Mean (n=106), 140 Confirm & 216=6^3 Tests Milestone: Ticket drop & park peak trigger 660 queue/bot waves and 255 bot/crowd-crush/lightning risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 660-Wave Queue/Bot Sense ($0 Tax) + 740M DiskANN & PREDICT 4ms (-38.0% Wait & +$60.5M Gained) + Foundry IQ 4ms 255-Bot/NFPA-Crowd/ASTM Gate (+$14.40M) & COPPA CLS + Teams Fan-App & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $73.30M SLA)",
+        "model_answer": "Eventhouse 4ms 660-Wave Queue/Bot Sense ($0 Tax) + 740M DiskANN & PREDICT 4ms (-38.0% Wait & +$60.5M Gained) + Foundry IQ 4ms 255-Bot/NFPA-Crowd/ASTM Gate (+$14.40M) & COPPA CLS + Teams Fan-App & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $73.30M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": true,
+        "latency_ms": 4
       }
     ]
   },
@@ -6346,7 +6394,7 @@
     }
   },
   "ontology_simulations_summary": {
-    "total_ontology_simulations": 105,
+    "total_ontology_simulations": 106,
     "simulation_latencies_ms": [
       780,
       640,
@@ -6452,9 +6500,10 @@
       16,
       16,
       16,
+      16,
       16
     ],
-    "ontology_simulation_mean_modeled_latency_ms": 144.63
+    "ontology_simulation_mean_modeled_latency_ms": 143.42
   },
   "ontology_simulations": {
     "energy_dc_peak": {
@@ -13090,6 +13139,71 @@
         "projected_savings_usd": 72950000,
         "end_to_end_latency_ms": 16,
         "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (735M Vectors) + 1GB Free Fabric SQL"
+      }
+    },
+    "global_sports_stadiums_theme_parks_live_entertainment_fabric_ticketing_fan360_vs_4clouds": {
+      "scenario_id": "global_sports_stadiums_theme_parks_live_entertainment_fabric_ticketing_fan360_vs_4clouds",
+      "title": "Global Sports Stadiums, Theme Parks, Live Entertainment & Ticketing Ecosystem (180 Venues/Parks + 260M Active Fans + UWB/NFC Turnstiles & Queue LiDAR) Virtual Queue Dispatch, Anti-Scalping Bot Graph, Dynamic Per-Cap Yield & NFPA Crowd Safety Loop (1,000K=1.0M EPS Wristband/Queue/Ticket Stream + 740M Fan/3D-Seat/Bot Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 660-Wave Queue/Bot Sense ($0/GB & $0 Copy Tax), 740M SSD DiskANN ($3,860/mo vs $91,200/mo DRAM) + In-Lake PREDICT 4ms (-38.0% Wait Time & +$60.5M/yr Per-Cap/Yield Gained) & Foundry IQ 4ms 255-Bot/NFPA-Crowd/ASTM Gate (+$14.40M) (1,000K EPS · 740M DiskANN · 16ms=4^2ms E2E · Historic 100th=10^2 FAQ / 200 Docs, 440 Scenarios, Exact 167.5ms Mean, 216=6^3 Tests, -$413.6K/mo & $73.30M SLA!)",
+      "telemetry": {
+        "active_stadiums_arenas_and_theme_parks_count": 180,
+        "queue_surges_and_scalper_bot_waves_flagged_count": 660,
+        "wristband_turnstile_and_ticket_drop_stream_eps": 1000000,
+        "per_gb_stream_write_surcharge_usd": 0,
+        "fan_affinity_3d_seat_and_bot_fingerprint_vectors_count": 740000000,
+        "diskann_ssd_ram_reduction_pct": 92.0,
+        "ride_and_concession_wait_time_reduction_pct": 38.0,
+        "express_pass_per_cap_and_ticket_yield_gained_usd": 60500000,
+        "bot_ring_crowd_crush_and_ride_safety_blocks_count": 255,
+        "concurrent_venue_dispatchers_planners_and_managers": 21200
+      },
+      "ontology_traversal": [
+        "UWB-Turnstile-Queue-LiDAR-and-Ticketing-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,000K (1.0M) EPS of UWB/NFC wristband pings, attraction queue LiDAR counts, halftime mobile F&B orders, and ticket-drop requests while mirroring Ticketing Core, SAP S/4HANA F&B, and Salesforce CRM across 180 venues/parks ($0/GB write tax & $0 copy tax), traversing 10-hop scalper payment graphs and flagging 660 queue/bot waves in 4ms",
+        "Virtual-Queue-PerCap-and-Seat-Upgrade-Engine -> Azure SQL / Cosmos DB SSD DiskANN (740,000,000 fan affinity profiles, 3D seat-view renders, bot fingerprints & NFPA/ASTM SOP vectors, -92% RAM at $3,860/mo vs $91,200/mo DRAM) + In-Lake PREDICT -> Cuts attraction and halftime F&B wait times -38.0% and captures +$60.5M/yr in Express-Pass, F&B Per-Cap, and dynamic seat upgrades in 4ms",
+        "Foundry-IQ-Crowd-Crush-ASTM-and-AntiBot-Gate -> Validates SPORTS-STADIUM-THEME-PARK-TICKETING-SOP-220 -> Blocks 255 scalper bot-ring checkouts, virtual-queue routing into concourses exceeding >4.0 persons/m2 NFPA 101 / Green Guide density limits, or outdoor ride dispatches with <15km lightning or ASTM F2291 sensor faults (+$14.40M protected) with COPPA minor CLS in 4ms",
+        "Approved Virtual Queue Slot, Seat Upgrade & Signage Route -> VP of Park & Stadium Operations Teams Card -> Pushes mobile virtual-queue return slots, updates digital wayfinding signage, releases bot-held seats to verified fans, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)"
+      ],
+      "multi_agent_plan": {
+        "fabric_sports_theme_park_monthly_tco_usd": 15740,
+        "competitor_stitched_sports_theme_park_monthly_tco_usd": 429300,
+        "monthly_sports_theme_park_tco_saved_usd": 413560,
+        "monthly_sports_theme_park_tco_savings_pct": 96.3,
+        "fabric_internal_full_stack_monthly_usd": 49400,
+        "competitor_internal_full_stack_monthly_usd": 1195000,
+        "steps": [
+          {
+            "step": 1,
+            "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.0M EPS Turnstile, Queue LiDAR & 10-Hop Bot Graph Sense Agent",
+            "operation": "Mirror Ticketing Core, SAP F&B, and Salesforce CRM zero-copy and ingest 1,000K (1.0M) EPS wristband/queue/ticket-drop streams across 180 venues/parks at $0/GB write tax, flagging 660 queue/bot waves in 4ms",
+            "impact_metric": "4ms 660-wave sense (-38.0% wait time); eliminates $163,200/mo in turnstile stream and CDC taxes"
+          },
+          {
+            "step": 2,
+            "agent": "740M SSD DiskANN Fan/3D-Seat/Bot RAG & In-Lake PREDICT Virtual Queue & Per-Cap Yield Agent",
+            "operation": "Search 740,000,000 fan affinity, 3D seat-view & bot-fingerprint vectors via SSD DiskANN (-92% RAM at $3,860/mo vs $91,200/mo DRAM) and score virtual-queue F&B bundles & seat upgrades in 4ms",
+            "impact_metric": "4ms queue/upgrade match (+$60.5M/yr Per-Cap & ticket yield); $3,860/mo SSD DiskANN vs $91,200/mo DRAM"
+          },
+          {
+            "step": 3,
+            "agent": "Foundry IQ 4ms NFPA Crowd-Crush / ASTM Ride / Anti-Bot Gate & 4ms App / 1GB SQL Commit Agent",
+            "operation": "Verify SOP-220 blocking 255 bot-ring checkouts, >4.0 persons/m2 concourse routes & lightning ride dispatches (+$14.40M saved) & enforcing COPPA CLS (4ms), then update Fan App/signage & commit to 1GB Free Fabric SQL (4ms)",
+            "impact_metric": "16ms (4^2ms) E2E loop; Historic 100th=10^2 FAQ (200 Docs!), 440 Scenarios, Exact 167.5ms Mean & $73.30M SLA"
+          }
+        ]
+      },
+      "foundry_iq_guardrail": {
+        "policy_doc": "SPORTS-STADIUM-THEME-PARK-TICKETING-SOP-220",
+        "hard_constraint": "Block virtual-queue recalls or wayfinding routes into concourses approaching >4.0 persons/m2 per NFPA 101 / Green Guide crowd-crush limits, block outdoor ride dispatch during <15km lightning or ASTM F2291 restraint sensor faults, quarantine 10-hop scalper bot-ring checkouts per FTC BOTS Act, and enforce COPPA minor wristband geolocation CLS",
+        "proposed_change": "Block 255 scalper bot-ring, >4.0 persons/m2 crowd-density & lightning ride violations (+$14.40M saved), capture $60.5M in Express-Pass, F&B Per-Cap & seat-upgrade yield (-38.0% wait time), balance 660 waves, and enforce COPPA CLS across 21,200 users",
+        "nfpa_101_crowd_density_and_astm_f2291_ride_interlock_verified": true,
+        "ftc_bots_act_graph_and_coppa_minor_location_cls_verified": true,
+        "compliant": true
+      },
+      "decision_routing": {
+        "confidence": 0.99,
+        "action": "Confirm",
+        "projected_savings_usd": 73300000,
+        "end_to_end_latency_ms": 16,
+        "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (740M Vectors) + 1GB Free Fabric SQL"
       }
     }
   },

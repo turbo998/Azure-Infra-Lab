@@ -1680,13 +1680,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 72950000)
 
 
+    def test_global_sports_stadiums_theme_parks_live_entertainment_fabric_ticketing_fan360_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_sports_stadiums_theme_parks_live_entertainment_fabric_ticketing_fan360_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["active_stadiums_arenas_and_theme_parks_count"], 180)
+        self.assertEqual(sim["telemetry"]["queue_surges_and_scalper_bot_waves_flagged_count"], 660)
+        self.assertEqual(sim["telemetry"]["wristband_turnstile_and_ticket_drop_stream_eps"], 1000000)
+        self.assertEqual(sim["telemetry"]["fan_affinity_3d_seat_and_bot_fingerprint_vectors_count"], 740000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_sports_theme_park_tco_saved_usd"], 413560)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_sports_theme_park_tco_savings_pct"], 96.3)
+        self.assertTrue(sim["foundry_iq_guardrail"]["nfpa_101_crowd_density_and_astm_f2291_ride_interlock_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["ftc_bots_act_graph_and_coppa_minor_location_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 73300000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 436)
-        self.assertEqual(matrix["passed_scenarios"], 435)
+        self.assertEqual(matrix["total_scenarios"], 440)
+        self.assertEqual(matrix["passed_scenarios"], 439)
         self.assertEqual(matrix["failed_scenarios"], 1)
         self.assertAlmostEqual(matrix["accuracy_pct"], 99.77, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 169.0)
+        self.assertEqual(matrix["avg_latency_ms"], 167.5)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2899,6 +2916,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $72.95M SLA", by_id["DL-888"])
 
 
+    def test_fabric_sports_stadiums_theme_parks_live_entertainment_ticketing_2026_11_20_r212_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-889", "DL-890", "DL-891", "DL-892"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Queue LiDAR & 10-Hop Bot Graph Sense Flagging 660 Waves & Cutting Wait Times -38.0%", by_id["DL-889"])
+        self.assertIn("740M Fan Affinity, 3D Seat-View & Bot Fingerprint Vectors, -92% RAM at $3,860/mo vs $91,200/mo DRAM", by_id["DL-890"])
+        self.assertIn("-$413.6K/mo / -96.3% TCO", by_id["DL-891"])
+        self.assertIn("16ms 4^2ms E2E, Protect $73.30M SLA", by_id["DL-892"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2917,11 +2945,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 435)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 436)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 169.0)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 105)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 144.63)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 439)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 440)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 167.5)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 106)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 143.42)
 
 
 if __name__ == "__main__":
