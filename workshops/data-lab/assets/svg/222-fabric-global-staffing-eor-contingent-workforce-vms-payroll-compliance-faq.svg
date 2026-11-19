@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg222" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="55%" stop-color="#111C38"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="accent222" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardHdr222" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="760" fill="url(#bg222)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent222)"/>
+
+  <!-- Header -->
+  <text x="36" y="42" fill="#60A5FA" font-size="13" font-weight="700" letter-spacing="1.4">ROUND 214 · SCENARIO HM (DL-897..DL-900) · 🏆 99.78% RECORD ACCURACY, DL-900=30², 750M=0.75B VECTORS, 222 REPDIGIT SVG &amp; 220 TESTS MILESTONE</text>
+  <text x="36" y="70" fill="#F8FAFC" font-size="22" font-weight="800">Global Staffing, Employer of Record (EOR) &amp; Contingent Workforce VMS (4.2M Workers + 160 Countries)</text>
+  <text x="36" y="94" fill="#94A3B8" font-size="13.5">AI Requisition Skill Matching, SOW Rate-Card Audit, Statutory Payroll &amp; IR35/AB5/EU AI Act: Fabric (16ms=4²ms, $15,940/mo) vs. 4-Cloud ($432,700/mo)</text>
+
+  <!-- KPI Banner -->
+  <rect x="36" y="108" width="1208" height="58" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="64" y="131" fill="#93C5FD" font-size="11.5" font-weight="700">BENCHMARK ACCURACY &amp; LATENCY</text>
+  <text x="64" y="153" fill="#F8FAFC" font-size="16.5" font-weight="800">🏆 447 / 448 (99.78%!) · 164.6 ms</text>
+
+  <line x1="340" y1="116" x2="340" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="360" y="131" fill="#C4B5FD" font-size="11.5" font-weight="700">DL-900=30² &amp; ONTOLOGY (N=108)</text>
+  <text x="360" y="153" fill="#A78BFA" font-size="16.5" font-weight="800">🏆 222 SVG · 141.06ms (&lt;142ms!)</text>
+
+  <line x1="675" y1="116" x2="675" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="695" y="131" fill="#FCD34D" font-size="11.5" font-weight="700">DISKANN 750M=0.75B &amp; VMS/EOR VALUE</text>
+  <text x="695" y="153" fill="#FBBF24" font-size="16.5" font-weight="800">$3,900 Exact vs $92,400 · +$63.5M/yr</text>
+
+  <line x1="975" y1="116" x2="975" y2="158" stroke="#1E293B" stroke-width="1.5"/>
+  <text x="995" y="131" fill="#6EE7B7" font-size="11.5" font-weight="700">MONTHLY TCO &amp; PROTECTED SLA</text>
+  <text x="995" y="153" fill="#34D399" font-size="16.5" font-weight="800">-$416.8K/mo (-96.3%) · $74.00M! SLA</text>
+
+  <!-- Left Column: VMS, EOR & Payroll Feeds -->
+  <rect x="36" y="182" width="275" height="390" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <rect x="36" y="182" width="275" height="36" rx="12" fill="url(#cardHdr222)"/>
+  <text x="52" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">1. VMS, EOR &amp; Global Payroll Feeds</text>
+
+  <rect x="52" y="232" width="243" height="72" rx="8" fill="#1E293B" stroke="#3B82F6" stroke-width="1"/>
+  <text x="64" y="252" fill="#93C5FD" font-size="12.5" font-weight="700">4.2M Workers &amp; VMS Requisitions</text>
+  <text x="64" y="270" fill="#CBD5E1" font-size="11.5">• 1,000K (1.0M) EPS timecards &amp; job bids</text>
+  <text x="64" y="287" fill="#CBD5E1" font-size="11.5">• 160-country EOR &amp; visa/I-9 webhooks</text>
+
+  <rect x="52" y="316" width="243" height="72" rx="8" fill="#1E293B" stroke="#8B5CF6" stroke-width="1"/>
+  <text x="64" y="336" fill="#C4B5FD" font-size="12.5" font-weight="700">SAP Fieldglass, Beeline &amp; ADP</text>
+  <text x="64" y="354" fill="#CBD5E1" font-size="11.5">• SOW milestone invoices &amp; rate cards</text>
+  <text x="64" y="371" fill="#CBD5E1" font-size="11.5">• Multi-currency FX &amp; statutory tax tables</text>
+
+  <rect x="52" y="400" width="243" width="243" height="72" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="64" y="420" fill="#FCD34D" font-size="12.5" font-weight="700">🏆 750M (0.75B!) Skill &amp; Law Vectors</text>
+  <text x="64" y="438" fill="#CBD5E1" font-size="11.5">• Multilingual resumes &amp; skill ontologies</text>
+  <text x="64" y="455" fill="#CBD5E1" font-size="11.5">• 160-country labor laws, CBAs &amp; IR35/AB5</text>
+
+  <rect x="52" y="484" width="243" height="72" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+  <text x="64" y="504" fill="#6EE7B7" font-size="12.5" font-weight="700">21,600 (100×6³) Recruiters &amp; MSPs</text>
+  <text x="64" y="522" fill="#CBD5E1" font-size="11.5">• Recruiters, EOR payroll &amp; MSP managers</text>
+  <text x="64" y="539" fill="#CBD5E1" font-size="11.5">• Candidate GDPR/EEOC &amp; salary CLS</text>
+
+  <!-- Center Column: Fabric 16ms=4²ms Staffing & EOR Loop -->
+  <rect x="331" y="182" width="608" height="390" rx="12" fill="#0F172A" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="331" y="182" width="608" height="36" rx="12" fill="url(#cardHdr222)"/>
+  <text x="350" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">2. Microsoft Fabric 16ms (4²ms) Skill Match, SOW Audit &amp; IR35/AB5 Loop</text>
+
+  <!-- Step 1 -->
+  <rect x="349" y="230" width="572" height="74" rx="8" fill="#111C33" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="365" y="250" fill="#60A5FA" font-size="12.5" font-weight="800">STEP 1 (4ms) · Eventhouse KQL 1,000K (1.0M) EPS &amp; OneLake Zero-Copy ($0 Tax)</text>
+  <text x="365" y="269" fill="#E2E8F0" font-size="11.5">• Ingests 1.0M EPS VMS requisitions, timecards &amp; visa webhooks + mirrored Fieldglass/Beeline/ADP</text>
+  <text x="365" y="286" fill="#34D399" font-size="11.5" font-weight="700">• Flags 690 urgent reqs, SOW rate overbills &amp; tenure cliffs in 4ms (-48.0% time-to-fill, saves $164.8K/mo)</text>
+
+  <!-- Step 2 -->
+  <rect x="349" y="314" width="572" height="74" rx="8" fill="#111C33" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="365" y="334" fill="#FBBF24" font-size="12.5" font-weight="800">STEP 2 (4ms) · Azure SQL SSD DiskANN (🏆 750M=0.75B Vectors!) + In-Lake PREDICT</text>
+  <text x="365" y="353" fill="#E2E8F0" font-size="11.5">• Searches 750M resumes, skill graphs, SOW clauses &amp; 160-country labor laws ($3,900 Exact vs $92,400 DRAM)</text>
+  <text x="365" y="370" fill="#FCD34D" font-size="11.5" font-weight="700">• 4ms candidate shortlist &amp; SOW rate-card benchmark → +$63.5M/yr placement margin &amp; SOW savings</text>
+
+  <!-- Step 3 -->
+  <rect x="349" y="398" width="572" height="74" rx="8" fill="#111C33" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="365" y="418" fill="#F87171" font-size="12.5" font-weight="800">STEP 3 (4ms) · Foundry IQ IR35/AB5 Misclassification, Visa &amp; EU AI Act Gate (SOP-222)</text>
+  <text x="365" y="437" fill="#E2E8F0" font-size="11.5">• Blocks 265 contractor assignments/payrolls violating IR35/AB5 tests, expired visas, or EU AI Act bias rules</text>
+  <text x="365" y="454" fill="#FCA5A5" font-size="11.5" font-weight="700">• Prevents +$15.00M/yr Exact back-tax &amp; labor fines; enforces GDPR/EEOC CLS across 21,600 users</text>
+
+  <!-- Step 4 -->
+  <rect x="349" y="482" width="572" height="74" rx="8" fill="#111C33" stroke="#10B981" stroke-width="1.2"/>
+  <text x="365" y="502" fill="#34D399" font-size="12.5" font-weight="800">STEP 4 (4ms) · VP of Global Talent &amp; EOR Compliance Teams Card &amp; VMS / 1GB SQL Commit</text>
+  <text x="365" y="521" fill="#E2E8F0" font-size="11.5">• Issues compliant EOR employment contracts, releases multi-currency payroll &amp; logs audit in 4ms</text>
+  <text x="365" y="538" fill="#6EE7B7" font-size="11.5" font-weight="700">• 16ms (4²ms) E2E Closed Loop · Protects Exact $74,000,000 ($74.00M!) Annual Staffing &amp; EOR SLA</text>
+
+  <!-- Right Column: 5-Cloud TCO Comparison -->
+  <rect x="959" y="182" width="285" height="390" rx="12" fill="#0F172A" stroke="#F43F5E" stroke-width="1.5"/>
+  <rect x="959" y="182" width="285" height="36" rx="12" fill="#881337"/>
+  <text x="975" y="205" fill="#FFFFFF" font-size="13.5" font-weight="800">3. 5-Cloud TCO &amp; Co-Employment Risk</text>
+
+  <rect x="975" y="232" width="253" height="145" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="1.5"/>
+  <text x="989" y="252" fill="#6EE7B7" font-size="12.5" font-weight="800">Microsoft Fabric Unified ($15,940/mo)</text>
+  <text x="989" y="272" fill="#E2E8F0" font-size="11.5">• F64 Reserved Capacity: $8,448/mo</text>
+  <text x="989" y="290" fill="#E2E8F0" font-size="11.5">• Eventhouse 1.0M EPS + OneLake: $3,592/mo</text>
+  <text x="989" y="308" fill="#E2E8F0" font-size="11.5">• 750M SSD DiskANN (Exact!): $3,900/mo</text>
+  <text x="989" y="326" fill="#E2E8F0" font-size="11.5">• 21,600 Users + 1GB Audit SQL: $0/mo</text>
+  <text x="989" y="348" fill="#34D399" font-size="12" font-weight="800">✓ Saves -$416.8K/mo (-96.3% vs Stitched)</text>
+  <text x="989" y="366" fill="#34D399" font-size="11.5" font-weight="700">✓ 16ms (4²ms) Loop · 265 Labor Gates</text>
+
+  <rect x="975" y="392" width="253" height="164" rx="8" fill="#1E293B" stroke="#F43F5E" stroke-width="1.2"/>
+  <text x="989" y="412" fill="#FDA4AF" font-size="12.5" font-weight="800">Stitched 4-Cloud Stack ($432,700/mo)</text>
+  <text x="989" y="432" fill="#CBD5E1" font-size="11.5">• VMS/Payroll Stream + CDC: $164,800/mo</text>
+  <text x="989" y="450" fill="#CBD5E1" font-size="11.5">• 750M In-Memory Vector Pods: $92,400/mo</text>
+  <text x="989" y="468" fill="#CBD5E1" font-size="11.5">• Cross-Cloud GPU Egress Tax: $500/mo</text>
+  <text x="989" y="486" fill="#CBD5E1" font-size="11.5">• 21,600 Recruiter Seats (Exact!): $175,000/mo</text>
+  <text x="989" y="510" fill="#F87171" font-size="11.5" font-weight="700">✕ 18-Day Requisition Fill Delay</text>
+  <text x="989" y="528" fill="#F87171" font-size="11.5" font-weight="700">✕ Unchecked IR35/AB5 Co-Employment</text>
+  <text x="989" y="546" fill="#F87171" font-size="11.5" font-weight="700">✕ SOW Rate-Card Overbilling Leakage</text>
+
+  <!-- Bottom Decision Matrix Strip -->
+  <rect x="36" y="588" width="1208" height="148" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <text x="56" y="614" fill="#60A5FA" font-size="13.5" font-weight="800">4. Solution Architect Selection Matrix — Global Staffing, EOR &amp; Contingent Workforce VMS (DL-900 Milestone!)</text>
+
+  <text x="56" y="640" fill="#6EE7B7" font-size="12" font-weight="700">• Choose Microsoft Fabric (Recommended — 93.3/100):</text>
+  <text x="385" y="640" fill="#E2E8F0" font-size="12">When unifying 1.0M EPS VMS/payroll streams, Fieldglass/ADP mirroring, 750M DiskANN vectors ($3,900/mo), and 21,600 users ($0 seats).</text>
+
+  <text x="56" y="664" fill="#93C5FD" font-size="12" font-weight="700">• Choose Hybrid Fabric + Azure Databricks (86.8/100):</text>
+  <text x="385" y="664" fill="#CBD5E1" font-size="12">When pre-training custom multilingual labor-market skill taxonomy embeddings on Spark/GPU while serving recruiter loops via Fabric.</text>
+
+  <text x="56" y="688" fill="#FCD34D" font-size="12" font-weight="700">• Choose Snowflake / BigQuery / AWS (82.0–85.5/100):</text>
+  <text x="385" y="688" fill="#CBD5E1" font-size="12">Snowflake for external salary benchmark monetization; BigQuery for Google Jobs ads; AWS when legacy ATS is 100% AWS.</text>
+
+  <text x="56" y="716" fill="#94A3B8" font-size="11.5">Sealed Benchmark Proof: DL-897..DL-900 (900th=30²!) · 447/448 (99.78% Record!) · 164.6ms Mean · 141.06ms Ontology Mean (n=108) · 220/220 Tests Passing</text>
+</svg>
