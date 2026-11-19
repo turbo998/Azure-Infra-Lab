@@ -1629,13 +1629,30 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 71900000)
 
 
+    def test_global_beauty_cosmetics_skincare_omnichannel_fabric_clienteling_inci_mocra_vs_4clouds_ontology_simulation(self) -> None:
+        sim = simulate_ontology_incident("global_beauty_cosmetics_skincare_omnichannel_fabric_clienteling_inci_mocra_vs_4clouds")
+        self.assertEqual(sim["telemetry"]["active_boutiques_and_counters_count"], 3800)
+        self.assertEqual(sim["telemetry"]["viral_stockout_and_fefo_expiry_waves_flagged_count"], 615)
+        self.assertEqual(sim["telemetry"]["skin_scanner_livestream_and_pos_stream_eps"], 1000000)
+        self.assertEqual(sim["telemetry"]["skin_spectra_shade_and_inci_cpsr_vectors_count"], 725000000)
+        self.assertEqual(sim["telemetry"]["per_gb_stream_write_surcharge_usd"], 0)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_beauty_omnichannel_tco_saved_usd"], 408760)
+        self.assertEqual(sim["multi_agent_plan"]["monthly_beauty_omnichannel_tco_savings_pct"], 96.4)
+        self.assertTrue(sim["foundry_iq_guardrail"]["pregnancy_allergen_inci_and_eu_cpsr_mocra_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["cosmetic_claim_substantiation_and_biometric_cls_verified"])
+        self.assertTrue(sim["foundry_iq_guardrail"]["compliant"])
+        self.assertEqual(sim["decision_routing"]["action"], "Confirm")
+        self.assertEqual(sim["decision_routing"]["end_to_end_latency_ms"], 16)
+        self.assertEqual(sim["decision_routing"]["projected_savings_usd"], 72250000)
+
+
     def test_scenario_matrix_280_cases_and_explicit_miss(self) -> None:
         matrix = evaluate_scenario_matrix()
-        self.assertEqual(matrix["total_scenarios"], 424)
-        self.assertEqual(matrix["passed_scenarios"], 423)
+        self.assertEqual(matrix["total_scenarios"], 428)
+        self.assertEqual(matrix["passed_scenarios"], 427)
         self.assertEqual(matrix["failed_scenarios"], 1)
-        self.assertAlmostEqual(matrix["accuracy_pct"], 99.76, places=2)
-        self.assertEqual(matrix["avg_latency_ms"], 173.5)
+        self.assertAlmostEqual(matrix["accuracy_pct"], 99.77, places=2)
+        self.assertEqual(matrix["avg_latency_ms"], 172.0)
         misses = [s for s in matrix["scenarios"] if not s["correct"]]
         self.assertEqual(len(misses), 1)
         self.assertEqual(misses[0]["id"], "DL-23")
@@ -2815,6 +2832,17 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertIn("16ms 4^2ms E2E, Protect $71.90M SLA", by_id["DL-876"])
 
 
+    def test_fabric_beauty_cosmetics_skincare_omnichannel_clienteling_inci_2026_11_20_r209_scenarios(self) -> None:
+        matrix = evaluate_scenario_matrix()
+        by_id = {s["id"]: s["expected"] for s in matrix["scenarios"]}
+        for sid in ("DL-877", "DL-878", "DL-879", "DL-880"):
+            self.assertIn(sid, by_id)
+        self.assertIn("4ms Skin Scanner & FEFO Sense Flagging 615 Waves & Lifting Regimen Conversion +36.5%", by_id["DL-877"])
+        self.assertIn("725M Skin Spectra, Shade & INCI/CPSR Vectors, -92% RAM at Exact $3,800/mo vs $89,400/mo DRAM", by_id["DL-878"])
+        self.assertIn("-$408.8K/mo / -96.4% Record TCO", by_id["DL-879"])
+        self.assertIn("16ms 4^2ms E2E, Protect $72.25M SLA", by_id["DL-880"])
+
+
     def test_perturbation_and_scaling_latency(self) -> None:
         pert = evaluate_perturbation_robustness()
         self.assertEqual(len(pert), 6)
@@ -2833,11 +2861,11 @@ class TestDataLabBenchmarkSuite(unittest.TestCase):
         self.assertTrue(out_path.exists())
         loaded = json.loads(out_path.read_text(encoding="utf-8"))
         self.assertEqual(loaded["report_id"], report["report_id"])
-        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 423)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 424)
-        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 173.5)
-        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 102)
-        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 148.41)
+        self.assertEqual(loaded["scenario_evaluation"]["passed_scenarios"], 427)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_denominator_n"], 428)
+        self.assertEqual(loaded["scenario_evaluation"]["routing_matrix_mean_modeled_latency_ms"], 172.0)
+        self.assertEqual(loaded["ontology_simulations_summary"]["total_ontology_simulations"], 103)
+        self.assertEqual(loaded["ontology_simulations_summary"]["ontology_simulation_mean_modeled_latency_ms"], 147.13)
 
 
 if __name__ == "__main__":

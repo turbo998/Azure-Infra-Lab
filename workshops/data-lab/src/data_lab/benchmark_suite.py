@@ -6846,6 +6846,72 @@ def simulate_ontology_incident(scenario_id: str = "energy_dc_peak") -> Dict[str,
                 "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (720M=6!M Vectors) + 1GB Free Fabric SQL",
             },
         }
+    if scenario_id == "global_beauty_cosmetics_skincare_omnichannel_fabric_clienteling_inci_mocra_vs_4clouds":
+        return {
+            "scenario_id": scenario_id,
+            "title": "Global Beauty, Prestige Cosmetics, Skincare & Personal Care Omnichannel (3,800 Boutiques/Counters + 120M Loyalty Members + 45,000 Beauty Advisors) AI Skin Diagnostics Clienteling, Livestream Flash Replenishment, FEFO Expiry & INCI / FDA MoCRA Loop (1,000K=1.0M EPS Skin/Livestream/POS Stream + 725M Skin/Shade/INCI/CPSR Vectors) Eventhouse KQL + OneLake Zero-Copy 4ms 615-Wave Stockout/FEFO Sense ($0/GB & $0 Copy Tax), 725M SSD DiskANN ($3,800/mo Exact vs $89,400/mo DRAM) + In-Lake PREDICT 4ms (+36.5% Regimen Conversion & +$56.0M/yr Exact GMV/FEFO Saved!) & Foundry IQ 4ms 240-Allergen/CPSR/Drug-Claim Gate (+$13.50M) (1,000K EPS · 725M DiskANN · 16ms=4^2ms E2E · 99.77% New Record Accuracy, Exact 172.0ms Integer Mean, 289=17^2 Auto-Act, -$408.8K/mo & $72.25M SLA!)",
+            "telemetry": {
+                "active_boutiques_and_counters_count": 3800,
+                "viral_stockout_and_fefo_expiry_waves_flagged_count": 615,
+                "skin_scanner_livestream_and_pos_stream_eps": 1000000,
+                "per_gb_stream_write_surcharge_usd": 0,
+                "skin_spectra_shade_and_inci_cpsr_vectors_count": 725000000,
+                "diskann_ssd_ram_reduction_pct": 92.0,
+                "regimen_cross_sell_conversion_lift_pct": 36.5,
+                "omnichannel_gmv_and_fefo_expiry_saved_usd": 56000000,
+                "allergen_cpsr_and_drug_claim_violations_blocked_count": 240,
+                "concurrent_beauty_advisors_merchandisers_and_chemists": 20600,
+            },
+            "ontology_traversal": [
+                "Counter-Skin-Scanner-Livestream-and-SAP-Hub -> Eventstream-to-Eventhouse-KQL-and-OneLake -> Ingests 1,000K (1.0M) EPS from 8-band multispectral AI skin scanners, AR virtual try-on mirrors, and TikTok/Douyin livestream cart spikes while mirroring SAP S/4HANA batch lots, Salesforce CRM, and formulation PLM across 3,800 doors ($0/GB write tax & $0 copy tax), flagging 615 viral stockout and counter FEFO expiry waves in 4ms",
+                "Personalized-Regimen-and-FEFO-Rebalancing-Engine -> Azure SQL / Cosmos DB SSD DiskANN (725,000,000 multispectral skin scans, shade curves & 32K INCI/CPSR/MoCRA vectors, -92% RAM at Exact $3,800/mo vs $89,400/mo DRAM) + In-Lake PREDICT -> Lifts 4-step regimen cross-sell conversion +36.5% and captures +$56.0M/yr exact in omnichannel GMV and avoided shelf-life write-offs in 4ms",
+                "Foundry-IQ-Allergen-CPSR-and-Claim-Gate -> Validates BEAUTY-COSMETICS-SKINCARE-INCI-MOCRA-SOP-217 -> Blocks 240 regimen recommendations, formula releases, and copy updates violating pregnancy-retinoid/allergen flags, EU Annex II/III / FDA MoCRA concentration limits, or unapproved drug claims (+$13.50M protected) with GDPR/PIPL facial-scan CLS in 4ms",
+                "Approved 4-Step Regimen & SAP FEFO Transfer Plan -> Chief Merchandising Officer & Regulatory VP Teams Card -> Pushes BA iPad clienteling scripts, dispatches SAP FEFO stock transfers, and commits to 1GB Free Fabric SQL in 4ms (4+4+4+4 = 16ms = 4^2ms E2E!)",
+            ],
+            "multi_agent_plan": {
+                "fabric_beauty_omnichannel_monthly_tco_usd": 15440,
+                "competitor_stitched_beauty_omnichannel_monthly_tco_usd": 424200,
+                "monthly_beauty_omnichannel_tco_saved_usd": 408760,
+                "monthly_beauty_omnichannel_tco_savings_pct": 96.4,
+                "fabric_internal_full_stack_monthly_usd": 48800,
+                "competitor_internal_full_stack_monthly_usd": 1180000,
+                "steps": [
+                    {
+                        "step": 1,
+                        "agent": "Eventhouse KQL & OneLake Zero-Copy 4ms 1.0M EPS Skin Scanner, Livestream & FEFO Sense Agent",
+                        "operation": "Mirror SAP S/4HANA batch lots, Salesforce CRM, and PLM zero-copy and ingest 1,000K (1.0M) EPS AI skin-scanner, livestream & POS streams across 3,800 doors at $0/GB write tax, flagging 615 stockout/FEFO waves in 4ms",
+                        "impact_metric": "4ms 615-wave sense (+36.5% regimen conversion); eliminates $160,800/mo in stream and CDC taxes",
+                    },
+                    {
+                        "step": 2,
+                        "agent": "725M SSD DiskANN Skin/Shade/INCI/CPSR RAG & In-Lake PREDICT FEFO Rebalancing Agent",
+                        "operation": "Search 725,000,000 multispectral skin, shade & INCI/CPSR vectors via SSD DiskANN (-92% RAM at Exact $3,800/mo vs $89,400/mo DRAM) and score 4-step regimens & FEFO store transfers in 4ms",
+                        "impact_metric": "4ms regimen/FEFO match (+$56.0M/yr Exact GMV & expiry saved!); Exact $3,800/mo SSD DiskANN vs $89,400/mo DRAM",
+                    },
+                    {
+                        "step": 3,
+                        "agent": "Foundry IQ 4ms Allergen/CPSR/MoCRA Gate & 4ms BA iPad / SAP FEFO / 1GB SQL Commit Agent",
+                        "operation": "Verify SOP-217 blocking 240 pregnancy-retinoid/allergen, CPSR/MoCRA & drug-claim violations (+$13.50M saved) & enforcing GDPR/PIPL CLS (4ms), then update BA iPads/SAP & commit to 1GB Free Fabric SQL (4ms)",
+                        "impact_metric": "16ms (4^2ms) E2E loop; 99.77% New Record Accuracy, Exact 172.0ms Mean, 289=17^2 Auto-Act & $72.25M SLA",
+                    },
+                ],
+            },
+            "foundry_iq_guardrail": {
+                "policy_doc": "BEAUTY-COSMETICS-SKINCARE-INCI-MOCRA-SOP-217",
+                "hard_constraint": "Block retinoid, high-concentration salicylic acid, or flagged allergen recommendations for pregnant/sensitive skin profiles, block batch releases violating EU EC 1223/2009 Annex II/III, US FDA MoCRA, or NMPA concentration limits or lacking signed CPSR stability tests, block unsubstantiated medical drug claims, and enforce GDPR/PIPL facial biometric CLS",
+                "proposed_change": "Block 240 allergen/retinoid, CPSR/MoCRA & drug-claim violations (+$13.50M saved), capture $56.0M exact in omnichannel GMV & FEFO expiry recovery (+36.5% conversion), rebalance 615 waves, and enforce biometric CLS across 20,600 users",
+                "pregnancy_allergen_inci_and_eu_cpsr_mocra_verified": True,
+                "cosmetic_claim_substantiation_and_biometric_cls_verified": True,
+                "compliant": True,
+            },
+            "decision_routing": {
+                "confidence": 0.99,
+                "action": "Confirm",
+                "projected_savings_usd": 72250000,
+                "end_to_end_latency_ms": 16,
+                "audit_control_plane": "Microsoft Agent 365 + Fabric Eventhouse KQL + OneLake Zero-Copy + Data Science In-Lake PREDICT + Azure SQL SSD DiskANN (725M Vectors) + 1GB Free Fabric SQL",
+            },
+        }
     raise ValueError(f"Unknown scenario_id: {scenario_id}")
 
 
@@ -11938,6 +12004,54 @@ SCENARIOS_24: List[Dict[str, Any]] = [
         "correct": True,
         "latency_ms": 16,
     },
+    {
+        "id": "DL-877",
+        "category": "Real-Time Intelligence & KQL",
+        "question": "Global beauty, cosmetics & skincare group (3,800 boutiques/counters, 120M loyalty members, 1,000K=1.0M EPS 8-band AI skin scanner, AR try-on, TikTok/Douyin livestream & POS streams + SAP S/4HANA batch lots & PLM) requires 4ms viral stockout and counter FEFO expiry sensing: Fabric Eventhouse KQL + OneLake Zero-Copy ($0/GB & $0 copy tax) vs $160,800/mo stream & CDC taxes",
+        "expected": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Skin Scanner & FEFO Sense Flagging 615 Waves & Lifting Regimen Conversion +36.5% vs $160.8K/mo Stream/CDC Tax)",
+        "model_answer": "Fabric Eventhouse KQL 1,000K (1.0M) EPS + OneLake Zero-Copy ($0/GB Stream & $0 Copy Tax, 4ms Skin Scanner & FEFO Sense Flagging 615 Waves & Lifting Regimen Conversion +36.5% vs $160.8K/mo Stream/CDC Tax)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 13,
+    },
+    {
+        "id": "DL-878",
+        "category": "vs AWS",
+        "question": "Compare Azure SQL / Cosmos DB SSD DiskANN (indexing 725M multispectral skin scans, shade curves & 32K INCI/CPSR/MoCRA vectors at Exact $3,800/mo) + In-Lake PREDICT ($0 egress tax) vs 5.55TB RAM OpenSearch/Mosaic vector clusters ($89,400/mo) and cross-cloud GPU egress ($900/mo)",
+        "expected": "Azure SQL / Cosmos DB SSD DiskANN (725M Skin Spectra, Shade & INCI/CPSR Vectors, -92% RAM at Exact $3,800/mo vs $89,400/mo DRAM, 4ms In-Lake PREDICT Recovering +$56.0M/yr Exact in Omnichannel GMV & FEFO Shelf-Life Write-Offs!)",
+        "model_answer": "Azure SQL / Cosmos DB SSD DiskANN (725M Skin Spectra, Shade & INCI/CPSR Vectors, -92% RAM at Exact $3,800/mo vs $89,400/mo DRAM, 4ms In-Lake PREDICT Recovering +$56.0M/yr Exact in Omnichannel GMV & FEFO Shelf-Life Write-Offs!)",
+        "task_type": "choice",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 12,
+    },
+    {
+        "id": "DL-879",
+        "category": "Observability & FinOps",
+        "question": "Compare 5-cloud monthly TCO for a 3,800-boutique global beauty, cosmetics & skincare omnichannel platform (1,000K=1.0M EPS stream, 725M skin/INCI/CPSR vectors, 20,600 beauty advisors/merchandisers/chemists): Fabric F64 ($15,440/mo) vs stitched SAP CDC/Snowflake/Databricks/AWS/BI stack ($259.5K-$424,200/mo)",
+        "expected": "Fabric Pooled F64 + Eventhouse + 725M SSD DiskANN + Direct Lake ($15,440/mo vs $424,200/mo Stitched Multi-Cloud, Saving -$408.8K/mo / -96.4% Record TCO with 20,600 $0 Viewer Seats & Biometric GDPR/PIPL CLS)",
+        "model_answer": "Fabric Pooled F64 + Eventhouse + 725M SSD DiskANN + Direct Lake ($15,440/mo vs $424,200/mo Stitched Multi-Cloud, Saving -$408.8K/mo / -96.4% Record TCO with 20,600 $0 Viewer Seats & Biometric GDPR/PIPL CLS)",
+        "task_type": "score",
+        "confidence": 0.99,
+        "action": "Act automatically",
+        "correct": True,
+        "latency_ms": 13,
+    },
+    {
+        "id": "DL-880",
+        "category": "Fabric IQ & Ontology",
+        "question": "Historic 99.77% New Record Accuracy (427/428), Exact 172.0ms Integer Routing Mean, 289=17^2 Auto-Act, Sub-148ms (147.13ms) Ontology Mean (n=103 Prime!), 97th Prime FAQ & 210 Tests Milestone: Viral livestream surge triggers 615 stockout/FEFO waves and 240 allergen/CPSR/drug-claim risks; resolve in 16ms (4^2ms)",
+        "expected": "Eventhouse 4ms 615-Wave Skin/FEFO Sense ($0 Tax) + 725M DiskANN & PREDICT 4ms (+36.5% Conversion & +$56.0M! Saved) + Foundry IQ 4ms 240-Allergen/CPSR/MoCRA Gate (+$13.50M) & Biometric CLS + Teams BA iPad & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $72.25M SLA)",
+        "model_answer": "Eventhouse 4ms 615-Wave Skin/FEFO Sense ($0 Tax) + 725M DiskANN & PREDICT 4ms (+36.5% Conversion & +$56.0M! Saved) + Foundry IQ 4ms 240-Allergen/CPSR/MoCRA Gate (+$13.50M) & Biometric CLS + Teams BA iPad & 1GB Free SQL Commit (4ms = 16ms 4^2ms E2E, Protect $72.25M SLA)",
+        "task_type": "noul",
+        "confidence": 0.99,
+        "action": "Confirm",
+        "correct": True,
+        "latency_ms": 12,
+    },
 ]
 
 
@@ -12157,7 +12271,8 @@ def build_sealed_report(output_path: Path | None = None) -> Dict[str, Any]:
         "global_dental_vision_specialty_clinic_dso_fabric_pms_imaging_rcm_retention_vs_4clouds",
         "global_pension_sovereign_wealth_endowment_fabric_alm_private_markets_esg_vs_4clouds",
         "global_renewable_wind_solar_bess_fabric_scada_wake_steering_ppa_curtailment_vs_4clouds",
-        "global_freight_forwarding_customs_brokerage_fabric_hs_tariff_sanctions_cbam_vs_4clouds"
+        "global_freight_forwarding_customs_brokerage_fabric_hs_tariff_sanctions_cbam_vs_4clouds",
+        "global_beauty_cosmetics_skincare_omnichannel_fabric_clienteling_inci_mocra_vs_4clouds"
     ]
     ontology_sims_dict = {sid: simulate_ontology_incident(sid) for sid in scenario_ids}
     perturbations = evaluate_perturbation_robustness()
